@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **BlendMode**:
+enum **BlendMode**: :ref:`🔗<enum_CanvasItemMaterial_BlendMode>`
 
 .. _class_CanvasItemMaterial_constant_BLEND_MODE_MIX:
 
@@ -106,7 +106,7 @@ Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity)
 
 .. rst-class:: classref-enumeration
 
-enum **LightMode**:
+enum **LightMode**: :ref:`🔗<enum_CanvasItemMaterial_LightMode>`
 
 .. _class_CanvasItemMaterial_constant_LIGHT_MODE_NORMAL:
 
@@ -145,7 +145,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **blend_mode** = ``0``
+:ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **blend_mode** = ``0`` :ref:`🔗<class_CanvasItemMaterial_property_blend_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -162,7 +162,7 @@ The manner in which a material's rendering is applied to underlying textures.
 
 .. rst-class:: classref-property
 
-:ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode** = ``0``
+:ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode** = ``0`` :ref:`🔗<class_CanvasItemMaterial_property_light_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -179,7 +179,7 @@ The manner in which material reacts to lighting.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **particles_anim_h_frames**
+:ref:`int<class_int>` **particles_anim_h_frames** :ref:`🔗<class_CanvasItemMaterial_property_particles_anim_h_frames>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +198,7 @@ The number of columns in the spritesheet assigned as :ref:`Texture2D<class_Textu
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **particles_anim_loop**
+:ref:`bool<class_bool>` **particles_anim_loop** :ref:`🔗<class_CanvasItemMaterial_property_particles_anim_loop>`
 
 .. rst-class:: classref-property-setget
 
@@ -217,7 +217,7 @@ If ``true``, the particles animation will loop.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **particles_anim_v_frames**
+:ref:`int<class_int>` **particles_anim_v_frames** :ref:`🔗<class_CanvasItemMaterial_property_particles_anim_v_frames>`
 
 .. rst-class:: classref-property-setget
 
@@ -236,7 +236,7 @@ The number of rows in the spritesheet assigned as :ref:`Texture2D<class_Texture2
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **particles_animation** = ``false``
+:ref:`bool<class_bool>` **particles_animation** = ``false`` :ref:`🔗<class_CanvasItemMaterial_property_particles_animation>`
 
 .. rst-class:: classref-property-setget
 

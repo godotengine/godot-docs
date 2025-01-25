@@ -36,7 +36,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-flags **LoaderFlags**:
+flags **LoaderFlags**: :ref:`🔗<enum_ImageFormatLoader_LoaderFlags>`
 
 .. _class_ImageFormatLoader_constant_FLAG_NONE:
 

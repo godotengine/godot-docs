@@ -14,6 +14,12 @@ in the running game.
 Finally, you have options to debug the game running on a remote device
 and to reload changes to your scenes or your code while the game is running.
 
+Output Panel
+--------------
+
+The output panel allows you to see text printed by the project, but also by the editor (e.g. from ``@tool`` scripts).
+You can find information about in :ref:`doc_output_panel`.
+
 Debugger Panel
 --------------
 
@@ -33,7 +39,7 @@ You can find these options in the **Debug** editor menu.
 Here are the descriptions of the options:
 
 Deploy with Remote Debug
-++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this option is enabled, using one-click deploy will make the executable
 attempt to connect to this computer's IP so the running project can be debugged.
@@ -42,7 +48,7 @@ device).
 You don't need to enable it to use the GDScript debugger locally.
 
 Small Deploy with Network Filesystem
-++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This option speeds up testing for games with a large footprint on remote devices.
 
@@ -54,38 +60,38 @@ Also, on Android, the game is deployed using the USB cable to speed up
 deployment.
 
 Visible Collision Shapes
-++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this option is enabled, collision shapes and raycast nodes (for 2D and 3D)
 will be visible in the running project.
 
 Visible Paths
-+++++++++++++
+~~~~~~~~~~~~~
 
 When this option is enabled, curve resources used by path nodes will be visible
 in the running project.
 
 Visible Navigation
-++++++++++++++++++
+~~~~~~~~~~~~~~~~~~
 
 When this option is enabled, navigation meshes, and polygons will be visible in
 the running project.
 
 Visible Avoidance
-+++++++++++++++++
+~~~~~~~~~~~~~~~~~
 
 When this option is enabled, avoidance object shapes, radiuses, and velocities
 will be visible in the running project.
 
 Debug CanvasItem Redraws
-++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this option is enabled, redraw requests of 2D objects will become visible
 (as a short flash) in the running project.
 This is useful to troubleshoot low processor mode.
 
 Synchronize Scene Changes
-++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this option is enabled, any changes made to the scene in the editor will be
 replicated in the running project.
@@ -93,20 +99,20 @@ When used remotely on a device, this is more efficient when the network
 filesystem option is enabled.
 
 Synchronize Script Changes
-+++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this option is enabled, any changes made to the script in the editor will
 be reloaded in the running project. When used
 remotely on a device, this is more efficient with the network filesystem.
 
 Keep Debug Server Open
-++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~
 
 When this option is enabled, the editor debug server will stay open and listen
 for new sessions started outside of the editor itself.
 
 Customize Run Instances...
-++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This opens a dialog allowing you to tell Godot to run multiple instances of the
 game at once, and to specify the command line arguments for each instance. This
@@ -223,7 +229,7 @@ The **Break** button causes a break in the script like a breakpoint would.
 a function if possible. Otherwise, it does the same thing as **Step Over**.
 
 The **Debug with External Editor** option lets you debug your game with an external editor.
-This option is also accessible in **Editor Settings > Debugger**.
+You can set a shortcut for it in **Editor Settings > Shortcuts > Debugger**.
 
 When the debugger breaks on a breakpoint, a green triangle arrow is visible in
 the script editor's gutter. This arrow indicates the line of code the debugger
@@ -232,24 +238,41 @@ broke on.
 Debug project settings
 ----------------------
 
-In the project settings, there is a **Debug** category with three subcategories
-which control different things.
+In the project settings, there is a **Debug** category with subcategories which
+control different things. Enable **Advanced Settings** to change these settings.
 
 Settings
-++++++++
+~~~~~~~~
 
 These are some general settings such as printing the current FPS
 to the **Output** panel, the maximum amount of functions when profiling
 and others.
 
+File Logging
+~~~~~~~~~~~~
+
+These settings allow you to log console output and error messages to files.
+
 GDScript
-++++++++
+~~~~~~~~
 
 These settings allow you to toggle specific GDScript warnings, such as for
+unused variables. You can also turn off warnings completely. See
+:ref:`doc_gdscript_warning_system` for more information.
+
+Shader Language
+~~~~~~~~~~~~~~~
+
+These settings allow you to toggle specific shader warnings, such as for
 unused variables. You can also turn off warnings completely.
 
+Canvas Items
+~~~~~~~~~~~~
+
+These settings are for canvas item redraw debugging.
+
 Shapes
-++++++
+~~~~~~
 
 Shapes are where you can adjust the color of shapes that only appear for
 debugging purposes, such as collision and navigation shapes.

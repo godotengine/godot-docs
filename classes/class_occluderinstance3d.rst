@@ -10,7 +10,7 @@
 OccluderInstance3D
 ==================
 
-**Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Provides occlusion culling for 3D nodes, which improves performance in closed areas.
 
@@ -23,7 +23,7 @@ Occlusion culling can improve rendering performance in closed/semi-open areas by
 
 The occlusion culling system is mostly static. **OccluderInstance3D**\ s can be moved or hidden at run-time, but doing so will trigger a background recomputation that can take several frames. It is recommended to only move **OccluderInstance3D**\ s sporadically (e.g. for procedural generation purposes), rather than doing so every frame.
 
-The occlusion culling system works by rendering the occluders on the CPU in parallel using `Embree <https://www.embree.org/>`__, drawing the result to a low-resolution buffer then using this to cull 3D nodes individually. In the 3D editor, you can preview the occlusion culling buffer by choosing **Perspective > Debug Advanced... > Occlusion Culling Buffer** in the top-left corner of the 3D viewport. The occlusion culling buffer quality can be adjusted in the Project Settings.
+The occlusion culling system works by rendering the occluders on the CPU in parallel using `Embree <https://www.embree.org/>`__, drawing the result to a low-resolution buffer then using this to cull 3D nodes individually. In the 3D editor, you can preview the occlusion culling buffer by choosing **Perspective > Display Advanced... > Occlusion Culling Buffer** in the top-left corner of the 3D viewport. The occlusion culling buffer quality can be adjusted in the Project Settings.
 
 \ **Baking:** Select an **OccluderInstance3D** node, then use the **Bake Occluders** button at the top of the 3D editor. Only opaque materials will be taken into account; transparent materials (alpha-blended or alpha-tested) will be ignored by the occluder generation.
 
@@ -81,7 +81,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bake_mask** = ``4294967295``
+:ref:`int<class_int>` **bake_mask** = ``4294967295`` :ref:`🔗<class_OccluderInstance3D_property_bake_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -100,7 +100,7 @@ To improve performance and avoid artifacts, it is recommended to exclude dynamic
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bake_simplification_distance** = ``0.1``
+:ref:`float<class_float>` **bake_simplification_distance** = ``0.1`` :ref:`🔗<class_OccluderInstance3D_property_bake_simplification_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +123,7 @@ Setting this to ``0.0`` disables simplification entirely, but vertices in the ex
 
 .. rst-class:: classref-property
 
-:ref:`Occluder3D<class_Occluder3D>` **occluder**
+:ref:`Occluder3D<class_Occluder3D>` **occluder** :ref:`🔗<class_OccluderInstance3D_property_occluder>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +149,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OccluderInstance3D_method_get_bake_mask_value>`
 
 Returns whether or not the specified layer of the :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -161,7 +161,7 @@ Returns whether or not the specified layer of the :ref:`bake_mask<class_Occluder
 
 .. rst-class:: classref-method
 
-|void| **set_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
+|void| **set_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OccluderInstance3D_method_set_bake_mask_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>`, given a ``layer_number`` between 1 and 32.
 

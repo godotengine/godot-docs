@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **central_horizontal_angle** = ``1.5708``
+:ref:`float<class_float>` **central_horizontal_angle** = ``1.5708`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_central_horizontal_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -73,7 +73,7 @@ The central horizontal angle of the sphere. Used to set the width.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fallback_segments** = ``10``
+:ref:`int<class_int>` **fallback_segments** = ``10`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_fallback_segments>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ The number of segments to use in the fallback mesh.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **lower_vertical_angle** = ``0.785398``
+:ref:`float<class_float>` **lower_vertical_angle** = ``0.785398`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_lower_vertical_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ The lower vertical angle of the sphere. Used (together with :ref:`upper_vertical
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``1.0``
+:ref:`float<class_float>` **radius** = ``1.0`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -124,7 +124,7 @@ The radius of the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **upper_vertical_angle** = ``0.785398``
+:ref:`float<class_float>` **upper_vertical_angle** = ``0.785398`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_upper_vertical_angle>`
 
 .. rst-class:: classref-property-setget
 

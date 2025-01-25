@@ -69,7 +69,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
     
         public override string[] _GetRecognizedExtensions()
         {
-            return new string[] { "csv" };
+            return ["csv"];
         }
     }
 
@@ -92,17 +92,15 @@ To add a translatable string associated with context or plural, add it to ``msgi
  .. code-tab:: csharp
 
     // This will add a message with msgid "Test 1", msgctxt "context", and msgid_plural "test 1 plurals".
-    msgidsContextPlural.Add(new Godot.Collections.Array{"Test 1", "context", "test 1 Plurals"});
+    msgidsContextPlural.Add(["Test 1", "context", "test 1 Plurals"]);
     // This will add a message with msgid "A test without context" and msgid_plural "plurals".
-    msgidsContextPlural.Add(new Godot.Collections.Array{"A test without context", "", "plurals"});
+    msgidsContextPlural.Add(["A test without context", "", "plurals"]);
     // This will add a message with msgid "Only with context" and msgctxt "a friendly context".
-    msgidsContextPlural.Add(new Godot.Collections.Array{"Only with context", "a friendly context", ""});
+    msgidsContextPlural.Add(["Only with context", "a friendly context", ""]);
 
 
 
-\ **Note:** If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the ``path`` argument using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`. This is because built-in scripts are loaded as :ref:`Resource<class_Resource>` type, not :ref:`FileAccess<class_FileAccess>` type.
-
-For example:
+\ **Note:** If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the ``path`` argument using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`. This is because built-in scripts are loaded as :ref:`Resource<class_Resource>` type, not :ref:`FileAccess<class_FileAccess>` type. For example:
 
 
 .. tabs::
@@ -128,7 +126,7 @@ For example:
     
     public override string[] _GetRecognizedExtensions()
     {
-        return new string[] { "gd" };
+        return ["gd"];
     }
 
 
@@ -144,6 +142,8 @@ Methods
    :widths: auto
 
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`_get_comments<class_EditorTranslationParserPlugin_private_method__get_comments>`\ (\ msgids_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\]\ ) |virtual|               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_EditorTranslationParserPlugin_private_method__get_recognized_extensions>`\ (\ ) |virtual| |const|                                                                                                                                                  |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>`\ (\ path\: :ref:`String<class_String>`, msgids\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ ) |virtual| |
@@ -158,11 +158,23 @@ Methods
 Method Descriptions
 -------------------
 
+.. _class_EditorTranslationParserPlugin_private_method__get_comments:
+
+.. rst-class:: classref-method
+
+|void| **_get_comments**\ (\ msgids_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\]\ ) |virtual| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__get_comments>`
+
+If overridden, called after :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>` to get comments for the parsed entries. This method should fill the arrays with the same number of elements and in the same order as :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorTranslationParserPlugin_private_method__get_recognized_extensions:
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__get_recognized_extensions>`
 
 Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``.
 
@@ -174,7 +186,7 @@ Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``
 
 .. rst-class:: classref-method
 
-|void| **_parse_file**\ (\ path\: :ref:`String<class_String>`, msgids\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ ) |virtual|
+|void| **_parse_file**\ (\ path\: :ref:`String<class_String>`, msgids\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ ) |virtual| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__parse_file>`
 
 Override this method to define a custom parsing logic to extract the translatable strings.
 

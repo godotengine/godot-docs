@@ -66,7 +66,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PolygonCullMode<enum_RenderingDevice_PolygonCullMode>` **cull_mode** = ``0``
+:ref:`PolygonCullMode<enum_RenderingDevice_PolygonCullMode>` **cull_mode** = ``0`` :ref:`🔗<class_RDPipelineRasterizationState_property_cull_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -83,7 +83,7 @@ The cull mode to use when drawing polygons, which determines whether front faces
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth_bias_clamp** = ``0.0``
+:ref:`float<class_float>` **depth_bias_clamp** = ``0.0`` :ref:`🔗<class_RDPipelineRasterizationState_property_depth_bias_clamp>`
 
 .. rst-class:: classref-property-setget
 
@@ -100,7 +100,7 @@ A limit for how much each depth value can be offset. If negative, it serves as a
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth_bias_constant_factor** = ``0.0``
+:ref:`float<class_float>` **depth_bias_constant_factor** = ``0.0`` :ref:`🔗<class_RDPipelineRasterizationState_property_depth_bias_constant_factor>`
 
 .. rst-class:: classref-property-setget
 
@@ -117,7 +117,7 @@ A constant offset added to each depth value. Applied after :ref:`depth_bias_slop
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **depth_bias_enabled** = ``false``
+:ref:`bool<class_bool>` **depth_bias_enabled** = ``false`` :ref:`🔗<class_RDPipelineRasterizationState_property_depth_bias_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -134,7 +134,7 @@ If ``true``, each generated depth value will by offset by some amount. The speci
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth_bias_slope_factor** = ``0.0``
+:ref:`float<class_float>` **depth_bias_slope_factor** = ``0.0`` :ref:`🔗<class_RDPipelineRasterizationState_property_depth_bias_slope_factor>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +151,7 @@ A constant scale applied to the slope of each polygons' depth. Applied before :r
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **discard_primitives** = ``false``
+:ref:`bool<class_bool>` **discard_primitives** = ``false`` :ref:`🔗<class_RDPipelineRasterizationState_property_discard_primitives>`
 
 .. rst-class:: classref-property-setget
 
@@ -168,7 +168,7 @@ If ``true``, primitives are discarded immediately before the rasterization stage
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_depth_clamp** = ``false``
+:ref:`bool<class_bool>` **enable_depth_clamp** = ``false`` :ref:`🔗<class_RDPipelineRasterizationState_property_enable_depth_clamp>`
 
 .. rst-class:: classref-property-setget
 
@@ -185,7 +185,7 @@ If ``true``, clamps depth values according to the minimum and maximum depth of t
 
 .. rst-class:: classref-property
 
-:ref:`PolygonFrontFace<enum_RenderingDevice_PolygonFrontFace>` **front_face** = ``0``
+:ref:`PolygonFrontFace<enum_RenderingDevice_PolygonFrontFace>` **front_face** = ``0`` :ref:`🔗<class_RDPipelineRasterizationState_property_front_face>`
 
 .. rst-class:: classref-property-setget
 
@@ -202,7 +202,7 @@ The winding order to use to determine which face of a triangle is considered its
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **line_width** = ``1.0``
+:ref:`float<class_float>` **line_width** = ``1.0`` :ref:`🔗<class_RDPipelineRasterizationState_property_line_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -219,7 +219,7 @@ The line width to use when drawing lines (in pixels). Thick lines may not be sup
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **patch_control_points** = ``1``
+:ref:`int<class_int>` **patch_control_points** = ``1`` :ref:`🔗<class_RDPipelineRasterizationState_property_patch_control_points>`
 
 .. rst-class:: classref-property-setget
 
@@ -236,7 +236,7 @@ The number of control points to use when drawing a patch with tessellation enabl
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **wireframe** = ``false``
+:ref:`bool<class_bool>` **wireframe** = ``false`` :ref:`🔗<class_RDPipelineRasterizationState_property_wireframe>`
 
 .. rst-class:: classref-property-setget
 

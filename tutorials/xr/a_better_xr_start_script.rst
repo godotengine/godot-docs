@@ -20,7 +20,7 @@ Signals for our script
 We are introducing 3 signals to our script so that our game can add further logic:
 
 - ``focus_lost`` is emitted when the player takes off their headset or when the player enters the menu system of the headset.
-- ``focus_gained`` is emitted when the player puts their headset back on or exists the menu system and returns to the game.
+- ``focus_gained`` is emitted when the player puts their headset back on or exits the menu system and returns to the game.
 - ``pose_recentered`` is emitted when the headset requests the players position to be reset.
 
 Our game should react accordingly to these signals.
@@ -331,7 +331,7 @@ If you haven't, you can connect a method to the signal that performs additional 
             xr_is_focussed = false
 
             # pause our game
-            process_mode = Node.PROCESS_MODE_DISABLED
+            get_tree().paused = true
 
             emit_signal("focus_lost")
  
@@ -355,7 +355,7 @@ If you haven't, you can connect a method to the signal that performs additional 
                 _xrIsFocused = false;
 
                 // Pause our game
-                ProcessMode = ProcessModeEnum.Disabled;
+                GetTree().Paused = true;
 
                 EmitSignal(SignalName.FocusLost);
             }
@@ -395,7 +395,7 @@ While handling our signal we will update the focusses state, unpause our node an
         xr_is_focussed = true
 
         # unpause our game
-        process_mode = Node.PROCESS_MODE_INHERIT
+        get_tree().paused = false
 
         emit_signal("focus_gained")
 
@@ -414,7 +414,7 @@ While handling our signal we will update the focusses state, unpause our node an
             _xrIsFocused = true;
 
             // Un-pause our game
-            ProcessMode = ProcessModeEnum.Inherit;
+            GetTree().Paused = false;
 
             EmitSignal(SignalName.FocusGained);
         }

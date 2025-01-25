@@ -76,15 +76,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`Node3D<class_Node3D>` | :ref:`get_contact_body<class_VehicleWheel3D_method_get_contact_body>`\ (\ ) |const| |
-   +-----------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`   | :ref:`get_rpm<class_VehicleWheel3D_method_get_rpm>`\ (\ ) |const|                   |
-   +-----------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`   | :ref:`get_skidinfo<class_VehicleWheel3D_method_get_skidinfo>`\ (\ ) |const|         |
-   +-----------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`is_in_contact<class_VehicleWheel3D_method_is_in_contact>`\ (\ ) |const|       |
-   +-----------------------------+-------------------------------------------------------------------------------------+
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`Node3D<class_Node3D>`   | :ref:`get_contact_body<class_VehicleWheel3D_method_get_contact_body>`\ (\ ) |const|     |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_contact_normal<class_VehicleWheel3D_method_get_contact_normal>`\ (\ ) |const| |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_contact_point<class_VehicleWheel3D_method_get_contact_point>`\ (\ ) |const|   |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_rpm<class_VehicleWheel3D_method_get_rpm>`\ (\ ) |const|                       |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_skidinfo<class_VehicleWheel3D_method_get_skidinfo>`\ (\ ) |const|             |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_in_contact<class_VehicleWheel3D_method_is_in_contact>`\ (\ ) |const|           |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -99,7 +103,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **brake** = ``0.0``
+:ref:`float<class_float>` **brake** = ``0.0`` :ref:`🔗<class_VehicleWheel3D_property_brake>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,14 +120,14 @@ Slows down the wheel by applying a braking force. The wheel is only slowed down 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **damping_compression** = ``0.83``
+:ref:`float<class_float>` **damping_compression** = ``0.83`` :ref:`🔗<class_VehicleWheel3D_property_damping_compression>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_damping_compression**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_damping_compression**\ (\ )
 
-The damping applied to the spring when the spring is being compressed. This value should be between 0.0 (no damping) and 1.0. A value of 0.0 means the car will keep bouncing as the spring keeps its energy. A good value for this is around 0.3 for a normal car, 0.5 for a race car.
+The damping applied to the suspension spring when being compressed, meaning when the wheel is moving up relative to the vehicle. It is measured in Newton-seconds per millimeter (N⋅s/mm), or megagrams per second (Mg/s). This value should be between 0.0 (no damping) and 1.0, but may be more. A value of 0.0 means the car will keep bouncing as the spring keeps its energy. A good value for this is around 0.3 for a normal car, 0.5 for a race car.
 
 .. rst-class:: classref-item-separator
 
@@ -133,14 +137,14 @@ The damping applied to the spring when the spring is being compressed. This valu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **damping_relaxation** = ``0.88``
+:ref:`float<class_float>` **damping_relaxation** = ``0.88`` :ref:`🔗<class_VehicleWheel3D_property_damping_relaxation>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_damping_relaxation**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_damping_relaxation**\ (\ )
 
-The damping applied to the spring when relaxing. This value should be between 0.0 (no damping) and 1.0. This value should always be slightly higher than the :ref:`damping_compression<class_VehicleWheel3D_property_damping_compression>` property. For a :ref:`damping_compression<class_VehicleWheel3D_property_damping_compression>` value of 0.3, try a relaxation value of 0.5.
+The damping applied to the suspension spring when rebounding or extending, meaning when the wheel is moving down relative to the vehicle. It is measured in Newton-seconds per millimeter (N⋅s/mm), or megagrams per second (Mg/s). This value should be between 0.0 (no damping) and 1.0, but may be more. This value should always be slightly higher than the :ref:`damping_compression<class_VehicleWheel3D_property_damping_compression>` property. For a :ref:`damping_compression<class_VehicleWheel3D_property_damping_compression>` value of 0.3, try a relaxation value of 0.5.
 
 .. rst-class:: classref-item-separator
 
@@ -150,7 +154,7 @@ The damping applied to the spring when relaxing. This value should be between 0.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **engine_force** = ``0.0``
+:ref:`float<class_float>` **engine_force** = ``0.0`` :ref:`🔗<class_VehicleWheel3D_property_engine_force>`
 
 .. rst-class:: classref-property-setget
 
@@ -171,7 +175,7 @@ A negative value will result in the wheel reversing.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **steering** = ``0.0``
+:ref:`float<class_float>` **steering** = ``0.0`` :ref:`🔗<class_VehicleWheel3D_property_steering>`
 
 .. rst-class:: classref-property-setget
 
@@ -188,7 +192,7 @@ The steering angle for the wheel, in radians. Setting this to a non-zero value w
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **suspension_max_force** = ``6000.0``
+:ref:`float<class_float>` **suspension_max_force** = ``6000.0`` :ref:`🔗<class_VehicleWheel3D_property_suspension_max_force>`
 
 .. rst-class:: classref-property-setget
 
@@ -205,14 +209,14 @@ The maximum force the spring can resist. This value should be higher than a quar
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **suspension_stiffness** = ``5.88``
+:ref:`float<class_float>` **suspension_stiffness** = ``5.88`` :ref:`🔗<class_VehicleWheel3D_property_suspension_stiffness>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_suspension_stiffness**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_suspension_stiffness**\ (\ )
 
-This value defines the stiffness of the suspension. Use a value lower than 50 for an off-road car, a value between 50 and 100 for a race car and try something around 200 for something like a Formula 1 car.
+The stiffness of the suspension, measured in Newtons per millimeter (N/mm), or megagrams per second squared (Mg/s²). Use a value lower than 50 for an off-road car, a value between 50 and 100 for a race car and try something around 200 for something like a Formula 1 car.
 
 .. rst-class:: classref-item-separator
 
@@ -222,7 +226,7 @@ This value defines the stiffness of the suspension. Use a value lower than 50 fo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **suspension_travel** = ``0.2``
+:ref:`float<class_float>` **suspension_travel** = ``0.2`` :ref:`🔗<class_VehicleWheel3D_property_suspension_travel>`
 
 .. rst-class:: classref-property-setget
 
@@ -239,7 +243,7 @@ This is the distance the suspension can travel. As Godot units are equivalent to
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_as_steering** = ``false``
+:ref:`bool<class_bool>` **use_as_steering** = ``false`` :ref:`🔗<class_VehicleWheel3D_property_use_as_steering>`
 
 .. rst-class:: classref-property-setget
 
@@ -256,7 +260,7 @@ If ``true``, this wheel will be turned when the car steers. This value is used i
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_as_traction** = ``false``
+:ref:`bool<class_bool>` **use_as_traction** = ``false`` :ref:`🔗<class_VehicleWheel3D_property_use_as_traction>`
 
 .. rst-class:: classref-property-setget
 
@@ -273,7 +277,7 @@ If ``true``, this wheel transfers engine force to the ground to propel the vehic
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wheel_friction_slip** = ``10.5``
+:ref:`float<class_float>` **wheel_friction_slip** = ``10.5`` :ref:`🔗<class_VehicleWheel3D_property_wheel_friction_slip>`
 
 .. rst-class:: classref-property-setget
 
@@ -292,7 +296,7 @@ It's best to set this to 1.0 when starting out.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wheel_radius** = ``0.5``
+:ref:`float<class_float>` **wheel_radius** = ``0.5`` :ref:`🔗<class_VehicleWheel3D_property_wheel_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -309,7 +313,7 @@ The radius of the wheel in meters.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wheel_rest_length** = ``0.15``
+:ref:`float<class_float>` **wheel_rest_length** = ``0.15`` :ref:`🔗<class_VehicleWheel3D_property_wheel_rest_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -326,7 +330,7 @@ This is the distance in meters the wheel is lowered from its origin point. Don't
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wheel_roll_influence** = ``0.1``
+:ref:`float<class_float>` **wheel_roll_influence** = ``0.1`` :ref:`🔗<class_VehicleWheel3D_property_wheel_roll_influence>`
 
 .. rst-class:: classref-property-setget
 
@@ -348,7 +352,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Node3D<class_Node3D>` **get_contact_body**\ (\ ) |const|
+:ref:`Node3D<class_Node3D>` **get_contact_body**\ (\ ) |const| :ref:`🔗<class_VehicleWheel3D_method_get_contact_body>`
 
 Returns the contacting body node if valid in the tree, as :ref:`Node3D<class_Node3D>`. At the moment, :ref:`GridMap<class_GridMap>` is not supported so the node will be always of type :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
 
@@ -358,11 +362,35 @@ Returns ``null`` if the wheel is not in contact with a surface, or the contact b
 
 ----
 
+.. _class_VehicleWheel3D_method_get_contact_normal:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_contact_normal**\ (\ ) |const| :ref:`🔗<class_VehicleWheel3D_method_get_contact_normal>`
+
+Returns the normal of the suspension's collision in world space if the wheel is in contact. If the wheel isn't in contact with anything, returns a vector pointing directly along the suspension axis toward the vehicle in world space.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VehicleWheel3D_method_get_contact_point:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_contact_point**\ (\ ) |const| :ref:`🔗<class_VehicleWheel3D_method_get_contact_point>`
+
+Returns the point of the suspension's collision in world space if the wheel is in contact. If the wheel isn't in contact with anything, returns the maximum point of the wheel's ray cast in world space, which is defined by ``wheel_rest_length + wheel_radius``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_VehicleWheel3D_method_get_rpm:
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_rpm**\ (\ ) |const|
+:ref:`float<class_float>` **get_rpm**\ (\ ) |const| :ref:`🔗<class_VehicleWheel3D_method_get_rpm>`
 
 Returns the rotational speed of the wheel in revolutions per minute.
 
@@ -374,7 +402,7 @@ Returns the rotational speed of the wheel in revolutions per minute.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_skidinfo**\ (\ ) |const|
+:ref:`float<class_float>` **get_skidinfo**\ (\ ) |const| :ref:`🔗<class_VehicleWheel3D_method_get_skidinfo>`
 
 Returns a value between 0.0 and 1.0 that indicates whether this wheel is skidding. 0.0 is skidding (the wheel has lost grip, e.g. icy terrain), 1.0 means not skidding (the wheel has full grip, e.g. dry asphalt road).
 
@@ -386,7 +414,7 @@ Returns a value between 0.0 and 1.0 that indicates whether this wheel is skiddin
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_in_contact**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_in_contact**\ (\ ) |const| :ref:`🔗<class_VehicleWheel3D_method_is_in_contact>`
 
 Returns ``true`` if this wheel is in contact with a surface.
 

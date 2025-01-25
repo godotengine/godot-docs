@@ -21,8 +21,6 @@ Description
 
 This class represents a C# script. It is the C# equivalent of the :ref:`GDScript<class_GDScript>` class and is only available in Mono-enabled Godot builds.
 
-See also :ref:`GodotSharp<class_GodotSharp>`.
-
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -55,7 +53,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **new**\ (\ ...\ ) |vararg|
+:ref:`Variant<class_Variant>` **new**\ (\ ...\ ) |vararg| :ref:`🔗<class_CSharpScript_method_new>`
 
 Returns a new instance of the script.
 

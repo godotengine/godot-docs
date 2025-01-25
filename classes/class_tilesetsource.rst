@@ -66,7 +66,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_alternative_tile_id**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_alternative_tile_id**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSetSource_method_get_alternative_tile_id>`
 
 Returns the alternative ID for the tile with coordinates ID ``atlas_coords`` at index ``index``.
 
@@ -78,7 +78,7 @@ Returns the alternative ID for the tile with coordinates ID ``atlas_coords`` at 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_alternative_tiles_count**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`int<class_int>` **get_alternative_tiles_count**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileSetSource_method_get_alternative_tiles_count>`
 
 Returns the number of alternatives tiles for the coordinates ID ``atlas_coords``.
 
@@ -94,7 +94,7 @@ Returns -1 if there is not tile at the given coords.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_tile_id**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_tile_id**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSetSource_method_get_tile_id>`
 
 Returns the tile coordinates ID of the tile with index ``index``.
 
@@ -106,7 +106,7 @@ Returns the tile coordinates ID of the tile with index ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_tiles_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_tiles_count**\ (\ ) |const| :ref:`🔗<class_TileSetSource_method_get_tiles_count>`
 
 Returns how many tiles this atlas source defines (not including alternative tiles).
 
@@ -118,7 +118,7 @@ Returns how many tiles this atlas source defines (not including alternative tile
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_alternative_tile**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, alternative_tile\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **has_alternative_tile**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, alternative_tile\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSetSource_method_has_alternative_tile>`
 
 Returns if the base tile at coordinates ``atlas_coords`` has an alternative with ID ``alternative_tile``.
 
@@ -130,7 +130,7 @@ Returns if the base tile at coordinates ``atlas_coords`` has an alternative with
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_tile**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`bool<class_bool>` **has_tile**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileSetSource_method_has_tile>`
 
 Returns if this atlas has a tile with coordinates ID ``atlas_coords``.
 

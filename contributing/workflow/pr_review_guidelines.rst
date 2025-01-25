@@ -12,7 +12,7 @@ Pull request review process
     wanting to know how to ensure that their PR is merged.
 
 From a high level, the ideal life cycle of a pull request looks like the
-following: 
+following:
 
   1. A contributor opens a PR that fixes a specific problem (optimally closing
      a GitHub `issue <https://github.com/godotengine/godot>`_ or implementing
@@ -33,9 +33,9 @@ following:
 
 This document will explain steps 2, 3, 4, and 5 in more detail. For a more
 detailed explanation of the pull request workflow please see the :ref:`pull
-request workflow document <doc_pr_workflow>`. 
+request workflow document <doc_pr_workflow>`.
 
-.. note:: 
+.. note::
   In practice these steps may blend together. Oftentimes maintainers will
   provide comments on code style and code quality at the same time and will
   approve a pull request for both.
@@ -70,7 +70,7 @@ do to conduct a substantive code review of a pull request.
   code only and have not tested the changes locally.
 
 1. Confirm that the problem exists
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PRs need to solve problems and problems need to be documented. Make sure that
 the pull request links and closes (or at least addresses) a bug or a proposal.
@@ -83,7 +83,7 @@ the PR to explain the problem that the PR aims to solve in more detail.
   helps contributors in the future understand why the code is the way it is.
 
 2. Test the PR and look for regressions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While strict code review and CI help to ensure that all pull requests work as
 intended, mistakes happen and sometimes contributors push code that creates a
@@ -99,7 +99,7 @@ the code, look for suspicious changes in other parts of the engine. Sometimes
 during rebasing changes slip through that contributors are not aware of.
 
 3. Do a code review
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 Code reviews are usually done by people who are already experienced in a given
 area. They may be able to provide ideas to make code faster, more organized, or
@@ -137,7 +137,7 @@ Here are some things to think about and look out for as you review the code:
   problem.
 
 4. Iterate with the contributor and improve the PR
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Maintainers should provide feedback and suggestions for improvement if they spot
 things in the code that they would like changed. Preferably, suggestions should
@@ -160,7 +160,7 @@ As you review pull requests, keep the Godot `Code of Conduct
 
 * Always assume positive intent from others.
 
-* Feedback is always welcome but keep your criticism constructive.
+* Feedback is always welcome, but keep your criticism constructive.
 
 Here are some things to avoid as you iterate on a pull request with a
 contributor:
@@ -178,7 +178,7 @@ contributor:
   areas and in performance-sensitive areas than it is in editor code for
   example.
 
-* **Expanding the scope of a pull request.** 
+* **Expanding the scope of a pull request.**
 
   Providing context or related/similar issues or proposals that may be fixed
   similarly can be helpful, but adding a "may as well fix that thing over there
@@ -194,7 +194,7 @@ Other teams may already be tagged for review, so you can also wait or ask for
 their assistance.
 
 5. Approve the pull request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After reviewing the code, if you think that the code is ready to be merged into
 the engine, then go ahead and "approve" it. Make sure to also comment and
@@ -253,7 +253,7 @@ Merging pull requests
 In general, pull requests should only be merged by members of the production
 team or team leaders for pull requests in their area of the engine. For example,
 the networking team leader could merge a networking pull request that doesn't
-substantially change non-networking sections of code. 
+substantially change non-networking sections of code.
 
 In practice it is best to wait for a member of the production team to merge the
 pull request as they keep a close eye on the entire codebase and will likely
@@ -270,12 +270,12 @@ As a contributor you can help move a pull request forward by doing some of these
 steps yourself.
 
 1. Get feedback from the right people/teams
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Production team members should ensure that the right people look at a pull
 request before it is merged. In some cases this may require multiple people to
 weigh in. In other cases, only one substantive approval is needed before the
-code can be merged. 
+code can be merged.
 
 In general, try not to merge things based on one review alone, especially if it
 is your own. Get a second opinion from another maintainer, and make sure all the
@@ -301,7 +301,7 @@ Godot organization left a review without having the relevant expertise.
     <https://github.com/godotengine/godot/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved+sort%3Aupdated-desc>`_.
 
 2. Get feedback from the community
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If a pull request is having trouble attracting reviewers, you may need to reach
 out more broadly to ask for help reviewing. Consider asking:
@@ -311,7 +311,7 @@ out more broadly to ask for help reviewing. Consider asking:
 * a more experienced maintainer from another area if they could provide feedback.
 
 3. Git checklist
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 * **Make sure that the PR comes in one commit.**
 
@@ -358,7 +358,7 @@ out more broadly to ask for help reviewing. Consider asking:
   page in the main Godot repository.
 
 4. GitHub checklist
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 * **Validate the target branch of the PR.**
 
@@ -413,7 +413,7 @@ out more broadly to ask for help reviewing. Consider asking:
   milestone for the closed issue.
 
 5. Merge the pull request
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If it is appropriate for you to be merging a pull request (i.e. you are on the
 production team or you are the team leader for that area), you are confident

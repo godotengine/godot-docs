@@ -77,9 +77,9 @@ Signals
 
 .. rst-class:: classref-signal
 
-**despawned**\ (\ node\: :ref:`Node<class_Node>`\ )
+**despawned**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_MultiplayerSpawner_signal_despawned>`
 
-Emitted when a spawnable scene or custom spawn was despawned by the multiplayer authority. Only called on puppets.
+Emitted when a spawnable scene or custom spawn was despawned by the multiplayer authority. Only called on remote peers.
 
 .. rst-class:: classref-item-separator
 
@@ -89,9 +89,9 @@ Emitted when a spawnable scene or custom spawn was despawned by the multiplayer 
 
 .. rst-class:: classref-signal
 
-**spawned**\ (\ node\: :ref:`Node<class_Node>`\ )
+**spawned**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_MultiplayerSpawner_signal_spawned>`
 
-Emitted when a spawnable scene or custom spawn was spawned by the multiplayer authority. Only called on puppets.
+Emitted when a spawnable scene or custom spawn was spawned by the multiplayer authority. Only called on remote peers.
 
 .. rst-class:: classref-section-separator
 
@@ -106,14 +106,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Callable<class_Callable>` **spawn_function**
+:ref:`Callable<class_Callable>` **spawn_function** :ref:`🔗<class_MultiplayerSpawner_property_spawn_function>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_spawn_function**\ (\ value\: :ref:`Callable<class_Callable>`\ )
 - :ref:`Callable<class_Callable>` **get_spawn_function**\ (\ )
 
-Method called on all peers when for every custom :ref:`spawn<class_MultiplayerSpawner_method_spawn>` requested by the authority. Will receive the ``data`` parameter, and should return a :ref:`Node<class_Node>` that is not in the scene tree.
+Method called on all peers when a custom :ref:`spawn<class_MultiplayerSpawner_method_spawn>` is requested by the authority. Will receive the ``data`` parameter, and should return a :ref:`Node<class_Node>` that is not in the scene tree.
 
 \ **Note:** The returned node should **not** be added to the scene with :ref:`Node.add_child<class_Node_method_add_child>`. This is done automatically.
 
@@ -125,14 +125,14 @@ Method called on all peers when for every custom :ref:`spawn<class_MultiplayerSp
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **spawn_limit** = ``0``
+:ref:`int<class_int>` **spawn_limit** = ``0`` :ref:`🔗<class_MultiplayerSpawner_property_spawn_limit>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_spawn_limit**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_spawn_limit**\ (\ )
 
-Maximum nodes that is allowed to be spawned by this spawner. Includes both spawnable scenes and custom spawns.
+Maximum number of nodes allowed to be spawned by this spawner. Includes both spawnable scenes and custom spawns.
 
 When set to ``0`` (the default), there is no limit.
 
@@ -144,7 +144,7 @@ When set to ``0`` (the default), there is no limit.
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **spawn_path** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **spawn_path** = ``NodePath("")`` :ref:`🔗<class_MultiplayerSpawner_property_spawn_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +166,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_spawnable_scene**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **add_spawnable_scene**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_MultiplayerSpawner_method_add_spawnable_scene>`
 
 Adds a scene path to spawnable scenes, making it automatically replicated from the multiplayer authority to other peers when added as children of the node pointed by :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`.
 
@@ -178,7 +178,7 @@ Adds a scene path to spawnable scenes, making it automatically replicated from t
 
 .. rst-class:: classref-method
 
-|void| **clear_spawnable_scenes**\ (\ )
+|void| **clear_spawnable_scenes**\ (\ ) :ref:`🔗<class_MultiplayerSpawner_method_clear_spawnable_scenes>`
 
 Clears all spawnable scenes. Does not despawn existing instances on remote peers.
 
@@ -190,7 +190,7 @@ Clears all spawnable scenes. Does not despawn existing instances on remote peers
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_spawnable_scene**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_spawnable_scene**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiplayerSpawner_method_get_spawnable_scene>`
 
 Returns the spawnable scene path by index.
 
@@ -202,7 +202,7 @@ Returns the spawnable scene path by index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_spawnable_scene_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_spawnable_scene_count**\ (\ ) |const| :ref:`🔗<class_MultiplayerSpawner_method_get_spawnable_scene_count>`
 
 Returns the count of spawnable scene paths.
 
@@ -214,7 +214,7 @@ Returns the count of spawnable scene paths.
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **spawn**\ (\ data\: :ref:`Variant<class_Variant>` = null\ )
+:ref:`Node<class_Node>` **spawn**\ (\ data\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_MultiplayerSpawner_method_spawn>`
 
 Requests a custom spawn, with ``data`` passed to :ref:`spawn_function<class_MultiplayerSpawner_property_spawn_function>` on all peers. Returns the locally spawned node instance already inside the scene tree, and added as a child of the node pointed by :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`.
 

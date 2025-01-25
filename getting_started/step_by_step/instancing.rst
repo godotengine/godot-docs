@@ -58,6 +58,9 @@ Finally, click the Import & Edit button.
 
 .. image:: img/instancing_import_and_edit_button.webp
 
+A window notifying you that the project was last opened in an older Godot version
+may appear, that's not an issue. Click *Ok* to open the project.
+
 The project contains two packed scenes: ``main.tscn``, containing walls against
 which the ball collides, and ``ball.tscn``. The Main scene should open
 automatically. If you're seeing an empty 3D scene instead of the main scene, click the 2D button at the top of the screen.
@@ -114,8 +117,12 @@ There is more to instances. With this feature, you can:
 .. note:: Changing a property on an instance always overrides values from the
           corresponding packed scene.
 
-Let's try this. Open ``ball.tscn`` and select the Ball node. In the Inspector on
-the right, click on the PhysicsMaterial property to expand it.
+Let's try this. Double-click ``ball.tscn`` in the FileSystem to open it.
+
+.. image:: img/instancing_ball_scene_open.webp
+
+Select the Ball node. In the Inspector on the right, click on the PhysicsMaterial
+property to expand it.
 
 .. image:: img/instancing_physics_material_expand.webp
 
@@ -149,14 +156,17 @@ property to the value in the saved scene.
 
 Rerun the game and notice how this ball now falls much faster than the others.
 
-.. note:: You may notice you are unable to change the values of the ``PhysicsMaterial``
-          of the ball. This is because ``PhysicsMaterial`` is a resource, and needs
-          to be made unique before you can edit it in a scene that is linking to its
-          original scene. To make a resource unique for one instance, right-click on
-          it in the Inspector and click Make Unique in the contextual menu.
+.. note::
 
-          Resources are another essential building block of Godot games we will
-          cover in a later lesson.
+    You may notice you are unable to change the values of the PhysicsMaterial
+    of the ball. This is because PhysicsMaterial is a *resource*, and needs
+    to be made unique before you can edit it in a scene that is linking to its
+    original scene. To make a resource unique for one instance, right-click on
+    the **Physics Material** property in the Inspector and click **Make Unique**
+    in the context menu.
+
+    Resources are another essential building block of Godot games we will cover
+    in a later lesson.
 
 Scene instances as a design language
 ------------------------------------
@@ -176,7 +186,7 @@ For example, you could break down a shooter game like so:
 
 You can come up with a diagram like this for almost any type of game. Each
 rectangle represents an entity that's visible in the game from the player's
-perspective. The arrows tell you which scene owns which.
+perspective. The arrows point towards the insantiator of each scene.
 
 Once you have a diagram, we recommend creating a scene for each element listed
 in it to develop your game. You'll use instancing, either by code or directly in

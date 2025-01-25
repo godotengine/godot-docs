@@ -50,7 +50,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **CullMode**:
+enum **CullMode**: :ref:`🔗<enum_OccluderPolygon2D_CullMode>`
 
 .. _class_OccluderPolygon2D_constant_CULL_DISABLED:
 
@@ -89,7 +89,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **closed** = ``true``
+:ref:`bool<class_bool>` **closed** = ``true`` :ref:`🔗<class_OccluderPolygon2D_property_closed>`
 
 .. rst-class:: classref-property-setget
 
@@ -106,7 +106,7 @@ If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light c
 
 .. rst-class:: classref-property
 
-:ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode** = ``0``
+:ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode** = ``0`` :ref:`🔗<class_OccluderPolygon2D_property_cull_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +123,7 @@ The culling mode to use.
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()``
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()`` :ref:`🔗<class_OccluderPolygon2D_property_polygon>`
 
 .. rst-class:: classref-property-setget
 

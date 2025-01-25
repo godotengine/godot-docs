@@ -59,7 +59,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sync_to_physics** = ``true``
+:ref:`bool<class_bool>` **sync_to_physics** = ``true`` :ref:`🔗<class_AnimatableBody3D_property_sync_to_physics>`
 
 .. rst-class:: classref-property-setget
 

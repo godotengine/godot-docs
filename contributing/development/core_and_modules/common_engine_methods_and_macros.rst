@@ -85,7 +85,7 @@ There are two types of internationalization in Godot's codebase:
   editor. If a user uses the same text in one of their projects, it won't be
   translated if they provide a translation for it. When contributing to the
   engine, this is generally the macro you should use for localizable strings.
-- ``RTR()``: **Run-time translations** will be automatically localized in
+- ``RTR()``: **Runtime translations** will be automatically localized in
   projects if they provide a translation for the given string. This kind of
   translation shouldn't be used in editor-only code.
 
@@ -181,6 +181,8 @@ repetition:
 
 It's recommended to use ``GLOBAL_DEF``/``EDITOR_DEF`` only once per setting and
 use ``GLOBAL_GET``/``EDITOR_GET`` in all other places where it's referenced.
+
+.. _doc_common_engine_methods_and_macros_error_macros:
 
 Error macros
 ------------

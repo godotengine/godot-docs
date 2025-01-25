@@ -48,7 +48,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **BillboardType**:
+enum **BillboardType**: :ref:`🔗<enum_VisualShaderNodeBillboard_BillboardType>`
 
 .. _class_VisualShaderNodeBillboard_constant_BILLBOARD_TYPE_DISABLED:
 
@@ -103,7 +103,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>` **billboard_type** = ``1``
+:ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>` **billboard_type** = ``1`` :ref:`🔗<class_VisualShaderNodeBillboard_property_billboard_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -120,7 +120,7 @@ Controls how the object faces the camera. See :ref:`BillboardType<enum_VisualSha
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **keep_scale** = ``false``
+:ref:`bool<class_bool>` **keep_scale** = ``false`` :ref:`🔗<class_VisualShaderNodeBillboard_property_keep_scale>`
 
 .. rst-class:: classref-property-setget
 

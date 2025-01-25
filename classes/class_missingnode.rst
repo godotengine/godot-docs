@@ -52,7 +52,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **original_class**
+:ref:`String<class_String>` **original_class** :ref:`🔗<class_MissingNode_property_original_class>`
 
 .. rst-class:: classref-property-setget
 
@@ -69,7 +69,7 @@ The name of the class this node was supposed to be (see :ref:`Object.get_class<c
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **original_scene**
+:ref:`String<class_String>` **original_scene** :ref:`🔗<class_MissingNode_property_original_scene>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ Returns the path of the scene this node was instance of originally.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **recording_properties**
+:ref:`bool<class_bool>` **recording_properties** :ref:`🔗<class_MissingNode_property_recording_properties>`
 
 .. rst-class:: classref-property-setget
 

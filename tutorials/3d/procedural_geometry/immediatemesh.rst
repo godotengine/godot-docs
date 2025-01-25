@@ -47,7 +47,7 @@ Finally, once you have added all your vertices call ``surface_end()`` to signal
 that you have finished generating the surface. You can call ``surface_begin()``
 and ``surface_end()`` multiple times to generate multiple surfaces for the mesh.
 
-The example code below draws a single triangle in the ``_ready()`` function. 
+The example code below draws a single triangle in the ``_ready()`` function.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -57,7 +57,7 @@ The example code below draws a single triangle in the ``_ready()`` function.
     func _ready():
         # Begin draw.
         mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)
-	
+
         # Prepare attributes for add_vertex.
         mesh.surface_set_normal(Vector3(0, 0, 1))
         mesh.surface_set_uv(Vector2(0, 0))
@@ -78,7 +78,7 @@ The example code below draws a single triangle in the ``_ready()`` function.
 The ImmediateMesh can also be used across frames. Each time you call
 ``surface_begin()`` and ``surface_end()``, you are adding a new surface to the
 ImmediateMesh. If you want to recreate the mesh from scratch each frame, call
-``surface_clear()`` before calling ``surface_begin()``.
+``clear_surfaces()`` before calling ``surface_begin()``.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -92,7 +92,7 @@ ImmediateMesh. If you want to recreate the mesh from scratch each frame, call
 
         # Begin draw.
         mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)
-	
+
         # Draw mesh.
 
         # End drawing.

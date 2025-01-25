@@ -92,7 +92,8 @@ using a profiler, is to manually time the function or area under test.
 The specifics vary depending on the language, but in GDScript, you would do
 the following:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var time_start = Time.get_ticks_usec()
 
@@ -101,6 +102,16 @@ the following:
 
     var time_end = Time.get_ticks_usec()
     print("update_enemies() took %d microseconds" % time_end - time_start)
+
+ .. code-tab:: csharp
+
+    var timeStart = Time.GetTicksUsec();
+
+    // Your function you want to time.
+    UpdateEnemies();
+
+    var timeEnd = Time.GetTicksUsec();
+    GD.Print($"UpdateEnemies() took {timeEnd - timeStart} microseconds");
 
 When manually timing functions, it is usually a good idea to run the function
 many times (1,000 or more times), instead of just once (unless it is a very slow
@@ -157,7 +168,7 @@ language you choose. If your project is making a lot of calculations in its own
 code, consider moving those calculations to a faster language.
 
 GDScript
-^^^^^^^^
+~~~~~~~~
 
 :ref:`GDScript <toc-learn-scripting-gdscript>` is designed to be easy to use and iterate,
 and is ideal for making many types of games. However, in this language, ease of
@@ -166,7 +177,7 @@ calculations, consider moving some of your project to one of the other
 languages.
 
 C#
-^^
+~~
 
 :ref:`C# <toc-learn-scripting-C#>` is popular and has first-class support in Godot. It
 offers a good compromise between speed and ease of use. Beware of possible
@@ -175,13 +186,13 @@ common approach to workaround issues with garbage collection is to use *object
 pooling*, which is outside the scope of this guide.
 
 Other languages
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Third parties provide support for several other languages, including `Rust
 <https://github.com/godot-rust/gdext>`_.
 
 C++
-^^^
+~~~
 
 Godot is written in C++. Using C++ will usually result in the fastest code.
 However, on a practical level, it is the most difficult to deploy to end users'

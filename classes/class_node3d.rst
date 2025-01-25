@@ -12,7 +12,7 @@ Node3D
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioListener3D<class_AudioListener3D>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment3D<class_BoneAttachment3D>`, :ref:`Camera3D<class_Camera3D>`, :ref:`CollisionObject3D<class_CollisionObject3D>`, :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`, :ref:`CollisionShape3D<class_CollisionShape3D>`, :ref:`GridMap<class_GridMap>`, :ref:`ImporterMeshInstance3D<class_ImporterMeshInstance3D>`, :ref:`Joint3D<class_Joint3D>`, :ref:`LightmapProbe<class_LightmapProbe>`, :ref:`Marker3D<class_Marker3D>`, :ref:`NavigationLink3D<class_NavigationLink3D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`NavigationRegion3D<class_NavigationRegion3D>`, :ref:`OccluderInstance3D<class_OccluderInstance3D>`, :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>`, :ref:`OpenXRHand<class_OpenXRHand>`, :ref:`Path3D<class_Path3D>`, :ref:`PathFollow3D<class_PathFollow3D>`, :ref:`RayCast3D<class_RayCast3D>`, :ref:`RemoteTransform3D<class_RemoteTransform3D>`, :ref:`ShapeCast3D<class_ShapeCast3D>`, :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`SkeletonModifier3D<class_SkeletonModifier3D>`, :ref:`SpringArm3D<class_SpringArm3D>`, :ref:`VehicleWheel3D<class_VehicleWheel3D>`, :ref:`VisualInstance3D<class_VisualInstance3D>`, :ref:`XRFaceModifier3D<class_XRFaceModifier3D>`, :ref:`XRNode3D<class_XRNode3D>`, :ref:`XROrigin3D<class_XROrigin3D>`
+**Inherited By:** :ref:`AudioListener3D<class_AudioListener3D>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment3D<class_BoneAttachment3D>`, :ref:`Camera3D<class_Camera3D>`, :ref:`CollisionObject3D<class_CollisionObject3D>`, :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`, :ref:`CollisionShape3D<class_CollisionShape3D>`, :ref:`GridMap<class_GridMap>`, :ref:`ImporterMeshInstance3D<class_ImporterMeshInstance3D>`, :ref:`Joint3D<class_Joint3D>`, :ref:`LightmapProbe<class_LightmapProbe>`, :ref:`Marker3D<class_Marker3D>`, :ref:`NavigationLink3D<class_NavigationLink3D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`NavigationRegion3D<class_NavigationRegion3D>`, :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>`, :ref:`OpenXRHand<class_OpenXRHand>`, :ref:`Path3D<class_Path3D>`, :ref:`PathFollow3D<class_PathFollow3D>`, :ref:`RayCast3D<class_RayCast3D>`, :ref:`RemoteTransform3D<class_RemoteTransform3D>`, :ref:`ShapeCast3D<class_ShapeCast3D>`, :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`SkeletonModifier3D<class_SkeletonModifier3D>`, :ref:`SpringArm3D<class_SpringArm3D>`, :ref:`SpringBoneCollision3D<class_SpringBoneCollision3D>`, :ref:`VehicleWheel3D<class_VehicleWheel3D>`, :ref:`VisualInstance3D<class_VisualInstance3D>`, :ref:`XRFaceModifier3D<class_XRFaceModifier3D>`, :ref:`XRNode3D<class_XRNode3D>`, :ref:`XROrigin3D<class_XROrigin3D>`
 
 Most basic 3D game object, parent of all 3D-related nodes.
 
@@ -101,6 +101,8 @@ Methods
    +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Node3DGizmo<class_Node3DGizmo>`\] | :ref:`get_gizmos<class_Node3D_method_get_gizmos>`\ (\ ) |const|                                                                                                                                                                                                           |
    +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`                              | :ref:`get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`\ (\ )                                                                                                                                                                     |
+   +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node3D<class_Node3D>`                                        | :ref:`get_parent_node_3d<class_Node3D_method_get_parent_node_3d>`\ (\ ) |const|                                                                                                                                                                                           |
    +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`World3D<class_World3D>`                                      | :ref:`get_world_3d<class_Node3D_method_get_world_3d>`\ (\ ) |const|                                                                                                                                                                                                       |
@@ -177,7 +179,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**visibility_changed**\ (\ )
+**visibility_changed**\ (\ ) :ref:`🔗<class_Node3D_signal_visibility_changed>`
 
 Emitted when node visibility changes.
 
@@ -194,7 +196,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **RotationEditMode**:
+enum **RotationEditMode**: :ref:`🔗<enum_Node3D_RotationEditMode>`
 
 .. _class_Node3D_constant_ROTATION_EDIT_MODE_EULER:
 
@@ -233,7 +235,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_TRANSFORM_CHANGED** = ``2000``
+**NOTIFICATION_TRANSFORM_CHANGED** = ``2000`` :ref:`🔗<class_Node3D_constant_NOTIFICATION_TRANSFORM_CHANGED>`
 
 **Node3D** nodes receive this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
@@ -243,7 +245,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_ENTER_WORLD** = ``41``
+**NOTIFICATION_ENTER_WORLD** = ``41`` :ref:`🔗<class_Node3D_constant_NOTIFICATION_ENTER_WORLD>`
 
 **Node3D** nodes receive this notification when they are registered to new :ref:`World3D<class_World3D>` resource.
 
@@ -251,7 +253,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_EXIT_WORLD** = ``42``
+**NOTIFICATION_EXIT_WORLD** = ``42`` :ref:`🔗<class_Node3D_constant_NOTIFICATION_EXIT_WORLD>`
 
 **Node3D** nodes receive this notification when they are unregistered from current :ref:`World3D<class_World3D>` resource.
 
@@ -259,7 +261,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_VISIBILITY_CHANGED** = ``43``
+**NOTIFICATION_VISIBILITY_CHANGED** = ``43`` :ref:`🔗<class_Node3D_constant_NOTIFICATION_VISIBILITY_CHANGED>`
 
 **Node3D** nodes receive this notification when their visibility changes.
 
@@ -267,7 +269,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = ``44``
+**NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = ``44`` :ref:`🔗<class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>`
 
 **Node3D** nodes receive this notification when their local transform changes. This is not received when the transform of a parent node is changed.
 
@@ -286,7 +288,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Basis<class_Basis>` **basis**
+:ref:`Basis<class_Basis>` **basis** :ref:`🔗<class_Node3D_property_basis>`
 
 .. rst-class:: classref-property-setget
 
@@ -303,7 +305,7 @@ Basis of the :ref:`transform<class_Node3D_property_transform>` property. Represe
 
 .. rst-class:: classref-property
 
-:ref:`Basis<class_Basis>` **global_basis**
+:ref:`Basis<class_Basis>` **global_basis** :ref:`🔗<class_Node3D_property_global_basis>`
 
 .. rst-class:: classref-property-setget
 
@@ -320,7 +322,7 @@ Global basis of this node. This is equivalent to ``global_transform.basis``.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **global_position**
+:ref:`Vector3<class_Vector3>` **global_position** :ref:`🔗<class_Node3D_property_global_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -337,7 +339,7 @@ Global position of this node. This is equivalent to ``global_transform.origin``.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **global_rotation**
+:ref:`Vector3<class_Vector3>` **global_rotation** :ref:`🔗<class_Node3D_property_global_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -356,7 +358,7 @@ Rotation part of the global transformation in radians, specified in terms of YXZ
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **global_rotation_degrees**
+:ref:`Vector3<class_Vector3>` **global_rotation_degrees** :ref:`🔗<class_Node3D_property_global_rotation_degrees>`
 
 .. rst-class:: classref-property-setget
 
@@ -373,7 +375,7 @@ Helper property to access :ref:`global_rotation<class_Node3D_property_global_rot
 
 .. rst-class:: classref-property
 
-:ref:`Transform3D<class_Transform3D>` **global_transform**
+:ref:`Transform3D<class_Transform3D>` **global_transform** :ref:`🔗<class_Node3D_property_global_transform>`
 
 .. rst-class:: classref-property-setget
 
@@ -390,7 +392,7 @@ World3D space (global) :ref:`Transform3D<class_Transform3D>` of this node.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_Node3D_property_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -407,7 +409,7 @@ Local position or translation of this node relative to the parent. This is equiv
 
 .. rst-class:: classref-property
 
-:ref:`Quaternion<class_Quaternion>` **quaternion**
+:ref:`Quaternion<class_Quaternion>` **quaternion** :ref:`🔗<class_Node3D_property_quaternion>`
 
 .. rst-class:: classref-property-setget
 
@@ -424,7 +426,7 @@ Access to the node rotation as a :ref:`Quaternion<class_Quaternion>`. This prope
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **rotation** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **rotation** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_Node3D_property_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -445,7 +447,7 @@ Rotation part of the local transformation in radians, specified in terms of Eule
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **rotation_degrees**
+:ref:`Vector3<class_Vector3>` **rotation_degrees** :ref:`🔗<class_Node3D_property_rotation_degrees>`
 
 .. rst-class:: classref-property-setget
 
@@ -462,7 +464,7 @@ Helper property to access :ref:`rotation<class_Node3D_property_rotation>` in deg
 
 .. rst-class:: classref-property
 
-:ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **rotation_edit_mode** = ``0``
+:ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **rotation_edit_mode** = ``0`` :ref:`🔗<class_Node3D_property_rotation_edit_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -479,7 +481,7 @@ Specify how rotation (and scale) will be presented in the editor.
 
 .. rst-class:: classref-property
 
-:ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` **rotation_order** = ``2``
+:ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` **rotation_order** = ``2`` :ref:`🔗<class_Node3D_property_rotation_order>`
 
 .. rst-class:: classref-property-setget
 
@@ -496,7 +498,7 @@ Specify the axis rotation order of the :ref:`rotation<class_Node3D_property_rota
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **scale** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **scale** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_Node3D_property_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -517,7 +519,7 @@ Scale part of the local transformation.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **top_level** = ``false``
+:ref:`bool<class_bool>` **top_level** = ``false`` :ref:`🔗<class_Node3D_property_top_level>`
 
 .. rst-class:: classref-property-setget
 
@@ -534,7 +536,7 @@ If ``true``, the node will not inherit its transformations from its parent. Node
 
 .. rst-class:: classref-property
 
-:ref:`Transform3D<class_Transform3D>` **transform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+:ref:`Transform3D<class_Transform3D>` **transform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` :ref:`🔗<class_Node3D_property_transform>`
 
 .. rst-class:: classref-property-setget
 
@@ -551,7 +553,7 @@ Local space :ref:`Transform3D<class_Transform3D>` of this node, with respect to 
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **visibility_parent** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **visibility_parent** = ``NodePath("")`` :ref:`🔗<class_Node3D_property_visibility_parent>`
 
 .. rst-class:: classref-property-setget
 
@@ -568,7 +570,7 @@ Defines the visibility range parent for this node and its subtree. The visibilit
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **visible** = ``true``
+:ref:`bool<class_bool>` **visible** = ``true`` :ref:`🔗<class_Node3D_property_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -590,7 +592,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_gizmo**\ (\ gizmo\: :ref:`Node3DGizmo<class_Node3DGizmo>`\ )
+|void| **add_gizmo**\ (\ gizmo\: :ref:`Node3DGizmo<class_Node3DGizmo>`\ ) :ref:`🔗<class_Node3D_method_add_gizmo>`
 
 Attach an editor gizmo to this **Node3D**.
 
@@ -604,7 +606,7 @@ Attach an editor gizmo to this **Node3D**.
 
 .. rst-class:: classref-method
 
-|void| **clear_gizmos**\ (\ )
+|void| **clear_gizmos**\ (\ ) :ref:`🔗<class_Node3D_method_clear_gizmos>`
 
 Clear all gizmos attached to this **Node3D**.
 
@@ -616,7 +618,7 @@ Clear all gizmos attached to this **Node3D**.
 
 .. rst-class:: classref-method
 
-|void| **clear_subgizmo_selection**\ (\ )
+|void| **clear_subgizmo_selection**\ (\ ) :ref:`🔗<class_Node3D_method_clear_subgizmo_selection>`
 
 Clears subgizmo selection for this node in the editor. Useful when subgizmo IDs become invalid after a property change.
 
@@ -628,7 +630,7 @@ Clears subgizmo selection for this node in the editor. Useful when subgizmo IDs 
 
 .. rst-class:: classref-method
 
-|void| **force_update_transform**\ (\ )
+|void| **force_update_transform**\ (\ ) :ref:`🔗<class_Node3D_method_force_update_transform>`
 
 Forces the transform to update. Transform changes in physics are not instant for performance reasons. Transforms are accumulated and then set. Use this if you need an up-to-date transform when doing physics operations.
 
@@ -640,9 +642,25 @@ Forces the transform to update. Transform changes in physics are not instant for
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Node3DGizmo<class_Node3DGizmo>`\] **get_gizmos**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Node3DGizmo<class_Node3DGizmo>`\] **get_gizmos**\ (\ ) |const| :ref:`🔗<class_Node3D_method_get_gizmos>`
 
 Returns all the gizmos attached to this **Node3D**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node3D_method_get_global_transform_interpolated:
+
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **get_global_transform_interpolated**\ (\ ) :ref:`🔗<class_Node3D_method_get_global_transform_interpolated>`
+
+When using physics interpolation, there will be circumstances in which you want to know the interpolated (displayed) transform of a node rather than the standard transform (which may only be accurate to the most recent physics tick).
+
+This is particularly important for frame-based operations that take place in :ref:`Node._process<class_Node_private_method__process>`, rather than :ref:`Node._physics_process<class_Node_private_method__physics_process>`. Examples include :ref:`Camera3D<class_Camera3D>`\ s focusing on a node, or finding where to fire lasers from on a frame rather than physics tick.
+
+\ **Note:** This function creates an interpolation pump on the **Node3D** the first time it is called, which can respond to physics interpolation resets. If you get problems with "streaking" when initially following a **Node3D**, be sure to call :ref:`get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>` at least once *before* resetting the **Node3D** physics interpolation.
 
 .. rst-class:: classref-item-separator
 
@@ -652,7 +670,7 @@ Returns all the gizmos attached to this **Node3D**.
 
 .. rst-class:: classref-method
 
-:ref:`Node3D<class_Node3D>` **get_parent_node_3d**\ (\ ) |const|
+:ref:`Node3D<class_Node3D>` **get_parent_node_3d**\ (\ ) |const| :ref:`🔗<class_Node3D_method_get_parent_node_3d>`
 
 Returns the parent **Node3D**, or ``null`` if no parent exists, the parent is not of type **Node3D**, or :ref:`top_level<class_Node3D_property_top_level>` is ``true``.
 
@@ -666,7 +684,7 @@ Returns the parent **Node3D**, or ``null`` if no parent exists, the parent is no
 
 .. rst-class:: classref-method
 
-:ref:`World3D<class_World3D>` **get_world_3d**\ (\ ) |const|
+:ref:`World3D<class_World3D>` **get_world_3d**\ (\ ) |const| :ref:`🔗<class_Node3D_method_get_world_3d>`
 
 Returns the current :ref:`World3D<class_World3D>` resource this **Node3D** node is registered to.
 
@@ -678,7 +696,7 @@ Returns the current :ref:`World3D<class_World3D>` resource this **Node3D** node 
 
 .. rst-class:: classref-method
 
-|void| **global_rotate**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ )
+|void| **global_rotate**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Node3D_method_global_rotate>`
 
 Rotates the global (world) transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians. The rotation axis is in global coordinate system.
 
@@ -690,7 +708,7 @@ Rotates the global (world) transformation around axis, a unit :ref:`Vector3<clas
 
 .. rst-class:: classref-method
 
-|void| **global_scale**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ )
+|void| **global_scale**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Node3D_method_global_scale>`
 
 Scales the global (world) transformation by the given :ref:`Vector3<class_Vector3>` scale factors.
 
@@ -702,7 +720,7 @@ Scales the global (world) transformation by the given :ref:`Vector3<class_Vector
 
 .. rst-class:: classref-method
 
-|void| **global_translate**\ (\ offset\: :ref:`Vector3<class_Vector3>`\ )
+|void| **global_translate**\ (\ offset\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Node3D_method_global_translate>`
 
 Moves the global (world) transformation by :ref:`Vector3<class_Vector3>` offset. The offset is in global coordinate system.
 
@@ -714,7 +732,7 @@ Moves the global (world) transformation by :ref:`Vector3<class_Vector3>` offset.
 
 .. rst-class:: classref-method
 
-|void| **hide**\ (\ )
+|void| **hide**\ (\ ) :ref:`🔗<class_Node3D_method_hide>`
 
 Disables rendering of this node. Changes :ref:`visible<class_Node3D_property_visible>` to ``false``.
 
@@ -726,7 +744,7 @@ Disables rendering of this node. Changes :ref:`visible<class_Node3D_property_vis
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_local_transform_notification_enabled**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_local_transform_notification_enabled**\ (\ ) |const| :ref:`🔗<class_Node3D_method_is_local_transform_notification_enabled>`
 
 Returns whether node notifies about its local transformation changes. **Node3D** will not propagate this by default.
 
@@ -738,7 +756,7 @@ Returns whether node notifies about its local transformation changes. **Node3D**
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_scale_disabled**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_scale_disabled**\ (\ ) |const| :ref:`🔗<class_Node3D_method_is_scale_disabled>`
 
 Returns whether this node uses a scale of ``(1, 1, 1)`` or its local transformation scale.
 
@@ -750,7 +768,7 @@ Returns whether this node uses a scale of ``(1, 1, 1)`` or its local transformat
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_transform_notification_enabled**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_transform_notification_enabled**\ (\ ) |const| :ref:`🔗<class_Node3D_method_is_transform_notification_enabled>`
 
 Returns whether the node notifies about its global and local transformation changes. **Node3D** will not propagate this by default.
 
@@ -762,7 +780,7 @@ Returns whether the node notifies about its global and local transformation chan
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_visible_in_tree**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_visible_in_tree**\ (\ ) |const| :ref:`🔗<class_Node3D_method_is_visible_in_tree>`
 
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_Node3D_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree.
 
@@ -774,13 +792,15 @@ Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`
 
 .. rst-class:: classref-method
 
-|void| **look_at**\ (\ target\: :ref:`Vector3<class_Vector3>`, up\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0), use_model_front\: :ref:`bool<class_bool>` = false\ )
+|void| **look_at**\ (\ target\: :ref:`Vector3<class_Vector3>`, up\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0), use_model_front\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node3D_method_look_at>`
 
 Rotates the node so that the local forward axis (-Z, :ref:`Vector3.FORWARD<class_Vector3_constant_FORWARD>`) points toward the ``target`` position.
 
 The local up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the local forward axis. The resulting transform is orthogonal, and the scale is preserved. Non-uniform scaling may not work correctly.
 
-The ``target`` position cannot be the same as the node's position, the ``up`` vector cannot be zero, and the direction from the node's position to the ``target`` vector cannot be parallel to the ``up`` vector.
+The ``target`` position cannot be the same as the node's position, the ``up`` vector cannot be zero.
+
+The ``target`` and the ``up`` cannot be :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, and shouldn't be colinear to avoid unintended rotation around local Z axis.
 
 Operations take place in global space, which means that the node must be in the scene tree.
 
@@ -794,7 +814,7 @@ If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forw
 
 .. rst-class:: classref-method
 
-|void| **look_at_from_position**\ (\ position\: :ref:`Vector3<class_Vector3>`, target\: :ref:`Vector3<class_Vector3>`, up\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0), use_model_front\: :ref:`bool<class_bool>` = false\ )
+|void| **look_at_from_position**\ (\ position\: :ref:`Vector3<class_Vector3>`, target\: :ref:`Vector3<class_Vector3>`, up\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0), use_model_front\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node3D_method_look_at_from_position>`
 
 Moves the node to the specified ``position``, and then rotates the node to point toward the ``target`` as per :ref:`look_at<class_Node3D_method_look_at>`. Operations take place in global space.
 
@@ -806,7 +826,7 @@ Moves the node to the specified ``position``, and then rotates the node to point
 
 .. rst-class:: classref-method
 
-|void| **orthonormalize**\ (\ )
+|void| **orthonormalize**\ (\ ) :ref:`🔗<class_Node3D_method_orthonormalize>`
 
 Resets this node's transformations (like scale, skew and taper) preserving its rotation and translation by performing Gram-Schmidt orthonormalization on this node's :ref:`Transform3D<class_Transform3D>`.
 
@@ -818,7 +838,7 @@ Resets this node's transformations (like scale, skew and taper) preserving its r
 
 .. rst-class:: classref-method
 
-|void| **rotate**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ )
+|void| **rotate**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Node3D_method_rotate>`
 
 Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians.
 
@@ -830,7 +850,7 @@ Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3
 
 .. rst-class:: classref-method
 
-|void| **rotate_object_local**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ )
+|void| **rotate_object_local**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Node3D_method_rotate_object_local>`
 
 Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians. The rotation axis is in object-local coordinate system.
 
@@ -842,7 +862,7 @@ Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3
 
 .. rst-class:: classref-method
 
-|void| **rotate_x**\ (\ angle\: :ref:`float<class_float>`\ )
+|void| **rotate_x**\ (\ angle\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Node3D_method_rotate_x>`
 
 Rotates the local transformation around the X axis by angle in radians.
 
@@ -854,7 +874,7 @@ Rotates the local transformation around the X axis by angle in radians.
 
 .. rst-class:: classref-method
 
-|void| **rotate_y**\ (\ angle\: :ref:`float<class_float>`\ )
+|void| **rotate_y**\ (\ angle\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Node3D_method_rotate_y>`
 
 Rotates the local transformation around the Y axis by angle in radians.
 
@@ -866,7 +886,7 @@ Rotates the local transformation around the Y axis by angle in radians.
 
 .. rst-class:: classref-method
 
-|void| **rotate_z**\ (\ angle\: :ref:`float<class_float>`\ )
+|void| **rotate_z**\ (\ angle\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Node3D_method_rotate_z>`
 
 Rotates the local transformation around the Z axis by angle in radians.
 
@@ -878,7 +898,7 @@ Rotates the local transformation around the Z axis by angle in radians.
 
 .. rst-class:: classref-method
 
-|void| **scale_object_local**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ )
+|void| **scale_object_local**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Node3D_method_scale_object_local>`
 
 Scales the local transformation by given 3D scale factors in object-local coordinate system.
 
@@ -890,7 +910,7 @@ Scales the local transformation by given 3D scale factors in object-local coordi
 
 .. rst-class:: classref-method
 
-|void| **set_disable_scale**\ (\ disable\: :ref:`bool<class_bool>`\ )
+|void| **set_disable_scale**\ (\ disable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Node3D_method_set_disable_scale>`
 
 Sets whether the node uses a scale of ``(1, 1, 1)`` or its local transformation scale. Changes to the local transformation scale are preserved.
 
@@ -902,7 +922,7 @@ Sets whether the node uses a scale of ``(1, 1, 1)`` or its local transformation 
 
 .. rst-class:: classref-method
 
-|void| **set_identity**\ (\ )
+|void| **set_identity**\ (\ ) :ref:`🔗<class_Node3D_method_set_identity>`
 
 Reset all transformations for this node (sets its :ref:`Transform3D<class_Transform3D>` to the identity matrix).
 
@@ -914,7 +934,7 @@ Reset all transformations for this node (sets its :ref:`Transform3D<class_Transf
 
 .. rst-class:: classref-method
 
-|void| **set_ignore_transform_notification**\ (\ enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_ignore_transform_notification**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Node3D_method_set_ignore_transform_notification>`
 
 Sets whether the node ignores notification that its transformation (global or local) changed.
 
@@ -926,7 +946,7 @@ Sets whether the node ignores notification that its transformation (global or lo
 
 .. rst-class:: classref-method
 
-|void| **set_notify_local_transform**\ (\ enable\: :ref:`bool<class_bool>`\ )
+|void| **set_notify_local_transform**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Node3D_method_set_notify_local_transform>`
 
 Sets whether the node notifies about its local transformation changes. **Node3D** will not propagate this by default.
 
@@ -938,7 +958,7 @@ Sets whether the node notifies about its local transformation changes. **Node3D*
 
 .. rst-class:: classref-method
 
-|void| **set_notify_transform**\ (\ enable\: :ref:`bool<class_bool>`\ )
+|void| **set_notify_transform**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Node3D_method_set_notify_transform>`
 
 Sets whether the node notifies about its global and local transformation changes. **Node3D** will not propagate this by default, unless it is in the editor context and it has a valid gizmo.
 
@@ -950,7 +970,7 @@ Sets whether the node notifies about its global and local transformation changes
 
 .. rst-class:: classref-method
 
-|void| **set_subgizmo_selection**\ (\ gizmo\: :ref:`Node3DGizmo<class_Node3DGizmo>`, id\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )
+|void| **set_subgizmo_selection**\ (\ gizmo\: :ref:`Node3DGizmo<class_Node3DGizmo>`, id\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Node3D_method_set_subgizmo_selection>`
 
 Set subgizmo selection for this node in the editor.
 
@@ -964,7 +984,7 @@ Set subgizmo selection for this node in the editor.
 
 .. rst-class:: classref-method
 
-|void| **show**\ (\ )
+|void| **show**\ (\ ) :ref:`🔗<class_Node3D_method_show>`
 
 Enables rendering of this node. Changes :ref:`visible<class_Node3D_property_visible>` to ``true``.
 
@@ -976,7 +996,7 @@ Enables rendering of this node. Changes :ref:`visible<class_Node3D_property_visi
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **to_global**\ (\ local_point\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **to_global**\ (\ local_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Node3D_method_to_global>`
 
 Transforms ``local_point`` from this node's local space to world space.
 
@@ -988,7 +1008,7 @@ Transforms ``local_point`` from this node's local space to world space.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **to_local**\ (\ global_point\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **to_local**\ (\ global_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Node3D_method_to_local>`
 
 Transforms ``global_point`` from world space to this node's local space.
 
@@ -1000,7 +1020,7 @@ Transforms ``global_point`` from world space to this node's local space.
 
 .. rst-class:: classref-method
 
-|void| **translate**\ (\ offset\: :ref:`Vector3<class_Vector3>`\ )
+|void| **translate**\ (\ offset\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Node3D_method_translate>`
 
 Changes the node's position by the given offset :ref:`Vector3<class_Vector3>`.
 
@@ -1014,7 +1034,7 @@ Note that the translation ``offset`` is affected by the node's scale, so if scal
 
 .. rst-class:: classref-method
 
-|void| **translate_object_local**\ (\ offset\: :ref:`Vector3<class_Vector3>`\ )
+|void| **translate_object_local**\ (\ offset\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Node3D_method_translate_object_local>`
 
 Changes the node's position by the given offset :ref:`Vector3<class_Vector3>` in local space.
 
@@ -1026,7 +1046,7 @@ Changes the node's position by the given offset :ref:`Vector3<class_Vector3>` in
 
 .. rst-class:: classref-method
 
-|void| **update_gizmos**\ (\ )
+|void| **update_gizmos**\ (\ ) :ref:`🔗<class_Node3D_method_update_gizmos>`
 
 Updates all the **Node3D** gizmos attached to this node.
 

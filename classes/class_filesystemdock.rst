@@ -52,7 +52,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**display_mode_changed**\ (\ )
+**display_mode_changed**\ (\ ) :ref:`🔗<class_FileSystemDock_signal_display_mode_changed>`
 
 Emitted when the user switches file display mode or split mode.
 
@@ -64,7 +64,7 @@ Emitted when the user switches file display mode or split mode.
 
 .. rst-class:: classref-signal
 
-**file_removed**\ (\ file\: :ref:`String<class_String>`\ )
+**file_removed**\ (\ file\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileSystemDock_signal_file_removed>`
 
 Emitted when the given ``file`` was removed.
 
@@ -76,7 +76,7 @@ Emitted when the given ``file`` was removed.
 
 .. rst-class:: classref-signal
 
-**files_moved**\ (\ old_file\: :ref:`String<class_String>`, new_file\: :ref:`String<class_String>`\ )
+**files_moved**\ (\ old_file\: :ref:`String<class_String>`, new_file\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileSystemDock_signal_files_moved>`
 
 Emitted when a file is moved from ``old_file`` path to ``new_file`` path.
 
@@ -88,7 +88,7 @@ Emitted when a file is moved from ``old_file`` path to ``new_file`` path.
 
 .. rst-class:: classref-signal
 
-**folder_color_changed**\ (\ )
+**folder_color_changed**\ (\ ) :ref:`🔗<class_FileSystemDock_signal_folder_color_changed>`
 
 Emitted when folders change color.
 
@@ -100,7 +100,7 @@ Emitted when folders change color.
 
 .. rst-class:: classref-signal
 
-**folder_moved**\ (\ old_folder\: :ref:`String<class_String>`, new_folder\: :ref:`String<class_String>`\ )
+**folder_moved**\ (\ old_folder\: :ref:`String<class_String>`, new_folder\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileSystemDock_signal_folder_moved>`
 
 Emitted when a folder is moved from ``old_folder`` path to ``new_folder`` path.
 
@@ -112,7 +112,7 @@ Emitted when a folder is moved from ``old_folder`` path to ``new_folder`` path.
 
 .. rst-class:: classref-signal
 
-**folder_removed**\ (\ folder\: :ref:`String<class_String>`\ )
+**folder_removed**\ (\ folder\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileSystemDock_signal_folder_removed>`
 
 Emitted when the given ``folder`` was removed.
 
@@ -124,7 +124,7 @@ Emitted when the given ``folder`` was removed.
 
 .. rst-class:: classref-signal
 
-**inherit**\ (\ file\: :ref:`String<class_String>`\ )
+**inherit**\ (\ file\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileSystemDock_signal_inherit>`
 
 Emitted when a new scene is created that inherits the scene at ``file`` path.
 
@@ -136,7 +136,7 @@ Emitted when a new scene is created that inherits the scene at ``file`` path.
 
 .. rst-class:: classref-signal
 
-**instantiate**\ (\ files\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+**instantiate**\ (\ files\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_FileSystemDock_signal_instantiate>`
 
 Emitted when the given scenes are being instantiated in the editor.
 
@@ -148,7 +148,7 @@ Emitted when the given scenes are being instantiated in the editor.
 
 .. rst-class:: classref-signal
 
-**resource_removed**\ (\ resource\: :ref:`Resource<class_Resource>`\ )
+**resource_removed**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) :ref:`🔗<class_FileSystemDock_signal_resource_removed>`
 
 Emitted when an external ``resource`` had its file removed.
 
@@ -165,7 +165,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_resource_tooltip_plugin**\ (\ plugin\: :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>`\ )
+|void| **add_resource_tooltip_plugin**\ (\ plugin\: :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>`\ ) :ref:`🔗<class_FileSystemDock_method_add_resource_tooltip_plugin>`
 
 Registers a new :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>`.
 
@@ -177,7 +177,7 @@ Registers a new :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlu
 
 .. rst-class:: classref-method
 
-|void| **navigate_to_path**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **navigate_to_path**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileSystemDock_method_navigate_to_path>`
 
 Sets the given ``path`` as currently selected, ensuring that the selected file/directory is visible.
 
@@ -189,7 +189,7 @@ Sets the given ``path`` as currently selected, ensuring that the selected file/d
 
 .. rst-class:: classref-method
 
-|void| **remove_resource_tooltip_plugin**\ (\ plugin\: :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>`\ )
+|void| **remove_resource_tooltip_plugin**\ (\ plugin\: :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>`\ ) :ref:`🔗<class_FileSystemDock_method_remove_resource_tooltip_plugin>`
 
 Removes an :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>`. Fails if the plugin wasn't previously added.
 

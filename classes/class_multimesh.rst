@@ -53,31 +53,33 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`    | :ref:`buffer<class_MultiMesh_property_buffer>`                                 | ``PackedFloat32Array()``   |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`PackedColorArray<class_PackedColorArray>`        | :ref:`color_array<class_MultiMesh_property_color_array>`                       |                            |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`AABB<class_AABB>`                                | :ref:`custom_aabb<class_MultiMesh_property_custom_aabb>`                       | ``AABB(0, 0, 0, 0, 0, 0)`` |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`PackedColorArray<class_PackedColorArray>`        | :ref:`custom_data_array<class_MultiMesh_property_custom_data_array>`           |                            |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`int<class_int>`                                  | :ref:`instance_count<class_MultiMesh_property_instance_count>`                 | ``0``                      |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`Mesh<class_Mesh>`                                | :ref:`mesh<class_MultiMesh_property_mesh>`                                     |                            |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>`    | :ref:`transform_2d_array<class_MultiMesh_property_transform_2d_array>`         |                            |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`PackedVector3Array<class_PackedVector3Array>`    | :ref:`transform_array<class_MultiMesh_property_transform_array>`               |                            |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` | :ref:`transform_format<class_MultiMesh_property_transform_format>`             | ``0``                      |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`bool<class_bool>`                                | :ref:`use_colors<class_MultiMesh_property_use_colors>`                         | ``false``                  |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`bool<class_bool>`                                | :ref:`use_custom_data<class_MultiMesh_property_use_custom_data>`               | ``false``                  |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
-   | :ref:`int<class_int>`                                  | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` | ``-1``                     |
-   +--------------------------------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`                            | :ref:`buffer<class_MultiMesh_property_buffer>`                                               | ``PackedFloat32Array()``   |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`PackedColorArray<class_PackedColorArray>`                                | :ref:`color_array<class_MultiMesh_property_color_array>`                                     |                            |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`AABB<class_AABB>`                                                        | :ref:`custom_aabb<class_MultiMesh_property_custom_aabb>`                                     | ``AABB(0, 0, 0, 0, 0, 0)`` |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`PackedColorArray<class_PackedColorArray>`                                | :ref:`custom_data_array<class_MultiMesh_property_custom_data_array>`                         |                            |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`int<class_int>`                                                          | :ref:`instance_count<class_MultiMesh_property_instance_count>`                               | ``0``                      |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Mesh<class_Mesh>`                                                        | :ref:`mesh<class_MultiMesh_property_mesh>`                                                   |                            |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`PhysicsInterpolationQuality<enum_MultiMesh_PhysicsInterpolationQuality>` | :ref:`physics_interpolation_quality<class_MultiMesh_property_physics_interpolation_quality>` | ``0``                      |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>`                            | :ref:`transform_2d_array<class_MultiMesh_property_transform_2d_array>`                       |                            |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>`                            | :ref:`transform_array<class_MultiMesh_property_transform_array>`                             |                            |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`                         | :ref:`transform_format<class_MultiMesh_property_transform_format>`                           | ``0``                      |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`bool<class_bool>`                                                        | :ref:`use_colors<class_MultiMesh_property_use_colors>`                                       | ``false``                  |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`bool<class_bool>`                                                        | :ref:`use_custom_data<class_MultiMesh_property_use_custom_data>`                             | ``false``                  |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`int<class_int>`                                                          | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>`               | ``-1``                     |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -87,25 +89,29 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AABB<class_AABB>`               | :ref:`get_aabb<class_MultiMesh_method_get_aabb>`\ (\ ) |const|                                                                                                                |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>`             | :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>`\ (\ instance\: :ref:`int<class_int>`\ ) |const|                                                          |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>`             | :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>`\ (\ instance\: :ref:`int<class_int>`\ ) |const|                                              |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>`\ (\ instance\: :ref:`int<class_int>`\ ) |const|                                                  |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform2D<class_Transform2D>` | :ref:`get_instance_transform_2d<class_MultiMesh_method_get_instance_transform_2d>`\ (\ instance\: :ref:`int<class_int>`\ ) |const|                                            |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                | :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`\ (\ instance\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )                               |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                | :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`\ (\ instance\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ )             |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                | :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>`\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )       |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                | :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>`\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`               | :ref:`get_aabb<class_MultiMesh_method_get_aabb>`\ (\ ) |const|                                                                                                                                                             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>`\ (\ instance\: :ref:`int<class_int>`\ ) |const|                                                                                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>`\ (\ instance\: :ref:`int<class_int>`\ ) |const|                                                                                           |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>`\ (\ instance\: :ref:`int<class_int>`\ ) |const|                                                                                               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`get_instance_transform_2d<class_MultiMesh_method_get_instance_transform_2d>`\ (\ instance\: :ref:`int<class_int>`\ ) |const|                                                                                         |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`reset_instance_physics_interpolation<class_MultiMesh_method_reset_instance_physics_interpolation>`\ (\ instance\: :ref:`int<class_int>`\ )                                                                           |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_buffer_interpolated<class_MultiMesh_method_set_buffer_interpolated>`\ (\ buffer_curr\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`, buffer_prev\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`\ (\ instance\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )                                                                            |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`\ (\ instance\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ )                                                          |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>`\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )                                                    |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>`\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ )                                              |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -120,7 +126,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TransformFormat**:
+enum **TransformFormat**: :ref:`🔗<enum_MultiMesh_TransformFormat>`
 
 .. _class_MultiMesh_constant_TRANSFORM_2D:
 
@@ -138,6 +144,32 @@ Use this when using 2D transforms.
 
 Use this when using 3D transforms.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_MultiMesh_PhysicsInterpolationQuality:
+
+.. rst-class:: classref-enumeration
+
+enum **PhysicsInterpolationQuality**: :ref:`🔗<enum_MultiMesh_PhysicsInterpolationQuality>`
+
+.. _class_MultiMesh_constant_INTERP_QUALITY_FAST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PhysicsInterpolationQuality<enum_MultiMesh_PhysicsInterpolationQuality>` **INTERP_QUALITY_FAST** = ``0``
+
+Always interpolate using Basis lerping, which can produce warping artifacts in some situations.
+
+.. _class_MultiMesh_constant_INTERP_QUALITY_HIGH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PhysicsInterpolationQuality<enum_MultiMesh_PhysicsInterpolationQuality>` **INTERP_QUALITY_HIGH** = ``1``
+
+Attempt to interpolate using Basis slerping (spherical linear interpolation) where possible, otherwise fall back to lerping.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -151,7 +183,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **buffer** = ``PackedFloat32Array()``
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **buffer** = ``PackedFloat32Array()`` :ref:`🔗<class_MultiMesh_property_buffer>`
 
 .. rst-class:: classref-property-setget
 
@@ -162,6 +194,8 @@ Property Descriptions
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -170,7 +204,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedColorArray<class_PackedColorArray>` **color_array**
+:ref:`PackedColorArray<class_PackedColorArray>` **color_array** :ref:`🔗<class_MultiMesh_property_color_array>`
 
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` and :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>` instead.
 
@@ -186,7 +220,7 @@ Array containing each :ref:`Color<class_Color>` used by all instances of this me
 
 .. rst-class:: classref-property
 
-:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)``
+:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)`` :ref:`🔗<class_MultiMesh_property_custom_aabb>`
 
 .. rst-class:: classref-property-setget
 
@@ -203,7 +237,7 @@ Custom AABB for this MultiMesh resource. Setting this manually prevents costly r
 
 .. rst-class:: classref-property
 
-:ref:`PackedColorArray<class_PackedColorArray>` **custom_data_array**
+:ref:`PackedColorArray<class_PackedColorArray>` **custom_data_array** :ref:`🔗<class_MultiMesh_property_custom_data_array>`
 
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` and :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>` instead.
 
@@ -219,7 +253,7 @@ Array containing each custom data value used by all instances of this mesh, as a
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **instance_count** = ``0``
+:ref:`int<class_int>` **instance_count** = ``0`` :ref:`🔗<class_MultiMesh_property_instance_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -238,7 +272,7 @@ By default, all instances are drawn but you can limit this with :ref:`visible_in
 
 .. rst-class:: classref-property
 
-:ref:`Mesh<class_Mesh>` **mesh**
+:ref:`Mesh<class_Mesh>` **mesh** :ref:`🔗<class_MultiMesh_property_mesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -253,11 +287,32 @@ The looks of the individual instances can be modified using :ref:`set_instance_c
 
 ----
 
+.. _class_MultiMesh_property_physics_interpolation_quality:
+
+.. rst-class:: classref-property
+
+:ref:`PhysicsInterpolationQuality<enum_MultiMesh_PhysicsInterpolationQuality>` **physics_interpolation_quality** = ``0`` :ref:`🔗<class_MultiMesh_property_physics_interpolation_quality>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_physics_interpolation_quality**\ (\ value\: :ref:`PhysicsInterpolationQuality<enum_MultiMesh_PhysicsInterpolationQuality>`\ )
+- :ref:`PhysicsInterpolationQuality<enum_MultiMesh_PhysicsInterpolationQuality>` **get_physics_interpolation_quality**\ (\ )
+
+Choose whether to use an interpolation method that favors speed or quality.
+
+When using low physics tick rates (typically below 20) or high rates of object rotation, you may get better results from the high quality setting.
+
+\ **Note:** Fast quality does not equate to low quality. Except in the special cases mentioned above, the quality should be comparable to high quality.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_MultiMesh_property_transform_2d_array:
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **transform_2d_array**
+:ref:`PackedVector2Array<class_PackedVector2Array>` **transform_2d_array** :ref:`🔗<class_MultiMesh_property_transform_2d_array>`
 
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>` and :ref:`get_instance_transform_2d<class_MultiMesh_method_get_instance_transform_2d>` instead.
 
@@ -273,7 +328,7 @@ Array containing each :ref:`Transform2D<class_Transform2D>` value used by all in
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **transform_array**
+:ref:`PackedVector3Array<class_PackedVector3Array>` **transform_array** :ref:`🔗<class_MultiMesh_property_transform_array>`
 
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>` and :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>` instead.
 
@@ -289,7 +344,7 @@ Array containing each :ref:`Transform3D<class_Transform3D>` value used by all in
 
 .. rst-class:: classref-property
 
-:ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format** = ``0``
+:ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format** = ``0`` :ref:`🔗<class_MultiMesh_property_transform_format>`
 
 .. rst-class:: classref-property-setget
 
@@ -306,7 +361,7 @@ Format of transform used to transform mesh, either 2D or 3D.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_colors** = ``false``
+:ref:`bool<class_bool>` **use_colors** = ``false`` :ref:`🔗<class_MultiMesh_property_use_colors>`
 
 .. rst-class:: classref-property-setget
 
@@ -323,7 +378,7 @@ If ``true``, the **MultiMesh** will use color data (see :ref:`set_instance_color
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_custom_data** = ``false``
+:ref:`bool<class_bool>` **use_custom_data** = ``false`` :ref:`🔗<class_MultiMesh_property_use_custom_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -340,7 +395,7 @@ If ``true``, the **MultiMesh** will use custom data (see :ref:`set_instance_cust
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **visible_instance_count** = ``-1``
+:ref:`int<class_int>` **visible_instance_count** = ``-1`` :ref:`🔗<class_MultiMesh_property_visible_instance_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -362,7 +417,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AABB<class_AABB>` **get_aabb**\ (\ ) |const|
+:ref:`AABB<class_AABB>` **get_aabb**\ (\ ) |const| :ref:`🔗<class_MultiMesh_method_get_aabb>`
 
 Returns the visibility axis-aligned bounding box in local space.
 
@@ -374,7 +429,7 @@ Returns the visibility axis-aligned bounding box in local space.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_instance_color**\ (\ instance\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_instance_color**\ (\ instance\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiMesh_method_get_instance_color>`
 
 Gets a specific instance's color multiplier.
 
@@ -386,7 +441,7 @@ Gets a specific instance's color multiplier.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiMesh_method_get_instance_custom_data>`
 
 Returns the custom data that has been set for a specific instance.
 
@@ -398,7 +453,7 @@ Returns the custom data that has been set for a specific instance.
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_instance_transform**\ (\ instance\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_instance_transform**\ (\ instance\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiMesh_method_get_instance_transform>`
 
 Returns the :ref:`Transform3D<class_Transform3D>` of a specific instance.
 
@@ -410,9 +465,39 @@ Returns the :ref:`Transform3D<class_Transform3D>` of a specific instance.
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d**\ (\ instance\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d**\ (\ instance\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiMesh_method_get_instance_transform_2d>`
 
 Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MultiMesh_method_reset_instance_physics_interpolation:
+
+.. rst-class:: classref-method
+
+|void| **reset_instance_physics_interpolation**\ (\ instance\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MultiMesh_method_reset_instance_physics_interpolation>`
+
+When using *physics interpolation*, this function allows you to prevent interpolation on an instance in the current physics tick.
+
+This allows you to move instances instantaneously, and should usually be used when initially placing an instance such as a bullet to prevent graphical glitches.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MultiMesh_method_set_buffer_interpolated:
+
+.. rst-class:: classref-method
+
+|void| **set_buffer_interpolated**\ (\ buffer_curr\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`, buffer_prev\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_MultiMesh_method_set_buffer_interpolated>`
+
+An alternative to setting the :ref:`buffer<class_MultiMesh_property_buffer>` property, which can be used with *physics interpolation*. This method takes two arrays, and can set the data for the current and previous tick in one go. The renderer will automatically interpolate the data at each frame.
+
+This is useful for situations where the order of instances may change from physics tick to tick, such as particle systems.
+
+When the order of instances is coherent, the simpler alternative of setting :ref:`buffer<class_MultiMesh_property_buffer>` can still be used with interpolation.
 
 .. rst-class:: classref-item-separator
 
@@ -422,9 +507,11 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
 .. rst-class:: classref-method
 
-|void| **set_instance_color**\ (\ instance\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_instance_color**\ (\ instance\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_MultiMesh_method_set_instance_color>`
 
 Sets the color of a specific instance by *multiplying* the mesh's existing vertex colors. This allows for different color tinting per instance.
+
+\ **Note:** Each component is stored in 32 bits in the Forward+ and Mobile rendering methods, but is packed into 16 bits in the Compatibility rendering method.
 
 For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_property_use_colors>` is ``true`` on the **MultiMesh** and :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` is ``true`` on the material. If you intend to set an absolute color instead of tinting, make sure the material's albedo color is set to pure white (``Color(1, 1, 1)``).
 
@@ -436,9 +523,11 @@ For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_prope
 
 .. rst-class:: classref-method
 
-|void| **set_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ )
+|void| **set_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_MultiMesh_method_set_instance_custom_data>`
 
 Sets custom data for a specific instance. ``custom_data`` is a :ref:`Color<class_Color>` type only to contain 4 floating-point numbers.
+
+\ **Note:** Each number is stored in 32 bits in the Forward+ and Mobile rendering methods, but is packed into 16 bits in the Compatibility rendering method.
 
 For the custom data to be used, ensure that :ref:`use_custom_data<class_MultiMesh_property_use_custom_data>` is ``true``.
 
@@ -452,7 +541,7 @@ This custom instance data has to be manually accessed in your custom shader usin
 
 .. rst-class:: classref-method
 
-|void| **set_instance_transform**\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )
+|void| **set_instance_transform**\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_MultiMesh_method_set_instance_transform>`
 
 Sets the :ref:`Transform3D<class_Transform3D>` for a specific instance.
 
@@ -464,7 +553,7 @@ Sets the :ref:`Transform3D<class_Transform3D>` for a specific instance.
 
 .. rst-class:: classref-method
 
-|void| **set_instance_transform_2d**\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ )
+|void| **set_instance_transform_2d**\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_MultiMesh_method_set_instance_transform_2d>`
 
 Sets the :ref:`Transform2D<class_Transform2D>` for a specific instance.
 

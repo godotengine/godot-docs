@@ -24,6 +24,13 @@ Description
 
 **CanvasModulate** applies a color tint to all nodes on a canvas. Only one can be used to tint a canvas, but :ref:`CanvasLayer<class_CanvasLayer>`\ s can be used to render things independently.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`2D lights and shadows <../tutorials/2d/2d_lights_and_shadows>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -49,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_CanvasModulate_property_color>`
 
 .. rst-class:: classref-property-setget
 

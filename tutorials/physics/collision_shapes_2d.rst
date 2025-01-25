@@ -14,9 +14,10 @@ accuracy tradeoffs.
 
 You can define the shape of a :ref:`class_PhysicsBody2D` by adding one or more
 :ref:`CollisionShape2Ds <class_CollisionShape2D>` or
-:ref:`CollisionPolygon2Ds <class_CollisionPolygon2D>` as child nodes.
-Note that you must add a :ref:`class_Shape2D` *resource* to collision shape
-nodes in the Inspector dock.
+:ref:`CollisionPolygon2Ds <class_CollisionPolygon2D>` as *direct* child nodes.
+Indirect child nodes (i.e. children of child nodes) will be ignored and won't be
+used as collision shapes. Also, note that you must add a :ref:`class_Shape2D`
+*resource* to collision shape nodes in the Inspector dock.
 
 .. note::
 

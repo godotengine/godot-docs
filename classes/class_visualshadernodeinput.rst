@@ -65,7 +65,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**input_type_changed**\ (\ )
+**input_type_changed**\ (\ ) :ref:`🔗<class_VisualShaderNodeInput_signal_input_type_changed>`
 
 Emitted when input is changed via :ref:`input_name<class_VisualShaderNodeInput_property_input_name>`.
 
@@ -82,7 +82,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **input_name** = ``"[None]"``
+:ref:`String<class_String>` **input_name** = ``"[None]"`` :ref:`🔗<class_VisualShaderNodeInput_property_input_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -104,7 +104,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_input_real_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_input_real_name**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeInput_method_get_input_real_name>`
 
 Returns a translated name of the current constant in the Godot Shader Language. E.g. ``"ALBEDO"`` if the :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` equal to ``"albedo"``.
 

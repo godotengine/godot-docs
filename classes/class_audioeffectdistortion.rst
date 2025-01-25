@@ -65,7 +65,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Mode**:
+enum **Mode**: :ref:`🔗<enum_AudioEffectDistortion_Mode>`
 
 .. _class_AudioEffectDistortion_constant_MODE_CLIP:
 
@@ -124,7 +124,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **drive** = ``0.0``
+:ref:`float<class_float>` **drive** = ``0.0`` :ref:`🔗<class_AudioEffectDistortion_property_drive>`
 
 .. rst-class:: classref-property-setget
 
@@ -141,7 +141,7 @@ Distortion power. Value can range from 0 to 1.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **keep_hf_hz** = ``16000.0``
+:ref:`float<class_float>` **keep_hf_hz** = ``16000.0`` :ref:`🔗<class_AudioEffectDistortion_property_keep_hf_hz>`
 
 .. rst-class:: classref-property-setget
 
@@ -158,7 +158,7 @@ High-pass filter, in Hz. Frequencies higher than this value will not be affected
 
 .. rst-class:: classref-property
 
-:ref:`Mode<enum_AudioEffectDistortion_Mode>` **mode** = ``0``
+:ref:`Mode<enum_AudioEffectDistortion_Mode>` **mode** = ``0`` :ref:`🔗<class_AudioEffectDistortion_property_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -175,7 +175,7 @@ Distortion type.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **post_gain** = ``0.0``
+:ref:`float<class_float>` **post_gain** = ``0.0`` :ref:`🔗<class_AudioEffectDistortion_property_post_gain>`
 
 .. rst-class:: classref-property-setget
 
@@ -192,7 +192,7 @@ Increases or decreases the volume after the effect, in decibels. Value can range
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pre_gain** = ``0.0``
+:ref:`float<class_float>` **pre_gain** = ``0.0`` :ref:`🔗<class_AudioEffectDistortion_property_pre_gain>`
 
 .. rst-class:: classref-property-setget
 

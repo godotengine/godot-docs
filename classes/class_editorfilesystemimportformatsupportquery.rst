@@ -50,7 +50,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_file_extensions**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_file_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorFileSystemImportFormatSupportQuery_private_method__get_file_extensions>`
 
 Return the file extensions supported.
 
@@ -62,7 +62,7 @@ Return the file extensions supported.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_active**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_active**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorFileSystemImportFormatSupportQuery_private_method__is_active>`
 
 Return whether this importer is active.
 
@@ -74,9 +74,9 @@ Return whether this importer is active.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_query**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_query**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorFileSystemImportFormatSupportQuery_private_method__query>`
 
-Query support. Return false if import must not continue.
+Query support. Return ``false`` if import must not continue.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

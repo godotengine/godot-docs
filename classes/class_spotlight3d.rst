@@ -45,6 +45,8 @@ Properties
    :widths: auto
 
    +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | light_specular                                                                   | ``0.5`` (overrides :ref:`Light3D<class_Light3D_property_light_specular>`)     |
+   +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`float<class_float>` | shadow_bias                                                                      | ``0.03`` (overrides :ref:`Light3D<class_Light3D_property_shadow_bias>`)       |
    +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`float<class_float>` | shadow_normal_bias                                                               | ``1.0`` (overrides :ref:`Light3D<class_Light3D_property_shadow_normal_bias>`) |
@@ -71,7 +73,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spot_angle** = ``45.0``
+:ref:`float<class_float>` **spot_angle** = ``45.0`` :ref:`🔗<class_SpotLight3D_property_spot_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +92,7 @@ The spotlight's angle in degrees.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spot_angle_attenuation** = ``1.0``
+:ref:`float<class_float>` **spot_angle_attenuation** = ``1.0`` :ref:`🔗<class_SpotLight3D_property_spot_angle_attenuation>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +109,7 @@ The spotlight's *angular* attenuation curve. See also :ref:`spot_attenuation<cla
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spot_attenuation** = ``1.0``
+:ref:`float<class_float>` **spot_attenuation** = ``1.0`` :ref:`🔗<class_SpotLight3D_property_spot_attenuation>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,9 +118,9 @@ The spotlight's *angular* attenuation curve. See also :ref:`spot_attenuation<cla
 
 Controls the distance attenuation function for spotlights.
 
-A value of ``0.0`` smoothly attenuates light at the edge of the range. A value of ``1.0`` approaches a physical lighting model. A value of ``0.5`` approximates linear attenuation.
+A value of ``0.0`` will maintain a constant brightness through most of the range, but smoothly attenuate the light at the edge of the range. Use a value of ``2.0`` for physically accurate lights as it results in the proper inverse square attenutation.
 
-\ **Note:** Setting it to ``1.0`` may result in distant objects receiving minimal light, even within range. For example, with a range of ``4096``, an object at ``100`` units receives less than ``0.1`` energy.
+\ **Note:** Setting attenuation to ``2.0`` or higher may result in distant objects receiving minimal light, even within range. For example, with a range of ``4096``, an object at ``100`` units is attenuated by a factor of ``0.0001``. With a default brightness of ``1``, the light would not be visible at that distance.
 
 \ **Note:** Using negative or values higher than ``10.0`` may lead to unexpected results.
 
@@ -130,7 +132,7 @@ A value of ``0.0`` smoothly attenuates light at the edge of the range. A value o
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spot_range** = ``5.0``
+:ref:`float<class_float>` **spot_range** = ``5.0`` :ref:`🔗<class_SpotLight3D_property_spot_range>`
 
 .. rst-class:: classref-property-setget
 

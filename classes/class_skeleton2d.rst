@@ -69,7 +69,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**bone_setup_changed**\ (\ )
+**bone_setup_changed**\ (\ ) :ref:`🔗<class_Skeleton2D_signal_bone_setup_changed>`
 
 Emitted when the :ref:`Bone2D<class_Bone2D>` setup attached to this skeletons changes. This is primarily used internally within the skeleton.
 
@@ -86,7 +86,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **execute_modifications**\ (\ delta\: :ref:`float<class_float>`, execution_mode\: :ref:`int<class_int>`\ )
+|void| **execute_modifications**\ (\ delta\: :ref:`float<class_float>`, execution_mode\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton2D_method_execute_modifications>`
 
 Executes all the modifications on the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`, if the Skeleton2D has one assigned.
 
@@ -98,7 +98,7 @@ Executes all the modifications on the :ref:`SkeletonModificationStack2D<class_Sk
 
 .. rst-class:: classref-method
 
-:ref:`Bone2D<class_Bone2D>` **get_bone**\ (\ idx\: :ref:`int<class_int>`\ )
+:ref:`Bone2D<class_Bone2D>` **get_bone**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton2D_method_get_bone>`
 
 Returns a :ref:`Bone2D<class_Bone2D>` from the node hierarchy parented by Skeleton2D. The object to return is identified by the parameter ``idx``. Bones are indexed by descending the node hierarchy from top to bottom, adding the children of each branch before moving to the next sibling.
 
@@ -110,7 +110,7 @@ Returns a :ref:`Bone2D<class_Bone2D>` from the node hierarchy parented by Skelet
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_bone_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_bone_count**\ (\ ) |const| :ref:`🔗<class_Skeleton2D_method_get_bone_count>`
 
 Returns the number of :ref:`Bone2D<class_Bone2D>` nodes in the node hierarchy parented by Skeleton2D.
 
@@ -122,7 +122,7 @@ Returns the number of :ref:`Bone2D<class_Bone2D>` nodes in the node hierarchy pa
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_bone_local_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`\ )
+:ref:`Transform2D<class_Transform2D>` **get_bone_local_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton2D_method_get_bone_local_pose_override>`
 
 Returns the local pose override transform for ``bone_idx``.
 
@@ -134,7 +134,7 @@ Returns the local pose override transform for ``bone_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` **get_modification_stack**\ (\ ) |const|
+:ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` **get_modification_stack**\ (\ ) |const| :ref:`🔗<class_Skeleton2D_method_get_modification_stack>`
 
 Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` attached to this skeleton, if one exists.
 
@@ -146,7 +146,7 @@ Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_skeleton**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_skeleton**\ (\ ) |const| :ref:`🔗<class_Skeleton2D_method_get_skeleton>`
 
 Returns the :ref:`RID<class_RID>` of a Skeleton2D instance.
 
@@ -158,7 +158,7 @@ Returns the :ref:`RID<class_RID>` of a Skeleton2D instance.
 
 .. rst-class:: classref-method
 
-|void| **set_bone_local_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`, override_pose\: :ref:`Transform2D<class_Transform2D>`, strength\: :ref:`float<class_float>`, persistent\: :ref:`bool<class_bool>`\ )
+|void| **set_bone_local_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`, override_pose\: :ref:`Transform2D<class_Transform2D>`, strength\: :ref:`float<class_float>`, persistent\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Skeleton2D_method_set_bone_local_pose_override>`
 
 Sets the local pose transform, ``override_pose``, for the bone at ``bone_idx``.
 
@@ -174,7 +174,7 @@ Sets the local pose transform, ``override_pose``, for the bone at ``bone_idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_modification_stack**\ (\ modification_stack\: :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`\ )
+|void| **set_modification_stack**\ (\ modification_stack\: :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`\ ) :ref:`🔗<class_Skeleton2D_method_set_modification_stack>`
 
 Sets the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` attached to this skeleton.
 

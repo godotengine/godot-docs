@@ -298,8 +298,8 @@ And with that, you finished coding your first complete 3D game.
 **Congratulations**!
 
 In the next part, we'll quickly recap what you learned and give you some links
-to keep learning more. But for now, here are the complete ``Player.gd`` and
-``Mob.gd`` so you can check your code against them.
+to keep learning more. But for now, here are the complete ``player.gd`` and
+``mob.gd`` so you can check your code against them.
 
 Here's the *Player* script.
 
@@ -537,7 +537,7 @@ And the *Mob*'s script.
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
-        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # Rotate this mob randomly within range of -45 and +45 degrees,
         # so that it doesn't move directly towards the player.
         rotate_y(randf_range(-PI / 4, PI / 4))
 
@@ -586,7 +586,7 @@ And the *Mob*'s script.
             // We position the mob by placing it at startPosition
             // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
-            // Rotate this mob randomly within range of -90 and +90 degrees,
+            // Rotate this mob randomly within range of -45 and +45 degrees,
             // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 

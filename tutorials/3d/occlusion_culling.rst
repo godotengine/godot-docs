@@ -58,16 +58,16 @@ performance gains.
 
 .. note::
 
-    When using the Clustered Forward rendering backend, the engine already
+    When using the Forward+ renderer, the engine already
     performs a *depth prepass*. This consists in rendering a depth-only version
     of the scene before rendering the scene's actual materials. This is used to
     ensure each opaque pixel is only shaded once, reducing the cost of overdraw
     significantly.
 
-    The greatest performance benefits can be observed when using the Forward
-    Mobile rendering backend, as it does not feature a
-    depth prepass for performance reasons. As a result, occlusion culling will
-    actively decrease shading overdraw with that rendering backend.
+    The greatest performance benefits can be observed when using the Mobile
+    renderer, as it does not feature a depth prepass for performance reasons. As
+    a result, occlusion culling will actively decrease shading overdraw with 
+    that renderer.
 
     Nonetheless, even when using a depth prepass, there is still a noticeable
     benefit to occlusion culling in complex 3D scenes. However, in scenes with
@@ -79,7 +79,8 @@ How occlusion culling works in Godot
 
 .. note::
 
-    *"occluder" refers to the shape blocking the view, while "occludee" refers to the object being hidden.*
+    "occluder" refers to the shape blocking the view, while "occludee" refers to
+    the object being hidden.
 
 In Godot, occlusion culling works by rasterizing the scene's occluder geometry
 to a low-resolution buffer on the CPU. This is done using
@@ -114,7 +115,7 @@ There are two ways to set up occluders in a scene:
 .. _doc_occlusion_culling_baking:
 
 Automatically baking occluders (recommended)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -123,6 +124,10 @@ Automatically baking occluders (recommended)
     nodes are **not** taken into account when baking occluders. If you wish
     those to be treated as occluders, you have to manually create occluder
     shapes that (roughly) match their geometry.
+
+    Since Godot 4.4, CSG nodes can be taken into account in the baking process if they are
+    :ref:`converted to a MeshInstance3D <doc_csg_tools_converting_to_mesh_instance_3d>`
+    before baking occluders.
 
     This restriction does not apply to *occludees*. Any node type that inherits
     from GeometryInstance3D can be occluded.
@@ -151,7 +156,7 @@ on the **VisualInstance3D > Layers** property, uncheck layer 1 then check layer
 following the above process.
 
 Manually placing occluders
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This approach is more suited for specialized use cases, such as creating occlusion
 for MultiMeshInstance3D setups or CSG nodes (due to the aforementioned limitation).
@@ -192,21 +197,27 @@ your scene. Note that the performance benefit highly depends on the 3D editor
 camera's view angle, as occlusion culling is only effective if there are
 occluders in front of the camera.
 
-To toggle occlusion culling at run-time, set ``use_occlusion_culling`` on the
+To toggle occlusion culling at runtime, set ``use_occlusion_culling`` on the
 root viewport as follows:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     get_tree().root.use_occlusion_culling = true
 
-Toggling occlusion culling at run-time is useful to compare performance on a
+ .. code-tab:: csharp
+
+    GetTree().Root.UseOcclusionCulling = true;
+
+
+Toggling occlusion culling at runtime is useful to compare performance on a
 running project.
 
 Performance considerations
 --------------------------
 
 Design your levels to take advantage of occlusion culling
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **This is the most important guideline.** A good level design is not just about
 what the gameplay demands; it should also be built with occlusion in mind.
@@ -219,7 +230,7 @@ when possible. This provides the greatest culling opportunities compared to any
 other terrain shape.
 
 Avoid moving OccluderInstance3D nodes during gameplay
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This includes moving the parents of OccluderInstance3D nodes, as this will cause
 the nodes themselves to move in global space, therefore requiring the :abbr:`BVH
@@ -239,7 +250,7 @@ If you absolutely have to move an OccluderInstance3D node during gameplay, use a
 primitive Occluder3D shape for it instead of a complex baked shape.
 
 Use the simplest possible occluder shapes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you notice low performance or stuttering in complex 3D scenes, it may mean
 that the CPU is overloaded as a result of rendering detailed occluders.
@@ -261,7 +272,7 @@ Troubleshooting
 ---------------
 
 My occludee isn't being culled when it should be
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **On the occluder side:**
 
@@ -291,7 +302,7 @@ the occluder shapes for the occludee to be hidden.
 .. _doc_occlusion_culling_troubleshooting_false_negative:
 
 My occludee is being culled when it shouldn't be
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The most likely cause for this is that objects that were included in the
 occluder bake have been moved after baking occluders. For instance, this can

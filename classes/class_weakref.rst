@@ -46,7 +46,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_ref**\ (\ ) |const|
+:ref:`Variant<class_Variant>` **get_ref**\ (\ ) |const| :ref:`🔗<class_WeakRef_method_get_ref>`
 
 Returns the :ref:`Object<class_Object>` this weakref is referring to. Returns ``null`` if that object no longer exists.
 

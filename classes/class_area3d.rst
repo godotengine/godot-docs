@@ -130,7 +130,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**area_entered**\ (\ area\: :ref:`Area3D<class_Area3D>`\ )
+**area_entered**\ (\ area\: :ref:`Area3D<class_Area3D>`\ ) :ref:`🔗<class_Area3D_signal_area_entered>`
 
 Emitted when the received ``area`` enters this area. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -142,7 +142,7 @@ Emitted when the received ``area`` enters this area. Requires :ref:`monitoring<c
 
 .. rst-class:: classref-signal
 
-**area_exited**\ (\ area\: :ref:`Area3D<class_Area3D>`\ )
+**area_exited**\ (\ area\: :ref:`Area3D<class_Area3D>`\ ) :ref:`🔗<class_Area3D_signal_area_exited>`
 
 Emitted when the received ``area`` exits this area. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -154,13 +154,13 @@ Emitted when the received ``area`` exits this area. Requires :ref:`monitoring<cl
 
 .. rst-class:: classref-signal
 
-**area_shape_entered**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area3D<class_Area3D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
+**area_shape_entered**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area3D<class_Area3D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Area3D_signal_area_shape_entered>`
 
 Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``area`` enters a shape of this area. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
 \ ``local_shape_index`` and ``area_shape_index`` contain indices of the interacting shapes from this area and the other area, respectively. ``area_rid`` contains the :ref:`RID<class_RID>` of the other area. These values can be used with the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-\ **Example of getting the** :ref:`CollisionShape3D<class_CollisionShape3D>` **node from the shape index:**\ 
+\ **Example:** Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node from the shape index:
 
 
 .. tabs::
@@ -183,7 +183,7 @@ Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``area`` enters a s
 
 .. rst-class:: classref-signal
 
-**area_shape_exited**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area3D<class_Area3D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
+**area_shape_exited**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area3D<class_Area3D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Area3D_signal_area_shape_exited>`
 
 Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``area`` exits a shape of this area. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -197,7 +197,7 @@ See also :ref:`area_shape_entered<class_Area3D_signal_area_shape_entered>`.
 
 .. rst-class:: classref-signal
 
-**body_entered**\ (\ body\: :ref:`Node3D<class_Node3D>`\ )
+**body_entered**\ (\ body\: :ref:`Node3D<class_Node3D>`\ ) :ref:`🔗<class_Area3D_signal_body_entered>`
 
 Emitted when the received ``body`` enters this area. ``body`` can be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>`. :ref:`GridMap<class_GridMap>`\ s are detected if their :ref:`MeshLibrary<class_MeshLibrary>` has collision shapes configured. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -209,7 +209,7 @@ Emitted when the received ``body`` enters this area. ``body`` can be a :ref:`Phy
 
 .. rst-class:: classref-signal
 
-**body_exited**\ (\ body\: :ref:`Node3D<class_Node3D>`\ )
+**body_exited**\ (\ body\: :ref:`Node3D<class_Node3D>`\ ) :ref:`🔗<class_Area3D_signal_body_exited>`
 
 Emitted when the received ``body`` exits this area. ``body`` can be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>`. :ref:`GridMap<class_GridMap>`\ s are detected if their :ref:`MeshLibrary<class_MeshLibrary>` has collision shapes configured. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -221,13 +221,13 @@ Emitted when the received ``body`` exits this area. ``body`` can be a :ref:`Phys
 
 .. rst-class:: classref-signal
 
-**body_shape_entered**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node3D<class_Node3D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
+**body_shape_entered**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node3D<class_Node3D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Area3D_signal_body_shape_entered>`
 
 Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``body`` enters a shape of this area. ``body`` can be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>`. :ref:`GridMap<class_GridMap>`\ s are detected if their :ref:`MeshLibrary<class_MeshLibrary>` has collision shapes configured. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
 \ ``local_shape_index`` and ``body_shape_index`` contain indices of the interacting shapes from this area and the interacting body, respectively. ``body_rid`` contains the :ref:`RID<class_RID>` of the body. These values can be used with the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-\ **Example of getting the** :ref:`CollisionShape3D<class_CollisionShape3D>` **node from the shape index:**\ 
+\ **Example:** Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node from the shape index:
 
 
 .. tabs::
@@ -250,7 +250,7 @@ Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``body`` enters a s
 
 .. rst-class:: classref-signal
 
-**body_shape_exited**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node3D<class_Node3D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
+**body_shape_exited**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node3D<class_Node3D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Area3D_signal_body_shape_exited>`
 
 Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``body`` exits a shape of this area. ``body`` can be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>`. :ref:`GridMap<class_GridMap>`\ s are detected if their :ref:`MeshLibrary<class_MeshLibrary>` has collision shapes configured. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -269,7 +269,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **SpaceOverride**:
+enum **SpaceOverride**: :ref:`🔗<enum_Area3D_SpaceOverride>`
 
 .. _class_Area3D_constant_SPACE_OVERRIDE_DISABLED:
 
@@ -324,7 +324,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_damp** = ``0.1``
+:ref:`float<class_float>` **angular_damp** = ``0.1`` :ref:`🔗<class_Area3D_property_angular_damp>`
 
 .. rst-class:: classref-property-setget
 
@@ -343,7 +343,7 @@ See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_
 
 .. rst-class:: classref-property
 
-:ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **angular_damp_space_override** = ``0``
+:ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **angular_damp_space_override** = ``0`` :ref:`🔗<class_Area3D_property_angular_damp_space_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -360,7 +360,7 @@ Override mode for angular damping calculations within this area. See :ref:`Space
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **audio_bus_name** = ``&"Master"``
+:ref:`StringName<class_StringName>` **audio_bus_name** = ``&"Master"`` :ref:`🔗<class_Area3D_property_audio_bus_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -377,7 +377,7 @@ The name of the area's audio bus.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **audio_bus_override** = ``false``
+:ref:`bool<class_bool>` **audio_bus_override** = ``false`` :ref:`🔗<class_Area3D_property_audio_bus_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -394,7 +394,7 @@ If ``true``, the area's audio bus overrides the default audio bus.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gravity** = ``9.8``
+:ref:`float<class_float>` **gravity** = ``9.8`` :ref:`🔗<class_Area3D_property_gravity>`
 
 .. rst-class:: classref-property-setget
 
@@ -411,7 +411,7 @@ The area's gravity intensity (in meters per second squared). This value multipli
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **gravity_direction** = ``Vector3(0, -1, 0)``
+:ref:`Vector3<class_Vector3>` **gravity_direction** = ``Vector3(0, -1, 0)`` :ref:`🔗<class_Area3D_property_gravity_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -428,7 +428,7 @@ The area's gravity vector (not normalized).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gravity_point** = ``false``
+:ref:`bool<class_bool>` **gravity_point** = ``false`` :ref:`🔗<class_Area3D_property_gravity_point>`
 
 .. rst-class:: classref-property-setget
 
@@ -445,7 +445,7 @@ If ``true``, gravity is calculated from a point (set via :ref:`gravity_point_cen
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **gravity_point_center** = ``Vector3(0, -1, 0)``
+:ref:`Vector3<class_Vector3>` **gravity_point_center** = ``Vector3(0, -1, 0)`` :ref:`🔗<class_Area3D_property_gravity_point_center>`
 
 .. rst-class:: classref-property-setget
 
@@ -462,7 +462,7 @@ If gravity is a point (see :ref:`gravity_point<class_Area3D_property_gravity_poi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gravity_point_unit_distance** = ``0.0``
+:ref:`float<class_float>` **gravity_point_unit_distance** = ``0.0`` :ref:`🔗<class_Area3D_property_gravity_point_unit_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -481,7 +481,7 @@ The above is true only when the unit distance is a positive number. When this is
 
 .. rst-class:: classref-property
 
-:ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **gravity_space_override** = ``0``
+:ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **gravity_space_override** = ``0`` :ref:`🔗<class_Area3D_property_gravity_space_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -498,7 +498,7 @@ Override mode for gravity calculations within this area. See :ref:`SpaceOverride
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_damp** = ``0.1``
+:ref:`float<class_float>` **linear_damp** = ``0.1`` :ref:`🔗<class_Area3D_property_linear_damp>`
 
 .. rst-class:: classref-property-setget
 
@@ -517,7 +517,7 @@ See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_p
 
 .. rst-class:: classref-property
 
-:ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **linear_damp_space_override** = ``0``
+:ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **linear_damp_space_override** = ``0`` :ref:`🔗<class_Area3D_property_linear_damp_space_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -534,7 +534,7 @@ Override mode for linear damping calculations within this area. See :ref:`SpaceO
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **monitorable** = ``true``
+:ref:`bool<class_bool>` **monitorable** = ``true`` :ref:`🔗<class_Area3D_property_monitorable>`
 
 .. rst-class:: classref-property-setget
 
@@ -551,7 +551,7 @@ If ``true``, other monitoring areas can detect this area.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **monitoring** = ``true``
+:ref:`bool<class_bool>` **monitoring** = ``true`` :ref:`🔗<class_Area3D_property_monitoring>`
 
 .. rst-class:: classref-property-setget
 
@@ -568,7 +568,7 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **priority** = ``0``
+:ref:`int<class_int>` **priority** = ``0`` :ref:`🔗<class_Area3D_property_priority>`
 
 .. rst-class:: classref-property-setget
 
@@ -585,7 +585,7 @@ The area's priority. Higher priority areas are processed first. The :ref:`World3
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **reverb_bus_amount** = ``0.0``
+:ref:`float<class_float>` **reverb_bus_amount** = ``0.0`` :ref:`🔗<class_Area3D_property_reverb_bus_amount>`
 
 .. rst-class:: classref-property-setget
 
@@ -602,7 +602,7 @@ The degree to which this area applies reverb to its associated audio. Ranges fro
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **reverb_bus_enabled** = ``false``
+:ref:`bool<class_bool>` **reverb_bus_enabled** = ``false`` :ref:`🔗<class_Area3D_property_reverb_bus_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -619,7 +619,7 @@ If ``true``, the area applies reverb to its associated audio.
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **reverb_bus_name** = ``&"Master"``
+:ref:`StringName<class_StringName>` **reverb_bus_name** = ``&"Master"`` :ref:`🔗<class_Area3D_property_reverb_bus_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -636,7 +636,7 @@ The name of the reverb bus to use for this area's associated audio.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **reverb_bus_uniformity** = ``0.0``
+:ref:`float<class_float>` **reverb_bus_uniformity** = ``0.0`` :ref:`🔗<class_Area3D_property_reverb_bus_uniformity>`
 
 .. rst-class:: classref-property-setget
 
@@ -653,7 +653,7 @@ The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wind_attenuation_factor** = ``0.0``
+:ref:`float<class_float>` **wind_attenuation_factor** = ``0.0`` :ref:`🔗<class_Area3D_property_wind_attenuation_factor>`
 
 .. rst-class:: classref-property-setget
 
@@ -672,7 +672,7 @@ The exponential rate at which wind force decreases with distance from its origin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wind_force_magnitude** = ``0.0``
+:ref:`float<class_float>` **wind_force_magnitude** = ``0.0`` :ref:`🔗<class_Area3D_property_wind_force_magnitude>`
 
 .. rst-class:: classref-property-setget
 
@@ -691,7 +691,7 @@ The magnitude of area-specific wind force.
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **wind_source_path** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **wind_source_path** = ``NodePath("")`` :ref:`🔗<class_Area3D_property_wind_source_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -715,7 +715,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Area3D<class_Area3D>`\] **get_overlapping_areas**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Area3D<class_Area3D>`\] **get_overlapping_areas**\ (\ ) |const| :ref:`🔗<class_Area3D_method_get_overlapping_areas>`
 
 Returns a list of intersecting **Area3D**\ s. The overlapping area's :ref:`CollisionObject3D.collision_layer<class_CollisionObject3D_property_collision_layer>` must be part of this area's :ref:`CollisionObject3D.collision_mask<class_CollisionObject3D_property_collision_mask>` in order to be detected.
 
@@ -729,7 +729,7 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Node3D<class_Node3D>`\] **get_overlapping_bodies**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Node3D<class_Node3D>`\] **get_overlapping_bodies**\ (\ ) |const| :ref:`🔗<class_Area3D_method_get_overlapping_bodies>`
 
 Returns a list of intersecting :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s and :ref:`GridMap<class_GridMap>`\ s. The overlapping body's :ref:`CollisionObject3D.collision_layer<class_CollisionObject3D_property_collision_layer>` must be part of this area's :ref:`CollisionObject3D.collision_mask<class_CollisionObject3D_property_collision_mask>` in order to be detected.
 
@@ -743,7 +743,7 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_overlapping_areas**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_overlapping_areas**\ (\ ) |const| :ref:`🔗<class_Area3D_method_has_overlapping_areas>`
 
 Returns ``true`` if intersecting any **Area3D**\ s, otherwise returns ``false``. The overlapping area's :ref:`CollisionObject3D.collision_layer<class_CollisionObject3D_property_collision_layer>` must be part of this area's :ref:`CollisionObject3D.collision_mask<class_CollisionObject3D_property_collision_mask>` in order to be detected.
 
@@ -757,7 +757,7 @@ For performance reasons (collisions are all processed at the same time) the list
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_overlapping_bodies**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_overlapping_bodies**\ (\ ) |const| :ref:`🔗<class_Area3D_method_has_overlapping_bodies>`
 
 Returns ``true`` if intersecting any :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s or :ref:`GridMap<class_GridMap>`\ s, otherwise returns ``false``. The overlapping body's :ref:`CollisionObject3D.collision_layer<class_CollisionObject3D_property_collision_layer>` must be part of this area's :ref:`CollisionObject3D.collision_mask<class_CollisionObject3D_property_collision_mask>` in order to be detected.
 
@@ -771,7 +771,7 @@ For performance reasons (collisions are all processed at the same time) the list
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **overlaps_area**\ (\ area\: :ref:`Node<class_Node>`\ ) |const|
+:ref:`bool<class_bool>` **overlaps_area**\ (\ area\: :ref:`Node<class_Node>`\ ) |const| :ref:`🔗<class_Area3D_method_overlaps_area>`
 
 Returns ``true`` if the given **Area3D** intersects or overlaps this **Area3D**, ``false`` otherwise.
 
@@ -785,7 +785,7 @@ Returns ``true`` if the given **Area3D** intersects or overlaps this **Area3D**,
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **overlaps_body**\ (\ body\: :ref:`Node<class_Node>`\ ) |const|
+:ref:`bool<class_bool>` **overlaps_body**\ (\ body\: :ref:`Node<class_Node>`\ ) |const| :ref:`🔗<class_Area3D_method_overlaps_body>`
 
 Returns ``true`` if the given physics body intersects or overlaps this **Area3D**, ``false`` otherwise.
 

@@ -29,7 +29,7 @@ You can initialize this interface as follows:
 
     var interface = XRServer.find_interface("Native mobile")
     if interface and interface.initialize():
-        get_viewport().xr = true
+        get_viewport().use_xr = true
 
 .. rst-class:: classref-reftable-group
 
@@ -56,6 +56,10 @@ Properties
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                          | :ref:`oversample<class_MobileVRInterface_property_oversample>`           | ``1.5``                                                                            |
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                          | :ref:`vrs_min_radius<class_MobileVRInterface_property_vrs_min_radius>`   | ``20.0``                                                                           |
+   +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                          | :ref:`vrs_strength<class_MobileVRInterface_property_vrs_strength>`       | ``1.0``                                                                            |
+   +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    | :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` | xr_play_area_mode                                                        | ``1`` (overrides :ref:`XRInterface<class_XRInterface_property_xr_play_area_mode>`) |
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
@@ -72,7 +76,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **display_to_lens** = ``4.0``
+:ref:`float<class_float>` **display_to_lens** = ``4.0`` :ref:`🔗<class_MobileVRInterface_property_display_to_lens>`
 
 .. rst-class:: classref-property-setget
 
@@ -89,7 +93,7 @@ The distance between the display and the lenses inside of the device in centimet
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **display_width** = ``14.5``
+:ref:`float<class_float>` **display_width** = ``14.5`` :ref:`🔗<class_MobileVRInterface_property_display_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -106,7 +110,7 @@ The width of the display in centimeters.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **eye_height** = ``1.85``
+:ref:`float<class_float>` **eye_height** = ``1.85`` :ref:`🔗<class_MobileVRInterface_property_eye_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +127,7 @@ The height at which the camera is placed in relation to the ground (i.e. :ref:`X
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **iod** = ``6.0``
+:ref:`float<class_float>` **iod** = ``6.0`` :ref:`🔗<class_MobileVRInterface_property_iod>`
 
 .. rst-class:: classref-property-setget
 
@@ -140,7 +144,7 @@ The interocular distance, also known as the interpupillary distance. The distanc
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **k1** = ``0.215``
+:ref:`float<class_float>` **k1** = ``0.215`` :ref:`🔗<class_MobileVRInterface_property_k1>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +161,7 @@ The k1 lens factor is one of the two constants that define the strength of the l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **k2** = ``0.215``
+:ref:`float<class_float>` **k2** = ``0.215`` :ref:`🔗<class_MobileVRInterface_property_k2>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +178,7 @@ The k2 lens factor, see k1.
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **offset_rect** = ``Rect2(0, 0, 1, 1)``
+:ref:`Rect2<class_Rect2>` **offset_rect** = ``Rect2(0, 0, 1, 1)`` :ref:`🔗<class_MobileVRInterface_property_offset_rect>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +195,7 @@ Set the offset rect relative to the area being rendered. A length of 1 represent
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **oversample** = ``1.5``
+:ref:`float<class_float>` **oversample** = ``1.5`` :ref:`🔗<class_MobileVRInterface_property_oversample>`
 
 .. rst-class:: classref-property-setget
 
@@ -199,6 +203,44 @@ Set the offset rect relative to the area being rendered. A length of 1 represent
 - :ref:`float<class_float>` **get_oversample**\ (\ )
 
 The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MobileVRInterface_property_vrs_min_radius:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **vrs_min_radius** = ``20.0`` :ref:`🔗<class_MobileVRInterface_property_vrs_min_radius>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_vrs_min_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_vrs_min_radius**\ (\ )
+
+The minimum radius around the focal point where full quality is guaranteed if VRS is used as a percentage of screen size.
+
+\ **Note:** Mobile and Forward+ renderers only. Requires :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to be set to :ref:`Viewport.VRS_XR<class_Viewport_constant_VRS_XR>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MobileVRInterface_property_vrs_strength:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **vrs_strength** = ``1.0`` :ref:`🔗<class_MobileVRInterface_property_vrs_strength>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_vrs_strength**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_vrs_strength**\ (\ )
+
+The strength used to calculate the VRS density map. The greater this value, the more noticeable VRS is. This improves performance at the cost of quality.
+
+\ **Note:** Mobile and Forward+ renderers only. Requires :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to be set to :ref:`Viewport.VRS_XR<class_Viewport_constant_VRS_XR>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -94,7 +94,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **AxisStretchMode**:
+enum **AxisStretchMode**: :ref:`🔗<enum_StyleBoxTexture_AxisStretchMode>`
 
 .. _class_StyleBoxTexture_constant_AXIS_STRETCH_MODE_STRETCH:
 
@@ -133,7 +133,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` **axis_stretch_horizontal** = ``0``
+:ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` **axis_stretch_horizontal** = ``0`` :ref:`🔗<class_StyleBoxTexture_property_axis_stretch_horizontal>`
 
 .. rst-class:: classref-property-setget
 
@@ -150,7 +150,7 @@ Controls how the stylebox's texture will be stretched or tiled horizontally. See
 
 .. rst-class:: classref-property
 
-:ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` **axis_stretch_vertical** = ``0``
+:ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` **axis_stretch_vertical** = ``0`` :ref:`🔗<class_StyleBoxTexture_property_axis_stretch_vertical>`
 
 .. rst-class:: classref-property-setget
 
@@ -167,7 +167,7 @@ Controls how the stylebox's texture will be stretched or tiled vertically. See :
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_center** = ``true``
+:ref:`bool<class_bool>` **draw_center** = ``true`` :ref:`🔗<class_StyleBoxTexture_property_draw_center>`
 
 .. rst-class:: classref-property-setget
 
@@ -184,7 +184,7 @@ If ``true``, the nine-patch texture's center tile will be drawn.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **expand_margin_bottom** = ``0.0``
+:ref:`float<class_float>` **expand_margin_bottom** = ``0.0`` :ref:`🔗<class_StyleBoxTexture_property_expand_margin_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -201,7 +201,7 @@ Expands the bottom margin of this style box when drawing, causing it to be drawn
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **expand_margin_left** = ``0.0``
+:ref:`float<class_float>` **expand_margin_left** = ``0.0`` :ref:`🔗<class_StyleBoxTexture_property_expand_margin_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -218,7 +218,7 @@ Expands the left margin of this style box when drawing, causing it to be drawn l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **expand_margin_right** = ``0.0``
+:ref:`float<class_float>` **expand_margin_right** = ``0.0`` :ref:`🔗<class_StyleBoxTexture_property_expand_margin_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -235,7 +235,7 @@ Expands the right margin of this style box when drawing, causing it to be drawn 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **expand_margin_top** = ``0.0``
+:ref:`float<class_float>` **expand_margin_top** = ``0.0`` :ref:`🔗<class_StyleBoxTexture_property_expand_margin_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -252,7 +252,7 @@ Expands the top margin of this style box when drawing, causing it to be drawn la
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **modulate_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **modulate_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_StyleBoxTexture_property_modulate_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -269,18 +269,18 @@ Modulates the color of the texture when this style box is drawn.
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_StyleBoxTexture_property_region_rect>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_region_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
 - :ref:`Rect2<class_Rect2>` **get_region_rect**\ (\ )
 
-Species a sub-region of the texture to use.
+The region to use from the :ref:`texture<class_StyleBoxTexture_property_texture>`.
 
-This is equivalent to first wrapping the texture in an :ref:`AtlasTexture<class_AtlasTexture>` with the same region.
+This is equivalent to first wrapping the :ref:`texture<class_StyleBoxTexture_property_texture>` in an :ref:`AtlasTexture<class_AtlasTexture>` with the same region.
 
-If empty (``Rect2(0, 0, 0, 0)``), the whole texture will be used.
+If empty (``Rect2(0, 0, 0, 0)``), the whole :ref:`texture<class_StyleBoxTexture_property_texture>` is used.
 
 .. rst-class:: classref-item-separator
 
@@ -290,7 +290,7 @@ If empty (``Rect2(0, 0, 0, 0)``), the whole texture will be used.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_StyleBoxTexture_property_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -307,7 +307,7 @@ The texture to use when drawing this style box.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **texture_margin_bottom** = ``0.0``
+:ref:`float<class_float>` **texture_margin_bottom** = ``0.0`` :ref:`🔗<class_StyleBoxTexture_property_texture_margin_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -328,7 +328,7 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_bottom
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **texture_margin_left** = ``0.0``
+:ref:`float<class_float>` **texture_margin_left** = ``0.0`` :ref:`🔗<class_StyleBoxTexture_property_texture_margin_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -349,7 +349,7 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_left<c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **texture_margin_right** = ``0.0``
+:ref:`float<class_float>` **texture_margin_right** = ``0.0`` :ref:`🔗<class_StyleBoxTexture_property_texture_margin_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -370,7 +370,7 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_right<
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **texture_margin_top** = ``0.0``
+:ref:`float<class_float>` **texture_margin_top** = ``0.0`` :ref:`🔗<class_StyleBoxTexture_property_texture_margin_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -396,7 +396,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_expand_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`float<class_float>` **get_expand_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_StyleBoxTexture_method_get_expand_margin>`
 
 Returns the expand margin size of the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
@@ -408,7 +408,7 @@ Returns the expand margin size of the specified :ref:`Side<enum_@GlobalScope_Sid
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_texture_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`float<class_float>` **get_texture_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_StyleBoxTexture_method_get_texture_margin>`
 
 Returns the margin size of the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
@@ -420,7 +420,7 @@ Returns the margin size of the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
 .. rst-class:: classref-method
 
-|void| **set_expand_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, size\: :ref:`float<class_float>`\ )
+|void| **set_expand_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, size\: :ref:`float<class_float>`\ ) :ref:`🔗<class_StyleBoxTexture_method_set_expand_margin>`
 
 Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
@@ -432,7 +432,7 @@ Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@Glo
 
 .. rst-class:: classref-method
 
-|void| **set_expand_margin_all**\ (\ size\: :ref:`float<class_float>`\ )
+|void| **set_expand_margin_all**\ (\ size\: :ref:`float<class_float>`\ ) :ref:`🔗<class_StyleBoxTexture_method_set_expand_margin_all>`
 
 Sets the expand margin to ``size`` pixels for all sides.
 
@@ -444,7 +444,7 @@ Sets the expand margin to ``size`` pixels for all sides.
 
 .. rst-class:: classref-method
 
-|void| **set_texture_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, size\: :ref:`float<class_float>`\ )
+|void| **set_texture_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, size\: :ref:`float<class_float>`\ ) :ref:`🔗<class_StyleBoxTexture_method_set_texture_margin>`
 
 Sets the margin to ``size`` pixels for the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
@@ -456,7 +456,7 @@ Sets the margin to ``size`` pixels for the specified :ref:`Side<enum_@GlobalScop
 
 .. rst-class:: classref-method
 
-|void| **set_texture_margin_all**\ (\ size\: :ref:`float<class_float>`\ )
+|void| **set_texture_margin_all**\ (\ size\: :ref:`float<class_float>`\ ) :ref:`🔗<class_StyleBoxTexture_method_set_texture_margin_all>`
 
 Sets the margin to ``size`` pixels for all sides.
 

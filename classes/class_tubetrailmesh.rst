@@ -71,7 +71,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cap_bottom** = ``true``
+:ref:`bool<class_bool>` **cap_bottom** = ``true`` :ref:`🔗<class_TubeTrailMesh_property_cap_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ If ``true``, generates a cap at the bottom of the tube. This can be set to ``fal
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cap_top** = ``true``
+:ref:`bool<class_bool>` **cap_top** = ``true`` :ref:`🔗<class_TubeTrailMesh_property_cap_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,14 +105,14 @@ If ``true``, generates a cap at the top of the tube. This can be set to ``false`
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **curve**
+:ref:`Curve<class_Curve>` **curve** :ref:`🔗<class_TubeTrailMesh_property_curve>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_curve**\ (\ )
 
-Determines the radius of the tube along its length. The radius of a particular section ring is obtained by multiplying the baseline :ref:`radius<class_TubeTrailMesh_property_radius>` by the value of this curve at the given distance. For values smaller than ``0``, the faces will be inverted.
+Determines the radius of the tube along its length. The radius of a particular section ring is obtained by multiplying the baseline :ref:`radius<class_TubeTrailMesh_property_radius>` by the value of this curve at the given distance. For values smaller than ``0``, the faces will be inverted. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -122,7 +122,7 @@ Determines the radius of the tube along its length. The radius of a particular s
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **radial_steps** = ``8``
+:ref:`int<class_int>` **radial_steps** = ``8`` :ref:`🔗<class_TubeTrailMesh_property_radial_steps>`
 
 .. rst-class:: classref-property-setget
 
@@ -139,7 +139,7 @@ The number of sides on the tube. For example, a value of ``5`` means the tube wi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_TubeTrailMesh_property_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -156,7 +156,7 @@ The baseline radius of the tube. The radius of a particular section ring is obta
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **section_length** = ``0.2``
+:ref:`float<class_float>` **section_length** = ``0.2`` :ref:`🔗<class_TubeTrailMesh_property_section_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -173,7 +173,7 @@ The length of a section of the tube.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **section_rings** = ``3``
+:ref:`int<class_int>` **section_rings** = ``3`` :ref:`🔗<class_TubeTrailMesh_property_section_rings>`
 
 .. rst-class:: classref-property-setget
 
@@ -190,7 +190,7 @@ The number of rings in a section. The :ref:`curve<class_TubeTrailMesh_property_c
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sections** = ``5``
+:ref:`int<class_int>` **sections** = ``5`` :ref:`🔗<class_TubeTrailMesh_property_sections>`
 
 .. rst-class:: classref-property-setget
 

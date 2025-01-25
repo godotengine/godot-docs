@@ -32,7 +32,11 @@ Methods
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`can_instantiate<class_ClassDB_method_can_instantiate>`\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                 |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                    | :ref:`class_call_static<class_ClassDB_method_class_call_static>`\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|                                                                         |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`class_exists<class_ClassDB_method_class_exists>`\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                       |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`APIType<enum_ClassDB_APIType>`                             | :ref:`class_get_api_type<class_ClassDB_method_class_get_api_type>`\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                           |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`class_get_enum_constants<class_ClassDB_method_class_get_enum_constants>`\ (\ class\: :ref:`StringName<class_StringName>`, enum\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|                 |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,7 +56,11 @@ Methods
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                    | :ref:`class_get_property_default_value<class_ClassDB_method_class_get_property_default_value>`\ (\ class\: :ref:`StringName<class_StringName>`, property\: :ref:`StringName<class_StringName>`\ ) |const|                                               |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`                              | :ref:`class_get_property_getter<class_ClassDB_method_class_get_property_getter>`\ (\ class\: :ref:`StringName<class_StringName>`, property\: :ref:`StringName<class_StringName>`\ )                                                                     |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`class_get_property_list<class_ClassDB_method_class_get_property_list>`\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|                                                               |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`                              | :ref:`class_get_property_setter<class_ClassDB_method_class_get_property_setter>`\ (\ class\: :ref:`StringName<class_StringName>`, property\: :ref:`StringName<class_StringName>`\ )                                                                     |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`class_get_signal<class_ClassDB_method_class_get_signal>`\ (\ class\: :ref:`StringName<class_StringName>`, signal\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                 |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,6 +97,61 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Enumerations
+------------
+
+.. _enum_ClassDB_APIType:
+
+.. rst-class:: classref-enumeration
+
+enum **APIType**: :ref:`🔗<enum_ClassDB_APIType>`
+
+.. _class_ClassDB_constant_API_CORE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_CORE** = ``0``
+
+Native Core class type.
+
+.. _class_ClassDB_constant_API_EDITOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_EDITOR** = ``1``
+
+Native Editor class type.
+
+.. _class_ClassDB_constant_API_EXTENSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_EXTENSION** = ``2``
+
+GDExtension class type.
+
+.. _class_ClassDB_constant_API_EDITOR_EXTENSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_EDITOR_EXTENSION** = ``3``
+
+GDExtension Editor class type.
+
+.. _class_ClassDB_constant_API_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_NONE** = ``4``
+
+Unknown class type.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Method Descriptions
 -------------------
 
@@ -96,9 +159,21 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **can_instantiate**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **can_instantiate**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_can_instantiate>`
 
 Returns ``true`` if objects can be instantiated from the specified ``class``, otherwise returns ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ClassDB_method_class_call_static:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **class_call_static**\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg| :ref:`🔗<class_ClassDB_method_class_call_static>`
+
+Calls a static method on a class.
 
 .. rst-class:: classref-item-separator
 
@@ -108,9 +183,21 @@ Returns ``true`` if objects can be instantiated from the specified ``class``, ot
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **class_exists**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **class_exists**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_exists>`
 
 Returns whether the specified ``class`` is available or not.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ClassDB_method_class_get_api_type:
+
+.. rst-class:: classref-method
+
+:ref:`APIType<enum_ClassDB_APIType>` **class_get_api_type**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_api_type>`
+
+Returns the API type of ``class``. See :ref:`APIType<enum_ClassDB_APIType>`.
 
 .. rst-class:: classref-item-separator
 
@@ -120,7 +207,7 @@ Returns whether the specified ``class`` is available or not.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **class_get_enum_constants**\ (\ class\: :ref:`StringName<class_StringName>`, enum\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **class_get_enum_constants**\ (\ class\: :ref:`StringName<class_StringName>`, enum\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_enum_constants>`
 
 Returns an array with all the keys in ``enum`` of ``class`` or its ancestry.
 
@@ -132,7 +219,7 @@ Returns an array with all the keys in ``enum`` of ``class`` or its ancestry.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **class_get_enum_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **class_get_enum_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_enum_list>`
 
 Returns an array with all the enums of ``class`` or its ancestry.
 
@@ -144,7 +231,7 @@ Returns an array with all the enums of ``class`` or its ancestry.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **class_get_integer_constant**\ (\ class\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`int<class_int>` **class_get_integer_constant**\ (\ class\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_integer_constant>`
 
 Returns the value of the integer constant ``name`` of ``class`` or its ancestry. Always returns 0 when the constant could not be found.
 
@@ -156,7 +243,7 @@ Returns the value of the integer constant ``name`` of ``class`` or its ancestry.
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **class_get_integer_constant_enum**\ (\ class\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`StringName<class_StringName>` **class_get_integer_constant_enum**\ (\ class\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_integer_constant_enum>`
 
 Returns which enum the integer constant ``name`` of ``class`` or its ancestry belongs to.
 
@@ -168,7 +255,7 @@ Returns which enum the integer constant ``name`` of ``class`` or its ancestry be
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **class_get_integer_constant_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **class_get_integer_constant_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_integer_constant_list>`
 
 Returns an array with the names all the integer constants of ``class`` or its ancestry.
 
@@ -180,7 +267,7 @@ Returns an array with the names all the integer constants of ``class`` or its an
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **class_get_method_argument_count**\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`int<class_int>` **class_get_method_argument_count**\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_method_argument_count>`
 
 Returns the number of arguments of the method ``method`` of ``class`` or its ancestry if ``no_inheritance`` is ``false``.
 
@@ -192,7 +279,7 @@ Returns the number of arguments of the method ``method`` of ``class`` or its anc
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **class_get_method_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **class_get_method_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_method_list>`
 
 Returns an array with all the methods of ``class`` or its ancestry if ``no_inheritance`` is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``args``, ``default_args``, ``flags``, ``id``, ``name``, ``return: (class_name, hint, hint_string, name, type, usage)``.
 
@@ -206,7 +293,7 @@ Returns an array with all the methods of ``class`` or its ancestry if ``no_inher
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **class_get_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Variant<class_Variant>` **class_get_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_property>`
 
 Returns the value of ``property`` of ``object`` or its ancestry.
 
@@ -218,9 +305,21 @@ Returns the value of ``property`` of ``object`` or its ancestry.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **class_get_property_default_value**\ (\ class\: :ref:`StringName<class_StringName>`, property\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Variant<class_Variant>` **class_get_property_default_value**\ (\ class\: :ref:`StringName<class_StringName>`, property\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_property_default_value>`
 
 Returns the default value of ``property`` of ``class`` or its ancestor classes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ClassDB_method_class_get_property_getter:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **class_get_property_getter**\ (\ class\: :ref:`StringName<class_StringName>`, property\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_ClassDB_method_class_get_property_getter>`
+
+Returns the getter method name of ``property`` of ``class``.
 
 .. rst-class:: classref-item-separator
 
@@ -230,9 +329,21 @@ Returns the default value of ``property`` of ``class`` or its ancestor classes.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **class_get_property_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **class_get_property_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_property_list>`
 
 Returns an array with all the properties of ``class`` or its ancestry if ``no_inheritance`` is ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ClassDB_method_class_get_property_setter:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **class_get_property_setter**\ (\ class\: :ref:`StringName<class_StringName>`, property\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_ClassDB_method_class_get_property_setter>`
+
+Returns the setter method name of ``property`` of ``class``.
 
 .. rst-class:: classref-item-separator
 
@@ -242,7 +353,7 @@ Returns an array with all the properties of ``class`` or its ancestry if ``no_in
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **class_get_signal**\ (\ class\: :ref:`StringName<class_StringName>`, signal\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **class_get_signal**\ (\ class\: :ref:`StringName<class_StringName>`, signal\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_signal>`
 
 Returns the ``signal`` data of ``class`` or its ancestry. The returned value is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``args``, ``default_args``, ``flags``, ``id``, ``name``, ``return: (class_name, hint, hint_string, name, type, usage)``.
 
@@ -254,7 +365,7 @@ Returns the ``signal`` data of ``class`` or its ancestry. The returned value is 
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **class_get_signal_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **class_get_signal_list**\ (\ class\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_signal_list>`
 
 Returns an array with all the signals of ``class`` or its ancestry if ``no_inheritance`` is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` as described in :ref:`class_get_signal<class_ClassDB_method_class_get_signal>`.
 
@@ -266,7 +377,7 @@ Returns an array with all the signals of ``class`` or its ancestry if ``no_inher
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **class_has_enum**\ (\ class\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`bool<class_bool>` **class_has_enum**\ (\ class\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_has_enum>`
 
 Returns whether ``class`` or its ancestry has an enum called ``name`` or not.
 
@@ -278,7 +389,7 @@ Returns whether ``class`` or its ancestry has an enum called ``name`` or not.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **class_has_integer_constant**\ (\ class\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **class_has_integer_constant**\ (\ class\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_has_integer_constant>`
 
 Returns whether ``class`` or its ancestry has an integer constant called ``name`` or not.
 
@@ -290,7 +401,7 @@ Returns whether ``class`` or its ancestry has an integer constant called ``name`
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **class_has_method**\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`bool<class_bool>` **class_has_method**\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_class_has_method>`
 
 Returns whether ``class`` (or its ancestry if ``no_inheritance`` is ``false``) has a method called ``method`` or not.
 
@@ -302,7 +413,7 @@ Returns whether ``class`` (or its ancestry if ``no_inheritance`` is ``false``) h
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **class_has_signal**\ (\ class\: :ref:`StringName<class_StringName>`, signal\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **class_has_signal**\ (\ class\: :ref:`StringName<class_StringName>`, signal\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_has_signal>`
 
 Returns whether ``class`` or its ancestry has a signal called ``signal`` or not.
 
@@ -314,7 +425,7 @@ Returns whether ``class`` or its ancestry has a signal called ``signal`` or not.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **class_set_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **class_set_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_set_property>`
 
 Sets ``property`` value of ``object`` to ``value``.
 
@@ -326,7 +437,7 @@ Sets ``property`` value of ``object`` to ``value``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_class_list**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_class_list**\ (\ ) |const| :ref:`🔗<class_ClassDB_method_get_class_list>`
 
 Returns the names of all the classes available.
 
@@ -338,7 +449,7 @@ Returns the names of all the classes available.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_inheriters_from_class**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_inheriters_from_class**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_get_inheriters_from_class>`
 
 Returns the names of all the classes that directly or indirectly inherit from ``class``.
 
@@ -350,7 +461,7 @@ Returns the names of all the classes that directly or indirectly inherit from ``
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_parent_class**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`StringName<class_StringName>` **get_parent_class**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_get_parent_class>`
 
 Returns the parent class of ``class``.
 
@@ -362,7 +473,7 @@ Returns the parent class of ``class``.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **instantiate**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Variant<class_Variant>` **instantiate**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_instantiate>`
 
 Creates an instance of ``class``.
 
@@ -374,7 +485,7 @@ Creates an instance of ``class``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_class_enabled**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **is_class_enabled**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_is_class_enabled>`
 
 Returns whether this ``class`` is enabled or not.
 
@@ -386,7 +497,7 @@ Returns whether this ``class`` is enabled or not.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_class_enum_bitfield**\ (\ class\: :ref:`StringName<class_StringName>`, enum\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`bool<class_bool>` **is_class_enum_bitfield**\ (\ class\: :ref:`StringName<class_StringName>`, enum\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ClassDB_method_is_class_enum_bitfield>`
 
 Returns whether ``class`` (or its ancestor classes if ``no_inheritance`` is ``false``) has an enum called ``enum`` that is a bitfield.
 
@@ -398,7 +509,7 @@ Returns whether ``class`` (or its ancestor classes if ``no_inheritance`` is ``fa
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_parent_class**\ (\ class\: :ref:`StringName<class_StringName>`, inherits\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **is_parent_class**\ (\ class\: :ref:`StringName<class_StringName>`, inherits\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_is_parent_class>`
 
 Returns whether ``inherits`` is an ancestor of ``class`` or not.
 

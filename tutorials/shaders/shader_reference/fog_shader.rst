@@ -19,36 +19,42 @@ every froxel that is touched by an axis aligned bounding box of the associated
 touch a given :ref:`FogVolume <class_FogVolume>` will still be used.
 
 Built-ins
-^^^^^^^^^
+---------
 
-Values marked as "in" are read-only. Values marked as "out" are for optional
-writing and will not necessarily contain sensible values. Samplers cannot be
-written to so they are not marked.
-
+Values marked as ``in`` are read-only. Values marked as ``out`` can optionally 
+be written to and will not necessarily contain sensible values. Samplers cannot 
+be written to so they are not marked.
 
 Global built-ins
-^^^^^^^^^^^^^^^^
+----------------
 
 Global built-ins are available everywhere, including in custom functions.
 
 
-+---------------------------------+-----------------------------------------------------------------------------------------+
-| Built-in                        | Description                                                                             |
-+=================================+=========================================================================================+
-| in float **TIME**               | Global time, in seconds.                                                                |
-+---------------------------------+-----------------------------------------------------------------------------------------+
-| in float **PI**                 | A ``PI`` constant (``3.141592``).                                                       |
-|                                 | A ratio of a circle's circumference to its diameter and amount of radians in half turn. |
-+---------------------------------+-----------------------------------------------------------------------------------------+
-| in float **TAU**                | A ``TAU`` constant (``6.283185``).                                                      |
-|                                 | An equivalent of ``PI * 2`` and amount of radians in full turn.                         |
-+---------------------------------+-----------------------------------------------------------------------------------------+
-| in float **E**                  | An ``E`` constant (``2.718281``).                                                       |
-|                                 | Euler's number and a base of the natural logarithm.                                     |
-+---------------------------------+-----------------------------------------------------------------------------------------+
++-----------------------------------+------------------------------------------------------------------------------------------+
+| Built-in                          | Description                                                                              |
++===================================+==========================================================================================+
+| in float **TIME**                 | Global time since the engine has started, in seconds. It repeats after every ``3,600``   |
+|                                   | seconds (which can  be changed with the                                                  |
+|                                   | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>` |
+|                                   | setting). It's affected by                                                               |
+|                                   | :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a    |
+|                                   | ``TIME`` variable that is not affected by time scale, add your own                       |
+|                                   | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each    |
+|                                   | frame.                                                                                   |
++-----------------------------------+------------------------------------------------------------------------------------------+
+| in float **PI**                   | A ``PI`` constant (``3.141592``).                                                        |
+|                                   | A ratio of a circle's circumference to its diameter and amount of radians in half turn.  |
++-----------------------------------+------------------------------------------------------------------------------------------+
+| in float **TAU**                  | A ``TAU`` constant (``6.283185``).                                                       |
+|                                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                          |
++-----------------------------------+------------------------------------------------------------------------------------------+
+| in float **E**                    | An ``E`` constant (``2.718281``).                                                        |
+|                                   | Euler's number and a base of the natural logarithm.                                      |
++-----------------------------------+------------------------------------------------------------------------------------------+
 
 Fog built-ins
-^^^^^^^^^^^^^
+-------------
 
 All of the output values of fog volumes overlap one another. This allows
 :ref:`FogVolumes <class_FogVolume>` to be rendered efficiently as they can all
@@ -61,7 +67,7 @@ be drawn at once.
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec3 **OBJECT_POSITION**   | Position of the center of the current :ref:`FogVolume <class_FogVolume>` in world space.        |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec3 **UVW**               | 3-dimensional uv, used to map a 3D texture to the current :ref:`FogVolume <class_FogVolume>`.   |
+| in vec3 **UVW**               | 3-dimensional UV, used to map a 3D texture to the current :ref:`FogVolume <class_FogVolume>`.   |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec3 **SIZE**              | Size of the current :ref:`FogVolume <class_FogVolume>` when its                                 |
 |                               | :ref:`shape<class_FogVolume_property_shape>` has a size.                                        |

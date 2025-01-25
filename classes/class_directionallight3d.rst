@@ -74,7 +74,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ShadowMode**:
+enum **ShadowMode**: :ref:`🔗<enum_DirectionalLight3D_ShadowMode>`
 
 .. _class_DirectionalLight3D_constant_SHADOW_ORTHOGONAL:
 
@@ -108,7 +108,7 @@ Splits the view frustum in 4 areas, each with its own shadow map. This is the sl
 
 .. rst-class:: classref-enumeration
 
-enum **SkyMode**:
+enum **SkyMode**: :ref:`🔗<enum_DirectionalLight3D_SkyMode>`
 
 .. _class_DirectionalLight3D_constant_SKY_MODE_LIGHT_AND_SKY:
 
@@ -147,7 +147,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **directional_shadow_blend_splits** = ``false``
+:ref:`bool<class_bool>` **directional_shadow_blend_splits** = ``false`` :ref:`🔗<class_DirectionalLight3D_property_directional_shadow_blend_splits>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ If ``true``, shadow detail is sacrificed in exchange for smoother transitions be
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **directional_shadow_fade_start** = ``0.8``
+:ref:`float<class_float>` **directional_shadow_fade_start** = ``0.8`` :ref:`🔗<class_DirectionalLight3D_property_directional_shadow_fade_start>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +181,7 @@ Proportion of :ref:`directional_shadow_max_distance<class_DirectionalLight3D_pro
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **directional_shadow_max_distance** = ``100.0``
+:ref:`float<class_float>` **directional_shadow_max_distance** = ``100.0`` :ref:`🔗<class_DirectionalLight3D_property_directional_shadow_max_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +198,7 @@ The maximum distance for shadow splits. Increasing this value will make directio
 
 .. rst-class:: classref-property
 
-:ref:`ShadowMode<enum_DirectionalLight3D_ShadowMode>` **directional_shadow_mode** = ``2``
+:ref:`ShadowMode<enum_DirectionalLight3D_ShadowMode>` **directional_shadow_mode** = ``2`` :ref:`🔗<class_DirectionalLight3D_property_directional_shadow_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -215,7 +215,7 @@ The light's shadow rendering algorithm. See :ref:`ShadowMode<enum_DirectionalLig
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **directional_shadow_pancake_size** = ``20.0``
+:ref:`float<class_float>` **directional_shadow_pancake_size** = ``20.0`` :ref:`🔗<class_DirectionalLight3D_property_directional_shadow_pancake_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -232,7 +232,7 @@ Sets the size of the directional shadow pancake. The pancake offsets the start o
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **directional_shadow_split_1** = ``0.1``
+:ref:`float<class_float>` **directional_shadow_split_1** = ``0.1`` :ref:`🔗<class_DirectionalLight3D_property_directional_shadow_split_1>`
 
 .. rst-class:: classref-property-setget
 
@@ -249,7 +249,7 @@ The distance from camera to shadow split 1. Relative to :ref:`directional_shadow
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **directional_shadow_split_2** = ``0.2``
+:ref:`float<class_float>` **directional_shadow_split_2** = ``0.2`` :ref:`🔗<class_DirectionalLight3D_property_directional_shadow_split_2>`
 
 .. rst-class:: classref-property-setget
 
@@ -266,7 +266,7 @@ The distance from shadow split 1 to split 2. Relative to :ref:`directional_shado
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **directional_shadow_split_3** = ``0.5``
+:ref:`float<class_float>` **directional_shadow_split_3** = ``0.5`` :ref:`🔗<class_DirectionalLight3D_property_directional_shadow_split_3>`
 
 .. rst-class:: classref-property-setget
 
@@ -283,7 +283,7 @@ The distance from shadow split 2 to split 3. Relative to :ref:`directional_shado
 
 .. rst-class:: classref-property
 
-:ref:`SkyMode<enum_DirectionalLight3D_SkyMode>` **sky_mode** = ``0``
+:ref:`SkyMode<enum_DirectionalLight3D_SkyMode>` **sky_mode** = ``0`` :ref:`🔗<class_DirectionalLight3D_property_sky_mode>`
 
 .. rst-class:: classref-property-setget
 

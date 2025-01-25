@@ -24,7 +24,7 @@ Description
 
 The **AudioStreamPlayer** node plays an audio stream non-positionally. It is ideal for user interfaces, menus, or background music.
 
-To use this node, :ref:`stream<class_AudioStreamPlayer_property_stream>` needs to be set to a valid :ref:`AudioStream<class_AudioStream>` resource. Playing more than one sound at the time is also supported, see :ref:`max_polyphony<class_AudioStreamPlayer_property_max_polyphony>`.
+To use this node, :ref:`stream<class_AudioStreamPlayer_property_stream>` needs to be set to a valid :ref:`AudioStream<class_AudioStream>` resource. Playing more than one sound at the same time is also supported, see :ref:`max_polyphony<class_AudioStreamPlayer_property_max_polyphony>`.
 
 If you need to play audio at a specific position, use :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>` or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` instead.
 
@@ -64,6 +64,8 @@ Properties
    +----------------------------------------------------+----------------------------------------------------------------------+---------------+
    | :ref:`float<class_float>`                          | :ref:`pitch_scale<class_AudioStreamPlayer_property_pitch_scale>`     | ``1.0``       |
    +----------------------------------------------------+----------------------------------------------------------------------+---------------+
+   | :ref:`PlaybackType<enum_AudioServer_PlaybackType>` | :ref:`playback_type<class_AudioStreamPlayer_property_playback_type>` | ``0``         |
+   +----------------------------------------------------+----------------------------------------------------------------------+---------------+
    | :ref:`bool<class_bool>`                            | :ref:`playing<class_AudioStreamPlayer_property_playing>`             | ``false``     |
    +----------------------------------------------------+----------------------------------------------------------------------+---------------+
    | :ref:`AudioStream<class_AudioStream>`              | :ref:`stream<class_AudioStreamPlayer_property_stream>`               |               |
@@ -71,6 +73,8 @@ Properties
    | :ref:`bool<class_bool>`                            | :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` | ``false``     |
    +----------------------------------------------------+----------------------------------------------------------------------+---------------+
    | :ref:`float<class_float>`                          | :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>`         | ``0.0``       |
+   +----------------------------------------------------+----------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                          | :ref:`volume_linear<class_AudioStreamPlayer_property_volume_linear>` |               |
    +----------------------------------------------------+----------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-reftable-group
@@ -108,7 +112,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**finished**\ (\ )
+**finished**\ (\ ) :ref:`🔗<class_AudioStreamPlayer_signal_finished>`
 
 Emitted when a sound finishes playing without interruptions. This signal is *not* emitted when calling :ref:`stop<class_AudioStreamPlayer_method_stop>`, or when exiting the tree while sounds are playing.
 
@@ -125,7 +129,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **MixTarget**:
+enum **MixTarget**: :ref:`🔗<enum_AudioStreamPlayer_MixTarget>`
 
 .. _class_AudioStreamPlayer_constant_MIX_TARGET_STEREO:
 
@@ -164,7 +168,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **autoplay** = ``false``
+:ref:`bool<class_bool>` **autoplay** = ``false`` :ref:`🔗<class_AudioStreamPlayer_property_autoplay>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +185,7 @@ If ``true``, this node calls :ref:`play<class_AudioStreamPlayer_method_play>` wh
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **bus** = ``&"Master"``
+:ref:`StringName<class_StringName>` **bus** = ``&"Master"`` :ref:`🔗<class_AudioStreamPlayer_property_bus>`
 
 .. rst-class:: classref-property-setget
 
@@ -200,7 +204,7 @@ The target bus name. All sounds from this node will be playing on this bus.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_polyphony** = ``1``
+:ref:`int<class_int>` **max_polyphony** = ``1`` :ref:`🔗<class_AudioStreamPlayer_property_max_polyphony>`
 
 .. rst-class:: classref-property-setget
 
@@ -217,7 +221,7 @@ The maximum number of sounds this node can play at the same time. Calling :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` **mix_target** = ``0``
+:ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` **mix_target** = ``0`` :ref:`🔗<class_AudioStreamPlayer_property_mix_target>`
 
 .. rst-class:: classref-property-setget
 
@@ -234,7 +238,7 @@ The mix target channels, as one of the :ref:`MixTarget<enum_AudioStreamPlayer_Mi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pitch_scale** = ``1.0``
+:ref:`float<class_float>` **pitch_scale** = ``1.0`` :ref:`🔗<class_AudioStreamPlayer_property_pitch_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -247,14 +251,34 @@ The audio's pitch and tempo, as a multiplier of the :ref:`stream<class_AudioStre
 
 ----
 
+.. _class_AudioStreamPlayer_property_playback_type:
+
+.. rst-class:: classref-property
+
+:ref:`PlaybackType<enum_AudioServer_PlaybackType>` **playback_type** = ``0`` :ref:`🔗<class_AudioStreamPlayer_property_playback_type>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_playback_type**\ (\ value\: :ref:`PlaybackType<enum_AudioServer_PlaybackType>`\ )
+- :ref:`PlaybackType<enum_AudioServer_PlaybackType>` **get_playback_type**\ (\ )
+
+**Experimental:** This property may be changed or removed in future versions.
+
+The playback type of the stream player. If set other than to the default value, it will force that playback type.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AudioStreamPlayer_property_playing:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **playing** = ``false``
+:ref:`bool<class_bool>` **playing** = ``false`` :ref:`🔗<class_AudioStreamPlayer_property_playing>`
 
 .. rst-class:: classref-property-setget
 
+- |void| **set_playing**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_playing**\ (\ )
 
 If ``true``, this node is playing sounds. Setting this property has the same effect as :ref:`play<class_AudioStreamPlayer_method_play>` and :ref:`stop<class_AudioStreamPlayer_method_stop>`.
@@ -267,7 +291,7 @@ If ``true``, this node is playing sounds. Setting this property has the same eff
 
 .. rst-class:: classref-property
 
-:ref:`AudioStream<class_AudioStream>` **stream**
+:ref:`AudioStream<class_AudioStream>` **stream** :ref:`🔗<class_AudioStreamPlayer_property_stream>`
 
 .. rst-class:: classref-property-setget
 
@@ -284,7 +308,7 @@ The :ref:`AudioStream<class_AudioStream>` resource to be played. Setting this pr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **stream_paused** = ``false``
+:ref:`bool<class_bool>` **stream_paused** = ``false`` :ref:`🔗<class_AudioStreamPlayer_property_stream_paused>`
 
 .. rst-class:: classref-property-setget
 
@@ -303,16 +327,35 @@ If ``true``, the sounds are paused. Setting :ref:`stream_paused<class_AudioStrea
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volume_db** = ``0.0``
+:ref:`float<class_float>` **volume_db** = ``0.0`` :ref:`🔗<class_AudioStreamPlayer_property_volume_db>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_volume_db**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_volume_db**\ (\ )
 
-Volume of sound, in decibel. This is an offset of the :ref:`stream<class_AudioStreamPlayer_property_stream>`'s volume.
+Volume of sound, in decibels. This is an offset of the :ref:`stream<class_AudioStreamPlayer_property_stream>`'s volume.
 
-\ **Note:** To convert between decibel and linear energy (like most volume sliders do), use :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` and :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>`.
+\ **Note:** To convert between decibel and linear energy (like most volume sliders do), use :ref:`volume_linear<class_AudioStreamPlayer_property_volume_linear>`, or :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` and :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamPlayer_property_volume_linear:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **volume_linear** :ref:`🔗<class_AudioStreamPlayer_property_volume_linear>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_volume_linear**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_volume_linear**\ (\ )
+
+Volume of sound, as a linear value.
+
+\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>` on a value.
 
 .. rst-class:: classref-section-separator
 
@@ -327,11 +370,13 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_playback_position**\ (\ )
+:ref:`float<class_float>` **get_playback_position**\ (\ ) :ref:`🔗<class_AudioStreamPlayer_method_get_playback_position>`
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>` of the latest sound, in seconds. Returns ``0.0`` if no sounds are playing.
 
 \ **Note:** The position is not always accurate, as the :ref:`AudioServer<class_AudioServer>` does not mix audio every processed frame. To get more accurate results, add :ref:`AudioServer.get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>` to the returned position.
+
+\ **Note:** This method always returns ``0.0`` if the :ref:`stream<class_AudioStreamPlayer_property_stream>` is an :ref:`AudioStreamInteractive<class_AudioStreamInteractive>`, since it can have multiple clips playing at once.
 
 .. rst-class:: classref-item-separator
 
@@ -341,7 +386,7 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>` of the latest 
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback**\ (\ )
+:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback**\ (\ ) :ref:`🔗<class_AudioStreamPlayer_method_get_stream_playback>`
 
 Returns the latest :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` of this node, usually the most recently created by :ref:`play<class_AudioStreamPlayer_method_play>`. If no sounds are playing, this method fails and returns an empty playback.
 
@@ -353,7 +398,7 @@ Returns the latest :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` of this
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_stream_playback**\ (\ )
+:ref:`bool<class_bool>` **has_stream_playback**\ (\ ) :ref:`🔗<class_AudioStreamPlayer_method_has_stream_playback>`
 
 Returns ``true`` if any sound is active, even if :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` is set to ``true``. See also :ref:`playing<class_AudioStreamPlayer_property_playing>` and :ref:`get_stream_playback<class_AudioStreamPlayer_method_get_stream_playback>`.
 
@@ -365,7 +410,7 @@ Returns ``true`` if any sound is active, even if :ref:`stream_paused<class_Audio
 
 .. rst-class:: classref-method
 
-|void| **play**\ (\ from_position\: :ref:`float<class_float>` = 0.0\ )
+|void| **play**\ (\ from_position\: :ref:`float<class_float>` = 0.0\ ) :ref:`🔗<class_AudioStreamPlayer_method_play>`
 
 Plays a sound from the beginning, or the given ``from_position`` in seconds.
 
@@ -377,7 +422,7 @@ Plays a sound from the beginning, or the given ``from_position`` in seconds.
 
 .. rst-class:: classref-method
 
-|void| **seek**\ (\ to_position\: :ref:`float<class_float>`\ )
+|void| **seek**\ (\ to_position\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioStreamPlayer_method_seek>`
 
 Restarts all sounds to be played from the given ``to_position``, in seconds. Does nothing if no sounds are playing.
 
@@ -389,7 +434,7 @@ Restarts all sounds to be played from the given ``to_position``, in seconds. Doe
 
 .. rst-class:: classref-method
 
-|void| **stop**\ (\ )
+|void| **stop**\ (\ ) :ref:`🔗<class_AudioStreamPlayer_method_stop>`
 
 Stops all sounds from this node.
 

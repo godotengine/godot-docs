@@ -9,8 +9,8 @@ it's best used when targeting dedicated graphics cards.
 
 .. important::
 
-    VoxelGI is only supported when using the Forward Plus rendering backend,
-    not the Forward Mobile or Compatibility backends.
+    VoxelGI is only supported when using the Forward+ renderer, not the Mobile or
+    Compatibility renderers.
 
 .. seealso::
 
@@ -81,7 +81,7 @@ contained within a VoxelGI node after it has been baked:
   If in doubt, leave this unchanged.
 - **Energy:** The indirect lighting's overall energy. This also effects the energy
   of direct lighting emitted by meshes with emissive materials.
-- **Bias:** Optional bias added to lookups into the voxel buffer at run time.
+- **Bias:** Optional bias added to lookups into the voxel buffer at runtime.
   This helps avoid self-occlusion artifacts.
 - **Normal Bias:** Similar to **Bias**, but offsets the lookup into the voxel buffer
   by the surface normal. This also helps avoid self-occlusion artifacts. Higher

@@ -21,6 +21,8 @@ Description
 
 **PropertyTweener** is used to interpolate a property in an object. See :ref:`Tween.tween_property<class_Tween_method_tween_property>` for more usage information.
 
+The tweener will finish automatically if the target object is freed.
+
 \ **Note:** :ref:`Tween.tween_property<class_Tween_method_tween_property>` is the only correct way to create **PropertyTweener**. Any **PropertyTweener** created manually will not function correctly.
 
 .. rst-class:: classref-reftable-group
@@ -60,16 +62,26 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **as_relative**\ (\ )
+:ref:`PropertyTweener<class_PropertyTweener>` **as_relative**\ (\ ) :ref:`🔗<class_PropertyTweener_method_as_relative>`
 
 When called, the final value will be used as a relative value instead.
 
-\ **Example:**\ 
+\ **Example:** Move the node by ``100`` pixels to the right.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
-    tween.tween_property(self, "position", Vector2.RIGHT * 100, 1).as_relative() #the node will move by 100 pixels to the right
+    tween.tween_property(self, "position", Vector2.RIGHT * 100, 1).as_relative()
+
+ .. code-tab:: csharp
+
+    Tween tween = GetTree().CreateTween();
+    tween.TweenProperty(this, "position", Vector2.Right * 100.0f, 1.0f).AsRelative();
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -79,16 +91,26 @@ When called, the final value will be used as a relative value instead.
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **from**\ (\ value\: :ref:`Variant<class_Variant>`\ )
+:ref:`PropertyTweener<class_PropertyTweener>` **from**\ (\ value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_PropertyTweener_method_from>`
 
 Sets a custom initial value to the **PropertyTweener**.
 
-\ **Example:**\ 
+\ **Example:** Move the node from position ``(100, 100)`` to ``(200, 100)``.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
-    tween.tween_property(self, "position", Vector2(200, 100), 1).from(Vector2(100, 100)) #this will move the node from position (100, 100) to (200, 100)
+    tween.tween_property(self, "position", Vector2(200, 100), 1).from(Vector2(100, 100))
+
+ .. code-tab:: csharp
+
+    Tween tween = GetTree().CreateTween();
+    tween.TweenProperty(this, "position", new Vector2(200.0f, 100.0f), 1.0f).From(new Vector2(100.0f, 100.0f));
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -98,14 +120,24 @@ Sets a custom initial value to the **PropertyTweener**.
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **from_current**\ (\ )
+:ref:`PropertyTweener<class_PropertyTweener>` **from_current**\ (\ ) :ref:`🔗<class_PropertyTweener_method_from_current>`
 
 Makes the **PropertyTweener** use the current property value (i.e. at the time of creating this **PropertyTweener**) as a starting point. This is equivalent of using :ref:`from<class_PropertyTweener_method_from>` with the current value. These two calls will do the same:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     tween.tween_property(self, "position", Vector2(200, 100), 1).from(position)
     tween.tween_property(self, "position", Vector2(200, 100), 1).from_current()
+
+ .. code-tab:: csharp
+
+    tween.TweenProperty(this, "position", new Vector2(200.0f, 100.0f), 1.0f).From(Position);
+    tween.TweenProperty(this, "position", new Vector2(200.0f, 100.0f), 1.0f).FromCurrent();
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -115,13 +147,14 @@ Makes the **PropertyTweener** use the current property value (i.e. at the time o
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **set_custom_interpolator**\ (\ interpolator_method\: :ref:`Callable<class_Callable>`\ )
+:ref:`PropertyTweener<class_PropertyTweener>` **set_custom_interpolator**\ (\ interpolator_method\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_PropertyTweener_method_set_custom_interpolator>`
 
 Allows interpolating the value with a custom easing function. The provided ``interpolator_method`` will be called with a value ranging from ``0.0`` to ``1.0`` and is expected to return a value within the same range (values outside the range can be used for overshoot). The return value of the method is then used for interpolation between initial and final value. Note that the parameter passed to the method is still subject to the tweener's own easing.
 
-\ **Example:**\ 
 
-::
+.. tabs::
+
+ .. code-tab:: gdscript
 
     @export var curve: Curve
     
@@ -133,6 +166,26 @@ Allows interpolating the value with a custom easing function. The provided ``int
     func tween_curve(v):
         return curve.sample_baked(v)
 
+ .. code-tab:: csharp
+
+    [Export]
+    public Curve Curve { get; set; }
+    
+    public override void _Ready()
+    {
+        Tween tween = CreateTween();
+        // Interpolate the value using a custom curve.
+        Callable tweenCurveCallable = Callable.From<float, float>(TweenCurve);
+        tween.TweenProperty(this, "position:x", 300.0f, 1.0f).AsRelative().SetCustomInterpolator(tweenCurveCallable);
+    }
+    
+    private float TweenCurve(float value)
+    {
+        return Curve.SampleBaked(value);
+    }
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -141,7 +194,7 @@ Allows interpolating the value with a custom easing function. The provided ``int
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **set_delay**\ (\ delay\: :ref:`float<class_float>`\ )
+:ref:`PropertyTweener<class_PropertyTweener>` **set_delay**\ (\ delay\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PropertyTweener_method_set_delay>`
 
 Sets the time in seconds after which the **PropertyTweener** will start interpolating. By default there's no delay.
 
@@ -153,7 +206,7 @@ Sets the time in seconds after which the **PropertyTweener** will start interpol
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **set_ease**\ (\ ease\: :ref:`EaseType<enum_Tween_EaseType>`\ )
+:ref:`PropertyTweener<class_PropertyTweener>` **set_ease**\ (\ ease\: :ref:`EaseType<enum_Tween_EaseType>`\ ) :ref:`🔗<class_PropertyTweener_method_set_ease>`
 
 Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not set, the default easing is used from the :ref:`Tween<class_Tween>` that contains this Tweener.
 
@@ -165,7 +218,7 @@ Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not s
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **set_trans**\ (\ trans\: :ref:`TransitionType<enum_Tween_TransitionType>`\ )
+:ref:`PropertyTweener<class_PropertyTweener>` **set_trans**\ (\ trans\: :ref:`TransitionType<enum_Tween_TransitionType>`\ ) :ref:`🔗<class_PropertyTweener_method_set_trans>`
 
 Sets the type of used transition from :ref:`TransitionType<enum_Tween_TransitionType>`. If not set, the default transition is used from the :ref:`Tween<class_Tween>` that contains this Tweener.
 

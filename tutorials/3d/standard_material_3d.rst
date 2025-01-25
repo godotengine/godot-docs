@@ -36,7 +36,7 @@ BaseMaterial 3D settings
 StandardMaterial3D has many settings that determine the look of a material. All of these are
 under the BaseMaterial3D category
 
-.. image:: img/spatial_material1.png
+.. image:: img/spatial_material1.webp
 
 ORM materials are almost exactly the same with one difference. Instead of separate settings
 and textures for occlusion, roughness, and metallic, there is a single ORM texture. The different
@@ -244,31 +244,42 @@ Shading
 Shading mode
 ~~~~~~~~~~~~
 
-Godot has a more or less uniform cost per pixel thanks to the depth pre-pass.
-All lighting calculations are made by running the lighting shader on every
-pixel.
+Materials support three shading modes: **Per-Pixel**, **Per-Vertex**, and
+**Unshaded**.
 
-As these calculations are costly, performance can be brought down considerably
-in some corner cases such as drawing several layers of transparency (which is
-common in particle systems). Switching to the **Unshaded** shading mode may help improve
-performance in these cases, especially when the camera is close to particles.
+.. figure:: img/standard_material_shading_modes.webp
+  :align: center
+  :alt: Three spheres showing the Per-Pixel, Per-Vertex, and Unshaded modes.
 
-Additionally, on low-end or mobile devices, switching to unshaded rendering
-can considerably increase rendering performance.
+The **Per-Pixel** shading mode calculates lighting for each pixel, and is a good
+fit for most use cases. However, in some cases you may want to increase
+performance by using another shading mode.
 
-.. image:: img/spatial_material26.png
+The **Per-Vertex** shading mode, often called "vertex shading" or "vertex lighting",
+instead calculates lighting once for each vertex, and interpolates the result
+between each pixel.
 
-Keep in mind that when unshaded rendering is enabled, lights will not affect the
-material at all.
+On low-end or mobile devices, using per-vertex lighting can considerably increase
+rendering performance. When rendering several layers of transparency,
+such as when using particle systems, using per-vertex shading can improve
+performance, especially when the camera is close to particles.
 
-.. note::
+You can also use per-vertex lighting to achieve a retro look.
 
-    **Per-Vertex** shading is listed as an option in the shading mode property.
-    However, per-vertex shading is currently unimplemented and will act
-    identical to per-pixel shading.
+.. figure:: img/standard_material_shading_modes_textured.webp
+  :align: center
+  :alt: Two cubes with a brick texture, one shaded and one unshaded.
+  
+  Texture from `AmbientCG <https://ambientcg.com/view?id=Bricks051>`__
 
-    Support for per-vertex shading is planned to be reimplemented in a future
-    Godot release.
+The **Unshaded** shading mode does not calculate lighting at all. Instead, the
+**Albedo** color is output directly. Lights will not affect the material at all,
+and unshaded materials will tend to appear considerably brighter than shaded
+materials.
+
+Rendering unshaded is useful for some specific visual effects. If maximum
+performance is needed, it can also be used for particles, or low-end or
+mobile devices.
 
 Diffuse Mode
 ~~~~~~~~~~~~
@@ -295,13 +306,10 @@ Specifies how the specular blob will be rendered. The specular blob
 represents the shape of a light source reflected in the object.
 
 * **SchlickGGX:** The most common blob used by PBR 3D engines nowadays.
-* **Blinn:** Common in previous-generation engines.
-  Not worth using nowadays, but left here for the sake of compatibility.
-* **Phong:** Same as above.
 * **Toon:** Creates a toon blob, which changes size depending on roughness.
 * **Disabled:** Sometimes the blob gets in the way. Begone!
 
-.. image:: img/spatial_material7.png
+.. image:: img/spatial_material7.webp
 
 Disable Ambient Light
 ~~~~~~~~~~~~~~~~~~~~~
@@ -320,7 +328,7 @@ Vertex Color
 This setting allows choosing what is done by default to vertex colors that come
 from your 3D modeling application. By default, they are ignored.
 
-.. image:: img/spatial_material4.png
+.. image:: img/spatial_material4.webp
 
 Use as Albedo
 ~~~~~~~~~~~~~
@@ -455,18 +463,21 @@ AO map. It is recommended to bake ambient occlusion whenever possible.
 Height
 ------
 
-
-Setting a depth map on a material produces a ray-marched search to emulate the
-proper displacement of cavities along the view direction. This is not real
-added geometry, but an illusion of depth. It may not work for complex objects,
-but it produces a realistic depth effect for textures. For best results,
-*Depth* should be used together with normal mapping.
+Setting a height map on a material produces a ray-marched search to emulate the
+proper displacement of cavities along the view direction. This only creates an
+illusion of depth, and does not add real geometry — for a height map shape used
+for physics collision (such as terrain), see :ref:`class_HeightMapShape3D`. It
+may not work for complex objects, but it produces a realistic depth effect for
+textures. For best results, *Height* should be used together with normal
+mapping.
 
 .. image:: img/spatial_material20.png
 
 Subsurface Scattering
 ---------------------
 
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
 
 This effect emulates light that penetrates an object's surface, is scattered,
 and then comes out. It is useful to create realistic skin, marble, colored
@@ -636,7 +647,7 @@ faces the camera:
 * **Particle Billboard:** Most suited for particle systems, because it allows
   specifying :ref:`flipbook animation <doc_process_material_properties_animation>`.
 
-.. image:: img/spatial_material9.png
+.. image:: img/spatial_material9.webp
 
 The **Particles Anim** section is only visible when the billboard mode is **Particle Billboard**.
 
@@ -656,6 +667,12 @@ This is commonly used to create cheap outlines. Add a second material pass,
 make it black and unshaded, reverse culling (Cull Front), and add some grow:
 
 .. image:: img/spatial_material11.png
+
+.. note::
+
+    For Grow to work as expected, the mesh must have connected faces with shared
+    vertices, or "smooth shading". If the mesh has disconnected faces with unique
+    vertices, or "flat shading", the mesh will appear to have gaps when using Grow.
 
 Transform
 ---------
@@ -737,8 +754,21 @@ The rendering order of objects can be changed, although this is mostly
 useful for transparent objects (or opaque objects that perform depth draw
 but no color draw, such as cracks on the floor).
 
+Objects are sorted by an opaque/transparent queue, then :ref:`render_priority<class_Material_property_render_priority>`,
+with higher priority being drawn later. Transparent objects are also sorted by depth.
+
+Depth testing overrules priority. Priority alone cannot force opaque objects to be drawn over each other.
+
 Next Pass
 ---------
 
-Sets the material to be used for the next pass. This renders the object
-again with a different material.
+Setting :ref:`next_pass<class_Material_property_next_pass>` on a material
+will cause an object to be rendered again with that next material.
+
+Materials are sorted by an opaque/transparent queue, then :ref:`render_priority<class_Material_property_render_priority>`,
+with higher priority being drawn later.
+
+.. image:: img/next_pass.webp
+
+Depth will test equal between both materials unless the grow setting or other vertex transformations are used.
+Multiple transparent passes should use :ref:`render_priority<class_Material_property_render_priority>` to ensure correct ordering.

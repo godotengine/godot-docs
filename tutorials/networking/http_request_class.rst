@@ -127,7 +127,7 @@ But what if you need to send data to the server? Here is a common way of doing i
     .. code-tab:: csharp
 
         string json = Json.Stringify(dataToSend);
-        string[] headers = new string[] { "Content-Type: application/json" };
+        string[] headers = ["Content-Type: application/json"];
         HttpRequest httpRequest = GetNode<HttpRequest>("HTTPRequest");
         httpRequest.Request(url, headers, HttpClient.Method.Post, json);
 
@@ -147,9 +147,9 @@ For example, to set a custom user agent (the HTTP ``User-Agent`` header) you cou
     .. code-tab:: csharp
 
         HttpRequest httpRequest = GetNode<HttpRequest>("HTTPRequest");
-        httpRequest.Request("https://api.github.com/repos/godotengine/godot/releases/latest", new string[] { "User-Agent: YourCustomUserAgent" });
+        httpRequest.Request("https://api.github.com/repos/godotengine/godot/releases/latest", ["User-Agent: YourCustomUserAgent"]);
 
-.. warning::
+.. danger::
 
     Be aware that someone might analyse and decompile your released application and
     thus may gain access to any embedded authorization information like tokens, usernames or passwords.

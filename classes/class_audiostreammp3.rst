@@ -21,6 +21,8 @@ Description
 
 MP3 audio stream driver. See :ref:`data<class_AudioStreamMP3_property_data>` if you want to load an MP3 file at run-time.
 
+\ **Note:** This class can optionally support legacy MP1 and MP2 formats, provided that the engine is compiled with the ``minimp3_extra_formats=yes`` SCons option. These extra formats are not enabled by default.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -43,6 +45,20 @@ Properties
    | :ref:`float<class_float>`                     | :ref:`loop_offset<class_AudioStreamMP3_property_loop_offset>` | ``0.0``               |
    +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamMP3<class_AudioStreamMP3>` | :ref:`load_from_buffer<class_AudioStreamMP3_method_load_from_buffer>`\ (\ stream_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamMP3<class_AudioStreamMP3>` | :ref:`load_from_file<class_AudioStreamMP3_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                              |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -56,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bar_beats** = ``4``
+:ref:`int<class_int>` **bar_beats** = ``4`` :ref:`🔗<class_AudioStreamMP3_property_bar_beats>`
 
 .. rst-class:: classref-property-setget
 
@@ -75,7 +91,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **beat_count** = ``0``
+:ref:`int<class_int>` **beat_count** = ``0`` :ref:`🔗<class_AudioStreamMP3_property_beat_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,7 +110,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bpm** = ``0.0``
+:ref:`float<class_float>` **bpm** = ``0.0`` :ref:`🔗<class_AudioStreamMP3_property_bpm>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +129,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()`` :ref:`🔗<class_AudioStreamMP3_property_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +173,7 @@ You can load a file without having to import it beforehand using the code snippe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``false``
+:ref:`bool<class_bool>` **loop** = ``false`` :ref:`🔗<class_AudioStreamMP3_property_loop>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +190,7 @@ If ``true``, the stream will automatically loop when it reaches the end.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **loop_offset** = ``0.0``
+:ref:`float<class_float>` **loop_offset** = ``0.0`` :ref:`🔗<class_AudioStreamMP3_property_loop_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -182,6 +198,35 @@ If ``true``, the stream will automatically loop when it reaches the end.
 - :ref:`float<class_float>` **get_loop_offset**\ (\ )
 
 Time in seconds at which the stream starts after being looped.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_AudioStreamMP3_method_load_from_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStreamMP3<class_AudioStreamMP3>` **load_from_buffer**\ (\ stream_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_AudioStreamMP3_method_load_from_buffer>`
+
+Creates a new **AudioStreamMP3** instance from the given buffer. The buffer must contain MP3 data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamMP3_method_load_from_file:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStreamMP3<class_AudioStreamMP3>` **load_from_file**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_AudioStreamMP3_method_load_from_file>`
+
+Creates a new **AudioStreamMP3** instance from the given file path. The file must be in MP3 format.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

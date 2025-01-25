@@ -167,7 +167,7 @@ who design software) to actually understand all future user needs. Trying to
 write very flexible structures that cater to many use cases at once is often a
 mistake.
 
-We may come up with something we believe is brilliant but later find out that
+We may come up with something we believe is brilliant, but later find out that
 users will never even use half of it or that they require features that don't
 quite fit into our original design, forcing us to either throw it away
 or make it even more complex.
@@ -179,7 +179,7 @@ they'll need to do* in the future?
 .. image:: img/best_practices6.png
 
 The answer to this question is that, to ensure users still can do what they want
-to do, we need to give them access to a *low level API* that they can use to
+to do, we need to give them access to a *low-level API* that they can use to
 achieve what they want, even if it's more work for them because it means
 reimplementing some logic that already exists.
 
@@ -219,7 +219,7 @@ is always the advised one.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Not every problem has a simple solution and, many times, the right choice is to
-use a third party library to solve the problem.
+use a third-party library to solve the problem.
 
 As Godot requires to be shipped in a large amount of platforms, we can't
 link libraries dynamically. Instead, we bundle them in our source tree.

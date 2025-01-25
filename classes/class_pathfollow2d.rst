@@ -60,7 +60,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cubic_interp** = ``true``
+:ref:`bool<class_bool>` **cubic_interp** = ``true`` :ref:`🔗<class_PathFollow2D_property_cubic_interp>`
 
 .. rst-class:: classref-property-setget
 
@@ -81,7 +81,7 @@ There are two answers to this problem: either increase the number of cached poin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **h_offset** = ``0.0``
+:ref:`float<class_float>` **h_offset** = ``0.0`` :ref:`🔗<class_PathFollow2D_property_h_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -98,7 +98,7 @@ The node's offset along the curve.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``true``
+:ref:`bool<class_bool>` **loop** = ``true`` :ref:`🔗<class_PathFollow2D_property_loop>`
 
 .. rst-class:: classref-property-setget
 
@@ -115,7 +115,7 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **progress** = ``0.0``
+:ref:`float<class_float>` **progress** = ``0.0`` :ref:`🔗<class_PathFollow2D_property_progress>`
 
 .. rst-class:: classref-property-setget
 
@@ -132,7 +132,7 @@ The distance along the path, in pixels. Changing this value sets this node's pos
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **progress_ratio** = ``0.0``
+:ref:`float<class_float>` **progress_ratio** = ``0.0`` :ref:`🔗<class_PathFollow2D_property_progress_ratio>`
 
 .. rst-class:: classref-property-setget
 
@@ -140,6 +140,8 @@ The distance along the path, in pixels. Changing this value sets this node's pos
 - :ref:`float<class_float>` **get_progress_ratio**\ (\ )
 
 The distance along the path as a number in the range 0.0 (for the first vertex) to 1.0 (for the last). This is just another way of expressing the progress within the path, as the offset supplied is multiplied internally by the path's length.
+
+It can be set or get only if the **PathFollow2D** is the child of a :ref:`Path2D<class_Path2D>` which is part of the scene tree, and that this :ref:`Path2D<class_Path2D>` has a :ref:`Curve2D<class_Curve2D>` with a non-zero length. Otherwise, trying to set this field will print an error, and getting this field will return ``0.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -149,7 +151,7 @@ The distance along the path as a number in the range 0.0 (for the first vertex) 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rotates** = ``true``
+:ref:`bool<class_bool>` **rotates** = ``true`` :ref:`🔗<class_PathFollow2D_property_rotates>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +168,7 @@ If ``true``, this node rotates to follow the path, with the +X direction facing 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **v_offset** = ``0.0``
+:ref:`float<class_float>` **v_offset** = ``0.0`` :ref:`🔗<class_PathFollow2D_property_v_offset>`
 
 .. rst-class:: classref-property-setget
 

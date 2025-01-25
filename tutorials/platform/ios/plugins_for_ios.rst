@@ -490,7 +490,7 @@ On success:
 ``show_game_center``
 ~~~~~~~~~~~~~~~~~~~~
 
-Displays the built in Game Center overlay showing leaderboards,
+Displays the built-in Game Center overlay showing leaderboards,
 achievements, and challenges.
 
 Parameters

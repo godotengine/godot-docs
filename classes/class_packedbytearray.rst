@@ -124,6 +124,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_PackedByteArray_method_find>`\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const|                                                                 |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get<class_PackedByteArray_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                     |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>`\ (\ ) |const|                                                                                                |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`\ (\ ) |const|                                                                                                  |
@@ -202,7 +204,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`PackedByteArray<class_PackedByteArray>` **PackedByteArray**\ (\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **PackedByteArray**\ (\ ) :ref:`🔗<class_PackedByteArray_constructor_PackedByteArray>`
 
 Constructs an empty **PackedByteArray**.
 
@@ -239,7 +241,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **append**\ (\ value\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **append**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_append>`
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PackedByteArray_method_push_back>`).
 
@@ -251,7 +253,7 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_Packe
 
 .. rst-class:: classref-method
 
-|void| **append_array**\ (\ array\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+|void| **append_array**\ (\ array\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_PackedByteArray_method_append_array>`
 
 Appends a **PackedByteArray** at the end of this array.
 
@@ -263,7 +265,7 @@ Appends a **PackedByteArray** at the end of this array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`int<class_int>`, before\: :ref:`bool<class_bool>` = true\ )
+:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`int<class_int>`, before\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_PackedByteArray_method_bsearch>`
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
@@ -277,7 +279,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_PackedByteArray_method_clear>`
 
 Clears the array. This is equivalent to using :ref:`resize<class_PackedByteArray_method_resize>` with a size of ``0``.
 
@@ -289,7 +291,7 @@ Clears the array. This is equivalent to using :ref:`resize<class_PackedByteArray
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **compress**\ (\ compression_mode\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **compress**\ (\ compression_mode\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedByteArray_method_compress>`
 
 Returns a new **PackedByteArray** with the data compressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants.
 
@@ -301,7 +303,7 @@ Returns a new **PackedByteArray** with the data compressed. Set the compression 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **count**\ (\ value\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **count**\ (\ value\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_count>`
 
 Returns the number of times an element is in the array.
 
@@ -313,7 +315,7 @@ Returns the number of times an element is in the array.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **decode_double**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **decode_double**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_double>`
 
 Decodes a 64-bit floating-point number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0.0`` if a valid number can't be decoded.
 
@@ -325,7 +327,7 @@ Decodes a 64-bit floating-point number from the bytes starting at ``byte_offset`
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **decode_float**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **decode_float**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_float>`
 
 Decodes a 32-bit floating-point number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0.0`` if a valid number can't be decoded.
 
@@ -337,7 +339,7 @@ Decodes a 32-bit floating-point number from the bytes starting at ``byte_offset`
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **decode_half**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **decode_half**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_half>`
 
 Decodes a 16-bit floating-point number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0.0`` if a valid number can't be decoded.
 
@@ -349,7 +351,7 @@ Decodes a 16-bit floating-point number from the bytes starting at ``byte_offset`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_s8**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **decode_s8**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_s8>`
 
 Decodes a 8-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
@@ -361,7 +363,7 @@ Decodes a 8-bit signed integer number from the bytes starting at ``byte_offset``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_s16**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **decode_s16**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_s16>`
 
 Decodes a 16-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
@@ -373,7 +375,7 @@ Decodes a 16-bit signed integer number from the bytes starting at ``byte_offset`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_s32**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **decode_s32**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_s32>`
 
 Decodes a 32-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
@@ -385,7 +387,7 @@ Decodes a 32-bit signed integer number from the bytes starting at ``byte_offset`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_s64**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **decode_s64**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_s64>`
 
 Decodes a 64-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
@@ -397,7 +399,7 @@ Decodes a 64-bit signed integer number from the bytes starting at ``byte_offset`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_u8**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **decode_u8**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_u8>`
 
 Decodes a 8-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
@@ -409,7 +411,7 @@ Decodes a 8-bit unsigned integer number from the bytes starting at ``byte_offset
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_u16**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **decode_u16**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_u16>`
 
 Decodes a 16-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
@@ -421,7 +423,7 @@ Decodes a 16-bit unsigned integer number from the bytes starting at ``byte_offse
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_u32**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **decode_u32**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_u32>`
 
 Decodes a 32-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
@@ -433,7 +435,7 @@ Decodes a 32-bit unsigned integer number from the bytes starting at ``byte_offse
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_u64**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **decode_u64**\ (\ byte_offset\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_u64>`
 
 Decodes a 64-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
@@ -445,7 +447,7 @@ Decodes a 64-bit unsigned integer number from the bytes starting at ``byte_offse
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **decode_var**\ (\ byte_offset\: :ref:`int<class_int>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Variant<class_Variant>` **decode_var**\ (\ byte_offset\: :ref:`int<class_int>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_var>`
 
 Decodes a :ref:`Variant<class_Variant>` from the bytes starting at ``byte_offset``. Returns ``null`` if a valid variant can't be decoded or the value is :ref:`Object<class_Object>`-derived and ``allow_objects`` is ``false``.
 
@@ -457,7 +459,7 @@ Decodes a :ref:`Variant<class_Variant>` from the bytes starting at ``byte_offset
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_var_size**\ (\ byte_offset\: :ref:`int<class_int>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`int<class_int>` **decode_var_size**\ (\ byte_offset\: :ref:`int<class_int>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_PackedByteArray_method_decode_var_size>`
 
 Decodes a size of a :ref:`Variant<class_Variant>` from the bytes starting at ``byte_offset``. Requires at least 4 bytes of data starting at the offset, otherwise fails.
 
@@ -469,7 +471,7 @@ Decodes a size of a :ref:`Variant<class_Variant>` from the bytes starting at ``b
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **decompress**\ (\ buffer_size\: :ref:`int<class_int>`, compression_mode\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **decompress**\ (\ buffer_size\: :ref:`int<class_int>`, compression_mode\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedByteArray_method_decompress>`
 
 Returns a new **PackedByteArray** with the data decompressed. Set ``buffer_size`` to the size of the uncompressed data. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants.
 
@@ -483,7 +485,7 @@ Returns a new **PackedByteArray** with the data decompressed. Set ``buffer_size`
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **decompress_dynamic**\ (\ max_output_size\: :ref:`int<class_int>`, compression_mode\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **decompress_dynamic**\ (\ max_output_size\: :ref:`int<class_int>`, compression_mode\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedByteArray_method_decompress_dynamic>`
 
 Returns a new **PackedByteArray** with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants. **This method only accepts brotli, gzip, and deflate compression modes.**\ 
 
@@ -501,7 +503,7 @@ GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **duplicate**\ (\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **duplicate**\ (\ ) :ref:`🔗<class_PackedByteArray_method_duplicate>`
 
 Creates a copy of the array, and returns it.
 
@@ -513,7 +515,7 @@ Creates a copy of the array, and returns it.
 
 .. rst-class:: classref-method
 
-|void| **encode_double**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )
+|void| **encode_double**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_double>`
 
 Encodes a 64-bit floating-point number as bytes at the index of ``byte_offset`` bytes. The array must have at least 8 bytes of allocated space, starting at the offset.
 
@@ -525,7 +527,7 @@ Encodes a 64-bit floating-point number as bytes at the index of ``byte_offset`` 
 
 .. rst-class:: classref-method
 
-|void| **encode_float**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )
+|void| **encode_float**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_float>`
 
 Encodes a 32-bit floating-point number as bytes at the index of ``byte_offset`` bytes. The array must have at least 4 bytes of space, starting at the offset.
 
@@ -537,7 +539,7 @@ Encodes a 32-bit floating-point number as bytes at the index of ``byte_offset`` 
 
 .. rst-class:: classref-method
 
-|void| **encode_half**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )
+|void| **encode_half**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_half>`
 
 Encodes a 16-bit floating-point number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
 
@@ -549,7 +551,7 @@ Encodes a 16-bit floating-point number as bytes at the index of ``byte_offset`` 
 
 .. rst-class:: classref-method
 
-|void| **encode_s8**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **encode_s8**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_s8>`
 
 Encodes a 8-bit signed integer number (signed byte) at the index of ``byte_offset`` bytes. The array must have at least 1 byte of space, starting at the offset.
 
@@ -561,7 +563,7 @@ Encodes a 8-bit signed integer number (signed byte) at the index of ``byte_offse
 
 .. rst-class:: classref-method
 
-|void| **encode_s16**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **encode_s16**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_s16>`
 
 Encodes a 16-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
 
@@ -573,7 +575,7 @@ Encodes a 16-bit signed integer number as bytes at the index of ``byte_offset`` 
 
 .. rst-class:: classref-method
 
-|void| **encode_s32**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **encode_s32**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_s32>`
 
 Encodes a 32-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 4 bytes of space, starting at the offset.
 
@@ -585,7 +587,7 @@ Encodes a 32-bit signed integer number as bytes at the index of ``byte_offset`` 
 
 .. rst-class:: classref-method
 
-|void| **encode_s64**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **encode_s64**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_s64>`
 
 Encodes a 64-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 8 bytes of space, starting at the offset.
 
@@ -597,7 +599,7 @@ Encodes a 64-bit signed integer number as bytes at the index of ``byte_offset`` 
 
 .. rst-class:: classref-method
 
-|void| **encode_u8**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **encode_u8**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_u8>`
 
 Encodes a 8-bit unsigned integer number (byte) at the index of ``byte_offset`` bytes. The array must have at least 1 byte of space, starting at the offset.
 
@@ -609,7 +611,7 @@ Encodes a 8-bit unsigned integer number (byte) at the index of ``byte_offset`` b
 
 .. rst-class:: classref-method
 
-|void| **encode_u16**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **encode_u16**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_u16>`
 
 Encodes a 16-bit unsigned integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
 
@@ -621,7 +623,7 @@ Encodes a 16-bit unsigned integer number as bytes at the index of ``byte_offset`
 
 .. rst-class:: classref-method
 
-|void| **encode_u32**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **encode_u32**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_u32>`
 
 Encodes a 32-bit unsigned integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 4 bytes of space, starting at the offset.
 
@@ -633,7 +635,7 @@ Encodes a 32-bit unsigned integer number as bytes at the index of ``byte_offset`
 
 .. rst-class:: classref-method
 
-|void| **encode_u64**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **encode_u64**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_encode_u64>`
 
 Encodes a 64-bit unsigned integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 8 bytes of space, starting at the offset.
 
@@ -645,7 +647,7 @@ Encodes a 64-bit unsigned integer number as bytes at the index of ``byte_offset`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **encode_var**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, allow_objects\: :ref:`bool<class_bool>` = false\ )
+:ref:`int<class_int>` **encode_var**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PackedByteArray_method_encode_var>`
 
 Encodes a :ref:`Variant<class_Variant>` at the index of ``byte_offset`` bytes. A sufficient space must be allocated, depending on the encoded variant's size. If ``allow_objects`` is ``false``, :ref:`Object<class_Object>`-derived values are not permitted and will instead be serialized as ID-only.
 
@@ -657,7 +659,7 @@ Encodes a :ref:`Variant<class_Variant>` at the index of ``byte_offset`` bytes. A
 
 .. rst-class:: classref-method
 
-|void| **fill**\ (\ value\: :ref:`int<class_int>`\ )
+|void| **fill**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_fill>`
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedByteArray_method_resize>` to create an array with a given size and initialized elements.
 
@@ -669,9 +671,21 @@ Assigns the given value to all elements in the array. This can typically be used
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find**\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **find**\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedByteArray_method_find>`
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_get>`
+
+Returns the byte at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
 
 .. rst-class:: classref-item-separator
 
@@ -681,7 +695,7 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_string_from_ascii**\ (\ ) |const|
+:ref:`String<class_String>` **get_string_from_ascii**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_ascii>`
 
 Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`. This is the inverse of :ref:`String.to_ascii_buffer<class_String_method_to_ascii_buffer>`.
 
@@ -693,7 +707,7 @@ Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast altern
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_string_from_utf8**\ (\ ) |const|
+:ref:`String<class_String>` **get_string_from_utf8**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_utf8>`
 
 Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string. This is the inverse of :ref:`String.to_utf8_buffer<class_String_method_to_utf8_buffer>`.
 
@@ -705,7 +719,7 @@ Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`g
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_string_from_utf16**\ (\ ) |const|
+:ref:`String<class_String>` **get_string_from_utf16**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_utf16>`
 
 Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is missing, system endianness is assumed. Returns empty string if source array is not valid UTF-16 string. This is the inverse of :ref:`String.to_utf16_buffer<class_String_method_to_utf16_buffer>`.
 
@@ -717,7 +731,7 @@ Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is miss
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_string_from_utf32**\ (\ ) |const|
+:ref:`String<class_String>` **get_string_from_utf32**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_utf32>`
 
 Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness is assumed. Returns empty string if source array is not valid UTF-32 string. This is the inverse of :ref:`String.to_utf32_buffer<class_String_method_to_utf32_buffer>`.
 
@@ -729,7 +743,7 @@ Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_string_from_wchar**\ (\ ) |const|
+:ref:`String<class_String>` **get_string_from_wchar**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_wchar>`
 
 Converts wide character (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded array to :ref:`String<class_String>`. Returns empty string if source array is not valid wide string. This is the inverse of :ref:`String.to_wchar_buffer<class_String_method_to_wchar_buffer>`.
 
@@ -741,7 +755,7 @@ Converts wide character (``wchar_t``, UTF-16 on Windows, UTF-32 on other platfor
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has**\ (\ value\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **has**\ (\ value\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_has>`
 
 Returns ``true`` if the array contains ``value``.
 
@@ -753,7 +767,7 @@ Returns ``true`` if the array contains ``value``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_encoded_var**\ (\ byte_offset\: :ref:`int<class_int>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`bool<class_bool>` **has_encoded_var**\ (\ byte_offset\: :ref:`int<class_int>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_PackedByteArray_method_has_encoded_var>`
 
 Returns ``true`` if a valid :ref:`Variant<class_Variant>` value can be decoded at the ``byte_offset``. Returns ``false`` otherwise or when the value is :ref:`Object<class_Object>`-derived and ``allow_objects`` is ``false``.
 
@@ -765,7 +779,7 @@ Returns ``true`` if a valid :ref:`Variant<class_Variant>` value can be decoded a
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **hex_encode**\ (\ ) |const|
+:ref:`String<class_String>` **hex_encode**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_hex_encode>`
 
 Returns a hexadecimal representation of this array as a :ref:`String<class_String>`.
 
@@ -775,12 +789,12 @@ Returns a hexadecimal representation of this array as a :ref:`String<class_Strin
  .. code-tab:: gdscript
 
     var array = PackedByteArray([11, 46, 255])
-    print(array.hex_encode()) # Prints: 0b2eff
+    print(array.hex_encode()) # Prints "0b2eff"
 
  .. code-tab:: csharp
 
-    var array = new byte[] {11, 46, 255};
-    GD.Print(array.HexEncode()); // Prints: 0b2eff
+    byte[] array = [11, 46, 255];
+    GD.Print(array.HexEncode()); // Prints "0b2eff"
 
 
 
@@ -792,7 +806,7 @@ Returns a hexadecimal representation of this array as a :ref:`String<class_Strin
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **insert**\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **insert**\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_insert>`
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
@@ -804,7 +818,7 @@ Inserts a new element at a given position in the array. The position must be val
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_is_empty>`
 
 Returns ``true`` if the array is empty.
 
@@ -816,7 +830,7 @@ Returns ``true`` if the array is empty.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **push_back**\ (\ value\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **push_back**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_push_back>`
 
 Appends an element at the end of the array.
 
@@ -828,7 +842,7 @@ Appends an element at the end of the array.
 
 .. rst-class:: classref-method
 
-|void| **remove_at**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_at**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_remove_at>`
 
 Removes an element from the array by index.
 
@@ -840,7 +854,7 @@ Removes an element from the array by index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_resize>`
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize<class_PackedByteArray_method_resize>` once and assigning the new values is faster than adding new elements one by one.
 
@@ -852,7 +866,7 @@ Sets the size of the array. If the array is grown, reserves elements at the end 
 
 .. rst-class:: classref-method
 
-|void| **reverse**\ (\ )
+|void| **reverse**\ (\ ) :ref:`🔗<class_PackedByteArray_method_reverse>`
 
 Reverses the order of the elements in the array.
 
@@ -864,7 +878,7 @@ Reverses the order of the elements in the array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **rfind**\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **rfind**\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_PackedByteArray_method_rfind>`
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
@@ -876,7 +890,7 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 .. rst-class:: classref-method
 
-|void| **set**\ (\ index\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )
+|void| **set**\ (\ index\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_set>`
 
 Changes the byte at the given index.
 
@@ -888,7 +902,7 @@ Changes the byte at the given index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **size**\ (\ ) |const|
+:ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_size>`
 
 Returns the number of elements in the array.
 
@@ -900,7 +914,7 @@ Returns the number of elements in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| :ref:`🔗<class_PackedByteArray_method_slice>`
 
 Returns the slice of the **PackedByteArray**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **PackedByteArray**.
 
@@ -916,7 +930,7 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 
 .. rst-class:: classref-method
 
-|void| **sort**\ (\ )
+|void| **sort**\ (\ ) :ref:`🔗<class_PackedByteArray_method_sort>`
 
 Sorts the elements of the array in ascending order.
 
@@ -928,7 +942,7 @@ Sorts the elements of the array in ascending order.
 
 .. rst-class:: classref-method
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **to_float32_array**\ (\ ) |const|
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **to_float32_array**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_to_float32_array>`
 
 Returns a copy of the data converted to a :ref:`PackedFloat32Array<class_PackedFloat32Array>`, where each block of 4 bytes has been converted to a 32-bit float (C++ ``float``).
 
@@ -944,7 +958,7 @@ If the original data can't be converted to 32-bit floats, the resulting data is 
 
 .. rst-class:: classref-method
 
-:ref:`PackedFloat64Array<class_PackedFloat64Array>` **to_float64_array**\ (\ ) |const|
+:ref:`PackedFloat64Array<class_PackedFloat64Array>` **to_float64_array**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_to_float64_array>`
 
 Returns a copy of the data converted to a :ref:`PackedFloat64Array<class_PackedFloat64Array>`, where each block of 8 bytes has been converted to a 64-bit float (C++ ``double``, Godot :ref:`float<class_float>`).
 
@@ -960,7 +974,7 @@ If the original data can't be converted to 64-bit floats, the resulting data is 
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **to_int32_array**\ (\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **to_int32_array**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_to_int32_array>`
 
 Returns a copy of the data converted to a :ref:`PackedInt32Array<class_PackedInt32Array>`, where each block of 4 bytes has been converted to a signed 32-bit integer (C++ ``int32_t``).
 
@@ -976,7 +990,7 @@ If the original data can't be converted to signed 32-bit integers, the resulting
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **to_int64_array**\ (\ ) |const|
+:ref:`PackedInt64Array<class_PackedInt64Array>` **to_int64_array**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_to_int64_array>`
 
 Returns a copy of the data converted to a :ref:`PackedInt64Array<class_PackedInt64Array>`, where each block of 8 bytes has been converted to a signed 64-bit integer (C++ ``int64_t``, Godot :ref:`int<class_int>`).
 
@@ -997,7 +1011,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_PackedByteArray_operator_neq_PackedByteArray>`
 
 Returns ``true`` if contents of the arrays differ.
 
@@ -1009,7 +1023,7 @@ Returns ``true`` if contents of the arrays differ.
 
 .. rst-class:: classref-operator
 
-:ref:`PackedByteArray<class_PackedByteArray>` **operator +**\ (\ right\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **operator +**\ (\ right\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_PackedByteArray_operator_sum_PackedByteArray>`
 
 Returns a new **PackedByteArray** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedByteArray_method_append_array>` instead.
 
@@ -1021,7 +1035,7 @@ Returns a new **PackedByteArray** with contents of ``right`` added at the end of
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_PackedByteArray_operator_eq_PackedByteArray>`
 
 Returns ``true`` if contents of both arrays are the same, i.e. they have all equal bytes at the corresponding indices.
 
@@ -1033,7 +1047,7 @@ Returns ``true`` if contents of both arrays are the same, i.e. they have all equ
 
 .. rst-class:: classref-operator
 
-:ref:`int<class_int>` **operator []**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **operator []**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_operator_idx_int>`
 
 Returns the byte at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 

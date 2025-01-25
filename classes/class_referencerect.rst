@@ -50,7 +50,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **border_color** = ``Color(1, 0, 0, 1)``
+:ref:`Color<class_Color>` **border_color** = ``Color(1, 0, 0, 1)`` :ref:`🔗<class_ReferenceRect_property_border_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -67,7 +67,7 @@ Sets the border color of the **ReferenceRect**.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **border_width** = ``1.0``
+:ref:`float<class_float>` **border_width** = ``1.0`` :ref:`🔗<class_ReferenceRect_property_border_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -84,7 +84,7 @@ Sets the border width of the **ReferenceRect**. The border grows both inwards an
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor_only** = ``true``
+:ref:`bool<class_bool>` **editor_only** = ``true`` :ref:`🔗<class_ReferenceRect_property_editor_only>`
 
 .. rst-class:: classref-property-setget
 

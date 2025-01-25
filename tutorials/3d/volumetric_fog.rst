@@ -5,8 +5,8 @@ Volumetric fog and fog volumes
 
 .. note::
 
-    Volumetric fog is only supported in the Clustered Forward rendering backend,
-    not Forward Mobile or Compatibility.
+    Volumetric fog is only supported in the Forward+ renderer, not the Mobile or
+    Compatibility renderers.
 
 As described in :ref:`doc_environment_and_post_processing`, Godot supports
 various visual effects including two types of fog: traditional (non-volumetric)
@@ -142,11 +142,11 @@ and quality:
   for better performance.
 - **Rendering > Environment > Volumetric Fog > Volume Depth:** Number of slices
   to use along the depth of the froxel buffer for volumetric fog. A lower number
-  will be more efficient but may result in artifacts appearing during camera
+  will be more efficient, but may result in artifacts appearing during camera
   movement.
 - **Rendering > Environment > Volumetric Fog > Use Filter:** Enables filtering
   of the volumetric fog effect prior to integration. This substantially blurs
-  the fog which reduces fine details but also smooths out harsh edges and
+  the fog which reduces fine details, but also smooths out harsh edges and
   aliasing artifacts. Disable when more detail is required.
 
 .. note::
@@ -159,7 +159,7 @@ Using fog volumes for local volumetric fog
 ------------------------------------------
 
 Sometimes, you want fog to be constrained to specific areas. Conversely, you may
-want to have global volumetric fog but fog should be excluded from certain
+want to have global volumetric fog, but fog should be excluded from certain
 areas. Both approaches can be followed using FogVolume nodes.
 
 Here's a quick start guide to using FogVolumes:
@@ -224,7 +224,7 @@ the following properties in FogMaterial:
   :ref:`changing its import type in the Import dock <doc_importing_images_changing_import_type>`.
 
 Using 3D noise density textures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since Godot 4.1, there is a NoiseTexture3D resource that can be used to
 procedurally generate 3D noise. This is well-suited to FogMaterial density
@@ -270,7 +270,7 @@ Faking volumetric fog using quads
 In some cases, it may be better to use specially configured QuadMeshes as an
 alternative to volumetric fog:
 
-- Quads work with any rendering method, including Forward Mobile and Compatibility.
+- Quads work with any rendering method, including Mobile and Compatibility.
 - Quads do not require temporal reprojection to look smooth, which makes
   them suited to fast-moving dynamic effects such as lasers. They can also
   represent small details which volumetric fog cannot do efficiently.

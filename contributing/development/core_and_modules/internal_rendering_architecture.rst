@@ -20,11 +20,11 @@ ask in the ``#rendering`` channel of the
     recommended to go through an OpenGL tutorial such as
     `LearnOpenGL <https://learnopengl.com/>`__.
 
-    Modern low-level APIs (Vulkan/Direct3D 12) require intermediate
+    Modern low-level APIs (Vulkan/Direct3D 12/Metal) require intermediate
     knowledge of higher-level APIs (OpenGL/Direct3D 11) to be used
     effectively. Thankfully, contributors rarely need to work directly with
     low-level APIs. Godot's renderers are built entirely on OpenGL and
-    RenderingDevice, which is our abstraction over Vulkan/Direct3D 12.
+    RenderingDevice, which is our abstraction over Vulkan/Direct3D 12/Metal.
 
 .. _doc_internal_rendering_architecture_methods:
 
@@ -32,7 +32,7 @@ Rendering methods
 -----------------
 
 Forward+
-^^^^^^^^
+~~~~~~~~
 
 This is a forward renderer that uses a *clustered* approach to lighting.
 
@@ -44,10 +44,11 @@ affect that pixel.
 This approach can greatly speed up rendering performance on desktop hardware,
 but is substantially less efficient on mobile.
 
-Forward Mobile
-^^^^^^^^^^^^^^
+Mobile
+~~~~~~
 
 This is a forward renderer that uses a traditional single-pass approach to lighting.
+Internally, it is called **Forward Mobile**.
 
 Intended for mobile platforms, but can also run on desktop platforms. This
 rendering method is optimized to perform well on mobile GPUs. Mobile GPUs have a
@@ -92,7 +93,7 @@ features result in a notable performance penalty.
 
 On desktop platforms, the use of sub-passes won't have any impact on
 performance. However, this rendering method can still perform better than
-Clustered Forward in simple scenes thanks to its lower complexity and lower
+Forward+ in simple scenes thanks to its lower complexity and lower
 bandwidth usage. This is especially noticeable on low-end GPUs, integrated
 graphics or in VR applications.
 
@@ -103,18 +104,18 @@ post-processing effects are also not available.
 .. _doc_internal_rendering_architecture_compatibility:
 
 Compatibility
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 .. note::
 
     This is the only rendering method available when using the OpenGL driver.
-    This rendering method is not available when using Vulkan or Direct3D 12.
+    This rendering method is not available when using Vulkan, Direct3D 12, or Metal.
 
-This is a traditional (non-clustered) forward renderer. It's intended for old
-GPUs that don't have Vulkan support, but still works very efficiently on newer
-hardware. Specifically, it is optimized for older and lower-end mobile devices
-However, many optimizations carry over making it a good choice for older and
-lower-end desktop as well.
+This is a traditional (non-clustered) forward renderer. Internally, it is called
+**GL Compatibility**. It's intended for old GPUs that don't have Vulkan support,
+but still works very efficiently on newer hardware. Specifically, it is optimized
+for older and lower-end mobile devices. However, many optimizations carry over
+making it a good choice for older and lower-end desktop as well.
 
 Like the Mobile renderer, the Compatibility renderer uses an R10G10B10A2 UNORM
 texture for 3D rendering. Unlike the mobile renderer, colors are tonemapped and
@@ -134,11 +135,11 @@ looks and needs to be kept in mind when designing scenes for the Compatibility
 renderer.
 
 Given its low-end focus, this rendering method does not provide high-end
-rendering features (even less so compared to Forward Mobile). Most
+rendering features (even less so compared to Mobile). Most
 post-processing effects are not available.
 
 Why not deferred rendering?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Forward rendering generally provides a better tradeoff for performance versus
 flexibility, especially when a clustered approach to lighting is used. While
@@ -160,7 +161,7 @@ Rendering drivers
 Godot 4 supports the following graphics APIs:
 
 Vulkan
-^^^^^^
+~~~~~~
 
 This is the main driver in Godot 4, with most of the development focus going
 towards this driver.
@@ -184,7 +185,7 @@ Vulkan driver.
 - `drivers/d3d12/d3d12_context.cpp <https://github.com/godotengine/godot/blob/master/drivers/d3d12/d3d12_context.cpp>`__
 
 Direct3D 12
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Like Vulkan, the Direct3D 12 driver targets modern platforms only. It is
 designed to target both Windows and Xbox (whereas Vulkan can't be used directly on Xbox).
@@ -193,10 +194,10 @@ Both the Forward+ and Mobile :ref:`doc_internal_rendering_architecture_methods` 
 used with Direct3D 12.
 
 :ref:`doc_internal_rendering_architecture_core_shaders` are shared with the
-Vulkan renderer. Shaders are transpiled from GLSL to HLSL using
+Vulkan renderer. Shaders are transpiled from
+:abbr:`SPIR-V (Standard Portable Intermediate Representation)` to
+:abbr:`DXIL (DirectX Intermediate Language)` using
 Mesa NIR (`more information <https://godotengine.org/article/d3d12-adventures-in-shaderland/>`__).
-This means you don't need to know HLSL to work on the Direct3D 12 renderer,
-although knowing the language's basics is recommended to ease debugging.
 
 **This driver is still experimental and only available in Godot 4.3 and later.**
 While Direct3D 12 allows supporting Direct3D-exclusive features on Windows 11 such
@@ -205,28 +206,38 @@ See the `pull request that introduced Direct3D 12 support <https://github.com/go
 for more information.
 
 Metal
-^^^^^
+~~~~~
 
-Godot supports Metal rendering via `MoltenVK <https://github.com/KhronosGroup/MoltenVK>`__,
-as macOS and iOS do not support Vulkan natively.
-This is done automatically when specifying the Vulkan driver in the Project Settings.
+Godot provides a native Metal driver that works on all Apple Silicon hardware
+(macOS ARM). Compared to using the MoltenVK translation layer, this is
+significantly faster, particularly in CPU-bound scenarios.
 
-MoltenVK makes driver maintenance easy at the cost of some performance overhead.
-Also, MoltenVK has several limitations that a native Metal driver implementation
-wouldn't have. Both the clustered and mobile
-:ref:`doc_internal_rendering_architecture_methods` can be used with a Metal
-backend via MoltenVK.
+Both the Forward+ and Mobile :ref:`doc_internal_rendering_architecture_methods` can be
+used with Metal.
 
-A native Metal driver is planned in the future for better performance and
-compatibility.
+:ref:`doc_internal_rendering_architecture_core_shaders` are shared with the
+Vulkan renderer. Shaders are transpiled from GLSL to :abbr:`MSL (Metal Shading Language)`
+using SPIRV-Cross.
+
+Godot also supports Metal rendering via `MoltenVK <https://github.com/KhronosGroup/MoltenVK>`__,
+which is used as a fallback when native Metal support is not available (e.g. on x86 macOS).
+
+**This driver is still experimental and only available in Godot 4.4 and later.**
+See the `pull request that introduced Metal support <https://github.com/godotengine/godot/pull/88199>`__
+for more information.
 
 OpenGL
-^^^^^^
+~~~~~~
 
 This driver uses OpenGL ES 3.0 and targets legacy and low-end devices that don't
 support Vulkan. OpenGL 3.3 Core Profile is used on desktop platforms to run this
 driver, as most graphics drivers on desktop don't support OpenGL ES.
 WebGL 2.0 is used for web exports.
+
+It is possible to use OpenGL ES 3.0 directly on desktop platforms
+by passing the ``--rendering-driver opengl3_es`` command line argument, although this
+will only work on graphics drivers that feature native OpenGL ES support (such
+as Mesa).
 
 Only the :ref:`doc_internal_rendering_architecture_compatibility` rendering
 method can be used with the OpenGL driver.
@@ -234,21 +245,21 @@ method can be used with the OpenGL driver.
 :ref:`doc_internal_rendering_architecture_core_shaders` are entirely different
 from the Vulkan renderer.
 
-**As of May 2023, this driver is still in development.** Many features
-are still not implemented, especially in 3D.
+Many advanced features are not supported with this driver, as it targets low-end
+devices first and foremost.
 
 Summary of rendering drivers/methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following rendering API + rendering method combinations are currently possible:
 
-- Vulkan + Forward+
-- Vulkan + Forward Mobile
+- Vulkan + Forward+ (optionally through MoltenVK on macOS and iOS)
+- Vulkan + Mobile (optionally through MoltenVK on macOS and iOS)
 - Direct3D 12 + Forward+
-- Direct3D 12 + Forward Mobile
-- Metal + Forward+ (via MoltenVK)
-- Metal + Forward Mobile (via MoltenVK)
-- OpenGL + Compatibility
+- Direct3D 12 + Mobile
+- Metal + Forward+
+- Metal + Mobile
+- OpenGL + Compatibility (optionally through ANGLE on Windows and macOS)
 
 Each combination has its own limitations and performance characteristics. Make
 sure to test your changes on all rendering methods if possible before opening a
@@ -265,18 +276,22 @@ To make the complexity of modern low-level graphics APIs more manageable,
 Godot uses its own abstraction called RenderingDevice.
 
 This means that when writing code for modern rendering methods, you don't
-actually use the Vulkan or Direct3D 12 APIs directly. While this is still
+actually use the Vulkan, Direct3D 12, or Metal APIs directly. While this is still
 lower-level than an API like OpenGL, this makes working on the renderer easier,
 as RenderingDevice will abstract many API-specific quirks for you. The
-RenderingDevice presents a similar level of abstraction as Metal or WebGPU.
+RenderingDevice presents a similar level of abstraction as WebGPU.
 
 **Vulkan RenderingDevice implementation:**
 
-- `drivers/vulkan/rendering_device_vulkan.cpp <https://github.com/godotengine/godot/blob/4.2/drivers/vulkan/rendering_device_vulkan.cpp>`__
+- `drivers/vulkan/rendering_device_driver_vulkan.cpp <https://github.com/godotengine/godot/blob/master/drivers/vulkan/rendering_device_driver_vulkan.cpp>`__
 
 **Direct3D 12 RenderingDevice implementation:**
 
 - `drivers/d3d12/rendering_device_driver_d3d12.cpp <https://github.com/godotengine/godot/blob/master/drivers/d3d12/rendering_device_driver_d3d12.cpp>`__
+
+**Metal RenderingDevice implementation:**
+
+- `drivers/metal/rendering_device_driver_metal.mm <https://github.com/godotengine/godot/blob/master/drivers/metal/rendering_device_driver_metal.mm>`__
 
 Core rendering classes architecture
 -----------------------------------
@@ -345,14 +360,14 @@ this.
 **Core GLSL material shaders:**
 
 - Forward+: `servers/rendering/renderer_rd/shaders/forward_clustered/scene_forward_clustered.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/forward_clustered/scene_forward_clustered.glsl>`__
-- Forward Mobile: `servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl>`__
+- Mobile: `servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl>`__
 - Compatibility: `drivers/gles3/shaders/scene.glsl <https://github.com/godotengine/godot/blob/4.2/drivers/gles3/shaders/scene.glsl>`__
 
 **Material shader generation:**
 
 - `scene/resources/material.cpp <https://github.com/godotengine/godot/blob/4.2/scene/resources/material.cpp>`__
 
-**Other GLSL shaders for Forward+ and Forward Mobile rendering methods:**
+**Other GLSL shaders for Forward+ and Mobile rendering methods:**
 
 - `servers/rendering/renderer_rd/shaders/ <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/>`__
 - `modules/lightmapper_rd/ <https://github.com/godotengine/godot/blob/4.2/modules/lightmapper_rd>`__
@@ -366,9 +381,9 @@ this.
 
 .. note::
 
-    The following is only applicable in the Forward+ and Forward Mobile
+    The following is only applicable in the Forward+ and Mobile
     rendering methods, not in Compatibility. Multiple Viewports can be used to
-    emulate this when using the Compatibility backend, or to perform 2D
+    emulate this when using the Compatibility renderer, or to perform 2D
     resolution scaling.
 
 2D and 3D are rendered to separate buffers, as 2D rendering in Godot is performed
@@ -390,6 +405,9 @@ allows maximizing the performance of bilinear 3D scaling.
 The ``configure()`` function in RenderSceneBuffersRD reallocates the 2D/3D
 buffers when the resolution or scaling changes.
 
+.. UPDATE: Planned feature. When dynamic resolution scaling is supported,
+.. update this paragraph.
+
 Dynamic resolution scaling isn't supported yet, but is planned in a future Godot
 release.
 
@@ -408,10 +426,13 @@ release.
 2D light rendering is performed in a single pass to allow for better performance
 with large amounts of lights.
 
+.. UPDATE: Planned feature. When Forward+ and Mobile feature 2D batching,
+.. update this.
+
 The Forward+ and Mobile rendering methods don't feature 2D batching yet, but
 it's planned for a future release.
 
-The Compatibility backend features 2D batching to improve performance, which is
+The Compatibility renderer features 2D batching to improve performance, which is
 especially noticeable with lots of text on screen.
 
 MSAA can be enabled in 2D to provide "automatic" line and polygon antialiasing,
@@ -433,21 +454,20 @@ used to calculate particle collisions in 2D.
 -----------------------
 
 Batching and instancing
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Forward+ backend, Vulkan instancing is used to group rendering
+In the Forward+ renderer, Vulkan instancing is used to group rendering
 of identical objects for performance. This is not as fast as static mesh
 merging, but it still allows instances to be culled individually.
 
 Light, decal and reflection probe rendering
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-  Reflection probe and decal rendering are currently not available in the
-  Compatibility backend.
+  Decal rendering is currently not available in the Compatibility renderer.
 
-As its name implies, the Forward+ backend uses clustered lighting. This
+The Forward+ renderer uses clustered lighting. This
 allows using as many lights as you want; performance largely depends on screen
 coverage. Shadow-less lights can be almost free if they don't occupy much space
 on screen.
@@ -456,12 +476,12 @@ All rendering methods also support rendering up to 8 directional lights at the
 same time (albeit with lower shadow quality when more than one light has shadows
 enabled).
 
-The Forward Mobile backend uses a single-pass lighting approach, with a
+The Mobile renderer uses a single-pass lighting approach, with a
 limitation of 8 OmniLights + 8 SpotLights affecting each Mesh *resource* (plus a
 limitation of 256 OmniLights + 256 SpotLights in the camera view). These limits
 are hardcoded and can't be adjusted in the project settings.
 
-The Compatibility backend uses a hybrid single-pass + multi-pass lighting
+The Compatibility renderer uses a hybrid single-pass + multi-pass lighting
 approach. Lights without shadows are rendered in a single pass. Lights with
 shadows are rendered in multiple passes. This is required for performance
 reasons on mobile devices. As a result, performance does not scale well with
@@ -471,6 +491,9 @@ apart so that each object is only touched by 1 or 2 shadowed lights at a time.
 The maximum number of lights visible at once can be adjusted in the project
 settings.
 
+.. UPDATE: Planned feature. When static and dynamic shadow rendering are
+.. separated, update this paragraph.
+
 In all 3 methods, lights without shadows are much cheaper than lights with
 shadows. To improve performance, lights are only updated when the light is
 modified or when objects in its radius are modified. Godot currently doesn't
@@ -478,34 +501,34 @@ separate static shadow rendering from dynamic shadow rendering, but this is
 planned in a future release.
 
 Clustering is also used for reflection probes and decal rendering in the
-Forward+ backend.
+Forward+ renderer.
 
 Shadow mapping
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
-Both Forward+ and Forward Mobile methods use
+Both Forward+ and Mobile methods use
 :abbr:`PCF (Percentage Closer Filtering)` to filter shadow maps and create a
 soft penumbra. Instead of using a fixed PCF pattern, these methods use a vogel
 disk pattern which allows for changing the number of samples and smoothly
 changing the quality.
 
 Godot also supports percentage-closer soft shadows (PCSS) for more realistic
-shadow penumbra rendering. PCSS shadows are limited to the Forward+
-backend as they're too demanding to be usable in the Forward Mobile backend.
+shadow penumbra rendering. PCSS shadows are limited to the Forward+ renderer
+as they're too demanding to be usable in the Mobile renderer.
 PCSS also uses a vogel-disk shaped kernel.
 
 Additionally, both shadow-mapping techniques rotate the kernel on a per-pixel
 basis to help soften under-sampling artifacts.
 
-The Compatibility backend doesn't support shadow mapping for any light types yet.
+The Compatibility renderer supports shadow mapping for DirectionalLight3D,
+OmniLight3D, and SpotLight3D lights.
 
 Temporal antialiasing
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-    Only available in the Forward+ backend, not the Forward Mobile or
-    Compatibility methods.
+    Only available in the Forward+ renderer, not the Mobile or Compatibility renderers.
 
 Godot uses a custom TAA implementation based on the old TAA implementation from
 `Spartan Engine <https://github.com/PanosK92/SpartanEngine>`__.
@@ -533,17 +556,16 @@ RenderingDevice abstraction as opposed to using AMD's reference code directly.
 - `thirdparty/amd-fsr2/ <https://github.com/godotengine/godot/tree/master/thirdparty/amd-fsr2>`__
 
 Global illumination
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-    VoxelGI and SDFGI are only available in the Forward+ backend, not the
-    Forward Mobile or Compatibility methods.
+    VoxelGI and SDFGI are only available in the Forward+ renderer, not the
+    Mobile or Compatibility renderers.
 
-    LightmapGI *baking* is only available in the Forward+ and Forward Mobile
-    methods, and can only be performed within the editor (not in an exported
-    project). LightmapGI *rendering* will eventually be supported by the
-    Compatibility backend.
+    LightmapGI *baking* is only available in the Forward+ and Mobile renderers,
+    and can only be performed within the editor (not in an exported
+    project). LightmapGI *rendering* is supported by the Compatibility renderer.
 
 Godot supports voxel-based GI (VoxelGI), signed distance field GI (SDFGI) and
 lightmap baking and rendering (LightmapGI). These techniques can be used
@@ -553,7 +575,7 @@ Lightmap baking happens on the GPU using Vulkan compute shaders. The GPU-based
 lightmapper is implemented in the LightmapperRD class, which inherits from the
 Lightmapper class. This allows for implementing additional lightmappers, paving
 the way for a future port of the CPU-based lightmapper present in Godot 3.x.
-This would allow baking lightmaps while using the Compatibility backend.
+This would allow baking lightmaps while using the Compatibility renderer.
 
 **Core GI C++ code:**
 
@@ -585,18 +607,17 @@ This would allow baking lightmaps while using the Compatibility backend.
 - `modules/lightmapper_rd/lm_blendseams.glsl <https://github.com/godotengine/godot/blob/4.2/modules/lightmapper_rd/lm_blendseams.glsl>`__
 
 Depth of field
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 .. note::
 
-    Only available in the Forward+ and Forward Mobile methods, not the
-    Compatibility backend.
+    Only available in the Forward+ and Mobile renderers, not the
+    Compatibility renderer.
 
-The Forward+ and Forward Mobile methods use different approaches to
-DOF rendering, with different visual results. This is done to best
-match the performance characteristics of the target hardware. In Clustered
-Forward, DOF is performed using a compute shader. In Forward Mobile, DOF is
-performed using a fragment shader (raster).
+The Forward+ and Mobile renderers use different approaches to DOF rendering, with
+different visual results. This is done to best match the performance characteristics
+of the target hardware. In Forward+, DOF is performed using a compute shader. In
+Mobile, DOF is performed using a fragment shader (raster).
 
 Box, hexagon and circle bokeh shapes are available (from fastest to slowest).
 Depth of field can optionally be jittered every frame to improve its appearance
@@ -610,19 +631,18 @@ when temporal antialiasing is enabled.
 
 - `servers/rendering/renderer_rd/shaders/effects/bokeh_dof.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/bokeh_dof.glsl>`__
 
-**Depth of field GLSL shader (raster - used for Forward Mobile):**
+**Depth of field GLSL shader (raster - used for Mobile):**
 
 - `servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl>`__
 
 Screen-space effects (SSAO, SSIL, SSR, SSS)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-    Only available in the Forward+ backend, not the Forward Mobile or
-    Compatibility methods.
+    Only available in the Forward+ renderer, not the Mobile or Compatibility renderers.
 
-The Forward+ backend supports screen-space ambient occlusion,
+The Forward+ renderer supports screen-space ambient occlusion,
 screen-space indirect lighting, screen-space reflections and subsurface scattering.
 
 SSAO uses an implementation derived from Intel's
@@ -665,7 +685,7 @@ SSR is always performed at half resolution to improve performance.
 - `servers/rendering/renderer_rd/shaders/effects/subsurface_scattering.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/subsurface_scattering.glsl>`__
 
 Sky rendering
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 .. seealso::
 
@@ -692,12 +712,11 @@ article.
 **Sky rendering GLSL shader:**
 
 Volumetric fog
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 .. note::
 
-    Only available in the Forward+ backend, not the Forward Mobile or
-    Compatibility methods.
+    Only available in the Forward+ renderer, not the Mobile or Compatibility renderers.
 
 .. seealso::
 
@@ -728,11 +747,11 @@ article.
 - `servers/rendering/renderer_rd/shaders/environment/volumetric_fog_process.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/environment/volumetric_fog_process.glsl>`__
 
 Occlusion culling
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 While modern GPUs can handle drawing a lot of triangles, the number of draw
-calls in complex scenes can still be a bottleneck (even with Vulkan and Direct3D
-12).
+calls in complex scenes can still be a bottleneck (even with Vulkan, Direct3D 12,
+and Metal).
 
 Godot 4 supports occlusion culling to reduce overdraw (when the depth prepass
 is disabled) and reduce vertex throughput.
@@ -740,7 +759,7 @@ This is done by rasterizing a low-resolution buffer on the CPU using
 `Embree <https://github.com/embree/embree>`__. The buffer's resolution depends
 on the number of CPU threads on the system, as this is done in parallel.
 This buffer includes occluder shapes that were baked in the editor or created at
-run-time.
+runtime.
 
 As complex occluders can introduce a lot of strain on the CPU, baked occluders
 can be simplified automatically when generated in the editor.
@@ -748,7 +767,7 @@ can be simplified automatically when generated in the editor.
 Godot's occlusion culling doesn't support dynamic occluders yet, but
 OccluderInstance3D nodes can still have their visibility toggled or be moved.
 However, this will be slow when updating complex occluders this way. Therefore,
-updating occluders at run-time is best done only on simple occluder shapes such
+updating occluders at runtime is best done only on simple occluder shapes such
 as quads or cuboids.
 
 This CPU-based approach has a few advantages over other solutions, such as
@@ -771,7 +790,7 @@ RendererSceneOcclusionCull.
 - `servers/rendering/renderer_scene_occlusion_cull.cpp <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_scene_occlusion_cull.cpp>`__
 
 Visibility range (LOD)
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Godot supports manually authored hierarchical level of detail (HLOD), with
 distances specified by the user in the inspector.
@@ -785,7 +804,7 @@ same mesh with different LODs (to allow for split screen rendering to look corre
 - `servers/rendering/renderer_scene_cull.cpp <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_scene_cull.cpp>`__
 
 Automatic mesh LOD
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The ImporterMesh class is used for the 3D mesh import workflow in the editor.
 Its ``generate_lods()`` function handles generating using the

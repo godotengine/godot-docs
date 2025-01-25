@@ -1,0 +1,8 @@
+[tool.ruff]
+line-length = 120
+
+[tool.codespell]
+dictionary = ["_tools/codespell-dict.txt", "-"]
+ignore-words = "_tools/codespell-ignore.txt"
+exclude-file = "_tools/codespell-ignore-lines.txt"
+skip = "tutorials/i18n/locales.rst"

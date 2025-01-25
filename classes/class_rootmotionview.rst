@@ -63,7 +63,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **animation_path** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **animation_path** = ``NodePath("")`` :ref:`🔗<class_RootMotionView_property_animation_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -80,7 +80,7 @@ Path to an :ref:`AnimationMixer<class_AnimationMixer>` node to use as a basis fo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **cell_size** = ``1.0``
+:ref:`float<class_float>` **cell_size** = ``1.0`` :ref:`🔗<class_RootMotionView_property_cell_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -97,7 +97,7 @@ The grid's cell size in 3D units.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(0.5, 0.5, 1, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(0.5, 0.5, 1, 1)`` :ref:`🔗<class_RootMotionView_property_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -114,7 +114,7 @@ The grid's color.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``10.0``
+:ref:`float<class_float>` **radius** = ``10.0`` :ref:`🔗<class_RootMotionView_property_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -131,7 +131,7 @@ The grid's radius in 3D units. The grid's opacity will fade gradually as the dis
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **zero_y** = ``true``
+:ref:`bool<class_bool>` **zero_y** = ``true`` :ref:`🔗<class_RootMotionView_property_zero_y>`
 
 .. rst-class:: classref-property-setget
 

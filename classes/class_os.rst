@@ -71,7 +71,7 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`execute<class_OS_method_execute>`\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, output\: :ref:`Array<class_Array>` = [], read_stderr\: :ref:`bool<class_bool>` = false, open_console\: :ref:`bool<class_bool>` = false\ )                                                                                                    |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`               | :ref:`execute_with_pipe<class_OS_method_execute_with_pipe>`\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`\ )                                                                                                                                                                                                                        |
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`execute_with_pipe<class_OS_method_execute_with_pipe>`\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, blocking\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                             |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Key<enum_@GlobalScope_Key>`                 | :ref:`find_keycode_from_string<class_OS_method_find_keycode_from_string>`\ (\ string\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -88,6 +88,8 @@ Methods
    | :ref:`String<class_String>`                       | :ref:`get_data_dir<class_OS_method_get_data_dir>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                             |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_distribution_name<class_OS_method_get_distribution_name>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                           |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`get_entropy<class_OS_method_get_entropy>`\ (\ size\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                         |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_environment<class_OS_method_get_environment>`\ (\ variable\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -123,6 +125,14 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_static_memory_usage<class_OS_method_get_static_memory_usage>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                       |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StdHandleType<enum_OS_StdHandleType>`       | :ref:`get_stderr_type<class_OS_method_get_stderr_type>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                       |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StdHandleType<enum_OS_StdHandleType>`       | :ref:`get_stdin_type<class_OS_method_get_stdin_type>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                         |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StdHandleType<enum_OS_StdHandleType>`       | :ref:`get_stdout_type<class_OS_method_get_stdout_type>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                       |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_system_ca_certificates<class_OS_method_get_system_ca_certificates>`\ (\ )                                                                                                                                                                                                                                                                                                         |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_system_dir<class_OS_method_get_system_dir>`\ (\ dir\: :ref:`SystemDir<enum_OS_SystemDir>`, shared_storage\: :ref:`bool<class_bool>` = true\ ) |const|                                                                                                                                                                                                                             |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_system_font_path<class_OS_method_get_system_font_path>`\ (\ font_name\: :ref:`String<class_String>`, weight\: :ref:`int<class_int>` = 400, stretch\: :ref:`int<class_int>` = 100, italic\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                                             |
@@ -131,6 +141,8 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_system_fonts<class_OS_method_get_system_fonts>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                     |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_temp_dir<class_OS_method_get_temp_dir>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                             |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_thread_caller_id<class_OS_method_get_thread_caller_id>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                             |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_unique_id<class_OS_method_get_unique_id>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                           |
@@ -138,6 +150,8 @@ Methods
    | :ref:`String<class_String>`                       | :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                   |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_version<class_OS_method_get_version>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                               |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_version_alias<class_OS_method_get_version_alias>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                   |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_video_adapter_driver_info<class_OS_method_get_video_adapter_driver_info>`\ (\ ) |const|                                                                                                                                                                                                                                                                                           |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -165,7 +179,9 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`\ (\ )                                                                                                                                                                                                                                                                                                                             |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>`\ (\ )                                                                                                                                                                                                                                                                                                                 |
+   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`read_buffer_from_stdin<class_OS_method_read_buffer_from_stdin>`\ (\ buffer_size\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                            |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>`\ (\ buffer_size\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                            |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`request_permission<class_OS_method_request_permission>`\ (\ name\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                                                                                     |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -201,7 +217,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **RenderingDriver**:
+enum **RenderingDriver**: :ref:`🔗<enum_OS_RenderingDriver>`
 
 .. _class_OS_constant_RENDERING_DRIVER_VULKAN:
 
@@ -227,6 +243,14 @@ The OpenGL 3 rendering driver. It uses OpenGL 3.3 Core Profile on desktop platfo
 
 The Direct3D 12 rendering driver.
 
+.. _class_OS_constant_RENDERING_DRIVER_METAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingDriver<enum_OS_RenderingDriver>` **RENDERING_DRIVER_METAL** = ``3``
+
+The Metal rendering driver.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -235,7 +259,7 @@ The Direct3D 12 rendering driver.
 
 .. rst-class:: classref-enumeration
 
-enum **SystemDir**:
+enum **SystemDir**: :ref:`🔗<enum_OS_SystemDir>`
 
 .. _class_OS_constant_SYSTEM_DIR_DESKTOP:
 
@@ -301,6 +325,56 @@ Refers to the Pictures directory path.
 
 Refers to the Ringtones directory path.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OS_StdHandleType:
+
+.. rst-class:: classref-enumeration
+
+enum **StdHandleType**: :ref:`🔗<enum_OS_StdHandleType>`
+
+.. _class_OS_constant_STD_HANDLE_INVALID:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_INVALID** = ``0``
+
+Standard I/O device is invalid. No data can be received from or sent to these standard I/O devices.
+
+.. _class_OS_constant_STD_HANDLE_CONSOLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_CONSOLE** = ``1``
+
+Standard I/O device is a console. This typically occurs when Godot is run from a terminal with no redirection. This is also used for all standard I/O devices when running Godot from the editor, at least on desktop platforms.
+
+.. _class_OS_constant_STD_HANDLE_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_FILE** = ``2``
+
+Standard I/O device is a regular file. This typically occurs with redirection from a terminal, e.g. ``godot > stdout.txt``, ``godot < stdin.txt`` or ``godot > stdout_stderr.txt 2>&1``.
+
+.. _class_OS_constant_STD_HANDLE_PIPE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_PIPE** = ``3``
+
+Standard I/O device is a FIFO/pipe. This typically occurs with pipe usage from a terminal, e.g. ``echo "Hello" | godot``.
+
+.. _class_OS_constant_STD_HANDLE_UNKNOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_UNKNOWN** = ``4``
+
+Standard I/O device type is unknown.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -314,7 +388,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **delta_smoothing** = ``true``
+:ref:`bool<class_bool>` **delta_smoothing** = ``true`` :ref:`🔗<class_OS_property_delta_smoothing>`
 
 .. rst-class:: classref-property-setget
 
@@ -333,7 +407,7 @@ If ``true``, the engine filters the time delta measured between each frame, and 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **low_processor_usage_mode** = ``false``
+:ref:`bool<class_bool>` **low_processor_usage_mode** = ``false`` :ref:`🔗<class_OS_property_low_processor_usage_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -352,7 +426,7 @@ If ``true``, the engine optimizes for low processor usage by only refreshing the
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **low_processor_usage_mode_sleep_usec** = ``6900``
+:ref:`int<class_int>` **low_processor_usage_mode_sleep_usec** = ``6900`` :ref:`🔗<class_OS_property_low_processor_usage_mode_sleep_usec>`
 
 .. rst-class:: classref-property-setget
 
@@ -376,7 +450,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **alert**\ (\ text\: :ref:`String<class_String>`, title\: :ref:`String<class_String>` = "Alert!"\ )
+|void| **alert**\ (\ text\: :ref:`String<class_String>`, title\: :ref:`String<class_String>` = "Alert!"\ ) :ref:`🔗<class_OS_method_alert>`
 
 Displays a modal dialog box using the host platform's implementation. The engine execution is blocked until the dialog is closed.
 
@@ -388,11 +462,11 @@ Displays a modal dialog box using the host platform's implementation. The engine
 
 .. rst-class:: classref-method
 
-|void| **close_midi_inputs**\ (\ )
+|void| **close_midi_inputs**\ (\ ) :ref:`🔗<class_OS_method_close_midi_inputs>`
 
 Shuts down the system MIDI driver. Godot will no longer receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` and :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
 
 .. rst-class:: classref-item-separator
 
@@ -402,7 +476,7 @@ Shuts down the system MIDI driver. Godot will no longer receive :ref:`InputEvent
 
 .. rst-class:: classref-method
 
-|void| **crash**\ (\ message\: :ref:`String<class_String>`\ )
+|void| **crash**\ (\ message\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OS_method_crash>`
 
 Crashes the engine (or the editor if called within a ``@tool`` script). See also :ref:`kill<class_OS_method_kill>`.
 
@@ -416,7 +490,7 @@ Crashes the engine (or the editor if called within a ``@tool`` script). See also
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **create_instance**\ (\ arguments\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+:ref:`int<class_int>` **create_instance**\ (\ arguments\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_OS_method_create_instance>`
 
 Creates a new instance of Godot that runs independently. The ``arguments`` are used in the given order and separated by a space.
 
@@ -434,7 +508,7 @@ See :ref:`create_process<class_OS_method_create_process>` if you wish to run a d
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **create_process**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, open_console\: :ref:`bool<class_bool>` = false\ )
+:ref:`int<class_int>` **create_process**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, open_console\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_OS_method_create_process>`
 
 Creates a new process that runs independently of Godot. It will not terminate when Godot terminates. The path specified in ``path`` must exist and be an executable file or macOS ``.app`` bundle. The path is resolved based on the current platform. The ``arguments`` are used in the given order and separated by a space.
 
@@ -442,7 +516,7 @@ On Windows, if ``open_console`` is ``true`` and the process is a console app, a 
 
 If the process is successfully created, this method returns its process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). Otherwise, this method returns ``-1``.
 
-For example, running another instance of the project:
+\ **Example:** Run another instance of the project:
 
 
 .. tabs::
@@ -453,7 +527,7 @@ For example, running another instance of the project:
 
  .. code-tab:: csharp
 
-    var pid = OS.CreateProcess(OS.GetExecutablePath(), new string[] {});
+    var pid = OS.CreateProcess(OS.GetExecutablePath(), []);
 
 
 
@@ -471,7 +545,7 @@ See :ref:`execute<class_OS_method_execute>` if you wish to run an external comma
 
 .. rst-class:: classref-method
 
-|void| **delay_msec**\ (\ msec\: :ref:`int<class_int>`\ ) |const|
+|void| **delay_msec**\ (\ msec\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_delay_msec>`
 
 Delays execution of the current thread by ``msec`` milliseconds. ``msec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec<class_OS_method_delay_msec>` does nothing and prints an error message.
 
@@ -487,7 +561,7 @@ Delays execution of the current thread by ``msec`` milliseconds. ``msec`` must b
 
 .. rst-class:: classref-method
 
-|void| **delay_usec**\ (\ usec\: :ref:`int<class_int>`\ ) |const|
+|void| **delay_usec**\ (\ usec\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_delay_usec>`
 
 Delays execution of the current thread by ``usec`` microseconds. ``usec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_usec<class_OS_method_delay_usec>` does nothing and prints an error message.
 
@@ -503,7 +577,7 @@ Delays execution of the current thread by ``usec`` microseconds. ``usec`` must b
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **execute**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, output\: :ref:`Array<class_Array>` = [], read_stderr\: :ref:`bool<class_bool>` = false, open_console\: :ref:`bool<class_bool>` = false\ )
+:ref:`int<class_int>` **execute**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, output\: :ref:`Array<class_Array>` = [], read_stderr\: :ref:`bool<class_bool>` = false, open_console\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_OS_method_execute>`
 
 Executes the given process in a *blocking* way. The file specified in ``path`` must exist and be executable. The system path resolution will be used. The ``arguments`` are used in the given order, separated by spaces, and wrapped in quotes.
 
@@ -527,8 +601,8 @@ For example, to retrieve a list of the working directory's contents:
 
  .. code-tab:: csharp
 
-    var output = new Godot.Collections.Array();
-    int exitCode = OS.Execute("ls", new string[] {"-l", "/tmp"}, output);
+    Godot.Collections.Array output = [];
+    int exitCode = OS.Execute("ls", ["-l", "/tmp"], output);
 
 
 
@@ -544,8 +618,8 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
  .. code-tab:: csharp
 
-    var output = new Godot.Collections.Array();
-    OS.Execute("CMD.exe", new string[] {"/C", "cd %TEMP% && dir"}, output);
+    Godot.Collections.Array output = [];
+    OS.Execute("CMD.exe", ["/C", "cd %TEMP% && dir"], output);
 
 
 
@@ -569,9 +643,11 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **execute_with_pipe**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+:ref:`Dictionary<class_Dictionary>` **execute_with_pipe**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, blocking\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_OS_method_execute_with_pipe>`
 
 Creates a new process that runs independently of Godot with redirected IO. It will not terminate when Godot terminates. The path specified in ``path`` must exist and be an executable file or macOS ``.app`` bundle. The path is resolved based on the current platform. The ``arguments`` are used in the given order and separated by a space.
+
+If ``blocking`` is ``false``, created pipes work in non-blocking mode, i.e. read and write operations will return immediately. Use :ref:`FileAccess.get_error<class_FileAccess_method_get_error>` to check if the last read/write operation was successful.
 
 If the process cannot be created, this method returns an empty :ref:`Dictionary<class_Dictionary>`. Otherwise, this method returns a :ref:`Dictionary<class_Dictionary>` with the following keys:
 
@@ -599,7 +675,7 @@ If the process cannot be created, this method returns an empty :ref:`Dictionary<
 
 .. rst-class:: classref-method
 
-:ref:`Key<enum_@GlobalScope_Key>` **find_keycode_from_string**\ (\ string\: :ref:`String<class_String>`\ ) |const|
+:ref:`Key<enum_@GlobalScope_Key>` **find_keycode_from_string**\ (\ string\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_find_keycode_from_string>`
 
 Finds the keycode for the given string. The returned values are equivalent to the :ref:`Key<enum_@GlobalScope_Key>` constants.
 
@@ -632,7 +708,7 @@ See also :ref:`get_keycode_string<class_OS_method_get_keycode_string>`.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_cache_dir**\ (\ ) |const|
+:ref:`String<class_String>` **get_cache_dir**\ (\ ) |const| :ref:`🔗<class_OS_method_get_cache_dir>`
 
 Returns the *global* cache data directory according to the operating system's standards.
 
@@ -648,7 +724,7 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_cmdline_args**\ (\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_cmdline_args**\ (\ ) :ref:`🔗<class_OS_method_get_cmdline_args>`
 
 Returns the command-line arguments passed to the engine.
 
@@ -658,7 +734,7 @@ You can also incorporate environment variables using the :ref:`get_environment<c
 
 You can set :ref:`ProjectSettings.editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>` to define command-line arguments to be passed by the editor when running the project.
 
-Here's a minimal example on how to parse command-line arguments into a :ref:`Dictionary<class_Dictionary>` using the ``--key=value`` form for arguments:
+\ **Example:** Parse command-line arguments into a :ref:`Dictionary<class_Dictionary>` using the ``--key=value`` form for arguments:
 
 
 .. tabs::
@@ -705,7 +781,7 @@ Here's a minimal example on how to parse command-line arguments into a :ref:`Dic
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_cmdline_user_args**\ (\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_cmdline_user_args**\ (\ ) :ref:`🔗<class_OS_method_get_cmdline_user_args>`
 
 Returns the command-line user arguments passed to the engine. User arguments are ignored by the engine and reserved for the user. They are passed after the double dash ``--`` argument. ``++`` may be used when ``--`` is intercepted by another program (such as ``startx``).
 
@@ -727,7 +803,7 @@ To get all passed arguments, use :ref:`get_cmdline_args<class_OS_method_get_cmdl
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_config_dir**\ (\ ) |const|
+:ref:`String<class_String>` **get_config_dir**\ (\ ) |const| :ref:`🔗<class_OS_method_get_config_dir>`
 
 Returns the *global* user configuration directory according to the operating system's standards.
 
@@ -743,11 +819,15 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_connected_midi_inputs**\ (\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_connected_midi_inputs**\ (\ ) :ref:`🔗<class_OS_method_get_connected_midi_inputs>`
 
 Returns an array of connected MIDI device names, if they exist. Returns an empty array if the system MIDI driver has not previously been initialized with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. See also :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
+
+\ **Note:** On the Web platform, Web MIDI needs to be supported by the browser. `For the time being <https://caniuse.com/midi>`__, it is currently supported by all major browsers, except Safari.
+
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
 
 .. rst-class:: classref-item-separator
 
@@ -757,7 +837,7 @@ Returns an array of connected MIDI device names, if they exist. Returns an empty
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_data_dir**\ (\ ) |const|
+:ref:`String<class_String>` **get_data_dir**\ (\ ) |const| :ref:`🔗<class_OS_method_get_data_dir>`
 
 Returns the *global* user data directory according to the operating system's standards.
 
@@ -773,7 +853,7 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_distribution_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_distribution_name**\ (\ ) |const| :ref:`🔗<class_OS_method_get_distribution_name>`
 
 Returns the name of the distribution for Linux and BSD platforms (e.g. "Ubuntu", "Manjaro", "OpenBSD", etc.).
 
@@ -787,11 +867,25 @@ Returns the same value as :ref:`get_name<class_OS_method_get_name>` for other pl
 
 ----
 
+.. _class_OS_method_get_entropy:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **get_entropy**\ (\ size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_get_entropy>`
+
+Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically secure random bytes with given ``size``.
+
+\ **Note:** Generating large quantities of bytes using this method can result in locking and entropy of lower quality on most platforms. Using :ref:`Crypto.generate_random_bytes<class_Crypto_method_generate_random_bytes>` is preferred in most cases.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OS_method_get_environment:
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_environment**\ (\ variable\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **get_environment**\ (\ variable\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_get_environment>`
 
 Returns the value of the given environment variable, or an empty string if ``variable`` doesn't exist.
 
@@ -807,11 +901,11 @@ Returns the value of the given environment variable, or an empty string if ``var
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_executable_path**\ (\ ) |const|
+:ref:`String<class_String>` **get_executable_path**\ (\ ) |const| :ref:`🔗<class_OS_method_get_executable_path>`
 
 Returns the file path to the current engine executable.
 
-\ **Note:** On macOS, always use :ref:`create_instance<class_OS_method_create_instance>` instead of relying on executable path.
+\ **Note:** On macOS, if you want to launch another instance of Godot, always use :ref:`create_instance<class_OS_method_create_instance>` instead of relying on the executable path.
 
 .. rst-class:: classref-item-separator
 
@@ -821,7 +915,7 @@ Returns the file path to the current engine executable.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_granted_permissions**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_granted_permissions**\ (\ ) |const| :ref:`🔗<class_OS_method_get_granted_permissions>`
 
 On Android devices: Returns the list of dangerous permissions that have been granted.
 
@@ -835,7 +929,7 @@ On macOS: Returns the list of user selected folders accessible to the applicatio
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_keycode_string**\ (\ code\: :ref:`Key<enum_@GlobalScope_Key>`\ ) |const|
+:ref:`String<class_String>` **get_keycode_string**\ (\ code\: :ref:`Key<enum_@GlobalScope_Key>`\ ) |const| :ref:`🔗<class_OS_method_get_keycode_string>`
 
 Returns the given keycode as a :ref:`String<class_String>`.
 
@@ -866,7 +960,7 @@ See also :ref:`find_keycode_from_string<class_OS_method_find_keycode_from_string
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_locale**\ (\ ) |const|
+:ref:`String<class_String>` **get_locale**\ (\ ) |const| :ref:`🔗<class_OS_method_get_locale>`
 
 Returns the host OS locale as a :ref:`String<class_String>` of the form ``language_Script_COUNTRY_VARIANT@extra``. Every substring after ``language`` is optional and may not exist.
 
@@ -890,7 +984,7 @@ If you want only the language code and not the fully specified locale from the O
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_locale_language**\ (\ ) |const|
+:ref:`String<class_String>` **get_locale_language**\ (\ ) |const| :ref:`🔗<class_OS_method_get_locale_language>`
 
 Returns the host OS locale's 2 or 3-letter `language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ as a string which should be consistent on all platforms. This is equivalent to extracting the ``language`` part of the :ref:`get_locale<class_OS_method_get_locale>` string.
 
@@ -904,7 +998,7 @@ This can be used to narrow down fully specified locale strings to only the "comm
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_main_thread_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_main_thread_id**\ (\ ) |const| :ref:`🔗<class_OS_method_get_main_thread_id>`
 
 Returns the ID of the main thread. See :ref:`get_thread_caller_id<class_OS_method_get_thread_caller_id>`.
 
@@ -918,7 +1012,7 @@ Returns the ID of the main thread. See :ref:`get_thread_caller_id<class_OS_metho
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_memory_info**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **get_memory_info**\ (\ ) |const| :ref:`🔗<class_OS_method_get_memory_info>`
 
 Returns a :ref:`Dictionary<class_Dictionary>` containing information about the current memory with the following entries:
 
@@ -940,11 +1034,11 @@ Returns a :ref:`Dictionary<class_Dictionary>` containing information about the c
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_model_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_model_name**\ (\ ) |const| :ref:`🔗<class_OS_method_get_model_name>`
 
 Returns the model name of the current device.
 
-\ **Note:** This method is implemented on Android and iOS. Returns ``"GenericDevice"`` on unsupported platforms.
+\ **Note:** This method is implemented on Android, iOS, macOS, and Windows. Returns ``"GenericDevice"`` on unsupported platforms.
 
 .. rst-class:: classref-item-separator
 
@@ -954,7 +1048,7 @@ Returns the model name of the current device.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_name**\ (\ ) |const| :ref:`🔗<class_OS_method_get_name>`
 
 Returns the name of the host platform.
 
@@ -1033,11 +1127,13 @@ Returns the name of the host platform.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_process_exit_code**\ (\ pid\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_process_exit_code**\ (\ pid\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_get_process_exit_code>`
 
 Returns the exit code of a spawned process once it has finished running (see :ref:`is_process_running<class_OS_method_is_process_running>`).
 
 Returns ``-1`` if the ``pid`` is not a PID of a spawned child process, the process is still running, or the method is not implemented for the current platform.
+
+\ **Note:** Returns ``-1`` if the ``pid`` is a macOS bundled app process.
 
 \ **Note:** This method is implemented on Android, Linux, macOS and Windows.
 
@@ -1049,7 +1145,7 @@ Returns ``-1`` if the ``pid`` is not a PID of a spawned child process, the proce
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_process_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_process_id**\ (\ ) |const| :ref:`🔗<class_OS_method_get_process_id>`
 
 Returns the number used by the host machine to uniquely identify this application.
 
@@ -1063,7 +1159,7 @@ Returns the number used by the host machine to uniquely identify this applicatio
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_processor_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_processor_count**\ (\ ) |const| :ref:`🔗<class_OS_method_get_processor_count>`
 
 Returns the number of *logical* CPU cores available on the host machine. On CPUs with HyperThreading enabled, this number will be greater than the number of *physical* CPU cores.
 
@@ -1075,7 +1171,7 @@ Returns the number of *logical* CPU cores available on the host machine. On CPUs
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_processor_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_processor_name**\ (\ ) |const| :ref:`🔗<class_OS_method_get_processor_name>`
 
 Returns the full name of the CPU model on the host machine (e.g. ``"Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz"``).
 
@@ -1089,7 +1185,7 @@ Returns the full name of the CPU model on the host machine (e.g. ``"Intel(R) Cor
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_restart_on_exit_arguments**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_restart_on_exit_arguments**\ (\ ) |const| :ref:`🔗<class_OS_method_get_restart_on_exit_arguments>`
 
 Returns the list of command line arguments that will be used when the project automatically restarts using :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>`. See also :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>`.
 
@@ -1101,7 +1197,7 @@ Returns the list of command line arguments that will be used when the project au
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_static_memory_peak_usage**\ (\ ) |const|
+:ref:`int<class_int>` **get_static_memory_peak_usage**\ (\ ) |const| :ref:`🔗<class_OS_method_get_static_memory_peak_usage>`
 
 Returns the maximum amount of static memory used. Only works in debug builds.
 
@@ -1113,9 +1209,57 @@ Returns the maximum amount of static memory used. Only works in debug builds.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_static_memory_usage**\ (\ ) |const|
+:ref:`int<class_int>` **get_static_memory_usage**\ (\ ) |const| :ref:`🔗<class_OS_method_get_static_memory_usage>`
 
 Returns the amount of static memory being used by the program in bytes. Only works in debug builds.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_get_stderr_type:
+
+.. rst-class:: classref-method
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **get_stderr_type**\ (\ ) |const| :ref:`🔗<class_OS_method_get_stderr_type>`
+
+Returns type of the standard error device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_get_stdin_type:
+
+.. rst-class:: classref-method
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **get_stdin_type**\ (\ ) |const| :ref:`🔗<class_OS_method_get_stdin_type>`
+
+Returns type of the standard input device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_get_stdout_type:
+
+.. rst-class:: classref-method
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **get_stdout_type**\ (\ ) |const| :ref:`🔗<class_OS_method_get_stdout_type>`
+
+Returns type of the standard output device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_get_system_ca_certificates:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_system_ca_certificates**\ (\ ) :ref:`🔗<class_OS_method_get_system_ca_certificates>`
+
+Returns the list of certification authorities trusted by the operating system as a string of concatenated certificates in PEM format.
 
 .. rst-class:: classref-item-separator
 
@@ -1125,7 +1269,7 @@ Returns the amount of static memory being used by the program in bytes. Only wor
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_system_dir**\ (\ dir\: :ref:`SystemDir<enum_OS_SystemDir>`, shared_storage\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`String<class_String>` **get_system_dir**\ (\ dir\: :ref:`SystemDir<enum_OS_SystemDir>`, shared_storage\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_OS_method_get_system_dir>`
 
 Returns the path to commonly used folders across different platforms, as defined by ``dir``. See the :ref:`SystemDir<enum_OS_SystemDir>` constants for available locations.
 
@@ -1141,7 +1285,7 @@ Returns the path to commonly used folders across different platforms, as defined
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_system_font_path**\ (\ font_name\: :ref:`String<class_String>`, weight\: :ref:`int<class_int>` = 400, stretch\: :ref:`int<class_int>` = 100, italic\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`String<class_String>` **get_system_font_path**\ (\ font_name\: :ref:`String<class_String>`, weight\: :ref:`int<class_int>` = 400, stretch\: :ref:`int<class_int>` = 100, italic\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_OS_method_get_system_font_path>`
 
 Returns the path to the system font file with ``font_name`` and style. Returns an empty string if no matching fonts found.
 
@@ -1159,7 +1303,7 @@ The following aliases can be used to request default fonts: "sans-serif", "serif
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_system_font_path_for_text**\ (\ font_name\: :ref:`String<class_String>`, text\: :ref:`String<class_String>`, locale\: :ref:`String<class_String>` = "", script\: :ref:`String<class_String>` = "", weight\: :ref:`int<class_int>` = 400, stretch\: :ref:`int<class_int>` = 100, italic\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_system_font_path_for_text**\ (\ font_name\: :ref:`String<class_String>`, text\: :ref:`String<class_String>`, locale\: :ref:`String<class_String>` = "", script\: :ref:`String<class_String>` = "", weight\: :ref:`int<class_int>` = 400, stretch\: :ref:`int<class_int>` = 100, italic\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_OS_method_get_system_font_path_for_text>`
 
 Returns an array of the system substitute font file paths, which are similar to the font with ``font_name`` and style for the specified text, locale, and script. Returns an empty array if no matching fonts found.
 
@@ -1179,7 +1323,7 @@ The following aliases can be used to request default fonts: "sans-serif", "serif
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_system_fonts**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_system_fonts**\ (\ ) |const| :ref:`🔗<class_OS_method_get_system_fonts>`
 
 Returns the list of font family names available.
 
@@ -1189,11 +1333,23 @@ Returns the list of font family names available.
 
 ----
 
+.. _class_OS_method_get_temp_dir:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_temp_dir**\ (\ ) |const| :ref:`🔗<class_OS_method_get_temp_dir>`
+
+Returns the *global* temporary data directory according to the operating system's standards.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OS_method_get_thread_caller_id:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_thread_caller_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_thread_caller_id**\ (\ ) |const| :ref:`🔗<class_OS_method_get_thread_caller_id>`
 
 Returns the ID of the current thread. This can be used in logs to ease debugging of multi-threaded applications.
 
@@ -1207,7 +1363,7 @@ Returns the ID of the current thread. This can be used in logs to ease debugging
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_unique_id**\ (\ ) |const|
+:ref:`String<class_String>` **get_unique_id**\ (\ ) |const| :ref:`🔗<class_OS_method_get_unique_id>`
 
 Returns a string that is unique to the device.
 
@@ -1223,7 +1379,7 @@ Returns a string that is unique to the device.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_user_data_dir**\ (\ ) |const|
+:ref:`String<class_String>` **get_user_data_dir**\ (\ ) |const| :ref:`🔗<class_OS_method_get_user_data_dir>`
 
 Returns the absolute directory path where user data is written (the ``user://`` directory in Godot). The path depends on the project name and :ref:`ProjectSettings.application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>`.
 
@@ -1249,7 +1405,7 @@ Not to be confused with :ref:`get_data_dir<class_OS_method_get_data_dir>`, which
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_version**\ (\ ) |const|
+:ref:`String<class_String>` **get_version**\ (\ ) |const| :ref:`🔗<class_OS_method_get_version>`
 
 Returns the exact production and build version of the operating system. This is different from the branded version used in marketing. This helps to distinguish between different releases of operating systems, including minor versions, and insider and custom builds.
 
@@ -1267,11 +1423,25 @@ Returns the exact production and build version of the operating system. This is 
 
 ----
 
+.. _class_OS_method_get_version_alias:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_version_alias**\ (\ ) |const| :ref:`🔗<class_OS_method_get_version_alias>`
+
+Returns the branded version used in marketing, followed by the build number (on Windows) or the version number (on macOS). Examples include ``11 (build 22000)`` and ``Sequoia (15.0.0)``. This value can then be appended to :ref:`get_name<class_OS_method_get_name>` to get a full, human-readable operating system name and version combination for the operating system. Windows feature updates such as 24H2 are not contained in the resulting string, but Windows Server is recognized as such (e.g. ``2025 (build 26100)`` for Windows Server 2025).
+
+\ **Note:** This method is only supported on Windows and macOS. On other operating systems, it returns the same value as :ref:`get_version<class_OS_method_get_version>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OS_method_get_video_adapter_driver_info:
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_video_adapter_driver_info**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_video_adapter_driver_info**\ (\ ) |const| :ref:`🔗<class_OS_method_get_video_adapter_driver_info>`
 
 Returns the video adapter driver name and version for the user's currently active graphics card, as a :ref:`PackedStringArray<class_PackedStringArray>`. See also :ref:`RenderingServer.get_video_adapter_api_version<class_RenderingServer_method_get_video_adapter_api_version>`.
 
@@ -1289,7 +1459,7 @@ The second element holds the driver version. For example, on the ``nvidia`` driv
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_environment**\ (\ variable\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_environment**\ (\ variable\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_has_environment>`
 
 Returns ``true`` if the environment variable with the name ``variable`` exists.
 
@@ -1303,7 +1473,7 @@ Returns ``true`` if the environment variable with the name ``variable`` exists.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_feature**\ (\ tag_name\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_feature**\ (\ tag_name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_has_feature>`
 
 Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on the platform, build, etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the :doc:`Feature Tags <../tutorials/export/feature_tags>` documentation for more details.
 
@@ -1319,7 +1489,7 @@ Returns ``true`` if the feature for the given feature tag is supported in the cu
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_debug_build**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_debug_build**\ (\ ) |const| :ref:`🔗<class_OS_method_is_debug_build>`
 
 Returns ``true`` if the Godot binary used to run the project is a *debug* export template, or when running in the editor.
 
@@ -1335,7 +1505,7 @@ Returns ``false`` if the Godot binary used to run the project is a *release* exp
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_keycode_unicode**\ (\ code\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_keycode_unicode**\ (\ code\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_is_keycode_unicode>`
 
 Returns ``true`` if the input keycode corresponds to a Unicode character. For a list of codes, see the :ref:`Key<enum_@GlobalScope_Key>` constants.
 
@@ -1351,10 +1521,10 @@ Returns ``true`` if the input keycode corresponds to a Unicode character. For a 
 
  .. code-tab:: csharp
 
-    GD.Print(OS.IsKeycodeUnicode((long)Key.G));      // Prints true
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Kp4));    // Prints true
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Tab));    // Prints false
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Escape)); // Prints false
+    GD.Print(OS.IsKeycodeUnicode((long)Key.G));      // Prints True
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Kp4));    // Prints True
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Tab));    // Prints False
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Escape)); // Prints False
 
 
 
@@ -1366,7 +1536,7 @@ Returns ``true`` if the input keycode corresponds to a Unicode character. For a 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_process_running**\ (\ pid\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_process_running**\ (\ pid\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_is_process_running>`
 
 Returns ``true`` if the child process ID (``pid``) is still running or ``false`` if it has terminated. ``pid`` must be a valid ID generated from :ref:`create_process<class_OS_method_create_process>`.
 
@@ -1380,7 +1550,7 @@ Returns ``true`` if the child process ID (``pid``) is still running or ``false``
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_restart_on_exit_set**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_restart_on_exit_set**\ (\ ) |const| :ref:`🔗<class_OS_method_is_restart_on_exit_set>`
 
 Returns ``true`` if the project will automatically restart when it exits for any reason, ``false`` otherwise. See also :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` and :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`.
 
@@ -1392,7 +1562,7 @@ Returns ``true`` if the project will automatically restart when it exits for any
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_sandboxed**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_sandboxed**\ (\ ) |const| :ref:`🔗<class_OS_method_is_sandboxed>`
 
 Returns ``true`` if the application is running in the sandbox.
 
@@ -1406,7 +1576,7 @@ Returns ``true`` if the application is running in the sandbox.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_stdout_verbose**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_stdout_verbose**\ (\ ) |const| :ref:`🔗<class_OS_method_is_stdout_verbose>`
 
 Returns ``true`` if the engine was executed with the ``--verbose`` or ``-v`` command line argument, or if :ref:`ProjectSettings.debug/settings/stdout/verbose_stdout<class_ProjectSettings_property_debug/settings/stdout/verbose_stdout>` is ``true``. See also :ref:`@GlobalScope.print_verbose<class_@GlobalScope_method_print_verbose>`.
 
@@ -1418,7 +1588,7 @@ Returns ``true`` if the engine was executed with the ``--verbose`` or ``-v`` com
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_userfs_persistent**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_userfs_persistent**\ (\ ) |const| :ref:`🔗<class_OS_method_is_userfs_persistent>`
 
 Returns ``true`` if the ``user://`` file system is persistent, that is, its state is the same after a player quits and starts the game again. Relevant to the Web platform, where this persistence may be unavailable.
 
@@ -1430,7 +1600,7 @@ Returns ``true`` if the ``user://`` file system is persistent, that is, its stat
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **kill**\ (\ pid\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **kill**\ (\ pid\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_kill>`
 
 Kill (terminate) the process identified by the given process ID (``pid``), such as the ID returned by :ref:`execute<class_OS_method_execute>` in non-blocking mode. See also :ref:`crash<class_OS_method_crash>`.
 
@@ -1446,7 +1616,7 @@ Kill (terminate) the process identified by the given process ID (``pid``), such 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **move_to_trash**\ (\ path\: :ref:`String<class_String>`\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **move_to_trash**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_move_to_trash>`
 
 Moves the file or directory at the given ``path`` to the system's recycle bin. See also :ref:`DirAccess.remove<class_DirAccess_method_remove>`.
 
@@ -1481,11 +1651,37 @@ Returns :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` if the fi
 
 .. rst-class:: classref-method
 
-|void| **open_midi_inputs**\ (\ )
+|void| **open_midi_inputs**\ (\ ) :ref:`🔗<class_OS_method_open_midi_inputs>`
 
 Initializes the singleton for the system MIDI driver, allowing Godot to receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>` and :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
+
+\ **Note:** On the Web platform, Web MIDI needs to be supported by the browser. `For the time being <https://caniuse.com/midi>`__, it is currently supported by all major browsers, except Safari.
+
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_read_buffer_from_stdin:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **read_buffer_from_stdin**\ (\ buffer_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_read_buffer_from_stdin>`
+
+Reads a user input as raw data from the standard input. This operation can be *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread.
+
+- If standard input is console, this method will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
+
+- If standard input is pipe, this method will block until a specific amount of data is read or pipe is closed.
+
+- If standard input is a file, this method will read a specific amount of data (or less if end-of-file is reached) and return immediately.
+
+\ **Note:** This method is implemented on Linux, macOS, and Windows.
+
+\ **Note:** On exported Windows builds, run the console wrapper executable to access the terminal. If standard input is console, calling this method without console wrapped will freeze permanently. If standard input is pipe or file, it can be used without console wrapper. If you need a single executable with full console support, use a custom build compiled with the ``windows_subsystem=console`` flag.
 
 .. rst-class:: classref-item-separator
 
@@ -1495,13 +1691,21 @@ Initializes the singleton for the system MIDI driver, allowing Godot to receive 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **read_string_from_stdin**\ (\ )
+:ref:`String<class_String>` **read_string_from_stdin**\ (\ buffer_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_read_string_from_stdin>`
 
-Reads a user input string from the standard input (usually the terminal). This operation is *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread. The thread calling :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
+Reads a user input as a UTF-8 encoded string from the standard input. This operation can be *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+- If standard input is console, this method will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
 
-\ **Note:** On exported Windows builds, run the console wrapper executable to access the terminal. Otherwise, the standard input will not work correctly. If you need a single executable with console support, use a custom build compiled with the ``windows_subsystem=console`` flag.
+- If standard input is pipe, this method will block until a specific amount of data is read or pipe is closed.
+
+- If standard input is a file, this method will read a specific amount of data (or less if end-of-file is reached) and return immediately.
+
+\ **Note:** This method automatically replaces ``\r\n`` line breaks with ``\n`` and removes them from the end of the string. Use :ref:`read_buffer_from_stdin<class_OS_method_read_buffer_from_stdin>` to read the unprocessed data.
+
+\ **Note:** This method is implemented on Linux, macOS, and Windows.
+
+\ **Note:** On exported Windows builds, run the console wrapper executable to access the terminal. If standard input is console, calling this method without console wrapped will freeze permanently. If standard input is pipe or file, it can be used without console wrapper. If you need a single executable with full console support, use a custom build compiled with the ``windows_subsystem=console`` flag.
 
 .. rst-class:: classref-item-separator
 
@@ -1511,11 +1715,19 @@ Reads a user input string from the standard input (usually the terminal). This o
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **request_permission**\ (\ name\: :ref:`String<class_String>`\ )
+:ref:`bool<class_bool>` **request_permission**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OS_method_request_permission>`
 
-Requests permission from the OS for the given ``name``. Returns ``true`` if the permission has been successfully granted.
+Requests permission from the OS for the given ``name``. Returns ``true`` if the permission has already been granted. See also :ref:`MainLoop.on_request_permissions_result<class_MainLoop_signal_on_request_permissions_result>`.
 
-\ **Note:** This method is currently only implemented on Android, to specifically request permission for ``"RECORD_AUDIO"`` by ``AudioDriverOpenSL``.
+The ``name`` must be the full permission name. For example:
+
+- ``OS.request_permission("android.permission.READ_EXTERNAL_STORAGE")``\ 
+
+- ``OS.request_permission("android.permission.POST_NOTIFICATIONS")``\ 
+
+\ **Note:** Permission must be checked during export.
+
+\ **Note:** This method is only implemented on Android.
 
 .. rst-class:: classref-item-separator
 
@@ -1525,9 +1737,11 @@ Requests permission from the OS for the given ``name``. Returns ``true`` if the 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **request_permissions**\ (\ )
+:ref:`bool<class_bool>` **request_permissions**\ (\ ) :ref:`🔗<class_OS_method_request_permissions>`
 
-Requests *dangerous* permissions from the OS. Returns ``true`` if permissions have been successfully granted.
+Requests *dangerous* permissions from the OS. Returns ``true`` if permissions have already been granted. See also :ref:`MainLoop.on_request_permissions_result<class_MainLoop_signal_on_request_permissions_result>`.
+
+\ **Note:** Permissions must be checked during export.
 
 \ **Note:** This method is only implemented on Android. Normal permissions are automatically granted at install time in Android applications.
 
@@ -1539,7 +1753,7 @@ Requests *dangerous* permissions from the OS. Returns ``true`` if permissions ha
 
 .. rst-class:: classref-method
 
-|void| **revoke_granted_permissions**\ (\ )
+|void| **revoke_granted_permissions**\ (\ ) :ref:`🔗<class_OS_method_revoke_granted_permissions>`
 
 On macOS (sandboxed applications only), this function clears list of user selected folders accessible to the application.
 
@@ -1551,7 +1765,7 @@ On macOS (sandboxed applications only), this function clears list of user select
 
 .. rst-class:: classref-method
 
-|void| **set_environment**\ (\ variable\: :ref:`String<class_String>`, value\: :ref:`String<class_String>`\ ) |const|
+|void| **set_environment**\ (\ variable\: :ref:`String<class_String>`, value\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_set_environment>`
 
 Sets the value of the environment variable ``variable`` to ``value``. The environment variable will be set for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`set_environment<class_OS_method_set_environment>`. The environment variable will *not* persist to processes run after the Godot process was terminated.
 
@@ -1565,7 +1779,7 @@ Sets the value of the environment variable ``variable`` to ``value``. The enviro
 
 .. rst-class:: classref-method
 
-|void| **set_restart_on_exit**\ (\ restart\: :ref:`bool<class_bool>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray()\ )
+|void| **set_restart_on_exit**\ (\ restart\: :ref:`bool<class_bool>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray()\ ) :ref:`🔗<class_OS_method_set_restart_on_exit>`
 
 If ``restart`` is ``true``, restarts the project automatically when it is exited with :ref:`SceneTree.quit<class_SceneTree_method_quit>` or :ref:`Node.NOTIFICATION_WM_CLOSE_REQUEST<class_Node_constant_NOTIFICATION_WM_CLOSE_REQUEST>`. Command-line ``arguments`` can be supplied. To restart the project with the same command line arguments as originally used to run the project, pass :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>` as the value for ``arguments``.
 
@@ -1583,7 +1797,7 @@ This method can be used to apply setting changes that require a restart. See als
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **set_thread_name**\ (\ name\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **set_thread_name**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OS_method_set_thread_name>`
 
 Assigns the given name to the current thread. Returns :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if unavailable on the current platform.
 
@@ -1595,7 +1809,7 @@ Assigns the given name to the current thread. Returns :ref:`@GlobalScope.ERR_UNA
 
 .. rst-class:: classref-method
 
-|void| **set_use_file_access_save_and_swap**\ (\ enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_use_file_access_save_and_swap**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OS_method_set_use_file_access_save_and_swap>`
 
 If ``enabled`` is ``true``, when opening a file for writing, a temporary file is used in its place. When closed, it is automatically applied to the target file.
 
@@ -1609,11 +1823,13 @@ This can useful when files may be opened by other applications, such as antiviru
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **shell_open**\ (\ uri\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **shell_open**\ (\ uri\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OS_method_shell_open>`
 
 Requests the OS to open a resource identified by ``uri`` with the most appropriate program. For example:
 
-- ``OS.shell_open("C:\\Users\name\Downloads")`` on Windows opens the file explorer at the user's Downloads folder.
+- ``OS.shell_open("C:\\Users\\name\\Downloads")`` on Windows opens the file explorer at the user's Downloads folder.
+
+- ``OS.shell_open("C:/Users/name/Downloads")`` also works on Windows and opens the file explorer at the user's Downloads folder.
 
 - ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
 
@@ -1633,7 +1849,7 @@ Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **shell_show_in_file_manager**\ (\ file_or_dir_path\: :ref:`String<class_String>`, open_folder\: :ref:`bool<class_bool>` = true\ )
+:ref:`Error<enum_@GlobalScope_Error>` **shell_show_in_file_manager**\ (\ file_or_dir_path\: :ref:`String<class_String>`, open_folder\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_OS_method_shell_show_in_file_manager>`
 
 Requests the OS to open the file manager, navigate to the given ``file_or_dir_path`` and select the target file or folder.
 
@@ -1651,7 +1867,7 @@ Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_
 
 .. rst-class:: classref-method
 
-|void| **unset_environment**\ (\ variable\: :ref:`String<class_String>`\ ) |const|
+|void| **unset_environment**\ (\ variable\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_unset_environment>`
 
 Removes the given environment variable from the current environment, if it exists. The ``variable`` name cannot be empty or include the ``=`` character. The environment variable will be removed for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`unset_environment<class_OS_method_unset_environment>`. The removal of the environment variable will *not* persist to processes run after the Godot process was terminated.
 

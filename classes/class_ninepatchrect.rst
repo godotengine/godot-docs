@@ -78,7 +78,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**texture_changed**\ (\ )
+**texture_changed**\ (\ ) :ref:`🔗<class_NinePatchRect_signal_texture_changed>`
 
 Emitted when the node's texture changes.
 
@@ -95,7 +95,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **AxisStretchMode**:
+enum **AxisStretchMode**: :ref:`🔗<enum_NinePatchRect_AxisStretchMode>`
 
 .. _class_NinePatchRect_constant_AXIS_STRETCH_MODE_STRETCH:
 
@@ -134,7 +134,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_horizontal** = ``0``
+:ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_horizontal** = ``0`` :ref:`🔗<class_NinePatchRect_property_axis_stretch_horizontal>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +151,7 @@ The stretch mode to use for horizontal stretching/tiling. See :ref:`AxisStretchM
 
 .. rst-class:: classref-property
 
-:ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_vertical** = ``0``
+:ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_vertical** = ``0`` :ref:`🔗<class_NinePatchRect_property_axis_stretch_vertical>`
 
 .. rst-class:: classref-property-setget
 
@@ -168,7 +168,7 @@ The stretch mode to use for vertical stretching/tiling. See :ref:`AxisStretchMod
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_center** = ``true``
+:ref:`bool<class_bool>` **draw_center** = ``true`` :ref:`🔗<class_NinePatchRect_property_draw_center>`
 
 .. rst-class:: classref-property-setget
 
@@ -185,7 +185,7 @@ If ``true``, draw the panel's center. Else, only draw the 9-slice's borders.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **patch_margin_bottom** = ``0``
+:ref:`int<class_int>` **patch_margin_bottom** = ``0`` :ref:`🔗<class_NinePatchRect_property_patch_margin_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -202,7 +202,7 @@ The height of the 9-slice's bottom row. A margin of 16 means the 9-slice's botto
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **patch_margin_left** = ``0``
+:ref:`int<class_int>` **patch_margin_left** = ``0`` :ref:`🔗<class_NinePatchRect_property_patch_margin_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -219,7 +219,7 @@ The width of the 9-slice's left column. A margin of 16 means the 9-slice's left 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **patch_margin_right** = ``0``
+:ref:`int<class_int>` **patch_margin_right** = ``0`` :ref:`🔗<class_NinePatchRect_property_patch_margin_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -236,7 +236,7 @@ The width of the 9-slice's right column. A margin of 16 means the 9-slice's righ
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **patch_margin_top** = ``0``
+:ref:`int<class_int>` **patch_margin_top** = ``0`` :ref:`🔗<class_NinePatchRect_property_patch_margin_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -253,7 +253,7 @@ The height of the 9-slice's top row. A margin of 16 means the 9-slice's top corn
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_NinePatchRect_property_region_rect>`
 
 .. rst-class:: classref-property-setget
 
@@ -270,7 +270,7 @@ Rectangular region of the texture to sample from. If you're working with an atla
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_NinePatchRect_property_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -292,7 +292,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_patch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`int<class_int>` **get_patch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_NinePatchRect_method_get_patch_margin>`
 
 Returns the size of the margin on the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
@@ -304,7 +304,7 @@ Returns the size of the margin on the specified :ref:`Side<enum_@GlobalScope_Sid
 
 .. rst-class:: classref-method
 
-|void| **set_patch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, value\: :ref:`int<class_int>`\ )
+|void| **set_patch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NinePatchRect_method_set_patch_margin>`
 
 Sets the size of the margin on the specified :ref:`Side<enum_@GlobalScope_Side>` to ``value`` pixels.
 

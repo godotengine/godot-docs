@@ -52,7 +52,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **absorbent** = ``false``
+:ref:`bool<class_bool>` **absorbent** = ``false`` :ref:`🔗<class_PhysicsMaterial_property_absorbent>`
 
 .. rst-class:: classref-property-setget
 
@@ -69,7 +69,7 @@ If ``true``, subtracts the bounciness from the colliding object's bounciness ins
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bounce** = ``0.0``
+:ref:`float<class_float>` **bounce** = ``0.0`` :ref:`🔗<class_PhysicsMaterial_property_bounce>`
 
 .. rst-class:: classref-property-setget
 
@@ -78,7 +78,7 @@ If ``true``, subtracts the bounciness from the colliding object's bounciness ins
 
 The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 
-\ **Note:** Even with :ref:`bounce<class_PhysicsMaterial_property_bounce>` set to ``1.0``, some energy will be lost over time due to linear and angular damping. To have a :ref:`PhysicsBody3D<class_PhysicsBody3D>` that preserves all its energy over time, set :ref:`bounce<class_PhysicsMaterial_property_bounce>` to ``1.0``, the body's linear damp mode to **Replace** (if applicable), its linear damp to ``0.0``, its angular damp mode to **Replace** (if applicable), and its angular damp to ``0.0``.
+\ **Note:** Even with :ref:`bounce<class_PhysicsMaterial_property_bounce>` set to ``1.0``, some energy will be lost over time due to linear and angular damping. To have a physics body that preserves all its energy over time, set :ref:`bounce<class_PhysicsMaterial_property_bounce>` to ``1.0``, the body's linear damp mode to **Replace** (if applicable), its linear damp to ``0.0``, its angular damp mode to **Replace** (if applicable), and its angular damp to ``0.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -88,7 +88,7 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **friction** = ``1.0``
+:ref:`float<class_float>` **friction** = ``1.0`` :ref:`🔗<class_PhysicsMaterial_property_friction>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,7 +105,7 @@ The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum fr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rough** = ``false``
+:ref:`bool<class_bool>` **rough** = ``false`` :ref:`🔗<class_PhysicsMaterial_property_rough>`
 
 .. rst-class:: classref-property-setget
 

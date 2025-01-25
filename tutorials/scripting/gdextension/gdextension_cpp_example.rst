@@ -35,16 +35,17 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
 .. note::
     To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
     you need to use the godot-cpp branch that matches the version of Godot that you are
-    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch,
-    which is what is shown through out this tutorial.
+    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch. Throughout
+    this tutorial we use ``4.x``, which will need to be replaced with the version of Godot you
+    are targeting.
 
     The ``master`` branch is the development branch which is updated regularly
     to work with Godot's ``master`` branch.
 
 .. warning::
     Our long-term goal is that GDExtensions targeting an earlier version of Godot will work
-    in later minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
-    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
+    in later minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.1
+    should work just fine in Godot 4.2, but one targeting Godot 4.2 won't work in Godot 4.1.
 
     However, GDExtension is currently *experimental*, which means that we may break compatibility
     in order to fix major bugs or include critical features. For example, GDExtensions created
@@ -59,7 +60,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.1 https://github.com/godotengine/godot-cpp
+    git submodule add -b 4.x https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -69,7 +70,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.1 https://github.com/godotengine/godot-cpp
+    git clone -b 4.x https://github.com/godotengine/godot-cpp
 
 .. note::
 
@@ -95,8 +96,8 @@ Now that we've downloaded our prerequisites, it is time to build the C++
 bindings.
 
 The repository contains a copy of the metadata for the current Godot release,
-but if you need to build these bindings for a newer version of Godot, simply
-call the Godot executable:
+but if you need to build these bindings for a newer version of Godot, call
+the Godot executable:
 
 .. code-block:: none
 
@@ -160,6 +161,7 @@ In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/gdexample.h
 
     #ifndef GDEXAMPLE_H
     #define GDEXAMPLE_H
@@ -213,6 +215,7 @@ as the ``_process`` function you're used to in GDScript.
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/gdexample.cpp
 
     #include "gdexample.h"
     #include <godot_cpp/core/class_db.hpp>
@@ -252,6 +255,7 @@ is a small bit of code that tells Godot about all the classes in our
 GDExtension plugin.
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/register_types.cpp
 
     #include "register_types.h"
 
@@ -294,7 +298,7 @@ The ``initialize_example_module`` and ``uninitialize_example_module`` functions 
 called respectively when Godot loads our plugin and when it unloads it. All
 we're doing here is parse through the functions in our bindings module to
 initialize them, but you might have to set up more things depending on your
-needs. We call the function ``register_class`` for each of our classes in our library.
+needs. We call the ``GDREGISTER_CLASS`` macro for each of our classes in our library.
 
 The important function is the third function called ``example_library_init``.
 We first call a function in our bindings library that creates an initialization object.
@@ -305,6 +309,7 @@ At last, we need the header file for the ``register_types.cpp`` named
 ``register_types.h``.
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/register_types.h
 
     #ifndef GDEXAMPLE_REGISTER_TYPES_H
     #define GDEXAMPLE_REGISTER_TYPES_H
@@ -332,7 +337,7 @@ build files in a subsequent tutorial.
 
     This ``SConstruct`` file was written to be used with the latest ``godot-cpp``
     master, you may need to make small changes using it with older versions or
-    refer to the ``SConstruct`` file in the Godot 4.0 documentation.
+    refer to the ``SConstruct`` file in the Godot 4.x documentation.
 
 Once you've downloaded the ``SConstruct`` file, place it in your GDExtension folder
 structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
@@ -342,6 +347,19 @@ structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
     scons platform=<platform>
 
 You should now be able to find the module in ``demo/bin/<platform>``.
+
+When building for iOS, package the module as a static `.xcframework`, you can use
+following commands to do so:
+
+::
+
+    # compile simulator and device modules
+    scons arch=universal ios_simulator=yes platform=ios target=<target>
+    scons arch=arm64 ios_simulator=no platform=ios target=<target>
+
+    # assemble xcframeworks
+    xcodebuild -create-xcframework -library demo/bin/libgdexample.ios.<target>.a -library demo/bin/libgdexample.ios.<target>.simulator.a -output demo/bin/libgdexample.ios.<target>.xcframework
+    xcodebuild -create-xcframework -library godot-cpp/bin/libgodot-cpp.ios.<target>.arm64.a -library godot-cpp/bin/libgodot-cpp.ios.<target>.universal.simulator.a  -output demo/bin/libgodot-cpp.ios.<target>.xcframework
 
 .. note::
 
@@ -364,11 +382,14 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     entry_symbol = "example_library_init"
     compatibility_minimum = "4.1"
+    reloadable = true
 
     [libraries]
 
     macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
     macos.release = "res://bin/libgdexample.macos.template_release.framework"
+    ios.debug = "res://bin/libgdexample.ios.template_debug.xcframework"
+    ios.release = "res://bin/libgdexample.ios.template_release.xcframework"
     windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
     windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
     windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
@@ -384,9 +405,19 @@ loaded for each platform and the entry function for the module. It is called ``g
     android.debug.arm64 = "res://bin/libgdexample.android.template_debug.arm64.so"
     android.release.arm64 = "res://bin/libgdexample.android.template_release.arm64.so"
 
+    [dependencies]
+    ios.debug = {
+        "res://bin/libgodot-cpp.ios.template_debug.xcframework": ""
+    }
+    ios.release = {
+        "res://bin/libgodot-cpp.ios.template_release.xcframework": ""
+    }
+
 This file contains a ``configuration`` section that controls the entry function of the module.
 You should also set the minimum compatible Godot version with ``compatability_minimum``,
 which prevents older version of Godot from trying to load your extension.
+The ``reloadable`` flag enables automatic reloading of your extension by the editor every time you recompile it,
+without needing to restart the editor. This only works if you compile your extension in debug mode (default).
 
 The ``libraries`` section is the important bit: it tells Godot the location of the
 dynamic library in the project's filesystem for each supported platform. It will
@@ -436,23 +467,6 @@ We're finally ready to run the project:
 
 .. image:: img/gdextension_cpp_animated.gif
 
-Custom editor icon
-------------------
-By default, Godot uses the node icon in the scene dock for GDExtension nodes. The custom icon can be
-added via the ``gdextension`` file. The node's icon is set by reference to its name and resource path
-of an SVG file.
-
-For example:
-
-.. code-block:: none
-
-    [icons]
-
-    GDExample = "res://icons/gd_example.svg"
-
-The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
-for more information.
-
 Adding properties
 -----------------
 
@@ -487,6 +501,7 @@ show the methods we end up changing, don't remove the lines we're omitting:
     void GDExample::_bind_methods() {
         ClassDB::bind_method(D_METHOD("get_amplitude"), &GDExample::get_amplitude);
         ClassDB::bind_method(D_METHOD("set_amplitude", "p_amplitude"), &GDExample::set_amplitude);
+
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
     }
 
@@ -544,7 +559,8 @@ showing the methods that have changed so don't remove anything we're omitting:
         ...
         ClassDB::bind_method(D_METHOD("get_speed"), &GDExample::get_speed);
         ClassDB::bind_method(D_METHOD("set_speed", "p_speed"), &GDExample::set_speed);
-        ADD_PROPERTY("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+
+        ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
     }
 
     GDExample::GDExample() {
@@ -638,7 +654,7 @@ as follows:
 
     void GDExample::_bind_methods() {
         ...
-        ADD_PROPERTY("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+        ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
 
         ADD_SIGNAL(MethodInfo("position_changed", PropertyInfo(Variant::OBJECT, "node"), PropertyInfo(Variant::VECTOR2, "new_pos")));
     }

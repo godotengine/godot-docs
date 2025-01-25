@@ -50,7 +50,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const|
+:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const| :ref:`🔗<class_Texture2DArray_method_create_placeholder>`
 
 Creates a placeholder version of this resource (:ref:`PlaceholderTexture2DArray<class_PlaceholderTexture2DArray>`).
 

@@ -77,7 +77,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Priority**:
+enum **Priority**: :ref:`🔗<enum_Thread_Priority>`
 
 .. _class_Thread_constant_PRIORITY_LOW:
 
@@ -116,7 +116,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_id**\ (\ ) |const|
+:ref:`String<class_String>` **get_id**\ (\ ) |const| :ref:`🔗<class_Thread_method_get_id>`
 
 Returns the current **Thread**'s ID, uniquely identifying it among all threads. If the **Thread** has not started running or if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` has been called, this returns an empty string.
 
@@ -128,7 +128,7 @@ Returns the current **Thread**'s ID, uniquely identifying it among all threads. 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_alive**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_alive**\ (\ ) |const| :ref:`🔗<class_Thread_method_is_alive>`
 
 Returns ``true`` if this **Thread** is currently running the provided function. This is useful for determining if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
 
@@ -142,7 +142,7 @@ To check if a **Thread** is joinable, use :ref:`is_started<class_Thread_method_i
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_started**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_started**\ (\ ) |const| :ref:`🔗<class_Thread_method_is_started>`
 
 Returns ``true`` if this **Thread** has been started. Once started, this will return ``true`` until it is joined using :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`. For checking if a **Thread** is still executing its task, use :ref:`is_alive<class_Thread_method_is_alive>`.
 
@@ -154,7 +154,7 @@ Returns ``true`` if this **Thread** has been started. Once started, this will re
 
 .. rst-class:: classref-method
 
-|void| **set_thread_safety_checks_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |static|
+|void| **set_thread_safety_checks_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |static| :ref:`🔗<class_Thread_method_set_thread_safety_checks_enabled>`
 
 Sets whether the thread safety checks the engine normally performs in methods of certain classes (e.g., :ref:`Node<class_Node>`) should happen **on the current thread**.
 
@@ -178,7 +178,7 @@ Because of that, there may be cases where the user may want to disable them (``e
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ callable\: :ref:`Callable<class_Callable>`, priority\: :ref:`Priority<enum_Thread_Priority>` = 1\ )
+:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ callable\: :ref:`Callable<class_Callable>`, priority\: :ref:`Priority<enum_Thread_Priority>` = 1\ ) :ref:`🔗<class_Thread_method_start>`
 
 Starts a new **Thread** that calls ``callable``.
 
@@ -196,7 +196,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :r
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **wait_to_finish**\ (\ )
+:ref:`Variant<class_Variant>` **wait_to_finish**\ (\ ) :ref:`🔗<class_Thread_method_wait_to_finish>`
 
 Joins the **Thread** and waits for it to finish. Returns the output of the :ref:`Callable<class_Callable>` passed to :ref:`start<class_Thread_method_start>`.
 

@@ -23,6 +23,20 @@ A popup with a configurable panel background. Any child controls added to this n
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | transparent    | ``true`` (overrides :ref:`Window<class_Window_property_transparent>`)        |
+   +-------------------------+----------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | transparent_bg | ``true`` (overrides :ref:`Viewport<class_Viewport_property_transparent_bg>`) |
+   +-------------------------+----------------+------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
@@ -46,9 +60,9 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel**
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_PopupPanel_theme_style_panel>`
 
-:ref:`StyleBox<class_StyleBox>` for the the background panel.
+:ref:`StyleBox<class_StyleBox>` for the background panel.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

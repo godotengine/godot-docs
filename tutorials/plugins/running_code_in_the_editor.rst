@@ -23,7 +23,7 @@ use cases:
 - If your player doesn't use a sprite, but draws itself using code, you can make
   that drawing code execute in the editor to see your player.
 
-.. DANGER::
+.. danger::
 
     ``@tool`` scripts run inside the editor, and let you access the scene tree
     of the currently edited scene. This is a powerful feature which also comes
@@ -151,6 +151,10 @@ and open a script, and change it to this:
 Save the script and return to the editor. You should now see your object rotate.
 If you run the game, it will also rotate.
 
+.. warning::
+    You may need to restart the editor. This is a known bug found in all Godot 4 versions:
+    `GH-66381 <https://github.com/godotengine/godot/issues/66381>`_.
+
 .. image:: img/rotating_in_editor.gif
 
 .. note::
@@ -208,7 +212,7 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
 
 
     func _process(delta):
-    	rotation += PI * delta * speed
+        rotation += PI * delta * speed
 
  .. code-tab:: csharp
 
@@ -248,7 +252,7 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
 Getting notified when resources change
 --------------------------------------
 
-Some times you want your tool to use a resource. However, when you change a
+Sometimes you want your tool to use a resource. However, when you change a
 property of that resource in the editor, the ``set()`` method of your tool will
 not be called.
 
@@ -263,7 +267,7 @@ not be called.
         set(new_resource):
             resource = new_resource
             _on_resource_set()
-    
+
     # This will only be called when you create, delete, or paste a resource.
     # You will not get an update when tweaking properties of it.
     func _on_resource_set():
@@ -456,6 +460,8 @@ By default, the warning only updates when closing and reopening the scene.
         # Returning an empty array means "no warning".
         return warnings
 
+.. _doc_running_code_in_the_editor_editorscript:
+
 Running one-off scripts using EditorScript
 ------------------------------------------
 
@@ -503,7 +509,7 @@ currently focused on the script editor.
 
 Scripts that extend EditorScript must be ``@tool`` scripts to function.
 
-.. warning::
+.. danger::
 
     EditorScripts have no undo/redo functionality, so **make sure to save your
     scene before running one** if the script is designed to modify any data.

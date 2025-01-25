@@ -59,7 +59,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **description** = ``""``
+:ref:`String<class_String>` **description** = ``""`` :ref:`🔗<class_XRTracker_property_description>`
 
 .. rst-class:: classref-property-setget
 
@@ -76,7 +76,7 @@ The description of this tracker.
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **name** = ``&"Unknown"``
+:ref:`StringName<class_StringName>` **name** = ``&"Unknown"`` :ref:`🔗<class_XRTracker_property_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ The unique name of this tracker. The trackers that are available differ between 
 
 .. rst-class:: classref-property
 
-:ref:`TrackerType<enum_XRServer_TrackerType>` **type** = ``128``
+:ref:`TrackerType<enum_XRServer_TrackerType>` **type** = ``128`` :ref:`🔗<class_XRTracker_property_type>`
 
 .. rst-class:: classref-property-setget
 

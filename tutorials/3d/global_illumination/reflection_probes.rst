@@ -5,8 +5,8 @@ Reflection probes
 
 .. note::
 
-    Reflection probes are only supported in the Clustered Forward and Forward
-    Mobile rendering backends, not the Compatibility backend.
+    Reflection probes are only supported in the Forward+ and Mobile renderers,
+    not the Compatibility renderer.
 
 As stated in the :ref:`doc_standard_material_3d`, objects can show reflected and/or
 diffuse light. Reflection probes are used as a source of reflected *and* ambient
@@ -187,10 +187,14 @@ reflection probe rendering. As many reflection probes as desired can be added (a
 performance allows). However, there's still a default limit of 512 *clustered
 elements* that can be present in the current camera view. A clustered element is
 an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
-:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by
-adjusting the **Rendering > Limits > Cluster Builder > Max Clustered Elements**
-advanced project setting.
+:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
+:ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
+in **Project Settings > Rendering > Limits > Cluster Builder**.
 
-When using the Forward Mobile backend, only 8 reflection probes can be applied on each
+When using the Mobile renderer, only 8 reflection probes can be applied on each
 individual Mesh *resource*. If there are more reflection probes affecting a single mesh,
 not all of them will be rendered on the mesh.
+
+Similarly, when using the Compatibility renderer, up to 2 reflection probes can
+be applied per mesh. If more than 2 reflection probes affect a single mesh,
+additional probes will not be rendered.

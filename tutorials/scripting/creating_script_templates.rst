@@ -43,9 +43,9 @@ Project-defined templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The default path to search for templates is the
-``res://script_templates/`` directory. The path can be changed by configuring
-the ``editor/script_templates_search_path`` setting in the
-:ref:`ProjectSettings <class_ProjectSettings>`, both via code and the editor.
+``res://script_templates/`` directory. The path can be changed by configuring the project setting
+:ref:`Editor > Script > Templates Search Path<class_ProjectSettings_property_editor/script/templates_search_path>`,
+both via code and the editor.
 
 If no ``script_templates`` directory is found within a project, it is simply
 ignored.
@@ -61,21 +61,19 @@ Both editor and project defined templates are organized in the following way:
 
 where:
 
-* ``template_path`` is one of the 2 locations discussed in the previous two sections
+* ``template_path`` is one of the 2 locations discussed in the previous two sections.
 
 * ``node_type`` is the node it will apply to (for example, :ref:`Node <class_Node>`, or :ref:`CharacterBody3D <class_CharacterBody3D>`),
-  casing doesn't matter for the folder name, however adding a ``_`` to a name will not work, for example ``Mesh_Instance3D`` does not work.
-  if a script isn't in the proper ``node_type`` folder it will not be detected.
+  This is **case-sensitive**. If a script isn't in the proper ``node_type`` folder, it won't be detected.
 
-* ``file`` is the custom name you can chose for the template (for example: ``platformer_movement`` or ``smooth_camera``)
+* ``file`` is the custom name you can chose for the template (for example, ``platformer_movement`` or ``smooth_camera``).
 
-* ``extension``: will indicate which language the template will apply to (it should be ``gd`` for GDScript or ``cs`` for C#)
+* ``extension`` indicates which language the template will apply to (it should be ``gd`` for GDScript or ``cs`` for C#).
 
 For example:
 
 -  ``template_scripts/Node/smooth_camera.gd``
 -  ``template_scripts/CharacterBody3D/platformer_movement.gd``
-
 
 Default behaviour and overriding it
 -----------------------------------
@@ -151,40 +149,40 @@ use these as the base for creating other templates:
 
  .. code-tab:: gdscript GDScript
 
-   # meta-description: Base template for Node with default Godot cycle methods
+    # meta-description: Base template for Node with default Godot cycle methods
 
-   extends _BASE_
-
-
-   # Called when the node enters the scene tree for the first time.
-   func _ready() -> void:
-   	pass # Replace with function body.
+    extends _BASE_
 
 
-   # Called every frame. 'delta' is the elapsed time since the previous frame.
-   func _process(delta: float) -> void:
-   	pass
+    # Called when the node enters the scene tree for the first time.
+    func _ready() -> void:
+        pass # Replace with function body.
+
+
+    # Called every frame. 'delta' is the elapsed time since the previous frame.
+    func _process(delta: float) -> void:
+        pass
 
 
  .. code-tab:: csharp
 
-   // meta-description: Base template for Node with default Godot cycle methods
+    // meta-description: Base template for Node with default Godot cycle methods
 
-   using _BINDINGS_NAMESPACE_;
-   using System;
+    using _BINDINGS_NAMESPACE_;
+    using System;
 
-   public partial class _CLASS_ : _BASE_
-   {
-       // Called when the node enters the scene tree for the first time.
-       public override void _Ready()
-       {
-       }
+    public partial class _CLASS_ : _BASE_
+    {
+        // Called when the node enters the scene tree for the first time.
+        public override void _Ready()
+        {
+        }
 
-       // Called every frame. 'delta' is the elapsed time since the previous frame.
-       public override void _Process(double delta)
-       {
-       }
-   }
+        // Called every frame. 'delta' is the elapsed time since the previous frame.
+        public override void _Process(double delta)
+        {
+        }
+    }
 
 The Godot editor provides a set of useful built-in node-specific templates, such as
 ``basic_movement`` for both :ref:`CharacterBody2D <class_CharacterBody2D>` and

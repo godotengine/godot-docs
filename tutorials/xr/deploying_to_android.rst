@@ -78,7 +78,7 @@ Next change the name of the export preset for the device you're setting this up 
 And enable **Use Gradle Build**.
 If you want to use one-click deploy (described below), ensure that **Runnable** is enabled.
 
-If the loader plugins were installed correctly you should find entries for the different headsets, select the entry for meta:
+If the vendors plugins were installed correctly you should find entries for the different headsets, select the entry for meta:
 
 .. image:: img/android_meta_quest.webp
 

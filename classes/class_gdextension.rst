@@ -59,7 +59,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **InitializationLevel**:
+enum **InitializationLevel**: :ref:`🔗<enum_GDExtension_InitializationLevel>`
 
 .. _class_GDExtension_constant_INITIALIZATION_LEVEL_CORE:
 
@@ -106,7 +106,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **get_minimum_library_initialization_level**\ (\ ) |const|
+:ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **get_minimum_library_initialization_level**\ (\ ) |const| :ref:`🔗<class_GDExtension_method_get_minimum_library_initialization_level>`
 
 Returns the lowest level required for this extension to be properly initialized (see the :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` enum).
 
@@ -118,7 +118,7 @@ Returns the lowest level required for this extension to be properly initialized 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_library_open**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_library_open**\ (\ ) |const| :ref:`🔗<class_GDExtension_method_is_library_open>`
 
 Returns ``true`` if this extension's library has been opened.
 

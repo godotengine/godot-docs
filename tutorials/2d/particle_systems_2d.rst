@@ -199,10 +199,25 @@ This setting can be used to set the particle system to render at a fixed
 FPS. For instance, changing the value to ``2`` will make the particles render
 at 2 frames per second. Note this does not slow down the particle system itself.
 
+.. note::
+
+    Godot 4.3 does not currently support physics interpolation for 2D particles.
+    As a workaround, disable physics interpolation for the particles node by setting
+    **Node > Physics Interpolation > Mode** at the bottom of the inspector.
+
 Fract Delta
 ~~~~~~~~~~~
 
-This can be used to turn Fract Delta on or off.
+Setting Fract Delta to ``true`` results in fractional delta calculation,
+which has a smoother particles display effect.
+This increased smoothness stems from higher accuracy.
+The difference is more noticeable in systems with high randomness or fast-moving particles.
+It helps maintain the visual consistency of the particle system,
+making sure that each particle's motion aligns with its actual lifespan.
+Without it, particles might appear to jump or move more than they should in a single frame
+if they are emitted at a point within the frame.
+The greater accuracy has a performance tradeoff,
+particularly in systems with a higher amount of particles.
 
 Drawing parameters
 ------------------

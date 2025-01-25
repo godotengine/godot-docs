@@ -506,3 +506,237 @@ examples with the ``:kbd:`` tag left as-is for better visibility:
 - Press ``:kbd:`Ctrl + Alt + T``` to toggle the panel (``:kbd:`Opt + Cmd + T``` on macOS).
 - Press ``:kbd:`Space``` and hold the left mouse button to pan in the 2D editor.
 - Press ``:kbd:`Shift + Up Arrow``` to move the node upwards by 8 pixels.
+
+
+Manual style guidelines
+-----------------------
+
+Follow these formatting and style guidelines when writing the manual.
+
+Use your best judgement. If you can write more clearly by breaking one of these
+guidelines, please do! But remember that the guidelines exist for a reason.
+
+.. note:: In many cases, the manual does not follow these guidelines. If you are
+    already making changes to a paragraph or section of the docs, update it to
+    follow these standards. Avoid making unrelated changes that *only* update style,
+    since every change will require the paragraph to be re-translated.
+
+Text styles
+~~~~~~~~~~~
+
+There are a few styles that the manual uses.
+
++---------------------+--------------------------+------------------------------------------------------------------------+
+| Style               | RST formatting           | Typical usage                                                          |
++=====================+==========================+========================================================================+
+| Plaintext           | ``text``                 | Used for most text.                                                    |
++---------------------+--------------------------+------------------------------------------------------------------------+
+| *Italics*           | ``*text*``               | Used for emphasis. Used for introducing new terms.                     |
++---------------------+--------------------------+------------------------------------------------------------------------+
+| **Bold**            | ``**text**``             | Used for emphasis, and for editor UI like menus and windows.           |
+|                     |                          |                                                                        |
++---------------------+--------------------------+------------------------------------------------------------------------+
+| ``Code``            | `` text ``               | Used for variable names, literal values, and code snippets. ``code`` is|
+|                     |                          | used in many cases where you would use "quoted plaintext" in typical   |
+|                     |                          | English.                                                               |
++---------------------+--------------------------+------------------------------------------------------------------------+
+| "Quotes"            | ``"text"``               | Used for some literal or quoted values. In many cases, another         |
+|                     |                          | style is preferred.                                                    |
++---------------------+--------------------------+------------------------------------------------------------------------+
+
+Emphasis
+~~~~~~~~
+
+Use either **bold style** or *italic style* to emphasize words or sentences.
+In most cases, either **bold** or *italics* is fine. Use whichever seems best,
+or whatever the page already uses. 
+
+Prefer using **bold style** for simple emphasis.
+
+    - Do **not** close the window without saving first.
+
+Use *italic style* or to emphasize one word in the context of a sentence.
+
+    - You can *add* a node to the scene (but you can't connect one).
+    - You can add a *node* to the scene (but you can't add a resource).
+    - You can add a node to the *scene* (but you can't add one to a resource).
+
+Use *italic style* when introducing new technical terms. **Bold style**
+is fine too.
+
+    - Godot uses *nodes* with *scripts* in a *scene tree*.
+    - Godot uses **nodes** with **scripts** in a **scene tree**.
+
+Literals
+~~~~~~~~
+
+Use ``code style`` for literal values. Literals include:
+
+    - Integer or ``int`` literals like ``0``, ``-2``, or ``100``
+    - Float literals like ``0.0``, ``0.5``, ``-2.0``, or ``100.0``
+    - Vector literals like ``(0.0, 0.0)``, ``(0.5, -0.5, 0.5)``, or ``(1.0, 2.0, 3.0, 4.0)``.
+
+Classes, properties, and methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Link to classes the first time that you mention them in a page. After the first
+mention, use ``code style``. For common classes, like ``Node``, ``Control``, or
+``Viewport``, you can also use plaintext.
+
+Link to class members (properties, methods, enums, and constants) the first time
+that you mention them in a page. After the first mention, use ``code style``. If
+the class member is very common, like a Node2D's ``position``, you don't have to
+link.
+
+When discussing properties in the context of the inspector, use **bold style**
+instead.
+
+Editor UI
+~~~~~~~~~
+
+Use **bold style** for editor UI, including window titles, menus, buttons, input
+fields, inspector properties, and inspector sections. Use the exact
+capitalization that the editor uses.
+
+    - Open the **Editor Settings** window.
+    - Press the **Confirm** button.
+    - Change the node's **Transform > Position** property to ``(0, 0)``.
+    - In the **Project Settings** window, enable the **Advanced Settings** toggle.
+
+Use **Bold > With > Separators** when describing sequence of menus that the
+reader must navigate. Use ``>`` as a separator. You can omit ellipses in menu names.
+
+    - In **Project > Project Settings > Input Map**, add a new input action.
+    - Select **Scene > Export As... > MeshLibrary...**.
+    - Select **Scene > Export As > MeshLibrary**.
+
+.. note:: Sometimes, ``->`` or ``→`` is used as a separator. This is nonstandard.
+    Replace it with ``>`` if you are already making changes to a section.
+
+Project settings
+~~~~~~~~~~~~~~~~
+
+Link to individual project settings. Either include the section and subsection
+in the link itself, or include the section and subsection separately from the
+link. Since long links are not split into multiple lines when the page is
+rendered, prefer splitting the setting name and the section when the link is long.
+
+    - Set the :ref:`Application > Run > Max FPS<class_ProjectSettings_property_application/run/max_fps>` setting to ``60``.
+    - In the project settings under **Application > Run**, set :ref:`Max FPS<class_ProjectSettings_property_application/run/max_fps>` to ``60``.
+    - In **Project Settings > Application > Run**, set :ref:`Max FPS<class_ProjectSettings_property_application/run/max_fps>` to ``60``.
+
+Manually wrapping lines
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In the manual, lines must be manually wrapped to no more than 80-100 characters
+per line. However, links must not be split into multiple lines, and can exceed
+100 characters. Tables can also exceed 100 characters.
+
+When making small changes, you don't need to manually re-wrap the whole paragraph,
+as long as the lines don't exceed 100 characters.
+
+**Bad:** Line length exceeds 100 characters:
+
+.. code-block::
+
+    The best thing to do is to wrap lines to under 80 characters per line. Wrapping to around 80-90 characters per line is also fine.
+    If your lines exceed 100 characters, you definitely need to add a newline! Don't forget to remove trailing whitespace when you do.
+
+**Good:** Lines are wrapped to 80-90 characters:
+
+.. code-block::
+
+    The best thing to do is to wrap lines to under 80 characters per line. Wrapping to
+    around 80-90 characters per line is also fine. If your lines exceed 100 characters, you
+    definitely need to add a newline! Don't forget to remove trailing whitespace when you do.
+
+**Best:** Lines are wrapped to under 80 characters:
+
+.. code-block::
+
+    The best thing to do is to wrap lines to under 80 characters per line. Wrapping
+    to around 80-90 characters per line is also fine. If your lines exceed 100
+    characters, you definitely need to add a newline! Don't forget to remove
+    trailing whitespace when you do.
+
+.. tip:: In most text editors, you can add a vertical guide or "ruler" at 80
+    characters. For example, in Visual Studio Code, you can add the following to
+    your ``settings.json`` to add rulers at 80 and 100 characters:
+
+    .. code:: json
+
+        "editor.rulers": [80,100],
+
+Section header syntax
+~~~~~~~~~~~~~~~~~~~~~
+
+Use the following syntax for section headers:
+
+.. code-block::
+
+    Page title
+    ==========
+
+    Renders as h1.
+    Every page has this.
+
+    Section header
+    --------------
+
+    Renders as h2.
+    Usually appears in sidebar. Many pages only need one level of nested headers.
+
+    Sub-section header
+    ~~~~~~~~~~~~~~~~~~
+
+    Renders as h3.
+    Appears in sidebar in some pages, depending on how deeply nested the page is.
+
+    Sub-sub-section header
+    ^^^^^^^^^^^^^^^^^^^^^^
+
+    Renders as h4.
+    Usually won't appear in the sidebar.
+
+Currently, there are no cases of deeper header nesting than this. Avoid
+introducing any deeper nesting.
+
+Note that headers have no inherent meaning. In reStructuredText, headers are
+parsed based on the order that they initially appear within a page. Make sure
+that if you use an ``h3`` section header (``~~~``), you include an ``h2``
+sub-section header (``---``) first.
+
+See the `Sphinx documentation <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#sections>`__
+and the `reStructuredText documentation <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`__
+for more information.
+
+When to refer to a specific Godot version
+-----------------------------------------
+
+Most of the time, the class reference and the manual should not specify the first
+version in which a feature is added. This is because the documentation describes
+the *current* features of the engine. Documentation will be read and maintained
+for many versions after it is initially written, and a reference to a first supported
+version is only relevant for a few versions after a feature is added. After that,
+it becomes historical trivia best left to a dedicated changelog.
+
+Follow these guidelines for when to refer to a specific Godot version:
+
+- If a feature was added in the current major version (4.x), **you can specify**
+  the feature is new in 4.x.
+- If a feature or default approach to a problem was changed between major versions
+  (3.x -> 4.x), describe the current feature in the main body of the page, and
+  optionally add a brief sentence or note block to compare 3.x and 4.x.
+- If a large feature is added in a 4.x minor version, **you can specify** the minor
+  version when it was added. Large features have a whole page or large section of
+  documentation. In many cases it should still be avoided, since it's only relevant
+  for the next few minor versions.
+- If a small feature is added in a 4.x minor version, **do not specify** the minor
+  version when it was added. Small features have only a short section of
+  documentation, or are minor additions to existing features.
+- If the default approach to a problem is changed in a 4.x minor version, **do
+  specify** the minor version in which a new default approach was added. For example,
+  the change from ``TileMap`` to ``TileMapLayer`` in 4.3.
+- If a feature was added in a 3.x major or minor version, **do not specify** when 
+  the feature was added. These features are old enough that the exact version
+  in which they were added is not relevant.

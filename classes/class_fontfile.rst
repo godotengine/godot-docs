@@ -98,6 +98,8 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`hinting<class_FontFile_property_hinting>`                                                       | ``1``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`keep_rounding_remainders<class_FontFile_property_keep_rounding_remainders>`                     | ``true``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                           | :ref:`msdf_pixel_range<class_FontFile_property_msdf_pixel_range>`                                     | ``16``                |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                           | :ref:`msdf_size<class_FontFile_property_msdf_size>`                                                   | ``48``                |
@@ -270,7 +272,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_system_fallback** = ``true``
+:ref:`bool<class_bool>` **allow_system_fallback** = ``true`` :ref:`🔗<class_FontFile_property_allow_system_fallback>`
 
 .. rst-class:: classref-property-setget
 
@@ -287,7 +289,7 @@ If set to ``true``, system fonts can be automatically used as fallbacks.
 
 .. rst-class:: classref-property
 
-:ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing** = ``1``
+:ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing** = ``1`` :ref:`🔗<class_FontFile_property_antialiasing>`
 
 .. rst-class:: classref-property-setget
 
@@ -304,7 +306,7 @@ Font anti-aliasing mode.
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()`` :ref:`🔗<class_FontFile_property_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -323,7 +325,7 @@ Contents of the dynamic font source file.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disable_embedded_bitmaps** = ``true``
+:ref:`bool<class_bool>` **disable_embedded_bitmaps** = ``true`` :ref:`🔗<class_FontFile_property_disable_embedded_bitmaps>`
 
 .. rst-class:: classref-property-setget
 
@@ -340,7 +342,7 @@ If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and co
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fixed_size** = ``0``
+:ref:`int<class_int>` **fixed_size** = ``0`` :ref:`🔗<class_FontFile_property_fixed_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -357,7 +359,7 @@ Font size, used only for the bitmap fonts.
 
 .. rst-class:: classref-property
 
-:ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **fixed_size_scale_mode** = ``0``
+:ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **fixed_size_scale_mode** = ``0`` :ref:`🔗<class_FontFile_property_fixed_size_scale_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -374,7 +376,7 @@ Scaling mode, used only for the bitmap fonts with :ref:`fixed_size<class_FontFil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **font_name** = ``""``
+:ref:`String<class_String>` **font_name** = ``""`` :ref:`🔗<class_FontFile_property_font_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -391,7 +393,7 @@ Font family name.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_stretch** = ``100``
+:ref:`int<class_int>` **font_stretch** = ``100`` :ref:`🔗<class_FontFile_property_font_stretch>`
 
 .. rst-class:: classref-property-setget
 
@@ -408,7 +410,7 @@ Font stretch amount, compared to a normal width. A percentage value between ``50
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`FontStyle<enum_TextServer_FontStyle>`\] **font_style** = ``0``
+|bitfield|\[:ref:`FontStyle<enum_TextServer_FontStyle>`\] **font_style** = ``0`` :ref:`🔗<class_FontFile_property_font_style>`
 
 .. rst-class:: classref-property-setget
 
@@ -425,7 +427,7 @@ Font style flags, see :ref:`FontStyle<enum_TextServer_FontStyle>`.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_weight** = ``400``
+:ref:`int<class_int>` **font_weight** = ``400`` :ref:`🔗<class_FontFile_property_font_weight>`
 
 .. rst-class:: classref-property-setget
 
@@ -442,7 +444,7 @@ Weight (boldness) of the font. A value in the ``100...999`` range, normal font w
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **force_autohinter** = ``false``
+:ref:`bool<class_bool>` **force_autohinter** = ``false`` :ref:`🔗<class_FontFile_property_force_autohinter>`
 
 .. rst-class:: classref-property-setget
 
@@ -459,7 +461,7 @@ If set to ``true``, auto-hinting is supported and preferred over font built-in h
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **generate_mipmaps** = ``false``
+:ref:`bool<class_bool>` **generate_mipmaps** = ``false`` :ref:`🔗<class_FontFile_property_generate_mipmaps>`
 
 .. rst-class:: classref-property-setget
 
@@ -476,7 +478,7 @@ If set to ``true``, generate mipmaps for the font textures.
 
 .. rst-class:: classref-property
 
-:ref:`Hinting<enum_TextServer_Hinting>` **hinting** = ``1``
+:ref:`Hinting<enum_TextServer_Hinting>` **hinting** = ``1`` :ref:`🔗<class_FontFile_property_hinting>`
 
 .. rst-class:: classref-property-setget
 
@@ -489,11 +491,28 @@ Font hinting mode. Used by dynamic fonts only.
 
 ----
 
+.. _class_FontFile_property_keep_rounding_remainders:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **keep_rounding_remainders** = ``true`` :ref:`🔗<class_FontFile_property_keep_rounding_remainders>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_keep_rounding_remainders**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_keep_rounding_remainders**\ (\ )
+
+If set to ``true``, when aligning glyphs to the pixel boundaries rounding remainders are accumulated to ensure more uniform glyph distribution. This setting has no effect if subpixel positioning is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FontFile_property_msdf_pixel_range:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **msdf_pixel_range** = ``16``
+:ref:`int<class_int>` **msdf_pixel_range** = ``16`` :ref:`🔗<class_FontFile_property_msdf_pixel_range>`
 
 .. rst-class:: classref-property-setget
 
@@ -510,7 +529,7 @@ The width of the range around the shape between the minimum and maximum represen
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **msdf_size** = ``48``
+:ref:`int<class_int>` **msdf_size** = ``48`` :ref:`🔗<class_FontFile_property_msdf_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -527,7 +546,7 @@ Source font size used to generate MSDF textures. Higher values allow for more pr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **multichannel_signed_distance_field** = ``false``
+:ref:`bool<class_bool>` **multichannel_signed_distance_field** = ``false`` :ref:`🔗<class_FontFile_property_multichannel_signed_distance_field>`
 
 .. rst-class:: classref-property-setget
 
@@ -548,7 +567,7 @@ If set to ``true``, glyphs of all sizes are rendered using single multichannel s
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **opentype_feature_overrides** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **opentype_feature_overrides** = ``{}`` :ref:`🔗<class_FontFile_property_opentype_feature_overrides>`
 
 .. rst-class:: classref-property-setget
 
@@ -565,7 +584,7 @@ Font OpenType feature set override.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **oversampling** = ``0.0``
+:ref:`float<class_float>` **oversampling** = ``0.0`` :ref:`🔗<class_FontFile_property_oversampling>`
 
 .. rst-class:: classref-property-setget
 
@@ -582,7 +601,7 @@ Font oversampling factor. If set to ``0.0``, the global oversampling factor is u
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **style_name** = ``""``
+:ref:`String<class_String>` **style_name** = ``""`` :ref:`🔗<class_FontFile_property_style_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -599,7 +618,7 @@ Font style name.
 
 .. rst-class:: classref-property
 
-:ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **subpixel_positioning** = ``1``
+:ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **subpixel_positioning** = ``1`` :ref:`🔗<class_FontFile_property_subpixel_positioning>`
 
 .. rst-class:: classref-property-setget
 
@@ -621,7 +640,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear_cache**\ (\ )
+|void| **clear_cache**\ (\ ) :ref:`🔗<class_FontFile_method_clear_cache>`
 
 Removes all font cache entries.
 
@@ -633,7 +652,7 @@ Removes all font cache entries.
 
 .. rst-class:: classref-method
 
-|void| **clear_glyphs**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **clear_glyphs**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_FontFile_method_clear_glyphs>`
 
 Removes all rendered glyph information from the cache entry.
 
@@ -647,7 +666,7 @@ Removes all rendered glyph information from the cache entry.
 
 .. rst-class:: classref-method
 
-|void| **clear_kerning_map**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ )
+|void| **clear_kerning_map**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_clear_kerning_map>`
 
 Removes all kerning overrides.
 
@@ -659,9 +678,9 @@ Removes all kerning overrides.
 
 .. rst-class:: classref-method
 
-|void| **clear_size_cache**\ (\ cache_index\: :ref:`int<class_int>`\ )
+|void| **clear_size_cache**\ (\ cache_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_clear_size_cache>`
 
-Removes all font sizes from the cache entry
+Removes all font sizes from the cache entry.
 
 .. rst-class:: classref-item-separator
 
@@ -671,7 +690,7 @@ Removes all font sizes from the cache entry
 
 .. rst-class:: classref-method
 
-|void| **clear_textures**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **clear_textures**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_FontFile_method_clear_textures>`
 
 Removes all textures from font cache entry.
 
@@ -685,7 +704,7 @@ Removes all textures from font cache entry.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_cache_ascent**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_cache_ascent**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_cache_ascent>`
 
 Returns the font ascent (number of pixels above the baseline).
 
@@ -697,7 +716,7 @@ Returns the font ascent (number of pixels above the baseline).
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_cache_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_cache_count**\ (\ ) |const| :ref:`🔗<class_FontFile_method_get_cache_count>`
 
 Returns number of the font cache entries.
 
@@ -709,7 +728,7 @@ Returns number of the font cache entries.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_cache_descent**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_cache_descent**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_cache_descent>`
 
 Returns the font descent (number of pixels below the baseline).
 
@@ -721,7 +740,7 @@ Returns the font descent (number of pixels below the baseline).
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_cache_scale**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_cache_scale**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_cache_scale>`
 
 Returns scaling factor of the color bitmap font.
 
@@ -733,7 +752,7 @@ Returns scaling factor of the color bitmap font.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_cache_underline_position**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_cache_underline_position**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_cache_underline_position>`
 
 Returns pixel offset of the underline below the baseline.
 
@@ -745,7 +764,7 @@ Returns pixel offset of the underline below the baseline.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_cache_underline_thickness**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_cache_underline_thickness**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_cache_underline_thickness>`
 
 Returns thickness of the underline in pixels.
 
@@ -757,7 +776,7 @@ Returns thickness of the underline in pixels.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_char_from_glyph_index**\ (\ size\: :ref:`int<class_int>`, glyph_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_char_from_glyph_index**\ (\ size\: :ref:`int<class_int>`, glyph_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_char_from_glyph_index>`
 
 Returns character code associated with ``glyph_index``, or ``0`` if ``glyph_index`` is invalid. See :ref:`get_glyph_index<class_FontFile_method_get_glyph_index>`.
 
@@ -769,7 +788,7 @@ Returns character code associated with ``glyph_index``, or ``0`` if ``glyph_inde
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_embolden**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_embolden**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_embolden>`
 
 Returns embolden strength, if is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
 
@@ -781,7 +800,7 @@ Returns embolden strength, if is not equal to zero, emboldens the font outlines.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_extra_baseline_offset**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_extra_baseline_offset**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_extra_baseline_offset>`
 
 Returns extra baseline offset (as a fraction of font height).
 
@@ -793,7 +812,7 @@ Returns extra baseline offset (as a fraction of font height).
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_extra_spacing**\ (\ cache_index\: :ref:`int<class_int>`, spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`\ ) |const|
+:ref:`int<class_int>` **get_extra_spacing**\ (\ cache_index\: :ref:`int<class_int>`, spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`\ ) |const| :ref:`🔗<class_FontFile_method_get_extra_spacing>`
 
 Returns spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) in pixels (not relative to the font size).
 
@@ -805,7 +824,7 @@ Returns spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingTy
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_face_index**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_face_index**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_face_index>`
 
 Returns an active face index in the TrueType / OpenType collection.
 
@@ -817,7 +836,7 @@ Returns an active face index in the TrueType / OpenType collection.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_glyph_advance**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_glyph_advance**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_glyph_advance>`
 
 Returns glyph advance (offset of the next glyph).
 
@@ -831,7 +850,7 @@ Returns glyph advance (offset of the next glyph).
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_glyph_index**\ (\ size\: :ref:`int<class_int>`, char\: :ref:`int<class_int>`, variation_selector\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_glyph_index**\ (\ size\: :ref:`int<class_int>`, char\: :ref:`int<class_int>`, variation_selector\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_glyph_index>`
 
 Returns the glyph index of a ``char``, optionally modified by the ``variation_selector``.
 
@@ -843,7 +862,7 @@ Returns the glyph index of a ``char``, optionally modified by the ``variation_se
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_glyph_list**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_glyph_list**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_FontFile_method_get_glyph_list>`
 
 Returns list of rendered glyphs in the cache entry.
 
@@ -855,7 +874,7 @@ Returns list of rendered glyphs in the cache entry.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_glyph_offset**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_glyph_offset**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_glyph_offset>`
 
 Returns glyph offset from the baseline.
 
@@ -867,7 +886,7 @@ Returns glyph offset from the baseline.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_glyph_size**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_glyph_size**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_glyph_size>`
 
 Returns glyph size.
 
@@ -879,7 +898,7 @@ Returns glyph size.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_glyph_texture_idx**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_glyph_texture_idx**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_glyph_texture_idx>`
 
 Returns index of the cache texture containing the glyph.
 
@@ -891,7 +910,7 @@ Returns index of the cache texture containing the glyph.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_glyph_uv_rect**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) |const|
+:ref:`Rect2<class_Rect2>` **get_glyph_uv_rect**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_glyph_uv_rect>`
 
 Returns rectangle in the cache texture containing the glyph.
 
@@ -903,7 +922,7 @@ Returns rectangle in the cache texture containing the glyph.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_kerning**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_kerning**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_FontFile_method_get_kerning>`
 
 Returns kerning for the pair of glyphs.
 
@@ -915,7 +934,7 @@ Returns kerning for the pair of glyphs.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_kerning_list**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_kerning_list**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_kerning_list>`
 
 Returns list of the kerning overrides.
 
@@ -927,7 +946,7 @@ Returns list of the kerning overrides.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_language_support_override**\ (\ language\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **get_language_support_override**\ (\ language\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_FontFile_method_get_language_support_override>`
 
 Returns ``true`` if support override is enabled for the ``language``.
 
@@ -939,7 +958,7 @@ Returns ``true`` if support override is enabled for the ``language``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_language_support_overrides**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_language_support_overrides**\ (\ ) |const| :ref:`🔗<class_FontFile_method_get_language_support_overrides>`
 
 Returns list of language support overrides.
 
@@ -951,7 +970,7 @@ Returns list of language support overrides.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_script_support_override**\ (\ script\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **get_script_support_override**\ (\ script\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_FontFile_method_get_script_support_override>`
 
 Returns ``true`` if support override is enabled for the ``script``.
 
@@ -963,7 +982,7 @@ Returns ``true`` if support override is enabled for the ``script``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_script_support_overrides**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_script_support_overrides**\ (\ ) |const| :ref:`🔗<class_FontFile_method_get_script_support_overrides>`
 
 Returns list of script support overrides.
 
@@ -975,7 +994,7 @@ Returns list of script support overrides.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_size_cache_list**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_size_cache_list**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_size_cache_list>`
 
 Returns list of the font sizes in the cache. Each size is :ref:`Vector2i<class_Vector2i>` with font size and outline size.
 
@@ -987,7 +1006,7 @@ Returns list of the font sizes in the cache. Each size is :ref:`Vector2i<class_V
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_texture_count**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`int<class_int>` **get_texture_count**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_FontFile_method_get_texture_count>`
 
 Returns number of textures used by font cache entry.
 
@@ -999,7 +1018,7 @@ Returns number of textures used by font cache entry.
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **get_texture_image**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Image<class_Image>` **get_texture_image**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_texture_image>`
 
 Returns a copy of the font cache texture image.
 
@@ -1011,7 +1030,7 @@ Returns a copy of the font cache texture image.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_texture_offsets**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_texture_offsets**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_texture_offsets>`
 
 Returns a copy of the array containing glyph packing data.
 
@@ -1023,7 +1042,7 @@ Returns a copy of the array containing glyph packing data.
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_transform>`
 
 Returns 2D transform, applied to the font outlines, can be used for slanting, flipping and rotating glyphs.
 
@@ -1035,7 +1054,7 @@ Returns 2D transform, applied to the font outlines, can be used for slanting, fl
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_variation_coordinates**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **get_variation_coordinates**\ (\ cache_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FontFile_method_get_variation_coordinates>`
 
 Returns variation coordinates for the specified font cache entry. See :ref:`Font.get_supported_variation_list<class_Font_method_get_supported_variation_list>` for more info.
 
@@ -1047,7 +1066,7 @@ Returns variation coordinates for the specified font cache entry. See :ref:`Font
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_bitmap_font**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_bitmap_font**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FontFile_method_load_bitmap_font>`
 
 Loads an AngelCode BMFont (.fnt, .font) bitmap font from file ``path``.
 
@@ -1061,7 +1080,7 @@ Loads an AngelCode BMFont (.fnt, .font) bitmap font from file ``path``.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_dynamic_font**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_dynamic_font**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FontFile_method_load_dynamic_font>`
 
 Loads a TrueType (.ttf), OpenType (.otf), WOFF (.woff), WOFF2 (.woff2) or Type 1 (.pfb, .pfm) dynamic font from file ``path``.
 
@@ -1075,7 +1094,7 @@ Loads a TrueType (.ttf), OpenType (.otf), WOFF (.woff), WOFF2 (.woff2) or Type 1
 
 .. rst-class:: classref-method
 
-|void| **remove_cache**\ (\ cache_index\: :ref:`int<class_int>`\ )
+|void| **remove_cache**\ (\ cache_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_remove_cache>`
 
 Removes specified font cache entry.
 
@@ -1087,7 +1106,7 @@ Removes specified font cache entry.
 
 .. rst-class:: classref-method
 
-|void| **remove_glyph**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ )
+|void| **remove_glyph**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_remove_glyph>`
 
 Removes specified rendered glyph information from the cache entry.
 
@@ -1101,7 +1120,7 @@ Removes specified rendered glyph information from the cache entry.
 
 .. rst-class:: classref-method
 
-|void| **remove_kerning**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **remove_kerning**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_FontFile_method_remove_kerning>`
 
 Removes kerning override for the pair of glyphs.
 
@@ -1113,7 +1132,7 @@ Removes kerning override for the pair of glyphs.
 
 .. rst-class:: classref-method
 
-|void| **remove_language_support_override**\ (\ language\: :ref:`String<class_String>`\ )
+|void| **remove_language_support_override**\ (\ language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FontFile_method_remove_language_support_override>`
 
 Remove language support override.
 
@@ -1125,7 +1144,7 @@ Remove language support override.
 
 .. rst-class:: classref-method
 
-|void| **remove_script_support_override**\ (\ script\: :ref:`String<class_String>`\ )
+|void| **remove_script_support_override**\ (\ script\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FontFile_method_remove_script_support_override>`
 
 Removes script support override.
 
@@ -1137,7 +1156,7 @@ Removes script support override.
 
 .. rst-class:: classref-method
 
-|void| **remove_size_cache**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **remove_size_cache**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_FontFile_method_remove_size_cache>`
 
 Removes specified font size from the cache entry.
 
@@ -1149,7 +1168,7 @@ Removes specified font size from the cache entry.
 
 .. rst-class:: classref-method
 
-|void| **remove_texture**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`\ )
+|void| **remove_texture**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_remove_texture>`
 
 Removes specified texture from the cache entry.
 
@@ -1163,7 +1182,7 @@ Removes specified texture from the cache entry.
 
 .. rst-class:: classref-method
 
-|void| **render_glyph**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, index\: :ref:`int<class_int>`\ )
+|void| **render_glyph**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_render_glyph>`
 
 Renders specified glyph to the font cache texture.
 
@@ -1175,7 +1194,7 @@ Renders specified glyph to the font cache texture.
 
 .. rst-class:: classref-method
 
-|void| **render_range**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, start\: :ref:`int<class_int>`, end\: :ref:`int<class_int>`\ )
+|void| **render_range**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, start\: :ref:`int<class_int>`, end\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_render_range>`
 
 Renders the range of characters to the font cache texture.
 
@@ -1187,7 +1206,7 @@ Renders the range of characters to the font cache texture.
 
 .. rst-class:: classref-method
 
-|void| **set_cache_ascent**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, ascent\: :ref:`float<class_float>`\ )
+|void| **set_cache_ascent**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, ascent\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FontFile_method_set_cache_ascent>`
 
 Sets the font ascent (number of pixels above the baseline).
 
@@ -1199,7 +1218,7 @@ Sets the font ascent (number of pixels above the baseline).
 
 .. rst-class:: classref-method
 
-|void| **set_cache_descent**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, descent\: :ref:`float<class_float>`\ )
+|void| **set_cache_descent**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, descent\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FontFile_method_set_cache_descent>`
 
 Sets the font descent (number of pixels below the baseline).
 
@@ -1211,7 +1230,7 @@ Sets the font descent (number of pixels below the baseline).
 
 .. rst-class:: classref-method
 
-|void| **set_cache_scale**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, scale\: :ref:`float<class_float>`\ )
+|void| **set_cache_scale**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, scale\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FontFile_method_set_cache_scale>`
 
 Sets scaling factor of the color bitmap font.
 
@@ -1223,7 +1242,7 @@ Sets scaling factor of the color bitmap font.
 
 .. rst-class:: classref-method
 
-|void| **set_cache_underline_position**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, underline_position\: :ref:`float<class_float>`\ )
+|void| **set_cache_underline_position**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, underline_position\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FontFile_method_set_cache_underline_position>`
 
 Sets pixel offset of the underline below the baseline.
 
@@ -1235,7 +1254,7 @@ Sets pixel offset of the underline below the baseline.
 
 .. rst-class:: classref-method
 
-|void| **set_cache_underline_thickness**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, underline_thickness\: :ref:`float<class_float>`\ )
+|void| **set_cache_underline_thickness**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, underline_thickness\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FontFile_method_set_cache_underline_thickness>`
 
 Sets thickness of the underline in pixels.
 
@@ -1247,7 +1266,7 @@ Sets thickness of the underline in pixels.
 
 .. rst-class:: classref-method
 
-|void| **set_embolden**\ (\ cache_index\: :ref:`int<class_int>`, strength\: :ref:`float<class_float>`\ )
+|void| **set_embolden**\ (\ cache_index\: :ref:`int<class_int>`, strength\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FontFile_method_set_embolden>`
 
 Sets embolden strength, if is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
 
@@ -1259,7 +1278,7 @@ Sets embolden strength, if is not equal to zero, emboldens the font outlines. Ne
 
 .. rst-class:: classref-method
 
-|void| **set_extra_baseline_offset**\ (\ cache_index\: :ref:`int<class_int>`, baseline_offset\: :ref:`float<class_float>`\ )
+|void| **set_extra_baseline_offset**\ (\ cache_index\: :ref:`int<class_int>`, baseline_offset\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FontFile_method_set_extra_baseline_offset>`
 
 Sets extra baseline offset (as a fraction of font height).
 
@@ -1271,7 +1290,7 @@ Sets extra baseline offset (as a fraction of font height).
 
 .. rst-class:: classref-method
 
-|void| **set_extra_spacing**\ (\ cache_index\: :ref:`int<class_int>`, spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ )
+|void| **set_extra_spacing**\ (\ cache_index\: :ref:`int<class_int>`, spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_set_extra_spacing>`
 
 Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) to ``value`` in pixels (not relative to the font size).
 
@@ -1283,7 +1302,7 @@ Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingT
 
 .. rst-class:: classref-method
 
-|void| **set_face_index**\ (\ cache_index\: :ref:`int<class_int>`, face_index\: :ref:`int<class_int>`\ )
+|void| **set_face_index**\ (\ cache_index\: :ref:`int<class_int>`, face_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_set_face_index>`
 
 Sets an active face index in the TrueType / OpenType collection.
 
@@ -1295,7 +1314,7 @@ Sets an active face index in the TrueType / OpenType collection.
 
 .. rst-class:: classref-method
 
-|void| **set_glyph_advance**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph\: :ref:`int<class_int>`, advance\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_glyph_advance**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph\: :ref:`int<class_int>`, advance\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_FontFile_method_set_glyph_advance>`
 
 Sets glyph advance (offset of the next glyph).
 
@@ -1309,7 +1328,7 @@ Sets glyph advance (offset of the next glyph).
 
 .. rst-class:: classref-method
 
-|void| **set_glyph_offset**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`, offset\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_glyph_offset**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`, offset\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_FontFile_method_set_glyph_offset>`
 
 Sets glyph offset from the baseline.
 
@@ -1321,7 +1340,7 @@ Sets glyph offset from the baseline.
 
 .. rst-class:: classref-method
 
-|void| **set_glyph_size**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`, gl_size\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_glyph_size**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`, gl_size\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_FontFile_method_set_glyph_size>`
 
 Sets glyph size.
 
@@ -1333,7 +1352,7 @@ Sets glyph size.
 
 .. rst-class:: classref-method
 
-|void| **set_glyph_texture_idx**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`, texture_idx\: :ref:`int<class_int>`\ )
+|void| **set_glyph_texture_idx**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`, texture_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_set_glyph_texture_idx>`
 
 Sets index of the cache texture containing the glyph.
 
@@ -1345,7 +1364,7 @@ Sets index of the cache texture containing the glyph.
 
 .. rst-class:: classref-method
 
-|void| **set_glyph_uv_rect**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`, uv_rect\: :ref:`Rect2<class_Rect2>`\ )
+|void| **set_glyph_uv_rect**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, glyph\: :ref:`int<class_int>`, uv_rect\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_FontFile_method_set_glyph_uv_rect>`
 
 Sets rectangle in the cache texture containing the glyph.
 
@@ -1357,7 +1376,7 @@ Sets rectangle in the cache texture containing the glyph.
 
 .. rst-class:: classref-method
 
-|void| **set_kerning**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`, kerning\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_kerning**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`, kerning\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_FontFile_method_set_kerning>`
 
 Sets kerning for the pair of glyphs.
 
@@ -1369,7 +1388,7 @@ Sets kerning for the pair of glyphs.
 
 .. rst-class:: classref-method
 
-|void| **set_language_support_override**\ (\ language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ )
+|void| **set_language_support_override**\ (\ language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_FontFile_method_set_language_support_override>`
 
 Adds override for :ref:`Font.is_language_supported<class_Font_method_is_language_supported>`.
 
@@ -1381,7 +1400,7 @@ Adds override for :ref:`Font.is_language_supported<class_Font_method_is_language
 
 .. rst-class:: classref-method
 
-|void| **set_script_support_override**\ (\ script\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ )
+|void| **set_script_support_override**\ (\ script\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_FontFile_method_set_script_support_override>`
 
 Adds override for :ref:`Font.is_script_supported<class_Font_method_is_script_supported>`.
 
@@ -1393,7 +1412,7 @@ Adds override for :ref:`Font.is_script_supported<class_Font_method_is_script_sup
 
 .. rst-class:: classref-method
 
-|void| **set_texture_image**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`, image\: :ref:`Image<class_Image>`\ )
+|void| **set_texture_image**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`, image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_FontFile_method_set_texture_image>`
 
 Sets font cache texture image.
 
@@ -1405,7 +1424,7 @@ Sets font cache texture image.
 
 .. rst-class:: classref-method
 
-|void| **set_texture_offsets**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`, offset\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+|void| **set_texture_offsets**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`, offset\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_FontFile_method_set_texture_offsets>`
 
 Sets array containing glyph packing data.
 
@@ -1417,7 +1436,7 @@ Sets array containing glyph packing data.
 
 .. rst-class:: classref-method
 
-|void| **set_transform**\ (\ cache_index\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ )
+|void| **set_transform**\ (\ cache_index\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_FontFile_method_set_transform>`
 
 Sets 2D transform, applied to the font outlines, can be used for slanting, flipping, and rotating glyphs.
 
@@ -1429,7 +1448,7 @@ Sets 2D transform, applied to the font outlines, can be used for slanting, flipp
 
 .. rst-class:: classref-method
 
-|void| **set_variation_coordinates**\ (\ cache_index\: :ref:`int<class_int>`, variation_coordinates\: :ref:`Dictionary<class_Dictionary>`\ )
+|void| **set_variation_coordinates**\ (\ cache_index\: :ref:`int<class_int>`, variation_coordinates\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_FontFile_method_set_variation_coordinates>`
 
 Sets variation coordinates for the specified font cache entry. See :ref:`Font.get_supported_variation_list<class_Font_method_get_supported_variation_list>` for more info.
 

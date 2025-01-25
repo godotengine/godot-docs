@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **degrees_mode** = ``true``
+:ref:`bool<class_bool>` **degrees_mode** = ``true`` :ref:`🔗<class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode>`
 
 .. rst-class:: classref-property-setget
 

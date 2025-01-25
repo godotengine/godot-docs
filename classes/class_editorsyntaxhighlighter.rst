@@ -12,6 +12,8 @@ EditorSyntaxHighlighter
 
 **Inherits:** :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`GDScriptSyntaxHighlighter<class_GDScriptSyntaxHighlighter>`
+
 Base class for :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` used by the :ref:`ScriptEditor<class_ScriptEditor>`.
 
 .. rst-class:: classref-introduction-group
@@ -50,7 +52,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorSyntaxHighlighter_private_method__get_name>`
 
 Virtual method which can be overridden to return the syntax highlighter name.
 
@@ -62,7 +64,7 @@ Virtual method which can be overridden to return the syntax highlighter name.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_languages**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_languages**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorSyntaxHighlighter_private_method__get_supported_languages>`
 
 Virtual method which can be overridden to return the supported language names.
 

@@ -23,6 +23,16 @@ The JavaClassWrapper singleton provides a way for the Godot application to send 
 
 \ **Note:** This singleton is only available in Android builds.
 
+::
+
+    var LocalDateTime = JavaClassWrapper.wrap("java.time.LocalDateTime")
+    var DateTimeFormatter = JavaClassWrapper.wrap("java.time.format.DateTimeFormatter")
+    
+    var datetime = LocalDateTime.now()
+    var formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+    
+    print(datetime.format(formatter))
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -48,7 +58,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`JavaClass<class_JavaClass>` **wrap**\ (\ name\: :ref:`String<class_String>`\ )
+:ref:`JavaClass<class_JavaClass>` **wrap**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_JavaClassWrapper_method_wrap>`
 
 Wraps a class defined in Java, and returns it as a :ref:`JavaClass<class_JavaClass>` :ref:`Object<class_Object>` type that Godot can interact with.
 

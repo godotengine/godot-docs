@@ -68,6 +68,13 @@ The ragdoll is now ready to use. To start the simulation and play the ragdoll an
     func _ready():
         physical_bones_start_simulation()
 
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        PhysicalBonesStartSimulation();
+    }
+
 To stop the simulation, call the ``physical_bones_stop_simulation()`` method.
 
 .. image:: img/ragdoll_sim_stop.gif

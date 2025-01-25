@@ -19,6 +19,8 @@ Description
 
 An array specifically designed to hold :ref:`Vector4<class_Vector4>`. Packs data tightly, so it saves memory for large array sizes.
 
+\ **Differences between packed arrays, typed arrays, and untyped arrays:** Packed arrays are generally faster to iterate on and modify compared to a typed array of the same type (e.g. **PackedVector4Array** versus ``Array[Vector4]``). Also, packed arrays consume less memory. As a downside, packed arrays are less flexible as they don't offer as many convenience methods such as :ref:`Array.map<class_Array_method_map>`. Typed arrays are in turn faster to iterate on and modify than untyped arrays.
+
 \ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedVector4Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
 
 .. note::
@@ -65,6 +67,8 @@ Methods
    | |void|                                              | :ref:`fill<class_PackedVector4Array_method_fill>`\ (\ value\: :ref:`Vector4<class_Vector4>`\ )                                                |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_PackedVector4Array_method_find>`\ (\ value\: :ref:`Vector4<class_Vector4>`, from\: :ref:`int<class_int>` = 0\ ) |const|      |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>`                       | :ref:`get<class_PackedVector4Array_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                  |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has<class_PackedVector4Array_method_has>`\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) |const|                                          |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,7 +128,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`PackedVector4Array<class_PackedVector4Array>` **PackedVector4Array**\ (\ )
+:ref:`PackedVector4Array<class_PackedVector4Array>` **PackedVector4Array**\ (\ ) :ref:`🔗<class_PackedVector4Array_constructor_PackedVector4Array>`
 
 Constructs an empty **PackedVector4Array**.
 
@@ -167,7 +171,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **append**\ (\ value\: :ref:`Vector4<class_Vector4>`\ )
+:ref:`bool<class_bool>` **append**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_PackedVector4Array_method_append>`
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PackedVector4Array_method_push_back>`).
 
@@ -179,7 +183,7 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_Packe
 
 .. rst-class:: classref-method
 
-|void| **append_array**\ (\ array\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ )
+|void| **append_array**\ (\ array\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ ) :ref:`🔗<class_PackedVector4Array_method_append_array>`
 
 Appends a **PackedVector4Array** at the end of this array.
 
@@ -191,7 +195,7 @@ Appends a **PackedVector4Array** at the end of this array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`Vector4<class_Vector4>`, before\: :ref:`bool<class_bool>` = true\ )
+:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`Vector4<class_Vector4>`, before\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_PackedVector4Array_method_bsearch>`
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
@@ -207,7 +211,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_PackedVector4Array_method_clear>`
 
 Clears the array. This is equivalent to using :ref:`resize<class_PackedVector4Array_method_resize>` with a size of ``0``.
 
@@ -219,7 +223,7 @@ Clears the array. This is equivalent to using :ref:`resize<class_PackedVector4Ar
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **count**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) |const|
+:ref:`int<class_int>` **count**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) |const| :ref:`🔗<class_PackedVector4Array_method_count>`
 
 Returns the number of times an element is in the array.
 
@@ -233,7 +237,7 @@ Returns the number of times an element is in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector4Array<class_PackedVector4Array>` **duplicate**\ (\ )
+:ref:`PackedVector4Array<class_PackedVector4Array>` **duplicate**\ (\ ) :ref:`🔗<class_PackedVector4Array_method_duplicate>`
 
 Creates a copy of the array, and returns it.
 
@@ -245,7 +249,7 @@ Creates a copy of the array, and returns it.
 
 .. rst-class:: classref-method
 
-|void| **fill**\ (\ value\: :ref:`Vector4<class_Vector4>`\ )
+|void| **fill**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_PackedVector4Array_method_fill>`
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedVector4Array_method_resize>` to create an array with a given size and initialized elements.
 
@@ -257,7 +261,7 @@ Assigns the given value to all elements in the array. This can typically be used
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find**\ (\ value\: :ref:`Vector4<class_Vector4>`, from\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **find**\ (\ value\: :ref:`Vector4<class_Vector4>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedVector4Array_method_find>`
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
@@ -267,11 +271,23 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 
 ----
 
+.. _class_PackedVector4Array_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`Vector4<class_Vector4>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedVector4Array_method_get>`
+
+Returns the :ref:`Vector4<class_Vector4>` at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PackedVector4Array_method_has:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) |const|
+:ref:`bool<class_bool>` **has**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) |const| :ref:`🔗<class_PackedVector4Array_method_has>`
 
 Returns ``true`` if the array contains ``value``.
 
@@ -285,7 +301,7 @@ Returns ``true`` if the array contains ``value``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **insert**\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`Vector4<class_Vector4>`\ )
+:ref:`int<class_int>` **insert**\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_PackedVector4Array_method_insert>`
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
@@ -297,7 +313,7 @@ Inserts a new element at a given position in the array. The position must be val
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_PackedVector4Array_method_is_empty>`
 
 Returns ``true`` if the array is empty.
 
@@ -309,7 +325,7 @@ Returns ``true`` if the array is empty.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **push_back**\ (\ value\: :ref:`Vector4<class_Vector4>`\ )
+:ref:`bool<class_bool>` **push_back**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_PackedVector4Array_method_push_back>`
 
 Inserts a :ref:`Vector4<class_Vector4>` at the end.
 
@@ -321,7 +337,7 @@ Inserts a :ref:`Vector4<class_Vector4>` at the end.
 
 .. rst-class:: classref-method
 
-|void| **remove_at**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_at**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedVector4Array_method_remove_at>`
 
 Removes an element from the array by index.
 
@@ -333,7 +349,7 @@ Removes an element from the array by index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedVector4Array_method_resize>`
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
@@ -345,7 +361,7 @@ Sets the size of the array. If the array is grown, reserves elements at the end 
 
 .. rst-class:: classref-method
 
-|void| **reverse**\ (\ )
+|void| **reverse**\ (\ ) :ref:`🔗<class_PackedVector4Array_method_reverse>`
 
 Reverses the order of the elements in the array.
 
@@ -357,7 +373,7 @@ Reverses the order of the elements in the array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **rfind**\ (\ value\: :ref:`Vector4<class_Vector4>`, from\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **rfind**\ (\ value\: :ref:`Vector4<class_Vector4>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_PackedVector4Array_method_rfind>`
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
@@ -371,7 +387,7 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 .. rst-class:: classref-method
 
-|void| **set**\ (\ index\: :ref:`int<class_int>`, value\: :ref:`Vector4<class_Vector4>`\ )
+|void| **set**\ (\ index\: :ref:`int<class_int>`, value\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_PackedVector4Array_method_set>`
 
 Changes the :ref:`Vector4<class_Vector4>` at the given index.
 
@@ -383,7 +399,7 @@ Changes the :ref:`Vector4<class_Vector4>` at the given index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **size**\ (\ ) |const|
+:ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_PackedVector4Array_method_size>`
 
 Returns the number of elements in the array.
 
@@ -395,7 +411,7 @@ Returns the number of elements in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector4Array<class_PackedVector4Array>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const|
+:ref:`PackedVector4Array<class_PackedVector4Array>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| :ref:`🔗<class_PackedVector4Array_method_slice>`
 
 Returns the slice of the **PackedVector4Array**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **PackedVector4Array**.
 
@@ -411,7 +427,7 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 
 .. rst-class:: classref-method
 
-|void| **sort**\ (\ )
+|void| **sort**\ (\ ) :ref:`🔗<class_PackedVector4Array_method_sort>`
 
 Sorts the elements of the array in ascending order.
 
@@ -425,7 +441,7 @@ Sorts the elements of the array in ascending order.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array**\ (\ ) |const| :ref:`🔗<class_PackedVector4Array_method_to_byte_array>`
 
 Returns a :ref:`PackedByteArray<class_PackedByteArray>` with each vector encoded as bytes.
 
@@ -442,7 +458,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ ) :ref:`🔗<class_PackedVector4Array_operator_neq_PackedVector4Array>`
 
 Returns ``true`` if contents of the arrays differ.
 
@@ -454,7 +470,7 @@ Returns ``true`` if contents of the arrays differ.
 
 .. rst-class:: classref-operator
 
-:ref:`PackedVector4Array<class_PackedVector4Array>` **operator +**\ (\ right\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ )
+:ref:`PackedVector4Array<class_PackedVector4Array>` **operator +**\ (\ right\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ ) :ref:`🔗<class_PackedVector4Array_operator_sum_PackedVector4Array>`
 
 Returns a new **PackedVector4Array** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedVector4Array_method_append_array>` instead.
 
@@ -466,7 +482,7 @@ Returns a new **PackedVector4Array** with contents of ``right`` added at the end
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ ) :ref:`🔗<class_PackedVector4Array_operator_eq_PackedVector4Array>`
 
 Returns ``true`` if contents of both arrays are the same, i.e. they have all equal :ref:`Vector4<class_Vector4>`\ s at the corresponding indices.
 
@@ -478,7 +494,7 @@ Returns ``true`` if contents of both arrays are the same, i.e. they have all equ
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4<class_Vector4>` **operator []**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`Vector4<class_Vector4>` **operator []**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedVector4Array_operator_idx_int>`
 
 Returns the :ref:`Vector4<class_Vector4>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 

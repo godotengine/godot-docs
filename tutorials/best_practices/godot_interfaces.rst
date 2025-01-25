@@ -112,9 +112,9 @@ access.
         {
             if (EnemyScn == null)
             {
-                return new string[] { "Must initialize property 'EnemyScn'." };
+                return ["Must initialize property 'EnemyScn'."];
             }
-            return Array.Empty<string>();
+            return [];
         }
     }
 

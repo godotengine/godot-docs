@@ -87,7 +87,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**delta_synchronized**\ (\ )
+**delta_synchronized**\ (\ ) :ref:`🔗<class_MultiplayerSynchronizer_signal_delta_synchronized>`
 
 Emitted when a new delta synchronization state is received by this synchronizer after the properties have been updated.
 
@@ -99,7 +99,7 @@ Emitted when a new delta synchronization state is received by this synchronizer 
 
 .. rst-class:: classref-signal
 
-**synchronized**\ (\ )
+**synchronized**\ (\ ) :ref:`🔗<class_MultiplayerSynchronizer_signal_synchronized>`
 
 Emitted when a new synchronization state is received by this synchronizer after the properties have been updated.
 
@@ -111,7 +111,7 @@ Emitted when a new synchronization state is received by this synchronizer after 
 
 .. rst-class:: classref-signal
 
-**visibility_changed**\ (\ for_peer\: :ref:`int<class_int>`\ )
+**visibility_changed**\ (\ for_peer\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MultiplayerSynchronizer_signal_visibility_changed>`
 
 Emitted when visibility of ``for_peer`` is updated. See :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
 
@@ -128,7 +128,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **VisibilityUpdateMode**:
+enum **VisibilityUpdateMode**: :ref:`🔗<enum_MultiplayerSynchronizer_VisibilityUpdateMode>`
 
 .. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_IDLE:
 
@@ -167,14 +167,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **delta_interval** = ``0.0``
+:ref:`float<class_float>` **delta_interval** = ``0.0`` :ref:`🔗<class_MultiplayerSynchronizer_property_delta_interval>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_delta_interval**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_delta_interval**\ (\ )
 
-Time interval between delta synchronizations. When set to ``0.0`` (the default), delta synchronizations happen every network process frame.
+Time interval between delta synchronizations. Used when the replication is set to :ref:`SceneReplicationConfig.REPLICATION_MODE_ON_CHANGE<class_SceneReplicationConfig_constant_REPLICATION_MODE_ON_CHANGE>`. If set to ``0.0`` (the default), delta synchronizations happen every network process frame.
 
 .. rst-class:: classref-item-separator
 
@@ -184,7 +184,7 @@ Time interval between delta synchronizations. When set to ``0.0`` (the default),
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **public_visibility** = ``true``
+:ref:`bool<class_bool>` **public_visibility** = ``true`` :ref:`🔗<class_MultiplayerSynchronizer_property_public_visibility>`
 
 .. rst-class:: classref-property-setget
 
@@ -201,7 +201,7 @@ Whether synchronization should be visible to all peers by default. See :ref:`set
 
 .. rst-class:: classref-property
 
-:ref:`SceneReplicationConfig<class_SceneReplicationConfig>` **replication_config**
+:ref:`SceneReplicationConfig<class_SceneReplicationConfig>` **replication_config** :ref:`🔗<class_MultiplayerSynchronizer_property_replication_config>`
 
 .. rst-class:: classref-property-setget
 
@@ -218,14 +218,14 @@ Resource containing which properties to synchronize.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **replication_interval** = ``0.0``
+:ref:`float<class_float>` **replication_interval** = ``0.0`` :ref:`🔗<class_MultiplayerSynchronizer_property_replication_interval>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_replication_interval**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_replication_interval**\ (\ )
 
-Time interval between synchronizations. When set to ``0.0`` (the default), synchronizations happen every network process frame.
+Time interval between synchronizations. Used when the replication is set to :ref:`SceneReplicationConfig.REPLICATION_MODE_ALWAYS<class_SceneReplicationConfig_constant_REPLICATION_MODE_ALWAYS>`. If set to ``0.0`` (the default), synchronizations happen every network process frame.
 
 .. rst-class:: classref-item-separator
 
@@ -235,7 +235,7 @@ Time interval between synchronizations. When set to ``0.0`` (the default), synch
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **root_path** = ``NodePath("..")``
+:ref:`NodePath<class_NodePath>` **root_path** = ``NodePath("..")`` :ref:`🔗<class_MultiplayerSynchronizer_property_root_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +254,7 @@ If :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` was spawne
 
 .. rst-class:: classref-property
 
-:ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **visibility_update_mode** = ``0``
+:ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **visibility_update_mode** = ``0`` :ref:`🔗<class_MultiplayerSynchronizer_property_visibility_update_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -276,7 +276,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_visibility_filter**\ (\ filter\: :ref:`Callable<class_Callable>`\ )
+|void| **add_visibility_filter**\ (\ filter\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_MultiplayerSynchronizer_method_add_visibility_filter>`
 
 Adds a peer visibility filter for this synchronizer.
 
@@ -290,7 +290,7 @@ Adds a peer visibility filter for this synchronizer.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_visibility_for**\ (\ peer\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_visibility_for**\ (\ peer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiplayerSynchronizer_method_get_visibility_for>`
 
 Queries the current visibility for peer ``peer``.
 
@@ -302,7 +302,7 @@ Queries the current visibility for peer ``peer``.
 
 .. rst-class:: classref-method
 
-|void| **remove_visibility_filter**\ (\ filter\: :ref:`Callable<class_Callable>`\ )
+|void| **remove_visibility_filter**\ (\ filter\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_MultiplayerSynchronizer_method_remove_visibility_filter>`
 
 Removes a peer visibility filter from this synchronizer.
 
@@ -314,7 +314,7 @@ Removes a peer visibility filter from this synchronizer.
 
 .. rst-class:: classref-method
 
-|void| **set_visibility_for**\ (\ peer\: :ref:`int<class_int>`, visible\: :ref:`bool<class_bool>`\ )
+|void| **set_visibility_for**\ (\ peer\: :ref:`int<class_int>`, visible\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MultiplayerSynchronizer_method_set_visibility_for>`
 
 Sets the visibility of ``peer`` to ``visible``. If ``peer`` is ``0``, the value of :ref:`public_visibility<class_MultiplayerSynchronizer_property_public_visibility>` will be updated instead.
 
@@ -326,7 +326,7 @@ Sets the visibility of ``peer`` to ``visible``. If ``peer`` is ``0``, the value 
 
 .. rst-class:: classref-method
 
-|void| **update_visibility**\ (\ for_peer\: :ref:`int<class_int>` = 0\ )
+|void| **update_visibility**\ (\ for_peer\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_MultiplayerSynchronizer_method_update_visibility>`
 
 Updates the visibility of ``for_peer`` according to visibility filters. If ``for_peer`` is ``0`` (the default), all peers' visibilties are updated.
 

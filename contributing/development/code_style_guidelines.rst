@@ -29,13 +29,13 @@ The rules used by clang-format are outlined in the
 `.clang-format <https://github.com/godotengine/godot/blob/master/.clang-format>`__
 file of the Godot repository.
 
-As long as you ensure that your style matches the surrounding code and that you
+As long as you ensure that your style matches the surrounding code and that you're
 not introducing trailing whitespace or space-based indentation, you should be
 fine. If you plan to contribute regularly, however, we strongly advise that you
 set up clang-format locally to check and automatically fix all your commits.
 
 .. warning:: Godot's code style should *not* be applied to third-party code,
-             i.e. that is included in Godot's source tree but was not written
+             i.e. code that is included in Godot's source tree, but was not written
              specifically for our project. Such code usually comes from
              different upstream projects with their own style guides (or lack
              thereof), and don't want to introduce differences that would make
@@ -61,11 +61,13 @@ You need to use **clang-format 17** to be compatible with Godot's format. Later 
 be suitable, but previous versions may not support all used options, or format
 some things differently, leading to style issues in pull requests.
 
+.. _doc_code_style_guidelines_pre_commit_hook:
+
 Pre-commit hook
 ^^^^^^^^^^^^^^^
 
 For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
-Python framework that will run clang-format automatically on all your commits with the 
+Python framework that will run clang-format automatically on all your commits with the
 correct version of clang-format.
 To set up:
 
@@ -77,7 +79,7 @@ To set up:
 
 You can also run the hook manually with ``pre-commit run``.
 
-.. note:: 
+.. note::
 
     Previously, we supplied a hook in the folder ``misc/hooks``. If you copied the
     script manually, these hooks should still work, but symlinks will be broken.
@@ -169,6 +171,7 @@ ones, the following rules should be followed:
 Example:
 
 .. code-block:: cpp
+    :caption: my_new_file.h
 
     /**************************************************************************/
     /*  my_new_file.h                                                         */
@@ -214,6 +217,7 @@ Example:
     #endif // MY_NEW_FILE_H
 
 .. code-block:: cpp
+    :caption: my_new_file.cpp
 
     /**************************************************************************/
     /*  my_new_file.cpp                                                       */
@@ -267,35 +271,34 @@ Python
 Godot's SCons buildsystem is written in Python, and various scripts included
 in the source tree are also using Python.
 
-For those, we follow the `Black style guide <https://github.com/psf/black#the-black-code-style>`__.
-Blacken your Python changes using `Black <https://pypi.org/project/black/>`__.
+For those, we use the `Ruff linter and code formatter <https://docs.astral.sh/ruff/>`__.
 
-Using black locally
+Using ruff locally
 ~~~~~~~~~~~~~~~~~~~
 
-First of all, you will need to install Black. Black requires Python 3.7+ to run.
+First of all, you will need to install Ruff. Ruff requires Python 3.7+ to run.
 
 Installation
 ^^^^^^^^^^^^
 
-Here's how to install black:
+Here's how to install ruff:
 
 ::
 
-    pip3 install black --user
+    pip3 install ruff --user
 
 
-You then have different possibilities to apply black to your changes:
+You then have different possibilities to apply ruff to your changes:
 
 Manual usage
 ^^^^^^^^^^^^
 
-You can apply ``black`` manually to one or more files with the following
+You can apply ``ruff`` manually to one or more files with the following
 command:
 
 ::
 
-    black -l 120 <path/to/file(s)>
+    ruff -l 120 <path/to/file(s)>
 
 - ``-l 120`` means that the allowed number of characters per line is 120.
   This number was agreed upon by the developers.
@@ -307,8 +310,8 @@ Pre-commit hook
 ~~~~~~~~~~~~~~~
 
 For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
-Python framework that will run ``black`` automatically on all your commits with the 
-correct version of ``black``.
+Python framework that will run ``ruff`` automatically on all your commits with the
+correct version of ``ruff``.
 To set up:
 
 ::
@@ -319,7 +322,7 @@ To set up:
 
 You can also run the hook manually with ``pre-commit run``.
 
-.. note:: 
+.. note::
 
     Previously, we supplied a hook in the folder ``misc/hooks``. If you copied the
     script manually, these hooks should still work, but symlinks will be broken.
@@ -331,8 +334,8 @@ Editor integration
 ^^^^^^^^^^^^^^^^^^
 
 Many IDEs or code editors have beautifier plugins that can be configured to run
-black automatically, for example, each time you save a file. For details, you can
-check `Black editor integration <https://github.com/psf/black#editor-integration>`__.
+ruff automatically, for example, each time you save a file. For details, you can
+check `Ruff Integrations <https://docs.astral.sh/ruff/integrations/>`__.
 
 Comment style guide
 -------------------
@@ -345,7 +348,7 @@ Godot's codebase.
   always end them with a period.
 - Reference variable/function names and values using backticks.
 - Wrap comments to ~100 characters.
-- You can use ``TODO:``, ``FIXME:``, ``NOTE:``, or ``HACK:`` as admonitions
+- You can use ``TODO:``, ``FIXME:``, ``NOTE:``, ``WARNING:``, or ``HACK:`` as admonitions
   when needed.
 
 **Example:**
@@ -383,7 +386,7 @@ instead.
         // ...
     }
 
-For member variables, don't use Javadoc-style comments but use single-line comments instead:
+For member variables, don't use Javadoc-style comments, but use single-line comments instead:
 
 .. code-block:: cpp
 

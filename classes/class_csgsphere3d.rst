@@ -63,7 +63,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGSphere3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -80,7 +80,7 @@ The material used to render the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **radial_segments** = ``12``
+:ref:`int<class_int>` **radial_segments** = ``12`` :ref:`🔗<class_CSGSphere3D_property_radial_segments>`
 
 .. rst-class:: classref-property-setget
 
@@ -97,7 +97,7 @@ Number of vertical slices for the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_CSGSphere3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -114,7 +114,7 @@ Radius of the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rings** = ``6``
+:ref:`int<class_int>` **rings** = ``6`` :ref:`🔗<class_CSGSphere3D_property_rings>`
 
 .. rst-class:: classref-property-setget
 
@@ -131,7 +131,7 @@ Number of horizontal slices for the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **smooth_faces** = ``true``
+:ref:`bool<class_bool>` **smooth_faces** = ``true`` :ref:`🔗<class_CSGSphere3D_property_smooth_faces>`
 
 .. rst-class:: classref-property-setget
 

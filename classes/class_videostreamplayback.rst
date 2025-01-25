@@ -72,7 +72,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_channels**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_channels**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__get_channels>`
 
 Returns the number of audio channels.
 
@@ -84,7 +84,7 @@ Returns the number of audio channels.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_length**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_length**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__get_length>`
 
 Returns the video duration in seconds, if known, or 0 if unknown.
 
@@ -96,7 +96,7 @@ Returns the video duration in seconds, if known, or 0 if unknown.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_mix_rate**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_mix_rate**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__get_mix_rate>`
 
 Returns the audio sample rate used for mixing.
 
@@ -108,7 +108,7 @@ Returns the audio sample rate used for mixing.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_playback_position**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_playback_position**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__get_playback_position>`
 
 Return the current playback timestamp. Called in response to the :ref:`VideoStreamPlayer.stream_position<class_VideoStreamPlayer_property_stream_position>` getter.
 
@@ -120,7 +120,7 @@ Return the current playback timestamp. Called in response to the :ref:`VideoStre
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **_get_texture**\ (\ ) |virtual| |const|
+:ref:`Texture2D<class_Texture2D>` **_get_texture**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__get_texture>`
 
 Allocates a :ref:`Texture2D<class_Texture2D>` in which decoded video frames will be drawn.
 
@@ -132,7 +132,7 @@ Allocates a :ref:`Texture2D<class_Texture2D>` in which decoded video frames will
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_paused**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_paused**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__is_paused>`
 
 Returns the paused status, as set by :ref:`_set_paused<class_VideoStreamPlayback_private_method__set_paused>`.
 
@@ -144,7 +144,7 @@ Returns the paused status, as set by :ref:`_set_paused<class_VideoStreamPlayback
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_playing**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_playing**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__is_playing>`
 
 Returns the playback state, as determined by calls to :ref:`_play<class_VideoStreamPlayback_private_method__play>` and :ref:`_stop<class_VideoStreamPlayback_private_method__stop>`.
 
@@ -156,9 +156,9 @@ Returns the playback state, as determined by calls to :ref:`_play<class_VideoStr
 
 .. rst-class:: classref-method
 
-|void| **_play**\ (\ ) |virtual|
+|void| **_play**\ (\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__play>`
 
-Called in response to :ref:`VideoStreamPlayer.autoplay<class_VideoStreamPlayer_property_autoplay>` or :ref:`VideoStreamPlayer.play<class_VideoStreamPlayer_method_play>`. Note that manual playback may also invoke :ref:`_stop<class_VideoStreamPlayback_private_method__stop>` multiple times before this method is called. :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` should return true once playing.
+Called in response to :ref:`VideoStreamPlayer.autoplay<class_VideoStreamPlayer_property_autoplay>` or :ref:`VideoStreamPlayer.play<class_VideoStreamPlayer_method_play>`. Note that manual playback may also invoke :ref:`_stop<class_VideoStreamPlayback_private_method__stop>` multiple times before this method is called. :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` should return ``true`` once playing.
 
 .. rst-class:: classref-item-separator
 
@@ -168,7 +168,7 @@ Called in response to :ref:`VideoStreamPlayer.autoplay<class_VideoStreamPlayer_p
 
 .. rst-class:: classref-method
 
-|void| **_seek**\ (\ time\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_seek**\ (\ time\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__seek>`
 
 Seeks to ``time`` seconds. Called in response to the :ref:`VideoStreamPlayer.stream_position<class_VideoStreamPlayer_property_stream_position>` setter.
 
@@ -180,7 +180,7 @@ Seeks to ``time`` seconds. Called in response to the :ref:`VideoStreamPlayer.str
 
 .. rst-class:: classref-method
 
-|void| **_set_audio_track**\ (\ idx\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_set_audio_track**\ (\ idx\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__set_audio_track>`
 
 Select the audio track ``idx``. Called when playback starts, and in response to the :ref:`VideoStreamPlayer.audio_track<class_VideoStreamPlayer_property_audio_track>` setter.
 
@@ -192,7 +192,7 @@ Select the audio track ``idx``. Called when playback starts, and in response to 
 
 .. rst-class:: classref-method
 
-|void| **_set_paused**\ (\ paused\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_set_paused**\ (\ paused\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__set_paused>`
 
 Set the paused status of video playback. :ref:`_is_paused<class_VideoStreamPlayback_private_method__is_paused>` must return ``paused``. Called in response to the :ref:`VideoStreamPlayer.paused<class_VideoStreamPlayer_property_paused>` setter.
 
@@ -204,9 +204,9 @@ Set the paused status of video playback. :ref:`_is_paused<class_VideoStreamPlayb
 
 .. rst-class:: classref-method
 
-|void| **_stop**\ (\ ) |virtual|
+|void| **_stop**\ (\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__stop>`
 
-Stops playback. May be called multiple times before :ref:`_play<class_VideoStreamPlayback_private_method__play>`, or in response to :ref:`VideoStreamPlayer.stop<class_VideoStreamPlayer_method_stop>`. :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` should return false once stopped.
+Stops playback. May be called multiple times before :ref:`_play<class_VideoStreamPlayback_private_method__play>`, or in response to :ref:`VideoStreamPlayer.stop<class_VideoStreamPlayer_method_stop>`. :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` should return ``false`` once stopped.
 
 .. rst-class:: classref-item-separator
 
@@ -216,9 +216,9 @@ Stops playback. May be called multiple times before :ref:`_play<class_VideoStrea
 
 .. rst-class:: classref-method
 
-|void| **_update**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_update**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__update>`
 
-Ticks video playback for ``delta`` seconds. Called every frame as long as :ref:`_is_paused<class_VideoStreamPlayback_private_method__is_paused>` and :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` return true.
+Ticks video playback for ``delta`` seconds. Called every frame as long as both :ref:`_is_paused<class_VideoStreamPlayback_private_method__is_paused>` and :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` return ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -228,7 +228,7 @@ Ticks video playback for ``delta`` seconds. Called every frame as long as :ref:`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **mix_audio**\ (\ num_frames\: :ref:`int<class_int>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>` = PackedFloat32Array(), offset\: :ref:`int<class_int>` = 0\ )
+:ref:`int<class_int>` **mix_audio**\ (\ num_frames\: :ref:`int<class_int>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>` = PackedFloat32Array(), offset\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_VideoStreamPlayback_method_mix_audio>`
 
 Render ``num_frames`` audio frames (of :ref:`_get_channels<class_VideoStreamPlayback_private_method__get_channels>` floats each) from ``buffer``, starting from index ``offset`` in the array. Returns the number of audio frames rendered, or -1 on error.
 

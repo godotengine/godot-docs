@@ -15,7 +15,7 @@ On this page, you'll learn:
 
 .. seealso::
 
-    If you only need meshes to become less detailed over distance but don't have
+    If you only need meshes to become less detailed over distance, but don't have
     manually authored LOD meshes, consider relying on automatic
     :ref:`doc_mesh_lod` instead.
 
@@ -97,7 +97,7 @@ the following properties in the GeometryInstance3D's **Visibility Range** sectio
 .. _doc_visibility_ranges_fade_mode:
 
 Fade mode
-^^^^^^^^^
+~~~~~~~~~
 
 .. note::
 
@@ -132,7 +132,7 @@ choose from:
 .. _doc_visibility_ranges_visibility_parent:
 
 Visibility parent
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 The **Visibility Parent** property makes it easier to set up
 :abbr:`HLOD (Hierarchical Level of Detail)`. It allows automatically hiding
@@ -194,7 +194,7 @@ Configuration tips
 ------------------
 
 Use simpler materials at a distance to improve performance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One way to further improve performance is to use simpler materials for distant
 LOD meshes. While using LOD meshes will reduce the number of vertices that need
@@ -223,7 +223,7 @@ expensive material features such as:
 - Proximity Fade
 
 Use dithering for LOD transitions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot currently only supports alpha-based fading for visibility ranges. You can
 however use dithering instead by using several different materials for different

@@ -11,7 +11,7 @@ We'll create a ``Mob`` scene, which we can then *instance* to create any number
 of independent mobs in the game.
 
 Node setup
-~~~~~~~~~~
+----------
 
 Click Scene -> New Scene from the top menu and add the following nodes:
 
@@ -60,7 +60,7 @@ to ``90`` (under "Transform" in the Inspector).
 Save the scene.
 
 Enemy script
-~~~~~~~~~~~~
+------------
 
 Add a script to the ``Mob`` like this:
 
@@ -122,6 +122,8 @@ to the ``Mob`` and add this code:
     {
         QueueFree();
     }
+
+``queue_free()`` is a function that essentially 'frees', or deletes, the node at the end of the frame.
 
 This completes the `Mob` scene.
 

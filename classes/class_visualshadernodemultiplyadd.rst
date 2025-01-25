@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **OpType**:
+enum **OpType**: :ref:`🔗<enum_VisualShaderNodeMultiplyAdd_OpType>`
 
 .. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_SCALAR:
 
@@ -101,7 +101,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **op_type** = ``0``
+:ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **op_type** = ``0`` :ref:`🔗<class_VisualShaderNodeMultiplyAdd_property_op_type>`
 
 .. rst-class:: classref-property-setget
 

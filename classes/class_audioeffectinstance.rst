@@ -57,7 +57,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_process**\ (\ src_buffer\: ``const void*``, dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_process**\ (\ src_buffer\: ``const void*``, dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_AudioEffectInstance_private_method__process>`
 
 Called by the :ref:`AudioServer<class_AudioServer>` to process this effect. When :ref:`_process_silence<class_AudioEffectInstance_private_method__process_silence>` is not overridden or it returns ``false``, this method is called only when the bus is active.
 
@@ -71,7 +71,7 @@ Called by the :ref:`AudioServer<class_AudioServer>` to process this effect. When
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_process_silence**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_process_silence**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioEffectInstance_private_method__process_silence>`
 
 Override this method to customize the processing behavior of this effect instance.
 

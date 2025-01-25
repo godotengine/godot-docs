@@ -1,22 +1,25 @@
 .. _doc_ssl_certificates:
 
-SSL/TLS certificates
+TLS/SSL certificates
 ====================
 
 Introduction
 ------------
 
-It is often desired to use :abbr:`SSL (Secure Sockets Layer)` connections (also
-known as :abbr:`TLS (Transport Layer Security)` connections) for communications
+It is often desired to use :abbr:`TLS (Transport Layer Security)` connections (also
+known as :abbr:`SSL (Secure Sockets Layer)` connections) for communications
 to avoid "man in the middle" attacks. Godot has a connection wrapper,
 :ref:`StreamPeerTLS <class_StreamPeerTLS>`, which can take a regular connection
 and add security around it. The :ref:`HTTPClient <class_HTTPClient>` and
 :ref:`HTTPRequest <class_HTTPRequest>` classes also support HTTPS using
 this same wrapper.
 
-Godot includes the
-`SSL certificate bundle from Mozilla <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__,
-but you can provide your own with a CRT file in the Project Settings:
+Godot will try to use the TLS certificate bundle provided by the operating system,
+but also includes the
+`TLS certificate bundle from Mozilla <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__
+as a fallback.
+
+You can alternatively force your own certificate bundle in the Project Settings:
 
 .. figure:: img/tls_certificates_project_setting.webp
    :align: center
@@ -24,23 +27,14 @@ but you can provide your own with a CRT file in the Project Settings:
 
    Setting the TLS certificate bundle override project setting
 
-When set, this file *overrides* the Mozilla certificate bundle Godot uses
-by default. This file should contain any number of public certificates in
+When set, this file *overrides* the operating system provided bundle by default.
+This file should contain any number of public certificates in
 `PEM format <https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail>`__.
-
-Remember to add ``*.crt`` as the non-resource export filter to your export
-preset, so that the exporter recognizes this when exporting your project:
-
-.. figure:: img/tls_certificates_export_filter.webp
-   :align: center
-   :alt: Adding ``*.crt`` to non-resource export filter in the export preset
-
-   Adding ``*.crt`` to non-resource export filter in the export preset
 
 There are two ways to obtain certificates:
 
-Acquire a certificate from a certificate authority
---------------------------------------------------
+Obtain a certificate from a certificate authority
+-------------------------------------------------
 
 The main approach to getting a certificate is to use a certificate authority
 (CA) such as `Let's Encrypt <https://letsencrypt.org/>`__. This is a more
@@ -73,7 +67,17 @@ Settings.
     access to it: otherwise, the security of the certificate will be
     compromised.
 
-OpenSSL has `some documentation
+.. warning::
+
+    When specifying a self-signed certificate as TLS bundle in the project
+    settings, normal domain name validation is enforced via the certificate
+    :abbr:`CN (common name)` and alternative names. See
+    :ref:`TLSOptions <class_TLSOptions>` to customize domain name validation.
+
+For development purposes Godot can generate self-signed certificates via
+:ref:`Crypto.generate_self_signed_certificate
+<class_Crypto_method_generate_self_signed_certificate>`.
+
+Alternatively, OpenSSL has some documentation about `generating keys
 <https://raw.githubusercontent.com/openssl/openssl/master/doc/HOWTO/keys.txt>`__
-about this. For local development purposes **only**, `mkcert
-<https://github.com/FiloSottile/mkcert>`__ can be used as an alternative.
+and `certificates <https://raw.githubusercontent.com/openssl/openssl/master/doc/HOWTO/certificates.txt>`__.

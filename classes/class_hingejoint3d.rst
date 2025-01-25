@@ -82,7 +82,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Param**:
+enum **Param**: :ref:`🔗<enum_HingeJoint3D_Param>`
 
 .. _class_HingeJoint3D_constant_PARAM_BIAS:
 
@@ -166,7 +166,7 @@ Represents the size of the :ref:`Param<enum_HingeJoint3D_Param>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **Flag**:
+enum **Flag**: :ref:`🔗<enum_HingeJoint3D_Flag>`
 
 .. _class_HingeJoint3D_constant_FLAG_USE_LIMIT:
 
@@ -205,7 +205,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit/bias** = ``0.3``
+:ref:`float<class_float>` **angular_limit/bias** = ``0.3`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -222,7 +222,7 @@ The speed with which the rotation across the axis perpendicular to the hinge get
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_limit/enable** = ``false``
+:ref:`bool<class_bool>` **angular_limit/enable** = ``false`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/enable>`
 
 .. rst-class:: classref-property-setget
 
@@ -239,7 +239,7 @@ If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit/lower** = ``-1.5708``
+:ref:`float<class_float>` **angular_limit/lower** = ``-1.5708`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/lower>`
 
 .. rst-class:: classref-property-setget
 
@@ -256,7 +256,7 @@ The minimum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit/relaxation** = ``1.0``
+:ref:`float<class_float>` **angular_limit/relaxation** = ``1.0`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/relaxation>`
 
 .. rst-class:: classref-property-setget
 
@@ -273,7 +273,7 @@ The lower this value, the more the rotation gets slowed down.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit/softness** = ``0.9``
+:ref:`float<class_float>` **angular_limit/softness** = ``0.9`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/softness>`
 
 .. rst-class:: classref-property-setget
 
@@ -290,7 +290,7 @@ The lower this value, the more the rotation gets slowed down.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit/upper** = ``1.5708``
+:ref:`float<class_float>` **angular_limit/upper** = ``1.5708`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/upper>`
 
 .. rst-class:: classref-property-setget
 
@@ -307,7 +307,7 @@ The maximum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **motor/enable** = ``false``
+:ref:`bool<class_bool>` **motor/enable** = ``false`` :ref:`🔗<class_HingeJoint3D_property_motor/enable>`
 
 .. rst-class:: classref-property-setget
 
@@ -324,7 +324,7 @@ When activated, a motor turns the hinge.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **motor/max_impulse** = ``1.0``
+:ref:`float<class_float>` **motor/max_impulse** = ``1.0`` :ref:`🔗<class_HingeJoint3D_property_motor/max_impulse>`
 
 .. rst-class:: classref-property-setget
 
@@ -341,7 +341,7 @@ Maximum acceleration for the motor.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **motor/target_velocity** = ``1.0``
+:ref:`float<class_float>` **motor/target_velocity** = ``1.0`` :ref:`🔗<class_HingeJoint3D_property_motor/target_velocity>`
 
 .. rst-class:: classref-property-setget
 
@@ -358,7 +358,7 @@ Target speed for the motor.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **params/bias** = ``0.3``
+:ref:`float<class_float>` **params/bias** = ``0.3`` :ref:`🔗<class_HingeJoint3D_property_params/bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -380,7 +380,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`\ ) |const|
+:ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`\ ) |const| :ref:`🔗<class_HingeJoint3D_method_get_flag>`
 
 Returns the value of the specified flag.
 
@@ -392,7 +392,7 @@ Returns the value of the specified flag.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
+:ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const| :ref:`🔗<class_HingeJoint3D_method_get_param>`
 
 Returns the value of the specified parameter.
 
@@ -404,7 +404,7 @@ Returns the value of the specified parameter.
 
 .. rst-class:: classref-method
 
-|void| **set_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_HingeJoint3D_method_set_flag>`
 
 If ``true``, enables the specified flag.
 
@@ -416,7 +416,7 @@ If ``true``, enables the specified flag.
 
 .. rst-class:: classref-method
 
-|void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+|void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_HingeJoint3D_method_set_param>`
 
 Sets the value of the specified parameter.
 

@@ -47,7 +47,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_stream_sampling_rate**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_stream_sampling_rate**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStreamPlaybackResampled_private_method__get_stream_sampling_rate>`
 
 .. container:: contribute
 
@@ -61,7 +61,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_mix_resampled**\ (\ dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`int<class_int>` **_mix_resampled**\ (\ dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_AudioStreamPlaybackResampled_private_method__mix_resampled>`
 
 .. container:: contribute
 
@@ -75,7 +75,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **begin_resample**\ (\ )
+|void| **begin_resample**\ (\ ) :ref:`🔗<class_AudioStreamPlaybackResampled_method_begin_resample>`
 
 .. container:: contribute
 

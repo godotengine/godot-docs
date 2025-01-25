@@ -6,9 +6,7 @@ Internationalizing games
 Introduction
 ------------
 
-Sería excelente que el mundo hablara solo un idioma (It would be great if the
-world spoke only one language). Unfortunately for
-us developers, that is not the case. While indie or niche games usually
+While indie or niche games usually
 do not need localization, games targeting a more massive market
 often require localization. Godot offers many tools to make this process
 more straightforward, so this tutorial is more like a collection of
@@ -60,6 +58,44 @@ Select the resource to be remapped then add some alternatives for each locale.
     the current language, making it ideal for things like multiplayer chat where
     the text language may not match the client's language.
 
+Automatically setting a language
+--------------------------------
+It is recommended to default to the user's preferred language which can be obtained via :ref:`OS.get_locale_language() <class_OS_method_get_locale_language>`.
+If your game is not available in that language, it will fall back to the :ref:`Fallback <class_ProjectSettings_property_internationalization/locale/fallback>`
+in **Project Settings > Internationalization > Locale**, or to ``en`` if empty.
+Nevertheless letting players change the language in game is recommended for various reasons (e.g. translation quality or player preference).
+
+.. tabs::
+ .. code-tab:: gdscript
+
+    var language = "automatic"
+    # Load here language from the user settings file
+    if language == "automatic":
+       var preferred_language = OS.get_locale_language()
+       TranslationServer.set_locale(preferred_language)
+    else:
+       TranslationServer.set_locale(language)
+
+Locale vs. language
+-------------------
+A :ref:`locale <doc_locales>` is commonly a combination of a language with a region or country, but can also contain information like a script or a variant.
+
+Examples:
+
+- ``en``: English language
+- ``en_GB``: English in Great Britain / British English
+- ``en_US``: English in the USA / American English
+- ``en_DE``: English in Germany
+
+Indie games generally only need to care about language, but read on for more information.
+
+Why locales exist can be illustrated through the USA and Great Britain. Both speak the same language (English), yet differ in many aspects:
+- Spelling: E.g. gray (USA), grey (GB)
+- Use of words: E.g. eggplant (USA), aubergine (GB)
+- Units or currencies: E.g. feet/inches (USA), metres/cm (GB)
+
+It can get more complex however. Imagine you offer different content in Europe and in China (e.g. in an MMO). You will need to translate each of those content variations into many languages and store and load them accordingly.
+
 Converting keys to text
 -----------------------
 
@@ -77,10 +113,16 @@ Translate** in the inspector.
 In code, the :ref:`Object.tr() <class_Object_method_tr>` function can be used.
 This will just look up the text in the translations and convert it if found:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     level.text = tr("LEVEL_5_NAME")
     status.text = tr("GAME_STATUS_%d" % status_index)
+
+ .. code-tab:: csharp
+
+    level.Text = Tr("LEVEL_5_NAME");
+    status.Text = Tr($"GAME_STATUS_{statusIndex}");
 
 .. note::
 
@@ -98,7 +140,7 @@ This will just look up the text in the translations and convert it if found:
     define the DynamicFont as the Default Font in the theme.
 
 Placeholders
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 To feature placeholders in your translated strings, use
 :ref:`doc_gdscript_printf` or the equivalent feature in C#. This lets
@@ -107,7 +149,8 @@ allows translations to sound more natural. Named placeholders with the
 ``String.format()`` function should be used whenever possible, as they also
 allow translators to choose the *order* in which placeholders appear:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # The placeholder's locations can be changed, but not their order.
     # This will probably not suffice for some target languages.
@@ -118,7 +161,7 @@ allow translators to choose the *order* in which placeholders appear:
     message.text = tr("{character} picked up the {weapon}").format({character = "Ogre", weapon = "Sword"})
 
 Translation contexts
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 If you're using plain English as source strings (rather than message codes
 ``LIKE_THIS``), you may run into ambiguities when you have to translate the same
@@ -127,7 +170,8 @@ optionally specify a *translation context* to resolve this ambiguity and allow
 target languages to use different strings, even though the source string is
 identical:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # "Close", as in an action (to close something).
     button.set_text(tr("Close", "Actions"))
@@ -135,8 +179,16 @@ identical:
     # "Close", as in a distance (opposite of "far").
     distance_label.set_text(tr("Close", "Distance"))
 
+ .. code-tab:: csharp
+
+    // "Close", as in an action (to close something).
+    GetNode<Button>("Button").Text = Tr("Close", "Actions");
+
+    // "Close", as in a distance (opposite of "far").
+    GetNode<Label>("Distance").Text = Tr("Close", "Distance");
+
 Pluralization
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Most languages require different strings depending on whether an object is in
 singular or plural form. However, hardcoding the "is plural" condition depending
@@ -150,17 +202,29 @@ Pluralization is meant to be used with positive (or zero) integer numbers only.
 Negative and floating-point values usually represent physical entities for which
 singular and plural don't clearly apply.
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     var num_apples = 5
     label.text = tr_n("There is %d apple", "There are %d apples", num_apples) % num_apples
 
+ .. code-tab:: csharp
+
+    int numApples = 5;
+    GetNode<Label>("Label").Text = string.Format(TrN("There is {0} apple", "There are {0} apples", numApples), numApples);
+
 This can be combined with a context if needed:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     var num_jobs = 1
     label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs
+
+ .. code-tab:: csharp
+
+    int numJobs = 1;
+    GetNode<Label>("Label").Text = string.Format(TrN("{0} job", "{0} jobs", numJobs, "Task Manager"), numJobs);
 
 .. note::
 
@@ -207,8 +271,8 @@ TranslationServer
 
 Godot has a server handling low-level translation management
 called the :ref:`TranslationServer <class_TranslationServer>`.
-Translations can be added or removed during run-time;
-the current language can also be changed at run-time.
+Translations can be added or removed during runtime;
+the current language can also be changed at runtime.
 
 .. _doc_internationalizing_games_bidi:
 

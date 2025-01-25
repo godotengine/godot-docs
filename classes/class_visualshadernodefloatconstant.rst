@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **constant** = ``0.0``
+:ref:`float<class_float>` **constant** = ``0.0`` :ref:`🔗<class_VisualShaderNodeFloatConstant_property_constant>`
 
 .. rst-class:: classref-property-setget
 

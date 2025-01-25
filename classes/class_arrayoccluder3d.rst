@@ -69,7 +69,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **indices** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **indices** = ``PackedInt32Array()`` :ref:`🔗<class_ArrayOccluder3D_property_indices>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ The occluder's index position. Indices determine which points from the :ref:`ver
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()``
+:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()`` :ref:`🔗<class_ArrayOccluder3D_property_vertices>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,7 +116,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **set_arrays**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, indices\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+|void| **set_arrays**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, indices\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_ArrayOccluder3D_method_set_arrays>`
 
 Sets :ref:`indices<class_ArrayOccluder3D_property_indices>` and :ref:`vertices<class_ArrayOccluder3D_property_vertices>`, while updating the final occluder only once after both values are set.
 

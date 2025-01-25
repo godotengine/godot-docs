@@ -12,16 +12,16 @@ that compiling Godot from source can be as simple as running::
 
     scons
 
-This produces an *export template* for your current platform, operating system, and architecture.
-An export template is a build of the engine that is used for running exported projects. To build
-the *editor* instead you can run the following command::
+This produces an editor build for your current platform, operating system, and architecture.
+You can change what gets built by specifying a target, a platform, and/or an architecture.
+For example, to build an export template used for running exported games, you can run::
 
-    scons target=editor
+    scons target=template_release
 
-If you plan to debug or develop the engine, then you might want to add another option to the command::
+If you plan to debug or develop the engine, then you might want to enable the ``dev_build``
+option to enable dev-only debugging code::
 
     scons dev_build=yes
-    scons target=editor dev_build=yes
 
 Following sections in the article will explain these and other universal options in more detail. But
 before you can compile Godot, you need to install a few prerequisites. Please refer to the platform
@@ -69,9 +69,10 @@ To list the available target platforms, use ``scons platform=list``::
     The following platforms are available:
 
         android
-        javascript
+        ios
         linuxbsd
-        server
+        macos
+        web
         windows
 
     Please run SCons again and select a valid platform: platform=<string>
@@ -138,6 +139,8 @@ run projects but does not include the editor or the Project Manager.
 ::
 
     scons platform=<platform> target=editor/template_debug/template_release
+
+.. _doc_introduction_to_the_buildsystem_development_and_production_aliases:
 
 Development and production aliases
 ----------------------------------
@@ -321,15 +324,14 @@ The default ``custom.py`` file can be created at the root of the Godot Engine
 source to initialize any SCons build options passed via the command line:
 
 .. code-block:: python
-
-    # custom.py
+    :caption: custom.py
 
     optimize = "size"
     module_mono_enabled = "yes"
     use_llvm = "yes"
     extra_suffix = "game_title"
 
-You can also disable some of the builtin modules before compiling, saving some
+You can also disable some of the built-in modules before compiling, saving some
 time it takes to build the engine. See :ref:`doc_optimizing_for_size` page for more details.
 
 .. seealso::
@@ -352,8 +354,7 @@ line option, both overriding the default build configuration:
 It's also possible to override the options conditionally:
 
 .. code-block:: python
-
-    # custom.py
+    :caption: custom.py
 
     import version
 
@@ -397,13 +398,13 @@ For the folders accelerated by this option, multiple ``.cpp`` files are
 compiled in each translation unit, so headers can be shared between multiple
 files, which can dramatically decrease build times.
 
-To peform an SCU build, use the ``scu_build=yes`` SCons option.
+To perform an SCU build, use the ``scu_build=yes`` SCons option.
 
 .. note:: When developing a Pull Request using SCU builds, be sure to make a
           regular build prior to submitting the PR. This is because SCU builds
           by nature include headers from earlier ``.cpp`` files in the
           translation unit, therefore won't catch all the includes you will
-          need in a regular build. The CI will catch these errors but it will
+          need in a regular build. The CI will catch these errors, but it will
           usually be faster to catch them on a local build on your machine.
 
 Export templates
@@ -446,10 +447,14 @@ platform:
     windows_debug_x86_32.exe
     windows_debug_x86_64_console.exe
     windows_debug_x86_64.exe
+    windows_debug_arm64_console.exe
+    windows_debug_arm64.exe
     windows_release_x86_32_console.exe
     windows_release_x86_32.exe
     windows_release_x86_64_console.exe
     windows_release_x86_64.exe
+    windows_release_arm64_console.exe
+    windows_release_arm64.exe
 
 To create those yourself, follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to

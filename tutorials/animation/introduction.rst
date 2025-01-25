@@ -61,7 +61,7 @@ A keyframe defines the value of a property at a point in time.
 Diamond shapes represent keyframes in the timeline. A line between two
 keyframes indicates that the value doesn't change between them.
 
-.. figure:: img/animation_keyframes.png
+.. figure:: img/animation_keyframes.webp
    :alt: Keyframes in Godot
 
    Keyframes in Godot
@@ -70,7 +70,7 @@ You set values of a node's properties and create animation keyframes for them.
 When the animation runs, the engine will interpolate the values between the
 keyframes, resulting in them gradually changing over time.
 
-.. figure:: img/animation_illustration.png
+.. figure:: img/animation_illustration.webp
    :alt: Two keyframes are all it takes to obtain a smooth motion
 
    Two keyframes are all it takes to obtain a smooth motion
@@ -78,7 +78,7 @@ keyframes, resulting in them gradually changing over time.
 The timeline defines how long the animation will take. You can insert keyframes
 at various points, and change their timing.
 
-.. figure:: img/animation_timeline.png
+.. figure:: img/animation_timeline.webp
    :alt: The timeline in the animation panel
 
    The timeline in the animation panel
@@ -89,7 +89,7 @@ a node and its affected property. For example, the position track
 in the illustration refers to the ``position`` property of the Sprite2D
 node.
 
-.. figure:: img/animation_normal_track.png
+.. figure:: img/animation_normal_track.webp
    :alt: Example of Normal animation tracks
 
    Example of Normal animation tracks
@@ -110,7 +110,7 @@ Scene setup
 For this tutorial, we'll create a Sprite node with an AnimationPlayer as
 its child. We will animate the sprite to move between two points on the screen.
 
-.. figure:: img/animation_animation_player_tree.png
+.. figure:: img/animation_animation_player_tree.webp
    :alt: Our scene setup
 
    Our scene setup
@@ -140,8 +140,8 @@ animation. Enter a name for the animation in the dialog box.
 
    Add a new animation
 
-Manage an animation libraries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Managing animation libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For reusability, the animation is registered in a list in the animation library resource. If you add an animation to AnimationPlayer without specifying any particular settings, the animation will be registered in the [Global] animation library that AnimationPlayer has by default.
 
@@ -163,7 +163,7 @@ Adding a track
 To add a new track for our sprite, select it and take a look at the
 toolbar:
 
-.. figure:: img/animation_convenience_buttons.png
+.. figure:: img/animation_convenience_buttons.webp
    :alt: Convenience buttons
 
    Convenience buttons
@@ -195,7 +195,7 @@ default, the animation is set to last only one second, so change the animation
 length to 2 in the controls on the right side of the animation panel's timeline
 header.
 
-.. figure:: img/animation_set_length.png
+.. figure:: img/animation_set_length.webp
    :alt: Animation length
 
    Animation length
@@ -241,7 +241,7 @@ This means we can extend the animation length to four seconds now, and Godot
 will also calculate the frames from the last keyframe to the first, moving
 our sprite back and forth.
 
-.. figure:: img/animation_loop.png
+.. figure:: img/animation_loop.webp
    :alt: Animation loop
 
    Animation loop
@@ -373,10 +373,10 @@ If you want to reset the tracks in the editor, select the AnimationPlayer node,
 open the **Animation** bottom panel then choose **Apply Reset** in the
 animation editor's **Edit** dropdown menu.
 
-when using the keyframe icon next to a property in the inspector the editor will
+When using the keyframe icon next to a property in the inspector the editor will
 ask you to automatically create a RESET track.
 
-.. note:: RESET tracks is also used as a reference value for blending. See also `For better blending <../animation/animation_tree.html#for-better-blending>`__.
+.. note:: RESET tracks are also used as reference values for blending. See also `For better blending <../animation/animation_tree.html#for-better-blending>`__.
 
 Onion Skinning
 --------------

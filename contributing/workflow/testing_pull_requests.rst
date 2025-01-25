@@ -27,7 +27,7 @@ depending on whether you have a GitHub account or not.
     instead.
 
 If you have a GitHub account
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Open the pull request page. Click the **Checks** tab near the top of the page:
 
@@ -50,7 +50,7 @@ If you have a GitHub account
   On macOS, see :ref:`doc_running_on_macos` for instructions on bypassing Gatekeeper.
 
 If you don't have a GitHub account
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't have a GitHub account and can't sign up for one,
 you can use the third-party `nightly.link <https://nightly.link>`__ service
@@ -91,7 +91,7 @@ This approach may be needed for pull requests that were last updated more than
 by Godot's GitHub Actions setup.
 
 Downloading a zipped pull request branch
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Open the pull request page. Click the *fork*'s branch name near the top of the page:
 
@@ -106,7 +106,7 @@ Downloading a zipped pull request branch
   for your operating system.
 
 Checking out a pull request branch with git
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alternatively, you can checkout the pull request directly with git:
 
@@ -119,19 +119,19 @@ Alternatively, you can checkout the pull request directly with git:
 
 ::
 
-    $ git fetch upstream pull/PR_NUMBER/head:BRANCH_NAME
+    git fetch upstream pull/PR_NUMBER/head:BRANCH_NAME
 
 So for the pull request above, the actual command will be:
 
 ::
 
     # Fetch PR branch locally
-    $ git fetch upstream pull/48734/head:editor_file_dialog_filter_sort
+    git fetch upstream pull/48734/head:editor_file_dialog_filter_sort
 
 - Once the pull request finishes downloading, checkout its branch:
 
 ::
 
-    $ git checkout editor_file_dialog_filter_sort
+    git checkout editor_file_dialog_filter_sort
 
 - And follow the :ref:`compiling <toc-devel-compiling>` instructions for your operating system.

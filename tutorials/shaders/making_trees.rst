@@ -77,7 +77,7 @@ Finally, all that's left is the fragment shader:
         ALPHA = albedo_tex.a;
         METALLIC = 0.0;
         ROUGHNESS = 1.0;
-        TRANSMISSION = transmission.rgb;
+        SSS_TRANSMITTANCE_COLOR = transmission.rgba;
     }
 
 And this is pretty much it.

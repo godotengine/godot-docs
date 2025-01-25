@@ -7,7 +7,7 @@ OpenXR has its own set of settings that are applied when OpenXR starts.
 While it is possible for OpenXR extensions implemented through Godot plugins to add additional settings,
 we will only discuss the settings in the core of Godot here.
 
-.. image:: img/openxr_settings.png
+.. image:: img/openxr_settings.webp
 
 Enabled
 -------
@@ -60,7 +60,7 @@ depending on the XR system used.
 In OpenXR these scenarios are well defined and selected by setting a reference space.
 
 Local
-^^^^^
+~~~~~
 
 The local reference space places our origin point at the player's head by default.
 Some XR runtimes will do this each time your game starts, others will make the position persist over sessions.
@@ -83,7 +83,7 @@ so your game can react accordingly.
   You should **not** call ``center_on_hmd`` when using this reference space.
 
 Stage
-^^^^^
+~~~~~
 
 The stage reference space is our default reference space and places our origin point at the center of our play space.
 For XR runtimes that allow you to draw out a guardian boundary this location and its orientation is often set by the user.
@@ -111,7 +111,7 @@ In Godot you can do this by calling the ``center_on_hmd`` function on the :ref:`
   Any other XR tracked elements such as controllers or anchors will also be adjusted accordingly. 
 
 Local Floor
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 The local floor reference space is similar to the local reference space as it positions the origin point where the player is.
 In this mode however the height of the player is kept.
@@ -162,6 +162,8 @@ If a mode is selected that is not supported by the headset, the first available 
   Some OpenXR devices have separate systems for enabling/disabling passthrough.
   From Godot 4.3 onwards selecting the alpha blend mode will also perform these extra steps.
   This does require the latest vendor plugin to be installed.
+
+.. _doc_openxr_settings_foveation_level:
 
 Foveation Level
 ---------------
@@ -220,7 +222,7 @@ Extensions
 This subsection provides access to various optional OpenXR extensions.
 
 Hand Tracking
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 This enables the hand tracking extension when supported by the device used. This is on by default for legacy reasons.
 The hand tracking extension provides access to data that allows you to visualise the user's hands with correct finger positions.
@@ -232,7 +234,7 @@ If your game only supports controllers this should be turned off.
 See the chapter on :ref:`hand tracking <doc_openxr_hand_tracking>` for additional details.
 
 Eye Gaze Interaction
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 This enables the eye gaze interaction extension when supported by the device used.
 When enabled we will get feedback from eye tracking through a pose situated between the user's eyes

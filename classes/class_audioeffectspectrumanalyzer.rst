@@ -21,6 +21,8 @@ Description
 
 This audio effect does not affect sound output, but can be used for real-time audio visualizations.
 
+This resource configures an :ref:`AudioEffectSpectrumAnalyzerInstance<class_AudioEffectSpectrumAnalyzerInstance>`, which performs the actual analysis at runtime. An instance can be obtained with :ref:`AudioServer.get_bus_effect_instance<class_AudioServer_method_get_bus_effect_instance>`.
+
 See also :ref:`AudioStreamGenerator<class_AudioStreamGenerator>` for procedurally generating sounds.
 
 .. rst-class:: classref-introduction-group
@@ -59,7 +61,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FFTSize**:
+enum **FFTSize**: :ref:`🔗<enum_AudioEffectSpectrumAnalyzer_FFTSize>`
 
 .. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_256:
 
@@ -122,7 +124,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **buffer_length** = ``2.0``
+:ref:`float<class_float>` **buffer_length** = ``2.0`` :ref:`🔗<class_AudioEffectSpectrumAnalyzer_property_buffer_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -139,7 +141,7 @@ The length of the buffer to keep (in seconds). Higher values keep data around fo
 
 .. rst-class:: classref-property
 
-:ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>` **fft_size** = ``2``
+:ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>` **fft_size** = ``2`` :ref:`🔗<class_AudioEffectSpectrumAnalyzer_property_fft_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -156,7 +158,7 @@ The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Four
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tap_back_pos** = ``0.01``
+:ref:`float<class_float>` **tap_back_pos** = ``0.01`` :ref:`🔗<class_AudioEffectSpectrumAnalyzer_property_tap_back_pos>`
 
 .. rst-class:: classref-property-setget
 
