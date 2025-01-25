@@ -304,6 +304,7 @@ in conjunction with a :ref:`script in "tool" mode <doc_gdscript_tool_mode>`.
 
 Exporting bit flags
 -------------------
+
 See :ref:`@export_flags <class_@GDScript_annotation_@export_flags>`.
 
 Integers used as bit flags can store multiple ``true``/``false`` (boolean)
