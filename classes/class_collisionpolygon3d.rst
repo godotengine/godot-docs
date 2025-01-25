@@ -31,15 +31,19 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
-   | :ref:`float<class_float>`                           | :ref:`depth<class_CollisionPolygon3D_property_depth>`       | ``1.0``                  |
-   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon3D_property_disabled>` | ``false``                |
-   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
-   | :ref:`float<class_float>`                           | :ref:`margin<class_CollisionPolygon3D_property_margin>`     | ``0.04``                 |
-   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon3D_property_polygon>`   | ``PackedVector2Array()`` |
-   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
+   +-----------------------------------------------------+-------------------------------------------------------------------+--------------------------+
+   | :ref:`Color<class_Color>`                           | :ref:`debug_color<class_CollisionPolygon3D_property_debug_color>` | ``Color(0, 0, 0, 0)``    |
+   +-----------------------------------------------------+-------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`debug_fill<class_CollisionPolygon3D_property_debug_fill>`   | ``true``                 |
+   +-----------------------------------------------------+-------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`depth<class_CollisionPolygon3D_property_depth>`             | ``1.0``                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon3D_property_disabled>`       | ``false``                |
+   +-----------------------------------------------------+-------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`margin<class_CollisionPolygon3D_property_margin>`           | ``0.04``                 |
+   +-----------------------------------------------------+-------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon3D_property_polygon>`         | ``PackedVector2Array()`` |
+   +-----------------------------------------------------+-------------------------------------------------------------------+--------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -49,6 +53,42 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_CollisionPolygon3D_property_debug_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_CollisionPolygon3D_property_debug_color>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_debug_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_debug_color**\ (\ )
+
+The collision shape color that is displayed in the editor, or in the running project if **Debug > Visible Collision Shapes** is checked at the top of the editor.
+
+\ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 0)`` value documented here is a placeholder, and not the actual default debug color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CollisionPolygon3D_property_debug_fill:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debug_fill** = ``true`` :ref:`🔗<class_CollisionPolygon3D_property_debug_fill>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_enable_debug_fill**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_debug_fill**\ (\ )
+
+If ``true``, when the shape is displayed, it will show a solid fill color in addition to its wireframe.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_CollisionPolygon3D_property_depth:
 

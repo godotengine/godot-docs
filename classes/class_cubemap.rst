@@ -25,13 +25,13 @@ This resource is typically used as a uniform in custom shaders. Few core Godot m
 
 To create such a texture file yourself, reimport your image files using the Godot Editor import presets. The expected image order is X+, X-, Y+, Y-, Z+, Z- (in Godot's coordinate system, so Y+ is "up" and Z- is "forward"). You can use one of the following templates as a base:
 
-- `2×3 cubemap template (default layout option) <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/cubemap_template_2x3.webp>`__\ 
+- `2×3 cubemap template (default layout option) <https://raw.githubusercontent.com/godotengine/godot-docs/master/tutorials/assets_pipeline/img/cubemap_template_2x3.webp>`__\ 
 
-- `3×2 cubemap template <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/cubemap_template_3x2.webp>`__\ 
+- `3×2 cubemap template <https://raw.githubusercontent.com/godotengine/godot-docs/master/tutorials/assets_pipeline/img/cubemap_template_3x2.webp>`__\ 
 
-- `1×6 cubemap template <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/cubemap_template_1x6.webp>`__\ 
+- `1×6 cubemap template <https://raw.githubusercontent.com/godotengine/godot-docs/master/tutorials/assets_pipeline/img/cubemap_template_1x6.webp>`__\ 
 
-- `6×1 cubemap template <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/cubemap_template_6x1.webp>`__\ 
+- `6×1 cubemap template <https://raw.githubusercontent.com/godotengine/godot-docs/master/tutorials/assets_pipeline/img/cubemap_template_6x1.webp>`__\ 
 
 \ **Note:** Godot doesn't support using cubemaps in a :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`. To use a cubemap as a skybox, convert the default :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>` to a :ref:`ShaderMaterial<class_ShaderMaterial>` using the **Convert to ShaderMaterial** resource dropdown option, then replace its code with the following:
 
