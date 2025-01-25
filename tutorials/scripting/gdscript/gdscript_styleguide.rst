@@ -715,7 +715,7 @@ We suggest to organize GDScript code this way:
 
 ::
 
-    01. ``@tool``, ``@icon``, ``@static_unload``
+    01. @tool, @icon, @static_unload
     02. class_name
     03. extends
     04. ## doc comment
