@@ -30,9 +30,9 @@ This node draws a 2D polyline, i.e. a shape consisting of several points connect
 Tutorials
 ---------
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
 
-- `2.5D Demo <https://godotengine.org/asset-library/asset/583>`__
+- `2.5D Game Demo <https://godotengine.org/asset-library/asset/2783>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -107,7 +107,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **LineJointMode**:
+enum **LineJointMode**: :ref:`🔗<enum_Line2D_LineJointMode>`
 
 .. _class_Line2D_constant_LINE_JOINT_SHARP:
 
@@ -141,7 +141,7 @@ Makes the polyline's joints rounded, connecting the sides of the two segments wi
 
 .. rst-class:: classref-enumeration
 
-enum **LineCapMode**:
+enum **LineCapMode**: :ref:`🔗<enum_Line2D_LineCapMode>`
 
 .. _class_Line2D_constant_LINE_CAP_NONE:
 
@@ -175,7 +175,7 @@ Draws the line cap as a semicircle attached to the first/last segment.
 
 .. rst-class:: classref-enumeration
 
-enum **LineTextureMode**:
+enum **LineTextureMode**: :ref:`🔗<enum_Line2D_LineTextureMode>`
 
 .. _class_Line2D_constant_LINE_TEXTURE_NONE:
 
@@ -214,7 +214,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **antialiased** = ``false``
+:ref:`bool<class_bool>` **antialiased** = ``false`` :ref:`🔗<class_Line2D_property_antialiased>`
 
 .. rst-class:: classref-property-setget
 
@@ -233,7 +233,7 @@ If ``true``, the polyline's border will be anti-aliased.
 
 .. rst-class:: classref-property
 
-:ref:`LineCapMode<enum_Line2D_LineCapMode>` **begin_cap_mode** = ``0``
+:ref:`LineCapMode<enum_Line2D_LineCapMode>` **begin_cap_mode** = ``0`` :ref:`🔗<class_Line2D_property_begin_cap_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -250,7 +250,7 @@ The style of the beginning of the polyline, if :ref:`closed<class_Line2D_propert
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **closed** = ``false``
+:ref:`bool<class_bool>` **closed** = ``false`` :ref:`🔗<class_Line2D_property_closed>`
 
 .. rst-class:: classref-property-setget
 
@@ -271,7 +271,7 @@ If ``true`` and the polyline has more than 2 points, the last point and the firs
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **default_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **default_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Line2D_property_default_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -288,7 +288,7 @@ The color of the polyline. Will not be used if a gradient is set.
 
 .. rst-class:: classref-property
 
-:ref:`LineCapMode<enum_Line2D_LineCapMode>` **end_cap_mode** = ``0``
+:ref:`LineCapMode<enum_Line2D_LineCapMode>` **end_cap_mode** = ``0`` :ref:`🔗<class_Line2D_property_end_cap_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -305,7 +305,7 @@ The style of the end of the polyline, if :ref:`closed<class_Line2D_property_clos
 
 .. rst-class:: classref-property
 
-:ref:`Gradient<class_Gradient>` **gradient**
+:ref:`Gradient<class_Gradient>` **gradient** :ref:`🔗<class_Line2D_property_gradient>`
 
 .. rst-class:: classref-property-setget
 
@@ -322,7 +322,7 @@ The gradient is drawn through the whole line from start to finish. The :ref:`def
 
 .. rst-class:: classref-property
 
-:ref:`LineJointMode<enum_Line2D_LineJointMode>` **joint_mode** = ``0``
+:ref:`LineJointMode<enum_Line2D_LineJointMode>` **joint_mode** = ``0`` :ref:`🔗<class_Line2D_property_joint_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -339,7 +339,7 @@ The style of the connections between segments of the polyline. Use :ref:`LineJoi
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **points** = ``PackedVector2Array()``
+:ref:`PackedVector2Array<class_PackedVector2Array>` **points** = ``PackedVector2Array()`` :ref:`🔗<class_Line2D_property_points>`
 
 .. rst-class:: classref-property-setget
 
@@ -347,6 +347,8 @@ The style of the connections between segments of the polyline. Use :ref:`LineJoi
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points**\ (\ )
 
 The points of the polyline, interpreted in local 2D coordinates. Segments are drawn between the adjacent points in this array.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -356,7 +358,7 @@ The points of the polyline, interpreted in local 2D coordinates. Segments are dr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **round_precision** = ``8``
+:ref:`int<class_int>` **round_precision** = ``8`` :ref:`🔗<class_Line2D_property_round_precision>`
 
 .. rst-class:: classref-property-setget
 
@@ -373,7 +375,7 @@ The smoothness used for rounded joints and caps. Higher values result in smoothe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sharp_limit** = ``2.0``
+:ref:`float<class_float>` **sharp_limit** = ``2.0`` :ref:`🔗<class_Line2D_property_sharp_limit>`
 
 .. rst-class:: classref-property-setget
 
@@ -390,7 +392,7 @@ Determines the miter limit of the polyline. Normally, when :ref:`joint_mode<clas
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_Line2D_property_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -407,7 +409,7 @@ The texture used for the polyline. Uses :ref:`texture_mode<class_Line2D_property
 
 .. rst-class:: classref-property
 
-:ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **texture_mode** = ``0``
+:ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **texture_mode** = ``0`` :ref:`🔗<class_Line2D_property_texture_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -424,7 +426,7 @@ The style to render the :ref:`texture<class_Line2D_property_texture>` of the pol
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **width** = ``10.0``
+:ref:`float<class_float>` **width** = ``10.0`` :ref:`🔗<class_Line2D_property_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -441,14 +443,14 @@ The polyline's width.
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **width_curve**
+:ref:`Curve<class_Curve>` **width_curve** :ref:`🔗<class_Line2D_property_width_curve>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_curve**\ (\ )
 
-The polyline's width curve. The width of the polyline over its length will be equivalent to the value of the width curve over its domain.
+The polyline's width curve. The width of the polyline over its length will be equivalent to the value of the width curve over its domain. The width curve should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-section-separator
 
@@ -463,7 +465,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_point**\ (\ position\: :ref:`Vector2<class_Vector2>`, index\: :ref:`int<class_int>` = -1\ )
+|void| **add_point**\ (\ position\: :ref:`Vector2<class_Vector2>`, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_Line2D_method_add_point>`
 
 Adds a point with the specified ``position`` relative to the polyline's own position. If no ``index`` is provided, the new point will be added to the end of the points array.
 
@@ -477,7 +479,7 @@ If ``index`` is given, the new point is inserted before the existing point ident
 
 .. rst-class:: classref-method
 
-|void| **clear_points**\ (\ )
+|void| **clear_points**\ (\ ) :ref:`🔗<class_Line2D_method_clear_points>`
 
 Removes all points from the polyline, making it empty.
 
@@ -489,7 +491,7 @@ Removes all points from the polyline, making it empty.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_point_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_point_count**\ (\ ) |const| :ref:`🔗<class_Line2D_method_get_point_count>`
 
 Returns the number of points in the polyline.
 
@@ -501,7 +503,7 @@ Returns the number of points in the polyline.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_point_position**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_point_position**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Line2D_method_get_point_position>`
 
 Returns the position of the point at index ``index``.
 
@@ -513,7 +515,7 @@ Returns the position of the point at index ``index``.
 
 .. rst-class:: classref-method
 
-|void| **remove_point**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_point**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Line2D_method_remove_point>`
 
 Removes the point at index ``index`` from the polyline.
 
@@ -525,7 +527,7 @@ Removes the point at index ``index`` from the polyline.
 
 .. rst-class:: classref-method
 
-|void| **set_point_position**\ (\ index\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_point_position**\ (\ index\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Line2D_method_set_point_position>`
 
 Overwrites the position of the point at the given ``index`` with the supplied ``position``.
 

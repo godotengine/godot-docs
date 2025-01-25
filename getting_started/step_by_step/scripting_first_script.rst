@@ -101,7 +101,8 @@ the following line of code:
  .. code-tab:: csharp C#
 
     using Godot;
-
+    using System;
+    
     public partial class MySprite2D : Sprite2D
     {
     }
@@ -245,7 +246,7 @@ our sprite's rotation every frame. Here, ``rotation`` is a property inherited
 from the class ``Node2D``, which ``Sprite2D`` extends. It controls the rotation
 of our node and works with radians.
 
-.. tip:: In the code editor, you can ctrl-click on any built-in property or
+.. tip:: In the code editor, you can Ctrl-click (Cmd-click on MacOS) on any built-in property or
          function like ``position``, ``rotation``, or ``_process`` to open the
          corresponding documentation in a new tab.
 
@@ -327,7 +328,8 @@ Here is the complete ``sprite_2d.gd`` file for reference.
  .. code-tab:: csharp C#
 
     using Godot;
-
+    using System;
+    
     public partial class MySprite2D : Sprite2D
     {
         private int _speed = 400;

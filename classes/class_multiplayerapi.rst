@@ -91,7 +91,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**connected_to_server**\ (\ )
+**connected_to_server**\ (\ ) :ref:`🔗<class_MultiplayerAPI_signal_connected_to_server>`
 
 Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` successfully connected to a server. Only emitted on clients.
 
@@ -103,7 +103,7 @@ Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_p
 
 .. rst-class:: classref-signal
 
-**connection_failed**\ (\ )
+**connection_failed**\ (\ ) :ref:`🔗<class_MultiplayerAPI_signal_connection_failed>`
 
 Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` fails to establish a connection to a server. Only emitted on clients.
 
@@ -115,7 +115,7 @@ Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_p
 
 .. rst-class:: classref-signal
 
-**peer_connected**\ (\ id\: :ref:`int<class_int>`\ )
+**peer_connected**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MultiplayerAPI_signal_peer_connected>`
 
 Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
 
@@ -127,7 +127,7 @@ Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_p
 
 .. rst-class:: classref-signal
 
-**peer_disconnected**\ (\ id\: :ref:`int<class_int>`\ )
+**peer_disconnected**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MultiplayerAPI_signal_peer_disconnected>`
 
 Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` disconnects from a peer. Clients get notified when other clients disconnect from the same server.
 
@@ -139,7 +139,7 @@ Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_p
 
 .. rst-class:: classref-signal
 
-**server_disconnected**\ (\ )
+**server_disconnected**\ (\ ) :ref:`🔗<class_MultiplayerAPI_signal_server_disconnected>`
 
 Emitted when this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` disconnects from server. Only emitted on clients.
 
@@ -156,7 +156,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **RPCMode**:
+enum **RPCMode**: :ref:`🔗<enum_MultiplayerAPI_RPCMode>`
 
 .. _class_MultiplayerAPI_constant_RPC_MODE_DISABLED:
 
@@ -195,7 +195,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`MultiplayerPeer<class_MultiplayerPeer>` **multiplayer_peer**
+:ref:`MultiplayerPeer<class_MultiplayerPeer>` **multiplayer_peer** :ref:`🔗<class_MultiplayerAPI_property_multiplayer_peer>`
 
 .. rst-class:: classref-property-setget
 
@@ -217,7 +217,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`MultiplayerAPI<class_MultiplayerAPI>` **create_default_interface**\ (\ ) |static|
+:ref:`MultiplayerAPI<class_MultiplayerAPI>` **create_default_interface**\ (\ ) |static| :ref:`🔗<class_MultiplayerAPI_method_create_default_interface>`
 
 Returns a new instance of the default MultiplayerAPI.
 
@@ -229,7 +229,7 @@ Returns a new instance of the default MultiplayerAPI.
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_default_interface**\ (\ ) |static|
+:ref:`StringName<class_StringName>` **get_default_interface**\ (\ ) |static| :ref:`🔗<class_MultiplayerAPI_method_get_default_interface>`
 
 Returns the default MultiplayerAPI implementation class name. This is usually ``"SceneMultiplayer"`` when :ref:`SceneMultiplayer<class_SceneMultiplayer>` is available. See :ref:`set_default_interface<class_MultiplayerAPI_method_set_default_interface>`.
 
@@ -241,7 +241,7 @@ Returns the default MultiplayerAPI implementation class name. This is usually ``
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_peers**\ (\ )
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_peers**\ (\ ) :ref:`🔗<class_MultiplayerAPI_method_get_peers>`
 
 Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>`.
 
@@ -253,11 +253,11 @@ Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`multi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_remote_sender_id**\ (\ )
+:ref:`int<class_int>` **get_remote_sender_id**\ (\ ) :ref:`🔗<class_MultiplayerAPI_method_get_remote_sender_id>`
 
 Returns the sender's peer ID for the RPC currently being executed.
 
-\ **Note:** If not inside an RPC this method will return 0.
+\ **Note:** This method returns ``0`` when called outside of an RPC. As such, the original peer ID may be lost when code execution is delayed (such as with GDScript's ``await`` keyword).
 
 .. rst-class:: classref-item-separator
 
@@ -267,7 +267,7 @@ Returns the sender's peer ID for the RPC currently being executed.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_unique_id**\ (\ )
+:ref:`int<class_int>` **get_unique_id**\ (\ ) :ref:`🔗<class_MultiplayerAPI_method_get_unique_id>`
 
 Returns the unique peer ID of this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>`.
 
@@ -279,7 +279,7 @@ Returns the unique peer ID of this MultiplayerAPI's :ref:`multiplayer_peer<class
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_multiplayer_peer**\ (\ )
+:ref:`bool<class_bool>` **has_multiplayer_peer**\ (\ ) :ref:`🔗<class_MultiplayerAPI_method_has_multiplayer_peer>`
 
 Returns ``true`` if there is a :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` set.
 
@@ -291,7 +291,7 @@ Returns ``true`` if there is a :ref:`multiplayer_peer<class_MultiplayerAPI_prope
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_server**\ (\ )
+:ref:`bool<class_bool>` **is_server**\ (\ ) :ref:`🔗<class_MultiplayerAPI_method_is_server>`
 
 Returns ``true`` if this MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` is valid and in server mode (listening for connections).
 
@@ -303,7 +303,7 @@ Returns ``true`` if this MultiplayerAPI's :ref:`multiplayer_peer<class_Multiplay
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **object_configuration_add**\ (\ object\: :ref:`Object<class_Object>`, configuration\: :ref:`Variant<class_Variant>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **object_configuration_add**\ (\ object\: :ref:`Object<class_Object>`, configuration\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_MultiplayerAPI_method_object_configuration_add>`
 
 Notifies the MultiplayerAPI of a new ``configuration`` for the given ``object``. This method is used internally by :ref:`SceneTree<class_SceneTree>` to configure the root path for this MultiplayerAPI (passing ``null`` and a valid :ref:`NodePath<class_NodePath>` as ``configuration``). This method can be further used by MultiplayerAPI implementations to provide additional features, refer to specific implementation (e.g. :ref:`SceneMultiplayer<class_SceneMultiplayer>`) for details on how they use it.
 
@@ -317,7 +317,7 @@ Notifies the MultiplayerAPI of a new ``configuration`` for the given ``object``.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **object_configuration_remove**\ (\ object\: :ref:`Object<class_Object>`, configuration\: :ref:`Variant<class_Variant>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **object_configuration_remove**\ (\ object\: :ref:`Object<class_Object>`, configuration\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_MultiplayerAPI_method_object_configuration_remove>`
 
 Notifies the MultiplayerAPI to remove a ``configuration`` for the given ``object``. This method is used internally by :ref:`SceneTree<class_SceneTree>` to configure the root path for this MultiplayerAPI (passing ``null`` and an empty :ref:`NodePath<class_NodePath>` as ``configuration``). This method can be further used by MultiplayerAPI implementations to provide additional features, refer to specific implementation (e.g. :ref:`SceneMultiplayer<class_SceneMultiplayer>`) for details on how they use it.
 
@@ -331,7 +331,7 @@ Notifies the MultiplayerAPI to remove a ``configuration`` for the given ``object
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **poll**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **poll**\ (\ ) :ref:`🔗<class_MultiplayerAPI_method_poll>`
 
 Method used for polling the MultiplayerAPI. You only need to worry about this if you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_property_multiplayer_poll>` to ``false``. By default, :ref:`SceneTree<class_SceneTree>` will poll its MultiplayerAPI(s) for you.
 
@@ -345,11 +345,11 @@ Method used for polling the MultiplayerAPI. You only need to worry about this if
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **rpc**\ (\ peer\: :ref:`int<class_int>`, object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, arguments\: :ref:`Array<class_Array>` = []\ )
+:ref:`Error<enum_@GlobalScope_Error>` **rpc**\ (\ peer\: :ref:`int<class_int>`, object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, arguments\: :ref:`Array<class_Array>` = []\ ) :ref:`🔗<class_MultiplayerAPI_method_rpc>`
 
 Sends an RPC to the target ``peer``. The given ``method`` will be called on the remote ``object`` with the provided ``arguments``. The RPC may also be called locally depending on the implementation and RPC configuration. See :ref:`Node.rpc<class_Node_method_rpc>` and :ref:`Node.rpc_config<class_Node_method_rpc_config>`.
 
-\ **Note:** Prefer using :ref:`Node.rpc<class_Node_method_rpc>`, :ref:`Node.rpc_id<class_Node_method_rpc_id>`, or ``my_method.rpc(peer, arg1, arg2, ...)`` (in GDScript), since they are faster. This method is mostly useful in conjunction with :ref:`MultiplayerAPIExtension<class_MultiplayerAPIExtension>` when augmenting or replacing the multiplayer capabilities.
+\ **Note:** Prefer using :ref:`Node.rpc<class_Node_method_rpc>`, :ref:`Node.rpc_id<class_Node_method_rpc_id>`, or ``my_method.rpc(peer, arg1, arg2, ...)`` (in GDScript), since they are faster. This method is mostly useful in conjunction with :ref:`MultiplayerAPIExtension<class_MultiplayerAPIExtension>` when extending or replacing the multiplayer capabilities.
 
 .. rst-class:: classref-item-separator
 
@@ -359,7 +359,7 @@ Sends an RPC to the target ``peer``. The given ``method`` will be called on the 
 
 .. rst-class:: classref-method
 
-|void| **set_default_interface**\ (\ interface_name\: :ref:`StringName<class_StringName>`\ ) |static|
+|void| **set_default_interface**\ (\ interface_name\: :ref:`StringName<class_StringName>`\ ) |static| :ref:`🔗<class_MultiplayerAPI_method_set_default_interface>`
 
 Sets the default MultiplayerAPI implementation class. This method can be used by modules and extensions to configure which implementation will be used by :ref:`SceneTree<class_SceneTree>` when the engine starts.
 

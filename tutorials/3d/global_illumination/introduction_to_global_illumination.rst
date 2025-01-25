@@ -24,7 +24,7 @@ being reflected back onto the rest of the scene.
 Global illumination is composed of several key concepts:
 
 Indirect diffuse lighting
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the lighting that does not change depending on the camera's angle.
 There are two main sources of indirect diffuse lighting:
@@ -64,7 +64,7 @@ it when targeting low-end hardware.
     limitations documentation for ways to reduce this effect.
 
 Specular lighting
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Specular lighting is also referred to as *reflections*.
 This is the lighting that changes in intensity depending on the camera's angle.
@@ -112,7 +112,7 @@ there are several criteria to keep in mind:
 Here's a comparison of all the global illumination techniques available in Godot:
 
 Performance
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 In order of performance from fastest to slowest:
 
@@ -121,7 +121,7 @@ In order of performance from fastest to slowest:
   - ReflectionProbes with their update mode set to **Always** are much more
     expensive than probes with their update mode set to **Once** (the default).
     Suited for integrated graphics when using the **Once** update mode.
-    *Available when using the Forward Mobile backend. Will be available in the Compatibility backend in later releases.*
+    *Available in all renderers.*
 
 - **LightmapGI:**
 
@@ -131,7 +131,8 @@ In order of performance from fastest to slowest:
     Directional information can be enabled before baking to improve visuals at
     a small performance cost (and at the cost of larger file sizes).
     Suited for integrated graphics.
-    *Available when using the Forward Mobile backend. Will be available in the Compatibility backend in later releases.*
+    *Available in all renderers. However, baking lightmaps requires hardware
+    with RenderingDevice support.*
 
 - **VoxelGI:**
 
@@ -139,14 +140,14 @@ In order of performance from fastest to slowest:
     The VoxelGI rendering quality can be adjusted in the Project Settings.
     The rendering can optionally be performed at half resolution
     (and then linearly scaled) to improve performance significantly.
-    **Not available** *when using the Forward Mobile or Compatibility backends.*
+    **Not available** *when using the Mobile or Compatibility renderers.*
 
 - **Screen-space indirect lighting (SSIL):**
 
   - The SSIL quality and number of blur passes can be adjusted in the Project Settings.
     By default, SSIL rendering is performed at half resolution (and then linearly scaled)
     to ensure a reasonable performance level.
-    **Not available** *when using the Forward Mobile or Compatibility backends.*
+    **Not available** *when using the Mobile or Compatibility renderers.*
 
 - **SDFGI:**
 
@@ -154,10 +155,10 @@ In order of performance from fastest to slowest:
     The number of rays thrown per frame can be adjusted in the Project Settings.
     The rendering can optionally be performed at half resolution
     (and then linearly scaled) to improve performance significantly.
-    **Not available** *when using the Forward Mobile or Compatibility backends.*
+    **Not available** *when using the Mobile or Compatibility renderers.*
 
 Visuals
-^^^^^^^
+~~~~~~~
 
 For comparison, here's a 3D scene with no global illumination options used:
 
@@ -241,7 +242,7 @@ Here's how Godot's various global illumination techniques compare:
        ReflectionProbe in action (without any other GI technique). Notice the reflective sphere.
 
 Real-time ability
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 - **VoxelGI:** |good| Fully real-time.
 
@@ -271,7 +272,7 @@ Real-time ability
 - **LightmapGI:** |bad| Baked, and therefore not real-time.
 
   - Both indirect lighting and SH reflections are baked and can't be changed at
-    run-time. Real-time GI must be
+    runtime. Real-time GI must be
     :ref:`simulated via other means <doc_faking_global_illumination>`,
     such as real-time positional lights. Dynamic objects receive indirect lighting
     via light probes, which can be placed automatically or manually by the user
@@ -285,11 +286,11 @@ Real-time ability
     is set to **Always** (which is expensive).
 
   - Indirect lighting must be configured manually by the user, but can be changed
-    at run-time without causing an expensive computation to happen behind the scenes.
+    at runtime without causing an expensive computation to happen behind the scenes.
     This makes ReflectionProbes viable for procedurally generated levels.
 
 User work needed
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 - **VoxelGI:** One or more VoxelGI nodes need to be created and baked.
 
@@ -324,7 +325,7 @@ User work needed
 .. |bad| image:: img/score_bad.webp
 
 Summary
-^^^^^^^
+~~~~~~~
 
 If you are unsure about which GI technique to use:
 
@@ -348,7 +349,7 @@ If you are unsure about which GI technique to use:
 .. _doc_introduction_to_global_illumination_gi_mode_recommendations:
 
 Which global illumination mode should I use on meshes and lights?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Regardless of which global illumination technique you use, there is no
 universally "better" global illumination mode. Still, here are some

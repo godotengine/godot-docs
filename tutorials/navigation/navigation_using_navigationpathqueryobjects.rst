@@ -17,7 +17,7 @@ for the query and a ``NavigationPathQueryResult`` that receives (regular) update
 :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` respectively.
 
 2D and 3D versions of ``NavigationPathQueryResult`` are available as
-:ref:`NavigationPathQuerResult2D<class_NavigationPathQueryResult2D>` and
+:ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>` and
 :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` respectively.
 
 Both parameters and result are used as a pair with the ``NavigationServer.query_path()`` function.

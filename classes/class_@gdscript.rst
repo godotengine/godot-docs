@@ -17,9 +17,9 @@ Built-in GDScript constants, functions, and annotations.
 Description
 -----------
 
-A list of GDScript-specific utility functions and annotations accessible from any script.
+A list of utility functions and annotations accessible from any script written in GDScript.
 
-For the list of the global functions and constants see :ref:`@GlobalScope<class_@GlobalScope>`.
+For the list of global functions and constants that can be accessed in any scripting language, see :ref:`@GlobalScope<class_@GlobalScope>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -43,7 +43,7 @@ Methods
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`char<class_@GDScript_method_char>`\ (\ char\: :ref:`int<class_int>`\ )                                                                                             |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`convert<class_@GDScript_method_convert>`\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`int<class_int>`\ )                                                 |
+   | :ref:`Variant<class_Variant>`       | :ref:`convert<class_@GDScript_method_convert>`\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ )                   |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Object<class_Object>`         | :ref:`dict_to_inst<class_@GDScript_method_dict_to_inst>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ )                                                         |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,7 +81,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**PI** = ``3.14159265358979``
+**PI** = ``3.14159265358979`` :ref:`🔗<class_@GDScript_constant_PI>`
 
 Constant that represents how many times the diameter of a circle fits around its perimeter. This is equivalent to ``TAU / 2``, or 180 degrees in rotations.
 
@@ -89,7 +89,7 @@ Constant that represents how many times the diameter of a circle fits around its
 
 .. rst-class:: classref-constant
 
-**TAU** = ``6.28318530717959``
+**TAU** = ``6.28318530717959`` :ref:`🔗<class_@GDScript_constant_TAU>`
 
 The circle constant, the circumference of the unit circle in radians. This is equivalent to ``PI * 2``, or 360 degrees in rotations.
 
@@ -97,7 +97,7 @@ The circle constant, the circumference of the unit circle in radians. This is eq
 
 .. rst-class:: classref-constant
 
-**INF** = ``inf``
+**INF** = ``inf`` :ref:`🔗<class_@GDScript_constant_INF>`
 
 Positive floating-point infinity. This is the result of floating-point division when the divisor is ``0.0``. For negative infinity, use ``-INF``. Dividing by ``-0.0`` will result in negative infinity if the numerator is positive, so dividing by ``0.0`` is not the same as dividing by ``-0.0`` (despite ``0.0 == -0.0`` returning ``true``).
 
@@ -107,7 +107,7 @@ Positive floating-point infinity. This is the result of floating-point division 
 
 .. rst-class:: classref-constant
 
-**NAN** = ``nan``
+**NAN** = ``nan`` :ref:`🔗<class_@GDScript_constant_NAN>`
 
 "Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that ``!=`` always returns ``true``, while other comparison operators always return ``false``. This is true even when comparing with itself (``NAN == NAN`` returns ``false`` and ``NAN != NAN`` returns ``true``). It is returned by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
 
@@ -124,7 +124,7 @@ Annotations
 
 .. rst-class:: classref-annotation
 
-**@export**\ (\ )
+**@export**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export>`
 
 Mark the following property as exported (editable in the Inspector dock and saved to disk). To control the type of the exported property, use the type hint notation.
 
@@ -158,7 +158,7 @@ Mark the following property as exported (editable in the Inspector dock and save
     @export var image_array: Array[Image]
     @export var node_array: Array[Node]
 
-\ **Note:** Custom resources and nodes must be registered as global classes using ``class_name``.
+\ **Note:** Custom resources and nodes should be registered as global classes using ``class_name``, since the Inspector currently only supports global classes. Otherwise, a less specific type will be exported instead.
 
 \ **Note:** Node export is only supported in :ref:`Node<class_Node>`-derived classes and has a number of other limitations.
 
@@ -170,7 +170,7 @@ Mark the following property as exported (editable in the Inspector dock and save
 
 .. rst-class:: classref-annotation
 
-**@export_category**\ (\ name\: :ref:`String<class_String>`\ )
+**@export_category**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GDScript_annotation_@export_category>`
 
 Define a new category for the following exported properties. This helps to organize properties in the Inspector dock.
 
@@ -192,7 +192,7 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_CATEGORY<class_@GlobalScope_constant_
 
 .. rst-class:: classref-annotation
 
-**@export_color_no_alpha**\ (\ )
+**@export_color_no_alpha**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_color_no_alpha>`
 
 Export a :ref:`Color<class_Color>`, :ref:`Array<class_Array>`\ \[:ref:`Color<class_Color>`\ \], or :ref:`PackedColorArray<class_PackedColorArray>` property without allowing its transparency (:ref:`Color.a<class_Color_property_a>`) to be edited.
 
@@ -211,13 +211,15 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_cons
 
 .. rst-class:: classref-annotation
 
-**@export_custom**\ (\ hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_string\: :ref:`String<class_String>`, usage\: |bitfield|\[:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`\] = 6\ )
+**@export_custom**\ (\ hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_string\: :ref:`String<class_String>`, usage\: |bitfield|\[:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`\] = 6\ ) :ref:`🔗<class_@GDScript_annotation_@export_custom>`
 
-Allows you to set a custom hint, hint string, and usage flags for the exported property. Note that there's no validation done in GDScript, it will just pass the hint along to the editor.
+Allows you to set a custom hint, hint string, and usage flags for the exported property. Note that there's no validation done in GDScript, it will just pass the parameters to the editor.
 
 ::
 
     @export_custom(PROPERTY_HINT_NONE, "suffix:m") var suffix: Vector3
+
+\ **Note:** Regardless of the ``usage`` value, the :ref:`@GlobalScope.PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` flag is always added, as with any explicitly declared script variable.
 
 .. rst-class:: classref-item-separator
 
@@ -227,7 +229,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 .. rst-class:: classref-annotation
 
-**@export_dir**\ (\ )
+**@export_dir**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_dir>`
 
 Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property as a path to a directory. The path will be limited to the project folder and its subfolders. See :ref:`@export_global_dir<class_@GDScript_annotation_@export_global_dir>` to allow picking from the entire filesystem.
 
@@ -246,7 +248,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_DIR<class_@GlobalScope_constant_PROPER
 
 .. rst-class:: classref-annotation
 
-**@export_enum**\ (\ names\: :ref:`String<class_String>`, ...\ ) |vararg|
+**@export_enum**\ (\ names\: :ref:`String<class_String>`, ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_enum>`
 
 Export an :ref:`int<class_int>`, :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`int<class_int>`\ \], :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, or :ref:`PackedStringArray<class_PackedStringArray>` property as an enumerated list of options (or an array of options). If the property is an :ref:`int<class_int>`, then the index of the value is stored, in the same order the values are provided. You can add explicit values using a colon. If the property is a :ref:`String<class_String>`, then the value is stored.
 
@@ -285,7 +287,7 @@ If you want to use named GDScript enums, then use :ref:`@export<class_@GDScript_
 
 .. rst-class:: classref-annotation
 
-**@export_exp_easing**\ (\ hints\: :ref:`String<class_String>` = "", ...\ ) |vararg|
+**@export_exp_easing**\ (\ hints\: :ref:`String<class_String>` = "", ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_exp_easing>`
 
 Export a floating-point property with an easing editor widget. Additional hints can be provided to adjust the behavior of the widget. ``"attenuation"`` flips the curve, which makes it more intuitive for editing attenuation properties. ``"positive_only"`` limits values to only be greater than or equal to zero.
 
@@ -306,7 +308,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_EXP_EASING<class_@GlobalScope_constant
 
 .. rst-class:: classref-annotation
 
-**@export_file**\ (\ filter\: :ref:`String<class_String>` = "", ...\ ) |vararg|
+**@export_file**\ (\ filter\: :ref:`String<class_String>` = "", ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_file>`
 
 Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property as a path to a file. The path will be limited to the project folder and its subfolders. See :ref:`@export_global_file<class_@GDScript_annotation_@export_global_file>` to allow picking from the entire filesystem.
 
@@ -328,7 +330,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPE
 
 .. rst-class:: classref-annotation
 
-**@export_flags**\ (\ names\: :ref:`String<class_String>`, ...\ ) |vararg|
+**@export_flags**\ (\ names\: :ref:`String<class_String>`, ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_flags>`
 
 Export an integer property as a bit flag field. This allows to store several "checked" or ``true`` values with one property, and comfortably select them from the Inspector dock.
 
@@ -373,7 +375,7 @@ You can also use the annotation on :ref:`Array<class_Array>`\ \[:ref:`int<class_
 
 .. rst-class:: classref-annotation
 
-**@export_flags_2d_navigation**\ (\ )
+**@export_flags_2d_navigation**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_flags_2d_navigation>`
 
 Export an integer property as a bit flag field for 2D navigation layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/2d_navigation/layer_1<class_ProjectSettings_property_layer_names/2d_navigation/layer_1>`.
 
@@ -392,7 +394,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_NAVIGATION<class_@GlobalScop
 
 .. rst-class:: classref-annotation
 
-**@export_flags_2d_physics**\ (\ )
+**@export_flags_2d_physics**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_flags_2d_physics>`
 
 Export an integer property as a bit flag field for 2D physics layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/2d_physics/layer_1<class_ProjectSettings_property_layer_names/2d_physics/layer_1>`.
 
@@ -411,7 +413,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_PHYSICS<class_@GlobalScope_c
 
 .. rst-class:: classref-annotation
 
-**@export_flags_2d_render**\ (\ )
+**@export_flags_2d_render**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_flags_2d_render>`
 
 Export an integer property as a bit flag field for 2D render layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/2d_render/layer_1<class_ProjectSettings_property_layer_names/2d_render/layer_1>`.
 
@@ -430,7 +432,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_RENDER<class_@GlobalScope_co
 
 .. rst-class:: classref-annotation
 
-**@export_flags_3d_navigation**\ (\ )
+**@export_flags_3d_navigation**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_flags_3d_navigation>`
 
 Export an integer property as a bit flag field for 3D navigation layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/3d_navigation/layer_1<class_ProjectSettings_property_layer_names/3d_navigation/layer_1>`.
 
@@ -449,7 +451,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_NAVIGATION<class_@GlobalScop
 
 .. rst-class:: classref-annotation
 
-**@export_flags_3d_physics**\ (\ )
+**@export_flags_3d_physics**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_flags_3d_physics>`
 
 Export an integer property as a bit flag field for 3D physics layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/3d_physics/layer_1<class_ProjectSettings_property_layer_names/3d_physics/layer_1>`.
 
@@ -468,7 +470,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_PHYSICS<class_@GlobalScope_c
 
 .. rst-class:: classref-annotation
 
-**@export_flags_3d_render**\ (\ )
+**@export_flags_3d_render**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_flags_3d_render>`
 
 Export an integer property as a bit flag field for 3D render layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/3d_render/layer_1<class_ProjectSettings_property_layer_names/3d_render/layer_1>`.
 
@@ -487,7 +489,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_RENDER<class_@GlobalScope_co
 
 .. rst-class:: classref-annotation
 
-**@export_flags_avoidance**\ (\ )
+**@export_flags_avoidance**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_flags_avoidance>`
 
 Export an integer property as a bit flag field for navigation avoidance layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/avoidance/layer_1<class_ProjectSettings_property_layer_names/avoidance/layer_1>`.
 
@@ -506,7 +508,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_AVOIDANCE<class_@GlobalScope_co
 
 .. rst-class:: classref-annotation
 
-**@export_global_dir**\ (\ )
+**@export_global_dir**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_global_dir>`
 
 Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property as an absolute path to a directory. The path can be picked from the entire filesystem. See :ref:`@export_dir<class_@GDScript_annotation_@export_dir>` to limit it to the project folder and its subfolders.
 
@@ -525,7 +527,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_DIR<class_@GlobalScope_constant
 
 .. rst-class:: classref-annotation
 
-**@export_global_file**\ (\ filter\: :ref:`String<class_String>` = "", ...\ ) |vararg|
+**@export_global_file**\ (\ filter\: :ref:`String<class_String>` = "", ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_global_file>`
 
 Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property as an absolute path to a file. The path can be picked from the entire filesystem. See :ref:`@export_file<class_@GDScript_annotation_@export_file>` to limit it to the project folder and its subfolders.
 
@@ -547,7 +549,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_FILE<class_@GlobalScope_constan
 
 .. rst-class:: classref-annotation
 
-**@export_group**\ (\ name\: :ref:`String<class_String>`, prefix\: :ref:`String<class_String>` = ""\ )
+**@export_group**\ (\ name\: :ref:`String<class_String>`, prefix\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_@GDScript_annotation_@export_group>`
 
 Define a new group for the following exported properties. This helps to organize properties in the Inspector dock. Groups can be added with an optional ``prefix``, which would make group to only consider properties that have this prefix. The grouping will break on the first property that doesn't have a prefix. The prefix is also removed from the property's name in the Inspector dock.
 
@@ -578,7 +580,7 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_GROUP<class_@GlobalScope_constant_PRO
 
 .. rst-class:: classref-annotation
 
-**@export_multiline**\ (\ )
+**@export_multiline**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_multiline>`
 
 Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], :ref:`PackedStringArray<class_PackedStringArray>`, :ref:`Dictionary<class_Dictionary>` or :ref:`Array<class_Array>`\ \[:ref:`Dictionary<class_Dictionary>`\ \] property with a large :ref:`TextEdit<class_TextEdit>` widget instead of a :ref:`LineEdit<class_LineEdit>`. This adds support for multiline content and makes it easier to edit large amount of text stored in the property.
 
@@ -597,7 +599,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_MULTILINE_TEXT<class_@GlobalScope_cons
 
 .. rst-class:: classref-annotation
 
-**@export_node_path**\ (\ type\: :ref:`String<class_String>` = "", ...\ ) |vararg|
+**@export_node_path**\ (\ type\: :ref:`String<class_String>` = "", ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_node_path>`
 
 Export a :ref:`NodePath<class_NodePath>` or :ref:`Array<class_Array>`\ \[:ref:`NodePath<class_NodePath>`\ \] property with a filter for allowed node types.
 
@@ -618,7 +620,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_NODE_PATH_VALID_TYPES<class_@GlobalSco
 
 .. rst-class:: classref-annotation
 
-**@export_placeholder**\ (\ placeholder\: :ref:`String<class_String>`\ )
+**@export_placeholder**\ (\ placeholder\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GDScript_annotation_@export_placeholder>`
 
 Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property with a placeholder text displayed in the editor widget when no value is present.
 
@@ -637,7 +639,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_PLACEHOLDER_TEXT<class_@GlobalScope_co
 
 .. rst-class:: classref-annotation
 
-**@export_range**\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`, step\: :ref:`float<class_float>` = 1.0, extra_hints\: :ref:`String<class_String>` = "", ...\ ) |vararg|
+**@export_range**\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`, step\: :ref:`float<class_float>` = 1.0, extra_hints\: :ref:`String<class_String>` = "", ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_range>`
 
 Export an :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Array<class_Array>`\ \[:ref:`int<class_int>`\ \], :ref:`Array<class_Array>`\ \[:ref:`float<class_float>`\ \], :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, :ref:`PackedFloat32Array<class_PackedFloat32Array>`, or :ref:`PackedFloat64Array<class_PackedFloat64Array>` property as a range value. The range must be defined by ``min`` and ``max``, as well as an optional ``step`` and a variety of extra hints. The ``step`` defaults to ``1`` for integer properties. For floating-point numbers this value depends on your :ref:`EditorSettings.interface/inspector/default_float_step<class_EditorSettings_property_interface/inspector/default_float_step>` setting.
 
@@ -669,7 +671,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_RANGE<class_@GlobalScope_constant_PROP
 
 .. rst-class:: classref-annotation
 
-**@export_storage**\ (\ )
+**@export_storage**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_storage>`
 
 Export a property with :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag. The property is not displayed in the editor, but it is serialized and stored in the scene or resource file. This can be useful for :ref:`@tool<class_@GDScript_annotation_@tool>` scripts. Also the property value is copied when :ref:`Resource.duplicate<class_Resource_method_duplicate>` or :ref:`Node.duplicate<class_Node_method_duplicate>` is called, unlike non-exported variables.
 
@@ -687,7 +689,7 @@ Export a property with :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalSc
 
 .. rst-class:: classref-annotation
 
-**@export_subgroup**\ (\ name\: :ref:`String<class_String>`, prefix\: :ref:`String<class_String>` = ""\ )
+**@export_subgroup**\ (\ name\: :ref:`String<class_String>`, prefix\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_@GDScript_annotation_@export_subgroup>`
 
 Define a new subgroup for the following exported properties. This helps to organize properties in the Inspector dock. Subgroups work exactly like groups, except they need a parent group to exist. See :ref:`@export_group<class_@GDScript_annotation_@export_group>`.
 
@@ -703,7 +705,67 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
     @export var car_label = "Speedy"
     @export var car_number = 3
 
-\ **Note:** Subgroups cannot be nested, they only provide one extra level of depth. Just like the next group ends the previous group, so do the subsequent subgroups.
+\ **Note:** Subgroups cannot be nested, but you can use the slash separator (``/``) to achieve the desired effect:
+
+::
+
+    @export_group("Car Properties")
+    @export_subgroup("Wheels", "wheel_")
+    @export_subgroup("Wheels/Front", "front_wheel_")
+    @export var front_wheel_strength = 10
+    @export var front_wheel_mobility = 5
+    @export_subgroup("Wheels/Rear", "rear_wheel_")
+    @export var rear_wheel_strength = 8
+    @export var rear_wheel_mobility = 3
+    @export_subgroup("Wheels", "wheel_")
+    @export var wheel_material: PhysicsMaterial
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@export_tool_button:
+
+.. rst-class:: classref-annotation
+
+**@export_tool_button**\ (\ text\: :ref:`String<class_String>`, icon\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_@GDScript_annotation_@export_tool_button>`
+
+Export a :ref:`Callable<class_Callable>` property as a clickable button with the label ``text``. When the button is pressed, the callable is called.
+
+If ``icon`` is specified, it is used to fetch an icon for the button via :ref:`Control.get_theme_icon<class_Control_method_get_theme_icon>`, from the ``"EditorIcons"`` theme type. If ``icon`` is omitted, the default ``"Callable"`` icon is used instead.
+
+Consider using the :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` to allow the action to be reverted safely.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_TOOL_BUTTON<class_@GlobalScope_constant_PROPERTY_HINT_TOOL_BUTTON>`.
+
+::
+
+    @tool
+    extends Sprite2D
+    
+    @export_tool_button("Hello") var hello_action = hello
+    @export_tool_button("Randomize the color!", "ColorRect")
+    var randomize_color_action = randomize_color
+    
+    func hello():
+        print("Hello world!")
+    
+    func randomize_color():
+        var undo_redo = EditorInterface.get_editor_undo_redo()
+        undo_redo.create_action("Randomized Sprite2D Color")
+        undo_redo.add_do_property(self, &"self_modulate", Color(randf(), randf(), randf()))
+        undo_redo.add_undo_property(self, &"self_modulate", self_modulate)
+        undo_redo.commit_action()
+
+\ **Note:** The property is exported without the :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag because a :ref:`Callable<class_Callable>` cannot be properly serialized and stored in a file.
+
+\ **Note:** In an exported project neither :ref:`EditorInterface<class_EditorInterface>` nor :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` exist, which may cause some scripts to break. To prevent this, you can use :ref:`Engine.get_singleton<class_Engine_method_get_singleton>` and omit the static type from the variable declaration:
+
+::
+
+    var undo_redo = Engine.get_singleton(&"EditorInterface").get_editor_undo_redo()
+
+\ **Note:** Avoid storing lambda callables in member variables of :ref:`RefCounted<class_RefCounted>`-based classes (e.g. resources), as this can lead to memory leaks. Use only method callables and optionally :ref:`Callable.bind<class_Callable_method_bind>` or :ref:`Callable.unbind<class_Callable_method_unbind>`.
 
 .. rst-class:: classref-item-separator
 
@@ -713,7 +775,7 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
 
 .. rst-class:: classref-annotation
 
-**@icon**\ (\ icon_path\: :ref:`String<class_String>`\ )
+**@icon**\ (\ icon_path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GDScript_annotation_@icon>`
 
 Add a custom icon to the current script. The icon specified at ``icon_path`` is displayed in the Scene dock for every node of that class, as well as in various editor dialogs.
 
@@ -725,7 +787,7 @@ Add a custom icon to the current script. The icon specified at ``icon_path`` is 
 
 \ **Note:** As annotations describe their subject, the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be placed before the class definition and inheritance.
 
-\ **Note:** Unlike other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
+\ **Note:** Unlike most other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
 
 .. rst-class:: classref-item-separator
 
@@ -735,13 +797,13 @@ Add a custom icon to the current script. The icon specified at ``icon_path`` is 
 
 .. rst-class:: classref-annotation
 
-**@onready**\ (\ )
+**@onready**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@onready>`
 
 Mark the following property as assigned when the :ref:`Node<class_Node>` is ready. Values for these properties are not assigned immediately when the node is initialized (:ref:`Object._init<class_Object_private_method__init>`), and instead are computed and stored right before :ref:`Node._ready<class_Node_private_method__ready>`.
 
 ::
 
-    @onready var character_name: Label = $Label
+    @onready var character_name = $Label
 
 .. rst-class:: classref-item-separator
 
@@ -751,7 +813,7 @@ Mark the following property as assigned when the :ref:`Node<class_Node>` is read
 
 .. rst-class:: classref-annotation
 
-**@rpc**\ (\ mode\: :ref:`String<class_String>` = "authority", sync\: :ref:`String<class_String>` = "call_remote", transfer_mode\: :ref:`String<class_String>` = "unreliable", transfer_channel\: :ref:`int<class_int>` = 0\ )
+**@rpc**\ (\ mode\: :ref:`String<class_String>` = "authority", sync\: :ref:`String<class_String>` = "call_remote", transfer_mode\: :ref:`String<class_String>` = "unreliable", transfer_channel\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_@GDScript_annotation_@rpc>`
 
 Mark the following method for remote procedure calls. See :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`.
 
@@ -784,9 +846,13 @@ The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter, but value
 
 .. rst-class:: classref-annotation
 
-**@static_unload**\ (\ )
+**@static_unload**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@static_unload>`
 
 Make a script with static variables to not persist after all references are lost. If the script is loaded again the static variables will revert to their default values.
+
+\ **Note:** As annotations describe their subject, the :ref:`@static_unload<class_@GDScript_annotation_@static_unload>` annotation must be placed before the class definition and inheritance.
+
+\ **Warning:** Currently, due to a bug, scripts are never freed, even if :ref:`@static_unload<class_@GDScript_annotation_@static_unload>` annotation is used.
 
 .. rst-class:: classref-item-separator
 
@@ -796,7 +862,7 @@ Make a script with static variables to not persist after all references are lost
 
 .. rst-class:: classref-annotation
 
-**@tool**\ (\ )
+**@tool**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@tool>`
 
 Mark the current script as a tool script, allowing it to be loaded and executed by the editor. See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_editor>`.
 
@@ -815,7 +881,7 @@ Mark the current script as a tool script, allowing it to be loaded and executed 
 
 .. rst-class:: classref-annotation
 
-**@warning_ignore**\ (\ warning\: :ref:`String<class_String>`, ...\ ) |vararg|
+**@warning_ignore**\ (\ warning\: :ref:`String<class_String>`, ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@warning_ignore>`
 
 Mark the following statement to ignore the specified ``warning``. See :doc:`GDScript warning system <../tutorials/scripting/gdscript/warning_system>`.
 
@@ -826,6 +892,48 @@ Mark the following statement to ignore the specified ``warning``. See :doc:`GDSc
         return
         @warning_ignore("unreachable_code")
         print("unreachable")
+
+See also :ref:`@warning_ignore_start<class_@GDScript_annotation_@warning_ignore_start>` and :ref:`@warning_ignore_restore<class_@GDScript_annotation_@warning_ignore_restore>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@warning_ignore_restore:
+
+.. rst-class:: classref-annotation
+
+**@warning_ignore_restore**\ (\ warning\: :ref:`String<class_String>`, ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@warning_ignore_restore>`
+
+Stops ignoring the listed warning types after :ref:`@warning_ignore_start<class_@GDScript_annotation_@warning_ignore_start>`. Ignoring the specified warning types will be reset to Project Settings. This annotation can be omitted to ignore the warning types until the end of the file.
+
+\ **Note:** Unlike most other annotations, arguments of the :ref:`@warning_ignore_restore<class_@GDScript_annotation_@warning_ignore_restore>` annotation must be string literals (constant expressions are not supported).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@warning_ignore_start:
+
+.. rst-class:: classref-annotation
+
+**@warning_ignore_start**\ (\ warning\: :ref:`String<class_String>`, ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@warning_ignore_start>`
+
+Starts ignoring the listed warning types until the end of the file or the :ref:`@warning_ignore_restore<class_@GDScript_annotation_@warning_ignore_restore>` annotation with the given warning type.
+
+::
+
+    func test():
+        var a = 1 # Warning (if enabled in the Project Settings).
+        @warning_ignore_start("unused_variable")
+        var b = 2 # No warning.
+        var c = 3 # No warning.
+        @warning_ignore_restore("unused_variable")
+        var d = 4 # Warning (if enabled in the Project Settings).
+
+\ **Note:** To suppress a single warning, use :ref:`@warning_ignore<class_@GDScript_annotation_@warning_ignore>` instead.
+
+\ **Note:** Unlike most other annotations, arguments of the :ref:`@warning_ignore_start<class_@GDScript_annotation_@warning_ignore_start>` annotation must be string literals (constant expressions are not supported).
 
 .. rst-class:: classref-section-separator
 
@@ -840,7 +948,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **Color8**\ (\ r8\: :ref:`int<class_int>`, g8\: :ref:`int<class_int>`, b8\: :ref:`int<class_int>`, a8\: :ref:`int<class_int>` = 255\ )
+:ref:`Color<class_Color>` **Color8**\ (\ r8\: :ref:`int<class_int>`, g8\: :ref:`int<class_int>`, b8\: :ref:`int<class_int>`, a8\: :ref:`int<class_int>` = 255\ ) :ref:`🔗<class_@GDScript_method_Color8>`
+
+**Deprecated:** Use :ref:`Color.from_rgba8<class_Color_method_from_rgba8>` instead.
 
 Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``), blue (``b8``), and optionally alpha (``a8``) integer channels, each divided by ``255.0`` for their final value. Using :ref:`Color8<class_@GDScript_method_Color8>` instead of the standard :ref:`Color<class_Color>` constructor is useful when you need to match exact color values in an :ref:`Image<class_Image>`.
 
@@ -860,7 +970,7 @@ Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``
 
 .. rst-class:: classref-method
 
-|void| **assert**\ (\ condition\: :ref:`bool<class_bool>`, message\: :ref:`String<class_String>` = ""\ )
+|void| **assert**\ (\ condition\: :ref:`bool<class_bool>`, message\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_@GDScript_method_assert>`
 
 Asserts that the ``condition`` is ``true``. If the ``condition`` is ``false``, an error is generated. When running from the editor, the running project will also be paused until you resume it. This can be used as a stronger form of :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>` for reporting errors to project developers or add-on users.
 
@@ -877,6 +987,8 @@ An optional ``message`` can be shown in addition to the generic "Assertion faile
     assert(speed >= 0 and speed < 20) # You can also combine the two conditional statements in one check.
     assert(speed < 20, "the speed limit is 20") # Show a message.
 
+\ **Note:** :ref:`assert<class_@GDScript_method_assert>` is a keyword, not a function. So you cannot access it as a :ref:`Callable<class_Callable>` or use it inside expressions.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -885,15 +997,15 @@ An optional ``message`` can be shown in addition to the generic "Assertion faile
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **char**\ (\ char\: :ref:`int<class_int>`\ )
+:ref:`String<class_String>` **char**\ (\ char\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GDScript_method_char>`
 
 Returns a single character (as a :ref:`String<class_String>`) of the given Unicode code point (which is compatible with ASCII code).
 
 ::
 
-    a = char(65)      # a is "A"
-    a = char(65 + 32) # a is "a"
-    a = char(8364)    # a is "€"
+    var upper = char(65)      # upper is "A"
+    var lower = char(65 + 32) # lower is "a"
+    var euro = char(8364)     # euro is "€"
 
 .. rst-class:: classref-item-separator
 
@@ -903,7 +1015,7 @@ Returns a single character (as a :ref:`String<class_String>`) of the given Unico
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **convert**\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`int<class_int>`\ )
+:ref:`Variant<class_Variant>` **convert**\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ ) :ref:`🔗<class_@GDScript_method_convert>`
 
 **Deprecated:** Use :ref:`@GlobalScope.type_convert<class_@GlobalScope_method_type_convert>` instead.
 
@@ -926,7 +1038,9 @@ Converts ``what`` to ``type`` in the best way possible. The ``type`` uses the :r
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **dict_to_inst**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ )
+:ref:`Object<class_Object>` **dict_to_inst**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_@GDScript_method_dict_to_inst>`
+
+**Deprecated:** Consider using :ref:`JSON.to_native<class_JSON_method_to_native>` or :ref:`Object.get_property_list<class_Object_method_get_property_list>` instead.
 
 Converts a ``dictionary`` (created with :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>`) back to an Object instance. Can be useful for deserializing.
 
@@ -938,7 +1052,7 @@ Converts a ``dictionary`` (created with :ref:`inst_to_dict<class_@GDScript_metho
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_stack**\ (\ )
+:ref:`Array<class_Array>` **get_stack**\ (\ ) :ref:`🔗<class_@GDScript_method_get_stack>`
 
 Returns an array of dictionaries representing the current call stack. See also :ref:`print_stack<class_@GDScript_method_print_stack>`.
 
@@ -955,7 +1069,7 @@ Returns an array of dictionaries representing the current call stack. See also :
 
 Starting from ``_ready()``, ``bar()`` would print:
 
-.. code::
+.. code:: text
 
     [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
 
@@ -971,11 +1085,11 @@ Starting from ``_ready()``, ``bar()`` would print:
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **inst_to_dict**\ (\ instance\: :ref:`Object<class_Object>`\ )
+:ref:`Dictionary<class_Dictionary>` **inst_to_dict**\ (\ instance\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_@GDScript_method_inst_to_dict>`
+
+**Deprecated:** Consider using :ref:`JSON.from_native<class_JSON_method_from_native>` or :ref:`Object.get_property_list<class_Object_method_get_property_list>` instead.
 
 Returns the passed ``instance`` converted to a Dictionary. Can be useful for serializing.
-
-\ **Note:** Cannot be used to serialize objects with built-in scripts attached or objects allocated within built-in scripts.
 
 ::
 
@@ -987,10 +1101,14 @@ Returns the passed ``instance`` converted to a Dictionary. Can be useful for ser
 
 Prints out:
 
-.. code::
+.. code:: text
 
     [@subpath, @path, foo]
     [, res://test.gd, bar]
+
+\ **Note:** This function can only be used to serialize objects with an attached :ref:`GDScript<class_GDScript>` stored in a separate file. Objects without an attached script, with a script written in another language, or with a built-in script are not supported.
+
+\ **Note:** This function is not recursive, which means that nested objects will not be represented as dictionaries. Also, properties passed by reference (:ref:`Object<class_Object>`, :ref:`Dictionary<class_Dictionary>`, :ref:`Array<class_Array>`, and packed arrays) are copied by reference, not duplicated.
 
 .. rst-class:: classref-item-separator
 
@@ -1000,7 +1118,7 @@ Prints out:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_instance_of**\ (\ value\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant<class_Variant>`\ )
+:ref:`bool<class_bool>` **is_instance_of**\ (\ value\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GDScript_method_is_instance_of>`
 
 Returns ``true`` if ``value`` is an instance of ``type``. The ``type`` value must be one of the following:
 
@@ -1010,9 +1128,9 @@ Returns ``true`` if ``value`` is an instance of ``type``. The ``type`` value mus
 
 - A :ref:`Script<class_Script>` (you can use any class, including inner one).
 
-Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays) and is more performant. Use the operator instead of this method if you do not need dynamic type checking.
+Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays). Use the operator instead of this method if you do not need dynamic type checking.
 
-Examples:
+\ **Examples:**\ 
 
 ::
 
@@ -1033,16 +1151,16 @@ See also :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>`, :ref:`typ
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **len**\ (\ var\: :ref:`Variant<class_Variant>`\ )
+:ref:`int<class_int>` **len**\ (\ var\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GDScript_method_len>`
 
 Returns the length of the given Variant ``var``. The length can be the character count of a :ref:`String<class_String>` or :ref:`StringName<class_StringName>`, the element count of any array type, or the size of a :ref:`Dictionary<class_Dictionary>`. For every other Variant type, a run-time error is generated and execution is stopped.
 
 ::
 
-    a = [1, 2, 3, 4]
+    var a = [1, 2, 3, 4]
     len(a) # Returns 4
     
-    b = "Hello!"
+    var b = "Hello!"
     len(b) # Returns 6
 
 .. rst-class:: classref-item-separator
@@ -1053,7 +1171,7 @@ Returns the length of the given Variant ``var``. The length can be the character
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **load**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Resource<class_Resource>` **load**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GDScript_method_load>`
 
 Returns a :ref:`Resource<class_Resource>` from the filesystem located at the absolute ``path``. Unless it's already referenced elsewhere (such as in another script or in the scene), the resource is loaded from disk on function call, which might cause a slight delay, especially when loading large scenes. To avoid unnecessary delays when loading something multiple times, either store the resource in a variable or use :ref:`preload<class_@GDScript_method_preload>`. This method is equivalent of using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>` with :ref:`ResourceLoader.CACHE_MODE_REUSE<class_ResourceLoader_constant_CACHE_MODE_REUSE>`.
 
@@ -1064,7 +1182,7 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at the abs
     # Load a scene called "main" located in the root of the project directory and cache it in a variable.
     var main = load("res://main.tscn") # main will contain a PackedScene resource.
 
-\ **Important:** The path must be absolute. A relative path will always return ``null``.
+\ **Important:** Relative paths are *not* relative to the script calling this method, instead it is prefixed with ``"res://"``. Loading from relative paths might not work as expected.
 
 This function is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
 
@@ -1080,7 +1198,7 @@ This function is a simplified version of :ref:`ResourceLoader.load<class_Resourc
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **preload**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Resource<class_Resource>` **preload**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GDScript_method_preload>`
 
 Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path``. During run-time, the resource is loaded when the script is being parsed. This function effectively acts as a reference to that resource. Note that this function requires ``path`` to be a constant :ref:`String<class_String>`. If you want to load a resource from a dynamic/variable path, use :ref:`load<class_@GDScript_method_load>`.
 
@@ -1091,6 +1209,8 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path`
     # Create instance of a scene.
     var diamond = preload("res://diamond.tscn").instantiate()
 
+\ **Note:** :ref:`preload<class_@GDScript_method_preload>` is a keyword, not a function. So you cannot access it as a :ref:`Callable<class_Callable>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1099,13 +1219,13 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path`
 
 .. rst-class:: classref-method
 
-|void| **print_debug**\ (\ ...\ ) |vararg|
+|void| **print_debug**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GDScript_method_print_debug>`
 
 Like :ref:`@GlobalScope.print<class_@GlobalScope_method_print>`, but includes the current stack frame when running with the debugger turned on.
 
 The output in the console may look like the following:
 
-.. code::
+.. code:: text
 
     Test print
     At: res://test.gd:15:_process()
@@ -1120,13 +1240,13 @@ The output in the console may look like the following:
 
 .. rst-class:: classref-method
 
-|void| **print_stack**\ (\ )
+|void| **print_stack**\ (\ ) :ref:`🔗<class_@GDScript_method_print_stack>`
 
 Prints a stack trace at the current code location. See also :ref:`get_stack<class_@GDScript_method_get_stack>`.
 
 The output in the console may look like the following:
 
-.. code::
+.. code:: text
 
     Frame 0 - res://test.gd:16 in function '_process'
 
@@ -1142,7 +1262,7 @@ The output in the console may look like the following:
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **range**\ (\ ...\ ) |vararg|
+:ref:`Array<class_Array>` **range**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GDScript_method_range>`
 
 Returns an array with the given range. :ref:`range<class_@GDScript_method_range>` can be called in three ways:
 
@@ -1156,7 +1276,7 @@ Returns an array with the given range. :ref:`range<class_@GDScript_method_range>
 
 \ **Note:** Returns an empty array if no value meets the value constraint (e.g. ``range(2, 5, -1)`` or ``range(5, 5, 1)``).
 
-Examples:
+\ **Examples:**\ 
 
 ::
 
@@ -1175,7 +1295,7 @@ To iterate over an :ref:`Array<class_Array>` backwards, use:
 
 Output:
 
-.. code::
+.. code:: text
 
     9
     6
@@ -1190,7 +1310,7 @@ To iterate over :ref:`float<class_float>`, convert them in the loop.
 
 Output:
 
-.. code::
+.. code:: text
 
     0.3
     0.2
@@ -1204,7 +1324,7 @@ Output:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **type_exists**\ (\ type\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **type_exists**\ (\ type\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_@GDScript_method_type_exists>`
 
 Returns ``true`` if the given :ref:`Object<class_Object>`-derived class exists in :ref:`ClassDB<class_ClassDB>`. Note that :ref:`Variant<class_Variant>` data types are not registered in :ref:`ClassDB<class_ClassDB>`.
 

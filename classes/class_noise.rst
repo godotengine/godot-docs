@@ -68,7 +68,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **get_image**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, in_3d_space\: :ref:`bool<class_bool>` = false, normalize\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`Image<class_Image>` **get_image**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, in_3d_space\: :ref:`bool<class_bool>` = false, normalize\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_Noise_method_get_image>`
 
 Returns an :ref:`Image<class_Image>` containing 2D noise values.
 
@@ -82,7 +82,7 @@ Returns an :ref:`Image<class_Image>` containing 2D noise values.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **get_image_3d**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, normalize\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **get_image_3d**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, normalize\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_Noise_method_get_image_3d>`
 
 Returns an :ref:`Array<class_Array>` of :ref:`Image<class_Image>`\ s containing 3D noise values for use with :ref:`ImageTexture3D.create<class_ImageTexture3D_method_create>`.
 
@@ -96,7 +96,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Image<class_Image>`\ s containing 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_noise_1d**\ (\ x\: :ref:`float<class_float>`\ ) |const|
+:ref:`float<class_float>` **get_noise_1d**\ (\ x\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Noise_method_get_noise_1d>`
 
 Returns the 1D noise value at the given (x) coordinate.
 
@@ -108,7 +108,7 @@ Returns the 1D noise value at the given (x) coordinate.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_noise_2d**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`\ ) |const|
+:ref:`float<class_float>` **get_noise_2d**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Noise_method_get_noise_2d>`
 
 Returns the 2D noise value at the given position.
 
@@ -120,7 +120,7 @@ Returns the 2D noise value at the given position.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_noise_2dv**\ (\ v\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`float<class_float>` **get_noise_2dv**\ (\ v\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Noise_method_get_noise_2dv>`
 
 Returns the 2D noise value at the given position.
 
@@ -132,7 +132,7 @@ Returns the 2D noise value at the given position.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_noise_3d**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`, z\: :ref:`float<class_float>`\ ) |const|
+:ref:`float<class_float>` **get_noise_3d**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`, z\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Noise_method_get_noise_3d>`
 
 Returns the 3D noise value at the given position.
 
@@ -144,7 +144,7 @@ Returns the 3D noise value at the given position.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_noise_3dv**\ (\ v\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`float<class_float>` **get_noise_3dv**\ (\ v\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Noise_method_get_noise_3dv>`
 
 Returns the 3D noise value at the given position.
 
@@ -156,7 +156,7 @@ Returns the 3D noise value at the given position.
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **get_seamless_image**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, in_3d_space\: :ref:`bool<class_bool>` = false, skirt\: :ref:`float<class_float>` = 0.1, normalize\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`Image<class_Image>` **get_seamless_image**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, in_3d_space\: :ref:`bool<class_bool>` = false, skirt\: :ref:`float<class_float>` = 0.1, normalize\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_Noise_method_get_seamless_image>`
 
 Returns an :ref:`Image<class_Image>` containing seamless 2D noise values.
 
@@ -170,7 +170,7 @@ Returns an :ref:`Image<class_Image>` containing seamless 2D noise values.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **get_seamless_image_3d**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, skirt\: :ref:`float<class_float>` = 0.1, normalize\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **get_seamless_image_3d**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, skirt\: :ref:`float<class_float>` = 0.1, normalize\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_Noise_method_get_seamless_image_3d>`
 
 Returns an :ref:`Array<class_Array>` of :ref:`Image<class_Image>`\ s containing seamless 3D noise values for use with :ref:`ImageTexture3D.create<class_ImageTexture3D_method_create>`.
 

@@ -42,9 +42,9 @@ This server keeps tracks of any call and executes them during the sync phase. Th
 Tutorials
 ---------
 
-- `2D Navigation Demo <https://godotengine.org/asset-library/asset/117>`__
-
 - :doc:`Using NavigationServer <../tutorials/navigation/navigation_using_navigationservers>`
+
+- `Navigation Polygon 2D Demo <https://godotengine.org/asset-library/asset/2722>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -193,11 +193,13 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]  | :ref:`map_get_obstacles<class_NavigationServer2D_method_map_get_obstacles>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`map_get_path<class_NavigationServer2D_method_map_get_path>`\ (\ map\: :ref:`RID<class_RID>`, origin\: :ref:`Vector2<class_Vector2>`, destination\: :ref:`Vector2<class_Vector2>`, optimize\: :ref:`bool<class_bool>`, navigation_layers\: :ref:`int<class_int>` = 1\ ) |const|                                                                                                  |
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`map_get_path<class_NavigationServer2D_method_map_get_path>`\ (\ map\: :ref:`RID<class_RID>`, origin\: :ref:`Vector2<class_Vector2>`, destination\: :ref:`Vector2<class_Vector2>`, optimize\: :ref:`bool<class_bool>`, navigation_layers\: :ref:`int<class_int>` = 1\ )                                                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                       | :ref:`map_get_random_point<class_NavigationServer2D_method_map_get_random_point>`\ (\ map\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`, uniformly\: :ref:`bool<class_bool>`\ ) |const|                                                                                                                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]  | :ref:`map_get_regions<class_NavigationServer2D_method_map_get_regions>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`map_get_use_async_iterations<class_NavigationServer2D_method_map_get_use_async_iterations>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`map_get_use_edge_connections<class_NavigationServer2D_method_map_get_use_edge_connections>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,6 +212,8 @@ Methods
    | |void|                                              | :ref:`map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`\ (\ map\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`map_set_link_connection_radius<class_NavigationServer2D_method_map_set_link_connection_radius>`\ (\ map\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`map_set_use_async_iterations<class_NavigationServer2D_method_map_set_use_async_iterations>`\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                               |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`map_set_use_edge_connections<class_NavigationServer2D_method_map_set_use_edge_connections>`\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                               |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -249,9 +253,13 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`parse_source_geometry_data<class_NavigationServer2D_method_parse_source_geometry_data>`\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>`, root_node\: :ref:`Node<class_Node>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ ) |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                              | :ref:`query_path<class_NavigationServer2D_method_query_path>`\ (\ parameters\: :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>`, result\: :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>`\ ) |const|                                                                                                                               |
+   | |void|                                              | :ref:`query_path<class_NavigationServer2D_method_query_path>`\ (\ parameters\: :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>`, result\: :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ )                                                                              |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`region_create<class_NavigationServer2D_method_region_create>`\ (\ )                                                                                                                                                                                                                                                                                                             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                           | :ref:`region_get_bounds<class_NavigationServer2D_method_region_get_bounds>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`region_get_closest_point<class_NavigationServer2D_method_region_get_closest_point>`\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                                                                                                     |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                       | :ref:`region_get_connection_pathway_end<class_NavigationServer2D_method_region_get_connection_pathway_end>`\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                         |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -299,6 +307,12 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_debug_enabled<class_NavigationServer2D_method_set_debug_enabled>`\ (\ enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                  |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`simplify_path<class_NavigationServer2D_method_simplify_path>`\ (\ path\: :ref:`PackedVector2Array<class_PackedVector2Array>`, epsilon\: :ref:`float<class_float>`\ )                                                                                                                                                                                                            |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                               | :ref:`source_geometry_parser_create<class_NavigationServer2D_method_source_geometry_parser_create>`\ (\ )                                                                                                                                                                                                                                                                             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`source_geometry_parser_set_callback<class_NavigationServer2D_method_source_geometry_parser_set_callback>`\ (\ parser\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -313,7 +327,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**map_changed**\ (\ map\: :ref:`RID<class_RID>`\ )
+**map_changed**\ (\ map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationServer2D_signal_map_changed>`
 
 Emitted when a navigation map is updated, when a region moves or is modified.
 
@@ -325,7 +339,7 @@ Emitted when a navigation map is updated, when a region moves or is modified.
 
 .. rst-class:: classref-signal
 
-**navigation_debug_changed**\ (\ )
+**navigation_debug_changed**\ (\ ) :ref:`🔗<class_NavigationServer2D_signal_navigation_debug_changed>`
 
 Emitted when navigation debug settings are changed. Only available in debug builds.
 
@@ -342,7 +356,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **agent_create**\ (\ )
+:ref:`RID<class_RID>` **agent_create**\ (\ ) :ref:`🔗<class_NavigationServer2D_method_agent_create>`
 
 Creates the agent.
 
@@ -354,7 +368,7 @@ Creates the agent.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **agent_get_avoidance_enabled**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **agent_get_avoidance_enabled**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_avoidance_enabled>`
 
 Return ``true`` if the specified ``agent`` uses avoidance.
 
@@ -366,7 +380,7 @@ Return ``true`` if the specified ``agent`` uses avoidance.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **agent_get_avoidance_layers**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **agent_get_avoidance_layers**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_avoidance_layers>`
 
 Returns the ``avoidance_layers`` bitmask of the specified ``agent``.
 
@@ -378,7 +392,7 @@ Returns the ``avoidance_layers`` bitmask of the specified ``agent``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **agent_get_avoidance_mask**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **agent_get_avoidance_mask**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_avoidance_mask>`
 
 Returns the ``avoidance_mask`` bitmask of the specified ``agent``.
 
@@ -390,7 +404,7 @@ Returns the ``avoidance_mask`` bitmask of the specified ``agent``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **agent_get_avoidance_priority**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **agent_get_avoidance_priority**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_avoidance_priority>`
 
 Returns the ``avoidance_priority`` of the specified ``agent``.
 
@@ -402,7 +416,7 @@ Returns the ``avoidance_priority`` of the specified ``agent``.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **agent_get_map**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`RID<class_RID>` **agent_get_map**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_map>`
 
 Returns the navigation map :ref:`RID<class_RID>` the requested ``agent`` is currently assigned to.
 
@@ -414,7 +428,7 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``agent`` is curr
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **agent_get_max_neighbors**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **agent_get_max_neighbors**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_max_neighbors>`
 
 Returns the maximum number of other agents the specified ``agent`` takes into account in the navigation.
 
@@ -426,7 +440,7 @@ Returns the maximum number of other agents the specified ``agent`` takes into ac
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **agent_get_max_speed**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **agent_get_max_speed**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_max_speed>`
 
 Returns the maximum speed of the specified ``agent``.
 
@@ -438,7 +452,7 @@ Returns the maximum speed of the specified ``agent``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **agent_get_neighbor_distance**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **agent_get_neighbor_distance**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_neighbor_distance>`
 
 Returns the maximum distance to other agents the specified ``agent`` takes into account in the navigation.
 
@@ -450,7 +464,7 @@ Returns the maximum distance to other agents the specified ``agent`` takes into 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **agent_get_paused**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **agent_get_paused**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_paused>`
 
 Returns ``true`` if the specified ``agent`` is paused.
 
@@ -462,7 +476,7 @@ Returns ``true`` if the specified ``agent`` is paused.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **agent_get_position**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **agent_get_position**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_position>`
 
 Returns the position of the specified ``agent`` in world space.
 
@@ -474,7 +488,7 @@ Returns the position of the specified ``agent`` in world space.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **agent_get_radius**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **agent_get_radius**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_radius>`
 
 Returns the radius of the specified ``agent``.
 
@@ -486,7 +500,7 @@ Returns the radius of the specified ``agent``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **agent_get_time_horizon_agents**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **agent_get_time_horizon_agents**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_time_horizon_agents>`
 
 Returns the minimal amount of time for which the specified ``agent``'s velocities that are computed by the simulation are safe with respect to other agents.
 
@@ -498,7 +512,7 @@ Returns the minimal amount of time for which the specified ``agent``'s velocitie
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **agent_get_time_horizon_obstacles**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **agent_get_time_horizon_obstacles**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_time_horizon_obstacles>`
 
 Returns the minimal amount of time for which the specified ``agent``'s velocities that are computed by the simulation are safe with respect to static avoidance obstacles.
 
@@ -510,7 +524,7 @@ Returns the minimal amount of time for which the specified ``agent``'s velocitie
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **agent_get_velocity**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **agent_get_velocity**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_get_velocity>`
 
 Returns the velocity of the specified ``agent``.
 
@@ -522,7 +536,7 @@ Returns the velocity of the specified ``agent``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **agent_has_avoidance_callback**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **agent_has_avoidance_callback**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_has_avoidance_callback>`
 
 Return ``true`` if the specified ``agent`` has an avoidance callback.
 
@@ -534,9 +548,9 @@ Return ``true`` if the specified ``agent`` has an avoidance callback.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **agent_is_map_changed**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **agent_is_map_changed**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_agent_is_map_changed>`
 
-Returns true if the map got changed the previous frame.
+Returns ``true`` if the map got changed the previous frame.
 
 .. rst-class:: classref-item-separator
 
@@ -546,7 +560,7 @@ Returns true if the map got changed the previous frame.
 
 .. rst-class:: classref-method
 
-|void| **agent_set_avoidance_callback**\ (\ agent\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ )
+|void| **agent_set_avoidance_callback**\ (\ agent\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_avoidance_callback>`
 
 Sets the callback :ref:`Callable<class_Callable>` that gets called after each avoidance processing step for the ``agent``. The calculated ``safe_velocity`` will be dispatched with a signal to the object just before the physics calculations.
 
@@ -560,7 +574,7 @@ Sets the callback :ref:`Callable<class_Callable>` that gets called after each av
 
 .. rst-class:: classref-method
 
-|void| **agent_set_avoidance_enabled**\ (\ agent\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **agent_set_avoidance_enabled**\ (\ agent\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_avoidance_enabled>`
 
 If ``enabled`` is ``true``, the specified ``agent`` uses avoidance.
 
@@ -572,7 +586,7 @@ If ``enabled`` is ``true``, the specified ``agent`` uses avoidance.
 
 .. rst-class:: classref-method
 
-|void| **agent_set_avoidance_layers**\ (\ agent\: :ref:`RID<class_RID>`, layers\: :ref:`int<class_int>`\ )
+|void| **agent_set_avoidance_layers**\ (\ agent\: :ref:`RID<class_RID>`, layers\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_avoidance_layers>`
 
 Set the agent's ``avoidance_layers`` bitmask.
 
@@ -584,7 +598,7 @@ Set the agent's ``avoidance_layers`` bitmask.
 
 .. rst-class:: classref-method
 
-|void| **agent_set_avoidance_mask**\ (\ agent\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ )
+|void| **agent_set_avoidance_mask**\ (\ agent\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_avoidance_mask>`
 
 Set the agent's ``avoidance_mask`` bitmask.
 
@@ -596,7 +610,7 @@ Set the agent's ``avoidance_mask`` bitmask.
 
 .. rst-class:: classref-method
 
-|void| **agent_set_avoidance_priority**\ (\ agent\: :ref:`RID<class_RID>`, priority\: :ref:`float<class_float>`\ )
+|void| **agent_set_avoidance_priority**\ (\ agent\: :ref:`RID<class_RID>`, priority\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_avoidance_priority>`
 
 Set the agent's ``avoidance_priority`` with a ``priority`` between 0.0 (lowest priority) to 1.0 (highest priority).
 
@@ -610,7 +624,7 @@ The specified ``agent`` does not adjust the velocity for other agents that would
 
 .. rst-class:: classref-method
 
-|void| **agent_set_map**\ (\ agent\: :ref:`RID<class_RID>`, map\: :ref:`RID<class_RID>`\ )
+|void| **agent_set_map**\ (\ agent\: :ref:`RID<class_RID>`, map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_map>`
 
 Puts the agent in the map.
 
@@ -622,7 +636,7 @@ Puts the agent in the map.
 
 .. rst-class:: classref-method
 
-|void| **agent_set_max_neighbors**\ (\ agent\: :ref:`RID<class_RID>`, count\: :ref:`int<class_int>`\ )
+|void| **agent_set_max_neighbors**\ (\ agent\: :ref:`RID<class_RID>`, count\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_max_neighbors>`
 
 Sets the maximum number of other agents the agent takes into account in the navigation. The larger this number, the longer the running time of the simulation. If the number is too low, the simulation will not be safe.
 
@@ -634,7 +648,7 @@ Sets the maximum number of other agents the agent takes into account in the navi
 
 .. rst-class:: classref-method
 
-|void| **agent_set_max_speed**\ (\ agent\: :ref:`RID<class_RID>`, max_speed\: :ref:`float<class_float>`\ )
+|void| **agent_set_max_speed**\ (\ agent\: :ref:`RID<class_RID>`, max_speed\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_max_speed>`
 
 Sets the maximum speed of the agent. Must be positive.
 
@@ -646,7 +660,7 @@ Sets the maximum speed of the agent. Must be positive.
 
 .. rst-class:: classref-method
 
-|void| **agent_set_neighbor_distance**\ (\ agent\: :ref:`RID<class_RID>`, distance\: :ref:`float<class_float>`\ )
+|void| **agent_set_neighbor_distance**\ (\ agent\: :ref:`RID<class_RID>`, distance\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_neighbor_distance>`
 
 Sets the maximum distance to other agents this agent takes into account in the navigation. The larger this number, the longer the running time of the simulation. If the number is too low, the simulation will not be safe.
 
@@ -658,9 +672,9 @@ Sets the maximum distance to other agents this agent takes into account in the n
 
 .. rst-class:: classref-method
 
-|void| **agent_set_paused**\ (\ agent\: :ref:`RID<class_RID>`, paused\: :ref:`bool<class_bool>`\ )
+|void| **agent_set_paused**\ (\ agent\: :ref:`RID<class_RID>`, paused\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_paused>`
 
-If ``paused`` is true the specified ``agent`` will not be processed, e.g. calculate avoidance velocities or receive avoidance callbacks.
+If ``paused`` is ``true`` the specified ``agent`` will not be processed, e.g. calculate avoidance velocities or receive avoidance callbacks.
 
 .. rst-class:: classref-item-separator
 
@@ -670,7 +684,7 @@ If ``paused`` is true the specified ``agent`` will not be processed, e.g. calcul
 
 .. rst-class:: classref-method
 
-|void| **agent_set_position**\ (\ agent\: :ref:`RID<class_RID>`, position\: :ref:`Vector2<class_Vector2>`\ )
+|void| **agent_set_position**\ (\ agent\: :ref:`RID<class_RID>`, position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_position>`
 
 Sets the position of the agent in world space.
 
@@ -682,7 +696,7 @@ Sets the position of the agent in world space.
 
 .. rst-class:: classref-method
 
-|void| **agent_set_radius**\ (\ agent\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ )
+|void| **agent_set_radius**\ (\ agent\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_radius>`
 
 Sets the radius of the agent.
 
@@ -694,7 +708,7 @@ Sets the radius of the agent.
 
 .. rst-class:: classref-method
 
-|void| **agent_set_time_horizon_agents**\ (\ agent\: :ref:`RID<class_RID>`, time_horizon\: :ref:`float<class_float>`\ )
+|void| **agent_set_time_horizon_agents**\ (\ agent\: :ref:`RID<class_RID>`, time_horizon\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_time_horizon_agents>`
 
 The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to other agents. The larger this number, the sooner this agent will respond to the presence of other agents, but the less freedom this agent has in choosing its velocities. A too high value will slow down agents movement considerably. Must be positive.
 
@@ -706,7 +720,7 @@ The minimal amount of time for which the agent's velocities that are computed by
 
 .. rst-class:: classref-method
 
-|void| **agent_set_time_horizon_obstacles**\ (\ agent\: :ref:`RID<class_RID>`, time_horizon\: :ref:`float<class_float>`\ )
+|void| **agent_set_time_horizon_obstacles**\ (\ agent\: :ref:`RID<class_RID>`, time_horizon\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_time_horizon_obstacles>`
 
 The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to static avoidance obstacles. The larger this number, the sooner this agent will respond to the presence of static avoidance obstacles, but the less freedom this agent has in choosing its velocities. A too high value will slow down agents movement considerably. Must be positive.
 
@@ -718,7 +732,7 @@ The minimal amount of time for which the agent's velocities that are computed by
 
 .. rst-class:: classref-method
 
-|void| **agent_set_velocity**\ (\ agent\: :ref:`RID<class_RID>`, velocity\: :ref:`Vector2<class_Vector2>`\ )
+|void| **agent_set_velocity**\ (\ agent\: :ref:`RID<class_RID>`, velocity\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_velocity>`
 
 Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The avoidance simulation will try to fulfill this velocity if possible but will modify it to avoid collision with other agent's and obstacles. When an agent is teleported to a new position far away use :ref:`agent_set_velocity_forced<class_NavigationServer2D_method_agent_set_velocity_forced>` instead to reset the internal velocity state.
 
@@ -730,7 +744,7 @@ Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The av
 
 .. rst-class:: classref-method
 
-|void| **agent_set_velocity_forced**\ (\ agent\: :ref:`RID<class_RID>`, velocity\: :ref:`Vector2<class_Vector2>`\ )
+|void| **agent_set_velocity_forced**\ (\ agent\: :ref:`RID<class_RID>`, velocity\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_velocity_forced>`
 
 Replaces the internal velocity in the collision avoidance simulation with ``velocity`` for the specified ``agent``. When an agent is teleported to a new position far away this function should be used in the same frame. If called frequently this function can get agents stuck.
 
@@ -742,7 +756,7 @@ Replaces the internal velocity in the collision avoidance simulation with ``velo
 
 .. rst-class:: classref-method
 
-|void| **bake_from_source_geometry_data**\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ )
+|void| **bake_from_source_geometry_data**\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ ) :ref:`🔗<class_NavigationServer2D_method_bake_from_source_geometry_data>`
 
 Bakes the provided ``navigation_polygon`` with the data from the provided ``source_geometry_data``. After the process is finished the optional ``callback`` will be called.
 
@@ -754,7 +768,7 @@ Bakes the provided ``navigation_polygon`` with the data from the provided ``sour
 
 .. rst-class:: classref-method
 
-|void| **bake_from_source_geometry_data_async**\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ )
+|void| **bake_from_source_geometry_data_async**\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ ) :ref:`🔗<class_NavigationServer2D_method_bake_from_source_geometry_data_async>`
 
 Bakes the provided ``navigation_polygon`` with the data from the provided ``source_geometry_data`` as an async task running on a background thread. After the process is finished the optional ``callback`` will be called.
 
@@ -766,7 +780,7 @@ Bakes the provided ``navigation_polygon`` with the data from the provided ``sour
 
 .. rst-class:: classref-method
 
-|void| **free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ )
+|void| **free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationServer2D_method_free_rid>`
 
 Destroys the given RID.
 
@@ -778,7 +792,7 @@ Destroys the given RID.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_debug_enabled**\ (\ ) |const|
+:ref:`bool<class_bool>` **get_debug_enabled**\ (\ ) |const| :ref:`🔗<class_NavigationServer2D_method_get_debug_enabled>`
 
 Returns ``true`` when the NavigationServer has debug enabled.
 
@@ -790,7 +804,7 @@ Returns ``true`` when the NavigationServer has debug enabled.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_maps**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_maps**\ (\ ) |const| :ref:`🔗<class_NavigationServer2D_method_get_maps>`
 
 Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationServer. This returns both 2D and 3D created navigation maps as there is technically no distinction between them.
 
@@ -802,7 +816,7 @@ Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationSer
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_baking_navigation_polygon**\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`\ ) |const|
+:ref:`bool<class_bool>` **is_baking_navigation_polygon**\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_is_baking_navigation_polygon>`
 
 Returns ``true`` when the provided navigation polygon is being baked on a background thread.
 
@@ -814,7 +828,7 @@ Returns ``true`` when the provided navigation polygon is being baked on a backgr
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **link_create**\ (\ )
+:ref:`RID<class_RID>` **link_create**\ (\ ) :ref:`🔗<class_NavigationServer2D_method_link_create>`
 
 Create a new link between two positions on a map.
 
@@ -826,7 +840,7 @@ Create a new link between two positions on a map.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **link_get_enabled**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **link_get_enabled**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_get_enabled>`
 
 Returns ``true`` if the specified ``link`` is enabled.
 
@@ -838,7 +852,7 @@ Returns ``true`` if the specified ``link`` is enabled.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **link_get_end_position**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **link_get_end_position**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_get_end_position>`
 
 Returns the ending position of this ``link``.
 
@@ -850,7 +864,7 @@ Returns the ending position of this ``link``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **link_get_enter_cost**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **link_get_enter_cost**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_get_enter_cost>`
 
 Returns the enter cost of this ``link``.
 
@@ -862,7 +876,7 @@ Returns the enter cost of this ``link``.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **link_get_map**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`RID<class_RID>` **link_get_map**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_get_map>`
 
 Returns the navigation map :ref:`RID<class_RID>` the requested ``link`` is currently assigned to.
 
@@ -874,7 +888,7 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``link`` is curre
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **link_get_navigation_layers**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **link_get_navigation_layers**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_get_navigation_layers>`
 
 Returns the navigation layers for this ``link``.
 
@@ -886,7 +900,7 @@ Returns the navigation layers for this ``link``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **link_get_owner_id**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **link_get_owner_id**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_get_owner_id>`
 
 Returns the ``ObjectID`` of the object which manages this link.
 
@@ -898,7 +912,7 @@ Returns the ``ObjectID`` of the object which manages this link.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **link_get_start_position**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **link_get_start_position**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_get_start_position>`
 
 Returns the starting position of this ``link``.
 
@@ -910,7 +924,7 @@ Returns the starting position of this ``link``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **link_get_travel_cost**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **link_get_travel_cost**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_get_travel_cost>`
 
 Returns the travel cost of this ``link``.
 
@@ -922,7 +936,7 @@ Returns the travel cost of this ``link``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **link_is_bidirectional**\ (\ link\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **link_is_bidirectional**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_link_is_bidirectional>`
 
 Returns whether this ``link`` can be travelled in both directions.
 
@@ -934,7 +948,7 @@ Returns whether this ``link`` can be travelled in both directions.
 
 .. rst-class:: classref-method
 
-|void| **link_set_bidirectional**\ (\ link\: :ref:`RID<class_RID>`, bidirectional\: :ref:`bool<class_bool>`\ )
+|void| **link_set_bidirectional**\ (\ link\: :ref:`RID<class_RID>`, bidirectional\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_bidirectional>`
 
 Sets whether this ``link`` can be travelled in both directions.
 
@@ -946,7 +960,7 @@ Sets whether this ``link`` can be travelled in both directions.
 
 .. rst-class:: classref-method
 
-|void| **link_set_enabled**\ (\ link\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **link_set_enabled**\ (\ link\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_enabled>`
 
 If ``enabled`` is ``true``, the specified ``link`` will contribute to its current navigation map.
 
@@ -958,7 +972,7 @@ If ``enabled`` is ``true``, the specified ``link`` will contribute to its curren
 
 .. rst-class:: classref-method
 
-|void| **link_set_end_position**\ (\ link\: :ref:`RID<class_RID>`, position\: :ref:`Vector2<class_Vector2>`\ )
+|void| **link_set_end_position**\ (\ link\: :ref:`RID<class_RID>`, position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_end_position>`
 
 Sets the exit position for the ``link``.
 
@@ -970,7 +984,7 @@ Sets the exit position for the ``link``.
 
 .. rst-class:: classref-method
 
-|void| **link_set_enter_cost**\ (\ link\: :ref:`RID<class_RID>`, enter_cost\: :ref:`float<class_float>`\ )
+|void| **link_set_enter_cost**\ (\ link\: :ref:`RID<class_RID>`, enter_cost\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_enter_cost>`
 
 Sets the ``enter_cost`` for this ``link``.
 
@@ -982,7 +996,7 @@ Sets the ``enter_cost`` for this ``link``.
 
 .. rst-class:: classref-method
 
-|void| **link_set_map**\ (\ link\: :ref:`RID<class_RID>`, map\: :ref:`RID<class_RID>`\ )
+|void| **link_set_map**\ (\ link\: :ref:`RID<class_RID>`, map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_map>`
 
 Sets the navigation map :ref:`RID<class_RID>` for the link.
 
@@ -994,7 +1008,7 @@ Sets the navigation map :ref:`RID<class_RID>` for the link.
 
 .. rst-class:: classref-method
 
-|void| **link_set_navigation_layers**\ (\ link\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`\ )
+|void| **link_set_navigation_layers**\ (\ link\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_navigation_layers>`
 
 Set the links's navigation layers. This allows selecting links from a path request (when using :ref:`map_get_path<class_NavigationServer2D_method_map_get_path>`).
 
@@ -1006,7 +1020,7 @@ Set the links's navigation layers. This allows selecting links from a path reque
 
 .. rst-class:: classref-method
 
-|void| **link_set_owner_id**\ (\ link\: :ref:`RID<class_RID>`, owner_id\: :ref:`int<class_int>`\ )
+|void| **link_set_owner_id**\ (\ link\: :ref:`RID<class_RID>`, owner_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_owner_id>`
 
 Set the ``ObjectID`` of the object which manages this link.
 
@@ -1018,7 +1032,7 @@ Set the ``ObjectID`` of the object which manages this link.
 
 .. rst-class:: classref-method
 
-|void| **link_set_start_position**\ (\ link\: :ref:`RID<class_RID>`, position\: :ref:`Vector2<class_Vector2>`\ )
+|void| **link_set_start_position**\ (\ link\: :ref:`RID<class_RID>`, position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_start_position>`
 
 Sets the entry position for this ``link``.
 
@@ -1030,7 +1044,7 @@ Sets the entry position for this ``link``.
 
 .. rst-class:: classref-method
 
-|void| **link_set_travel_cost**\ (\ link\: :ref:`RID<class_RID>`, travel_cost\: :ref:`float<class_float>`\ )
+|void| **link_set_travel_cost**\ (\ link\: :ref:`RID<class_RID>`, travel_cost\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_travel_cost>`
 
 Sets the ``travel_cost`` for this ``link``.
 
@@ -1042,7 +1056,7 @@ Sets the ``travel_cost`` for this ``link``.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **map_create**\ (\ )
+:ref:`RID<class_RID>` **map_create**\ (\ ) :ref:`🔗<class_NavigationServer2D_method_map_create>`
 
 Create a new map.
 
@@ -1054,7 +1068,7 @@ Create a new map.
 
 .. rst-class:: classref-method
 
-|void| **map_force_update**\ (\ map\: :ref:`RID<class_RID>`\ )
+|void| **map_force_update**\ (\ map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_force_update>`
 
 This function immediately forces synchronization of the specified navigation ``map`` :ref:`RID<class_RID>`. By default navigation maps are only synchronized at the end of each physics frame. This function can be used to immediately (re)calculate all the navigation meshes and region connections of the navigation map. This makes it possible to query a navigation path for a changed map immediately and in the same frame (multiple times if needed).
 
@@ -1072,7 +1086,7 @@ Avoidance processing and dispatch of the ``safe_velocity`` signals is unaffected
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_agents**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_agents**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_agents>`
 
 Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
 
@@ -1084,7 +1098,7 @@ Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assign
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **map_get_cell_size**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **map_get_cell_size**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_cell_size>`
 
 Returns the map cell size used to rasterize the navigation mesh vertices.
 
@@ -1096,9 +1110,9 @@ Returns the map cell size used to rasterize the navigation mesh vertices.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **map_get_closest_point**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **map_get_closest_point**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_closest_point>`
 
-Returns the point closest to the provided ``to_point`` on the navigation mesh surface.
+Returns the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1108,9 +1122,9 @@ Returns the point closest to the provided ``to_point`` on the navigation mesh su
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **map_get_closest_point_owner**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`RID<class_RID>` **map_get_closest_point_owner**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_closest_point_owner>`
 
-Returns the owner region RID for the point returned by :ref:`map_get_closest_point<class_NavigationServer2D_method_map_get_closest_point>`.
+Returns the owner region RID for the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1120,7 +1134,7 @@ Returns the owner region RID for the point returned by :ref:`map_get_closest_poi
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **map_get_edge_connection_margin**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **map_get_edge_connection_margin**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_edge_connection_margin>`
 
 Returns the edge connection margin of the map. The edge connection margin is a distance used to connect two regions.
 
@@ -1132,7 +1146,7 @@ Returns the edge connection margin of the map. The edge connection margin is a d
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **map_get_iteration_id**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **map_get_iteration_id**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_iteration_id>`
 
 Returns the current iteration id of the navigation map. Every time the navigation map changes and synchronizes the iteration id increases. An iteration id of 0 means the navigation map has never synchronized.
 
@@ -1146,7 +1160,7 @@ Returns the current iteration id of the navigation map. Every time the navigatio
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **map_get_link_connection_radius**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **map_get_link_connection_radius**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_link_connection_radius>`
 
 Returns the link connection radius of the map. This distance is the maximum range any link will search for navigation mesh polygons to connect to.
 
@@ -1158,7 +1172,7 @@ Returns the link connection radius of the map. This distance is the maximum rang
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_links**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_links**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_links>`
 
 Returns all navigation link :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
 
@@ -1170,7 +1184,7 @@ Returns all navigation link :ref:`RID<class_RID>`\ s that are currently assigned
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_obstacles**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_obstacles**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_obstacles>`
 
 Returns all navigation obstacle :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
 
@@ -1182,7 +1196,7 @@ Returns all navigation obstacle :ref:`RID<class_RID>`\ s that are currently assi
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **map_get_path**\ (\ map\: :ref:`RID<class_RID>`, origin\: :ref:`Vector2<class_Vector2>`, destination\: :ref:`Vector2<class_Vector2>`, optimize\: :ref:`bool<class_bool>`, navigation_layers\: :ref:`int<class_int>` = 1\ ) |const|
+:ref:`PackedVector2Array<class_PackedVector2Array>` **map_get_path**\ (\ map\: :ref:`RID<class_RID>`, origin\: :ref:`Vector2<class_Vector2>`, destination\: :ref:`Vector2<class_Vector2>`, optimize\: :ref:`bool<class_bool>`, navigation_layers\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_NavigationServer2D_method_map_get_path>`
 
 Returns the navigation path to reach the destination from the origin. ``navigation_layers`` is a bitmask of all region navigation layers that are allowed to be in the path.
 
@@ -1194,7 +1208,7 @@ Returns the navigation path to reach the destination from the origin. ``navigati
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **map_get_random_point**\ (\ map\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`, uniformly\: :ref:`bool<class_bool>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **map_get_random_point**\ (\ map\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`, uniformly\: :ref:`bool<class_bool>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_random_point>`
 
 Returns a random position picked from all map region polygons with matching ``navigation_layers``.
 
@@ -1210,9 +1224,21 @@ If ``uniformly`` is ``false``, just a random region and a random polygon are pic
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_regions**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_regions**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_regions>`
 
 Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_map_get_use_async_iterations:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **map_get_use_async_iterations**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_use_async_iterations>`
+
+Returns ``true`` if the ``map`` synchronization uses an async process that runs on a background thread.
 
 .. rst-class:: classref-item-separator
 
@@ -1222,7 +1248,7 @@ Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assig
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **map_get_use_edge_connections**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **map_get_use_edge_connections**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_use_edge_connections>`
 
 Returns whether the navigation ``map`` allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
@@ -1234,9 +1260,9 @@ Returns whether the navigation ``map`` allows navigation regions to use edge con
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **map_is_active**\ (\ map\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **map_is_active**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_is_active>`
 
-Returns true if the map is active.
+Returns ``true`` if the map is active.
 
 .. rst-class:: classref-item-separator
 
@@ -1246,7 +1272,7 @@ Returns true if the map is active.
 
 .. rst-class:: classref-method
 
-|void| **map_set_active**\ (\ map\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ )
+|void| **map_set_active**\ (\ map\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_active>`
 
 Sets the map active.
 
@@ -1258,7 +1284,7 @@ Sets the map active.
 
 .. rst-class:: classref-method
 
-|void| **map_set_cell_size**\ (\ map\: :ref:`RID<class_RID>`, cell_size\: :ref:`float<class_float>`\ )
+|void| **map_set_cell_size**\ (\ map\: :ref:`RID<class_RID>`, cell_size\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_cell_size>`
 
 Sets the map cell size used to rasterize the navigation mesh vertices. Must match with the cell size of the used navigation meshes.
 
@@ -1270,7 +1296,7 @@ Sets the map cell size used to rasterize the navigation mesh vertices. Must matc
 
 .. rst-class:: classref-method
 
-|void| **map_set_edge_connection_margin**\ (\ map\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ )
+|void| **map_set_edge_connection_margin**\ (\ map\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_edge_connection_margin>`
 
 Set the map edge connection margin used to weld the compatible region edges.
 
@@ -1282,9 +1308,21 @@ Set the map edge connection margin used to weld the compatible region edges.
 
 .. rst-class:: classref-method
 
-|void| **map_set_link_connection_radius**\ (\ map\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ )
+|void| **map_set_link_connection_radius**\ (\ map\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_link_connection_radius>`
 
 Set the map's link connection radius used to connect links to navigation polygons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_map_set_use_async_iterations:
+
+.. rst-class:: classref-method
+
+|void| **map_set_use_async_iterations**\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_use_async_iterations>`
+
+If ``enabled`` is ``true`` the ``map`` synchronization uses an async process that runs on a background thread.
 
 .. rst-class:: classref-item-separator
 
@@ -1294,7 +1332,7 @@ Set the map's link connection radius used to connect links to navigation polygon
 
 .. rst-class:: classref-method
 
-|void| **map_set_use_edge_connections**\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **map_set_use_edge_connections**\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_use_edge_connections>`
 
 Set the navigation ``map`` edge connection use. If ``enabled`` is ``true``, the navigation map allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
@@ -1306,7 +1344,7 @@ Set the navigation ``map`` edge connection use. If ``enabled`` is ``true``, the 
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **obstacle_create**\ (\ )
+:ref:`RID<class_RID>` **obstacle_create**\ (\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_create>`
 
 Creates a new navigation obstacle.
 
@@ -1318,7 +1356,7 @@ Creates a new navigation obstacle.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **obstacle_get_avoidance_enabled**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **obstacle_get_avoidance_enabled**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_obstacle_get_avoidance_enabled>`
 
 Returns ``true`` if the provided ``obstacle`` has avoidance enabled.
 
@@ -1330,7 +1368,7 @@ Returns ``true`` if the provided ``obstacle`` has avoidance enabled.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **obstacle_get_avoidance_layers**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **obstacle_get_avoidance_layers**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_obstacle_get_avoidance_layers>`
 
 Returns the ``avoidance_layers`` bitmask of the specified ``obstacle``.
 
@@ -1342,7 +1380,7 @@ Returns the ``avoidance_layers`` bitmask of the specified ``obstacle``.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **obstacle_get_map**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`RID<class_RID>` **obstacle_get_map**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_obstacle_get_map>`
 
 Returns the navigation map :ref:`RID<class_RID>` the requested ``obstacle`` is currently assigned to.
 
@@ -1354,7 +1392,7 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``obstacle`` is c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **obstacle_get_paused**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **obstacle_get_paused**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_obstacle_get_paused>`
 
 Returns ``true`` if the specified ``obstacle`` is paused.
 
@@ -1366,7 +1404,7 @@ Returns ``true`` if the specified ``obstacle`` is paused.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **obstacle_get_position**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **obstacle_get_position**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_obstacle_get_position>`
 
 Returns the position of the specified ``obstacle`` in world space.
 
@@ -1378,7 +1416,7 @@ Returns the position of the specified ``obstacle`` in world space.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **obstacle_get_radius**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **obstacle_get_radius**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_obstacle_get_radius>`
 
 Returns the radius of the specified dynamic ``obstacle``.
 
@@ -1390,7 +1428,7 @@ Returns the radius of the specified dynamic ``obstacle``.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **obstacle_get_velocity**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **obstacle_get_velocity**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_obstacle_get_velocity>`
 
 Returns the velocity of the specified dynamic ``obstacle``.
 
@@ -1402,7 +1440,7 @@ Returns the velocity of the specified dynamic ``obstacle``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **obstacle_get_vertices**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`PackedVector2Array<class_PackedVector2Array>` **obstacle_get_vertices**\ (\ obstacle\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_obstacle_get_vertices>`
 
 Returns the outline vertices for the specified ``obstacle``.
 
@@ -1414,7 +1452,7 @@ Returns the outline vertices for the specified ``obstacle``.
 
 .. rst-class:: classref-method
 
-|void| **obstacle_set_avoidance_enabled**\ (\ obstacle\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **obstacle_set_avoidance_enabled**\ (\ obstacle\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_avoidance_enabled>`
 
 If ``enabled`` is ``true``, the provided ``obstacle`` affects avoidance using agents.
 
@@ -1426,7 +1464,7 @@ If ``enabled`` is ``true``, the provided ``obstacle`` affects avoidance using ag
 
 .. rst-class:: classref-method
 
-|void| **obstacle_set_avoidance_layers**\ (\ obstacle\: :ref:`RID<class_RID>`, layers\: :ref:`int<class_int>`\ )
+|void| **obstacle_set_avoidance_layers**\ (\ obstacle\: :ref:`RID<class_RID>`, layers\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_avoidance_layers>`
 
 Set the obstacles's ``avoidance_layers`` bitmask.
 
@@ -1438,7 +1476,7 @@ Set the obstacles's ``avoidance_layers`` bitmask.
 
 .. rst-class:: classref-method
 
-|void| **obstacle_set_map**\ (\ obstacle\: :ref:`RID<class_RID>`, map\: :ref:`RID<class_RID>`\ )
+|void| **obstacle_set_map**\ (\ obstacle\: :ref:`RID<class_RID>`, map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_map>`
 
 Sets the navigation map :ref:`RID<class_RID>` for the obstacle.
 
@@ -1450,9 +1488,9 @@ Sets the navigation map :ref:`RID<class_RID>` for the obstacle.
 
 .. rst-class:: classref-method
 
-|void| **obstacle_set_paused**\ (\ obstacle\: :ref:`RID<class_RID>`, paused\: :ref:`bool<class_bool>`\ )
+|void| **obstacle_set_paused**\ (\ obstacle\: :ref:`RID<class_RID>`, paused\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_paused>`
 
-If ``paused`` is true the specified ``obstacle`` will not be processed, e.g. affect avoidance velocities.
+If ``paused`` is ``true`` the specified ``obstacle`` will not be processed, e.g. affect avoidance velocities.
 
 .. rst-class:: classref-item-separator
 
@@ -1462,7 +1500,7 @@ If ``paused`` is true the specified ``obstacle`` will not be processed, e.g. aff
 
 .. rst-class:: classref-method
 
-|void| **obstacle_set_position**\ (\ obstacle\: :ref:`RID<class_RID>`, position\: :ref:`Vector2<class_Vector2>`\ )
+|void| **obstacle_set_position**\ (\ obstacle\: :ref:`RID<class_RID>`, position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_position>`
 
 Sets the position of the obstacle in world space.
 
@@ -1474,7 +1512,7 @@ Sets the position of the obstacle in world space.
 
 .. rst-class:: classref-method
 
-|void| **obstacle_set_radius**\ (\ obstacle\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ )
+|void| **obstacle_set_radius**\ (\ obstacle\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_radius>`
 
 Sets the radius of the dynamic obstacle.
 
@@ -1486,7 +1524,7 @@ Sets the radius of the dynamic obstacle.
 
 .. rst-class:: classref-method
 
-|void| **obstacle_set_velocity**\ (\ obstacle\: :ref:`RID<class_RID>`, velocity\: :ref:`Vector2<class_Vector2>`\ )
+|void| **obstacle_set_velocity**\ (\ obstacle\: :ref:`RID<class_RID>`, velocity\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_velocity>`
 
 Sets ``velocity`` of the dynamic ``obstacle``. Allows other agents to better predict the movement of the dynamic obstacle. Only works in combination with the radius of the obstacle.
 
@@ -1498,7 +1536,7 @@ Sets ``velocity`` of the dynamic ``obstacle``. Allows other agents to better pre
 
 .. rst-class:: classref-method
 
-|void| **obstacle_set_vertices**\ (\ obstacle\: :ref:`RID<class_RID>`, vertices\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+|void| **obstacle_set_vertices**\ (\ obstacle\: :ref:`RID<class_RID>`, vertices\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_vertices>`
 
 Sets the outline vertices for the obstacle. If the vertices are winded in clockwise order agents will be pushed in by the obstacle, else they will be pushed out.
 
@@ -1510,7 +1548,7 @@ Sets the outline vertices for the obstacle. If the vertices are winded in clockw
 
 .. rst-class:: classref-method
 
-|void| **parse_source_geometry_data**\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>`, root_node\: :ref:`Node<class_Node>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ )
+|void| **parse_source_geometry_data**\ (\ navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>`, root_node\: :ref:`Node<class_Node>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ ) :ref:`🔗<class_NavigationServer2D_method_parse_source_geometry_data>`
 
 Parses the :ref:`SceneTree<class_SceneTree>` for source geometry according to the properties of ``navigation_polygon``. Updates the provided ``source_geometry_data`` resource with the resulting data. The resource can then be used to bake a navigation mesh with :ref:`bake_from_source_geometry_data<class_NavigationServer2D_method_bake_from_source_geometry_data>`. After the process is finished the optional ``callback`` will be called.
 
@@ -1526,9 +1564,9 @@ Parses the :ref:`SceneTree<class_SceneTree>` for source geometry according to th
 
 .. rst-class:: classref-method
 
-|void| **query_path**\ (\ parameters\: :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>`, result\: :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>`\ ) |const|
+|void| **query_path**\ (\ parameters\: :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>`, result\: :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ ) :ref:`🔗<class_NavigationServer2D_method_query_path>`
 
-Queries a path in a given navigation map. Start and target position and other parameters are defined through :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>`. Updates the provided :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>` result object with the path among other results requested by the query.
+Queries a path in a given navigation map. Start and target position and other parameters are defined through :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>`. Updates the provided :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>` result object with the path among other results requested by the query. After the process is finished the optional ``callback`` will be called.
 
 .. rst-class:: classref-item-separator
 
@@ -1538,9 +1576,33 @@ Queries a path in a given navigation map. Start and target position and other pa
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **region_create**\ (\ )
+:ref:`RID<class_RID>` **region_create**\ (\ ) :ref:`🔗<class_NavigationServer2D_method_region_create>`
 
 Creates a new region.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_region_get_bounds:
+
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **region_get_bounds**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_bounds>`
+
+Returns the axis-aligned rectangle for the ``region``'s transformed navigation mesh.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_region_get_closest_point:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **region_get_closest_point**\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_closest_point>`
+
+Returns the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``region``.
 
 .. rst-class:: classref-item-separator
 
@@ -1550,7 +1612,7 @@ Creates a new region.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **region_get_connection_pathway_end**\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **region_get_connection_pathway_end**\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_connection_pathway_end>`
 
 Returns the ending point of a connection door. ``connection`` is an index between 0 and the return value of :ref:`region_get_connections_count<class_NavigationServer2D_method_region_get_connections_count>`.
 
@@ -1562,7 +1624,7 @@ Returns the ending point of a connection door. ``connection`` is an index betwee
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **region_get_connection_pathway_start**\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **region_get_connection_pathway_start**\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_connection_pathway_start>`
 
 Returns the starting point of a connection door. ``connection`` is an index between 0 and the return value of :ref:`region_get_connections_count<class_NavigationServer2D_method_region_get_connections_count>`.
 
@@ -1574,7 +1636,7 @@ Returns the starting point of a connection door. ``connection`` is an index betw
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **region_get_connections_count**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **region_get_connections_count**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_connections_count>`
 
 Returns how many connections this ``region`` has with other regions in the map.
 
@@ -1586,7 +1648,7 @@ Returns how many connections this ``region`` has with other regions in the map.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **region_get_enabled**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **region_get_enabled**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_enabled>`
 
 Returns ``true`` if the specified ``region`` is enabled.
 
@@ -1598,7 +1660,7 @@ Returns ``true`` if the specified ``region`` is enabled.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **region_get_enter_cost**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **region_get_enter_cost**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_enter_cost>`
 
 Returns the enter cost of this ``region``.
 
@@ -1610,7 +1672,7 @@ Returns the enter cost of this ``region``.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **region_get_map**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`RID<class_RID>` **region_get_map**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_map>`
 
 Returns the navigation map :ref:`RID<class_RID>` the requested ``region`` is currently assigned to.
 
@@ -1622,7 +1684,7 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``region`` is cur
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **region_get_navigation_layers**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **region_get_navigation_layers**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_navigation_layers>`
 
 Returns the region's navigation layers.
 
@@ -1634,7 +1696,7 @@ Returns the region's navigation layers.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **region_get_owner_id**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`int<class_int>` **region_get_owner_id**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_owner_id>`
 
 Returns the ``ObjectID`` of the object which manages this region.
 
@@ -1646,7 +1708,7 @@ Returns the ``ObjectID`` of the object which manages this region.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **region_get_random_point**\ (\ region\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`, uniformly\: :ref:`bool<class_bool>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **region_get_random_point**\ (\ region\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`, uniformly\: :ref:`bool<class_bool>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_random_point>`
 
 Returns a random position picked from all region polygons with matching ``navigation_layers``.
 
@@ -1662,7 +1724,7 @@ If ``uniformly`` is ``false``, just a random polygon and face is picked (faster)
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **region_get_transform**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **region_get_transform**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_transform>`
 
 Returns the global transformation of this ``region``.
 
@@ -1674,7 +1736,7 @@ Returns the global transformation of this ``region``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **region_get_travel_cost**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`float<class_float>` **region_get_travel_cost**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_travel_cost>`
 
 Returns the travel cost of this ``region``.
 
@@ -1686,7 +1748,7 @@ Returns the travel cost of this ``region``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **region_get_use_edge_connections**\ (\ region\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **region_get_use_edge_connections**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_use_edge_connections>`
 
 Returns whether the navigation ``region`` is set to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
@@ -1698,7 +1760,7 @@ Returns whether the navigation ``region`` is set to use edge connections to conn
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **region_owns_point**\ (\ region\: :ref:`RID<class_RID>`, point\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`bool<class_bool>` **region_owns_point**\ (\ region\: :ref:`RID<class_RID>`, point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_owns_point>`
 
 Returns ``true`` if the provided ``point`` in world space is currently owned by the provided navigation ``region``. Owned in this context means that one of the region's navigation mesh polygon faces has a possible position at the closest distance to this point compared to all other navigation meshes from other navigation regions that are also registered on the navigation map of the provided region.
 
@@ -1714,7 +1776,7 @@ If multiple navigation meshes have positions at equal distance the navigation re
 
 .. rst-class:: classref-method
 
-|void| **region_set_enabled**\ (\ region\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **region_set_enabled**\ (\ region\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_enabled>`
 
 If ``enabled`` is ``true`` the specified ``region`` will contribute to its current navigation map.
 
@@ -1726,7 +1788,7 @@ If ``enabled`` is ``true`` the specified ``region`` will contribute to its curre
 
 .. rst-class:: classref-method
 
-|void| **region_set_enter_cost**\ (\ region\: :ref:`RID<class_RID>`, enter_cost\: :ref:`float<class_float>`\ )
+|void| **region_set_enter_cost**\ (\ region\: :ref:`RID<class_RID>`, enter_cost\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_enter_cost>`
 
 Sets the ``enter_cost`` for this ``region``.
 
@@ -1738,7 +1800,7 @@ Sets the ``enter_cost`` for this ``region``.
 
 .. rst-class:: classref-method
 
-|void| **region_set_map**\ (\ region\: :ref:`RID<class_RID>`, map\: :ref:`RID<class_RID>`\ )
+|void| **region_set_map**\ (\ region\: :ref:`RID<class_RID>`, map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_map>`
 
 Sets the map for the region.
 
@@ -1750,7 +1812,7 @@ Sets the map for the region.
 
 .. rst-class:: classref-method
 
-|void| **region_set_navigation_layers**\ (\ region\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`\ )
+|void| **region_set_navigation_layers**\ (\ region\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_navigation_layers>`
 
 Set the region's navigation layers. This allows selecting regions from a path request (when using :ref:`map_get_path<class_NavigationServer2D_method_map_get_path>`).
 
@@ -1762,7 +1824,7 @@ Set the region's navigation layers. This allows selecting regions from a path re
 
 .. rst-class:: classref-method
 
-|void| **region_set_navigation_polygon**\ (\ region\: :ref:`RID<class_RID>`, navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`\ )
+|void| **region_set_navigation_polygon**\ (\ region\: :ref:`RID<class_RID>`, navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_navigation_polygon>`
 
 Sets the ``navigation_polygon`` for the region.
 
@@ -1774,7 +1836,7 @@ Sets the ``navigation_polygon`` for the region.
 
 .. rst-class:: classref-method
 
-|void| **region_set_owner_id**\ (\ region\: :ref:`RID<class_RID>`, owner_id\: :ref:`int<class_int>`\ )
+|void| **region_set_owner_id**\ (\ region\: :ref:`RID<class_RID>`, owner_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_owner_id>`
 
 Set the ``ObjectID`` of the object which manages this region.
 
@@ -1786,7 +1848,7 @@ Set the ``ObjectID`` of the object which manages this region.
 
 .. rst-class:: classref-method
 
-|void| **region_set_transform**\ (\ region\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ )
+|void| **region_set_transform**\ (\ region\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_transform>`
 
 Sets the global transformation for the region.
 
@@ -1798,7 +1860,7 @@ Sets the global transformation for the region.
 
 .. rst-class:: classref-method
 
-|void| **region_set_travel_cost**\ (\ region\: :ref:`RID<class_RID>`, travel_cost\: :ref:`float<class_float>`\ )
+|void| **region_set_travel_cost**\ (\ region\: :ref:`RID<class_RID>`, travel_cost\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_travel_cost>`
 
 Sets the ``travel_cost`` for this ``region``.
 
@@ -1810,7 +1872,7 @@ Sets the ``travel_cost`` for this ``region``.
 
 .. rst-class:: classref-method
 
-|void| **region_set_use_edge_connections**\ (\ region\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **region_set_use_edge_connections**\ (\ region\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_region_set_use_edge_connections>`
 
 If ``enabled`` is ``true``, the navigation ``region`` will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
@@ -1822,9 +1884,53 @@ If ``enabled`` is ``true``, the navigation ``region`` will use edge connections 
 
 .. rst-class:: classref-method
 
-|void| **set_debug_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_debug_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_set_debug_enabled>`
 
 If ``true`` enables debug mode on the NavigationServer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_simplify_path:
+
+.. rst-class:: classref-method
+
+:ref:`PackedVector2Array<class_PackedVector2Array>` **simplify_path**\ (\ path\: :ref:`PackedVector2Array<class_PackedVector2Array>`, epsilon\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_simplify_path>`
+
+Returns a simplified version of ``path`` with less critical path points removed. The simplification amount is in worlds units and controlled by ``epsilon``. The simplification uses a variant of Ramer-Douglas-Peucker algorithm for curve point decimation.
+
+Path simplification can be helpful to mitigate various path following issues that can arise with certain agent types and script behaviors. E.g. "steering" agents or avoidance in "open fields".
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_source_geometry_parser_create:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **source_geometry_parser_create**\ (\ ) :ref:`🔗<class_NavigationServer2D_method_source_geometry_parser_create>`
+
+Creates a new source geometry parser. If a :ref:`Callable<class_Callable>` is set for the parser with :ref:`source_geometry_parser_set_callback<class_NavigationServer2D_method_source_geometry_parser_set_callback>` the callback will be called for every single node that gets parsed whenever :ref:`parse_source_geometry_data<class_NavigationServer2D_method_parse_source_geometry_data>` is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_source_geometry_parser_set_callback:
+
+.. rst-class:: classref-method
+
+|void| **source_geometry_parser_set_callback**\ (\ parser\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_NavigationServer2D_method_source_geometry_parser_set_callback>`
+
+Sets the ``callback`` :ref:`Callable<class_Callable>` for the specific source geometry ``parser``. The :ref:`Callable<class_Callable>` will receive a call with the following parameters:
+
+- ``navigation_mesh`` - The :ref:`NavigationPolygon<class_NavigationPolygon>` reference used to define the parse settings. Do NOT edit or add directly to the navigation mesh.
+
+- ``source_geometry_data`` - The :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>` reference. Add custom source geometry for navigation mesh baking to this object.
+
+- ``node`` - The :ref:`Node<class_Node>` that is parsed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

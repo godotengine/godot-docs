@@ -50,7 +50,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **register_server**\ (\ name\: :ref:`String<class_String>`, create_callback\: :ref:`Callable<class_Callable>`\ )
+|void| **register_server**\ (\ name\: :ref:`String<class_String>`, create_callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_PhysicsServer2DManager_method_register_server>`
 
 Register a :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementation by passing a ``name`` and a :ref:`Callable<class_Callable>` that returns a :ref:`PhysicsServer2D<class_PhysicsServer2D>` object.
 
@@ -62,7 +62,7 @@ Register a :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementation by passi
 
 .. rst-class:: classref-method
 
-|void| **set_default_server**\ (\ name\: :ref:`String<class_String>`, priority\: :ref:`int<class_int>`\ )
+|void| **set_default_server**\ (\ name\: :ref:`String<class_String>`, priority\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PhysicsServer2DManager_method_set_default_server>`
 
 Set the default :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementation to the one identified by ``name``, if ``priority`` is greater than the priority of the current default implementation.
 

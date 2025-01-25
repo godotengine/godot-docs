@@ -57,6 +57,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_debug_get_stack_level_members<class_ScriptLanguageExtension_private_method__debug_get_stack_level_members>`\ (\ level\: :ref:`int<class_int>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual|                                                                                                                      |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`_debug_get_stack_level_source<class_ScriptLanguageExtension_private_method__debug_get_stack_level_source>`\ (\ level\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                                         |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_debug_parse_stack_level_expression<class_ScriptLanguageExtension_private_method__debug_parse_stack_level_expression>`\ (\ level\: :ref:`int<class_int>`, expression\: :ref:`String<class_String>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual|                                                                  |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`_find_function<class_ScriptLanguageExtension_private_method__find_function>`\ (\ function\: :ref:`String<class_String>`, code\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                          |
@@ -125,6 +127,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_reload_all_scripts<class_ScriptLanguageExtension_private_method__reload_all_scripts>`\ (\ ) |virtual|                                                                                                                                                                                                                                                    |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_reload_scripts<class_ScriptLanguageExtension_private_method__reload_scripts>`\ (\ scripts\: :ref:`Array<class_Array>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                                |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_reload_tool_script<class_ScriptLanguageExtension_private_method__reload_tool_script>`\ (\ script\: :ref:`Script<class_Script>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                       |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_remove_named_global_constant<class_ScriptLanguageExtension_private_method__remove_named_global_constant>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |virtual|                                                                                                                                                                                    |
@@ -155,7 +159,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **LookupResultType**:
+enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultType>`
 
 .. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_SCRIPT_LOCATION:
 
@@ -247,9 +251,7 @@ enum **LookupResultType**:
 
 :ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_CLASS_TBD_GLOBALSCOPE** = ``7``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+**Deprecated:** This constant may be changed or removed in future versions.
 
 
 
@@ -265,11 +267,35 @@ enum **LookupResultType**:
 
 
 
+.. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_LOCAL_CONSTANT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_LOCAL_CONSTANT** = ``9``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_LOCAL_VARIABLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_LOCAL_VARIABLE** = ``10``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
 .. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_MAX** = ``9``
+:ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_MAX** = ``11``
 
 .. container:: contribute
 
@@ -285,7 +311,7 @@ enum **LookupResultType**:
 
 .. rst-class:: classref-enumeration
 
-enum **CodeCompletionLocation**:
+enum **CodeCompletionLocation**: :ref:`🔗<enum_ScriptLanguageExtension_CodeCompletionLocation>`
 
 .. _class_ScriptLanguageExtension_constant_LOCATION_LOCAL:
 
@@ -327,7 +353,7 @@ The option is from other engine code, not covered by the other enum constants - 
 
 .. rst-class:: classref-enumeration
 
-enum **CodeCompletionKind**:
+enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeCompletionKind>`
 
 .. _class_ScriptLanguageExtension_constant_CODE_COMPLETION_KIND_CLASS:
 
@@ -474,7 +500,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_add_global_constant**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_add_global_constant**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__add_global_constant>`
 
 .. container:: contribute
 
@@ -488,7 +514,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_add_named_global_constant**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_add_named_global_constant**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__add_named_global_constant>`
 
 .. container:: contribute
 
@@ -502,7 +528,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_auto_indent_code**\ (\ code\: :ref:`String<class_String>`, from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_auto_indent_code**\ (\ code\: :ref:`String<class_String>`, from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__auto_indent_code>`
 
 .. container:: contribute
 
@@ -516,7 +542,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_can_inherit_from_file**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_can_inherit_from_file**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__can_inherit_from_file>`
 
 .. container:: contribute
 
@@ -530,7 +556,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_can_make_function**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_can_make_function**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__can_make_function>`
 
 .. container:: contribute
 
@@ -544,7 +570,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_complete_code**\ (\ code\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, owner\: :ref:`Object<class_Object>`\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_complete_code**\ (\ code\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, owner\: :ref:`Object<class_Object>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__complete_code>`
 
 .. container:: contribute
 
@@ -558,7 +584,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_create_script**\ (\ ) |virtual| |const|
+:ref:`Object<class_Object>` **_create_script**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__create_script>`
 
 .. container:: contribute
 
@@ -572,7 +598,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_debug_get_current_stack_info**\ (\ ) |virtual|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_debug_get_current_stack_info**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_current_stack_info>`
 
 .. container:: contribute
 
@@ -586,7 +612,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_debug_get_error**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_debug_get_error**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_error>`
 
 .. container:: contribute
 
@@ -600,7 +626,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_debug_get_globals**\ (\ max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`Dictionary<class_Dictionary>` **_debug_get_globals**\ (\ max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_globals>`
 
 .. container:: contribute
 
@@ -614,7 +640,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_debug_get_stack_level_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_debug_get_stack_level_count**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_stack_level_count>`
 
 .. container:: contribute
 
@@ -628,7 +654,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_debug_get_stack_level_function**\ (\ level\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_debug_get_stack_level_function**\ (\ level\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_stack_level_function>`
 
 .. container:: contribute
 
@@ -642,7 +668,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-``void*`` **_debug_get_stack_level_instance**\ (\ level\: :ref:`int<class_int>`\ ) |virtual|
+``void*`` **_debug_get_stack_level_instance**\ (\ level\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_stack_level_instance>`
 
 .. container:: contribute
 
@@ -656,7 +682,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_debug_get_stack_level_line**\ (\ level\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_debug_get_stack_level_line**\ (\ level\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_stack_level_line>`
 
 .. container:: contribute
 
@@ -670,7 +696,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_debug_get_stack_level_locals**\ (\ level\: :ref:`int<class_int>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`Dictionary<class_Dictionary>` **_debug_get_stack_level_locals**\ (\ level\: :ref:`int<class_int>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_stack_level_locals>`
 
 .. container:: contribute
 
@@ -684,7 +710,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_debug_get_stack_level_members**\ (\ level\: :ref:`int<class_int>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`Dictionary<class_Dictionary>` **_debug_get_stack_level_members**\ (\ level\: :ref:`int<class_int>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_stack_level_members>`
 
 .. container:: contribute
 
@@ -694,11 +720,23 @@ Method Descriptions
 
 ----
 
+.. _class_ScriptLanguageExtension_private_method__debug_get_stack_level_source:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_debug_get_stack_level_source**\ (\ level\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_stack_level_source>`
+
+Returns the source associated with a given debug stack position.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ScriptLanguageExtension_private_method__debug_parse_stack_level_expression:
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_debug_parse_stack_level_expression**\ (\ level\: :ref:`int<class_int>`, expression\: :ref:`String<class_String>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`String<class_String>` **_debug_parse_stack_level_expression**\ (\ level\: :ref:`int<class_int>`, expression\: :ref:`String<class_String>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_parse_stack_level_expression>`
 
 .. container:: contribute
 
@@ -712,7 +750,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_find_function**\ (\ function\: :ref:`String<class_String>`, code\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_find_function**\ (\ function\: :ref:`String<class_String>`, code\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__find_function>`
 
 Returns the line where the function is defined in the code, or ``-1`` if the function is not present.
 
@@ -724,7 +762,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_finish**\ (\ ) |virtual|
+|void| **_finish**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__finish>`
 
 .. container:: contribute
 
@@ -738,7 +776,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_frame**\ (\ ) |virtual|
+|void| **_frame**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__frame>`
 
 .. container:: contribute
 
@@ -752,7 +790,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_built_in_templates**\ (\ object\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_built_in_templates**\ (\ object\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_built_in_templates>`
 
 .. container:: contribute
 
@@ -766,7 +804,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_comment_delimiters**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_comment_delimiters**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_comment_delimiters>`
 
 .. container:: contribute
 
@@ -780,7 +818,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_doc_comment_delimiters**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_doc_comment_delimiters**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_doc_comment_delimiters>`
 
 .. container:: contribute
 
@@ -794,7 +832,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_extension**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_extension**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_extension>`
 
 .. container:: contribute
 
@@ -808,7 +846,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_global_class_name**\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_get_global_class_name**\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_global_class_name>`
 
 .. container:: contribute
 
@@ -822,7 +860,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_name>`
 
 .. container:: contribute
 
@@ -836,7 +874,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_public_annotations**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_public_annotations**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_public_annotations>`
 
 .. container:: contribute
 
@@ -850,7 +888,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_public_constants**\ (\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_get_public_constants**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_public_constants>`
 
 .. container:: contribute
 
@@ -864,7 +902,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_public_functions**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_public_functions**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_public_functions>`
 
 .. container:: contribute
 
@@ -878,7 +916,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`
 
 .. container:: contribute
 
@@ -892,7 +930,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_reserved_words**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_reserved_words**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_reserved_words>`
 
 .. container:: contribute
 
@@ -906,7 +944,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_string_delimiters**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_string_delimiters**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_string_delimiters>`
 
 .. container:: contribute
 
@@ -920,7 +958,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_type**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_type**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_type>`
 
 .. container:: contribute
 
@@ -934,7 +972,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handles_global_class_type**\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_handles_global_class_type**\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__handles_global_class_type>`
 
 .. container:: contribute
 
@@ -948,7 +986,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_named_classes**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_named_classes**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__has_named_classes>`
 
 **Deprecated:** This method is not called by the engine.
 
@@ -960,7 +998,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_init**\ (\ ) |virtual|
+|void| **_init**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__init>`
 
 .. container:: contribute
 
@@ -974,7 +1012,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_control_flow_keyword**\ (\ keyword\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_control_flow_keyword**\ (\ keyword\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__is_control_flow_keyword>`
 
 .. container:: contribute
 
@@ -988,7 +1026,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_using_templates**\ (\ ) |virtual|
+:ref:`bool<class_bool>` **_is_using_templates**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__is_using_templates>`
 
 .. container:: contribute
 
@@ -1002,7 +1040,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_lookup_code**\ (\ code\: :ref:`String<class_String>`, symbol\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, owner\: :ref:`Object<class_Object>`\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_lookup_code**\ (\ code\: :ref:`String<class_String>`, symbol\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, owner\: :ref:`Object<class_Object>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__lookup_code>`
 
 .. container:: contribute
 
@@ -1016,7 +1054,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_make_function**\ (\ class_name\: :ref:`String<class_String>`, function_name\: :ref:`String<class_String>`, function_args\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_make_function**\ (\ class_name\: :ref:`String<class_String>`, function_name\: :ref:`String<class_String>`, function_args\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__make_function>`
 
 .. container:: contribute
 
@@ -1030,7 +1068,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Script<class_Script>` **_make_template**\ (\ template\: :ref:`String<class_String>`, class_name\: :ref:`String<class_String>`, base_class_name\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`Script<class_Script>` **_make_template**\ (\ template\: :ref:`String<class_String>`, class_name\: :ref:`String<class_String>`, base_class_name\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__make_template>`
 
 .. container:: contribute
 
@@ -1044,7 +1082,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_open_in_external_editor**\ (\ script\: :ref:`Script<class_Script>`, line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_open_in_external_editor**\ (\ script\: :ref:`Script<class_Script>`, line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__open_in_external_editor>`
 
 .. container:: contribute
 
@@ -1058,7 +1096,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_overrides_external_editor**\ (\ ) |virtual|
+:ref:`bool<class_bool>` **_overrides_external_editor**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__overrides_external_editor>`
 
 .. container:: contribute
 
@@ -1072,7 +1110,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **_preferred_file_name_casing**\ (\ ) |virtual| |const|
+:ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **_preferred_file_name_casing**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__preferred_file_name_casing>`
 
 .. container:: contribute
 
@@ -1086,7 +1124,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_profiling_get_accumulated_data**\ (\ info_array\: ``ScriptLanguageExtensionProfilingInfo*``, info_max\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`int<class_int>` **_profiling_get_accumulated_data**\ (\ info_array\: ``ScriptLanguageExtensionProfilingInfo*``, info_max\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__profiling_get_accumulated_data>`
 
 .. container:: contribute
 
@@ -1100,7 +1138,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_profiling_get_frame_data**\ (\ info_array\: ``ScriptLanguageExtensionProfilingInfo*``, info_max\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`int<class_int>` **_profiling_get_frame_data**\ (\ info_array\: ``ScriptLanguageExtensionProfilingInfo*``, info_max\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__profiling_get_frame_data>`
 
 .. container:: contribute
 
@@ -1114,7 +1152,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_profiling_set_save_native_calls**\ (\ enable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_profiling_set_save_native_calls**\ (\ enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__profiling_set_save_native_calls>`
 
 .. container:: contribute
 
@@ -1128,7 +1166,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_profiling_start**\ (\ ) |virtual|
+|void| **_profiling_start**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__profiling_start>`
 
 .. container:: contribute
 
@@ -1142,7 +1180,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_profiling_stop**\ (\ ) |virtual|
+|void| **_profiling_stop**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__profiling_stop>`
 
 .. container:: contribute
 
@@ -1156,7 +1194,21 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_reload_all_scripts**\ (\ ) |virtual|
+|void| **_reload_all_scripts**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_all_scripts>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptLanguageExtension_private_method__reload_scripts:
+
+.. rst-class:: classref-method
+
+|void| **_reload_scripts**\ (\ scripts\: :ref:`Array<class_Array>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_scripts>`
 
 .. container:: contribute
 
@@ -1170,7 +1222,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_reload_tool_script**\ (\ script\: :ref:`Script<class_Script>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_reload_tool_script**\ (\ script\: :ref:`Script<class_Script>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_tool_script>`
 
 .. container:: contribute
 
@@ -1184,7 +1236,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_remove_named_global_constant**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |virtual|
+|void| **_remove_named_global_constant**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__remove_named_global_constant>`
 
 .. container:: contribute
 
@@ -1198,7 +1250,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_supports_builtin_mode**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_supports_builtin_mode**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__supports_builtin_mode>`
 
 .. container:: contribute
 
@@ -1212,7 +1264,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_supports_documentation**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_supports_documentation**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__supports_documentation>`
 
 .. container:: contribute
 
@@ -1226,7 +1278,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_thread_enter**\ (\ ) |virtual|
+|void| **_thread_enter**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__thread_enter>`
 
 .. container:: contribute
 
@@ -1240,7 +1292,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-|void| **_thread_exit**\ (\ ) |virtual|
+|void| **_thread_exit**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__thread_exit>`
 
 .. container:: contribute
 
@@ -1254,7 +1306,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_validate**\ (\ script\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, validate_functions\: :ref:`bool<class_bool>`, validate_errors\: :ref:`bool<class_bool>`, validate_warnings\: :ref:`bool<class_bool>`, validate_safe_lines\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_validate**\ (\ script\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, validate_functions\: :ref:`bool<class_bool>`, validate_errors\: :ref:`bool<class_bool>`, validate_warnings\: :ref:`bool<class_bool>`, validate_safe_lines\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__validate>`
 
 .. container:: contribute
 
@@ -1268,7 +1320,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_validate_path**\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_validate_path**\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__validate_path>`
 
 .. container:: contribute
 

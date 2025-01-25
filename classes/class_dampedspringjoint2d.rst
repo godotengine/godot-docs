@@ -52,7 +52,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **damping** = ``1.0``
+:ref:`float<class_float>` **damping** = ``1.0`` :ref:`🔗<class_DampedSpringJoint2D_property_damping>`
 
 .. rst-class:: classref-property-setget
 
@@ -69,7 +69,7 @@ The spring joint's damping ratio. A value between ``0`` and ``1``. When the two 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **length** = ``50.0``
+:ref:`float<class_float>` **length** = ``50.0`` :ref:`🔗<class_DampedSpringJoint2D_property_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ The spring joint's maximum length. The two attached bodies cannot stretch it pas
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rest_length** = ``0.0``
+:ref:`float<class_float>` **rest_length** = ``0.0`` :ref:`🔗<class_DampedSpringJoint2D_property_rest_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -103,7 +103,7 @@ When the bodies attached to the spring joint move they stretch or squash it. The
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **stiffness** = ``20.0``
+:ref:`float<class_float>` **stiffness** = ``20.0`` :ref:`🔗<class_DampedSpringJoint2D_property_stiffness>`
 
 .. rst-class:: classref-property-setget
 

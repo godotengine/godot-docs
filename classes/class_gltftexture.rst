@@ -12,7 +12,7 @@ GLTFTexture
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-GLTFTexture represents a texture in an GLTF file.
+GLTFTexture represents a texture in a glTF file.
 
 .. rst-class:: classref-introduction-group
 
@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sampler** = ``-1``
+:ref:`int<class_int>` **sampler** = ``-1`` :ref:`🔗<class_GLTFTexture_property_sampler>`
 
 .. rst-class:: classref-property-setget
 
@@ -65,7 +65,7 @@ ID of the texture sampler to use when sampling the image. If -1, then the defaul
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **src_image** = ``-1``
+:ref:`int<class_int>` **src_image** = ``-1`` :ref:`🔗<class_GLTFTexture_property_src_image>`
 
 .. rst-class:: classref-property-setget
 

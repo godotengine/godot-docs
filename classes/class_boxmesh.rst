@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_BoxMesh_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -73,7 +73,7 @@ The box's width, height and depth.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **subdivide_depth** = ``0``
+:ref:`int<class_int>` **subdivide_depth** = ``0`` :ref:`🔗<class_BoxMesh_property_subdivide_depth>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ Number of extra edge loops inserted along the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **subdivide_height** = ``0``
+:ref:`int<class_int>` **subdivide_height** = ``0`` :ref:`🔗<class_BoxMesh_property_subdivide_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ Number of extra edge loops inserted along the Y axis.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **subdivide_width** = ``0``
+:ref:`int<class_int>` **subdivide_width** = ``0`` :ref:`🔗<class_BoxMesh_property_subdivide_width>`
 
 .. rst-class:: classref-property-setget
 

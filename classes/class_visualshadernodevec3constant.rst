@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **constant** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **constant** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_VisualShaderNodeVec3Constant_property_constant>`
 
 .. rst-class:: classref-property-setget
 

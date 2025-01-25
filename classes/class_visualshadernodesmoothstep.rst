@@ -48,7 +48,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **OpType**:
+enum **OpType**: :ref:`🔗<enum_VisualShaderNodeSmoothStep_OpType>`
 
 .. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_SCALAR:
 
@@ -127,7 +127,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`OpType<enum_VisualShaderNodeSmoothStep_OpType>` **op_type** = ``0``
+:ref:`OpType<enum_VisualShaderNodeSmoothStep_OpType>` **op_type** = ``0`` :ref:`🔗<class_VisualShaderNodeSmoothStep_property_op_type>`
 
 .. rst-class:: classref-property-setget
 

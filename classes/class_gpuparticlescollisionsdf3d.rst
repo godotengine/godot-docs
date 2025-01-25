@@ -78,7 +78,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Resolution**:
+enum **Resolution**: :ref:`🔗<enum_GPUParticlesCollisionSDF3D_Resolution>`
 
 .. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_16:
 
@@ -149,7 +149,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bake_mask** = ``4294967295``
+:ref:`int<class_int>` **bake_mask** = ``4294967295`` :ref:`🔗<class_GPUParticlesCollisionSDF3D_property_bake_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +166,7 @@ The visual layers to account for when baking the particle collision SDF. Only :r
 
 .. rst-class:: classref-property
 
-:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **resolution** = ``2``
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **resolution** = ``2`` :ref:`🔗<class_GPUParticlesCollisionSDF3D_property_resolution>`
 
 .. rst-class:: classref-property-setget
 
@@ -183,7 +183,7 @@ The bake resolution to use for the signed distance field :ref:`texture<class_GPU
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)`` :ref:`🔗<class_GPUParticlesCollisionSDF3D_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -200,7 +200,7 @@ The collision SDF's size in 3D units. To improve SDF quality, the :ref:`size<cla
 
 .. rst-class:: classref-property
 
-:ref:`Texture3D<class_Texture3D>` **texture**
+:ref:`Texture3D<class_Texture3D>` **texture** :ref:`🔗<class_GPUParticlesCollisionSDF3D_property_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -217,7 +217,7 @@ The 3D texture representing the signed distance field.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **thickness** = ``1.0``
+:ref:`float<class_float>` **thickness** = ``1.0`` :ref:`🔗<class_GPUParticlesCollisionSDF3D_property_thickness>`
 
 .. rst-class:: classref-property-setget
 
@@ -239,7 +239,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GPUParticlesCollisionSDF3D_method_get_bake_mask_value>`
 
 Returns whether or not the specified layer of the :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -251,7 +251,7 @@ Returns whether or not the specified layer of the :ref:`bake_mask<class_GPUParti
 
 .. rst-class:: classref-method
 
-|void| **set_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
+|void| **set_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_GPUParticlesCollisionSDF3D_method_set_bake_mask_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>`, given a ``layer_number`` between 1 and 32.
 

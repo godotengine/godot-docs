@@ -14,20 +14,18 @@ NavigationObstacle3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-3D Obstacle used in navigation to constrain avoidance controlled agents outside or inside an area.
+3D obstacle used to affect navigation mesh baking or constrain velocities of avoidance controlled agents.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3D Obstacle used in navigation to constrain avoidance controlled agents outside or inside an area. The obstacle needs a navigation map and outline vertices defined to work correctly.
+An obstacle needs a navigation map and outline :ref:`vertices<class_NavigationObstacle3D_property_vertices>` defined to work correctly. The outlines can not cross or overlap and are restricted to a plane projection. This means the y-axis of the vertices is ignored, instead the obstacle's global y-axis position is used for placement. The projected shape is extruded by the obstacles height along the y-axis.
 
-If the obstacle's vertices are winded in clockwise order, avoidance agents will be pushed in by the obstacle, otherwise, avoidance agents will be pushed out. Outlines must not cross or overlap.
+Obstacles can be included in the navigation mesh baking process when :ref:`affect_navigation_mesh<class_NavigationObstacle3D_property_affect_navigation_mesh>` is enabled. They do not add walkable geometry, instead their role is to discard other source geometry inside the shape. This can be used to prevent navigation mesh from appearing in unwanted places, e.g. inside "solid" geometry or on top of it. If :ref:`carve_navigation_mesh<class_NavigationObstacle3D_property_carve_navigation_mesh>` is enabled the baked shape will not be affected by offsets of the navigation mesh baking, e.g. the agent radius.
 
-Obstacles are **not** a replacement for a (re)baked navigation mesh. Obstacles **don't** change the resulting path from the pathfinding, obstacles only affect the navigation avoidance agent movement by altering the suggested velocity of the avoidance agent.
-
-Obstacles using vertices can warp to a new position but should not moved every frame as each move requires a rebuild of the avoidance map.
+With :ref:`avoidance_enabled<class_NavigationObstacle3D_property_avoidance_enabled>` the obstacle can constrain the avoidance velocities of avoidance using agents. If the obstacle's vertices are wound in clockwise order, avoidance agents will be pushed in by the obstacle, otherwise, avoidance agents will be pushed out. Obstacles using vertices and avoidance can warp to a new position but should not be moved every single frame as each change requires a rebuild of the avoidance map.
 
 .. rst-class:: classref-introduction-group
 
@@ -44,21 +42,25 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`avoidance_enabled<class_NavigationObstacle3D_property_avoidance_enabled>` | ``true``                 |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                               | :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>`   | ``1``                    |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
-   | :ref:`float<class_float>`                           | :ref:`height<class_NavigationObstacle3D_property_height>`                       | ``1.0``                  |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
-   | :ref:`float<class_float>`                           | :ref:`radius<class_NavigationObstacle3D_property_radius>`                       | ``0.0``                  |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`use_3d_avoidance<class_NavigationObstacle3D_property_use_3d_avoidance>`   | ``false``                |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
-   | :ref:`Vector3<class_Vector3>`                       | :ref:`velocity<class_NavigationObstacle3D_property_velocity>`                   | ``Vector3(0, 0, 0)``     |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
-   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`vertices<class_NavigationObstacle3D_property_vertices>`                   | ``PackedVector3Array()`` |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`affect_navigation_mesh<class_NavigationObstacle3D_property_affect_navigation_mesh>` | ``false``                |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`avoidance_enabled<class_NavigationObstacle3D_property_avoidance_enabled>`           | ``true``                 |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                               | :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>`             | ``1``                    |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`carve_navigation_mesh<class_NavigationObstacle3D_property_carve_navigation_mesh>`   | ``false``                |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`height<class_NavigationObstacle3D_property_height>`                                 | ``1.0``                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`radius<class_NavigationObstacle3D_property_radius>`                                 | ``0.0``                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`use_3d_avoidance<class_NavigationObstacle3D_property_use_3d_avoidance>`             | ``false``                |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`velocity<class_NavigationObstacle3D_property_velocity>`                             | ``Vector3(0, 0, 0)``     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`vertices<class_NavigationObstacle3D_property_vertices>`                             | ``PackedVector3Array()`` |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------+--------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -89,11 +91,28 @@ Methods
 Property Descriptions
 ---------------------
 
+.. _class_NavigationObstacle3D_property_affect_navigation_mesh:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **affect_navigation_mesh** = ``false`` :ref:`🔗<class_NavigationObstacle3D_property_affect_navigation_mesh>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_affect_navigation_mesh**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_affect_navigation_mesh**\ (\ )
+
+If enabled and parsed in a navigation mesh baking process the obstacle will discard source geometry inside its :ref:`vertices<class_NavigationObstacle3D_property_vertices>` and :ref:`height<class_NavigationObstacle3D_property_height>` defined shape.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationObstacle3D_property_avoidance_enabled:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **avoidance_enabled** = ``true``
+:ref:`bool<class_bool>` **avoidance_enabled** = ``true`` :ref:`🔗<class_NavigationObstacle3D_property_avoidance_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -110,7 +129,7 @@ If ``true`` the obstacle affects avoidance using agents.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **avoidance_layers** = ``1``
+:ref:`int<class_int>` **avoidance_layers** = ``1`` :ref:`🔗<class_NavigationObstacle3D_property_avoidance_layers>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,11 +142,32 @@ A bitfield determining the avoidance layers for this obstacle. Agents with a mat
 
 ----
 
+.. _class_NavigationObstacle3D_property_carve_navigation_mesh:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **carve_navigation_mesh** = ``false`` :ref:`🔗<class_NavigationObstacle3D_property_carve_navigation_mesh>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_carve_navigation_mesh**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_carve_navigation_mesh**\ (\ )
+
+If enabled the obstacle vertices will carve into the baked navigation mesh with the shape unaffected by additional offsets (e.g. agent radius).
+
+It will still be affected by further postprocessing of the baking process, like edge and polygon simplification.
+
+Requires :ref:`affect_navigation_mesh<class_NavigationObstacle3D_property_affect_navigation_mesh>` to be enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationObstacle3D_property_height:
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``1.0``
+:ref:`float<class_float>` **height** = ``1.0`` :ref:`🔗<class_NavigationObstacle3D_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -144,7 +184,7 @@ Sets the obstacle height used in 2D avoidance. 2D avoidance using agent's ignore
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.0``
+:ref:`float<class_float>` **radius** = ``0.0`` :ref:`🔗<class_NavigationObstacle3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -161,7 +201,7 @@ Sets the avoidance radius for the obstacle.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_3d_avoidance** = ``false``
+:ref:`bool<class_bool>` **use_3d_avoidance** = ``false`` :ref:`🔗<class_NavigationObstacle3D_property_use_3d_avoidance>`
 
 .. rst-class:: classref-property-setget
 
@@ -180,7 +220,7 @@ If ``false`` the obstacle affects 2D avoidance using agent's with both obstacle 
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **velocity** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **velocity** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_NavigationObstacle3D_property_velocity>`
 
 .. rst-class:: classref-property-setget
 
@@ -197,7 +237,7 @@ Sets the wanted velocity for the obstacle so other agent's can better predict th
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()``
+:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()`` :ref:`🔗<class_NavigationObstacle3D_property_vertices>`
 
 .. rst-class:: classref-property-setget
 
@@ -205,6 +245,8 @@ Sets the wanted velocity for the obstacle so other agent's can better predict th
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices**\ (\ )
 
 The outline vertices of the obstacle. If the vertices are winded in clockwise order agents will be pushed in by the obstacle, else they will be pushed out. Outlines can not be crossed or overlap. Should the vertices using obstacle be warped to a new position agent's can not predict this movement and may get trapped inside the obstacle.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
 
 .. rst-class:: classref-section-separator
 
@@ -219,7 +261,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NavigationObstacle3D_method_get_avoidance_layer_value>`
 
 Returns whether or not the specified layer of the :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -231,7 +273,7 @@ Returns whether or not the specified layer of the :ref:`avoidance_layers<class_N
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_navigation_map**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_navigation_map**\ (\ ) |const| :ref:`🔗<class_NavigationObstacle3D_method_get_navigation_map>`
 
 Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObstacle node. This function returns always the map set on the NavigationObstacle node and not the map of the abstract obstacle on the NavigationServer. If the obstacle map is changed directly with the NavigationServer API the NavigationObstacle node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` to change the navigation map for the NavigationObstacle and also update the obstacle on the NavigationServer.
 
@@ -243,7 +285,7 @@ Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObsta
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_NavigationObstacle3D_method_get_rid>`
 
 Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
@@ -255,7 +297,7 @@ Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer
 
 .. rst-class:: classref-method
 
-|void| **set_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
+|void| **set_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationObstacle3D_method_set_avoidance_layer_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 
@@ -267,7 +309,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`avoidan
 
 .. rst-class:: classref-method
 
-|void| **set_navigation_map**\ (\ navigation_map\: :ref:`RID<class_RID>`\ )
+|void| **set_navigation_map**\ (\ navigation_map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationObstacle3D_method_set_navigation_map>`
 
 Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle node should use and also updates the ``obstacle`` on the NavigationServer.
 

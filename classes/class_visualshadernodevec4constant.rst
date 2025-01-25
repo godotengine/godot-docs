@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Quaternion<class_Quaternion>` **constant** = ``Quaternion(0, 0, 0, 1)``
+:ref:`Quaternion<class_Quaternion>` **constant** = ``Quaternion(0, 0, 0, 1)`` :ref:`🔗<class_VisualShaderNodeVec4Constant_property_constant>`
 
 .. rst-class:: classref-property-setget
 

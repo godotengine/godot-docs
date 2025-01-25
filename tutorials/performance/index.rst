@@ -69,6 +69,7 @@ GPU
 
    gpu_optimization
    using_multimesh
+   pipeline_compilations
 
 3D
 --

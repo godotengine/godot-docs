@@ -55,7 +55,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear_current**\ (\ )
+|void| **clear_current**\ (\ ) :ref:`🔗<class_AudioListener3D_method_clear_current>`
 
 Disables the listener to use the current camera's listener instead.
 
@@ -67,7 +67,7 @@ Disables the listener to use the current camera's listener instead.
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_listener_transform**\ (\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_listener_transform**\ (\ ) |const| :ref:`🔗<class_AudioListener3D_method_get_listener_transform>`
 
 Returns the listener's global orthonormalized :ref:`Transform3D<class_Transform3D>`.
 
@@ -79,7 +79,7 @@ Returns the listener's global orthonormalized :ref:`Transform3D<class_Transform3
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_current**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_current**\ (\ ) |const| :ref:`🔗<class_AudioListener3D_method_is_current>`
 
 Returns ``true`` if the listener was made current using :ref:`make_current<class_AudioListener3D_method_make_current>`, ``false`` otherwise.
 
@@ -93,7 +93,7 @@ Returns ``true`` if the listener was made current using :ref:`make_current<class
 
 .. rst-class:: classref-method
 
-|void| **make_current**\ (\ )
+|void| **make_current**\ (\ ) :ref:`🔗<class_AudioListener3D_method_make_current>`
 
 Enables the listener. This will override the current camera's listener.
 

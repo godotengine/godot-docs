@@ -49,7 +49,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_available_bytes**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_available_bytes**\ (\ ) |virtual| |const| :ref:`🔗<class_StreamPeerExtension_private_method__get_available_bytes>`
 
 .. container:: contribute
 
@@ -63,7 +63,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_get_data**\ (\ r_buffer\: ``uint8_t*``, r_bytes\: :ref:`int<class_int>`, r_received\: ``int32_t*``\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_get_data**\ (\ r_buffer\: ``uint8_t*``, r_bytes\: :ref:`int<class_int>`, r_received\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_StreamPeerExtension_private_method__get_data>`
 
 .. container:: contribute
 
@@ -77,7 +77,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_get_partial_data**\ (\ r_buffer\: ``uint8_t*``, r_bytes\: :ref:`int<class_int>`, r_received\: ``int32_t*``\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_get_partial_data**\ (\ r_buffer\: ``uint8_t*``, r_bytes\: :ref:`int<class_int>`, r_received\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_StreamPeerExtension_private_method__get_partial_data>`
 
 .. container:: contribute
 
@@ -91,7 +91,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_put_data**\ (\ p_data\: ``const uint8_t*``, p_bytes\: :ref:`int<class_int>`, r_sent\: ``int32_t*``\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_put_data**\ (\ p_data\: ``const uint8_t*``, p_bytes\: :ref:`int<class_int>`, r_sent\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_StreamPeerExtension_private_method__put_data>`
 
 .. container:: contribute
 
@@ -105,7 +105,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_put_partial_data**\ (\ p_data\: ``const uint8_t*``, p_bytes\: :ref:`int<class_int>`, r_sent\: ``int32_t*``\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_put_partial_data**\ (\ p_data\: ``const uint8_t*``, p_bytes\: :ref:`int<class_int>`, r_sent\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_StreamPeerExtension_private_method__put_partial_data>`
 
 .. container:: contribute
 

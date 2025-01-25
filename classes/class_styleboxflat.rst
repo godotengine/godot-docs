@@ -21,11 +21,9 @@ Description
 
 By configuring various properties of this style box, you can achieve many common looks without the need of a texture. This includes optionally rounded borders, antialiasing, shadows, and skew.
 
-Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system.
+Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system:
 
-\ **Example:**\ 
-
-::
+.. code:: text
 
     height = 30
     corner_radius_top_left = 50
@@ -33,7 +31,7 @@ Setting corner radius to high values is allowed. As soon as corners overlap, the
 
 The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
 
-::
+.. code:: text
 
     corner_radius_top_left: 10
     corner_radius_bottom_left: 20
@@ -137,7 +135,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **anti_aliasing** = ``true``
+:ref:`bool<class_bool>` **anti_aliasing** = ``true`` :ref:`🔗<class_StyleBoxFlat_property_anti_aliasing>`
 
 .. rst-class:: classref-property-setget
 
@@ -156,7 +154,7 @@ Antialiasing draws a small ring around the edges, which fades to transparency. A
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anti_aliasing_size** = ``1.0``
+:ref:`float<class_float>` **anti_aliasing_size** = ``1.0`` :ref:`🔗<class_StyleBoxFlat_property_anti_aliasing_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -175,7 +173,7 @@ This changes the size of the antialiasing effect. ``1.0`` is recommended for an 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **bg_color** = ``Color(0.6, 0.6, 0.6, 1)``
+:ref:`Color<class_Color>` **bg_color** = ``Color(0.6, 0.6, 0.6, 1)`` :ref:`🔗<class_StyleBoxFlat_property_bg_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -192,7 +190,7 @@ The background color of the stylebox.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **border_blend** = ``false``
+:ref:`bool<class_bool>` **border_blend** = ``false`` :ref:`🔗<class_StyleBoxFlat_property_border_blend>`
 
 .. rst-class:: classref-property-setget
 
@@ -209,7 +207,7 @@ If ``true``, the border will fade into the background color.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **border_color** = ``Color(0.8, 0.8, 0.8, 1)``
+:ref:`Color<class_Color>` **border_color** = ``Color(0.8, 0.8, 0.8, 1)`` :ref:`🔗<class_StyleBoxFlat_property_border_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -226,7 +224,7 @@ Sets the color of the border.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **border_width_bottom** = ``0``
+:ref:`int<class_int>` **border_width_bottom** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_border_width_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -243,7 +241,7 @@ Border width for the bottom border.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **border_width_left** = ``0``
+:ref:`int<class_int>` **border_width_left** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_border_width_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -260,7 +258,7 @@ Border width for the left border.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **border_width_right** = ``0``
+:ref:`int<class_int>` **border_width_right** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_border_width_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -277,7 +275,7 @@ Border width for the right border.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **border_width_top** = ``0``
+:ref:`int<class_int>` **border_width_top** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_border_width_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -294,7 +292,7 @@ Border width for the top border.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **corner_detail** = ``8``
+:ref:`int<class_int>` **corner_detail** = ``8`` :ref:`🔗<class_StyleBoxFlat_property_corner_detail>`
 
 .. rst-class:: classref-property-setget
 
@@ -315,7 +313,7 @@ A corner detail of ``1`` will result in chamfered corners instead of rounded cor
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **corner_radius_bottom_left** = ``0``
+:ref:`int<class_int>` **corner_radius_bottom_left** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_corner_radius_bottom_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -332,7 +330,7 @@ The bottom-left corner's radius. If ``0``, the corner is not rounded.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **corner_radius_bottom_right** = ``0``
+:ref:`int<class_int>` **corner_radius_bottom_right** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_corner_radius_bottom_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -349,7 +347,7 @@ The bottom-right corner's radius. If ``0``, the corner is not rounded.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **corner_radius_top_left** = ``0``
+:ref:`int<class_int>` **corner_radius_top_left** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_corner_radius_top_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -366,7 +364,7 @@ The top-left corner's radius. If ``0``, the corner is not rounded.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **corner_radius_top_right** = ``0``
+:ref:`int<class_int>` **corner_radius_top_right** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_corner_radius_top_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -383,7 +381,7 @@ The top-right corner's radius. If ``0``, the corner is not rounded.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_center** = ``true``
+:ref:`bool<class_bool>` **draw_center** = ``true`` :ref:`🔗<class_StyleBoxFlat_property_draw_center>`
 
 .. rst-class:: classref-property-setget
 
@@ -400,7 +398,7 @@ Toggles drawing of the inner part of the stylebox.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **expand_margin_bottom** = ``0.0``
+:ref:`float<class_float>` **expand_margin_bottom** = ``0.0`` :ref:`🔗<class_StyleBoxFlat_property_expand_margin_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -419,7 +417,7 @@ Expands the stylebox outside of the control rect on the bottom edge. Useful in c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **expand_margin_left** = ``0.0``
+:ref:`float<class_float>` **expand_margin_left** = ``0.0`` :ref:`🔗<class_StyleBoxFlat_property_expand_margin_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -438,7 +436,7 @@ Expands the stylebox outside of the control rect on the left edge. Useful in com
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **expand_margin_right** = ``0.0``
+:ref:`float<class_float>` **expand_margin_right** = ``0.0`` :ref:`🔗<class_StyleBoxFlat_property_expand_margin_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -457,7 +455,7 @@ Expands the stylebox outside of the control rect on the right edge. Useful in co
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **expand_margin_top** = ``0.0``
+:ref:`float<class_float>` **expand_margin_top** = ``0.0`` :ref:`🔗<class_StyleBoxFlat_property_expand_margin_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -476,7 +474,7 @@ Expands the stylebox outside of the control rect on the top edge. Useful in comb
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0.6)``
+:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0.6)`` :ref:`🔗<class_StyleBoxFlat_property_shadow_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -493,7 +491,7 @@ The color of the shadow. This has no effect if :ref:`shadow_size<class_StyleBoxF
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **shadow_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **shadow_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_StyleBoxFlat_property_shadow_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -510,7 +508,7 @@ The shadow offset in pixels. Adjusts the position of the shadow relatively to th
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **shadow_size** = ``0``
+:ref:`int<class_int>` **shadow_size** = ``0`` :ref:`🔗<class_StyleBoxFlat_property_shadow_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -527,7 +525,7 @@ The shadow size in pixels.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **skew** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **skew** = ``Vector2(0, 0)`` :ref:`🔗<class_StyleBoxFlat_property_skew>`
 
 .. rst-class:: classref-property-setget
 
@@ -551,7 +549,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_border_width**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`int<class_int>` **get_border_width**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_StyleBoxFlat_method_get_border_width>`
 
 Returns the specified :ref:`Side<enum_@GlobalScope_Side>`'s border width.
 
@@ -563,7 +561,7 @@ Returns the specified :ref:`Side<enum_@GlobalScope_Side>`'s border width.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_border_width_min**\ (\ ) |const|
+:ref:`int<class_int>` **get_border_width_min**\ (\ ) |const| :ref:`🔗<class_StyleBoxFlat_method_get_border_width_min>`
 
 Returns the smallest border width out of all four borders.
 
@@ -575,7 +573,7 @@ Returns the smallest border width out of all four borders.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_corner_radius**\ (\ corner\: :ref:`Corner<enum_@GlobalScope_Corner>`\ ) |const|
+:ref:`int<class_int>` **get_corner_radius**\ (\ corner\: :ref:`Corner<enum_@GlobalScope_Corner>`\ ) |const| :ref:`🔗<class_StyleBoxFlat_method_get_corner_radius>`
 
 Returns the given ``corner``'s radius. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
 
@@ -587,7 +585,7 @@ Returns the given ``corner``'s radius. See :ref:`Corner<enum_@GlobalScope_Corner
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_expand_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`float<class_float>` **get_expand_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_StyleBoxFlat_method_get_expand_margin>`
 
 Returns the size of the specified :ref:`Side<enum_@GlobalScope_Side>`'s expand margin.
 
@@ -599,7 +597,7 @@ Returns the size of the specified :ref:`Side<enum_@GlobalScope_Side>`'s expand m
 
 .. rst-class:: classref-method
 
-|void| **set_border_width**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, width\: :ref:`int<class_int>`\ )
+|void| **set_border_width**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, width\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StyleBoxFlat_method_set_border_width>`
 
 Sets the specified :ref:`Side<enum_@GlobalScope_Side>`'s border width to ``width`` pixels.
 
@@ -611,7 +609,7 @@ Sets the specified :ref:`Side<enum_@GlobalScope_Side>`'s border width to ``width
 
 .. rst-class:: classref-method
 
-|void| **set_border_width_all**\ (\ width\: :ref:`int<class_int>`\ )
+|void| **set_border_width_all**\ (\ width\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StyleBoxFlat_method_set_border_width_all>`
 
 Sets the border width to ``width`` pixels for all sides.
 
@@ -623,7 +621,7 @@ Sets the border width to ``width`` pixels for all sides.
 
 .. rst-class:: classref-method
 
-|void| **set_corner_radius**\ (\ corner\: :ref:`Corner<enum_@GlobalScope_Corner>`, radius\: :ref:`int<class_int>`\ )
+|void| **set_corner_radius**\ (\ corner\: :ref:`Corner<enum_@GlobalScope_Corner>`, radius\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StyleBoxFlat_method_set_corner_radius>`
 
 Sets the corner radius to ``radius`` pixels for the given ``corner``. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
 
@@ -635,7 +633,7 @@ Sets the corner radius to ``radius`` pixels for the given ``corner``. See :ref:`
 
 .. rst-class:: classref-method
 
-|void| **set_corner_radius_all**\ (\ radius\: :ref:`int<class_int>`\ )
+|void| **set_corner_radius_all**\ (\ radius\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StyleBoxFlat_method_set_corner_radius_all>`
 
 Sets the corner radius to ``radius`` pixels for all corners.
 
@@ -647,7 +645,7 @@ Sets the corner radius to ``radius`` pixels for all corners.
 
 .. rst-class:: classref-method
 
-|void| **set_expand_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, size\: :ref:`float<class_float>`\ )
+|void| **set_expand_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, size\: :ref:`float<class_float>`\ ) :ref:`🔗<class_StyleBoxFlat_method_set_expand_margin>`
 
 Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
@@ -659,7 +657,7 @@ Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@Glo
 
 .. rst-class:: classref-method
 
-|void| **set_expand_margin_all**\ (\ size\: :ref:`float<class_float>`\ )
+|void| **set_expand_margin_all**\ (\ size\: :ref:`float<class_float>`\ ) :ref:`🔗<class_StyleBoxFlat_method_set_expand_margin_all>`
 
 Sets the expand margin to ``size`` pixels for all sides.
 

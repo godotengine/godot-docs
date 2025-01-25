@@ -39,7 +39,7 @@ Without requiring much code, a timer node can be added and configured in the edi
 Tutorials
 ---------
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -49,19 +49,21 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`autostart<class_Timer_property_autostart>`               | ``false`` |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`one_shot<class_Timer_property_one_shot>`                 | ``false`` |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`paused<class_Timer_property_paused>`                     |           |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` | :ref:`process_callback<class_Timer_property_process_callback>` | ``1``     |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                                    | :ref:`time_left<class_Timer_property_time_left>`               |           |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                                    | :ref:`wait_time<class_Timer_property_wait_time>`               | ``1.0``   |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`autostart<class_Timer_property_autostart>`                 | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`ignore_time_scale<class_Timer_property_ignore_time_scale>` | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`one_shot<class_Timer_property_one_shot>`                   | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`paused<class_Timer_property_paused>`                       |           |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` | :ref:`process_callback<class_Timer_property_process_callback>`   | ``1``     |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                    | :ref:`time_left<class_Timer_property_time_left>`                 |           |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                    | :ref:`wait_time<class_Timer_property_wait_time>`                 | ``1.0``   |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -92,7 +94,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**timeout**\ (\ )
+**timeout**\ (\ ) :ref:`🔗<class_Timer_signal_timeout>`
 
 Emitted when the timer reaches the end.
 
@@ -109,7 +111,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TimerProcessCallback**:
+enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 .. _class_Timer_constant_TIMER_PROCESS_PHYSICS:
 
@@ -140,7 +142,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **autostart** = ``false``
+:ref:`bool<class_bool>` **autostart** = ``false`` :ref:`🔗<class_Timer_property_autostart>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,6 +153,25 @@ If ``true``, the timer will start immediately when it enters the scene tree.
 
 \ **Note:** After the timer enters the tree, this property is automatically set to ``false``.
 
+\ **Note:** This property does nothing when the timer is running in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Timer_property_ignore_time_scale:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **ignore_time_scale** = ``false`` :ref:`🔗<class_Timer_property_ignore_time_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_ignore_time_scale**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ignoring_time_scale**\ (\ )
+
+If ``true``, the timer will ignore :ref:`Engine.time_scale<class_Engine_property_time_scale>` and update with the real, elapsed time.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -159,7 +180,7 @@ If ``true``, the timer will start immediately when it enters the scene tree.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **one_shot** = ``false``
+:ref:`bool<class_bool>` **one_shot** = ``false`` :ref:`🔗<class_Timer_property_one_shot>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +197,7 @@ If ``true``, the timer will stop after reaching the end. Otherwise, as by defaul
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **paused**
+:ref:`bool<class_bool>` **paused** :ref:`🔗<class_Timer_property_paused>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +214,7 @@ If ``true``, the timer is paused. A paused timer does not process until this pro
 
 .. rst-class:: classref-property
 
-:ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **process_callback** = ``1``
+:ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **process_callback** = ``1`` :ref:`🔗<class_Timer_property_process_callback>`
 
 .. rst-class:: classref-property-setget
 
@@ -210,7 +231,7 @@ Specifies when the timer is updated during the main loop (see :ref:`TimerProcess
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **time_left**
+:ref:`float<class_float>` **time_left** :ref:`🔗<class_Timer_property_time_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -228,7 +249,7 @@ The timer's remaining time in seconds. This is always ``0`` if the timer is stop
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wait_time** = ``1.0``
+:ref:`float<class_float>` **wait_time** = ``1.0`` :ref:`🔗<class_Timer_property_wait_time>`
 
 .. rst-class:: classref-property-setget
 
@@ -252,7 +273,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_stopped**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_stopped**\ (\ ) |const| :ref:`🔗<class_Timer_method_is_stopped>`
 
 Returns ``true`` if the timer is stopped or has not started.
 
@@ -264,9 +285,9 @@ Returns ``true`` if the timer is stopped or has not started.
 
 .. rst-class:: classref-method
 
-|void| **start**\ (\ time_sec\: :ref:`float<class_float>` = -1\ )
+|void| **start**\ (\ time_sec\: :ref:`float<class_float>` = -1\ ) :ref:`🔗<class_Timer_method_start>`
 
-Starts the timer, if it was not started already. Fails if the timer is not inside the tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
+Starts the timer, or resets the timer if it was started already. Fails if the timer is not inside the tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
 
 \ **Note:** This method does not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 
@@ -278,7 +299,7 @@ Starts the timer, if it was not started already. Fails if the timer is not insid
 
 .. rst-class:: classref-method
 
-|void| **stop**\ (\ )
+|void| **stop**\ (\ ) :ref:`🔗<class_Timer_method_stop>`
 
 Stops the timer.
 

@@ -83,7 +83,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_command**\ (\ command_name\: :ref:`String<class_String>`, key_name\: :ref:`String<class_String>`, binded_callable\: :ref:`Callable<class_Callable>`, shortcut_text\: :ref:`String<class_String>` = "None"\ )
+|void| **add_command**\ (\ command_name\: :ref:`String<class_String>`, key_name\: :ref:`String<class_String>`, binded_callable\: :ref:`Callable<class_Callable>`, shortcut_text\: :ref:`String<class_String>` = "None"\ ) :ref:`🔗<class_EditorCommandPalette_method_add_command>`
 
 Adds a custom command to EditorCommandPalette.
 
@@ -103,7 +103,7 @@ Adds a custom command to EditorCommandPalette.
 
 .. rst-class:: classref-method
 
-|void| **remove_command**\ (\ key_name\: :ref:`String<class_String>`\ )
+|void| **remove_command**\ (\ key_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorCommandPalette_method_remove_command>`
 
 Removes the custom command from EditorCommandPalette.
 

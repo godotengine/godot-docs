@@ -165,30 +165,34 @@ TextEdit or GraphEdit. They can be disabled using a build flag:
 
 This is everything that will be disabled:
 
-- FileDialog
-- PopupMenu
-- Tree
-- TextEdit
-- CodeEdit
-- SyntaxHighlighter
-- CodeHighlighter
-- TreeItem
-- OptionButton
-- SpinBox
-- ColorPicker
-- ColorPickerButton
-- RichTextlabel
-- RichTextEffect
-- CharFXTransform
-- AcceptDialog
-- ConfirmationDialog
-- MarginContainer
-- SubViewportContainer
-- SplitContainer
-- HSplitContainer
-- VSplitContainer
-- GraphNode
-- GraphEdit
+- :ref:`class_AcceptDialog`
+- :ref:`class_CharFXTransform`
+- :ref:`class_CodeEdit`
+- :ref:`class_CodeHighlighter`
+- :ref:`class_ColorPickerButton`
+- :ref:`class_ColorPicker`
+- :ref:`class_ConfirmationDialog`
+- :ref:`class_FileDialog`
+- :ref:`class_GraphEdit`
+- :ref:`class_GraphElement`
+- :ref:`class_GraphFrame`
+- :ref:`class_GraphNode`
+- :ref:`class_HSplitContainer`
+- :ref:`class_MenuBar`
+- :ref:`class_MenuButton`
+- :ref:`class_OptionButton`
+- :ref:`class_PopupMenu` (will make all popup menus unavailable in code for classes that use them,
+  like :ref:`class_LineEdit`, even though those classes are still available)
+- :ref:`class_RichTextEffect`
+- :ref:`class_RichTextLabel`
+- :ref:`class_SpinBox`
+- :ref:`class_SplitContainer`
+- :ref:`class_SubViewportContainer`
+- :ref:`class_SyntaxHighlighter`
+- :ref:`class_TextEdit`
+- :ref:`class_TreeItem`
+- :ref:`class_Tree`
+- :ref:`class_VSplitContainer`
 
 Disabling unwanted modules
 --------------------------
@@ -222,8 +226,7 @@ Alternatively, you can supply a list of disabled modules by creating
 following:
 
 .. code-block:: python
-
-    # custom.py
+    :caption: custom.py
 
     module_basis_universal_enabled = "no"
     module_bmp_enabled = "no"
@@ -268,7 +271,7 @@ Optimizing the distribution of your project
 -------------------------------------------
 
 Desktop
-^^^^^^^
+~~~~~~~
 
 .. note::
 
@@ -300,7 +303,7 @@ command:
     7z a -mx9 my_project.zip folder_containing_executable_and_pck
 
 Web
-^^^
+~~~
 
 Enabling gzip or Brotli compression for all file types from the web export
 (especially the ``.wasm`` and ``.pck``) can reduce the download size

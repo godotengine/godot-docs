@@ -26,9 +26,9 @@ Class representing a square :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat
 Tutorials
 ---------
 
-- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
+- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
 
-- `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`__
+- `2D in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2803>`__
 
 .. rst-class:: classref-reftable-group
 

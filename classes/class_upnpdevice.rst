@@ -74,7 +74,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **IGDStatus**:
+enum **IGDStatus**: :ref:`🔗<enum_UPNPDevice_IGDStatus>`
 
 .. _class_UPNPDevice_constant_IGD_STATUS_OK:
 
@@ -105,6 +105,8 @@ Empty HTTP response.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **IGD_STATUS_NO_URLS** = ``3``
+
+**Deprecated:** This value is no longer used.
 
 Returned response contained no URLs.
 
@@ -146,6 +148,8 @@ Invalid control.
 
 :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **IGD_STATUS_MALLOC_ERROR** = ``8``
 
+**Deprecated:** This value is no longer used.
+
 Memory allocation error.
 
 .. _class_UPNPDevice_constant_IGD_STATUS_UNKNOWN_ERROR:
@@ -169,7 +173,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **description_url** = ``""``
+:ref:`String<class_String>` **description_url** = ``""`` :ref:`🔗<class_UPNPDevice_property_description_url>`
 
 .. rst-class:: classref-property-setget
 
@@ -186,7 +190,7 @@ URL to the device description.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **igd_control_url** = ``""``
+:ref:`String<class_String>` **igd_control_url** = ``""`` :ref:`🔗<class_UPNPDevice_property_igd_control_url>`
 
 .. rst-class:: classref-property-setget
 
@@ -203,7 +207,7 @@ IDG control URL.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **igd_our_addr** = ``""``
+:ref:`String<class_String>` **igd_our_addr** = ``""`` :ref:`🔗<class_UPNPDevice_property_igd_our_addr>`
 
 .. rst-class:: classref-property-setget
 
@@ -220,7 +224,7 @@ Address of the local machine in the network connecting it to this **UPNPDevice**
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **igd_service_type** = ``""``
+:ref:`String<class_String>` **igd_service_type** = ``""`` :ref:`🔗<class_UPNPDevice_property_igd_service_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -237,7 +241,7 @@ IGD service type.
 
 .. rst-class:: classref-property
 
-:ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status** = ``9``
+:ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status** = ``9`` :ref:`🔗<class_UPNPDevice_property_igd_status>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +258,7 @@ IGD status. See :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **service_type** = ``""``
+:ref:`String<class_String>` **service_type** = ``""`` :ref:`🔗<class_UPNPDevice_property_service_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -276,7 +280,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_port_mapping**\ (\ port\: :ref:`int<class_int>`, port_internal\: :ref:`int<class_int>` = 0, desc\: :ref:`String<class_String>` = "", proto\: :ref:`String<class_String>` = "UDP", duration\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **add_port_mapping**\ (\ port\: :ref:`int<class_int>`, port_internal\: :ref:`int<class_int>` = 0, desc\: :ref:`String<class_String>` = "", proto\: :ref:`String<class_String>` = "UDP", duration\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_UPNPDevice_method_add_port_mapping>`
 
 Adds a port mapping to forward the given external port on this **UPNPDevice** for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_method_add_port_mapping>`.
 
@@ -288,7 +292,7 @@ Adds a port mapping to forward the given external port on this **UPNPDevice** fo
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **delete_port_mapping**\ (\ port\: :ref:`int<class_int>`, proto\: :ref:`String<class_String>` = "UDP"\ ) |const|
+:ref:`int<class_int>` **delete_port_mapping**\ (\ port\: :ref:`int<class_int>`, proto\: :ref:`String<class_String>` = "UDP"\ ) |const| :ref:`🔗<class_UPNPDevice_method_delete_port_mapping>`
 
 Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_method_delete_port_mapping>`.
 
@@ -300,7 +304,7 @@ Deletes the port mapping identified by the given port and protocol combination o
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_gateway**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid_gateway**\ (\ ) |const| :ref:`🔗<class_UPNPDevice_method_is_valid_gateway>`
 
 Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentially supports port forwarding.
 
@@ -312,7 +316,7 @@ Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentiall
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **query_external_address**\ (\ ) |const|
+:ref:`String<class_String>` **query_external_address**\ (\ ) |const| :ref:`🔗<class_UPNPDevice_method_query_external_address>`
 
 Returns the external IP address of this **UPNPDevice** or an empty string.
 

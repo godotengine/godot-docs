@@ -14,7 +14,7 @@ GraphElement
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`GraphNode<class_GraphNode>`
+**Inherited By:** :ref:`GraphFrame<class_GraphFrame>`, :ref:`GraphNode<class_GraphNode>`
 
 A container that represents a basic element that can be placed inside a :ref:`GraphEdit<class_GraphEdit>` control.
 
@@ -70,7 +70,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**delete_request**\ (\ )
+**delete_request**\ (\ ) :ref:`🔗<class_GraphElement_signal_delete_request>`
 
 Emitted when removing the GraphElement is requested.
 
@@ -82,7 +82,7 @@ Emitted when removing the GraphElement is requested.
 
 .. rst-class:: classref-signal
 
-**dragged**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`\ )
+**dragged**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_GraphElement_signal_dragged>`
 
 Emitted when the GraphElement is dragged.
 
@@ -94,7 +94,7 @@ Emitted when the GraphElement is dragged.
 
 .. rst-class:: classref-signal
 
-**node_deselected**\ (\ )
+**node_deselected**\ (\ ) :ref:`🔗<class_GraphElement_signal_node_deselected>`
 
 Emitted when the GraphElement is deselected.
 
@@ -106,7 +106,7 @@ Emitted when the GraphElement is deselected.
 
 .. rst-class:: classref-signal
 
-**node_selected**\ (\ )
+**node_selected**\ (\ ) :ref:`🔗<class_GraphElement_signal_node_selected>`
 
 Emitted when the GraphElement is selected.
 
@@ -118,7 +118,7 @@ Emitted when the GraphElement is selected.
 
 .. rst-class:: classref-signal
 
-**position_offset_changed**\ (\ )
+**position_offset_changed**\ (\ ) :ref:`🔗<class_GraphElement_signal_position_offset_changed>`
 
 Emitted when the GraphElement is moved.
 
@@ -130,9 +130,21 @@ Emitted when the GraphElement is moved.
 
 .. rst-class:: classref-signal
 
-**raise_request**\ (\ )
+**raise_request**\ (\ ) :ref:`🔗<class_GraphElement_signal_raise_request>`
 
 Emitted when displaying the GraphElement over other ones is requested. Happens on focusing (clicking into) the GraphElement.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphElement_signal_resize_end:
+
+.. rst-class:: classref-signal
+
+**resize_end**\ (\ new_size\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_GraphElement_signal_resize_end>`
+
+Emitted when releasing the mouse button after dragging the resizer handle (see :ref:`resizable<class_GraphElement_property_resizable>`).
 
 .. rst-class:: classref-item-separator
 
@@ -142,7 +154,7 @@ Emitted when displaying the GraphElement over other ones is requested. Happens o
 
 .. rst-class:: classref-signal
 
-**resize_request**\ (\ new_minsize\: :ref:`Vector2<class_Vector2>`\ )
+**resize_request**\ (\ new_size\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_GraphElement_signal_resize_request>`
 
 Emitted when resizing the GraphElement is requested. Happens on dragging the resizer handle (see :ref:`resizable<class_GraphElement_property_resizable>`).
 
@@ -159,7 +171,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draggable** = ``true``
+:ref:`bool<class_bool>` **draggable** = ``true`` :ref:`🔗<class_GraphElement_property_draggable>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +188,7 @@ If ``true``, the user can drag the GraphElement.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_GraphElement_property_position_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +205,7 @@ The offset of the GraphElement, relative to the scroll offset of the :ref:`Graph
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **resizable** = ``false``
+:ref:`bool<class_bool>` **resizable** = ``false`` :ref:`🔗<class_GraphElement_property_resizable>`
 
 .. rst-class:: classref-property-setget
 
@@ -202,7 +214,7 @@ The offset of the GraphElement, relative to the scroll offset of the :ref:`Graph
 
 If ``true``, the user can resize the GraphElement.
 
-\ **Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphElement_signal_resize_request>` signal, the GraphElement needs to be resized manually.
+\ **Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphElement_signal_resize_request>` and :ref:`resize_end<class_GraphElement_signal_resize_end>` signals, the GraphElement needs to be resized manually.
 
 .. rst-class:: classref-item-separator
 
@@ -212,7 +224,7 @@ If ``true``, the user can resize the GraphElement.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **selectable** = ``true``
+:ref:`bool<class_bool>` **selectable** = ``true`` :ref:`🔗<class_GraphElement_property_selectable>`
 
 .. rst-class:: classref-property-setget
 
@@ -229,7 +241,7 @@ If ``true``, the user can select the GraphElement.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **selected** = ``false``
+:ref:`bool<class_bool>` **selected** = ``false`` :ref:`🔗<class_GraphElement_property_selected>`
 
 .. rst-class:: classref-property-setget
 
@@ -251,7 +263,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **resizer**
+:ref:`Texture2D<class_Texture2D>` **resizer** :ref:`🔗<class_GraphElement_theme_icon_resizer>`
 
 The icon used for the resizer, visible when :ref:`resizable<class_GraphElement_property_resizable>` is enabled.
 

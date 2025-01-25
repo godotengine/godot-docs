@@ -70,7 +70,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Mode**:
+enum **Mode**: :ref:`🔗<enum_MeshConvexDecompositionSettings_Mode>`
 
 .. _class_MeshConvexDecompositionSettings_constant_CONVEX_DECOMPOSITION_MODE_VOXEL:
 
@@ -101,7 +101,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **convex_hull_approximation** = ``true``
+:ref:`bool<class_bool>` **convex_hull_approximation** = ``true`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_convex_hull_approximation>`
 
 .. rst-class:: classref-property-setget
 
@@ -118,7 +118,7 @@ If ``true``, uses approximation for computing convex hulls.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **convex_hull_downsampling** = ``4``
+:ref:`int<class_int>` **convex_hull_downsampling** = ``4`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_convex_hull_downsampling>`
 
 .. rst-class:: classref-property-setget
 
@@ -135,7 +135,7 @@ Controls the precision of the convex-hull generation process during the clipping
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **max_concavity** = ``1.0``
+:ref:`float<class_float>` **max_concavity** = ``1.0`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_max_concavity>`
 
 .. rst-class:: classref-property-setget
 
@@ -152,7 +152,7 @@ Maximum concavity. Ranges from ``0.0`` to ``1.0``.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_convex_hulls** = ``1``
+:ref:`int<class_int>` **max_convex_hulls** = ``1`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_max_convex_hulls>`
 
 .. rst-class:: classref-property-setget
 
@@ -169,7 +169,7 @@ The maximum number of convex hulls to produce from the merge operation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_num_vertices_per_convex_hull** = ``32``
+:ref:`int<class_int>` **max_num_vertices_per_convex_hull** = ``32`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_max_num_vertices_per_convex_hull>`
 
 .. rst-class:: classref-property-setget
 
@@ -186,7 +186,7 @@ Controls the maximum number of triangles per convex-hull. Ranges from ``4`` to `
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **min_volume_per_convex_hull** = ``0.0001``
+:ref:`float<class_float>` **min_volume_per_convex_hull** = ``0.0001`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_min_volume_per_convex_hull>`
 
 .. rst-class:: classref-property-setget
 
@@ -203,7 +203,7 @@ Controls the adaptive sampling of the generated convex-hulls. Ranges from ``0.0`
 
 .. rst-class:: classref-property
 
-:ref:`Mode<enum_MeshConvexDecompositionSettings_Mode>` **mode** = ``0``
+:ref:`Mode<enum_MeshConvexDecompositionSettings_Mode>` **mode** = ``0`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -220,7 +220,7 @@ Mode for the approximate convex decomposition.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **normalize_mesh** = ``false``
+:ref:`bool<class_bool>` **normalize_mesh** = ``false`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_normalize_mesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -237,7 +237,7 @@ If ``true``, normalizes the mesh before applying the convex decomposition.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **plane_downsampling** = ``4``
+:ref:`int<class_int>` **plane_downsampling** = ``4`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_plane_downsampling>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +254,7 @@ Controls the granularity of the search for the "best" clipping plane. Ranges fro
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **project_hull_vertices** = ``true``
+:ref:`bool<class_bool>` **project_hull_vertices** = ``true`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_project_hull_vertices>`
 
 .. rst-class:: classref-property-setget
 
@@ -271,7 +271,7 @@ If ``true``, projects output convex hull vertices onto the original source mesh 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **resolution** = ``10000``
+:ref:`int<class_int>` **resolution** = ``10000`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_resolution>`
 
 .. rst-class:: classref-property-setget
 
@@ -288,7 +288,7 @@ Maximum number of voxels generated during the voxelization stage.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **revolution_axes_clipping_bias** = ``0.05``
+:ref:`float<class_float>` **revolution_axes_clipping_bias** = ``0.05`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_revolution_axes_clipping_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -305,7 +305,7 @@ Controls the bias toward clipping along revolution axes. Ranges from ``0.0`` to 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **symmetry_planes_clipping_bias** = ``0.05``
+:ref:`float<class_float>` **symmetry_planes_clipping_bias** = ``0.05`` :ref:`🔗<class_MeshConvexDecompositionSettings_property_symmetry_planes_clipping_bias>`
 
 .. rst-class:: classref-property-setget
 

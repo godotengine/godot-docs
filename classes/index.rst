@@ -100,6 +100,7 @@ Nodes
     class_editorresourcepreview
     class_editorscriptpicker
     class_editorspinslider
+    class_editortoaster
     class_filedialog
     class_filesystemdock
     class_flowcontainer
@@ -119,9 +120,11 @@ Nodes
     class_gpuparticlescollisionsphere3d
     class_graphedit
     class_graphelement
+    class_graphframe
     class_graphnode
     class_gridcontainer
     class_gridmap
+    class_gridmapeditorplugin
     class_groovejoint2d
     class_hboxcontainer
     class_hflowcontainer
@@ -146,6 +149,7 @@ Nodes
     class_line2d
     class_lineedit
     class_linkbutton
+    class_lookatmodifier3d
     class_margincontainer
     class_marker2d
     class_marker3d
@@ -171,7 +175,15 @@ Nodes
     class_node3d
     class_occluderinstance3d
     class_omnilight3d
+    class_openxrbindingmodifiereditor
+    class_openxrcompositionlayer
+    class_openxrcompositionlayercylinder
+    class_openxrcompositionlayerequirect
+    class_openxrcompositionlayerquad
     class_openxrhand
+    class_openxrinteractionprofileeditor
+    class_openxrinteractionprofileeditorbase
+    class_openxrvisibilitymask
     class_optionbutton
     class_panel
     class_panelcontainer
@@ -184,6 +196,7 @@ Nodes
     class_pathfollow3d
     class_physicalbone2d
     class_physicalbone3d
+    class_physicalbonesimulator3d
     class_physicsbody2d
     class_physicsbody3d
     class_pinjoint2d
@@ -202,6 +215,7 @@ Nodes
     class_remotetransform2d
     class_remotetransform3d
     class_resourcepreloader
+    class_retargetmodifier3d
     class_richtextlabel
     class_rigidbody2d
     class_rigidbody3d
@@ -218,6 +232,7 @@ Nodes
     class_skeleton2d
     class_skeleton3d
     class_skeletonik3d
+    class_skeletonmodifier3d
     class_slider
     class_sliderjoint3d
     class_softbody3d
@@ -225,6 +240,11 @@ Nodes
     class_splitcontainer
     class_spotlight3d
     class_springarm3d
+    class_springbonecollision3d
+    class_springbonecollisioncapsule3d
+    class_springbonecollisionplane3d
+    class_springbonecollisionsphere3d
+    class_springbonesimulator3d
     class_sprite2d
     class_sprite3d
     class_spritebase3d
@@ -240,7 +260,7 @@ Nodes
     class_textureprogressbar
     class_texturerect
     class_tilemap
-    class_tilemaplayergroup
+    class_tilemaplayer
     class_timer
     class_touchscreenbutton
     class_tree
@@ -291,6 +311,7 @@ Resources
     class_animationnodeblendspace1d
     class_animationnodeblendspace2d
     class_animationnodeblendtree
+    class_animationnodeextension
     class_animationnodeoneshot
     class_animationnodeoutput
     class_animationnodestatemachine
@@ -320,6 +341,7 @@ Resources
     class_audioeffecteq21
     class_audioeffecteq6
     class_audioeffectfilter
+    class_audioeffecthardlimiter
     class_audioeffecthighpassfilter
     class_audioeffecthighshelffilter
     class_audioeffectlimiter
@@ -335,11 +357,14 @@ Resources
     class_audioeffectstereoenhance
     class_audiostream
     class_audiostreamgenerator
+    class_audiostreaminteractive
     class_audiostreammicrophone
     class_audiostreammp3
     class_audiostreamoggvorbis
+    class_audiostreamplaylist
     class_audiostreampolyphonic
     class_audiostreamrandomizer
+    class_audiostreamsynchronized
     class_audiostreamwav
     class_basematerial3d
     class_bitmap
@@ -359,6 +384,7 @@ Resources
     class_capsuleshape3d
     class_circleshape2d
     class_codehighlighter
+    class_colorpalette
     class_compositor
     class_compositoreffect
     class_compressedcubemap
@@ -386,6 +412,7 @@ Resources
     class_editorsettings
     class_editorsyntaxhighlighter
     class_environment
+    class_externaltexture
     class_fastnoiselite
     class_fbxdocument
     class_fbxstate
@@ -395,6 +422,7 @@ Resources
     class_fontvariation
     class_gdextension
     class_gdscript
+    class_gdscriptsyntaxhighlighter
     class_gltfaccessor
     class_gltfanimation
     class_gltfbufferview
@@ -460,10 +488,17 @@ Resources
     class_occluderpolygon2d
     class_oggpacketsequence
     class_openxraction
+    class_openxractionbindingmodifier
     class_openxractionmap
     class_openxractionset
+    class_openxranalogthresholdmodifier
+    class_openxrbindingmodifier
+    class_openxrdpadbindingmodifier
+    class_openxrhapticbase
+    class_openxrhapticvibration
     class_openxrinteractionprofile
     class_openxripbinding
+    class_openxripbindingmodifier
     class_optimizedtranslation
     class_ormmaterial3d
     class_packeddatacontainer
@@ -585,6 +620,7 @@ Resources
     class_visualshadernodefloatfunc
     class_visualshadernodefloatop
     class_visualshadernodefloatparameter
+    class_visualshadernodeframe
     class_visualshadernodefresnel
     class_visualshadernodeglobalexpression
     class_visualshadernodegroupbase
@@ -616,6 +652,7 @@ Resources
     class_visualshadernodeproximityfade
     class_visualshadernoderandomrange
     class_visualshadernoderemap
+    class_visualshadernodereroute
     class_visualshadernoderesizablebase
     class_visualshadernoderotationbyaxis
     class_visualshadernodesample3d
@@ -688,12 +725,17 @@ Other objects
     class_astargrid2d
     class_audioeffectinstance
     class_audioeffectspectrumanalyzerinstance
+    class_audiosample
+    class_audiosampleplayback
     class_audioserver
     class_audiostreamgeneratorplayback
     class_audiostreamplayback
+    class_audiostreamplaybackinteractive
     class_audiostreamplaybackoggvorbis
+    class_audiostreamplaybackplaylist
     class_audiostreamplaybackpolyphonic
     class_audiostreamplaybackresampled
+    class_audiostreamplaybacksynchronized
     class_callbacktweener
     class_camerafeed
     class_cameraserver
@@ -704,10 +746,12 @@ Other objects
     class_diraccess
     class_displayserver
     class_dtlsserver
+    class_editorcontextmenuplugin
     class_editordebuggerplugin
     class_editordebuggersession
     class_editorexportplatform
     class_editorexportplatformandroid
+    class_editorexportplatformextension
     class_editorexportplatformios
     class_editorexportplatformlinuxbsd
     class_editorexportplatformmacos
@@ -715,6 +759,7 @@ Other objects
     class_editorexportplatformweb
     class_editorexportplatformwindows
     class_editorexportplugin
+    class_editorexportpreset
     class_editorfeatureprofile
     class_editorfilesystemdirectory
     class_editorfilesystemimportformatsupportquery
@@ -751,7 +796,7 @@ Other objects
     class_gdextensionmanager
     class_geometry2d
     class_geometry3d
-    class_godotsharp
+    class_gltfobjectmodelproperty
     class_hashingcontext
     class_hmaccontext
     class_httpclient
@@ -763,6 +808,7 @@ Other objects
     class_ip
     class_javaclass
     class_javaclasswrapper
+    class_javaobject
     class_javascriptbridge
     class_javascriptobject
     class_jnisingleton
@@ -894,6 +940,7 @@ Other objects
     class_scriptlanguage
     class_scriptlanguageextension
     class_semaphore
+    class_shaderincludedb
     class_skinreference
     class_streampeer
     class_streampeerbuffer
@@ -901,6 +948,7 @@ Other objects
     class_streampeergzip
     class_streampeertcp
     class_streampeertls
+    class_subtweentweener
     class_surfacetool
     class_tcpserver
     class_textline
@@ -916,6 +964,7 @@ Other objects
     class_tiledata
     class_time
     class_tlsoptions
+    class_translationdomain
     class_translationserver
     class_treeitem
     class_trianglemesh
@@ -938,6 +987,7 @@ Other objects
     class_workerthreadpool
     class_xmlparser
     class_xrbodytracker
+    class_xrcontrollertracker
     class_xrfacetracker
     class_xrhandtracker
     class_xrinterface
@@ -945,6 +995,8 @@ Other objects
     class_xrpose
     class_xrpositionaltracker
     class_xrserver
+    class_xrtracker
+    class_xrvrs
     class_zippacker
     class_zipreader
 
@@ -956,10 +1008,12 @@ Editor-only
     :name: toc-class-ref-editors
 
     class_editorcommandpalette
+    class_editorcontextmenuplugin
     class_editordebuggerplugin
     class_editordebuggersession
     class_editorexportplatform
     class_editorexportplatformandroid
+    class_editorexportplatformextension
     class_editorexportplatformios
     class_editorexportplatformlinuxbsd
     class_editorexportplatformmacos
@@ -967,6 +1021,7 @@ Editor-only
     class_editorexportplatformweb
     class_editorexportplatformwindows
     class_editorexportplugin
+    class_editorexportpreset
     class_editorfeatureprofile
     class_editorfiledialog
     class_editorfilesystem
@@ -999,6 +1054,7 @@ Editor-only
     class_editorsettings
     class_editorspinslider
     class_editorsyntaxhighlighter
+    class_editortoaster
     class_editortranslationparserplugin
     class_editorundoredomanager
     class_editorvcsinterface
@@ -1035,6 +1091,7 @@ Variant types
     class_packedstringarray
     class_packedvector2array
     class_packedvector3array
+    class_packedvector4array
     class_plane
     class_projection
     class_quaternion

@@ -36,13 +36,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`XRInterface<class_XRInterface>` | :ref:`primary_interface<class_XRServer_property_primary_interface>` |                                                     |
-   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`world_origin<class_XRServer_property_world_origin>`           | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
-   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`float<class_float>`             | :ref:`world_scale<class_XRServer_property_world_scale>`             | ``1.0``                                             |
-   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`camera_locked_to_origin<class_XRServer_property_camera_locked_to_origin>` | ``false``                                           |
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`XRInterface<class_XRInterface>` | :ref:`primary_interface<class_XRServer_property_primary_interface>`             |                                                     |
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`world_origin<class_XRServer_property_world_origin>`                       | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`world_scale<class_XRServer_property_world_scale>`                         | ``1.0``                                             |
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -52,59 +54,35 @@ Methods
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`add_body_tracker<class_XRServer_method_add_body_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`, body_tracker\: :ref:`XRBodyTracker<class_XRBodyTracker>`\ ) |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`add_face_tracker<class_XRServer_method_add_face_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`, face_tracker\: :ref:`XRFaceTracker<class_XRFaceTracker>`\ ) |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`add_hand_tracker<class_XRServer_method_add_hand_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`, hand_tracker\: :ref:`XRHandTracker<class_XRHandTracker>`\ ) |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`add_interface<class_XRServer_method_add_interface>`\ (\ interface\: :ref:`XRInterface<class_XRInterface>`\ )                                                                  |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`add_tracker<class_XRServer_method_add_tracker>`\ (\ tracker\: :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ )                                                        |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`center_on_hmd<class_XRServer_method_center_on_hmd>`\ (\ rotation_mode\: :ref:`RotationMode<enum_XRServer_RotationMode>`, keep_height\: :ref:`bool<class_bool>`\ )             |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`                            | :ref:`clear_reference_frame<class_XRServer_method_clear_reference_frame>`\ (\ ) |const|                                                                                             |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRInterface<class_XRInterface>`                            | :ref:`find_interface<class_XRServer_method_find_interface>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                                       |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRBodyTracker<class_XRBodyTracker>`                        | :ref:`get_body_tracker<class_XRServer_method_get_body_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|                                                   |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`get_body_trackers<class_XRServer_method_get_body_trackers>`\ (\ ) |const|                                                                                                     |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRFaceTracker<class_XRFaceTracker>`                        | :ref:`get_face_tracker<class_XRServer_method_get_face_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|                                                   |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`get_face_trackers<class_XRServer_method_get_face_trackers>`\ (\ ) |const|                                                                                                     |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRHandTracker<class_XRHandTracker>`                        | :ref:`get_hand_tracker<class_XRServer_method_get_hand_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|                                                   |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`get_hand_trackers<class_XRServer_method_get_hand_trackers>`\ (\ ) |const|                                                                                                     |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`                            | :ref:`get_hmd_transform<class_XRServer_method_get_hmd_transform>`\ (\ )                                                                                                             |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRInterface<class_XRInterface>`                            | :ref:`get_interface<class_XRServer_method_get_interface>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                                                                |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                            | :ref:`get_interface_count<class_XRServer_method_get_interface_count>`\ (\ ) |const|                                                                                                 |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_interfaces<class_XRServer_method_get_interfaces>`\ (\ ) |const|                                                                                                           |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`                            | :ref:`get_reference_frame<class_XRServer_method_get_reference_frame>`\ (\ ) |const|                                                                                                 |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRPositionalTracker<class_XRPositionalTracker>`            | :ref:`get_tracker<class_XRServer_method_get_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|                                                             |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`get_trackers<class_XRServer_method_get_trackers>`\ (\ tracker_types\: :ref:`int<class_int>`\ )                                                                                |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`remove_body_tracker<class_XRServer_method_remove_body_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )                                                     |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`remove_face_tracker<class_XRServer_method_remove_face_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )                                                     |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`remove_hand_tracker<class_XRServer_method_remove_hand_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )                                                     |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`remove_interface<class_XRServer_method_remove_interface>`\ (\ interface\: :ref:`XRInterface<class_XRInterface>`\ )                                                            |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`remove_tracker<class_XRServer_method_remove_tracker>`\ (\ tracker\: :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ )                                                  |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_interface<class_XRServer_method_add_interface>`\ (\ interface\: :ref:`XRInterface<class_XRInterface>`\ )                                                      |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_tracker<class_XRServer_method_add_tracker>`\ (\ tracker\: :ref:`XRTracker<class_XRTracker>`\ )                                                                |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`center_on_hmd<class_XRServer_method_center_on_hmd>`\ (\ rotation_mode\: :ref:`RotationMode<enum_XRServer_RotationMode>`, keep_height\: :ref:`bool<class_bool>`\ ) |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`clear_reference_frame<class_XRServer_method_clear_reference_frame>`\ (\ )                                                                                         |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`XRInterface<class_XRInterface>`                            | :ref:`find_interface<class_XRServer_method_find_interface>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                           |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`                            | :ref:`get_hmd_transform<class_XRServer_method_get_hmd_transform>`\ (\ )                                                                                                 |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`XRInterface<class_XRInterface>`                            | :ref:`get_interface<class_XRServer_method_get_interface>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                                                    |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`get_interface_count<class_XRServer_method_get_interface_count>`\ (\ ) |const|                                                                                     |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_interfaces<class_XRServer_method_get_interfaces>`\ (\ ) |const|                                                                                               |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`                            | :ref:`get_reference_frame<class_XRServer_method_get_reference_frame>`\ (\ ) |const|                                                                                     |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`XRTracker<class_XRTracker>`                                | :ref:`get_tracker<class_XRServer_method_get_tracker>`\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|                                                 |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`get_trackers<class_XRServer_method_get_trackers>`\ (\ tracker_types\: :ref:`int<class_int>`\ )                                                                    |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_interface<class_XRServer_method_remove_interface>`\ (\ interface\: :ref:`XRInterface<class_XRInterface>`\ )                                                |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_tracker<class_XRServer_method_remove_tracker>`\ (\ tracker\: :ref:`XRTracker<class_XRTracker>`\ )                                                          |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -115,119 +93,11 @@ Methods
 Signals
 -------
 
-.. _class_XRServer_signal_body_tracker_added:
-
-.. rst-class:: classref-signal
-
-**body_tracker_added**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, body_tracker\: :ref:`XRBodyTracker<class_XRBodyTracker>`\ )
-
-Emitted when a new body tracker is added.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_signal_body_tracker_removed:
-
-.. rst-class:: classref-signal
-
-**body_tracker_removed**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )
-
-Emitted when a body tracker is removed.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_signal_body_tracker_updated:
-
-.. rst-class:: classref-signal
-
-**body_tracker_updated**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, body_tracker\: :ref:`XRBodyTracker<class_XRBodyTracker>`\ )
-
-Emitted when an existing body tracker is updated.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_signal_face_tracker_added:
-
-.. rst-class:: classref-signal
-
-**face_tracker_added**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, face_tracker\: :ref:`XRFaceTracker<class_XRFaceTracker>`\ )
-
-Emitted when a new face tracker is added.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_signal_face_tracker_removed:
-
-.. rst-class:: classref-signal
-
-**face_tracker_removed**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )
-
-Emitted when a face tracker is removed.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_signal_face_tracker_updated:
-
-.. rst-class:: classref-signal
-
-**face_tracker_updated**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, face_tracker\: :ref:`XRFaceTracker<class_XRFaceTracker>`\ )
-
-Emitted when an existing face tracker is updated.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_signal_hand_tracker_added:
-
-.. rst-class:: classref-signal
-
-**hand_tracker_added**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, hand_tracker\: :ref:`XRHandTracker<class_XRHandTracker>`\ )
-
-Emitted when a new hand tracker is added.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_signal_hand_tracker_removed:
-
-.. rst-class:: classref-signal
-
-**hand_tracker_removed**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )
-
-Emitted when a hand tracker is removed.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_signal_hand_tracker_updated:
-
-.. rst-class:: classref-signal
-
-**hand_tracker_updated**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, hand_tracker\: :ref:`XRHandTracker<class_XRHandTracker>`\ )
-
-Emitted when an existing hand tracker is updated.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_XRServer_signal_interface_added:
 
 .. rst-class:: classref-signal
 
-**interface_added**\ (\ interface_name\: :ref:`StringName<class_StringName>`\ )
+**interface_added**\ (\ interface_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_XRServer_signal_interface_added>`
 
 Emitted when a new interface has been added.
 
@@ -239,9 +109,21 @@ Emitted when a new interface has been added.
 
 .. rst-class:: classref-signal
 
-**interface_removed**\ (\ interface_name\: :ref:`StringName<class_StringName>`\ )
+**interface_removed**\ (\ interface_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_XRServer_signal_interface_removed>`
 
 Emitted when an interface is removed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_XRServer_signal_reference_frame_changed:
+
+.. rst-class:: classref-signal
+
+**reference_frame_changed**\ (\ ) :ref:`🔗<class_XRServer_signal_reference_frame_changed>`
+
+Emitted when the reference frame transform changes.
 
 .. rst-class:: classref-item-separator
 
@@ -251,7 +133,7 @@ Emitted when an interface is removed.
 
 .. rst-class:: classref-signal
 
-**tracker_added**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, type\: :ref:`int<class_int>`\ )
+**tracker_added**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_XRServer_signal_tracker_added>`
 
 Emitted when a new tracker has been added. If you don't use a fixed number of controllers or if you're using :ref:`XRAnchor3D<class_XRAnchor3D>`\ s for an AR solution, it is important to react to this signal to add the appropriate :ref:`XRController3D<class_XRController3D>` or :ref:`XRAnchor3D<class_XRAnchor3D>` nodes related to this new tracker.
 
@@ -263,7 +145,7 @@ Emitted when a new tracker has been added. If you don't use a fixed number of co
 
 .. rst-class:: classref-signal
 
-**tracker_removed**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, type\: :ref:`int<class_int>`\ )
+**tracker_removed**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_XRServer_signal_tracker_removed>`
 
 Emitted when a tracker is removed. You should remove any :ref:`XRController3D<class_XRController3D>` or :ref:`XRAnchor3D<class_XRAnchor3D>` points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
 
@@ -275,7 +157,7 @@ Emitted when a tracker is removed. You should remove any :ref:`XRController3D<cl
 
 .. rst-class:: classref-signal
 
-**tracker_updated**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, type\: :ref:`int<class_int>`\ )
+**tracker_updated**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_XRServer_signal_tracker_updated>`
 
 Emitted when an existing tracker has been updated. This can happen if the user switches controllers.
 
@@ -292,7 +174,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TrackerType**:
+enum **TrackerType**: :ref:`🔗<enum_XRServer_TrackerType>`
 
 .. _class_XRServer_constant_TRACKER_HEAD:
 
@@ -326,6 +208,30 @@ The tracker tracks the location of a base station.
 
 The tracker tracks the location and size of an AR anchor.
 
+.. _class_XRServer_constant_TRACKER_HAND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_HAND** = ``16``
+
+The tracker tracks the location and joints of a hand.
+
+.. _class_XRServer_constant_TRACKER_BODY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_BODY** = ``32``
+
+The tracker tracks the location and joints of a body.
+
+.. _class_XRServer_constant_TRACKER_FACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_FACE** = ``64``
+
+The tracker tracks the expressions of a face.
+
 .. _class_XRServer_constant_TRACKER_ANY_KNOWN:
 
 .. rst-class:: classref-enumeration-constant
@@ -358,7 +264,7 @@ Used internally to select all trackers.
 
 .. rst-class:: classref-enumeration
 
-enum **RotationMode**:
+enum **RotationMode**: :ref:`🔗<enum_XRServer_RotationMode>`
 
 .. _class_XRServer_constant_RESET_FULL_ROTATION:
 
@@ -393,11 +299,30 @@ Does not reset the orientation of the HMD, only the position of the player gets 
 Property Descriptions
 ---------------------
 
+.. _class_XRServer_property_camera_locked_to_origin:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **camera_locked_to_origin** = ``false`` :ref:`🔗<class_XRServer_property_camera_locked_to_origin>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_camera_locked_to_origin**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_camera_locked_to_origin**\ (\ )
+
+If set to ``true``, the scene will be rendered as if the camera is locked to the :ref:`XROrigin3D<class_XROrigin3D>`.
+
+\ **Note:** This doesn't provide a very comfortable experience for users. This setting exists for doing benchmarking or automated testing, where you want to control what is rendered via code.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_XRServer_property_primary_interface:
 
 .. rst-class:: classref-property
 
-:ref:`XRInterface<class_XRInterface>` **primary_interface**
+:ref:`XRInterface<class_XRInterface>` **primary_interface** :ref:`🔗<class_XRServer_property_primary_interface>`
 
 .. rst-class:: classref-property-setget
 
@@ -414,7 +339,7 @@ The primary :ref:`XRInterface<class_XRInterface>` currently bound to the **XRSer
 
 .. rst-class:: classref-property
 
-:ref:`Transform3D<class_Transform3D>` **world_origin** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+:ref:`Transform3D<class_Transform3D>` **world_origin** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` :ref:`🔗<class_XRServer_property_world_origin>`
 
 .. rst-class:: classref-property-setget
 
@@ -433,7 +358,7 @@ The current origin of our tracking space in the virtual world. This is used by t
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **world_scale** = ``1.0``
+:ref:`float<class_float>` **world_scale** = ``1.0`` :ref:`🔗<class_XRServer_property_world_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -451,47 +376,11 @@ The scale of the game world compared to the real world. By default, most AR/VR p
 Method Descriptions
 -------------------
 
-.. _class_XRServer_method_add_body_tracker:
-
-.. rst-class:: classref-method
-
-|void| **add_body_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, body_tracker\: :ref:`XRBodyTracker<class_XRBodyTracker>`\ )
-
-Registers a new :ref:`XRBodyTracker<class_XRBodyTracker>` that tracks the joints of a body.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_add_face_tracker:
-
-.. rst-class:: classref-method
-
-|void| **add_face_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, face_tracker\: :ref:`XRFaceTracker<class_XRFaceTracker>`\ )
-
-Registers a new :ref:`XRFaceTracker<class_XRFaceTracker>` that tracks the blend shapes of a face.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_add_hand_tracker:
-
-.. rst-class:: classref-method
-
-|void| **add_hand_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`, hand_tracker\: :ref:`XRHandTracker<class_XRHandTracker>`\ )
-
-Registers a new :ref:`XRHandTracker<class_XRHandTracker>` that tracks the joints of a hand.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_XRServer_method_add_interface:
 
 .. rst-class:: classref-method
 
-|void| **add_interface**\ (\ interface\: :ref:`XRInterface<class_XRInterface>`\ )
+|void| **add_interface**\ (\ interface\: :ref:`XRInterface<class_XRInterface>`\ ) :ref:`🔗<class_XRServer_method_add_interface>`
 
 Registers an :ref:`XRInterface<class_XRInterface>` object.
 
@@ -503,9 +392,9 @@ Registers an :ref:`XRInterface<class_XRInterface>` object.
 
 .. rst-class:: classref-method
 
-|void| **add_tracker**\ (\ tracker\: :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ )
+|void| **add_tracker**\ (\ tracker\: :ref:`XRTracker<class_XRTracker>`\ ) :ref:`🔗<class_XRServer_method_add_tracker>`
 
-Registers a new :ref:`XRPositionalTracker<class_XRPositionalTracker>` that tracks a spatial location in real space.
+Registers a new :ref:`XRTracker<class_XRTracker>` that tracks a physical object.
 
 .. rst-class:: classref-item-separator
 
@@ -515,7 +404,7 @@ Registers a new :ref:`XRPositionalTracker<class_XRPositionalTracker>` that track
 
 .. rst-class:: classref-method
 
-|void| **center_on_hmd**\ (\ rotation_mode\: :ref:`RotationMode<enum_XRServer_RotationMode>`, keep_height\: :ref:`bool<class_bool>`\ )
+|void| **center_on_hmd**\ (\ rotation_mode\: :ref:`RotationMode<enum_XRServer_RotationMode>`, keep_height\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_XRServer_method_center_on_hmd>`
 
 This is an important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
 
@@ -537,7 +426,7 @@ You should call this method after a few seconds have passed. For example, when t
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **clear_reference_frame**\ (\ ) |const|
+|void| **clear_reference_frame**\ (\ ) :ref:`🔗<class_XRServer_method_clear_reference_frame>`
 
 Clears the reference frame that was set by previous calls to :ref:`center_on_hmd<class_XRServer_method_center_on_hmd>`.
 
@@ -549,81 +438,9 @@ Clears the reference frame that was set by previous calls to :ref:`center_on_hmd
 
 .. rst-class:: classref-method
 
-:ref:`XRInterface<class_XRInterface>` **find_interface**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`XRInterface<class_XRInterface>` **find_interface**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_XRServer_method_find_interface>`
 
 Finds an interface by its ``name``. For example, if your project uses capabilities of an AR/VR platform, you can find the interface for that platform by name and initialize it.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_get_body_tracker:
-
-.. rst-class:: classref-method
-
-:ref:`XRBodyTracker<class_XRBodyTracker>` **get_body_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|
-
-Returns the :ref:`XRBodyTracker<class_XRBodyTracker>` with the given tracker name.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_get_body_trackers:
-
-.. rst-class:: classref-method
-
-:ref:`Dictionary<class_Dictionary>` **get_body_trackers**\ (\ ) |const|
-
-Returns a dictionary of the registered body trackers. Each element of the dictionary is a tracker name mapping to the :ref:`XRBodyTracker<class_XRBodyTracker>` instance.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_get_face_tracker:
-
-.. rst-class:: classref-method
-
-:ref:`XRFaceTracker<class_XRFaceTracker>` **get_face_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|
-
-Returns the :ref:`XRFaceTracker<class_XRFaceTracker>` with the given tracker name.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_get_face_trackers:
-
-.. rst-class:: classref-method
-
-:ref:`Dictionary<class_Dictionary>` **get_face_trackers**\ (\ ) |const|
-
-Returns a dictionary of the registered face trackers. Each element of the dictionary is a tracker name mapping to the :ref:`XRFaceTracker<class_XRFaceTracker>` instance.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_get_hand_tracker:
-
-.. rst-class:: classref-method
-
-:ref:`XRHandTracker<class_XRHandTracker>` **get_hand_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|
-
-Returns the :ref:`XRHandTracker<class_XRHandTracker>` with the given tracker name.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_get_hand_trackers:
-
-.. rst-class:: classref-method
-
-:ref:`Dictionary<class_Dictionary>` **get_hand_trackers**\ (\ ) |const|
-
-Returns a dictionary of the registered hand trackers. Each element of the dictionary is a tracker name mapping to the :ref:`XRHandTracker<class_XRHandTracker>` instance.
 
 .. rst-class:: classref-item-separator
 
@@ -633,7 +450,7 @@ Returns a dictionary of the registered hand trackers. Each element of the dictio
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_hmd_transform**\ (\ )
+:ref:`Transform3D<class_Transform3D>` **get_hmd_transform**\ (\ ) :ref:`🔗<class_XRServer_method_get_hmd_transform>`
 
 Returns the primary interface's transformation.
 
@@ -645,7 +462,7 @@ Returns the primary interface's transformation.
 
 .. rst-class:: classref-method
 
-:ref:`XRInterface<class_XRInterface>` **get_interface**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`XRInterface<class_XRInterface>` **get_interface**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_XRServer_method_get_interface>`
 
 Returns the interface registered at the given ``idx`` index in the list of interfaces.
 
@@ -657,7 +474,7 @@ Returns the interface registered at the given ``idx`` index in the list of inter
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_interface_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_interface_count**\ (\ ) |const| :ref:`🔗<class_XRServer_method_get_interface_count>`
 
 Returns the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns ``true``.
 
@@ -669,7 +486,7 @@ Returns the number of interfaces currently registered with the AR/VR server. If 
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_interfaces**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_interfaces**\ (\ ) |const| :ref:`🔗<class_XRServer_method_get_interfaces>`
 
 Returns a list of available interfaces the ID and name of each interface.
 
@@ -681,7 +498,7 @@ Returns a list of available interfaces the ID and name of each interface.
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_reference_frame**\ (\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_reference_frame**\ (\ ) |const| :ref:`🔗<class_XRServer_method_get_reference_frame>`
 
 Returns the reference frame transform. Mostly used internally and exposed for GDExtension build interfaces.
 
@@ -693,7 +510,7 @@ Returns the reference frame transform. Mostly used internally and exposed for GD
 
 .. rst-class:: classref-method
 
-:ref:`XRPositionalTracker<class_XRPositionalTracker>` **get_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`XRTracker<class_XRTracker>` **get_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRServer_method_get_tracker>`
 
 Returns the positional tracker with the given ``tracker_name``.
 
@@ -705,45 +522,9 @@ Returns the positional tracker with the given ``tracker_name``.
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_trackers**\ (\ tracker_types\: :ref:`int<class_int>`\ )
+:ref:`Dictionary<class_Dictionary>` **get_trackers**\ (\ tracker_types\: :ref:`int<class_int>`\ ) :ref:`🔗<class_XRServer_method_get_trackers>`
 
 Returns a dictionary of trackers for ``tracker_types``.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_remove_body_tracker:
-
-.. rst-class:: classref-method
-
-|void| **remove_body_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )
-
-Removes a registered :ref:`XRBodyTracker<class_XRBodyTracker>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_remove_face_tracker:
-
-.. rst-class:: classref-method
-
-|void| **remove_face_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )
-
-Removes a registered :ref:`XRFaceTracker<class_XRFaceTracker>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRServer_method_remove_hand_tracker:
-
-.. rst-class:: classref-method
-
-|void| **remove_hand_tracker**\ (\ tracker_name\: :ref:`StringName<class_StringName>`\ )
-
-Removes a registered :ref:`XRHandTracker<class_XRHandTracker>`.
 
 .. rst-class:: classref-item-separator
 
@@ -753,7 +534,7 @@ Removes a registered :ref:`XRHandTracker<class_XRHandTracker>`.
 
 .. rst-class:: classref-method
 
-|void| **remove_interface**\ (\ interface\: :ref:`XRInterface<class_XRInterface>`\ )
+|void| **remove_interface**\ (\ interface\: :ref:`XRInterface<class_XRInterface>`\ ) :ref:`🔗<class_XRServer_method_remove_interface>`
 
 Removes this ``interface``.
 
@@ -765,9 +546,9 @@ Removes this ``interface``.
 
 .. rst-class:: classref-method
 
-|void| **remove_tracker**\ (\ tracker\: :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ )
+|void| **remove_tracker**\ (\ tracker\: :ref:`XRTracker<class_XRTracker>`\ ) :ref:`🔗<class_XRServer_method_remove_tracker>`
 
-Removes this positional ``tracker``.
+Removes this ``tracker``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

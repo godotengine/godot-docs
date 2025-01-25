@@ -47,24 +47,9 @@ Icon optimization
 ~~~~~~~~~~~~~~~~~
 
 Because the editor renders SVGs once at load time, they need to be small
-in size so they can be efficiently parsed. Editor icons must be first
-optimized before being added to the engine, to do so:
-
-1. Install `svgcleaner <https://github.com/RazrFalcon/svgcleaner>`__
-   by downloading a binary from its
-   `Releases tab <https://github.com/RazrFalcon/svgcleaner/releases/latest>`__
-   and placing it into a location in your ``PATH`` environment variable.
-
-2. Run the command below, replacing ``svg_source.svg`` with the path to your
-   SVG file (which can be a relative or absolute path):
-
-   .. code-block:: bash
-
-       svgcleaner --multipass svg_source.svg svg_optimized.svg
-
-The ``--multipass`` switch improves compression, so make sure to include it.
-The optimized icon will be saved to ``svg_optimized.svg``. You can also change
-the destination parameter to any relative or absolute path you'd like.
+in size so they can be efficiently parsed. When the
+:ref:`pre-commit hook <doc_code_style_guidelines_pre_commit_hook>` runs, it automatically optimizes
+the SVG using `svgo <https://github.com/svg/svgo>`_.
 
 .. note::
 

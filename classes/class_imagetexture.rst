@@ -43,7 +43,7 @@ This is because images have to be imported as a :ref:`CompressedTexture2D<class_
 ::
 
     var texture = load("res://icon.svg")
-    var image: Image = texture.get_image()
+    var image = texture.get_image()
 
 An **ImageTexture** is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
 
@@ -101,7 +101,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ImageTexture<class_ImageTexture>` **create_from_image**\ (\ image\: :ref:`Image<class_Image>`\ ) |static|
+:ref:`ImageTexture<class_ImageTexture>` **create_from_image**\ (\ image\: :ref:`Image<class_Image>`\ ) |static| :ref:`🔗<class_ImageTexture_method_create_from_image>`
 
 Creates a new **ImageTexture** and initializes it by allocating and setting the data from an :ref:`Image<class_Image>`.
 
@@ -113,7 +113,7 @@ Creates a new **ImageTexture** and initializes it by allocating and setting the 
 
 .. rst-class:: classref-method
 
-:ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const|
+:ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const| :ref:`🔗<class_ImageTexture_method_get_format>`
 
 Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
 
@@ -125,7 +125,7 @@ Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
 
 .. rst-class:: classref-method
 
-|void| **set_image**\ (\ image\: :ref:`Image<class_Image>`\ )
+|void| **set_image**\ (\ image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_ImageTexture_method_set_image>`
 
 Replaces the texture's data with a new :ref:`Image<class_Image>`. This will re-allocate new memory for the texture.
 
@@ -139,7 +139,7 @@ If you want to update the image, but don't need to change its parameters (format
 
 .. rst-class:: classref-method
 
-|void| **set_size_override**\ (\ size\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **set_size_override**\ (\ size\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_ImageTexture_method_set_size_override>`
 
 Resizes the texture to the specified dimensions.
 
@@ -151,7 +151,7 @@ Resizes the texture to the specified dimensions.
 
 .. rst-class:: classref-method
 
-|void| **update**\ (\ image\: :ref:`Image<class_Image>`\ )
+|void| **update**\ (\ image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_ImageTexture_method_update>`
 
 Replaces the texture's data with a new :ref:`Image<class_Image>`.
 

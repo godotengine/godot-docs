@@ -57,17 +57,15 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **new**\ (\ ...\ ) |vararg|
+:ref:`Variant<class_Variant>` **new**\ (\ ...\ ) |vararg| :ref:`🔗<class_GDScript_method_new>`
 
 Returns a new instance of the script.
-
-For example:
 
 ::
 
     var MyClass = load("myclass.gd")
     var instance = MyClass.new()
-    assert(instance.get_script() == MyClass)
+    print(instance.get_script() == MyClass) # Prints true
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

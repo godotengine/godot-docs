@@ -37,21 +37,27 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                         | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``true``  |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                         | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``  |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                         | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``  |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                         | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false`` |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                           | :ref:`item_count<class_PopupMenu_property_item_count>`                                             | ``0``     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                       | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``   |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`SystemMenus<enum_NativeMenu_SystemMenus>` | :ref:`system_menu_id<class_PopupMenu_property_system_menu_id>`                                     | ``0``     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``true``                                                                     |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``                                                                     |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``                                                                     |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false``                                                                    |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`item_count<class_PopupMenu_property_item_count>`                                             | ``0``                                                                        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`prefer_native_menu<class_PopupMenu_property_prefer_native_menu>`                             | ``false``                                                                    |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``                                                                      |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`SystemMenus<enum_NativeMenu_SystemMenus>` | :ref:`system_menu_id<class_PopupMenu_property_system_menu_id>`                                     | ``0``                                                                        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | transparent                                                                                        | ``true`` (overrides :ref:`Window<class_Window_property_transparent>`)        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | transparent_bg                                                                                     | ``true`` (overrides :ref:`Viewport<class_Viewport_property_transparent_bg>`) |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -145,6 +151,8 @@ Methods
    | :ref:`bool<class_bool>`                          | :ref:`is_item_separator<class_PopupMenu_method_is_item_separator>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                            |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                            |
+   +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`is_system_menu<class_PopupMenu_method_is_system_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -276,6 +284,8 @@ Theme Properties
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`labeled_separator_right<class_PopupMenu_theme_style_labeled_separator_right>`           |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_PopupMenu_theme_style_panel>`                                               |                                   |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`separator<class_PopupMenu_theme_style_separator>`                                       |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 
@@ -292,7 +302,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**id_focused**\ (\ id\: :ref:`int<class_int>`\ )
+**id_focused**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_signal_id_focused>`
 
 Emitted when the user navigated to an item of some ``id`` using the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` or :ref:`ProjectSettings.input/ui_down<class_ProjectSettings_property_input/ui_down>` input action.
 
@@ -304,7 +314,7 @@ Emitted when the user navigated to an item of some ``id`` using the :ref:`Projec
 
 .. rst-class:: classref-signal
 
-**id_pressed**\ (\ id\: :ref:`int<class_int>`\ )
+**id_pressed**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_signal_id_pressed>`
 
 Emitted when an item of some ``id`` is pressed or its accelerator is activated.
 
@@ -318,7 +328,7 @@ Emitted when an item of some ``id`` is pressed or its accelerator is activated.
 
 .. rst-class:: classref-signal
 
-**index_pressed**\ (\ index\: :ref:`int<class_int>`\ )
+**index_pressed**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_signal_index_pressed>`
 
 Emitted when an item of some ``index`` is pressed or its accelerator is activated.
 
@@ -330,7 +340,7 @@ Emitted when an item of some ``index`` is pressed or its accelerator is activate
 
 .. rst-class:: classref-signal
 
-**menu_changed**\ (\ )
+**menu_changed**\ (\ ) :ref:`🔗<class_PopupMenu_signal_menu_changed>`
 
 Emitted when any item is added, modified or removed.
 
@@ -347,7 +357,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_search** = ``true``
+:ref:`bool<class_bool>` **allow_search** = ``true`` :ref:`🔗<class_PopupMenu_property_allow_search>`
 
 .. rst-class:: classref-property-setget
 
@@ -364,7 +374,7 @@ If ``true``, allows navigating **PopupMenu** with letter keys.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hide_on_checkable_item_selection** = ``true``
+:ref:`bool<class_bool>` **hide_on_checkable_item_selection** = ``true`` :ref:`🔗<class_PopupMenu_property_hide_on_checkable_item_selection>`
 
 .. rst-class:: classref-property-setget
 
@@ -381,7 +391,7 @@ If ``true``, hides the **PopupMenu** when a checkbox or radio button is selected
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hide_on_item_selection** = ``true``
+:ref:`bool<class_bool>` **hide_on_item_selection** = ``true`` :ref:`🔗<class_PopupMenu_property_hide_on_item_selection>`
 
 .. rst-class:: classref-property-setget
 
@@ -398,7 +408,7 @@ If ``true``, hides the **PopupMenu** when an item is selected.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hide_on_state_item_selection** = ``false``
+:ref:`bool<class_bool>` **hide_on_state_item_selection** = ``false`` :ref:`🔗<class_PopupMenu_property_hide_on_state_item_selection>`
 
 .. rst-class:: classref-property-setget
 
@@ -415,7 +425,7 @@ If ``true``, hides the **PopupMenu** when a state item is selected.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **item_count** = ``0``
+:ref:`int<class_int>` **item_count** = ``0`` :ref:`🔗<class_PopupMenu_property_item_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -428,11 +438,30 @@ The number of items currently in the list.
 
 ----
 
+.. _class_PopupMenu_property_prefer_native_menu:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **prefer_native_menu** = ``false`` :ref:`🔗<class_PopupMenu_property_prefer_native_menu>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_prefer_native_menu**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_prefer_native_menu**\ (\ )
+
+If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
+
+\ **Note:** If **PopupMenu** is linked to :ref:`StatusIndicator<class_StatusIndicator>`, :ref:`MenuBar<class_MenuBar>`, or another **PopupMenu** item it can use native menu regardless of this property, use :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>` to check it.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PopupMenu_property_submenu_popup_delay:
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **submenu_popup_delay** = ``0.3``
+:ref:`float<class_float>` **submenu_popup_delay** = ``0.3`` :ref:`🔗<class_PopupMenu_property_submenu_popup_delay>`
 
 .. rst-class:: classref-property-setget
 
@@ -449,7 +478,7 @@ Sets the delay time in seconds for the submenu item to popup on mouse hovering. 
 
 .. rst-class:: classref-property
 
-:ref:`SystemMenus<enum_NativeMenu_SystemMenus>` **system_menu_id** = ``0``
+:ref:`SystemMenus<enum_NativeMenu_SystemMenus>` **system_menu_id** = ``0`` :ref:`🔗<class_PopupMenu_property_system_menu_id>`
 
 .. rst-class:: classref-property-setget
 
@@ -471,7 +500,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **activate_item_by_event**\ (\ event\: :ref:`InputEvent<class_InputEvent>`, for_global_only\: :ref:`bool<class_bool>` = false\ )
+:ref:`bool<class_bool>` **activate_item_by_event**\ (\ event\: :ref:`InputEvent<class_InputEvent>`, for_global_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_activate_item_by_event>`
 
 Checks the provided ``event`` against the **PopupMenu**'s shortcuts and accelerators, and activates the first item with matching events. If ``for_global_only`` is ``true``, only shortcuts and accelerators with ``global`` set to ``true`` will be called.
 
@@ -487,7 +516,7 @@ Returns ``true`` if an item was successfully activated.
 
 .. rst-class:: classref-method
 
-|void| **add_check_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ )
+|void| **add_check_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ ) :ref:`🔗<class_PopupMenu_method_add_check_item>`
 
 Adds a new checkable item with text ``label``.
 
@@ -503,7 +532,7 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
 
 .. rst-class:: classref-method
 
-|void| **add_check_shortcut**\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ )
+|void| **add_check_shortcut**\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_add_check_shortcut>`
 
 Adds a new checkable item and assigns the specified :ref:`Shortcut<class_Shortcut>` to it. Sets the label of the checkbox to the :ref:`Shortcut<class_Shortcut>`'s name.
 
@@ -519,7 +548,7 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 .. rst-class:: classref-method
 
-|void| **add_icon_check_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ )
+|void| **add_icon_check_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ ) :ref:`🔗<class_PopupMenu_method_add_icon_check_item>`
 
 Adds a new checkable item with text ``label`` and icon ``texture``.
 
@@ -535,7 +564,7 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
 
 .. rst-class:: classref-method
 
-|void| **add_icon_check_shortcut**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ )
+|void| **add_icon_check_shortcut**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_add_icon_check_shortcut>`
 
 Adds a new checkable item and assigns the specified :ref:`Shortcut<class_Shortcut>` and icon ``texture`` to it. Sets the label of the checkbox to the :ref:`Shortcut<class_Shortcut>`'s name.
 
@@ -551,7 +580,7 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 .. rst-class:: classref-method
 
-|void| **add_icon_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ )
+|void| **add_icon_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ ) :ref:`🔗<class_PopupMenu_method_add_icon_item>`
 
 Adds a new item with text ``label`` and icon ``texture``.
 
@@ -565,7 +594,7 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
 
 .. rst-class:: classref-method
 
-|void| **add_icon_radio_check_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ )
+|void| **add_icon_radio_check_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ ) :ref:`🔗<class_PopupMenu_method_add_icon_radio_check_item>`
 
 Same as :ref:`add_icon_check_item<class_PopupMenu_method_add_icon_check_item>`, but uses a radio check button.
 
@@ -577,7 +606,7 @@ Same as :ref:`add_icon_check_item<class_PopupMenu_method_add_icon_check_item>`, 
 
 .. rst-class:: classref-method
 
-|void| **add_icon_radio_check_shortcut**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ )
+|void| **add_icon_radio_check_shortcut**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_add_icon_radio_check_shortcut>`
 
 Same as :ref:`add_icon_check_shortcut<class_PopupMenu_method_add_icon_check_shortcut>`, but uses a radio check button.
 
@@ -589,7 +618,7 @@ Same as :ref:`add_icon_check_shortcut<class_PopupMenu_method_add_icon_check_shor
 
 .. rst-class:: classref-method
 
-|void| **add_icon_shortcut**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false, allow_echo\: :ref:`bool<class_bool>` = false\ )
+|void| **add_icon_shortcut**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false, allow_echo\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_add_icon_shortcut>`
 
 Adds a new item and assigns the specified :ref:`Shortcut<class_Shortcut>` and icon ``texture`` to it. Sets the label of the checkbox to the :ref:`Shortcut<class_Shortcut>`'s name.
 
@@ -605,7 +634,7 @@ If ``allow_echo`` is ``true``, the shortcut can be activated with echo events.
 
 .. rst-class:: classref-method
 
-|void| **add_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ )
+|void| **add_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ ) :ref:`🔗<class_PopupMenu_method_add_item>`
 
 Adds a new item with text ``label``.
 
@@ -621,17 +650,13 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
 
 .. rst-class:: classref-method
 
-|void| **add_multistate_item**\ (\ label\: :ref:`String<class_String>`, max_states\: :ref:`int<class_int>`, default_state\: :ref:`int<class_int>` = 0, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ )
+|void| **add_multistate_item**\ (\ label\: :ref:`String<class_String>`, max_states\: :ref:`int<class_int>`, default_state\: :ref:`int<class_int>` = 0, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ ) :ref:`🔗<class_PopupMenu_method_add_multistate_item>`
 
 Adds a new multistate item with text ``label``.
 
 Contrarily to normal binary items, multistate items can have more than two states, as defined by ``max_states``. The default value is defined by ``default_state``.
 
 An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
-
-\ **Note:** Multistate items don't update their state automatically and must be done manually. See :ref:`toggle_item_multistate<class_PopupMenu_method_toggle_item_multistate>`, :ref:`set_item_multistate<class_PopupMenu_method_set_item_multistate>` and :ref:`get_item_multistate<class_PopupMenu_method_get_item_multistate>` for more info on how to control it.
-
-Example usage:
 
 ::
 
@@ -649,6 +674,8 @@ Example usage:
                         print("Third state")
             )
 
+\ **Note:** Multistate items don't update their state automatically and must be done manually. See :ref:`toggle_item_multistate<class_PopupMenu_method_toggle_item_multistate>`, :ref:`set_item_multistate<class_PopupMenu_method_set_item_multistate>` and :ref:`get_item_multistate<class_PopupMenu_method_get_item_multistate>` for more info on how to control it.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -657,7 +684,7 @@ Example usage:
 
 .. rst-class:: classref-method
 
-|void| **add_radio_check_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ )
+|void| **add_radio_check_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ ) :ref:`🔗<class_PopupMenu_method_add_radio_check_item>`
 
 Adds a new radio check button with text ``label``.
 
@@ -673,7 +700,7 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
 
 .. rst-class:: classref-method
 
-|void| **add_radio_check_shortcut**\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ )
+|void| **add_radio_check_shortcut**\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_add_radio_check_shortcut>`
 
 Adds a new radio check button and assigns a :ref:`Shortcut<class_Shortcut>` to it. Sets the label of the checkbox to the :ref:`Shortcut<class_Shortcut>`'s name.
 
@@ -689,7 +716,7 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 .. rst-class:: classref-method
 
-|void| **add_separator**\ (\ label\: :ref:`String<class_String>` = "", id\: :ref:`int<class_int>` = -1\ )
+|void| **add_separator**\ (\ label\: :ref:`String<class_String>` = "", id\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_PopupMenu_method_add_separator>`
 
 Adds a separator between items. Separators also occupy an index, which you can set by using the ``id`` parameter.
 
@@ -703,7 +730,7 @@ A ``label`` can optionally be provided, which will appear at the center of the s
 
 .. rst-class:: classref-method
 
-|void| **add_shortcut**\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false, allow_echo\: :ref:`bool<class_bool>` = false\ )
+|void| **add_shortcut**\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false, allow_echo\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_add_shortcut>`
 
 Adds a :ref:`Shortcut<class_Shortcut>`.
 
@@ -719,7 +746,7 @@ If ``allow_echo`` is ``true``, the shortcut can be activated with echo events.
 
 .. rst-class:: classref-method
 
-|void| **add_submenu_item**\ (\ label\: :ref:`String<class_String>`, submenu\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1\ )
+|void| **add_submenu_item**\ (\ label\: :ref:`String<class_String>`, submenu\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_PopupMenu_method_add_submenu_item>`
 
 **Deprecated:** Prefer using :ref:`add_submenu_node_item<class_PopupMenu_method_add_submenu_node_item>` instead.
 
@@ -735,7 +762,7 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 .. rst-class:: classref-method
 
-|void| **add_submenu_node_item**\ (\ label\: :ref:`String<class_String>`, submenu\: :ref:`PopupMenu<class_PopupMenu>`, id\: :ref:`int<class_int>` = -1\ )
+|void| **add_submenu_node_item**\ (\ label\: :ref:`String<class_String>`, submenu\: :ref:`PopupMenu<class_PopupMenu>`, id\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_PopupMenu_method_add_submenu_node_item>`
 
 Adds an item that will act as a submenu of the parent **PopupMenu** node when clicked. This submenu will be shown when the item is clicked, hovered for long enough, or activated using the ``ui_select`` or ``ui_right`` input actions.
 
@@ -751,7 +778,7 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ free_submenus\: :ref:`bool<class_bool>` = false\ )
+|void| **clear**\ (\ free_submenus\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_clear>`
 
 Removes all items from the **PopupMenu**. If ``free_submenus`` is ``true``, the submenu nodes are automatically freed.
 
@@ -763,7 +790,7 @@ Removes all items from the **PopupMenu**. If ``free_submenus`` is ``true``, the 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_focused_item**\ (\ ) |const|
+:ref:`int<class_int>` **get_focused_item**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_get_focused_item>`
 
 Returns the index of the currently focused item. Returns ``-1`` if no item is focused.
 
@@ -775,7 +802,7 @@ Returns the index of the currently focused item. Returns ``-1`` if no item is fo
 
 .. rst-class:: classref-method
 
-:ref:`Key<enum_@GlobalScope_Key>` **get_item_accelerator**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Key<enum_@GlobalScope_Key>` **get_item_accelerator**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_accelerator>`
 
 Returns the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The return value is an integer which is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`). If no accelerator is defined for the specified ``index``, :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` returns ``0`` (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`).
 
@@ -787,7 +814,7 @@ Returns the accelerator of the item at the given ``index``. An accelerator is a 
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_item_icon**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_item_icon**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_icon>`
 
 Returns the icon of the item at the given ``index``.
 
@@ -799,7 +826,7 @@ Returns the icon of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_icon_max_width**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_item_icon_max_width**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_icon_max_width>`
 
 Returns the maximum allowed width of the icon for the item at the given ``index``.
 
@@ -811,7 +838,7 @@ Returns the maximum allowed width of the icon for the item at the given ``index`
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_item_icon_modulate**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_item_icon_modulate**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_icon_modulate>`
 
 Returns a :ref:`Color<class_Color>` modulating the item's icon at the given ``index``.
 
@@ -823,7 +850,7 @@ Returns a :ref:`Color<class_Color>` modulating the item's icon at the given ``in
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_id**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_item_id**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_id>`
 
 Returns the ID of the item at the given ``index``. ``id`` can be manually assigned, while index can not.
 
@@ -835,7 +862,7 @@ Returns the ID of the item at the given ``index``. ``id`` can be manually assign
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_indent**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_item_indent**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_indent>`
 
 Returns the horizontal offset of the item at the given ``index``.
 
@@ -847,7 +874,7 @@ Returns the horizontal offset of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_index**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_item_index**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_index>`
 
 Returns the index of the item containing the specified ``id``. Index is automatically assigned to each item by the engine and can not be set manually.
 
@@ -859,7 +886,7 @@ Returns the index of the item containing the specified ``id``. Index is automati
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_language**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_language**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_language>`
 
 Returns item's text language code.
 
@@ -871,7 +898,7 @@ Returns item's text language code.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_item_metadata**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_item_metadata**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_metadata>`
 
 Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
 
@@ -883,7 +910,7 @@ Returns the metadata of the specified item, which might be of any type. You can 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_multistate**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_item_multistate**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_multistate>`
 
 Returns the state of the item at the given ``index``.
 
@@ -895,7 +922,7 @@ Returns the state of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_multistate_max**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_item_multistate_max**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_multistate_max>`
 
 Returns the max states of the item at the given ``index``.
 
@@ -907,7 +934,7 @@ Returns the max states of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`Shortcut<class_Shortcut>` **get_item_shortcut**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Shortcut<class_Shortcut>` **get_item_shortcut**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_shortcut>`
 
 Returns the :ref:`Shortcut<class_Shortcut>` associated with the item at the given ``index``.
 
@@ -919,7 +946,7 @@ Returns the :ref:`Shortcut<class_Shortcut>` associated with the item at the give
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_submenu**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_submenu**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_submenu>`
 
 **Deprecated:** Prefer using :ref:`get_item_submenu_node<class_PopupMenu_method_get_item_submenu_node>` instead.
 
@@ -933,7 +960,7 @@ Returns the submenu name of the item at the given ``index``. See :ref:`add_subme
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_item_submenu_node**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_item_submenu_node**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_submenu_node>`
 
 Returns the submenu of the item at the given ``index``, or ``null`` if no submenu was added. See :ref:`add_submenu_node_item<class_PopupMenu_method_add_submenu_node_item>` for more info on how to add a submenu.
 
@@ -945,7 +972,7 @@ Returns the submenu of the item at the given ``index``, or ``null`` if no submen
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_text**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_text**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_text>`
 
 Returns the text of the item at the given ``index``.
 
@@ -957,7 +984,7 @@ Returns the text of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`TextDirection<enum_Control_TextDirection>` **get_item_text_direction**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`TextDirection<enum_Control_TextDirection>` **get_item_text_direction**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_text_direction>`
 
 Returns item's text base writing direction.
 
@@ -969,7 +996,7 @@ Returns item's text base writing direction.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_tooltip**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_tooltip**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_tooltip>`
 
 Returns the tooltip associated with the item at the given ``index``.
 
@@ -981,7 +1008,7 @@ Returns the tooltip associated with the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_checkable**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_checkable**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_checkable>`
 
 Returns ``true`` if the item at the given ``index`` is checkable in some way, i.e. if it has a checkbox or radio button.
 
@@ -995,7 +1022,7 @@ Returns ``true`` if the item at the given ``index`` is checkable in some way, i.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_checked**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_checked**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_checked>`
 
 Returns ``true`` if the item at the given ``index`` is checked.
 
@@ -1007,7 +1034,7 @@ Returns ``true`` if the item at the given ``index`` is checked.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_disabled**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_disabled**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_disabled>`
 
 Returns ``true`` if the item at the given ``index`` is disabled. When it is disabled it can't be selected, or its action invoked.
 
@@ -1021,7 +1048,7 @@ See :ref:`set_item_disabled<class_PopupMenu_method_set_item_disabled>` for more 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_radio_checkable**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_radio_checkable**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_radio_checkable>`
 
 Returns ``true`` if the item at the given ``index`` has radio button-style checkability.
 
@@ -1035,7 +1062,7 @@ Returns ``true`` if the item at the given ``index`` has radio button-style check
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_separator**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_separator**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_separator>`
 
 Returns ``true`` if the item is a separator. If it is, it will be displayed as a line. See :ref:`add_separator<class_PopupMenu_method_add_separator>` for more info on how to add a separator.
 
@@ -1047,9 +1074,21 @@ Returns ``true`` if the item is a separator. If it is, it will be displayed as a
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_shortcut_disabled**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_shortcut_disabled**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_shortcut_disabled>`
 
 Returns ``true`` if the specified item's shortcut is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_is_native_menu:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_native_menu**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_is_native_menu>`
+
+Returns ``true`` if the system native menu is supported and currently used by this **PopupMenu**.
 
 .. rst-class:: classref-item-separator
 
@@ -1059,7 +1098,7 @@ Returns ``true`` if the specified item's shortcut is disabled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_system_menu**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_system_menu**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_is_system_menu>`
 
 Returns ``true`` if the menu is bound to the special system menu.
 
@@ -1071,7 +1110,7 @@ Returns ``true`` if the menu is bound to the special system menu.
 
 .. rst-class:: classref-method
 
-|void| **remove_item**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_item**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_remove_item>`
 
 Removes the item at the given ``index`` from the menu.
 
@@ -1085,7 +1124,7 @@ Removes the item at the given ``index`` from the menu.
 
 .. rst-class:: classref-method
 
-|void| **scroll_to_item**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **scroll_to_item**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_scroll_to_item>`
 
 Moves the scroll view to make the item at the given ``index`` visible.
 
@@ -1097,7 +1136,7 @@ Moves the scroll view to make the item at the given ``index`` visible.
 
 .. rst-class:: classref-method
 
-|void| **set_focused_item**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **set_focused_item**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_focused_item>`
 
 Sets the currently focused item as the given ``index``.
 
@@ -1111,7 +1150,7 @@ Passing ``-1`` as the index makes so that no item is focused.
 
 .. rst-class:: classref-method
 
-|void| **set_item_accelerator**\ (\ index\: :ref:`int<class_int>`, accel\: :ref:`Key<enum_@GlobalScope_Key>`\ )
+|void| **set_item_accelerator**\ (\ index\: :ref:`int<class_int>`, accel\: :ref:`Key<enum_@GlobalScope_Key>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_accelerator>`
 
 Sets the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. ``accel`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
@@ -1123,7 +1162,7 @@ Sets the accelerator of the item at the given ``index``. An accelerator is a key
 
 .. rst-class:: classref-method
 
-|void| **set_item_as_checkable**\ (\ index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_item_as_checkable**\ (\ index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_as_checkable>`
 
 Sets whether the item at the given ``index`` has a checkbox. If ``false``, sets the type of the item to plain text.
 
@@ -1137,7 +1176,7 @@ Sets whether the item at the given ``index`` has a checkbox. If ``false``, sets 
 
 .. rst-class:: classref-method
 
-|void| **set_item_as_radio_checkable**\ (\ index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_item_as_radio_checkable**\ (\ index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_as_radio_checkable>`
 
 Sets the type of the item at the given ``index`` to radio button. If ``false``, sets the type of the item to plain text.
 
@@ -1149,7 +1188,7 @@ Sets the type of the item at the given ``index`` to radio button. If ``false``, 
 
 .. rst-class:: classref-method
 
-|void| **set_item_as_separator**\ (\ index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_item_as_separator**\ (\ index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_as_separator>`
 
 Mark the item at the given ``index`` as a separator, which means that it would be displayed as a line. If ``false``, sets the type of the item to plain text.
 
@@ -1161,7 +1200,7 @@ Mark the item at the given ``index`` as a separator, which means that it would b
 
 .. rst-class:: classref-method
 
-|void| **set_item_checked**\ (\ index\: :ref:`int<class_int>`, checked\: :ref:`bool<class_bool>`\ )
+|void| **set_item_checked**\ (\ index\: :ref:`int<class_int>`, checked\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_checked>`
 
 Sets the checkstate status of the item at the given ``index``.
 
@@ -1173,7 +1212,7 @@ Sets the checkstate status of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-|void| **set_item_disabled**\ (\ index\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ )
+|void| **set_item_disabled**\ (\ index\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_disabled>`
 
 Enables/disables the item at the given ``index``. When it is disabled, it can't be selected and its action can't be invoked.
 
@@ -1185,7 +1224,7 @@ Enables/disables the item at the given ``index``. When it is disabled, it can't 
 
 .. rst-class:: classref-method
 
-|void| **set_item_icon**\ (\ index\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_item_icon**\ (\ index\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_icon>`
 
 Replaces the :ref:`Texture2D<class_Texture2D>` icon of the item at the given ``index``.
 
@@ -1197,7 +1236,7 @@ Replaces the :ref:`Texture2D<class_Texture2D>` icon of the item at the given ``i
 
 .. rst-class:: classref-method
 
-|void| **set_item_icon_max_width**\ (\ index\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`\ )
+|void| **set_item_icon_max_width**\ (\ index\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_icon_max_width>`
 
 Sets the maximum allowed width of the icon for the item at the given ``index``. This limit is applied on top of the default size of the icon and on top of :ref:`icon_max_width<class_PopupMenu_theme_constant_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
@@ -1209,7 +1248,7 @@ Sets the maximum allowed width of the icon for the item at the given ``index``. 
 
 .. rst-class:: classref-method
 
-|void| **set_item_icon_modulate**\ (\ index\: :ref:`int<class_int>`, modulate\: :ref:`Color<class_Color>`\ )
+|void| **set_item_icon_modulate**\ (\ index\: :ref:`int<class_int>`, modulate\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_icon_modulate>`
 
 Sets a modulating :ref:`Color<class_Color>` of the item's icon at the given ``index``.
 
@@ -1221,7 +1260,7 @@ Sets a modulating :ref:`Color<class_Color>` of the item's icon at the given ``in
 
 .. rst-class:: classref-method
 
-|void| **set_item_id**\ (\ index\: :ref:`int<class_int>`, id\: :ref:`int<class_int>`\ )
+|void| **set_item_id**\ (\ index\: :ref:`int<class_int>`, id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_id>`
 
 Sets the ``id`` of the item at the given ``index``.
 
@@ -1235,7 +1274,7 @@ The ``id`` is used in :ref:`id_pressed<class_PopupMenu_signal_id_pressed>` and :
 
 .. rst-class:: classref-method
 
-|void| **set_item_indent**\ (\ index\: :ref:`int<class_int>`, indent\: :ref:`int<class_int>`\ )
+|void| **set_item_indent**\ (\ index\: :ref:`int<class_int>`, indent\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_indent>`
 
 Sets the horizontal offset of the item at the given ``index``.
 
@@ -1247,7 +1286,7 @@ Sets the horizontal offset of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-|void| **set_item_language**\ (\ index\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ )
+|void| **set_item_language**\ (\ index\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_language>`
 
 Sets language code of item's text used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
@@ -1259,7 +1298,7 @@ Sets language code of item's text used for line-breaking and text shaping algori
 
 .. rst-class:: classref-method
 
-|void| **set_item_metadata**\ (\ index\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ )
+|void| **set_item_metadata**\ (\ index\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_metadata>`
 
 Sets the metadata of an item, which may be of any type. You can later get it with :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>`, which provides a simple way of assigning context data to items.
 
@@ -1271,7 +1310,7 @@ Sets the metadata of an item, which may be of any type. You can later get it wit
 
 .. rst-class:: classref-method
 
-|void| **set_item_multistate**\ (\ index\: :ref:`int<class_int>`, state\: :ref:`int<class_int>`\ )
+|void| **set_item_multistate**\ (\ index\: :ref:`int<class_int>`, state\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_multistate>`
 
 Sets the state of a multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
 
@@ -1283,7 +1322,7 @@ Sets the state of a multistate item. See :ref:`add_multistate_item<class_PopupMe
 
 .. rst-class:: classref-method
 
-|void| **set_item_multistate_max**\ (\ index\: :ref:`int<class_int>`, max_states\: :ref:`int<class_int>`\ )
+|void| **set_item_multistate_max**\ (\ index\: :ref:`int<class_int>`, max_states\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_multistate_max>`
 
 Sets the max states of a multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
 
@@ -1295,7 +1334,7 @@ Sets the max states of a multistate item. See :ref:`add_multistate_item<class_Po
 
 .. rst-class:: classref-method
 
-|void| **set_item_shortcut**\ (\ index\: :ref:`int<class_int>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, global\: :ref:`bool<class_bool>` = false\ )
+|void| **set_item_shortcut**\ (\ index\: :ref:`int<class_int>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, global\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_set_item_shortcut>`
 
 Sets a :ref:`Shortcut<class_Shortcut>` for the item at the given ``index``.
 
@@ -1307,7 +1346,7 @@ Sets a :ref:`Shortcut<class_Shortcut>` for the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-|void| **set_item_shortcut_disabled**\ (\ index\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ )
+|void| **set_item_shortcut_disabled**\ (\ index\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_shortcut_disabled>`
 
 Disables the :ref:`Shortcut<class_Shortcut>` of the item at the given ``index``.
 
@@ -1319,7 +1358,7 @@ Disables the :ref:`Shortcut<class_Shortcut>` of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-|void| **set_item_submenu**\ (\ index\: :ref:`int<class_int>`, submenu\: :ref:`String<class_String>`\ )
+|void| **set_item_submenu**\ (\ index\: :ref:`int<class_int>`, submenu\: :ref:`String<class_String>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_submenu>`
 
 **Deprecated:** Prefer using :ref:`set_item_submenu_node<class_PopupMenu_method_set_item_submenu_node>` instead.
 
@@ -1333,7 +1372,7 @@ Sets the submenu of the item at the given ``index``. The submenu is the name of 
 
 .. rst-class:: classref-method
 
-|void| **set_item_submenu_node**\ (\ index\: :ref:`int<class_int>`, submenu\: :ref:`PopupMenu<class_PopupMenu>`\ )
+|void| **set_item_submenu_node**\ (\ index\: :ref:`int<class_int>`, submenu\: :ref:`PopupMenu<class_PopupMenu>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_submenu_node>`
 
 Sets the submenu of the item at the given ``index``. The submenu is a **PopupMenu** node that would be shown when the item is clicked. It must either be a child of this **PopupMenu** or has no parent (in which case it will be automatically added as a child). If the ``submenu`` popup has another parent, this method will fail.
 
@@ -1345,7 +1384,7 @@ Sets the submenu of the item at the given ``index``. The submenu is a **PopupMen
 
 .. rst-class:: classref-method
 
-|void| **set_item_text**\ (\ index\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ )
+|void| **set_item_text**\ (\ index\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_text>`
 
 Sets the text of the item at the given ``index``.
 
@@ -1357,7 +1396,7 @@ Sets the text of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-|void| **set_item_text_direction**\ (\ index\: :ref:`int<class_int>`, direction\: :ref:`TextDirection<enum_Control_TextDirection>`\ )
+|void| **set_item_text_direction**\ (\ index\: :ref:`int<class_int>`, direction\: :ref:`TextDirection<enum_Control_TextDirection>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_text_direction>`
 
 Sets item's text base writing direction.
 
@@ -1369,7 +1408,7 @@ Sets item's text base writing direction.
 
 .. rst-class:: classref-method
 
-|void| **set_item_tooltip**\ (\ index\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )
+|void| **set_item_tooltip**\ (\ index\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_tooltip>`
 
 Sets the :ref:`String<class_String>` tooltip of the item at the given ``index``.
 
@@ -1381,7 +1420,7 @@ Sets the :ref:`String<class_String>` tooltip of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-|void| **toggle_item_checked**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **toggle_item_checked**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_toggle_item_checked>`
 
 Toggles the check state of the item at the given ``index``.
 
@@ -1393,7 +1432,7 @@ Toggles the check state of the item at the given ``index``.
 
 .. rst-class:: classref-method
 
-|void| **toggle_item_multistate**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **toggle_item_multistate**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_toggle_item_multistate>`
 
 Cycle to the next state of a multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
 
@@ -1410,7 +1449,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_accelerator_color** = ``Color(0.7, 0.7, 0.7, 0.8)``
+:ref:`Color<class_Color>` **font_accelerator_color** = ``Color(0.7, 0.7, 0.7, 0.8)`` :ref:`🔗<class_PopupMenu_theme_color_font_accelerator_color>`
 
 The text :ref:`Color<class_Color>` used for shortcuts and accelerators that show next to the menu item name when defined. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
@@ -1422,7 +1461,7 @@ The text :ref:`Color<class_Color>` used for shortcuts and accelerators that show
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_PopupMenu_theme_color_font_color>`
 
 The default text :ref:`Color<class_Color>` for menu items' names.
 
@@ -1434,7 +1473,7 @@ The default text :ref:`Color<class_Color>` for menu items' names.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0.4, 0.4, 0.4, 0.8)``
+:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0.4, 0.4, 0.4, 0.8)`` :ref:`🔗<class_PopupMenu_theme_color_font_disabled_color>`
 
 :ref:`Color<class_Color>` used for disabled menu items' text.
 
@@ -1446,7 +1485,7 @@ The default text :ref:`Color<class_Color>` for menu items' names.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_PopupMenu_theme_color_font_hover_color>`
 
 :ref:`Color<class_Color>` used for the hovered text.
 
@@ -1458,7 +1497,7 @@ The default text :ref:`Color<class_Color>` for menu items' names.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_PopupMenu_theme_color_font_outline_color>`
 
 The tint of text outline of the menu item.
 
@@ -1470,7 +1509,7 @@ The tint of text outline of the menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_separator_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **font_separator_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_PopupMenu_theme_color_font_separator_color>`
 
 :ref:`Color<class_Color>` used for labeled separators' text. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
 
@@ -1482,7 +1521,7 @@ The tint of text outline of the menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_separator_outline_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **font_separator_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_PopupMenu_theme_color_font_separator_outline_color>`
 
 The tint of text outline of the labeled separator.
 
@@ -1494,7 +1533,7 @@ The tint of text outline of the labeled separator.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``4``
+:ref:`int<class_int>` **h_separation** = ``4`` :ref:`🔗<class_PopupMenu_theme_constant_h_separation>`
 
 The horizontal space between the item's elements.
 
@@ -1506,7 +1545,7 @@ The horizontal space between the item's elements.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **icon_max_width** = ``0``
+:ref:`int<class_int>` **icon_max_width** = ``0`` :ref:`🔗<class_PopupMenu_theme_constant_icon_max_width>`
 
 The maximum allowed width of the item's icon. This limit is applied on top of the default size of the icon, but before the value set with :ref:`set_item_icon_max_width<class_PopupMenu_method_set_item_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
@@ -1518,7 +1557,7 @@ The maximum allowed width of the item's icon. This limit is applied on top of th
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **indent** = ``10``
+:ref:`int<class_int>` **indent** = ``10`` :ref:`🔗<class_PopupMenu_theme_constant_indent>`
 
 Width of the single indentation level.
 
@@ -1530,7 +1569,7 @@ Width of the single indentation level.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **item_end_padding** = ``2``
+:ref:`int<class_int>` **item_end_padding** = ``2`` :ref:`🔗<class_PopupMenu_theme_constant_item_end_padding>`
 
 Horizontal padding to the right of the items (or left, in RTL layout).
 
@@ -1542,7 +1581,7 @@ Horizontal padding to the right of the items (or left, in RTL layout).
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **item_start_padding** = ``2``
+:ref:`int<class_int>` **item_start_padding** = ``2`` :ref:`🔗<class_PopupMenu_theme_constant_item_start_padding>`
 
 Horizontal padding to the left of the items (or right, in RTL layout).
 
@@ -1554,7 +1593,7 @@ Horizontal padding to the left of the items (or right, in RTL layout).
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_PopupMenu_theme_constant_outline_size>`
 
 The size of the item text outline.
 
@@ -1568,7 +1607,7 @@ The size of the item text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **separator_outline_size** = ``0``
+:ref:`int<class_int>` **separator_outline_size** = ``0`` :ref:`🔗<class_PopupMenu_theme_constant_separator_outline_size>`
 
 The size of the labeled separator text outline.
 
@@ -1580,7 +1619,7 @@ The size of the labeled separator text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **v_separation** = ``4``
+:ref:`int<class_int>` **v_separation** = ``4`` :ref:`🔗<class_PopupMenu_theme_constant_v_separation>`
 
 The vertical space between each menu item.
 
@@ -1592,7 +1631,7 @@ The vertical space between each menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_PopupMenu_theme_font_font>`
 
 :ref:`Font<class_Font>` used for the menu items.
 
@@ -1604,7 +1643,7 @@ The vertical space between each menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font_separator**
+:ref:`Font<class_Font>` **font_separator** :ref:`🔗<class_PopupMenu_theme_font_font_separator>`
 
 :ref:`Font<class_Font>` used for the labeled separator.
 
@@ -1616,7 +1655,7 @@ The vertical space between each menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_separator_size**
+:ref:`int<class_int>` **font_separator_size** :ref:`🔗<class_PopupMenu_theme_font_size_font_separator_size>`
 
 Font size of the labeled separator.
 
@@ -1628,7 +1667,7 @@ Font size of the labeled separator.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_size**
+:ref:`int<class_int>` **font_size** :ref:`🔗<class_PopupMenu_theme_font_size_font_size>`
 
 Font size of the menu items.
 
@@ -1640,7 +1679,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **checked**
+:ref:`Texture2D<class_Texture2D>` **checked** :ref:`🔗<class_PopupMenu_theme_icon_checked>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the checked checkbox items.
 
@@ -1652,7 +1691,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **checked_disabled**
+:ref:`Texture2D<class_Texture2D>` **checked_disabled** :ref:`🔗<class_PopupMenu_theme_icon_checked_disabled>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the checked checkbox items when they are disabled.
 
@@ -1664,7 +1703,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **radio_checked**
+:ref:`Texture2D<class_Texture2D>` **radio_checked** :ref:`🔗<class_PopupMenu_theme_icon_radio_checked>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the checked radio button items.
 
@@ -1676,7 +1715,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **radio_checked_disabled**
+:ref:`Texture2D<class_Texture2D>` **radio_checked_disabled** :ref:`🔗<class_PopupMenu_theme_icon_radio_checked_disabled>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the checked radio button items when they are disabled.
 
@@ -1688,7 +1727,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **radio_unchecked**
+:ref:`Texture2D<class_Texture2D>` **radio_unchecked** :ref:`🔗<class_PopupMenu_theme_icon_radio_unchecked>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the unchecked radio button items.
 
@@ -1700,7 +1739,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **radio_unchecked_disabled**
+:ref:`Texture2D<class_Texture2D>` **radio_unchecked_disabled** :ref:`🔗<class_PopupMenu_theme_icon_radio_unchecked_disabled>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the unchecked radio button items when they are disabled.
 
@@ -1712,7 +1751,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **submenu**
+:ref:`Texture2D<class_Texture2D>` **submenu** :ref:`🔗<class_PopupMenu_theme_icon_submenu>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the submenu arrow (for left-to-right layouts).
 
@@ -1724,7 +1763,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **submenu_mirrored**
+:ref:`Texture2D<class_Texture2D>` **submenu_mirrored** :ref:`🔗<class_PopupMenu_theme_icon_submenu_mirrored>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the submenu arrow (for right-to-left layouts).
 
@@ -1736,7 +1775,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **unchecked**
+:ref:`Texture2D<class_Texture2D>` **unchecked** :ref:`🔗<class_PopupMenu_theme_icon_unchecked>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the unchecked checkbox items.
 
@@ -1748,7 +1787,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **unchecked_disabled**
+:ref:`Texture2D<class_Texture2D>` **unchecked_disabled** :ref:`🔗<class_PopupMenu_theme_icon_unchecked_disabled>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the unchecked checkbox items when they are disabled.
 
@@ -1760,7 +1799,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **hover**
+:ref:`StyleBox<class_StyleBox>` **hover** :ref:`🔗<class_PopupMenu_theme_style_hover>`
 
 :ref:`StyleBox<class_StyleBox>` displayed when the **PopupMenu** item is hovered.
 
@@ -1772,7 +1811,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **labeled_separator_left**
+:ref:`StyleBox<class_StyleBox>` **labeled_separator_left** :ref:`🔗<class_PopupMenu_theme_style_labeled_separator_left>`
 
 :ref:`StyleBox<class_StyleBox>` for the left side of labeled separator. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
 
@@ -1784,9 +1823,21 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **labeled_separator_right**
+:ref:`StyleBox<class_StyleBox>` **labeled_separator_right** :ref:`🔗<class_PopupMenu_theme_style_labeled_separator_right>`
 
 :ref:`StyleBox<class_StyleBox>` for the right side of labeled separator. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_theme_style_panel:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_PopupMenu_theme_style_panel>`
+
+:ref:`StyleBox<class_StyleBox>` for the background panel.
 
 .. rst-class:: classref-item-separator
 
@@ -1796,7 +1847,7 @@ Font size of the menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **separator**
+:ref:`StyleBox<class_StyleBox>` **separator** :ref:`🔗<class_PopupMenu_theme_style_separator>`
 
 :ref:`StyleBox<class_StyleBox>` used for the separators. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
 

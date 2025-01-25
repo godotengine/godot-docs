@@ -61,7 +61,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **canceled** = ``false``
+:ref:`bool<class_bool>` **canceled** = ``false`` :ref:`🔗<class_InputEventScreenTouch_property_canceled>`
 
 .. rst-class:: classref-property-setget
 
@@ -78,7 +78,7 @@ If ``true``, the touch event has been canceled.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **double_tap** = ``false``
+:ref:`bool<class_bool>` **double_tap** = ``false`` :ref:`🔗<class_InputEventScreenTouch_property_double_tap>`
 
 .. rst-class:: classref-property-setget
 
@@ -95,7 +95,7 @@ If ``true``, the touch's state is a double tap.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **index** = ``0``
+:ref:`int<class_int>` **index** = ``0`` :ref:`🔗<class_InputEventScreenTouch_property_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -112,14 +112,14 @@ The touch index in the case of a multi-touch event. One index = one finger.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventScreenTouch_property_position>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_position**\ (\ )
 
-The touch position, in screen (global) coordinates.
+The touch position in the viewport the node is in, using the coordinate system of this viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -129,7 +129,7 @@ The touch position, in screen (global) coordinates.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pressed** = ``false``
+:ref:`bool<class_bool>` **pressed** = ``false`` :ref:`🔗<class_InputEventScreenTouch_property_pressed>`
 
 .. rst-class:: classref-property-setget
 

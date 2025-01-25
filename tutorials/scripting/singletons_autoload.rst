@@ -60,8 +60,8 @@ You can create an Autoload to load a scene or a script that inherits from
 
 .. image:: img/singleton.webp
 
-To autoload a scene or script, select **Project > Project Settings** from the
-menu and switch to the **Autoload** tab.
+To autoload a scene or script, start from the menu and navigate to
+**Project > Project Settings > Globals > Autoload**.
 
 .. image:: img/autoload_tab.webp
 
@@ -132,6 +132,9 @@ To begin, download the template from here:
 `singleton_autoload_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/singleton_autoload_starter.zip>`_
 and open it in Godot.
 
+A window notifying you that the project was last opened in an older Godot version
+may appear, that's not an issue. Click *Ok* to open the project.
+
 The project contains two scenes: ``scene_1.tscn`` and ``scene_2.tscn``. Each
 scene contains a label displaying the scene name and a button with its
 ``pressed()`` signal connected. When you run the project, it starts in
@@ -145,10 +148,13 @@ Make sure it inherits from ``Node``:
 
 .. image:: img/autoload_script.webp
 
-The next step is to add this script to the autoLoad list. Open
-**Project > Project Settings** from the menu, switch to the **Autoload** tab and
+The next step is to add this script to the autoLoad list.
+Starting from the menu, open
+**Project > Project Settings > Globals > Autoload** and
 select the script by clicking the browse button or typing its path:
-``res://global.gd``. Press **Add** to add it to the autoload list:
+``res://global.gd``. Press **Add** to add it to the autoload list
+and name it "Global", which is required for scripts to access it
+by the name "Global":
 
 .. image:: img/autoload_tutorial1.webp
 
@@ -168,7 +174,8 @@ means that the last child of root is always the loaded scene.
 
     func _ready():
         var root = get_tree().root
-        current_scene = root.get_child(root.get_child_count() - 1)
+        # Using a negative index counts from the end, so this gets the last child node of `root`.
+        current_scene = root.get_child(-1)
 
  .. code-tab:: csharp
 
@@ -181,7 +188,8 @@ means that the last child of root is always the loaded scene.
         public override void _Ready()
         {
             Viewport root = GetTree().Root;
-            CurrentScene = root.GetChild(root.GetChildCount() - 1);
+            // Using a negative index counts from the end, so this gets the last child node of `root`.
+            CurrentScene = root.GetChild(-1);
         }
     }
 
@@ -201,7 +209,7 @@ current scene and replace it with the requested one.
         # The solution is to defer the load to a later time, when
         # we can be sure that no code from the current scene is running:
 
-        call_deferred("_deferred_goto_scene", path)
+        _deferred_goto_scene.call_deferred(path)
 
 
     func _deferred_goto_scene(path):

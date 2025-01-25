@@ -21,7 +21,14 @@ This resource allows for creating a custom rendering effect.
 Description
 -----------
 
-This resource defines a custom rendering effect that can be applied to :ref:`Viewport<class_Viewport>`\ s through the viewports' :ref:`Environment<class_Environment>`. You can implement a callback that is called during rendering at a given stage of the rendering pipeline and allows you to insert additional passes. Note that this callback happens on the rendering thread.
+This resource defines a custom rendering effect that can be applied to :ref:`Viewport<class_Viewport>`\ s through the viewports' :ref:`Environment<class_Environment>`. You can implement a callback that is called during rendering at a given stage of the rendering pipeline and allows you to insert additional passes. Note that this callback happens on the rendering thread. CompositorEffect is an abstract base class and must be extended to implement specific rendering logic.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`The Compositor <../tutorials/rendering/compositor>`
 
 .. rst-class:: classref-reftable-group
 
@@ -72,7 +79,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **EffectCallbackType**:
+enum **EffectCallbackType**: :ref:`🔗<enum_CompositorEffect_EffectCallbackType>`
 
 .. _class_CompositorEffect_constant_EFFECT_CALLBACK_TYPE_PRE_OPAQUE:
 
@@ -112,7 +119,7 @@ The callback is called before our transparent rendering pass, but after our sky 
 
 :ref:`EffectCallbackType<enum_CompositorEffect_EffectCallbackType>` **EFFECT_CALLBACK_TYPE_POST_TRANSPARENT** = ``4``
 
-The callback is called after our transparent rendering pass, but before any build in post effects and output to our render target.
+The callback is called after our transparent rendering pass, but before any built-in post-processing effects and output to our render target.
 
 .. _class_CompositorEffect_constant_EFFECT_CALLBACK_TYPE_MAX:
 
@@ -135,7 +142,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **access_resolved_color**
+:ref:`bool<class_bool>` **access_resolved_color** :ref:`🔗<class_CompositorEffect_property_access_resolved_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -148,7 +155,7 @@ If ``true`` and MSAA is enabled, this will trigger a color buffer resolve before
 
 ::
 
-    var render_scene_buffers : RenderSceneBuffersRD = render_data.get_render_scene_buffers()
+    var render_scene_buffers = render_data.get_render_scene_buffers()
     var color_buffer = render_scene_buffers.get_texture("render_buffers", "color")
 
 .. rst-class:: classref-item-separator
@@ -159,7 +166,7 @@ If ``true`` and MSAA is enabled, this will trigger a color buffer resolve before
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **access_resolved_depth**
+:ref:`bool<class_bool>` **access_resolved_depth** :ref:`🔗<class_CompositorEffect_property_access_resolved_depth>`
 
 .. rst-class:: classref-property-setget
 
@@ -172,7 +179,7 @@ If ``true`` and MSAA is enabled, this will trigger a depth buffer resolve before
 
 ::
 
-    var render_scene_buffers : RenderSceneBuffersRD = render_data.get_render_scene_buffers()
+    var render_scene_buffers = render_data.get_render_scene_buffers()
     var depth_buffer = render_scene_buffers.get_texture("render_buffers", "depth")
 
 .. rst-class:: classref-item-separator
@@ -183,7 +190,7 @@ If ``true`` and MSAA is enabled, this will trigger a depth buffer resolve before
 
 .. rst-class:: classref-property
 
-:ref:`EffectCallbackType<enum_CompositorEffect_EffectCallbackType>` **effect_callback_type**
+:ref:`EffectCallbackType<enum_CompositorEffect_EffectCallbackType>` **effect_callback_type** :ref:`🔗<class_CompositorEffect_property_effect_callback_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -200,7 +207,7 @@ The type of effect that is implemented, determines at what stage of rendering th
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enabled**
+:ref:`bool<class_bool>` **enabled** :ref:`🔗<class_CompositorEffect_property_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -217,7 +224,7 @@ If ``true`` this rendering effect is applied to any viewport it is added to.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **needs_motion_vectors**
+:ref:`bool<class_bool>` **needs_motion_vectors** :ref:`🔗<class_CompositorEffect_property_needs_motion_vectors>`
 
 .. rst-class:: classref-property-setget
 
@@ -230,7 +237,7 @@ If ``true`` this triggers motion vectors being calculated during the opaque rend
 
 ::
 
-    var render_scene_buffers : RenderSceneBuffersRD = render_data.get_render_scene_buffers()
+    var render_scene_buffers = render_data.get_render_scene_buffers()
     var motion_buffer = render_scene_buffers.get_velocity_texture()
 
 .. rst-class:: classref-item-separator
@@ -241,7 +248,7 @@ If ``true`` this triggers motion vectors being calculated during the opaque rend
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **needs_normal_roughness**
+:ref:`bool<class_bool>` **needs_normal_roughness** :ref:`🔗<class_CompositorEffect_property_needs_normal_roughness>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,8 +261,21 @@ If ``true`` this triggers normal and roughness data to be output during our dept
 
 ::
 
-    var render_scene_buffers : RenderSceneBuffersRD = render_data.get_render_scene_buffers()
+    var render_scene_buffers = render_data.get_render_scene_buffers()
     var roughness_buffer = render_scene_buffers.get_texture("forward_clustered", "normal_roughness")
+
+The raw normal and roughness buffer is stored in an optimized format, different than the one available in Spatial shaders. When sampling the buffer, a conversion function must be applied. Use this function, copied from `here <https://github.com/godotengine/godot/blob/da5f39889f155658cef7f7ec3cc1abb94e17d815/servers/rendering/renderer_rd/shaders/forward_clustered/scene_forward_clustered_inc.glsl#L334-L341>`__:
+
+::
+
+    vec4 normal_roughness_compatibility(vec4 p_normal_roughness) {
+        float roughness = p_normal_roughness.w;
+        if (roughness > 0.5) {
+            roughness = 1.0 - roughness;
+        }
+        roughness /= (127.0 / 255.0);
+        return vec4(normalize(p_normal_roughness.xyz * 2.0 - 1.0) * 0.5 + 0.5, roughness);
+    }
 
 .. rst-class:: classref-item-separator
 
@@ -265,7 +285,7 @@ If ``true`` this triggers normal and roughness data to be output during our dept
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **needs_separate_specular**
+:ref:`bool<class_bool>` **needs_separate_specular** :ref:`🔗<class_CompositorEffect_property_needs_separate_specular>`
 
 .. rst-class:: classref-property-setget
 
@@ -287,7 +307,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_render_callback**\ (\ effect_callback_type\: :ref:`int<class_int>`, render_data\: :ref:`RenderData<class_RenderData>`\ ) |virtual|
+|void| **_render_callback**\ (\ effect_callback_type\: :ref:`int<class_int>`, render_data\: :ref:`RenderData<class_RenderData>`\ ) |virtual| :ref:`🔗<class_CompositorEffect_private_method__render_callback>`
 
 Implement this function with your custom rendering code. ``effect_callback_type`` should always match the effect callback type you've specified in :ref:`effect_callback_type<class_CompositorEffect_property_effect_callback_type>`. ``render_data`` provides access to the rendering state, it is only valid during rendering and should not be stored.
 

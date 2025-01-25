@@ -56,7 +56,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **base64_to_raw**\ (\ base64_str\: :ref:`String<class_String>`\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **base64_to_raw**\ (\ base64_str\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Marshalls_method_base64_to_raw>`
 
 Returns a decoded :ref:`PackedByteArray<class_PackedByteArray>` corresponding to the Base64-encoded string ``base64_str``.
 
@@ -68,7 +68,7 @@ Returns a decoded :ref:`PackedByteArray<class_PackedByteArray>` corresponding to
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **base64_to_utf8**\ (\ base64_str\: :ref:`String<class_String>`\ )
+:ref:`String<class_String>` **base64_to_utf8**\ (\ base64_str\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Marshalls_method_base64_to_utf8>`
 
 Returns a decoded string corresponding to the Base64-encoded string ``base64_str``.
 
@@ -80,7 +80,7 @@ Returns a decoded string corresponding to the Base64-encoded string ``base64_str
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **base64_to_variant**\ (\ base64_str\: :ref:`String<class_String>`, allow_objects\: :ref:`bool<class_bool>` = false\ )
+:ref:`Variant<class_Variant>` **base64_to_variant**\ (\ base64_str\: :ref:`String<class_String>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Marshalls_method_base64_to_variant>`
 
 Returns a decoded :ref:`Variant<class_Variant>` corresponding to the Base64-encoded string ``base64_str``. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
@@ -96,7 +96,7 @@ Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.byte
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **raw_to_base64**\ (\ array\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`String<class_String>` **raw_to_base64**\ (\ array\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Marshalls_method_raw_to_base64>`
 
 Returns a Base64-encoded string of a given :ref:`PackedByteArray<class_PackedByteArray>`.
 
@@ -108,7 +108,7 @@ Returns a Base64-encoded string of a given :ref:`PackedByteArray<class_PackedByt
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **utf8_to_base64**\ (\ utf8_str\: :ref:`String<class_String>`\ )
+:ref:`String<class_String>` **utf8_to_base64**\ (\ utf8_str\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Marshalls_method_utf8_to_base64>`
 
 Returns a Base64-encoded string of the UTF-8 string ``utf8_str``.
 
@@ -120,7 +120,7 @@ Returns a Base64-encoded string of the UTF-8 string ``utf8_str``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **variant_to_base64**\ (\ variant\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ )
+:ref:`String<class_String>` **variant_to_base64**\ (\ variant\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Marshalls_method_variant_to_base64>`
 
 Returns a Base64-encoded string of the :ref:`Variant<class_Variant>` ``variant``. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 

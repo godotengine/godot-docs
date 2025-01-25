@@ -42,7 +42,7 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                       | :ref:`alpha_scissor_threshold<class_SpriteBase3D_property_alpha_scissor_threshold>` | ``0.5``               |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
-   | Vector3.Axis                                                    | :ref:`axis<class_SpriteBase3D_property_axis>`                                       | ``2``                 |
+   | :ref:`Axis<enum_Vector3_Axis>`                                  | :ref:`axis<class_SpriteBase3D_property_axis>`                                       | ``2``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
    | :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`         | :ref:`billboard<class_SpriteBase3D_property_billboard>`                             | ``0``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
@@ -104,7 +104,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **DrawFlags**:
+enum **DrawFlags**: :ref:`🔗<enum_SpriteBase3D_DrawFlags>`
 
 .. _class_SpriteBase3D_constant_FLAG_TRANSPARENT:
 
@@ -162,7 +162,7 @@ Represents the size of the :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **AlphaCutMode**:
+enum **AlphaCutMode**: :ref:`🔗<enum_SpriteBase3D_AlphaCutMode>`
 
 .. _class_SpriteBase3D_constant_ALPHA_CUT_DISABLED:
 
@@ -209,7 +209,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_antialiasing_edge** = ``0.0``
+:ref:`float<class_float>` **alpha_antialiasing_edge** = ``0.0`` :ref:`🔗<class_SpriteBase3D_property_alpha_antialiasing_edge>`
 
 .. rst-class:: classref-property-setget
 
@@ -226,7 +226,7 @@ Threshold at which antialiasing will be applied on the alpha channel.
 
 .. rst-class:: classref-property
 
-:ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **alpha_antialiasing_mode** = ``0``
+:ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **alpha_antialiasing_mode** = ``0`` :ref:`🔗<class_SpriteBase3D_property_alpha_antialiasing_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -243,7 +243,7 @@ The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMa
 
 .. rst-class:: classref-property
 
-:ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **alpha_cut** = ``0``
+:ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **alpha_cut** = ``0`` :ref:`🔗<class_SpriteBase3D_property_alpha_cut>`
 
 .. rst-class:: classref-property-setget
 
@@ -260,7 +260,7 @@ The alpha cutting mode to use for the sprite. See :ref:`AlphaCutMode<enum_Sprite
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_hash_scale** = ``1.0``
+:ref:`float<class_float>` **alpha_hash_scale** = ``1.0`` :ref:`🔗<class_SpriteBase3D_property_alpha_hash_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -277,7 +277,7 @@ The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_scissor_threshold** = ``0.5``
+:ref:`float<class_float>` **alpha_scissor_threshold** = ``0.5`` :ref:`🔗<class_SpriteBase3D_property_alpha_scissor_threshold>`
 
 .. rst-class:: classref-property-setget
 
@@ -294,12 +294,12 @@ Threshold at which the alpha scissor will discard values.
 
 .. rst-class:: classref-property
 
-Vector3.Axis **axis** = ``2``
+:ref:`Axis<enum_Vector3_Axis>` **axis** = ``2`` :ref:`🔗<class_SpriteBase3D_property_axis>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_axis**\ (\ value\: Vector3.Axis\ )
-- Vector3.Axis **get_axis**\ (\ )
+- |void| **set_axis**\ (\ value\: :ref:`Axis<enum_Vector3_Axis>`\ )
+- :ref:`Axis<enum_Vector3_Axis>` **get_axis**\ (\ )
 
 The direction in which the front of the texture faces.
 
@@ -311,7 +311,7 @@ The direction in which the front of the texture faces.
 
 .. rst-class:: classref-property
 
-:ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **billboard** = ``0``
+:ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **billboard** = ``0`` :ref:`🔗<class_SpriteBase3D_property_billboard>`
 
 .. rst-class:: classref-property-setget
 
@@ -330,7 +330,7 @@ The billboard mode to use for the sprite. See :ref:`BillboardMode<enum_BaseMater
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **centered** = ``true``
+:ref:`bool<class_bool>` **centered** = ``true`` :ref:`🔗<class_SpriteBase3D_property_centered>`
 
 .. rst-class:: classref-property-setget
 
@@ -347,7 +347,7 @@ If ``true``, texture will be centered.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **double_sided** = ``true``
+:ref:`bool<class_bool>` **double_sided** = ``true`` :ref:`🔗<class_SpriteBase3D_property_double_sided>`
 
 .. rst-class:: classref-property-setget
 
@@ -364,7 +364,7 @@ If ``true``, texture can be seen from the back as well, if ``false``, it is invi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **fixed_size** = ``false``
+:ref:`bool<class_bool>` **fixed_size** = ``false`` :ref:`🔗<class_SpriteBase3D_property_fixed_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -381,7 +381,7 @@ If ``true``, the label is rendered at the same size regardless of distance.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_h** = ``false``
+:ref:`bool<class_bool>` **flip_h** = ``false`` :ref:`🔗<class_SpriteBase3D_property_flip_h>`
 
 .. rst-class:: classref-property-setget
 
@@ -398,7 +398,7 @@ If ``true``, texture is flipped horizontally.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_v** = ``false``
+:ref:`bool<class_bool>` **flip_v** = ``false`` :ref:`🔗<class_SpriteBase3D_property_flip_v>`
 
 .. rst-class:: classref-property-setget
 
@@ -415,7 +415,7 @@ If ``true``, texture is flipped vertically.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_SpriteBase3D_property_modulate>`
 
 .. rst-class:: classref-property-setget
 
@@ -436,7 +436,7 @@ A color value used to *multiply* the texture's colors. Can be used for mood-colo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **no_depth_test** = ``false``
+:ref:`bool<class_bool>` **no_depth_test** = ``false`` :ref:`🔗<class_SpriteBase3D_property_no_depth_test>`
 
 .. rst-class:: classref-property-setget
 
@@ -453,7 +453,7 @@ If ``true``, depth testing is disabled and the object will be drawn in render or
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)`` :ref:`🔗<class_SpriteBase3D_property_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -470,7 +470,7 @@ The texture's drawing offset.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pixel_size** = ``0.01``
+:ref:`float<class_float>` **pixel_size** = ``0.01`` :ref:`🔗<class_SpriteBase3D_property_pixel_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -487,7 +487,7 @@ The size of one pixel's width on the sprite to scale it in 3D.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **render_priority** = ``0``
+:ref:`int<class_int>` **render_priority** = ``0`` :ref:`🔗<class_SpriteBase3D_property_render_priority>`
 
 .. rst-class:: classref-property-setget
 
@@ -508,7 +508,7 @@ Sets the render priority for the sprite. Higher priority objects will be sorted 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shaded** = ``false``
+:ref:`bool<class_bool>` **shaded** = ``false`` :ref:`🔗<class_SpriteBase3D_property_shaded>`
 
 .. rst-class:: classref-property-setget
 
@@ -525,7 +525,7 @@ If ``true``, the :ref:`Light3D<class_Light3D>` in the :ref:`Environment<class_En
 
 .. rst-class:: classref-property
 
-:ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **texture_filter** = ``3``
+:ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **texture_filter** = ``3`` :ref:`🔗<class_SpriteBase3D_property_texture_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -544,7 +544,7 @@ Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_Textur
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **transparent** = ``true``
+:ref:`bool<class_bool>` **transparent** = ``true`` :ref:`🔗<class_SpriteBase3D_property_transparent>`
 
 .. rst-class:: classref-property-setget
 
@@ -566,7 +566,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh**\ (\ ) |const|
+:ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh**\ (\ ) |const| :ref:`🔗<class_SpriteBase3D_method_generate_triangle_mesh>`
 
 Returns a :ref:`TriangleMesh<class_TriangleMesh>` with the sprite's vertices following its current configuration (such as its :ref:`axis<class_SpriteBase3D_property_axis>` and :ref:`pixel_size<class_SpriteBase3D_property_pixel_size>`).
 
@@ -578,7 +578,7 @@ Returns a :ref:`TriangleMesh<class_TriangleMesh>` with the sprite's vertices fol
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const|
+:ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const| :ref:`🔗<class_SpriteBase3D_method_get_draw_flag>`
 
 Returns the value of the specified flag.
 
@@ -590,7 +590,7 @@ Returns the value of the specified flag.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_item_rect**\ (\ ) |const|
+:ref:`Rect2<class_Rect2>` **get_item_rect**\ (\ ) |const| :ref:`🔗<class_SpriteBase3D_method_get_item_rect>`
 
 Returns the rectangle representing this sprite.
 
@@ -602,7 +602,7 @@ Returns the rectangle representing this sprite.
 
 .. rst-class:: classref-method
 
-|void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SpriteBase3D_method_set_draw_flag>`
 
 If ``true``, the specified flag will be enabled. See :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` for a list of flags.
 

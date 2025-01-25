@@ -75,7 +75,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_close**\ (\ ) |virtual|
+|void| **_close**\ (\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__close>`
 
 .. container:: contribute
 
@@ -89,7 +89,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_available_packet_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_available_packet_count**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_available_packet_count>`
 
 .. container:: contribute
 
@@ -103,7 +103,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_buffered_amount**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_buffered_amount**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_buffered_amount>`
 
 .. container:: contribute
 
@@ -117,7 +117,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_id**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_id**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_id>`
 
 .. container:: contribute
 
@@ -131,7 +131,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_label**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_label**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_label>`
 
 .. container:: contribute
 
@@ -145,7 +145,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_max_packet_life_time**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_max_packet_life_time**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_max_packet_life_time>`
 
 .. container:: contribute
 
@@ -159,7 +159,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_max_packet_size**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_max_packet_size**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_max_packet_size>`
 
 .. container:: contribute
 
@@ -173,7 +173,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_max_retransmits**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_max_retransmits**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_max_retransmits>`
 
 .. container:: contribute
 
@@ -187,7 +187,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_get_packet**\ (\ r_buffer\: ``const uint8_t **``, r_buffer_size\: ``int32_t*``\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_get_packet**\ (\ r_buffer\: ``const uint8_t **``, r_buffer_size\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_packet>`
 
 .. container:: contribute
 
@@ -201,7 +201,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_protocol**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_protocol**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_protocol>`
 
 .. container:: contribute
 
@@ -215,7 +215,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>` **_get_ready_state**\ (\ ) |virtual| |const|
+:ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>` **_get_ready_state**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_ready_state>`
 
 .. container:: contribute
 
@@ -229,7 +229,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` **_get_write_mode**\ (\ ) |virtual| |const|
+:ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` **_get_write_mode**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_write_mode>`
 
 .. container:: contribute
 
@@ -243,7 +243,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_negotiated**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_negotiated**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__is_negotiated>`
 
 .. container:: contribute
 
@@ -257,7 +257,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_ordered**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_ordered**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__is_ordered>`
 
 .. container:: contribute
 
@@ -271,7 +271,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_poll**\ (\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_poll**\ (\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__poll>`
 
 .. container:: contribute
 
@@ -285,7 +285,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_put_packet**\ (\ p_buffer\: ``const uint8_t*``, p_buffer_size\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_put_packet**\ (\ p_buffer\: ``const uint8_t*``, p_buffer_size\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__put_packet>`
 
 .. container:: contribute
 
@@ -299,7 +299,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_write_mode**\ (\ p_write_mode\: :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>`\ ) |virtual|
+|void| **_set_write_mode**\ (\ p_write_mode\: :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>`\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__set_write_mode>`
 
 .. container:: contribute
 
@@ -313,7 +313,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_was_string_packet**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_was_string_packet**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__was_string_packet>`
 
 .. container:: contribute
 

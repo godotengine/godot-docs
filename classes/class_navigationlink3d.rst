@@ -69,6 +69,8 @@ Methods
    +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`get_navigation_layer_value<class_NavigationLink3D_method_get_navigation_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
    +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`         | :ref:`get_navigation_map<class_NavigationLink3D_method_get_navigation_map>`\ (\ ) |const|                                                                                |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`         | :ref:`get_rid<class_NavigationLink3D_method_get_rid>`\ (\ ) |const|                                                                                                      |
    +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                        | :ref:`set_global_end_position<class_NavigationLink3D_method_set_global_end_position>`\ (\ position\: :ref:`Vector3<class_Vector3>`\ )                                    |
@@ -76,6 +78,8 @@ Methods
    | |void|                        | :ref:`set_global_start_position<class_NavigationLink3D_method_set_global_start_position>`\ (\ position\: :ref:`Vector3<class_Vector3>`\ )                                |
    +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                        | :ref:`set_navigation_layer_value<class_NavigationLink3D_method_set_navigation_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_navigation_map<class_NavigationLink3D_method_set_navigation_map>`\ (\ navigation_map\: :ref:`RID<class_RID>`\ )                                                |
    +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -91,7 +95,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **bidirectional** = ``true``
+:ref:`bool<class_bool>` **bidirectional** = ``true`` :ref:`🔗<class_NavigationLink3D_property_bidirectional>`
 
 .. rst-class:: classref-property-setget
 
@@ -108,7 +112,7 @@ Whether this link can be traveled in both directions or only from :ref:`start_po
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enabled** = ``true``
+:ref:`bool<class_bool>` **enabled** = ``true`` :ref:`🔗<class_NavigationLink3D_property_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -125,7 +129,7 @@ Whether this link is currently active. If ``false``, :ref:`NavigationServer3D.ma
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **end_position** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **end_position** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_NavigationLink3D_property_end_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -146,7 +150,7 @@ The distance the link will search is controlled by :ref:`NavigationServer3D.map_
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **enter_cost** = ``0.0``
+:ref:`float<class_float>` **enter_cost** = ``0.0`` :ref:`🔗<class_NavigationLink3D_property_enter_cost>`
 
 .. rst-class:: classref-property-setget
 
@@ -163,7 +167,7 @@ When pathfinding enters this link from another regions navigation mesh the :ref:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **navigation_layers** = ``1``
+:ref:`int<class_int>` **navigation_layers** = ``1`` :ref:`🔗<class_NavigationLink3D_property_navigation_layers>`
 
 .. rst-class:: classref-property-setget
 
@@ -180,7 +184,7 @@ A bitfield determining all navigation layers the link belongs to. These navigati
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **start_position** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **start_position** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_NavigationLink3D_property_start_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -201,7 +205,7 @@ The distance the link will search is controlled by :ref:`NavigationServer3D.map_
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **travel_cost** = ``1.0``
+:ref:`float<class_float>` **travel_cost** = ``1.0`` :ref:`🔗<class_NavigationLink3D_property_travel_cost>`
 
 .. rst-class:: classref-property-setget
 
@@ -223,7 +227,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_global_end_position**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_global_end_position**\ (\ ) |const| :ref:`🔗<class_NavigationLink3D_method_get_global_end_position>`
 
 Returns the :ref:`end_position<class_NavigationLink3D_property_end_position>` that is relative to the link as a global position.
 
@@ -235,7 +239,7 @@ Returns the :ref:`end_position<class_NavigationLink3D_property_end_position>` th
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_global_start_position**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_global_start_position**\ (\ ) |const| :ref:`🔗<class_NavigationLink3D_method_get_global_start_position>`
 
 Returns the :ref:`start_position<class_NavigationLink3D_property_start_position>` that is relative to the link as a global position.
 
@@ -247,9 +251,21 @@ Returns the :ref:`start_position<class_NavigationLink3D_property_start_position>
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_navigation_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_navigation_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NavigationLink3D_method_get_navigation_layer_value>`
 
 Returns whether or not the specified layer of the :ref:`navigation_layers<class_NavigationLink3D_property_navigation_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationLink3D_method_get_navigation_map:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_navigation_map**\ (\ ) |const| :ref:`🔗<class_NavigationLink3D_method_get_navigation_map>`
+
+Returns the current navigation map :ref:`RID<class_RID>` used by this link.
 
 .. rst-class:: classref-item-separator
 
@@ -259,7 +275,7 @@ Returns whether or not the specified layer of the :ref:`navigation_layers<class_
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_NavigationLink3D_method_get_rid>`
 
 Returns the :ref:`RID<class_RID>` of this link on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
@@ -271,7 +287,7 @@ Returns the :ref:`RID<class_RID>` of this link on the :ref:`NavigationServer3D<c
 
 .. rst-class:: classref-method
 
-|void| **set_global_end_position**\ (\ position\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_global_end_position**\ (\ position\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_NavigationLink3D_method_set_global_end_position>`
 
 Sets the :ref:`end_position<class_NavigationLink3D_property_end_position>` that is relative to the link from a global ``position``.
 
@@ -283,7 +299,7 @@ Sets the :ref:`end_position<class_NavigationLink3D_property_end_position>` that 
 
 .. rst-class:: classref-method
 
-|void| **set_global_start_position**\ (\ position\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_global_start_position**\ (\ position\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_NavigationLink3D_method_set_global_start_position>`
 
 Sets the :ref:`start_position<class_NavigationLink3D_property_start_position>` that is relative to the link from a global ``position``.
 
@@ -295,9 +311,21 @@ Sets the :ref:`start_position<class_NavigationLink3D_property_start_position>` t
 
 .. rst-class:: classref-method
 
-|void| **set_navigation_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
+|void| **set_navigation_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationLink3D_method_set_navigation_layer_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`navigation_layers<class_NavigationLink3D_property_navigation_layers>` bitmask, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationLink3D_method_set_navigation_map:
+
+.. rst-class:: classref-method
+
+|void| **set_navigation_map**\ (\ navigation_map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationLink3D_method_set_navigation_map>`
+
+Sets the :ref:`RID<class_RID>` of the navigation map this link should use. By default the link will automatically join the :ref:`World3D<class_World3D>` default navigation map so this function is only required to override the default map.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -12,16 +12,16 @@ GLTFNode
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-GLTF node class.
+glTF node class.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Represents a GLTF node. GLTF nodes may have names, transforms, children (other GLTF nodes), and more specialized properties (represented by their own classes).
+Represents a glTF node. glTF nodes may have names, transforms, children (other glTF nodes), and more specialized properties (represented by their own classes).
 
-GLTF nodes generally exist inside of :ref:`GLTFState<class_GLTFState>` which represents all data of a GLTF file. Most of GLTFNode's properties are indices of other data in the GLTF file. You can extend a GLTF node with additional properties by using :ref:`get_additional_data<class_GLTFNode_method_get_additional_data>` and :ref:`set_additional_data<class_GLTFNode_method_set_additional_data>`.
+glTF nodes generally exist inside of :ref:`GLTFState<class_GLTFState>` which represents all data of a glTF file. Most of GLTFNode's properties are indices of other data in the glTF file. You can extend a glTF node with additional properties by using :ref:`get_additional_data<class_GLTFNode_method_get_additional_data>` and :ref:`set_additional_data<class_GLTFNode_method_set_additional_data>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
-- `GLTF scene and node spec <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_004_ScenesNodes.md">`__
+- `glTF scene and node spec <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_004_ScenesNodes.md">`__
 
 .. rst-class:: classref-reftable-group
 
@@ -76,11 +76,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>` | :ref:`get_additional_data<class_GLTFNode_method_get_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )                                                  |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                        | :ref:`set_additional_data<class_GLTFNode_method_set_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`append_child_index<class_GLTFNode_method_append_child_index>`\ (\ child_index\: :ref:`int<class_int>`\ )                                                                     |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`   | :ref:`get_additional_data<class_GLTFNode_method_get_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )                                                  |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_scene_node_path<class_GLTFNode_method_get_scene_node_path>`\ (\ gltf_state\: :ref:`GLTFState<class_GLTFState>`, handle_skeletons\: :ref:`bool<class_bool>` = true\ )     |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_additional_data<class_GLTFNode_method_set_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -95,14 +99,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **camera** = ``-1``
+:ref:`int<class_int>` **camera** = ``-1`` :ref:`🔗<class_GLTFNode_property_camera>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_camera**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_camera**\ (\ )
 
-If this GLTF node is a camera, the index of the :ref:`GLTFCamera<class_GLTFCamera>` in the :ref:`GLTFState<class_GLTFState>` that describes the camera's properties. If -1, this node is not a camera.
+If this glTF node is a camera, the index of the :ref:`GLTFCamera<class_GLTFCamera>` in the :ref:`GLTFState<class_GLTFState>` that describes the camera's properties. If -1, this node is not a camera.
 
 .. rst-class:: classref-item-separator
 
@@ -112,14 +116,16 @@ If this GLTF node is a camera, the index of the :ref:`GLTFCamera<class_GLTFCamer
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **children** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **children** = ``PackedInt32Array()`` :ref:`🔗<class_GLTFNode_property_children>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_children**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_children**\ (\ )
 
-The indices of the child nodes in the :ref:`GLTFState<class_GLTFState>`. If this GLTF node has no children, this will be an empty array.
+The indices of the child nodes in the :ref:`GLTFState<class_GLTFState>`. If this glTF node has no children, this will be an empty array.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -129,7 +135,7 @@ The indices of the child nodes in the :ref:`GLTFState<class_GLTFState>`. If this
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **height** = ``-1``
+:ref:`int<class_int>` **height** = ``-1`` :ref:`🔗<class_GLTFNode_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -146,14 +152,14 @@ How deep into the node hierarchy this node is. A root node will have a height of
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **light** = ``-1``
+:ref:`int<class_int>` **light** = ``-1`` :ref:`🔗<class_GLTFNode_property_light>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_light**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_light**\ (\ )
 
-If this GLTF node is a light, the index of the :ref:`GLTFLight<class_GLTFLight>` in the :ref:`GLTFState<class_GLTFState>` that describes the light's properties. If -1, this node is not a light.
+If this glTF node is a light, the index of the :ref:`GLTFLight<class_GLTFLight>` in the :ref:`GLTFState<class_GLTFState>` that describes the light's properties. If -1, this node is not a light.
 
 .. rst-class:: classref-item-separator
 
@@ -163,14 +169,14 @@ If this GLTF node is a light, the index of the :ref:`GLTFLight<class_GLTFLight>`
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **mesh** = ``-1``
+:ref:`int<class_int>` **mesh** = ``-1`` :ref:`🔗<class_GLTFNode_property_mesh>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_mesh**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_mesh**\ (\ )
 
-If this GLTF node is a mesh, the index of the :ref:`GLTFMesh<class_GLTFMesh>` in the :ref:`GLTFState<class_GLTFState>` that describes the mesh's properties. If -1, this node is not a mesh.
+If this glTF node is a mesh, the index of the :ref:`GLTFMesh<class_GLTFMesh>` in the :ref:`GLTFState<class_GLTFState>` that describes the mesh's properties. If -1, this node is not a mesh.
 
 .. rst-class:: classref-item-separator
 
@@ -180,7 +186,7 @@ If this GLTF node is a mesh, the index of the :ref:`GLTFMesh<class_GLTFMesh>` in
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **original_name** = ``""``
+:ref:`String<class_String>` **original_name** = ``""`` :ref:`🔗<class_GLTFNode_property_original_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -197,7 +203,7 @@ The original name of the node.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **parent** = ``-1``
+:ref:`int<class_int>` **parent** = ``-1`` :ref:`🔗<class_GLTFNode_property_parent>`
 
 .. rst-class:: classref-property-setget
 
@@ -214,14 +220,14 @@ The index of the parent node in the :ref:`GLTFState<class_GLTFState>`. If -1, th
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_GLTFNode_property_position>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_position**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
 - :ref:`Vector3<class_Vector3>` **get_position**\ (\ )
 
-The position of the GLTF node relative to its parent.
+The position of the glTF node relative to its parent.
 
 .. rst-class:: classref-item-separator
 
@@ -231,14 +237,14 @@ The position of the GLTF node relative to its parent.
 
 .. rst-class:: classref-property
 
-:ref:`Quaternion<class_Quaternion>` **rotation** = ``Quaternion(0, 0, 0, 1)``
+:ref:`Quaternion<class_Quaternion>` **rotation** = ``Quaternion(0, 0, 0, 1)`` :ref:`🔗<class_GLTFNode_property_rotation>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_rotation**\ (\ value\: :ref:`Quaternion<class_Quaternion>`\ )
 - :ref:`Quaternion<class_Quaternion>` **get_rotation**\ (\ )
 
-The rotation of the GLTF node relative to its parent.
+The rotation of the glTF node relative to its parent.
 
 .. rst-class:: classref-item-separator
 
@@ -248,14 +254,14 @@ The rotation of the GLTF node relative to its parent.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **scale** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **scale** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_GLTFNode_property_scale>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_scale**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
 - :ref:`Vector3<class_Vector3>` **get_scale**\ (\ )
 
-The scale of the GLTF node relative to its parent.
+The scale of the glTF node relative to its parent.
 
 .. rst-class:: classref-item-separator
 
@@ -265,14 +271,14 @@ The scale of the GLTF node relative to its parent.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **skeleton** = ``-1``
+:ref:`int<class_int>` **skeleton** = ``-1`` :ref:`🔗<class_GLTFNode_property_skeleton>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_skeleton**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_skeleton**\ (\ )
 
-If this GLTF node has a skeleton, the index of the :ref:`GLTFSkeleton<class_GLTFSkeleton>` in the :ref:`GLTFState<class_GLTFState>` that describes the skeleton's properties. If -1, this node does not have a skeleton.
+If this glTF node has a skeleton, the index of the :ref:`GLTFSkeleton<class_GLTFSkeleton>` in the :ref:`GLTFState<class_GLTFState>` that describes the skeleton's properties. If -1, this node does not have a skeleton.
 
 .. rst-class:: classref-item-separator
 
@@ -282,14 +288,14 @@ If this GLTF node has a skeleton, the index of the :ref:`GLTFSkeleton<class_GLTF
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **skin** = ``-1``
+:ref:`int<class_int>` **skin** = ``-1`` :ref:`🔗<class_GLTFNode_property_skin>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_skin**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_skin**\ (\ )
 
-If this GLTF node has a skin, the index of the :ref:`GLTFSkin<class_GLTFSkin>` in the :ref:`GLTFState<class_GLTFState>` that describes the skin's properties. If -1, this node does not have a skin.
+If this glTF node has a skin, the index of the :ref:`GLTFSkin<class_GLTFSkin>` in the :ref:`GLTFState<class_GLTFState>` that describes the skin's properties. If -1, this node does not have a skin.
 
 .. rst-class:: classref-item-separator
 
@@ -299,14 +305,14 @@ If this GLTF node has a skin, the index of the :ref:`GLTFSkin<class_GLTFSkin>` i
 
 .. rst-class:: classref-property
 
-:ref:`Transform3D<class_Transform3D>` **xform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+:ref:`Transform3D<class_Transform3D>` **xform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` :ref:`🔗<class_GLTFNode_property_xform>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_xform**\ (\ value\: :ref:`Transform3D<class_Transform3D>`\ )
 - :ref:`Transform3D<class_Transform3D>` **get_xform**\ (\ )
 
-The transform of the GLTF node relative to its parent. This property is usually unused since the position, rotation, and scale properties are preferred.
+The transform of the glTF node relative to its parent. This property is usually unused since the position, rotation, and scale properties are preferred.
 
 .. rst-class:: classref-section-separator
 
@@ -317,15 +323,41 @@ The transform of the GLTF node relative to its parent. This property is usually 
 Method Descriptions
 -------------------
 
+.. _class_GLTFNode_method_append_child_index:
+
+.. rst-class:: classref-method
+
+|void| **append_child_index**\ (\ child_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GLTFNode_method_append_child_index>`
+
+Appends the given child node index to the :ref:`children<class_GLTFNode_property_children>` array.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFNode_method_get_additional_data:
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )
+:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GLTFNode_method_get_additional_data>`
 
 Gets additional arbitrary data in this **GLTFNode** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
 
-The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the GLTF file), and the return value can be anything you set. If nothing was set, the return value is null.
+The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the glTF file), and the return value can be anything you set. If nothing was set, the return value is ``null``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFNode_method_get_scene_node_path:
+
+.. rst-class:: classref-method
+
+:ref:`NodePath<class_NodePath>` **get_scene_node_path**\ (\ gltf_state\: :ref:`GLTFState<class_GLTFState>`, handle_skeletons\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_GLTFNode_method_get_scene_node_path>`
+
+Returns the :ref:`NodePath<class_NodePath>` that this GLTF node will have in the Godot scene tree after being imported. This is useful when importing glTF object model pointers with :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>`, for handling extensions such as ``KHR_animation_pointer`` or ``KHR_interactivity``.
+
+If ``handle_skeletons`` is ``true``, paths to skeleton bone glTF nodes will be resolved properly. For example, a path that would be ``^"A/B/C/Bone1/Bone2/Bone3"`` if ``false`` will become ``^"A/B/C/Skeleton3D:Bone3"``.
 
 .. rst-class:: classref-item-separator
 
@@ -335,11 +367,11 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 .. rst-class:: classref-method
 
-|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ )
+|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_GLTFNode_method_set_additional_data>`
 
 Sets additional arbitrary data in this **GLTFNode** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
 
-The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the GLTF file), and the second argument can be anything you want.
+The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the glTF file), and the second argument can be anything you want.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

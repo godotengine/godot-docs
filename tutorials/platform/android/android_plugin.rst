@@ -22,7 +22,7 @@ Starting in Godot 4.2, Android plugins built on the v1 architecture are now depr
 Instead, Godot 4.2 introduces a new **Version 2 (v2)** architecture for Android plugins.
 
 v2 Architecture
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -49,7 +49,7 @@ which is provided by the :ref:`Godot Android library <doc_android_library>`.
 The ``GodotPlugin`` class provides APIs to access the running Godot instance and hook into its lifecycle. It is loaded at runtime by the Godot engine.
 
 v2 Packaging format
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 v1 Android plugins required a custom ``gdap`` configuration file that was used by the Godot Editor to detect and load them.
 However this approach had several drawbacks, primary ones being that it lacked flexibility and departed from the `existing
@@ -106,7 +106,7 @@ To provide further understanding, here is a break-down of the steps used to crea
 
 
 Building a v2 Android plugin with GDExtension capabilities
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar to GDNative support in v1 Android plugins, v2 Android plugins support the ability to integrate GDExtension capabilities.
 
@@ -117,7 +117,7 @@ to set up your own Godot Android plugin project.
 
 
 Migrating a v1 Android plugin to v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following steps if you have a v1 Android plugin you want to migrate to v2:
 
@@ -229,7 +229,7 @@ At build time, the contents of the ``export_scripts_template`` directory as well
 
 
 Packaging a v2 Android plugin with GDExtension capabilities
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For GDExtension, we follow the same steps as for `Packaging a v2 Android plugin`_ and add the `GDExtension config file <https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html#using-the-gdextension-module>`_ in
 the same location as ``plugin.cfg``.
@@ -308,11 +308,11 @@ Using a v2 Android plugin
 
 
 Using a v2 Android plugin as an Android library
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since they are also Android libraries, Godot v2 Android plugins can be stripped from their ``EditorExportPlugin`` packaging and provided as raw ``AAR`` binaries for use as libraries alongside the :ref:`Godot Android library <doc_android_library>` by Android apps.
 
-If targetting this use-case, make sure to include additional instructions for how the ``AAR`` binaries should be included (e.g: custom additions to the Android app's manifest).
+If targeting this use-case, make sure to include additional instructions for how the ``AAR`` binaries should be included (e.g: custom additions to the Android app's manifest).
 
 Reference implementations
 -------------------------
@@ -327,7 +327,7 @@ Tips and Guidelines
 -------------------
 
 Simplify access to the exposed Java / Kotlin APIs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To make it easier to access the exposed Java / Kotlin APIs in the Godot Editor, it's recommended to
 provide one (or multiple) gdscript wrapper class(es) for your plugin users to interface with.
@@ -355,7 +355,7 @@ For example::
             printerr("Initialization error")
 
 Support using the GDExtension functionality in the Godot Editor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If planning to use the GDExtension functionality in the Godot Editor, it is recommended that the
 GDExtension's native binaries are compiled not just for Android, but also for the OS onto which
@@ -363,11 +363,14 @@ developers / users intend to run the Godot Editor. Not doing so may prevent deve
 users from writing code that accesses the plugin from within the Godot Editor.
 
 This may involve creating dummy plugins for the host OS just so the API is published to the
-editor. You can use the [godot-cpp-template](https://github.com/godotengine/godot-cpp-template)
+editor. You can use the `godot-cpp-template <https://github.com/godotengine/godot-cpp-template>`__
 github template for reference on how to do so.
 
 Godot crashes upon load
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. UPDATE: Not supported yet. When more complex datatypes are supported,
+.. update this section.
 
 Check ``adb logcat`` for possible problems, then:
 

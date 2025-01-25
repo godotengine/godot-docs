@@ -27,7 +27,7 @@ All of :ref:`String<class_String>`'s methods are available in this class too. Th
 
 \ **Note:** In C#, an explicit conversion to ``System.String`` is required to use the methods listed on this page. Use the ``ToString()`` method to cast a **StringName** to a string, and then use the equivalent methods in ``System.String`` or ``StringExtensions``.
 
-\ **Note:** In a boolean context, a **StringName** will evaluate to ``false`` if it is empty (``StringName("")``). Otherwise, a **StringName** will always evaluate to ``true``. The ``not`` operator cannot be used. Instead, :ref:`is_empty<class_StringName_method_is_empty>` should be used to check for empty **StringName**\ s.
+\ **Note:** In a boolean context, a **StringName** will evaluate to ``false`` if it is empty (``StringName("")``). Otherwise, a **StringName** will always evaluate to ``true``.
 
 .. note::
 
@@ -74,6 +74,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`contains<class_StringName_method_contains>`\ (\ what\: :ref:`String<class_String>`\ ) |const|                                                                                           |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`containsn<class_StringName_method_containsn>`\ (\ what\: :ref:`String<class_String>`\ ) |const|                                                                                         |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`count<class_StringName_method_count>`\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = 0\ ) |const|                               |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`countn<class_StringName_method_countn>`\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = 0\ ) |const|                             |
@@ -83,6 +85,10 @@ Methods
    | :ref:`bool<class_bool>`                             | :ref:`ends_with<class_StringName_method_ends_with>`\ (\ text\: :ref:`String<class_String>`\ ) |const|                                                                                         |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`erase<class_StringName_method_erase>`\ (\ position\: :ref:`int<class_int>`, chars\: :ref:`int<class_int>` = 1\ ) |const|                                                                |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>`\ (\ to\: :ref:`String<class_String>`\ ) |const|                                                                                 |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>`\ (\ to\: :ref:`String<class_String>`\ ) |const|                                                                             |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_StringName_method_find>`\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0\ ) |const|                                                                 |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,6 +130,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_subsequence_ofn<class_StringName_method_is_subsequence_ofn>`\ (\ text\: :ref:`String<class_String>`\ ) |const|                                                                       |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_valid_ascii_identifier<class_StringName_method_is_valid_ascii_identifier>`\ (\ ) |const|                                                                                             |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_filename<class_StringName_method_is_valid_filename>`\ (\ ) |const|                                                                                                             |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_float<class_StringName_method_is_valid_float>`\ (\ ) |const|                                                                                                                   |
@@ -137,6 +145,8 @@ Methods
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_int<class_StringName_method_is_valid_int>`\ (\ ) |const|                                                                                                                       |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_ip_address<class_StringName_method_is_valid_ip_address>`\ (\ ) |const|                                                                                                         |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_valid_unicode_identifier<class_StringName_method_is_valid_unicode_identifier>`\ (\ ) |const|                                                                                         |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`join<class_StringName_method_join>`\ (\ parts\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |const|                                                                            |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -300,7 +310,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`StringName<class_StringName>` **StringName**\ (\ )
+:ref:`StringName<class_StringName>` **StringName**\ (\ ) :ref:`🔗<class_StringName_constructor_StringName>`
 
 Constructs an empty **StringName**.
 
@@ -337,7 +347,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **begins_with**\ (\ text\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **begins_with**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_begins_with>`
 
 Returns ``true`` if the string begins with the given ``text``. See also :ref:`ends_with<class_StringName_method_ends_with>`.
 
@@ -349,7 +359,7 @@ Returns ``true`` if the string begins with the given ``text``. See also :ref:`en
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **bigrams**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **bigrams**\ (\ ) |const| :ref:`🔗<class_StringName_method_bigrams>`
 
 Returns an array containing the bigrams (pairs of consecutive characters) of this string.
 
@@ -365,7 +375,7 @@ Returns an array containing the bigrams (pairs of consecutive characters) of thi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bin_to_int**\ (\ ) |const|
+:ref:`int<class_int>` **bin_to_int**\ (\ ) |const| :ref:`🔗<class_StringName_method_bin_to_int>`
 
 Converts the string representing a binary number into an :ref:`int<class_int>`. The string may optionally be prefixed with ``"0b"``, and an additional ``-`` prefix for negative numbers.
 
@@ -394,7 +404,7 @@ Converts the string representing a binary number into an :ref:`int<class_int>`. 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **c_escape**\ (\ ) |const|
+:ref:`String<class_String>` **c_escape**\ (\ ) |const| :ref:`🔗<class_StringName_method_c_escape>`
 
 Returns a copy of the string with special characters escaped using the C language standard.
 
@@ -406,7 +416,7 @@ Returns a copy of the string with special characters escaped using the C languag
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **c_unescape**\ (\ ) |const|
+:ref:`String<class_String>` **c_unescape**\ (\ ) |const| :ref:`🔗<class_StringName_method_c_unescape>`
 
 Returns a copy of the string with escaped characters replaced by their meanings. Supported escape sequences are ``\'``, ``\"``, ``\\``, ``\a``, ``\b``, ``\f``, ``\n``, ``\r``, ``\t``, ``\v``.
 
@@ -420,7 +430,7 @@ Returns a copy of the string with escaped characters replaced by their meanings.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **capitalize**\ (\ ) |const|
+:ref:`String<class_String>` **capitalize**\ (\ ) |const| :ref:`🔗<class_StringName_method_capitalize>`
 
 Changes the appearance of the string: replaces underscores (``_``) with spaces, adds spaces before uppercase letters in the middle of a word, converts all letters to lowercase, then converts the first one and each one following a space to uppercase.
 
@@ -449,13 +459,13 @@ Changes the appearance of the string: replaces underscores (``_``) with spaces, 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **casecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **casecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_casecmp_to>`
 
 Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" and "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
 
 With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`, :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`, and :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`.
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`, :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>`, and :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`.
 
 .. rst-class:: classref-item-separator
 
@@ -465,7 +475,7 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **contains**\ (\ what\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **contains**\ (\ what\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_contains>`
 
 Returns ``true`` if the string contains ``what``. In GDScript, this corresponds to the ``in`` operator.
 
@@ -480,12 +490,26 @@ Returns ``true`` if the string contains ``what``. In GDScript, this corresponds 
 
  .. code-tab:: csharp
 
-    GD.Print("Node".Contains("de")); // Prints true
-    GD.Print("team".Contains("I"));  // Prints false
+    GD.Print("Node".Contains("de")); // Prints True
+    GD.Print("team".Contains("I"));  // Prints False
 
 
 
-If you need to know where ``what`` is within the string, use :ref:`find<class_StringName_method_find>`.
+If you need to know where ``what`` is within the string, use :ref:`find<class_StringName_method_find>`. See also :ref:`containsn<class_StringName_method_containsn>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_containsn:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **containsn**\ (\ what\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_containsn>`
+
+Returns ``true`` if the string contains ``what``, **ignoring case**.
+
+If you need to know where ``what`` is within the string, use :ref:`findn<class_StringName_method_findn>`. See also :ref:`contains<class_StringName_method_contains>`.
 
 .. rst-class:: classref-item-separator
 
@@ -495,7 +519,7 @@ If you need to know where ``what`` is within the string, use :ref:`find<class_St
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **count**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **count**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_StringName_method_count>`
 
 Returns the number of occurrences of the substring ``what`` between ``from`` and ``to`` positions. If ``to`` is 0, the search continues until the end of the string.
 
@@ -507,7 +531,7 @@ Returns the number of occurrences of the substring ``what`` between ``from`` and
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **countn**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **countn**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_StringName_method_countn>`
 
 Returns the number of occurrences of the substring ``what`` between ``from`` and ``to`` positions, **ignoring case**. If ``to`` is 0, the search continues until the end of the string.
 
@@ -519,7 +543,7 @@ Returns the number of occurrences of the substring ``what`` between ``from`` and
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **dedent**\ (\ ) |const|
+:ref:`String<class_String>` **dedent**\ (\ ) |const| :ref:`🔗<class_StringName_method_dedent>`
 
 Returns a copy of the string with indentation (leading tabs and spaces) removed. See also :ref:`indent<class_StringName_method_indent>` to add indentation.
 
@@ -531,7 +555,7 @@ Returns a copy of the string with indentation (leading tabs and spaces) removed.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **ends_with**\ (\ text\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **ends_with**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_ends_with>`
 
 Returns ``true`` if the string ends with the given ``text``. See also :ref:`begins_with<class_StringName_method_begins_with>`.
 
@@ -543,9 +567,37 @@ Returns ``true`` if the string ends with the given ``text``. See also :ref:`begi
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **erase**\ (\ position\: :ref:`int<class_int>`, chars\: :ref:`int<class_int>` = 1\ ) |const|
+:ref:`String<class_String>` **erase**\ (\ position\: :ref:`int<class_int>`, chars\: :ref:`int<class_int>` = 1\ ) |const| :ref:`🔗<class_StringName_method_erase>`
 
 Returns a string with ``chars`` characters erased starting from ``position``. If ``chars`` goes beyond the string's length given the specified ``position``, fewer characters will be erased from the returned string. Returns an empty string if either ``position`` or ``chars`` is negative. Returns the original string unmodified if ``chars`` is ``0``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_filecasecmp_to:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **filecasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_filecasecmp_to>`
+
+Like :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>` but prioritizes strings that begin with periods (``.``) and underscores (``_``) before any other character. Useful when sorting folders or file names.
+
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>`, :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`, and :ref:`casecmp_to<class_StringName_method_casecmp_to>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_filenocasecmp_to:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **filenocasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_filenocasecmp_to>`
+
+Like :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>` but prioritizes strings that begin with periods (``.``) and underscores (``_``) before any other character. Useful when sorting folders or file names.
+
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>`, :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`, and :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`.
 
 .. rst-class:: classref-item-separator
 
@@ -555,7 +607,7 @@ Returns a string with ``chars`` characters erased starting from ``position``. If
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **find**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_StringName_method_find>`
 
 Returns the index of the **first** occurrence of ``what`` in this string, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the end of the string.
 
@@ -590,7 +642,7 @@ Returns the index of the **first** occurrence of ``what`` in this string, or ``-
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **findn**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **findn**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_StringName_method_findn>`
 
 Returns the index of the **first** **case-insensitive** occurrence of ``what`` in this string, or ``-1`` if there are none. The starting search index can be specified with ``from``, continuing to the end of the string.
 
@@ -602,11 +654,11 @@ Returns the index of the **first** **case-insensitive** occurrence of ``what`` i
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **format**\ (\ values\: :ref:`Variant<class_Variant>`, placeholder\: :ref:`String<class_String>` = "{_}"\ ) |const|
+:ref:`String<class_String>` **format**\ (\ values\: :ref:`Variant<class_Variant>`, placeholder\: :ref:`String<class_String>` = "{_}"\ ) |const| :ref:`🔗<class_StringName_method_format>`
 
 Formats the string by replacing all occurrences of ``placeholder`` with the elements of ``values``.
 
-\ ``values`` can be a :ref:`Dictionary<class_Dictionary>` or an :ref:`Array<class_Array>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
+\ ``values`` can be a :ref:`Dictionary<class_Dictionary>`, an :ref:`Array<class_Array>`, or an :ref:`Object<class_Object>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
 
 ::
 
@@ -625,7 +677,24 @@ Some additional handling is performed when ``values`` is an :ref:`Array<class_Ar
     print("User {} is {}.".format([42, "Godot"], "{}"))
     print("User {id} is {name}.".format([["id", 42], ["name", "Godot"]]))
 
+When passing an :ref:`Object<class_Object>`, the property names from :ref:`Object.get_property_list<class_Object_method_get_property_list>` are used as keys.
+
+::
+
+    # Prints "Visible true, position (0, 0)"
+    var node = Node2D.new()
+    print("Visible {visible}, position {position}".format(node))
+
 See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
+
+\ **Note:** Each replacement is done sequentially for each element of ``values``, **not** all at once. This means that if any element is inserted and it contains another placeholder, it may be changed by the next replacement. While this can be very useful, it often causes unexpected results. If not necessary, make sure ``values``'s elements do not contain placeholders.
+
+::
+
+    print("{0} {1}".format(["{1}", "x"]))           # Prints "x x"
+    print("{0} {1}".format(["x", "{0}"]))           # Prints "x {0}"
+    print("{a} {b}".format({"a": "{b}", "b": "c"})) # Prints "c c"
+    print("{a} {b}".format({"b": "c", "a": "{b}"})) # Prints "{b} c"
 
 \ **Note:** In C#, it's recommended to `interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__, instead.
 
@@ -637,7 +706,7 @@ See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscr
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_base_dir**\ (\ ) |const|
+:ref:`String<class_String>` **get_base_dir**\ (\ ) |const| :ref:`🔗<class_StringName_method_get_base_dir>`
 
 If the string is a valid file path, returns the base directory name.
 
@@ -653,7 +722,7 @@ If the string is a valid file path, returns the base directory name.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_basename**\ (\ ) |const|
+:ref:`String<class_String>` **get_basename**\ (\ ) |const| :ref:`🔗<class_StringName_method_get_basename>`
 
 If the string is a valid file path, returns the full file path, without the extension.
 
@@ -669,7 +738,7 @@ If the string is a valid file path, returns the full file path, without the exte
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_extension**\ (\ ) |const|
+:ref:`String<class_String>` **get_extension**\ (\ ) |const| :ref:`🔗<class_StringName_method_get_extension>`
 
 If the string is a valid file name or path, returns the file extension without the leading period (``.``). Otherwise, returns an empty string.
 
@@ -693,7 +762,7 @@ If the string is a valid file name or path, returns the file extension without t
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_file**\ (\ ) |const|
+:ref:`String<class_String>` **get_file**\ (\ ) |const| :ref:`🔗<class_StringName_method_get_file>`
 
 If the string is a valid file path, returns the file name, including the extension.
 
@@ -709,13 +778,11 @@ If the string is a valid file path, returns the file name, including the extensi
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_slice**\ (\ delimiter\: :ref:`String<class_String>`, slice\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_slice**\ (\ delimiter\: :ref:`String<class_String>`, slice\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_get_slice>`
 
-Splits the string using a ``delimiter`` and returns the substring at index ``slice``. Returns an empty string if the ``slice`` does not exist.
+Splits the string using a ``delimiter`` and returns the substring at index ``slice``. Returns the original string if ``delimiter`` does not occur in the string. Returns an empty string if the ``slice`` does not exist.
 
 This is faster than :ref:`split<class_StringName_method_split>`, if you only need one substring.
-
-\ **Example:**\ 
 
 ::
 
@@ -729,7 +796,7 @@ This is faster than :ref:`split<class_StringName_method_split>`, if you only nee
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_slice_count**\ (\ delimiter\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **get_slice_count**\ (\ delimiter\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_get_slice_count>`
 
 Returns the total number of slices when the string is split with the given ``delimiter`` (see :ref:`split<class_StringName_method_split>`).
 
@@ -741,7 +808,7 @@ Returns the total number of slices when the string is split with the given ``del
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_slicec**\ (\ delimiter\: :ref:`int<class_int>`, slice\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_slicec**\ (\ delimiter\: :ref:`int<class_int>`, slice\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_get_slicec>`
 
 Splits the string using a Unicode character with code ``delimiter`` and returns the substring at index ``slice``. Returns an empty string if the ``slice`` does not exist.
 
@@ -755,7 +822,7 @@ This is faster than :ref:`split<class_StringName_method_split>`, if you only nee
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hash**\ (\ ) |const|
+:ref:`int<class_int>` **hash**\ (\ ) |const| :ref:`🔗<class_StringName_method_hash>`
 
 Returns the 32-bit hash value representing the string's contents.
 
@@ -769,7 +836,7 @@ Returns the 32-bit hash value representing the string's contents.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **hex_decode**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **hex_decode**\ (\ ) |const| :ref:`🔗<class_StringName_method_hex_decode>`
 
 Decodes a hexadecimal string as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
@@ -798,7 +865,7 @@ Decodes a hexadecimal string as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hex_to_int**\ (\ ) |const|
+:ref:`int<class_int>` **hex_to_int**\ (\ ) |const| :ref:`🔗<class_StringName_method_hex_to_int>`
 
 Converts the string representing a hexadecimal number into an :ref:`int<class_int>`. The string may be optionally prefixed with ``"0x"``, and an additional ``-`` prefix for negative numbers.
 
@@ -825,7 +892,7 @@ Converts the string representing a hexadecimal number into an :ref:`int<class_in
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **indent**\ (\ prefix\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **indent**\ (\ prefix\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_indent>`
 
 Indents every line of the string with the given ``prefix``. Empty lines are not indented. See also :ref:`dedent<class_StringName_method_dedent>` to remove indentation.
 
@@ -839,7 +906,7 @@ For example, the string can be indented with two tabulations using ``"\t\t"``, o
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **insert**\ (\ position\: :ref:`int<class_int>`, what\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **insert**\ (\ position\: :ref:`int<class_int>`, what\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_insert>`
 
 Inserts ``what`` at the given ``position`` in the string.
 
@@ -851,7 +918,7 @@ Inserts ``what`` at the given ``position`` in the string.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_absolute_path**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_absolute_path**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_absolute_path>`
 
 Returns ``true`` if the string is a path to a file or directory, and its starting point is explicitly defined. This method is the opposite of :ref:`is_relative_path<class_StringName_method_is_relative_path>`.
 
@@ -865,7 +932,7 @@ This includes all paths starting with ``"res://"``, ``"user://"``, ``"C:\"``, ``
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_empty>`
 
 Returns ``true`` if the string's length is ``0`` (``""``). See also :ref:`length<class_StringName_method_length>`.
 
@@ -877,7 +944,7 @@ Returns ``true`` if the string's length is ``0`` (``""``). See also :ref:`length
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_relative_path**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_relative_path**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_relative_path>`
 
 Returns ``true`` if the string is a path, and its starting point is dependent on context. The path could begin from the current directory, or the current :ref:`Node<class_Node>` (if the string is derived from a :ref:`NodePath<class_NodePath>`), and may sometimes be prefixed with ``"./"``. This method is the opposite of :ref:`is_absolute_path<class_StringName_method_is_absolute_path>`.
 
@@ -889,7 +956,7 @@ Returns ``true`` if the string is a path, and its starting point is dependent on
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_subsequence_of**\ (\ text\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **is_subsequence_of**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_is_subsequence_of>`
 
 Returns ``true`` if all characters of this string can be found in ``text`` in their original order.
 
@@ -910,9 +977,30 @@ Returns ``true`` if all characters of this string can be found in ``text`` in th
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_subsequence_ofn**\ (\ text\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **is_subsequence_ofn**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_is_subsequence_ofn>`
 
 Returns ``true`` if all characters of this string can be found in ``text`` in their original order, **ignoring case**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_is_valid_ascii_identifier:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid_ascii_identifier**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_ascii_identifier>`
+
+Returns ``true`` if this string is a valid ASCII identifier. A valid ASCII identifier may contain only letters, digits, and underscores (``_``), and the first character may not be a digit.
+
+::
+
+    print("node_2d".is_valid_ascii_identifier())    # Prints true
+    print("TYPE_FLOAT".is_valid_ascii_identifier()) # Prints true
+    print("1st_method".is_valid_ascii_identifier()) # Prints false
+    print("MyMethod#2".is_valid_ascii_identifier()) # Prints false
+
+See also :ref:`is_valid_unicode_identifier<class_StringName_method_is_valid_unicode_identifier>`.
 
 .. rst-class:: classref-item-separator
 
@@ -922,7 +1010,7 @@ Returns ``true`` if all characters of this string can be found in ``text`` in th
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_filename**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid_filename**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_filename>`
 
 Returns ``true`` if this string does not contain characters that are not allowed in file names (``:`` ``/`` ``\`` ``?`` ``*`` ``"`` ``|`` ``%`` ``<`` ``>``).
 
@@ -934,7 +1022,7 @@ Returns ``true`` if this string does not contain characters that are not allowed
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_float**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid_float**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_float>`
 
 Returns ``true`` if this string represents a valid floating-point number. A valid float may contain only digits, one decimal point (``.``), and the exponent letter (``e``). It may also be prefixed with a positive (``+``) or negative (``-``) sign. Any valid integer is also a valid float (see :ref:`is_valid_int<class_StringName_method_is_valid_int>`). See also :ref:`to_float<class_StringName_method_to_float>`.
 
@@ -953,7 +1041,7 @@ Returns ``true`` if this string represents a valid floating-point number. A vali
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_hex_number**\ (\ with_prefix\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`bool<class_bool>` **is_valid_hex_number**\ (\ with_prefix\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_StringName_method_is_valid_hex_number>`
 
 Returns ``true`` if this string is a valid hexadecimal number. A valid hexadecimal number only contains digits or letters ``A`` to ``F`` (either uppercase or lowercase), and may be prefixed with a positive (``+``) or negative (``-``) sign.
 
@@ -975,7 +1063,7 @@ If ``with_prefix`` is ``true``, the hexadecimal number needs to prefixed by ``"0
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_html_color**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid_html_color**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_html_color>`
 
 Returns ``true`` if this string is a valid color in hexadecimal HTML notation. The string must be a hexadecimal value (see :ref:`is_valid_hex_number<class_StringName_method_is_valid_hex_number>`) of either 3, 4, 6 or 8 digits, and may be prefixed by a hash sign (``#``). Other HTML notations for colors, such as names or ``hsl()``, are not considered valid. See also :ref:`Color.html<class_Color_method_html>`.
 
@@ -987,7 +1075,9 @@ Returns ``true`` if this string is a valid color in hexadecimal HTML notation. T
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_identifier**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid_identifier**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_identifier>`
+
+**Deprecated:** Use :ref:`is_valid_ascii_identifier<class_StringName_method_is_valid_ascii_identifier>` instead.
 
 Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (``_``), and the first character may not be a digit.
 
@@ -1006,7 +1096,7 @@ Returns ``true`` if this string is a valid identifier. A valid identifier may co
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_int**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid_int**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_int>`
 
 Returns ``true`` if this string represents a valid integer. A valid integer only contains digits, and may be prefixed with a positive (``+``) or negative (``-``) sign. See also :ref:`to_int<class_StringName_method_to_int>`.
 
@@ -1026,9 +1116,36 @@ Returns ``true`` if this string represents a valid integer. A valid integer only
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_ip_address**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid_ip_address**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_ip_address>`
 
 Returns ``true`` if this string represents a well-formatted IPv4 or IPv6 address. This method considers `reserved IP addresses <https://en.wikipedia.org/wiki/Reserved_IP_addresses>`__ such as ``"0.0.0.0"`` and ``"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff"`` as valid.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_is_valid_unicode_identifier:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid_unicode_identifier**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_unicode_identifier>`
+
+Returns ``true`` if this string is a valid Unicode identifier.
+
+A valid Unicode identifier must begin with a Unicode character of class ``XID_Start`` or ``"_"``, and may contain Unicode characters of class ``XID_Continue`` in the other positions.
+
+::
+
+    print("node_2d".is_valid_unicode_identifier())      # Prints true
+    print("1st_method".is_valid_unicode_identifier())   # Prints false
+    print("MyMethod#2".is_valid_unicode_identifier())   # Prints false
+    print("állóképesség".is_valid_unicode_identifier()) # Prints true
+    print("выносливость".is_valid_unicode_identifier()) # Prints true
+    print("体力".is_valid_unicode_identifier())         # Prints true
+
+See also :ref:`is_valid_ascii_identifier<class_StringName_method_is_valid_ascii_identifier>`.
+
+\ **Note:** This method checks identifiers the same way as GDScript. See :ref:`TextServer.is_valid_identifier<class_TextServer_method_is_valid_identifier>` for more advanced checks.
 
 .. rst-class:: classref-item-separator
 
@@ -1038,11 +1155,9 @@ Returns ``true`` if this string represents a well-formatted IPv4 or IPv6 address
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **join**\ (\ parts\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |const|
+:ref:`String<class_String>` **join**\ (\ parts\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |const| :ref:`🔗<class_StringName_method_join>`
 
 Returns the concatenation of ``parts``' elements, with each element separated by the string calling this method. This method is the opposite of :ref:`split<class_StringName_method_split>`.
-
-\ **Example:**\ 
 
 
 .. tabs::
@@ -1056,7 +1171,7 @@ Returns the concatenation of ``parts``' elements, with each element separated by
 
  .. code-tab:: csharp
 
-    var fruits = new string[] {"Apple", "Orange", "Pear", "Kiwi"};
+    string[] fruits = ["Apple", "Orange", "Pear", "Kiwi"];
     
     // In C#, this method is static.
     GD.Print(string.Join(", ", fruits));  // Prints "Apple, Orange, Pear, Kiwi"
@@ -1072,7 +1187,7 @@ Returns the concatenation of ``parts``' elements, with each element separated by
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **json_escape**\ (\ ) |const|
+:ref:`String<class_String>` **json_escape**\ (\ ) |const| :ref:`🔗<class_StringName_method_json_escape>`
 
 Returns a copy of the string with special characters escaped using the JSON standard. Because it closely matches the C standard, it is possible to use :ref:`c_unescape<class_StringName_method_c_unescape>` to unescape the string, if necessary.
 
@@ -1084,7 +1199,7 @@ Returns a copy of the string with special characters escaped using the JSON stan
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **left**\ (\ length\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **left**\ (\ length\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_left>`
 
 Returns the first ``length`` characters from the beginning of the string. If ``length`` is negative, strips the last ``length`` characters from the string's end.
 
@@ -1101,7 +1216,7 @@ Returns the first ``length`` characters from the beginning of the string. If ``l
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **length**\ (\ ) |const|
+:ref:`int<class_int>` **length**\ (\ ) |const| :ref:`🔗<class_StringName_method_length>`
 
 Returns the number of characters in the string. Empty strings (``""``) always return ``0``. See also :ref:`is_empty<class_StringName_method_is_empty>`.
 
@@ -1113,7 +1228,7 @@ Returns the number of characters in the string. Empty strings (``""``) always re
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **lpad**\ (\ min_length\: :ref:`int<class_int>`, character\: :ref:`String<class_String>` = " "\ ) |const|
+:ref:`String<class_String>` **lpad**\ (\ min_length\: :ref:`int<class_int>`, character\: :ref:`String<class_String>` = " "\ ) |const| :ref:`🔗<class_StringName_method_lpad>`
 
 Formats the string to be at least ``min_length`` long by adding ``character``\ s to the left of the string, if necessary. See also :ref:`rpad<class_StringName_method_rpad>`.
 
@@ -1125,7 +1240,7 @@ Formats the string to be at least ``min_length`` long by adding ``character``\ s
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **lstrip**\ (\ chars\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **lstrip**\ (\ chars\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_lstrip>`
 
 Removes a set of characters defined in ``chars`` from the string's beginning. See also :ref:`rstrip<class_StringName_method_rstrip>`.
 
@@ -1139,7 +1254,7 @@ Removes a set of characters defined in ``chars`` from the string's beginning. Se
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **match**\ (\ expr\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **match**\ (\ expr\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_match>`
 
 Does a simple expression match (also called "glob" or "globbing"), where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except a period (``.``). An empty string or empty expression always evaluates to ``false``.
 
@@ -1151,7 +1266,7 @@ Does a simple expression match (also called "glob" or "globbing"), where ``*`` m
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **matchn**\ (\ expr\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **matchn**\ (\ expr\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_matchn>`
 
 Does a simple **case-insensitive** expression match, where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except a period (``.``). An empty string or empty expression always evaluates to ``false``.
 
@@ -1163,7 +1278,7 @@ Does a simple **case-insensitive** expression match, where ``*`` matches zero or
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **md5_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **md5_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_md5_buffer>`
 
 Returns the `MD5 hash <https://en.wikipedia.org/wiki/MD5>`__ of the string as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
@@ -1175,7 +1290,7 @@ Returns the `MD5 hash <https://en.wikipedia.org/wiki/MD5>`__ of the string as a 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **md5_text**\ (\ ) |const|
+:ref:`String<class_String>` **md5_text**\ (\ ) |const| :ref:`🔗<class_StringName_method_md5_text>`
 
 Returns the `MD5 hash <https://en.wikipedia.org/wiki/MD5>`__ of the string as another :ref:`String<class_String>`.
 
@@ -1187,7 +1302,7 @@ Returns the `MD5 hash <https://en.wikipedia.org/wiki/MD5>`__ of the string as an
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **naturalcasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **naturalcasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_naturalcasecmp_to>`
 
 Performs a **case-sensitive**, *natural order* comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
 
@@ -1195,7 +1310,7 @@ When used for sorting, natural order comparison orders sequences of numbers by t
 
 With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`, :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`, and :ref:`casecmp_to<class_StringName_method_casecmp_to>`.
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`, :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>`, and :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1205,7 +1320,7 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **naturalnocasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **naturalnocasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_naturalnocasecmp_to>`
 
 Performs a **case-insensitive**, *natural order* comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters are converted to uppercase for the comparison.
 
@@ -1213,7 +1328,7 @@ When used for sorting, natural order comparison orders sequences of numbers by t
 
 With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`, :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`, and :ref:`casecmp_to<class_StringName_method_casecmp_to>`.
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`, :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>`, and :ref:`casecmp_to<class_StringName_method_casecmp_to>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1223,13 +1338,13 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **nocasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **nocasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_nocasecmp_to>`
 
 Performs a **case-insensitive** comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters are converted to uppercase for the comparison.
 
 With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_StringName_method_casecmp_to>`, :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`, and :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`.
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_StringName_method_casecmp_to>`, :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>`, and :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1239,7 +1354,7 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **pad_decimals**\ (\ digits\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **pad_decimals**\ (\ digits\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_pad_decimals>`
 
 Formats the string representing a number to have an exact number of ``digits`` *after* the decimal point.
 
@@ -1251,7 +1366,7 @@ Formats the string representing a number to have an exact number of ``digits`` *
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **pad_zeros**\ (\ digits\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **pad_zeros**\ (\ digits\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_pad_zeros>`
 
 Formats the string representing a number to have an exact number of ``digits`` *before* the decimal point.
 
@@ -1263,7 +1378,7 @@ Formats the string representing a number to have an exact number of ``digits`` *
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **path_join**\ (\ file\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **path_join**\ (\ file\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_path_join>`
 
 Concatenates ``file`` at the end of the string as a subpath, adding ``/`` if necessary.
 
@@ -1277,7 +1392,7 @@ Concatenates ``file`` at the end of the string as a subpath, adding ``/`` if nec
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **repeat**\ (\ count\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **repeat**\ (\ count\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_repeat>`
 
 Repeats this string a number of times. ``count`` needs to be greater than ``0``. Otherwise, returns an empty string.
 
@@ -1289,7 +1404,7 @@ Repeats this string a number of times. ``count`` needs to be greater than ``0``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **replace**\ (\ what\: :ref:`String<class_String>`, forwhat\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **replace**\ (\ what\: :ref:`String<class_String>`, forwhat\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_replace>`
 
 Replaces all occurrences of ``what`` inside the string with the given ``forwhat``.
 
@@ -1301,7 +1416,7 @@ Replaces all occurrences of ``what`` inside the string with the given ``forwhat`
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **replacen**\ (\ what\: :ref:`String<class_String>`, forwhat\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **replacen**\ (\ what\: :ref:`String<class_String>`, forwhat\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_replacen>`
 
 Replaces all **case-insensitive** occurrences of ``what`` inside the string with the given ``forwhat``.
 
@@ -1313,9 +1428,9 @@ Replaces all **case-insensitive** occurrences of ``what`` inside the string with
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **reverse**\ (\ ) |const|
+:ref:`String<class_String>` **reverse**\ (\ ) |const| :ref:`🔗<class_StringName_method_reverse>`
 
-Returns the copy of this string in reverse order.
+Returns the copy of this string in reverse order. This operation works on unicode codepoints, rather than sequences of codepoints, and may break things like compound letters or emojis.
 
 .. rst-class:: classref-item-separator
 
@@ -1325,7 +1440,7 @@ Returns the copy of this string in reverse order.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **rfind**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **rfind**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_StringName_method_rfind>`
 
 Returns the index of the **last** occurrence of ``what`` in this string, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the beginning of the string. This method is the reverse of :ref:`find<class_StringName_method_find>`.
 
@@ -1337,7 +1452,7 @@ Returns the index of the **last** occurrence of ``what`` in this string, or ``-1
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **rfindn**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **rfindn**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_StringName_method_rfindn>`
 
 Returns the index of the **last** **case-insensitive** occurrence of ``what`` in this string, or ``-1`` if there are none. The starting search index can be specified with ``from``, continuing to the beginning of the string. This method is the reverse of :ref:`findn<class_StringName_method_findn>`.
 
@@ -1349,7 +1464,7 @@ Returns the index of the **last** **case-insensitive** occurrence of ``what`` in
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **right**\ (\ length\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **right**\ (\ length\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_right>`
 
 Returns the last ``length`` characters from the end of the string. If ``length`` is negative, strips the first ``length`` characters from the string's beginning.
 
@@ -1366,7 +1481,7 @@ Returns the last ``length`` characters from the end of the string. If ``length``
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **rpad**\ (\ min_length\: :ref:`int<class_int>`, character\: :ref:`String<class_String>` = " "\ ) |const|
+:ref:`String<class_String>` **rpad**\ (\ min_length\: :ref:`int<class_int>`, character\: :ref:`String<class_String>` = " "\ ) |const| :ref:`🔗<class_StringName_method_rpad>`
 
 Formats the string to be at least ``min_length`` long, by adding ``character``\ s to the right of the string, if necessary. See also :ref:`lpad<class_StringName_method_lpad>`.
 
@@ -1378,15 +1493,13 @@ Formats the string to be at least ``min_length`` long, by adding ``character``\ 
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **rsplit**\ (\ delimiter\: :ref:`String<class_String>` = "", allow_empty\: :ref:`bool<class_bool>` = true, maxsplit\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **rsplit**\ (\ delimiter\: :ref:`String<class_String>` = "", allow_empty\: :ref:`bool<class_bool>` = true, maxsplit\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_StringName_method_rsplit>`
 
 Splits the string using a ``delimiter`` and returns an array of the substrings, starting from the end of the string. The splits in the returned array appear in the same order as the original string. If ``delimiter`` is an empty string, each substring will be a single character.
 
 If ``allow_empty`` is ``false``, empty strings between adjacent delimiters are excluded from the array.
 
 If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``maxsplit``. By default, the entire string is split, which is mostly identical to :ref:`split<class_StringName_method_split>`.
-
-\ **Example:**\ 
 
 
 .. tabs::
@@ -1414,7 +1527,7 @@ If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``max
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **rstrip**\ (\ chars\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **rstrip**\ (\ chars\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_rstrip>`
 
 Removes a set of characters defined in ``chars`` from the string's end. See also :ref:`lstrip<class_StringName_method_lstrip>`.
 
@@ -1428,7 +1541,7 @@ Removes a set of characters defined in ``chars`` from the string's end. See also
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **sha1_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **sha1_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_sha1_buffer>`
 
 Returns the `SHA-1 <https://en.wikipedia.org/wiki/SHA-1>`__ hash of the string as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
@@ -1440,7 +1553,7 @@ Returns the `SHA-1 <https://en.wikipedia.org/wiki/SHA-1>`__ hash of the string a
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **sha1_text**\ (\ ) |const|
+:ref:`String<class_String>` **sha1_text**\ (\ ) |const| :ref:`🔗<class_StringName_method_sha1_text>`
 
 Returns the `SHA-1 <https://en.wikipedia.org/wiki/SHA-1>`__ hash of the string as another :ref:`String<class_String>`.
 
@@ -1452,7 +1565,7 @@ Returns the `SHA-1 <https://en.wikipedia.org/wiki/SHA-1>`__ hash of the string a
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **sha256_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **sha256_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_sha256_buffer>`
 
 Returns the `SHA-256 <https://en.wikipedia.org/wiki/SHA-2>`__ hash of the string as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
@@ -1464,7 +1577,7 @@ Returns the `SHA-256 <https://en.wikipedia.org/wiki/SHA-2>`__ hash of the string
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **sha256_text**\ (\ ) |const|
+:ref:`String<class_String>` **sha256_text**\ (\ ) |const| :ref:`🔗<class_StringName_method_sha256_text>`
 
 Returns the `SHA-256 <https://en.wikipedia.org/wiki/SHA-2>`__ hash of the string as another :ref:`String<class_String>`.
 
@@ -1476,9 +1589,9 @@ Returns the `SHA-256 <https://en.wikipedia.org/wiki/SHA-2>`__ hash of the string
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **similarity**\ (\ text\: :ref:`String<class_String>`\ ) |const|
+:ref:`float<class_float>` **similarity**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_similarity>`
 
-Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of ``1.0`` means totally similar, while ``0.0`` means totally dissimilar.
+Returns the similarity index (`Sørensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of ``1.0`` means totally similar, while ``0.0`` means totally dissimilar.
 
 ::
 
@@ -1495,7 +1608,7 @@ Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.o
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **simplify_path**\ (\ ) |const|
+:ref:`String<class_String>` **simplify_path**\ (\ ) |const| :ref:`🔗<class_StringName_method_simplify_path>`
 
 If the string is a valid file path, converts the string into a canonical path. This is the shortest possible path, without ``"./"``, and all the unnecessary ``".."`` and ``"/"``.
 
@@ -1512,15 +1625,13 @@ If the string is a valid file path, converts the string into a canonical path. T
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **split**\ (\ delimiter\: :ref:`String<class_String>` = "", allow_empty\: :ref:`bool<class_bool>` = true, maxsplit\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **split**\ (\ delimiter\: :ref:`String<class_String>` = "", allow_empty\: :ref:`bool<class_bool>` = true, maxsplit\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_StringName_method_split>`
 
 Splits the string using a ``delimiter`` and returns an array of the substrings. If ``delimiter`` is an empty string, each substring will be a single character. This method is the opposite of :ref:`join<class_StringName_method_join>`.
 
 If ``allow_empty`` is ``false``, empty strings between adjacent delimiters are excluded from the array.
 
 If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``maxsplit``. By default, the entire string is split.
-
-\ **Example:**\ 
 
 
 .. tabs::
@@ -1555,7 +1666,7 @@ If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``max
 
 .. rst-class:: classref-method
 
-:ref:`PackedFloat64Array<class_PackedFloat64Array>` **split_floats**\ (\ delimiter\: :ref:`String<class_String>`, allow_empty\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`PackedFloat64Array<class_PackedFloat64Array>` **split_floats**\ (\ delimiter\: :ref:`String<class_String>`, allow_empty\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_StringName_method_split_floats>`
 
 Splits the string into floats by using a ``delimiter`` and returns a :ref:`PackedFloat64Array<class_PackedFloat64Array>`.
 
@@ -1575,7 +1686,7 @@ If ``allow_empty`` is ``false``, empty or invalid :ref:`float<class_float>` conv
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **strip_edges**\ (\ left\: :ref:`bool<class_bool>` = true, right\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`String<class_String>` **strip_edges**\ (\ left\: :ref:`bool<class_bool>` = true, right\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_StringName_method_strip_edges>`
 
 Strips all non-printable characters from the beginning and the end of the string. These include spaces, tabulations (``\t``), and newlines (``\n`` ``\r``).
 
@@ -1589,7 +1700,7 @@ If ``left`` is ``false``, ignores the string's beginning. Likewise, if ``right``
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **strip_escapes**\ (\ ) |const|
+:ref:`String<class_String>` **strip_escapes**\ (\ ) |const| :ref:`🔗<class_StringName_method_strip_escapes>`
 
 Strips all escape characters from the string. These include all non-printable control characters of the first page of the ASCII table (values from 0 to 31), such as tabulation (``\t``) and newline (``\n``, ``\r``) characters, but *not* spaces.
 
@@ -1601,7 +1712,7 @@ Strips all escape characters from the string. These include all non-printable co
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **substr**\ (\ from\: :ref:`int<class_int>`, len\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`String<class_String>` **substr**\ (\ from\: :ref:`int<class_int>`, len\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_StringName_method_substr>`
 
 Returns part of the string from the position ``from`` with length ``len``. If ``len`` is ``-1`` (as by default), returns the rest of the string starting from the given position.
 
@@ -1613,9 +1724,9 @@ Returns part of the string from the position ``from`` with length ``len``. If ``
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **to_ascii_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **to_ascii_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_ascii_buffer>`
 
-Converts the string to an `ASCII <https://en.wikipedia.org/wiki/ASCII>`__/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly faster than :ref:`to_utf8_buffer<class_StringName_method_to_utf8_buffer>`, but replaces all unsupported characters with spaces.
+Converts the string to an `ASCII <https://en.wikipedia.org/wiki/ASCII>`__/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly faster than :ref:`to_utf8_buffer<class_StringName_method_to_utf8_buffer>`, but replaces all unsupported characters with spaces. This is the inverse of :ref:`PackedByteArray.get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1625,7 +1736,7 @@ Converts the string to an `ASCII <https://en.wikipedia.org/wiki/ASCII>`__/Latin-
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **to_camel_case**\ (\ ) |const|
+:ref:`String<class_String>` **to_camel_case**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_camel_case>`
 
 Returns the string converted to ``camelCase``.
 
@@ -1637,17 +1748,17 @@ Returns the string converted to ``camelCase``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **to_float**\ (\ ) |const|
+:ref:`float<class_float>` **to_float**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_float>`
 
 Converts the string representing a decimal number into a :ref:`float<class_float>`. This method stops on the first non-number character, except the first decimal point (``.``) and the exponent letter (``e``). See also :ref:`is_valid_float<class_StringName_method_is_valid_float>`.
 
 ::
 
-    var a = "12.35".to_float() # a is 12.35
-    var b = "1.2.3".to_float() # b is 1.2
-    var c = "12xy3".to_float() # c is 12.0
-    var d = "1e3".to_float()   # d is 1000.0
-    var e = "Hello!".to_int()  # e is 0.0
+    var a = "12.35".to_float()  # a is 12.35
+    var b = "1.2.3".to_float()  # b is 1.2
+    var c = "12xy3".to_float()  # c is 12.0
+    var d = "1e3".to_float()    # d is 1000.0
+    var e = "Hello!".to_float() # e is 0.0
 
 .. rst-class:: classref-item-separator
 
@@ -1657,7 +1768,7 @@ Converts the string representing a decimal number into a :ref:`float<class_float
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **to_int**\ (\ ) |const|
+:ref:`int<class_int>` **to_int**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_int>`
 
 Converts the string representing an integer number into an :ref:`int<class_int>`. This method removes any non-number character and stops at the first decimal point (``.``). See also :ref:`is_valid_int<class_StringName_method_is_valid_int>`.
 
@@ -1676,7 +1787,7 @@ Converts the string representing an integer number into an :ref:`int<class_int>`
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **to_lower**\ (\ ) |const|
+:ref:`String<class_String>` **to_lower**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_lower>`
 
 Returns the string converted to ``lowercase``.
 
@@ -1688,7 +1799,7 @@ Returns the string converted to ``lowercase``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **to_pascal_case**\ (\ ) |const|
+:ref:`String<class_String>` **to_pascal_case**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_pascal_case>`
 
 Returns the string converted to ``PascalCase``.
 
@@ -1700,7 +1811,7 @@ Returns the string converted to ``PascalCase``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **to_snake_case**\ (\ ) |const|
+:ref:`String<class_String>` **to_snake_case**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_snake_case>`
 
 Returns the string converted to ``snake_case``.
 
@@ -1731,7 +1842,7 @@ Returns the string converted to ``snake_case``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **to_upper**\ (\ ) |const|
+:ref:`String<class_String>` **to_upper**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_upper>`
 
 Returns the string converted to ``UPPERCASE``.
 
@@ -1743,9 +1854,9 @@ Returns the string converted to ``UPPERCASE``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **to_utf8_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **to_utf8_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_utf8_buffer>`
 
-Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_StringName_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method.
+Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_StringName_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method. This is the inverse of :ref:`PackedByteArray.get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1755,9 +1866,9 @@ Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **to_utf16_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **to_utf16_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_utf16_buffer>`
 
-Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_utf16<class_PackedByteArray_method_get_string_from_utf16>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1767,9 +1878,9 @@ Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encod
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **to_utf32_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **to_utf32_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_utf32_buffer>`
 
-Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_utf32<class_PackedByteArray_method_get_string_from_utf32>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1779,9 +1890,9 @@ Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encod
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **to_wchar_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **to_wchar_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_wchar_buffer>`
 
-Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_wchar<class_PackedByteArray_method_get_string_from_wchar>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1791,7 +1902,7 @@ Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_cha
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **trim_prefix**\ (\ prefix\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **trim_prefix**\ (\ prefix\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_trim_prefix>`
 
 Removes the given ``prefix`` from the start of the string, or returns the string unchanged.
 
@@ -1803,7 +1914,7 @@ Removes the given ``prefix`` from the start of the string, or returns the string
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **trim_suffix**\ (\ suffix\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **trim_suffix**\ (\ suffix\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_trim_suffix>`
 
 Removes the given ``suffix`` from the end of the string, or returns the string unchanged.
 
@@ -1815,7 +1926,7 @@ Removes the given ``suffix`` from the end of the string, or returns the string u
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **unicode_at**\ (\ at\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **unicode_at**\ (\ at\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_unicode_at>`
 
 Returns the character code at position ``at``.
 
@@ -1827,9 +1938,9 @@ Returns the character code at position ``at``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **uri_decode**\ (\ ) |const|
+:ref:`String<class_String>` **uri_decode**\ (\ ) |const| :ref:`🔗<class_StringName_method_uri_decode>`
 
-Decodes the string from its URL-encoded format. This method is meant to properly decode the parameters in a URL when receiving an HTTP request.
+Decodes the string from its URL-encoded format. This method is meant to properly decode the parameters in a URL when receiving an HTTP request. See also :ref:`uri_encode<class_StringName_method_uri_encode>`.
 
 
 .. tabs::
@@ -1854,9 +1965,9 @@ Decodes the string from its URL-encoded format. This method is meant to properly
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **uri_encode**\ (\ ) |const|
+:ref:`String<class_String>` **uri_encode**\ (\ ) |const| :ref:`🔗<class_StringName_method_uri_encode>`
 
-Encodes the string to URL-friendly format. This method is meant to properly encode the parameters in a URL when sending an HTTP request.
+Encodes the string to URL-friendly format. This method is meant to properly encode the parameters in a URL when sending an HTTP request. See also :ref:`uri_decode<class_StringName_method_uri_decode>`.
 
 
 .. tabs::
@@ -1885,7 +1996,7 @@ Encodes the string to URL-friendly format. This method is meant to properly enco
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **validate_filename**\ (\ ) |const|
+:ref:`String<class_String>` **validate_filename**\ (\ ) |const| :ref:`🔗<class_StringName_method_validate_filename>`
 
 Returns a copy of the string with all characters that are not allowed in :ref:`is_valid_filename<class_StringName_method_is_valid_filename>` replaced with underscores.
 
@@ -1897,7 +2008,7 @@ Returns a copy of the string with all characters that are not allowed in :ref:`i
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **validate_node_name**\ (\ ) |const|
+:ref:`String<class_String>` **validate_node_name**\ (\ ) |const| :ref:`🔗<class_StringName_method_validate_node_name>`
 
 Returns a copy of the string with all characters that are not allowed in :ref:`Node.name<class_Node_property_name>` (``.`` ``:`` ``@`` ``/`` ``"`` ``%``) replaced with underscores.
 
@@ -1909,7 +2020,7 @@ Returns a copy of the string with all characters that are not allowed in :ref:`N
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **xml_escape**\ (\ escape_quotes\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`String<class_String>` **xml_escape**\ (\ escape_quotes\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_StringName_method_xml_escape>`
 
 Returns a copy of the string with special characters escaped using the XML standard. If ``escape_quotes`` is ``true``, the single quote (``'``) and double quote (``"``) characters are also escaped.
 
@@ -1921,7 +2032,7 @@ Returns a copy of the string with special characters escaped using the XML stand
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **xml_unescape**\ (\ ) |const|
+:ref:`String<class_String>` **xml_unescape**\ (\ ) |const| :ref:`🔗<class_StringName_method_xml_unescape>`
 
 Returns a copy of the string with escaped characters replaced by their meanings according to the XML standard.
 
@@ -1938,7 +2049,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`String<class_String>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`String<class_String>`\ ) :ref:`🔗<class_StringName_operator_neq_String>`
 
 Returns ``true`` if this **StringName** is not equivalent to the given :ref:`String<class_String>`.
 
@@ -1950,7 +2061,7 @@ Returns ``true`` if this **StringName** is not equivalent to the given :ref:`Str
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_StringName_operator_neq_StringName>`
 
 Returns ``true`` if the **StringName** and ``right`` do not refer to the same name. Comparisons between **StringName**\ s are much faster than regular :ref:`String<class_String>` comparisons.
 
@@ -1962,7 +2073,7 @@ Returns ``true`` if the **StringName** and ``right`` do not refer to the same na
 
 .. rst-class:: classref-operator
 
-:ref:`String<class_String>` **operator %**\ (\ right\: :ref:`Variant<class_Variant>`\ )
+:ref:`String<class_String>` **operator %**\ (\ right\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_StringName_operator_mod_Variant>`
 
 Formats the **StringName**, replacing the placeholders with one or more parameters, returning a :ref:`String<class_String>`. To pass multiple parameters, ``right`` needs to be an :ref:`Array<class_Array>`.
 
@@ -1978,7 +2089,7 @@ For more information, see the :doc:`GDScript format strings <../tutorials/script
 
 .. rst-class:: classref-operator
 
-:ref:`String<class_String>` **operator +**\ (\ right\: :ref:`String<class_String>`\ )
+:ref:`String<class_String>` **operator +**\ (\ right\: :ref:`String<class_String>`\ ) :ref:`🔗<class_StringName_operator_sum_String>`
 
 Appends ``right`` at the end of this **StringName**, returning a :ref:`String<class_String>`. This is also known as a string concatenation.
 
@@ -1990,7 +2101,7 @@ Appends ``right`` at the end of this **StringName**, returning a :ref:`String<cl
 
 .. rst-class:: classref-operator
 
-:ref:`String<class_String>` **operator +**\ (\ right\: :ref:`StringName<class_StringName>`\ )
+:ref:`String<class_String>` **operator +**\ (\ right\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_StringName_operator_sum_StringName>`
 
 Appends ``right`` at the end of this **StringName**, returning a :ref:`String<class_String>`. This is also known as a string concatenation.
 
@@ -2002,7 +2113,7 @@ Appends ``right`` at the end of this **StringName**, returning a :ref:`String<cl
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_StringName_operator_lt_StringName>`
 
 Returns ``true`` if the left **StringName**'s pointer comes before ``right``. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
@@ -2014,7 +2125,7 @@ Returns ``true`` if the left **StringName**'s pointer comes before ``right``. No
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_StringName_operator_lte_StringName>`
 
 Returns ``true`` if the left **StringName**'s pointer comes before ``right`` or if they are the same. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
@@ -2026,7 +2137,7 @@ Returns ``true`` if the left **StringName**'s pointer comes before ``right`` or 
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`String<class_String>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`String<class_String>`\ ) :ref:`🔗<class_StringName_operator_eq_String>`
 
 Returns ``true`` if this **StringName** is equivalent to the given :ref:`String<class_String>`.
 
@@ -2038,7 +2149,7 @@ Returns ``true`` if this **StringName** is equivalent to the given :ref:`String<
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_StringName_operator_eq_StringName>`
 
 Returns ``true`` if the **StringName** and ``right`` refer to the same name. Comparisons between **StringName**\ s are much faster than regular :ref:`String<class_String>` comparisons.
 
@@ -2050,7 +2161,7 @@ Returns ``true`` if the **StringName** and ``right`` refer to the same name. Com
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_StringName_operator_gt_StringName>`
 
 Returns ``true`` if the left **StringName**'s pointer comes after ``right``. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
@@ -2062,7 +2173,7 @@ Returns ``true`` if the left **StringName**'s pointer comes after ``right``. Not
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_StringName_operator_gte_StringName>`
 
 Returns ``true`` if the left **StringName**'s pointer comes after ``right`` or if they are the same. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 

@@ -21,7 +21,7 @@ Description
 
 TouchScreenButton allows you to create on-screen buttons for touch devices. It's intended for gameplay use, such as a unit you have to touch to move. Unlike :ref:`Button<class_Button>`, TouchScreenButton supports multitouch out of the box. Several TouchScreenButtons can be pressed at the same time with touch input.
 
-This node inherits from :ref:`Node2D<class_Node2D>`. Unlike with :ref:`Control<class_Control>` nodes, you cannot set anchors on it. If you want to create menus or user interfaces, you may want to use :ref:`Button<class_Button>` nodes instead. To make button nodes react to touch events, you can enable the Emulate Mouse option in the Project Settings.
+This node inherits from :ref:`Node2D<class_Node2D>`. Unlike with :ref:`Control<class_Control>` nodes, you cannot set anchors on it. If you want to create menus or user interfaces, you may want to use :ref:`Button<class_Button>` nodes instead. To make button nodes react to touch events, you can enable :ref:`ProjectSettings.input_devices/pointing/emulate_mouse_from_touch<class_ProjectSettings_property_input_devices/pointing/emulate_mouse_from_touch>` in the Project Settings.
 
 You can configure TouchScreenButton to be visible only on touch devices, helping you develop your game both for desktop and mobile devices.
 
@@ -78,7 +78,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**pressed**\ (\ )
+**pressed**\ (\ ) :ref:`🔗<class_TouchScreenButton_signal_pressed>`
 
 Emitted when the button is pressed (down).
 
@@ -90,7 +90,7 @@ Emitted when the button is pressed (down).
 
 .. rst-class:: classref-signal
 
-**released**\ (\ )
+**released**\ (\ ) :ref:`🔗<class_TouchScreenButton_signal_released>`
 
 Emitted when the button is released (up).
 
@@ -107,7 +107,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **VisibilityMode**:
+enum **VisibilityMode**: :ref:`🔗<enum_TouchScreenButton_VisibilityMode>`
 
 .. _class_TouchScreenButton_constant_VISIBILITY_ALWAYS:
 
@@ -138,7 +138,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **action** = ``""``
+:ref:`String<class_String>` **action** = ``""`` :ref:`🔗<class_TouchScreenButton_property_action>`
 
 .. rst-class:: classref-property-setget
 
@@ -155,7 +155,7 @@ The button's action. Actions can be handled with :ref:`InputEventAction<class_In
 
 .. rst-class:: classref-property
 
-:ref:`BitMap<class_BitMap>` **bitmask**
+:ref:`BitMap<class_BitMap>` **bitmask** :ref:`🔗<class_TouchScreenButton_property_bitmask>`
 
 .. rst-class:: classref-property-setget
 
@@ -172,7 +172,7 @@ The button's bitmask.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **passby_press** = ``false``
+:ref:`bool<class_bool>` **passby_press** = ``false`` :ref:`🔗<class_TouchScreenButton_property_passby_press>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +191,7 @@ If ``true``, the :ref:`pressed<class_TouchScreenButton_signal_pressed>` and :ref
 
 .. rst-class:: classref-property
 
-:ref:`Shape2D<class_Shape2D>` **shape**
+:ref:`Shape2D<class_Shape2D>` **shape** :ref:`🔗<class_TouchScreenButton_property_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -208,7 +208,7 @@ The button's shape.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shape_centered** = ``true``
+:ref:`bool<class_bool>` **shape_centered** = ``true`` :ref:`🔗<class_TouchScreenButton_property_shape_centered>`
 
 .. rst-class:: classref-property-setget
 
@@ -225,7 +225,7 @@ If ``true``, the button's shape is centered in the provided texture. If no textu
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shape_visible** = ``true``
+:ref:`bool<class_bool>` **shape_visible** = ``true`` :ref:`🔗<class_TouchScreenButton_property_shape_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -242,7 +242,7 @@ If ``true``, the button's shape is visible in the editor.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_normal**
+:ref:`Texture2D<class_Texture2D>` **texture_normal** :ref:`🔗<class_TouchScreenButton_property_texture_normal>`
 
 .. rst-class:: classref-property-setget
 
@@ -259,7 +259,7 @@ The button's texture for the normal state.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_pressed**
+:ref:`Texture2D<class_Texture2D>` **texture_pressed** :ref:`🔗<class_TouchScreenButton_property_texture_pressed>`
 
 .. rst-class:: classref-property-setget
 
@@ -276,7 +276,7 @@ The button's texture for the pressed state.
 
 .. rst-class:: classref-property
 
-:ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` **visibility_mode** = ``0``
+:ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` **visibility_mode** = ``0`` :ref:`🔗<class_TouchScreenButton_property_visibility_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -298,7 +298,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_pressed**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_pressed**\ (\ ) |const| :ref:`🔗<class_TouchScreenButton_method_is_pressed>`
 
 Returns ``true`` if this button is currently pressed.
 

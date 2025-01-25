@@ -76,7 +76,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **PlaybackMode**:
+enum **PlaybackMode**: :ref:`🔗<enum_AudioStreamRandomizer_PlaybackMode>`
 
 .. _class_AudioStreamRandomizer_constant_PLAYBACK_RANDOM_NO_REPEATS:
 
@@ -115,7 +115,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PlaybackMode<enum_AudioStreamRandomizer_PlaybackMode>` **playback_mode** = ``0``
+:ref:`PlaybackMode<enum_AudioStreamRandomizer_PlaybackMode>` **playback_mode** = ``0`` :ref:`🔗<class_AudioStreamRandomizer_property_playback_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -132,7 +132,7 @@ Controls how this AudioStreamRandomizer picks which AudioStream to play next.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **random_pitch** = ``1.0``
+:ref:`float<class_float>` **random_pitch** = ``1.0`` :ref:`🔗<class_AudioStreamRandomizer_property_random_pitch>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +149,7 @@ The intensity of random pitch variation. A value of 1 means no variation.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **random_volume_offset_db** = ``0.0``
+:ref:`float<class_float>` **random_volume_offset_db** = ``0.0`` :ref:`🔗<class_AudioStreamRandomizer_property_random_volume_offset_db>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +166,7 @@ The intensity of random volume variation. A value of 0 means no variation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **streams_count** = ``0``
+:ref:`int<class_int>` **streams_count** = ``0`` :ref:`🔗<class_AudioStreamRandomizer_property_streams_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -188,7 +188,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_stream**\ (\ index\: :ref:`int<class_int>`, stream\: :ref:`AudioStream<class_AudioStream>`, weight\: :ref:`float<class_float>` = 1.0\ )
+|void| **add_stream**\ (\ index\: :ref:`int<class_int>`, stream\: :ref:`AudioStream<class_AudioStream>`, weight\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_AudioStreamRandomizer_method_add_stream>`
 
 Insert a stream at the specified index. If the index is less than zero, the insertion occurs at the end of the underlying pool.
 
@@ -200,7 +200,7 @@ Insert a stream at the specified index. If the index is less than zero, the inse
 
 .. rst-class:: classref-method
 
-:ref:`AudioStream<class_AudioStream>` **get_stream**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`AudioStream<class_AudioStream>` **get_stream**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamRandomizer_method_get_stream>`
 
 Returns the stream at the specified index.
 
@@ -212,7 +212,7 @@ Returns the stream at the specified index.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_stream_probability_weight**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_stream_probability_weight**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamRandomizer_method_get_stream_probability_weight>`
 
 Returns the probability weight associated with the stream at the given index.
 
@@ -224,7 +224,7 @@ Returns the probability weight associated with the stream at the given index.
 
 .. rst-class:: classref-method
 
-|void| **move_stream**\ (\ index_from\: :ref:`int<class_int>`, index_to\: :ref:`int<class_int>`\ )
+|void| **move_stream**\ (\ index_from\: :ref:`int<class_int>`, index_to\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioStreamRandomizer_method_move_stream>`
 
 Move a stream from one index to another.
 
@@ -236,7 +236,7 @@ Move a stream from one index to another.
 
 .. rst-class:: classref-method
 
-|void| **remove_stream**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_stream**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioStreamRandomizer_method_remove_stream>`
 
 Remove the stream at the specified index.
 
@@ -248,7 +248,7 @@ Remove the stream at the specified index.
 
 .. rst-class:: classref-method
 
-|void| **set_stream**\ (\ index\: :ref:`int<class_int>`, stream\: :ref:`AudioStream<class_AudioStream>`\ )
+|void| **set_stream**\ (\ index\: :ref:`int<class_int>`, stream\: :ref:`AudioStream<class_AudioStream>`\ ) :ref:`🔗<class_AudioStreamRandomizer_method_set_stream>`
 
 Set the AudioStream at the specified index.
 
@@ -260,7 +260,7 @@ Set the AudioStream at the specified index.
 
 .. rst-class:: classref-method
 
-|void| **set_stream_probability_weight**\ (\ index\: :ref:`int<class_int>`, weight\: :ref:`float<class_float>`\ )
+|void| **set_stream_probability_weight**\ (\ index\: :ref:`int<class_int>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioStreamRandomizer_method_set_stream_probability_weight>`
 
 Set the probability weight of the stream at the specified index. The higher this value, the more likely that the randomizer will choose this stream during random playback modes.
 

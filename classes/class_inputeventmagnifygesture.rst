@@ -55,7 +55,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **factor** = ``1.0``
+:ref:`float<class_float>` **factor** = ``1.0`` :ref:`🔗<class_InputEventMagnifyGesture_property_factor>`
 
 .. rst-class:: classref-property-setget
 

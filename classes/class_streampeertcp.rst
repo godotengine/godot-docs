@@ -64,7 +64,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Status**:
+enum **Status**: :ref:`🔗<enum_StreamPeerTCP_Status>`
 
 .. _class_StreamPeerTCP_constant_STATUS_NONE:
 
@@ -111,7 +111,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **bind**\ (\ port\: :ref:`int<class_int>`, host\: :ref:`String<class_String>` = "*"\ )
+:ref:`Error<enum_@GlobalScope_Error>` **bind**\ (\ port\: :ref:`int<class_int>`, host\: :ref:`String<class_String>` = "*"\ ) :ref:`🔗<class_StreamPeerTCP_method_bind>`
 
 Opens the TCP socket, and binds it to the specified local address.
 
@@ -125,7 +125,7 @@ This method is generally not needed, and only used to force the subsequent call 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **connect_to_host**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **connect_to_host**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StreamPeerTCP_method_connect_to_host>`
 
 Connects to the specified ``host:port`` pair. A hostname will be resolved if valid. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success.
 
@@ -137,7 +137,7 @@ Connects to the specified ``host:port`` pair. A hostname will be resolved if val
 
 .. rst-class:: classref-method
 
-|void| **disconnect_from_host**\ (\ )
+|void| **disconnect_from_host**\ (\ ) :ref:`🔗<class_StreamPeerTCP_method_disconnect_from_host>`
 
 Disconnects from host.
 
@@ -149,7 +149,7 @@ Disconnects from host.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_connected_host**\ (\ ) |const|
+:ref:`String<class_String>` **get_connected_host**\ (\ ) |const| :ref:`🔗<class_StreamPeerTCP_method_get_connected_host>`
 
 Returns the IP of this peer.
 
@@ -161,7 +161,7 @@ Returns the IP of this peer.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_connected_port**\ (\ ) |const|
+:ref:`int<class_int>` **get_connected_port**\ (\ ) |const| :ref:`🔗<class_StreamPeerTCP_method_get_connected_port>`
 
 Returns the port of this peer.
 
@@ -173,7 +173,7 @@ Returns the port of this peer.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_local_port**\ (\ ) |const|
+:ref:`int<class_int>` **get_local_port**\ (\ ) |const| :ref:`🔗<class_StreamPeerTCP_method_get_local_port>`
 
 Returns the local port to which this peer is bound.
 
@@ -185,7 +185,7 @@ Returns the local port to which this peer is bound.
 
 .. rst-class:: classref-method
 
-:ref:`Status<enum_StreamPeerTCP_Status>` **get_status**\ (\ ) |const|
+:ref:`Status<enum_StreamPeerTCP_Status>` **get_status**\ (\ ) |const| :ref:`🔗<class_StreamPeerTCP_method_get_status>`
 
 Returns the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status>`.
 
@@ -197,7 +197,7 @@ Returns the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **poll**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **poll**\ (\ ) :ref:`🔗<class_StreamPeerTCP_method_poll>`
 
 Poll the socket, updating its state. See :ref:`get_status<class_StreamPeerTCP_method_get_status>`.
 
@@ -209,7 +209,7 @@ Poll the socket, updating its state. See :ref:`get_status<class_StreamPeerTCP_me
 
 .. rst-class:: classref-method
 
-|void| **set_no_delay**\ (\ enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_no_delay**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_StreamPeerTCP_method_set_no_delay>`
 
 If ``enabled`` is ``true``, packets will be sent immediately. If ``enabled`` is ``false`` (the default), packet transfers will be delayed and combined using `Nagle's algorithm <https://en.wikipedia.org/wiki/Nagle%27s_algorithm>`__.
 

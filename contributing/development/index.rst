@@ -19,6 +19,7 @@ especially if you're new to using Git or GitHub.
    best_practices_for_engine_contributors
    code_style_guidelines
    cpp_usage_guidelines
+   handling_compatibility_breakages
 
 Buildsystem and work environment
 --------------------------------

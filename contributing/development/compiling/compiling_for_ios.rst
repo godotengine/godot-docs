@@ -13,12 +13,13 @@ Compiling for iOS
 Requirements
 ------------
 
-- `Python 3.6+ <https://www.python.org/downloads/macos/>`_.
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.8+ <https://www.python.org/downloads/macos/>`_.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_.
-
-If you are building the ``master`` branch:
-
+    - Launch Xcode once and install iOS support. If you have already launched
+      Xcode and need to install iOS support, go to *Xcode -> Settings... -> Platforms*.
+    - Go to *Xcode -> Settings... -> Locations -> Command Line Tools* and select
+      an installed version. Even if one is already selected, re-select it.
 -  Download and follow README instructions to build a static ``.xcframework``
    from the `MoltenVK SDK <https://github.com/KhronosGroup/MoltenVK#fetching-moltenvk-source-code>`__.
 
@@ -45,46 +46,40 @@ If you are building the ``master`` branch:
 Compiling
 ---------
 
-Open a Terminal, go to the root dir of the engine source code and type:
+Open a Terminal, go to the root folder of the engine source code and type
+the following to compile a debug build:
 
 ::
 
-    $ scons p=ios target=template_debug
+    scons platform=ios target=template_debug generate_bundle=yes
 
-for a debug build, or:
-
-::
-
-    $ scons p=ios target=template_release
-
-for a release build (check ``platform/ios/detect.py`` for the compiler
-flags used for each configuration).
-
-Alternatively, you can run
+To compile a release build:
 
 ::
 
-    $ scons p=ios target=template_debug ios_simulator=yes arch=x86_64
-    $ scons p=ios target=template_debug ios_simulator=yes arch=arm64
+    scons platform=ios target=template_release generate_bundle=yes
 
-for a Simulator libraries.
+Alternatively, you can run the following command for Xcode simulator libraries (optional):
+
+::
+
+    scons platform=ios target=template_debug ios_simulator=yes arch=arm64
+    scons platform=ios target=template_debug ios_simulator=yes arch=x86_64 generate_bundle=yes
+
+These simulator libraries cannot be used to run the exported project on the
+target device. Instead, they can be used to run the exported project directly on
+your Mac while still testing iOS platform-specific functionality.
 
 To create an Xcode project like in the official builds, you need to use the
 template located in ``misc/dist/ios_xcode``. The release and debug libraries
-should be placed in ``libgodot.ios.debug.xcframework`` and ``libgodot.ios.release.xcframework`` respectively.
+should be placed in ``libgodot.ios.debug.xcframework`` and
+``libgodot.ios.release.xcframework`` respectively. This process can be automated
+by using the ``generate_bundle=yes`` option on the *last* SCons command used to
+build export templates (so that all binaries can be included).
 
-::
-
-    $ cp -r misc/dist/ios_xcode .
-
-    $ cp libgodot.ios.template_debug.arm64.a ios_xcode/libgodot.ios.debug.xcframework/ios-arm64/libgodot.a
-    $ lipo -create libgodot.ios.template_debug.arm64.simulator.a libgodot.ios.template_debug.x86_64.simulator.a -output ios_xcode/libgodot.ios.debug.xcframework/ios-arm64_x86_64-simulator/libgodot.a
-
-    $ cp libgodot.ios.template_release.arm64.a ios_xcode/libgodot.ios.release.xcframework/ios-arm64/libgodot.a
-    $ lipo -create libgodot.ios.template_release.arm64.simulator.a libgodot.ios.template_release.x86_64.simulator.a -output ios_xcode/libgodot.ios.release.xcframework/ios-arm64_x86_64-simulator/libgodot.a
-
-The MoltenVK static ``.xcframework`` folder must also be placed in the ``ios_xcode``
-folder once it has been created.
+The MoltenVK static ``.xcframework`` folder must also be placed in the
+``ios_xcode`` folder once it has been created. MoltenVK is always statically
+linked on iOS; there is no dynamic linking option available, unlike macOS.
 
 Run
 ---

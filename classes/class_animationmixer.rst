@@ -25,6 +25,13 @@ Base class for :ref:`AnimationPlayer<class_AnimationPlayer>` and :ref:`Animation
 
 After instantiating the playback information data within the extended class, the blending is processed by the **AnimationMixer**.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Migrating Animations from Godot 4.0 to 4.3 <https://godotengine.org/article/migrating-animations-from-godot-4-0-to-4-3/>`__
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -38,7 +45,7 @@ Properties
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`int<class_int>`                                                                   | :ref:`audio_max_polyphony<class_AnimationMixer_property_audio_max_polyphony>`       | ``32``             |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
-   | :ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` | :ref:`callback_mode_discrete<class_AnimationMixer_property_callback_mode_discrete>` | ``0``              |
+   | :ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` | :ref:`callback_mode_discrete<class_AnimationMixer_property_callback_mode_discrete>` | ``1``              |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`AnimationCallbackModeMethod<enum_AnimationMixer_AnimationCallbackModeMethod>`     | :ref:`callback_mode_method<class_AnimationMixer_property_callback_mode_method>`     | ``0``              |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
@@ -47,6 +54,8 @@ Properties
    | :ref:`bool<class_bool>`                                                                 | :ref:`deterministic<class_AnimationMixer_property_deterministic>`                   | ``false``          |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`bool<class_bool>`                                                                 | :ref:`reset_on_save<class_AnimationMixer_property_reset_on_save>`                   | ``true``           |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
+   | :ref:`bool<class_bool>`                                                                 | :ref:`root_motion_local<class_AnimationMixer_property_root_motion_local>`           |                    |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`NodePath<class_NodePath>`                                                         | :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>`           | ``NodePath("")``   |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
@@ -118,7 +127,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**animation_finished**\ (\ anim_name\: :ref:`StringName<class_StringName>`\ )
+**animation_finished**\ (\ anim_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationMixer_signal_animation_finished>`
 
 Notifies when an animation finished playing.
 
@@ -132,7 +141,7 @@ Notifies when an animation finished playing.
 
 .. rst-class:: classref-signal
 
-**animation_libraries_updated**\ (\ )
+**animation_libraries_updated**\ (\ ) :ref:`🔗<class_AnimationMixer_signal_animation_libraries_updated>`
 
 Notifies when the animation libraries have changed.
 
@@ -144,7 +153,7 @@ Notifies when the animation libraries have changed.
 
 .. rst-class:: classref-signal
 
-**animation_list_changed**\ (\ )
+**animation_list_changed**\ (\ ) :ref:`🔗<class_AnimationMixer_signal_animation_list_changed>`
 
 Notifies when an animation list is changed.
 
@@ -156,7 +165,7 @@ Notifies when an animation list is changed.
 
 .. rst-class:: classref-signal
 
-**animation_started**\ (\ anim_name\: :ref:`StringName<class_StringName>`\ )
+**animation_started**\ (\ anim_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationMixer_signal_animation_started>`
 
 Notifies when an animation starts playing.
 
@@ -168,9 +177,21 @@ Notifies when an animation starts playing.
 
 .. rst-class:: classref-signal
 
-**caches_cleared**\ (\ )
+**caches_cleared**\ (\ ) :ref:`🔗<class_AnimationMixer_signal_caches_cleared>`
 
 Notifies when the caches have been cleared, either automatically, or manually via :ref:`clear_caches<class_AnimationMixer_method_clear_caches>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationMixer_signal_mixer_applied:
+
+.. rst-class:: classref-signal
+
+**mixer_applied**\ (\ ) :ref:`🔗<class_AnimationMixer_signal_mixer_applied>`
+
+Notifies when the blending result related have been applied to the target objects.
 
 .. rst-class:: classref-item-separator
 
@@ -180,9 +201,9 @@ Notifies when the caches have been cleared, either automatically, or manually vi
 
 .. rst-class:: classref-signal
 
-**mixer_updated**\ (\ )
+**mixer_updated**\ (\ ) :ref:`🔗<class_AnimationMixer_signal_mixer_updated>`
 
-Editor only. Notifies when the property have been updated to update dummy :ref:`AnimationPlayer<class_AnimationPlayer>` in animation player editor.
+Notifies when the property related process have been updated.
 
 .. rst-class:: classref-section-separator
 
@@ -197,7 +218,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **AnimationCallbackModeProcess**:
+enum **AnimationCallbackModeProcess**: :ref:`🔗<enum_AnimationMixer_AnimationCallbackModeProcess>`
 
 .. _class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS:
 
@@ -231,7 +252,7 @@ Do not process animation. Use :ref:`advance<class_AnimationMixer_method_advance>
 
 .. rst-class:: classref-enumeration
 
-enum **AnimationCallbackModeMethod**:
+enum **AnimationCallbackModeMethod**: :ref:`🔗<enum_AnimationMixer_AnimationCallbackModeMethod>`
 
 .. _class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_METHOD_DEFERRED:
 
@@ -257,7 +278,7 @@ Make method calls immediately when reached in the animation.
 
 .. rst-class:: classref-enumeration
 
-enum **AnimationCallbackModeDiscrete**:
+enum **AnimationCallbackModeDiscrete**: :ref:`🔗<enum_AnimationMixer_AnimationCallbackModeDiscrete>`
 
 .. _class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT:
 
@@ -265,9 +286,7 @@ enum **AnimationCallbackModeDiscrete**:
 
 :ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` **ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT** = ``0``
 
-An :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track value takes precedence when blending :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track values and :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track values. This is the default behavior for :ref:`AnimationPlayer<class_AnimationPlayer>`.
-
-\ **Note:** If a value track has non-numeric type key values, it is internally converted to use :ref:`ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT>` with :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>`.
+An :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track value takes precedence when blending :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track values and :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track values.
 
 .. _class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE:
 
@@ -275,7 +294,7 @@ An :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` tr
 
 :ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` **ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE** = ``1``
 
-An :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track value takes precedence when blending the :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track values and the :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track values.
+An :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track value takes precedence when blending the :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track values and the :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track values. This is the default behavior for :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
 .. _class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS:
 
@@ -284,6 +303,32 @@ An :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>
 :ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` **ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS** = ``2``
 
 Always treat the :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track value as :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` with :ref:`Animation.INTERPOLATION_NEAREST<class_Animation_constant_INTERPOLATION_NEAREST>`. This is the default behavior for :ref:`AnimationTree<class_AnimationTree>`.
+
+If a value track has un-interpolatable type key values, it is internally converted to use :ref:`ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE>` with :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>`.
+
+Un-interpolatable type list:
+
+- :ref:`@GlobalScope.TYPE_NIL<class_@GlobalScope_constant_TYPE_NIL>`\ 
+
+- :ref:`@GlobalScope.TYPE_NODE_PATH<class_@GlobalScope_constant_TYPE_NODE_PATH>`\ 
+
+- :ref:`@GlobalScope.TYPE_RID<class_@GlobalScope_constant_TYPE_RID>`\ 
+
+- :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`\ 
+
+- :ref:`@GlobalScope.TYPE_CALLABLE<class_@GlobalScope_constant_TYPE_CALLABLE>`\ 
+
+- :ref:`@GlobalScope.TYPE_SIGNAL<class_@GlobalScope_constant_TYPE_SIGNAL>`\ 
+
+- :ref:`@GlobalScope.TYPE_DICTIONARY<class_@GlobalScope_constant_TYPE_DICTIONARY>`\ 
+
+- :ref:`@GlobalScope.TYPE_PACKED_BYTE_ARRAY<class_@GlobalScope_constant_TYPE_PACKED_BYTE_ARRAY>`\ 
+
+\ :ref:`@GlobalScope.TYPE_BOOL<class_@GlobalScope_constant_TYPE_BOOL>` and :ref:`@GlobalScope.TYPE_INT<class_@GlobalScope_constant_TYPE_INT>` are treated as :ref:`@GlobalScope.TYPE_FLOAT<class_@GlobalScope_constant_TYPE_FLOAT>` during blending and rounded when the result is retrieved.
+
+It is same for arrays and vectors with them such as :ref:`@GlobalScope.TYPE_PACKED_INT32_ARRAY<class_@GlobalScope_constant_TYPE_PACKED_INT32_ARRAY>` or :ref:`@GlobalScope.TYPE_VECTOR2I<class_@GlobalScope_constant_TYPE_VECTOR2I>`, they are treated as :ref:`@GlobalScope.TYPE_PACKED_FLOAT32_ARRAY<class_@GlobalScope_constant_TYPE_PACKED_FLOAT32_ARRAY>` or :ref:`@GlobalScope.TYPE_VECTOR2<class_@GlobalScope_constant_TYPE_VECTOR2>`. Also note that for arrays, the size is also interpolated.
+
+\ :ref:`@GlobalScope.TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>` and :ref:`@GlobalScope.TYPE_STRING_NAME<class_@GlobalScope_constant_TYPE_STRING_NAME>` are interpolated between character codes and lengths, but note that there is a difference in algorithm between interpolation between keys and interpolation by blending.
 
 .. rst-class:: classref-section-separator
 
@@ -298,7 +343,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **active** = ``true``
+:ref:`bool<class_bool>` **active** = ``true`` :ref:`🔗<class_AnimationMixer_property_active>`
 
 .. rst-class:: classref-property-setget
 
@@ -315,7 +360,7 @@ If ``true``, the **AnimationMixer** will be processing.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **audio_max_polyphony** = ``32``
+:ref:`int<class_int>` **audio_max_polyphony** = ``32`` :ref:`🔗<class_AnimationMixer_property_audio_max_polyphony>`
 
 .. rst-class:: classref-property-setget
 
@@ -334,7 +379,7 @@ For example, if this value is ``32`` and the animation has two audio tracks, the
 
 .. rst-class:: classref-property
 
-:ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` **callback_mode_discrete** = ``0``
+:ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` **callback_mode_discrete** = ``1`` :ref:`🔗<class_AnimationMixer_property_callback_mode_discrete>`
 
 .. rst-class:: classref-property-setget
 
@@ -355,7 +400,7 @@ To make the blended results look good, it is recommended to set this to :ref:`AN
 
 .. rst-class:: classref-property
 
-:ref:`AnimationCallbackModeMethod<enum_AnimationMixer_AnimationCallbackModeMethod>` **callback_mode_method** = ``0``
+:ref:`AnimationCallbackModeMethod<enum_AnimationMixer_AnimationCallbackModeMethod>` **callback_mode_method** = ``0`` :ref:`🔗<class_AnimationMixer_property_callback_mode_method>`
 
 .. rst-class:: classref-property-setget
 
@@ -372,7 +417,7 @@ The call mode used for "Call Method" tracks.
 
 .. rst-class:: classref-property
 
-:ref:`AnimationCallbackModeProcess<enum_AnimationMixer_AnimationCallbackModeProcess>` **callback_mode_process** = ``1``
+:ref:`AnimationCallbackModeProcess<enum_AnimationMixer_AnimationCallbackModeProcess>` **callback_mode_process** = ``1`` :ref:`🔗<class_AnimationMixer_property_callback_mode_process>`
 
 .. rst-class:: classref-property-setget
 
@@ -389,7 +434,7 @@ The process notification in which to update animations.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **deterministic** = ``false``
+:ref:`bool<class_bool>` **deterministic** = ``false`` :ref:`🔗<class_AnimationMixer_property_deterministic>`
 
 .. rst-class:: classref-property-setget
 
@@ -416,7 +461,7 @@ For example, if :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>` blends two nod
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **reset_on_save** = ``true``
+:ref:`bool<class_bool>` **reset_on_save** = ``true`` :ref:`🔗<class_AnimationMixer_property_reset_on_save>`
 
 .. rst-class:: classref-property-setget
 
@@ -431,20 +476,37 @@ This makes it more convenient to preview and edit animations in the editor, as c
 
 ----
 
+.. _class_AnimationMixer_property_root_motion_local:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **root_motion_local** :ref:`🔗<class_AnimationMixer_property_root_motion_local>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_root_motion_local**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_root_motion_local**\ (\ )
+
+If ``true``, :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>` value is extracted as a local translation value before blending. In other words, it is treated like the translation is done after the rotation.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationMixer_property_root_motion_track:
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **root_motion_track** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **root_motion_track** = ``NodePath("")`` :ref:`🔗<class_AnimationMixer_property_root_motion_track>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_root_motion_track**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_root_motion_track**\ (\ )
 
-The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. To specify a track that controls properties or bones, append its name after the path, separated by ``":"``. For example, ``"character/skeleton:ankle"`` or ``"character/mesh:transform/local"``.
+The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. The :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` uses the same format as :ref:`Animation.track_set_path<class_Animation_method_track_set_path>`, but note that a bone must be specified.
 
-If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>` or :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` the transformation will be canceled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`, :ref:`get_root_motion_rotation<class_AnimationMixer_method_get_root_motion_rotation>`, :ref:`get_root_motion_scale<class_AnimationMixer_method_get_root_motion_scale>` and :ref:`RootMotionView<class_RootMotionView>`.
+If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>`, or :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` the transformation will be canceled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`, :ref:`get_root_motion_rotation<class_AnimationMixer_method_get_root_motion_rotation>`, :ref:`get_root_motion_scale<class_AnimationMixer_method_get_root_motion_scale>`, and :ref:`RootMotionView<class_RootMotionView>`.
 
 .. rst-class:: classref-item-separator
 
@@ -454,7 +516,7 @@ If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **root_node** = ``NodePath("..")``
+:ref:`NodePath<class_NodePath>` **root_node** = ``NodePath("..")`` :ref:`🔗<class_AnimationMixer_property_root_node>`
 
 .. rst-class:: classref-property-setget
 
@@ -476,7 +538,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_post_process_key_value**\ (\ animation\: :ref:`Animation<class_Animation>`, track\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, object_id\: :ref:`int<class_int>`, object_sub_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_post_process_key_value**\ (\ animation\: :ref:`Animation<class_Animation>`, track\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, object_id\: :ref:`int<class_int>`, object_sub_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_AnimationMixer_private_method__post_process_key_value>`
 
 A virtual function for processing after getting a key during playback.
 
@@ -488,9 +550,21 @@ A virtual function for processing after getting a key during playback.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **add_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`, library\: :ref:`AnimationLibrary<class_AnimationLibrary>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **add_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`, library\: :ref:`AnimationLibrary<class_AnimationLibrary>`\ ) :ref:`🔗<class_AnimationMixer_method_add_animation_library>`
 
 Adds ``library`` to the animation player, under the key ``name``.
+
+AnimationMixer has a global library by default with an empty string as key. For adding an animation to the global library:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var global_library = mixer.get_animation_library("")
+    global_library.add_animation("animation_name", animation_resource)
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -500,7 +574,7 @@ Adds ``library`` to the animation player, under the key ``name``.
 
 .. rst-class:: classref-method
 
-|void| **advance**\ (\ delta\: :ref:`float<class_float>`\ )
+|void| **advance**\ (\ delta\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AnimationMixer_method_advance>`
 
 Manually advance the animations by the specified time (in seconds).
 
@@ -512,7 +586,7 @@ Manually advance the animations by the specified time (in seconds).
 
 .. rst-class:: classref-method
 
-|void| **capture**\ (\ name\: :ref:`StringName<class_StringName>`, duration\: :ref:`float<class_float>`, trans_type\: :ref:`TransitionType<enum_Tween_TransitionType>` = 0, ease_type\: :ref:`EaseType<enum_Tween_EaseType>` = 0\ )
+|void| **capture**\ (\ name\: :ref:`StringName<class_StringName>`, duration\: :ref:`float<class_float>`, trans_type\: :ref:`TransitionType<enum_Tween_TransitionType>` = 0, ease_type\: :ref:`EaseType<enum_Tween_EaseType>` = 0\ ) :ref:`🔗<class_AnimationMixer_method_capture>`
 
 If the animation track specified by ``name`` has an option :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>`, stores current values of the objects indicated by the track path as a cache. If there is already a captured cache, the old cache is discarded.
 
@@ -528,7 +602,7 @@ You can specify ``trans_type`` as the curve for the interpolation. For better re
 
 .. rst-class:: classref-method
 
-|void| **clear_caches**\ (\ )
+|void| **clear_caches**\ (\ ) :ref:`🔗<class_AnimationMixer_method_clear_caches>`
 
 **AnimationMixer** caches animated nodes. It may not notice if a node disappears; :ref:`clear_caches<class_AnimationMixer_method_clear_caches>` forces it to update the cache again.
 
@@ -540,7 +614,7 @@ You can specify ``trans_type`` as the curve for the interpolation. For better re
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **find_animation**\ (\ animation\: :ref:`Animation<class_Animation>`\ ) |const|
+:ref:`StringName<class_StringName>` **find_animation**\ (\ animation\: :ref:`Animation<class_Animation>`\ ) |const| :ref:`🔗<class_AnimationMixer_method_find_animation>`
 
 Returns the key of ``animation`` or an empty :ref:`StringName<class_StringName>` if not found.
 
@@ -552,7 +626,7 @@ Returns the key of ``animation`` or an empty :ref:`StringName<class_StringName>`
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **find_animation_library**\ (\ animation\: :ref:`Animation<class_Animation>`\ ) |const|
+:ref:`StringName<class_StringName>` **find_animation_library**\ (\ animation\: :ref:`Animation<class_Animation>`\ ) |const| :ref:`🔗<class_AnimationMixer_method_find_animation_library>`
 
 Returns the key for the :ref:`AnimationLibrary<class_AnimationLibrary>` that contains ``animation`` or an empty :ref:`StringName<class_StringName>` if not found.
 
@@ -564,7 +638,7 @@ Returns the key for the :ref:`AnimationLibrary<class_AnimationLibrary>` that con
 
 .. rst-class:: classref-method
 
-:ref:`Animation<class_Animation>` **get_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Animation<class_Animation>` **get_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_animation>`
 
 Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the animation does not exist, ``null`` is returned and an error is logged.
 
@@ -576,11 +650,11 @@ Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the anim
 
 .. rst-class:: classref-method
 
-:ref:`AnimationLibrary<class_AnimationLibrary>` **get_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`AnimationLibrary<class_AnimationLibrary>` **get_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_animation_library>`
 
 Returns the first :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name`` or ``null`` if not found.
 
-To get the :ref:`AnimationPlayer<class_AnimationPlayer>`'s global animation library, use ``get_animation_library("")``.
+To get the **AnimationMixer**'s global animation library, use ``get_animation_library("")``.
 
 .. rst-class:: classref-item-separator
 
@@ -590,7 +664,7 @@ To get the :ref:`AnimationPlayer<class_AnimationPlayer>`'s global animation libr
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_animation_library_list**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_animation_library_list**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_animation_library_list>`
 
 Returns the list of stored library keys.
 
@@ -602,7 +676,7 @@ Returns the list of stored library keys.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_animation_list**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_animation_list**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_animation_list>`
 
 Returns the list of stored animation keys.
 
@@ -614,7 +688,7 @@ Returns the list of stored animation keys.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_root_motion_position**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_root_motion_position**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_root_motion_position>`
 
 Retrieve the motion delta of position with the :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
 
@@ -629,19 +703,19 @@ The most basic example is applying position to :ref:`CharacterBody3D<class_Chara
 
  .. code-tab:: gdscript
 
-    var current_rotation: Quaternion
+    var current_rotation
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             current_rotation = get_quaternion()
             state_machine.travel("Animate")
-        var velocity: Vector3 = current_rotation * animation_tree.get_root_motion_position() / delta
+        var velocity = current_rotation * animation_tree.get_root_motion_position() / delta
         set_velocity(velocity)
         move_and_slide()
 
 
 
-By using this in combination with :ref:`get_root_motion_position_accumulator<class_AnimationMixer_method_get_root_motion_position_accumulator>`, you can apply the root motion position more correctly to account for the rotation of the node.
+By using this in combination with :ref:`get_root_motion_rotation_accumulator<class_AnimationMixer_method_get_root_motion_rotation_accumulator>`, you can apply the root motion position more correctly to account for the rotation of the node.
 
 
 .. tabs::
@@ -652,7 +726,26 @@ By using this in combination with :ref:`get_root_motion_position_accumulator<cla
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
         set_quaternion(get_quaternion() * animation_tree.get_root_motion_rotation())
-        var velocity: Vector3 = (animation_tree.get_root_motion_rotation_accumulator().inverse() * get_quaternion()) * animation_tree.get_root_motion_position() / delta
+        var velocity = (animation_tree.get_root_motion_rotation_accumulator().inverse() * get_quaternion()) * animation_tree.get_root_motion_position() / delta
+        set_velocity(velocity)
+        move_and_slide()
+
+
+
+If :ref:`root_motion_local<class_AnimationMixer_property_root_motion_local>` is ``true``, return the pre-multiplied translation value with the inverted rotation.
+
+In this case, the code can be written as follows:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _process(delta):
+        if Input.is_action_just_pressed("animate"):
+            state_machine.travel("Animate")
+        set_quaternion(get_quaternion() * animation_tree.get_root_motion_rotation())
+        var velocity = get_quaternion() * animation_tree.get_root_motion_position() / delta
         set_velocity(velocity)
         move_and_slide()
 
@@ -666,7 +759,7 @@ By using this in combination with :ref:`get_root_motion_position_accumulator<cla
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_root_motion_position_accumulator**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_root_motion_position_accumulator**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_root_motion_position_accumulator>`
 
 Retrieve the blended value of the position tracks with the :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
 
@@ -679,13 +772,13 @@ For example, if an animation with only one key ``Vector3(0, 0, 0)`` is played in
 
  .. code-tab:: gdscript
 
-    var prev_root_motion_position_accumulator: Vector3
+    var prev_root_motion_position_accumulator
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
-        var current_root_motion_position_accumulator: Vector3 = animation_tree.get_root_motion_position_accumulator()
-        var difference: Vector3 = current_root_motion_position_accumulator - prev_root_motion_position_accumulator
+        var current_root_motion_position_accumulator = animation_tree.get_root_motion_position_accumulator()
+        var difference = current_root_motion_position_accumulator - prev_root_motion_position_accumulator
         prev_root_motion_position_accumulator = current_root_motion_position_accumulator
         transform.origin += difference
 
@@ -701,7 +794,7 @@ However, if the animation loops, an unintended discrete change may occur, so thi
 
 .. rst-class:: classref-method
 
-:ref:`Quaternion<class_Quaternion>` **get_root_motion_rotation**\ (\ ) |const|
+:ref:`Quaternion<class_Quaternion>` **get_root_motion_rotation**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_root_motion_rotation>`
 
 Retrieve the motion delta of rotation with the :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` as a :ref:`Quaternion<class_Quaternion>` that can be used elsewhere.
 
@@ -731,7 +824,7 @@ The most basic example is applying rotation to :ref:`CharacterBody3D<class_Chara
 
 .. rst-class:: classref-method
 
-:ref:`Quaternion<class_Quaternion>` **get_root_motion_rotation_accumulator**\ (\ ) |const|
+:ref:`Quaternion<class_Quaternion>` **get_root_motion_rotation_accumulator**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_root_motion_rotation_accumulator>`
 
 Retrieve the blended value of the rotation tracks with the :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` as a :ref:`Quaternion<class_Quaternion>` that can be used elsewhere.
 
@@ -746,15 +839,15 @@ For example, if an animation with only one key ``Quaternion(0, 0, 0, 1)`` is pla
 
  .. code-tab:: gdscript
 
-    var prev_root_motion_rotation_accumulator: Quaternion
+    var prev_root_motion_rotation_accumulator
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
-        var current_root_motion_rotation_accumulator: Quaternion = animation_tree.get_root_motion_Quaternion_accumulator()
-        var difference: Quaternion = prev_root_motion_rotation_accumulator.inverse() * current_root_motion_rotation_accumulator
+        var current_root_motion_rotation_accumulator = animation_tree.get_root_motion_rotation_accumulator()
+        var difference = prev_root_motion_rotation_accumulator.inverse() * current_root_motion_rotation_accumulator
         prev_root_motion_rotation_accumulator = current_root_motion_rotation_accumulator
-        transform.basis *= difference
+        transform.basis *=  Basis(difference)
 
 
 
@@ -768,7 +861,7 @@ However, if the animation loops, an unintended discrete change may occur, so thi
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_root_motion_scale**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_root_motion_scale**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_root_motion_scale>`
 
 Retrieve the motion delta of scale with the :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
 
@@ -783,8 +876,8 @@ The most basic example is applying scale to :ref:`CharacterBody3D<class_Characte
 
  .. code-tab:: gdscript
 
-    var current_scale: Vector3 = Vector3(1, 1, 1)
-    var scale_accum: Vector3 = Vector3(1, 1, 1)
+    var current_scale = Vector3(1, 1, 1)
+    var scale_accum = Vector3(1, 1, 1)
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
@@ -804,7 +897,7 @@ The most basic example is applying scale to :ref:`CharacterBody3D<class_Characte
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_root_motion_scale_accumulator**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_root_motion_scale_accumulator**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_root_motion_scale_accumulator>`
 
 Retrieve the blended value of the scale tracks with the :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
 
@@ -815,13 +908,13 @@ For example, if an animation with only one key ``Vector3(1, 1, 1)`` is played in
 
  .. code-tab:: gdscript
 
-    var prev_root_motion_scale_accumulator: Vector3
+    var prev_root_motion_scale_accumulator
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
-        var current_root_motion_scale_accumulator: Vector3 = animation_tree.get_root_motion_scale_accumulator()
-        var difference: Vector3 = current_root_motion_scale_accumulator - prev_root_motion_scale_accumulator
+        var current_root_motion_scale_accumulator = animation_tree.get_root_motion_scale_accumulator()
+        var difference = current_root_motion_scale_accumulator - prev_root_motion_scale_accumulator
         prev_root_motion_scale_accumulator = current_root_motion_scale_accumulator
         transform.basis = transform.basis.scaled(difference)
 
@@ -837,9 +930,9 @@ However, if the animation loops, an unintended discrete change may occur, so thi
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_AnimationMixer_method_has_animation>`
 
-Returns ``true`` if the :ref:`AnimationPlayer<class_AnimationPlayer>` stores an :ref:`Animation<class_Animation>` with key ``name``.
+Returns ``true`` if the **AnimationMixer** stores an :ref:`Animation<class_Animation>` with key ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -849,9 +942,9 @@ Returns ``true`` if the :ref:`AnimationPlayer<class_AnimationPlayer>` stores an 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_AnimationMixer_method_has_animation_library>`
 
-Returns ``true`` if the :ref:`AnimationPlayer<class_AnimationPlayer>` stores an :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name``.
+Returns ``true`` if the **AnimationMixer** stores an :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -861,7 +954,7 @@ Returns ``true`` if the :ref:`AnimationPlayer<class_AnimationPlayer>` stores an 
 
 .. rst-class:: classref-method
 
-|void| **remove_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationMixer_method_remove_animation_library>`
 
 Removes the :ref:`AnimationLibrary<class_AnimationLibrary>` associated with the key ``name``.
 
@@ -873,7 +966,7 @@ Removes the :ref:`AnimationLibrary<class_AnimationLibrary>` associated with the 
 
 .. rst-class:: classref-method
 
-|void| **rename_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`, newname\: :ref:`StringName<class_StringName>`\ )
+|void| **rename_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`, newname\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationMixer_method_rename_animation_library>`
 
 Moves the :ref:`AnimationLibrary<class_AnimationLibrary>` associated with the key ``name`` to the key ``newname``.
 

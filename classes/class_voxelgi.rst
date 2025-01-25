@@ -36,7 +36,7 @@ Tutorials
 
 - :doc:`Using Voxel global illumination <../tutorials/3d/global_illumination/using_voxel_gi>`
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -83,7 +83,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Subdiv**:
+enum **Subdiv**: :ref:`🔗<enum_VoxelGI_Subdiv>`
 
 .. _class_VoxelGI_constant_SUBDIV_64:
 
@@ -138,7 +138,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes** :ref:`🔗<class_VoxelGI_property_camera_attributes>`
 
 .. rst-class:: classref-property-setget
 
@@ -155,7 +155,7 @@ The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies expo
 
 .. rst-class:: classref-property
 
-:ref:`VoxelGIData<class_VoxelGIData>` **data**
+:ref:`VoxelGIData<class_VoxelGIData>` **data** :ref:`🔗<class_VoxelGI_property_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -172,7 +172,7 @@ The :ref:`VoxelGIData<class_VoxelGIData>` resource that holds the data for this 
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(20, 20, 20)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(20, 20, 20)`` :ref:`🔗<class_VoxelGI_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +191,7 @@ The size of the area covered by the **VoxelGI**. If you make the size larger wit
 
 .. rst-class:: classref-property
 
-:ref:`Subdiv<enum_VoxelGI_Subdiv>` **subdiv** = ``1``
+:ref:`Subdiv<enum_VoxelGI_Subdiv>` **subdiv** = ``1`` :ref:`🔗<class_VoxelGI_property_subdiv>`
 
 .. rst-class:: classref-property-setget
 
@@ -213,7 +213,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **bake**\ (\ from_node\: :ref:`Node<class_Node>` = null, create_visual_debug\: :ref:`bool<class_bool>` = false\ )
+|void| **bake**\ (\ from_node\: :ref:`Node<class_Node>` = null, create_visual_debug\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_VoxelGI_method_bake>`
 
 Bakes the effect from all :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s marked with :ref:`GeometryInstance3D.GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>` and :ref:`Light3D<class_Light3D>`\ s marked with either :ref:`Light3D.BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>` or :ref:`Light3D.BAKE_DYNAMIC<class_Light3D_constant_BAKE_DYNAMIC>`. If ``create_visual_debug`` is ``true``, after baking the light, this will generate a :ref:`MultiMesh<class_MultiMesh>` that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the **VoxelGI**'s data and debug any issues that may be occurring.
 
@@ -229,7 +229,7 @@ Bakes the effect from all :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s
 
 .. rst-class:: classref-method
 
-|void| **debug_bake**\ (\ )
+|void| **debug_bake**\ (\ ) :ref:`🔗<class_VoxelGI_method_debug_bake>`
 
 Calls :ref:`bake<class_VoxelGI_method_bake>` with ``create_visual_debug`` enabled.
 

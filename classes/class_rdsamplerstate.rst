@@ -74,7 +74,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anisotropy_max** = ``1.0``
+:ref:`float<class_float>` **anisotropy_max** = ``1.0`` :ref:`🔗<class_RDSamplerState_property_anisotropy_max>`
 
 .. rst-class:: classref-property-setget
 
@@ -93,7 +93,7 @@ If :ref:`anisotropy_max<class_RDSamplerState_property_anisotropy_max>` is ``1.0`
 
 .. rst-class:: classref-property
 
-:ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **border_color** = ``2``
+:ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **border_color** = ``2`` :ref:`🔗<class_RDSamplerState_property_border_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -110,7 +110,7 @@ The border color that will be returned when sampling outside the sampler's bound
 
 .. rst-class:: classref-property
 
-:ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **compare_op** = ``7``
+:ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **compare_op** = ``7`` :ref:`🔗<class_RDSamplerState_property_compare_op>`
 
 .. rst-class:: classref-property-setget
 
@@ -127,7 +127,7 @@ The compare operation to use. Only effective if :ref:`enable_compare<class_RDSam
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_compare** = ``false``
+:ref:`bool<class_bool>` **enable_compare** = ``false`` :ref:`🔗<class_RDSamplerState_property_enable_compare>`
 
 .. rst-class:: classref-property-setget
 
@@ -144,7 +144,7 @@ If ``true``, returned values will be based on the comparison operation defined i
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **lod_bias** = ``0.0``
+:ref:`float<class_float>` **lod_bias** = ``0.0`` :ref:`🔗<class_RDSamplerState_property_lod_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -161,7 +161,7 @@ The mipmap LOD bias to use. Positive values will make the sampler blurrier at a 
 
 .. rst-class:: classref-property
 
-:ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **mag_filter** = ``0``
+:ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **mag_filter** = ``0`` :ref:`🔗<class_RDSamplerState_property_mag_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -178,7 +178,7 @@ The sampler's magnification filter. It is the filtering method used when samplin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **max_lod** = ``1e+20``
+:ref:`float<class_float>` **max_lod** = ``1e+20`` :ref:`🔗<class_RDSamplerState_property_max_lod>`
 
 .. rst-class:: classref-property-setget
 
@@ -195,7 +195,7 @@ The maximum mipmap LOD bias to display (lowest resolution). Only effective if th
 
 .. rst-class:: classref-property
 
-:ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **min_filter** = ``0``
+:ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **min_filter** = ``0`` :ref:`🔗<class_RDSamplerState_property_min_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -212,7 +212,7 @@ The sampler's minification filter. It is the filtering method used when sampling
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **min_lod** = ``0.0``
+:ref:`float<class_float>` **min_lod** = ``0.0`` :ref:`🔗<class_RDSamplerState_property_min_lod>`
 
 .. rst-class:: classref-property-setget
 
@@ -229,7 +229,7 @@ The minimum mipmap LOD bias to display (highest resolution). Only effective if t
 
 .. rst-class:: classref-property
 
-:ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **mip_filter** = ``0``
+:ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **mip_filter** = ``0`` :ref:`🔗<class_RDSamplerState_property_mip_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -246,7 +246,7 @@ The filtering method to use for mipmaps.
 
 .. rst-class:: classref-property
 
-:ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **repeat_u** = ``2``
+:ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **repeat_u** = ``2`` :ref:`🔗<class_RDSamplerState_property_repeat_u>`
 
 .. rst-class:: classref-property-setget
 
@@ -263,7 +263,7 @@ The repeat mode to use along the U axis of UV coordinates. This affects the retu
 
 .. rst-class:: classref-property
 
-:ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **repeat_v** = ``2``
+:ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **repeat_v** = ``2`` :ref:`🔗<class_RDSamplerState_property_repeat_v>`
 
 .. rst-class:: classref-property-setget
 
@@ -280,7 +280,7 @@ The repeat mode to use along the V axis of UV coordinates. This affects the retu
 
 .. rst-class:: classref-property
 
-:ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **repeat_w** = ``2``
+:ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **repeat_w** = ``2`` :ref:`🔗<class_RDSamplerState_property_repeat_w>`
 
 .. rst-class:: classref-property-setget
 
@@ -297,7 +297,7 @@ The repeat mode to use along the W axis of UV coordinates. This affects the retu
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **unnormalized_uvw** = ``false``
+:ref:`bool<class_bool>` **unnormalized_uvw** = ``false`` :ref:`🔗<class_RDSamplerState_property_unnormalized_uvw>`
 
 .. rst-class:: classref-property-setget
 
@@ -314,7 +314,7 @@ If ``true``, the texture will be sampled with coordinates ranging from 0 to the 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_anisotropy** = ``false``
+:ref:`bool<class_bool>` **use_anisotropy** = ``false`` :ref:`🔗<class_RDSamplerState_property_use_anisotropy>`
 
 .. rst-class:: classref-property-setget
 

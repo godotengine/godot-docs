@@ -26,7 +26,7 @@ A control that displays a texture, for example an icon inside a GUI. The texture
 Tutorials
 ---------
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -63,7 +63,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ExpandMode**:
+enum **ExpandMode**: :ref:`🔗<enum_TextureRect_ExpandMode>`
 
 .. _class_TextureRect_constant_EXPAND_KEEP_SIZE:
 
@@ -121,7 +121,7 @@ Same as :ref:`EXPAND_FIT_HEIGHT<class_TextureRect_constant_EXPAND_FIT_HEIGHT>`, 
 
 .. rst-class:: classref-enumeration
 
-enum **StretchMode**:
+enum **StretchMode**: :ref:`🔗<enum_TextureRect_StretchMode>`
 
 .. _class_TextureRect_constant_STRETCH_SCALE:
 
@@ -192,7 +192,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **expand_mode** = ``0``
+:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **expand_mode** = ``0`` :ref:`🔗<class_TextureRect_property_expand_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -211,7 +211,7 @@ Defines how minimum size is determined based on the texture's size. See :ref:`Ex
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_h** = ``false``
+:ref:`bool<class_bool>` **flip_h** = ``false`` :ref:`🔗<class_TextureRect_property_flip_h>`
 
 .. rst-class:: classref-property-setget
 
@@ -228,7 +228,7 @@ If ``true``, texture is flipped horizontally.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_v** = ``false``
+:ref:`bool<class_bool>` **flip_v** = ``false`` :ref:`🔗<class_TextureRect_property_flip_v>`
 
 .. rst-class:: classref-property-setget
 
@@ -245,7 +245,7 @@ If ``true``, texture is flipped vertically.
 
 .. rst-class:: classref-property
 
-:ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode** = ``0``
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode** = ``0`` :ref:`🔗<class_TextureRect_property_stretch_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -262,7 +262,7 @@ Controls the texture's behavior when resizing the node's bounding rectangle. See
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_TextureRect_property_texture>`
 
 .. rst-class:: classref-property-setget
 

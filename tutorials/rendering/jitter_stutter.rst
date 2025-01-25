@@ -34,7 +34,6 @@ Finally, a game exhibiting *stutter* will appear smooth, but appear to *stop* or
 
 .. image:: img/motion_stutter.gif
 
-
 Jitter
 ------
 
@@ -52,12 +51,6 @@ happens when they are processed in different time sources (one is processed in
 the physics step while another is processed in the idle step). Godot 3.1 does
 some improvements to this, from allowing kinematic bodies to be animated in the
 regular ``_process()`` loop, to further fixes in the frame timer.
-
-.. note::
-
-    You can use physics interpolation to mitigate physics-related jittering.
-    See `lawnjelly's smoothing-addon <https://github.com/lawnjelly/smoothing-addon>`__
-    for an add-on that can be dropped into any project to enable physics interpolation.
 
 Stutter
 -------
@@ -81,7 +74,7 @@ Forcing your graphics card to use the maximum performance profile can also help
 reduce stuttering, at the cost of increased GPU power draw.
 
 Windows
-^^^^^^^
+~~~~~~~
 
 Windows is known to cause stutter in windowed games. This mostly depends on the
 hardware installed, drivers version and processes running in parallel (e.g.
@@ -98,6 +91,11 @@ games, will usually not exhibit this problem anyway).
 For fullscreen, Windows gives special priority to the game so stutter is no
 longer visible and very rare. This is how most games are played.
 
+When using a mouse with a polling rate of 1,000 Hz or more, consider using a
+fully up-to-date Windows 11 installation which comes with fixes related to high
+CPU utilization with high polling rate mice. These fixes are not available in
+Windows 10 and older versions.
+
 .. tip::
 
     Games should use the **Exclusive Fullscreen** window mode, as opposed to
@@ -111,7 +109,7 @@ longer visible and very rare. This is how most games are played.
     Windows to reduce jitter and input lag for fullscreen games.
 
 Linux
-^^^^^
+~~~~~
 
 Stutter may be visible on desktop Linux, but this is usually associated with
 different video drivers and compositors. Some compositors may also trigger this
@@ -130,21 +128,21 @@ to automatically apply optimizations (such as forcing the GPU performance profil
 when running specific processes.
 
 macOS
-^^^^^
+~~~~~
 
 Generally, macOS is stutter-free, although recently some bugs were reported when
 running on fullscreen (this is a macOS bug). If you have a machine exhibiting
 this behavior, please let us know.
 
 Android
-^^^^^^^
+~~~~~~~
 
 Generally, Android is stutter and jitter-free because the running activity gets
 all the priority. That said, there may be problematic devices (older Kindle Fire
 is known to be one). If you see this problem on Android, please let us know.
 
 iOS
-^^^
+~~~
 
 iOS devices are generally stutter-free, but older devices running newer versions
 of the operating system may exhibit problems. This is generally unavoidable.
@@ -153,21 +151,34 @@ Input lag
 ---------
 
 Project configuration
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 On platforms that support disabling V-Sync, input lag can be made less
 noticeable by disabling V-Sync in the project settings. This will however cause
-tearing to appear, especially on monitors with low refresh rates.
+tearing to appear, especially on monitors with low refresh rates. It's suggested
+to make V-Sync available as an option for players to toggle.
+
+When using the Forward+ or Mobile rendering methods, another way to reduce
+visual latency when V-Sync is enabled is to use double-buffered V-Sync instead
+of the default triple-buffered V-Sync. Since Godot 4.3, this can be achieved by
+reducing the **Display > Window > V-Sync > Swapchain Image Count** project
+setting to ``2``.  The downside of using double buffering is that framerate will
+be less stable if the display refresh rate can't be reached due to a CPU or GPU
+bottleneck. For instance, on a 60 Hz display, if the framerate would normally
+drop to 55 FPS during gameplay with triple buffering, it will have to drop down
+to 30 FPS momentarily with double buffering (and then go back to 60 FPS when
+possible). As a result, double-buffered V-Sync is only recommended if you can
+*consistently* reach the display refresh rate on the target hardware.
 
 Increasing the number of physics iterations per second can also reduce
 physics-induced input latency. This is especially noticeable when using physics
 interpolation (which improves smoothness but increases latency). To do so, set
 **Physics > Common > Physics Ticks Per Second** to a value higher than the
-default ``60``, or set ``Engine.physics_ticks_per_second`` at run-time in a
+default ``60``, or set ``Engine.physics_ticks_per_second`` at runtime in a
 script. Values that are a multiple of the monitor refresh rate (typically
 ``60``) work best when physics interpolation is disabled, as they will avoid
 jitter. This means values such as ``120``, ``180`` and ``240`` are good starting
-points. As a bonus, higher physics FPSes make tunneling and physics unstability
+points. As a bonus, higher physics FPSes make tunneling and physics instability
 issues less likely to occur.
 
 The downside of increasing physics FPS is that CPU usage will increase, which
@@ -187,8 +198,15 @@ every input, rather than accumulating inputs and waiting for a frame to be
 rendered. Disabling input accumulation will increase CPU usage, so it should be
 done with caution.
 
+.. tip::
+
+    On any Godot project, you can use the ``--disable-vsync``
+    :ref:`command line argument <doc_command_line_tutorial>` to forcibly disable V-Sync.
+    Since Godot 4.2, ``--max-fps <fps>`` can also be used to set a FPS limit
+    (``0`` is unlimited). These arguments can be used at the same time.
+
 Hardware/OS-specific
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 If your monitor supports it, consider enabling variable refresh rate
 (G-Sync/FreeSync) while leaving V-Sync enabled, then cap the framerate in the
@@ -202,7 +220,7 @@ the same framerate cap (usually less than 1 ms greater), but without any
 tearing.
 
 This can be done by changing the **Application > Run > Max FPS** project
-setting or assigning ``Engine.max_fps`` at run-time in a script.
+setting or assigning ``Engine.max_fps`` at runtime in a script.
 
 On some platforms, you can also opt into a low-latency mode in the graphics
 driver options (such as the NVIDIA Control Panel on Windows). The **Ultra**

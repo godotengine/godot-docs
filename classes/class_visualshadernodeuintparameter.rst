@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **default_value** = ``0``
+:ref:`int<class_int>` **default_value** = ``0`` :ref:`🔗<class_VisualShaderNodeUIntParameter_property_default_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -65,7 +65,7 @@ Default value of this parameter, which will be used if not set externally. :ref:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+:ref:`bool<class_bool>` **default_value_enabled** = ``false`` :ref:`🔗<class_VisualShaderNodeUIntParameter_property_default_value_enabled>`
 
 .. rst-class:: classref-property-setget
 

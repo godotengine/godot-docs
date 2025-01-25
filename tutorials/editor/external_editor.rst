@@ -70,6 +70,11 @@ Some example **Exec Flags** for various editors include:
     For Visual Studio, you will have to open the solution file ``.sln``
     manually to get access to the IDE features. Additionally, it will not go to a specific line.
 
+Automatically reloading your changes
+------------------------------------
+To have the Godot Editor automatically reload any script that has been changed by an external text editor,
+enable **Editor > Editor Settings > Text Editor > Behavior > Auto Reload Scripts on External Change**.
+
 Using External Editor in Debugger
 ---------------------------------
 
@@ -94,7 +99,7 @@ To use these protocols, a Godot instance must be running on your current project
 Below are some configuration steps for specific editors:
 
 Visual Studio Code
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 You need to install the official `Visual Studio Code plugin <https://github.com/godotengine/godot-vscode-plugin>`_.
 
@@ -121,7 +126,6 @@ For **DAP**, specify the ``debugServer`` property in your ``launch.json`` file:
     }
 
 Emacs
-^^^^^
+~~~~~
 
 Check the official instructions to configure `LSP <https://github.com/godotengine/emacs-gdscript-mode#auto-completion-with-the-language-server-protocol-lsp>`_, and `DAP <https://github.com/godotengine/emacs-gdscript-mode#using-the-debugger>`_.
-

@@ -17,7 +17,7 @@ your project, you need to try it out for yourself and
 understand its design and limitations.
 
 Please watch
-`Godot explained in 5 minutes <https://www.youtube.com/watch?v=KjX5llYZ5eQ>`_
+`Godot explained in 7 minutes <https://www.youtube.com/watch?v=yS9cuu5o5Ug>`_
 if you're looking for an overview of the engine's features.
 
 Object-oriented design and composition
@@ -132,7 +132,7 @@ that drive the core updates. New features from the core developers often
 focus on what will benefit the most users first.
 
 That said, although a handful of core developers work on it full-time,
-the project has over 600 contributors at the time of writing. Benevolent
+the project has thousands of contributors at the time of writing. Benevolent
 programmers work on features they may need themselves, so you'll see
 improvements in all corners of the engine at the same time in every
 major release.

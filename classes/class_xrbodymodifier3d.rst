@@ -12,7 +12,7 @@ XRBodyModifier3D
 
 **Experimental:** This class may be changed or removed in future versions.
 
-**Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node for driving body meshes from :ref:`XRBodyTracker<class_XRBodyTracker>` data.
 
@@ -21,9 +21,9 @@ A node for driving body meshes from :ref:`XRBodyTracker<class_XRBodyTracker>` da
 Description
 -----------
 
-This node uses body tracking data from a :ref:`XRBodyTracker<class_XRBodyTracker>` to animate the skeleton of a body mesh.
+This node uses body tracking data from an :ref:`XRBodyTracker<class_XRBodyTracker>` to pose the skeleton of a body mesh.
 
-This node positions itself at the :ref:`XRBodyTracker.JOINT_ROOT<class_XRBodyTracker_constant_JOINT_ROOT>` position and scales itself to :ref:`XRServer.world_scale<class_XRServer_property_world_scale>`. Adding the body model as a child of this node will result in the model being positioned and scaled correctly for XR experiences.
+Positioning of the body is performed by creating an :ref:`XRNode3D<class_XRNode3D>` ancestor of the body mesh driven by the same :ref:`XRBodyTracker<class_XRBodyTracker>`.
 
 The body tracking position-data is scaled by :ref:`Skeleton3D.motion_scale<class_Skeleton3D_property_motion_scale>` when applied to the skeleton, which can be used to adjust the tracked body to match the scale of the body model.
 
@@ -42,17 +42,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
-   | :ref:`StringName<class_StringName>`                               | :ref:`body_tracker<class_XRBodyModifier3D_property_body_tracker>`           | ``&"/user/body"`` |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
-   | |bitfield|\[:ref:`BodyUpdate<enum_XRBodyModifier3D_BodyUpdate>`\] | :ref:`body_update<class_XRBodyModifier3D_property_body_update>`             | ``7``             |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
-   | :ref:`BoneUpdate<enum_XRBodyModifier3D_BoneUpdate>`               | :ref:`bone_update<class_XRBodyModifier3D_property_bone_update>`             | ``0``             |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`show_when_tracked<class_XRBodyModifier3D_property_show_when_tracked>` | ``true``          |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                                   | :ref:`target<class_XRBodyModifier3D_property_target>`                       | ``NodePath("")``  |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+---------------------------+
+   | :ref:`StringName<class_StringName>`                               | :ref:`body_tracker<class_XRBodyModifier3D_property_body_tracker>` | ``&"/user/body_tracker"`` |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+---------------------------+
+   | |bitfield|\[:ref:`BodyUpdate<enum_XRBodyModifier3D_BodyUpdate>`\] | :ref:`body_update<class_XRBodyModifier3D_property_body_update>`   | ``7``                     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+---------------------------+
+   | :ref:`BoneUpdate<enum_XRBodyModifier3D_BoneUpdate>`               | :ref:`bone_update<class_XRBodyModifier3D_property_bone_update>`   | ``0``                     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+---------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -67,7 +63,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-flags **BodyUpdate**:
+flags **BodyUpdate**: :ref:`🔗<enum_XRBodyModifier3D_BodyUpdate>`
 
 .. _class_XRBodyModifier3D_constant_BODY_UPDATE_UPPER_BODY:
 
@@ -101,7 +97,7 @@ The skeleton's hand joints are updated.
 
 .. rst-class:: classref-enumeration
 
-enum **BoneUpdate**:
+enum **BoneUpdate**: :ref:`🔗<enum_XRBodyModifier3D_BoneUpdate>`
 
 .. _class_XRBodyModifier3D_constant_BONE_UPDATE_FULL:
 
@@ -140,7 +136,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **body_tracker** = ``&"/user/body"``
+:ref:`StringName<class_StringName>` **body_tracker** = ``&"/user/body_tracker"`` :ref:`🔗<class_XRBodyModifier3D_property_body_tracker>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +153,7 @@ The name of the :ref:`XRBodyTracker<class_XRBodyTracker>` registered with :ref:`
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`BodyUpdate<enum_XRBodyModifier3D_BodyUpdate>`\] **body_update** = ``7``
+|bitfield|\[:ref:`BodyUpdate<enum_XRBodyModifier3D_BodyUpdate>`\] **body_update** = ``7`` :ref:`🔗<class_XRBodyModifier3D_property_body_update>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +170,7 @@ Specifies the body parts to update.
 
 .. rst-class:: classref-property
 
-:ref:`BoneUpdate<enum_XRBodyModifier3D_BoneUpdate>` **bone_update** = ``0``
+:ref:`BoneUpdate<enum_XRBodyModifier3D_BoneUpdate>` **bone_update** = ``0`` :ref:`🔗<class_XRBodyModifier3D_property_bone_update>`
 
 .. rst-class:: classref-property-setget
 
@@ -182,40 +178,6 @@ Specifies the body parts to update.
 - :ref:`BoneUpdate<enum_XRBodyModifier3D_BoneUpdate>` **get_bone_update**\ (\ )
 
 Specifies the type of updates to perform on the bones.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRBodyModifier3D_property_show_when_tracked:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **show_when_tracked** = ``true``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_show_when_tracked**\ (\ value\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **get_show_when_tracked**\ (\ )
-
-If true then the nodes visibility is determined by whether tracking data is available.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRBodyModifier3D_property_target:
-
-.. rst-class:: classref-property
-
-:ref:`NodePath<class_NodePath>` **target** = ``NodePath("")``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_target**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
-- :ref:`NodePath<class_NodePath>` **get_target**\ (\ )
-
-A :ref:`NodePath<class_NodePath>` to a :ref:`Skeleton3D<class_Skeleton3D>` to animate.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

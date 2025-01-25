@@ -50,7 +50,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Qualifier**:
+enum **Qualifier**: :ref:`🔗<enum_VisualShaderNodeParameter_Qualifier>`
 
 .. _class_VisualShaderNodeParameter_constant_QUAL_NONE:
 
@@ -97,7 +97,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **parameter_name** = ``""``
+:ref:`String<class_String>` **parameter_name** = ``""`` :ref:`🔗<class_VisualShaderNodeParameter_property_parameter_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -114,7 +114,7 @@ Name of the parameter, by which it can be accessed through the :ref:`ShaderMater
 
 .. rst-class:: classref-property
 
-:ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **qualifier** = ``0``
+:ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **qualifier** = ``0`` :ref:`🔗<class_VisualShaderNodeParameter_property_qualifier>`
 
 .. rst-class:: classref-property-setget
 

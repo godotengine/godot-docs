@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ActionType**:
+enum **ActionType**: :ref:`🔗<enum_OpenXRAction_ActionType>`
 
 .. _class_OpenXRAction_constant_OPENXR_ACTION_BOOL:
 
@@ -107,7 +107,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ActionType<enum_OpenXRAction_ActionType>` **action_type** = ``1``
+:ref:`ActionType<enum_OpenXRAction_ActionType>` **action_type** = ``1`` :ref:`🔗<class_OpenXRAction_property_action_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -124,7 +124,7 @@ The type of action.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **localized_name** = ``""``
+:ref:`String<class_String>` **localized_name** = ``""`` :ref:`🔗<class_OpenXRAction_property_localized_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -141,7 +141,7 @@ The localized description of this action.
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **toplevel_paths** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **toplevel_paths** = ``PackedStringArray()`` :ref:`🔗<class_OpenXRAction_property_toplevel_paths>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,6 +149,8 @@ The localized description of this action.
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_toplevel_paths**\ (\ )
 
 A collections of toplevel paths to which this action can be bound.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

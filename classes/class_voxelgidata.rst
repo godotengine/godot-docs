@@ -28,7 +28,7 @@ Description
 Tutorials
 ---------
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -91,7 +91,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bias** = ``1.5``
+:ref:`float<class_float>` **bias** = ``1.5`` :ref:`🔗<class_VoxelGIData_property_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -108,7 +108,7 @@ The normal bias to use for indirect lighting and reflections. Higher values redu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **dynamic_range** = ``2.0``
+:ref:`float<class_float>` **dynamic_range** = ``2.0`` :ref:`🔗<class_VoxelGIData_property_dynamic_range>`
 
 .. rst-class:: classref-property-setget
 
@@ -125,7 +125,7 @@ The dynamic range to use (``1.0`` represents a low dynamic range scene brightnes
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **energy** = ``1.0``
+:ref:`float<class_float>` **energy** = ``1.0`` :ref:`🔗<class_VoxelGIData_property_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -142,7 +142,7 @@ The energy of the indirect lighting and reflections produced by the :ref:`VoxelG
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interior** = ``false``
+:ref:`bool<class_bool>` **interior** = ``false`` :ref:`🔗<class_VoxelGIData_property_interior>`
 
 .. rst-class:: classref-property-setget
 
@@ -159,7 +159,7 @@ If ``true``, :ref:`Environment<class_Environment>` lighting is ignored by the :r
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **normal_bias** = ``0.0``
+:ref:`float<class_float>` **normal_bias** = ``0.0`` :ref:`🔗<class_VoxelGIData_property_normal_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +176,7 @@ The normal bias to use for indirect lighting and reflections. Higher values redu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **propagation** = ``0.5``
+:ref:`float<class_float>` **propagation** = ``0.5`` :ref:`🔗<class_VoxelGIData_property_propagation>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +193,7 @@ The multiplier to use when light bounces off a surface. Higher values result in 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_two_bounces** = ``true``
+:ref:`bool<class_bool>` **use_two_bounces** = ``true`` :ref:`🔗<class_VoxelGIData_property_use_two_bounces>`
 
 .. rst-class:: classref-property-setget
 
@@ -215,7 +215,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **allocate**\ (\ to_cell_xform\: :ref:`Transform3D<class_Transform3D>`, aabb\: :ref:`AABB<class_AABB>`, octree_size\: :ref:`Vector3<class_Vector3>`, octree_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, data_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, distance_field\: :ref:`PackedByteArray<class_PackedByteArray>`, level_counts\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+|void| **allocate**\ (\ to_cell_xform\: :ref:`Transform3D<class_Transform3D>`, aabb\: :ref:`AABB<class_AABB>`, octree_size\: :ref:`Vector3<class_Vector3>`, octree_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, data_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, distance_field\: :ref:`PackedByteArray<class_PackedByteArray>`, level_counts\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_VoxelGIData_method_allocate>`
 
 .. container:: contribute
 
@@ -229,7 +229,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AABB<class_AABB>` **get_bounds**\ (\ ) |const|
+:ref:`AABB<class_AABB>` **get_bounds**\ (\ ) |const| :ref:`🔗<class_VoxelGIData_method_get_bounds>`
 
 Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which should match :ref:`VoxelGI.size<class_VoxelGI_property_size>` after being baked (which only contains the size as a :ref:`Vector3<class_Vector3>`).
 
@@ -243,7 +243,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_data_cells**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_data_cells**\ (\ ) |const| :ref:`🔗<class_VoxelGIData_method_get_data_cells>`
 
 .. container:: contribute
 
@@ -257,7 +257,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_level_counts**\ (\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_level_counts**\ (\ ) |const| :ref:`🔗<class_VoxelGIData_method_get_level_counts>`
 
 .. container:: contribute
 
@@ -271,7 +271,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_octree_cells**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_octree_cells**\ (\ ) |const| :ref:`🔗<class_VoxelGIData_method_get_octree_cells>`
 
 .. container:: contribute
 
@@ -285,7 +285,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_octree_size**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_octree_size**\ (\ ) |const| :ref:`🔗<class_VoxelGIData_method_get_octree_size>`
 
 .. container:: contribute
 
@@ -299,7 +299,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_to_cell_xform**\ (\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_to_cell_xform**\ (\ ) |const| :ref:`🔗<class_VoxelGIData_method_get_to_cell_xform>`
 
 .. container:: contribute
 

@@ -81,7 +81,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **buffer_length** = ``0.1``
+:ref:`float<class_float>` **buffer_length** = ``0.1`` :ref:`🔗<class_AudioEffectCapture_property_buffer_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -103,7 +103,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **can_get_buffer**\ (\ frames\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **can_get_buffer**\ (\ frames\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioEffectCapture_method_can_get_buffer>`
 
 Returns ``true`` if at least ``frames`` audio frames are available to read in the internal ring buffer.
 
@@ -115,7 +115,7 @@ Returns ``true`` if at least ``frames`` audio frames are available to read in th
 
 .. rst-class:: classref-method
 
-|void| **clear_buffer**\ (\ )
+|void| **clear_buffer**\ (\ ) :ref:`🔗<class_AudioEffectCapture_method_clear_buffer>`
 
 Clears the internal ring buffer.
 
@@ -129,7 +129,7 @@ Clears the internal ring buffer.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **get_buffer**\ (\ frames\: :ref:`int<class_int>`\ )
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_buffer**\ (\ frames\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioEffectCapture_method_get_buffer>`
 
 Gets the next ``frames`` audio samples from the internal ring buffer.
 
@@ -145,7 +145,7 @@ The samples are signed floating-point PCM between ``-1`` and ``1``. You will hav
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_buffer_length_frames**\ (\ ) |const|
+:ref:`int<class_int>` **get_buffer_length_frames**\ (\ ) |const| :ref:`🔗<class_AudioEffectCapture_method_get_buffer_length_frames>`
 
 Returns the total size of the internal ring buffer in frames.
 
@@ -157,7 +157,7 @@ Returns the total size of the internal ring buffer in frames.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_discarded_frames**\ (\ ) |const|
+:ref:`int<class_int>` **get_discarded_frames**\ (\ ) |const| :ref:`🔗<class_AudioEffectCapture_method_get_discarded_frames>`
 
 Returns the number of audio frames discarded from the audio bus due to full buffer.
 
@@ -169,7 +169,7 @@ Returns the number of audio frames discarded from the audio bus due to full buff
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_frames_available**\ (\ ) |const|
+:ref:`int<class_int>` **get_frames_available**\ (\ ) |const| :ref:`🔗<class_AudioEffectCapture_method_get_frames_available>`
 
 Returns the number of frames available to read using :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>`.
 
@@ -181,7 +181,7 @@ Returns the number of frames available to read using :ref:`get_buffer<class_Audi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_pushed_frames**\ (\ ) |const|
+:ref:`int<class_int>` **get_pushed_frames**\ (\ ) |const| :ref:`🔗<class_AudioEffectCapture_method_get_pushed_frames>`
 
 Returns the number of audio frames inserted from the audio bus.
 

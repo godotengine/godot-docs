@@ -13,7 +13,9 @@
 TileMap
 =======
 
-**Inherits:** :ref:`TileMapLayerGroup<class_TileMapLayerGroup>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Deprecated:** Use multiple :ref:`TileMapLayer<class_TileMapLayer>` nodes instead. To convert a TileMap to a set of TileMapLayer nodes, open the TileMap bottom panel with the node selected, click the toolbox icon in the top-right corner and choose 'Extract TileMap layers as individual TileMapLayer nodes'.
+
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Node for 2D tile-based maps.
 
@@ -35,17 +37,19 @@ Tutorials
 
 - :doc:`Using Tilemaps <../tutorials/2d/using_tilemaps>`
 
-- `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`__
+- `2D Platformer Demo <https://godotengine.org/asset-library/asset/2727>`__
 
-- `2D Isometric Demo <https://godotengine.org/asset-library/asset/112>`__
+- `2D Isometric Demo <https://godotengine.org/asset-library/asset/2718>`__
 
-- `2D Hexagonal Demo <https://godotengine.org/asset-library/asset/111>`__
+- `2D Hexagonal Demo <https://godotengine.org/asset-library/asset/2717>`__
 
-- `2D Navigation Astar Demo <https://godotengine.org/asset-library/asset/519>`__
+- `2D Grid-based Navigation with AStarGrid2D Demo <https://godotengine.org/asset-library/asset/2723>`__
 
-- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
+- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
 
-- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
+
+- `2D Dynamic TileMap Layers Demo <https://godotengine.org/asset-library/asset/2713>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -63,6 +67,8 @@ Properties
    | :ref:`VisibilityMode<enum_TileMap_VisibilityMode>` | :ref:`navigation_visibility_mode<class_TileMap_property_navigation_visibility_mode>` | ``0``     |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                              | :ref:`rendering_quadrant_size<class_TileMap_property_rendering_quadrant_size>`       | ``16``    |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
+   | :ref:`TileSet<class_TileSet>`                      | :ref:`tile_set<class_TileMap_property_tile_set>`                                     |           |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
@@ -128,6 +134,12 @@ Methods
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2i<class_Rect2i>`                                  | :ref:`get_used_rect<class_TileMap_method_get_used_rect>`\ (\ ) |const|                                                                                                                                                                                                                                                    |
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_cell_flipped_h<class_TileMap_method_is_cell_flipped_h>`\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                    |
+   +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_cell_flipped_v<class_TileMap_method_is_cell_flipped_v>`\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                    |
+   +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_cell_transposed<class_TileMap_method_is_cell_transposed>`\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                  |
+   +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_layer_enabled<class_TileMap_method_is_layer_enabled>`\ (\ layer\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                               |
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_layer_navigation_enabled<class_TileMap_method_is_layer_navigation_enabled>`\ (\ layer\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                         |
@@ -188,7 +200,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**changed**\ (\ )
+**changed**\ (\ ) :ref:`🔗<class_TileMap_signal_changed>`
 
 Emitted when the :ref:`TileSet<class_TileSet>` of this TileMap changes.
 
@@ -205,7 +217,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **VisibilityMode**:
+enum **VisibilityMode**: :ref:`🔗<enum_TileMap_VisibilityMode>`
 
 .. _class_TileMap_constant_VISIBILITY_MODE_DEFAULT:
 
@@ -244,7 +256,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collision_animatable** = ``false``
+:ref:`bool<class_bool>` **collision_animatable** = ``false`` :ref:`🔗<class_TileMap_property_collision_animatable>`
 
 .. rst-class:: classref-property-setget
 
@@ -263,7 +275,7 @@ If enabled, the TileMap will see its collisions synced to the physics tick and c
 
 .. rst-class:: classref-property
 
-:ref:`VisibilityMode<enum_TileMap_VisibilityMode>` **collision_visibility_mode** = ``0``
+:ref:`VisibilityMode<enum_TileMap_VisibilityMode>` **collision_visibility_mode** = ``0`` :ref:`🔗<class_TileMap_property_collision_visibility_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -280,7 +292,7 @@ Show or hide the TileMap's collision shapes. If set to :ref:`VISIBILITY_MODE_DEF
 
 .. rst-class:: classref-property
 
-:ref:`VisibilityMode<enum_TileMap_VisibilityMode>` **navigation_visibility_mode** = ``0``
+:ref:`VisibilityMode<enum_TileMap_VisibilityMode>` **navigation_visibility_mode** = ``0`` :ref:`🔗<class_TileMap_property_navigation_visibility_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -297,18 +309,35 @@ Show or hide the TileMap's navigation meshes. If set to :ref:`VISIBILITY_MODE_DE
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering_quadrant_size** = ``16``
+:ref:`int<class_int>` **rendering_quadrant_size** = ``16`` :ref:`🔗<class_TileMap_property_rendering_quadrant_size>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_rendering_quadrant_size**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_rendering_quadrant_size**\ (\ )
 
-The TileMap's quadrant size. A quadrant is a group of tiles to be drawn together on a single canvas item, for optimization purposes. :ref:`rendering_quadrant_size<class_TileMap_property_rendering_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quandrant size groups together ``16 * 16 = 256`` tiles.
+The TileMap's quadrant size. A quadrant is a group of tiles to be drawn together on a single canvas item, for optimization purposes. :ref:`rendering_quadrant_size<class_TileMap_property_rendering_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quadrant size groups together ``16 * 16 = 256`` tiles.
 
-The quadrant size does not apply on Y-sorted layers, as tiles are be grouped by Y position instead in that case.
+The quadrant size does not apply on Y-sorted layers, as tiles are grouped by Y position instead in that case.
 
 \ **Note:** As quadrants are created according to the map's coordinate system, the quadrant's "square shape" might not look like square in the TileMap's local coordinate system.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_property_tile_set:
+
+.. rst-class:: classref-property
+
+:ref:`TileSet<class_TileSet>` **tile_set** :ref:`🔗<class_TileMap_property_tile_set>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_tileset**\ (\ value\: :ref:`TileSet<class_TileSet>`\ )
+- :ref:`TileSet<class_TileSet>` **get_tileset**\ (\ )
+
+The :ref:`TileSet<class_TileSet>` used by this **TileMap**. The textures, collisions, and additional behavior of all available tiles are stored here.
 
 .. rst-class:: classref-section-separator
 
@@ -323,7 +352,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_tile_data_runtime_update**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, tile_data\: :ref:`TileData<class_TileData>`\ ) |virtual|
+|void| **_tile_data_runtime_update**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, tile_data\: :ref:`TileData<class_TileData>`\ ) |virtual| :ref:`🔗<class_TileMap_private_method__tile_data_runtime_update>`
 
 Called with a TileData object about to be used internally by the TileMap, allowing its modification at runtime.
 
@@ -341,7 +370,7 @@ This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_use_tile_data_runtime_update**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual|
+:ref:`bool<class_bool>` **_use_tile_data_runtime_update**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual| :ref:`🔗<class_TileMap_private_method__use_tile_data_runtime_update>`
 
 Should return ``true`` if the tile at coordinates ``coords`` on layer ``layer`` requires a runtime update.
 
@@ -357,7 +386,7 @@ Should return ``true`` if the tile at coordinates ``coords`` on layer ``layer`` 
 
 .. rst-class:: classref-method
 
-|void| **add_layer**\ (\ to_position\: :ref:`int<class_int>`\ )
+|void| **add_layer**\ (\ to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileMap_method_add_layer>`
 
 Adds a layer at the given position ``to_position`` in the array. If ``to_position`` is negative, the position is counted from the end, with ``-1`` adding the layer at the end of the array.
 
@@ -369,7 +398,7 @@ Adds a layer at the given position ``to_position`` in the array. If ``to_positio
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_TileMap_method_clear>`
 
 Clears all cells.
 
@@ -381,7 +410,7 @@ Clears all cells.
 
 .. rst-class:: classref-method
 
-|void| **clear_layer**\ (\ layer\: :ref:`int<class_int>`\ )
+|void| **clear_layer**\ (\ layer\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileMap_method_clear_layer>`
 
 Clears all cells on the given layer.
 
@@ -395,7 +424,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **erase_cell**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **erase_cell**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileMap_method_erase_cell>`
 
 Erases the cell on layer ``layer`` at coordinates ``coords``.
 
@@ -409,7 +438,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **fix_invalid_tiles**\ (\ )
+|void| **fix_invalid_tiles**\ (\ ) :ref:`🔗<class_TileMap_method_fix_invalid_tiles>`
 
 Clears cells that do not exist in the tileset.
 
@@ -421,7 +450,7 @@ Clears cells that do not exist in the tileset.
 
 .. rst-class:: classref-method
 
-|void| **force_update**\ (\ layer\: :ref:`int<class_int>` = -1\ )
+|void| **force_update**\ (\ layer\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileMap_method_force_update>`
 
 **Deprecated:** Use :ref:`notify_runtime_tile_data_update<class_TileMap_method_notify_runtime_tile_data_update>` and/or :ref:`update_internals<class_TileMap_method_update_internals>` instead.
 
@@ -435,9 +464,11 @@ Forces the TileMap and the layer ``layer`` to update.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_cell_alternative_tile**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`int<class_int>` **get_cell_alternative_tile**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_get_cell_alternative_tile>`
 
-Returns the tile alternative ID of the cell on layer ``layer`` at ``coords``. If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+Returns the tile alternative ID of the cell on layer ``layer`` at ``coords``.
+
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
@@ -449,11 +480,11 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_cell_atlas_coords**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_cell_atlas_coords**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_get_cell_atlas_coords>`
 
 Returns the tile atlas coordinates ID of the cell on layer ``layer`` at coordinates ``coords``. Returns ``Vector2i(-1, -1)`` if the cell does not exist.
 
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw atlas coordinate identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
@@ -465,11 +496,11 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_cell_source_id**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`int<class_int>` **get_cell_source_id**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_get_cell_source_id>`
 
 Returns the tile source ID of the cell on layer ``layer`` at coordinates ``coords``. Returns ``-1`` if the cell does not exist.
 
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw source identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
@@ -481,13 +512,11 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`TileData<class_TileData>` **get_cell_tile_data**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`TileData<class_TileData>` **get_cell_tile_data**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_get_cell_tile_data>`
 
 Returns the :ref:`TileData<class_TileData>` object associated with the given cell, or ``null`` if the cell does not exist or is not a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`.
 
 If ``layer`` is negative, the layers are accessed from the last one.
-
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 ::
 
@@ -499,6 +528,8 @@ If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s til
         else:
             return 0
 
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -507,7 +538,7 @@ If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s til
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_coords_for_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ )
+:ref:`Vector2i<class_Vector2i>` **get_coords_for_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_TileMap_method_get_coords_for_body_rid>`
 
 Returns the coordinates of the tile for given physics body RID. Such RID can be retrieved from :ref:`KinematicCollision2D.get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
 
@@ -519,7 +550,7 @@ Returns the coordinates of the tile for given physics body RID. Such RID can be 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_layer_for_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ )
+:ref:`int<class_int>` **get_layer_for_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_TileMap_method_get_layer_for_body_rid>`
 
 Returns the tilemap layer of the tile for given physics body RID. Such RID can be retrieved from :ref:`KinematicCollision2D.get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
 
@@ -531,7 +562,7 @@ Returns the tilemap layer of the tile for given physics body RID. Such RID can b
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_layer_modulate**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_layer_modulate**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_get_layer_modulate>`
 
 Returns a TileMap layer's modulate.
 
@@ -545,7 +576,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_layer_name**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_layer_name**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_get_layer_name>`
 
 Returns a TileMap layer's name.
 
@@ -559,7 +590,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_layer_navigation_map**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`RID<class_RID>` **get_layer_navigation_map**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_get_layer_navigation_map>`
 
 Returns the :ref:`RID<class_RID>` of the :ref:`NavigationServer2D<class_NavigationServer2D>` navigation map assigned to the specified TileMap layer ``layer``.
 
@@ -577,7 +608,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_layer_y_sort_origin**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_layer_y_sort_origin**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_get_layer_y_sort_origin>`
 
 Returns a TileMap layer's Y sort origin.
 
@@ -591,7 +622,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_layer_z_index**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_layer_z_index**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_get_layer_z_index>`
 
 Returns a TileMap layer's Z-index value.
 
@@ -605,7 +636,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_layers_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_layers_count**\ (\ ) |const| :ref:`🔗<class_TileMap_method_get_layers_count>`
 
 Returns the number of layers in the TileMap.
 
@@ -617,7 +648,7 @@ Returns the number of layers in the TileMap.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_navigation_map**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`RID<class_RID>` **get_navigation_map**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_get_navigation_map>`
 
 **Deprecated:** Use :ref:`get_layer_navigation_map<class_TileMap_method_get_layer_navigation_map>` instead.
 
@@ -631,7 +662,7 @@ Returns the :ref:`RID<class_RID>` of the :ref:`NavigationServer2D<class_Navigati
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_neighbor_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, neighbor\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_neighbor_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, neighbor\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const| :ref:`🔗<class_TileMap_method_get_neighbor_cell>`
 
 Returns the neighboring cell to the one at coordinates ``coords``, identified by the ``neighbor`` direction. This method takes into account the different layouts a TileMap can take.
 
@@ -643,7 +674,7 @@ Returns the neighboring cell to the one at coordinates ``coords``, identified by
 
 .. rst-class:: classref-method
 
-:ref:`TileMapPattern<class_TileMapPattern>` **get_pattern**\ (\ layer\: :ref:`int<class_int>`, coords_array\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\]\ )
+:ref:`TileMapPattern<class_TileMapPattern>` **get_pattern**\ (\ layer\: :ref:`int<class_int>`, coords_array\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\]\ ) :ref:`🔗<class_TileMap_method_get_pattern>`
 
 Creates a new :ref:`TileMapPattern<class_TileMapPattern>` from the given layer and set of cells.
 
@@ -657,7 +688,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_surrounding_cells**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ )
+:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_surrounding_cells**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileMap_method_get_surrounding_cells>`
 
 Returns the list of all neighbourings cells to the one at ``coords``.
 
@@ -669,7 +700,7 @@ Returns the list of all neighbourings cells to the one at ``coords``.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_used_cells**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_used_cells**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_get_used_cells>`
 
 Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells containing a tile in the given layer. A cell is considered empty if its source identifier equals -1, its atlas coordinates identifiers is ``Vector2(-1, -1)`` and its alternative identifier is -1.
 
@@ -683,7 +714,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_used_cells_by_id**\ (\ layer\: :ref:`int<class_int>`, source_id\: :ref:`int<class_int>` = -1, atlas_coords\: :ref:`Vector2i<class_Vector2i>` = Vector2i(-1, -1), alternative_tile\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_used_cells_by_id**\ (\ layer\: :ref:`int<class_int>`, source_id\: :ref:`int<class_int>` = -1, atlas_coords\: :ref:`Vector2i<class_Vector2i>` = Vector2i(-1, -1), alternative_tile\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_TileMap_method_get_used_cells_by_id>`
 
 Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells containing a tile in the given layer. Tiles may be filtered according to their source (``source_id``), their atlas coordinates (``atlas_coords``) or alternative id (``alternative_tile``).
 
@@ -701,9 +732,45 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **get_used_rect**\ (\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **get_used_rect**\ (\ ) |const| :ref:`🔗<class_TileMap_method_get_used_rect>`
 
 Returns a rectangle enclosing the used (non-empty) tiles of the map, including all layers.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_is_cell_flipped_h:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_cell_flipped_h**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_is_cell_flipped_h>`
+
+Returns ``true`` if the cell on layer ``layer`` at coordinates ``coords`` is flipped horizontally. The result is valid only for atlas sources.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_is_cell_flipped_v:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_cell_flipped_v**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_is_cell_flipped_v>`
+
+Returns ``true`` if the cell on layer ``layer`` at coordinates ``coords`` is flipped vertically. The result is valid only for atlas sources.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_is_cell_transposed:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_cell_transposed**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_is_cell_transposed>`
+
+Returns ``true`` if the cell on layer ``layer`` at coordinates ``coords`` is transposed. The result is valid only for atlas sources.
 
 .. rst-class:: classref-item-separator
 
@@ -713,7 +780,7 @@ Returns a rectangle enclosing the used (non-empty) tiles of the map, including a
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_layer_enabled**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_layer_enabled**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_is_layer_enabled>`
 
 Returns if a layer is enabled.
 
@@ -727,7 +794,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_layer_navigation_enabled**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_layer_navigation_enabled**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_is_layer_navigation_enabled>`
 
 Returns if a layer's built-in navigation regions generation is enabled.
 
@@ -739,7 +806,7 @@ Returns if a layer's built-in navigation regions generation is enabled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_layer_y_sort_enabled**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_layer_y_sort_enabled**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileMap_method_is_layer_y_sort_enabled>`
 
 Returns if a layer Y-sorts its tiles.
 
@@ -753,7 +820,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **local_to_map**\ (\ local_position\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **local_to_map**\ (\ local_position\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_TileMap_method_local_to_map>`
 
 Returns the map coordinates of the cell containing the given ``local_position``. If ``local_position`` is in global coordinates, consider using :ref:`Node2D.to_local<class_Node2D_method_to_local>` before passing it to this method. See also :ref:`map_to_local<class_TileMap_method_map_to_local>`.
 
@@ -765,7 +832,7 @@ Returns the map coordinates of the cell containing the given ``local_position``.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **map_pattern**\ (\ position_in_tilemap\: :ref:`Vector2i<class_Vector2i>`, coords_in_pattern\: :ref:`Vector2i<class_Vector2i>`, pattern\: :ref:`TileMapPattern<class_TileMapPattern>`\ )
+:ref:`Vector2i<class_Vector2i>` **map_pattern**\ (\ position_in_tilemap\: :ref:`Vector2i<class_Vector2i>`, coords_in_pattern\: :ref:`Vector2i<class_Vector2i>`, pattern\: :ref:`TileMapPattern<class_TileMapPattern>`\ ) :ref:`🔗<class_TileMap_method_map_pattern>`
 
 Returns for the given coordinate ``coords_in_pattern`` in a :ref:`TileMapPattern<class_TileMapPattern>` the corresponding cell coordinates if the pattern was pasted at the ``position_in_tilemap`` coordinates (see :ref:`set_pattern<class_TileMap_method_set_pattern>`). This mapping is required as in half-offset tile shapes, the mapping might not work by calculating ``position_in_tile_map + coords_in_pattern``.
 
@@ -777,7 +844,7 @@ Returns for the given coordinate ``coords_in_pattern`` in a :ref:`TileMapPattern
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **map_to_local**\ (\ map_position\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **map_to_local**\ (\ map_position\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileMap_method_map_to_local>`
 
 Returns the centered position of a cell in the TileMap's local coordinate space. To convert the returned value into global coordinates, use :ref:`Node2D.to_global<class_Node2D_method_to_global>`. See also :ref:`local_to_map<class_TileMap_method_local_to_map>`.
 
@@ -791,7 +858,7 @@ Returns the centered position of a cell in the TileMap's local coordinate space.
 
 .. rst-class:: classref-method
 
-|void| **move_layer**\ (\ layer\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )
+|void| **move_layer**\ (\ layer\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileMap_method_move_layer>`
 
 Moves the layer at index ``layer`` to the given position ``to_position`` in the array.
 
@@ -803,7 +870,7 @@ Moves the layer at index ``layer`` to the given position ``to_position`` in the 
 
 .. rst-class:: classref-method
 
-|void| **notify_runtime_tile_data_update**\ (\ layer\: :ref:`int<class_int>` = -1\ )
+|void| **notify_runtime_tile_data_update**\ (\ layer\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileMap_method_notify_runtime_tile_data_update>`
 
 Notifies the TileMap node that calls to :ref:`_use_tile_data_runtime_update<class_TileMap_private_method__use_tile_data_runtime_update>` or :ref:`_tile_data_runtime_update<class_TileMap_private_method__tile_data_runtime_update>` will lead to different results. This will thus trigger a TileMap update.
 
@@ -821,7 +888,7 @@ If ``layer`` is provided, only notifies changes for the given layer. Providing t
 
 .. rst-class:: classref-method
 
-|void| **remove_layer**\ (\ layer\: :ref:`int<class_int>`\ )
+|void| **remove_layer**\ (\ layer\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileMap_method_remove_layer>`
 
 Removes the layer at index ``layer``.
 
@@ -833,7 +900,7 @@ Removes the layer at index ``layer``.
 
 .. rst-class:: classref-method
 
-|void| **set_cell**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, source_id\: :ref:`int<class_int>` = -1, atlas_coords\: :ref:`Vector2i<class_Vector2i>` = Vector2i(-1, -1), alternative_tile\: :ref:`int<class_int>` = 0\ )
+|void| **set_cell**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, source_id\: :ref:`int<class_int>` = -1, atlas_coords\: :ref:`Vector2i<class_Vector2i>` = Vector2i(-1, -1), alternative_tile\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TileMap_method_set_cell>`
 
 Sets the tile identifiers for the cell on layer ``layer`` at coordinates ``coords``. Each tile of the :ref:`TileSet<class_TileSet>` is identified using three parts:
 
@@ -855,11 +922,11 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_cells_terrain_connect**\ (\ layer\: :ref:`int<class_int>`, cells\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\], terrain_set\: :ref:`int<class_int>`, terrain\: :ref:`int<class_int>`, ignore_empty_terrains\: :ref:`bool<class_bool>` = true\ )
+|void| **set_cells_terrain_connect**\ (\ layer\: :ref:`int<class_int>`, cells\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\], terrain_set\: :ref:`int<class_int>`, terrain\: :ref:`int<class_int>`, ignore_empty_terrains\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_TileMap_method_set_cells_terrain_connect>`
 
 Update all the cells in the ``cells`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. If an updated cell has the same terrain as one of its neighboring cells, this function tries to join the two. This function might update neighboring tiles if needed to create correct terrain transitions.
 
-If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
+If ``ignore_empty_terrains`` is ``true``, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
@@ -873,11 +940,11 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_cells_terrain_path**\ (\ layer\: :ref:`int<class_int>`, path\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\], terrain_set\: :ref:`int<class_int>`, terrain\: :ref:`int<class_int>`, ignore_empty_terrains\: :ref:`bool<class_bool>` = true\ )
+|void| **set_cells_terrain_path**\ (\ layer\: :ref:`int<class_int>`, path\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\], terrain_set\: :ref:`int<class_int>`, terrain\: :ref:`int<class_int>`, ignore_empty_terrains\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_TileMap_method_set_cells_terrain_path>`
 
 Update all the cells in the ``path`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. The function will also connect two successive cell in the path with the same terrain. This function might update neighboring tiles if needed to create correct terrain transitions.
 
-If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
+If ``ignore_empty_terrains`` is ``true``, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
@@ -891,7 +958,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_layer_enabled**\ (\ layer\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_layer_enabled**\ (\ layer\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TileMap_method_set_layer_enabled>`
 
 Enables or disables the layer ``layer``. A disabled layer is not processed at all (no rendering, no physics, etc.).
 
@@ -905,7 +972,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_layer_modulate**\ (\ layer\: :ref:`int<class_int>`, modulate\: :ref:`Color<class_Color>`\ )
+|void| **set_layer_modulate**\ (\ layer\: :ref:`int<class_int>`, modulate\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_TileMap_method_set_layer_modulate>`
 
 Sets a layer's color. It will be multiplied by tile's color and TileMap's modulate.
 
@@ -919,7 +986,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_layer_name**\ (\ layer\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+|void| **set_layer_name**\ (\ layer\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TileMap_method_set_layer_name>`
 
 Sets a layer's name. This is mostly useful in the editor.
 
@@ -933,7 +1000,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_layer_navigation_enabled**\ (\ layer\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_layer_navigation_enabled**\ (\ layer\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TileMap_method_set_layer_navigation_enabled>`
 
 Enables or disables a layer's built-in navigation regions generation. Disable this if you need to bake navigation regions from a TileMap using a :ref:`NavigationRegion2D<class_NavigationRegion2D>` node.
 
@@ -945,7 +1012,7 @@ Enables or disables a layer's built-in navigation regions generation. Disable th
 
 .. rst-class:: classref-method
 
-|void| **set_layer_navigation_map**\ (\ layer\: :ref:`int<class_int>`, map\: :ref:`RID<class_RID>`\ )
+|void| **set_layer_navigation_map**\ (\ layer\: :ref:`int<class_int>`, map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_TileMap_method_set_layer_navigation_map>`
 
 Assigns ``map`` as a :ref:`NavigationServer2D<class_NavigationServer2D>` navigation map for the specified TileMap layer ``layer``.
 
@@ -963,7 +1030,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_layer_y_sort_enabled**\ (\ layer\: :ref:`int<class_int>`, y_sort_enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_layer_y_sort_enabled**\ (\ layer\: :ref:`int<class_int>`, y_sort_enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TileMap_method_set_layer_y_sort_enabled>`
 
 Enables or disables a layer's Y-sorting. If a layer is Y-sorted, the layer will behave as a CanvasItem node where each of its tile gets Y-sorted.
 
@@ -979,7 +1046,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_layer_y_sort_origin**\ (\ layer\: :ref:`int<class_int>`, y_sort_origin\: :ref:`int<class_int>`\ )
+|void| **set_layer_y_sort_origin**\ (\ layer\: :ref:`int<class_int>`, y_sort_origin\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileMap_method_set_layer_y_sort_origin>`
 
 Sets a layer's Y-sort origin value. This Y-sort origin value is added to each tile's Y-sort origin value.
 
@@ -995,7 +1062,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_layer_z_index**\ (\ layer\: :ref:`int<class_int>`, z_index\: :ref:`int<class_int>`\ )
+|void| **set_layer_z_index**\ (\ layer\: :ref:`int<class_int>`, z_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileMap_method_set_layer_z_index>`
 
 Sets a layers Z-index value. This Z-index is added to each tile's Z-index value.
 
@@ -1009,7 +1076,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **set_navigation_map**\ (\ layer\: :ref:`int<class_int>`, map\: :ref:`RID<class_RID>`\ )
+|void| **set_navigation_map**\ (\ layer\: :ref:`int<class_int>`, map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_TileMap_method_set_navigation_map>`
 
 **Deprecated:** Use :ref:`set_layer_navigation_map<class_TileMap_method_set_layer_navigation_map>` instead.
 
@@ -1023,7 +1090,7 @@ Assigns ``map`` as a :ref:`NavigationServer2D<class_NavigationServer2D>` navigat
 
 .. rst-class:: classref-method
 
-|void| **set_pattern**\ (\ layer\: :ref:`int<class_int>`, position\: :ref:`Vector2i<class_Vector2i>`, pattern\: :ref:`TileMapPattern<class_TileMapPattern>`\ )
+|void| **set_pattern**\ (\ layer\: :ref:`int<class_int>`, position\: :ref:`Vector2i<class_Vector2i>`, pattern\: :ref:`TileMapPattern<class_TileMapPattern>`\ ) :ref:`🔗<class_TileMap_method_set_pattern>`
 
 Paste the given :ref:`TileMapPattern<class_TileMapPattern>` at the given ``position`` and ``layer`` in the tile map.
 
@@ -1037,7 +1104,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 .. rst-class:: classref-method
 
-|void| **update_internals**\ (\ )
+|void| **update_internals**\ (\ ) :ref:`🔗<class_TileMap_method_update_internals>`
 
 Triggers a direct update of the TileMap. Usually, calling this function is not needed, as TileMap node updates automatically when one of its properties or cells is modified.
 

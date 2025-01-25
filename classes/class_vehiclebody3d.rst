@@ -30,7 +30,7 @@ This physics body implements all the physics logic needed to simulate a car. It 
 Tutorials
 ---------
 
-- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/2752>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -63,7 +63,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **brake** = ``0.0``
+:ref:`float<class_float>` **brake** = ``0.0`` :ref:`🔗<class_VehicleBody3D_property_brake>`
 
 .. rst-class:: classref-property-setget
 
@@ -80,7 +80,7 @@ Slows down the vehicle by applying a braking force. The vehicle is only slowed d
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **engine_force** = ``0.0``
+:ref:`float<class_float>` **engine_force** = ``0.0`` :ref:`🔗<class_VehicleBody3D_property_engine_force>`
 
 .. rst-class:: classref-property-setget
 
@@ -101,7 +101,7 @@ A negative value will result in the vehicle reversing.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **steering** = ``0.0``
+:ref:`float<class_float>` **steering** = ``0.0`` :ref:`🔗<class_VehicleBody3D_property_steering>`
 
 .. rst-class:: classref-property-setget
 

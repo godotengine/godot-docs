@@ -28,7 +28,7 @@ A widget that provides an interface for selecting or modifying a color. It can o
 Tutorials
 ---------
 
-- `Tween Demo <https://godotengine.org/asset-library/asset/146>`__
+- `Tween Interpolation Demo <https://godotengine.org/asset-library/asset/2733>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -111,15 +111,17 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                               |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`color_okhsl_hue<class_ColorPicker_theme_icon_color_okhsl_hue>`                   |         |
-   +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`expanded_arrow<class_ColorPicker_theme_icon_expanded_arrow>`                     |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_arrow<class_ColorPicker_theme_icon_folded_arrow>`                         |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`menu_option<class_ColorPicker_theme_icon_menu_option>`                           |         |
+   +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`overbright_indicator<class_ColorPicker_theme_icon_overbright_indicator>`         |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`picker_cursor<class_ColorPicker_theme_icon_picker_cursor>`                       |         |
+   +-----------------------------------+----------------------------------------------------------------------------------------+---------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`picker_cursor_bg<class_ColorPicker_theme_icon_picker_cursor_bg>`                 |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`sample_bg<class_ColorPicker_theme_icon_sample_bg>`                               |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
@@ -147,7 +149,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**color_changed**\ (\ color\: :ref:`Color<class_Color>`\ )
+**color_changed**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ColorPicker_signal_color_changed>`
 
 Emitted when the color is changed.
 
@@ -159,7 +161,7 @@ Emitted when the color is changed.
 
 .. rst-class:: classref-signal
 
-**preset_added**\ (\ color\: :ref:`Color<class_Color>`\ )
+**preset_added**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ColorPicker_signal_preset_added>`
 
 Emitted when a preset is added.
 
@@ -171,7 +173,7 @@ Emitted when a preset is added.
 
 .. rst-class:: classref-signal
 
-**preset_removed**\ (\ color\: :ref:`Color<class_Color>`\ )
+**preset_removed**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ColorPicker_signal_preset_removed>`
 
 Emitted when a preset is removed.
 
@@ -188,7 +190,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ColorModeType**:
+enum **ColorModeType**: :ref:`🔗<enum_ColorPicker_ColorModeType>`
 
 .. _class_ColorPicker_constant_MODE_RGB:
 
@@ -234,7 +236,7 @@ OKHSL is a new color space similar to HSL but that better match perception by le
 
 .. rst-class:: classref-enumeration
 
-enum **PickerShapeType**:
+enum **PickerShapeType**: :ref:`🔗<enum_ColorPicker_PickerShapeType>`
 
 .. _class_ColorPicker_constant_SHAPE_HSV_RECTANGLE:
 
@@ -289,7 +291,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **can_add_swatches** = ``true``
+:ref:`bool<class_bool>` **can_add_swatches** = ``true`` :ref:`🔗<class_ColorPicker_property_can_add_swatches>`
 
 .. rst-class:: classref-property-setget
 
@@ -306,7 +308,7 @@ If ``true``, it's possible to add presets under Swatches. If ``false``, the butt
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_ColorPicker_property_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -323,7 +325,7 @@ The currently selected color.
 
 .. rst-class:: classref-property
 
-:ref:`ColorModeType<enum_ColorPicker_ColorModeType>` **color_mode** = ``0``
+:ref:`ColorModeType<enum_ColorPicker_ColorModeType>` **color_mode** = ``0`` :ref:`🔗<class_ColorPicker_property_color_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -340,7 +342,7 @@ The currently selected color mode. See :ref:`ColorModeType<enum_ColorPicker_Colo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **color_modes_visible** = ``true``
+:ref:`bool<class_bool>` **color_modes_visible** = ``true`` :ref:`🔗<class_ColorPicker_property_color_modes_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -357,7 +359,7 @@ If ``true``, the color mode buttons are visible.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **deferred_mode** = ``false``
+:ref:`bool<class_bool>` **deferred_mode** = ``false`` :ref:`🔗<class_ColorPicker_property_deferred_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -374,7 +376,7 @@ If ``true``, the color will apply only after the user releases the mouse button,
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **edit_alpha** = ``true``
+:ref:`bool<class_bool>` **edit_alpha** = ``true`` :ref:`🔗<class_ColorPicker_property_edit_alpha>`
 
 .. rst-class:: classref-property-setget
 
@@ -391,7 +393,7 @@ If ``true``, shows an alpha channel slider (opacity).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hex_visible** = ``true``
+:ref:`bool<class_bool>` **hex_visible** = ``true`` :ref:`🔗<class_ColorPicker_property_hex_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -408,7 +410,7 @@ If ``true``, the hex color code input field is visible.
 
 .. rst-class:: classref-property
 
-:ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` **picker_shape** = ``0``
+:ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` **picker_shape** = ``0`` :ref:`🔗<class_ColorPicker_property_picker_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -425,7 +427,7 @@ The shape of the color space view. See :ref:`PickerShapeType<enum_ColorPicker_Pi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **presets_visible** = ``true``
+:ref:`bool<class_bool>` **presets_visible** = ``true`` :ref:`🔗<class_ColorPicker_property_presets_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -442,7 +444,7 @@ If ``true``, the Swatches and Recent Colors presets are visible.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sampler_visible** = ``true``
+:ref:`bool<class_bool>` **sampler_visible** = ``true`` :ref:`🔗<class_ColorPicker_property_sampler_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -459,7 +461,7 @@ If ``true``, the color sampler and color preview are visible.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sliders_visible** = ``true``
+:ref:`bool<class_bool>` **sliders_visible** = ``true`` :ref:`🔗<class_ColorPicker_property_sliders_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -481,7 +483,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_preset**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **add_preset**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ColorPicker_method_add_preset>`
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them.
 
@@ -495,7 +497,7 @@ Adds the given color to a list of color presets. The presets are displayed in th
 
 .. rst-class:: classref-method
 
-|void| **add_recent_preset**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **add_recent_preset**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ColorPicker_method_add_recent_preset>`
 
 Adds the given color to a list of color recent presets so that it can be picked later. Recent presets are the colors that were picked recently, a new preset is automatically created and added to recent presets when you pick a new color.
 
@@ -509,7 +511,7 @@ Adds the given color to a list of color recent presets so that it can be picked 
 
 .. rst-class:: classref-method
 
-|void| **erase_preset**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **erase_preset**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ColorPicker_method_erase_preset>`
 
 Removes the given color from the list of color presets of this color picker.
 
@@ -521,7 +523,7 @@ Removes the given color from the list of color presets of this color picker.
 
 .. rst-class:: classref-method
 
-|void| **erase_recent_preset**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **erase_recent_preset**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ColorPicker_method_erase_recent_preset>`
 
 Removes the given color from the list of color recent presets of this color picker.
 
@@ -533,7 +535,7 @@ Removes the given color from the list of color recent presets of this color pick
 
 .. rst-class:: classref-method
 
-:ref:`PackedColorArray<class_PackedColorArray>` **get_presets**\ (\ ) |const|
+:ref:`PackedColorArray<class_PackedColorArray>` **get_presets**\ (\ ) |const| :ref:`🔗<class_ColorPicker_method_get_presets>`
 
 Returns the list of colors in the presets of the color picker.
 
@@ -545,7 +547,7 @@ Returns the list of colors in the presets of the color picker.
 
 .. rst-class:: classref-method
 
-:ref:`PackedColorArray<class_PackedColorArray>` **get_recent_presets**\ (\ ) |const|
+:ref:`PackedColorArray<class_PackedColorArray>` **get_recent_presets**\ (\ ) |const| :ref:`🔗<class_ColorPicker_method_get_recent_presets>`
 
 Returns the list of colors in the recent presets of the color picker.
 
@@ -562,7 +564,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **center_slider_grabbers** = ``1``
+:ref:`int<class_int>` **center_slider_grabbers** = ``1`` :ref:`🔗<class_ColorPicker_theme_constant_center_slider_grabbers>`
 
 Overrides the :ref:`Slider.center_grabber<class_Slider_theme_constant_center_grabber>` theme property of the sliders.
 
@@ -574,7 +576,7 @@ Overrides the :ref:`Slider.center_grabber<class_Slider_theme_constant_center_gra
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_width** = ``30``
+:ref:`int<class_int>` **h_width** = ``30`` :ref:`🔗<class_ColorPicker_theme_constant_h_width>`
 
 The width of the hue selection slider.
 
@@ -586,7 +588,7 @@ The width of the hue selection slider.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **label_width** = ``10``
+:ref:`int<class_int>` **label_width** = ``10`` :ref:`🔗<class_ColorPicker_theme_constant_label_width>`
 
 The minimum width of the color labels next to sliders.
 
@@ -598,7 +600,7 @@ The minimum width of the color labels next to sliders.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **margin** = ``4``
+:ref:`int<class_int>` **margin** = ``4`` :ref:`🔗<class_ColorPicker_theme_constant_margin>`
 
 The margin around the **ColorPicker**.
 
@@ -610,7 +612,7 @@ The margin around the **ColorPicker**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **sv_height** = ``256``
+:ref:`int<class_int>` **sv_height** = ``256`` :ref:`🔗<class_ColorPicker_theme_constant_sv_height>`
 
 The height of the saturation-value selection box.
 
@@ -622,7 +624,7 @@ The height of the saturation-value selection box.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **sv_width** = ``256``
+:ref:`int<class_int>` **sv_width** = ``256`` :ref:`🔗<class_ColorPicker_theme_constant_sv_width>`
 
 The width of the saturation-value selection box.
 
@@ -634,7 +636,7 @@ The width of the saturation-value selection box.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **add_preset**
+:ref:`Texture2D<class_Texture2D>` **add_preset** :ref:`🔗<class_ColorPicker_theme_icon_add_preset>`
 
 The icon for the "Add Preset" button.
 
@@ -646,7 +648,7 @@ The icon for the "Add Preset" button.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **bar_arrow**
+:ref:`Texture2D<class_Texture2D>` **bar_arrow** :ref:`🔗<class_ColorPicker_theme_icon_bar_arrow>`
 
 The texture for the arrow grabber.
 
@@ -658,21 +660,9 @@ The texture for the arrow grabber.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **color_hue**
+:ref:`Texture2D<class_Texture2D>` **color_hue** :ref:`🔗<class_ColorPicker_theme_icon_color_hue>`
 
 Custom texture for the hue selection slider on the right.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ColorPicker_theme_icon_color_okhsl_hue:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **color_okhsl_hue**
-
-Custom texture for the H slider in the OKHSL color mode.
 
 .. rst-class:: classref-item-separator
 
@@ -682,7 +672,7 @@ Custom texture for the H slider in the OKHSL color mode.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **expanded_arrow**
+:ref:`Texture2D<class_Texture2D>` **expanded_arrow** :ref:`🔗<class_ColorPicker_theme_icon_expanded_arrow>`
 
 The icon for color preset drop down menu when expanded.
 
@@ -694,9 +684,21 @@ The icon for color preset drop down menu when expanded.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **folded_arrow**
+:ref:`Texture2D<class_Texture2D>` **folded_arrow** :ref:`🔗<class_ColorPicker_theme_icon_folded_arrow>`
 
 The icon for color preset drop down menu when folded.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ColorPicker_theme_icon_menu_option:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **menu_option** :ref:`🔗<class_ColorPicker_theme_icon_menu_option>`
+
+The icon for color preset option menu.
 
 .. rst-class:: classref-item-separator
 
@@ -706,7 +708,7 @@ The icon for color preset drop down menu when folded.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **overbright_indicator**
+:ref:`Texture2D<class_Texture2D>` **overbright_indicator** :ref:`🔗<class_ColorPicker_theme_icon_overbright_indicator>`
 
 The indicator used to signalize that the color value is outside the 0-1 range.
 
@@ -718,9 +720,21 @@ The indicator used to signalize that the color value is outside the 0-1 range.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **picker_cursor**
+:ref:`Texture2D<class_Texture2D>` **picker_cursor** :ref:`🔗<class_ColorPicker_theme_icon_picker_cursor>`
 
 The image displayed over the color box/circle (depending on the :ref:`picker_shape<class_ColorPicker_property_picker_shape>`), marking the currently selected color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ColorPicker_theme_icon_picker_cursor_bg:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **picker_cursor_bg** :ref:`🔗<class_ColorPicker_theme_icon_picker_cursor_bg>`
+
+The fill image displayed behind the picker cursor.
 
 .. rst-class:: classref-item-separator
 
@@ -730,7 +744,7 @@ The image displayed over the color box/circle (depending on the :ref:`picker_sha
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **sample_bg**
+:ref:`Texture2D<class_Texture2D>` **sample_bg** :ref:`🔗<class_ColorPicker_theme_icon_sample_bg>`
 
 Background panel for the color preview box (visible when the color is translucent).
 
@@ -742,7 +756,7 @@ Background panel for the color preview box (visible when the color is translucen
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **sample_revert**
+:ref:`Texture2D<class_Texture2D>` **sample_revert** :ref:`🔗<class_ColorPicker_theme_icon_sample_revert>`
 
 The icon for the revert button (visible on the middle of the "old" color when it differs from the currently selected color). This icon is modulated with a dark color if the "old" color is bright enough, so the icon should be bright to ensure visibility in both scenarios.
 
@@ -754,7 +768,7 @@ The icon for the revert button (visible on the middle of the "old" color when it
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **screen_picker**
+:ref:`Texture2D<class_Texture2D>` **screen_picker** :ref:`🔗<class_ColorPicker_theme_icon_screen_picker>`
 
 The icon for the screen color picker button.
 
@@ -766,7 +780,7 @@ The icon for the screen color picker button.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **shape_circle**
+:ref:`Texture2D<class_Texture2D>` **shape_circle** :ref:`🔗<class_ColorPicker_theme_icon_shape_circle>`
 
 The icon for circular picker shapes.
 
@@ -778,7 +792,7 @@ The icon for circular picker shapes.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **shape_rect**
+:ref:`Texture2D<class_Texture2D>` **shape_rect** :ref:`🔗<class_ColorPicker_theme_icon_shape_rect>`
 
 The icon for rectangular picker shapes.
 
@@ -790,7 +804,7 @@ The icon for rectangular picker shapes.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **shape_rect_wheel**
+:ref:`Texture2D<class_Texture2D>` **shape_rect_wheel** :ref:`🔗<class_ColorPicker_theme_icon_shape_rect_wheel>`
 
 The icon for rectangular wheel picker shapes.
 

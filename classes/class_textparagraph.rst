@@ -42,6 +42,8 @@ Properties
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] | :ref:`justification_flags<class_TextParagraph_property_justification_flags>`     | ``163``   |
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                                 | :ref:`line_spacing<class_TextParagraph_property_line_spacing>`                   | ``0.0``   |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                                                     | :ref:`max_lines_visible<class_TextParagraph_property_max_lines_visible>`         | ``-1``    |
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | :ref:`Orientation<enum_TextServer_Orientation>`                           | :ref:`orientation<class_TextParagraph_property_orientation>`                     | ``0``     |
@@ -142,7 +144,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **alignment** = ``0``
+:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **alignment** = ``0`` :ref:`🔗<class_TextParagraph_property_alignment>`
 
 .. rst-class:: classref-property-setget
 
@@ -159,7 +161,7 @@ Paragraph horizontal alignment.
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\] **break_flags** = ``3``
+|bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\] **break_flags** = ``3`` :ref:`🔗<class_TextParagraph_property_break_flags>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +178,7 @@ Line breaking rules. For more info see :ref:`TextServer<class_TextServer>`.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **custom_punctuation** = ``""``
+:ref:`String<class_String>` **custom_punctuation** = ``""`` :ref:`🔗<class_TextParagraph_property_custom_punctuation>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +195,7 @@ Custom punctuation character list, used for word breaking. If set to empty strin
 
 .. rst-class:: classref-property
 
-:ref:`Direction<enum_TextServer_Direction>` **direction** = ``0``
+:ref:`Direction<enum_TextServer_Direction>` **direction** = ``0`` :ref:`🔗<class_TextParagraph_property_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -210,7 +212,7 @@ Text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **ellipsis_char** = ``"…"``
+:ref:`String<class_String>` **ellipsis_char** = ``"…"`` :ref:`🔗<class_TextParagraph_property_ellipsis_char>`
 
 .. rst-class:: classref-property-setget
 
@@ -227,14 +229,31 @@ Ellipsis character used for text clipping.
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **justification_flags** = ``163``
+|bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **justification_flags** = ``163`` :ref:`🔗<class_TextParagraph_property_justification_flags>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_justification_flags**\ (\ value\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\]\ )
 - |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **get_justification_flags**\ (\ )
 
-Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
+Line fill alignment rules. See :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextParagraph_property_line_spacing:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **line_spacing** = ``0.0`` :ref:`🔗<class_TextParagraph_property_line_spacing>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_line_spacing**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_line_spacing**\ (\ )
+
+Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
 .. rst-class:: classref-item-separator
 
@@ -244,7 +263,7 @@ Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextSe
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_lines_visible** = ``-1``
+:ref:`int<class_int>` **max_lines_visible** = ``-1`` :ref:`🔗<class_TextParagraph_property_max_lines_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -261,7 +280,7 @@ Limits the lines of text shown.
 
 .. rst-class:: classref-property
 
-:ref:`Orientation<enum_TextServer_Orientation>` **orientation** = ``0``
+:ref:`Orientation<enum_TextServer_Orientation>` **orientation** = ``0`` :ref:`🔗<class_TextParagraph_property_orientation>`
 
 .. rst-class:: classref-property-setget
 
@@ -278,7 +297,7 @@ Text orientation.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **preserve_control** = ``false``
+:ref:`bool<class_bool>` **preserve_control** = ``false`` :ref:`🔗<class_TextParagraph_property_preserve_control>`
 
 .. rst-class:: classref-property-setget
 
@@ -295,7 +314,7 @@ If set to ``true`` text will display control characters.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **preserve_invalid** = ``true``
+:ref:`bool<class_bool>` **preserve_invalid** = ``true`` :ref:`🔗<class_TextParagraph_property_preserve_invalid>`
 
 .. rst-class:: classref-property-setget
 
@@ -312,7 +331,7 @@ If set to ``true`` text will display invalid characters.
 
 .. rst-class:: classref-property
 
-:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior** = ``0``
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior** = ``0`` :ref:`🔗<class_TextParagraph_property_text_overrun_behavior>`
 
 .. rst-class:: classref-property-setget
 
@@ -329,7 +348,7 @@ Sets the clipping behavior when the text exceeds the paragraph's set width. See 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **width** = ``-1.0``
+:ref:`float<class_float>` **width** = ``-1.0`` :ref:`🔗<class_TextParagraph_property_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -351,7 +370,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **add_object**\ (\ key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, length\: :ref:`int<class_int>` = 1, baseline\: :ref:`float<class_float>` = 0.0\ )
+:ref:`bool<class_bool>` **add_object**\ (\ key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, length\: :ref:`int<class_int>` = 1, baseline\: :ref:`float<class_float>` = 0.0\ ) :ref:`🔗<class_TextParagraph_method_add_object>`
 
 Adds inline object to the text buffer, ``key`` must be unique. In the text, object is represented as ``length`` object replacement characters.
 
@@ -363,7 +382,7 @@ Adds inline object to the text buffer, ``key`` must be unique. In the text, obje
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **add_string**\ (\ text\: :ref:`String<class_String>`, font\: :ref:`Font<class_Font>`, font_size\: :ref:`int<class_int>`, language\: :ref:`String<class_String>` = "", meta\: :ref:`Variant<class_Variant>` = null\ )
+:ref:`bool<class_bool>` **add_string**\ (\ text\: :ref:`String<class_String>`, font\: :ref:`Font<class_Font>`, font_size\: :ref:`int<class_int>`, language\: :ref:`String<class_String>` = "", meta\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_TextParagraph_method_add_string>`
 
 Adds text span and font to draw it.
 
@@ -375,7 +394,7 @@ Adds text span and font to draw it.
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_TextParagraph_method_clear>`
 
 Clears text paragraph (removes text and inline objects).
 
@@ -387,7 +406,7 @@ Clears text paragraph (removes text and inline objects).
 
 .. rst-class:: classref-method
 
-|void| **clear_dropcap**\ (\ )
+|void| **clear_dropcap**\ (\ ) :ref:`🔗<class_TextParagraph_method_clear_dropcap>`
 
 Removes dropcap.
 
@@ -399,7 +418,7 @@ Removes dropcap.
 
 .. rst-class:: classref-method
 
-|void| **draw**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), dc_color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
+|void| **draw**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), dc_color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_TextParagraph_method_draw>`
 
 Draw all lines of the text and drop cap into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
 
@@ -411,7 +430,7 @@ Draw all lines of the text and drop cap into a canvas item at a given position, 
 
 .. rst-class:: classref-method
 
-|void| **draw_dropcap**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
+|void| **draw_dropcap**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_TextParagraph_method_draw_dropcap>`
 
 Draw drop cap into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
 
@@ -423,7 +442,7 @@ Draw drop cap into a canvas item at a given position, with ``color``. ``pos`` sp
 
 .. rst-class:: classref-method
 
-|void| **draw_dropcap_outline**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
+|void| **draw_dropcap_outline**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_TextParagraph_method_draw_dropcap_outline>`
 
 Draw drop cap outline into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
 
@@ -435,7 +454,7 @@ Draw drop cap outline into a canvas item at a given position, with ``color``. ``
 
 .. rst-class:: classref-method
 
-|void| **draw_line**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, line\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
+|void| **draw_line**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, line\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_TextParagraph_method_draw_line>`
 
 Draw single line of text into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
 
@@ -447,7 +466,7 @@ Draw single line of text into a canvas item at a given position, with ``color``.
 
 .. rst-class:: classref-method
 
-|void| **draw_line_outline**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, line\: :ref:`int<class_int>`, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
+|void| **draw_line_outline**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, line\: :ref:`int<class_int>`, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_TextParagraph_method_draw_line_outline>`
 
 Draw outline of the single line of text into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
 
@@ -459,7 +478,7 @@ Draw outline of the single line of text into a canvas item at a given position, 
 
 .. rst-class:: classref-method
 
-|void| **draw_outline**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), dc_color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
+|void| **draw_outline**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), dc_color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_TextParagraph_method_draw_outline>`
 
 Draw outlines of all lines of the text and drop cap into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
 
@@ -471,7 +490,7 @@ Draw outlines of all lines of the text and drop cap into a canvas item at a give
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_dropcap_lines**\ (\ ) |const|
+:ref:`int<class_int>` **get_dropcap_lines**\ (\ ) |const| :ref:`🔗<class_TextParagraph_method_get_dropcap_lines>`
 
 Returns number of lines used by dropcap.
 
@@ -483,7 +502,7 @@ Returns number of lines used by dropcap.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_dropcap_rid**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_dropcap_rid**\ (\ ) |const| :ref:`🔗<class_TextParagraph_method_get_dropcap_rid>`
 
 Returns drop cap text buffer RID.
 
@@ -495,7 +514,7 @@ Returns drop cap text buffer RID.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_dropcap_size**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_dropcap_size**\ (\ ) |const| :ref:`🔗<class_TextParagraph_method_get_dropcap_size>`
 
 Returns drop cap bounding box size.
 
@@ -507,7 +526,7 @@ Returns drop cap bounding box size.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_ascent**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_line_ascent**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_ascent>`
 
 Returns the text line ascent (number of pixels above the baseline for horizontal layout or to the left of baseline for vertical).
 
@@ -519,7 +538,7 @@ Returns the text line ascent (number of pixels above the baseline for horizontal
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_line_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_line_count**\ (\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_count>`
 
 Returns number of lines in the paragraph.
 
@@ -531,7 +550,7 @@ Returns number of lines in the paragraph.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_descent**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_line_descent**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_descent>`
 
 Returns the text line descent (number of pixels below the baseline for horizontal layout or to the right of baseline for vertical).
 
@@ -543,7 +562,7 @@ Returns the text line descent (number of pixels below the baseline for horizonta
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_line_object_rect**\ (\ line\: :ref:`int<class_int>`, key\: :ref:`Variant<class_Variant>`\ ) |const|
+:ref:`Rect2<class_Rect2>` **get_line_object_rect**\ (\ line\: :ref:`int<class_int>`, key\: :ref:`Variant<class_Variant>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_object_rect>`
 
 Returns bounding rectangle of the inline object.
 
@@ -555,7 +574,7 @@ Returns bounding rectangle of the inline object.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_line_objects**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`Array<class_Array>` **get_line_objects**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_objects>`
 
 Returns array of inline objects in the line.
 
@@ -567,7 +586,7 @@ Returns array of inline objects in the line.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_line_range**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_line_range**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_range>`
 
 Returns character range of the line.
 
@@ -579,7 +598,7 @@ Returns character range of the line.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_line_rid**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`RID<class_RID>` **get_line_rid**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_rid>`
 
 Returns TextServer line buffer RID.
 
@@ -591,9 +610,9 @@ Returns TextServer line buffer RID.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_line_size**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_line_size**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_size>`
 
-Returns size of the bounding box of the line of text.
+Returns size of the bounding box of the line of text. Returned size is rounded up.
 
 .. rst-class:: classref-item-separator
 
@@ -603,7 +622,7 @@ Returns size of the bounding box of the line of text.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_underline_position**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_line_underline_position**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_underline_position>`
 
 Returns pixel offset of the underline below the baseline.
 
@@ -615,7 +634,7 @@ Returns pixel offset of the underline below the baseline.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_underline_thickness**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_line_underline_thickness**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_underline_thickness>`
 
 Returns thickness of the underline.
 
@@ -627,7 +646,7 @@ Returns thickness of the underline.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_width**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_line_width**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_width>`
 
 Returns width (for horizontal layout) or height (for vertical) of the line of text.
 
@@ -639,7 +658,7 @@ Returns width (for horizontal layout) or height (for vertical) of the line of te
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_non_wrapped_size**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_non_wrapped_size**\ (\ ) |const| :ref:`🔗<class_TextParagraph_method_get_non_wrapped_size>`
 
 Returns the size of the bounding box of the paragraph, without line breaks.
 
@@ -651,7 +670,7 @@ Returns the size of the bounding box of the paragraph, without line breaks.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_TextParagraph_method_get_rid>`
 
 Returns TextServer full string buffer RID.
 
@@ -663,7 +682,7 @@ Returns TextServer full string buffer RID.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_size**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_size**\ (\ ) |const| :ref:`🔗<class_TextParagraph_method_get_size>`
 
 Returns the size of the bounding box of the paragraph.
 
@@ -675,7 +694,7 @@ Returns the size of the bounding box of the paragraph.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hit_test**\ (\ coords\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`int<class_int>` **hit_test**\ (\ coords\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_TextParagraph_method_hit_test>`
 
 Returns caret character offset at the specified coordinates. This function always returns a valid position.
 
@@ -687,7 +706,7 @@ Returns caret character offset at the specified coordinates. This function alway
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **resize_object**\ (\ key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, baseline\: :ref:`float<class_float>` = 0.0\ )
+:ref:`bool<class_bool>` **resize_object**\ (\ key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, baseline\: :ref:`float<class_float>` = 0.0\ ) :ref:`🔗<class_TextParagraph_method_resize_object>`
 
 Sets new size and alignment of embedded object.
 
@@ -699,7 +718,7 @@ Sets new size and alignment of embedded object.
 
 .. rst-class:: classref-method
 
-|void| **set_bidi_override**\ (\ override\: :ref:`Array<class_Array>`\ )
+|void| **set_bidi_override**\ (\ override\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_TextParagraph_method_set_bidi_override>`
 
 Overrides BiDi for the structured text.
 
@@ -713,7 +732,7 @@ Override ranges should cover full source text without overlaps. BiDi algorithm w
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **set_dropcap**\ (\ text\: :ref:`String<class_String>`, font\: :ref:`Font<class_Font>`, font_size\: :ref:`int<class_int>`, dropcap_margins\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), language\: :ref:`String<class_String>` = ""\ )
+:ref:`bool<class_bool>` **set_dropcap**\ (\ text\: :ref:`String<class_String>`, font\: :ref:`Font<class_Font>`, font_size\: :ref:`int<class_int>`, dropcap_margins\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), language\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_TextParagraph_method_set_dropcap>`
 
 Sets drop cap, overrides previously set drop cap. Drop cap (dropped capital) is a decorative element at the beginning of a paragraph that is larger than the rest of the text.
 
@@ -725,7 +744,7 @@ Sets drop cap, overrides previously set drop cap. Drop cap (dropped capital) is 
 
 .. rst-class:: classref-method
 
-|void| **tab_align**\ (\ tab_stops\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+|void| **tab_align**\ (\ tab_stops\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_TextParagraph_method_tab_align>`
 
 Aligns paragraph to the given tab-stops.
 
