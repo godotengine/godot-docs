@@ -1,12 +1,22 @@
+:allow_comments: False
+
 .. _doc_about_intro:
 
 Introduction
 ============
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     func _ready():
         print("Hello world!")
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        GD.Print("Hello world!");
+    }
 
 Welcome to the official documentation of **Godot Engine**, the free and open source
 community-driven 2D and 3D game engine! Behind this mouthful, you will find a
@@ -22,13 +32,13 @@ Before you start
 
 The :ref:`Tutorials and resources <doc_community_tutorials>` page lists
 video tutorials contributed by the community. If you prefer video to text,
-consider checking them out. Otherwise, :ref:`Getting Started <sec-learn>`
+consider checking them out. Otherwise, :ref:`Getting Started <doc_getting_started_intro>`
 is a great starting point.
 
 In case you have trouble with one of the tutorials or your project,
-you can find help on the various :ref:`Community channels <doc_community_channels>`,
-especially the Godot `Discord`_ community and
-`Q&A <https://godotengine.org/qa/>`_.
+you can find help on the various `Community channels <https://godotengine.org/community/>`_,
+especially the Godot `Discord <https://discord.gg/godotengine>`_ community and
+`Forum <https://forum.godotengine.org/>`_.
 
 About Godot Engine
 ------------------
@@ -73,11 +83,10 @@ This documentation is organized into several sections:
   It also contains sections intended for advanced users and contributors,
   with information on compiling the engine, contributing to the editor,
   or developing C++ modules.
-- **Community** is dedicated to the life of Godot's community.
-  It points to various community channels like the
-  `Godot Contributors Chat <https://chat.godotengine.org/>`_ and
-  `Discord`_ and contains a list of recommended third-party tutorials and
-  materials outside of this documentation.
+- **Community** is dedicated to the life of Godot's community and contains a list of
+  recommended third-party tutorials and materials outside of this documentation.
+  It also provides details on the Asset Library. It also used to list Godot
+  communities, which are now listed on the `Godot website <https://godotengine.org/community/>`_.
 - Finally, the **Class reference** documents the full Godot API,
   also available directly within the engine's script editor.
   You can find information on all classes, functions, signals and so on here.
@@ -102,5 +111,3 @@ with attribution to "*Juan Linietsky, Ariel Manzur, and the Godot Engine communi
 unless otherwise noted.
 
 *Have fun reading and making games with Godot Engine!*
-
-.. _Discord: https://discord.gg/4JBkykG

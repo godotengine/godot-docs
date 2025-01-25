@@ -5,29 +5,47 @@ on:
   pull_request:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Style checks via pre-commit
+        uses: pre-commit/action@v3.0.1
+
+      - name: Get Python version
+        id: pythonv
+        run: |
+          echo "PYTHON_VERSION=$(python --version)" >> $GITHUB_OUTPUT
+
+      - name: Restore cached virtualenv
+        uses: actions/cache/restore@v4
+        with:
+          key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
+          path: .venv
 
       - name: Install dependencies
         run: |
-          # Install tools used by `_tools/format.sh`.
-          sudo apt-get -qq update
-          sudo apt-get -qq install dos2unix recode
-          sudo pip3 install -r requirements.txt
-          sudo pip3 install codespell
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install -r requirements.txt
+          echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH
+          echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
 
-      - name: Linter checks
-        run: |
-          bash _tools/format.sh
-          codespell -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt -S tutorials/i18n/locales.rst {about,community,development,getting_started,tutorials}/**/*.rst
+      - name: Save virtualenv cache
+        uses: actions/cache/save@v4
+        with:
+          key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
+          path: .venv
 
       # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build
-        run: make SPHINXOPTS='--color -W' dummy
+        run: |
+          source .venv/bin/activate
+          make SPHINXOPTS='--color -j 4 -W' dummy

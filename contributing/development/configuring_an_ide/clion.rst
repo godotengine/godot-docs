@@ -24,7 +24,7 @@ CLion does not support compiling and debugging Godot via SCons out of the box. T
 
 ::
 
-    scons
+    scons dev_build=yes
 
 To add a custom build target that invokes SCons for compilation:
 
@@ -47,7 +47,7 @@ To add a custom build target that invokes SCons for compilation:
 
    .. note:: CLion does not expand shell commands like ``scons -j$(nproc)``. Use concrete values instead, e.g. ``scons -j8``.
 
-.. figure:: img/clion-create-build-tool.png
+.. figure:: img/clion-create-build-tool.webp
    :align: center
 
 - Back in the **External Tools** dialog, click the **+** again to add a second external tool for cleaning the Godot build via SCons. Give the tool a name, e.g. ``Clean Godot debug``, set **Program** to ``scons``, set **Arguments** to ``-c`` (which will clean the build), and set the **Working directory** to ``$ProjectFileDir$``. Click **OK** to create the tool.
@@ -81,3 +81,21 @@ You can now build, run, debug, profile, and Valgrind check the Godot editor via 
    :align: center
 
 When playing a scene, the Godot editor will spawn a separate process. You can debug this process in CLion by going to **Run > Attach to process...**, typing ``godot``, and selecting the Godot process with the highest **pid** (process ID), which will usually be the running project.
+
+Ignoring object and library files
+-----------------------------------
+
+After building Godot in CLion, you may see the object and library files showing up in the **Project** view.
+
+.. figure:: img/clion-object-library-files-in-project-view.webp
+   :align: center
+
+You can configure CLion to ignore those files:
+
+- Open CLion and navigate to **Preferences > Editor > File Types > Ignored Files and Folders**
+- Click the **+** button to add ``*.o`` and ``*.a`` to the list. In Windows, you would add ``*.obj`` and ``*.dll``.
+
+.. figure:: img/clion-ignore-object-library-files.webp
+   :align: center
+
+Now, the files should be ignored in the Project view.

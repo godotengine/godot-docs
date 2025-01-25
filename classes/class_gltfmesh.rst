@@ -12,9 +12,21 @@ GLTFMesh
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+GLTFMesh represents a glTF mesh.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+GLTFMesh handles 3D mesh data imported from glTF files. It includes properties for blend channels, blend weights, instance materials, and the mesh itself.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
 .. rst-class:: classref-reftable-group
 
@@ -24,13 +36,29 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-   | :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`blend_weights<class_GLTFMesh_property_blend_weights>`           | ``PackedFloat32Array()`` |
-   +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-   | :ref:`Material[]<class_Material>`                   | :ref:`instance_materials<class_GLTFMesh_property_instance_materials>` | ``[]``                   |
-   +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-   | :ref:`ImporterMesh<class_ImporterMesh>`             | :ref:`mesh<class_GLTFMesh_property_mesh>`                             |                          |
-   +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   +--------------------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`          | :ref:`blend_weights<class_GLTFMesh_property_blend_weights>`           | ``PackedFloat32Array()`` |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Material<class_Material>`\] | :ref:`instance_materials<class_GLTFMesh_property_instance_materials>` | ``[]``                   |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`ImporterMesh<class_ImporterMesh>`                      | :ref:`mesh<class_GLTFMesh_property_mesh>`                             |                          |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`String<class_String>`                                  | :ref:`original_name<class_GLTFMesh_property_original_name>`           | ``""``                   |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_additional_data<class_GLTFMesh_method_get_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )                                                  |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_additional_data<class_GLTFMesh_method_set_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -45,16 +73,16 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **blend_weights** = ``PackedFloat32Array()``
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **blend_weights** = ``PackedFloat32Array()`` :ref:`🔗<class_GLTFMesh_property_blend_weights>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_blend_weights** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` value **)**
-- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_blend_weights** **(** **)**
+- |void| **set_blend_weights**\ (\ value\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_blend_weights**\ (\ )
 
-.. container:: contribute
+An array of floats representing the blend weights of the mesh.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -64,16 +92,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Material[]<class_Material>` **instance_materials** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`Material<class_Material>`\] **instance_materials** = ``[]`` :ref:`🔗<class_GLTFMesh_property_instance_materials>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_instance_materials** **(** :ref:`Material[]<class_Material>` value **)**
-- :ref:`Material[]<class_Material>` **get_instance_materials** **(** **)**
+- |void| **set_instance_materials**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`Material<class_Material>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`Material<class_Material>`\] **get_instance_materials**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+An array of Material objects representing the materials used in the mesh.
 
 .. rst-class:: classref-item-separator
 
@@ -83,16 +109,64 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ImporterMesh<class_ImporterMesh>` **mesh**
+:ref:`ImporterMesh<class_ImporterMesh>` **mesh** :ref:`🔗<class_GLTFMesh_property_mesh>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_mesh** **(** :ref:`ImporterMesh<class_ImporterMesh>` value **)**
-- :ref:`ImporterMesh<class_ImporterMesh>` **get_mesh** **(** **)**
+- |void| **set_mesh**\ (\ value\: :ref:`ImporterMesh<class_ImporterMesh>`\ )
+- :ref:`ImporterMesh<class_ImporterMesh>` **get_mesh**\ (\ )
 
-.. container:: contribute
+The :ref:`ImporterMesh<class_ImporterMesh>` object representing the mesh itself.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFMesh_property_original_name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **original_name** = ``""`` :ref:`🔗<class_GLTFMesh_property_original_name>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_original_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_original_name**\ (\ )
+
+The original name of the mesh.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_GLTFMesh_method_get_additional_data:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GLTFMesh_method_get_additional_data>`
+
+Gets additional arbitrary data in this **GLTFMesh** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
+
+The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the glTF file), and the return value can be anything you set. If nothing was set, the return value is ``null``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFMesh_method_set_additional_data:
+
+.. rst-class:: classref-method
+
+|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_GLTFMesh_method_set_additional_data>`
+
+Sets additional arbitrary data in this **GLTFMesh** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
+
+The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the glTF file), and the second argument can be anything you want.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -101,3 +175,4 @@ Property Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

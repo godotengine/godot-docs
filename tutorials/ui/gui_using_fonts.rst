@@ -66,7 +66,7 @@ Bitmap fonts
 
 Godot supports the BMFont (``.fnt``) bitmap font format. This is a format created
 by the `BMFont <https://www.angelcode.com/products/bmfont/>`__ program. Many
-BMFont-compatible programs also exist, like `BMGlyph <https://www.bmglyph.com/>`__.
+BMFont-compatible programs also exist, like `BMGlyph <https://www.bmglyph.com/>`__ or web-based `fontcutter <https://github.com/fabienbk/fontcutter>`__.
 
 Alternatively, you can import any image to be used as a bitmap font. This is
 only supported for **monospaced** fonts (fonts where each character has the same
@@ -156,13 +156,67 @@ property that accepts a Font resource.
    The texture filter mode can also be set on individual nodes that inherit from CanvasItem
    by setting :ref:`CanvasItem.texture_filter <class_CanvasItem_property_texture_filter>`.
 
+Font outlines and shadows
+-------------------------
+
+Font outlines and shadows can be used to improve readability when the background
+color isn't known in advance. For instance, this is the case for HUD elements
+that are drawn over a 2D/3D scene.
+
+Font outlines are available in most nodes that derive from Control, in addition
+to :ref:`class_Label3D`.
+
+To enable outline for a font on a given node, configure the theme overrides
+**Font Outline Color** and **Outline Size** in the inspector. The result should
+look like this:
+
+.. figure:: img/using_fonts_outline_example.webp
+   :align: center
+   :alt: Font outline example
+
+   Font outline example
+
+.. note::
+
+   If using a font with MSDF rendering, its **MSDF Pixel Range** import option
+   be set to at least *twice* the value of the outline size for outline
+   rendering to look correct. Otherwise, the outline may appear to be cut off
+   earlier than intended.
+
+Support for font shadows is more limited: they are only available in
+:ref:`class_Label` and :ref:`class_RichTextLabel`. Additionally, font shadows
+always have a hard edge (but you can reduce their opacity to make them look more
+subtle). To enable font shadows on a given node, configure the **Font Shadow
+Color**, **Shadow Offset X**, and **Shadow Offset Y** theme overrides in a Label
+or RichTextLabel node accordingly:
+
+.. figure:: img/using_fonts_shadow.webp
+   :align: center
+   :alt: Configuring font shadow in a Label node
+
+   Configuring font shadow in a Label node
+
+The result should look like this:
+
+.. figure:: img/using_fonts_shadow_example.webp
+   :align: center
+   :alt: Font shadow example
+
+   Font shadow example
+
+.. tip::
+
+    You can create local overrides to font display in Label nodes by creating a
+    :ref:`class_LabelSettings` resource that you reuse across Label nodes. This
+    resource takes priority over :ref:`theme properties <doc_gui_skinning>`.
+
 Advanced font features
 ----------------------
 
 .. _doc_using_fonts_antialiasing:
 
 Antialiasing
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 You can adjust how the font should be smoothed out when rendering by adjusting
 *antialiasing* and *hinting*. These are different properties, with different use
@@ -197,7 +251,7 @@ exploring.
 .. _doc_using_fonts_hinting:
 
 Hinting
-^^^^^^^
+~~~~~~~
 
 Hinting controls how aggressively glyph edges should be snapped to pixels when
 rasterizing the font. **None** results in the smoothest appearance, which can
@@ -224,7 +278,7 @@ preference, you may prefer using one hinting mode over the other.
 .. _doc_using_fonts_subpixel_positioning:
 
 Subpixel positioning
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Subpixel positioning can be adjusted. This is a `FreeType <https://freetype.org/>`__
 feature that allows glyphs to be rendered more closely to their intended form.
@@ -251,7 +305,7 @@ effect at smaller font sizes.
 .. _doc_using_fonts_mipmaps:
 
 Mipmaps
-^^^^^^^
+~~~~~~~
 
 By default, fonts do not have mipmaps generated to reduce memory usage and speed
 up rasterization. However, this can cause downscaled fonts to become grainy. This
@@ -263,14 +317,14 @@ lower than ``(1, 1)``.
 After selecting a font in the FileSystem dock, you can enable the **Mipmaps** in
 the Import dock to improve downscaled font rendering appearance.
 
-Mipmaps can be enabled on MSDF fonts as well. This can improve font rencering
+Mipmaps can be enabled on MSDF fonts as well. This can improve font rendering
 quality a little at smaller-than-default sizes, but MSDF fonts are already
 resistant to graininess out of the box.
 
 .. _doc_using_fonts_msdf:
 
 MSDF font rendering
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 Multi-channel signed distance field (MSDF) font rendering allows rendering fonts
 at any size, without having to re-rasterize them when their size changes.
@@ -297,10 +351,27 @@ The downsides of MSDF font rendering are:
   `Google Fonts <https://fonts.google.com>`__, try downloading the font from the
   font author's official website instead.
 
+.. figure:: img/using_fonts_rasterized_vs_msdf_comparison.webp
+   :align: center
+   :alt: Comparison of font rasterization methods
+
+   Comparison of font rasterization methods.
+   From top to bottom: rasterized without oversampling, rasterized with oversampling, MSDF
+
+To enable MSDF rendering for a given font, select it in the FileSystem dock, go
+to the Import dock, enable **Multichannel Signed Distance Field**, then click
+**Reimport**:
+
+.. figure:: img/using_fonts_msdf_import_options.webp
+   :align: center
+   :alt: Enabling MSDF in the font's import options
+
+   Enabling MSDF in the font's import options
+
 .. _doc_using_fonts_emoji:
 
 Using emoji
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Godot has limited support for emoji fonts:
 
@@ -350,7 +421,7 @@ emoji font:
     It's possible to use a system font as a fallback font too.
 
 Using icon fonts
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Tools like `Fontello <https://fontello.com/>`__ can be used to generate font
 files containing vectors imported from SVG files. This can be used to render
@@ -394,7 +465,7 @@ reserved for use by custom fonts and doesn't contain standard glyphs by design.
 .. _doc_using_fonts_font_fallbacks:
 
 Font fallbacks
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Godot supports defining one or more fallbacks when the main font lacks a glyph
 to be displayed. There are 2 main use cases for defining font fallbacks:
@@ -442,7 +513,7 @@ fallbacks.
 .. _doc_using_fonts_variable_fonts:
 
 Variable fonts
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Godot has full support for `variable fonts <https://variablefonts.io/>`__, which
 allow you to use a single font file to represent various font weights and styles
@@ -484,10 +555,33 @@ For example, here's the `Inter V <https://rsms.me/inter/>`__ font with a
 
 .. tip::
 
-    While variable font axis names and scales aren't standardized, some common
-    conventions are usually followed by font designers. For instance, the
-    *weight* axis typically uses ``400`` as the "regular" font weight and
-    ``700`` as the "bold" font weight.
+    While variable font axis names and scales aren't standardized,
+    some common conventions are usually followed by font designers.
+    The *weight* axis is standardized in OpenType to work as follows:
+
+    +------------+--------------------------------+
+    | Axis value | Effective font weight          |
+    +============+================================+
+    | ``100``    | Thin (Hairline)                |
+    +------------+--------------------------------+
+    | ``200``    | Extra Light (Ultra Light)      |
+    +------------+--------------------------------+
+    | ``300``    | Light                          |
+    +------------+--------------------------------+
+    | ``400``    | **Regular (Normal)**           |
+    +------------+--------------------------------+
+    | ``500``    | Medium                         |
+    +------------+--------------------------------+
+    | ``600``    | Semi-Bold (Demi-Bold)          |
+    +------------+--------------------------------+
+    | ``700``    | **Bold**                       |
+    +------------+--------------------------------+
+    | ``800``    | Extra Bold (Ultra Bold)        |
+    +------------+--------------------------------+
+    | ``900``    | Black (Heavy)                  |
+    +------------+--------------------------------+
+    | ``950``    | Extra Black (Ultra Black)      |
+    +------------+--------------------------------+
 
 You can save the FontVariation to a ``.tres`` resource file to reuse it in other
 places:
@@ -498,7 +592,7 @@ places:
    Saving FontVariation to an external resource file
 
 Faux bold and italic
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 When writing text in bold or italic, using font variants specifically designed
 for this looks better. Spacing between glyphs will be more consistent when using
@@ -536,7 +630,7 @@ character transform to a positive value will italicize the text. Recommended
 values are between ``0.2`` and ``0.4`` depending on the font.
 
 Adjusting font spacing
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 For stylistic purposes or for better readability, you may want to adjust how a
 font is presented in Godot.
@@ -550,7 +644,7 @@ which accept positive and negative values:
 - **Top:** Additional spacing above glyphs. This is used for multiline text,
   but also to calculate the minimum size of controls such as :ref:`class_Label`
   and :ref:`class_Button`.
-- **Top:** Additional spacing below glyphs. This is used for multiline text,
+- **Bottom:** Additional spacing below glyphs. This is used for multiline text,
   but also to calculate the minimum size of controls such as :ref:`class_Label`
   and :ref:`class_Button`.
 
@@ -565,7 +659,7 @@ displayed with stretching.
 .. _doc_using_fonts_opentype_font_features:
 
 OpenType font features
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Godot supports enabling OpenType font features, which are a standardized way to
 define alternate characters that can be toggled without having to swap font
@@ -576,7 +670,7 @@ Support for OpenType features highly depends on the font used. Some fonts don't
 support any OpenType features, while other fonts can support dozens of
 toggleable features.
 
-There are 2 ways to use OpenType font featutres:
+There are 2 ways to use OpenType font features:
 
 **Globally on a font file**
 
@@ -644,14 +738,19 @@ features, then unchecking them in the inspector:
 .. _doc_using_fonts_system_fonts:
 
 System fonts
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 .. warning::
 
     Loading system fonts is only supported on Windows, macOS, Linux, Android and iOS.
 
+    However, loading system fonts on Android is unreliable as there is no
+    official API for doing so. Godot has to rely on parsing system configuration
+    files, which can be modified by third-party Android vendors. This may result
+    in non-functional system font loading.
+
 System fonts are a different type of resource compared to imported fonts. They
-are never actually imported into the project, but are loaded at run-time. This
+are never actually imported into the project, but are loaded at runtime. This
 has 2 benefits:
 
 - The fonts are not included within the exported PCK file, leading to a smaller
@@ -665,7 +764,8 @@ possible to display CJK characters and emoji without having to load a custom
 font. There are some restrictions that apply though, as mentioned in the
 :ref:`Using emoji <doc_using_fonts_emoji>` section.
 
-Create a SystemFont resource in the location where you desire to use the system font:
+Create a :ref:`class_SystemFont` resource in the location where you desire to
+use the system font:
 
 .. figure:: img/using_fonts_system_font_create.webp
    :align: center
@@ -720,10 +820,14 @@ that labels can extend further if needed.
     distributions, different fonts may be displayed for a given system font name
     or alias.
 
+It is also possible to load fonts at runtime even if they aren't installed on the system.
+See :ref:`Runtime loading and saving <doc_runtime_file_loading_and_saving_fonts>`
+for details.
+
 .. _doc_using_fonts_font_prerendering:
 
 Font prerendering
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 When using traditional rasterized fonts, Godot caches glyphs on a per-font and
 per-size basis. This reduces stuttering, but it can still occur the first time a
@@ -830,7 +934,7 @@ be prerendered, which is less efficient in terms of file size.
 
 To use existing text as a baseline for prerendering, go to the **Glyphs from the
 Character Map** sub-tab of the Advanced Import Settings dialog, then
-*dobule-click* character sets to be enabled on the right:
+*double-click* character sets to be enabled on the right:
 
 .. figure:: img/using_fonts_advanced_import_settings_prerender_character_map.webp
    :align: center
@@ -845,7 +949,7 @@ covering many more languages, such as French, German and Spanish. For Russian,
 **Cyrillic** needs to be enabled, and so on.
 
 Default project font properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the **GUI > Theme** section of the advanced Project Settings, you can choose
 how the default font should be rendered:

@@ -78,11 +78,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_height<class_Light2D_method_get_height>` **(** **)** |const|                          |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_height<class_Light2D_method_set_height>` **(** :ref:`float<class_float>` height **)** |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
+   +---------------------------+----------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_height<class_Light2D_method_get_height>`\ (\ ) |const|                             |
+   +---------------------------+----------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_height<class_Light2D_method_set_height>`\ (\ height\: :ref:`float<class_float>`\ ) |
+   +---------------------------+----------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -97,7 +97,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ShadowFilter**:
+enum **ShadowFilter**: :ref:`🔗<enum_Light2D_ShadowFilter>`
 
 .. _class_Light2D_constant_SHADOW_FILTER_NONE:
 
@@ -131,7 +131,7 @@ Percentage closer filtering (13 samples) applies to the shadow map. This is the 
 
 .. rst-class:: classref-enumeration
 
-enum **BlendMode**:
+enum **BlendMode**: :ref:`🔗<enum_Light2D_BlendMode>`
 
 .. _class_Light2D_constant_BLEND_MODE_ADD:
 
@@ -170,12 +170,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`BlendMode<enum_Light2D_BlendMode>` **blend_mode** = ``0``
+:ref:`BlendMode<enum_Light2D_BlendMode>` **blend_mode** = ``0`` :ref:`🔗<class_Light2D_property_blend_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_blend_mode** **(** :ref:`BlendMode<enum_Light2D_BlendMode>` value **)**
-- :ref:`BlendMode<enum_Light2D_BlendMode>` **get_blend_mode** **(** **)**
+- |void| **set_blend_mode**\ (\ value\: :ref:`BlendMode<enum_Light2D_BlendMode>`\ )
+- :ref:`BlendMode<enum_Light2D_BlendMode>` **get_blend_mode**\ (\ )
 
 The Light2D's blend mode. See :ref:`BlendMode<enum_Light2D_BlendMode>` constants for values.
 
@@ -187,12 +187,12 @@ The Light2D's blend mode. See :ref:`BlendMode<enum_Light2D_BlendMode>` constants
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Light2D_property_color>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_color** **(** **)**
+- |void| **set_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_color**\ (\ )
 
 The Light2D's :ref:`Color<class_Color>`.
 
@@ -204,12 +204,12 @@ The Light2D's :ref:`Color<class_Color>`.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor_only** = ``false``
+:ref:`bool<class_bool>` **editor_only** = ``false`` :ref:`🔗<class_Light2D_property_editor_only>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_editor_only** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_editor_only** **(** **)**
+- |void| **set_editor_only**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_editor_only**\ (\ )
 
 If ``true``, Light2D will only appear when editing the scene.
 
@@ -221,12 +221,12 @@ If ``true``, Light2D will only appear when editing the scene.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enabled** = ``true``
+:ref:`bool<class_bool>` **enabled** = ``true`` :ref:`🔗<class_Light2D_property_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_enabled** **(** **)**
+- |void| **set_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_enabled**\ (\ )
 
 If ``true``, Light2D will emit light.
 
@@ -238,12 +238,12 @@ If ``true``, Light2D will emit light.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **energy** = ``1.0``
+:ref:`float<class_float>` **energy** = ``1.0`` :ref:`🔗<class_Light2D_property_energy>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_energy** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_energy** **(** **)**
+- |void| **set_energy**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_energy**\ (\ )
 
 The Light2D's energy value. The larger the value, the stronger the light.
 
@@ -255,12 +255,12 @@ The Light2D's energy value. The larger the value, the stronger the light.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_item_cull_mask** = ``1``
+:ref:`int<class_int>` **range_item_cull_mask** = ``1`` :ref:`🔗<class_Light2D_property_range_item_cull_mask>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_item_cull_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_item_cull_mask** **(** **)**
+- |void| **set_item_cull_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_item_cull_mask**\ (\ )
 
 The layer mask. Only objects with a matching :ref:`CanvasItem.light_mask<class_CanvasItem_property_light_mask>` will be affected by the Light2D. See also :ref:`shadow_item_cull_mask<class_Light2D_property_shadow_item_cull_mask>`, which affects which objects can cast shadows.
 
@@ -274,12 +274,12 @@ The layer mask. Only objects with a matching :ref:`CanvasItem.light_mask<class_C
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_layer_max** = ``0``
+:ref:`int<class_int>` **range_layer_max** = ``0`` :ref:`🔗<class_Light2D_property_range_layer_max>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_layer_range_max** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_layer_range_max** **(** **)**
+- |void| **set_layer_range_max**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_layer_range_max**\ (\ )
 
 Maximum layer value of objects that are affected by the Light2D.
 
@@ -291,12 +291,12 @@ Maximum layer value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_layer_min** = ``0``
+:ref:`int<class_int>` **range_layer_min** = ``0`` :ref:`🔗<class_Light2D_property_range_layer_min>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_layer_range_min** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_layer_range_min** **(** **)**
+- |void| **set_layer_range_min**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_layer_range_min**\ (\ )
 
 Minimum layer value of objects that are affected by the Light2D.
 
@@ -308,12 +308,12 @@ Minimum layer value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_z_max** = ``1024``
+:ref:`int<class_int>` **range_z_max** = ``1024`` :ref:`🔗<class_Light2D_property_range_z_max>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_z_range_max** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_z_range_max** **(** **)**
+- |void| **set_z_range_max**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_z_range_max**\ (\ )
 
 Maximum ``z`` value of objects that are affected by the Light2D.
 
@@ -325,12 +325,12 @@ Maximum ``z`` value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_z_min** = ``-1024``
+:ref:`int<class_int>` **range_z_min** = ``-1024`` :ref:`🔗<class_Light2D_property_range_z_min>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_z_range_min** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_z_range_min** **(** **)**
+- |void| **set_z_range_min**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_z_range_min**\ (\ )
 
 Minimum ``z`` value of objects that are affected by the Light2D.
 
@@ -342,12 +342,12 @@ Minimum ``z`` value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_Light2D_property_shadow_color>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shadow_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_shadow_color** **(** **)**
+- |void| **set_shadow_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_shadow_color**\ (\ )
 
 :ref:`Color<class_Color>` of shadows cast by the Light2D.
 
@@ -359,12 +359,12 @@ Minimum ``z`` value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shadow_enabled** = ``false``
+:ref:`bool<class_bool>` **shadow_enabled** = ``false`` :ref:`🔗<class_Light2D_property_shadow_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shadow_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_shadow_enabled** **(** **)**
+- |void| **set_shadow_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_shadow_enabled**\ (\ )
 
 If ``true``, the Light2D will cast shadows.
 
@@ -376,12 +376,12 @@ If ``true``, the Light2D will cast shadows.
 
 .. rst-class:: classref-property
 
-:ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **shadow_filter** = ``0``
+:ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **shadow_filter** = ``0`` :ref:`🔗<class_Light2D_property_shadow_filter>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shadow_filter** **(** :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` value **)**
-- :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **get_shadow_filter** **(** **)**
+- |void| **set_shadow_filter**\ (\ value\: :ref:`ShadowFilter<enum_Light2D_ShadowFilter>`\ )
+- :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **get_shadow_filter**\ (\ )
 
 Shadow filter type. See :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` for possible values.
 
@@ -393,12 +393,12 @@ Shadow filter type. See :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` for possi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **shadow_filter_smooth** = ``0.0``
+:ref:`float<class_float>` **shadow_filter_smooth** = ``0.0`` :ref:`🔗<class_Light2D_property_shadow_filter_smooth>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shadow_smooth** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_shadow_smooth** **(** **)**
+- |void| **set_shadow_smooth**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_shadow_smooth**\ (\ )
 
 Smoothing value for shadows. Higher values will result in softer shadows, at the cost of visible streaks that can appear in shadow rendering. :ref:`shadow_filter_smooth<class_Light2D_property_shadow_filter_smooth>` only has an effect if :ref:`shadow_filter<class_Light2D_property_shadow_filter>` is :ref:`SHADOW_FILTER_PCF5<class_Light2D_constant_SHADOW_FILTER_PCF5>` or :ref:`SHADOW_FILTER_PCF13<class_Light2D_constant_SHADOW_FILTER_PCF13>`.
 
@@ -410,12 +410,12 @@ Smoothing value for shadows. Higher values will result in softer shadows, at the
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **shadow_item_cull_mask** = ``1``
+:ref:`int<class_int>` **shadow_item_cull_mask** = ``1`` :ref:`🔗<class_Light2D_property_shadow_item_cull_mask>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_item_shadow_cull_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_item_shadow_cull_mask** **(** **)**
+- |void| **set_item_shadow_cull_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_item_shadow_cull_mask**\ (\ )
 
 The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast shadows. Only occluders with a matching :ref:`CanvasItem.light_mask<class_CanvasItem_property_light_mask>` will cast shadows. See also :ref:`range_item_cull_mask<class_Light2D_property_range_item_cull_mask>`, which affects which objects can *receive* the light.
 
@@ -432,7 +432,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_height** **(** **)** |const|
+:ref:`float<class_float>` **get_height**\ (\ ) |const| :ref:`🔗<class_Light2D_method_get_height>`
 
 Returns the light's height, which is used in 2D normal mapping. See :ref:`PointLight2D.height<class_PointLight2D_property_height>` and :ref:`DirectionalLight2D.height<class_DirectionalLight2D_property_height>`.
 
@@ -444,7 +444,7 @@ Returns the light's height, which is used in 2D normal mapping. See :ref:`PointL
 
 .. rst-class:: classref-method
 
-void **set_height** **(** :ref:`float<class_float>` height **)**
+|void| **set_height**\ (\ height\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Light2D_method_set_height>`
 
 Sets the light's height, which is used in 2D normal mapping. See :ref:`PointLight2D.height<class_PointLight2D_property_height>` and :ref:`DirectionalLight2D.height<class_DirectionalLight2D_property_height>`.
 
@@ -455,3 +455,4 @@ Sets the light's height, which is used in 2D normal mapping. See :ref:`PointLigh
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

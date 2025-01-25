@@ -174,8 +174,8 @@ can find the position for step 2 by adding the velocity to the current position.
 
          In a typical 2D game scenario, you would have a velocity in pixels per
          second, and multiply it by the ``delta`` parameter (time elapsed since
-         the previous frame) from the :ref:`_process() <class_Node_method__process>`
-         or :ref:`_physics_process() <class_Node_method__physics_process>`
+         the previous frame) from the :ref:`_process() <class_Node_private_method__process>`
+         or :ref:`_physics_process() <class_Node_private_method__physics_process>`
          callbacks.
 
 Pointing toward a target

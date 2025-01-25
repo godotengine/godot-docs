@@ -28,11 +28,11 @@ A 3D box shape, intended for use in physics. Usually used to provide a shape for
 Tutorials
 ---------
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
-- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`__
+- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2739>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -59,12 +59,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_BoxShape3D_property_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_size**\ (\ )
 
 The box's width, height and depth.
 
@@ -75,3 +75,4 @@ The box's width, height and depth.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

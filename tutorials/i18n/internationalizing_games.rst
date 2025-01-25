@@ -6,9 +6,7 @@ Internationalizing games
 Introduction
 ------------
 
-Sería excelente que el mundo hablara solo un idioma (It would be great if the
-world spoke only one language). Unfortunately for
-us developers, that is not the case. While indie or niche games usually
+While indie or niche games usually
 do not need localization, games targeting a more massive market
 often require localization. Godot offers many tools to make this process
 more straightforward, so this tutorial is more like a collection of
@@ -23,7 +21,7 @@ translations page before, we recommend you give it a read before reading this
 page.
 
 .. note:: We will be using the official demo as an example; you can
-          `download it from the Asset Library <https://godotengine.org/asset-library/asset/134>`_.
+          `download it from the Asset Library <https://godotengine.org/asset-library/asset/2776>`_.
 
 Configuring the imported translation
 ------------------------------------
@@ -60,6 +58,44 @@ Select the resource to be remapped then add some alternatives for each locale.
     the current language, making it ideal for things like multiplayer chat where
     the text language may not match the client's language.
 
+Automatically setting a language
+--------------------------------
+It is recommended to default to the user's preferred language which can be obtained via :ref:`OS.get_locale_language() <class_OS_method_get_locale_language>`.
+If your game is not available in that language, it will fall back to the :ref:`Fallback <class_ProjectSettings_property_internationalization/locale/fallback>`
+in **Project Settings > Internationalization > Locale**, or to ``en`` if empty.
+Nevertheless letting players change the language in game is recommended for various reasons (e.g. translation quality or player preference).
+
+.. tabs::
+ .. code-tab:: gdscript
+
+    var language = "automatic"
+    # Load here language from the user settings file
+    if language == "automatic":
+       var preferred_language = OS.get_locale_language()
+       TranslationServer.set_locale(preferred_language)
+    else:
+       TranslationServer.set_locale(language)
+
+Locale vs. language
+-------------------
+A :ref:`locale <doc_locales>` is commonly a combination of a language with a region or country, but can also contain information like a script or a variant.
+
+Examples:
+
+- ``en``: English language
+- ``en_GB``: English in Great Britain / British English
+- ``en_US``: English in the USA / American English
+- ``en_DE``: English in Germany
+
+Indie games generally only need to care about language, but read on for more information.
+
+Why locales exist can be illustrated through the USA and Great Britain. Both speak the same language (English), yet differ in many aspects:
+- Spelling: E.g. gray (USA), grey (GB)
+- Use of words: E.g. eggplant (USA), aubergine (GB)
+- Units or currencies: E.g. feet/inches (USA), metres/cm (GB)
+
+It can get more complex however. Imagine you offer different content in Europe and in China (e.g. in an MMO). You will need to translate each of those content variations into many languages and store and load them accordingly.
+
 Converting keys to text
 -----------------------
 
@@ -77,10 +113,16 @@ Translate** in the inspector.
 In code, the :ref:`Object.tr() <class_Object_method_tr>` function can be used.
 This will just look up the text in the translations and convert it if found:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     level.text = tr("LEVEL_5_NAME")
     status.text = tr("GAME_STATUS_%d" % status_index)
+
+ .. code-tab:: csharp
+
+    level.Text = Tr("LEVEL_5_NAME");
+    status.Text = Tr($"GAME_STATUS_{statusIndex}");
 
 .. note::
 
@@ -98,7 +140,7 @@ This will just look up the text in the translations and convert it if found:
     define the DynamicFont as the Default Font in the theme.
 
 Placeholders
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 To feature placeholders in your translated strings, use
 :ref:`doc_gdscript_printf` or the equivalent feature in C#. This lets
@@ -107,7 +149,8 @@ allows translations to sound more natural. Named placeholders with the
 ``String.format()`` function should be used whenever possible, as they also
 allow translators to choose the *order* in which placeholders appear:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # The placeholder's locations can be changed, but not their order.
     # This will probably not suffice for some target languages.
@@ -118,7 +161,7 @@ allow translators to choose the *order* in which placeholders appear:
     message.text = tr("{character} picked up the {weapon}").format({character = "Ogre", weapon = "Sword"})
 
 Translation contexts
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 If you're using plain English as source strings (rather than message codes
 ``LIKE_THIS``), you may run into ambiguities when you have to translate the same
@@ -127,7 +170,8 @@ optionally specify a *translation context* to resolve this ambiguity and allow
 target languages to use different strings, even though the source string is
 identical:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # "Close", as in an action (to close something).
     button.set_text(tr("Close", "Actions"))
@@ -135,8 +179,16 @@ identical:
     # "Close", as in a distance (opposite of "far").
     distance_label.set_text(tr("Close", "Distance"))
 
+ .. code-tab:: csharp
+
+    // "Close", as in an action (to close something).
+    GetNode<Button>("Button").Text = Tr("Close", "Actions");
+
+    // "Close", as in a distance (opposite of "far").
+    GetNode<Label>("Distance").Text = Tr("Close", "Distance");
+
 Pluralization
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Most languages require different strings depending on whether an object is in
 singular or plural form. However, hardcoding the "is plural" condition depending
@@ -150,17 +202,29 @@ Pluralization is meant to be used with positive (or zero) integer numbers only.
 Negative and floating-point values usually represent physical entities for which
 singular and plural don't clearly apply.
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     var num_apples = 5
     label.text = tr_n("There is %d apple", "There are %d apples", num_apples) % num_apples
 
+ .. code-tab:: csharp
+
+    int numApples = 5;
+    GetNode<Label>("Label").Text = string.Format(TrN("There is {0} apple", "There are {0} apples", numApples), numApples);
+
 This can be combined with a context if needed:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     var num_jobs = 1
     label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs
+
+ .. code-tab:: csharp
+
+    int numJobs = 1;
+    GetNode<Label>("Label").Text = string.Format(TrN("{0} job", "{0} jobs", numJobs, "Task Manager"), numJobs);
 
 .. note::
 
@@ -207,8 +271,8 @@ TranslationServer
 
 Godot has a server handling low-level translation management
 called the :ref:`TranslationServer <class_TranslationServer>`.
-Translations can be added or removed during run-time;
-the current language can also be changed at run-time.
+Translations can be added or removed during runtime;
+the current language can also be changed at runtime.
 
 .. _doc_internationalizing_games_bidi:
 
@@ -234,7 +298,7 @@ It is possible to override text and control layout direction by using the follow
 
 -  ``text_direction``, sets the base text direction. When set to "auto", direction depends on the first strong directional character in the text according to the Unicode Bidirectional Algorithm,
 -  ``language``, overrides current project locale.
--  ``structured_text_bidi_override property`` and ``_structured_text_parser callback``, enables special handling for structured text.
+-  ``structured_text_bidi_override`` property and ``_structured_text_parser`` callback, enables special handling for structured text.
 -  ``layout_direction``, overrides control mirroring.
 
 .. image:: img/ui_mirror.png
@@ -292,12 +356,12 @@ Testing translations
 You may want to test a project's translation before releasing it. Godot provides two ways
 to do this.
 
-First, in the Project Settings, under **Input Devices > Locale**, there is a **Test**
+First, in the Project Settings, under **Internationalization > Locale** (with advanced settings enabled), there is a **Test**
 property. Set this property to the locale code of the language you want to test. Godot will
 run the project with that locale when the project is run (either from the editor or when
 exported).
 
-.. image:: img/locale_test.png
+.. image:: img/locale_test.webp
 
 Keep in mind that since this is a project setting, it will show up in version control when
 it is set to a non-empty value. Therefore, it should be set back to an empty value before
@@ -316,11 +380,14 @@ Translating the project name
 
 The project name becomes the app name when exporting to different
 operating systems and platforms. To specify the project name in more
-than one language, create a new setting ``application/name`` in the **Project
-Settings** and append the locale identifier to it.
-For instance, for Spanish, this would be ``application/name_es``:
+than one language go to **Project > Project Settings> Application >
+Config**. From here click on the button that says ``Localizable String
+(Size 0)``. Now there should be a button below that which says ``Add
+Translation``. Click on that and it will take you to a page where you
+can choose the language (and country if needed) for your project name
+translation. After doing that you can now type in the localized name.
 
-.. image:: img/localized_name.png
+.. image:: img/localized_name.webp
 
 If you are unsure about the language code to use, refer to the
 :ref:`list of locale codes <doc_locales>`.

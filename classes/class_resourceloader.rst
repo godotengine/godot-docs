@@ -25,12 +25,14 @@ It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes
 
 \ **Note:** You have to import the files into the engine first to load them using :ref:`load<class_ResourceLoader_method_load>`. If you want to load :ref:`Image<class_Image>`\ s at run-time, you may use :ref:`Image.load<class_Image_method_load>`. If you want to import audio files, you can use the snippet described in :ref:`AudioStreamMP3.data<class_AudioStreamMP3_property_data>`.
 
+\ **Note:** Non-resource files such as plain text files cannot be read using **ResourceLoader**. Use :ref:`FileAccess<class_FileAccess>` for those files instead, and be aware that non-resource files are not exported by default (see notes in the :ref:`FileAccess<class_FileAccess>` class description for instructions on exporting them).
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
+- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -40,31 +42,35 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                          | :ref:`add_resource_format_loader<class_ResourceLoader_method_add_resource_format_loader>` **(** :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` format_loader, :ref:`bool<class_bool>` at_front=false **)**                                                                 |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                       | :ref:`exists<class_ResourceLoader_method_exists>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                                                                                                                                            |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`get_dependencies<class_ResourceLoader_method_get_dependencies>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                  |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_method_get_recognized_extensions_for_type>` **(** :ref:`String<class_String>` type **)**                                                                                                                              |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                         | :ref:`get_resource_uid<class_ResourceLoader_method_get_resource_uid>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                  |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                       | :ref:`has_cached<class_ResourceLoader_method_has_cached>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                              |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>`                               | :ref:`load<class_ResourceLoader_method_load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`CacheMode<enum_ResourceLoader_CacheMode>` cache_mode=1 **)**                                                                                  |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>`                               | :ref:`load_threaded_get<class_ResourceLoader_method_load_threaded_get>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` | :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` **(** :ref:`String<class_String>` path, :ref:`Array<class_Array>` progress=[] **)**                                                                                                           |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                         | :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` use_sub_threads=false, :ref:`CacheMode<enum_ResourceLoader_CacheMode>` cache_mode=1 **)** |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                          | :ref:`remove_resource_format_loader<class_ResourceLoader_method_remove_resource_format_loader>` **(** :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` format_loader **)**                                                                                                   |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                          | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>` **(** :ref:`bool<class_bool>` abort **)**                                                                                                                                         |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                        | :ref:`add_resource_format_loader<class_ResourceLoader_method_add_resource_format_loader>`\ (\ format_loader\: :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, at_front\: :ref:`bool<class_bool>` = false\ )                                                                         |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                       | :ref:`exists<class_ResourceLoader_method_exists>`\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = ""\ )                                                                                                                                                    |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>`                               | :ref:`get_cached_ref<class_ResourceLoader_method_get_cached_ref>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                                                                                  |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`get_dependencies<class_ResourceLoader_method_get_dependencies>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                                                                              |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_method_get_recognized_extensions_for_type>`\ (\ type\: :ref:`String<class_String>`\ )                                                                                                                                          |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`get_resource_uid<class_ResourceLoader_method_get_resource_uid>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                                                                              |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                       | :ref:`has_cached<class_ResourceLoader_method_has_cached>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                                                                                          |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`list_directory<class_ResourceLoader_method_list_directory>`\ (\ directory_path\: :ref:`String<class_String>`\ )                                                                                                                                                                        |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>`                               | :ref:`load<class_ResourceLoader_method_load>`\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = "", cache_mode\: :ref:`CacheMode<enum_ResourceLoader_CacheMode>` = 1\ )                                                                                      |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>`                               | :ref:`load_threaded_get<class_ResourceLoader_method_load_threaded_get>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                                                                            |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` | :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>`\ (\ path\: :ref:`String<class_String>`, progress\: :ref:`Array<class_Array>` = []\ )                                                                                                                   |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                         | :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>`\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = "", use_sub_threads\: :ref:`bool<class_bool>` = false, cache_mode\: :ref:`CacheMode<enum_ResourceLoader_CacheMode>` = 1\ ) |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                        | :ref:`remove_resource_format_loader<class_ResourceLoader_method_remove_resource_format_loader>`\ (\ format_loader\: :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`\ )                                                                                                               |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                        | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>`\ (\ abort\: :ref:`bool<class_bool>`\ )                                                                                                                                                     |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -79,7 +85,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ThreadLoadStatus**:
+enum **ThreadLoadStatus**: :ref:`🔗<enum_ResourceLoader_ThreadLoadStatus>`
 
 .. _class_ResourceLoader_constant_THREAD_LOAD_INVALID_RESOURCE:
 
@@ -121,7 +127,7 @@ The resource was loaded successfully and can be accessed via :ref:`load_threaded
 
 .. rst-class:: classref-enumeration
 
-enum **CacheMode**:
+enum **CacheMode**: :ref:`🔗<enum_ResourceLoader_CacheMode>`
 
 .. _class_ResourceLoader_constant_CACHE_MODE_IGNORE:
 
@@ -129,7 +135,7 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_IGNORE** = ``0``
 
-
+Neither the main resource (the one requested to be loaded) nor any of its subresources are retrieved from cache nor stored into it. Dependencies (external resources) are loaded with :ref:`CACHE_MODE_REUSE<class_ResourceLoader_constant_CACHE_MODE_REUSE>`.
 
 .. _class_ResourceLoader_constant_CACHE_MODE_REUSE:
 
@@ -137,7 +143,7 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_REUSE** = ``1``
 
-
+The main resource (the one requested to be loaded), its subresources, and its dependencies (external resources) are retrieved from cache if present, instead of loaded. Those not cached are loaded and then stored into the cache. The same rules are propagated recursively down the tree of dependencies (external resources).
 
 .. _class_ResourceLoader_constant_CACHE_MODE_REPLACE:
 
@@ -145,7 +151,23 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_REPLACE** = ``2``
 
+Like :ref:`CACHE_MODE_REUSE<class_ResourceLoader_constant_CACHE_MODE_REUSE>`, but the cache is checked for the main resource (the one requested to be loaded) as well as for each of its subresources. Those already in the cache, as long as the loaded and cached types match, have their data refreshed from storage into the already existing instances. Otherwise, they are recreated as completely new objects.
 
+.. _class_ResourceLoader_constant_CACHE_MODE_IGNORE_DEEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_IGNORE_DEEP** = ``3``
+
+Like :ref:`CACHE_MODE_IGNORE<class_ResourceLoader_constant_CACHE_MODE_IGNORE>`, but propagated recursively down the tree of dependencies (external resources).
+
+.. _class_ResourceLoader_constant_CACHE_MODE_REPLACE_DEEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_REPLACE_DEEP** = ``4``
+
+Like :ref:`CACHE_MODE_REPLACE<class_ResourceLoader_constant_CACHE_MODE_REPLACE>`, but propagated recursively down the tree of dependencies (external resources).
 
 .. rst-class:: classref-section-separator
 
@@ -160,7 +182,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_resource_format_loader** **(** :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` format_loader, :ref:`bool<class_bool>` at_front=false **)**
+|void| **add_resource_format_loader**\ (\ format_loader\: :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, at_front\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_ResourceLoader_method_add_resource_format_loader>`
 
 Registers a new :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. The ResourceLoader will use the ResourceFormatLoader as described in :ref:`load<class_ResourceLoader_method_load>`.
 
@@ -174,11 +196,27 @@ This method is performed implicitly for ResourceFormatLoaders written in GDScrip
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **exists** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**
+:ref:`bool<class_bool>` **exists**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_ResourceLoader_method_exists>`
 
 Returns whether a recognized resource exists for the given ``path``.
 
 An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. Anything that inherits from :ref:`Resource<class_Resource>` can be used as a type hint, for example :ref:`Image<class_Image>`.
+
+\ **Note:** If you use :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`, this method will return ``true`` for the taken path even if the resource wasn't saved (i.e. exists only in resource cache).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceLoader_method_get_cached_ref:
+
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **get_cached_ref**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_get_cached_ref>`
+
+Returns the cached resource reference for the given ``path``.
+
+\ **Note:** If the resource is not cached, the returned :ref:`Resource<class_Resource>` will be invalid.
 
 .. rst-class:: classref-item-separator
 
@@ -188,7 +226,7 @@ An optional ``type_hint`` can be used to further specify the :ref:`Resource<clas
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_dependencies** **(** :ref:`String<class_String>` path **)**
+:ref:`PackedStringArray<class_PackedStringArray>` **get_dependencies**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_get_dependencies>`
 
 Returns the dependencies for the resource at the given ``path``.
 
@@ -196,9 +234,9 @@ Returns the dependencies for the resource at the given ``path``.
 
 ::
 
-    for dep in ResourceLoader.get_dependencies(path):
-        print(dep.get_slice("::", 0)) # Prints UID.
-        print(dep.get_slice("::", 2)) # Prints path.
+    for dependency in ResourceLoader.get_dependencies(path):
+        print(dependency.get_slice("::", 0)) # Prints the UID.
+        print(dependency.get_slice("::", 2)) # Prints the path.
 
 .. rst-class:: classref-item-separator
 
@@ -208,7 +246,7 @@ Returns the dependencies for the resource at the given ``path``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions_for_type** **(** :ref:`String<class_String>` type **)**
+:ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions_for_type**\ (\ type\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_get_recognized_extensions_for_type>`
 
 Returns the list of recognized extensions for a resource type.
 
@@ -220,7 +258,7 @@ Returns the list of recognized extensions for a resource type.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_resource_uid** **(** :ref:`String<class_String>` path **)**
+:ref:`int<class_int>` **get_resource_uid**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_get_resource_uid>`
 
 Returns the ID associated with a given resource path, or ``-1`` when no such ID exists.
 
@@ -232,7 +270,7 @@ Returns the ID associated with a given resource path, or ``-1`` when no such ID 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_cached** **(** :ref:`String<class_String>` path **)**
+:ref:`bool<class_bool>` **has_cached**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_has_cached>`
 
 Returns whether a cached resource is available for the given ``path``.
 
@@ -242,11 +280,23 @@ Once a resource has been loaded by the engine, it is cached in memory for faster
 
 ----
 
+.. _class_ResourceLoader_method_list_directory:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **list_directory**\ (\ directory_path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_list_directory>`
+
+Lists a directory (as example: "res://assets/enemies"), returning all resources contained within. The resource files are the original file names as visible in the editor before exporting.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ResourceLoader_method_load:
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **load** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`CacheMode<enum_ResourceLoader_CacheMode>` cache_mode=1 **)**
+:ref:`Resource<class_Resource>` **load**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = "", cache_mode\: :ref:`CacheMode<enum_ResourceLoader_CacheMode>` = 1\ ) :ref:`🔗<class_ResourceLoader_method_load>`
 
 Loads a resource at the given ``path``, caching the result for further access.
 
@@ -256,11 +306,13 @@ An optional ``type_hint`` can be used to further specify the :ref:`Resource<clas
 
 The ``cache_mode`` property defines whether and how the cache should be used or updated when loading the resource. See :ref:`CacheMode<enum_ResourceLoader_CacheMode>` for details.
 
-Returns an empty resource if no :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` could handle the file.
+Returns an empty resource if no :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` could handle the file, and prints an error if no file is found at the specified path.
 
 GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` built-in method which can be used in most situations, leaving the use of **ResourceLoader** for more advanced scenarios.
 
 \ **Note:** If :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` is ``true``, :ref:`@GDScript.load<class_@GDScript_method_load>` will not be able to read converted files in an exported project. If you rely on run-time loading of files present within the PCK, set :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` to ``false``.
+
+\ **Note:** Relative paths will be prefixed with ``"res://"`` before loading, to avoid unexpected results make sure your paths are absolute.
 
 .. rst-class:: classref-item-separator
 
@@ -270,11 +322,11 @@ GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` bui
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **load_threaded_get** **(** :ref:`String<class_String>` path **)**
+:ref:`Resource<class_Resource>` **load_threaded_get**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_load_threaded_get>`
 
 Returns the resource loaded by :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>`.
 
-If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading.
+If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading. However, it's recommended to use :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` to known when the load has actually completed.
 
 .. rst-class:: classref-item-separator
 
@@ -284,11 +336,13 @@ If this is called before the loading thread is done (i.e. :ref:`load_threaded_ge
 
 .. rst-class:: classref-method
 
-:ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` **load_threaded_get_status** **(** :ref:`String<class_String>` path, :ref:`Array<class_Array>` progress=[] **)**
+:ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` **load_threaded_get_status**\ (\ path\: :ref:`String<class_String>`, progress\: :ref:`Array<class_Array>` = []\ ) :ref:`🔗<class_ResourceLoader_method_load_threaded_get_status>`
 
 Returns the status of a threaded loading operation started with :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` for the resource at ``path``. See :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` for possible return values.
 
-An array variable can optionally be passed via ``progress``, and will return a one-element array containing the percentage of completion of the threaded loading.
+An array variable can optionally be passed via ``progress``, and will return a one-element array containing the ratio of completion of the threaded loading (between ``0.0`` and ``1.0``).
+
+\ **Note:** The recommended way of using this method is to call it during different frames (e.g., in :ref:`Node._process<class_Node_private_method__process>`, instead of a loop).
 
 .. rst-class:: classref-item-separator
 
@@ -298,7 +352,7 @@ An array variable can optionally be passed via ``progress``, and will return a o
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_threaded_request** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` use_sub_threads=false, :ref:`CacheMode<enum_ResourceLoader_CacheMode>` cache_mode=1 **)**
+:ref:`Error<enum_@GlobalScope_Error>` **load_threaded_request**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = "", use_sub_threads\: :ref:`bool<class_bool>` = false, cache_mode\: :ref:`CacheMode<enum_ResourceLoader_CacheMode>` = 1\ ) :ref:`🔗<class_ResourceLoader_method_load_threaded_request>`
 
 Loads the resource using threads. If ``use_sub_threads`` is ``true``, multiple threads will be used to load the resource, which makes loading faster, but may affect the main thread (and thus cause game slowdowns).
 
@@ -312,7 +366,7 @@ The ``cache_mode`` property defines whether and how the cache should be used or 
 
 .. rst-class:: classref-method
 
-void **remove_resource_format_loader** **(** :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` format_loader **)**
+|void| **remove_resource_format_loader**\ (\ format_loader\: :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`\ ) :ref:`🔗<class_ResourceLoader_method_remove_resource_format_loader>`
 
 Unregisters the given :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
@@ -324,7 +378,7 @@ Unregisters the given :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
 .. rst-class:: classref-method
 
-void **set_abort_on_missing_resources** **(** :ref:`bool<class_bool>` abort **)**
+|void| **set_abort_on_missing_resources**\ (\ abort\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ResourceLoader_method_set_abort_on_missing_resources>`
 
 Changes the behavior on missing sub-resources. The default behavior is to abort loading.
 
@@ -335,3 +389,4 @@ Changes the behavior on missing sub-resources. The default behavior is to abort 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

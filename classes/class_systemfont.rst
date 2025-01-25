@@ -25,7 +25,7 @@ It will attempt to match font style, but it's not guaranteed.
 
 The returned font might be part of a font collection or be a variable font with OpenType "weight", "width" and/or "italic" features set.
 
-You can create :ref:`FontVariation<class_FontVariation>` of the system font for fine control over its features.
+You can create :ref:`FontVariation<class_FontVariation>` of the system font for precise control over its features.
 
 \ **Note:** This class is implemented on iOS, Linux, macOS and Windows, on other platforms it will fallback to default theme font.
 
@@ -42,6 +42,8 @@ Properties
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>`       | :ref:`antialiasing<class_SystemFont_property_antialiasing>`                                             | ``1``                   |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`disable_embedded_bitmaps<class_SystemFont_property_disable_embedded_bitmaps>`                     | ``true``                |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`font_italic<class_SystemFont_property_font_italic>`                                               | ``false``               |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`               | :ref:`font_names<class_SystemFont_property_font_names>`                                                 | ``PackedStringArray()`` |
@@ -55,6 +57,8 @@ Properties
    | :ref:`bool<class_bool>`                                         | :ref:`generate_mipmaps<class_SystemFont_property_generate_mipmaps>`                                     | ``false``               |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`hinting<class_SystemFont_property_hinting>`                                                       | ``1``                   |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`keep_rounding_remainders<class_SystemFont_property_keep_rounding_remainders>`                     | ``true``                |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                                           | :ref:`msdf_pixel_range<class_SystemFont_property_msdf_pixel_range>`                                     | ``16``                  |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
@@ -80,12 +84,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_system_fallback** = ``true``
+:ref:`bool<class_bool>` **allow_system_fallback** = ``true`` :ref:`🔗<class_SystemFont_property_allow_system_fallback>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_allow_system_fallback** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_allow_system_fallback** **(** **)**
+- |void| **set_allow_system_fallback**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_allow_system_fallback**\ (\ )
 
 If set to ``true``, system fonts can be automatically used as fallbacks.
 
@@ -97,14 +101,31 @@ If set to ``true``, system fonts can be automatically used as fallbacks.
 
 .. rst-class:: classref-property
 
-:ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing** = ``1``
+:ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing** = ``1`` :ref:`🔗<class_SystemFont_property_antialiasing>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_antialiasing** **(** :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` value **)**
-- :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **get_antialiasing** **(** **)**
+- |void| **set_antialiasing**\ (\ value\: :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>`\ )
+- :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **get_antialiasing**\ (\ )
 
 Font anti-aliasing mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SystemFont_property_disable_embedded_bitmaps:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_embedded_bitmaps** = ``true`` :ref:`🔗<class_SystemFont_property_disable_embedded_bitmaps>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_disable_embedded_bitmaps**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_disable_embedded_bitmaps**\ (\ )
+
+If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and color fonts ignore this property).
 
 .. rst-class:: classref-item-separator
 
@@ -114,12 +135,12 @@ Font anti-aliasing mode.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **font_italic** = ``false``
+:ref:`bool<class_bool>` **font_italic** = ``false`` :ref:`🔗<class_SystemFont_property_font_italic>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_font_italic** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_font_italic** **(** **)**
+- |void| **set_font_italic**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_font_italic**\ (\ )
 
 If set to ``true``, italic or oblique font is preferred.
 
@@ -131,14 +152,16 @@ If set to ``true``, italic or oblique font is preferred.
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **font_names** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **font_names** = ``PackedStringArray()`` :ref:`🔗<class_SystemFont_property_font_names>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_font_names** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_font_names** **(** **)**
+- |void| **set_font_names**\ (\ value\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_font_names**\ (\ )
 
 Array of font family names to search, first matching font found is used.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -148,12 +171,12 @@ Array of font family names to search, first matching font found is used.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_stretch** = ``100``
+:ref:`int<class_int>` **font_stretch** = ``100`` :ref:`🔗<class_SystemFont_property_font_stretch>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_font_stretch** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_font_stretch** **(** **)**
+- |void| **set_font_stretch**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_font_stretch**\ (\ )
 
 Preferred font stretch amount, compared to a normal width. A percentage value between ``50%`` and ``200%``.
 
@@ -165,12 +188,12 @@ Preferred font stretch amount, compared to a normal width. A percentage value be
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_weight** = ``400``
+:ref:`int<class_int>` **font_weight** = ``400`` :ref:`🔗<class_SystemFont_property_font_weight>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_font_weight** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_font_weight** **(** **)**
+- |void| **set_font_weight**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_font_weight**\ (\ )
 
 Preferred weight (boldness) of the font. A value in the ``100...999`` range, normal font weight is ``400``, bold font weight is ``700``.
 
@@ -182,12 +205,12 @@ Preferred weight (boldness) of the font. A value in the ``100...999`` range, nor
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **force_autohinter** = ``false``
+:ref:`bool<class_bool>` **force_autohinter** = ``false`` :ref:`🔗<class_SystemFont_property_force_autohinter>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_force_autohinter** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_force_autohinter** **(** **)**
+- |void| **set_force_autohinter**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_force_autohinter**\ (\ )
 
 If set to ``true``, auto-hinting is supported and preferred over font built-in hinting.
 
@@ -199,12 +222,12 @@ If set to ``true``, auto-hinting is supported and preferred over font built-in h
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **generate_mipmaps** = ``false``
+:ref:`bool<class_bool>` **generate_mipmaps** = ``false`` :ref:`🔗<class_SystemFont_property_generate_mipmaps>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_generate_mipmaps** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_generate_mipmaps** **(** **)**
+- |void| **set_generate_mipmaps**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_generate_mipmaps**\ (\ )
 
 If set to ``true``, generate mipmaps for the font textures.
 
@@ -216,14 +239,31 @@ If set to ``true``, generate mipmaps for the font textures.
 
 .. rst-class:: classref-property
 
-:ref:`Hinting<enum_TextServer_Hinting>` **hinting** = ``1``
+:ref:`Hinting<enum_TextServer_Hinting>` **hinting** = ``1`` :ref:`🔗<class_SystemFont_property_hinting>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_hinting** **(** :ref:`Hinting<enum_TextServer_Hinting>` value **)**
-- :ref:`Hinting<enum_TextServer_Hinting>` **get_hinting** **(** **)**
+- |void| **set_hinting**\ (\ value\: :ref:`Hinting<enum_TextServer_Hinting>`\ )
+- :ref:`Hinting<enum_TextServer_Hinting>` **get_hinting**\ (\ )
 
 Font hinting mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SystemFont_property_keep_rounding_remainders:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **keep_rounding_remainders** = ``true`` :ref:`🔗<class_SystemFont_property_keep_rounding_remainders>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_keep_rounding_remainders**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_keep_rounding_remainders**\ (\ )
+
+If set to ``true``, when aligning glyphs to the pixel boundaries rounding remainders are accumulated to ensure more uniform glyph distribution. This setting has no effect if subpixel positioning is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -233,12 +273,12 @@ Font hinting mode.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **msdf_pixel_range** = ``16``
+:ref:`int<class_int>` **msdf_pixel_range** = ``16`` :ref:`🔗<class_SystemFont_property_msdf_pixel_range>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_msdf_pixel_range** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_msdf_pixel_range** **(** **)**
+- |void| **set_msdf_pixel_range**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_msdf_pixel_range**\ (\ )
 
 The width of the range around the shape between the minimum and maximum representable signed distance. If using font outlines, :ref:`msdf_pixel_range<class_SystemFont_property_msdf_pixel_range>` must be set to at least *twice* the size of the largest font outline. The default :ref:`msdf_pixel_range<class_SystemFont_property_msdf_pixel_range>` value of ``16`` allows outline sizes up to ``8`` to look correct.
 
@@ -250,12 +290,12 @@ The width of the range around the shape between the minimum and maximum represen
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **msdf_size** = ``48``
+:ref:`int<class_int>` **msdf_size** = ``48`` :ref:`🔗<class_SystemFont_property_msdf_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_msdf_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_msdf_size** **(** **)**
+- |void| **set_msdf_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_msdf_size**\ (\ )
 
 Source font size used to generate MSDF textures. Higher values allow for more precision, but are slower to render and require more memory. Only increase this value if you notice a visible lack of precision in glyph rendering.
 
@@ -267,12 +307,12 @@ Source font size used to generate MSDF textures. Higher values allow for more pr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **multichannel_signed_distance_field** = ``false``
+:ref:`bool<class_bool>` **multichannel_signed_distance_field** = ``false`` :ref:`🔗<class_SystemFont_property_multichannel_signed_distance_field>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_multichannel_signed_distance_field** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_multichannel_signed_distance_field** **(** **)**
+- |void| **set_multichannel_signed_distance_field**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_multichannel_signed_distance_field**\ (\ )
 
 If set to ``true``, glyphs of all sizes are rendered using single multichannel signed distance field generated from the dynamic font vector data.
 
@@ -284,12 +324,12 @@ If set to ``true``, glyphs of all sizes are rendered using single multichannel s
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **oversampling** = ``0.0``
+:ref:`float<class_float>` **oversampling** = ``0.0`` :ref:`🔗<class_SystemFont_property_oversampling>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_oversampling** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_oversampling** **(** **)**
+- |void| **set_oversampling**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_oversampling**\ (\ )
 
 Font oversampling factor, if set to ``0.0`` global oversampling factor is used instead.
 
@@ -301,12 +341,12 @@ Font oversampling factor, if set to ``0.0`` global oversampling factor is used i
 
 .. rst-class:: classref-property
 
-:ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **subpixel_positioning** = ``1``
+:ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **subpixel_positioning** = ``1`` :ref:`🔗<class_SystemFont_property_subpixel_positioning>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_subpixel_positioning** **(** :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` value **)**
-- :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **get_subpixel_positioning** **(** **)**
+- |void| **set_subpixel_positioning**\ (\ value\: :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>`\ )
+- :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **get_subpixel_positioning**\ (\ )
 
 Font glyph subpixel positioning mode. Subpixel positioning provides shaper text and better kerning for smaller font sizes, at the cost of memory usage and font rasterization speed. Use :ref:`TextServer.SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` to automatically enable it based on the font size.
 
@@ -317,3 +357,4 @@ Font glyph subpixel positioning mode. Subpixel positioning provides shaper text 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

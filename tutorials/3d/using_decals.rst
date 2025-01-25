@@ -5,10 +5,10 @@ Using decals
 
 .. note::
 
-    Decals are only supported in the Clustered Forward and Forward Mobile
-    rendering backends, not the Compatibility backend.
+    Decals are only supported in the Forward+ and Mobile renderers, not the 
+    Compatibility renderer.
 
-    If using the Compatibility backend, consider using Sprite3D as an alternative
+    If using the Compatibility renderer, consider using Sprite3D as an alternative
     for projecting decals onto (mostly) flat surfaces.
 
 Decals are projected textures that apply on opaque or transparent surfaces in
@@ -29,7 +29,7 @@ On this page, you'll learn:
 .. seealso::
 
     The Godot demo projects repository contains a
-    `3D decals demo <https://github.com/godotengine/godot-demo-projects/tree/4.0-dev/3d/decals>`__.
+    `3D decals demo <https://github.com/godotengine/godot-demo-projects/tree/master/3d/decals>`__.
 
     If you're looking to write arbitrary 3D text on top of a surface, use
     :ref:`doc_3d_text` placed close to a surface instead of a Decal node.
@@ -38,7 +38,7 @@ Use cases
 ---------
 
 Static decoration
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Sometimes, the fastest way to add texture detail to a scene is to use decals.
 This is especially the case for organic detail, such as patches of dirt or sand
@@ -58,7 +58,7 @@ footprints or wet puddles.
    Dirt added on top of level geometry using decals
 
 Dynamic gameplay elements
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Decals can represent temporary or persistent gameplay effects such as bullet
 impacts and explosion scorches.
@@ -67,7 +67,7 @@ Using an AnimationPlayer node or a script, decals can be made to fade over time
 (and then be removed using ``queue_free()``) to improve performance.
 
 Blob shadows
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 Blob shadows are frequently used in mobile projects (or to follow a retro art
 style), as real-time lighting tends to be too expensive on low-end mobile
@@ -96,7 +96,7 @@ Quick start guide
 -----------------
 
 Creating decals in the editor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Create a Decal node in the 3D editor.
 2. In the inspector, expand the **Textures** section and load a texture in
@@ -121,7 +121,7 @@ Decal node properties
   culling opportunities, therefore improving performance.
 
 Textures
-^^^^^^^^
+~~~~~~~~
 
 - **Albedo:** The albedo (diffuse/color) map to use for the decal. In
   most situations, this is the texture you want to set first. If using a normal
@@ -141,7 +141,7 @@ Textures
   **Albedo**, this texture will appear to glow in the dark.
 
 Parameters
-^^^^^^^^^^
+~~~~~~~~~~
 
 - **Emission Energy:** The brightness of the emission texture.
 - **Modulate:** Multiplies the color of the albedo and emission textures. Use
@@ -160,7 +160,7 @@ Parameters
   added normal angle computations.
 
 Vertical Fade
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 - **Upper Fade:** The curve over which the decal will fade as the surface gets
   further from the center of the :abbr:`AABB (Axis-Aligned Bounding Box)`
@@ -170,7 +170,7 @@ Vertical Fade
   from the decal's projection angle). Only positive values are valid.
 
 Distance Fade
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 - **Enabled:** Controls whether distance fade (a form of :abbr:`LOD (Level of Detail)`)
   is enabled. The decal will fade out over **Begin + Length**, after which it
@@ -184,13 +184,41 @@ Distance Fade
   more suited when the camera moves fast.
 
 Cull Mask
-^^^^^^^^^
+~~~~~~~~~
 
 - **Cull Mask:** Specifies which VisualInstance3D layers this decal will project
   on. By default, decals affect all layers. This is used so you can specify which
   types of objects receive the decal and which do not. This is especially useful
   so you can ensure that dynamic objects don't accidentally receive a Decal
   intended for the terrain under them.
+
+Decal rendering order
+---------------------
+
+By default, decals are ordered based on the size of their :abbr:`AABB
+(Axis-Aligned Bounding Box)` and the distance to the camera. AABBs that are
+closer to the camera are rendered first, which means that decal rendering order
+can sometimes appear to change depending on camera position if some decals are
+positioned at the same location.
+
+To resolve this, you can adjust the **Sorting Offset** property in the
+VisualInstance3D section of the Decal node inspector. This offset is not a
+strict priority order, but a *guideline* that the renderer will use as the AABB
+size still affects how decal sorting works. Therefore, higher values will
+*always* result in the decal being drawn above other decals with a lower sorting
+offset.
+
+If you want to ensure a decal is always rendered on top of other decals,
+you need to set its **Sorting Offset** property to a positive value greater than
+the AABB length of the largest decal that may overlap it. To make this decal
+drawn behind other decals instead, set the **Sorting Offset** to the same
+negative value.
+
+.. figure:: img/decals_sorting_offset.webp
+   :align: center
+   :alt: VisualInstance3D Sorting Offset comparison on Decals
+
+   VisualInstance3D Sorting Offset comparison on Decals
 
 Tweaking performance and quality
 --------------------------------
@@ -206,13 +234,14 @@ away from the camera (and may have little to no impact on the final scene
 rendering). Using node groups, you can also prevent non-essential decorative
 decals from spawning based on user configuration.
 
-The way decals are rendered also has an impact on performance. The **Rendering >
-Textures > Decals > Filter** advanced project setting lets you control how decal
+The way decals are rendered also has an impact on performance. The
+:ref:`Rendering > Textures > Decals > Filter<class_ProjectSettings_property_rendering/textures/decals/filter>`
+advanced project setting lets you control how decal
 textures should be filtered. **Nearest/Linear** does not use mipmaps. However,
 decals will look grainy at a distance. **Nearest/Linear Mipmaps** will look
 smoother at a distance, but decals will look blurry when viewed from oblique
 angles. This can be resolved by using **Nearest/Linear Mipmaps Anisotropic**,
-which provides the highest quality but is also slower to render.
+which provides the highest quality, but is also slower to render.
 
 If your project has a pixel art style, consider setting the filter to one of the
 **Nearest** values so that decals use nearest-neighbor filtering. Otherwise,
@@ -229,6 +258,15 @@ decals cannot use custom shaders. However, custom shaders on the projected
 surfaces are able to read the information that is overridden by decals on top of
 them, such as roughness and metallic.
 
-When using the Forward Mobile backend, only 8 decals can be applied on each
+When using the Forward+ renderer, Godot uses a *clustering* approach for
+decal rendering. As many decals as desired can be added (as long as
+performance allows). However, there's still a default limit of 512 *clustered
+elements* that can be present in the current camera view. A clustered element is
+an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
+:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
+:ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
+in **Project Settings > Rendering > Limits > Cluster Builder**.
+
+When using the Mobile renderer, only 8 decals can be applied on each
 individual Mesh *resource*. If there are more decals affecting a single mesh,
 not all of them will be rendered on the mesh.

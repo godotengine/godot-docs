@@ -51,11 +51,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`_create_mesh_array<class_PrimitiveMesh_method__create_mesh_array>` **(** **)** |virtual| |const| |
-   +---------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const|                 |
-   +---------------------------+--------------------------------------------------------------------------------------------------------+
+   +---------------------------+----------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`_create_mesh_array<class_PrimitiveMesh_private_method__create_mesh_array>`\ (\ ) |virtual| |const| |
+   +---------------------------+----------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>`\ (\ ) |const|                         |
+   +---------------------------+----------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`request_update<class_PrimitiveMesh_method_request_update>`\ (\ )                                   |
+   +---------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -70,12 +72,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **add_uv2** = ``false``
+:ref:`bool<class_bool>` **add_uv2** = ``false`` :ref:`🔗<class_PrimitiveMesh_property_add_uv2>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_add_uv2** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_add_uv2** **(** **)**
+- |void| **set_add_uv2**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_add_uv2**\ (\ )
 
 If set, generates UV2 UV coordinates applying a padding using the :ref:`uv2_padding<class_PrimitiveMesh_property_uv2_padding>` setting. UV2 is needed for lightmapping.
 
@@ -87,12 +89,12 @@ If set, generates UV2 UV coordinates applying a padding using the :ref:`uv2_padd
 
 .. rst-class:: classref-property
 
-:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)``
+:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)`` :ref:`🔗<class_PrimitiveMesh_property_custom_aabb>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` value **)**
-- :ref:`AABB<class_AABB>` **get_custom_aabb** **(** **)**
+- |void| **set_custom_aabb**\ (\ value\: :ref:`AABB<class_AABB>`\ )
+- :ref:`AABB<class_AABB>` **get_custom_aabb**\ (\ )
 
 Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unexpected culling when using a shader to offset vertices.
 
@@ -104,12 +106,12 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_faces** = ``false``
+:ref:`bool<class_bool>` **flip_faces** = ``false`` :ref:`🔗<class_PrimitiveMesh_property_flip_faces>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_faces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flip_faces** **(** **)**
+- |void| **set_flip_faces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flip_faces**\ (\ )
 
 If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
 
@@ -123,12 +125,12 @@ This gives the same result as using :ref:`BaseMaterial3D.CULL_FRONT<class_BaseMa
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_PrimitiveMesh_property_material>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 The current :ref:`Material<class_Material>` of the primitive mesh.
 
@@ -140,12 +142,12 @@ The current :ref:`Material<class_Material>` of the primitive mesh.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **uv2_padding** = ``2.0``
+:ref:`float<class_float>` **uv2_padding** = ``2.0`` :ref:`🔗<class_PrimitiveMesh_property_uv2_padding>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_uv2_padding** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_uv2_padding** **(** **)**
+- |void| **set_uv2_padding**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_uv2_padding**\ (\ )
 
 If :ref:`add_uv2<class_PrimitiveMesh_property_add_uv2>` is set, specifies the padding in pixels applied along seams of the mesh. Lower padding values allow making better use of the lightmap texture (resulting in higher texel density), but may introduce visible lightmap bleeding along edges.
 
@@ -160,15 +162,13 @@ If the size of the lightmap texture can't be determined when generating the mesh
 Method Descriptions
 -------------------
 
-.. _class_PrimitiveMesh_method__create_mesh_array:
+.. _class_PrimitiveMesh_private_method__create_mesh_array:
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **_create_mesh_array** **(** **)** |virtual| |const|
+:ref:`Array<class_Array>` **_create_mesh_array**\ (\ ) |virtual| |const| :ref:`🔗<class_PrimitiveMesh_private_method__create_mesh_array>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Override this method to customize how this primitive mesh should be generated. Should return an :ref:`Array<class_Array>` where each element is another Array of values required for the mesh (see the :ref:`ArrayType<enum_Mesh_ArrayType>` constants).
 
 .. rst-class:: classref-item-separator
 
@@ -178,9 +178,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** |const|
+:ref:`Array<class_Array>` **get_mesh_arrays**\ (\ ) |const| :ref:`🔗<class_PrimitiveMesh_method_get_mesh_arrays>`
 
-Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The result can be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface. For example:
+Returns the mesh arrays used to make up the surface of this primitive mesh.
+
+\ **Example:** Pass the result to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface:
 
 
 .. tabs::
@@ -199,6 +201,18 @@ Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The r
 
 
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PrimitiveMesh_method_request_update:
+
+.. rst-class:: classref-method
+
+|void| **request_update**\ (\ ) :ref:`🔗<class_PrimitiveMesh_method_request_update>`
+
+Request an update of this primitive mesh based on its properties.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
@@ -206,3 +220,4 @@ Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The r
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

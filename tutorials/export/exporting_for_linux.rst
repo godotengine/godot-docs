@@ -31,4 +31,4 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - GODOT_SCRIPT_ENCRYPTION_KEY
+     - ``GODOT_SCRIPT_ENCRYPTION_KEY``

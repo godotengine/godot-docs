@@ -31,23 +31,23 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`add_interface<class_TextServerManager_method_add_interface>` **(** :ref:`TextServer<class_TextServer>` interface **)**             |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TextServer<class_TextServer>`   | :ref:`find_interface<class_TextServerManager_method_find_interface>` **(** :ref:`String<class_String>` name **)** |const|                |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TextServer<class_TextServer>`   | :ref:`get_interface<class_TextServerManager_method_get_interface>` **(** :ref:`int<class_int>` idx **)** |const|                         |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_interface_count<class_TextServerManager_method_get_interface_count>` **(** **)** |const|                                       |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_interfaces<class_TextServerManager_method_get_interfaces>` **(** **)** |const|                                                 |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TextServer<class_TextServer>`   | :ref:`get_primary_interface<class_TextServerManager_method_get_primary_interface>` **(** **)** |const|                                   |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`remove_interface<class_TextServerManager_method_remove_interface>` **(** :ref:`TextServer<class_TextServer>` interface **)**       |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_primary_interface<class_TextServerManager_method_set_primary_interface>` **(** :ref:`TextServer<class_TextServer>` index **)** |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_interface<class_TextServerManager_method_add_interface>`\ (\ interface\: :ref:`TextServer<class_TextServer>`\ )             |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TextServer<class_TextServer>`                              | :ref:`find_interface<class_TextServerManager_method_find_interface>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TextServer<class_TextServer>`                              | :ref:`get_interface<class_TextServerManager_method_get_interface>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                         |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`get_interface_count<class_TextServerManager_method_get_interface_count>`\ (\ ) |const|                                          |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_interfaces<class_TextServerManager_method_get_interfaces>`\ (\ ) |const|                                                    |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TextServer<class_TextServer>`                              | :ref:`get_primary_interface<class_TextServerManager_method_get_primary_interface>`\ (\ ) |const|                                      |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_interface<class_TextServerManager_method_remove_interface>`\ (\ interface\: :ref:`TextServer<class_TextServer>`\ )       |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`set_primary_interface<class_TextServerManager_method_set_primary_interface>`\ (\ index\: :ref:`TextServer<class_TextServer>`\ ) |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -62,7 +62,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**interface_added** **(** :ref:`StringName<class_StringName>` interface_name **)**
+**interface_added**\ (\ interface_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_TextServerManager_signal_interface_added>`
 
 Emitted when a new interface has been added.
 
@@ -74,7 +74,7 @@ Emitted when a new interface has been added.
 
 .. rst-class:: classref-signal
 
-**interface_removed** **(** :ref:`StringName<class_StringName>` interface_name **)**
+**interface_removed**\ (\ interface_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_TextServerManager_signal_interface_removed>`
 
 Emitted when an interface is removed.
 
@@ -91,7 +91,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_interface** **(** :ref:`TextServer<class_TextServer>` interface **)**
+|void| **add_interface**\ (\ interface\: :ref:`TextServer<class_TextServer>`\ ) :ref:`🔗<class_TextServerManager_method_add_interface>`
 
 Registers a :ref:`TextServer<class_TextServer>` interface.
 
@@ -103,7 +103,7 @@ Registers a :ref:`TextServer<class_TextServer>` interface.
 
 .. rst-class:: classref-method
 
-:ref:`TextServer<class_TextServer>` **find_interface** **(** :ref:`String<class_String>` name **)** |const|
+:ref:`TextServer<class_TextServer>` **find_interface**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TextServerManager_method_find_interface>`
 
 Finds an interface by its ``name``.
 
@@ -115,7 +115,7 @@ Finds an interface by its ``name``.
 
 .. rst-class:: classref-method
 
-:ref:`TextServer<class_TextServer>` **get_interface** **(** :ref:`int<class_int>` idx **)** |const|
+:ref:`TextServer<class_TextServer>` **get_interface**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServerManager_method_get_interface>`
 
 Returns the interface registered at a given index.
 
@@ -127,7 +127,7 @@ Returns the interface registered at a given index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_interface_count** **(** **)** |const|
+:ref:`int<class_int>` **get_interface_count**\ (\ ) |const| :ref:`🔗<class_TextServerManager_method_get_interface_count>`
 
 Returns the number of interfaces currently registered.
 
@@ -139,7 +139,7 @@ Returns the number of interfaces currently registered.
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary[]<class_Dictionary>` **get_interfaces** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_interfaces**\ (\ ) |const| :ref:`🔗<class_TextServerManager_method_get_interfaces>`
 
 Returns a list of available interfaces, with the index and name of each interface.
 
@@ -151,7 +151,7 @@ Returns a list of available interfaces, with the index and name of each interfac
 
 .. rst-class:: classref-method
 
-:ref:`TextServer<class_TextServer>` **get_primary_interface** **(** **)** |const|
+:ref:`TextServer<class_TextServer>` **get_primary_interface**\ (\ ) |const| :ref:`🔗<class_TextServerManager_method_get_primary_interface>`
 
 Returns the primary :ref:`TextServer<class_TextServer>` interface currently in use.
 
@@ -163,7 +163,7 @@ Returns the primary :ref:`TextServer<class_TextServer>` interface currently in u
 
 .. rst-class:: classref-method
 
-void **remove_interface** **(** :ref:`TextServer<class_TextServer>` interface **)**
+|void| **remove_interface**\ (\ interface\: :ref:`TextServer<class_TextServer>`\ ) :ref:`🔗<class_TextServerManager_method_remove_interface>`
 
 Removes an interface. All fonts and shaped text caches should be freed before removing an interface.
 
@@ -175,7 +175,7 @@ Removes an interface. All fonts and shaped text caches should be freed before re
 
 .. rst-class:: classref-method
 
-void **set_primary_interface** **(** :ref:`TextServer<class_TextServer>` index **)**
+|void| **set_primary_interface**\ (\ index\: :ref:`TextServer<class_TextServer>`\ ) :ref:`🔗<class_TextServerManager_method_set_primary_interface>`
 
 Sets the primary :ref:`TextServer<class_TextServer>` interface.
 
@@ -186,3 +186,4 @@ Sets the primary :ref:`TextServer<class_TextServer>` interface.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

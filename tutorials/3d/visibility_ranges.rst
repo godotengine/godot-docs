@@ -15,7 +15,7 @@ On this page, you'll learn:
 
 .. seealso::
 
-    If you only need meshes to become less detailed over distance but don't have
+    If you only need meshes to become less detailed over distance, but don't have
     manually authored LOD meshes, consider relying on automatic
     :ref:`doc_mesh_lod` instead.
 
@@ -94,8 +94,10 @@ the following properties in the GeometryInstance3D's **Visibility Range** sectio
 - **Fade Mode:** Controls how the transition between LOD levels should be performed.
   See below for details.
 
+.. _doc_visibility_ranges_fade_mode:
+
 Fade mode
-^^^^^^^^^
+~~~~~~~~~
 
 .. note::
 
@@ -109,22 +111,90 @@ choose from:
 - **Disabled:** Uses hysteresis to switch between LOD levels instantly. This
   prevents situations where LOD levels are switched back and forth quickly when
   the player moves forward and then backward at the LOD transition point. The
-  hystereis distance is determined by **Visibility Range > Begin Margin** and
+  hysteresis distance is determined by **Visibility Range > Begin Margin** and
   **Visibility Range > End Margin**. This mode provides the best performance as
   it doesn't force rendering to become transparent during the fade transition.
-- **Self:** Uses alpha blending to smoothly fade between LOD levels. The fade
-  transition distance is determined by **Visibility Range > Begin Margin** and
-  **Visibility Range > End Margin**. This mode forces transparent rendering on
-  the object during its fade transition, so it has a performance impact.
-- **Dependencies:** This is intended for hierarchical LOD systems, and acts the
-  same as **Self** if visibility ranges are used to perform non-hierarchical
+- **Self:** Uses alpha blending to smoothly fade between LOD levels. The node
+  will fade-out itself when reaching the limits of its own visibility range. The
+  fade transition distance is determined by **Visibility Range > Begin Margin**
+  and **Visibility Range > End Margin**. This mode forces transparent rendering
+  on the object during its fade transition, so it has a performance impact.
+- **Dependencies:** Uses alpha blending to smoothly fade between LOD levels. The
+  node will fade-in its dependencies when reaching the limits of its own
+  visibility range. The fade transition distance is determined by **Visibility
+  Range > Begin Margin** and **Visibility Range > End Margin**. This mode forces
+  transparent rendering on the object during its fade transition, so it has a
+  performance impact. This mode is intended for hierarchical LOD systems using
+  :ref:`Visibility parent <doc_visibility_ranges_visibility_parent>`. It acts
+  the same as **Self** if visibility ranges are used to perform non-hierarchical
   LOD.
+
+.. _doc_visibility_ranges_visibility_parent:
+
+Visibility parent
+~~~~~~~~~~~~~~~~~
+
+The **Visibility Parent** property makes it easier to set up
+:abbr:`HLOD (Hierarchical Level of Detail)`. It allows automatically hiding
+child nodes if its parent is visible given its current visibility range properties.
+
+.. note::
+
+    The target of **Visibility Parent** *must* inherit from
+    :ref:`class_GeometryInstance3D`.
+
+    Despite its name, the **Visibility Parent** property *can* point to a node
+    that is not a parent of the node in the scene tree. However, it is
+    impossible to point **Visibility Parent** towards a child node, as this
+    creates a dependency cycle which is not supported. You will get an error
+    message in the Output panel if a dependency cycle occurs.
+
+Given the following scene tree (where all nodes inherit from GeometryInstance3D):
+
+::
+
+    ┖╴BatchOfHouses
+        ┠╴House1
+        ┠╴House2
+        ┠╴House3
+        ┖╴House4
+
+In this example, *BatchOfHouses* is a large mesh designed to represent all child
+nodes when viewed at a distance. *House1* to *House4* are smaller
+MeshInstance3Ds representing individual houses. To configure HLOD in this
+example, we only need to configure two things:
+
+- Set **Visibility Range Begin** to a number greater than `0.0` so that
+  *BatchOfHouses* only appears when far away enough from the camera. Below this
+  distance, we want *House1* to *House4* to be displayed instead.
+- On *House1* to *House4*, assign the **Visibility Parent** property to *BatchOfHouses*.
+
+This makes it easier to perform further adjustments, as you don't need to adjust
+the **Visibility Range Begin** of *BatchOfHouses* and **Visibility Range End**
+of *House1* to *House4*.
+
+Fade mode is automatically handled by the **Visibility Parent** property, so
+that the child nodes only become hidden once the parent node is fully faded out.
+This is done to minimize visible pop-in. Depending on your :abbr:`HLOD
+(Hierarchical Level of Detail)` setup, you may want to try both the **Self** and
+**Dependencies** :ref:`fade modes <doc_visibility_ranges_fade_mode>`.
+
+.. note::
+
+    Nodes hidden via the **Visible** property are essentially removed from the
+    visibility dependency tree, so dependent instances will not take the hidden
+    node or its ancestors into account.
+
+    In practice, this means that if the target of the **Visibility Parent** node
+    is hidden by setting its **Visible** property to ``false``, the node will
+    not be hidden according to the **Visibility Range Begin** value specified in
+    the visibility parent.
 
 Configuration tips
 ------------------
 
 Use simpler materials at a distance to improve performance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One way to further improve performance is to use simpler materials for distant
 LOD meshes. While using LOD meshes will reduce the number of vertices that need
@@ -153,7 +223,7 @@ expensive material features such as:
 - Proximity Fade
 
 Use dithering for LOD transitions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot currently only supports alpha-based fading for visibility ranges. You can
 however use dithering instead by using several different materials for different

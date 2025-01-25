@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **atlas_file** = ``""``
+:ref:`String<class_String>` **atlas_file** = ``""`` :ref:`🔗<class_ResourceImporterTextureAtlas_property_atlas_file>`
 
 Path to the atlas spritesheet. This *must* be set to valid path to a PNG image. Otherwise, the atlas will fail to import.
 
@@ -66,7 +66,7 @@ Path to the atlas spritesheet. This *must* be set to valid path to a PNG image. 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **crop_to_region** = ``false``
+:ref:`bool<class_bool>` **crop_to_region** = ``false`` :ref:`🔗<class_ResourceImporterTextureAtlas_property_crop_to_region>`
 
 If ``true``, discards empty areas from the atlas. This only affects final sprite positioning, not storage. See also :ref:`trim_alpha_border_from_region<class_ResourceImporterTextureAtlas_property_trim_alpha_border_from_region>`.
 
@@ -80,7 +80,7 @@ If ``true``, discards empty areas from the atlas. This only affects final sprite
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **import_mode** = ``0``
+:ref:`int<class_int>` **import_mode** = ``0`` :ref:`🔗<class_ResourceImporterTextureAtlas_property_import_mode>`
 
 **Region:** Imports the atlas in an :ref:`AtlasTexture<class_AtlasTexture>` resource, which is rendered as a rectangle. This is fast to render, but transparent areas still have to be rendered if they can't be trimmed effectively by :ref:`trim_alpha_border_from_region<class_ResourceImporterTextureAtlas_property_trim_alpha_border_from_region>`. This can reduce performance when rendering large sprites on screen.
 
@@ -94,9 +94,9 @@ If ``true``, discards empty areas from the atlas. This only affects final sprite
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **trim_alpha_border_from_region** = ``true``
+:ref:`bool<class_bool>` **trim_alpha_border_from_region** = ``true`` :ref:`🔗<class_ResourceImporterTextureAtlas_property_trim_alpha_border_from_region>`
 
-If ``true``, trims the region to exclude fully transparent pixels using a clipping rectangle (which is never rotated). This can be used to save memory. See also :ref:`trim_alpha_border_from_region<class_ResourceImporterTextureAtlas_property_trim_alpha_border_from_region>`.
+If ``true``, trims the region to exclude fully transparent pixels using a clipping rectangle (which is never rotated). This can be used to save memory. See also :ref:`crop_to_region<class_ResourceImporterTextureAtlas_property_crop_to_region>`.
 
 \ **Note:** Only effective if :ref:`import_mode<class_ResourceImporterTextureAtlas_property_import_mode>` is **Region**.
 
@@ -107,3 +107,4 @@ If ``true``, trims the region to exclude fully transparent pixels using a clippi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

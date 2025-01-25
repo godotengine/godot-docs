@@ -33,7 +33,7 @@ material, the material must be attached to each object.
 
 All objects derived from a :ref:`CanvasItem <class_CanvasItem>` have a material
 property. This includes all :ref:`GUI elements <class_Control>`, :ref:`Sprite2Ds
-<class_Sprite2D>`, :ref:`TileMaps <class_Tilemap>`, :ref:`MeshInstance2Ds
+<class_Sprite2D>`, :ref:`TileMapLayers <class_TileMapLayer>`, :ref:`MeshInstance2Ds
 <class_MeshInstance2D>` etc. They also have an option to inherit their parent's
 material. This can be useful if you have a large number of nodes that you want
 to use the same material.
@@ -43,7 +43,7 @@ so long as it is drawing to the canvas, so for this tutorial we will use a Sprit
 as it is the easiest CanvasItem to start drawing with.
 
 In the Inspector, click beside "Texture" where it says "[empty]" and select
-"Load", then select "Icon.png". For new projects, this is the Godot icon. You
+"Load", then select "icon.svg". For new projects, this is the Godot icon. You
 should now see the icon in the viewport.
 
 Next, look down in the Inspector, under the CanvasItem section, click beside
@@ -130,36 +130,36 @@ other functions or to assign values to ``COLOR`` directly.
 .. image:: img/UV.png
 
 Using ``TEXTURE`` built-in
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you want to adjust a color in a Sprite2D you cannot just adjust the color
+The default fragment function reads from the set Sprite2D texture and displays it.
+
+When you want to adjust a color in a Sprite2D you can adjust the color
 from the texture manually like in the code below.
 
 .. code-block:: glsl
 
   void fragment(){
-    //this shader will result in an all white rectangle
+    // This shader will result in a blue-tinted icon
     COLOR.b = 1.0;
   }
 
-The default fragment function reads from a texture and displays it. When you
-overwrite the default fragment function, you lose that functionality, so you
-have to implement it yourself. You read from textures using the ``texture``
-function. Certain nodes, like Sprite2Ds, have a dedicated texture variable that
-can be accessed in the shader using ``TEXTURE``. Use it together with ``UV`` and
-``texture`` to draw the Sprite2D.
+Certain nodes, like Sprite2Ds, have a dedicated texture variable that can be accessed
+in the shader using ``TEXTURE``. If you want to use the Sprite2D texture to combine
+with other colors, you can use the ``UV`` with the ``texture`` function to access
+this variable. Use them to redraw the Sprite2D with the texture.
 
 .. code-block:: glsl
 
   void fragment(){
-    COLOR = texture(TEXTURE, UV); //read from texture
+    COLOR = texture(TEXTURE, UV); // Read from texture again.
     COLOR.b = 1.0; //set blue channel to 1.0
   }
 
 .. image:: img/blue-tex.png
 
 Uniform input
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Uniform input is used to pass data into a shader that will be the same across
 the entire shader.
@@ -180,7 +180,7 @@ Add a uniform to change the amount of blue in our Sprite2D.
   uniform float blue = 1.0; // you can assign a default value to uniforms
 
   void fragment(){
-    COLOR = texture(TEXTURE, UV); //read from texture
+    COLOR = texture(TEXTURE, UV); // Read from texture
     COLOR.b = blue;
   }
 
@@ -191,16 +191,23 @@ declared. If you change the value in the editor, it will overwrite the default
 value you provided in the shader.
 
 Interacting with shaders from code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can change uniforms from code using the function ``set_shader_parameter()``
 which is called on the node's material resource. With a Sprite2D node, the
 following code can be used to set the ``blue`` uniform.
 
-::
+.. tabs::
+ 
+ .. code-tab:: gdscript
 
   var blue_value = 1.0
   material.set_shader_parameter("blue", blue_value)
+
+ .. code-tab:: csharp
+  
+  var blueValue = 1.0;
+  ((ShaderMaterial)Material).SetShaderParameter("blue", blueValue);
 
 Note that the name of the uniform is a string. The string must match exactly
 with how it is written in the shader, including spelling and case.

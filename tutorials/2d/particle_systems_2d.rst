@@ -33,10 +33,10 @@ While GPUParticles2D is configured via a :ref:`class_ParticleProcessMaterial`
 node properties in CPUParticles2D (with the exception of the trail settings).
 
 You can convert a GPUParticles2D node into a CPUParticles2D node by clicking on
-the node in the inspector, and selecting **Particles > Convert to
-CPUParticles2D** in the toolbar at the top of the 3D editor viewport.
+the node in the inspector, selecting the 2D viewport, and selecting
+**GPUParticles2D > Convert to CPUParticles2D** in the viewport toolbar.
 
-.. image:: img/particles_convert.png
+.. image:: img/particles_convert.webp
 
 The rest of this tutorial is going to use the GPUParticles2D node. First, add a GPUParticles2D
 node to your scene. After creating that node you will notice that only a white dot was created,
@@ -60,11 +60,73 @@ white points downward.
 Texture
 ~~~~~~~
 
-A particle system uses a single texture (in the future this might be
-extended to animated textures via spritesheet). The texture is set via
-the relevant texture property:
+A particle system can use a single texture or an animation *flipbook*. A
+flipbook is a texture that contains several frames of animation that can be
+played back, or chosen at random during emission. This is equivalent to a
+spritesheet for particles.
+
+The texture is set via the **Texture** property:
 
 .. image:: img/particles2.png
+
+.. _doc_particle_systems_2d_using_flipbook:
+
+Using an animation flipbook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Particle flipbooks are suited to reproduce complex effects such as smoke, fire,
+explosions. They can also be used to introduce random texture variation, by
+making every particle use a different texture. You can find existing particle
+flipbook images online, or pre-render them using external tools such as `Blender
+<https://www.blender.org/>`__ or `EmberGen <https://jangafx.com/software/embergen/>`__.
+
+.. figure:: img/particles_flipbook_result.webp
+   :align: center
+   :alt: Example of a particle system that uses a flipbook texture
+
+   Example of a particle system that uses a flipbook texture
+
+Using an animation flipbook requires additional configuration compared to a
+single texture. For demonstration purposes, we'll use this texture with 5
+columns and 7 rows (right-click and choose **Save as…**):
+
+.. figure:: img/particles_flipbook_example.webp
+   :align: center
+   :width: 240
+   :alt: Particle flipbook texture example
+
+   Credit: `JoesAlotofthings <https://opengameart.org/content/alot-of-particles-indispersal-special-effect-alotofparticles30>`__
+   (CC BY 4.0)
+
+To use an animation flipbook, you must create a new CanvasItemMaterial in the
+Material section of the GPUParticles2D (or CPUParticles2D) node:
+
+.. figure:: img/particles_flipbook_create_canvasitemmaterial.webp
+   :align: center
+   :alt: Creating a CanvasItemMaterial at the bottom of the particles node inspector
+
+   Creating a CanvasItemMaterial at the bottom of the particles node inspector
+
+In this CanvasItemMaterial, enable **Particle Animation** and set **H Frames** and **V Frames**
+to the number of columns and rows present in your flipbook texture:
+
+.. figure:: img/particles_flipbook_configure_canvasitemmaterial.webp
+   :align: center
+   :alt: Configuring the CanvasItemMaterial for the example flipbook texture
+
+   Configuring the CanvasItemMaterial for the example flipbook texture
+
+Once this is done, the :ref:`Animation section <doc_particle_systems_2d_animation>`
+in ParticleProcessMaterial (for GPUParticles2D) or in the CPUParticles2D inspector
+will be effective.
+
+.. tip::
+
+    If your flipbook texture has a black background instead of a transparent
+    background, you will also need to set the blend mode to **Add** instead of
+    **Mix** for correct display. Alternatively, you can modify the texture to
+    have a transparent background in an image editor. In `GIMP <https://gimp.org>`__,
+    this can be done using the **Color > Color to Alpha** menu.
 
 Time parameters
 ---------------
@@ -137,10 +199,25 @@ This setting can be used to set the particle system to render at a fixed
 FPS. For instance, changing the value to ``2`` will make the particles render
 at 2 frames per second. Note this does not slow down the particle system itself.
 
+.. note::
+
+    Godot 4.3 does not currently support physics interpolation for 2D particles.
+    As a workaround, disable physics interpolation for the particles node by setting
+    **Node > Physics Interpolation > Mode** at the bottom of the inspector.
+
 Fract Delta
 ~~~~~~~~~~~
 
-This can be used to turn Fract Delta on or off.
+Setting Fract Delta to ``true`` results in fractional delta calculation,
+which has a smoother particles display effect.
+This increased smoothness stems from higher accuracy.
+The difference is more noticeable in systems with high randomness or fast-moving particles.
+It helps maintain the visual consistency of the particle system,
+making sure that each particle's motion aligns with its actual lifespan.
+Without it, particles might appear to jump or move more than they should in a single frame
+if they are emitted at a point within the frame.
+The greater accuracy has a performance tradeoff,
+particularly in systems with a higher amount of particles.
 
 Drawing parameters
 ------------------
@@ -299,12 +376,66 @@ Color
 
 Used to change the color of the particles being emitted.
 
-Hue variation
+Hue Variation
 ~~~~~~~~~~~~~
 
 The ``Variation`` value sets the initial hue variation applied to each
 particle. The ``Variation Random`` value controls the hue variation
 randomness ratio.
+
+.. _doc_particle_systems_2d_animation:
+
+Animation
+~~~~~~~~~
+
+.. note::
+
+    Particle flipbook animation is only effective if the CanvasItemMaterial used
+    on the GPUParticles2D or CPUParticles2D node has been
+    :ref:`configured accordingly <doc_particle_systems_2d_using_flipbook>`.
+
+To set up the particle flipbook for linear playback, set the **Speed Min** and **Speed Max** values to 1:
+
+.. figure:: img/particles_flipbook_configure_animation_speed.webp
+   :align: center
+   :alt: Setting up particle animation for playback during the particle's lifetime
+
+   Setting up particle animation for playback during the particle's lifetime
+
+By default, looping is disabled. If the particle is done playing before its
+lifetime ends, the particle will keep using the flipbook's last frame (which may
+be fully transparent depending on how the flipbook texture is designed). If
+looping is enabled, the animation will loop back to the first frame and resume
+playing.
+
+Depending on how many images your sprite sheet contains and for how long your
+particle is alive, the animation might not look smooth. The relationship between
+particle lifetime, animation speed, and number of images in the sprite sheet is
+this:
+
+.. note::
+
+   At an animation speed of ``1.0``, the animation will reach the last image
+   in the sequence just as the particle's lifetime ends.
+
+   .. math::
+      Animation\ FPS = \frac{Number\ of\ images}{Lifetime}
+
+If you wish the particle flipbook to be used as a source of random particle
+textures for every particle, keep the speed values at 0 and set **Offset Max**
+to 1 instead:
+
+.. figure:: img/particles_flipbook_configure_animation_offset.webp
+   :align: center
+   :alt: Setting up particle animation for random offset on emission
+
+   Setting up particle animation for random offset on emission
+
+Note that the GPUParticles2D node's **Fixed FPS** also affects animation
+playback. For smooth animation playback, it's recommended to set it to 0 so that
+the particle is simulated on every rendered frame. If this is not an option for
+your use case, set **Fixed FPS** to be equal to the effective framerate used by
+the flipbook animation (see above for the formula).
 
 Emission Shapes
 ---------------

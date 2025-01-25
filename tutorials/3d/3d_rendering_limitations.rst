@@ -33,12 +33,12 @@ without affecting the source file.
 Color banding
 -------------
 
-When using the Forward+ or Forward Mobile rendering methods, Godot's 3D engine
+When using the Forward+ or Mobile rendering methods, Godot's 3D engine
 renders internally in HDR. However, the rendering output will be tonemapped to a
 low dynamic range so it can be displayed on the screen. This can result in
 visible banding, especially when using untextured materials. For performance
-reasons, color precision is also lower when using the Forward Mobile rendering
-method compared to Forward+.
+reasons, color precision is also lower when using the Mobile rendering method
+compared to Forward+.
 
 When using the Compatibility rendering method, HDR is not used and the color
 precision is the lowest of all rendering methods. This also applies to 2D
@@ -46,8 +46,9 @@ rendering, where banding may be visible when using smooth gradient textures.
 
 There are two main ways to alleviate banding:
 
-- If using the Forward+ or Forward Mobile rendering methods, enable **Use
-  Debanding** in the advanced Project Settings. This applies a fullscreen debanding
+- If using the Forward+ or Forward Mobile rendering methods, enable 
+  :ref:`Use Debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`
+  in **Project Settings > Rendering > Anti Aliasing**. This applies a fullscreen debanding
   shader as a post-processing effect and is very cheap.
 - Alternatively, bake some noise into your textures. This is mainly effective in
   2D, e.g. for vignetting effects. In 3D, you can also use a `custom debanding
@@ -143,51 +144,10 @@ this feature. There are still several ways to avoid this problem:
 
 - If you want a material to fade with distance, use the StandardMaterial3D
   distance fade mode **Pixel Dither** or **Object Dither** instead of
-  **PixelAlpha**. This will make the material opaque, which also speeds up rendering.
+  **Pixel Alpha**. This will make the material opaque, which also speeds up rendering.
 
 .. figure:: img/3d_rendering_limitations_transparency_sorting.webp
    :align: center
    :alt: Transparency sorting comparison (alpha-blended materials on the left, alpha scissor materials on the right)
 
    Transparency sorting comparison (alpha-blended materials on the left, alpha scissor materials on the right)
-
-Multi-sample antialiasing
--------------------------
-
-.. seealso::
-
-    Antialiasing is explained in detail on the :ref:`doc_3d_antialiasing` page.
-
-Multi-sample antialiasing (MSAA) takes multiple *coverage* samples at the edges
-of polygons when rendering objects. It does not increase the number of *color*
-samples used to render a scene. Here's what this means in practice:
-
-- Edges of meshes will be smoothed out nicely (as well as supersampling would).
-- Transparent materials that use *alpha testing* (1-bit transparency) won't be smoothed out.
-- Specular aliasing ("sparkles" that appear on reflective surfaces) won't be reduced.
-
-There are several ways to work around this limitation depending on your performance budget:
-
-- To make specular aliasing less noticeable, open the Project Settings and enable
-  **Rendering > Quality > Screen Space Filters > Screen Space Roughness Limiter**.
-  This filter has a moderate cost on performance, so it should only be enabled if
-  you actually need it.
-
-- Enable fast approximate antialiasing (FXAA) in addition to (or instead of)
-  MSAA. Since FXAA is a screen-space antialiasing method, it will smooth out
-  anything. As a downside, FXAA also makes the scene appear blurrier, especially
-  at resolutions below 1440p. FXAA also lacks temporal information, which means
-  its impact on specular aliasing is limited.
-
-- Enable temporal antialiasing (TAA) in addition to (or instead of) MSAA. Since
-  TAA is a screen-space antialiasing method, it will smooth out anything. As a
-  downside, TAA also makes the scene appear blurrier, especially at resolutions
-  below 1440p. TAA provides superior quality compared to FXAA and can
-  effectively combat specular aliasing. However, TAA has a greater performance
-  cost compared to FXAA, and TAA can introduce ghosting artifacts with fast
-  movement.
-
-- Render the scene at a higher resolution by increasing the **Scaling 3D >
-  Scale** project setting above ``1.0``. This technique is called supersample
-  antialiasing (SSAA) and is very slow. Its use is generally only recommended
-  for offline rendering.

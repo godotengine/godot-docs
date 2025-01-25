@@ -50,12 +50,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``1.0``
+:ref:`float<class_float>` **radius** = ``1.0`` :ref:`🔗<class_GPUParticlesAttractorSphere3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 The attractor sphere's radius in 3D units.
 
@@ -68,3 +68,4 @@ The attractor sphere's radius in 3D units.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

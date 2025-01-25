@@ -14,9 +14,10 @@ accuracy tradeoffs.
 
 You can define the shape of a :ref:`class_PhysicsBody2D` by adding one or more
 :ref:`CollisionShape2Ds <class_CollisionShape2D>` or
-:ref:`CollisionPolygon2Ds <class_CollisionPolygon2D>` as child nodes.
-Note that you must add a :ref:`class_Shape2D` *resource* to collision shape
-nodes in the Inspector dock.
+:ref:`CollisionPolygon2Ds <class_CollisionPolygon2D>` as *direct* child nodes.
+Indirect child nodes (i.e. children of child nodes) will be ignored and won't be
+used as collision shapes. Also, note that you must add a :ref:`class_Shape2D`
+*resource* to collision shape nodes in the Inspector dock.
 
 .. note::
 
@@ -40,7 +41,7 @@ primitive shapes. However, for more complex objects, such as a large ship or a
 whole level, you may need convex or concave shapes instead. More on that below.
 
 We recommend favoring primitive shapes for dynamic objects such as RigidBodies
-and KinematicBodies as their behavior is the most reliable. They often provide
+and CharacterBodies as their behavior is the most reliable. They often provide
 better performance as well.
 
 Convex collision shapes
@@ -72,7 +73,7 @@ Concave or trimesh collision shapes
 collision shapes, can take any form, from a few triangles to thousands of
 triangles. Concave shapes are the slowest option but are also the most accurate
 in Godot. **You can only use concave shapes within StaticBodies.** They will not
-work with KinematicBodies or RigidBodies unless the RigidBody's mode is Static.
+work with CharacterBodies or RigidBodies unless the RigidBody's mode is Static.
 
 .. note::
 
@@ -117,7 +118,7 @@ Performance caveats
 You aren't limited to a single collision shape per PhysicsBody. Still, we
 recommend keeping the number of shapes as low as possible to improve
 performance, especially for dynamic objects like RigidBodies and
-KinematicBodies. On top of that, avoid translating, rotating, or scaling
+CharacterBodies. On top of that, avoid translating, rotating, or scaling
 CollisionShapes to benefit from the physics engine's internal optimizations.
 
 When using a single non-transformed collision shape in a StaticBody, the

@@ -35,12 +35,14 @@ Tags
 | Description       | No tag. Use one blank line to separate the description |
 |                   | from the brief.                                        |
 +-------------------+--------------------------------------------------------+
-| Tutorial          | | ``@tutorial:``                                       |
-|                   | | ``@tutorial(The Title Here):``                       |
+| Tutorial          | | ``@tutorial: https://example.com``                   |
+|                   | | ``@tutorial(The Title Here): https://example.com``   |
 +-------------------+--------------------------------------------------------+
-| Deprecated        | ``@deprecated``                                        |
+| Deprecated        | | ``@deprecated``                                      |
+|                   | | ``@deprecated: Use [AnotherClass] instead.``         |
 +-------------------+--------------------------------------------------------+
-| Experimental      | ``@experimental``                                      |
+| Experimental      | | ``@experimental``                                    |
+|                   | | ``@experimental: This class is unstable.``           |
 +-------------------+--------------------------------------------------------+
 
 For example::
@@ -51,8 +53,8 @@ For example::
     ## The description of the script, what it can do,
     ## and any further detail.
     ##
-    ## @tutorial:            https://the/tutorial1/url.com
-    ## @tutorial(Tutorial2): https://the/tutorial2/url.com
+    ## @tutorial:             https://example.com/tutorial_1
+    ## @tutorial(Tutorial 2): https://example.com/tutorial_2
     ## @experimental
 
 .. warning::
@@ -71,13 +73,13 @@ Documenting script members
 
 Members that are applicable for documentation:
 
-- Inner class
-- Constant
-- Function
 - Signal
-- Variable
 - Enum
 - Enum value
+- Constant
+- Variable
+- Function
+- Inner class
 
 Documentation of a script member must immediately precede the member or its annotations
 if it has any. The description can have more than one line but every line must start with
@@ -86,34 +88,42 @@ the double hash symbol ``##`` to be considered as part of the documentation.
 Tags
 ~~~~
 
-+--------------+-------------------+
-| Description  | No tag.           |
-+--------------+-------------------+
-| Deprecated   | ``@deprecated``   |
-+--------------+-------------------+
-| Experimental | ``@experimental`` |
-+--------------+-------------------+
++--------------+--------------------------------------------------+
+| Description  | No tag.                                          |
++--------------+--------------------------------------------------+
+| Deprecated   | | ``@deprecated``                                |
+|              | | ``@deprecated: Use [member another] instead.`` |
++--------------+--------------------------------------------------+
+| Experimental | | ``@experimental``                              |
+|              | | ``@experimental: This method is incomplete.``  |
++--------------+--------------------------------------------------+
 
 For example::
 
     ## The description of the variable.
-    ## @deprecated
+    ## @deprecated: Use [member other_var] instead.
     var my_var
 
-Variables, constants, signals, and enum values support inline documentation comments.
-Note that inline comments do not support tags.
+Alternatively, you can use inline documentation comments::
 
-::
+    signal my_signal ## My signal.
+
+    enum MyEnum { ## My enum.
+        VALUE_A = 0, ## Value A.
+        VALUE_B = 1, ## Value B.
+    }
+
+    const MY_CONST = 1 ## My constant.
 
     var my_var ## My variable.
-    const MY_CONST = 1 ## My constant.
-    signal my_signal ## My signal.
-    enum Direction {
-        UP = 0, ## Direction up.
-        DOWN = 1, ## Direction down.
-        LEFT = 2, ## Direction left.
-        RIGHT = 3, ## Direction right.
-    }
+
+
+    func my_func(): ## My func.
+        pass
+
+
+    class MyClass: ## My class.
+        pass
 
 The script documentation will update in the editor help window every time the script is updated.
 If any member variable or function name starts with an underscore, it will be treated as private.
@@ -130,12 +140,9 @@ Complete script example
     ## The description of the script, what it can do,
     ## and any further detail.
     ##
-    ## @tutorial:            https://the/tutorial1/url.com
-    ## @tutorial(Tutorial2): https://the/tutorial2/url.com
+    ## @tutorial:             https://example.com/tutorial_1
+    ## @tutorial(Tutorial 2): https://example.com/tutorial_2
     ## @experimental
-
-    ## The description of a constant.
-    const GRAVITY = 9.8
 
     ## The description of a signal.
     signal my_signal
@@ -185,7 +192,7 @@ Complete script example
     ## The same rules apply here. The documentation must
     ## immediately precede the class definition.
     ##
-    ## @tutorial: https://the/tutorial/url.com
+    ## @tutorial: https://example.com/tutorial
     ## @experimental
     class Inner:
 
@@ -201,9 +208,10 @@ Complete script example
 
 You can mark a class or any of its members as deprecated or experimental.
 This will add the corresponding indicator in the built-in documentation viewer.
+Optionally, you can provide a short message explaining why the API is not recommended.
 This can be especially useful for plugin and library creators.
 
-.. image:: img/deprecated_and_experimental_marks.webp
+.. image:: img/deprecated_and_experimental_tags.webp
 
 - **Deprecated** marks a non-recommended API that is subject to removal or incompatible change
   in a future major release. Usually the API is kept for backwards compatibility.
@@ -215,75 +223,111 @@ This can be especially useful for plugin and library creators.
     While technically you can use both ``@deprecated`` and ``@experimental`` tags on the same
     class/member, this is not recommended as it is against common conventions.
 
+.. _doc_gdscript_documentation_comments_bbcode_and_class_reference:
+
 BBCode and class reference
 --------------------------
 
-The editor help window which renders the documentation supports :ref:`bbcode <doc_bbcode_in_richtextlabel>`.
-As a result it's possible to align and format the documentation. Color texts, images, fonts, tables,
-URLs, animation effects, etc. can be added with the :ref:`bbcode <doc_bbcode_in_richtextlabel>`.
-
 Godot's class reference supports BBCode-like tags. They add nice formatting to the text which could also
 be used in the documentation. See also :ref:`class reference bbcode <doc_class_reference_bbcode>`.
+Note that this is slightly different from the ``RichTextLabel`` :ref:`BBCode <doc_bbcode_in_richtextlabel>`.
 
 Whenever you link to a member of another class, you need to specify the class name.
 For links to the same class, the class name is optional and can be omitted.
 
 Here's the list of available tags:
 
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| Tag and Description                  | Example                                 | Result                                                               |
-+======================================+=========================================+======================================================================+
-| | ``[Class]``                        | ``Move the [Sprite2D].``                | Move the :ref:`class_Sprite2D`.                                      |
-| | Link to class                      |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[annotation Class.name]``        | ``See [annotation @GDScript.@export].`` | See :ref:`@GDScript.@export <class_@GDScript_annotation_@export>`.   |
-| | Link to annotation                 |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[constant Class.name]``          | ``See [constant @GlobalScope.KEY_F1].`` | See :ref:`@GlobalScope.KEY_F1 <class_@GlobalScope_constant_KEY_F1>`. |
-| | Link to constant                   |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[enum Class.name]``              | ``See [enum Mesh.ArrayType].``          | See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>`.                     |
-| | Link to enum                       |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[method Class.name]``            | ``Call [method Node3D.hide].``          | Call :ref:`Node3D.hide() <class_Node3D_method_hide>`.                |
-| | Link to method                     |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[member Class.name]``            | ``Get [member Node2D.scale].``          | Get :ref:`Node2D.scale <class_Node2D_property_scale>`.               |
-| | Link to member                     |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[signal Class.name]``            | ``Emit [signal Node.renamed].``         | Emit :ref:`Node.renamed <class_Node_signal_renamed>`.                |
-| | Link to signal                     |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[theme_item Class.name]``        | ``See [theme_item Label.font].``        | See :ref:`Label.font <class_Label_theme_font_font>`.                 |
-| | Link to theme item                 |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[param name]``                   | ``Takes [param size] for the size.``    | Takes ``size`` for the size.                                         |
-| | Formats a parameter name (as code) |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[br]``                           | | ``Line 1.[br]``                       | | Line 1.                                                            |
-| | Line break                         | | ``Line 2.``                           | | Line 2.                                                            |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[b]`` ``[/b]``                   | ``Some [b]bold[/b] text.``              | Some **bold** text.                                                  |
-| | Bold                               |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[i]`` ``[/i]``                   | ``Some [i]italic[/i] text.``            | Some *italic* text.                                                  |
-| | Italic                             |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[kbd]`` ``[/kbd]``               | ``Some [kbd]Ctrl + C[/kbd] key.``       | Some :kbd:`Ctrl + C` key.                                            |
-| | Keyboard/mouse shortcut            |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[code]`` ``[/code]``             | ``Some [code]monospace[/code] text.``   | Some ``monospace`` text.                                             |
-| | Monospace                          |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
-| | ``[codeblock]`` ``[/codeblock]``   | *See below.*                            | *See below.*                                                         |
-| | Multiline preformatted block       |                                         |                                                                      |
-+--------------------------------------+-----------------------------------------+----------------------------------------------------------------------+
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| Tag and Description            | Example                                      | Result                                                       |
++================================+==============================================+==============================================================+
+| | ``[Class]``                  | ``Move the [Sprite2D].``                     | Move the :ref:`class_Sprite2D`.                              |
+| | Link to class                |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[annotation Class.name]``  | ``See [annotation @GDScript.@rpc].``         | See :ref:`@GDScript.@rpc <class_@GDScript_annotation_@rpc>`. |
+| | Link to annotation           |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[constant Class.name]``    | ``See [constant Color.RED].``                | See :ref:`Color.RED <class_Color_constant_RED>`.             |
+| | Link to constant             |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[enum Class.name]``        | ``See [enum Mesh.ArrayType].``               | See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>`.             |
+| | Link to enum                 |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[member Class.name]``      | ``Get [member Node2D.scale].``               | Get :ref:`Node2D.scale <class_Node2D_property_scale>`.       |
+| | Link to member (property)    |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[method Class.name]``      | ``Call [method Node3D.hide].``               | Call :ref:`Node3D.hide() <class_Node3D_method_hide>`.        |
+| | Link to method               |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[constructor Class.name]`` | ``Use [constructor Color.Color].``           | Use  :ref:`Color.Color <class_Color_constructor_Color>`.     |
+| | Link to built-in constructor |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[operator Class.name]``    | ``Use [operator Color.operator *].``         | Use  :ref:`Color.operator * <class_Color_operator_mul_int>`. |
+| | Link to built-in operator    |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[signal Class.name]``      | ``Emit [signal Node.renamed].``              | Emit :ref:`Node.renamed <class_Node_signal_renamed>`.        |
+| | Link to signal               |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[theme_item Class.name]``  | ``See [theme_item Label.font].``             | See :ref:`Label.font <class_Label_theme_font_font>`.         |
+| | Link to theme item           |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[param name]``             | ``Takes [param size] for the size.``         | Takes ``size`` for the size.                                 |
+| | Parameter name (as code)     |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[br]``                     | | ``Line 1.[br]``                            | | Line 1.                                                    |
+| | Line break                   | | ``Line 2.``                                | | Line 2.                                                    |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[lb]`` ``[rb]``            | ``[lb]b[rb]text[lb]/b[rb]``                  | [b]text[/b]                                                  |
+| | ``[`` and ``]`` respectively |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[b]`` ``[/b]``             | ``Do [b]not[/b] call this method.``          | Do **not** call this method.                                 |
+| | Bold                         |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[i]`` ``[/i]``             | ``Returns the [i]global[/i] position.``      | Returns the *global* position.                               |
+| | Italic                       |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[u]`` ``[/u]``             | ``[u]Always[/u] use this method.``           | .. raw:: html                                                |
+| | Underline                    |                                              |                                                              |
+|                                |                                              |     <u>Always</u> use this method.                           |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[s]`` ``[/s]``             | ``[s]Outdated information.[/s]``             | .. raw:: html                                                |
+| | Strikethrough                |                                              |                                                              |
+|                                |                                              |     <s>Outdated information.</s>                             |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[color]`` ``[/color]``     | ``[color=red]Error![/color]``                | .. raw:: html                                                |
+| | Color                        |                                              |                                                              |
+|                                |                                              |     <span style="color:red;">Error!</span>                   |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[font]`` ``[/font]``       | ``[font=res://mono.ttf]LICENSE[/font]``      | .. raw:: html                                                |
+| | Font                         |                                              |                                                              |
+|                                |                                              |     <span style="font-family:monospace;">LICENSE</span>      |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[img]`` ``[/img]``         | ``[img width=32]res://icon.svg[/img]``       | .. image:: img/icon.svg                                      |
+| | Image                        |                                              |    :width: 32 px                                             |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[url]`` ``[/url]``         | | ``[url]https://example.com[/url]``         | | https://example.com                                        |
+| | Hyperlink                    | | ``[url=https://example.com]Website[/url]`` | | `Website <https://example.com>`_                           |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[center]`` ``[/center]``   | ``[center]2 + 2 = 4[/center]``               | .. raw:: html                                                |
+| | Horizontal centering         |                                              |                                                              |
+|                                |                                              |     <center>2 + 2 = 4</center>                               |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[kbd]`` ``[/kbd]``         | ``Press [kbd]Ctrl + C[/kbd].``               | Press :kbd:`Ctrl + C`.                                       |
+| | Keyboard/mouse shortcut      |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[code]`` ``[/code]``       | ``Returns [code]true[/code].``               | Returns ``true``.                                            |
+| | Inline code fragment         |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
+| | ``[codeblock]``              | *See below.*                                 | *See below.*                                                 |
+| | ``[/codeblock]``             |                                              |                                                              |
+| | Multiline code block         |                                              |                                                              |
++--------------------------------+----------------------------------------------+--------------------------------------------------------------+
 
 .. note::
 
     1. Currently only :ref:`class_@GDScript` has annotations.
-    2. ``[code]`` disables BBCode until the parser encounters ``[/code]``.
-    3. ``[codeblock]`` disables BBCode until the parser encounters ``[/codeblock]``.
+    2. ``[kbd]`` disables BBCode until the parser encounters ``[/kbd]``.
+    3. ``[code]`` disables BBCode until the parser encounters ``[/code]``.
+    4. ``[codeblock]`` disables BBCode until the parser encounters ``[/codeblock]``.
 
 .. warning::
 
@@ -304,3 +348,10 @@ Here's the list of available tags:
     ## [/codeblock]
     func do_something():
         pass
+
+By default, ``[codeblock]`` highlights GDScript syntax. You can change it using
+the ``lang`` attribute. Currently supported options are:
+
+- ``[codeblock lang=text]`` disables syntax highlighting;
+- ``[codeblock lang=gdscript]`` highlights GDScript syntax;
+- ``[codeblock lang=csharp]`` highlights C# syntax (only in .NET version).

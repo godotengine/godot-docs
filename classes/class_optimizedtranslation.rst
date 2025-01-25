@@ -29,9 +29,9 @@ Methods
 .. table::
    :widths: auto
 
-   +------+--------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`generate<class_OptimizedTranslation_method_generate>` **(** :ref:`Translation<class_Translation>` from **)** |
-   +------+--------------------------------------------------------------------------------------------------------------------+
+   +--------+-----------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`generate<class_OptimizedTranslation_method_generate>`\ (\ from\: :ref:`Translation<class_Translation>`\ ) |
+   +--------+-----------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -46,9 +46,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **generate** **(** :ref:`Translation<class_Translation>` from **)**
+|void| **generate**\ (\ from\: :ref:`Translation<class_Translation>`\ ) :ref:`🔗<class_OptimizedTranslation_method_generate>`
 
 Generates and sets an optimized translation from the given :ref:`Translation<class_Translation>` resource.
+
+\ **Note:** This method is intended to be used in the editor. It does nothing when called from an exported project.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -57,3 +59,4 @@ Generates and sets an optimized translation from the given :ref:`Translation<cla
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

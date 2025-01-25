@@ -10,6 +10,8 @@
 SkeletonModification2DStackHolder
 =================================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`SkeletonModification2D<class_SkeletonModification2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A modification that holds and executes a :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`.
@@ -31,11 +33,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` | :ref:`get_held_modification_stack<class_SkeletonModification2DStackHolder_method_get_held_modification_stack>` **(** **)** |const|                                                                                       |
-   +-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                  | :ref:`set_held_modification_stack<class_SkeletonModification2DStackHolder_method_set_held_modification_stack>` **(** :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` held_modification_stack **)** |
-   +-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` | :ref:`get_held_modification_stack<class_SkeletonModification2DStackHolder_method_get_held_modification_stack>`\ (\ ) |const|                                                                                          |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                | :ref:`set_held_modification_stack<class_SkeletonModification2DStackHolder_method_set_held_modification_stack>`\ (\ held_modification_stack\: :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`\ ) |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -50,7 +52,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` **get_held_modification_stack** **(** **)** |const|
+:ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` **get_held_modification_stack**\ (\ ) |const| :ref:`🔗<class_SkeletonModification2DStackHolder_method_get_held_modification_stack>`
 
 Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` that this modification is holding.
 
@@ -62,7 +64,7 @@ Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>
 
 .. rst-class:: classref-method
 
-void **set_held_modification_stack** **(** :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` held_modification_stack **)**
+|void| **set_held_modification_stack**\ (\ held_modification_stack\: :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`\ ) :ref:`🔗<class_SkeletonModification2DStackHolder_method_set_held_modification_stack>`
 
 Sets the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` that this modification is holding. This modification stack will then be executed when this modification is executed.
 
@@ -73,3 +75,4 @@ Sets the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` t
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

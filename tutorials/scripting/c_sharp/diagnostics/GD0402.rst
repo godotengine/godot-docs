@@ -1,5 +1,5 @@
-GD0402: The class must not contain generic arguments
-====================================================
+GD0402: The class must not be generic
+=====================================
 
 ====================================  ======================================
                                       Value
@@ -20,7 +20,7 @@ Rule description
 
 The Godot editor assumes every :ref:`global class <doc_c_sharp_global_classes>`
 is instantiable, but generic types can't be instantiated because the type
-arguments are unbound.
+parameters are unbound.
 
 .. code-block:: csharp
 

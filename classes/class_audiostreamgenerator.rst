@@ -23,11 +23,15 @@ Description
 
 Here's a sample on how to use it to generate a sine wave:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var playback # Will hold the AudioStreamGeneratorPlayback.
     @onready var sample_hz = $AudioStreamPlayer.stream.mix_rate
     var pulse_hz = 440.0 # The frequency of the sound wave.
+    var phase = 0.0
     
     func _ready():
         $AudioStreamPlayer.play()
@@ -35,13 +39,46 @@ Here's a sample on how to use it to generate a sine wave:
         fill_buffer()
     
     func fill_buffer():
-        var phase = 0.0
         var increment = pulse_hz / sample_hz
         var frames_available = playback.get_frames_available()
     
         for i in range(frames_available):
             playback.push_frame(Vector2.ONE * sin(phase * TAU))
             phase = fmod(phase + increment, 1.0)
+
+ .. code-tab:: csharp
+
+    [Export] public AudioStreamPlayer Player { get; set; }
+    
+    private AudioStreamGeneratorPlayback _playback; // Will hold the AudioStreamGeneratorPlayback.
+    private float _sampleHz;
+    private float _pulseHz = 440.0f; // The frequency of the sound wave.
+    private double phase = 0.0;
+    
+    public override void _Ready()
+    {
+        if (Player.Stream is AudioStreamGenerator generator) // Type as a generator to access MixRate.
+        {
+            _sampleHz = generator.MixRate;
+            Player.Play();
+            _playback = (AudioStreamGeneratorPlayback)Player.GetStreamPlayback();
+            FillBuffer();
+        }
+    }
+    
+    public void FillBuffer()
+    {
+        float increment = _pulseHz / _sampleHz;
+        int framesAvailable = _playback.GetFramesAvailable();
+    
+        for (int i = 0; i < framesAvailable; i++)
+        {
+            _playback.PushFrame(Vector2.One * (float)Mathf.Sin(phase * Mathf.Tau));
+            phase = Mathf.PosMod(phase + increment, 1.0);
+        }
+    }
+
+
 
 In the example above, the "AudioStreamPlayer" node must use an **AudioStreamGenerator** as its stream. The ``fill_buffer`` function provides audio data for approximating a sine wave.
 
@@ -54,7 +91,7 @@ See also :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>` f
 Tutorials
 ---------
 
-- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/2759>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -83,12 +120,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **buffer_length** = ``0.5``
+:ref:`float<class_float>` **buffer_length** = ``0.5`` :ref:`🔗<class_AudioStreamGenerator_property_buffer_length>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_buffer_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_buffer_length** **(** **)**
+- |void| **set_buffer_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_buffer_length**\ (\ )
 
 The length of the buffer to generate (in seconds). Lower values result in less latency, but require the script to generate audio data faster, resulting in increased CPU usage and more risk for audio cracking if the CPU can't keep up.
 
@@ -100,12 +137,12 @@ The length of the buffer to generate (in seconds). Lower values result in less l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **mix_rate** = ``44100.0``
+:ref:`float<class_float>` **mix_rate** = ``44100.0`` :ref:`🔗<class_AudioStreamGenerator_property_mix_rate>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_mix_rate** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_mix_rate** **(** **)**
+- |void| **set_mix_rate**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mix_rate**\ (\ )
 
 The sample rate to use (in Hz). Higher values are more demanding for the CPU to generate, but result in better quality.
 
@@ -120,3 +157,4 @@ According to the `Nyquist-Shannon sampling theorem <https://en.wikipedia.org/wik
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

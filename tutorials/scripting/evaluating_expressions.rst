@@ -9,7 +9,7 @@ An expression can be:
 
 - A mathematical expression such as ``(2 + 4) * 16/4.0``.
 - A built-in method call like ``deg_to_rad(90)``.
-- A method call on an user-provided script like ``update_health()``,
+- A method call on a user-provided script like ``update_health()``,
   if ``base_instance`` is set to a value other than ``null`` when calling
   :ref:`Expression.execute() <class_Expression_method_execute>`.
 
@@ -44,7 +44,8 @@ The following operators are available:
 | Division (``/``)       | Performs and integer division if both operands are integers.                        |
 |                        | If at least one of them is a floating-point number, returns a floating-point value. |
 +------------------------+-------------------------------------------------------------------------------------+
-| Modulo (``%``)         | Returns the remainder of an integer division.                                       |
+| Remainder (``%``)      | Returns the remainder of an integer division (modulo).                              |
+|                        | The result will always have the sign of the dividend.                               |
 +------------------------+-------------------------------------------------------------------------------------+
 
 Spaces around operators are optional. Also, keep in mind the usual
@@ -198,7 +199,7 @@ The output from the script will be::
 Built-in functions
 ------------------
 
-Most methods available in the :ref:`class_@GDScript` scope are available in the
+All methods in the :ref:`Global Scope<class_@GlobalScope>` are available in the
 Expression class, even if no base instance is bound to the expression.
 The same parameters and return types are available.
 

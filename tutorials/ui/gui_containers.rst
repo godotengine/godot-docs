@@ -6,7 +6,7 @@ Using Containers
 ================
 
 :ref:`Anchors <doc_size_and_anchors>` are an efficient way to handle
-different aspect ratios for basic multiple resolution handling in GUIs,
+different aspect ratios for basic multiple resolution handling in GUIs.
 
 For more complex user interfaces, they can become difficult to use.
 
@@ -70,18 +70,18 @@ Container types
 Godot provides several container types out of the box as they serve different purposes:
 
 Box Containers
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Arranges child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
 :ref:`VBoxContainer <class_VBoxContainer>`). In the opposite of the designated direction
-(as in, vertical for an horizontal container), it just expands the children.
+(as in, vertical for a horizontal container), it just expands the children.
 
    .. image:: img/containers_box.png
 
-These containers make use of the *Ratio* property for children with the *Expand* flag set.
+These containers make use of the *Stretch Ratio* property for children with the *Expand* flag set.
 
 Grid Container
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Arranges child controls in a grid layout (via :ref:`GridContainer <class_GridContainer>`, amount
 of columns must be specified). Uses both the vertical and horizontal expand flags.
@@ -89,7 +89,7 @@ of columns must be specified). Uses both the vertical and horizontal expand flag
    .. image:: img/containers_grid.png
 
 Margin Container
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Child controls are expanded towards the bounds of this control (via
 :ref:`MarginContainer <class_MarginContainer>`). Padding will be added on the margins
@@ -103,7 +103,7 @@ constants overrides section of each control:
    .. image:: img/containers_margin_constants.png
 
 Tab Container
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Allows you to place several child controls stacked on top of each other (via
 :ref:`TabContainer <class_TabContainer>`), with only the *current* one visible.
@@ -119,7 +119,7 @@ The titles are generated from the node names by default (although they can be ov
 Settings such as tab placement and *StyleBox* can be modified in the *TabContainer* theme overrides.
 
 Split Container
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Accepts only one or two children controls, then places them side to side with a divisor
 (via :ref:`HSplitContainer <class_HSplitContainer>` and :ref:`VSplitContainer <class_VSplitContainer>`).
@@ -133,7 +133,7 @@ The divisor can be dragged around to change the size relation between both child
 
 
 PanelContainer
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 A container that draws a *StyleBox*, then expands children to cover its whole area
 (via :ref:`PanelContainer <class_PanelContainer>`, respecting the *StyleBox* margins).
@@ -144,7 +144,7 @@ It respects both the horizontal and vertical sizing options.
 This container is useful as top-level, or just to add custom backgrounds to sections of a layout.
 
 ScrollContainer
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Accepts a single child node. If this node is bigger than the container, scrollbars will be added
 to allow panning the node around (via :ref:`ScrollContainer <class_ScrollContainer>`). Both
@@ -159,9 +159,49 @@ Mouse wheel and touch drag (when touch is available) are also valid ways to pan 
 
 As in the example above, one of the most common ways to use this container is together with a *VBoxContainer* as child.
 
+AspectRatioContainer
+~~~~~~~~~~~~~~~~~~~~
+
+A container type that arranges its child controls in a way that preserves their proportions
+automatically when the container is resized.
+(via :ref:`AspectRatioContainer <class_AspectRatioContainer>`).
+It has multiple stretch modes, providing options for adjusting the child controls' sizes concerning the container:
+"fill," "width control height," "height control width," and "cover."
+
+   .. image:: img/containers_aspectratio.webp
+
+useful when you have a container that needs to be dynamic and responsive to different screen sizes,
+and you want the child elements to scale proportionally without losing their intended shapes.
+
+   .. image:: img/containers_aspectratio_drag.webp
+
+FlowContainer
+~~~~~~~~~~~~~
+
+FlowContainer is a container that arranges its child controls either horizontally or vertically,
+(via :ref:`HFlowContainer <class_HFlowContainer>` and via :ref:`VFlowContainer <class_VFlowContainer>`).
+and when the available space runs out, it wraps the children to the next line or column, similar to how text wraps in a book.
+
+
+   .. image:: img/containers_hflow.webp
+
+useful for creating flexible layouts where the child controls adjust automatically to the available space without overlapping.
+
+   .. image:: img/containers_hflow_drag.webp
+
+CenterContainer
+~~~~~~~~~~~~~~~
+
+CenterContainer is a container that automatically keeps all of its child controls centered within it at their minimum size.
+It ensures that the child controls are always aligned to the center, making it easier to create centered layouts without manual positioning.
+(via :ref:`CenterContainer <class_CenterContainer>`).
+
+   .. image:: img/containers_center.webp
+
+   .. image:: img/containers_center_drag.webp
 
 SubViewportContainer
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 This is a special control that will only accept a single *Viewport* node as child, and it will display
 it as if it was an image (via :ref:`SubViewportContainer <class_SubViewportContainer>`).

@@ -10,10 +10,10 @@ Before beginning the upgrade process, it's worth thinking about the advantages
 and disadvantages that upgrading would bring to your project.
 
 Advantages of upgrading
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Along with the
-`new features present in 4.0 <https://github.com/godotengine/godot/blob/master/CHANGELOG.md>`__,
+`new features present in 4.0 <https://godotengine.org/article/godot-4-0-sets-sail>`__,
 upgrading gives the following advantages:
 
 - Many bugs are fixed in 4.0, but cannot be resolved in 3.x for various reasons
@@ -22,10 +22,11 @@ upgrading gives the following advantages:
   will continue to be supported for some time after 4.0 is released, but it will
   eventually stop receiving support.
 
-See :ref:`doc_docs_changelog` for a list of pages documenting new features in Godot 4.0.
+See :ref:`doc_docs_changelog` for a list of pages documenting new features in
+Godot 4.0, and :ref:`doc_list_of_features` for a list of all features in Godot.
 
 Disadvantages of upgrading
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't *need* any features present in Godot 4.0, you may want to stay on
 Godot 3.x for the following reasons:
@@ -50,7 +51,7 @@ Godot 3.x for the following reasons:
   :ref:`exporting to the Web <doc_exporting_for_web>`, as binary size directly
   influences how fast the engine can initialize (regardless of download speed).
 - Godot 4 does not and will not have support for GLES2 rendering.
-  (There is still support for GLES3 rendering using the new OpenGL backend,
+  (There is still support for GLES3 rendering using the new Compatibility renderer,
   which means that devices without Vulkan support can still run Godot 4.)
 
   - If you are targeting **very** old hardware such as Intel Sandy Bridge (2nd
@@ -60,7 +61,11 @@ Godot 3.x for the following reasons:
     can be used to bypass this limitation, but they're too slow for gaming.
 
 Caveats of upgrading
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
+
+.. UPDATE: Planned feature. There are several planned or missing features that
+.. may be added back in the future. Check this section for accuracy and update
+.. it if things have changed!
 
 **Since Godot 4 is a complete rewrite in many aspects, some features have
 unfortunately been lost in the process.** Some of these features may be restored
@@ -71,15 +76,17 @@ in future Godot releases:
   manually change it to GodotPhysics. There are no plans to re-add Bullet physics
   in core, but a third-party add-on could be created for it thanks to
   GDExtension.
-- Rendering in 2D is no longer performed in HDR, which means "overbright"
-  modulate values have no visible effect. This is planned to be restored at some
-  point in the future.
-- While rendering still happens in HDR in 3D when using the Forward Plus or
-  Forward Mobile backends, Viewports cannot return HDR data anymore. This is
-  planned to be restored at some point in the future.
+- By default, rendering in 2D is no longer performed in HDR, which means
+  "overbright" modulate values have no visible effect. Since Godot 4.2, you can
+  enable the project setting :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+  to perform 2D rendering in HDR. See also :ref:`doc_environment_and_post_processing_using_glow_in_2d`.
+- While rendering still happens in HDR in 3D when using the Forward+ or Mobile
+  renderers, Viewports cannot return HDR data anymore. This is planned to be 
+  restored at some point in the future.
 - Mono was replaced by .NET 6. This means exporting C# projects to Android, iOS
   and HTML5 is no longer supported for now. Exporting C# projects to desktop
-  platforms is still supported. Support for exporting C# projects to more
+  platforms is still supported, and as of 4.2 there's experimental support for
+  exporting to mobile platforms. Support for exporting C# projects to more
   platforms will be restored in future 4.x releases as upstream support
   improves.
 
@@ -103,7 +110,7 @@ only ``.gdshader`` is supported in Godot 4.0.
 Running the project upgrade tool
 --------------------------------
 
-.. warning::
+.. danger::
 
     **Make a full backup of your project** before upgrading! The project upgrade
     tool will *not* perform any backups of the project that is being upgraded.
@@ -112,7 +119,7 @@ Running the project upgrade tool
     folder to another location.
 
 Using the Project Manager
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To use the project upgrade tool:
 
@@ -136,7 +143,7 @@ you can use the command line to upgrade the project (see below). This will allow
 you to override the converter's size limits.
 
 Using the command line
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 To use the project upgrade tool from the :ref:`command line <doc_command_line_tutorial>`,
 it's recommended to validate the project conversion by running the Godot editor binary with the following arguments:
@@ -189,7 +196,7 @@ cater to all situations. Therefore, a large part of the upgrade process remains
 manual.
 
 Automatically renamed nodes and resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The list below refers to nodes which were simply renamed for consistency or
 clarity in Godot 4.0. The project upgrade tool renames them automatically in
@@ -220,6 +227,10 @@ a ``3D`` suffix to the old name:
 | ARVRPositionalTracker                   | XRPositionalTracker                       |
 +-----------------------------------------+-------------------------------------------+
 | ARVRServer                              | XRServer                                  |
++-----------------------------------------+-------------------------------------------+
+| BoxShape                                | BoxShape3D                                |
++-----------------------------------------+-------------------------------------------+
+| CapsuleShape                            | CapsuleShape3D                            |
 +-----------------------------------------+-------------------------------------------+
 | CubeMesh                                | BoxMesh                                   |
 +-----------------------------------------+-------------------------------------------+
@@ -365,7 +376,7 @@ a ``3D`` suffix to the old name:
 .. _doc_upgrading_to_godot_4_manual_rename:
 
 Manually renaming methods, properties, signals and constants
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Due to how the project upgrade tool works, not all
 :abbr:`API (Application Programming Interface)` renames can be performed automatically.
@@ -407,11 +418,20 @@ table to find its new name.
 - AcceptDialog's ``set_autowrap()`` is now ``set_autowrap_mode()``.
 - AnimationNode's ``process()`` is now ``_process()``
   (note the leading underscore, which denotes a virtual method).
+- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()`` and now uses an :ref:`class_AnimationLibrary`. 
+- AnimationTree's ``set_process_mode()`` is now ``set_process_callback()``.
+- Array's ``empty()`` is now ``is_empty()``.
+- Array's ``invert()`` is now ``reverse()``.
+- Array's ``remove()`` is now ``remove_at()``.
 - AStar2D and AStar3D's ``get_points()`` is now ``get_points_id()``.
 - BaseButton's ``set_event()`` is now ``set_shortcut()``.
+- Camera2D's ``get_h_offset()`` is now ``get_drag_horizontal_offset()``.
 - Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
+- Camera2D's ``set_h_offset()`` is now ``set_drag_horizontal_offset()``.
 - Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
+- CanvasItem's ``raise()`` is now ``move_to_front()``.
 - CanvasItem's ``update()`` is now ``queue_redraw()``.
+- Control's ``get_stylebox()`` is now ``get_theme_stylebox()``.
 - Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
 - EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()``
   (note the leading underscore, which denotes a virtual method).
@@ -419,23 +439,35 @@ table to find its new name.
 - FileDialog's ``get_mode()`` is now ``get_file_mode()``.
 - FileDialog's ``set_mode()`` is now ``set_file_mode()``.
 - GraphNode's ``get_offset()`` is now ``get_position_offset()``.
-- GridMap's ``world_to_map()`` is now ``local_to_map()``.
 - GridMap's ``map_to_world()`` is now ``map_to_local()``.
+- GridMap's ``world_to_map()`` is now ``local_to_map()``.
 - Image's ``get_rect()`` is now ``get_region()``.
+- ImmediateGeometry's ``set_normal()`` is now ``surface_set_normal()``.
+- ImmediateMesh's ``set_color()`` is now ``surface_set_color()``.
+- ImmediateMesh's ``set_uv()`` is now ``surface_set_uv()``.
 - ItemList's ``get_v_scroll()`` is now ``get_v_scroll_bar()``.
 - MultiPlayerAPI's ``get_network_connected_peers()`` is now ``get_peers()``.
 - MultiPlayerAPI's ``get_network_peer()`` is now ``get_peer()``.
 - MultiPlayerAPI's ``get_network_unique_id()`` is now ``get_unique_id()``.
 - MultiPlayerAPI's ``has_network_peer()`` is now ``has_multiplayer_peer()``.
+- MultiplayerAPI's ``is_refusing_new_network_connections()`` is now ``is_refusing_new_connections()``.
 - PacketPeerUDP's ``is_listening()`` is now ``is_bound()``.
 - PacketPeerUDP's ``listen()`` is now ``bind()``.
 - ParticleProcessMaterial's ``set_flag()`` is now ``set_particle_flag()``.
+- PhysicsTestMotionResult2D's ``get_motion()`` is now ``get_travel()``.
+- RenderingServer's ``get_render_info()`` is now ``get_rendering_info()``.
 - ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
   (note the leading underscore, which denotes a virtual method).
+- ResourceFormatLoader's ``load()`` is now ``_load()``.
 - SceneTree's ``change_scene()`` is now ``change_scene_to_file()``.
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
-- TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - TileMap's ``map_to_world()`` is now ``map_to_local()``.
+- TileMap's ``world_to_map()`` is now ``local_to_map()``.
+- Transform2D's ``xform()`` is ``mat * vec`` and ``xform_inv()`` is ``vec * mat``.
+- XRPositionalTracker's ``get_name()`` is now ``get_tracker_name()``.
+- XRPositionalTracker's ``get_type()`` is now ``get_tracker_type()``.
+- XRPositionalTracker's ``_set_name()`` is now ``get_tracker_name()``.
+
 
 **Properties**
 
@@ -446,11 +478,29 @@ table to find its new name.
     and PathFollow3D's ``set_offset()`` and ``get_offset()`` must be renamed to
     ``set_progress()`` and ``get_progress()`` respectively.
 
+- AudioServer's ``device`` is now ``output_device``.
+- BaseButton's ``group`` is now ``button_group``.
+- Camera3D's ``zfar`` is now ``far``.
+- Camera3D's ``znear`` is now ``near``
 - Control's ``margin`` is now ``offset``.
+- InputEventMouseButton's ``doubleclick`` is now ``double_click``.
+- InputEventWithModifiers's ``alt`` is now ``alt_pressed``.
+- InputEventWithModifiers's ``command`` is now ``command_pressed``.
+- InputEventWithModifiers's ``control`` is now ``ctrl_pressed``.
+- InputEventWithModifiers's ``meta`` is now ``meta_pressed``.
+- InputEventWithModifiers's ``shift`` is now ``shift_pressed``.
 - Label's ``percent_visible`` is now ``visible_ratio``.
 - MultiPlayerAPI's ``refuse_new_network_connections`` is now ``refuse_new_connections``.
+- Node's ``filename`` is now ``scene_file_path``.
+- PathFollow2D's ``rotate`` is now ``rotates``.
 - PathFollow2D and PathFollow3D's ``offset`` is now ``progress``.
+- RectangleShape2D's ``extents`` is now ``size``
 - TextureProgressBar's ``percent_visible`` is now ``show_percentage``.
+- Theme's ``off`` is now ``unchecked``.
+- Theme's ``ofs`` is now ``offset``.
+- Theme's ``on`` is now ``checked``.
+- Window's ``window_title`` is now ``title``.
+- WorldMarginShape2D's ``d`` is now ``distance``.
 - The ``extents`` property on CSG nodes and VoxelGI will have to be replaced
   with ``size``, with the set value halved (as they're no longer half-extents).
   This also affects its setter/getter methods ``set_extents()`` and
@@ -458,6 +508,7 @@ table to find its new name.
 - The ``Engine.editor_hint`` property was removed in favor of the
   ``Engine.is_editor_hint()`` *method*. This is because it's read-only, and
   properties in Godot are not used for read-only values.
+
 
 **Enums**
 
@@ -480,7 +531,7 @@ table to find its new name.
 - MainLoop's ``NOTIFICATION_WM_QUIT_REQUEST`` is now ``NOTIFICATION_WM_CLOSE_REQUEST``.
 
 Checking project settings
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Several project settings were renamed, and some of them had their enums changed
 in incompatible ways (such as shadow filter quality). This means you may need to
@@ -488,10 +539,10 @@ set some project settings' values again. Make sure the **Advanced** toggle is
 enabled in the project settings dialog so you can see all project settings.
 
 Checking Environment settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Graphics quality settings were moved from Environment properties to project
-settings. This was done to make run-time quality adjustments easier, without
+settings. This was done to make runtime quality adjustments easier, without
 having to access the currently active Environment resource then modify its
 properties.
 
@@ -505,27 +556,43 @@ methods that affect environment effects' quality. Only the "base" toggle of each
 environment effect and its visual knobs remain within the Environment resource.
 
 Updating shaders
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
-There have been some changes to shaders that aren't covered by the upgrade tool.
+There have been some changes to shaders that aren't covered by the upgrade tool. 
+You will need to make some manual changes, especially if your shader uses coordinate
+space transformations or a custom ``light()`` function.
 
 The ``.shader`` file extension is no longer supported, which means you must
 rename ``.shader`` files to ``.gdshader`` and update references accordingly in
 scene/resource files using an external text editor.
 
-Some notable renames you will need to perform in shaders are:
+Some notable changes you will need to perform in shaders are:
 
 - Texture filter and repeat modes are now set on individual uniforms, rather
   than the texture files themselves.
 - ``hint_albedo`` is now ``source_color``.
+- ``hint_color`` is now ``source_color``.
 - :ref:`Built in matrix variables were renamed. <doc_spatial_shader>`
 - Particles shaders no longer use the ``vertex()`` processor function. Instead
   they use ``start()`` and ``process()``.
+- In the Forward+ and Mobile renderers, normalized device coordinates now have a Z-range of ``[0.0,1.0]``
+  instead of ``[-1.0,1.0]``. When reconstructing NDC from ``SCREEN_UV`` and depth, use 
+  ``vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);`` instead of 
+  ``vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;``. The Compatibility renderer is unchanged,
+  using the same NDC Z-range as 3.x.
+- The lighting model changed. If your shader has a custom ``light()`` function,
+  you may need to make changes to get the same visual result.
+- In 4.3 and up, the reverse Z depth buffer technique is now implemented, which 
+  may break advanced shaders. See 
+  `Introducing Reverse Z (AKA I'm sorry for breaking your shader) <https://godotengine.org/article/introducing-reverse-z/>`__.
 
 See :ref:`doc_shading_language` for more information.
 
+This list is not exhaustive. If you made all the changes mentioned here and your 
+shader still doesn't work, try asking for help in one of the `community channels <https://godotengine.org/community/>`__.
+
 Updating scripts to take backwards-incompatible changes into account
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some changes performed between Godot 3.x and 4 are not renames, but they still
 break backwards compatibility due to different default behavior.
@@ -550,7 +617,7 @@ The most notable examples of this are:
   The conversion tool will use the string-based syntax which is still present in
   Godot 4, but it's recommended to switch to the :ref:`class_Signal`-based syntax
   described on the linked page. This way, strings are no longer involved,
-  which avoids issues with signal name errors that can only be discovered at run-time.
+  which avoids issues with signal name errors that can only be discovered at runtime.
 - Built-in scripts that are :ref:`tool scripts <doc_running_code_in_the_editor>`
   do not get the ``tool`` keyword converted to the ``@tool`` annotation.
 - The Tween node was removed in favor of Tweeners, which are also available in
@@ -581,6 +648,9 @@ The most notable examples of this are:
 - :ref:`class_AnimatedSprite2D` and :ref:`class_AnimatedSprite3D`'s ``playing``
   property was removed. Use ``play()``/``stop()`` method instead OR configure
   ``autoplay`` animation via the SpriteFrames bottom panel (but not both at once).
+- :ref:`class_Array`'s ``slice()`` second parameter (``end``) is now *exclusive*,
+  instead of being inclusive. For example, this means that
+  ``[1, 2, 3].slice(0, 1)`` now returns ``[1]`` instead of ``[1, 2]``.
 - :ref:`class_BaseButton`'s signals are now ``button_up`` and ``button_down``.
   The ``pressed`` property is now ``button_pressed``.
 - :ref:`class_Camera2D`'s ``rotating`` property was replaced by
@@ -632,6 +702,10 @@ converter doesn't support updating existing setups:
 | DynamicFont         | FontFile              |                                                                            |
 +---------------------+-----------------------+                                                                            |
 | DynamicFontData     | FontFile              |                                                                            |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| ClippedCamera       | Camera2D or Camera3D  | Camera's pyramid shape was moved to :ref:'class_Camera3D'.                 |
++---------------------+-----------------------+                                                                            |
+| InterpolatedCamera  | Camera2D or Camera3D  |                                                                            |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
 | Navigation2D        | Node2D                | Replaced by :ref:`other 2D Navigation nodes <doc_navigation_overview_2d>`. |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
@@ -689,7 +763,7 @@ example, the following code snippet in Godot 3.x must be modified to work in 4.0
     for a full list of changes between Godot 3.x and 4.
 
 ArrayMesh resource compatibility breakage
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you've saved an ArrayMesh resource to a ``.res`` or ``.tres`` file, the
 format used in 4.0 is not compatible with the one used in 3.x. You will need to

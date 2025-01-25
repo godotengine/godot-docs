@@ -118,15 +118,8 @@ If you have previous experience with statically typed languages such as
 C, C++, or C# but never used a dynamically typed one before, it is advised you
 read this tutorial: :ref:`doc_gdscript_more_efficiently`.
 
-Language
---------
-
-In the following, an overview is given to GDScript. Details, such as which
-methods are available to arrays or other objects, should be looked up in
-the linked class descriptions.
-
 Identifiers
-~~~~~~~~~~~
+-----------
 
 Any string that restricts itself to alphabetic characters (``a`` to ``z`` and
 ``A`` to ``Z``), digits (``0`` to ``9``) and ``_`` qualifies as an identifier.
@@ -140,7 +133,7 @@ that are considered "confusable" for ASCII characters and emoji are not allowed
 in identifiers.
 
 Keywords
-~~~~~~~~
+--------
 
 The following is the list of keywords supported by the language. Since
 keywords are reserved words (tokens), they can't be used as identifiers.
@@ -165,6 +158,8 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | match      | See match_.                                                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| when       | Used by `pattern guards <Pattern guards_>`_ in ``match`` statements.                                                                              |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | break      | Exits the execution of the current ``for`` or ``while`` loop.                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop.                                                                         |
@@ -173,38 +168,40 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | return     | Returns a value from a function.                                                                                                                  |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class      | Defines a class.                                                                                                                                  |
+| class      | Defines an inner class. See `Inner classes`_.                                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class_name | Defines the script as a globally accessible class with the specified name.                                                                        |
+| class_name | Defines the script as a globally accessible class with the specified name. See `Registering named classes`_.                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | extends    | Defines what class to extend with the current class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | is         | Tests whether a variable extends a given class, or is of a given built-in type.                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| in         | Tests whether a value is within a string, list, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing.  |
+| in         | Tests whether a value is within a string, array, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing. |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| self       | Refers to current class instance.                                                                                                                 |
+| self       | Refers to current class instance. See `self`_.                                                                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| signal     | Defines a signal.                                                                                                                                 |
+| super      | Resolves the scope of the parent method. See `Inheritance`_.                                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| func       | Defines a function.                                                                                                                               |
+| signal     | Defines a signal. See `Signals`_.                                                                                                                 |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| func       | Defines a function.  See `Functions`_.                                                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | static     | Defines a static function or a static member variable.                                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| const      | Defines a constant.                                                                                                                               |
+| const      | Defines a constant. See `Constants`_.                                                                                                             |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| enum       | Defines an enum.                                                                                                                                  |
+| enum       | Defines an enum. See `Enums`_.                                                                                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| var        | Defines a variable.                                                                                                                               |
+| var        | Defines a variable. See `Variables`_.                                                                                                             |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | breakpoint | Editor helper for debugger breakpoints. Unlike breakpoints created by clicking in the gutter, ``breakpoint`` is stored in the script itself.      |
 |            | This makes it persistent across different machines when using version control.                                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | preload    | Preloads a class or variable. See `Classes as resources`_.                                                                                        |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| await      | Waits for a signal or a coroutine to finish. See `Awaiting for signals or coroutines`_.                                                           |
+| await      | Waits for a signal or a coroutine to finish. See `Awaiting signals or coroutines`_.                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | yield      | Previously used for coroutines. Kept as keyword for transition.                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -222,9 +219,11 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Operators
-~~~~~~~~~
+---------
 
-The following is the list of supported operators and their precedence.
+The following is the list of supported operators and their precedence. All binary operators are `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_,
+including the ``**`` operator. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``. Use parentheses to explicitly specify precedence you need, for
+example ``2 ** (2 ** 3)``. The ternary ``if/else`` operator is right-associative.
 
 +---------------------------------------+-----------------------------------------------------------------------------+
 | **Operator**                          | **Description**                                                             |
@@ -240,10 +239,10 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``foo()``                             | Function call                                                               |
 +---------------------------------------+-----------------------------------------------------------------------------+
-| ``await x``                           | `Awaiting for signals or coroutines`_                                       |
+| ``await x``                           | `Awaiting signals or coroutines`_                                           |
 +---------------------------------------+-----------------------------------------------------------------------------+
-| ``x is Node``                         | Type checking                                                               |
-|                                       |                                                                             |
+| | ``x is Node``                       | Type checking                                                               |
+| | ``x is not Node``                   |                                                                             |
 |                                       | See also :ref:`is_instance_of() <class_@GDScript_method_is_instance_of>`    |
 |                                       | function.                                                                   |
 +---------------------------------------+-----------------------------------------------------------------------------+
@@ -251,10 +250,6 @@ The following is the list of supported operators and their precedence.
 |                                       |                                                                             |
 |                                       | Multiplies ``x`` by itself ``y`` times, similar to calling                  |
 |                                       | :ref:`pow() <class_@GlobalScope_method_pow>` function.                      |
-|                                       |                                                                             |
-|                                       | **Note:** In GDScript, the ``**`` operator is                               |
-|                                       | `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. |
-|                                       | See a detailed note after the table.                                        |
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``~x``                                | Bitwise NOT                                                                 |
 +---------------------------------------+-----------------------------------------------------------------------------+
@@ -330,39 +325,51 @@ The following is the list of supported operators and their precedence.
     3. For negative values, the ``%`` operator and ``fmod()`` use `truncation <https://en.wikipedia.org/wiki/Truncation>`_ instead of rounding towards negative infinity.
        This means that the remainder has a sign. If you need the remainder in a mathematical sense, use the :ref:`posmod() <class_@GlobalScope_method_posmod>` and
        :ref:`fposmod() <class_@GlobalScope_method_fposmod>` functions instead.
-    4. The ``**`` operator is `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``.
-       Use parentheses to explicitly specify precedence you need, for example ``2 ** (2 ** 3)``.
-    5. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
+    4. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
        a runtime error. If you're not sure about the types of the operands, you can safely use the :ref:`is_same() <class_@GlobalScope_method_is_same>` function
        (but note that it is more strict about types and references). To compare floats, use the :ref:`is_equal_approx() <class_@GlobalScope_method_is_equal_approx>`
        and :ref:`is_zero_approx() <class_@GlobalScope_method_is_zero_approx>` functions instead.
 
 Literals
-~~~~~~~~
+--------
 
-+--------------------------+-------------------------------------------+
-| **Literal**              | **Type**                                  |
-+--------------------------+-------------------------------------------+
-| ``45``                   | Base 10 integer                           |
-+--------------------------+-------------------------------------------+
-| ``0x8f51``               | Base 16 (hexadecimal) integer             |
-+--------------------------+-------------------------------------------+
-| ``0b101010``             | Base 2 (binary) integer                   |
-+--------------------------+-------------------------------------------+
-| ``3.14``, ``58.1e-10``   | Floating-point number (real)              |
-+--------------------------+-------------------------------------------+
-| ``"Hello"``, ``'Hi'``    | Strings                                   |
-+--------------------------+-------------------------------------------+
-| ``"""Hello"""``          | Multiline string                          |
-+--------------------------+-------------------------------------------+
-| ``&"name"``              | :ref:`StringName <class_StringName>`      |
-+--------------------------+-------------------------------------------+
-| ``^"Node/Label"``        | :ref:`NodePath <class_NodePath>`          |
-+--------------------------+-------------------------------------------+
-| ``$NodePath``            | Shorthand for ``get_node("NodePath")``    |
-+--------------------------+-------------------------------------------+
-| ``%UniqueNode``          | Shorthand for ``get_node("%UniqueNode")`` |
-+--------------------------+-------------------------------------------+
++---------------------------------+-------------------------------------------+
+| **Example(s)**                  | **Description**                           |
++---------------------------------+-------------------------------------------+
+| ``null``                        | Null value                                |
++---------------------------------+-------------------------------------------+
+| ``false``, ``true``             | Boolean values                            |
++---------------------------------+-------------------------------------------+
+| ``45``                          | Base 10 integer                           |
++---------------------------------+-------------------------------------------+
+| ``0x8f51``                      | Base 16 (hexadecimal) integer             |
++---------------------------------+-------------------------------------------+
+| ``0b101010``                    | Base 2 (binary) integer                   |
++---------------------------------+-------------------------------------------+
+| ``3.14``, ``58.1e-10``          | Floating-point number (real)              |
++---------------------------------+-------------------------------------------+
+| ``"Hello"``, ``'Hi'``           | Regular strings                           |
++---------------------------------+-------------------------------------------+
+| ``"""Hello"""``, ``'''Hi'''``   | Triple-quoted regular strings             |
++---------------------------------+-------------------------------------------+
+| ``r"Hello"``, ``r'Hi'``         | Raw strings                               |
++---------------------------------+-------------------------------------------+
+| ``r"""Hello"""``, ``r'''Hi'''`` | Triple-quoted raw strings                 |
++---------------------------------+-------------------------------------------+
+| ``&"name"``                     | :ref:`StringName <class_StringName>`      |
++---------------------------------+-------------------------------------------+
+| ``^"Node/Label"``               | :ref:`NodePath <class_NodePath>`          |
++---------------------------------+-------------------------------------------+
+
+There are also two constructs that look like literals, but actually are not:
+
++---------------------------------+-------------------------------------------+
+| **Example**                     | **Description**                           |
++---------------------------------+-------------------------------------------+
+| ``$NodePath``                   | Shorthand for ``get_node("NodePath")``    |
++---------------------------------+-------------------------------------------+
+| ``%UniqueNode``                 | Shorthand for ``get_node("%UniqueNode")`` |
++---------------------------------+-------------------------------------------+
 
 Integers and floats can have their numbers separated with ``_`` to make them more readable.
 The following ways to write numbers are all valid::
@@ -372,16 +379,81 @@ The following ways to write numbers are all valid::
     0x8080_0000_ffff  # Equal to 0x80800000ffff.
     0b11_00_11_00  # Equal to 0b11001100.
 
+**Regular string literals** can contain the following escape sequences:
+
++---------------------+---------------------------------+
+| **Escape sequence** | **Expands to**                  |
++---------------------+---------------------------------+
+| ``\n``              | Newline (line feed)             |
++---------------------+---------------------------------+
+| ``\t``              | Horizontal tab character        |
++---------------------+---------------------------------+
+| ``\r``              | Carriage return                 |
++---------------------+---------------------------------+
+| ``\a``              | Alert (beep/bell)               |
++---------------------+---------------------------------+
+| ``\b``              | Backspace                       |
++---------------------+---------------------------------+
+| ``\f``              | Formfeed page break             |
++---------------------+---------------------------------+
+| ``\v``              | Vertical tab character          |
++---------------------+---------------------------------+
+| ``\"``              | Double quote                    |
++---------------------+---------------------------------+
+| ``\'``              | Single quote                    |
++---------------------+---------------------------------+
+| ``\\``              | Backslash                       |
++---------------------+---------------------------------+
+| ``\uXXXX``          | UTF-16 Unicode codepoint        |
+|                     | ``XXXX``                        |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
+|                     | ``XXXXXX``                      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
+There are two ways to represent an escaped Unicode character above ``0xFFFF``:
+
+- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
+- as a single UTF-32 codepoint ``\UXXXXXX``.
+
+Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line,
+without inserting a newline character in the string itself.
+
+A string enclosed in quotes of one type (for example ``"``) can contain quotes of another type
+(for example ``'``) without escaping. Triple-quoted strings allow you to avoid escaping up to
+two consecutive quotes of the same type (unless they are adjacent to the string edges).
+
+**Raw string literals** always encode the string as it appears in the source code.
+This is especially useful for regular expressions. A raw string literal doesn't process escape sequences,
+however it does recognize ``\\`` and ``\"`` (``\'``) and replaces them with themselves.
+Thus, a string can have a quote that matches the opening one, but only if it's preceded by a backslash.
+
+::
+
+    print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
+    print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.
+
+.. note::
+
+    Some strings cannot be represented using raw string literals: you cannot have an odd number
+    of backslashes at the end of a string or have an unescaped opening quote inside the string.
+    However, in practice this doesn't matter since you can use a different quote type
+    or use concatenation with a regular string literal.
+
+GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
+
 Annotations
-~~~~~~~~~~~
+-----------
 
-There are some special tokens in GDScript that act like keywords but are not,
-they are *annotations* instead. Every annotation start with the ``@`` character
-and is specified by a name. A detailed description and example for each annotation
-can be found inside the :ref:`GDScript class reference <class_@GDScript>`.
+Annotations are special tokens in GDScript that act as modifiers to a script or
+its code and may affect how the script is treated by the Godot engine or
+editor.
 
-Annotations affect how the script is treated by external tools and usually don't
-change the behavior.
+Every annotation starts with the ``@`` character and is specified by a name. A
+detailed description and example for each annotation can be found inside the
+:ref:`GDScript class reference <class_@GDScript>`.
 
 For instance, you can use it to export a value to the editor::
 
@@ -459,7 +531,7 @@ can replace the above code with a single line::
     as an error by default. We do not recommend disabling or ignoring it.
 
 Comments
-~~~~~~~~
+--------
 
 Anything from a ``#`` to the end of the line is ignored and is
 considered a comment.
@@ -468,10 +540,116 @@ considered a comment.
 
     # This is a comment.
 
-.. _doc_gdscript_builtin_types:
+.. tip::
+
+    In the Godot script editor, special keywords are highlighted within comments
+    to bring the user's attention to specific comments:
+
+    - **Critical** *(appears in red)*: ``ALERT``, ``ATTENTION``, ``CAUTION``,
+      ``CRITICAL``, ``DANGER``, ``SECURITY``
+    - **Warning** *(appears in yellow)*: ``BUG``, ``DEPRECATED``, ``FIXME``,
+      ``HACK``, ``TASK``, ``TBD``, ``TODO``, ``WARNING``
+    - **Notice** *(appears in green)*: ``INFO``, ``NOTE``, ``NOTICE``, ``TEST``,
+      ``TESTING``
+
+    These keywords are case-sensitive, so they must be written in uppercase for them
+    to be recognized:
+
+    ::
+
+        # In the example below, "TODO" will appear in yellow by default.
+        # The `:` symbol after the keyword is not required, but it's often used.
+
+        # TODO: Add more items for the player to choose from.
+
+    The list of highlighted keywords and their colors can be changed in the **Text
+    Editor > Theme > Comment Markers** section of the Editor Settings.
+
+Use two hash symbols (``##``) instead of one (``#``) to add a *documentation
+comment*, which will appear in the script documentation and in the inspector
+description of an exported variable. Documentation comments must be placed
+directly *above* a documentable item (such as a member variable), or at the top
+of a file. Dedicated formatting options are also available. See
+:ref:`doc_gdscript_documentation_comments` for details.
+
+::
+
+    ## This comment will appear in the script documentation.
+    var value
+
+    ## This comment will appear in the inspector tooltip, and in the documentation.
+    @export var exported_value
+
+Code regions
+------------
+
+Code regions are special types of comments that the script editor understands as
+*foldable regions*. This means that after writing code region comments, you can
+collapse and expand the region by clicking the arrow that appears at the left of
+the comment. This arrow appears within a purple square to be distinguishable
+from standard code folding.
+
+The syntax is as follows:
+
+::
+
+    # Important: There must be *no* space between the `#` and `region` or `endregion`.
+
+    # Region without a description:
+    #region
+    ...
+    #endregion
+
+    # Region with a description:
+    #region Some description that is displayed even when collapsed
+    ...
+    #endregion
+
+.. tip::
+
+    To create a code region quickly, select several lines in the script editor,
+    right-click the selection then choose **Create Code Region**. The region
+    description will be selected automatically for editing.
+
+    It is possible to nest code regions within other code regions.
+
+Here's a concrete usage example of code regions:
+
+::
+
+    # This comment is outside the code region. It will be visible when collapsed.
+    #region Terrain generation
+    # This comment is inside the code region. It won't be visible when collapsed.
+    func generate_lakes():
+        pass
+
+    func generate_hills():
+        pass
+    #endregion
+
+    #region Terrain population
+    func place_vegetation():
+        pass
+
+    func place_roads():
+        pass
+    #endregion
+
+This can be useful to organize large chunks of code into easier to understand
+sections. However, remember that external editors generally don't support this
+feature, so make sure your code is easy to follow even when not relying on
+folding code regions.
+
+.. note::
+
+    Individual functions and indented sections (such as ``if`` and ``for``) can
+    *always* be collapsed in the script editor. This means you should avoid
+    using a code region to contain a single function or indented section, as it
+    won't bring much of a benefit. Code regions work best when they're used to
+    group multiple elements together.
 
 Line continuation
-~~~~~~~~~~~~~~~~~
+-----------------
 
 A line of code in GDScript can be continued on the next line by using a backslash
 (``\``). Add one at the end of a line and the code on the next line will act like
@@ -490,6 +668,8 @@ A line can be continued multiple times like this:
     4 + \
     10 + \
     4
+
+.. _doc_gdscript_builtin_types:
 
 Built-in types
 --------------
@@ -511,6 +691,11 @@ null
 
 ``null`` is an empty data type that contains no information and can not
 be assigned any other value.
+
+Only types that inherit from Object can have a ``null`` value
+(Object is therefore called a "nullable" type).
+:ref:`Variant types <doc_variant_class>` must have a valid value at all times,
+and therefore cannot have a ``null`` value.
 
 :ref:`bool <class_bool>`
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -535,49 +720,6 @@ Note: Currently, data structures such as ``Vector2``, ``Vector3``, and
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
-String literals can contain the following escape sequences:
-
-+---------------------+---------------------------------+
-| **Escape sequence** | **Expands to**                  |
-+---------------------+---------------------------------+
-| ``\n``              | Newline (line feed)             |
-+---------------------+---------------------------------+
-| ``\t``              | Horizontal tab character        |
-+---------------------+---------------------------------+
-| ``\r``              | Carriage return                 |
-+---------------------+---------------------------------+
-| ``\a``              | Alert (beep/bell)               |
-+---------------------+---------------------------------+
-| ``\b``              | Backspace                       |
-+---------------------+---------------------------------+
-| ``\f``              | Formfeed page break             |
-+---------------------+---------------------------------+
-| ``\v``              | Vertical tab character          |
-+---------------------+---------------------------------+
-| ``\"``              | Double quote                    |
-+---------------------+---------------------------------+
-| ``\'``              | Single quote                    |
-+---------------------+---------------------------------+
-| ``\\``              | Backslash                       |
-+---------------------+---------------------------------+
-| ``\uXXXX``          | UTF-16 Unicode codepoint        |
-|                     | ``XXXX``                        |
-|                     | (hexadecimal, case-insensitive) |
-+---------------------+---------------------------------+
-| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
-|                     | ``XXXXXX``                      |
-|                     | (hexadecimal, case-insensitive) |
-+---------------------+---------------------------------+
-
-There are two ways to represent an escaped Unicode character above 0xFFFF:
-
-- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
-- as a single UTF-32 codepoint ``\UXXXXXX``.
-
-Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line, without
-inserting a newline character in the string itself.
-
-GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
 :ref:`StringName <class_StringName>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -728,15 +870,22 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
     Arrays are passed by reference, so the array element type is also an attribute of the in-memory
     structure referenced by a variable in runtime. The static type of a variable restricts the structures
     that it can reference to. Therefore, you **cannot** assign an array with a different element type,
-    even if the type is a subtype of the required type::
+    even if the type is a subtype of the required type.
+
+    If you want to *convert* a typed array, you can create a new array and use the
+    :ref:`Array.assign() <class_Array_method_assign>` method::
 
         var a: Array[Node2D] = [Node2D.new()]
 
-        # OK. You can add the value to the array because `Node2D` extends `Node`.
+        # (OK) You can add the value to the array because `Node2D` extends `Node`.
         var b: Array[Node] = [a[0]]
 
-        # Error. You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
+        # (Error) You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
         b = a
+
+        # (OK) But you can use the `assign()` method instead. Unlike the `=` operator,
+        # the `assign()` method copies the contents of the array, not the reference.
+        b.assign(a)
 
     The only exception was made for the ``Array`` (``Array[Variant]``) type, for user convenience
     and compatibility with old code. However, operations on untyped arrays are considered unsafe.
@@ -744,12 +893,26 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
 Packed arrays
 ^^^^^^^^^^^^^
 
-GDScript arrays are allocated linearly in memory for speed.
-Large arrays (more than tens of thousands of elements) may however cause
-memory fragmentation. If this is a concern, special types of
-arrays are available. These only accept a single data type. They avoid memory
-fragmentation and use less memory, but are atomic and tend to run slower than generic
-arrays. They are therefore only recommended to use for large data sets:
+PackedArrays are generally faster to iterate on and modify compared to a typed
+Array of the same type (e.g. PackedInt64Array versus Array[int]) and consume
+less memory. In the worst case, they are expected to be as fast as an untyped
+Array. Conversely, non-Packed Arrays (typed or not) have extra convenience
+methods such as :ref:`Array.map <class_Array_method_map>` that PackedArrays
+lack. Consult the :ref:`class reference <class_PackedFloat32Array>` for details
+on the methods available. Typed Arrays are generally faster to iterate on and
+modify than untyped Arrays.
+
+While all Arrays can cause memory fragmentation when they become large enough,
+if memory usage and performance (iteration and modification speed) is a concern
+and the type of data you're storing is compatible with one of the ``Packed``
+Array types, then using those may yield improvements. However, if you do not
+have such concerns (e.g. the size of your array does not reach the tens of
+thousands of elements) it is likely more helpful to use regular or typed
+Arrays, as they provide convenience methods that can make your code easier to
+write and maintain (and potentially faster if your data requires such
+operations a lot). If the data you will store is of a known type (including
+your own defined classes), prefer to use a typed Array as it may yield better
+performance in iteration and modification compared to an untyped Array.
 
 - :ref:`PackedByteArray <class_PackedByteArray>`: An array of bytes (integers from 0 to 255).
 - :ref:`PackedInt32Array <class_PackedInt32Array>`: An array of 32-bit integers.
@@ -759,6 +922,7 @@ arrays. They are therefore only recommended to use for large data sets:
 - :ref:`PackedStringArray <class_PackedStringArray>`: An array of strings.
 - :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` values.
 - :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` values.
+- :ref:`PackedVector4Array <class_PackedVector4Array>`: An array of :ref:`Vector4 <class_Vector4>` values.
 - :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` values.
 
 :ref:`Dictionary <class_Dictionary>`
@@ -780,7 +944,7 @@ Associative container which contains values referenced by unique keys.
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
 and doesn't use quotes to mark string keys (making for slightly less to write).
 However, keys written in this form can't start with a digit (like any GDScript
-identifier).
+identifier), and must be string literals.
 
 ::
 
@@ -833,11 +997,8 @@ will set the value of ``x`` to a callable with ``$Sprite2D`` as the object and
 
 You can call it using the ``call`` method: ``x.call(PI)``.
 
-Data
-----
-
 Variables
-~~~~~~~~~
+---------
 
 Variables can exist as class members or local to functions. They are
 created with the ``var`` keyword and may, optionally, be assigned a
@@ -848,7 +1009,7 @@ value upon initialization.
     var a # Data type is 'null' by default.
     var b = 5
     var c = 3.8
-    var d = b + c # Variables are always initialized in order.
+    var d = b + c # Variables are always initialized in direct order (see below).
 
 Variables can optionally have a type specification. When a type is specified,
 the variable will be forced to have always that same type, and trying to assign
@@ -874,7 +1035,7 @@ it will raise an error.
 Valid types are:
 
 - Built-in types (Array, Vector2, int, String, etc.).
-- Engine classes (Node, Resource, Reference, etc.).
+- Engine classes (Node, Resource, RefCounted, etc.).
 - Constant names if they contain a script resource (``MyScript`` if you declared ``const MyScript = preload("res://my_script.gd")``).
 - Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
 - Script classes declared with the ``class_name`` keyword.
@@ -890,8 +1051,54 @@ Valid types are:
     You can turn off this check, or make it only a warning, by changing it in
     the project settings. See :ref:`doc_gdscript_warning_system` for details.
 
+Initialization order
+~~~~~~~~~~~~~~~~~~~~
+
+Member variables are initialized in the following order:
+
+1. Depending on the variable's static type, the variable is either ``null``
+   (untyped variables and objects) or has a default value of the type
+   (``0`` for ``int``, ``false`` for ``bool``, etc.).
+2. The specified values are assigned in the order of the variables in the script,
+   from top to bottom.
+
+   - (Only for ``Node``-derived classes) If the ``@onready`` annotation is applied to a variable,
+     its initialization is deferred to step 5.
+
+3. If defined, the ``_init()`` method is called.
+4. When instantiating scenes and resources, the exported values are assigned.
+5. (Only for ``Node``-derived classes) ``@onready`` variables are initialized.
+6. (Only for ``Node``-derived classes) If defined, the ``_ready()`` method is called.
+
+.. warning::
+
+    You can specify a complex expression as a variable initializer, including function calls.
+    Make sure the variables are initialized in the correct order, otherwise your values
+    may be overwritten. For example::
+
+        var a: int = proxy("a", 1)
+        var b: int = proxy("b", 2)
+        var _data: Dictionary = {}
+
+        func proxy(key: String, value: int):
+            _data[key] = value
+            print(_data)
+            return value
+
+        func _init() -> void:
+            print(_data)
+
+    Will print::
+
+        { "a": 1 }
+        { "a": 1, "b": 2 }
+        {  }
+
+    To fix this, move the ``_data`` variable definition above the ``a`` definition
+    or remove the empty dictionary assignment (``= {}``).
+
 Static variables
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 A class member variable can be declared static::
 
@@ -995,7 +1202,7 @@ and must be placed at the top of the script, before ``class_name`` and ``extends
 See also `Static functions`_ and `Static constructor`_.
 
 Casting
-^^^^^^^
+~~~~~~~
 
 Values assigned to typed variables must have a compatible type. If it's needed to
 coerce a value to be of a certain type, in particular for object types, you can
@@ -1035,7 +1242,7 @@ the scene tree::
     ($AnimPlayer as AnimationPlayer).play("walk")
 
 Constants
-~~~~~~~~~
+---------
 
 Constants are values you cannot change when the game is running.
 Their value must be known at compile-time. Using the
@@ -1066,14 +1273,8 @@ Assigning a value of an incompatible type will raise an error.
 You can also create constants inside a function, which is useful to name local
 magic values.
 
-.. note::
-
-    Since objects, arrays and dictionaries are passed by reference, constants are "flat".
-    This means that if you declare a constant array or dictionary, it can still
-    be modified afterwards. They can't be reassigned with another value though.
-
 Enums
-^^^^^
+~~~~~
 
 Enums are basically a shorthand for constants, and are pretty useful if you
 want to assign consecutive integers to some constant.
@@ -1103,23 +1304,31 @@ a dictionary can also be used with a named enum.
 
     # Is the same as:
     const State = {STATE_IDLE = 0, STATE_JUMP = 5, STATE_SHOOT = 6}
+    # Access values with State.STATE_IDLE, etc.
 
     func _ready():
         # Access values with Name.KEY, prints '5'
         print(State.STATE_JUMP)
-        # Use constant dictionary functions
+        # Use dictionary methods:
         # prints '["STATE_IDLE", "STATE_JUMP", "STATE_SHOOT"]'
         print(State.keys())
+        # prints '{ "STATE_IDLE": 0, "STATE_JUMP": 5, "STATE_SHOOT": 6 }'
+        print(State)
+        # prints '[0, 5, 6]'
+        print(State.values())
+
+If not assigning a value to a key of an enum it will be assigned the previous value plus one,
+or ``0`` if it is the first entry in the enum. Multiple keys with the same value are allowed.
 
 
 Functions
-~~~~~~~~~
+---------
 
 Functions always belong to a `class <Classes_>`_. The scope priority for
 variable look-up is: local → class member → global. The ``self`` variable is
-always available and is provided as an option for accessing class members, but
-is not always required (and should *not* be sent as the function's first
-argument, unlike Python).
+always available and is provided as an option for accessing class members
+(see `self`_), but is not always required (and should *not* be sent as the
+function's first argument, unlike Python).
 
 ::
 
@@ -1172,10 +1381,10 @@ return early with the ``return`` keyword, but they can't return any value.
           valid value to return.
 
 Referencing functions
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
-Functions are first-class items in terms of the :ref:`Callable <class_Callable>` object. Referencing a
-function by name without calling it will automatically generate the proper
+Functions are first-class values in terms of the :ref:`Callable <class_Callable>` object.
+Referencing a function by name without calling it will automatically generate the proper
 callable. This can be used to pass functions as arguments.
 
 ::
@@ -1192,40 +1401,89 @@ callable. This can be used to pass functions as arguments.
     func _ready() -> void:
         var my_array = [1, 2, 3]
         var plus_one = map(my_array, add1)
-        print(plus_one) # Prints [2, 3, 4].
+        print(plus_one) # Prints `[2, 3, 4]`.
 
-.. note:: Callables **must** be called with the ``call`` method. You cannot use
-          the ``()`` operator directly. This behavior is implemented to avoid
-          performance issues on direct function calls.
+.. note::
+
+    Callables **must** be called with the :ref:`call() <class_Callable_method_call>` method.
+    You cannot use the ``()`` operator directly. This behavior is implemented to avoid
+    performance issues on direct function calls.
 
 Lambda functions
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
-Lambda functions allow you to declare functions that do not belong to a class. Instead a :ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
-This can be useful to create Callables to pass around without polluting the class scope.
+Lambda functions allow you to declare functions that do not belong to a class. Instead, a
+:ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
+This can be useful to create callables to pass around without polluting the class scope.
 
 ::
 
-    var lambda = func(x): print(x)
-    lambda.call(42) # Prints "42"
+    var lambda = func (x):
+        print(x)
 
-Lambda functions can be named for debugging purposes::
+To call the created lambda you can use the :ref:`call() <class_Callable_method_call>` method::
+
+    lambda.call(42) # Prints `42`.
+
+Lambda functions can be named for debugging purposes (the name is displayed in the Debugger)::
 
     var lambda = func my_lambda(x):
         print(x)
 
-Lambda functions capture the local environment. Local variables are passed by value, so they won't be updated in the lambda if changed in the local function::
+You can specify type hints for lambda functions in the same way as for regular ones::
+
+    var lambda := func (x: int) -> void:
+        print(x)
+
+Note that if you want to return a value from a lambda function, an explicit ``return``
+is required (you can't omit ``return``)::
+
+    var lambda = func (x): return x ** 2
+    print(lambda.call(2)) # Prints `4`.
+
+Lambda functions capture the local environment::
 
     var x = 42
-    var my_lambda = func(): print(x)
-    my_lambda.call() # Prints "42"
-    x = "Hello"
-    my_lambda.call() # Prints "42"
+    var lambda = func ():
+        print(x) # Prints `42`.
+    lambda.call()
 
-.. note:: The values of the outer scope behave like constants. Therefore, if you declare an array or dictionary, it can still be modified afterwards.
+.. warning::
+
+    Local variables are captured by value once, when the lambda is created.
+    So they won't be updated in the lambda if reassigned in the outer function::
+
+        var x = 42
+        var lambda = func (): print(x)
+        lambda.call() # Prints `42`.
+        x = "Hello"
+        lambda.call() # Prints `42`.
+
+    Also, a lambda cannot reassign an outer local variable. After exiting the lambda,
+    the variable will be unchanged, because the lambda capture implicitly shadows it::
+
+        var x = 42
+        var lambda = func ():
+            print(x) # Prints `42`.
+            x = "Hello" # Produces the `CONFUSABLE_CAPTURE_REASSIGNMENT` warning.
+            print(x) # Prints `Hello`.
+        lambda.call()
+        print(x) # Prints `42`.
+
+    However, if you use pass-by-reference data types (arrays, dictionaries, and objects),
+    then the content changes are shared until you reassign the variable::
+
+        var a = []
+        var lambda = func ():
+            a.append(1)
+            print(a) # Prints `[1]`.
+            a = [2] # Produces the `CONFUSABLE_CAPTURE_REASSIGNMENT` warning.
+            print(a) # Prints `[2]`.
+        lambda.call()
+        print(a) # Prints `[1]`.
 
 Static functions
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 A function can be declared static. When a function is static, it has no access to the instance member variables or ``self``.
 A static function has access to static variables. Also static functions are useful to make libraries of helper functions::
@@ -1233,19 +1491,19 @@ A static function has access to static variables. Also static functions are usef
     static func sum2(a, b):
         return a + b
 
-Lambdas cannot be declared static.
+Lambda functions cannot be declared static.
 
 See also `Static variables`_ and `Static constructor`_.
 
 Statements and control flow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 Statements are standard and can be assignments, function calls, control
 flow structures, etc (see below). ``;`` as a statement separator is
 entirely optional.
 
 Expressions
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Expressions are sequences of operators and their operands in orderly fashion. An expression by itself can be a
 statement too, though only calls are reasonable to use as statements since other expressions don't have side effects.
@@ -1272,8 +1530,41 @@ Here are some examples of expressions::
 Identifiers, attributes, and subscripts are valid assignment targets. Other expressions cannot be on the left side of
 an assignment.
 
+self
+^^^^
+
+``self`` can be used to refer to the current instance and is often equivalent to
+directly referring to symbols available in the current script. However, ``self``
+also allows you to access properties, methods, and other names that are defined
+dynamically (i.e. are expected to exist in subtypes of the current class, or are
+provided using :ref:`_set() <class_Object_private_method__set>` and/or
+:ref:`_get() <class_Object_private_method__get>`).
+
+::
+
+    extends Node
+
+    func _ready():
+        # Compile time error, as `my_var` is not defined in the current class or its ancestors.
+        print(my_var)
+        # Checked at runtime, thus may work for dynamic properties or descendant classes.
+        print(self.my_var)
+
+        # Compile time error, as `my_func()` is not defined in the current class or its ancestors.
+        my_func()
+        # Checked at runtime, thus may work for descendant classes.
+        self.my_func()
+
+.. warning::
+
+    Beware that accessing members of child classes in the base class is often
+    considered a bad practice, because this blurs the area of responsibility of
+    any given piece of code, making the overall relationship between parts of
+    your game harder to reason about. Besides that, one can simply forget that
+    the parent class had some expectations about it's descendants.
+
 if/else/elif
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 Simple conditions are created by using the ``if``/``else``/``elif`` syntax.
 Parenthesis around conditions are allowed, but not required. Given the
@@ -1336,7 +1627,7 @@ use an ``if`` statement combined with the ``in`` operator to accomplish this::
     if "varName" in get_parent(): print("varName is defined in parent!")
 
 while
-^^^^^
+~~~~~
 
 Simple loops are created by using ``while`` syntax. Loops can be broken
 using ``break`` or continued using ``continue`` (which skips to the next
@@ -1348,7 +1639,7 @@ iteration of the loop without executing any further code in the current iteratio
         statement(s)
 
 for
-^^^
+~~~
 
 To iterate through a range, such as an array or table, a *for* loop is
 used. When iterating over an array, the current array element is stored in
@@ -1359,6 +1650,10 @@ in the loop variable.
 
     for x in [5, 7, 11]:
         statement # Loop iterates 3 times with 'x' as 5, then 7 and finally 11.
+
+    var names = ["John", "Marta", "Samantha", "Jimmy"]
+    for name: String in names: # Typed loop variable.
+        print(name) # Prints name's content.
 
     var dict = {"a": 0, "b": 1, "c": 2}
     for i in dict:
@@ -1391,7 +1686,7 @@ is best to use ``for i in array.size()``.
 ::
 
     for i in array.size():
-	    array[i] = "Hello World"
+        array[i] = "Hello World"
 
 
 The loop variable is local to the for-loop and assigning to it will not change
@@ -1407,34 +1702,38 @@ be manipulated by calling methods on the loop variable.
         node.add_to_group("Cool_Group") # This has an effect
 
 match
-^^^^^
+~~~~~
 
 A ``match`` statement is used to branch execution of a program.
 It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
-
-Basic syntax::
-
-    match (expression):
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
 
 .. warning::
 
     ``match`` is more type strict than the ``==`` operator. For example ``1`` will **not** match ``1.0``. The only exception is ``String`` vs ``StringName`` matching:
     for example, the String ``"hello"`` is considered equal to the StringName ``&"hello"``.
 
-**Crash-course for people who are familiar with switch statements**:
+Basic syntax
+^^^^^^^^^^^^
+
+::
+
+    match <test value>:
+        <pattern(s)>:
+            <block>
+        <pattern(s)> when <pattern guard>:
+            <block>
+        <...>
+
+Crash-course for people who are familiar with switch statements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Replace ``switch`` with ``match``.
 2. Remove ``case``.
 3. Remove any ``break``\ s.
 4. Change ``default`` to a single underscore.
 
-**Control flow**:
+Control flow
+^^^^^^^^^^^^
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
@@ -1443,10 +1742,10 @@ If a pattern matches, the first corresponding block will be executed. After that
 
     The special ``continue`` behavior in ``match`` supported in 3.x was removed in Godot 4.0.
 
-There are 6 pattern types:
+The following pattern types are available:
 
-- Constant pattern
-    Constant primitives, like numbers and strings::
+- Literal pattern
+    Matches a `literal <Literals_>`_::
 
         match x:
             1:
@@ -1456,9 +1755,8 @@ There are 6 pattern types:
             "test":
                 print("Oh snap! It's a string!")
 
-
-- Variable pattern
-    Matches the contents of a variable/enum::
+- Expression pattern
+    Matches a constant expression, an identifier, or an attribute access (``A.B``)::
 
         match typeof(x):
             TYPE_FLOAT:
@@ -1467,7 +1765,6 @@ There are 6 pattern types:
                 print("text")
             TYPE_ARRAY:
                 print("array")
-
 
 - Wildcard pattern
     This pattern matches everything. It's written as a single underscore.
@@ -1482,7 +1779,6 @@ There are 6 pattern types:
             _:
                 print("It's not 1 or 2. I don't care to be honest.")
 
-
 - Binding pattern
     A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
     It's especially useful in array and dictionary patterns::
@@ -1494,7 +1790,6 @@ There are 6 pattern types:
                 print("It's one times two!")
             var new_var:
                 print("It's not 1 or 2, it's ", new_var)
-
 
 - Array pattern
     Matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
@@ -1555,8 +1850,40 @@ There are 6 pattern types:
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
 
+Pattern guards
+^^^^^^^^^^^^^^
+
+A *pattern guard* is an optional condition that follows the pattern list
+and allows you to make additional checks before choosing a ``match`` branch.
+Unlike a pattern, a pattern guard can be an arbitrary expression.
+
+Only one branch can be executed per ``match``. Once a branch is chosen, the rest are not checked.
+If you want to use the same pattern for multiple branches or to prevent choosing a branch with too general pattern,
+you can specify a pattern guard after the list of patterns with the ``when`` keyword::
+
+    match point:
+        [0, 0]:
+            print("Origin")
+        [_, 0]:
+            print("Point on X-axis")
+        [0, _]:
+            print("Point on Y-axis")
+        [var x, var y] when y == x:
+            print("Point on line y = x")
+        [var x, var y] when y == -x:
+            print("Point on line y = -x")
+        [var x, var y]:
+            print("Point (%s, %s)" % [x, y])
+
+- If there is no matching pattern for the current branch, the pattern guard
+  is **not** evaluated and the patterns of the next branch are checked.
+- If a matching pattern is found, the pattern guard is evaluated.
+
+  - If it's true, then the body of the branch is executed and ``match`` ends.
+  - If it's false, then the patterns of the next branch are checked.
+
 Classes
-~~~~~~~
+-------
 
 By default, all script files are unnamed classes. In this case, you can only
 reference them using the file's path, using either a relative or an absolute
@@ -1589,6 +1916,14 @@ class will then appear with its new icon in the editor::
 
 .. image:: img/class_name_editor_register_example.png
 
+.. tip::
+
+    SVG images that are used as custom node icons should have the
+    **Editor > Scale With Editor Scale** and **Editor > Convert Icons With Editor Theme**
+    :ref:`import options <doc_importing_images_editor_import_options>` enabled. This allows
+    icons to follow the editor's scale and theming settings if the icons are designed with
+    the same color palette as Godot's own icons.
+
 Here's a class file example:
 
 ::
@@ -1620,8 +1955,16 @@ If you want to use ``extends`` too, you can keep both on the same line::
     and this includes arrays and dictionaries. This is in the spirit of thread safety,
     since scripts can be initialized in separate threads without the user knowing.
 
+.. warning::
+
+    The Godot editor will hide these custom classes with names that begin with the prefix
+    "Editor" in the 'Create New Node' or 'Create New Scene' dialog windows. The classes
+    are available for instantiation at runtime via their class names, but are
+    automatically hidden by the editor windows along with the built-in editor nodes used
+    by the Godot editor.
+
 Inheritance
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 A class (stored as a file) can inherit from:
 
@@ -1698,11 +2041,11 @@ the function name with the attribute operator::
     Signals and notifications can also be useful for these purposes.
 
 Class constructor
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 The class constructor, called on class instantiation, is named ``_init``. If you
 want to call the base class constructor, you can also use the ``super`` syntax.
-Note that every class has an implicit constructor that it's always called
+Note that every class has an implicit constructor that is always called
 (defining the default values of class variables). ``super`` is used to call the
 explicit constructor::
 
@@ -1751,7 +2094,7 @@ There are a few things to keep in mind here:
         super(5)
 
 Static constructor
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 A static constructor is a static function ``_static_init`` that is called automatically
 when the class is loaded, after the static variables have been initialized::
@@ -1763,8 +2106,10 @@ when the class is loaded, after the static variables have been initialized::
 
 A static constructor cannot take arguments and must not return any value.
 
+.. _doc_gdscript_basics_inner_classes:
+
 Inner classes
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 A class file can contain inner classes. Inner classes are defined using the
 ``class`` keyword. They are instanced using the ``ClassName.new()``
@@ -1791,9 +2136,9 @@ function.
 .. _doc_gdscript_classes_as_resources:
 
 Classes as resources
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
-Classes stored as files are treated as :ref:`resources <class_GDScript>`. They
+Classes stored as files are treated as :ref:`GDScripts <class_GDScript>`. They
 must be loaded from disk to access them in other classes. This is done using
 either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
 class resource is done by calling the ``new`` function on the class object::
@@ -1810,7 +2155,7 @@ class resource is done by calling the ``new`` function on the class object::
         a.some_function()
 
 Exports
-~~~~~~~
+-------
 
 .. note::
 
@@ -1820,7 +2165,7 @@ Exports
 .. _doc_gdscript_basics_setters_getters:
 
 Properties (setters and getters)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 Sometimes, you want a class' member variable to do more than just hold data and actually perform
 some validation or computation whenever its value changes. It may also be desired to
@@ -1839,6 +2184,40 @@ Example::
         set(value):
             milliseconds = value * 1000
 
+.. note::
+
+    Unlike ``setget`` in previous Godot versions, ``set`` and ``get`` methods are **always** called (except as noted below),
+    even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
+    consistent. If you need direct access to the value, use another variable for direct access and make the property
+    code use that name.
+
+Alternative syntax
+~~~~~~~~~~~~~~~~~~
+
+Also there is another notation to use existing class functions if you want to split the code from the variable declaration
+or you need to reuse the code across multiple properties (but you can't distinguish which property the setter/getter is being called for)::
+
+    var my_prop:
+        get = get_my_prop, set = set_my_prop
+
+This can also be done in the same line::
+
+    var my_prop: get = get_my_prop, set = set_my_prop
+
+The setter and getter must use the same notation, mixing styles for the same variable is not allowed.
+
+.. note::
+
+    You cannot specify type hints for *inline* setters and getters. This is done on purpose to reduce the boilerplate.
+    If the variable is typed, then the setter's argument is automatically of the same type, and the getter's return value must match it.
+    Separated setter/getter functions can have type hints, and the type must match the variable's type or be a wider type.
+
+When setter/getter is not called
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a variable is initialized, the value of the initializer will be written directly to the variable.
+Including if the ``@onready`` annotation is applied to the variable.
+
 Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
 so it won't generate infinite recursion and saves you from explicitly declaring another variable::
 
@@ -1850,27 +2229,29 @@ so it won't generate infinite recursion and saves you from explicitly declaring 
             changed.emit(value)
             warns_when_changed = value
 
-This backing member variable is not created if you don't use it.
+This also applies to the alternative syntax::
 
-.. note::
+    var my_prop: set = set_my_prop
 
-    Unlike ``setget`` in previous Godot versions, the properties setter and getter are **always** called,
-    even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
-    consistent. If you need direct access to the value, use another variable for direct access and make the property
-    code use that name.
+    func set_my_prop(value):
+        my_prop = value # No infinite recursion.
 
-In case you want to split the code from the variable declaration or you need to share the code across multiple properties,
-you can use a different notation to use existing class functions::
+.. warning::
 
-    var my_prop:
-        get = get_my_prop, set = set_my_prop
+    The exception does **not** propagate to other functions called in the setter/getter.
+    For example, the following code **will** cause an infinite recursion::
 
-This can also be done in the same line.
+        var my_prop:
+            set(value):
+                set_my_prop(value)
+
+        func set_my_prop(value):
+            my_prop = value # Infinite recursion, since `set_my_prop()` is not the setter.
 
 .. _doc_gdscript_tool_mode:
 
 Tool mode
-~~~~~~~~~
+---------
 
 By default, scripts don't run inside the editor and only the exported
 properties can be changed. In some cases, it is desired that they do run
@@ -1895,7 +2276,7 @@ See :ref:`doc_running_code_in_the_editor` for more information.
 .. _doc_gdscript_basics_memory_management:
 
 Memory management
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Godot implements reference counting to free certain instances that are no longer
 used, instead of a garbage collector, or requiring purely manual management.
@@ -1943,7 +2324,7 @@ freed.
 .. _doc_gdscript_signals:
 
 Signals
-~~~~~~~
+-------
 
 Signals are a tool to emit messages from an object that other objects can react
 to. To create custom signals for a class, use the ``signal`` keyword.
@@ -2077,7 +2458,7 @@ character's name in the binds array argument::
         var character_node = get_node('Character')
         var battle_log_node = get_node('UserInterface/BattleLog')
 
-        character_node.health_changed.connect(battle_log_node._on_Character_health_changed, [character_node.name])
+        character_node.health_changed.connect(battle_log_node._on_Character_health_changed.bind(character_node.name))
 
 Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
@@ -2091,8 +2472,8 @@ Our ``BattleLog`` node receives each element in the binds array as an extra argu
         label.text += character_name + " took " + str(damage) + " damage."
 
 
-Awaiting for signals or coroutines
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Awaiting signals or coroutines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``await`` keyword can be used to create `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
 which wait until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
@@ -2107,7 +2488,7 @@ For example, to stop execution until the user presses a button, you can do somet
         print("User confirmed")
         return true
 
-In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await for it::
+In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await it::
 
     func request_confirmation():
         print("Will ask the user")
@@ -2139,7 +2520,7 @@ function won't give the control back to the caller::
     func get_five():
         return 5
 
-This also means that returning a signal from a function that isn't a coroutine will make the caller await on that signal::
+This also means that returning a signal from a function that isn't a coroutine will make the caller await that signal::
 
     func get_signal():
         return $Button.button_up
@@ -2154,7 +2535,7 @@ This also means that returning a signal from a function that isn't a coroutine w
           during runtime.
 
 Assert keyword
-~~~~~~~~~~~~~~
+--------------
 
 The ``assert`` keyword can be used to check conditions in debug builds. These
 assertions are ignored in non-debug builds. This means that the expression

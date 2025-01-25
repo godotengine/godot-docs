@@ -188,18 +188,21 @@ given build type.
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Command                                                          | Description                                                                                                                                             |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``-s``, ``--script <script>``                                    | |release| Run a script.                                                                                                                                 |
+| ``-s``, ``--script <script>``                                    | |release| Run a script. ``<script>`` must be a resource path relative to the project (``myscript.gd`` will be interpreted as ``res://myscript.gd``)     |
+|                                                                  | or an absolute filesystem path (for example on Windows ``C:/tmp/myscript.gd``)                                                                          |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--check-only``                                                 | |release| Only parse for errors and quit (use with ``--script``).                                                                                       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--export-release <preset> <path>``                             | |editor| Export the project using the given preset and matching release template. The preset name                                                       |
-|                                                                  | should match one defined in export_presets.cfg. ``<path>`` should be absolute or relative to the project directory,                                     |
-|                                                                  | and include the filename for the binary (e.g. 'builds/game.exe'). The target directory should exist.                                                    |
+| ``--import``                                                     | |editor| Starts the editor, waits for any resources to be imported, and then quits. Implies ``--editor`` and ``--quit``.                                |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--export-debug <preset> <path>``                               | |editor| Like ``--export-release``, but use debug template.                                                                                             |
+| ``--export-release <preset> <path>``                             | |editor| Export the project using the given preset and matching release template. The preset name should match one defined in export_presets.cfg.       |
+|                                                                  | ``<path>`` should be absolute or relative to the project directory, and include the filename for the binary (e.g. 'builds/game.exe'). The target        |
+|                                                                  | directory should exist. Implies ``--import``.                                                                                                           |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-debug <preset> <path>``                               | |editor| Like ``--export-release``, but use debug template. Implies ``--import``.                                                                       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--export-pack <preset> <path>``                                | |editor| Like ``--export-release``, but only export the game pack for the given preset. The ``<path>`` extension determines whether it will be in PCK   |
-|                                                                  | or ZIP format.                                                                                                                                          |
+|                                                                  | or ZIP format. Implies ``--import``.                                                                                                                    |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--convert-3to4 [<max_file_kb>] [<max_line_size>]``             | |editor| Convert project from Godot 3.x to Godot 4.x.                                                                                                   |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -243,6 +246,9 @@ available in the ``PATH``:
 
  .. code-tab:: sh Windows
 
+    # Add "Extras" bucket
+    scoop bucket add extras
+
     # Standard editor:
     scoop install godot
 
@@ -264,14 +270,14 @@ Depending on where your Godot binary is located and what your current
 working directory is, you may need to set the path to your project
 for any of the following commands to work correctly.
 
-This can be done by giving the path to the ``project.godot`` file
+When running the editor, this can be done by giving the path to the ``project.godot`` file
 of your project as either the first argument, like this:
 
 ::
 
     godot path_to_your_project/project.godot [other] [commands] [and] [args]
 
-Or by using the ``--path`` argument:
+For all commands, this can be done by using the ``--path`` argument:
 
 ::
 
@@ -282,6 +288,17 @@ For example, the full command for exporting your game (as explained below) might
 ::
 
     godot --headless --path path_to_your_project --export-release my_export_preset_name game.exe
+
+When starting from a subdirectory of your project, use the ``--upwards`` argument for Godot to
+automatically find the ``project.godot`` file by recursively searching the parent directories.
+
+For example, running a scene (as explained below) nested in a subdirectory might look like this
+when your working directory is in the same path:
+
+::
+
+    godot --upwards nested_scene.tscn
+
 
 ..
 
@@ -307,12 +324,14 @@ Running the editor
 ------------------
 
 Running the editor is done by executing Godot with the ``-e`` flag. This
-must be done from within the project directory or a subdirectory,
+must be done from within the project directory or by setting the project path as explained above,
 otherwise the command is ignored and the Project Manager appears.
 
 ::
 
     godot -e
+
+When passing in the full path to the ``project.godot`` file, the ``-e`` flag may be omitted.
 
 If a scene has been created and saved, it can be edited later by running
 the same code with that scene as argument.
@@ -335,15 +354,15 @@ Otherwise, an error will be thrown upon opening the project.
 Running the game
 ----------------
 
-To run the game, simply execute Godot within the project directory or
-subdirectory.
+To run the game, execute Godot within the project directory or with the project path as explained above.
 
 ::
 
     godot
 
-When a specific scene needs to be tested, pass that scene to the command
-line.
+Note that passing in the ``project.godot`` file will always run the editor instead of running the game.
+
+When a specific scene needs to be tested, pass that scene to the command line.
 
 ::
 
@@ -434,6 +453,11 @@ And how to run it:
 
 If no ``project.godot`` exists at the path, current path is assumed to be the
 current working directory (unless ``--path`` is specified).
+
+The script path will be interpreted as a resource path relative to
+the project, here ``res://sayhello.gd``. You can also use an absolute
+filesystem path instead, which is useful if the script is located
+outside of the project directory.
 
 The first line of ``sayhello.gd`` above is commonly referred to as
 a *shebang*. If the Godot binary is in your ``PATH`` as ``godot``,

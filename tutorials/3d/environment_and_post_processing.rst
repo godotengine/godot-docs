@@ -26,7 +26,7 @@ but you can enable it by using it in one of the following locations, in order
 of priority:
 
 Camera3D node (high priority)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An Environment can be set to a Camera3D node. It will have priority over any
 other setting.
@@ -37,7 +37,7 @@ This is mostly useful when you want to override an existing environment,
 but in general it's a better idea to use the option below.
 
 WorldEnvironment node (medium priority, recommended)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The WorldEnvironment node can be added to any scene, but only one can exist per
 active scene tree. Adding more than one will result in a warning.
@@ -49,7 +49,7 @@ Any Environment added has higher priority than the default Environment
 which makes it quite useful.
 
 Preview environment and sun (low priority)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -65,7 +65,7 @@ be disabled using the buttons at the top of the 3D editor:
 Clicking on the 3 vertical dots on the right will display a dialog which allows
 you to customize the appearance of the preview environment:
 
-.. image:: img/environment_preview_sun_sky_toggle.webp
+.. image:: img/environment_preview_sun_sky_dialog.webp
 
 **The preview sun and sky is only visible in the editor, not in the running
 project.** Using the buttons at the bottom of the dialog, you can add the
@@ -88,9 +88,9 @@ Camera attributes
     adjusting those properties independently of other Environment settings more
     easily.
 
-The :ref:`class_CameraAttributes` resource stores exposure and depth of field information. It
-also allows enabling automatic exposure adjustments depending on scene
-brightness.
+The :ref:`class_CameraAttributes` resource stores exposure and depth of field
+information. It also allows enabling automatic exposure adjustments depending on
+scene brightness.
 
 There are two kinds of CameraAttribute resources available:
 
@@ -130,7 +130,7 @@ The following is a detailed description of all environment options and how
 they are intended to be used.
 
 Background
-^^^^^^^^^^
+~~~~~~~~~~
 
 The Background section contains settings on how to fill the background (parts of
 the screen where objects were not drawn). The background not only serves the
@@ -152,13 +152,15 @@ There are several background modes available:
 - **Sky** lets you define a background sky material (see below). By default,
   objects in the scene will reflect this sky material and absorb ambient light
   from it.
-- **Canvas** displays the 2D scene as a background to the 3D scene.
+- **Canvas** displays the 2D scene as a background to the 3D scene. This can be used
+  to make environment effects visible on 2D rendering, such as
+  :ref:`glow in 2D <doc_environment_and_post_processing_using_glow_in_2d>`.
 - **Keep** does not draw any sky, keeping what was present on previous frames
   instead. This improves performance in purely indoor scenes, but creates a
   "hall of mirrors" visual glitch if the sky is visible at any time.
 
 Sky materials
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 When using the **Sky** background mode (or the ambient/reflected light mode is
 set to **Sky**), a Sky subresource becomes available to edit in the Environment
@@ -199,7 +201,7 @@ If you need a custom sky material (e.g. for procedural clouds), you can
 create a custom :ref:`sky shader <doc_sky_shader>`.
 
 Ambient light
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Ambient light (as defined here) is a type of light that affects every piece of
 geometry with the same intensity. It is global and independent of lights that
@@ -223,8 +225,6 @@ There are several types of ambient light to choose from:
 - **Sky:** Source ambient light from a specified sky, even if the background is
   set to a mode other than **Sky**. If the background mode is already **Sky**,
   this mode behaves identically to **Background**.
-
-.. image:: img/environment_ambient.webp
 
 When the ambient light mode is set to Sky or Background (and background is set
 to Sky), it's possible to blend between the ambient color and sky using the
@@ -253,7 +253,7 @@ Using one of the methods described above will replace constant ambient
 lighting with ambient lighting from the probes.
 
 Reflected light
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Reflected light (also called specular light) is the other of the two components
 of image-based lighting.
@@ -269,7 +269,7 @@ Reflected light can be set to one of 3 modes:
   behaves identically to **Background**.
 
 Fog
-^^^
+~~~
 
 .. note::
 
@@ -299,8 +299,14 @@ In practice, it makes light stand out more across the fog.
 
 .. image:: img/environment_fog_transmission.webp
 
+.. note::
+
+    Fog can cause banding to appear on the viewport, especially at
+    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
+    for guidance on reducing banding.
+
 Volumetric Fog
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Volumetric fog provides a realistic fog effect to the scene, with fog color
 being affected by the lights that traverse the fog.
@@ -310,7 +316,7 @@ being affected by the lights that traverse the fog.
   See :ref:`doc_volumetric_fog` for documentation on setting up volumetric fog.
 
 Tonemap
-^^^^^^^
+~~~~~~~
 
 Tonemap selects the tonemapping curve that will be applied to the scene, from a
 list of standard curves used in the film and game industries. Tonemapping operators
@@ -361,9 +367,9 @@ The Environment resource supports many popular mid- and post-processing effects.
     distracting changes during gameplay.
 
 Screen-Space Reflections (SSR)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 While Godot supports several sources of reflection data such as
@@ -403,9 +409,9 @@ This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_te
 uniforms.
 
 Screen-Space Ambient Occlusion (SSAO)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 As mentioned in the **Ambient** section, areas where light from light nodes
@@ -473,11 +479,16 @@ parameters:
   make the :abbr:`SSAO (Screen-Space Ambient Occlusion)` effect visible in
   direct light. Values above ``0.0`` are not physically accurate, but some
   artists prefer this effect.
+- **AO Channel Affect** The screen-space ambient occlusion intensity on
+  materials that have an AO texture defined. Values higher than ``0.0`` will
+  make the SSAO effect visible in areas darkened by AO textures.
+
+.. _doc_environment_and_post_processing_ssil:
 
 Screen-Space Indirect Lighting (SSIL)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 :abbr:`SSIL (Screen-Space Indirect Lighting)` provides indirect lighting for
@@ -489,7 +500,7 @@ own, the effect may not be that noticeable, which is intended.
 Instead, :abbr:`SSIL (Screen-Space Indirect Lighting)` is meant to be used as a
 *complement* to other global illumination techniques such as VoxelGI, SDFGI and
 LightmapGI. :abbr:`SSIL (Screen-Space Indirect Lighting)` also provides
-a subtle ambient occlusion effect, similar to SSAO but with less detail.
+a subtle ambient occlusion effect, similar to SSAO, but with less detail.
 
 This feature only provides indirect lighting. It is not a full global illumination
 solution. This makes it different from screen-space global illumination (SSGI)
@@ -521,9 +532,9 @@ Tweaking :abbr:`SSIL (Screen-Space Indirect Lighting)` is possible with several 
 .. image:: img/environment_ssil.webp
 
 Signed Distance Field Global Illumination (SDFGI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 Signed distance field global illumination (SDFGI) is a form of real-time global
@@ -540,7 +551,17 @@ illumination for off-screen elements (unlike :abbr:`SSIL (Screen-Space Indirect 
 .. _doc_environment_and_post_processing_glow:
 
 Glow
-^^^^
+~~~~
+
+.. note::
+
+    When using the Compatibility rendering method, glow uses a different
+    implementation with some properties being unavailable and hidden from the
+    inspector: **Levels**, **Normalized**, **Strength**, **Blend Mode**,
+    **Mix**, **Map**, and **Map Strength**.
+
+    This implementation is optimized to run on low-end devices and is less
+    flexible as a result.
 
 In photography and film, when light amount exceeds the maximum *luminance*
 (brightness) supported by the media, it generally bleeds outwards to darker
@@ -584,8 +605,9 @@ The **Blend Mode** of the effect can also be changed:
   an all around.
 - **Softlight** is the default and weakest one, producing only a subtle color
   disturbance around the objects. This mode works best on dark scenes.
-- **Replace** can be used to blur the whole screen or debug the effect. It only
-  shows the glow effect without the image below.
+- **Replace** can be used to
+  :ref:`blur the whole screen <doc_environment_and_post_processing_using_glow_to_blur_the_screen>`
+  or debug the effect. It only shows the glow effect without the image below.
 - **Mix** mixes the glow effect with the main image. This can be used for
   greater artistic control. The mix factor is controlled by the **Mix** property
   which appears above the blend mode (only when the blend mode is set to Mix).
@@ -617,14 +639,84 @@ There are 2 main use cases for a glow map texture:
 
 .. image:: img/environment_glow_map.webp
 
-.. note::
+.. _doc_environment_and_post_processing_using_glow_in_2d:
 
-    Glow can be used in 2D as well. To do so, set the environment background
-    mode to **Canvas** then enable glow as usual. You may have to decrease
-    **Glow HDR Threshold** to see a difference.
+Using glow in 2D
+~~~~~~~~~~~~~~~~
+
+There are 2 ways to use glow in 2D:
+
+- Since Godot 4.2, you can enable HDR for 2D rendering when using the Forward+
+  and Mobile rendering methods. This has a performance cost, but it allows for a
+  greater dynamic range. This also allows you to control which objects glow
+  using their individual **Modulate** or **Self Modulate** properties (use the
+  RAW mode in the color picker). Enabling HDR can also reduce banding in the 2D
+  rendering output.
+
+  - To enable HDR in 2D, open the Project Settings, enable
+    :ref:`Rendering > Viewport > HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    then restart the editor.
+
+- If you want to maximize performance, you can leave HDR disabled for 2D
+  rendering. However, you will have less control on which objects glow.
+
+  - Enable glow, set the environment background mode to **Canvas** then decrease
+    **Glow HDR Threshold** so that pixels that are not overbright will still
+    glow. To prevent UI elements from glowing, make them children of a
+    :ref:`class_CanvasLayer` node. You can control which layers are affected by
+    glow using the **Background > Canvas Max Layer** property of the Environment
+    resource.
+
+.. figure:: img/environment_and_post_processing_glow_in_2d.webp
+   :align: center
+   :alt: Example of using glow in a 2D scene
+
+   Example of using glow in a 2D scene. HDR 2D is enabled, while coins and the
+   bullet have their **Modulate** property increased to overbright values using the
+   RAW mode in the color picker.
+
+.. warning::
+
+    The 2D renderer renders in linear color space if the
+    :ref:`Rendering > Viewport > HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    project setting is enabled, so the ``source_color`` hint must also be used
+    for uniform samplers that are used as color input in ``canvas_item`` shaders.
+    If this is not done, the texture will appear washed out.
+
+    If 2D HDR is disabled, ``source_color`` will keep working correctly in
+    ``canvas_item`` shaders, so it's recommend to use it when relevant either
+    way.
+
+.. _doc_environment_and_post_processing_using_glow_to_blur_the_screen:
+
+Using glow to blur the screen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Glow can be used to blur the whole viewport, which is useful for background blur
+when a menu is open. Only 3D rendering will be affected unless the environment's
+background mode is set to **Canvas**. To prevent UI elements from being blurred
+when using the Canvas background mode, make them children of a :ref:`class_CanvasLayer`
+node. You can control which layers are affected by this blurring effect using the
+**Background > Canvas Max Layer** property of the Environment resource.
+
+To use glow as a blurring solution:
+
+- Enable **Normalized** and adjust levels according to preference. Increasing
+  higher level indices will result in a more blurred image. It's recommended to
+  leave a single glow level at ``1.0`` and leave all other glow levels at
+  ``0.0``, but this is not required. Note that the final appearance will vary
+  depending on viewport resolution.
+- Set **Intensity** to ``1.0`` and **Bloom** to ``1.0``.
+- Set the blend mode to **Replace** and **HDR Luminance Cap** to ``1.0``.
+
+.. figure:: img/environment_and_post_processing_glow_blur.webp
+   :align: center
+   :alt: Example of using glow to blur the 2D rendering in the menu's background
+
+   Example of using glow to blur the 2D rendering in the menu's background
 
 Adjustments
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 At the end of processing, Godot offers the possibility to do some standard
 image adjustments.
@@ -706,7 +798,7 @@ Camera attribute options
 ------------------------
 
 Depth of Field / Far Blur
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This effect simulates focal distance on cameras. It blurs objects behind
 a given range. It has an initial **Distance** with a **Transition** region
@@ -715,10 +807,11 @@ a given range. It has an initial **Distance** with a **Transition** region
 .. image:: img/environment_dof_far.webp
 
 The **Amount** parameter controls the amount of blur. For larger blurs, tweaking
-the **Quality** may be needed in order to avoid artifacts.
+the depth of field quality in the advanced project settings may be needed to
+avoid artifacts.
 
 Depth of Field / Near Blur
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This effect simulates focal distance on cameras. It blurs objects close
 to the camera (acts in the opposite direction as far blur).
@@ -742,15 +835,15 @@ given object, or create a so-called
     distance, focal length, and aperture.
 
 Exposure
-^^^^^^^^
+~~~~~~~~
 
 This multiplies the overall scene brightness visible from the camera. Higher
 values result in a visually brighter scene.
 
 Auto Exposure
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 Even though, in most cases, lighting and texturing are heavily artist controlled,

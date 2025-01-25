@@ -28,7 +28,7 @@ Tutorials
 
 - :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -69,12 +69,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **damping** = ``0.5``
+:ref:`float<class_float>` **damping** = ``0.5`` :ref:`🔗<class_AudioEffectReverb_property_damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_damping** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_damping** **(** **)**
+- |void| **set_damping**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_damping**\ (\ )
 
 Defines how reflective the imaginary room's walls are. Value can range from 0 to 1.
 
@@ -86,12 +86,12 @@ Defines how reflective the imaginary room's walls are. Value can range from 0 to
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **dry** = ``1.0``
+:ref:`float<class_float>` **dry** = ``1.0`` :ref:`🔗<class_AudioEffectReverb_property_dry>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_dry** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_dry** **(** **)**
+- |void| **set_dry**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_dry**\ (\ )
 
 Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1.
 
@@ -103,12 +103,12 @@ Output percent of original sound. At 0, only modified sound is outputted. Value 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **hipass** = ``0.0``
+:ref:`float<class_float>` **hipass** = ``0.0`` :ref:`🔗<class_AudioEffectReverb_property_hipass>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_hpf** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_hpf** **(** **)**
+- |void| **set_hpf**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_hpf**\ (\ )
 
 High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1.
 
@@ -120,12 +120,12 @@ High-pass filter passes signals with a frequency higher than a certain cutoff fr
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **predelay_feedback** = ``0.4``
+:ref:`float<class_float>` **predelay_feedback** = ``0.4`` :ref:`🔗<class_AudioEffectReverb_property_predelay_feedback>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_predelay_feedback** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_predelay_feedback** **(** **)**
+- |void| **set_predelay_feedback**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_predelay_feedback**\ (\ )
 
 Output percent of predelay. Value can range from 0 to 1.
 
@@ -137,12 +137,12 @@ Output percent of predelay. Value can range from 0 to 1.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **predelay_msec** = ``150.0``
+:ref:`float<class_float>` **predelay_msec** = ``150.0`` :ref:`🔗<class_AudioEffectReverb_property_predelay_msec>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_predelay_msec** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_predelay_msec** **(** **)**
+- |void| **set_predelay_msec**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_predelay_msec**\ (\ )
 
 Time between the original signal and the early reflections of the reverb signal, in milliseconds.
 
@@ -154,12 +154,12 @@ Time between the original signal and the early reflections of the reverb signal,
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **room_size** = ``0.8``
+:ref:`float<class_float>` **room_size** = ``0.8`` :ref:`🔗<class_AudioEffectReverb_property_room_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_room_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_room_size** **(** **)**
+- |void| **set_room_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_room_size**\ (\ )
 
 Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1.
 
@@ -171,12 +171,12 @@ Dimensions of simulated room. Bigger means more echoes. Value can range from 0 t
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spread** = ``1.0``
+:ref:`float<class_float>` **spread** = ``1.0`` :ref:`🔗<class_AudioEffectReverb_property_spread>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_spread** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_spread** **(** **)**
+- |void| **set_spread**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_spread**\ (\ )
 
 Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1.
 
@@ -188,12 +188,12 @@ Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Val
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wet** = ``0.5``
+:ref:`float<class_float>` **wet** = ``0.5`` :ref:`🔗<class_AudioEffectReverb_property_wet>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_wet** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_wet** **(** **)**
+- |void| **set_wet**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_wet**\ (\ )
 
 Output percent of modified sound. At 0, only original sound is outputted. Value can range from 0 to 1.
 
@@ -204,3 +204,4 @@ Output percent of modified sound. At 0, only original sound is outputted. Value 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

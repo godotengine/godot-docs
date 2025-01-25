@@ -21,6 +21,8 @@ Description
 
 A deformable 3D physics mesh. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
 
+Additionally, **SoftBody3D** is subject to wind forces defined in :ref:`Area3D<class_Area3D>` (see :ref:`Area3D.wind_source_path<class_Area3D_property_wind_source_path>`, :ref:`Area3D.wind_force_magnitude<class_Area3D_property_wind_force_magnitude>`, and :ref:`Area3D.wind_attenuation_factor<class_Area3D_property_wind_attenuation_factor>`).
+
 \ **Note:** There are many known bugs in **SoftBody3D**. Therefore, it's not recommended to use them for things that can affect gameplay (such as trampolines).
 
 .. rst-class:: classref-introduction-group
@@ -70,29 +72,29 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`add_collision_exception_with<class_SoftBody3D_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                            |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PhysicsBody3D[]<class_PhysicsBody3D>` | :ref:`get_collision_exceptions<class_SoftBody3D_method_get_collision_exceptions>` **(** **)**                                                                                                                 |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`get_collision_layer_value<class_SoftBody3D_method_get_collision_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                                    |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`get_collision_mask_value<class_SoftBody3D_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                                      |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                       | :ref:`get_physics_rid<class_SoftBody3D_method_get_physics_rid>` **(** **)** |const|                                                                                                                           |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`               | :ref:`get_point_transform<class_SoftBody3D_method_get_point_transform>` **(** :ref:`int<class_int>` point_index **)**                                                                                         |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`is_point_pinned<class_SoftBody3D_method_is_point_pinned>` **(** :ref:`int<class_int>` point_index **)** |const|                                                                                         |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`remove_collision_exception_with<class_SoftBody3D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                      |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`set_collision_layer_value<class_SoftBody3D_method_set_collision_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                             |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`set_collision_mask_value<class_SoftBody3D_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                               |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`set_point_pinned<class_SoftBody3D_method_set_point_pinned>` **(** :ref:`int<class_int>` point_index, :ref:`bool<class_bool>` pinned, :ref:`NodePath<class_NodePath>` attachment_path=NodePath("") **)** |
-   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`add_collision_exception_with<class_SoftBody3D_method_add_collision_exception_with>`\ (\ body\: :ref:`Node<class_Node>`\ )                                                                                                                          |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PhysicsBody3D<class_PhysicsBody3D>`\] | :ref:`get_collision_exceptions<class_SoftBody3D_method_get_collision_exceptions>`\ (\ )                                                                                                                                                                  |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                | :ref:`get_collision_layer_value<class_SoftBody3D_method_get_collision_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                                                                                                                  |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                | :ref:`get_collision_mask_value<class_SoftBody3D_method_get_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                                                                                                                    |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                  | :ref:`get_physics_rid<class_SoftBody3D_method_get_physics_rid>`\ (\ ) |const|                                                                                                                                                                            |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                                          | :ref:`get_point_transform<class_SoftBody3D_method_get_point_transform>`\ (\ point_index\: :ref:`int<class_int>`\ )                                                                                                                                       |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                | :ref:`is_point_pinned<class_SoftBody3D_method_is_point_pinned>`\ (\ point_index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                       |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`remove_collision_exception_with<class_SoftBody3D_method_remove_collision_exception_with>`\ (\ body\: :ref:`Node<class_Node>`\ )                                                                                                                    |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`set_collision_layer_value<class_SoftBody3D_method_set_collision_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )                                                                                         |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`set_collision_mask_value<class_SoftBody3D_method_set_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )                                                                                           |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`set_point_pinned<class_SoftBody3D_method_set_point_pinned>`\ (\ point_index\: :ref:`int<class_int>`, pinned\: :ref:`bool<class_bool>`, attachment_path\: :ref:`NodePath<class_NodePath>` = NodePath(""), insert_at\: :ref:`int<class_int>` = -1\ ) |
+   +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -107,7 +109,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **DisableMode**:
+enum **DisableMode**: :ref:`🔗<enum_SoftBody3D_DisableMode>`
 
 .. _class_SoftBody3D_constant_DISABLE_MODE_REMOVE:
 
@@ -140,12 +142,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **collision_layer** = ``1``
+:ref:`int<class_int>` **collision_layer** = ``1`` :ref:`🔗<class_SoftBody3D_property_collision_layer>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_layer** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_layer** **(** **)**
+- |void| **set_collision_layer**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_layer**\ (\ )
 
 The physics layers this SoftBody3D **is in**. Collision objects can exist in one or more of 32 different layers. See also :ref:`collision_mask<class_SoftBody3D_property_collision_mask>`.
 
@@ -159,12 +161,12 @@ The physics layers this SoftBody3D **is in**. Collision objects can exist in one
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **collision_mask** = ``1``
+:ref:`int<class_int>` **collision_mask** = ``1`` :ref:`🔗<class_SoftBody3D_property_collision_mask>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_mask** **(** **)**
+- |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_mask**\ (\ )
 
 The physics layers this SoftBody3D **scans**. Collision objects can scan one or more of 32 different layers. See also :ref:`collision_layer<class_SoftBody3D_property_collision_layer>`.
 
@@ -178,16 +180,14 @@ The physics layers this SoftBody3D **scans**. Collision objects can scan one or 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **damping_coefficient** = ``0.01``
+:ref:`float<class_float>` **damping_coefficient** = ``0.01`` :ref:`🔗<class_SoftBody3D_property_damping_coefficient>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_damping_coefficient** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_damping_coefficient** **(** **)**
+- |void| **set_damping_coefficient**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_damping_coefficient**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The body's damping coefficient. Higher values will slow down the body more noticeably when forces are applied.
 
 .. rst-class:: classref-item-separator
 
@@ -197,12 +197,12 @@ The physics layers this SoftBody3D **scans**. Collision objects can scan one or 
 
 .. rst-class:: classref-property
 
-:ref:`DisableMode<enum_SoftBody3D_DisableMode>` **disable_mode** = ``0``
+:ref:`DisableMode<enum_SoftBody3D_DisableMode>` **disable_mode** = ``0`` :ref:`🔗<class_SoftBody3D_property_disable_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_disable_mode** **(** :ref:`DisableMode<enum_SoftBody3D_DisableMode>` value **)**
-- :ref:`DisableMode<enum_SoftBody3D_DisableMode>` **get_disable_mode** **(** **)**
+- |void| **set_disable_mode**\ (\ value\: :ref:`DisableMode<enum_SoftBody3D_DisableMode>`\ )
+- :ref:`DisableMode<enum_SoftBody3D_DisableMode>` **get_disable_mode**\ (\ )
 
 Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property_process_mode>` is set to :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`. See :ref:`DisableMode<enum_SoftBody3D_DisableMode>` for more details about the different modes.
 
@@ -214,16 +214,16 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **drag_coefficient** = ``0.0``
+:ref:`float<class_float>` **drag_coefficient** = ``0.0`` :ref:`🔗<class_SoftBody3D_property_drag_coefficient>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_coefficient** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_drag_coefficient** **(** **)**
+- |void| **set_drag_coefficient**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_drag_coefficient**\ (\ )
 
-.. container:: contribute
+The body's drag coefficient. Higher values increase this body's air resistance.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This value is currently unused by Godot's default physics implementation.
 
 .. rst-class:: classref-item-separator
 
@@ -233,12 +233,12 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_stiffness** = ``0.5``
+:ref:`float<class_float>` **linear_stiffness** = ``0.5`` :ref:`🔗<class_SoftBody3D_property_linear_stiffness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_stiffness** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_linear_stiffness** **(** **)**
+- |void| **set_linear_stiffness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_linear_stiffness**\ (\ )
 
 Higher values will result in a stiffer body, while lower values will increase the body's ability to bend. The value can be between ``0.0`` and ``1.0`` (inclusive).
 
@@ -250,12 +250,12 @@ Higher values will result in a stiffer body, while lower values will increase th
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **parent_collision_ignore** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **parent_collision_ignore** = ``NodePath("")`` :ref:`🔗<class_SoftBody3D_property_parent_collision_ignore>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_parent_collision_ignore** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_parent_collision_ignore** **(** **)**
+- |void| **set_parent_collision_ignore**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_parent_collision_ignore**\ (\ )
 
 :ref:`NodePath<class_NodePath>` to a :ref:`CollisionObject3D<class_CollisionObject3D>` this SoftBody3D should avoid clipping.
 
@@ -267,16 +267,14 @@ Higher values will result in a stiffer body, while lower values will increase th
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pressure_coefficient** = ``0.0``
+:ref:`float<class_float>` **pressure_coefficient** = ``0.0`` :ref:`🔗<class_SoftBody3D_property_pressure_coefficient>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_pressure_coefficient** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pressure_coefficient** **(** **)**
+- |void| **set_pressure_coefficient**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pressure_coefficient**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The pressure coefficient of this soft body. Simulate pressure build-up from inside this body. Higher values increase the strength of this effect.
 
 .. rst-class:: classref-item-separator
 
@@ -286,12 +284,12 @@ Higher values will result in a stiffer body, while lower values will increase th
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ray_pickable** = ``true``
+:ref:`bool<class_bool>` **ray_pickable** = ``true`` :ref:`🔗<class_SoftBody3D_property_ray_pickable>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_ray_pickable** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_ray_pickable** **(** **)**
+- |void| **set_ray_pickable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ray_pickable**\ (\ )
 
 If ``true``, the **SoftBody3D** will respond to :ref:`RayCast3D<class_RayCast3D>`\ s.
 
@@ -303,12 +301,12 @@ If ``true``, the **SoftBody3D** will respond to :ref:`RayCast3D<class_RayCast3D>
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **simulation_precision** = ``5``
+:ref:`int<class_int>` **simulation_precision** = ``5`` :ref:`🔗<class_SoftBody3D_property_simulation_precision>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_simulation_precision** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_simulation_precision** **(** **)**
+- |void| **set_simulation_precision**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_simulation_precision**\ (\ )
 
 Increasing this value will improve the resulting simulation, but can affect performance. Use with care.
 
@@ -320,12 +318,12 @@ Increasing this value will improve the resulting simulation, but can affect perf
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **total_mass** = ``1.0``
+:ref:`float<class_float>` **total_mass** = ``1.0`` :ref:`🔗<class_SoftBody3D_property_total_mass>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_total_mass** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_total_mass** **(** **)**
+- |void| **set_total_mass**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_total_mass**\ (\ )
 
 The SoftBody3D's mass.
 
@@ -342,7 +340,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
+|void| **add_collision_exception_with**\ (\ body\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_SoftBody3D_method_add_collision_exception_with>`
 
 Adds a body to the list of bodies that this body can't collide with.
 
@@ -354,7 +352,7 @@ Adds a body to the list of bodies that this body can't collide with.
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsBody3D[]<class_PhysicsBody3D>` **get_collision_exceptions** **(** **)**
+:ref:`Array<class_Array>`\[:ref:`PhysicsBody3D<class_PhysicsBody3D>`\] **get_collision_exceptions**\ (\ ) :ref:`🔗<class_SoftBody3D_method_get_collision_exceptions>`
 
 Returns an array of nodes that were added as collision exceptions for this body.
 
@@ -366,7 +364,7 @@ Returns an array of nodes that were added as collision exceptions for this body.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_collision_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+:ref:`bool<class_bool>` **get_collision_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_SoftBody3D_method_get_collision_layer_value>`
 
 Returns whether or not the specified layer of the :ref:`collision_layer<class_SoftBody3D_property_collision_layer>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -378,7 +376,7 @@ Returns whether or not the specified layer of the :ref:`collision_layer<class_So
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_collision_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+:ref:`bool<class_bool>` **get_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_SoftBody3D_method_get_collision_mask_value>`
 
 Returns whether or not the specified layer of the :ref:`collision_mask<class_SoftBody3D_property_collision_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -390,11 +388,9 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Sof
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_physics_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_physics_rid**\ (\ ) |const| :ref:`🔗<class_SoftBody3D_method_get_physics_rid>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the internal :ref:`RID<class_RID>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` for this body.
 
 .. rst-class:: classref-item-separator
 
@@ -404,7 +400,7 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Sof
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_point_transform** **(** :ref:`int<class_int>` point_index **)**
+:ref:`Vector3<class_Vector3>` **get_point_transform**\ (\ point_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SoftBody3D_method_get_point_transform>`
 
 Returns local translation of a vertex in the surface array.
 
@@ -416,7 +412,7 @@ Returns local translation of a vertex in the surface array.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_point_pinned** **(** :ref:`int<class_int>` point_index **)** |const|
+:ref:`bool<class_bool>` **is_point_pinned**\ (\ point_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_SoftBody3D_method_is_point_pinned>`
 
 Returns ``true`` if vertex is set to pinned.
 
@@ -428,7 +424,7 @@ Returns ``true`` if vertex is set to pinned.
 
 .. rst-class:: classref-method
 
-void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
+|void| **remove_collision_exception_with**\ (\ body\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_SoftBody3D_method_remove_collision_exception_with>`
 
 Removes a body from the list of bodies that this body can't collide with.
 
@@ -440,7 +436,7 @@ Removes a body from the list of bodies that this body can't collide with.
 
 .. rst-class:: classref-method
 
-void **set_collision_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+|void| **set_collision_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SoftBody3D_method_set_collision_layer_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`collision_layer<class_SoftBody3D_property_collision_layer>`, given a ``layer_number`` between 1 and 32.
 
@@ -452,7 +448,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 
 .. rst-class:: classref-method
 
-void **set_collision_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+|void| **set_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SoftBody3D_method_set_collision_mask_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`collision_mask<class_SoftBody3D_property_collision_mask>`, given a ``layer_number`` between 1 and 32.
 
@@ -464,7 +460,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 
 .. rst-class:: classref-method
 
-void **set_point_pinned** **(** :ref:`int<class_int>` point_index, :ref:`bool<class_bool>` pinned, :ref:`NodePath<class_NodePath>` attachment_path=NodePath("") **)**
+|void| **set_point_pinned**\ (\ point_index\: :ref:`int<class_int>`, pinned\: :ref:`bool<class_bool>`, attachment_path\: :ref:`NodePath<class_NodePath>` = NodePath(""), insert_at\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_SoftBody3D_method_set_point_pinned>`
 
 Sets the pinned state of a surface vertex. When set to ``true``, the optional ``attachment_path`` can define a :ref:`Node3D<class_Node3D>` the pinned vertex will be attached to.
 
@@ -475,3 +471,4 @@ Sets the pinned state of a surface vertex. When set to ``true``, the optional ``
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

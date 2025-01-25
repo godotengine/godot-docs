@@ -59,7 +59,7 @@ Profiler-specific instructions
 ------------------------------
 
 VerySleepy
-^^^^^^^^^^
+~~~~~~~~~~
 
 - Start the Godot editor or your project first.
   If you start the Project Manager, make sure to edit or run a project first.
@@ -81,7 +81,7 @@ VerySleepy
 .. image:: img/cpp_profiler_verysleepy_results_filtered.png
 
 HotSpot
-^^^^^^^
+~~~~~~~
 
 - Open HotSpot. Click **Record Data**:
 
@@ -128,7 +128,7 @@ HotSpot
     This process attachment-based workflow is similar to the one used by VerySleepy.
 
 Xcode Instruments
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 - Open Xcode. Select **Open Developer Tool** - **Instruments** from the **Xcode** app menu:
 - Double-click on **Time Profiler** in the **Instruments** window:

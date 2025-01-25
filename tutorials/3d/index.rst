@@ -1,3 +1,5 @@
+:allow_comments: False
+
 3D
 ==
 
@@ -9,6 +11,8 @@
    using_transforms
    procedural_geometry/index
    3d_text
+
+.. _doc_3d_rendering:
 
 Rendering
 ---------
@@ -52,3 +56,4 @@ Tools
 
    csg_tools
    using_gridmaps
+   spring_arm

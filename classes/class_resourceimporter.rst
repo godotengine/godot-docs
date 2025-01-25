@@ -43,7 +43,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ImportOrder**:
+enum **ImportOrder**: :ref:`🔗<enum_ResourceImporter_ImportOrder>`
 
 .. _class_ResourceImporter_constant_IMPORT_ORDER_DEFAULT:
 
@@ -68,3 +68,4 @@ The import order for scenes, which ensures scenes are imported *after* all other
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

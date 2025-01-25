@@ -10,7 +10,7 @@
 OccluderInstance3D
 ==================
 
-**Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Provides occlusion culling for 3D nodes, which improves performance in closed areas.
 
@@ -23,11 +23,13 @@ Occlusion culling can improve rendering performance in closed/semi-open areas by
 
 The occlusion culling system is mostly static. **OccluderInstance3D**\ s can be moved or hidden at run-time, but doing so will trigger a background recomputation that can take several frames. It is recommended to only move **OccluderInstance3D**\ s sporadically (e.g. for procedural generation purposes), rather than doing so every frame.
 
-The occlusion culling system works by rendering the occluders on the CPU in parallel using `Embree <https://www.embree.org/>`__, drawing the result to a low-resolution buffer then using this to cull 3D nodes individually. In the 3D editor, you can preview the occlusion culling buffer by choosing **Perspective > Debug Advanced... > Occlusion Culling Buffer** in the top-left corner of the 3D viewport. The occlusion culling buffer quality can be adjusted in the Project Settings.
+The occlusion culling system works by rendering the occluders on the CPU in parallel using `Embree <https://www.embree.org/>`__, drawing the result to a low-resolution buffer then using this to cull 3D nodes individually. In the 3D editor, you can preview the occlusion culling buffer by choosing **Perspective > Display Advanced... > Occlusion Culling Buffer** in the top-left corner of the 3D viewport. The occlusion culling buffer quality can be adjusted in the Project Settings.
 
 \ **Baking:** Select an **OccluderInstance3D** node, then use the **Bake Occluders** button at the top of the 3D editor. Only opaque materials will be taken into account; transparent materials (alpha-blended or alpha-tested) will be ignored by the occluder generation.
 
 \ **Note:** Occlusion culling is only effective if :ref:`ProjectSettings.rendering/occlusion_culling/use_occlusion_culling<class_ProjectSettings_property_rendering/occlusion_culling/use_occlusion_culling>` is ``true``. Enabling occlusion culling has a cost on the CPU. Only enable occlusion culling if you actually plan to use it. Large open scenes with few or no objects blocking the view will generally not benefit much from occlusion culling. Large open scenes generally benefit more from mesh LOD and visibility ranges (:ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`GeometryInstance3D.visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`) compared to occlusion culling.
+
+\ **Note:** Due to memory constraints, occlusion culling is not supported by default in Web export templates. It can be enabled by compiling custom Web export templates with ``module_raycast_enabled=yes``.
 
 .. rst-class:: classref-introduction-group
 
@@ -60,11 +62,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`get_bake_mask_value<class_OccluderInstance3D_method_get_bake_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_bake_mask_value<class_OccluderInstance3D_method_set_bake_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_bake_mask_value<class_OccluderInstance3D_method_get_bake_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_bake_mask_value<class_OccluderInstance3D_method_set_bake_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -79,12 +81,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bake_mask** = ``4294967295``
+:ref:`int<class_int>` **bake_mask** = ``4294967295`` :ref:`🔗<class_OccluderInstance3D_property_bake_mask>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bake_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_bake_mask** **(** **)**
+- |void| **set_bake_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_bake_mask**\ (\ )
 
 The visual layers to account for when baking for occluders. Only :ref:`MeshInstance3D<class_MeshInstance3D>`\ s whose :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` match with this :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>` will be included in the generated occluder mesh. By default, all objects with *opaque* materials are taken into account for the occluder baking.
 
@@ -98,12 +100,12 @@ To improve performance and avoid artifacts, it is recommended to exclude dynamic
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bake_simplification_distance** = ``0.1``
+:ref:`float<class_float>` **bake_simplification_distance** = ``0.1`` :ref:`🔗<class_OccluderInstance3D_property_bake_simplification_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bake_simplification_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bake_simplification_distance** **(** **)**
+- |void| **set_bake_simplification_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bake_simplification_distance**\ (\ )
 
 The simplification distance to use for simplifying the generated occluder polygon (in 3D units). Higher values result in a less detailed occluder mesh, which improves performance but reduces culling accuracy.
 
@@ -121,12 +123,12 @@ Setting this to ``0.0`` disables simplification entirely, but vertices in the ex
 
 .. rst-class:: classref-property
 
-:ref:`Occluder3D<class_Occluder3D>` **occluder**
+:ref:`Occluder3D<class_Occluder3D>` **occluder** :ref:`🔗<class_OccluderInstance3D_property_occluder>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_occluder** **(** :ref:`Occluder3D<class_Occluder3D>` value **)**
-- :ref:`Occluder3D<class_Occluder3D>` **get_occluder** **(** **)**
+- |void| **set_occluder**\ (\ value\: :ref:`Occluder3D<class_Occluder3D>`\ )
+- :ref:`Occluder3D<class_Occluder3D>` **get_occluder**\ (\ )
 
 The occluder resource for this **OccluderInstance3D**. You can generate an occluder resource by selecting an **OccluderInstance3D** node then using the **Bake Occluders** button at the top of the editor.
 
@@ -147,7 +149,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_bake_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+:ref:`bool<class_bool>` **get_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OccluderInstance3D_method_get_bake_mask_value>`
 
 Returns whether or not the specified layer of the :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -159,7 +161,7 @@ Returns whether or not the specified layer of the :ref:`bake_mask<class_Occluder
 
 .. rst-class:: classref-method
 
-void **set_bake_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+|void| **set_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OccluderInstance3D_method_set_bake_mask_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>`, given a ``layer_number`` between 1 and 32.
 
@@ -170,3 +172,4 @@ Based on ``value``, enables or disables the specified layer in the :ref:`bake_ma
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

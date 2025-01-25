@@ -1,5 +1,5 @@
-GD0302: The generic type parameter must be annotated with the MustBeVariant attribute
-=====================================================================================
+GD0302: The generic type parameter must be annotated with the '[MustBeVariant]' attribute
+=========================================================================================
 
 ====================================  ======================================
                                       Value
@@ -14,15 +14,16 @@ Cause
 -----
 
 A generic type is specified for a generic type argument when a
-:ref:`Variant-compatible <doc_c_sharp_variant>` type is expected, but the
-specified generic type is not annotated with the ``[MustBeVariant]`` attribute.
+:ref:`Variant-compatible type <c_sharp_variant_compatible_types>` is expected,
+but the specified generic type is not annotated with the ``[MustBeVariant]``
+attribute.
 
 Rule description
 ----------------
 
 When a generic type parameter is annotated with the ``[MustBeVariant]`` attribute,
 the generic type is required to be a Variant-compatible type. When the type used
-is also a generic type, this generic type must be annoted with the ``[MustBeVariant]``
+is also a generic type, this generic type must be annotated with the ``[MustBeVariant]``
 attribute as well. For example, the generic ``Godot.Collections.Array<T>`` type
 only supports items of a type that can be converted to Variant, a generic type
 can be specified if it's properly annotated.

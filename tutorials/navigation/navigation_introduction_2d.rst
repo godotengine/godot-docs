@@ -1,6 +1,6 @@
 .. _doc_navigation_overview_2d:
 
-2D Navigation Overview
+2D navigation overview
 ======================
 
 Godot provides multiple objects, classes and servers to facilitate grid-based or mesh-based navigation and pathfinding for 2D and 3D games.
@@ -11,66 +11,73 @@ Godot provides the following objects and classes for 2D navigation:
 - :ref:`Astar2D<class_Astar2D>`
     ``Astar2D`` objects provide an option to find the shortest path in a graph of weighted **points**.
 
-    The AStar2D class is best suited for cellbased 2D gameplay that does not require actors to reach any possible position within an area but only predefined, distinct positions.
+    The AStar2D class is best suited for cell-based 2D gameplay that does not require actors to reach any possible position within an area but only predefined, distinct positions.
+
+- :ref:`AstarGrid2D<class_AstarGrid2D>`
+    ``AstarGrid2D``  is a variant of AStar2D that is specialized for partial 2D grids. 
+
+    AstarGrid2D is simpler to use when applicable because it doesn't require you to manually create points and connect them together.
 
 - :ref:`NavigationServer2D<class_NavigationServer2D>`
-    ``NavigationServer2D`` provides a powerful server API to find the shortest path between two positions on a area defined by a navigation mesh.
+    ``NavigationServer2D`` provides a powerful server API to find the shortest path between two positions on an area defined by a navigation mesh.
 
-    The NavigationServer is best suited for 2D realtime gameplay that does require actors to reach any possible position within an navmesh defined area.
-    Meshbased navigation scales well with large gameworlds as a large area can often be defined with a single polygon when it would require many, many grid cells.
+    The NavigationServer is best suited for 2D realtime gameplay that does require actors to reach any possible position within a navigation mesh defined area.
+    Mesh-based navigation scales well with large game worlds as a large area can often be defined with a single polygon when it would require many, many grid cells.
 
     The NavigationServer holds different navigation maps that each consist of regions that hold navigation mesh data.
     Agents can be placed on a map for avoidance calculation.
-    RIDs are used to reference the internal maps, regions and agents when communicating with the server.
+    RIDs are used to reference internal maps, regions, and agents when communicating with the server.
 
     The following NavigationServer RID types are available.
         - NavMap RID
             Reference to a specific navigation map that holds regions and agents.
-            The map will attempt to join changed navigation meshes of regions by proximity.
+            The map will attempt to join the navigation meshes of the regions by proximity.
             The map will synchronize regions and agents each physics frame.
         - NavRegion RID
             Reference to a specific navigation region that can hold navigation mesh data.
-            The region can be enabled / disabled or the use restricted with a navigationlayer bitmask.
+            The region can be enabled / disabled or the use restricted with a navigation layer bitmask.
         - NavLink RID
             Reference to a specific navigation link that connects two navigation mesh positions over arbitrary distances.
         - NavAgent RID
-            Reference to a specific avoidance agent with a radius value use solely in avoidance.
+            Reference to a specific avoidance agent.
+            The avoidance is specified by a radius value.
+        - NavObstacle RID
+            Reference to a specific avoidance obstacle used to affect and constrain the avoidance velocity of agents.
 
-The following SceneTree Nodes are available as helpers to work with the NavigationServer2D API.
+The following scene tree nodes are available as helpers to work with the NavigationServer2D API.
 
 - :ref:`NavigationRegion2D<class_NavigationRegion2D>` Node
     A Node that holds a NavigationPolygon resource that defines a navigation mesh for the NavigationServer2D.
 
     - The region can be enabled / disabled.
-    - The use in pathfinding can be further restricted through the navigationlayers bitmask.
-    - Regions can join their navigation meshes by proximity for a combined navigation mesh.
+    - The use in pathfinding can be further restricted through the ``navigation_layers`` bitmask.
+    - The NavigationServer2D will join the navigation meshes of regions by proximity for a combined navigation mesh.
 
 - :ref:`NavigationLink2D<class_NavigationLink2D>` Node
-    A Node that connects two positions on navigation mesh over arbitrary distances for pathfinding.
+    A Node that connects two positions on navigation meshes over arbitrary distances for pathfinding.
 
     - The link can be enabled / disabled.
     - The link can be made one-way or bidirectional.
-    - The use in pathfinding can be further restricted through the navigationlayers bitmask.
+    - The use in pathfinding can be further restricted through the ``navigation_layers`` bitmask.
 
     Links tell the pathfinding that a connection exists and at what cost. The actual agent handling and movement needs to happen in custom scripts.
 
 -  :ref:`NavigationAgent2D<class_NavigationAgent2D>` Node
-    An optional helper Node to facilitate common NavigationServer2D API calls for pathfinding and avoidance
-    for a Node2D inheriting parent Node.
+    A helper Node used to facilitate common NavigationServer2D API calls for pathfinding and avoidance.
+    Use this Node with a Node2D inheriting parent Node.
 
 -  :ref:`NavigationObstacle2D<class_NavigationObstacle2D>` Node
-    A Node that acts as an agent with avoidance radius, to work it needs to be added under a Node2D
-    inheriting parent Node. Obstacles are intended as a last resort option for constantly moving objects
-    that cannot be re(baked) to a navigation mesh efficiently. This node also only works if RVO processing
-    is being used.
+    A Node that can be used to affect and constrain the avoidance velocity of avoidance enabled agents.
+    This Node does NOT affect the pathfinding of agents. You need to change the navigation meshes for that instead.
 
 The 2D navigation meshes are defined with the following resources:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` Resource
-    A resource that holds 2D navigation mesh data and provides polygon drawtools to define navigation areas inside the Editor as well as at runtime.
+    A resource that holds 2D navigation mesh data.
+    It provides polygon drawing tools to allow defining navigation areas inside the Editor as well as at runtime.
 
     - The NavigationRegion2D Node uses this resource to define its navigation area.
-    - The NavigationServer2D uses this resource to update navmesh of individual regions.
+    - The NavigationServer2D uses this resource to update the navigation mesh of individual regions.
     - The TileSet Editor creates and uses this resource internally when defining tile navigation areas.
 
 .. seealso::
@@ -83,8 +90,8 @@ The 2D navigation meshes are defined with the following resources:
 Setup for 2D scene
 ------------------
 
-The following steps show the basic setup for a minimum viable navigation in 2D that uses the
-NavigationServer2D and a NavigationAgent2D for path movement.
+The following steps show the basic setup for minimal viable navigation in 2D.
+It uses the NavigationServer2D and a NavigationAgent2D for path movement.
 
 #. Add a NavigationRegion2D Node to the scene.
 
@@ -92,15 +99,15 @@ NavigationServer2D and a NavigationAgent2D for path movement.
 
    .. image:: img/nav_2d_min_setup_step1.png
 
-#. Define the moveable navigation area with the NavigationPolygon draw tool.
+#. Define the movable navigation area with the NavigationPolygon draw tool. Then click
+   the `Bake NavigationPolygon`` button on the toolbar.
 
    .. image:: img/nav_2d_min_setup_step2.png
 
    .. note::
 
         The navigation mesh defines the area where an actor can stand and move with its center.
-        Leave enough margin between the navpolygon edges and collision objects to not get path
-        following actors repeatedly stuck on collision.
+        Leave enough margin between the navigation polygon edges and collision objects to not get path following actors repeatedly stuck on collision.
 
 #. Add a CharacterBody2D node in the scene with a basic collision shape and a sprite or mesh
    for visuals.
@@ -129,7 +136,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
         navigation_agent.target_desired_distance = 4.0
 
         # Make sure to not await during _ready.
-        call_deferred("actor_setup")
+        actor_setup.call_deferred()
 
     func actor_setup():
         # Wait for the first physics frame so the NavigationServer can sync.
@@ -148,11 +155,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
         var current_agent_position: Vector2 = global_position
         var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
-        var new_velocity: Vector2 = next_path_position - current_agent_position
-        new_velocity = new_velocity.normalized()
-        new_velocity = new_velocity * movement_speed
-
-        velocity = new_velocity
+        velocity = current_agent_position.direction_to(next_path_position) * movement_speed
         move_and_slide()
 
  .. code-tab:: csharp C#
@@ -199,11 +202,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
             Vector2 currentAgentPosition = GlobalTransform.Origin;
             Vector2 nextPathPosition = _navigationAgent.GetNextPathPosition();
 
-            Vector2 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
-            newVelocity *= _movementSpeed;
-
-            Velocity = newVelocity;
-
+            Velocity = currentAgentPosition.DirectionTo(nextPathPosition) * _movementSpeed;
             MoveAndSlide();
         }
 
@@ -219,5 +218,4 @@ NavigationServer2D and a NavigationAgent2D for path movement.
 
 .. note::
 
-    On the first frame the NavigationServer map has not synchronized region data and any path query
-    will return empty. Await one frame to pause scripts until the NavigationServer had time to sync.
+    On the first frame the NavigationServer map has not synchronized region data and any path query will return empty. Wait for the NavigationServer synchronization by awaiting one frame in the script.

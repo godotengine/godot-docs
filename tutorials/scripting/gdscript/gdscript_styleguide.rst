@@ -35,7 +35,6 @@ Here is a complete class example based on these guidelines:
     ## Initializes states and delegates engine callbacks ([method Node._physics_process],
     ## [method Node._unhandled_input]) to the state.
 
-
     signal state_changed(previous, new)
 
     @export var initial_state: Node
@@ -43,7 +42,7 @@ Here is a complete class example based on these guidelines:
         set = set_is_active
 
     @onready var _state = initial_state:
-        get = set_state
+        set = set_state
     @onready var _state_name = _state.name
 
 
@@ -153,8 +152,8 @@ regular code blocks.
 ::
 
     effect.interpolate_property(sprite, "transform/scale",
-                sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
-                Tween.TRANS_QUAD, Tween.EASE_OUT)
+            sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
+            Tween.TRANS_QUAD, Tween.EASE_OUT)
 
 **Bad**:
 
@@ -232,12 +231,11 @@ line doesn't need to be modified when adding new elements.
 
 ::
 
-    enum Tiles {
-        TILE_BRICK,
-        TILE_FLOOR,
-        TILE_SPIKE,
-        TILE_TELEPORT,
-    }
+    var array = [
+        1,
+        2,
+        3,
+    ]
 
 **Bad**:
 
@@ -245,12 +243,11 @@ line doesn't need to be modified when adding new elements.
 
 ::
 
-    enum Tiles {
-        TILE_BRICK,
-        TILE_FLOOR,
-        TILE_SPIKE,
-        TILE_TELEPORT
-    }
+    var array = [
+        1,
+        2,
+        3
+    ]
 
 Trailing commas are unnecessary in single-line lists, so don't add them in this case.
 
@@ -260,7 +257,7 @@ Trailing commas are unnecessary in single-line lists, so don't add them in this 
 
 ::
 
-    enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
+    var array = [1, 2, 3]
 
 **Bad**:
 
@@ -268,7 +265,7 @@ Trailing commas are unnecessary in single-line lists, so don't add them in this 
 
 ::
 
-    enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT,}
+    var array = [1, 2, 3,]
 
 Blank lines
 ~~~~~~~~~~~
@@ -307,8 +304,8 @@ editor. For example, when looking at a differential revision.
 One statement per line
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Never combine multiple statements on a single line. No, C programmers,
-not even with a single line conditional statement.
+Avoid combining multiple statements on a single line, including conditional
+statements, to adhere to the GDScript style guidelines for readability.
 
 **Good**:
 
@@ -449,8 +446,13 @@ This can make long expressions easier to read.
 Comment spacing
 ~~~~~~~~~~~~~~~
 
-Regular comments should start with a space, but not code that you comment out.
-This helps differentiate text comments from disabled code.
+Regular comments (``#``) and documentation comments (``##``) should start with a
+space, but not code that you comment out. Additionally, code region comments
+(``#region``/``#endregion``) must follow that precise syntax, so they should not
+start with a space.
+
+Using a space for regular and documentation comments helps differentiate text
+comments from disabled code.
 
 **Good**:
 
@@ -472,15 +474,19 @@ This helps differentiate text comments from disabled code.
 
 .. note::
 
-    In the script editor, to toggle the selected code commented, press
-    :kbd:`Ctrl + K`. This feature adds a single # sign at the start
-    of the selected lines.
+    In the script editor, to toggle commenting of the selected code, press
+    :kbd:`Ctrl + K`. This feature adds/removes a single ``#`` sign before any
+    code on the selected lines.
 
 Whitespace
 ~~~~~~~~~~
 
 Always use one space around operators and after commas. Also, avoid extra spaces
-in dictionary references and function calls.
+in dictionary references and function calls. One exception to this is for
+single-line dictionary declarations, where a space should be added after the
+opening brace and before the closing brace. This makes the dictionary easier to
+visually distinguish from an array, as the ``[]`` characters look close to
+``{}`` with most fonts.
 
 **Good**:
 
@@ -492,6 +498,7 @@ in dictionary references and function calls.
     position.y = target_position.y + 10
     dict["key"] = 5
     my_array = [4, 5, 6]
+    my_dictionary = { key = "value" }
     print("foo")
 
 **Bad**:
@@ -504,6 +511,7 @@ in dictionary references and function calls.
     position.y = mpos.y+10
     dict ["key"] = 5
     myarray = [4,5,6]
+    my_dictionary = {key = "value"}
     print ("foo")
 
 Don't use spaces to align expressions vertically:
@@ -612,7 +620,29 @@ Naming conventions
 
 These naming conventions follow the Godot Engine style. Breaking these will make
 your code clash with the built-in naming conventions, leading to inconsistent
-code.
+code. As a summary table:
+
++---------------+----------------+----------------------------------------------------+
+| Type          | Convention     | Example                                            |
++===============+================+====================================================+
+| File names    | snake_case     | ``yaml_parser.gd``                                 |
++---------------+----------------+----------------------------------------------------+
+| Class names   | PascalCase     | ``class_name YAMLParser``                          |
++---------------+----------------+----------------------------------------------------+
+| Node names    | PascalCase     | ``Camera3D``, ``Player``                           |
++---------------+----------------+----------------------------------------------------+
+| Functions     | snake_case     | ``func load_level():``                             |
++---------------+----------------+----------------------------------------------------+
+| Variables     | snake_case     | ``var particle_effect``                            |
++---------------+----------------+----------------------------------------------------+
+| Signals       | snake_case     | ``signal door_opened``                             |
++---------------+----------------+----------------------------------------------------+
+| Constants     | CONSTANT_CASE  | ``const MAX_SPEED = 200``                          |
++---------------+----------------+----------------------------------------------------+
+| Enum names    | PascalCase     | ``enum Element``                                   |
++---------------+----------------+----------------------------------------------------+
+| Enum members  | CONSTANT_CASE  | ``{EARTH, WATER, AIR, FIRE}``                      |
++---------------+----------------+----------------------------------------------------+
 
 File names
 ~~~~~~~~~~
@@ -699,11 +729,34 @@ are constants:
         FIRE,
     }
 
+Write enums with each item on its own line. This allows adding documentation comments above each item
+more easily, and also makes for cleaner diffs in version control when items are added or removed.
+
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
+
+    enum Element {
+        EARTH,
+        WATER,
+        AIR,
+        FIRE,
+    }
+
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
+
+    enum Element { EARTH, WATER, AIR, FIRE }
 
 Code order
 ----------
 
-This first section focuses on code order. For formatting, see
+This section focuses on code order. For formatting, see
 :ref:`formatting`. For naming conventions, see :ref:`naming_conventions`.
 
 We suggest to organize GDScript code this way:
@@ -711,25 +764,26 @@ We suggest to organize GDScript code this way:
 ::
 
     01. @tool
-    02. class_name
-    03. extends
-    04. # docstring
+    02. @icon
+    03. class_name
+    04. extends
+    05. ## docstring
 
-    05. signals
-    06. enums
-    07. constants
-    08. @export variables
-    09. public variables
-    10. private variables
-    11. @onready variables
+    06. signals
+    07. enums
+    08. constants
+    09. @export variables
+    10. public variables
+    11. private variables
+    12. @onready variables
 
-    12. optional built-in virtual _init method
-    13. optional built-in virtual _enter_tree() method
-    14. built-in virtual _ready method
-    15. remaining built-in virtual methods
-    16. public methods
-    17. private methods
-    18. subclasses
+    13. optional built-in virtual _init method
+    14. optional built-in virtual _enter_tree() method
+    15. built-in virtual _ready method
+    16. remaining built-in virtual methods
+    17. public methods
+    18. private methods
+    19. subclasses
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
@@ -750,9 +804,9 @@ Class declaration
 If the code is meant to run in the editor, place the ``@tool`` annotation on the
 first line of the script.
 
-Follow with the ``class_name`` if necessary. You can turn a GDScript file into a
-global type in your project using this feature. For more information, see
-:ref:`doc_gdscript`.
+Follow with the optional ``@icon`` then the ``class_name`` if necessary. You can turn a
+GDScript file into a global type in your project using ``class_name``. For more
+information, see :ref:`doc_gdscript`.
 
 Then, add the ``extends`` keyword if the class extends a built-in type.
 
@@ -786,7 +840,13 @@ variables, in that order.
 
     signal player_spawned(position)
 
-    enum Jobs {KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN}
+    enum Jobs {
+        KNIGHT,
+        WIZARD,
+        ROGUE,
+        HEALER,
+        SHAMAN,
+    }
 
     const MAX_LIVES = 3
 
@@ -806,7 +866,7 @@ variables, in that order.
 
 .. note::
 
-    The GDScript compiler evaluates onready variables right before the ``_ready``
+    GDScript evaluates ``@onready`` variables right before the ``_ready``
     callback. You can use that to cache node dependencies, that is to say, to get
     child nodes in the scene that your class relies on. This is what the example
     above shows.
@@ -880,7 +940,7 @@ in that order.
 Static typing
 -------------
 
-Since Godot 3.1, GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
+GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
 
 Declared types
 ~~~~~~~~~~~~~~

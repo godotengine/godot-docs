@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_contributing_to_the_engine:
 
 Engine development
@@ -17,9 +19,26 @@ especially if you're new to using Git or GitHub.
    best_practices_for_engine_contributors
    code_style_guidelines
    cpp_usage_guidelines
+   handling_compatibility_breakages
+
+Buildsystem and work environment
+--------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-contributing-to-the-engine-environment
+
+   configuring_an_ide/index
    compiling/index
    debugging/index
-   configuring_an_ide/index
+
+Engine architecture
+-------------------
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-contributing-to-the-engine-architecture
+
    core_and_modules/index
-   editor/index
    file_formats/index
+   editor/index

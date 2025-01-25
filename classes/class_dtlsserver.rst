@@ -31,20 +31,20 @@ Below a small example of how to use it:
     # server_node.gd
     extends Node
     
-    var dtls := DTLSServer.new()
-    var server := UDPServer.new()
+    var dtls = DTLSServer.new()
+    var server = UDPServer.new()
     var peers = []
     
     func _ready():
         server.listen(4242)
         var key = load("key.key") # Your private key.
         var cert = load("cert.crt") # Your X509 certificate.
-        dtls.setup(key, cert)
+        dtls.setup(TlsOptions.server(key, cert))
     
     func _process(delta):
         while server.is_connection_available():
-            var peer: PacketPeerUDP = server.take_connection()
-            var dtls_peer: PacketPeerDTLS = dtls.take_connection(peer)
+            var peer = server.take_connection()
+            var dtls_peer = dtls.take_connection(peer)
             if dtls_peer.get_status() != PacketPeerDTLS.STATUS_HANDSHAKING:
                 continue # It is normal that 50% of the connections fails due to cookie exchange.
             print("Peer connected!")
@@ -66,22 +66,22 @@ Below a small example of how to use it:
     {
         private DtlsServer _dtls = new DtlsServer();
         private UdpServer _server = new UdpServer();
-        private Godot.Collections.Array<PacketPeerDTLS> _peers = new Godot.Collections.Array<PacketPeerDTLS>();
+        private Godot.Collections.Array<PacketPeerDtls> _peers = [];
     
         public override void _Ready()
         {
             _server.Listen(4242);
             var key = GD.Load<CryptoKey>("key.key"); // Your private key.
             var cert = GD.Load<X509Certificate>("cert.crt"); // Your X509 certificate.
-            _dtls.Setup(key, cert);
+            _dtls.Setup(TlsOptions.Server(key, cert));
         }
     
         public override void _Process(double delta)
         {
-            while (Server.IsConnectionAvailable())
+            while (_server.IsConnectionAvailable())
             {
-                PacketPeerUDP peer = _server.TakeConnection();
-                PacketPeerDTLS dtlsPeer = _dtls.TakeConnection(peer);
+                PacketPeerUdp peer = _server.TakeConnection();
+                PacketPeerDtls dtlsPeer = _dtls.TakeConnection(peer);
                 if (dtlsPeer.GetStatus() != PacketPeerDtls.Status.Handshaking)
                 {
                     continue; // It is normal that 50% of the connections fails due to cookie exchange.
@@ -115,8 +115,8 @@ Below a small example of how to use it:
     # client_node.gd
     extends Node
     
-    var dtls := PacketPeerDTLS.new()
-    var udp := PacketPeerUDP.new()
+    var dtls = PacketPeerDTLS.new()
+    var udp = PacketPeerUDP.new()
     var connected = false
     
     func _ready():
@@ -180,11 +180,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`setup<class_DTLSServer_method_setup>` **(** :ref:`TLSOptions<class_TLSOptions>` server_options **)**                     |
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` | :ref:`take_connection<class_DTLSServer_method_take_connection>` **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` udp_peer **)** |
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`setup<class_DTLSServer_method_setup>`\ (\ server_options\: :ref:`TLSOptions<class_TLSOptions>`\ )                     |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` | :ref:`take_connection<class_DTLSServer_method_take_connection>`\ (\ udp_peer\: :ref:`PacketPeerUDP<class_PacketPeerUDP>`\ ) |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -199,7 +199,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **setup** **(** :ref:`TLSOptions<class_TLSOptions>` server_options **)**
+:ref:`Error<enum_@GlobalScope_Error>` **setup**\ (\ server_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_DTLSServer_method_setup>`
 
 Setup the DTLS server to use the given ``server_options``. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
@@ -211,7 +211,7 @@ Setup the DTLS server to use the given ``server_options``. See :ref:`TLSOptions.
 
 .. rst-class:: classref-method
 
-:ref:`PacketPeerDTLS<class_PacketPeerDTLS>` **take_connection** **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` udp_peer **)**
+:ref:`PacketPeerDTLS<class_PacketPeerDTLS>` **take_connection**\ (\ udp_peer\: :ref:`PacketPeerUDP<class_PacketPeerUDP>`\ ) :ref:`🔗<class_DTLSServer_method_take_connection>`
 
 Try to initiate the DTLS handshake with the given ``udp_peer`` which must be already connected (see :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`).
 
@@ -224,3 +224,4 @@ Try to initiate the DTLS handshake with the given ``udp_peer`` which must be alr
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

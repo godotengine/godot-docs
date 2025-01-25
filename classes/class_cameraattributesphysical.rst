@@ -68,9 +68,9 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_fov<class_CameraAttributesPhysical_method_get_fov>` **(** **)** |const| |
-   +---------------------------+-----------------------------------------------------------------------------------+
+   +---------------------------+-----------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_fov<class_CameraAttributesPhysical_method_get_fov>`\ (\ ) |const| |
+   +---------------------------+-----------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -85,12 +85,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **auto_exposure_max_exposure_value** = ``10.0``
+:ref:`float<class_float>` **auto_exposure_max_exposure_value** = ``10.0`` :ref:`🔗<class_CameraAttributesPhysical_property_auto_exposure_max_exposure_value>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_auto_exposure_max_exposure_value** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_auto_exposure_max_exposure_value** **(** **)**
+- |void| **set_auto_exposure_max_exposure_value**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_auto_exposure_max_exposure_value**\ (\ )
 
 The maximum luminance (in EV100) used when calculating auto exposure. When calculating scene average luminance, color values will be clamped to at least this value. This limits the auto-exposure from exposing below a certain brightness, resulting in a cut off point where the scene will remain bright.
 
@@ -102,14 +102,14 @@ The maximum luminance (in EV100) used when calculating auto exposure. When calcu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **auto_exposure_min_exposure_value** = ``-8.0``
+:ref:`float<class_float>` **auto_exposure_min_exposure_value** = ``-8.0`` :ref:`🔗<class_CameraAttributesPhysical_property_auto_exposure_min_exposure_value>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_auto_exposure_min_exposure_value** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_auto_exposure_min_exposure_value** **(** **)**
+- |void| **set_auto_exposure_min_exposure_value**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_auto_exposure_min_exposure_value**\ (\ )
 
-The minimum luminance luminance (in EV100) used when calculating auto exposure. When calculating scene average luminance, color values will be clamped to at least this value. This limits the auto-exposure from exposing above a certain brightness, resulting in a cut off point where the scene will remain dark.
+The minimum luminance (in EV100) used when calculating auto exposure. When calculating scene average luminance, color values will be clamped to at least this value. This limits the auto-exposure from exposing above a certain brightness, resulting in a cut off point where the scene will remain dark.
 
 .. rst-class:: classref-item-separator
 
@@ -119,12 +119,12 @@ The minimum luminance luminance (in EV100) used when calculating auto exposure. 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **exposure_aperture** = ``16.0``
+:ref:`float<class_float>` **exposure_aperture** = ``16.0`` :ref:`🔗<class_CameraAttributesPhysical_property_exposure_aperture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_aperture** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_aperture** **(** **)**
+- |void| **set_aperture**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_aperture**\ (\ )
 
 Size of the aperture of the camera, measured in f-stops. An f-stop is a unitless ratio between the focal length of the camera and the diameter of the aperture. A high aperture setting will result in a smaller aperture which leads to a dimmer image and sharper focus. A low aperture results in a wide aperture which lets in more light resulting in a brighter, less-focused image. Default is appropriate for outdoors at daytime (i.e. for use with a default :ref:`DirectionalLight3D<class_DirectionalLight3D>`), for indoor lighting, a value between 2 and 4 is more appropriate.
 
@@ -138,14 +138,14 @@ Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **exposure_shutter_speed** = ``100.0``
+:ref:`float<class_float>` **exposure_shutter_speed** = ``100.0`` :ref:`🔗<class_CameraAttributesPhysical_property_exposure_shutter_speed>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shutter_speed** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_shutter_speed** **(** **)**
+- |void| **set_shutter_speed**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_shutter_speed**\ (\ )
 
-Time for shutter to open and close, measured in seconds. A higher value will let in more light leading to a brighter image, while a lower amount will let in less light leading to a darker image.
+Time for shutter to open and close, evaluated as ``1 / shutter_speed`` seconds. A higher value will allow less light (leading to a darker image), while a lower value will allow more light (leading to a brighter image).
 
 Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is enabled.
 
@@ -157,12 +157,12 @@ Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frustum_far** = ``4000.0``
+:ref:`float<class_float>` **frustum_far** = ``4000.0`` :ref:`🔗<class_CameraAttributesPhysical_property_frustum_far>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_far** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_far** **(** **)**
+- |void| **set_far**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_far**\ (\ )
 
 Override value for :ref:`Camera3D.far<class_Camera3D_property_far>`. Used internally when calculating depth of field. When attached to a :ref:`Camera3D<class_Camera3D>` as its :ref:`Camera3D.attributes<class_Camera3D_property_attributes>`, it will override the :ref:`Camera3D.far<class_Camera3D_property_far>` property.
 
@@ -174,12 +174,12 @@ Override value for :ref:`Camera3D.far<class_Camera3D_property_far>`. Used intern
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frustum_focal_length** = ``35.0``
+:ref:`float<class_float>` **frustum_focal_length** = ``35.0`` :ref:`🔗<class_CameraAttributesPhysical_property_frustum_focal_length>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_focal_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_focal_length** **(** **)**
+- |void| **set_focal_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_focal_length**\ (\ )
 
 Distance between camera lens and camera aperture, measured in millimeters. Controls field of view and depth of field. A larger focal length will result in a smaller field of view and a narrower depth of field meaning fewer objects will be in focus. A smaller focal length will result in a wider field of view and a larger depth of field meaning more objects will be in focus. When attached to a :ref:`Camera3D<class_Camera3D>` as its :ref:`Camera3D.attributes<class_Camera3D_property_attributes>`, it will override the :ref:`Camera3D.fov<class_Camera3D_property_fov>` property and the :ref:`Camera3D.keep_aspect<class_Camera3D_property_keep_aspect>` property.
 
@@ -191,12 +191,12 @@ Distance between camera lens and camera aperture, measured in millimeters. Contr
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frustum_focus_distance** = ``10.0``
+:ref:`float<class_float>` **frustum_focus_distance** = ``10.0`` :ref:`🔗<class_CameraAttributesPhysical_property_frustum_focus_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_focus_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_focus_distance** **(** **)**
+- |void| **set_focus_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_focus_distance**\ (\ )
 
 Distance from camera of object that will be in focus, measured in meters. Internally this will be clamped to be at least 1 millimeter larger than :ref:`frustum_focal_length<class_CameraAttributesPhysical_property_frustum_focal_length>`.
 
@@ -208,12 +208,12 @@ Distance from camera of object that will be in focus, measured in meters. Intern
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frustum_near** = ``0.05``
+:ref:`float<class_float>` **frustum_near** = ``0.05`` :ref:`🔗<class_CameraAttributesPhysical_property_frustum_near>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_near** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_near** **(** **)**
+- |void| **set_near**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_near**\ (\ )
 
 Override value for :ref:`Camera3D.near<class_Camera3D_property_near>`. Used internally when calculating depth of field. When attached to a :ref:`Camera3D<class_Camera3D>` as its :ref:`Camera3D.attributes<class_Camera3D_property_attributes>`, it will override the :ref:`Camera3D.near<class_Camera3D_property_near>` property.
 
@@ -230,7 +230,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_fov** **(** **)** |const|
+:ref:`float<class_float>` **get_fov**\ (\ ) |const| :ref:`🔗<class_CameraAttributesPhysical_method_get_fov>`
 
 Returns the vertical field of view that corresponds to the :ref:`frustum_focal_length<class_CameraAttributesPhysical_property_frustum_focal_length>`. This value is calculated internally whenever :ref:`frustum_focal_length<class_CameraAttributesPhysical_property_frustum_focal_length>` is changed.
 
@@ -241,3 +241,4 @@ Returns the vertical field of view that corresponds to the :ref:`frustum_focal_l
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -19,11 +19,11 @@ Base script that can be used to add extension functions to the editor.
 Description
 -----------
 
-Scripts extending this class and implementing its :ref:`_run<class_EditorScript_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing :kbd:`Ctrl + Shift + X`) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
+Scripts extending this class and implementing its :ref:`_run<class_EditorScript_private_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing :kbd:`Ctrl + Shift + X`) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
 
 \ **Note:** Extending scripts need to have ``tool`` mode enabled.
 
-\ **Example script:**\ 
+\ **Example:** Running the following script prints "Hello from the Godot Editor!":
 
 
 .. tabs::
@@ -63,15 +63,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | void                                          | :ref:`_run<class_EditorScript_method__run>` **(** **)** |virtual|                                      |
-   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | void                                          | :ref:`add_root_node<class_EditorScript_method_add_root_node>` **(** :ref:`Node<class_Node>` node **)** |
-   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorInterface<class_EditorInterface>` | :ref:`get_editor_interface<class_EditorScript_method_get_editor_interface>` **(** **)** |const|        |
-   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>` **(** **)** |const|                              |
-   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------+
+   | |void|                                        | :ref:`_run<class_EditorScript_private_method__run>`\ (\ ) |virtual|                                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------+
+   | |void|                                        | :ref:`add_root_node<class_EditorScript_method_add_root_node>`\ (\ node\: :ref:`Node<class_Node>`\ ) |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------+
+   | :ref:`EditorInterface<class_EditorInterface>` | :ref:`get_editor_interface<class_EditorScript_method_get_editor_interface>`\ (\ ) |const|           |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>`\ (\ ) |const|                                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -82,11 +82,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorScript_method__run:
+.. _class_EditorScript_private_method__run:
 
 .. rst-class:: classref-method
 
-void **_run** **(** **)** |virtual|
+|void| **_run**\ (\ ) |virtual| :ref:`🔗<class_EditorScript_private_method__run>`
 
 This method is executed by the Editor when **File > Run** is used.
 
@@ -98,11 +98,9 @@ This method is executed by the Editor when **File > Run** is used.
 
 .. rst-class:: classref-method
 
-void **add_root_node** **(** :ref:`Node<class_Node>` node **)**
+|void| **add_root_node**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_EditorScript_method_add_root_node>`
 
-Adds ``node`` as a child of the root node in the editor context.
-
-\ **Warning:** The implementation of this method is currently disabled.
+Makes ``node`` root of the currently opened scene. Only works if the scene is empty. If the ``node`` is a scene instance, an inheriting scene will be created.
 
 .. rst-class:: classref-item-separator
 
@@ -112,11 +110,11 @@ Adds ``node`` as a child of the root node in the editor context.
 
 .. rst-class:: classref-method
 
-:ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)** |const|
+:ref:`EditorInterface<class_EditorInterface>` **get_editor_interface**\ (\ ) |const| :ref:`🔗<class_EditorScript_method_get_editor_interface>`
+
+**Deprecated:** :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
 
 Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
-
-\ *Deprecated.* :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
 
 .. rst-class:: classref-item-separator
 
@@ -126,9 +124,9 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **get_scene** **(** **)** |const|
+:ref:`Node<class_Node>` **get_scene**\ (\ ) |const| :ref:`🔗<class_EditorScript_method_get_scene>`
 
-Returns the Editor's currently active scene.
+Returns the edited (current) scene's root :ref:`Node<class_Node>`. Equivalent of :ref:`EditorInterface.get_edited_scene_root<class_EditorInterface_method_get_edited_scene_root>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -137,3 +135,4 @@ Returns the Editor's currently active scene.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

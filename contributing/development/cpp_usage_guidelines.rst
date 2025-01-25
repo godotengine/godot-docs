@@ -46,7 +46,7 @@ use of modern C++ features conservative. Their use needs to serve a real
 purpose, such as improving code readability or performance.
 
 Standard Template Library
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We don't allow using the `STL <https://en.wikipedia.org/wiki/Standard_Template_Library>`__
 as Godot provides its own data types (among other things).
@@ -67,7 +67,7 @@ This means that pull requests should **not** use ``std::string``,
     and Array. Therefore, List should be avoided in new code unless necessary.
 
 ``auto`` keyword
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Please don't use the ``auto`` keyword for type inference. While it can avoid
 repetition, it can also lead to confusing code:
@@ -88,17 +88,26 @@ We chose to forbid ``auto`` instead of allowing it on a case-by-case basis to
 avoid having to decide on difficult edge cases. Thank you for your understanding.
 
 Lambdas
-^^^^^^^
+~~~~~~~
 
 Lambdas should be used conservatively when they make code effectively faster or
 simpler, and do not impede readability. Please ask before using lambdas in a
 pull request.
 
 ``#pragma once`` directive
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To follow the existing style, please use standard ``#ifdef``-based include
 guards instead of ``#pragma once`` in new files.
+
+``try``-``catch`` blocks
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+C++ style exception handling using ``try`` and ``catch`` blocks is forbidden.
+This restriction is in place for several reasons, including performance, binary
+size and code complexity.
+Use :ref:`doc_common_engine_methods_and_macros_error_macros` instead.
+
 
 .. seealso::
 

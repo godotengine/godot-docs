@@ -1,6 +1,6 @@
 .. _doc_navigation_overview_3d:
 
-3D Navigation Overview
+3D navigation overview
 ======================
 
 Godot provides multiple objects, classes and servers to facilitate grid-based or mesh-based navigation and pathfinding for 2D and 3D games.
@@ -11,71 +11,69 @@ Godot provides the following objects and classes for 3D navigation:
 - :ref:`Astar3D<class_Astar3D>`
     ``Astar3D`` objects provide an option to find the shortest path in a graph of weighted **points**.
 
-    The AStar3D class is best suited for cellbased 3D gameplay that does not require actors to reach any
-    possible position within an area but only predefined, distinct positions.
+    The AStar3D class is best suited for cell-based 3D gameplay that does not require actors to reach any possible position within an area but only predefined, distinct positions.
 
 - :ref:`NavigationServer3D<class_NavigationServer3D>`
-    ``NavigationServer3D`` provides a powerful server API to find the shortest path between two positions
-    on a area defined by a navigation mesh.
+    ``NavigationServer3D`` provides a powerful server API to find the shortest path between two positions on an area defined by a navigation mesh.
 
-    The NavigationServer is best suited for 3D realtime gameplay that does require actors to reach any
-    possible position within an navmesh defined area. Meshbased navigation scales well with large gameworlds
-    as a large area can often be defined with a single polygon when it would require many, many grid cells.
+    The NavigationServer is best suited for 3D realtime gameplay that does require actors to reach any possible position within a navigation mesh defined area.
+    Mesh-based navigation scales well with large game worlds as a large area can often be defined with a single polygon when it would require many, many grid cells.
 
-    The NavigationServer holds different navigation maps that each consist of regions that hold navigation mesh
-    data. Agents can be placed on a map for avoidance calculation. RIDs are used to reference the internal maps,
-    regions and agents when communicating with the server.
+    The NavigationServer holds different navigation maps that each consist of regions that hold navigation mesh data.
+    Agents can be placed on a map for avoidance calculation.
+    RIDs are used to reference internal maps, regions, and agents when communicating with the server.
 
     The following NavigationServer RID types are available.
         - NavMap RID
             Reference to a specific navigation map that holds regions and agents.
-            The map will attempt to join changed navigation meshes of regions by proximity.
+            The map will attempt to join the navigation meshes of the regions by proximity.
             The map will synchronize regions and agents each physics frame.
         - NavRegion RID
             Reference to a specific navigation region that can hold navigation mesh data.
-            The region can be enabled / disabled or the use restricted with a navigationlayer bitmask.
+            The region can be enabled / disabled or the use restricted with a navigation layer bitmask.
         - NavLink RID
             Reference to a specific navigation link that connects two navigation mesh positions over arbitrary distances.
         - NavAgent RID
-            Reference to a specific avoidance agent with a radius value use solely in avoidance.
+            Reference to a specific avoidance agent.
+            The avoidance is defined by a radius value.
+        - NavObstacle RID
+            Reference to a specific avoidance obstacle used to affect and constrain the avoidance velocity of agents.
 
-The following SceneTree Nodes are available as helpers to work with the NavigationServer3D API.
+The following scene tree nodes are available as helpers to work with the NavigationServer3D API.
 
 - :ref:`NavigationRegion3D<class_NavigationRegion3D>` Node
     A Node that holds a Navigation Mesh resource that defines a navigation mesh for the NavigationServer3D.
 
     - The region can be enabled / disabled.
-    - The use in pathfinding can be further restricted through the navigationlayers bitmask.
-    - Regions can join their navigation meshes by proximity for a combined navigation mesh.
+    - The use in pathfinding can be further restricted through the ``navigation_layers`` bitmask.
+    - The NavigationServer3D will join the navigation meshes of regions by proximity for a combined navigation mesh.
 
 - :ref:`NavigationLink3D<class_NavigationLink3D>` Node
-    A Node that connects two positions on navigation mesh over arbitrary distances for pathfinding.
+    A Node that connects two positions on navigation meshes over arbitrary distances for pathfinding.
 
     - The link can be enabled / disabled.
     - The link can be made one-way or bidirectional.
-    - The use in pathfinding can be further restricted through the navigationlayers bitmask.
+    - The use in pathfinding can be further restricted through the ``navigation_layers`` bitmask.
 
     Links tell the pathfinding that a connection exists and at what cost. The actual agent handling and movement needs to happen in custom scripts.
 
 -  :ref:`NavigationAgent3D<class_NavigationAgent3D>` Node
-    An optional helper Node to facilitate common NavigationServer3D API calls for pathfinding and avoidance for
-    a Node3D inheriting parent Node.
+    A helper Node used to facilitate common NavigationServer3D API calls for pathfinding and avoidance.
+    Use this Node with a Node3D inheriting parent Node.
 
 -  :ref:`NavigationObstacle3D<class_NavigationObstacle3D>` Node
-    A Node that acts as an agent with avoidance radius, to work it needs to be added under a Node3D
-    inheriting parent Node. Obstacles are intended as a last resort option for constantly moving objects
-    that cannot be re(baked) to a navigation mesh efficiently. This node also only works if RVO processing
-    is being used.
+    A Node that can be used to affect and constrain the avoidance velocity of avoidance enabled agents.
+    This Node does NOT affect the pathfinding of agents. You need to change the navigation meshes for that instead.
 
 The 3D navigation meshes are defined with the following resources:
 
 - :ref:`NavigationMesh<class_NavigationMesh>` Resource
-    A resource that holds 3D navigation mesh data and provides 3D geometry baking options to define navigation
-    areas inside the Editor as well as at runtime.
+    A resource that holds 3D navigation mesh data.
+    It provides 3D geometry baking options to define navigation areas inside the Editor as well as at runtime.
 
     - The NavigationRegion3D Node uses this resource to define its navigation area.
-    - The NavigationServer3D uses this resource to update navmesh of individual regions.
-    - The GridMap Editor uses this resource when specific navigation meshes are defined for each gridcell.
+    - The NavigationServer3D uses this resource to update the navigation mesh of individual regions.
+    - The GridMap Editor uses this resource when specific navigation meshes are defined for each grid cell.
 
 .. seealso::
 
@@ -85,8 +83,8 @@ The 3D navigation meshes are defined with the following resources:
 Setup for 3D scene
 ------------------
 
-The following steps show how to setup a minimum viable navigation in 3D that uses the NavigationServer3D and
-a NavigationAgent3D for path movement.
+The following steps show a basic setup for minimal viable navigation in 3D.
+It uses the NavigationServer3D and a NavigationAgent3D for path movement.
 
 #. Add a NavigationRegion3D Node to the scene.
 
@@ -103,7 +101,7 @@ a NavigationAgent3D for path movement.
 
    .. image:: img/nav_3d_min_setup_step2.png
 
-#. Now a transparent navigation mesh appeared that hovers some distance on top the planemesh.
+#. Now a transparent navigation mesh appears that hovers some distance on top of the PlaneMesh.
 
    .. image:: img/nav_3d_min_setup_step3.png
 
@@ -134,7 +132,7 @@ a NavigationAgent3D for path movement.
         navigation_agent.target_desired_distance = 0.5
 
         # Make sure to not await during _ready.
-        call_deferred("actor_setup")
+        actor_setup.call_deferred()
 
     func actor_setup():
         # Wait for the first physics frame so the NavigationServer can sync.
@@ -153,11 +151,7 @@ a NavigationAgent3D for path movement.
         var current_agent_position: Vector3 = global_position
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 
-        var new_velocity: Vector3 = next_path_position - current_agent_position
-        new_velocity = new_velocity.normalized()
-        new_velocity = new_velocity * movement_speed
-
-        velocity = new_velocity
+        velocity = current_agent_position.direction_to(next_path_position) * movement_speed
         move_and_slide()
 
  .. code-tab:: csharp C#
@@ -204,11 +198,7 @@ a NavigationAgent3D for path movement.
             Vector3 currentAgentPosition = GlobalTransform.Origin;
             Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
 
-            Vector3 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
-            newVelocity *= _movementSpeed;
-
-            Velocity = newVelocity;
-
+            Velocity = currentAgentPosition.DirectionTo(nextPathPosition) * _movementSpeed;
             MoveAndSlide();
         }
 
@@ -224,5 +214,4 @@ a NavigationAgent3D for path movement.
 
 .. note::
 
-    On the first frame the NavigationServer map has not synchronized region data and any path query
-    will return empty. Await one frame to pause scripts until the NavigationServer had time to sync.
+    On the first frame the NavigationServer map has not synchronized region data and any path query will return empty. Wait for the NavigationServer synchronization by awaiting one frame in the script.

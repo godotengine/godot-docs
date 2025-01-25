@@ -48,12 +48,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **initial_offset** = ``25.0``
+:ref:`float<class_float>` **initial_offset** = ``25.0`` :ref:`🔗<class_GrooveJoint2D_property_initial_offset>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_initial_offset** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_initial_offset** **(** **)**
+- |void| **set_initial_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_initial_offset**\ (\ )
 
 The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` along the joint's Y axis (along the groove).
 
@@ -65,12 +65,12 @@ The body B's initial anchor position defined by the joint's origin and a local o
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **length** = ``50.0``
+:ref:`float<class_float>` **length** = ``50.0`` :ref:`🔗<class_GrooveJoint2D_property_length>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_length** **(** **)**
+- |void| **set_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_length**\ (\ )
 
 The groove's length. The groove is from the joint's origin towards :ref:`length<class_GrooveJoint2D_property_length>` along the joint's local Y axis.
 
@@ -81,3 +81,4 @@ The groove's length. The groove is from the joint's origin towards :ref:`length<
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

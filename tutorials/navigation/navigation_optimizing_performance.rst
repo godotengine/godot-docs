@@ -7,7 +7,7 @@ Optimizing Navigation Performance
 
 Common Navigation related performance problems can be categorized into the following topics:
 
-- Performance problems with parsing SceneTree nodes for navigation mesh baking.
+- Performance problems with parsing scene tree nodes for navigation mesh baking.
 - Performance problems with baking the actual navigation mesh.
 - Performance problems with NavigationAgent path queries.
 - Performance problems with the actual path search.
@@ -15,8 +15,8 @@ Common Navigation related performance problems can be categorized into the follo
 
 In the following sections information can be found on how to identify and fix or at least mitigate their impact on framerates.
 
-Performance problems with parsing SceneTree nodes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Performance problems with parsing scene tree nodes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
@@ -50,7 +50,7 @@ Performance problems with navigation mesh baking
 
 Baking navigation meshes at runtime should always be done in a background thread if possible. Even small sized navigation meshes can take far longer to bake than what is possible to squeeze into a single frame, at least if the framerate should stay at a bearable level.
 
-Complexity of source geometry data parsed from SceneTree nodes has big impact on baking performance as everything needs to be mapped to a grid / voxels.
+Complexity of source geometry data parsed from scene tree nodes has big impact on baking performance as everything needs to be mapped to a grid / voxels.
 For runtime baking performance the NavigationMesh cell size and cell height should be set as high as possible without causing navigation mesh quality problems for a game.
 If cell size or cell height is set too low the baking is forced to create an excessive amount of voxels to process the source geometry.
 If the source geometry spans over a very large game world it is even possible that the baking process runs out off memory in the middle and crashes the game.

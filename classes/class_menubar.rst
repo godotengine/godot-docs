@@ -12,14 +12,14 @@ MenuBar
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A horizontal menu bar that creates a :ref:`MenuButton<class_MenuButton>` for each :ref:`PopupMenu<class_PopupMenu>` child.
+A horizontal menu bar that creates a menu for each :ref:`PopupMenu<class_PopupMenu>` child.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A horizontal menu bar that creates a :ref:`MenuButton<class_MenuButton>` for each :ref:`PopupMenu<class_PopupMenu>` child. New items are created by adding :ref:`PopupMenu<class_PopupMenu>`\ s to this node.
+A horizontal menu bar that creates a menu for each :ref:`PopupMenu<class_PopupMenu>` child. New items are created by adding :ref:`PopupMenu<class_PopupMenu>`\ s to this node. Item title is determined by :ref:`Window.title<class_Window_property_title>`, or node name if :ref:`Window.title<class_Window_property_title>` is empty. Item title can be overridden using :ref:`set_menu_title<class_MenuBar_method_set_menu_title>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -51,31 +51,31 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`get_menu_count<class_MenuBar_method_get_menu_count>` **(** **)** |const|                                                             |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu_popup<class_MenuBar_method_get_menu_popup>` **(** :ref:`int<class_int>` menu **)** |const|                                  |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`       | :ref:`get_menu_title<class_MenuBar_method_get_menu_title>` **(** :ref:`int<class_int>` menu **)** |const|                                  |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`       | :ref:`get_menu_tooltip<class_MenuBar_method_get_menu_tooltip>` **(** :ref:`int<class_int>` menu **)** |const|                              |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`is_menu_disabled<class_MenuBar_method_is_menu_disabled>` **(** :ref:`int<class_int>` menu **)** |const|                              |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`is_menu_hidden<class_MenuBar_method_is_menu_hidden>` **(** :ref:`int<class_int>` menu **)** |const|                                  |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`is_native_menu<class_MenuBar_method_is_native_menu>` **(** **)** |const|                                                             |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_disable_shortcuts<class_MenuBar_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)**                      |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_menu_disabled<class_MenuBar_method_set_menu_disabled>` **(** :ref:`int<class_int>` menu, :ref:`bool<class_bool>` disabled **)**  |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_menu_hidden<class_MenuBar_method_set_menu_hidden>` **(** :ref:`int<class_int>` menu, :ref:`bool<class_bool>` hidden **)**        |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_menu_title<class_MenuBar_method_set_menu_title>` **(** :ref:`int<class_int>` menu, :ref:`String<class_String>` title **)**       |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_menu_tooltip<class_MenuBar_method_set_menu_tooltip>` **(** :ref:`int<class_int>` menu, :ref:`String<class_String>` tooltip **)** |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`get_menu_count<class_MenuBar_method_get_menu_count>`\ (\ ) |const|                                                                  |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu_popup<class_MenuBar_method_get_menu_popup>`\ (\ menu\: :ref:`int<class_int>`\ ) |const|                                    |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`get_menu_title<class_MenuBar_method_get_menu_title>`\ (\ menu\: :ref:`int<class_int>`\ ) |const|                                    |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`get_menu_tooltip<class_MenuBar_method_get_menu_tooltip>`\ (\ menu\: :ref:`int<class_int>`\ ) |const|                                |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`is_menu_disabled<class_MenuBar_method_is_menu_disabled>`\ (\ menu\: :ref:`int<class_int>`\ ) |const|                                |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`is_menu_hidden<class_MenuBar_method_is_menu_hidden>`\ (\ menu\: :ref:`int<class_int>`\ ) |const|                                    |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`is_native_menu<class_MenuBar_method_is_native_menu>`\ (\ ) |const|                                                                  |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_disable_shortcuts<class_MenuBar_method_set_disable_shortcuts>`\ (\ disabled\: :ref:`bool<class_bool>`\ )                        |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_menu_disabled<class_MenuBar_method_set_menu_disabled>`\ (\ menu\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ )  |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_menu_hidden<class_MenuBar_method_set_menu_hidden>`\ (\ menu\: :ref:`int<class_int>`, hidden\: :ref:`bool<class_bool>`\ )        |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_menu_title<class_MenuBar_method_set_menu_title>`\ (\ menu\: :ref:`int<class_int>`, title\: :ref:`String<class_String>`\ )       |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_menu_tooltip<class_MenuBar_method_set_menu_tooltip>`\ (\ menu\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ ) |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -96,7 +96,7 @@ Theme Properties
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_hover_pressed_color<class_MenuBar_theme_color_font_hover_pressed_color>` | ``Color(1, 1, 1, 1)``               |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_MenuBar_theme_color_font_outline_color>`             | ``Color(1, 1, 1, 1)``               |
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_MenuBar_theme_color_font_outline_color>`             | ``Color(0, 0, 0, 1)``               |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_MenuBar_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
@@ -110,13 +110,23 @@ Theme Properties
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuBar_theme_style_disabled>`                                 |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuBar_theme_style_focus>`                                       |                                     |
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`disabled_mirrored<class_MenuBar_theme_style_disabled_mirrored>`               |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuBar_theme_style_hover>`                                       |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover_mirrored<class_MenuBar_theme_style_hover_mirrored>`                     |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover_pressed<class_MenuBar_theme_style_hover_pressed>`                       |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover_pressed_mirrored<class_MenuBar_theme_style_hover_pressed_mirrored>`     |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_MenuBar_theme_style_normal>`                                     |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal_mirrored<class_MenuBar_theme_style_normal_mirrored>`                   |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_MenuBar_theme_style_pressed>`                                   |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed_mirrored<class_MenuBar_theme_style_pressed_mirrored>`                 |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -132,12 +142,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flat** = ``false``
+:ref:`bool<class_bool>` **flat** = ``false`` :ref:`🔗<class_MenuBar_property_flat>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flat** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_flat** **(** **)**
+- |void| **set_flat**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_flat**\ (\ )
 
 Flat **MenuBar** don't display item decoration.
 
@@ -149,12 +159,12 @@ Flat **MenuBar** don't display item decoration.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **language** = ``""``
+:ref:`String<class_String>` **language** = ``""`` :ref:`🔗<class_MenuBar_property_language>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_language** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_language** **(** **)**
+- |void| **set_language**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_language**\ (\ )
 
 Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
@@ -166,14 +176,18 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **prefer_global_menu** = ``true``
+:ref:`bool<class_bool>` **prefer_global_menu** = ``true`` :ref:`🔗<class_MenuBar_property_prefer_global_menu>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_prefer_global_menu** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_prefer_global_menu** **(** **)**
+- |void| **set_prefer_global_menu**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_prefer_global_menu**\ (\ )
 
 If ``true``, **MenuBar** will use system global menu when supported.
+
+\ **Note:** If ``true`` and global menu is supported, this node is not displayed, has zero size, and all its child nodes except :ref:`PopupMenu<class_PopupMenu>`\ s are inaccessible.
+
+\ **Note:** This property overrides the value of the :ref:`PopupMenu.prefer_native_menu<class_PopupMenu_property_prefer_native_menu>` property of the child nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -183,14 +197,14 @@ If ``true``, **MenuBar** will use system global menu when supported.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **start_index** = ``-1``
+:ref:`int<class_int>` **start_index** = ``-1`` :ref:`🔗<class_MenuBar_property_start_index>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_start_index** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_start_index** **(** **)**
+- |void| **set_start_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_start_index**\ (\ )
 
-Position in the global menu to insert first **MenuBar** item at.
+Position order in the global menu to insert **MenuBar** items at. All menu items in the **MenuBar** are always inserted as a continuous range. Menus with lower :ref:`start_index<class_MenuBar_property_start_index>` are inserted first. Menus with :ref:`start_index<class_MenuBar_property_start_index>` equal to ``-1`` are inserted last.
 
 .. rst-class:: classref-item-separator
 
@@ -200,12 +214,12 @@ Position in the global menu to insert first **MenuBar** item at.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **switch_on_hover** = ``true``
+:ref:`bool<class_bool>` **switch_on_hover** = ``true`` :ref:`🔗<class_MenuBar_property_switch_on_hover>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_switch_on_hover** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_switch_on_hover** **(** **)**
+- |void| **set_switch_on_hover**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_switch_on_hover**\ (\ )
 
 If ``true``, when the cursor hovers above menu item, it will close the current :ref:`PopupMenu<class_PopupMenu>` and open the other one.
 
@@ -217,12 +231,12 @@ If ``true``, when the cursor hovers above menu item, it will close the current :
 
 .. rst-class:: classref-property
 
-:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0``
+:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0`` :ref:`🔗<class_MenuBar_property_text_direction>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_text_direction** **(** :ref:`TextDirection<enum_Control_TextDirection>` value **)**
-- :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction** **(** **)**
+- |void| **set_text_direction**\ (\ value\: :ref:`TextDirection<enum_Control_TextDirection>`\ )
+- :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction**\ (\ )
 
 Base text writing direction.
 
@@ -239,7 +253,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_menu_count** **(** **)** |const|
+:ref:`int<class_int>` **get_menu_count**\ (\ ) |const| :ref:`🔗<class_MenuBar_method_get_menu_count>`
 
 Returns number of menu items.
 
@@ -251,7 +265,7 @@ Returns number of menu items.
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_menu_popup** **(** :ref:`int<class_int>` menu **)** |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_menu_popup**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_get_menu_popup>`
 
 Returns :ref:`PopupMenu<class_PopupMenu>` associated with menu item.
 
@@ -263,7 +277,7 @@ Returns :ref:`PopupMenu<class_PopupMenu>` associated with menu item.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_menu_title** **(** :ref:`int<class_int>` menu **)** |const|
+:ref:`String<class_String>` **get_menu_title**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_get_menu_title>`
 
 Returns menu item title.
 
@@ -275,7 +289,7 @@ Returns menu item title.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_menu_tooltip** **(** :ref:`int<class_int>` menu **)** |const|
+:ref:`String<class_String>` **get_menu_tooltip**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_get_menu_tooltip>`
 
 Returns menu item tooltip.
 
@@ -287,7 +301,7 @@ Returns menu item tooltip.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_menu_disabled** **(** :ref:`int<class_int>` menu **)** |const|
+:ref:`bool<class_bool>` **is_menu_disabled**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_is_menu_disabled>`
 
 Returns ``true``, if menu item is disabled.
 
@@ -299,7 +313,7 @@ Returns ``true``, if menu item is disabled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_menu_hidden** **(** :ref:`int<class_int>` menu **)** |const|
+:ref:`bool<class_bool>` **is_menu_hidden**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_is_menu_hidden>`
 
 Returns ``true``, if menu item is hidden.
 
@@ -311,7 +325,7 @@ Returns ``true``, if menu item is hidden.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_native_menu** **(** **)** |const|
+:ref:`bool<class_bool>` **is_native_menu**\ (\ ) |const| :ref:`🔗<class_MenuBar_method_is_native_menu>`
 
 Returns ``true``, if system global menu is supported and used by this **MenuBar**.
 
@@ -323,7 +337,7 @@ Returns ``true``, if system global menu is supported and used by this **MenuBar*
 
 .. rst-class:: classref-method
 
-void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
+|void| **set_disable_shortcuts**\ (\ disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MenuBar_method_set_disable_shortcuts>`
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
@@ -335,7 +349,7 @@ If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
 .. rst-class:: classref-method
 
-void **set_menu_disabled** **(** :ref:`int<class_int>` menu, :ref:`bool<class_bool>` disabled **)**
+|void| **set_menu_disabled**\ (\ menu\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MenuBar_method_set_menu_disabled>`
 
 If ``true``, menu item is disabled.
 
@@ -347,7 +361,7 @@ If ``true``, menu item is disabled.
 
 .. rst-class:: classref-method
 
-void **set_menu_hidden** **(** :ref:`int<class_int>` menu, :ref:`bool<class_bool>` hidden **)**
+|void| **set_menu_hidden**\ (\ menu\: :ref:`int<class_int>`, hidden\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MenuBar_method_set_menu_hidden>`
 
 If ``true``, menu item is hidden.
 
@@ -359,7 +373,7 @@ If ``true``, menu item is hidden.
 
 .. rst-class:: classref-method
 
-void **set_menu_title** **(** :ref:`int<class_int>` menu, :ref:`String<class_String>` title **)**
+|void| **set_menu_title**\ (\ menu\: :ref:`int<class_int>`, title\: :ref:`String<class_String>`\ ) :ref:`🔗<class_MenuBar_method_set_menu_title>`
 
 Sets menu item title.
 
@@ -371,7 +385,7 @@ Sets menu item title.
 
 .. rst-class:: classref-method
 
-void **set_menu_tooltip** **(** :ref:`int<class_int>` menu, :ref:`String<class_String>` tooltip **)**
+|void| **set_menu_tooltip**\ (\ menu\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ ) :ref:`🔗<class_MenuBar_method_set_menu_tooltip>`
 
 Sets menu item tooltip.
 
@@ -388,7 +402,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_color>`
 
 Default text :ref:`Color<class_Color>` of the menu item.
 
@@ -400,7 +414,7 @@ Default text :ref:`Color<class_Color>` of the menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0.875, 0.875, 0.875, 0.5)``
+:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0.875, 0.875, 0.875, 0.5)`` :ref:`🔗<class_MenuBar_theme_color_font_disabled_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is disabled.
 
@@ -412,7 +426,7 @@ Text :ref:`Color<class_Color>` used when the menu item is disabled.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_focus_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is focused. Only replaces the normal text color of the menu item. Disabled, hovered, and pressed states take precedence over this color.
 
@@ -424,7 +438,7 @@ Text :ref:`Color<class_Color>` used when the menu item is focused. Only replaces
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_hover_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is being hovered.
 
@@ -436,7 +450,7 @@ Text :ref:`Color<class_Color>` used when the menu item is being hovered.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_hover_pressed_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_hover_pressed_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_hover_pressed_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is being hovered and pressed.
 
@@ -448,7 +462,7 @@ Text :ref:`Color<class_Color>` used when the menu item is being hovered and pres
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_outline_color>`
 
 The tint of text outline of the menu item.
 
@@ -460,7 +474,7 @@ The tint of text outline of the menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_pressed_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is being pressed.
 
@@ -472,7 +486,7 @@ Text :ref:`Color<class_Color>` used when the menu item is being pressed.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``4``
+:ref:`int<class_int>` **h_separation** = ``4`` :ref:`🔗<class_MenuBar_theme_constant_h_separation>`
 
 The horizontal space between menu items.
 
@@ -484,7 +498,7 @@ The horizontal space between menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_MenuBar_theme_constant_outline_size>`
 
 The size of the text outline.
 
@@ -498,7 +512,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_MenuBar_theme_font_font>`
 
 :ref:`Font<class_Font>` of the menu item's text.
 
@@ -510,7 +524,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_size**
+:ref:`int<class_int>` **font_size** :ref:`🔗<class_MenuBar_theme_font_size_font_size>`
 
 Font size of the menu item's text.
 
@@ -522,7 +536,7 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **disabled**
+:ref:`StyleBox<class_StyleBox>` **disabled** :ref:`🔗<class_MenuBar_theme_style_disabled>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is disabled.
 
@@ -530,13 +544,13 @@ Font size of the menu item's text.
 
 ----
 
-.. _class_MenuBar_theme_style_focus:
+.. _class_MenuBar_theme_style_disabled_mirrored:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **focus**
+:ref:`StyleBox<class_StyleBox>` **disabled_mirrored** :ref:`🔗<class_MenuBar_theme_style_disabled_mirrored>`
 
-:ref:`StyleBox<class_StyleBox>` used when the menu item is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+:ref:`StyleBox<class_StyleBox>` used when the menu item is disabled (for right-to-left layouts).
 
 .. rst-class:: classref-item-separator
 
@@ -546,9 +560,45 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **hover**
+:ref:`StyleBox<class_StyleBox>` **hover** :ref:`🔗<class_MenuBar_theme_style_hover>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_hover_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_mirrored** :ref:`🔗<class_MenuBar_theme_style_hover_mirrored>`
+
+:ref:`StyleBox<class_StyleBox>` used when the menu item is being hovered (for right-to-left layouts).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_hover_pressed:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_pressed** :ref:`🔗<class_MenuBar_theme_style_hover_pressed>`
+
+:ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed and hovered at the same time.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_hover_pressed_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_pressed_mirrored** :ref:`🔗<class_MenuBar_theme_style_hover_pressed_mirrored>`
+
+:ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed and hovered at the same time (for right-to-left layouts).
 
 .. rst-class:: classref-item-separator
 
@@ -558,9 +608,21 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **normal**
+:ref:`StyleBox<class_StyleBox>` **normal** :ref:`🔗<class_MenuBar_theme_style_normal>`
 
 Default :ref:`StyleBox<class_StyleBox>` for the menu item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_normal_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **normal_mirrored** :ref:`🔗<class_MenuBar_theme_style_normal_mirrored>`
+
+Default :ref:`StyleBox<class_StyleBox>` for the menu item (for right-to-left layouts).
 
 .. rst-class:: classref-item-separator
 
@@ -570,9 +632,21 @@ Default :ref:`StyleBox<class_StyleBox>` for the menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **pressed**
+:ref:`StyleBox<class_StyleBox>` **pressed** :ref:`🔗<class_MenuBar_theme_style_pressed>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_pressed_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **pressed_mirrored** :ref:`🔗<class_MenuBar_theme_style_pressed_mirrored>`
+
+:ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed (for right-to-left layouts).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -581,3 +655,4 @@ Default :ref:`StyleBox<class_StyleBox>` for the menu item.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

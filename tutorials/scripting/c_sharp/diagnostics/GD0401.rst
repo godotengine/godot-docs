@@ -1,5 +1,5 @@
-GD0401: The class must derive from GodotObject or a derived class
-=================================================================
+GD0401: The class must derive from Godot.GodotObject or a derived class
+=======================================================================
 
 ====================================  ======================================
                                       Value

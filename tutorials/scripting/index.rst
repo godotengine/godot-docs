@@ -1,3 +1,5 @@
+:allow_comments: False
+
 Scripting
 =========
 
@@ -8,8 +10,8 @@ Here, you will find information that is not already covered in more specific
 sections. For instance, to learn about inputs, we recommend you to read
 :ref:`Inputs <toc-learn-features-inputs>`.
 
-Programming languages
----------------------
+.. rubric:: Programming languages
+   :heading-level: 2
 
 The sections below each focus on a given programming language.
 

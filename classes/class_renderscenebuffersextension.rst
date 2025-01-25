@@ -29,15 +29,17 @@ Methods
 .. table::
    :widths: auto
 
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_configure<class_RenderSceneBuffersExtension_method__configure>` **(** :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>` config **)** |virtual| |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_fsr_sharpness<class_RenderSceneBuffersExtension_method__set_fsr_sharpness>` **(** :ref:`float<class_float>` fsr_sharpness **)** |virtual|                              |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_texture_mipmap_bias<class_RenderSceneBuffersExtension_method__set_texture_mipmap_bias>` **(** :ref:`float<class_float>` texture_mipmap_bias **)** |virtual|            |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_use_debanding<class_RenderSceneBuffersExtension_method__set_use_debanding>` **(** :ref:`bool<class_bool>` use_debanding **)** |virtual|                                |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_configure<class_RenderSceneBuffersExtension_private_method__configure>`\ (\ config\: :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>`\ ) |virtual|          |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_set_anisotropic_filtering_level<class_RenderSceneBuffersExtension_private_method__set_anisotropic_filtering_level>`\ (\ anisotropic_filtering_level\: :ref:`int<class_int>`\ ) |virtual| |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_set_fsr_sharpness<class_RenderSceneBuffersExtension_private_method__set_fsr_sharpness>`\ (\ fsr_sharpness\: :ref:`float<class_float>`\ ) |virtual|                                       |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_set_texture_mipmap_bias<class_RenderSceneBuffersExtension_private_method__set_texture_mipmap_bias>`\ (\ texture_mipmap_bias\: :ref:`float<class_float>`\ ) |virtual|                     |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_set_use_debanding<class_RenderSceneBuffersExtension_private_method__set_use_debanding>`\ (\ use_debanding\: :ref:`bool<class_bool>`\ ) |virtual|                                         |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -48,11 +50,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_RenderSceneBuffersExtension_method__configure:
+.. _class_RenderSceneBuffersExtension_private_method__configure:
 
 .. rst-class:: classref-method
 
-void **_configure** **(** :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>` config **)** |virtual|
+|void| **_configure**\ (\ config\: :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__configure>`
 
 Implement this in GDExtension to handle the (re)sizing of a viewport.
 
@@ -60,11 +62,23 @@ Implement this in GDExtension to handle the (re)sizing of a viewport.
 
 ----
 
-.. _class_RenderSceneBuffersExtension_method__set_fsr_sharpness:
+.. _class_RenderSceneBuffersExtension_private_method__set_anisotropic_filtering_level:
 
 .. rst-class:: classref-method
 
-void **_set_fsr_sharpness** **(** :ref:`float<class_float>` fsr_sharpness **)** |virtual|
+|void| **_set_anisotropic_filtering_level**\ (\ anisotropic_filtering_level\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__set_anisotropic_filtering_level>`
+
+Implement this in GDExtension to change the anisotropic filtering level.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderSceneBuffersExtension_private_method__set_fsr_sharpness:
+
+.. rst-class:: classref-method
+
+|void| **_set_fsr_sharpness**\ (\ fsr_sharpness\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__set_fsr_sharpness>`
 
 Implement this in GDExtension to record a new FSR sharpness value.
 
@@ -72,11 +86,11 @@ Implement this in GDExtension to record a new FSR sharpness value.
 
 ----
 
-.. _class_RenderSceneBuffersExtension_method__set_texture_mipmap_bias:
+.. _class_RenderSceneBuffersExtension_private_method__set_texture_mipmap_bias:
 
 .. rst-class:: classref-method
 
-void **_set_texture_mipmap_bias** **(** :ref:`float<class_float>` texture_mipmap_bias **)** |virtual|
+|void| **_set_texture_mipmap_bias**\ (\ texture_mipmap_bias\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__set_texture_mipmap_bias>`
 
 Implement this in GDExtension to change the texture mipmap bias.
 
@@ -84,11 +98,11 @@ Implement this in GDExtension to change the texture mipmap bias.
 
 ----
 
-.. _class_RenderSceneBuffersExtension_method__set_use_debanding:
+.. _class_RenderSceneBuffersExtension_private_method__set_use_debanding:
 
 .. rst-class:: classref-method
 
-void **_set_use_debanding** **(** :ref:`bool<class_bool>` use_debanding **)** |virtual|
+|void| **_set_use_debanding**\ (\ use_debanding\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__set_use_debanding>`
 
 Implement this in GDExtension to react to the debanding flag changing.
 
@@ -99,3 +113,4 @@ Implement this in GDExtension to react to the debanding flag changing.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -48,12 +48,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Curve2D<class_Curve2D>` **curve**
+:ref:`Curve2D<class_Curve2D>` **curve** :ref:`🔗<class_Path2D_property_curve>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve** **(** :ref:`Curve2D<class_Curve2D>` value **)**
-- :ref:`Curve2D<class_Curve2D>` **get_curve** **(** **)**
+- |void| **set_curve**\ (\ value\: :ref:`Curve2D<class_Curve2D>`\ )
+- :ref:`Curve2D<class_Curve2D>` **get_curve**\ (\ )
 
 A :ref:`Curve2D<class_Curve2D>` describing the path.
 
@@ -64,3 +64,4 @@ A :ref:`Curve2D<class_Curve2D>` describing the path.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

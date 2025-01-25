@@ -29,6 +29,8 @@ Create an ``editor.entitlements`` text file with the following contents:
             <true/>
             <key>com.apple.security.device.camera</key>
             <true/>
+            <key>com.apple.security.get-task-allow</key>
+            <true/>
         </dict>
     </plist>
 

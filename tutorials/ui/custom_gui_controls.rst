@@ -79,7 +79,7 @@ the minimum size will make sure your custom control is not squished by
 the other controls in the container.
 
 To provide this callback, just override
-:ref:`Control._get_minimum_size() <class_Control_method__get_minimum_size>`,
+:ref:`Control._get_minimum_size() <class_Control_private_method__get_minimum_size>`,
 for example:
 
 .. tabs::
@@ -107,7 +107,7 @@ Alternatively, set it using a function:
 
     public override void _Ready()
     {
-        SetCustomMinimumSize(new Vector2(20, 20));
+        CustomMinimumSize = new Vector2(20, 20);
     }
 
 Input
@@ -130,8 +130,8 @@ when:
    :ref:`Control.focus_mode <class_Control_property_focus_mode>`.
 
 This function is
-:ref:`Control._gui_input() <class_Control_method__gui_input>`.
-Simply override it in your control. No processing needs to be set.
+:ref:`Control._gui_input() <class_Control_private_method__gui_input>`.
+To use it, override it in your control. No processing needs to be set.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -17,31 +17,45 @@ A pre-parsed scene tree path.
 Description
 -----------
 
-A pre-parsed relative or absolute path in a scene tree, for use with :ref:`Node.get_node<class_Node_method_get_node>` and similar functions. It can reference a node, a resource within a node, or a property of a node or resource. For example, ``"Path2D/PathFollow2D/Sprite2D:texture:size"`` would refer to the ``size`` property of the ``texture`` resource on the node named ``"Sprite2D"``, which is a child of the other named nodes in the path.
+The **NodePath** built-in :ref:`Variant<class_Variant>` type represents a path to a node or property in a hierarchy of nodes. It is designed to be efficiently passed into many built-in methods (such as :ref:`Node.get_node<class_Node_method_get_node>`, :ref:`Object.set_indexed<class_Object_method_set_indexed>`, :ref:`Tween.tween_property<class_Tween_method_tween_property>`, etc.) without a hard dependence on the node or property they point to.
 
-You will usually just pass a string to :ref:`Node.get_node<class_Node_method_get_node>` and it will be automatically converted, but you may occasionally want to parse a path ahead of time with **NodePath** or the literal syntax ``^"path"``. Exporting a **NodePath** variable will give you a node selection widget in the properties panel of the editor, which can often be useful.
+A node path is represented as a :ref:`String<class_String>` composed of slash-separated (``/``) node names and colon-separated (``:``) property names (also called "subnames"). Similar to a filesystem path, ``".."`` and ``"."`` are special node names. They refer to the parent node and the current node, respectively.
 
-A **NodePath** is composed of a list of slash-separated node names (like a filesystem path) and an optional colon-separated list of "subnames" which can be resources or properties.
-
-Some examples of NodePaths include the following:
+The following examples are paths relative to the current node:
 
 ::
 
-    # No leading slash means it is relative to the current node.
-    ^"A" # Immediate child A
-    ^"A/B" # A's child B
-    ^"." # The current node.
-    ^".." # The parent node.
-    ^"../C" # A sibling node C.
-    ^"../.." # The grandparent node.
-    # A leading slash means it is absolute from the SceneTree.
-    ^"/root" # Equivalent to get_tree().get_root().
-    ^"/root/Main" # If your main scene's root node were named "Main".
-    ^"/root/MyAutoload" # If you have an autoloaded node or scene.
+    ^"A"     # Points to the direct child A.
+    ^"A/B"   # Points to A's child B.
+    ^"."     # Points to the current node.
+    ^".."    # Points to the parent node.
+    ^"../C"  # Points to the sibling node C.
+    ^"../.." # Points to the grandparent node.
 
-See also :ref:`StringName<class_StringName>`, which is a similar concept for general-purpose string interning.
+A leading slash means the path is absolute, and begins from the :ref:`SceneTree<class_SceneTree>`:
 
-\ **Note:** In the editor, **NodePath** properties are automatically updated when moving, renaming or deleting a node in the scene tree, but they are never updated at runtime.
+::
+
+    ^"/root"            # Points to the SceneTree's root Window.
+    ^"/root/Title"      # May point to the main scene's root node named "Title".
+    ^"/root/Global"     # May point to an autoloaded node or scene named "Global".
+
+Despite their name, node paths may also point to a property:
+
+::
+
+    ^":position"           # Points to this object's position.
+    ^":position:x"         # Points to this object's position in the x axis.
+    ^"Camera3D:rotation:y" # Points to the child Camera3D and its y rotation.
+    ^"/root:size:x"        # Points to the root Window and its width.
+
+In some situations, it's possible to omit the leading ``:`` when pointing to an object's property. As an example, this is the case with :ref:`Object.set_indexed<class_Object_method_set_indexed>` and :ref:`Tween.tween_property<class_Tween_method_tween_property>`, as those methods call :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>` under the hood. However, it's generally recommended to keep the ``:`` prefix.
+
+Node paths cannot check whether they are valid and may point to nodes or properties that do not exist. Their meaning depends entirely on the context in which they're used.
+
+You usually do not have to worry about the **NodePath** type, as strings are automatically converted to the type when necessary. There are still times when defining node paths is useful. For example, exported **NodePath** properties allow you to easily select any node within the currently edited scene. They are also automatically updated when moving, renaming or deleting nodes in the scene tree editor. See also :ref:`@GDScript.@export_node_path<class_@GDScript_annotation_@export_node_path>`.
+
+See also :ref:`StringName<class_StringName>`, which is a similar type designed for optimized strings.
 
 \ **Note:** In a boolean context, a **NodePath** will evaluate to ``false`` if it is empty (``NodePath("")``). Otherwise, a **NodePath** will always evaluate to ``true``.
 
@@ -54,7 +68,7 @@ See also :ref:`StringName<class_StringName>`, which is a similar concept for gen
 Tutorials
 ---------
 
-- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
+- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -64,13 +78,13 @@ Constructors
 .. table::
    :widths: auto
 
-   +---------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`NodePath<class_NodePath_constructor_NodePath>` **(** **)**                                      |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`NodePath<class_NodePath_constructor_NodePath>` **(** :ref:`NodePath<class_NodePath>` from **)** |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`NodePath<class_NodePath_constructor_NodePath>` **(** :ref:`String<class_String>` from **)**     |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------+
+   +---------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`NodePath<class_NodePath_constructor_NodePath>`\ (\ )                                         |
+   +---------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`NodePath<class_NodePath_constructor_NodePath>`\ (\ from\: :ref:`NodePath<class_NodePath>`\ ) |
+   +---------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`NodePath<class_NodePath_constructor_NodePath>`\ (\ from\: :ref:`String<class_String>`\ )     |
+   +---------------------------------+----------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -80,27 +94,29 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>`     | :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>` **(** **)** |const|           |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_names<class_NodePath_method_get_concatenated_names>` **(** **)** |const|       |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_subnames<class_NodePath_method_get_concatenated_subnames>` **(** **)** |const| |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_name<class_NodePath_method_get_name>` **(** :ref:`int<class_int>` idx **)** |const|         |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`get_name_count<class_NodePath_method_get_name_count>` **(** **)** |const|                       |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_subname<class_NodePath_method_get_subname>` **(** :ref:`int<class_int>` idx **)** |const|   |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`get_subname_count<class_NodePath_method_get_subname_count>` **(** **)** |const|                 |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`hash<class_NodePath_method_hash>` **(** **)** |const|                                           |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_absolute<class_NodePath_method_is_absolute>` **(** **)** |const|                             |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_empty<class_NodePath_method_is_empty>` **(** **)** |const|                                   |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`     | :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>`\ (\ ) |const|                                            |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_names<class_NodePath_method_get_concatenated_names>`\ (\ ) |const|                                        |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_subnames<class_NodePath_method_get_concatenated_subnames>`\ (\ ) |const|                                  |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_name<class_NodePath_method_get_name>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                       |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_name_count<class_NodePath_method_get_name_count>`\ (\ ) |const|                                                        |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_subname<class_NodePath_method_get_subname>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                 |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_subname_count<class_NodePath_method_get_subname_count>`\ (\ ) |const|                                                  |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`hash<class_NodePath_method_hash>`\ (\ ) |const|                                                                            |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_absolute<class_NodePath_method_is_absolute>`\ (\ ) |const|                                                              |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_empty<class_NodePath_method_is_empty>`\ (\ ) |const|                                                                    |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`     | :ref:`slice<class_NodePath_method_slice>`\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -110,11 +126,11 @@ Operators
 .. table::
    :widths: auto
 
-   +-------------------------+------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator !=<class_NodePath_operator_neq_NodePath>` **(** :ref:`NodePath<class_NodePath>` right **)** |
-   +-------------------------+------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator ==<class_NodePath_operator_eq_NodePath>` **(** :ref:`NodePath<class_NodePath>` right **)**  |
-   +-------------------------+------------------------------------------------------------------------------------------------------------+
+   +-------------------------+---------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_NodePath_operator_neq_NodePath>`\ (\ right\: :ref:`NodePath<class_NodePath>`\ ) |
+   +-------------------------+---------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_NodePath_operator_eq_NodePath>`\ (\ right\: :ref:`NodePath<class_NodePath>`\ )  |
+   +-------------------------+---------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -129,7 +145,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`NodePath<class_NodePath>` **NodePath** **(** **)**
+:ref:`NodePath<class_NodePath>` **NodePath**\ (\ ) :ref:`🔗<class_NodePath_constructor_NodePath>`
 
 Constructs an empty **NodePath**.
 
@@ -139,9 +155,9 @@ Constructs an empty **NodePath**.
 
 .. rst-class:: classref-constructor
 
-:ref:`NodePath<class_NodePath>` **NodePath** **(** :ref:`NodePath<class_NodePath>` from **)**
+:ref:`NodePath<class_NodePath>` **NodePath**\ (\ from\: :ref:`NodePath<class_NodePath>`\ )
 
-Constructs a **NodePath** as a copy of the given **NodePath**. ``NodePath("example")`` is equivalent to ``^"example"``.
+Constructs a **NodePath** as a copy of the given **NodePath**.
 
 .. rst-class:: classref-item-separator
 
@@ -149,28 +165,34 @@ Constructs a **NodePath** as a copy of the given **NodePath**. ``NodePath("examp
 
 .. rst-class:: classref-constructor
 
-:ref:`NodePath<class_NodePath>` **NodePath** **(** :ref:`String<class_String>` from **)**
+:ref:`NodePath<class_NodePath>` **NodePath**\ (\ from\: :ref:`String<class_String>`\ )
 
-Creates a NodePath from a string, e.g. ``"Path2D/PathFollow2D/Sprite2D:texture:size"``. A path is absolute if it starts with a slash. Absolute paths are only valid in the global scene tree, not within individual scenes. In a relative path, ``"."`` and ``".."`` indicate the current node and its parent.
+Constructs a **NodePath** from a :ref:`String<class_String>`. The created path is absolute if prefixed with a slash (see :ref:`is_absolute<class_NodePath_method_is_absolute>`).
 
-The "subnames" optionally included after the path to the target node can point to resources or properties, and can also be nested.
+The "subnames" optionally included after the path to the target node can point to properties, and can also be nested.
 
-Examples of valid NodePaths (assuming that those nodes exist and have the referenced resources or properties):
+The following strings can be valid node paths:
 
 ::
 
     # Points to the Sprite2D node.
-    "Path2D/PathFollow2D/Sprite2D"
+    "Level/RigidBody2D/Sprite2D"
+    
     # Points to the Sprite2D node and its "texture" resource.
-    # get_node() would retrieve "Sprite2D", while get_node_and_resource()
+    # get_node() would retrieve the Sprite2D, while get_node_and_resource()
     # would retrieve both the Sprite2D node and the "texture" resource.
-    "Path2D/PathFollow2D/Sprite2D:texture"
+    "Level/RigidBody2D/Sprite2D:texture"
+    
     # Points to the Sprite2D node and its "position" property.
-    "Path2D/PathFollow2D/Sprite2D:position"
+    "Level/RigidBody2D/Sprite2D:position"
+    
     # Points to the Sprite2D node and the "x" component of its "position" property.
-    "Path2D/PathFollow2D/Sprite2D:position:x"
-    # Absolute path (from "root")
-    "/root/Level/Path2D"
+    "Level/RigidBody2D/Sprite2D:position:x"
+    
+    # Points to the RigidBody2D node as an absolute path beginning from the SceneTree.
+    "/root/Level/RigidBody2D"
+
+\ **Note:** In GDScript, it's also possible to convert a constant string into a node path by prefixing it with ``^``. ``^"path/to/node"`` is equivalent to ``NodePath("path/to/node")``.
 
 .. rst-class:: classref-section-separator
 
@@ -185,28 +207,30 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **get_as_property_path** **(** **)** |const|
+:ref:`NodePath<class_NodePath>` **get_as_property_path**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_as_property_path>`
 
-Returns a node path with a colon character (``:``) prepended, transforming it to a pure property path with no node name (defaults to resolving from the current node).
+Returns a copy of this node path with a colon character (``:``) prefixed, transforming it to a pure property path with no node names (relative to the current node).
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    # This will be parsed as a node path to the "x" property in the "position" node.
-    var node_path = NodePath("position:x")
-    # This will be parsed as a node path to the "x" component of the "position" property in the current node.
+    # node_path points to the "x" property of the child node named "position".
+    var node_path = ^"position:x"
+    
+    # property_path points to the "position" in the "x" axis of this node.
     var property_path = node_path.get_as_property_path()
-    print(property_path) # :position:x
+    print(property_path) # Prints ":position:x"
 
  .. code-tab:: csharp
 
-    // This will be parsed as a node path to the "x" property in the "position" node.
+    // nodePath points to the "x" property of the child node named "position".
     var nodePath = new NodePath("position:x");
-    // This will be parsed as a node path to the "x" component of the "position" property in the current node.
+    
+    // propertyPath points to the "position" in the "x" axis of this node.
     NodePath propertyPath = nodePath.GetAsPropertyPath();
-    GD.Print(propertyPath); // :position:x
+    GD.Print(propertyPath); // Prints ":position:x"
 
 
 
@@ -218,9 +242,9 @@ Returns a node path with a colon character (``:``) prepended, transforming it to
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_concatenated_names** **(** **)** |const|
+:ref:`StringName<class_StringName>` **get_concatenated_names**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_concatenated_names>`
 
-Returns all paths concatenated with a slash character (``/``) as separator without subnames.
+Returns all node names concatenated with a slash character (``/``) as a single :ref:`StringName<class_StringName>`.
 
 .. rst-class:: classref-item-separator
 
@@ -230,22 +254,22 @@ Returns all paths concatenated with a slash character (``/``) as separator witho
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_concatenated_subnames** **(** **)** |const|
+:ref:`StringName<class_StringName>` **get_concatenated_subnames**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_concatenated_subnames>`
 
-Returns all subnames concatenated with a colon character (``:``) as separator, i.e. the right side of the first colon in a node path.
+Returns all property subnames concatenated with a colon character (``:``) as a single :ref:`StringName<class_StringName>`.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var node_path = NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path")
-    print(node_path.get_concatenated_subnames()) # texture:load_path
+    var node_path = ^"Sprite2D:texture:resource_name"
+    print(node_path.get_concatenated_subnames()) # Prints "texture:resource_name"
 
  .. code-tab:: csharp
 
-    var nodePath = new NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path");
-    GD.Print(nodePath.GetConcatenatedSubnames()); // texture:load_path
+    var nodePath = new NodePath("Sprite2D:texture:resource_name");
+    GD.Print(nodePath.GetConcatenatedSubnames()); // Prints "texture:resource_name"
 
 
 
@@ -257,26 +281,26 @@ Returns all subnames concatenated with a colon character (``:``) as separator, i
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_name** **(** :ref:`int<class_int>` idx **)** |const|
+:ref:`StringName<class_StringName>` **get_name**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NodePath_method_get_name>`
 
-Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePath_method_get_name_count>` - 1).
+Returns the node name indicated by ``idx``, starting from 0. If ``idx`` is out of bounds, an error is generated. See also :ref:`get_subname_count<class_NodePath_method_get_subname_count>` and :ref:`get_name_count<class_NodePath_method_get_name_count>`.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var node_path = NodePath("Path2D/PathFollow2D/Sprite2D")
-    print(node_path.get_name(0)) # Path2D
-    print(node_path.get_name(1)) # PathFollow2D
-    print(node_path.get_name(2)) # Sprite
+    var sprite_path = NodePath("../RigidBody2D/Sprite2D")
+    print(sprite_path.get_name(0)) # Prints ".."
+    print(sprite_path.get_name(1)) # Prints "RigidBody2D"
+    print(sprite_path.get_name(2)) # Prints "Sprite"
 
  .. code-tab:: csharp
 
-    var nodePath = new NodePath("Path2D/PathFollow2D/Sprite2D");
-    GD.Print(nodePath.GetName(0)); // Path2D
-    GD.Print(nodePath.GetName(1)); // PathFollow2D
-    GD.Print(nodePath.GetName(2)); // Sprite
+    var spritePath = new NodePath("../RigidBody2D/Sprite2D");
+    GD.Print(spritePath.GetName(0)); // Prints ".."
+    GD.Print(spritePath.GetName(1)); // Prints "PathFollow2D"
+    GD.Print(spritePath.GetName(2)); // Prints "Sprite"
 
 
 
@@ -288,11 +312,11 @@ Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePat
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_name_count** **(** **)** |const|
+:ref:`int<class_int>` **get_name_count**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_name_count>`
 
-Gets the number of node names which make up the path. Subnames (see :ref:`get_subname_count<class_NodePath_method_get_subname_count>`) are not included.
+Returns the number of node names in the path. Property subnames are not included.
 
-For example, ``"Path2D/PathFollow2D/Sprite2D"`` has 3 names.
+For example, ``"../RigidBody2D/Sprite2D:texture"`` contains 3 node names.
 
 .. rst-class:: classref-item-separator
 
@@ -302,24 +326,24 @@ For example, ``"Path2D/PathFollow2D/Sprite2D"`` has 3 names.
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_subname** **(** :ref:`int<class_int>` idx **)** |const|
+:ref:`StringName<class_StringName>` **get_subname**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NodePath_method_get_subname>`
 
-Gets the resource or property name indicated by ``idx`` (0 to :ref:`get_subname_count<class_NodePath_method_get_subname_count>` - 1).
+Returns the property name indicated by ``idx``, starting from 0. If ``idx`` is out of bounds, an error is generated. See also :ref:`get_subname_count<class_NodePath_method_get_subname_count>`.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var node_path = NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path")
-    print(node_path.get_subname(0)) # texture
-    print(node_path.get_subname(1)) # load_path
+    var path_to_name = NodePath("Sprite2D:texture:resource_name")
+    print(path_to_name.get_subname(0)) # Prints "texture"
+    print(path_to_name.get_subname(1)) # Prints "resource_name"
 
  .. code-tab:: csharp
 
-    var nodePath = new NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path");
-    GD.Print(nodePath.GetSubname(0)); // texture
-    GD.Print(nodePath.GetSubname(1)); // load_path
+    var pathToName = new NodePath("Sprite2D:texture:resource_name");
+    GD.Print(pathToName.GetSubname(0)); // Prints "texture"
+    GD.Print(pathToName.GetSubname(1)); // Prints "resource_name"
 
 
 
@@ -331,11 +355,11 @@ Gets the resource or property name indicated by ``idx`` (0 to :ref:`get_subname_
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_subname_count** **(** **)** |const|
+:ref:`int<class_int>` **get_subname_count**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_subname_count>`
 
-Gets the number of resource or property names ("subnames") in the path. Each subname is listed after a colon character (``:``) in the node path.
+Returns the number of property names ("subnames") in the path. Each subname in the node path is listed after a colon character (``:``).
 
-For example, ``"Path2D/PathFollow2D/Sprite2D:texture:load_path"`` has 2 subnames.
+For example, ``"Level/RigidBody2D/Sprite2D:texture:resource_name"`` contains 2 subnames.
 
 .. rst-class:: classref-item-separator
 
@@ -345,9 +369,11 @@ For example, ``"Path2D/PathFollow2D/Sprite2D:texture:load_path"`` has 2 subnames
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hash** **(** **)** |const|
+:ref:`int<class_int>` **hash**\ (\ ) |const| :ref:`🔗<class_NodePath_method_hash>`
 
-Returns the 32-bit hash value representing the **NodePath**'s contents.
+Returns the 32-bit hash value representing the node path's contents.
+
+\ **Note:** Node paths with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. Node paths with different hash values are guaranteed to be different.
 
 .. rst-class:: classref-item-separator
 
@@ -357,9 +383,9 @@ Returns the 32-bit hash value representing the **NodePath**'s contents.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_absolute** **(** **)** |const|
+:ref:`bool<class_bool>` **is_absolute**\ (\ ) |const| :ref:`🔗<class_NodePath_method_is_absolute>`
 
-Returns ``true`` if the node path is absolute (as opposed to relative), which means that it starts with a slash character (``/``). Absolute node paths can be used to access the root node (``"/root"``) or autoloads (e.g. ``"/global"`` if a "global" autoload was registered).
+Returns ``true`` if the node path is absolute. Unlike a relative path, an absolute path is represented by a leading slash character (``/``) and always begins from the :ref:`SceneTree<class_SceneTree>`. It can be used to reliably access nodes from the root node (e.g. ``"/root/Global"`` if an autoload named "Global" exists).
 
 .. rst-class:: classref-item-separator
 
@@ -369,9 +395,25 @@ Returns ``true`` if the node path is absolute (as opposed to relative), which me
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty** **(** **)** |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_NodePath_method_is_empty>`
 
-Returns ``true`` if the node path is empty.
+Returns ``true`` if the node path has been constructed from an empty :ref:`String<class_String>` (``""``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NodePath_method_slice:
+
+.. rst-class:: classref-method
+
+:ref:`NodePath<class_NodePath>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| :ref:`🔗<class_NodePath_method_slice>`
+
+Returns the slice of the **NodePath**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **NodePath**.
+
+The absolute value of ``begin`` and ``end`` will be clamped to the sum of :ref:`get_name_count<class_NodePath_method_get_name_count>` and :ref:`get_subname_count<class_NodePath_method_get_subname_count>`, so the default value for ``end`` makes it slice to the end of the **NodePath** by default (i.e. ``path.slice(1)`` is a shorthand for ``path.slice(1, path.get_name_count() + path.get_subname_count())``).
+
+If either ``begin`` or ``end`` are negative, they will be relative to the end of the **NodePath** (i.e. ``path.slice(0, -2)`` is a shorthand for ``path.slice(0, path.get_name_count() + path.get_subname_count() - 2)``).
 
 .. rst-class:: classref-section-separator
 
@@ -386,7 +428,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=** **(** :ref:`NodePath<class_NodePath>` right **)**
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_NodePath_operator_neq_NodePath>`
 
 Returns ``true`` if two node paths are not equal.
 
@@ -398,9 +440,9 @@ Returns ``true`` if two node paths are not equal.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==** **(** :ref:`NodePath<class_NodePath>` right **)**
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_NodePath_operator_eq_NodePath>`
 
-Returns ``true`` if two node paths are equal, i.e. all node names in the path are the same and in the same order.
+Returns ``true`` if two node paths are equal, that is, they are composed of the same node names and subnames in the same order.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -409,3 +451,4 @@ Returns ``true`` if two node paths are equal, i.e. all node names in the path ar
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

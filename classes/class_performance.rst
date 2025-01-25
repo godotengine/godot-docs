@@ -37,21 +37,21 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)** |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`         | :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName[]<class_StringName>` | :ref:`get_custom_monitor_names<class_Performance_method_get_custom_monitor_names>` **(** **)**                                                                                                              |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`             | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|                                                                               |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_monitor_modification_time<class_Performance_method_get_monitor_modification_time>` **(** **)**                                                                                                    |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`remove_custom_monitor<class_Performance_method_remove_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                             |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>`\ (\ id\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`, arguments\: :ref:`Array<class_Array>` = []\ ) |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                    | :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>`\ (\ id\: :ref:`StringName<class_StringName>`\ )                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] | :ref:`get_custom_monitor_names<class_Performance_method_get_custom_monitor_names>`\ (\ )                                                                                                                       |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`get_monitor<class_Performance_method_get_monitor>`\ (\ monitor\: :ref:`Monitor<enum_Performance_Monitor>`\ ) |const|                                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`get_monitor_modification_time<class_Performance_method_get_monitor_modification_time>`\ (\ )                                                                                                             |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>`\ (\ id\: :ref:`StringName<class_StringName>`\ )                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_custom_monitor<class_Performance_method_remove_custom_monitor>`\ (\ id\: :ref:`StringName<class_StringName>`\ )                                                                                   |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -66,7 +66,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Monitor**:
+enum **Monitor**: :ref:`🔗<enum_Performance_Monitor>`
 
 .. _class_Performance_constant_TIME_FPS:
 
@@ -332,11 +332,59 @@ Number of polygon edges that are considered connected by edge proximity :ref:`Na
 
 Number of navigation mesh polygon edges that could not be merged in the :ref:`NavigationServer3D<class_NavigationServer3D>`. The edges still may be connected by edge proximity or with links.
 
+.. _class_Performance_constant_NAVIGATION_OBSTACLE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_OBSTACLE_COUNT** = ``33``
+
+Number of active navigation obstacles in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_CANVAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_CANVAS** = ``34``
+
+Number of pipeline compilations that were triggered by the 2D canvas renderer.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_MESH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_MESH** = ``35``
+
+Number of pipeline compilations that were triggered by loading meshes. These compilations will show up as longer loading times the first time a user runs the game and the pipeline is required.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_SURFACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_SURFACE** = ``36``
+
+Number of pipeline compilations that were triggered by building the surface cache before rendering the scene. These compilations will show up as a stutter when loading an scene the first time a user runs the game and the pipeline is required.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_DRAW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_DRAW** = ``37``
+
+Number of pipeline compilations that were triggered while drawing the scene. These compilations will show up as stutters during gameplay the first time a user runs the game and the pipeline is required.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_SPECIALIZATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_SPECIALIZATION** = ``38``
+
+Number of pipeline compilations that were triggered to optimize the current scene. These compilations are done in the background and should not cause any stutters whatsoever.
+
 .. _class_Performance_constant_MONITOR_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``33``
+:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``39``
 
 Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 
@@ -353,7 +401,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_custom_monitor** **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)**
+|void| **add_custom_monitor**\ (\ id\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`, arguments\: :ref:`Array<class_Array>` = []\ ) :ref:`🔗<class_Performance_method_add_custom_monitor>`
 
 Adds a custom monitor with the name ``id``. You can specify the category of the monitor using slash delimiters in ``id`` (for example: ``"Game/NumberOfNPCs"``). If there is more than one slash delimiter, then the default category is used. The default category is ``"Custom"``. Prints an error if given ``id`` is already present.
 
@@ -421,7 +469,7 @@ Callables are called with arguments supplied in argument array.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+:ref:`Variant<class_Variant>` **get_custom_monitor**\ (\ id\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Performance_method_get_custom_monitor>`
 
 Returns the value of custom monitor with given ``id``. The callable is called to get the value of custom monitor. See also :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>`. Prints an error if the given ``id`` is absent.
 
@@ -433,7 +481,7 @@ Returns the value of custom monitor with given ``id``. The callable is called to
 
 .. rst-class:: classref-method
 
-:ref:`StringName[]<class_StringName>` **get_custom_monitor_names** **(** **)**
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_custom_monitor_names**\ (\ ) :ref:`🔗<class_Performance_method_get_custom_monitor_names>`
 
 Returns the names of active custom monitors in an :ref:`Array<class_Array>`.
 
@@ -445,7 +493,7 @@ Returns the names of active custom monitors in an :ref:`Array<class_Array>`.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|
+:ref:`float<class_float>` **get_monitor**\ (\ monitor\: :ref:`Monitor<enum_Performance_Monitor>`\ ) |const| :ref:`🔗<class_Performance_method_get_monitor>`
 
 Returns the value of one of the available built-in monitors. You should provide one of the :ref:`Monitor<enum_Performance_Monitor>` constants as the argument, like this:
 
@@ -472,7 +520,7 @@ See :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` to qu
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_monitor_modification_time** **(** **)**
+:ref:`int<class_int>` **get_monitor_modification_time**\ (\ ) :ref:`🔗<class_Performance_method_get_monitor_modification_time>`
 
 Returns the last tick in which custom monitor was added/removed (in microseconds since the engine started). This is set to :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>` when the monitor is updated.
 
@@ -484,7 +532,7 @@ Returns the last tick in which custom monitor was added/removed (in microseconds
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+:ref:`bool<class_bool>` **has_custom_monitor**\ (\ id\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Performance_method_has_custom_monitor>`
 
 Returns ``true`` if custom monitor with the given ``id`` is present, ``false`` otherwise.
 
@@ -496,7 +544,7 @@ Returns ``true`` if custom monitor with the given ``id`` is present, ``false`` o
 
 .. rst-class:: classref-method
 
-void **remove_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+|void| **remove_custom_monitor**\ (\ id\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Performance_method_remove_custom_monitor>`
 
 Removes the custom monitor with given ``id``. Prints an error if the given ``id`` is already absent.
 
@@ -507,3 +555,4 @@ Removes the custom monitor with given ``id``. Prints an error if the given ``id`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

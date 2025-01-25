@@ -6,7 +6,7 @@ Prototyping levels with CSG
 ===========================
 
 CSG stands for **Constructive Solid Geometry**, and is a tool to combine basic
-shapes or custom meshes to create more complex shapes. In 3D modelling software,
+shapes or custom meshes to create more complex shapes. In 3D modeling software,
 CSG is mostly known as "Boolean Operators".
 
 Level prototyping is one of the main uses of CSG in Godot. This technique allows
@@ -18,12 +18,15 @@ Interior environments can be created by using inverted primitives.
           extruded 2D polygons can be used with the CSGPolygon3D node).
 
           If you're looking for an easy to use level design tool for a project,
-          you may want to use `Qodot <https://github.com/Shfty/qodot-plugin>`__
-          instead. It lets you design levels using
-          `TrenchBroom <https://kristianduske.com/trenchbroom/>`__ and import
-          them in Godot.
+          you may want to use `FuncGodot <https://github.com/func-godot/func_godot_plugin>`__
+          or `Cyclops Level Builder <https://github.com/blackears/cyclopsLevelBuilder>`__
+          instead.
 
-.. image:: img/csg.gif
+.. video:: video/csg_tools.webm
+   :alt: CSG being used to subtract a torus shape from a box
+   :autoplay:
+   :loop:
+   :muted:
 
 .. seealso::
 
@@ -86,16 +89,56 @@ The :ref:`CSGPolygon3D <class_CSGPolygon3D>` node extrude along a Polygon drawn 
 Custom meshes
 ~~~~~~~~~~~~~
 
-Any mesh can be used for :ref:`CSGMesh3D <class_CSGMesh3D>`; the mesh can be
-modelled in other software and imported into Godot. Multiple materials are
-supported. There are some restrictions for geometry:
+Custom meshes can be used for :ref:`CSGMesh3D <class_CSGMesh3D>` as long as the
+mesh is *manifold*. The mesh can be modeled in other software and imported into
+Godot. Multiple materials are supported. 
 
-- it must be closed,
-- it must not self-intersect,
-- it must not contain internal faces,
-- every edge must connect to only two other faces.
+For a mesh to be used as a CSG mesh, it is required to:
+
+- be closed
+- have each edge connect to only two faces
+- have volume
+
+And it is recommended to avoid:
+
+- negative volume
+- self-intersection
+- interior faces
+
+Godot uses the `manifold <https://github.com/elalish/manifold>`__ library to
+implement CSG meshes. The technical definition of "manifold" used by Godot is
+the following, adapted from that library's `definition of "manifold"
+<https://github.com/elalish/manifold/wiki/Manifold-Library#manifoldness-definition>`__:
+
+  Every edge of every triangle must contain the same two vertices (by index) as
+  exactly one other triangle edge, and the start and end vertices must switch
+  places between these two edges. The triangle vertices must appear in clockwise
+  order when viewed from the outside of the Godot Engine manifold mesh.
 
 .. image:: img/csg_custom_mesh.png
+
+Making an existing mesh manifold with Blender
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. UPDATE: This relies on a specific Blender addon. If it becomes unsupported,
+.. we can remove this section.
+
+If you have an existing mesh that is not already manifold, you can make it
+manifold using Blender.
+
+In Blender, install and enable the
+`3D Print Toolbox <https://extensions.blender.org/add-ons/print3d-toolbox/>`_
+addon.
+
+Select the mesh you want to make manifold. Open the sidebar by clicking on the arrow:
+
+.. image:: img/csg_manifold_step_1.webp
+
+In the **3D Print** tab, under **Clean Up**, click the **Make Manifold** button:
+
+.. image:: img/csg_manifold_step_2.webp
+
+The mesh should now be manifold, and can be used as a custom mesh.
 
 CSGCombiner3D
 ~~~~~~~~~~~~~
@@ -291,11 +334,42 @@ in the **Scale** property will cause the texture to repeat more often.
          the material onto, click the dropdown arrow next to its material
          property then choose **Paste**.
 
+.. _doc_csg_tools_converting_to_mesh_instance_3d:
+
+Converting to MeshInstance3D
+----------------------------
+
+Since Godot 4.4, you can convert a CSG node and its children to a :ref:`class_MeshInstance3D` node.
+
+This has several benefits:
+
+- Bake lightmaps, since UV2 can be generated on a MeshInstance3D.
+- Bake occlusion culling, since the occlusion culling bake process only takes MeshInstance3D into account.
+- Faster loading times, since the CSG mesh no longer needs to be rebuilt when the scene loads.
+- Better performance when updating the node's transform if using the mesh within another CSG node.
+
+To convert a CSG node to a MeshInstance3D node, select it, then choose
+**CSG > Bake Mesh Instance** in the toolbar. The MeshInstance3D node
+will be created as a sibling. Note that the CSG node that was used for baking is **not** hidden
+automatically, so remember to hide it to prevent its geometry from overlapping with the newly created
+MeshInstance3D.
+
+You can also create a trimesh collision shape using **CSG > Bake Collision Shape**.
+The generated :ref:`class_CollisionShape3D` node must be a child of a :ref:`class_StaticBody3D`
+or :ref:`class_AnimatableBody3D` node to be effective.
+
+.. tip::
+
+    Remember to keep the original CSG node in the scene tree, so that you can
+    perform changes to the geometry later if needed. To make changes to the
+    geometry, remove the MeshInstance3D node and make the root CSG node visible
+    again.
+
 Exporting as glTF
-------------------------
+-----------------
 
 It can be useful to block out a level using CSG, then export it as a 3d model, to
-import into 3D modelling software. You can do this by selecting **Scene > Export As... >
+import into 3D modeling software. You can do this by selecting **Scene > Export As... >
 glTF 2.0 Scene**.
 
 .. image:: img/export_as_gltf.webp

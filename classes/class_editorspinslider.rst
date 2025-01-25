@@ -21,6 +21,8 @@ Description
 
 This :ref:`Control<class_Control>` node is used in the editor's Inspector dock to allow editing of numeric values. Can be used with :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` to recreate the same behavior.
 
+If the :ref:`Range.step<class_Range_property_step>` value is ``1``, the **EditorSpinSlider** will display up/down arrows, similar to :ref:`SpinBox<class_SpinBox>`. If the :ref:`Range.step<class_Range_property_step>` value is not ``1``, a slider will be displayed instead.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -40,12 +42,26 @@ Properties
    +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                | :ref:`read_only<class_EditorSpinSlider_property_read_only>`     | ``false``                                                                    |
    +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> | size_flags_vertical                                             | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   | |bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\] | size_flags_vertical                                             | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
    +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                              | step                                                            | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)                  |
    +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                            | :ref:`suffix<class_EditorSpinSlider_property_suffix>`           | ``""``                                                                       |
    +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
+
+Theme Properties
+----------------
+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+---------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`updown<class_EditorSpinSlider_theme_icon_updown>`                   |
+   +-----------------------------------+---------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`updown_disabled<class_EditorSpinSlider_theme_icon_updown_disabled>` |
+   +-----------------------------------+---------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -60,7 +76,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**grabbed** **(** **)**
+**grabbed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_grabbed>`
 
 Emitted when the spinner/slider is grabbed.
 
@@ -72,9 +88,21 @@ Emitted when the spinner/slider is grabbed.
 
 .. rst-class:: classref-signal
 
-**ungrabbed** **(** **)**
+**ungrabbed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_ungrabbed>`
 
 Emitted when the spinner/slider is ungrabbed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_signal_updown_pressed:
+
+.. rst-class:: classref-signal
+
+**updown_pressed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_updown_pressed>`
+
+Emitted when the updown button is pressed.
 
 .. rst-class:: classref-item-separator
 
@@ -84,7 +112,7 @@ Emitted when the spinner/slider is ungrabbed.
 
 .. rst-class:: classref-signal
 
-**value_focus_entered** **(** **)**
+**value_focus_entered**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_value_focus_entered>`
 
 Emitted when the value form gains focus.
 
@@ -96,7 +124,7 @@ Emitted when the value form gains focus.
 
 .. rst-class:: classref-signal
 
-**value_focus_exited** **(** **)**
+**value_focus_exited**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_value_focus_exited>`
 
 Emitted when the value form loses focus.
 
@@ -113,12 +141,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flat** = ``false``
+:ref:`bool<class_bool>` **flat** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_flat>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flat** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_flat** **(** **)**
+- |void| **set_flat**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_flat**\ (\ )
 
 If ``true``, the slider will not draw background.
 
@@ -130,14 +158,14 @@ If ``true``, the slider will not draw background.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hide_slider** = ``false``
+:ref:`bool<class_bool>` **hide_slider** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_hide_slider>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_hide_slider** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_hiding_slider** **(** **)**
+- |void| **set_hide_slider**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_hiding_slider**\ (\ )
 
-If ``true``, the slider is hidden.
+If ``true``, the slider and up/down arrows are hidden.
 
 .. rst-class:: classref-item-separator
 
@@ -147,12 +175,12 @@ If ``true``, the slider is hidden.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **label** = ``""``
+:ref:`String<class_String>` **label** = ``""`` :ref:`🔗<class_EditorSpinSlider_property_label>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_label** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_label** **(** **)**
+- |void| **set_label**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_label**\ (\ )
 
 The text that displays to the left of the value.
 
@@ -164,12 +192,12 @@ The text that displays to the left of the value.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **read_only** = ``false``
+:ref:`bool<class_bool>` **read_only** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_read_only>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_read_only** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_read_only** **(** **)**
+- |void| **set_read_only**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_read_only**\ (\ )
 
 If ``true``, the slider can't be interacted with.
 
@@ -181,14 +209,43 @@ If ``true``, the slider can't be interacted with.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **suffix** = ``""``
+:ref:`String<class_String>` **suffix** = ``""`` :ref:`🔗<class_EditorSpinSlider_property_suffix>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_suffix** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_suffix** **(** **)**
+- |void| **set_suffix**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_suffix**\ (\ )
 
 The suffix to display after the value (in a faded color). This should generally be a plural word. You may have to use an abbreviation if the suffix is too long to be displayed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_EditorSpinSlider_theme_icon_updown:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **updown** :ref:`🔗<class_EditorSpinSlider_theme_icon_updown>`
+
+Single texture representing both the up and down buttons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_theme_icon_updown_disabled:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **updown_disabled** :ref:`🔗<class_EditorSpinSlider_theme_icon_updown_disabled>`
+
+Single texture representing both the up and down buttons, when the control is readonly or disabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -197,3 +254,4 @@ The suffix to display after the value (in a faded color). This should generally 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

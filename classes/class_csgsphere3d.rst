@@ -63,12 +63,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGSphere3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 The material used to render the sphere.
 
@@ -80,12 +80,12 @@ The material used to render the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **radial_segments** = ``12``
+:ref:`int<class_int>` **radial_segments** = ``12`` :ref:`🔗<class_CSGSphere3D_property_radial_segments>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radial_segments** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_radial_segments** **(** **)**
+- |void| **set_radial_segments**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_radial_segments**\ (\ )
 
 Number of vertical slices for the sphere.
 
@@ -97,12 +97,12 @@ Number of vertical slices for the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_CSGSphere3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 Radius of the sphere.
 
@@ -114,12 +114,12 @@ Radius of the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rings** = ``6``
+:ref:`int<class_int>` **rings** = ``6`` :ref:`🔗<class_CSGSphere3D_property_rings>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_rings** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_rings** **(** **)**
+- |void| **set_rings**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_rings**\ (\ )
 
 Number of horizontal slices for the sphere.
 
@@ -131,12 +131,12 @@ Number of horizontal slices for the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **smooth_faces** = ``true``
+:ref:`bool<class_bool>` **smooth_faces** = ``true`` :ref:`🔗<class_CSGSphere3D_property_smooth_faces>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_smooth_faces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_smooth_faces** **(** **)**
+- |void| **set_smooth_faces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_smooth_faces**\ (\ )
 
 If ``true`` the normals of the sphere are set to give a smooth effect making the sphere seem rounded. If ``false`` the sphere will have a flat shaded look.
 
@@ -147,3 +147,4 @@ If ``true`` the normals of the sphere are set to give a smooth effect making the
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

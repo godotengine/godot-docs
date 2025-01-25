@@ -21,6 +21,67 @@ Description
 
 A :ref:`SkeletonProfile<class_SkeletonProfile>` as a preset that is optimized for the human form. This exists for standardization, so all parameters are read-only.
 
+A humanoid skeleton profile contains 54 bones divided in 4 groups: ``"Body"``, ``"Face"``, ``"LeftHand"``, and ``"RightHand"``. It is structured as follows:
+
+.. code:: text
+
+    Root
+    └─ Hips
+        ├─ LeftUpperLeg
+        │  └─ LeftLowerLeg
+        │     └─ LeftFoot
+        │        └─ LeftToes
+        ├─ RightUpperLeg
+        │  └─ RightLowerLeg
+        │     └─ RightFoot
+        │        └─ RightToes
+        └─ Spine
+            └─ Chest
+                └─ UpperChest
+                    ├─ Neck
+                    │   └─ Head
+                    │       ├─ Jaw
+                    │       ├─ LeftEye
+                    │       └─ RightEye
+                    ├─ LeftShoulder
+                    │  └─ LeftUpperArm
+                    │     └─ LeftLowerArm
+                    │        └─ LeftHand
+                    │           ├─ LeftThumbMetacarpal
+                    │           │  └─ LeftThumbProximal
+                    │           │    └─ LeftThumbDistal
+                    │           ├─ LeftIndexProximal
+                    │           │  └─ LeftIndexIntermediate
+                    │           │    └─ LeftIndexDistal
+                    │           ├─ LeftMiddleProximal
+                    │           │  └─ LeftMiddleIntermediate
+                    │           │    └─ LeftMiddleDistal
+                    │           ├─ LeftRingProximal
+                    │           │  └─ LeftRingIntermediate
+                    │           │    └─ LeftRingDistal
+                    │           └─ LeftLittleProximal
+                    │              └─ LeftLittleIntermediate
+                    │                └─ LeftLittleDistal
+                    └─ RightShoulder
+                       └─ RightUpperArm
+                          └─ RightLowerArm
+                             └─ RightHand
+                                ├─ RightThumbMetacarpal
+                                │  └─ RightThumbProximal
+                                │     └─ RightThumbDistal
+                                ├─ RightIndexProximal
+                                │  └─ RightIndexIntermediate
+                                │     └─ RightIndexDistal
+                                ├─ RightMiddleProximal
+                                │  └─ RightMiddleIntermediate
+                                │     └─ RightMiddleDistal
+                                ├─ RightRingProximal
+                                │  └─ RightRingIntermediate
+                                │     └─ RightRingDistal
+                                └─ RightLittleProximal
+                                   └─ RightLittleIntermediate
+                                     └─ RightLittleDistal
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -53,3 +114,4 @@ Properties
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

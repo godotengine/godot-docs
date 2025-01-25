@@ -18,6 +18,8 @@ the node's path is changed.
 Creation and usage
 ------------------
 
+There are two ways to create a scene unique node.
+
 In the Scene tree dock, right-click on a node and select
 **Access as Unique Name** in the context menu.
 
@@ -27,6 +29,9 @@ After selecting the option, the node will now have a percent symbol (**%**) next
 to its name in the scene tree:
 
 .. image:: img/percent.webp
+
+You can also do this while renaming the node by adding "%" to the beginning of the name.
+Once you confirm, the percent symbol will appear next to its name.
 
 You can now use the node in your script. For example, you can reference it with
 a ``get_node()`` method call by typing the % symbol, followed by the node's
@@ -57,7 +62,7 @@ Here are the results of ``get_node()`` calls inside the **Player** script:
 - ``get_node("%Eyes")`` returns the **Eyes** node.
 - ``get_node("%Hilt")`` returns ``null``.
 
-These are the results of ``get_node()`` calls inside the **Blade** script:
+These are the results of ``get_node()`` calls inside the **Sword** script:
 
 - ``get_node("%Eyes")`` returns ``null``.
 - ``get_node("%Hilt")`` returns the **Hilt** node.

@@ -12,18 +12,18 @@ InputEventMIDI
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Represents an input event from a MIDI device, such as a piano.
+Represents a MIDI message from a MIDI device, such as a musical keyboard.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-InputEventMIDI allows receiving input events from MIDI (Musical Instrument Digital Interface) devices such as a piano.
+InputEventMIDI stores information about messages from `MIDI <https://en.wikipedia.org/wiki/MIDI>`__ (Musical Instrument Digital Interface) devices. These may include musical keyboards, synthesizers, and drum machines.
 
-MIDI signals can be sent over a 5-pin MIDI connector or over USB, if your device supports both be sure to check the settings in the device to see which output it's using.
+MIDI messages can be received over a 5-pin MIDI connector or over USB. If your device supports both be sure to check the settings in the device to see which output it is using.
 
-To receive input events from MIDI devices, you need to call :ref:`OS.open_midi_inputs<class_OS_method_open_midi_inputs>`. You can check which devices are detected using :ref:`OS.get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>`.
+By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_midi_inputs<class_OS_method_open_midi_inputs>`, first. You can check which devices are detected with :ref:`OS.get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>`, and close the connection with :ref:`OS.close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
 
 .. tabs::
@@ -38,16 +38,16 @@ To receive input events from MIDI devices, you need to call :ref:`OS.open_midi_i
         if input_event is InputEventMIDI:
             _print_midi_info(input_event)
     
-    func _print_midi_info(midi_event: InputEventMIDI):
+    func _print_midi_info(midi_event):
         print(midi_event)
-        print("Channel " + str(midi_event.channel))
-        print("Message " + str(midi_event.message))
-        print("Pitch " + str(midi_event.pitch))
-        print("Velocity " + str(midi_event.velocity))
-        print("Instrument " + str(midi_event.instrument))
-        print("Pressure " + str(midi_event.pressure))
-        print("Controller number: " + str(midi_event.controller_number))
-        print("Controller value: " + str(midi_event.controller_value))
+        print("Channel ", midi_event.channel)
+        print("Message ", midi_event.message)
+        print("Pitch ", midi_event.pitch)
+        print("Velocity ", midi_event.velocity)
+        print("Instrument ", midi_event.instrument)
+        print("Pressure ", midi_event.pressure)
+        print("Controller number: ", midi_event.controller_number)
+        print("Controller value: ", midi_event.controller_value)
 
  .. code-tab:: csharp
 
@@ -57,15 +57,15 @@ To receive input events from MIDI devices, you need to call :ref:`OS.open_midi_i
         GD.Print(OS.GetConnectedMidiInputs());
     }
     
-    public override void _Input(InputEvent @event)
+    public override void _Input(InputEvent inputEvent)
     {
-        if (@event is InputEventMIDI midiEvent)
+        if (inputEvent is InputEventMidi midiEvent)
         {
             PrintMIDIInfo(midiEvent);
         }
     }
     
-    private void PrintMIDIInfo(InputEventMIDI midiEvent)
+    private void PrintMIDIInfo(InputEventMidi midiEvent)
     {
         GD.Print(midiEvent);
         GD.Print($"Channel {midiEvent.Channel}");
@@ -80,7 +80,9 @@ To receive input events from MIDI devices, you need to call :ref:`OS.open_midi_i
 
 
 
-Note that Godot does not currently support MIDI output, so there is no way to emit MIDI signals from Godot. Only MIDI input works.
+\ **Note:** Godot does not support MIDI output, so there is no way to emit MIDI messages from Godot. Only MIDI input is supported.
+
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`OS.open_midi_inputs<class_OS_method_open_midi_inputs>`. MIDI input will not work until the user accepts the permission request.
 
 .. rst-class:: classref-introduction-group
 
@@ -132,14 +134,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **channel** = ``0``
+:ref:`int<class_int>` **channel** = ``0`` :ref:`🔗<class_InputEventMIDI_property_channel>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_channel** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_channel** **(** **)**
+- |void| **set_channel**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_channel**\ (\ )
 
-The MIDI channel of this input event. There are 16 channels, so this value ranges from 0 to 15. MIDI channel 9 is reserved for the use with percussion instruments, the rest of the channels are for non-percussion instruments.
+The MIDI channel of this message, ranging from ``0`` to ``15``. MIDI channel ``9`` is reserved for percussion instruments.
 
 .. rst-class:: classref-item-separator
 
@@ -149,14 +151,14 @@ The MIDI channel of this input event. There are 16 channels, so this value range
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **controller_number** = ``0``
+:ref:`int<class_int>` **controller_number** = ``0`` :ref:`🔗<class_InputEventMIDI_property_controller_number>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_controller_number** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_controller_number** **(** **)**
+- |void| **set_controller_number**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_controller_number**\ (\ )
 
-If the message is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE>`, this indicates the controller number, otherwise this is zero. Controllers include devices such as pedals and levers.
+The unique number of the controller, if :ref:`message<class_InputEventMIDI_property_message>` is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE>`, otherwise this is ``0``. This value can be used to identify sliders for volume, balance, and panning, as well as switches and pedals on the MIDI device. See the `General MIDI specification <https://en.wikipedia.org/wiki/General_MIDI#Controller_events>`__ for a small list.
 
 .. rst-class:: classref-item-separator
 
@@ -166,14 +168,14 @@ If the message is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalSc
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **controller_value** = ``0``
+:ref:`int<class_int>` **controller_value** = ``0`` :ref:`🔗<class_InputEventMIDI_property_controller_value>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_controller_value** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_controller_value** **(** **)**
+- |void| **set_controller_value**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_controller_value**\ (\ )
 
-If the message is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE>`, this indicates the controller value, otherwise this is zero. Controllers include devices such as pedals and levers.
+The value applied to the controller. If :ref:`message<class_InputEventMIDI_property_message>` is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE>`, this value ranges from ``0`` to ``127``, otherwise it is ``0``. See also :ref:`controller_value<class_InputEventMIDI_property_controller_value>`.
 
 .. rst-class:: classref-item-separator
 
@@ -183,14 +185,16 @@ If the message is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalSc
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **instrument** = ``0``
+:ref:`int<class_int>` **instrument** = ``0`` :ref:`🔗<class_InputEventMIDI_property_instrument>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_instrument** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_instrument** **(** **)**
+- |void| **set_instrument**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_instrument**\ (\ )
 
-The instrument of this input event. This value ranges from 0 to 127. Refer to the instrument list on the General MIDI wikipedia article to see a list of instruments, except that this value is 0-index, so subtract one from every number on that chart. A standard piano will have an instrument number of 0.
+The instrument (also called *program* or *preset*) used on this MIDI message. This value ranges from ``0`` to ``127``.
+
+To see what each value means, refer to the `General MIDI's instrument list <https://en.wikipedia.org/wiki/General_MIDI#Program_change_events>`__. Keep in mind that the list is off by 1 because it does not begin from 0. A value of ``0`` corresponds to the acoustic grand piano.
 
 .. rst-class:: classref-item-separator
 
@@ -200,22 +204,16 @@ The instrument of this input event. This value ranges from 0 to 127. Refer to th
 
 .. rst-class:: classref-property
 
-:ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **message** = ``0``
+:ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **message** = ``0`` :ref:`🔗<class_InputEventMIDI_property_message>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_message** **(** :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` value **)**
-- :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **get_message** **(** **)**
+- |void| **set_message**\ (\ value\: :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>`\ )
+- :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **get_message**\ (\ )
 
-Returns a value indicating the type of message for this MIDI signal. This is a member of the :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` enum.
+Represents the type of MIDI message (see the :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` enum).
 
-For MIDI messages between 0x80 and 0xEF, only the left half of the bits are returned as this value, as the other part is the channel (ex: 0x94 becomes 0x9). For MIDI messages from 0xF0 to 0xFF, the value is returned as-is.
-
-Notes will return :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` when activated, but they might not always return :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>` when deactivated, therefore your code should treat the input as stopped if some period of time has passed.
-
-Some MIDI devices may send :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` with zero velocity instead of :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>`.
-
-For more information, see the note in :ref:`velocity<class_InputEventMIDI_property_velocity>` and the MIDI message status byte list chart linked above.
+For more information, see the `MIDI message status byte list chart <https://www.midi.org/specifications-old/item/table-2-expanded-messages-list-status-bytes>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -225,14 +223,16 @@ For more information, see the note in :ref:`velocity<class_InputEventMIDI_proper
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **pitch** = ``0``
+:ref:`int<class_int>` **pitch** = ``0`` :ref:`🔗<class_InputEventMIDI_property_pitch>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_pitch** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_pitch** **(** **)**
+- |void| **set_pitch**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_pitch**\ (\ )
 
-The pitch index number of this MIDI signal. This value ranges from 0 to 127. On a piano, middle C is 60, and A440 is 69, see the "MIDI note" column of the piano key frequency chart on Wikipedia for more information.
+The pitch index number of this MIDI message. This value ranges from ``0`` to ``127``.
+
+On a piano, the **middle C** is ``60``, followed by a **C-sharp** (``61``), then a **D** (``62``), and so on. Each octave is split in offsets of 12. See the "MIDI note number" column of the `piano key frequency chart <https://en.wikipedia.org/wiki/Piano_key_frequencies>`__ a full list.
 
 .. rst-class:: classref-item-separator
 
@@ -242,14 +242,16 @@ The pitch index number of this MIDI signal. This value ranges from 0 to 127. On 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **pressure** = ``0``
+:ref:`int<class_int>` **pressure** = ``0`` :ref:`🔗<class_InputEventMIDI_property_pressure>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_pressure** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_pressure** **(** **)**
+- |void| **set_pressure**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_pressure**\ (\ )
 
-The pressure of the MIDI signal. This value ranges from 0 to 127. For many devices, this value is always zero.
+The strength of the key being pressed. This value ranges from ``0`` to ``127``.
+
+\ **Note:** For many devices, this value is always ``0``. Other devices such as musical keyboards may simulate pressure by changing the :ref:`velocity<class_InputEventMIDI_property_velocity>`, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -259,16 +261,23 @@ The pressure of the MIDI signal. This value ranges from 0 to 127. For many devic
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **velocity** = ``0``
+:ref:`int<class_int>` **velocity** = ``0`` :ref:`🔗<class_InputEventMIDI_property_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_velocity** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_velocity** **(** **)**
+- |void| **set_velocity**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_velocity**\ (\ )
 
-The velocity of the MIDI signal. This value ranges from 0 to 127. For a piano, this corresponds to how quickly the key was pressed, and is rarely above about 110 in practice.
+The velocity of the MIDI message. This value ranges from ``0`` to ``127``. For a musical keyboard, this corresponds to how quickly the key was pressed, and is rarely above ``110`` in practice.
 
-\ **Note:** Some MIDI devices may send a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` message with zero velocity and expect this to be treated the same as a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>` message, but device implementations vary so Godot reports event data exactly as received. Depending on the hardware and the needs of the game/app, this MIDI quirk can be handled robustly with a couple lines of script (check for :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` with velocity zero).
+\ **Note:** Some MIDI devices may send a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` message with ``0`` velocity and expect it to be treated the same as a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>` message. If necessary, this can be handled with a few lines of code:
+
+::
+
+    func _input(event):
+        if event is InputEventMIDI:
+            if event.message == MIDI_MESSAGE_NOTE_ON and event.velocity > 0:
+                print("Note pressed!")
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -277,3 +286,4 @@ The velocity of the MIDI signal. This value ranges from 0 to 127. For a piano, t
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

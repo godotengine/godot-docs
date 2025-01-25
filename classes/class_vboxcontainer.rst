@@ -30,36 +30,7 @@ Tutorials
 
 - :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
-
-.. rst-class:: classref-reftable-group
-
-Theme Properties
-----------------
-
-.. table::
-   :widths: auto
-
-   +-----------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>` | :ref:`separation<class_VBoxContainer_theme_constant_separation>` | ``4`` |
-   +-----------------------+------------------------------------------------------------------+-------+
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
-Theme Property Descriptions
----------------------------
-
-.. _class_VBoxContainer_theme_constant_separation:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **separation** = ``4``
-
-The vertical space between the **VBoxContainer**'s elements.
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -68,3 +39,4 @@ The vertical space between the **VBoxContainer**'s elements.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

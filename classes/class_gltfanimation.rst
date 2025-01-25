@@ -16,6 +16,13 @@ GLTFAnimation
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -24,9 +31,25 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------+------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>` | :ref:`loop<class_GLTFAnimation_property_loop>` | ``false`` |
-   +-------------------------+------------------------------------------------+-----------+
+   +-----------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`loop<class_GLTFAnimation_property_loop>`                   | ``false`` |
+   +-----------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`original_name<class_GLTFAnimation_property_original_name>` | ``""``    |
+   +-----------------------------+------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_additional_data<class_GLTFAnimation_method_get_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )                                                  |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_additional_data<class_GLTFAnimation_method_set_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -41,16 +64,66 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``false``
+:ref:`bool<class_bool>` **loop** = ``false`` :ref:`🔗<class_GLTFAnimation_property_loop>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_loop** **(** **)**
+- |void| **set_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_loop**\ (\ )
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFAnimation_property_original_name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **original_name** = ``""`` :ref:`🔗<class_GLTFAnimation_property_original_name>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_original_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_original_name**\ (\ )
+
+The original name of the animation.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_GLTFAnimation_method_get_additional_data:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GLTFAnimation_method_get_additional_data>`
+
+Gets additional arbitrary data in this **GLTFAnimation** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
+
+The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the glTF file), and the return value can be anything you set. If nothing was set, the return value is ``null``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFAnimation_method_set_additional_data:
+
+.. rst-class:: classref-method
+
+|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_GLTFAnimation_method_set_additional_data>`
+
+Sets additional arbitrary data in this **GLTFAnimation** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
+
+The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the glTF file), and the second argument can be anything you want.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -59,3 +132,4 @@ Property Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

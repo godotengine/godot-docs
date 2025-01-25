@@ -23,7 +23,7 @@ Comma-separated values are a plain text table storage format. The format's simpl
 
 \ **Example CSV file:**\ 
 
-::
+.. code:: text
 
     keys,en,es,ja
     GREET,"Hello, friend!","Hola, amigo!",こんにちは
@@ -65,7 +65,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **compress** = ``true``
+:ref:`bool<class_bool>` **compress** = ``true`` :ref:`🔗<class_ResourceImporterCSVTranslation_property_compress>`
 
 If ``true``, creates an :ref:`OptimizedTranslation<class_OptimizedTranslation>` instead of a :ref:`Translation<class_Translation>`. This makes the resulting file smaller at the cost of a small CPU overhead.
 
@@ -77,7 +77,7 @@ If ``true``, creates an :ref:`OptimizedTranslation<class_OptimizedTranslation>` 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **delimiter** = ``0``
+:ref:`int<class_int>` **delimiter** = ``0`` :ref:`🔗<class_ResourceImporterCSVTranslation_property_delimiter>`
 
 The delimiter to use in the CSV file. The default value matches the common CSV convention. Tab-separated values are sometimes called TSV files.
 
@@ -88,3 +88,4 @@ The delimiter to use in the CSV file. The default value matches the common CSV c
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

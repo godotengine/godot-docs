@@ -60,7 +60,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Resolution**:
+enum **Resolution**: :ref:`🔗<enum_GPUParticlesCollisionHeightField3D_Resolution>`
 
 .. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_256:
 
@@ -126,7 +126,7 @@ Represents the size of the :ref:`Resolution<enum_GPUParticlesCollisionHeightFiel
 
 .. rst-class:: classref-enumeration
 
-enum **UpdateMode**:
+enum **UpdateMode**: :ref:`🔗<enum_GPUParticlesCollisionHeightField3D_UpdateMode>`
 
 .. _class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_WHEN_MOVED:
 
@@ -157,12 +157,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **follow_camera_enabled** = ``false``
+:ref:`bool<class_bool>` **follow_camera_enabled** = ``false`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_follow_camera_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_follow_camera_enabled** **(** **)**
+- |void| **set_follow_camera_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_follow_camera_enabled**\ (\ )
 
 If ``true``, the **GPUParticlesCollisionHeightField3D** will follow the current camera in global space. The **GPUParticlesCollisionHeightField3D** does not need to be a child of the :ref:`Camera3D<class_Camera3D>` node for this to work.
 
@@ -176,12 +176,12 @@ Following the camera has a performance cost, as it will force the heightmap to u
 
 .. rst-class:: classref-property
 
-:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **resolution** = ``2``
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **resolution** = ``2`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_resolution>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_resolution** **(** :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` value **)**
-- :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **get_resolution** **(** **)**
+- |void| **set_resolution**\ (\ value\: :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>`\ )
+- :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **get_resolution**\ (\ )
 
 Higher resolutions can represent small details more accurately in large scenes, at the cost of lower performance. If :ref:`update_mode<class_GPUParticlesCollisionHeightField3D_property_update_mode>` is :ref:`UPDATE_MODE_ALWAYS<class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_ALWAYS>`, consider using the lowest resolution possible.
 
@@ -193,12 +193,12 @@ Higher resolutions can represent small details more accurately in large scenes, 
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_size**\ (\ )
 
 The collision heightmap's size in 3D units. To improve heightmap quality, :ref:`size<class_GPUParticlesCollisionHeightField3D_property_size>` should be set as small as possible while covering the parts of the scene you need.
 
@@ -210,12 +210,12 @@ The collision heightmap's size in 3D units. To improve heightmap quality, :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **update_mode** = ``0``
+:ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **update_mode** = ``0`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_update_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_update_mode** **(** :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` value **)**
-- :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **get_update_mode** **(** **)**
+- |void| **set_update_mode**\ (\ value\: :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>`\ )
+- :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **get_update_mode**\ (\ )
 
 The update policy to use for the generated heightmap.
 
@@ -226,3 +226,4 @@ The update policy to use for the generated heightmap.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -12,20 +12,18 @@ VisibleOnScreenEnabler3D
 
 **Inherits:** :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Enables certain nodes only when approximately visible.
+A box-shaped region of 3D space that, when visible on screen, enables a target node.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The VisibleOnScreenEnabler3D will disable :ref:`RigidBody3D<class_RigidBody3D>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibleOnScreenEnabler3D itself.
+**VisibleOnScreenEnabler3D** contains a box-shaped region of 3D space and a target node. The target node will be automatically enabled (via its :ref:`Node.process_mode<class_Node_property_process_mode>` property) when any part of this region becomes visible on the screen, and automatically disabled otherwise. This can for example be used to activate enemies only when the player approaches them.
 
-If you just want to receive notifications, use :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>` instead.
+See :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>` if you only want to be notified when the region is visible on screen.
 
-\ **Note:** VisibleOnScreenEnabler3D uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area3D<class_Area3D>` node as a child of a :ref:`Camera3D<class_Camera3D>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
-
-\ **Note:** VisibleOnScreenEnabler3D will not affect nodes added after scene initialization.
+\ **Note:** **VisibleOnScreenEnabler3D** uses an approximate heuristic that doesn't take walls and other occlusion into account, unless occlusion culling is used. It also won't function unless :ref:`Node3D.visible<class_Node3D_property_visible>` is set to ``true``.
 
 .. rst-class:: classref-reftable-group
 
@@ -54,7 +52,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **EnableMode**:
+enum **EnableMode**: :ref:`🔗<enum_VisibleOnScreenEnabler3D_EnableMode>`
 
 .. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_INHERIT:
 
@@ -62,7 +60,7 @@ enum **EnableMode**:
 
 :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **ENABLE_MODE_INHERIT** = ``0``
 
-
+Corresponds to :ref:`Node.PROCESS_MODE_INHERIT<class_Node_constant_PROCESS_MODE_INHERIT>`.
 
 .. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_ALWAYS:
 
@@ -70,7 +68,7 @@ enum **EnableMode**:
 
 :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **ENABLE_MODE_ALWAYS** = ``1``
 
-
+Corresponds to :ref:`Node.PROCESS_MODE_ALWAYS<class_Node_constant_PROCESS_MODE_ALWAYS>`.
 
 .. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_WHEN_PAUSED:
 
@@ -78,7 +76,7 @@ enum **EnableMode**:
 
 :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **ENABLE_MODE_WHEN_PAUSED** = ``2``
 
-
+Corresponds to :ref:`Node.PROCESS_MODE_WHEN_PAUSED<class_Node_constant_PROCESS_MODE_WHEN_PAUSED>`.
 
 .. rst-class:: classref-section-separator
 
@@ -93,16 +91,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **enable_mode** = ``0``
+:ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **enable_mode** = ``0`` :ref:`🔗<class_VisibleOnScreenEnabler3D_property_enable_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_mode** **(** :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` value **)**
-- :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **get_enable_mode** **(** **)**
+- |void| **set_enable_mode**\ (\ value\: :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>`\ )
+- :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **get_enable_mode**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Determines how the target node is enabled. Corresponds to :ref:`ProcessMode<enum_Node_ProcessMode>`. When the node is disabled, it always uses :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
 
 .. rst-class:: classref-item-separator
 
@@ -112,16 +108,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **enable_node_path** = ``NodePath("..")``
+:ref:`NodePath<class_NodePath>` **enable_node_path** = ``NodePath("..")`` :ref:`🔗<class_VisibleOnScreenEnabler3D_property_enable_node_path>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_node_path** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_enable_node_path** **(** **)**
+- |void| **set_enable_node_path**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_enable_node_path**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The path to the target node, relative to the **VisibleOnScreenEnabler3D**. The target node is cached; it's only assigned when setting this property (if the **VisibleOnScreenEnabler3D** is inside the scene tree) and every time the **VisibleOnScreenEnabler3D** enters the scene tree. If the path is empty, no node will be affected. If the path is invalid, an error is also generated.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -130,3 +124,4 @@ Property Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

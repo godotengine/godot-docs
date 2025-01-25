@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_list_of_features:
 
 List of features
@@ -8,34 +10,46 @@ This page aims to list **all** features currently supported by Godot.
 .. note::
 
     This page lists features supported by the current stable version of
-    Godot (4.0). Some of these features may not be available in the
-    `LTS release series (3.x) <https://docs.godotengine.org/en/3.5/about/list_of_features.html>`__.
+    Godot. Some of these features are not available in the
+    `3.x release series <https://docs.godotengine.org/en/3.6/about/list_of_features.html>`__.
 
 Platforms
 ---------
 
+.. seealso::
+
+    See :ref:`doc_system_requirements` for hardware and software version requirements.
+
 **Can run both the editor and exported projects:**
 
-- Windows 7 and later (64-bit and 32-bit).
-- macOS 10.12 and later (64-bit, x86 and ARM).
-- Linux (64-bit, x86 and ARM).
+- Windows (x86 and ARM, 64-bit and 32-bit).
+- macOS (x86 and ARM, 64-bit only).
+- Linux (x86 and ARM, 64-bit and 32-bit).
 
    - Binaries are statically linked and can run on any distribution if compiled
      on an old enough base distribution.
-   - Official binaries are compiled on Ubuntu 14.04.
-   - 32-bit binaries can be compiled from source.
+   - Official binaries are compiled using the
+     `Godot Engine buildroot <https://github.com/godotengine/buildroot>`__,
+     allowing for binaries that work across common Linux distributions.
 
-- Android 6.0 and later (editor support is experimental).
+- Android (editor support is experimental).
 - :ref:`Web browsers <doc_using_the_web_editor>`. Experimental in 4.0,
   using Godot 3.x is recommended instead when targeting HTML5.
 
 **Runs exported projects:**
 
-- iOS 11.0 and later.
+- iOS.
 - :ref:`Consoles <doc_consoles>`.
 
 Godot aims to be as platform-independent as possible and can be
 :ref:`ported to new platforms <doc_custom_platform_ports>` with relative ease.
+
+.. note::
+
+    Projects written in C# using Godot 4 currently cannot be exported to the
+    web platform. To use C# on that platform, consider Godot 3 instead.
+    Android and iOS platform support is available as of Godot 4.2, but is
+    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 Editor
 ------
@@ -48,7 +62,7 @@ Editor
   Visual Studio Code or Vim.
 - GDScript :ref:`debugger <doc_debugger_panel>`.
 
-   - No support for debugging in threads yet.
+   - Support for debugging in threads is available since 4.2.
 - Visual profiler with CPU and GPU time indications for each step of the
   rendering pipeline.
 - Performance monitoring tools, including
@@ -81,17 +95,20 @@ Editor
 Rendering
 ---------
 
-3 rendering *methods* (running over 2 rendering *drivers*) are available:
+Godot 4 includes three renderers:
 
-- **Forward+**, running over Vulkan 1.0 (with optional Vulkan 1.1 and 1.2
-  features). The most advanced graphics backend, suited for desktop platforms
-  only. Used by default on desktop platforms.
-- **Forward Mobile**, running over Vulkan 1.0 (with optional Vulkan 1.1 and 1.2
-  features). Less features, but renders simple scenes faster. Suited for mobile
-  and desktop platforms. Used by default on mobile platforms.
-- **Compatibility**, running over OpenGL 3.3 / OpenGL ES 3.0 / WebGL 2.0. The least
-  advanced graphics backend, suited for low-end desktop and mobile platforms.
-  Used by default on the web platform.
+- **Forward+**. The most advanced renderer, suited for desktop platforms only.
+  Used by default on desktop platforms. This renderer uses **Vulkan**, **Direct3D 12**,
+  or **Metal** as the rendering driver, and it uses the **RenderingDevice** backend.
+- **Mobile**. Fewer features, but renders simple scenes faster. Suited for mobile
+  and desktop platforms. Used by default on mobile platforms. This renderer uses
+  **Vulkan**, **Direct3D 12**, or **Metal** as the rendering driver, and it uses
+  the **RenderingDevice** backend.
+- **Compatibility**, sometimes called **GL Compatibility**. The least advanced
+  renderer, suited for low-end desktop and mobile platforms. Used by default on
+  the web platform. This renderer uses **OpenGL** as the rendering driver.
+
+See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
 2D graphics
 -----------
@@ -135,6 +152,8 @@ Rendering
 - GPU-based :ref:`particles <doc_particle_systems_2d>` with support for
   :ref:`custom particle shaders <doc_particle_shader>`.
 - CPU-based particles.
+- Optional :ref:`2D HDR rendering <doc_environment_and_post_processing_using_glow_in_2d>`
+  for better glow capabilities.
 
 2D tools
 --------
@@ -170,9 +189,9 @@ Rendering
 
 - HDR rendering with sRGB.
 - Perspective, orthographic and frustum-offset cameras.
-- When using the Forward+ backend, a depth prepass is used to improve
+- When using the Forward+ renderer, a depth prepass is used to improve
   performance in complex scenes by reducing the cost of overdraw.
-- :ref:`doc_variable_rate_shading` on supported GPUs in Forward+ and Forward Mobile.
+- :ref:`doc_variable_rate_shading` on supported GPUs in Forward+ and Mobile.
 
 **Physically-based rendering (built-in material features):**
 
@@ -196,13 +215,13 @@ Rendering
 - Directional lights (sun/moon). Up to 4 per scene.
 - Omnidirectional lights.
 - Spot lights with adjustable cone angle and attenuation.
-- Specular energy can be adjusted on a per-light basis.
+- Specular, indirect light, and volumetric fog energy can be adjusted on a per-light basis.
 - Adjustable light "size" for fake area lights (will also make shadows blurrier).
 - Optional distance fade system to fade distant lights and their shadows, improving performance.
-- When using the Forward+ backend (default on desktop), lights are
+- When using the Forward+ renderer (default on desktop), lights are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of lights that can be used on a mesh.
-- When using the Forward Mobile backend, up to 8 omni lights and 8 spot lights can
+- When using the Mobile renderer, up to 8 omni lights and 8 spot lights can
   be displayed per mesh resource. Baked lighting can be used to overcome this limit
   if needed.
 
@@ -215,13 +234,13 @@ Rendering
 - *SpotLight:* Single texture. Supports colored projector textures.
 - Shadow normal offset bias and shadow pancaking to decrease the amount of
   visible shadow acne and peter-panning.
-- PCSS-like shadow blur based on the light size and distance from the surface
-  the shadow is cast on.
+- :abbr:`PCSS (Percentage Closer Soft Shadows)`-like shadow blur based on the
+  light size and distance from the surface the shadow is cast on.
 - Adjustable shadow blur on a per-light basis.
 
 **Global illumination with indirect lighting:**
 
-- Baked lightmaps (fast, but can't be updated at run-time).
+- :ref:`Baked lightmaps <doc_using_lightmap_gi>` (fast, but can't be updated at runtime).
 
    - Supports baking indirect light only or baking both direct and indirect lighting.
      The bake mode can be adjusted on a per-light basis to allow for hybrid light
@@ -232,46 +251,54 @@ Rendering
    - Lightmaps are baked on the GPU using compute shaders (much faster compared
      to CPU lightmapping). Baking can only be performed from the editor,
      not in exported projects.
+   - Supports GPU-based :ref:`denoising <doc_using_lightmap_gi_denoising>`
+     with JNLM, or CPU/GPU-based denoising with OIDN.
 
-- Voxel-based GI probes. Supports dynamic lights *and* dynamic occluders, while
-  also supporting reflections. Requires a fast baking step which can be
-  performed in the editor or at run-time (including from an exported project).
-- Signed-distance field GI designed for large open worlds.
+- :ref:`Voxel-based GI probes <doc_using_voxel_gi>`. Supports
+  dynamic lights *and* dynamic occluders, while also supporting reflections.
+  Requires a fast baking step which can be performed in the editor or at
+  runtime (including from an exported project).
+- :ref:`Signed-distance field GI <doc_using_sdfgi>` designed for large open worlds.
   Supports dynamic lights, but not dynamic occluders. Supports reflections.
   No baking required.
-- Screen-space indirect lighting (SSIL) at half or full resolution.
-  Fully real-time and supports any kind of emissive light source (including decals).
+- :ref:`Screen-space indirect lighting (SSIL) <doc_environment_and_post_processing_ssil>`
+  at half or full resolution. Fully real-time and supports any kind of emissive
+  light source (including decals).
 - VoxelGI and SDFGI use a deferred pass to allow for rendering GI at half
   resolution to improve performance (while still having functional MSAA support).
 
 **Reflections:**
 
 - Voxel-based reflections (when using GI probes) and SDF-based reflections
-  (when using signed distance field GI).
+  (when using signed distance field GI). Voxel-based reflections are visible
+  on transparent surfaces, while rough SDF-based reflections are visible
+  on transparent surfaces.
 - Fast baked reflections or slow real-time reflections using ReflectionProbe.
   Parallax box correction can optionally be enabled.
 - Screen-space reflections with support for material roughness.
 - Reflection techniques can be mixed together for greater accuracy or scalability.
-- When using the Forward+ backend (default on desktop), reflection probes are
+- When using the Forward+ renderer (default on desktop), reflection probes are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of reflection probes that can be used on a mesh.
-- When using the Forward Mobile backend, up to 8 reflection probes can be displayed per mesh
-  resource.
+- When using the Mobile renderer, up to 8 reflection probes can be displayed per mesh
+  resource. When using the Compatibility renderer, up to 2 reflection probes can
+  be displayed per mesh resource.
 
 **Decals:**
 
-- Supports albedo, emissive, :abbr:`ORM (Occlusion Roughness Metallic)` and normal mapping.
+- :ref:`Supports albedo <doc_using_decals>`, emissive, :abbr:`ORM (Occlusion Roughness Metallic)`,
+  and normal mapping.
 - Texture channels are smoothly overlaid on top of the underlying material,
   with support for normal/ORM-only decals.
 - Support for normal fade to fade the decal depending on its incidence angle.
-- Does not rely on run-time mesh generation. This means decals can be used on
+- Does not rely on runtime mesh generation. This means decals can be used on
   complex skinned meshes with no performance penalty, even if the decal moves every frame.
 - Support for nearest, bilinear, trilinear or anisotropic texture filtering (configured globally).
-- Optional distance fade system to fade distant lights and their shadows, improving performance.
-- When using the Forward+ backend (default on desktop), decals are
+- Optional distance fade system to fade distant decals, improving performance.
+- When using the Forward+ renderer (default on desktop), decals are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of decals that can be used on a mesh.
-- When using the Forward Mobile backend, up to 8 decals can be displayed per mesh
+- When using the Mobile renderer, up to 8 decals can be displayed per mesh
   resource.
 
 **Sky:**
@@ -288,12 +315,16 @@ Rendering
 - Exponential height fog.
 - Support for automatic fog color depending on the sky color (aerial perspective).
 - Support for sun scattering in the fog.
+- Support for controlling how much fog rendering should affect the sky, with
+  separate controls for traditional and volumetric fog.
+- Support for making specific materials ignore fog.
 
 **Volumetric fog:**
 
 - Global :ref:`volumetric fog <doc_volumetric_fog>` that reacts to lights and shadows.
 - Volumetric fog can take indirect light into account when using VoxelGI or SDFGI.
 - Fog volume nodes that can be placed to add fog to specific areas (or remove fog from specific areas).
+  Supported shapes include box, ellipse, cone, cylinder, and 3D texture-based density maps.
 - Each fog volume can have its own custom shader.
 - Can be used together with traditional fog.
 
@@ -322,6 +353,7 @@ Rendering
 - Glow/bloom with optional bicubic upscaling and several blend modes available:
   Screen, Soft Light, Add, Replace, Mix.
 - Glow can have a colored dirt map texture, acting as a lens dirt effect.
+- Glow can be :ref:`used as a screen-space blur effect <doc_environment_and_post_processing_using_glow_to_blur_the_screen>`.
 - Color correction using a one-dimensional ramp or a 3D LUT texture.
 - Roughness limiter to reduce the impact of specular aliasing.
 - Brightness, contrast and saturation adjustments.
@@ -338,9 +370,11 @@ Rendering
 - ETC2 (not supported on macOS).
 - S3TC (not supported on mobile/Web platforms).
 
-**Anti-aliasing:**
+**Antialiasing:**
 
 - Temporal :ref:`antialiasing <doc_3d_antialiasing>` (TAA).
+- AMD FidelityFX Super Resolution 2.2 :ref:`antialiasing <doc_3d_antialiasing>` (FSR2),
+  which can be used at native resolution as a form of high-quality temporal antialiasing.
 - Multi-sample antialiasing (MSAA), for both :ref:`doc_2d_antialiasing` and :ref:`doc_3d_antialiasing`.
 - Fast approximate antialiasing (FXAA).
 - Super-sample antialiasing (SSAA) using bilinear 3D scaling and a 3D resolution scale above 1.0.
@@ -351,8 +385,8 @@ Rendering
 - Support for :ref:`rendering 3D at a lower resolution <doc_resolution_scaling>`
   while keeping 2D rendering at the original scale. This can be used to improve
   performance on low-end systems or improve visuals on high-end systems.
-- Resolution scaling uses bilinear filtering or AMD FidelityFX Super Resolution
-  1.0 (FSR).
+- Resolution scaling uses bilinear filtering, AMD FidelityFX Super Resolution
+  1.0 (FSR1) or AMD FidelityFX Super Resolution 2.2 (FSR2).
 - Texture mipmap LOD bias is adjusted automatically to improve quality at lower
   resolution scales. It can also be modified with a manual offset.
 
@@ -374,7 +408,7 @@ improve quality. This can be helpful when
 
 - :ref:`3D geometry helper class <class_Geometry3D>`.
 - Support for exporting the current scene as a glTF 2.0 file, both from the editor
-  and at run-time from an exported project.
+  and at runtime from an exported project.
 
 3D physics
 ----------
@@ -429,12 +463,16 @@ Scripting
 :ref:`C#: <toc-learn-scripting-C#>`
 
 - Packaged in a separate binary to keep file sizes and dependencies down.
-- Uses .NET 6.
+- Supports .NET 8 and higher.
 
-   - Full support for the C# 10.0 syntax and features.
+   - Full support for the C# 12.0 syntax and features.
 
-- Supports Windows, Linux and macOS. Mobile/web platforms are currently
-  unsupported. To use C# on mobile/web platforms, use Godot 3 instead.
+- Supports Windows, Linux, and macOS. Since Godot 4.2, experimental support for Android and iOS is also available.
+
+   - On the iOS platform only some architectures are supported: ``arm64``.
+   - The web platform is currently unsupported. To use C# on that platform,
+     consider Godot 3 instead.
+
 - Using an external editor is recommended to benefit from IDE functionality.
 
 **GDExtension (C, C++, Rust, D, ...):**
@@ -450,7 +488,7 @@ Scripting
    - Use any build system and language features you wish.
 
 - Actively developed GDExtension bindings for `D <https://github.com/godot-dlang/godot-dlang>`__,
-  `Haxe <https://hxgodot.github.io/>`__, `Python <https://github.com/touilleMan/godot-python>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
+  `Swift <https://github.com/migueldeicaza/SwiftGodot>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
   bindings provided by the community. (Some of these bindings may be experimental and not production-ready).
 
 Audio
@@ -505,7 +543,7 @@ Import
    - Collada (.dae).
    - Wavefront OBJ (static scenes only, can be loaded directly as a mesh or imported as a 3D scene).
 
-- Support for loading glTF 2.0 scenes at run-time, including from an exported project.
+- Support for loading glTF 2.0 scenes at runtime, including from an exported project.
 - 3D meshes use `Mikktspace <http://www.mikktspace.com/>`__ to generate tangents
   on import, which ensures consistency with other 3D applications such as Blender.
 
@@ -537,7 +575,7 @@ Navigation
 - A* algorithm in :ref:`2D <class_AStar2D>` and :ref:`3D <class_AStar3D>`.
 - Navigation meshes with dynamic obstacle avoidance in
   :ref:`2D <doc_navigation_overview_2d>` and :ref:`3D <doc_navigation_overview_3d>`.
-- Generate navigation meshes from the editor or at run-time (including from an exported project).
+- Generate navigation meshes from the editor or at runtime (including from an exported project).
 
 Networking
 ----------
@@ -612,10 +650,14 @@ XR support (AR and VR)
 
 - Out of the box :ref:`support for OpenXR <doc_setting_up_xr>`.
 
-   - Including support for popular headsets like the Meta Quest and the Valve Index.
+   - Including support for popular desktop headsets like the Valve Index, WMR headsets, and Quest over Link.
 
-- Support for ARKit on iOS out of the box.
-- Support for the OpenVR APIs.
+- Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
+
+  - Including support for popular stand alone headsets like the Meta Quest 1/2/3 and Pro, Pico 4, Magic Leap 2, and Lynx R1.
+
+- Other devices supported through an XR plugin structure.
+- Various advanced toolkits are available that implement common features required by XR applications.
 
 GUI system
 ----------
@@ -697,7 +739,8 @@ File formats
    - Can (de)serialize any Godot datatype, including Vector2/3, Color, ...
 
 - Read XML files using :ref:`class_XMLParser`.
-- Read and write ZIP files using :ref:`class_ZIPReader` and :ref:`class_ZIPPacker`.
+- :ref:`Load and save images, audio/video, fonts and ZIP archives <doc_runtime_loading_and_saving>`
+  in an exported project without having to go through Godot's import system.
 - Pack game data into a PCK file (custom format optimized for fast seeking),
   into a ZIP archive, or directly into the executable for single-file distribution.
 - :ref:`Export additional PCK files<doc_exporting_pcks>` that can be read

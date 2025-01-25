@@ -61,7 +61,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FilterDB**:
+enum **FilterDB**: :ref:`🔗<enum_AudioEffectFilter_FilterDB>`
 
 .. _class_AudioEffectFilter_constant_FILTER_6DB:
 
@@ -69,7 +69,7 @@ enum **FilterDB**:
 
 :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **FILTER_6DB** = ``0``
 
-
+Cutting off at 6dB per octave.
 
 .. _class_AudioEffectFilter_constant_FILTER_12DB:
 
@@ -77,7 +77,7 @@ enum **FilterDB**:
 
 :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **FILTER_12DB** = ``1``
 
-
+Cutting off at 12dB per octave.
 
 .. _class_AudioEffectFilter_constant_FILTER_18DB:
 
@@ -85,7 +85,7 @@ enum **FilterDB**:
 
 :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **FILTER_18DB** = ``2``
 
-
+Cutting off at 18dB per octave.
 
 .. _class_AudioEffectFilter_constant_FILTER_24DB:
 
@@ -93,7 +93,7 @@ enum **FilterDB**:
 
 :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **FILTER_24DB** = ``3``
 
-
+Cutting off at 24dB per octave.
 
 .. rst-class:: classref-section-separator
 
@@ -108,12 +108,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **cutoff_hz** = ``2000.0``
+:ref:`float<class_float>` **cutoff_hz** = ``2000.0`` :ref:`🔗<class_AudioEffectFilter_property_cutoff_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cutoff** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_cutoff** **(** **)**
+- |void| **set_cutoff**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_cutoff**\ (\ )
 
 Threshold frequency for the filter, in Hz.
 
@@ -125,16 +125,14 @@ Threshold frequency for the filter, in Hz.
 
 .. rst-class:: classref-property
 
-:ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db** = ``0``
+:ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db** = ``0`` :ref:`🔗<class_AudioEffectFilter_property_db>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_db** **(** :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` value **)**
-- :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **get_db** **(** **)**
+- |void| **set_db**\ (\ value\: :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>`\ )
+- :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **get_db**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Steepness of the cutoff curve in dB per octave, also known as the order of the filter. Higher orders have a more aggressive cutoff.
 
 .. rst-class:: classref-item-separator
 
@@ -144,12 +142,12 @@ Threshold frequency for the filter, in Hz.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gain** = ``1.0``
+:ref:`float<class_float>` **gain** = ``1.0`` :ref:`🔗<class_AudioEffectFilter_property_gain>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_gain** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_gain** **(** **)**
+- |void| **set_gain**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_gain**\ (\ )
 
 Gain amount of the frequencies after the filter.
 
@@ -161,12 +159,12 @@ Gain amount of the frequencies after the filter.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **resonance** = ``0.5``
+:ref:`float<class_float>` **resonance** = ``0.5`` :ref:`🔗<class_AudioEffectFilter_property_resonance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_resonance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_resonance** **(** **)**
+- |void| **set_resonance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_resonance**\ (\ )
 
 Amount of boost in the frequency range near the cutoff frequency.
 
@@ -177,3 +175,4 @@ Amount of boost in the frequency range near the cutoff frequency.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

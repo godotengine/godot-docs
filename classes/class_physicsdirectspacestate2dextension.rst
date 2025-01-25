@@ -31,21 +31,21 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_cast_motion<class_PhysicsDirectSpaceState2DExtension_method__cast_motion>` **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, float* closest_safe, float* closest_unsafe **)** |virtual|                                             |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_collide_shape<class_PhysicsDirectSpaceState2DExtension_method__collide_shape>` **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, void* results, :ref:`int<class_int>` max_results, int32_t* result_count **)** |virtual|            |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`_intersect_point<class_PhysicsDirectSpaceState2DExtension_method__intersect_point>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` canvas_instance_id, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer2DExtensionShapeResult* results, :ref:`int<class_int>` max_results **)** |virtual|                                                                        |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_intersect_ray<class_PhysicsDirectSpaceState2DExtension_method__intersect_ray>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, :ref:`bool<class_bool>` hit_from_inside, PhysicsServer2DExtensionRayResult* result **)** |virtual|                                                                                     |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`_intersect_shape<class_PhysicsDirectSpaceState2DExtension_method__intersect_shape>` **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer2DExtensionShapeResult* result, :ref:`int<class_int>` max_results **)** |virtual| |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_rest_info<class_PhysicsDirectSpaceState2DExtension_method__rest_info>` **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer2DExtensionShapeRestInfo* rest_info **)** |virtual|                                           |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_body_excluded_from_query<class_PhysicsDirectSpaceState2DExtension_method_is_body_excluded_from_query>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                                                                                                                                                                                          |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_cast_motion<class_PhysicsDirectSpaceState2DExtension_private_method__cast_motion>`\ (\ shape_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, closest_safe\: ``float*``, closest_unsafe\: ``float*``\ ) |virtual|                                         |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_collide_shape<class_PhysicsDirectSpaceState2DExtension_private_method__collide_shape>`\ (\ shape_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, results\: ``void*``, max_results\: :ref:`int<class_int>`, result_count\: ``int32_t*``\ ) |virtual|      |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`_intersect_point<class_PhysicsDirectSpaceState2DExtension_private_method__intersect_point>`\ (\ position\: :ref:`Vector2<class_Vector2>`, canvas_instance_id\: :ref:`int<class_int>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, results\: ``PhysicsServer2DExtensionShapeResult*``, max_results\: :ref:`int<class_int>`\ ) |virtual|                                                                            |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_intersect_ray<class_PhysicsDirectSpaceState2DExtension_private_method__intersect_ray>`\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, hit_from_inside\: :ref:`bool<class_bool>`, result\: ``PhysicsServer2DExtensionRayResult*``\ ) |virtual|                                                                                         |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`_intersect_shape<class_PhysicsDirectSpaceState2DExtension_private_method__intersect_shape>`\ (\ shape_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, result\: ``PhysicsServer2DExtensionShapeResult*``, max_results\: :ref:`int<class_int>`\ ) |virtual| |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_rest_info<class_PhysicsDirectSpaceState2DExtension_private_method__rest_info>`\ (\ shape_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, rest_info\: ``PhysicsServer2DExtensionShapeRestInfo*``\ ) |virtual|                                             |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_body_excluded_from_query<class_PhysicsDirectSpaceState2DExtension_method_is_body_excluded_from_query>`\ (\ body\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                      |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -56,11 +56,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_PhysicsDirectSpaceState2DExtension_method__cast_motion:
+.. _class_PhysicsDirectSpaceState2DExtension_private_method__cast_motion:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_cast_motion** **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, float* closest_safe, float* closest_unsafe **)** |virtual|
+:ref:`bool<class_bool>` **_cast_motion**\ (\ shape_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, closest_safe\: ``float*``, closest_unsafe\: ``float*``\ ) |virtual| :ref:`🔗<class_PhysicsDirectSpaceState2DExtension_private_method__cast_motion>`
 
 .. container:: contribute
 
@@ -70,11 +70,11 @@ Method Descriptions
 
 ----
 
-.. _class_PhysicsDirectSpaceState2DExtension_method__collide_shape:
+.. _class_PhysicsDirectSpaceState2DExtension_private_method__collide_shape:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_collide_shape** **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, void* results, :ref:`int<class_int>` max_results, int32_t* result_count **)** |virtual|
+:ref:`bool<class_bool>` **_collide_shape**\ (\ shape_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, results\: ``void*``, max_results\: :ref:`int<class_int>`, result_count\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_PhysicsDirectSpaceState2DExtension_private_method__collide_shape>`
 
 .. container:: contribute
 
@@ -84,11 +84,11 @@ Method Descriptions
 
 ----
 
-.. _class_PhysicsDirectSpaceState2DExtension_method__intersect_point:
+.. _class_PhysicsDirectSpaceState2DExtension_private_method__intersect_point:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_intersect_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` canvas_instance_id, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer2DExtensionShapeResult* results, :ref:`int<class_int>` max_results **)** |virtual|
+:ref:`int<class_int>` **_intersect_point**\ (\ position\: :ref:`Vector2<class_Vector2>`, canvas_instance_id\: :ref:`int<class_int>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, results\: ``PhysicsServer2DExtensionShapeResult*``, max_results\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectSpaceState2DExtension_private_method__intersect_point>`
 
 .. container:: contribute
 
@@ -98,11 +98,11 @@ Method Descriptions
 
 ----
 
-.. _class_PhysicsDirectSpaceState2DExtension_method__intersect_ray:
+.. _class_PhysicsDirectSpaceState2DExtension_private_method__intersect_ray:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_intersect_ray** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, :ref:`bool<class_bool>` hit_from_inside, PhysicsServer2DExtensionRayResult* result **)** |virtual|
+:ref:`bool<class_bool>` **_intersect_ray**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, hit_from_inside\: :ref:`bool<class_bool>`, result\: ``PhysicsServer2DExtensionRayResult*``\ ) |virtual| :ref:`🔗<class_PhysicsDirectSpaceState2DExtension_private_method__intersect_ray>`
 
 .. container:: contribute
 
@@ -112,11 +112,11 @@ Method Descriptions
 
 ----
 
-.. _class_PhysicsDirectSpaceState2DExtension_method__intersect_shape:
+.. _class_PhysicsDirectSpaceState2DExtension_private_method__intersect_shape:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_intersect_shape** **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer2DExtensionShapeResult* result, :ref:`int<class_int>` max_results **)** |virtual|
+:ref:`int<class_int>` **_intersect_shape**\ (\ shape_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, result\: ``PhysicsServer2DExtensionShapeResult*``, max_results\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectSpaceState2DExtension_private_method__intersect_shape>`
 
 .. container:: contribute
 
@@ -126,11 +126,11 @@ Method Descriptions
 
 ----
 
-.. _class_PhysicsDirectSpaceState2DExtension_method__rest_info:
+.. _class_PhysicsDirectSpaceState2DExtension_private_method__rest_info:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_rest_info** **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer2DExtensionShapeRestInfo* rest_info **)** |virtual|
+:ref:`bool<class_bool>` **_rest_info**\ (\ shape_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collision_mask\: :ref:`int<class_int>`, collide_with_bodies\: :ref:`bool<class_bool>`, collide_with_areas\: :ref:`bool<class_bool>`, rest_info\: ``PhysicsServer2DExtensionShapeRestInfo*``\ ) |virtual| :ref:`🔗<class_PhysicsDirectSpaceState2DExtension_private_method__rest_info>`
 
 .. container:: contribute
 
@@ -144,7 +144,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_body_excluded_from_query** **(** :ref:`RID<class_RID>` body **)** |const|
+:ref:`bool<class_bool>` **is_body_excluded_from_query**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsDirectSpaceState2DExtension_method_is_body_excluded_from_query>`
 
 .. container:: contribute
 
@@ -157,3 +157,4 @@ Method Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

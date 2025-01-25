@@ -12,25 +12,52 @@ ZIPReader
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Allows reading the content of a zip file.
+Allows reading the content of a ZIP file.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class implements a reader that can extract the content of individual files inside a zip archive.
+This class implements a reader that can extract the content of individual files inside a ZIP archive. See also :ref:`ZIPPacker<class_ZIPPacker>`.
 
 ::
 
+    # Read a single file from a ZIP archive.
     func read_zip_file():
-        var reader := ZIPReader.new()
-        var err := reader.open("user://archive.zip")
+        var reader = ZIPReader.new()
+        var err = reader.open("user://archive.zip")
         if err != OK:
             return PackedByteArray()
-        var res := reader.read_file("hello.txt")
+        var res = reader.read_file("hello.txt")
         reader.close()
         return res
+    
+    # Extract all files from a ZIP archive, preserving the directories within.
+    # This acts like the "Extract all" functionality from most archive managers.
+    func extract_all_from_zip():
+        var reader = ZIPReader.new()
+        reader.open("res://archive.zip")
+    
+        # Destination directory for the extracted files (this folder must exist before extraction).
+        # Not all ZIP archives put everything in a single root folder,
+        # which means several files/folders may be created in `root_dir` after extraction.
+        var root_dir = DirAccess.open("user://")
+    
+        var files = reader.get_files()
+        for file_path in files:
+            # If the current entry is a directory.
+            if file_path.ends_with("/"):
+                root_dir.make_dir_recursive(file_path)
+                continue
+    
+            # Write file contents, creating folders automatically when needed.
+            # Not all ZIP archives are strictly ordered, so we need to do this in case
+            # the file entry comes before the folder entry.
+            root_dir.make_dir_recursive(root_dir.get_current_dir().path_join(file_path).get_base_dir())
+            var file = FileAccess.open(root_dir.get_current_dir().path_join(file_path), FileAccess.WRITE)
+            var buffer = reader.read_file(file_path)
+            file.store_buffer(buffer)
 
 .. rst-class:: classref-reftable-group
 
@@ -40,17 +67,17 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`close<class_ZIPReader_method_close>` **(** **)**                                                                                           |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`file_exists<class_ZIPReader_method_file_exists>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)** |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_files<class_ZIPReader_method_get_files>` **(** **)**                                                                                   |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`open<class_ZIPReader_method_open>` **(** :ref:`String<class_String>` path **)**                                                            |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`read_file<class_ZIPReader_method_read_file>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)**     |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`close<class_ZIPReader_method_close>`\ (\ )                                                                                                  |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`file_exists<class_ZIPReader_method_file_exists>`\ (\ path\: :ref:`String<class_String>`, case_sensitive\: :ref:`bool<class_bool>` = true\ ) |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_files<class_ZIPReader_method_get_files>`\ (\ )                                                                                          |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`open<class_ZIPReader_method_open>`\ (\ path\: :ref:`String<class_String>`\ )                                                                |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`read_file<class_ZIPReader_method_read_file>`\ (\ path\: :ref:`String<class_String>`, case_sensitive\: :ref:`bool<class_bool>` = true\ )     |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -65,7 +92,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **close** **(** **)**
+:ref:`Error<enum_@GlobalScope_Error>` **close**\ (\ ) :ref:`🔗<class_ZIPReader_method_close>`
 
 Closes the underlying resources used by this instance.
 
@@ -77,7 +104,7 @@ Closes the underlying resources used by this instance.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)**
+:ref:`bool<class_bool>` **file_exists**\ (\ path\: :ref:`String<class_String>`, case_sensitive\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ZIPReader_method_file_exists>`
 
 Returns ``true`` if the file exists in the loaded zip archive.
 
@@ -91,7 +118,7 @@ Must be called after :ref:`open<class_ZIPReader_method_open>`.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_files** **(** **)**
+:ref:`PackedStringArray<class_PackedStringArray>` **get_files**\ (\ ) :ref:`🔗<class_ZIPReader_method_get_files>`
 
 Returns the list of names of all files in the loaded archive.
 
@@ -105,7 +132,7 @@ Must be called after :ref:`open<class_ZIPReader_method_open>`.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path **)**
+:ref:`Error<enum_@GlobalScope_Error>` **open**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ZIPReader_method_open>`
 
 Opens the zip archive at the given ``path`` and reads its file index.
 
@@ -117,7 +144,7 @@ Opens the zip archive at the given ``path`` and reads its file index.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **read_file** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **read_file**\ (\ path\: :ref:`String<class_String>`, case_sensitive\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ZIPReader_method_read_file>`
 
 Loads the whole content of a file in the loaded zip archive into memory and returns it.
 
@@ -130,3 +157,4 @@ Must be called after :ref:`open<class_ZIPReader_method_open>`.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -57,12 +57,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_faces** = ``false``
+:ref:`bool<class_bool>` **flip_faces** = ``false`` :ref:`🔗<class_CSGPrimitive3D_property_flip_faces>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_faces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flip_faces** **(** **)**
+- |void| **set_flip_faces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flip_faces**\ (\ )
 
 If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
 
@@ -73,3 +73,4 @@ If set, the order of the vertices in each triangle are reversed resulting in the
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

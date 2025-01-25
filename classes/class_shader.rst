@@ -52,15 +52,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`get_default_texture_parameter<class_Shader_method_get_default_texture_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` index=0 **)** |const|                                    |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Mode<enum_Shader_Mode>`     | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                                                                      |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`         | :ref:`get_shader_uniform_list<class_Shader_method_get_shader_uniform_list>` **(** :ref:`bool<class_bool>` get_groups=false **)**                                                                                       |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_default_texture_parameter<class_Shader_method_set_default_texture_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture, :ref:`int<class_int>` index=0 **)** |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`get_default_texture_parameter<class_Shader_method_get_default_texture_parameter>`\ (\ name\: :ref:`StringName<class_StringName>`, index\: :ref:`int<class_int>` = 0\ ) |const|                                  |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Mode<enum_Shader_Mode>` | :ref:`get_mode<class_Shader_method_get_mode>`\ (\ ) |const|                                                                                                                                                           |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`     | :ref:`get_shader_uniform_list<class_Shader_method_get_shader_uniform_list>`\ (\ get_groups\: :ref:`bool<class_bool>` = false\ )                                                                                       |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`inspect_native_shader_code<class_Shader_method_inspect_native_shader_code>`\ (\ )                                                                                                                               |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_default_texture_parameter<class_Shader_method_set_default_texture_parameter>`\ (\ name\: :ref:`StringName<class_StringName>`, texture\: :ref:`Texture<class_Texture>`, index\: :ref:`int<class_int>` = 0\ ) |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -75,7 +77,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Mode**:
+enum **Mode**: :ref:`🔗<enum_Shader_Mode>`
 
 .. _class_Shader_constant_MODE_SPATIAL:
 
@@ -130,12 +132,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **code** = ``""``
+:ref:`String<class_String>` **code** = ``""`` :ref:`🔗<class_Shader_property_code>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_code** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_code** **(** **)**
+- |void| **set_code**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_code**\ (\ )
 
 Returns the shader's code as the user has written it, not the full generated code used internally.
 
@@ -152,7 +154,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_default_texture_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` index=0 **)** |const|
+:ref:`Texture<class_Texture>` **get_default_texture_parameter**\ (\ name\: :ref:`StringName<class_StringName>`, index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_Shader_method_get_default_texture_parameter>`
 
 Returns the texture that is set as default for the specified parameter.
 
@@ -168,7 +170,7 @@ Returns the texture that is set as default for the specified parameter.
 
 .. rst-class:: classref-method
 
-:ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** |const|
+:ref:`Mode<enum_Shader_Mode>` **get_mode**\ (\ ) |const| :ref:`🔗<class_Shader_method_get_mode>`
 
 Returns the shader mode for the shader.
 
@@ -180,11 +182,23 @@ Returns the shader mode for the shader.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_shader_uniform_list** **(** :ref:`bool<class_bool>` get_groups=false **)**
+:ref:`Array<class_Array>` **get_shader_uniform_list**\ (\ get_groups\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Shader_method_get_shader_uniform_list>`
 
-Get the list of shader uniforms that can be assigned to a :ref:`ShaderMaterial<class_ShaderMaterial>`, for use with :ref:`ShaderMaterial.set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>` and :ref:`ShaderMaterial.get_shader_parameter<class_ShaderMaterial_method_get_shader_parameter>`. The parameters returned are contained in dictionaries in a similar format to the ones returned by :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+Returns the list of shader uniforms that can be assigned to a :ref:`ShaderMaterial<class_ShaderMaterial>`, for use with :ref:`ShaderMaterial.set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>` and :ref:`ShaderMaterial.get_shader_parameter<class_ShaderMaterial_method_get_shader_parameter>`. The parameters returned are contained in dictionaries in a similar format to the ones returned by :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
 
-If argument ``get_groups`` is true, parameter grouping hints will be provided.
+If argument ``get_groups`` is ``true``, parameter grouping hints are also included in the list.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Shader_method_inspect_native_shader_code:
+
+.. rst-class:: classref-method
+
+|void| **inspect_native_shader_code**\ (\ ) :ref:`🔗<class_Shader_method_inspect_native_shader_code>`
+
+Only available when running in the editor. Opens a popup that visualizes the generated shader code, including all variants and internal shader code. See also :ref:`Material.inspect_native_shader_code<class_Material_method_inspect_native_shader_code>`.
 
 .. rst-class:: classref-item-separator
 
@@ -194,7 +208,7 @@ If argument ``get_groups`` is true, parameter grouping hints will be provided.
 
 .. rst-class:: classref-method
 
-void **set_default_texture_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture, :ref:`int<class_int>` index=0 **)**
+|void| **set_default_texture_parameter**\ (\ name\: :ref:`StringName<class_StringName>`, texture\: :ref:`Texture<class_Texture>`, index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_Shader_method_set_default_texture_parameter>`
 
 Sets the default texture to be used with a texture uniform. The default is used if a texture is not set in the :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
@@ -209,3 +223,4 @@ Sets the default texture to be used with a texture uniform. The default is used 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

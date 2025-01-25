@@ -48,12 +48,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance** = ``0.0``
+:ref:`float<class_float>` **distance** = ``0.0`` :ref:`🔗<class_WorldBoundaryShape2D_property_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_distance** **(** **)**
+- |void| **set_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_distance**\ (\ )
 
 The distance from the origin to the line, expressed in terms of :ref:`normal<class_WorldBoundaryShape2D_property_normal>` (according to its direction and magnitude). Actual absolute distance from the origin to the line can be calculated as ``abs(distance) / normal.length()``.
 
@@ -67,14 +67,14 @@ In the scalar equation of the line ``ax + by = d``, this is ``d``, while the ``(
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **normal** = ``Vector2(0, -1)``
+:ref:`Vector2<class_Vector2>` **normal** = ``Vector2(0, -1)`` :ref:`🔗<class_WorldBoundaryShape2D_property_normal>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_normal** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_normal** **(** **)**
+- |void| **set_normal**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_normal**\ (\ )
 
-The line's normal, typically a unit vector. Its direction indicates the non-colliding half-plane. Can be of any length but zero. Defaults to ``Vector2.UP``.
+The line's normal, typically a unit vector. Its direction indicates the non-colliding half-plane. Can be of any length but zero. Defaults to :ref:`Vector2.UP<class_Vector2_constant_UP>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -83,3 +83,4 @@ The line's normal, typically a unit vector. Its direction indicates the non-coll
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

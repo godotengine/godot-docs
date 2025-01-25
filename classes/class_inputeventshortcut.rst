@@ -19,7 +19,7 @@ Represents a triggered keyboard :ref:`Shortcut<class_Shortcut>`.
 Description
 -----------
 
-InputEventShortcut is a special event that can be received in :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`. It is typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_input<class_Viewport_method_push_input>`.
+InputEventShortcut is a special event that can be received in :ref:`Node._input<class_Node_private_method__input>`, :ref:`Node._shortcut_input<class_Node_private_method__shortcut_input>`, and :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>`. It is typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_input<class_Viewport_method_push_input>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -46,12 +46,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Shortcut<class_Shortcut>` **shortcut**
+:ref:`Shortcut<class_Shortcut>` **shortcut** :ref:`🔗<class_InputEventShortcut_property_shortcut>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shortcut** **(** :ref:`Shortcut<class_Shortcut>` value **)**
-- :ref:`Shortcut<class_Shortcut>` **get_shortcut** **(** **)**
+- |void| **set_shortcut**\ (\ value\: :ref:`Shortcut<class_Shortcut>`\ )
+- :ref:`Shortcut<class_Shortcut>` **get_shortcut**\ (\ )
 
 The :ref:`Shortcut<class_Shortcut>` represented by this event. Its :ref:`Shortcut.matches_event<class_Shortcut_method_matches_event>` method will always return ``true`` for this event.
 
@@ -62,3 +62,4 @@ The :ref:`Shortcut<class_Shortcut>` represented by this event. Its :ref:`Shortcu
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

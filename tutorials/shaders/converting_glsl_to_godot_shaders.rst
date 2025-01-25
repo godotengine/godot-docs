@@ -18,7 +18,7 @@ quality-of-life features. Accordingly, most features available in GLSL are
 available in Godot's shading language.
 
 Shader programs
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 In GLSL, each shader uses a separate program. You have one program for the
 vertex shader and one for the fragment shader. In Godot, you have a single
@@ -30,7 +30,7 @@ fragment and vertex shaders in one file. In GLSL, the vertex and fragment
 programs cannot share variables except when varyings are used.
 
 Vertex attributes
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 In GLSL, you can pass in per-vertex information using attributes and have the
 flexibility to pass in as much or as little as you want. In Godot, you have a
@@ -39,7 +39,7 @@ set number of input attributes, including ``VERTEX`` (position), ``COLOR``,
 of the documentation comes with a complete list of its vertex attributes.
 
 gl_Position
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 ``gl_Position`` receives the final position of a vertex specified in the vertex
 shader. It is specified by the user in clip space. Typically, in GLSL, the model
@@ -56,7 +56,7 @@ to ``mat4(1.0)`` in order to nullify the final transform from view space to clip
 space.
 
 Varyings
-^^^^^^^^
+~~~~~~~~
 
 Varyings are a type of variable that can be passed from the vertex shader to the
 fragment shader. In modern GLSL (3.0 and up), varyings are defined with the
@@ -64,7 +64,7 @@ fragment shader. In modern GLSL (3.0 and up), varyings are defined with the
 defined with ``out`` in the vertex shader and ``in`` inside the fragment shader.
 
 Main
-^^^^
+~~~~
 
 In GLSL, each shader program looks like a self-contained C-style program.
 Accordingly, the main entry point is ``main``. If you are copying a vertex
@@ -72,16 +72,17 @@ shader, rename ``main`` to ``vertex`` and if you are copying a fragment shader,
 rename ``main`` to ``fragment``.
 
 Macros
-^^^^^^
+~~~~~~
 
 The :ref:`Godot shader preprocessor<doc_shader_preprocessor>` supports the following macros:
+
 * ``#define`` / ``#undef``
 * ``#if``, ``#elif``, ``#else``, ``#endif``, ``defined()``, ``#ifdef``, ``#ifndef``
 * ``#include`` (only ``.gdshaderinc`` files and with a maximum depth of 25)
 * ``#pragma disable_preprocessor``, which disables preprocessing for the rest of the file
 
 Variables
-^^^^^^^^^
+~~~~~~~~~
 
 GLSL has many built-in variables that are hard-coded. These variables are not
 uniforms, so they are not editable from the main program.
@@ -105,14 +106,14 @@ uniforms, so they are not editable from the main program.
 .. _glsl_coordinates:
 
 Coordinates
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 ``gl_FragCoord`` in GLSL and ``FRAGCOORD`` in the Godot shading language use the
 same coordinate system. If using UV in Godot, the y-coordinate will be flipped
 upside down.
 
 Precision
-^^^^^^^^^
+~~~~~~~~~
 
 In GLSL, you can define the precision of a given type (float or int) at the top
 of the shader with the ``precision`` keyword. In Godot, you can set the
@@ -132,13 +133,13 @@ Shadertoy does not give the user full control over the shader. It handles all
 the input and uniforms and only lets the user write the fragment shader.
 
 Types
-^^^^^
+~~~~~
 
 Shadertoy uses the webgl spec, so it runs a slightly different version of GLSL.
 However, it still has the regular types, including constants and macros.
 
 mainImage
-^^^^^^^^^
+~~~~~~~~~
 
 The main point of entry to a Shadertoy shader is the ``mainImage`` function.
 ``mainImage`` has two parameters, ``fragColor`` and ``fragCoord``, which
@@ -148,7 +149,7 @@ them as parameters yourself. Anything in the ``mainImage`` function should be
 copied into the ``fragment`` function when porting to Godot.
 
 Variables
-^^^^^^^^^
+~~~~~~~~~
 
 In order to make writing fragment shaders straightforward and easy, Shadertoy
 handles passing a lot of helpful information from the main program into the
@@ -186,7 +187,7 @@ what they can pass in as a substitute.
 +---------------------+---------+------------------------+-----------------------------------------------------+
 
 Coordinates
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 ``fragCoord`` behaves the same as ``gl_FragCoord`` in :ref:`GLSL
 <glsl_coordinates>` and ``FRAGCOORD`` in Godot.
@@ -205,21 +206,21 @@ Shaders provides a `page <https://thebookofshaders.com/04>`_ on running shaders
 in various frameworks.
 
 Types
-^^^^^
+~~~~~
 
 The Book of Shaders uses the webgl spec, so it runs a slightly different version
 of GLSL. However, it still has the regular types, including constants and
 macros.
 
 Main
-^^^^
+~~~~
 
 The entry point for a Book of Shaders fragment shader is ``main``, just like in
 GLSL. Everything written in a Book of Shaders ``main`` function should be copied
 into Godot's ``fragment`` function.
 
 Variables
-^^^^^^^^^
+~~~~~~~~~
 
 The Book of Shaders sticks closer to plain GLSL than Shadertoy does. It also
 implements fewer uniforms than Shadertoy.
@@ -239,7 +240,7 @@ implements fewer uniforms than Shadertoy.
 +---------------------+---------+------------------------+-----------------------------------------------------+
 
 Coordinates
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 The Book of Shaders uses the same coordinate system as
 :ref:`GLSL <glsl_coordinates>`.

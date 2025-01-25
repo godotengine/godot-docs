@@ -19,7 +19,7 @@ A 1D texture where pixel brightness corresponds to points on a curve.
 Description
 -----------
 
-A 1D texture where pixel brightness corresponds to points on a :ref:`Curve<class_Curve>` resource, either in grayscale or in red. This visual representation simplifies the task of saving curves as image files.
+A 1D texture where pixel brightness corresponds to points on a unit :ref:`Curve<class_Curve>` resource, either in grayscale or in red. This visual representation simplifies the task of saving curves as image files.
 
 If you need to store up to 3 curves within a single texture, use :ref:`CurveXYZTexture<class_CurveXYZTexture>` instead. See also :ref:`GradientTexture1D<class_GradientTexture1D>` and :ref:`GradientTexture2D<class_GradientTexture2D>`.
 
@@ -54,7 +54,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TextureMode**:
+enum **TextureMode**: :ref:`🔗<enum_CurveTexture_TextureMode>`
 
 .. _class_CurveTexture_constant_TEXTURE_MODE_RGB:
 
@@ -85,14 +85,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **curve**
+:ref:`Curve<class_Curve>` **curve** :ref:`🔗<class_CurveTexture_property_curve>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_curve** **(** **)**
+- |void| **set_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_curve**\ (\ )
 
-The :ref:`Curve<class_Curve>` that is rendered onto the texture.
+The :ref:`Curve<class_Curve>` that is rendered onto the texture. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -102,12 +102,12 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture.
 
 .. rst-class:: classref-property
 
-:ref:`TextureMode<enum_CurveTexture_TextureMode>` **texture_mode** = ``0``
+:ref:`TextureMode<enum_CurveTexture_TextureMode>` **texture_mode** = ``0`` :ref:`🔗<class_CurveTexture_property_texture_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_mode** **(** :ref:`TextureMode<enum_CurveTexture_TextureMode>` value **)**
-- :ref:`TextureMode<enum_CurveTexture_TextureMode>` **get_texture_mode** **(** **)**
+- |void| **set_texture_mode**\ (\ value\: :ref:`TextureMode<enum_CurveTexture_TextureMode>`\ )
+- :ref:`TextureMode<enum_CurveTexture_TextureMode>` **get_texture_mode**\ (\ )
 
 The format the texture should be generated with. When passing a CurveTexture as an input to a :ref:`Shader<class_Shader>`, this may need to be adjusted.
 
@@ -119,12 +119,12 @@ The format the texture should be generated with. When passing a CurveTexture as 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **width** = ``256``
+:ref:`int<class_int>` **width** = ``256`` :ref:`🔗<class_CurveTexture_property_width>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_width** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_width** **(** **)**
+- |void| **set_width**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_width**\ (\ )
 
 The width of the texture (in pixels). Higher values make it possible to represent high-frequency data better (such as sudden direction changes), at the cost of increased generation time and memory usage.
 
@@ -135,3 +135,4 @@ The width of the texture (in pixels). Higher values make it possible to represen
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

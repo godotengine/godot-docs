@@ -5,7 +5,7 @@
 Optimization using Servers
 ==========================
 
-Engines like Godot provide increased ease of use thanks to their high level constructs and features.
+Engines like Godot provide increased ease of use thanks to their high-level constructs and features.
 Most of them are accessed and used via the :ref:`Scene System<doc_scene_tree>`. Using nodes and
 resources simplifies project organization and asset management in complex games.
 
@@ -21,7 +21,7 @@ with signals, so no polling is required). Still, sometimes it can be. For exampl
 tens of thousands of instances for something that needs to be processed every frame can be a bottleneck.
 
 This type of situation makes programmers regret they are using a game engine and wish they could go
-back to a more handcrafted, low level implementation of game code.
+back to a more handcrafted, low-level implementation of game code.
 
 Still, Godot is designed to work around this problem.
 
@@ -114,10 +114,34 @@ This is an example of how to create a sprite from code and move it using the low
         # Remember, keep this reference.
         texture = load("res://my_texture.png")
         # Add it, centered.
-        RenderingServer.canvas_item_add_texture_rect(ci_rid, Rect2(texture.get_size() / 2, texture.get_size()), texture)
+        RenderingServer.canvas_item_add_texture_rect(ci_rid, Rect2(-texture.get_size() / 2, texture.get_size()), texture)
         # Add the item, rotated 45 degrees and translated.
         var xform = Transform2D().rotated(deg_to_rad(45)).translated(Vector2(20, 30))
         RenderingServer.canvas_item_set_transform(ci_rid, xform)
+
+ .. code-tab:: csharp
+
+    public partial class MyNode2D : Node2D
+    {
+        // RenderingServer expects references to be kept around.
+        private Texture2D _texture;
+
+        public override void _Ready()
+        {
+            // Create a canvas item, child of this node.
+            Rid ciRid = RenderingServer.CanvasItemCreate();
+            // Make this node the parent.
+            RenderingServer.CanvasItemSetParent(ciRid, GetCanvasItem());
+            // Draw a texture on it.
+            // Remember, keep this reference.
+            _texture = ResourceLoader.Load<Texture2D>("res://MyTexture.png");
+            // Add it, centered.
+            RenderingServer.CanvasItemAddTextureRect(ciRid, new Rect2(-_texture.GetSize() / 2, _texture.GetSize()), _texture.GetRid());
+            // Add the item, rotated 45 degrees and translated.
+            Transform2D xform = Transform2D.Identity.Rotated(Mathf.DegToRad(45)).Translated(new Vector2(20, 30));
+            RenderingServer.CanvasItemSetTransform(ciRid, xform);
+        }
+    }
 
 The Canvas Item API in the server allows you to add draw primitives to it. Once added, they can't be modified.
 The Item needs to be cleared and the primitives re-added (this is not the case for setting the transform,
@@ -129,6 +153,10 @@ Primitives are cleared this way:
  .. code-tab:: gdscript GDScript
 
     RenderingServer.canvas_item_clear(ci_rid)
+
+ .. code-tab:: csharp
+
+    RenderingServer.CanvasItemClear(ciRid);
 
 
 Instantiating a Mesh into 3D space
@@ -160,6 +188,31 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
         # Move the mesh around.
         var xform = Transform3D(Basis(), Vector3(20, 100, 0))
         RenderingServer.instance_set_transform(instance, xform)
+
+ .. code-tab:: csharp
+
+    public partial class MyNode3D : Node3D
+    {
+        // RenderingServer expects references to be kept around.
+        private Mesh _mesh;
+
+        public override void _Ready()
+        {
+            // Create a visual instance (for 3D).
+            Rid instance = RenderingServer.InstanceCreate();
+            // Set the scenario from the world, this ensures it
+            // appears with the same objects as the scene.
+            Rid scenario = GetWorld3D().Scenario;
+            RenderingServer.InstanceSetScenario(instance, scenario);
+            // Add a mesh to it.
+            // Remember, keep the reference.
+            _mesh = ResourceLoader.Load<Mesh>("res://MyMesh.obj");
+            RenderingServer.InstanceSetBase(instance, _mesh.GetRid());
+            // Move the mesh around.
+            Transform3D xform = new Transform3D(Basis.Identity, new Vector3(20, 100, 0));
+            RenderingServer.InstanceSetTransform(instance, xform);
+        }
+    }
 
 Creating a 2D RigidBody and moving a sprite with it
 ---------------------------------------------------
@@ -198,6 +251,41 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
         # The last parameter is optional, can be used as index
         # if you have many bodies and a single callback.
         Physics2DServer.body_set_force_integration_callback(body, self, "_body_moved", 0)
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode2D : Node2D
+    {
+        private Rid _canvasItem;
+
+        private void BodyMoved(PhysicsDirectBodyState2D state, int index)
+        {
+            RenderingServer.CanvasItemSetTransform(_canvasItem, state.Transform);
+        }
+
+        public override void _Ready()
+        {
+            // Create the body.
+            var body = PhysicsServer2D.BodyCreate();
+            PhysicsServer2D.BodySetMode(body, PhysicsServer2D.BodyMode.Rigid);
+            // Add a shape.
+            var shape = PhysicsServer2D.RectangleShapeCreate();
+            // Set rectangle extents.
+            PhysicsServer2D.ShapeSetData(shape, new Vector2(10, 10));
+            // Make sure to keep the shape reference!
+            PhysicsServer2D.BodyAddShape(body, shape);
+            // Set space, so it collides in the same space as current scene.
+            PhysicsServer2D.BodySetSpace(body, GetWorld2D().Space);
+            // Move initial position.
+            PhysicsServer2D.BodySetState(body, PhysicsServer2D.BodyState.Transform, new Transform2D(0, new Vector2(10, 20)));
+            // Add the transform callback, when body moves
+            // The last parameter is optional, can be used as index
+            // if you have many bodies and a single callback.
+            PhysicsServer2D.BodySetForceIntegrationCallback(body, new Callable(this, MethodName.BodyMoved), 0);
+        }
+    }
 
 The 3D version should be very similar, as 2D and 3D physics servers are identical (using
 :ref:`RigidBody3D <class_RigidBody3D>` and :ref:`PhysicsServer3D <class_PhysicsServer3D>` respectively).

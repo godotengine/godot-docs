@@ -47,13 +47,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | void                  | :ref:`add_action<class_OpenXRActionSet_method_add_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**       |
-   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>` | :ref:`get_action_count<class_OpenXRActionSet_method_get_action_count>` **(** **)** |const|                                  |
-   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | void                  | :ref:`remove_action<class_OpenXRActionSet_method_remove_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)** |
-   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | |void|                | :ref:`add_action<class_OpenXRActionSet_method_add_action>`\ (\ action\: :ref:`OpenXRAction<class_OpenXRAction>`\ )       |
+   +-----------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_action_count<class_OpenXRActionSet_method_get_action_count>`\ (\ ) |const|                                     |
+   +-----------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | |void|                | :ref:`remove_action<class_OpenXRActionSet_method_remove_action>`\ (\ action\: :ref:`OpenXRAction<class_OpenXRAction>`\ ) |
+   +-----------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -68,12 +68,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **actions** = ``[]``
+:ref:`Array<class_Array>` **actions** = ``[]`` :ref:`🔗<class_OpenXRActionSet_property_actions>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_actions** **(** :ref:`Array<class_Array>` value **)**
-- :ref:`Array<class_Array>` **get_actions** **(** **)**
+- |void| **set_actions**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_actions**\ (\ )
 
 Collection of actions for this action set.
 
@@ -85,12 +85,12 @@ Collection of actions for this action set.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **localized_name** = ``""``
+:ref:`String<class_String>` **localized_name** = ``""`` :ref:`🔗<class_OpenXRActionSet_property_localized_name>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_localized_name** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_localized_name** **(** **)**
+- |void| **set_localized_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_localized_name**\ (\ )
 
 The localized name of this action set.
 
@@ -102,12 +102,12 @@ The localized name of this action set.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **priority** = ``0``
+:ref:`int<class_int>` **priority** = ``0`` :ref:`🔗<class_OpenXRActionSet_property_priority>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_priority** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_priority** **(** **)**
+- |void| **set_priority**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_priority**\ (\ )
 
 The priority for this action set.
 
@@ -124,7 +124,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**
+|void| **add_action**\ (\ action\: :ref:`OpenXRAction<class_OpenXRAction>`\ ) :ref:`🔗<class_OpenXRActionSet_method_add_action>`
 
 Add an action to this action set.
 
@@ -136,7 +136,7 @@ Add an action to this action set.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_action_count** **(** **)** |const|
+:ref:`int<class_int>` **get_action_count**\ (\ ) |const| :ref:`🔗<class_OpenXRActionSet_method_get_action_count>`
 
 Retrieve the number of actions in our action set.
 
@@ -148,7 +148,7 @@ Retrieve the number of actions in our action set.
 
 .. rst-class:: classref-method
 
-void **remove_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**
+|void| **remove_action**\ (\ action\: :ref:`OpenXRAction<class_OpenXRAction>`\ ) :ref:`🔗<class_OpenXRActionSet_method_remove_action>`
 
 Remove an action from this action set.
 
@@ -159,3 +159,4 @@ Remove an action from this action set.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

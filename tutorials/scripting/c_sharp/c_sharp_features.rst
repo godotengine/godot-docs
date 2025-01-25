@@ -1,7 +1,7 @@
 .. _doc_c_sharp_features:
 
-C# features
-===========
+C# language features
+====================
 
 This page provides an overview of the commonly used features of both C# and Godot
 and how they are used together.
@@ -102,10 +102,6 @@ Preprocessor defines
 Godot has a set of defines that allow you to change your C# code
 depending on the environment you are compiling to.
 
-.. note:: If you created your project before Godot 3.2, you have to modify
-          or regenerate your `csproj` file to use this feature
-          (compare ``<DefineConstants>`` with a new 3.2+ project).
-
 Examples
 ~~~~~~~~
 
@@ -115,10 +111,7 @@ For example, you can change code based on the platform:
 
         public override void _Ready()
         {
-    #if GODOT_SERVER
-            // Don't try to load meshes or anything, this is a server!
-            LaunchServer();
-    #elif GODOT_32 || GODOT_MOBILE || GODOT_WEB
+    #if (GODOT_32 || GODOT_MOBILE || GODOT_WEB)
             // Use simple objects when running on less powerful systems.
             SpawnSimpleObjects();
     #else
@@ -141,8 +134,8 @@ Or you can detect which engine your code is in, useful for making cross-engine l
     #endif
         }
 
-Or you can write scripts that target multiple Godot versions and can take
-advantage that are only available on some of those versions:
+Or you can write scripts that target multiple Godot versions and take
+advantage of features that are only available on some of those versions:
 
 .. code-block:: csharp
 
@@ -167,7 +160,7 @@ Full list of defines
 * One of ``GODOT_64`` or ``GODOT_32`` is defined depending on if the architecture is 64-bit or 32-bit.
 
 * One of ``GODOT_LINUXBSD``, ``GODOT_WINDOWS``, ``GODOT_OSX``,
-  ``GODOT_ANDROID``, ``GODOT_IOS``, ``GODOT_HTML5``, or ``GODOT_SERVER``
+  ``GODOT_ANDROID``, ``GODOT_IOS``, ``GODOT_WEB``
   depending on the OS. These names may change in the future.
   These are created from the ``get_name()`` method of the
   :ref:`OS <class_OS>` singleton, but not every possible OS
@@ -176,7 +169,7 @@ Full list of defines
 * ``GODOTX``, ``GODOTX_Y``, ``GODOTX_Y_Z``, ``GODOTx_OR_GREATER``,
   ``GODOTX_y_OR_GREATER``, and ``GODOTX_Y_z_OR_GREATER``, where ``X``, ``Y``,
   and ``Z`` are replaced by the current major, minor and patch version of Godot.
-  ``x``, ``y``, and ``z`` are replaced by 0 to to the current version for that
+  ``x``, ``y``, and ``z`` are replaced by all values from 0 to the current version number for that
   component.
 
   .. note::
@@ -196,7 +189,7 @@ When **exporting**, the following may also be defined depending on the export fe
 
 * One of ``GODOT_PC``, ``GODOT_MOBILE``, or ``GODOT_WEB`` depending on the platform type.
 
-* One of ``GODOT_WINDOWS``, ``GODOT_LINUXBSD``, ``GODOT_MACOS``, ``GODOT_UWP``, ``GODOT_HAIKU``, ``GODOT_ANDROID``, ``GODOT_IOS``, or ``GODOT_WEB`` depending on the platform.
+* One of ``GODOT_WINDOWS``, ``GODOT_LINUXBSD``, ``GODOT_MACOS``, ``GODOT_ANDROID``, ``GODOT_IOS``, or ``GODOT_WEB`` depending on the platform.
 
 To see an example project, see the OS testing demo:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/os_test

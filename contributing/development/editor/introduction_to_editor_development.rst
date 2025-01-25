@@ -52,7 +52,7 @@ Some important files in the editor are:
   The 2D editor viewport and related functionality (toolbar at the top, editing modes, overlaid helpers/panels, …).
 - `editor/plugins/node_3d_editor_plugin.cpp <https://github.com/godotengine/godot/blob/master/editor/plugins/node_3d_editor_plugin.cpp>`__:
   The 3D editor viewport and related functionality (toolbar at the top, editing modes, overlaid panels, …).
-- `editor/node_3d_editor_gizmos.cpp <https://github.com/godotengine/godot/blob/master/editor/node_3d_editor_gizmos.cpp>`__:
+- `editor/plugins/node_3d_editor_gizmos.cpp <https://github.com/godotengine/godot/blob/master/editor/plugins/node_3d_editor_gizmos.cpp>`__:
   Where the 3D editor gizmos are defined and drawn.
   This file doesn't have a 2D counterpart as 2D gizmos are drawn by the nodes themselves.
 

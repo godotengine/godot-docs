@@ -28,67 +28,68 @@ Currently, this includes asymmetric key encryption/decryption, signing/verificat
 
  .. code-tab:: gdscript
 
-    extends Node
-    
     var crypto = Crypto.new()
-    var key = CryptoKey.new()
-    var cert = X509Certificate.new()
     
-    func _ready():
-        # Generate new RSA key.
-        key = crypto.generate_rsa(4096)
-        # Generate new self-signed certificate with the given key.
-        cert = crypto.generate_self_signed_certificate(key, "CN=mydomain.com,O=My Game Company,C=IT")
-        # Save key and certificate in the user folder.
-        key.save("user://generated.key")
-        cert.save("user://generated.crt")
-        # Encryption
-        var data = "Some data"
-        var encrypted = crypto.encrypt(key, data.to_utf8_buffer())
-        # Decryption
-        var decrypted = crypto.decrypt(key, encrypted)
-        # Signing
-        var signature = crypto.sign(HashingContext.HASH_SHA256, data.sha256_buffer(), key)
-        # Verifying
-        var verified = crypto.verify(HashingContext.HASH_SHA256, data.sha256_buffer(), signature, key)
-        # Checks
-        assert(verified)
-        assert(data.to_utf8_buffer() == decrypted)
+    # Generate new RSA key.
+    var key = crypto.generate_rsa(4096)
+    
+    # Generate new self-signed certificate with the given key.
+    var cert = crypto.generate_self_signed_certificate(key, "CN=mydomain.com,O=My Game Company,C=IT")
+    
+    # Save key and certificate in the user folder.
+    key.save("user://generated.key")
+    cert.save("user://generated.crt")
+    
+    # Encryption
+    var data = "Some data"
+    var encrypted = crypto.encrypt(key, data.to_utf8_buffer())
+    
+    # Decryption
+    var decrypted = crypto.decrypt(key, encrypted)
+    
+    # Signing
+    var signature = crypto.sign(HashingContext.HASH_SHA256, data.sha256_buffer(), key)
+    
+    # Verifying
+    var verified = crypto.verify(HashingContext.HASH_SHA256, data.sha256_buffer(), signature, key)
+    
+    # Checks
+    assert(verified)
+    assert(data.to_utf8_buffer() == decrypted)
 
  .. code-tab:: csharp
 
     using Godot;
     using System.Diagnostics;
     
-    public partial class MyNode : Node
-    {
-        private Crypto _crypto = new Crypto();
-        private CryptoKey _key = new CryptoKey();
-        private X509Certificate _cert = new X509Certificate();
+    Crypto crypto = new Crypto();
     
-        public override void _Ready()
-        {
-            // Generate new RSA key.
-            _key = _crypto.GenerateRsa(4096);
-            // Generate new self-signed certificate with the given key.
-            _cert = _crypto.GenerateSelfSignedCertificate(_key, "CN=mydomain.com,O=My Game Company,C=IT");
-            // Save key and certificate in the user folder.
-            _key.Save("user://generated.key");
-            _cert.Save("user://generated.crt");
-            // Encryption
-            string data = "Some data";
-            byte[] encrypted = _crypto.Encrypt(_key, data.ToUtf8Buffer());
-            // Decryption
-            byte[] decrypted = _crypto.Decrypt(_key, encrypted);
-            // Signing
-            byte[] signature = _crypto.Sign(HashingContext.HashType.Sha256, Data.Sha256Buffer(), _key);
-            // Verifying
-            bool verified = _crypto.Verify(HashingContext.HashType.Sha256, Data.Sha256Buffer(), signature, _key);
-            // Checks
-            Debug.Assert(verified);
-            Debug.Assert(data.ToUtf8Buffer() == decrypted);
-        }
-    }
+    // Generate new RSA key.
+    CryptoKey key = crypto.GenerateRsa(4096);
+    
+    // Generate new self-signed certificate with the given key.
+    X509Certificate cert = crypto.GenerateSelfSignedCertificate(key, "CN=mydomain.com,O=My Game Company,C=IT");
+    
+    // Save key and certificate in the user folder.
+    key.Save("user://generated.key");
+    cert.Save("user://generated.crt");
+    
+    // Encryption
+    string data = "Some data";
+    byte[] encrypted = crypto.Encrypt(key, data.ToUtf8Buffer());
+    
+    // Decryption
+    byte[] decrypted = crypto.Decrypt(key, encrypted);
+    
+    // Signing
+    byte[] signature = crypto.Sign(HashingContext.HashType.Sha256, Data.Sha256Buffer(), key);
+    
+    // Verifying
+    bool verified = crypto.Verify(HashingContext.HashType.Sha256, Data.Sha256Buffer(), signature, key);
+    
+    // Checks
+    Debug.Assert(verified);
+    Debug.Assert(data.ToUtf8Buffer() == decrypted);
 
 
 
@@ -100,25 +101,25 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                       | :ref:`constant_time_compare<class_Crypto_method_constant_time_compare>` **(** :ref:`PackedByteArray<class_PackedByteArray>` trusted, :ref:`PackedByteArray<class_PackedByteArray>` received **)**                                                                                                                                             |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`decrypt<class_Crypto_method_decrypt>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` ciphertext **)**                                                                                                                                                                                       |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`encrypt<class_Crypto_method_encrypt>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` plaintext **)**                                                                                                                                                                                        |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`generate_random_bytes<class_Crypto_method_generate_random_bytes>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`CryptoKey<class_CryptoKey>`             | :ref:`generate_rsa<class_Crypto_method_generate_rsa>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                                  |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`X509Certificate<class_X509Certificate>` | :ref:`generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`String<class_String>` issuer_name="CN=myserver,O=myorganisation,C=IT", :ref:`String<class_String>` not_before="20140101000000", :ref:`String<class_String>` not_after="20340101000000" **)** |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`hmac_digest<class_Crypto_method_hmac_digest>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` msg **)**                                                                                                                 |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`sign<class_Crypto_method_sign>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                                                                          |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                       | :ref:`verify<class_Crypto_method_verify>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`PackedByteArray<class_PackedByteArray>` signature, :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                             |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`constant_time_compare<class_Crypto_method_constant_time_compare>`\ (\ trusted\: :ref:`PackedByteArray<class_PackedByteArray>`, received\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                       |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`decrypt<class_Crypto_method_decrypt>`\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, ciphertext\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                                 |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`encrypt<class_Crypto_method_encrypt>`\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, plaintext\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                                  |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`generate_random_bytes<class_Crypto_method_generate_random_bytes>`\ (\ size\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                            |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`CryptoKey<class_CryptoKey>`             | :ref:`generate_rsa<class_Crypto_method_generate_rsa>`\ (\ size\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                              |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`X509Certificate<class_X509Certificate>` | :ref:`generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>`\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, issuer_name\: :ref:`String<class_String>` = "CN=myserver,O=myorganisation,C=IT", not_before\: :ref:`String<class_String>` = "20140101000000", not_after\: :ref:`String<class_String>` = "20340101000000"\ ) |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`hmac_digest<class_Crypto_method_hmac_digest>`\ (\ hash_type\: :ref:`HashType<enum_HashingContext_HashType>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`, msg\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                         |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`sign<class_Crypto_method_sign>`\ (\ hash_type\: :ref:`HashType<enum_HashingContext_HashType>`, hash\: :ref:`PackedByteArray<class_PackedByteArray>`, key\: :ref:`CryptoKey<class_CryptoKey>`\ )                                                                                                                                                  |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`verify<class_Crypto_method_verify>`\ (\ hash_type\: :ref:`HashType<enum_HashingContext_HashType>`, hash\: :ref:`PackedByteArray<class_PackedByteArray>`, signature\: :ref:`PackedByteArray<class_PackedByteArray>`, key\: :ref:`CryptoKey<class_CryptoKey>`\ )                                                                                   |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -133,7 +134,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **constant_time_compare** **(** :ref:`PackedByteArray<class_PackedByteArray>` trusted, :ref:`PackedByteArray<class_PackedByteArray>` received **)**
+:ref:`bool<class_bool>` **constant_time_compare**\ (\ trusted\: :ref:`PackedByteArray<class_PackedByteArray>`, received\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Crypto_method_constant_time_compare>`
 
 Compares two :ref:`PackedByteArray<class_PackedByteArray>`\ s for equality without leaking timing information in order to prevent timing attacks.
 
@@ -147,7 +148,7 @@ See `this blog post <https://paragonie.com/blog/2015/11/preventing-timing-attack
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **decrypt** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` ciphertext **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **decrypt**\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, ciphertext\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Crypto_method_decrypt>`
 
 Decrypt the given ``ciphertext`` with the provided private ``key``.
 
@@ -161,7 +162,7 @@ Decrypt the given ``ciphertext`` with the provided private ``key``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **encrypt** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` plaintext **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **encrypt**\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, plaintext\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Crypto_method_encrypt>`
 
 Encrypt the given ``plaintext`` with the provided public ``key``.
 
@@ -175,7 +176,7 @@ Encrypt the given ``plaintext`` with the provided public ``key``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **generate_random_bytes** **(** :ref:`int<class_int>` size **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **generate_random_bytes**\ (\ size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Crypto_method_generate_random_bytes>`
 
 Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically secure random bytes with given ``size``.
 
@@ -187,7 +188,7 @@ Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically s
 
 .. rst-class:: classref-method
 
-:ref:`CryptoKey<class_CryptoKey>` **generate_rsa** **(** :ref:`int<class_int>` size **)**
+:ref:`CryptoKey<class_CryptoKey>` **generate_rsa**\ (\ size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Crypto_method_generate_rsa>`
 
 Generates an RSA :ref:`CryptoKey<class_CryptoKey>` that can be used for creating self-signed certificates and passed to :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>`.
 
@@ -199,11 +200,11 @@ Generates an RSA :ref:`CryptoKey<class_CryptoKey>` that can be used for creating
 
 .. rst-class:: classref-method
 
-:ref:`X509Certificate<class_X509Certificate>` **generate_self_signed_certificate** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`String<class_String>` issuer_name="CN=myserver,O=myorganisation,C=IT", :ref:`String<class_String>` not_before="20140101000000", :ref:`String<class_String>` not_after="20340101000000" **)**
+:ref:`X509Certificate<class_X509Certificate>` **generate_self_signed_certificate**\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, issuer_name\: :ref:`String<class_String>` = "CN=myserver,O=myorganisation,C=IT", not_before\: :ref:`String<class_String>` = "20140101000000", not_after\: :ref:`String<class_String>` = "20340101000000"\ ) :ref:`🔗<class_Crypto_method_generate_self_signed_certificate>`
 
 Generates a self-signed :ref:`X509Certificate<class_X509Certificate>` from the given :ref:`CryptoKey<class_CryptoKey>` and ``issuer_name``. The certificate validity will be defined by ``not_before`` and ``not_after`` (first valid date and last valid date). The ``issuer_name`` must contain at least "CN=" (common name, i.e. the domain name), "O=" (organization, i.e. your company name), "C=" (country, i.e. 2 lettered ISO-3166 code of the country the organization is based in).
 
-A small example to generate an RSA key and a X509 self-signed certificate.
+A small example to generate an RSA key and an X509 self-signed certificate.
 
 
 .. tabs::
@@ -234,7 +235,7 @@ A small example to generate an RSA key and a X509 self-signed certificate.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **hmac_digest** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` msg **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **hmac_digest**\ (\ hash_type\: :ref:`HashType<enum_HashingContext_HashType>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`, msg\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Crypto_method_hmac_digest>`
 
 Generates an `HMAC <https://en.wikipedia.org/wiki/HMAC>`__ digest of ``msg`` using ``key``. The ``hash_type`` parameter is the hashing algorithm that is used for the inner and outer hashes.
 
@@ -248,7 +249,7 @@ Currently, only :ref:`HashingContext.HASH_SHA256<class_HashingContext_constant_H
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **sign** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`CryptoKey<class_CryptoKey>` key **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **sign**\ (\ hash_type\: :ref:`HashType<enum_HashingContext_HashType>`, hash\: :ref:`PackedByteArray<class_PackedByteArray>`, key\: :ref:`CryptoKey<class_CryptoKey>`\ ) :ref:`🔗<class_Crypto_method_sign>`
 
 Sign a given ``hash`` of type ``hash_type`` with the provided private ``key``.
 
@@ -260,7 +261,7 @@ Sign a given ``hash`` of type ``hash_type`` with the provided private ``key``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **verify** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`PackedByteArray<class_PackedByteArray>` signature, :ref:`CryptoKey<class_CryptoKey>` key **)**
+:ref:`bool<class_bool>` **verify**\ (\ hash_type\: :ref:`HashType<enum_HashingContext_HashType>`, hash\: :ref:`PackedByteArray<class_PackedByteArray>`, signature\: :ref:`PackedByteArray<class_PackedByteArray>`, key\: :ref:`CryptoKey<class_CryptoKey>`\ ) :ref:`🔗<class_Crypto_method_verify>`
 
 Verify that a given ``signature`` for ``hash`` of type ``hash_type`` against the provided public ``key``.
 
@@ -271,3 +272,4 @@ Verify that a given ``signature`` for ``hash`` of type ``hash_type`` against the
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

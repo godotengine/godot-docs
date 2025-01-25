@@ -30,7 +30,7 @@ given velocity:
 
     extends Area2D
 
-    var velocity = Vector2.ZERO
+    var velocity = Vector2.RIGHT
 
     func _physics_process(delta):
         position += velocity * delta
@@ -41,7 +41,7 @@ given velocity:
 
     public partial class Bullet : Area2D
     {
-        public Vector2 Velocity { get; set; } = Vector2.Zero;
+        public Vector2 Velocity { get; set; } = Vector2.Right;
 
         public override void _PhysicsProcess(double delta)
         {
@@ -113,7 +113,7 @@ Here is the code for the player using signals to emit the bullet:
         [Signal]
         public delegate void ShootEventHandler(PackedScene bullet, float direction, Vector2 location);
 
-        private PackedScene _bullet = GD.Load<PackedScene>("res://bullet.tscn");
+        private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
         public override void _Input(InputEvent @event)
         {

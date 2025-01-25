@@ -3,6 +3,11 @@
 Reflection probes
 =================
 
+.. note::
+
+    Reflection probes are only supported in the Forward+ and Mobile renderers,
+    not the Compatibility renderer.
+
 As stated in the :ref:`doc_standard_material_3d`, objects can show reflected and/or
 diffuse light. Reflection probes are used as a source of reflected *and* ambient
 light for objects inside their area of influence. They can be used to provide
@@ -37,6 +42,13 @@ Visual comparison
    :alt: Reflection probe enabled.
 
    Reflection probe enabled.
+
+
+.. figure:: img/gi_lightmap_gi_indirect_only_reflection_probe.webp
+   :align: center
+   :alt: Reflection probe enabled.
+
+   Reflection probe enabled with LightmapGI used at the same time. The lightmap appears in the reflection.
 
 By combining reflection probes with screen-space reflections, you can get the
 best of both worlds: high-quality reflections for general room structure (that
@@ -166,3 +178,23 @@ To make several ReflectionProbes blend with each other, you need to have part of
 each ReflectionProbe overlap each other's area. The extents should only overlap
 as little possible with other reflection probes to improve rendering performance
 (typically a few units in 3D space).
+
+Limitations
+-----------
+
+When using the Forward+ renderer, Godot uses a *clustering* approach for
+reflection probe rendering. As many reflection probes as desired can be added (as long as
+performance allows). However, there's still a default limit of 512 *clustered
+elements* that can be present in the current camera view. A clustered element is
+an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
+:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
+:ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
+in **Project Settings > Rendering > Limits > Cluster Builder**.
+
+When using the Mobile renderer, only 8 reflection probes can be applied on each
+individual Mesh *resource*. If there are more reflection probes affecting a single mesh,
+not all of them will be rendered on the mesh.
+
+Similarly, when using the Compatibility renderer, up to 2 reflection probes can
+be applied per mesh. If more than 2 reflection probes affect a single mesh,
+additional probes will not be rendered.

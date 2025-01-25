@@ -39,7 +39,7 @@ you should remove the instance you have added by calling
 ``remove_inspector_plugin()``.
 
 .. note:: Here, you are loading a script and not a packed scene. Therefore you
-          should use ``new()`` instead of ``instance()``.
+          should use ``new()`` instead of ``instantiate()``.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -98,12 +98,12 @@ return ``true`` if this plugin should handle the object or its properties.
 .. note:: This includes any :ref:`class_Resource` attached to the object.
 
 You can implement four other methods to add controls to the inspector at
-specific positions. The ``parse_begin()`` and ``parse_end()`` methods are called
+specific positions. The ``_parse_begin()`` and ``_parse_end()`` methods are called
 only once at the beginning and the end of parsing for each object, respectively.
 They can add controls at the top or bottom of the inspector layout by calling
 ``add_custom_control()``.
 
-As the editor parses the object, it calls the ``parse_category()`` and
+As the editor parses the object, it calls the ``_parse_category()`` and
 ``_parse_property()`` methods. There, in addition to ``add_custom_control()``,
 you can call both ``add_property_editor()`` and
 ``add_property_editor_for_multiple_properties()``. Use these last two methods to
@@ -123,12 +123,12 @@ specifically add :ref:`class_EditorProperty`-based controls.
         return true
 
 
-    func _parse_property(object, type, path, hint, hint_text, usage):
+    func _parse_property(object, type, name, hint_type, hint_string, usage_flags, wide):
         # We handle properties of type integer.
         if type == TYPE_INT:
             # Create an instance of the custom property editor and register
             # it to a specific property path.
-            add_property_editor(path, RandomIntEditor.new())
+            add_property_editor(name, RandomIntEditor.new())
             # Inform the editor to remove the default property editor for
             # this property type.
             return true
@@ -192,7 +192,7 @@ You can display your custom widget in two ways. Use just the default ``add_child
 method to display it to the right of the property name, and use ``add_child()``
 followed by ``set_bottom_editor()`` to position it below the name.
 
-.. FIXME: The second tab has the C# lexer for hightlighting disabled for now, as the provided code causes errors.
+.. FIXME: The second tab has the C# lexer for highlighting disabled for now, as the provided code causes errors.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -21,6 +21,8 @@ The RID :ref:`Variant<class_Variant>` type is used to access a low-level resourc
 
 A low-level resource may correspond to a high-level :ref:`Resource<class_Resource>`, such as :ref:`Texture<class_Texture>` or :ref:`Mesh<class_Mesh>`.
 
+\ **Note:** RIDs are only useful during the current session. It won't correspond to a similar resource if sent over a network, or loaded from a file at a later time.
+
 .. note::
 
 	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
@@ -33,11 +35,11 @@ Constructors
 .. table::
    :widths: auto
 
-   +-----------------------+------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>` | :ref:`RID<class_RID_constructor_RID>` **(** **)**                            |
-   +-----------------------+------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>` | :ref:`RID<class_RID_constructor_RID>` **(** :ref:`RID<class_RID>` from **)** |
-   +-----------------------+------------------------------------------------------------------------------+
+   +-----------------------+---------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`RID<class_RID_constructor_RID>`\ (\ )                               |
+   +-----------------------+---------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`RID<class_RID_constructor_RID>`\ (\ from\: :ref:`RID<class_RID>`\ ) |
+   +-----------------------+---------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -47,11 +49,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`get_id<class_RID_method_get_id>` **(** **)** |const|     |
-   +-------------------------+----------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_valid<class_RID_method_is_valid>` **(** **)** |const| |
-   +-------------------------+----------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_id<class_RID_method_get_id>`\ (\ ) |const|     |
+   +-------------------------+----------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_valid<class_RID_method_is_valid>`\ (\ ) |const| |
+   +-------------------------+----------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -61,19 +63,19 @@ Operators
 .. table::
    :widths: auto
 
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator !=<class_RID_operator_neq_RID>` **(** :ref:`RID<class_RID>` right **)**  |
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator \<<class_RID_operator_lt_RID>` **(** :ref:`RID<class_RID>` right **)**   |
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator \<=<class_RID_operator_lte_RID>` **(** :ref:`RID<class_RID>` right **)** |
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator ==<class_RID_operator_eq_RID>` **(** :ref:`RID<class_RID>` right **)**   |
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator ><class_RID_operator_gt_RID>` **(** :ref:`RID<class_RID>` right **)**    |
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator >=<class_RID_operator_gte_RID>` **(** :ref:`RID<class_RID>` right **)**  |
-   +-------------------------+-----------------------------------------------------------------------------------------+
+   +-------------------------+--------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_RID_operator_neq_RID>`\ (\ right\: :ref:`RID<class_RID>`\ )  |
+   +-------------------------+--------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator \<<class_RID_operator_lt_RID>`\ (\ right\: :ref:`RID<class_RID>`\ )   |
+   +-------------------------+--------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator \<=<class_RID_operator_lte_RID>`\ (\ right\: :ref:`RID<class_RID>`\ ) |
+   +-------------------------+--------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_RID_operator_eq_RID>`\ (\ right\: :ref:`RID<class_RID>`\ )   |
+   +-------------------------+--------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ><class_RID_operator_gt_RID>`\ (\ right\: :ref:`RID<class_RID>`\ )    |
+   +-------------------------+--------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator >=<class_RID_operator_gte_RID>`\ (\ right\: :ref:`RID<class_RID>`\ )  |
+   +-------------------------+--------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -88,7 +90,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`RID<class_RID>` **RID** **(** **)**
+:ref:`RID<class_RID>` **RID**\ (\ ) :ref:`🔗<class_RID_constructor_RID>`
 
 Constructs an empty **RID** with the invalid ID ``0``.
 
@@ -98,7 +100,7 @@ Constructs an empty **RID** with the invalid ID ``0``.
 
 .. rst-class:: classref-constructor
 
-:ref:`RID<class_RID>` **RID** **(** :ref:`RID<class_RID>` from **)**
+:ref:`RID<class_RID>` **RID**\ (\ from\: :ref:`RID<class_RID>`\ )
 
 Constructs a **RID** as a copy of the given **RID**.
 
@@ -115,7 +117,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_id** **(** **)** |const|
+:ref:`int<class_int>` **get_id**\ (\ ) |const| :ref:`🔗<class_RID_method_get_id>`
 
 Returns the ID of the referenced low-level resource.
 
@@ -127,7 +129,7 @@ Returns the ID of the referenced low-level resource.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid** **(** **)** |const|
+:ref:`bool<class_bool>` **is_valid**\ (\ ) |const| :ref:`🔗<class_RID_method_is_valid>`
 
 Returns ``true`` if the **RID** is not ``0``.
 
@@ -144,7 +146,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=** **(** :ref:`RID<class_RID>` right **)**
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_neq_RID>`
 
 Returns ``true`` if the **RID**\ s are not equal.
 
@@ -156,7 +158,7 @@ Returns ``true`` if the **RID**\ s are not equal.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <** **(** :ref:`RID<class_RID>` right **)**
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_lt_RID>`
 
 Returns ``true`` if the **RID**'s ID is less than ``right``'s ID.
 
@@ -168,7 +170,7 @@ Returns ``true`` if the **RID**'s ID is less than ``right``'s ID.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <=** **(** :ref:`RID<class_RID>` right **)**
+:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_lte_RID>`
 
 Returns ``true`` if the **RID**'s ID is less than or equal to ``right``'s ID.
 
@@ -180,7 +182,7 @@ Returns ``true`` if the **RID**'s ID is less than or equal to ``right``'s ID.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==** **(** :ref:`RID<class_RID>` right **)**
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_eq_RID>`
 
 Returns ``true`` if both **RID**\ s are equal, which means they both refer to the same low-level resource.
 
@@ -192,7 +194,7 @@ Returns ``true`` if both **RID**\ s are equal, which means they both refer to th
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >** **(** :ref:`RID<class_RID>` right **)**
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_gt_RID>`
 
 Returns ``true`` if the **RID**'s ID is greater than ``right``'s ID.
 
@@ -204,7 +206,7 @@ Returns ``true`` if the **RID**'s ID is greater than ``right``'s ID.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >=** **(** :ref:`RID<class_RID>` right **)**
+:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_gte_RID>`
 
 Returns ``true`` if the **RID**'s ID is greater than or equal to ``right``'s ID.
 
@@ -215,3 +217,4 @@ Returns ``true`` if the **RID**'s ID is greater than or equal to ``right``'s ID.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -22,33 +22,33 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                | :ref:`add_property<class_SceneReplicationConfig_method_add_property>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`int<class_int>` index=-1 **)**                                                                             |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath[]<class_NodePath>`                                   | :ref:`get_properties<class_SceneReplicationConfig_method_get_properties>` **(** **)** |const|                                                                                                                                      |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                             | :ref:`has_property<class_SceneReplicationConfig_method_has_property>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                     |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                               | :ref:`property_get_index<class_SceneReplicationConfig_method_property_get_index>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                         |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>` | :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` **(** :ref:`NodePath<class_NodePath>` path **)**                                                                           |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                             | :ref:`property_get_spawn<class_SceneReplicationConfig_method_property_get_spawn>` **(** :ref:`NodePath<class_NodePath>` path **)**                                                                                                 |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                             | :ref:`property_get_sync<class_SceneReplicationConfig_method_property_get_sync>` **(** :ref:`NodePath<class_NodePath>` path **)**                                                                                                   |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                             | :ref:`property_get_watch<class_SceneReplicationConfig_method_property_get_watch>` **(** :ref:`NodePath<class_NodePath>` path **)**                                                                                                 |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                | :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>` mode **)** |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                | :ref:`property_set_spawn<class_SceneReplicationConfig_method_property_set_spawn>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**                                                                |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                | :ref:`property_set_sync<class_SceneReplicationConfig_method_property_set_sync>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**                                                                  |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                | :ref:`property_set_watch<class_SceneReplicationConfig_method_property_set_watch>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**                                                                |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                | :ref:`remove_property<class_SceneReplicationConfig_method_remove_property>` **(** :ref:`NodePath<class_NodePath>` path **)**                                                                                                       |
-   +---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                              | :ref:`add_property<class_SceneReplicationConfig_method_add_property>`\ (\ path\: :ref:`NodePath<class_NodePath>`, index\: :ref:`int<class_int>` = -1\ )                                                                           |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]        | :ref:`get_properties<class_SceneReplicationConfig_method_get_properties>`\ (\ ) |const|                                                                                                                                           |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`has_property<class_SceneReplicationConfig_method_has_property>`\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) |const|                                                                                                       |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                               | :ref:`property_get_index<class_SceneReplicationConfig_method_property_get_index>`\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) |const|                                                                                           |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>` | :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>`\ (\ path\: :ref:`NodePath<class_NodePath>`\ )                                                                             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`property_get_spawn<class_SceneReplicationConfig_method_property_get_spawn>`\ (\ path\: :ref:`NodePath<class_NodePath>`\ )                                                                                                   |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`property_get_sync<class_SceneReplicationConfig_method_property_get_sync>`\ (\ path\: :ref:`NodePath<class_NodePath>`\ )                                                                                                     |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`property_get_watch<class_SceneReplicationConfig_method_property_get_watch>`\ (\ path\: :ref:`NodePath<class_NodePath>`\ )                                                                                                   |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                              | :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>`\ (\ path\: :ref:`NodePath<class_NodePath>`, mode\: :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>`\ ) |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                              | :ref:`property_set_spawn<class_SceneReplicationConfig_method_property_set_spawn>`\ (\ path\: :ref:`NodePath<class_NodePath>`, enabled\: :ref:`bool<class_bool>`\ )                                                                |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                              | :ref:`property_set_sync<class_SceneReplicationConfig_method_property_set_sync>`\ (\ path\: :ref:`NodePath<class_NodePath>`, enabled\: :ref:`bool<class_bool>`\ )                                                                  |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                              | :ref:`property_set_watch<class_SceneReplicationConfig_method_property_set_watch>`\ (\ path\: :ref:`NodePath<class_NodePath>`, enabled\: :ref:`bool<class_bool>`\ )                                                                |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                              | :ref:`remove_property<class_SceneReplicationConfig_method_remove_property>`\ (\ path\: :ref:`NodePath<class_NodePath>`\ )                                                                                                         |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -63,7 +63,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ReplicationMode**:
+enum **ReplicationMode**: :ref:`🔗<enum_SceneReplicationConfig_ReplicationMode>`
 
 .. _class_SceneReplicationConfig_constant_REPLICATION_MODE_NEVER:
 
@@ -102,7 +102,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_property** **(** :ref:`NodePath<class_NodePath>` path, :ref:`int<class_int>` index=-1 **)**
+|void| **add_property**\ (\ path\: :ref:`NodePath<class_NodePath>`, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_SceneReplicationConfig_method_add_property>`
 
 Adds the property identified by the given ``path`` to the list of the properties being synchronized, optionally passing an ``index``.
 
@@ -116,7 +116,7 @@ Adds the property identified by the given ``path`` to the list of the properties
 
 .. rst-class:: classref-method
 
-:ref:`NodePath[]<class_NodePath>` **get_properties** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **get_properties**\ (\ ) |const| :ref:`🔗<class_SceneReplicationConfig_method_get_properties>`
 
 Returns a list of synchronized property :ref:`NodePath<class_NodePath>`\ s.
 
@@ -128,9 +128,9 @@ Returns a list of synchronized property :ref:`NodePath<class_NodePath>`\ s.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_property** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
+:ref:`bool<class_bool>` **has_property**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) |const| :ref:`🔗<class_SceneReplicationConfig_method_has_property>`
 
-Returns whether the given ``path`` is configured for synchronization.
+Returns ``true`` if the given ``path`` is configured for synchronization.
 
 .. rst-class:: classref-item-separator
 
@@ -140,7 +140,7 @@ Returns whether the given ``path`` is configured for synchronization.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **property_get_index** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
+:ref:`int<class_int>` **property_get_index**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) |const| :ref:`🔗<class_SceneReplicationConfig_method_property_get_index>`
 
 Finds the index of the given ``path``.
 
@@ -152,7 +152,7 @@ Finds the index of the given ``path``.
 
 .. rst-class:: classref-method
 
-:ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>` **property_get_replication_mode** **(** :ref:`NodePath<class_NodePath>` path **)**
+:ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>` **property_get_replication_mode**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_get_replication_mode>`
 
 Returns the replication mode for the property identified by the given ``path``. See :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>`.
 
@@ -164,9 +164,9 @@ Returns the replication mode for the property identified by the given ``path``. 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **property_get_spawn** **(** :ref:`NodePath<class_NodePath>` path **)**
+:ref:`bool<class_bool>` **property_get_spawn**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_get_spawn>`
 
-Returns whether the property identified by the given ``path`` is configured to be synchronized on spawn.
+Returns ``true`` if the property identified by the given ``path`` is configured to be synchronized on spawn.
 
 .. rst-class:: classref-item-separator
 
@@ -176,11 +176,11 @@ Returns whether the property identified by the given ``path`` is configured to b
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **property_get_sync** **(** :ref:`NodePath<class_NodePath>` path **)**
+:ref:`bool<class_bool>` **property_get_sync**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_get_sync>`
 
-Returns whether the property identified by the given ``path`` is configured to be synchronized on process.
+**Deprecated:** Use :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` instead.
 
-\ *Deprecated.* Use :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` instead.
+Returns ``true`` if the property identified by the given ``path`` is configured to be synchronized on process.
 
 .. rst-class:: classref-item-separator
 
@@ -190,11 +190,11 @@ Returns whether the property identified by the given ``path`` is configured to b
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **property_get_watch** **(** :ref:`NodePath<class_NodePath>` path **)**
+:ref:`bool<class_bool>` **property_get_watch**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_get_watch>`
 
-Returns whether the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
+**Deprecated:** Use :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` instead.
 
-\ *Deprecated.* Use :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` instead.
+Returns ``true`` if the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
 
 .. rst-class:: classref-item-separator
 
@@ -204,7 +204,7 @@ Returns whether the property identified by the given ``path`` is configured to b
 
 .. rst-class:: classref-method
 
-void **property_set_replication_mode** **(** :ref:`NodePath<class_NodePath>` path, :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>` mode **)**
+|void| **property_set_replication_mode**\ (\ path\: :ref:`NodePath<class_NodePath>`, mode\: :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_set_replication_mode>`
 
 Sets the synchronization mode for the property identified by the given ``path``. See :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>`.
 
@@ -216,7 +216,7 @@ Sets the synchronization mode for the property identified by the given ``path``.
 
 .. rst-class:: classref-method
 
-void **property_set_spawn** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**
+|void| **property_set_spawn**\ (\ path\: :ref:`NodePath<class_NodePath>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_set_spawn>`
 
 Sets whether the property identified by the given ``path`` is configured to be synchronized on spawn.
 
@@ -228,11 +228,11 @@ Sets whether the property identified by the given ``path`` is configured to be s
 
 .. rst-class:: classref-method
 
-void **property_set_sync** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**
+|void| **property_set_sync**\ (\ path\: :ref:`NodePath<class_NodePath>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_set_sync>`
+
+**Deprecated:** Use :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` with :ref:`REPLICATION_MODE_ALWAYS<class_SceneReplicationConfig_constant_REPLICATION_MODE_ALWAYS>` instead.
 
 Sets whether the property identified by the given ``path`` is configured to be synchronized on process.
-
-\ *Deprecated.* Use :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` with :ref:`REPLICATION_MODE_ALWAYS<class_SceneReplicationConfig_constant_REPLICATION_MODE_ALWAYS>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -242,11 +242,11 @@ Sets whether the property identified by the given ``path`` is configured to be s
 
 .. rst-class:: classref-method
 
-void **property_set_watch** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**
+|void| **property_set_watch**\ (\ path\: :ref:`NodePath<class_NodePath>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_set_watch>`
+
+**Deprecated:** Use :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` with :ref:`REPLICATION_MODE_ON_CHANGE<class_SceneReplicationConfig_constant_REPLICATION_MODE_ON_CHANGE>` instead.
 
 Sets whether the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
-
-\ *Deprecated.* Use :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` with :ref:`REPLICATION_MODE_ON_CHANGE<class_SceneReplicationConfig_constant_REPLICATION_MODE_ON_CHANGE>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -256,7 +256,7 @@ Sets whether the property identified by the given ``path`` is configured to be r
 
 .. rst-class:: classref-method
 
-void **remove_property** **(** :ref:`NodePath<class_NodePath>` path **)**
+|void| **remove_property**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_remove_property>`
 
 Removes the property identified by the given ``path`` from the configuration.
 
@@ -267,3 +267,4 @@ Removes the property identified by the given ``path`` from the configuration.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

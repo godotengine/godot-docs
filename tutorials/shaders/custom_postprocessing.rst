@@ -7,8 +7,9 @@ Introduction
 ------------
 
 Godot provides many post-processing effects out of the box, including Bloom,
-DOF, and SSAO. However, advanced use cases may require custom effects. This
-article explains how to write your own custom effects.
+DOF, and SSAO, which are described in :ref:`doc_environment_and_post_processing`.
+However, advanced use cases may require custom effects. This article explains how
+to write your own custom effects.
 
 The easiest way to implement a custom post-processing shader is to use Godot's
 built-in ability to read from the screen texture. If you're not familiar with
@@ -39,8 +40,9 @@ Your scene tree will look something like this:
 
     As of the time of writing, Godot does not support rendering to multiple
     buffers at the same time. Your post-processing shader will not have access
-    to normals or other render passes. You only have access to the rendered
-    frame.
+    to other render passes and buffers not exposed by Godot (such as depth or
+    normal/roughness). You only have access to the rendered frame and buffers
+    exposed by Godot as samplers.
 
 For this demo, we will use this :ref:`Sprite <class_Sprite2D>` of a sheep.
 
@@ -48,7 +50,7 @@ For this demo, we will use this :ref:`Sprite <class_Sprite2D>` of a sheep.
 
 Assign a new :ref:`Shader <class_Shader>` to the ``ColorRect``'s
 ``ShaderMaterial``. You can access the frame's texture and UV with a
-``sampler2D`` using ``hint_screen_texture`` and the built in ``SCREEN_UV``
+``sampler2D`` using ``hint_screen_texture`` and the built-in ``SCREEN_UV``
 uniforms.
 
 Copy the following code to your shader. The code below is a hex pixelization
@@ -59,6 +61,8 @@ shader by `arlez80 <https://bitbucket.org/arlez80/hex-mosaic/src/master/>`_,
     shader_type canvas_item;
 
     uniform vec2 size = vec2(32.0, 28.0);
+    // If you intend to read from mipmaps with `textureLod()` LOD values greater than `0.0`,
+    // use `filter_nearest_mipmap` instead. This shader doesn't require it.
     uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
     void fragment() {

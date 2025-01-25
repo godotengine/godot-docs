@@ -50,12 +50,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **varying_name** = ``"[None]"``
+:ref:`String<class_String>` **varying_name** = ``"[None]"`` :ref:`🔗<class_VisualShaderNodeVarying_property_varying_name>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_varying_name** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_varying_name** **(** **)**
+- |void| **set_varying_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_varying_name**\ (\ )
 
 Name of the variable. Must be unique.
 
@@ -67,12 +67,12 @@ Name of the variable. Must be unique.
 
 .. rst-class:: classref-property
 
-:ref:`VaryingType<enum_VisualShader_VaryingType>` **varying_type** = ``0``
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **varying_type** = ``0`` :ref:`🔗<class_VisualShaderNodeVarying_property_varying_type>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_varying_type** **(** :ref:`VaryingType<enum_VisualShader_VaryingType>` value **)**
-- :ref:`VaryingType<enum_VisualShader_VaryingType>` **get_varying_type** **(** **)**
+- |void| **set_varying_type**\ (\ value\: :ref:`VaryingType<enum_VisualShader_VaryingType>`\ )
+- :ref:`VaryingType<enum_VisualShader_VaryingType>` **get_varying_type**\ (\ )
 
 Type of the variable. Determines where the variable can be accessed.
 
@@ -83,3 +83,4 @@ Type of the variable. Determines where the variable can be accessed.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

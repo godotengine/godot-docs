@@ -1,74 +1,83 @@
-:article_outdated: True
-
 .. _doc_ssl_certificates:
 
-SSL certificates
-================
+TLS/SSL certificates
+====================
 
 Introduction
 ------------
 
-It is often desired to use SSL connections for communications to avoid
-"man in the middle" attacks. Godot has a connection wrapper,
-:ref:`StreamPeerTLS <class_StreamPeerTLS>`,
-which can take a regular connection and add security around it. The
-:ref:`HTTPClient <class_HTTPClient>`
-class also supports HTTPS by using this same wrapper.
+It is often desired to use :abbr:`TLS (Transport Layer Security)` connections (also
+known as :abbr:`SSL (Secure Sockets Layer)` connections) for communications
+to avoid "man in the middle" attacks. Godot has a connection wrapper,
+:ref:`StreamPeerTLS <class_StreamPeerTLS>`, which can take a regular connection
+and add security around it. The :ref:`HTTPClient <class_HTTPClient>` and
+:ref:`HTTPRequest <class_HTTPRequest>` classes also support HTTPS using
+this same wrapper.
 
-Godot includes SSL certificates from Mozilla, but you can provide your own
-with a .crt file in the project settings:
+Godot will try to use the TLS certificate bundle provided by the operating system,
+but also includes the
+`TLS certificate bundle from Mozilla <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__
+as a fallback.
 
-.. image:: img/ssl_certs.png
+You can alternatively force your own certificate bundle in the Project Settings:
 
+.. figure:: img/tls_certificates_project_setting.webp
+   :align: center
+   :alt: Setting the TLS certificate bundle override project setting
+
+   Setting the TLS certificate bundle override project setting
+
+When set, this file *overrides* the operating system provided bundle by default.
 This file should contain any number of public certificates in
 `PEM format <https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail>`__.
 
-Of course, remember to add .crt as filter so the exporter recognizes
-this when exporting your project.
-
-.. image:: img/add_crt.png
-
 There are two ways to obtain certificates:
 
-Approach 1: self signed cert
-----------------------------
+Obtain a certificate from a certificate authority
+-------------------------------------------------
 
-The first approach is the simplest: generate a private and public
-key pair and add the public key (in PEM format) to the .crt file.
-The private key should go to your server.
+The main approach to getting a certificate is to use a certificate authority
+(CA) such as `Let's Encrypt <https://letsencrypt.org/>`__. This is a more
+cumbersome process than a self-signed certificate, but it's more "official" and
+ensures your identity is clearly represented. The resulting certificate is also
+trusted by applications such as web browsers, unlike a self-signed certificate
+which requires additional configuration on the client side before it's
+considered trusted.
 
-OpenSSL has `some
-documentation <https://raw.githubusercontent.com/openssl/openssl/master/doc/HOWTO/keys.txt>`__ about
-this. This approach also **does not require domain validation** nor
-requires you to spend a considerable amount of money in purchasing
-certificates from a CA.
+These certificates do not require any configuration on the client to work, since
+Godot already bundles the Mozilla certificate bundle in the editor and exported
+projects.
 
-Approach 2: CA cert
--------------------
+Generate a self-signed certificate
+----------------------------------
 
-The second approach consists of using a certificate authority (CA)
-such as Verisign, Geotrust, etc. This is a more cumbersome process,
-but it's more "official" and ensures your identity is clearly
-represented.
+For most use cases, it's recommended to go through certificate authority as the
+process is free with certificate authorities such as Let's Encrypt. However, if
+using a certificate authority is not an option, then you can generate a
+self-signed certificate and tell the client to consider your self-signed
+certificate as trusted.
 
-Unless you are working with large companies or corporations, or need
-to connect to someone else's servers (i.e., connecting to Google or some
-other REST API provider via HTTPS), this method is not as useful.
+To create a self-signed certificate, generate a private and public key pair and
+add the public key (in PEM format) to the CRT file specified in the Project
+Settings.
 
-Also, when using a CA issued cert, **you must enable domain
-validation**, to ensure the domain you are connecting to is the one
-intended, otherwise any website can issue any certificate in the same CA
-and it will work.
+.. warning::
 
-If you are using Linux, you can use the supplied certs file, generally
-located in:
+    The private key should **only** go to your server. The client must not have
+    access to it: otherwise, the security of the certificate will be
+    compromised.
 
-.. code-block:: none
+.. warning::
 
-    /etc/ssl/certs/ca-certificates.crt
+    When specifying a self-signed certificate as TLS bundle in the project
+    settings, normal domain name validation is enforced via the certificate
+    :abbr:`CN (common name)` and alternative names. See
+    :ref:`TLSOptions <class_TLSOptions>` to customize domain name validation.
 
-This file allows HTTPS connections to virtually any website (i.e.,
-Google, Microsoft, etc.).
+For development purposes Godot can generate self-signed certificates via
+:ref:`Crypto.generate_self_signed_certificate
+<class_Crypto_method_generate_self_signed_certificate>`.
 
-Or pick any of the more specific certificates there if you are
-connecting to a specific one.
+Alternatively, OpenSSL has some documentation about `generating keys
+<https://raw.githubusercontent.com/openssl/openssl/master/doc/HOWTO/keys.txt>`__
+and `certificates <https://raw.githubusercontent.com/openssl/openssl/master/doc/HOWTO/certificates.txt>`__.

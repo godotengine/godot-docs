@@ -50,12 +50,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AABB<class_AABB>` **aabb** = ``AABB(0, 0, 0, 0, 0, 0)``
+:ref:`AABB<class_AABB>` **aabb** = ``AABB(0, 0, 0, 0, 0, 0)`` :ref:`🔗<class_PlaceholderMesh_property_aabb>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_aabb** **(** :ref:`AABB<class_AABB>` value **)**
-- :ref:`AABB<class_AABB>` **get_aabb** **(** **)**
+- |void| **set_aabb**\ (\ value\: :ref:`AABB<class_AABB>`\ )
+- :ref:`AABB<class_AABB>` **get_aabb**\ (\ )
 
 The smallest :ref:`AABB<class_AABB>` enclosing this mesh in local space.
 
@@ -66,3 +66,4 @@ The smallest :ref:`AABB<class_AABB>` enclosing this mesh in local space.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

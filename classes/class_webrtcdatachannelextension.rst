@@ -24,43 +24,43 @@ Methods
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                     | :ref:`_close<class_WebRTCDataChannelExtension_method__close>` **(** **)** |virtual|                                                                                   |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                    | :ref:`_get_available_packet_count<class_WebRTCDataChannelExtension_method__get_available_packet_count>` **(** **)** |virtual| |const|                                 |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                    | :ref:`_get_buffered_amount<class_WebRTCDataChannelExtension_method__get_buffered_amount>` **(** **)** |virtual| |const|                                               |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                    | :ref:`_get_id<class_WebRTCDataChannelExtension_method__get_id>` **(** **)** |virtual| |const|                                                                         |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                              | :ref:`_get_label<class_WebRTCDataChannelExtension_method__get_label>` **(** **)** |virtual| |const|                                                                   |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                    | :ref:`_get_max_packet_life_time<class_WebRTCDataChannelExtension_method__get_max_packet_life_time>` **(** **)** |virtual| |const|                                     |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                    | :ref:`_get_max_packet_size<class_WebRTCDataChannelExtension_method__get_max_packet_size>` **(** **)** |virtual| |const|                                               |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                    | :ref:`_get_max_retransmits<class_WebRTCDataChannelExtension_method__get_max_retransmits>` **(** **)** |virtual| |const|                                               |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                    | :ref:`_get_packet<class_WebRTCDataChannelExtension_method__get_packet>` **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|                       |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                              | :ref:`_get_protocol<class_WebRTCDataChannelExtension_method__get_protocol>` **(** **)** |virtual| |const|                                                             |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>` | :ref:`_get_ready_state<class_WebRTCDataChannelExtension_method__get_ready_state>` **(** **)** |virtual| |const|                                                       |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>`       | :ref:`_get_write_mode<class_WebRTCDataChannelExtension_method__get_write_mode>` **(** **)** |virtual| |const|                                                         |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                  | :ref:`_is_negotiated<class_WebRTCDataChannelExtension_method__is_negotiated>` **(** **)** |virtual| |const|                                                           |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                  | :ref:`_is_ordered<class_WebRTCDataChannelExtension_method__is_ordered>` **(** **)** |virtual| |const|                                                                 |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                    | :ref:`_poll<class_WebRTCDataChannelExtension_method__poll>` **(** **)** |virtual|                                                                                     |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                    | :ref:`_put_packet<class_WebRTCDataChannelExtension_method__put_packet>` **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual|            |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                     | :ref:`_set_write_mode<class_WebRTCDataChannelExtension_method__set_write_mode>` **(** :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` p_write_mode **)** |virtual| |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                  | :ref:`_was_string_packet<class_WebRTCDataChannelExtension_method__was_string_packet>` **(** **)** |virtual| |const|                                                   |
-   +----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`_close<class_WebRTCDataChannelExtension_private_method__close>`\ (\ ) |virtual|                                                                                      |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`_get_available_packet_count<class_WebRTCDataChannelExtension_private_method__get_available_packet_count>`\ (\ ) |virtual| |const|                                    |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`_get_buffered_amount<class_WebRTCDataChannelExtension_private_method__get_buffered_amount>`\ (\ ) |virtual| |const|                                                  |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`_get_id<class_WebRTCDataChannelExtension_private_method__get_id>`\ (\ ) |virtual| |const|                                                                            |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                              | :ref:`_get_label<class_WebRTCDataChannelExtension_private_method__get_label>`\ (\ ) |virtual| |const|                                                                      |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`_get_max_packet_life_time<class_WebRTCDataChannelExtension_private_method__get_max_packet_life_time>`\ (\ ) |virtual| |const|                                        |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`_get_max_packet_size<class_WebRTCDataChannelExtension_private_method__get_max_packet_size>`\ (\ ) |virtual| |const|                                                  |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`_get_max_retransmits<class_WebRTCDataChannelExtension_private_method__get_max_retransmits>`\ (\ ) |virtual| |const|                                                  |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                    | :ref:`_get_packet<class_WebRTCDataChannelExtension_private_method__get_packet>`\ (\ r_buffer\: ``const uint8_t **``, r_buffer_size\: ``int32_t*``\ ) |virtual|             |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                              | :ref:`_get_protocol<class_WebRTCDataChannelExtension_private_method__get_protocol>`\ (\ ) |virtual| |const|                                                                |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>` | :ref:`_get_ready_state<class_WebRTCDataChannelExtension_private_method__get_ready_state>`\ (\ ) |virtual| |const|                                                          |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>`       | :ref:`_get_write_mode<class_WebRTCDataChannelExtension_private_method__get_write_mode>`\ (\ ) |virtual| |const|                                                            |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`_is_negotiated<class_WebRTCDataChannelExtension_private_method__is_negotiated>`\ (\ ) |virtual| |const|                                                              |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`_is_ordered<class_WebRTCDataChannelExtension_private_method__is_ordered>`\ (\ ) |virtual| |const|                                                                    |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                    | :ref:`_poll<class_WebRTCDataChannelExtension_private_method__poll>`\ (\ ) |virtual|                                                                                        |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                    | :ref:`_put_packet<class_WebRTCDataChannelExtension_private_method__put_packet>`\ (\ p_buffer\: ``const uint8_t*``, p_buffer_size\: :ref:`int<class_int>`\ ) |virtual|      |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`_set_write_mode<class_WebRTCDataChannelExtension_private_method__set_write_mode>`\ (\ p_write_mode\: :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>`\ ) |virtual| |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`_was_string_packet<class_WebRTCDataChannelExtension_private_method__was_string_packet>`\ (\ ) |virtual| |const|                                                      |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -71,11 +71,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_WebRTCDataChannelExtension_method__close:
+.. _class_WebRTCDataChannelExtension_private_method__close:
 
 .. rst-class:: classref-method
 
-void **_close** **(** **)** |virtual|
+|void| **_close**\ (\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__close>`
 
 .. container:: contribute
 
@@ -85,11 +85,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_available_packet_count:
+.. _class_WebRTCDataChannelExtension_private_method__get_available_packet_count:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_available_packet_count** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_available_packet_count**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_available_packet_count>`
 
 .. container:: contribute
 
@@ -99,11 +99,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_buffered_amount:
+.. _class_WebRTCDataChannelExtension_private_method__get_buffered_amount:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_buffered_amount** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_buffered_amount**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_buffered_amount>`
 
 .. container:: contribute
 
@@ -113,11 +113,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_id:
+.. _class_WebRTCDataChannelExtension_private_method__get_id:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_id** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_id**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_id>`
 
 .. container:: contribute
 
@@ -127,11 +127,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_label:
+.. _class_WebRTCDataChannelExtension_private_method__get_label:
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_label** **(** **)** |virtual| |const|
+:ref:`String<class_String>` **_get_label**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_label>`
 
 .. container:: contribute
 
@@ -141,11 +141,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_max_packet_life_time:
+.. _class_WebRTCDataChannelExtension_private_method__get_max_packet_life_time:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_max_packet_life_time** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_max_packet_life_time**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_max_packet_life_time>`
 
 .. container:: contribute
 
@@ -155,11 +155,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_max_packet_size:
+.. _class_WebRTCDataChannelExtension_private_method__get_max_packet_size:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_max_packet_size** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_max_packet_size**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_max_packet_size>`
 
 .. container:: contribute
 
@@ -169,11 +169,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_max_retransmits:
+.. _class_WebRTCDataChannelExtension_private_method__get_max_retransmits:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_max_retransmits** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_max_retransmits**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_max_retransmits>`
 
 .. container:: contribute
 
@@ -183,11 +183,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_packet:
+.. _class_WebRTCDataChannelExtension_private_method__get_packet:
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_get_packet** **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_get_packet**\ (\ r_buffer\: ``const uint8_t **``, r_buffer_size\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_packet>`
 
 .. container:: contribute
 
@@ -197,11 +197,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_protocol:
+.. _class_WebRTCDataChannelExtension_private_method__get_protocol:
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_protocol** **(** **)** |virtual| |const|
+:ref:`String<class_String>` **_get_protocol**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_protocol>`
 
 .. container:: contribute
 
@@ -211,11 +211,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_ready_state:
+.. _class_WebRTCDataChannelExtension_private_method__get_ready_state:
 
 .. rst-class:: classref-method
 
-:ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>` **_get_ready_state** **(** **)** |virtual| |const|
+:ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>` **_get_ready_state**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_ready_state>`
 
 .. container:: contribute
 
@@ -225,11 +225,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__get_write_mode:
+.. _class_WebRTCDataChannelExtension_private_method__get_write_mode:
 
 .. rst-class:: classref-method
 
-:ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` **_get_write_mode** **(** **)** |virtual| |const|
+:ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` **_get_write_mode**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__get_write_mode>`
 
 .. container:: contribute
 
@@ -239,11 +239,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__is_negotiated:
+.. _class_WebRTCDataChannelExtension_private_method__is_negotiated:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_negotiated** **(** **)** |virtual| |const|
+:ref:`bool<class_bool>` **_is_negotiated**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__is_negotiated>`
 
 .. container:: contribute
 
@@ -253,11 +253,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__is_ordered:
+.. _class_WebRTCDataChannelExtension_private_method__is_ordered:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_ordered** **(** **)** |virtual| |const|
+:ref:`bool<class_bool>` **_is_ordered**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__is_ordered>`
 
 .. container:: contribute
 
@@ -267,11 +267,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__poll:
+.. _class_WebRTCDataChannelExtension_private_method__poll:
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_poll** **(** **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_poll**\ (\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__poll>`
 
 .. container:: contribute
 
@@ -281,11 +281,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__put_packet:
+.. _class_WebRTCDataChannelExtension_private_method__put_packet:
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_put_packet** **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_put_packet**\ (\ p_buffer\: ``const uint8_t*``, p_buffer_size\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__put_packet>`
 
 .. container:: contribute
 
@@ -295,11 +295,11 @@ void **_close** **(** **)** |virtual|
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__set_write_mode:
+.. _class_WebRTCDataChannelExtension_private_method__set_write_mode:
 
 .. rst-class:: classref-method
 
-void **_set_write_mode** **(** :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` p_write_mode **)** |virtual|
+|void| **_set_write_mode**\ (\ p_write_mode\: :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>`\ ) |virtual| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__set_write_mode>`
 
 .. container:: contribute
 
@@ -309,11 +309,11 @@ void **_set_write_mode** **(** :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>
 
 ----
 
-.. _class_WebRTCDataChannelExtension_method__was_string_packet:
+.. _class_WebRTCDataChannelExtension_private_method__was_string_packet:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_was_string_packet** **(** **)** |virtual| |const|
+:ref:`bool<class_bool>` **_was_string_packet**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCDataChannelExtension_private_method__was_string_packet>`
 
 .. container:: contribute
 
@@ -326,3 +326,4 @@ void **_set_write_mode** **(** :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -19,7 +19,7 @@ Represents a screen drag event.
 Description
 -----------
 
-Stores information about screen drag events. See :ref:`Node._input<class_Node_method__input>`.
+Stores information about screen drag events. See :ref:`Node._input<class_Node_private_method__input>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -36,21 +36,25 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+-----------------------------------------------------------------------+-------------------+
-   | :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`               | ``0``             |
-   +-------------------------------+-----------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`       | :ref:`pen_inverted<class_InputEventScreenDrag_property_pen_inverted>` | ``false``         |
-   +-------------------------------+-----------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>`         | ``Vector2(0, 0)`` |
-   +-------------------------------+-----------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`     | :ref:`pressure<class_InputEventScreenDrag_property_pressure>`         | ``0.0``           |
-   +-------------------------------+-----------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>`         | ``Vector2(0, 0)`` |
-   +-------------------------------+-----------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`tilt<class_InputEventScreenDrag_property_tilt>`                 | ``Vector2(0, 0)`` |
-   +-------------------------------+-----------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventScreenDrag_property_velocity>`         | ``Vector2(0, 0)`` |
-   +-------------------------------+-----------------------------------------------------------------------+-------------------+
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`                     | ``0``             |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`       | :ref:`pen_inverted<class_InputEventScreenDrag_property_pen_inverted>`       | ``false``         |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>`               | ``Vector2(0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`     | :ref:`pressure<class_InputEventScreenDrag_property_pressure>`               | ``0.0``           |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>`               | ``Vector2(0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`screen_relative<class_InputEventScreenDrag_property_screen_relative>` | ``Vector2(0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`screen_velocity<class_InputEventScreenDrag_property_screen_velocity>` | ``Vector2(0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`tilt<class_InputEventScreenDrag_property_tilt>`                       | ``Vector2(0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventScreenDrag_property_velocity>`               | ``Vector2(0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -65,12 +69,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **index** = ``0``
+:ref:`int<class_int>` **index** = ``0`` :ref:`🔗<class_InputEventScreenDrag_property_index>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_index** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_index** **(** **)**
+- |void| **set_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_index**\ (\ )
 
 The drag event index in the case of a multi-drag event.
 
@@ -82,12 +86,12 @@ The drag event index in the case of a multi-drag event.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pen_inverted** = ``false``
+:ref:`bool<class_bool>` **pen_inverted** = ``false`` :ref:`🔗<class_InputEventScreenDrag_property_pen_inverted>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_pen_inverted** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_pen_inverted** **(** **)**
+- |void| **set_pen_inverted**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_pen_inverted**\ (\ )
 
 Returns ``true`` when using the eraser end of a stylus pen.
 
@@ -99,14 +103,14 @@ Returns ``true`` when using the eraser end of a stylus pen.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventScreenDrag_property_position>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_position** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
+- |void| **set_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_position**\ (\ )
 
-The drag position.
+The drag position in the viewport the node is in, using the coordinate system of this viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -116,12 +120,12 @@ The drag position.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pressure** = ``0.0``
+:ref:`float<class_float>` **pressure** = ``0.0`` :ref:`🔗<class_InputEventScreenDrag_property_pressure>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_pressure** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pressure** **(** **)**
+- |void| **set_pressure**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pressure**\ (\ )
 
 Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``.
 
@@ -133,14 +137,50 @@ Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **relative** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **relative** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventScreenDrag_property_relative>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_relative** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_relative** **(** **)**
+- |void| **set_relative**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_relative**\ (\ )
 
 The drag position relative to the previous position (position at the last frame).
+
+\ **Note:** :ref:`relative<class_InputEventScreenDrag_property_relative>` is automatically scaled according to the content scale factor, which is defined by the project's stretch mode settings. This means touch sensitivity will appear different depending on resolution when using :ref:`relative<class_InputEventScreenDrag_property_relative>` in a script that handles touch aiming. To avoid this, use :ref:`screen_relative<class_InputEventScreenDrag_property_screen_relative>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_InputEventScreenDrag_property_screen_relative:
+
+.. rst-class:: classref-property
+
+:ref:`Vector2<class_Vector2>` **screen_relative** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventScreenDrag_property_screen_relative>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_screen_relative**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_screen_relative**\ (\ )
+
+The unscaled drag position relative to the previous position in screen coordinates (position at the last frame). This position is *not* scaled according to the content scale factor or calls to :ref:`InputEvent.xformed_by<class_InputEvent_method_xformed_by>`. This should be preferred over :ref:`relative<class_InputEventScreenDrag_property_relative>` for touch aiming regardless of the project's stretch mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_InputEventScreenDrag_property_screen_velocity:
+
+.. rst-class:: classref-property
+
+:ref:`Vector2<class_Vector2>` **screen_velocity** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventScreenDrag_property_screen_velocity>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_screen_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_screen_velocity**\ (\ )
+
+The unscaled drag velocity in pixels per second in screen coordinates. This velocity is *not* scaled according to the content scale factor or calls to :ref:`InputEvent.xformed_by<class_InputEvent_method_xformed_by>`. This should be preferred over :ref:`velocity<class_InputEventScreenDrag_property_velocity>` for touch aiming regardless of the project's stretch mode.
 
 .. rst-class:: classref-item-separator
 
@@ -150,12 +190,12 @@ The drag position relative to the previous position (position at the last frame)
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **tilt** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **tilt** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventScreenDrag_property_tilt>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_tilt** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_tilt** **(** **)**
+- |void| **set_tilt**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_tilt**\ (\ )
 
 Represents the angles of tilt of the pen. Positive X-coordinate value indicates a tilt to the right. Positive Y-coordinate value indicates a tilt toward the user. Ranges from ``-1.0`` to ``1.0`` for both axes.
 
@@ -167,14 +207,16 @@ Represents the angles of tilt of the pen. Positive X-coordinate value indicates 
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **velocity** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **velocity** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventScreenDrag_property_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_velocity** **(** **)**
+- |void| **set_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_velocity**\ (\ )
 
 The drag velocity.
+
+\ **Note:** :ref:`velocity<class_InputEventScreenDrag_property_velocity>` is automatically scaled according to the content scale factor, which is defined by the project's stretch mode settings. This means touch sensitivity will appear different depending on resolution when using :ref:`velocity<class_InputEventScreenDrag_property_velocity>` in a script that handles touch aiming. To avoid this, use :ref:`screen_velocity<class_InputEventScreenDrag_property_screen_velocity>` instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -183,3 +225,4 @@ The drag velocity.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

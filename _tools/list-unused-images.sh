@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -uo pipefail
+IFS=$'\n\t'
 
 check_git_history=false
 
@@ -9,19 +12,17 @@ rm -f tmp-unused-images-history
 # Exceptions are ignored, and for .svg files we also look for potential .png
 # files with the same base name, as they might be sources.
 
-exceptions="docs_logo.svg tween_cheatsheet.png"
-
-files=$(find -name "_build" -prune -o \( -name "*.png" -o -name "*.jpg" -o -name "*.svg" -o -name "*.gif" \) -print | sort)
+files=$(find -name "_build" -prune -o \( -iname "*.png" -o -iname "*.webp" -o -iname "*.jpg" -o -iname "*.svg" -o -iname "*.gif" \) -print | sort)
 
 for path in $files; do
-  file=$(basename $path)
-  if echo "$exceptions" | grep -q "$file"; then
+  file=$(basename "$path")
+  if [[ "$path" == *./img/* ]]; then
     continue
   fi
   ext=${file##*.}
   base=${file%.*}
   found=$(rg -l ":: .*[ /]$file")
-  if [ -z "$found" -a "$ext" == "svg" ]; then
+  if [ -z "$found" ] && [ "$ext" == "svg" ]; then
     # May be source file.
     found=$(rg -l ":: .*[ /]$base.png")
   fi
@@ -30,11 +31,13 @@ for path in $files; do
   fi
 done
 
+echo "Wrote list of unused images to: tmp-unused-images"
 
 if [ "$check_git_history" = true ]; then
   for file in $(cat tmp-unused-images); do
     echo "File: $file"
-    git log --diff-filter=A --follow $file
+    git log --diff-filter=A --follow "$file"
     echo
   done > tmp-unused-images-history
+  echo "Wrote list of unused images in Git history to: tmp-unused-images-history"
 fi

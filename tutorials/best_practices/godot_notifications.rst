@@ -4,7 +4,7 @@ Godot notifications
 ===================
 
 Every Object in Godot implements a
-:ref:`_notification <class_Object_method__notification>` method. Its purpose is to
+:ref:`_notification <class_Object_private_method__notification>` method. Its purpose is to
 allow the Object to respond to a variety of engine-level callbacks that may
 relate to it. For example, if the engine tells a
 :ref:`CanvasItem <class_CanvasItem>` to "draw", it will call
@@ -53,7 +53,7 @@ One can access all these custom notifications from the universal
   overridden by scripts.
 
   A classic example is the
-  :ref:`_init <class_Object_method__init>` method in Object. While it has no
+  :ref:`_init <class_Object_private_method__init>` method in Object. While it has no
   ``NOTIFICATION_*`` equivalent, the engine still calls the method. Most languages
   (except C#) rely on it as a constructor.
 
@@ -83,6 +83,47 @@ implementing a Timer-timeout loop is another option.
         timer.timeout.connect(func():
             print("This block runs every 0.5 seconds")
         )
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode : Node
+    {
+        // Allows for recurring operations that don't trigger script logic
+        // every frame (or even every fixed frame).
+        public override void _Ready()
+        {
+            var timer = new Timer();
+            timer.Autostart = true;
+            timer.WaitTime = 0.5;
+            AddChild(timer);
+            timer.Timeout += () => GD.Print("This block runs every 0.5 seconds");
+        }
+    }
+
+ .. code-tab:: cpp C++
+
+    using namespace godot;
+
+    class MyNode : public Node {
+        GDCLASS(MyNode, Node)
+
+    public:
+        // Allows for recurring operations that don't trigger script logic
+        // every frame (or even every fixed frame).
+        virtual void _ready() override {
+            Timer *timer = memnew(Timer);
+            timer->set_autostart(true);
+            timer->set_wait_time(0.5);
+            add_child(timer);
+            timer->connect("timeout", callable_mp(this, &MyNode::run));
+        }
+
+        void run() {
+            UtilityFunctions::print("This block runs every 0.5 seconds.");
+        }
+    };
 
 Use ``_physics_process()`` when one needs a framerate-independent delta time
 between frames. If code needs consistent updates over time, regardless
@@ -142,35 +183,67 @@ delta time methods as needed.
 
     }
 
+  .. code-tab:: cpp C++
+
+    using namespace godot;
+
+    class MyNode : public Node {
+        GDCLASS(MyNode, Node)
+
+    public:
+        // Called every frame, even when the engine detects no input.
+        virtual void _process(double p_delta) override {
+            if (Input::get_singleton->is_action_just_pressed("ui_select")) {
+                UtilityFunctions::print(p_delta);
+            }
+        }
+
+        // Called during every input event. Equally true for _input().
+        virtual void _unhandled_input(const Ref<InputEvent> &p_event) override {
+            Ref<InputEventKey> key_event = event;
+            if (key_event.is_valid() && Input::get_singleton->is_action_just_pressed("ui_accept")) {
+                UtilityFunctions::print(get_process_delta_time());
+            }
+        }
+    };
+
 _init vs. initialization vs. export
 -----------------------------------
 
 If the script initializes its own node subtree, without a scene,
-that code should execute here. Other property or SceneTree-independent
-initializations should also run here. This triggers before ``_ready()`` or
-``_enter_tree()``, but after a script creates and initializes its properties.
+that code should execute in ``_init()``. Other property or SceneTree-independent
+initializations should also run here.
 
-Scripts have three types of property assignments that can occur during
-instantiation:
+.. note::
+  The C# equivalent to GDScript's ``_init()`` method is the constructor.
+
+``_init()`` triggers before ``_enter_tree()`` or ``_ready()``, but after a script
+creates and initializes its properties. When instantiating a scene, property
+values will set up according to the following sequence:
+
+1. **Initial value assignment:** the property is assigned its initialization value,
+   or its default value if one is not specified. If a setter exists, it is not used.
+
+2. ``_init()`` **assignment:** the property's value is replaced by any assignments
+   made in ``_init()``, triggering the setter.
+
+3. **Exported value assignment:** an exported property's value is again replaced by
+   any value set in the Inspector, triggering the setter.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # "one" is an "initialized value". These DO NOT trigger the setter.
-    # If someone set the value as "two" from the Inspector, this would be an
-    # "exported value". These DO trigger the setter.
-    export(String) var test = "one" setget set_test
+    # test is initialized to "one", without triggering the setter.
+    @export var test: String = "one":
+        set(value):
+            test = value + "!"
 
     func _init():
-        # "three" is an "init assignment value".
-        # These DO NOT trigger the setter, but...
-        test = "three"
-        # These DO trigger the setter. Note the `self` prefix.
-        self.test = "three"
+        # Triggers the setter, changing test's value from "one" to "two!".
+        test = "two"
 
-    func set_test(value):
-        test = value
-        print("Setting: ", test)
+    # If someone sets test to "three" from the Inspector, it would trigger
+    # the setter, changing test's value from "two!" to "three!".
 
   .. code-tab:: csharp
 
@@ -180,37 +253,53 @@ instantiation:
     {
         private string _test = "one";
 
-        // Changing the value from the inspector does trigger the setter in C#.
         [Export]
         public string Test
         {
             get { return _test; }
-            set
-            {
-                _test = value;
-                GD.Print($"Setting: {_test}");
-            }
+            set { _test = $"{value}!"; }
         }
 
         public MyNode()
         {
-            // Triggers the setter as well
-            Test = "three";
+            // Triggers the setter, changing _test's value from "one" to "two!".
+            Test = "two";
         }
+
+        // If someone sets Test to "three" in the Inspector, it would trigger
+        // the setter, changing _test's value from "two!" to "three!".
     }
 
-When instantiating a scene, property values will set up according to the
-following sequence:
+  .. code-tab:: cpp C++
 
-1. **Initial value assignment:** instantiation will assign either the
-   initialization value or the init assignment value. Init assignments take
-   priority over initialization values.
+    using namespace godot;
 
-2. **Exported value assignment:** If instancing from a scene rather than
-   a script, Godot will assign the exported value to replace the initial
-   value defined in the script.
+    class MyNode : public Node {
+        GDCLASS(MyNode, Node)
 
-As a result, instantiating a script versus a scene will affect both the
+        String test = "one";
+
+    protected:
+        static void _bind_methods() {
+            ClassDB::bind_method(D_METHOD("get_test"), &MyNode::get_test);
+            ClassDB::bind_method(D_METHOD("set_test", "test"), &MyNode::set_test);
+            ADD_PROPERTY(PropertyInfo(Variant::STRING, "test"), "set_test", "get_test");
+        }
+
+    public:
+        String get_test() { return test; }
+        void set_test(String p_test) { return test = p_test; }
+
+        MyNode() {
+            // Triggers the setter, changing _test's value from "one" to "two!".
+            set_test("two");
+        }
+
+        // If someone sets test to "three" in the Inspector, it would trigger
+        // the setter, changing test's value from "two!" to "three!".
+    };
+
+As a result, instantiating a script versus a scene may affect both the
 initialization *and* the number of times the engine calls the setter.
 
 _ready vs. _enter_tree vs. NOTIFICATION_PARENTED
@@ -266,7 +355,7 @@ nodes that one might create at runtime.
     {
         private Node _parentCache;
 
-        public void ConnectionCheck()
+        public bool ConnectionCheck()
         {
             return _parentCache.HasUserSignal("InteractedWith");
         }
@@ -296,3 +385,38 @@ nodes that one might create at runtime.
             GD.Print("I'm reacting to my parent's interaction!");
         }
     }
+
+  .. code-tab:: cpp C++
+
+    using namespace godot;
+
+    class MyNode : public Node {
+        GDCLASS(MyNode, Node)
+
+        Node *parent_cache = nullptr;
+
+        void on_parent_interacted_with() {
+            UtilityFunctions::print("I'm reacting to my parent's interaction!");
+        }
+
+    public:
+        void connection_check() {
+            return parent_cache->has_user_signal("interacted_with");
+        }
+
+        void _notification(int p_what) {
+            switch (p_what) {
+                case NOTIFICATION_PARENTED:
+                    parent_cache = get_parent();
+                    if (connection_check()) {
+                        parent_cache->connect("interacted_with", callable_mp(this, &MyNode::on_parent_interacted_with));
+                    }
+                    break;
+                case NOTIFICATION_UNPARENTED:
+                    if (connection_check()) {
+                        parent_cache->disconnect("interacted_with", callable_mp(this, &MyNode::on_parent_interacted_with));
+                    }
+                    break;
+            }
+        }
+    };

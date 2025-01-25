@@ -59,27 +59,31 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_theme_color_font_color>`                  | ``Color(0.875, 0.875, 0.875, 1)`` |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_LinkButton_theme_color_font_focus_color>`      | ``Color(0.95, 0.95, 0.95, 1)``    |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_LinkButton_theme_color_font_hover_color>`      | ``Color(0.95, 0.95, 0.95, 1)``    |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_LinkButton_theme_color_font_outline_color>`  | ``Color(1, 1, 1, 1)``             |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_LinkButton_theme_color_font_pressed_color>`  | ``Color(1, 1, 1, 1)``             |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`           | :ref:`outline_size<class_LinkButton_theme_constant_outline_size>`           | ``0``                             |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_theme_constant_underline_spacing>` | ``2``                             |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_theme_font_font>`                               |                                   |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`           | :ref:`font_size<class_LinkButton_theme_font_size_font_size>`                |                                   |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_theme_style_focus>`                            |                                   |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_theme_color_font_color>`                             | ``Color(0.875, 0.875, 0.875, 1)`` |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_disabled_color<class_LinkButton_theme_color_font_disabled_color>`           | ``Color(0, 0, 0, 1)``             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_LinkButton_theme_color_font_focus_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``    |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_LinkButton_theme_color_font_hover_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``    |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hover_pressed_color<class_LinkButton_theme_color_font_hover_pressed_color>` | ``Color(0, 0, 0, 1)``             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_LinkButton_theme_color_font_outline_color>`             | ``Color(0, 0, 0, 1)``             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_LinkButton_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`outline_size<class_LinkButton_theme_constant_outline_size>`                      | ``0``                             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_theme_constant_underline_spacing>`            | ``2``                             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_theme_font_font>`                                          |                                   |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`font_size<class_LinkButton_theme_font_size_font_size>`                           |                                   |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_theme_style_focus>`                                       |                                   |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -94,7 +98,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **UnderlineMode**:
+enum **UnderlineMode**: :ref:`🔗<enum_LinkButton_UnderlineMode>`
 
 .. _class_LinkButton_constant_UNDERLINE_MODE_ALWAYS:
 
@@ -133,12 +137,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **language** = ``""``
+:ref:`String<class_String>` **language** = ``""`` :ref:`🔗<class_LinkButton_property_language>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_language** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_language** **(** **)**
+- |void| **set_language**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_language**\ (\ )
 
 Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
@@ -150,12 +154,12 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 
 .. rst-class:: classref-property
 
-:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0``
+:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0`` :ref:`🔗<class_LinkButton_property_structured_text_bidi_override>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_structured_text_bidi_override** **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` value **)**
-- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override** **(** **)**
+- |void| **set_structured_text_bidi_override**\ (\ value\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`\ )
+- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override**\ (\ )
 
 Set BiDi algorithm override for the structured text.
 
@@ -167,12 +171,12 @@ Set BiDi algorithm override for the structured text.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]``
+:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]`` :ref:`🔗<class_LinkButton_property_structured_text_bidi_override_options>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_structured_text_bidi_override_options** **(** :ref:`Array<class_Array>` value **)**
-- :ref:`Array<class_Array>` **get_structured_text_bidi_override_options** **(** **)**
+- |void| **set_structured_text_bidi_override_options**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_structured_text_bidi_override_options**\ (\ )
 
 Set additional options for BiDi override.
 
@@ -184,12 +188,12 @@ Set additional options for BiDi override.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **text** = ``""``
+:ref:`String<class_String>` **text** = ``""`` :ref:`🔗<class_LinkButton_property_text>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_text** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_text** **(** **)**
+- |void| **set_text**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_text**\ (\ )
 
 The button's text that will be displayed inside the button's area.
 
@@ -201,12 +205,12 @@ The button's text that will be displayed inside the button's area.
 
 .. rst-class:: classref-property
 
-:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0``
+:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0`` :ref:`🔗<class_LinkButton_property_text_direction>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_text_direction** **(** :ref:`TextDirection<enum_Control_TextDirection>` value **)**
-- :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction** **(** **)**
+- |void| **set_text_direction**\ (\ value\: :ref:`TextDirection<enum_Control_TextDirection>`\ )
+- :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction**\ (\ )
 
 Base text writing direction.
 
@@ -218,12 +222,12 @@ Base text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline** = ``0``
+:ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline** = ``0`` :ref:`🔗<class_LinkButton_property_underline>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_underline_mode** **(** :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` value **)**
-- :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **get_underline_mode** **(** **)**
+- |void| **set_underline_mode**\ (\ value\: :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`\ )
+- :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **get_underline_mode**\ (\ )
 
 The underline mode to use for the text. See :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` for the available modes.
 
@@ -235,16 +239,14 @@ The underline mode to use for the text. See :ref:`UnderlineMode<enum_LinkButton_
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **uri** = ``""``
+:ref:`String<class_String>` **uri** = ``""`` :ref:`🔗<class_LinkButton_property_uri>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_uri** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_uri** **(** **)**
+- |void| **set_uri**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_uri**\ (\ )
 
 The `URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`__ for this **LinkButton**. If set to a valid URI, pressing the button opens the URI using the operating system's default program for the protocol (via :ref:`OS.shell_open<class_OS_method_shell_open>`). HTTP and HTTPS URLs open the default web browser.
-
-\ **Examples:**\ 
 
 
 .. tabs::
@@ -276,9 +278,21 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_color>`
 
 Default text :ref:`Color<class_Color>` of the **LinkButton**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LinkButton_theme_color_font_disabled_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_disabled_color>`
+
+Text :ref:`Color<class_Color>` used when the **LinkButton** is disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -288,7 +302,7 @@ Default text :ref:`Color<class_Color>` of the **LinkButton**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_focus_color>`
 
 Text :ref:`Color<class_Color>` used when the **LinkButton** is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
 
@@ -300,9 +314,21 @@ Text :ref:`Color<class_Color>` used when the **LinkButton** is focused. Only rep
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_hover_color>`
 
 Text :ref:`Color<class_Color>` used when the **LinkButton** is being hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LinkButton_theme_color_font_hover_pressed_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_hover_pressed_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_hover_pressed_color>`
+
+Text :ref:`Color<class_Color>` used when the **LinkButton** is being hovered and pressed.
 
 .. rst-class:: classref-item-separator
 
@@ -312,7 +338,7 @@ Text :ref:`Color<class_Color>` used when the **LinkButton** is being hovered.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_outline_color>`
 
 The tint of text outline of the **LinkButton**.
 
@@ -324,7 +350,7 @@ The tint of text outline of the **LinkButton**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_pressed_color>`
 
 Text :ref:`Color<class_Color>` used when the **LinkButton** is being pressed.
 
@@ -336,7 +362,7 @@ Text :ref:`Color<class_Color>` used when the **LinkButton** is being pressed.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_LinkButton_theme_constant_outline_size>`
 
 The size of the text outline.
 
@@ -350,7 +376,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **underline_spacing** = ``2``
+:ref:`int<class_int>` **underline_spacing** = ``2`` :ref:`🔗<class_LinkButton_theme_constant_underline_spacing>`
 
 The vertical space between the baseline of text and the underline.
 
@@ -362,7 +388,7 @@ The vertical space between the baseline of text and the underline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_LinkButton_theme_font_font>`
 
 :ref:`Font<class_Font>` of the **LinkButton**'s text.
 
@@ -374,7 +400,7 @@ The vertical space between the baseline of text and the underline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_size**
+:ref:`int<class_int>` **font_size** :ref:`🔗<class_LinkButton_theme_font_size_font_size>`
 
 Font size of the **LinkButton**'s text.
 
@@ -386,9 +412,9 @@ Font size of the **LinkButton**'s text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **focus**
+:ref:`StyleBox<class_StyleBox>` **focus** :ref:`🔗<class_LinkButton_theme_style_focus>`
 
-:ref:`StyleBox<class_StyleBox>` used when the **LinkButton** is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+:ref:`StyleBox<class_StyleBox>` used when the **LinkButton** is focused. The :ref:`focus<class_LinkButton_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -397,3 +423,4 @@ Font size of the **LinkButton**'s text.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

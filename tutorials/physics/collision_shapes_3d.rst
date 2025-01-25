@@ -13,9 +13,10 @@ Godot provides many kinds of collision shapes, with different performance and
 accuracy tradeoffs.
 
 You can define the shape of a :ref:`class_PhysicsBody3D` by adding one or more
-:ref:`CollisionShape3Ds <class_CollisionShape3D>` as child nodes. Note that you must
-add a :ref:`class_Shape3D` *resource* to collision shape nodes in the Inspector
-dock.
+:ref:`CollisionShape3Ds <class_CollisionShape3D>` as *direct* child nodes.
+Indirect child nodes (i.e. children of child nodes) will be ignored and won't be
+used as collision shapes. Also, note that you must add a :ref:`class_Shape3D`
+*resource* to collision shape nodes in the Inspector dock.
 
 .. note::
 
@@ -37,7 +38,7 @@ primitive shapes. However, for more complex objects, such as a large ship or a
 whole level, you may need convex or concave shapes instead. More on that below.
 
 We recommend favoring primitive shapes for dynamic objects such as RigidBodies
-and KinematicBodies as their behavior is the most reliable. They often provide
+and CharacterBodies as their behavior is the most reliable. They often provide
 better performance as well.
 
 Convex collision shapes
@@ -79,7 +80,7 @@ Concave or trimesh collision shapes
 collision shapes, can take any form, from a few triangles to thousands of
 triangles. Concave shapes are the slowest option but are also the most accurate
 in Godot. **You can only use concave shapes within StaticBodies.** They will not
-work with KinematicBodies or RigidBodies unless the RigidBody's mode is Static.
+work with CharacterBodies or RigidBodies unless the RigidBody's mode is Static.
 
 .. note::
 
@@ -106,18 +107,6 @@ editor exposes two options:
 - **Create Trimesh Collision Sibling** creates a CollisionShape node with a
   concave shape matching the mesh's geometry.
 
-.. note::
-
-    Suppose you need to make a RigidBody *slide* on a concave collision shape.
-    In that case, you may notice that sometimes, the RigidBody will bump
-    upwards. To solve this, open **Project > Project Settings** and enable
-    **Physics > 3d > Smooth Trimesh Collision**.
-
-    Once you've enabled smooth trimesh collision, make sure the concave shape is
-    the only shape of your StaticBody and that it's located at its origin
-    without any rotation. This way, the RigidBody should slide perfectly on the
-    StaticBody.
-
 .. seealso::
 
     See :ref:`doc_importing_3d_scenes` for information on how to export models
@@ -129,7 +118,7 @@ Performance caveats
 You aren't limited to a single collision shape per PhysicsBody. Still, we
 recommend keeping the number of shapes as low as possible to improve
 performance, especially for dynamic objects like RigidBodies and
-KinematicBodies. On top of that, avoid translating, rotating, or scaling
+CharacterBodies. On top of that, avoid translating, rotating, or scaling
 CollisionShapes to benefit from the physics engine's internal optimizations.
 
 When using a single non-transformed collision shape in a StaticBody, the

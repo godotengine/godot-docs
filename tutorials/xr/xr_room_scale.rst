@@ -11,7 +11,7 @@ As a developer this introduces a number of interesting challenges.
 In this document we will look at a number of the challenges you may face and outline some solutions.
 We'll discuss the issues and challenges for seated XR games in another document.
 
-.. note:
+.. note::
   Often developers sit behind their desk while building the foundation to their game.
   In this mode the issues with developing for room scale don't show themselves until it is too late.
   The advice here is to start testing while standing up and walking around as early as possible.
@@ -22,7 +22,7 @@ This node is moved by processing traditional controller, mouse or keyboard input
 A camera is attached to this node at a location roughly where the player's head will be.
 
 Applying this model to the XR setup, we add an :ref:`XROrigin3D <class_xrorigin3d>` node as a child of the character body,
-and add a :ref:`XRCamera3D <class_xrcamera3d>` as a child of the origin node. At face value this seems to work.
+and add an :ref:`XRCamera3D <class_xrcamera3d>` as a child of the origin node. At face value this seems to work.
 However, upon closer examination this model does not take into account that there are two forms of movement in XR.
 The movement through controller input, and the physical movement of the player in the real world.
 
@@ -67,6 +67,9 @@ We also have a helper node that tells us where our neck joint is in relation to 
 We use this to determine where our body center is.
 
 Processing our character movement is now done in three steps.
+
+.. note::
+  The `Origin centric movement demo <https://github.com/godotengine/godot-demo-projects/tree/master/xr/openxr_origin_centric_movement>`__ contains a more elaborate example of the technique described below.
 
 Step 1
 ------
@@ -117,7 +120,7 @@ The second step is to handle rotation of the player as a result of user input.
 As the input used can differ based on your needs we are simply calling the function ``_get_rotational_input``.
 This function should obtain the necessary input and return the rotational speed in radians per second.
 
-.. note:
+.. note::
   For our example we are going to keep this simple and straight forward.
   We are not going to worry about comfort features such as snap turning and applying a vignette.
   We highly recommend implementing such comfort features.
@@ -156,7 +159,7 @@ This function should obtain the necessary input and return the rotational speed 
     if !is_colliding:
       _process_rotation_on_input(delta)
 
-.. note:
+.. note::
   We've added the call for processing our rotation to our physics process but we are only executing this if we were able to move our player fully.
   This means that if the player moves somewhere they shouldn't, we don't process further movement.
 
@@ -168,7 +171,7 @@ The third and final step is moving the player forwards, backwards or sideways as
 Just like with the rotation the inputs differ from project to project so we are simply calling the function ``_get_movement_input``.
 This function should obtain the necessary input and return a directional vector scaled to the required velocity.
 
-.. note:
+.. note::
   Just like with rotation we're keeping it simple. Here too it is advisable to look at adding comfort settings.
 
 .. code-block:: gdscript
@@ -215,6 +218,9 @@ Here we have a standard character body with collision shape, and our XR origin n
 We also have our neck helper node.
 
 Processing our character movement is done in the same three steps but implemented slightly differently.
+
+.. note::
+  The `Character centric movement demo <https://github.com/godotengine/godot-demo-projects/tree/master/xr/openxr_character_centric_movement>`__ contains a more elaborate example of the technique described below.
 
 Step 1
 ------
@@ -380,6 +386,9 @@ Further improvements to the code presented could be:
 
   - allowing controller input as long as this distance is still small,
   - still applying gravity to the player even when controller input is disabled.
+
+.. note::
+  The movement demos in our demo repository contain an example of blacking out the screen when a user walks into restricted areas.
 
 Further suggestions for improvements
 ------------------------------------

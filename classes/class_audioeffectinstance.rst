@@ -14,9 +14,21 @@ AudioEffectInstance
 
 **Inherited By:** :ref:`AudioEffectSpectrumAnalyzerInstance<class_AudioEffectSpectrumAnalyzerInstance>`
 
-.. container:: contribute
+Manipulates the audio it receives for a given effect.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+An audio effect instance manipulates the audio it receives for a given effect. This instance is automatically created by an :ref:`AudioEffect<class_AudioEffect>` when it is added to a bus, and should usually not be created directly. If necessary, it can be fetched at run-time with :ref:`AudioServer.get_bus_effect_instance<class_AudioServer_method_get_bus_effect_instance>`.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 .. rst-class:: classref-reftable-group
 
@@ -26,11 +38,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_process<class_AudioEffectInstance_method__process>` **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_method__process_silence>` **(** **)** |virtual| |const|                                                           |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`_process<class_AudioEffectInstance_private_method__process>`\ (\ src_buffer\: ``const void*``, dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_private_method__process_silence>`\ (\ ) |virtual| |const|                                                                          |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -41,29 +53,29 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_AudioEffectInstance_method__process:
+.. _class_AudioEffectInstance_private_method__process:
 
 .. rst-class:: classref-method
 
-void **_process** **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual|
+|void| **_process**\ (\ src_buffer\: ``const void*``, dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_AudioEffectInstance_private_method__process>`
 
-.. container:: contribute
+Called by the :ref:`AudioServer<class_AudioServer>` to process this effect. When :ref:`_process_silence<class_AudioEffectInstance_private_method__process_silence>` is not overridden or it returns ``false``, this method is called only when the bus is active.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** It is not useful to override this method in GDScript or C#. Only GDExtension can take advantage of it.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_AudioEffectInstance_method__process_silence:
+.. _class_AudioEffectInstance_private_method__process_silence:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_process_silence** **(** **)** |virtual| |const|
+:ref:`bool<class_bool>` **_process_silence**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioEffectInstance_private_method__process_silence>`
 
-.. container:: contribute
+Override this method to customize the processing behavior of this effect instance.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Should return ``true`` to force the :ref:`AudioServer<class_AudioServer>` to always call :ref:`_process<class_AudioEffectInstance_private_method__process>`, even if the bus has been muted or cannot otherwise be heard.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -72,3 +84,4 @@ void **_process** **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`in
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

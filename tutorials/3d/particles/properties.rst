@@ -16,6 +16,12 @@ want to activate or deactivate particle systems dynamically.
 The ``Amount`` property controls the maximum number of particles visible at any given time. Increase the
 value to spawn more particles at the cost of performance.
 
+The ``Amount Ratio`` property is the ratio of particles compared to the amount that will be emitted.
+If it's less than ``1.0``, the amount of particles emitted through the lifetime will be the ``Amount`` *
+``Amount Ratio``. Changing this value while emitted doesn't affect already created particles and doesn't
+cause the particle system to restart. It's useful for making effects where the number of emitted particles
+varies over time.
+
 You can set another particle node as a ``Sub Emitter``, which will be spawned as a child of each
 particle. See the :ref:`Sub-emitters <doc_3d_particles_subemitters>` section in this manual for a detailed explanation of how
 to add a sub-emitter to a particle system.
@@ -33,15 +39,18 @@ is measured in seconds. A lot of particle properties can be set to change over t
 lifetime and blend smoothly from one value to another.
 
 ``Lifetime`` and ``Amount`` are related. They determine the particle system's emission rate.
-Whenever you want to know how many particles are spawned per second, this is the formular you
+Whenever you want to know how many particles are spawned per second, this is the formula you
 would use:
 
 .. math::
 
-   particlesPerSecond = \frac{Amount}{Lifetime}
+   Particles per second = \frac{Amount}{Lifetime}
 
 Example: Emitting 32 particles with a lifetime of 4 seconds each would mean the system emits
 8 particles per second.
+
+The ``Interp to End`` property causes all the particles in the node to interpolate towards
+the end of their lifetime.
 
 If the checkbox next to the ``One Shot`` property is checked, the particle system will emit ``amount`` particles
 and then disable itself. It "runs" only once. This property is unchecked by default, so the system will
@@ -89,7 +98,7 @@ property has no effect.
    :alt: Particles running at low FPS
    :align: right
 
-   Interpolation on (left) vs. off (right)
+   Interpolation off (left) vs. on (right)
 
 The ``Fixed FPS`` property limits how often the particle system is processed. This includes
 property updates as well as collision and attractors. This can improve performance a lot,
@@ -104,10 +113,21 @@ That's what the ``Interpolate`` property does. It blends particle properties bet
 updates so that even a particle system running at ``10`` FPS appears as smooth as
 running at ``60``.
 
+.. note::
+
+    When using :ref:`particle collision <doc_3d_particles_collision>`, tunneling can occur
+    if the particles move fast and colliders are thin. This can be remedied by increasing
+    ``Fixed FPS`` (at a performance cost).
+
 .. _doc_3d_particles_properties_collision:
 
 Collision properties
 ~~~~~~~~~~~~~~~~~~~~
+
+.. seealso::
+
+    Setting up particle collision requires following further steps described in
+    :ref:`doc_3d_particles_collision`.
 
 The ``Base Size`` property defines each particle's default collision size, which is used
 to check whether a particle is currently colliding with the environment. You would usually want this
@@ -132,7 +152,8 @@ box as small as possible.
 
 One thing to keep in mind when you set a size for the ``Visibility AABB`` is that particles
 that are outside of its bounds disappear instantly when it leaves the camera's field of view.
-This, while not technically a bug, can have a negative effect on the visual experience.
+Particle collision will also not occur outside the ``Visibility AABB``.
+While not technically a bug, this can have a negative effect on the visual experience.
 
 When the ``Local Coords`` property is checked, all particle calculations use the local
 coordinate system to determine things like up and down, gravity, and movement direction.

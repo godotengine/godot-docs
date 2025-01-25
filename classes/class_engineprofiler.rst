@@ -31,13 +31,13 @@ Methods
 .. table::
    :widths: auto
 
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_add_frame<class_EngineProfiler_method__add_frame>` **(** :ref:`Array<class_Array>` data **)** |virtual|                                                                                                                           |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_tick<class_EngineProfiler_method__tick>` **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` process_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual| |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_toggle<class_EngineProfiler_method__toggle>` **(** :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` options **)** |virtual|                                                                                              |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_add_frame<class_EngineProfiler_private_method__add_frame>`\ (\ data\: :ref:`Array<class_Array>`\ ) |virtual|                                                                                                                                 |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_tick<class_EngineProfiler_private_method__tick>`\ (\ frame_time\: :ref:`float<class_float>`, process_time\: :ref:`float<class_float>`, physics_time\: :ref:`float<class_float>`, physics_frame_time\: :ref:`float<class_float>`\ ) |virtual| |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_toggle<class_EngineProfiler_private_method__toggle>`\ (\ enable\: :ref:`bool<class_bool>`, options\: :ref:`Array<class_Array>`\ ) |virtual|                                                                                                  |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -48,11 +48,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EngineProfiler_method__add_frame:
+.. _class_EngineProfiler_private_method__add_frame:
 
 .. rst-class:: classref-method
 
-void **_add_frame** **(** :ref:`Array<class_Array>` data **)** |virtual|
+|void| **_add_frame**\ (\ data\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_EngineProfiler_private_method__add_frame>`
 
 Called when data is added to profiler using :ref:`EngineDebugger.profiler_add_frame_data<class_EngineDebugger_method_profiler_add_frame_data>`.
 
@@ -60,11 +60,11 @@ Called when data is added to profiler using :ref:`EngineDebugger.profiler_add_fr
 
 ----
 
-.. _class_EngineProfiler_method__tick:
+.. _class_EngineProfiler_private_method__tick:
 
 .. rst-class:: classref-method
 
-void **_tick** **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` process_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual|
+|void| **_tick**\ (\ frame_time\: :ref:`float<class_float>`, process_time\: :ref:`float<class_float>`, physics_time\: :ref:`float<class_float>`, physics_frame_time\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_EngineProfiler_private_method__tick>`
 
 Called once every engine iteration when the profiler is active with information about the current frame. All time values are in seconds. Lower values represent faster processing times and are therefore considered better.
 
@@ -72,11 +72,11 @@ Called once every engine iteration when the profiler is active with information 
 
 ----
 
-.. _class_EngineProfiler_method__toggle:
+.. _class_EngineProfiler_private_method__toggle:
 
 .. rst-class:: classref-method
 
-void **_toggle** **(** :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` options **)** |virtual|
+|void| **_toggle**\ (\ enable\: :ref:`bool<class_bool>`, options\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_EngineProfiler_private_method__toggle>`
 
 Called when the profiler is enabled/disabled, along with a set of ``options``.
 
@@ -87,3 +87,4 @@ Called when the profiler is enabled/disabled, along with a set of ``options``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

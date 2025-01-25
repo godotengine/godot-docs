@@ -30,6 +30,7 @@ from pygments.token import (
     String,
     Number,
     Punctuation,
+    Whitespace,
 )
 
 __all__ = ["GDScriptLexer"]
@@ -65,29 +66,31 @@ class GDScriptLexer(RegexLexer):
 
     tokens = {
         "root": [
-            (r"\n", Text),
+            (r"\n", Whitespace),
             (
                 r'^(\s*)([rRuUbB]{,2})("""(?:.|\n)*?""")',
-                bygroups(Text, String.Affix, String.Doc),
+                bygroups(Whitespace, String.Affix, String.Doc),
             ),
             (
                 r"^(\s*)([rRuUbB]{,2})('''(?:.|\n)*?''')",
-                bygroups(Text, String.Affix, String.Doc),
+                bygroups(Whitespace, String.Affix, String.Doc),
             ),
-            (r"[^\S\n]+", Text),
+            (r"[^\S\n]+", Whitespace),
             (r"#.*$", Comment.Single),
             (r"[]{}:(),;[]", Punctuation),
-            (r"\\\n", Text),
+            (r"(\\)(\n)", Whitespace),
             (r"\\", Text),
-            (r"(in|and|or|not)\b", Operator.Word),
+            # modules/gdscript/gdscript.cpp - GDScriptLanguage::get_reserved_words()
+            # Operators.
+            (r"(and|as|in|is|not|or)\b", Operator.Word),
             (
                 r"!=|==|<<|>>|&&|\+=|-=|\*=|/=|%=|&=|\|=|\|\||[-~+/*%=<>&^.!|$]",
                 Operator,
             ),
             include("keywords"),
             include("control_flow_keywords"),
-            (r"(func)((?:\s|\\\s)+)", bygroups(Keyword, Text), "funcname"),
-            (r"(class)((?:\s|\\\s)+)", bygroups(Keyword, Text), "classname"),
+            (r"(func)((?:\s|\\\s)+)", bygroups(Keyword, Whitespace), "funcname"),
+            (r"(class)((?:\s|\\\s)+)", bygroups(Keyword, Whitespace), "classname"),
             include("builtins"),
             include("decorators"),
             (
@@ -137,26 +140,28 @@ class GDScriptLexer(RegexLexer):
             (
                 words(
                     (
-                        "and",
-                        "await",
-                        "in",
-                        "get",
-                        "set",
-                        "not",
-                        "or",
-                        "as",
-                        "breakpoint",
+                        # modules/gdscript/gdscript.cpp - GDScriptLanguage::get_reserved_words()
+                        # Declarations.
                         "class",
                         "class_name",
-                        "extends",
-                        "is",
-                        "func",
-                        "signal",
                         "const",
                         "enum",
+                        "extends",
+                        "func",
+                        "namespace", # Reserved for potential future use.
+                        "signal",
                         "static",
+                        "trait", # Reserved for potential future use.
                         "var",
+                        # Other keywords.
+                        "await",
+                        "breakpoint",
+                        "self",
                         "super",
+                        "yield", # Reserved for potential future use.
+                        # Not really keywords, but used in property syntax.
+                        "set",
+                        "get",
                     ),
                     suffix=r"\b",
                 ),
@@ -167,15 +172,18 @@ class GDScriptLexer(RegexLexer):
             (
                 words(
                     (
+                        # modules/gdscript/gdscript.cpp - GDScriptLanguage::get_reserved_words()
+                        # Control flow.
                         "break",
                         "continue",
                         "elif",
                         "else",
-                        "if",
                         "for",
+                        "if",
                         "match",
                         "pass",
                         "return",
+                        "when",
                         "while",
                     ),
                     suffix=r"\b",
@@ -194,9 +202,13 @@ class GDScriptLexer(RegexLexer):
                         "absf",
                         "absi",
                         "acos",
+                        "acosh",
+                        "angle_difference",
                         "asin",
+                        "asinh",
                         "atan",
                         "atan2",
+                        "atanh",
                         "bezier_derivative",
                         "bezier_interpolate",
                         "bytes_to_var",
@@ -232,6 +244,7 @@ class GDScriptLexer(RegexLexer):
                         "is_instance_id_valid",
                         "is_instance_valid",
                         "is_nan",
+                        "is_same",
                         "is_zero_approx",
                         "lerp",
                         "lerp_angle",
@@ -269,6 +282,7 @@ class GDScriptLexer(RegexLexer):
                         "remap",
                         "rid_allocate_id",
                         "rid_from_int64",
+                        "rotate_toward",
                         "round",
                         "roundf",
                         "roundi",
@@ -288,6 +302,8 @@ class GDScriptLexer(RegexLexer):
                         "str_to_var",
                         "tan",
                         "tanh",
+                        "type_convert",
+                        "type_string",
                         "typeof",
                         "var_to_bytes",
                         "var_to_bytes_with_objects",
@@ -305,13 +321,13 @@ class GDScriptLexer(RegexLexer):
                         "dict_to_inst",
                         "get_stack",
                         "inst_to_dict",
+                        "is_instance_of",
                         "len",
                         "load",
                         "preload",
                         "print_debug",
                         "print_stack",
                         "range",
-                        "str",
                         "type_exists",
                     ),
                     prefix=r"(?<!\.)",
@@ -319,16 +335,18 @@ class GDScriptLexer(RegexLexer):
                 ),
                 Name.Builtin,
             ),
-            (r"((?<!\.)(self|super|false|true)|(PI|TAU|NAN|INF)" r")\b", Name.Builtin.Pseudo),
+            # modules/gdscript/gdscript.cpp - GDScriptLanguage::get_reserved_words()
+            # Special values. Constants.
+            (r"((?<!\.)(false|null|true)|(INF|NAN|PI|TAU))\b", Name.Builtin.Pseudo),
             (
                 words(
                     (
+                        # core/variant/variant.cpp - Variant::get_type_name()
+                        # `Nil` is excluded because it is not allowed in GDScript.
                         "bool",
                         "int",
                         "float",
                         "String",
-                        "StringName",
-                        "NodePath",
                         "Vector2",
                         "Vector2i",
                         "Rect2",
@@ -336,14 +354,21 @@ class GDScriptLexer(RegexLexer):
                         "Transform2D",
                         "Vector3",
                         "Vector3i",
-                        "AABB",
+                        "Vector4",
+                        "Vector4i",
                         "Plane",
+                        "AABB",
                         "Quaternion",
                         "Basis",
                         "Transform3D",
+                        "Projection",
                         "Color",
                         "RID",
                         "Object",
+                        "Callable",
+                        "Signal",
+                        "StringName",
+                        "NodePath",
                         "Dictionary",
                         "Array",
                         "PackedByteArray",
@@ -353,11 +378,12 @@ class GDScriptLexer(RegexLexer):
                         "PackedFloat64Array",
                         "PackedStringArray",
                         "PackedVector2Array",
-                        "PackedVector2iArray",
                         "PackedVector3Array",
-                        "PackedVector3iArray",
                         "PackedColorArray",
-                        "null",
+                        "PackedVector4Array",
+                        # The following are also considered types in GDScript.
+                        "Variant",
+                        "void",
                     ),
                     prefix=r"(?<!\.)",
                     suffix=r"\b",
@@ -369,9 +395,11 @@ class GDScriptLexer(RegexLexer):
             (
                 words(
                     (
+                        # modules/gdscript/doc_classes/@GDScript.xml
                         "@export",
                         "@export_category",
                         "@export_color_no_alpha",
+                        "@export_custom",
                         "@export_dir",
                         "@export_enum",
                         "@export_exp_easing",
@@ -383,6 +411,7 @@ class GDScriptLexer(RegexLexer):
                         "@export_flags_3d_navigation",
                         "@export_flags_3d_physics",
                         "@export_flags_3d_render",
+                        "@export_flags_avoidance",
                         "@export_global_dir",
                         "@export_global_file",
                         "@export_group",
@@ -390,12 +419,17 @@ class GDScriptLexer(RegexLexer):
                         "@export_node_path",
                         "@export_placeholder",
                         "@export_range",
+                        "@export_storage",
                         "@export_subgroup",
+                        "@export_tool_button",
                         "@icon",
                         "@onready",
                         "@rpc",
+                        "@static_unload",
                         "@tool",
                         "@warning_ignore",
+                        "@warning_ignore_restore",
+                        "@warning_ignore_start",
                     ),
                     prefix=r"(?<!\.)",
                     suffix=r"\b",
@@ -404,11 +438,14 @@ class GDScriptLexer(RegexLexer):
             ),
         ],
         "numbers": [
-            (r"(\d+\.\d*|\d*\.\d+)([eE][+-]?[0-9]+)?j?", Number.Float),
-            (r"\d+[eE][+-]?[0-9]+j?", Number.Float),
-            (r"0x[a-fA-F0-9]+", Number.Hex),
-            (r"0b[01]+", Number.Bin),
-            (r"\d+j?", Number.Integer),
+            (
+                r"(-)?((\d|(?<=\d)_)+\.(\d|(?<=\d)_)*|(\d|(?<=\d)_)*\.(\d|(?<=\d)_)+)([eE][+-]?(\d|(?<=\d)_)+)?j?",
+                Number.Float,
+            ),
+            (r"(-)?(\d|(?<=\d)_)+[eE][+-]?(\d|(?<=\d)_)+j?", Number.Float),
+            (r"(-)?0[xX]([a-fA-F0-9]|(?<=[a-fA-F0-9])_)+", Number.Hex),
+            (r"(-)?0[bB]([01]|(?<=[01])_)+", Number.Bin),
+            (r"(-)?(\d|(?<=\d)_)+j?", Number.Integer),
         ],
         "name": [(r"@?[a-zA-Z_]\w*", Name)],
         "funcname": [(r"[a-zA-Z_]\w*", Name.Function, "#pop"), default("#pop")],
@@ -435,12 +472,12 @@ class GDScriptLexer(RegexLexer):
         "tdqs": [
             (r'"""', String.Double, "#pop"),
             include("strings-double"),
-            (r"\n", String.Double),
+            (r"\n", Whitespace),
         ],
         "tsqs": [
             (r"'''", String.Single, "#pop"),
             include("strings-single"),
-            (r"\n", String.Single),
+            (r"\n", Whitespace),
         ],
     }
 

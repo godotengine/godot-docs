@@ -1,5 +1,5 @@
-GD0001: Missing partial modifier on declaration of type which is a subclass of GodotObject
-==========================================================================================
+GD0001: Missing partial modifier on declaration of type that derives from GodotObject
+=====================================================================================
 
 ====================================  ======================================
                                       Value

@@ -54,12 +54,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **camera_feed_id** = ``0``
+:ref:`int<class_int>` **camera_feed_id** = ``0`` :ref:`🔗<class_CameraTexture_property_camera_feed_id>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_camera_feed_id** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_camera_feed_id** **(** **)**
+- |void| **set_camera_feed_id**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_camera_feed_id**\ (\ )
 
 The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display the image.
 
@@ -71,12 +71,12 @@ The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display t
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **camera_is_active** = ``false``
+:ref:`bool<class_bool>` **camera_is_active** = ``false`` :ref:`🔗<class_CameraTexture_property_camera_is_active>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_camera_active** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_camera_active** **(** **)**
+- |void| **set_camera_active**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_camera_active**\ (\ )
 
 Convenience property that gives access to the active property of the :ref:`CameraFeed<class_CameraFeed>`.
 
@@ -88,12 +88,12 @@ Convenience property that gives access to the active property of the :ref:`Camer
 
 .. rst-class:: classref-property
 
-:ref:`FeedImage<enum_CameraServer_FeedImage>` **which_feed** = ``0``
+:ref:`FeedImage<enum_CameraServer_FeedImage>` **which_feed** = ``0`` :ref:`🔗<class_CameraTexture_property_which_feed>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_which_feed** **(** :ref:`FeedImage<enum_CameraServer_FeedImage>` value **)**
-- :ref:`FeedImage<enum_CameraServer_FeedImage>` **get_which_feed** **(** **)**
+- |void| **set_which_feed**\ (\ value\: :ref:`FeedImage<enum_CameraServer_FeedImage>`\ )
+- :ref:`FeedImage<enum_CameraServer_FeedImage>` **get_which_feed**\ (\ )
 
 Which image within the :ref:`CameraFeed<class_CameraFeed>` we want access to, important if the camera image is split in a Y and CbCr component.
 
@@ -104,3 +104,4 @@ Which image within the :ref:`CameraFeed<class_CameraFeed>` we want access to, im
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

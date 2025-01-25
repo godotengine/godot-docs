@@ -29,15 +29,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`RDPipelineColorBlendStateAttachment[]<class_RDPipelineColorBlendStateAttachment>` | :ref:`attachments<class_RDPipelineColorBlendState_property_attachments>`         | ``[]``                |
-   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`                                                               | :ref:`blend_constant<class_RDPipelineColorBlendState_property_blend_constant>`   | ``Color(0, 0, 0, 1)`` |
-   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                                                 | :ref:`enable_logic_op<class_RDPipelineColorBlendState_property_enable_logic_op>` | ``false``             |
-   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>`                              | :ref:`logic_op<class_RDPipelineColorBlendState_property_logic_op>`               | ``0``                 |
-   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Array<class_Array>`\[:ref:`RDPipelineColorBlendStateAttachment<class_RDPipelineColorBlendStateAttachment>`\] | :ref:`attachments<class_RDPipelineColorBlendState_property_attachments>`         | ``[]``                |
+   +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                                                                          | :ref:`blend_constant<class_RDPipelineColorBlendState_property_blend_constant>`   | ``Color(0, 0, 0, 1)`` |
+   +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                                            | :ref:`enable_logic_op<class_RDPipelineColorBlendState_property_enable_logic_op>` | ``false``             |
+   +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>`                                                         | :ref:`logic_op<class_RDPipelineColorBlendState_property_logic_op>`               | ``0``                 |
+   +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -52,12 +52,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`RDPipelineColorBlendStateAttachment[]<class_RDPipelineColorBlendStateAttachment>` **attachments** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RDPipelineColorBlendStateAttachment<class_RDPipelineColorBlendStateAttachment>`\] **attachments** = ``[]`` :ref:`🔗<class_RDPipelineColorBlendState_property_attachments>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_attachments** **(** :ref:`RDPipelineColorBlendStateAttachment[]<class_RDPipelineColorBlendStateAttachment>` value **)**
-- :ref:`RDPipelineColorBlendStateAttachment[]<class_RDPipelineColorBlendStateAttachment>` **get_attachments** **(** **)**
+- |void| **set_attachments**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`RDPipelineColorBlendStateAttachment<class_RDPipelineColorBlendStateAttachment>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`RDPipelineColorBlendStateAttachment<class_RDPipelineColorBlendStateAttachment>`\] **get_attachments**\ (\ )
 
 The attachments that are blended together.
 
@@ -69,12 +69,12 @@ The attachments that are blended together.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **blend_constant** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **blend_constant** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_RDPipelineColorBlendState_property_blend_constant>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_blend_constant** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_blend_constant** **(** **)**
+- |void| **set_blend_constant**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_blend_constant**\ (\ )
 
 The constant color to blend with. See also :ref:`RenderingDevice.draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`.
 
@@ -86,12 +86,12 @@ The constant color to blend with. See also :ref:`RenderingDevice.draw_list_set_b
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_logic_op** = ``false``
+:ref:`bool<class_bool>` **enable_logic_op** = ``false`` :ref:`🔗<class_RDPipelineColorBlendState_property_enable_logic_op>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_logic_op** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_logic_op** **(** **)**
+- |void| **set_enable_logic_op**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_logic_op**\ (\ )
 
 If ``true``, performs the logic operation defined in :ref:`logic_op<class_RDPipelineColorBlendState_property_logic_op>`.
 
@@ -103,12 +103,12 @@ If ``true``, performs the logic operation defined in :ref:`logic_op<class_RDPipe
 
 .. rst-class:: classref-property
 
-:ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **logic_op** = ``0``
+:ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **logic_op** = ``0`` :ref:`🔗<class_RDPipelineColorBlendState_property_logic_op>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_logic_op** **(** :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` value **)**
-- :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **get_logic_op** **(** **)**
+- |void| **set_logic_op**\ (\ value\: :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>`\ )
+- :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **get_logic_op**\ (\ )
 
 The logic operation to perform for blending. Only effective if :ref:`enable_logic_op<class_RDPipelineColorBlendState_property_enable_logic_op>` is ``true``.
 
@@ -119,3 +119,4 @@ The logic operation to perform for blending. Only effective if :ref:`enable_logi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

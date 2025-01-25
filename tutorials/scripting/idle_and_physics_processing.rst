@@ -5,8 +5,8 @@ Idle and Physics Processing
 
 Games run in a loop. Each frame, you need to update the state of your game world
 before drawing it on screen. Godot provides two virtual methods in the Node
-class to do so: :ref:`Node._process() <class_Node_method__process>` and
-:ref:`Node._physics_process() <class_Node_method__physics_process>`. If you
+class to do so: :ref:`Node._process() <class_Node_private_method__process>` and
+:ref:`Node._physics_process() <class_Node_private_method__physics_process>`. If you
 define either or both in a script, the engine will call them automatically.
 
 There are two types of processing available to you:

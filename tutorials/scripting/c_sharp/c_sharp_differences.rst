@@ -8,8 +8,22 @@ This is a (incomplete) list of API differences between C# and GDScript.
 General differences
 -------------------
 
-As explained in the :ref:`doc_c_sharp`, C# generally uses ``PascalCase`` instead
-of the ``snake_case`` used in GDScript and C++.
+As explained in :ref:`doc_c_sharp_general_differences`, ``PascalCase`` is used
+to access Godot APIs in C# instead of the ``snake_case`` used by GDScript and
+C++. Where possible, fields and getters/setters have been converted to
+properties. In general, the C# Godot API strives to be as idiomatic as is
+reasonably possible. See the :ref:`doc_c_sharp_styleguide`, which we encourage
+you to also use for your own C# code.
+
+In GDScript, the setters/getters of a property can be called directly, although
+this is not encouraged. In C#, only the property is defined. For example, to
+translate the GDScript code ``x.set_name("Friend")`` to C#, write
+``x.Name = "Friend";``.
+
+A C# IDE will provide intellisense, which is extremely useful when figuring out
+renamed C# APIs. The built-in Godot script editor has no support for C#
+intellisense, and it also doesn't provide many other C# development tools that
+are considered essential. See :ref:`doc_c_sharp_setup_external_editor`.
 
 Global scope
 ------------
@@ -19,7 +33,7 @@ does not allow declaring them in namespaces.
 Most global constants were moved to their own enums.
 
 Constants
-^^^^^^^^^
+~~~~~~~~~
 
 In C#, only primitive types can be constant. For example, the ``TAU`` constant
 is replaced by the ``Mathf.Tau`` constant, but the ``Vector2.RIGHT`` constant
@@ -39,7 +53,7 @@ GDScript                 C#
 =======================  ===========================================================
 
 Math functions
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Math global functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2``, are
 located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``.
@@ -52,7 +66,7 @@ contain other useful mathematical operations.
 .. _System.MathF: https://learn.microsoft.com/en-us/dotnet/api/system.mathf
 
 Random functions
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Random global functions, like ``rand_range`` and ``rand_seed``, are located under ``GD``.
 Example: ``GD.RandRange`` and ``GD.RandSeed``.
@@ -64,7 +78,7 @@ Consider using `System.Random`_ or, if you need cryptographically strong randomn
 .. _System.Security.Cryptography.RandomNumberGenerator: https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator
 
 Other functions
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Many other global functions like ``print`` and ``var_to_str`` are located under ``GD``.
 Example: ``GD.Print`` and ``GD.VarToStr``.
@@ -81,7 +95,7 @@ GDScript                      C#
 ============================  =======================================================
 
 Tips
-^^^^
+~~~~
 
 Sometimes it can be useful to use the ``using static`` directive. This directive allows
 to access the members and nested types of a class without specifying the class name.
@@ -101,7 +115,7 @@ Example:
     }
 
 Full list of equivalences
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 List of Godot's global scope functions and their equivalent in C#:
 
@@ -112,9 +126,13 @@ abs                              Mathf.Abs
 absf                             Mathf.Abs
 absi                             Mathf.Abs
 acos                             Mathf.Acos
+acosh                            Mathf.Acosh
+angle_difference                 Mathf.AngleDifference
 asin                             Mathf.Asin
+asinh                            Mathf.Asinh
 atan                             Mathf.Atan
 atan2                            Mathf.Atan2
+atanh                            Mathf.Atanh
 bezier_derivative                Mathf.BezierDerivative
 bezier_interpolate               Mathf.BezierInterpolate
 bytes_to_var                     GD.BytesToVar
@@ -128,7 +146,7 @@ clampi                           Mathf.Clamp
 cos                              Mathf.Cos
 cosh                             Mathf.Cosh
 cubic_interpolate                Mathf.CubicInterpolate
-cubic_interpoalte_angle          Mathf.CubicInterpolateAngle
+cubic_interpolate_angle          Mathf.CubicInterpolateAngle
 cubic_interpolate_angle_in_time  Mathf.CubicInterpolateInTime
 cubic_interpolate_in_time        Mathf.CubicInterpolateAngleInTime
 db_to_linear                     Mathf.DbToLinear
@@ -188,6 +206,7 @@ randomize                        GD.Randomize
 remap                            Mathf.Remap
 rid_allocate_id                  N/A
 rid_from_int64                   N/A
+rotate_toward                    Mathf.RotateToward
 round                            Mathf.Round
 roundf                           Mathf.Round
 roundi                           Mathf.RoundToInt
@@ -207,6 +226,8 @@ str                              Use `$ string interpolation`_
 str_to_var                       GD.StrToVar
 tan                              Mathf.Tan
 tanh                             Mathf.Tanh
+type_convert                     Variant.As<T> or GD.Convert
+type_string                      Variant.Type.ToString
 typeof                           Variant.VariantType
 var_to_bytes                     GD.VarToBytes
 var_to_bytes_with_objects        GD.VarToBytesWithObjects
@@ -342,6 +363,17 @@ Example:
 
     Input.Singleton.JoyConnectionChanged += Input_JoyConnectionChanged;
 
+If you are developing main screen plugins, it is essential to note that
+``EditorInterface`` is not a static class in C#, unlike in GDScript.
+Therefore, you must use the singleton pattern to obtain an instance of the
+``EditorInterface``:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``EditorInterface``        ``EditorInterface.Singleton``
+====================  ==============================================================
+
 String
 ------
 
@@ -430,6 +462,7 @@ path_join                StringExtensions.PathJoin
 repeat                   Use `string constructor`_ or a `StringBuilder`_
 replace                  `string.Replace`_ or `RegEx`_
 replacen                 StringExtensions.ReplaceN (Consider using `string.Replace`_ or `RegEx`_)
+reverse                  N/A
 rfind                    StringExtensions.RFind (Consider using `string.LastIndexOf`_ or `string.LastIndexOfAny`_)
 rfindn                   StringExtensions.RFindN (Consider using `string.LastIndexOf`_ or `string.LastIndexOfAny`_)
 right                    StringExtensions.Right (Consider using `string.Substring`_ or `string.AsSpan`_)
@@ -458,7 +491,7 @@ to_upper                 `string.ToUpper`_
 to_utf16_buffer          StringExtensions.ToUtf16Buffer (Consider using `System.Text.Encoding.UTF16.GetBytes`_)
 to_utf32_buffer          StringExtensions.ToUtf32Buffer (Consider using `System.Text.Encoding.UTF32.GetBytes`_)
 to_utf8_buffer           StringExtensions.ToUtf8Buffer (Consider using `System.Text.Encoding.UTF8.GetBytes`_)
-to_wchar_buffer          StringExtensions.ToUtf16Buffer in Windows and StringExtensiont.ToUtf32Buffer in other platforms
+to_wchar_buffer          StringExtensions.ToUtf16Buffer in Windows and StringExtensions.ToUtf32Buffer in other platforms
 trim_prefix              StringExtensions.TrimPrefix
 trim_suffix              StringExtensions.TrimSuffix
 unicode_at               `string[int]`_ indexer
@@ -481,10 +514,13 @@ get_string_from_utf8       StringExtensions.GetStringFromUtf8 (Consider using `S
 hex_encode                 StringExtensions.HexEncode (Consider using `System.Convert.ToHexString`_)
 =========================  ==============================================================
 
-* .NET contains many path utility methods available under the
-  `System.IO.Path`_
-  class that can be used when not dealing with Godot paths (paths that start
-  with ``res://`` or ``user://``)
+.. note::
+
+    .NET provides path utility methods under the
+    `System.IO.Path`_
+    class. They can only be used with native OS paths, not Godot paths
+    (paths that start with ``res://`` or ``user://``).
+    See :ref:`doc_data_paths`.
 
 .. _$ string interpolation: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
 .. _double.ToString: https://learn.microsoft.com/en-us/dotnet/api/system.double.tostring
@@ -794,7 +830,7 @@ Dictionary
 ----------
 
 Use ``Godot.Collections.Dictionary`` for an untyped ``Variant`` dictionary.
-``Godot.Colelctions.Dictionary<TKey, TValue>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
+``Godot.Collections.Dictionary<TKey, TValue>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
 
 See also :ref:`Dictionary in C# <doc_c_sharp_collections_dictionary>`.
 
@@ -802,7 +838,7 @@ Variant
 -------
 
 ``Godot.Variant`` is used to represent Godot's native :ref:`Variant <class_Variant>` type.
-Any Variant-compatible type can be converted from/to it.
+Any :ref:`Variant-compatible type <c_sharp_variant_compatible_types>` can be converted from/to it.
 
 See also: :ref:`doc_c_sharp_variant`.
 
@@ -846,5 +882,8 @@ Example:
 
 .. code-block:: csharp
 
-  await ToSignal(timer, "timeout");
-  GD.Print("After timeout");
+  public async Task SomeFunction()
+  {
+      await ToSignal(timer, Timer.SignalName.Timeout);
+      GD.Print("After timeout");
+  }

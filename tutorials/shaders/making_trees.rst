@@ -5,7 +5,7 @@ Making trees
 
 This is a short tutorial on how to make trees and other types of vegetation from scratch.
 
-The aim is to not focus on the modelling techniques (there are plenty of tutorials about that), but how to make them look good in Godot.
+The aim is to not focus on the modeling techniques (there are plenty of tutorials about that), but how to make them look good in Godot.
 
 .. image:: img/tree_sway.gif
 
@@ -23,7 +23,7 @@ and opened it in Blender.
 Paint with vertex colors
 ------------------------
 
-The first thing you may want to do is to use the vertex colors to paint how much the tree will sway when there is wind. Just use the vertex color painting tool of your favorite 3D modelling program and paint something like this:
+The first thing you may want to do is to use the vertex colors to paint how much the tree will sway when there is wind. Just use the vertex color painting tool of your favorite 3D modeling program and paint something like this:
 
 .. image:: img/tree_vertex_paint.png
 
@@ -77,7 +77,7 @@ Finally, all that's left is the fragment shader:
         ALPHA = albedo_tex.a;
         METALLIC = 0.0;
         ROUGHNESS = 1.0;
-        TRANSMISSION = transmission.rgb;
+        SSS_TRANSMITTANCE_COLOR = transmission.rgba;
     }
 
 And this is pretty much it.

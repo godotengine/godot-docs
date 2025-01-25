@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_3d_particles:
 
 Particle systems (3D)
@@ -6,8 +8,8 @@ Particle systems (3D)
 This section of the tutorial covers (3D) GPU-accelerated particle systems. Most of the things
 discussed here apply to CPU particles as well.
 
-Introduction
-------------
+.. rubric:: Introduction
+   :heading-level: 2
 
 You can use particle systems to simulate complex physical effects like fire, sparks,
 smoke, magical effects, and many more. They are very well suited for creating dynamic and organic
@@ -20,8 +22,8 @@ parameters and behaviors.
 
 Every particle system you create in Godot consists of two main parts: particles and emitters.
 
-Particles
-~~~~~~~~~
+.. rubric:: Particles
+   :heading-level: 3
 
 A particle is the visible part of a particle system. It's what you see on the screen when a particle
 system is active: The tiny specks of dust, the flames of a fire, the glowing orbs of a magical
@@ -30,16 +32,16 @@ single system. You can randomize a particle's size, its speed and movement direc
 color over the course of its lifetime. When you think of a fire, you can think of all the little
 embers flying away from it as individual particles.
 
-Emitters
-~~~~~~~~
+.. rubric:: Emitters
+   :heading-level: 3
 
 An emitter is what's creating the particles. Emitters are usually not visible, but they can have
 a shape. That shape controls where and how particles are spawned, for example whether they should fill
 a room like dust or shoot away from a single point like a fountain. Going back to the fire example,
 an emitter would be the heat at the center of the fire that creates the embers and the flames.
 
-Node overview
-~~~~~~~~~~~~~
+.. rubric:: Node overview
+   :heading-level: 3
 
 .. figure:: img/particle_nodes.webp
    :alt: A list of nodes related to 3D particles
@@ -53,6 +55,7 @@ and :ref:`class_CPUParticles3D`, which are processed on the CPU.
 CPU particle systems are less flexible than their GPU counterpart, but they work on a wider range of hardware and
 provide better support for older devices and mobile phones. Because they are processed on the CPU,
 they are not as performant as GPU particle systems and can't render as many individual particles.
+In addition they currently do not have all the available options GPU particles have for control.
 
 GPU particle systems run on the GPU and can render hundreds of thousands of particles on modern
 hardware. You can write custom particle shaders for them, which makes them very flexible. You can
@@ -72,8 +75,8 @@ colliders by hand. If you want particles to collide with large outdoor scenes, y
 objects in it and uses that for large-scale particle collisions.
 
 
-Basic usage
------------
+.. rubric:: Basic usage
+   :heading-level: 2
 
 .. toctree::
    :maxdepth: 1
@@ -83,8 +86,8 @@ Basic usage
    properties
    process_material_properties
 
-Advanced topics
----------------
+.. rubric:: Advanced topics
+   :heading-level: 2
 
 .. toctree::
    :maxdepth: 1

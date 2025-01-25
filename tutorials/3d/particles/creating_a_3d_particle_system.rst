@@ -72,6 +72,9 @@ menu. When you do so, keep in mind that not every feature of GPU particles is av
 CPU particles, so the resulting particle system will look and behave differently from the
 original.
 
+You can also convert CPU particles to GPU particles if you no longer need to use CPU particles.
+This is also done from the viewport menu.
+
 Some of the most notable features that are lost during the conversion include:
 
 - multiple draw passes
@@ -80,6 +83,20 @@ Some of the most notable features that are lost during the conversion include:
 - trails
 - attractors
 - collision
+
+You also lose the following properties:
+
+- ``Amount Ratio``
+- ``Interp to End``
+- ``Damping as Friction``
+- ``Emission Shape Offset``
+- ``Emission Shape Scale``
+- ``Inherit Velocity Ratio``
+- ``Velocity Pivot``
+- ``Directional Velocity``
+- ``Radial Velocity``
+- ``Velocity Limit``
+- ``Scale Over Velocity``
 
 Converting GPU particles to CPU particles can become necessary when you want to release a game
 on older devices that don't support modern graphics APIs.

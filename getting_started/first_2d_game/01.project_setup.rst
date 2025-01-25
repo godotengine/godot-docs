@@ -36,12 +36,13 @@ When creating the new project, you only need to choose a valid *Project Path*. Y
 
 Your project folder should look like this.
 
-.. image:: img/folder-content.png
+.. image:: img/folder-content.webp
 
 This game is designed for portrait mode, so we need to adjust the size of the
 game window. Click on *Project -> Project Settings* to open the project settings
-window and in the left column, open the *Display -> Window* tab. There, set
-"Viewport Width" to ``480`` and "Viewport Height" to ``720``.
+window, in the left column open the *Display -> Window* tab. There, set
+"Viewport Width" to ``480`` and "Viewport Height" to ``720``. You can see the 
+"Project" menu on the upper left corner.
 
 .. image:: img/setting-project-width-and-height.webp
 
@@ -51,7 +52,7 @@ This ensures that the game scales consistently on different sized screens.
 .. image:: img/setting-stretch-mode.webp
 
 Organizing the project
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 In this project, we will make 3 independent scenes: ``Player``, ``Mob``, and
 ``HUD``, which we will combine into the game's ``Main`` scene.

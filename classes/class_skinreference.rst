@@ -12,9 +12,22 @@ SkinReference
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+A reference-counted holder object for a skeleton RID used in the :ref:`RenderingServer<class_RenderingServer>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+An internal object containing a mapping from a :ref:`Skin<class_Skin>` used within the context of a particular :ref:`MeshInstance3D<class_MeshInstance3D>` to refer to the skeleton's :ref:`RID<class_RID>` in the RenderingServer.
+
+See also :ref:`MeshInstance3D.get_skin_reference<class_MeshInstance3D_method_get_skin_reference>` and :ref:`RenderingServer.instance_attach_skeleton<class_RenderingServer_method_instance_attach_skeleton>`.
+
+Note that despite the similar naming, the skeleton RID used in the :ref:`RenderingServer<class_RenderingServer>` does not have a direct one-to-one correspondence to a :ref:`Skeleton3D<class_Skeleton3D>` node.
+
+In particular, a :ref:`Skeleton3D<class_Skeleton3D>` node with no :ref:`MeshInstance3D<class_MeshInstance3D>` children may be unknown to the :ref:`RenderingServer<class_RenderingServer>`.
+
+On the other hand, a :ref:`Skeleton3D<class_Skeleton3D>` with multiple :ref:`MeshInstance3D<class_MeshInstance3D>` nodes which each have different :ref:`MeshInstance3D.skin<class_MeshInstance3D_property_skin>` objects may have multiple SkinReference instances (and hence, multiple skeleton :ref:`RID<class_RID>`\ s).
 
 .. rst-class:: classref-reftable-group
 
@@ -24,11 +37,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`   | :ref:`get_skeleton<class_SkinReference_method_get_skeleton>` **(** **)** |const| |
-   +-------------------------+----------------------------------------------------------------------------------+
-   | :ref:`Skin<class_Skin>` | :ref:`get_skin<class_SkinReference_method_get_skin>` **(** **)** |const|         |
-   +-------------------------+----------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_skeleton<class_SkinReference_method_get_skeleton>`\ (\ ) |const| |
+   +-------------------------+----------------------------------------------------------------------------+
+   | :ref:`Skin<class_Skin>` | :ref:`get_skin<class_SkinReference_method_get_skin>`\ (\ ) |const|         |
+   +-------------------------+----------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -43,11 +56,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_skeleton** **(** **)** |const|
+:ref:`RID<class_RID>` **get_skeleton**\ (\ ) |const| :ref:`🔗<class_SkinReference_method_get_skeleton>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the :ref:`RID<class_RID>` owned by this SkinReference, as returned by :ref:`RenderingServer.skeleton_create<class_RenderingServer_method_skeleton_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -57,11 +68,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Skin<class_Skin>` **get_skin** **(** **)** |const|
+:ref:`Skin<class_Skin>` **get_skin**\ (\ ) |const| :ref:`🔗<class_SkinReference_method_get_skin>`
 
-.. container:: contribute
+Returns the :ref:`Skin<class_Skin>` connected to this SkinReference. In the case of :ref:`MeshInstance3D<class_MeshInstance3D>` with no :ref:`MeshInstance3D.skin<class_MeshInstance3D_property_skin>` assigned, this will reference an internal default :ref:`Skin<class_Skin>` owned by that :ref:`MeshInstance3D<class_MeshInstance3D>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Note that a single :ref:`Skin<class_Skin>` may have more than one **SkinReference** in the case that it is shared by meshes across multiple :ref:`Skeleton3D<class_Skeleton3D>` nodes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -70,3 +81,4 @@ Method Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

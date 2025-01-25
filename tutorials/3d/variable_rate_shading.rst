@@ -37,12 +37,12 @@ density map linked at the bottom of this page:
 
 .. figure:: img/variable_rate_shading_textured_enabled.webp
    :align: center
-   :alt: Variable rate shading enabled in textured scene (lower quality but higher performance)
+   :alt: Variable rate shading enabled in textured scene (lower quality, but higher performance)
 
-   Variable rate shading enabled in textured scene (lower quality but higher performance)
+   Variable rate shading enabled in textured scene (lower quality, but higher performance)
 
 When used in scenes with low-frequency detail (such as scenes with a
-stylized/low-poly aesthetic), it's possible to achieve similar performance gains
+stylized/low-poly aesthetic), it's possible to achieve similar performance gains,
 but with less reduction in visual quality:
 
 .. figure:: img/variable_rate_shading_untextured_disabled.webp
@@ -53,9 +53,9 @@ but with less reduction in visual quality:
 
 .. figure:: img/variable_rate_shading_untextured_enabled.webp
    :align: center
-   :alt: Variable rate shading enabled in untextured scene (lower quality but higher performance)
+   :alt: Variable rate shading enabled in untextured scene (lower quality, but higher performance)
 
-   Variable rate shading enabled in untextured scene (lower quality but higher performance)
+   Variable rate shading enabled in untextured scene (lower quality, but higher performance)
 
 Hardware support
 ----------------
@@ -83,11 +83,12 @@ Using variable rate shading in Godot
 
 .. note::
 
-    Both Forward Plus and Forward Mobile rendering methods support variable rate
+    Both Forward+ and Mobile renderers support variable rate
     shading. VRS can be used in both pancake (non-XR) and XR display modes.
 
-    The Compatibility rendering method does **not** support variable rate
-    shading.
+    The Compatibility renderer does **not** support variable rate shading.
+    For XR, you can use :ref:`foveation level <doc_openxr_settings_foveation_level>`
+    as an alternative.
 
 In the advanced Project Settings, the **Rendering > VRS** section offers settings
 to control variable rate shading on the root viewport:
@@ -110,7 +111,7 @@ For custom viewports, the VRS mode and texture must be set manually to the
     :ref:`command line argument <doc_command_line_tutorial>`.
 
 Creating a VRS density map
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If using the **Texture** VRS mode, you *must* set a texture to be used as a
 density map. Otherwise, no effect will be visible.
@@ -186,7 +187,7 @@ aspect ratio in your project (such as 16:9).
     low, or textures will appear grainy.
 
 Performance comparison
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 To give an idea of how much VRS can improve performance in theory, here's a
 performance comparison with the textured example scene shown at the top of this

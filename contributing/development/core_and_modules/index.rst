@@ -1,11 +1,13 @@
+:allow_comments: False
+
 Engine core and modules
 =======================
 
 The following pages are meant to introduce the global organization of Godot Engine's
 source code, and give useful tips for extending and fixing the engine on the C++ side.
 
-Getting started with Godot's source code
-----------------------------------------
+.. rubric:: Getting started with Godot's source code
+   :heading-level: 2
 
 This section covers the basics that you will encounter in (almost) every source file.
 
@@ -21,9 +23,10 @@ This section covers the basics that you will encounter in (almost) every source 
    inheritance_class_tree
    internal_rendering_architecture
    2d_coordinate_systems
+   scripting_development
 
-Extending Godot by modifying its source code
---------------------------------------------
+.. rubric:: Extending Godot by modifying its source code
+   :heading-level: 2
 
 This section covers what you can do by modifying Godot's C++ source code.
 

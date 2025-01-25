@@ -23,12 +23,12 @@ This article indicates whether each breaking change affects GDScript and whether
 the C# breaking change is *binary compatible* or *source compatible*:
 
 - **Binary compatible** - Existing binaries will load and execute successfully without
-  recompilation, and the run-time behavior won't change.
+  recompilation, and the runtime behavior won't change.
 - **Source compatible** - Source code will compile successfully without changes when
   upgrading Godot.
 
 Core
-^^^^
+~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -46,7 +46,7 @@ Method ``wait_for_task_completion`` changes return type from ``void`` to ``Error
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Animation
-^^^^^^^^^
+~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -60,7 +60,7 @@ Method ``get_travel_path`` changes return type from ``PackedStringArray`` to ``A
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 2D nodes
-^^^^^^^^
+~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -70,7 +70,7 @@ Property ``lookahead`` removed                                                  
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 3D nodes
-^^^^^^^^
+~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -85,7 +85,7 @@ Method ``look_at_from_position`` adds a new ``use_model_front`` optional paramet
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 GUI nodes
-^^^^^^^^^
+~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -101,7 +101,7 @@ Method ``edit_selected`` adds a new ``force_edit`` optional parameter           
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Physics
-^^^^^^^
+~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -117,7 +117,7 @@ Method ``collide_shape`` changes return type from ``Array[PackedVector3Array]`` 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Rendering
-^^^^^^^^^
+~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -133,7 +133,7 @@ Method ``add_triangle_fan`` changes ``tangents`` parameter type from untyped ``A
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Navigation
-^^^^^^^^^^
+~~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -163,7 +163,7 @@ Method ``agent_set_time_horizon`` split into ``agent_set_time_horizon_agents`` a
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Networking
-^^^^^^^^^^
+~~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -173,7 +173,7 @@ Method ``_create_data_channel`` changes return type from ``Object`` to ``WebRTCD
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Editor plugins
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -253,7 +253,7 @@ This means that GDExtensions made for Godot 4.0 will need to be recompiled for G
 
 In Godot 4.0, your "entry_symbol" function looks something like this:
 
-.. code-block:: C++
+.. code-block:: cpp
 
   GDExtensionBool GDE_EXPORT example_library_init(const GDExtensionInterface *p_interface, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
       godot::GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
@@ -267,7 +267,7 @@ In Godot 4.0, your "entry_symbol" function looks something like this:
 
 However, for Godot 4.1, it should look like:
 
-.. code-block:: C++
+.. code-block:: cpp
 
   GDExtensionBool GDE_EXPORT example_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
       godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);

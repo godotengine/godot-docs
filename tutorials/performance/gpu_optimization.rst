@@ -42,7 +42,7 @@ as much as possible so they can be rendered together, or with the minimum number
 of these expensive state changes.
 
 2D batching
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 In 2D, the costs of treating each item individually can be prohibitively high -
 there can easily be thousands of them on the screen. This is why 2D *batching*
@@ -56,7 +56,7 @@ much cheaper with Vulkan compared to OpenGL, there is less of a need to have 2D
 batching (although it can still be beneficial in some cases).
 
 3D batching
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 In 3D, we still aim to minimize draw calls and state changes. However, it can be
 more difficult to batch together several objects into a single draw call. 3D
@@ -78,7 +78,7 @@ For more information on 3D specific optimizations, see
 :ref:`doc_optimizing_3d_performance`.
 
 Reuse shaders and materials
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Godot renderer is a little different to what is out there. It's designed to
 minimize GPU state changes as much as possible. :ref:`StandardMaterial3D
@@ -90,7 +90,7 @@ possible. Godot's priorities are:
    scene, the faster the rendering will be. If a scene has a huge amount
    of objects (in the hundreds or thousands), try reusing the materials.
    In the worst case, use atlases to decrease the amount of texture changes.
--  **Reusing Shaders:** If materials can't be reused, at least try to re-use
+-  **Reusing Shaders:** If materials can't be reused, at least try to reuse
    shaders. Note: shaders are automatically reused between
    StandardMaterial3Ds that share the same configuration (features
    that are enabled or disabled with a check box) even if they have different
@@ -154,9 +154,7 @@ Pay attention to the additional vertex processing required when using:
 
 -  Skinning (skeletal animation)
 -  Morphs (shape keys)
-
-.. Not implemented in Godot 4.x yet. Uncomment when this is implemented.
-   -  Vertex-lit objects (common on mobile)
+-  Vertex-lit objects (common on mobile)
 
 Pixel/fragment shaders and fill rate
 ------------------------------------
@@ -194,7 +192,7 @@ their material to decrease the shading cost.
 you can reasonably afford to use.**
 
 Reading textures
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 The other factor in fragment shaders is the cost of reading textures. Reading
 textures is an expensive operation, especially when reading from several
@@ -207,7 +205,7 @@ mobiles.
 algorithms that require as few texture reads as possible.**
 
 Texture compression
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 By default, Godot compresses textures of 3D models when imported using video RAM
 (VRAM) compression. Video RAM compression isn't as efficient in size as PNG or
@@ -232,7 +230,7 @@ textures with transparency (only opaque), so keep this in mind.
    significantly due to their low resolution.
 
 Post-processing and shadows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Post-processing effects and shadows can also be expensive in terms of fragment
 shading activity. Always test the impact of these on different hardware.

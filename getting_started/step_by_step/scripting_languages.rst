@@ -115,7 +115,7 @@ should be aware of its garbage collector.
           can download it on the Godot website's `download
           <https://godotengine.org/download/>`_ page.
 
-Since Godot uses .NET 6, in theory, you can use any third-party .NET library or
+Since Godot uses .NET 8, in theory, you can use any third-party .NET library or
 framework in Godot, as well as any Common Language Infrastructure-compliant
 programming language, such as F#, Boo, or ClojureCLR. However, C# is the only
 officially supported .NET option.
@@ -128,9 +128,12 @@ officially supported .NET option.
 
 .. attention::
 
-    Projects written in C# using Godot 4.x currently cannot be exported to
-    Android, iOS and web platforms. To use C# on those platforms, use Godot 3
-    instead.
+    Projects written in C# using Godot 4 currently cannot be exported to the web
+    platform. To use C# on that platform, consider Godot 3 instead.
+    Android and iOS platform support is available as of Godot 4.2, but is
+    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
+
+.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
 
 C++ via GDExtension
 ~~~~~~~~~~~~~~~~~~~

@@ -21,6 +21,10 @@ An array specifically designed to hold 64-bit integer values. Packs data tightly
 
 \ **Note:** This type stores signed 64-bit integers, which means it can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854775808, 9223372036854775807]``. Exceeding those bounds will wrap around. If you only need to pack 32-bit integers tightly, see :ref:`PackedInt32Array<class_PackedInt32Array>` for a more memory-friendly alternative.
 
+\ **Differences between packed arrays, typed arrays, and untyped arrays:** Packed arrays are generally faster to iterate on and modify compared to a typed array of the same type (e.g. **PackedInt64Array** versus ``Array[int]``). Also, packed arrays consume less memory. As a downside, packed arrays are less flexible as they don't offer as many convenience methods such as :ref:`Array.map<class_Array_method_map>`. Typed arrays are in turn faster to iterate on and modify than untyped arrays.
+
+\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedInt64Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+
 .. note::
 
 	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
@@ -33,13 +37,13 @@ Constructors
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`PackedInt64Array<class_PackedInt64Array_constructor_PackedInt64Array>` **(** **)**                                                      |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`PackedInt64Array<class_PackedInt64Array_constructor_PackedInt64Array>` **(** :ref:`PackedInt64Array<class_PackedInt64Array>` from **)** |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`PackedInt64Array<class_PackedInt64Array_constructor_PackedInt64Array>` **(** :ref:`Array<class_Array>` from **)**                       |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`PackedInt64Array<class_PackedInt64Array_constructor_PackedInt64Array>`\ (\ )                                                         |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`PackedInt64Array<class_PackedInt64Array_constructor_PackedInt64Array>`\ (\ from\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ ) |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`PackedInt64Array<class_PackedInt64Array_constructor_PackedInt64Array>`\ (\ from\: :ref:`Array<class_Array>`\ )                       |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -49,49 +53,51 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`append<class_PackedInt64Array_method_append>` **(** :ref:`int<class_int>` value **)**                                             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`append_array<class_PackedInt64Array_method_append_array>` **(** :ref:`PackedInt64Array<class_PackedInt64Array>` array **)**       |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`bsearch<class_PackedInt64Array_method_bsearch>` **(** :ref:`int<class_int>` value, :ref:`bool<class_bool>` before=true **)**      |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`clear<class_PackedInt64Array_method_clear>` **(** **)**                                                                           |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`count<class_PackedInt64Array_method_count>` **(** :ref:`int<class_int>` value **)** |const|                                       |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`duplicate<class_PackedInt64Array_method_duplicate>` **(** **)**                                                                   |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`fill<class_PackedInt64Array_method_fill>` **(** :ref:`int<class_int>` value **)**                                                 |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`find<class_PackedInt64Array_method_find>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)** |const|           |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`has<class_PackedInt64Array_method_has>` **(** :ref:`int<class_int>` value **)** |const|                                           |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`insert<class_PackedInt64Array_method_insert>` **(** :ref:`int<class_int>` at_index, :ref:`int<class_int>` value **)**             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`is_empty<class_PackedInt64Array_method_is_empty>` **(** **)** |const|                                                             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`push_back<class_PackedInt64Array_method_push_back>` **(** :ref:`int<class_int>` value **)**                                       |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`remove_at<class_PackedInt64Array_method_remove_at>` **(** :ref:`int<class_int>` index **)**                                       |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`resize<class_PackedInt64Array_method_resize>` **(** :ref:`int<class_int>` new_size **)**                                          |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`reverse<class_PackedInt64Array_method_reverse>` **(** **)**                                                                       |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`rfind<class_PackedInt64Array_method_rfind>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)** |const|        |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set<class_PackedInt64Array_method_set>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` value **)**                      |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`size<class_PackedInt64Array_method_size>` **(** **)** |const|                                                                     |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`slice<class_PackedInt64Array_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647 **)** |const| |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`sort<class_PackedInt64Array_method_sort>` **(** **)**                                                                             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`to_byte_array<class_PackedInt64Array_method_to_byte_array>` **(** **)** |const|                                                   |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`append<class_PackedInt64Array_method_append>`\ (\ value\: :ref:`int<class_int>`\ )                                                 |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`append_array<class_PackedInt64Array_method_append_array>`\ (\ array\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ )           |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`bsearch<class_PackedInt64Array_method_bsearch>`\ (\ value\: :ref:`int<class_int>`, before\: :ref:`bool<class_bool>` = true\ )      |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`clear<class_PackedInt64Array_method_clear>`\ (\ )                                                                                  |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`count<class_PackedInt64Array_method_count>`\ (\ value\: :ref:`int<class_int>`\ ) |const|                                           |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`duplicate<class_PackedInt64Array_method_duplicate>`\ (\ )                                                                          |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`fill<class_PackedInt64Array_method_fill>`\ (\ value\: :ref:`int<class_int>`\ )                                                     |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`find<class_PackedInt64Array_method_find>`\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const|           |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`get<class_PackedInt64Array_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                               |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`has<class_PackedInt64Array_method_has>`\ (\ value\: :ref:`int<class_int>`\ ) |const|                                               |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`insert<class_PackedInt64Array_method_insert>`\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )               |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_empty<class_PackedInt64Array_method_is_empty>`\ (\ ) |const|                                                                    |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`push_back<class_PackedInt64Array_method_push_back>`\ (\ value\: :ref:`int<class_int>`\ )                                           |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`remove_at<class_PackedInt64Array_method_remove_at>`\ (\ index\: :ref:`int<class_int>`\ )                                           |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`resize<class_PackedInt64Array_method_resize>`\ (\ new_size\: :ref:`int<class_int>`\ )                                              |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`reverse<class_PackedInt64Array_method_reverse>`\ (\ )                                                                              |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`rfind<class_PackedInt64Array_method_rfind>`\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = -1\ ) |const|        |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`set<class_PackedInt64Array_method_set>`\ (\ index\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ )                        |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`size<class_PackedInt64Array_method_size>`\ (\ ) |const|                                                                            |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`slice<class_PackedInt64Array_method_slice>`\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`sort<class_PackedInt64Array_method_sort>`\ (\ )                                                                                    |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`to_byte_array<class_PackedInt64Array_method_to_byte_array>`\ (\ ) |const|                                                          |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -101,15 +107,15 @@ Operators
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`operator !=<class_PackedInt64Array_operator_neq_PackedInt64Array>` **(** :ref:`PackedInt64Array<class_PackedInt64Array>` right **)** |
-   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`operator +<class_PackedInt64Array_operator_sum_PackedInt64Array>` **(** :ref:`PackedInt64Array<class_PackedInt64Array>` right **)**  |
-   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`operator ==<class_PackedInt64Array_operator_eq_PackedInt64Array>` **(** :ref:`PackedInt64Array<class_PackedInt64Array>` right **)**  |
-   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`operator []<class_PackedInt64Array_operator_idx_int>` **(** :ref:`int<class_int>` index **)**                                        |
-   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`operator !=<class_PackedInt64Array_operator_neq_PackedInt64Array>`\ (\ right\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ ) |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`operator +<class_PackedInt64Array_operator_sum_PackedInt64Array>`\ (\ right\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ )  |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`operator ==<class_PackedInt64Array_operator_eq_PackedInt64Array>`\ (\ right\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ )  |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`operator []<class_PackedInt64Array_operator_idx_int>`\ (\ index\: :ref:`int<class_int>`\ )                                        |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -124,7 +130,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **PackedInt64Array** **(** **)**
+:ref:`PackedInt64Array<class_PackedInt64Array>` **PackedInt64Array**\ (\ ) :ref:`🔗<class_PackedInt64Array_constructor_PackedInt64Array>`
 
 Constructs an empty **PackedInt64Array**.
 
@@ -134,7 +140,7 @@ Constructs an empty **PackedInt64Array**.
 
 .. rst-class:: classref-constructor
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **PackedInt64Array** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` from **)**
+:ref:`PackedInt64Array<class_PackedInt64Array>` **PackedInt64Array**\ (\ from\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ )
 
 Constructs a **PackedInt64Array** as a copy of the given **PackedInt64Array**.
 
@@ -144,7 +150,7 @@ Constructs a **PackedInt64Array** as a copy of the given **PackedInt64Array**.
 
 .. rst-class:: classref-constructor
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **PackedInt64Array** **(** :ref:`Array<class_Array>` from **)**
+:ref:`PackedInt64Array<class_PackedInt64Array>` **PackedInt64Array**\ (\ from\: :ref:`Array<class_Array>`\ )
 
 Constructs a new **PackedInt64Array**. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
@@ -161,7 +167,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **append** **(** :ref:`int<class_int>` value **)**
+:ref:`bool<class_bool>` **append**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_method_append>`
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PackedInt64Array_method_push_back>`).
 
@@ -173,7 +179,7 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_Packe
 
 .. rst-class:: classref-method
 
-void **append_array** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` array **)**
+|void| **append_array**\ (\ array\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ ) :ref:`🔗<class_PackedInt64Array_method_append_array>`
 
 Appends a **PackedInt64Array** at the end of this array.
 
@@ -185,7 +191,7 @@ Appends a **PackedInt64Array** at the end of this array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bsearch** **(** :ref:`int<class_int>` value, :ref:`bool<class_bool>` before=true **)**
+:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`int<class_int>`, before\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_PackedInt64Array_method_bsearch>`
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
@@ -199,7 +205,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 .. rst-class:: classref-method
 
-void **clear** **(** **)**
+|void| **clear**\ (\ ) :ref:`🔗<class_PackedInt64Array_method_clear>`
 
 Clears the array. This is equivalent to using :ref:`resize<class_PackedInt64Array_method_resize>` with a size of ``0``.
 
@@ -211,7 +217,7 @@ Clears the array. This is equivalent to using :ref:`resize<class_PackedInt64Arra
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **count** **(** :ref:`int<class_int>` value **)** |const|
+:ref:`int<class_int>` **count**\ (\ value\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedInt64Array_method_count>`
 
 Returns the number of times an element is in the array.
 
@@ -223,7 +229,7 @@ Returns the number of times an element is in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **duplicate** **(** **)**
+:ref:`PackedInt64Array<class_PackedInt64Array>` **duplicate**\ (\ ) :ref:`🔗<class_PackedInt64Array_method_duplicate>`
 
 Creates a copy of the array, and returns it.
 
@@ -235,7 +241,7 @@ Creates a copy of the array, and returns it.
 
 .. rst-class:: classref-method
 
-void **fill** **(** :ref:`int<class_int>` value **)**
+|void| **fill**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_method_fill>`
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedInt64Array_method_resize>` to create an array with a given size and initialized elements.
 
@@ -247,9 +253,21 @@ Assigns the given value to all elements in the array. This can typically be used
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)** |const|
+:ref:`int<class_int>` **find**\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedInt64Array_method_find>`
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedInt64Array_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedInt64Array_method_get>`
+
+Returns the 64-bit integer at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
 
 .. rst-class:: classref-item-separator
 
@@ -259,7 +277,7 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has** **(** :ref:`int<class_int>` value **)** |const|
+:ref:`bool<class_bool>` **has**\ (\ value\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedInt64Array_method_has>`
 
 Returns ``true`` if the array contains ``value``.
 
@@ -271,7 +289,7 @@ Returns ``true`` if the array contains ``value``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` at_index, :ref:`int<class_int>` value **)**
+:ref:`int<class_int>` **insert**\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_method_insert>`
 
 Inserts a new integer at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
@@ -283,7 +301,7 @@ Inserts a new integer at a given position in the array. The position must be val
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty** **(** **)** |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_PackedInt64Array_method_is_empty>`
 
 Returns ``true`` if the array is empty.
 
@@ -295,7 +313,7 @@ Returns ``true`` if the array is empty.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **push_back** **(** :ref:`int<class_int>` value **)**
+:ref:`bool<class_bool>` **push_back**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_method_push_back>`
 
 Appends a value to the array.
 
@@ -307,7 +325,7 @@ Appends a value to the array.
 
 .. rst-class:: classref-method
 
-void **remove_at** **(** :ref:`int<class_int>` index **)**
+|void| **remove_at**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_method_remove_at>`
 
 Removes an element from the array by index.
 
@@ -319,9 +337,9 @@ Removes an element from the array by index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **resize** **(** :ref:`int<class_int>` new_size **)**
+:ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_method_resize>`
 
-Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
+Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize<class_PackedInt64Array_method_resize>` once and assigning the new values is faster than adding new elements one by one.
 
 .. rst-class:: classref-item-separator
 
@@ -331,7 +349,7 @@ Sets the size of the array. If the array is grown, reserves elements at the end 
 
 .. rst-class:: classref-method
 
-void **reverse** **(** **)**
+|void| **reverse**\ (\ ) :ref:`🔗<class_PackedInt64Array_method_reverse>`
 
 Reverses the order of the elements in the array.
 
@@ -343,7 +361,7 @@ Reverses the order of the elements in the array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **rfind** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)** |const|
+:ref:`int<class_int>` **rfind**\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_PackedInt64Array_method_rfind>`
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
@@ -355,7 +373,7 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 .. rst-class:: classref-method
 
-void **set** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` value **)**
+|void| **set**\ (\ index\: :ref:`int<class_int>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_method_set>`
 
 Changes the integer at the given index.
 
@@ -367,7 +385,7 @@ Changes the integer at the given index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **size** **(** **)** |const|
+:ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_PackedInt64Array_method_size>`
 
 Returns the number of elements in the array.
 
@@ -379,7 +397,7 @@ Returns the number of elements in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647 **)** |const|
+:ref:`PackedInt64Array<class_PackedInt64Array>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| :ref:`🔗<class_PackedInt64Array_method_slice>`
 
 Returns the slice of the **PackedInt64Array**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **PackedInt64Array**.
 
@@ -395,7 +413,7 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 
 .. rst-class:: classref-method
 
-void **sort** **(** **)**
+|void| **sort**\ (\ ) :ref:`🔗<class_PackedInt64Array_method_sort>`
 
 Sorts the elements of the array in ascending order.
 
@@ -407,9 +425,9 @@ Sorts the elements of the array in ascending order.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array** **(** **)** |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array**\ (\ ) |const| :ref:`🔗<class_PackedInt64Array_method_to_byte_array>`
 
-Returns a copy of the data converted to a :ref:`PackedByteArray<class_PackedByteArray>`, where each element have been encoded as 8 bytes.
+Returns a copy of the data converted to a :ref:`PackedByteArray<class_PackedByteArray>`, where each element has been encoded as 8 bytes.
 
 The size of the new array will be ``int64_array.size() * 8``.
 
@@ -426,7 +444,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` right **)**
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ ) :ref:`🔗<class_PackedInt64Array_operator_neq_PackedInt64Array>`
 
 Returns ``true`` if contents of the arrays differ.
 
@@ -438,7 +456,7 @@ Returns ``true`` if contents of the arrays differ.
 
 .. rst-class:: classref-operator
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **operator +** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` right **)**
+:ref:`PackedInt64Array<class_PackedInt64Array>` **operator +**\ (\ right\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ ) :ref:`🔗<class_PackedInt64Array_operator_sum_PackedInt64Array>`
 
 Returns a new **PackedInt64Array** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedInt64Array_method_append_array>` instead.
 
@@ -450,7 +468,7 @@ Returns a new **PackedInt64Array** with contents of ``right`` added at the end o
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` right **)**
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ ) :ref:`🔗<class_PackedInt64Array_operator_eq_PackedInt64Array>`
 
 Returns ``true`` if contents of both arrays are the same, i.e. they have all equal ints at the corresponding indices.
 
@@ -462,7 +480,7 @@ Returns ``true`` if contents of both arrays are the same, i.e. they have all equ
 
 .. rst-class:: classref-operator
 
-:ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
+:ref:`int<class_int>` **operator []**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_operator_idx_int>`
 
 Returns the :ref:`int<class_int>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -473,3 +491,4 @@ Returns the :ref:`int<class_int>` at index ``index``. Negative indices can be us
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

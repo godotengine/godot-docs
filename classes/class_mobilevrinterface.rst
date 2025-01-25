@@ -29,7 +29,7 @@ You can initialize this interface as follows:
 
     var interface = XRServer.find_interface("Native mobile")
     if interface and interface.initialize():
-        get_viewport().xr = true
+        get_viewport().use_xr = true
 
 .. rst-class:: classref-reftable-group
 
@@ -52,7 +52,13 @@ Properties
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                          | :ref:`k2<class_MobileVRInterface_property_k2>`                           | ``0.215``                                                                          |
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                          | :ref:`offset_rect<class_MobileVRInterface_property_offset_rect>`         | ``Rect2(0, 0, 1, 1)``                                                              |
+   +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                          | :ref:`oversample<class_MobileVRInterface_property_oversample>`           | ``1.5``                                                                            |
+   +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                          | :ref:`vrs_min_radius<class_MobileVRInterface_property_vrs_min_radius>`   | ``20.0``                                                                           |
+   +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                          | :ref:`vrs_strength<class_MobileVRInterface_property_vrs_strength>`       | ``1.0``                                                                            |
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    | :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` | xr_play_area_mode                                                        | ``1`` (overrides :ref:`XRInterface<class_XRInterface_property_xr_play_area_mode>`) |
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -70,12 +76,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **display_to_lens** = ``4.0``
+:ref:`float<class_float>` **display_to_lens** = ``4.0`` :ref:`🔗<class_MobileVRInterface_property_display_to_lens>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_display_to_lens** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_display_to_lens** **(** **)**
+- |void| **set_display_to_lens**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_display_to_lens**\ (\ )
 
 The distance between the display and the lenses inside of the device in centimeters.
 
@@ -87,12 +93,12 @@ The distance between the display and the lenses inside of the device in centimet
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **display_width** = ``14.5``
+:ref:`float<class_float>` **display_width** = ``14.5`` :ref:`🔗<class_MobileVRInterface_property_display_width>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_display_width** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_display_width** **(** **)**
+- |void| **set_display_width**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_display_width**\ (\ )
 
 The width of the display in centimeters.
 
@@ -104,12 +110,12 @@ The width of the display in centimeters.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **eye_height** = ``1.85``
+:ref:`float<class_float>` **eye_height** = ``1.85`` :ref:`🔗<class_MobileVRInterface_property_eye_height>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_eye_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_eye_height** **(** **)**
+- |void| **set_eye_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_eye_height**\ (\ )
 
 The height at which the camera is placed in relation to the ground (i.e. :ref:`XROrigin3D<class_XROrigin3D>` node).
 
@@ -121,12 +127,12 @@ The height at which the camera is placed in relation to the ground (i.e. :ref:`X
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **iod** = ``6.0``
+:ref:`float<class_float>` **iod** = ``6.0`` :ref:`🔗<class_MobileVRInterface_property_iod>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_iod** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_iod** **(** **)**
+- |void| **set_iod**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_iod**\ (\ )
 
 The interocular distance, also known as the interpupillary distance. The distance between the pupils of the left and right eye.
 
@@ -138,12 +144,12 @@ The interocular distance, also known as the interpupillary distance. The distanc
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **k1** = ``0.215``
+:ref:`float<class_float>` **k1** = ``0.215`` :ref:`🔗<class_MobileVRInterface_property_k1>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_k1** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_k1** **(** **)**
+- |void| **set_k1**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_k1**\ (\ )
 
 The k1 lens factor is one of the two constants that define the strength of the lens used and directly influences the lens distortion effect.
 
@@ -155,14 +161,31 @@ The k1 lens factor is one of the two constants that define the strength of the l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **k2** = ``0.215``
+:ref:`float<class_float>` **k2** = ``0.215`` :ref:`🔗<class_MobileVRInterface_property_k2>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_k2** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_k2** **(** **)**
+- |void| **set_k2**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_k2**\ (\ )
 
 The k2 lens factor, see k1.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MobileVRInterface_property_offset_rect:
+
+.. rst-class:: classref-property
+
+:ref:`Rect2<class_Rect2>` **offset_rect** = ``Rect2(0, 0, 1, 1)`` :ref:`🔗<class_MobileVRInterface_property_offset_rect>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_offset_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
+- :ref:`Rect2<class_Rect2>` **get_offset_rect**\ (\ )
+
+Set the offset rect relative to the area being rendered. A length of 1 represents the whole rendering area on that axis.
 
 .. rst-class:: classref-item-separator
 
@@ -172,14 +195,52 @@ The k2 lens factor, see k1.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **oversample** = ``1.5``
+:ref:`float<class_float>` **oversample** = ``1.5`` :ref:`🔗<class_MobileVRInterface_property_oversample>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_oversample** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_oversample** **(** **)**
+- |void| **set_oversample**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_oversample**\ (\ )
 
 The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MobileVRInterface_property_vrs_min_radius:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **vrs_min_radius** = ``20.0`` :ref:`🔗<class_MobileVRInterface_property_vrs_min_radius>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_vrs_min_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_vrs_min_radius**\ (\ )
+
+The minimum radius around the focal point where full quality is guaranteed if VRS is used as a percentage of screen size.
+
+\ **Note:** Mobile and Forward+ renderers only. Requires :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to be set to :ref:`Viewport.VRS_XR<class_Viewport_constant_VRS_XR>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MobileVRInterface_property_vrs_strength:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **vrs_strength** = ``1.0`` :ref:`🔗<class_MobileVRInterface_property_vrs_strength>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_vrs_strength**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_vrs_strength**\ (\ )
+
+The strength used to calculate the VRS density map. The greater this value, the more noticeable VRS is. This improves performance at the cost of quality.
+
+\ **Note:** Mobile and Forward+ renderers only. Requires :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to be set to :ref:`Viewport.VRS_XR<class_Viewport_constant_VRS_XR>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -188,3 +249,4 @@ The oversample setting. Because of the lens distortion we have to render our buf
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

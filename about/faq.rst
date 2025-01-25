@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. meta::
     :keywords: FAQ
 
@@ -9,7 +11,7 @@ Frequently asked questions
 What can I do with Godot? How much does it cost? What are the license terms?
 ----------------------------------------------------------------------------
 
-Godot is `Free and open source Software <https://en.wikipedia.org/wiki/Free_and_open source_software>`_
+Godot is `Free and open source Software <https://en.wikipedia.org/wiki/Free_and_open_source_software>`_
 available under the `OSI-approved <https://opensource.org/licenses/MIT>`_ MIT license. This means it is
 free as in "free speech" as well as in "free beer."
 
@@ -29,7 +31,7 @@ different licenses.
 
 For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_
 as well as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_
-and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files
+and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt>`_ files
 in the Godot repository.
 
 Also, see `the license page on the Godot website <https://godotengine.org/license>`_.
@@ -47,7 +49,7 @@ Which platforms are supported by Godot?
 
 **For exporting your games:**
 
-* Windows (and UWP)
+* Windows
 * macOS
 * Linux, \*BSD
 * Android
@@ -68,6 +70,13 @@ about :ref:`doc_consoles`.
 For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export>`
 and :ref:`compiling Godot yourself <toc-devel-compiling>`.
 
+.. note::
+
+    Godot 3 also had support for Universal Windows Platform (UWP). This platform
+    port was removed in Godot 4 due to lack of maintenance, and it being
+    deprecated by Microsoft. It is still available in the current stable release
+    of Godot 3 for interested users.
+
 Which programming languages are supported in Godot?
 ---------------------------------------------------
 
@@ -82,8 +91,8 @@ focusing on Time-To-Market (TTM), GDScript will provide a fast, friendly, and ca
 way of developing your games.
 
 Note that C# support is still relatively new, and as such, you may encounter
-some issues along the way. C# support is also currently missing on Android, iOS
-and web platforms. Our friendly and hard-working development community is always
+some issues along the way. C# support is also currently missing on the web
+platform. Our friendly and hard-working development community is always
 ready to tackle new problems as they arise, but since this is an open source
 project, we recommend that you first do some due diligence yourself. Searching
 through discussions on
@@ -106,9 +115,8 @@ If you've ever written anything in a language like Python before, then you'll fe
 right at home. For examples and a complete overview of the power GDScript offers
 you, check out the :ref:`GDScript scripting guide <doc_gdscript>`.
 
-There are several reasons to use GDScript, especially when you are prototyping, in
-alpha/beta stages of your project, or are not creating the next AAA title. The
-most salient reason is the overall **reduction of complexity**.
+There are several reasons to use GDScript, but the most salient reason is the overall
+**reduction of complexity**.
 
 The original intent of creating a tightly integrated, custom scripting language for
 Godot was two-fold: first, it reduces the amount of time necessary to get up and running
@@ -124,7 +132,7 @@ more familiar programming languages, especially when supporting those more famil
 languages would result in a worse experience. We understand if you would rather use
 another language in Godot (see the list of supported options above). That being said, if
 you haven't given GDScript a try, try it for **three days**. Just like Godot,
-once you see how powerful it is and rapid your development becomes, we think GDScript
+once you see how powerful it is and how rapid your development becomes, we think GDScript
 will grow on you.
 
 More information about getting comfortable with GDScript or dynamically typed
@@ -149,7 +157,7 @@ The main reasons for creating a custom scripting language for Godot were:
    large amount of code, bugs, bottlenecks, and general inefficiency (Lua, Python,
    Squirrel, JavaScript, etc.). We wanted to focus on a great engine, not a great number
    of integrations.
-4. No native vector types (vector3, matrix4, etc.), resulting in highly
+4. No native vector types (Vector3, Transform3D, etc.), resulting in highly
    reduced performance when using custom types (Lua, Python, Squirrel,
    JavaScript, ActionScript, etc.).
 5. Garbage collector results in stalls or unnecessarily large memory
@@ -158,6 +166,38 @@ The main reasons for creating a custom scripting language for Godot were:
    completion, live editing, etc. (all of them).
 
 GDScript was designed to curtail the issues above, and more.
+
+.. _doc_faq_which_programming_language_is_fastest:
+
+Which programming language is fastest?
+--------------------------------------
+
+In most games, the *scripting language* itself is not the cause of performance
+problems. Instead, performance is slowed by inefficient algorithms (which are
+slow in all languages), by GPU performance, or by the common C++ engine code
+like physics or navigation. All languages supported by Godot are fast enough for
+general-purpose scripting. You should choose a language based on other factors,
+like ease-of-use, familiarity, platform support, or language features.
+
+In general, the performance of C# and GDScript is within the same order of
+magnitude, and C++ is faster than both.
+
+Comparing GDScript performance to C# is tricky, since C# can be faster in some
+specific cases. The C# *language* itself tends to be faster than GDScript, which
+means that C# can be faster in situations with few calls to Godot engine code.
+However, C# can be slower than GDScript when making many Godot API calls, due
+to the cost of *marshalling*. C#'s performance can also be brought down by garbage
+collection which occurs at random and unpredictable moments. This can result in
+stuttering issues in complex projects, and is not exclusive to Godot.
+
+C++, using :ref:`GDExtension <doc_what_is_gdextension>`, will almost always be
+faster than either C# or GDScript. However, C++ is less easy to use than C# or
+GDScript, and is slower to develop with.
+
+You can also use multiple languages within a single project, with
+:ref:`cross-language scripting <doc_cross_language_scripting>`, or by using
+GDExtension and scripting languages together. Be aware that doing so comes with
+its own complications.
 
 What 3D model formats does Godot support?
 -----------------------------------------
@@ -186,6 +226,22 @@ free and open source integration, consider starting the integration work yoursel
 Godot is not owned by one person; it belongs to the community, and it grows along
 with ambitious community contributors like you.
 
+How can I extend Godot?
+-----------------------
+
+For extending Godot, like creating Godot Editor plugins or adding support
+for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>`
+and tool scripts.
+
+Also, see the official blog post on GDExtension, a way to develop native extensions for Godot:
+
+* `Introducing GDNative's successor, GDExtension <https://godotengine.org/article/introducing-gd-extensions>`_
+
+You can also take a look at the GDScript implementation, the Godot modules,
+as well as the `Jolt physics engine integration <https://github.com/godot-jolt/godot-jolt>`__
+for Godot. This would be a good starting point to see how another
+third-party library integrates with Godot.
+
 How do I install the Godot editor on my system (for desktop integration)?
 -------------------------------------------------------------------------
 
@@ -200,7 +256,7 @@ This will automatically perform the required steps for desktop integration.
 Alternatively, you can manually perform the steps that an installer would do for you:
 
 Windows
-^^^^^^^
+~~~~~~~
 
 - Move the Godot executable to a stable location (i.e. outside of your Downloads folder),
   so you don't accidentally move it and break the shortcut in the future.
@@ -211,14 +267,14 @@ Windows
   **Pin to Task Bar**.
 
 macOS
-^^^^^
+~~~~~
 
 Drag the extracted Godot application to ``/Applications/Godot.app``, then drag it
 to the Dock if desired. Spotlight will be able to find Godot as long as it's in
 ``/Applications`` or ``~/Applications``.
 
 Linux
-^^^^^
+~~~~~
 
 - Move the Godot binary to a stable location (i.e. outside of your Downloads folder),
   so you don't accidentally move it and break the shortcut in the future.
@@ -250,11 +306,11 @@ data directory. This is usually a good approach, but this means configuration fi
 will not carry across machines if you copy the folder containing the Godot executable.
 See :ref:`doc_data_paths` for more information.
 
-If *true* portable operation is desired (e.g. for use on an USB stick),
+If *true* portable operation is desired (e.g. for use on a USB stick),
 follow the steps in :ref:`doc_data_paths_self_contained_mode`.
 
-Why does Godot use Vulkan or OpenGL instead of Direct3D?
---------------------------------------------------------
+Why does Godot prioritize Vulkan and OpenGL over Direct3D?
+----------------------------------------------------------
 
 Godot aims for cross-platform compatibility and open standards first and
 foremost. OpenGL and Vulkan are the technologies that are both open and
@@ -262,14 +318,11 @@ available on (nearly) all platforms. Thanks to this design decision, a project
 developed with Godot on Windows will run out of the box on Linux, macOS, and
 more.
 
-Since Godot only has a few people working on its renderer, we would prefer
-having fewer rendering backends to maintain. On top of that, using a single API
-on all platforms allows for greater consistency with fewer platform-specific
-issues.
-
-In the long term, we may develop a Direct3D 12 renderer for Godot (mainly for
-Xbox), but Vulkan and OpenGL will remain the default rendering
-backends on all platforms, including Windows.
+While Vulkan and OpenGL remain our primary focus for their open standard and
+cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12.
+This addition aims to enhance performance and compatibility on platforms where
+Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL
+will continue as the default rendering drivers on all platforms, including Windows.
 
 Why does Godot aim to keep its core feature set small?
 ------------------------------------------------------
@@ -324,20 +377,21 @@ point and only for Apple devices, but then several Android and Apple devices
 with different resolutions and aspect ratios were created, with a very wide
 range of sizes and DPIs.
 
-The most common and proper way to achieve this is to, instead, use a single
-base resolution for the game and only handle different screen aspect ratios.
-This is mostly needed for 2D, as in 3D it's just a matter of Camera XFov or YFov.
+The most common and proper way to achieve this is to, instead, use a single base
+resolution for the game and only handle different screen aspect ratios. This is
+mostly needed for 2D, as in 3D, it's just a matter of camera vertical or
+horizontal FOV.
 
 1. Choose a single base resolution for your game. Even if there are
-   devices that go up to 2K and devices that go down to 400p, regular
+   devices that go up to 1440p and devices that go down to 400p, regular
    hardware scaling in your device will take care of this at little or
    no performance cost. The most common choices are either near 1080p
    (1920x1080) or 720p (1280x720). Keep in mind the higher the
    resolution, the larger your assets, the more memory they will take
    and the longer the time it will take for loading.
 
-2. Use the stretch options in Godot; 2D stretching while keeping aspect
-   ratios works best. Check the :ref:`doc_multiple_resolutions` tutorial
+2. Use the stretch options in Godot; canvas items stretching while keeping
+   aspect ratios works best. Check the :ref:`doc_multiple_resolutions` tutorial
    on how to achieve this.
 
 3. Determine a minimum resolution and then decide if you want your game
@@ -350,27 +404,6 @@ This is mostly needed for 2D, as in 3D it's just a matter of Camera XFov or YFov
    complex, consider learning about Containers.
 
 And that's it! Your game should work in multiple resolutions.
-
-If there is a desire to make your game also work on ancient
-devices with tiny screens (fewer than 300 pixels in width), you can use
-the export option to shrink images, and set that build to be used for
-certain screen sizes in the App Store or Google Play.
-
-How can I extend Godot?
------------------------
-
-For extending Godot, like creating Godot Editor plugins or adding support
-for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>`
-and tool scripts.
-
-Also, see the official blog post on GDExtension, a way to develop native extensions for Godot:
-
-* `Introducing GDNative's successor, GDExtension <https://godotengine.org/article/introducing-gd-extensions>`_
-
-You can also take a look at the GDScript implementation, the Godot modules,
-as well as the `unofficial Python support <https://github.com/touilleMan/godot-python>`_ for Godot.
-This would be a good starting point to see how another third-party library
-integrates with Godot.
 
 When is the next release of Godot out?
 --------------------------------------
@@ -391,6 +424,11 @@ Should I upgrade my project to use new Godot versions?
 Some new versions are safer to upgrade to than others. In general, whether you
 should upgrade depends on your project's circumstances. See
 :ref:`doc_release_policy_should_i_upgrade_my_project` for more information.
+
+Should I use the Forward+, Mobile, or Compatibility renderer?
+-------------------------------------------------------------
+
+You can find a detailed comparison of the renderers in :ref:`doc_renderers`.
 
 I would like to contribute! How can I get started?
 --------------------------------------------------
@@ -451,9 +489,6 @@ size can make it a suitable alternative to frameworks like Electron or Qt.
 When creating a non-game application, make sure to enable
 :ref:`low-processor mode <class_ProjectSettings_property_application/run/low_processor_mode>`
 in the Project Settings to decrease CPU and GPU usage.
-
-That said, we wouldn't recommend using Godot to create a *mobile* application
-since low-processor mode isn't supported on mobile platforms yet.
 
 Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
 `Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of
@@ -516,7 +551,7 @@ reasons why we have chosen SCons over other alternatives. For example:
    customization (:ref:`modules <doc_custom_modules_in_cpp>`). This requires
    complex logic which is easier to write in an actual programming language (like Python)
    rather than using a mostly macro-based language only meant for building.
--  Godot build process makes heavy use of cross-compiling tools. Each
+-  Godot's build process makes heavy use of cross-compiling tools. Each
    platform has a specific detection process, and all these must be
    handled as specific cases with special code written for each.
 
@@ -528,9 +563,9 @@ you are planning to build Godot yourself.
 Why does Godot not use STL (Standard Template Library)?
 -------------------------------------------------------
 
-Like many other libraries (Qt as an example), Godot does not make use of
-STL. We believe STL is a great general-purpose library, but we had special
-requirements for Godot.
+Like many other libraries (Qt as an example), Godot does not make use of STL
+(with a few exceptions such as threading primitives). We believe STL is a great
+general-purpose library, but we had special requirements for Godot.
 
 * STL templates create very large symbols, which results in huge debug binaries. We use few
   templates with very short names instead.
@@ -553,14 +588,7 @@ script), but then it will try to recover as gracefully as possible and keep
 going.
 
 Additionally, exceptions significantly increase the binary size for the
-executable.
-
-Why does Godot not enforce RTTI?
---------------------------------
-
-Godot provides its own type-casting system, which can optionally use RTTI
-internally. Disabling RTTI in Godot means considerably smaller binary sizes can
-be achieved, at a little performance cost.
+executable and result in increased compile times.
 
 Does Godot use an ECS (Entity Component System)?
 ------------------------------------------------
@@ -571,7 +599,7 @@ resulted in better usability while still being fast enough for most use cases.
 
 That said, nothing prevents you from making use of composition in your project
 by creating child Nodes with individual scripts. These nodes can then be added and
-removed at run-time to dynamically add and remove behaviors.
+removed at runtime to dynamically add and remove behaviors.
 
 More information about Godot's design choices can be found in
 `this article <https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine>`__.

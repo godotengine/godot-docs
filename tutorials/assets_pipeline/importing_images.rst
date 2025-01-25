@@ -13,6 +13,9 @@ Godot can import the following image formats:
 - DirectDraw Surface (``.dds``)
   - If mipmaps are present in the texture, they will be loaded directly.
   This can be used to achieve effects using custom mipmaps.
+- Khronos Texture (``.ktx``)
+  - Decoding is done using `libktx <https://github.com/KhronosGroup/KTX-Software>`__.
+  Only supports 2D images. Cubemaps, texture arrays and de-padding are not supported.
 - OpenEXR (``.exr``)
   - Supports HDR (highly recommended for panorama skies).
 - Radiance HDR (``.hdr``)
@@ -25,7 +28,8 @@ Godot can import the following image formats:
 - SVG (``.svg``)
   - SVGs are rasterized using `ThorVG <https://www.thorvg.org/>`__
   when importing them. `Support is limited <https://www.thorvg.org/about#:~:text=among%20the%20svg%20tiny%20specs%2C%20yet%20unsupported%20features%20in%20the%20thorvg%20are%20the%20following>`__;
-  complex vectors may not render correctly.
+  complex vectors may not render correctly. :ref:`Text must be converted to paths <doc_importing_images_svg_text>`;
+  otherwise, it won't appear in the rasterized image.
   You can check whether ThorVG can render a certain vector correctly using its
   `web-based viewer <https://www.thorvg.org/viewer>`__.
   For complex vectors, rendering them to PNGs using `Inkscape <https://inkscape.org/>`__
@@ -61,7 +65,7 @@ image in the FileSystem dock:
 .. _doc_importing_images_changing_import_type:
 
 Changing import type
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 It is possible to choose other types of imported resources in the Import dock:
 
@@ -75,8 +79,8 @@ It is possible to choose other types of imported resources in the Import dock:
   custom shaders.
 - **CubemapArray:** Import the texture as a collection of 6-sided cubemaps,
   which can be sampled in custom shaders. This resource type can only be
-  displayed when using the Forward+ or Forward Mobile rendering methods, not
-  Compatibility.
+  displayed when using the Forward+ or Mobile renderers, not the Compatibility
+  renderer.
 - **Font Data (Monospace Image Font):** Import the image as a bitmap font where
   all characters have the same width. See :ref:`doc_gui_using_fonts`.
 - **Image:** Import the image as-is. This resource type cannot be displayed
@@ -93,14 +97,23 @@ It is possible to choose other types of imported resources in the Import dock:
   texture applied onto a 3D surface. Texture3D is similar to a texture array, but
   with interpolation between layers. Texture3D is typically used for
   :ref:`class_FogMaterial` density maps in :ref:`volumetric fog
-  <doc_volumetric_fog>`, :ref:`class_Environment` 3D LUT color correction and
-  custom shaders.
+  <doc_volumetric_fog>`, :ref:`particle attractor <doc_3d_particles_attractors>`
+  vector fields, :ref:`class_Environment` 3D LUT color correction, and custom shaders.
 - **TextureAtlas:** Import the image as an *atlas* of different textures. Can be
   used to reduce memory usage for animated 2D sprites. Only supported in 2D due
   to missing support in built-in 3D shaders.
 
+For **Cubemap**, the expected image order is X+, X-, Y+, Y-, Z+, Z-
+(in Godot's coordinate system, so Y+ is "up" and Z- is "forward").
+Here are templates you can use for cubemap images (right-click > **Save Link As…**):
+
+- :download:`2×3 cubemap template (default layout option) <img/cubemap_template_2x3.webp>`
+- :download:`3×2 cubemap template <img/cubemap_template_3x2.webp>`
+- :download:`1×6 cubemap template <img/cubemap_template_1x6.webp>`
+- :download:`6×1 cubemap template <img/cubemap_template_6x1.webp>`
+
 Detect 3D
-^^^^^^^^^
+~~~~~~~~~
 
 The default import options (no mipmaps and **Lossless** compression) are suited
 for 2D, but are not ideal for most 3D projects. **Detect 3D** makes Godot aware
@@ -139,7 +152,7 @@ Import options
 .. _doc_importing_images_compress_mode:
 
 Compress > Mode
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Images are one of the largest assets in a game. To handle them efficiently, they
 need to be compressed. Godot offers several compression methods, depending on
@@ -243,15 +256,15 @@ FileSystem dock, then looking at the Inspector:
    Previewing a texture in the Inspector. Credit: `Red Brick 03 - Poly Haven <https://polyhaven.com/a/red_brick_03>`__
 
 Compress > High Quality
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
     High-quality VRAM texture compression is only supported in the Forward+ and
-    Forward Mobile rendering methods.
+    Mobile renderers.
 
-    When using the Compatibility rendering method, this option is always
-    considered disabled.
+    When using the Compatibility renderer, this option is always considered
+    disabled.
 
 If enabled, uses BPTC compression on desktop platforms and :abbr:`ASTC (Adaptive
 Scalable Texture Compression)` compression on mobile platforms. When using BPTC,
@@ -266,7 +279,7 @@ BPTC and ASTC support VRAM compression for HDR textures, but S3TC and ETC2 do
 not (see **HDR Compression** below).
 
 Compress > HDR Compression
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -286,7 +299,7 @@ If set to **Always**, will force VRAM compression even for HDR textures with an
 alpha channel. To perform this, the alpha channel is discarded on import.
 
 Compress > Normal Map
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 When using a texture as normal map, only the red and green channels are
 required. Given regular texture compression algorithms produce artifacts that
@@ -324,7 +337,7 @@ using the same amount of memory as a standard RGBA VRAM-compressed texture:
   `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__.
 
 Compress > Channel Pack
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 If set to **sRGB Friendly** (default), prevents the RG color format from being
 used as it does not support sRGB color.
@@ -335,12 +348,16 @@ does not use the blue channel.
 A third option **Normal Map (RG Channels)** is *only* available in layered
 textures (:ref:`class_Cubemap`, :ref:`class_CubemapArray`, :ref:`class_Texture2DArray`
 and :ref:`class_Texture3D`). This forces all layers from the texture to be imported
-with the RG color format to reduce memory usage, with only the red and green
-channels preserved. This only has an effect on textures with the **VRAM Compressed**
+with the RG color format, with only the red and green
+channels preserved. :abbr:`RGTC (Red-Green Texture Compression)` compression is able to
+preserve its detail much better, while using the same amount of memory as a standard
+RGBA VRAM-compressed texture. This only has an effect on textures with the **VRAM Compressed**
 or **Basis Universal** compression modes.
 
+.. _doc_importing_images_mipmaps:
+
 Mipmaps > Generate
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 If enabled, smaller versions of the texture are generated on import. For
 example, a 64×64 texture will generate 6 mipmaps (32×32, 16×16, 8×8, 4×4, 2×2,
@@ -360,7 +377,10 @@ camera never zooms out significantly, there won't be a benefit to enabling
 mipmaps but memory usage will increase.
 
 Mipmaps > Limit
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
+
+.. UPDATE: Not implemented. When Mipmaps > Limit is implemented, remove this
+.. warning and remove this comment.
 
 .. warning::
 
@@ -371,13 +391,13 @@ can be generated. This can be decreased if you don't want textures to become too
 low-resolution at extreme distances, at the cost of some graininess.
 
 Roughness > Mode
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 The color channel to consider as a roughness map in this texture. Only effective if
 **Roughness > Src Normal** is not empty.
 
-Rougness > Src Normal
-^^^^^^^^^^^^^^^^^^^^^
+Roughness > Src Normal
+~~~~~~~~~~~~~~~~~~~~~~
 
 The path to the texture to consider as a normal map for roughness filtering on
 import. Specifying this can help decrease specular aliasing slightly in 3D.
@@ -385,7 +405,7 @@ import. Specifying this can help decrease specular aliasing slightly in 3D.
 Roughness filtering on import is only used in 3D rendering, not 2D.
 
 Process > Fix Alpha Border
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This puts pixels of the same surrounding color in transition from transparent to
 opaque areas. For textures displayed with bilinear filtering, this helps
@@ -397,7 +417,7 @@ It's recommended to leave this enabled (as it is by default), unless this causes
 issues for a particular image.
 
 Process > Premult Alpha
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 An alternative to fixing darkened borders with **Fix Alpha Border** is to use
 premultiplied alpha. By enabling this option, the texture will be converted to
@@ -411,7 +431,7 @@ displayed correctly:
   option is only suited for 2D.
 
 Process > Normal Map Invert Y
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot requires the normal map to use the X+, Y+ and Z+ coordinates, which is
 known as an OpenGL-style normal map. If you've imported a material made to be
@@ -423,7 +443,7 @@ popular engines) can be found
 `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__.
 
 Process > HDR as sRGB
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 Some HDR images you can find online may be broken and contain sRGB color data
 (instead of linear color data). It is advised not to use those files. If you
@@ -435,7 +455,7 @@ absolutely have to, enabling this option on will make them look correct.
     resulting image to look too dark, so leave this disabled if unsure.
 
 Process > HDR Clamp Exposure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some HDR panorama images you can find online may contain extremely bright
 pixels, due to being taken from real life sources without any clipping.
@@ -448,7 +468,7 @@ clamping formula that does not introduce *visible* clipping – glow will keep
 working when looking at the background sky.
 
 Process > Size Limit
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 If set to a value greater than ``0``, the size of the texture is limited on
 import to a value smaller than or equal to the value specified here. For
@@ -463,7 +483,7 @@ usually can't display textures larger than 4096×4096).
 .. _doc_importing_images_detect_3d_compress_to:
 
 Detect 3D > Compress To
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This changes the :ref:`doc_importing_images_compress_mode` option that is used
 when a texture is detected as being used in 3D.
@@ -473,11 +493,65 @@ used in 3D. Changing this to **Disabled** then reimporting will not change the
 existing compress mode on a texture (if it's detected to be used in 3D), but
 choosing **VRAM Compressed** or **Basis Universal** will.
 
+SVG > Scale
+~~~~~~~~~~~
+
+*This is only available for SVG images.*
+
+The scale the SVG should be rendered at, with ``1.0`` being the original design
+size. Higher values result in a larger image. Note that unlike font
+oversampling, this affects the physical size the SVG is rendered at in 2D. See
+also **Editor > Scale With Editor Scale** below.
+
+.. _doc_importing_images_editor_import_options:
+
+Editor > Scale With Editor Scale
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*This is only available for SVG images.*
+
+If true, scales the imported image to match the editor's display scale factor.
+This should be enabled for editor plugin icons and custom class icons, but
+should be left disabled otherwise.
+
+Editor > Convert Colors With Editor Theme
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*This is only available for SVG images.*
+
+If checked, converts the imported image's colors to match the editor's icon and
+font color palette. This assumes the image uses the exact same colors as
+:ref:`Godot's own color palette for editor icons <doc_editor_icons>`, with the
+source file designed for a dark editor theme. This should be enabled for editor
+plugin icons and custom class icons, but should be left disabled otherwise.
+
+.. _doc_importing_images_svg_text:
+
+Importing SVG images with text
+------------------------------
+
+As the SVG library used in Godot doesn't support rasterizing text found in SVG
+images, text must be converted to a path first. Otherwise, text won't appear in
+the rasterized image.
+
+There are two ways to achieve this in a non-destructive manner, so you can keep
+editing the original text afterwards:
+
+- Select your text object in Inkscape, then duplicate it in place by pressing
+  :kbd:`Ctrl + D` and use **Path > Object to Path**. Hide the original text
+  object afterwards using the **Layers and Objects** dock.
+- Use the Inkscape command line to export an SVG from another SVG file with text
+  converted to paths:
+
+::
+
+    inkscape --export-text-to-path --export-filename svg_with_text_converted_to_path.svg svg_with_text.svg
+
 Best practices
 --------------
 
 Supporting high-resolution texture sizes in 2D without artifacts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To support :ref:`multiple resolutions <doc_multiple_resolutions>` with crisp
 visuals at high resolutions, you will need to use high-resolution source images
@@ -503,7 +577,7 @@ to make textures sharper (at the cost of some graininess) by setting
 negative value.
 
 Use appropriate texture sizes in 3D
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While there's no "one size fits all" recommendation, here are some general
 recommendations for choosing texture sizes in 3D:
@@ -536,3 +610,9 @@ worth exploring:
 - When working with 3D models using a low-poly style and plain colors, you can
   rely on vertex colors instead of textures to represent colors on the model's
   surfaces.
+
+.. seealso::
+
+    Images can be loaded and saved at runtime using
+    :ref:`runtime file loading and saving <doc_runtime_file_loading_and_saving_images>`,
+    including from an exported project.

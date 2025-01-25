@@ -21,7 +21,7 @@ Abstract base class for all 2D physics joints.
 Description
 -----------
 
-Abstract base class for all joints in 2D physics. 2D joints bind together two physics bodies and apply a constraint.
+Abstract base class for all joints in 2D physics. 2D joints bind together two physics bodies (:ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>`) and apply a constraint.
 
 .. rst-class:: classref-reftable-group
 
@@ -41,6 +41,18 @@ Properties
    | :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       | ``NodePath("")`` |
    +---------------------------------+--------------------------------------------------------------------+------------------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint2D_method_get_rid>`\ (\ ) |const| |
+   +-----------------------+------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -54,14 +66,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bias** = ``0.0``
+:ref:`float<class_float>` **bias** = ``0.0`` :ref:`🔗<class_Joint2D_property_bias>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bias** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bias** **(** **)**
+- |void| **set_bias**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bias**\ (\ )
 
-When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint.
+When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the :ref:`bias<class_Joint2D_property_bias>` controls how fast the joint pulls them back to their original position. The lower the :ref:`bias<class_Joint2D_property_bias>` the more the two bodies can pull on the joint.
 
 When set to ``0``, the default value from :ref:`ProjectSettings.physics/2d/solver/default_constraint_bias<class_ProjectSettings_property_physics/2d/solver/default_constraint_bias>` is used.
 
@@ -73,14 +85,14 @@ When set to ``0``, the default value from :ref:`ProjectSettings.physics/2d/solve
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disable_collision** = ``true``
+:ref:`bool<class_bool>` **disable_collision** = ``true`` :ref:`🔗<class_Joint2D_property_disable_collision>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_exclude_nodes_from_collision** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision** **(** **)**
+- |void| **set_exclude_nodes_from_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision**\ (\ )
 
-If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` can not collide.
+If ``true``, the two bodies bound together do not collide with each other.
 
 .. rst-class:: classref-item-separator
 
@@ -90,14 +102,14 @@ If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **node_a** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **node_a** = ``NodePath("")`` :ref:`🔗<class_Joint2D_property_node_a>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_node_a** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_node_a** **(** **)**
+- |void| **set_node_a**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_node_a**\ (\ )
 
-The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
+Path to the first body (A) attached to the joint. The node must inherit :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -107,14 +119,31 @@ The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **node_b** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **node_b** = ``NodePath("")`` :ref:`🔗<class_Joint2D_property_node_b>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_node_b** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_node_b** **(** **)**
+- |void| **set_node_b**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_node_b**\ (\ )
 
-The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
+Path to the second body (B) attached to the joint. The node must inherit :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_Joint2D_method_get_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_Joint2D_method_get_rid>`
+
+Returns the joint's internal :ref:`RID<class_RID>` from the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -123,3 +152,4 @@ The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<clas
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`
