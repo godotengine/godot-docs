@@ -1005,9 +1005,10 @@ Calculating this arc will be more complex than in the case of the line:
  .. code-tab:: gdscript GDScript
 
     func _draw():
-        # Calculate the arc parameters.
-        var center : Vector2 = Vector2((_point2.x - point1.x) / 2,
-                                       (_point2.y - point1.y) / 2)
+        # Average points to get center.
+        var center : Vector2 = Vector2((_point2.x + point1.x) / 2,
+                                       (_point2.y + point1.y) / 2)
+        # Calculate the rest of the arc parameters. 
         var radius : float = point1.distance_to(_point2) / 2
         var start_angle : float = (_point2 - point1).angle()
         var end_angle : float = (point1 - _point2).angle()
@@ -1022,9 +1023,10 @@ Calculating this arc will be more complex than in the case of the line:
 
     public override void _Draw()
     {
-        // Calculate the arc parameters.
-        Vector2 center = new Vector2((_point2.X - Point1.X) / 2.0f,
-                                        (_point2.Y - Point1.Y) / 2.0f);
+        // Average points to get center.
+        Vector2 center = new Vector2((_point2.X + Point1.X) / 2.0f,
+                                        (_point2.Y + Point1.Y) / 2.0f);
+        // Calculate the rest of the arc parameters. 
         float radius = Point1.DistanceTo(_point2) / 2.0f;
         float startAngle = (_point2 - Point1).Angle();
         float endAngle = (Point1 - _point2).Angle();
