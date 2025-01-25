@@ -107,7 +107,7 @@ Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryPara
 
 \ ``linear_velocity``: The colliding object's velocity :ref:`Vector3<class_Vector3>`. If the object is an :ref:`Area3D<class_Area3D>`, the result is ``(0, 0, 0)``.
 
-\ ``normal``: The object's surface normal at the intersection point.
+\ ``normal``: The collision normal of the query shape at the intersection point, pointing away from the intersecting object.
 
 \ ``point``: The intersection point.
 

@@ -625,6 +625,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/window_placement/android_window<class_EditorSettings_property_run/window_placement/android_window>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`run/window_placement/game_embed_mode<class_EditorSettings_property_run/window_placement/game_embed_mode>`                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/window_placement/play_window_pip_mode<class_EditorSettings_property_run/window_placement/play_window_pip_mode>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>`                                                                                                                         |
@@ -4570,6 +4572,18 @@ Specifies how the Play window is launched relative to the Android editor.
 - **Launch in PiP mode** will launch the Play window directly in picture-in-picture (PiP) mode if PiP mode is supported and enabled. When maximized, the Play window will occupy the same window as the Editor.
 
 \ **Note:** Only available in the Android editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_run/window_placement/game_embed_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/window_placement/game_embed_mode** :ref:`🔗<class_EditorSettings_property_run/window_placement/game_embed_mode>`
+
+Overrides game embedding setting for all newly opened projects. If enabled, game embedding settings are not saved.
 
 .. rst-class:: classref-item-separator
 
