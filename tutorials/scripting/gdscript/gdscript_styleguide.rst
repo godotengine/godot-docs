@@ -728,7 +728,7 @@ We suggest to organize GDScript code this way:
     10. remaining regular variables
     11. @onready variables
 
-    12. ``_static_init()``
+    12. _static_init()
     13. remaining static methods
     14. overridden built-in virtual methods:
         1. _init()
