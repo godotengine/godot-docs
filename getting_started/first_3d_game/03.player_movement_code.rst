@@ -121,7 +121,7 @@ using the global ``Input`` object, in ``_physics_process()``.
 
 Here, instead of ``_process()``, we're going to make all calculations using the ``_physics_process()``
 virtual function. It's designed specifically for physics-related code like moving a
-kinematic or rigid body. It updates the node using time intervals instead of every frame. 
+kinematic or rigid body. It updates the node using fixed time intervals.
 
 .. seealso::
 
