@@ -426,9 +426,12 @@ displayed correctly:
 
 - In 2D, a :ref:`class_CanvasItemMaterial` will need to be created and
   configured to use the **Premul Alpha** blend mode on CanvasItems that use this
-  texture.
-- In 3D, there is no support for premultiplied alpha blend mode yet, so this
-  option is only suited for 2D.
+  texture. In :ref:`custom canvas item shaders <doc_canvas_item_shader>`,
+  ``render_mode blend_premul_alpha;`` should be used.
+- In 3D, a :ref:`class_BaseMaterial3D` will need to be created and configured
+  to use the **Premul Alpha** blend mode on materials that use this texture.
+  In :ref:`custom spatial shaders <doc_spatial_shader>`,
+  ``render_mode blend_premul_alpha;`` should be used.
 
 Process > Normal Map Invert Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

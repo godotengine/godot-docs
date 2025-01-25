@@ -23,6 +23,8 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **blend_mul**                 | Multiplicative blend mode.                                                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
+| **blend_premul_alpha**        | Premultiplied alpha blend mode (fully transparent = add, fully opaque = mix).                        |
++-------------------------------+------------------------------------------------------------------------------------------------------+
 | **depth_draw_opaque**         | Only draw depth for opaque geometry (not transparent).                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **depth_draw_always**         | Always draw depth (opaque and transparent).                                                          |
@@ -33,7 +35,7 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **depth_test_disabled**       | Disable depth testing.                                                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **sss_mode_skin**             | Subsurface Scattering mode for skin.                                                                 |
+| **sss_mode_skin**             | Subsurface Scattering mode for skin (optimizes visuals for human skin, e.g. boosted red channel).    |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **cull_back**                 | Cull back-faces (default).                                                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -41,23 +43,25 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **cull_disabled**             | Culling disabled (double sided).                                                                     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **unshaded**                  | Result is just albedo. No lighting/shading happens in material.                                      |
+| **unshaded**                  | Result is just albedo. No lighting/shading happens in material, making it faster to render.          |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **wireframe**                 | Geometry draws using lines.                                                                          |
+| **wireframe**                 | Geometry draws using lines (useful for troubleshooting).                                             |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **debug_shadow_splits**       | Directional shadows are drawn using different colors for each split (useful for troubleshooting).    |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **diffuse_burley**            | Burley (Disney PBS) for diffuse (default).                                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **diffuse_lambert**           | Lambert shading for diffuse.                                                                         |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **diffuse_lambert_wrap**      | Lambert wrapping (roughness dependent) for diffuse.                                                  |
+| **diffuse_lambert_wrap**      | Lambert-wrap shading (roughness-dependent) for diffuse.                                              |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **diffuse_toon**              | Toon shading for diffuse.                                                                            |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **specular_schlick_ggx**      | Schlick-GGX for specular (default).                                                                  |
+| **specular_schlick_ggx**      | Schlick-GGX for direct light specular lobes (default).                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **specular_toon**             | Toon for specular.                                                                                   |
+| **specular_toon**             | Toon for direct light specular lobes.                                                                |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **specular_disabled**         | Disable specular.                                                                                    |
+| **specular_disabled**         | Disable direct light specular lobes. Doesn't affect reflected light (use ``SPECULAR = 0.0`` instead).|
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **skip_vertex_transform**     | ``VERTEX``, ``NORMAL``, ``TANGENT``, and ``BITANGENT``                                               |
 |                               | need to be transformed manually in the ``vertex()`` function.                                        |
@@ -65,9 +69,9 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 | **world_vertex_coords**       | ``VERTEX``, ``NORMAL``, ``TANGENT``, and ``BITANGENT``                                               |
 |                               | are modified in world space instead of model space.                                                  |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **ensure_correct_normals**    | Use when non-uniform scale is applied to mesh.                                                       |
+| **ensure_correct_normals**    | Use when non-uniform scale is applied to mesh *(note: currently unimplemented)*.                     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **shadows_disabled**          | Disable computing shadows in shader.                                                                 |
+| **shadows_disabled**          | Disable computing shadows in shader. The shader will not cast shadows, but can still receive them.   |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **ambient_light_disabled**    | Disable contribution from ambient light and radiance map.                                            |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -75,7 +79,7 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 |                               | non-shadowed areas are transparent. Useful for overlaying shadows onto                               |
 |                               | a camera feed in AR.                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **vertex_lighting**           | Use vertex-based lighting.                                                                           |
+| **vertex_lighting**           | Use vertex-based lighting instead of per-pixel lighting.                                             |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **particle_trails**           | Enables the trails when used on particles geometry.                                                  |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -83,7 +87,7 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **alpha_to_coverage_and_one** | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **fog_disabled**              | Disable receiving depth-based or volumetric fog. Useful for blend_add materials like particles.      |
+| **fog_disabled**              | Disable receiving depth-based or volumetric fog. Useful for ``blend_add`` materials like particles.  |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
@@ -129,7 +133,7 @@ Vertex built-ins
 ----------------
 
 Vertex data (``VERTEX``, ``NORMAL``, ``TANGENT``, and ``BITANGENT``) are presented in model space
-(also called local space). If not written to, these values will not be modified and be 
+(also called local space). If not written to, these values will not be modified and be
 passed through as they came, then transformed into view space to be used in ``fragment()``.
 
 They can optionally be presented in world space by using the ``world_vertex_coords`` render mode.
@@ -283,7 +287,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 |                                        | left. ``z`` specifies fragment depth. It is also used as the output value for the fragment depth |
 |                                        | unless ``DEPTH`` is written to.                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in bool **FRONT_FACING**               | ``true`` if current face is front facing.                                                        |
+| in bool **FRONT_FACING**               | ``true`` if current face is front facing, ``false`` otherwise.                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VIEW**                       | Normalized vector from fragment position to camera (in view space). This is the same for both    |
 |                                        | perspective and orthogonal cameras.                                                              |
@@ -298,7 +302,9 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **MODEL_MATRIX**               | Model/local space to world space transform.                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat3 **MODEL_NORMAL_MATRIX**        |                                                                                                  |
+| in mat3 **MODEL_NORMAL_MATRIX**        | Model/local space to world space transform for normals. This is the same as ``MODEL_MATRIX``     |
+|                                        | by default unless the object is scaled non-uniformly, in which case this is set to               |
+|                                        | ``transpose(inverse(mat3(MODEL_MATRIX)))``.                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **VIEW_MATRIX**                | World space to view space transform.                                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -325,7 +331,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | inout vec3 **LIGHT_VERTEX**            | A writable version of ``VERTEX`` that can be used to alter light and shadows. Writing to this    |
 |                                        | will not change the position of the fragment.                                                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in int **VIEW_INDEX**                  | The view that we are rendering.                                                                  |
+| in int **VIEW_INDEX**                  | The view that we are rendering. Used to distinguish between views in multiview/stereo rendering. |
 |                                        | ``VIEW_MONO_LEFT`` (``0``) for Mono (not multiview) or                                           |
 |                                        | left eye, ``VIEW_RIGHT`` (``1``) for right eye.                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -365,43 +371,58 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_SCISSOR_THRESHOLD**  | If written to, values below a certain amount of alpha are discarded.                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA_HASH_SCALE**         |                                                                                                  |
+| out float **ALPHA_HASH_SCALE**         | Alpha hash scale when using the alpha hash transparency mode. Defaults to ``1.0``.               |
+|                                        | Higher values result in more visible pixels in the dithering pattern.                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA_ANTIALIASING_EDGE**  |                                                                                                  |
+| out float **ALPHA_ANTIALIASING_EDGE**  | The threshold below which alpha to coverage antialiasing should be used. Defaults to ``0.0``.    |
+|                                        | Requires the ``alpha_to_coverage`` render mode. Should be set to a value lower than              |
+|                                        | ``ALPHA_SCISSOR_THRESHOLD`` to be effective.                                                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec2 **ALPHA_TEXTURE_COORDINATE**  |                                                                                                  |
+| out vec2 **ALPHA_TEXTURE_COORDINATE**  | The texture coordinate to use for alpha-to-coverge antialiasing. Requires the                    |
+|                                        | ``alpha_to_coverage`` render mode. Typically set to ``UV * vec2(albedo_texture_size)`` where     |
+|                                        | ``albedo_texture_size`` is the size of the albedo texture in pixels.                             |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **PREMUL_ALPHA_FACTOR**      | Premultiplied alpha factor. Only effective if ``render_mode blend_premul_alpha;`` is used.       |
+|                                        | This should be written to when using a *shaded* material with premultiplied alpha blending for   |
+|                                        | interaction with lighting. This is not required for unshaded materials.                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **METALLIC**                 | Metallic (range of ``[0.0, 1.0]``).                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **SPECULAR**                 | Specular. Defaults to ``0.5``, best not to modify unless you want to change IOR.                 |
+| out float **SPECULAR**                 | Specular (not physically accurate to change). Defaults to ``0.5``. ``0.0`` disables reflections. |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ROUGHNESS**                | Roughness (range of ``[0.0, 1.0]``).                                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **RIM**                      | Rim (range of ``[0.0, 1.0]``). If used, Godot calculates rim lighting.                           |
+|                                        | Rim size depends on ``ROUGHNESS``.                                                               |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **RIM_TINT**                 | Rim Tint, range of ``0.0`` (white) to ``1.0`` (albedo). If used, Godot calculates rim lighting.  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **CLEARCOAT**                | Small added specular blob. If used, Godot calculates Clearcoat.                                  |
+| out float **CLEARCOAT**                | Small specular blob added on top of the existing one. If used, Godot calculates clearcoat.       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **CLEARCOAT_GLOSS**          | Gloss of Clearcoat. If used, Godot calculates Clearcoat.                                         |
+| out float **CLEARCOAT_GLOSS**          | Gloss of clearcoat. If used, Godot calculates clearcoat.                                         |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ANISOTROPY**               | For distorting the specular blob according to tangent space.                                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec2 **ANISOTROPY_FLOW**           | Distortion direction, use with flowmaps.                                                         |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **SSS_STRENGTH**             | Strength of Subsurface Scattering. If used, Subsurface Scattering will be applied to object.     |
+| out float **SSS_STRENGTH**             | Strength of subsurface scattering. If used, subsurface scattering will be applied to the object. |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec4 **SSS_TRANSMITTANCE_COLOR**   |                                                                                                  |
+| out vec4 **SSS_TRANSMITTANCE_COLOR**   | Color of subsurface scattering transmittance. If used, subsurface scattering transmittance       |
+|                                        | will be applied to the object.                                                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **SSS_TRANSMITTANCE_DEPTH**  |                                                                                                  |
+| out float **SSS_TRANSMITTANCE_DEPTH**  | Depth of subsurface scattering transmittance. Higher values allow the effect to reach deeper     |
+|                                        | into the object.                                                                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **SSS_TRANSMITTANCE_BOOST**  |                                                                                                  |
+| out float **SSS_TRANSMITTANCE_BOOST**  | Boosts the subsurface scattering transmittance if set above ``0.0``. This makes the effect       |
+|                                        | show up even on directly lit surfaces                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **BACKLIGHT**               |                                                                                                  |
+| inout vec3 **BACKLIGHT**               | Color of backlighting (works like direct light, but it's received even if the normal             |
+|                                        | is slightly facing away from the light). If used, backlighting will be applied to the object.    |
+|                                        | Can be used as a cheaper approximation of subsurface scattering.                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **AO**                       | Strength of Ambient Occlusion. For use with pre-baked AO.                                        |
+| out float **AO**                       | Strength of ambient occlusion. For use with pre-baked AO.                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **AO_LIGHT_AFFECT**          | How much AO affects lights (range of ``[0.0, 1.0]``, default ``0.0``).                           |
+| out float **AO_LIGHT_AFFECT**          | How much ambient occlusion affects direct light (range of ``[0.0, 1.0]``, default ``0.0``).      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **EMISSION**                  | Emission color (can go over ``(1.0, 1.0, 1.0)`` for HDR).                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -424,7 +445,7 @@ Light built-ins
 ---------------
 
 Writing light processor functions is completely optional. You can skip the ``light()`` function by using
-the ``unshaded`` render mode. If no light function is written, Godot will use the material properties 
+the ``unshaded`` render mode. If no light function is written, Godot will use the material properties
 written to in the ``fragment()`` function to calculate the lighting for you (subject to the render mode).
 
 The ``light()`` function is called for every light in every pixel. It is called within a loop for each light type.
@@ -441,7 +462,7 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 
 .. warning::
 
-    The ``light()`` function won't be run if the ``vertex_lighting`` render mode is enabled, or if 
+    The ``light()`` function won't be run if the ``vertex_lighting`` render mode is enabled, or if
     :ref:`Rendering > Quality > Shading > Force Vertex Shading<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>`
     is enabled in the Project Settings. (It's enabled by default on mobile platforms.)
 
