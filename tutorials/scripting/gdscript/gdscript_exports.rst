@@ -99,19 +99,19 @@ annotation.
 Strings as paths
 ----------------
 
-String as a path to a file.
+String as a path to a file. See :ref:`@export_file <class_@GDScript_annotation_@export_file>`.
 
 ::
 
     @export_file var f
 
-String as a path to a directory.
+String as a path to a directory. See :ref:`@export_dir <class_@GDScript_annotation_@export_dir>`.
 
 ::
 
     @export_dir var f
 
-String as a path to a file, custom filter provided as hint.
+String as a path to a file, custom filter provided as hint. See again :ref:`@export_file <class_@GDScript_annotation_@export_file>`.
 
 ::
 
@@ -120,20 +120,20 @@ String as a path to a file, custom filter provided as hint.
 Using paths in the global filesystem is also possible,
 but only in scripts in tool mode.
 
-String as a path to a PNG file in the global filesystem.
+String as a path to a PNG file in the global filesystem. See :ref:`@export_global_file <class_@GDScript_annotation_@export_global_file>`.
 
 ::
 
     @export_global_file("*.png") var tool_image
 
-String as a path to a directory in the global filesystem.
+String as a path to a directory in the global filesystem. See :ref:`@export_global_dir <class_@GDScript_annotation_@export_global_dir>`.
 
 ::
 
     @export_global_dir var tool_dir
 
 The multiline annotation tells the editor to show a large input
-field for editing over multiple lines.
+field for editing over multiple lines. See :ref:`@export_multiline <class_@GDScript_annotation_@export_multiline>`.
 
 ::
 
@@ -141,6 +141,8 @@ field for editing over multiple lines.
 
 Limiting editor input ranges
 ----------------------------
+
+See :ref:`@export_range <class_@GDScript_annotation_@export_range>` for all of the following.
 
 Allow integer values from 0 to 20.
 
@@ -222,7 +224,7 @@ Floats with easing hint
 -----------------------
 
 Display a visual representation of the ``ease()`` function
-when editing.
+when editing. See :ref:`@export_exp_easing <class_@GDScript_annotation_@export_exp_easing>`.
 
 ::
 
@@ -237,7 +239,7 @@ Regular color given as red-green-blue-alpha value.
 
     @export var col: Color
 
-Color given as red-green-blue value (alpha will always be 1).
+Color given as red-green-blue value (alpha will always be 1). See :ref:`@export_color_no_alpha <class_@GDScript_annotation_@export_color_no_alpha>`.
 
 ::
 
@@ -303,6 +305,8 @@ in conjunction with a :ref:`script in "tool" mode <doc_gdscript_tool_mode>`.
 Exporting bit flags
 -------------------
 
+See :ref:`@export_flags <class_@GDScript_annotation_@export_flags>`.
+
 Integers used as bit flags can store multiple ``true``/``false`` (boolean)
 values in one property. By using the ``@export_flags`` annotation, they
 can be set from the editor::
@@ -340,6 +344,8 @@ If in doubt, use boolean variables instead.
 
 Exporting enums
 ---------------
+
+See :ref:`@export_enum <class_@GDScript_annotation_@export_enum>`.
 
 Properties can be exported with a type hint referencing an enum to limit their values
 to the values of the enumeration. The editor will create a widget in the Inspector, enumerating
@@ -434,6 +440,8 @@ Other export variants can also be used when exporting arrays:
 
 ``@export_storage``
 -------------------
+
+See :ref:`@export_storage <class_@GDScript_annotation_@export_storage>`.
 
 By default, exporting a property has two effects:
 
