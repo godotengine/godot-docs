@@ -131,7 +131,7 @@ and SubViewports.
    restrictions described above. However, since these events target specific Controls, only direct ancestors of 
    the targeted Control node receive the event. GUI **keyboard and joypad** events *do not* travel
    up the scene tree, and can only be handled by the Control that received them. Otherwise, they will be
-   propagated as non-GUI events through :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>`.
+   propagated as non-GUI events through :ref:`Node._unhandled_input() <class_Node_private_method__unhandled_input>`.
 
 Since Viewports don't send events to other :ref:`SubViewports <class_SubViewport>`, one of the following
 methods has to be used:
