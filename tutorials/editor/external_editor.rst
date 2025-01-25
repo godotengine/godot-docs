@@ -56,6 +56,8 @@ Some example **Exec Flags** for various editors include:
 +---------------------+-----------------------------------------------------+
 | Sublime Text        | ``{project} {file}:{line}:{column}``                |
 +---------------------+-----------------------------------------------------+
+| Visual Studio       | ``/edit "file"``                                    |
++---------------------+-----------------------------------------------------+
 
 .. note::
 
@@ -64,6 +66,9 @@ Some example **Exec Flags** for various editors include:
 
     For Emacs, you can call ``emacsclient`` instead of ``emacs`` if
     you use the server mode.
+
+    For Visual Studio, you will have to open the solution file ``.sln``
+    manually to get access to the IDE features. Additionally, it will not go to a specific line.
 
 Automatically reloading your changes
 ------------------------------------
