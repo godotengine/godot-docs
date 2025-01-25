@@ -344,6 +344,7 @@ If in doubt, use boolean variables instead.
 
 Exporting enums
 ---------------
+
 See :ref:`@export_enum <class_@GDScript_annotation_@export_enum>`.
 
 Properties can be exported with a type hint referencing an enum to limit their values
