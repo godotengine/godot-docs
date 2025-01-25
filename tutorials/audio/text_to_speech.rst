@@ -74,7 +74,8 @@ Godot depends on system libraries for text-to-speech functionality. These librar
 Both Godot users on Linux and end-users on Linux running Godot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult the table below or your own distribution's documentation to determine what libraries you need to install.
 
 Distro-specific one-liners
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **Arch Linux**   | ::                                                                                                        |
 |                  |                                                                                                           |

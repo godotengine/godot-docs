@@ -58,7 +58,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**frame_changed** **(** **)**
+**frame_changed**\ (\ ) :ref:`🔗<class_Sprite3D_signal_frame_changed>`
 
 Emitted when the :ref:`frame<class_Sprite3D_property_frame>` changes.
 
@@ -70,7 +70,7 @@ Emitted when the :ref:`frame<class_Sprite3D_property_frame>` changes.
 
 .. rst-class:: classref-signal
 
-**texture_changed** **(** **)**
+**texture_changed**\ (\ ) :ref:`🔗<class_Sprite3D_signal_texture_changed>`
 
 Emitted when the :ref:`texture<class_Sprite3D_property_texture>` changes.
 
@@ -87,12 +87,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **frame** = ``0``
+:ref:`int<class_int>` **frame** = ``0`` :ref:`🔗<class_Sprite3D_property_frame>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_frame** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_frame** **(** **)**
+- |void| **set_frame**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_frame**\ (\ )
 
 Current frame to display from sprite sheet. :ref:`hframes<class_Sprite3D_property_hframes>` or :ref:`vframes<class_Sprite3D_property_vframes>` must be greater than 1. This property is automatically adjusted when :ref:`hframes<class_Sprite3D_property_hframes>` or :ref:`vframes<class_Sprite3D_property_vframes>` are changed to keep pointing to the same visual frame (same column and row). If that's impossible, this value is reset to ``0``.
 
@@ -104,12 +104,12 @@ Current frame to display from sprite sheet. :ref:`hframes<class_Sprite3D_propert
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **frame_coords** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **frame_coords** = ``Vector2i(0, 0)`` :ref:`🔗<class_Sprite3D_property_frame_coords>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_frame_coords** **(** :ref:`Vector2i<class_Vector2i>` value **)**
-- :ref:`Vector2i<class_Vector2i>` **get_frame_coords** **(** **)**
+- |void| **set_frame_coords**\ (\ value\: :ref:`Vector2i<class_Vector2i>`\ )
+- :ref:`Vector2i<class_Vector2i>` **get_frame_coords**\ (\ )
 
 Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite3D_property_frame>` property. :ref:`hframes<class_Sprite3D_property_hframes>` or :ref:`vframes<class_Sprite3D_property_vframes>` must be greater than 1.
 
@@ -121,12 +121,12 @@ Coordinates of the frame to display from sprite sheet. This is as an alias for t
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **hframes** = ``1``
+:ref:`int<class_int>` **hframes** = ``1`` :ref:`🔗<class_Sprite3D_property_hframes>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_hframes** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_hframes** **(** **)**
+- |void| **set_hframes**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_hframes**\ (\ )
 
 The number of columns in the sprite sheet. When this property is changed, :ref:`frame<class_Sprite3D_property_frame>` is adjusted so that the same visual frame is maintained (same row and column). If that's impossible, :ref:`frame<class_Sprite3D_property_frame>` is reset to ``0``.
 
@@ -138,12 +138,12 @@ The number of columns in the sprite sheet. When this property is changed, :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **region_enabled** = ``false``
+:ref:`bool<class_bool>` **region_enabled** = ``false`` :ref:`🔗<class_Sprite3D_property_region_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_region_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_region_enabled** **(** **)**
+- |void| **set_region_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_region_enabled**\ (\ )
 
 If ``true``, the sprite will use :ref:`region_rect<class_Sprite3D_property_region_rect>` and display only the specified part of its texture.
 
@@ -155,12 +155,12 @@ If ``true``, the sprite will use :ref:`region_rect<class_Sprite3D_property_regio
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_Sprite3D_property_region_rect>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_region_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
-- :ref:`Rect2<class_Rect2>` **get_region_rect** **(** **)**
+- |void| **set_region_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
+- :ref:`Rect2<class_Rect2>` **get_region_rect**\ (\ )
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_property_region_enabled>` must be ``true``.
 
@@ -172,12 +172,12 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_Sprite3D_property_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ )
 
 :ref:`Texture2D<class_Texture2D>` object to draw. If :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>` is used, this will be overridden. The size information is still used.
 
@@ -189,12 +189,12 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **vframes** = ``1``
+:ref:`int<class_int>` **vframes** = ``1`` :ref:`🔗<class_Sprite3D_property_vframes>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_vframes** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_vframes** **(** **)**
+- |void| **set_vframes**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_vframes**\ (\ )
 
 The number of rows in the sprite sheet. When this property is changed, :ref:`frame<class_Sprite3D_property_frame>` is adjusted so that the same visual frame is maintained (same row and column). If that's impossible, :ref:`frame<class_Sprite3D_property_frame>` is reset to ``0``.
 
@@ -205,3 +205,4 @@ The number of rows in the sprite sheet. When this property is changed, :ref:`fra
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

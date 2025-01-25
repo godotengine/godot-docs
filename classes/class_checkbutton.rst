@@ -78,7 +78,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **check_v_offset** = ``0``
+:ref:`int<class_int>` **check_v_offset** = ``0`` :ref:`🔗<class_CheckButton_theme_constant_check_v_offset>`
 
 The vertical offset used when rendering the toggle icons (in pixels).
 
@@ -90,7 +90,7 @@ The vertical offset used when rendering the toggle icons (in pixels).
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **checked**
+:ref:`Texture2D<class_Texture2D>` **checked** :ref:`🔗<class_CheckButton_theme_icon_checked>`
 
 The icon to display when the **CheckButton** is checked (for left-to-right layouts).
 
@@ -102,7 +102,7 @@ The icon to display when the **CheckButton** is checked (for left-to-right layou
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **checked_disabled**
+:ref:`Texture2D<class_Texture2D>` **checked_disabled** :ref:`🔗<class_CheckButton_theme_icon_checked_disabled>`
 
 The icon to display when the **CheckButton** is checked and disabled (for left-to-right layouts).
 
@@ -114,7 +114,7 @@ The icon to display when the **CheckButton** is checked and disabled (for left-t
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **checked_disabled_mirrored**
+:ref:`Texture2D<class_Texture2D>` **checked_disabled_mirrored** :ref:`🔗<class_CheckButton_theme_icon_checked_disabled_mirrored>`
 
 The icon to display when the **CheckButton** is checked and disabled (for right-to-left layouts).
 
@@ -126,7 +126,7 @@ The icon to display when the **CheckButton** is checked and disabled (for right-
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **checked_mirrored**
+:ref:`Texture2D<class_Texture2D>` **checked_mirrored** :ref:`🔗<class_CheckButton_theme_icon_checked_mirrored>`
 
 The icon to display when the **CheckButton** is checked (for right-to-left layouts).
 
@@ -138,7 +138,7 @@ The icon to display when the **CheckButton** is checked (for right-to-left layou
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **unchecked**
+:ref:`Texture2D<class_Texture2D>` **unchecked** :ref:`🔗<class_CheckButton_theme_icon_unchecked>`
 
 The icon to display when the **CheckButton** is unchecked (for left-to-right layouts).
 
@@ -150,7 +150,7 @@ The icon to display when the **CheckButton** is unchecked (for left-to-right lay
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **unchecked_disabled**
+:ref:`Texture2D<class_Texture2D>` **unchecked_disabled** :ref:`🔗<class_CheckButton_theme_icon_unchecked_disabled>`
 
 The icon to display when the **CheckButton** is unchecked and disabled (for left-to-right layouts).
 
@@ -162,7 +162,7 @@ The icon to display when the **CheckButton** is unchecked and disabled (for left
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **unchecked_disabled_mirrored**
+:ref:`Texture2D<class_Texture2D>` **unchecked_disabled_mirrored** :ref:`🔗<class_CheckButton_theme_icon_unchecked_disabled_mirrored>`
 
 The icon to display when the **CheckButton** is unchecked and disabled (for right-to-left layouts).
 
@@ -174,7 +174,7 @@ The icon to display when the **CheckButton** is unchecked and disabled (for righ
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **unchecked_mirrored**
+:ref:`Texture2D<class_Texture2D>` **unchecked_mirrored** :ref:`🔗<class_CheckButton_theme_icon_unchecked_mirrored>`
 
 The icon to display when the **CheckButton** is unchecked (for right-to-left layouts).
 
@@ -185,3 +185,4 @@ The icon to display when the **CheckButton** is unchecked (for right-to-left lay
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -31,15 +31,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ImageFormatLoaderExtension_private_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                                                                                        |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_load_image<class_ImageFormatLoaderExtension_private_method__load_image>` **(** :ref:`Image<class_Image>` image, :ref:`FileAccess<class_FileAccess>` fileaccess, |bitfield|\<:ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>`\> flags, :ref:`float<class_float>` scale **)** |virtual| |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`add_format_loader<class_ImageFormatLoaderExtension_method_add_format_loader>` **(** **)**                                                                                                                                                                                                    |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`remove_format_loader<class_ImageFormatLoaderExtension_method_remove_format_loader>` **(** **)**                                                                                                                                                                                              |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ImageFormatLoaderExtension_private_method__get_recognized_extensions>`\ (\ ) |virtual| |const|                                                                                                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_load_image<class_ImageFormatLoaderExtension_private_method__load_image>`\ (\ image\: :ref:`Image<class_Image>`, fileaccess\: :ref:`FileAccess<class_FileAccess>`, flags\: |bitfield|\[:ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>`\], scale\: :ref:`float<class_float>`\ ) |virtual| |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_format_loader<class_ImageFormatLoaderExtension_method_add_format_loader>`\ (\ )                                                                                                                                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`remove_format_loader<class_ImageFormatLoaderExtension_method_remove_format_loader>`\ (\ )                                                                                                                                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -54,7 +54,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** **)** |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_ImageFormatLoaderExtension_private_method__get_recognized_extensions>`
 
 Returns the list of file extensions for this image format. Files with the given extensions will be treated as image file and loaded using this class.
 
@@ -66,7 +66,7 @@ Returns the list of file extensions for this image format. Files with the given 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_load_image** **(** :ref:`Image<class_Image>` image, :ref:`FileAccess<class_FileAccess>` fileaccess, |bitfield|\<:ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>`\> flags, :ref:`float<class_float>` scale **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_load_image**\ (\ image\: :ref:`Image<class_Image>`, fileaccess\: :ref:`FileAccess<class_FileAccess>`, flags\: |bitfield|\[:ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>`\], scale\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_ImageFormatLoaderExtension_private_method__load_image>`
 
 Loads the content of ``fileaccess`` into the provided ``image``.
 
@@ -78,7 +78,7 @@ Loads the content of ``fileaccess`` into the provided ``image``.
 
 .. rst-class:: classref-method
 
-void **add_format_loader** **(** **)**
+|void| **add_format_loader**\ (\ ) :ref:`🔗<class_ImageFormatLoaderExtension_method_add_format_loader>`
 
 Add this format loader to the engine, allowing it to recognize the file extensions returned by :ref:`_get_recognized_extensions<class_ImageFormatLoaderExtension_private_method__get_recognized_extensions>`.
 
@@ -90,7 +90,7 @@ Add this format loader to the engine, allowing it to recognize the file extensio
 
 .. rst-class:: classref-method
 
-void **remove_format_loader** **(** **)**
+|void| **remove_format_loader**\ (\ ) :ref:`🔗<class_ImageFormatLoaderExtension_method_remove_format_loader>`
 
 Remove this format loader from the engine.
 
@@ -101,3 +101,4 @@ Remove this format loader from the engine.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

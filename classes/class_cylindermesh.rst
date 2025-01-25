@@ -58,12 +58,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bottom_radius** = ``0.5``
+:ref:`float<class_float>` **bottom_radius** = ``0.5`` :ref:`🔗<class_CylinderMesh_property_bottom_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bottom_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bottom_radius** **(** **)**
+- |void| **set_bottom_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bottom_radius**\ (\ )
 
 Bottom radius of the cylinder. If set to ``0.0``, the bottom faces will not be generated, resulting in a conic shape. See also :ref:`cap_bottom<class_CylinderMesh_property_cap_bottom>`.
 
@@ -75,12 +75,12 @@ Bottom radius of the cylinder. If set to ``0.0``, the bottom faces will not be g
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cap_bottom** = ``true``
+:ref:`bool<class_bool>` **cap_bottom** = ``true`` :ref:`🔗<class_CylinderMesh_property_cap_bottom>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cap_bottom** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_cap_bottom** **(** **)**
+- |void| **set_cap_bottom**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_cap_bottom**\ (\ )
 
 If ``true``, generates a cap at the bottom of the cylinder. This can be set to ``false`` to speed up generation and rendering when the cap is never seen by the camera. See also :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>`.
 
@@ -94,12 +94,12 @@ If ``true``, generates a cap at the bottom of the cylinder. This can be set to `
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cap_top** = ``true``
+:ref:`bool<class_bool>` **cap_top** = ``true`` :ref:`🔗<class_CylinderMesh_property_cap_top>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cap_top** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_cap_top** **(** **)**
+- |void| **set_cap_top**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_cap_top**\ (\ )
 
 If ``true``, generates a cap at the top of the cylinder. This can be set to ``false`` to speed up generation and rendering when the cap is never seen by the camera. See also :ref:`top_radius<class_CylinderMesh_property_top_radius>`.
 
@@ -113,12 +113,12 @@ If ``true``, generates a cap at the top of the cylinder. This can be set to ``fa
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``2.0``
+:ref:`float<class_float>` **height** = ``2.0`` :ref:`🔗<class_CylinderMesh_property_height>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_height** **(** **)**
+- |void| **set_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_height**\ (\ )
 
 Full height of the cylinder.
 
@@ -130,12 +130,12 @@ Full height of the cylinder.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **radial_segments** = ``64``
+:ref:`int<class_int>` **radial_segments** = ``64`` :ref:`🔗<class_CylinderMesh_property_radial_segments>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radial_segments** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_radial_segments** **(** **)**
+- |void| **set_radial_segments**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_radial_segments**\ (\ )
 
 Number of radial segments on the cylinder. Higher values result in a more detailed cylinder/cone at the cost of performance.
 
@@ -147,12 +147,12 @@ Number of radial segments on the cylinder. Higher values result in a more detail
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rings** = ``4``
+:ref:`int<class_int>` **rings** = ``4`` :ref:`🔗<class_CylinderMesh_property_rings>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_rings** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_rings** **(** **)**
+- |void| **set_rings**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_rings**\ (\ )
 
 Number of edge rings along the height of the cylinder. Changing :ref:`rings<class_CylinderMesh_property_rings>` does not have any visual impact unless a shader or procedural mesh tool is used to alter the vertex data. Higher values result in more subdivisions, which can be used to create smoother-looking effects with shaders or procedural mesh tools (at the cost of performance). When not altering the vertex data using a shader or procedural mesh tool, :ref:`rings<class_CylinderMesh_property_rings>` should be kept to its default value.
 
@@ -164,12 +164,12 @@ Number of edge rings along the height of the cylinder. Changing :ref:`rings<clas
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **top_radius** = ``0.5``
+:ref:`float<class_float>` **top_radius** = ``0.5`` :ref:`🔗<class_CylinderMesh_property_top_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_top_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_top_radius** **(** **)**
+- |void| **set_top_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_top_radius**\ (\ )
 
 Top radius of the cylinder. If set to ``0.0``, the top faces will not be generated, resulting in a conic shape. See also :ref:`cap_top<class_CylinderMesh_property_cap_top>`.
 
@@ -180,3 +180,4 @@ Top radius of the cylinder. If set to ``0.0``, the top faces will not be generat
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

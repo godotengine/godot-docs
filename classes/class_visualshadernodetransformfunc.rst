@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Function**:
+enum **Function**: :ref:`🔗<enum_VisualShaderNodeTransformFunc_Function>`
 
 .. _class_VisualShaderNodeTransformFunc_constant_FUNC_INVERSE:
 
@@ -85,12 +85,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **function** = ``0``
+:ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **function** = ``0`` :ref:`🔗<class_VisualShaderNodeTransformFunc_property_function>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` value **)**
-- :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **get_function** **(** **)**
+- |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>`\ )
+- :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **get_function**\ (\ )
 
 The function to be computed. See :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` for options.
 
@@ -101,3 +101,4 @@ The function to be computed. See :ref:`Function<enum_VisualShaderNodeTransformFu
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

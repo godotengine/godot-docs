@@ -53,13 +53,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** |const|                                                  |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`show_popup<class_MenuButton_method_show_popup>` **(** **)**                                                        |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>`\ (\ ) |const|                                                     |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>`\ (\ disabled\: :ref:`bool<class_bool>`\ ) |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`show_popup<class_MenuButton_method_show_popup>`\ (\ )                                                           |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -74,7 +74,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**about_to_popup** **(** **)**
+**about_to_popup**\ (\ ) :ref:`🔗<class_MenuButton_signal_about_to_popup>`
 
 Emitted when the :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
 
@@ -91,12 +91,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **item_count** = ``0``
+:ref:`int<class_int>` **item_count** = ``0`` :ref:`🔗<class_MenuButton_property_item_count>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_item_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_item_count** **(** **)**
+- |void| **set_item_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_item_count**\ (\ )
 
 The number of items currently in the list.
 
@@ -108,12 +108,12 @@ The number of items currently in the list.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **switch_on_hover** = ``false``
+:ref:`bool<class_bool>` **switch_on_hover** = ``false`` :ref:`🔗<class_MenuButton_property_switch_on_hover>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_switch_on_hover** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_switch_on_hover** **(** **)**
+- |void| **set_switch_on_hover**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_switch_on_hover**\ (\ )
 
 If ``true``, when the cursor hovers above another **MenuButton** within the same parent which also has :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` enabled, it will close the current **MenuButton** and open the other one.
 
@@ -130,7 +130,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_popup**\ (\ ) |const| :ref:`🔗<class_MenuButton_method_get_popup>`
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
@@ -144,7 +144,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 .. rst-class:: classref-method
 
-void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
+|void| **set_disable_shortcuts**\ (\ disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MenuButton_method_set_disable_shortcuts>`
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
@@ -156,7 +156,7 @@ If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
 .. rst-class:: classref-method
 
-void **show_popup** **(** **)**
+|void| **show_popup**\ (\ ) :ref:`🔗<class_MenuButton_method_show_popup>`
 
 Adjusts popup position and sizing for the **MenuButton**, then shows the :ref:`PopupMenu<class_PopupMenu>`. Prefer this over using ``get_popup().popup()``.
 
@@ -167,3 +167,4 @@ Adjusts popup position and sizing for the **MenuButton**, then shows the :ref:`P
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

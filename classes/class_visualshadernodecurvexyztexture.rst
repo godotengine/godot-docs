@@ -46,12 +46,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`CurveXYZTexture<class_CurveXYZTexture>` **texture**
+:ref:`CurveXYZTexture<class_CurveXYZTexture>` **texture** :ref:`🔗<class_VisualShaderNodeCurveXYZTexture_property_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`CurveXYZTexture<class_CurveXYZTexture>` value **)**
-- :ref:`CurveXYZTexture<class_CurveXYZTexture>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`CurveXYZTexture<class_CurveXYZTexture>`\ )
+- :ref:`CurveXYZTexture<class_CurveXYZTexture>` **get_texture**\ (\ )
 
 The source texture.
 
@@ -62,3 +62,4 @@ The source texture.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

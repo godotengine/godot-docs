@@ -102,6 +102,29 @@ implementing a Timer-timeout loop is another option.
         }
     }
 
+ .. code-tab:: cpp C++
+
+    using namespace godot;
+
+    class MyNode : public Node {
+        GDCLASS(MyNode, Node)
+
+    public:
+        // Allows for recurring operations that don't trigger script logic
+        // every frame (or even every fixed frame).
+        virtual void _ready() override {
+            Timer *timer = memnew(Timer);
+            timer->set_autostart(true);
+            timer->set_wait_time(0.5);
+            add_child(timer);
+            timer->connect("timeout", callable_mp(this, &MyNode::run));
+        }
+
+        void run() {
+            UtilityFunctions::print("This block runs every 0.5 seconds.");
+        }
+    };
+
 Use ``_physics_process()`` when one needs a framerate-independent delta time
 between frames. If code needs consistent updates over time, regardless
 of how fast or slow time advances, this is the right place.
@@ -160,6 +183,30 @@ delta time methods as needed.
 
     }
 
+  .. code-tab:: cpp C++
+
+    using namespace godot;
+
+    class MyNode : public Node {
+        GDCLASS(MyNode, Node)
+
+    public:
+        // Called every frame, even when the engine detects no input.
+        virtual void _process(double p_delta) override {
+            if (Input::get_singleton->is_action_just_pressed("ui_select")) {
+                UtilityFunctions::print(p_delta);
+            }
+        }
+
+        // Called during every input event. Equally true for _input().
+        virtual void _unhandled_input(const Ref<InputEvent> &p_event) override {
+            Ref<InputEventKey> key_event = event;
+            if (key_event.is_valid() && Input::get_singleton->is_action_just_pressed("ui_accept")) {
+                UtilityFunctions::print(get_process_delta_time());
+            }
+        }
+    };
+
 _init vs. initialization vs. export
 -----------------------------------
 
@@ -177,7 +224,7 @@ values will set up according to the following sequence:
 1. **Initial value assignment:** the property is assigned its initialization value,
    or its default value if one is not specified. If a setter exists, it is not used.
 
-2. **``_init()`` assignment:** the property's value is replaced by any assignments
+2. ``_init()`` **assignment:** the property's value is replaced by any assignments
    made in ``_init()``, triggering the setter.
 
 3. **Exported value assignment:** an exported property's value is again replaced by
@@ -222,6 +269,35 @@ values will set up according to the following sequence:
         // If someone sets Test to "three" in the Inspector, it would trigger
         // the setter, changing _test's value from "two!" to "three!".
     }
+
+  .. code-tab:: cpp C++
+
+    using namespace godot;
+
+    class MyNode : public Node {
+        GDCLASS(MyNode, Node)
+
+        String test = "one";
+
+    protected:
+        static void _bind_methods() {
+            ClassDB::bind_method(D_METHOD("get_test"), &MyNode::get_test);
+            ClassDB::bind_method(D_METHOD("set_test", "test"), &MyNode::set_test);
+            ADD_PROPERTY(PropertyInfo(Variant::STRING, "test"), "set_test", "get_test");
+        }
+
+    public:
+        String get_test() { return test; }
+        void set_test(String p_test) { return test = p_test; }
+
+        MyNode() {
+            // Triggers the setter, changing _test's value from "one" to "two!".
+            set_test("two");
+        }
+
+        // If someone sets test to "three" in the Inspector, it would trigger
+        // the setter, changing test's value from "two!" to "three!".
+    };
 
 As a result, instantiating a script versus a scene may affect both the
 initialization *and* the number of times the engine calls the setter.
@@ -279,7 +355,7 @@ nodes that one might create at runtime.
     {
         private Node _parentCache;
 
-        public void ConnectionCheck()
+        public bool ConnectionCheck()
         {
             return _parentCache.HasUserSignal("InteractedWith");
         }
@@ -309,3 +385,38 @@ nodes that one might create at runtime.
             GD.Print("I'm reacting to my parent's interaction!");
         }
     }
+
+  .. code-tab:: cpp C++
+
+    using namespace godot;
+
+    class MyNode : public Node {
+        GDCLASS(MyNode, Node)
+
+        Node *parent_cache = nullptr;
+
+        void on_parent_interacted_with() {
+            UtilityFunctions::print("I'm reacting to my parent's interaction!");
+        }
+
+    public:
+        void connection_check() {
+            return parent_cache->has_user_signal("interacted_with");
+        }
+
+        void _notification(int p_what) {
+            switch (p_what) {
+                case NOTIFICATION_PARENTED:
+                    parent_cache = get_parent();
+                    if (connection_check()) {
+                        parent_cache->connect("interacted_with", callable_mp(this, &MyNode::on_parent_interacted_with));
+                    }
+                    break;
+                case NOTIFICATION_UNPARENTED:
+                    if (connection_check()) {
+                        parent_cache->disconnect("interacted_with", callable_mp(this, &MyNode::on_parent_interacted_with));
+                    }
+                    break;
+            }
+        }
+    };

@@ -51,7 +51,7 @@ The official platform ports can be used as a reference when creating a custom pl
 
 While platform code is usually self-contained, there are exceptions to this
 rule. For instance, audio drivers that are shared across several platforms and
-rendering backends are located in the
+rendering drivers are located in the
 `drivers/ folder <https://github.com/godotengine/godot/tree/master/drivers>`__
 of the Godot source code.
 
@@ -63,7 +63,7 @@ knowledge of the platform's SDKs. Depending on what features you need, the
 amount of work needed varies:
 
 Required features of a platform port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At the very least, a platform port must have methods from the :ref:`class_OS`
 singleton implemented to be buildable and usable for headless operation.
@@ -82,7 +82,7 @@ for reference.
     class to get much of the work done automatically.
 
     If the platform is not UNIX-like, you might use the
-    `Windows port <https://github.com/godotengine/godot/blob/master/platform/windows/os_windows.cpp>`
+    `Windows port <https://github.com/godotengine/godot/blob/master/platform/windows/os_windows.cpp>`__
     as a reference.
 
 **detect.py file**
@@ -109,7 +109,7 @@ All methods should be implemented within ``detect.py`` as follows:
   options depending on SCons options chosen.
 
 Optional features of a platform port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In practice, headless operation doesn't suffice if you want to see anything on
 screen and handle input devices. You may also want audio output for most
@@ -131,7 +131,8 @@ games.
     platform's screen resolution feature (if relevant). Any attempt to create
     or manipulate other window IDs can be rejected.
 - *If the target platform supports the graphics APIs in question:* Rendering
-  context for `Vulkan <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/vulkan_context_x11.cpp>`__,
+  context for `Vulkan <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/rendering_context_driver_vulkan_x11.cpp>`__,
+  `Direct3D 12 <https://github.com/godotengine/godot/blob/master/drivers/d3d12/rendering_context_driver_d3d12.cpp>`__
   `OpenGL 3.3 or OpenGL ES 3.0 <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/gl_manager_x11.cpp>`__.
 - Input handlers for `keyboard <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/key_mapping_x11.cpp>`__
   and `controller <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/joypad_linux.cpp>`__.
@@ -157,19 +158,19 @@ games.
   is displayed at the top of the editor when one-click deploy is set up for the
   target platform.
 
-If the target platform doesn't support running Vulkan, OpenGL 3.3 or OpenGL ES 3.0,
-you have two options:
+If the target platform doesn't support running Vulkan, Direct3D 12, OpenGL 3.3,
+or OpenGL ES 3.0, you have two options:
 
-- Use a library at run-time to translate Vulkan or OpenGL calls to another graphics API.
+- Use a library at runtime to translate Vulkan or OpenGL calls to another graphics API.
   For example, `MoltenVK <https://moltengl.com/moltenvk/>`__ is used on macOS
-  to translate Vulkan to Metal at run-time.
+  to translate Vulkan to Metal at runtime.
 - Create a new renderer from scratch. This is a large undertaking, especially if
   you want to support both 2D and 3D rendering with advanced features.
 
 Distributing a custom platform port
 -----------------------------------
 
-.. warning::
+.. danger::
 
     Before distributing a custom platform port, make sure you're allowed to
     distribute all the code that is being linked against. Console SDKs are
@@ -183,7 +184,7 @@ clone's ``platform/`` folder, then run ``scons platform=<name>``. No other steps
 necessary for building, unless third-party platform-specific dependencies need
 to be installed first.
 
-However, when a custom rendering backend is needed, another folder must be added
+However, when a custom rendering driver is needed, another folder must be added
 in ``drivers/``. In this case, the platform port can be distributed as a fork of
 the Godot repository, or as a collection of several folders that can be added
 over a Godot Git repository clone.

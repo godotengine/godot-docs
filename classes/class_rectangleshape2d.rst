@@ -28,9 +28,9 @@ A 2D rectangle shape, intended for use in physics. Usually used to provide a sha
 Tutorials
 ---------
 
-- `2D Pong Demo <https://godotengine.org/asset-library/asset/121>`__
+- `2D Pong Demo <https://godotengine.org/asset-library/asset/2728>`__
 
-- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -57,12 +57,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **size** = ``Vector2(20, 20)``
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2(20, 20)`` :ref:`🔗<class_RectangleShape2D_property_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_size**\ (\ )
 
 The rectangle's width and height.
 
@@ -73,3 +73,4 @@ The rectangle's width and height.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

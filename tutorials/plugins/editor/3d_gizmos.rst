@@ -34,7 +34,7 @@ This would be a basic setup:
     extends EditorNode3DGizmoPlugin
 
 
-    func get_name():
+    func _get_gizmo_name():
         return "CustomNode"
 
 

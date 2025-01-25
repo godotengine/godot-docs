@@ -59,12 +59,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **cast_shadow** = ``1``
+:ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **cast_shadow** = ``1`` :ref:`🔗<class_ImporterMeshInstance3D_property_cast_shadow>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cast_shadows_setting** **(** :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` value **)**
-- :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **get_cast_shadows_setting** **(** **)**
+- |void| **set_cast_shadows_setting**\ (\ value\: :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>`\ )
+- :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **get_cast_shadows_setting**\ (\ )
 
 .. container:: contribute
 
@@ -78,12 +78,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **layer_mask** = ``1``
+:ref:`int<class_int>` **layer_mask** = ``1`` :ref:`🔗<class_ImporterMeshInstance3D_property_layer_mask>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_layer_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_layer_mask** **(** **)**
+- |void| **set_layer_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_layer_mask**\ (\ )
 
 .. container:: contribute
 
@@ -97,12 +97,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ImporterMesh<class_ImporterMesh>` **mesh**
+:ref:`ImporterMesh<class_ImporterMesh>` **mesh** :ref:`🔗<class_ImporterMeshInstance3D_property_mesh>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_mesh** **(** :ref:`ImporterMesh<class_ImporterMesh>` value **)**
-- :ref:`ImporterMesh<class_ImporterMesh>` **get_mesh** **(** **)**
+- |void| **set_mesh**\ (\ value\: :ref:`ImporterMesh<class_ImporterMesh>`\ )
+- :ref:`ImporterMesh<class_ImporterMesh>` **get_mesh**\ (\ )
 
 .. container:: contribute
 
@@ -116,12 +116,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **skeleton_path** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **skeleton_path** = ``NodePath("")`` :ref:`🔗<class_ImporterMeshInstance3D_property_skeleton_path>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_skeleton_path** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_skeleton_path** **(** **)**
+- |void| **set_skeleton_path**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_skeleton_path**\ (\ )
 
 .. container:: contribute
 
@@ -135,12 +135,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Skin<class_Skin>` **skin**
+:ref:`Skin<class_Skin>` **skin** :ref:`🔗<class_ImporterMeshInstance3D_property_skin>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_skin** **(** :ref:`Skin<class_Skin>` value **)**
-- :ref:`Skin<class_Skin>` **get_skin** **(** **)**
+- |void| **set_skin**\ (\ value\: :ref:`Skin<class_Skin>`\ )
+- :ref:`Skin<class_Skin>` **get_skin**\ (\ )
 
 .. container:: contribute
 
@@ -154,12 +154,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **visibility_range_begin** = ``0.0``
+:ref:`float<class_float>` **visibility_range_begin** = ``0.0`` :ref:`🔗<class_ImporterMeshInstance3D_property_visibility_range_begin>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_visibility_range_begin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_visibility_range_begin** **(** **)**
+- |void| **set_visibility_range_begin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_visibility_range_begin**\ (\ )
 
 .. container:: contribute
 
@@ -173,12 +173,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **visibility_range_begin_margin** = ``0.0``
+:ref:`float<class_float>` **visibility_range_begin_margin** = ``0.0`` :ref:`🔗<class_ImporterMeshInstance3D_property_visibility_range_begin_margin>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_visibility_range_begin_margin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_visibility_range_begin_margin** **(** **)**
+- |void| **set_visibility_range_begin_margin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_visibility_range_begin_margin**\ (\ )
 
 .. container:: contribute
 
@@ -192,12 +192,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **visibility_range_end** = ``0.0``
+:ref:`float<class_float>` **visibility_range_end** = ``0.0`` :ref:`🔗<class_ImporterMeshInstance3D_property_visibility_range_end>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_visibility_range_end** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_visibility_range_end** **(** **)**
+- |void| **set_visibility_range_end**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_visibility_range_end**\ (\ )
 
 .. container:: contribute
 
@@ -211,12 +211,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **visibility_range_end_margin** = ``0.0``
+:ref:`float<class_float>` **visibility_range_end_margin** = ``0.0`` :ref:`🔗<class_ImporterMeshInstance3D_property_visibility_range_end_margin>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_visibility_range_end_margin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_visibility_range_end_margin** **(** **)**
+- |void| **set_visibility_range_end_margin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_visibility_range_end_margin**\ (\ )
 
 .. container:: contribute
 
@@ -230,12 +230,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **visibility_range_fade_mode** = ``0``
+:ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **visibility_range_fade_mode** = ``0`` :ref:`🔗<class_ImporterMeshInstance3D_property_visibility_range_fade_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_visibility_range_fade_mode** **(** :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` value **)**
-- :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **get_visibility_range_fade_mode** **(** **)**
+- |void| **set_visibility_range_fade_mode**\ (\ value\: :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>`\ )
+- :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **get_visibility_range_fade_mode**\ (\ )
 
 .. container:: contribute
 
@@ -248,3 +248,4 @@ Property Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

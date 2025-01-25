@@ -34,14 +34,15 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         # Check that file exists.
         if not FileAccess.file_exists(path):
             return
-        # Start a SHA-256 context.
+        # Start an SHA-256 context.
         var ctx = HashingContext.new()
         ctx.start(HashingContext.HASH_SHA256)
         # Open the file to hash.
         var file = FileAccess.open(path, FileAccess.READ)
         # Update the context after reading each chunk.
-        while not file.eof_reached():
-            ctx.update(file.get_buffer(CHUNK_SIZE))
+        while file.get_position() < file.get_length():
+            var remaining = file.get_length() - file.get_position()
+            ctx.update(file.get_buffer(min(remaining, CHUNK_SIZE)))
         # Get the computed hash.
         var res = ctx.finish()
         # Print the result as hex string and array.
@@ -58,15 +59,16 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         {
             return;
         }
-        // Start a SHA-256 context.
+        // Start an SHA-256 context.
         var ctx = new HashingContext();
         ctx.Start(HashingContext.HashType.Sha256);
         // Open the file to hash.
         using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
         // Update the context after reading each chunk.
-        while (!file.EofReached())
+        while (file.GetPosition() < file.GetLength())
         {
-            ctx.Update(file.GetBuffer(ChunkSize));
+            int remaining = (int)(file.GetLength() - file.GetPosition());
+            ctx.Update(file.GetBuffer(Mathf.Min(remaining, ChunkSize)));
         }
         // Get the computed hash.
         byte[] res = ctx.Finish();
@@ -84,13 +86,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`finish<class_HashingContext_method_finish>` **(** **)**                                                     |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_HashingContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**    |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`update<class_HashingContext_method_update>` **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)** |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`finish<class_HashingContext_method_finish>`\ (\ )                                                        |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_HashingContext_method_start>`\ (\ type\: :ref:`HashType<enum_HashingContext_HashType>`\ )    |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`update<class_HashingContext_method_update>`\ (\ chunk\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -105,7 +107,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **HashType**:
+enum **HashType**: :ref:`🔗<enum_HashingContext_HashType>`
 
 .. _class_HashingContext_constant_HASH_MD5:
 
@@ -144,7 +146,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **finish** **(** **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **finish**\ (\ ) :ref:`🔗<class_HashingContext_method_finish>`
 
 Closes the current context, and return the computed hash.
 
@@ -156,9 +158,9 @@ Closes the current context, and return the computed hash.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**
+:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ type\: :ref:`HashType<enum_HashingContext_HashType>`\ ) :ref:`🔗<class_HashingContext_method_start>`
 
-Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of a SHA-256).
+Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of an SHA-256).
 
 .. rst-class:: classref-item-separator
 
@@ -168,7 +170,7 @@ Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<clas
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)**
+:ref:`Error<enum_@GlobalScope_Error>` **update**\ (\ chunk\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_HashingContext_method_update>`
 
 Updates the computation with the given ``chunk`` of data.
 
@@ -179,3 +181,4 @@ Updates the computation with the given ``chunk`` of data.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

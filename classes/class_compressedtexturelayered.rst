@@ -43,9 +43,9 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_CompressedTextureLayered_method_load>` **(** :ref:`String<class_String>` path **)** |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_CompressedTextureLayered_method_load>`\ (\ path\: :ref:`String<class_String>`\ ) |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -60,12 +60,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **load_path** = ``""``
+:ref:`String<class_String>` **load_path** = ``""`` :ref:`🔗<class_CompressedTextureLayered_property_load_path>`
 
 .. rst-class:: classref-property-setget
 
-- :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
-- :ref:`String<class_String>` **get_load_path** **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_load_path**\ (\ )
 
 The path the texture should be loaded from.
 
@@ -82,7 +82,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
+:ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CompressedTextureLayered_method_load>`
 
 Loads the texture at ``path``.
 
@@ -93,3 +93,4 @@ Loads the texture at ``path``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

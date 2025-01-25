@@ -11,11 +11,12 @@ methods, properties, and global objects, available for scripting. The class refe
 is available online, from the documentation sidebar, and in the Godot editor, from
 the help menu.
 
-As the engine grows and features are added or modified, some parts of the class reference
-become obsolete and new descriptions and examples need to be added. While developers are
-encouraged to document all of their work in the class reference when submitting a pull request,
-we can't expect everyone to be able to write high quality documentation, so there is
-always work for contributors like you to polish existing and create missing reference material.
+As the engine grows and features are added or modified, some parts of the class
+reference become obsolete and new descriptions and examples need to be added.
+While developers are required to document their work in the class reference when
+submitting a pull request, we can't expect every programmer to be a good
+technical writer. There is always work for contributors like you to polish
+existing and create missing reference material.
 
 The source of the class reference
 ---------------------------------
@@ -110,3 +111,5 @@ Please only include changes that are relevant to your work on the API in your co
 You can discard changes in other XML files using ``git checkout``, but consider reporting
 if you notice unrelated files being updated. Ideally, running this command should only
 bring up the changes that you yourself have made.
+
+You will then need to add descriptions to any newly generated entries.

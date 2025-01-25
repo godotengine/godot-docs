@@ -8,7 +8,7 @@ Audio effects
 Godot includes several audio effects that can be added to an audio bus to
 alter every sound file that goes through that bus.
 
-.. image:: img/audio_buses4.png
+.. image:: img/audio_buses4.webp
 
 Try them all out to get a sense of how they alter sound. Here follows a short
 description of the available effects:
@@ -123,6 +123,13 @@ Filter
 
 Filter is what all other filters inherit from and should not be used directly.
 
+HardLimiter
+~~~~~~~~~~~
+
+A limiter is similar to a compressor, but it's less flexible and designed to
+prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to the final point of
+the Master bus is good practice, as it offers an easy safeguard against clipping.
+
 HighPassFilter
 ~~~~~~~~~~~~~~
 
@@ -140,9 +147,15 @@ Reduces all frequencies above a specific *Cutoff* frequency.
 Limiter
 ~~~~~~~
 
-A limiter is similar to a compressor, but it's less flexible and designed to
-prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to the final point of
-the Master bus is good practice, as it offers an easy safeguard against clipping.
+This is the old limiter effect, and it is recommended to use the new HardLimiter
+effect instead.
+
+Here is an example of how this effect works, if the ceiling is set to -12 dB, and the
+threshold is 0 dB, all samples going through get reduced by 12dB. This changes the
+waveform of the sound and introduces distortion.
+
+This effect is being kept to preserve compatibility, however it should be considered
+deprecated.
 
 LowPassFilter
 ~~~~~~~~~~~~~

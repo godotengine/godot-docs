@@ -11,42 +11,121 @@ Exporting for the Web
 
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for `WebAssembly
-<https://webassembly.org/>`__, `WebGL <https://www.khronos.org/webgl/>`__ and
-`SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`_
+<https://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
 in the user's browser.
 
 .. attention::
 
     Projects written in C# using Godot 4 currently cannot be exported to the
-    web. To use C# on web platforms, use Godot 3 instead.
+    web. See `this blog post <https://godotengine.org/article/platform-state-in-csharp-for-godot-4-2/#web>`__
+    for more information.
+
+    To use C# on web platforms, use Godot 3 instead.
 
 .. tip::
 
     Use the browser-integrated developer console, usually opened
-    with :kbd:`F12` (:kbd:`Cmd + Option + I` on macOS), to view
+    with :kbd:`F12` or :kbd:`Ctrl + Shift + I` (:kbd:`Cmd + Option + I` on macOS), to view
     **debug information** like JavaScript, engine, and WebGL errors.
+
+    If the shortcut doesn't work, it's because Godot actually captures the input.
+    You can still open the developer console by accessing the browser's menu.
+
+.. note::
+
+    Due to security concerns with ``SharedArrayBuffer`` due to various exploits,
+    the use of multiple threads for the Web platform has multiple drawbacks,
+    including requiring specific server-side headers and complete cross-origin isolation
+    (meaning no ads, nor third-party integrations on the website hosting your game).
+
+    Since Godot 4.3, Godot supports exporting your game on a single thread, which
+    solves this issue. While it has some drawbacks on its own (it cannot use threads, and is
+    not as performant as the multi-threaded export), it doesn't require as much overhead to install.
+    It is also more compatible overall with stores like `itch.io <https://itch.io/>` or Web publishers like
+    `Poki <https://poki.com/>`__ or `CrazyGames <https://crazygames.com/>`__. The single-threaded export
+    works very well on macOS and iOS too, where it always had compatibility issues with multiple threads
+    exports.
+
+    For these reasons, it is the preferred and now default way to export your games on the Web.
+
+    For more information, see `this blog post about single-threaded Web export
+    <https://godotengine.org/article/progress-report-web-export-in-4-3/#single-threaded-web-export>`__.
+
+.. seealso::
+
+    See the
+    `list of open issues on GitHub related to the web export <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Aplatform%3Aweb>`__
+    for a list of known bugs.
+
+Export file name
+----------------
+
+We suggest users to export their Web projects with ``index.html`` as the file name.
+``index.html`` is usually the default file loaded by web servers when accessing the
+parent directory, usually hiding the name of that file.
 
 .. attention::
 
-    Godot 4's HTML5 exports currently cannot run on macOS and iOS due to upstream bugs
-    with SharedArrayBuffer and WebGL 2.0. We recommend using
-    :ref:`macOS <doc_exporting_for_macos>` and :ref:`iOS <doc_exporting_for_ios>`
-    native export functionality instead, as it will also result in better performance.
-
-    Godot 3's HTML5 exports are more compatible with various browsers in
-    general, especially when using the GLES2 rendering backend (which only
-    requires WebGL 1.0).
+    The Godot 4 Web export expects some files to be named the same name as the one set in the
+    initial export. Some issues could occur if some exported files are renamed, including the
+    main HTML file.
 
 WebGL version
 -------------
 
 Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
-method). There is no stable way to run Vulkan applications on the web yet.
+method). Forward+/Mobile are not supported on the web platform, as these
+rendering methods are designed around modern low-level graphics APIs. Godot
+currently does not support WebGPU, which is a prerequisite for allowing
+Forward+/Mobile to run on the web platform.
 
 See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for a list of browser
 versions supporting WebGL 2.0. Note that Safari has several issues with WebGL
 2.0 support that other browsers don't have, so we recommend using a
 Chromium-based browser or Firefox if possible.
+
+Mobile considerations
+---------------------
+
+The Web export can run on mobile platforms with some caveats. While native
+:ref:`Android <doc_exporting_for_android>` and :ref:`iOS <doc_exporting_for_ios>`
+exports will always perform better by a significant margin, the Web export
+allows people to run your project without going through app stores.
+
+Remember that CPU and GPU performance is at a premium when running on mobile devices.
+This is even more the case when running a project exported to Web (as it's
+WebAssembly instead of native code). See :ref:`doc_performance` section of the
+documentation for advice on optimizing your project. If your project runs on
+platforms other than Web, you can use :ref:`doc_feature_tags` to apply
+low-end-oriented settings when running the project exported to Web.
+
+To speed up loading times on mobile devices, you should also
+:ref:`compile an optimized export template <doc_optimizing_for_size>`
+with unused features disabled. Depending on the features used by your project,
+this can reduce the size of the WebAssembly payload significantly,
+making it faster to download and initialize (even when cached).
+
+.. _doc_exporting_for_web_audio_playback:
+
+Audio playback
+--------------
+
+Since Godot 4.3, audio playback is done using the Web Audio API on the web
+platform. This **Sample** playback mode allows for low latency even when the
+project is exported without thread support, but it has several limitations:
+
+- AudioEffects are not supported.
+- :ref:`Reverberation and doppler <doc_audio_streams_reverb_buses>` effects are not supported.
+- Procedural audio generation is not supported.
+- Positional audio may not always work correctly depending on the node's properties.
+
+To use Godot's own audio playback system on the web platform, you can change the
+default playback mode using the **Audio > General > Default Playback Type.web**
+project setting, or change the **Playback Type** property to **Stream** on an
+:ref:`class_AudioStreamPlayer`, :ref:`class_AudioStreamPlayer2D` or
+:ref:`class_AudioStreamPlayer3D` node. This leads to increased latency
+(especially when thread support is disabled), but it allows the full suite
+of Godot's audio features to work.
 
 .. _doc_javascript_export_options:
 
@@ -57,8 +136,10 @@ If a runnable web export template is available, a button appears between the
 *Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
 game in the default browser for testing.
 
+If your project uses GDExtension **Extension Support** needs to be enabled.
+
 If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
-**Vram Texture Compression** is enabled for the targeted platforms (enabling
+**VRAM Texture Compression** is enabled for the targeted platforms (enabling
 both **For Desktop** and **For Mobile** will result in a bigger, but more
 compatible export).
 
@@ -75,6 +156,59 @@ JavaScript APIs, include CSS, or run JavaScript code.
                modifications to that HTML file will be lost in future exports.
                To customize the generated file, use the **Custom HTML shell**
                option.
+
+.. _doc_exporting_for_web_thread_extension_support:
+
+Thread and extension support
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If **Thread Support** is enabled, the exported project will be able to
+:ref:`make use of multithreading <doc_using_multiple_threads>` to improve
+performance. This also allows for low-latency audio playback
+when the playback type is set to **Stream** (instead of the default **Sample**
+that is used in web exports). Enabling this feature requires the use of
+cross-origin isolation headers, which are described in the
+:ref:`doc_exporting_for_web_serving_the_files` section below.
+
+If **Extensions Support** is enabled, :ref:`GDExtensions <doc_what_is_gdextension>`
+will be able to be loaded. Note that GDExtensions still need to be specifically
+compiled for the web platform to work. Like thread support, enabling this feature
+requires the use of cross-origin isolation headers.
+
+Exporting as a Progressive Web App (PWA)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If **Progressive Web App > Enable** is enabled, it will have several effects:
+
+- Configure high-resolution icons, a display mode and screen orientation. These
+  are configured at the end of the Progressive Web App section in the export
+  options. These options are used if the user adds the project to their device's
+  homescreen, which is common on mobile platforms. This is also supported on
+  desktop platforms, albeit in a more limited capacity.
+
+- Allow the project to be loaded without an Internet connection if it has been
+  loaded at least once beforehand. This works thanks to the *service worker*
+  that is installed when the project is first loaded in the user's browser. This
+  service worker provides a local fallback when no Internet connection is
+  available.
+
+  - Note that web browsers can choose to evict the cached data if the user runs
+    low on disk space, or if the user hasn't opened the project for a while.
+    To ensure data is cached for a longer duration, the user can bookmark the page,
+    or ideally add it to their device's home screen.
+
+  - If the offline data is not available because it was evicted from the cache,
+    you can configure an **Offline Page** that will be displayed in this case.
+    The page must be in HTML format and will be saved on the client's machine
+    the first time the project is loaded.
+
+- Ensure cross-origin isolation headers are always present, even if the web
+  server hasn't been configured to send them. This allows exports with threads
+  enabled to work when hosted on any website, even if there is no way for you to
+  control the headers it sends.
+
+  - This behavior can be disabled by unchecking **Enable Cross Origin Isolation Headers**
+    in the Progressive Web App section.
 
 Limitations
 -----------
@@ -139,16 +273,30 @@ player to click, tap or press a key/button to enable audio, for instance when di
 .. seealso:: Google offers additional information about their `Web Audio autoplay
              policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
 
-             Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS 
+             Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS
              <https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/>`__.
 
 .. warning:: Access to microphone requires a
              :ref:`secure context <doc_javascript_secure_contexts>`.
 
+.. warning::
+
+        Since Godot 4.3, by default Web exports will use samples instead of streams
+        to play audio.
+
+        This is due to the way browsers prefer to play audio and the lack of processing power
+        available when exporting Web games with the **Use Threads** export option off.
+
+        Please note that audio effects aren't yet implemented for samples.
+
+
 Networking
 ~~~~~~~~~~
 
-Low level networking is not implemented due to lacking support in browsers.
+.. UPDATE: Not implemented. When low-level networking is implemented, remove
+.. this paragraph.
+
+Low-level networking is not implemented due to lacking support in browsers.
 
 Currently, only :ref:`HTTP client <doc_http_client_class>`,
 :ref:`HTTP requests <doc_http_request_class>`,
@@ -185,13 +333,6 @@ to remap them based on model/vendor/OS due to privacy considerations.
 
 .. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
 
-Boot splash is not displayed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The default HTML page does not display the boot splash while loading. However,
-the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
-can display it.
-
 .. _doc_exporting_for_web_serving_the_files:
 
 Serving the files
@@ -203,8 +344,8 @@ used, see :ref:`doc_customizing_html5_shell`.
 
 .. warning::
 
-    To ensure low audio latency and the ability to use :ref:`class_Thread` in web exports,
-    Godot 4 web exports always use
+    Only when exporting with **Use Threads**, to ensure low audio latency and the
+    ability to use :ref:`class_Thread` in web exports, Godot 4 web exports use
     `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
     This requires a :ref:`secure context <doc_javascript_secure_contexts>`,
     while also requiring the following CORS headers to be set when serving the files:
@@ -215,11 +356,13 @@ used, see :ref:`doc_customizing_html5_shell`.
         Cross-Origin-Embedder-Policy: require-corp
 
     If you don't control the web server or are unable to add response headers,
-    use `coi-serviceworker <https://github.com/gzuidhof/coi-serviceworker>`__
-    as a workaround.
+    check **Progressive Web App > Enable** in the export options. This applies
+    a service worker-based workaround that allows the project to run by
+    simulating the presence of these response headers. A secure context
+    is still required in this case.
 
-    If the client doesn't receive the required response headers,
-    **the project will not run**.
+    If the client doesn't receive the required response headers or the service
+    worker-based workaround is not applied, **the project will not run**.
 
 The generated ``.html`` file can be used as ``DirectoryIndex`` in Apache
 servers and can be renamed to e.g. ``index.html`` at any time. Its name is
@@ -233,9 +376,7 @@ The other exported files are served as they are, next to the ``.html`` file,
 names unchanged. The ``.wasm`` file is a binary WebAssembly module implementing
 the engine. The ``.pck`` file is the Godot main pack containing your game. The
 ``.js`` file contains start-up code and is used by the ``.html`` file to access
-the engine. The ``.png`` file contains the boot splash image. It is not used in
-the default HTML page, but is included for
-:ref:`custom HTML pages <doc_customizing_html5_shell>`.
+the engine. The ``.png`` file contains the boot splash image.
 
 The ``.pck`` file is binary, usually delivered with the MIME-type
 :mimetype:`application/octet-stream`. The ``.wasm`` file is delivered as
@@ -284,109 +425,11 @@ supported on your web server for further file size savings.
     be used. Instead, you should use an established web server such as Apache or
     nginx.
 
-.. _doc_javascript_eval:
+Interacting with the browser and JavaScript
+-------------------------------------------
 
-Calling JavaScript from script
-------------------------------
-
-In web builds, the ``JavaScriptBridge`` singleton is implemented. It offers a single
-method called ``eval`` that works similarly to the JavaScript function of the
-same name. It takes a string as an argument and executes it as JavaScript code.
-This allows interacting with the browser in ways not possible with script
-languages integrated into Godot.
-
-.. tabs::
- .. code-tab:: gdscript
-
-    func my_func():
-        JavaScriptBridge.eval("alert('Calling JavaScript per GDScript!');")
-
- .. code-tab:: csharp
-
-    private void MyFunc()
-    {
-        JavaScriptBridge.Eval("alert('Calling JavaScript per C#!');")
-    }
-
-The value of the last JavaScript statement is converted to a GDScript value and
-returned by ``eval()`` under certain circumstances:
-
- * JavaScript ``number`` is returned as :ref:`class_float`
- * JavaScript ``boolean`` is returned as :ref:`class_bool`
- * JavaScript ``string`` is returned as :ref:`class_String`
- * JavaScript ``ArrayBuffer``, ``TypedArray`` and ``DataView`` are returned as :ref:`PackedByteArray<class_PackedByteArray>`
-
-.. tabs::
- .. code-tab:: gdscript
-
-    func my_func2():
-        var js_return = JavaScriptBridge.eval("var myNumber = 1; myNumber + 2;")
-        print(js_return) # prints '3.0'
-
- .. code-tab:: csharp
-
-    private void MyFunc2()
-    {
-        var jsReturn = JavaScriptBridge.Eval("var myNumber = 1; myNumber + 2;");
-        GD.Print(jsReturn); // prints '3.0'
-    }
-
-Any other JavaScript value is returned as ``null``.
-
-HTML5 export templates may be :ref:`built <doc_compiling_for_web>` without
-support for the singleton to improve security. With such templates, and on
-platforms other than HTML5, calling ``JavaScriptBridge.eval`` will also return
-``null``. The availability of the singleton can be checked with the
-``web`` :ref:`feature tag <doc_feature_tags>`:
-
-.. tabs::
- .. code-tab:: gdscript
-
-    func my_func3():
-        if OS.has_feature('web'):
-            JavaScriptBridge.eval("""
-                console.log('The JavaScriptBridge singleton is available')
-            """)
-        else:
-            print("The JavaScriptBridge singleton is NOT available")
-
- .. code-tab:: csharp
-
-    private void MyFunc3()
-    {
-        if (OS.HasFeature("web"))
-        {
-            JavaScriptBridge.Eval("console.log('The JavaScriptBridge singleton is available')");
-        }
-        else
-        {
-            GD.Print("The JavaScriptBridge singleton is NOT available");
-        }
-    }
-
-.. tip:: GDScript's multi-line strings, surrounded by 3 quotes ``"""`` as in
-         ``my_func3()`` above, are useful to keep JavaScript code readable.
-
-The ``eval`` method also accepts a second, optional Boolean argument, which
-specifies whether to execute the code in the global execution context,
-defaulting to ``false`` to prevent polluting the global namespace:
-
-.. tabs::
- .. code-tab:: gdscript
-
-    func my_func4():
-        # execute in global execution context,
-        # thus adding a new JavaScript global variable `SomeGlobal`
-        JavaScriptBridge.eval("var SomeGlobal = {};", true)
-
- .. code-tab:: csharp
-
-    private void MyFunc4()
-    {
-        // execute in global execution context,
-        // thus adding a new JavaScript global variable `SomeGlobal`
-        JavaScriptBridge.Eval("var SomeGlobal = {};", true);
-    }
+See the :ref:`dedicated page <doc_web_javascript_bridge>` on how to interact
+with JavaScript and access some unique Web browser features.
 
 Environment variables
 ---------------------

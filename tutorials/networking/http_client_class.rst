@@ -139,7 +139,11 @@ It will connect and fetch a website.
             Debug.Assert(http.GetStatus() == HTTPClient.Status.Connected); // Check if the connection was made successfully.
 
             // Some headers.
-            string[] headers = { "User-Agent: Pirulo/1.0 (Godot)", "Accept: */*" };
+            string[] headers =
+            [
+                "User-Agent: Pirulo/1.0 (Godot)",
+                "Accept: */*",
+            ];
 
             err = http.Request(HTTPClient.Method.Get, "/ChangeLog-5.php", headers); // Request a page from the site.
             Debug.Assert(err == Error.Ok); // Make sure all is OK.

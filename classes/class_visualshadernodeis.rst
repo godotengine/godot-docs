@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Function**:
+enum **Function**: :ref:`🔗<enum_VisualShaderNodeIs_Function>`
 
 .. _class_VisualShaderNodeIs_constant_FUNC_IS_INF:
 
@@ -62,7 +62,7 @@ Comparison with ``INF`` (Infinity).
 
 :ref:`Function<enum_VisualShaderNodeIs_Function>` **FUNC_IS_NAN** = ``1``
 
-Comparison with ``NaN`` (Not a Number; denotes invalid numeric results, e.g. division by zero).
+Comparison with ``NaN`` (Not a Number; indicates invalid numeric results, such as division by zero).
 
 .. _class_VisualShaderNodeIs_constant_FUNC_MAX:
 
@@ -85,12 +85,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Function<enum_VisualShaderNodeIs_Function>` **function** = ``0``
+:ref:`Function<enum_VisualShaderNodeIs_Function>` **function** = ``0`` :ref:`🔗<class_VisualShaderNodeIs_property_function>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeIs_Function>` value **)**
-- :ref:`Function<enum_VisualShaderNodeIs_Function>` **get_function** **(** **)**
+- |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeIs_Function>`\ )
+- :ref:`Function<enum_VisualShaderNodeIs_Function>` **get_function**\ (\ )
 
 The comparison function. See :ref:`Function<enum_VisualShaderNodeIs_Function>` for options.
 
@@ -101,3 +101,4 @@ The comparison function. See :ref:`Function<enum_VisualShaderNodeIs_Function>` f
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

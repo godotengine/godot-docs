@@ -30,11 +30,11 @@ A 3D cylinder shape, intended for use in physics. Usually used to provide a shap
 Tutorials
 ---------
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -63,12 +63,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``2.0``
+:ref:`float<class_float>` **height** = ``2.0`` :ref:`🔗<class_CylinderShape3D_property_height>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_height** **(** **)**
+- |void| **set_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_height**\ (\ )
 
 The cylinder's height.
 
@@ -80,12 +80,12 @@ The cylinder's height.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_CylinderShape3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 The cylinder's radius.
 
@@ -96,3 +96,4 @@ The cylinder's radius.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

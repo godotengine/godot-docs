@@ -13,13 +13,13 @@ setup compiling the engine for your current platform should be as easy as runnin
 
 But you will probably need to use at least some of the available options to configure
 the build to match your specific needs, be it a custom engine fork, a lightweight build
-stripped of extra modules, or an executable targetting engine development.
+stripped of extra modules, or an executable targeting engine development.
 
 The articles below should help you navigate configuration options available, as well as
 prerequisites required to compile Godot exactly the way you need.
 
-Basics of building Godot
-------------------------
+.. rubric:: Basics of building Godot
+   :heading-level: 2
 
 Let's start with basics, and learn how to get Godot's source code, and then which options
 to use to compile it regardless of your target platform.
@@ -31,8 +31,8 @@ to use to compile it regardless of your target platform.
    getting_source
    introduction_to_the_buildsystem
 
-Building for target platforms
------------------------------
+.. rubric:: Building for target platforms
+   :heading-level: 2
 
 Below you can find instructions for compiling the engine for your specific target platform.
 Note that Godot supports cross-compilation, which means you can compile it for a target platform
@@ -51,8 +51,8 @@ will try their best to cover all possible situations.
    cross-compiling_for_ios_on_linux
    compiling_for_web
 
-Other compilation targets and options
--------------------------------------
+.. rubric:: Other compilation targets and options
+   :heading-level: 2
 
 Some additional universal compilation options require further setup. Namely, while Godot
 does have C#/.NET support as a part of its main codebase, it does not get compiled by

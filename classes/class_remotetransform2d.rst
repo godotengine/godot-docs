@@ -51,9 +51,9 @@ Methods
 .. table::
    :widths: auto
 
-   +------+------------------------------------------------------------------------------------------+
-   | void | :ref:`force_update_cache<class_RemoteTransform2D_method_force_update_cache>` **(** **)** |
-   +------+------------------------------------------------------------------------------------------+
+   +--------+------------------------------------------------------------------------------------+
+   | |void| | :ref:`force_update_cache<class_RemoteTransform2D_method_force_update_cache>`\ (\ ) |
+   +--------+------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -68,12 +68,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **remote_path** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **remote_path** = ``NodePath("")`` :ref:`🔗<class_RemoteTransform2D_property_remote_path>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_remote_node** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_remote_node** **(** **)**
+- |void| **set_remote_node**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_remote_node**\ (\ )
 
 The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTransform2D's position in the scene.
 
@@ -85,12 +85,12 @@ The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **update_position** = ``true``
+:ref:`bool<class_bool>` **update_position** = ``true`` :ref:`🔗<class_RemoteTransform2D_property_update_position>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_update_position** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_update_position** **(** **)**
+- |void| **set_update_position**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_update_position**\ (\ )
 
 If ``true``, the remote node's position is updated.
 
@@ -102,12 +102,12 @@ If ``true``, the remote node's position is updated.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **update_rotation** = ``true``
+:ref:`bool<class_bool>` **update_rotation** = ``true`` :ref:`🔗<class_RemoteTransform2D_property_update_rotation>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_update_rotation** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_update_rotation** **(** **)**
+- |void| **set_update_rotation**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_update_rotation**\ (\ )
 
 If ``true``, the remote node's rotation is updated.
 
@@ -119,12 +119,12 @@ If ``true``, the remote node's rotation is updated.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **update_scale** = ``true``
+:ref:`bool<class_bool>` **update_scale** = ``true`` :ref:`🔗<class_RemoteTransform2D_property_update_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_update_scale** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_update_scale** **(** **)**
+- |void| **set_update_scale**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_update_scale**\ (\ )
 
 If ``true``, the remote node's scale is updated.
 
@@ -136,12 +136,12 @@ If ``true``, the remote node's scale is updated.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_global_coordinates** = ``true``
+:ref:`bool<class_bool>` **use_global_coordinates** = ``true`` :ref:`🔗<class_RemoteTransform2D_property_use_global_coordinates>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_global_coordinates** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_use_global_coordinates** **(** **)**
+- |void| **set_use_global_coordinates**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_global_coordinates**\ (\ )
 
 If ``true``, global coordinates are used. If ``false``, local coordinates are used.
 
@@ -158,7 +158,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **force_update_cache** **(** **)**
+|void| **force_update_cache**\ (\ ) :ref:`🔗<class_RemoteTransform2D_method_force_update_cache>`
 
 **RemoteTransform2D** caches the remote node. It may not notice if the remote node disappears; :ref:`force_update_cache<class_RemoteTransform2D_method_force_update_cache>` forces it to update the cache again.
 
@@ -169,3 +169,4 @@ void **force_update_cache** **(** **)**
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

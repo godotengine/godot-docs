@@ -231,7 +231,8 @@ on the screen will cause the player to move to the target location.
     var target = position
 
     func _input(event):
-        if event.is_action_pressed("click"):
+        # Use is_action_pressed to only accept single taps as input instead of mouse drags.
+        if event.is_action_pressed(&"click"):
             target = get_global_mouse_position()
 
     func _physics_process(delta):
@@ -253,6 +254,7 @@ on the screen will cause the player to move to the target location.
 
         public override void _Input(InputEvent @event)
         {
+            // Use IsActionPressed to only accept single taps as input instead of mouse drags.
             if (@event.IsActionPressed("click"))
             {
                 _target = GetGlobalMousePosition();

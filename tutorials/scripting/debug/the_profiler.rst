@@ -15,7 +15,7 @@ You could try to optimize everything and run the game repeatedly, but you can be
 smarter about this and narrow down the possibilities. Enter Godot's profiler.
 
 An overview of the profiler
-+++++++++++++++++++++++++++
+---------------------------
 
 You can open the profiler by opening the **Debugger** panel and clicking on the
 **Profiler** tab.
@@ -26,9 +26,11 @@ Godot's profiler does not automatically run because profiling is
 performance-intensive. It has to continually measure everything happening in the
 game and report back to the debugger, so it's off by default.
 
-To begin profiling, click on the **Start** button in the top-left. Run your game
-and data will start appearing. You can also start profiling at any time before
-or during gameplay, depending on if you want.
+To begin profiling, run your game then focus back on the editor. Click on the
+**Start** button in the top-left corner of the **Profiler** tab. You can also
+check **Autostart**, which will make the profiler automatically start when the
+project is run the next time. Note that the **Autostart** checkbox's state is not
+preserved across editor sessions.
 
 .. note::
 
@@ -40,7 +42,7 @@ You can clear the data by clicking the **Clear** button anytime. Use the
 measurements panel and the graph will update accordingly.
 
 The measured data
-+++++++++++++++++
+-----------------
 
 The profiler's interface is split into two. There is a list of functions on the
 left and the performance graph on the right.
@@ -59,8 +61,8 @@ The main measurements are frame time, physics frame, idle time, and physics time
 - **Physics time** is the time Godot took to update physics tasks, like
   `_physics_process` and built-in nodes set to **Physics** update.
 
-.. note:: In Godot 3, **Frame Time** includes rendering time. Say you find a
-          mysterious spike of lag in your game, but your physics and scripts are
+.. note:: **Frame Time** includes rendering time. Say you find a mysterious
+          spike of lag in your game, but your physics and scripts are
           all running fast. The delay could be due to the appearance of
           particles or visual effects!
 
@@ -75,7 +77,7 @@ left. In the top right, there is also a frame counter where you can manually
 adjust the frame you are looking at more granularly.
 
 Scope of measurement and measurement windows
-++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------
 
 You can change what measurement you are looking at using the **Measure**
 drop-down menu. By default, it starts with Frame Time and lists the time it
@@ -108,7 +110,7 @@ spent more time waiting for some other function call to finish than not, and
 `find_nearest_neighbor` is **actually** slow.
 
 Debugging slow code with the profiler
-+++++++++++++++++++++++++++++++++++++
+-------------------------------------
 
 Finding slow code with the profiler boils down to running your game and watching
 the performance graph as it draws. When an unacceptable spike occurs in the
@@ -120,7 +122,7 @@ Under the Script functions, turn on the checkboxes for some functions to find
 which take time. These are the functions you need to review and optimize.
 
 Measuring manually in microseconds
-++++++++++++++++++++++++++++++++++
+----------------------------------
 
 If your function is complex, it could be challenging to figure out which part
 needs optimization. Is it your math or the way you access other pieces of data

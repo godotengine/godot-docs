@@ -10,6 +10,8 @@
 NavigationMeshGenerator
 =======================
 
+**Deprecated:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Object<class_Object>`
 
 Helper class for creating and clearing navigation meshes.
@@ -21,7 +23,7 @@ Description
 
 This class is responsible for creating and clearing 3D navigation meshes used as :ref:`NavigationMesh<class_NavigationMesh>` resources inside :ref:`NavigationRegion3D<class_NavigationRegion3D>`. The **NavigationMeshGenerator** has very limited to no use for 2D as the navigation mesh baking process expects 3D node types and 3D source geometry to parse.
 
-The entire navigation mesh baking is best done in a separate thread as the voxelization, collision tests and mesh optimization steps involved are very performance and time hungry operations.
+The entire navigation mesh baking is best done in a separate thread as the voxelization, collision tests and mesh optimization steps involved are very slow and performance-intensive operations.
 
 Navigation mesh baking happens in multiple steps and the result depends on 3D source geometry and properties of the :ref:`NavigationMesh<class_NavigationMesh>` resource. In the first step, starting from a root node and depending on :ref:`NavigationMesh<class_NavigationMesh>` properties all valid 3D source geometry nodes are collected from the :ref:`SceneTree<class_SceneTree>`. Second, all collected nodes are parsed for their relevant 3D geometry data and a combined 3D mesh is build. Due to the many different types of parsable objects, from normal :ref:`MeshInstance3D<class_MeshInstance3D>`\ s to :ref:`CSGShape3D<class_CSGShape3D>`\ s or various :ref:`CollisionObject3D<class_CollisionObject3D>`\ s, some operations to collect geometry data can trigger :ref:`RenderingServer<class_RenderingServer>` and :ref:`PhysicsServer3D<class_PhysicsServer3D>` synchronizations. Server synchronization can have a negative effect on baking time or framerate as it often involves :ref:`Mutex<class_Mutex>` locking for thread security. Many parsable objects and the continuous synchronization with other threaded Servers can increase the baking time significantly. On the other hand only a few but very large and complex objects will take some time to prepare for the Servers which can noticeably stall the next frame render. As a general rule the total number of parsable objects and their individual size and complexity should be balanced to avoid framerate issues or very long baking times. The combined mesh is then passed to the Recast Navigation Object to test the source geometry for walkable terrain suitable to :ref:`NavigationMesh<class_NavigationMesh>` agent properties by creating a voxel world around the meshes bounding area.
 
@@ -44,15 +46,15 @@ Methods
 .. table::
    :widths: auto
 
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`bake<class_NavigationMeshGenerator_method_bake>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)**                                                                                                                                                                                                            |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`bake_from_source_geometry_data<class_NavigationMeshGenerator_method_bake_from_source_geometry_data>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Callable<class_Callable>` callback=Callable() **)**                            |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`clear<class_NavigationMeshGenerator_method_clear>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)**                                                                                                                                                                                                                                             |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`parse_source_geometry_data<class_NavigationMeshGenerator_method_parse_source_geometry_data>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Node<class_Node>` root_node, :ref:`Callable<class_Callable>` callback=Callable() **)** |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`bake<class_NavigationMeshGenerator_method_bake>`\ (\ navigation_mesh\: :ref:`NavigationMesh<class_NavigationMesh>`, root_node\: :ref:`Node<class_Node>`\ )                                                                                                                                                                                                                  |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`bake_from_source_geometry_data<class_NavigationMeshGenerator_method_bake_from_source_geometry_data>`\ (\ navigation_mesh\: :ref:`NavigationMesh<class_NavigationMesh>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ )                              |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`clear<class_NavigationMeshGenerator_method_clear>`\ (\ navigation_mesh\: :ref:`NavigationMesh<class_NavigationMesh>`\ )                                                                                                                                                                                                                                                     |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`parse_source_geometry_data<class_NavigationMeshGenerator_method_parse_source_geometry_data>`\ (\ navigation_mesh\: :ref:`NavigationMesh<class_NavigationMesh>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>`, root_node\: :ref:`Node<class_Node>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ ) |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -67,9 +69,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)**
+|void| **bake**\ (\ navigation_mesh\: :ref:`NavigationMesh<class_NavigationMesh>`, root_node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_NavigationMeshGenerator_method_bake>`
 
-The bake function is deprecated due to core threading changes. To upgrade existing code, first create a :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` resource. Use this resource with :ref:`parse_source_geometry_data<class_NavigationMeshGenerator_method_parse_source_geometry_data>` to parse the SceneTree for nodes that should contribute to the navigation mesh baking. The SceneTree parsing needs to happen on the main thread. After the parsing is finished use the resource with :ref:`bake_from_source_geometry_data<class_NavigationMeshGenerator_method_bake_from_source_geometry_data>` to bake a navigation mesh.
+**Deprecated:** This method is deprecated due to core threading changes. To upgrade existing code, first create a :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` resource. Use this resource with :ref:`parse_source_geometry_data<class_NavigationMeshGenerator_method_parse_source_geometry_data>` to parse the :ref:`SceneTree<class_SceneTree>` for nodes that should contribute to the navigation mesh baking. The :ref:`SceneTree<class_SceneTree>` parsing needs to happen on the main thread. After the parsing is finished use the resource with :ref:`bake_from_source_geometry_data<class_NavigationMeshGenerator_method_bake_from_source_geometry_data>` to bake a navigation mesh.
+
+Bakes the ``navigation_mesh`` with source geometry collected starting from the ``root_node``.
 
 .. rst-class:: classref-item-separator
 
@@ -79,7 +83,7 @@ The bake function is deprecated due to core threading changes. To upgrade existi
 
 .. rst-class:: classref-method
 
-void **bake_from_source_geometry_data** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Callable<class_Callable>` callback=Callable() **)**
+|void| **bake_from_source_geometry_data**\ (\ navigation_mesh\: :ref:`NavigationMesh<class_NavigationMesh>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ ) :ref:`🔗<class_NavigationMeshGenerator_method_bake_from_source_geometry_data>`
 
 Bakes the provided ``navigation_mesh`` with the data from the provided ``source_geometry_data``. After the process is finished the optional ``callback`` will be called.
 
@@ -91,7 +95,7 @@ Bakes the provided ``navigation_mesh`` with the data from the provided ``source_
 
 .. rst-class:: classref-method
 
-void **clear** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)**
+|void| **clear**\ (\ navigation_mesh\: :ref:`NavigationMesh<class_NavigationMesh>`\ ) :ref:`🔗<class_NavigationMeshGenerator_method_clear>`
 
 Removes all polygons and vertices from the provided ``navigation_mesh`` resource.
 
@@ -103,7 +107,7 @@ Removes all polygons and vertices from the provided ``navigation_mesh`` resource
 
 .. rst-class:: classref-method
 
-void **parse_source_geometry_data** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Node<class_Node>` root_node, :ref:`Callable<class_Callable>` callback=Callable() **)**
+|void| **parse_source_geometry_data**\ (\ navigation_mesh\: :ref:`NavigationMesh<class_NavigationMesh>`, source_geometry_data\: :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>`, root_node\: :ref:`Node<class_Node>`, callback\: :ref:`Callable<class_Callable>` = Callable()\ ) :ref:`🔗<class_NavigationMeshGenerator_method_parse_source_geometry_data>`
 
 Parses the :ref:`SceneTree<class_SceneTree>` for source geometry according to the properties of ``navigation_mesh``. Updates the provided ``source_geometry_data`` resource with the resulting data. The resource can then be used to bake a navigation mesh with :ref:`bake_from_source_geometry_data<class_NavigationMeshGenerator_method_bake_from_source_geometry_data>`. After the process is finished the optional ``callback`` will be called.
 
@@ -118,3 +122,4 @@ Parses the :ref:`SceneTree<class_SceneTree>` for source geometry according to th
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

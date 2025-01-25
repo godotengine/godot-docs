@@ -55,7 +55,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **create_from** = ``0``
+:ref:`int<class_int>` **create_from** = ``0`` :ref:`🔗<class_ResourceImporterBitMap_property_create_from>`
 
 The data source to use for generating the bitmap.
 
@@ -71,7 +71,7 @@ The data source to use for generating the bitmap.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **threshold** = ``0.5``
+:ref:`float<class_float>` **threshold** = ``0.5`` :ref:`🔗<class_ResourceImporterBitMap_property_threshold>`
 
 The threshold to use to determine which bits should be considered enabled or disabled. See also :ref:`create_from<class_ResourceImporterBitMap_property_create_from>`.
 
@@ -82,3 +82,4 @@ The threshold to use to determine which bits should be considered enabled or dis
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

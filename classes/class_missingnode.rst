@@ -34,6 +34,8 @@ Properties
    +-----------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | :ref:`original_class<class_MissingNode_property_original_class>`             |
    +-----------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`original_scene<class_MissingNode_property_original_scene>`             |
+   +-----------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`     | :ref:`recording_properties<class_MissingNode_property_recording_properties>` |
    +-----------------------------+------------------------------------------------------------------------------+
 
@@ -50,14 +52,31 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **original_class**
+:ref:`String<class_String>` **original_class** :ref:`🔗<class_MissingNode_property_original_class>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_original_class** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_original_class** **(** **)**
+- |void| **set_original_class**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_original_class**\ (\ )
 
 The name of the class this node was supposed to be (see :ref:`Object.get_class<class_Object_method_get_class>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MissingNode_property_original_scene:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **original_scene** :ref:`🔗<class_MissingNode_property_original_scene>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_original_scene**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_original_scene**\ (\ )
+
+Returns the path of the scene this node was instance of originally.
 
 .. rst-class:: classref-item-separator
 
@@ -67,14 +86,14 @@ The name of the class this node was supposed to be (see :ref:`Object.get_class<c
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **recording_properties**
+:ref:`bool<class_bool>` **recording_properties** :ref:`🔗<class_MissingNode_property_recording_properties>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_recording_properties** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_recording_properties** **(** **)**
+- |void| **set_recording_properties**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_recording_properties**\ (\ )
 
-If set to ``true``, allows new properties to be added on top of the existing ones with :ref:`Object.set<class_Object_method_set>`.
+If ``true``, allows new properties to be set along with existing ones. If ``false``, only existing properties' values can be set, and new properties cannot be added.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -83,3 +102,4 @@ If set to ``true``, allows new properties to be added on top of the existing one
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -17,10 +17,11 @@ will detect suffixes in object names and will perform actions automatically.
 
 .. warning::
 
-    All the suffixes described below are **case-sensitive**.
+    All the suffixes described below can be used with ``-``, ``$``, and ``_`` and are
+    **case-insensitive**.
 
 Remove nodes (-noimp)
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 Objects that have the ``-noimp`` suffix will be removed at import-time no matter
 what their type is. They will not appear in the imported scene.
@@ -29,7 +30,7 @@ This is equivalent to enabling **Skip Import** for a node in the Advanced Import
 Settings dialog.
 
 Create collisions (-col, -convcol, -colonly, -convcolonly)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------------
 
 The option ``-col`` will work only for Mesh objects. If it is detected, a child
 static collision node will be added, using the same geometry as the mesh. This
@@ -92,7 +93,7 @@ reliability.
     shapes.
 
 Create Occluder (-occ, -occonly)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 If a mesh is imported with the ``-occ`` suffix an :ref:`class_occluder3D` node
 will be created based on the geometry of the mesh, it does not replace the mesh.
@@ -100,30 +101,30 @@ A mesh node with the ``-occonly`` suffix will be converted to an
 :ref:`class_occluder3D` on import.
 
 Create navigation (-navmesh)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 A mesh node with the ``-navmesh`` suffix will be converted to a navigation mesh.
 The original Mesh object will be removed at import-time.
 
 Create a VehicleBody (-vehicle)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 A mesh node with the ``-vehicle`` suffix will be imported as a child to a
 :ref:`class_VehicleBody3D` node.
 
 Create a VehicleWheel (-wheel)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 A mesh node with the ``-wheel`` suffix will be imported as a child to a
 :ref:`class_VehicleWheel3D` node.
 
 Rigid Body (-rigid)
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody3D`.
 
 Animation loop (-loop, -cycle)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 Animation clips in the source 3D file that start or end with the token ``loop`` or ``cycle``
 will be imported as a Godot :ref:`class_Animation` with the loop flag set.

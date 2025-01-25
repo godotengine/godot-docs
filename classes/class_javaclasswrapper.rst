@@ -12,9 +12,26 @@ JavaClassWrapper
 
 **Inherits:** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Provides access to the Java Native Interface.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+The JavaClassWrapper singleton provides a way for the Godot application to send and receive data through the `Java Native Interface <https://developer.android.com/training/articles/perf-jni>`__ (JNI).
+
+\ **Note:** This singleton is only available in Android builds.
+
+::
+
+    var LocalDateTime = JavaClassWrapper.wrap("java.time.LocalDateTime")
+    var DateTimeFormatter = JavaClassWrapper.wrap("java.time.format.DateTimeFormatter")
+    
+    var datetime = LocalDateTime.now()
+    var formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+    
+    print(datetime.format(formatter))
 
 .. rst-class:: classref-reftable-group
 
@@ -24,9 +41,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+----------------------------------------------------------------------------------------------+
-   | :ref:`JavaClass<class_JavaClass>` | :ref:`wrap<class_JavaClassWrapper_method_wrap>` **(** :ref:`String<class_String>` name **)** |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+
+   +-----------------------------------+-------------------------------------------------------------------------------------------+
+   | :ref:`JavaClass<class_JavaClass>` | :ref:`wrap<class_JavaClassWrapper_method_wrap>`\ (\ name\: :ref:`String<class_String>`\ ) |
+   +-----------------------------------+-------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -41,11 +58,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`JavaClass<class_JavaClass>` **wrap** **(** :ref:`String<class_String>` name **)**
+:ref:`JavaClass<class_JavaClass>` **wrap**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_JavaClassWrapper_method_wrap>`
 
-.. container:: contribute
+Wraps a class defined in Java, and returns it as a :ref:`JavaClass<class_JavaClass>` :ref:`Object<class_Object>` type that Godot can interact with.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This method only works on Android. On every other platform, this method does nothing and returns an empty :ref:`JavaClass<class_JavaClass>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -54,3 +71,4 @@ Method Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

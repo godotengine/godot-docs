@@ -8,8 +8,8 @@ Quitting
 
 Most platforms have the option to request the application to quit. On
 desktops, this is usually done with the "x" icon on the window title bar.
-On Android, the back button is used to quit when on the main screen (and
-to go back otherwise).
+On mobile devices, the app can quit at any time while it is suspended
+to the background.
 
 Handling the notification
 -------------------------
@@ -17,16 +17,6 @@ Handling the notification
 On desktop and web platforms, :ref:`Node <class_Node>` receives a special
 ``NOTIFICATION_WM_CLOSE_REQUEST`` notification when quitting is requested from
 the window manager.
-
-On Android, ``NOTIFICATION_WM_GO_BACK_REQUEST`` is sent instead.
-Pressing the Back button will exit the application if
-**Application > Config > Quit On Go Back** is checked in the Project Settings
-(which is the default).
-
-.. note::
-
-    ``NOTIFICATION_WM_GO_BACK_REQUEST`` isn't supported on iOS, as
-    iOS devices don't have a physical Back button.
 
 Handling the notification is done as follows (on any node):
 
@@ -45,9 +35,6 @@ Handling the notification is done as follows (on any node):
             GetTree().Quit(); // default behavior
     }
 
-When developing mobile apps, quitting is not desired unless the user is
-on the main screen, so the behavior can be changed.
-
 It is important to note that by default, Godot apps have the built-in
 behavior to quit when quit is requested from the window manager. This
 can be changed, so that the user can take care of the complete quitting
@@ -61,6 +48,24 @@ procedure:
  .. code-tab:: csharp
 
     GetTree().AutoAcceptQuit = false;
+
+On mobile devices
+-----------------
+
+There is no direct equivalent to ``NOTIFICATION_WM_CLOSE_REQUEST`` on mobile 
+platforms. Due to the nature of mobile operating systems, the only place 
+that you can run code prior to quitting is when the app is being suspended to 
+the background. On both Android and iOS, the app can be killed while suspended 
+at any time by either the user or the OS. A way to plan ahead for this 
+possibility is to utilize ``NOTIFICATION_APPLICATION_PAUSED`` in order to 
+perform any needed actions as the app is being suspended.
+
+.. note:: On iOS, you only have approximately 5 seconds to finish a task started by this signal. If you go over this allotment, iOS will kill the app instead of pausing it.
+
+On Android, pressing the Back button will exit the application if 
+**Application > Config > Quit On Go Back** is checked in the Project Settings 
+(which is the default). This will fire ``NOTIFICATION_WM_GO_BACK_REQUEST``.
+
 
 Sending your own quit notification
 ----------------------------------

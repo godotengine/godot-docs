@@ -58,7 +58,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**ATTACHMENT_UNUSED** = ``-1``
+**ATTACHMENT_UNUSED** = ``-1`` :ref:`🔗<class_RDFramebufferPass_constant_ATTACHMENT_UNUSED>`
 
 Attachment is unused.
 
@@ -75,14 +75,16 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **color_attachments** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **color_attachments** = ``PackedInt32Array()`` :ref:`🔗<class_RDFramebufferPass_property_color_attachments>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_color_attachments** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_color_attachments** **(** **)**
+- |void| **set_color_attachments**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_color_attachments**\ (\ )
 
 Color attachments in order starting from 0. If this attachment is not used by the shader, pass ATTACHMENT_UNUSED to skip.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -92,12 +94,12 @@ Color attachments in order starting from 0. If this attachment is not used by th
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **depth_attachment** = ``-1``
+:ref:`int<class_int>` **depth_attachment** = ``-1`` :ref:`🔗<class_RDFramebufferPass_property_depth_attachment>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_depth_attachment** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_depth_attachment** **(** **)**
+- |void| **set_depth_attachment**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_depth_attachment**\ (\ )
 
 Depth attachment. ATTACHMENT_UNUSED should be used if no depth buffer is required for this pass.
 
@@ -109,14 +111,16 @@ Depth attachment. ATTACHMENT_UNUSED should be used if no depth buffer is require
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **input_attachments** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **input_attachments** = ``PackedInt32Array()`` :ref:`🔗<class_RDFramebufferPass_property_input_attachments>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_input_attachments** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_input_attachments** **(** **)**
+- |void| **set_input_attachments**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_input_attachments**\ (\ )
 
 Used for multipass framebuffers (more than one render pass). Converts an attachment to an input. Make sure to also supply it properly in the :ref:`RDUniform<class_RDUniform>` for the uniform set.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -126,14 +130,16 @@ Used for multipass framebuffers (more than one render pass). Converts an attachm
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **preserve_attachments** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **preserve_attachments** = ``PackedInt32Array()`` :ref:`🔗<class_RDFramebufferPass_property_preserve_attachments>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_preserve_attachments** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_preserve_attachments** **(** **)**
+- |void| **set_preserve_attachments**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_preserve_attachments**\ (\ )
 
 Attachments to preserve in this pass (otherwise they are erased).
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -143,14 +149,16 @@ Attachments to preserve in this pass (otherwise they are erased).
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **resolve_attachments** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **resolve_attachments** = ``PackedInt32Array()`` :ref:`🔗<class_RDFramebufferPass_property_resolve_attachments>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_resolve_attachments** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_resolve_attachments** **(** **)**
+- |void| **set_resolve_attachments**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_resolve_attachments**\ (\ )
 
 If the color attachments are multisampled, non-multisampled resolve attachments can be provided.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -159,3 +167,4 @@ If the color attachments are multisampled, non-multisampled resolve attachments 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

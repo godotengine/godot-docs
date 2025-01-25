@@ -59,7 +59,7 @@ Base size
 A base size for the window can be specified in the Project Settings under
 **Display → Window**.
 
-.. image:: img/screenres.png
+.. image:: img/screenres.webp
 
 However, what it does is not completely obvious; the engine will *not*
 attempt to switch the monitor to this resolution. Rather, think of this
@@ -72,11 +72,19 @@ that are different from this base size. Godot offers many ways to
 control how the viewport will be resized and stretched to different
 screen sizes.
 
+.. note::
+
+   On this page, *window* refers to the screen area allotted to your game
+   by the system, while *viewport* refers to the root object (accessible
+   from ``get_tree().root``) which the game controls to fill this screen area.
+   This viewport is a :ref:`Window <class_Window>` instance. Recall from the
+   :ref:`introduction <doc_viewports>` that *all* Window objects are viewports.
+
 To configure the stretch base size at runtime from a script, use the
 ``get_tree().root.content_scale_size`` property (see
 :ref:`Window.content_scale_size <class_Window_property_content_scale_size>`).
 Changing this value can indirectly change the size of 2D elements. However, to
-provide an user-accessible scaling option, using
+provide a user-accessible scaling option, using
 :ref:`doc_multiple_resolutions_stretch_scale` is recommended as it's easier to
 adjust.
 
@@ -119,20 +127,16 @@ Stretch settings
 
 Stretch settings are located in the project settings and provide several options:
 
-.. image:: img/stretchsettings.png
+.. image:: img/stretchsettings.webp
 
 Stretch Mode
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 The **Stretch Mode** setting defines how the base size is stretched to fit
-the resolution of the window or screen.
-
-.. image:: img/stretch.png
-
-The animations below use a "base size" of just 16×9 pixels to
-demonstrate the effect of different stretch modes. A single sprite, also
-16×9 pixels in size, covers the entire viewport, and a diagonal
-:ref:`Line2D <class_Line2D>` is added on top of it:
+the resolution of the window or screen. The animations below use a "base
+size" of just 16×9 pixels to demonstrate the effect of different stretch
+modes. A single sprite, also 16×9 pixels in size, covers the entire viewport,
+and a diagonal :ref:`Line2D <class_Line2D>` is added on top of it:
 
 .. image:: img/stretch_demo_scene.png
 
@@ -170,7 +174,7 @@ To configure the stretch mode at runtime from a script, use the
 and the :ref:`ContentScaleMode <enum_Window_ContentScaleMode>` enum).
 
 Stretch Aspect
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The second setting is the stretch aspect. Note that this only takes effect if
 **Stretch Mode** is set to something other than **Disabled**.
@@ -243,7 +247,7 @@ to the region outside the blue frame you see in the 2D editor.
     landscape mode, use 720×720 as the project's base window size in the
     Project Settings.
 
-    To allow the user to choose their preferred screen orientation at run-time,
+    To allow the user to choose their preferred screen orientation at runtime,
     remember to set **Display > Window > Handheld > Orientation** to ``sensor``.
 
 To configure the stretch aspect at runtime from a script, use the
@@ -254,7 +258,7 @@ and the :ref:`ContentScaleAspect <enum_Window_ContentScaleAspect>` enum).
 .. _doc_multiple_resolutions_stretch_scale:
 
 Stretch Scale
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 The **Scale** setting allows you to add an extra scaling factor on top of
 what the **Stretch** options above already provide. The default value of ``1.0``
@@ -280,7 +284,7 @@ To configure the stretch scale at runtime from a script, use the
 .. _doc_multiple_resolutions_stretch_scale_mode:
 
 Stretch Scale Mode
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Since Godot 4.2, the **Stretch Scale Mode** setting allows you to constrain the
 automatically determined scale factor (as well as the manually specified
@@ -351,7 +355,7 @@ The following settings are recommended to support multiple resolutions and aspec
 ratios well.
 
 Desktop game
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 **Non-pixel art:**
 
@@ -396,7 +400,7 @@ Desktop game
     stretch mode.
 
 Mobile game in landscape mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot is configured to use landscape mode by default. This means you don't need
 to change the display orientation project setting.
@@ -425,7 +429,7 @@ to change the display orientation project setting.
     base window height to ``960``.
 
 Mobile game in portrait mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Set the base window width to ``720`` and window height to ``1280``.
 - Alternatively, if you're targeting high-end devices primarily, set the base
@@ -452,16 +456,19 @@ Mobile game in portrait mode
     base window height to ``1280``.
 
 Non-game application
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 - Set the base window width and height to the smallest window size that you intend to target.
   This is not required, but this ensures that you design your UI with small window sizes in mind.
 - Keep the stretch mode to its default value, ``disabled``.
 - Keep the stretch aspect to its default value, ``ignore``
   (its value won't be used since the stretch mode is ``disabled``).
-- You can define a minimum window size by setting ``OS.min_window_size`` in a
+- You can define a minimum window size by calling ``get_window().set_min_size()`` in a
   script's ``_ready()`` function. This prevents the user from resizing the application
   below a certain size, which could break the UI layout.
+
+.. UPDATE: Planned feature. When manually override the 2D scale factor is supported,
+.. update this note.
 
 .. note::
 
@@ -473,18 +480,34 @@ Non-game application
 hiDPI support
 -------------
 
-By default, Godot projects aren't considered DPI-aware by the operating system.
-This is done to improve performance on low-end systems, since the operating
-system's DPI fallback scaling will be faster than letting the application scale
-itself (even when using the ``viewport`` stretch mode).
+By default, Godot projects are considered DPI-aware by the operating system.
+This is controlled by the **Display > Window > Dpi > Allow Hidpi** project setting,
+which should be left enabled whenever possible. Disabling DPI awareness can break
+fullscreen behavior on Windows.
 
-However, the OS-provided DPI fallback scaling doesn't play well with fullscreen
-mode. If you want crisp visuals on hiDPI displays or if project uses fullscreen,
-it's recommended to enable **Display > Window > Dpi > Allow Hidpi** in the
-Project Settings.
+Since Godot projects are DPI-aware, they may appear at a very small window size
+when launching on an hiDPI display (proportionally to the screen resolution).
+For a game, the most common way to work around this issue is to make them
+fullscreen by default. Alternatively, you could set the window size in an
+:ref:`autoload <doc_singletons_autoload>`'s ``_ready()`` function according to
+the screen size.
 
-**Allow Hidpi** is only effective on Windows and macOS. It's ignored on all
-other platforms.
+To ensure 2D elements don't appear too small on hiDPI displays:
+
+- For games, use the ``canvas_items`` or ``viewport`` stretch modes so that 2D
+  elements are automatically resized according to the current window size.
+- For non-game applications, use the ``disabled`` stretch mode and set the
+  stretch scale to a value corresponding to the display scale factor in an
+  :ref:`autoload <doc_singletons_autoload>`'s ``_ready()`` function.
+  The display scale factor is set in the operating system's settings and can be queried
+  using :ref:`screen_get_scale<class_DisplayServer_method_screen_get_scale>`. This
+  method is currently only implemented on macOS. On other operating systems, you
+  will need to implement a method to guess the display scale factor based on the
+  screen resolution (with a setting to let the user override this if needed). This
+  is the approach currently used by the Godot editor.
+
+The **Allow Hidpi** setting is only effective on Windows and macOS. It's ignored
+on all other platforms.
 
 .. note::
 

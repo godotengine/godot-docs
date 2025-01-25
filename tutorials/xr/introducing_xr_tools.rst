@@ -26,7 +26,8 @@ Installing XR Tools
 
 Continuing on from our project we started in :ref:`doc_setting_up_xr` we want to add in the Godot XR Tools library.
 This can be downloaded from the `Godot XR Tools releases page <https://github.com/GodotVR/godot-xr-tools/releases>`_.
-Simply find the latest pre-release for Godot 4 and then under assets download the ``godot-xr-tools.zip`` file.
+Find the latest release for Godot 4, and under **Assets**, download the
+``godot-xr-tools.zip`` file.
 
 Once downloaded unzip the file.
 You will notice the files are held within a ``godot-xr-tools`` subfolder.

@@ -277,6 +277,7 @@ Interacting with light
 
 First, turn wireframe off. To do so, click in the upper-left of the Viewport
 again, where it says "Perspective", and select "Display Normal".
+Additionally in the 3D scene toolbar, turn off preview sunlight.
 
 .. image:: img/normal.png
 

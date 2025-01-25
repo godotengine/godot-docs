@@ -19,7 +19,7 @@ settings, this is already part of the exported HTML page. To understand practica
 see :ref:`Custom HTML page for Web export <doc_customizing_html5_shell>`.
 
 Static Methods
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 +---------+-----------------------------------------------------------------------------------------------+
 | Promise | :js:attr:`load <Engine.load>` **(** string basePath **)**                                     |
@@ -30,7 +30,7 @@ Static Methods
 +---------+-----------------------------------------------------------------------------------------------+
 
 Instance Methods
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 +---------+---------------------------------------------------------------------------------------------------------------+
 | Promise | :js:attr:`init <Engine.prototype.init>` **(** *[ string basePath ]* **)**                                     |
@@ -183,7 +183,7 @@ An object used to configure the Engine instance based on godot export options, a
 templates if needed.
 
 Properties
-^^^^^^^^^^
+~~~~~~~~~~
 
 +-------------------+-------------------------------+
 | type              | name                          |

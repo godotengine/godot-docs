@@ -21,7 +21,7 @@ A rectangular region of 2D space that detects whether it is visible on screen.
 Description
 -----------
 
-:ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>` represents a rectangular region of 2D space. When any part of this region becomes visible on screen or in a viewport, it will emit a :ref:`screen_entered<class_VisibleOnScreenNotifier2D_signal_screen_entered>` signal, and likewise it will emit a :ref:`screen_exited<class_VisibleOnScreenNotifier2D_signal_screen_exited>` signal when no part of it remains visible.
+**VisibleOnScreenNotifier2D** represents a rectangular region of 2D space. When any part of this region becomes visible on screen or in a viewport, it will emit a :ref:`screen_entered<class_VisibleOnScreenNotifier2D_signal_screen_entered>` signal, and likewise it will emit a :ref:`screen_exited<class_VisibleOnScreenNotifier2D_signal_screen_exited>` signal when no part of it remains visible.
 
 If you want a node to be enabled automatically when this region is visible on screen, use :ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>`.
 
@@ -32,7 +32,7 @@ If you want a node to be enabled automatically when this region is visible on sc
 Tutorials
 ---------
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -54,9 +54,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibleOnScreenNotifier2D_method_is_on_screen>` **(** **)** |const| |
-   +-------------------------+----------------------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibleOnScreenNotifier2D_method_is_on_screen>`\ (\ ) |const| |
+   +-------------------------+----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -71,7 +71,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**screen_entered** **(** **)**
+**screen_entered**\ (\ ) :ref:`🔗<class_VisibleOnScreenNotifier2D_signal_screen_entered>`
 
 Emitted when the VisibleOnScreenNotifier2D enters the screen.
 
@@ -83,7 +83,7 @@ Emitted when the VisibleOnScreenNotifier2D enters the screen.
 
 .. rst-class:: classref-signal
 
-**screen_exited** **(** **)**
+**screen_exited**\ (\ ) :ref:`🔗<class_VisibleOnScreenNotifier2D_signal_screen_exited>`
 
 Emitted when the VisibleOnScreenNotifier2D exits the screen.
 
@@ -100,12 +100,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-10, -10, 20, 20)``
+:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-10, -10, 20, 20)`` :ref:`🔗<class_VisibleOnScreenNotifier2D_property_rect>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
-- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)**
+- |void| **set_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
+- :ref:`Rect2<class_Rect2>` **get_rect**\ (\ )
 
 The VisibleOnScreenNotifier2D's bounding rectangle.
 
@@ -122,7 +122,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
+:ref:`bool<class_bool>` **is_on_screen**\ (\ ) |const| :ref:`🔗<class_VisibleOnScreenNotifier2D_method_is_on_screen>`
 
 If ``true``, the bounding rectangle is on the screen.
 
@@ -135,3 +135,4 @@ If ``true``, the bounding rectangle is on the screen.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

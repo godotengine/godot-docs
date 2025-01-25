@@ -54,12 +54,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)`` :ref:`🔗<class_GPUParticlesAttractorVectorField3D_property_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_size**\ (\ )
 
 The size of the vector field box in 3D units.
 
@@ -71,12 +71,12 @@ The size of the vector field box in 3D units.
 
 .. rst-class:: classref-property
 
-:ref:`Texture3D<class_Texture3D>` **texture**
+:ref:`Texture3D<class_Texture3D>` **texture** :ref:`🔗<class_GPUParticlesAttractorVectorField3D_property_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`Texture3D<class_Texture3D>` value **)**
-- :ref:`Texture3D<class_Texture3D>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`Texture3D<class_Texture3D>`\ )
+- :ref:`Texture3D<class_Texture3D>` **get_texture**\ (\ )
 
 The 3D texture to be used. Values are linearly interpolated between the texture's pixels.
 
@@ -89,3 +89,4 @@ The 3D texture to be used. Values are linearly interpolated between the texture'
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

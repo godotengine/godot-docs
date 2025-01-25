@@ -61,12 +61,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_FogVolume_property_material>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 The :ref:`Material<class_Material>` used by the **FogVolume**. Can be either a built-in :ref:`FogMaterial<class_FogMaterial>` or a custom :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
@@ -78,12 +78,12 @@ The :ref:`Material<class_Material>` used by the **FogVolume**. Can be either a b
 
 .. rst-class:: classref-property
 
-:ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **shape** = ``3``
+:ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **shape** = ``3`` :ref:`🔗<class_FogVolume_property_shape>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shape** **(** :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` value **)**
-- :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **get_shape** **(** **)**
+- |void| **set_shape**\ (\ value\: :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>`\ )
+- :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **get_shape**\ (\ )
 
 The shape of the **FogVolume**. This can be set to either :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_WORLD<class_RenderingServer_constant_FOG_VOLUME_SHAPE_WORLD>`.
 
@@ -95,12 +95,12 @@ The shape of the **FogVolume**. This can be set to either :ref:`RenderingServer.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)`` :ref:`🔗<class_FogVolume_property_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_size**\ (\ )
 
 The size of the **FogVolume** when :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`.
 
@@ -115,3 +115,4 @@ The size of the **FogVolume** when :ref:`shape<class_FogVolume_property_shape>` 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

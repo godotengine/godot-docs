@@ -70,7 +70,7 @@ are seven different processor functions.
    :ref:`spatial shaders <doc_spatial_shader>`.
 
 4. The ``start()`` function runs for every particle in a particle system once
-   when the particle is first spawned. Used in 
+   when the particle is first spawned. Used in
    :ref:`particles shaders <doc_particle_shader>`.
 
 5. The ``process()`` function runs for every particle in a particle system for
@@ -136,11 +136,10 @@ Each shader type has different render modes. See the reference for each shader
 type for a complete list of render modes.
 
 Vertex processor
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 The ``vertex()`` processing function is called once for every vertex in
-``spatial`` and ``canvas_item`` shaders. For ``particles`` shaders, it is called
-once for every particle.
+``spatial`` and ``canvas_item`` shaders.
 
 Each vertex in your world's geometry has properties like a position and color.
 The function modifies those values and passes them to the fragment function. You
@@ -152,7 +151,7 @@ data yourself; see the :ref:`Spatial shader doc <doc_spatial_shader>` for an
 example.
 
 Fragment processor
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The ``fragment()`` processing function is used to set up the Godot material
 parameters per pixel. This code runs on every visible pixel the object or
@@ -171,7 +170,7 @@ code out. Therefore, you will not waste calculations on the effects that you do
 not use.
 
 Light processor
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 The ``light()`` processor runs per pixel too, and it runs once for every light
 that affects the object. It does not run if no lights affect the object. It

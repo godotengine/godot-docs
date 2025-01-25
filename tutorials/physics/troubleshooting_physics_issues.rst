@@ -27,7 +27,8 @@ other solutions you can try:
   speed. The faster the object moves, the larger the collision shape should
   extend outside of the object to ensure it can collide with thin walls more
   reliably.
-- Increase **Physics Ticks Per Second** in the advanced Project Settings. While
+- Increase :ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+  in the advanced Project Settings. While
   this has other benefits (such as more stable simulation and reduced input
   lag), this increases CPU utilization and may not be viable for mobile/web
   platforms. Multipliers of the default value of ``60`` (such as ``120``, ``180``
@@ -44,7 +45,8 @@ causes the simulation to become wobbly, making the objects unable to rest on top
 of each other without moving.
 
 Increasing the physics simulation rate can help alleviate this issue. To do so,
-increase **Physics Ticks Per Second** in the advanced Project Settings. Note
+increase :ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+in the advanced Project Settings. Note
 that increases CPU utilization and may not be viable for mobile/web platforms.
 Multipliers of the default value of ``60`` (such as ``120``, ``180`` or ``240``)
 should be preferred for a smooth appearance on most displays.
@@ -83,7 +85,9 @@ simulation rate (as making the shape thicker would cause a disconnect between
 the RigidBody's visual representation and its collision).
 
 In both cases, increasing the physics simulation rate can also help alleviate
-this issue. To do so, increase **Physics Ticks Per Second** in the advanced
+this issue. To do so, increase
+:ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+in the advanced
 Project Settings. Note that this increases CPU utilization and may not be viable
 for mobile/web platforms. Multipliers of the default value of ``60`` (such as
 ``120``, ``180`` or ``240``) should be preferred for a smooth appearance on most
@@ -115,7 +119,9 @@ vehicle (due to tunneling), but also that the simulation has little data to work
 with in general at such a high speed.
 
 Fast-moving vehicles can benefit a lot from an increased physics simulation
-rate. To do so, increase **Physics Ticks Per Second** in the advanced Project
+rate. To do so, increase
+:ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+in the advanced Project
 Settings. Note that this increases CPU utilization and may not be viable for
 mobile/web platforms. Multipliers of the default value of ``60`` (such as
 ``120``, ``180`` or ``240``) should be preferred for a smooth appearance on most
@@ -155,6 +161,22 @@ This issue can also occur with StaticBodies that use very detailed trimesh
 geometry as a collider. Not only this will improve physics simulation
 performance significantly, but this can also improve stability by letting you
 remove small fixtures and crevices from being considered by collision.
+
+Framerate suddenly drops to a very low value beyond a certain amount of physics simulation
+------------------------------------------------------------------------------------------
+
+This occurs because the physics engine can't keep up with the expected
+simulation rate. In this case, the framerate will start dropping, but the engine
+is only allowed to simulate a certain number of physics steps per rendered
+frame. This snowballs into a situation where framerate keeps dropping until it
+reaches a very low framerate (typically 1-2 FPS) and is called the *physics
+spiral of death*.
+
+To avoid this, you should check for situations in your project that can cause
+excessive number of physics simulations to occur at the same time (or with
+excessively complex collision shapes). If these situations cannot be avoided,
+you can increase the **Max Physics Steps per Frame** project setting and/or
+reduce **Physics Ticks per Second** to alleviate this.
 
 Physics simulation is unreliable when far away from the world origin
 --------------------------------------------------------------------

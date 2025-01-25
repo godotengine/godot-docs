@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
-- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
+- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -71,12 +71,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **columns** = ``1``
+:ref:`int<class_int>` **columns** = ``1`` :ref:`🔗<class_GridContainer_property_columns>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_columns** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_columns** **(** **)**
+- |void| **set_columns**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_columns**\ (\ )
 
 The number of columns in the **GridContainer**. If modified, **GridContainer** reorders its Control-derived children to accommodate the new layout.
 
@@ -93,9 +93,9 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``4``
+:ref:`int<class_int>` **h_separation** = ``4`` :ref:`🔗<class_GridContainer_theme_constant_h_separation>`
 
-The horizontal separation of children nodes.
+The horizontal separation of child nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -105,9 +105,9 @@ The horizontal separation of children nodes.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **v_separation** = ``4``
+:ref:`int<class_int>` **v_separation** = ``4`` :ref:`🔗<class_GridContainer_theme_constant_v_separation>`
 
-The vertical separation of children nodes.
+The vertical separation of child nodes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -116,3 +116,4 @@ The vertical separation of children nodes.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -14,8 +14,7 @@ Click the **Instance** button (represented by a chain link icon) and select your
 
 .. image:: img/instance_scene.webp
 
-Now, add the following nodes as children of ``Main``, and name them as shown
-(values are in seconds):
+Now, add the following nodes as children of ``Main``, and name them as shown:
 
 - :ref:`Timer <class_Timer>` (named ``MobTimer``) - to control how often mobs
   spawn
@@ -26,7 +25,7 @@ Now, add the following nodes as children of ``Main``, and name them as shown
 - :ref:`Marker2D <class_Marker2D>` (named ``StartPosition``) - to indicate
   the player's start position
 
-Set the ``Wait Time`` property of each of the ``Timer`` nodes as follows:
+Set the ``Wait Time`` property of each of the ``Timer`` nodes as follows (values are in seconds):
 
 - ``MobTimer``: ``0.5``
 - ``ScoreTimer``: ``1``
@@ -36,7 +35,7 @@ In addition, set the ``One Shot`` property of ``StartTimer`` to "On" and set
 ``Position`` of the ``StartPosition`` node to ``(240, 450)``.
 
 Spawning mobs
-~~~~~~~~~~~~~
+-------------
 
 The Main node will be spawning new mobs, and we want them to appear at a random
 location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` node
@@ -71,7 +70,7 @@ Your scene should look like this:
 .. image:: img/main_scene_nodes.webp
 
 Main script
-~~~~~~~~~~~
+-----------
 
 Add a script to ``Main``. At the top of the script, we use
 ``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
@@ -100,7 +99,7 @@ to instance.
     }
 
 Click the ``Main`` node and you will see the ``Mob Scene`` property in the Inspector
-under "Script Variables".
+under "Main.gd".
 
 You can assign this property's value in two ways:
 
@@ -169,11 +168,13 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 
  .. code-tab:: csharp
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnScoreTimerTimeout()
     {
         _score++;
     }
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnStartTimerTimeout()
     {
         GetNode<Timer>("MobTimer").Start();
@@ -201,11 +202,11 @@ Note that a new instance must be added to the scene using ``add_child()``.
         var mob_spawn_location = $MobPath/MobSpawnLocation
         mob_spawn_location.progress_ratio = randf()
 
+        # Set the mob's position to the random location.
+        mob.position = mob_spawn_location.position
+
         # Set the mob's direction perpendicular to the path direction.
         var direction = mob_spawn_location.rotation + PI / 2
-
-        # Set the mob's position to a random location.
-        mob.position = mob_spawn_location.position
 
         # Add some randomness to the direction.
         direction += randf_range(-PI / 4, PI / 4)
@@ -220,12 +221,9 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
  .. code-tab:: csharp
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnMobTimerTimeout()
     {
-        // Note: Normally it is best to use explicit types rather than the `var`
-        // keyword. However, var is acceptable to use here because the types are
-        // obviously Mob and PathFollow2D, since they appear later on the line.
-
         // Create a new instance of the Mob scene.
         Mob mob = MobScene.Instantiate<Mob>();
 
@@ -259,7 +257,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
                convert between the two.
 
 Testing the scene
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Let's test the scene to make sure everything is working. Add this ``new_game``
 call to ``_ready()``:

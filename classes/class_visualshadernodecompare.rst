@@ -50,7 +50,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ComparisonType**:
+enum **ComparisonType**: :ref:`🔗<enum_VisualShaderNodeCompare_ComparisonType>`
 
 .. _class_VisualShaderNodeCompare_constant_CTYPE_SCALAR:
 
@@ -132,7 +132,7 @@ Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_Com
 
 .. rst-class:: classref-enumeration
 
-enum **Function**:
+enum **Function**: :ref:`🔗<enum_VisualShaderNodeCompare_Function>`
 
 .. _class_VisualShaderNodeCompare_constant_FUNC_EQUAL:
 
@@ -198,7 +198,7 @@ Represents the size of the :ref:`Function<enum_VisualShaderNodeCompare_Function>
 
 .. rst-class:: classref-enumeration
 
-enum **Condition**:
+enum **Condition**: :ref:`🔗<enum_VisualShaderNodeCompare_Condition>`
 
 .. _class_VisualShaderNodeCompare_constant_COND_ALL:
 
@@ -206,7 +206,7 @@ enum **Condition**:
 
 :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **COND_ALL** = ``0``
 
-The result will be true if all of component in vector satisfy the comparison condition.
+The result will be ``true`` if all components in the vector satisfy the comparison condition.
 
 .. _class_VisualShaderNodeCompare_constant_COND_ANY:
 
@@ -214,7 +214,7 @@ The result will be true if all of component in vector satisfy the comparison con
 
 :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **COND_ANY** = ``1``
 
-The result will be true if any of component in vector satisfy the comparison condition.
+The result will be ``true`` if any component in the vector satisfies the comparison condition.
 
 .. _class_VisualShaderNodeCompare_constant_COND_MAX:
 
@@ -237,12 +237,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **condition** = ``0``
+:ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **condition** = ``0`` :ref:`🔗<class_VisualShaderNodeCompare_property_condition>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_condition** **(** :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` value **)**
-- :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **get_condition** **(** **)**
+- |void| **set_condition**\ (\ value\: :ref:`Condition<enum_VisualShaderNodeCompare_Condition>`\ )
+- :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **get_condition**\ (\ )
 
 Extra condition which is applied if :ref:`type<class_VisualShaderNodeCompare_property_type>` is set to :ref:`CTYPE_VECTOR_3D<class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_3D>`.
 
@@ -254,12 +254,12 @@ Extra condition which is applied if :ref:`type<class_VisualShaderNodeCompare_pro
 
 .. rst-class:: classref-property
 
-:ref:`Function<enum_VisualShaderNodeCompare_Function>` **function** = ``0``
+:ref:`Function<enum_VisualShaderNodeCompare_Function>` **function** = ``0`` :ref:`🔗<class_VisualShaderNodeCompare_property_function>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeCompare_Function>` value **)**
-- :ref:`Function<enum_VisualShaderNodeCompare_Function>` **get_function** **(** **)**
+- |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeCompare_Function>`\ )
+- :ref:`Function<enum_VisualShaderNodeCompare_Function>` **get_function**\ (\ )
 
 A comparison function. See :ref:`Function<enum_VisualShaderNodeCompare_Function>` for options.
 
@@ -271,12 +271,12 @@ A comparison function. See :ref:`Function<enum_VisualShaderNodeCompare_Function>
 
 .. rst-class:: classref-property
 
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **type** = ``0``
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **type** = ``0`` :ref:`🔗<class_VisualShaderNodeCompare_property_type>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_comparison_type** **(** :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` value **)**
-- :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **get_comparison_type** **(** **)**
+- |void| **set_comparison_type**\ (\ value\: :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>`\ )
+- :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **get_comparison_type**\ (\ )
 
 The type to be used in the comparison. See :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` for options.
 
@@ -287,3 +287,4 @@ The type to be used in the comparison. See :ref:`ComparisonType<enum_VisualShade
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -67,7 +67,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/channel_pack** = ``0``
+:ref:`int<class_int>` **compress/channel_pack** = ``0`` :ref:`🔗<class_ResourceImporterLayeredTexture_property_compress/channel_pack>`
 
 Controls how color channels should be used in the imported texture.
 
@@ -75,7 +75,7 @@ Controls how color channels should be used in the imported texture.
 
 \ **Optimized:**, allows the RG color format to be used if the texture does not use the blue channel. This reduces memory usage if the texture's blue channel can be discarded (all pixels must have a blue value of ``0``).
 
-\ **Normal Map (RG Channels):** This forces all layers from the texture to be imported with the RG color format to reduce memory usage, with only the red and green channels preserved. This only has an effect on textures with the VRAM Compressed or Basis Universal compression modes. This mode is only available in layered textures (:ref:`Cubemap<class_Cubemap>`, :ref:`CubemapArray<class_CubemapArray>`, :ref:`Texture2DArray<class_Texture2DArray>` and :ref:`Texture3D<class_Texture3D>`).
+\ **Normal Map (RG Channels):** This forces all layers from the texture to be imported with the RG color format, with only the red and green channels preserved. RGTC (Red-Green Texture Compression) compression is able to preserve its detail much better, while using the same amount of memory as a standard RGBA VRAM-compressed texture. This only has an effect on textures with the VRAM Compressed or Basis Universal compression modes. This mode is only available in layered textures (:ref:`Cubemap<class_Cubemap>`, :ref:`CubemapArray<class_CubemapArray>`, :ref:`Texture2DArray<class_Texture2DArray>` and :ref:`Texture3D<class_Texture3D>`).
 
 .. rst-class:: classref-item-separator
 
@@ -85,7 +85,7 @@ Controls how color channels should be used in the imported texture.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/hdr_compression** = ``1``
+:ref:`int<class_int>` **compress/hdr_compression** = ``1`` :ref:`🔗<class_ResourceImporterLayeredTexture_property_compress/hdr_compression>`
 
 Controls how VRAM compression should be performed for HDR images.
 
@@ -105,7 +105,7 @@ Controls how VRAM compression should be performed for HDR images.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **compress/high_quality** = ``false``
+:ref:`bool<class_bool>` **compress/high_quality** = ``false`` :ref:`🔗<class_ResourceImporterLayeredTexture_property_compress/high_quality>`
 
 If ``true``, uses BPTC compression on desktop platforms and ASTC compression on mobile platforms. When using BPTC, BC7 is used for SDR textures and BC6H is used for HDR textures.
 
@@ -121,7 +121,7 @@ BPTC and ASTC support VRAM compression for HDR textures, but S3TC and ETC2 do no
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **compress/lossy_quality** = ``0.7``
+:ref:`float<class_float>` **compress/lossy_quality** = ``0.7`` :ref:`🔗<class_ResourceImporterLayeredTexture_property_compress/lossy_quality>`
 
 The quality to use when using the **Lossy** compression mode. Higher values result in better quality, at the cost of larger file sizes. Lossy quality does not affect memory usage of the imported texture, only its file size on disk.
 
@@ -133,7 +133,7 @@ The quality to use when using the **Lossy** compression mode. Higher values resu
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/mode** = ``1``
+:ref:`int<class_int>` **compress/mode** = ``1`` :ref:`🔗<class_ResourceImporterLayeredTexture_property_compress/mode>`
 
 The compression mode to use. Each compression mode provides a different tradeoff:
 
@@ -157,7 +157,7 @@ See `Compress mode <../tutorials/assets_pipeline/importing_images.html#compress-
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **mipmaps/generate** = ``true``
+:ref:`bool<class_bool>` **mipmaps/generate** = ``true`` :ref:`🔗<class_ResourceImporterLayeredTexture_property_mipmaps/generate>`
 
 If ``true``, smaller versions of the texture are generated on import. For example, a 64×64 texture will generate 6 mipmaps (32×32, 16×16, 8×8, 4×4, 2×2, 1×1). This has several benefits:
 
@@ -177,7 +177,7 @@ It's recommended to enable mipmaps in 3D. However, in 2D, this should only be en
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **mipmaps/limit** = ``-1``
+:ref:`int<class_int>` **mipmaps/limit** = ``-1`` :ref:`🔗<class_ResourceImporterLayeredTexture_property_mipmaps/limit>`
 
 Unimplemented. This currently has no effect when changed.
 
@@ -189,7 +189,7 @@ Unimplemented. This currently has no effect when changed.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **slices/arrangement** = ``1``
+:ref:`int<class_int>` **slices/arrangement** = ``1`` :ref:`🔗<class_ResourceImporterLayeredTexture_property_slices/arrangement>`
 
 Controls how the cubemap's texture is internally laid out. When using high-resolution cubemaps, **2×3** and **3×2** are less prone to exceeding hardware texture size limits compared to **1×6** and **6×1**.
 
@@ -200,3 +200,4 @@ Controls how the cubemap's texture is internally laid out. When using high-resol
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -1,6 +1,8 @@
 :allow_comments: False
 :article_outdated: True
 
+.. _doc_editor_introduction:
+
 Editor introduction
 ===================
 
@@ -22,8 +24,22 @@ in other sections where appropriate. For example, the :ref:`animation editor
    project_manager
    inspector_dock
    project_settings
+   script_editor
    default_key_mapping
    customizing_editor
+
+XR editor
+---------
+
+Godot offers a port of the editor designed to run natively on Meta Quest devices.
+The port can be downloaded from the `Meta Horizon Store <https://www.meta.com/experiences/godot-game-engine/7713660705416473/>`__,
+or from the `Godot download page <https://godotengine.org/download/preview/>`__.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-xr-editor
+
+   using_the_xr_editor
 
 Android editor
 --------------

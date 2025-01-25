@@ -1,5 +1,4 @@
 :allow_comments: False
-:article_outdated: True
 
 .. _doc_your_first_3d_game:
 
@@ -25,7 +24,7 @@ You will learn to:
 - Use physics layers and a group to detect interactions with specific entities.
 - Code basic procedural gameplay by instancing monsters at regular time
   intervals.
-- Design a movement animation and change its speed at run-time.
+- Design a movement animation and change its speed at runtime.
 - Draw a user interface on a 3D game.
 
 And more.

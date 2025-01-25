@@ -107,7 +107,7 @@ Alternatively, set it using a function:
 
     public override void _Ready()
     {
-        SetCustomMinimumSize(new Vector2(20, 20));
+        CustomMinimumSize = new Vector2(20, 20);
     }
 
 Input
@@ -131,7 +131,7 @@ when:
 
 This function is
 :ref:`Control._gui_input() <class_Control_private_method__gui_input>`.
-Simply override it in your control. No processing needs to be set.
+To use it, override it in your control. No processing needs to be set.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -63,12 +63,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **animation_path** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **animation_path** = ``NodePath("")`` :ref:`🔗<class_RootMotionView_property_animation_path>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_animation_path** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_animation_path** **(** **)**
+- |void| **set_animation_path**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_animation_path**\ (\ )
 
 Path to an :ref:`AnimationMixer<class_AnimationMixer>` node to use as a basis for root motion.
 
@@ -80,12 +80,12 @@ Path to an :ref:`AnimationMixer<class_AnimationMixer>` node to use as a basis fo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **cell_size** = ``1.0``
+:ref:`float<class_float>` **cell_size** = ``1.0`` :ref:`🔗<class_RootMotionView_property_cell_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cell_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_cell_size** **(** **)**
+- |void| **set_cell_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_cell_size**\ (\ )
 
 The grid's cell size in 3D units.
 
@@ -97,12 +97,12 @@ The grid's cell size in 3D units.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(0.5, 0.5, 1, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(0.5, 0.5, 1, 1)`` :ref:`🔗<class_RootMotionView_property_color>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_color** **(** **)**
+- |void| **set_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_color**\ (\ )
 
 The grid's color.
 
@@ -114,12 +114,12 @@ The grid's color.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``10.0``
+:ref:`float<class_float>` **radius** = ``10.0`` :ref:`🔗<class_RootMotionView_property_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 The grid's radius in 3D units. The grid's opacity will fade gradually as the distance from the origin increases until this :ref:`radius<class_RootMotionView_property_radius>` is reached.
 
@@ -131,12 +131,12 @@ The grid's radius in 3D units. The grid's opacity will fade gradually as the dis
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **zero_y** = ``true``
+:ref:`bool<class_bool>` **zero_y** = ``true`` :ref:`🔗<class_RootMotionView_property_zero_y>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_zero_y** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_zero_y** **(** **)**
+- |void| **set_zero_y**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_zero_y**\ (\ )
 
 If ``true``, the grid's points will all be on the same Y coordinate (*local* Y = 0). If ``false``, the points' original Y coordinate is preserved.
 
@@ -147,3 +147,4 @@ If ``true``, the grid's points will all be on the same Y coordinate (*local* Y =
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

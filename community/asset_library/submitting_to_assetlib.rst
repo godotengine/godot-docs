@@ -178,6 +178,10 @@ is required in the submission form here as well.
     The **icon** must be square (1:1 aspect ratio). It should have a minimum
     resolution of 128×128 pixels.
 
+.. note::
+
+    For icons hosted on GitHub, URLs must be provided in the form of `https://raw.githubusercontent.com/<user>/<project>/<branch>/Icon.png`.
+
 * **License**:
     The license under which you are distributing the asset. The list
     includes a variety of free and open source software licenses, such as GPL
@@ -206,12 +210,6 @@ Once you are done, press "Submit". Your asset will be entered into the review qu
 You can check all assets currently pending a review `here <https://godotengine.org/asset-library/asset/edit?&asset=-1>`_ .
 The approval process is manual and may take up to a few days for your asset to be accepted (or rejected), so please
 be patient!
-
-.. note::
-
-    You may have some luck accelerating the approval process by messaging the
-    moderators and AssetLib reviewers on the `Godot Contributors Chat <https://chat.godotengine.org/>`_,
-    or the official Discord server.
 
 You will be informed when your asset is reviewed. If it was rejected,
 you will be told why that may have been, and you will be able to submit it again

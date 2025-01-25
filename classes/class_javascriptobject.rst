@@ -21,8 +21,6 @@ Description
 
 JavaScriptObject is used to interact with JavaScript objects retrieved or created via :ref:`JavaScriptBridge.get_interface<class_JavaScriptBridge_method_get_interface>`, :ref:`JavaScriptBridge.create_object<class_JavaScriptBridge_method_create_object>`, or :ref:`JavaScriptBridge.create_callback<class_JavaScriptBridge_method_create_callback>`.
 
-\ **Example:**\ 
-
 ::
 
     extends Node
@@ -32,11 +30,13 @@ JavaScriptObject is used to interact with JavaScript objects retrieved or create
     
     func _init():
         var buf = JavaScriptBridge.create_object("ArrayBuffer", 10) # new ArrayBuffer(10)
-        print(buf) # prints [JavaScriptObject:OBJECT_ID]
+        print(buf) # Prints [JavaScriptObject:OBJECT_ID]
         var uint8arr = JavaScriptBridge.create_object("Uint8Array", buf) # new Uint8Array(buf)
         uint8arr[1] = 255
-        prints(uint8arr[1], uint8arr.byteLength) # prints 255 10
-        console.log(uint8arr) # prints in browser console "Uint8Array(10) [ 0, 255, 0, 0, 0, 0, 0, 0, 0, 0 ]"
+        prints(uint8arr[1], uint8arr.byteLength) # Prints "255 10"
+    
+        # Prints "Uint8Array(10) [ 0, 255, 0, 0, 0, 0, 0, 0, 0, 0 ]" in the browser's console.
+        console.log(uint8arr)
     
         # Equivalent of JavaScriptBridge: Array.from(uint8arr).forEach(myCallback)
         JavaScriptBridge.get_interface("Array").from(uint8arr).forEach(_my_js_callback)
@@ -58,3 +58,4 @@ JavaScriptObject is used to interact with JavaScript objects retrieved or create
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

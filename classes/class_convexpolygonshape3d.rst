@@ -32,7 +32,7 @@ A 3D convex polyhedron shape, intended for use in physics. Usually used to provi
 Tutorials
 ---------
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -59,14 +59,16 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **points** = ``PackedVector3Array()``
+:ref:`PackedVector3Array<class_PackedVector3Array>` **points** = ``PackedVector3Array()`` :ref:`🔗<class_ConvexPolygonShape3D_property_points>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_points** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` value **)**
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_points** **(** **)**
+- |void| **set_points**\ (\ value\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ )
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_points**\ (\ )
 
 The list of 3D points forming the convex polygon shape.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -75,3 +77,4 @@ The list of 3D points forming the convex polygon shape.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

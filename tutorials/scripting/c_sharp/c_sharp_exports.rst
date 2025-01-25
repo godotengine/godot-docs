@@ -107,7 +107,10 @@ Properties with a backing field use the default value of the backing field.
     value for ``int``, ``0``. However, when running the scene or inspecting a
     node with an attached tool script, ``_number`` will be ``2``, and
     ``NumberWithBackingField`` will return ``5``. This difference may cause
-    confusing behavior. To avoid this, don't use complex properties.
+    confusing behavior. To avoid this, don't use complex properties. Alternatively,
+    if the default value can be explicitly specified, it can be overridden with the
+    :ref:`_PropertyCanRevert() <class_Object_private_method__property_can_revert>` and
+    :ref:`_PropertyGetRevert() <class_Object_private_method__property_get_revert>` methods.
 
 Any type of ``Resource`` or ``Node`` can be exported. The property editor shows
 a user-friendly assignment dialog for these types. This can be used instead of
@@ -256,13 +259,29 @@ the slider.
 Floats with easing hint
 -----------------------
 
-Display a visual representation of the 'ease()' function
-when editing.
+Display a visual representation of the :ref:`ease<class_@GlobalScope_method_ease>`
+function when editing.
 
 .. code-block:: csharp
 
     [Export(PropertyHint.ExpEasing)]
     public float TransitionSpeed { get; set; }
+
+Export with suffix hint
+-----------------------
+
+Display a unit hint suffix for exported variables. Works with numeric types,
+such as floats or vectors:
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.None, "suffix:m/s\u00b2")]
+    public float Gravity { get; set; } = 9.8f;
+    [Export(PropertyHint.None, "suffix:m/s")]
+    public Vector3 Velocity { get; set; }
+
+In the above example, ``\u00b2`` is used to write the "squared" character
+(``²``).
 
 Colors
 ------
@@ -293,7 +312,18 @@ Since Godot 4.0, nodes can be directly exported without having to use NodePaths.
     [Export]
     public Node Node { get; set; }
 
-Custom node classes can also be used, see :ref:`doc_c_sharp_global_classes`.
+A specific type of node can also be directly exported. The list of nodes shown
+after pressing "Assign" in the inspector is filtered to the specified type, and
+only a correct node can be assigned.
+
+.. code-block:: csharp
+
+    [Export]
+    public Sprite2D Sprite2D { get; set; }
+
+Custom node classes can also be exported directly. The filtering behavior
+depends on whether the custom class is a
+:ref:`global class <doc_c_sharp_global_classes>`.
 
 Exporting NodePaths like in Godot 3.x is still possible, in case you need it:
 
@@ -328,7 +358,7 @@ Therefore, if you specify a type derived from Resource such as:
     public AnimationNode AnimationNode { get; set; }
 
 The drop-down menu will be limited to AnimationNode and all
-its inherited classes. Custom resource classes can also be used,
+its derived classes. Custom resource classes can also be used,
 see :ref:`doc_c_sharp_global_classes`.
 
 It must be noted that even if the script is not being run while in the
@@ -349,7 +379,7 @@ combine multiple flags using logical OR (``|``) are also possible.
 .. code-block:: csharp
 
     [Flags]
-    public enum MyEnum
+    public enum SpellElements
     {
         Fire = 1 << 1,
         Water = 1 << 2,
@@ -436,7 +466,7 @@ of the selected option (i.e. ``0``, ``1``, or ``2``).
 .. code-block:: csharp
 
     [Export(PropertyHint.Enum, "Warrior,Magician,Thief")]
-    public int CharacterClass { get; set; };
+    public int CharacterClass { get; set; }
 
 You can add explicit values using a colon:
 
@@ -467,7 +497,7 @@ certain C# arrays and the collection types defined in the ``Godot.Collections``
 namespace are Variant-compatible, therefore, only those types can be exported.
 
 Exporting Godot arrays
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
 
@@ -488,12 +518,12 @@ The default value of Godot arrays is null. A different default can be specified:
 .. code-block:: csharp
 
     [Export]
-    public Godot.Collections.Array<string> CharacterNames { get; set; } = new Godot.Collections.Array<string>
-    {
+    public Godot.Collections.Array<string> CharacterNames { get; set; } =
+    [
         "Rebecca",
         "Mary",
         "Leah",
-    };
+    ];
 
 Arrays with specified types which inherit from resource can be set by
 drag-and-dropping multiple files from the FileSystem dock.
@@ -507,7 +537,7 @@ drag-and-dropping multiple files from the FileSystem dock.
     public Godot.Collections.Array<PackedScene> Scenes { get; set; }
 
 Exporting Godot dictionaries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
 
@@ -541,7 +571,7 @@ The default value of Godot dictionaries is null. A different default can be spec
     };
 
 Exporting C# arrays
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 C# arrays can exported as long as the element type is a :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 
@@ -558,11 +588,11 @@ The default value of C# arrays is null. A different default can be specified:
 .. code-block:: csharp
 
     [Export]
-    public Vector3[] Vectors { get; set; } = new Vector3[]
-    {
+    public Vector3[] Vectors { get; set; } =
+    [
         new Vector3(1, 2, 3),
         new Vector3(3, 2, 1),
-    }
+    ];
 
 Setting exported variables from a tool script
 ---------------------------------------------

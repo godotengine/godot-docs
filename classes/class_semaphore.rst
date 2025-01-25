@@ -46,13 +46,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+--------------------------------------------------------------+
-   | void                    | :ref:`post<class_Semaphore_method_post>` **(** **)**         |
-   +-------------------------+--------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`try_wait<class_Semaphore_method_try_wait>` **(** **)** |
-   +-------------------------+--------------------------------------------------------------+
-   | void                    | :ref:`wait<class_Semaphore_method_wait>` **(** **)**         |
-   +-------------------------+--------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | |void|                  | :ref:`post<class_Semaphore_method_post>`\ (\ count\: :ref:`int<class_int>` = 1\ ) |
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`try_wait<class_Semaphore_method_try_wait>`\ (\ )                            |
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | |void|                  | :ref:`wait<class_Semaphore_method_wait>`\ (\ )                                    |
+   +-------------------------+-----------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -67,9 +67,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **post** **(** **)**
+|void| **post**\ (\ count\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_Semaphore_method_post>`
 
-Lowers the **Semaphore**, allowing one more thread in.
+Lowers the **Semaphore**, allowing one thread in, or more if ``count`` is specified.
 
 .. rst-class:: classref-item-separator
 
@@ -79,7 +79,7 @@ Lowers the **Semaphore**, allowing one more thread in.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **try_wait** **(** **)**
+:ref:`bool<class_bool>` **try_wait**\ (\ ) :ref:`🔗<class_Semaphore_method_try_wait>`
 
 Like :ref:`wait<class_Semaphore_method_wait>`, but won't block, so if the value is zero, fails immediately and returns ``false``. If non-zero, it returns ``true`` to report success.
 
@@ -91,7 +91,7 @@ Like :ref:`wait<class_Semaphore_method_wait>`, but won't block, so if the value 
 
 .. rst-class:: classref-method
 
-void **wait** **(** **)**
+|void| **wait**\ (\ ) :ref:`🔗<class_Semaphore_method_wait>`
 
 Waits for the **Semaphore**, if its value is zero, blocks until non-zero.
 
@@ -102,3 +102,4 @@ Waits for the **Semaphore**, if its value is zero, blocks until non-zero.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

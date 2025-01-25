@@ -17,7 +17,7 @@ A built-in type representing a signal of an :ref:`Object<class_Object>`.
 Description
 -----------
 
-**Signal** is a built-in :ref:`Variant<class_Variant>` type that represents a signal of an :ref:`Object<class_Object>` instance. Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to functions. Signals allow all connected :ref:`Callable<class_Callable>`\ s (and by extension their respective objects) to listen and react to events, without directly referencing one another. This keeps the code flexible and easier to manage.
+**Signal** is a built-in :ref:`Variant<class_Variant>` type that represents a signal of an :ref:`Object<class_Object>` instance. Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to functions. Signals allow all connected :ref:`Callable<class_Callable>`\ s (and by extension their respective objects) to listen and react to events, without directly referencing one another. This keeps the code flexible and easier to manage. You can check whether an :ref:`Object<class_Object>` has a given signal name using :ref:`Object.has_signal<class_Object_method_has_signal>`.
 
 In GDScript, signals can be declared with the ``signal`` keyword. In C#, you may use the ``[Signal]`` attribute on a delegate.
 
@@ -65,13 +65,13 @@ Constructors
 .. table::
    :widths: auto
 
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Signal<class_Signal>` | :ref:`Signal<class_Signal_constructor_Signal>` **(** **)**                                                                                |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Signal<class_Signal>` | :ref:`Signal<class_Signal_constructor_Signal>` **(** :ref:`Signal<class_Signal>` from **)**                                               |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Signal<class_Signal>` | :ref:`Signal<class_Signal_constructor_Signal>` **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` signal **)** |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Signal<class_Signal>` | :ref:`Signal<class_Signal_constructor_Signal>`\ (\ )                                                                                     |
+   +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Signal<class_Signal>` | :ref:`Signal<class_Signal_constructor_Signal>`\ (\ from\: :ref:`Signal<class_Signal>`\ )                                                 |
+   +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Signal<class_Signal>` | :ref:`Signal<class_Signal_constructor_Signal>`\ (\ object\: :ref:`Object<class_Object>`, signal\: :ref:`StringName<class_StringName>`\ ) |
+   +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -81,25 +81,27 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`connect<class_Signal_method_connect>` **(** :ref:`Callable<class_Callable>` callable, :ref:`int<class_int>` flags=0 **)** |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`disconnect<class_Signal_method_disconnect>` **(** :ref:`Callable<class_Callable>` callable **)**                          |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`emit<class_Signal_method_emit>` **(** ... **)** |vararg| |const|                                                          |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`           | :ref:`get_connections<class_Signal_method_get_connections>` **(** **)** |const|                                                 |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_name<class_Signal_method_get_name>` **(** **)** |const|                                                               |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`         | :ref:`get_object<class_Signal_method_get_object>` **(** **)** |const|                                                           |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`get_object_id<class_Signal_method_get_object_id>` **(** **)** |const|                                                     |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_connected<class_Signal_method_is_connected>` **(** :ref:`Callable<class_Callable>` callable **)** |const|              |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_null<class_Signal_method_is_null>` **(** **)** |const|                                                                 |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`connect<class_Signal_method_connect>`\ (\ callable\: :ref:`Callable<class_Callable>`, flags\: :ref:`int<class_int>` = 0\ ) |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`disconnect<class_Signal_method_disconnect>`\ (\ callable\: :ref:`Callable<class_Callable>`\ )                              |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`emit<class_Signal_method_emit>`\ (\ ...\ ) |vararg| |const|                                                                |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`get_connections<class_Signal_method_get_connections>`\ (\ ) |const|                                                        |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_name<class_Signal_method_get_name>`\ (\ ) |const|                                                                      |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`         | :ref:`get_object<class_Signal_method_get_object>`\ (\ ) |const|                                                                  |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_object_id<class_Signal_method_get_object_id>`\ (\ ) |const|                                                            |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`has_connections<class_Signal_method_has_connections>`\ (\ ) |const|                                                        |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_connected<class_Signal_method_is_connected>`\ (\ callable\: :ref:`Callable<class_Callable>`\ ) |const|                  |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_null<class_Signal_method_is_null>`\ (\ ) |const|                                                                        |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -109,11 +111,11 @@ Operators
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator !=<class_Signal_operator_neq_Signal>` **(** :ref:`Signal<class_Signal>` right **)** |
-   +-------------------------+----------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator ==<class_Signal_operator_eq_Signal>` **(** :ref:`Signal<class_Signal>` right **)**  |
-   +-------------------------+----------------------------------------------------------------------------------------------------+
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_Signal_operator_neq_Signal>`\ (\ right\: :ref:`Signal<class_Signal>`\ ) |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_Signal_operator_eq_Signal>`\ (\ right\: :ref:`Signal<class_Signal>`\ )  |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -128,7 +130,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Signal<class_Signal>` **Signal** **(** **)**
+:ref:`Signal<class_Signal>` **Signal**\ (\ ) :ref:`🔗<class_Signal_constructor_Signal>`
 
 Constructs an empty **Signal** with no object nor signal name bound.
 
@@ -138,7 +140,7 @@ Constructs an empty **Signal** with no object nor signal name bound.
 
 .. rst-class:: classref-constructor
 
-:ref:`Signal<class_Signal>` **Signal** **(** :ref:`Signal<class_Signal>` from **)**
+:ref:`Signal<class_Signal>` **Signal**\ (\ from\: :ref:`Signal<class_Signal>`\ )
 
 Constructs a **Signal** as a copy of the given **Signal**.
 
@@ -148,9 +150,9 @@ Constructs a **Signal** as a copy of the given **Signal**.
 
 .. rst-class:: classref-constructor
 
-:ref:`Signal<class_Signal>` **Signal** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` signal **)**
+:ref:`Signal<class_Signal>` **Signal**\ (\ object\: :ref:`Object<class_Object>`, signal\: :ref:`StringName<class_StringName>`\ )
 
-Creates a new **Signal** named ``signal`` in the specified ``object``.
+Creates a **Signal** object referencing a signal named ``signal`` in the specified ``object``.
 
 .. rst-class:: classref-section-separator
 
@@ -165,7 +167,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **connect** **(** :ref:`Callable<class_Callable>` callable, :ref:`int<class_int>` flags=0 **)**
+:ref:`int<class_int>` **connect**\ (\ callable\: :ref:`Callable<class_Callable>`, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_Signal_method_connect>`
 
 Connects this signal to the specified ``callable``. Optional ``flags`` can be also added to configure the connection's behavior (see :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants). You can provide additional arguments to the connected ``callable`` by using :ref:`Callable.bind<class_Callable_method_bind>`.
 
@@ -187,7 +189,7 @@ A signal can only be connected once to the same :ref:`Callable<class_Callable>`.
 
 .. rst-class:: classref-method
 
-void **disconnect** **(** :ref:`Callable<class_Callable>` callable **)**
+|void| **disconnect**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_Signal_method_disconnect>`
 
 Disconnects this signal from the specified :ref:`Callable<class_Callable>`. If the connection does not exist, generates an error. Use :ref:`is_connected<class_Signal_method_is_connected>` to make sure that the connection exists.
 
@@ -199,7 +201,7 @@ Disconnects this signal from the specified :ref:`Callable<class_Callable>`. If t
 
 .. rst-class:: classref-method
 
-void **emit** **(** ... **)** |vararg| |const|
+|void| **emit**\ (\ ...\ ) |vararg| |const| :ref:`🔗<class_Signal_method_emit>`
 
 Emits this signal. All :ref:`Callable<class_Callable>`\ s connected to this signal will be triggered. This method supports a variable number of arguments, so parameters can be passed as a comma separated list.
 
@@ -211,7 +213,7 @@ Emits this signal. All :ref:`Callable<class_Callable>`\ s connected to this sign
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_connections** **(** **)** |const|
+:ref:`Array<class_Array>` **get_connections**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_connections>`
 
 Returns an :ref:`Array<class_Array>` of connections for this signal. Each connection is represented as a :ref:`Dictionary<class_Dictionary>` that contains three entries:
 
@@ -229,7 +231,7 @@ Returns an :ref:`Array<class_Array>` of connections for this signal. Each connec
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_name** **(** **)** |const|
+:ref:`StringName<class_StringName>` **get_name**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_name>`
 
 Returns the name of this signal.
 
@@ -241,7 +243,7 @@ Returns the name of this signal.
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_object** **(** **)** |const|
+:ref:`Object<class_Object>` **get_object**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_object>`
 
 Returns the object emitting this signal.
 
@@ -253,9 +255,21 @@ Returns the object emitting this signal.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_object_id** **(** **)** |const|
+:ref:`int<class_int>` **get_object_id**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_object_id>`
 
 Returns the ID of the object emitting this signal (see :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Signal_method_has_connections:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_connections**\ (\ ) |const| :ref:`🔗<class_Signal_method_has_connections>`
+
+Returns ``true`` if any :ref:`Callable<class_Callable>` is connected to this signal.
 
 .. rst-class:: classref-item-separator
 
@@ -265,7 +279,7 @@ Returns the ID of the object emitting this signal (see :ref:`Object.get_instance
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_connected** **(** :ref:`Callable<class_Callable>` callable **)** |const|
+:ref:`bool<class_bool>` **is_connected**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) |const| :ref:`🔗<class_Signal_method_is_connected>`
 
 Returns ``true`` if the specified :ref:`Callable<class_Callable>` is connected to this signal.
 
@@ -277,9 +291,9 @@ Returns ``true`` if the specified :ref:`Callable<class_Callable>` is connected t
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_null** **(** **)** |const|
+:ref:`bool<class_bool>` **is_null**\ (\ ) |const| :ref:`🔗<class_Signal_method_is_null>`
 
-Returns ``true`` if the signal's name does not exist in its object, or the object is not valid.
+Returns ``true`` if this **Signal** has no object and the signal name is empty. Equivalent to ``signal == Signal()``.
 
 .. rst-class:: classref-section-separator
 
@@ -294,7 +308,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=** **(** :ref:`Signal<class_Signal>` right **)**
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Signal<class_Signal>`\ ) :ref:`🔗<class_Signal_operator_neq_Signal>`
 
 Returns ``true`` if the signals do not share the same object and name.
 
@@ -306,7 +320,7 @@ Returns ``true`` if the signals do not share the same object and name.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==** **(** :ref:`Signal<class_Signal>` right **)**
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Signal<class_Signal>`\ ) :ref:`🔗<class_Signal_operator_eq_Signal>`
 
 Returns ``true`` if both signals share the same object and name.
 
@@ -317,3 +331,4 @@ Returns ``true`` if both signals share the same object and name.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -216,7 +216,7 @@ Advanced font features
 .. _doc_using_fonts_antialiasing:
 
 Antialiasing
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 You can adjust how the font should be smoothed out when rendering by adjusting
 *antialiasing* and *hinting*. These are different properties, with different use
@@ -251,7 +251,7 @@ exploring.
 .. _doc_using_fonts_hinting:
 
 Hinting
-^^^^^^^
+~~~~~~~
 
 Hinting controls how aggressively glyph edges should be snapped to pixels when
 rasterizing the font. **None** results in the smoothest appearance, which can
@@ -278,7 +278,7 @@ preference, you may prefer using one hinting mode over the other.
 .. _doc_using_fonts_subpixel_positioning:
 
 Subpixel positioning
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Subpixel positioning can be adjusted. This is a `FreeType <https://freetype.org/>`__
 feature that allows glyphs to be rendered more closely to their intended form.
@@ -305,7 +305,7 @@ effect at smaller font sizes.
 .. _doc_using_fonts_mipmaps:
 
 Mipmaps
-^^^^^^^
+~~~~~~~
 
 By default, fonts do not have mipmaps generated to reduce memory usage and speed
 up rasterization. However, this can cause downscaled fonts to become grainy. This
@@ -324,7 +324,7 @@ resistant to graininess out of the box.
 .. _doc_using_fonts_msdf:
 
 MSDF font rendering
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 Multi-channel signed distance field (MSDF) font rendering allows rendering fonts
 at any size, without having to re-rasterize them when their size changes.
@@ -371,7 +371,7 @@ to the Import dock, enable **Multichannel Signed Distance Field**, then click
 .. _doc_using_fonts_emoji:
 
 Using emoji
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Godot has limited support for emoji fonts:
 
@@ -421,7 +421,7 @@ emoji font:
     It's possible to use a system font as a fallback font too.
 
 Using icon fonts
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Tools like `Fontello <https://fontello.com/>`__ can be used to generate font
 files containing vectors imported from SVG files. This can be used to render
@@ -465,7 +465,7 @@ reserved for use by custom fonts and doesn't contain standard glyphs by design.
 .. _doc_using_fonts_font_fallbacks:
 
 Font fallbacks
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Godot supports defining one or more fallbacks when the main font lacks a glyph
 to be displayed. There are 2 main use cases for defining font fallbacks:
@@ -513,7 +513,7 @@ fallbacks.
 .. _doc_using_fonts_variable_fonts:
 
 Variable fonts
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Godot has full support for `variable fonts <https://variablefonts.io/>`__, which
 allow you to use a single font file to represent various font weights and styles
@@ -555,10 +555,33 @@ For example, here's the `Inter V <https://rsms.me/inter/>`__ font with a
 
 .. tip::
 
-    While variable font axis names and scales aren't standardized, some common
-    conventions are usually followed by font designers. For instance, the
-    *weight* axis typically uses ``400`` as the "regular" font weight and
-    ``700`` as the "bold" font weight.
+    While variable font axis names and scales aren't standardized,
+    some common conventions are usually followed by font designers.
+    The *weight* axis is standardized in OpenType to work as follows:
+
+    +------------+--------------------------------+
+    | Axis value | Effective font weight          |
+    +============+================================+
+    | ``100``    | Thin (Hairline)                |
+    +------------+--------------------------------+
+    | ``200``    | Extra Light (Ultra Light)      |
+    +------------+--------------------------------+
+    | ``300``    | Light                          |
+    +------------+--------------------------------+
+    | ``400``    | **Regular (Normal)**           |
+    +------------+--------------------------------+
+    | ``500``    | Medium                         |
+    +------------+--------------------------------+
+    | ``600``    | Semi-Bold (Demi-Bold)          |
+    +------------+--------------------------------+
+    | ``700``    | **Bold**                       |
+    +------------+--------------------------------+
+    | ``800``    | Extra Bold (Ultra Bold)        |
+    +------------+--------------------------------+
+    | ``900``    | Black (Heavy)                  |
+    +------------+--------------------------------+
+    | ``950``    | Extra Black (Ultra Black)      |
+    +------------+--------------------------------+
 
 You can save the FontVariation to a ``.tres`` resource file to reuse it in other
 places:
@@ -569,7 +592,7 @@ places:
    Saving FontVariation to an external resource file
 
 Faux bold and italic
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 When writing text in bold or italic, using font variants specifically designed
 for this looks better. Spacing between glyphs will be more consistent when using
@@ -607,7 +630,7 @@ character transform to a positive value will italicize the text. Recommended
 values are between ``0.2`` and ``0.4`` depending on the font.
 
 Adjusting font spacing
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 For stylistic purposes or for better readability, you may want to adjust how a
 font is presented in Godot.
@@ -621,7 +644,7 @@ which accept positive and negative values:
 - **Top:** Additional spacing above glyphs. This is used for multiline text,
   but also to calculate the minimum size of controls such as :ref:`class_Label`
   and :ref:`class_Button`.
-- **Top:** Additional spacing below glyphs. This is used for multiline text,
+- **Bottom:** Additional spacing below glyphs. This is used for multiline text,
   but also to calculate the minimum size of controls such as :ref:`class_Label`
   and :ref:`class_Button`.
 
@@ -636,7 +659,7 @@ displayed with stretching.
 .. _doc_using_fonts_opentype_font_features:
 
 OpenType font features
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Godot supports enabling OpenType font features, which are a standardized way to
 define alternate characters that can be toggled without having to swap font
@@ -715,7 +738,7 @@ features, then unchecking them in the inspector:
 .. _doc_using_fonts_system_fonts:
 
 System fonts
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 .. warning::
 
@@ -727,7 +750,7 @@ System fonts
     in non-functional system font loading.
 
 System fonts are a different type of resource compared to imported fonts. They
-are never actually imported into the project, but are loaded at run-time. This
+are never actually imported into the project, but are loaded at runtime. This
 has 2 benefits:
 
 - The fonts are not included within the exported PCK file, leading to a smaller
@@ -804,7 +827,7 @@ for details.
 .. _doc_using_fonts_font_prerendering:
 
 Font prerendering
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 When using traditional rasterized fonts, Godot caches glyphs on a per-font and
 per-size basis. This reduces stuttering, but it can still occur the first time a
@@ -926,7 +949,7 @@ covering many more languages, such as French, German and Spanish. For Russian,
 **Cyrillic** needs to be enabled, and so on.
 
 Default project font properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the **GUI > Theme** section of the advanced Project Settings, you can choose
 how the default font should be rendered:
