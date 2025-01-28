@@ -165,10 +165,6 @@ Use the three-dot menu for this:
   - Make Bone2D Node(s) from Node(s): Converts selected node(s) into Bone2D. 
 
 .. seealso:: To learn more about Skeletons, see :ref:`doc_cutout_animation`.
-
-- **Project Camera Override**: Temporarily replaces the active camera in the level 
-  (e.g., the camera following the player) with the camera in the editor's viewport, allowing
-  you to move freely and inspect the level's different parts, while the game is running.
   
 - **View** menu: Provides options to control the viewport view. Since its options 
   depend heavily on the viewport, it is covered in the :ref:`doc_introduction_to_2d_the_viewport` 
@@ -307,10 +303,8 @@ for everything GUI. For 3D, Godot uses the :ref:`Node3D <class_Node3D>` node.
 3D in 2D
 --------
 
-It is possible to display 3D scenes in 2D screen. This is achieved by adding a 
-:ref:`SubViewport <class_SubViewport>` as a child.
-Then, you can drag a 3D scene as a child of the SubViewport:
+It is possible to display 3D scenes in 2D screen, You can see this in the demo `3D in 2D Viewport <https://godotengine.org/asset-library/asset/2804>`__.
 
 .. image:: img/3d_in_2d_demo_editor.webp
 
-.. seealso:: You can check the demo on: `3D in 2D Viewport demo <https://godotengine.org/asset-library/asset/2804>`__.
+
