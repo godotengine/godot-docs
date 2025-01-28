@@ -34,17 +34,12 @@ Exporting glTF 2.0 files from Blender (recommended)
 There are 3 ways to export glTF files from Blender:
 
 - As a glTF binary file (``.glb``).
-- As a glTF text-based file with embedded binary data (``.gltf`` file)
 - As a glTF text-based file with separate binary data and textures (``.gltf``
   file + ``.bin`` file + textures).
 
-glTF binary files (``.glb``) are the smallest of the three options. They include
-the mesh and textures set up in Blender. When brought into Godot the textures
-are part of the object's material file.
-
-glTF embedded files (``.gltf``) function the same way as binary files. They
-don't provide extra functionality in Godot, and shouldn't be used since they
-have a larger file size.
+glTF binary files (``.glb``) are the smaller option. They include the mesh and
+textures set up in Blender. When brought into Godot the textures are part of the
+object's material file.
 
 There are two reasons to use glTF with the textures separate. One is to have the
 scene description in a text based format and the binary data in a separate
@@ -108,9 +103,8 @@ Importing ``.blend`` files directly within Godot
     This avoids any issues related to packaging, such as different library
     versions that can cause incompatibilities or sandboxing restrictions.
 
-From Godot 4.0 onwards, the editor can directly import ``.blend`` files by
-calling `Blender <https://www.blender.org/>`__'s glTF export functionality in a
-transparent manner.
+The editor can directly import ``.blend`` files by calling `Blender <https://www.blender.org/>`__'s
+glTF export functionality in a transparent manner.
 
 This allows you to iterate on your 3D scenes faster, as you can save the scene
 in Blender, alt-tab back to Godot then see your changes immediately. When
@@ -154,11 +148,8 @@ Blender has built-in COLLADA support, but it does not work properly for the
 needs of game engines and shouldn't be used as-is. However, scenes exported with
 the built-in Collada support may still work for simple scenes without animation.
 
-For complex scenes or scenes that contain animations, Godot provides a
-`Blender plugin <https://github.com/godotengine/collada-exporter>`_
-that will correctly export COLLADA scenes for use in Godot. This plugin is
-not maintained or supported in Godot 4.x, but may still work depending on your
-Godot and Blender versions.
+For complex scenes or scenes that contain animations it is highly recommend to use
+glTF instead.
 
 Importing OBJ files in Godot
 ----------------------------
@@ -179,7 +170,7 @@ There are 2 ways to use OBJ meshes in Godot:
 
     Blender 3.4 and later can export RGB vertex colors in OBJ files (this is a
     nonstandard extension of the OBJ format). Godot is able to import those
-    vertex colors since Godot 4.0, but they will not be displayed on the
+    vertex colors, but they will not be displayed on the
     material unless you enable **Vertex Color > Use As Albedo** on the material.
 
     Vertex colors from OBJ meshes keep their original color space once imported
