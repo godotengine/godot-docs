@@ -63,7 +63,7 @@ Setting up
 
 Add a new :ref:`MeshInstance3D <class_MeshInstance3D>` node to your scene.
 
-In the inspector tab beside "Mesh" click "[empty]" and select "New PlaneMesh".
+In the inspector tab beside "Mesh" click "<empty>" and select "New PlaneMesh".
 Then click on the image of a plane that appears.
 
 This adds a :ref:`PlaneMesh <class_planemesh>` to our scene.
@@ -74,7 +74,7 @@ to display the scene. Select 'Display Wireframe'.
 
 This will allow you to see the triangles making up the plane.
 
-.. image:: img/plane.png
+.. image:: img/plane.webp
 
 Now set ``Subdivide Width`` and ``Subdivide Depth`` of the :ref:`PlaneMesh <class_planemesh>` to ``32``.
 
@@ -84,47 +84,36 @@ You can see that there are now many more triangles in the
 :ref:`MeshInstance3D<class_MeshInstance3D>`. This will give us more vertices to work with
 and thus allow us to add more detail.
 
-.. image:: img/plane-sub.png
+.. image:: img/plane-sub.webp
 
 :ref:`PrimitiveMeshes <class_primitivemesh>`, like PlaneMesh, only have one
 surface, so instead of an array of materials there is only one. Click
-beside "Material" where it says "[empty]" and select "New ShaderMaterial".
+beside "Material" where it says "<empty>" and select "New ShaderMaterial".
 Then click the sphere that appears.
 
-Now click beside "Shader" where it says "[empty]" and select "New Shader".
+Now click beside "Shader" where it says "<empty>" and select "New Shader...". Leave
+the default settings, give your shader a name and click "Create".
 
-The shader editor should now pop up and you are ready to begin writing your
-first Spatial shader!
+Click on the shader in the inspector, and the shader editor should now pop up. You
+are ready to begin writing your first Spatial shader!
 
 Shader magic
 ------------
 
 .. image:: img/shader-editor.webp
 
-The new shader is already generated with a ``shader_type``
-variable and the ``fragment()`` function.
-The first thing Godot shaders need is a declaration
-of what type of shader they are.
-In this case the ``shader_type`` is set to ``spatial``
-because this is a spatial shader.
+The new shader is already generated with a ``shader_type`` variable, the
+``vertex()`` function, and the ``fragment()`` function. The first thing Godot
+shaders need is a declaration of what type of shader they are. In this case the
+``shader_type`` is set to ``spatial`` because this is a spatial shader.
 
 .. code-block:: glsl
 
   shader_type spatial;
 
-For now ignore the ``fragment()`` function
-and define the ``vertex()`` function. The ``vertex()`` function
-determines where the vertices of your :ref:`MeshInstance3D<class_MeshInstance3D>` appear in
-the final scene. We will be using it to offset the height of each vertex and
-make our flat plane appear like a little terrain.
-
-We define the vertex shader like so:
-
-.. code-block:: glsl
-
-  void vertex() {
-
-  }
+The ``vertex()`` function determines where the vertices of your :ref:`MeshInstance3D<class_MeshInstance3D>`
+appear in the final scene. We will be using it to offset the height of each vertex
+and make our flat plane appear like a little terrain.
 
 With nothing in the ``vertex()`` function, Godot will use its default vertex
 shader. We can easily start to make changes by adding a single line:
@@ -137,7 +126,7 @@ shader. We can easily start to make changes by adding a single line:
 
 Adding this line, you should get an image like the one below.
 
-.. image:: img/cos.png
+.. image:: img/cos.webp
 
 Okay, let's unpack this. The ``y`` value of the ``VERTEX`` is being increased.
 And we are passing the ``x`` and ``z`` components of the ``VERTEX`` as arguments
@@ -154,7 +143,7 @@ What we want to achieve is the look of little hills; after all. ``cos`` and
     VERTEX.y += cos(VERTEX.x * 4.0) * sin(VERTEX.z * 4.0);
   }
 
-.. image:: img/cos4.png
+.. image:: img/cos4.webp
 
 This looks better, but it is still too spiky and repetitive, let's make it a
 little more interesting.
@@ -180,7 +169,7 @@ This will allow you to send a noise texture to the shader. Now look in the
 inspector under your material. You should see a section called "Shader Params".
 If you open it up, you'll see a section called "noise".
 
-Click beside it where it says "[empty]" and select "New NoiseTexture2D". Then in
+Click beside it where it says "<empty>" and select "New NoiseTexture2D". Then in
 your :ref:`NoiseTexture2D <class_noisetexture2D>` click beside where it says "Noise" and select "New
 FastNoiseLite".
 
@@ -216,7 +205,7 @@ details.
 
 Using this code you can see the texture creates random looking hills.
 
-.. image:: img/noise.png
+.. image:: img/noise.webp
 
 Right now it is too spiky, we want to soften the hills a bit. To do that, we
 will use a uniform. You already used a uniform above to pass in the noise
@@ -266,7 +255,7 @@ use it to set the height value instead of arbitrarily multiplying by ``0.5``.
 
 Now it looks much better.
 
-.. image:: img/noise-low.png
+.. image:: img/noise-low.webp
 
 Using uniforms, we can even change the value every frame to animate the height
 of the terrain. Combined with :ref:`Tweens <class_Tween>`, this can be
@@ -279,14 +268,14 @@ First, turn wireframe off. To do so, click in the upper-left of the Viewport
 again, where it says "Perspective", and select "Display Normal".
 Additionally in the 3D scene toolbar, turn off preview sunlight.
 
-.. image:: img/normal.png
+.. image:: img/normal.webp
 
 Note how the mesh color goes flat. This is because the lighting on it is flat.
 Let's add a light!
 
 First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene.
 
-.. image:: img/light.png
+.. image:: img/light.webp
 
 You can see the light affecting the terrain, but it looks odd. The problem is
 the light is affecting the terrain as if it were a flat plane. This is because
@@ -315,19 +304,10 @@ Set this second uniform texture to another :ref:`NoiseTexture2D <class_noisetext
 
 .. image:: img/normal-set.webp
 
-Now, because this is a normalmap and not a per-vertex normal, we are going to
-assign it in the ``fragment()`` function. The ``fragment()`` function will be
-explained in more detail in the next part of this tutorial.
-
-.. code-block:: glsl
-
-  void fragment() {
-  }
-
 When we have normals that correspond to a specific vertex we set ``NORMAL``, but
 if you have a normalmap that comes from a texture, set the normal using
-``NORMAL_MAP``. This way Godot will handle the wrapping of texture around the
-mesh automatically.
+``NORMAL_MAP`` in the ``fragment()`` function. This way Godot will handle
+wrapping the texture around the mesh automatically.
 
 Lastly, in order to ensure that we are reading from the same places on the noise
 texture and the normalmap texture, we are going to pass the ``VERTEX.xz``
@@ -359,11 +339,11 @@ And now we can access ``tex_position`` from the ``fragment()`` function.
 With the normals in place the light now reacts to the height of the mesh
 dynamically.
 
-.. image:: img/normalmap.png
+.. image:: img/normalmap.webp
 
 We can even drag the light around and the lighting will update automatically.
 
-.. image:: img/normalmap2.png
+.. image:: img/normalmap2.webp
 
 Here is the full code for this tutorial. You can see it is not very long as
 Godot handles most of the difficult stuff for you.
