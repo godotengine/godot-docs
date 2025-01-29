@@ -103,18 +103,25 @@ which are equivalent to new, delete, new[] and delete[].
 memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
-For dynamic memory, use Godot's ``Vector<>`` or one of its variations.
-Godot's ``Vector<>`` behaves much like an STL ``Vector<>``, but is simpler,
-thread safe, and uses Copy-On-Write semantics.
-It can be safely passed via public API.
+For dynamic memory, use one of Godot's sequence types such as ``Vector<>``
+or ``LocalVector<>``. ``Vector<>`` behaves much like an STL ``Vector<>``,
+but is simpler and uses Copy-On-Write (CoW) semantics. CoW copies of
+``Vector<>`` can safely access the same data from different threads, but
+several threads cannot access the same ``Vector<>`` instance safely.
+It can be safely passed via public API if it has a ``Packed`` alias.
 
-The ``Packed*Array`` :ref:`types <doc_gdscript_packed_arrays>` are aliases for
-specific ``Vector<*>`` types (e.g., ``PackedByteArray``, ``PackedInt32Array``)
-that are accessible via GDScript. Prefer using the ``Packed*Array`` aliases
-when available.
+The ``Packed*Array`` :ref:`types <doc_gdscript_packed_arrays>` are aliases
+for specific ``Vector<*>`` types (e.g., ``PackedByteArray``,
+``PackedInt32Array``) that are accessible via GDScript. Outside of core,
+prefer using the ``Packed*Array`` aliases for functions exposed to scripts,
+and ``Vector<>`` for other occasions.
 
-``LocalVector<>`` is a non-COW version, with less overhead. It is intended for
-internal use where the benefits of COW are not needed.
+``LocalVector<>`` is much more like ``std::vector`` than ``Vector<>``.
+It is non-CoW, with less overhead. It is intended for internal use where
+the benefits of CoW are not needed. Note that neither ``LocalVector<>``
+nor ``Vector<>`` are drop-in replacements for each other. They are two
+unrelated types with similar interfaces, both using a buffer as their
+storage strategy.
 
 References:
 ~~~~~~~~~~~
