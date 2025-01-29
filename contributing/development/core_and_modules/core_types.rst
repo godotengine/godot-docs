@@ -104,7 +104,7 @@ memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
 For dynamic memory, use one of Godot's sequence types such as ``Vector<>``
-or ``LocalVector<>``. ``Vector<>`` behaves much like an STL ``Vector<>``,
+or ``LocalVector<>``. ``Vector<>`` behaves much like an STL ``std::vector<>``,
 but is simpler and uses Copy-On-Write (CoW) semantics. CoW copies of
 ``Vector<>`` can safely access the same data from different threads, but
 several threads cannot access the same ``Vector<>`` instance safely.
