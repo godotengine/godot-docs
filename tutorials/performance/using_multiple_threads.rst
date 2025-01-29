@@ -141,9 +141,17 @@ wait until the thread is done (if not done yet), then properly dispose of it.
 
 .. warning::
 
-    Creating threads at runtime is slow on Windows and should be avoided to
-    prevent stuttering. Semaphores, explained later on this page, should be used
-    instead.
+    Creating threads is a slow operation, especially on Windows. To avoid
+    unnecessary performance overhead, make sure to create threads before heavy
+    processing is needed instead of creating threads just-in-time.
+
+    For example, if you need multiple threads during gameplay, you can create
+    threads while the level is loading and only actually start processing with
+    them later on.
+
+    Additionally, locking and unlocking of mutexes can also be an expensive
+    operation. Locking should be done carefully; avoid locking too often (or for
+    too long).
 
 Mutexes
 -------
