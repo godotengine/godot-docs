@@ -102,7 +102,8 @@ Most GLSL ES 3.0 datatypes are supported:
 Comments
 ~~~~~~~~
 
-The shading language supports the same comment syntax as used in C# and C++:
+The shading language supports the same comment syntax as used in C# and C++, 
+using ``//`` for single-line comments and ``/* */`` for multi-line comments:
 
 .. code-block:: glsl
 
@@ -1121,7 +1122,9 @@ When using per-instance uniforms, there are some restrictions you should be awar
 Setting uniforms from code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can set uniforms from GDScript:
+You can set uniforms from GDScript using the
+:ref:`set_shader_parameter() <class_ShaderMaterial_method_set_shader_parameter>`
+method:
 
 .. code-block:: gdscript
 
@@ -1129,7 +1132,7 @@ You can set uniforms from GDScript:
 
   material.set_shader_parameter("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
 
-.. note:: The first argument to ``set_shader_parameter`` is the name of the uniform
+.. note:: The first argument to ``set_shader_parameter()`` is the name of the uniform
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
@@ -1222,13 +1225,12 @@ table of the corresponding types:
 | **samplerExternalOES** | **ExternalTexture**     | Only supported in Compatibility/Android platform.          |
 +------------------------+-------------------------+------------------------------------------------------------+
 
-.. note:: Be careful when setting shader uniforms from GDScript, no error will
-          be thrown if the type does not match. Your shader will just exhibit
-          undefined behavior.
-
-.. warning::
-    As with the last note, no error will be thrown if the typing does not match while setting a shader uniform, this unintuitively includes setting a (GDscript) 64 bit int/float into a Godot shader language int/float (32 bit). This may lead to unintentional consequences in cases where high precision is required.
-
+.. note:: Be careful when setting shader uniforms from GDScript, since no error
+          will be thrown if the type does not match. Your shader will just exhibit
+          undefined behavior. Specifically, this includes setting a GDScript
+          int/float (64 bit) into a Godot shader language int/float (32 bit).
+          This may lead to unintended consequences in cases where high
+          precision is required.
 
 Uniform limits
 ~~~~~~~~~~~~~~
