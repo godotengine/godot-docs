@@ -57,10 +57,6 @@ To compile for Apple Silicon (ARM64) powered Macs, use::
 
     scons platform=macos arch=arm64
 
-To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
-
-    lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
-
 .. tip::
     If you are compiling Godot to make changes or contribute to the engine,
     you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``.
@@ -72,20 +68,39 @@ If all goes well, the resulting binary executable will be placed in the
 runs without any dependencies. Executing it will bring up the Project
 Manager.
 
+.. note:: Using a standalone editor executable is not recommended, it should be always packaged into an
+          ``.app`` bundle to avoid UI activation issues.
+
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
-To create an ``.app`` bundle like in the official builds, you need to use the
-template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
+Automatic ``.app`` bundle creation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To automatically create an ``.app`` bundle like in the official builds, use the ``generate_bundle=yes`` option on the *last*
+SCons command used to build editor::
+
+    scons platform=macos arch=x86_64
+    scons platform=macos arch=arm64 generate_bundle=yes
+
+Manual ``.app`` bundle creation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To support both architectures in a single "Universal 2" binary,
+run the above two commands and then use ``lipo`` to bundle them together::
+
+    lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
+
+To create an ``.app`` bundle, you need to use the template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
 editor binary built with ``dev_build=yes``::
 
-    cp -r misc/dist/macos_tools.app ./Godot.app
-    mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.macos.editor.universal Godot.app/Contents/MacOS/Godot
-    chmod +x Godot.app/Contents/MacOS/Godot
-    codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - Godot.app
+    cp -r misc/dist/macos_tools.app ./bin/Godot.app
+    mkdir -p bin/Godot.app/Contents/MacOS
+    cp bin/godot.macos.editor.universal bin/Godot.app/Contents/MacOS/Godot
+    chmod +x bin/Godot.app/Contents/MacOS/Godot
+    codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - bin/Godot.app
 
 .. note::
 
@@ -95,8 +110,8 @@ editor binary built with ``dev_build=yes``::
     You can also choose to link it dynamically by passing ``use_volk=yes`` and
     including the dynamic library in your ``.app`` bundle::
 
-        mkdir -p Godot.app/Contents/Frameworks
-        cp <Vulkan SDK path>/macOS/lib/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
+        mkdir -p <Godot bundle name>.app/Contents/Frameworks
+        cp <Vulkan SDK path>/macOS/lib/libMoltenVK.dylib <Godot bundle name>.app/Contents/Frameworks/libMoltenVK.dylib
 
 Running a headless/server build
 -------------------------------
