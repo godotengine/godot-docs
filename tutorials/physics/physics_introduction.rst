@@ -338,7 +338,9 @@ CharacterBody2D
 :ref:`CharacterBody2D <class_CharacterBody2D>` bodies detect collisions with
 other bodies, but are not affected by physics properties like gravity or friction.
 Instead, they must be controlled by the user via code. The physics engine will
-not move a character body.
+not move a character body. Despite the name, this class is meant to be used for
+more than just "characters." In this case, a character body is any physics body you
+want to control manually.
 
 When moving a character body, you should not set its ``position`` directly.
 Instead, you use the ``move_and_collide()`` or ``move_and_slide()`` methods.
