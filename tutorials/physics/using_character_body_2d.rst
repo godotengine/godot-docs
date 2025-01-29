@@ -31,7 +31,9 @@ precise control over how they move and react.
 
 .. tip:: A `CharacterBody2D` can be affected by gravity and other forces,
         but you must calculate the movement in code. The physics engine will
-        not move a `CharacterBody2D`.
+        not move a `CharacterBody2D`. Despite the name, this class is meant to
+        be used for more than just "characters." In this case, a character body 
+        is any physics body you want to control manually.
 
 Movement and collision
 ----------------------
