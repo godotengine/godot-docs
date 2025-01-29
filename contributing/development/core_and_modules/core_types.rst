@@ -123,6 +123,11 @@ nor ``Vector<>`` are drop-in replacements for each other. They are two
 unrelated types with similar interfaces, both using a buffer as their
 storage strategy.
 
+``List<>`` is another Godot sequence type, using a doubly-linked list as
+its storage strategy. Prefer ``Vector<>`` (or ``LocalVector<>``) over
+``List<>`` unless you're sure you need it, as cache locality and memory
+fragmentation tend to be more important with small collections.
+
 References:
 ~~~~~~~~~~~
 
