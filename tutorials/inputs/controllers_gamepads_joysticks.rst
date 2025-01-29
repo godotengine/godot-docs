@@ -3,9 +3,7 @@
 Controllers, gamepads, and joysticks
 ====================================
 
-Godot supports hundreds of controller models thanks to the community-sourced
-`SDL game controller database <https://github.com/gabomdq/SDL_GameControllerDB>`__.
-
+Godot supports hundreds of controller models out of the box.
 Controllers are supported on Windows, macOS, Linux, Android, iOS, and HTML5.
 
 Note that more specialized devices such as steering wheels, rudder pedals and
@@ -306,9 +304,9 @@ After updating the controller's firmware, unpair the controller and pair it agai
 with your PC if you are using the controller in wireless mode.
 
 If buttons are incorrectly mapped, this may be due to an erroneous mapping from
-the `SDL game controller database <https://github.com/gabomdq/SDL_GameControllerDB>`__.
-You can contribute an updated mapping to be included in the next Godot version
-by opening a pull request on the linked repository.
+the SDL game controller database used by Godot or the
+`Godot game controller database <https://github.com/godotengine/godot/blob/master/core/input/godotcontrollerdb.txt>`__.
+In this case, you will need to create a custom mapping for your controller.
 
 There are many ways to create mappings. One option is to use the mapping wizard
 in the `official Joypads demo <https://godotengine.org/asset-library/asset/2785>`__.
@@ -335,6 +333,10 @@ To test mappings on non-desktop platforms or to distribute your project with
 additional controller mappings, you can add them by calling
 :ref:`Input.add_joy_mapping() <class_Input_method_add_joy_mapping>`
 as early as possible in a script's ``_ready()`` function.
+
+Once you are satisfied with the custom mapping, you can contribute it for
+the next Godot version by opening a pull request on the
+`Godot game controller database <https://github.com/godotengine/godot/blob/master/core/input/godotcontrollerdb.txt>`__.
 
 My controller works on a given platform, but not on another platform.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
