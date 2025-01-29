@@ -40,7 +40,7 @@ For compiling under Windows, the following is required:
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
-              scoop install gcc python scons make mingw
+              scoop install python scons mingw
 
 .. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
