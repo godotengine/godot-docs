@@ -103,7 +103,30 @@ which are equivalent to new, delete, new[] and delete[].
 memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
-For dynamic memory, use Vector<>.
+For dynamic memory, use one of Godot's sequence types such as ``Vector<>``
+or ``LocalVector<>``. ``Vector<>`` behaves much like an STL ``std::vector<>``,
+but is simpler and uses Copy-On-Write (CoW) semantics. CoW copies of
+``Vector<>`` can safely access the same data from different threads, but
+several threads cannot access the same ``Vector<>`` instance safely.
+It can be safely passed via public API if it has a ``Packed`` alias.
+
+The ``Packed*Array`` :ref:`types <doc_gdscript_packed_arrays>` are aliases
+for specific ``Vector<*>`` types (e.g., ``PackedByteArray``,
+``PackedInt32Array``) that are accessible via GDScript. Outside of core,
+prefer using the ``Packed*Array`` aliases for functions exposed to scripts,
+and ``Vector<>`` for other occasions.
+
+``LocalVector<>`` is much more like ``std::vector`` than ``Vector<>``.
+It is non-CoW, with less overhead. It is intended for internal use where
+the benefits of CoW are not needed. Note that neither ``LocalVector<>``
+nor ``Vector<>`` are drop-in replacements for each other. They are two
+unrelated types with similar interfaces, both using a buffer as their
+storage strategy.
+
+``List<>`` is another Godot sequence type, using a doubly-linked list as
+its storage strategy. Prefer ``Vector<>`` (or ``LocalVector<>``) over
+``List<>`` unless you're sure you need it, as cache locality and memory
+fragmentation tend to be more important with small collections.
 
 References:
 ~~~~~~~~~~~
