@@ -16,6 +16,19 @@ up though, so this page provides in-depth descriptions of some properties and ho
     recommended to use over the :ref:`ParallaxLayer<class_parallaxlayer>` and
     :ref:`ParallaxBackground<class_parallaxbackground>` nodes.
 
+Getting started
+---------------
+
+The parallax node supports adding nodes that render things as children, so you can use one or many nodes to make up each
+layer. To begin, place each node or nodes you want to have scroll independently as a child of their own parallax node.
+Make sure that the top left of the textures used are at the ``(0, 0)`` crossing, like in the image below. See the section
+on :ref:`positioning <doc_2d_parallax_positioning>` for why this is important.
+
+.. image:: img/2d_parallax_size_viewport.webp
+
+The scene above uses one prepared texture for the higher clouds in a :ref:`Sprite2D <class_sprite2d>`, but you could
+just as easily use multiple nodes spaced out to compose the layer.
+
 Scroll scale
 ------------
 
@@ -24,8 +37,6 @@ It works as a scroll-speed multiplier, allowing layers to move at a different sp
 A value of 1 makes the parallax node scroll at the same speed as the camera. If you want your image to look further away
 when scrolling, use a value lower than 1, with 0 bringing it to a complete stop. If you want something to appear closer
 to the camera, use a value higher than 1, making it scroll faster.
-
-.. image:: img/2d_parallax_size_viewport.webp
 
 The scene above is comprised of five layers. Some good :ref:`scroll_scale <class_parallax2d_property_scroll_scale>`
 values might be:
@@ -118,6 +129,8 @@ You can also start off on the right foot by preparing child nodes earlier in the
 Below, you can see that repeating the image twice makes it large enough to cover the screen.
 
 .. image:: img/2d_parallax_size_repeat.webp
+
+.. _doc_2d_parallax_positioning:
 
 Poor positioning
 ~~~~~~~~~~~~~~~~
