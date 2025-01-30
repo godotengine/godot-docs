@@ -76,7 +76,7 @@ their UV2 maps properly generated.
 .. warning::
 
     When reusing a mesh within a scene, keep in mind that UVs will be generated
-    for the first instance found. If the mesh is re-used with different scales
+    for the first instance found. If the mesh is reused with different scales
     (and the scales are wildly different, more than half or twice), this will
     result in inefficient lightmaps. Don't reuse a source mesh at significantly
     different scales if you are planning to use lightmapping.
