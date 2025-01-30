@@ -206,7 +206,7 @@ Conclusion
 
 In the end, the best approach is to consider the following:
 
-- If one wishes to create a basic tool that is going to be re-used in several
+- If one wishes to create a basic tool that is going to be reused in several
   different projects and which people of all skill levels will likely use
   (including those who don't label themselves as "programmers"), then chances
   are that it should probably be a script, likely one with a custom name/icon.
