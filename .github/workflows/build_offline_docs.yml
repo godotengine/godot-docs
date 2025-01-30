@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 180
     strategy:
+      max-parallel: 1
+      fail-fast: false
       matrix:
         branch:
           - master
