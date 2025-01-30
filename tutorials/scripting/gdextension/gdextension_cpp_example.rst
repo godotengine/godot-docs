@@ -25,7 +25,8 @@ There are a few prerequisites you'll need:
 - a copy of the `godot-cpp
   repository <https://github.com/godotengine/godot-cpp>`__.
 
-See also :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
+See also :ref:`Configuring an IDE <toc-devel-configuring_an_ide>`
+and :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
 to the ones you need to compile Godot from source.
 
 You can download the `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__ from GitHub or let Git do the work for you.
@@ -272,7 +273,7 @@ GDExtension plugin.
             return;
         }
 
-        GDREGISTER_CLASS(GDExample);
+        GDREGISTER_RUNTIME_CLASS(GDExample);
     }
 
     void uninitialize_example_module(ModuleInitializationLevel p_level) {
@@ -298,7 +299,8 @@ The ``initialize_example_module`` and ``uninitialize_example_module`` functions 
 called respectively when Godot loads our plugin and when it unloads it. All
 we're doing here is parse through the functions in our bindings module to
 initialize them, but you might have to set up more things depending on your
-needs. We call the ``GDREGISTER_CLASS`` macro for each of our classes in our library.
+needs. We call the ``GDREGISTER_RUNTIME_CLASS`` macro for each of our classes
+in our library. This will make them run only in game, like the default for GDScript.
 
 The important function is the third function called ``example_library_init``.
 We first call a function in our bindings library that creates an initialization object.
@@ -327,10 +329,11 @@ At last, we need the header file for the ``register_types.cpp`` named
 Compiling the plugin
 --------------------
 
-We cannot easily write by hand a ``SConstruct`` file that SCons would use for
-building. For the purpose of this example, just use
-:download:`this hardcoded SConstruct file <files/cpp_example/SConstruct>` we've
-prepared. We'll cover a more customizable, detailed example on how to use these
+To compile the project we need to define how SCons using should compile it
+using a ``SConstruct`` file which references the one in ``godot-cpp``.
+Writing it from scratch is outside the scope of this tutorial, but you can
+:download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`.
+We'll cover a more customizable, detailed example on how to use these
 build files in a subsequent tutorial.
 
 .. note::
@@ -465,7 +468,12 @@ We're going to assign the Godot logo to this node as our texture, disable the
 
 We're finally ready to run the project:
 
-.. image:: img/gdextension_cpp_animated.gif
+.. video:: img/gdextension_cpp_animated.webm
+   :alt: Screen recording of a game window, with Godot logo moving in the top-left corner
+   :autoplay:
+   :loop:
+   :muted:
+   :align: default
 
 Adding properties
 -----------------
