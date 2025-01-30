@@ -13,6 +13,8 @@ jobs:
     if: ${{ github.repository_owner == 'godotengine' || github.event_name != 'schedule' || vars.CI_OFFLINE_DOCS_CRON == 'true' }}
     runs-on: ubuntu-22.04
     strategy:
+      max-parallel: 1
+      fail-fast: false
       matrix:
         branch:
           - master
