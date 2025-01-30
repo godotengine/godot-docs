@@ -47,7 +47,7 @@ jobs:
           echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH
           echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
           sudo apt update
-          sudo apt install parallel libwebp7
+          sudo apt install parallel libwebp7 imagemagick
 
       - name: Save virtualenv cache
         uses: actions/cache/save@v4
