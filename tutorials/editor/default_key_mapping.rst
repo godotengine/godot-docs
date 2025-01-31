@@ -41,9 +41,9 @@ General editor actions
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Distraction Free Mode | :kbd:`Ctrl + Shift + F11`     | :kbd:`Cmd + Ctrl + D`        | ``editor/distraction_free_mode`` |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Next tab              | :kbd:`Ctrl + Tab`             | :kbd:`Ctrl + Tab`            | ``editor/next_tab``              |
+| Next Scene Tab        | :kbd:`Ctrl + Tab`             | :kbd:`Ctrl + Tab`            | ``editor/next_tab``              |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Previous tab          | :kbd:`Ctrl + Shift + Tab`     | :kbd:`Ctrl + Shift + Tab`    | ``editor/prev_tab``              |
+| Previous Scene Tab    | :kbd:`Ctrl + Shift + Tab`     | :kbd:`Ctrl + Shift + Tab`    | ``editor/prev_tab``              |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Filter Files          | :kbd:`Ctrl + Alt + P`         | :kbd:`Opt + Cmd + P`         | ``editor/filter_files``          |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
