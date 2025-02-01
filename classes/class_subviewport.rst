@@ -23,6 +23,8 @@ Description
 
 \ **Note:** **SubViewport** is a :ref:`Viewport<class_Viewport>` that isn't a :ref:`Window<class_Window>`, i.e. it doesn't draw anything by itself. To display anything, **SubViewport** must have a non-zero size and be either put inside a :ref:`SubViewportContainer<class_SubViewportContainer>` or assigned to a :ref:`ViewportTexture<class_ViewportTexture>`.
 
+\ **Note:** :ref:`InputEvent<class_InputEvent>`\ s are not passed to a standalone **SubViewport** by default. To ensure :ref:`InputEvent<class_InputEvent>` propagation, a **SubViewport** can be placed inside of a :ref:`SubViewportContainer<class_SubViewportContainer>`.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

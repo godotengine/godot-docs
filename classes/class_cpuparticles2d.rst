@@ -738,7 +738,7 @@ Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_te
 - |void| **set_color_initial_ramp**\ (\ value\: :ref:`Gradient<class_Gradient>`\ )
 - :ref:`Gradient<class_Gradient>` **get_color_initial_ramp**\ (\ )
 
-Each particle's initial color will vary along this :ref:`GradientTexture1D<class_GradientTexture1D>` (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
+Each particle's initial color will vary along this :ref:`Gradient<class_Gradient>` (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
 
 .. rst-class:: classref-item-separator
 
@@ -755,7 +755,7 @@ Each particle's initial color will vary along this :ref:`GradientTexture1D<class
 - |void| **set_color_ramp**\ (\ value\: :ref:`Gradient<class_Gradient>`\ )
 - :ref:`Gradient<class_Gradient>` **get_color_ramp**\ (\ )
 
-Each particle's color will vary along this :ref:`Gradient<class_Gradient>` (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
+Each particle's color will vary along this :ref:`Gradient<class_Gradient>` over its lifetime (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
 
 .. rst-class:: classref-item-separator
 

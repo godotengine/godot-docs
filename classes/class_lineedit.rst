@@ -890,7 +890,7 @@ If ``false``, existing text cannot be modified and new text cannot be added.
 - |void| **set_emoji_menu_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_emoji_menu_enabled**\ (\ )
 
-If ``false``, "Emoji and Symbols" menu is enabled.
+If ``true``, "Emoji and Symbols" menu is enabled.
 
 .. rst-class:: classref-item-separator
 
