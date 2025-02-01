@@ -18,6 +18,10 @@ the value of the property will be multiplied by the value of the curve at the cu
 in a particle's lifetime. Use the curve to change a property over the particle lifetime. Very
 complex behavior can be expressed this way.
 
+.. note::
+  This page covers how to use ParticleProcessMaterial for 3D scenes specifically.
+  For information on how to use it in a 2D Scene see :ref:`doc_particle_process_material_2d`.
+
 Time
 ~~~~
 
