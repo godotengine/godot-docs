@@ -220,6 +220,8 @@ if not on_rtd:
 
 html_js_files = [
     "js/custom.js",
+    ('https://plausible.godot.foundation/js/script.file-downloads.outbound-links.js',
+     {'defer': 'defer', 'data-domain': 'godotengine.org'}),
 ]
 
 # Output file base name for HTML help builder
