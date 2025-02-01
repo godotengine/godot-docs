@@ -85,8 +85,8 @@ and randomly choose one of the three animation types:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
-        $AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
+        var mob_types = Array($AnimatedSprite2D.sprite_frames.get_animation_names())
+        $AnimatedSprite2D.animation = mob_types.pick_random()
 
  .. code-tab:: csharp
 
@@ -101,9 +101,10 @@ First, we get the list of animation names from the AnimatedSprite2D's ``sprite_f
 property. This returns an Array containing all three animation names: ``["walk",
 "swim", "fly"]``.
 
-We then need to pick a random number between ``0`` and ``2`` to select one of
-these names from the list (array indices start at ``0``). ``randi() % n``
-selects a random integer between ``0`` and ``n-1``.
+In the GDScript code, we use the :ref:`Array.pick_random <class_Array_method_pick_random>` method 
+to select one of these animation names at random. Meanwhile, in the C# code, we pick a random number 
+between ``0`` and ``2`` to select one of these names from the list (array indices start at ``0``). The 
+expression ``GD.Randi() % n`` selects a random integer between ``0`` and ``n-1``.
 
 The last piece is to make the mobs delete themselves when they leave the screen.
 Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node
@@ -112,7 +113,7 @@ to the ``Mob`` and add this code:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_visible_on_screen_notifier_2d_screen_exited():
+    func _on_VisibilityNotifier2D_screen_exited():
         queue_free()
 
  .. code-tab:: csharp
