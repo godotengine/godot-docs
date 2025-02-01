@@ -176,7 +176,7 @@ You can specify a list of files to build, which can greatly speed up compilation
     make html FILELIST='classes/class_node.rst classes/class_resource.rst'
 
 The list of files can also be provided by the ``git`` command.
-This way you can automatically get names of all files that were changed since
+This way you can automatically get the names of all files that have changed since
 the last commit (``sed`` is used to put them on the same line).
 
 .. code:: sh
