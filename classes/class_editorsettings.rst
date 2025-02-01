@@ -3661,6 +3661,8 @@ This is equivalent to :ref:`ProjectSettings.display/window/subwindows/embed_subw
 
 \ **Note:** To query whether the editor can use multiple windows in an editor plugin, use :ref:`EditorInterface.is_multi_window_enabled<class_EditorInterface_method_is_multi_window_enabled>` instead of querying the value of this editor setting.
 
+\ **Note:** If ``true``, game embedding is disabled.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3975,7 +3977,7 @@ If ``true``, display OpenType features marked as ``hidden`` by the font file in 
 
 :ref:`bool<class_bool>` **interface/multi_window/enable** :ref:`🔗<class_EditorSettings_property_interface/multi_window/enable>`
 
-If ``true``, multiple window support in editor is enabled. The following panels can become dedicated windows (i.e. made floating): Docks, Script editor, and Shader editor.
+If ``true``, multiple window support in editor is enabled. The following panels can become dedicated windows (i.e. made floating): Docks, Script editor, Shader editor, and Game Workspace.
 
 \ **Note:** When :ref:`interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` is ``true``, the multi window support is always disabled.
 
@@ -4616,6 +4618,8 @@ Specifies the picture-in-picture (PiP) mode for the Play window.
 :ref:`int<class_int>` **run/window_placement/rect** :ref:`🔗<class_EditorSettings_property_run/window_placement/rect>`
 
 The window mode to use to display the project when starting the project from the editor.
+
+\ **Note:** Game embedding is not available for "Force Maximized" or "Force Fullscreen."
 
 .. rst-class:: classref-item-separator
 

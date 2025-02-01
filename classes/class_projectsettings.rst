@@ -4278,6 +4278,8 @@ Main window initial screen, this setting is used only if :ref:`display/window/si
 
 Main window mode. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
 
+\ **Note:** Game embedding is available only in the "Windowed" mode.
+
 .. rst-class:: classref-item-separator
 
 ----

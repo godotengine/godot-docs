@@ -228,6 +228,14 @@ Confines the mouse cursor to the game window, and make it visible.
 
 Confines the mouse cursor to the game window, and make it hidden.
 
+.. _class_Input_constant_MOUSE_MODE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MouseMode<enum_Input_MouseMode>` **MOUSE_MODE_MAX** = ``5``
+
+Max value of the :ref:`MouseMode<enum_Input_MouseMode>`.
+
 .. rst-class:: classref-item-separator
 
 ----
