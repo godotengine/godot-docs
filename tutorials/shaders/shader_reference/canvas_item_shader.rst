@@ -45,6 +45,10 @@ Values marked as ``in`` are read-only. Values marked as ``out`` can optionally b
 not necessarily contain sensible values. Values marked as ``inout`` provide a sensible default
 value, and can optionally be written to. Samplers cannot be written to so they are not marked.
 
+Not all built-ins are available in all processing functions. To access a vertex
+built-in from the ``fragment()`` function, you can use a :ref:`varying <doc_shading_language_varyings>`.
+The same applies for accessing fragment built-ins from the ``light()`` function.
+
 Global built-ins
 ----------------
 
