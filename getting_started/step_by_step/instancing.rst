@@ -121,7 +121,7 @@ Let's try this. Double-click ``ball.tscn`` in the FileSystem to open it.
 
 .. image:: img/instancing_ball_scene_open.webp
 
-Select the Ball node. In the Inspector on the right, click on the PhysicsMaterial
+In the Scene dock on the left, select the Ball node. Then, in the Inspector on the right, click on the PhysicsMaterial
 property to expand it.
 
 .. image:: img/instancing_physics_material_expand.webp
