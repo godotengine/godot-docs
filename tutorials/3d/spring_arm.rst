@@ -121,4 +121,3 @@ Run the game and notice that mouse movement now rotates the camera around the ch
    :autoplay:
    :loop:
    :muted:
-   :align: default

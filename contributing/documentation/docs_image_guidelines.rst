@@ -242,7 +242,6 @@ videos should be included with the following code snippet::
        :autoplay:
        :loop:
        :muted:
-       :align: default
 
 Where ``documentation_video.webp`` would be changed to the name of the video you
 created. Name your videos in a way that makes their meaning clear, possibly with
