@@ -242,6 +242,7 @@ videos should be included with the following code snippet::
        :autoplay:
        :loop:
        :muted:
+       :align: default
 
 Where ``documentation_video.webp`` would be changed to the name of the video you
 created. Name your videos in a way that makes their meaning clear, possibly with
@@ -249,3 +250,4 @@ a prefix that makes their relationship to a documentation page explicit.
 
 The ``:autoplay:``, ``:loop:`` and ``:muted:`` flags should always be specified
 unless the video needs to play audio. In this case, do not specify *any* of these flags.
+The ``:align: default`` flag should always be specified.
