@@ -33,6 +33,7 @@ Rendering
    2d_meshes
    2d_sprite_animation
    particle_systems_2d
+   particle_process_material_2d
    2d_antialiasing
    custom_drawing_in_2d
    2d_parallax
