@@ -489,6 +489,39 @@ If you want to set an initial value, you must specify it explicitly:
     [Export(PropertyHint.Enum, "Rebecca,Mary,Leah")]
     public string CharacterName { get; set; } = "Rebecca";
 
+
+Exporting inspector buttons with ``[ExportToolButton]``
+-------------------------------------------------------
+
+If you want to create a clickable button in the inspector, you can use the
+``[ExportToolButton]`` attribute.  This exports a Callable property or field as
+a clickable button. Since this runs in the editor, usage of the :ref:`[Tool]
+<doc_running_code_in_the_editor>` attribute is required. When the button is
+pressed, the callable is called:
+
+.. code-block:: csharp
+
+    [Tool]
+    public partial class MyNode : Node
+    {
+        [ExportToolButton("Click me!")]
+        public Callable ClickMeButton => Callable.From(ClickMe);
+
+        public void ClickMe()
+        {
+            GD.Print("Hello world!");
+        }
+    }
+
+You can also set an icon for the button with a second argument. If specified, an
+icon will be fetched via :ref:`GetThemeIcon() <class_Control_method_get_theme_icon>`,
+from the ``"EditorIcons"`` theme type.
+
+.. code-block:: csharp
+
+    [ExportToolButton("Click me!", Icon = "CharacterBody2D")]
+    public Callable ClickMeButton => Callable.From(ClickMe);
+
 Exporting collections
 ---------------------
 
