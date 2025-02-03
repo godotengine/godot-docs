@@ -1844,3 +1844,11 @@ p + .classref-constant {
 #godot-giscus {
     margin-bottom: 1em;
 }
+
+/** Center videos embedded using the sphinxcontrib-video plugin.
+ * That plugin makes assumptions about `align-center` and `align-left` that our
+ * theme does not follow, so we set the `align-default` class instead to avoid
+ * collisions and have full control of how videos are aligned. */
+.align-default {
+    text-align: center
+}

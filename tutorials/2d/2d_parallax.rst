@@ -54,6 +54,7 @@ The video below displays how these values affect scrolling while in-game:
    :autoplay:
    :loop:
    :muted:
+   :align: default
 
 Infinite repeat
 ---------------
