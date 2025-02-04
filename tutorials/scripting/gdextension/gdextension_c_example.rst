@@ -2148,5 +2148,5 @@ quite straightforward and not very verbose.
 
 If you want to create actual extensions, it is preferred to use the C++ bindings
 instead, as it takes away all of the boilerplate from your code. Check the
-:ref:`GDExtension C++ example <doc_gdextension_cpp_example>` to see how you can
+:ref:`godot-cpp documentation <doc_godot_cpp>` to see how you can
 do this.

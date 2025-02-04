@@ -9,7 +9,7 @@ Introduction
 The ``.gdextension`` file in your project contains the instructions for how to load
 the GDExtension. The instructions are separated into specific sections. This page
 should give you a quick overview of the different options available to you. For an introduction
-how to get started with GDExtensions take a look at the :ref:`GDExtension C++ Example <doc_gdextension_cpp_example>`.
+how to get started with C++ (godot-cpp), take a look at the :ref:`GDExtension C++ Example <doc_godot_cpp_getting_started>`.
 
 Configuration section
 ---------------------
