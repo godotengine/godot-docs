@@ -152,11 +152,11 @@ Playback limitations
 
 There are several limitations with the current implementation of video playback in Godot:
 
-- Seeking a video to a certain point is not supported.
 - Changing playback speed is not supported. VideoStreamPlayer also won't follow
   :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
 - Streaming a video from a URL is not supported.
-- Only mono and stereo audio output is supported.
+- Only mono and stereo audio output is supported. Videos with 4, 5.1 and 7.1
+  audio channels are supported but down-mixed to stereo.
 
 .. _doc_playing_videos_recommended_theora_encoding_settings:
 
@@ -237,6 +237,13 @@ compression benefits will fade away and even be reversed as the GOP size
 increases. The default size (``12``) is too low for most types of content, it's
 therefore recommended to test higher GOP sizes before reducing video quality.
 Values between ``64`` and ``512`` usually give the best compression.
+
+.. note::
+
+   Higher GOP sizes will increase max seek times with a sudden increase when
+   going beyond powers of two starting at ``64``. Max seek times with GOP size
+   ``65`` can be almost twice as long as with GOP size ``64``, depending on
+   decoding speed.
 
 FFmpeg: Convert while preserving original video resolution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
