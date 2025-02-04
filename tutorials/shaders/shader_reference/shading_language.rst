@@ -812,6 +812,7 @@ There are two possible interpolation qualifiers:
 | **smooth**        | The value is interpolated in a perspective-correct fashion. This is the default.|
 +-------------------+---------------------------------------------------------------------------------+
 
+.. _doc_shading_language_uniforms:
 
 Uniforms
 --------

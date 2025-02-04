@@ -63,20 +63,21 @@ Setting up
 
 Add a new :ref:`MeshInstance3D <class_MeshInstance3D>` node to your scene.
 
-In the inspector tab beside "Mesh" click "<empty>" and select "New PlaneMesh".
-Then click on the image of a plane that appears.
+In the inspector tab, set the MeshInstance3D's **Mesh** property to a new
+:ref:`PlaneMesh <class_planemesh>` resource, by clicking on ``<empty>`` and
+choosing **New PlaneMesh**. Then expand the resource by clicking on the image of
+a plane that appears.
 
-This adds a :ref:`PlaneMesh <class_planemesh>` to our scene.
+This adds a plane to our scene.
 
-Then, in the viewport, click in the upper left corner on the button that says
-"Perspective". A menu will appear. In the middle of the menu are options for how
-to display the scene. Select 'Display Wireframe'.
+Then, in the viewport, click in the upper left corner on the **Perspective** button.
+In the menu that appears, select **Display Wireframe**.
 
 This will allow you to see the triangles making up the plane.
 
 .. image:: img/plane.webp
 
-Now set ``Subdivide Width`` and ``Subdivide Depth`` of the :ref:`PlaneMesh <class_planemesh>` to ``32``.
+Now set **Subdivide Width** and **Subdivide Depth** of the :ref:`PlaneMesh <class_planemesh>` to ``32``.
 
 .. image:: img/plane-sub-set.webp
 
@@ -87,12 +88,13 @@ and thus allow us to add more detail.
 .. image:: img/plane-sub.webp
 
 :ref:`PrimitiveMeshes <class_primitivemesh>`, like PlaneMesh, only have one
-surface, so instead of an array of materials there is only one. Click
-beside "Material" where it says "<empty>" and select "New ShaderMaterial".
-Then click the sphere that appears.
+surface, so instead of an array of materials there is only one. Set the
+**Material** to a new ShaderMaterial, then expand the material by clicking on
+the sphere that appears.
 
-Now click beside "Shader" where it says "<empty>" and select "New Shader...". Leave
-the default settings, give your shader a name and click "Create".
+Now set the material's **Shader** to a new Shader by clicking ``<empty>`` and
+select **New Shader...**. Leave the default settings, give your shader a name,
+and click **Create**.
 
 Click on the shader in the inspector, and the shader editor should now pop up. You
 are ready to begin writing your first Spatial shader!
@@ -116,7 +118,7 @@ appear in the final scene. We will be using it to offset the height of each vert
 and make our flat plane appear like a little terrain.
 
 With nothing in the ``vertex()`` function, Godot will use its default vertex
-shader. We can easily start to make changes by adding a single line:
+shader. We can start to make changes by adding a single line:
 
 .. code-block:: glsl
 
@@ -130,12 +132,12 @@ Adding this line, you should get an image like the one below.
 
 Okay, let's unpack this. The ``y`` value of the ``VERTEX`` is being increased.
 And we are passing the ``x`` and ``z`` components of the ``VERTEX`` as arguments
-to ``cos`` and ``sin``; that gives us a wave-like appearance across the ``x``
-and ``z`` axes.
+to :ref:`cos() <shader_func_cos>` and :ref:`sin() <shader_func_sin>`; that gives
+us a wave-like appearance across the ``x`` and ``z`` axes.
 
-What we want to achieve is the look of little hills; after all. ``cos`` and
-``sin`` already look kind of like hills. We do so by scaling the inputs to the
-``cos`` and ``sin`` functions.
+What we want to achieve is the look of little hills; after all. ``cos()`` and
+``sin()`` already look kind of like hills. We do so by scaling the inputs to the
+``cos()`` and ``sin()`` functions.
 
 .. code-block:: glsl
 
@@ -166,30 +168,19 @@ shader, outside the ``vertex()`` function.
   uniform sampler2D noise;
 
 This will allow you to send a noise texture to the shader. Now look in the
-inspector under your material. You should see a section called "Shader Params".
-If you open it up, you'll see a section called "noise".
+inspector under your material. You should see a section called **Shader Parameters**.
+If you open it up, you'll see a parameter called "Noise".
 
-Click beside it where it says "<empty>" and select "New NoiseTexture2D". Then in
-your :ref:`NoiseTexture2D <class_noisetexture2D>` click beside where it says "Noise" and select "New
-FastNoiseLite".
-
-.. note:: :ref:`FastNoiseLite <class_fastnoiselite>` is used by the NoiseTexture2D to
-          generate a heightmap.
+Set this **Noise** parameter to a new :ref:`NoiseTexture2D <class_noisetexture2D>`.
+Then in your NoiseTexture2D, set its **Noise** property to a new
+:ref:`FastNoiseLite <class_fastnoiselite>`. The FastNoiseLite class is used by
+the NoiseTexture2D to generate a heightmap.
 
 Once you set it up and should look like this.
 
 .. image:: img/noise-set.webp
 
-Now, access the noise texture using the ``texture()`` function. ``texture()``
-takes a texture as the first argument and a ``vec2`` for the position on the
-texture as the second argument. We use the ``x`` and ``z`` channels of
-``VERTEX`` to determine where on the texture to look up. Note that the PlaneMesh
-coordinates are within the [-1,1] range (for a size of 2), while the texture
-coordinates are within [0,1], so to normalize we divide by the size of the
-PlaneMesh by 2.0 and add 0.5. ``texture()`` returns a ``vec4`` of the ``r, g, b,
-a`` channels at the position. Since the noise texture is grayscale, all of the
-values are the same, so we can use any one of the channels as the height. In
-this case we'll use the ``r``, or ``x`` channel.
+Now, access the noise texture using the ``texture()`` function:
 
 .. code-block:: glsl
 
@@ -198,10 +189,27 @@ this case we'll use the ``r``, or ``x`` channel.
     VERTEX.y += height;
   }
 
-Note: ``xyzw`` is the same as ``rgba`` in GLSL, so instead of ``texture().x``
-above, we could use ``texture().r``. See the `OpenGL documentation
-<https://www.khronos.org/opengl/wiki/Data_Type_(GLSL)#Vectors>`_ for more
-details.
+:ref:`texture() <shader_func_texture>` takes a texture as the first argument and
+a ``vec2`` for the position on the texture as the second argument. We use the
+``x`` and ``z`` channels of ``VERTEX`` to determine where on the texture to look
+up. 
+
+Since the PlaneMesh coordinates are within the ``[-1.0, 1.0]`` range (for a size
+of ``2.0``), while the texture coordinates are within ``[0.0, 1.0]``, to remap
+the coordinates we divide by the size of the PlaneMesh by ``2.0`` and add
+``0.5`` .
+
+``texture()`` returns a ``vec4`` of the ``r, g, b, a`` channels at the position.
+Since the noise texture is grayscale, all of the values are the same, so we can
+use any one of the channels as the height. In this case we'll use the ``r``, or
+``x`` channel.
+
+.. note::
+
+  ``xyzw`` is the same as ``rgba`` in GLSL, so instead of ``texture().x``
+  above, we could use ``texture().r``. See the `OpenGL documentation
+  <https://www.khronos.org/opengl/wiki/Data_Type_(GLSL)#Vectors>`_ for more
+  details.
 
 Using this code you can see the texture creates random looking hills.
 
@@ -214,7 +222,8 @@ texture, now let's learn how they work.
 Uniforms
 --------
 
-Uniform variables allow you to pass data from the game into the shader. They are
+:ref:`Uniform variables <doc_shading_language_uniforms>` allow you to pass data
+from the game into the shader. They are
 very useful for controlling shader effects. Uniforms can be almost any datatype
 that can be used in the shader. To use a uniform, you declare it in your
 :ref:`Shader<class_Shader>` using the keyword ``uniform``.
@@ -228,11 +237,11 @@ Let's make a uniform that changes the height of the terrain.
 
 Godot lets you initialize a uniform with a value; here, ``height_scale`` is set
 to ``0.5``. You can set uniforms from GDScript by calling the function
-``set_shader_parameter()`` on the material corresponding to the shader. The value
-passed from GDScript takes precedence over the value used to initialize it in
-the shader.
+:ref:`set_shader_parameter() <class_ShaderMaterial_method_set_shader_parameter>`
+on the material corresponding to the shader. The value passed from GDScript
+takes precedence over the value used to initialize it in the shader.
 
-::
+.. code-block:: gdscript
 
   # called from the MeshInstance3D
   mesh.material.set_shader_parameter("height_scale", 0.5)
@@ -245,8 +254,8 @@ the shader.
           ``get_surface_material()`` or ``material_override``.
 
 Remember that the string passed into ``set_shader_parameter()`` must match the name
-of the uniform variable in the :ref:`Shader<class_Shader>`. You can use the
-uniform variable anywhere inside your :ref:`Shader<class_Shader>`. Here, we will
+of the uniform variable in the shader. You can use the
+uniform variable anywhere inside your shader. Here, we will
 use it to set the height value instead of arbitrarily multiplying by ``0.5``.
 
 .. code-block:: glsl
@@ -264,16 +273,17 @@ especially useful for animations.
 Interacting with light
 ----------------------
 
-First, turn wireframe off. To do so, click in the upper-left of the Viewport
-again, where it says "Perspective", and select "Display Normal".
-Additionally in the 3D scene toolbar, turn off preview sunlight.
+First, turn wireframe off. To do so, open the **Perspective** menu in the
+upper-left of the viewport again, and select **Display Normal**. Additionally in
+the 3D scene toolbar, turn off preview sunlight.
 
 .. image:: img/normal.webp
 
 Note how the mesh color goes flat. This is because the lighting on it is flat.
 Let's add a light!
 
-First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene.
+First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene, and 
+drag it up so it is above the terrain.
 
 .. image:: img/light.webp
 
@@ -300,7 +310,7 @@ do that by passing in a second noise texture.
   uniform sampler2D normalmap;
 
 Set this second uniform texture to another :ref:`NoiseTexture2D <class_noisetexture2D>` with another
-:ref:`FastNoiseLite <class_fastnoiselite>`. But this time, check **As Normalmap**.
+:ref:`FastNoiseLite <class_fastnoiselite>`. But this time, check **As Normal Map**.
 
 .. image:: img/normal-set.webp
 
@@ -312,20 +322,19 @@ wrapping the texture around the mesh automatically.
 Lastly, in order to ensure that we are reading from the same places on the noise
 texture and the normalmap texture, we are going to pass the ``VERTEX.xz``
 position from the ``vertex()`` function to the ``fragment()`` function. We do
-that with varyings.
+that using a :ref:`varying <doc_shading_language_varyings>`.
 
-Above the ``vertex()`` define a ``vec2`` called ``tex_position``. And inside the
-``vertex()`` function assign ``VERTEX.xz`` to ``tex_position``.
+Above the ``vertex()`` define a ``varying vec2`` called ``tex_position``. And
+inside the ``vertex()`` function assign ``VERTEX.xz`` to ``tex_position``.
 
 .. code-block:: glsl
 
   varying vec2 tex_position;
 
   void vertex() {
-    ...
     tex_position = VERTEX.xz / 2.0 + 0.5;
     float height = texture(noise, tex_position).x;
-    ...
+    VERTEX.y += height * height_scale;
   }
 
 And now we can access ``tex_position`` from the ``fragment()`` function.
@@ -344,6 +353,9 @@ dynamically.
 We can even drag the light around and the lighting will update automatically.
 
 .. image:: img/normalmap2.webp
+
+Full code
+---------
 
 Here is the full code for this tutorial. You can see it is not very long as
 Godot handles most of the difficult stuff for you.
