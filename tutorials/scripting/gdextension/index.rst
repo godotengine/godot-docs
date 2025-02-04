@@ -5,10 +5,9 @@ GDExtension
 
 .. toctree::
    :maxdepth: 1
-   :name: toc-tutorials-gdnative
+   :name: toc-tutorials-gdextension
 
    what_is_gdextension
-   gdextension_cpp_example
-   gdextension_c_example
    gdextension_file
-   gdextension_docs_system
+   godot_cpp/index
+   internals/index
