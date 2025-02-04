@@ -27,6 +27,7 @@ Interior environments can be created by using inverted primitives.
    :autoplay:
    :loop:
    :muted:
+   :align: default
 
 .. seealso::
 
