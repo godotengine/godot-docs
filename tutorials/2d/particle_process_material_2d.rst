@@ -6,6 +6,12 @@ ParticleProcessMaterial 2D Usage
 Process material properties
 ---------------------------
 
+.. figure:: img/particle_minmaxcurve.webp
+   :alt: ParticleProcessMaterial properties
+   :align: right
+
+   Min, max, and curve properties
+
 The properties in this material control how particles behave and change over their lifetime.
 A lot of them have ``Min``, ``Max``, and ``Curve`` values that allow you to fine-tune
 their behavior. The relationship between these values is this: When a particle is spawned,
