@@ -3,6 +3,15 @@
 Creating instances
 ==================
 
+.. note::
+
+   This tutorial refers to instancing scenes in the editor. To learn how
+   to instance scenes from code, see :ref:`doc_nodes_and_scene_instances`.
+
+   Godot's approach to *instancing* described below should not be confused with
+   hardware instancing that can be used to render large amounts of similar
+   objects quickly. See :ref:`doc_using_multimesh` instead.
+
 In the previous part, we saw that a scene is a collection of nodes organized in
 a tree structure, with a single node as its root. You can split your project
 into any number of scenes. This feature helps you break down and organize your
