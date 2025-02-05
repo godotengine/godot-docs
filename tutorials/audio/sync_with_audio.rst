@@ -72,7 +72,7 @@ Add these two and it's possible to guess almost exactly when sound or music will
         GetNode<AudioStreamPlayer>("Player").Play();
     }
 
-    public override void _Process(float _delta)
+    public override void _Process(double delta)
     {
         double time = (Time.GetTicksUsec() - _timeBegin) / 1000000.0d;
         time = Math.Max(0.0d, time - _timeDelay);
@@ -140,7 +140,7 @@ Here is the same code as before using this approach:
         GetNode<AudioStreamPlayer>("Player").Play();
     }
 
-    public override void _Process(float _delta)
+    public override void _Process(double delta)
     {
         double time = GetNode<AudioStreamPlayer>("Player").GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
         // Compensate for output latency.

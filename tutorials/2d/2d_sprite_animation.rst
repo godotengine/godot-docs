@@ -104,7 +104,7 @@ released.
             _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         }
 
-        public override _Process(float _delta)
+        public override void _Process(double delta)
         {
             if (Input.IsActionPressed("ui_right"))
             {
@@ -252,7 +252,7 @@ released.
             _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         }
 
-        public override void _Process(float _delta)
+        public override void _Process(double delta)
         {
             if (Input.IsActionPressed("ui_right"))
             {
