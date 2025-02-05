@@ -170,6 +170,10 @@ html_theme_options = {
     "logo_only": True,
     # Collapse navigation (False makes it tree-like)
     "collapse_navigation": False,
+    # An extra level of navigation depth over the default.
+    # This allows deeply nested pages to appear in the sidebar at all,
+    # and allows headers within pages to appear in the sidebar more often.
+    'navigation_depth': 5,
     # Remove version and language picker beneath the title
     "version_selector": False,
     "language_selector": False,
