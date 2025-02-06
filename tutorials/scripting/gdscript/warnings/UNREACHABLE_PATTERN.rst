@@ -1,0 +1,16 @@
+``UNREACHABLE_PATTERN``
+=======================
+
+When this warning occurs
+------------------------
+
+TODO
+
+
+How to fix this warning
+-----------------------
+
+TODO
+
+
+

@@ -1,0 +1,16 @@
+``NARROWING_CONVERSION``
+========================
+
+When this warning occurs
+------------------------
+
+TODO
+
+
+How to fix this warning
+-----------------------
+
+TODO
+
+
+
