@@ -1578,6 +1578,9 @@ Lambda functions capture the local environment:
         lambda.call()
         print(a) # Prints `[1]`.
 
+
+.. _doc_gdscript_basics_static_functions:
+
 Static functions
 ~~~~~~~~~~~~~~~~
 
