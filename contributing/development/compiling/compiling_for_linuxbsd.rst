@@ -608,7 +608,7 @@ running ``scons -h``, then looking for options starting with ``builtin_``.
 
 .. warning::
 
-    When using system libraries, the resulting library is **not** portable
+    When using system libraries, the resulting binary is **not** portable
     across Linux distributions anymore. Do not use this approach for creating
     binaries you intend to distribute to others, unless you're creating a
     package for a Linux distribution.
