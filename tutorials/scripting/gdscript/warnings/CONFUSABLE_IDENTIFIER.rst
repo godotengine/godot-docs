@@ -1,4 +1,4 @@
-``CONFUSABLE_IDENTIFIER``
+CONFUSABLE_IDENTIFIER
 =========================
 
 When this warning occurs

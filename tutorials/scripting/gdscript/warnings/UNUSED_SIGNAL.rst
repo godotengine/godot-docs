@@ -1,4 +1,4 @@
-``UNUSED_SIGNAL``
+UNUSED_SIGNAL
 =================
 
 When this warning occurs

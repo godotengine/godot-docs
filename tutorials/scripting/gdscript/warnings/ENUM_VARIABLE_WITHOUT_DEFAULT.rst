@@ -1,4 +1,4 @@
-``ENUM_VARIABLE_WITHOUT_DEFAULT``
+ENUM_VARIABLE_WITHOUT_DEFAULT
 =================================
 
 When this warning occurs

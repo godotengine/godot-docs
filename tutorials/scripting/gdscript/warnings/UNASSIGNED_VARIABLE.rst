@@ -1,4 +1,4 @@
-``UNASSIGNED_VARIABLE``
+UNASSIGNED_VARIABLE
 =======================
 
 When this warning occurs

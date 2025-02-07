@@ -1,4 +1,4 @@
-``NATIVE_METHOD_OVERRIDE``
+NATIVE_METHOD_OVERRIDE
 ==========================
 
 When this warning occurs

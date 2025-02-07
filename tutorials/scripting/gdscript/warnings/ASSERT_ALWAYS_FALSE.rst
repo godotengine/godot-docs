@@ -1,4 +1,4 @@
-``ASSERT_ALWAYS_FALSE``
+ASSERT_ALWAYS_FALSE
 =======================
 
 When this warning occurs

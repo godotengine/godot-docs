@@ -1,4 +1,4 @@
-``CONFUSABLE_CAPTURE_REASSIGNMENT``
+CONFUSABLE_CAPTURE_REASSIGNMENT
 ===================================
 
 When this warning occurs

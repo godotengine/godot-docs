@@ -1,4 +1,4 @@
-``UNSAFE_CALL_ARGUMENT``
+UNSAFE_CALL_ARGUMENT
 ========================
 
 When this warning occurs

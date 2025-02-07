@@ -1,4 +1,4 @@
-``MISSING_TOOL``
+MISSING_TOOL
 ================
 
 When this warning occurs

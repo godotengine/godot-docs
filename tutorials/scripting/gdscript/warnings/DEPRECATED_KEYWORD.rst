@@ -1,4 +1,4 @@
-``DEPRECATED_KEYWORD``
+DEPRECATED_KEYWORD
 ======================
 
 When this warning occurs

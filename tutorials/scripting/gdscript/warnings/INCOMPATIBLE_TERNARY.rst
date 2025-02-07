@@ -1,4 +1,4 @@
-``INCOMPATIBLE_TERNARY``
+INCOMPATIBLE_TERNARY
 ========================
 
 When this warning occurs

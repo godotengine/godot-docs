@@ -1,4 +1,4 @@
-``UNTYPED_DECLARATION``
+UNTYPED_DECLARATION
 =======================
 
 When this warning occurs

@@ -1,4 +1,4 @@
-``EMPTY_FILE``
+EMPTY_FILE
 ==============
 
 When this warning occurs

@@ -1,4 +1,4 @@
-``SHADOWED_VARIABLE_BASE_CLASS``
+SHADOWED_VARIABLE_BASE_CLASS
 ================================
 
 When this warning occurs

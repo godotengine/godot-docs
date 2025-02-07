@@ -1,4 +1,4 @@
-``SHADOWED_GLOBAL_IDENTIFIER``
+SHADOWED_GLOBAL_IDENTIFIER
 ==============================
 
 When this warning occurs

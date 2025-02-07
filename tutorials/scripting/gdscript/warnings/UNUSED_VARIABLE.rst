@@ -1,4 +1,4 @@
-``UNUSED_VARIABLE``
+UNUSED_VARIABLE
 ===================
 
 When this warning occurs

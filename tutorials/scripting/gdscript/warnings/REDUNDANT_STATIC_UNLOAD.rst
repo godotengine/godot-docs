@@ -1,4 +1,4 @@
-``REDUNDANT_STATIC_UNLOAD``
+REDUNDANT_STATIC_UNLOAD
 ===========================
 
 When this warning occurs

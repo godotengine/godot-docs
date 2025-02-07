@@ -1,4 +1,4 @@
-``CONSTANT_USED_AS_FUNCTION``
+CONSTANT_USED_AS_FUNCTION
 =============================
 
 When this warning occurs

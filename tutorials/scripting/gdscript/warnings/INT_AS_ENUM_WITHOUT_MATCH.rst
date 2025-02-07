@@ -1,4 +1,4 @@
-``INT_AS_ENUM_WITHOUT_MATCH``
+INT_AS_ENUM_WITHOUT_MATCH
 =============================
 
 When this warning occurs

@@ -1,4 +1,4 @@
-``REDUNDANT_AWAIT``
+REDUNDANT_AWAIT
 ===================
 
 When this warning occurs

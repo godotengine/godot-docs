@@ -1,4 +1,4 @@
-``UNASSIGNED_VARIABLE_OP_ASSIGN``
+UNASSIGNED_VARIABLE_OP_ASSIGN
 =================================
 
 When this warning occurs

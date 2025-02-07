@@ -1,4 +1,4 @@
-``UNUSED_LOCAL_CONSTANT``
+UNUSED_LOCAL_CONSTANT
 =========================
 
 When this warning occurs

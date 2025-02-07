@@ -1,4 +1,4 @@
-``UNSAFE_METHOD_ACCESS``
+UNSAFE_METHOD_ACCESS
 ========================
 
 When this warning occurs

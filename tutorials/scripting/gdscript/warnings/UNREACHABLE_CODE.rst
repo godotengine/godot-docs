@@ -1,4 +1,4 @@
-``UNREACHABLE_CODE``
+UNREACHABLE_CODE
 ====================
 
 When this warning occurs

@@ -1,4 +1,4 @@
-``CONFUSABLE_LOCAL_DECLARATION``
+CONFUSABLE_LOCAL_DECLARATION
 ================================
 
 When this warning occurs

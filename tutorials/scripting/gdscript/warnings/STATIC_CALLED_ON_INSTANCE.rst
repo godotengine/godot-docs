@@ -1,4 +1,4 @@
-``STATIC_CALLED_ON_INSTANCE``
+STATIC_CALLED_ON_INSTANCE
 =============================
 
 When this warning occurs

@@ -1,4 +1,4 @@
-``RETURN_VALUE_DISCARDED``
+RETURN_VALUE_DISCARDED
 ==========================
 
 When this warning occurs

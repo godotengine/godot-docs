@@ -1,4 +1,4 @@
-``CONFUSABLE_LOCAL_USAGE``
+CONFUSABLE_LOCAL_USAGE
 ==========================
 
 When this warning occurs

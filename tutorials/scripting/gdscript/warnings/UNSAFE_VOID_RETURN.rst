@@ -1,4 +1,4 @@
-``UNSAFE_VOID_RETURN``
+UNSAFE_VOID_RETURN
 ======================
 
 When this warning occurs

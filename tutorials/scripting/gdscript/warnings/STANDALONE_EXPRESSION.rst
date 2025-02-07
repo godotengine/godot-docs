@@ -1,4 +1,4 @@
-``STANDALONE_EXPRESSION``
+STANDALONE_EXPRESSION
 =========================
 
 When this warning occurs

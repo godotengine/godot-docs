@@ -1,4 +1,4 @@
-``FUNCTION_USED_AS_PROPERTY``
+FUNCTION_USED_AS_PROPERTY
 =============================
 
 When this warning occurs

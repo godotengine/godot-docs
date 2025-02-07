@@ -1,4 +1,4 @@
-``INFERRED_DECLARATION``
+INFERRED_DECLARATION
 ========================
 
 When this warning occurs

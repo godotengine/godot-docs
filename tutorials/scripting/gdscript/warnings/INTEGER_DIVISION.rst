@@ -1,4 +1,4 @@
-``INTEGER_DIVISION``
+INTEGER_DIVISION
 ====================
 
 When this warning occurs

@@ -1,4 +1,4 @@
-``UNUSED_PARAMETER``
+UNUSED_PARAMETER
 ====================
 
 When this warning occurs

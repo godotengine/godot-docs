@@ -1,4 +1,4 @@
-``UNREACHABLE_PATTERN``
+UNREACHABLE_PATTERN
 =======================
 
 When this warning occurs

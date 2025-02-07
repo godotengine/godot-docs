@@ -1,4 +1,4 @@
-``SHADOWED_VARIABLE``
+SHADOWED_VARIABLE
 =====================
 
 When this warning occurs

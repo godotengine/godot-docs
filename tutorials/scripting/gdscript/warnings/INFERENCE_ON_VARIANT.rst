@@ -1,4 +1,4 @@
-``INFERENCE_ON_VARIANT``
+INFERENCE_ON_VARIANT
 ========================
 
 When this warning occurs

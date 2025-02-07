@@ -1,4 +1,4 @@
-``STANDALONE_TERNARY``
+STANDALONE_TERNARY
 ======================
 
 When this warning occurs

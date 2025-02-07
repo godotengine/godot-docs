@@ -1,4 +1,4 @@
-``UNUSED_PRIVATE_CLASS_VARIABLE``
+UNUSED_PRIVATE_CLASS_VARIABLE
 =================================
 
 When this warning occurs

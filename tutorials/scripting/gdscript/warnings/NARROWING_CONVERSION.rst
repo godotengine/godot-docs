@@ -1,4 +1,4 @@
-``NARROWING_CONVERSION``
+NARROWING_CONVERSION
 ========================
 
 When this warning occurs
