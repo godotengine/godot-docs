@@ -53,6 +53,14 @@ you are writing a CanvasItem Shader or a Spatial Shader and it previews the
 output of spatial shaders. So what you are seeing is the output of the default
 Spatial Shader.
 
+.. note::
+  Materials that inherit from the :ref:`class_Material` resource, such as :ref:`class_StandardMaterial3D`
+  and :ref:`class_ParticleProcessMaterial`, can be converted to a :ref:`class_ShaderMaterial`
+  and their existing properties will be converted to an accompanying text shader.
+  To do so, right-click on the material in the FileSystem dock and choose
+  **Convert to ShaderMaterial**. You can also do so by right-clicking on any
+  property holding a reference to the material in the inspector.
+
 Click beside "Shader" and select "New Shader". Finally, click on the shader
 you just created and the shader editor will open. You are now ready to begin writing
 your first shader.

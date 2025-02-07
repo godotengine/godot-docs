@@ -92,6 +92,14 @@ surface, so instead of an array of materials there is only one. Set the
 **Material** to a new ShaderMaterial, then expand the material by clicking on
 the sphere that appears.
 
+.. note::
+  Materials that inherit from the :ref:`class_Material` resource, such as :ref:`class_StandardMaterial3D`
+  and :ref:`class_ParticleProcessMaterial`, can be converted to a :ref:`class_ShaderMaterial`
+  and their existing properties will be converted to an accompanying text shader.
+  To do so, right-click on the material in the FileSystem dock and choose
+  **Convert to ShaderMaterial**. You can also do so by right-clicking on any
+  property holding a reference to the material in the inspector.
+
 Now set the material's **Shader** to a new Shader by clicking ``<empty>`` and
 select **New Shader...**. Leave the default settings, give your shader a name,
 and click **Create**.
