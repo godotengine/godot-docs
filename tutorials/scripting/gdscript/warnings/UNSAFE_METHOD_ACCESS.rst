@@ -1,6 +1,12 @@
 UNSAFE_METHOD_ACCESS
 ========================
 
+The warning message is:
+
+.. code-block:: none
+
+    The method "%s()" is not present on the inferred type "%s" (but may be present on a subtype).
+
 When this warning occurs
 ------------------------
 

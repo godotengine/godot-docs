@@ -1,6 +1,12 @@
 CONFUSABLE_LOCAL_USAGE
 ==========================
 
+The warning message is:
+
+.. code-block:: none
+
+    The identifier "%s" will be shadowed below in the block.
+
 When this warning occurs
 ------------------------
 

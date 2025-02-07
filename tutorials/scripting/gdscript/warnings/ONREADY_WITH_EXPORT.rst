@@ -1,6 +1,12 @@
 ONREADY_WITH_EXPORT
 =======================
 
+The warning message is:
+
+.. code-block:: none
+
+    "@onready" will set the default value after "@export" takes effect and will override it.
+
 When this warning occurs
 ------------------------
 

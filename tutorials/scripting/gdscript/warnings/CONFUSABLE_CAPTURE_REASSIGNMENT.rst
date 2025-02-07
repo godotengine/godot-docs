@@ -1,6 +1,12 @@
 CONFUSABLE_CAPTURE_REASSIGNMENT
 ===================================
 
+The warning message is:
+
+.. code-block:: none
+
+    Reassigning lambda capture does not modify the outer local variable "%s".
+
 When this warning occurs
 ------------------------
 

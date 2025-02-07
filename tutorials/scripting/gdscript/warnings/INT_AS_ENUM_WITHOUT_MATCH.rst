@@ -1,6 +1,12 @@
 INT_AS_ENUM_WITHOUT_MATCH
 =============================
 
+The warning message is:
+
+.. code-block:: none
+
+    Cannot %s %s as Enum "%s": no enum member has matching value.
+
 When this warning occurs
 ------------------------
 

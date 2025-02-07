@@ -1,6 +1,12 @@
 UNASSIGNED_VARIABLE
 =======================
 
+The warning message is:
+
+.. code-block:: none
+
+    The variable "%s" was used before being assigned a value.
+
 When this warning occurs
 ------------------------
 
