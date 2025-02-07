@@ -19,7 +19,7 @@ Settings for a single tile in a :ref:`TileSet<class_TileSet>`.
 Description
 -----------
 
-**TileData** object represents a single tile in a :ref:`TileSet<class_TileSet>`. It is usually edited using the tileset editor, but it can be modified at runtime using :ref:`TileMap._tile_data_runtime_update<class_TileMap_private_method__tile_data_runtime_update>`.
+**TileData** object represents a single tile in a :ref:`TileSet<class_TileSet>`. It is usually edited using the tileset editor, but it can be modified at runtime using :ref:`TileMapLayer._tile_data_runtime_update<class_TileMap_private_method__tile_data_runtime_update>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -334,7 +334,7 @@ Vertical point of the tile used for determining y-sorted order.
 - |void| **set_z_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_z_index**\ (\ )
 
-Ordering index of this tile, relative to :ref:`TileMap<class_TileMap>`.
+Ordering index of this tile, relative to :ref:`TileMapLayer<class_TileMapLayer>`.
 
 .. rst-class:: classref-section-separator
 
