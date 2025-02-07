@@ -417,7 +417,7 @@ loaded for each platform and the entry function for the module. It is called ``g
     }
 
 This file contains a ``configuration`` section that controls the entry function of the module.
-You should also set the minimum compatible Godot version with ``compatability_minimum``,
+You should also set the minimum compatible Godot version with ``compatibility_minimum``,
 which prevents older version of Godot from trying to load your extension.
 The ``reloadable`` flag enables automatic reloading of your extension by the editor every time you recompile it,
 without needing to restart the editor. This only works if you compile your extension in debug mode (default).
