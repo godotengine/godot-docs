@@ -125,20 +125,24 @@ build targets, and which will be explained below.
 Target
 ------
 
-Target controls if the editor is contained and debug flags are used.
-All builds are optimized. Each mode means:
+The ``target`` option controls if the editor is compiled and debug flags are used.
+Optimization levels (``optimize``) and whether each build contains debug symbols
+(``debug_symbols``) is controlled separately from the target. Each mode means:
 
--  ``target=editor``: Build with editor, optimized, with debugging code (defines: ``TOOLS_ENABLED``, ``DEBUG_ENABLED``, ``-O2``/``/O2``)
--  ``target=template_debug``: Build with C++ debugging symbols (defines: ``DEBUG_ENABLED``, ``-O2``/``/O2``)
--  ``target=template_release``: Build without symbols (defines: ``-O3``/``/O2``)
+-  ``target=editor``: Build an editor binary (defines ``TOOLS_ENABLED`` and ``DEBUG_ENABLED``)
+-  ``target=template_debug``: Build a debug export template (defines ``DEBUG_ENABLED``)
+-  ``target=template_release``: Build a release export template
 
 The editor is enabled by default in all PC targets (Linux, Windows, macOS),
 disabled for everything else. Disabling the editor produces a binary that can
 run projects but does not include the editor or the Project Manager.
 
+The list of :ref:`command line arguments <doc_command_line_tutorial>`
+available varies depending on the build type.
+
 ::
 
-    scons platform=<platform> target=editor/template_debug/template_release
+    scons platform=<platform> target=editor|template_debug|template_release
 
 .. _doc_introduction_to_the_buildsystem_development_and_production_aliases:
 
