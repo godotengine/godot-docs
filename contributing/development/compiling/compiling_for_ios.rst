@@ -86,3 +86,29 @@ Run
 
 To run on a device or simulator, follow these instructions:
 :ref:`doc_exporting_for_ios`.
+
+Troubleshooting
+---------------
+
+Fatal error: 'cstdint' file not found
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you get a compilation error of this form early on, it's likely because
+the Xcode command line tools installation needs to be repaired after
+a macOS or Xcode update:
+
+::
+
+    ./core/typedefs.h:45:10: fatal error: 'cstdint' file not found
+    45 | #include <cstdint>
+       |          ^~~~~~~~~
+
+Run these two commands to reinstall Xcode command line tools
+(enter your administrator password as needed):
+
+::
+
+    sudo rm -rf /Library/Developer/CommandLineTools
+    sudo xcode-select --install
+
+If it still does not work, try updating Xcode from the Mac App Store and try again.
