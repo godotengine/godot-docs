@@ -104,10 +104,11 @@ call the Godot executable:
     godot --dump-extension-api
 
 The resulting ``extension_api.json`` file will be created in the executable's
-directory. Copy it to the project folder and add ``custom_api_file=<PATH_TO_FILE>``
+directory. Copy it to the project folder and add ``custom_api_file=&lt;PATH_TO_FILE&gt;``
 to the scons command below.
 
-To generate and compile the bindings, use this command (replacing ``<platform>``
+
+To generate and compile the bindings, use this command (replacing ``&lt;platform&gt;``
 with ``windows``, ``linux`` or ``macos`` depending on your OS):
 
 The build process automatically detects the number of CPU threads to use for
@@ -117,7 +118,7 @@ end of the SCons command line where ``N`` is the number of CPU threads to use.
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> custom_api_file=<PATH_TO_FILE>
+    scons platform=&lt;platform&gt; custom_api_file=&lt;PATH_TO_FILE&gt;
     cd ..
 
 This step will take a while. When it is completed, you should have static
@@ -165,7 +166,7 @@ GDExtension node we'll be creating. We will name it ``gdexample.h``:
     #ifndef GDEXAMPLE_H
     #define GDEXAMPLE_H
 
-    #include <godot_cpp/classes/sprite2d.hpp>
+    #include &lt;godot_cpp/classes/sprite2d.hpp&gt;
 
     namespace godot {
 
@@ -216,7 +217,7 @@ Let's implement our functions by creating our ``gdexample.cpp`` file:
 .. code-block:: cpp
 
     #include "gdexample.h"
-    #include <godot_cpp/core/class_db.hpp>
+    #include &lt;godot_cpp/core/class_db.hpp&gt;
 
     using namespace godot;
 
@@ -258,9 +259,9 @@ GDExtension plugin.
 
     #include "gdexample.h"
 
-    #include <gdextension_interface.h>
-    #include <godot_cpp/core/defs.hpp>
-    #include <godot_cpp/godot.hpp>
+    #include &lt;gdextension_interface.h&gt;
+    #include &lt;godot_cpp/core/defs.hpp&gt;
+    #include &lt;godot_cpp/godot.hpp&gt;
 
     using namespace godot;
 
@@ -310,7 +311,7 @@ At last, we need the header file for the ``register_types.cpp`` named
     #ifndef GDEXAMPLE_REGISTER_TYPES_H
     #define GDEXAMPLE_REGISTER_TYPES_H
 
-    #include <godot_cpp/core/class_db.hpp>
+    #include &lt;godot_cpp/core/class_db.hpp&gt;
 
     using namespace godot;
 
@@ -340,9 +341,9 @@ structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
 
 .. code-block:: bash
 
-    scons platform=<platform>
+    scons platform=&lt;platform&gt;
 
-You should now be able to find the module in ``demo/bin/<platform>``.
+You should now be able to find the module in ``demo/bin/&lt;platform&gt``.
 
 When building for iOS, package the module as a static `.xcframework`, you can use
 following commands to do so:
