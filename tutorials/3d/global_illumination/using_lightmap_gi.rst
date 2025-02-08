@@ -355,6 +355,11 @@ Tweaks
   with less noise. The difference is especially noticeable with emissive
   materials or areas that get little to no direct lighting. Each bake quality
   mode can be further adjusted in the Project Settings.
+- **Supersampling:** This creates the lightmap at a higher resolution and then
+  downsamples it. This reduces noise and light leaking, and produces better
+  shadows with small scale details. However, using it will increase bake times and
+  memory usage during lightmap baking. The **Supersampling Factor** changes the size
+  the lightmap is rendered at before downsampling.
 - **Bounces:** The number of bounces to use for indirect lighting. The default
   value (``3``) is a good compromise between bake times and quality. Higher
   values will make light bounce around more times before it stops, which makes
