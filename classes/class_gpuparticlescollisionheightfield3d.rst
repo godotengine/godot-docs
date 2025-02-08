@@ -40,12 +40,28 @@ Properties
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` | ``false``            |
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                                                 | :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>`           | ``1048575``          |
+   +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` | :ref:`resolution<class_GPUParticlesCollisionHeightField3D_property_resolution>`                       | ``2``                |
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`Vector3<class_Vector3>`                                         | :ref:`size<class_GPUParticlesCollisionHeightField3D_property_size>`                                   | ``Vector3(2, 2, 2)`` |
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` | :ref:`update_mode<class_GPUParticlesCollisionHeightField3D_property_update_mode>`                     | ``0``                |
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_heightfield_mask_value<class_GPUParticlesCollisionHeightField3D_method_get_heightfield_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_heightfield_mask_value<class_GPUParticlesCollisionHeightField3D_method_set_heightfield_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -172,6 +188,27 @@ Following the camera has a performance cost, as it will force the heightmap to u
 
 ----
 
+.. _class_GPUParticlesCollisionHeightField3D_property_heightfield_mask:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **heightfield_mask** = ``1048575`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_heightfield_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_heightfield_mask**\ (\ )
+
+The visual layers to account for when updating the heightmap. Only :ref:`MeshInstance3D<class_MeshInstance3D>`\ s whose :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` match with this :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` will be included in the heightmap collision update. By default, all 20 user-visible layers are taken into account for updating the heightmap collision.
+
+\ **Note:** Since the :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` allows for 32 layers to be stored in total, there are an additional 12 layers that are only used internally by the engine and aren't exposed in the editor. Setting :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` using a script allows you to toggle those reserved layers, which can be useful for editor plugins.
+
+To adjust :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` more easily using a script, use :ref:`get_heightfield_mask_value<class_GPUParticlesCollisionHeightField3D_method_get_heightfield_mask_value>` and :ref:`set_heightfield_mask_value<class_GPUParticlesCollisionHeightField3D_method_set_heightfield_mask_value>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GPUParticlesCollisionHeightField3D_property_resolution:
 
 .. rst-class:: classref-property
@@ -218,6 +255,35 @@ The collision heightmap's size in 3D units. To improve heightmap quality, :ref:`
 - :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **get_update_mode**\ (\ )
 
 The update policy to use for the generated heightmap.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_GPUParticlesCollisionHeightField3D_method_get_heightfield_mask_value:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_heightfield_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GPUParticlesCollisionHeightField3D_method_get_heightfield_mask_value>`
+
+Returns ``true`` if the specified layer of the :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` is enabled, given a ``layer_number`` between ``1`` and ``20``, inclusive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticlesCollisionHeightField3D_method_set_heightfield_mask_value:
+
+.. rst-class:: classref-method
+
+|void| **set_heightfield_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_GPUParticlesCollisionHeightField3D_method_set_heightfield_mask_value>`
+
+Based on ``value``, enables or disables the specified layer in the :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>`, given a ``layer_number`` between ``1`` and ``20``, inclusive.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

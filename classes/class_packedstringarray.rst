@@ -440,7 +440,7 @@ Sorts the elements of the array in ascending order.
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array**\ (\ ) |const| :ref:`🔗<class_PackedStringArray_method_to_byte_array>`
 
-Returns a :ref:`PackedByteArray<class_PackedByteArray>` with each string encoded as bytes.
+Returns a :ref:`PackedByteArray<class_PackedByteArray>` with each string encoded as UTF-8. Strings are ``null`` terminated.
 
 .. rst-class:: classref-section-separator
 

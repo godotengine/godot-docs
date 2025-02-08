@@ -784,6 +784,10 @@ Returns whether the node notifies about its global and local transformation chan
 
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_Node3D_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree.
 
+Visibility is checked only in parent nodes that inherit from **Node3D**. If the parent is of any other type (such as :ref:`Node<class_Node>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, or :ref:`Node2D<class_Node2D>`), it is assumed to be visible.
+
+\ **Note:** This method does not take :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` into account, so even if this method returns ``true``, the node might end up not being rendered.
+
 .. rst-class:: classref-item-separator
 
 ----

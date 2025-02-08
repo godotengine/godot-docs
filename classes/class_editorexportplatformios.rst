@@ -50,8 +50,6 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`application/export_project_only<class_EditorExportPlatformIOS_property_application/export_project_only>`                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`application/generate_simulator_library_if_missing<class_EditorExportPlatformIOS_property_application/generate_simulator_library_if_missing>`                                   |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/icon_interpolation<class_EditorExportPlatformIOS_property_application/icon_interpolation>`                                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/min_ios_version<class_EditorExportPlatformIOS_property_application/min_ios_version>`                                                                               |
@@ -634,18 +632,6 @@ Application distribution target (release export).
 :ref:`bool<class_bool>` **application/export_project_only** :ref:`🔗<class_EditorExportPlatformIOS_property_application/export_project_only>`
 
 If ``true``, exports iOS project files without building an XCArchive or ``.ipa`` file. If ``false``, exports iOS project files and builds an XCArchive and ``.ipa`` file at the same time. When combining Godot with Fastlane or other build pipelines, you may want to set this to ``true``.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_application/generate_simulator_library_if_missing:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **application/generate_simulator_library_if_missing** :ref:`🔗<class_EditorExportPlatformIOS_property_application/generate_simulator_library_if_missing>`
-
-If ``true``, and ARM64 simulator library is missing from the export template, it is automatically generated from ARM64 device library.
 
 .. rst-class:: classref-item-separator
 
