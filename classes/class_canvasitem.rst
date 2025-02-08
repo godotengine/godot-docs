@@ -1494,7 +1494,7 @@ Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`
 
 Visibility is checked only in parent nodes that inherit from **CanvasItem**, :ref:`CanvasLayer<class_CanvasLayer>`, and :ref:`Window<class_Window>`. If the parent is of any other type (such as :ref:`Node<class_Node>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, or :ref:`Node3D<class_Node3D>`), it is assumed to be visible.
 
-\ **Note:** This method does not take :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>` into account, so even if this method returns ``true`` the node might end up not being rendered.
+\ **Note:** This method does not take :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>` into account, so even if this method returns ``true``, the node might end up not being rendered.
 
 .. rst-class:: classref-item-separator
 

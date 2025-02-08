@@ -3027,9 +3027,36 @@ Port used for file server when exporting project with remote file system.
 
 :ref:`String<class_String>` **filesystem/import/blender/blender_path** :ref:`🔗<class_EditorSettings_property_filesystem/import/blender/blender_path>`
 
-The path to the directory containing the Blender executable used for converting the Blender 3D scene files ``.blend`` to glTF 2.0 format during import. Blender 3.0 or later is required.
+The path to the Blender executable used for converting the Blender 3D scene files ``.blend`` to glTF 2.0 format during import. Blender 3.0 or later is required.
 
 To enable this feature for your specific project, use :ref:`ProjectSettings.filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>`.
+
+If this setting is empty, Blender's default paths will be detected and used automatically if present in this order:
+
+\ **Windows:**\ 
+
+::
+
+    - C:\Program Files\Blender Foundation\blender.exe
+    - C:\Program Files (x86)\Blender Foundation\blender.exe
+
+\ **macOS:**\ 
+
+::
+
+    - /opt/homebrew/bin/blender
+    - /opt/local/bin/blender
+    - /usr/local/bin/blender
+    - /usr/local/opt/blender
+    - /Applications/Blender.app/Contents/MacOS/Blender
+
+\ **Linux/\*BSD:**\ 
+
+::
+
+    - /usr/bin/blender
+    - /usr/local/bin/blender
+    - /opt/blender/bin/blender
 
 .. rst-class:: classref-item-separator
 

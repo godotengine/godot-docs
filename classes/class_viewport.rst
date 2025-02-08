@@ -217,6 +217,10 @@ Methods
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`is_input_handled<class_Viewport_method_is_input_handled>`\ (\ ) |const|                                                                                                                                                                                         |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                        | :ref:`notify_mouse_entered<class_Viewport_method_notify_mouse_entered>`\ (\ )                                                                                                                                                                                         |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                        | :ref:`notify_mouse_exited<class_Viewport_method_notify_mouse_exited>`\ (\ )                                                                                                                                                                                           |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                        | :ref:`push_input<class_Viewport_method_push_input>`\ (\ event\: :ref:`InputEvent<class_InputEvent>`, in_local_coords\: :ref:`bool<class_bool>` = false\ )                                                                                                             |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                        | :ref:`push_text_input<class_Viewport_method_push_text_input>`\ (\ text\: :ref:`String<class_String>`\ )                                                                                                                                                               |
@@ -2355,6 +2359,34 @@ Returns whether the current :ref:`InputEvent<class_InputEvent>` has been handled
 This is usually done as part of input handling methods like :ref:`Node._input<class_Node_private_method__input>`, :ref:`Control._gui_input<class_Control_private_method__gui_input>` or others, as well as in corresponding signal handlers.
 
 If :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>` is set to ``false``, this method will try finding the first parent viewport that is set to handle input locally, and return its value for :ref:`is_input_handled<class_Viewport_method_is_input_handled>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_notify_mouse_entered:
+
+.. rst-class:: classref-method
+
+|void| **notify_mouse_entered**\ (\ ) :ref:`🔗<class_Viewport_method_notify_mouse_entered>`
+
+Inform the Viewport that the mouse has entered its area. Use this function before sending an :ref:`InputEventMouseButton<class_InputEventMouseButton>` or :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` to the **Viewport** with :ref:`push_input<class_Viewport_method_push_input>`. See also :ref:`notify_mouse_exited<class_Viewport_method_notify_mouse_exited>`.
+
+\ **Note:** In most cases, it is not necessary to call this function because :ref:`SubViewport<class_SubViewport>` nodes that are children of :ref:`SubViewportContainer<class_SubViewportContainer>` are notified automatically. This is only necessary when interacting with viewports in non-default ways, for example as textures in :ref:`TextureRect<class_TextureRect>` or with an :ref:`Area3D<class_Area3D>` that forwards input events.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_notify_mouse_exited:
+
+.. rst-class:: classref-method
+
+|void| **notify_mouse_exited**\ (\ ) :ref:`🔗<class_Viewport_method_notify_mouse_exited>`
+
+Inform the Viewport that the mouse has left its area. Use this function when the node that displays the viewport notices the mouse has left the area of the displayed viewport. See also :ref:`notify_mouse_entered<class_Viewport_method_notify_mouse_entered>`.
+
+\ **Note:** In most cases, it is not necessary to call this function because :ref:`SubViewport<class_SubViewport>` nodes that are children of :ref:`SubViewportContainer<class_SubViewportContainer>` are notified automatically. This is only necessary when interacting with viewports in non-default ways, for example as textures in :ref:`TextureRect<class_TextureRect>` or with an :ref:`Area3D<class_Area3D>` that forwards input events.
 
 .. rst-class:: classref-item-separator
 

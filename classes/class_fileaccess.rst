@@ -742,7 +742,7 @@ Returns ``true``, if file ``hidden`` attribute is set.
 
 :ref:`int<class_int>` **get_length**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_length>`
 
-Returns the size of the file in bytes.
+Returns the size of the file in bytes. For a pipe, returns the number of bytes available for reading from the pipe.
 
 .. rst-class:: classref-item-separator
 

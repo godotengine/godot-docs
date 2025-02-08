@@ -1487,7 +1487,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/global_illumination/voxel_gi/quality<class_ProjectSettings_property_rendering/global_illumination/voxel_gi/quality>`                                                                       | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_performance/max_rays_per_pass<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_pass>`                                                 | ``32``                                                                                           |
+   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_performance/max_rays_per_pass<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_pass>`                                                 | ``4``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_performance/max_rays_per_probe_pass<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_probe_pass>`                                     | ``64``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -11154,9 +11154,11 @@ The VoxelGI quality to use. High quality leads to more precise lighting and bett
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_performance/max_rays_per_pass** = ``32`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_pass>`
+:ref:`int<class_int>` **rendering/lightmapping/bake_performance/max_rays_per_pass** = ``4`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_pass>`
 
 The maximum number of rays that can be thrown per pass when baking lightmaps with :ref:`LightmapGI<class_LightmapGI>`. Depending on the scene, adjusting this value may result in higher GPU utilization when baking lightmaps, leading to faster bake times.
+
+\ **Note:** Using a value that is too high for your system can cause crashes due to the GPU being unresponsive for long periods of time, and the graphics driver being reset by the OS.
 
 .. rst-class:: classref-item-separator
 
@@ -11170,6 +11172,8 @@ The maximum number of rays that can be thrown per pass when baking lightmaps wit
 
 The maximum number of rays that can be thrown per pass when baking dynamic object lighting in :ref:`LightmapProbe<class_LightmapProbe>`\ s with :ref:`LightmapGI<class_LightmapGI>`. Depending on the scene, adjusting this value may result in higher GPU utilization when baking lightmaps, leading to faster bake times.
 
+\ **Note:** Using a value that is too high for your system can cause crashes due to the GPU being unresponsive for long periods of time, and the graphics driver being reset by the OS.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -11182,6 +11186,8 @@ The maximum number of rays that can be thrown per pass when baking dynamic objec
 
 The maximum number of retry rays that can be thrown per pass when hitting a transparent surface when baking lightmaps with :ref:`LightmapGI<class_LightmapGI>`. Depending on the scene, reducing this value may lead to faster bake times.
 
+\ **Note:** Using a value that is too high for your system can cause crashes due to the GPU being unresponsive for long periods of time, and the graphics driver being reset by the OS.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -11192,7 +11198,9 @@ The maximum number of retry rays that can be thrown per pass when hitting a tran
 
 :ref:`int<class_int>` **rendering/lightmapping/bake_performance/region_size** = ``512`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_performance/region_size>`
 
-The region size to use when baking lightmaps with :ref:`LightmapGI<class_LightmapGI>`.
+The region size to use when baking lightmaps with :ref:`LightmapGI<class_LightmapGI>`. The specified value is rounded up to the nearest power of 2.
+
+\ **Note:** Using a value that is too high for your system can cause crashes due to the GPU being unresponsive for long periods of time, and the graphics driver being reset by the OS.
 
 .. rst-class:: classref-item-separator
 
