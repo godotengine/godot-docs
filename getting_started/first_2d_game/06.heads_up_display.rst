@@ -298,7 +298,7 @@ Now all mobs will be in the "mobs" group.
 
 .. image:: img/scene_group_mobs.webp
 
-We can then add the following line to the ``new_game()`` function in ``Main``:
+We can then add the following line to the ``game_over()`` function in ``Main``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
