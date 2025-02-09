@@ -252,12 +252,8 @@ Your complete ``sprite_2d.gd`` code should look like the following.
         }
     }
 
-Run the scene now and click the button to see the sprite start and stop.
-
-.. note:: If you try to run your scene and you don't see the button you created, you may have
-          run the default scene by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS) rather than the 
-          current scene by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS).  Make sure you have the
-          ``node_2d`` scene selected and then press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
+Run the currrent scene by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS),
+and click the button to see the sprite start and stop.
 
 Connecting a signal via code
 ----------------------------
