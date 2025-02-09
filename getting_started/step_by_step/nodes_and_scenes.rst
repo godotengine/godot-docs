@@ -163,13 +163,13 @@ Setting the main scene
 ----------------------
 
 To run our test scene, we used the **Run Current Scene** button. Another button 
-next to it allows you to set and run the project's **main scene**. 
-You can press :kbd:`F5` (:kbd:`Cmd + B` on macOS) to do so.
+next to it, **Run Project**, allows you to set and run the project's 
+**main scene**. You can also press :kbd:`F5` (:kbd:`Cmd + B` on macOS) to do so.
 
 .. image:: img/nodes_and_scenes_12_play_button.webp
 
-.. note:: Running the project's **main scene** is distinct from running the 
-          **current scene**. If you encounter unexpected behavior, check 
+.. note:: Running the project's *main scene* is distinct from running the 
+          *current scene*. If you encounter unexpected behavior, check 
           to ensure you are running the correct scene.
 
 A popup window appears and invites you to select the main scene.
