@@ -252,7 +252,7 @@ Your complete ``sprite_2d.gd`` code should look like the following.
         }
     }
 
-Run the currrent scene by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS),
+Run the current scene by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS),
 and click the button to see the sprite start and stop.
 
 Connecting a signal via code
