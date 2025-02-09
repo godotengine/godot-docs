@@ -71,8 +71,8 @@ a Godot scene file, which is what gets used when you run/export your game.
 .. warning::
 
     If your model contains blend shapes (also known as "shape keys" and "morph
-    targets"), your glTF export setting **Export Deformation Bones Only** needs
-    to be configured to **Enabled** under the Animation export configurations.
+    targets"), your glTF export setting **Data > Armature > Export Deformation
+    Bones Only** needs to be configured to **Enabled**.
 
     Exporting non-deforming bones anyway will lead to incorrect shading.
 
