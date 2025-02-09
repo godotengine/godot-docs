@@ -48,7 +48,7 @@ Prerequisites
 -------------
 
 This step-by-step tutorial is intended for beginners who followed the complete
-:ref:`Getting Started <toc-learn-step_by_step>`.
+:ref:`doc_step_by_step`.
 
 If you're an experienced programmer, you can find the complete demo's source
 code here: `Dodge the Creeps source code
