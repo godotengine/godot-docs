@@ -85,7 +85,7 @@ help on one of the many `active
 communities <https://godotengine.org/community>`_.
 
 The best place to ask questions and find already answered ones is the
-official `Questions & Answers <https://ask.godotengine.org/>`_ site. These
+official `Godot Forum <https://forum.godotengine.org/>`_. These
 responses show up in search engine results and get saved, allowing other users
 to benefit from discussions on the platform. Once you have asked a question there,
 you can share its link on other social platforms. Before asking a question, be
