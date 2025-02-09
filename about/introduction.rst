@@ -71,10 +71,10 @@ This documentation is organized into several sections:
 - **About** contains this introduction as well as
   information about the engine, its history, its licensing, authors, etc. It
   also contains the :ref:`doc_faq`.
-- **Getting Started** contains all necessary information on using the
-  engine to make games. It starts with the :ref:`Step by step
-  <toc-learn-step_by_step>` tutorial which should be the entry point for all
-  new users. **This is the best place to start if you're new!**
+- **Getting Started** contains all necessary information on using the engine to
+  make games. It starts with the :ref:`doc_getting_started_intro` section which
+  should be the entry point for all new users. **This is the best place to start
+  if you're new!**
 - The **Manual** can be read or referenced as needed,
   in any order. It contains feature-specific tutorials and documentation.
 - **Contributing** gives information related to contributing to

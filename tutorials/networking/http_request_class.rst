@@ -24,12 +24,6 @@ be loaded using
 So HTTP may be useful for your game's login system, lobby browser,
 to retrieve some information from the web or to download game assets.
 
-This tutorial assumes some familiarity with Godot and the Godot Editor.
-Refer to the :ref:`Introduction <toc-learn-introduction>` and the
-:ref:`Step by step <toc-learn-step_by_step>` tutorial, especially its
-:ref:`Nodes and Scenes <doc_nodes_and_scenes>` and
-:ref:`Creating your first script <doc_scripting_first_script>` pages if needed.
-
 HTTP requests in Godot
 ----------------------
 
