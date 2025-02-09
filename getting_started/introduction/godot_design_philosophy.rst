@@ -76,8 +76,7 @@ the ability to hot-reload locally and on remote devices, etc.
 
 The goal is to offer a full package to create games and a continuous
 user experience. You can still work with external programs as long as
-there is an import plugin available in Godot for it. Or you can create one, like the `Tiled
-Map Importer <https://github.com/vnen/godot-tiled-importer>`__.
+there is an import plugin available in Godot for it.
 
 That is also partly why Godot offers its own programming language
 GDScript along with C#. GDScript is designed for the needs
@@ -95,11 +94,6 @@ Note that the 3D workspace doesn't feature as many tools as the 2D workspace.
 You'll need external programs or add-ons to edit terrains, animate complex characters, and so on.
 Godot provides a complete API to extend the editor's functionality using
 game code. See `The Godot editor is a Godot game`_ below.
-
-|image4|
-
-*A State Machine editor plugin in Godot 2 by kubecz3k. It lets you
-manage states and transitions visually.*
 
 Open source
 -----------
@@ -176,5 +170,4 @@ interfaces over your 3D world.
 .. |image0| image:: img/engine_design_01.png
 .. |image1| image:: img/engine_design_02.png
 .. |image2| image:: img/engine_design_03.png
-.. |image4| image:: img/engine_design_fsm_plugin.png
 .. |image5| image:: img/engine_design_rpg_in_a_box.png
