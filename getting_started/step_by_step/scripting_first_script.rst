@@ -26,9 +26,8 @@ The equivalent C# code has been included in another tab for convenience.
 .. image:: img/scripting_first_script_rotating_godot.gif
 
 .. seealso:: To learn more about GDScript, its keywords, and its syntax, head to
-             the :ref:`GDScript reference<doc_gdscript>`.
-
-.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
+             the :ref:`doc_gdscript` section. To learn more about C#,
+             head to the :ref:`doc_c_sharp` section.
 
 Project setup
 -------------

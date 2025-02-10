@@ -451,16 +451,16 @@ Scripting
 - Support for :ref:`cross-language scripting <doc_cross_language_scripting>`.
 - Many 2D, 3D and 4D linear algebra data types such as vectors and transforms.
 
-:ref:`GDScript: <toc-learn-scripting-gdscript>`
+:ref:`GDScript: <doc_gdscript>`
 
-- :ref:`High-level interpreted language <doc_gdscript>` with
+- :ref:`High-level interpreted language <doc_gdscript_reference>` with
   :ref:`optional static typing <doc_gdscript_static_typing>`.
 - Syntax inspired by Python. However, GDScript is **not** based on Python.
 - Syntax highlighting is provided on GitHub.
 - :ref:`Use threads <doc_using_multiple_threads>` to perform asynchronous actions
   or make use of multiple processor cores.
 
-:ref:`C#: <toc-learn-scripting-C#>`
+:ref:`C#: <doc_c_sharp>`
 
 - Packaged in a separate binary to keep file sizes and dependencies down.
 - Supports .NET 8 and higher.

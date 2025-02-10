@@ -133,7 +133,7 @@ officially supported .NET option.
     Android and iOS platform support is available as of Godot 4.2, but is
     experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
-.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
+.. seealso:: To learn more about C#, head to the :ref:`doc_c_sharp` section.
 
 C++ via GDExtension
 ~~~~~~~~~~~~~~~~~~~

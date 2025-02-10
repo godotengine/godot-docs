@@ -817,7 +817,7 @@ first line of the script.
 
 Follow with the optional ``@icon`` then the ``class_name`` if necessary. You can turn a
 GDScript file into a global type in your project using ``class_name``. For more
-information, see :ref:`doc_gdscript`.
+information, see :ref:`doc_gdscript_basics_class_name`.
 
 Then, add the ``extends`` keyword if the class extends a built-in type.
 

@@ -170,7 +170,7 @@ code, consider moving those calculations to a faster language.
 GDScript
 ~~~~~~~~
 
-:ref:`GDScript <toc-learn-scripting-gdscript>` is designed to be easy to use and iterate,
+:ref:`GDScript <doc_gdscript>` is designed to be easy to use and iterate,
 and is ideal for making many types of games. However, in this language, ease of
 use is considered more important than performance. If you need to make heavy
 calculations, consider moving some of your project to one of the other
@@ -179,7 +179,7 @@ languages.
 C#
 ~~
 
-:ref:`C# <toc-learn-scripting-C#>` is popular and has first-class support in Godot. It
+:ref:`C# <doc_c_sharp>` is popular and has first-class support in Godot. It
 offers a good compromise between speed and ease of use. Beware of possible
 garbage collection pauses and leaks that can occur during gameplay, though. A
 common approach to workaround issues with garbage collection is to use *object

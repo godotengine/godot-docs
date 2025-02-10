@@ -166,7 +166,8 @@ and :ref:`GodotObject.Set() <class_Object_method_set>`. The first argument is th
 
 Keep in mind that when setting a field value you should only use types the
 GDScript side knows about.
-Essentially, you want to work with built-in types as described in :ref:`doc_gdscript` or classes extending :ref:`class_Object`.
+Essentially, you want to work with built-in types as described in
+:ref:`doc_gdscript_builtin_types` or classes extending :ref:`class_Object`.
 
 Calling methods
 ---------------
