@@ -84,7 +84,7 @@ Software Development Kits (SDK) in the engine.
 Of course, you can also directly add modules and features to the engine, as it's
 completely free and open source.
 
-.. doc_learning_programming
+.. _doc_introduction_learning_programming:
 
 What do I need to know to use Godot?
 ------------------------------------
