@@ -24,7 +24,7 @@ Searching
 In the left sidebar is the **search bar + settings** section, and the **assets** section 
 takes up the main content area on the right. Below the search bar, you can filter assets 
 by **category** (such as 2D tools, scripts and demos), **engine version**, **license**, 
-**sorting order** (by update date, by name, etc.) and **support level**.
+**sorting order** (by update date, by name, etc.), and **support level**.
 
 While most other filter settings should be fairly self-explanatory, it's worth
 going over what "support level" means in the Asset Library.
