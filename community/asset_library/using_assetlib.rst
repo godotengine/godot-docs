@@ -21,10 +21,12 @@ AssetLib - at the moment, it's empty, as we are not logged in.
 Searching
 ~~~~~~~~~
 
-In the left sidebar is the **search bar + settings** section, and the **assets** section 
-takes up the main content area on the right. Below the search bar, you can filter assets 
-by **category** (such as 2D tools, scripts and demos), **engine version**, **license**, 
-**sorting order** (by update date, by name, etc.), and **support level**.
+In the left sidebar is the **search bar + settings** section, and the
+**assets** section takes up the main content area on the right. Below
+the search bar, you can filter assets by **category** (such as 2D tools,
+scripts and demos), **support level**, **engine version**, and **license**.
+You can also change the **sorting order** to sort by license, name, or
+update date.
 
 While most other filter settings should be fairly self-explanatory, it's worth
 going over what "support level" means in the Asset Library.
@@ -181,18 +183,18 @@ elsewhere (such as downloading them directly from the AssetLib web frontend),
 which will take you through the same package installation procedure as with the
 assets downloaded directly via Godot that we just covered.
 
-.. |image0| image:: img/assetlib_website.png
-.. |image1| image:: img/assetlib_search.png
-.. |image2| image:: img/assetlib_asset.png
-.. |image3| image:: img/assetlib_register-login.png
-.. |image4| image:: img/assetlib_register.png
-.. |image5| image:: img/assetlib_login.png
-.. |image6| image:: img/assetlib_login_header.png
-.. |image7| image:: img/assetlib_editor_workspace.png
-.. |image8| image:: img/assetlib_editor.png
-.. |image9| image:: img/assetlib_editor_asset.png
-.. |image10| image:: img/assetlib_editor_download.png
-.. |image11| image:: img/assetlib_editor_installer.png
-.. |image12| image:: img/assetlib_editor_installer_error.png
-.. |image13| image:: img/assetlib_editor_installer_success.png
+.. |image0| image:: img/assetlib_website.webp
+.. |image1| image:: img/assetlib_search.webp
+.. |image2| image:: img/assetlib_asset.webp
+.. |image3| image:: img/assetlib_register-login.webp
+.. |image4| image:: img/assetlib_register.webp
+.. |image5| image:: img/assetlib_login.webp
+.. |image6| image:: img/assetlib_login_header.webp
+.. |image7| image:: img/assetlib_editor_workspace.webp
+.. |image8| image:: img/assetlib_editor.webp
+.. |image9| image:: img/assetlib_editor_asset.webp
+.. |image10| image:: img/assetlib_editor_download.webp
+.. |image11| image:: img/assetlib_editor_installer.webp
+.. |image12| image:: img/assetlib_editor_installer_error.webp
+.. |image13| image:: img/assetlib_editor_installer_success.webp
 .. |image14| image:: img/assetlib_editor_projects.webp
