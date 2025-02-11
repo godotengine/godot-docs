@@ -127,6 +127,7 @@ describe an issue or pull request.
 -  *GUI*: relates to GUI (Control) nodes or to Nodes that compose user interfaces.
 -  *Import*: relates to the resource import system.
 -  *Input*: relates to the input system.
+-  *I18n*: relates to internationalization.
 -  *Multiplayer*: relates to multiplayer (high-level networking) systems.
 -  *Navigation*: relates to the navigation system (including A* and navmeshes).
 -  *Network*: relates to (low-level) networking.
