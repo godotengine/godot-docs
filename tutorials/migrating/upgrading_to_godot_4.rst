@@ -28,18 +28,9 @@ Godot 4.0, and :ref:`doc_list_of_features` for a list of all features in Godot.
 Disadvantages of upgrading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you don't *need* any features present in Godot 4.0, you may want to stay on
+If you don't *need* any features present in Godot 4.x, you may want to stay on
 Godot 3.x for the following reasons:
 
-- `Godot 3.x is tried and true, while Godot 4 remains in its early stages. <https://godotengine.org/article/release-management-4-0-and-beyond>`__
-
-  - Godot 4.0 is expected to contain workflow and performance issues that Godot
-    3.x doesn't have. These issues will be ironed out over time in future
-    Godot 4.x releases.
-
-- Godot 4 has fewer third-party tutorials available compared to Godot 3.x.
-  If you're new to game engines, you may have a better experience using Godot 3.x
-  as a result.
 - Godot 4's baseline hardware requirements (such as memory usage) are slightly
   higher, both for the editor and exported projects. This was required for the
   implementation of some core optimizations.
