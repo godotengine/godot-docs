@@ -1951,6 +1951,20 @@ If you want to use ``extends`` too, you can keep both on the same line::
 
     class_name MyNode extends Node
 
+Named classes are globally registered, hence they become available in other scripts without the need to `load` or `preload` them. For example::
+
+    # In a file 'game.gd'.
+
+    # If you uncomment the next line, you will trigger a warning:
+    # The variable "Character" has the same name as a global class defined in "character.gd".
+    # var Character = load("character.gd")
+
+    var player: Character
+
+    func new_game() -> void:
+        player = Character.new()
+
+
 .. note::
 
     Godot initializes non-static variables every time you create an instance,
