@@ -10,27 +10,39 @@ The warning message is:
 When this warning occurs
 ------------------------
 
-The :ref:`assert() <class_@GDScript_method_assert>` keyword can be used to ensure that a given condition is met before allowing code execution to continue. If the first argument passed to it evaluates to ``true``, the rest of the function will run as expected; if it is ``false``, then the project will stop.
+The :ref:`assert() <class_@GDScript_method_assert>` keyword can be used to ensure that a given condition is met before allowing code execution to continue. If the first argument passed to it is truthy, the rest of the function will run as expected; if it is falsy, then the project will stop.
 
-If ``assert()`` is passed an expression that is guaranteed to be ``false``, then the ``assert()`` call will always stop the project.
+If ``assert()`` is passed something guaranteed to be falsy, then the ``assert()`` call will always stop the project.
 
 .. code-block::
 
-    # The boolean false will always be false, so this assert will always stop
-    # the program.
-    assert(false, "False is false")
+    # Zero always evaluates to false.
+    assert(0, "Zero is falsy")
 
-    # Likewise, 5 will never be 6, so this assert will always stop the program.
-    assert(5 == 6, "5 isn't equal to 6")
+    # Likewise, an empty string always evaluates to false.
+    assert("", "An empty string is falsy")
 
-    # This line of code won't be executed in debug builds because the editor
-    # will have stopped at the assert calls above.
-    print("Hello, world!")
+.. note::
+
+    Godot will *not* raise this warning if a literal falsy boolean is passed:
+
+    .. code-block::
+
+        # Despite false being passed, this won't raise ASSERT_ALWAYS_FALSE.
+        assert(false, "False is false")
+
+        # This evaluates to a boolean which is false, so it also won't raise
+        # the warning.
+        assert(3 == 4, "3 isn't equal to 4")
+
+    This is because ``assert(false)`` calls are often used in development to forcibly halt program execution and avoid strange errors later on.
+
+    See `issue #58087 <https://github.com/godotengine/godot/issues/58087>`_ for more information.
 
 How to fix this warning
 -----------------------
 
-Assuming you want code following the ``assert()`` to run, remove it from your code. If you do want code execution to stop at that point, :ref:`consider using breakpoints instead <doc_debugger_tools_and_options>`.
+Assuming you want code following the ``assert()`` to run, remove it from your code. If you do want code execution to stop at that point, replace the condition with ``false``, or :ref:`consider using breakpoints instead <doc_debugger_tools_and_options>`.
 
 
 
