@@ -136,7 +136,6 @@ and ``get_slide_collision()``:
         var collision = get_slide_collision(i)
         print("I collided with ", collision.get_collider().name)
 
-    # if statement:
     move_and_slide()
     for i in get_slide_collision_count():
         var collision = get_slide_collision(i)
