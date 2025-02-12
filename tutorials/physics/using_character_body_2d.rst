@@ -159,6 +159,16 @@ and ``get_slide_collision()``:
         GD.Print("I collided with ", ((Node)collision.GetCollider()).Name);
     }
 
+    MoveAndSlide();
+    for (int i = 0; i < GetSlideCollisionCount(); i++)
+    {
+        var collision = GetSlideCollision(i);
+        if (((Node)collision.Collider).Name == "TileMapLayer" || ((Node)collision.Collider).Name == "RigidBody2D")
+        {
+            GD.Print("I collided with ",  ((Node)collision.GetCollider()).Name);
+        }
+    }
+
 .. note:: `get_slide_collision_count()` only counts times the body has collided and changed direction.
 
 See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
