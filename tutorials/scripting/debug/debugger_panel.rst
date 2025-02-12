@@ -197,6 +197,11 @@ parallel on the GPU. This generally means that disabling only one of the
 features involved won't improve performance as much as anticipated, as the other
 task still needs to be performed sequentially.
 
+.. note::
+
+    The Visual Profiler is not supported when using the Compatibility renderer
+    on macOS, due to platform limitations.
+
 Network Profiler
 ----------------
 
