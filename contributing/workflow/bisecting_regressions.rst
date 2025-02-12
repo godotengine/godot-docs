@@ -30,17 +30,7 @@ Before using Git's ``bisect`` command, we strongly recommend trying to reproduce
 the bug with an older (or newer) official release. This greatly reduces the
 range of commits that potentially need to be built from source and tested.
 You can find binaries of official releases, as well as alphas, betas,
-and release candidates `here <https://downloads.tuxfamily.org/godotengine/>`__.
-
-If you have experience with Godot 3.x and can reproduce an issue with Godot 4.0,
-we recommend trying to reproduce the issue in the latest Godot 3.x version (if
-the feature exhibiting the bug is present in 3.x). This can be used to check
-whether the issue is a regression in 4.0 or not.
-
-- If the issue **is present** in 3.x, then you'll need to check whether the issue
-  occurs in older 3.x versions as well.
-- If the issue is **not present** in 3.x, then you can try older 4.0 alphas and
-  betas to determine when the regression started.
+and release candidates `here <https://godotengine.org/download/archive/>`__.
 
 .. danger::
 
@@ -81,57 +71,31 @@ Determine the commit hashes
 
 To start bisecting, you must first determine the commit hashes (identifiers) of
 the "bad" and "good" build. "bad" refers to the build that exhibits the bug,
-whereas "good" refers to the version that doesn't exhibit the bug. If you're
-using a pre-release build as the "good" or "bad" build, browse the `download
-mirror <https://downloads.tuxfamily.org/godotengine/>`__, go to the folder that
-contains the pre-release you downloaded and look for the ``README.txt`` file.
-The commit hash is written inside that file.
+whereas "good" refers to the version that doesn't exhibit the bug. 
 
-If you're using a stable release as the "good" or "bad" build, use one of the
-following commit hashes depending on the version:
+You can use either a commit hash (like ``06acfccf8``), the tag of a stable
+release (like ``4.2.1-stable``), or a branch like ``master``.
 
-.. code-block:: none
+If you're using a pre-release build as the "good" or "bad" build, you can find
+the commit hash in the Project Manager in the lower-right corner, or in in the
+**Help > About Godot** dialog in the Godot editor. The version information will
+look something like ``v4.4.beta3.official [06acfccf8]``, and the commit hash is
+within the brackets, in this case ``06acfccf8``. You can click on the version
+information to copy it, including the commit hash.
 
-    4.1.1-stable
-    4.1-stable
-    4.0.3-stable
-    4.0.2-stable
-    4.0.1-stable
-    4.0-stable
-    3.5.2-stable
-    3.5.1-stable
-    3.5-stable
-    3.4.5-stable
-    3.4.4-stable
-    3.4.3-stable
-    3.4.2-stable
-    3.4.1-stable
-    3.4-stable
-    3.3.4-stable
-    3.3.3-stable
-    3.3.2-stable
-    3.3.1-stable
-    3.3-stable
-    3.2-stable
-    3.1-stable
-    3.0-stable
+Alternately, you can browse the `interactive changelog
+<https://godotengine.github.io/godot-interactive-changelog/>`__ to find commits
+for all releases, including development builds. The commits will be listed as a
+range, like ``commits: a013481b0...06acfccf8``, and the second commit is the one
+you should use for bisecting. You can also browse the `Godot Archive
+<https://godotengine.org/download/archive/>`__, and find the commit hash within
+the release page linked from the **News** button.
 
-You can also use this Bash function to retrieve the Git commit hash of a
-pre-release build (add it to your ``$HOME/.bashrc`` or similar):
-
-::
-
-    gd_snapshot_commit() {
-        curl -s https://downloads.tuxfamily.org/godotengine/$1/$2/README.txt \
-            | grep 'from commit' \
-            | sed 's/^Built from commit \(.*\)\.$/\1/'
-    }
-
-Example usage:
-
-.. code-block:: shell
-
-    gd_snapshot_commit 4.0 beta4
+If you're using a stable release as the "good" or "bad" build, you can use the
+tag of that release directly, such as ``4.2-stable`` or ``4.2.1-stable``. A full
+list of release tags is available `on GitHub
+<https://github.com/godotengine/godot/tags>`__, and you can also find the actual
+commit hash that corresponds to a stable release there.
 
 To refer to the latest state of the master branch, you can use ``master``
 instead of a commit hash. Note that unlike tagged releases or snapshot commit
@@ -193,7 +157,7 @@ regression appeared. Write this commit hash as a comment to the GitHub issue
 you've bisected. This will help in solving the issue. Thanks again for
 contributing to Godot :)
 
-.. note::
+.. seealso::
 
     You can read the full documentation on ``git bisect``
     `here <https://git-scm.com/docs/git-bisect>`__.
