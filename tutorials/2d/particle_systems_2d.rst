@@ -34,7 +34,7 @@ node properties in CPUParticles2D (with the exception of the trail settings).
 
 Going forward there are no plans to add new features to CPUParticles2D, though
 pull requests to add features already in GPUParticles2D will be accepted. For
-that reason we recommend using GPUParticles3D unless you have an explicit reason
+that reason we recommend using GPUParticles2D unless you have an explicit reason
 not to.
 
 You can convert a CPUParticles2D node into a GPUParticles2D node by clicking on
