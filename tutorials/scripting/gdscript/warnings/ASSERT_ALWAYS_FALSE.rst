@@ -37,7 +37,7 @@ If ``assert()`` is passed something guaranteed to be falsy, then the ``assert()`
 
     This is because ``assert(false)`` calls are often used in development to forcibly halt program execution and avoid strange errors later on.
 
-    See `issue #58087 <https://github.com/godotengine/godot/issues/58087>`_ for more information.
+    See `GH-58087 <https://github.com/godotengine/godot/issues/58087>`_ for more information.
 
 How to fix this warning
 -----------------------
