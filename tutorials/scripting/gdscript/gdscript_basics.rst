@@ -1951,19 +1951,24 @@ If you want to use ``extends`` too, you can keep both on the same line::
 
     class_name MyNode extends Node
 
-Named classes are globally registered, hence they become available in other scripts without the need to `load` or `preload` them. For example::
+Named classes are globally registered, which means they become available to use
+in other scripts without the need to ``load`` or ``preload`` them:
 
-    # In a file 'game.gd'.
+.. code-block:: gdscript
 
-    # If you uncomment the next line, you will trigger a warning:
-    # The variable "Character" has the same name as a global class defined in "character.gd".
-    # var Character = load("character.gd")
+    var player
 
-    var player: Character
-
-    func new_game() -> void:
+    func _ready():
         player = Character.new()
 
+Using the name of a named class as a variable name will cause a
+:ref:`SHADOWED_GLOBAL_IDENTIFIER <class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier>`
+warning. For example, using ``Character`` as a variable name will shadow the
+``Character`` class you just defined, and cause a warning:
+
+.. code-block:: gdscript
+
+    var Character
 
 .. note::
 
