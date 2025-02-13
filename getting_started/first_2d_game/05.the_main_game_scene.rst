@@ -154,13 +154,10 @@ everything up for a new game:
 
 Now to connect the ``timeout()`` signal of each Timer node (``StartTimer``,
 ``ScoreTimer``, and ``MobTimer``) to the main script. For each of the three
-timers, select the timer within the Main node in the Scene dock, and then
-access the Node dock on the sidebar, making sure to have the Signals tab
-selected in the Node dock, then find and double-click the ``timeout`` signal
-in the list (or right-click and select "Connect..."). This will open a new
-signal connection dialog. The default settings in this dialog should be fine,
-so select 'Connect' to resolve the dialog box and create a new signal
-connection.
+timers, select the timer in the Scene dock, open the Signals tab of the Node
+dock, then double-click the ``timeout()`` signal in the list. This will open a new
+signal connection dialog. The default settings in this dialog should be fine, so
+select **Connect** to create a new signal connection.
 
 Once all three timers have this set up, you should be able to see each timer
 have a Signal connection for their respective ``timeout()`` signal, showing in
