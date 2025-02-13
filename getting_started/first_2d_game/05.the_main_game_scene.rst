@@ -152,7 +152,7 @@ everything up for a new game:
         GetNode<Timer>("StartTimer").Start();
     }
 
-Now to connect the ``timeout()`` signal of each Timer node (``StartTimer``,
+Now we'll connect the ``timeout()`` signal of each Timer node (``StartTimer``,
 ``ScoreTimer``, and ``MobTimer``) to the main script. For each of the three
 timers, select the timer in the Scene dock, open the Signals tab of the Node
 dock, then double-click the ``timeout()`` signal in the list. This will open a new
