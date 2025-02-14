@@ -61,8 +61,8 @@ which the player wants to turn. A value of ``0`` means the player isn't pressing
 the left or the right arrow key. A value of ``1`` means the player wants to turn
 right, and ``-1`` means they want to turn left.
 
-To produce these values, we introduce conditions and the use of ``Input``. A
-condition starts with the ``if`` keyword in GDScript and ends with a colon. The
+To produce these values, we introduce conditional statements and the use of ``Input``.
+A conditional statement starts with the ``if`` keyword in GDScript and ends with a colon. The
 condition is the expression between the keyword and the colon at the end of the
 line.
 
