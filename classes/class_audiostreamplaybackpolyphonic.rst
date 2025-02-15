@@ -19,7 +19,7 @@ Playback instance for :ref:`AudioStreamPolyphonic<class_AudioStreamPolyphonic>`.
 Description
 -----------
 
-Playback instance for :ref:`AudioStreamPolyphonic<class_AudioStreamPolyphonic>`. After setting the ``stream`` property of :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, the playback instance can be obtained by calling :ref:`AudioStreamPlayer.get_stream_playback<class_AudioStreamPlayer_method_get_stream_playback>`, :ref:`AudioStreamPlayer2D.get_stream_playback<class_AudioStreamPlayer2D_method_get_stream_playback>` or :ref:`AudioStreamPlayer3D.get_stream_playback<class_AudioStreamPlayer3D_method_get_stream_playback>` methods.
+Playback instance for :ref:`AudioStreamPolyphonic<class_AudioStreamPolyphonic>`. After setting the ``stream`` property of :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, the playback instance can be obtained by calling :ref:`AudioStreamPlayer.get_stream_playback()<class_AudioStreamPlayer_method_get_stream_playback>`, :ref:`AudioStreamPlayer2D.get_stream_playback()<class_AudioStreamPlayer2D_method_get_stream_playback>` or :ref:`AudioStreamPlayer3D.get_stream_playback()<class_AudioStreamPlayer3D_method_get_stream_playback>` methods.
 
 .. rst-class:: classref-reftable-group
 
@@ -56,7 +56,7 @@ Constants
 
 **INVALID_ID** = ``-1`` :ref:`🔗<class_AudioStreamPlaybackPolyphonic_constant_INVALID_ID>`
 
-Returned by :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>` in case it could not allocate a stream for playback.
+Returned by :ref:`play_stream()<class_AudioStreamPlaybackPolyphonic_method_play_stream>` in case it could not allocate a stream for playback.
 
 .. rst-class:: classref-section-separator
 
@@ -73,7 +73,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **is_stream_playing**\ (\ stream\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamPlaybackPolyphonic_method_is_stream_playing>`
 
-Returns ``true`` if the stream associated with the given integer ID is still playing. Check :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>` for information on when this ID becomes invalid.
+Returns ``true`` if the stream associated with the given integer ID is still playing. Check :ref:`play_stream()<class_AudioStreamPlaybackPolyphonic_method_play_stream>` for information on when this ID becomes invalid.
 
 .. rst-class:: classref-item-separator
 
@@ -89,7 +89,7 @@ Play an :ref:`AudioStream<class_AudioStream>` at a given offset, volume, pitch s
 
 The return value is a unique integer ID that is associated to this playback stream and which can be used to control it.
 
-This ID becomes invalid when the stream ends (if it does not loop), when the **AudioStreamPlaybackPolyphonic** is stopped, or when :ref:`stop_stream<class_AudioStreamPlaybackPolyphonic_method_stop_stream>` is called.
+This ID becomes invalid when the stream ends (if it does not loop), when the **AudioStreamPlaybackPolyphonic** is stopped, or when :ref:`stop_stream()<class_AudioStreamPlaybackPolyphonic_method_stop_stream>` is called.
 
 This function returns :ref:`INVALID_ID<class_AudioStreamPlaybackPolyphonic_constant_INVALID_ID>` if the amount of streams currently playing equals :ref:`AudioStreamPolyphonic.polyphony<class_AudioStreamPolyphonic_property_polyphony>`. If you need a higher amount of maximum polyphony, raise this value.
 
@@ -103,7 +103,7 @@ This function returns :ref:`INVALID_ID<class_AudioStreamPlaybackPolyphonic_const
 
 |void| **set_stream_pitch_scale**\ (\ stream\: :ref:`int<class_int>`, pitch_scale\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioStreamPlaybackPolyphonic_method_set_stream_pitch_scale>`
 
-Change the stream pitch scale. The ``stream`` argument is an integer ID returned by :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>`.
+Change the stream pitch scale. The ``stream`` argument is an integer ID returned by :ref:`play_stream()<class_AudioStreamPlaybackPolyphonic_method_play_stream>`.
 
 .. rst-class:: classref-item-separator
 
@@ -115,7 +115,7 @@ Change the stream pitch scale. The ``stream`` argument is an integer ID returned
 
 |void| **set_stream_volume**\ (\ stream\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioStreamPlaybackPolyphonic_method_set_stream_volume>`
 
-Change the stream volume (in db). The ``stream`` argument is an integer ID returned by :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>`.
+Change the stream volume (in db). The ``stream`` argument is an integer ID returned by :ref:`play_stream()<class_AudioStreamPlaybackPolyphonic_method_play_stream>`.
 
 .. rst-class:: classref-item-separator
 
@@ -127,7 +127,7 @@ Change the stream volume (in db). The ``stream`` argument is an integer ID retur
 
 |void| **stop_stream**\ (\ stream\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioStreamPlaybackPolyphonic_method_stop_stream>`
 
-Stop a stream. The ``stream`` argument is an integer ID returned by :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>`, which becomes invalid after calling this function.
+Stop a stream. The ``stream`` argument is an integer ID returned by :ref:`play_stream()<class_AudioStreamPlaybackPolyphonic_method_play_stream>`, which becomes invalid after calling this function.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

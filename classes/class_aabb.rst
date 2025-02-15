@@ -17,11 +17,11 @@ A 3D axis-aligned bounding box.
 Description
 -----------
 
-The **AABB** built-in :ref:`Variant<class_Variant>` type represents an axis-aligned bounding box in a 3D space. It is defined by its :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>`, which are :ref:`Vector3<class_Vector3>`. It is frequently used for fast overlap tests (see :ref:`intersects<class_AABB_method_intersects>`). Although **AABB** itself is axis-aligned, it can be combined with :ref:`Transform3D<class_Transform3D>` to represent a rotated or skewed bounding box.
+The **AABB** built-in :ref:`Variant<class_Variant>` type represents an axis-aligned bounding box in a 3D space. It is defined by its :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>`, which are :ref:`Vector3<class_Vector3>`. It is frequently used for fast overlap tests (see :ref:`intersects()<class_AABB_method_intersects>`). Although **AABB** itself is axis-aligned, it can be combined with :ref:`Transform3D<class_Transform3D>` to represent a rotated or skewed bounding box.
 
 It uses floating-point coordinates. The 2D counterpart to **AABB** is :ref:`Rect2<class_Rect2>`. There is no version of **AABB** that uses integer coordinates.
 
-\ **Note:** Negative values for :ref:`size<class_AABB_property_size>` are not supported. With negative size, most **AABB** methods do not work correctly. Use :ref:`abs<class_AABB_method_abs>` to get an equivalent **AABB** with a non-negative size.
+\ **Note:** Negative values for :ref:`size<class_AABB_property_size>` are not supported. With negative size, most **AABB** methods do not work correctly. Use :ref:`abs()<class_AABB_method_abs>` to get an equivalent **AABB** with a non-negative size.
 
 \ **Note:** In a boolean context, a **AABB** evaluates to ``false`` if both :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>` are zero (equal to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`). Otherwise, it always evaluates to ``true``.
 
@@ -189,7 +189,7 @@ The origin point. This is usually the corner on the bottom-left and forward of t
 
 The bounding box's width, height, and depth starting from :ref:`position<class_AABB_property_position>`. Setting this value also affects the :ref:`end<class_AABB_property_end>` point.
 
-\ **Note:** It's recommended setting the width, height, and depth to non-negative values. This is because most methods in Godot assume that the :ref:`position<class_AABB_property_position>` is the bottom-left-forward corner, and the :ref:`end<class_AABB_property_end>` is the top-right-back corner. To get an equivalent bounding box with non-negative size, use :ref:`abs<class_AABB_method_abs>`.
+\ **Note:** It's recommended setting the width, height, and depth to non-negative values. This is because most methods in Godot assume that the :ref:`position<class_AABB_property_position>` is the bottom-left-forward corner, and the :ref:`end<class_AABB_property_end>` is the top-right-back corner. To get an equivalent bounding box with non-negative size, use :ref:`abs()<class_AABB_method_abs>`.
 
 .. rst-class:: classref-section-separator
 
@@ -401,7 +401,7 @@ Returns the longest normalized axis of this bounding box's :ref:`size<class_AABB
 
 
 
-See also :ref:`get_longest_axis_index<class_AABB_method_get_longest_axis_index>` and :ref:`get_longest_axis_size<class_AABB_method_get_longest_axis_size>`.
+See also :ref:`get_longest_axis_index()<class_AABB_method_get_longest_axis_index>` and :ref:`get_longest_axis_size()<class_AABB_method_get_longest_axis_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -415,7 +415,7 @@ See also :ref:`get_longest_axis_index<class_AABB_method_get_longest_axis_index>`
 
 Returns the index to the longest axis of this bounding box's :ref:`size<class_AABB_property_size>` (see :ref:`Vector3.AXIS_X<class_Vector3_constant_AXIS_X>`, :ref:`Vector3.AXIS_Y<class_Vector3_constant_AXIS_Y>`, and :ref:`Vector3.AXIS_Z<class_Vector3_constant_AXIS_Z>`).
 
-For an example, see :ref:`get_longest_axis<class_AABB_method_get_longest_axis>`.
+For an example, see :ref:`get_longest_axis()<class_AABB_method_get_longest_axis>`.
 
 .. rst-class:: classref-item-separator
 
@@ -429,7 +429,7 @@ For an example, see :ref:`get_longest_axis<class_AABB_method_get_longest_axis>`.
 
 Returns the longest dimension of this bounding box's :ref:`size<class_AABB_property_size>`.
 
-For an example, see :ref:`get_longest_axis<class_AABB_method_get_longest_axis>`.
+For an example, see :ref:`get_longest_axis()<class_AABB_method_get_longest_axis>`.
 
 .. rst-class:: classref-item-separator
 
@@ -464,7 +464,7 @@ Returns the shortest normalized axis of this bounding box's :ref:`size<class_AAB
 
 
 
-See also :ref:`get_shortest_axis_index<class_AABB_method_get_shortest_axis_index>` and :ref:`get_shortest_axis_size<class_AABB_method_get_shortest_axis_size>`.
+See also :ref:`get_shortest_axis_index()<class_AABB_method_get_shortest_axis_index>` and :ref:`get_shortest_axis_size()<class_AABB_method_get_shortest_axis_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -478,7 +478,7 @@ See also :ref:`get_shortest_axis_index<class_AABB_method_get_shortest_axis_index
 
 Returns the index to the shortest axis of this bounding box's :ref:`size<class_AABB_property_size>` (see :ref:`Vector3.AXIS_X<class_Vector3_constant_AXIS_X>`, :ref:`Vector3.AXIS_Y<class_Vector3_constant_AXIS_Y>`, and :ref:`Vector3.AXIS_Z<class_Vector3_constant_AXIS_Z>`).
 
-For an example, see :ref:`get_shortest_axis<class_AABB_method_get_shortest_axis>`.
+For an example, see :ref:`get_shortest_axis()<class_AABB_method_get_shortest_axis>`.
 
 .. rst-class:: classref-item-separator
 
@@ -492,7 +492,7 @@ For an example, see :ref:`get_shortest_axis<class_AABB_method_get_shortest_axis>
 
 Returns the shortest dimension of this bounding box's :ref:`size<class_AABB_property_size>`.
 
-For an example, see :ref:`get_shortest_axis<class_AABB_method_get_shortest_axis>`.
+For an example, see :ref:`get_shortest_axis()<class_AABB_method_get_shortest_axis>`.
 
 .. rst-class:: classref-item-separator
 
@@ -516,7 +516,7 @@ Returns the vertex's position of this bounding box that's the farthest in the gi
 
 :ref:`float<class_float>` **get_volume**\ (\ ) |const| :ref:`🔗<class_AABB_method_get_volume>`
 
-Returns the bounding box's volume. This is equivalent to ``size.x * size.y * size.z``. See also :ref:`has_volume<class_AABB_method_has_volume>`.
+Returns the bounding box's volume. This is equivalent to ``size.x * size.y * size.z``. See also :ref:`has_volume()<class_AABB_method_has_volume>`.
 
 .. rst-class:: classref-item-separator
 
@@ -567,7 +567,7 @@ Returns a copy of this bounding box extended on all sides by the given amount ``
 
 Returns ``true`` if the bounding box contains the given ``point``. By convention, points exactly on the right, top, and front sides are **not** included.
 
-\ **Note:** This method is not reliable for **AABB** with a *negative* :ref:`size<class_AABB_property_size>`. Use :ref:`abs<class_AABB_method_abs>` first to get a valid bounding box.
+\ **Note:** This method is not reliable for **AABB** with a *negative* :ref:`size<class_AABB_property_size>`. Use :ref:`abs()<class_AABB_method_abs>` first to get a valid bounding box.
 
 .. rst-class:: classref-item-separator
 
@@ -591,7 +591,7 @@ Returns ``true`` if this bounding box has a surface or a length, that is, at lea
 
 :ref:`bool<class_bool>` **has_volume**\ (\ ) |const| :ref:`🔗<class_AABB_method_has_volume>`
 
-Returns ``true`` if this bounding box's width, height, and depth are all positive. See also :ref:`get_volume<class_AABB_method_get_volume>`.
+Returns ``true`` if this bounding box's width, height, and depth are all positive. See also :ref:`get_volume()<class_AABB_method_get_volume>`.
 
 .. rst-class:: classref-item-separator
 
@@ -603,7 +603,7 @@ Returns ``true`` if this bounding box's width, height, and depth are all positiv
 
 :ref:`AABB<class_AABB>` **intersection**\ (\ with\: :ref:`AABB<class_AABB>`\ ) |const| :ref:`🔗<class_AABB_method_intersection>`
 
-Returns the intersection between this bounding box and ``with``. If the boxes do not intersect, returns an empty **AABB**. If the boxes intersect at the edge, returns a flat **AABB** with no volume (see :ref:`has_surface<class_AABB_method_has_surface>` and :ref:`has_volume<class_AABB_method_has_volume>`).
+Returns the intersection between this bounding box and ``with``. If the boxes do not intersect, returns an empty **AABB**. If the boxes intersect at the edge, returns a flat **AABB** with no volume (see :ref:`has_surface()<class_AABB_method_has_surface>` and :ref:`has_volume()<class_AABB_method_has_volume>`).
 
 
 .. tabs::
@@ -628,7 +628,7 @@ Returns the intersection between this bounding box and ``with``. If the boxes do
 
 
 
-\ **Note:** If you only need to know whether two bounding boxes are intersecting, use :ref:`intersects<class_AABB_method_intersects>`, instead.
+\ **Note:** If you only need to know whether two bounding boxes are intersecting, use :ref:`intersects()<class_AABB_method_intersects>`, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -692,7 +692,7 @@ The segment begins at ``from`` and ends at ``to``.
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) |const| :ref:`🔗<class_AABB_method_is_equal_approx>`
 
-Returns ``true`` if this bounding box and ``aabb`` are approximately equal, by calling :ref:`Vector3.is_equal_approx<class_Vector3_method_is_equal_approx>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
+Returns ``true`` if this bounding box and ``aabb`` are approximately equal, by calling :ref:`Vector3.is_equal_approx()<class_Vector3_method_is_equal_approx>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -704,7 +704,7 @@ Returns ``true`` if this bounding box and ``aabb`` are approximately equal, by c
 
 :ref:`bool<class_bool>` **is_finite**\ (\ ) |const| :ref:`🔗<class_AABB_method_is_finite>`
 
-Returns ``true`` if this bounding box's values are finite, by calling :ref:`Vector3.is_finite<class_Vector3_method_is_finite>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
+Returns ``true`` if this bounding box's values are finite, by calling :ref:`Vector3.is_finite()<class_Vector3_method_is_finite>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -716,7 +716,7 @@ Returns ``true`` if this bounding box's values are finite, by calling :ref:`Vect
 
 :ref:`AABB<class_AABB>` **merge**\ (\ with\: :ref:`AABB<class_AABB>`\ ) |const| :ref:`🔗<class_AABB_method_merge>`
 
-Returns an **AABB** that encloses both this bounding box and ``with`` around the edges. See also :ref:`encloses<class_AABB_method_encloses>`.
+Returns an **AABB** that encloses both this bounding box and ``with`` around the edges. See also :ref:`encloses()<class_AABB_method_encloses>`.
 
 .. rst-class:: classref-section-separator
 
@@ -735,7 +735,7 @@ Operator Descriptions
 
 Returns ``true`` if the :ref:`position<class_AABB_property_position>` or :ref:`size<class_AABB_property_size>` of both bounding boxes are not equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 
@@ -749,9 +749,9 @@ Returns ``true`` if the :ref:`position<class_AABB_property_position>` or :ref:`s
 
 Inversely transforms (multiplies) the **AABB** by the given :ref:`Transform3D<class_Transform3D>` transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
-\ ``aabb * transform`` is equivalent to ``transform.inverse() * aabb``. See :ref:`Transform3D.inverse<class_Transform3D_method_inverse>`.
+\ ``aabb * transform`` is equivalent to ``transform.inverse() * aabb``. See :ref:`Transform3D.inverse()<class_Transform3D_method_inverse>`.
 
-For transforming by inverse of an affine transformation (e.g. with scaling) ``transform.affine_inverse() * aabb`` can be used instead. See :ref:`Transform3D.affine_inverse<class_Transform3D_method_affine_inverse>`.
+For transforming by inverse of an affine transformation (e.g. with scaling) ``transform.affine_inverse() * aabb`` can be used instead. See :ref:`Transform3D.affine_inverse()<class_Transform3D_method_affine_inverse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -765,7 +765,7 @@ For transforming by inverse of an affine transformation (e.g. with scaling) ``tr
 
 Returns ``true`` if both :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>` of the bounding boxes are exactly equal, respectively.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

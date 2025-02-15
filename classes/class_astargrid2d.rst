@@ -21,7 +21,7 @@ Description
 
 **AStarGrid2D** is a variant of :ref:`AStar2D<class_AStar2D>` that is specialized for partial 2D grids. It is simpler to use because it doesn't require you to manually create points and connect them together. This class also supports multiple types of heuristics, modes for diagonal movement, and a jumping mode to speed up calculations.
 
-To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_property_region>` of the grid, optionally set the :ref:`cell_size<class_AStarGrid2D_property_cell_size>`, and then call the :ref:`update<class_AStarGrid2D_method_update>` method:
+To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_property_region>` of the grid, optionally set the :ref:`cell_size<class_AStarGrid2D_property_cell_size>`, and then call the :ref:`update()<class_AStarGrid2D_method_update>` method:
 
 
 .. tabs::
@@ -46,7 +46,7 @@ To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_
 
 
 
-To remove a point from the pathfinding grid, it must be set as "solid" with :ref:`set_point_solid<class_AStarGrid2D_method_set_point_solid>`.
+To remove a point from the pathfinding grid, it must be set as "solid" with :ref:`set_point_solid()<class_AStarGrid2D_method_set_point_solid>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -316,7 +316,7 @@ Property Descriptions
 - |void| **set_cell_shape**\ (\ value\: :ref:`CellShape<enum_AStarGrid2D_CellShape>`\ )
 - :ref:`CellShape<enum_AStarGrid2D_CellShape>` **get_cell_shape**\ (\ )
 
-The cell shape. Affects how the positions are placed in the grid. If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+The cell shape. Affects how the positions are placed in the grid. If changed, :ref:`update()<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
 
 .. rst-class:: classref-item-separator
 
@@ -333,7 +333,7 @@ The cell shape. Affects how the positions are placed in the grid. If changed, :r
 - |void| **set_cell_size**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_cell_size**\ (\ )
 
-The size of the point cell which will be applied to calculate the resulting point position returned by :ref:`get_point_path<class_AStarGrid2D_method_get_point_path>`. If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+The size of the point cell which will be applied to calculate the resulting point position returned by :ref:`get_point_path()<class_AStarGrid2D_method_get_point_path>`. If changed, :ref:`update()<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
 
 .. rst-class:: classref-item-separator
 
@@ -350,7 +350,7 @@ The size of the point cell which will be applied to calculate the resulting poin
 - |void| **set_default_compute_heuristic**\ (\ value\: :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`\ )
 - :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **get_default_compute_heuristic**\ (\ )
 
-The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to calculate the cost between two points if :ref:`_compute_cost<class_AStarGrid2D_private_method__compute_cost>` was not overridden.
+The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to calculate the cost between two points if :ref:`_compute_cost()<class_AStarGrid2D_private_method__compute_cost>` was not overridden.
 
 .. rst-class:: classref-item-separator
 
@@ -367,7 +367,7 @@ The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to c
 - |void| **set_default_estimate_heuristic**\ (\ value\: :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`\ )
 - :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **get_default_estimate_heuristic**\ (\ )
 
-The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to calculate the cost between the point and the end point if :ref:`_estimate_cost<class_AStarGrid2D_private_method__estimate_cost>` was not overridden.
+The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to calculate the cost between the point and the end point if :ref:`_estimate_cost()<class_AStarGrid2D_private_method__estimate_cost>` was not overridden.
 
 .. rst-class:: classref-item-separator
 
@@ -420,7 +420,7 @@ Enables or disables jumping to skip up the intermediate points and speeds up the
 - |void| **set_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_offset**\ (\ )
 
-The offset of the grid which will be applied to calculate the resulting point position returned by :ref:`get_point_path<class_AStarGrid2D_method_get_point_path>`. If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+The offset of the grid which will be applied to calculate the resulting point position returned by :ref:`get_point_path()<class_AStarGrid2D_method_get_point_path>`. If changed, :ref:`update()<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
 
 .. rst-class:: classref-item-separator
 
@@ -437,7 +437,7 @@ The offset of the grid which will be applied to calculate the resulting point po
 - |void| **set_region**\ (\ value\: :ref:`Rect2i<class_Rect2i>`\ )
 - :ref:`Rect2i<class_Rect2i>` **get_region**\ (\ )
 
-The region of grid cells available for pathfinding. If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+The region of grid cells available for pathfinding. If changed, :ref:`update()<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
 
 .. rst-class:: classref-item-separator
 
@@ -456,7 +456,7 @@ The region of grid cells available for pathfinding. If changed, :ref:`update<cla
 
 **Deprecated:** Use :ref:`region<class_AStarGrid2D_property_region>` instead.
 
-The size of the grid (number of cells of size :ref:`cell_size<class_AStarGrid2D_property_cell_size>` on each axis). If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+The size of the grid (number of cells of size :ref:`cell_size<class_AStarGrid2D_property_cell_size>` on each axis). If changed, :ref:`update()<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
 
 .. rst-class:: classref-section-separator
 
@@ -515,7 +515,7 @@ Clears the grid and sets the :ref:`region<class_AStarGrid2D_property_region>` to
 
 Fills the given ``region`` on the grid with the specified value for the solid flag.
 
-\ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
+\ **Note:** Calling :ref:`update()<class_AStarGrid2D_method_update>` is not needed after the call of this function.
 
 .. rst-class:: classref-item-separator
 
@@ -529,7 +529,7 @@ Fills the given ``region`` on the grid with the specified value for the solid fl
 
 Fills the given ``region`` on the grid with the specified value for the weight scale.
 
-\ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
+\ **Note:** Calling :ref:`update()<class_AStarGrid2D_method_update>` is not needed after the call of this function.
 
 .. rst-class:: classref-item-separator
 
@@ -611,7 +611,7 @@ Returns the weight scale of the point associated with the given ``id``.
 
 :ref:`bool<class_bool>` **is_dirty**\ (\ ) |const| :ref:`🔗<class_AStarGrid2D_method_is_dirty>`
 
-Indicates that the grid parameters were changed and :ref:`update<class_AStarGrid2D_method_update>` needs to be called.
+Indicates that the grid parameters were changed and :ref:`update()<class_AStarGrid2D_method_update>` needs to be called.
 
 .. rst-class:: classref-item-separator
 
@@ -661,7 +661,7 @@ Returns ``true`` if a point is disabled for pathfinding. By default, all points 
 
 Disables or enables the specified point for pathfinding. Useful for making an obstacle. By default, all points are enabled.
 
-\ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
+\ **Note:** Calling :ref:`update()<class_AStarGrid2D_method_update>` is not needed after the call of this function.
 
 .. rst-class:: classref-item-separator
 
@@ -673,9 +673,9 @@ Disables or enables the specified point for pathfinding. Useful for making an ob
 
 |void| **set_point_weight_scale**\ (\ id\: :ref:`Vector2i<class_Vector2i>`, weight_scale\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AStarGrid2D_method_set_point_weight_scale>`
 
-Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStarGrid2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
+Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost()<class_AStarGrid2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
 
-\ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
+\ **Note:** Calling :ref:`update()<class_AStarGrid2D_method_update>` is not needed after the call of this function.
 
 .. rst-class:: classref-item-separator
 
@@ -687,7 +687,7 @@ Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scal
 
 |void| **update**\ (\ ) :ref:`🔗<class_AStarGrid2D_method_update>`
 
-Updates the internal state of the grid according to the parameters to prepare it to search the path. Needs to be called if parameters like :ref:`region<class_AStarGrid2D_property_region>`, :ref:`cell_size<class_AStarGrid2D_property_cell_size>` or :ref:`offset<class_AStarGrid2D_property_offset>` are changed. :ref:`is_dirty<class_AStarGrid2D_method_is_dirty>` will return ``true`` if this is the case and this needs to be called.
+Updates the internal state of the grid according to the parameters to prepare it to search the path. Needs to be called if parameters like :ref:`region<class_AStarGrid2D_property_region>`, :ref:`cell_size<class_AStarGrid2D_property_cell_size>` or :ref:`offset<class_AStarGrid2D_property_offset>` are changed. :ref:`is_dirty()<class_AStarGrid2D_method_is_dirty>` will return ``true`` if this is the case and this needs to be called.
 
 \ **Note:** All point data (solidity and weight scale) will be cleared.
 

@@ -19,7 +19,7 @@ Represents a key on a keyboard being pressed or released.
 Description
 -----------
 
-An input event for keys on a keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_property_echo>` events. It can also be received in :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`.
+An input event for keys on a keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_property_echo>` events. It can also be received in :ref:`Node._unhandled_key_input()<class_Node_private_method__unhandled_key_input>`.
 
 \ **Note:** Events received from the keyboard usually have all properties set. Event mappings should have only one of the :ref:`keycode<class_InputEventKey_property_keycode>`, :ref:`physical_keycode<class_InputEventKey_property_physical_keycode>` or :ref:`unicode<class_InputEventKey_property_unicode>` set.
 
@@ -192,7 +192,7 @@ Represents the location of a key which has both left and right versions, such as
 
 Represents the physical location of a key on the 101/102-key US QWERTY keyboard, which corresponds to one of the :ref:`Key<enum_@GlobalScope_Key>` constants.
 
-To get a human-readable representation of the **InputEventKey**, use :ref:`OS.get_keycode_string<class_OS_method_get_keycode_string>` in combination with :ref:`DisplayServer.keyboard_get_keycode_from_physical<class_DisplayServer_method_keyboard_get_keycode_from_physical>`:
+To get a human-readable representation of the **InputEventKey**, use :ref:`OS.get_keycode_string()<class_OS_method_get_keycode_string>` in combination with :ref:`DisplayServer.keyboard_get_keycode_from_physical()<class_DisplayServer_method_keyboard_get_keycode_from_physical>`:
 
 
 .. tabs::
@@ -249,7 +249,7 @@ If ``true``, the key's state is pressed. If ``false``, the key's state is releas
 - |void| **set_unicode**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_unicode**\ (\ )
 
-The key Unicode character code (when relevant), shifted by modifier keys. Unicode character codes for composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`Window.set_ime_active<class_Window_method_set_ime_active>` for more information.
+The key Unicode character code (when relevant), shifted by modifier keys. Unicode character codes for composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`Window.set_ime_active()<class_Window_method_set_ime_active>` for more information.
 
 .. rst-class:: classref-section-separator
 

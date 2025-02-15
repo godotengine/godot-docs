@@ -501,7 +501,7 @@ Adds a :ref:`PackedVector2Array<class_PackedVector2Array>` that contains the ver
 
 |void| **add_polygon**\ (\ polygon\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_NavigationPolygon_method_add_polygon>`
 
-Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices<class_NavigationPolygon_method_get_vertices>`.
+Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices()<class_NavigationPolygon_method_get_vertices>`.
 
 .. rst-class:: classref-item-separator
 
@@ -549,7 +549,7 @@ Clears the array of polygons, but it doesn't clear the array of outlines and ver
 
 :ref:`NavigationMesh<class_NavigationMesh>` **get_navigation_mesh**\ (\ ) :ref:`🔗<class_NavigationPolygon_method_get_navigation_mesh>`
 
-Returns the :ref:`NavigationMesh<class_NavigationMesh>` resulting from this navigation polygon. This navigation mesh can be used to update the navigation mesh of a region with the :ref:`NavigationServer3D.region_set_navigation_mesh<class_NavigationServer3D_method_region_set_navigation_mesh>` API directly (as 2D uses the 3D server behind the scene).
+Returns the :ref:`NavigationMesh<class_NavigationMesh>` resulting from this navigation polygon. This navigation mesh can be used to update the navigation mesh of a region with the :ref:`NavigationServer3D.region_set_navigation_mesh()<class_NavigationServer3D_method_region_set_navigation_mesh>` API directly (as 2D uses the 3D server behind the scene).
 
 .. rst-class:: classref-item-separator
 
@@ -633,7 +633,7 @@ Returns a :ref:`PackedVector2Array<class_PackedVector2Array>` containing all the
 
 |void| **make_polygons_from_outlines**\ (\ ) :ref:`🔗<class_NavigationPolygon_method_make_polygons_from_outlines>`
 
-**Deprecated:** Use :ref:`NavigationServer2D.parse_source_geometry_data<class_NavigationServer2D_method_parse_source_geometry_data>` and :ref:`NavigationServer2D.bake_from_source_geometry_data<class_NavigationServer2D_method_bake_from_source_geometry_data>` instead.
+**Deprecated:** Use :ref:`NavigationServer2D.parse_source_geometry_data()<class_NavigationServer2D_method_parse_source_geometry_data>` and :ref:`NavigationServer2D.bake_from_source_geometry_data()<class_NavigationServer2D_method_bake_from_source_geometry_data>` instead.
 
 Creates polygons from the outlines added in the editor or by script.
 
@@ -647,7 +647,7 @@ Creates polygons from the outlines added in the editor or by script.
 
 |void| **remove_outline**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationPolygon_method_remove_outline>`
 
-Removes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
+Removes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines()<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
 
 .. rst-class:: classref-item-separator
 
@@ -659,7 +659,7 @@ Removes an outline created in the editor or by script. You have to call :ref:`ma
 
 |void| **set_outline**\ (\ idx\: :ref:`int<class_int>`, outline\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) :ref:`🔗<class_NavigationPolygon_method_set_outline>`
 
-Changes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
+Changes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines()<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
 
 .. rst-class:: classref-item-separator
 
@@ -683,7 +683,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`parsed_
 
 |void| **set_vertices**\ (\ vertices\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) :ref:`🔗<class_NavigationPolygon_method_set_vertices>`
 
-Sets the vertices that can be then indexed to create polygons with the :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` method.
+Sets the vertices that can be then indexed to create polygons with the :ref:`add_polygon()<class_NavigationPolygon_method_add_polygon>` method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

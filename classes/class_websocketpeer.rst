@@ -21,9 +21,9 @@ Description
 
 This class represents WebSocket connection, and can be used as a WebSocket client (RFC 6455-compliant) or as a remote peer of a WebSocket server.
 
-You can send WebSocket binary frames using :ref:`PacketPeer.put_packet<class_PacketPeer_method_put_packet>`, and WebSocket text frames using :ref:`send<class_WebSocketPeer_method_send>` (prefer text frames when interacting with text-based API). You can check the frame type of the last packet via :ref:`was_string_packet<class_WebSocketPeer_method_was_string_packet>`.
+You can send WebSocket binary frames using :ref:`PacketPeer.put_packet()<class_PacketPeer_method_put_packet>`, and WebSocket text frames using :ref:`send()<class_WebSocketPeer_method_send>` (prefer text frames when interacting with text-based API). You can check the frame type of the last packet via :ref:`was_string_packet()<class_WebSocketPeer_method_was_string_packet>`.
 
-To start a WebSocket client, first call :ref:`connect_to_url<class_WebSocketPeer_method_connect_to_url>`, then regularly call :ref:`poll<class_WebSocketPeer_method_poll>` (e.g. during :ref:`Node<class_Node>` process). You can query the socket state via :ref:`get_ready_state<class_WebSocketPeer_method_get_ready_state>`, get the number of pending packets using :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`, and retrieve them via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`.
+To start a WebSocket client, first call :ref:`connect_to_url()<class_WebSocketPeer_method_connect_to_url>`, then regularly call :ref:`poll()<class_WebSocketPeer_method_poll>` (e.g. during :ref:`Node<class_Node>` process). You can query the socket state via :ref:`get_ready_state()<class_WebSocketPeer_method_get_ready_state>`, get the number of pending packets using :ref:`PacketPeer.get_available_packet_count()<class_PacketPeer_method_get_available_packet_count>`, and retrieve them via :ref:`PacketPeer.get_packet()<class_PacketPeer_method_get_packet>`.
 
 
 .. tabs::
@@ -54,7 +54,7 @@ To start a WebSocket client, first call :ref:`connect_to_url<class_WebSocketPeer
 
 
 
-To use the peer as part of a WebSocket server refer to :ref:`accept_stream<class_WebSocketPeer_method_accept_stream>` and the online tutorial.
+To use the peer as part of a WebSocket server refer to :ref:`accept_stream()<class_WebSocketPeer_method_accept_stream>` and the online tutorial.
 
 .. rst-class:: classref-reftable-group
 
@@ -323,7 +323,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **accept_stream**\ (\ stream\: :ref:`StreamPeer<class_StreamPeer>`\ ) :ref:`🔗<class_WebSocketPeer_method_accept_stream>`
 
-Accepts a peer connection performing the HTTP handshake as a WebSocket server. The ``stream`` must be a valid TCP stream retrieved via :ref:`TCPServer.take_connection<class_TCPServer_method_take_connection>`, or a TLS stream accepted via :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>`.
+Accepts a peer connection performing the HTTP handshake as a WebSocket server. The ``stream`` must be a valid TCP stream retrieved via :ref:`TCPServer.take_connection()<class_TCPServer_method_take_connection>`, or a TLS stream accepted via :ref:`StreamPeerTLS.accept_stream()<class_StreamPeerTLS_method_accept_stream>`.
 
 \ **Note:** Not supported in Web exports due to browsers' restrictions.
 
@@ -353,9 +353,9 @@ Closes this WebSocket connection. ``code`` is the status code for the closure (s
 
 :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url**\ (\ url\: :ref:`String<class_String>`, tls_client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) :ref:`🔗<class_WebSocketPeer_method_connect_to_url>`
 
-Connects to the given URL. TLS certificates will be verified against the hostname when connecting using the ``wss://`` protocol. You can pass the optional ``tls_client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
+Connects to the given URL. TLS certificates will be verified against the hostname when connecting using the ``wss://`` protocol. You can pass the optional ``tls_client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client()<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe()<class_TLSOptions_method_client_unsafe>`.
 
-\ **Note:** This method is non-blocking, and will return :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` before the connection is established as long as the provided parameters are valid and the peer is not in an invalid state (e.g. already connected). Regularly call :ref:`poll<class_WebSocketPeer_method_poll>` (e.g. during :ref:`Node<class_Node>` process) and check the result of :ref:`get_ready_state<class_WebSocketPeer_method_get_ready_state>` to know whether the connection succeeds or fails.
+\ **Note:** This method is non-blocking, and will return :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` before the connection is established as long as the provided parameters are valid and the peer is not in an invalid state (e.g. already connected). Regularly call :ref:`poll()<class_WebSocketPeer_method_poll>` (e.g. during :ref:`Node<class_Node>` process) and check the result of :ref:`get_ready_state()<class_WebSocketPeer_method_get_ready_state>` to know whether the connection succeeds or fails.
 
 \ **Note:** To avoid mixed content warnings or errors in Web, you may have to use a ``url`` that starts with ``wss://`` (secure) instead of ``ws://``. When doing so, make sure to use the fully qualified domain name that matches the one defined in the server's TLS certificate. Do not connect directly via the IP address for ``wss://`` connections, as it won't match with the TLS certificate.
 
@@ -369,7 +369,7 @@ Connects to the given URL. TLS certificates will be verified against the hostnam
 
 :ref:`int<class_int>` **get_close_code**\ (\ ) |const| :ref:`🔗<class_WebSocketPeer_method_get_close_code>`
 
-Returns the received WebSocket close frame status code, or ``-1`` when the connection was not cleanly closed. Only call this method when :ref:`get_ready_state<class_WebSocketPeer_method_get_ready_state>` returns :ref:`STATE_CLOSED<class_WebSocketPeer_constant_STATE_CLOSED>`.
+Returns the received WebSocket close frame status code, or ``-1`` when the connection was not cleanly closed. Only call this method when :ref:`get_ready_state()<class_WebSocketPeer_method_get_ready_state>` returns :ref:`STATE_CLOSED<class_WebSocketPeer_constant_STATE_CLOSED>`.
 
 .. rst-class:: classref-item-separator
 
@@ -381,7 +381,7 @@ Returns the received WebSocket close frame status code, or ``-1`` when the conne
 
 :ref:`String<class_String>` **get_close_reason**\ (\ ) |const| :ref:`🔗<class_WebSocketPeer_method_get_close_reason>`
 
-Returns the received WebSocket close frame status reason string. Only call this method when :ref:`get_ready_state<class_WebSocketPeer_method_get_ready_state>` returns :ref:`STATE_CLOSED<class_WebSocketPeer_constant_STATE_CLOSED>`.
+Returns the received WebSocket close frame status reason string. Only call this method when :ref:`get_ready_state()<class_WebSocketPeer_method_get_ready_state>` returns :ref:`STATE_CLOSED<class_WebSocketPeer_constant_STATE_CLOSED>`.
 
 .. rst-class:: classref-item-separator
 
@@ -445,7 +445,7 @@ Returns the ready state of the connection. See :ref:`State<enum_WebSocketPeer_St
 
 :ref:`String<class_String>` **get_requested_url**\ (\ ) |const| :ref:`🔗<class_WebSocketPeer_method_get_requested_url>`
 
-Returns the URL requested by this peer. The URL is derived from the ``url`` passed to :ref:`connect_to_url<class_WebSocketPeer_method_connect_to_url>` or from the HTTP headers when acting as server (i.e. when using :ref:`accept_stream<class_WebSocketPeer_method_accept_stream>`).
+Returns the URL requested by this peer. The URL is derived from the ``url`` passed to :ref:`connect_to_url()<class_WebSocketPeer_method_connect_to_url>` or from the HTTP headers when acting as server (i.e. when using :ref:`accept_stream()<class_WebSocketPeer_method_accept_stream>`).
 
 .. rst-class:: classref-item-separator
 
@@ -481,7 +481,7 @@ Updates the connection state and receive incoming packets. Call this function re
 
 :ref:`Error<enum_@GlobalScope_Error>` **send**\ (\ message\: :ref:`PackedByteArray<class_PackedByteArray>`, write_mode\: :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` = 1\ ) :ref:`🔗<class_WebSocketPeer_method_send>`
 
-Sends the given ``message`` using the desired ``write_mode``. When sending a :ref:`String<class_String>`, prefer using :ref:`send_text<class_WebSocketPeer_method_send_text>`.
+Sends the given ``message`` using the desired ``write_mode``. When sending a :ref:`String<class_String>`, prefer using :ref:`send_text()<class_WebSocketPeer_method_send_text>`.
 
 .. rst-class:: classref-item-separator
 
@@ -493,7 +493,7 @@ Sends the given ``message`` using the desired ``write_mode``. When sending a :re
 
 :ref:`Error<enum_@GlobalScope_Error>` **send_text**\ (\ message\: :ref:`String<class_String>`\ ) :ref:`🔗<class_WebSocketPeer_method_send_text>`
 
-Sends the given ``message`` using WebSocket text mode. Prefer this method over :ref:`PacketPeer.put_packet<class_PacketPeer_method_put_packet>` when interacting with third-party text-based API (e.g. when using :ref:`JSON<class_JSON>` formatted messages).
+Sends the given ``message`` using WebSocket text mode. Prefer this method over :ref:`PacketPeer.put_packet()<class_PacketPeer_method_put_packet>` when interacting with third-party text-based API (e.g. when using :ref:`JSON<class_JSON>` formatted messages).
 
 .. rst-class:: classref-item-separator
 
@@ -505,7 +505,7 @@ Sends the given ``message`` using WebSocket text mode. Prefer this method over :
 
 |void| **set_no_delay**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_WebSocketPeer_method_set_no_delay>`
 
-Disable Nagle's algorithm on the underlying TCP socket (default). See :ref:`StreamPeerTCP.set_no_delay<class_StreamPeerTCP_method_set_no_delay>` for more information.
+Disable Nagle's algorithm on the underlying TCP socket (default). See :ref:`StreamPeerTCP.set_no_delay()<class_StreamPeerTCP_method_set_no_delay>` for more information.
 
 \ **Note:** Not available in the Web export.
 

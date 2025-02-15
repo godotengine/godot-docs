@@ -81,7 +81,7 @@ The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`Ren
 
 - :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **get_direct_space_state**\ (\ )
 
-Direct access to the world's physics 2D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to :ref:`Node._physics_process<class_Node_private_method__physics_process>` in the main thread.
+Direct access to the world's physics 2D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to :ref:`Node._physics_process()<class_Node_private_method__physics_process>` in the main thread.
 
 .. rst-class:: classref-item-separator
 

@@ -23,7 +23,7 @@ A raycast represents a ray from its origin to its :ref:`target_position<class_Ra
 
 \ **RayCast3D** can ignore some objects by adding them to an exception list, by making its detection reporting ignore :ref:`Area3D<class_Area3D>`\ s (:ref:`collide_with_areas<class_RayCast3D_property_collide_with_areas>`) or :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s (:ref:`collide_with_bodies<class_RayCast3D_property_collide_with_bodies>`), or by configuring physics layers.
 
-\ **RayCast3D** calculates intersection every physics frame, and it holds the result until the next physics frame. For an immediate raycast, or if you want to configure a **RayCast3D** multiple times within the same physics frame, use :ref:`force_raycast_update<class_RayCast3D_method_force_raycast_update>`.
+\ **RayCast3D** calculates intersection every physics frame, and it holds the result until the next physics frame. For an immediate raycast, or if you want to configure a **RayCast3D** multiple times within the same physics frame, use :ref:`force_raycast_update()<class_RayCast3D_method_force_raycast_update>`.
 
 To sweep over a region of 3D space, you can approximate the region with multiple **RayCast3D**\ s or use :ref:`ShapeCast3D<class_ShapeCast3D>`.
 
@@ -348,7 +348,7 @@ Updates the collision information for the ray immediately, without waiting for t
 
 :ref:`Object<class_Object>` **get_collider**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collider>`
 
-Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``false``).
 
 \ **Note:** This object is not guaranteed to be a :ref:`CollisionObject3D<class_CollisionObject3D>`. For example, if the ray intersects a :ref:`CSGShape3D<class_CSGShape3D>` or a :ref:`GridMap<class_GridMap>`, the method will return a :ref:`CSGShape3D<class_CSGShape3D>` or :ref:`GridMap<class_GridMap>` instance.
 
@@ -362,7 +362,7 @@ Returns the first object that the ray intersects, or ``null`` if no object is in
 
 :ref:`RID<class_RID>` **get_collider_rid**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collider_rid>`
 
-Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, or an empty :ref:`RID<class_RID>` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, or an empty :ref:`RID<class_RID>` if no object is intersecting the ray (i.e. :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``false``).
 
 .. rst-class:: classref-item-separator
 
@@ -374,7 +374,7 @@ Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, o
 
 :ref:`int<class_int>` **get_collider_shape**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collider_shape>`
 
-Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``false``).
 
 To get the intersected shape node, for a :ref:`CollisionObject3D<class_CollisionObject3D>` target, use:
 
@@ -433,7 +433,7 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Ray
 
 Returns the normal of the intersecting object's shape at the collision point, or ``Vector3(0, 0, 0)`` if the ray starts inside the shape and :ref:`hit_from_inside<class_RayCast3D_property_hit_from_inside>` is ``true``.
 
-\ **Note:** Check that :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned normal is valid and up-to-date.
+\ **Note:** Check that :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned normal is valid and up-to-date.
 
 .. rst-class:: classref-item-separator
 
@@ -447,7 +447,7 @@ Returns the normal of the intersecting object's shape at the collision point, or
 
 Returns the collision point at which the ray intersects the closest object, in the global coordinate system. If :ref:`hit_from_inside<class_RayCast3D_property_hit_from_inside>` is ``true`` and the ray starts inside of a collision shape, this function will return the origin point of the ray.
 
-\ **Note:** Check that :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned point is valid and up-to-date.
+\ **Note:** Check that :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned point is valid and up-to-date.
 
 .. rst-class:: classref-item-separator
 

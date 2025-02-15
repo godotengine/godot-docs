@@ -177,7 +177,7 @@ Constants
 
 **INVALID_CELL_ITEM** = ``-1`` :ref:`🔗<class_GridMap_constant_INVALID_CELL_ITEM>`
 
-Invalid cell item that can be used in :ref:`set_cell_item<class_GridMap_method_set_cell_item>` to clear cells (or represent an empty cell in :ref:`get_cell_item<class_GridMap_method_get_cell_item>`).
+Invalid cell item that can be used in :ref:`set_cell_item()<class_GridMap_method_set_cell_item>` to clear cells (or represent an empty cell in :ref:`get_cell_item()<class_GridMap_method_get_cell_item>`).
 
 .. rst-class:: classref-section-separator
 
@@ -421,7 +421,7 @@ Clear all cells.
 
 |void| **clear_baked_meshes**\ (\ ) :ref:`🔗<class_GridMap_method_clear_baked_meshes>`
 
-Clears all baked meshes. See :ref:`make_baked_meshes<class_GridMap_method_make_baked_meshes>`.
+Clears all baked meshes. See :ref:`make_baked_meshes()<class_GridMap_method_make_baked_meshes>`.
 
 .. rst-class:: classref-item-separator
 
@@ -591,7 +591,7 @@ Returns an array of all cells with the given item index specified in ``item``.
 
 :ref:`Vector3i<class_Vector3i>` **local_to_map**\ (\ local_position\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_GridMap_method_local_to_map>`
 
-Returns the map coordinates of the cell containing the given ``local_position``. If ``local_position`` is in global coordinates, consider using :ref:`Node3D.to_local<class_Node3D_method_to_local>` before passing it to this method. See also :ref:`map_to_local<class_GridMap_method_map_to_local>`.
+Returns the map coordinates of the cell containing the given ``local_position``. If ``local_position`` is in global coordinates, consider using :ref:`Node3D.to_local()<class_Node3D_method_to_local>` before passing it to this method. See also :ref:`map_to_local()<class_GridMap_method_map_to_local>`.
 
 .. rst-class:: classref-item-separator
 
@@ -615,7 +615,7 @@ Bakes lightmap data for all meshes in the assigned :ref:`MeshLibrary<class_MeshL
 
 :ref:`Vector3<class_Vector3>` **map_to_local**\ (\ map_position\: :ref:`Vector3i<class_Vector3i>`\ ) |const| :ref:`🔗<class_GridMap_method_map_to_local>`
 
-Returns the position of a grid cell in the GridMap's local coordinate space. To convert the returned value into global coordinates, use :ref:`Node3D.to_global<class_Node3D_method_to_global>`. See also :ref:`local_to_map<class_GridMap_method_local_to_map>`.
+Returns the position of a grid cell in the GridMap's local coordinate space. To convert the returned value into global coordinates, use :ref:`Node3D.to_global()<class_Node3D_method_to_global>`. See also :ref:`local_to_map()<class_GridMap_method_local_to_map>`.
 
 .. rst-class:: classref-item-separator
 
@@ -645,7 +645,7 @@ Sets the mesh index for the cell referenced by its grid coordinates.
 
 A negative item index such as :ref:`INVALID_CELL_ITEM<class_GridMap_constant_INVALID_CELL_ITEM>` will clear the cell.
 
-Optionally, the item's orientation can be passed. For valid orientation values, see :ref:`get_orthogonal_index_from_basis<class_GridMap_method_get_orthogonal_index_from_basis>`.
+Optionally, the item's orientation can be passed. For valid orientation values, see :ref:`get_orthogonal_index_from_basis()<class_GridMap_method_get_orthogonal_index_from_basis>`.
 
 .. rst-class:: classref-item-separator
 

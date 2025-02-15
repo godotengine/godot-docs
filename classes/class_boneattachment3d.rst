@@ -183,7 +183,7 @@ A function that is called automatically when the :ref:`Skeleton3D<class_Skeleton
 
 |void| **set_external_skeleton**\ (\ external_skeleton\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_BoneAttachment3D_method_set_external_skeleton>`
 
-Sets the :ref:`NodePath<class_NodePath>` to the external skeleton that the BoneAttachment3D node should use. See :ref:`set_use_external_skeleton<class_BoneAttachment3D_method_set_use_external_skeleton>` to enable the external :ref:`Skeleton3D<class_Skeleton3D>` node.
+Sets the :ref:`NodePath<class_NodePath>` to the external skeleton that the BoneAttachment3D node should use. See :ref:`set_use_external_skeleton()<class_BoneAttachment3D_method_set_use_external_skeleton>` to enable the external :ref:`Skeleton3D<class_Skeleton3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -195,7 +195,7 @@ Sets the :ref:`NodePath<class_NodePath>` to the external skeleton that the BoneA
 
 |void| **set_use_external_skeleton**\ (\ use_external_skeleton\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_BoneAttachment3D_method_set_use_external_skeleton>`
 
-Sets whether the BoneAttachment3D node will use an external :ref:`Skeleton3D<class_Skeleton3D>` node rather than attempting to use its parent node as the :ref:`Skeleton3D<class_Skeleton3D>`. When set to ``true``, the BoneAttachment3D node will use the external :ref:`Skeleton3D<class_Skeleton3D>` node set in :ref:`set_external_skeleton<class_BoneAttachment3D_method_set_external_skeleton>`.
+Sets whether the BoneAttachment3D node will use an external :ref:`Skeleton3D<class_Skeleton3D>` node rather than attempting to use its parent node as the :ref:`Skeleton3D<class_Skeleton3D>`. When set to ``true``, the BoneAttachment3D node will use the external :ref:`Skeleton3D<class_Skeleton3D>` node set in :ref:`set_external_skeleton()<class_BoneAttachment3D_method_set_external_skeleton>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

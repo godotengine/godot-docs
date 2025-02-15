@@ -23,7 +23,7 @@ Description
 
 This class defines the interface for noise generation libraries to inherit from.
 
-A default :ref:`get_seamless_image<class_Noise_method_get_seamless_image>` implementation is provided for libraries that do not provide seamless noise. This function requests a larger image from the :ref:`get_image<class_Noise_method_get_image>` method, reverses the quadrants of the image, then uses the strips of extra width to blend over the seams.
+A default :ref:`get_seamless_image()<class_Noise_method_get_seamless_image>` implementation is provided for libraries that do not provide seamless noise. This function requests a larger image from the :ref:`get_image()<class_Noise_method_get_image>` method, reverses the quadrants of the image, then uses the strips of extra width to blend over the seams.
 
 Inheriting noise classes can optionally override this function to provide a more optimal algorithm.
 
@@ -84,7 +84,7 @@ Returns an :ref:`Image<class_Image>` containing 2D noise values.
 
 :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **get_image_3d**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, normalize\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_Noise_method_get_image_3d>`
 
-Returns an :ref:`Array<class_Array>` of :ref:`Image<class_Image>`\ s containing 3D noise values for use with :ref:`ImageTexture3D.create<class_ImageTexture3D_method_create>`.
+Returns an :ref:`Array<class_Array>` of :ref:`Image<class_Image>`\ s containing 3D noise values for use with :ref:`ImageTexture3D.create()<class_ImageTexture3D_method_create>`.
 
 \ **Note:** With ``normalize`` set to ``false``, the default implementation expects the noise generator to return values in the range ``-1.0`` to ``1.0``.
 
@@ -172,7 +172,7 @@ Returns an :ref:`Image<class_Image>` containing seamless 2D noise values.
 
 :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **get_seamless_image_3d**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, invert\: :ref:`bool<class_bool>` = false, skirt\: :ref:`float<class_float>` = 0.1, normalize\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_Noise_method_get_seamless_image_3d>`
 
-Returns an :ref:`Array<class_Array>` of :ref:`Image<class_Image>`\ s containing seamless 3D noise values for use with :ref:`ImageTexture3D.create<class_ImageTexture3D_method_create>`.
+Returns an :ref:`Array<class_Array>` of :ref:`Image<class_Image>`\ s containing seamless 3D noise values for use with :ref:`ImageTexture3D.create()<class_ImageTexture3D_method_create>`.
 
 \ **Note:** With ``normalize`` set to ``false``, the default implementation expects the noise generator to return values in the range ``-1.0`` to ``1.0``.
 

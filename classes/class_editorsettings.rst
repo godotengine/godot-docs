@@ -48,7 +48,7 @@ Accessing the settings can be done using the following methods, such as:
 
 
 
-\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings()<class_EditorInterface_method_get_editor_settings>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -627,8 +627,6 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/window_placement/game_embed_mode<class_EditorSettings_property_run/window_placement/game_embed_mode>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`run/window_placement/play_window_pip_mode<class_EditorSettings_property_run/window_placement/play_window_pip_mode>`                                                                                         |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>`                                                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                     | :ref:`run/window_placement/rect_custom_position<class_EditorSettings_property_run/window_placement/rect_custom_position>`                                                                                         |
@@ -674,6 +672,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/appearance/whitespace/draw_tabs<class_EditorSettings_property_text_editor/appearance/whitespace/draw_tabs>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/appearance/whitespace/line_spacing<class_EditorSettings_property_text_editor/appearance/whitespace/line_spacing>`                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/documentation/enable_tooltips<class_EditorSettings_property_text_editor/behavior/documentation/enable_tooltips>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/auto_reload_and_parse_scripts_on_save<class_EditorSettings_property_text_editor/behavior/files/auto_reload_and_parse_scripts_on_save>`                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3686,7 +3686,7 @@ If ``true``, embed modal windows such as docks inside the main editor window. Wh
 
 This is equivalent to :ref:`ProjectSettings.display/window/subwindows/embed_subwindows<class_ProjectSettings_property_display/window/subwindows/embed_subwindows>` in the running project, except the setting's value is inverted.
 
-\ **Note:** To query whether the editor can use multiple windows in an editor plugin, use :ref:`EditorInterface.is_multi_window_enabled<class_EditorInterface_method_is_multi_window_enabled>` instead of querying the value of this editor setting.
+\ **Note:** To query whether the editor can use multiple windows in an editor plugin, use :ref:`EditorInterface.is_multi_window_enabled()<class_EditorInterface_method_is_multi_window_enabled>` instead of querying the value of this editor setting.
 
 \ **Note:** If ``true``, game embedding is disabled.
 
@@ -4008,7 +4008,7 @@ If ``true``, multiple window support in editor is enabled. The following panels 
 
 \ **Note:** When :ref:`interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` is ``true``, the multi window support is always disabled.
 
-\ **Note:** To query whether the editor can use multiple windows in an editor plugin, use :ref:`EditorInterface.is_multi_window_enabled<class_EditorInterface_method_is_multi_window_enabled>` instead of querying the value of this editor setting.
+\ **Note:** To query whether the editor can use multiple windows in an editor plugin, use :ref:`EditorInterface.is_multi_window_enabled()<class_EditorInterface_method_is_multi_window_enabled>` instead of querying the value of this editor setting.
 
 .. rst-class:: classref-item-separator
 
@@ -4598,8 +4598,6 @@ Specifies how the Play window is launched relative to the Android editor.
 
 - **Side-by-side with Editor** will launch the Play window side-by-side with the Editor window.
 
-- **Launch in PiP mode** will launch the Play window directly in picture-in-picture (PiP) mode if PiP mode is supported and enabled. When maximized, the Play window will occupy the same window as the Editor.
-
 \ **Note:** Only available in the Android editor.
 
 .. rst-class:: classref-item-separator
@@ -4613,26 +4611,6 @@ Specifies how the Play window is launched relative to the Android editor.
 :ref:`int<class_int>` **run/window_placement/game_embed_mode** :ref:`🔗<class_EditorSettings_property_run/window_placement/game_embed_mode>`
 
 Overrides game embedding setting for all newly opened projects. If enabled, game embedding settings are not saved.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_run/window_placement/play_window_pip_mode:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **run/window_placement/play_window_pip_mode** :ref:`🔗<class_EditorSettings_property_run/window_placement/play_window_pip_mode>`
-
-Specifies the picture-in-picture (PiP) mode for the Play window.
-
-- **Disabled:** PiP is disabled for the Play window.
-
-- **Enabled:** If the device supports it, PiP is always enabled for the Play window. The Play window will contain a button to enter PiP mode.
-
-- **Enabled when Play window is same as Editor** (default for Android editor): If the device supports it, PiP is enabled when the Play window is the same as the Editor. The Play window will contain a button to enter PiP mode.
-
-\ **Note:** Only available in the Android editor.
 
 .. rst-class:: classref-item-separator
 
@@ -4911,6 +4889,18 @@ If ``true``, draws tab characters as chevrons.
 :ref:`int<class_int>` **text_editor/appearance/whitespace/line_spacing** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/whitespace/line_spacing>`
 
 The space to add between lines (in pixels). Greater line spacing can help improve readability at the cost of displaying fewer lines on screen.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/behavior/documentation/enable_tooltips:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/behavior/documentation/enable_tooltips** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/documentation/enable_tooltips>`
+
+If ``true``, documentation tooltips will appear when hovering over a symbol.
 
 .. rst-class:: classref-item-separator
 
@@ -6141,7 +6131,7 @@ Adds a custom property info to a property. The dictionary must contain:
 
 :ref:`bool<class_bool>` **check_changed_settings_in_group**\ (\ setting_prefix\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorSettings_method_check_changed_settings_in_group>`
 
-Checks if any settings with the prefix ``setting_prefix`` exist in the set of changed settings. See also :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`.
+Checks if any settings with the prefix ``setting_prefix`` exist in the set of changed settings. See also :ref:`get_changed_settings()<class_EditorSettings_method_get_changed_settings>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6189,7 +6179,7 @@ Returns the list of favorite files and directories for this project.
 
 :ref:`Variant<class_Variant>` **get_project_metadata**\ (\ section\: :ref:`String<class_String>`, key\: :ref:`String<class_String>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const| :ref:`🔗<class_EditorSettings_method_get_project_metadata>`
 
-Returns project-specific metadata for the ``section`` and ``key`` specified. If the metadata doesn't exist, ``default`` will be returned instead. See also :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>`.
+Returns project-specific metadata for the ``section`` and ``key`` specified. If the metadata doesn't exist, ``default`` will be returned instead. See also :ref:`set_project_metadata()<class_EditorSettings_method_set_project_metadata>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6213,7 +6203,7 @@ Returns the list of recently visited folders in the file dialog for this project
 
 :ref:`Variant<class_Variant>` **get_setting**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorSettings_method_get_setting>`
 
-Returns the value of the setting specified by ``name``. This is equivalent to using :ref:`Object.get<class_Object_method_get>` on the EditorSettings instance.
+Returns the value of the setting specified by ``name``. This is equivalent to using :ref:`Object.get()<class_Object_method_get>` on the EditorSettings instance.
 
 .. rst-class:: classref-item-separator
 
@@ -6237,7 +6227,7 @@ Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwis
 
 |void| **mark_setting_changed**\ (\ setting\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorSettings_method_mark_setting_changed>`
 
-Marks the passed editor setting as being changed, see :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`. Only settings which exist (see :ref:`has_setting<class_EditorSettings_method_has_setting>`) will be accepted.
+Marks the passed editor setting as being changed, see :ref:`get_changed_settings()<class_EditorSettings_method_get_changed_settings>`. Only settings which exist (see :ref:`has_setting()<class_EditorSettings_method_has_setting>`) will be accepted.
 
 .. rst-class:: classref-item-separator
 
@@ -6285,7 +6275,7 @@ Sets the initial value of the setting specified by ``name`` to ``value``. This i
 
 |void| **set_project_metadata**\ (\ section\: :ref:`String<class_String>`, key\: :ref:`String<class_String>`, data\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorSettings_method_set_project_metadata>`
 
-Sets project-specific metadata with the ``section``, ``key`` and ``data`` specified. This metadata is stored outside the project folder and therefore won't be checked into version control. See also :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>`.
+Sets project-specific metadata with the ``section``, ``key`` and ``data`` specified. This metadata is stored outside the project folder and therefore won't be checked into version control. See also :ref:`get_project_metadata()<class_EditorSettings_method_get_project_metadata>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6309,7 +6299,7 @@ Sets the list of recently visited folders in the file dialog for this project.
 
 |void| **set_setting**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorSettings_method_set_setting>`
 
-Sets the ``value`` of the setting specified by ``name``. This is equivalent to using :ref:`Object.set<class_Object_method_set>` on the EditorSettings instance.
+Sets the ``value`` of the setting specified by ``name``. This is equivalent to using :ref:`Object.set()<class_Object_method_set>` on the EditorSettings instance.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

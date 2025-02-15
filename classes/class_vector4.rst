@@ -202,7 +202,7 @@ enum **Axis**: :ref:`🔗<enum_Vector4_Axis>`
 
 :ref:`Axis<enum_Vector4_Axis>` **AXIS_X** = ``0``
 
-Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
+Enumerated value for the X axis. Returned by :ref:`max_axis_index()<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector4_method_min_axis_index>`.
 
 .. _class_Vector4_constant_AXIS_Y:
 
@@ -210,7 +210,7 @@ Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4_
 
 :ref:`Axis<enum_Vector4_Axis>` **AXIS_Y** = ``1``
 
-Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
+Enumerated value for the Y axis. Returned by :ref:`max_axis_index()<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector4_method_min_axis_index>`.
 
 .. _class_Vector4_constant_AXIS_Z:
 
@@ -218,7 +218,7 @@ Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4_
 
 :ref:`Axis<enum_Vector4_Axis>` **AXIS_Z** = ``2``
 
-Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
+Enumerated value for the Z axis. Returned by :ref:`max_axis_index()<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector4_method_min_axis_index>`.
 
 .. _class_Vector4_constant_AXIS_W:
 
@@ -226,7 +226,7 @@ Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4_
 
 :ref:`Axis<enum_Vector4_Axis>` **AXIS_W** = ``3``
 
-Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
+Enumerated value for the W axis. Returned by :ref:`max_axis_index()<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector4_method_min_axis_index>`.
 
 .. rst-class:: classref-section-separator
 
@@ -400,7 +400,7 @@ Returns a new vector with all components rounded up (towards positive infinity).
 
 :ref:`Vector4<class_Vector4>` **clamp**\ (\ min\: :ref:`Vector4<class_Vector4>`, max\: :ref:`Vector4<class_Vector4>`\ ) |const| :ref:`🔗<class_Vector4_method_clamp>`
 
-Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp()<class_@GlobalScope_method_clamp>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -412,7 +412,7 @@ Returns a new vector with all components clamped between the components of ``min
 
 :ref:`Vector4<class_Vector4>` **clampf**\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Vector4_method_clampf>`
 
-Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp()<class_@GlobalScope_method_clamp>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -438,7 +438,7 @@ Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and
 
 Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-It can perform smoother interpolation than :ref:`cubic_interpolate<class_Vector4_method_cubic_interpolate>` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate()<class_Vector4_method_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-item-separator
 
@@ -464,7 +464,7 @@ Returns the normalized vector pointing from this vector to ``to``. This is equiv
 
 Returns the squared distance between this vector and ``to``.
 
-This method runs faster than :ref:`distance_to<class_Vector4_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+This method runs faster than :ref:`distance_to()<class_Vector4_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 
@@ -524,7 +524,7 @@ Returns the inverse of the vector. This is the same as ``Vector4(1.0 / v.x, 1.0 
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ to\: :ref:`Vector4<class_Vector4>`\ ) |const| :ref:`🔗<class_Vector4_method_is_equal_approx>`
 
-Returns ``true`` if this vector and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this vector and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -536,7 +536,7 @@ Returns ``true`` if this vector and ``to`` are approximately equal, by running :
 
 :ref:`bool<class_bool>` **is_finite**\ (\ ) |const| :ref:`🔗<class_Vector4_method_is_finite>`
 
-Returns ``true`` if this vector is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+Returns ``true`` if this vector is finite, by calling :ref:`@GlobalScope.is_finite()<class_@GlobalScope_method_is_finite>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -560,9 +560,9 @@ Returns ``true`` if the vector is normalized, i.e. its length is approximately e
 
 :ref:`bool<class_bool>` **is_zero_approx**\ (\ ) |const| :ref:`🔗<class_Vector4_method_is_zero_approx>`
 
-Returns ``true`` if this vector's values are approximately zero, by running :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` on each component.
+Returns ``true`` if this vector's values are approximately zero, by running :ref:`@GlobalScope.is_zero_approx()<class_@GlobalScope_method_is_zero_approx>` on each component.
 
-This method is faster than using :ref:`is_equal_approx<class_Vector4_method_is_equal_approx>` with one value as a zero vector.
+This method is faster than using :ref:`is_equal_approx()<class_Vector4_method_is_equal_approx>` with one value as a zero vector.
 
 .. rst-class:: classref-item-separator
 
@@ -588,7 +588,7 @@ Returns the length (magnitude) of this vector.
 
 Returns the squared length (squared magnitude) of this vector.
 
-This method runs faster than :ref:`length<class_Vector4_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+This method runs faster than :ref:`length()<class_Vector4_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 
@@ -684,7 +684,7 @@ Returns the component-wise minimum of this and ``with``, equivalent to ``Vector4
 
 :ref:`Vector4<class_Vector4>` **normalized**\ (\ ) |const| :ref:`🔗<class_Vector4_method_normalized>`
 
-Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``. Returns ``(0, 0, 0, 0)`` if ``v.length() == 0``. See also :ref:`is_normalized<class_Vector4_method_is_normalized>`.
+Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``. Returns ``(0, 0, 0, 0)`` if ``v.length() == 0``. See also :ref:`is_normalized()<class_Vector4_method_is_normalized>`.
 
 \ **Note:** This function may return incorrect values if the input vector length is near zero.
 
@@ -698,7 +698,7 @@ Returns the result of scaling the vector to unit length. Equivalent to ``v / v.l
 
 :ref:`Vector4<class_Vector4>` **posmod**\ (\ mod\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Vector4_method_posmod>`
 
-Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_method_fposmod>` of this vector's components and ``mod``.
+Returns a vector composed of the :ref:`@GlobalScope.fposmod()<class_@GlobalScope_method_fposmod>` of this vector's components and ``mod``.
 
 .. rst-class:: classref-item-separator
 
@@ -710,7 +710,7 @@ Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_m
 
 :ref:`Vector4<class_Vector4>` **posmodv**\ (\ modv\: :ref:`Vector4<class_Vector4>`\ ) |const| :ref:`🔗<class_Vector4_method_posmodv>`
 
-Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_method_fposmod>` of this vector's components and ``modv``'s components.
+Returns a vector composed of the :ref:`@GlobalScope.fposmod()<class_@GlobalScope_method_fposmod>` of this vector's components and ``modv``'s components.
 
 .. rst-class:: classref-item-separator
 
@@ -734,7 +734,7 @@ Returns a new vector with all components rounded to the nearest integer, with ha
 
 :ref:`Vector4<class_Vector4>` **sign**\ (\ ) |const| :ref:`🔗<class_Vector4_method_sign>`
 
-Returns a new vector with each component set to ``1.0`` if it's positive, ``-1.0`` if it's negative, and ``0.0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+Returns a new vector with each component set to ``1.0`` if it's positive, ``-1.0`` if it's negative, and ``0.0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign()<class_@GlobalScope_method_sign>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -777,7 +777,7 @@ Operator Descriptions
 
 Returns ``true`` if the vectors are not equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector4_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Vector4_method_is_equal_approx>` instead, which is more reliable.
 
 \ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
@@ -793,7 +793,7 @@ Returns ``true`` if the vectors are not equal.
 
 Transforms (multiplies) the **Vector4** by the transpose of the given :ref:`Projection<class_Projection>` matrix.
 
-For transforming by inverse of a projection ``projection.inverse() * vector`` can be used instead. See :ref:`Projection.inverse<class_Projection_method_inverse>`.
+For transforming by inverse of a projection ``projection.inverse() * vector`` can be used instead. See :ref:`Projection.inverse()<class_Projection_method_inverse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -955,7 +955,7 @@ Compares two **Vector4** vectors by first checking if the X value of the left ve
 
 Returns ``true`` if the vectors are exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector4_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Vector4_method_is_equal_approx>` instead, which is more reliable.
 
 \ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 

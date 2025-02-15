@@ -283,7 +283,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 :ref:`Array<class_Array>` **_get_parameter_list**\ (\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__get_parameter_list>`
 
-When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a list of the properties on this animation node. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a list of the properties on this animation node. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list()<class_Object_method_get_property_list>`.
 
 .. rst-class:: classref-item-separator
 
@@ -323,7 +323,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to run some code when this animation node is processed. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute.
 
-Here, call the :ref:`blend_input<class_AnimationNode_method_blend_input>`, :ref:`blend_node<class_AnimationNode_method_blend_node>` or :ref:`blend_animation<class_AnimationNode_method_blend_animation>` functions. You can also use :ref:`get_parameter<class_AnimationNode_method_get_parameter>` and :ref:`set_parameter<class_AnimationNode_method_set_parameter>` to modify local memory.
+Here, call the :ref:`blend_input()<class_AnimationNode_method_blend_input>`, :ref:`blend_node()<class_AnimationNode_method_blend_node>` or :ref:`blend_animation()<class_AnimationNode_method_blend_animation>` functions. You can also use :ref:`get_parameter()<class_AnimationNode_method_get_parameter>` and :ref:`set_parameter()<class_AnimationNode_method_set_parameter>` to modify local memory.
 
 This function should return the delta.
 
@@ -437,7 +437,7 @@ Gets the value of a parameter. Parameters are custom local memory used for your 
 
 Returns the object id of the :ref:`AnimationTree<class_AnimationTree>` that owns this node.
 
-\ **Note:** This method should only be called from within the :ref:`AnimationNodeExtension._process_animation_node<class_AnimationNodeExtension_private_method__process_animation_node>` method, and will return an invalid id otherwise.
+\ **Note:** This method should only be called from within the :ref:`AnimationNodeExtension._process_animation_node()<class_AnimationNodeExtension_private_method__process_animation_node>` method, and will return an invalid id otherwise.
 
 .. rst-class:: classref-item-separator
 

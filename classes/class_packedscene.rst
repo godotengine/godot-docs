@@ -46,7 +46,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
 
 
-\ **Example:** Save a node with different owners. The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidBody2D<class_RigidBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and :ref:`pack<class_PackedScene_method_pack>` will therefore only save those two nodes, but not ``collision``.
+\ **Example:** Save a node with different owners. The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidBody2D<class_RigidBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and :ref:`pack()<class_PackedScene_method_pack>` will therefore only save those two nodes, but not ``collision``.
 
 
 .. tabs::
@@ -147,7 +147,7 @@ enum **GenEditState**: :ref:`🔗<enum_PackedScene_GenEditState>`
 
 :ref:`GenEditState<enum_PackedScene_GenEditState>` **GEN_EDIT_STATE_DISABLED** = ``0``
 
-If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, blocks edits to the scene state.
+If passed to :ref:`instantiate()<class_PackedScene_method_instantiate>`, blocks edits to the scene state.
 
 .. _class_PackedScene_constant_GEN_EDIT_STATE_INSTANCE:
 
@@ -155,7 +155,7 @@ If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, blocks ed
 
 :ref:`GenEditState<enum_PackedScene_GenEditState>` **GEN_EDIT_STATE_INSTANCE** = ``1``
 
-If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene.
+If passed to :ref:`instantiate()<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene.
 
 \ **Note:** Only available in editor builds.
 
@@ -165,7 +165,7 @@ If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, provides 
 
 :ref:`GenEditState<enum_PackedScene_GenEditState>` **GEN_EDIT_STATE_MAIN** = ``2``
 
-If passed to :ref:`instantiate<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
+If passed to :ref:`instantiate()<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
 \ **Note:** Only available in editor builds.
 

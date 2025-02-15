@@ -760,7 +760,7 @@ Returns display refresh rates supported by the current HMD. Only returned if thi
 
 :ref:`Vector3<class_Vector3>` **get_hand_joint_angular_velocity**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_angular_velocity>`
 
-**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_angular_velocity<class_XRHandTracker_method_get_hand_joint_angular_velocity>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
+**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_angular_velocity()<class_XRHandTracker_method_get_hand_joint_angular_velocity>` obtained from :ref:`XRServer.get_tracker()<class_XRServer_method_get_tracker>` instead.
 
 If handtracking is enabled, returns the angular velocity of a joint (``joint``) of a hand (``hand``) as provided by OpenXR. This is relative to :ref:`XROrigin3D<class_XROrigin3D>`!
 
@@ -774,7 +774,7 @@ If handtracking is enabled, returns the angular velocity of a joint (``joint``) 
 
 |bitfield|\[:ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>`\] **get_hand_joint_flags**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_flags>`
 
-**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_flags<class_XRHandTracker_method_get_hand_joint_flags>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
+**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_flags()<class_XRHandTracker_method_get_hand_joint_flags>` obtained from :ref:`XRServer.get_tracker()<class_XRServer_method_get_tracker>` instead.
 
 If handtracking is enabled, returns flags that inform us of the validity of the tracking data.
 
@@ -788,7 +788,7 @@ If handtracking is enabled, returns flags that inform us of the validity of the 
 
 :ref:`Vector3<class_Vector3>` **get_hand_joint_linear_velocity**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_linear_velocity>`
 
-**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_linear_velocity<class_XRHandTracker_method_get_hand_joint_linear_velocity>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
+**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_linear_velocity()<class_XRHandTracker_method_get_hand_joint_linear_velocity>` obtained from :ref:`XRServer.get_tracker()<class_XRServer_method_get_tracker>` instead.
 
 If handtracking is enabled, returns the linear velocity of a joint (``joint``) of a hand (``hand``) as provided by OpenXR. This is relative to :ref:`XROrigin3D<class_XROrigin3D>` without worldscale applied!
 
@@ -802,7 +802,7 @@ If handtracking is enabled, returns the linear velocity of a joint (``joint``) o
 
 :ref:`Vector3<class_Vector3>` **get_hand_joint_position**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_position>`
 
-**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_transform<class_XRHandTracker_method_get_hand_joint_transform>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
+**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_transform()<class_XRHandTracker_method_get_hand_joint_transform>` obtained from :ref:`XRServer.get_tracker()<class_XRServer_method_get_tracker>` instead.
 
 If handtracking is enabled, returns the position of a joint (``joint``) of a hand (``hand``) as provided by OpenXR. This is relative to :ref:`XROrigin3D<class_XROrigin3D>` without worldscale applied!
 
@@ -816,7 +816,7 @@ If handtracking is enabled, returns the position of a joint (``joint``) of a han
 
 :ref:`float<class_float>` **get_hand_joint_radius**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_radius>`
 
-**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_radius<class_XRHandTracker_method_get_hand_joint_radius>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
+**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_radius()<class_XRHandTracker_method_get_hand_joint_radius>` obtained from :ref:`XRServer.get_tracker()<class_XRServer_method_get_tracker>` instead.
 
 If handtracking is enabled, returns the radius of a joint (``joint``) of a hand (``hand``) as provided by OpenXR. This is without worldscale applied!
 
@@ -830,7 +830,7 @@ If handtracking is enabled, returns the radius of a joint (``joint``) of a hand 
 
 :ref:`Quaternion<class_Quaternion>` **get_hand_joint_rotation**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_rotation>`
 
-**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_transform<class_XRHandTracker_method_get_hand_joint_transform>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
+**Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_transform()<class_XRHandTracker_method_get_hand_joint_transform>` obtained from :ref:`XRServer.get_tracker()<class_XRServer_method_get_tracker>` instead.
 
 If handtracking is enabled, returns the rotation of a joint (``joint``) of a hand (``hand``) as provided by OpenXR.
 
@@ -844,7 +844,7 @@ If handtracking is enabled, returns the rotation of a joint (``joint``) of a han
 
 :ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **get_hand_tracking_source**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_tracking_source>`
 
-**Deprecated:** Use :ref:`XRHandTracker.hand_tracking_source<class_XRHandTracker_property_hand_tracking_source>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
+**Deprecated:** Use :ref:`XRHandTracker.hand_tracking_source<class_XRHandTracker_property_hand_tracking_source>` obtained from :ref:`XRServer.get_tracker()<class_XRServer_method_get_tracker>` instead.
 
 If handtracking is enabled and hand tracking source is supported, gets the source of the hand tracking data for ``hand``.
 

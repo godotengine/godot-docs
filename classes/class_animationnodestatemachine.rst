@@ -166,7 +166,7 @@ Property Descriptions
 - |void| **set_allow_transition_to_self**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_allow_transition_to_self**\ (\ )
 
-If ``true``, allows teleport to the self state with :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>`. When the reset option is enabled in :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>`, the animation is restarted. If ``false``, nothing happens on the teleportation to the self state.
+If ``true``, allows teleport to the self state with :ref:`AnimationNodeStateMachinePlayback.travel()<class_AnimationNodeStateMachinePlayback_method_travel>`. When the reset option is enabled in :ref:`AnimationNodeStateMachinePlayback.travel()<class_AnimationNodeStateMachinePlayback_method_travel>`, the animation is restarted. If ``false``, nothing happens on the teleportation to the self state.
 
 .. rst-class:: classref-item-separator
 

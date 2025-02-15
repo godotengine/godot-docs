@@ -21,7 +21,7 @@ The **float** built-in type is a 64-bit double-precision floating-point number, 
 
 Many methods and properties in the engine use 32-bit single-precision floating-point numbers instead, equivalent to ``float`` in C++, which have 6 reliable decimal digits of precision. For data structures such as :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, Godot uses 32-bit floating-point numbers by default, but it can be changed to use 64-bit doubles if Godot is compiled with the ``precision=double`` option.
 
-Math done using the **float** type is not guaranteed to be exact and will often result in small errors. You should usually use the :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` and :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` methods instead of ``==`` to compare **float** values for equality.
+Math done using the **float** type is not guaranteed to be exact and will often result in small errors. You should usually use the :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` and :ref:`@GlobalScope.is_zero_approx()<class_@GlobalScope_method_is_zero_approx>` methods instead of ``==`` to compare **float** values for equality.
 
 .. rst-class:: classref-introduction-group
 
@@ -161,7 +161,7 @@ Constructs a **float** as a copy of the given **float**.
 
 :ref:`float<class_float>` **float**\ (\ from\: :ref:`String<class_String>`\ )
 
-Converts a :ref:`String<class_String>` to a **float**, following the same rules as :ref:`String.to_float<class_String_method_to_float>`.
+Converts a :ref:`String<class_String>` to a **float**, following the same rules as :ref:`String.to_float()<class_String_method_to_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -522,7 +522,7 @@ Returns ``true`` if this **float** is less than or equal to the given :ref:`int<
 
 Returns ``true`` if both floats are exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx()<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
 
 \ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this operator may not be accurate if NaNs are included.
 

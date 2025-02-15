@@ -21,7 +21,7 @@ Description
 
 TLSOptions abstracts the configuration options for the :ref:`StreamPeerTLS<class_StreamPeerTLS>` and :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` classes.
 
-Objects of this class cannot be instantiated directly, and one of the static methods :ref:`client<class_TLSOptions_method_client>`, :ref:`client_unsafe<class_TLSOptions_method_client_unsafe>`, or :ref:`server<class_TLSOptions_method_server>` should be used instead.
+Objects of this class cannot be instantiated directly, and one of the static methods :ref:`client()<class_TLSOptions_method_client>`, :ref:`client_unsafe()<class_TLSOptions_method_client_unsafe>`, or :ref:`server()<class_TLSOptions_method_server>` should be used instead.
 
 
 .. tabs::
@@ -112,7 +112,7 @@ Creates an **unsafe** TLS client configuration where certificate validation is o
 
 :ref:`String<class_String>` **get_common_name_override**\ (\ ) |const| :ref:`🔗<class_TLSOptions_method_get_common_name_override>`
 
-Returns the common name (domain name) override specified when creating with :ref:`client<class_TLSOptions_method_client>`.
+Returns the common name (domain name) override specified when creating with :ref:`client()<class_TLSOptions_method_client>`.
 
 .. rst-class:: classref-item-separator
 
@@ -124,7 +124,7 @@ Returns the common name (domain name) override specified when creating with :ref
 
 :ref:`X509Certificate<class_X509Certificate>` **get_own_certificate**\ (\ ) |const| :ref:`🔗<class_TLSOptions_method_get_own_certificate>`
 
-Returns the :ref:`X509Certificate<class_X509Certificate>` specified when creating with :ref:`server<class_TLSOptions_method_server>`.
+Returns the :ref:`X509Certificate<class_X509Certificate>` specified when creating with :ref:`server()<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 
@@ -136,7 +136,7 @@ Returns the :ref:`X509Certificate<class_X509Certificate>` specified when creatin
 
 :ref:`CryptoKey<class_CryptoKey>` **get_private_key**\ (\ ) |const| :ref:`🔗<class_TLSOptions_method_get_private_key>`
 
-Returns the :ref:`CryptoKey<class_CryptoKey>` specified when creating with :ref:`server<class_TLSOptions_method_server>`.
+Returns the :ref:`CryptoKey<class_CryptoKey>` specified when creating with :ref:`server()<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 
@@ -148,7 +148,7 @@ Returns the :ref:`CryptoKey<class_CryptoKey>` specified when creating with :ref:
 
 :ref:`X509Certificate<class_X509Certificate>` **get_trusted_ca_chain**\ (\ ) |const| :ref:`🔗<class_TLSOptions_method_get_trusted_ca_chain>`
 
-Returns the CA :ref:`X509Certificate<class_X509Certificate>` chain specified when creating with :ref:`client<class_TLSOptions_method_client>` or :ref:`client_unsafe<class_TLSOptions_method_client_unsafe>`.
+Returns the CA :ref:`X509Certificate<class_X509Certificate>` chain specified when creating with :ref:`client()<class_TLSOptions_method_client>` or :ref:`client_unsafe()<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -160,7 +160,7 @@ Returns the CA :ref:`X509Certificate<class_X509Certificate>` chain specified whe
 
 :ref:`bool<class_bool>` **is_server**\ (\ ) |const| :ref:`🔗<class_TLSOptions_method_is_server>`
 
-Returns ``true`` if created with :ref:`server<class_TLSOptions_method_server>`, ``false`` otherwise.
+Returns ``true`` if created with :ref:`server()<class_TLSOptions_method_server>`, ``false`` otherwise.
 
 .. rst-class:: classref-item-separator
 
@@ -172,7 +172,7 @@ Returns ``true`` if created with :ref:`server<class_TLSOptions_method_server>`, 
 
 :ref:`bool<class_bool>` **is_unsafe_client**\ (\ ) |const| :ref:`🔗<class_TLSOptions_method_is_unsafe_client>`
 
-Returns ``true`` if created with :ref:`client_unsafe<class_TLSOptions_method_client_unsafe>`, ``false`` otherwise.
+Returns ``true`` if created with :ref:`client_unsafe()<class_TLSOptions_method_client_unsafe>`, ``false`` otherwise.
 
 .. rst-class:: classref-item-separator
 

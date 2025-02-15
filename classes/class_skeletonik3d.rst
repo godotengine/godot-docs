@@ -295,7 +295,7 @@ Returns the parent :ref:`Skeleton3D<class_Skeleton3D>` node that was present whe
 
 :ref:`bool<class_bool>` **is_running**\ (\ ) :ref:`🔗<class_SkeletonIK3D_method_is_running>`
 
-Returns ``true`` if SkeletonIK is applying IK effects on continues frames to the :ref:`Skeleton3D<class_Skeleton3D>` bones. Returns ``false`` if SkeletonIK is stopped or :ref:`start<class_SkeletonIK3D_method_start>` was used with the ``one_time`` parameter set to ``true``.
+Returns ``true`` if SkeletonIK is applying IK effects on continues frames to the :ref:`Skeleton3D<class_Skeleton3D>` bones. Returns ``false`` if SkeletonIK is stopped or :ref:`start()<class_SkeletonIK3D_method_start>` was used with the ``one_time`` parameter set to ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -319,7 +319,7 @@ Starts applying IK effects on each frame to the :ref:`Skeleton3D<class_Skeleton3
 
 |void| **stop**\ (\ ) :ref:`🔗<class_SkeletonIK3D_method_stop>`
 
-Stops applying IK effects on each frame to the :ref:`Skeleton3D<class_Skeleton3D>` bones and also calls :ref:`Skeleton3D.clear_bones_global_pose_override<class_Skeleton3D_method_clear_bones_global_pose_override>` to remove existing overrides on all bones.
+Stops applying IK effects on each frame to the :ref:`Skeleton3D<class_Skeleton3D>` bones and also calls :ref:`Skeleton3D.clear_bones_global_pose_override()<class_Skeleton3D_method_clear_bones_global_pose_override>` to remove existing overrides on all bones.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

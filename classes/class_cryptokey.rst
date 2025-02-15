@@ -21,7 +21,7 @@ Description
 
 The CryptoKey class represents a cryptographic key. Keys can be loaded and saved like any other :ref:`Resource<class_Resource>`.
 
-They can be used to generate a self-signed :ref:`X509Certificate<class_X509Certificate>` via :ref:`Crypto.generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>` and as private key in :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>` along with the appropriate certificate.
+They can be used to generate a self-signed :ref:`X509Certificate<class_X509Certificate>` via :ref:`Crypto.generate_self_signed_certificate()<class_Crypto_method_generate_self_signed_certificate>` and as private key in :ref:`StreamPeerTLS.accept_stream()<class_StreamPeerTLS_method_accept_stream>` along with the appropriate certificate.
 
 .. rst-class:: classref-introduction-group
 

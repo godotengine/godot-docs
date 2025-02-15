@@ -21,9 +21,9 @@ Description
 
 **RenderingDevice** is an abstraction for working with modern low-level graphics APIs such as Vulkan. Compared to :ref:`RenderingServer<class_RenderingServer>` (which works with Godot's own rendering subsystems), **RenderingDevice** is much lower-level and allows working more directly with the underlying graphics APIs. **RenderingDevice** is used in Godot to provide support for several modern low-level graphics APIs while reducing the amount of code duplication required. **RenderingDevice** can also be used in your own projects to perform things that are not exposed by :ref:`RenderingServer<class_RenderingServer>` or high-level nodes, such as using compute shaders.
 
-On startup, Godot creates a global **RenderingDevice** which can be retrieved using :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>`. This global **RenderingDevice** performs drawing to the screen.
+On startup, Godot creates a global **RenderingDevice** which can be retrieved using :ref:`RenderingServer.get_rendering_device()<class_RenderingServer_method_get_rendering_device>`. This global **RenderingDevice** performs drawing to the screen.
 
-\ **Local RenderingDevices:** Using :ref:`RenderingServer.create_local_rendering_device<class_RenderingServer_method_create_local_rendering_device>`, you can create "secondary" rendering devices to perform drawing and GPU compute operations on separate threads.
+\ **Local RenderingDevices:** Using :ref:`RenderingServer.create_local_rendering_device()<class_RenderingServer_method_create_local_rendering_device>`, you can create "secondary" rendering devices to perform drawing and GPU compute operations on separate threads.
 
 \ **Note:** **RenderingDevice** assumes intermediate knowledge of modern graphics APIs such as Vulkan, Direct3D 12, Metal or WebGPU. These graphics APIs are lower-level than OpenGL or Direct3D 11, requiring you to perform what was previously done by the graphics driver itself. If you have difficulty understanding the concepts used in this class, follow the `Vulkan Tutorial <https://vulkan-tutorial.com/>`__ or `Vulkan Guide <https://vkguide.dev/>`__. It's recommended to have existing modern OpenGL or Direct3D 11 knowledge before attempting to learn a low-level graphics API.
 
@@ -193,7 +193,7 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                      | :ref:`index_array_create<class_RenderingDevice_method_index_array_create>`\ (\ index_buffer\: :ref:`RID<class_RID>`, index_offset\: :ref:`int<class_int>`, index_count\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                                      | :ref:`index_buffer_create<class_RenderingDevice_method_index_buffer_create>`\ (\ size_indices\: :ref:`int<class_int>`, format\: :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_restart_indices\: :ref:`bool<class_bool>` = false, enable_device_address\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+   | :ref:`RID<class_RID>`                                      | :ref:`index_buffer_create<class_RenderingDevice_method_index_buffer_create>`\ (\ size_indices\: :ref:`int<class_int>`, format\: :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_restart_indices\: :ref:`bool<class_bool>` = false, creation_bits\: |bitfield|\[:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>`\] = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`limit_get<class_RenderingDevice_method_limit_get>`\ (\ limit\: :ref:`Limit<enum_RenderingDevice_Limit>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -225,7 +225,7 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`shader_get_vertex_input_attribute_mask<class_RenderingDevice_method_shader_get_vertex_input_attribute_mask>`\ (\ shader\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                                      | :ref:`storage_buffer_create<class_RenderingDevice_method_storage_buffer_create>`\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), usage\: |bitfield|\[:ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>`\] = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   | :ref:`RID<class_RID>`                                      | :ref:`storage_buffer_create<class_RenderingDevice_method_storage_buffer_create>`\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), usage\: |bitfield|\[:ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>`\] = 0, creation_bits\: |bitfield|\[:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>`\] = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                     | :ref:`submit<class_RenderingDevice_method_submit>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -267,7 +267,7 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                      | :ref:`texture_update<class_RenderingDevice_method_texture_update>`\ (\ texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                                      | :ref:`uniform_buffer_create<class_RenderingDevice_method_uniform_buffer_create>`\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), enable_device_address\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+   | :ref:`RID<class_RID>`                                      | :ref:`uniform_buffer_create<class_RenderingDevice_method_uniform_buffer_create>`\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), creation_bits\: |bitfield|\[:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>`\] = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                      | :ref:`uniform_set_create<class_RenderingDevice_method_uniform_set_create>`\ (\ uniforms\: :ref:`Array<class_Array>`\[:ref:`RDUniform<class_RDUniform>`\], shader\: :ref:`RID<class_RID>`, shader_set\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -275,7 +275,7 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                      | :ref:`vertex_array_create<class_RenderingDevice_method_vertex_array_create>`\ (\ vertex_count\: :ref:`int<class_int>`, vertex_format\: :ref:`int<class_int>`, src_buffers\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], offsets\: :ref:`PackedInt64Array<class_PackedInt64Array>` = PackedInt64Array()\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                                      | :ref:`vertex_buffer_create<class_RenderingDevice_method_vertex_buffer_create>`\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_as_storage\: :ref:`bool<class_bool>` = false, enable_device_address\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+   | :ref:`RID<class_RID>`                                      | :ref:`vertex_buffer_create<class_RenderingDevice_method_vertex_buffer_create>`\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), creation_bits\: |bitfield|\[:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>`\] = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`vertex_format_create<class_RenderingDevice_method_vertex_format_create>`\ (\ vertex_descriptions\: :ref:`Array<class_Array>`\[:ref:`RDVertexAttribute<class_RDVertexAttribute>`\]\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2637,7 +2637,7 @@ Texture can be used as a `storage image <https://registry.khronos.org/vulkan/spe
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_CPU_READ_BIT** = ``32``
 
-Texture can be read back on the CPU using :ref:`texture_get_data<class_RenderingDevice_method_texture_get_data>` faster than without this bit, since it is always kept in the system memory.
+Texture can be read back on the CPU using :ref:`texture_get_data()<class_RenderingDevice_method_texture_get_data>` faster than without this bit, since it is always kept in the system memory.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_CAN_UPDATE_BIT:
 
@@ -2645,7 +2645,7 @@ Texture can be read back on the CPU using :ref:`texture_get_data<class_Rendering
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_CAN_UPDATE_BIT** = ``64``
 
-Texture can be updated using :ref:`texture_update<class_RenderingDevice_method_texture_update>`.
+Texture can be updated using :ref:`texture_update()<class_RenderingDevice_method_texture_update>`.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_FROM_BIT:
 
@@ -2653,7 +2653,7 @@ Texture can be updated using :ref:`texture_update<class_RenderingDevice_method_t
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_CAN_COPY_FROM_BIT** = ``128``
 
-Texture can be a source for :ref:`texture_copy<class_RenderingDevice_method_texture_copy>`.
+Texture can be a source for :ref:`texture_copy()<class_RenderingDevice_method_texture_copy>`.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_TO_BIT:
 
@@ -2661,7 +2661,7 @@ Texture can be a source for :ref:`texture_copy<class_RenderingDevice_method_text
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_CAN_COPY_TO_BIT** = ``256``
 
-Texture can be a destination for :ref:`texture_copy<class_RenderingDevice_method_texture_copy>`.
+Texture can be a destination for :ref:`texture_copy()<class_RenderingDevice_method_texture_copy>`.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_INPUT_ATTACHMENT_BIT:
 
@@ -3003,13 +3003,44 @@ flags **StorageBufferUsage**: :ref:`🔗<enum_RenderingDevice_StorageBufferUsage
 
 
 
-.. _class_RenderingDevice_constant_STORAGE_BUFFER_USAGE_DEVICE_ADDRESS:
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingDevice_BufferCreationBits:
+
+.. rst-class:: classref-enumeration
+
+flags **BufferCreationBits**: :ref:`🔗<enum_RenderingDevice_BufferCreationBits>`
+
+.. _class_RenderingDevice_constant_BUFFER_CREATION_DEVICE_ADDRESS_BIT:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>` **STORAGE_BUFFER_USAGE_DEVICE_ADDRESS** = ``2``
+:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>` **BUFFER_CREATION_DEVICE_ADDRESS_BIT** = ``1``
 
-Allows usage of :ref:`buffer_get_device_address<class_RenderingDevice_method_buffer_get_device_address>` on supported GPUs.
+Optionally, set this flag if you wish to use :ref:`buffer_get_device_address()<class_RenderingDevice_method_buffer_get_device_address>` functionality. You must first check the GPU supports it:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    rd = RenderingServer.get_rendering_device()
+    
+    if rd.has_feature(RenderingDevice.SUPPORTS_BUFFER_DEVICE_ADDRESS):
+          storage_buffer = rd.storage_buffer_create(bytes.size(), bytes, RenderingDevice.STORAGE_BUFFER_USAGE_SHADER_DEVICE_ADDRESS):
+          storage_buffer_address = rd.buffer_get_device_address(storage_buffer)
+
+
+
+.. _class_RenderingDevice_constant_BUFFER_CREATION_AS_STORAGE_BIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>` **BUFFER_CREATION_AS_STORAGE_BIT** = ``2``
+
+Set this flag so that it is created as storage. This is useful if Compute Shaders need access (for reading or writing) to the buffer, e.g. skeletal animations are processed in Compute Shaders which need access to vertex buffers, to be later consumed by vertex shaders as part of the regular rasterization pipeline.
 
 .. rst-class:: classref-item-separator
 
@@ -3691,7 +3722,7 @@ Color and alpha blend factor is ``1.0 - destination alpha``.
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_CONSTANT_COLOR** = ``10``
 
-Color blend factor is ``blend constant color``. Alpha blend factor is ``blend constant alpha`` (see :ref:`draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`).
+Color blend factor is ``blend constant color``. Alpha blend factor is ``blend constant alpha`` (see :ref:`draw_list_set_blend_constants()<class_RenderingDevice_method_draw_list_set_blend_constants>`).
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_CONSTANT_COLOR:
 
@@ -3699,7 +3730,7 @@ Color blend factor is ``blend constant color``. Alpha blend factor is ``blend co
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_CONSTANT_COLOR** = ``11``
 
-Color blend factor is ``1.0 - blend constant color``. Alpha blend factor is ``1.0 - blend constant alpha`` (see :ref:`draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`).
+Color blend factor is ``1.0 - blend constant color``. Alpha blend factor is ``1.0 - blend constant alpha`` (see :ref:`draw_list_set_blend_constants()<class_RenderingDevice_method_draw_list_set_blend_constants>`).
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_CONSTANT_ALPHA:
 
@@ -3707,7 +3738,7 @@ Color blend factor is ``1.0 - blend constant color``. Alpha blend factor is ``1.
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_CONSTANT_ALPHA** = ``12``
 
-Color and alpha blend factor is ``blend constant alpha`` (see :ref:`draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`).
+Color and alpha blend factor is ``blend constant alpha`` (see :ref:`draw_list_set_blend_constants()<class_RenderingDevice_method_draw_list_set_blend_constants>`).
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_CONSTANT_ALPHA:
 
@@ -3715,7 +3746,7 @@ Color and alpha blend factor is ``blend constant alpha`` (see :ref:`draw_list_se
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_CONSTANT_ALPHA** = ``13``
 
-Color and alpha blend factor is ``1.0 - blend constant alpha`` (see :ref:`draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`).
+Color and alpha blend factor is ``1.0 - blend constant alpha`` (see :ref:`draw_list_set_blend_constants()<class_RenderingDevice_method_draw_list_set_blend_constants>`).
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_SRC_ALPHA_SATURATE:
 
@@ -5059,9 +5090,9 @@ Prints an error if:
 
 - the region specified by ``offset`` + ``size_bytes`` exceeds the buffer
 
-- a draw list is currently active (created by :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`)
+- a draw list is currently active (created by :ref:`draw_list_begin()<class_RenderingDevice_method_draw_list_begin>`)
 
-- a compute list is currently active (created by :ref:`compute_list_begin<class_RenderingDevice_method_compute_list_begin>`)
+- a compute list is currently active (created by :ref:`compute_list_begin()<class_RenderingDevice_method_compute_list_begin>`)
 
 .. rst-class:: classref-item-separator
 
@@ -5079,9 +5110,9 @@ Prints an error if:
 
 - ``size`` exceeds the size of either ``src_buffer`` or ``dst_buffer`` at their corresponding offsets
 
-- a draw list is currently active (created by :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`)
+- a draw list is currently active (created by :ref:`draw_list_begin()<class_RenderingDevice_method_draw_list_begin>`)
 
-- a compute list is currently active (created by :ref:`compute_list_begin<class_RenderingDevice_method_compute_list_begin>`)
+- a compute list is currently active (created by :ref:`compute_list_begin()<class_RenderingDevice_method_compute_list_begin>`)
 
 .. rst-class:: classref-item-separator
 
@@ -5095,7 +5126,7 @@ Prints an error if:
 
 Returns a copy of the data of the specified ``buffer``, optionally ``offset_bytes`` and ``size_bytes`` can be set to copy only a portion of the buffer.
 
-\ **Note:** This method will block the GPU from working until the data is retrieved. Refer to :ref:`buffer_get_data_async<class_RenderingDevice_method_buffer_get_data_async>` for an alternative that returns the data in more performant way.
+\ **Note:** This method will block the GPU from working until the data is retrieved. Refer to :ref:`buffer_get_data_async()<class_RenderingDevice_method_buffer_get_data_async>` for an alternative that returns the data in more performant way.
 
 .. rst-class:: classref-item-separator
 
@@ -5107,7 +5138,7 @@ Returns a copy of the data of the specified ``buffer``, optionally ``offset_byte
 
 :ref:`Error<enum_@GlobalScope_Error>` **buffer_get_data_async**\ (\ buffer\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`, offset_bytes\: :ref:`int<class_int>` = 0, size_bytes\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_buffer_get_data_async>`
 
-Asynchronous version of :ref:`buffer_get_data<class_RenderingDevice_method_buffer_get_data>`. RenderingDevice will call ``callback`` in a certain amount of frames with the data the buffer had at the time of the request.
+Asynchronous version of :ref:`buffer_get_data()<class_RenderingDevice_method_buffer_get_data>`. RenderingDevice will call ``callback`` in a certain amount of frames with the data the buffer had at the time of the request.
 
 \ **Note:** At the moment, the delay corresponds to the amount of frames specified by :ref:`ProjectSettings.rendering/rendering_device/vsync/frame_queue_size<class_ProjectSettings_property_rendering/rendering_device/vsync/frame_queue_size>`.
 
@@ -5134,7 +5165,7 @@ Asynchronous version of :ref:`buffer_get_data<class_RenderingDevice_method_buffe
 
 Returns the address of the given ``buffer`` which can be passed to shaders in any way to access underlying data. Buffer must have been created with this feature enabled.
 
-\ **Note:** You must check that the GPU supports this functionality by calling :ref:`has_feature<class_RenderingDevice_method_has_feature>` with :ref:`SUPPORTS_BUFFER_DEVICE_ADDRESS<class_RenderingDevice_constant_SUPPORTS_BUFFER_DEVICE_ADDRESS>` as a parameter.
+\ **Note:** You must check that the GPU supports this functionality by calling :ref:`has_feature()<class_RenderingDevice_method_has_feature>` with :ref:`SUPPORTS_BUFFER_DEVICE_ADDRESS<class_RenderingDevice_constant_SUPPORTS_BUFFER_DEVICE_ADDRESS>` as a parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -5152,9 +5183,9 @@ Prints an error if:
 
 - the region specified by ``offset`` + ``size_bytes`` exceeds the buffer
 
-- a draw list is currently active (created by :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`)
+- a draw list is currently active (created by :ref:`draw_list_begin()<class_RenderingDevice_method_draw_list_begin>`)
 
-- a compute list is currently active (created by :ref:`compute_list_begin<class_RenderingDevice_method_compute_list_begin>`)
+- a compute list is currently active (created by :ref:`compute_list_begin()<class_RenderingDevice_method_compute_list_begin>`)
 
 .. rst-class:: classref-item-separator
 
@@ -5166,7 +5197,7 @@ Prints an error if:
 
 |void| **capture_timestamp**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RenderingDevice_method_capture_timestamp>`
 
-Creates a timestamp marker with the specified ``name``. This is used for performance reporting with the :ref:`get_captured_timestamp_cpu_time<class_RenderingDevice_method_get_captured_timestamp_cpu_time>`, :ref:`get_captured_timestamp_gpu_time<class_RenderingDevice_method_get_captured_timestamp_gpu_time>` and :ref:`get_captured_timestamp_name<class_RenderingDevice_method_get_captured_timestamp_name>` methods.
+Creates a timestamp marker with the specified ``name``. This is used for performance reporting with the :ref:`get_captured_timestamp_cpu_time()<class_RenderingDevice_method_get_captured_timestamp_cpu_time>`, :ref:`get_captured_timestamp_gpu_time()<class_RenderingDevice_method_get_captured_timestamp_gpu_time>` and :ref:`get_captured_timestamp_name()<class_RenderingDevice_method_get_captured_timestamp_name>` methods.
 
 .. rst-class:: classref-item-separator
 
@@ -5192,7 +5223,7 @@ Raises a Vulkan compute barrier in the specified ``compute_list``.
 
 Starts a list of compute commands created with the ``compute_*`` methods. The returned value should be passed to other ``compute_list_*`` functions.
 
-Multiple compute lists cannot be created at the same time; you must finish the previous compute list first using :ref:`compute_list_end<class_RenderingDevice_method_compute_list_end>`.
+Multiple compute lists cannot be created at the same time; you must finish the previous compute list first using :ref:`compute_list_end()<class_RenderingDevice_method_compute_list_end>`.
 
 A simple compute operation might look like this (code is not a complete example):
 
@@ -5222,7 +5253,7 @@ A simple compute operation might look like this (code is not a complete example)
 
 |void| **compute_list_bind_compute_pipeline**\ (\ compute_list\: :ref:`int<class_int>`, compute_pipeline\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_bind_compute_pipeline>`
 
-Tells the GPU what compute pipeline to use when processing the compute list. If the shader has changed since the last time this function was called, Godot will unbind all descriptor sets and will re-bind them inside :ref:`compute_list_dispatch<class_RenderingDevice_method_compute_list_dispatch>`.
+Tells the GPU what compute pipeline to use when processing the compute list. If the shader has changed since the last time this function was called, Godot will unbind all descriptor sets and will re-bind them inside :ref:`compute_list_dispatch()<class_RenderingDevice_method_compute_list_dispatch>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5246,7 +5277,7 @@ Binds the ``uniform_set`` to this ``compute_list``. Godot ensures that all textu
 
 |void| **compute_list_dispatch**\ (\ compute_list\: :ref:`int<class_int>`, x_groups\: :ref:`int<class_int>`, y_groups\: :ref:`int<class_int>`, z_groups\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_dispatch>`
 
-Submits the compute list for processing on the GPU. This is the compute equivalent to :ref:`draw_list_draw<class_RenderingDevice_method_draw_list_draw>`.
+Submits the compute list for processing on the GPU. This is the compute equivalent to :ref:`draw_list_draw()<class_RenderingDevice_method_draw_list_draw>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5282,7 +5313,7 @@ Finishes a list of compute commands created with the ``compute_*`` methods.
 
 |void| **compute_list_set_push_constant**\ (\ compute_list\: :ref:`int<class_int>`, buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, size_bytes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_set_push_constant>`
 
-Sets the push constant data to ``buffer`` for the specified ``compute_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size<class_PackedByteArray_method_size>` method on the passed ``buffer``).
+Sets the push constant data to ``buffer`` for the specified ``compute_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size()<class_PackedByteArray_method_size>` method on the passed ``buffer``).
 
 .. rst-class:: classref-item-separator
 
@@ -5296,7 +5327,7 @@ Sets the push constant data to ``buffer`` for the specified ``compute_list``. Th
 
 Creates a new compute pipeline. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5332,9 +5363,9 @@ Create a new local **RenderingDevice**. This is most useful for performing compu
 
 |void| **draw_command_begin_label**\ (\ name\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_command_begin_label>`
 
-Create a command buffer debug label region that can be displayed in third-party tools such as `RenderDoc <https://renderdoc.org/>`__. All regions must be ended with a :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>` call. When viewed from the linear series of submissions to a single queue, calls to :ref:`draw_command_begin_label<class_RenderingDevice_method_draw_command_begin_label>` and :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>` must be matched and balanced.
+Create a command buffer debug label region that can be displayed in third-party tools such as `RenderDoc <https://renderdoc.org/>`__. All regions must be ended with a :ref:`draw_command_end_label()<class_RenderingDevice_method_draw_command_end_label>` call. When viewed from the linear series of submissions to a single queue, calls to :ref:`draw_command_begin_label()<class_RenderingDevice_method_draw_command_begin_label>` and :ref:`draw_command_end_label()<class_RenderingDevice_method_draw_command_end_label>` must be matched and balanced.
 
-The ``VK_EXT_DEBUG_UTILS_EXTENSION_NAME`` Vulkan extension must be available and enabled for command buffer debug label region to work. See also :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>`.
+The ``VK_EXT_DEBUG_UTILS_EXTENSION_NAME`` Vulkan extension must be available and enabled for command buffer debug label region to work. See also :ref:`draw_command_end_label()<class_RenderingDevice_method_draw_command_end_label>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5346,7 +5377,7 @@ The ``VK_EXT_DEBUG_UTILS_EXTENSION_NAME`` Vulkan extension must be available and
 
 |void| **draw_command_end_label**\ (\ ) :ref:`🔗<class_RenderingDevice_method_draw_command_end_label>`
 
-Ends the command buffer debug label region started by a :ref:`draw_command_begin_label<class_RenderingDevice_method_draw_command_begin_label>` call.
+Ends the command buffer debug label region started by a :ref:`draw_command_begin_label()<class_RenderingDevice_method_draw_command_begin_label>` call.
 
 .. rst-class:: classref-item-separator
 
@@ -5374,7 +5405,7 @@ This method does nothing.
 
 Starts a list of raster drawing commands created with the ``draw_*`` methods. The returned value should be passed to other ``draw_list_*`` functions.
 
-Multiple draw lists cannot be created at the same time; you must finish the previous draw list first using :ref:`draw_list_end<class_RenderingDevice_method_draw_list_end>`.
+Multiple draw lists cannot be created at the same time; you must finish the previous draw list first using :ref:`draw_list_end()<class_RenderingDevice_method_draw_list_end>`.
 
 A simple drawing operation might look like this (code is not a complete example):
 
@@ -5397,7 +5428,7 @@ A simple drawing operation might look like this (code is not a complete example)
     
     rd.draw_list_end()
 
-The ``draw_flags`` indicates if the texture attachments of the framebuffer should be cleared or ignored. Only one of the two flags can be used for each individual attachment. Ignoring an attachment means that any contents that existed before the draw list will be completely discarded, reducing the memory bandwidth used by the render pass but producing garbage results if the pixels aren't replaced. The default behavior allows the engine to figure out the right operation to use if the texture is discardable, which can result in increased performance. See :ref:`RDTextureFormat<class_RDTextureFormat>` or :ref:`texture_set_discardable<class_RenderingDevice_method_texture_set_discardable>`.
+The ``draw_flags`` indicates if the texture attachments of the framebuffer should be cleared or ignored. Only one of the two flags can be used for each individual attachment. Ignoring an attachment means that any contents that existed before the draw list will be completely discarded, reducing the memory bandwidth used by the render pass but producing garbage results if the pixels aren't replaced. The default behavior allows the engine to figure out the right operation to use if the texture is discardable, which can result in increased performance. See :ref:`RDTextureFormat<class_RDTextureFormat>` or :ref:`texture_set_discardable()<class_RenderingDevice_method_texture_set_discardable>`.
 
 The ``breadcrumb`` parameter can be an arbitrary 32-bit integer that is useful to diagnose GPU crashes. If Godot is built in dev or debug mode; when the GPU crashes Godot will dump all shaders that were being executed at the time of the crash and the breadcrumb is useful to diagnose what passes did those shaders belong to.
 
@@ -5417,9 +5448,9 @@ It does not affect rendering behavior and can be set to 0. It is recommended to 
 
 :ref:`int<class_int>` **draw_list_begin_for_screen**\ (\ screen\: :ref:`int<class_int>` = 0, clear_color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 1)\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_begin_for_screen>`
 
-High-level variant of :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`, with the parameters automatically being adjusted for drawing onto the window specified by the ``screen`` ID.
+High-level variant of :ref:`draw_list_begin()<class_RenderingDevice_method_draw_list_begin>`, with the parameters automatically being adjusted for drawing onto the window specified by the ``screen`` ID.
 
-\ **Note:** Cannot be used with local RenderingDevices, as these don't have a screen. If called on a local RenderingDevice, :ref:`draw_list_begin_for_screen<class_RenderingDevice_method_draw_list_begin_for_screen>` returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
+\ **Note:** Cannot be used with local RenderingDevices, as these don't have a screen. If called on a local RenderingDevice, :ref:`draw_list_begin_for_screen()<class_RenderingDevice_method_draw_list_begin_for_screen>` returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5493,7 +5524,7 @@ Binds ``vertex_array`` to the specified ``draw_list``.
 
 |void| **draw_list_disable_scissor**\ (\ draw_list\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_disable_scissor>`
 
-Removes and disables the scissor rectangle for the specified ``draw_list``. See also :ref:`draw_list_enable_scissor<class_RenderingDevice_method_draw_list_enable_scissor>`.
+Removes and disables the scissor rectangle for the specified ``draw_list``. See also :ref:`draw_list_enable_scissor()<class_RenderingDevice_method_draw_list_enable_scissor>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5505,7 +5536,7 @@ Removes and disables the scissor rectangle for the specified ``draw_list``. See 
 
 |void| **draw_list_draw**\ (\ draw_list\: :ref:`int<class_int>`, use_indices\: :ref:`bool<class_bool>`, instances\: :ref:`int<class_int>`, procedural_vertex_count\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_draw>`
 
-Submits ``draw_list`` for rendering on the GPU. This is the raster equivalent to :ref:`compute_list_dispatch<class_RenderingDevice_method_compute_list_dispatch>`.
+Submits ``draw_list`` for rendering on the GPU. This is the raster equivalent to :ref:`compute_list_dispatch()<class_RenderingDevice_method_compute_list_dispatch>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5529,7 +5560,7 @@ Submits ``draw_list`` for rendering on the GPU with the given parameters stored 
 
 |void| **draw_list_enable_scissor**\ (\ draw_list\: :ref:`int<class_int>`, rect\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0)\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_enable_scissor>`
 
-Creates a scissor rectangle and enables it for the specified ``draw_list``. Scissor rectangles are used for clipping by discarding fragments that fall outside a specified rectangular portion of the screen. See also :ref:`draw_list_disable_scissor<class_RenderingDevice_method_draw_list_disable_scissor>`.
+Creates a scissor rectangle and enables it for the specified ``draw_list``. Scissor rectangles are used for clipping by discarding fragments that fall outside a specified rectangular portion of the screen. See also :ref:`draw_list_disable_scissor()<class_RenderingDevice_method_draw_list_disable_scissor>`.
 
 \ **Note:** The specified ``rect`` is automatically intersected with the screen's dimensions, which means it cannot exceed the screen's dimensions.
 
@@ -5567,7 +5598,7 @@ Sets blend constants for the specified ``draw_list`` to ``color``. Blend constan
 
 |void| **draw_list_set_push_constant**\ (\ draw_list\: :ref:`int<class_int>`, buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, size_bytes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_set_push_constant>`
 
-Sets the push constant data to ``buffer`` for the specified ``draw_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size<class_PackedByteArray_method_size>` method on the passed ``buffer``).
+Sets the push constant data to ``buffer`` for the specified ``draw_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size()<class_PackedByteArray_method_size>` method on the passed ``buffer``).
 
 .. rst-class:: classref-item-separator
 
@@ -5607,7 +5638,7 @@ This method does nothing and always returns an empty :ref:`PackedInt64Array<clas
 
 Creates a new framebuffer. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5621,7 +5652,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 Creates a new empty framebuffer. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5635,7 +5666,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 Creates a new multipass framebuffer. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5685,7 +5716,7 @@ Creates a multipass framebuffer format with the specified ``attachments``, ``pas
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **framebuffer_format_get_texture_samples**\ (\ format\: :ref:`int<class_int>`, render_pass\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_format_get_texture_samples>`
 
-Returns the number of texture samples used for the given framebuffer ``format`` ID (returned by :ref:`framebuffer_get_format<class_RenderingDevice_method_framebuffer_get_format>`).
+Returns the number of texture samples used for the given framebuffer ``format`` ID (returned by :ref:`framebuffer_get_format()<class_RenderingDevice_method_framebuffer_get_format>`).
 
 .. rst-class:: classref-item-separator
 
@@ -5747,7 +5778,7 @@ This method does nothing.
 
 :ref:`int<class_int>` **get_captured_timestamp_cpu_time**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamp_cpu_time>`
 
-Returns the timestamp in CPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_gpu_time<class_RenderingDevice_method_get_captured_timestamp_gpu_time>` and :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
+Returns the timestamp in CPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_gpu_time()<class_RenderingDevice_method_get_captured_timestamp_gpu_time>` and :ref:`capture_timestamp()<class_RenderingDevice_method_capture_timestamp>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5759,7 +5790,7 @@ Returns the timestamp in CPU time for the rendering step specified by ``index`` 
 
 :ref:`int<class_int>` **get_captured_timestamp_gpu_time**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamp_gpu_time>`
 
-Returns the timestamp in GPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_cpu_time<class_RenderingDevice_method_get_captured_timestamp_cpu_time>` and :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
+Returns the timestamp in GPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_cpu_time()<class_RenderingDevice_method_get_captured_timestamp_cpu_time>` and :ref:`capture_timestamp()<class_RenderingDevice_method_capture_timestamp>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5771,7 +5802,7 @@ Returns the timestamp in GPU time for the rendering step specified by ``index`` 
 
 :ref:`String<class_String>` **get_captured_timestamp_name**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamp_name>`
 
-Returns the timestamp's name for the rendering step specified by ``index``. See also :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
+Returns the timestamp's name for the rendering step specified by ``index``. See also :ref:`capture_timestamp()<class_RenderingDevice_method_capture_timestamp>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5821,9 +5852,9 @@ This is only used by Vulkan in debug builds and can return 0 when this informati
 
 :ref:`int<class_int>` **get_device_allocs_by_object_type**\ (\ type\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_device_allocs_by_object_type>`
 
-Same as :ref:`get_device_allocation_count<class_RenderingDevice_method_get_device_allocation_count>` but filtered for a given object type.
+Same as :ref:`get_device_allocation_count()<class_RenderingDevice_method_get_device_allocation_count>` but filtered for a given object type.
 
-The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
+The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count()<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
@@ -5837,9 +5868,9 @@ This is only used by Vulkan in debug builds and can return 0 when this informati
 
 :ref:`int<class_int>` **get_device_memory_by_object_type**\ (\ type\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_device_memory_by_object_type>`
 
-Same as :ref:`get_device_total_memory<class_RenderingDevice_method_get_device_total_memory>` but filtered for a given object type.
+Same as :ref:`get_device_total_memory()<class_RenderingDevice_method_get_device_total_memory>` but filtered for a given object type.
 
-The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
+The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count()<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
@@ -5853,7 +5884,7 @@ This is only used by Vulkan in debug builds and can return 0 when this informati
 
 :ref:`String<class_String>` **get_device_name**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_device_name>`
 
-Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2"). Equivalent to :ref:`RenderingServer.get_video_adapter_name<class_RenderingServer_method_get_video_adapter_name>`. See also :ref:`get_device_vendor_name<class_RenderingDevice_method_get_device_vendor_name>`.
+Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2"). Equivalent to :ref:`RenderingServer.get_video_adapter_name()<class_RenderingServer_method_get_video_adapter_name>`. See also :ref:`get_device_vendor_name()<class_RenderingDevice_method_get_device_vendor_name>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5891,7 +5922,7 @@ This is only used by Vulkan in debug builds and can return 0 when this informati
 
 :ref:`String<class_String>` **get_device_vendor_name**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_device_vendor_name>`
 
-Returns the vendor of the video adapter (e.g. "NVIDIA Corporation"). Equivalent to :ref:`RenderingServer.get_video_adapter_vendor<class_RenderingServer_method_get_video_adapter_vendor>`. See also :ref:`get_device_name<class_RenderingDevice_method_get_device_name>`.
+Returns the vendor of the video adapter (e.g. "NVIDIA Corporation"). Equivalent to :ref:`RenderingServer.get_video_adapter_vendor()<class_RenderingServer_method_get_video_adapter_vendor>`. See also :ref:`get_device_name()<class_RenderingDevice_method_get_device_name>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5917,9 +5948,9 @@ This is only used by Vulkan in debug builds and can return 0 when this informati
 
 :ref:`int<class_int>` **get_driver_allocs_by_object_type**\ (\ type\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_driver_allocs_by_object_type>`
 
-Same as :ref:`get_driver_allocation_count<class_RenderingDevice_method_get_driver_allocation_count>` but filtered for a given object type.
+Same as :ref:`get_driver_allocation_count()<class_RenderingDevice_method_get_driver_allocation_count>` but filtered for a given object type.
 
-The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
+The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count()<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
@@ -5935,25 +5966,25 @@ This is only used by Vulkan in debug builds and can return 0 when this informati
 
 Returns string report in CSV format using the following methods:
 
-- :ref:`get_tracked_object_name<class_RenderingDevice_method_get_tracked_object_name>`\ 
+- :ref:`get_tracked_object_name()<class_RenderingDevice_method_get_tracked_object_name>`\ 
 
-- :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>`\ 
+- :ref:`get_tracked_object_type_count()<class_RenderingDevice_method_get_tracked_object_type_count>`\ 
 
-- :ref:`get_driver_total_memory<class_RenderingDevice_method_get_driver_total_memory>`\ 
+- :ref:`get_driver_total_memory()<class_RenderingDevice_method_get_driver_total_memory>`\ 
 
-- :ref:`get_driver_allocation_count<class_RenderingDevice_method_get_driver_allocation_count>`\ 
+- :ref:`get_driver_allocation_count()<class_RenderingDevice_method_get_driver_allocation_count>`\ 
 
-- :ref:`get_driver_memory_by_object_type<class_RenderingDevice_method_get_driver_memory_by_object_type>`\ 
+- :ref:`get_driver_memory_by_object_type()<class_RenderingDevice_method_get_driver_memory_by_object_type>`\ 
 
-- :ref:`get_driver_allocs_by_object_type<class_RenderingDevice_method_get_driver_allocs_by_object_type>`\ 
+- :ref:`get_driver_allocs_by_object_type()<class_RenderingDevice_method_get_driver_allocs_by_object_type>`\ 
 
-- :ref:`get_device_total_memory<class_RenderingDevice_method_get_device_total_memory>`\ 
+- :ref:`get_device_total_memory()<class_RenderingDevice_method_get_device_total_memory>`\ 
 
-- :ref:`get_device_allocation_count<class_RenderingDevice_method_get_device_allocation_count>`\ 
+- :ref:`get_device_allocation_count()<class_RenderingDevice_method_get_device_allocation_count>`\ 
 
-- :ref:`get_device_memory_by_object_type<class_RenderingDevice_method_get_device_memory_by_object_type>`\ 
+- :ref:`get_device_memory_by_object_type()<class_RenderingDevice_method_get_device_memory_by_object_type>`\ 
 
-- :ref:`get_device_allocs_by_object_type<class_RenderingDevice_method_get_device_allocs_by_object_type>`\ 
+- :ref:`get_device_allocs_by_object_type()<class_RenderingDevice_method_get_device_allocs_by_object_type>`\ 
 
 This is only used by Vulkan in debug builds. Godot must also be started with the ``--extra-gpu-memory-tracking`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
@@ -5967,9 +5998,9 @@ This is only used by Vulkan in debug builds. Godot must also be started with the
 
 :ref:`int<class_int>` **get_driver_memory_by_object_type**\ (\ type\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_driver_memory_by_object_type>`
 
-Same as :ref:`get_driver_total_memory<class_RenderingDevice_method_get_driver_total_memory>` but filtered for a given object type.
+Same as :ref:`get_driver_total_memory()<class_RenderingDevice_method_get_driver_total_memory>` but filtered for a given object type.
 
-The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
+The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count()<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
@@ -6045,9 +6076,9 @@ Returns a string with a performance report from the past frame. Updates every fr
 
 :ref:`String<class_String>` **get_tracked_object_name**\ (\ type_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_tracked_object_name>`
 
-Returns the name of the type of object for the given ``type_index``. This value must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns the same string.
+Returns the name of the type of object for the given ``type_index``. This value must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count()<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns the same string.
 
-The return value is important because it gives meaning to the types passed to :ref:`get_driver_memory_by_object_type<class_RenderingDevice_method_get_driver_memory_by_object_type>`, :ref:`get_driver_allocs_by_object_type<class_RenderingDevice_method_get_driver_allocs_by_object_type>`, :ref:`get_device_memory_by_object_type<class_RenderingDevice_method_get_device_memory_by_object_type>`, and :ref:`get_device_allocs_by_object_type<class_RenderingDevice_method_get_device_allocs_by_object_type>`. Examples of strings it can return (not exhaustive):
+The return value is important because it gives meaning to the types passed to :ref:`get_driver_memory_by_object_type()<class_RenderingDevice_method_get_driver_memory_by_object_type>`, :ref:`get_driver_allocs_by_object_type()<class_RenderingDevice_method_get_driver_allocs_by_object_type>`, :ref:`get_device_memory_by_object_type()<class_RenderingDevice_method_get_device_memory_by_object_type>`, and :ref:`get_device_allocs_by_object_type()<class_RenderingDevice_method_get_device_allocs_by_object_type>`. Examples of strings it can return (not exhaustive):
 
 - DEVICE_MEMORY
 
@@ -6099,7 +6130,7 @@ Returns ``true`` if the ``feature`` is supported by the GPU.
 
 Creates a new index array. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -6109,13 +6140,11 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **index_buffer_create**\ (\ size_indices\: :ref:`int<class_int>`, format\: :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_restart_indices\: :ref:`bool<class_bool>` = false, enable_device_address\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingDevice_method_index_buffer_create>`
+:ref:`RID<class_RID>` **index_buffer_create**\ (\ size_indices\: :ref:`int<class_int>`, format\: :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_restart_indices\: :ref:`bool<class_bool>` = false, creation_bits\: |bitfield|\[:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>`\] = 0\ ) :ref:`🔗<class_RenderingDevice_method_index_buffer_create>`
 
 Creates a new index buffer. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
-
-Optionally, set ``enable_device_address`` if you wish to use :ref:`buffer_get_device_address<class_RenderingDevice_method_buffer_get_device_address>` functionality and the GPU supports it.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -6143,7 +6172,7 @@ Limits for various graphics hardware can be found in the `Vulkan Hardware Databa
 
 Creates a new render pipeline. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -6169,7 +6198,7 @@ Returns ``true`` if the render pipeline specified by the ``render_pipeline`` RID
 
 Creates a new sampler. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -6195,7 +6224,7 @@ Returns ``true`` if implementation supports using a texture of ``format`` with t
 
 Returns the framebuffer format of the given screen.
 
-\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>` has a format. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
+\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device()<class_RenderingServer_method_get_rendering_device>` has a format. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6207,9 +6236,9 @@ Returns the framebuffer format of the given screen.
 
 :ref:`int<class_int>` **screen_get_height**\ (\ screen\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_RenderingDevice_method_screen_get_height>`
 
-Returns the window height matching the graphics API context for the given window ID (in pixels). Despite the parameter being named ``screen``, this returns the *window* size. See also :ref:`screen_get_width<class_RenderingDevice_method_screen_get_width>`.
+Returns the window height matching the graphics API context for the given window ID (in pixels). Despite the parameter being named ``screen``, this returns the *window* size. See also :ref:`screen_get_width()<class_RenderingDevice_method_screen_get_width>`.
 
-\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>` has a height. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
+\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device()<class_RenderingServer_method_get_rendering_device>` has a height. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6221,9 +6250,9 @@ Returns the window height matching the graphics API context for the given window
 
 :ref:`int<class_int>` **screen_get_width**\ (\ screen\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_RenderingDevice_method_screen_get_width>`
 
-Returns the window width matching the graphics API context for the given window ID (in pixels). Despite the parameter being named ``screen``, this returns the *window* size. See also :ref:`screen_get_height<class_RenderingDevice_method_screen_get_height>`.
+Returns the window width matching the graphics API context for the given window ID (in pixels). Despite the parameter being named ``screen``, this returns the *window* size. See also :ref:`screen_get_height()<class_RenderingDevice_method_screen_get_height>`.
 
-\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>` has a width. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
+\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device()<class_RenderingServer_method_get_rendering_device>` has a width. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6239,7 +6268,7 @@ Sets the resource name for ``id`` to ``name``. This is used for debugging with t
 
 The following types of resources can be named: texture, sampler, vertex buffer, index buffer, uniform buffer, texture buffer, storage buffer, uniform set buffer, shader, render pipeline and compute pipeline. Framebuffers cannot be named. Attempting to name an incompatible resource type will print an error.
 
-\ **Note:** Resource names are only set when the engine runs in verbose mode (:ref:`OS.is_stdout_verbose<class_OS_method_is_stdout_verbose>` = ``true``), or when using an engine build compiled with the ``dev_mode=yes`` SCons option. The graphics driver must also support the ``VK_EXT_DEBUG_UTILS_EXTENSION_NAME`` Vulkan extension for named resources to work.
+\ **Note:** Resource names are only set when the engine runs in verbose mode (:ref:`OS.is_stdout_verbose()<class_OS_method_is_stdout_verbose>` = ``true``), or when using an engine build compiled with the ``dev_mode=yes`` SCons option. The graphics driver must also support the ``VK_EXT_DEBUG_UTILS_EXTENSION_NAME`` Vulkan extension for named resources to work.
 
 .. rst-class:: classref-item-separator
 
@@ -6251,7 +6280,7 @@ The following types of resources can be named: texture, sampler, vertex buffer, 
 
 :ref:`PackedByteArray<class_PackedByteArray>` **shader_compile_binary_from_spirv**\ (\ spirv_data\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, name\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_RenderingDevice_method_shader_compile_binary_from_spirv>`
 
-Compiles a binary shader from ``spirv_data`` and returns the compiled binary data as a :ref:`PackedByteArray<class_PackedByteArray>`. This compiled shader is specific to the GPU model and driver version used; it will not work on different GPU models or even different driver versions. See also :ref:`shader_compile_spirv_from_source<class_RenderingDevice_method_shader_compile_spirv_from_source>`.
+Compiles a binary shader from ``spirv_data`` and returns the compiled binary data as a :ref:`PackedByteArray<class_PackedByteArray>`. This compiled shader is specific to the GPU model and driver version used; it will not work on different GPU models or even different driver versions. See also :ref:`shader_compile_spirv_from_source()<class_RenderingDevice_method_shader_compile_spirv_from_source>`.
 
 \ ``name`` is an optional human-readable name that can be given to the compiled shader for organizational purposes.
 
@@ -6265,7 +6294,7 @@ Compiles a binary shader from ``spirv_data`` and returns the compiled binary dat
 
 :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **shader_compile_spirv_from_source**\ (\ shader_source\: :ref:`RDShaderSource<class_RDShaderSource>`, allow_cache\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RenderingDevice_method_shader_compile_spirv_from_source>`
 
-Compiles a SPIR-V from the shader source code in ``shader_source`` and returns the SPIR-V as a :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`. This intermediate language shader is portable across different GPU models and driver versions, but cannot be run directly by GPUs until compiled into a binary shader using :ref:`shader_compile_binary_from_spirv<class_RenderingDevice_method_shader_compile_binary_from_spirv>`.
+Compiles a SPIR-V from the shader source code in ``shader_source`` and returns the SPIR-V as a :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`. This intermediate language shader is portable across different GPU models and driver versions, but cannot be run directly by GPUs until compiled into a binary shader using :ref:`shader_compile_binary_from_spirv()<class_RenderingDevice_method_shader_compile_binary_from_spirv>`.
 
 If ``allow_cache`` is ``true``, make use of the shader cache generated by Godot. This avoids a potentially lengthy shader compilation step if the shader is already in cache. If ``allow_cache`` is ``false``, Godot's shader cache is ignored and the shader will always be recompiled.
 
@@ -6281,7 +6310,7 @@ If ``allow_cache`` is ``true``, make use of the shader cache generated by Godot.
 
 Creates a new shader instance from a binary compiled shader. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method. See also :ref:`shader_compile_binary_from_spirv<class_RenderingDevice_method_shader_compile_binary_from_spirv>` and :ref:`shader_create_from_spirv<class_RenderingDevice_method_shader_create_from_spirv>`.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method. See also :ref:`shader_compile_binary_from_spirv()<class_RenderingDevice_method_shader_compile_binary_from_spirv>` and :ref:`shader_create_from_spirv()<class_RenderingDevice_method_shader_create_from_spirv>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6295,7 +6324,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 Creates a new shader instance from SPIR-V intermediate code. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method. See also :ref:`shader_compile_spirv_from_source<class_RenderingDevice_method_shader_compile_spirv_from_source>` and :ref:`shader_create_from_bytecode<class_RenderingDevice_method_shader_create_from_bytecode>`.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method. See also :ref:`shader_compile_spirv_from_source()<class_RenderingDevice_method_shader_compile_spirv_from_source>` and :ref:`shader_create_from_bytecode()<class_RenderingDevice_method_shader_create_from_bytecode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6307,7 +6336,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 :ref:`RID<class_RID>` **shader_create_placeholder**\ (\ ) :ref:`🔗<class_RenderingDevice_method_shader_create_placeholder>`
 
-Create a placeholder RID by allocating an RID without initializing it for use in :ref:`shader_create_from_bytecode<class_RenderingDevice_method_shader_create_from_bytecode>`. This allows you to create an RID for a shader and pass it around, but defer compiling the shader to a later time.
+Create a placeholder RID by allocating an RID without initializing it for use in :ref:`shader_create_from_bytecode()<class_RenderingDevice_method_shader_create_from_bytecode>`. This allows you to create an RID for a shader and pass it around, but defer compiling the shader to a later time.
 
 .. rst-class:: classref-item-separator
 
@@ -6329,11 +6358,11 @@ Returns the internal vertex input mask. Internally, the vertex input mask is an 
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **storage_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), usage\: |bitfield|\[:ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>`\] = 0\ ) :ref:`🔗<class_RenderingDevice_method_storage_buffer_create>`
+:ref:`RID<class_RID>` **storage_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), usage\: |bitfield|\[:ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>`\] = 0, creation_bits\: |bitfield|\[:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>`\] = 0\ ) :ref:`🔗<class_RenderingDevice_method_storage_buffer_create>`
 
 Creates a `storage buffer <https://vkguide.dev/docs/chapter-4/storage_buffers/>`__ with the specified ``data`` and ``usage``. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -6345,7 +6374,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 |void| **submit**\ (\ ) :ref:`🔗<class_RenderingDevice_method_submit>`
 
-Pushes the frame setup and draw command buffers then marks the local device as currently processing (which allows calling :ref:`sync<class_RenderingDevice_method_sync>`).
+Pushes the frame setup and draw command buffers then marks the local device as currently processing (which allows calling :ref:`sync()<class_RenderingDevice_method_sync>`).
 
 \ **Note:** Only available in local RenderingDevices.
 
@@ -6363,7 +6392,7 @@ Forces a synchronization between the CPU and GPU, which may be required in certa
 
 \ **Note:** Only available in local RenderingDevices.
 
-\ **Note:** :ref:`sync<class_RenderingDevice_method_sync>` can only be called after a :ref:`submit<class_RenderingDevice_method_submit>`.
+\ **Note:** :ref:`sync()<class_RenderingDevice_method_sync>` can only be called after a :ref:`submit()<class_RenderingDevice_method_submit>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6377,7 +6406,7 @@ Forces a synchronization between the CPU and GPU, which may be required in certa
 
 Creates a new texture buffer. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -6427,9 +6456,9 @@ Copies the ``from_texture`` to ``to_texture`` with the specified ``from_pos``, `
 
 Creates a new texture. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
-\ **Note:** Not to be confused with :ref:`RenderingServer.texture_2d_create<class_RenderingServer_method_texture_2d_create>`, which creates the Godot-specific :ref:`Texture2D<class_Texture2D>` resource as opposed to the graphics API's own texture type.
+\ **Note:** Not to be confused with :ref:`RenderingServer.texture_2d_create()<class_RenderingServer_method_texture_2d_create>`, which creates the Godot-specific :ref:`Texture2D<class_Texture2D>` resource as opposed to the graphics API's own texture type.
 
 .. rst-class:: classref-item-separator
 
@@ -6465,7 +6494,7 @@ Creates a shared texture using the specified ``view`` and the texture informatio
 
 :ref:`RID<class_RID>` **texture_create_shared_from_slice**\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>` = 1, slice_type\: :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_texture_create_shared_from_slice>`
 
-Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``'s ``layer`` and ``mipmap``. The number of included mipmaps from the original texture can be controlled using the ``mipmaps`` parameter. Only relevant for textures with multiple layers, such as 3D textures, texture arrays and cubemaps. For single-layer textures, use :ref:`texture_create_shared<class_RenderingDevice_method_texture_create_shared>`.
+Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``'s ``layer`` and ``mipmap``. The number of included mipmaps from the original texture can be controlled using the ``mipmaps`` parameter. Only relevant for textures with multiple layers, such as 3D textures, texture arrays and cubemaps. For single-layer textures, use :ref:`texture_create_shared()<class_RenderingDevice_method_texture_create_shared>`.
 
 For 2D textures (which only have one layer), ``layer`` must be ``0``.
 
@@ -6487,7 +6516,7 @@ Returns the ``texture`` data for the specified ``layer`` as raw binary data. For
 
 \ **Note:** ``texture`` requires the :ref:`TEXTURE_USAGE_CAN_COPY_FROM_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_FROM_BIT>` to be retrieved. Otherwise, an error is printed and a empty :ref:`PackedByteArray<class_PackedByteArray>` is returned.
 
-\ **Note:** This method will block the GPU from working until the data is retrieved. Refer to :ref:`texture_get_data_async<class_RenderingDevice_method_texture_get_data_async>` for an alternative that returns the data in more performant way.
+\ **Note:** This method will block the GPU from working until the data is retrieved. Refer to :ref:`texture_get_data_async()<class_RenderingDevice_method_texture_get_data_async>` for an alternative that returns the data in more performant way.
 
 .. rst-class:: classref-item-separator
 
@@ -6499,7 +6528,7 @@ Returns the ``texture`` data for the specified ``layer`` as raw binary data. For
 
 :ref:`Error<enum_@GlobalScope_Error>` **texture_get_data_async**\ (\ texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_get_data_async>`
 
-Asynchronous version of :ref:`texture_get_data<class_RenderingDevice_method_texture_get_data>`. RenderingDevice will call ``callback`` in a certain amount of frames with the data the texture had at the time of the request.
+Asynchronous version of :ref:`texture_get_data()<class_RenderingDevice_method_texture_get_data>`. RenderingDevice will call ``callback`` in a certain amount of frames with the data the texture had at the time of the request.
 
 \ **Note:** At the moment, the delay corresponds to the amount of frames specified by :ref:`ProjectSettings.rendering/rendering_device/vsync/frame_queue_size<class_ProjectSettings_property_rendering/rendering_device/vsync/frame_queue_size>`.
 
@@ -6536,7 +6565,7 @@ Returns the data format used to create this texture.
 
 :ref:`int<class_int>` **texture_get_native_handle**\ (\ texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_get_native_handle>`
 
-**Deprecated:** Use :ref:`get_driver_resource<class_RenderingDevice_method_get_driver_resource>` with :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>` instead.
+**Deprecated:** Use :ref:`get_driver_resource()<class_RenderingDevice_method_get_driver_resource>` with :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>` instead.
 
 Returns the internal graphics handle for this texture object. For use when communicating with third-party APIs mostly with GDExtension.
 
@@ -6552,7 +6581,7 @@ Returns the internal graphics handle for this texture object. For use when commu
 
 :ref:`bool<class_bool>` **texture_is_discardable**\ (\ texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_is_discardable>`
 
-Returns ``true`` if the ``texture`` is discardable, ``false`` otherwise. See :ref:`RDTextureFormat<class_RDTextureFormat>` or :ref:`texture_set_discardable<class_RenderingDevice_method_texture_set_discardable>`.
+Returns ``true`` if the ``texture`` is discardable, ``false`` otherwise. See :ref:`RDTextureFormat<class_RDTextureFormat>` or :ref:`texture_set_discardable()<class_RenderingDevice_method_texture_set_discardable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6658,13 +6687,11 @@ Updates texture data with new data, replacing the previous data in place. The up
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **uniform_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), enable_device_address\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingDevice_method_uniform_buffer_create>`
+:ref:`RID<class_RID>` **uniform_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), creation_bits\: |bitfield|\[:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>`\] = 0\ ) :ref:`🔗<class_RenderingDevice_method_uniform_buffer_create>`
 
 Creates a new uniform buffer. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
-
-Optionally, set ``enable_device_address`` if you wish to use :ref:`buffer_get_device_address<class_RenderingDevice_method_buffer_get_device_address>` functionality and the GPU supports it.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -6678,7 +6705,7 @@ Optionally, set ``enable_device_address`` if you wish to use :ref:`buffer_get_de
 
 Creates a new uniform set. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -6712,13 +6739,11 @@ Creates a vertex array based on the specified buffers. Optionally, ``offsets`` (
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **vertex_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_as_storage\: :ref:`bool<class_bool>` = false, enable_device_address\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingDevice_method_vertex_buffer_create>`
+:ref:`RID<class_RID>` **vertex_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), creation_bits\: |bitfield|\[:ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>`\] = 0\ ) :ref:`🔗<class_RenderingDevice_method_vertex_buffer_create>`
 
 It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
-
-Optionally, set ``enable_device_address`` if you wish to use :ref:`buffer_get_device_address<class_RenderingDevice_method_buffer_get_device_address>` functionality and the GPU supports it.
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 

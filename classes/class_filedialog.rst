@@ -506,7 +506,7 @@ If ``true``, and if supported by the current :ref:`DisplayServer<class_DisplaySe
 
 \ **Note:** On Linux and macOS, sandboxed apps always use native dialogs to access the host file system.
 
-\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
+\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions()<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
 
 \ **Note:** Native dialogs are isolated from the base process, file dialog properties can't be modified once the dialog is shown.
 
@@ -657,7 +657,7 @@ Returns the vertical box container of the dialog, custom controls can be added t
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
-\ **Note:** Changes to this node are ignored by native file dialogs, use :ref:`add_option<class_FileDialog_method_add_option>` to add custom elements to the dialog instead.
+\ **Note:** Changes to this node are ignored by native file dialogs, use :ref:`add_option()<class_FileDialog_method_add_option>` to add custom elements to the dialog instead.
 
 .. rst-class:: classref-item-separator
 

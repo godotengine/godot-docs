@@ -19,7 +19,7 @@ Represents a triggered keyboard :ref:`Shortcut<class_Shortcut>`.
 Description
 -----------
 
-InputEventShortcut is a special event that can be received in :ref:`Node._input<class_Node_private_method__input>`, :ref:`Node._shortcut_input<class_Node_private_method__shortcut_input>`, and :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>`. It is typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_input<class_Viewport_method_push_input>`.
+InputEventShortcut is a special event that can be received in :ref:`Node._input()<class_Node_private_method__input>`, :ref:`Node._shortcut_input()<class_Node_private_method__shortcut_input>`, and :ref:`Node._unhandled_input()<class_Node_private_method__unhandled_input>`. It is typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_input()<class_Viewport_method_push_input>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -53,7 +53,7 @@ Property Descriptions
 - |void| **set_shortcut**\ (\ value\: :ref:`Shortcut<class_Shortcut>`\ )
 - :ref:`Shortcut<class_Shortcut>` **get_shortcut**\ (\ )
 
-The :ref:`Shortcut<class_Shortcut>` represented by this event. Its :ref:`Shortcut.matches_event<class_Shortcut_method_matches_event>` method will always return ``true`` for this event.
+The :ref:`Shortcut<class_Shortcut>` represented by this event. Its :ref:`Shortcut.matches_event()<class_Shortcut_method_matches_event>` method will always return ``true`` for this event.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -21,7 +21,7 @@ Description
 
 Maintains a list of resources, nodes, exported and overridden properties, and built-in scripts associated with a scene. They cannot be modified from a **SceneState**, only accessed. Useful for peeking into what a :ref:`PackedScene<class_PackedScene>` contains without instantiating it.
 
-This class cannot be instantiated directly, it is retrieved for a given scene as the result of :ref:`PackedScene.get_state<class_PackedScene_method_get_state>`.
+This class cannot be instantiated directly, it is retrieved for a given scene as the result of :ref:`PackedScene.get_state()<class_PackedScene_method_get_state>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -96,7 +96,7 @@ enum **GenEditState**: :ref:`🔗<enum_SceneState_GenEditState>`
 
 :ref:`GenEditState<enum_SceneState_GenEditState>` **GEN_EDIT_STATE_DISABLED** = ``0``
 
-If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, blocks edits to the scene state.
+If passed to :ref:`PackedScene.instantiate()<class_PackedScene_method_instantiate>`, blocks edits to the scene state.
 
 .. _class_SceneState_constant_GEN_EDIT_STATE_INSTANCE:
 
@@ -104,7 +104,7 @@ If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>
 
 :ref:`GenEditState<enum_SceneState_GenEditState>` **GEN_EDIT_STATE_INSTANCE** = ``1``
 
-If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, provides inherited scene resources to the local scene.
+If passed to :ref:`PackedScene.instantiate()<class_PackedScene_method_instantiate>`, provides inherited scene resources to the local scene.
 
 \ **Note:** Only available in editor builds.
 
@@ -114,7 +114,7 @@ If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>
 
 :ref:`GenEditState<enum_SceneState_GenEditState>` **GEN_EDIT_STATE_MAIN** = ``2``
 
-If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
+If passed to :ref:`PackedScene.instantiate()<class_PackedScene_method_instantiate>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
 \ **Note:** Only available in editor builds.
 
@@ -124,7 +124,7 @@ If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>
 
 :ref:`GenEditState<enum_SceneState_GenEditState>` **GEN_EDIT_STATE_MAIN_INHERITED** = ``3``
 
-If passed to :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, it's similar to :ref:`GEN_EDIT_STATE_MAIN<class_SceneState_constant_GEN_EDIT_STATE_MAIN>`, but for the case where the scene is being instantiated to be the base of another one.
+If passed to :ref:`PackedScene.instantiate()<class_PackedScene_method_instantiate>`, it's similar to :ref:`GEN_EDIT_STATE_MAIN<class_SceneState_constant_GEN_EDIT_STATE_MAIN>`, but for the case where the scene is being instantiated to be the base of another one.
 
 \ **Note:** Only available in editor builds.
 

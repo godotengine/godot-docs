@@ -23,7 +23,7 @@ A hierarchy of **Bone2D**\ s can be bound to a :ref:`Skeleton2D<class_Skeleton2D
 
 You can use **Bone2D** and :ref:`Skeleton2D<class_Skeleton2D>` nodes to animate 2D meshes created with the :ref:`Polygon2D<class_Polygon2D>` UV editor.
 
-Each bone has a :ref:`rest<class_Bone2D_property_rest>` transform that you can reset to with :ref:`apply_rest<class_Bone2D_method_apply_rest>`. These rest poses are relative to the bone's parent.
+Each bone has a :ref:`rest<class_Bone2D_property_rest>` transform that you can reset to with :ref:`apply_rest()<class_Bone2D_method_apply_rest>`. These rest poses are relative to the bone's parent.
 
 If in the editor, you can set the rest pose of an entire skeleton using a menu option, from the code, you need to iterate over the bones to set their individual rest poses.
 
@@ -87,7 +87,7 @@ Property Descriptions
 - |void| **set_rest**\ (\ value\: :ref:`Transform2D<class_Transform2D>`\ )
 - :ref:`Transform2D<class_Transform2D>` **get_rest**\ (\ )
 
-Rest transform of the bone. You can reset the node's transforms to this value using :ref:`apply_rest<class_Bone2D_method_apply_rest>`.
+Rest transform of the bone. You can reset the node's transforms to this value using :ref:`apply_rest()<class_Bone2D_method_apply_rest>`.
 
 .. rst-class:: classref-section-separator
 

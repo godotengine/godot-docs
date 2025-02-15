@@ -308,7 +308,7 @@ Gets the current branch name defined in the VCS.
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_diff**\ (\ identifier\: :ref:`String<class_String>`, area\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorVCSInterface_private_method__get_diff>`
 
-Returns an array of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_diff_file<class_EditorVCSInterface_method_create_diff_file>`, :ref:`create_diff_hunk<class_EditorVCSInterface_method_create_diff_hunk>`, :ref:`create_diff_line<class_EditorVCSInterface_method_create_diff_line>`, :ref:`add_line_diffs_into_diff_hunk<class_EditorVCSInterface_method_add_line_diffs_into_diff_hunk>` and :ref:`add_diff_hunks_into_diff_file<class_EditorVCSInterface_method_add_diff_hunks_into_diff_file>`), each containing information about a diff. If ``identifier`` is a file path, returns a file diff, and if it is a commit identifier, then returns a commit diff.
+Returns an array of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_diff_file()<class_EditorVCSInterface_method_create_diff_file>`, :ref:`create_diff_hunk()<class_EditorVCSInterface_method_create_diff_hunk>`, :ref:`create_diff_line()<class_EditorVCSInterface_method_create_diff_line>`, :ref:`add_line_diffs_into_diff_hunk()<class_EditorVCSInterface_method_add_line_diffs_into_diff_hunk>` and :ref:`add_diff_hunks_into_diff_file()<class_EditorVCSInterface_method_add_diff_hunks_into_diff_file>`), each containing information about a diff. If ``identifier`` is a file path, returns a file diff, and if it is a commit identifier, then returns a commit diff.
 
 .. rst-class:: classref-item-separator
 
@@ -320,7 +320,7 @@ Returns an array of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_line_diff**\ (\ file_path\: :ref:`String<class_String>`, text\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_EditorVCSInterface_private_method__get_line_diff>`
 
-Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_diff_hunk<class_EditorVCSInterface_method_create_diff_hunk>`), each containing a line diff between a file at ``file_path`` and the ``text`` which is passed in.
+Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_diff_hunk()<class_EditorVCSInterface_method_create_diff_hunk>`), each containing a line diff between a file at ``file_path`` and the ``text`` which is passed in.
 
 .. rst-class:: classref-item-separator
 
@@ -332,7 +332,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` item
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_modified_files_data**\ (\ ) |virtual| :ref:`🔗<class_EditorVCSInterface_private_method__get_modified_files_data>`
 
-Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_status_file<class_EditorVCSInterface_method_create_status_file>`), each containing the status data of every modified file in the project folder.
+Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_status_file()<class_EditorVCSInterface_method_create_status_file>`), each containing the status data of every modified file in the project folder.
 
 .. rst-class:: classref-item-separator
 
@@ -344,7 +344,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` item
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_previous_commits**\ (\ max_commits\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorVCSInterface_private_method__get_previous_commits>`
 
-Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_commit<class_EditorVCSInterface_method_create_commit>`), each containing the data for a past commit.
+Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_commit()<class_EditorVCSInterface_method_create_commit>`), each containing the data for a past commit.
 
 .. rst-class:: classref-item-separator
 

@@ -29,7 +29,7 @@ A rigid body will always maintain its shape and size, even when forces are appli
 
 If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`.
 
-\ **Note:** Changing the 2D transform or :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>` of a **RigidBody2D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` as it allows you to directly access the physics state.
+\ **Note:** Changing the 2D transform or :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>` of a **RigidBody2D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces()<class_RigidBody2D_private_method__integrate_forces>` as it allows you to directly access the physics state.
 
 .. rst-class:: classref-introduction-group
 
@@ -464,7 +464,7 @@ Defines the way the body's center of mass is set. See :ref:`CenterOfMassMode<enu
 
 The body's total constant positional forces applied during each physics update.
 
-See :ref:`add_constant_force<class_RigidBody2D_method_add_constant_force>` and :ref:`add_constant_central_force<class_RigidBody2D_method_add_constant_central_force>`.
+See :ref:`add_constant_force()<class_RigidBody2D_method_add_constant_force>` and :ref:`add_constant_central_force()<class_RigidBody2D_method_add_constant_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -483,7 +483,7 @@ See :ref:`add_constant_force<class_RigidBody2D_method_add_constant_force>` and :
 
 The body's total constant rotational forces applied during each physics update.
 
-See :ref:`add_constant_torque<class_RigidBody2D_method_add_constant_torque>`.
+See :ref:`add_constant_torque()<class_RigidBody2D_method_add_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -538,9 +538,9 @@ Continuous collision detection tries to predict where a moving body will collide
 - |void| **set_use_custom_integrator**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_custom_integrator**\ (\ )
 
-If ``true``, the standard force integration (like gravity or damping) will be disabled for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` method, if that virtual method is overridden.
+If ``true``, the standard force integration (like gravity or damping) will be disabled for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces()<class_RigidBody2D_private_method__integrate_forces>` method, if that virtual method is overridden.
 
-Setting this property will call the method :ref:`PhysicsServer2D.body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>` internally.
+Setting this property will call the method :ref:`PhysicsServer2D.body_set_omit_force_integration()<class_PhysicsServer2D_method_body_set_omit_force_integration>` internally.
 
 .. rst-class:: classref-item-separator
 
@@ -697,7 +697,7 @@ Defines how :ref:`linear_damp<class_RigidBody2D_property_linear_damp>` is applie
 - |void| **set_linear_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_linear_velocity**\ (\ )
 
-The body's linear velocity in pixels per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` as your process loop for precise control of the body state.
+The body's linear velocity in pixels per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces()<class_RigidBody2D_private_method__integrate_forces>` as your process loop for precise control of the body state.
 
 .. rst-class:: classref-item-separator
 
@@ -748,7 +748,7 @@ The body's mass.
 - |void| **set_max_contacts_reported**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_max_contacts_reported**\ (\ )
 
-The maximum number of contacts that will be recorded. Requires a value greater than 0 and :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` to start to register contacts. Use :ref:`get_contact_count<class_RigidBody2D_method_get_contact_count>` to retrieve the count or :ref:`get_colliding_bodies<class_RigidBody2D_method_get_colliding_bodies>` to retrieve bodies that have been collided with.
+The maximum number of contacts that will be recorded. Requires a value greater than 0 and :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` to start to register contacts. Use :ref:`get_contact_count()<class_RigidBody2D_method_get_contact_count>` to retrieve the count or :ref:`get_colliding_bodies()<class_RigidBody2D_method_get_colliding_bodies>` to retrieve bodies that have been collided with.
 
 \ **Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).
 
@@ -786,7 +786,7 @@ If a material is assigned to this property, it will be used instead of any other
 - |void| **set_sleeping**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_sleeping**\ (\ )
 
-If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`apply_force<class_RigidBody2D_method_apply_force>` methods.
+If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse()<class_RigidBody2D_method_apply_impulse>` or :ref:`apply_force()<class_RigidBody2D_method_apply_force>` methods.
 
 .. rst-class:: classref-section-separator
 
@@ -817,7 +817,7 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``constant_force = Vector2(0, 0)``.
 
-This is equivalent to using :ref:`add_constant_force<class_RigidBody2D_method_add_constant_force>` at the body's center of mass.
+This is equivalent to using :ref:`add_constant_force()<class_RigidBody2D_method_add_constant_force>` at the body's center of mass.
 
 .. rst-class:: classref-item-separator
 
@@ -857,7 +857,7 @@ Adds a constant rotational force without affecting position that keeps being app
 
 Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
 
-This is equivalent to using :ref:`apply_force<class_RigidBody2D_method_apply_force>` at the body's center of mass.
+This is equivalent to using :ref:`apply_force()<class_RigidBody2D_method_apply_force>` at the body's center of mass.
 
 .. rst-class:: classref-item-separator
 
@@ -873,7 +873,7 @@ Applies a directional impulse without affecting rotation.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
-This is equivalent to using :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` at the body's center of mass.
+This is equivalent to using :ref:`apply_impulse()<class_RigidBody2D_method_apply_impulse>` at the body's center of mass.
 
 .. rst-class:: classref-item-separator
 
@@ -961,7 +961,7 @@ Returns a list of the bodies colliding with this one. Requires :ref:`contact_mon
 
 Returns the number of contacts this body has with other bodies. By default, this returns 0 unless bodies are configured to monitor contacts (see :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>`).
 
-\ **Note:** To retrieve the colliding bodies, use :ref:`get_colliding_bodies<class_RigidBody2D_method_get_colliding_bodies>`.
+\ **Note:** To retrieve the colliding bodies, use :ref:`get_colliding_bodies()<class_RigidBody2D_method_get_colliding_bodies>`.
 
 .. rst-class:: classref-item-separator
 

@@ -19,7 +19,7 @@ Creates packages that can be loaded into a running project.
 Description
 -----------
 
-The **PCKPacker** is used to create packages that can be loaded into a running project using :ref:`ProjectSettings.load_resource_pack<class_ProjectSettings_method_load_resource_pack>`.
+The **PCKPacker** is used to create packages that can be loaded into a running project using :ref:`ProjectSettings.load_resource_pack()<class_ProjectSettings_method_load_resource_pack>`.
 
 
 .. tabs::
@@ -101,7 +101,7 @@ Registers a file removal of the ``target_path`` internal path to the PCK. This i
 
 :ref:`Error<enum_@GlobalScope_Error>` **flush**\ (\ verbose\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PCKPacker_method_flush>`
 
-Writes the files specified using all :ref:`add_file<class_PCKPacker_method_add_file>` calls since the last flush. If ``verbose`` is ``true``, a list of files added will be printed to the console for easier debugging.
+Writes the files specified using all :ref:`add_file()<class_PCKPacker_method_add_file>` calls since the last flush. If ``verbose`` is ``true``, a list of files added will be printed to the console for easier debugging.
 
 .. rst-class:: classref-item-separator
 

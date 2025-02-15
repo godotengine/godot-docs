@@ -52,7 +52,7 @@ Trees are built via code, using :ref:`TreeItem<class_TreeItem>` objects to creat
 
 
 
-To iterate over all the :ref:`TreeItem<class_TreeItem>` objects in a **Tree** object, use :ref:`TreeItem.get_next<class_TreeItem_method_get_next>` and :ref:`TreeItem.get_first_child<class_TreeItem_method_get_first_child>` after getting the root through :ref:`get_root<class_Tree_method_get_root>`. You can use :ref:`Object.free<class_Object_method_free>` on a :ref:`TreeItem<class_TreeItem>` to remove it from the **Tree**.
+To iterate over all the :ref:`TreeItem<class_TreeItem>` objects in a **Tree** object, use :ref:`TreeItem.get_next()<class_TreeItem_method_get_next>` and :ref:`TreeItem.get_first_child()<class_TreeItem_method_get_first_child>` after getting the root through :ref:`get_root()<class_Tree_method_get_root>`. You can use :ref:`Object.free()<class_Object_method_free>` on a :ref:`TreeItem<class_TreeItem>` to remove it from the **Tree**.
 
 \ **Incremental search:** Like :ref:`ItemList<class_ItemList>` and :ref:`PopupMenu<class_PopupMenu>`, **Tree** supports searching within the list while the control is focused. Press a key that matches the first letter of an item's name to select the first item starting with the given letter. After that point, there are two ways to perform incremental search: 1) Press the same key again before the timeout duration to select the next item starting with the same letter. 2) Press letter keys that match the rest of the word before the timeout duration to match to select the item in question directly. Both of these actions will be reset to the beginning of the list if the timeout duration has passed since the last keystroke was registered. You can adjust the timeout duration by changing :ref:`ProjectSettings.gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`.
 
@@ -341,7 +341,7 @@ Signals
 
 **button_clicked**\ (\ item\: :ref:`TreeItem<class_TreeItem>`, column\: :ref:`int<class_int>`, id\: :ref:`int<class_int>`, mouse_button_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Tree_signal_button_clicked>`
 
-Emitted when a button on the tree was pressed (see :ref:`TreeItem.add_button<class_TreeItem_method_add_button>`).
+Emitted when a button on the tree was pressed (see :ref:`TreeItem.add_button()<class_TreeItem_method_add_button>`).
 
 .. rst-class:: classref-item-separator
 
@@ -365,7 +365,7 @@ Emitted when a cell is selected.
 
 **check_propagated_to_item**\ (\ item\: :ref:`TreeItem<class_TreeItem>`, column\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Tree_signal_check_propagated_to_item>`
 
-Emitted when :ref:`TreeItem.propagate_check<class_TreeItem_method_propagate_check>` is called. Connect to this signal to process the items that are affected when :ref:`TreeItem.propagate_check<class_TreeItem_method_propagate_check>` is invoked. The order that the items affected will be processed is as follows: the item that invoked the method, children of that item, and finally parents of that item.
+Emitted when :ref:`TreeItem.propagate_check()<class_TreeItem_method_propagate_check>` is called. Connect to this signal to process the items that are affected when :ref:`TreeItem.propagate_check()<class_TreeItem_method_propagate_check>` is invoked. The order that the items affected will be processed is as follows: the item that invoked the method, children of that item, and finally parents of that item.
 
 .. rst-class:: classref-item-separator
 
@@ -572,7 +572,7 @@ enum **DropModeFlags**: :ref:`🔗<enum_Tree_DropModeFlags>`
 
 :ref:`DropModeFlags<enum_Tree_DropModeFlags>` **DROP_MODE_DISABLED** = ``0``
 
-Disables all drop sections, but still allows to detect the "on item" drop section by :ref:`get_drop_section_at_position<class_Tree_method_get_drop_section_at_position>`.
+Disables all drop sections, but still allows to detect the "on item" drop section by :ref:`get_drop_section_at_position()<class_Tree_method_get_drop_section_at_position>`.
 
 \ **Note:** This is the default flag, it has no effect when combined with other flags.
 
@@ -667,7 +667,7 @@ If ``true``, allows navigating the **Tree** with letter keys through incremental
 - |void| **set_auto_tooltip**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_auto_tooltip_enabled**\ (\ )
 
-If ``true``, tree items with no tooltip assigned display their text as their tooltip. See also :ref:`TreeItem.get_tooltip_text<class_TreeItem_method_get_tooltip_text>` and :ref:`TreeItem.get_button_tooltip_text<class_TreeItem_method_get_button_tooltip_text>`.
+If ``true``, tree items with no tooltip assigned display their text as their tooltip. See also :ref:`TreeItem.get_tooltip_text()<class_TreeItem_method_get_tooltip_text>` and :ref:`TreeItem.get_button_tooltip_text()<class_TreeItem_method_get_button_tooltip_text>`.
 
 .. rst-class:: classref-item-separator
 
@@ -718,7 +718,7 @@ The number of columns.
 - |void| **set_drop_mode_flags**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_drop_mode_flags**\ (\ )
 
-The drop mode as an OR combination of flags. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control._can_drop_data<class_Control_private_method__can_drop_data>` is recommended.
+The drop mode as an OR combination of flags. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control._can_drop_data()<class_Control_private_method__can_drop_data>` is recommended.
 
 This controls the drop sections, i.e. the decision and drawing of possible drop locations based on the mouse position.
 
@@ -881,7 +881,7 @@ Deselects all tree items (rows and columns). In :ref:`SELECT_MULTI<class_Tree_co
 
 Edits the selected tree item as if it was clicked.
 
-Either the item must be set editable with :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>` or ``force_edit`` must be ``true``.
+Either the item must be set editable with :ref:`TreeItem.set_editable()<class_TreeItem_method_set_editable>` or ``force_edit`` must be ``true``.
 
 Returns ``true`` if the item could be edited. Fails if no item is selected.
 
@@ -1007,7 +1007,7 @@ Returns the column's width in pixels.
 
 :ref:`Rect2<class_Rect2>` **get_custom_popup_rect**\ (\ ) |const| :ref:`🔗<class_Tree_method_get_custom_popup_rect>`
 
-Returns the rectangle for custom popups. Helper to create custom cell controls that display a popup. See :ref:`TreeItem.set_cell_mode<class_TreeItem_method_set_cell_mode>`.
+Returns the rectangle for custom popups. Helper to create custom cell controls that display a popup. See :ref:`TreeItem.set_cell_mode()<class_TreeItem_method_set_cell_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1023,7 +1023,7 @@ Returns the drop section at ``position``, or -100 if no item is there.
 
 Values -1, 0, or 1 will be returned for the "above item", "on item", and "below item" drop sections, respectively. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` for a description of each drop section.
 
-To get the item which the returned drop section is relative to, use :ref:`get_item_at_position<class_Tree_method_get_item_at_position>`.
+To get the item which the returned drop section is relative to, use :ref:`get_item_at_position()<class_Tree_method_get_item_at_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1162,7 +1162,7 @@ Returns the currently focused item, or ``null`` if no item is focused.
 
 In :ref:`SELECT_ROW<class_Tree_constant_SELECT_ROW>` and :ref:`SELECT_SINGLE<class_Tree_constant_SELECT_SINGLE>` modes, the focused item is same as the selected item. In :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>` mode, the focused item is the item under the focus cursor, not necessarily selected.
 
-To get the currently selected item(s), use :ref:`get_next_selected<class_Tree_method_get_next_selected>`.
+To get the currently selected item(s), use :ref:`get_next_selected()<class_Tree_method_get_next_selected>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1178,7 +1178,7 @@ Returns the currently focused column, or -1 if no column is focused.
 
 In :ref:`SELECT_SINGLE<class_Tree_constant_SELECT_SINGLE>` mode, the focused column is the selected column. In :ref:`SELECT_ROW<class_Tree_constant_SELECT_ROW>` mode, the focused column is always 0 if any item is selected. In :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>` mode, the focused column is the column under the focus cursor, and there are not necessarily any column selected.
 
-To tell whether a column of an item is selected, use :ref:`TreeItem.is_selected<class_TreeItem_method_is_selected>`.
+To tell whether a column of an item is selected, use :ref:`TreeItem.is_selected()<class_TreeItem_method_is_selected>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1190,7 +1190,7 @@ To tell whether a column of an item is selected, use :ref:`TreeItem.is_selected<
 
 :ref:`bool<class_bool>` **is_column_clipping_content**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Tree_method_is_column_clipping_content>`
 
-Returns ``true`` if the column has enabled clipping (see :ref:`set_column_clip_content<class_Tree_method_set_column_clip_content>`).
+Returns ``true`` if the column has enabled clipping (see :ref:`set_column_clip_content()<class_Tree_method_set_column_clip_content>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1202,7 +1202,7 @@ Returns ``true`` if the column has enabled clipping (see :ref:`set_column_clip_c
 
 :ref:`bool<class_bool>` **is_column_expanding**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Tree_method_is_column_expanding>`
 
-Returns ``true`` if the column has enabled expanding (see :ref:`set_column_expand<class_Tree_method_set_column_expand>`).
+Returns ``true`` if the column has enabled expanding (see :ref:`set_column_expand()<class_Tree_method_set_column_expand>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1250,7 +1250,7 @@ Overrides the calculated minimum width of a column. It can be set to ``0`` to re
 
 |void| **set_column_expand**\ (\ column\: :ref:`int<class_int>`, expand\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Tree_method_set_column_expand>`
 
-If ``true``, the column will have the "Expand" flag of :ref:`Control<class_Control>`. Columns that have the "Expand" flag will use their expand ratio in a similar fashion to :ref:`Control.size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>` (see :ref:`set_column_expand_ratio<class_Tree_method_set_column_expand_ratio>`).
+If ``true``, the column will have the "Expand" flag of :ref:`Control<class_Control>`. Columns that have the "Expand" flag will use their expand ratio in a similar fashion to :ref:`Control.size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>` (see :ref:`set_column_expand_ratio()<class_Tree_method_set_column_expand_ratio>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1262,7 +1262,7 @@ If ``true``, the column will have the "Expand" flag of :ref:`Control<class_Contr
 
 |void| **set_column_expand_ratio**\ (\ column\: :ref:`int<class_int>`, ratio\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Tree_method_set_column_expand_ratio>`
 
-Sets the relative expand ratio for a column. See :ref:`set_column_expand<class_Tree_method_set_column_expand>`.
+Sets the relative expand ratio for a column. See :ref:`set_column_expand()<class_Tree_method_set_column_expand>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1387,7 +1387,7 @@ Default text :ref:`Color<class_Color>` of the item.
 
 :ref:`Color<class_Color>` **font_disabled_color** = ``Color(0.875, 0.875, 0.875, 0.5)`` :ref:`🔗<class_Tree_theme_color_font_disabled_color>`
 
-Text :ref:`Color<class_Color>` for a :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell when it's non-editable (see :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>`).
+Text :ref:`Color<class_Color>` for a :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell when it's non-editable (see :ref:`TreeItem.set_editable()<class_TreeItem_method_set_editable>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1555,7 +1555,7 @@ The horizontal space between item cells. This is also used as the margin at the 
 
 :ref:`int<class_int>` **icon_max_width** = ``0`` :ref:`🔗<class_Tree_theme_constant_icon_max_width>`
 
-The maximum allowed width of the icon in item's cells. This limit is applied on top of the default size of the icon, but before the value set with :ref:`TreeItem.set_icon_max_width<class_TreeItem_method_set_icon_max_width>`. The height is adjusted according to the icon's ratio.
+The maximum allowed width of the icon in item's cells. This limit is applied on top of the default size of the icon, but before the value set with :ref:`TreeItem.set_icon_max_width()<class_TreeItem_method_set_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 
@@ -1869,7 +1869,7 @@ The arrow icon used when a foldable item is collapsed (for right-to-left layouts
 
 :ref:`Texture2D<class_Texture2D>` **checked** :ref:`🔗<class_Tree_theme_icon_checked>`
 
-The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is checked and editable (see :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>`).
+The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is checked and editable (see :ref:`TreeItem.set_editable()<class_TreeItem_method_set_editable>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1881,7 +1881,7 @@ The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem
 
 :ref:`Texture2D<class_Texture2D>` **checked_disabled** :ref:`🔗<class_Tree_theme_icon_checked_disabled>`
 
-The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is checked and non-editable (see :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>`).
+The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is checked and non-editable (see :ref:`TreeItem.set_editable()<class_TreeItem_method_set_editable>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1893,7 +1893,7 @@ The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem
 
 :ref:`Texture2D<class_Texture2D>` **indeterminate** :ref:`🔗<class_Tree_theme_icon_indeterminate>`
 
-The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is indeterminate and editable (see :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>`).
+The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is indeterminate and editable (see :ref:`TreeItem.set_editable()<class_TreeItem_method_set_editable>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1905,7 +1905,7 @@ The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem
 
 :ref:`Texture2D<class_Texture2D>` **indeterminate_disabled** :ref:`🔗<class_Tree_theme_icon_indeterminate_disabled>`
 
-The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is indeterminate and non-editable (see :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>`).
+The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is indeterminate and non-editable (see :ref:`TreeItem.set_editable()<class_TreeItem_method_set_editable>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1929,7 +1929,7 @@ The arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_TreeItem_
 
 :ref:`Texture2D<class_Texture2D>` **unchecked** :ref:`🔗<class_Tree_theme_icon_unchecked>`
 
-The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is unchecked and editable (see :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>`).
+The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is unchecked and editable (see :ref:`TreeItem.set_editable()<class_TreeItem_method_set_editable>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1941,7 +1941,7 @@ The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem
 
 :ref:`Texture2D<class_Texture2D>` **unchecked_disabled** :ref:`🔗<class_Tree_theme_icon_unchecked_disabled>`
 
-The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is unchecked and non-editable (see :ref:`TreeItem.set_editable<class_TreeItem_method_set_editable>`).
+The check icon to display when the :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell is unchecked and non-editable (see :ref:`TreeItem.set_editable()<class_TreeItem_method_set_editable>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2013,7 +2013,7 @@ The updown arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_Tr
 
 :ref:`StyleBox<class_StyleBox>` **custom_button** :ref:`🔗<class_Tree_theme_style_custom_button>`
 
-Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when button is enabled with :ref:`TreeItem.set_custom_as_button<class_TreeItem_method_set_custom_as_button>`.
+Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when button is enabled with :ref:`TreeItem.set_custom_as_button()<class_TreeItem_method_set_custom_as_button>`.
 
 .. rst-class:: classref-item-separator
 

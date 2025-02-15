@@ -21,7 +21,7 @@ Description
 
 Represents a glTF node. glTF nodes may have names, transforms, children (other glTF nodes), and more specialized properties (represented by their own classes).
 
-glTF nodes generally exist inside of :ref:`GLTFState<class_GLTFState>` which represents all data of a glTF file. Most of GLTFNode's properties are indices of other data in the glTF file. You can extend a glTF node with additional properties by using :ref:`get_additional_data<class_GLTFNode_method_get_additional_data>` and :ref:`set_additional_data<class_GLTFNode_method_set_additional_data>`.
+glTF nodes generally exist inside of :ref:`GLTFState<class_GLTFState>` which represents all data of a glTF file. Most of GLTFNode's properties are indices of other data in the glTF file. You can extend a glTF node with additional properties by using :ref:`get_additional_data()<class_GLTFNode_method_get_additional_data>` and :ref:`set_additional_data()<class_GLTFNode_method_set_additional_data>`.
 
 .. rst-class:: classref-introduction-group
 

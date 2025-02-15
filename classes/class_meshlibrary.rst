@@ -117,7 +117,7 @@ Clears the library.
 
 Creates a new item in the library with the given ID.
 
-You can get an unused ID from :ref:`get_last_unused_item_id<class_MeshLibrary_method_get_last_unused_item_id>`.
+You can get an unused ID from :ref:`get_last_unused_item_id()<class_MeshLibrary_method_get_last_unused_item_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -237,7 +237,7 @@ Returns the transform applied to the item's navigation mesh.
 
 :ref:`Texture2D<class_Texture2D>` **get_item_preview**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshLibrary_method_get_item_preview>`
 
-When running in the editor, returns a generated item preview (a 3D rendering in isometric perspective). When used in a running project, returns the manually-defined item preview which can be set using :ref:`set_item_preview<class_MeshLibrary_method_set_item_preview>`. Returns an empty :ref:`Texture2D<class_Texture2D>` if no preview was manually set in a running project.
+When running in the editor, returns a generated item preview (a 3D rendering in isometric perspective). When used in a running project, returns the manually-defined item preview which can be set using :ref:`set_item_preview()<class_MeshLibrary_method_set_item_preview>`. Returns an empty :ref:`Texture2D<class_Texture2D>` if no preview was manually set in a running project.
 
 .. rst-class:: classref-item-separator
 
@@ -325,7 +325,7 @@ Sets the transform to apply to the item's mesh.
 
 Sets the item's name.
 
-This name is shown in the editor. It can also be used to look up the item later using :ref:`find_item_by_name<class_MeshLibrary_method_find_item_by_name>`.
+This name is shown in the editor. It can also be used to look up the item later using :ref:`find_item_by_name()<class_MeshLibrary_method_find_item_by_name>`.
 
 .. rst-class:: classref-item-separator
 

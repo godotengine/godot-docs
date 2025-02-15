@@ -152,7 +152,7 @@ This must be called before everything else.
 
 Starts writing to a file within the archive. Only one file can be written at the same time.
 
-Must be called after :ref:`open<class_ZIPPacker_method_open>`.
+Must be called after :ref:`open()<class_ZIPPacker_method_open>`.
 
 .. rst-class:: classref-item-separator
 
@@ -166,7 +166,7 @@ Must be called after :ref:`open<class_ZIPPacker_method_open>`.
 
 Write the given ``data`` to the file.
 
-Needs to be called after :ref:`start_file<class_ZIPPacker_method_start_file>`.
+Needs to be called after :ref:`start_file()<class_ZIPPacker_method_start_file>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -12,14 +12,14 @@ PhysicsTestMotionResult2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Describes the motion and collision result from :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`.
+Describes the motion and collision result from :ref:`PhysicsServer2D.body_test_motion()<class_PhysicsServer2D_method_body_test_motion>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Describes the motion and collision result from :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`.
+Describes the motion and collision result from :ref:`PhysicsServer2D.body_test_motion()<class_PhysicsServer2D_method_body_test_motion>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -84,7 +84,7 @@ Returns the colliding body's attached :ref:`Object<class_Object>`, if a collisio
 
 :ref:`int<class_int>` **get_collider_id**\ (\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult2D_method_get_collider_id>`
 
-Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>`, if a collision occurred. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>`, if a collision occurred. See :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 

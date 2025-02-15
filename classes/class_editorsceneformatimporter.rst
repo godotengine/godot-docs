@@ -23,7 +23,7 @@ Description
 
 **EditorSceneFormatImporter** allows to define an importer script for a third-party 3D format.
 
-To use **EditorSceneFormatImporter**, register it using the :ref:`EditorPlugin.add_scene_format_importer_plugin<class_EditorPlugin_method_add_scene_format_importer_plugin>` method first.
+To use **EditorSceneFormatImporter**, register it using the :ref:`EditorPlugin.add_scene_format_importer_plugin()<class_EditorPlugin_method_add_scene_format_importer_plugin>` method first.
 
 .. rst-class:: classref-reftable-group
 
@@ -167,7 +167,7 @@ Return supported file extensions for this scene importer.
 
 |void| **_get_import_options**\ (\ path\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_EditorSceneFormatImporter_private_method__get_import_options>`
 
-Override to add general import options. These will appear in the main import dock on the editor. Add options via :ref:`add_import_option<class_EditorSceneFormatImporter_method_add_import_option>` and :ref:`add_import_option_advanced<class_EditorSceneFormatImporter_method_add_import_option_advanced>`.
+Override to add general import options. These will appear in the main import dock on the editor. Add options via :ref:`add_import_option()<class_EditorSceneFormatImporter_method_add_import_option>` and :ref:`add_import_option_advanced()<class_EditorSceneFormatImporter_method_add_import_option_advanced>`.
 
 \ **Note:** All **EditorSceneFormatImporter** and :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>` instances will add options for all files. It is good practice to check the file extension when ``path`` is non-empty.
 
@@ -207,7 +207,7 @@ Perform the bulk of the scene import logic here, for example using :ref:`GLTFDoc
 
 |void| **add_import_option**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorSceneFormatImporter_method_add_import_option>`
 
-Add a specific import option (name and default value only). This function can only be called from :ref:`_get_import_options<class_EditorSceneFormatImporter_private_method__get_import_options>`.
+Add a specific import option (name and default value only). This function can only be called from :ref:`_get_import_options()<class_EditorSceneFormatImporter_private_method__get_import_options>`.
 
 .. rst-class:: classref-item-separator
 
@@ -219,7 +219,7 @@ Add a specific import option (name and default value only). This function can on
 
 |void| **add_import_option_advanced**\ (\ type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`, name\: :ref:`String<class_String>`, default_value\: :ref:`Variant<class_Variant>`, hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` = 0, hint_string\: :ref:`String<class_String>` = "", usage_flags\: :ref:`int<class_int>` = 6\ ) :ref:`🔗<class_EditorSceneFormatImporter_method_add_import_option_advanced>`
 
-Add a specific import option. This function can only be called from :ref:`_get_import_options<class_EditorSceneFormatImporter_private_method__get_import_options>`.
+Add a specific import option. This function can only be called from :ref:`_get_import_options()<class_EditorSceneFormatImporter_private_method__get_import_options>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

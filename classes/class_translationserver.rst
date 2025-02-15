@@ -249,7 +249,7 @@ Returns an array of all loaded locales of the project.
 
 Returns the current locale of the project.
 
-See also :ref:`OS.get_locale<class_OS_method_get_locale>` and :ref:`OS.get_locale_language<class_OS_method_get_locale_language>` to query the locale of the user system.
+See also :ref:`OS.get_locale()<class_OS_method_get_locale>` and :ref:`OS.get_locale_language()<class_OS_method_get_locale_language>` to query the locale of the user system.
 
 .. rst-class:: classref-item-separator
 
@@ -299,7 +299,7 @@ Returns a readable script name for the ``script`` code.
 
 Returns the current locale of the editor.
 
-\ **Note:** When called from an exported project returns the same value as :ref:`get_locale<class_TranslationServer_method_get_locale>`.
+\ **Note:** When called from an exported project returns the same value as :ref:`get_locale()<class_TranslationServer_method_get_locale>`.
 
 .. rst-class:: classref-item-separator
 

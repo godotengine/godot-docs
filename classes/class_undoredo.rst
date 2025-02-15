@@ -21,7 +21,7 @@ Description
 
 UndoRedo works by registering methods and property changes inside "actions". You can create an action, then provide ways to do and undo this action using function calls and property changes, then commit the action.
 
-When an action is committed, all of the ``do_*`` methods will run. If the :ref:`undo<class_UndoRedo_method_undo>` method is used, the ``undo_*`` methods will run. If the :ref:`redo<class_UndoRedo_method_redo>` method is used, once again, all of the ``do_*`` methods will run.
+When an action is committed, all of the ``do_*`` methods will run. If the :ref:`undo()<class_UndoRedo_method_undo>` method is used, the ``undo_*`` methods will run. If the :ref:`redo()<class_UndoRedo_method_redo>` method is used, once again, all of the ``do_*`` methods will run.
 
 Here's an example on how to add an action:
 
@@ -79,9 +79,9 @@ Here's an example on how to add an action:
 
 
 
-Before calling any of the ``add_(un)do_*`` methods, you need to first call :ref:`create_action<class_UndoRedo_method_create_action>`. Afterwards you need to call :ref:`commit_action<class_UndoRedo_method_commit_action>`.
+Before calling any of the ``add_(un)do_*`` methods, you need to first call :ref:`create_action()<class_UndoRedo_method_create_action>`. Afterwards you need to call :ref:`commit_action()<class_UndoRedo_method_commit_action>`.
 
-If you don't need to register a method, you can leave :ref:`add_do_method<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` out; the same goes for properties. You can also register more than one method/property.
+If you don't need to register a method, you can leave :ref:`add_do_method()<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method()<class_UndoRedo_method_add_undo_method>` out; the same goes for properties. You can also register more than one method/property.
 
 If you are making an :ref:`EditorPlugin<class_EditorPlugin>` and want to integrate into the editor's undo history, use :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` instead.
 
@@ -199,7 +199,7 @@ Signals
 
 **version_changed**\ (\ ) :ref:`🔗<class_UndoRedo_signal_version_changed>`
 
-Called when :ref:`undo<class_UndoRedo_method_undo>` or :ref:`redo<class_UndoRedo_method_redo>` was called.
+Called when :ref:`undo()<class_UndoRedo_method_undo>` or :ref:`redo()<class_UndoRedo_method_redo>` was called.
 
 .. rst-class:: classref-section-separator
 
@@ -260,7 +260,7 @@ Property Descriptions
 - |void| **set_max_steps**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_max_steps**\ (\ )
 
-The maximum number of steps that can be stored in the undo/redo history. If the number of stored steps exceeds this limit, older steps are removed from history and can no longer be reached by calling :ref:`undo<class_UndoRedo_method_undo>`. A value of ``0`` or lower means no limit.
+The maximum number of steps that can be stored in the undo/redo history. If the number of stored steps exceeds this limit, older steps are removed from history and can no longer be reached by calling :ref:`undo()<class_UndoRedo_method_undo>`. A value of ``0`` or lower means no limit.
 
 .. rst-class:: classref-section-separator
 
@@ -397,7 +397,7 @@ Commit the action. If ``execute`` is ``true`` (which it is by default), all "do"
 
 |void| **create_action**\ (\ name\: :ref:`String<class_String>`, merge_mode\: :ref:`MergeMode<enum_UndoRedo_MergeMode>` = 0, backward_undo_ops\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_UndoRedo_method_create_action>`
 
-Create a new action. After this is called, do all your calls to :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, and :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, then commit the action with :ref:`commit_action<class_UndoRedo_method_commit_action>`.
+Create a new action. After this is called, do all your calls to :ref:`add_do_method()<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method()<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property()<class_UndoRedo_method_add_do_property>`, and :ref:`add_undo_property()<class_UndoRedo_method_add_undo_property>`, then commit the action with :ref:`commit_action()<class_UndoRedo_method_commit_action>`.
 
 The way actions are merged is dictated by ``merge_mode``. See :ref:`MergeMode<enum_UndoRedo_MergeMode>` for details.
 
@@ -413,7 +413,7 @@ The way undo operation are ordered in actions is dictated by ``backward_undo_ops
 
 |void| **end_force_keep_in_merge_ends**\ (\ ) :ref:`🔗<class_UndoRedo_method_end_force_keep_in_merge_ends>`
 
-Stops marking operations as to be processed even if the action gets merged with another in the :ref:`MERGE_ENDS<class_UndoRedo_constant_MERGE_ENDS>` mode. See :ref:`start_force_keep_in_merge_ends<class_UndoRedo_method_start_force_keep_in_merge_ends>`.
+Stops marking operations as to be processed even if the action gets merged with another in the :ref:`MERGE_ENDS<class_UndoRedo_constant_MERGE_ENDS>` mode. See :ref:`start_force_keep_in_merge_ends()<class_UndoRedo_method_start_force_keep_in_merge_ends>`.
 
 .. rst-class:: classref-item-separator
 
@@ -511,7 +511,7 @@ Returns ``true`` if an "undo" action is available.
 
 :ref:`bool<class_bool>` **is_committing_action**\ (\ ) |const| :ref:`🔗<class_UndoRedo_method_is_committing_action>`
 
-Returns ``true`` if the **UndoRedo** is currently committing the action, i.e. running its "do" method or property change (see :ref:`commit_action<class_UndoRedo_method_commit_action>`).
+Returns ``true`` if the **UndoRedo** is currently committing the action, i.e. running its "do" method or property change (see :ref:`commit_action()<class_UndoRedo_method_commit_action>`).
 
 .. rst-class:: classref-item-separator
 
@@ -535,7 +535,7 @@ Redo the last action.
 
 |void| **start_force_keep_in_merge_ends**\ (\ ) :ref:`🔗<class_UndoRedo_method_start_force_keep_in_merge_ends>`
 
-Marks the next "do" and "undo" operations to be processed even if the action gets merged with another in the :ref:`MERGE_ENDS<class_UndoRedo_constant_MERGE_ENDS>` mode. Return to normal operation using :ref:`end_force_keep_in_merge_ends<class_UndoRedo_method_end_force_keep_in_merge_ends>`.
+Marks the next "do" and "undo" operations to be processed even if the action gets merged with another in the :ref:`MERGE_ENDS<class_UndoRedo_constant_MERGE_ENDS>` mode. Return to normal operation using :ref:`end_force_keep_in_merge_ends()<class_UndoRedo_method_end_force_keep_in_merge_ends>`.
 
 .. rst-class:: classref-item-separator
 

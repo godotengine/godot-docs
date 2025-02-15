@@ -699,7 +699,7 @@ Method Descriptions
 
 |void| **add_polygon**\ (\ polygon\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_NavigationMesh_method_add_polygon>`
 
-Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices<class_NavigationMesh_method_get_vertices>`.
+Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices()<class_NavigationMesh_method_get_vertices>`.
 
 .. rst-class:: classref-item-separator
 
@@ -809,7 +809,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`geometr
 
 |void| **set_vertices**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ ) :ref:`🔗<class_NavigationMesh_method_set_vertices>`
 
-Sets the vertices that can be then indexed to create polygons with the :ref:`add_polygon<class_NavigationMesh_method_add_polygon>` method.
+Sets the vertices that can be then indexed to create polygons with the :ref:`add_polygon()<class_NavigationMesh_method_add_polygon>` method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

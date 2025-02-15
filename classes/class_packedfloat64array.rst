@@ -21,9 +21,9 @@ An array specifically designed to hold 64-bit floating-point values (double). Pa
 
 If you only need to pack 32-bit floats tightly, see :ref:`PackedFloat32Array<class_PackedFloat32Array>` for a more memory-friendly alternative.
 
-\ **Differences between packed arrays, typed arrays, and untyped arrays:** Packed arrays are generally faster to iterate on and modify compared to a typed array of the same type (e.g. **PackedFloat64Array** versus ``Array[float]``). Also, packed arrays consume less memory. As a downside, packed arrays are less flexible as they don't offer as many convenience methods such as :ref:`Array.map<class_Array_method_map>`. Typed arrays are in turn faster to iterate on and modify than untyped arrays.
+\ **Differences between packed arrays, typed arrays, and untyped arrays:** Packed arrays are generally faster to iterate on and modify compared to a typed array of the same type (e.g. **PackedFloat64Array** versus ``Array[float]``). Also, packed arrays consume less memory. As a downside, packed arrays are less flexible as they don't offer as many convenience methods such as :ref:`Array.map()<class_Array_method_map>`. Typed arrays are in turn faster to iterate on and modify than untyped arrays.
 
-\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedFloat64Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate()<class_PackedFloat64Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
 
 .. note::
 
@@ -169,7 +169,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **append**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedFloat64Array_method_append>`
 
-Appends an element at the end of the array (alias of :ref:`push_back<class_PackedFloat64Array_method_push_back>`).
+Appends an element at the end of the array (alias of :ref:`push_back()<class_PackedFloat64Array_method_push_back>`).
 
 .. rst-class:: classref-item-separator
 
@@ -195,7 +195,7 @@ Appends a **PackedFloat64Array** at the end of this array.
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
-\ **Note:** Calling :ref:`bsearch<class_PackedFloat64Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch()<class_PackedFloat64Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 \ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
@@ -209,7 +209,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 |void| **clear**\ (\ ) :ref:`🔗<class_PackedFloat64Array_method_clear>`
 
-Clears the array. This is equivalent to using :ref:`resize<class_PackedFloat64Array_method_resize>` with a size of ``0``.
+Clears the array. This is equivalent to using :ref:`resize()<class_PackedFloat64Array_method_resize>` with a size of ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -247,7 +247,7 @@ Creates a copy of the array, and returns it.
 
 |void| **fill**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedFloat64Array_method_fill>`
 
-Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedFloat64Array_method_resize>` to create an array with a given size and initialized elements.
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize()<class_PackedFloat64Array_method_resize>` to create an array with a given size and initialized elements.
 
 .. rst-class:: classref-item-separator
 
@@ -347,7 +347,7 @@ Removes an element from the array by index.
 
 :ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedFloat64Array_method_resize>`
 
-Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize<class_PackedFloat64Array_method_resize>` once and assigning the new values is faster than adding new elements one by one.
+Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize()<class_PackedFloat64Array_method_resize>` once and assigning the new values is faster than adding new elements one by one.
 
 .. rst-class:: classref-item-separator
 
@@ -470,7 +470,7 @@ Returns ``true`` if contents of the arrays differ.
 
 :ref:`PackedFloat64Array<class_PackedFloat64Array>` **operator +**\ (\ right\: :ref:`PackedFloat64Array<class_PackedFloat64Array>`\ ) :ref:`🔗<class_PackedFloat64Array_operator_sum_PackedFloat64Array>`
 
-Returns a new **PackedFloat64Array** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedFloat64Array_method_append_array>` instead.
+Returns a new **PackedFloat64Array** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array()<class_PackedFloat64Array_method_append_array>` instead.
 
 .. rst-class:: classref-item-separator
 

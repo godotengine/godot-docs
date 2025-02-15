@@ -211,7 +211,7 @@ Constructs an **int** as a copy of the given **int**.
 
 :ref:`int<class_int>` **int**\ (\ from\: :ref:`String<class_String>`\ )
 
-Constructs a new **int** from a :ref:`String<class_String>`, following the same rules as :ref:`String.to_int<class_String_method_to_int>`.
+Constructs a new **int** from a :ref:`String<class_String>`, following the same rules as :ref:`String.to_int()<class_String_method_to_int>`.
 
 .. rst-class:: classref-item-separator
 
@@ -272,7 +272,7 @@ Returns ``true`` if the **int**\ s are not equal.
 
 :ref:`int<class_int>` **operator %**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_int_operator_mod_int>`
 
-Returns the remainder after dividing two **int**\ s. Uses truncated division, which returns a negative number if the dividend is negative. If this is not desired, consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>`.
+Returns the remainder after dividing two **int**\ s. Uses truncated division, which returns a negative number if the dividend is negative. If this is not desired, consider using :ref:`@GlobalScope.posmod()<class_@GlobalScope_method_posmod>`.
 
 ::
 

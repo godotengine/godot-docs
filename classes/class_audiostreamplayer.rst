@@ -114,7 +114,7 @@ Signals
 
 **finished**\ (\ ) :ref:`🔗<class_AudioStreamPlayer_signal_finished>`
 
-Emitted when a sound finishes playing without interruptions. This signal is *not* emitted when calling :ref:`stop<class_AudioStreamPlayer_method_stop>`, or when exiting the tree while sounds are playing.
+Emitted when a sound finishes playing without interruptions. This signal is *not* emitted when calling :ref:`stop()<class_AudioStreamPlayer_method_stop>`, or when exiting the tree while sounds are playing.
 
 .. rst-class:: classref-section-separator
 
@@ -175,7 +175,7 @@ Property Descriptions
 - |void| **set_autoplay**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_autoplay_enabled**\ (\ )
 
-If ``true``, this node calls :ref:`play<class_AudioStreamPlayer_method_play>` when entering the tree.
+If ``true``, this node calls :ref:`play()<class_AudioStreamPlayer_method_play>` when entering the tree.
 
 .. rst-class:: classref-item-separator
 
@@ -194,7 +194,7 @@ If ``true``, this node calls :ref:`play<class_AudioStreamPlayer_method_play>` wh
 
 The target bus name. All sounds from this node will be playing on this bus.
 
-\ **Note:** At runtime, if no bus with the given name exists, all sounds will fall back on ``"Master"``. See also :ref:`AudioServer.get_bus_name<class_AudioServer_method_get_bus_name>`.
+\ **Note:** At runtime, if no bus with the given name exists, all sounds will fall back on ``"Master"``. See also :ref:`AudioServer.get_bus_name()<class_AudioServer_method_get_bus_name>`.
 
 .. rst-class:: classref-item-separator
 
@@ -211,7 +211,7 @@ The target bus name. All sounds from this node will be playing on this bus.
 - |void| **set_max_polyphony**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_max_polyphony**\ (\ )
 
-The maximum number of sounds this node can play at the same time. Calling :ref:`play<class_AudioStreamPlayer_method_play>` after this value is reached will cut off the oldest sounds.
+The maximum number of sounds this node can play at the same time. Calling :ref:`play()<class_AudioStreamPlayer_method_play>` after this value is reached will cut off the oldest sounds.
 
 .. rst-class:: classref-item-separator
 
@@ -281,7 +281,7 @@ The playback type of the stream player. If set other than to the default value, 
 - |void| **set_playing**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_playing**\ (\ )
 
-If ``true``, this node is playing sounds. Setting this property has the same effect as :ref:`play<class_AudioStreamPlayer_method_play>` and :ref:`stop<class_AudioStreamPlayer_method_stop>`.
+If ``true``, this node is playing sounds. Setting this property has the same effect as :ref:`play()<class_AudioStreamPlayer_method_play>` and :ref:`stop()<class_AudioStreamPlayer_method_stop>`.
 
 .. rst-class:: classref-item-separator
 
@@ -336,7 +336,7 @@ If ``true``, the sounds are paused. Setting :ref:`stream_paused<class_AudioStrea
 
 Volume of sound, in decibels. This is an offset of the :ref:`stream<class_AudioStreamPlayer_property_stream>`'s volume.
 
-\ **Note:** To convert between decibel and linear energy (like most volume sliders do), use :ref:`volume_linear<class_AudioStreamPlayer_property_volume_linear>`, or :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` and :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>`.
+\ **Note:** To convert between decibel and linear energy (like most volume sliders do), use :ref:`volume_linear<class_AudioStreamPlayer_property_volume_linear>`, or :ref:`@GlobalScope.db_to_linear()<class_@GlobalScope_method_db_to_linear>` and :ref:`@GlobalScope.linear_to_db()<class_@GlobalScope_method_linear_to_db>`.
 
 .. rst-class:: classref-item-separator
 
@@ -355,7 +355,7 @@ Volume of sound, in decibels. This is an offset of the :ref:`stream<class_AudioS
 
 Volume of sound, as a linear value.
 
-\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>` on a value.
+\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear()<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db()<class_@GlobalScope_method_linear_to_db>` on a value.
 
 .. rst-class:: classref-section-separator
 
@@ -374,7 +374,7 @@ Method Descriptions
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>` of the latest sound, in seconds. Returns ``0.0`` if no sounds are playing.
 
-\ **Note:** The position is not always accurate, as the :ref:`AudioServer<class_AudioServer>` does not mix audio every processed frame. To get more accurate results, add :ref:`AudioServer.get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>` to the returned position.
+\ **Note:** The position is not always accurate, as the :ref:`AudioServer<class_AudioServer>` does not mix audio every processed frame. To get more accurate results, add :ref:`AudioServer.get_time_since_last_mix()<class_AudioServer_method_get_time_since_last_mix>` to the returned position.
 
 \ **Note:** This method always returns ``0.0`` if the :ref:`stream<class_AudioStreamPlayer_property_stream>` is an :ref:`AudioStreamInteractive<class_AudioStreamInteractive>`, since it can have multiple clips playing at once.
 
@@ -388,7 +388,7 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>` of the latest 
 
 :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback**\ (\ ) :ref:`🔗<class_AudioStreamPlayer_method_get_stream_playback>`
 
-Returns the latest :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` of this node, usually the most recently created by :ref:`play<class_AudioStreamPlayer_method_play>`. If no sounds are playing, this method fails and returns an empty playback.
+Returns the latest :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` of this node, usually the most recently created by :ref:`play()<class_AudioStreamPlayer_method_play>`. If no sounds are playing, this method fails and returns an empty playback.
 
 .. rst-class:: classref-item-separator
 
@@ -400,7 +400,7 @@ Returns the latest :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` of this
 
 :ref:`bool<class_bool>` **has_stream_playback**\ (\ ) :ref:`🔗<class_AudioStreamPlayer_method_has_stream_playback>`
 
-Returns ``true`` if any sound is active, even if :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` is set to ``true``. See also :ref:`playing<class_AudioStreamPlayer_property_playing>` and :ref:`get_stream_playback<class_AudioStreamPlayer_method_get_stream_playback>`.
+Returns ``true`` if any sound is active, even if :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` is set to ``true``. See also :ref:`playing<class_AudioStreamPlayer_property_playing>` and :ref:`get_stream_playback()<class_AudioStreamPlayer_method_get_stream_playback>`.
 
 .. rst-class:: classref-item-separator
 

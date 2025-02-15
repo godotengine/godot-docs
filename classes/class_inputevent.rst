@@ -21,7 +21,7 @@ Abstract base class for input events.
 Description
 -----------
 
-Abstract base class of all types of input events. See :ref:`Node._input<class_Node_private_method__input>`.
+Abstract base class of all types of input events. See :ref:`Node._input()<class_Node_private_method__input>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -198,7 +198,7 @@ Returns ``true`` if the given action is being pressed (and is not an echo event 
 
 If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
-\ **Note:** Due to keyboard ghosting, :ref:`is_action_pressed<class_InputEvent_method_is_action_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+\ **Note:** Due to keyboard ghosting, :ref:`is_action_pressed()<class_InputEvent_method_is_action_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -266,7 +266,7 @@ Returns ``true`` if the specified ``event`` matches this event. Only valid for a
 
 If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
-\ **Note:** Only considers the event configuration (such as the keyboard key or joypad axis), not state information like :ref:`is_pressed<class_InputEvent_method_is_pressed>`, :ref:`is_released<class_InputEvent_method_is_released>`, :ref:`is_echo<class_InputEvent_method_is_echo>`, or :ref:`is_canceled<class_InputEvent_method_is_canceled>`.
+\ **Note:** Only considers the event configuration (such as the keyboard key or joypad axis), not state information like :ref:`is_pressed()<class_InputEvent_method_is_pressed>`, :ref:`is_released()<class_InputEvent_method_is_released>`, :ref:`is_echo()<class_InputEvent_method_is_echo>`, or :ref:`is_canceled()<class_InputEvent_method_is_canceled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -280,7 +280,7 @@ If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:
 
 Returns ``true`` if this input event is pressed. Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
 
-\ **Note:** Due to keyboard ghosting, :ref:`is_pressed<class_InputEvent_method_is_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+\ **Note:** Due to keyboard ghosting, :ref:`is_pressed()<class_InputEvent_method_is_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 .. rst-class:: classref-item-separator
 

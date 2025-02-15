@@ -23,7 +23,7 @@ Description
 
 A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite2D<class_Sprite2D>` or GUI :ref:`Control<class_Control>`.
 
-Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_method_load>`.
+Textures are often created by loading them from a file. See :ref:`@GDScript.load()<class_@GDScript_method_load>`.
 
 \ **Texture2D** is a base for other resources. It cannot be used directly.
 
@@ -240,7 +240,7 @@ Returns an :ref:`Image<class_Image>` that is a copy of data from this **Texture2
 
 \ **Note:** This will return ``null`` if this **Texture2D** is invalid.
 
-\ **Note:** This will fetch the texture data from the GPU, which might cause performance problems when overused. Avoid calling :ref:`get_image<class_Texture2D_method_get_image>` every frame, especially on large textures.
+\ **Note:** This will fetch the texture data from the GPU, which might cause performance problems when overused. Avoid calling :ref:`get_image()<class_Texture2D_method_get_image>` every frame, especially on large textures.
 
 .. rst-class:: classref-item-separator
 

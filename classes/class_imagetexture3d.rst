@@ -64,7 +64,7 @@ Creates the **ImageTexture3D** with specified ``width``, ``height``, and ``depth
 
 |void| **update**\ (\ data\: :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]\ ) :ref:`🔗<class_ImageTexture3D_method_update>`
 
-Replaces the texture's existing data with the layers specified in ``data``. The size of ``data`` must match the parameters that were used for :ref:`create<class_ImageTexture3D_method_create>`. In other words, the texture cannot be resized or have its format changed by calling :ref:`update<class_ImageTexture3D_method_update>`.
+Replaces the texture's existing data with the layers specified in ``data``. The size of ``data`` must match the parameters that were used for :ref:`create()<class_ImageTexture3D_method_create>`. In other words, the texture cannot be resized or have its format changed by calling :ref:`update()<class_ImageTexture3D_method_update>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

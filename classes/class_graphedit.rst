@@ -27,7 +27,7 @@ Description
 
 \ **Performance:** It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
 
-\ **Note:** Keep in mind that :ref:`Node.get_children<class_Node_method_get_children>` will also return the connection layer node named ``_connection_layer`` due to technical limitations. This behavior may change in future releases.
+\ **Note:** Keep in mind that :ref:`Node.get_children()<class_Node_method_get_children>` will also return the connection layer node named ``_connection_layer`` due to technical limitations. This behavior may change in future releases.
 
 .. rst-class:: classref-reftable-group
 
@@ -366,7 +366,7 @@ Emitted at the end of a :ref:`GraphElement<class_GraphElement>`'s movement.
 
 .. rst-class:: classref-signal
 
-**frame_rect_changed**\ (\ frame\: :ref:`GraphFrame<class_GraphFrame>`, new_rect\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_GraphEdit_signal_frame_rect_changed>`
+**frame_rect_changed**\ (\ frame\: :ref:`GraphFrame<class_GraphFrame>`, new_rect\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_GraphEdit_signal_frame_rect_changed>`
 
 Emitted when the :ref:`GraphFrame<class_GraphFrame>` ``frame`` is resized to ``new_rect``.
 
@@ -957,7 +957,7 @@ Virtual method which can be overridden to customize how connections are drawn.
 
 Returns whether the ``mouse_position`` is in the input hot zone.
 
-By default, a hot zone is a :ref:`Rect2<class_Rect2>` positioned such that its center is at ``in_node``.\ :ref:`GraphNode.get_input_port_position<class_GraphNode_method_get_input_port_position>`\ (``in_port``) (For output's case, call :ref:`GraphNode.get_output_port_position<class_GraphNode_method_get_output_port_position>` instead). The hot zone's width is twice the Theme Property ``port_grab_distance_horizontal``, and its height is twice the ``port_grab_distance_vertical``.
+By default, a hot zone is a :ref:`Rect2<class_Rect2>` positioned such that its center is at ``in_node``.\ :ref:`GraphNode.get_input_port_position()<class_GraphNode_method_get_input_port_position>`\ (``in_port``) (For output's case, call :ref:`GraphNode.get_output_port_position()<class_GraphNode_method_get_output_port_position>` instead). The hot zone's width is twice the Theme Property ``port_grab_distance_horizontal``, and its height is twice the ``port_grab_distance_vertical``.
 
 Below is a sample code to help get started:
 
@@ -980,7 +980,7 @@ Below is a sample code to help get started:
 
 :ref:`bool<class_bool>` **_is_in_output_hotzone**\ (\ in_node\: :ref:`Object<class_Object>`, in_port\: :ref:`int<class_int>`, mouse_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_GraphEdit_private_method__is_in_output_hotzone>`
 
-Returns whether the ``mouse_position`` is in the output hot zone. For more information on hot zones, see :ref:`_is_in_input_hotzone<class_GraphEdit_private_method__is_in_input_hotzone>`.
+Returns whether the ``mouse_position`` is in the output hot zone. For more information on hot zones, see :ref:`_is_in_input_hotzone()<class_GraphEdit_private_method__is_in_input_hotzone>`.
 
 Below is a sample code to help get started:
 
@@ -1036,9 +1036,9 @@ In this example a connection to same node is suppressed:
 
 |void| **add_valid_connection_type**\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphEdit_method_add_valid_connection_type>`
 
-Allows the connection between two different port types. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
+Allows the connection between two different port types. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot()<class_GraphNode_method_set_slot>` method.
 
-See also :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>` and :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>`.
+See also :ref:`is_valid_connection_type()<class_GraphEdit_method_is_valid_connection_type>` and :ref:`remove_valid_connection_type()<class_GraphEdit_method_remove_valid_connection_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1050,7 +1050,7 @@ See also :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connecti
 
 |void| **add_valid_left_disconnect_type**\ (\ type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphEdit_method_add_valid_left_disconnect_type>`
 
-Allows to disconnect nodes when dragging from the left port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. See also :ref:`remove_valid_left_disconnect_type<class_GraphEdit_method_remove_valid_left_disconnect_type>`.
+Allows to disconnect nodes when dragging from the left port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. See also :ref:`remove_valid_left_disconnect_type()<class_GraphEdit_method_remove_valid_left_disconnect_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1062,7 +1062,7 @@ Allows to disconnect nodes when dragging from the left port of the :ref:`GraphNo
 
 |void| **add_valid_right_disconnect_type**\ (\ type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphEdit_method_add_valid_right_disconnect_type>`
 
-Allows to disconnect nodes when dragging from the right port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. See also :ref:`remove_valid_right_disconnect_type<class_GraphEdit_method_remove_valid_right_disconnect_type>`.
+Allows to disconnect nodes when dragging from the right port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. See also :ref:`remove_valid_right_disconnect_type()<class_GraphEdit_method_remove_valid_right_disconnect_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1297,9 +1297,9 @@ Returns ``true`` if the ``from_port`` of the ``from_node`` :ref:`GraphNode<class
 
 :ref:`bool<class_bool>` **is_valid_connection_type**\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphEdit_method_is_valid_connection_type>`
 
-Returns whether it's possible to make a connection between two different port types. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
+Returns whether it's possible to make a connection between two different port types. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot()<class_GraphNode_method_set_slot>` method.
 
-See also :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>` and :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>`.
+See also :ref:`add_valid_connection_type()<class_GraphEdit_method_add_valid_connection_type>` and :ref:`remove_valid_connection_type()<class_GraphEdit_method_remove_valid_connection_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1311,9 +1311,9 @@ See also :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connec
 
 |void| **remove_valid_connection_type**\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphEdit_method_remove_valid_connection_type>`
 
-Disallows the connection between two different port types previously allowed by :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>`. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
+Disallows the connection between two different port types previously allowed by :ref:`add_valid_connection_type()<class_GraphEdit_method_add_valid_connection_type>`. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot()<class_GraphNode_method_set_slot>` method.
 
-See also :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>`.
+See also :ref:`is_valid_connection_type()<class_GraphEdit_method_is_valid_connection_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1325,7 +1325,7 @@ See also :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connecti
 
 |void| **remove_valid_left_disconnect_type**\ (\ type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphEdit_method_remove_valid_left_disconnect_type>`
 
-Disallows to disconnect nodes when dragging from the left port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. Use this to disable disconnection previously allowed with :ref:`add_valid_left_disconnect_type<class_GraphEdit_method_add_valid_left_disconnect_type>`.
+Disallows to disconnect nodes when dragging from the left port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. Use this to disable disconnection previously allowed with :ref:`add_valid_left_disconnect_type()<class_GraphEdit_method_add_valid_left_disconnect_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1337,7 +1337,7 @@ Disallows to disconnect nodes when dragging from the left port of the :ref:`Grap
 
 |void| **remove_valid_right_disconnect_type**\ (\ type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphEdit_method_remove_valid_right_disconnect_type>`
 
-Disallows to disconnect nodes when dragging from the right port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. Use this to disable disconnection previously allowed with :ref:`add_valid_right_disconnect_type<class_GraphEdit_method_add_valid_right_disconnect_type>`.
+Disallows to disconnect nodes when dragging from the right port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. Use this to disable disconnection previously allowed with :ref:`add_valid_right_disconnect_type()<class_GraphEdit_method_add_valid_right_disconnect_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1378,7 +1378,7 @@ Theme Property Descriptions
 
 :ref:`Color<class_Color>` **activity** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_GraphEdit_theme_color_activity>`
 
-Color the connection line is interpolated to based on the activity value of a connection (see :ref:`set_connection_activity<class_GraphEdit_method_set_connection_activity>`).
+Color the connection line is interpolated to based on the activity value of a connection (see :ref:`set_connection_activity()<class_GraphEdit_method_set_connection_activity>`).
 
 .. rst-class:: classref-item-separator
 

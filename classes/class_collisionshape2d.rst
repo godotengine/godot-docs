@@ -93,7 +93,7 @@ The collision shape color that is displayed in the editor, or in the running pro
 - |void| **set_disabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_disabled**\ (\ )
 
-A disabled collision shape has no effect in the world. This property should be changed with :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
+A disabled collision shape has no effect in the world. This property should be changed with :ref:`Object.set_deferred()<class_Object_method_set_deferred>`.
 
 .. rst-class:: classref-item-separator
 

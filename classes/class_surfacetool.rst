@@ -19,7 +19,7 @@ Helper tool to create geometry.
 Description
 -----------
 
-The **SurfaceTool** is used to construct a :ref:`Mesh<class_Mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_Mesh>` from a script. All properties except indices need to be added before calling :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. For example, to add vertex colors and UVs:
+The **SurfaceTool** is used to construct a :ref:`Mesh<class_Mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_Mesh>` from a script. All properties except indices need to be added before calling :ref:`add_vertex()<class_SurfaceTool_method_add_vertex>`. For example, to add vertex colors and UVs:
 
 
 .. tabs::
@@ -42,9 +42,9 @@ The **SurfaceTool** is used to construct a :ref:`Mesh<class_Mesh>` by specifying
 
 
 
-The above **SurfaceTool** now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_Color>`. If another vertex were added without calling :ref:`set_uv<class_SurfaceTool_method_set_uv>` or :ref:`set_color<class_SurfaceTool_method_set_color>`, then the last values would be used.
+The above **SurfaceTool** now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_Color>`. If another vertex were added without calling :ref:`set_uv()<class_SurfaceTool_method_set_uv>` or :ref:`set_color()<class_SurfaceTool_method_set_color>`, then the last values would be used.
 
-Vertex attributes must be passed **before** calling :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. Failure to do so will result in an error when committing the vertex information to a mesh.
+Vertex attributes must be passed **before** calling :ref:`add_vertex()<class_SurfaceTool_method_add_vertex>`. Failure to do so will result in an error when committing the vertex information to a mesh.
 
 Additionally, the attributes used before the first vertex is added determine the format of the mesh. For example, if you only add UVs to the first vertex, you cannot add color to any of the subsequent vertices.
 
@@ -158,7 +158,7 @@ enum **CustomFormat**: :ref:`🔗<enum_SurfaceTool_CustomFormat>`
 
 :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **CUSTOM_RGBA8_UNORM** = ``0``
 
-Limits range of data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` to unsigned normalized 0 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`.
+Limits range of data passed to :ref:`set_custom()<class_SurfaceTool_method_set_custom>` to unsigned normalized 0 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`.
 
 .. _class_SurfaceTool_constant_CUSTOM_RGBA8_SNORM:
 
@@ -166,7 +166,7 @@ Limits range of data passed to :ref:`set_custom<class_SurfaceTool_method_set_cus
 
 :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **CUSTOM_RGBA8_SNORM** = ``1``
 
-Limits range of data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` to signed normalized -1 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_SNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_SNORM>`.
+Limits range of data passed to :ref:`set_custom()<class_SurfaceTool_method_set_custom>` to signed normalized -1 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_SNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_SNORM>`.
 
 .. _class_SurfaceTool_constant_CUSTOM_RG_HALF:
 
@@ -174,7 +174,7 @@ Limits range of data passed to :ref:`set_custom<class_SurfaceTool_method_set_cus
 
 :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **CUSTOM_RG_HALF** = ``2``
 
-Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as half precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>`.
+Stores data passed to :ref:`set_custom()<class_SurfaceTool_method_set_custom>` as half precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>`.
 
 .. _class_SurfaceTool_constant_CUSTOM_RGBA_HALF:
 
@@ -182,7 +182,7 @@ Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as 
 
 :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **CUSTOM_RGBA_HALF** = ``3``
 
-Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as half precision floats and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`.
+Stores data passed to :ref:`set_custom()<class_SurfaceTool_method_set_custom>` as half precision floats and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`.
 
 .. _class_SurfaceTool_constant_CUSTOM_R_FLOAT:
 
@@ -190,7 +190,7 @@ Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as 
 
 :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **CUSTOM_R_FLOAT** = ``4``
 
-Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red color channel. See :ref:`Mesh.ARRAY_CUSTOM_R_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_R_FLOAT>`.
+Stores data passed to :ref:`set_custom()<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red color channel. See :ref:`Mesh.ARRAY_CUSTOM_R_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_R_FLOAT>`.
 
 .. _class_SurfaceTool_constant_CUSTOM_RG_FLOAT:
 
@@ -198,7 +198,7 @@ Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as 
 
 :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **CUSTOM_RG_FLOAT** = ``5``
 
-Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RG_FLOAT>`.
+Stores data passed to :ref:`set_custom()<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RG_FLOAT>`.
 
 .. _class_SurfaceTool_constant_CUSTOM_RGB_FLOAT:
 
@@ -206,7 +206,7 @@ Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as 
 
 :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **CUSTOM_RGB_FLOAT** = ``6``
 
-Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red, green and blue color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGB_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGB_FLOAT>`.
+Stores data passed to :ref:`set_custom()<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red, green and blue color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGB_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGB_FLOAT>`.
 
 .. _class_SurfaceTool_constant_CUSTOM_RGBA_FLOAT:
 
@@ -214,7 +214,7 @@ Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as 
 
 :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **CUSTOM_RGBA_FLOAT** = ``7``
 
-Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as full precision floats, and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGBA_FLOAT>`.
+Stores data passed to :ref:`set_custom()<class_SurfaceTool_method_set_custom>` as full precision floats, and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGBA_FLOAT>`.
 
 .. _class_SurfaceTool_constant_CUSTOM_MAX:
 
@@ -353,7 +353,7 @@ The ``flags`` argument can be the bitwise OR of :ref:`Mesh.ARRAY_FLAG_USE_DYNAMI
 
 :ref:`Array<class_Array>` **commit_to_arrays**\ (\ ) :ref:`🔗<class_SurfaceTool_method_commit_to_arrays>`
 
-Commits the data to the same format used by :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`, :ref:`ImporterMesh.add_surface<class_ImporterMesh_method_add_surface>`, and :ref:`create_from_arrays<class_SurfaceTool_method_create_from_arrays>`. This way you can further process the mesh data using the :ref:`ArrayMesh<class_ArrayMesh>` or :ref:`ImporterMesh<class_ImporterMesh>` APIs.
+Commits the data to the same format used by :ref:`ArrayMesh.add_surface_from_arrays()<class_ArrayMesh_method_add_surface_from_arrays>`, :ref:`ImporterMesh.add_surface()<class_ImporterMesh_method_add_surface>`, and :ref:`create_from_arrays()<class_SurfaceTool_method_create_from_arrays>`. This way you can further process the mesh data using the :ref:`ArrayMesh<class_ArrayMesh>` or :ref:`ImporterMesh<class_ImporterMesh>` APIs.
 
 .. rst-class:: classref-item-separator
 
@@ -377,7 +377,7 @@ Creates a vertex array from an existing :ref:`Mesh<class_Mesh>`.
 
 |void| **create_from_arrays**\ (\ arrays\: :ref:`Array<class_Array>`, primitive_type\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` = 3\ ) :ref:`🔗<class_SurfaceTool_method_create_from_arrays>`
 
-Creates this SurfaceTool from existing vertex arrays such as returned by :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`, :ref:`Mesh.surface_get_arrays<class_Mesh_method_surface_get_arrays>`, :ref:`Mesh.surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>`, :ref:`ImporterMesh.get_surface_arrays<class_ImporterMesh_method_get_surface_arrays>`, and :ref:`ImporterMesh.get_surface_blend_shape_arrays<class_ImporterMesh_method_get_surface_blend_shape_arrays>`. ``primitive_type`` controls the type of mesh data, defaulting to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+Creates this SurfaceTool from existing vertex arrays such as returned by :ref:`commit_to_arrays()<class_SurfaceTool_method_commit_to_arrays>`, :ref:`Mesh.surface_get_arrays()<class_Mesh_method_surface_get_arrays>`, :ref:`Mesh.surface_get_blend_shape_arrays()<class_Mesh_method_surface_get_blend_shape_arrays>`, :ref:`ImporterMesh.get_surface_arrays()<class_ImporterMesh_method_get_surface_arrays>`, and :ref:`ImporterMesh.get_surface_blend_shape_arrays()<class_ImporterMesh_method_get_surface_blend_shape_arrays>`. ``primitive_type`` controls the type of mesh data, defaulting to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 .. rst-class:: classref-item-separator
 
@@ -413,7 +413,7 @@ Removes the index array by expanding the vertex array.
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **generate_lod**\ (\ nd_threshold\: :ref:`float<class_float>`, target_index_count\: :ref:`int<class_int>` = 3\ ) :ref:`🔗<class_SurfaceTool_method_generate_lod>`
 
-**Deprecated:** This method is unused internally, as it does not preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods<class_ImporterMesh_method_generate_lods>` instead.
+**Deprecated:** This method is unused internally, as it does not preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods()<class_ImporterMesh_method_generate_lods>` instead.
 
 Generates an LOD for a given ``nd_threshold`` in linear units (square root of quadric error metric), using at most ``target_index_count`` indices.
 
@@ -427,11 +427,11 @@ Generates an LOD for a given ``nd_threshold`` in linear units (square root of qu
 
 |void| **generate_normals**\ (\ flip\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_SurfaceTool_method_generate_normals>`
 
-Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted. :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` should be called *after* generating geometry and *before* committing the mesh using :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`. For correct display of normal-mapped surfaces, you will also have to generate tangents using :ref:`generate_tangents<class_SurfaceTool_method_generate_tangents>`.
+Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted. :ref:`generate_normals()<class_SurfaceTool_method_generate_normals>` should be called *after* generating geometry and *before* committing the mesh using :ref:`commit()<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays()<class_SurfaceTool_method_commit_to_arrays>`. For correct display of normal-mapped surfaces, you will also have to generate tangents using :ref:`generate_tangents()<class_SurfaceTool_method_generate_tangents>`.
 
-\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type is set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+\ **Note:** :ref:`generate_normals()<class_SurfaceTool_method_generate_normals>` only works if the primitive type is set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
-\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` takes smooth groups into account. To generate smooth normals, set the smooth group to a value greater than or equal to ``0`` using :ref:`set_smooth_group<class_SurfaceTool_method_set_smooth_group>` or leave the smooth group at the default of ``0``. To generate flat normals, set the smooth group to ``-1`` using :ref:`set_smooth_group<class_SurfaceTool_method_set_smooth_group>` prior to adding vertices.
+\ **Note:** :ref:`generate_normals()<class_SurfaceTool_method_generate_normals>` takes smooth groups into account. To generate smooth normals, set the smooth group to a value greater than or equal to ``0`` using :ref:`set_smooth_group()<class_SurfaceTool_method_set_smooth_group>` or leave the smooth group at the default of ``0``. To generate flat normals, set the smooth group to ``-1`` using :ref:`set_smooth_group()<class_SurfaceTool_method_set_smooth_group>` prior to adding vertices.
 
 .. rst-class:: classref-item-separator
 
@@ -443,7 +443,7 @@ Generates normals from vertices so you do not have to do it manually. If ``flip`
 
 |void| **generate_tangents**\ (\ ) :ref:`🔗<class_SurfaceTool_method_generate_tangents>`
 
-Generates a tangent vector for each vertex. Requires that each vertex already has UVs and normals set (see :ref:`generate_normals<class_SurfaceTool_method_generate_normals>`).
+Generates a tangent vector for each vertex. Requires that each vertex already has UVs and normals set (see :ref:`generate_normals()<class_SurfaceTool_method_generate_normals>`).
 
 .. rst-class:: classref-item-separator
 
@@ -519,7 +519,7 @@ Shrinks the vertex array by creating an index array. This can improve performanc
 
 |void| **optimize_indices_for_cache**\ (\ ) :ref:`🔗<class_SurfaceTool_method_optimize_indices_for_cache>`
 
-Optimizes triangle sorting for performance. Requires that :ref:`get_primitive_type<class_SurfaceTool_method_get_primitive_type>` is :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+Optimizes triangle sorting for performance. Requires that :ref:`get_primitive_type()<class_SurfaceTool_method_get_primitive_type>` is :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 .. rst-class:: classref-item-separator
 
@@ -559,7 +559,7 @@ Specifies a :ref:`Color<class_Color>` to use for the *next* vertex. If every ver
 
 Sets the custom value on this vertex for ``channel_index``.
 
-\ :ref:`set_custom_format<class_SurfaceTool_method_set_custom_format>` must be called first for this ``channel_index``. Formats which are not RGBA will ignore other color channels.
+\ :ref:`set_custom_format()<class_SurfaceTool_method_set_custom_format>` must be called first for this ``channel_index``. Formats which are not RGBA will ignore other color channels.
 
 .. rst-class:: classref-item-separator
 
@@ -573,7 +573,7 @@ Sets the custom value on this vertex for ``channel_index``.
 
 Sets the color format for this custom ``channel_index``. Use :ref:`CUSTOM_MAX<class_SurfaceTool_constant_CUSTOM_MAX>` to disable.
 
-Must be invoked after :ref:`begin<class_SurfaceTool_method_begin>` and should be set before :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`.
+Must be invoked after :ref:`begin()<class_SurfaceTool_method_begin>` and should be set before :ref:`commit()<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays()<class_SurfaceTool_method_commit_to_arrays>`.
 
 .. rst-class:: classref-item-separator
 

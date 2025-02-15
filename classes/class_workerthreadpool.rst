@@ -120,7 +120,7 @@ The number of threads the task is distributed to is defined by ``tasks_needed``,
 
 Returns a group task ID that can be used by other methods.
 
-\ **Warning:** Every task must be waited for completion using :ref:`wait_for_task_completion<class_WorkerThreadPool_method_wait_for_task_completion>` or :ref:`wait_for_group_task_completion<class_WorkerThreadPool_method_wait_for_group_task_completion>` at some point so that any allocated resources inside the task can be cleaned up.
+\ **Warning:** Every task must be waited for completion using :ref:`wait_for_task_completion()<class_WorkerThreadPool_method_wait_for_task_completion>` or :ref:`wait_for_group_task_completion()<class_WorkerThreadPool_method_wait_for_group_task_completion>` at some point so that any allocated resources inside the task can be cleaned up.
 
 .. rst-class:: classref-item-separator
 
@@ -136,7 +136,7 @@ Adds ``action`` as a task to be executed by a worker thread. ``high_priority`` d
 
 Returns a task ID that can be used by other methods.
 
-\ **Warning:** Every task must be waited for completion using :ref:`wait_for_task_completion<class_WorkerThreadPool_method_wait_for_task_completion>` or :ref:`wait_for_group_task_completion<class_WorkerThreadPool_method_wait_for_group_task_completion>` at some point so that any allocated resources inside the task can be cleaned up.
+\ **Warning:** Every task must be waited for completion using :ref:`wait_for_task_completion()<class_WorkerThreadPool_method_wait_for_task_completion>` or :ref:`wait_for_group_task_completion()<class_WorkerThreadPool_method_wait_for_group_task_completion>` at some point so that any allocated resources inside the task can be cleaned up.
 
 .. rst-class:: classref-item-separator
 

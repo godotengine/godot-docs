@@ -22,7 +22,7 @@ Overrides the location sounds are heard from.
 Description
 -----------
 
-Once added to the scene tree and enabled using :ref:`make_current<class_AudioListener2D_method_make_current>`, this node will override the location sounds are heard from. Only one **AudioListener2D** can be current. Using :ref:`make_current<class_AudioListener2D_method_make_current>` will disable the previous **AudioListener2D**.
+Once added to the scene tree and enabled using :ref:`make_current()<class_AudioListener2D_method_make_current>`, this node will override the location sounds are heard from. Only one **AudioListener2D** can be current. Using :ref:`make_current()<class_AudioListener2D_method_make_current>` will disable the previous **AudioListener2D**.
 
 If there is no active **AudioListener2D** in the current :ref:`Viewport<class_Viewport>`, center of the screen will be used as a hearing point for the audio. **AudioListener2D** needs to be inside :ref:`SceneTree<class_SceneTree>` to function.
 

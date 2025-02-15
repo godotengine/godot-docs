@@ -24,7 +24,7 @@ Description
 
 Plays audio with positional sound effects, based on the relative position of the audio listener. Positional effects include distance attenuation, directionality, and the Doppler effect. For greater realism, a low-pass filter is applied to distant sounds. This can be disabled by setting :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>` to ``20500``.
 
-By default, audio is heard from the camera position. This can be changed by adding an :ref:`AudioListener3D<class_AudioListener3D>` node to the scene and enabling it by calling :ref:`AudioListener3D.make_current<class_AudioListener3D_method_make_current>` on it.
+By default, audio is heard from the camera position. This can be changed by adding an :ref:`AudioListener3D<class_AudioListener3D>` node to the scene and enabling it by calling :ref:`AudioListener3D.make_current()<class_AudioListener3D_method_make_current>` on it.
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 
@@ -507,7 +507,7 @@ The playback type of the stream player. If set other than to the default value, 
 - |void| **set_playing**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_playing**\ (\ )
 
-If ``true``, audio is playing or is queued to be played (see :ref:`play<class_AudioStreamPlayer3D_method_play>`).
+If ``true``, audio is playing or is queued to be played (see :ref:`play()<class_AudioStreamPlayer3D_method_play>`).
 
 .. rst-class:: classref-item-separator
 
@@ -594,7 +594,7 @@ The base sound level before attenuation, in decibels.
 
 The base sound level before attenuation, as a linear value.
 
-\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer3D_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer3D_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer3D_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>` on a value.
+\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer3D_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear()<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer3D_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer3D_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db()<class_@GlobalScope_method_linear_to_db>` on a value.
 
 .. rst-class:: classref-section-separator
 

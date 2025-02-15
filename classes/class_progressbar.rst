@@ -84,7 +84,7 @@ enum **FillMode**: :ref:`🔗<enum_ProgressBar_FillMode>`
 
 :ref:`FillMode<enum_ProgressBar_FillMode>` **FILL_BEGIN_TO_END** = ``0``
 
-The progress bar fills from begin to end horizontally, according to the language direction. If :ref:`Control.is_layout_rtl<class_Control_method_is_layout_rtl>` returns ``false``, it fills from left to right, and if it returns ``true``, it fills from right to left.
+The progress bar fills from begin to end horizontally, according to the language direction. If :ref:`Control.is_layout_rtl()<class_Control_method_is_layout_rtl>` returns ``false``, it fills from left to right, and if it returns ``true``, it fills from right to left.
 
 .. _class_ProgressBar_constant_FILL_END_TO_BEGIN:
 
@@ -92,7 +92,7 @@ The progress bar fills from begin to end horizontally, according to the language
 
 :ref:`FillMode<enum_ProgressBar_FillMode>` **FILL_END_TO_BEGIN** = ``1``
 
-The progress bar fills from end to begin horizontally, according to the language direction. If :ref:`Control.is_layout_rtl<class_Control_method_is_layout_rtl>` returns ``false``, it fills from right to left, and if it returns ``true``, it fills from left to right.
+The progress bar fills from end to begin horizontally, according to the language direction. If :ref:`Control.is_layout_rtl()<class_Control_method_is_layout_rtl>` returns ``false``, it fills from right to left, and if it returns ``true``, it fills from left to right.
 
 .. _class_ProgressBar_constant_FILL_TOP_TO_BOTTOM:
 

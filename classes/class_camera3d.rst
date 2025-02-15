@@ -275,7 +275,7 @@ The culling mask that describes which :ref:`VisualInstance3D.layers<class_Visual
 
 \ **Note:** Since the :ref:`cull_mask<class_Camera3D_property_cull_mask>` allows for 32 layers to be stored in total, there are an additional 12 layers that are only used internally by the engine and aren't exposed in the editor. Setting :ref:`cull_mask<class_Camera3D_property_cull_mask>` using a script allows you to toggle those reserved layers, which can be useful for editor plugins.
 
-To adjust :ref:`cull_mask<class_Camera3D_property_cull_mask>` more easily using a script, use :ref:`get_cull_mask_value<class_Camera3D_method_get_cull_mask_value>` and :ref:`set_cull_mask_value<class_Camera3D_method_set_cull_mask_value>`.
+To adjust :ref:`cull_mask<class_Camera3D_property_cull_mask>` more easily using a script, use :ref:`get_cull_mask_value()<class_Camera3D_method_get_cull_mask_value>` and :ref:`set_cull_mask_value()<class_Camera3D_method_set_cull_mask_value>`.
 
 \ **Note:** :ref:`VoxelGI<class_VoxelGI>`, SDFGI and :ref:`LightmapGI<class_LightmapGI>` will always take all layers into account to determine what contributes to global illumination. If this is an issue, set :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` to :ref:`GeometryInstance3D.GI_MODE_DISABLED<class_GeometryInstance3D_constant_GI_MODE_DISABLED>` for meshes and :ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>` to :ref:`Light3D.BAKE_DISABLED<class_Light3D_constant_BAKE_DISABLED>` for lights to exclude them from global illumination.
 
@@ -732,7 +732,7 @@ Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE
 
 Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that maps to the given 3D point in world space.
 
-\ **Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind<class_Camera3D_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
+\ **Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind()<class_Camera3D_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
 
 ::
 

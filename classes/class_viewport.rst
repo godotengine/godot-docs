@@ -406,7 +406,7 @@ More information: `MetalFX <https://developer.apple.com/documentation/metalfx>`_
 
 Use the `MetalFX temporal upscaler <https://developer.apple.com/documentation/metalfx/mtlfxtemporalscaler#overview>`__ for the viewport's 3D buffer.
 
-The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. To determine the minimum input scale, use the :ref:`RenderingDevice.limit_get<class_RenderingDevice_method_limit_get>` method with :ref:`RenderingDevice.LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE<class_RenderingDevice_constant_LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE>`.
+The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. To determine the minimum input scale, use the :ref:`RenderingDevice.limit_get()<class_RenderingDevice_method_limit_get>` method with :ref:`RenderingDevice.LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE<class_RenderingDevice_constant_LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE>`.
 
 Values less than ``1.0`` will be result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use MetalFX at native resolution as a TAA solution.
 
@@ -698,7 +698,7 @@ Objects are displayed semi-transparent with additive blending so you can see whe
 
 Objects are displayed as wireframe models.
 
-\ **Note:** :ref:`RenderingServer.set_debug_generate_wireframes<class_RenderingServer_method_set_debug_generate_wireframes>` must be called before loading any meshes for wireframes to be visible when using the Compatibility renderer.
+\ **Note:** :ref:`RenderingServer.set_debug_generate_wireframes()<class_RenderingServer_method_set_debug_generate_wireframes>` must be called before loading any meshes for wireframes to be visible when using the Compatibility renderer.
 
 .. _class_Viewport_constant_DEBUG_DRAW_NORMAL_BUFFER:
 
@@ -1422,7 +1422,7 @@ If ``true``, this viewport will mark incoming input events as handled by itself.
 
 A :ref:`SubViewportContainer<class_SubViewportContainer>` will automatically set this property to ``false`` for the **Viewport** contained inside of it.
 
-See also :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>` and :ref:`is_input_handled<class_Viewport_method_is_input_handled>`.
+See also :ref:`set_input_as_handled()<class_Viewport_method_set_input_as_handled>` and :ref:`is_input_handled()<class_Viewport_method_is_input_handled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1462,7 +1462,7 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 
 The multisample antialiasing mode for 2D/Canvas rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of :ref:`MSAA_2X<class_Viewport_constant_MSAA_2X>` or :ref:`MSAA_4X<class_Viewport_constant_MSAA_4X>` is best unless targeting very high-end systems. This has no effect on shader-induced aliasing or texture aliasing.
 
-See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_2d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>` and :ref:`RenderingServer.viewport_set_msaa_2d<class_RenderingServer_method_viewport_set_msaa_2d>`.
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_2d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>` and :ref:`RenderingServer.viewport_set_msaa_2d()<class_RenderingServer_method_viewport_set_msaa_2d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1481,7 +1481,7 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_2d<class_Pro
 
 The multisample antialiasing mode for 3D rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of :ref:`MSAA_2X<class_Viewport_constant_MSAA_2X>` or :ref:`MSAA_4X<class_Viewport_constant_MSAA_4X>` is best unless targeting very high-end systems. See also bilinear scaling 3D :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
 
-See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` and :ref:`RenderingServer.viewport_set_msaa_3d<class_RenderingServer_method_viewport_set_msaa_3d>`.
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` and :ref:`RenderingServer.viewport_set_msaa_3d()<class_RenderingServer_method_viewport_set_msaa_3d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1722,7 +1722,7 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 
 Sets the screen-space antialiasing method used. Screen-space antialiasing works by selectively blurring edges in a post-process shader. It differs from MSAA which takes multiple coverage samples while rendering objects. Screen-space AA methods are typically faster than MSAA and will smooth out specular aliasing, but tend to make scenes appear blurry.
 
-See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>` and :ref:`RenderingServer.viewport_set_screen_space_aa<class_RenderingServer_method_viewport_set_screen_space_aa>`.
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>` and :ref:`RenderingServer.viewport_set_screen_space_aa()<class_RenderingServer_method_viewport_set_screen_space_aa>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1853,7 +1853,7 @@ If ``true``, uses a fast post-processing filter to make banding significantly le
 
 In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
 
-See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>` and :ref:`RenderingServer.viewport_set_use_debanding<class_RenderingServer_method_viewport_set_use_debanding>`.
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>` and :ref:`RenderingServer.viewport_set_use_debanding()<class_RenderingServer_method_viewport_set_use_debanding>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1914,7 +1914,7 @@ Enables temporal antialiasing for this viewport. TAA works by jittering the came
 
 \ **Note:** The implementation is not complete yet, some visual instances such as particles and skinned meshes may show artifacts.
 
-See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>` and :ref:`RenderingServer.viewport_set_use_taa<class_RenderingServer_method_viewport_set_use_taa>`.
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>` and :ref:`RenderingServer.viewport_set_use_taa()<class_RenderingServer_method_viewport_set_use_taa>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2206,7 +2206,7 @@ Returns the transform from the Viewport's coordinates to the screen coordinates 
 
 :ref:`Transform2D<class_Transform2D>` **get_stretch_transform**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_stretch_transform>`
 
-Returns the automatically computed 2D stretch transform, taking the **Viewport**'s stretch settings into account. The final value is multiplied by :ref:`Window.content_scale_factor<class_Window_property_content_scale_factor>`, but only for the root viewport. If this method is called on a :ref:`SubViewport<class_SubViewport>` (e.g., in a scene tree with :ref:`SubViewportContainer<class_SubViewportContainer>` and :ref:`SubViewport<class_SubViewport>`), the scale factor of the root window will not be applied. Using :ref:`Transform2D.get_scale<class_Transform2D_method_get_scale>` on the returned value, this can be used to compensate for scaling when zooming a :ref:`Camera2D<class_Camera2D>` node, or to scale down a :ref:`TextureRect<class_TextureRect>` to be pixel-perfect regardless of the automatically computed scale factor.
+Returns the automatically computed 2D stretch transform, taking the **Viewport**'s stretch settings into account. The final value is multiplied by :ref:`Window.content_scale_factor<class_Window_property_content_scale_factor>`, but only for the root viewport. If this method is called on a :ref:`SubViewport<class_SubViewport>` (e.g., in a scene tree with :ref:`SubViewportContainer<class_SubViewportContainer>` and :ref:`SubViewport<class_SubViewport>`), the scale factor of the root window will not be applied. Using :ref:`Transform2D.get_scale()<class_Transform2D_method_get_scale>` on the returned value, this can be used to compensate for scaling when zooming a :ref:`Camera2D<class_Camera2D>` node, or to scale down a :ref:`TextureRect<class_TextureRect>` to be pixel-perfect regardless of the automatically computed scale factor.
 
 \ **Note:** Due to how pixel scaling works, the returned transform's X and Y scale may differ slightly, even when :ref:`Window.content_scale_aspect<class_Window_property_content_scale_aspect>` is set to a mode that preserves the pixels' aspect ratio. If :ref:`Window.content_scale_aspect<class_Window_property_content_scale_aspect>` is :ref:`Window.CONTENT_SCALE_ASPECT_IGNORE<class_Window_constant_CONTENT_SCALE_ASPECT_IGNORE>`, the X and Y scale may differ *significantly*.
 
@@ -2222,7 +2222,7 @@ Returns the automatically computed 2D stretch transform, taking the **Viewport**
 
 Returns the viewport's texture.
 
-\ **Note:** When trying to store the current texture (e.g. in a file), it might be completely black or outdated if used too early, especially when used in e.g. :ref:`Node._ready<class_Node_private_method__ready>`. To make sure the texture you get is correct, you can await :ref:`RenderingServer.frame_post_draw<class_RenderingServer_signal_frame_post_draw>` signal.
+\ **Note:** When trying to store the current texture (e.g. in a file), it might be completely black or outdated if used too early, especially when used in e.g. :ref:`Node._ready()<class_Node_private_method__ready>`. To make sure the texture you get is correct, you can await :ref:`RenderingServer.frame_post_draw<class_RenderingServer_signal_frame_post_draw>` signal.
 
 ::
 
@@ -2266,7 +2266,7 @@ Returns the visible rectangle in global screen coordinates.
 
 |void| **gui_cancel_drag**\ (\ ) :ref:`🔗<class_Viewport_method_gui_cancel_drag>`
 
-Cancels the drag operation that was previously started through :ref:`Control._get_drag_data<class_Control_private_method__get_drag_data>` or forced with :ref:`Control.force_drag<class_Control_method_force_drag>`.
+Cancels the drag operation that was previously started through :ref:`Control._get_drag_data()<class_Control_private_method__get_drag_data>` or forced with :ref:`Control.force_drag()<class_Control_method_force_drag>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2278,7 +2278,7 @@ Cancels the drag operation that was previously started through :ref:`Control._ge
 
 :ref:`Variant<class_Variant>` **gui_get_drag_data**\ (\ ) |const| :ref:`🔗<class_Viewport_method_gui_get_drag_data>`
 
-Returns the drag data from the GUI, that was previously returned by :ref:`Control._get_drag_data<class_Control_private_method__get_drag_data>`.
+Returns the drag data from the GUI, that was previously returned by :ref:`Control._get_drag_data()<class_Control_private_method__get_drag_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2304,7 +2304,7 @@ Returns the currently focused :ref:`Control<class_Control>` within this viewport
 
 Returns the :ref:`Control<class_Control>` that the mouse is currently hovering over in this viewport. If no :ref:`Control<class_Control>` has the cursor, returns ``null``.
 
-Typically the leaf :ref:`Control<class_Control>` node or deepest level of the subtree which claims hover. This is very useful when used together with :ref:`Node.is_ancestor_of<class_Node_method_is_ancestor_of>` to find if the mouse is within a control tree.
+Typically the leaf :ref:`Control<class_Control>` node or deepest level of the subtree which claims hover. This is very useful when used together with :ref:`Node.is_ancestor_of()<class_Node_method_is_ancestor_of>` to find if the mouse is within a control tree.
 
 .. rst-class:: classref-item-separator
 
@@ -2354,11 +2354,11 @@ Removes the focus from the currently focused :ref:`Control<class_Control>` withi
 
 :ref:`bool<class_bool>` **is_input_handled**\ (\ ) |const| :ref:`🔗<class_Viewport_method_is_input_handled>`
 
-Returns whether the current :ref:`InputEvent<class_InputEvent>` has been handled. Input events are not handled until :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>` has been called during the lifetime of an :ref:`InputEvent<class_InputEvent>`.
+Returns whether the current :ref:`InputEvent<class_InputEvent>` has been handled. Input events are not handled until :ref:`set_input_as_handled()<class_Viewport_method_set_input_as_handled>` has been called during the lifetime of an :ref:`InputEvent<class_InputEvent>`.
 
-This is usually done as part of input handling methods like :ref:`Node._input<class_Node_private_method__input>`, :ref:`Control._gui_input<class_Control_private_method__gui_input>` or others, as well as in corresponding signal handlers.
+This is usually done as part of input handling methods like :ref:`Node._input()<class_Node_private_method__input>`, :ref:`Control._gui_input()<class_Control_private_method__gui_input>` or others, as well as in corresponding signal handlers.
 
-If :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>` is set to ``false``, this method will try finding the first parent viewport that is set to handle input locally, and return its value for :ref:`is_input_handled<class_Viewport_method_is_input_handled>` instead.
+If :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>` is set to ``false``, this method will try finding the first parent viewport that is set to handle input locally, and return its value for :ref:`is_input_handled()<class_Viewport_method_is_input_handled>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -2370,7 +2370,7 @@ If :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>` is 
 
 |void| **notify_mouse_entered**\ (\ ) :ref:`🔗<class_Viewport_method_notify_mouse_entered>`
 
-Inform the Viewport that the mouse has entered its area. Use this function before sending an :ref:`InputEventMouseButton<class_InputEventMouseButton>` or :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` to the **Viewport** with :ref:`push_input<class_Viewport_method_push_input>`. See also :ref:`notify_mouse_exited<class_Viewport_method_notify_mouse_exited>`.
+Inform the Viewport that the mouse has entered its area. Use this function before sending an :ref:`InputEventMouseButton<class_InputEventMouseButton>` or :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` to the **Viewport** with :ref:`push_input()<class_Viewport_method_push_input>`. See also :ref:`notify_mouse_exited()<class_Viewport_method_notify_mouse_exited>`.
 
 \ **Note:** In most cases, it is not necessary to call this function because :ref:`SubViewport<class_SubViewport>` nodes that are children of :ref:`SubViewportContainer<class_SubViewportContainer>` are notified automatically. This is only necessary when interacting with viewports in non-default ways, for example as textures in :ref:`TextureRect<class_TextureRect>` or with an :ref:`Area3D<class_Area3D>` that forwards input events.
 
@@ -2384,7 +2384,7 @@ Inform the Viewport that the mouse has entered its area. Use this function befor
 
 |void| **notify_mouse_exited**\ (\ ) :ref:`🔗<class_Viewport_method_notify_mouse_exited>`
 
-Inform the Viewport that the mouse has left its area. Use this function when the node that displays the viewport notices the mouse has left the area of the displayed viewport. See also :ref:`notify_mouse_entered<class_Viewport_method_notify_mouse_entered>`.
+Inform the Viewport that the mouse has left its area. Use this function when the node that displays the viewport notices the mouse has left the area of the displayed viewport. See also :ref:`notify_mouse_entered()<class_Viewport_method_notify_mouse_entered>`.
 
 \ **Note:** In most cases, it is not necessary to call this function because :ref:`SubViewport<class_SubViewport>` nodes that are children of :ref:`SubViewportContainer<class_SubViewportContainer>` are notified automatically. This is only necessary when interacting with viewports in non-default ways, for example as textures in :ref:`TextureRect<class_TextureRect>` or with an :ref:`Area3D<class_Area3D>` that forwards input events.
 
@@ -2402,21 +2402,21 @@ Triggers the given ``event`` in this **Viewport**. This can be used to pass an :
 
 If ``in_local_coords`` is ``false``, the event's position is in the embedder's coordinates and will be converted to viewport coordinates. If ``in_local_coords`` is ``true``, the event's position is in viewport coordinates.
 
-While this method serves a similar purpose as :ref:`Input.parse_input_event<class_Input_method_parse_input_event>`, it does not remap the specified ``event`` based on project settings like :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`.
+While this method serves a similar purpose as :ref:`Input.parse_input_event()<class_Input_method_parse_input_event>`, it does not remap the specified ``event`` based on project settings like :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`.
 
 Calling this method will propagate calls to child nodes for following methods in the given order:
 
-- :ref:`Node._input<class_Node_private_method__input>`\ 
+- :ref:`Node._input()<class_Node_private_method__input>`\ 
 
-- :ref:`Control._gui_input<class_Control_private_method__gui_input>` for :ref:`Control<class_Control>` nodes
+- :ref:`Control._gui_input()<class_Control_private_method__gui_input>` for :ref:`Control<class_Control>` nodes
 
-- :ref:`Node._shortcut_input<class_Node_private_method__shortcut_input>`\ 
+- :ref:`Node._shortcut_input()<class_Node_private_method__shortcut_input>`\ 
 
-- :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`\ 
+- :ref:`Node._unhandled_key_input()<class_Node_private_method__unhandled_key_input>`\ 
 
-- :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>`\ 
+- :ref:`Node._unhandled_input()<class_Node_private_method__unhandled_input>`\ 
 
-If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
+If an earlier method marks the input as handled via :ref:`set_input_as_handled()<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
 
 If none of the methods handle the event and :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>` is ``true``, the event is used for physics object picking.
 
@@ -2442,7 +2442,7 @@ Helper method which calls the ``set_text()`` method on the currently focused :re
 
 |void| **push_unhandled_input**\ (\ event\: :ref:`InputEvent<class_InputEvent>`, in_local_coords\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Viewport_method_push_unhandled_input>`
 
-**Deprecated:** Use :ref:`push_input<class_Viewport_method_push_input>` instead.
+**Deprecated:** Use :ref:`push_input()<class_Viewport_method_push_input>` instead.
 
 Triggers the given ``event`` in this **Viewport**. This can be used to pass an :ref:`InputEvent<class_InputEvent>` between viewports, or to locally apply inputs that were sent over the network or saved to a file.
 
@@ -2450,13 +2450,13 @@ If ``in_local_coords`` is ``false``, the event's position is in the embedder's c
 
 Calling this method will propagate calls to child nodes for following methods in the given order:
 
-- :ref:`Node._shortcut_input<class_Node_private_method__shortcut_input>`\ 
+- :ref:`Node._shortcut_input()<class_Node_private_method__shortcut_input>`\ 
 
-- :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`\ 
+- :ref:`Node._unhandled_key_input()<class_Node_private_method__unhandled_key_input>`\ 
 
-- :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>`\ 
+- :ref:`Node._unhandled_input()<class_Node_private_method__unhandled_input>`\ 
 
-If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
+If an earlier method marks the input as handled via :ref:`set_input_as_handled()<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
 
 If none of the methods handle the event and :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>` is ``true``, the event is used for physics object picking.
 
@@ -2524,7 +2524,7 @@ Force instantly updating the display based on the current mouse cursor position.
 
 Moves the mouse pointer to the specified position in this **Viewport** using the coordinate system of this **Viewport**.
 
-\ **Note:** :ref:`warp_mouse<class_Viewport_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
+\ **Note:** :ref:`warp_mouse()<class_Viewport_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

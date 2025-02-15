@@ -21,17 +21,17 @@ Description
 
 **EditorInspectorPlugin** allows adding custom property editors to :ref:`EditorInspector<class_EditorInspector>`.
 
-When an object is edited, the :ref:`_can_handle<class_EditorInspectorPlugin_private_method__can_handle>` function is called and must return ``true`` if the object type is supported.
+When an object is edited, the :ref:`_can_handle()<class_EditorInspectorPlugin_private_method__can_handle>` function is called and must return ``true`` if the object type is supported.
 
-If supported, the function :ref:`_parse_begin<class_EditorInspectorPlugin_private_method__parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
+If supported, the function :ref:`_parse_begin()<class_EditorInspectorPlugin_private_method__parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
 
-Subsequently, the :ref:`_parse_category<class_EditorInspectorPlugin_private_method__parse_category>` and :ref:`_parse_property<class_EditorInspectorPlugin_private_method__parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
+Subsequently, the :ref:`_parse_category()<class_EditorInspectorPlugin_private_method__parse_category>` and :ref:`_parse_property()<class_EditorInspectorPlugin_private_method__parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
 
-Finally, :ref:`_parse_end<class_EditorInspectorPlugin_private_method__parse_end>` will be called.
+Finally, :ref:`_parse_end()<class_EditorInspectorPlugin_private_method__parse_end>` will be called.
 
 On each of these calls, the "add" functions can be called.
 
-To use **EditorInspectorPlugin**, register it using the :ref:`EditorPlugin.add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` method first.
+To use **EditorInspectorPlugin**, register it using the :ref:`EditorPlugin.add_inspector_plugin()<class_EditorPlugin_method_add_inspector_plugin>` method first.
 
 .. rst-class:: classref-introduction-group
 

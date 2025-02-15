@@ -66,7 +66,7 @@ enum **ErrorCode**: :ref:`🔗<enum_JSONRPC_ErrorCode>`
 
 :ref:`ErrorCode<enum_JSONRPC_ErrorCode>` **PARSE_ERROR** = ``-32700``
 
-The request could not be parsed as it was not valid by JSON standard (:ref:`JSON.parse<class_JSON_method_parse>` failed).
+The request could not be parsed as it was not valid by JSON standard (:ref:`JSON.parse()<class_JSON_method_parse>` failed).
 
 .. _class_JSONRPC_constant_INVALID_REQUEST:
 
@@ -185,7 +185,7 @@ Creates a response which indicates a previous reply has failed in some way.
 
 Given a Dictionary which takes the form of a JSON-RPC request: unpack the request and run it. Methods are resolved by looking at the field called "method" and looking for an equivalently named function in the JSONRPC object. If one is found that method is called.
 
-To add new supported methods extend the JSONRPC class and call :ref:`process_action<class_JSONRPC_method_process_action>` on your subclass.
+To add new supported methods extend the JSONRPC class and call :ref:`process_action()<class_JSONRPC_method_process_action>` on your subclass.
 
 \ ``action``: The action to be run, as a Dictionary in the form of a JSON-RPC request or notification.
 

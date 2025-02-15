@@ -316,9 +316,9 @@ Method Descriptions
 
 :ref:`Transform3D<class_Transform3D>` **affine_inverse**\ (\ ) |const| :ref:`🔗<class_Transform3D_method_affine_inverse>`
 
-Returns the inverted version of this transform. Unlike :ref:`inverse<class_Transform3D_method_inverse>`, this method works with almost any :ref:`basis<class_Transform3D_property_basis>`, including non-uniform ones, but is slower. See also :ref:`Basis.inverse<class_Basis_method_inverse>`.
+Returns the inverted version of this transform. Unlike :ref:`inverse()<class_Transform3D_method_inverse>`, this method works with almost any :ref:`basis<class_Transform3D_property_basis>`, including non-uniform ones, but is slower. See also :ref:`Basis.inverse()<class_Basis_method_inverse>`.
 
-\ **Note:** For this method to return correctly, the transform's :ref:`basis<class_Transform3D_property_basis>` needs to have a determinant that is not exactly ``0.0`` (see :ref:`Basis.determinant<class_Basis_method_determinant>`).
+\ **Note:** For this method to return correctly, the transform's :ref:`basis<class_Transform3D_property_basis>` needs to have a determinant that is not exactly ``0.0`` (see :ref:`Basis.determinant()<class_Basis_method_determinant>`).
 
 .. rst-class:: classref-item-separator
 
@@ -344,9 +344,9 @@ The ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). Values outside
 
 :ref:`Transform3D<class_Transform3D>` **inverse**\ (\ ) |const| :ref:`🔗<class_Transform3D_method_inverse>`
 
-Returns the `inverted version of this transform <https://en.wikipedia.org/wiki/Invertible_matrix>`__. See also :ref:`Basis.inverse<class_Basis_method_inverse>`.
+Returns the `inverted version of this transform <https://en.wikipedia.org/wiki/Invertible_matrix>`__. See also :ref:`Basis.inverse()<class_Basis_method_inverse>`.
 
-\ **Note:** For this method to return correctly, the transform's :ref:`basis<class_Transform3D_property_basis>` needs to be *orthonormal* (see :ref:`orthonormalized<class_Transform3D_method_orthonormalized>`). That means the basis should only represent a rotation. If it does not, use :ref:`affine_inverse<class_Transform3D_method_affine_inverse>` instead.
+\ **Note:** For this method to return correctly, the transform's :ref:`basis<class_Transform3D_property_basis>` needs to be *orthonormal* (see :ref:`orthonormalized()<class_Transform3D_method_orthonormalized>`). That means the basis should only represent a rotation. If it does not, use :ref:`affine_inverse()<class_Transform3D_method_affine_inverse>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -358,7 +358,7 @@ Returns the `inverted version of this transform <https://en.wikipedia.org/wiki/I
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ xform\: :ref:`Transform3D<class_Transform3D>`\ ) |const| :ref:`🔗<class_Transform3D_method_is_equal_approx>`
 
-Returns ``true`` if this transform and ``xform`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this transform and ``xform`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -370,7 +370,7 @@ Returns ``true`` if this transform and ``xform`` are approximately equal, by run
 
 :ref:`bool<class_bool>` **is_finite**\ (\ ) |const| :ref:`🔗<class_Transform3D_method_is_finite>`
 
-Returns ``true`` if this transform is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+Returns ``true`` if this transform is finite, by calling :ref:`@GlobalScope.is_finite()<class_@GlobalScope_method_is_finite>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -398,7 +398,7 @@ If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forw
 
 :ref:`Transform3D<class_Transform3D>` **orthonormalized**\ (\ ) |const| :ref:`🔗<class_Transform3D_method_orthonormalized>`
 
-Returns a copy of this transform with its :ref:`basis<class_Transform3D_property_basis>` orthonormalized. An orthonormal basis is both *orthogonal* (the axes are perpendicular to each other) and *normalized* (the axes have a length of ``1.0``), which also means it can only represent a rotation. See also :ref:`Basis.orthonormalized<class_Basis_method_orthonormalized>`.
+Returns a copy of this transform with its :ref:`basis<class_Transform3D_property_basis>` orthonormalized. An orthonormal basis is both *orthogonal* (the axes are perpendicular to each other) and *normalized* (the axes have a length of ``1.0``), which also means it can only represent a rotation. See also :ref:`Basis.orthonormalized()<class_Basis_method_orthonormalized>`.
 
 .. rst-class:: classref-item-separator
 
@@ -412,7 +412,7 @@ Returns a copy of this transform with its :ref:`basis<class_Transform3D_property
 
 Returns a copy of this transform rotated around the given ``axis`` by the given ``angle`` (in radians).
 
-The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized<class_Vector3_method_normalized>`). If ``angle`` is positive, the basis is rotated counter-clockwise around the axis.
+The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized()<class_Vector3_method_normalized>`). If ``angle`` is positive, the basis is rotated counter-clockwise around the axis.
 
 This method is an optimized version of multiplying the given transform ``X`` with a corresponding rotation transform ``R`` from the left, i.e., ``R * X``.
 
@@ -517,7 +517,7 @@ Operator Descriptions
 
 Returns ``true`` if the components of both transforms are not equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Transform3D_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 
@@ -573,11 +573,11 @@ This is the operation performed between parent and child :ref:`Node3D<class_Node
 
 \ **Note:** If you need to only modify one attribute of this transform, consider using one of the following methods, instead:
 
-- For translation, see :ref:`translated<class_Transform3D_method_translated>` or :ref:`translated_local<class_Transform3D_method_translated_local>`.
+- For translation, see :ref:`translated()<class_Transform3D_method_translated>` or :ref:`translated_local()<class_Transform3D_method_translated_local>`.
 
-- For rotation, see :ref:`rotated<class_Transform3D_method_rotated>` or :ref:`rotated_local<class_Transform3D_method_rotated_local>`.
+- For rotation, see :ref:`rotated()<class_Transform3D_method_rotated>` or :ref:`rotated_local()<class_Transform3D_method_rotated_local>`.
 
-- For scale, see :ref:`scaled<class_Transform3D_method_scaled>` or :ref:`scaled_local<class_Transform3D_method_scaled_local>`.
+- For scale, see :ref:`scaled()<class_Transform3D_method_scaled>` or :ref:`scaled_local()<class_Transform3D_method_scaled_local>`.
 
 .. rst-class:: classref-item-separator
 
@@ -651,7 +651,7 @@ Divides all components of the **Transform3D** by the given :ref:`int<class_int>`
 
 Returns ``true`` if the components of both transforms are exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Transform3D_method_is_equal_approx>` instead, which is more reliable.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

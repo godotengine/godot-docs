@@ -319,7 +319,7 @@ Number of available audio buses.
 - |void| **set_input_device**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_input_device**\ (\ )
 
-Name of the current device for audio input (see :ref:`get_input_device_list<class_AudioServer_method_get_input_device_list>`). On systems with multiple audio inputs (such as analog, USB and HDMI audio), this can be used to select the audio input device. The value ``"Default"`` will record audio on the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+Name of the current device for audio input (see :ref:`get_input_device_list()<class_AudioServer_method_get_input_device_list>`). On systems with multiple audio inputs (such as analog, USB and HDMI audio), this can be used to select the audio input device. The value ``"Default"`` will record audio on the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
 
 \ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
 
@@ -338,7 +338,7 @@ Name of the current device for audio input (see :ref:`get_input_device_list<clas
 - |void| **set_output_device**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_output_device**\ (\ )
 
-Name of the current device for audio output (see :ref:`get_output_device_list<class_AudioServer_method_get_output_device_list>`). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value ``"Default"`` will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+Name of the current device for audio output (see :ref:`get_output_device_list()<class_AudioServer_method_get_output_device_list>`). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value ``"Default"`` will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to ``"Default"``.
 
 .. rst-class:: classref-item-separator
 
@@ -530,7 +530,7 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 Returns the volume of the bus at index ``bus_idx`` as a linear value.
 
-\ **Note:** The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` on the result of :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>`.
+\ **Note:** The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear()<class_@GlobalScope_method_db_to_linear>` on the result of :ref:`get_bus_volume_db()<class_AudioServer_method_get_bus_volume_db>`.
 
 .. rst-class:: classref-item-separator
 
@@ -606,7 +606,7 @@ Returns the names of all audio output devices detected on the system.
 
 Returns the audio driver's effective output latency. This is based on :ref:`ProjectSettings.audio/driver/output_latency<class_ProjectSettings_property_audio/driver/output_latency>`, but the exact returned value will differ depending on the operating system and audio driver.
 
-\ **Note:** This can be expensive; it is not recommended to call :ref:`get_output_latency<class_AudioServer_method_get_output_latency>` every frame.
+\ **Note:** This can be expensive; it is not recommended to call :ref:`get_output_latency()<class_AudioServer_method_get_output_latency>` every frame.
 
 .. rst-class:: classref-item-separator
 
@@ -706,7 +706,7 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 If ``true``, the stream is registered as a sample. The engine will not have to register it before playing the sample.
 
-If ``false``, the stream will have to be registered before playing it. To prevent lag spikes, register the stream as sample with :ref:`register_stream_as_sample<class_AudioServer_method_register_stream_as_sample>`.
+If ``false``, the stream will have to be registered before playing it. To prevent lag spikes, register the stream as sample with :ref:`register_stream_as_sample()<class_AudioServer_method_register_stream_as_sample>`.
 
 .. rst-class:: classref-item-separator
 
@@ -882,7 +882,7 @@ Sets the volume in decibels of the bus at index ``bus_idx`` to ``volume_db``.
 
 Sets the volume as a linear value of the bus at index ``bus_idx`` to ``volume_linear``.
 
-\ **Note:** Using this method is equivalent to calling :ref:`set_bus_volume_db<class_AudioServer_method_set_bus_volume_db>` with the result of :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>` on a value.
+\ **Note:** Using this method is equivalent to calling :ref:`set_bus_volume_db()<class_AudioServer_method_set_bus_volume_db>` with the result of :ref:`@GlobalScope.linear_to_db()<class_@GlobalScope_method_linear_to_db>` on a value.
 
 .. rst-class:: classref-item-separator
 
@@ -894,7 +894,7 @@ Sets the volume as a linear value of the bus at index ``bus_idx`` to ``volume_li
 
 |void| **set_enable_tagging_used_audio_streams**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AudioServer_method_set_enable_tagging_used_audio_streams>`
 
-If set to ``true``, all instances of :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` will call :ref:`AudioStreamPlayback._tag_used_streams<class_AudioStreamPlayback_private_method__tag_used_streams>` every mix step.
+If set to ``true``, all instances of :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` will call :ref:`AudioStreamPlayback._tag_used_streams()<class_AudioStreamPlayback_private_method__tag_used_streams>` every mix step.
 
 \ **Note:** This is enabled by default in the editor, as it is used by editor plugins for the audio stream previews.
 

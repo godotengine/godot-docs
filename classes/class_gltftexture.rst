@@ -72,7 +72,7 @@ ID of the texture sampler to use when sampling the image. If -1, then the defaul
 - |void| **set_src_image**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_src_image**\ (\ )
 
-The index of the image associated with this texture, see :ref:`GLTFState.get_images<class_GLTFState_method_get_images>`. If -1, then this texture does not have an image assigned.
+The index of the image associated with this texture, see :ref:`GLTFState.get_images()<class_GLTFState_method_get_images>`. If -1, then this texture does not have an image assigned.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

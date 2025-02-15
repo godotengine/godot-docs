@@ -21,7 +21,7 @@ Description
 
 ImporterMesh is a type of :ref:`Resource<class_Resource>` analogous to :ref:`ArrayMesh<class_ArrayMesh>`. It contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
-Unlike its runtime counterpart, **ImporterMesh** contains mesh data before various import steps, such as lod and shadow mesh generation, have taken place. Modify surface data by calling :ref:`clear<class_ImporterMesh_method_clear>`, followed by :ref:`add_surface<class_ImporterMesh_method_add_surface>` for each surface.
+Unlike its runtime counterpart, **ImporterMesh** contains mesh data before various import steps, such as lod and shadow mesh generation, have taken place. Modify surface data by calling :ref:`clear()<class_ImporterMesh_method_clear>`, followed by :ref:`add_surface()<class_ImporterMesh_method_add_surface>` for each surface.
 
 .. rst-class:: classref-reftable-group
 
@@ -94,7 +94,7 @@ Method Descriptions
 
 |void| **add_blend_shape**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ImporterMesh_method_add_blend_shape>`
 
-Adds name for a blend shape that will be added with :ref:`add_surface<class_ImporterMesh_method_add_surface>`. Must be called before surface is added.
+Adds name for a blend shape that will be added with :ref:`add_surface()<class_ImporterMesh_method_add_surface>`. Must be called before surface is added.
 
 .. rst-class:: classref-item-separator
 
@@ -106,7 +106,7 @@ Adds name for a blend shape that will be added with :ref:`add_surface<class_Impo
 
 |void| **add_surface**\ (\ primitive\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`, arrays\: :ref:`Array<class_Array>`, blend_shapes\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\] = [], lods\: :ref:`Dictionary<class_Dictionary>` = {}, material\: :ref:`Material<class_Material>` = null, name\: :ref:`String<class_String>` = "", flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ImporterMesh_method_add_surface>`
 
-Creates a new surface. :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>` will become the ``surf_idx`` for this new surface.
+Creates a new surface. :ref:`Mesh.get_surface_count()<class_Mesh_method_get_surface_count>` will become the ``surf_idx`` for this new surface.
 
 Surfaces are created to be rendered using a ``primitive``, which may be any of the values defined in :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`.
 
@@ -148,7 +148,7 @@ Generates all lods for this ImporterMesh.
 
 \ ``normal_split_angle`` is not used and only remains for compatibility with older versions of the API.
 
-The number of generated lods can be accessed using :ref:`get_surface_lod_count<class_ImporterMesh_method_get_surface_lod_count>`, and each LOD is available in :ref:`get_surface_lod_size<class_ImporterMesh_method_get_surface_lod_size>` and :ref:`get_surface_lod_indices<class_ImporterMesh_method_get_surface_lod_indices>`.
+The number of generated lods can be accessed using :ref:`get_surface_lod_count()<class_ImporterMesh_method_get_surface_lod_count>`, and each LOD is available in :ref:`get_surface_lod_size()<class_ImporterMesh_method_get_surface_lod_size>` and :ref:`get_surface_lod_indices()<class_ImporterMesh_method_get_surface_lod_indices>`.
 
 \ ``bone_transform_array`` is an :ref:`Array<class_Array>` which can be either empty or contain :ref:`Transform3D<class_Transform3D>`\ s which, for each of the mesh's bone IDs, will apply mesh skinning when generating the LOD mesh variations. This is usually used to account for discrepancies in scale between the mesh itself and its skinning data.
 
@@ -212,7 +212,7 @@ Returns the size hint of this mesh for lightmap-unwrapping in UV-space.
 
 Returns the mesh data represented by this **ImporterMesh** as a usable :ref:`ArrayMesh<class_ArrayMesh>`.
 
-This method caches the returned mesh, and subsequent calls will return the cached data until :ref:`clear<class_ImporterMesh_method_clear>` is called.
+This method caches the returned mesh, and subsequent calls will return the cached data until :ref:`clear()<class_ImporterMesh_method_clear>` is called.
 
 If not yet cached and ``base_mesh`` is provided, ``base_mesh`` will be used and mutated.
 
@@ -226,7 +226,7 @@ If not yet cached and ``base_mesh`` is provided, ``base_mesh`` will be used and 
 
 :ref:`Array<class_Array>` **get_surface_arrays**\ (\ surface_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ImporterMesh_method_get_surface_arrays>`
 
-Returns the arrays for the vertices, normals, UVs, etc. that make up the requested surface. See :ref:`add_surface<class_ImporterMesh_method_add_surface>`.
+Returns the arrays for the vertices, normals, UVs, etc. that make up the requested surface. See :ref:`add_surface()<class_ImporterMesh_method_add_surface>`.
 
 .. rst-class:: classref-item-separator
 
@@ -334,7 +334,7 @@ Gets the name assigned to this surface.
 
 :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **get_surface_primitive_type**\ (\ surface_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ImporterMesh_method_get_surface_primitive_type>`
 
-Returns the primitive type of the requested surface (see :ref:`add_surface<class_ImporterMesh_method_add_surface>`).
+Returns the primitive type of the requested surface (see :ref:`add_surface()<class_ImporterMesh_method_add_surface>`).
 
 .. rst-class:: classref-item-separator
 

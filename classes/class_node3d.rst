@@ -25,7 +25,7 @@ Most basic 3D game object, with a :ref:`Transform3D<class_Transform3D>` and visi
 
 Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the **Node3D** object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the **Node3D**'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the **Node3D** object itself is referred to as object-local coordinate system.
 
-\ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GlobalScope.deg_to_rad<class_@GlobalScope_method_deg_to_rad>`.
+\ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GlobalScope.deg_to_rad()<class_@GlobalScope_method_deg_to_rad>`.
 
 \ **Note:** Be aware that "Spatial" nodes are now called "Node3D" starting with Godot 4. Any Godot 3.x references to "Spatial" nodes refer to "Node3D" in Godot 4.
 
@@ -239,7 +239,7 @@ Constants
 
 **Node3D** nodes receive this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
-In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Node3D_method_set_notify_transform>`. The notification is also sent if the node is in the editor context and it has at least one valid gizmo.
+In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform()<class_Node3D_method_set_notify_transform>`. The notification is also sent if the node is in the editor context and it has at least one valid gizmo.
 
 .. _class_Node3D_constant_NOTIFICATION_ENTER_WORLD:
 
@@ -273,7 +273,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 **Node3D** nodes receive this notification when their local transform changes. This is not received when the transform of a parent node is changed.
 
-In order for :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_local_transform<class_Node3D_method_set_notify_local_transform>`.
+In order for :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_local_transform()<class_Node3D_method_set_notify_local_transform>`.
 
 .. rst-class:: classref-section-separator
 
@@ -577,7 +577,7 @@ Defines the visibility range parent for this node and its subtree. The visibilit
 - |void| **set_visible**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_visible**\ (\ )
 
-If ``true``, this node is drawn. The node is only visible if all of its ancestors are visible as well (in other words, :ref:`is_visible_in_tree<class_Node3D_method_is_visible_in_tree>` must return ``true``).
+If ``true``, this node is drawn. The node is only visible if all of its ancestors are visible as well (in other words, :ref:`is_visible_in_tree()<class_Node3D_method_is_visible_in_tree>` must return ``true``).
 
 .. rst-class:: classref-section-separator
 
@@ -658,9 +658,9 @@ Returns all the gizmos attached to this **Node3D**.
 
 When using physics interpolation, there will be circumstances in which you want to know the interpolated (displayed) transform of a node rather than the standard transform (which may only be accurate to the most recent physics tick).
 
-This is particularly important for frame-based operations that take place in :ref:`Node._process<class_Node_private_method__process>`, rather than :ref:`Node._physics_process<class_Node_private_method__physics_process>`. Examples include :ref:`Camera3D<class_Camera3D>`\ s focusing on a node, or finding where to fire lasers from on a frame rather than physics tick.
+This is particularly important for frame-based operations that take place in :ref:`Node._process()<class_Node_private_method__process>`, rather than :ref:`Node._physics_process()<class_Node_private_method__physics_process>`. Examples include :ref:`Camera3D<class_Camera3D>`\ s focusing on a node, or finding where to fire lasers from on a frame rather than physics tick.
 
-\ **Note:** This function creates an interpolation pump on the **Node3D** the first time it is called, which can respond to physics interpolation resets. If you get problems with "streaking" when initially following a **Node3D**, be sure to call :ref:`get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>` at least once *before* resetting the **Node3D** physics interpolation.
+\ **Note:** This function creates an interpolation pump on the **Node3D** the first time it is called, which can respond to physics interpolation resets. If you get problems with "streaking" when initially following a **Node3D**, be sure to call :ref:`get_global_transform_interpolated()<class_Node3D_method_get_global_transform_interpolated>` at least once *before* resetting the **Node3D** physics interpolation.
 
 .. rst-class:: classref-item-separator
 
@@ -820,7 +820,7 @@ If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forw
 
 |void| **look_at_from_position**\ (\ position\: :ref:`Vector3<class_Vector3>`, target\: :ref:`Vector3<class_Vector3>`, up\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0), use_model_front\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node3D_method_look_at_from_position>`
 
-Moves the node to the specified ``position``, and then rotates the node to point toward the ``target`` as per :ref:`look_at<class_Node3D_method_look_at>`. Operations take place in global space.
+Moves the node to the specified ``position``, and then rotates the node to point toward the ``target`` as per :ref:`look_at()<class_Node3D_method_look_at>`. Operations take place in global space.
 
 .. rst-class:: classref-item-separator
 

@@ -21,7 +21,7 @@ A base dialog used for user notification.
 Description
 -----------
 
-The default use of **AcceptDialog** is to allow it to only be accepted or closed, with the same result. However, the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` and :ref:`canceled<class_AcceptDialog_signal_canceled>` signals allow to make the two actions different, and the :ref:`add_button<class_AcceptDialog_method_add_button>` method allows to add custom buttons and actions.
+The default use of **AcceptDialog** is to allow it to only be accepted or closed, with the same result. However, the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` and :ref:`canceled<class_AcceptDialog_signal_canceled>` signals allow to make the two actions different, and the :ref:`add_button()<class_AcceptDialog_method_add_button>` method allows to add custom buttons and actions.
 
 .. rst-class:: classref-reftable-group
 
@@ -110,7 +110,7 @@ Signals
 
 **canceled**\ (\ ) :ref:`🔗<class_AcceptDialog_signal_canceled>`
 
-Emitted when the dialog is closed or the button created with :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` is pressed.
+Emitted when the dialog is closed or the button created with :ref:`add_cancel_button()<class_AcceptDialog_method_add_cancel_button>` is pressed.
 
 .. rst-class:: classref-item-separator
 
@@ -134,7 +134,7 @@ Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
 **custom_action**\ (\ action\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AcceptDialog_signal_custom_action>`
 
-Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_method_add_button>`.
+Emitted when a custom button is pressed. See :ref:`add_button()<class_AcceptDialog_method_add_button>`.
 
 .. rst-class:: classref-section-separator
 
@@ -226,7 +226,7 @@ The text displayed by the dialog.
 - |void| **set_ok_button_text**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_ok_button_text**\ (\ )
 
-The text displayed by the OK button (see :ref:`get_ok_button<class_AcceptDialog_method_get_ok_button>`).
+The text displayed by the OK button (see :ref:`get_ok_button()<class_AcceptDialog_method_get_ok_button>`).
 
 .. rst-class:: classref-section-separator
 
@@ -247,7 +247,7 @@ Adds a button with label ``text`` and a custom ``action`` to the dialog and retu
 
 If ``true``, ``right`` will place the button to the right of any sibling buttons.
 
-You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
+You can use :ref:`remove_button()<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -261,7 +261,7 @@ You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method
 
 Adds a button with label ``name`` and a cancel action to the dialog and returns the created button.
 
-You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
+You can use :ref:`remove_button()<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -313,7 +313,7 @@ Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is
 
 |void| **remove_button**\ (\ button\: :ref:`Button<class_Button>`\ ) :ref:`🔗<class_AcceptDialog_method_remove_button>`
 
-Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button<class_AcceptDialog_method_add_button>` or :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` or :ref:`canceled<class_AcceptDialog_signal_canceled>` signals.
+Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button()<class_AcceptDialog_method_add_button>` or :ref:`add_cancel_button()<class_AcceptDialog_method_add_cancel_button>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` or :ref:`canceled<class_AcceptDialog_signal_canceled>` signals.
 
 .. rst-class:: classref-section-separator
 

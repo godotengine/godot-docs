@@ -210,7 +210,7 @@ If ``msaa`` is ``true`` and MSAA is enabled, this returns the MSAA variant of th
 
 :ref:`float<class_float>` **get_fsr_sharpness**\ (\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_get_fsr_sharpness>`
 
-Returns the FSR sharpness value used while rendering the 3D content (if :ref:`get_scaling_3d_mode<class_RenderSceneBuffersRD_method_get_scaling_3d_mode>` is an FSR mode).
+Returns the FSR sharpness value used while rendering the 3D content (if :ref:`get_scaling_3d_mode()<class_RenderSceneBuffersRD_method_get_scaling_3d_mode>` is an FSR mode).
 
 .. rst-class:: classref-item-separator
 

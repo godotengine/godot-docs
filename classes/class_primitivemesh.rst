@@ -182,7 +182,7 @@ Override this method to customize how this primitive mesh should be generated. S
 
 Returns the mesh arrays used to make up the surface of this primitive mesh.
 
-\ **Example:** Pass the result to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface:
+\ **Example:** Pass the result to :ref:`ArrayMesh.add_surface_from_arrays()<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface:
 
 
 .. tabs::

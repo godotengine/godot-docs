@@ -599,7 +599,7 @@ It's slower than :ref:`INTERPOLATE_BILINEAR<class_Image_constant_INTERPOLATE_BIL
 
 If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image.
 
-\ **Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`] on it in advance, to avoid wasting processing power in generating them again and again.
+\ **Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`] on it in advance, to avoid wasting processing power in generating them again and again.
 
 On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
 
@@ -878,7 +878,7 @@ Method Descriptions
 
 |void| **adjust_bcs**\ (\ brightness\: :ref:`float<class_float>`, contrast\: :ref:`float<class_float>`, saturation\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Image_method_adjust_bcs>`
 
-Adjusts this image's ``brightness``, ``contrast``, and ``saturation`` by the given values. Does not work if the image is compressed (see :ref:`is_compressed<class_Image_method_is_compressed>`).
+Adjusts this image's ``brightness``, ``contrast``, and ``saturation`` by the given values. Does not work if the image is compressed (see :ref:`is_compressed()<class_Image_method_is_compressed>`).
 
 .. rst-class:: classref-item-separator
 
@@ -916,7 +916,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image 
 
 Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with non-positive size is treated as empty.
 
-\ **Note:** The alpha channel data in ``src`` will overwrite the corresponding data in this image at the target position. To blend alpha channels, use :ref:`blend_rect<class_Image_method_blend_rect>` instead.
+\ **Note:** The alpha channel data in ``src`` will overwrite the corresponding data in this image at the target position. To blend alpha channels, use :ref:`blend_rect()<class_Image_method_blend_rect>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -982,7 +982,7 @@ For ASTC compression, the ``astc_format`` parameter must be supplied.
 
 Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available.
 
-This is an alternative to :ref:`compress<class_Image_method_compress>` that lets the user supply the channels used in order for the compressor to pick the best DXT and ETC2 formats. For other formats (non DXT or ETC2), this argument is ignored.
+This is an alternative to :ref:`compress()<class_Image_method_compress>` that lets the user supply the channels used in order for the compressor to pick the best DXT and ETC2 formats. For other formats (non DXT or ETC2), this argument is ignored.
 
 For ASTC compression, the ``astc_format`` parameter must be supplied.
 
@@ -1034,9 +1034,9 @@ Copies ``src`` image to this image.
 
 :ref:`Image<class_Image>` **create**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static| :ref:`🔗<class_Image_method_create>`
 
-**Deprecated:** Use :ref:`create_empty<class_Image_method_create_empty>`.
+**Deprecated:** Use :ref:`create_empty()<class_Image_method_create_empty>`.
 
-Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1048,7 +1048,7 @@ Creates an empty image of given size and format. See :ref:`Format<enum_Image_For
 
 :ref:`Image<class_Image>` **create_empty**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static| :ref:`🔗<class_Image_method_create_empty>`
 
-Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1060,7 +1060,7 @@ Creates an empty image of given size and format. See :ref:`Format<enum_Image_For
 
 :ref:`Image<class_Image>` **create_from_data**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_Image_method_create_from_data>`
 
-Creates a new image of given size and format. See :ref:`Format<enum_Image_Format>` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then loads mipmaps for this image from ``data``. See :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+Creates a new image of given size and format. See :ref:`Format<enum_Image_Format>` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then loads mipmaps for this image from ``data``. See :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1184,7 +1184,7 @@ Flips the image vertically.
 
 Generates mipmaps for the image. Mipmaps are precalculated lower-resolution copies of the image that are automatically used if the image needs to be scaled down when rendered. They help improve image quality and performance when rendering. This method returns an error if the image is compressed, in a custom format, or if the image's width/height is ``0``. Enabling ``renormalize`` when generating mipmaps for normal map textures will make sure all resulting vector values are normalized.
 
-It is possible to check if the image has mipmaps by calling :ref:`has_mipmaps<class_Image_method_has_mipmaps>` or :ref:`get_mipmap_count<class_Image_method_get_mipmap_count>`. Calling :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>` on an image that already has mipmaps will replace existing mipmaps in the image.
+It is possible to check if the image has mipmaps by calling :ref:`has_mipmaps()<class_Image_method_has_mipmaps>` or :ref:`get_mipmap_count()<class_Image_method_get_mipmap_count>`. Calling :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>` on an image that already has mipmaps will replace existing mipmaps in the image.
 
 .. rst-class:: classref-item-separator
 
@@ -1270,7 +1270,7 @@ Returns the offset where the image's mipmap with index ``mipmap`` is stored in t
 
 Returns the color of the pixel at ``(x, y)``.
 
-This is the same as :ref:`get_pixelv<class_Image_method_get_pixelv>`, but with two integer arguments instead of a :ref:`Vector2i<class_Vector2i>` argument.
+This is the same as :ref:`get_pixelv()<class_Image_method_get_pixelv>`, but with two integer arguments instead of a :ref:`Vector2i<class_Vector2i>` argument.
 
 .. rst-class:: classref-item-separator
 
@@ -1284,7 +1284,7 @@ This is the same as :ref:`get_pixelv<class_Image_method_get_pixelv>`, but with t
 
 Returns the color of the pixel at ``point``.
 
-This is the same as :ref:`get_pixel<class_Image_method_get_pixel>`, but with a :ref:`Vector2i<class_Vector2i>` argument instead of two integer arguments.
+This is the same as :ref:`get_pixel()<class_Image_method_get_pixel>`, but with a :ref:`Vector2i<class_Vector2i>` argument instead of two integer arguments.
 
 .. rst-class:: classref-item-separator
 
@@ -1630,7 +1630,7 @@ Rotates the image by ``180`` degrees. The width and height of the image must be 
 
 Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
-\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr<class_Image_method_save_exr>` will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` when it is called from an exported project.
+\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr()<class_Image_method_save_exr>` will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` when it is called from an exported project.
 
 .. rst-class:: classref-item-separator
 
@@ -1644,7 +1644,7 @@ Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the
 
 Saves the image as an EXR file to a byte array. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return an empty byte array if Godot was compiled without the TinyEXR module.
 
-\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr<class_Image_method_save_exr>` will return an empty byte array when it is called from an exported project.
+\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr()<class_Image_method_save_exr>` will return an empty byte array when it is called from an exported project.
 
 .. rst-class:: classref-item-separator
 
@@ -1736,7 +1736,7 @@ Saves the image as a WebP (Web Picture) file to a byte array. By default it will
 
 |void| **set_data**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_set_data>`
 
-Overwrites data of an existing **Image**. Non-static equivalent of :ref:`create_from_data<class_Image_method_create_from_data>`.
+Overwrites data of an existing **Image**. Non-static equivalent of :ref:`create_from_data()<class_Image_method_create_from_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1771,7 +1771,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` to ``color``.
 
 
 
-This is the same as :ref:`set_pixelv<class_Image_method_set_pixelv>`, but with a two integer arguments instead of a :ref:`Vector2i<class_Vector2i>` argument.
+This is the same as :ref:`set_pixelv()<class_Image_method_set_pixelv>`, but with a two integer arguments instead of a :ref:`Vector2i<class_Vector2i>` argument.
 
 .. rst-class:: classref-item-separator
 
@@ -1806,7 +1806,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
 
 
 
-This is the same as :ref:`set_pixel<class_Image_method_set_pixel>`, but with a :ref:`Vector2i<class_Vector2i>` argument instead of two integer arguments.
+This is the same as :ref:`set_pixel()<class_Image_method_set_pixel>`, but with a :ref:`Vector2i<class_Vector2i>` argument instead of two integer arguments.
 
 .. rst-class:: classref-item-separator
 

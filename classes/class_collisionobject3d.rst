@@ -319,7 +319,7 @@ Method Descriptions
 
 Receives unhandled :ref:`InputEvent<class_InputEvent>`\ s. ``event_position`` is the location in world space of the mouse pointer on the surface of the shape with index ``shape_idx`` and ``normal`` is the normal vector of the surface at that point. Connect to the :ref:`input_event<class_CollisionObject3D_signal_input_event>` signal to easily pick up these events.
 
-\ **Note:** :ref:`_input_event<class_CollisionObject3D_private_method__input_event>` requires :ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
+\ **Note:** :ref:`_input_event()<class_CollisionObject3D_private_method__input_event>` requires :ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
 
 .. rst-class:: classref-item-separator
 

@@ -22,11 +22,11 @@ Automatically replicates spawnable nodes from the authority to other multiplayer
 Description
 -----------
 
-Spawnable scenes can be configured in the editor or through code (see :ref:`add_spawnable_scene<class_MultiplayerSpawner_method_add_spawnable_scene>`).
+Spawnable scenes can be configured in the editor or through code (see :ref:`add_spawnable_scene()<class_MultiplayerSpawner_method_add_spawnable_scene>`).
 
-Also supports custom node spawns through :ref:`spawn<class_MultiplayerSpawner_method_spawn>`, calling :ref:`spawn_function<class_MultiplayerSpawner_property_spawn_function>` on all peers.
+Also supports custom node spawns through :ref:`spawn()<class_MultiplayerSpawner_method_spawn>`, calling :ref:`spawn_function<class_MultiplayerSpawner_property_spawn_function>` on all peers.
 
-Internally, **MultiplayerSpawner** uses :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>` to notify spawns passing the spawned node as the ``object`` and itself as the ``configuration``, and :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>` to notify despawns in a similar way.
+Internally, **MultiplayerSpawner** uses :ref:`MultiplayerAPI.object_configuration_add()<class_MultiplayerAPI_method_object_configuration_add>` to notify spawns passing the spawned node as the ``object`` and itself as the ``configuration``, and :ref:`MultiplayerAPI.object_configuration_remove()<class_MultiplayerAPI_method_object_configuration_remove>` to notify despawns in a similar way.
 
 .. rst-class:: classref-reftable-group
 
@@ -113,9 +113,9 @@ Property Descriptions
 - |void| **set_spawn_function**\ (\ value\: :ref:`Callable<class_Callable>`\ )
 - :ref:`Callable<class_Callable>` **get_spawn_function**\ (\ )
 
-Method called on all peers when a custom :ref:`spawn<class_MultiplayerSpawner_method_spawn>` is requested by the authority. Will receive the ``data`` parameter, and should return a :ref:`Node<class_Node>` that is not in the scene tree.
+Method called on all peers when a custom :ref:`spawn()<class_MultiplayerSpawner_method_spawn>` is requested by the authority. Will receive the ``data`` parameter, and should return a :ref:`Node<class_Node>` that is not in the scene tree.
 
-\ **Note:** The returned node should **not** be added to the scene with :ref:`Node.add_child<class_Node_method_add_child>`. This is done automatically.
+\ **Note:** The returned node should **not** be added to the scene with :ref:`Node.add_child()<class_Node_method_add_child>`. This is done automatically.
 
 .. rst-class:: classref-item-separator
 
@@ -218,7 +218,7 @@ Returns the count of spawnable scene paths.
 
 Requests a custom spawn, with ``data`` passed to :ref:`spawn_function<class_MultiplayerSpawner_property_spawn_function>` on all peers. Returns the locally spawned node instance already inside the scene tree, and added as a child of the node pointed by :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`.
 
-\ **Note:** Spawnable scenes are spawned automatically. :ref:`spawn<class_MultiplayerSpawner_method_spawn>` is only needed for custom spawns.
+\ **Note:** Spawnable scenes are spawned automatically. :ref:`spawn()<class_MultiplayerSpawner_method_spawn>` is only needed for custom spawns.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

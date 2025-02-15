@@ -21,7 +21,7 @@ Description
 
 MeshDataTool provides access to individual vertices in a :ref:`Mesh<class_Mesh>`. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges.
 
-To use MeshDataTool, load a mesh with :ref:`create_from_surface<class_MeshDataTool_method_create_from_surface>`. When you are finished editing the data commit the data to a mesh with :ref:`commit_to_surface<class_MeshDataTool_method_commit_to_surface>`.
+To use MeshDataTool, load a mesh with :ref:`create_from_surface()<class_MeshDataTool_method_create_from_surface>`. When you are finished editing the data commit the data to a mesh with :ref:`commit_to_surface()<class_MeshDataTool_method_commit_to_surface>`.
 
 Below is an example of how MeshDataTool may be used.
 

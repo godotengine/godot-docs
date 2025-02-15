@@ -150,7 +150,7 @@ enum **UpdateMode**: :ref:`🔗<enum_GPUParticlesCollisionHeightField3D_UpdateMo
 
 :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **UPDATE_MODE_WHEN_MOVED** = ``0``
 
-Only update the heightmap when the **GPUParticlesCollisionHeightField3D** node is moved, or when the camera moves if :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` is ``true``. An update can be forced by slightly moving the **GPUParticlesCollisionHeightField3D** in any direction, or by calling :ref:`RenderingServer.particles_collision_height_field_update<class_RenderingServer_method_particles_collision_height_field_update>`.
+Only update the heightmap when the **GPUParticlesCollisionHeightField3D** node is moved, or when the camera moves if :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` is ``true``. An update can be forced by slightly moving the **GPUParticlesCollisionHeightField3D** in any direction, or by calling :ref:`RenderingServer.particles_collision_height_field_update()<class_RenderingServer_method_particles_collision_height_field_update>`.
 
 .. _class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_ALWAYS:
 
@@ -203,7 +203,7 @@ The visual layers to account for when updating the heightmap. Only :ref:`MeshIns
 
 \ **Note:** Since the :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` allows for 32 layers to be stored in total, there are an additional 12 layers that are only used internally by the engine and aren't exposed in the editor. Setting :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` using a script allows you to toggle those reserved layers, which can be useful for editor plugins.
 
-To adjust :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` more easily using a script, use :ref:`get_heightfield_mask_value<class_GPUParticlesCollisionHeightField3D_method_get_heightfield_mask_value>` and :ref:`set_heightfield_mask_value<class_GPUParticlesCollisionHeightField3D_method_set_heightfield_mask_value>`.
+To adjust :ref:`heightfield_mask<class_GPUParticlesCollisionHeightField3D_property_heightfield_mask>` more easily using a script, use :ref:`get_heightfield_mask_value()<class_GPUParticlesCollisionHeightField3D_method_get_heightfield_mask_value>` and :ref:`set_heightfield_mask_value()<class_GPUParticlesCollisionHeightField3D_method_set_heightfield_mask_value>`.
 
 .. rst-class:: classref-item-separator
 

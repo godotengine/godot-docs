@@ -164,7 +164,7 @@ Property Descriptions
 
 Gradient's colors as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
-\ **Note:** Setting this property updates all colors at once. To update any color individually use :ref:`set_color<class_Gradient_method_set_color>`.
+\ **Note:** Setting this property updates all colors at once. To update any color individually use :ref:`set_color()<class_Gradient_method_set_color>`.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
@@ -221,7 +221,7 @@ The algorithm used to interpolate between points of the gradient. See :ref:`Inte
 
 Gradient's offsets as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
 
-\ **Note:** Setting this property updates all offsets at once. To update any offset individually use :ref:`set_offset<class_Gradient_method_set_offset>`.
+\ **Note:** Setting this property updates all offsets at once. To update any offset individually use :ref:`set_offset()<class_Gradient_method_set_offset>`.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 

@@ -119,7 +119,7 @@ Whether this link can be traveled in both directions or only from :ref:`start_po
 - |void| **set_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_enabled**\ (\ )
 
-Whether this link is currently active. If ``false``, :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>` will ignore this link.
+Whether this link is currently active. If ``false``, :ref:`NavigationServer3D.map_get_path()<class_NavigationServer3D_method_map_get_path>` will ignore this link.
 
 .. rst-class:: classref-item-separator
 
@@ -140,7 +140,7 @@ Ending position of the link.
 
 This position will search out the nearest polygon in the navigation mesh to attach to.
 
-The distance the link will search is controlled by :ref:`NavigationServer3D.map_set_link_connection_radius<class_NavigationServer3D_method_map_set_link_connection_radius>`.
+The distance the link will search is controlled by :ref:`NavigationServer3D.map_set_link_connection_radius()<class_NavigationServer3D_method_map_set_link_connection_radius>`.
 
 .. rst-class:: classref-item-separator
 
@@ -174,7 +174,7 @@ When pathfinding enters this link from another regions navigation mesh the :ref:
 - |void| **set_navigation_layers**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_navigation_layers**\ (\ )
 
-A bitfield determining all navigation layers the link belongs to. These navigation layers will be checked when requesting a path with :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
+A bitfield determining all navigation layers the link belongs to. These navigation layers will be checked when requesting a path with :ref:`NavigationServer3D.map_get_path()<class_NavigationServer3D_method_map_get_path>`.
 
 .. rst-class:: classref-item-separator
 
@@ -195,7 +195,7 @@ Starting position of the link.
 
 This position will search out the nearest polygon in the navigation mesh to attach to.
 
-The distance the link will search is controlled by :ref:`NavigationServer3D.map_set_link_connection_radius<class_NavigationServer3D_method_map_set_link_connection_radius>`.
+The distance the link will search is controlled by :ref:`NavigationServer3D.map_set_link_connection_radius()<class_NavigationServer3D_method_map_set_link_connection_radius>`.
 
 .. rst-class:: classref-item-separator
 

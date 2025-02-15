@@ -19,7 +19,7 @@ A visual shader node for remap function.
 Description
 -----------
 
-Remap will transform the input range into output range, e.g. you can change a ``0..1`` value to ``-2..2`` etc. See :ref:`@GlobalScope.remap<class_@GlobalScope_method_remap>` for more details.
+Remap will transform the input range into output range, e.g. you can change a ``0..1`` value to ``-2..2`` etc. See :ref:`@GlobalScope.remap()<class_@GlobalScope_method_remap>` for more details.
 
 .. rst-class:: classref-reftable-group
 

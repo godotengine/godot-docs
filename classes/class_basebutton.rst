@@ -288,7 +288,7 @@ To allow both left-click and right-click, use ``MOUSE_BUTTON_MASK_LEFT | MOUSE_B
 
 If ``true``, the button's state is pressed. Means the button is pressed down or toggled (if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active). Only works if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is ``true``.
 
-\ **Note:** Changing the value of :ref:`button_pressed<class_BaseButton_property_button_pressed>` will result in :ref:`toggled<class_BaseButton_signal_toggled>` to be emitted. If you want to change the pressed state without emitting that signal, use :ref:`set_pressed_no_signal<class_BaseButton_method_set_pressed_no_signal>`.
+\ **Note:** Changing the value of :ref:`button_pressed<class_BaseButton_property_button_pressed>` will result in :ref:`toggled<class_BaseButton_signal_toggled>` to be emitted. If you want to change the pressed state without emitting that signal, use :ref:`set_pressed_no_signal()<class_BaseButton_method_set_pressed_no_signal>`.
 
 .. rst-class:: classref-item-separator
 
@@ -377,7 +377,7 @@ If ``true``, the button will highlight for a short amount of time when its short
 
 If ``true``, the button will add information about its shortcut in the tooltip.
 
-\ **Note:** This property does nothing when the tooltip control is customized using :ref:`Control._make_custom_tooltip<class_Control_private_method__make_custom_tooltip>`.
+\ **Note:** This property does nothing when the tooltip control is customized using :ref:`Control._make_custom_tooltip()<class_Control_private_method__make_custom_tooltip>`.
 
 .. rst-class:: classref-item-separator
 
@@ -411,7 +411,7 @@ Method Descriptions
 
 |void| **_pressed**\ (\ ) |virtual| :ref:`🔗<class_BaseButton_private_method__pressed>`
 
-Called when the button is pressed. If you need to know the button's pressed state (and :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active), use :ref:`_toggled<class_BaseButton_private_method__toggled>` instead.
+Called when the button is pressed. If you need to know the button's pressed state (and :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active), use :ref:`_toggled()<class_BaseButton_private_method__toggled>` instead.
 
 .. rst-class:: classref-item-separator
 

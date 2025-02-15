@@ -120,7 +120,7 @@ Compress the resource on save using :ref:`FileAccess.COMPRESSION_ZSTD<class_File
 
 :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_REPLACE_SUBRESOURCE_PATHS** = ``64``
 
-Take over the paths of the saved subresources (see :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`).
+Take over the paths of the saved subresources (see :ref:`Resource.take_over_path()<class_Resource_method_take_over_path>`).
 
 .. rst-class:: classref-section-separator
 
@@ -137,7 +137,7 @@ Method Descriptions
 
 |void| **add_resource_format_saver**\ (\ format_saver\: :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`, at_front\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_ResourceSaver_method_add_resource_format_saver>`
 
-Registers a new :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`. The ResourceSaver will use the ResourceFormatSaver as described in :ref:`save<class_ResourceSaver_method_save>`.
+Registers a new :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`. The ResourceSaver will use the ResourceFormatSaver as described in :ref:`save()<class_ResourceSaver_method_save>`.
 
 This method is performed implicitly for ResourceFormatSavers written in GDScript (see :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` for more information).
 

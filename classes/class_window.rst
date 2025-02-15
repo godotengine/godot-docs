@@ -312,7 +312,7 @@ Signals
 
 **about_to_popup**\ (\ ) :ref:`🔗<class_Window_signal_about_to_popup>`
 
-Emitted right after :ref:`popup<class_Window_method_popup>` call, before the **Window** appears or does anything.
+Emitted right after :ref:`popup()<class_Window_method_popup>` call, before the **Window** appears or does anything.
 
 .. rst-class:: classref-item-separator
 
@@ -326,7 +326,7 @@ Emitted right after :ref:`popup<class_Window_method_popup>` call, before the **W
 
 Emitted when the **Window**'s close button is pressed or when :ref:`popup_window<class_Window_property_popup_window>` is enabled and user clicks outside the window.
 
-This signal can be used to handle window closing, e.g. by connecting it to :ref:`hide<class_Window_method_hide>`.
+This signal can be used to handle window closing, e.g. by connecting it to :ref:`hide()<class_Window_method_hide>`.
 
 .. rst-class:: classref-item-separator
 
@@ -663,7 +663,7 @@ Window style is overridden, forcing sharp corners.
 
 :ref:`Flags<enum_Window_Flags>` **FLAG_EXCLUDE_FROM_CAPTURE** = ``9``
 
-Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_image<class_DisplayServer_method_screen_get_image>`, :ref:`DisplayServer.screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`DisplayServer.screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
+Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_image()<class_DisplayServer_method_screen_get_image>`, :ref:`DisplayServer.screen_get_image_rect()<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`DisplayServer.screen_get_pixel()<class_DisplayServer_method_screen_get_pixel>`.
 
 \ **Note:** This flag is implemented on macOS and Windows.
 
@@ -1036,7 +1036,7 @@ Specifies how the content's aspect behaves when the **Window** is resized. The b
 - |void| **set_content_scale_factor**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_content_scale_factor**\ (\ )
 
-Specifies the base scale of **Window**'s content when its :ref:`size<class_Window_property_size>` is equal to :ref:`content_scale_size<class_Window_property_content_scale_size>`. See also :ref:`Viewport.get_stretch_transform<class_Viewport_method_get_stretch_transform>`.
+Specifies the base scale of **Window**'s content when its :ref:`size<class_Window_property_size>` is equal to :ref:`content_scale_size<class_Window_property_content_scale_size>`. See also :ref:`Viewport.get_stretch_transform()<class_Viewport_method_get_stretch_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1121,7 +1121,7 @@ The screen the window is currently on.
 - |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
 
-Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_image<class_DisplayServer_method_screen_get_image>`, :ref:`DisplayServer.screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`DisplayServer.screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
+Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_image()<class_DisplayServer_method_screen_get_image>`, :ref:`DisplayServer.screen_get_image_rect()<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`DisplayServer.screen_get_pixel()<class_DisplayServer_method_screen_get_pixel>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1250,7 +1250,7 @@ If non-zero, the **Window** can't be resized to be bigger than this size.
 
 If non-zero, the **Window** can't be resized to be smaller than this size.
 
-\ **Note:** This property will be ignored in favor of :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>` if :ref:`wrap_controls<class_Window_property_wrap_controls>` is enabled and if its size is bigger.
+\ **Note:** This property will be ignored in favor of :ref:`get_contents_minimum_size()<class_Window_method_get_contents_minimum_size>` if :ref:`wrap_controls<class_Window_property_wrap_controls>` is enabled and if its size is bigger.
 
 .. rst-class:: classref-item-separator
 
@@ -1602,7 +1602,7 @@ If ``true``, the window is visible.
 
 If ``true``, the window's size will automatically update when a child node is added or removed, ignoring :ref:`min_size<class_Window_property_min_size>` if the new size is bigger.
 
-If ``false``, you need to call :ref:`child_controls_changed<class_Window_method_child_controls_changed>` manually.
+If ``false``, you need to call :ref:`child_controls_changed()<class_Window_method_child_controls_changed>` manually.
 
 .. rst-class:: classref-section-separator
 
@@ -1619,7 +1619,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_contents_minimum_size**\ (\ ) |virtual| |const| :ref:`🔗<class_Window_private_method__get_contents_minimum_size>`
 
-Virtual method to be implemented by the user. Overrides the value returned by :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>`.
+Virtual method to be implemented by the user. Overrides the value returned by :ref:`get_contents_minimum_size()<class_Window_method_get_contents_minimum_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1631,9 +1631,9 @@ Virtual method to be implemented by the user. Overrides the value returned by :r
 
 |void| **add_theme_color_override**\ (\ name\: :ref:`StringName<class_StringName>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Window_method_add_theme_color_override>`
 
-Creates a local override for a theme :ref:`Color<class_Color>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_color_override<class_Window_method_remove_theme_color_override>`.
+Creates a local override for a theme :ref:`Color<class_Color>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_color_override()<class_Window_method_remove_theme_color_override>`.
 
-See also :ref:`get_theme_color<class_Window_method_get_theme_color>` and :ref:`Control.add_theme_color_override<class_Control_method_add_theme_color_override>` for more details.
+See also :ref:`get_theme_color()<class_Window_method_get_theme_color>` and :ref:`Control.add_theme_color_override()<class_Control_method_add_theme_color_override>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -1645,9 +1645,9 @@ See also :ref:`get_theme_color<class_Window_method_get_theme_color>` and :ref:`C
 
 |void| **add_theme_constant_override**\ (\ name\: :ref:`StringName<class_StringName>`, constant\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Window_method_add_theme_constant_override>`
 
-Creates a local override for a theme constant with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_constant_override<class_Window_method_remove_theme_constant_override>`.
+Creates a local override for a theme constant with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_constant_override()<class_Window_method_remove_theme_constant_override>`.
 
-See also :ref:`get_theme_constant<class_Window_method_get_theme_constant>`.
+See also :ref:`get_theme_constant()<class_Window_method_get_theme_constant>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1659,9 +1659,9 @@ See also :ref:`get_theme_constant<class_Window_method_get_theme_constant>`.
 
 |void| **add_theme_font_override**\ (\ name\: :ref:`StringName<class_StringName>`, font\: :ref:`Font<class_Font>`\ ) :ref:`🔗<class_Window_method_add_theme_font_override>`
 
-Creates a local override for a theme :ref:`Font<class_Font>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_font_override<class_Window_method_remove_theme_font_override>`.
+Creates a local override for a theme :ref:`Font<class_Font>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_font_override()<class_Window_method_remove_theme_font_override>`.
 
-See also :ref:`get_theme_font<class_Window_method_get_theme_font>`.
+See also :ref:`get_theme_font()<class_Window_method_get_theme_font>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1673,9 +1673,9 @@ See also :ref:`get_theme_font<class_Window_method_get_theme_font>`.
 
 |void| **add_theme_font_size_override**\ (\ name\: :ref:`StringName<class_StringName>`, font_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Window_method_add_theme_font_size_override>`
 
-Creates a local override for a theme font size with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_font_size_override<class_Window_method_remove_theme_font_size_override>`.
+Creates a local override for a theme font size with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_font_size_override()<class_Window_method_remove_theme_font_size_override>`.
 
-See also :ref:`get_theme_font_size<class_Window_method_get_theme_font_size>`.
+See also :ref:`get_theme_font_size()<class_Window_method_get_theme_font_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1687,9 +1687,9 @@ See also :ref:`get_theme_font_size<class_Window_method_get_theme_font_size>`.
 
 |void| **add_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_Window_method_add_theme_icon_override>`
 
-Creates a local override for a theme icon with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_icon_override<class_Window_method_remove_theme_icon_override>`.
+Creates a local override for a theme icon with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_icon_override()<class_Window_method_remove_theme_icon_override>`.
 
-See also :ref:`get_theme_icon<class_Window_method_get_theme_icon>`.
+See also :ref:`get_theme_icon()<class_Window_method_get_theme_icon>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1701,9 +1701,9 @@ See also :ref:`get_theme_icon<class_Window_method_get_theme_icon>`.
 
 |void| **add_theme_stylebox_override**\ (\ name\: :ref:`StringName<class_StringName>`, stylebox\: :ref:`StyleBox<class_StyleBox>`\ ) :ref:`🔗<class_Window_method_add_theme_stylebox_override>`
 
-Creates a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_stylebox_override<class_Window_method_remove_theme_stylebox_override>`.
+Creates a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_stylebox_override()<class_Window_method_remove_theme_stylebox_override>`.
 
-See also :ref:`get_theme_stylebox<class_Window_method_get_theme_stylebox>` and :ref:`Control.add_theme_stylebox_override<class_Control_method_add_theme_stylebox_override>` for more details.
+See also :ref:`get_theme_stylebox()<class_Window_method_get_theme_stylebox>` and :ref:`Control.add_theme_stylebox_override()<class_Control_method_add_theme_stylebox_override>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -1715,7 +1715,7 @@ See also :ref:`get_theme_stylebox<class_Window_method_get_theme_stylebox>` and :
 
 |void| **begin_bulk_theme_override**\ (\ ) :ref:`🔗<class_Window_method_begin_bulk_theme_override>`
 
-Prevents ``*_theme_*_override`` methods from emitting :ref:`NOTIFICATION_THEME_CHANGED<class_Window_constant_NOTIFICATION_THEME_CHANGED>` until :ref:`end_bulk_theme_override<class_Window_method_end_bulk_theme_override>` is called.
+Prevents ``*_theme_*_override`` methods from emitting :ref:`NOTIFICATION_THEME_CHANGED<class_Window_constant_NOTIFICATION_THEME_CHANGED>` until :ref:`end_bulk_theme_override()<class_Window_method_end_bulk_theme_override>` is called.
 
 .. rst-class:: classref-item-separator
 
@@ -1751,7 +1751,7 @@ Requests an update of the **Window** size to fit underlying :ref:`Control<class_
 
 |void| **end_bulk_theme_override**\ (\ ) :ref:`🔗<class_Window_method_end_bulk_theme_override>`
 
-Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Window_method_begin_bulk_theme_override>`.
+Ends a bulk theme override update. See :ref:`begin_bulk_theme_override()<class_Window_method_begin_bulk_theme_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1763,9 +1763,9 @@ Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Win
 
 :ref:`Vector2<class_Vector2>` **get_contents_minimum_size**\ (\ ) |const| :ref:`🔗<class_Window_method_get_contents_minimum_size>`
 
-Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed<class_Window_method_child_controls_changed>` to update it when child nodes have changed.
+Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed()<class_Window_method_child_controls_changed>` to update it when child nodes have changed.
 
-The value returned by this method can be overridden with :ref:`_get_contents_minimum_size<class_Window_private_method__get_contents_minimum_size>`.
+The value returned by this method can be overridden with :ref:`_get_contents_minimum_size()<class_Window_private_method__get_contents_minimum_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1831,7 +1831,7 @@ Returns the window's size including its border.
 
 Returns a :ref:`Color<class_Color>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a color item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -1845,7 +1845,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for mor
 
 Returns a constant from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a constant item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -1859,7 +1859,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for mor
 
 Returns the default base scale value from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>` value.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1873,7 +1873,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns the default font from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_font<class_Theme_property_default_font>` value.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1887,7 +1887,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns the default font size value from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_font_size<class_Theme_property_default_font_size>` value.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1901,7 +1901,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns a :ref:`Font<class_Font>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a font item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1915,7 +1915,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns a font size from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a font size item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1929,7 +1929,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns an icon from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has an icon item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1943,7 +1943,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns a :ref:`StyleBox<class_StyleBox>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a stylebox item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1993,7 +1993,7 @@ Returns ``true`` if the window is focused.
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a color item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -2007,7 +2007,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns ``true`` if there is a local override for a theme :ref:`Color<class_Color>` with the specified ``name`` in this :ref:`Control<class_Control>` node.
 
-See :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>`.
+See :ref:`add_theme_color_override()<class_Window_method_add_theme_color_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2021,7 +2021,7 @@ See :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a constant item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -2035,7 +2035,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns ``true`` if there is a local override for a theme constant with the specified ``name`` in this :ref:`Control<class_Control>` node.
 
-See :ref:`add_theme_constant_override<class_Window_method_add_theme_constant_override>`.
+See :ref:`add_theme_constant_override()<class_Window_method_add_theme_constant_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2049,7 +2049,7 @@ See :ref:`add_theme_constant_override<class_Window_method_add_theme_constant_ove
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a font item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -2063,7 +2063,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns ``true`` if there is a local override for a theme :ref:`Font<class_Font>` with the specified ``name`` in this :ref:`Control<class_Control>` node.
 
-See :ref:`add_theme_font_override<class_Window_method_add_theme_font_override>`.
+See :ref:`add_theme_font_override()<class_Window_method_add_theme_font_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2077,7 +2077,7 @@ See :ref:`add_theme_font_override<class_Window_method_add_theme_font_override>`.
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a font size item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -2091,7 +2091,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns ``true`` if there is a local override for a theme font size with the specified ``name`` in this :ref:`Control<class_Control>` node.
 
-See :ref:`add_theme_font_size_override<class_Window_method_add_theme_font_size_override>`.
+See :ref:`add_theme_font_size_override()<class_Window_method_add_theme_font_size_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2105,7 +2105,7 @@ See :ref:`add_theme_font_size_override<class_Window_method_add_theme_font_size_o
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has an icon item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -2119,7 +2119,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns ``true`` if there is a local override for a theme icon with the specified ``name`` in this :ref:`Control<class_Control>` node.
 
-See :ref:`add_theme_icon_override<class_Window_method_add_theme_icon_override>`.
+See :ref:`add_theme_icon_override()<class_Window_method_add_theme_icon_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2133,7 +2133,7 @@ See :ref:`add_theme_icon_override<class_Window_method_add_theme_icon_override>`.
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a stylebox item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+See :ref:`Control.get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -2147,7 +2147,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 
 Returns ``true`` if there is a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name`` in this :ref:`Control<class_Control>` node.
 
-See :ref:`add_theme_stylebox_override<class_Window_method_add_theme_stylebox_override>`.
+See :ref:`add_theme_stylebox_override()<class_Window_method_add_theme_stylebox_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2159,7 +2159,7 @@ See :ref:`add_theme_stylebox_override<class_Window_method_add_theme_stylebox_ove
 
 |void| **hide**\ (\ ) :ref:`🔗<class_Window_method_hide>`
 
-Hides the window. This is not the same as minimized state. Hidden window can't be interacted with and needs to be made visible with :ref:`show<class_Window_method_show>`.
+Hides the window. This is not the same as minimized state. Hidden window can't be interacted with and needs to be made visible with :ref:`show()<class_Window_method_show>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2207,7 +2207,7 @@ Returns ``true`` if the window can be maximized (the maximize button is enabled)
 
 :ref:`bool<class_bool>` **is_using_font_oversampling**\ (\ ) |const| :ref:`🔗<class_Window_method_is_using_font_oversampling>`
 
-Returns ``true`` if font oversampling is enabled. See :ref:`set_use_font_oversampling<class_Window_method_set_use_font_oversampling>`.
+Returns ``true`` if font oversampling is enabled. See :ref:`set_use_font_oversampling()<class_Window_method_set_use_font_oversampling>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2231,7 +2231,7 @@ Centers a native window on the current screen and an embedded window on its embe
 
 |void| **move_to_foreground**\ (\ ) :ref:`🔗<class_Window_method_move_to_foreground>`
 
-**Deprecated:** Use :ref:`grab_focus<class_Window_method_grab_focus>` instead.
+**Deprecated:** Use :ref:`grab_focus()<class_Window_method_grab_focus>` instead.
 
 Causes the window to grab focus, allowing it to receive user input.
 
@@ -2305,9 +2305,9 @@ If **Window** is a native window, popups the **Window** centered inside the scre
 
 |void| **popup_exclusive**\ (\ from_node\: :ref:`Node<class_Node>`, rect\: :ref:`Rect2i<class_Rect2i>` = Rect2i(0, 0, 0, 0)\ ) :ref:`🔗<class_Window_method_popup_exclusive>`
 
-Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup<class_Window_method_popup>` on it. The dialog must have no current parent, otherwise the method fails.
+Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup()<class_Window_method_popup>` on it. The dialog must have no current parent, otherwise the method fails.
 
-See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window<class_Node_method_get_last_exclusive_window>`.
+See also :ref:`set_unparent_when_invisible()<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window()<class_Node_method_get_last_exclusive_window>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2319,9 +2319,9 @@ See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when
 
 |void| **popup_exclusive_centered**\ (\ from_node\: :ref:`Node<class_Node>`, minsize\: :ref:`Vector2i<class_Vector2i>` = Vector2i(0, 0)\ ) :ref:`🔗<class_Window_method_popup_exclusive_centered>`
 
-Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup_centered<class_Window_method_popup_centered>` on it. The dialog must have no current parent, otherwise the method fails.
+Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup_centered()<class_Window_method_popup_centered>` on it. The dialog must have no current parent, otherwise the method fails.
 
-See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window<class_Node_method_get_last_exclusive_window>`.
+See also :ref:`set_unparent_when_invisible()<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window()<class_Node_method_get_last_exclusive_window>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2333,9 +2333,9 @@ See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when
 
 |void| **popup_exclusive_centered_clamped**\ (\ from_node\: :ref:`Node<class_Node>`, minsize\: :ref:`Vector2i<class_Vector2i>` = Vector2i(0, 0), fallback_ratio\: :ref:`float<class_float>` = 0.75\ ) :ref:`🔗<class_Window_method_popup_exclusive_centered_clamped>`
 
-Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup_centered_clamped<class_Window_method_popup_centered_clamped>` on it. The dialog must have no current parent, otherwise the method fails.
+Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup_centered_clamped()<class_Window_method_popup_centered_clamped>` on it. The dialog must have no current parent, otherwise the method fails.
 
-See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window<class_Node_method_get_last_exclusive_window>`.
+See also :ref:`set_unparent_when_invisible()<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window()<class_Node_method_get_last_exclusive_window>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2347,9 +2347,9 @@ See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when
 
 |void| **popup_exclusive_centered_ratio**\ (\ from_node\: :ref:`Node<class_Node>`, ratio\: :ref:`float<class_float>` = 0.8\ ) :ref:`🔗<class_Window_method_popup_exclusive_centered_ratio>`
 
-Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup_centered_ratio<class_Window_method_popup_centered_ratio>` on it. The dialog must have no current parent, otherwise the method fails.
+Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup_centered_ratio()<class_Window_method_popup_centered_ratio>` on it. The dialog must have no current parent, otherwise the method fails.
 
-See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window<class_Node_method_get_last_exclusive_window>`.
+See also :ref:`set_unparent_when_invisible()<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window()<class_Node_method_get_last_exclusive_window>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2361,9 +2361,9 @@ See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when
 
 |void| **popup_exclusive_on_parent**\ (\ from_node\: :ref:`Node<class_Node>`, parent_rect\: :ref:`Rect2i<class_Rect2i>`\ ) :ref:`🔗<class_Window_method_popup_exclusive_on_parent>`
 
-Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup_on_parent<class_Window_method_popup_on_parent>` on it. The dialog must have no current parent, otherwise the method fails.
+Attempts to parent this dialog to the last exclusive window relative to ``from_node``, and then calls :ref:`popup_on_parent()<class_Window_method_popup_on_parent>` on it. The dialog must have no current parent, otherwise the method fails.
 
-See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window<class_Node_method_get_last_exclusive_window>`.
+See also :ref:`set_unparent_when_invisible()<class_Window_method_set_unparent_when_invisible>` and :ref:`Node.get_last_exclusive_window()<class_Node_method_get_last_exclusive_window>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2375,7 +2375,7 @@ See also :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when
 
 |void| **popup_on_parent**\ (\ parent_rect\: :ref:`Rect2i<class_Rect2i>`\ ) :ref:`🔗<class_Window_method_popup_on_parent>`
 
-Popups the **Window** with a position shifted by parent **Window**'s position. If the **Window** is embedded, has the same effect as :ref:`popup<class_Window_method_popup>`.
+Popups the **Window** with a position shifted by parent **Window**'s position. If the **Window** is embedded, has the same effect as :ref:`popup()<class_Window_method_popup>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2387,7 +2387,7 @@ Popups the **Window** with a position shifted by parent **Window**'s position. I
 
 |void| **remove_theme_color_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Window_method_remove_theme_color_override>`
 
-Removes a local override for a theme :ref:`Color<class_Color>` with the specified ``name`` previously added by :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>` or via the Inspector dock.
+Removes a local override for a theme :ref:`Color<class_Color>` with the specified ``name`` previously added by :ref:`add_theme_color_override()<class_Window_method_add_theme_color_override>` or via the Inspector dock.
 
 .. rst-class:: classref-item-separator
 
@@ -2399,7 +2399,7 @@ Removes a local override for a theme :ref:`Color<class_Color>` with the specifie
 
 |void| **remove_theme_constant_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Window_method_remove_theme_constant_override>`
 
-Removes a local override for a theme constant with the specified ``name`` previously added by :ref:`add_theme_constant_override<class_Window_method_add_theme_constant_override>` or via the Inspector dock.
+Removes a local override for a theme constant with the specified ``name`` previously added by :ref:`add_theme_constant_override()<class_Window_method_add_theme_constant_override>` or via the Inspector dock.
 
 .. rst-class:: classref-item-separator
 
@@ -2411,7 +2411,7 @@ Removes a local override for a theme constant with the specified ``name`` previo
 
 |void| **remove_theme_font_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Window_method_remove_theme_font_override>`
 
-Removes a local override for a theme :ref:`Font<class_Font>` with the specified ``name`` previously added by :ref:`add_theme_font_override<class_Window_method_add_theme_font_override>` or via the Inspector dock.
+Removes a local override for a theme :ref:`Font<class_Font>` with the specified ``name`` previously added by :ref:`add_theme_font_override()<class_Window_method_add_theme_font_override>` or via the Inspector dock.
 
 .. rst-class:: classref-item-separator
 
@@ -2423,7 +2423,7 @@ Removes a local override for a theme :ref:`Font<class_Font>` with the specified 
 
 |void| **remove_theme_font_size_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Window_method_remove_theme_font_size_override>`
 
-Removes a local override for a theme font size with the specified ``name`` previously added by :ref:`add_theme_font_size_override<class_Window_method_add_theme_font_size_override>` or via the Inspector dock.
+Removes a local override for a theme font size with the specified ``name`` previously added by :ref:`add_theme_font_size_override()<class_Window_method_add_theme_font_size_override>` or via the Inspector dock.
 
 .. rst-class:: classref-item-separator
 
@@ -2435,7 +2435,7 @@ Removes a local override for a theme font size with the specified ``name`` previ
 
 |void| **remove_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Window_method_remove_theme_icon_override>`
 
-Removes a local override for a theme icon with the specified ``name`` previously added by :ref:`add_theme_icon_override<class_Window_method_add_theme_icon_override>` or via the Inspector dock.
+Removes a local override for a theme icon with the specified ``name`` previously added by :ref:`add_theme_icon_override()<class_Window_method_add_theme_icon_override>` or via the Inspector dock.
 
 .. rst-class:: classref-item-separator
 
@@ -2447,7 +2447,7 @@ Removes a local override for a theme icon with the specified ``name`` previously
 
 |void| **remove_theme_stylebox_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Window_method_remove_theme_stylebox_override>`
 
-Removes a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name`` previously added by :ref:`add_theme_stylebox_override<class_Window_method_add_theme_stylebox_override>` or via the Inspector dock.
+Removes a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name`` previously added by :ref:`add_theme_stylebox_override()<class_Window_method_add_theme_stylebox_override>` or via the Inspector dock.
 
 .. rst-class:: classref-item-separator
 
@@ -2471,7 +2471,7 @@ Tells the OS that the **Window** needs an attention. This makes the window stand
 
 |void| **reset_size**\ (\ ) :ref:`🔗<class_Window_method_reset_size>`
 
-Resets the size to the minimum size, which is the max of :ref:`min_size<class_Window_property_min_size>` and (if :ref:`wrap_controls<class_Window_property_wrap_controls>` is enabled) :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>`. This is equivalent to calling ``set_size(Vector2i())`` (or any size below the minimum).
+Resets the size to the minimum size, which is the max of :ref:`min_size<class_Window_property_min_size>` and (if :ref:`wrap_controls<class_Window_property_wrap_controls>` is enabled) :ref:`get_contents_minimum_size()<class_Window_method_get_contents_minimum_size>`. This is equivalent to calling ``set_size(Vector2i())`` (or any size below the minimum).
 
 .. rst-class:: classref-item-separator
 
@@ -2533,7 +2533,7 @@ Sets layout direction and text writing direction. Right-to-left layouts are nece
 
 If ``unparent`` is ``true``, the window is automatically unparented when going invisible.
 
-\ **Note:** Make sure to keep a reference to the node, otherwise it will be orphaned. You also need to manually call :ref:`Node.queue_free<class_Node_method_queue_free>` to free the window if it's not parented.
+\ **Note:** Make sure to keep a reference to the node, otherwise it will be orphaned. You also need to manually call :ref:`Node.queue_free()<class_Node_method_queue_free>` to free the window if it's not parented.
 
 .. rst-class:: classref-item-separator
 
@@ -2557,7 +2557,7 @@ Enables font oversampling. This makes fonts look better when they are scaled up.
 
 |void| **show**\ (\ ) :ref:`🔗<class_Window_method_show>`
 
-Makes the **Window** appear. This enables interactions with the **Window** and doesn't change any of its property other than visibility (unlike e.g. :ref:`popup<class_Window_method_popup>`).
+Makes the **Window** appear. This enables interactions with the **Window** and doesn't change any of its property other than visibility (unlike e.g. :ref:`popup()<class_Window_method_popup>`).
 
 .. rst-class:: classref-item-separator
 

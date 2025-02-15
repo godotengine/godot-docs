@@ -268,7 +268,7 @@ The channel to use to send packets. Many network APIs such as ENet and WebRTC al
 - |void| **set_transfer_mode**\ (\ value\: :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`\ )
 - :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **get_transfer_mode**\ (\ )
 
-The manner in which to send packets to the target peer. See :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`, and the :ref:`set_target_peer<class_MultiplayerPeer_method_set_target_peer>` method.
+The manner in which to send packets to the target peer. See :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`, and the :ref:`set_target_peer()<class_MultiplayerPeer_method_set_target_peer>` method.
 
 .. rst-class:: classref-section-separator
 
@@ -333,7 +333,7 @@ Returns the current state of the connection. See :ref:`ConnectionStatus<enum_Mul
 
 :ref:`int<class_int>` **get_packet_channel**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_packet_channel>`
 
-Returns the channel over which the next available packet was received. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+Returns the channel over which the next available packet was received. See :ref:`PacketPeer.get_available_packet_count()<class_PacketPeer_method_get_available_packet_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -345,7 +345,7 @@ Returns the channel over which the next available packet was received. See :ref:
 
 :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **get_packet_mode**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_packet_mode>`
 
-Returns the transfer mode the remote peer used to send the next available packet. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+Returns the transfer mode the remote peer used to send the next available packet. See :ref:`PacketPeer.get_available_packet_count()<class_PacketPeer_method_get_available_packet_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -357,7 +357,7 @@ Returns the transfer mode the remote peer used to send the next available packet
 
 :ref:`int<class_int>` **get_packet_peer**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_packet_peer>`
 
-Returns the ID of the **MultiplayerPeer** who sent the next available packet. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+Returns the ID of the **MultiplayerPeer** who sent the next available packet. See :ref:`PacketPeer.get_available_packet_count()<class_PacketPeer_method_get_available_packet_count>`.
 
 .. rst-class:: classref-item-separator
 

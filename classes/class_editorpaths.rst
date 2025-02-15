@@ -21,7 +21,7 @@ Description
 
 This editor-only singleton returns OS-specific paths to various data folders and files. It can be used in editor plugins to ensure files are saved in the correct location on each operating system.
 
-\ **Note:** This singleton is not accessible in exported projects. Attempting to access it in an exported project will result in a script error as the singleton won't be declared. To prevent script errors in exported projects, use :ref:`Engine.has_singleton<class_Engine_method_has_singleton>` to check whether the singleton is available before using it.
+\ **Note:** This singleton is not accessible in exported projects. Attempting to access it in an exported project will result in a script error as the singleton won't be declared. To prevent script errors in exported projects, use :ref:`Engine.has_singleton()<class_Engine_method_has_singleton>` to check whether the singleton is available before using it.
 
 \ **Note:** On the Linux/BSD platform, Godot complies with the `XDG Base Directory Specification <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__. You can override environment variables following the specification to change the editor and project data paths.
 
@@ -141,7 +141,7 @@ Returns the project-specific editor settings path. Projects all have a unique su
 
 :ref:`String<class_String>` **get_self_contained_file**\ (\ ) |const| :ref:`🔗<class_EditorPaths_method_get_self_contained_file>`
 
-Returns the absolute path to the self-contained file that makes the current Godot editor instance be considered as self-contained. Returns an empty string if the current Godot editor instance isn't self-contained. See also :ref:`is_self_contained<class_EditorPaths_method_is_self_contained>`.
+Returns the absolute path to the self-contained file that makes the current Godot editor instance be considered as self-contained. Returns an empty string if the current Godot editor instance isn't self-contained. See also :ref:`is_self_contained()<class_EditorPaths_method_is_self_contained>`.
 
 .. rst-class:: classref-item-separator
 
@@ -155,7 +155,7 @@ Returns the absolute path to the self-contained file that makes the current Godo
 
 Returns ``true`` if the editor is marked as self-contained, ``false`` otherwise. When self-contained mode is enabled, user configuration, data and cache files are saved in an ``editor_data/`` folder next to the editor binary. This makes portable usage easier and ensures the Godot editor minimizes file writes outside its own folder. Self-contained mode is not available for exported projects.
 
-Self-contained mode can be enabled by creating a file named ``._sc_`` or ``_sc_`` in the same folder as the editor binary or macOS .app bundle while the editor is not running. See also :ref:`get_self_contained_file<class_EditorPaths_method_get_self_contained_file>`.
+Self-contained mode can be enabled by creating a file named ``._sc_`` or ``_sc_`` in the same folder as the editor binary or macOS .app bundle while the editor is not running. See also :ref:`get_self_contained_file()<class_EditorPaths_method_get_self_contained_file>`.
 
 \ **Note:** On macOS, quarantine flag should be manually removed before using self-contained mode, see `Running on macOS <https://docs.godotengine.org/en/stable/tutorials/export/running_on_macos.html>`__.
 

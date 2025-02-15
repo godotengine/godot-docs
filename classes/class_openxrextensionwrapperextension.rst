@@ -19,7 +19,7 @@ Allows clients to implement OpenXR extensions with GDExtension.
 Description
 -----------
 
-**OpenXRExtensionWrapperExtension** allows clients to implement OpenXR extensions with GDExtension. The extension should be registered with :ref:`register_extension_wrapper<class_OpenXRExtensionWrapperExtension_method_register_extension_wrapper>`.
+**OpenXRExtensionWrapperExtension** allows clients to implement OpenXR extensions with GDExtension. The extension should be registered with :ref:`register_extension_wrapper()<class_OpenXRExtensionWrapperExtension_method_register_extension_wrapper>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -124,7 +124,7 @@ Method Descriptions
 
 Returns a pointer to an ``XrCompositionLayerBaseHeader`` struct to provide the given composition layer.
 
-This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider()<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
 
 .. rst-class:: classref-item-separator
 
@@ -136,9 +136,9 @@ This will only be called if the extension previously registered itself with :ref
 
 :ref:`int<class_int>` **_get_composition_layer_count**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_count>`
 
-Returns the number of composition layers this extension wrapper provides via :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`.
+Returns the number of composition layers this extension wrapper provides via :ref:`_get_composition_layer()<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`.
 
-This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider()<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
 
 .. rst-class:: classref-item-separator
 
@@ -150,9 +150,9 @@ This will only be called if the extension previously registered itself with :ref
 
 :ref:`int<class_int>` **_get_composition_layer_order**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_order>`
 
-Returns an integer that will be used to sort the given composition layer provided via :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`. Lower numbers will move the layer to the front of the list, and higher numbers to the end. The default projection layer has an order of ``0``, so layers provided by this method should probably be above or below (but not exactly) ``0``.
+Returns an integer that will be used to sort the given composition layer provided via :ref:`_get_composition_layer()<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`. Lower numbers will move the layer to the front of the list, and higher numbers to the end. The default projection layer has an order of ``0``, so layers provided by this method should probably be above or below (but not exactly) ``0``.
 
-This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider()<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
 
 .. rst-class:: classref-item-separator
 
@@ -192,7 +192,7 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` of positional tracke
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_viewport_composition_layer_extension_properties**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`
 
-Gets an array of :ref:`Dictionary<class_Dictionary>`\ s that represent properties, just like :ref:`Object._get_property_list<class_Object_private_method__get_property_list>`, that will be added to :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` nodes.
+Gets an array of :ref:`Dictionary<class_Dictionary>`\ s that represent properties, just like :ref:`Object._get_property_list()<class_Object_private_method__get_property_list>`, that will be added to :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -204,7 +204,7 @@ Gets an array of :ref:`Dictionary<class_Dictionary>`\ s that represent propertie
 
 :ref:`Dictionary<class_Dictionary>` **_get_viewport_composition_layer_extension_property_defaults**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_property_defaults>`
 
-Gets a :ref:`Dictionary<class_Dictionary>` containing the default values for the properties returned by :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
+Gets a :ref:`Dictionary<class_Dictionary>` containing the default values for the properties returned by :ref:`_get_viewport_composition_layer_extension_properties()<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
 
 .. rst-class:: classref-item-separator
 
@@ -476,7 +476,7 @@ Called when a composition layer created via :ref:`OpenXRCompositionLayer<class_O
 
 Adds additional data structures to Android surface swapchains created by :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>`.
 
-\ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
+\ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties()<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
 
 .. rst-class:: classref-item-separator
 
@@ -562,7 +562,7 @@ Adds additional data structures when querying OpenXR system abilities.
 
 Adds additional data structures to composition layers created by :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>`.
 
-\ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
+\ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties()<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
 
 \ ``layer`` is a pointer to an ``XrCompositionLayerBaseHeader`` struct.
 

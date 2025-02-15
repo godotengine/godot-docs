@@ -58,7 +58,7 @@ Method Descriptions
 
 :ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const| :ref:`🔗<class_ResourceFormatSaver_private_method__get_recognized_extensions>`
 
-Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`_recognize<class_ResourceFormatSaver_private_method__recognize>`).
+Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`_recognize()<class_ResourceFormatSaver_private_method__recognize>`).
 
 .. rst-class:: classref-item-separator
 
@@ -84,7 +84,7 @@ Returns whether the given resource object can be saved by this saver.
 
 Returns ``true`` if this saver handles a given save path and ``false`` otherwise.
 
-If this method is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions<class_ResourceFormatSaver_private_method__get_recognized_extensions>`.
+If this method is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions()<class_ResourceFormatSaver_private_method__get_recognized_extensions>`.
 
 .. rst-class:: classref-item-separator
 

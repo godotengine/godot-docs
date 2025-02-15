@@ -23,7 +23,7 @@ When placed on a :ref:`TileMap<class_TileMap>`, tiles from **TileSetScenesCollec
 
 Scenes are instantiated as children of the :ref:`TileMap<class_TileMap>` when it enters the tree. If you add/remove a scene tile in the :ref:`TileMap<class_TileMap>` that is already inside the tree, the :ref:`TileMap<class_TileMap>` will automatically instantiate/free the scene accordingly.
 
-\ **Note:** Scene tiles all occupy one tile slot and instead use alternate tile ID to identify scene index. :ref:`TileSetSource.get_tiles_count<class_TileSetSource_method_get_tiles_count>` will always return ``1``. Use :ref:`get_scene_tiles_count<class_TileSetScenesCollectionSource_method_get_scene_tiles_count>` to get a number of scenes in a **TileSetScenesCollectionSource**.
+\ **Note:** Scene tiles all occupy one tile slot and instead use alternate tile ID to identify scene index. :ref:`TileSetSource.get_tiles_count()<class_TileSetSource_method_get_tiles_count>` will always return ``1``. Use :ref:`get_scene_tiles_count()<class_TileSetScenesCollectionSource_method_get_scene_tiles_count>` to get a number of scenes in a **TileSetScenesCollectionSource**.
 
 Use this code if you want to find the scene path at a given tile in :ref:`TileMapLayer<class_TileMapLayer>`:
 
@@ -117,7 +117,7 @@ Returns a newly generated unique ID.
 
 :ref:`int<class_int>` **get_next_scene_tile_id**\ (\ ) |const| :ref:`🔗<class_TileSetScenesCollectionSource_method_get_next_scene_tile_id>`
 
-Returns the scene ID a following call to :ref:`create_scene_tile<class_TileSetScenesCollectionSource_method_create_scene_tile>` would return.
+Returns the scene ID a following call to :ref:`create_scene_tile()<class_TileSetScenesCollectionSource_method_create_scene_tile>` would return.
 
 .. rst-class:: classref-item-separator
 

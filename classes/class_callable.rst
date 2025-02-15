@@ -17,7 +17,7 @@ A built-in type representing a method or a standalone function.
 Description
 -----------
 
-**Callable** is a built-in :ref:`Variant<class_Variant>` type that represents a function. It can either be a method within an :ref:`Object<class_Object>` instance, or a custom callable used for different purposes (see :ref:`is_custom<class_Callable_method_is_custom>`). Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to other functions. It is most commonly used for signal callbacks.
+**Callable** is a built-in :ref:`Variant<class_Variant>` type that represents a function. It can either be a method within an :ref:`Object<class_Object>` instance, or a custom callable used for different purposes (see :ref:`is_custom()<class_Callable_method_is_custom>`). Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to other functions. It is most commonly used for signal callbacks.
 
 
 .. tabs::
@@ -52,7 +52,7 @@ Description
 
 
 
-In GDScript, it's possible to create lambda functions within a method. Lambda functions are custom callables that are not associated with an :ref:`Object<class_Object>` instance. Optionally, lambda functions can also be named. The name will be displayed in the debugger, or when calling :ref:`get_method<class_Callable_method_get_method>`.
+In GDScript, it's possible to create lambda functions within a method. Lambda functions are custom callables that are not associated with an :ref:`Object<class_Object>` instance. Optionally, lambda functions can also be named. The name will be displayed in the debugger, or when calling :ref:`get_method()<class_Callable_method_get_method>`.
 
 ::
 
@@ -209,7 +209,7 @@ Constructs a **Callable** as a copy of the given **Callable**.
 
 Creates a new **Callable** for the method named ``method`` in the specified ``object``.
 
-\ **Note:** For methods of built-in :ref:`Variant<class_Variant>` types, use :ref:`create<class_Callable_method_create>` instead.
+\ **Note:** For methods of built-in :ref:`Variant<class_Variant>` types, use :ref:`create()<class_Callable_method_create>` instead.
 
 .. rst-class:: classref-section-separator
 
@@ -226,7 +226,7 @@ Method Descriptions
 
 :ref:`Callable<class_Callable>` **bind**\ (\ ...\ ) |vararg| |const| :ref:`🔗<class_Callable_method_bind>`
 
-Returns a copy of this **Callable** with one or more arguments bound. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call<class_Callable_method_call>`. See also :ref:`unbind<class_Callable_method_unbind>`.
+Returns a copy of this **Callable** with one or more arguments bound. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call()<class_Callable_method_call>`. See also :ref:`unbind()<class_Callable_method_unbind>`.
 
 \ **Note:** When this method is chained with other similar methods, the order in which the argument list is modified is read from right to left.
 
@@ -240,7 +240,7 @@ Returns a copy of this **Callable** with one or more arguments bound. When calle
 
 :ref:`Callable<class_Callable>` **bindv**\ (\ arguments\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_Callable_method_bindv>`
 
-Returns a copy of this **Callable** with one or more arguments bound, reading them from an array. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call<class_Callable_method_call>`. See also :ref:`unbind<class_Callable_method_unbind>`.
+Returns a copy of this **Callable** with one or more arguments bound, reading them from an array. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call()<class_Callable_method_call>`. See also :ref:`unbind()<class_Callable_method_unbind>`.
 
 \ **Note:** When this method is chained with other similar methods, the order in which the argument list is modified is read from right to left.
 
@@ -287,7 +287,7 @@ Calls the method represented by this **Callable** in deferred mode, i.e. at the 
 
 \ **Note:** Deferred calls are processed at idle time. Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. This means you should not call a method deferred from itself (or from a method called by it), as this causes infinite recursion the same way as if you had called the method directly.
 
-See also :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
+See also :ref:`Object.call_deferred()<class_Object_method_call_deferred>`.
 
 .. rst-class:: classref-item-separator
 
@@ -299,7 +299,7 @@ See also :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
 
 :ref:`Variant<class_Variant>` **callv**\ (\ arguments\: :ref:`Array<class_Array>`\ ) |const| :ref:`🔗<class_Callable_method_callv>`
 
-Calls the method represented by this **Callable**. Unlike :ref:`call<class_Callable_method_call>`, this method expects all arguments to be contained inside the ``arguments`` :ref:`Array<class_Array>`.
+Calls the method represented by this **Callable**. Unlike :ref:`call()<class_Callable_method_call>`, this method expects all arguments to be contained inside the ``arguments`` :ref:`Array<class_Array>`.
 
 .. rst-class:: classref-item-separator
 
@@ -311,7 +311,7 @@ Calls the method represented by this **Callable**. Unlike :ref:`call<class_Calla
 
 :ref:`Callable<class_Callable>` **create**\ (\ variant\: :ref:`Variant<class_Variant>`, method\: :ref:`StringName<class_StringName>`\ ) |static| :ref:`🔗<class_Callable_method_create>`
 
-Creates a new **Callable** for the method named ``method`` in the specified ``variant``. To represent a method of a built-in :ref:`Variant<class_Variant>` type, a custom callable is used (see :ref:`is_custom<class_Callable_method_is_custom>`). If ``variant`` is :ref:`Object<class_Object>`, then a standard callable will be created instead.
+Creates a new **Callable** for the method named ``method`` in the specified ``variant``. To represent a method of a built-in :ref:`Variant<class_Variant>` type, a custom callable is used (see :ref:`is_custom()<class_Callable_method_is_custom>`). If ``variant`` is :ref:`Object<class_Object>`, then a standard callable will be created instead.
 
 \ **Note:** This method is always necessary for the :ref:`Dictionary<class_Dictionary>` type, as property syntax is used to access its entries. You may also use this method when ``variant``'s type is not known in advance (for polymorphism).
 
@@ -325,7 +325,7 @@ Creates a new **Callable** for the method named ``method`` in the specified ``va
 
 :ref:`int<class_int>` **get_argument_count**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_argument_count>`
 
-Returns the total number of arguments this **Callable** should take, including optional arguments. This means that any arguments bound with :ref:`bind<class_Callable_method_bind>` are *subtracted* from the result, and any arguments unbound with :ref:`unbind<class_Callable_method_unbind>` are *added* to the result.
+Returns the total number of arguments this **Callable** should take, including optional arguments. This means that any arguments bound with :ref:`bind()<class_Callable_method_bind>` are *subtracted* from the result, and any arguments unbound with :ref:`unbind()<class_Callable_method_unbind>` are *added* to the result.
 
 .. rst-class:: classref-item-separator
 
@@ -337,7 +337,7 @@ Returns the total number of arguments this **Callable** should take, including o
 
 :ref:`Array<class_Array>` **get_bound_arguments**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_bound_arguments>`
 
-Returns the array of arguments bound via successive :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>` calls. These arguments will be added *after* the arguments passed to the call, from which :ref:`get_unbound_arguments_count<class_Callable_method_get_unbound_arguments_count>` arguments on the right have been previously excluded.
+Returns the array of arguments bound via successive :ref:`bind()<class_Callable_method_bind>` or :ref:`unbind()<class_Callable_method_unbind>` calls. These arguments will be added *after* the arguments passed to the call, from which :ref:`get_unbound_arguments_count()<class_Callable_method_get_unbound_arguments_count>` arguments on the right have been previously excluded.
 
 ::
 
@@ -357,9 +357,9 @@ Returns the array of arguments bound via successive :ref:`bind<class_Callable_me
 
 :ref:`int<class_int>` **get_bound_arguments_count**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_bound_arguments_count>`
 
-Returns the total amount of arguments bound via successive :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>` calls. This is the same as the size of the array returned by :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>`. See :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>` for details.
+Returns the total amount of arguments bound via successive :ref:`bind()<class_Callable_method_bind>` or :ref:`unbind()<class_Callable_method_unbind>` calls. This is the same as the size of the array returned by :ref:`get_bound_arguments()<class_Callable_method_get_bound_arguments>`. See :ref:`get_bound_arguments()<class_Callable_method_get_bound_arguments>` for details.
 
-\ **Note:** The :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` and :ref:`get_unbound_arguments_count<class_Callable_method_get_unbound_arguments_count>` methods can both return positive values.
+\ **Note:** The :ref:`get_bound_arguments_count()<class_Callable_method_get_bound_arguments_count>` and :ref:`get_unbound_arguments_count()<class_Callable_method_get_unbound_arguments_count>` methods can both return positive values.
 
 .. rst-class:: classref-item-separator
 
@@ -395,7 +395,7 @@ Returns the object on which this **Callable** is called.
 
 :ref:`int<class_int>` **get_object_id**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_object_id>`
 
-Returns the ID of this **Callable**'s object (see :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`).
+Returns the ID of this **Callable**'s object (see :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`).
 
 .. rst-class:: classref-item-separator
 
@@ -407,9 +407,9 @@ Returns the ID of this **Callable**'s object (see :ref:`Object.get_instance_id<c
 
 :ref:`int<class_int>` **get_unbound_arguments_count**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_unbound_arguments_count>`
 
-Returns the total amount of arguments unbound via successive :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>` calls. See :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>` for details.
+Returns the total amount of arguments unbound via successive :ref:`bind()<class_Callable_method_bind>` or :ref:`unbind()<class_Callable_method_unbind>` calls. See :ref:`get_bound_arguments()<class_Callable_method_get_bound_arguments>` for details.
 
-\ **Note:** The :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` and :ref:`get_unbound_arguments_count<class_Callable_method_get_unbound_arguments_count>` methods can both return positive values.
+\ **Note:** The :ref:`get_bound_arguments_count()<class_Callable_method_get_bound_arguments_count>` and :ref:`get_unbound_arguments_count()<class_Callable_method_get_unbound_arguments_count>` methods can both return positive values.
 
 .. rst-class:: classref-item-separator
 
@@ -423,7 +423,7 @@ Returns the total amount of arguments unbound via successive :ref:`bind<class_Ca
 
 Returns the 32-bit hash value of this **Callable**'s object.
 
-\ **Note:** **Callable**\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the callables are equal, because different callables can have identical hash values due to hash collisions. The engine uses a 32-bit hash algorithm for :ref:`hash<class_Callable_method_hash>`.
+\ **Note:** **Callable**\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the callables are equal, because different callables can have identical hash values due to hash collisions. The engine uses a 32-bit hash algorithm for :ref:`hash()<class_Callable_method_hash>`.
 
 .. rst-class:: classref-item-separator
 
@@ -437,9 +437,9 @@ Returns the 32-bit hash value of this **Callable**'s object.
 
 Returns ``true`` if this **Callable** is a custom callable. Custom callables are used:
 
-- for binding/unbinding arguments (see :ref:`bind<class_Callable_method_bind>` and :ref:`unbind<class_Callable_method_unbind>`);
+- for binding/unbinding arguments (see :ref:`bind()<class_Callable_method_bind>` and :ref:`unbind()<class_Callable_method_unbind>`);
 
-- for representing methods of built-in :ref:`Variant<class_Variant>` types (see :ref:`create<class_Callable_method_create>`);
+- for representing methods of built-in :ref:`Variant<class_Variant>` types (see :ref:`create()<class_Callable_method_create>`);
 
 - for representing global, lambda, and RPC functions in GDScript;
 
@@ -457,7 +457,7 @@ Returns ``true`` if this **Callable** is a custom callable. Custom callables are
 
 Returns ``true`` if this **Callable** has no target to call the method on. Equivalent to ``callable == Callable()``.
 
-\ **Note:** This is *not* the same as ``not is_valid()`` and using ``not is_null()`` will *not* guarantee that this callable can be called. Use :ref:`is_valid<class_Callable_method_is_valid>` instead.
+\ **Note:** This is *not* the same as ``not is_valid()`` and using ``not is_null()`` will *not* guarantee that this callable can be called. Use :ref:`is_valid()<class_Callable_method_is_valid>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -469,7 +469,7 @@ Returns ``true`` if this **Callable** has no target to call the method on. Equiv
 
 :ref:`bool<class_bool>` **is_standard**\ (\ ) |const| :ref:`🔗<class_Callable_method_is_standard>`
 
-Returns ``true`` if this **Callable** is a standard callable. This method is the opposite of :ref:`is_custom<class_Callable_method_is_custom>`. Returns ``false`` if this callable is a lambda function.
+Returns ``true`` if this **Callable** is a standard callable. This method is the opposite of :ref:`is_custom()<class_Callable_method_is_custom>`. Returns ``false`` if this callable is a lambda function.
 
 .. rst-class:: classref-item-separator
 
@@ -493,7 +493,7 @@ Returns ``true`` if the callable's object exists and has a valid method name ass
 
 |void| **rpc**\ (\ ...\ ) |vararg| |const| :ref:`🔗<class_Callable_method_rpc>`
 
-Perform an RPC (Remote Procedure Call) on all connected peers. This is used for multiplayer and is normally not available, unless the function being called has been marked as *RPC* (using :ref:`@GDScript.@rpc<class_@GDScript_annotation_@rpc>` or :ref:`Node.rpc_config<class_Node_method_rpc_config>`). Calling this method on unsupported functions will result in an error. See :ref:`Node.rpc<class_Node_method_rpc>`.
+Perform an RPC (Remote Procedure Call) on all connected peers. This is used for multiplayer and is normally not available, unless the function being called has been marked as *RPC* (using :ref:`@GDScript.@rpc<class_@GDScript_annotation_@rpc>` or :ref:`Node.rpc_config()<class_Node_method_rpc_config>`). Calling this method on unsupported functions will result in an error. See :ref:`Node.rpc()<class_Node_method_rpc>`.
 
 .. rst-class:: classref-item-separator
 
@@ -505,7 +505,7 @@ Perform an RPC (Remote Procedure Call) on all connected peers. This is used for 
 
 |void| **rpc_id**\ (\ peer_id\: :ref:`int<class_int>`, ...\ ) |vararg| |const| :ref:`🔗<class_Callable_method_rpc_id>`
 
-Perform an RPC (Remote Procedure Call) on a specific peer ID (see multiplayer documentation for reference). This is used for multiplayer and is normally not available unless the function being called has been marked as *RPC* (using :ref:`@GDScript.@rpc<class_@GDScript_annotation_@rpc>` or :ref:`Node.rpc_config<class_Node_method_rpc_config>`). Calling this method on unsupported functions will result in an error. See :ref:`Node.rpc_id<class_Node_method_rpc_id>`.
+Perform an RPC (Remote Procedure Call) on a specific peer ID (see multiplayer documentation for reference). This is used for multiplayer and is normally not available unless the function being called has been marked as *RPC* (using :ref:`@GDScript.@rpc<class_@GDScript_annotation_@rpc>` or :ref:`Node.rpc_config()<class_Node_method_rpc_config>`). Calling this method on unsupported functions will result in an error. See :ref:`Node.rpc_id()<class_Node_method_rpc_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -517,7 +517,7 @@ Perform an RPC (Remote Procedure Call) on a specific peer ID (see multiplayer do
 
 :ref:`Callable<class_Callable>` **unbind**\ (\ argcount\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Callable_method_unbind>`
 
-Returns a copy of this **Callable** with a number of arguments unbound. In other words, when the new callable is called the last few arguments supplied by the user are ignored, according to ``argcount``. The remaining arguments are passed to the callable. This allows to use the original callable in a context that attempts to pass more arguments than this callable can handle, e.g. a signal with a fixed number of arguments. See also :ref:`bind<class_Callable_method_bind>`.
+Returns a copy of this **Callable** with a number of arguments unbound. In other words, when the new callable is called the last few arguments supplied by the user are ignored, according to ``argcount``. The remaining arguments are passed to the callable. This allows to use the original callable in a context that attempts to pass more arguments than this callable can handle, e.g. a signal with a fixed number of arguments. See also :ref:`bind()<class_Callable_method_bind>`.
 
 \ **Note:** When this method is chained with other similar methods, the order in which the argument list is modified is read from right to left.
 

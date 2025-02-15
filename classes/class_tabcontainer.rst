@@ -215,7 +215,7 @@ Emitted when the active tab is rearranged via mouse drag. See :ref:`drag_to_rear
 
 **pre_popup_pressed**\ (\ ) :ref:`🔗<class_TabContainer_signal_pre_popup_pressed>`
 
-Emitted when the **TabContainer**'s :ref:`Popup<class_Popup>` button is clicked. See :ref:`set_popup<class_TabContainer_method_set_popup>` for details.
+Emitted when the **TabContainer**'s :ref:`Popup<class_Popup>` button is clicked. See :ref:`set_popup()<class_TabContainer_method_set_popup>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -541,7 +541,7 @@ Returns the child :ref:`Control<class_Control>` node located at the active tab i
 
 :ref:`Popup<class_Popup>` **get_popup**\ (\ ) |const| :ref:`🔗<class_TabContainer_method_get_popup>`
 
-Returns the :ref:`Popup<class_Popup>` node instance if one has been set already with :ref:`set_popup<class_TabContainer_method_set_popup>`.
+Returns the :ref:`Popup<class_Popup>` node instance if one has been set already with :ref:`set_popup()<class_TabContainer_method_set_popup>`.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`Window.visible<class_Window_property_visible>` property.
 
@@ -665,7 +665,7 @@ Returns the index of the tab tied to the given ``control``. The control must be 
 
 :ref:`Variant<class_Variant>` **get_tab_metadata**\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TabContainer_method_get_tab_metadata>`
 
-Returns the metadata value set to the tab at index ``tab_idx`` using :ref:`set_tab_metadata<class_TabContainer_method_set_tab_metadata>`. If no metadata was previously set, returns ``null`` by default.
+Returns the metadata value set to the tab at index ``tab_idx`` using :ref:`set_tab_metadata()<class_TabContainer_method_set_tab_metadata>`. If no metadata was previously set, returns ``null`` by default.
 
 .. rst-class:: classref-item-separator
 
@@ -677,7 +677,7 @@ Returns the metadata value set to the tab at index ``tab_idx`` using :ref:`set_t
 
 :ref:`String<class_String>` **get_tab_title**\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TabContainer_method_get_tab_title>`
 
-Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
+Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title()<class_TabContainer_method_set_tab_title>`.
 
 .. rst-class:: classref-item-separator
 
@@ -821,7 +821,7 @@ Sets the maximum allowed width of the icon for the tab at index ``tab_idx``. Thi
 
 |void| **set_tab_metadata**\ (\ tab_idx\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_TabContainer_method_set_tab_metadata>`
 
-Sets the metadata value for the tab at index ``tab_idx``, which can be retrieved later using :ref:`get_tab_metadata<class_TabContainer_method_get_tab_metadata>`.
+Sets the metadata value for the tab at index ``tab_idx``, which can be retrieved later using :ref:`get_tab_metadata()<class_TabContainer_method_get_tab_metadata>`.
 
 .. rst-class:: classref-item-separator
 
@@ -936,7 +936,7 @@ Font color of the other, unselected tabs.
 
 :ref:`int<class_int>` **icon_max_width** = ``0`` :ref:`🔗<class_TabContainer_theme_constant_icon_max_width>`
 
-The maximum allowed width of the tab's icon. This limit is applied on top of the default size of the icon, but before the value set with :ref:`TabBar.set_tab_icon_max_width<class_TabBar_method_set_tab_icon_max_width>`. The height is adjusted according to the icon's ratio.
+The maximum allowed width of the tab's icon. This limit is applied on top of the default size of the icon, but before the value set with :ref:`TabBar.set_tab_icon_max_width()<class_TabBar_method_set_tab_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 
@@ -976,7 +976,7 @@ The size of the tab text outline.
 
 The space at the left or right edges of the tab bar, accordingly with the current :ref:`tab_alignment<class_TabContainer_property_tab_alignment>`.
 
-The margin is ignored with :ref:`TabBar.ALIGNMENT_RIGHT<class_TabBar_constant_ALIGNMENT_RIGHT>` if the tabs are clipped (see :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`) or a popup has been set (see :ref:`set_popup<class_TabContainer_method_set_popup>`). The margin is always ignored with :ref:`TabBar.ALIGNMENT_CENTER<class_TabBar_constant_ALIGNMENT_CENTER>`.
+The margin is ignored with :ref:`TabBar.ALIGNMENT_RIGHT<class_TabBar_constant_ALIGNMENT_RIGHT>` if the tabs are clipped (see :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`) or a popup has been set (see :ref:`set_popup()<class_TabContainer_method_set_popup>`). The margin is always ignored with :ref:`TabBar.ALIGNMENT_CENTER<class_TabBar_constant_ALIGNMENT_CENTER>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1072,7 +1072,7 @@ Icon for the right arrow button that appears when there are too many tabs to fit
 
 :ref:`Texture2D<class_Texture2D>` **menu** :ref:`🔗<class_TabContainer_theme_icon_menu>`
 
-The icon for the menu button (see :ref:`set_popup<class_TabContainer_method_set_popup>`).
+The icon for the menu button (see :ref:`set_popup()<class_TabContainer_method_set_popup>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1084,7 +1084,7 @@ The icon for the menu button (see :ref:`set_popup<class_TabContainer_method_set_
 
 :ref:`Texture2D<class_Texture2D>` **menu_highlight** :ref:`🔗<class_TabContainer_theme_icon_menu_highlight>`
 
-The icon for the menu button (see :ref:`set_popup<class_TabContainer_method_set_popup>`) when it's being hovered with the cursor.
+The icon for the menu button (see :ref:`set_popup()<class_TabContainer_method_set_popup>`) when it's being hovered with the cursor.
 
 .. rst-class:: classref-item-separator
 

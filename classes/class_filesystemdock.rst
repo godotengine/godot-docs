@@ -19,7 +19,7 @@ Godot editor's dock for managing files in the project.
 Description
 -----------
 
-This class is available only in :ref:`EditorPlugin<class_EditorPlugin>`\ s and can't be instantiated. You can access it using :ref:`EditorInterface.get_file_system_dock<class_EditorInterface_method_get_file_system_dock>`.
+This class is available only in :ref:`EditorPlugin<class_EditorPlugin>`\ s and can't be instantiated. You can access it using :ref:`EditorInterface.get_file_system_dock()<class_EditorInterface_method_get_file_system_dock>`.
 
 While **FileSystemDock** doesn't expose any methods for file manipulation, it can listen for various file-related signals.
 

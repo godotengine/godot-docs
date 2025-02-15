@@ -27,9 +27,9 @@ Tiles in a source are indexed with two IDs, coordinates ID (of type Vector2i) an
 
 Depending on the TileSet source type, those IDs might have restrictions on their values, this is why the base **TileSetSource** class only exposes getters for them.
 
-You can iterate over all tiles exposed by a TileSetSource by first iterating over coordinates IDs using :ref:`get_tiles_count<class_TileSetSource_method_get_tiles_count>` and :ref:`get_tile_id<class_TileSetSource_method_get_tile_id>`, then over alternative IDs using :ref:`get_alternative_tiles_count<class_TileSetSource_method_get_alternative_tiles_count>` and :ref:`get_alternative_tile_id<class_TileSetSource_method_get_alternative_tile_id>`.
+You can iterate over all tiles exposed by a TileSetSource by first iterating over coordinates IDs using :ref:`get_tiles_count()<class_TileSetSource_method_get_tiles_count>` and :ref:`get_tile_id()<class_TileSetSource_method_get_tile_id>`, then over alternative IDs using :ref:`get_alternative_tiles_count()<class_TileSetSource_method_get_alternative_tiles_count>` and :ref:`get_alternative_tile_id()<class_TileSetSource_method_get_alternative_tile_id>`.
 
-\ **Warning:** **TileSetSource** can only be added to one TileSet at the same time. Calling :ref:`TileSet.add_source<class_TileSet_method_add_source>` on a second :ref:`TileSet<class_TileSet>` will remove the source from the first one.
+\ **Warning:** **TileSetSource** can only be added to one TileSet at the same time. Calling :ref:`TileSet.add_source()<class_TileSet_method_add_source>` on a second :ref:`TileSet<class_TileSet>` will remove the source from the first one.
 
 .. rst-class:: classref-reftable-group
 

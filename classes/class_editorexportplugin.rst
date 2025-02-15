@@ -19,9 +19,9 @@ A script that is executed when exporting the project.
 Description
 -----------
 
-**EditorExportPlugin**\ s are automatically invoked whenever the user exports the project. Their most common use is to determine what files are being included in the exported project. For each plugin, :ref:`_export_begin<class_EditorExportPlugin_private_method__export_begin>` is called at the beginning of the export process and then :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>` is called for each exported file.
+**EditorExportPlugin**\ s are automatically invoked whenever the user exports the project. Their most common use is to determine what files are being included in the exported project. For each plugin, :ref:`_export_begin()<class_EditorExportPlugin_private_method__export_begin>` is called at the beginning of the export process and then :ref:`_export_file()<class_EditorExportPlugin_private_method__export_file>` is called for each exported file.
 
-To use **EditorExportPlugin**, register it using the :ref:`EditorPlugin.add_export_plugin<class_EditorPlugin_method_add_export_plugin>` method first.
+To use **EditorExportPlugin**, register it using the :ref:`EditorPlugin.add_export_plugin()<class_EditorPlugin_method_add_export_plugin>` method first.
 
 .. rst-class:: classref-introduction-group
 
@@ -133,7 +133,7 @@ Method Descriptions
 
 Return ``true`` if this plugin will customize resources based on the platform and features used.
 
-When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` will be called and must be implemented.
+When enabled, :ref:`_get_customization_configuration_hash()<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_resource()<class_EditorExportPlugin_private_method__customize_resource>` will be called and must be implemented.
 
 .. rst-class:: classref-item-separator
 
@@ -147,9 +147,9 @@ When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlug
 
 Return ``true`` if this plugin will customize scenes based on the platform and features used.
 
-When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` will be called and must be implemented.
+When enabled, :ref:`_get_customization_configuration_hash()<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_scene()<class_EditorExportPlugin_private_method__customize_scene>` will be called and must be implemented.
 
-\ **Note:** :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` will only be called for scenes that have been modified since the last export.
+\ **Note:** :ref:`_customize_scene()<class_EditorExportPlugin_private_method__customize_scene>` will only be called for scenes that have been modified since the last export.
 
 .. rst-class:: classref-item-separator
 
@@ -165,9 +165,9 @@ Customize a resource. If changes are made to it, return the same or a new resour
 
 The ``path`` argument is only used when customizing an actual file, otherwise this means that this resource is part of another one and it will be empty.
 
-Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
+Implementing this method is required if :ref:`_begin_customize_resources()<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
 
-\ **Note:** When customizing any of the following types and returning another resource, the other resource should not be skipped using :ref:`skip<class_EditorExportPlugin_method_skip>` in :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>`:
+\ **Note:** When customizing any of the following types and returning another resource, the other resource should not be skipped using :ref:`skip()<class_EditorExportPlugin_method_skip>` in :ref:`_export_file()<class_EditorExportPlugin_private_method__export_file>`:
 
 - :ref:`AtlasTexture<class_AtlasTexture>`\ 
 
@@ -193,7 +193,7 @@ Implementing this method is required if :ref:`_begin_customize_resources<class_E
 
 Customize a scene. If changes are made to it, return the same or a new scene. Otherwise, return ``null``. If a new scene is returned, it is up to you to dispose of the old one.
 
-Implementing this method is required if :ref:`_begin_customize_scenes<class_EditorExportPlugin_private_method__begin_customize_scenes>` returns ``true``.
+Implementing this method is required if :ref:`_begin_customize_scenes()<class_EditorExportPlugin_private_method__begin_customize_scenes>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -253,9 +253,9 @@ Virtual method to be overridden by the user. Called when the export is finished.
 
 |void| **_export_file**\ (\ path\: :ref:`String<class_String>`, type\: :ref:`String<class_String>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__export_file>`
 
-Virtual method to be overridden by the user. Called for each exported file before :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>`. The arguments can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`), and ``features`` is the list of features for the export.
+Virtual method to be overridden by the user. Called for each exported file before :ref:`_customize_resource()<class_EditorExportPlugin_private_method__customize_resource>` and :ref:`_customize_scene()<class_EditorExportPlugin_private_method__customize_scene>`. The arguments can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`), and ``features`` is the list of features for the export.
 
-Calling :ref:`skip<class_EditorExportPlugin_method_skip>` inside this callback will make the file not included in the export.
+Calling :ref:`skip()<class_EditorExportPlugin_method_skip>` inside this callback will make the file not included in the export.
 
 .. rst-class:: classref-item-separator
 
@@ -361,7 +361,7 @@ Virtual method to be overridden by the user. This is used at export time to upda
 
 Return a hash based on the configuration passed (for both scenes and resources). This helps keep separate caches for separate export configurations.
 
-Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
+Implementing this method is required if :ref:`_begin_customize_resources()<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -401,7 +401,7 @@ Validates ``option`` and returns the visibility for the specified ``platform``. 
 
 Check the requirements for the given ``option`` and return a non-empty warning string if they are not met.
 
-\ **Note:** Use :ref:`get_option<class_EditorExportPlugin_method_get_option>` to check the value of the export options.
+\ **Note:** Use :ref:`get_option()<class_EditorExportPlugin_method_get_option>` to check the value of the export options.
 
 .. rst-class:: classref-item-separator
 
@@ -417,7 +417,7 @@ Return a list of export options that can be configured for this export plugin.
 
 Each element in the return value is a :ref:`Dictionary<class_Dictionary>` with the following keys:
 
-- ``option``: A dictionary with the structure documented by :ref:`Object.get_property_list<class_Object_method_get_property_list>`, but all keys are optional.
+- ``option``: A dictionary with the structure documented by :ref:`Object.get_property_list()<class_Object_method_get_property_list>`, but all keys are optional.
 
 - ``default_value``: The default value for this option.
 
@@ -477,7 +477,7 @@ Implementing this method is required.
 
 :ref:`bool<class_bool>` **_should_update_export_options**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__should_update_export_options>`
 
-Return ``true``, if the result of :ref:`_get_export_options<class_EditorExportPlugin_private_method__get_export_options>` has changed and the export options of preset corresponding to ``platform`` should be updated.
+Return ``true``, if the result of :ref:`_get_export_options()<class_EditorExportPlugin_private_method__get_export_options>` has changed and the export options of preset corresponding to ``platform`` should be updated.
 
 .. rst-class:: classref-item-separator
 
@@ -503,9 +503,9 @@ Return ``true`` if the plugin supports the given ``platform``.
 
 Adds a custom file to be exported. ``path`` is the virtual path that can be used to load the file, ``file`` is the binary data of the file.
 
-When called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>` and ``remap`` is ``true``, the current file will not be exported, but instead remapped to this custom file. ``remap`` is ignored when called in other places.
+When called inside :ref:`_export_file()<class_EditorExportPlugin_private_method__export_file>` and ``remap`` is ``true``, the current file will not be exported, but instead remapped to this custom file. ``remap`` is ignored when called in other places.
 
-\ ``file`` will not be imported, so consider using :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` to remap imported resources.
+\ ``file`` will not be imported, so consider using :ref:`_customize_resource()<class_EditorExportPlugin_private_method__customize_resource>` to remap imported resources.
 
 .. rst-class:: classref-item-separator
 
@@ -543,7 +543,7 @@ Adds a C++ code to the iOS export. The final code is created from the code appen
 
 Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project and embeds it into resulting binary.
 
-\ **Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>`.
+\ **Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework()<class_EditorExportPlugin_method_add_ios_framework>`.
 
 \ **Note:** This method should not be used for System libraries as they are already present on the device.
 
@@ -659,7 +659,7 @@ Returns currently used export preset.
 
 :ref:`Variant<class_Variant>` **get_option**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_EditorExportPlugin_method_get_option>`
 
-Returns the current value of an export option supplied by :ref:`_get_export_options<class_EditorExportPlugin_private_method__get_export_options>`.
+Returns the current value of an export option supplied by :ref:`_get_export_options()<class_EditorExportPlugin_private_method__get_export_options>`.
 
 .. rst-class:: classref-item-separator
 
@@ -671,7 +671,7 @@ Returns the current value of an export option supplied by :ref:`_get_export_opti
 
 |void| **skip**\ (\ ) :ref:`🔗<class_EditorExportPlugin_method_skip>`
 
-To be called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>`. Skips the current file, so it's not included in the export.
+To be called inside :ref:`_export_file()<class_EditorExportPlugin_private_method__export_file>`. Skips the current file, so it's not included in the export.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

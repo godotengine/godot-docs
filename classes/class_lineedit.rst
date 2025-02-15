@@ -30,11 +30,11 @@ Description
 
 - To exit edit mode, press ``ui_text_submit`` or ``ui_cancel`` (by default :kbd:`Escape`) actions.
 
-- Check :ref:`edit<class_LineEdit_method_edit>`, :ref:`unedit<class_LineEdit_method_unedit>`, :ref:`is_editing<class_LineEdit_method_is_editing>`, and :ref:`editing_toggled<class_LineEdit_signal_editing_toggled>` for more information.
+- Check :ref:`edit()<class_LineEdit_method_edit>`, :ref:`unedit()<class_LineEdit_method_unedit>`, :ref:`is_editing()<class_LineEdit_method_is_editing>`, and :ref:`editing_toggled<class_LineEdit_signal_editing_toggled>` for more information.
 
 \ **Important:**\ 
 
-- Focusing the **LineEdit** with ``ui_focus_next`` (by default :kbd:`Tab`) or ``ui_focus_prev`` (by default :kbd:`Shift + Tab`) or :ref:`Control.grab_focus<class_Control_method_grab_focus>` still enters edit mode (for compatibility).
+- Focusing the **LineEdit** with ``ui_focus_next`` (by default :kbd:`Tab`) or ``ui_focus_prev`` (by default :kbd:`Shift + Tab`) or :ref:`Control.grab_focus()<class_Control_method_grab_focus>` still enters edit mode (for compatibility).
 
 \ **LineEdit** features many built-in shortcuts that are always available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
 
@@ -354,7 +354,7 @@ Copies the selected text.
 
 Pastes the clipboard text over the selected text (or at the caret's position).
 
-Non-printable escape characters are automatically stripped from the OS clipboard via :ref:`String.strip_escapes<class_String_method_strip_escapes>`.
+Non-printable escape characters are automatically stripped from the OS clipboard via :ref:`String.strip_escapes()<class_String_method_strip_escapes>`.
 
 .. _class_LineEdit_constant_MENU_CLEAR:
 

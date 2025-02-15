@@ -81,7 +81,7 @@ Lowers the **Semaphore**, allowing one thread in, or more if ``count`` is specif
 
 :ref:`bool<class_bool>` **try_wait**\ (\ ) :ref:`🔗<class_Semaphore_method_try_wait>`
 
-Like :ref:`wait<class_Semaphore_method_wait>`, but won't block, so if the value is zero, fails immediately and returns ``false``. If non-zero, it returns ``true`` to report success.
+Like :ref:`wait()<class_Semaphore_method_wait>`, but won't block, so if the value is zero, fails immediately and returns ``false``. If non-zero, it returns ``true`` to report success.
 
 .. rst-class:: classref-item-separator
 

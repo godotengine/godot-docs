@@ -105,7 +105,7 @@ If this value is negative, it is ignored and a child-specific margin is used ins
 
 It is up to the code using this style box to decide what these contents are: for example, a :ref:`Button<class_Button>` respects this content margin for the textual contents of the button.
 
-\ :ref:`get_margin<class_StyleBox_method_get_margin>` should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
+\ :ref:`get_margin()<class_StyleBox_method_get_margin>` should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
 
 .. rst-class:: classref-item-separator
 
@@ -207,7 +207,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_minimum_size**\ (\ ) |virtual| |const| :ref:`🔗<class_StyleBox_private_method__get_minimum_size>`
 
-Virtual method to be implemented by the user. Returns a custom minimum size that the stylebox must respect when drawing. By default :ref:`get_minimum_size<class_StyleBox_method_get_minimum_size>` only takes content margins into account. This method can be overridden to add another size restriction. A combination of the default behavior and the output of this method will be used, to account for both sizes.
+Virtual method to be implemented by the user. Returns a custom minimum size that the stylebox must respect when drawing. By default :ref:`get_minimum_size()<class_StyleBox_method_get_minimum_size>` only takes content margins into account. This method can be overridden to add another size restriction. A combination of the default behavior and the output of this method will be used, to account for both sizes.
 
 .. rst-class:: classref-item-separator
 
@@ -235,7 +235,7 @@ Virtual method to be implemented by the user. Returns a custom minimum size that
 
 Draws this stylebox using a canvas item identified by the given :ref:`RID<class_RID>`.
 
-The :ref:`RID<class_RID>` value can either be the result of :ref:`CanvasItem.get_canvas_item<class_CanvasItem_method_get_canvas_item>` called on an existing :ref:`CanvasItem<class_CanvasItem>`-derived node, or directly from creating a canvas item in the :ref:`RenderingServer<class_RenderingServer>` with :ref:`RenderingServer.canvas_item_create<class_RenderingServer_method_canvas_item_create>`.
+The :ref:`RID<class_RID>` value can either be the result of :ref:`CanvasItem.get_canvas_item()<class_CanvasItem_method_get_canvas_item>` called on an existing :ref:`CanvasItem<class_CanvasItem>`-derived node, or directly from creating a canvas item in the :ref:`RenderingServer<class_RenderingServer>` with :ref:`RenderingServer.canvas_item_create()<class_RenderingServer_method_canvas_item_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -259,7 +259,7 @@ Returns the default margin of the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
 :ref:`CanvasItem<class_CanvasItem>` **get_current_item_drawn**\ (\ ) |const| :ref:`🔗<class_StyleBox_method_get_current_item_drawn>`
 
-Returns the :ref:`CanvasItem<class_CanvasItem>` that handles its :ref:`CanvasItem.NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` or :ref:`CanvasItem._draw<class_CanvasItem_private_method__draw>` callback at this moment.
+Returns the :ref:`CanvasItem<class_CanvasItem>` that handles its :ref:`CanvasItem.NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` or :ref:`CanvasItem._draw()<class_CanvasItem_private_method__draw>` callback at this moment.
 
 .. rst-class:: classref-item-separator
 

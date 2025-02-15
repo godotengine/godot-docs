@@ -78,7 +78,7 @@ Virtual method which can be overridden to clear any local caches.
 
 Virtual method which can be overridden to return syntax highlighting data.
 
-See :ref:`get_line_syntax_highlighting<class_SyntaxHighlighter_method_get_line_syntax_highlighting>` for more details.
+See :ref:`get_line_syntax_highlighting()<class_SyntaxHighlighter_method_get_line_syntax_highlighting>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -104,7 +104,7 @@ Virtual method which can be overridden to update any local caches.
 
 Clears all cached syntax highlighting data.
 
-Then calls overridable method :ref:`_clear_highlighting_cache<class_SyntaxHighlighter_private_method__clear_highlighting_cache>`.
+Then calls overridable method :ref:`_clear_highlighting_cache()<class_SyntaxHighlighter_private_method__clear_highlighting_cache>`.
 
 .. rst-class:: classref-item-separator
 
@@ -116,7 +116,7 @@ Then calls overridable method :ref:`_clear_highlighting_cache<class_SyntaxHighli
 
 :ref:`Dictionary<class_Dictionary>` **get_line_syntax_highlighting**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SyntaxHighlighter_method_get_line_syntax_highlighting>`
 
-Returns the syntax highlighting data for the line at index ``line``. If the line is not cached, calls :ref:`_get_line_syntax_highlighting<class_SyntaxHighlighter_private_method__get_line_syntax_highlighting>` first to calculate the data.
+Returns the syntax highlighting data for the line at index ``line``. If the line is not cached, calls :ref:`_get_line_syntax_highlighting()<class_SyntaxHighlighter_private_method__get_line_syntax_highlighting>` first to calculate the data.
 
 Each entry is a column number containing a nested :ref:`Dictionary<class_Dictionary>`. The column number denotes the start of a region, the region will end if another region is found, or at the end of the line. The nested :ref:`Dictionary<class_Dictionary>` contains the data for that region. Currently only the key ``"color"`` is supported.
 
@@ -155,7 +155,7 @@ Returns the associated :ref:`TextEdit<class_TextEdit>` node.
 
 |void| **update_cache**\ (\ ) :ref:`🔗<class_SyntaxHighlighter_method_update_cache>`
 
-Clears then updates the **SyntaxHighlighter** caches. Override :ref:`_update_cache<class_SyntaxHighlighter_private_method__update_cache>` for a callback.
+Clears then updates the **SyntaxHighlighter** caches. Override :ref:`_update_cache()<class_SyntaxHighlighter_private_method__update_cache>` for a callback.
 
 \ **Note:** This is called automatically when the associated :ref:`TextEdit<class_TextEdit>` node, updates its own cache.
 

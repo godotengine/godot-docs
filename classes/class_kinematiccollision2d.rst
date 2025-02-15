@@ -19,7 +19,7 @@ Holds collision data from the movement of a :ref:`PhysicsBody2D<class_PhysicsBod
 Description
 -----------
 
-Holds collision data from the movement of a :ref:`PhysicsBody2D<class_PhysicsBody2D>`, usually from :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`. When a :ref:`PhysicsBody2D<class_PhysicsBody2D>` is moved, it stops if it detects a collision with another body. If a collision is detected, a **KinematicCollision2D** object is returned.
+Holds collision data from the movement of a :ref:`PhysicsBody2D<class_PhysicsBody2D>`, usually from :ref:`PhysicsBody2D.move_and_collide()<class_PhysicsBody2D_method_move_and_collide>`. When a :ref:`PhysicsBody2D<class_PhysicsBody2D>` is moved, it stops if it detects a collision with another body. If a collision is detected, a **KinematicCollision2D** object is returned.
 
 The collision data includes the colliding object, the remaining motion, and the collision position. This data can be used to determine a custom response to the collision.
 
@@ -98,7 +98,7 @@ Returns the colliding body's attached :ref:`Object<class_Object>`.
 
 :ref:`int<class_int>` **get_collider_id**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_collider_id>`
 
-Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>`. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>`. See :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 

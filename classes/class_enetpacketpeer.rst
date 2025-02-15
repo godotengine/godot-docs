@@ -21,7 +21,7 @@ Description
 
 A PacketPeer implementation representing a peer of an :ref:`ENetConnection<class_ENetConnection>`.
 
-This class cannot be instantiated directly but can be retrieved during :ref:`ENetConnection.service<class_ENetConnection_method_service>` or via :ref:`ENetConnection.get_peers<class_ENetConnection_method_get_peers>`.
+This class cannot be instantiated directly but can be retrieved during :ref:`ENetConnection.service()<class_ENetConnection_method_service>` or via :ref:`ENetConnection.get_peers()<class_ENetConnection_method_get_peers>`.
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
@@ -306,7 +306,7 @@ Constants
 
 **PACKET_LOSS_SCALE** = ``65536`` :ref:`🔗<class_ENetPacketPeer_constant_PACKET_LOSS_SCALE>`
 
-The reference scale for packet loss. See :ref:`get_statistic<class_ENetPacketPeer_method_get_statistic>` and :ref:`PEER_PACKET_LOSS<class_ENetPacketPeer_constant_PEER_PACKET_LOSS>`.
+The reference scale for packet loss. See :ref:`get_statistic()<class_ENetPacketPeer_method_get_statistic>` and :ref:`PEER_PACKET_LOSS<class_ENetPacketPeer_constant_PEER_PACKET_LOSS>`.
 
 .. _class_ENetPacketPeer_constant_PACKET_THROTTLE_SCALE:
 
@@ -314,7 +314,7 @@ The reference scale for packet loss. See :ref:`get_statistic<class_ENetPacketPee
 
 **PACKET_THROTTLE_SCALE** = ``32`` :ref:`🔗<class_ENetPacketPeer_constant_PACKET_THROTTLE_SCALE>`
 
-The reference value for throttle configuration. The default value is ``32``. See :ref:`throttle_configure<class_ENetPacketPeer_method_throttle_configure>`.
+The reference value for throttle configuration. The default value is ``32``. See :ref:`throttle_configure()<class_ENetPacketPeer_method_throttle_configure>`.
 
 .. _class_ENetPacketPeer_constant_FLAG_RELIABLE:
 
@@ -439,7 +439,7 @@ Returns ``true`` if the peer is currently active (i.e. the associated :ref:`ENet
 
 |void| **peer_disconnect**\ (\ data\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetPacketPeer_method_peer_disconnect>`
 
-Request a disconnection from a peer. An :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated during :ref:`ENetConnection.service<class_ENetConnection_method_service>` once the disconnection is complete.
+Request a disconnection from a peer. An :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated during :ref:`ENetConnection.service()<class_ENetConnection_method_service>` once the disconnection is complete.
 
 .. rst-class:: classref-item-separator
 
@@ -451,7 +451,7 @@ Request a disconnection from a peer. An :ref:`ENetConnection.EVENT_DISCONNECT<cl
 
 |void| **peer_disconnect_later**\ (\ data\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetPacketPeer_method_peer_disconnect_later>`
 
-Request a disconnection from a peer, but only after all queued outgoing packets are sent. An :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated during :ref:`ENetConnection.service<class_ENetConnection_method_service>` once the disconnection is complete.
+Request a disconnection from a peer, but only after all queued outgoing packets are sent. An :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated during :ref:`ENetConnection.service()<class_ENetConnection_method_service>` once the disconnection is complete.
 
 .. rst-class:: classref-item-separator
 

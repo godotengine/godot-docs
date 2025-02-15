@@ -21,7 +21,7 @@ Description
 
 **EditorNode3DGizmoPlugin** allows you to define a new type of Gizmo. There are two main ways to do so: extending **EditorNode3DGizmoPlugin** for the simpler gizmos, or creating a new :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` type. See the tutorial in the documentation for more info.
 
-To use **EditorNode3DGizmoPlugin**, register it using the :ref:`EditorPlugin.add_node_3d_gizmo_plugin<class_EditorPlugin_method_add_node_3d_gizmo_plugin>` method first.
+To use **EditorNode3DGizmoPlugin**, register it using the :ref:`EditorPlugin.add_node_3d_gizmo_plugin()<class_EditorPlugin_method_add_node_3d_gizmo_plugin>` method first.
 
 .. rst-class:: classref-introduction-group
 
@@ -127,11 +127,11 @@ Override this method to define whether the gizmos handled by this plugin can be 
 
 |void| **_commit_handle**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, handle_id\: :ref:`int<class_int>`, secondary\: :ref:`bool<class_bool>`, restore\: :ref:`Variant<class_Variant>`, cancel\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__commit_handle>`
 
-Override this method to commit a handle being edited (handles must have been previously added by :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>` during :ref:`_redraw<class_EditorNode3DGizmoPlugin_private_method__redraw>`). This usually means creating an :ref:`UndoRedo<class_UndoRedo>` action for the change, using the current handle value as "do" and the ``restore`` argument as "undo".
+Override this method to commit a handle being edited (handles must have been previously added by :ref:`EditorNode3DGizmo.add_handles()<class_EditorNode3DGizmo_method_add_handles>` during :ref:`_redraw()<class_EditorNode3DGizmoPlugin_private_method__redraw>`). This usually means creating an :ref:`UndoRedo<class_UndoRedo>` action for the change, using the current handle value as "do" and the ``restore`` argument as "undo".
 
 If the ``cancel`` argument is ``true``, the ``restore`` value should be directly set, without any :ref:`UndoRedo<class_UndoRedo>` action.
 
-The ``secondary`` argument is ``true`` when the committed handle is secondary (see :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>` for more information).
+The ``secondary`` argument is ``true`` when the committed handle is secondary (see :ref:`EditorNode3DGizmo.add_handles()<class_EditorNode3DGizmo_method_add_handles>` for more information).
 
 Called for this plugin's active gizmos.
 
@@ -145,7 +145,7 @@ Called for this plugin's active gizmos.
 
 |void| **_commit_subgizmos**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, ids\: :ref:`PackedInt32Array<class_PackedInt32Array>`, restores\: :ref:`Array<class_Array>`\[:ref:`Transform3D<class_Transform3D>`\], cancel\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__commit_subgizmos>`
 
-Override this method to commit a group of subgizmos being edited (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_frustum>`). This usually means creating an :ref:`UndoRedo<class_UndoRedo>` action for the change, using the current transforms as "do" and the ``restores`` transforms as "undo".
+Override this method to commit a group of subgizmos being edited (see :ref:`_subgizmos_intersect_ray()<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum()<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_frustum>`). This usually means creating an :ref:`UndoRedo<class_UndoRedo>` action for the change, using the current transforms as "do" and the ``restores`` transforms as "undo".
 
 If the ``cancel`` argument is ``true``, the ``restores`` transforms should be directly set, without any :ref:`UndoRedo<class_UndoRedo>` action. As with all subgizmo methods, transforms are given in local space respect to the gizmo's Node3D. Called for this plugin's active gizmos.
 
@@ -159,7 +159,7 @@ If the ``cancel`` argument is ``true``, the ``restores`` transforms should be di
 
 :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` **_create_gizmo**\ (\ for_node_3d\: :ref:`Node3D<class_Node3D>`\ ) |virtual| |const| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__create_gizmo>`
 
-Override this method to return a custom :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` for the 3D nodes of your choice, return ``null`` for the rest of nodes. See also :ref:`_has_gizmo<class_EditorNode3DGizmoPlugin_private_method__has_gizmo>`.
+Override this method to return a custom :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` for the 3D nodes of your choice, return ``null`` for the rest of nodes. See also :ref:`_has_gizmo()<class_EditorNode3DGizmoPlugin_private_method__has_gizmo>`.
 
 .. rst-class:: classref-item-separator
 
@@ -183,7 +183,7 @@ Override this method to provide the name that will appear in the gizmo visibilit
 
 :ref:`String<class_String>` **_get_handle_name**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, handle_id\: :ref:`int<class_int>`, secondary\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__get_handle_name>`
 
-Override this method to provide gizmo's handle names. The ``secondary`` argument is ``true`` when the requested handle is secondary (see :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>` for more information). Called for this plugin's active gizmos.
+Override this method to provide gizmo's handle names. The ``secondary`` argument is ``true`` when the requested handle is secondary (see :ref:`EditorNode3DGizmo.add_handles()<class_EditorNode3DGizmo_method_add_handles>` for more information). Called for this plugin's active gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -195,9 +195,9 @@ Override this method to provide gizmo's handle names. The ``secondary`` argument
 
 :ref:`Variant<class_Variant>` **_get_handle_value**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, handle_id\: :ref:`int<class_int>`, secondary\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__get_handle_value>`
 
-Override this method to return the current value of a handle. This value will be requested at the start of an edit and used as the ``restore`` argument in :ref:`_commit_handle<class_EditorNode3DGizmoPlugin_private_method__commit_handle>`.
+Override this method to return the current value of a handle. This value will be requested at the start of an edit and used as the ``restore`` argument in :ref:`_commit_handle()<class_EditorNode3DGizmoPlugin_private_method__commit_handle>`.
 
-The ``secondary`` argument is ``true`` when the requested handle is secondary (see :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>` for more information).
+The ``secondary`` argument is ``true`` when the requested handle is secondary (see :ref:`EditorNode3DGizmo.add_handles()<class_EditorNode3DGizmo_method_add_handles>` for more information).
 
 Called for this plugin's active gizmos.
 
@@ -225,7 +225,7 @@ All built-in editor gizmos return a priority of ``-1``. If not overridden, this 
 
 :ref:`Transform3D<class_Transform3D>` **_get_subgizmo_transform**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, subgizmo_id\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__get_subgizmo_transform>`
 
-Override this method to return the current transform of a subgizmo. As with all subgizmo methods, the transform should be in local space respect to the gizmo's Node3D. This transform will be requested at the start of an edit and used in the ``restore`` argument in :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_private_method__commit_subgizmos>`. Called for this plugin's active gizmos.
+Override this method to return the current transform of a subgizmo. As with all subgizmo methods, the transform should be in local space respect to the gizmo's Node3D. This transform will be requested at the start of an edit and used in the ``restore`` argument in :ref:`_commit_subgizmos()<class_EditorNode3DGizmoPlugin_private_method__commit_subgizmos>`. Called for this plugin's active gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -249,7 +249,7 @@ Override this method to define which Node3D nodes have a gizmo from this plugin.
 
 :ref:`bool<class_bool>` **_is_handle_highlighted**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, handle_id\: :ref:`int<class_int>`, secondary\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__is_handle_highlighted>`
 
-Override this method to return ``true`` whenever to given handle should be highlighted in the editor. The ``secondary`` argument is ``true`` when the requested handle is secondary (see :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>` for more information). Called for this plugin's active gizmos.
+Override this method to return ``true`` whenever to given handle should be highlighted in the editor. The ``secondary`` argument is ``true`` when the requested handle is secondary (see :ref:`EditorNode3DGizmo.add_handles()<class_EditorNode3DGizmo_method_add_handles>` for more information). Called for this plugin's active gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -273,7 +273,7 @@ Override this method to define whether Node3D with this gizmo should be selectab
 
 |void| **_redraw**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`\ ) |virtual| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__redraw>`
 
-Override this method to add all the gizmo elements whenever a gizmo update is requested. It's common to call :ref:`EditorNode3DGizmo.clear<class_EditorNode3DGizmo_method_clear>` at the beginning of this method and then add visual elements depending on the node's properties.
+Override this method to add all the gizmo elements whenever a gizmo update is requested. It's common to call :ref:`EditorNode3DGizmo.clear()<class_EditorNode3DGizmo_method_clear>` at the beginning of this method and then add visual elements depending on the node's properties.
 
 .. rst-class:: classref-item-separator
 
@@ -285,9 +285,9 @@ Override this method to add all the gizmo elements whenever a gizmo update is re
 
 |void| **_set_handle**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, handle_id\: :ref:`int<class_int>`, secondary\: :ref:`bool<class_bool>`, camera\: :ref:`Camera3D<class_Camera3D>`, screen_pos\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__set_handle>`
 
-Override this method to update the node's properties when the user drags a gizmo handle (previously added with :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>`). The provided ``screen_pos`` is the mouse position in screen coordinates and the ``camera`` can be used to convert it to raycasts.
+Override this method to update the node's properties when the user drags a gizmo handle (previously added with :ref:`EditorNode3DGizmo.add_handles()<class_EditorNode3DGizmo_method_add_handles>`). The provided ``screen_pos`` is the mouse position in screen coordinates and the ``camera`` can be used to convert it to raycasts.
 
-The ``secondary`` argument is ``true`` when the edited handle is secondary (see :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>` for more information).
+The ``secondary`` argument is ``true`` when the edited handle is secondary (see :ref:`EditorNode3DGizmo.add_handles()<class_EditorNode3DGizmo_method_add_handles>` for more information).
 
 Called for this plugin's active gizmos.
 
@@ -301,7 +301,7 @@ Called for this plugin's active gizmos.
 
 |void| **_set_subgizmo_transform**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, subgizmo_id\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__set_subgizmo_transform>`
 
-Override this method to update the node properties during subgizmo editing (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_frustum>`). The ``transform`` is given in the Node3D's local coordinate system. Called for this plugin's active gizmos.
+Override this method to update the node properties during subgizmo editing (see :ref:`_subgizmos_intersect_ray()<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum()<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_frustum>`). The ``transform`` is given in the Node3D's local coordinate system. Called for this plugin's active gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -313,7 +313,7 @@ Override this method to update the node properties during subgizmo editing (see 
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **_subgizmos_intersect_frustum**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, camera\: :ref:`Camera3D<class_Camera3D>`, frustum_planes\: :ref:`Array<class_Array>`\[:ref:`Plane<class_Plane>`\]\ ) |virtual| |const| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_frustum>`
 
-Override this method to allow selecting subgizmos using mouse drag box selection. Given a ``camera`` and ``frustum_planes``, this method should return which subgizmos are contained within the frustums. The ``frustum_planes`` argument consists of an array with all the :ref:`Plane<class_Plane>`\ s that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, these identifiers can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmoPlugin_private_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_private_method__commit_subgizmos>`. Called for this plugin's active gizmos.
+Override this method to allow selecting subgizmos using mouse drag box selection. Given a ``camera`` and ``frustum_planes``, this method should return which subgizmos are contained within the frustums. The ``frustum_planes`` argument consists of an array with all the :ref:`Plane<class_Plane>`\ s that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, these identifiers can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform()<class_EditorNode3DGizmoPlugin_private_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos()<class_EditorNode3DGizmoPlugin_private_method__commit_subgizmos>`. Called for this plugin's active gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -325,7 +325,7 @@ Override this method to allow selecting subgizmos using mouse drag box selection
 
 :ref:`int<class_int>` **_subgizmos_intersect_ray**\ (\ gizmo\: :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, camera\: :ref:`Camera3D<class_Camera3D>`, screen_pos\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const| :ref:`🔗<class_EditorNode3DGizmoPlugin_private_method__subgizmos_intersect_ray>`
 
-Override this method to allow selecting subgizmos using mouse clicks. Given a ``camera`` and a ``screen_pos`` in screen coordinates, this method should return which subgizmo should be selected. The returned value should be a unique subgizmo identifier, which can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmoPlugin_private_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_private_method__commit_subgizmos>`. Called for this plugin's active gizmos.
+Override this method to allow selecting subgizmos using mouse clicks. Given a ``camera`` and a ``screen_pos`` in screen coordinates, this method should return which subgizmo should be selected. The returned value should be a unique subgizmo identifier, which can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform()<class_EditorNode3DGizmoPlugin_private_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos()<class_EditorNode3DGizmoPlugin_private_method__commit_subgizmos>`. Called for this plugin's active gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -337,7 +337,7 @@ Override this method to allow selecting subgizmos using mouse clicks. Given a ``
 
 |void| **add_material**\ (\ name\: :ref:`String<class_String>`, material\: :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ ) :ref:`🔗<class_EditorNode3DGizmoPlugin_method_add_material>`
 
-Adds a new material to the internal material list for the plugin. It can then be accessed with :ref:`get_material<class_EditorNode3DGizmoPlugin_method_get_material>`. Should not be overridden.
+Adds a new material to the internal material list for the plugin. It can then be accessed with :ref:`get_material()<class_EditorNode3DGizmoPlugin_method_get_material>`. Should not be overridden.
 
 .. rst-class:: classref-item-separator
 
@@ -349,7 +349,7 @@ Adds a new material to the internal material list for the plugin. It can then be
 
 |void| **create_handle_material**\ (\ name\: :ref:`String<class_String>`, billboard\: :ref:`bool<class_bool>` = false, texture\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_EditorNode3DGizmoPlugin_method_create_handle_material>`
 
-Creates a handle material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material<class_EditorNode3DGizmoPlugin_method_get_material>` and used in :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>`. Should not be overridden.
+Creates a handle material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material()<class_EditorNode3DGizmoPlugin_method_get_material>` and used in :ref:`EditorNode3DGizmo.add_handles()<class_EditorNode3DGizmo_method_add_handles>`. Should not be overridden.
 
 You can optionally provide a texture to use instead of the default icon.
 
@@ -363,7 +363,7 @@ You can optionally provide a texture to use instead of the default icon.
 
 |void| **create_icon_material**\ (\ name\: :ref:`String<class_String>`, texture\: :ref:`Texture2D<class_Texture2D>`, on_top\: :ref:`bool<class_bool>` = false, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) :ref:`🔗<class_EditorNode3DGizmoPlugin_method_create_icon_material>`
 
-Creates an icon material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material<class_EditorNode3DGizmoPlugin_method_get_material>` and used in :ref:`EditorNode3DGizmo.add_unscaled_billboard<class_EditorNode3DGizmo_method_add_unscaled_billboard>`. Should not be overridden.
+Creates an icon material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material()<class_EditorNode3DGizmoPlugin_method_get_material>` and used in :ref:`EditorNode3DGizmo.add_unscaled_billboard()<class_EditorNode3DGizmo_method_add_unscaled_billboard>`. Should not be overridden.
 
 .. rst-class:: classref-item-separator
 
@@ -375,7 +375,7 @@ Creates an icon material with its variants (selected and/or editable) and adds t
 
 |void| **create_material**\ (\ name\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`, billboard\: :ref:`bool<class_bool>` = false, on_top\: :ref:`bool<class_bool>` = false, use_vertex_color\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_EditorNode3DGizmoPlugin_method_create_material>`
 
-Creates an unshaded material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material<class_EditorNode3DGizmoPlugin_method_get_material>` and used in :ref:`EditorNode3DGizmo.add_mesh<class_EditorNode3DGizmo_method_add_mesh>` and :ref:`EditorNode3DGizmo.add_lines<class_EditorNode3DGizmo_method_add_lines>`. Should not be overridden.
+Creates an unshaded material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material()<class_EditorNode3DGizmoPlugin_method_get_material>` and used in :ref:`EditorNode3DGizmo.add_mesh()<class_EditorNode3DGizmo_method_add_mesh>` and :ref:`EditorNode3DGizmo.add_lines()<class_EditorNode3DGizmo_method_add_lines>`. Should not be overridden.
 
 .. rst-class:: classref-item-separator
 

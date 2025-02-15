@@ -27,7 +27,7 @@ Data is set on a per-layer basis. For :ref:`Texture2DArray<class_Texture2DArray>
 
 All images need to have the same width, height and number of mipmap levels.
 
-A **TextureLayered** can be loaded with :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`.
+A **TextureLayered** can be loaded with :ref:`ResourceLoader.load()<class_ResourceLoader_method_load>`.
 
 Internally, Godot maps these files to their respective counterparts in the target rendering driver (Vulkan, OpenGL3).
 

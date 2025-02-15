@@ -23,7 +23,7 @@ Description
 
 A traversable 3D region based on a :ref:`NavigationMesh<class_NavigationMesh>` that :ref:`NavigationAgent3D<class_NavigationAgent3D>`\ s can use for pathfinding.
 
-Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer3D.map_set_edge_connection_margin<class_NavigationServer3D_method_map_set_edge_connection_margin>`.
+Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer3D.map_set_edge_connection_margin()<class_NavigationServer3D_method_map_set_edge_connection_margin>`.
 
 \ **Note:** Overlapping two regions' navigation meshes is not enough for connecting two regions. They must share a similar edge.
 
@@ -175,7 +175,7 @@ When pathfinding enters this region's navigation mesh from another regions navig
 - |void| **set_navigation_layers**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_navigation_layers**\ (\ )
 
-A bitfield determining all navigation layers the region belongs to. These navigation layers can be checked upon when requesting a path with :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
+A bitfield determining all navigation layers the region belongs to. These navigation layers can be checked upon when requesting a path with :ref:`NavigationServer3D.map_get_path()<class_NavigationServer3D_method_map_get_path>`.
 
 .. rst-class:: classref-item-separator
 
@@ -291,7 +291,7 @@ Returns the current navigation map :ref:`RID<class_RID>` used by this region.
 
 :ref:`RID<class_RID>` **get_region_rid**\ (\ ) |const| :ref:`🔗<class_NavigationRegion3D_method_get_region_rid>`
 
-**Deprecated:** Use :ref:`get_rid<class_NavigationRegion3D_method_get_rid>` instead.
+**Deprecated:** Use :ref:`get_rid()<class_NavigationRegion3D_method_get_rid>` instead.
 
 Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
@@ -305,7 +305,7 @@ Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer3D
 
 :ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_NavigationRegion3D_method_get_rid>`
 
-Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer3D<class_NavigationServer3D>`. Combined with :ref:`NavigationServer3D.map_get_closest_point_owner<class_NavigationServer3D_method_map_get_closest_point_owner>` can be used to identify the **NavigationRegion3D** closest to a point on the merged navigation map.
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer3D<class_NavigationServer3D>`. Combined with :ref:`NavigationServer3D.map_get_closest_point_owner()<class_NavigationServer3D_method_map_get_closest_point_owner>` can be used to identify the **NavigationRegion3D** closest to a point on the merged navigation map.
 
 .. rst-class:: classref-item-separator
 

@@ -17,11 +17,11 @@ A 2D axis-aligned bounding box using integer coordinates.
 Description
 -----------
 
-The **Rect2i** built-in :ref:`Variant<class_Variant>` type represents an axis-aligned rectangle in a 2D space, using integer coordinates. It is defined by its :ref:`position<class_Rect2i_property_position>` and :ref:`size<class_Rect2i_property_size>`, which are :ref:`Vector2i<class_Vector2i>`. Because it does not rotate, it is frequently used for fast overlap tests (see :ref:`intersects<class_Rect2i_method_intersects>`).
+The **Rect2i** built-in :ref:`Variant<class_Variant>` type represents an axis-aligned rectangle in a 2D space, using integer coordinates. It is defined by its :ref:`position<class_Rect2i_property_position>` and :ref:`size<class_Rect2i_property_size>`, which are :ref:`Vector2i<class_Vector2i>`. Because it does not rotate, it is frequently used for fast overlap tests (see :ref:`intersects()<class_Rect2i_method_intersects>`).
 
 For floating-point coordinates, see :ref:`Rect2<class_Rect2>`.
 
-\ **Note:** Negative values for :ref:`size<class_Rect2i_property_size>` are not supported. With negative size, most **Rect2i** methods do not work correctly. Use :ref:`abs<class_Rect2i_method_abs>` to get an equivalent **Rect2i** with a non-negative size.
+\ **Note:** Negative values for :ref:`size<class_Rect2i_property_size>` are not supported. With negative size, most **Rect2i** methods do not work correctly. Use :ref:`abs()<class_Rect2i_method_abs>` to get an equivalent **Rect2i** with a non-negative size.
 
 \ **Note:** In a boolean context, a **Rect2i** evaluates to ``false`` if both :ref:`position<class_Rect2i_property_position>` and :ref:`size<class_Rect2i_property_size>` are zero (equal to :ref:`Vector2i.ZERO<class_Vector2i_constant_ZERO>`). Otherwise, it always evaluates to ``true``.
 
@@ -165,7 +165,7 @@ The origin point. This is usually the top-left corner of the rectangle.
 
 The rectangle's width and height, starting from :ref:`position<class_Rect2i_property_position>`. Setting this value also affects the :ref:`end<class_Rect2i_property_end>` point.
 
-\ **Note:** It's recommended setting the width and height to non-negative values, as most methods in Godot assume that the :ref:`position<class_Rect2i_property_position>` is the top-left corner, and the :ref:`end<class_Rect2i_property_end>` is the bottom-right corner. To get an equivalent rectangle with non-negative size, use :ref:`abs<class_Rect2i_method_abs>`.
+\ **Note:** It's recommended setting the width and height to non-negative values, as most methods in Godot assume that the :ref:`position<class_Rect2i_property_position>` is the top-left corner, and the :ref:`end<class_Rect2i_property_end>` is the bottom-right corner. To get an equivalent rectangle with non-negative size, use :ref:`abs()<class_Rect2i_method_abs>`.
 
 .. rst-class:: classref-section-separator
 
@@ -311,7 +311,7 @@ Returns a copy of this rectangle expanded to align the edges with the given ``to
 
 :ref:`int<class_int>` **get_area**\ (\ ) |const| :ref:`🔗<class_Rect2i_method_get_area>`
 
-Returns the rectangle's area. This is equivalent to ``size.x * size.y``. See also :ref:`has_area<class_Rect2i_method_has_area>`.
+Returns the rectangle's area. This is equivalent to ``size.x * size.y``. See also :ref:`has_area()<class_Rect2i_method_has_area>`.
 
 .. rst-class:: classref-item-separator
 
@@ -337,7 +337,7 @@ Returns the center point of the rectangle. This is the same as ``position + (siz
 
 :ref:`Rect2i<class_Rect2i>` **grow**\ (\ amount\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Rect2i_method_grow>`
 
-Returns a copy of this rectangle extended on all sides by the given ``amount``. A negative ``amount`` shrinks the rectangle instead. See also :ref:`grow_individual<class_Rect2i_method_grow_individual>` and :ref:`grow_side<class_Rect2i_method_grow_side>`.
+Returns a copy of this rectangle extended on all sides by the given ``amount``. A negative ``amount`` shrinks the rectangle instead. See also :ref:`grow_individual()<class_Rect2i_method_grow_individual>` and :ref:`grow_side()<class_Rect2i_method_grow_side>`.
 
 
 .. tabs::
@@ -364,7 +364,7 @@ Returns a copy of this rectangle extended on all sides by the given ``amount``. 
 
 :ref:`Rect2i<class_Rect2i>` **grow_individual**\ (\ left\: :ref:`int<class_int>`, top\: :ref:`int<class_int>`, right\: :ref:`int<class_int>`, bottom\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Rect2i_method_grow_individual>`
 
-Returns a copy of this rectangle with its ``left``, ``top``, ``right``, and ``bottom`` sides extended by the given amounts. Negative values shrink the sides, instead. See also :ref:`grow<class_Rect2i_method_grow>` and :ref:`grow_side<class_Rect2i_method_grow_side>`.
+Returns a copy of this rectangle with its ``left``, ``top``, ``right``, and ``bottom`` sides extended by the given amounts. Negative values shrink the sides, instead. See also :ref:`grow()<class_Rect2i_method_grow>` and :ref:`grow_side()<class_Rect2i_method_grow_side>`.
 
 .. rst-class:: classref-item-separator
 
@@ -376,7 +376,7 @@ Returns a copy of this rectangle with its ``left``, ``top``, ``right``, and ``bo
 
 :ref:`Rect2i<class_Rect2i>` **grow_side**\ (\ side\: :ref:`int<class_int>`, amount\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Rect2i_method_grow_side>`
 
-Returns a copy of this rectangle with its ``side`` extended by the given ``amount`` (see :ref:`Side<enum_@GlobalScope_Side>` constants). A negative ``amount`` shrinks the rectangle, instead. See also :ref:`grow<class_Rect2i_method_grow>` and :ref:`grow_individual<class_Rect2i_method_grow_individual>`.
+Returns a copy of this rectangle with its ``side`` extended by the given ``amount`` (see :ref:`Side<enum_@GlobalScope_Side>` constants). A negative ``amount`` shrinks the rectangle, instead. See also :ref:`grow()<class_Rect2i_method_grow>` and :ref:`grow_individual()<class_Rect2i_method_grow_individual>`.
 
 .. rst-class:: classref-item-separator
 
@@ -388,7 +388,7 @@ Returns a copy of this rectangle with its ``side`` extended by the given ``amoun
 
 :ref:`bool<class_bool>` **has_area**\ (\ ) |const| :ref:`🔗<class_Rect2i_method_has_area>`
 
-Returns ``true`` if this rectangle has positive width and height. See also :ref:`get_area<class_Rect2i_method_get_area>`.
+Returns ``true`` if this rectangle has positive width and height. See also :ref:`get_area()<class_Rect2i_method_get_area>`.
 
 .. rst-class:: classref-item-separator
 
@@ -402,7 +402,7 @@ Returns ``true`` if this rectangle has positive width and height. See also :ref:
 
 Returns ``true`` if the rectangle contains the given ``point``. By convention, points on the right and bottom edges are **not** included.
 
-\ **Note:** This method is not reliable for **Rect2i** with a *negative* :ref:`size<class_Rect2i_property_size>`. Use :ref:`abs<class_Rect2i_method_abs>` first to get a valid rectangle.
+\ **Note:** This method is not reliable for **Rect2i** with a *negative* :ref:`size<class_Rect2i_property_size>`. Use :ref:`abs()<class_Rect2i_method_abs>` first to get a valid rectangle.
 
 .. rst-class:: classref-item-separator
 
@@ -435,7 +435,7 @@ Returns the intersection between this rectangle and ``b``. If the rectangles do 
 
 
 
-\ **Note:** If you only need to know whether two rectangles are overlapping, use :ref:`intersects<class_Rect2i_method_intersects>`, instead.
+\ **Note:** If you only need to know whether two rectangles are overlapping, use :ref:`intersects()<class_Rect2i_method_intersects>`, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -459,7 +459,7 @@ Returns ``true`` if this rectangle overlaps with the ``b`` rectangle. The edges 
 
 :ref:`Rect2i<class_Rect2i>` **merge**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_Rect2i_method_merge>`
 
-Returns a **Rect2i** that encloses both this rectangle and ``b`` around the edges. See also :ref:`encloses<class_Rect2i_method_encloses>`.
+Returns a **Rect2i** that encloses both this rectangle and ``b`` around the edges. See also :ref:`encloses()<class_Rect2i_method_encloses>`.
 
 .. rst-class:: classref-section-separator
 

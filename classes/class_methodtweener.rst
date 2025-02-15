@@ -19,11 +19,11 @@ Interpolates an abstract value and supplies it to a method called over time.
 Description
 -----------
 
-**MethodTweener** is similar to a combination of :ref:`CallbackTweener<class_CallbackTweener>` and :ref:`PropertyTweener<class_PropertyTweener>`. It calls a method providing an interpolated value as a parameter. See :ref:`Tween.tween_method<class_Tween_method_tween_method>` for more usage information.
+**MethodTweener** is similar to a combination of :ref:`CallbackTweener<class_CallbackTweener>` and :ref:`PropertyTweener<class_PropertyTweener>`. It calls a method providing an interpolated value as a parameter. See :ref:`Tween.tween_method()<class_Tween_method_tween_method>` for more usage information.
 
 The tweener will finish automatically if the callback's target object is freed.
 
-\ **Note:** :ref:`Tween.tween_method<class_Tween_method_tween_method>` is the only correct way to create **MethodTweener**. Any **MethodTweener** created manually will not function correctly.
+\ **Note:** :ref:`Tween.tween_method()<class_Tween_method_tween_method>` is the only correct way to create **MethodTweener**. Any **MethodTweener** created manually will not function correctly.
 
 .. rst-class:: classref-reftable-group
 

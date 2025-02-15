@@ -21,7 +21,7 @@ Description
 
 This class can be used to discover compatible :ref:`UPNPDevice<class_UPNPDevice>`\ s on the local network and execute commands on them, like managing port mappings (for port forwarding/NAT traversal) and querying the local and remote network IP address. Note that methods on this class are synchronous and block the calling thread.
 
-To forward a specific port (here ``7777``, note both :ref:`discover<class_UPNP_method_discover>` and :ref:`add_port_mapping<class_UPNP_method_add_port_mapping>` can return errors that should be checked):
+To forward a specific port (here ``7777``, note both :ref:`discover()<class_UPNP_method_discover>` and :ref:`add_port_mapping()<class_UPNP_method_add_port_mapping>` can return errors that should be checked):
 
 ::
 
@@ -362,7 +362,7 @@ Error allocating memory.
 
 :ref:`UPNPResult<enum_UPNP_UPNPResult>` **UPNP_RESULT_NO_GATEWAY** = ``26``
 
-No gateway available. You may need to call :ref:`discover<class_UPNP_method_discover>` first, or discovery didn't detect any valid IGDs (InternetGatewayDevices).
+No gateway available. You may need to call :ref:`discover()<class_UPNP_method_discover>` first, or discovery didn't detect any valid IGDs (InternetGatewayDevices).
 
 .. _class_UPNP_constant_UPNP_RESULT_NO_DEVICES:
 
@@ -370,7 +370,7 @@ No gateway available. You may need to call :ref:`discover<class_UPNP_method_disc
 
 :ref:`UPNPResult<enum_UPNP_UPNPResult>` **UPNP_RESULT_NO_DEVICES** = ``27``
 
-No devices available. You may need to call :ref:`discover<class_UPNP_method_discover>` first, or discovery didn't detect any valid :ref:`UPNPDevice<class_UPNPDevice>`\ s.
+No devices available. You may need to call :ref:`discover()<class_UPNP_method_discover>` first, or discovery didn't detect any valid :ref:`UPNPDevice<class_UPNPDevice>`\ s.
 
 .. _class_UPNP_constant_UPNP_RESULT_UNKNOWN_ERROR:
 
@@ -463,7 +463,7 @@ Adds the given :ref:`UPNPDevice<class_UPNPDevice>` to the list of discovered dev
 
 :ref:`int<class_int>` **add_port_mapping**\ (\ port\: :ref:`int<class_int>`, port_internal\: :ref:`int<class_int>` = 0, desc\: :ref:`String<class_String>` = "", proto\: :ref:`String<class_String>` = "UDP", duration\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_UPNP_method_add_port_mapping>`
 
-Adds a mapping to forward the external ``port`` (between 1 and 65535, although recommended to use port 1024 or above) on the default gateway (see :ref:`get_gateway<class_UPNP_method_get_gateway>`) to the ``port_internal`` on the local machine for the given protocol ``proto`` (either ``"TCP"`` or ``"UDP"``, with UDP being the default). If a port mapping for the given port and protocol combination already exists on that gateway device, this method tries to overwrite it. If that is not desired, you can retrieve the gateway manually with :ref:`get_gateway<class_UPNP_method_get_gateway>` and call :ref:`add_port_mapping<class_UPNP_method_add_port_mapping>` on it, if any. Note that forwarding a well-known port (below 1024) with UPnP may fail depending on the device.
+Adds a mapping to forward the external ``port`` (between 1 and 65535, although recommended to use port 1024 or above) on the default gateway (see :ref:`get_gateway()<class_UPNP_method_get_gateway>`) to the ``port_internal`` on the local machine for the given protocol ``proto`` (either ``"TCP"`` or ``"UDP"``, with UDP being the default). If a port mapping for the given port and protocol combination already exists on that gateway device, this method tries to overwrite it. If that is not desired, you can retrieve the gateway manually with :ref:`get_gateway()<class_UPNP_method_get_gateway>` and call :ref:`add_port_mapping()<class_UPNP_method_add_port_mapping>` on it, if any. Note that forwarding a well-known port (below 1024) with UPnP may fail depending on the device.
 
 Depending on the gateway device, if a mapping for that port already exists, it will either be updated or it will refuse this command due to that conflict, especially if the existing mapping for that port wasn't created via UPnP or points to a different network address (or device) than this one.
 
@@ -497,7 +497,7 @@ Clears the list of discovered devices.
 
 :ref:`int<class_int>` **delete_port_mapping**\ (\ port\: :ref:`int<class_int>`, proto\: :ref:`String<class_String>` = "UDP"\ ) |const| :ref:`🔗<class_UPNP_method_delete_port_mapping>`
 
-Deletes the port mapping for the given port and protocol combination on the default gateway (see :ref:`get_gateway<class_UPNP_method_get_gateway>`) if one exists. ``port`` must be a valid port between 1 and 65535, ``proto`` can be either ``"TCP"`` or ``"UDP"``. May be refused for mappings pointing to addresses other than this one, for well-known ports (below 1024), or for mappings not added via UPnP. See :ref:`UPNPResult<enum_UPNP_UPNPResult>` for possible return values.
+Deletes the port mapping for the given port and protocol combination on the default gateway (see :ref:`get_gateway()<class_UPNP_method_get_gateway>`) if one exists. ``port`` must be a valid port between 1 and 65535, ``proto`` can be either ``"TCP"`` or ``"UDP"``. May be refused for mappings pointing to addresses other than this one, for well-known ports (below 1024), or for mappings not added via UPnP. See :ref:`UPNPResult<enum_UPNP_UPNPResult>` for possible return values.
 
 .. rst-class:: classref-item-separator
 
@@ -561,7 +561,7 @@ Returns the default gateway. That is the first discovered :ref:`UPNPDevice<class
 
 :ref:`String<class_String>` **query_external_address**\ (\ ) |const| :ref:`🔗<class_UPNP_method_query_external_address>`
 
-Returns the external :ref:`IP<class_IP>` address of the default gateway (see :ref:`get_gateway<class_UPNP_method_get_gateway>`) as string. Returns an empty string on error.
+Returns the external :ref:`IP<class_IP>` address of the default gateway (see :ref:`get_gateway()<class_UPNP_method_get_gateway>`) as string. Returns an empty string on error.
 
 .. rst-class:: classref-item-separator
 

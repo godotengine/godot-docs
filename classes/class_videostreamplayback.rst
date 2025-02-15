@@ -134,7 +134,7 @@ Allocates a :ref:`Texture2D<class_Texture2D>` in which decoded video frames will
 
 :ref:`bool<class_bool>` **_is_paused**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__is_paused>`
 
-Returns the paused status, as set by :ref:`_set_paused<class_VideoStreamPlayback_private_method__set_paused>`.
+Returns the paused status, as set by :ref:`_set_paused()<class_VideoStreamPlayback_private_method__set_paused>`.
 
 .. rst-class:: classref-item-separator
 
@@ -146,7 +146,7 @@ Returns the paused status, as set by :ref:`_set_paused<class_VideoStreamPlayback
 
 :ref:`bool<class_bool>` **_is_playing**\ (\ ) |virtual| |const| :ref:`🔗<class_VideoStreamPlayback_private_method__is_playing>`
 
-Returns the playback state, as determined by calls to :ref:`_play<class_VideoStreamPlayback_private_method__play>` and :ref:`_stop<class_VideoStreamPlayback_private_method__stop>`.
+Returns the playback state, as determined by calls to :ref:`_play()<class_VideoStreamPlayback_private_method__play>` and :ref:`_stop()<class_VideoStreamPlayback_private_method__stop>`.
 
 .. rst-class:: classref-item-separator
 
@@ -158,7 +158,7 @@ Returns the playback state, as determined by calls to :ref:`_play<class_VideoStr
 
 |void| **_play**\ (\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__play>`
 
-Called in response to :ref:`VideoStreamPlayer.autoplay<class_VideoStreamPlayer_property_autoplay>` or :ref:`VideoStreamPlayer.play<class_VideoStreamPlayer_method_play>`. Note that manual playback may also invoke :ref:`_stop<class_VideoStreamPlayback_private_method__stop>` multiple times before this method is called. :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` should return ``true`` once playing.
+Called in response to :ref:`VideoStreamPlayer.autoplay<class_VideoStreamPlayer_property_autoplay>` or :ref:`VideoStreamPlayer.play()<class_VideoStreamPlayer_method_play>`. Note that manual playback may also invoke :ref:`_stop()<class_VideoStreamPlayback_private_method__stop>` multiple times before this method is called. :ref:`_is_playing()<class_VideoStreamPlayback_private_method__is_playing>` should return ``true`` once playing.
 
 .. rst-class:: classref-item-separator
 
@@ -194,7 +194,7 @@ Select the audio track ``idx``. Called when playback starts, and in response to 
 
 |void| **_set_paused**\ (\ paused\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__set_paused>`
 
-Set the paused status of video playback. :ref:`_is_paused<class_VideoStreamPlayback_private_method__is_paused>` must return ``paused``. Called in response to the :ref:`VideoStreamPlayer.paused<class_VideoStreamPlayer_property_paused>` setter.
+Set the paused status of video playback. :ref:`_is_paused()<class_VideoStreamPlayback_private_method__is_paused>` must return ``paused``. Called in response to the :ref:`VideoStreamPlayer.paused<class_VideoStreamPlayer_property_paused>` setter.
 
 .. rst-class:: classref-item-separator
 
@@ -206,7 +206,7 @@ Set the paused status of video playback. :ref:`_is_paused<class_VideoStreamPlayb
 
 |void| **_stop**\ (\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__stop>`
 
-Stops playback. May be called multiple times before :ref:`_play<class_VideoStreamPlayback_private_method__play>`, or in response to :ref:`VideoStreamPlayer.stop<class_VideoStreamPlayer_method_stop>`. :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` should return ``false`` once stopped.
+Stops playback. May be called multiple times before :ref:`_play()<class_VideoStreamPlayback_private_method__play>`, or in response to :ref:`VideoStreamPlayer.stop()<class_VideoStreamPlayer_method_stop>`. :ref:`_is_playing()<class_VideoStreamPlayback_private_method__is_playing>` should return ``false`` once stopped.
 
 .. rst-class:: classref-item-separator
 
@@ -218,7 +218,7 @@ Stops playback. May be called multiple times before :ref:`_play<class_VideoStrea
 
 |void| **_update**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_VideoStreamPlayback_private_method__update>`
 
-Ticks video playback for ``delta`` seconds. Called every frame as long as both :ref:`_is_paused<class_VideoStreamPlayback_private_method__is_paused>` and :ref:`_is_playing<class_VideoStreamPlayback_private_method__is_playing>` return ``true``.
+Ticks video playback for ``delta`` seconds. Called every frame as long as both :ref:`_is_paused()<class_VideoStreamPlayback_private_method__is_paused>` and :ref:`_is_playing()<class_VideoStreamPlayback_private_method__is_playing>` return ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -230,7 +230,7 @@ Ticks video playback for ``delta`` seconds. Called every frame as long as both :
 
 :ref:`int<class_int>` **mix_audio**\ (\ num_frames\: :ref:`int<class_int>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>` = PackedFloat32Array(), offset\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_VideoStreamPlayback_method_mix_audio>`
 
-Render ``num_frames`` audio frames (of :ref:`_get_channels<class_VideoStreamPlayback_private_method__get_channels>` floats each) from ``buffer``, starting from index ``offset`` in the array. Returns the number of audio frames rendered, or -1 on error.
+Render ``num_frames`` audio frames (of :ref:`_get_channels()<class_VideoStreamPlayback_private_method__get_channels>` floats each) from ``buffer``, starting from index ``offset`` in the array. Returns the number of audio frames rendered, or -1 on error.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

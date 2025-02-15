@@ -23,7 +23,9 @@ Node for 2D tile-based maps. A **TileMapLayer** uses a :ref:`TileSet<class_TileS
 
 For performance reasons, all TileMap updates are batched at the end of a frame. Notably, this means that scene tiles from a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` may be initialized after their parent. This is only queued when inside the scene tree.
 
-To force an update earlier on, call :ref:`update_internals<class_TileMapLayer_method_update_internals>`.
+To force an update earlier on, call :ref:`update_internals()<class_TileMapLayer_method_update_internals>`.
+
+\ **Note:** For performance and compatibility reasons, the coordinates serialized by **TileMapLayer** are limited to 16-bit signed integers, i.e. the range for X and Y coordinates is from ``-32768`` to ``32767``. When saving tile data, tiles outside this range are wrapped.
 
 .. rst-class:: classref-introduction-group
 
@@ -171,7 +173,7 @@ Signals
 
 Emitted when this **TileMapLayer**'s properties changes. This includes modified cells, properties, or changes made to its assigned :ref:`TileSet<class_TileSet>`.
 
-\ **Note:** This signal may be emitted very often when batch-modifying a **TileMapLayer**. Avoid executing complex processing in a connected function, and consider delaying it to the end of the frame instead (i.e. calling :ref:`Object.call_deferred<class_Object_method_call_deferred>`).
+\ **Note:** This signal may be emitted very often when batch-modifying a **TileMapLayer**. Avoid executing complex processing in a connected function, and consider delaying it to the end of the frame instead (i.e. calling :ref:`Object.call_deferred()<class_Object_method_call_deferred>`).
 
 .. rst-class:: classref-section-separator
 
@@ -444,11 +446,11 @@ Method Descriptions
 
 Called with a :ref:`TileData<class_TileData>` object about to be used internally by the **TileMapLayer**, allowing its modification at runtime.
 
-This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMapLayer_private_method__use_tile_data_runtime_update>` is implemented and returns ``true`` for the given tile ``coords``.
+This method is only called if :ref:`_use_tile_data_runtime_update()<class_TileMapLayer_private_method__use_tile_data_runtime_update>` is implemented and returns ``true`` for the given tile ``coords``.
 
 \ **Warning:** The ``tile_data`` object's sub-resources are the same as the one in the TileSet. Modifying them might impact the whole TileSet. Instead, make sure to duplicate those resources.
 
-\ **Note:** If the properties of ``tile_data`` object should change over time, use :ref:`notify_runtime_tile_data_update<class_TileMapLayer_method_notify_runtime_tile_data_update>` to notify the **TileMapLayer** it needs an update.
+\ **Note:** If the properties of ``tile_data`` object should change over time, use :ref:`notify_runtime_tile_data_update()<class_TileMapLayer_method_notify_runtime_tile_data_update>` to notify the **TileMapLayer** it needs an update.
 
 .. rst-class:: classref-item-separator
 
@@ -472,7 +474,7 @@ Called when this **TileMapLayer**'s cells need an internal update. This update m
 
 - The node is freed.
 
-Note that any internal update happening while one of these conditions is verified is considered to be a "cleanup". See also :ref:`update_internals<class_TileMapLayer_method_update_internals>`.
+Note that any internal update happening while one of these conditions is verified is considered to be a "cleanup". See also :ref:`update_internals()<class_TileMapLayer_method_update_internals>`.
 
 \ **Warning:** Implementing this method may degrade the **TileMapLayer**'s performance.
 
@@ -490,7 +492,7 @@ Should return ``true`` if the tile at coordinates ``coords`` requires a runtime 
 
 \ **Warning:** Make sure this function only returns ``true`` when needed. Any tile processed at runtime without a need for it will imply a significant performance penalty.
 
-\ **Note:** If the result of this function should change, use :ref:`notify_runtime_tile_data_update<class_TileMapLayer_method_notify_runtime_tile_data_update>` to notify the **TileMapLayer** it needs an update.
+\ **Note:** If the result of this function should change, use :ref:`notify_runtime_tile_data_update()<class_TileMapLayer_method_notify_runtime_tile_data_update>` to notify the **TileMapLayer** it needs an update.
 
 .. rst-class:: classref-item-separator
 
@@ -596,7 +598,7 @@ Returns the :ref:`TileData<class_TileData>` object associated with the given cel
 
 :ref:`Vector2i<class_Vector2i>` **get_coords_for_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TileMapLayer_method_get_coords_for_body_rid>`
 
-Returns the coordinates of the tile for given physics body :ref:`RID<class_RID>`. Such an :ref:`RID<class_RID>` can be retrieved from :ref:`KinematicCollision2D.get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
+Returns the coordinates of the tile for given physics body :ref:`RID<class_RID>`. Such an :ref:`RID<class_RID>` can be retrieved from :ref:`KinematicCollision2D.get_collider_rid()<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
 
 .. rst-class:: classref-item-separator
 
@@ -610,7 +612,7 @@ Returns the coordinates of the tile for given physics body :ref:`RID<class_RID>`
 
 Returns the :ref:`RID<class_RID>` of the :ref:`NavigationServer2D<class_NavigationServer2D>` navigation used by this **TileMapLayer**.
 
-By default this returns the default :ref:`World2D<class_World2D>` navigation map, unless a custom map was provided using :ref:`set_navigation_map<class_TileMapLayer_method_set_navigation_map>`.
+By default this returns the default :ref:`World2D<class_World2D>` navigation map, unless a custom map was provided using :ref:`set_navigation_map()<class_TileMapLayer_method_set_navigation_map>`.
 
 .. rst-class:: classref-item-separator
 
@@ -634,7 +636,7 @@ Returns the neighboring cell to the one at coordinates ``coords``, identified by
 
 :ref:`TileMapPattern<class_TileMapPattern>` **get_pattern**\ (\ coords_array\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\]\ ) :ref:`🔗<class_TileMapLayer_method_get_pattern>`
 
-Creates and returns a new :ref:`TileMapPattern<class_TileMapPattern>` from the given array of cells. See also :ref:`set_pattern<class_TileMapLayer_method_set_pattern>`.
+Creates and returns a new :ref:`TileMapPattern<class_TileMapPattern>` from the given array of cells. See also :ref:`set_pattern()<class_TileMapLayer_method_set_pattern>`.
 
 .. rst-class:: classref-item-separator
 
@@ -672,7 +674,7 @@ Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells 
 
 Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells containing a tile. Tiles may be filtered according to their source (``source_id``), their atlas coordinates (``atlas_coords``), or alternative id (``alternative_tile``).
 
-If a parameter has its value set to the default one, this parameter is not used to filter a cell. Thus, if all parameters have their respective default values, this method returns the same result as :ref:`get_used_cells<class_TileMapLayer_method_get_used_cells>`.
+If a parameter has its value set to the default one, this parameter is not used to filter a cell. Thus, if all parameters have their respective default values, this method returns the same result as :ref:`get_used_cells()<class_TileMapLayer_method_get_used_cells>`.
 
 A cell is considered empty if its source identifier equals ``-1``, its atlas coordinate identifier is ``Vector2(-1, -1)`` and its alternative identifier is ``-1``.
 
@@ -746,7 +748,7 @@ Returns ``true`` if the cell at coordinates ``coords`` is transposed. The result
 
 :ref:`Vector2i<class_Vector2i>` **local_to_map**\ (\ local_position\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_TileMapLayer_method_local_to_map>`
 
-Returns the map coordinates of the cell containing the given ``local_position``. If ``local_position`` is in global coordinates, consider using :ref:`Node2D.to_local<class_Node2D_method_to_local>` before passing it to this method. See also :ref:`map_to_local<class_TileMapLayer_method_map_to_local>`.
+Returns the map coordinates of the cell containing the given ``local_position``. If ``local_position`` is in global coordinates, consider using :ref:`Node2D.to_local()<class_Node2D_method_to_local>` before passing it to this method. See also :ref:`map_to_local()<class_TileMapLayer_method_map_to_local>`.
 
 .. rst-class:: classref-item-separator
 
@@ -758,7 +760,7 @@ Returns the map coordinates of the cell containing the given ``local_position``.
 
 :ref:`Vector2i<class_Vector2i>` **map_pattern**\ (\ position_in_tilemap\: :ref:`Vector2i<class_Vector2i>`, coords_in_pattern\: :ref:`Vector2i<class_Vector2i>`, pattern\: :ref:`TileMapPattern<class_TileMapPattern>`\ ) :ref:`🔗<class_TileMapLayer_method_map_pattern>`
 
-Returns for the given coordinates ``coords_in_pattern`` in a :ref:`TileMapPattern<class_TileMapPattern>` the corresponding cell coordinates if the pattern was pasted at the ``position_in_tilemap`` coordinates (see :ref:`set_pattern<class_TileMapLayer_method_set_pattern>`). This mapping is required as in half-offset tile shapes, the mapping might not work by calculating ``position_in_tile_map + coords_in_pattern``.
+Returns for the given coordinates ``coords_in_pattern`` in a :ref:`TileMapPattern<class_TileMapPattern>` the corresponding cell coordinates if the pattern was pasted at the ``position_in_tilemap`` coordinates (see :ref:`set_pattern()<class_TileMapLayer_method_set_pattern>`). This mapping is required as in half-offset tile shapes, the mapping might not work by calculating ``position_in_tile_map + coords_in_pattern``.
 
 .. rst-class:: classref-item-separator
 
@@ -770,7 +772,7 @@ Returns for the given coordinates ``coords_in_pattern`` in a :ref:`TileMapPatter
 
 :ref:`Vector2<class_Vector2>` **map_to_local**\ (\ map_position\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileMapLayer_method_map_to_local>`
 
-Returns the centered position of a cell in the **TileMapLayer**'s local coordinate space. To convert the returned value into global coordinates, use :ref:`Node2D.to_global<class_Node2D_method_to_global>`. See also :ref:`local_to_map<class_TileMapLayer_method_local_to_map>`.
+Returns the centered position of a cell in the **TileMapLayer**'s local coordinate space. To convert the returned value into global coordinates, use :ref:`Node2D.to_global()<class_Node2D_method_to_global>`. See also :ref:`local_to_map()<class_TileMapLayer_method_local_to_map>`.
 
 \ **Note:** This may not correspond to the visual position of the tile, i.e. it ignores the :ref:`TileData.texture_origin<class_TileData_property_texture_origin>` property of individual tiles.
 
@@ -784,11 +786,11 @@ Returns the centered position of a cell in the **TileMapLayer**'s local coordina
 
 |void| **notify_runtime_tile_data_update**\ (\ ) :ref:`🔗<class_TileMapLayer_method_notify_runtime_tile_data_update>`
 
-Notifies the **TileMapLayer** node that calls to :ref:`_use_tile_data_runtime_update<class_TileMapLayer_private_method__use_tile_data_runtime_update>` or :ref:`_tile_data_runtime_update<class_TileMapLayer_private_method__tile_data_runtime_update>` will lead to different results. This will thus trigger a **TileMapLayer** update.
+Notifies the **TileMapLayer** node that calls to :ref:`_use_tile_data_runtime_update()<class_TileMapLayer_private_method__use_tile_data_runtime_update>` or :ref:`_tile_data_runtime_update()<class_TileMapLayer_private_method__tile_data_runtime_update>` will lead to different results. This will thus trigger a **TileMapLayer** update.
 
 \ **Warning:** Updating the **TileMapLayer** is computationally expensive and may impact performance. Try to limit the number of calls to this function to avoid unnecessary update.
 
-\ **Note:** This does not trigger a direct update of the **TileMapLayer**, the update will be done at the end of the frame as usual (unless you call :ref:`update_internals<class_TileMapLayer_method_update_internals>`).
+\ **Note:** This does not trigger a direct update of the **TileMapLayer**, the update will be done at the end of the frame as usual (unless you call :ref:`update_internals()<class_TileMapLayer_method_update_internals>`).
 
 .. rst-class:: classref-item-separator
 
@@ -802,7 +804,7 @@ Notifies the **TileMapLayer** node that calls to :ref:`_use_tile_data_runtime_up
 
 Sets the tile identifiers for the cell at coordinates ``coords``. Each tile of the :ref:`TileSet<class_TileSet>` is identified using three parts:
 
-- The source identifier ``source_id`` identifies a :ref:`TileSetSource<class_TileSetSource>` identifier. See :ref:`TileSet.set_source_id<class_TileSet_method_set_source_id>`,
+- The source identifier ``source_id`` identifies a :ref:`TileSetSource<class_TileSetSource>` identifier. See :ref:`TileSet.set_source_id()<class_TileSet_method_set_source_id>`,
 
 - The atlas coordinate identifier ``atlas_coords`` identifies a tile coordinates in the atlas (if the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`). For :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` it should always be ``Vector2i(0, 0)``,
 
@@ -864,7 +866,7 @@ Sets a custom ``map`` as a :ref:`NavigationServer2D<class_NavigationServer2D>` n
 
 |void| **set_pattern**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, pattern\: :ref:`TileMapPattern<class_TileMapPattern>`\ ) :ref:`🔗<class_TileMapLayer_method_set_pattern>`
 
-Pastes the :ref:`TileMapPattern<class_TileMapPattern>` at the given ``position`` in the tile map. See also :ref:`get_pattern<class_TileMapLayer_method_get_pattern>`.
+Pastes the :ref:`TileMapPattern<class_TileMapPattern>` at the given ``position`` in the tile map. See also :ref:`get_pattern()<class_TileMapLayer_method_get_pattern>`.
 
 .. rst-class:: classref-item-separator
 

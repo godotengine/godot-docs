@@ -148,7 +148,7 @@ Ideally, the returned value should be based off the stream's sample rate (:ref:`
 
 :ref:`float<class_float>` **_get_length**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__get_length>`
 
-Override this method to customize the returned value of :ref:`get_length<class_AudioStream_method_get_length>`. Should return the length of this audio stream, in seconds.
+Override this method to customize the returned value of :ref:`get_length()<class_AudioStream_method_get_length>`. Should return the length of this audio stream, in seconds.
 
 .. rst-class:: classref-item-separator
 
@@ -160,7 +160,7 @@ Override this method to customize the returned value of :ref:`get_length<class_A
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_parameter_list**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__get_parameter_list>`
 
-Return the controllable parameters of this stream. This array contains dictionaries with a property info description format (see :ref:`Object.get_property_list<class_Object_method_get_property_list>`). Additionally, the default value for this parameter must be added tho each dictionary in "default_value" field.
+Return the controllable parameters of this stream. This array contains dictionaries with a property info description format (see :ref:`Object.get_property_list()<class_Object_method_get_property_list>`). Additionally, the default value for this parameter must be added tho each dictionary in "default_value" field.
 
 .. rst-class:: classref-item-separator
 
@@ -196,7 +196,7 @@ Override this method to return ``true`` if this stream has a loop.
 
 :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__instantiate_playback>`
 
-Override this method to customize the returned value of :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>`. Should return a new :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` created when the stream is played (such as by an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`).
+Override this method to customize the returned value of :ref:`instantiate_playback()<class_AudioStream_method_instantiate_playback>`. Should return a new :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` created when the stream is played (such as by an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`).
 
 .. rst-class:: classref-item-separator
 
@@ -208,7 +208,7 @@ Override this method to customize the returned value of :ref:`instantiate_playba
 
 :ref:`bool<class_bool>` **_is_monophonic**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__is_monophonic>`
 
-Override this method to customize the returned value of :ref:`is_monophonic<class_AudioStream_method_is_monophonic>`. Should return ``true`` if this audio stream only supports one channel.
+Override this method to customize the returned value of :ref:`is_monophonic()<class_AudioStream_method_is_monophonic>`. Should return ``true`` if this audio stream only supports one channel.
 
 .. rst-class:: classref-item-separator
 
@@ -260,7 +260,7 @@ Returns the length of the audio stream in seconds.
 
 :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **instantiate_playback**\ (\ ) :ref:`🔗<class_AudioStream_method_instantiate_playback>`
 
-Returns a newly created :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` intended to play this audio stream. Useful for when you want to extend :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>` but call :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>` from an internally held AudioStream subresource. An example of this can be found in the source code for ``AudioStreamRandomPitch::instantiate_playback``.
+Returns a newly created :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` intended to play this audio stream. Useful for when you want to extend :ref:`_instantiate_playback()<class_AudioStream_private_method__instantiate_playback>` but call :ref:`instantiate_playback()<class_AudioStream_method_instantiate_playback>` from an internally held AudioStream subresource. An example of this can be found in the source code for ``AudioStreamRandomPitch::instantiate_playback``.
 
 .. rst-class:: classref-item-separator
 
