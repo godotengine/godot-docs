@@ -24,7 +24,7 @@ Description
 
 Plays audio that is attenuated with distance to the listener.
 
-By default, audio is heard from the screen center. This can be changed by adding an :ref:`AudioListener2D<class_AudioListener2D>` node to the scene and enabling it by calling :ref:`AudioListener2D.make_current<class_AudioListener2D_method_make_current>` on it.
+By default, audio is heard from the screen center. This can be changed by adding an :ref:`AudioListener2D<class_AudioListener2D>` node to the scene and enabling it by calling :ref:`AudioListener2D.make_current()<class_AudioListener2D_method_make_current>` on it.
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 
@@ -291,7 +291,7 @@ The playback type of the stream player. If set other than to the default value, 
 - |void| **set_playing**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_playing**\ (\ )
 
-If ``true``, audio is playing or is queued to be played (see :ref:`play<class_AudioStreamPlayer2D_method_play>`).
+If ``true``, audio is playing or is queued to be played (see :ref:`play()<class_AudioStreamPlayer2D_method_play>`).
 
 .. rst-class:: classref-item-separator
 
@@ -361,7 +361,7 @@ Base volume before attenuation, in decibels.
 
 Base volume before attenuation, as a linear value.
 
-\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>` on a value.
+\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear()<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db()<class_@GlobalScope_method_linear_to_db>` on a value.
 
 .. rst-class:: classref-section-separator
 

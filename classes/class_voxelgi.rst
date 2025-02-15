@@ -217,9 +217,9 @@ Method Descriptions
 
 Bakes the effect from all :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s marked with :ref:`GeometryInstance3D.GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>` and :ref:`Light3D<class_Light3D>`\ s marked with either :ref:`Light3D.BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>` or :ref:`Light3D.BAKE_DYNAMIC<class_Light3D_constant_BAKE_DYNAMIC>`. If ``create_visual_debug`` is ``true``, after baking the light, this will generate a :ref:`MultiMesh<class_MultiMesh>` that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the **VoxelGI**'s data and debug any issues that may be occurring.
 
-\ **Note:** :ref:`bake<class_VoxelGI_method_bake>` works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a **VoxelGI** node generally takes from 5 to 20 seconds in most scenes. Reducing :ref:`subdiv<class_VoxelGI_property_subdiv>` can speed up baking.
+\ **Note:** :ref:`bake()<class_VoxelGI_method_bake>` works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a **VoxelGI** node generally takes from 5 to 20 seconds in most scenes. Reducing :ref:`subdiv<class_VoxelGI_property_subdiv>` can speed up baking.
 
-\ **Note:** :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s and :ref:`Light3D<class_Light3D>`\ s must be fully ready before :ref:`bake<class_VoxelGI_method_bake>` is called. If you are procedurally creating those and some meshes or lights are missing from your baked **VoxelGI**, use ``call_deferred("bake")`` instead of calling :ref:`bake<class_VoxelGI_method_bake>` directly.
+\ **Note:** :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s and :ref:`Light3D<class_Light3D>`\ s must be fully ready before :ref:`bake()<class_VoxelGI_method_bake>` is called. If you are procedurally creating those and some meshes or lights are missing from your baked **VoxelGI**, use ``call_deferred("bake")`` instead of calling :ref:`bake()<class_VoxelGI_method_bake>` directly.
 
 .. rst-class:: classref-item-separator
 
@@ -231,7 +231,7 @@ Bakes the effect from all :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s
 
 |void| **debug_bake**\ (\ ) :ref:`🔗<class_VoxelGI_method_debug_bake>`
 
-Calls :ref:`bake<class_VoxelGI_method_bake>` with ``create_visual_debug`` enabled.
+Calls :ref:`bake()<class_VoxelGI_method_bake>` with ``create_visual_debug`` enabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

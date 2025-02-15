@@ -19,7 +19,7 @@ Audio stream that can playback music interactively, combining clips and a transi
 Description
 -----------
 
-This is an audio stream that can playback music interactively, combining clips and a transition table. Clips must be added first, and then the transition rules via the :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`. Additionally, this stream exports a property parameter to control the playback via :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`.
+This is an audio stream that can playback music interactively, combining clips and a transition table. Clips must be added first, and then the transition rules via the :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`. Additionally, this stream exports a property parameter to control the playback via :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`.
 
 The way this is used is by filling a number of clips, then configuring the transition table. From there, clips are selected for playback and the music will smoothly go from the current to the new one while using the corresponding transition rule defined in the transition table.
 
@@ -240,7 +240,7 @@ Enable auto-advance, a clip must be specified.
 
 :ref:`AutoAdvanceMode<enum_AudioStreamInteractive_AutoAdvanceMode>` **AUTO_ADVANCE_RETURN_TO_HOLD** = ``2``
 
-Enable auto-advance, but instead of specifying a clip, the playback will return to hold (see :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Enable auto-advance, but instead of specifying a clip, the playback will return to hold (see :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-section-separator
 
@@ -351,7 +351,7 @@ Erase a transition by providing ``from_clip`` and ``to_clip`` clip indices. :ref
 
 :ref:`AutoAdvanceMode<enum_AudioStreamInteractive_AutoAdvanceMode>` **get_clip_auto_advance**\ (\ clip_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_get_clip_auto_advance>`
 
-Return whether a clip has auto-advance enabled. See :ref:`set_clip_auto_advance<class_AudioStreamInteractive_method_set_clip_auto_advance>`.
+Return whether a clip has auto-advance enabled. See :ref:`set_clip_auto_advance()<class_AudioStreamInteractive_method_set_clip_auto_advance>`.
 
 .. rst-class:: classref-item-separator
 
@@ -399,7 +399,7 @@ Return the :ref:`AudioStream<class_AudioStream>` associated with a clip.
 
 :ref:`float<class_float>` **get_transition_fade_beats**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_get_transition_fade_beats>`
 
-Return the time (in beats) for a transition (see :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Return the time (in beats) for a transition (see :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 
@@ -411,7 +411,7 @@ Return the time (in beats) for a transition (see :ref:`add_transition<class_Audi
 
 :ref:`FadeMode<enum_AudioStreamInteractive_FadeMode>` **get_transition_fade_mode**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_get_transition_fade_mode>`
 
-Return the mode for a transition (see :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Return the mode for a transition (see :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 
@@ -423,7 +423,7 @@ Return the mode for a transition (see :ref:`add_transition<class_AudioStreamInte
 
 :ref:`int<class_int>` **get_transition_filler_clip**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_get_transition_filler_clip>`
 
-Return the filler clip for a transition (see :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Return the filler clip for a transition (see :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 
@@ -435,7 +435,7 @@ Return the filler clip for a transition (see :ref:`add_transition<class_AudioStr
 
 :ref:`TransitionFromTime<enum_AudioStreamInteractive_TransitionFromTime>` **get_transition_from_time**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_get_transition_from_time>`
 
-Return the source time position for a transition (see :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Return the source time position for a transition (see :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 
@@ -459,7 +459,7 @@ Return the list of transitions (from, to interleaved).
 
 :ref:`TransitionToTime<enum_AudioStreamInteractive_TransitionToTime>` **get_transition_to_time**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_get_transition_to_time>`
 
-Return the destination time position for a transition (see :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Return the destination time position for a transition (see :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 
@@ -471,7 +471,7 @@ Return the destination time position for a transition (see :ref:`add_transition<
 
 :ref:`bool<class_bool>` **has_transition**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_has_transition>`
 
-Returns ``true`` if a given transition exists (was added via :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Returns ``true`` if a given transition exists (was added via :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 
@@ -483,7 +483,7 @@ Returns ``true`` if a given transition exists (was added via :ref:`add_transitio
 
 :ref:`bool<class_bool>` **is_transition_holding_previous**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_is_transition_holding_previous>`
 
-Return whether a transition uses the *hold previous* functionality (see :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Return whether a transition uses the *hold previous* functionality (see :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 
@@ -495,7 +495,7 @@ Return whether a transition uses the *hold previous* functionality (see :ref:`ad
 
 :ref:`bool<class_bool>` **is_transition_using_filler_clip**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_is_transition_using_filler_clip>`
 
-Return whether a transition uses the *filler clip* functionality (see :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Return whether a transition uses the *filler clip* functionality (see :ref:`add_transition()<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 

@@ -396,7 +396,7 @@ Rotates the node so that its local +X axis points towards the ``point``, which i
 
 |void| **move_local_x**\ (\ delta\: :ref:`float<class_float>`, scaled\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node2D_method_move_local_x>`
 
-Applies a local translation on the node's X axis based on the :ref:`Node._process<class_Node_private_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
+Applies a local translation on the node's X axis based on the :ref:`Node._process()<class_Node_private_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
 
 .. rst-class:: classref-item-separator
 
@@ -408,7 +408,7 @@ Applies a local translation on the node's X axis based on the :ref:`Node._proces
 
 |void| **move_local_y**\ (\ delta\: :ref:`float<class_float>`, scaled\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node2D_method_move_local_y>`
 
-Applies a local translation on the node's Y axis based on the :ref:`Node._process<class_Node_private_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
+Applies a local translation on the node's Y axis based on the :ref:`Node._process()<class_Node_private_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
 
 .. rst-class:: classref-item-separator
 

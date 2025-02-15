@@ -282,7 +282,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **add_port_mapping**\ (\ port\: :ref:`int<class_int>`, port_internal\: :ref:`int<class_int>` = 0, desc\: :ref:`String<class_String>` = "", proto\: :ref:`String<class_String>` = "UDP", duration\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_UPNPDevice_method_add_port_mapping>`
 
-Adds a port mapping to forward the given external port on this **UPNPDevice** for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_method_add_port_mapping>`.
+Adds a port mapping to forward the given external port on this **UPNPDevice** for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping()<class_UPNP_method_add_port_mapping>`.
 
 .. rst-class:: classref-item-separator
 
@@ -294,7 +294,7 @@ Adds a port mapping to forward the given external port on this **UPNPDevice** fo
 
 :ref:`int<class_int>` **delete_port_mapping**\ (\ port\: :ref:`int<class_int>`, proto\: :ref:`String<class_String>` = "UDP"\ ) |const| :ref:`🔗<class_UPNPDevice_method_delete_port_mapping>`
 
-Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_method_delete_port_mapping>`.
+Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping()<class_UPNP_method_delete_port_mapping>`.
 
 .. rst-class:: classref-item-separator
 

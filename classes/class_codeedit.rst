@@ -322,7 +322,7 @@ Emitted when a breakpoint is added or removed from a line. If the line is moved 
 
 **code_completion_requested**\ (\ ) :ref:`🔗<class_CodeEdit_signal_code_completion_requested>`
 
-Emitted when the user requests code completion. This signal will not be sent if :ref:`_request_code_completion<class_CodeEdit_private_method__request_code_completion>` is overridden or :ref:`code_completion_enabled<class_CodeEdit_property_code_completion_enabled>` is ``false``.
+Emitted when the user requests code completion. This signal will not be sent if :ref:`_request_code_completion()<class_CodeEdit_private_method__request_code_completion>` is overridden or :ref:`code_completion_enabled<class_CodeEdit_property_code_completion_enabled>` is ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -360,7 +360,7 @@ Emitted when the user has clicked on a valid symbol.
 
 **symbol_validate**\ (\ symbol\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeEdit_signal_symbol_validate>`
 
-Emitted when the user hovers over a symbol. The symbol should be validated and responded to, by calling :ref:`set_symbol_lookup_word_as_valid<class_CodeEdit_method_set_symbol_lookup_word_as_valid>`.
+Emitted when the user hovers over a symbol. The symbol should be validated and responded to, by calling :ref:`set_symbol_lookup_word_as_valid()<class_CodeEdit_method_set_symbol_lookup_word_as_valid>`.
 
 \ **Note:** :ref:`symbol_lookup_on_click<class_CodeEdit_property_symbol_lookup_on_click>` must be ``true`` for this signal to be emitted.
 
@@ -572,7 +572,7 @@ Sets the brace pairs to be autocompleted. For each entry in the dictionary, the 
 - |void| **set_code_completion_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_code_completion_enabled**\ (\ )
 
-If ``true``, the :ref:`ProjectSettings.input/ui_text_completion_query<class_ProjectSettings_property_input/ui_text_completion_query>` action requests code completion. To handle it, see :ref:`_request_code_completion<class_CodeEdit_private_method__request_code_completion>` or :ref:`code_completion_requested<class_CodeEdit_signal_code_completion_requested>`.
+If ``true``, the :ref:`ProjectSettings.input/ui_text_completion_query<class_ProjectSettings_property_input/ui_text_completion_query>` action requests code completion. To handle it, see :ref:`_request_code_completion()<class_CodeEdit_private_method__request_code_completion>` or :ref:`code_completion_requested<class_CodeEdit_signal_code_completion_requested>`.
 
 .. rst-class:: classref-item-separator
 
@@ -640,7 +640,7 @@ Sets the string delimiters. All existing string delimiters will be removed.
 - |void| **set_draw_bookmarks_gutter**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_drawing_bookmarks_gutter**\ (\ )
 
-If ``true``, bookmarks are drawn in the gutter. This gutter is shared with breakpoints and executing lines. See :ref:`set_line_as_bookmarked<class_CodeEdit_method_set_line_as_bookmarked>`.
+If ``true``, bookmarks are drawn in the gutter. This gutter is shared with breakpoints and executing lines. See :ref:`set_line_as_bookmarked()<class_CodeEdit_method_set_line_as_bookmarked>`.
 
 .. rst-class:: classref-item-separator
 
@@ -657,7 +657,7 @@ If ``true``, bookmarks are drawn in the gutter. This gutter is shared with break
 - |void| **set_draw_breakpoints_gutter**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_drawing_breakpoints_gutter**\ (\ )
 
-If ``true``, breakpoints are drawn in the gutter. This gutter is shared with bookmarks and executing lines. Clicking the gutter will toggle the breakpoint for the line, see :ref:`set_line_as_breakpoint<class_CodeEdit_method_set_line_as_breakpoint>`.
+If ``true``, breakpoints are drawn in the gutter. This gutter is shared with bookmarks and executing lines. Clicking the gutter will toggle the breakpoint for the line, see :ref:`set_line_as_breakpoint()<class_CodeEdit_method_set_line_as_breakpoint>`.
 
 .. rst-class:: classref-item-separator
 
@@ -674,7 +674,7 @@ If ``true``, breakpoints are drawn in the gutter. This gutter is shared with boo
 - |void| **set_draw_executing_lines_gutter**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_drawing_executing_lines_gutter**\ (\ )
 
-If ``true``, executing lines are marked in the gutter. This gutter is shared with breakpoints and bookmarks. See :ref:`set_line_as_executing<class_CodeEdit_method_set_line_as_executing>`.
+If ``true``, executing lines are marked in the gutter. This gutter is shared with breakpoints and bookmarks. See :ref:`set_line_as_executing()<class_CodeEdit_method_set_line_as_executing>`.
 
 .. rst-class:: classref-item-separator
 
@@ -691,7 +691,7 @@ If ``true``, executing lines are marked in the gutter. This gutter is shared wit
 - |void| **set_draw_fold_gutter**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_drawing_fold_gutter**\ (\ )
 
-If ``true``, the fold gutter is drawn. In this gutter, the :ref:`can_fold_code_region<class_CodeEdit_theme_icon_can_fold_code_region>` icon is drawn for each foldable line (see :ref:`can_fold_line<class_CodeEdit_method_can_fold_line>`) and the :ref:`folded_code_region<class_CodeEdit_theme_icon_folded_code_region>` icon is drawn for each folded line (see :ref:`is_line_folded<class_CodeEdit_method_is_line_folded>`). These icons can be clicked to toggle the fold state, see :ref:`toggle_foldable_line<class_CodeEdit_method_toggle_foldable_line>`. :ref:`line_folding<class_CodeEdit_property_line_folding>` must be ``true`` to show icons.
+If ``true``, the fold gutter is drawn. In this gutter, the :ref:`can_fold_code_region<class_CodeEdit_theme_icon_can_fold_code_region>` icon is drawn for each foldable line (see :ref:`can_fold_line()<class_CodeEdit_method_can_fold_line>`) and the :ref:`folded_code_region<class_CodeEdit_theme_icon_folded_code_region>` icon is drawn for each folded line (see :ref:`is_line_folded()<class_CodeEdit_method_is_line_folded>`). These icons can be clicked to toggle the fold state, see :ref:`toggle_foldable_line()<class_CodeEdit_method_toggle_foldable_line>`. :ref:`line_folding<class_CodeEdit_property_line_folding>` must be ``true`` to show icons.
 
 .. rst-class:: classref-item-separator
 
@@ -810,7 +810,7 @@ Use spaces instead of tabs for indentation.
 - |void| **set_line_folding_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_line_folding_enabled**\ (\ )
 
-If ``true``, lines can be folded. Otherwise, line folding methods like :ref:`fold_line<class_CodeEdit_method_fold_line>` will not work and :ref:`can_fold_line<class_CodeEdit_method_can_fold_line>` will always return ``false``. See :ref:`gutters_draw_fold_gutter<class_CodeEdit_property_gutters_draw_fold_gutter>`.
+If ``true``, lines can be folded. Otherwise, line folding methods like :ref:`fold_line()<class_CodeEdit_method_fold_line>` will not work and :ref:`can_fold_line()<class_CodeEdit_method_can_fold_line>` will always return ``false``. See :ref:`gutters_draw_fold_gutter<class_CodeEdit_property_gutters_draw_fold_gutter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -892,7 +892,7 @@ Override this method to define how the selected entry should be inserted. If ``r
 
 Override this method to define what items in ``candidates`` should be displayed.
 
-Both ``candidates`` and the return is a :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>`, see :ref:`get_code_completion_option<class_CodeEdit_method_get_code_completion_option>` for :ref:`Dictionary<class_Dictionary>` content.
+Both ``candidates`` and the return is a :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>`, see :ref:`get_code_completion_option()<class_CodeEdit_method_get_code_completion_option>` for :ref:`Dictionary<class_Dictionary>` content.
 
 .. rst-class:: classref-item-separator
 
@@ -930,7 +930,7 @@ Both the start and end keys must be symbols. Only the start key has to be unique
 
 |void| **add_code_completion_option**\ (\ type\: :ref:`CodeCompletionKind<enum_CodeEdit_CodeCompletionKind>`, display_text\: :ref:`String<class_String>`, insert_text\: :ref:`String<class_String>`, text_color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), icon\: :ref:`Resource<class_Resource>` = null, value\: :ref:`Variant<class_Variant>` = null, location\: :ref:`int<class_int>` = 1024\ ) :ref:`🔗<class_CodeEdit_method_add_code_completion_option>`
 
-Submits an item to the queue of potential candidates for the autocomplete menu. Call :ref:`update_code_completion_options<class_CodeEdit_method_update_code_completion_options>` to update the list.
+Submits an item to the queue of potential candidates for the autocomplete menu. Call :ref:`update_code_completion_options()<class_CodeEdit_method_update_code_completion_options>` to update the list.
 
 \ ``location`` indicates location of the option relative to the location of the code completion query. See :ref:`CodeCompletionLocation<enum_CodeEdit_CodeCompletionLocation>` for how to set this value.
 
@@ -974,7 +974,7 @@ If ``line_only`` is ``true`` or ``end_key`` is an empty :ref:`String<class_Strin
 
 :ref:`bool<class_bool>` **can_fold_line**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_can_fold_line>`
 
-Returns ``true`` if the given line is foldable. A line is foldable if it is the start of a valid code region (see :ref:`get_code_region_start_tag<class_CodeEdit_method_get_code_region_start_tag>`), if it is the start of a comment or string block, or if the next non-empty line is more indented (see :ref:`TextEdit.get_indent_level<class_TextEdit_method_get_indent_level>`).
+Returns ``true`` if the given line is foldable. A line is foldable if it is the start of a valid code region (see :ref:`get_code_region_start_tag()<class_CodeEdit_method_get_code_region_start_tag>`), if it is the start of a comment or string block, or if the next non-empty line is more indented (see :ref:`TextEdit.get_indent_level()<class_TextEdit_method_get_indent_level>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1084,11 +1084,11 @@ Values of ``-1`` convert the entire text.
 
 |void| **create_code_region**\ (\ ) :ref:`🔗<class_CodeEdit_method_create_code_region>`
 
-Creates a new code region with the selection. At least one single line comment delimiter have to be defined (see :ref:`add_comment_delimiter<class_CodeEdit_method_add_comment_delimiter>`).
+Creates a new code region with the selection. At least one single line comment delimiter have to be defined (see :ref:`add_comment_delimiter()<class_CodeEdit_method_add_comment_delimiter>`).
 
 A code region is a part of code that is highlighted when folded and can help organize your script.
 
-Code region start and end tags can be customized (see :ref:`set_code_region_tags<class_CodeEdit_method_set_code_region_tags>`).
+Code region start and end tags can be customized (see :ref:`set_code_region_tags()<class_CodeEdit_method_set_code_region_tags>`).
 
 Code regions are delimited using start and end tags (respectively ``region`` and ``endregion`` by default) preceded by one line comment delimiter. (eg. ``#region`` and ``#endregion``)
 
@@ -1114,7 +1114,7 @@ Deletes all lines that are selected or have a caret on them.
 
 |void| **do_indent**\ (\ ) :ref:`🔗<class_CodeEdit_method_do_indent>`
 
-If there is no selection, indentation is inserted at the caret. Otherwise, the selected lines are indented like :ref:`indent_lines<class_CodeEdit_method_indent_lines>`. Equivalent to the :ref:`ProjectSettings.input/ui_text_indent<class_ProjectSettings_property_input/ui_text_indent>` action. The indentation characters used depend on :ref:`indent_use_spaces<class_CodeEdit_property_indent_use_spaces>` and :ref:`indent_size<class_CodeEdit_property_indent_size>`.
+If there is no selection, indentation is inserted at the caret. Otherwise, the selected lines are indented like :ref:`indent_lines()<class_CodeEdit_method_indent_lines>`. Equivalent to the :ref:`ProjectSettings.input/ui_text_indent<class_ProjectSettings_property_input/ui_text_indent>` action. The indentation characters used depend on :ref:`indent_use_spaces<class_CodeEdit_property_indent_use_spaces>` and :ref:`indent_size<class_CodeEdit_property_indent_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1150,7 +1150,7 @@ Duplicates all selected text and duplicates all lines with a caret on them.
 
 |void| **fold_all_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_fold_all_lines>`
 
-Folds all lines that are possible to be folded (see :ref:`can_fold_line<class_CodeEdit_method_can_fold_line>`).
+Folds all lines that are possible to be folded (see :ref:`can_fold_line()<class_CodeEdit_method_can_fold_line>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1162,7 +1162,7 @@ Folds all lines that are possible to be folded (see :ref:`can_fold_line<class_Co
 
 |void| **fold_line**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CodeEdit_method_fold_line>`
 
-Folds the given line, if possible (see :ref:`can_fold_line<class_CodeEdit_method_can_fold_line>`).
+Folds the given line, if possible (see :ref:`can_fold_line()<class_CodeEdit_method_can_fold_line>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1234,7 +1234,7 @@ Gets the completion option at ``index``. The return :ref:`Dictionary<class_Dicti
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_code_completion_options**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_code_completion_options>`
 
-Gets all completion options, see :ref:`get_code_completion_option<class_CodeEdit_method_get_code_completion_option>` for return content.
+Gets all completion options, see :ref:`get_code_completion_option()<class_CodeEdit_method_get_code_completion_option>` for return content.
 
 .. rst-class:: classref-item-separator
 
@@ -1438,7 +1438,7 @@ Returns ``true`` if string ``start_key`` exists.
 
 |void| **indent_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_indent_lines>`
 
-Indents all lines that are selected or have a caret on them. Uses spaces or a tab depending on :ref:`indent_use_spaces<class_CodeEdit_property_indent_use_spaces>`. See :ref:`unindent_lines<class_CodeEdit_method_unindent_lines>`.
+Indents all lines that are selected or have a caret on them. Uses spaces or a tab depending on :ref:`indent_use_spaces<class_CodeEdit_property_indent_use_spaces>`. See :ref:`unindent_lines()<class_CodeEdit_method_unindent_lines>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1474,7 +1474,7 @@ Returns the delimiter index if ``line`` ``column`` is in a string. If ``column``
 
 :ref:`bool<class_bool>` **is_line_bookmarked**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_bookmarked>`
 
-Returns ``true`` if the given line is bookmarked. See :ref:`set_line_as_bookmarked<class_CodeEdit_method_set_line_as_bookmarked>`.
+Returns ``true`` if the given line is bookmarked. See :ref:`set_line_as_bookmarked()<class_CodeEdit_method_set_line_as_bookmarked>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1486,7 +1486,7 @@ Returns ``true`` if the given line is bookmarked. See :ref:`set_line_as_bookmark
 
 :ref:`bool<class_bool>` **is_line_breakpointed**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_breakpointed>`
 
-Returns ``true`` if the given line is breakpointed. See :ref:`set_line_as_breakpoint<class_CodeEdit_method_set_line_as_breakpoint>`.
+Returns ``true`` if the given line is breakpointed. See :ref:`set_line_as_breakpoint()<class_CodeEdit_method_set_line_as_breakpoint>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1498,7 +1498,7 @@ Returns ``true`` if the given line is breakpointed. See :ref:`set_line_as_breakp
 
 :ref:`bool<class_bool>` **is_line_code_region_end**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_code_region_end>`
 
-Returns ``true`` if the given line is a code region end. See :ref:`set_code_region_tags<class_CodeEdit_method_set_code_region_tags>`.
+Returns ``true`` if the given line is a code region end. See :ref:`set_code_region_tags()<class_CodeEdit_method_set_code_region_tags>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1510,7 +1510,7 @@ Returns ``true`` if the given line is a code region end. See :ref:`set_code_regi
 
 :ref:`bool<class_bool>` **is_line_code_region_start**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_code_region_start>`
 
-Returns ``true`` if the given line is a code region start. See :ref:`set_code_region_tags<class_CodeEdit_method_set_code_region_tags>`.
+Returns ``true`` if the given line is a code region start. See :ref:`set_code_region_tags()<class_CodeEdit_method_set_code_region_tags>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1522,7 +1522,7 @@ Returns ``true`` if the given line is a code region start. See :ref:`set_code_re
 
 :ref:`bool<class_bool>` **is_line_executing**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_executing>`
 
-Returns ``true`` if the given line is marked as executing. See :ref:`set_line_as_executing<class_CodeEdit_method_set_line_as_executing>`.
+Returns ``true`` if the given line is marked as executing. See :ref:`set_line_as_executing()<class_CodeEdit_method_set_line_as_executing>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1534,7 +1534,7 @@ Returns ``true`` if the given line is marked as executing. See :ref:`set_line_as
 
 :ref:`bool<class_bool>` **is_line_folded**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_folded>`
 
-Returns ``true`` if the given line is folded. See :ref:`fold_line<class_CodeEdit_method_fold_line>`.
+Returns ``true`` if the given line is folded. See :ref:`fold_line()<class_CodeEdit_method_fold_line>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1630,7 +1630,7 @@ Sets the code hint text. Pass an empty string to clear.
 
 |void| **set_code_hint_draw_below**\ (\ draw_below\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_code_hint_draw_below>`
 
-If ``true``, the code hint will draw below the main caret. If ``false``, the code hint will draw above the main caret. See :ref:`set_code_hint<class_CodeEdit_method_set_code_hint>`.
+If ``true``, the code hint will draw below the main caret. If ``false``, the code hint will draw above the main caret. See :ref:`set_code_hint()<class_CodeEdit_method_set_code_hint>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1654,7 +1654,7 @@ Sets the code region start and end tags (without comment delimiter).
 
 |void| **set_line_as_bookmarked**\ (\ line\: :ref:`int<class_int>`, bookmarked\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_line_as_bookmarked>`
 
-Sets the given line as bookmarked. If ``true`` and :ref:`gutters_draw_bookmarks<class_CodeEdit_property_gutters_draw_bookmarks>` is ``true``, draws the :ref:`bookmark<class_CodeEdit_theme_icon_bookmark>` icon in the gutter for this line. See :ref:`get_bookmarked_lines<class_CodeEdit_method_get_bookmarked_lines>` and :ref:`is_line_bookmarked<class_CodeEdit_method_is_line_bookmarked>`.
+Sets the given line as bookmarked. If ``true`` and :ref:`gutters_draw_bookmarks<class_CodeEdit_property_gutters_draw_bookmarks>` is ``true``, draws the :ref:`bookmark<class_CodeEdit_theme_icon_bookmark>` icon in the gutter for this line. See :ref:`get_bookmarked_lines()<class_CodeEdit_method_get_bookmarked_lines>` and :ref:`is_line_bookmarked()<class_CodeEdit_method_is_line_bookmarked>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1666,7 +1666,7 @@ Sets the given line as bookmarked. If ``true`` and :ref:`gutters_draw_bookmarks<
 
 |void| **set_line_as_breakpoint**\ (\ line\: :ref:`int<class_int>`, breakpointed\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_line_as_breakpoint>`
 
-Sets the given line as a breakpoint. If ``true`` and :ref:`gutters_draw_breakpoints_gutter<class_CodeEdit_property_gutters_draw_breakpoints_gutter>` is ``true``, draws the :ref:`breakpoint<class_CodeEdit_theme_icon_breakpoint>` icon in the gutter for this line. See :ref:`get_breakpointed_lines<class_CodeEdit_method_get_breakpointed_lines>` and :ref:`is_line_breakpointed<class_CodeEdit_method_is_line_breakpointed>`.
+Sets the given line as a breakpoint. If ``true`` and :ref:`gutters_draw_breakpoints_gutter<class_CodeEdit_property_gutters_draw_breakpoints_gutter>` is ``true``, draws the :ref:`breakpoint<class_CodeEdit_theme_icon_breakpoint>` icon in the gutter for this line. See :ref:`get_breakpointed_lines()<class_CodeEdit_method_get_breakpointed_lines>` and :ref:`is_line_breakpointed()<class_CodeEdit_method_is_line_breakpointed>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1678,7 +1678,7 @@ Sets the given line as a breakpoint. If ``true`` and :ref:`gutters_draw_breakpoi
 
 |void| **set_line_as_executing**\ (\ line\: :ref:`int<class_int>`, executing\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_line_as_executing>`
 
-Sets the given line as executing. If ``true`` and :ref:`gutters_draw_executing_lines<class_CodeEdit_property_gutters_draw_executing_lines>` is ``true``, draws the :ref:`executing_line<class_CodeEdit_theme_icon_executing_line>` icon in the gutter for this line. See :ref:`get_executing_lines<class_CodeEdit_method_get_executing_lines>` and :ref:`is_line_executing<class_CodeEdit_method_is_line_executing>`.
+Sets the given line as executing. If ``true`` and :ref:`gutters_draw_executing_lines<class_CodeEdit_property_gutters_draw_executing_lines>` is ``true``, draws the :ref:`executing_line<class_CodeEdit_theme_icon_executing_line>` icon in the gutter for this line. See :ref:`get_executing_lines()<class_CodeEdit_method_get_executing_lines>` and :ref:`is_line_executing()<class_CodeEdit_method_is_line_executing>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1750,7 +1750,7 @@ Unfolds the given line if it is folded or if it is hidden under a folded line.
 
 |void| **unindent_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_unindent_lines>`
 
-Unindents all lines that are selected or have a caret on them. Uses spaces or a tab depending on :ref:`indent_use_spaces<class_CodeEdit_property_indent_use_spaces>`. Equivalent to the :ref:`ProjectSettings.input/ui_text_dedent<class_ProjectSettings_property_input/ui_text_dedent>` action. See :ref:`indent_lines<class_CodeEdit_method_indent_lines>`.
+Unindents all lines that are selected or have a caret on them. Uses spaces or a tab depending on :ref:`indent_use_spaces<class_CodeEdit_property_indent_use_spaces>`. Equivalent to the :ref:`ProjectSettings.input/ui_text_dedent<class_ProjectSettings_property_input/ui_text_dedent>` action. See :ref:`indent_lines()<class_CodeEdit_method_indent_lines>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1762,7 +1762,7 @@ Unindents all lines that are selected or have a caret on them. Uses spaces or a 
 
 |void| **update_code_completion_options**\ (\ force\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_update_code_completion_options>`
 
-Submits all completion options added with :ref:`add_code_completion_option<class_CodeEdit_method_add_code_completion_option>`. Will try to force the autocomplete menu to popup, if ``force`` is ``true``.
+Submits all completion options added with :ref:`add_code_completion_option()<class_CodeEdit_method_add_code_completion_option>`. Will try to force the autocomplete menu to popup, if ``force`` is ``true``.
 
 \ **Note:** This will replace all current candidates.
 

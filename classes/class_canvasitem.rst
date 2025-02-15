@@ -23,7 +23,7 @@ Description
 
 Abstract base class for everything in 2D space. Canvas items are laid out in a tree; children inherit and extend their parent's transform. **CanvasItem** is extended by :ref:`Control<class_Control>` for GUI-related nodes, and by :ref:`Node2D<class_Node2D>` for 2D game objects.
 
-Any **CanvasItem** can draw. For this, :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request a redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the **CanvasItem** are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw<class_CanvasItem_private_method__draw>`, its corresponding :ref:`Object._notification<class_Object_private_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
+Any **CanvasItem** can draw. For this, :ref:`queue_redraw()<class_CanvasItem_method_queue_redraw>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request a redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the **CanvasItem** are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw()<class_CanvasItem_private_method__draw>`, its corresponding :ref:`Object._notification()<class_Object_private_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
 
 Canvas items are drawn in tree order on their canvas layer. By default, children are on top of their parents, so a root **CanvasItem** will be drawn behind everything. This behavior can be changed on a per-item basis.
 
@@ -227,7 +227,7 @@ Signals
 
 **draw**\ (\ ) :ref:`🔗<class_CanvasItem_signal_draw>`
 
-Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification, and *before* :ref:`_draw<class_CanvasItem_private_method__draw>` is called.
+Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification, and *before* :ref:`_draw()<class_CanvasItem_private_method__draw>` is called.
 
 \ **Note:** Deferred connections do not allow drawing through the ``draw_*`` methods.
 
@@ -241,7 +241,7 @@ Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICAT
 
 **hidden**\ (\ ) :ref:`🔗<class_CanvasItem_signal_hidden>`
 
-Emitted when the **CanvasItem** is hidden, i.e. it's no longer visible in the tree (see :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>`).
+Emitted when the **CanvasItem** is hidden, i.e. it's no longer visible in the tree (see :ref:`is_visible_in_tree()<class_CanvasItem_method_is_visible_in_tree>`).
 
 .. rst-class:: classref-item-separator
 
@@ -265,7 +265,7 @@ Emitted when the **CanvasItem**'s boundaries (position or size) change, or when 
 
 **visibility_changed**\ (\ ) :ref:`🔗<class_CanvasItem_signal_visibility_changed>`
 
-Emitted when the **CanvasItem**'s visibility changes, either because its own :ref:`visible<class_CanvasItem_property_visible>` property changed or because its visibility in the tree changed (see :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>`).
+Emitted when the **CanvasItem**'s visibility changes, either because its own :ref:`visible<class_CanvasItem_property_visible>` property changed or because its visibility in the tree changed (see :ref:`is_visible_in_tree()<class_CanvasItem_method_is_visible_in_tree>`).
 
 .. rst-class:: classref-section-separator
 
@@ -461,7 +461,7 @@ Constants
 
 **NOTIFICATION_TRANSFORM_CHANGED** = ``2000`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>`
 
-The **CanvasItem**'s global transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>`.
+The **CanvasItem**'s global transform has changed. This notification is only received if enabled by :ref:`set_notify_transform()<class_CanvasItem_method_set_notify_transform>`.
 
 .. _class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED:
 
@@ -469,7 +469,7 @@ The **CanvasItem**'s global transform has changed. This notification is only rec
 
 **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = ``35`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>`
 
-The **CanvasItem**'s local transform has changed. This notification is only received if enabled by :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
+The **CanvasItem**'s local transform has changed. This notification is only received if enabled by :ref:`set_notify_local_transform()<class_CanvasItem_method_set_notify_local_transform>`.
 
 .. _class_CanvasItem_constant_NOTIFICATION_DRAW:
 
@@ -477,7 +477,7 @@ The **CanvasItem**'s local transform has changed. This notification is only rece
 
 **NOTIFICATION_DRAW** = ``30`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_DRAW>`
 
-The **CanvasItem** is requested to draw (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
+The **CanvasItem** is requested to draw (see :ref:`_draw()<class_CanvasItem_private_method__draw>`).
 
 .. _class_CanvasItem_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
@@ -603,7 +603,7 @@ The color applied to this **CanvasItem**. This property does affect child **Canv
 
 The color applied to this **CanvasItem**. This property does **not** affect child **CanvasItem**\ s, unlike :ref:`modulate<class_CanvasItem_property_modulate>` which affects both the node itself and its children.
 
-\ **Note:** Internal children (e.g. sliders in :ref:`ColorPicker<class_ColorPicker>` or tab bar in :ref:`TabContainer<class_TabContainer>`) are also not affected by this property (see ``include_internal`` parameter of :ref:`Node.get_child<class_Node_method_get_child>` and other similar methods).
+\ **Note:** Internal children (e.g. sliders in :ref:`ColorPicker<class_ColorPicker>` or tab bar in :ref:`TabContainer<class_TabContainer>`) are also not affected by this property (see ``include_internal`` parameter of :ref:`Node.get_child()<class_Node_method_get_child>` and other similar methods).
 
 .. rst-class:: classref-item-separator
 
@@ -722,7 +722,7 @@ The rendering layer in which this **CanvasItem** is rendered by :ref:`Viewport<c
 - |void| **set_visible**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_visible**\ (\ )
 
-If ``true``, this **CanvasItem** may be drawn. Whether this **CanvasItem** is actually drawn depends on the visibility of all of its **CanvasItem** ancestors. In other words: this **CanvasItem** will be drawn when :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` returns ``true`` and all **CanvasItem** ancestors share at least one :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>` with this **CanvasItem**.
+If ``true``, this **CanvasItem** may be drawn. Whether this **CanvasItem** is actually drawn depends on the visibility of all of its **CanvasItem** ancestors. In other words: this **CanvasItem** will be drawn when :ref:`is_visible_in_tree()<class_CanvasItem_method_is_visible_in_tree>` returns ``true`` and all **CanvasItem** ancestors share at least one :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>` with this **CanvasItem**.
 
 \ **Note:** For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
@@ -798,9 +798,9 @@ Method Descriptions
 
 |void| **_draw**\ (\ ) |virtual| :ref:`🔗<class_CanvasItem_private_method__draw>`
 
-Called when **CanvasItem** has been requested to redraw (after :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called, either manually or by the engine).
+Called when **CanvasItem** has been requested to redraw (after :ref:`queue_redraw()<class_CanvasItem_method_queue_redraw>` is called, either manually or by the engine).
 
-Corresponds to the :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification in :ref:`Object._notification<class_Object_private_method__notification>`.
+Corresponds to the :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification in :ref:`Object._notification()<class_Object_private_method__notification>`.
 
 .. rst-class:: classref-item-separator
 
@@ -824,7 +824,7 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 |void| **draw_arc**\ (\ center\: :ref:`Vector2<class_Vector2>`, radius\: :ref:`float<class_float>`, start_angle\: :ref:`float<class_float>`, end_angle\: :ref:`float<class_float>`, point_count\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_arc>`
 
-Draws an unfilled arc between the given angles with a uniform ``color`` and ``width`` and optional antialiasing (supported only for positive ``width``). The larger the value of ``point_count``, the smoother the curve. See also :ref:`draw_circle<class_CanvasItem_method_draw_circle>`.
+Draws an unfilled arc between the given angles with a uniform ``color`` and ``width`` and optional antialiasing (supported only for positive ``width``). The larger the value of ``point_count``, the smoother the curve. See also :ref:`draw_circle()<class_CanvasItem_method_draw_circle>`.
 
 If ``width`` is negative, it will be ignored and the arc will be drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the arc will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
@@ -864,7 +864,7 @@ Draws a string first character outline using a custom font.
 
 |void| **draw_circle**\ (\ position\: :ref:`Vector2<class_Vector2>`, radius\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, filled\: :ref:`bool<class_bool>` = true, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_circle>`
 
-Draws a circle. See also :ref:`draw_arc<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`, and :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws a circle. See also :ref:`draw_arc()<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline()<class_CanvasItem_method_draw_polyline>`, and :ref:`draw_polygon()<class_CanvasItem_method_draw_polygon>`.
 
 If ``filled`` is ``true``, the circle will be filled with the ``color`` specified. If ``filled`` is ``false``, the circle will be drawn as a stroke with the ``color`` and ``width`` specified.
 
@@ -884,9 +884,9 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 
 |void| **draw_colored_polygon**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), texture\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_CanvasItem_method_draw_colored_polygon>`
 
-Draws a colored polygon of any number of points, convex or concave. Unlike :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, a single color must be specified for the whole polygon.
+Draws a colored polygon of any number of points, convex or concave. Unlike :ref:`draw_polygon()<class_CanvasItem_method_draw_polygon>`, a single color must be specified for the whole polygon.
 
-\ **Note:** If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with :ref:`Geometry2D.triangulate_polygon<class_Geometry2D_method_triangulate_polygon>` and using :ref:`draw_mesh<class_CanvasItem_method_draw_mesh>`, :ref:`draw_multimesh<class_CanvasItem_method_draw_multimesh>`, or :ref:`RenderingServer.canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>`.
+\ **Note:** If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with :ref:`Geometry2D.triangulate_polygon()<class_Geometry2D_method_triangulate_polygon>` and using :ref:`draw_mesh()<class_CanvasItem_method_draw_mesh>`, :ref:`draw_multimesh()<class_CanvasItem_method_draw_multimesh>`, or :ref:`RenderingServer.canvas_item_add_triangle_array()<class_RenderingServer_method_canvas_item_add_triangle_array>`.
 
 .. rst-class:: classref-item-separator
 
@@ -898,9 +898,11 @@ Draws a colored polygon of any number of points, convex or concave. Unlike :ref:
 
 |void| **draw_dashed_line**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, dash\: :ref:`float<class_float>` = 2.0, aligned\: :ref:`bool<class_bool>` = true, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_dashed_line>`
 
-Draws a dashed line from a 2D point to another, with a given color and width. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
+Draws a dashed line from a 2D point to another, with a given color and width. See also :ref:`draw_line()<class_CanvasItem_method_draw_line>`, :ref:`draw_multiline()<class_CanvasItem_method_draw_multiline>`, and :ref:`draw_polyline()<class_CanvasItem_method_draw_polyline>`.
 
 If ``width`` is negative, then a two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the line parts will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+
+\ ``dash`` is the length of each dash in pixels, with the gap between each dash being the same length. If ``aligned`` is ``true``, the length of the first and last dashes may be shortened or lengthened to allow the line to begin and end at the precise points defined by ``from`` and ``to``. Both ends are always symmetrical when ``aligned`` is ``true``. If ``aligned`` is ``false``, all dashes will have the same length, but the line may appear incomplete at the end due to the dash length not dividing evenly into the line length. Only full dashes are drawn when ``aligned`` is ``false``.
 
 If ``antialiased`` is ``true``, half transparent "feathers" will be attached to the boundary, making outlines smooth.
 
@@ -916,7 +918,7 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 
 |void| **draw_end_animation**\ (\ ) :ref:`🔗<class_CanvasItem_method_draw_end_animation>`
 
-After submitting all animations slices via :ref:`draw_animation_slice<class_CanvasItem_method_draw_animation_slice>`, this function can be used to revert drawing to its default state (all subsequent drawing commands will be visible). If you don't care about this particular use case, usage of this function after submitting the slices is not required.
+After submitting all animations slices via :ref:`draw_animation_slice()<class_CanvasItem_method_draw_animation_slice>`, this function can be used to revert drawing to its default state (all subsequent drawing commands will be visible). If you don't care about this particular use case, usage of this function after submitting the slices is not required.
 
 .. rst-class:: classref-item-separator
 
@@ -949,7 +951,7 @@ Texture is drawn using the following blend operation, blend mode of the :ref:`Ca
 
 |void| **draw_line**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_line>`
 
-Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
+Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased. See also :ref:`draw_dashed_line()<class_CanvasItem_method_draw_dashed_line>`, :ref:`draw_multiline()<class_CanvasItem_method_draw_multiline>`, and :ref:`draw_polyline()<class_CanvasItem_method_draw_polyline>`.
 
 If ``width`` is negative, then a two-point primitive will be drawn instead of a four-point one. This means that when the CanvasItem is scaled, the line will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
@@ -991,7 +993,7 @@ Value of the ``pixel_range`` should the same that was used during distance field
 
 |void| **draw_multiline**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_multiline>`
 
-Draws multiple disconnected lines with a uniform ``width`` and ``color``. Each line is defined by two consecutive points from ``points`` array, i.e. i-th segment consists of ``points[2 * i]``, ``points[2 * i + 1]`` endpoints. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` instead.
+Draws multiple disconnected lines with a uniform ``width`` and ``color``. Each line is defined by two consecutive points from ``points`` array, i.e. i-th segment consists of ``points[2 * i]``, ``points[2 * i + 1]`` endpoints. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line()<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline()<class_CanvasItem_method_draw_polyline>` instead.
 
 If ``width`` is negative, then two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the lines will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
@@ -1007,7 +1009,7 @@ If ``width`` is negative, then two-point primitives will be drawn instead of a f
 
 |void| **draw_multiline_colors**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_multiline_colors>`
 
-Draws multiple disconnected lines with a uniform ``width`` and segment-by-segment coloring. Each segment is defined by two consecutive points from ``points`` array and a corresponding color from ``colors`` array, i.e. i-th segment consists of ``points[2 * i]``, ``points[2 * i + 1]`` endpoints and has ``colors[i]`` color. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>` instead.
+Draws multiple disconnected lines with a uniform ``width`` and segment-by-segment coloring. Each segment is defined by two consecutive points from ``points`` array and a corresponding color from ``colors`` array, i.e. i-th segment consists of ``points[2 * i]``, ``points[2 * i + 1]`` endpoints and has ``colors[i]`` color. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line()<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline_colors()<class_CanvasItem_method_draw_polyline_colors>` instead.
 
 If ``width`` is negative, then two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the lines will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
@@ -1059,9 +1061,9 @@ Draws a :ref:`MultiMesh<class_MultiMesh>` in 2D with the provided texture. See :
 
 |void| **draw_polygon**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), texture\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_CanvasItem_method_draw_polygon>`
 
-Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`. If you need more flexibility (such as being able to use bones), use :ref:`RenderingServer.canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>` instead.
+Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`draw_colored_polygon()<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline()<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors()<class_CanvasItem_method_draw_polyline_colors>`. If you need more flexibility (such as being able to use bones), use :ref:`RenderingServer.canvas_item_add_triangle_array()<class_RenderingServer_method_canvas_item_add_triangle_array>` instead.
 
-\ **Note:** If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with :ref:`Geometry2D.triangulate_polygon<class_Geometry2D_method_triangulate_polygon>` and using :ref:`draw_mesh<class_CanvasItem_method_draw_mesh>`, :ref:`draw_multimesh<class_CanvasItem_method_draw_multimesh>`, or :ref:`RenderingServer.canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>`.
+\ **Note:** If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with :ref:`Geometry2D.triangulate_polygon()<class_Geometry2D_method_triangulate_polygon>` and using :ref:`draw_mesh()<class_CanvasItem_method_draw_mesh>`, :ref:`draw_multimesh()<class_CanvasItem_method_draw_multimesh>`, or :ref:`RenderingServer.canvas_item_add_triangle_array()<class_RenderingServer_method_canvas_item_add_triangle_array>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1073,7 +1075,7 @@ Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`d
 
 |void| **draw_polyline**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_polyline>`
 
-Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing (supported only for positive ``width``). When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing (supported only for positive ``width``). When drawing large amounts of lines, this is faster than using individual :ref:`draw_line()<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline()<class_CanvasItem_method_draw_multiline>` instead. See also :ref:`draw_polygon()<class_CanvasItem_method_draw_polygon>`.
 
 If ``width`` is negative, it will be ignored and the polyline will be drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the polyline will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
@@ -1087,7 +1089,7 @@ If ``width`` is negative, it will be ignored and the polyline will be drawn usin
 
 |void| **draw_polyline_colors**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_polyline_colors>`
 
-Draws interconnected line segments with a uniform ``width``, point-by-point coloring, and optional antialiasing (supported only for positive ``width``). Colors assigned to line points match by index between ``points`` and ``colors``, i.e. each line segment is filled with a gradient between the colors of the endpoints. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws interconnected line segments with a uniform ``width``, point-by-point coloring, and optional antialiasing (supported only for positive ``width``). Colors assigned to line points match by index between ``points`` and ``colors``, i.e. each line segment is filled with a gradient between the colors of the endpoints. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line()<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline_colors()<class_CanvasItem_method_draw_multiline_colors>` instead. See also :ref:`draw_polygon()<class_CanvasItem_method_draw_polygon>`.
 
 If ``width`` is negative, it will be ignored and the polyline will be drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the polyline will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
@@ -1101,7 +1103,7 @@ If ``width`` is negative, it will be ignored and the polyline will be drawn usin
 
 |void| **draw_primitive**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>`, texture\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_CanvasItem_method_draw_primitive>`
 
-Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle, and 4 points for a quad. If 0 points or more than 4 points are specified, nothing will be drawn and an error message will be printed. See also :ref:`draw_line<class_CanvasItem_method_draw_line>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`, :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, and :ref:`draw_rect<class_CanvasItem_method_draw_rect>`.
+Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle, and 4 points for a quad. If 0 points or more than 4 points are specified, nothing will be drawn and an error message will be printed. See also :ref:`draw_line()<class_CanvasItem_method_draw_line>`, :ref:`draw_polyline()<class_CanvasItem_method_draw_polyline>`, :ref:`draw_polygon()<class_CanvasItem_method_draw_polygon>`, and :ref:`draw_rect()<class_CanvasItem_method_draw_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1113,7 +1115,7 @@ Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for
 
 |void| **draw_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`, color\: :ref:`Color<class_Color>`, filled\: :ref:`bool<class_bool>` = true, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_rect>`
 
-Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with the ``color`` specified. If ``filled`` is ``false``, the rectangle will be drawn as a stroke with the ``color`` and ``width`` specified. See also :ref:`draw_texture_rect<class_CanvasItem_method_draw_texture_rect>`.
+Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with the ``color`` specified. If ``filled`` is ``false``, the rectangle will be drawn as a stroke with the ``color`` and ``width`` specified. See also :ref:`draw_texture_rect()<class_CanvasItem_method_draw_texture_rect>`.
 
 If ``width`` is negative, then two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the lines will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
@@ -1186,7 +1188,7 @@ Draws ``text`` using the specified ``font`` at the ``pos`` (bottom-left corner u
 
 
 
-See also :ref:`Font.draw_string<class_Font_method_draw_string>`.
+See also :ref:`Font.draw_string()<class_Font_method_draw_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1234,7 +1236,7 @@ Draws a texture at a given position.
 
 |void| **draw_texture_rect**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, tile\: :ref:`bool<class_bool>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), transpose\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_texture_rect>`
 
-Draws a textured rectangle at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped. See also :ref:`draw_rect<class_CanvasItem_method_draw_rect>` and :ref:`draw_texture_rect_region<class_CanvasItem_method_draw_texture_rect_region>`.
+Draws a textured rectangle at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped. See also :ref:`draw_rect()<class_CanvasItem_method_draw_rect>` and :ref:`draw_texture_rect_region()<class_CanvasItem_method_draw_texture_rect_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1246,7 +1248,7 @@ Draws a textured rectangle at a given position, optionally modulated by a color.
 
 |void| **draw_texture_rect_region**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), transpose\: :ref:`bool<class_bool>` = false, clip_uv\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_CanvasItem_method_draw_texture_rect_region>`
 
-Draws a textured rectangle from a texture's region (specified by ``src_rect``) at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped. See also :ref:`draw_texture_rect<class_CanvasItem_method_draw_texture_rect>`.
+Draws a textured rectangle from a texture's region (specified by ``src_rect``) at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped. See also :ref:`draw_texture_rect()<class_CanvasItem_method_draw_texture_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1320,7 +1322,7 @@ Returns the transform from the coordinate system of the canvas, this item is in,
 
 Returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that this **CanvasItem** is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
 
-\ **Note:** For screen-space coordinates (e.g. when using a non-embedded :ref:`Popup<class_Popup>`), you can use :ref:`DisplayServer.mouse_get_position<class_DisplayServer_method_mouse_get_position>`.
+\ **Note:** For screen-space coordinates (e.g. when using a non-embedded :ref:`Popup<class_Popup>`), you can use :ref:`DisplayServer.mouse_get_position()<class_DisplayServer_method_mouse_get_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1382,7 +1384,7 @@ Returns the mouse's position in this **CanvasItem** using the local coordinate s
 
 Returns the transform of this **CanvasItem** in global screen coordinates (i.e. taking window position into account). Mostly useful for editor plugins.
 
-Equals to :ref:`get_global_transform<class_CanvasItem_method_get_global_transform>` if the window is embedded (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
+Equals to :ref:`get_global_transform()<class_CanvasItem_method_get_global_transform>` if the window is embedded (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1490,7 +1492,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 :ref:`bool<class_bool>` **is_visible_in_tree**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_is_visible_in_tree>`
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is therefore not drawn (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is therefore not drawn (see :ref:`_draw()<class_CanvasItem_private_method__draw>`).
 
 Visibility is checked only in parent nodes that inherit from **CanvasItem**, :ref:`CanvasLayer<class_CanvasLayer>`, and :ref:`Window<class_Window>`. If the parent is of any other type (such as :ref:`Node<class_Node>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, or :ref:`Node3D<class_Node3D>`), it is assumed to be visible.
 
@@ -1508,7 +1510,7 @@ Visibility is checked only in parent nodes that inherit from **CanvasItem**, :re
 
 Transforms ``viewport_point`` from the viewport's coordinates to this node's local coordinates.
 
-For the opposite operation, use :ref:`get_global_transform_with_canvas<class_CanvasItem_method_get_global_transform_with_canvas>`.
+For the opposite operation, use :ref:`get_global_transform_with_canvas()<class_CanvasItem_method_get_global_transform_with_canvas>`.
 
 ::
 
@@ -1550,7 +1552,7 @@ Internally, the node is moved to the bottom of parent's child list. The method h
 
 |void| **queue_redraw**\ (\ ) :ref:`🔗<class_CanvasItem_method_queue_redraw>`
 
-Queues the **CanvasItem** to redraw. During idle time, if **CanvasItem** is visible, :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` is sent and :ref:`_draw<class_CanvasItem_private_method__draw>` is called. This only occurs **once** per frame, even if this method has been called multiple times.
+Queues the **CanvasItem** to redraw. During idle time, if **CanvasItem** is visible, :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` is sent and :ref:`_draw()<class_CanvasItem_private_method__draw>` is called. This only occurs **once** per frame, even if this method has been called multiple times.
 
 .. rst-class:: classref-item-separator
 
@@ -1562,7 +1564,7 @@ Queues the **CanvasItem** to redraw. During idle time, if **CanvasItem** is visi
 
 |void| **set_instance_shader_parameter**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_CanvasItem_method_set_instance_shader_parameter>`
 
-Set the value of a shader uniform for this instance only (`per-instance uniform <../tutorials/shaders/shader_reference/shading_language.html#per-instance-uniforms>`__). See also :ref:`ShaderMaterial.set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>` to assign a uniform on all instances using the same :ref:`ShaderMaterial<class_ShaderMaterial>`.
+Set the value of a shader uniform for this instance only (`per-instance uniform <../tutorials/shaders/shader_reference/shading_language.html#per-instance-uniforms>`__). See also :ref:`ShaderMaterial.set_shader_parameter()<class_ShaderMaterial_method_set_shader_parameter>` to assign a uniform on all instances using the same :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
 \ **Note:** For a shader uniform to be assignable on a per-instance basis, it *must* be defined with ``instance uniform ...`` rather than ``uniform ...`` in the shader code.
 

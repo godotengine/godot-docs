@@ -19,7 +19,7 @@ Description
 
 The **Basis** built-in :ref:`Variant<class_Variant>` type is a 3×3 `matrix <https://en.wikipedia.org/wiki/Matrix_(mathematics)>`__ used to represent 3D rotation, scale, and shear. It is frequently used within a :ref:`Transform3D<class_Transform3D>`.
 
-A **Basis** is composed by 3 axis vectors, each representing a column of the matrix: :ref:`x<class_Basis_property_x>`, :ref:`y<class_Basis_property_y>`, and :ref:`z<class_Basis_property_z>`. The length of each axis (:ref:`Vector3.length<class_Vector3_method_length>`) influences the basis's scale, while the direction of all axes influence the rotation. Usually, these axes are perpendicular to one another. However, when you rotate any axis individually, the basis becomes sheared. Applying a sheared basis to a 3D model will make the model appear distorted.
+A **Basis** is composed by 3 axis vectors, each representing a column of the matrix: :ref:`x<class_Basis_property_x>`, :ref:`y<class_Basis_property_y>`, and :ref:`z<class_Basis_property_z>`. The length of each axis (:ref:`Vector3.length()<class_Vector3_method_length>`) influences the basis's scale, while the direction of all axes influence the rotation. Usually, these axes are perpendicular to one another. However, when you rotate any axis individually, the basis becomes sheared. Applying a sheared basis to a 3D model will make the model appear distorted.
 
 A **Basis** is:
 
@@ -27,9 +27,9 @@ A **Basis** is:
 
 - **Normalized** if the length of every axis is ``1.0``.
 
-- **Uniform** if all axes share the same length (see :ref:`get_scale<class_Basis_method_get_scale>`).
+- **Uniform** if all axes share the same length (see :ref:`get_scale()<class_Basis_method_get_scale>`).
 
-- **Orthonormal** if it is both orthogonal and normalized, which allows it to only represent rotations (see :ref:`orthonormalized<class_Basis_method_orthonormalized>`).
+- **Orthonormal** if it is both orthogonal and normalized, which allows it to only represent rotations (see :ref:`orthonormalized()<class_Basis_method_orthonormalized>`).
 
 - **Conformal** if it is both orthogonal and uniform, which ensures it is not distorted.
 
@@ -330,7 +330,7 @@ Constructs a **Basis** as a copy of the given **Basis**.
 
 Constructs a **Basis** that only represents rotation, rotated around the ``axis`` by the given ``angle``, in radians. The axis must be a normalized vector.
 
-\ **Note:** This is the same as using :ref:`rotated<class_Basis_method_rotated>` on the :ref:`IDENTITY<class_Basis_constant_IDENTITY>` basis. With more than one angle consider using :ref:`from_euler<class_Basis_method_from_euler>`, instead.
+\ **Note:** This is the same as using :ref:`rotated()<class_Basis_method_rotated>` on the :ref:`IDENTITY<class_Basis_constant_IDENTITY>` basis. With more than one angle consider using :ref:`from_euler()<class_Basis_method_from_euler>`, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -371,7 +371,7 @@ Method Descriptions
 
 Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this basis's matrix. For advanced math, this number can be used to determine a few attributes:
 
-- If the determinant is exactly ``0.0``, the basis is not invertible (see :ref:`inverse<class_Basis_method_inverse>`).
+- If the determinant is exactly ``0.0``, the basis is not invertible (see :ref:`inverse()<class_Basis_method_inverse>`).
 
 - If the determinant is a negative number, the basis represents a negative scale.
 
@@ -414,7 +414,7 @@ Constructs a new **Basis** that only represents rotation from the given :ref:`Ve
 
 
 
-The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): the basis rotates first around the Y axis (yaw), then X (pitch), and lastly Z (roll). When using the opposite method :ref:`get_euler<class_Basis_method_get_euler>`, this order is reversed.
+The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): the basis rotates first around the Y axis (yaw), then X (pitch), and lastly Z (roll). When using the opposite method :ref:`get_euler()<class_Basis_method_get_euler>`, this order is reversed.
 
 .. rst-class:: classref-item-separator
 
@@ -469,11 +469,11 @@ Returns this basis's rotation as a :ref:`Vector3<class_Vector3>` of `Euler angle
 
 - The :ref:`Vector3.z<class_Vector3_property_z>` contains the angle around the :ref:`z<class_Basis_property_z>` axis (roll).
 
-The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): Z (roll) is calculated first, then X (pitch), and lastly Y (yaw). When using the opposite method :ref:`from_euler<class_Basis_method_from_euler>`, this order is reversed.
+The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): Z (roll) is calculated first, then X (pitch), and lastly Y (yaw). When using the opposite method :ref:`from_euler()<class_Basis_method_from_euler>`, this order is reversed.
 
-\ **Note:** For this method to return correctly, the basis needs to be *orthonormal* (see :ref:`orthonormalized<class_Basis_method_orthonormalized>`).
+\ **Note:** For this method to return correctly, the basis needs to be *orthonormal* (see :ref:`orthonormalized()<class_Basis_method_orthonormalized>`).
 
-\ **Note:** Euler angles are much more intuitive but are not suitable for 3D math. Because of this, consider using the :ref:`get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>` method instead, which returns a :ref:`Quaternion<class_Quaternion>`.
+\ **Note:** Euler angles are much more intuitive but are not suitable for 3D math. Because of this, consider using the :ref:`get_rotation_quaternion()<class_Basis_method_get_rotation_quaternion>` method instead, which returns a :ref:`Quaternion<class_Quaternion>`.
 
 \ **Note:** In the Inspector dock, a basis's rotation is often displayed in Euler angles (in degrees), as is the case with the :ref:`Node3D.rotation<class_Node3D_property_rotation>` property.
 
@@ -489,7 +489,7 @@ The order of each consecutive rotation can be changed with ``order`` (see :ref:`
 
 Returns this basis's rotation as a :ref:`Quaternion<class_Quaternion>`.
 
-\ **Note:** Quaternions are much more suitable for 3D math but are less intuitive. For user interfaces, consider using the :ref:`get_euler<class_Basis_method_get_euler>` method, which returns Euler angles.
+\ **Note:** Quaternions are much more suitable for 3D math but are less intuitive. For user interfaces, consider using the :ref:`get_euler()<class_Basis_method_get_euler>` method, which returns Euler angles.
 
 .. rst-class:: classref-item-separator
 
@@ -534,7 +534,7 @@ Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>
 
 
 
-\ **Note:** If the value returned by :ref:`determinant<class_Basis_method_determinant>` is negative, the scale is also negative.
+\ **Note:** If the value returned by :ref:`determinant()<class_Basis_method_determinant>` is negative, the scale is also negative.
 
 .. rst-class:: classref-item-separator
 
@@ -570,7 +570,7 @@ Returns ``true`` if this basis is conformal. A conformal basis is both *orthogon
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ b\: :ref:`Basis<class_Basis>`\ ) |const| :ref:`🔗<class_Basis_method_is_equal_approx>`
 
-Returns ``true`` if this basis and ``b`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on all vector components.
+Returns ``true`` if this basis and ``b`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` on all vector components.
 
 .. rst-class:: classref-item-separator
 
@@ -582,7 +582,7 @@ Returns ``true`` if this basis and ``b`` are approximately equal, by calling :re
 
 :ref:`bool<class_bool>` **is_finite**\ (\ ) |const| :ref:`🔗<class_Basis_method_is_finite>`
 
-Returns ``true`` if this basis is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on all vector components.
+Returns ``true`` if this basis is finite, by calling :ref:`@GlobalScope.is_finite()<class_@GlobalScope_method_is_finite>` on all vector components.
 
 .. rst-class:: classref-item-separator
 
@@ -598,7 +598,7 @@ Creates a new **Basis** with a rotation such that the forward axis (-Z) points t
 
 By default, the -Z axis (camera forward) is treated as forward (implies +X is right). If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forward (implies +X is left) and points toward the ``target`` position.
 
-The up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the forward axis. The returned basis is orthonormalized (see :ref:`orthonormalized<class_Basis_method_orthonormalized>`).
+The up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the forward axis. The returned basis is orthonormalized (see :ref:`orthonormalized()<class_Basis_method_orthonormalized>`).
 
 The ``target`` and the ``up`` cannot be :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, and shouldn't be colinear to avoid unintended rotation around local Z axis.
 
@@ -652,7 +652,7 @@ It is often useful to call this method to avoid rounding errors on a rotating ba
 
 Returns a copy of this basis rotated around the given ``axis`` by the given ``angle`` (in radians).
 
-The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized<class_Vector3_method_normalized>`). If ``angle`` is positive, the basis is rotated counter-clockwise around the axis.
+The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized()<class_Vector3_method_normalized>`). If ``angle`` is positive, the basis is rotated counter-clockwise around the axis.
 
 
 .. tabs::
@@ -757,7 +757,7 @@ Performs a spherical-linear interpolation with the ``to`` basis, given a ``weigh
 
 :ref:`float<class_float>` **tdotx**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Basis_method_tdotx>`
 
-Returns the transposed dot product between ``with`` and the :ref:`x<class_Basis_property_x>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
+Returns the transposed dot product between ``with`` and the :ref:`x<class_Basis_property_x>` axis (see :ref:`transposed()<class_Basis_method_transposed>`).
 
 This is equivalent to ``basis.x.dot(vector)``.
 
@@ -771,7 +771,7 @@ This is equivalent to ``basis.x.dot(vector)``.
 
 :ref:`float<class_float>` **tdoty**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Basis_method_tdoty>`
 
-Returns the transposed dot product between ``with`` and the :ref:`y<class_Basis_property_y>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
+Returns the transposed dot product between ``with`` and the :ref:`y<class_Basis_property_y>` axis (see :ref:`transposed()<class_Basis_method_transposed>`).
 
 This is equivalent to ``basis.y.dot(vector)``.
 
@@ -785,7 +785,7 @@ This is equivalent to ``basis.y.dot(vector)``.
 
 :ref:`float<class_float>` **tdotz**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Basis_method_tdotz>`
 
-Returns the transposed dot product between ``with`` and the :ref:`z<class_Basis_property_z>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
+Returns the transposed dot product between ``with`` and the :ref:`z<class_Basis_property_z>` axis (see :ref:`transposed()<class_Basis_method_transposed>`).
 
 This is equivalent to ``basis.z.dot(vector)``.
 
@@ -849,7 +849,7 @@ Operator Descriptions
 
 Returns ``true`` if the components of both **Basis** matrices are not equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Basis_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 
@@ -954,7 +954,7 @@ Divides all components of the **Basis** by the given :ref:`int<class_int>`. This
 
 Returns ``true`` if the components of both **Basis** matrices are exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Basis_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 

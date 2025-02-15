@@ -299,7 +299,7 @@ Border width for the top border.
 - |void| **set_corner_detail**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_corner_detail**\ (\ )
 
-This sets the number of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value, you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
+This sets the number of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value, you should take the corner radius (:ref:`set_corner_radius_all()<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
 
 For corner radii less than 10, ``4`` or ``5`` should be enough. For corner radii less than 30, values between ``8`` and ``12`` should be enough.
 

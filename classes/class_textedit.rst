@@ -605,7 +605,7 @@ Emitted when the text changes.
 
 **text_set**\ (\ ) :ref:`🔗<class_TextEdit_signal_text_set>`
 
-Emitted when :ref:`clear<class_TextEdit_method_clear>` is called or :ref:`text<class_TextEdit_property_text>` is set.
+Emitted when :ref:`clear()<class_TextEdit_method_clear>` is called or :ref:`text<class_TextEdit_property_text>` is set.
 
 .. rst-class:: classref-section-separator
 
@@ -1072,7 +1072,7 @@ enum **GutterType**: :ref:`🔗<enum_TextEdit_GutterType>`
 
 :ref:`GutterType<enum_TextEdit_GutterType>` **GUTTER_TYPE_STRING** = ``0``
 
-When a gutter is set to string using :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`, it is used to contain text set via the :ref:`set_line_gutter_text<class_TextEdit_method_set_line_gutter_text>` method.
+When a gutter is set to string using :ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`, it is used to contain text set via the :ref:`set_line_gutter_text()<class_TextEdit_method_set_line_gutter_text>` method.
 
 .. _class_TextEdit_constant_GUTTER_TYPE_ICON:
 
@@ -1080,7 +1080,7 @@ When a gutter is set to string using :ref:`set_gutter_type<class_TextEdit_method
 
 :ref:`GutterType<enum_TextEdit_GutterType>` **GUTTER_TYPE_ICON** = ``1``
 
-When a gutter is set to icon using :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`, it is used to contain an icon set via the :ref:`set_line_gutter_icon<class_TextEdit_method_set_line_gutter_icon>` method.
+When a gutter is set to icon using :ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`, it is used to contain an icon set via the :ref:`set_line_gutter_icon()<class_TextEdit_method_set_line_gutter_icon>` method.
 
 .. _class_TextEdit_constant_GUTTER_TYPE_CUSTOM:
 
@@ -1088,7 +1088,7 @@ When a gutter is set to icon using :ref:`set_gutter_type<class_TextEdit_method_s
 
 :ref:`GutterType<enum_TextEdit_GutterType>` **GUTTER_TYPE_CUSTOM** = ``2``
 
-When a gutter is set to custom using :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`, it is used to contain custom visuals controlled by a callback method set via the :ref:`set_gutter_custom_draw<class_TextEdit_method_set_gutter_custom_draw>` method.
+When a gutter is set to custom using :ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`, it is used to contain custom visuals controlled by a callback method set via the :ref:`set_gutter_custom_draw()<class_TextEdit_method_set_gutter_custom_draw>` method.
 
 .. rst-class:: classref-section-separator
 
@@ -1216,7 +1216,7 @@ If ``false``, the context menu ignores mouse location.
 - |void| **set_multiple_carets_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_multiple_carets_enabled**\ (\ )
 
-If ``true``, multiple carets are allowed. Left-clicking with :kbd:`Alt` adds a new caret. See :ref:`add_caret<class_TextEdit_method_add_caret>` and :ref:`get_caret_count<class_TextEdit_method_get_caret_count>`.
+If ``true``, multiple carets are allowed. Left-clicking with :kbd:`Alt` adds a new caret. See :ref:`add_caret()<class_TextEdit_method_add_caret>` and :ref:`get_caret_count()<class_TextEdit_method_get_caret_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1679,7 +1679,7 @@ If there is a vertical scrollbar, this determines the current vertical scroll va
 
 If ``true``, text can be selected.
 
-If ``false``, text can not be selected by the user or by the :ref:`select<class_TextEdit_method_select>` or :ref:`select_all<class_TextEdit_method_select_all>` methods.
+If ``false``, text can not be selected by the user or by the :ref:`select()<class_TextEdit_method_select>` or :ref:`select_all()<class_TextEdit_method_select_all>` methods.
 
 .. rst-class:: classref-item-separator
 
@@ -2028,7 +2028,7 @@ Applies text from the `Input Method Editor <https://en.wikipedia.org/wiki/Input_
 
 |void| **backspace**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_backspace>`
 
-Called when the user presses the backspace key. Can be overridden with :ref:`_backspace<class_TextEdit_private_method__backspace>`.
+Called when the user presses the backspace key. Can be overridden with :ref:`_backspace()<class_TextEdit_private_method__backspace>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2040,7 +2040,7 @@ Called when the user presses the backspace key. Can be overridden with :ref:`_ba
 
 |void| **begin_complex_operation**\ (\ ) :ref:`🔗<class_TextEdit_method_begin_complex_operation>`
 
-Starts a multipart edit. All edits will be treated as one action until :ref:`end_complex_operation<class_TextEdit_method_end_complex_operation>` is called.
+Starts a multipart edit. All edits will be treated as one action until :ref:`end_complex_operation()<class_TextEdit_method_end_complex_operation>` is called.
 
 .. rst-class:: classref-item-separator
 
@@ -2052,7 +2052,7 @@ Starts a multipart edit. All edits will be treated as one action until :ref:`end
 
 |void| **begin_multicaret_edit**\ (\ ) :ref:`🔗<class_TextEdit_method_begin_multicaret_edit>`
 
-Starts an edit for multiple carets. The edit must be ended with :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`. Multicaret edits can be used to edit text at multiple carets and delay merging the carets until the end, so the caret indexes aren't affected immediately. :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>` can be nested, and the merge will happen at the last :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`.
+Starts an edit for multiple carets. The edit must be ended with :ref:`end_multicaret_edit()<class_TextEdit_method_end_multicaret_edit>`. Multicaret edits can be used to edit text at multiple carets and delay merging the carets until the end, so the caret indexes aren't affected immediately. :ref:`begin_multicaret_edit()<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit()<class_TextEdit_method_end_multicaret_edit>` can be nested, and the merge will happen at the last :ref:`end_multicaret_edit()<class_TextEdit_method_end_multicaret_edit>`.
 
 ::
 
@@ -2127,9 +2127,9 @@ Collapse all carets in the given range to the ``from_line`` and ``from_column`` 
 
 \ ``inclusive`` applies to both ends.
 
-If :ref:`is_in_mulitcaret_edit<class_TextEdit_method_is_in_mulitcaret_edit>` is ``true``, carets that are collapsed will be ``true`` for :ref:`multicaret_edit_ignore_caret<class_TextEdit_method_multicaret_edit_ignore_caret>`.
+If :ref:`is_in_mulitcaret_edit()<class_TextEdit_method_is_in_mulitcaret_edit>` is ``true``, carets that are collapsed will be ``true`` for :ref:`multicaret_edit_ignore_caret()<class_TextEdit_method_multicaret_edit_ignore_caret>`.
 
-\ :ref:`merge_overlapping_carets<class_TextEdit_method_merge_overlapping_carets>` will be called if any carets were collapsed.
+\ :ref:`merge_overlapping_carets()<class_TextEdit_method_merge_overlapping_carets>` will be called if any carets were collapsed.
 
 .. rst-class:: classref-item-separator
 
@@ -2141,7 +2141,7 @@ If :ref:`is_in_mulitcaret_edit<class_TextEdit_method_is_in_mulitcaret_edit>` is 
 
 |void| **copy**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_copy>`
 
-Copies the current text selection. Can be overridden with :ref:`_copy<class_TextEdit_private_method__copy>`.
+Copies the current text selection. Can be overridden with :ref:`_copy()<class_TextEdit_private_method__copy>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2153,7 +2153,7 @@ Copies the current text selection. Can be overridden with :ref:`_copy<class_Text
 
 |void| **cut**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_cut>`
 
-Cut's the current selection. Can be overridden with :ref:`_cut<class_TextEdit_private_method__cut>`.
+Cut's the current selection. Can be overridden with :ref:`_cut()<class_TextEdit_private_method__cut>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2189,7 +2189,7 @@ Deselects the current selection.
 
 |void| **end_action**\ (\ ) :ref:`🔗<class_TextEdit_method_end_action>`
 
-Marks the end of steps in the current action started with :ref:`start_action<class_TextEdit_method_start_action>`.
+Marks the end of steps in the current action started with :ref:`start_action()<class_TextEdit_method_start_action>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2201,7 +2201,7 @@ Marks the end of steps in the current action started with :ref:`start_action<cla
 
 |void| **end_complex_operation**\ (\ ) :ref:`🔗<class_TextEdit_method_end_complex_operation>`
 
-Ends a multipart edit, started with :ref:`begin_complex_operation<class_TextEdit_method_begin_complex_operation>`. If called outside a complex operation, the current operation is pushed onto the undo/redo stack.
+Ends a multipart edit, started with :ref:`begin_complex_operation()<class_TextEdit_method_begin_complex_operation>`. If called outside a complex operation, the current operation is pushed onto the undo/redo stack.
 
 .. rst-class:: classref-item-separator
 
@@ -2213,7 +2213,7 @@ Ends a multipart edit, started with :ref:`begin_complex_operation<class_TextEdit
 
 |void| **end_multicaret_edit**\ (\ ) :ref:`🔗<class_TextEdit_method_end_multicaret_edit>`
 
-Ends an edit for multiple carets, that was started with :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>`. If this was the last :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>` and :ref:`merge_overlapping_carets<class_TextEdit_method_merge_overlapping_carets>` was called, carets will be merged.
+Ends an edit for multiple carets, that was started with :ref:`begin_multicaret_edit()<class_TextEdit_method_begin_multicaret_edit>`. If this was the last :ref:`end_multicaret_edit()<class_TextEdit_method_end_multicaret_edit>` and :ref:`merge_overlapping_carets()<class_TextEdit_method_merge_overlapping_carets>` was called, carets will be merged.
 
 .. rst-class:: classref-item-separator
 
@@ -2261,9 +2261,9 @@ Returns the caret pixel draw position.
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **get_caret_index_edit_order**\ (\ ) :ref:`🔗<class_TextEdit_method_get_caret_index_edit_order>`
 
-**Deprecated:** Carets no longer need to be edited in any specific order. If the carets need to be sorted, use :ref:`get_sorted_carets<class_TextEdit_method_get_sorted_carets>` instead.
+**Deprecated:** Carets no longer need to be edited in any specific order. If the carets need to be sorted, use :ref:`get_sorted_carets()<class_TextEdit_method_get_sorted_carets>` instead.
 
-Returns a list of caret indexes in their edit order, this done from bottom to top. Edit order refers to the way actions such as :ref:`insert_text_at_caret<class_TextEdit_method_insert_text_at_caret>` are applied.
+Returns a list of caret indexes in their edit order, this done from bottom to top. Edit order refers to the way actions such as :ref:`insert_text_at_caret()<class_TextEdit_method_insert_text_at_caret>` are applied.
 
 .. rst-class:: classref-item-separator
 
@@ -2383,7 +2383,7 @@ Returns the :ref:`HScrollBar<class_HScrollBar>` used by **TextEdit**.
 
 :ref:`int<class_int>` **get_indent_level**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_indent_level>`
 
-Returns the indent level of the given line. This is the number of spaces and tabs at the beginning of the line, with the tabs taking the tab size into account (see :ref:`get_tab_size<class_TextEdit_method_get_tab_size>`).
+Returns the indent level of the given line. This is the number of spaces and tabs at the beginning of the line, with the tabs taking the tab size into account (see :ref:`get_tab_size()<class_TextEdit_method_get_tab_size>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2395,7 +2395,7 @@ Returns the indent level of the given line. This is the number of spaces and tab
 
 :ref:`int<class_int>` **get_last_full_visible_line**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_last_full_visible_line>`
 
-Returns the last visible line. Use :ref:`get_last_full_visible_line_wrap_index<class_TextEdit_method_get_last_full_visible_line_wrap_index>` for the wrap index.
+Returns the last visible line. Use :ref:`get_last_full_visible_line_wrap_index()<class_TextEdit_method_get_last_full_visible_line_wrap_index>` for the wrap index.
 
 .. rst-class:: classref-item-separator
 
@@ -2483,7 +2483,7 @@ Returns the number of lines in the text.
 
 :ref:`Texture2D<class_Texture2D>` **get_line_gutter_icon**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_gutter_icon>`
 
-Returns the icon currently in ``gutter`` at ``line``. This only works when the gutter type is :ref:`GUTTER_TYPE_ICON<class_TextEdit_constant_GUTTER_TYPE_ICON>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
+Returns the icon currently in ``gutter`` at ``line``. This only works when the gutter type is :ref:`GUTTER_TYPE_ICON<class_TextEdit_constant_GUTTER_TYPE_ICON>` (see :ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2519,7 +2519,7 @@ Returns the metadata currently in ``gutter`` at ``line``.
 
 :ref:`String<class_String>` **get_line_gutter_text**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_gutter_text>`
 
-Returns the text currently in ``gutter`` at ``line``. This only works when the gutter type is :ref:`GUTTER_TYPE_STRING<class_TextEdit_constant_GUTTER_TYPE_STRING>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
+Returns the text currently in ``gutter`` at ``line``. This only works when the gutter type is :ref:`GUTTER_TYPE_STRING<class_TextEdit_constant_GUTTER_TYPE_STRING>` (see :ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2547,7 +2547,7 @@ Returns the maximum value of the line height among all lines.
 
 Returns an :ref:`Array<class_Array>` of line ranges where ``x`` is the first line and ``y`` is the last line. All lines within these ranges will have a caret on them or be part of a selection. Each line will only be part of one line range, even if it has multiple carets on it.
 
-If a selection's end column (:ref:`get_selection_to_column<class_TextEdit_method_get_selection_to_column>`) is at column ``0``, that line will not be included. If a selection begins on the line after another selection ends and ``merge_adjacent`` is ``true``, or they begin and end on the same line, one line range will include both selections.
+If a selection's end column (:ref:`get_selection_to_column()<class_TextEdit_method_get_selection_to_column>`) is at column ``0``, that line will not be included. If a selection begins on the line after another selection ends and ``merge_adjacent`` is ``true``, or they begin and end on the same line, one line range will include both selections.
 
 .. rst-class:: classref-item-separator
 
@@ -2595,7 +2595,7 @@ Returns the number of times the given line is wrapped.
 
 :ref:`int<class_int>` **get_line_wrap_index_at_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_wrap_index_at_column>`
 
-Returns the wrap index of the given column on the given line. This ranges from ``0`` to :ref:`get_line_wrap_count<class_TextEdit_method_get_line_wrap_count>`.
+Returns the wrap index of the given column on the given line. This ranges from ``0`` to :ref:`get_line_wrap_count()<class_TextEdit_method_get_line_wrap_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2714,7 +2714,7 @@ Returns the number of lines that may be drawn on the minimap.
 
 :ref:`Vector2i<class_Vector2i>` **get_next_visible_line_index_offset_from**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>`, visible_amount\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_next_visible_line_index_offset_from>`
 
-Similar to :ref:`get_next_visible_line_offset_from<class_TextEdit_method_get_next_visible_line_offset_from>`, but takes into account the line wrap indexes. In the returned vector, ``x`` is the line, ``y`` is the wrap index.
+Similar to :ref:`get_next_visible_line_offset_from()<class_TextEdit_method_get_next_visible_line_offset_from>`, but takes into account the line wrap indexes. In the returned vector, ``x`` is the line, ``y`` is the wrap index.
 
 .. rst-class:: classref-item-separator
 
@@ -2740,7 +2740,7 @@ Returns the count to the next visible line from ``line`` to ``line + visible_amo
 
 Returns the local position for the given ``line`` and ``column``. If ``x`` or ``y`` of the returned vector equal ``-1``, the position is outside of the viewable area of the control.
 
-\ **Note:** The Y position corresponds to the bottom side of the line. Use :ref:`get_rect_at_line_column<class_TextEdit_method_get_rect_at_line_column>` to get the top side position.
+\ **Note:** The Y position corresponds to the bottom side of the line. Use :ref:`get_rect_at_line_column()<class_TextEdit_method_get_rect_at_line_column>` to get the top side position.
 
 .. rst-class:: classref-item-separator
 
@@ -2754,7 +2754,7 @@ Returns the local position for the given ``line`` and ``column``. If ``x`` or ``
 
 Returns the local position and size for the grapheme at the given ``line`` and ``column``. If ``x`` or ``y`` position of the returned rect equal ``-1``, the position is outside of the viewable area of the control.
 
-\ **Note:** The Y position of the returned rect corresponds to the top side of the line, unlike :ref:`get_pos_at_line_column<class_TextEdit_method_get_pos_at_line_column>` which returns the bottom side.
+\ **Note:** The Y position of the returned rect corresponds to the top side of the line, unlike :ref:`get_pos_at_line_column()<class_TextEdit_method_get_pos_at_line_column>` which returns the bottom side.
 
 .. rst-class:: classref-item-separator
 
@@ -2766,7 +2766,7 @@ Returns the local position and size for the grapheme at the given ``line`` and `
 
 :ref:`int<class_int>` **get_saved_version**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_saved_version>`
 
-Returns the last tagged saved version from :ref:`tag_saved_version<class_TextEdit_method_tag_saved_version>`.
+Returns the last tagged saved version from :ref:`tag_saved_version()<class_TextEdit_method_tag_saved_version>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2816,7 +2816,7 @@ If ``include_edges`` is ``false``, the position must be inside the selection and
 
 :ref:`int<class_int>` **get_selection_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_column>`
 
-**Deprecated:** Use :ref:`get_selection_origin_column<class_TextEdit_method_get_selection_origin_column>` instead.
+**Deprecated:** Use :ref:`get_selection_origin_column()<class_TextEdit_method_get_selection_origin_column>` instead.
 
 Returns the original start column of the selection.
 
@@ -2854,7 +2854,7 @@ Returns the selection begin line. Returns the caret line if there is no selectio
 
 :ref:`int<class_int>` **get_selection_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_line>`
 
-**Deprecated:** Use :ref:`get_selection_origin_line<class_TextEdit_method_get_selection_origin_line>` instead.
+**Deprecated:** Use :ref:`get_selection_origin_line()<class_TextEdit_method_get_selection_origin_line>` instead.
 
 Returns the original start line of the selection.
 
@@ -2930,7 +2930,7 @@ Returns the selection end line. Returns the caret line if there is no selection.
 
 Returns the carets sorted by selection beginning from lowest line and column to highest (from top to bottom of text).
 
-If ``include_ignored_carets`` is ``false``, carets from :ref:`multicaret_edit_ignore_caret<class_TextEdit_method_multicaret_edit_ignore_caret>` will be ignored.
+If ``include_ignored_carets`` is ``false``, carets from :ref:`multicaret_edit_ignore_caret()<class_TextEdit_method_multicaret_edit_ignore_caret>` will be ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -2966,7 +2966,7 @@ Returns the total width of all gutters and internal padding.
 
 :ref:`int<class_int>` **get_total_visible_line_count**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_total_visible_line_count>`
 
-Returns the total number of lines in the text. This includes wrapped lines and excludes folded lines. If :ref:`wrap_mode<class_TextEdit_property_wrap_mode>` is set to :ref:`LINE_WRAPPING_NONE<class_TextEdit_constant_LINE_WRAPPING_NONE>` and no lines are folded (see :ref:`CodeEdit.is_line_folded<class_CodeEdit_method_is_line_folded>`) then this is equivalent to :ref:`get_line_count<class_TextEdit_method_get_line_count>`. See :ref:`get_visible_line_count_in_range<class_TextEdit_method_get_visible_line_count_in_range>` for a limited range of lines.
+Returns the total number of lines in the text. This includes wrapped lines and excludes folded lines. If :ref:`wrap_mode<class_TextEdit_property_wrap_mode>` is set to :ref:`LINE_WRAPPING_NONE<class_TextEdit_constant_LINE_WRAPPING_NONE>` and no lines are folded (see :ref:`CodeEdit.is_line_folded()<class_CodeEdit_method_is_line_folded>`) then this is equivalent to :ref:`get_line_count()<class_TextEdit_method_get_line_count>`. See :ref:`get_visible_line_count_in_range()<class_TextEdit_method_get_visible_line_count_in_range>` for a limited range of lines.
 
 .. rst-class:: classref-item-separator
 
@@ -3014,7 +3014,7 @@ Returns the number of lines that can visually fit, rounded down, based on this c
 
 :ref:`int<class_int>` **get_visible_line_count_in_range**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_visible_line_count_in_range>`
 
-Returns the total number of lines between ``from_line`` and ``to_line`` (inclusive) in the text. This includes wrapped lines and excludes folded lines. If the range covers all lines it is equivalent to :ref:`get_total_visible_line_count<class_TextEdit_method_get_total_visible_line_count>`.
+Returns the total number of lines between ``from_line`` and ``to_line`` (inclusive) in the text. This includes wrapped lines and excludes folded lines. If the range covers all lines it is equivalent to :ref:`get_total_visible_line_count()<class_TextEdit_method_get_total_visible_line_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3152,7 +3152,7 @@ Returns ``true`` if the caret of the selection is after the selection origin. Th
 
 Returns ``true`` if the caret is visible, ``false`` otherwise. A caret will be considered hidden if it is outside the scrollable area when scrolling is enabled.
 
-\ **Note:** :ref:`is_caret_visible<class_TextEdit_method_is_caret_visible>` does not account for a caret being off-screen if it is still within the scrollable area. It will return ``true`` even if the caret is off-screen as long as it meets **TextEdit**'s own conditions for being visible. This includes uses of :ref:`scroll_fit_content_width<class_TextEdit_property_scroll_fit_content_width>` and :ref:`scroll_fit_content_height<class_TextEdit_property_scroll_fit_content_height>` that cause the **TextEdit** to expand beyond the viewport's bounds.
+\ **Note:** :ref:`is_caret_visible()<class_TextEdit_method_is_caret_visible>` does not account for a caret being off-screen if it is still within the scrollable area. It will return ``true`` even if the caret is off-screen as long as it meets **TextEdit**'s own conditions for being visible. This includes uses of :ref:`scroll_fit_content_width<class_TextEdit_property_scroll_fit_content_width>` and :ref:`scroll_fit_content_height<class_TextEdit_property_scroll_fit_content_height>` that cause the **TextEdit** to expand beyond the viewport's bounds.
 
 .. rst-class:: classref-item-separator
 
@@ -3176,7 +3176,7 @@ Returns ``true`` if the user is dragging their mouse for scrolling, selecting, o
 
 :ref:`bool<class_bool>` **is_gutter_clickable**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_gutter_clickable>`
 
-Returns ``true`` if the gutter at the given index is clickable. See :ref:`set_gutter_clickable<class_TextEdit_method_set_gutter_clickable>`.
+Returns ``true`` if the gutter at the given index is clickable. See :ref:`set_gutter_clickable()<class_TextEdit_method_set_gutter_clickable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3188,7 +3188,7 @@ Returns ``true`` if the gutter at the given index is clickable. See :ref:`set_gu
 
 :ref:`bool<class_bool>` **is_gutter_drawn**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_gutter_drawn>`
 
-Returns ``true`` if the gutter at the given index is currently drawn. See :ref:`set_gutter_draw<class_TextEdit_method_set_gutter_draw>`.
+Returns ``true`` if the gutter at the given index is currently drawn. See :ref:`set_gutter_draw()<class_TextEdit_method_set_gutter_draw>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3200,7 +3200,7 @@ Returns ``true`` if the gutter at the given index is currently drawn. See :ref:`
 
 :ref:`bool<class_bool>` **is_gutter_overwritable**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_gutter_overwritable>`
 
-Returns ``true`` if the gutter at the given index is overwritable. See :ref:`set_gutter_overwritable<class_TextEdit_method_set_gutter_overwritable>`.
+Returns ``true`` if the gutter at the given index is overwritable. See :ref:`set_gutter_overwritable()<class_TextEdit_method_set_gutter_overwritable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3212,7 +3212,7 @@ Returns ``true`` if the gutter at the given index is overwritable. See :ref:`set
 
 :ref:`bool<class_bool>` **is_in_mulitcaret_edit**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_is_in_mulitcaret_edit>`
 
-Returns ``true`` if a :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>` has been called and :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>` has not yet been called.
+Returns ``true`` if a :ref:`begin_multicaret_edit()<class_TextEdit_method_begin_multicaret_edit>` has been called and :ref:`end_multicaret_edit()<class_TextEdit_method_end_multicaret_edit>` has not yet been called.
 
 .. rst-class:: classref-item-separator
 
@@ -3224,7 +3224,7 @@ Returns ``true`` if a :ref:`begin_multicaret_edit<class_TextEdit_method_begin_mu
 
 :ref:`bool<class_bool>` **is_line_gutter_clickable**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_line_gutter_clickable>`
 
-Returns ``true`` if the gutter at the given index on the given line is clickable. See :ref:`set_line_gutter_clickable<class_TextEdit_method_set_line_gutter_clickable>`.
+Returns ``true`` if the gutter at the given index on the given line is clickable. See :ref:`set_line_gutter_clickable()<class_TextEdit_method_set_line_gutter_clickable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3248,7 +3248,7 @@ Returns if the given line is wrapped.
 
 :ref:`bool<class_bool>` **is_menu_visible**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_is_menu_visible>`
 
-Returns ``true`` if the menu is visible. Use this instead of ``get_menu().visible`` to improve performance (so the creation of the menu is avoided). See :ref:`get_menu<class_TextEdit_method_get_menu>`.
+Returns ``true`` if the menu is visible. Use this instead of ``get_menu().visible`` to improve performance (so the creation of the menu is avoided). See :ref:`get_menu()<class_TextEdit_method_get_menu>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3272,7 +3272,7 @@ Returns ``true`` if the mouse is over a selection. If ``edges`` is ``true``, the
 
 :ref:`bool<class_bool>` **is_overtype_mode_enabled**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_is_overtype_mode_enabled>`
 
-Returns ``true`` if overtype mode is enabled. See :ref:`set_overtype_mode_enabled<class_TextEdit_method_set_overtype_mode_enabled>`.
+Returns ``true`` if overtype mode is enabled. See :ref:`set_overtype_mode_enabled()<class_TextEdit_method_set_overtype_mode_enabled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3296,7 +3296,7 @@ Executes a given action as defined in the :ref:`MenuItems<enum_TextEdit_MenuItem
 
 |void| **merge_gutters**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_merge_gutters>`
 
-Merge the gutters from ``from_line`` into ``to_line``. Only overwritable gutters will be copied. See :ref:`set_gutter_overwritable<class_TextEdit_method_set_gutter_overwritable>`.
+Merge the gutters from ``from_line`` into ``to_line``. Only overwritable gutters will be copied. See :ref:`set_gutter_overwritable()<class_TextEdit_method_set_gutter_overwritable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3310,7 +3310,7 @@ Merge the gutters from ``from_line`` into ``to_line``. Only overwritable gutters
 
 Merges any overlapping carets. Will favor the newest caret, or the caret with a selection.
 
-If :ref:`is_in_mulitcaret_edit<class_TextEdit_method_is_in_mulitcaret_edit>` is ``true``, the merge will be queued to happen at the end of the multicaret edit. See :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`.
+If :ref:`is_in_mulitcaret_edit()<class_TextEdit_method_is_in_mulitcaret_edit>` is ``true``, the merge will be queued to happen at the end of the multicaret edit. See :ref:`begin_multicaret_edit()<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit()<class_TextEdit_method_end_multicaret_edit>`.
 
 \ **Note:** This is not called when a caret changes position but after certain actions, so it is possible to get into a state where carets overlap.
 
@@ -3324,7 +3324,7 @@ If :ref:`is_in_mulitcaret_edit<class_TextEdit_method_is_in_mulitcaret_edit>` is 
 
 :ref:`bool<class_bool>` **multicaret_edit_ignore_caret**\ (\ caret_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_multicaret_edit_ignore_caret>`
 
-Returns ``true`` if the given ``caret_index`` should be ignored as part of a multicaret edit. See :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`. Carets that should be ignored are ones that were part of removed text and will likely be merged at the end of the edit, or carets that were added during the edit.
+Returns ``true`` if the given ``caret_index`` should be ignored as part of a multicaret edit. See :ref:`begin_multicaret_edit()<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit()<class_TextEdit_method_end_multicaret_edit>`. Carets that should be ignored are ones that were part of removed text and will likely be merged at the end of the edit, or carets that were added during the edit.
 
 It is recommended to ``continue`` within a loop iterating on multiple carets if a caret should be ignored.
 
@@ -3338,7 +3338,7 @@ It is recommended to ``continue`` within a loop iterating on multiple carets if 
 
 |void| **paste**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_paste>`
 
-Paste at the current location. Can be overridden with :ref:`_paste<class_TextEdit_private_method__paste>`.
+Paste at the current location. Can be overridden with :ref:`_paste()<class_TextEdit_private_method__paste>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3479,7 +3479,7 @@ Selects text from ``origin_line`` and ``origin_column`` to ``caret_line`` and ``
 
 If :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>` is ``false``, no selection will occur.
 
-\ **Note:** If supporting multiple carets this will not check for any overlap. See :ref:`merge_overlapping_carets<class_TextEdit_method_merge_overlapping_carets>`.
+\ **Note:** If supporting multiple carets this will not check for any overlap. See :ref:`merge_overlapping_carets()<class_TextEdit_method_merge_overlapping_carets>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3521,7 +3521,7 @@ Moves the caret to the specified ``column`` index.
 
 If ``adjust_viewport`` is ``true``, the viewport will center at the caret position after the move occurs.
 
-\ **Note:** If supporting multiple carets this will not check for any overlap. See :ref:`merge_overlapping_carets<class_TextEdit_method_merge_overlapping_carets>`.
+\ **Note:** If supporting multiple carets this will not check for any overlap. See :ref:`merge_overlapping_carets()<class_TextEdit_method_merge_overlapping_carets>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3533,15 +3533,15 @@ If ``adjust_viewport`` is ``true``, the viewport will center at the caret positi
 
 |void| **set_caret_line**\ (\ line\: :ref:`int<class_int>`, adjust_viewport\: :ref:`bool<class_bool>` = true, can_be_hidden\: :ref:`bool<class_bool>` = true, wrap_index\: :ref:`int<class_int>` = 0, caret_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_set_caret_line>`
 
-Moves the caret to the specified ``line`` index. The caret column will be moved to the same visual position it was at the last time :ref:`set_caret_column<class_TextEdit_method_set_caret_column>` was called, or clamped to the end of the line.
+Moves the caret to the specified ``line`` index. The caret column will be moved to the same visual position it was at the last time :ref:`set_caret_column()<class_TextEdit_method_set_caret_column>` was called, or clamped to the end of the line.
 
 If ``adjust_viewport`` is ``true``, the viewport will center at the caret position after the move occurs.
 
 If ``can_be_hidden`` is ``true``, the specified ``line`` can be hidden.
 
-If ``wrap_index`` is ``-1``, the caret column will be clamped to the ``line``'s length. If ``wrap_index`` is greater than ``-1``, the column will be moved to attempt to match the visual x position on the line's ``wrap_index`` to the position from the last time :ref:`set_caret_column<class_TextEdit_method_set_caret_column>` was called.
+If ``wrap_index`` is ``-1``, the caret column will be clamped to the ``line``'s length. If ``wrap_index`` is greater than ``-1``, the column will be moved to attempt to match the visual x position on the line's ``wrap_index`` to the position from the last time :ref:`set_caret_column()<class_TextEdit_method_set_caret_column>` was called.
 
-\ **Note:** If supporting multiple carets this will not check for any overlap. See :ref:`merge_overlapping_carets<class_TextEdit_method_merge_overlapping_carets>`.
+\ **Note:** If supporting multiple carets this will not check for any overlap. See :ref:`merge_overlapping_carets()<class_TextEdit_method_merge_overlapping_carets>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3553,7 +3553,7 @@ If ``wrap_index`` is ``-1``, the caret column will be clamped to the ``line``'s 
 
 |void| **set_gutter_clickable**\ (\ gutter\: :ref:`int<class_int>`, clickable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_clickable>`
 
-If ``true``, the mouse cursor will change to a pointing hand (:ref:`Control.CURSOR_POINTING_HAND<class_Control_constant_CURSOR_POINTING_HAND>`) when hovering over the gutter at the given index. See :ref:`is_gutter_clickable<class_TextEdit_method_is_gutter_clickable>` and :ref:`set_line_gutter_clickable<class_TextEdit_method_set_line_gutter_clickable>`.
+If ``true``, the mouse cursor will change to a pointing hand (:ref:`Control.CURSOR_POINTING_HAND<class_Control_constant_CURSOR_POINTING_HAND>`) when hovering over the gutter at the given index. See :ref:`is_gutter_clickable()<class_TextEdit_method_is_gutter_clickable>` and :ref:`set_line_gutter_clickable()<class_TextEdit_method_set_line_gutter_clickable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3565,7 +3565,7 @@ If ``true``, the mouse cursor will change to a pointing hand (:ref:`Control.CURS
 
 |void| **set_gutter_custom_draw**\ (\ column\: :ref:`int<class_int>`, draw_callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_custom_draw>`
 
-Set a custom draw callback for the gutter at the given index. ``draw_callback`` must take the following arguments: A line index :ref:`int<class_int>`, a gutter index :ref:`int<class_int>`, and an area :ref:`Rect2<class_Rect2>`. This callback only works when the gutter type is :ref:`GUTTER_TYPE_CUSTOM<class_TextEdit_constant_GUTTER_TYPE_CUSTOM>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
+Set a custom draw callback for the gutter at the given index. ``draw_callback`` must take the following arguments: A line index :ref:`int<class_int>`, a gutter index :ref:`int<class_int>`, and an area :ref:`Rect2<class_Rect2>`. This callback only works when the gutter type is :ref:`GUTTER_TYPE_CUSTOM<class_TextEdit_constant_GUTTER_TYPE_CUSTOM>` (see :ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`).
 
 .. rst-class:: classref-item-separator
 
@@ -3577,7 +3577,7 @@ Set a custom draw callback for the gutter at the given index. ``draw_callback`` 
 
 |void| **set_gutter_draw**\ (\ gutter\: :ref:`int<class_int>`, draw\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_draw>`
 
-If ``true``, the gutter at the given index is drawn. The gutter type (:ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`) determines how it is drawn. See :ref:`is_gutter_drawn<class_TextEdit_method_is_gutter_drawn>`.
+If ``true``, the gutter at the given index is drawn. The gutter type (:ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`) determines how it is drawn. See :ref:`is_gutter_drawn()<class_TextEdit_method_is_gutter_drawn>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3601,7 +3601,7 @@ Sets the name of the gutter at the given index.
 
 |void| **set_gutter_overwritable**\ (\ gutter\: :ref:`int<class_int>`, overwritable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_overwritable>`
 
-If ``true``, the line data of the gutter at the given index can be overridden when using :ref:`merge_gutters<class_TextEdit_method_merge_gutters>`. See :ref:`is_gutter_overwritable<class_TextEdit_method_is_gutter_overwritable>`.
+If ``true``, the line data of the gutter at the given index can be overridden when using :ref:`merge_gutters()<class_TextEdit_method_merge_gutters>`. See :ref:`is_gutter_overwritable()<class_TextEdit_method_is_gutter_overwritable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3699,7 +3699,7 @@ Sets the custom background color of the given line. If transparent, this color i
 
 |void| **set_line_gutter_clickable**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, clickable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_line_gutter_clickable>`
 
-If ``clickable`` is ``true``, makes the ``gutter`` on the given ``line`` clickable. This is like :ref:`set_gutter_clickable<class_TextEdit_method_set_gutter_clickable>`, but for a single line. If :ref:`is_gutter_clickable<class_TextEdit_method_is_gutter_clickable>` is ``true``, this will not have any effect. See :ref:`is_line_gutter_clickable<class_TextEdit_method_is_line_gutter_clickable>` and :ref:`gutter_clicked<class_TextEdit_signal_gutter_clicked>`.
+If ``clickable`` is ``true``, makes the ``gutter`` on the given ``line`` clickable. This is like :ref:`set_gutter_clickable()<class_TextEdit_method_set_gutter_clickable>`, but for a single line. If :ref:`is_gutter_clickable()<class_TextEdit_method_is_gutter_clickable>` is ``true``, this will not have any effect. See :ref:`is_line_gutter_clickable()<class_TextEdit_method_is_line_gutter_clickable>` and :ref:`gutter_clicked<class_TextEdit_signal_gutter_clicked>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3711,7 +3711,7 @@ If ``clickable`` is ``true``, makes the ``gutter`` on the given ``line`` clickab
 
 |void| **set_line_gutter_icon**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_TextEdit_method_set_line_gutter_icon>`
 
-Sets the icon for ``gutter`` on ``line`` to ``icon``. This only works when the gutter type is :ref:`GUTTER_TYPE_ICON<class_TextEdit_constant_GUTTER_TYPE_ICON>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
+Sets the icon for ``gutter`` on ``line`` to ``icon``. This only works when the gutter type is :ref:`GUTTER_TYPE_ICON<class_TextEdit_constant_GUTTER_TYPE_ICON>` (see :ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`).
 
 .. rst-class:: classref-item-separator
 
@@ -3747,7 +3747,7 @@ Sets the metadata for ``gutter`` on ``line`` to ``metadata``.
 
 |void| **set_line_gutter_text**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TextEdit_method_set_line_gutter_text>`
 
-Sets the text for ``gutter`` on ``line`` to ``text``. This only works when the gutter type is :ref:`GUTTER_TYPE_STRING<class_TextEdit_constant_GUTTER_TYPE_STRING>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
+Sets the text for ``gutter`` on ``line`` to ``text``. This only works when the gutter type is :ref:`GUTTER_TYPE_STRING<class_TextEdit_constant_GUTTER_TYPE_STRING>` (see :ref:`set_gutter_type()<class_TextEdit_method_set_gutter_type>`).
 
 .. rst-class:: classref-item-separator
 
@@ -3759,7 +3759,7 @@ Sets the text for ``gutter`` on ``line`` to ``text``. This only works when the g
 
 |void| **set_overtype_mode_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_overtype_mode_enabled>`
 
-If ``true``, enables overtype mode. In this mode, typing overrides existing text instead of inserting text. The :ref:`ProjectSettings.input/ui_text_toggle_insert_mode<class_ProjectSettings_property_input/ui_text_toggle_insert_mode>` action toggles overtype mode. See :ref:`is_overtype_mode_enabled<class_TextEdit_method_is_overtype_mode_enabled>`.
+If ``true``, enables overtype mode. In this mode, typing overrides existing text instead of inserting text. The :ref:`ProjectSettings.input/ui_text_toggle_insert_mode<class_ProjectSettings_property_input/ui_text_toggle_insert_mode>` action toggles overtype mode. See :ref:`is_overtype_mode_enabled()<class_TextEdit_method_is_overtype_mode_enabled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3771,7 +3771,7 @@ If ``true``, enables overtype mode. In this mode, typing overrides existing text
 
 |void| **set_search_flags**\ (\ flags\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_set_search_flags>`
 
-Sets the search ``flags``. This is used with :ref:`set_search_text<class_TextEdit_method_set_search_text>` to highlight occurrences of the searched text. Search flags can be specified from the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
+Sets the search ``flags``. This is used with :ref:`set_search_text()<class_TextEdit_method_set_search_text>` to highlight occurrences of the searched text. Search flags can be specified from the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3783,7 +3783,7 @@ Sets the search ``flags``. This is used with :ref:`set_search_text<class_TextEdi
 
 |void| **set_search_text**\ (\ search_text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TextEdit_method_set_search_text>`
 
-Sets the search text. See :ref:`set_search_flags<class_TextEdit_method_set_search_flags>`.
+Sets the search text. See :ref:`set_search_flags()<class_TextEdit_method_set_search_flags>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3823,7 +3823,7 @@ Sets the selection origin line to the ``line`` for the given ``caret_index``. If
 
 If ``can_be_hidden`` is ``false``, The line will be set to the nearest unhidden line below or above.
 
-If ``wrap_index`` is ``-1``, the selection origin column will be clamped to the ``line``'s length. If ``wrap_index`` is greater than ``-1``, the column will be moved to attempt to match the visual x position on the line's ``wrap_index`` to the position from the last time :ref:`set_selection_origin_column<class_TextEdit_method_set_selection_origin_column>` or :ref:`select<class_TextEdit_method_select>` was called.
+If ``wrap_index`` is ``-1``, the selection origin column will be clamped to the ``line``'s length. If ``wrap_index`` is greater than ``-1``, the column will be moved to attempt to match the visual x position on the line's ``wrap_index`` to the position from the last time :ref:`set_selection_origin_column()<class_TextEdit_method_set_selection_origin_column>` or :ref:`select()<class_TextEdit_method_select>` was called.
 
 .. rst-class:: classref-item-separator
 
@@ -3873,7 +3873,7 @@ Moves a selection and a caret for the next occurrence of the current selection. 
 
 Starts an action, will end the current action if ``action`` is different.
 
-An action will also end after a call to :ref:`end_action<class_TextEdit_method_end_action>`, after :ref:`ProjectSettings.gui/timers/text_edit_idle_detect_sec<class_ProjectSettings_property_gui/timers/text_edit_idle_detect_sec>` is triggered or a new undoable step outside the :ref:`start_action<class_TextEdit_method_start_action>` and :ref:`end_action<class_TextEdit_method_end_action>` calls.
+An action will also end after a call to :ref:`end_action()<class_TextEdit_method_end_action>`, after :ref:`ProjectSettings.gui/timers/text_edit_idle_detect_sec<class_ProjectSettings_property_gui/timers/text_edit_idle_detect_sec>` is triggered or a new undoable step outside the :ref:`start_action()<class_TextEdit_method_start_action>` and :ref:`end_action()<class_TextEdit_method_end_action>` calls.
 
 .. rst-class:: classref-item-separator
 

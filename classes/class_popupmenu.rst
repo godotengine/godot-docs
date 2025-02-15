@@ -451,7 +451,7 @@ The number of items currently in the list.
 
 If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
 
-\ **Note:** If **PopupMenu** is linked to :ref:`StatusIndicator<class_StatusIndicator>`, :ref:`MenuBar<class_MenuBar>`, or another **PopupMenu** item it can use native menu regardless of this property, use :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>` to check it.
+\ **Note:** If **PopupMenu** is linked to :ref:`StatusIndicator<class_StatusIndicator>`, :ref:`MenuBar<class_MenuBar>`, or another **PopupMenu** item it can use native menu regardless of this property, use :ref:`is_native_menu()<class_PopupMenu_method_is_native_menu>` to check it.
 
 .. rst-class:: classref-item-separator
 
@@ -520,9 +520,9 @@ Returns ``true`` if an item was successfully activated.
 
 Adds a new checkable item with text ``label``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator()<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
-\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked()<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. rst-class:: classref-item-separator
 
@@ -538,7 +538,7 @@ Adds a new checkable item and assigns the specified :ref:`Shortcut<class_Shortcu
 
 An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
 
-\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked()<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. rst-class:: classref-item-separator
 
@@ -552,9 +552,9 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 Adds a new checkable item with text ``label`` and icon ``texture``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator()<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
-\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked()<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. rst-class:: classref-item-separator
 
@@ -570,7 +570,7 @@ Adds a new checkable item and assigns the specified :ref:`Shortcut<class_Shortcu
 
 An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
 
-\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked()<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. rst-class:: classref-item-separator
 
@@ -584,7 +584,7 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 Adds a new item with text ``label`` and icon ``texture``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator()<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 .. rst-class:: classref-item-separator
 
@@ -596,7 +596,7 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
 
 |void| **add_icon_radio_check_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1, accel\: :ref:`Key<enum_@GlobalScope_Key>` = 0\ ) :ref:`🔗<class_PopupMenu_method_add_icon_radio_check_item>`
 
-Same as :ref:`add_icon_check_item<class_PopupMenu_method_add_icon_check_item>`, but uses a radio check button.
+Same as :ref:`add_icon_check_item()<class_PopupMenu_method_add_icon_check_item>`, but uses a radio check button.
 
 .. rst-class:: classref-item-separator
 
@@ -608,7 +608,7 @@ Same as :ref:`add_icon_check_item<class_PopupMenu_method_add_icon_check_item>`, 
 
 |void| **add_icon_radio_check_shortcut**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, id\: :ref:`int<class_int>` = -1, global\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PopupMenu_method_add_icon_radio_check_shortcut>`
 
-Same as :ref:`add_icon_check_shortcut<class_PopupMenu_method_add_icon_check_shortcut>`, but uses a radio check button.
+Same as :ref:`add_icon_check_shortcut()<class_PopupMenu_method_add_icon_check_shortcut>`, but uses a radio check button.
 
 .. rst-class:: classref-item-separator
 
@@ -638,9 +638,9 @@ If ``allow_echo`` is ``true``, the shortcut can be activated with echo events.
 
 Adds a new item with text ``label``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator()<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
-\ **Note:** The provided ``id`` is used only in :ref:`id_pressed<class_PopupMenu_signal_id_pressed>` and :ref:`id_focused<class_PopupMenu_signal_id_focused>` signals. It's not related to the ``index`` arguments in e.g. :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>`.
+\ **Note:** The provided ``id`` is used only in :ref:`id_pressed<class_PopupMenu_signal_id_pressed>` and :ref:`id_focused<class_PopupMenu_signal_id_focused>` signals. It's not related to the ``index`` arguments in e.g. :ref:`set_item_checked()<class_PopupMenu_method_set_item_checked>`.
 
 .. rst-class:: classref-item-separator
 
@@ -656,7 +656,7 @@ Adds a new multistate item with text ``label``.
 
 Contrarily to normal binary items, multistate items can have more than two states, as defined by ``max_states``. The default value is defined by ``default_state``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator()<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 ::
 
@@ -674,7 +674,7 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
                         print("Third state")
             )
 
-\ **Note:** Multistate items don't update their state automatically and must be done manually. See :ref:`toggle_item_multistate<class_PopupMenu_method_toggle_item_multistate>`, :ref:`set_item_multistate<class_PopupMenu_method_set_item_multistate>` and :ref:`get_item_multistate<class_PopupMenu_method_get_item_multistate>` for more info on how to control it.
+\ **Note:** Multistate items don't update their state automatically and must be done manually. See :ref:`toggle_item_multistate()<class_PopupMenu_method_toggle_item_multistate>`, :ref:`set_item_multistate()<class_PopupMenu_method_set_item_multistate>` and :ref:`get_item_multistate()<class_PopupMenu_method_get_item_multistate>` for more info on how to control it.
 
 .. rst-class:: classref-item-separator
 
@@ -688,9 +688,9 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
 
 Adds a new radio check button with text ``label``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator()<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
-\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked()<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. rst-class:: classref-item-separator
 
@@ -706,7 +706,7 @@ Adds a new radio check button and assigns a :ref:`Shortcut<class_Shortcut>` to i
 
 An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
 
-\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked()<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. rst-class:: classref-item-separator
 
@@ -748,7 +748,7 @@ If ``allow_echo`` is ``true``, the shortcut can be activated with echo events.
 
 |void| **add_submenu_item**\ (\ label\: :ref:`String<class_String>`, submenu\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_PopupMenu_method_add_submenu_item>`
 
-**Deprecated:** Prefer using :ref:`add_submenu_node_item<class_PopupMenu_method_add_submenu_node_item>` instead.
+**Deprecated:** Prefer using :ref:`add_submenu_node_item()<class_PopupMenu_method_add_submenu_node_item>` instead.
 
 Adds an item that will act as a submenu of the parent **PopupMenu** node when clicked. The ``submenu`` argument must be the name of an existing **PopupMenu** that has been added as a child to this node. This submenu will be shown when the item is clicked, hovered for long enough, or activated using the ``ui_select`` or ``ui_right`` input actions.
 
@@ -804,7 +804,7 @@ Returns the index of the currently focused item. Returns ``-1`` if no item is fo
 
 :ref:`Key<enum_@GlobalScope_Key>` **get_item_accelerator**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_accelerator>`
 
-Returns the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The return value is an integer which is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`). If no accelerator is defined for the specified ``index``, :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` returns ``0`` (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`).
+Returns the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The return value is an integer which is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`). If no accelerator is defined for the specified ``index``, :ref:`get_item_accelerator()<class_PopupMenu_method_get_item_accelerator>` returns ``0`` (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`).
 
 .. rst-class:: classref-item-separator
 
@@ -900,7 +900,7 @@ Returns item's text language code.
 
 :ref:`Variant<class_Variant>` **get_item_metadata**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_metadata>`
 
-Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
+Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_metadata()<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
 
 .. rst-class:: classref-item-separator
 
@@ -948,9 +948,9 @@ Returns the :ref:`Shortcut<class_Shortcut>` associated with the item at the give
 
 :ref:`String<class_String>` **get_item_submenu**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_submenu>`
 
-**Deprecated:** Prefer using :ref:`get_item_submenu_node<class_PopupMenu_method_get_item_submenu_node>` instead.
+**Deprecated:** Prefer using :ref:`get_item_submenu_node()<class_PopupMenu_method_get_item_submenu_node>` instead.
 
-Returns the submenu name of the item at the given ``index``. See :ref:`add_submenu_item<class_PopupMenu_method_add_submenu_item>` for more info on how to add a submenu.
+Returns the submenu name of the item at the given ``index``. See :ref:`add_submenu_item()<class_PopupMenu_method_add_submenu_item>` for more info on how to add a submenu.
 
 .. rst-class:: classref-item-separator
 
@@ -962,7 +962,7 @@ Returns the submenu name of the item at the given ``index``. See :ref:`add_subme
 
 :ref:`PopupMenu<class_PopupMenu>` **get_item_submenu_node**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_submenu_node>`
 
-Returns the submenu of the item at the given ``index``, or ``null`` if no submenu was added. See :ref:`add_submenu_node_item<class_PopupMenu_method_add_submenu_node_item>` for more info on how to add a submenu.
+Returns the submenu of the item at the given ``index``, or ``null`` if no submenu was added. See :ref:`add_submenu_node_item()<class_PopupMenu_method_add_submenu_node_item>` for more info on how to add a submenu.
 
 .. rst-class:: classref-item-separator
 
@@ -1038,7 +1038,7 @@ Returns ``true`` if the item at the given ``index`` is checked.
 
 Returns ``true`` if the item at the given ``index`` is disabled. When it is disabled it can't be selected, or its action invoked.
 
-See :ref:`set_item_disabled<class_PopupMenu_method_set_item_disabled>` for more info on how to disable an item.
+See :ref:`set_item_disabled()<class_PopupMenu_method_set_item_disabled>` for more info on how to disable an item.
 
 .. rst-class:: classref-item-separator
 
@@ -1064,7 +1064,7 @@ Returns ``true`` if the item at the given ``index`` has radio button-style check
 
 :ref:`bool<class_bool>` **is_item_separator**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_separator>`
 
-Returns ``true`` if the item is a separator. If it is, it will be displayed as a line. See :ref:`add_separator<class_PopupMenu_method_add_separator>` for more info on how to add a separator.
+Returns ``true`` if the item is a separator. If it is, it will be displayed as a line. See :ref:`add_separator()<class_PopupMenu_method_add_separator>` for more info on how to add a separator.
 
 .. rst-class:: classref-item-separator
 
@@ -1300,7 +1300,7 @@ Sets language code of item's text used for line-breaking and text shaping algori
 
 |void| **set_item_metadata**\ (\ index\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_metadata>`
 
-Sets the metadata of an item, which may be of any type. You can later get it with :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>`, which provides a simple way of assigning context data to items.
+Sets the metadata of an item, which may be of any type. You can later get it with :ref:`get_item_metadata()<class_PopupMenu_method_get_item_metadata>`, which provides a simple way of assigning context data to items.
 
 .. rst-class:: classref-item-separator
 
@@ -1312,7 +1312,7 @@ Sets the metadata of an item, which may be of any type. You can later get it wit
 
 |void| **set_item_multistate**\ (\ index\: :ref:`int<class_int>`, state\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_multistate>`
 
-Sets the state of a multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
+Sets the state of a multistate item. See :ref:`add_multistate_item()<class_PopupMenu_method_add_multistate_item>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1324,7 +1324,7 @@ Sets the state of a multistate item. See :ref:`add_multistate_item<class_PopupMe
 
 |void| **set_item_multistate_max**\ (\ index\: :ref:`int<class_int>`, max_states\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_multistate_max>`
 
-Sets the max states of a multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
+Sets the max states of a multistate item. See :ref:`add_multistate_item()<class_PopupMenu_method_add_multistate_item>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1360,7 +1360,7 @@ Disables the :ref:`Shortcut<class_Shortcut>` of the item at the given ``index``.
 
 |void| **set_item_submenu**\ (\ index\: :ref:`int<class_int>`, submenu\: :ref:`String<class_String>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_submenu>`
 
-**Deprecated:** Prefer using :ref:`set_item_submenu_node<class_PopupMenu_method_set_item_submenu_node>` instead.
+**Deprecated:** Prefer using :ref:`set_item_submenu_node()<class_PopupMenu_method_set_item_submenu_node>` instead.
 
 Sets the submenu of the item at the given ``index``. The submenu is the name of a child **PopupMenu** node that would be shown when the item is clicked.
 
@@ -1434,7 +1434,7 @@ Toggles the check state of the item at the given ``index``.
 
 |void| **toggle_item_multistate**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_toggle_item_multistate>`
 
-Cycle to the next state of a multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
+Cycle to the next state of a multistate item. See :ref:`add_multistate_item()<class_PopupMenu_method_add_multistate_item>` for details.
 
 .. rst-class:: classref-section-separator
 
@@ -1451,7 +1451,7 @@ Theme Property Descriptions
 
 :ref:`Color<class_Color>` **font_accelerator_color** = ``Color(0.7, 0.7, 0.7, 0.8)`` :ref:`🔗<class_PopupMenu_theme_color_font_accelerator_color>`
 
-The text :ref:`Color<class_Color>` used for shortcuts and accelerators that show next to the menu item name when defined. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+The text :ref:`Color<class_Color>` used for shortcuts and accelerators that show next to the menu item name when defined. See :ref:`get_item_accelerator()<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 .. rst-class:: classref-item-separator
 
@@ -1511,7 +1511,7 @@ The tint of text outline of the menu item.
 
 :ref:`Color<class_Color>` **font_separator_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_PopupMenu_theme_color_font_separator_color>`
 
-:ref:`Color<class_Color>` used for labeled separators' text. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
+:ref:`Color<class_Color>` used for labeled separators' text. See :ref:`add_separator()<class_PopupMenu_method_add_separator>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1547,7 +1547,7 @@ The horizontal space between the item's elements.
 
 :ref:`int<class_int>` **icon_max_width** = ``0`` :ref:`🔗<class_PopupMenu_theme_constant_icon_max_width>`
 
-The maximum allowed width of the item's icon. This limit is applied on top of the default size of the icon, but before the value set with :ref:`set_item_icon_max_width<class_PopupMenu_method_set_item_icon_max_width>`. The height is adjusted according to the icon's ratio.
+The maximum allowed width of the item's icon. This limit is applied on top of the default size of the icon, but before the value set with :ref:`set_item_icon_max_width()<class_PopupMenu_method_set_item_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 
@@ -1813,7 +1813,7 @@ Font size of the menu items.
 
 :ref:`StyleBox<class_StyleBox>` **labeled_separator_left** :ref:`🔗<class_PopupMenu_theme_style_labeled_separator_left>`
 
-:ref:`StyleBox<class_StyleBox>` for the left side of labeled separator. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
+:ref:`StyleBox<class_StyleBox>` for the left side of labeled separator. See :ref:`add_separator()<class_PopupMenu_method_add_separator>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1825,7 +1825,7 @@ Font size of the menu items.
 
 :ref:`StyleBox<class_StyleBox>` **labeled_separator_right** :ref:`🔗<class_PopupMenu_theme_style_labeled_separator_right>`
 
-:ref:`StyleBox<class_StyleBox>` for the right side of labeled separator. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
+:ref:`StyleBox<class_StyleBox>` for the right side of labeled separator. See :ref:`add_separator()<class_PopupMenu_method_add_separator>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1849,7 +1849,7 @@ Font size of the menu items.
 
 :ref:`StyleBox<class_StyleBox>` **separator** :ref:`🔗<class_PopupMenu_theme_style_separator>`
 
-:ref:`StyleBox<class_StyleBox>` used for the separators. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
+:ref:`StyleBox<class_StyleBox>` used for the separators. See :ref:`add_separator()<class_PopupMenu_method_add_separator>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

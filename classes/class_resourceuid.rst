@@ -85,7 +85,7 @@ Method Descriptions
 
 Adds a new UID value which is mapped to the given resource path.
 
-Fails with an error if the UID already exists, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand, or use :ref:`set_id<class_ResourceUID_method_set_id>` instead.
+Fails with an error if the UID already exists, so be sure to check :ref:`has_id()<class_ResourceUID_method_has_id>` beforehand, or use :ref:`set_id()<class_ResourceUID_method_set_id>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -99,7 +99,7 @@ Fails with an error if the UID already exists, so be sure to check :ref:`has_id<
 
 Generates a random resource UID which is guaranteed to be unique within the list of currently loaded UIDs.
 
-In order for this UID to be registered, you must call :ref:`add_id<class_ResourceUID_method_add_id>` or :ref:`set_id<class_ResourceUID_method_set_id>`.
+In order for this UID to be registered, you must call :ref:`add_id()<class_ResourceUID_method_add_id>` or :ref:`set_id()<class_ResourceUID_method_set_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -113,7 +113,7 @@ In order for this UID to be registered, you must call :ref:`add_id<class_Resourc
 
 Returns the path that the given UID value refers to.
 
-Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand.
+Fails with an error if the UID does not exist, so be sure to check :ref:`has_id()<class_ResourceUID_method_has_id>` beforehand.
 
 .. rst-class:: classref-item-separator
 
@@ -151,7 +151,7 @@ Converts the given UID to a ``uid://`` string value.
 
 Removes a loaded UID value from the cache.
 
-Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand.
+Fails with an error if the UID does not exist, so be sure to check :ref:`has_id()<class_ResourceUID_method_has_id>` beforehand.
 
 .. rst-class:: classref-item-separator
 
@@ -165,7 +165,7 @@ Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<
 
 Updates the resource path of an existing UID.
 
-Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand, or use :ref:`add_id<class_ResourceUID_method_add_id>` instead.
+Fails with an error if the UID does not exist, so be sure to check :ref:`has_id()<class_ResourceUID_method_has_id>` beforehand, or use :ref:`add_id()<class_ResourceUID_method_add_id>` instead.
 
 .. rst-class:: classref-item-separator
 

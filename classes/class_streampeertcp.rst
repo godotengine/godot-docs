@@ -115,7 +115,7 @@ Method Descriptions
 
 Opens the TCP socket, and binds it to the specified local address.
 
-This method is generally not needed, and only used to force the subsequent call to :ref:`connect_to_host<class_StreamPeerTCP_method_connect_to_host>` to use the specified ``host`` and ``port`` as source address. This can be desired in some NAT punchthrough techniques, or when forcing the source network interface.
+This method is generally not needed, and only used to force the subsequent call to :ref:`connect_to_host()<class_StreamPeerTCP_method_connect_to_host>` to use the specified ``host`` and ``port`` as source address. This can be desired in some NAT punchthrough techniques, or when forcing the source network interface.
 
 .. rst-class:: classref-item-separator
 
@@ -199,7 +199,7 @@ Returns the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status
 
 :ref:`Error<enum_@GlobalScope_Error>` **poll**\ (\ ) :ref:`🔗<class_StreamPeerTCP_method_poll>`
 
-Poll the socket, updating its state. See :ref:`get_status<class_StreamPeerTCP_method_get_status>`.
+Poll the socket, updating its state. See :ref:`get_status()<class_StreamPeerTCP_method_get_status>`.
 
 .. rst-class:: classref-item-separator
 

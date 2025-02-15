@@ -134,7 +134,7 @@ The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only 
 
 If ``true``, indicates that this shape is a trigger. For Godot, this means that the shape should be a child of an Area3D node.
 
-This is the only variable not used in the :ref:`to_node<class_GLTFPhysicsShape_method_to_node>` method, it's intended to be used alongside when deciding where to add the generated node as a child.
+This is the only variable not used in the :ref:`to_node()<class_GLTFPhysicsShape_method_to_node>` method, it's intended to be used alongside when deciding where to add the generated node as a child.
 
 .. rst-class:: classref-item-separator
 

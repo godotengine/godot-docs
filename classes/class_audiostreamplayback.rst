@@ -105,7 +105,7 @@ Overridable method. Should return how many times this audio stream has looped. M
 
 :ref:`Variant<class_Variant>` **_get_parameter**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_AudioStreamPlayback_private_method__get_parameter>`
 
-Return the current value of a playback parameter by name (see :ref:`AudioStream._get_parameter_list<class_AudioStream_private_method__get_parameter_list>`).
+Return the current value of a playback parameter by name (see :ref:`AudioStream._get_parameter_list()<class_AudioStream_private_method__get_parameter_list>`).
 
 .. rst-class:: classref-item-separator
 
@@ -155,7 +155,7 @@ Override this method to customize how the audio stream is mixed. This method is 
 
 |void| **_seek**\ (\ position\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_AudioStreamPlayback_private_method__seek>`
 
-Override this method to customize what happens when seeking this audio stream at the given ``position``, such as by calling :ref:`AudioStreamPlayer.seek<class_AudioStreamPlayer_method_seek>`.
+Override this method to customize what happens when seeking this audio stream at the given ``position``, such as by calling :ref:`AudioStreamPlayer.seek()<class_AudioStreamPlayer_method_seek>`.
 
 .. rst-class:: classref-item-separator
 
@@ -167,7 +167,7 @@ Override this method to customize what happens when seeking this audio stream at
 
 |void| **_set_parameter**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_AudioStreamPlayback_private_method__set_parameter>`
 
-Set the current value of a playback parameter by name (see :ref:`AudioStream._get_parameter_list<class_AudioStream_private_method__get_parameter_list>`).
+Set the current value of a playback parameter by name (see :ref:`AudioStream._get_parameter_list()<class_AudioStream_private_method__get_parameter_list>`).
 
 .. rst-class:: classref-item-separator
 
@@ -179,7 +179,7 @@ Set the current value of a playback parameter by name (see :ref:`AudioStream._ge
 
 |void| **_start**\ (\ from_pos\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_AudioStreamPlayback_private_method__start>`
 
-Override this method to customize what happens when the playback starts at the given position, such as by calling :ref:`AudioStreamPlayer.play<class_AudioStreamPlayer_method_play>`.
+Override this method to customize what happens when the playback starts at the given position, such as by calling :ref:`AudioStreamPlayer.play()<class_AudioStreamPlayer_method_play>`.
 
 .. rst-class:: classref-item-separator
 
@@ -191,7 +191,7 @@ Override this method to customize what happens when the playback starts at the g
 
 |void| **_stop**\ (\ ) |virtual| :ref:`🔗<class_AudioStreamPlayback_private_method__stop>`
 
-Override this method to customize what happens when the playback is stopped, such as by calling :ref:`AudioStreamPlayer.stop<class_AudioStreamPlayer_method_stop>`.
+Override this method to customize what happens when the playback is stopped, such as by calling :ref:`AudioStreamPlayer.stop()<class_AudioStreamPlayer_method_stop>`.
 
 .. rst-class:: classref-item-separator
 
@@ -203,7 +203,7 @@ Override this method to customize what happens when the playback is stopped, suc
 
 |void| **_tag_used_streams**\ (\ ) |virtual| :ref:`🔗<class_AudioStreamPlayback_private_method__tag_used_streams>`
 
-Overridable method. Called whenever the audio stream is mixed if the playback is active and :ref:`AudioServer.set_enable_tagging_used_audio_streams<class_AudioServer_method_set_enable_tagging_used_audio_streams>` has been set to ``true``. Editor plugins may use this method to "tag" the current position along the audio stream and display it in a preview.
+Overridable method. Called whenever the audio stream is mixed if the playback is active and :ref:`AudioServer.set_enable_tagging_used_audio_streams()<class_AudioServer_method_set_enable_tagging_used_audio_streams>` has been set to ``true``. Editor plugins may use this method to "tag" the current position along the audio stream and display it in a preview.
 
 .. rst-class:: classref-item-separator
 

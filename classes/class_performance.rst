@@ -19,9 +19,9 @@ Exposes performance-related data.
 Description
 -----------
 
-This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the **Monitor** tab in the editor's **Debugger** panel. By using the :ref:`get_monitor<class_Performance_method_get_monitor>` method of this class, you can access this data from your code.
+This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the **Monitor** tab in the editor's **Debugger** panel. By using the :ref:`get_monitor()<class_Performance_method_get_monitor>` method of this class, you can access this data from your code.
 
-You can add custom monitors using the :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` method. Custom monitors are available in **Monitor** tab in the editor's **Debugger** panel together with built-in monitors.
+You can add custom monitors using the :ref:`add_custom_monitor()<class_Performance_method_add_custom_monitor>` method. Custom monitors are available in **Monitor** tab in the editor's **Debugger** panel together with built-in monitors.
 
 \ **Note:** Some of the built-in monitors are only available in debug mode and will always return ``0`` when used in a project exported in release mode.
 
@@ -258,7 +258,7 @@ Number of islands in the 3D physics engine. *Lower is better.*
 
 :ref:`Monitor<enum_Performance_Monitor>` **AUDIO_OUTPUT_LATENCY** = ``23``
 
-Output latency of the :ref:`AudioServer<class_AudioServer>`. Equivalent to calling :ref:`AudioServer.get_output_latency<class_AudioServer_method_get_output_latency>`, it is not recommended to call this every frame.
+Output latency of the :ref:`AudioServer<class_AudioServer>`. Equivalent to calling :ref:`AudioServer.get_output_latency()<class_AudioServer_method_get_output_latency>`, it is not recommended to call this every frame.
 
 .. _class_Performance_constant_NAVIGATION_ACTIVE_MAPS:
 
@@ -471,7 +471,7 @@ Callables are called with arguments supplied in argument array.
 
 :ref:`Variant<class_Variant>` **get_custom_monitor**\ (\ id\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Performance_method_get_custom_monitor>`
 
-Returns the value of custom monitor with given ``id``. The callable is called to get the value of custom monitor. See also :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>`. Prints an error if the given ``id`` is absent.
+Returns the value of custom monitor with given ``id``. The callable is called to get the value of custom monitor. See also :ref:`has_custom_monitor()<class_Performance_method_has_custom_monitor>`. Prints an error if the given ``id`` is absent.
 
 .. rst-class:: classref-item-separator
 
@@ -510,7 +510,7 @@ Returns the value of one of the available built-in monitors. You should provide 
 
 
 
-See :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` to query custom performance monitors' values.
+See :ref:`get_custom_monitor()<class_Performance_method_get_custom_monitor>` to query custom performance monitors' values.
 
 .. rst-class:: classref-item-separator
 
@@ -522,7 +522,7 @@ See :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` to qu
 
 :ref:`int<class_int>` **get_monitor_modification_time**\ (\ ) :ref:`🔗<class_Performance_method_get_monitor_modification_time>`
 
-Returns the last tick in which custom monitor was added/removed (in microseconds since the engine started). This is set to :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>` when the monitor is updated.
+Returns the last tick in which custom monitor was added/removed (in microseconds since the engine started). This is set to :ref:`Time.get_ticks_usec()<class_Time_method_get_ticks_usec>` when the monitor is updated.
 
 .. rst-class:: classref-item-separator
 

@@ -108,7 +108,7 @@ Closes the underlying resources used by this instance.
 
 Returns ``true`` if the file exists in the loaded zip archive.
 
-Must be called after :ref:`open<class_ZIPReader_method_open>`.
+Must be called after :ref:`open()<class_ZIPReader_method_open>`.
 
 .. rst-class:: classref-item-separator
 
@@ -122,7 +122,7 @@ Must be called after :ref:`open<class_ZIPReader_method_open>`.
 
 Returns the list of names of all files in the loaded archive.
 
-Must be called after :ref:`open<class_ZIPReader_method_open>`.
+Must be called after :ref:`open()<class_ZIPReader_method_open>`.
 
 .. rst-class:: classref-item-separator
 
@@ -148,7 +148,7 @@ Opens the zip archive at the given ``path`` and reads its file index.
 
 Loads the whole content of a file in the loaded zip archive into memory and returns it.
 
-Must be called after :ref:`open<class_ZIPReader_method_open>`.
+Must be called after :ref:`open()<class_ZIPReader_method_open>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

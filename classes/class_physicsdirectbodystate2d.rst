@@ -21,7 +21,7 @@ Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_Phys
 Description
 -----------
 
-Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, allowing safe changes to physics properties. This object is passed via the direct state callback of :ref:`RigidBody2D<class_RigidBody2D>`, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_private_method__integrate_forces>`.
+Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, allowing safe changes to physics properties. This object is passed via the direct state callback of :ref:`RigidBody2D<class_RigidBody2D>`, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces()<class_RigidBody2D_private_method__integrate_forces>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -350,7 +350,7 @@ Method Descriptions
 
 Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``constant_force = Vector2(0, 0)``.
 
-This is equivalent to using :ref:`add_constant_force<class_PhysicsDirectBodyState2D_method_add_constant_force>` at the body's center of mass.
+This is equivalent to using :ref:`add_constant_force()<class_PhysicsDirectBodyState2D_method_add_constant_force>` at the body's center of mass.
 
 .. rst-class:: classref-item-separator
 
@@ -390,7 +390,7 @@ Adds a constant rotational force without affecting position that keeps being app
 
 Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
 
-This is equivalent to using :ref:`apply_force<class_PhysicsDirectBodyState2D_method_apply_force>` at the body's center of mass.
+This is equivalent to using :ref:`apply_force()<class_PhysicsDirectBodyState2D_method_apply_force>` at the body's center of mass.
 
 .. rst-class:: classref-item-separator
 
@@ -406,7 +406,7 @@ Applies a directional impulse without affecting rotation.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
-This is equivalent to using :ref:`apply_impulse<class_PhysicsDirectBodyState2D_method_apply_impulse>` at the body's center of mass.
+This is equivalent to using :ref:`apply_impulse()<class_PhysicsDirectBodyState2D_method_apply_impulse>` at the body's center of mass.
 
 .. rst-class:: classref-item-separator
 
@@ -480,7 +480,7 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 Returns the body's total constant positional forces applied during each physics update.
 
-See :ref:`add_constant_force<class_PhysicsDirectBodyState2D_method_add_constant_force>` and :ref:`add_constant_central_force<class_PhysicsDirectBodyState2D_method_add_constant_central_force>`.
+See :ref:`add_constant_force()<class_PhysicsDirectBodyState2D_method_add_constant_force>` and :ref:`add_constant_central_force()<class_PhysicsDirectBodyState2D_method_add_constant_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -494,7 +494,7 @@ See :ref:`add_constant_force<class_PhysicsDirectBodyState2D_method_add_constant_
 
 Returns the body's total constant rotational forces applied during each physics update.
 
-See :ref:`add_constant_torque<class_PhysicsDirectBodyState2D_method_add_constant_torque>`.
+See :ref:`add_constant_torque()<class_PhysicsDirectBodyState2D_method_add_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -690,7 +690,7 @@ Updates the body's linear and angular velocity by applying gravity and damping f
 
 Sets the body's total constant positional forces applied during each physics update.
 
-See :ref:`add_constant_force<class_PhysicsDirectBodyState2D_method_add_constant_force>` and :ref:`add_constant_central_force<class_PhysicsDirectBodyState2D_method_add_constant_central_force>`.
+See :ref:`add_constant_force()<class_PhysicsDirectBodyState2D_method_add_constant_force>` and :ref:`add_constant_central_force()<class_PhysicsDirectBodyState2D_method_add_constant_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -704,7 +704,7 @@ See :ref:`add_constant_force<class_PhysicsDirectBodyState2D_method_add_constant_
 
 Sets the body's total constant rotational forces applied during each physics update.
 
-See :ref:`add_constant_torque<class_PhysicsDirectBodyState2D_method_add_constant_torque>`.
+See :ref:`add_constant_torque()<class_PhysicsDirectBodyState2D_method_add_constant_torque>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -179,7 +179,7 @@ Notifies when an animation starts playing.
 
 **caches_cleared**\ (\ ) :ref:`🔗<class_AnimationMixer_signal_caches_cleared>`
 
-Notifies when the caches have been cleared, either automatically, or manually via :ref:`clear_caches<class_AnimationMixer_method_clear_caches>`.
+Notifies when the caches have been cleared, either automatically, or manually via :ref:`clear_caches()<class_AnimationMixer_method_clear_caches>`.
 
 .. rst-class:: classref-item-separator
 
@@ -242,7 +242,7 @@ Process animation during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PR
 
 :ref:`AnimationCallbackModeProcess<enum_AnimationMixer_AnimationCallbackModeProcess>` **ANIMATION_CALLBACK_MODE_PROCESS_MANUAL** = ``2``
 
-Do not process animation. Use :ref:`advance<class_AnimationMixer_method_advance>` to process the animation manually.
+Do not process animation. Use :ref:`advance()<class_AnimationMixer_method_advance>` to process the animation manually.
 
 .. rst-class:: classref-item-separator
 
@@ -487,7 +487,7 @@ This makes it more convenient to preview and edit animations in the editor, as c
 - |void| **set_root_motion_local**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_root_motion_local**\ (\ )
 
-If ``true``, :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>` value is extracted as a local translation value before blending. In other words, it is treated like the translation is done after the rotation.
+If ``true``, :ref:`get_root_motion_position()<class_AnimationMixer_method_get_root_motion_position>` value is extracted as a local translation value before blending. In other words, it is treated like the translation is done after the rotation.
 
 .. rst-class:: classref-item-separator
 
@@ -504,9 +504,9 @@ If ``true``, :ref:`get_root_motion_position<class_AnimationMixer_method_get_root
 - |void| **set_root_motion_track**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_root_motion_track**\ (\ )
 
-The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. The :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` uses the same format as :ref:`Animation.track_set_path<class_Animation_method_track_set_path>`, but note that a bone must be specified.
+The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. The :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` uses the same format as :ref:`Animation.track_set_path()<class_Animation_method_track_set_path>`, but note that a bone must be specified.
 
-If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>`, or :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` the transformation will be canceled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`, :ref:`get_root_motion_rotation<class_AnimationMixer_method_get_root_motion_rotation>`, :ref:`get_root_motion_scale<class_AnimationMixer_method_get_root_motion_scale>`, and :ref:`RootMotionView<class_RootMotionView>`.
+If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>`, or :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` the transformation will be canceled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_position()<class_AnimationMixer_method_get_root_motion_position>`, :ref:`get_root_motion_rotation()<class_AnimationMixer_method_get_root_motion_rotation>`, :ref:`get_root_motion_scale()<class_AnimationMixer_method_get_root_motion_scale>`, and :ref:`RootMotionView<class_RootMotionView>`.
 
 .. rst-class:: classref-item-separator
 
@@ -604,7 +604,7 @@ You can specify ``trans_type`` as the curve for the interpolation. For better re
 
 |void| **clear_caches**\ (\ ) :ref:`🔗<class_AnimationMixer_method_clear_caches>`
 
-**AnimationMixer** caches animated nodes. It may not notice if a node disappears; :ref:`clear_caches<class_AnimationMixer_method_clear_caches>` forces it to update the cache again.
+**AnimationMixer** caches animated nodes. It may not notice if a node disappears; :ref:`clear_caches()<class_AnimationMixer_method_clear_caches>` forces it to update the cache again.
 
 .. rst-class:: classref-item-separator
 
@@ -715,7 +715,7 @@ The most basic example is applying position to :ref:`CharacterBody3D<class_Chara
 
 
 
-By using this in combination with :ref:`get_root_motion_rotation_accumulator<class_AnimationMixer_method_get_root_motion_rotation_accumulator>`, you can apply the root motion position more correctly to account for the rotation of the node.
+By using this in combination with :ref:`get_root_motion_rotation_accumulator()<class_AnimationMixer_method_get_root_motion_rotation_accumulator>`, you can apply the root motion position more correctly to account for the rotation of the node.
 
 
 .. tabs::
@@ -828,7 +828,7 @@ The most basic example is applying rotation to :ref:`CharacterBody3D<class_Chara
 
 Retrieve the blended value of the rotation tracks with the :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` as a :ref:`Quaternion<class_Quaternion>` that can be used elsewhere.
 
-This is necessary to apply the root motion position correctly, taking rotation into account. See also :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`.
+This is necessary to apply the root motion position correctly, taking rotation into account. See also :ref:`get_root_motion_position()<class_AnimationMixer_method_get_root_motion_position>`.
 
 Also, this is useful in cases where you want to respect the initial key values of the animation.
 

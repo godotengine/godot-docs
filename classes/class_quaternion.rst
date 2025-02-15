@@ -19,11 +19,11 @@ Description
 
 The **Quaternion** built-in :ref:`Variant<class_Variant>` type is a 4D data structure that represents rotation in the form of a `Hamilton convention quaternion <https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation>`__. Compared to the :ref:`Basis<class_Basis>` type which can store both rotation and scale, quaternions can *only* store rotation.
 
-A **Quaternion** is composed by 4 floating-point components: :ref:`w<class_Quaternion_property_w>`, :ref:`x<class_Quaternion_property_x>`, :ref:`y<class_Quaternion_property_y>`, and :ref:`z<class_Quaternion_property_z>`. These components are very compact in memory, and because of this some operations are more efficient and less likely to cause floating-point errors. Methods such as :ref:`get_angle<class_Quaternion_method_get_angle>`, :ref:`get_axis<class_Quaternion_method_get_axis>`, and :ref:`slerp<class_Quaternion_method_slerp>` are faster than their :ref:`Basis<class_Basis>` counterparts.
+A **Quaternion** is composed by 4 floating-point components: :ref:`w<class_Quaternion_property_w>`, :ref:`x<class_Quaternion_property_x>`, :ref:`y<class_Quaternion_property_y>`, and :ref:`z<class_Quaternion_property_z>`. These components are very compact in memory, and because of this some operations are more efficient and less likely to cause floating-point errors. Methods such as :ref:`get_angle()<class_Quaternion_method_get_angle>`, :ref:`get_axis()<class_Quaternion_method_get_axis>`, and :ref:`slerp()<class_Quaternion_method_slerp>` are faster than their :ref:`Basis<class_Basis>` counterparts.
 
-For a great introduction to quaternions, see `this video by 3Blue1Brown <https://www.youtube.com/watch?v=d4EgbgTm0Bg>`__. You do not need to know the math behind quaternions, as Godot provides several helper methods that handle it for you. These include :ref:`slerp<class_Quaternion_method_slerp>` and :ref:`spherical_cubic_interpolate<class_Quaternion_method_spherical_cubic_interpolate>`, as well as the ``*`` operator.
+For a great introduction to quaternions, see `this video by 3Blue1Brown <https://www.youtube.com/watch?v=d4EgbgTm0Bg>`__. You do not need to know the math behind quaternions, as Godot provides several helper methods that handle it for you. These include :ref:`slerp()<class_Quaternion_method_slerp>` and :ref:`spherical_cubic_interpolate()<class_Quaternion_method_spherical_cubic_interpolate>`, as well as the ``*`` operator.
 
-\ **Note:** Quaternions must be normalized before being used for rotation (see :ref:`normalized<class_Quaternion_method_normalized>`).
+\ **Note:** Quaternions must be normalized before being used for rotation (see :ref:`normalized()<class_Quaternion_method_normalized>`).
 
 \ **Note:** Similarly to :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, the components of a quaternion use 32-bit precision by default, unlike :ref:`float<class_float>` which is always 64-bit. If double precision is needed, compile the engine with the option ``precision=double``.
 
@@ -311,7 +311,7 @@ Constructs a **Quaternion** representing rotation around the ``axis`` by the giv
 
 Constructs a **Quaternion** from the given rotation :ref:`Basis<class_Basis>`.
 
-This constructor is faster than :ref:`Basis.get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>`, but the given basis must be *orthonormalized* (see :ref:`Basis.orthonormalized<class_Basis_method_orthonormalized>`). Otherwise, the constructor fails and returns :ref:`IDENTITY<class_Quaternion_constant_IDENTITY>`.
+This constructor is faster than :ref:`Basis.get_rotation_quaternion()<class_Basis_method_get_rotation_quaternion>`, but the given basis must be *orthonormalized* (see :ref:`Basis.orthonormalized()<class_Basis_method_orthonormalized>`). Otherwise, the constructor fails and returns :ref:`IDENTITY<class_Quaternion_constant_IDENTITY>`.
 
 .. rst-class:: classref-item-separator
 
@@ -420,7 +420,7 @@ Returns the rotation axis of the rotation represented by this quaternion.
 
 Returns this quaternion's rotation as a :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians.
 
-The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): Z (roll) is calculated first, then X (pitch), and lastly Y (yaw). When using the opposite method :ref:`from_euler<class_Quaternion_method_from_euler>`, this order is reversed.
+The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): Z (roll) is calculated first, then X (pitch), and lastly Y (yaw). When using the opposite method :ref:`from_euler()<class_Quaternion_method_from_euler>`, this order is reversed.
 
 .. rst-class:: classref-item-separator
 
@@ -444,7 +444,7 @@ Returns the inverse version of this quaternion, inverting the sign of every comp
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ to\: :ref:`Quaternion<class_Quaternion>`\ ) |const| :ref:`🔗<class_Quaternion_method_is_equal_approx>`
 
-Returns ``true`` if this quaternion and ``to`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this quaternion and ``to`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -456,7 +456,7 @@ Returns ``true`` if this quaternion and ``to`` are approximately equal, by calli
 
 :ref:`bool<class_bool>` **is_finite**\ (\ ) |const| :ref:`🔗<class_Quaternion_method_is_finite>`
 
-Returns ``true`` if this quaternion is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+Returns ``true`` if this quaternion is finite, by calling :ref:`@GlobalScope.is_finite()<class_@GlobalScope_method_is_finite>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -468,7 +468,7 @@ Returns ``true`` if this quaternion is finite, by calling :ref:`@GlobalScope.is_
 
 :ref:`bool<class_bool>` **is_normalized**\ (\ ) |const| :ref:`🔗<class_Quaternion_method_is_normalized>`
 
-Returns ``true`` if this quaternion is normalized. See also :ref:`normalized<class_Quaternion_method_normalized>`.
+Returns ``true`` if this quaternion is normalized. See also :ref:`normalized()<class_Quaternion_method_normalized>`.
 
 .. rst-class:: classref-item-separator
 
@@ -494,7 +494,7 @@ Returns this quaternion's length, also called magnitude.
 
 Returns this quaternion's length, squared.
 
-\ **Note:** This method is faster than :ref:`length<class_Quaternion_method_length>`, so prefer it if you only need to compare quaternion lengths.
+\ **Note:** This method is faster than :ref:`length()<class_Quaternion_method_length>`, so prefer it if you only need to compare quaternion lengths.
 
 .. rst-class:: classref-item-separator
 
@@ -518,7 +518,7 @@ Returns the logarithm of this quaternion. Multiplies this quaternion's rotation 
 
 :ref:`Quaternion<class_Quaternion>` **normalized**\ (\ ) |const| :ref:`🔗<class_Quaternion_method_normalized>`
 
-Returns a copy of this quaternion, normalized so that its length is ``1.0``. See also :ref:`is_normalized<class_Quaternion_method_is_normalized>`.
+Returns a copy of this quaternion, normalized so that its length is ``1.0``. See also :ref:`is_normalized()<class_Quaternion_method_is_normalized>`.
 
 .. rst-class:: classref-item-separator
 
@@ -542,7 +542,7 @@ Performs a spherical-linear interpolation with the ``to`` quaternion, given a ``
 
 :ref:`Quaternion<class_Quaternion>` **slerpni**\ (\ to\: :ref:`Quaternion<class_Quaternion>`, weight\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Quaternion_method_slerpni>`
 
-Performs a spherical-linear interpolation with the ``to`` quaternion, given a ``weight`` and returns the result. Unlike :ref:`slerp<class_Quaternion_method_slerp>`, this method does not check if the rotation path is smaller than 90 degrees. Both this quaternion and ``to`` must be normalized.
+Performs a spherical-linear interpolation with the ``to`` quaternion, given a ``weight`` and returns the result. Unlike :ref:`slerp()<class_Quaternion_method_slerp>`, this method does not check if the rotation path is smaller than 90 degrees. Both this quaternion and ``to`` must be normalized.
 
 .. rst-class:: classref-item-separator
 
@@ -568,7 +568,7 @@ Performs a spherical cubic interpolation between quaternions ``pre_a``, this vec
 
 Performs a spherical cubic interpolation between quaternions ``pre_a``, this vector, ``b``, and ``post_b``, by the given amount ``weight``.
 
-It can perform smoother interpolation than :ref:`spherical_cubic_interpolate<class_Quaternion_method_spherical_cubic_interpolate>` by the time values.
+It can perform smoother interpolation than :ref:`spherical_cubic_interpolate()<class_Quaternion_method_spherical_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-section-separator
 
@@ -587,7 +587,7 @@ Operator Descriptions
 
 Returns ``true`` if the components of both quaternions are not exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 
@@ -709,7 +709,7 @@ This operation is not meaningful on its own, but it can be used as a part of a l
 
 Returns ``true`` if the components of both quaternions are exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 

@@ -76,7 +76,7 @@ The attachments that are blended together.
 - |void| **set_blend_constant**\ (\ value\: :ref:`Color<class_Color>`\ )
 - :ref:`Color<class_Color>` **get_blend_constant**\ (\ )
 
-The constant color to blend with. See also :ref:`RenderingDevice.draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`.
+The constant color to blend with. See also :ref:`RenderingDevice.draw_list_set_blend_constants()<class_RenderingDevice_method_draw_list_set_blend_constants>`.
 
 .. rst-class:: classref-item-separator
 

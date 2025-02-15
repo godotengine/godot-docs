@@ -84,7 +84,7 @@ Returns a decoded string corresponding to the Base64-encoded string ``base64_str
 
 Returns a decoded :ref:`Variant<class_Variant>` corresponding to the Base64-encoded string ``base64_str``. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var<class_@GlobalScope_method_bytes_to_var>` method.
+Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var()<class_@GlobalScope_method_bytes_to_var>` method.
 
 \ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
@@ -124,7 +124,7 @@ Returns a Base64-encoded string of the UTF-8 string ``utf8_str``.
 
 Returns a Base64-encoded string of the :ref:`Variant<class_Variant>` ``variant``. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 
-Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes<class_@GlobalScope_method_var_to_bytes>` method.
+Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes()<class_@GlobalScope_method_var_to_bytes>` method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

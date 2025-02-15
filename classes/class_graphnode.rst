@@ -27,7 +27,7 @@ Each **GraphNode** slot is defined by its index and can provide the node with up
 
 Slots can be configured in the Inspector dock once you add at least one child :ref:`Control<class_Control>`. The properties are grouped by each slot's index in the "Slot" section.
 
-\ **Note:** While GraphNode is set up using slots and slot indices, connections are made between the ports which are enabled. Because of that :ref:`GraphEdit<class_GraphEdit>` uses the port's index and not the slot's index. You can use :ref:`get_input_port_slot<class_GraphNode_method_get_input_port_slot>` and :ref:`get_output_port_slot<class_GraphNode_method_get_output_port_slot>` to get the slot index from the port index.
+\ **Note:** While GraphNode is set up using slots and slot indices, connections are made between the ports which are enabled. Because of that :ref:`GraphEdit<class_GraphEdit>` uses the port's index and not the slot's index. You can use :ref:`get_input_port_slot()<class_GraphNode_method_get_input_port_slot>` and :ref:`get_output_port_slot()<class_GraphNode_method_get_output_port_slot>` to get the slot index from the port index.
 
 .. rst-class:: classref-reftable-group
 
@@ -502,7 +502,7 @@ Sets properties of the slot with the given ``slot_index``.
 
 If ``enable_left_port``/``enable_right_port`` is ``true``, a port will appear and the slot will be able to be connected from this side.
 
-With ``type_left``/``type_right`` an arbitrary type can be assigned to each port. Two ports can be connected if they share the same type, or if the connection between their types is allowed in the parent :ref:`GraphEdit<class_GraphEdit>` (see :ref:`GraphEdit.add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>`). Keep in mind that the :ref:`GraphEdit<class_GraphEdit>` has the final say in accepting the connection. Type compatibility simply allows the :ref:`GraphEdit.connection_request<class_GraphEdit_signal_connection_request>` signal to be emitted.
+With ``type_left``/``type_right`` an arbitrary type can be assigned to each port. Two ports can be connected if they share the same type, or if the connection between their types is allowed in the parent :ref:`GraphEdit<class_GraphEdit>` (see :ref:`GraphEdit.add_valid_connection_type()<class_GraphEdit_method_add_valid_connection_type>`). Keep in mind that the :ref:`GraphEdit<class_GraphEdit>` has the final say in accepting the connection. Type compatibility simply allows the :ref:`GraphEdit.connection_request<class_GraphEdit_signal_connection_request>` signal to be emitted.
 
 Ports can be further customized using ``color_left``/``color_right`` and ``custom_icon_left``/``custom_icon_right``. The color parameter adds a tint to the icon. The custom icon can be used to override the default port dot.
 

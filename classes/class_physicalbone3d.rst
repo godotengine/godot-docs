@@ -24,7 +24,7 @@ Description
 
 The **PhysicalBone3D** node is a physics body that can be used to make bones in a :ref:`Skeleton3D<class_Skeleton3D>` react to physics.
 
-\ **Note:** In order to detect physical bones with raycasts, the :ref:`SkeletonModifier3D.active<class_SkeletonModifier3D_property_active>` property of the parent :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>` must be ``true`` and the :ref:`Skeleton3D<class_Skeleton3D>`'s bone must be assigned to **PhysicalBone3D** correctly; it means that :ref:`get_bone_id<class_PhysicalBone3D_method_get_bone_id>` should return a valid id (``>= 0``).
+\ **Note:** In order to detect physical bones with raycasts, the :ref:`SkeletonModifier3D.active<class_SkeletonModifier3D_property_active>` property of the parent :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>` must be ``true`` and the :ref:`Skeleton3D<class_Skeleton3D>`'s bone must be assigned to **PhysicalBone3D** correctly; it means that :ref:`get_bone_id()<class_PhysicalBone3D_method_get_bone_id>` should return a valid id (``>= 0``).
 
 .. rst-class:: classref-reftable-group
 
@@ -305,9 +305,9 @@ If ``true``, the body is deactivated when there is no movement, so it will not t
 - |void| **set_use_custom_integrator**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_custom_integrator**\ (\ )
 
-If ``true``, the standard force integration (like gravity or damping) will be disabled for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` method, if that virtual method is overridden.
+If ``true``, the standard force integration (like gravity or damping) will be disabled for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces()<class_PhysicalBone3D_private_method__integrate_forces>` method, if that virtual method is overridden.
 
-Setting this property will call the method :ref:`PhysicsServer3D.body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>` internally.
+Setting this property will call the method :ref:`PhysicsServer3D.body_set_omit_force_integration()<class_PhysicsServer3D_method_body_set_omit_force_integration>` internally.
 
 .. rst-class:: classref-item-separator
 
@@ -445,7 +445,7 @@ Defines how :ref:`linear_damp<class_PhysicalBone3D_property_linear_damp>` is app
 - |void| **set_linear_velocity**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
 - :ref:`Vector3<class_Vector3>` **get_linear_velocity**\ (\ )
 
-The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` as your process loop for precise control of the body state.
+The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces()<class_PhysicalBone3D_private_method__integrate_forces>` as your process loop for precise control of the body state.
 
 .. rst-class:: classref-item-separator
 
@@ -495,7 +495,7 @@ Applies a directional impulse without affecting rotation.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_integrate_forces" functions otherwise).
 
-This is equivalent to using :ref:`apply_impulse<class_PhysicalBone3D_method_apply_impulse>` at the body's center of mass.
+This is equivalent to using :ref:`apply_impulse()<class_PhysicalBone3D_method_apply_impulse>` at the body's center of mass.
 
 .. rst-class:: classref-item-separator
 

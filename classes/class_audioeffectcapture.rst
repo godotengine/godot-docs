@@ -21,7 +21,7 @@ Description
 
 AudioEffectCapture is an AudioEffect which copies all audio frames from the attached audio effect bus into its internal ring buffer.
 
-Application code should consume these audio frames from this ring buffer using :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>` and process it as needed, for example to capture data from an :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, implement application-defined effects, or to transmit audio over the network. When capturing audio data from a microphone, the format of the samples will be stereo 32-bit floating-point PCM.
+Application code should consume these audio frames from this ring buffer using :ref:`get_buffer()<class_AudioEffectCapture_method_get_buffer>` and process it as needed, for example to capture data from an :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, implement application-defined effects, or to transmit audio over the network. When capturing audio data from a microphone, the format of the samples will be stereo 32-bit floating-point PCM.
 
 Unlike :ref:`AudioEffectRecord<class_AudioEffectRecord>`, this effect only returns the raw audio samples instead of encoding them into an :ref:`AudioStream<class_AudioStream>`.
 
@@ -171,7 +171,7 @@ Returns the number of audio frames discarded from the audio bus due to full buff
 
 :ref:`int<class_int>` **get_frames_available**\ (\ ) |const| :ref:`🔗<class_AudioEffectCapture_method_get_frames_available>`
 
-Returns the number of frames available to read using :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>`.
+Returns the number of frames available to read using :ref:`get_buffer()<class_AudioEffectCapture_method_get_buffer>`.
 
 .. rst-class:: classref-item-separator
 

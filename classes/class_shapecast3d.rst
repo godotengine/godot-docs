@@ -21,7 +21,7 @@ Description
 
 Shape casting allows to detect collision objects by sweeping its :ref:`shape<class_ShapeCast3D_property_shape>` along the cast direction determined by :ref:`target_position<class_ShapeCast3D_property_target_position>`. This is similar to :ref:`RayCast3D<class_RayCast3D>`, but it allows for sweeping a region of space, rather than just a straight line. **ShapeCast3D** can detect multiple collision objects. It is useful for things like wide laser beams or snapping a simple shape to a floor.
 
-Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast3D_property_target_position>` set to ``Vector3(0, 0, 0)`` and by calling :ref:`force_shapecast_update<class_ShapeCast3D_method_force_shapecast_update>` within the same physics frame. This helps to overcome some limitations of :ref:`Area3D<class_Area3D>` when used as an instantaneous detection area, as collision information isn't immediately available to it.
+Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast3D_property_target_position>` set to ``Vector3(0, 0, 0)`` and by calling :ref:`force_shapecast_update()<class_ShapeCast3D_method_force_shapecast_update>` within the same physics frame. This helps to overcome some limitations of :ref:`Area3D<class_Area3D>` when used as an instantaneous detection area, as collision information isn't immediately available to it.
 
 \ **Note:** Shape casting is more computationally expensive than ray casting.
 
@@ -173,7 +173,7 @@ The shape's collision mask. Only objects in at least one collision layer enabled
 
 - :ref:`Array<class_Array>` **get_collision_result**\ (\ )
 
-Returns the complete collision information from the collision sweep. The data returned is the same as in the :ref:`PhysicsDirectSpaceState3D.get_rest_info<class_PhysicsDirectSpaceState3D_method_get_rest_info>` method.
+Returns the complete collision information from the collision sweep. The data returned is the same as in the :ref:`PhysicsDirectSpaceState3D.get_rest_info()<class_PhysicsDirectSpaceState3D_method_get_rest_info>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -375,7 +375,7 @@ Returns the fraction from this cast's origin to its :ref:`target_position<class_
 
 Returns the fraction from this cast's origin to its :ref:`target_position<class_ShapeCast3D_property_target_position>` of how far the shape must move to trigger a collision, as a value between ``0.0`` and ``1.0``.
 
-In ideal conditions this would be the same as :ref:`get_closest_collision_safe_fraction<class_ShapeCast3D_method_get_closest_collision_safe_fraction>`, however shape casting is calculated in discrete steps, so the precise point of collision can occur between two calculated positions.
+In ideal conditions this would be the same as :ref:`get_closest_collision_safe_fraction()<class_ShapeCast3D_method_get_closest_collision_safe_fraction>`, however shape casting is calculated in discrete steps, so the precise point of collision can occur between two calculated positions.
 
 .. rst-class:: classref-item-separator
 
@@ -387,7 +387,7 @@ In ideal conditions this would be the same as :ref:`get_closest_collision_safe_f
 
 :ref:`Object<class_Object>` **get_collider**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ShapeCast3D_method_get_collider>`
 
-Returns the collided :ref:`Object<class_Object>` of one of the multiple collisions at ``index``, or ``null`` if no object is intersecting the shape (i.e. :ref:`is_colliding<class_ShapeCast3D_method_is_colliding>` returns ``false``).
+Returns the collided :ref:`Object<class_Object>` of one of the multiple collisions at ``index``, or ``null`` if no object is intersecting the shape (i.e. :ref:`is_colliding()<class_ShapeCast3D_method_is_colliding>` returns ``false``).
 
 .. rst-class:: classref-item-separator
 
@@ -411,7 +411,7 @@ Returns the :ref:`RID<class_RID>` of the collided object of one of the multiple 
 
 :ref:`int<class_int>` **get_collider_shape**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ShapeCast3D_method_get_collider_shape>`
 
-Returns the shape ID of the colliding shape of one of the multiple collisions at ``index``, or ``0`` if no object is intersecting the shape (i.e. :ref:`is_colliding<class_ShapeCast3D_method_is_colliding>` returns ``false``).
+Returns the shape ID of the colliding shape of one of the multiple collisions at ``index``, or ``0`` if no object is intersecting the shape (i.e. :ref:`is_colliding()<class_ShapeCast3D_method_is_colliding>` returns ``false``).
 
 .. rst-class:: classref-item-separator
 
@@ -423,7 +423,7 @@ Returns the shape ID of the colliding shape of one of the multiple collisions at
 
 :ref:`int<class_int>` **get_collision_count**\ (\ ) |const| :ref:`🔗<class_ShapeCast3D_method_get_collision_count>`
 
-The number of collisions detected at the point of impact. Use this to iterate over multiple collisions as provided by :ref:`get_collider<class_ShapeCast3D_method_get_collider>`, :ref:`get_collider_shape<class_ShapeCast3D_method_get_collider_shape>`, :ref:`get_collision_point<class_ShapeCast3D_method_get_collision_point>`, and :ref:`get_collision_normal<class_ShapeCast3D_method_get_collision_normal>` methods.
+The number of collisions detected at the point of impact. Use this to iterate over multiple collisions as provided by :ref:`get_collider()<class_ShapeCast3D_method_get_collider>`, :ref:`get_collider_shape()<class_ShapeCast3D_method_get_collider_shape>`, :ref:`get_collision_point()<class_ShapeCast3D_method_get_collision_point>`, and :ref:`get_collision_normal()<class_ShapeCast3D_method_get_collision_normal>` methods.
 
 .. rst-class:: classref-item-separator
 

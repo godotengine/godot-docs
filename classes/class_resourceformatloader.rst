@@ -249,7 +249,7 @@ The ``cache_mode`` property defines whether and how the cache should be used or 
 
 Tells whether or not this loader should load a resource from its resource path for a given type.
 
-If it is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions<class_ResourceFormatLoader_private_method__get_recognized_extensions>`, and if the type is within the ones provided by :ref:`_get_resource_type<class_ResourceFormatLoader_private_method__get_resource_type>`.
+If it is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions()<class_ResourceFormatLoader_private_method__get_recognized_extensions>`, and if the type is within the ones provided by :ref:`_get_resource_type()<class_ResourceFormatLoader_private_method__get_resource_type>`.
 
 .. rst-class:: classref-item-separator
 

@@ -227,7 +227,7 @@ Method Descriptions
 
 Returns the `Bresenham line <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ between the ``from`` and ``to`` points. A Bresenham line is a series of pixels that draws a line and is always 1-pixel thick on every row and column of the drawing (never more, never less).
 
-Example code to draw a line between two :ref:`Marker2D<class_Marker2D>` nodes using a series of :ref:`CanvasItem.draw_rect<class_CanvasItem_method_draw_rect>` calls:
+Example code to draw a line between two :ref:`Marker2D<class_Marker2D>` nodes using a series of :ref:`CanvasItem.draw_rect()<class_CanvasItem_method_draw_rect>` calls:
 
 ::
 
@@ -247,7 +247,7 @@ Example code to draw a line between two :ref:`Marker2D<class_Marker2D>` nodes us
 
 Clips ``polygon_a`` against ``polygon_b`` and returns an array of clipped polygons. This performs :ref:`OPERATION_DIFFERENCE<class_Geometry2D_constant_OPERATION_DIFFERENCE>` between polygons. Returns an empty array if ``polygon_b`` completely overlaps ``polygon_a``.
 
-If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundary) and inner polygon (hole) which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>`.
+If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundary) and inner polygon (hole) which could be distinguished by calling :ref:`is_polygon_clockwise()<class_Geometry2D_method_is_polygon_clockwise>`.
 
 .. rst-class:: classref-item-separator
 
@@ -295,9 +295,9 @@ Decomposes the ``polygon`` into multiple convex hulls and returns an array of :r
 
 :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **exclude_polygons**\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) :ref:`🔗<class_Geometry2D_method_exclude_polygons>`
 
-Mutually excludes common area defined by intersection of ``polygon_a`` and ``polygon_b`` (see :ref:`intersect_polygons<class_Geometry2D_method_intersect_polygons>`) and returns an array of excluded polygons. This performs :ref:`OPERATION_XOR<class_Geometry2D_constant_OPERATION_XOR>` between polygons. In other words, returns all but common area between polygons.
+Mutually excludes common area defined by intersection of ``polygon_a`` and ``polygon_b`` (see :ref:`intersect_polygons()<class_Geometry2D_method_intersect_polygons>`) and returns an array of excluded polygons. This performs :ref:`OPERATION_XOR<class_Geometry2D_constant_OPERATION_XOR>` between polygons. In other words, returns all but common area between polygons.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise()<class_Geometry2D_method_is_polygon_clockwise>`.
 
 .. rst-class:: classref-item-separator
 
@@ -347,7 +347,7 @@ Given the two 2D segments (``p1``, ``q1``) and (``p2``, ``q2``), finds those two
 
 Intersects ``polygon_a`` with ``polygon_b`` and returns an array of intersected polygons. This performs :ref:`OPERATION_INTERSECTION<class_Geometry2D_constant_OPERATION_INTERSECTION>` between polygons. In other words, returns common area shared by polygons. Returns an empty array if no intersection occurs.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise()<class_Geometry2D_method_is_polygon_clockwise>`.
 
 .. rst-class:: classref-item-separator
 
@@ -468,7 +468,7 @@ Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an
 
 Merges (combines) ``polygon_a`` and ``polygon_b`` and returns an array of merged polygons. This performs :ref:`OPERATION_UNION<class_Geometry2D_constant_OPERATION_UNION>` between polygons.
 
-The operation may result in an outer polygon (boundary) and multiple inner polygons (holes) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and multiple inner polygons (holes) produced which could be distinguished by calling :ref:`is_polygon_clockwise()<class_Geometry2D_method_is_polygon_clockwise>`.
 
 .. rst-class:: classref-item-separator
 
@@ -484,7 +484,7 @@ Inflates or deflates ``polygon`` by ``delta`` units (pixels). If ``delta`` is po
 
 Each polygon's vertices will be rounded as determined by ``join_type``, see :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>`.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise()<class_Geometry2D_method_is_polygon_clockwise>`.
 
 \ **Note:** To translate the polygon's vertices specifically, multiply them to a :ref:`Transform2D<class_Transform2D>`:
 
@@ -523,7 +523,7 @@ Each polygon's vertices will be rounded as determined by ``join_type``, see :ref
 
 Each polygon's endpoints will be rounded as determined by ``end_type``, see :ref:`PolyEndType<enum_Geometry2D_PolyEndType>`.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise()<class_Geometry2D_method_is_polygon_clockwise>`.
 
 .. rst-class:: classref-item-separator
 

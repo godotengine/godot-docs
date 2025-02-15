@@ -89,7 +89,7 @@ Packs the given container into a binary representation. The ``value`` must be ei
 
 :ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_PackedDataContainer_method_size>`
 
-Returns the size of the packed container (see :ref:`Array.size<class_Array_method_size>` and :ref:`Dictionary.size<class_Dictionary_method_size>`).
+Returns the size of the packed container (see :ref:`Array.size()<class_Array_method_size>` and :ref:`Dictionary.size()<class_Dictionary_method_size>`).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

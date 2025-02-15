@@ -1341,7 +1341,7 @@ TextServer supports locale dependent and context sensitive case conversion.
 
 :ref:`Feature<enum_TextServer_Feature>` **FEATURE_USE_SUPPORT_DATA** = ``4096``
 
-TextServer require external data file for some features, see :ref:`load_support_data<class_TextServer_method_load_support_data>`.
+TextServer require external data file for some features, see :ref:`load_support_data()<class_TextServer_method_load_support_data>`.
 
 .. _class_TextServer_constant_FEATURE_UNICODE_IDENTIFIERS:
 
@@ -1349,7 +1349,7 @@ TextServer require external data file for some features, see :ref:`load_support_
 
 :ref:`Feature<enum_TextServer_Feature>` **FEATURE_UNICODE_IDENTIFIERS** = ``8192``
 
-TextServer supports UAX #31 identifier validation, see :ref:`is_valid_identifier<class_TextServer_method_is_valid_identifier>`.
+TextServer supports UAX #31 identifier validation, see :ref:`is_valid_identifier()<class_TextServer_method_is_valid_identifier>`.
 
 .. _class_TextServer_constant_FEATURE_UNICODE_SECURITY:
 
@@ -1592,7 +1592,7 @@ Method Descriptions
 
 :ref:`RID<class_RID>` **create_font**\ (\ ) :ref:`🔗<class_TextServer_method_create_font>`
 
-Creates a new, empty font cache entry resource. To free the resulting resource, use the :ref:`free_rid<class_TextServer_method_free_rid>` method.
+Creates a new, empty font cache entry resource. To free the resulting resource, use the :ref:`free_rid()<class_TextServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -1604,7 +1604,7 @@ Creates a new, empty font cache entry resource. To free the resulting resource, 
 
 :ref:`RID<class_RID>` **create_font_linked_variation**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_TextServer_method_create_font_linked_variation>`
 
-Creates a new variation existing font which is reusing the same glyph cache and font data. To free the resulting resource, use the :ref:`free_rid<class_TextServer_method_free_rid>` method.
+Creates a new variation existing font which is reusing the same glyph cache and font data. To free the resulting resource, use the :ref:`free_rid()<class_TextServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -1616,7 +1616,7 @@ Creates a new variation existing font which is reusing the same glyph cache and 
 
 :ref:`RID<class_RID>` **create_shaped_text**\ (\ direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) :ref:`🔗<class_TextServer_method_create_shaped_text>`
 
-Creates a new buffer for complex text layout, with the given ``direction`` and ``orientation``. To free the resulting buffer, use :ref:`free_rid<class_TextServer_method_free_rid>` method.
+Creates a new buffer for complex text layout, with the given ``direction`` and ``orientation``. To free the resulting buffer, use :ref:`free_rid()<class_TextServer_method_free_rid>` method.
 
 \ **Note:** Direction is ignored if server does not support :ref:`FEATURE_BIDI_LAYOUT<class_TextServer_constant_FEATURE_BIDI_LAYOUT>` feature (supported by :ref:`TextServerAdvanced<class_TextServerAdvanced>`).
 
@@ -1646,7 +1646,7 @@ Draws box displaying character hexadecimal code. Used for replacing missing char
 
 Removes all rendered glyph information from the cache entry.
 
-\ **Note:** This function will not remove textures associated with the glyphs, use :ref:`font_remove_texture<class_TextServer_method_font_remove_texture>` to remove them manually.
+\ **Note:** This function will not remove textures associated with the glyphs, use :ref:`font_remove_texture()<class_TextServer_method_font_remove_texture>` to remove them manually.
 
 .. rst-class:: classref-item-separator
 
@@ -1684,7 +1684,7 @@ Removes all font sizes from the cache entry.
 
 Removes all textures from font cache entry.
 
-\ **Note:** This function will not remove glyphs associated with the texture, use :ref:`font_remove_glyph<class_TextServer_method_font_remove_glyph>` to remove them manually.
+\ **Note:** This function will not remove glyphs associated with the texture, use :ref:`font_remove_glyph()<class_TextServer_method_font_remove_glyph>` to remove them manually.
 
 .. rst-class:: classref-item-separator
 
@@ -1698,7 +1698,7 @@ Removes all textures from font cache entry.
 
 Draws single glyph into a canvas item at the position, using ``font_rid`` at the size ``size``.
 
-\ **Note:** Glyph index is specific to the font, use glyphs indices returned by :ref:`shaped_text_get_glyphs<class_TextServer_method_shaped_text_get_glyphs>` or :ref:`font_get_glyph_index<class_TextServer_method_font_get_glyph_index>`.
+\ **Note:** Glyph index is specific to the font, use glyphs indices returned by :ref:`shaped_text_get_glyphs()<class_TextServer_method_shaped_text_get_glyphs>` or :ref:`font_get_glyph_index()<class_TextServer_method_font_get_glyph_index>`.
 
 \ **Note:** If there are pending glyphs to render, calling this function might trigger the texture cache update.
 
@@ -1714,7 +1714,7 @@ Draws single glyph into a canvas item at the position, using ``font_rid`` at the
 
 Draws single glyph outline of size ``outline_size`` into a canvas item at the position, using ``font_rid`` at the size ``size``.
 
-\ **Note:** Glyph index is specific to the font, use glyphs indices returned by :ref:`shaped_text_get_glyphs<class_TextServer_method_shaped_text_get_glyphs>` or :ref:`font_get_glyph_index<class_TextServer_method_font_get_glyph_index>`.
+\ **Note:** Glyph index is specific to the font, use glyphs indices returned by :ref:`shaped_text_get_glyphs()<class_TextServer_method_shaped_text_get_glyphs>` or :ref:`font_get_glyph_index()<class_TextServer_method_font_get_glyph_index>`.
 
 \ **Note:** If there are pending glyphs to render, calling this function might trigger the texture cache update.
 
@@ -1764,7 +1764,7 @@ Returns extra baseline offset (as a fraction of font height).
 
 :ref:`int<class_int>` **font_get_char_from_glyph_index**\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, glyph_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_font_get_char_from_glyph_index>`
 
-Returns character code associated with ``glyph_index``, or ``0`` if ``glyph_index`` is invalid. See :ref:`font_get_glyph_index<class_TextServer_method_font_get_glyph_index>`.
+Returns character code associated with ``glyph_index``, or ``0`` if ``glyph_index`` is invalid. See :ref:`font_get_glyph_index()<class_TextServer_method_font_get_glyph_index>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1926,7 +1926,7 @@ Returns outline contours of the glyph as a :ref:`Dictionary<class_Dictionary>` w
 
 :ref:`int<class_int>` **font_get_glyph_index**\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, char\: :ref:`int<class_int>`, variation_selector\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_font_get_glyph_index>`
 
-Returns the glyph index of a ``char``, optionally modified by the ``variation_selector``. See :ref:`font_get_char_from_glyph_index<class_TextServer_method_font_get_char_from_glyph_index>`.
+Returns the glyph index of a ``char``, optionally modified by the ``variation_selector``. See :ref:`font_get_char_from_glyph_index()<class_TextServer_method_font_get_char_from_glyph_index>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2374,7 +2374,7 @@ Returns thickness of the underline in pixels.
 
 :ref:`Dictionary<class_Dictionary>` **font_get_variation_coordinates**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_font_get_variation_coordinates>`
 
-Returns variation coordinates for the specified font cache entry. See :ref:`font_supported_variation_list<class_TextServer_method_font_supported_variation_list>` for more info.
+Returns variation coordinates for the specified font cache entry. See :ref:`font_supported_variation_list()<class_TextServer_method_font_supported_variation_list>` for more info.
 
 .. rst-class:: classref-item-separator
 
@@ -2472,7 +2472,7 @@ Returns ``true``, if font supports given script (ISO 15924 code).
 
 Removes specified rendered glyph information from the cache entry.
 
-\ **Note:** This function will not remove textures associated with the glyphs, use :ref:`font_remove_texture<class_TextServer_method_font_remove_texture>` to remove them manually.
+\ **Note:** This function will not remove textures associated with the glyphs, use :ref:`font_remove_texture()<class_TextServer_method_font_remove_texture>` to remove them manually.
 
 .. rst-class:: classref-item-separator
 
@@ -2534,7 +2534,7 @@ Removes specified font size from the cache entry.
 
 Removes specified texture from the cache entry.
 
-\ **Note:** This function will not remove glyphs associated with the texture, remove them manually, using :ref:`font_remove_glyph<class_TextServer_method_font_remove_glyph>`.
+\ **Note:** This function will not remove glyphs associated with the texture, remove them manually, using :ref:`font_remove_glyph()<class_TextServer_method_font_remove_glyph>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2838,7 +2838,7 @@ Sets kerning for the pair of glyphs.
 
 |void| **font_set_language_support_override**\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextServer_method_font_set_language_support_override>`
 
-Adds override for :ref:`font_is_language_supported<class_TextServer_method_font_is_language_supported>`.
+Adds override for :ref:`font_is_language_supported()<class_TextServer_method_font_is_language_supported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2936,7 +2936,7 @@ Sets scaling factor of the color bitmap font.
 
 |void| **font_set_script_support_override**\ (\ font_rid\: :ref:`RID<class_RID>`, script\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextServer_method_font_set_script_support_override>`
 
-Adds override for :ref:`font_is_script_supported<class_TextServer_method_font_is_script_supported>`.
+Adds override for :ref:`font_is_script_supported()<class_TextServer_method_font_is_script_supported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2962,7 +2962,7 @@ Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingT
 
 Sets font stretch amount, compared to a normal width. A percentage value between ``50%`` and ``200%``.
 
-\ **Note:** This value is used for font matching only and will not affect font rendering. Use :ref:`font_set_face_index<class_TextServer_method_font_set_face_index>`, :ref:`font_set_variation_coordinates<class_TextServer_method_font_set_variation_coordinates>`, or :ref:`font_set_transform<class_TextServer_method_font_set_transform>` instead.
+\ **Note:** This value is used for font matching only and will not affect font rendering. Use :ref:`font_set_face_index()<class_TextServer_method_font_set_face_index>`, :ref:`font_set_variation_coordinates()<class_TextServer_method_font_set_variation_coordinates>`, or :ref:`font_set_transform()<class_TextServer_method_font_set_transform>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -2976,7 +2976,7 @@ Sets font stretch amount, compared to a normal width. A percentage value between
 
 Sets the font style flags, see :ref:`FontStyle<enum_TextServer_FontStyle>`.
 
-\ **Note:** This value is used for font matching only and will not affect font rendering. Use :ref:`font_set_face_index<class_TextServer_method_font_set_face_index>`, :ref:`font_set_variation_coordinates<class_TextServer_method_font_set_variation_coordinates>`, :ref:`font_set_embolden<class_TextServer_method_font_set_embolden>`, or :ref:`font_set_transform<class_TextServer_method_font_set_transform>` instead.
+\ **Note:** This value is used for font matching only and will not affect font rendering. Use :ref:`font_set_face_index()<class_TextServer_method_font_set_face_index>`, :ref:`font_set_variation_coordinates()<class_TextServer_method_font_set_variation_coordinates>`, :ref:`font_set_embolden()<class_TextServer_method_font_set_embolden>`, or :ref:`font_set_transform()<class_TextServer_method_font_set_transform>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -3074,7 +3074,7 @@ Sets thickness of the underline in pixels.
 
 |void| **font_set_variation_coordinates**\ (\ font_rid\: :ref:`RID<class_RID>`, variation_coordinates\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_TextServer_method_font_set_variation_coordinates>`
 
-Sets variation coordinates for the specified font cache entry. See :ref:`font_supported_variation_list<class_TextServer_method_font_supported_variation_list>` for more info.
+Sets variation coordinates for the specified font cache entry. See :ref:`font_supported_variation_list()<class_TextServer_method_font_supported_variation_list>` for more info.
 
 .. rst-class:: classref-item-separator
 
@@ -3088,7 +3088,7 @@ Sets variation coordinates for the specified font cache entry. See :ref:`font_su
 
 Sets weight (boldness) of the font. A value in the ``100...999`` range, normal font weight is ``400``, bold font weight is ``700``.
 
-\ **Note:** This value is used for font matching only and will not affect font rendering. Use :ref:`font_set_face_index<class_TextServer_method_font_set_face_index>`, :ref:`font_set_variation_coordinates<class_TextServer_method_font_set_variation_coordinates>`, or :ref:`font_set_embolden<class_TextServer_method_font_set_embolden>` instead.
+\ **Note:** This value is used for font matching only and will not affect font rendering. Use :ref:`font_set_face_index()<class_TextServer_method_font_set_face_index>`, :ref:`font_set_variation_coordinates()<class_TextServer_method_font_set_variation_coordinates>`, or :ref:`font_set_embolden()<class_TextServer_method_font_set_embolden>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -3248,7 +3248,7 @@ Returns ``true`` if the server supports a feature.
 
 Returns index of the first string in ``dict`` which is visually confusable with the ``string``, or ``-1`` if none is found.
 
-\ **Note:** This method doesn't detect invisible characters, for spoof detection use it in combination with :ref:`spoof_check<class_TextServer_method_spoof_check>`.
+\ **Note:** This method doesn't detect invisible characters, for spoof detection use it in combination with :ref:`spoof_check()<class_TextServer_method_spoof_check>`.
 
 \ **Note:** Always returns ``-1`` if the server does not support the :ref:`FEATURE_UNICODE_SECURITY<class_TextServer_constant_FEATURE_UNICODE_SECURITY>` feature.
 
@@ -3390,7 +3390,7 @@ Saves optional TextServer database (e.g. ICU break iterators and dictionaries) t
 
 :ref:`int<class_int>` **shaped_get_span_count**\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_span_count>`
 
-Returns number of text spans added using :ref:`shaped_text_add_string<class_TextServer_method_shaped_text_add_string>` or :ref:`shaped_text_add_object<class_TextServer_method_shaped_text_add_object>`.
+Returns number of text spans added using :ref:`shaped_text_add_string()<class_TextServer_method_shaped_text_add_string>` or :ref:`shaped_text_add_object()<class_TextServer_method_shaped_text_add_object>`.
 
 .. rst-class:: classref-item-separator
 

@@ -310,7 +310,7 @@ Method Descriptions
 
 Creates a new **AudioStreamWAV** instance from the given buffer. The buffer must contain WAV data.
 
-The keys and values of ``options`` match the properties of :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`. The usage of ``options`` is identical to :ref:`load_from_file<class_AudioStreamWAV_method_load_from_file>`.
+The keys and values of ``options`` match the properties of :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`. The usage of ``options`` is identical to :ref:`load_from_file()<class_AudioStreamWAV_method_load_from_file>`.
 
 .. rst-class:: classref-item-separator
 

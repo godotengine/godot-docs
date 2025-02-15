@@ -487,7 +487,7 @@ enum **ClockDirection**: :ref:`🔗<enum_@GlobalScope_ClockDirection>`
 
 :ref:`ClockDirection<enum_@GlobalScope_ClockDirection>` **CLOCKWISE** = ``0``
 
-Clockwise rotation. Used by some methods (e.g. :ref:`Image.rotate_90<class_Image_method_rotate_90>`).
+Clockwise rotation. Used by some methods (e.g. :ref:`Image.rotate_90()<class_Image_method_rotate_90>`).
 
 .. _class_@GlobalScope_constant_COUNTERCLOCKWISE:
 
@@ -495,7 +495,7 @@ Clockwise rotation. Used by some methods (e.g. :ref:`Image.rotate_90<class_Image
 
 :ref:`ClockDirection<enum_@GlobalScope_ClockDirection>` **COUNTERCLOCKWISE** = ``1``
 
-Counter-clockwise rotation. Used by some methods (e.g. :ref:`Image.rotate_90<class_Image_method_rotate_90>`).
+Counter-clockwise rotation. Used by some methods (e.g. :ref:`Image.rotate_90()<class_Image_method_rotate_90>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2407,7 +2407,7 @@ enum **KeyLocation**: :ref:`🔗<enum_@GlobalScope_KeyLocation>`
 
 Used for keys which only appear once, or when a comparison doesn't need to differentiate the ``LEFT`` and ``RIGHT`` versions.
 
-For example, when using :ref:`InputEvent.is_match<class_InputEvent_method_is_match>`, an event which has :ref:`KEY_LOCATION_UNSPECIFIED<class_@GlobalScope_constant_KEY_LOCATION_UNSPECIFIED>` will match any :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` on the passed event.
+For example, when using :ref:`InputEvent.is_match()<class_InputEvent_method_is_match>`, an event which has :ref:`KEY_LOCATION_UNSPECIFIED<class_@GlobalScope_constant_KEY_LOCATION_UNSPECIFIED>` will match any :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` on the passed event.
 
 .. _class_@GlobalScope_constant_KEY_LOCATION_LEFT:
 
@@ -3995,7 +3995,7 @@ Editing the property prompts the user for restarting the editor.
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_SCRIPT_VARIABLE** = ``4096``
 
-The property is a script variable. :ref:`PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` can be used to distinguish between exported script variables from built-in variables (which don't have this usage flag). By default, :ref:`PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` is **not** applied to variables that are created by overriding :ref:`Object._get_property_list<class_Object_private_method__get_property_list>` in a script.
+The property is a script variable. :ref:`PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` can be used to distinguish between exported script variables from built-in variables (which don't have this usage flag). By default, :ref:`PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` is **not** applied to variables that are created by overriding :ref:`Object._get_property_list()<class_Object_private_method__get_property_list>` in a script.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_STORE_IF_NULL:
 
@@ -4053,7 +4053,7 @@ The property is an array.
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_ALWAYS_DUPLICATE** = ``524288``
 
-When duplicating a resource with :ref:`Resource.duplicate<class_Resource_method_duplicate>`, and this flag is set on a property of that resource, the property should always be duplicated, regardless of the ``subresources`` bool parameter.
+When duplicating a resource with :ref:`Resource.duplicate()<class_Resource_method_duplicate>`, and this flag is set on a property of that resource, the property should always be duplicated, regardless of the ``subresources`` bool parameter.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NEVER_DUPLICATE:
 
@@ -4061,7 +4061,7 @@ When duplicating a resource with :ref:`Resource.duplicate<class_Resource_method_
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NEVER_DUPLICATE** = ``1048576``
 
-When duplicating a resource with :ref:`Resource.duplicate<class_Resource_method_duplicate>`, and this flag is set on a property of that resource, the property should never be duplicated, regardless of the ``subresources`` bool parameter.
+When duplicating a resource with :ref:`Resource.duplicate()<class_Resource_method_duplicate>`, and this flag is set on a property of that resource, the property should never be duplicated, regardless of the ``subresources`` bool parameter.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_HIGH_END_GFX:
 
@@ -4217,7 +4217,7 @@ Flag for a static method.
 
 :ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_OBJECT_CORE** = ``64``
 
-Used internally. Allows to not dump core virtual methods (such as :ref:`Object._notification<class_Object_private_method__notification>`) to the JSON API.
+Used internally. Allows to not dump core virtual methods (such as :ref:`Object._notification()<class_Object_private_method__notification>`) to the JSON API.
 
 .. _class_@GlobalScope_constant_METHOD_FLAGS_DEFAULT:
 
@@ -5269,7 +5269,7 @@ Returns the absolute value of a :ref:`Variant<class_Variant>` parameter ``x`` (i
     var f = abs(Vector3i(-7, -8, -9))
     # f is (7, 8, 9)
 
-\ **Note:** For better type safety, use :ref:`absf<class_@GlobalScope_method_absf>`, :ref:`absi<class_@GlobalScope_method_absi>`, :ref:`Vector2.abs<class_Vector2_method_abs>`, :ref:`Vector2i.abs<class_Vector2i_method_abs>`, :ref:`Vector3.abs<class_Vector3_method_abs>`, :ref:`Vector3i.abs<class_Vector3i_method_abs>`, :ref:`Vector4.abs<class_Vector4_method_abs>`, or :ref:`Vector4i.abs<class_Vector4i_method_abs>`.
+\ **Note:** For better type safety, use :ref:`absf()<class_@GlobalScope_method_absf>`, :ref:`absi()<class_@GlobalScope_method_absi>`, :ref:`Vector2.abs()<class_Vector2_method_abs>`, :ref:`Vector2i.abs()<class_Vector2i_method_abs>`, :ref:`Vector3.abs()<class_Vector3_method_abs>`, :ref:`Vector3i.abs()<class_Vector3i_method_abs>`, :ref:`Vector4.abs()<class_Vector4_method_abs>`, or :ref:`Vector4i.abs()<class_Vector4i_method_abs>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5315,7 +5315,7 @@ Returns the absolute value of int parameter ``x`` (i.e. positive value).
 
 :ref:`float<class_float>` **acos**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_acos>`
 
-Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`acos<class_@GlobalScope_method_acos>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`acos()<class_@GlobalScope_method_acos>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 ::
 
@@ -5332,7 +5332,7 @@ Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``
 
 :ref:`float<class_float>` **acosh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_acosh>`
 
-Returns the hyperbolic arc (also called inverse) cosine of ``x``, returning a value in radians. Use it to get the angle from an angle's cosine in hyperbolic space if ``x`` is larger or equal to 1. For values of ``x`` lower than 1, it will return 0, in order to prevent :ref:`acosh<class_@GlobalScope_method_acosh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+Returns the hyperbolic arc (also called inverse) cosine of ``x``, returning a value in radians. Use it to get the angle from an angle's cosine in hyperbolic space if ``x`` is larger or equal to 1. For values of ``x`` lower than 1, it will return 0, in order to prevent :ref:`acosh()<class_@GlobalScope_method_acosh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 ::
 
@@ -5363,7 +5363,7 @@ Returns the difference between the two angles (in radians), in the range of ``[-
 
 :ref:`float<class_float>` **asin**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_asin>`
 
-Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`asin<class_@GlobalScope_method_asin>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`asin()<class_@GlobalScope_method_asin>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 ::
 
@@ -5399,7 +5399,7 @@ Returns the hyperbolic arc (also called inverse) sine of ``x``, returning a valu
 
 Returns the arc tangent of ``x`` in radians. Use it to get the angle from an angle's tangent in trigonometry.
 
-The method cannot know in which quadrant the angle should fall. See :ref:`atan2<class_@GlobalScope_method_atan2>` if you have both ``y`` and ``x``.
+The method cannot know in which quadrant the angle should fall. See :ref:`atan2()<class_@GlobalScope_method_atan2>` if you have both ``y`` and ``x``.
 
 ::
 
@@ -5437,7 +5437,7 @@ Important note: The Y coordinate comes first, by convention.
 
 Returns the hyperbolic arc (also called inverse) tangent of ``x``, returning a value in radians. Use it to get the angle from an angle's tangent in hyperbolic space if ``x`` is between -1 and 1 (non-inclusive).
 
-In mathematics, the inverse hyperbolic tangent is only defined for -1 < ``x`` < 1 in the real set, so values equal or lower to -1 for ``x`` return negative :ref:`@GDScript.INF<class_@GDScript_constant_INF>` and values equal or higher than 1 return positive :ref:`@GDScript.INF<class_@GDScript_constant_INF>` in order to prevent :ref:`atanh<class_@GlobalScope_method_atanh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+In mathematics, the inverse hyperbolic tangent is only defined for -1 < ``x`` < 1 in the real set, so values equal or lower to -1 for ``x`` return negative :ref:`@GDScript.INF<class_@GDScript_constant_INF>` and values equal or higher than 1 return positive :ref:`@GDScript.INF<class_@GDScript_constant_INF>` in order to prevent :ref:`atanh()<class_@GlobalScope_method_atanh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 ::
 
@@ -5483,7 +5483,7 @@ Returns the point at the given ``t`` on a one-dimensional `Bézier curve <https:
 
 Decodes a byte array back to a :ref:`Variant<class_Variant>` value, without decoding objects.
 
-\ **Note:** If you need object deserialization, see :ref:`bytes_to_var_with_objects<class_@GlobalScope_method_bytes_to_var_with_objects>`.
+\ **Note:** If you need object deserialization, see :ref:`bytes_to_var_with_objects()<class_@GlobalScope_method_bytes_to_var_with_objects>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5516,9 +5516,9 @@ Rounds ``x`` upward (towards positive infinity), returning the smallest whole nu
     var i = ceil(1.45) # i is 2.0
     i = ceil(1.001)    # i is 2.0
 
-See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`round<class_@GlobalScope_method_round>`, and :ref:`snapped<class_@GlobalScope_method_snapped>`.
+See also :ref:`floor()<class_@GlobalScope_method_floor>`, :ref:`round()<class_@GlobalScope_method_round>`, and :ref:`snapped()<class_@GlobalScope_method_snapped>`.
 
-\ **Note:** For better type safety, use :ref:`ceilf<class_@GlobalScope_method_ceilf>`, :ref:`ceili<class_@GlobalScope_method_ceili>`, :ref:`Vector2.ceil<class_Vector2_method_ceil>`, :ref:`Vector3.ceil<class_Vector3_method_ceil>`, or :ref:`Vector4.ceil<class_Vector4_method_ceil>`.
+\ **Note:** For better type safety, use :ref:`ceilf()<class_@GlobalScope_method_ceilf>`, :ref:`ceili()<class_@GlobalScope_method_ceili>`, :ref:`Vector2.ceil()<class_Vector2_method_ceil>`, :ref:`Vector3.ceil()<class_Vector3_method_ceil>`, or :ref:`Vector4.ceil()<class_Vector4_method_ceil>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5532,7 +5532,7 @@ See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`round<class_@Globa
 
 Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``.
 
-A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning a :ref:`float<class_float>`.
+A type-safe version of :ref:`ceil()<class_@GlobalScope_method_ceil>`, returning a :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5546,7 +5546,7 @@ A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning a 
 
 Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``.
 
-A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning an :ref:`int<class_int>`.
+A type-safe version of :ref:`ceil()<class_@GlobalScope_method_ceil>`, returning an :ref:`int<class_int>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5568,7 +5568,7 @@ Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``
     var b = clamp(8.1, 0.9, 5.5)
     # b is 5.5
 
-\ **Note:** For better type safety, use :ref:`clampf<class_@GlobalScope_method_clampf>`, :ref:`clampi<class_@GlobalScope_method_clampi>`, :ref:`Vector2.clamp<class_Vector2_method_clamp>`, :ref:`Vector2i.clamp<class_Vector2i_method_clamp>`, :ref:`Vector3.clamp<class_Vector3_method_clamp>`, :ref:`Vector3i.clamp<class_Vector3i_method_clamp>`, :ref:`Vector4.clamp<class_Vector4_method_clamp>`, :ref:`Vector4i.clamp<class_Vector4i_method_clamp>`, or :ref:`Color.clamp<class_Color_method_clamp>` (not currently supported by this method).
+\ **Note:** For better type safety, use :ref:`clampf()<class_@GlobalScope_method_clampf>`, :ref:`clampi()<class_@GlobalScope_method_clampi>`, :ref:`Vector2.clamp()<class_Vector2_method_clamp>`, :ref:`Vector2i.clamp()<class_Vector2i_method_clamp>`, :ref:`Vector3.clamp()<class_Vector3_method_clamp>`, :ref:`Vector3i.clamp()<class_Vector3i_method_clamp>`, :ref:`Vector4.clamp()<class_Vector4_method_clamp>`, :ref:`Vector4i.clamp()<class_Vector4i_method_clamp>`, or :ref:`Color.clamp()<class_Color_method_clamp>` (not currently supported by this method).
 
 \ **Note:** When using this on vectors it will *not* perform component-wise clamping, and will pick ``min`` if ``value < min`` or ``max`` if ``value > max``. To perform component-wise clamping use the methods listed above.
 
@@ -5668,7 +5668,7 @@ Cubic interpolates between two values by the factor defined in ``weight`` with `
 
 :ref:`float<class_float>` **cubic_interpolate_angle**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_cubic_interpolate_angle>`
 
-Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
+Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle()<class_@GlobalScope_method_lerp_angle>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5680,9 +5680,9 @@ Cubic interpolates between two rotation values with shortest path by the factor 
 
 :ref:`float<class_float>` **cubic_interpolate_angle_in_time**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`, to_t\: :ref:`float<class_float>`, pre_t\: :ref:`float<class_float>`, post_t\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_cubic_interpolate_angle_in_time>`
 
-Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
+Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle()<class_@GlobalScope_method_lerp_angle>`.
 
-It can perform smoother interpolation than :ref:`cubic_interpolate<class_@GlobalScope_method_cubic_interpolate>` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate()<class_@GlobalScope_method_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-item-separator
 
@@ -5696,7 +5696,7 @@ It can perform smoother interpolation than :ref:`cubic_interpolate<class_@Global
 
 Cubic interpolates between two values by the factor defined in ``weight`` with ``pre`` and ``post`` values.
 
-It can perform smoother interpolation than :ref:`cubic_interpolate<class_@GlobalScope_method_cubic_interpolate>` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate()<class_@GlobalScope_method_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-item-separator
 
@@ -5750,7 +5750,7 @@ Returns an "eased" value of ``x`` based on an easing function defined with ``cur
 
 \ `ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/ease_cheatsheet.png>`__\ 
 
-See also :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. If you need to perform more advanced transitions, use :ref:`Tween.interpolate_value<class_Tween_method_interpolate_value>`.
+See also :ref:`smoothstep()<class_@GlobalScope_method_smoothstep>`. If you need to perform more advanced transitions, use :ref:`Tween.interpolate_value()<class_Tween_method_interpolate_value>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5785,7 +5785,7 @@ The natural exponential function. It raises the mathematical constant *e* to the
 
 \ *e* has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
 
-For exponents to other bases use the method :ref:`pow<class_@GlobalScope_method_pow>`.
+For exponents to other bases use the method :ref:`pow()<class_@GlobalScope_method_pow>`.
 
 ::
 
@@ -5808,9 +5808,9 @@ Rounds ``x`` downward (towards negative infinity), returning the largest whole n
     var a = floor(2.99) # a is 2.0
     a = floor(-2.99)    # a is -3.0
 
-See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`round<class_@GlobalScope_method_round>`, and :ref:`snapped<class_@GlobalScope_method_snapped>`.
+See also :ref:`ceil()<class_@GlobalScope_method_ceil>`, :ref:`round()<class_@GlobalScope_method_round>`, and :ref:`snapped()<class_@GlobalScope_method_snapped>`.
 
-\ **Note:** For better type safety, use :ref:`floorf<class_@GlobalScope_method_floorf>`, :ref:`floori<class_@GlobalScope_method_floori>`, :ref:`Vector2.floor<class_Vector2_method_floor>`, :ref:`Vector3.floor<class_Vector3_method_floor>`, or :ref:`Vector4.floor<class_Vector4_method_floor>`.
+\ **Note:** For better type safety, use :ref:`floorf()<class_@GlobalScope_method_floorf>`, :ref:`floori()<class_@GlobalScope_method_floori>`, :ref:`Vector2.floor()<class_Vector2_method_floor>`, :ref:`Vector3.floor()<class_Vector3_method_floor>`, or :ref:`Vector4.floor()<class_Vector4_method_floor>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5824,7 +5824,7 @@ See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`round<class_@GlobalS
 
 Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``.
 
-A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, returning a :ref:`float<class_float>`.
+A type-safe version of :ref:`floor()<class_@GlobalScope_method_floor>`, returning a :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5838,7 +5838,7 @@ A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, returning 
 
 Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``.
 
-A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, returning an :ref:`int<class_int>`.
+A type-safe version of :ref:`floor()<class_@GlobalScope_method_floor>`, returning an :ref:`int<class_int>`.
 
 \ **Note:** This function is *not* the same as ``int(x)``, which rounds towards 0.
 
@@ -5927,7 +5927,7 @@ Returns the integer hash of the passed ``variable``.
 
 :ref:`Object<class_Object>` **instance_from_id**\ (\ instance_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_instance_from_id>`
 
-Returns the :ref:`Object<class_Object>` that corresponds to ``instance_id``. All Objects have a unique instance ID. See also :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns the :ref:`Object<class_Object>` that corresponds to ``instance_id``. All Objects have a unique instance ID. See also :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 
 .. tabs::
@@ -5967,7 +5967,7 @@ Returns the :ref:`Object<class_Object>` that corresponds to ``instance_id``. All
 
 :ref:`float<class_float>` **inverse_lerp**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_inverse_lerp>`
 
-Returns an interpolation or extrapolation factor considering the range specified in ``from`` and ``to``, and the interpolated value specified in ``weight``. The returned value will be between ``0.0`` and ``1.0`` if ``weight`` is between ``from`` and ``to`` (inclusive). If ``weight`` is located outside this range, then an extrapolation factor will be returned (return value lower than ``0.0`` or greater than ``1.0``). Use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` if this is not desired.
+Returns an interpolation or extrapolation factor considering the range specified in ``from`` and ``to``, and the interpolated value specified in ``weight``. The returned value will be between ``0.0`` and ``1.0`` if ``weight`` is between ``from`` and ``to`` (inclusive). If ``weight`` is located outside this range, then an extrapolation factor will be returned (return value lower than ``0.0`` or greater than ``1.0``). Use :ref:`clamp()<class_@GlobalScope_method_clamp>` on the result of :ref:`inverse_lerp()<class_@GlobalScope_method_inverse_lerp>` if this is not desired.
 
 ::
 
@@ -5979,7 +5979,7 @@ Returns an interpolation or extrapolation factor considering the range specified
     var ratio = inverse_lerp(20, 30, 27.5)
     # ratio is now 0.75.
 
-See also :ref:`lerp<class_@GlobalScope_method_lerp>`, which performs the reverse of this operation, and :ref:`remap<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
+See also :ref:`lerp()<class_@GlobalScope_method_lerp>`, which performs the reverse of this operation, and :ref:`remap()<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
 
 .. rst-class:: classref-item-separator
 
@@ -6101,7 +6101,7 @@ These are :ref:`Variant<class_Variant>` reference types: :ref:`Object<class_Obje
 
 Returns ``true`` if ``x`` is zero or almost zero. The comparison is done using a tolerance calculation with a small internal epsilon.
 
-This function is faster than using :ref:`is_equal_approx<class_@GlobalScope_method_is_equal_approx>` with one value as zero.
+This function is faster than using :ref:`is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` with one value as zero.
 
 .. rst-class:: classref-item-separator
 
@@ -6113,7 +6113,7 @@ This function is faster than using :ref:`is_equal_approx<class_@GlobalScope_meth
 
 :ref:`Variant<class_Variant>` **lerp**\ (\ from\: :ref:`Variant<class_Variant>`, to\: :ref:`Variant<class_Variant>`, weight\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_lerp>`
 
-Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. If this is not desired, use :ref:`clampf<class_@GlobalScope_method_clampf>` to limit ``weight``.
+Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. If this is not desired, use :ref:`clampf()<class_@GlobalScope_method_clampf>` to limit ``weight``.
 
 Both ``from`` and ``to`` must be the same type. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector4<class_Vector4>`, :ref:`Color<class_Color>`, :ref:`Quaternion<class_Quaternion>`, :ref:`Basis<class_Basis>`, :ref:`Transform2D<class_Transform2D>`, :ref:`Transform3D<class_Transform3D>`.
 
@@ -6121,9 +6121,9 @@ Both ``from`` and ``to`` must be the same type. Supported types: :ref:`int<class
 
     lerp(0, 4, 0.75) # Returns 3.0
 
-See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. See also :ref:`remap<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
+See also :ref:`inverse_lerp()<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp()<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease()<class_@GlobalScope_method_ease>` or :ref:`smoothstep()<class_@GlobalScope_method_smoothstep>`. See also :ref:`remap()<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
 
-\ **Note:** For better type safety, use :ref:`lerpf<class_@GlobalScope_method_lerpf>`, :ref:`Vector2.lerp<class_Vector2_method_lerp>`, :ref:`Vector3.lerp<class_Vector3_method_lerp>`, :ref:`Vector4.lerp<class_Vector4_method_lerp>`, :ref:`Color.lerp<class_Color_method_lerp>`, :ref:`Quaternion.slerp<class_Quaternion_method_slerp>`, :ref:`Basis.slerp<class_Basis_method_slerp>`, :ref:`Transform2D.interpolate_with<class_Transform2D_method_interpolate_with>`, or :ref:`Transform3D.interpolate_with<class_Transform3D_method_interpolate_with>`.
+\ **Note:** For better type safety, use :ref:`lerpf()<class_@GlobalScope_method_lerpf>`, :ref:`Vector2.lerp()<class_Vector2_method_lerp>`, :ref:`Vector3.lerp()<class_Vector3_method_lerp>`, :ref:`Vector4.lerp()<class_Vector4_method_lerp>`, :ref:`Color.lerp()<class_Color_method_lerp>`, :ref:`Quaternion.slerp()<class_Quaternion_method_slerp>`, :ref:`Basis.slerp()<class_Basis_method_slerp>`, :ref:`Transform2D.interpolate_with()<class_Transform2D_method_interpolate_with>`, or :ref:`Transform3D.interpolate_with()<class_Transform3D_method_interpolate_with>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6137,7 +6137,7 @@ See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which perfo
 
 Linearly interpolates between two angles (in radians) by a ``weight`` value between 0.0 and 1.0.
 
-Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`. To perform eased interpolation with :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`.
+Similar to :ref:`lerp()<class_@GlobalScope_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`. To perform eased interpolation with :ref:`lerp_angle()<class_@GlobalScope_method_lerp_angle>`, combine it with :ref:`ease()<class_@GlobalScope_method_ease>` or :ref:`smoothstep()<class_@GlobalScope_method_smoothstep>`.
 
 ::
 
@@ -6161,13 +6161,13 @@ Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correct
 
 :ref:`float<class_float>` **lerpf**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_lerpf>`
 
-Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. If this is not desired, use :ref:`clampf<class_@GlobalScope_method_clampf>` on the result of this function.
+Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. If this is not desired, use :ref:`clampf()<class_@GlobalScope_method_clampf>` on the result of this function.
 
 ::
 
     lerpf(0, 4, 0.75) # Returns 3.0
 
-See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`.
+See also :ref:`inverse_lerp()<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp()<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease()<class_@GlobalScope_method_ease>` or :ref:`smoothstep()<class_@GlobalScope_method_smoothstep>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6223,7 +6223,7 @@ Returns the maximum of the given numeric values. This function can take any numb
 
     max(1, 7, 3, -6, 5) # Returns 7
 
-\ **Note:** When using this on vectors it will *not* perform component-wise maximum, and will pick the largest value when compared using ``x < y``. To perform component-wise maximum, use :ref:`Vector2.max<class_Vector2_method_max>`, :ref:`Vector2i.max<class_Vector2i_method_max>`, :ref:`Vector3.max<class_Vector3_method_max>`, :ref:`Vector3i.max<class_Vector3i_method_max>`, :ref:`Vector4.max<class_Vector4_method_max>`, and :ref:`Vector4i.max<class_Vector4i_method_max>`.
+\ **Note:** When using this on vectors it will *not* perform component-wise maximum, and will pick the largest value when compared using ``x < y``. To perform component-wise maximum, use :ref:`Vector2.max()<class_Vector2_method_max>`, :ref:`Vector2i.max()<class_Vector2i_method_max>`, :ref:`Vector3.max()<class_Vector3_method_max>`, :ref:`Vector3i.max()<class_Vector3i_method_max>`, :ref:`Vector4.max()<class_Vector4_method_max>`, and :ref:`Vector4i.max()<class_Vector4i_method_max>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6275,7 +6275,7 @@ Returns the minimum of the given numeric values. This function can take any numb
 
     min(1, 7, 3, -6, 5) # Returns -6
 
-\ **Note:** When using this on vectors it will *not* perform component-wise minimum, and will pick the smallest value when compared using ``x < y``. To perform component-wise minimum, use :ref:`Vector2.min<class_Vector2_method_min>`, :ref:`Vector2i.min<class_Vector2i_method_min>`, :ref:`Vector3.min<class_Vector3_method_min>`, :ref:`Vector3i.min<class_Vector3i_method_min>`, :ref:`Vector4.min<class_Vector4_method_min>`, and :ref:`Vector4i.min<class_Vector4i_method_min>`.
+\ **Note:** When using this on vectors it will *not* perform component-wise minimum, and will pick the smallest value when compared using ``x < y``. To perform component-wise minimum, use :ref:`Vector2.min()<class_Vector2_method_min>`, :ref:`Vector2i.min()<class_Vector2i_method_min>`, :ref:`Vector3.min()<class_Vector3_method_min>`, :ref:`Vector3i.min()<class_Vector3i_method_min>`, :ref:`Vector4.min()<class_Vector4_method_min>`, and :ref:`Vector4i.min()<class_Vector4i_method_min>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6457,7 +6457,7 @@ Converts one or more arguments of any type to string in the best way possible an
 
 
 
-\ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed. See also :ref:`Engine.print_to_stdout<class_Engine_property_print_to_stdout>` and :ref:`ProjectSettings.application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`.
+\ **Note:** Consider using :ref:`push_error()<class_@GlobalScope_method_push_error>` and :ref:`push_warning()<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print()<class_@GlobalScope_method_print>` or :ref:`print_rich()<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed. See also :ref:`Engine.print_to_stdout<class_Engine_property_print_to_stdout>` and :ref:`ProjectSettings.application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6490,11 +6490,11 @@ When printing to standard output, the supported subset of BBCode is converted to
 
 
 
-\ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
+\ **Note:** Consider using :ref:`push_error()<class_@GlobalScope_method_push_error>` and :ref:`push_warning()<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print()<class_@GlobalScope_method_print>` or :ref:`print_rich()<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
 
 \ **Note:** On Windows, only Windows 10 and later correctly displays ANSI escape codes in standard output.
 
-\ **Note:** Output displayed in the editor supports clickable ``[url=address]text[/url]`` tags. The ``[url]`` tag's ``address`` value is handled by :ref:`OS.shell_open<class_OS_method_shell_open>` when clicked.
+\ **Note:** Output displayed in the editor supports clickable ``[url=address]text[/url]`` tags. The ``[url]`` tag's ``address`` value is handled by :ref:`OS.shell_open()<class_OS_method_shell_open>` when clicked.
 
 .. rst-class:: classref-item-separator
 
@@ -6506,7 +6506,7 @@ When printing to standard output, the supported subset of BBCode is converted to
 
 |void| **print_verbose**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_print_verbose>`
 
-If verbose mode is enabled (:ref:`OS.is_stdout_verbose<class_OS_method_is_stdout_verbose>` returning ``true``), converts one or more arguments of any type to string in the best way possible and prints them to the console.
+If verbose mode is enabled (:ref:`OS.is_stdout_verbose()<class_OS_method_is_stdout_verbose>` returning ``true``), converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
 .. rst-class:: classref-item-separator
 
@@ -6543,7 +6543,7 @@ Prints one or more arguments to strings in the best way possible to standard err
 
 |void| **printraw**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_printraw>`
 
-Prints one or more arguments to strings in the best way possible to the OS terminal. Unlike :ref:`print<class_@GlobalScope_method_print>`, no newline is automatically added at the end.
+Prints one or more arguments to strings in the best way possible to the OS terminal. Unlike :ref:`print()<class_@GlobalScope_method_print>`, no newline is automatically added at the end.
 
 \ **Note:** The OS terminal is *not* the same as the editor's Output dock. The output sent to the OS terminal can be seen when running Godot from a terminal. On Windows, this requires using the ``console.exe`` executable.
 
@@ -6843,7 +6843,7 @@ Returns a random signed 32-bit integer between ``from`` and ``to`` (inclusive). 
 
 Randomizes the seed (or the internal state) of the random number generator. The current implementation uses a number based on the device's time.
 
-\ **Note:** This function is called automatically when the project is run. If you need to fix the seed to have consistent, reproducible results, use :ref:`seed<class_@GlobalScope_method_seed>` to initialize the random number generator.
+\ **Note:** This function is called automatically when the project is run. If you need to fix the seed to have consistent, reproducible results, use :ref:`seed()<class_@GlobalScope_method_seed>` to initialize the random number generator.
 
 .. rst-class:: classref-item-separator
 
@@ -6855,7 +6855,7 @@ Randomizes the seed (or the internal state) of the random number generator. The 
 
 :ref:`float<class_float>` **remap**\ (\ value\: :ref:`float<class_float>`, istart\: :ref:`float<class_float>`, istop\: :ref:`float<class_float>`, ostart\: :ref:`float<class_float>`, ostop\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_remap>`
 
-Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp<class_@GlobalScope_method_lerp>` and :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. If this is not desired, use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of this function.
+Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp()<class_@GlobalScope_method_lerp>` and :ref:`inverse_lerp()<class_@GlobalScope_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. If this is not desired, use :ref:`clamp()<class_@GlobalScope_method_clamp>` on the result of this function.
 
 ::
 
@@ -6901,7 +6901,7 @@ Creates an RID from a ``base``. This is used mainly from native extensions to bu
 
 Rotates ``from`` toward ``to`` by the ``delta`` amount. Will not go past ``to``.
 
-Similar to :ref:`move_toward<class_@GlobalScope_method_move_toward>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`.
+Similar to :ref:`move_toward()<class_@GlobalScope_method_move_toward>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`.
 
 If ``delta`` is negative, this function will rotate away from ``to``, toward the opposite angle, and will not go past the opposite angle.
 
@@ -6923,9 +6923,9 @@ Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0
     round(2.5) # Returns 3
     round(2.6) # Returns 3
 
-See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`ceil<class_@GlobalScope_method_ceil>`, and :ref:`snapped<class_@GlobalScope_method_snapped>`.
+See also :ref:`floor()<class_@GlobalScope_method_floor>`, :ref:`ceil()<class_@GlobalScope_method_ceil>`, and :ref:`snapped()<class_@GlobalScope_method_snapped>`.
 
-\ **Note:** For better type safety, use :ref:`roundf<class_@GlobalScope_method_roundf>`, :ref:`roundi<class_@GlobalScope_method_roundi>`, :ref:`Vector2.round<class_Vector2_method_round>`, :ref:`Vector3.round<class_Vector3_method_round>`, or :ref:`Vector4.round<class_Vector4_method_round>`.
+\ **Note:** For better type safety, use :ref:`roundf()<class_@GlobalScope_method_roundf>`, :ref:`roundi()<class_@GlobalScope_method_roundi>`, :ref:`Vector2.round()<class_Vector2_method_round>`, :ref:`Vector3.round()<class_Vector3_method_round>`, or :ref:`Vector4.round()<class_Vector4_method_round>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6939,7 +6939,7 @@ See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`ceil<class_@Global
 
 Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0.
 
-A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, returning a :ref:`float<class_float>`.
+A type-safe version of :ref:`round()<class_@GlobalScope_method_round>`, returning a :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6953,7 +6953,7 @@ A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, returning 
 
 Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0.
 
-A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, returning an :ref:`int<class_int>`.
+A type-safe version of :ref:`round()<class_@GlobalScope_method_round>`, returning an :ref:`int<class_int>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7013,7 +7013,7 @@ Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2
     
     sign(Vector3(-6.0, 0.0, 6.0)) # Returns (-1, 0, 1)
 
-\ **Note:** For better type safety, use :ref:`signf<class_@GlobalScope_method_signf>`, :ref:`signi<class_@GlobalScope_method_signi>`, :ref:`Vector2.sign<class_Vector2_method_sign>`, :ref:`Vector2i.sign<class_Vector2i_method_sign>`, :ref:`Vector3.sign<class_Vector3_method_sign>`, :ref:`Vector3i.sign<class_Vector3i_method_sign>`, :ref:`Vector4.sign<class_Vector4_method_sign>`, or :ref:`Vector4i.sign<class_Vector4i_method_sign>`.
+\ **Note:** For better type safety, use :ref:`signf()<class_@GlobalScope_method_signf>`, :ref:`signi()<class_@GlobalScope_method_signi>`, :ref:`Vector2.sign()<class_Vector2_method_sign>`, :ref:`Vector2i.sign()<class_Vector2i_method_sign>`, :ref:`Vector3.sign()<class_Vector3_method_sign>`, :ref:`Vector3i.sign()<class_Vector3i_method_sign>`, :ref:`Vector4.sign()<class_Vector4_method_sign>`, or :ref:`Vector4i.sign()<class_Vector4i_method_sign>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7111,7 +7111,7 @@ This S-shaped curve is the cubic Hermite interpolator, given by ``f(y) = 3*y^2 -
     smoothstep(0, 2, 1.0) # Returns 0.5
     smoothstep(0, 2, 2.0) # Returns 1.0
 
-Compared to :ref:`ease<class_@GlobalScope_method_ease>` with a curve value of ``-1.6521``, :ref:`smoothstep<class_@GlobalScope_method_smoothstep>` returns the smoothest possible curve with no sudden changes in the derivative. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
+Compared to :ref:`ease()<class_@GlobalScope_method_ease>` with a curve value of ``-1.6521``, :ref:`smoothstep()<class_@GlobalScope_method_smoothstep>` returns the smoothest possible curve with no sudden changes in the derivative. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
 \ `Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/smoothstep_ease_comparison.png>`__\ 
 
@@ -7138,9 +7138,9 @@ The returned value is the same type of :ref:`Variant<class_Variant>` as ``step``
     
     snapped(Vector2(34, 70), Vector2(8, 8))  # Returns (32, 72)
 
-See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`floor<class_@GlobalScope_method_floor>`, and :ref:`round<class_@GlobalScope_method_round>`.
+See also :ref:`ceil()<class_@GlobalScope_method_ceil>`, :ref:`floor()<class_@GlobalScope_method_floor>`, and :ref:`round()<class_@GlobalScope_method_round>`.
 
-\ **Note:** For better type safety, use :ref:`snappedf<class_@GlobalScope_method_snappedf>`, :ref:`snappedi<class_@GlobalScope_method_snappedi>`, :ref:`Vector2.snapped<class_Vector2_method_snapped>`, :ref:`Vector2i.snapped<class_Vector2i_method_snapped>`, :ref:`Vector3.snapped<class_Vector3_method_snapped>`, :ref:`Vector3i.snapped<class_Vector3i_method_snapped>`, :ref:`Vector4.snapped<class_Vector4_method_snapped>`, or :ref:`Vector4i.snapped<class_Vector4i_method_snapped>`.
+\ **Note:** For better type safety, use :ref:`snappedf()<class_@GlobalScope_method_snappedf>`, :ref:`snappedi()<class_@GlobalScope_method_snappedi>`, :ref:`Vector2.snapped()<class_Vector2_method_snapped>`, :ref:`Vector2i.snapped()<class_Vector2i_method_snapped>`, :ref:`Vector3.snapped()<class_Vector3_method_snapped>`, :ref:`Vector3i.snapped()<class_Vector3i_method_snapped>`, :ref:`Vector4.snapped()<class_Vector4_method_snapped>`, or :ref:`Vector4i.snapped()<class_Vector4i_method_snapped>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7154,7 +7154,7 @@ See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`floor<class_@GlobalS
 
 Returns the multiple of ``step`` that is the closest to ``x``. This can also be used to round a floating-point number to an arbitrary number of decimals.
 
-A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, returning a :ref:`float<class_float>`.
+A type-safe version of :ref:`snapped()<class_@GlobalScope_method_snapped>`, returning a :ref:`float<class_float>`.
 
 ::
 
@@ -7173,7 +7173,7 @@ A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, return
 
 Returns the multiple of ``step`` that is the closest to ``x``.
 
-A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, returning an :ref:`int<class_int>`.
+A type-safe version of :ref:`snapped()<class_@GlobalScope_method_snapped>`, returning an :ref:`int<class_int>`.
 
 ::
 
@@ -7247,7 +7247,7 @@ Converts one or more arguments of any :ref:`Variant<class_Variant>` type to a :r
 
 :ref:`Variant<class_Variant>` **str_to_var**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GlobalScope_method_str_to_var>`
 
-Converts a formatted ``string`` that was returned by :ref:`var_to_str<class_@GlobalScope_method_var_to_str>` to the original :ref:`Variant<class_Variant>`.
+Converts a formatted ``string`` that was returned by :ref:`var_to_str()<class_@GlobalScope_method_var_to_str>` to the original :ref:`Variant<class_Variant>`.
 
 
 .. tabs::
@@ -7341,7 +7341,7 @@ Returns a human-readable name of the given ``type``, using the :ref:`Variant.Typ
     print(type_string(TYPE_INT)) # Prints "int"
     print(type_string(TYPE_STRING)) # Prints "String"
 
-See also :ref:`typeof<class_@GlobalScope_method_typeof>`.
+See also :ref:`typeof()<class_@GlobalScope_method_typeof>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7365,7 +7365,7 @@ Returns the internal type of the given ``variable``, using the :ref:`Variant.Typ
     else:
         print("Unexpected result!")
 
-See also :ref:`type_string<class_@GlobalScope_method_type_string>`.
+See also :ref:`type_string()<class_@GlobalScope_method_type_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7377,9 +7377,9 @@ See also :ref:`type_string<class_@GlobalScope_method_type_string>`.
 
 :ref:`PackedByteArray<class_PackedByteArray>` **var_to_bytes**\ (\ variable\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_var_to_bytes>`
 
-Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding objects. Deserialization can be done with :ref:`bytes_to_var<class_@GlobalScope_method_bytes_to_var>`.
+Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding objects. Deserialization can be done with :ref:`bytes_to_var()<class_@GlobalScope_method_bytes_to_var>`.
 
-\ **Note:** If you need object serialization, see :ref:`var_to_bytes_with_objects<class_@GlobalScope_method_var_to_bytes_with_objects>`.
+\ **Note:** If you need object serialization, see :ref:`var_to_bytes_with_objects()<class_@GlobalScope_method_var_to_bytes_with_objects>`.
 
 \ **Note:** Encoding :ref:`Callable<class_Callable>` is not supported and will result in an empty value, regardless of the data.
 
@@ -7393,7 +7393,7 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding 
 
 :ref:`PackedByteArray<class_PackedByteArray>` **var_to_bytes_with_objects**\ (\ variable\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_var_to_bytes_with_objects>`
 
-Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects is allowed (and can potentially include executable code). Deserialization can be done with :ref:`bytes_to_var_with_objects<class_@GlobalScope_method_bytes_to_var_with_objects>`.
+Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects is allowed (and can potentially include executable code). Deserialization can be done with :ref:`bytes_to_var_with_objects()<class_@GlobalScope_method_bytes_to_var_with_objects>`.
 
 \ **Note:** Encoding :ref:`Callable<class_Callable>` is not supported and will result in an empty value, regardless of the data.
 
@@ -7407,7 +7407,7 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects 
 
 :ref:`String<class_String>` **var_to_str**\ (\ variable\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_var_to_str>`
 
-Converts a :ref:`Variant<class_Variant>` ``variable`` to a formatted :ref:`String<class_String>` that can then be parsed using :ref:`str_to_var<class_@GlobalScope_method_str_to_var>`.
+Converts a :ref:`Variant<class_Variant>` ``variable`` to a formatted :ref:`String<class_String>` that can then be parsed using :ref:`str_to_var()<class_@GlobalScope_method_str_to_var>`.
 
 
 .. tabs::
@@ -7501,9 +7501,9 @@ Wraps the float ``value`` between ``min`` and ``max``. Can be used for creating 
     # Infinite rotation (in radians)
     angle = wrapf(angle + 0.1, -PI, PI)
 
-\ **Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod<class_@GlobalScope_method_fposmod>`, so prefer using that instead.
+\ **Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod()<class_@GlobalScope_method_fposmod>`, so prefer using that instead.
 
-\ :ref:`wrapf<class_@GlobalScope_method_wrapf>` is more flexible than using the :ref:`fposmod<class_@GlobalScope_method_fposmod>` approach by giving the user control over the minimum value.
+\ :ref:`wrapf()<class_@GlobalScope_method_wrapf>` is more flexible than using the :ref:`fposmod()<class_@GlobalScope_method_fposmod>` approach by giving the user control over the minimum value.
 
 .. rst-class:: classref-item-separator
 

@@ -190,7 +190,7 @@ This interface supports AR (video background and real world tracking).
 
 :ref:`Capabilities<enum_XRInterface_Capabilities>` **XR_EXTERNAL** = ``32``
 
-This interface outputs to an external device. If the main viewport is used, the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_target_size<class_XRInterface_method_get_render_target_size>`). Using a separate viewport node frees up the main viewport for other purposes.
+This interface outputs to an external device. If the main viewport is used, the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_target_size()<class_XRInterface_method_get_render_target_size>`). Using a separate viewport node frees up the main viewport for other purposes.
 
 .. rst-class:: classref-item-separator
 
@@ -290,7 +290,7 @@ Player is free to move around, full positional tracking.
 
 :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` **XR_PLAY_AREA_STAGE** = ``4``
 
-Same as :ref:`XR_PLAY_AREA_ROOMSCALE<class_XRInterface_constant_XR_PLAY_AREA_ROOMSCALE>` but origin point is fixed to the center of the physical space. In this mode, system-level recentering may be disabled, requiring the use of :ref:`XRServer.center_on_hmd<class_XRServer_method_center_on_hmd>`.
+Same as :ref:`XR_PLAY_AREA_ROOMSCALE<class_XRInterface_constant_XR_PLAY_AREA_ROOMSCALE>` but origin point is fixed to the center of the physical space. In this mode, system-level recentering may be disabled, requiring the use of :ref:`XRServer.center_on_hmd()<class_XRServer_method_center_on_hmd>`.
 
 .. rst-class:: classref-item-separator
 
@@ -500,7 +500,7 @@ Returns the an array of supported environment blend modes, see :ref:`Environment
 
 Returns a :ref:`Dictionary<class_Dictionary>` with extra system info. Interfaces are expected to return ``XRRuntimeName`` and ``XRRuntimeVersion`` providing info about the used XR runtime. Additional entries may be provided specific to an interface.
 
-\ **Note:**\ This information may only be available after :ref:`initialize<class_XRInterface_method_initialize>` was successfully called.
+\ **Note:**\ This information may only be available after :ref:`initialize()<class_XRInterface_method_initialize>` was successfully called.
 
 .. rst-class:: classref-item-separator
 
@@ -598,7 +598,7 @@ Returns ``true`` if passthrough is enabled.
 
 :ref:`bool<class_bool>` **is_passthrough_supported**\ (\ ) :ref:`🔗<class_XRInterface_method_is_passthrough_supported>`
 
-**Deprecated:** Check that :ref:`XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>` is supported using :ref:`get_supported_environment_blend_modes<class_XRInterface_method_get_supported_environment_blend_modes>`, instead.
+**Deprecated:** Check that :ref:`XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>` is supported using :ref:`get_supported_environment_blend_modes()<class_XRInterface_method_get_supported_environment_blend_modes>`, instead.
 
 Returns ``true`` if this interface supports passthrough.
 
@@ -644,7 +644,7 @@ Sets the active environment blend mode.
 
 Sets the active play area mode, will return ``false`` if the mode can't be used with this interface.
 
-\ **Note:** Changing this after the interface has already been initialized can be jarring for the player, so it's recommended to recenter on the HMD with :ref:`XRServer.center_on_hmd<class_XRServer_method_center_on_hmd>` (if switching to :ref:`XR_PLAY_AREA_STAGE<class_XRInterface_constant_XR_PLAY_AREA_STAGE>`) or make the switch during a scene change.
+\ **Note:** Changing this after the interface has already been initialized can be jarring for the player, so it's recommended to recenter on the HMD with :ref:`XRServer.center_on_hmd()<class_XRServer_method_center_on_hmd>` (if switching to :ref:`XR_PLAY_AREA_STAGE<class_XRInterface_constant_XR_PLAY_AREA_STAGE>`) or make the switch during a scene change.
 
 .. rst-class:: classref-item-separator
 

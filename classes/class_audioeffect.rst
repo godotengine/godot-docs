@@ -21,7 +21,7 @@ Base class for audio effect resources.
 Description
 -----------
 
-The base :ref:`Resource<class_Resource>` for every audio effect. In the editor, an audio effect can be added to the current bus layout through the Audio panel. At run-time, it is also possible to manipulate audio effects through :ref:`AudioServer.add_bus_effect<class_AudioServer_method_add_bus_effect>`, :ref:`AudioServer.remove_bus_effect<class_AudioServer_method_remove_bus_effect>`, and :ref:`AudioServer.get_bus_effect<class_AudioServer_method_get_bus_effect>`.
+The base :ref:`Resource<class_Resource>` for every audio effect. In the editor, an audio effect can be added to the current bus layout through the Audio panel. At run-time, it is also possible to manipulate audio effects through :ref:`AudioServer.add_bus_effect()<class_AudioServer_method_add_bus_effect>`, :ref:`AudioServer.remove_bus_effect()<class_AudioServer_method_remove_bus_effect>`, and :ref:`AudioServer.get_bus_effect()<class_AudioServer_method_get_bus_effect>`.
 
 When applied on a bus, an audio effect creates a corresponding :ref:`AudioEffectInstance<class_AudioEffectInstance>`. The instance is directly responsible for manipulating the sound, based on the original audio effect's properties.
 
@@ -61,7 +61,7 @@ Method Descriptions
 
 :ref:`AudioEffectInstance<class_AudioEffectInstance>` **_instantiate**\ (\ ) |virtual| :ref:`🔗<class_AudioEffect_private_method__instantiate>`
 
-Override this method to customize the :ref:`AudioEffectInstance<class_AudioEffectInstance>` created when this effect is applied on a bus in the editor's Audio panel, or through :ref:`AudioServer.add_bus_effect<class_AudioServer_method_add_bus_effect>`.
+Override this method to customize the :ref:`AudioEffectInstance<class_AudioEffectInstance>` created when this effect is applied on a bus in the editor's Audio panel, or through :ref:`AudioServer.add_bus_effect()<class_AudioServer_method_add_bus_effect>`.
 
 ::
 

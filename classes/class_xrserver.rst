@@ -428,7 +428,7 @@ You should call this method after a few seconds have passed. For example, when t
 
 |void| **clear_reference_frame**\ (\ ) :ref:`🔗<class_XRServer_method_clear_reference_frame>`
 
-Clears the reference frame that was set by previous calls to :ref:`center_on_hmd<class_XRServer_method_center_on_hmd>`.
+Clears the reference frame that was set by previous calls to :ref:`center_on_hmd()<class_XRServer_method_center_on_hmd>`.
 
 .. rst-class:: classref-item-separator
 

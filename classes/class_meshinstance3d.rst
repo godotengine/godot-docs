@@ -293,7 +293,7 @@ Returns the value of the blend shape at the given ``blend_shape_idx``. Returns `
 
 :ref:`SkinReference<class_SkinReference>` **get_skin_reference**\ (\ ) |const| :ref:`🔗<class_MeshInstance3D_method_get_skin_reference>`
 
-Returns the internal :ref:`SkinReference<class_SkinReference>` containing the skeleton's :ref:`RID<class_RID>` attached to this RID. See also :ref:`Resource.get_rid<class_Resource_method_get_rid>`, :ref:`SkinReference.get_skeleton<class_SkinReference_method_get_skeleton>`, and :ref:`RenderingServer.instance_attach_skeleton<class_RenderingServer_method_instance_attach_skeleton>`.
+Returns the internal :ref:`SkinReference<class_SkinReference>` containing the skeleton's :ref:`RID<class_RID>` attached to this RID. See also :ref:`Resource.get_rid()<class_Resource_method_get_rid>`, :ref:`SkinReference.get_skeleton()<class_SkinReference_method_get_skeleton>`, and :ref:`RenderingServer.instance_attach_skeleton()<class_RenderingServer_method_instance_attach_skeleton>`.
 
 .. rst-class:: classref-item-separator
 
@@ -305,9 +305,9 @@ Returns the internal :ref:`SkinReference<class_SkinReference>` containing the sk
 
 :ref:`Material<class_Material>` **get_surface_override_material**\ (\ surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshInstance3D_method_get_surface_override_material>`
 
-Returns the override :ref:`Material<class_Material>` for the specified ``surface`` of the :ref:`Mesh<class_Mesh>` resource. See also :ref:`get_surface_override_material_count<class_MeshInstance3D_method_get_surface_override_material_count>`.
+Returns the override :ref:`Material<class_Material>` for the specified ``surface`` of the :ref:`Mesh<class_Mesh>` resource. See also :ref:`get_surface_override_material_count()<class_MeshInstance3D_method_get_surface_override_material_count>`.
 
-\ **Note:** This returns the :ref:`Material<class_Material>` associated to the **MeshInstance3D**'s Surface Material Override properties, not the material within the :ref:`Mesh<class_Mesh>` resource. To get the material within the :ref:`Mesh<class_Mesh>` resource, use :ref:`Mesh.surface_get_material<class_Mesh_method_surface_get_material>` instead.
+\ **Note:** This returns the :ref:`Material<class_Material>` associated to the **MeshInstance3D**'s Surface Material Override properties, not the material within the :ref:`Mesh<class_Mesh>` resource. To get the material within the :ref:`Mesh<class_Mesh>` resource, use :ref:`Mesh.surface_get_material()<class_Mesh_method_surface_get_material>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -319,7 +319,7 @@ Returns the override :ref:`Material<class_Material>` for the specified ``surface
 
 :ref:`int<class_int>` **get_surface_override_material_count**\ (\ ) |const| :ref:`🔗<class_MeshInstance3D_method_get_surface_override_material_count>`
 
-Returns the number of surface override materials. This is equivalent to :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>`. See also :ref:`get_surface_override_material<class_MeshInstance3D_method_get_surface_override_material>`.
+Returns the number of surface override materials. This is equivalent to :ref:`Mesh.get_surface_count()<class_Mesh_method_get_surface_count>`. See also :ref:`get_surface_override_material()<class_MeshInstance3D_method_get_surface_override_material>`.
 
 .. rst-class:: classref-item-separator
 
@@ -345,7 +345,7 @@ Sets the value of the blend shape at ``blend_shape_idx`` to ``value``. Produces 
 
 Sets the override ``material`` for the specified ``surface`` of the :ref:`Mesh<class_Mesh>` resource. This material is associated with this **MeshInstance3D** rather than with :ref:`mesh<class_MeshInstance3D_property_mesh>`.
 
-\ **Note:** This assigns the :ref:`Material<class_Material>` associated to the **MeshInstance3D**'s Surface Material Override properties, not the material within the :ref:`Mesh<class_Mesh>` resource. To set the material within the :ref:`Mesh<class_Mesh>` resource, use :ref:`Mesh.surface_set_material<class_Mesh_method_surface_set_material>` instead.
+\ **Note:** This assigns the :ref:`Material<class_Material>` associated to the **MeshInstance3D**'s Surface Material Override properties, not the material within the :ref:`Mesh<class_Mesh>` resource. To set the material within the :ref:`Mesh<class_Mesh>` resource, use :ref:`Mesh.surface_set_material()<class_Mesh_method_surface_set_material>` instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

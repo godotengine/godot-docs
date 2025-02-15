@@ -52,7 +52,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **create_from_images**\ (\ images\: :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]\ ) :ref:`🔗<class_ImageTextureLayered_method_create_from_images>`
 
-Creates an **ImageTextureLayered** from an array of :ref:`Image<class_Image>`\ s. See :ref:`Image.create<class_Image_method_create>` for the expected data format. The first image decides the width, height, image format and mipmapping setting. The other images *must* have the same width, height, image format and mipmapping setting.
+Creates an **ImageTextureLayered** from an array of :ref:`Image<class_Image>`\ s. See :ref:`Image.create()<class_Image_method_create>` for the expected data format. The first image decides the width, height, image format and mipmapping setting. The other images *must* have the same width, height, image format and mipmapping setting.
 
 Each :ref:`Image<class_Image>` represents one ``layer``.
 

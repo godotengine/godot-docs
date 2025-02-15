@@ -150,7 +150,7 @@ Method Descriptions
 
 Draw a single Unicode character ``char`` into a canvas item using the font, at a given position, with ``modulate`` color. ``pos`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
-\ **Note:** Do not use this function to draw strings character by character, use :ref:`draw_string<class_Font_method_draw_string>` or :ref:`TextLine<class_TextLine>` instead.
+\ **Note:** Do not use this function to draw strings character by character, use :ref:`draw_string()<class_Font_method_draw_string>` or :ref:`TextLine<class_TextLine>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -164,7 +164,7 @@ Draw a single Unicode character ``char`` into a canvas item using the font, at a
 
 Draw a single Unicode character ``char`` outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size. ``pos`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
-\ **Note:** Do not use this function to draw strings character by character, use :ref:`draw_string<class_Font_method_draw_string>` or :ref:`TextLine<class_TextLine>` instead.
+\ **Note:** Do not use this function to draw strings character by character, use :ref:`draw_string()<class_Font_method_draw_string>` or :ref:`TextLine<class_TextLine>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -178,7 +178,7 @@ Draw a single Unicode character ``char`` outline into a canvas item using the fo
 
 Breaks ``text`` into lines using rules specified by ``brk_flags`` and draws it into a canvas item using the font, at a given position, with ``modulate`` color, optionally clipping the width and aligning horizontally. ``pos`` specifies the baseline of the first line, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
-See also :ref:`CanvasItem.draw_multiline_string<class_CanvasItem_method_draw_multiline_string>`.
+See also :ref:`CanvasItem.draw_multiline_string()<class_CanvasItem_method_draw_multiline_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -192,7 +192,7 @@ See also :ref:`CanvasItem.draw_multiline_string<class_CanvasItem_method_draw_mul
 
 Breaks ``text`` to the lines using rules specified by ``brk_flags`` and draws text outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size, optionally clipping the width and aligning horizontally. ``pos`` specifies the baseline of the first line, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
-See also :ref:`CanvasItem.draw_multiline_string_outline<class_CanvasItem_method_draw_multiline_string_outline>`.
+See also :ref:`CanvasItem.draw_multiline_string_outline()<class_CanvasItem_method_draw_multiline_string_outline>`.
 
 .. rst-class:: classref-item-separator
 
@@ -206,7 +206,7 @@ See also :ref:`CanvasItem.draw_multiline_string_outline<class_CanvasItem_method_
 
 Draw ``text`` into a canvas item using the font, at a given position, with ``modulate`` color, optionally clipping the width and aligning horizontally. ``pos`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
-See also :ref:`CanvasItem.draw_string<class_CanvasItem_method_draw_string>`.
+See also :ref:`CanvasItem.draw_string()<class_CanvasItem_method_draw_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -220,7 +220,7 @@ See also :ref:`CanvasItem.draw_string<class_CanvasItem_method_draw_string>`.
 
 Draw ``text`` outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size, optionally clipping the width and aligning horizontally. ``pos`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
-See also :ref:`CanvasItem.draw_string_outline<class_CanvasItem_method_draw_string_outline>`.
+See also :ref:`CanvasItem.draw_string_outline()<class_CanvasItem_method_draw_string_outline>`.
 
 .. rst-class:: classref-item-separator
 
@@ -260,7 +260,7 @@ Returns the average font ascent (number of pixels above the baseline).
 
 Returns the size of a character. Does not take kerning into account.
 
-\ **Note:** Do not use this function to calculate width of the string character by character, use :ref:`get_string_size<class_Font_method_get_string_size>` or :ref:`TextLine<class_TextLine>` instead. The height returned is the font height (see also :ref:`get_height<class_Font_method_get_height>`) and has no relation to the glyph height.
+\ **Note:** Do not use this function to calculate width of the string character by character, use :ref:`get_string_size()<class_Font_method_get_string_size>` or :ref:`TextLine<class_TextLine>` instead. The height returned is the font height (see also :ref:`get_height()<class_Font_method_get_height>`) and has no relation to the glyph height.
 
 .. rst-class:: classref-item-separator
 
@@ -374,7 +374,7 @@ Returns the total average font height (ascent plus descent) in pixels.
 
 Returns the size of a bounding box of a string broken into the lines, taking kerning and advance into account.
 
-See also :ref:`draw_multiline_string<class_Font_method_draw_multiline_string>`.
+See also :ref:`draw_multiline_string()<class_Font_method_draw_multiline_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -434,7 +434,7 @@ Returns the spacing for the given ``type`` (see :ref:`SpacingType<enum_TextServe
 
 :ref:`Vector2<class_Vector2>` **get_string_size**\ (\ text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const| :ref:`🔗<class_Font_method_get_string_size>`
 
-Returns the size of a bounding box of a single-line string, taking kerning, advance and subpixel positioning into account. See also :ref:`get_multiline_string_size<class_Font_method_get_multiline_string_size>` and :ref:`draw_string<class_Font_method_draw_string>`.
+Returns the size of a bounding box of a single-line string, taking kerning, advance and subpixel positioning into account. See also :ref:`get_multiline_string_size()<class_Font_method_get_multiline_string_size>` and :ref:`draw_string()<class_Font_method_draw_string>`.
 
 For example, to get the string size as displayed by a single-line Label, use:
 
@@ -452,9 +452,9 @@ For example, to get the string size as displayed by a single-line Label, use:
 
 
 
-\ **Note:** Since kerning, advance and subpixel positioning are taken into account by :ref:`get_string_size<class_Font_method_get_string_size>`, using separate :ref:`get_string_size<class_Font_method_get_string_size>` calls on substrings of a string then adding the results together will return a different result compared to using a single :ref:`get_string_size<class_Font_method_get_string_size>` call on the full string.
+\ **Note:** Since kerning, advance and subpixel positioning are taken into account by :ref:`get_string_size()<class_Font_method_get_string_size>`, using separate :ref:`get_string_size()<class_Font_method_get_string_size>` calls on substrings of a string then adding the results together will return a different result compared to using a single :ref:`get_string_size()<class_Font_method_get_string_size>` call on the full string.
 
-\ **Note:** Real height of the string is context-dependent and can be significantly different from the value returned by :ref:`get_height<class_Font_method_get_height>`.
+\ **Note:** Real height of the string is context-dependent and can be significantly different from the value returned by :ref:`get_height()<class_Font_method_get_height>`.
 
 .. rst-class:: classref-item-separator
 

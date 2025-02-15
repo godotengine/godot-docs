@@ -25,7 +25,7 @@ A class stored as a resource. A script extends the functionality of all objects 
 
 This is the base class for all scripts and should not be used directly. Trying to create a new script with this class will result in an error.
 
-The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
+The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script()<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 
 .. rst-class:: classref-introduction-group
 
@@ -280,7 +280,7 @@ Returns ``true`` if the script, or a base class, defines a signal with the given
 
 Returns ``true`` if the script contains non-empty source code.
 
-\ **Note:** If a script does not have source code, this does not mean that it is invalid or unusable. For example, a :ref:`GDScript<class_GDScript>` that was exported with binary tokenization has no source code, but still behaves as expected and could be instantiated. This can be checked with :ref:`can_instantiate<class_Script_method_can_instantiate>`.
+\ **Note:** If a script does not have source code, this does not mean that it is invalid or unusable. For example, a :ref:`GDScript<class_GDScript>` that was exported with binary tokenization has no source code, but still behaves as expected and could be instantiated. This can be checked with :ref:`can_instantiate()<class_Script_method_can_instantiate>`.
 
 .. rst-class:: classref-item-separator
 

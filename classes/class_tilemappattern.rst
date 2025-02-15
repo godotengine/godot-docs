@@ -164,7 +164,7 @@ Remove the cell at the given coordinates.
 
 |void| **set_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, source_id\: :ref:`int<class_int>` = -1, atlas_coords\: :ref:`Vector2i<class_Vector2i>` = Vector2i(-1, -1), alternative_tile\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileMapPattern_method_set_cell>`
 
-Sets the tile identifiers for the cell at coordinates ``coords``. See :ref:`TileMap.set_cell<class_TileMap_method_set_cell>`.
+Sets the tile identifiers for the cell at coordinates ``coords``. See :ref:`TileMap.set_cell()<class_TileMap_method_set_cell>`.
 
 .. rst-class:: classref-item-separator
 

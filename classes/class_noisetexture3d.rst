@@ -21,7 +21,7 @@ Description
 
 Uses the :ref:`FastNoiseLite<class_FastNoiseLite>` library or other noise generators to fill the texture data of your desired size.
 
-The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data internally, so :ref:`Texture3D.get_data<class_Texture3D_method_get_data>` may return ``null`` if the generation process has not completed yet. In that case, you need to wait for the texture to be generated before accessing the image:
+The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data internally, so :ref:`Texture3D.get_data()<class_Texture3D_method_get_data>` may return ``null`` if the generation process has not completed yet. In that case, you need to wait for the texture to be generated before accessing the image:
 
 ::
 

@@ -270,7 +270,7 @@ Returns a chunk data with the received bytes. The number of bytes to be received
 
 :ref:`String<class_String>` **get_string**\ (\ bytes\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_StreamPeer_method_get_string>`
 
-Gets an ASCII string with byte-length ``bytes`` from the stream. If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_string<class_StreamPeer_method_put_string>`.
+Gets an ASCII string with byte-length ``bytes`` from the stream. If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_string()<class_StreamPeer_method_put_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -330,7 +330,7 @@ Gets an unsigned 64-bit value from the stream.
 
 :ref:`String<class_String>` **get_utf8_string**\ (\ bytes\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_StreamPeer_method_get_utf8_string>`
 
-Gets a UTF-8 string with byte-length ``bytes`` from the stream (this decodes the string sent as UTF-8). If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_utf8_string<class_StreamPeer_method_put_utf8_string>`.
+Gets a UTF-8 string with byte-length ``bytes`` from the stream (this decodes the string sent as UTF-8). If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_utf8_string()<class_StreamPeer_method_put_utf8_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -344,7 +344,7 @@ Gets a UTF-8 string with byte-length ``bytes`` from the stream (this decodes the
 
 Gets a Variant from the stream. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var<class_@GlobalScope_method_bytes_to_var>` method.
+Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var()<class_@GlobalScope_method_bytes_to_var>` method.
 
 \ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
@@ -468,7 +468,7 @@ Sends a chunk of data through the connection. If all the data could not be sent 
 
 Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsigned integer representing its size.
 
-\ **Note:** To put an ASCII string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+\ **Note:** To put an ASCII string without prepending its size, you can use :ref:`put_data()<class_StreamPeer_method_put_data>`:
 
 
 .. tabs::
@@ -543,7 +543,7 @@ Puts an unsigned 64-bit value into the stream.
 
 Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsigned integer representing its size.
 
-\ **Note:** To put a UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+\ **Note:** To put a UTF-8 string without prepending its size, you can use :ref:`put_data()<class_StreamPeer_method_put_data>`:
 
 
 .. tabs::
@@ -570,7 +570,7 @@ Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsig
 
 Puts a Variant into the stream. If ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
 
-Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes<class_@GlobalScope_method_var_to_bytes>` method.
+Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes()<class_@GlobalScope_method_var_to_bytes>` method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

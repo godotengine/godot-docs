@@ -114,7 +114,7 @@ This example shows how the above file could be loaded:
 
 
 
-Any operation that mutates the ConfigFile such as :ref:`set_value<class_ConfigFile_method_set_value>`, :ref:`clear<class_ConfigFile_method_clear>`, or :ref:`erase_section<class_ConfigFile_method_erase_section>`, only changes what is loaded in memory. If you want to write the change to a file, you have to save the changes with :ref:`save<class_ConfigFile_method_save>`, :ref:`save_encrypted<class_ConfigFile_method_save_encrypted>`, or :ref:`save_encrypted_pass<class_ConfigFile_method_save_encrypted_pass>`.
+Any operation that mutates the ConfigFile such as :ref:`set_value()<class_ConfigFile_method_set_value>`, :ref:`clear()<class_ConfigFile_method_clear>`, or :ref:`erase_section()<class_ConfigFile_method_erase_section>`, only changes what is loaded in memory. If you want to write the change to a file, you have to save the changes with :ref:`save()<class_ConfigFile_method_save>`, :ref:`save_encrypted()<class_ConfigFile_method_save_encrypted>`, or :ref:`save_encrypted_pass()<class_ConfigFile_method_save_encrypted_pass>`.
 
 Keep in mind that section and property names can't contain spaces. Anything after a space will be ignored on save and on load.
 

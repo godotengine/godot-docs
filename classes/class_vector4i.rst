@@ -170,7 +170,7 @@ enum **Axis**: :ref:`🔗<enum_Vector4i_Axis>`
 
 :ref:`Axis<enum_Vector4i_Axis>` **AXIS_X** = ``0``
 
-Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+Enumerated value for the X axis. Returned by :ref:`max_axis_index()<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector4i_method_min_axis_index>`.
 
 .. _class_Vector4i_constant_AXIS_Y:
 
@@ -178,7 +178,7 @@ Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4i
 
 :ref:`Axis<enum_Vector4i_Axis>` **AXIS_Y** = ``1``
 
-Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+Enumerated value for the Y axis. Returned by :ref:`max_axis_index()<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector4i_method_min_axis_index>`.
 
 .. _class_Vector4i_constant_AXIS_Z:
 
@@ -186,7 +186,7 @@ Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4i
 
 :ref:`Axis<enum_Vector4i_Axis>` **AXIS_Z** = ``2``
 
-Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+Enumerated value for the Z axis. Returned by :ref:`max_axis_index()<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector4i_method_min_axis_index>`.
 
 .. _class_Vector4i_constant_AXIS_W:
 
@@ -194,7 +194,7 @@ Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4i
 
 :ref:`Axis<enum_Vector4i_Axis>` **AXIS_W** = ``3``
 
-Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+Enumerated value for the W axis. Returned by :ref:`max_axis_index()<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector4i_method_min_axis_index>`.
 
 .. rst-class:: classref-section-separator
 
@@ -325,7 +325,7 @@ Constructs a **Vector4i** as a copy of the given **Vector4i**.
 
 :ref:`Vector4i<class_Vector4i>` **Vector4i**\ (\ from\: :ref:`Vector4<class_Vector4>`\ )
 
-Constructs a new **Vector4i** from the given :ref:`Vector4<class_Vector4>` by truncating components' fractional parts (rounding towards zero). For a different behavior consider passing the result of :ref:`Vector4.ceil<class_Vector4_method_ceil>`, :ref:`Vector4.floor<class_Vector4_method_floor>` or :ref:`Vector4.round<class_Vector4_method_round>` to this constructor instead.
+Constructs a new **Vector4i** from the given :ref:`Vector4<class_Vector4>` by truncating components' fractional parts (rounding towards zero). For a different behavior consider passing the result of :ref:`Vector4.ceil()<class_Vector4_method_ceil>`, :ref:`Vector4.floor()<class_Vector4_method_floor>` or :ref:`Vector4.round()<class_Vector4_method_round>` to this constructor instead.
 
 .. rst-class:: classref-item-separator
 
@@ -364,7 +364,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 :ref:`Vector4i<class_Vector4i>` **clamp**\ (\ min\: :ref:`Vector4i<class_Vector4i>`, max\: :ref:`Vector4i<class_Vector4i>`\ ) |const| :ref:`🔗<class_Vector4i_method_clamp>`
 
-Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp()<class_@GlobalScope_method_clamp>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -376,7 +376,7 @@ Returns a new vector with all components clamped between the components of ``min
 
 :ref:`Vector4i<class_Vector4i>` **clampi**\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector4i_method_clampi>`
 
-Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp()<class_@GlobalScope_method_clamp>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -390,7 +390,7 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 Returns the squared distance between this vector and ``to``.
 
-This method runs faster than :ref:`distance_to<class_Vector4i_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+This method runs faster than :ref:`distance_to()<class_Vector4i_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 
@@ -428,7 +428,7 @@ Returns the length (magnitude) of this vector.
 
 Returns the squared length (squared magnitude) of this vector.
 
-This method runs faster than :ref:`length<class_Vector4i_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+This method runs faster than :ref:`length()<class_Vector4i_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 
@@ -512,7 +512,7 @@ Returns the component-wise minimum of this and ``with``, equivalent to ``Vector4
 
 :ref:`Vector4i<class_Vector4i>` **sign**\ (\ ) |const| :ref:`🔗<class_Vector4i_method_sign>`
 
-Returns a new vector with each component set to ``1`` if it's positive, ``-1`` if it's negative, and ``0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+Returns a new vector with each component set to ``1`` if it's positive, ``-1`` if it's negative, and ``0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign()<class_@GlobalScope_method_sign>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -565,7 +565,7 @@ Returns ``true`` if the vectors are not equal.
 
 :ref:`Vector4i<class_Vector4i>` **operator %**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_mod_Vector4i>`
 
-Gets the remainder of each component of the **Vector4i** with the components of the given **Vector4i**. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+Gets the remainder of each component of the **Vector4i** with the components of the given **Vector4i**. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod()<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
 ::
 
@@ -581,7 +581,7 @@ Gets the remainder of each component of the **Vector4i** with the components of 
 
 :ref:`Vector4i<class_Vector4i>` **operator %**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector4i_operator_mod_int>`
 
-Gets the remainder of each component of the **Vector4i** with the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+Gets the remainder of each component of the **Vector4i** with the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod()<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
 ::
 

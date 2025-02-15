@@ -19,7 +19,7 @@ Godot editor's popup dialog for creating new :ref:`Script<class_Script>` files.
 Description
 -----------
 
-The **ScriptCreateDialog** creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Window.popup<class_Window_method_popup>` methods.
+The **ScriptCreateDialog** creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Window.popup()<class_Window_method_popup>` methods.
 
 
 .. tabs::

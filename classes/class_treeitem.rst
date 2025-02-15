@@ -21,7 +21,7 @@ Description
 
 A single item of a :ref:`Tree<class_Tree>` control. It can contain other **TreeItem**\ s as children, which allows it to create a hierarchy. It can also contain text and buttons. **TreeItem** is not a :ref:`Node<class_Node>`, it is internal to the :ref:`Tree<class_Tree>`.
 
-To create a **TreeItem**, use :ref:`Tree.create_item<class_Tree_method_create_item>` or :ref:`create_child<class_TreeItem_method_create_child>`. To remove a **TreeItem**, use :ref:`Object.free<class_Object_method_free>`.
+To create a **TreeItem**, use :ref:`Tree.create_item()<class_Tree_method_create_item>` or :ref:`create_child()<class_TreeItem_method_create_child>`. To remove a **TreeItem**, use :ref:`Object.free()<class_Object_method_free>`.
 
 \ **Note:** The ID values used for buttons are 32-bit, unlike :ref:`int<class_int>` which is always 64-bit. They go from ``-2147483648`` to ``2147483647``.
 
@@ -290,7 +290,7 @@ enum **TreeCellMode**: :ref:`🔗<enum_TreeItem_TreeCellMode>`
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_STRING** = ``0``
 
-Cell shows a string label, optionally with an icon. When editable, the text can be edited using a :ref:`LineEdit<class_LineEdit>`, or a :ref:`TextEdit<class_TextEdit>` popup if :ref:`set_edit_multiline<class_TreeItem_method_set_edit_multiline>` is used.
+Cell shows a string label, optionally with an icon. When editable, the text can be edited using a :ref:`LineEdit<class_LineEdit>`, or a :ref:`TextEdit<class_TextEdit>` popup if :ref:`set_edit_multiline()<class_TreeItem_method_set_edit_multiline>` is used.
 
 .. _class_TreeItem_constant_CELL_MODE_CHECK:
 
@@ -298,7 +298,7 @@ Cell shows a string label, optionally with an icon. When editable, the text can 
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_CHECK** = ``1``
 
-Cell shows a checkbox, optionally with text and an icon. The checkbox can be pressed, released, or indeterminate (via :ref:`set_indeterminate<class_TreeItem_method_set_indeterminate>`). The checkbox can't be clicked unless the cell is editable.
+Cell shows a checkbox, optionally with text and an icon. The checkbox can be pressed, released, or indeterminate (via :ref:`set_indeterminate()<class_TreeItem_method_set_indeterminate>`). The checkbox can't be clicked unless the cell is editable.
 
 .. _class_TreeItem_constant_CELL_MODE_RANGE:
 
@@ -306,9 +306,9 @@ Cell shows a checkbox, optionally with text and an icon. The checkbox can be pre
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_RANGE** = ``2``
 
-Cell shows a numeric range. When editable, it can be edited using a range slider. Use :ref:`set_range<class_TreeItem_method_set_range>` to set the value and :ref:`set_range_config<class_TreeItem_method_set_range_config>` to configure the range.
+Cell shows a numeric range. When editable, it can be edited using a range slider. Use :ref:`set_range()<class_TreeItem_method_set_range>` to set the value and :ref:`set_range_config()<class_TreeItem_method_set_range_config>` to configure the range.
 
-This cell can also be used in a text dropdown mode when you assign a text with :ref:`set_text<class_TreeItem_method_set_text>`. Separate options with a comma, e.g. ``"Option1,Option2,Option3"``.
+This cell can also be used in a text dropdown mode when you assign a text with :ref:`set_text()<class_TreeItem_method_set_text>`. Separate options with a comma, e.g. ``"Option1,Option2,Option3"``.
 
 .. _class_TreeItem_constant_CELL_MODE_ICON:
 
@@ -324,9 +324,9 @@ Cell shows an icon. It can't be edited nor display text. The icon is always cent
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_CUSTOM** = ``4``
 
-Cell shows as a clickable button. It will display an arrow similar to :ref:`OptionButton<class_OptionButton>`, but doesn't feature a dropdown (for that you can use :ref:`CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>`). Clicking the button emits the :ref:`Tree.item_edited<class_Tree_signal_item_edited>` signal. The button is flat by default, you can use :ref:`set_custom_as_button<class_TreeItem_method_set_custom_as_button>` to display it with a :ref:`StyleBox<class_StyleBox>`.
+Cell shows as a clickable button. It will display an arrow similar to :ref:`OptionButton<class_OptionButton>`, but doesn't feature a dropdown (for that you can use :ref:`CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>`). Clicking the button emits the :ref:`Tree.item_edited<class_Tree_signal_item_edited>` signal. The button is flat by default, you can use :ref:`set_custom_as_button()<class_TreeItem_method_set_custom_as_button>` to display it with a :ref:`StyleBox<class_StyleBox>`.
 
-This mode also supports custom drawing using :ref:`set_custom_draw_callback<class_TreeItem_method_set_custom_draw_callback>`.
+This mode also supports custom drawing using :ref:`set_custom_draw_callback()<class_TreeItem_method_set_custom_draw_callback>`.
 
 .. rst-class:: classref-section-separator
 
@@ -418,7 +418,7 @@ Method Descriptions
 
 |void| **add_button**\ (\ column\: :ref:`int<class_int>`, button\: :ref:`Texture2D<class_Texture2D>`, id\: :ref:`int<class_int>` = -1, disabled\: :ref:`bool<class_bool>` = false, tooltip_text\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_TreeItem_method_add_button>`
 
-Adds a button with :ref:`Texture2D<class_Texture2D>` ``button`` to the end of the cell at column ``column``. The ``id`` is used to identify the button in the according :ref:`Tree.button_clicked<class_Tree_signal_button_clicked>` signal and can be different from the buttons index. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately before this method. Optionally, the button can be ``disabled`` and have a ``tooltip_text``.
+Adds a button with :ref:`Texture2D<class_Texture2D>` ``button`` to the end of the cell at column ``column``. The ``id`` is used to identify the button in the according :ref:`Tree.button_clicked<class_Tree_signal_button_clicked>` signal and can be different from the buttons index. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count()<class_TreeItem_method_get_button_count>` immediately before this method. Optionally, the button can be ``disabled`` and have a ``tooltip_text``.
 
 .. rst-class:: classref-item-separator
 
@@ -430,7 +430,7 @@ Adds a button with :ref:`Texture2D<class_Texture2D>` ``button`` to the end of th
 
 |void| **add_child**\ (\ child\: :ref:`TreeItem<class_TreeItem>`\ ) :ref:`🔗<class_TreeItem_method_add_child>`
 
-Adds a previously unparented **TreeItem** as a direct child of this one. The ``child`` item must not be a part of any :ref:`Tree<class_Tree>` or parented to any **TreeItem**. See also :ref:`remove_child<class_TreeItem_method_remove_child>`.
+Adds a previously unparented **TreeItem** as a direct child of this one. The ``child`` item must not be a part of any :ref:`Tree<class_Tree>` or parented to any **TreeItem**. See also :ref:`remove_child()<class_TreeItem_method_remove_child>`.
 
 .. rst-class:: classref-item-separator
 
@@ -636,7 +636,7 @@ Returns the column's cell mode.
 
 :ref:`TreeItem<class_TreeItem>` **get_child**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TreeItem_method_get_child>`
 
-Returns a child item by its ``index`` (see :ref:`get_child_count<class_TreeItem_method_get_child_count>`). This method is often used for iterating all children of an item.
+Returns a child item by its ``index`` (see :ref:`get_child_count()<class_TreeItem_method_get_child_count>`). This method is often used for iterating all children of an item.
 
 Negative indices access the children from the last one.
 
@@ -842,7 +842,7 @@ Returns item's text language code.
 
 :ref:`Variant<class_Variant>` **get_metadata**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TreeItem_method_get_metadata>`
 
-Returns the metadata value that was set for the given column using :ref:`set_metadata<class_TreeItem_method_set_metadata>`.
+Returns the metadata value that was set for the given column using :ref:`set_metadata()<class_TreeItem_method_set_metadata>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1116,7 +1116,7 @@ Returns ``true`` if the given ``column`` is checked.
 
 :ref:`bool<class_bool>` **is_custom_set_as_button**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TreeItem_method_is_custom_set_as_button>`
 
-Returns ``true`` if the cell was made into a button with :ref:`set_custom_as_button<class_TreeItem_method_set_custom_as_button>`.
+Returns ``true`` if the cell was made into a button with :ref:`set_custom_as_button()<class_TreeItem_method_set_custom_as_button>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1240,9 +1240,9 @@ Propagates this item's checked status to its children and parents for the given 
 
 |void| **remove_child**\ (\ child\: :ref:`TreeItem<class_TreeItem>`\ ) :ref:`🔗<class_TreeItem_method_remove_child>`
 
-Removes the given child **TreeItem** and all its children from the :ref:`Tree<class_Tree>`. Note that it doesn't free the item from memory, so it can be reused later (see :ref:`add_child<class_TreeItem_method_add_child>`). To completely remove a **TreeItem** use :ref:`Object.free<class_Object_method_free>`.
+Removes the given child **TreeItem** and all its children from the :ref:`Tree<class_Tree>`. Note that it doesn't free the item from memory, so it can be reused later (see :ref:`add_child()<class_TreeItem_method_add_child>`). To completely remove a **TreeItem** use :ref:`Object.free()<class_Object_method_free>`.
 
-\ **Note:** If you want to move a child from one :ref:`Tree<class_Tree>` to another, then instead of removing and adding it manually you can use :ref:`move_before<class_TreeItem_method_move_before>` or :ref:`move_after<class_TreeItem_method_move_after>`.
+\ **Note:** If you want to move a child from one :ref:`Tree<class_Tree>` to another, then instead of removing and adding it manually you can use :ref:`move_before()<class_TreeItem_method_move_before>` or :ref:`move_after()<class_TreeItem_method_move_after>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1412,7 +1412,7 @@ Sets the given column's custom color.
 
 |void| **set_custom_draw**\ (\ column\: :ref:`int<class_int>`, object\: :ref:`Object<class_Object>`, callback\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_TreeItem_method_set_custom_draw>`
 
-**Deprecated:** Use :ref:`set_custom_draw_callback<class_TreeItem_method_set_custom_draw_callback>` instead.
+**Deprecated:** Use :ref:`set_custom_draw_callback()<class_TreeItem_method_set_custom_draw_callback>` instead.
 
 Sets the given column's custom draw callback to the ``callback`` method on ``object``.
 
@@ -1468,7 +1468,7 @@ Sets custom font size used to draw text in the given ``column``.
 
 If ``multiline`` is ``true``, the given ``column`` is multiline editable.
 
-\ **Note:** This option only affects the type of control (:ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`) that appears when editing the column. You can set multiline values with :ref:`set_text<class_TreeItem_method_set_text>` even if the column is not multiline editable.
+\ **Note:** This option only affects the type of control (:ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`) that appears when editing the column. You can set multiline values with :ref:`set_text()<class_TreeItem_method_set_text>` even if the column is not multiline editable.
 
 .. rst-class:: classref-item-separator
 
@@ -1590,7 +1590,7 @@ Sets language code of item's text used for line-breaking and text shaping algori
 
 |void| **set_metadata**\ (\ column\: :ref:`int<class_int>`, meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_TreeItem_method_set_metadata>`
 
-Sets the metadata value for the given column, which can be retrieved later using :ref:`get_metadata<class_TreeItem_method_get_metadata>`. This can be used, for example, to store a reference to the original data.
+Sets the metadata value for the given column, which can be retrieved later using :ref:`get_metadata()<class_TreeItem_method_get_metadata>`. This can be used, for example, to store a reference to the original data.
 
 .. rst-class:: classref-item-separator
 

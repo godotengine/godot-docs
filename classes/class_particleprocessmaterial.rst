@@ -293,7 +293,7 @@ enum **Parameter**: :ref:`🔗<enum_ParticleProcessMaterial_Parameter>`
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_INITIAL_LINEAR_VELOCITY** = ``0``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set initial velocity properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set initial velocity properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_ANGULAR_VELOCITY:
 
@@ -301,7 +301,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_ANGULAR_VELOCITY** = ``1``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set angular velocity properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set angular velocity properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_ORBIT_VELOCITY:
 
@@ -309,7 +309,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_ORBIT_VELOCITY** = ``2``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set orbital velocity properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set orbital velocity properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_LINEAR_ACCEL:
 
@@ -317,7 +317,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_LINEAR_ACCEL** = ``3``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set linear acceleration properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set linear acceleration properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_RADIAL_ACCEL:
 
@@ -325,7 +325,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_RADIAL_ACCEL** = ``4``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set radial acceleration properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set radial acceleration properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_TANGENTIAL_ACCEL:
 
@@ -333,7 +333,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_TANGENTIAL_ACCEL** = ``5``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set tangential acceleration properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set tangential acceleration properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_DAMPING:
 
@@ -341,7 +341,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_DAMPING** = ``6``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set damping properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set damping properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_ANGLE:
 
@@ -349,7 +349,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_ANGLE** = ``7``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set angle properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set angle properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_SCALE:
 
@@ -357,7 +357,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_SCALE** = ``8``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set scale properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set scale properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_HUE_VARIATION:
 
@@ -365,7 +365,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_HUE_VARIATION** = ``9``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set hue variation properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set hue variation properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_ANIM_SPEED:
 
@@ -373,7 +373,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_ANIM_SPEED** = ``10``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set animation speed properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set animation speed properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_ANIM_OFFSET:
 
@@ -381,7 +381,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_ANIM_OFFSET** = ``11``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set animation offset properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set animation offset properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_RADIAL_VELOCITY:
 
@@ -389,7 +389,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_RADIAL_VELOCITY** = ``15``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set radial velocity properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set radial velocity properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_DIRECTIONAL_VELOCITY:
 
@@ -397,7 +397,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_DIRECTIONAL_VELOCITY** = ``16``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set directional velocity properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set directional velocity properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_SCALE_OVER_VELOCITY:
 
@@ -405,7 +405,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_SCALE_OVER_VELOCITY** = ``17``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set scale over velocity properties.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>`, :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>`, and :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set scale over velocity properties.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_MAX:
 
@@ -421,7 +421,7 @@ Represents the size of the :ref:`Parameter<enum_ParticleProcessMaterial_Paramete
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_TURB_VEL_INFLUENCE** = ``13``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>` and :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>` to set the turbulence minimum und maximum influence on each particles velocity.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>` and :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>` to set the turbulence minimum und maximum influence on each particles velocity.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_TURB_INIT_DISPLACEMENT:
 
@@ -429,7 +429,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_TURB_INIT_DISPLACEMENT** = ``14``
 
-Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>` and :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>` to set the turbulence minimum and maximum displacement of the particles spawn position.
+Use with :ref:`set_param_min()<class_ParticleProcessMaterial_method_set_param_min>` and :ref:`set_param_max()<class_ParticleProcessMaterial_method_set_param_max>` to set the turbulence minimum and maximum displacement of the particles spawn position.
 
 .. _class_ParticleProcessMaterial_constant_PARAM_TURB_INFLUENCE_OVER_LIFE:
 
@@ -437,7 +437,7 @@ Use with :ref:`set_param_min<class_ParticleProcessMaterial_method_set_param_min>
 
 :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` **PARAM_TURB_INFLUENCE_OVER_LIFE** = ``12``
 
-Use with :ref:`set_param_texture<class_ParticleProcessMaterial_method_set_param_texture>` to set the turbulence influence over the particles life time.
+Use with :ref:`set_param_texture()<class_ParticleProcessMaterial_method_set_param_texture>` to set the turbulence influence over the particles life time.
 
 .. rst-class:: classref-item-separator
 
@@ -455,7 +455,7 @@ enum **ParticleFlags**: :ref:`🔗<enum_ParticleProcessMaterial_ParticleFlags>`
 
 :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY** = ``0``
 
-Use with :ref:`set_particle_flag<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_align_y<class_ParticleProcessMaterial_property_particle_flag_align_y>`.
+Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_align_y<class_ParticleProcessMaterial_property_particle_flag_align_y>`.
 
 .. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_ROTATE_Y:
 
@@ -463,7 +463,7 @@ Use with :ref:`set_particle_flag<class_ParticleProcessMaterial_method_set_partic
 
 :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_ROTATE_Y** = ``1``
 
-Use with :ref:`set_particle_flag<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_rotate_y<class_ParticleProcessMaterial_property_particle_flag_rotate_y>`.
+Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_rotate_y<class_ParticleProcessMaterial_property_particle_flag_rotate_y>`.
 
 .. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_DISABLE_Z:
 
@@ -471,7 +471,7 @@ Use with :ref:`set_particle_flag<class_ParticleProcessMaterial_method_set_partic
 
 :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_DISABLE_Z** = ``2``
 
-Use with :ref:`set_particle_flag<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_disable_z<class_ParticleProcessMaterial_property_particle_flag_disable_z>`.
+Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_disable_z<class_ParticleProcessMaterial_property_particle_flag_disable_z>`.
 
 .. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_DAMPING_AS_FRICTION:
 

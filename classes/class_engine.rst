@@ -196,7 +196,7 @@ How much physics ticks are synchronized with real time. If ``0`` or less, the ti
 - |void| **set_physics_ticks_per_second**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_physics_ticks_per_second**\ (\ )
 
-The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_private_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`max_fps<class_Engine_property_max_fps>` and :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
+The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process()<class_Node_private_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`max_fps<class_Engine_property_max_fps>` and :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
 
 \ **Note:** Only :ref:`max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` physics ticks may be simulated per rendered frame at most. If more physics ticks have to be simulated per rendered frame to keep up with rendering, the project will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended to also increase :ref:`max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` if increasing :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` significantly above its default value.
 
@@ -236,7 +236,7 @@ If ``false``, stops printing error and warning messages to the console and edito
 - |void| **set_print_to_stdout**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_printing_to_stdout**\ (\ )
 
-If ``false``, stops printing messages (for example using :ref:`@GlobalScope.print<class_@GlobalScope_method_print>`) to the console, log files, and editor Output log. This property is equivalent to the :ref:`ProjectSettings.application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>` project setting.
+If ``false``, stops printing messages (for example using :ref:`@GlobalScope.print()<class_@GlobalScope_method_print>`) to the console, log files, and editor Output log. This property is equivalent to the :ref:`ProjectSettings.application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>` project setting.
 
 \ **Note:** This does not stop printing errors or warnings produced by scripts to the console or log files, for more details see :ref:`print_error_messages<class_Engine_property_print_error_messages>`.
 
@@ -257,7 +257,7 @@ If ``false``, stops printing messages (for example using :ref:`@GlobalScope.prin
 
 The speed multiplier at which the in-game clock updates, compared to real time. For example, if set to ``2.0`` the game runs twice as fast, and if set to ``0.5`` the game runs half as fast.
 
-This value affects :ref:`Timer<class_Timer>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, and all other simulations that make use of ``delta`` time (such as :ref:`Node._process<class_Node_private_method__process>` and :ref:`Node._physics_process<class_Node_private_method__physics_process>`).
+This value affects :ref:`Timer<class_Timer>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, and all other simulations that make use of ``delta`` time (such as :ref:`Node._process()<class_Node_private_method__process>` and :ref:`Node._physics_process()<class_Node_private_method__physics_process>`).
 
 \ **Note:** It's recommended to keep this property above ``0.0``, as the game may behave unexpectedly otherwise.
 
@@ -282,9 +282,9 @@ Method Descriptions
 
 Returns the name of the CPU architecture the Godot binary was built for. Possible return values include ``"x86_64"``, ``"x86_32"``, ``"arm64"``, ``"arm32"``, ``"rv64"``, ``"riscv"``, ``"ppc64"``, ``"ppc"``, ``"wasm64"``, and ``"wasm32"``.
 
-To detect whether the current build is 64-bit, or the type of architecture, don't use the architecture name. Instead, use :ref:`OS.has_feature<class_OS_method_has_feature>` to check for the ``"64"`` feature tag, or tags such as ``"x86"`` or ``"arm"``. See the :doc:`Feature Tags <../tutorials/export/feature_tags>` documentation for more details.
+To detect whether the current build is 64-bit, or the type of architecture, don't use the architecture name. Instead, use :ref:`OS.has_feature()<class_OS_method_has_feature>` to check for the ``"64"`` feature tag, or tags such as ``"x86"`` or ``"arm"``. See the :doc:`Feature Tags <../tutorials/export/feature_tags>` documentation for more details.
 
-\ **Note:** This method does *not* return the name of the system's CPU architecture (like :ref:`OS.get_processor_name<class_OS_method_get_processor_name>`). For example, when running an ``x86_32`` Godot binary on an ``x86_64`` system, the returned value will still be ``"x86_32"``.
+\ **Note:** This method does *not* return the name of the system's CPU architecture (like :ref:`OS.get_processor_name()<class_OS_method_get_processor_name>`). For example, when running an ``x86_32`` Godot binary on an ``x86_64`` system, the returned value will still be ``"x86_32"``.
 
 .. rst-class:: classref-item-separator
 
@@ -344,7 +344,7 @@ Returns a :ref:`Dictionary<class_Dictionary>` of categorized donor names. Each e
 
 Returns the total number of frames drawn since the engine started.
 
-\ **Note:** On headless platforms, or if rendering is disabled with ``--disable-render-loop`` via command line, this method always returns ``0``. See also :ref:`get_process_frames<class_Engine_method_get_process_frames>`.
+\ **Note:** On headless platforms, or if rendering is disabled with ``--disable-render-loop`` via command line, this method always returns ``0``. See also :ref:`get_process_frames()<class_Engine_method_get_process_frames>`.
 
 .. rst-class:: classref-item-separator
 
@@ -392,7 +392,7 @@ Returns the full Godot license text.
 
 :ref:`MainLoop<class_MainLoop>` **get_main_loop**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_main_loop>`
 
-Returns the instance of the :ref:`MainLoop<class_MainLoop>`. This is usually the main :ref:`SceneTree<class_SceneTree>` and is the same as :ref:`Node.get_tree<class_Node_method_get_tree>`.
+Returns the instance of the :ref:`MainLoop<class_MainLoop>`. This is usually the main :ref:`SceneTree<class_SceneTree>` and is the same as :ref:`Node.get_tree()<class_Node_method_get_tree>`.
 
 \ **Note:** The type instantiated as the main loop can changed with :ref:`ProjectSettings.application/run/main_loop_type<class_ProjectSettings_property_application/run/main_loop_type>`.
 
@@ -406,7 +406,7 @@ Returns the instance of the :ref:`MainLoop<class_MainLoop>`. This is usually the
 
 :ref:`int<class_int>` **get_physics_frames**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_physics_frames>`
 
-Returns the total number of frames passed since the engine started. This number is increased every **physics frame**. See also :ref:`get_process_frames<class_Engine_method_get_process_frames>`.
+Returns the total number of frames passed since the engine started. This number is increased every **physics frame**. See also :ref:`get_process_frames()<class_Engine_method_get_process_frames>`.
 
 This method can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
 
@@ -455,7 +455,7 @@ Returns the fraction through the current physics tick we are at the time of rend
 
 :ref:`int<class_int>` **get_process_frames**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_process_frames>`
 
-Returns the total number of frames passed since the engine started. This number is increased every **process frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` and :ref:`get_physics_frames<class_Engine_method_get_physics_frames>`.
+Returns the total number of frames passed since the engine started. This number is increased every **process frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn()<class_Engine_method_get_frames_drawn>` and :ref:`get_physics_frames()<class_Engine_method_get_physics_frames>`.
 
 This method can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
 
@@ -504,7 +504,7 @@ Returns an instance of a :ref:`ScriptLanguage<class_ScriptLanguage>` with the gi
 
 :ref:`int<class_int>` **get_script_language_count**\ (\ ) :ref:`🔗<class_Engine_method_get_script_language_count>`
 
-Returns the number of available script languages. Use with :ref:`get_script_language<class_Engine_method_get_script_language>`.
+Returns the number of available script languages. Use with :ref:`get_script_language()<class_Engine_method_get_script_language>`.
 
 .. rst-class:: classref-item-separator
 
@@ -516,7 +516,7 @@ Returns the number of available script languages. Use with :ref:`get_script_lang
 
 :ref:`Object<class_Object>` **get_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Engine_method_get_singleton>`
 
-Returns the global singleton with the given ``name``, or ``null`` if it does not exist. Often used for plugins. See also :ref:`has_singleton<class_Engine_method_has_singleton>` and :ref:`get_singleton_list<class_Engine_method_get_singleton_list>`.
+Returns the global singleton with the given ``name``, or ``null`` if it does not exist. Often used for plugins. See also :ref:`has_singleton()<class_Engine_method_has_singleton>` and :ref:`get_singleton_list()<class_Engine_method_get_singleton_list>`.
 
 \ **Note:** Global singletons are not the same as autoloaded nodes, which are configurable in the project settings.
 
@@ -530,7 +530,7 @@ Returns the global singleton with the given ``name``, or ``null`` if it does not
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_singleton_list**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_singleton_list>`
 
-Returns a list of names of all available global singletons. See also :ref:`get_singleton<class_Engine_method_get_singleton>`.
+Returns a list of names of all available global singletons. See also :ref:`get_singleton()<class_Engine_method_get_singleton>`.
 
 .. rst-class:: classref-item-separator
 
@@ -611,7 +611,7 @@ Returns the path to the :ref:`MovieWriter<class_MovieWriter>`'s output file, or 
 
 :ref:`bool<class_bool>` **has_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Engine_method_has_singleton>`
 
-Returns ``true`` if a singleton with the given ``name`` exists in the global scope. See also :ref:`get_singleton<class_Engine_method_get_singleton>`.
+Returns ``true`` if a singleton with the given ``name`` exists in the global scope. See also :ref:`get_singleton()<class_Engine_method_get_singleton>`.
 
 
 .. tabs::
@@ -667,7 +667,7 @@ Returns ``true`` if the script is currently running inside the editor, otherwise
 
 See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_editor>` in the documentation for more information.
 
-\ **Note:** To detect whether the script is running on an editor *build* (such as when pressing :kbd:`F5`), use :ref:`OS.has_feature<class_OS_method_has_feature>` with the ``"editor"`` argument instead. ``OS.has_feature("editor")`` evaluate to ``true`` both when the script is running in the editor and when running the project from the editor, but returns ``false`` when run from an exported project.
+\ **Note:** To detect whether the script is running on an editor *build* (such as when pressing :kbd:`F5`), use :ref:`OS.has_feature()<class_OS_method_has_feature>` with the ``"editor"`` argument instead. ``OS.has_feature("editor")`` evaluate to ``true`` both when the script is running in the editor and when running the project from the editor, but returns ``false`` when run from an exported project.
 
 .. rst-class:: classref-item-separator
 
@@ -766,7 +766,7 @@ Returns:
 
 |void| **unregister_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Engine_method_unregister_singleton>`
 
-Removes the singleton registered under ``name``. The singleton object is *not* freed. Only works with user-defined singletons registered with :ref:`register_singleton<class_Engine_method_register_singleton>`.
+Removes the singleton registered under ``name``. The singleton object is *not* freed. Only works with user-defined singletons registered with :ref:`register_singleton()<class_Engine_method_register_singleton>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

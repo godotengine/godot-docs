@@ -12,7 +12,7 @@ PhysicsServer3DRenderingServerHandler
 
 **Inherits:** :ref:`Object<class_Object>`
 
-A class used to provide :ref:`PhysicsServer3DExtension._soft_body_update_rendering_server<class_PhysicsServer3DExtension_private_method__soft_body_update_rendering_server>` with a rendering handler for soft bodies.
+A class used to provide :ref:`PhysicsServer3DExtension._soft_body_update_rendering_server()<class_PhysicsServer3DExtension_private_method__soft_body_update_rendering_server>` with a rendering handler for soft bodies.
 
 .. rst-class:: classref-reftable-group
 

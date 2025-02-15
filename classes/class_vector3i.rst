@@ -179,7 +179,7 @@ enum **Axis**: :ref:`🔗<enum_Vector3i_Axis>`
 
 :ref:`Axis<enum_Vector3i_Axis>` **AXIS_X** = ``0``
 
-Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3i_method_min_axis_index>`.
+Enumerated value for the X axis. Returned by :ref:`max_axis_index()<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector3i_method_min_axis_index>`.
 
 .. _class_Vector3i_constant_AXIS_Y:
 
@@ -187,7 +187,7 @@ Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector3i
 
 :ref:`Axis<enum_Vector3i_Axis>` **AXIS_Y** = ``1``
 
-Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3i_method_min_axis_index>`.
+Enumerated value for the Y axis. Returned by :ref:`max_axis_index()<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector3i_method_min_axis_index>`.
 
 .. _class_Vector3i_constant_AXIS_Z:
 
@@ -195,7 +195,7 @@ Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector3i
 
 :ref:`Axis<enum_Vector3i_Axis>` **AXIS_Z** = ``2``
 
-Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3i_method_min_axis_index>`.
+Enumerated value for the Z axis. Returned by :ref:`max_axis_index()<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index()<class_Vector3i_method_min_axis_index>`.
 
 .. rst-class:: classref-section-separator
 
@@ -362,7 +362,7 @@ Constructs a **Vector3i** as a copy of the given **Vector3i**.
 
 :ref:`Vector3i<class_Vector3i>` **Vector3i**\ (\ from\: :ref:`Vector3<class_Vector3>`\ )
 
-Constructs a new **Vector3i** from the given :ref:`Vector3<class_Vector3>` by truncating components' fractional parts (rounding towards zero). For a different behavior consider passing the result of :ref:`Vector3.ceil<class_Vector3_method_ceil>`, :ref:`Vector3.floor<class_Vector3_method_floor>` or :ref:`Vector3.round<class_Vector3_method_round>` to this constructor instead.
+Constructs a new **Vector3i** from the given :ref:`Vector3<class_Vector3>` by truncating components' fractional parts (rounding towards zero). For a different behavior consider passing the result of :ref:`Vector3.ceil()<class_Vector3_method_ceil>`, :ref:`Vector3.floor()<class_Vector3_method_floor>` or :ref:`Vector3.round()<class_Vector3_method_round>` to this constructor instead.
 
 .. rst-class:: classref-item-separator
 
@@ -401,7 +401,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 :ref:`Vector3i<class_Vector3i>` **clamp**\ (\ min\: :ref:`Vector3i<class_Vector3i>`, max\: :ref:`Vector3i<class_Vector3i>`\ ) |const| :ref:`🔗<class_Vector3i_method_clamp>`
 
-Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp()<class_@GlobalScope_method_clamp>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -413,7 +413,7 @@ Returns a new vector with all components clamped between the components of ``min
 
 :ref:`Vector3i<class_Vector3i>` **clampi**\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector3i_method_clampi>`
 
-Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp()<class_@GlobalScope_method_clamp>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -427,7 +427,7 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 Returns the squared distance between this vector and ``to``.
 
-This method runs faster than :ref:`distance_to<class_Vector3i_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+This method runs faster than :ref:`distance_to()<class_Vector3i_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 
@@ -465,7 +465,7 @@ Returns the length (magnitude) of this vector.
 
 Returns the squared length (squared magnitude) of this vector.
 
-This method runs faster than :ref:`length<class_Vector3i_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+This method runs faster than :ref:`length()<class_Vector3i_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 
@@ -549,7 +549,7 @@ Returns the component-wise minimum of this and ``with``, equivalent to ``Vector3
 
 :ref:`Vector3i<class_Vector3i>` **sign**\ (\ ) |const| :ref:`🔗<class_Vector3i_method_sign>`
 
-Returns a new vector with each component set to ``1`` if it's positive, ``-1`` if it's negative, and ``0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+Returns a new vector with each component set to ``1`` if it's positive, ``-1`` if it's negative, and ``0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign()<class_@GlobalScope_method_sign>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -602,7 +602,7 @@ Returns ``true`` if the vectors are not equal.
 
 :ref:`Vector3i<class_Vector3i>` **operator %**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_mod_Vector3i>`
 
-Gets the remainder of each component of the **Vector3i** with the components of the given **Vector3i**. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+Gets the remainder of each component of the **Vector3i** with the components of the given **Vector3i**. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod()<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
 ::
 
@@ -618,7 +618,7 @@ Gets the remainder of each component of the **Vector3i** with the components of 
 
 :ref:`Vector3i<class_Vector3i>` **operator %**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector3i_operator_mod_int>`
 
-Gets the remainder of each component of the **Vector3i** with the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+Gets the remainder of each component of the **Vector3i** with the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod()<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
 ::
 

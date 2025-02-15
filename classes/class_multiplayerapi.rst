@@ -28,7 +28,7 @@ Base class for high-level multiplayer API implementations. See also :ref:`Multip
 
 By default, :ref:`SceneTree<class_SceneTree>` has a reference to an implementation of this class and uses it to provide multiplayer capabilities (i.e. RPCs) across the whole scene.
 
-It is possible to override the MultiplayerAPI instance used by specific tree branches by calling the :ref:`SceneTree.set_multiplayer<class_SceneTree_method_set_multiplayer>` method, effectively allowing to run both client and server in the same scene.
+It is possible to override the MultiplayerAPI instance used by specific tree branches by calling the :ref:`SceneTree.set_multiplayer()<class_SceneTree_method_set_multiplayer>` method, effectively allowing to run both client and server in the same scene.
 
 It is also possible to extend or replace the default implementation via scripting or native extensions. See :ref:`MultiplayerAPIExtension<class_MultiplayerAPIExtension>` for details about extensions, :ref:`SceneMultiplayer<class_SceneMultiplayer>` for the details about the default implementation.
 
@@ -164,7 +164,7 @@ enum **RPCMode**: :ref:`🔗<enum_MultiplayerAPI_RPCMode>`
 
 :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_DISABLED** = ``0``
 
-Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to disable a method or property for all RPC calls, making it unavailable. Default for all methods.
+Used with :ref:`Node.rpc_config()<class_Node_method_rpc_config>` to disable a method or property for all RPC calls, making it unavailable. Default for all methods.
 
 .. _class_MultiplayerAPI_constant_RPC_MODE_ANY_PEER:
 
@@ -172,7 +172,7 @@ Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to disable a meth
 
 :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_ANY_PEER** = ``1``
 
-Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely by any peer. Analogous to the ``@rpc("any_peer")`` annotation. Calls are accepted from all remote peers, no matter if they are node's authority or not.
+Used with :ref:`Node.rpc_config()<class_Node_method_rpc_config>` to set a method to be callable remotely by any peer. Analogous to the ``@rpc("any_peer")`` annotation. Calls are accepted from all remote peers, no matter if they are node's authority or not.
 
 .. _class_MultiplayerAPI_constant_RPC_MODE_AUTHORITY:
 
@@ -180,7 +180,7 @@ Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method t
 
 :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_AUTHORITY** = ``2``
 
-Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely only by the current multiplayer authority (which is the server by default). Analogous to the ``@rpc("authority")`` annotation. See :ref:`Node.set_multiplayer_authority<class_Node_method_set_multiplayer_authority>`.
+Used with :ref:`Node.rpc_config()<class_Node_method_rpc_config>` to set a method to be callable remotely only by the current multiplayer authority (which is the server by default). Analogous to the ``@rpc("authority")`` annotation. See :ref:`Node.set_multiplayer_authority()<class_Node_method_set_multiplayer_authority>`.
 
 .. rst-class:: classref-section-separator
 
@@ -202,7 +202,7 @@ Property Descriptions
 - |void| **set_multiplayer_peer**\ (\ value\: :ref:`MultiplayerPeer<class_MultiplayerPeer>`\ )
 - :ref:`MultiplayerPeer<class_MultiplayerPeer>` **get_multiplayer_peer**\ (\ )
 
-The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_server<class_MultiplayerAPI_method_is_server>`) and will set root node's network mode to authority, or it will become a regular client peer. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
+The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_server()<class_MultiplayerAPI_method_is_server>`) and will set root node's network mode to authority, or it will become a regular client peer. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
 
 .. rst-class:: classref-section-separator
 
@@ -231,7 +231,7 @@ Returns a new instance of the default MultiplayerAPI.
 
 :ref:`StringName<class_StringName>` **get_default_interface**\ (\ ) |static| :ref:`🔗<class_MultiplayerAPI_method_get_default_interface>`
 
-Returns the default MultiplayerAPI implementation class name. This is usually ``"SceneMultiplayer"`` when :ref:`SceneMultiplayer<class_SceneMultiplayer>` is available. See :ref:`set_default_interface<class_MultiplayerAPI_method_set_default_interface>`.
+Returns the default MultiplayerAPI implementation class name. This is usually ``"SceneMultiplayer"`` when :ref:`SceneMultiplayer<class_SceneMultiplayer>` is available. See :ref:`set_default_interface()<class_MultiplayerAPI_method_set_default_interface>`.
 
 .. rst-class:: classref-item-separator
 
@@ -347,9 +347,9 @@ Method used for polling the MultiplayerAPI. You only need to worry about this if
 
 :ref:`Error<enum_@GlobalScope_Error>` **rpc**\ (\ peer\: :ref:`int<class_int>`, object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, arguments\: :ref:`Array<class_Array>` = []\ ) :ref:`🔗<class_MultiplayerAPI_method_rpc>`
 
-Sends an RPC to the target ``peer``. The given ``method`` will be called on the remote ``object`` with the provided ``arguments``. The RPC may also be called locally depending on the implementation and RPC configuration. See :ref:`Node.rpc<class_Node_method_rpc>` and :ref:`Node.rpc_config<class_Node_method_rpc_config>`.
+Sends an RPC to the target ``peer``. The given ``method`` will be called on the remote ``object`` with the provided ``arguments``. The RPC may also be called locally depending on the implementation and RPC configuration. See :ref:`Node.rpc()<class_Node_method_rpc>` and :ref:`Node.rpc_config()<class_Node_method_rpc_config>`.
 
-\ **Note:** Prefer using :ref:`Node.rpc<class_Node_method_rpc>`, :ref:`Node.rpc_id<class_Node_method_rpc_id>`, or ``my_method.rpc(peer, arg1, arg2, ...)`` (in GDScript), since they are faster. This method is mostly useful in conjunction with :ref:`MultiplayerAPIExtension<class_MultiplayerAPIExtension>` when extending or replacing the multiplayer capabilities.
+\ **Note:** Prefer using :ref:`Node.rpc()<class_Node_method_rpc>`, :ref:`Node.rpc_id()<class_Node_method_rpc_id>`, or ``my_method.rpc(peer, arg1, arg2, ...)`` (in GDScript), since they are faster. This method is mostly useful in conjunction with :ref:`MultiplayerAPIExtension<class_MultiplayerAPIExtension>` when extending or replacing the multiplayer capabilities.
 
 .. rst-class:: classref-item-separator
 

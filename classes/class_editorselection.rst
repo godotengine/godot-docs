@@ -21,7 +21,7 @@ Description
 
 This object manages the SceneTree selection in the editor.
 
-\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_selection<class_EditorInterface_method_get_selection>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_selection()<class_EditorInterface_method_get_selection>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -77,7 +77,7 @@ Method Descriptions
 
 Adds a node to the selection.
 
-\ **Note:** The newly selected node will not be automatically edited in the inspector. If you want to edit a node, use :ref:`EditorInterface.edit_node<class_EditorInterface_method_edit_node>`.
+\ **Note:** The newly selected node will not be automatically edited in the inspector. If you want to edit a node, use :ref:`EditorInterface.edit_node()<class_EditorInterface_method_edit_node>`.
 
 .. rst-class:: classref-item-separator
 

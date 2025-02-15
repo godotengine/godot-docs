@@ -138,7 +138,7 @@ Removes all previously specified output ports.
 
 :ref:`int<class_int>` **get_free_input_port_id**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeGroupBase_method_get_free_input_port_id>`
 
-Returns a free input port ID which can be used in :ref:`add_input_port<class_VisualShaderNodeGroupBase_method_add_input_port>`.
+Returns a free input port ID which can be used in :ref:`add_input_port()<class_VisualShaderNodeGroupBase_method_add_input_port>`.
 
 .. rst-class:: classref-item-separator
 
@@ -150,7 +150,7 @@ Returns a free input port ID which can be used in :ref:`add_input_port<class_Vis
 
 :ref:`int<class_int>` **get_free_output_port_id**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeGroupBase_method_get_free_output_port_id>`
 
-Returns a free output port ID which can be used in :ref:`add_output_port<class_VisualShaderNodeGroupBase_method_add_output_port>`.
+Returns a free output port ID which can be used in :ref:`add_output_port()<class_VisualShaderNodeGroupBase_method_add_output_port>`.
 
 .. rst-class:: classref-item-separator
 
@@ -162,7 +162,7 @@ Returns a free output port ID which can be used in :ref:`add_output_port<class_V
 
 :ref:`int<class_int>` **get_input_port_count**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeGroupBase_method_get_input_port_count>`
 
-Returns the number of input ports in use. Alternative for :ref:`get_free_input_port_id<class_VisualShaderNodeGroupBase_method_get_free_input_port_id>`.
+Returns the number of input ports in use. Alternative for :ref:`get_free_input_port_id()<class_VisualShaderNodeGroupBase_method_get_free_input_port_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -174,7 +174,7 @@ Returns the number of input ports in use. Alternative for :ref:`get_free_input_p
 
 :ref:`String<class_String>` **get_inputs**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeGroupBase_method_get_inputs>`
 
-Returns a :ref:`String<class_String>` description of the input ports as a colon-separated list using the format ``id,type,name;`` (see :ref:`add_input_port<class_VisualShaderNodeGroupBase_method_add_input_port>`).
+Returns a :ref:`String<class_String>` description of the input ports as a colon-separated list using the format ``id,type,name;`` (see :ref:`add_input_port()<class_VisualShaderNodeGroupBase_method_add_input_port>`).
 
 .. rst-class:: classref-item-separator
 
@@ -186,7 +186,7 @@ Returns a :ref:`String<class_String>` description of the input ports as a colon-
 
 :ref:`int<class_int>` **get_output_port_count**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeGroupBase_method_get_output_port_count>`
 
-Returns the number of output ports in use. Alternative for :ref:`get_free_output_port_id<class_VisualShaderNodeGroupBase_method_get_free_output_port_id>`.
+Returns the number of output ports in use. Alternative for :ref:`get_free_output_port_id()<class_VisualShaderNodeGroupBase_method_get_free_output_port_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -198,7 +198,7 @@ Returns the number of output ports in use. Alternative for :ref:`get_free_output
 
 :ref:`String<class_String>` **get_outputs**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeGroupBase_method_get_outputs>`
 
-Returns a :ref:`String<class_String>` description of the output ports as a colon-separated list using the format ``id,type,name;`` (see :ref:`add_output_port<class_VisualShaderNodeGroupBase_method_add_output_port>`).
+Returns a :ref:`String<class_String>` description of the output ports as a colon-separated list using the format ``id,type,name;`` (see :ref:`add_output_port()<class_VisualShaderNodeGroupBase_method_add_output_port>`).
 
 .. rst-class:: classref-item-separator
 
@@ -294,7 +294,7 @@ Sets the specified input port's type (see :ref:`PortType<enum_VisualShaderNode_P
 
 |void| **set_inputs**\ (\ inputs\: :ref:`String<class_String>`\ ) :ref:`🔗<class_VisualShaderNodeGroupBase_method_set_inputs>`
 
-Defines all input ports using a :ref:`String<class_String>` formatted as a colon-separated list: ``id,type,name;`` (see :ref:`add_input_port<class_VisualShaderNodeGroupBase_method_add_input_port>`).
+Defines all input ports using a :ref:`String<class_String>` formatted as a colon-separated list: ``id,type,name;`` (see :ref:`add_input_port()<class_VisualShaderNodeGroupBase_method_add_input_port>`).
 
 .. rst-class:: classref-item-separator
 
@@ -330,7 +330,7 @@ Sets the specified output port's type (see :ref:`PortType<enum_VisualShaderNode_
 
 |void| **set_outputs**\ (\ outputs\: :ref:`String<class_String>`\ ) :ref:`🔗<class_VisualShaderNodeGroupBase_method_set_outputs>`
 
-Defines all output ports using a :ref:`String<class_String>` formatted as a colon-separated list: ``id,type,name;`` (see :ref:`add_output_port<class_VisualShaderNodeGroupBase_method_add_output_port>`).
+Defines all output ports using a :ref:`String<class_String>` formatted as a colon-separated list: ``id,type,name;`` (see :ref:`add_output_port()<class_VisualShaderNodeGroupBase_method_add_output_port>`).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

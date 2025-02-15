@@ -25,7 +25,7 @@ GLTFDocument supports reading data from a glTF file, buffer, or Godot scene. Thi
 
 All of the data in a glTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself. GLTFDocument has member variables to store export configuration settings such as the image format, but is otherwise stateless. Multiple scenes can be processed with the same settings using the same GLTFDocument object and different :ref:`GLTFState<class_GLTFState>` objects.
 
-GLTFDocument can be extended with arbitrary functionality by extending the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class and registering it with GLTFDocument via :ref:`register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`. This allows for custom data to be imported and exported.
+GLTFDocument can be extended with arbitrary functionality by extending the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class and registering it with GLTFDocument via :ref:`register_gltf_document_extension()<class_GLTFDocument_method_register_gltf_document_extension>`. This allows for custom data to be imported and exported.
 
 .. rst-class:: classref-introduction-group
 
@@ -202,7 +202,7 @@ Method Descriptions
 
 Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a glTF and imports the data to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
-\ **Note:** The ``base_path`` tells :ref:`append_from_buffer<class_GLTFDocument_method_append_from_buffer>` where to find dependencies and can be empty.
+\ **Note:** The ``base_path`` tells :ref:`append_from_buffer()<class_GLTFDocument_method_append_from_buffer>` where to find dependencies and can be empty.
 
 .. rst-class:: classref-item-separator
 
@@ -216,7 +216,7 @@ Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a glTF and import
 
 Takes a path to a glTF file and imports the data at that file path to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
-\ **Note:** The ``base_path`` tells :ref:`append_from_file<class_GLTFDocument_method_append_from_file>` where to find dependencies and can be empty.
+\ **Note:** The ``base_path`` tells :ref:`append_from_file()<class_GLTFDocument_method_append_from_file>` where to find dependencies and can be empty.
 
 .. rst-class:: classref-item-separator
 
@@ -240,7 +240,7 @@ Takes a Godot Engine scene node and exports it and its descendants to the given 
 
 :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` **export_object_model_property**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, node_path\: :ref:`NodePath<class_NodePath>`, godot_node\: :ref:`Node<class_Node>`, gltf_node_index\: :ref:`int<class_int>`\ ) |static| :ref:`🔗<class_GLTFDocument_method_export_object_model_property>`
 
-Determines a mapping between the given Godot ``node_path`` and the corresponding glTF Object Model JSON pointer(s) in the generated glTF file. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._import_object_model_property<class_GLTFDocumentExtension_private_method__import_object_model_property>` callback method.
+Determines a mapping between the given Godot ``node_path`` and the corresponding glTF Object Model JSON pointer(s) in the generated glTF file. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._import_object_model_property()<class_GLTFDocumentExtension_private_method__import_object_model_property>` callback method.
 
 .. rst-class:: classref-item-separator
 
@@ -292,7 +292,7 @@ Returns a list of all support glTF extensions, including extensions supported di
 
 :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` **import_object_model_property**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, json_pointer\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_GLTFDocument_method_import_object_model_property>`
 
-Determines a mapping between the given glTF Object Model ``json_pointer`` and the corresponding Godot node path(s) in the generated Godot scene. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._export_object_model_property<class_GLTFDocumentExtension_private_method__export_object_model_property>` callback method.
+Determines a mapping between the given glTF Object Model ``json_pointer`` and the corresponding Godot node path(s) in the generated Godot scene. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._export_object_model_property()<class_GLTFDocumentExtension_private_method__export_object_model_property>` callback method.
 
 .. rst-class:: classref-item-separator
 

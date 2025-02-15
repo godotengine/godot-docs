@@ -168,7 +168,7 @@ Method Descriptions
 
 |void| **add_attached_node**\ (\ node\: :ref:`int<class_int>`\ ) :ref:`🔗<class_VisualShaderNodeFrame_method_add_attached_node>`
 
-Adds a node to the list of nodes attached to the frame. Should not be called directly, use the :ref:`VisualShader.attach_node_to_frame<class_VisualShader_method_attach_node_to_frame>` method instead.
+Adds a node to the list of nodes attached to the frame. Should not be called directly, use the :ref:`VisualShader.attach_node_to_frame()<class_VisualShader_method_attach_node_to_frame>` method instead.
 
 .. rst-class:: classref-item-separator
 
@@ -180,7 +180,7 @@ Adds a node to the list of nodes attached to the frame. Should not be called dir
 
 |void| **remove_attached_node**\ (\ node\: :ref:`int<class_int>`\ ) :ref:`🔗<class_VisualShaderNodeFrame_method_remove_attached_node>`
 
-Removes a node from the list of nodes attached to the frame. Should not be called directly, use the :ref:`VisualShader.detach_node_from_frame<class_VisualShader_method_detach_node_from_frame>` method instead.
+Removes a node from the list of nodes attached to the frame. Should not be called directly, use the :ref:`VisualShader.detach_node_from_frame()<class_VisualShader_method_detach_node_from_frame>` method instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

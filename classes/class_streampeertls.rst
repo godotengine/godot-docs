@@ -122,7 +122,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **accept_stream**\ (\ stream\: :ref:`StreamPeer<class_StreamPeer>`, server_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_StreamPeerTLS_method_accept_stream>`
 
-Accepts a peer connection as a server using the given ``server_options``. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
+Accepts a peer connection as a server using the given ``server_options``. See :ref:`TLSOptions.server()<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 
@@ -134,7 +134,7 @@ Accepts a peer connection as a server using the given ``server_options``. See :r
 
 :ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream**\ (\ stream\: :ref:`StreamPeer<class_StreamPeer>`, common_name\: :ref:`String<class_String>`, client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) :ref:`🔗<class_StreamPeerTLS_method_connect_to_stream>`
 
-Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream`` and verifying the remote certificate is correctly signed for the given ``common_name``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
+Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream`` and verifying the remote certificate is correctly signed for the given ``common_name``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client()<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe()<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -170,7 +170,7 @@ Returns the status of the connection. See :ref:`Status<enum_StreamPeerTLS_Status
 
 :ref:`StreamPeer<class_StreamPeer>` **get_stream**\ (\ ) |const| :ref:`🔗<class_StreamPeerTLS_method_get_stream>`
 
-Returns the underlying :ref:`StreamPeer<class_StreamPeer>` connection, used in :ref:`accept_stream<class_StreamPeerTLS_method_accept_stream>` or :ref:`connect_to_stream<class_StreamPeerTLS_method_connect_to_stream>`.
+Returns the underlying :ref:`StreamPeer<class_StreamPeer>` connection, used in :ref:`accept_stream()<class_StreamPeerTLS_method_accept_stream>` or :ref:`connect_to_stream()<class_StreamPeerTLS_method_connect_to_stream>`.
 
 .. rst-class:: classref-item-separator
 
@@ -182,7 +182,7 @@ Returns the underlying :ref:`StreamPeer<class_StreamPeer>` connection, used in :
 
 |void| **poll**\ (\ ) :ref:`🔗<class_StreamPeerTLS_method_poll>`
 
-Poll the connection to check for incoming bytes. Call this right before :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` for it to work properly.
+Poll the connection to check for incoming bytes. Call this right before :ref:`StreamPeer.get_available_bytes()<class_StreamPeer_method_get_available_bytes>` for it to work properly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

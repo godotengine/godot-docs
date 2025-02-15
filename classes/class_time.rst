@@ -25,9 +25,9 @@ This class conforms with as many of the ISO 8601 standards as possible. All date
 
 Conversion methods assume "the same timezone", and do not handle timezone conversions or DST automatically. Leap seconds are also not handled, they must be done manually if desired. Suffixes such as "Z" are not handled, you need to strip them away manually.
 
-When getting time information from the system, the time can either be in the local timezone or UTC depending on the ``utc`` parameter. However, the :ref:`get_unix_time_from_system<class_Time_method_get_unix_time_from_system>` method always uses UTC as it returns the seconds passed since the `Unix epoch <https://en.wikipedia.org/wiki/Unix_time>`__.
+When getting time information from the system, the time can either be in the local timezone or UTC depending on the ``utc`` parameter. However, the :ref:`get_unix_time_from_system()<class_Time_method_get_unix_time_from_system>` method always uses UTC as it returns the seconds passed since the `Unix epoch <https://en.wikipedia.org/wiki/Unix_time>`__.
 
-\ **Important:** The ``_from_system`` methods use the system clock that the user can manually set. **Never use** this method for precise time calculation since its results are subject to automatic adjustments by the user or the operating system. **Always use** :ref:`get_ticks_usec<class_Time_method_get_ticks_usec>` or :ref:`get_ticks_msec<class_Time_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
+\ **Important:** The ``_from_system`` methods use the system clock that the user can manually set. **Never use** this method for precise time calculation since its results are subject to automatic adjustments by the user or the operating system. **Always use** :ref:`get_ticks_usec()<class_Time_method_get_ticks_usec>` or :ref:`get_ticks_msec()<class_Time_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
 
 .. rst-class:: classref-reftable-group
 
@@ -355,7 +355,7 @@ Returns the current date as a dictionary of keys: ``year``, ``month``, ``day``, 
 
 Converts the given Unix timestamp to a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, ``hour``, ``minute``, and ``second``.
 
-The returned Dictionary's values will be the same as the :ref:`get_datetime_dict_from_system<class_Time_method_get_datetime_dict_from_system>` if the Unix timestamp is the current time, with the exception of Daylight Savings Time as it cannot be determined from the epoch.
+The returned Dictionary's values will be the same as the :ref:`get_datetime_dict_from_system()<class_Time_method_get_datetime_dict_from_system>` if the Unix timestamp is the current time, with the exception of Daylight Savings Time as it cannot be determined from the epoch.
 
 .. rst-class:: classref-item-separator
 
@@ -529,7 +529,7 @@ The given dictionary can be populated with the following keys: ``year``, ``month
 
 If the dictionary is empty, ``0`` is returned. If some keys are omitted, they default to the equivalent values for the Unix epoch timestamp 0 (1970-01-01 at 00:00:00).
 
-You can pass the output from :ref:`get_datetime_dict_from_unix_time<class_Time_method_get_datetime_dict_from_unix_time>` directly into this function and get the same as what was put in.
+You can pass the output from :ref:`get_datetime_dict_from_unix_time()<class_Time_method_get_datetime_dict_from_unix_time>` directly into this function and get the same as what was put in.
 
 \ **Note:** Unix timestamps are often in UTC. This method does not do any timezone conversion, so the timestamp will be in the same timezone as the given datetime dictionary.
 

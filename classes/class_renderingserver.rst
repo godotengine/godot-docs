@@ -25,13 +25,13 @@ The rendering server can be used to bypass the scene/:ref:`Node<class_Node>` sys
 
 Resources are created using the ``*_create`` functions. These functions return :ref:`RID<class_RID>`\ s which are not references to the objects themselves, but opaque *pointers* towards these objects.
 
-All objects are drawn to a viewport. You can use the :ref:`Viewport<class_Viewport>` attached to the :ref:`SceneTree<class_SceneTree>` or you can create one yourself with :ref:`viewport_create<class_RenderingServer_method_viewport_create>`. When using a custom scenario or canvas, the scenario or canvas needs to be attached to the viewport using :ref:`viewport_set_scenario<class_RenderingServer_method_viewport_set_scenario>` or :ref:`viewport_attach_canvas<class_RenderingServer_method_viewport_attach_canvas>`.
+All objects are drawn to a viewport. You can use the :ref:`Viewport<class_Viewport>` attached to the :ref:`SceneTree<class_SceneTree>` or you can create one yourself with :ref:`viewport_create()<class_RenderingServer_method_viewport_create>`. When using a custom scenario or canvas, the scenario or canvas needs to be attached to the viewport using :ref:`viewport_set_scenario()<class_RenderingServer_method_viewport_set_scenario>` or :ref:`viewport_attach_canvas()<class_RenderingServer_method_viewport_attach_canvas>`.
 
-\ **Scenarios:** In 3D, all visual objects must be associated with a scenario. The scenario is a visual representation of the world. If accessing the rendering server from a running game, the scenario can be accessed from the scene tree from any :ref:`Node3D<class_Node3D>` node with :ref:`Node3D.get_world_3d<class_Node3D_method_get_world_3d>`. Otherwise, a scenario can be created with :ref:`scenario_create<class_RenderingServer_method_scenario_create>`.
+\ **Scenarios:** In 3D, all visual objects must be associated with a scenario. The scenario is a visual representation of the world. If accessing the rendering server from a running game, the scenario can be accessed from the scene tree from any :ref:`Node3D<class_Node3D>` node with :ref:`Node3D.get_world_3d()<class_Node3D_method_get_world_3d>`. Otherwise, a scenario can be created with :ref:`scenario_create()<class_RenderingServer_method_scenario_create>`.
 
 Similarly, in 2D, a canvas is needed to draw all canvas items.
 
-\ **3D:** In 3D, all visible objects are comprised of a resource and an instance. A resource can be a mesh, a particle system, a light, or any other 3D object. In order to be visible resources must be attached to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>`. The instance must also be attached to the scenario using :ref:`instance_set_scenario<class_RenderingServer_method_instance_set_scenario>` in order to be visible. RenderingServer methods that don't have a prefix are usually 3D-specific (but not always).
+\ **3D:** In 3D, all visible objects are comprised of a resource and an instance. A resource can be a mesh, a particle system, a light, or any other 3D object. In order to be visible resources must be attached to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>`. The instance must also be attached to the scenario using :ref:`instance_set_scenario()<class_RenderingServer_method_instance_set_scenario>` in order to be visible. RenderingServer methods that don't have a prefix are usually 3D-specific (but not always).
 
 \ **2D:** In 2D, all visible objects are some form of canvas item. In order to be visible, a canvas item needs to be the child of a canvas attached to a viewport, or it needs to be the child of another canvas item that is eventually attached to the canvas. 2D-specific RenderingServer methods generally start with ``canvas_*``.
 
@@ -1704,7 +1704,7 @@ Mask of custom format bits per custom channel. Must be shifted by one of the SHI
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_COMPRESS_FLAGS_BASE** = ``25``
 
-Shift of first compress flag. Compress flags should be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` and :ref:`SurfaceTool.commit<class_SurfaceTool_method_commit>`.
+Shift of first compress flag. Compress flags should be passed to :ref:`ArrayMesh.add_surface_from_arrays()<class_ArrayMesh_method_add_surface_from_arrays>` and :ref:`SurfaceTool.commit()<class_SurfaceTool_method_commit>`.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_USE_2D_VERTICES:
 
@@ -2466,7 +2466,7 @@ Apply automatically-sourced environment lighting inside the reflection probe's b
 
 :ref:`ReflectionProbeAmbientMode<enum_RenderingServer_ReflectionProbeAmbientMode>` **REFLECTION_PROBE_AMBIENT_COLOR** = ``2``
 
-Apply custom ambient lighting inside the reflection probe's box defined by its size. See :ref:`reflection_probe_set_ambient_color<class_RenderingServer_method_reflection_probe_set_ambient_color>` and :ref:`reflection_probe_set_ambient_energy<class_RenderingServer_method_reflection_probe_set_ambient_energy>`.
+Apply custom ambient lighting inside the reflection probe's box defined by its size. See :ref:`reflection_probe_set_ambient_color()<class_RenderingServer_method_reflection_probe_set_ambient_color>` and :ref:`reflection_probe_set_ambient_energy()<class_RenderingServer_method_reflection_probe_set_ambient_energy>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3562,7 +3562,7 @@ Objects are displayed semi-transparent with additive blending so you can see whe
 
 Debug draw draws objects in wireframe.
 
-\ **Note:** :ref:`set_debug_generate_wireframes<class_RenderingServer_method_set_debug_generate_wireframes>` must be called before loading any meshes for wireframes to be visible when using the Compatibility renderer.
+\ **Note:** :ref:`set_debug_generate_wireframes()<class_RenderingServer_method_set_debug_generate_wireframes>` must be called before loading any meshes for wireframes to be visible when using the Compatibility renderer.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_NORMAL_BUFFER:
 
@@ -3870,7 +3870,7 @@ Uses the same high quality importance sampling to process the radiance map as :r
 
 Uses the fast filtering algorithm to process the radiance map. In general this results in lower quality, but substantially faster run times. If you need better quality, but still need to update the sky every frame, consider turning on :ref:`ProjectSettings.rendering/reflections/sky_reflections/fast_filter_high_quality<class_ProjectSettings_property_rendering/reflections/sky_reflections/fast_filter_high_quality>`.
 
-\ **Note:** The fast filtering algorithm is limited to 256×256 cubemaps, so :ref:`sky_set_radiance_size<class_RenderingServer_method_sky_set_radiance_size>` must be set to ``256``. Otherwise, a warning is printed and the overridden radiance size is ignored.
+\ **Note:** The fast filtering algorithm is limited to 256×256 cubemaps, so :ref:`sky_set_radiance_size()<class_RenderingServer_method_sky_set_radiance_size>` must be set to ``256``. Otherwise, a warning is printed and the overridden radiance size is ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -4218,7 +4218,7 @@ enum **EnvironmentToneMapper**: :ref:`🔗<enum_RenderingServer_EnvironmentToneM
 
 :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>` **ENV_TONE_MAPPER_LINEAR** = ``0``
 
-Output color as they came in. This can cause bright lighting to look blown out, with noticeable clipping in the output colors.
+Does not modify color data, resulting in a linear tonemapping curve which unnaturally clips bright values, causing bright lighting to look blown out. The simplest and fastest tonemapper.
 
 .. _class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD:
 
@@ -4226,7 +4226,9 @@ Output color as they came in. This can cause bright lighting to look blown out, 
 
 :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>` **ENV_TONE_MAPPER_REINHARD** = ``1``
 
-Use the Reinhard tonemapper. Performs a variation on rendered pixels' colors by this formula: ``color = color * (1 + color / (white * white)) / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull. When :ref:`Environment.tonemap_white<class_Environment_property_tonemap_white>` is left at the default value of ``1.0`` this is identical to :ref:`ENV_TONE_MAPPER_LINEAR<class_RenderingServer_constant_ENV_TONE_MAPPER_LINEAR>` while also being slightly less performant.
+A simple tonemapping curve that rolls off bright values to prevent clipping. This results in an image that can appear dull and low contrast. Slower than :ref:`ENV_TONE_MAPPER_LINEAR<class_RenderingServer_constant_ENV_TONE_MAPPER_LINEAR>`.
+
+\ **Note:** When :ref:`Environment.tonemap_white<class_Environment_property_tonemap_white>` is left at the default value of ``1.0``, :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>` produces an identical image to :ref:`ENV_TONE_MAPPER_LINEAR<class_RenderingServer_constant_ENV_TONE_MAPPER_LINEAR>`.
 
 .. _class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC:
 
@@ -4234,7 +4236,7 @@ Use the Reinhard tonemapper. Performs a variation on rendered pixels' colors by 
 
 :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>` **ENV_TONE_MAPPER_FILMIC** = ``2``
 
-Use the filmic tonemapper. This avoids clipping bright highlights, with a resulting image that usually looks more vivid than :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>`.
+Uses a film-like tonemapping curve to prevent clipping of bright values and provide better contrast than :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>`. Slightly slower than :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>`.
 
 .. _class_RenderingServer_constant_ENV_TONE_MAPPER_ACES:
 
@@ -4242,7 +4244,7 @@ Use the filmic tonemapper. This avoids clipping bright highlights, with a result
 
 :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>` **ENV_TONE_MAPPER_ACES** = ``3``
 
-Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>` and :ref:`ENV_TONE_MAPPER_FILMIC<class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC>`.
+Uses a high-contrast film-like tonemapping curve and desaturates bright values for a more realistic appearance. Slightly slower than :ref:`ENV_TONE_MAPPER_FILMIC<class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC>`.
 
 \ **Note:** This tonemapping operator is called "ACES Fitted" in Godot 3.x.
 
@@ -4252,7 +4254,9 @@ Use the Academy Color Encoding System tonemapper. ACES is slightly more expensiv
 
 :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>` **ENV_TONE_MAPPER_AGX** = ``4``
 
-Use the AgX tonemapper. AgX is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. AgX is less likely to darken parts of the scene compared to :ref:`ENV_TONE_MAPPER_ACES<class_RenderingServer_constant_ENV_TONE_MAPPER_ACES>`, and can match :ref:`ENV_TONE_MAPPER_FILMIC<class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC>` more closely.
+Uses a film-like tonemapping curve and desaturates bright values for a more realistic appearance. Better than other tonemappers at maintaining the hue of colors as they become brighter. The slowest tonemapping option.
+
+\ **Note:** :ref:`Environment.tonemap_white<class_Environment_property_tonemap_white>` is fixed at a value of ``16.29``, which makes :ref:`ENV_TONE_MAPPER_AGX<class_RenderingServer_constant_ENV_TONE_MAPPER_AGX>` unsuitable for use with the Mobile rendering method.
 
 .. rst-class:: classref-item-separator
 
@@ -5018,7 +5022,7 @@ enum **BakeChannels**: :ref:`🔗<enum_RenderingServer_BakeChannels>`
 
 :ref:`BakeChannels<enum_RenderingServer_BakeChannels>` **BAKE_CHANNEL_ALBEDO_ALPHA** = ``0``
 
-Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s returned by :ref:`bake_render_uv2<class_RenderingServer_method_bake_render_uv2>`. Image uses :ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` and contains albedo color in the ``.rgb`` channels and alpha in the ``.a`` channel.
+Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s returned by :ref:`bake_render_uv2()<class_RenderingServer_method_bake_render_uv2>`. Image uses :ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` and contains albedo color in the ``.rgb`` channels and alpha in the ``.a`` channel.
 
 .. _class_RenderingServer_constant_BAKE_CHANNEL_NORMAL:
 
@@ -5026,7 +5030,7 @@ Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s retu
 
 :ref:`BakeChannels<enum_RenderingServer_BakeChannels>` **BAKE_CHANNEL_NORMAL** = ``1``
 
-Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s returned by :ref:`bake_render_uv2<class_RenderingServer_method_bake_render_uv2>`. Image uses :ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` and contains the per-pixel normal of the object in the ``.rgb`` channels and nothing in the ``.a`` channel. The per-pixel normal is encoded as ``normal * 0.5 + 0.5``.
+Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s returned by :ref:`bake_render_uv2()<class_RenderingServer_method_bake_render_uv2>`. Image uses :ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` and contains the per-pixel normal of the object in the ``.rgb`` channels and nothing in the ``.a`` channel. The per-pixel normal is encoded as ``normal * 0.5 + 0.5``.
 
 .. _class_RenderingServer_constant_BAKE_CHANNEL_ORM:
 
@@ -5034,7 +5038,7 @@ Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s retu
 
 :ref:`BakeChannels<enum_RenderingServer_BakeChannels>` **BAKE_CHANNEL_ORM** = ``2``
 
-Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s returned by :ref:`bake_render_uv2<class_RenderingServer_method_bake_render_uv2>`. Image uses :ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` and contains ambient occlusion (from material and decals only) in the ``.r`` channel, roughness in the ``.g`` channel, metallic in the ``.b`` channel and sub surface scattering amount in the ``.a`` channel.
+Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s returned by :ref:`bake_render_uv2()<class_RenderingServer_method_bake_render_uv2>`. Image uses :ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` and contains ambient occlusion (from material and decals only) in the ``.r`` channel, roughness in the ``.g`` channel, metallic in the ``.b`` channel and sub surface scattering amount in the ``.a`` channel.
 
 .. _class_RenderingServer_constant_BAKE_CHANNEL_EMISSION:
 
@@ -5042,7 +5046,7 @@ Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s retu
 
 :ref:`BakeChannels<enum_RenderingServer_BakeChannels>` **BAKE_CHANNEL_EMISSION** = ``3``
 
-Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s returned by :ref:`bake_render_uv2<class_RenderingServer_method_bake_render_uv2>`. Image uses :ref:`Image.FORMAT_RGBAH<class_Image_constant_FORMAT_RGBAH>` and contains emission color in the ``.rgb`` channels and nothing in the ``.a`` channel.
+Index of :ref:`Image<class_Image>` in array of :ref:`Image<class_Image>`\ s returned by :ref:`bake_render_uv2()<class_RenderingServer_method_bake_render_uv2>`. Image uses :ref:`Image.FORMAT_RGBAH<class_Image_constant_FORMAT_RGBAH>` and contains emission color in the ``.rgb`` channels and nothing in the ``.a`` channel.
 
 .. rst-class:: classref-item-separator
 
@@ -6041,7 +6045,7 @@ Property Descriptions
 - |void| **set_render_loop_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_render_loop_enabled**\ (\ )
 
-If ``false``, disables rendering completely, but the engine logic is still being processed. You can call :ref:`force_draw<class_RenderingServer_method_force_draw>` to draw a frame even with rendering disabled.
+If ``false``, disables rendering completely, but the engine logic is still being processed. You can call :ref:`force_draw()<class_RenderingServer_method_force_draw>` to draw a frame even with rendering disabled.
 
 .. rst-class:: classref-section-separator
 
@@ -6084,7 +6088,7 @@ As the RenderingServer actual logic may run on an separate thread, accessing its
 
 Creates a camera attributes object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``camera_attributes_`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`CameraAttributes<class_CameraAttributes>`.
 
@@ -6174,7 +6178,7 @@ The exposure value can be calculated from aperture (in f-stops), shutter speed (
 
 Creates a 3D camera and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``camera_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent node is :ref:`Camera3D<class_Camera3D>`.
 
@@ -6188,7 +6192,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 |void| **camera_set_camera_attributes**\ (\ camera\: :ref:`RID<class_RID>`, effects\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_camera_set_camera_attributes>`
 
-Sets the camera_attributes created with :ref:`camera_attributes_create<class_RenderingServer_method_camera_attributes_create>` to the given camera.
+Sets the camera_attributes created with :ref:`camera_attributes_create()<class_RenderingServer_method_camera_attributes_create>` to the given camera.
 
 .. rst-class:: classref-item-separator
 
@@ -6298,7 +6302,7 @@ If ``true``, preserves the horizontal aspect ratio which is equivalent to :ref:`
 
 Creates a canvas and returns the assigned :ref:`RID<class_RID>`. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 Canvas has no :ref:`Resource<class_Resource>` or :ref:`Node<class_Node>` equivalent.
 
@@ -6324,7 +6328,7 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 |void| **canvas_item_add_circle**\ (\ item\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, radius\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_circle>`
 
-Draws a circle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_circle<class_CanvasItem_method_draw_circle>`.
+Draws a circle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_circle()<class_CanvasItem_method_draw_circle>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6348,7 +6352,7 @@ If ``ignore`` is ``true``, ignore clipping on items drawn with this canvas item 
 
 |void| **canvas_item_add_lcd_texture_rect_region**\ (\ item\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`, texture\: :ref:`RID<class_RID>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_lcd_texture_rect_region>`
 
-See also :ref:`CanvasItem.draw_lcd_texture_rect_region<class_CanvasItem_method_draw_lcd_texture_rect_region>`.
+See also :ref:`CanvasItem.draw_lcd_texture_rect_region()<class_CanvasItem_method_draw_lcd_texture_rect_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6360,7 +6364,7 @@ See also :ref:`CanvasItem.draw_lcd_texture_rect_region<class_CanvasItem_method_d
 
 |void| **canvas_item_add_line**\ (\ item\: :ref:`RID<class_RID>`, from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_line>`
 
-Draws a line on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_line<class_CanvasItem_method_draw_line>`.
+Draws a line on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_line()<class_CanvasItem_method_draw_line>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6372,7 +6376,7 @@ Draws a line on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item
 
 |void| **canvas_item_add_mesh**\ (\ item\: :ref:`RID<class_RID>`, mesh\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>` = Transform2D(1, 0, 0, 1, 0, 0), modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), texture\: :ref:`RID<class_RID>` = RID()\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_mesh>`
 
-Draws a mesh created with :ref:`mesh_create<class_RenderingServer_method_mesh_create>` with given ``transform``, ``modulate`` color, and ``texture``. This is used internally by :ref:`MeshInstance2D<class_MeshInstance2D>`.
+Draws a mesh created with :ref:`mesh_create()<class_RenderingServer_method_mesh_create>` with given ``transform``, ``modulate`` color, and ``texture``. This is used internally by :ref:`MeshInstance2D<class_MeshInstance2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6384,7 +6388,7 @@ Draws a mesh created with :ref:`mesh_create<class_RenderingServer_method_mesh_cr
 
 |void| **canvas_item_add_msdf_texture_rect_region**\ (\ item\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`, texture\: :ref:`RID<class_RID>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), outline_size\: :ref:`int<class_int>` = 0, px_range\: :ref:`float<class_float>` = 1.0, scale\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_msdf_texture_rect_region>`
 
-See also :ref:`CanvasItem.draw_msdf_texture_rect_region<class_CanvasItem_method_draw_msdf_texture_rect_region>`.
+See also :ref:`CanvasItem.draw_msdf_texture_rect_region()<class_CanvasItem_method_draw_msdf_texture_rect_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6396,7 +6400,7 @@ See also :ref:`CanvasItem.draw_msdf_texture_rect_region<class_CanvasItem_method_
 
 |void| **canvas_item_add_multiline**\ (\ item\: :ref:`RID<class_RID>`, points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_multiline>`
 
-Draws a 2D multiline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`CanvasItem.draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>`.
+Draws a 2D multiline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_multiline()<class_CanvasItem_method_draw_multiline>` and :ref:`CanvasItem.draw_multiline_colors()<class_CanvasItem_method_draw_multiline_colors>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6408,7 +6412,7 @@ Draws a 2D multiline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by th
 
 |void| **canvas_item_add_multimesh**\ (\ item\: :ref:`RID<class_RID>`, mesh\: :ref:`RID<class_RID>`, texture\: :ref:`RID<class_RID>` = RID()\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_multimesh>`
 
-Draws a 2D :ref:`MultiMesh<class_MultiMesh>` on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_multimesh<class_CanvasItem_method_draw_multimesh>`.
+Draws a 2D :ref:`MultiMesh<class_MultiMesh>` on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_multimesh()<class_CanvasItem_method_draw_multimesh>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6444,9 +6448,9 @@ Draws particles on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``i
 
 |void| **canvas_item_add_polygon**\ (\ item\: :ref:`RID<class_RID>`, points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), texture\: :ref:`RID<class_RID>` = RID()\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_polygon>`
 
-Draws a 2D polygon on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. If you need more flexibility (such as being able to use bones), use :ref:`canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>` instead. See also :ref:`CanvasItem.draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws a 2D polygon on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. If you need more flexibility (such as being able to use bones), use :ref:`canvas_item_add_triangle_array()<class_RenderingServer_method_canvas_item_add_triangle_array>` instead. See also :ref:`CanvasItem.draw_polygon()<class_CanvasItem_method_draw_polygon>`.
 
-\ **Note:** If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with :ref:`Geometry2D.triangulate_polygon<class_Geometry2D_method_triangulate_polygon>` and using :ref:`CanvasItem.draw_mesh<class_CanvasItem_method_draw_mesh>`, :ref:`CanvasItem.draw_multimesh<class_CanvasItem_method_draw_multimesh>`, or :ref:`canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>`.
+\ **Note:** If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with :ref:`Geometry2D.triangulate_polygon()<class_Geometry2D_method_triangulate_polygon>` and using :ref:`CanvasItem.draw_mesh()<class_CanvasItem_method_draw_mesh>`, :ref:`CanvasItem.draw_multimesh()<class_CanvasItem_method_draw_multimesh>`, or :ref:`canvas_item_add_triangle_array()<class_RenderingServer_method_canvas_item_add_triangle_array>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6458,7 +6462,7 @@ Draws a 2D polygon on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the 
 
 |void| **canvas_item_add_polyline**\ (\ item\: :ref:`RID<class_RID>`, points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_polyline>`
 
-Draws a 2D polyline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`CanvasItem.draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`.
+Draws a 2D polyline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_polyline()<class_CanvasItem_method_draw_polyline>` and :ref:`CanvasItem.draw_polyline_colors()<class_CanvasItem_method_draw_polyline_colors>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6470,7 +6474,7 @@ Draws a 2D polyline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the
 
 |void| **canvas_item_add_primitive**\ (\ item\: :ref:`RID<class_RID>`, points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>`, texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_primitive>`
 
-Draws a 2D primitive on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_primitive<class_CanvasItem_method_draw_primitive>`.
+Draws a 2D primitive on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_primitive()<class_CanvasItem_method_draw_primitive>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6482,7 +6486,7 @@ Draws a 2D primitive on the :ref:`CanvasItem<class_CanvasItem>` pointed to by th
 
 |void| **canvas_item_add_rect**\ (\ item\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`, color\: :ref:`Color<class_Color>`, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_rect>`
 
-Draws a rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_rect<class_CanvasItem_method_draw_rect>`.
+Draws a rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_rect()<class_CanvasItem_method_draw_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6506,7 +6510,7 @@ Sets a :ref:`Transform2D<class_Transform2D>` that will be used to transform subs
 
 |void| **canvas_item_add_texture_rect**\ (\ item\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`, texture\: :ref:`RID<class_RID>`, tile\: :ref:`bool<class_bool>` = false, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), transpose\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_texture_rect>`
 
-Draws a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_texture_rect<class_CanvasItem_method_draw_texture_rect>` and :ref:`Texture2D.draw_rect<class_Texture2D_method_draw_rect>`.
+Draws a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_texture_rect()<class_CanvasItem_method_draw_texture_rect>` and :ref:`Texture2D.draw_rect()<class_Texture2D_method_draw_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6518,7 +6522,7 @@ Draws a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed
 
 |void| **canvas_item_add_texture_rect_region**\ (\ item\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`, texture\: :ref:`RID<class_RID>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), transpose\: :ref:`bool<class_bool>` = false, clip_uv\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_texture_rect_region>`
 
-Draws the specified region of a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_texture_rect_region<class_CanvasItem_method_draw_texture_rect_region>` and :ref:`Texture2D.draw_rect_region<class_Texture2D_method_draw_rect_region>`.
+Draws the specified region of a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_texture_rect_region()<class_CanvasItem_method_draw_texture_rect_region>` and :ref:`Texture2D.draw_rect_region()<class_Texture2D_method_draw_rect_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6530,7 +6534,7 @@ Draws the specified region of a 2D textured rectangle on the :ref:`CanvasItem<cl
 
 |void| **canvas_item_add_triangle_array**\ (\ item\: :ref:`RID<class_RID>`, indices\: :ref:`PackedInt32Array<class_PackedInt32Array>`, points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), bones\: :ref:`PackedInt32Array<class_PackedInt32Array>` = PackedInt32Array(), weights\: :ref:`PackedFloat32Array<class_PackedFloat32Array>` = PackedFloat32Array(), texture\: :ref:`RID<class_RID>` = RID(), count\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_triangle_array>`
 
-Draws a triangle array on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. This is internally used by :ref:`Line2D<class_Line2D>` and :ref:`StyleBoxFlat<class_StyleBoxFlat>` for rendering. :ref:`canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>` is highly flexible, but more complex to use than :ref:`canvas_item_add_polygon<class_RenderingServer_method_canvas_item_add_polygon>`.
+Draws a triangle array on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. This is internally used by :ref:`Line2D<class_Line2D>` and :ref:`StyleBoxFlat<class_StyleBoxFlat>` for rendering. :ref:`canvas_item_add_triangle_array()<class_RenderingServer_method_canvas_item_add_triangle_array>` is highly flexible, but more complex to use than :ref:`canvas_item_add_polygon()<class_RenderingServer_method_canvas_item_add_polygon>`.
 
 \ **Note:** ``count`` is unused and can be left unspecified.
 
@@ -6570,7 +6574,7 @@ Clears the :ref:`CanvasItem<class_CanvasItem>` and removes all commands in it.
 
 Creates a new CanvasItem instance and returns its :ref:`RID<class_RID>`. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_item_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent node is :ref:`CanvasItem<class_CanvasItem>`.
 
@@ -6584,7 +6588,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`Variant<class_Variant>` **canvas_item_get_instance_shader_parameter**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderingServer_method_canvas_item_get_instance_shader_parameter>`
 
-Returns the value of the per-instance shader uniform from the specified canvas item instance. Equivalent to :ref:`CanvasItem.get_instance_shader_parameter<class_CanvasItem_method_get_instance_shader_parameter>`.
+Returns the value of the per-instance shader uniform from the specified canvas item instance. Equivalent to :ref:`CanvasItem.get_instance_shader_parameter()<class_CanvasItem_method_get_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6596,7 +6600,7 @@ Returns the value of the per-instance shader uniform from the specified canvas i
 
 :ref:`Variant<class_Variant>` **canvas_item_get_instance_shader_parameter_default_value**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderingServer_method_canvas_item_get_instance_shader_parameter_default_value>`
 
-Returns the default value of the per-instance shader uniform from the specified canvas item instance. Equivalent to :ref:`CanvasItem.get_instance_shader_parameter<class_CanvasItem_method_get_instance_shader_parameter>`.
+Returns the default value of the per-instance shader uniform from the specified canvas item instance. Equivalent to :ref:`CanvasItem.get_instance_shader_parameter()<class_CanvasItem_method_get_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6636,7 +6640,7 @@ This is useful when moving a canvas item to a new location, to give an instantan
 
 |void| **canvas_item_set_canvas_group_mode**\ (\ item\: :ref:`RID<class_RID>`, mode\: :ref:`CanvasGroupMode<enum_RenderingServer_CanvasGroupMode>`, clear_margin\: :ref:`float<class_float>` = 5.0, fit_empty\: :ref:`bool<class_bool>` = false, fit_margin\: :ref:`float<class_float>` = 0.0, blur_mipmaps\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_set_canvas_group_mode>`
 
-Sets the canvas group mode used during 2D rendering for the canvas item specified by the ``item`` RID. For faster but more limited clipping, use :ref:`canvas_item_set_clip<class_RenderingServer_method_canvas_item_set_clip>` instead.
+Sets the canvas group mode used during 2D rendering for the canvas item specified by the ``item`` RID. For faster but more limited clipping, use :ref:`canvas_item_set_clip()<class_RenderingServer_method_canvas_item_set_clip>` instead.
 
 \ **Note:** The equivalent node functionality is found in :ref:`CanvasGroup<class_CanvasGroup>` and :ref:`CanvasItem.clip_children<class_CanvasItem_property_clip_children>`.
 
@@ -6650,7 +6654,7 @@ Sets the canvas group mode used during 2D rendering for the canvas item specifie
 
 |void| **canvas_item_set_clip**\ (\ item\: :ref:`RID<class_RID>`, clip\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_set_clip>`
 
-If ``clip`` is ``true``, makes the canvas item specified by the ``item`` RID not draw anything outside of its rect's coordinates. This clipping is fast, but works only with axis-aligned rectangles. This means that rotation is ignored by the clipping rectangle. For more advanced clipping shapes, use :ref:`canvas_item_set_canvas_group_mode<class_RenderingServer_method_canvas_item_set_canvas_group_mode>` instead.
+If ``clip`` is ``true``, makes the canvas item specified by the ``item`` RID not draw anything outside of its rect's coordinates. This clipping is fast, but works only with axis-aligned rectangles. This means that rotation is ignored by the clipping rectangle. For more advanced clipping shapes, use :ref:`canvas_item_set_canvas_group_mode()<class_RenderingServer_method_canvas_item_set_canvas_group_mode>` instead.
 
 \ **Note:** The equivalent node functionality is found in :ref:`Label.clip_text<class_Label_property_clip_text>`, :ref:`RichTextLabel<class_RichTextLabel>` (always enabled) and more.
 
@@ -6748,7 +6752,7 @@ Sets the index for the :ref:`CanvasItem<class_CanvasItem>`.
 
 |void| **canvas_item_set_instance_shader_parameter**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_set_instance_shader_parameter>`
 
-Sets the per-instance shader uniform on the specified canvas item instance. Equivalent to :ref:`CanvasItem.set_instance_shader_parameter<class_CanvasItem_method_set_instance_shader_parameter>`.
+Sets the per-instance shader uniform on the specified canvas item instance. Equivalent to :ref:`CanvasItem.set_instance_shader_parameter()<class_CanvasItem_method_set_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6796,7 +6800,7 @@ Sets a new ``material`` to the canvas item specified by the ``item`` RID. Equiva
 
 |void| **canvas_item_set_modulate**\ (\ item\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_set_modulate>`
 
-Multiplies the color of the canvas item specified by the ``item`` RID, while affecting its children. See also :ref:`canvas_item_set_self_modulate<class_RenderingServer_method_canvas_item_set_self_modulate>`. Equivalent to :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`.
+Multiplies the color of the canvas item specified by the ``item`` RID, while affecting its children. See also :ref:`canvas_item_set_self_modulate()<class_RenderingServer_method_canvas_item_set_self_modulate>`. Equivalent to :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6820,7 +6824,7 @@ Sets a parent :ref:`CanvasItem<class_CanvasItem>` to the :ref:`CanvasItem<class_
 
 |void| **canvas_item_set_self_modulate**\ (\ item\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_set_self_modulate>`
 
-Multiplies the color of the canvas item specified by the ``item`` RID, without affecting its children. See also :ref:`canvas_item_set_modulate<class_RenderingServer_method_canvas_item_set_modulate>`. Equivalent to :ref:`CanvasItem.self_modulate<class_CanvasItem_property_self_modulate>`.
+Multiplies the color of the canvas item specified by the ``item`` RID, without affecting its children. See also :ref:`canvas_item_set_modulate()<class_RenderingServer_method_canvas_item_set_modulate>`. Equivalent to :ref:`CanvasItem.self_modulate<class_CanvasItem_property_self_modulate>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6958,7 +6962,7 @@ Attaches the canvas light to the canvas. Removes it from its previous canvas.
 
 Creates a canvas light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_light_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent node is :ref:`Light2D<class_Light2D>`.
 
@@ -6986,7 +6990,7 @@ Attaches a light occluder to the canvas. Removes it from its previous canvas.
 
 Creates a light occluder and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_light_occluder_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent node is :ref:`LightOccluder2D<class_LightOccluder2D>`.
 
@@ -7360,7 +7364,7 @@ This allows transforming a light without creating a "glitch" in the interpolatio
 
 Creates a new light occluder polygon and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_occluder_polygon_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`.
 
@@ -7414,7 +7418,7 @@ Sets the shape of the occluder polygon.
 
 A copy of the canvas item will be drawn with a local offset of the ``mirroring``.
 
-\ **Note:** This is equivalent to calling :ref:`canvas_set_item_repeat<class_RenderingServer_method_canvas_set_item_repeat>` like ``canvas_set_item_repeat(item, mirroring, 1)``, with an additional check ensuring ``canvas`` is a parent of ``item``.
+\ **Note:** This is equivalent to calling :ref:`canvas_set_item_repeat()<class_RenderingServer_method_canvas_set_item_repeat>` like ``canvas_set_item_repeat(item, mirroring, 1)``, with an additional check ensuring ``canvas`` is a parent of ``item``.
 
 .. rst-class:: classref-item-separator
 
@@ -7464,7 +7468,7 @@ Sets the :ref:`ProjectSettings.rendering/2d/shadow_atlas/size<class_ProjectSetti
 
 Creates a canvas texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_texture_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method. See also :ref:`texture_2d_create<class_RenderingServer_method_texture_2d_create>`.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method. See also :ref:`texture_2d_create()<class_RenderingServer_method_texture_2d_create>`.
 
 \ **Note:** The equivalent resource is :ref:`CanvasTexture<class_CanvasTexture>` and is only meant to be used in 2D rendering, not 3D.
 
@@ -7528,7 +7532,7 @@ Sets the texture ``repeat`` mode to use for the canvas texture specified by the 
 
 Creates a new compositor and adds it to the RenderingServer. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -7542,7 +7546,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Creates a new rendering effect and adds it to the RenderingServer. It can be accessed with the RID that is returned.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -7590,7 +7594,7 @@ Sets the flag (``flag``) for this rendering effect to ``true`` or ``false`` (``s
 
 |void| **compositor_set_compositor_effects**\ (\ compositor\: :ref:`RID<class_RID>`, effects\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]\ ) :ref:`🔗<class_RenderingServer_method_compositor_set_compositor_effects>`
 
-Sets the compositor effects for the specified compositor RID. ``effects`` should be an array containing RIDs created with :ref:`compositor_effect_create<class_RenderingServer_method_compositor_effect_create>`.
+Sets the compositor effects for the specified compositor RID. ``effects`` should be an array containing RIDs created with :ref:`compositor_effect_create()<class_RenderingServer_method_compositor_effect_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7632,9 +7636,9 @@ Returns the bounding rectangle for a canvas item in local space, as calculated b
 
 Creates a decal and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``decal_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach this decal to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach this decal to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 \ **Note:** The equivalent node is :ref:`Decal<class_Decal>`.
 
@@ -7744,7 +7748,7 @@ Sets the ``size`` of the decal specified by the ``decal`` RID. Equivalent to :re
 
 |void| **decal_set_texture**\ (\ decal\: :ref:`RID<class_RID>`, type\: :ref:`DecalTexture<enum_RenderingServer_DecalTexture>`, texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_decal_set_texture>`
 
-Sets the ``texture`` in the given texture ``type`` slot for the specified decal. Equivalent to :ref:`Decal.set_texture<class_Decal_method_set_texture>`.
+Sets the ``texture`` in the given texture ``type`` slot for the specified decal. Equivalent to :ref:`Decal.set_texture()<class_Decal_method_set_texture>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7770,9 +7774,9 @@ Sets the texture ``filter`` mode to use when rendering decals. This parameter is
 
 Creates a directional light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most ``light_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach this directional light to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach this directional light to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 \ **Note:** The equivalent node is :ref:`DirectionalLight3D<class_DirectionalLight3D>`.
 
@@ -7810,7 +7814,7 @@ Sets the filter ``quality`` for directional light shadows in 3D. See also :ref:`
 
 :ref:`Image<class_Image>` **environment_bake_panorama**\ (\ environment\: :ref:`RID<class_RID>`, bake_irradiance\: :ref:`bool<class_bool>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_RenderingServer_method_environment_bake_panorama>`
 
-Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``environment`` RID's sky. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`sky_bake_panorama<class_RenderingServer_method_sky_bake_panorama>`.
+Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``environment`` RID's sky. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`sky_bake_panorama()<class_RenderingServer_method_sky_bake_panorama>`.
 
 \ **Note:** The image is saved in linear color space without any tonemapping performed, which means it will look too dark if viewed directly in an image editor.
 
@@ -7828,7 +7832,7 @@ Generates and returns an :ref:`Image<class_Image>` containing the radiance map f
 
 Creates an environment and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``environment_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`Environment<class_Environment>`.
 
@@ -8158,7 +8162,7 @@ Sets the resolution of the volumetric fog's froxel buffer. ``size`` is modified 
 
 Creates a new fog volume and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``fog_volume_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent node is :ref:`FogVolume<class_FogVolume>`.
 
@@ -8244,7 +8248,7 @@ Tries to free an object in the RenderingServer. To avoid memory leaks, this shou
 
 :ref:`String<class_String>` **get_current_rendering_driver_name**\ (\ ) |const| :ref:`🔗<class_RenderingServer_method_get_current_rendering_driver_name>`
 
-Returns the name of the current rendering driver. This can be ``vulkan``, ``d3d12``, ``metal``, ``opengl3``, ``opengl3_es``, or ``opengl3_angle``. See also :ref:`get_current_rendering_method<class_RenderingServer_method_get_current_rendering_method>`.
+Returns the name of the current rendering driver. This can be ``vulkan``, ``d3d12``, ``metal``, ``opengl3``, ``opengl3_es``, or ``opengl3_angle``. See also :ref:`get_current_rendering_method()<class_RenderingServer_method_get_current_rendering_method>`.
 
 The rendering driver is determined by :ref:`ProjectSettings.rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`, the ``--rendering-driver`` command line argument that overrides this project setting, or an automatic fallback that is applied depending on the hardware.
 
@@ -8258,7 +8262,7 @@ The rendering driver is determined by :ref:`ProjectSettings.rendering/rendering_
 
 :ref:`String<class_String>` **get_current_rendering_method**\ (\ ) |const| :ref:`🔗<class_RenderingServer_method_get_current_rendering_method>`
 
-Returns the name of the current rendering method. This can be ``forward_plus``, ``mobile``, or ``gl_compatibility``. See also :ref:`get_current_rendering_driver_name<class_RenderingServer_method_get_current_rendering_driver_name>`.
+Returns the name of the current rendering method. This can be ``forward_plus``, ``mobile``, or ``gl_compatibility``. See also :ref:`get_current_rendering_driver_name()<class_RenderingServer_method_get_current_rendering_driver_name>`.
 
 The rendering method is determined by :ref:`ProjectSettings.rendering/renderer/rendering_method<class_ProjectSettings_property_rendering/renderer/rendering_method>`, the ``--rendering-method`` command line argument that overrides this project setting, or an automatic fallback that is applied depending on the hardware.
 
@@ -8272,7 +8276,7 @@ The rendering method is determined by :ref:`ProjectSettings.rendering/renderer/r
 
 :ref:`Color<class_Color>` **get_default_clear_color**\ (\ ) :ref:`🔗<class_RenderingServer_method_get_default_clear_color>`
 
-Returns the default clear color which is used when a specific clear color has not been selected. See also :ref:`set_default_clear_color<class_RenderingServer_method_set_default_clear_color>`.
+Returns the default clear color which is used when a specific clear color has not been selected. See also :ref:`set_default_clear_color()<class_RenderingServer_method_set_default_clear_color>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8284,7 +8288,7 @@ Returns the default clear color which is used when a specific clear color has no
 
 :ref:`float<class_float>` **get_frame_setup_time_cpu**\ (\ ) |const| :ref:`🔗<class_RenderingServer_method_get_frame_setup_time_cpu>`
 
-Returns the time taken to setup rendering on the CPU in milliseconds. This value is shared across all viewports and does *not* require :ref:`viewport_set_measure_render_time<class_RenderingServer_method_viewport_set_measure_render_time>` to be enabled on a viewport to be queried. See also :ref:`viewport_get_measured_render_time_cpu<class_RenderingServer_method_viewport_get_measured_render_time_cpu>`.
+Returns the time taken to setup rendering on the CPU in milliseconds. This value is shared across all viewports and does *not* require :ref:`viewport_set_measure_render_time()<class_RenderingServer_method_viewport_set_measure_render_time>` to be enabled on a viewport to be queried. See also :ref:`viewport_get_measured_render_time_cpu()<class_RenderingServer_method_viewport_get_measured_render_time_cpu>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8310,11 +8314,11 @@ Returns the global RenderingDevice.
 
 :ref:`int<class_int>` **get_rendering_info**\ (\ info\: :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>`\ ) :ref:`🔗<class_RenderingServer_method_get_rendering_info>`
 
-Returns a statistic about the rendering engine which can be used for performance profiling. See :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` for a list of values that can be queried. See also :ref:`viewport_get_render_info<class_RenderingServer_method_viewport_get_render_info>`, which returns information specific to a viewport.
+Returns a statistic about the rendering engine which can be used for performance profiling. See :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` for a list of values that can be queried. See also :ref:`viewport_get_render_info()<class_RenderingServer_method_viewport_get_render_info>`, which returns information specific to a viewport.
 
 \ **Note:** Only 3D rendering is currently taken into account by some of these values, such as the number of draw calls.
 
-\ **Note:** Rendering information is not available until at least 2 frames have been rendered by the engine. If rendering information is not available, :ref:`get_rendering_info<class_RenderingServer_method_get_rendering_info>` returns ``0``. To print rendering information in ``_ready()`` successfully, use the following:
+\ **Note:** Rendering information is not available until at least 2 frames have been rendered by the engine. If rendering information is not available, :ref:`get_rendering_info()<class_RenderingServer_method_get_rendering_info>` returns ``0``. To print rendering information in ``_ready()`` successfully, use the following:
 
 ::
 
@@ -8346,7 +8350,7 @@ Returns the parameters of a shader.
 
 :ref:`RID<class_RID>` **get_test_cube**\ (\ ) :ref:`🔗<class_RenderingServer_method_get_test_cube>`
 
-Returns the RID of the test cube. This mesh will be created and returned on the first call to :ref:`get_test_cube<class_RenderingServer_method_get_test_cube>`, then it will be cached for subsequent calls. See also :ref:`make_sphere_mesh<class_RenderingServer_method_make_sphere_mesh>`.
+Returns the RID of the test cube. This mesh will be created and returned on the first call to :ref:`get_test_cube()<class_RenderingServer_method_get_test_cube>`, then it will be cached for subsequent calls. See also :ref:`make_sphere_mesh()<class_RenderingServer_method_make_sphere_mesh>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8358,7 +8362,7 @@ Returns the RID of the test cube. This mesh will be created and returned on the 
 
 :ref:`RID<class_RID>` **get_test_texture**\ (\ ) :ref:`🔗<class_RenderingServer_method_get_test_texture>`
 
-Returns the RID of a 256×256 texture with a testing pattern on it (in :ref:`Image.FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` format). This texture will be created and returned on the first call to :ref:`get_test_texture<class_RenderingServer_method_get_test_texture>`, then it will be cached for subsequent calls. See also :ref:`get_white_texture<class_RenderingServer_method_get_white_texture>`.
+Returns the RID of a 256×256 texture with a testing pattern on it (in :ref:`Image.FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` format). This texture will be created and returned on the first call to :ref:`get_test_texture()<class_RenderingServer_method_get_test_texture>`, then it will be cached for subsequent calls. See also :ref:`get_white_texture()<class_RenderingServer_method_get_white_texture>`.
 
 \ **Example:** Get the test texture and apply it to a :ref:`Sprite2D<class_Sprite2D>` node:
 
@@ -8378,7 +8382,7 @@ Returns the RID of a 256×256 texture with a testing pattern on it (in :ref:`Ima
 
 :ref:`String<class_String>` **get_video_adapter_api_version**\ (\ ) |const| :ref:`🔗<class_RenderingServer_method_get_video_adapter_api_version>`
 
-Returns the version of the graphics video adapter *currently in use* (e.g. "1.2.189" for Vulkan, "3.3.0 NVIDIA 510.60.02" for OpenGL). This version may be different from the actual latest version supported by the hardware, as Godot may not always request the latest version. See also :ref:`OS.get_video_adapter_driver_info<class_OS_method_get_video_adapter_driver_info>`.
+Returns the version of the graphics video adapter *currently in use* (e.g. "1.2.189" for Vulkan, "3.3.0 NVIDIA 510.60.02" for OpenGL). This version may be different from the actual latest version supported by the hardware, as Godot may not always request the latest version. See also :ref:`OS.get_video_adapter_driver_info()<class_OS_method_get_video_adapter_driver_info>`.
 
 \ **Note:** When running a headless or server binary, this function returns an empty string.
 
@@ -8436,7 +8440,7 @@ Returns the vendor of the video adapter (e.g. "NVIDIA Corporation").
 
 :ref:`RID<class_RID>` **get_white_texture**\ (\ ) :ref:`🔗<class_RenderingServer_method_get_white_texture>`
 
-Returns the ID of a 4×4 white texture (in :ref:`Image.FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` format). This texture will be created and returned on the first call to :ref:`get_white_texture<class_RenderingServer_method_get_white_texture>`, then it will be cached for subsequent calls. See also :ref:`get_test_texture<class_RenderingServer_method_get_test_texture>`.
+Returns the ID of a 4×4 white texture (in :ref:`Image.FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` format). This texture will be created and returned on the first call to :ref:`get_white_texture()<class_RenderingServer_method_get_white_texture>`, then it will be cached for subsequent calls. See also :ref:`get_test_texture()<class_RenderingServer_method_get_test_texture>`.
 
 \ **Example:** Get the white texture and apply it to a :ref:`Sprite2D<class_Sprite2D>` node:
 
@@ -8484,7 +8488,7 @@ Creates a new global shader uniform.
 
 Returns the value of the global shader uniform specified by ``name``.
 
-\ **Note:** :ref:`global_shader_parameter_get<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
+\ **Note:** :ref:`global_shader_parameter_get()<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -8498,7 +8502,7 @@ Returns the value of the global shader uniform specified by ``name``.
 
 Returns the list of global shader uniform names.
 
-\ **Note:** :ref:`global_shader_parameter_get<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
+\ **Note:** :ref:`global_shader_parameter_get()<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -8512,7 +8516,7 @@ Returns the list of global shader uniform names.
 
 Returns the type associated to the global shader uniform specified by ``name``.
 
-\ **Note:** :ref:`global_shader_parameter_get<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
+\ **Note:** :ref:`global_shader_parameter_get()<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -8560,7 +8564,7 @@ Overrides the global shader uniform ``name`` with ``value``. Equivalent to the :
 
 :ref:`bool<class_bool>` **has_changed**\ (\ ) |const| :ref:`🔗<class_RenderingServer_method_has_changed>`
 
-Returns ``true`` if changes have been made to the RenderingServer's data. :ref:`force_draw<class_RenderingServer_method_force_draw>` is usually called if this happens.
+Returns ``true`` if changes have been made to the RenderingServer's data. :ref:`force_draw()<class_RenderingServer_method_force_draw>` is usually called if this happens.
 
 .. rst-class:: classref-item-separator
 
@@ -8598,7 +8602,7 @@ Returns ``true`` if the OS supports a certain ``feature``. Features might be ``s
 
 |void| **instance_attach_object_instance_id**\ (\ instance\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_instance_attach_object_instance_id>`
 
-Attaches a unique Object ID to instance. Object ID must be attached to instance for proper culling with :ref:`instances_cull_aabb<class_RenderingServer_method_instances_cull_aabb>`, :ref:`instances_cull_convex<class_RenderingServer_method_instances_cull_convex>`, and :ref:`instances_cull_ray<class_RenderingServer_method_instances_cull_ray>`.
+Attaches a unique Object ID to instance. Object ID must be attached to instance for proper culling with :ref:`instances_cull_aabb()<class_RenderingServer_method_instances_cull_aabb>`, :ref:`instances_cull_convex()<class_RenderingServer_method_instances_cull_convex>`, and :ref:`instances_cull_ray()<class_RenderingServer_method_instances_cull_ray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8624,9 +8628,9 @@ Attaches a skeleton to an instance. Removes the previous skeleton from the insta
 
 Creates a visual instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``instance_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-An instance is a way of placing a 3D object in the scenario. Objects like particles, meshes, reflection probes and decals need to be associated with an instance to be visible in the scenario using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>`.
+An instance is a way of placing a 3D object in the scenario. Objects like particles, meshes, reflection probes and decals need to be associated with an instance to be visible in the scenario using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>`.
 
 \ **Note:** The equivalent node is :ref:`VisualInstance3D<class_VisualInstance3D>`.
 
@@ -8642,7 +8646,7 @@ An instance is a way of placing a 3D object in the scenario. Objects like partic
 
 Creates a visual instance, adds it to the RenderingServer, and sets both base and scenario. It can be accessed with the RID that is returned. This RID will be used in all ``instance_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method. This is a shorthand for using :ref:`instance_create<class_RenderingServer_method_instance_create>` and setting the base and scenario manually.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method. This is a shorthand for using :ref:`instance_create()<class_RenderingServer_method_instance_create>` and setting the base and scenario manually.
 
 .. rst-class:: classref-item-separator
 
@@ -8654,7 +8658,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`Variant<class_Variant>` **instance_geometry_get_shader_parameter**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderingServer_method_instance_geometry_get_shader_parameter>`
 
-Returns the value of the per-instance shader uniform from the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
+Returns the value of the per-instance shader uniform from the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter()<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
 
 \ **Note:** Per-instance shader parameter names are case-sensitive.
 
@@ -8668,7 +8672,7 @@ Returns the value of the per-instance shader uniform from the specified 3D geome
 
 :ref:`Variant<class_Variant>` **instance_geometry_get_shader_parameter_default_value**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderingServer_method_instance_geometry_get_shader_parameter_default_value>`
 
-Returns the default value of the per-instance shader uniform from the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
+Returns the default value of the per-instance shader uniform from the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter()<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8680,7 +8684,7 @@ Returns the default value of the per-instance shader uniform from the specified 
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **instance_geometry_get_shader_parameter_list**\ (\ instance\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_instance_geometry_get_shader_parameter_list>`
 
-Returns a dictionary of per-instance shader uniform names of the per-instance shader uniform from the specified 3D geometry instance. The returned dictionary is in PropertyInfo format, with the keys ``name``, ``class_name``, ``type``, ``hint``, ``hint_string`` and ``usage``. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
+Returns a dictionary of per-instance shader uniform names of the per-instance shader uniform from the specified 3D geometry instance. The returned dictionary is in PropertyInfo format, with the keys ``name``, ``class_name``, ``type``, ``hint``, ``hint_string`` and ``usage``. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter()<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8764,7 +8768,7 @@ Sets a material that will override the material for all surfaces on the mesh ass
 
 |void| **instance_geometry_set_shader_parameter**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_RenderingServer_method_instance_geometry_set_shader_parameter>`
 
-Sets the per-instance shader uniform on the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>`.
+Sets the per-instance shader uniform on the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.set_instance_shader_parameter()<class_GeometryInstance3D_method_set_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8928,7 +8932,7 @@ Sets the scenario that the instance is in. The scenario is the 3D world that the
 
 |void| **instance_set_surface_override_material**\ (\ instance\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, material\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_instance_set_surface_override_material>`
 
-Sets the override material of a specific surface. Equivalent to :ref:`MeshInstance3D.set_surface_override_material<class_MeshInstance3D_method_set_surface_override_material>`.
+Sets the override material of a specific surface. Equivalent to :ref:`MeshInstance3D.set_surface_override_material()<class_MeshInstance3D_method_set_surface_override_material>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8976,7 +8980,7 @@ Sets whether an instance is drawn or not. Equivalent to :ref:`Node3D.visible<cla
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **instances_cull_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`, scenario\: :ref:`RID<class_RID>` = RID()\ ) |const| :ref:`🔗<class_RenderingServer_method_instances_cull_aabb>`
 
-Returns an array of object IDs intersecting with the provided AABB. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
+Returns an array of object IDs intersecting with the provided AABB. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id()<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
 
 \ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
@@ -8990,7 +8994,7 @@ Returns an array of object IDs intersecting with the provided AABB. Only 3D node
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **instances_cull_convex**\ (\ convex\: :ref:`Array<class_Array>`\[:ref:`Plane<class_Plane>`\], scenario\: :ref:`RID<class_RID>` = RID()\ ) |const| :ref:`🔗<class_RenderingServer_method_instances_cull_convex>`
 
-Returns an array of object IDs intersecting with the provided convex shape. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
+Returns an array of object IDs intersecting with the provided convex shape. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id()<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
 
 \ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
@@ -9004,7 +9008,7 @@ Returns an array of object IDs intersecting with the provided convex shape. Only
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **instances_cull_ray**\ (\ from\: :ref:`Vector3<class_Vector3>`, to\: :ref:`Vector3<class_Vector3>`, scenario\: :ref:`RID<class_RID>` = RID()\ ) |const| :ref:`🔗<class_RenderingServer_method_instances_cull_ray>`
 
-Returns an array of object IDs intersecting with the provided 3D ray. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
+Returns an array of object IDs intersecting with the provided 3D ray. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id()<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
 
 \ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
@@ -9162,7 +9166,7 @@ If ``true``, the 3D light will subtract light instead of adding light. Equivalen
 
 |void| **light_set_param**\ (\ light\: :ref:`RID<class_RID>`, param\: :ref:`LightParam<enum_RenderingServer_LightParam>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_light_set_param>`
 
-Sets the specified 3D light parameter. See :ref:`LightParam<enum_RenderingServer_LightParam>` for options. Equivalent to :ref:`Light3D.set_param<class_Light3D_method_set_param>`.
+Sets the specified 3D light parameter. See :ref:`LightParam<enum_RenderingServer_LightParam>` for options. Equivalent to :ref:`Light3D.set_param()<class_Light3D_method_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9186,7 +9190,7 @@ Sets the projector texture to use for the specified 3D light. Equivalent to :ref
 
 |void| **light_set_reverse_cull_face_mode**\ (\ light\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_light_set_reverse_cull_face_mode>`
 
-If ``true``, reverses the backface culling of the mesh. This can be useful when you have a flat mesh that has a light behind it. If you need to cast a shadow on both sides of the mesh, set the mesh to use double-sided shadows with :ref:`instance_geometry_set_cast_shadows_setting<class_RenderingServer_method_instance_geometry_set_cast_shadows_setting>`. Equivalent to :ref:`Light3D.shadow_reverse_cull_face<class_Light3D_property_shadow_reverse_cull_face>`.
+If ``true``, reverses the backface culling of the mesh. This can be useful when you have a flat mesh that has a light behind it. If you need to cast a shadow on both sides of the mesh, set the mesh to use double-sided shadows with :ref:`instance_geometry_set_cast_shadows_setting()<class_RenderingServer_method_instance_geometry_set_cast_shadows_setting>`. Equivalent to :ref:`Light3D.shadow_reverse_cull_face<class_Light3D_property_shadow_reverse_cull_face>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9224,7 +9228,7 @@ Sets the shadow caster mask for this 3D light. Shadows will only be cast using o
 
 Creates a new lightmap global illumination instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``lightmap_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent node is :ref:`LightmapGI<class_LightmapGI>`.
 
@@ -9294,7 +9298,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 |void| **lightmap_set_baked_exposure_normalization**\ (\ lightmap\: :ref:`RID<class_RID>`, baked_exposure\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_lightmap_set_baked_exposure_normalization>`
 
-Used to inform the renderer what exposure normalization value was used while baking the lightmap. This value will be used and modulated at run time to ensure that the lightmap maintains a consistent level of exposure even if the scene-wide exposure normalization is changed at run time. For more information see :ref:`camera_attributes_set_exposure<class_RenderingServer_method_camera_attributes_set_exposure>`.
+Used to inform the renderer what exposure normalization value was used while baking the lightmap. This value will be used and modulated at run time to ensure that the lightmap maintains a consistent level of exposure even if the scene-wide exposure normalization is changed at run time. For more information see :ref:`camera_attributes_set_exposure()<class_RenderingServer_method_camera_attributes_set_exposure>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9386,7 +9390,7 @@ Toggles whether a bicubic filter should be used when lightmaps are sampled. This
 
 :ref:`RID<class_RID>` **make_sphere_mesh**\ (\ latitudes\: :ref:`int<class_int>`, longitudes\: :ref:`int<class_int>`, radius\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_make_sphere_mesh>`
 
-Returns a mesh of a sphere with the given number of horizontal subdivisions, vertical subdivisions and radius. See also :ref:`get_test_cube<class_RenderingServer_method_get_test_cube>`.
+Returns a mesh of a sphere with the given number of horizontal subdivisions, vertical subdivisions and radius. See also :ref:`get_test_cube()<class_RenderingServer_method_get_test_cube>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9400,7 +9404,7 @@ Returns a mesh of a sphere with the given number of horizontal subdivisions, ver
 
 Creates an empty material and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``material_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`Material<class_Material>`.
 
@@ -9516,9 +9520,9 @@ Removes all surfaces from a mesh.
 
 Creates a new mesh and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``mesh_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach this mesh to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach this mesh to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 \ **Note:** The equivalent resource is :ref:`Mesh<class_Mesh>`.
 
@@ -9824,9 +9828,9 @@ Sets a mesh's surface's material.
 
 Creates a new multimesh on the RenderingServer and returns an :ref:`RID<class_RID>` handle. This RID will be used in all ``multimesh_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach this multimesh to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach this multimesh to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 \ **Note:** The equivalent resource is :ref:`MultiMesh<class_MultiMesh>`.
 
@@ -9852,9 +9856,9 @@ Calculates and returns the axis-aligned bounding box that encloses all instances
 
 :ref:`PackedFloat32Array<class_PackedFloat32Array>` **multimesh_get_buffer**\ (\ multimesh\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_multimesh_get_buffer>`
 
-Returns the MultiMesh data (such as instance transforms, colors, etc.). See :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>` for details on the returned data.
+Returns the MultiMesh data (such as instance transforms, colors, etc.). See :ref:`multimesh_set_buffer()<class_RenderingServer_method_multimesh_set_buffer>` for details on the returned data.
 
-\ **Note:** If the buffer is in the engine's internal cache, it will have to be fetched from GPU memory and possibly decompressed. This means :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>` is potentially a slow operation and should be avoided whenever possible.
+\ **Note:** If the buffer is in the engine's internal cache, it will have to be fetched from GPU memory and possibly decompressed. This means :ref:`multimesh_get_buffer()<class_RenderingServer_method_multimesh_get_buffer>` is potentially a slow operation and should be avoided whenever possible.
 
 .. rst-class:: classref-item-separator
 
@@ -9878,7 +9882,7 @@ Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` 
 
 :ref:`RID<class_RID>` **multimesh_get_command_buffer_rd_rid**\ (\ multimesh\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_multimesh_get_command_buffer_rd_rid>`
 
-Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the :ref:`MultiMesh<class_MultiMesh>` command buffer. This :ref:`RID<class_RID>` is only valid if ``use_indirect`` is set to ``true`` when allocating data through :ref:`multimesh_allocate_data<class_RenderingServer_method_multimesh_allocate_data>`. It can be used to directly modify the instance count via buffer.
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the :ref:`MultiMesh<class_MultiMesh>` command buffer. This :ref:`RID<class_RID>` is only valid if ``use_indirect`` is set to ``true`` when allocating data through :ref:`multimesh_allocate_data()<class_RenderingServer_method_multimesh_allocate_data>`. It can be used to directly modify the instance count via buffer.
 
 The data structure is dependent on both how many surfaces the mesh contains and whether it is indexed or not, the buffer has 5 integers in it, with the last unused if the mesh is not indexed.
 
@@ -10019,7 +10023,7 @@ This is useful when moving an instance to a new location, to give an instantaneo
 
 |void| **multimesh_instance_set_color**\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_instance_set_color>`
 
-Sets the color by which this instance will be modulated. Equivalent to :ref:`MultiMesh.set_instance_color<class_MultiMesh_method_set_instance_color>`.
+Sets the color by which this instance will be modulated. Equivalent to :ref:`MultiMesh.set_instance_color()<class_MultiMesh_method_set_instance_color>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10031,7 +10035,7 @@ Sets the color by which this instance will be modulated. Equivalent to :ref:`Mul
 
 |void| **multimesh_instance_set_custom_data**\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_instance_set_custom_data>`
 
-Sets the custom data for this instance. Custom data is passed as a :ref:`Color<class_Color>`, but is interpreted as a ``vec4`` in the shader. Equivalent to :ref:`MultiMesh.set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`.
+Sets the custom data for this instance. Custom data is passed as a :ref:`Color<class_Color>`, but is interpreted as a ``vec4`` in the shader. Equivalent to :ref:`MultiMesh.set_instance_custom_data()<class_MultiMesh_method_set_instance_custom_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10043,7 +10047,7 @@ Sets the custom data for this instance. Custom data is passed as a :ref:`Color<c
 
 |void| **multimesh_instance_set_transform**\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_instance_set_transform>`
 
-Sets the :ref:`Transform3D<class_Transform3D>` for this instance. Equivalent to :ref:`MultiMesh.set_instance_transform<class_MultiMesh_method_set_instance_transform>`.
+Sets the :ref:`Transform3D<class_Transform3D>` for this instance. Equivalent to :ref:`MultiMesh.set_instance_transform()<class_MultiMesh_method_set_instance_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10055,7 +10059,7 @@ Sets the :ref:`Transform3D<class_Transform3D>` for this instance. Equivalent to 
 
 |void| **multimesh_instance_set_transform_2d**\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_instance_set_transform_2d>`
 
-Sets the :ref:`Transform2D<class_Transform2D>` for this instance. For use when multimesh is used in 2D. Equivalent to :ref:`MultiMesh.set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>`.
+Sets the :ref:`Transform2D<class_Transform2D>` for this instance. For use when multimesh is used in 2D. Equivalent to :ref:`MultiMesh.set_instance_transform_2d()<class_MultiMesh_method_set_instance_transform_2d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10067,7 +10071,7 @@ Sets the :ref:`Transform2D<class_Transform2D>` for this instance. For use when m
 
 |void| **multimesh_set_buffer**\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_set_buffer>`
 
-Set the entire data to use for drawing the ``multimesh`` at once to ``buffer`` (such as instance transforms and colors). ``buffer``'s size must match the number of instances multiplied by the per-instance data size (which depends on the enabled MultiMesh fields). Otherwise, an error message is printed and nothing is rendered. See also :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>`.
+Set the entire data to use for drawing the ``multimesh`` at once to ``buffer`` (such as instance transforms and colors). ``buffer``'s size must match the number of instances multiplied by the per-instance data size (which depends on the enabled MultiMesh fields). Otherwise, an error message is printed and nothing is rendered. See also :ref:`multimesh_get_buffer()<class_RenderingServer_method_multimesh_get_buffer>`.
 
 The per-instance data size and expected data order is:
 
@@ -10100,7 +10104,7 @@ Instance transforms are in row-major order. Specifically:
 
 |void| **multimesh_set_buffer_interpolated**\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`, buffer_previous\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_set_buffer_interpolated>`
 
-Alternative version of :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>` for use with physics interpolation.
+Alternative version of :ref:`multimesh_set_buffer()<class_RenderingServer_method_multimesh_set_buffer>` for use with physics interpolation.
 
 Takes both an array of current data and an array of data for the previous physics tick.
 
@@ -10178,7 +10182,7 @@ Sets the number of instances visible at a given time. If -1, all instances that 
 
 Creates an occluder instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``occluder_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`Occluder3D<class_Occluder3D>` (not to be confused with the :ref:`OccluderInstance3D<class_OccluderInstance3D>` node).
 
@@ -10206,9 +10210,9 @@ Sets the mesh data for the given occluder RID, which controls the shape of the o
 
 Creates a new omni light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most ``light_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach this omni light to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach this omni light to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 \ **Note:** The equivalent node is :ref:`OmniLight3D<class_OmniLight3D>`.
 
@@ -10370,9 +10374,9 @@ Sets the ``radius`` for the 3D GPU particles sphere collision or attractor speci
 
 Creates a GPU-based particle system and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``particles_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach these particles to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach these particles to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 \ **Note:** The equivalent nodes are :ref:`GPUParticles2D<class_GPUParticles2D>` and :ref:`GPUParticles3D<class_GPUParticles3D>`.
 
@@ -10400,7 +10404,7 @@ Manually emits particles from the ``particles`` instance.
 
 :ref:`AABB<class_AABB>` **particles_get_current_aabb**\ (\ particles\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_particles_get_current_aabb>`
 
-Calculates and returns the axis-aligned bounding box that contains all the particles. Equivalent to :ref:`GPUParticles3D.capture_aabb<class_GPUParticles3D_method_capture_aabb>`.
+Calculates and returns the axis-aligned bounding box that contains all the particles. Equivalent to :ref:`GPUParticles3D.capture_aabb()<class_GPUParticles3D_method_capture_aabb>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10436,7 +10440,7 @@ Returns ``true`` if particles are not emitting and particles are set to inactive
 
 |void| **particles_request_process**\ (\ particles\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_particles_request_process>`
 
-Add particle system to list of particle systems that need to be updated. Update will take place on the next frame, or on the next call to :ref:`instances_cull_aabb<class_RenderingServer_method_instances_cull_aabb>`, :ref:`instances_cull_convex<class_RenderingServer_method_instances_cull_convex>`, or :ref:`instances_cull_ray<class_RenderingServer_method_instances_cull_ray>`.
+Add particle system to list of particle systems that need to be updated. Update will take place on the next frame, or on the next call to :ref:`instances_cull_aabb()<class_RenderingServer_method_instances_cull_aabb>`, :ref:`instances_cull_convex()<class_RenderingServer_method_instances_cull_convex>`, or :ref:`instances_cull_ray()<class_RenderingServer_method_instances_cull_ray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10460,7 +10464,7 @@ Requests particles to process for extra process time during a single frame.
 
 |void| **particles_restart**\ (\ particles\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_particles_restart>`
 
-Reset the particles on the next update. Equivalent to :ref:`GPUParticles3D.restart<class_GPUParticles3D_method_restart>`.
+Reset the particles on the next update. Equivalent to :ref:`GPUParticles3D.restart()<class_GPUParticles3D_method_restart>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10822,9 +10826,9 @@ Sets the filter quality for omni and spot light shadows in 3D. See also :ref:`Pr
 
 Creates a reflection probe and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``reflection_probe_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach this reflection probe to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach this reflection probe to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 \ **Note:** The equivalent node is :ref:`ReflectionProbe<class_ReflectionProbe>`.
 
@@ -11044,7 +11048,7 @@ Schedules a callback to the given callable after a frame has been drawn.
 
 Creates a scenario and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``scenario_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 The scenario is the 3D world that all the visual instances exist in.
 
@@ -11144,7 +11148,7 @@ If ``generate`` is ``true``, generates debug wireframes for all meshes that are 
 
 |void| **set_default_clear_color**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingServer_method_set_default_clear_color>`
 
-Sets the default clear color which is used when a specific clear color has not been selected. See also :ref:`get_default_clear_color<class_RenderingServer_method_get_default_clear_color>`.
+Sets the default clear color which is used when a specific clear color has not been selected. See also :ref:`get_default_clear_color()<class_RenderingServer_method_get_default_clear_color>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11158,7 +11162,7 @@ Sets the default clear color which is used when a specific clear color has not b
 
 Creates an empty shader and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``shader_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`Shader<class_Shader>`.
 
@@ -11312,7 +11316,7 @@ Sets the :ref:`Transform2D<class_Transform2D>` for a specific bone of this skele
 
 Creates a skeleton and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``skeleton_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -11350,7 +11354,7 @@ Returns the number of bones allocated for this skeleton.
 
 :ref:`Image<class_Image>` **sky_bake_panorama**\ (\ sky\: :ref:`RID<class_RID>`, energy\: :ref:`float<class_float>`, bake_irradiance\: :ref:`bool<class_bool>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_RenderingServer_method_sky_bake_panorama>`
 
-Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``sky`` RID. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`environment_bake_panorama<class_RenderingServer_method_environment_bake_panorama>`.
+Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``sky`` RID. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`environment_bake_panorama()<class_RenderingServer_method_environment_bake_panorama>`.
 
 \ **Note:** The image is saved in linear color space without any tonemapping performed, which means it will look too dark if viewed directly in an image editor. ``energy`` values above ``1.0`` can be used to brighten the resulting image.
 
@@ -11368,7 +11372,7 @@ Generates and returns an :ref:`Image<class_Image>` containing the radiance map f
 
 Creates an empty sky and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``sky_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -11418,9 +11422,9 @@ Sets the ``radiance_size`` of the sky specified by the ``sky`` RID (in pixels). 
 
 Creates a spot light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most ``light_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach this spot light to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach this spot light to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 .. rst-class:: classref-item-separator
 
@@ -11458,11 +11462,11 @@ Sets the :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsu
 
 Creates a 2-dimensional texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`Texture2D<class_Texture2D>`.
 
-\ **Note:** Not to be confused with :ref:`RenderingDevice.texture_create<class_RenderingDevice_method_texture_create>`, which creates the graphics API's own texture type as opposed to the Godot-specific :ref:`Texture2D<class_Texture2D>` resource.
+\ **Note:** Not to be confused with :ref:`RenderingDevice.texture_create()<class_RenderingDevice_method_texture_create>`, which creates the graphics API's own texture type as opposed to the Godot-specific :ref:`Texture2D<class_Texture2D>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -11476,7 +11480,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Returns an :ref:`Image<class_Image>` instance from the given ``texture`` :ref:`RID<class_RID>`.
 
-\ **Example:** Get the test texture from :ref:`get_test_texture<class_RenderingServer_method_get_test_texture>` and apply it to a :ref:`Sprite2D<class_Sprite2D>` node:
+\ **Example:** Get the test texture from :ref:`get_test_texture()<class_RenderingServer_method_get_test_texture>` and apply it to a :ref:`Sprite2D<class_Sprite2D>` node:
 
 ::
 
@@ -11508,7 +11512,7 @@ Returns an :ref:`Image<class_Image>` instance from the given ``texture`` :ref:`R
 
 Creates a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`TextureLayered<class_TextureLayered>`.
 
@@ -11522,7 +11526,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`RID<class_RID>` **texture_2d_layered_placeholder_create**\ (\ layered_type\: :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>`\ ) :ref:`🔗<class_RenderingServer_method_texture_2d_layered_placeholder_create>`
 
-Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions, although it does nothing when used. See also :ref:`texture_2d_placeholder_create<class_RenderingServer_method_texture_2d_placeholder_create>`.
+Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions, although it does nothing when used. See also :ref:`texture_2d_placeholder_create()<class_RenderingServer_method_texture_2d_placeholder_create>`.
 
 \ **Note:** The equivalent resource is :ref:`PlaceholderTextureLayered<class_PlaceholderTextureLayered>`.
 
@@ -11536,9 +11540,9 @@ Creates a placeholder for a 2-dimensional layered texture and adds it to the Ren
 
 :ref:`RID<class_RID>` **texture_2d_placeholder_create**\ (\ ) :ref:`🔗<class_RenderingServer_method_texture_2d_placeholder_create>`
 
-Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions, although it does nothing when used. See also :ref:`texture_2d_layered_placeholder_create<class_RenderingServer_method_texture_2d_layered_placeholder_create>`.
+Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions, although it does nothing when used. See also :ref:`texture_2d_layered_placeholder_create()<class_RenderingServer_method_texture_2d_layered_placeholder_create>`.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`PlaceholderTexture2D<class_PlaceholderTexture2D>`.
 
@@ -11554,7 +11558,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Updates the texture specified by the ``texture`` :ref:`RID<class_RID>` with the data in ``image``. A ``layer`` must also be specified, which should be ``0`` when updating a single-layer texture (:ref:`Texture2D<class_Texture2D>`).
 
-\ **Note:** The ``image`` must have the same width, height and format as the current ``texture`` data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height or format, use :ref:`texture_replace<class_RenderingServer_method_texture_replace>` instead.
+\ **Note:** The ``image`` must have the same width, height and format as the current ``texture`` data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height or format, use :ref:`texture_replace()<class_RenderingServer_method_texture_replace>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -11592,7 +11596,7 @@ Returns 3D texture data as an array of :ref:`Image<class_Image>`\ s for the spec
 
 Creates a placeholder for a 3-dimensional texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_3d_*`` RenderingServer functions, although it does nothing when used.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent resource is :ref:`PlaceholderTexture3D<class_PlaceholderTexture3D>`.
 
@@ -11608,7 +11612,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Updates the texture specified by the ``texture`` :ref:`RID<class_RID>`'s data with the data in ``data``. All the texture's layers must be replaced at once.
 
-\ **Note:** The ``texture`` must have the same width, height, depth and format as the current texture data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height, depth or format, use :ref:`texture_replace<class_RenderingServer_method_texture_replace>` instead.
+\ **Note:** The ``texture`` must have the same width, height, depth and format as the current texture data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height, depth or format, use :ref:`texture_replace()<class_RenderingServer_method_texture_replace>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -11622,7 +11626,7 @@ Updates the texture specified by the ``texture`` :ref:`RID<class_RID>`'s data wi
 
 Creates a texture based on a native handle that was created outside of Godot's renderer.
 
-\ **Note:** If using the rendering device renderer, using :ref:`RenderingDevice.texture_create_from_extension<class_RenderingDevice_method_texture_create_from_extension>` rather than this method is recommended. It will give you much more control over the texture's format and usage.
+\ **Note:** If using the rendering device renderer, using :ref:`RenderingDevice.texture_create_from_extension()<class_RenderingDevice_method_texture_create_from_extension>` rather than this method is recommended. It will give you much more control over the texture's format and usage.
 
 .. rst-class:: classref-item-separator
 
@@ -11804,7 +11808,7 @@ Sets a viewport's canvas.
 
 |void| **viewport_attach_to_screen**\ (\ viewport\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), screen\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingServer_method_viewport_attach_to_screen>`
 
-Copies the viewport to a region of the screen specified by ``rect``. If :ref:`viewport_set_render_direct_to_screen<class_RenderingServer_method_viewport_set_render_direct_to_screen>` is ``true``, then the viewport does not use a framebuffer and the contents of the viewport are rendered directly to screen. However, note that the root viewport is drawn last, therefore it will draw over the screen. Accordingly, you must set the root viewport to an area that does not cover the area that you have attached this viewport to.
+Copies the viewport to a region of the screen specified by ``rect``. If :ref:`viewport_set_render_direct_to_screen()<class_RenderingServer_method_viewport_set_render_direct_to_screen>` is ``true``, then the viewport does not use a framebuffer and the contents of the viewport are rendered directly to screen. However, note that the root viewport is drawn last, therefore it will draw over the screen. Accordingly, you must set the root viewport to an area that does not cover the area that you have attached this viewport to.
 
 For example, you can set the root viewport to not render at all with the following code:
 
@@ -11819,7 +11823,7 @@ For example, you can set the root viewport to not render at all with the followi
 
 
 
-Using this can result in significant optimization, especially on lower-end devices. However, it comes at the cost of having to manage your viewports manually. For further optimization, see :ref:`viewport_set_render_direct_to_screen<class_RenderingServer_method_viewport_set_render_direct_to_screen>`.
+Using this can result in significant optimization, especially on lower-end devices. However, it comes at the cost of having to manage your viewports manually. For further optimization, see :ref:`viewport_set_render_direct_to_screen()<class_RenderingServer_method_viewport_set_render_direct_to_screen>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11833,7 +11837,7 @@ Using this can result in significant optimization, especially on lower-end devic
 
 Creates an empty viewport and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``viewport_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent node is :ref:`Viewport<class_Viewport>`.
 
@@ -11847,9 +11851,9 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`float<class_float>` **viewport_get_measured_render_time_cpu**\ (\ viewport\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_viewport_get_measured_render_time_cpu>`
 
-Returns the CPU time taken to render the last frame in milliseconds. This *only* includes time spent in rendering-related operations; scripts' ``_process`` functions and other engine subsystems are not included in this readout. To get a complete readout of CPU time spent to render the scene, sum the render times of all viewports that are drawn every frame plus :ref:`get_frame_setup_time_cpu<class_RenderingServer_method_get_frame_setup_time_cpu>`. Unlike :ref:`Engine.get_frames_per_second<class_Engine_method_get_frames_per_second>`, this method will accurately reflect CPU utilization even if framerate is capped via V-Sync or :ref:`Engine.max_fps<class_Engine_property_max_fps>`. See also :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`.
+Returns the CPU time taken to render the last frame in milliseconds. This *only* includes time spent in rendering-related operations; scripts' ``_process`` functions and other engine subsystems are not included in this readout. To get a complete readout of CPU time spent to render the scene, sum the render times of all viewports that are drawn every frame plus :ref:`get_frame_setup_time_cpu()<class_RenderingServer_method_get_frame_setup_time_cpu>`. Unlike :ref:`Engine.get_frames_per_second()<class_Engine_method_get_frames_per_second>`, this method will accurately reflect CPU utilization even if framerate is capped via V-Sync or :ref:`Engine.max_fps<class_Engine_property_max_fps>`. See also :ref:`viewport_get_measured_render_time_gpu()<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`.
 
-\ **Note:** Requires measurements to be enabled on the specified ``viewport`` using :ref:`viewport_set_measure_render_time<class_RenderingServer_method_viewport_set_measure_render_time>`. Otherwise, this method returns ``0.0``.
+\ **Note:** Requires measurements to be enabled on the specified ``viewport`` using :ref:`viewport_set_measure_render_time()<class_RenderingServer_method_viewport_set_measure_render_time>`. Otherwise, this method returns ``0.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -11861,11 +11865,11 @@ Returns the CPU time taken to render the last frame in milliseconds. This *only*
 
 :ref:`float<class_float>` **viewport_get_measured_render_time_gpu**\ (\ viewport\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`
 
-Returns the GPU time taken to render the last frame in milliseconds. To get a complete readout of GPU time spent to render the scene, sum the render times of all viewports that are drawn every frame. Unlike :ref:`Engine.get_frames_per_second<class_Engine_method_get_frames_per_second>`, this method accurately reflects GPU utilization even if framerate is capped via V-Sync or :ref:`Engine.max_fps<class_Engine_property_max_fps>`. See also :ref:`viewport_get_measured_render_time_cpu<class_RenderingServer_method_viewport_get_measured_render_time_cpu>`.
+Returns the GPU time taken to render the last frame in milliseconds. To get a complete readout of GPU time spent to render the scene, sum the render times of all viewports that are drawn every frame. Unlike :ref:`Engine.get_frames_per_second()<class_Engine_method_get_frames_per_second>`, this method accurately reflects GPU utilization even if framerate is capped via V-Sync or :ref:`Engine.max_fps<class_Engine_property_max_fps>`. See also :ref:`viewport_get_measured_render_time_cpu()<class_RenderingServer_method_viewport_get_measured_render_time_cpu>`.
 
-\ **Note:** Requires measurements to be enabled on the specified ``viewport`` using :ref:`viewport_set_measure_render_time<class_RenderingServer_method_viewport_set_measure_render_time>`. Otherwise, this method returns ``0.0``.
+\ **Note:** Requires measurements to be enabled on the specified ``viewport`` using :ref:`viewport_set_measure_render_time()<class_RenderingServer_method_viewport_set_measure_render_time>`. Otherwise, this method returns ``0.0``.
 
-\ **Note:** When GPU utilization is low enough during a certain period of time, GPUs will decrease their power state (which in turn decreases core and memory clock speeds). This can cause the reported GPU time to increase if GPU utilization is kept low enough by a framerate cap (compared to what it would be at the GPU's highest power state). Keep this in mind when benchmarking using :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`. This behavior can be overridden in the graphics driver settings at the cost of higher power usage.
+\ **Note:** When GPU utilization is low enough during a certain period of time, GPUs will decrease their power state (which in turn decreases core and memory clock speeds). This can cause the reported GPU time to increase if GPU utilization is kept low enough by a framerate cap (compared to what it would be at the GPU's highest power state). Keep this in mind when benchmarking using :ref:`viewport_get_measured_render_time_gpu()<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`. This behavior can be overridden in the graphics driver settings at the cost of higher power usage.
 
 .. rst-class:: classref-item-separator
 
@@ -11879,9 +11883,9 @@ Returns the GPU time taken to render the last frame in milliseconds. To get a co
 
 Returns a statistic about the rendering engine which can be used for performance profiling. This is separated into render pass ``type``\ s, each of them having the same ``info``\ s you can query (different passes will return different values). See :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` for a list of render pass types and :ref:`ViewportRenderInfo<enum_RenderingServer_ViewportRenderInfo>` for a list of information that can be queried.
 
-See also :ref:`get_rendering_info<class_RenderingServer_method_get_rendering_info>`, which returns global information across all viewports.
+See also :ref:`get_rendering_info()<class_RenderingServer_method_get_rendering_info>`, which returns global information across all viewports.
 
-\ **Note:** Viewport rendering information is not available until at least 2 frames have been rendered by the engine. If rendering information is not available, :ref:`viewport_get_render_info<class_RenderingServer_method_viewport_get_render_info>` returns ``0``. To print rendering information in ``_ready()`` successfully, use the following:
+\ **Note:** Viewport rendering information is not available until at least 2 frames have been rendered by the engine. If rendering information is not available, :ref:`viewport_get_render_info()<class_RenderingServer_method_viewport_get_render_info>` returns ``0``. To print rendering information in ``_ready()`` successfully, use the following:
 
 ::
 
@@ -12131,7 +12135,7 @@ Sets the viewport's global transformation matrix.
 
 |void| **viewport_set_measure_render_time**\ (\ viewport\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_measure_render_time>`
 
-Sets the measurement for the given ``viewport`` RID (obtained using :ref:`Viewport.get_viewport_rid<class_Viewport_method_get_viewport_rid>`). Once enabled, :ref:`viewport_get_measured_render_time_cpu<class_RenderingServer_method_viewport_get_measured_render_time_cpu>` and :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>` will return values greater than ``0.0`` when queried with the given ``viewport``.
+Sets the measurement for the given ``viewport`` RID (obtained using :ref:`Viewport.get_viewport_rid()<class_Viewport_method_get_viewport_rid>`). Once enabled, :ref:`viewport_get_measured_render_time_cpu()<class_RenderingServer_method_viewport_get_measured_render_time_cpu>` and :ref:`viewport_get_measured_render_time_gpu()<class_RenderingServer_method_viewport_get_measured_render_time_gpu>` will return values greater than ``0.0`` when queried with the given ``viewport``.
 
 .. rst-class:: classref-item-separator
 
@@ -12203,7 +12207,7 @@ Sets the viewport's parent to the viewport specified by the ``parent_viewport`` 
 
 |void| **viewport_set_positional_shadow_atlas_quadrant_subdivision**\ (\ viewport\: :ref:`RID<class_RID>`, quadrant\: :ref:`int<class_int>`, subdivision\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_positional_shadow_atlas_quadrant_subdivision>`
 
-Sets the number of subdivisions to use in the specified shadow atlas ``quadrant`` for omni and spot shadows. See also :ref:`Viewport.set_positional_shadow_atlas_quadrant_subdiv<class_Viewport_method_set_positional_shadow_atlas_quadrant_subdiv>`.
+Sets the number of subdivisions to use in the specified shadow atlas ``quadrant`` for omni and spot shadows. See also :ref:`Viewport.set_positional_shadow_atlas_quadrant_subdiv()<class_Viewport_method_set_positional_shadow_atlas_quadrant_subdiv>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12479,9 +12483,9 @@ If set to :ref:`VIEWPORT_VRS_UPDATE_ONCE<class_RenderingServer_constant_VIEWPORT
 
 Creates a new 3D visibility notifier object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``visibility_notifier_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
-To place in a scene, attach this notifier to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+To place in a scene, attach this notifier to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
 \ **Note:** The equivalent node is :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>`.
 
@@ -12539,7 +12543,7 @@ To place in a scene, attach this notifier to an instance using :ref:`instance_se
 
 Creates a new voxel-based global illumination object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``voxel_gi_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
 
 \ **Note:** The equivalent node is :ref:`VoxelGI<class_VoxelGI>`.
 
@@ -12637,7 +12641,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 |void| **voxel_gi_set_baked_exposure_normalization**\ (\ voxel_gi\: :ref:`RID<class_RID>`, baked_exposure\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_voxel_gi_set_baked_exposure_normalization>`
 
-Used to inform the renderer what exposure normalization value was used while baking the voxel gi. This value will be used and modulated at run time to ensure that the voxel gi maintains a consistent level of exposure even if the scene-wide exposure normalization is changed at run time. For more information see :ref:`camera_attributes_set_exposure<class_RenderingServer_method_camera_attributes_set_exposure>`.
+Used to inform the renderer what exposure normalization value was used while baking the voxel gi. This value will be used and modulated at run time to ensure that the voxel gi maintains a consistent level of exposure even if the scene-wide exposure normalization is changed at run time. For more information see :ref:`camera_attributes_set_exposure()<class_RenderingServer_method_camera_attributes_set_exposure>`.
 
 .. rst-class:: classref-item-separator
 

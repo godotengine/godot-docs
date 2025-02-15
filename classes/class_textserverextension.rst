@@ -1918,7 +1918,7 @@ Sets kerning for the pair of glyphs.
 
 **Optional.**\ 
 
-Adds override for :ref:`_font_is_language_supported<class_TextServerExtension_private_method__font_is_language_supported>`.
+Adds override for :ref:`_font_is_language_supported()<class_TextServerExtension_private_method__font_is_language_supported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2030,7 +2030,7 @@ Sets scaling factor of the color bitmap font.
 
 **Optional.**\ 
 
-Adds override for :ref:`_font_is_script_supported<class_TextServerExtension_private_method__font_is_script_supported>`.
+Adds override for :ref:`_font_is_script_supported()<class_TextServerExtension_private_method__font_is_script_supported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2520,7 +2520,7 @@ Saves optional TextServer database (e.g. ICU break iterators and dictionaries) t
 
 **Required.**\ 
 
-Returns number of text spans added using :ref:`_shaped_text_add_string<class_TextServerExtension_private_method__shaped_text_add_string>` or :ref:`_shaped_text_add_object<class_TextServerExtension_private_method__shaped_text_add_object>`.
+Returns number of text spans added using :ref:`_shaped_text_add_string()<class_TextServerExtension_private_method__shaped_text_add_string>` or :ref:`_shaped_text_add_object()<class_TextServerExtension_private_method__shaped_text_add_object>`.
 
 .. rst-class:: classref-item-separator
 

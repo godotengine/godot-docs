@@ -89,7 +89,7 @@ Property Descriptions
 - |void| **set_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_enabled**\ (\ )
 
-If ``true``, the modification's :ref:`_execute<class_SkeletonModification2D_private_method__execute>` function will be called by the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`.
+If ``true``, the modification's :ref:`_execute()<class_SkeletonModification2D_private_method__execute>` function will be called by the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -125,7 +125,7 @@ Method Descriptions
 
 Used for drawing **editor-only** modification gizmos. This function will only be called in the Godot editor and can be overridden to draw custom gizmos.
 
-\ **Note:** You will need to use the Skeleton2D from :ref:`SkeletonModificationStack2D.get_skeleton<class_SkeletonModificationStack2D_method_get_skeleton>` and it's draw functions, as the **SkeletonModification2D** resource cannot draw on its own.
+\ **Note:** You will need to use the Skeleton2D from :ref:`SkeletonModificationStack2D.get_skeleton()<class_SkeletonModificationStack2D_method_get_skeleton>` and it's draw functions, as the **SkeletonModification2D** resource cannot draw on its own.
 
 .. rst-class:: classref-item-separator
 
@@ -173,7 +173,7 @@ Takes an angle and clamps it so it is within the passed-in ``min`` and ``max`` r
 
 :ref:`bool<class_bool>` **get_editor_draw_gizmo**\ (\ ) |const| :ref:`🔗<class_SkeletonModification2D_method_get_editor_draw_gizmo>`
 
-Returns whether this modification will call :ref:`_draw_editor_gizmo<class_SkeletonModification2D_private_method__draw_editor_gizmo>` in the Godot editor to draw modification-specific gizmos.
+Returns whether this modification will call :ref:`_draw_editor_gizmo()<class_SkeletonModification2D_private_method__draw_editor_gizmo>` in the Godot editor to draw modification-specific gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -209,7 +209,7 @@ Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>
 
 |void| **set_editor_draw_gizmo**\ (\ draw_gizmo\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SkeletonModification2D_method_set_editor_draw_gizmo>`
 
-Sets whether this modification will call :ref:`_draw_editor_gizmo<class_SkeletonModification2D_private_method__draw_editor_gizmo>` in the Godot editor to draw modification-specific gizmos.
+Sets whether this modification will call :ref:`_draw_editor_gizmo()<class_SkeletonModification2D_private_method__draw_editor_gizmo>` in the Godot editor to draw modification-specific gizmos.
 
 .. rst-class:: classref-item-separator
 

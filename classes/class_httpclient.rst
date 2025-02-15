@@ -23,7 +23,7 @@ Hyper-text transfer protocol client (sometimes called "User Agent"). Used to mak
 
 See the :ref:`HTTPRequest<class_HTTPRequest>` node for a higher-level alternative.
 
-\ **Note:** This client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_method_request>` for a full example and to get started.
+\ **Note:** This client only needs to connect to a host once (see :ref:`connect_to_host()<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request()<class_HTTPClient_method_request>` for a full example and to get started.
 
 A **HTTPClient** should be reused between multiple requests or to connect to different hosts instead of creating one client per request. Supports Transport Layer Security (TLS), including server certificate verification. HTTP status codes in the 2xx range indicate success, 3xx redirection (i.e. "try again, but over here"), 4xx something was wrong with the request, and 5xx something went wrong on the server's side.
 
@@ -855,7 +855,7 @@ The connection to use for this client.
 - |void| **set_read_chunk_size**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_read_chunk_size**\ (\ )
 
-The size of the buffer used and maximum bytes to read per iteration. See :ref:`read_response_body_chunk<class_HTTPClient_method_read_response_body_chunk>`.
+The size of the buffer used and maximum bytes to read per iteration. See :ref:`read_response_body_chunk()<class_HTTPClient_method_read_response_body_chunk>`.
 
 .. rst-class:: classref-section-separator
 
@@ -886,7 +886,7 @@ Closes the current connection, allowing reuse of this **HTTPClient**.
 
 Connects to a host. This needs to be done before any requests are sent.
 
-If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 for HTTP and 443 for HTTPS. You can pass the optional ``tls_options`` parameter to customize the trusted certification authorities, or the common name verification when using HTTPS. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
+If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 for HTTP and 443 for HTTPS. You can pass the optional ``tls_options`` parameter to customize the trusted certification authorities, or the common name verification when using HTTPS. See :ref:`TLSOptions.client()<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe()<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -957,7 +957,7 @@ Returns all response headers as a :ref:`Dictionary<class_Dictionary>`. Each entr
 
 :ref:`Status<enum_HTTPClient_Status>` **get_status**\ (\ ) |const| :ref:`🔗<class_HTTPClient_method_get_status>`
 
-Returns a :ref:`Status<enum_HTTPClient_Status>` constant. Need to call :ref:`poll<class_HTTPClient_method_poll>` in order to get status updates.
+Returns a :ref:`Status<enum_HTTPClient_Status>` constant. Need to call :ref:`poll()<class_HTTPClient_method_poll>` in order to get status updates.
 
 .. rst-class:: classref-item-separator
 
@@ -993,7 +993,7 @@ If ``true``, this **HTTPClient** has a response that is chunked.
 
 :ref:`Error<enum_@GlobalScope_Error>` **poll**\ (\ ) :ref:`🔗<class_HTTPClient_method_poll>`
 
-This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_method_get_status>`.
+This needs to be called in order to have any request processed. Check results with :ref:`get_status()<class_HTTPClient_method_get_status>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1072,7 +1072,7 @@ Reads one chunk from the response.
 
 Sends a request to the connected host.
 
-The URL parameter is usually just the part after the host, so for ``https://somehost.com/index.php``, it is ``/index.php``. When sending requests to an HTTP proxy server, it should be an absolute URL. For :ref:`METHOD_OPTIONS<class_HTTPClient_constant_METHOD_OPTIONS>` requests, ``*`` is also allowed. For :ref:`METHOD_CONNECT<class_HTTPClient_constant_METHOD_CONNECT>` requests, it should be the authority component (``host:port``).
+The URL parameter is usually just the part after the host, so for ``https://example.com/index.php``, it is ``/index.php``. When sending requests to an HTTP proxy server, it should be an absolute URL. For :ref:`METHOD_OPTIONS<class_HTTPClient_constant_METHOD_OPTIONS>` requests, ``*`` is also allowed. For :ref:`METHOD_CONNECT<class_HTTPClient_constant_METHOD_CONNECT>` requests, it should be the authority component (``host:port``).
 
 Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
 
@@ -1097,7 +1097,7 @@ To create a POST request with query strings to push to the server, do:
 
 
 
-\ **Note:** The ``body`` parameter is ignored if ``method`` is :ref:`METHOD_GET<class_HTTPClient_constant_METHOD_GET>`. This is because GET methods can't contain request data. As a workaround, you can pass request data as a query string in the URL. See :ref:`String.uri_encode<class_String_method_uri_encode>` for an example.
+\ **Note:** The ``body`` parameter is ignored if ``method`` is :ref:`METHOD_GET<class_HTTPClient_constant_METHOD_GET>`. This is because GET methods can't contain request data. As a workaround, you can pass request data as a query string in the URL. See :ref:`String.uri_encode()<class_String_method_uri_encode>` for an example.
 
 .. rst-class:: classref-item-separator
 
@@ -1111,7 +1111,7 @@ To create a POST request with query strings to push to the server, do:
 
 Sends a raw request to the connected host.
 
-The URL parameter is usually just the part after the host, so for ``https://somehost.com/index.php``, it is ``/index.php``. When sending requests to an HTTP proxy server, it should be an absolute URL. For :ref:`METHOD_OPTIONS<class_HTTPClient_constant_METHOD_OPTIONS>` requests, ``*`` is also allowed. For :ref:`METHOD_CONNECT<class_HTTPClient_constant_METHOD_CONNECT>` requests, it should be the authority component (``host:port``).
+The URL parameter is usually just the part after the host, so for ``https://example.com/index.php``, it is ``/index.php``. When sending requests to an HTTP proxy server, it should be an absolute URL. For :ref:`METHOD_OPTIONS<class_HTTPClient_constant_METHOD_OPTIONS>` requests, ``*`` is also allowed. For :ref:`METHOD_CONNECT<class_HTTPClient_constant_METHOD_CONNECT>` requests, it should be the authority component (``host:port``).
 
 Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
 

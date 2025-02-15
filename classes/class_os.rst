@@ -464,7 +464,7 @@ Displays a modal dialog box using the host platform's implementation. The engine
 
 |void| **close_midi_inputs**\ (\ ) :ref:`🔗<class_OS_method_close_midi_inputs>`
 
-Shuts down the system MIDI driver. Godot will no longer receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` and :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>`.
+Shuts down the system MIDI driver. Godot will no longer receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`open_midi_inputs()<class_OS_method_open_midi_inputs>` and :ref:`get_connected_midi_inputs()<class_OS_method_get_connected_midi_inputs>`.
 
 \ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
 
@@ -478,9 +478,9 @@ Shuts down the system MIDI driver. Godot will no longer receive :ref:`InputEvent
 
 |void| **crash**\ (\ message\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OS_method_crash>`
 
-Crashes the engine (or the editor if called within a ``@tool`` script). See also :ref:`kill<class_OS_method_kill>`.
+Crashes the engine (or the editor if called within a ``@tool`` script). See also :ref:`kill()<class_OS_method_kill>`.
 
-\ **Note:** This method should *only* be used for testing the system's crash handler, not for any other purpose. For general error reporting, use (in order of preference) :ref:`@GDScript.assert<class_@GDScript_method_assert>`, :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>`, or :ref:`alert<class_OS_method_alert>`.
+\ **Note:** This method should *only* be used for testing the system's crash handler, not for any other purpose. For general error reporting, use (in order of preference) :ref:`@GDScript.assert()<class_@GDScript_method_assert>`, :ref:`@GlobalScope.push_error()<class_@GlobalScope_method_push_error>`, or :ref:`alert()<class_OS_method_alert>`.
 
 .. rst-class:: classref-item-separator
 
@@ -494,9 +494,9 @@ Crashes the engine (or the editor if called within a ``@tool`` script). See also
 
 Creates a new instance of Godot that runs independently. The ``arguments`` are used in the given order and separated by a space.
 
-If the process is successfully created, this method returns the new process' ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process cannot be created, this method returns ``-1``.
+If the process is successfully created, this method returns the new process' ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill()<class_OS_method_kill>`). If the process cannot be created, this method returns ``-1``.
 
-See :ref:`create_process<class_OS_method_create_process>` if you wish to run a different process.
+See :ref:`create_process()<class_OS_method_create_process>` if you wish to run a different process.
 
 \ **Note:** This method is implemented on Android, Linux, macOS and Windows.
 
@@ -514,7 +514,7 @@ Creates a new process that runs independently of Godot. It will not terminate wh
 
 On Windows, if ``open_console`` is ``true`` and the process is a console app, a new terminal window will be opened.
 
-If the process is successfully created, this method returns its process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). Otherwise, this method returns ``-1``.
+If the process is successfully created, this method returns its process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill()<class_OS_method_kill>`). Otherwise, this method returns ``-1``.
 
 \ **Example:** Run another instance of the project:
 
@@ -531,7 +531,7 @@ If the process is successfully created, this method returns its process ID, whic
 
 
 
-See :ref:`execute<class_OS_method_execute>` if you wish to run an external command and retrieve the results.
+See :ref:`execute()<class_OS_method_execute>` if you wish to run an external command and retrieve the results.
 
 \ **Note:** This method is implemented on Android, Linux, macOS, and Windows.
 
@@ -547,11 +547,11 @@ See :ref:`execute<class_OS_method_execute>` if you wish to run an external comma
 
 |void| **delay_msec**\ (\ msec\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_delay_msec>`
 
-Delays execution of the current thread by ``msec`` milliseconds. ``msec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec<class_OS_method_delay_msec>` does nothing and prints an error message.
+Delays execution of the current thread by ``msec`` milliseconds. ``msec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec()<class_OS_method_delay_msec>` does nothing and prints an error message.
 
-\ **Note:** :ref:`delay_msec<class_OS_method_delay_msec>` is a *blocking* way to delay code execution. To delay code execution in a non-blocking way, you may use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`. Awaiting with :ref:`SceneTreeTimer<class_SceneTreeTimer>` delays the execution of code placed below the ``await`` without affecting the rest of the project (or editor, for :ref:`EditorPlugin<class_EditorPlugin>`\ s and :ref:`EditorScript<class_EditorScript>`\ s).
+\ **Note:** :ref:`delay_msec()<class_OS_method_delay_msec>` is a *blocking* way to delay code execution. To delay code execution in a non-blocking way, you may use :ref:`SceneTree.create_timer()<class_SceneTree_method_create_timer>`. Awaiting with :ref:`SceneTreeTimer<class_SceneTreeTimer>` delays the execution of code placed below the ``await`` without affecting the rest of the project (or editor, for :ref:`EditorPlugin<class_EditorPlugin>`\ s and :ref:`EditorScript<class_EditorScript>`\ s).
 
-\ **Note:** When :ref:`delay_msec<class_OS_method_delay_msec>` is called on the main thread, it will freeze the project and will prevent it from redrawing and registering input until the delay has passed. When using :ref:`delay_msec<class_OS_method_delay_msec>` as part of an :ref:`EditorPlugin<class_EditorPlugin>` or :ref:`EditorScript<class_EditorScript>`, it will freeze the editor but won't freeze the project if it is currently running (since the project is an independent child process).
+\ **Note:** When :ref:`delay_msec()<class_OS_method_delay_msec>` is called on the main thread, it will freeze the project and will prevent it from redrawing and registering input until the delay has passed. When using :ref:`delay_msec()<class_OS_method_delay_msec>` as part of an :ref:`EditorPlugin<class_EditorPlugin>` or :ref:`EditorScript<class_EditorScript>`, it will freeze the editor but won't freeze the project if it is currently running (since the project is an independent child process).
 
 .. rst-class:: classref-item-separator
 
@@ -563,11 +563,11 @@ Delays execution of the current thread by ``msec`` milliseconds. ``msec`` must b
 
 |void| **delay_usec**\ (\ usec\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_delay_usec>`
 
-Delays execution of the current thread by ``usec`` microseconds. ``usec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_usec<class_OS_method_delay_usec>` does nothing and prints an error message.
+Delays execution of the current thread by ``usec`` microseconds. ``usec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_usec()<class_OS_method_delay_usec>` does nothing and prints an error message.
 
-\ **Note:** :ref:`delay_usec<class_OS_method_delay_usec>` is a *blocking* way to delay code execution. To delay code execution in a non-blocking way, you may use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`. Awaiting with a :ref:`SceneTreeTimer<class_SceneTreeTimer>` delays the execution of code placed below the ``await`` without affecting the rest of the project (or editor, for :ref:`EditorPlugin<class_EditorPlugin>`\ s and :ref:`EditorScript<class_EditorScript>`\ s).
+\ **Note:** :ref:`delay_usec()<class_OS_method_delay_usec>` is a *blocking* way to delay code execution. To delay code execution in a non-blocking way, you may use :ref:`SceneTree.create_timer()<class_SceneTree_method_create_timer>`. Awaiting with a :ref:`SceneTreeTimer<class_SceneTreeTimer>` delays the execution of code placed below the ``await`` without affecting the rest of the project (or editor, for :ref:`EditorPlugin<class_EditorPlugin>`\ s and :ref:`EditorScript<class_EditorScript>`\ s).
 
-\ **Note:** When :ref:`delay_usec<class_OS_method_delay_usec>` is called on the main thread, it will freeze the project and will prevent it from redrawing and registering input until the delay has passed. When using :ref:`delay_usec<class_OS_method_delay_usec>` as part of an :ref:`EditorPlugin<class_EditorPlugin>` or :ref:`EditorScript<class_EditorScript>`, it will freeze the editor but won't freeze the project if it is currently running (since the project is an independent child process).
+\ **Note:** When :ref:`delay_usec()<class_OS_method_delay_usec>` is called on the main thread, it will freeze the project and will prevent it from redrawing and registering input until the delay has passed. When using :ref:`delay_usec()<class_OS_method_delay_usec>` as part of an :ref:`EditorPlugin<class_EditorPlugin>` or :ref:`EditorScript<class_EditorScript>`, it will freeze the editor but won't freeze the project if it is currently running (since the project is an independent child process).
 
 .. rst-class:: classref-item-separator
 
@@ -587,7 +587,7 @@ On Windows, if ``open_console`` is ``true`` and the process is a console app, a 
 
 This method returns the exit code of the command, or ``-1`` if the process fails to execute.
 
-\ **Note:** The main thread will be blocked until the executed command terminates. Use :ref:`Thread<class_Thread>` to create a separate thread that will not block the main thread, or use :ref:`create_process<class_OS_method_create_process>` to create a completely independent process.
+\ **Note:** The main thread will be blocked until the executed command terminates. Use :ref:`Thread<class_Thread>` to create a separate thread that will not block the main thread, or use :ref:`create_process()<class_OS_method_create_process>` to create a completely independent process.
 
 For example, to retrieve a list of the working directory's contents:
 
@@ -647,7 +647,7 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 Creates a new process that runs independently of Godot with redirected IO. It will not terminate when Godot terminates. The path specified in ``path`` must exist and be an executable file or macOS ``.app`` bundle. The path is resolved based on the current platform. The ``arguments`` are used in the given order and separated by a space.
 
-If ``blocking`` is ``false``, created pipes work in non-blocking mode, i.e. read and write operations will return immediately. Use :ref:`FileAccess.get_error<class_FileAccess_method_get_error>` to check if the last read/write operation was successful.
+If ``blocking`` is ``false``, created pipes work in non-blocking mode, i.e. read and write operations will return immediately. Use :ref:`FileAccess.get_error()<class_FileAccess_method_get_error>` to check if the last read/write operation was successful.
 
 If the process cannot be created, this method returns an empty :ref:`Dictionary<class_Dictionary>`. Otherwise, this method returns a :ref:`Dictionary<class_Dictionary>` with the following keys:
 
@@ -655,7 +655,7 @@ If the process cannot be created, this method returns an empty :ref:`Dictionary<
 
 - ``"stderr"`` - :ref:`FileAccess<class_FileAccess>` to access the process stderr pipe (read only).
 
-- ``"pid"`` - Process ID as an :ref:`int<class_int>`, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`).
+- ``"pid"`` - Process ID as an :ref:`int<class_int>`, which you can use to monitor the process (and potentially terminate it with :ref:`kill()<class_OS_method_kill>`).
 
 \ **Note:** This method is implemented on Android, Linux, macOS, and Windows.
 
@@ -698,7 +698,7 @@ Finds the keycode for the given string. The returned values are equivalent to th
 
 
 
-See also :ref:`get_keycode_string<class_OS_method_get_keycode_string>`.
+See also :ref:`get_keycode_string()<class_OS_method_get_keycode_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -712,9 +712,9 @@ See also :ref:`get_keycode_string<class_OS_method_get_keycode_string>`.
 
 Returns the *global* cache data directory according to the operating system's standards.
 
-On the Linux/BSD platform, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+On the Linux/BSD platform, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_config_dir()<class_OS_method_get_config_dir>` and :ref:`get_data_dir()<class_OS_method_get_data_dir>`.
 
-Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
+Not to be confused with :ref:`get_user_data_dir()<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
 .. rst-class:: classref-item-separator
 
@@ -730,7 +730,7 @@ Returns the command-line arguments passed to the engine.
 
 Command-line arguments can be written in any form, including both ``--key value`` and ``--key=value`` forms so they can be properly parsed, as long as custom command-line arguments do not conflict with engine arguments.
 
-You can also incorporate environment variables using the :ref:`get_environment<class_OS_method_get_environment>` method.
+You can also incorporate environment variables using the :ref:`get_environment()<class_OS_method_get_environment>` method.
 
 You can set :ref:`ProjectSettings.editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>` to define command-line arguments to be passed by the editor when running the project.
 
@@ -771,7 +771,7 @@ You can set :ref:`ProjectSettings.editor/run/main_run_args<class_ProjectSettings
 
 
 
-\ **Note:** Passing custom user arguments directly is not recommended, as the engine may discard or modify them. Instead, pass the standard UNIX double dash (``--``) and then the custom arguments, which the engine will ignore by design. These can be read via :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>`.
+\ **Note:** Passing custom user arguments directly is not recommended, as the engine may discard or modify them. Instead, pass the standard UNIX double dash (``--``) and then the custom arguments, which the engine will ignore by design. These can be read via :ref:`get_cmdline_user_args()<class_OS_method_get_cmdline_user_args>`.
 
 .. rst-class:: classref-item-separator
 
@@ -793,7 +793,7 @@ Returns the command-line user arguments passed to the engine. User arguments are
     OS.get_cmdline_args()      # Returns ["--fullscreen", "--level=2", "--hardcore"]
     OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 
-To get all passed arguments, use :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>`.
+To get all passed arguments, use :ref:`get_cmdline_args()<class_OS_method_get_cmdline_args>`.
 
 .. rst-class:: classref-item-separator
 
@@ -807,9 +807,9 @@ To get all passed arguments, use :ref:`get_cmdline_args<class_OS_method_get_cmdl
 
 Returns the *global* user configuration directory according to the operating system's standards.
 
-On the Linux/BSD platform, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+On the Linux/BSD platform, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir()<class_OS_method_get_cache_dir>` and :ref:`get_data_dir()<class_OS_method_get_data_dir>`.
 
-Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
+Not to be confused with :ref:`get_user_data_dir()<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
 .. rst-class:: classref-item-separator
 
@@ -821,13 +821,13 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_connected_midi_inputs**\ (\ ) :ref:`🔗<class_OS_method_get_connected_midi_inputs>`
 
-Returns an array of connected MIDI device names, if they exist. Returns an empty array if the system MIDI driver has not previously been initialized with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. See also :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
+Returns an array of connected MIDI device names, if they exist. Returns an empty array if the system MIDI driver has not previously been initialized with :ref:`open_midi_inputs()<class_OS_method_open_midi_inputs>`. See also :ref:`close_midi_inputs()<class_OS_method_close_midi_inputs>`.
 
 \ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
 
 \ **Note:** On the Web platform, Web MIDI needs to be supported by the browser. `For the time being <https://caniuse.com/midi>`__, it is currently supported by all major browsers, except Safari.
 
-\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs()<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
 
 .. rst-class:: classref-item-separator
 
@@ -841,9 +841,9 @@ Returns an array of connected MIDI device names, if they exist. Returns an empty
 
 Returns the *global* user data directory according to the operating system's standards.
 
-On the Linux/BSD platform, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
+On the Linux/BSD platform, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir()<class_OS_method_get_cache_dir>` and :ref:`get_config_dir()<class_OS_method_get_config_dir>`.
 
-Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
+Not to be confused with :ref:`get_user_data_dir()<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
 .. rst-class:: classref-item-separator
 
@@ -857,9 +857,9 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 Returns the name of the distribution for Linux and BSD platforms (e.g. "Ubuntu", "Manjaro", "OpenBSD", etc.).
 
-Returns the same value as :ref:`get_name<class_OS_method_get_name>` for stock Android ROMs, but attempts to return the custom ROM name for popular Android derivatives such as "LineageOS".
+Returns the same value as :ref:`get_name()<class_OS_method_get_name>` for stock Android ROMs, but attempts to return the custom ROM name for popular Android derivatives such as "LineageOS".
 
-Returns the same value as :ref:`get_name<class_OS_method_get_name>` for other platforms.
+Returns the same value as :ref:`get_name()<class_OS_method_get_name>` for other platforms.
 
 \ **Note:** This method is not supported on the Web platform. It returns an empty string.
 
@@ -875,7 +875,7 @@ Returns the same value as :ref:`get_name<class_OS_method_get_name>` for other pl
 
 Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically secure random bytes with given ``size``.
 
-\ **Note:** Generating large quantities of bytes using this method can result in locking and entropy of lower quality on most platforms. Using :ref:`Crypto.generate_random_bytes<class_Crypto_method_generate_random_bytes>` is preferred in most cases.
+\ **Note:** Generating large quantities of bytes using this method can result in locking and entropy of lower quality on most platforms. Using :ref:`Crypto.generate_random_bytes()<class_Crypto_method_generate_random_bytes>` is preferred in most cases.
 
 .. rst-class:: classref-item-separator
 
@@ -905,7 +905,7 @@ Returns the value of the given environment variable, or an empty string if ``var
 
 Returns the file path to the current engine executable.
 
-\ **Note:** On macOS, if you want to launch another instance of Godot, always use :ref:`create_instance<class_OS_method_create_instance>` instead of relying on the executable path.
+\ **Note:** On macOS, if you want to launch another instance of Godot, always use :ref:`create_instance()<class_OS_method_create_instance>` instead of relying on the executable path.
 
 .. rst-class:: classref-item-separator
 
@@ -950,7 +950,7 @@ Returns the given keycode as a :ref:`String<class_String>`.
 
 
 
-See also :ref:`find_keycode_from_string<class_OS_method_find_keycode_from_string>`, :ref:`InputEventKey.keycode<class_InputEventKey_property_keycode>`, and :ref:`InputEventKey.get_keycode_with_modifiers<class_InputEventKey_method_get_keycode_with_modifiers>`.
+See also :ref:`find_keycode_from_string()<class_OS_method_find_keycode_from_string>`, :ref:`InputEventKey.keycode<class_InputEventKey_property_keycode>`, and :ref:`InputEventKey.get_keycode_with_modifiers()<class_InputEventKey_method_get_keycode_with_modifiers>`.
 
 .. rst-class:: classref-item-separator
 
@@ -974,7 +974,7 @@ Returns the host OS locale as a :ref:`String<class_String>` of the form ``langua
 
 - ``extra`` - semicolon separated list of additional key words. This may include currency, calendar, sort order and numbering system information.
 
-If you want only the language code and not the fully specified locale from the OS, you can use :ref:`get_locale_language<class_OS_method_get_locale_language>`.
+If you want only the language code and not the fully specified locale from the OS, you can use :ref:`get_locale_language()<class_OS_method_get_locale_language>`.
 
 .. rst-class:: classref-item-separator
 
@@ -986,7 +986,7 @@ If you want only the language code and not the fully specified locale from the O
 
 :ref:`String<class_String>` **get_locale_language**\ (\ ) |const| :ref:`🔗<class_OS_method_get_locale_language>`
 
-Returns the host OS locale's 2 or 3-letter `language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ as a string which should be consistent on all platforms. This is equivalent to extracting the ``language`` part of the :ref:`get_locale<class_OS_method_get_locale>` string.
+Returns the host OS locale's 2 or 3-letter `language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ as a string which should be consistent on all platforms. This is equivalent to extracting the ``language`` part of the :ref:`get_locale()<class_OS_method_get_locale>` string.
 
 This can be used to narrow down fully specified locale strings to only the "common" language code, when you don't need the additional information about country code or variants. For example, for a French Canadian user with ``fr_CA`` locale, this would return ``fr``.
 
@@ -1000,7 +1000,7 @@ This can be used to narrow down fully specified locale strings to only the "comm
 
 :ref:`int<class_int>` **get_main_thread_id**\ (\ ) |const| :ref:`🔗<class_OS_method_get_main_thread_id>`
 
-Returns the ID of the main thread. See :ref:`get_thread_caller_id<class_OS_method_get_thread_caller_id>`.
+Returns the ID of the main thread. See :ref:`get_thread_caller_id()<class_OS_method_get_thread_caller_id>`.
 
 \ **Note:** Thread IDs are not deterministic and may be reused across application restarts.
 
@@ -1117,7 +1117,7 @@ Returns the name of the host platform.
 
 
 
-\ **Note:** On Web platforms, it is still possible to determine the host platform's OS with feature tags. See :ref:`has_feature<class_OS_method_has_feature>`.
+\ **Note:** On Web platforms, it is still possible to determine the host platform's OS with feature tags. See :ref:`has_feature()<class_OS_method_has_feature>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1129,7 +1129,7 @@ Returns the name of the host platform.
 
 :ref:`int<class_int>` **get_process_exit_code**\ (\ pid\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_get_process_exit_code>`
 
-Returns the exit code of a spawned process once it has finished running (see :ref:`is_process_running<class_OS_method_is_process_running>`).
+Returns the exit code of a spawned process once it has finished running (see :ref:`is_process_running()<class_OS_method_is_process_running>`).
 
 Returns ``-1`` if the ``pid`` is not a PID of a spawned child process, the process is still running, or the method is not implemented for the current platform.
 
@@ -1175,7 +1175,7 @@ Returns the number of *logical* CPU cores available on the host machine. On CPUs
 
 Returns the full name of the CPU model on the host machine (e.g. ``"Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz"``).
 
-\ **Note:** This method is only implemented on Windows, macOS, Linux and iOS. On Android and Web, :ref:`get_processor_name<class_OS_method_get_processor_name>` returns an empty string.
+\ **Note:** This method is only implemented on Windows, macOS, Linux and iOS. On Android and Web, :ref:`get_processor_name()<class_OS_method_get_processor_name>` returns an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -1187,7 +1187,7 @@ Returns the full name of the CPU model on the host machine (e.g. ``"Intel(R) Cor
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_restart_on_exit_arguments**\ (\ ) |const| :ref:`🔗<class_OS_method_get_restart_on_exit_arguments>`
 
-Returns the list of command line arguments that will be used when the project automatically restarts using :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>`. See also :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>`.
+Returns the list of command line arguments that will be used when the project automatically restarts using :ref:`set_restart_on_exit()<class_OS_method_set_restart_on_exit>`. See also :ref:`is_restart_on_exit_set()<class_OS_method_is_restart_on_exit_set>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1395,7 +1395,7 @@ Returns the absolute directory path where user data is written (the ``user://`` 
 
 If the project name is empty, ``[project_name]`` falls back to ``[unnamed project]``.
 
-Not to be confused with :ref:`get_data_dir<class_OS_method_get_data_dir>`, which returns the *global* (non-project-specific) user home directory.
+Not to be confused with :ref:`get_data_dir()<class_OS_method_get_data_dir>`, which returns the *global* (non-project-specific) user home directory.
 
 .. rst-class:: classref-item-separator
 
@@ -1429,9 +1429,9 @@ Returns the exact production and build version of the operating system. This is 
 
 :ref:`String<class_String>` **get_version_alias**\ (\ ) |const| :ref:`🔗<class_OS_method_get_version_alias>`
 
-Returns the branded version used in marketing, followed by the build number (on Windows) or the version number (on macOS). Examples include ``11 (build 22000)`` and ``Sequoia (15.0.0)``. This value can then be appended to :ref:`get_name<class_OS_method_get_name>` to get a full, human-readable operating system name and version combination for the operating system. Windows feature updates such as 24H2 are not contained in the resulting string, but Windows Server is recognized as such (e.g. ``2025 (build 26100)`` for Windows Server 2025).
+Returns the branded version used in marketing, followed by the build number (on Windows) or the version number (on macOS). Examples include ``11 (build 22000)`` and ``Sequoia (15.0.0)``. This value can then be appended to :ref:`get_name()<class_OS_method_get_name>` to get a full, human-readable operating system name and version combination for the operating system. Windows feature updates such as 24H2 are not contained in the resulting string, but Windows Server is recognized as such (e.g. ``2025 (build 26100)`` for Windows Server 2025).
 
-\ **Note:** This method is only supported on Windows and macOS. On other operating systems, it returns the same value as :ref:`get_version<class_OS_method_get_version>`.
+\ **Note:** This method is only supported on Windows and macOS. On other operating systems, it returns the same value as :ref:`get_version()<class_OS_method_get_version>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1443,7 +1443,7 @@ Returns the branded version used in marketing, followed by the build number (on 
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_video_adapter_driver_info**\ (\ ) |const| :ref:`🔗<class_OS_method_get_video_adapter_driver_info>`
 
-Returns the video adapter driver name and version for the user's currently active graphics card, as a :ref:`PackedStringArray<class_PackedStringArray>`. See also :ref:`RenderingServer.get_video_adapter_api_version<class_RenderingServer_method_get_video_adapter_api_version>`.
+Returns the video adapter driver name and version for the user's currently active graphics card, as a :ref:`PackedStringArray<class_PackedStringArray>`. See also :ref:`RenderingServer.get_video_adapter_api_version()<class_RenderingServer_method_get_video_adapter_api_version>`.
 
 The first element holds the driver name, such as ``nvidia``, ``amdgpu``, etc.
 
@@ -1538,7 +1538,7 @@ Returns ``true`` if the input keycode corresponds to a Unicode character. For a 
 
 :ref:`bool<class_bool>` **is_process_running**\ (\ pid\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_is_process_running>`
 
-Returns ``true`` if the child process ID (``pid``) is still running or ``false`` if it has terminated. ``pid`` must be a valid ID generated from :ref:`create_process<class_OS_method_create_process>`.
+Returns ``true`` if the child process ID (``pid``) is still running or ``false`` if it has terminated. ``pid`` must be a valid ID generated from :ref:`create_process()<class_OS_method_create_process>`.
 
 \ **Note:** This method is implemented on Android, iOS, Linux, macOS, and Windows.
 
@@ -1552,7 +1552,7 @@ Returns ``true`` if the child process ID (``pid``) is still running or ``false``
 
 :ref:`bool<class_bool>` **is_restart_on_exit_set**\ (\ ) |const| :ref:`🔗<class_OS_method_is_restart_on_exit_set>`
 
-Returns ``true`` if the project will automatically restart when it exits for any reason, ``false`` otherwise. See also :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` and :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`.
+Returns ``true`` if the project will automatically restart when it exits for any reason, ``false`` otherwise. See also :ref:`set_restart_on_exit()<class_OS_method_set_restart_on_exit>` and :ref:`get_restart_on_exit_arguments()<class_OS_method_get_restart_on_exit_arguments>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1578,7 +1578,7 @@ Returns ``true`` if the application is running in the sandbox.
 
 :ref:`bool<class_bool>` **is_stdout_verbose**\ (\ ) |const| :ref:`🔗<class_OS_method_is_stdout_verbose>`
 
-Returns ``true`` if the engine was executed with the ``--verbose`` or ``-v`` command line argument, or if :ref:`ProjectSettings.debug/settings/stdout/verbose_stdout<class_ProjectSettings_property_debug/settings/stdout/verbose_stdout>` is ``true``. See also :ref:`@GlobalScope.print_verbose<class_@GlobalScope_method_print_verbose>`.
+Returns ``true`` if the engine was executed with the ``--verbose`` or ``-v`` command line argument, or if :ref:`ProjectSettings.debug/settings/stdout/verbose_stdout<class_ProjectSettings_property_debug/settings/stdout/verbose_stdout>` is ``true``. See also :ref:`@GlobalScope.print_verbose()<class_@GlobalScope_method_print_verbose>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1602,7 +1602,7 @@ Returns ``true`` if the ``user://`` file system is persistent, that is, its stat
 
 :ref:`Error<enum_@GlobalScope_Error>` **kill**\ (\ pid\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_kill>`
 
-Kill (terminate) the process identified by the given process ID (``pid``), such as the ID returned by :ref:`execute<class_OS_method_execute>` in non-blocking mode. See also :ref:`crash<class_OS_method_crash>`.
+Kill (terminate) the process identified by the given process ID (``pid``), such as the ID returned by :ref:`execute()<class_OS_method_execute>` in non-blocking mode. See also :ref:`crash()<class_OS_method_crash>`.
 
 \ **Note:** This method can also be used to kill processes that were not spawned by the engine.
 
@@ -1618,9 +1618,9 @@ Kill (terminate) the process identified by the given process ID (``pid``), such 
 
 :ref:`Error<enum_@GlobalScope_Error>` **move_to_trash**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_move_to_trash>`
 
-Moves the file or directory at the given ``path`` to the system's recycle bin. See also :ref:`DirAccess.remove<class_DirAccess_method_remove>`.
+Moves the file or directory at the given ``path`` to the system's recycle bin. See also :ref:`DirAccess.remove()<class_DirAccess_method_remove>`.
 
-The method takes only global paths, so you may need to use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>`. Do not use it for files in ``res://`` as it will not work in exported projects.
+The method takes only global paths, so you may need to use :ref:`ProjectSettings.globalize_path()<class_ProjectSettings_method_globalize_path>`. Do not use it for files in ``res://`` as it will not work in exported projects.
 
 Returns :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` if the file or directory cannot be found, or the system does not support this method.
 
@@ -1653,13 +1653,13 @@ Returns :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` if the fi
 
 |void| **open_midi_inputs**\ (\ ) :ref:`🔗<class_OS_method_open_midi_inputs>`
 
-Initializes the singleton for the system MIDI driver, allowing Godot to receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>` and :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
+Initializes the singleton for the system MIDI driver, allowing Godot to receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`get_connected_midi_inputs()<class_OS_method_get_connected_midi_inputs>` and :ref:`close_midi_inputs()<class_OS_method_close_midi_inputs>`.
 
 \ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
 
 \ **Note:** On the Web platform, Web MIDI needs to be supported by the browser. `For the time being <https://caniuse.com/midi>`__, it is currently supported by all major browsers, except Safari.
 
-\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs()<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
 
 .. rst-class:: classref-item-separator
 
@@ -1671,7 +1671,7 @@ Initializes the singleton for the system MIDI driver, allowing Godot to receive 
 
 :ref:`PackedByteArray<class_PackedByteArray>` **read_buffer_from_stdin**\ (\ buffer_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_read_buffer_from_stdin>`
 
-Reads a user input as raw data from the standard input. This operation can be *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread.
+Reads a user input as raw data from the standard input. This operation can be *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin()<class_OS_method_read_string_from_stdin>` is called on the main thread.
 
 - If standard input is console, this method will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
 
@@ -1693,7 +1693,7 @@ Reads a user input as raw data from the standard input. This operation can be *b
 
 :ref:`String<class_String>` **read_string_from_stdin**\ (\ buffer_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_read_string_from_stdin>`
 
-Reads a user input as a UTF-8 encoded string from the standard input. This operation can be *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread.
+Reads a user input as a UTF-8 encoded string from the standard input. This operation can be *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin()<class_OS_method_read_string_from_stdin>` is called on the main thread.
 
 - If standard input is console, this method will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
 
@@ -1701,7 +1701,7 @@ Reads a user input as a UTF-8 encoded string from the standard input. This opera
 
 - If standard input is a file, this method will read a specific amount of data (or less if end-of-file is reached) and return immediately.
 
-\ **Note:** This method automatically replaces ``\r\n`` line breaks with ``\n`` and removes them from the end of the string. Use :ref:`read_buffer_from_stdin<class_OS_method_read_buffer_from_stdin>` to read the unprocessed data.
+\ **Note:** This method automatically replaces ``\r\n`` line breaks with ``\n`` and removes them from the end of the string. Use :ref:`read_buffer_from_stdin()<class_OS_method_read_buffer_from_stdin>` to read the unprocessed data.
 
 \ **Note:** This method is implemented on Linux, macOS, and Windows.
 
@@ -1767,7 +1767,7 @@ On macOS (sandboxed applications only), this function clears list of user select
 
 |void| **set_environment**\ (\ variable\: :ref:`String<class_String>`, value\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_set_environment>`
 
-Sets the value of the environment variable ``variable`` to ``value``. The environment variable will be set for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`set_environment<class_OS_method_set_environment>`. The environment variable will *not* persist to processes run after the Godot process was terminated.
+Sets the value of the environment variable ``variable`` to ``value``. The environment variable will be set for the Godot process and any process executed with :ref:`execute()<class_OS_method_execute>` after running :ref:`set_environment()<class_OS_method_set_environment>`. The environment variable will *not* persist to processes run after the Godot process was terminated.
 
 \ **Note:** Environment variable names are case-sensitive on all platforms except Windows. The ``variable`` name cannot be empty or include the ``=`` character. On Windows, there is a 32767 characters limit for the combined length of ``variable``, ``value``, and the ``=`` and null terminator characters that will be registered in the environment block.
 
@@ -1781,9 +1781,9 @@ Sets the value of the environment variable ``variable`` to ``value``. The enviro
 
 |void| **set_restart_on_exit**\ (\ restart\: :ref:`bool<class_bool>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray()\ ) :ref:`🔗<class_OS_method_set_restart_on_exit>`
 
-If ``restart`` is ``true``, restarts the project automatically when it is exited with :ref:`SceneTree.quit<class_SceneTree_method_quit>` or :ref:`Node.NOTIFICATION_WM_CLOSE_REQUEST<class_Node_constant_NOTIFICATION_WM_CLOSE_REQUEST>`. Command-line ``arguments`` can be supplied. To restart the project with the same command line arguments as originally used to run the project, pass :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>` as the value for ``arguments``.
+If ``restart`` is ``true``, restarts the project automatically when it is exited with :ref:`SceneTree.quit()<class_SceneTree_method_quit>` or :ref:`Node.NOTIFICATION_WM_CLOSE_REQUEST<class_Node_constant_NOTIFICATION_WM_CLOSE_REQUEST>`. Command-line ``arguments`` can be supplied. To restart the project with the same command line arguments as originally used to run the project, pass :ref:`get_cmdline_args()<class_OS_method_get_cmdline_args>` as the value for ``arguments``.
 
-This method can be used to apply setting changes that require a restart. See also :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>` and :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`.
+This method can be used to apply setting changes that require a restart. See also :ref:`is_restart_on_exit_set()<class_OS_method_is_restart_on_exit_set>` and :ref:`get_restart_on_exit_arguments()<class_OS_method_get_restart_on_exit_arguments>`.
 
 \ **Note:** This method is only effective on desktop platforms, and only when the project isn't started from the editor. It will have no effect on mobile and Web platforms, or when the project is started from the editor.
 
@@ -1835,9 +1835,9 @@ Requests the OS to open a resource identified by ``uri`` with the most appropria
 
 - ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `RFC 2368 - The [code]mailto[/code] URL scheme <https://datatracker.ietf.org/doc/html/rfc2368>`__ for a list of fields that can be added.
 
-Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` project path into a system path for use with this method.
+Use :ref:`ProjectSettings.globalize_path()<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` project path into a system path for use with this method.
 
-\ **Note:** Use :ref:`String.uri_encode<class_String_method_uri_encode>` to encode characters within URLs in a URL-safe, portable way. This is especially required for line breaks. Otherwise, :ref:`shell_open<class_OS_method_shell_open>` may not work correctly in a project exported to the Web platform.
+\ **Note:** Use :ref:`String.uri_encode()<class_String_method_uri_encode>` to encode characters within URLs in a URL-safe, portable way. This is especially required for line breaks. Otherwise, :ref:`shell_open()<class_OS_method_shell_open>` may not work correctly in a project exported to the Web platform.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS and Windows.
 
@@ -1855,9 +1855,9 @@ Requests the OS to open the file manager, navigate to the given ``file_or_dir_pa
 
 If ``open_folder`` is ``true`` and ``file_or_dir_path`` is a valid directory path, the OS will open the file manager and navigate to the target folder without selecting anything.
 
-Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` project path into a system path to use with this method.
+Use :ref:`ProjectSettings.globalize_path()<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` project path into a system path to use with this method.
 
-\ **Note:** This method is currently only implemented on Windows and macOS. On other platforms, it will fallback to :ref:`shell_open<class_OS_method_shell_open>` with a directory path of ``file_or_dir_path`` prefixed with ``file://``.
+\ **Note:** This method is currently only implemented on Windows and macOS. On other platforms, it will fallback to :ref:`shell_open()<class_OS_method_shell_open>` with a directory path of ``file_or_dir_path`` prefixed with ``file://``.
 
 .. rst-class:: classref-item-separator
 
@@ -1869,7 +1869,7 @@ Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_
 
 |void| **unset_environment**\ (\ variable\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OS_method_unset_environment>`
 
-Removes the given environment variable from the current environment, if it exists. The ``variable`` name cannot be empty or include the ``=`` character. The environment variable will be removed for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`unset_environment<class_OS_method_unset_environment>`. The removal of the environment variable will *not* persist to processes run after the Godot process was terminated.
+Removes the given environment variable from the current environment, if it exists. The ``variable`` name cannot be empty or include the ``=`` character. The environment variable will be removed for the Godot process and any process executed with :ref:`execute()<class_OS_method_execute>` after running :ref:`unset_environment()<class_OS_method_unset_environment>`. The removal of the environment variable will *not* persist to processes run after the Godot process was terminated.
 
 \ **Note:** Environment variable names are case-sensitive on all platforms except Windows.
 

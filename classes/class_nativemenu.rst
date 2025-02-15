@@ -23,7 +23,7 @@ Description
 
 \ **Note:** This is low-level API, consider using :ref:`MenuBar<class_MenuBar>` with :ref:`MenuBar.prefer_global_menu<class_MenuBar_property_prefer_global_menu>` set to ``true``, and :ref:`PopupMenu<class_PopupMenu>` with :ref:`PopupMenu.prefer_native_menu<class_PopupMenu_property_prefer_native_menu>` set to ``true``.
 
-To create a menu, use :ref:`create_menu<class_NativeMenu_method_create_menu>`, add menu items using ``add_*_item`` methods. To remove a menu, use :ref:`free_menu<class_NativeMenu_method_free_menu>`.
+To create a menu, use :ref:`create_menu()<class_NativeMenu_method_create_menu>`, add menu items using ``add_*_item`` methods. To remove a menu, use :ref:`free_menu()<class_NativeMenu_method_free_menu>`.
 
 ::
 
@@ -395,7 +395,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
-\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_NativeMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked()<class_NativeMenu_method_set_item_checked>` for more info on how to control it.
 
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
 
@@ -467,7 +467,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
-\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_NativeMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked()<class_NativeMenu_method_set_item_checked>` for more info on how to control it.
 
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
 
@@ -685,7 +685,7 @@ Returns the callback of the item accelerator at index ``idx``.
 
 :ref:`int<class_int>` **get_item_max_states**\ (\ rid\: :ref:`RID<class_RID>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NativeMenu_method_get_item_max_states>`
 
-Returns number of states of a multistate item. See :ref:`add_multistate_item<class_NativeMenu_method_add_multistate_item>` for details.
+Returns number of states of a multistate item. See :ref:`add_multistate_item()<class_NativeMenu_method_add_multistate_item>` for details.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -699,7 +699,7 @@ Returns number of states of a multistate item. See :ref:`add_multistate_item<cla
 
 :ref:`int<class_int>` **get_item_state**\ (\ rid\: :ref:`RID<class_RID>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NativeMenu_method_get_item_state>`
 
-Returns the state of a multistate item. See :ref:`add_multistate_item<class_NativeMenu_method_add_multistate_item>` for details.
+Returns the state of a multistate item. See :ref:`add_multistate_item()<class_NativeMenu_method_add_multistate_item>` for details.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -713,7 +713,7 @@ Returns the state of a multistate item. See :ref:`add_multistate_item<class_Nati
 
 :ref:`RID<class_RID>` **get_item_submenu**\ (\ rid\: :ref:`RID<class_RID>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NativeMenu_method_get_item_submenu>`
 
-Returns the submenu ID of the item at index ``idx``. See :ref:`add_submenu_item<class_NativeMenu_method_add_submenu_item>` for more info on how to add a submenu.
+Returns the submenu ID of the item at index ``idx``. See :ref:`add_submenu_item()<class_NativeMenu_method_add_submenu_item>` for more info on how to add a submenu.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -727,7 +727,7 @@ Returns the submenu ID of the item at index ``idx``. See :ref:`add_submenu_item<
 
 :ref:`Variant<class_Variant>` **get_item_tag**\ (\ rid\: :ref:`RID<class_RID>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NativeMenu_method_get_item_tag>`
 
-Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_tag<class_NativeMenu_method_set_item_tag>`, which provides a simple way of assigning context data to items.
+Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_tag()<class_NativeMenu_method_set_item_tag>`, which provides a simple way of assigning context data to items.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -925,7 +925,7 @@ Returns ``true`` if the item at index ``idx`` is checked.
 
 Returns ``true`` if the item at index ``idx`` is disabled. When it is disabled it can't be selected, or its action invoked.
 
-See :ref:`set_item_disabled<class_NativeMenu_method_set_item_disabled>` for more info on how to disable an item.
+See :ref:`set_item_disabled()<class_NativeMenu_method_set_item_disabled>` for more info on how to disable an item.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -941,7 +941,7 @@ See :ref:`set_item_disabled<class_NativeMenu_method_set_item_disabled>` for more
 
 Returns ``true`` if the item at index ``idx`` is hidden.
 
-See :ref:`set_item_hidden<class_NativeMenu_method_set_item_hidden>` for more info on how to hide an item.
+See :ref:`set_item_hidden()<class_NativeMenu_method_set_item_hidden>` for more info on how to hide an item.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -1191,7 +1191,7 @@ Sets the callback of the item at index ``idx``. Callback is emitted when its acc
 
 |void| **set_item_max_states**\ (\ rid\: :ref:`RID<class_RID>`, idx\: :ref:`int<class_int>`, max_states\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NativeMenu_method_set_item_max_states>`
 
-Sets number of state of a multistate item. See :ref:`add_multistate_item<class_NativeMenu_method_add_multistate_item>` for details.
+Sets number of state of a multistate item. See :ref:`add_multistate_item()<class_NativeMenu_method_add_multistate_item>` for details.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -1221,7 +1221,7 @@ Sets the type of the item at the specified index ``idx`` to radio button. If ``f
 
 |void| **set_item_state**\ (\ rid\: :ref:`RID<class_RID>`, idx\: :ref:`int<class_int>`, state\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NativeMenu_method_set_item_state>`
 
-Sets the state of a multistate item. See :ref:`add_multistate_item<class_NativeMenu_method_add_multistate_item>` for details.
+Sets the state of a multistate item. See :ref:`add_multistate_item()<class_NativeMenu_method_add_multistate_item>` for details.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -1249,7 +1249,7 @@ Sets the submenu RID of the item at index ``idx``. The submenu is a global menu 
 
 |void| **set_item_tag**\ (\ rid\: :ref:`RID<class_RID>`, idx\: :ref:`int<class_int>`, tag\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_NativeMenu_method_set_item_tag>`
 
-Sets the metadata of an item, which may be of any type. You can later get it with :ref:`get_item_tag<class_NativeMenu_method_get_item_tag>`, which provides a simple way of assigning context data to items.
+Sets the metadata of an item, which may be of any type. You can later get it with :ref:`get_item_tag()<class_NativeMenu_method_get_item_tag>`, which provides a simple way of assigning context data to items.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -1307,7 +1307,7 @@ Sets the minimum width of the global menu.
 
 Registers callable to emit when the menu is about to show.
 
-\ **Note:** The OS can simulate menu opening to track menu item changes and global shortcuts, in which case the corresponding close callback is not triggered. Use :ref:`is_opened<class_NativeMenu_method_is_opened>` to check if the menu is currently opened.
+\ **Note:** The OS can simulate menu opening to track menu item changes and global shortcuts, in which case the corresponding close callback is not triggered. Use :ref:`is_opened()<class_NativeMenu_method_is_opened>` to check if the menu is currently opened.
 
 \ **Note:** This method is implemented on macOS and Windows.
 

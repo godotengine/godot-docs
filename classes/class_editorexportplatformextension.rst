@@ -21,7 +21,7 @@ Description
 
 External :ref:`EditorExportPlatform<class_EditorExportPlatform>` implementations should inherit from this class.
 
-To use :ref:`EditorExportPlatform<class_EditorExportPlatform>`, register it using the :ref:`EditorPlugin.add_export_platform<class_EditorPlugin_method_add_export_platform>` method first.
+To use :ref:`EditorExportPlatform<class_EditorExportPlatform>`, register it using the :ref:`EditorPlugin.add_export_platform()<class_EditorPlugin_method_add_export_platform>` method first.
 
 .. rst-class:: classref-reftable-group
 
@@ -118,9 +118,9 @@ Method Descriptions
 
 **Optional.**\ 
 
-Returns ``true``, if specified ``preset`` is valid and can be exported. Use :ref:`set_config_error<class_EditorExportPlatformExtension_method_set_config_error>` and :ref:`set_config_missing_templates<class_EditorExportPlatformExtension_method_set_config_missing_templates>` to set error details.
+Returns ``true``, if specified ``preset`` is valid and can be exported. Use :ref:`set_config_error()<class_EditorExportPlatformExtension_method_set_config_error>` and :ref:`set_config_missing_templates()<class_EditorExportPlatformExtension_method_set_config_missing_templates>` to set error details.
 
-Usual implementation can call :ref:`_has_valid_export_configuration<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>` and :ref:`_has_valid_project_configuration<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` to determine if export is possible.
+Usual implementation can call :ref:`_has_valid_export_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>` and :ref:`_has_valid_project_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` to determine if export is possible.
 
 .. rst-class:: classref-item-separator
 
@@ -186,7 +186,7 @@ Creates a full project at ``path`` for the specified ``preset``.
 
 This method is called when "Export" button is pressed in the export dialog.
 
-This method implementation can call :ref:`EditorExportPlatform.save_pack<class_EditorExportPlatform_method_save_pack>` or :ref:`EditorExportPlatform.save_zip<class_EditorExportPlatform_method_save_zip>` to use default PCK/ZIP export process, or calls :ref:`EditorExportPlatform.export_project_files<class_EditorExportPlatform_method_export_project_files>` and implement custom callback for processing each exported file.
+This method implementation can call :ref:`EditorExportPlatform.save_pack()<class_EditorExportPlatform_method_save_pack>` or :ref:`EditorExportPlatform.save_zip()<class_EditorExportPlatform_method_save_zip>` to use default PCK/ZIP export process, or calls :ref:`EditorExportPlatform.export_project_files()<class_EditorExportPlatform_method_export_project_files>` and implement custom callback for processing each exported file.
 
 .. rst-class:: classref-item-separator
 
@@ -318,11 +318,11 @@ Additionally, the following keys are supported:
 
 - ``default_value: Variant``, default value of the property.
 
-- ``update_visibility: bool``, if set to ``true``, :ref:`_get_export_option_visibility<class_EditorExportPlatformExtension_private_method__get_export_option_visibility>` is called for each property when this property is changed.
+- ``update_visibility: bool``, if set to ``true``, :ref:`_get_export_option_visibility()<class_EditorExportPlatformExtension_private_method__get_export_option_visibility>` is called for each property when this property is changed.
 
-- ``required: bool``, if set to ``true``, this property warnings are critical, and should be resolved to make export possible. This value is a hint for the :ref:`_has_valid_export_configuration<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>` implementation, and not used by the engine directly.
+- ``required: bool``, if set to ``true``, this property warnings are critical, and should be resolved to make export possible. This value is a hint for the :ref:`_has_valid_export_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>` implementation, and not used by the engine directly.
 
-See also :ref:`Object._get_property_list<class_Object_private_method__get_property_list>`.
+See also :ref:`Object._get_property_list()<class_Object_private_method__get_property_list>`.
 
 .. rst-class:: classref-item-separator
 
@@ -336,7 +336,7 @@ See also :ref:`Object._get_property_list<class_Object_private_method__get_proper
 
 **Required.**\ 
 
-Returns platform logo displayed in the export dialog, logo should be 32x32 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale<class_EditorInterface_method_get_editor_scale>`.
+Returns platform logo displayed in the export dialog, logo should be 32x32 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`.
 
 .. rst-class:: classref-item-separator
 
@@ -364,7 +364,7 @@ Returns export platform name.
 
 **Optional.**\ 
 
-Returns one-click deploy menu item icon for the specified ``device``, icon should be 16x16 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale<class_EditorInterface_method_get_editor_scale>`.
+Returns one-click deploy menu item icon for the specified ``device``, icon should be 16x16 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`.
 
 .. rst-class:: classref-item-separator
 
@@ -476,7 +476,7 @@ Returns array of platform specific features for the specified ``preset``.
 
 **Optional.**\ 
 
-Returns icon of the one-click deploy menu button, icon should be 16x16 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale<class_EditorInterface_method_get_editor_scale>`.
+Returns icon of the one-click deploy menu button, icon should be 16x16 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`.
 
 .. rst-class:: classref-item-separator
 
@@ -574,7 +574,7 @@ Returns ``true`` if export options list is changed and presets should be updated
 
 :ref:`String<class_String>` **get_config_error**\ (\ ) |const| :ref:`🔗<class_EditorExportPlatformExtension_method_get_config_error>`
 
-Returns current configuration error message text. This method should be called only from the :ref:`_can_export<class_EditorExportPlatformExtension_private_method__can_export>`, :ref:`_has_valid_export_configuration<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>`, or :ref:`_has_valid_project_configuration<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` implementations.
+Returns current configuration error message text. This method should be called only from the :ref:`_can_export()<class_EditorExportPlatformExtension_private_method__can_export>`, :ref:`_has_valid_export_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>`, or :ref:`_has_valid_project_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` implementations.
 
 .. rst-class:: classref-item-separator
 
@@ -586,7 +586,7 @@ Returns current configuration error message text. This method should be called o
 
 :ref:`bool<class_bool>` **get_config_missing_templates**\ (\ ) |const| :ref:`🔗<class_EditorExportPlatformExtension_method_get_config_missing_templates>`
 
-Returns ``true`` is export templates are missing from the current configuration. This method should be called only from the :ref:`_can_export<class_EditorExportPlatformExtension_private_method__can_export>`, :ref:`_has_valid_export_configuration<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>`, or :ref:`_has_valid_project_configuration<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` implementations.
+Returns ``true`` is export templates are missing from the current configuration. This method should be called only from the :ref:`_can_export()<class_EditorExportPlatformExtension_private_method__can_export>`, :ref:`_has_valid_export_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>`, or :ref:`_has_valid_project_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` implementations.
 
 .. rst-class:: classref-item-separator
 
@@ -598,7 +598,7 @@ Returns ``true`` is export templates are missing from the current configuration.
 
 |void| **set_config_error**\ (\ error_text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorExportPlatformExtension_method_set_config_error>`
 
-Sets current configuration error message text. This method should be called only from the :ref:`_can_export<class_EditorExportPlatformExtension_private_method__can_export>`, :ref:`_has_valid_export_configuration<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>`, or :ref:`_has_valid_project_configuration<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` implementations.
+Sets current configuration error message text. This method should be called only from the :ref:`_can_export()<class_EditorExportPlatformExtension_private_method__can_export>`, :ref:`_has_valid_export_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>`, or :ref:`_has_valid_project_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` implementations.
 
 .. rst-class:: classref-item-separator
 
@@ -610,7 +610,7 @@ Sets current configuration error message text. This method should be called only
 
 |void| **set_config_missing_templates**\ (\ missing_templates\: :ref:`bool<class_bool>`\ ) |const| :ref:`🔗<class_EditorExportPlatformExtension_method_set_config_missing_templates>`
 
-Set to ``true`` is export templates are missing from the current configuration. This method should be called only from the :ref:`_can_export<class_EditorExportPlatformExtension_private_method__can_export>`, :ref:`_has_valid_export_configuration<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>`, or :ref:`_has_valid_project_configuration<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` implementations.
+Set to ``true`` is export templates are missing from the current configuration. This method should be called only from the :ref:`_can_export()<class_EditorExportPlatformExtension_private_method__can_export>`, :ref:`_has_valid_export_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_export_configuration>`, or :ref:`_has_valid_project_configuration()<class_EditorExportPlatformExtension_private_method__has_valid_project_configuration>` implementations.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

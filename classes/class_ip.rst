@@ -242,7 +242,7 @@ Each adapter is a dictionary of the form:
 
 :ref:`String<class_String>` **get_resolve_item_address**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_IP_method_get_resolve_item_address>`
 
-Returns a queued hostname's IP address, given its queue ``id``. Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>`).
+Returns a queued hostname's IP address, given its queue ``id``. Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status()<class_IP_method_get_resolve_item_status>`).
 
 .. rst-class:: classref-item-separator
 
@@ -254,7 +254,7 @@ Returns a queued hostname's IP address, given its queue ``id``. Returns an empty
 
 :ref:`Array<class_Array>` **get_resolve_item_addresses**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_IP_method_get_resolve_item_addresses>`
 
-Returns resolved addresses, or an empty array if an error happened or resolution didn't happen yet (see :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>`).
+Returns resolved addresses, or an empty array if an error happened or resolution didn't happen yet (see :ref:`get_resolve_item_status()<class_IP_method_get_resolve_item_status>`).
 
 .. rst-class:: classref-item-separator
 

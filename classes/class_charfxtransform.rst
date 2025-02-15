@@ -200,7 +200,7 @@ Glyph flags. See :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` for more info
 - |void| **set_glyph_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_glyph_index**\ (\ )
 
-Glyph index specific to the :ref:`font<class_CharFXTransform_property_font>`. If you want to replace this glyph, use :ref:`TextServer.font_get_glyph_index<class_TextServer_method_font_get_glyph_index>` with :ref:`font<class_CharFXTransform_property_font>` to get a new glyph index for a single character.
+Glyph index specific to the :ref:`font<class_CharFXTransform_property_font>`. If you want to replace this glyph, use :ref:`TextServer.font_get_glyph_index()<class_TextServer_method_font_get_glyph_index>` with :ref:`font<class_CharFXTransform_property_font>` to get a new glyph index for a single character.
 
 .. rst-class:: classref-item-separator
 

@@ -12,14 +12,14 @@ PhysicsTestMotionParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Provides parameters for :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`.
+Provides parameters for :ref:`PhysicsServer2D.body_test_motion()<class_PhysicsServer2D_method_body_test_motion>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-By changing various properties of this object, such as the motion, you can configure the parameters for :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`.
+By changing various properties of this object, such as the motion, you can configure the parameters for :ref:`PhysicsServer2D.body_test_motion()<class_PhysicsServer2D_method_body_test_motion>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -84,7 +84,7 @@ If set to ``false``, shapes of type :ref:`PhysicsServer2D.SHAPE_SEPARATION_RAY<c
 - |void| **set_exclude_bodies**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]\ )
 - :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_exclude_bodies**\ (\ )
 
-Optional array of body :ref:`RID<class_RID>` to exclude from collision. Use :ref:`CollisionObject2D.get_rid<class_CollisionObject2D_method_get_rid>` to get the :ref:`RID<class_RID>` associated with a :ref:`CollisionObject2D<class_CollisionObject2D>`-derived node.
+Optional array of body :ref:`RID<class_RID>` to exclude from collision. Use :ref:`CollisionObject2D.get_rid()<class_CollisionObject2D_method_get_rid>` to get the :ref:`RID<class_RID>` associated with a :ref:`CollisionObject2D<class_CollisionObject2D>`-derived node.
 
 .. rst-class:: classref-item-separator
 
@@ -101,7 +101,7 @@ Optional array of body :ref:`RID<class_RID>` to exclude from collision. Use :ref
 - |void| **set_exclude_objects**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`int<class_int>`\]\ )
 - :ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **get_exclude_objects**\ (\ )
 
-Optional array of object unique instance ID to exclude from collision. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Optional array of object unique instance ID to exclude from collision. See :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 

@@ -24,13 +24,13 @@ Description
 
 By default, **MultiplayerSynchronizer** synchronizes configured properties to all peers.
 
-Visibility can be handled directly with :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` or as-needed with :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` and :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
+Visibility can be handled directly with :ref:`set_visibility_for()<class_MultiplayerSynchronizer_method_set_visibility_for>` or as-needed with :ref:`add_visibility_filter()<class_MultiplayerSynchronizer_method_add_visibility_filter>` and :ref:`update_visibility()<class_MultiplayerSynchronizer_method_update_visibility>`.
 
 \ :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`\ s will handle nodes according to visibility of synchronizers as long as the node at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` was spawned by one.
 
-Internally, **MultiplayerSynchronizer** uses :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>` to notify synchronization start passing the :ref:`Node<class_Node>` at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` as the ``object`` and itself as the ``configuration``, and uses :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>` to notify synchronization end in a similar way.
+Internally, **MultiplayerSynchronizer** uses :ref:`MultiplayerAPI.object_configuration_add()<class_MultiplayerAPI_method_object_configuration_add>` to notify synchronization start passing the :ref:`Node<class_Node>` at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` as the ``object`` and itself as the ``configuration``, and uses :ref:`MultiplayerAPI.object_configuration_remove()<class_MultiplayerAPI_method_object_configuration_remove>` to notify synchronization end in a similar way.
 
-\ **Note:** Synchronization is not supported for :ref:`Object<class_Object>` type properties, like :ref:`Resource<class_Resource>`. Properties that are unique to each peer, like the instance IDs of :ref:`Object<class_Object>`\ s (see :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`) or :ref:`RID<class_RID>`\ s, will also not work in synchronization.
+\ **Note:** Synchronization is not supported for :ref:`Object<class_Object>` type properties, like :ref:`Resource<class_Resource>`. Properties that are unique to each peer, like the instance IDs of :ref:`Object<class_Object>`\ s (see :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`) or :ref:`RID<class_RID>`\ s, will also not work in synchronization.
 
 .. rst-class:: classref-reftable-group
 
@@ -113,7 +113,7 @@ Emitted when a new synchronization state is received by this synchronizer after 
 
 **visibility_changed**\ (\ for_peer\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MultiplayerSynchronizer_signal_visibility_changed>`
 
-Emitted when visibility of ``for_peer`` is updated. See :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
+Emitted when visibility of ``for_peer`` is updated. See :ref:`update_visibility()<class_MultiplayerSynchronizer_method_update_visibility>`.
 
 .. rst-class:: classref-section-separator
 
@@ -152,7 +152,7 @@ Visibility filters are updated during physics frames (see :ref:`Node.NOTIFICATIO
 
 :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **VISIBILITY_PROCESS_NONE** = ``2``
 
-Visibility filters are not updated automatically, and must be updated manually by calling :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
+Visibility filters are not updated automatically, and must be updated manually by calling :ref:`update_visibility()<class_MultiplayerSynchronizer_method_update_visibility>`.
 
 .. rst-class:: classref-section-separator
 
@@ -191,7 +191,7 @@ Time interval between delta synchronizations. Used when the replication is set t
 - |void| **set_visibility_public**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_visibility_public**\ (\ )
 
-Whether synchronization should be visible to all peers by default. See :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` and :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` for ways of configuring fine-grained visibility options.
+Whether synchronization should be visible to all peers by default. See :ref:`set_visibility_for()<class_MultiplayerSynchronizer_method_set_visibility_for>` and :ref:`add_visibility_filter()<class_MultiplayerSynchronizer_method_add_visibility_filter>` for ways of configuring fine-grained visibility options.
 
 .. rst-class:: classref-item-separator
 

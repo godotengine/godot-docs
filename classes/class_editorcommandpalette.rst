@@ -42,7 +42,7 @@ Command key names use slash delimiters to distinguish sections, for example: ``"
 
 
 
-\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_command_palette<class_EditorInterface_method_get_command_palette>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_command_palette()<class_EditorInterface_method_get_command_palette>`.
 
 .. rst-class:: classref-reftable-group
 

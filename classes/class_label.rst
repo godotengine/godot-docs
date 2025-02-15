@@ -505,7 +505,7 @@ Sets the clipping behavior when :ref:`visible_characters<class_Label_property_vi
 - |void| **set_visible_ratio**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_visible_ratio**\ (\ )
 
-The fraction of characters to display, relative to the total number of characters (see :ref:`get_total_character_count<class_Label_method_get_total_character_count>`). If set to ``1.0``, all characters are displayed. If set to ``0.5``, only half of the characters will be displayed. This can be useful when animating the text appearing in a dialog box.
+The fraction of characters to display, relative to the total number of characters (see :ref:`get_total_character_count()<class_Label_method_get_total_character_count>`). If set to ``1.0``, all characters are displayed. If set to ``0.5``, only half of the characters will be displayed. This can be useful when animating the text appearing in a dialog box.
 
 \ **Note:** Setting this property updates :ref:`visible_characters<class_Label_property_visible_characters>` accordingly.
 

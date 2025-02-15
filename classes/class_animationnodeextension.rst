@@ -54,7 +54,7 @@ Method Descriptions
 
 :ref:`PackedFloat32Array<class_PackedFloat32Array>` **_process_animation_node**\ (\ playback_info\: :ref:`PackedFloat64Array<class_PackedFloat64Array>`, test_only\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_AnimationNodeExtension_private_method__process_animation_node>`
 
-A version of the :ref:`AnimationNode._process<class_AnimationNode_private_method__process>` method that is meant to be overridden by custom nodes. It returns a :ref:`PackedFloat32Array<class_PackedFloat32Array>` with the processed animation data.
+A version of the :ref:`AnimationNode._process()<class_AnimationNode_private_method__process>` method that is meant to be overridden by custom nodes. It returns a :ref:`PackedFloat32Array<class_PackedFloat32Array>` with the processed animation data.
 
 The :ref:`PackedFloat64Array<class_PackedFloat64Array>` parameter contains the playback information, containing the following values encoded as floating point numbers (in order): playback time and delta, start and end times, whether a seek was requested (encoded as a float greater than ``0``), whether the seek request was externally requested (encoded as a float greater than ``0``), the current :ref:`LoopedFlag<enum_Animation_LoopedFlag>` (encoded as a float), and the current blend weight.
 

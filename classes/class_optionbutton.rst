@@ -414,7 +414,7 @@ Returns the ID of the selected item, or ``-1`` if no item is selected.
 
 :ref:`Variant<class_Variant>` **get_selected_metadata**\ (\ ) |const| :ref:`🔗<class_OptionButton_method_get_selected_metadata>`
 
-Gets the metadata of the selected item. Metadata for items can be set using :ref:`set_item_metadata<class_OptionButton_method_set_item_metadata>`.
+Gets the metadata of the selected item. Metadata for items can be set using :ref:`set_item_metadata()<class_OptionButton_method_set_item_metadata>`.
 
 .. rst-class:: classref-item-separator
 

@@ -21,7 +21,7 @@ An array specifically designed to hold bytes. Packs data tightly, so it saves me
 
 \ **PackedByteArray** also provides methods to encode/decode various types to/from bytes. The way values are encoded is an implementation detail and shouldn't be relied upon when interacting with external apps.
 
-\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedByteArray_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate()<class_PackedByteArray_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
 
 .. note::
 
@@ -243,7 +243,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **append**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_append>`
 
-Appends an element at the end of the array (alias of :ref:`push_back<class_PackedByteArray_method_push_back>`).
+Appends an element at the end of the array (alias of :ref:`push_back()<class_PackedByteArray_method_push_back>`).
 
 .. rst-class:: classref-item-separator
 
@@ -269,7 +269,7 @@ Appends a **PackedByteArray** at the end of this array.
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
-\ **Note:** Calling :ref:`bsearch<class_PackedByteArray_method_bsearch>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch()<class_PackedByteArray_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 .. rst-class:: classref-item-separator
 
@@ -281,7 +281,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 |void| **clear**\ (\ ) :ref:`🔗<class_PackedByteArray_method_clear>`
 
-Clears the array. This is equivalent to using :ref:`resize<class_PackedByteArray_method_resize>` with a size of ``0``.
+Clears the array. This is equivalent to using :ref:`resize()<class_PackedByteArray_method_resize>` with a size of ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -489,7 +489,7 @@ Returns a new **PackedByteArray** with the data decompressed. Set ``buffer_size`
 
 Returns a new **PackedByteArray** with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants. **This method only accepts brotli, gzip, and deflate compression modes.**\ 
 
-This method is potentially slower than :ref:`decompress<class_PackedByteArray_method_decompress>`, as it may have to re-allocate its output buffer multiple times while decompressing, whereas :ref:`decompress<class_PackedByteArray_method_decompress>` knows it's output buffer size from the beginning.
+This method is potentially slower than :ref:`decompress()<class_PackedByteArray_method_decompress>`, as it may have to re-allocate its output buffer multiple times while decompressing, whereas :ref:`decompress()<class_PackedByteArray_method_decompress>` knows it's output buffer size from the beginning.
 
 GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a small compressed payload to decompress to a potentially very large output. To guard against this, you may provide a maximum size this function is allowed to allocate in bytes via ``max_output_size``. Passing -1 will allow for unbounded output. If any positive value is passed, and the decompression exceeds that amount in bytes, then an error will be returned.
 
@@ -661,7 +661,7 @@ Encodes a :ref:`Variant<class_Variant>` at the index of ``byte_offset`` bytes. A
 
 |void| **fill**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_fill>`
 
-Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedByteArray_method_resize>` to create an array with a given size and initialized elements.
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize()<class_PackedByteArray_method_resize>` to create an array with a given size and initialized elements.
 
 .. rst-class:: classref-item-separator
 
@@ -697,7 +697,7 @@ Returns the byte at the given ``index`` in the array. This is the same as using 
 
 :ref:`String<class_String>` **get_string_from_ascii**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_ascii>`
 
-Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`. This is the inverse of :ref:`String.to_ascii_buffer<class_String_method_to_ascii_buffer>`.
+Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8()<class_PackedByteArray_method_get_string_from_utf8>` if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8()<class_PackedByteArray_method_get_string_from_utf8>`. This is the inverse of :ref:`String.to_ascii_buffer()<class_String_method_to_ascii_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -709,7 +709,7 @@ Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast altern
 
 :ref:`String<class_String>` **get_string_from_utf8**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_utf8>`
 
-Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string. This is the inverse of :ref:`String.to_utf8_buffer<class_String_method_to_utf8_buffer>`.
+Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii()<class_PackedByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string. This is the inverse of :ref:`String.to_utf8_buffer()<class_String_method_to_utf8_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -721,7 +721,7 @@ Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`g
 
 :ref:`String<class_String>` **get_string_from_utf16**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_utf16>`
 
-Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is missing, system endianness is assumed. Returns empty string if source array is not valid UTF-16 string. This is the inverse of :ref:`String.to_utf16_buffer<class_String_method_to_utf16_buffer>`.
+Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is missing, system endianness is assumed. Returns empty string if source array is not valid UTF-16 string. This is the inverse of :ref:`String.to_utf16_buffer()<class_String_method_to_utf16_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -733,7 +733,7 @@ Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is miss
 
 :ref:`String<class_String>` **get_string_from_utf32**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_utf32>`
 
-Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness is assumed. Returns empty string if source array is not valid UTF-32 string. This is the inverse of :ref:`String.to_utf32_buffer<class_String_method_to_utf32_buffer>`.
+Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness is assumed. Returns empty string if source array is not valid UTF-32 string. This is the inverse of :ref:`String.to_utf32_buffer()<class_String_method_to_utf32_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -745,7 +745,7 @@ Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness 
 
 :ref:`String<class_String>` **get_string_from_wchar**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_wchar>`
 
-Converts wide character (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded array to :ref:`String<class_String>`. Returns empty string if source array is not valid wide string. This is the inverse of :ref:`String.to_wchar_buffer<class_String_method_to_wchar_buffer>`.
+Converts wide character (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded array to :ref:`String<class_String>`. Returns empty string if source array is not valid wide string. This is the inverse of :ref:`String.to_wchar_buffer()<class_String_method_to_wchar_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -856,7 +856,7 @@ Removes an element from the array by index.
 
 :ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_resize>`
 
-Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize<class_PackedByteArray_method_resize>` once and assigning the new values is faster than adding new elements one by one.
+Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize()<class_PackedByteArray_method_resize>` once and assigning the new values is faster than adding new elements one by one.
 
 .. rst-class:: classref-item-separator
 
@@ -1025,7 +1025,7 @@ Returns ``true`` if contents of the arrays differ.
 
 :ref:`PackedByteArray<class_PackedByteArray>` **operator +**\ (\ right\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_PackedByteArray_operator_sum_PackedByteArray>`
 
-Returns a new **PackedByteArray** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedByteArray_method_append_array>` instead.
+Returns a new **PackedByteArray** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array()<class_PackedByteArray_method_append_array>` instead.
 
 .. rst-class:: classref-item-separator
 

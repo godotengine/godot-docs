@@ -151,7 +151,7 @@ Property Descriptions
 
 If ``true`` and MSAA is enabled, this will trigger a color buffer resolve before the effect is run.
 
-\ **Note:** In :ref:`_render_callback<class_CompositorEffect_private_method__render_callback>`, to access the resolved buffer use:
+\ **Note:** In :ref:`_render_callback()<class_CompositorEffect_private_method__render_callback>`, to access the resolved buffer use:
 
 ::
 
@@ -175,7 +175,7 @@ If ``true`` and MSAA is enabled, this will trigger a color buffer resolve before
 
 If ``true`` and MSAA is enabled, this will trigger a depth buffer resolve before the effect is run.
 
-\ **Note:** In :ref:`_render_callback<class_CompositorEffect_private_method__render_callback>`, to access the resolved buffer use:
+\ **Note:** In :ref:`_render_callback()<class_CompositorEffect_private_method__render_callback>`, to access the resolved buffer use:
 
 ::
 
@@ -233,7 +233,7 @@ If ``true`` this rendering effect is applied to any viewport it is added to.
 
 If ``true`` this triggers motion vectors being calculated during the opaque render state.
 
-\ **Note:** In :ref:`_render_callback<class_CompositorEffect_private_method__render_callback>`, to access the motion vector buffer use:
+\ **Note:** In :ref:`_render_callback()<class_CompositorEffect_private_method__render_callback>`, to access the motion vector buffer use:
 
 ::
 
@@ -257,7 +257,7 @@ If ``true`` this triggers motion vectors being calculated during the opaque rend
 
 If ``true`` this triggers normal and roughness data to be output during our depth pre-pass, only applicable for the Forward+ renderer.
 
-\ **Note:** In :ref:`_render_callback<class_CompositorEffect_private_method__render_callback>`, to access the roughness buffer use:
+\ **Note:** In :ref:`_render_callback()<class_CompositorEffect_private_method__render_callback>`, to access the roughness buffer use:
 
 ::
 

@@ -88,7 +88,7 @@ Property Descriptions
 - |void| **set_cancel_button_text**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_cancel_button_text**\ (\ )
 
-The text displayed by the cancel button (see :ref:`get_cancel_button<class_ConfirmationDialog_method_get_cancel_button>`).
+The text displayed by the cancel button (see :ref:`get_cancel_button()<class_ConfirmationDialog_method_get_cancel_button>`).
 
 .. rst-class:: classref-section-separator
 

@@ -159,9 +159,9 @@ Signals
 
 **animation_changed**\ (\ old_name\: :ref:`StringName<class_StringName>`, new_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationPlayer_signal_animation_changed>`
 
-Emitted when a queued animation plays after the previous animation finished. See also :ref:`queue<class_AnimationPlayer_method_queue>`.
+Emitted when a queued animation plays after the previous animation finished. See also :ref:`queue()<class_AnimationPlayer_method_queue>`.
 
-\ **Note:** The signal is not emitted when the animation is changed via :ref:`play<class_AnimationPlayer_method_play>` or by an :ref:`AnimationTree<class_AnimationTree>`.
+\ **Note:** The signal is not emitted when the animation is changed via :ref:`play()<class_AnimationPlayer_method_play>` or by an :ref:`AnimationTree<class_AnimationTree>`.
 
 .. rst-class:: classref-item-separator
 
@@ -304,7 +304,7 @@ The key of the animation to play when the scene loads.
 - |void| **set_current_animation**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_current_animation**\ (\ )
 
-The key of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See :ref:`play<class_AnimationPlayer_method_play>` for more information on playing animations.
+The key of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See :ref:`play()<class_AnimationPlayer_method_play>` for more information on playing animations.
 
 \ **Note:** While this property appears in the Inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see :ref:`Animation<class_Animation>`.
 
@@ -355,7 +355,7 @@ The position (in seconds) of the currently playing animation.
 - |void| **set_movie_quit_on_finish_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_movie_quit_on_finish_enabled**\ (\ )
 
-If ``true`` and the engine is running in Movie Maker mode (see :ref:`MovieWriter<class_MovieWriter>`), exits the engine with :ref:`SceneTree.quit<class_SceneTree_method_quit>` as soon as an animation is done playing in this **AnimationPlayer**. A message is printed when the engine quits for this reason.
+If ``true`` and the engine is running in Movie Maker mode (see :ref:`MovieWriter<class_MovieWriter>`), exits the engine with :ref:`SceneTree.quit()<class_SceneTree_method_quit>` as soon as an animation is done playing in this **AnimationPlayer**. A message is printed when the engine quits for this reason.
 
 \ **Note:** This obeys the same logic as the :ref:`AnimationMixer.animation_finished<class_AnimationMixer_signal_animation_finished>` signal, so it will not quit the engine if the animation is set to be looping.
 
@@ -374,7 +374,7 @@ If ``true`` and the engine is running in Movie Maker mode (see :ref:`MovieWriter
 - |void| **set_auto_capture**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_auto_capture**\ (\ )
 
-If ``true``, performs :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>` before playback automatically. This means just :ref:`play_with_capture<class_AnimationPlayer_method_play_with_capture>` is executed with default arguments instead of :ref:`play<class_AnimationPlayer_method_play>`.
+If ``true``, performs :ref:`AnimationMixer.capture()<class_AnimationMixer_method_capture>` before playback automatically. This means just :ref:`play_with_capture()<class_AnimationPlayer_method_play_with_capture>` is executed with default arguments instead of :ref:`play()<class_AnimationPlayer_method_play>`.
 
 \ **Note:** Capture interpolation is only performed if the animation contains a capture track. See also :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>`.
 
@@ -393,7 +393,7 @@ If ``true``, performs :ref:`AnimationMixer.capture<class_AnimationMixer_method_c
 - |void| **set_auto_capture_duration**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_auto_capture_duration**\ (\ )
 
-See also :ref:`play_with_capture<class_AnimationPlayer_method_play_with_capture>` and :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>`.
+See also :ref:`play_with_capture()<class_AnimationPlayer_method_play_with_capture>` and :ref:`AnimationMixer.capture()<class_AnimationMixer_method_capture>`.
 
 If :ref:`playback_auto_capture_duration<class_AnimationPlayer_property_playback_auto_capture_duration>` is negative value, the duration is set to the interval between the current position and the first key.
 
@@ -544,7 +544,7 @@ Returns the call mode used for "Call Method" tracks.
 
 :ref:`float<class_float>` **get_playing_speed**\ (\ ) |const| :ref:`🔗<class_AnimationPlayer_method_get_playing_speed>`
 
-Returns the actual playing speed of current animation or ``0`` if not playing. This speed is the :ref:`speed_scale<class_AnimationPlayer_property_speed_scale>` property multiplied by ``custom_speed`` argument specified when calling the :ref:`play<class_AnimationPlayer_method_play>` method.
+Returns the actual playing speed of current animation or ``0`` if not playing. This speed is the :ref:`speed_scale<class_AnimationPlayer_property_speed_scale>` property multiplied by ``custom_speed`` argument specified when calling the :ref:`play()<class_AnimationPlayer_method_play>` method.
 
 Returns a negative value if the current animation is playing backwards.
 
@@ -646,9 +646,9 @@ Returns ``true`` if an animation is currently playing (even if :ref:`speed_scale
 
 |void| **pause**\ (\ ) :ref:`🔗<class_AnimationPlayer_method_pause>`
 
-Pauses the currently playing animation. The :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>` will be kept and calling :ref:`play<class_AnimationPlayer_method_play>` or :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>` without arguments or with the same animation name as :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>` will resume the animation.
+Pauses the currently playing animation. The :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>` will be kept and calling :ref:`play()<class_AnimationPlayer_method_play>` or :ref:`play_backwards()<class_AnimationPlayer_method_play_backwards>` without arguments or with the same animation name as :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>` will resume the animation.
 
-See also :ref:`stop<class_AnimationPlayer_method_stop>`.
+See also :ref:`stop()<class_AnimationPlayer_method_stop>`.
 
 .. rst-class:: classref-item-separator
 
@@ -662,7 +662,7 @@ See also :ref:`stop<class_AnimationPlayer_method_stop>`.
 
 Plays the animation with key ``name``. Custom blend times and speed can be set.
 
-The ``from_end`` option only affects when switching to a new animation track, or if the same track but at the start or end. It does not affect resuming playback that was paused in the middle of an animation. If ``custom_speed`` is negative and ``from_end`` is ``true``, the animation will play backwards (which is equivalent to calling :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>`).
+The ``from_end`` option only affects when switching to a new animation track, or if the same track but at the start or end. It does not affect resuming playback that was paused in the middle of an animation. If ``custom_speed`` is negative and ``from_end`` is ``true``, the animation will play backwards (which is equivalent to calling :ref:`play_backwards()<class_AnimationPlayer_method_play_backwards>`).
 
 The **AnimationPlayer** keeps track of its current or last played animation with :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`. If this method is called with that same animation ``name``, or with no ``name`` parameter, the assigned animation will resume playing if it was paused.
 
@@ -680,7 +680,7 @@ The **AnimationPlayer** keeps track of its current or last played animation with
 
 Plays the animation with key ``name`` in reverse.
 
-This method is a shorthand for :ref:`play<class_AnimationPlayer_method_play>` with ``custom_speed = -1.0`` and ``from_end = true``, so see its description for more information.
+This method is a shorthand for :ref:`play()<class_AnimationPlayer_method_play>` with ``custom_speed = -1.0`` and ``from_end = true``, so see its description for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -692,7 +692,7 @@ This method is a shorthand for :ref:`play<class_AnimationPlayer_method_play>` wi
 
 |void| **play_section**\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_time\: :ref:`float<class_float>` = -1, end_time\: :ref:`float<class_float>` = -1, custom_blend\: :ref:`float<class_float>` = -1, custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AnimationPlayer_method_play_section>`
 
-Plays the animation with key ``name`` and the section starting from ``start_time`` and ending on ``end_time``. See also :ref:`play<class_AnimationPlayer_method_play>`.
+Plays the animation with key ``name`` and the section starting from ``start_time`` and ending on ``end_time``. See also :ref:`play()<class_AnimationPlayer_method_play>`.
 
 Setting ``start_time`` to a value outside the range of the animation means the start of the animation will be used instead, and setting ``end_time`` to a value outside the range of the animation means the end of the animation will be used instead. ``start_time`` cannot be equal to ``end_time``.
 
@@ -708,7 +708,7 @@ Setting ``start_time`` to a value outside the range of the animation means the s
 
 Plays the animation with key ``name`` and the section starting from ``start_time`` and ending on ``end_time`` in reverse.
 
-This method is a shorthand for :ref:`play_section<class_AnimationPlayer_method_play_section>` with ``custom_speed = -1.0`` and ``from_end = true``, see its description for more information.
+This method is a shorthand for :ref:`play_section()<class_AnimationPlayer_method_play_section>` with ``custom_speed = -1.0`` and ``from_end = true``, see its description for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -722,7 +722,7 @@ This method is a shorthand for :ref:`play_section<class_AnimationPlayer_method_p
 
 Plays the animation with key ``name`` and the section starting from ``start_marker`` and ending on ``end_marker``.
 
-If the start marker is empty, the section starts from the beginning of the animation. If the end marker is empty, the section ends on the end of the animation. See also :ref:`play<class_AnimationPlayer_method_play>`.
+If the start marker is empty, the section starts from the beginning of the animation. If the end marker is empty, the section ends on the end of the animation. See also :ref:`play()<class_AnimationPlayer_method_play>`.
 
 .. rst-class:: classref-item-separator
 
@@ -736,7 +736,7 @@ If the start marker is empty, the section starts from the beginning of the anima
 
 Plays the animation with key ``name`` and the section starting from ``start_marker`` and ending on ``end_marker`` in reverse.
 
-This method is a shorthand for :ref:`play_section_with_markers<class_AnimationPlayer_method_play_section_with_markers>` with ``custom_speed = -1.0`` and ``from_end = true``, see its description for more information.
+This method is a shorthand for :ref:`play_section_with_markers()<class_AnimationPlayer_method_play_section_with_markers>` with ``custom_speed = -1.0`` and ``from_end = true``, see its description for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -748,7 +748,7 @@ This method is a shorthand for :ref:`play_section_with_markers<class_AnimationPl
 
 |void| **play_with_capture**\ (\ name\: :ref:`StringName<class_StringName>` = &"", duration\: :ref:`float<class_float>` = -1.0, custom_blend\: :ref:`float<class_float>` = -1, custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false, trans_type\: :ref:`TransitionType<enum_Tween_TransitionType>` = 0, ease_type\: :ref:`EaseType<enum_Tween_EaseType>` = 0\ ) :ref:`🔗<class_AnimationPlayer_method_play_with_capture>`
 
-See also :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>`.
+See also :ref:`AnimationMixer.capture()<class_AnimationMixer_method_capture>`.
 
 You can use this method to use more detailed options for capture than those performed by :ref:`playback_auto_capture<class_AnimationPlayer_property_playback_auto_capture>`. When :ref:`playback_auto_capture<class_AnimationPlayer_property_playback_auto_capture>` is ``false``, this method is almost the same as the following:
 
@@ -803,7 +803,7 @@ Seeks the animation to the ``seconds`` point in time (in seconds). If ``update``
 
 If ``update_only`` is ``true``, the method / audio / animation playback tracks will not be processed.
 
-\ **Note:** Seeking to the end of the animation doesn't emit :ref:`AnimationMixer.animation_finished<class_AnimationMixer_signal_animation_finished>`. If you want to skip animation and emit the signal, use :ref:`AnimationMixer.advance<class_AnimationMixer_method_advance>`.
+\ **Note:** Seeking to the end of the animation doesn't emit :ref:`AnimationMixer.animation_finished<class_AnimationMixer_signal_animation_finished>`. If you want to skip animation and emit the signal, use :ref:`AnimationMixer.advance()<class_AnimationMixer_method_advance>`.
 
 .. rst-class:: classref-item-separator
 
@@ -869,7 +869,7 @@ Sets the node which node path references will travel from.
 
 |void| **set_section**\ (\ start_time\: :ref:`float<class_float>` = -1, end_time\: :ref:`float<class_float>` = -1\ ) :ref:`🔗<class_AnimationPlayer_method_set_section>`
 
-Changes the start and end times of the section being played. The current playback position will be clamped within the new section. See also :ref:`play_section<class_AnimationPlayer_method_play_section>`.
+Changes the start and end times of the section being played. The current playback position will be clamped within the new section. See also :ref:`play_section()<class_AnimationPlayer_method_play_section>`.
 
 .. rst-class:: classref-item-separator
 
@@ -881,7 +881,7 @@ Changes the start and end times of the section being played. The current playbac
 
 |void| **set_section_with_markers**\ (\ start_marker\: :ref:`StringName<class_StringName>` = &"", end_marker\: :ref:`StringName<class_StringName>` = &""\ ) :ref:`🔗<class_AnimationPlayer_method_set_section_with_markers>`
 
-Changes the start and end markers of the section being played. The current playback position will be clamped within the new section. See also :ref:`play_section_with_markers<class_AnimationPlayer_method_play_section_with_markers>`.
+Changes the start and end markers of the section being played. The current playback position will be clamped within the new section. See also :ref:`play_section_with_markers()<class_AnimationPlayer_method_play_section_with_markers>`.
 
 If the argument is empty, the section uses the beginning or end of the animation. If both are empty, it means that the section is not set.
 
@@ -895,7 +895,7 @@ If the argument is empty, the section uses the beginning or end of the animation
 
 |void| **stop**\ (\ keep_state\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AnimationPlayer_method_stop>`
 
-Stops the currently playing animation. The animation position is reset to ``0`` and the ``custom_speed`` is reset to ``1.0``. See also :ref:`pause<class_AnimationPlayer_method_pause>`.
+Stops the currently playing animation. The animation position is reset to ``0`` and the ``custom_speed`` is reset to ``1.0``. See also :ref:`pause()<class_AnimationPlayer_method_pause>`.
 
 If ``keep_state`` is ``true``, the animation state is not updated visually.
 

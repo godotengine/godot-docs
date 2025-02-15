@@ -115,7 +115,7 @@ Returns the index of the selected :ref:`MeshLibrary<class_MeshLibrary>` item in 
 
 :ref:`AABB<class_AABB>` **get_selection**\ (\ ) |const| :ref:`🔗<class_GridMapEditorPlugin_method_get_selection>`
 
-Returns the cell coordinate bounds of the current selection. Use :ref:`has_selection<class_GridMapEditorPlugin_method_has_selection>` to check if there is an active selection.
+Returns the cell coordinate bounds of the current selection. Use :ref:`has_selection()<class_GridMapEditorPlugin_method_has_selection>` to check if there is an active selection.
 
 .. rst-class:: classref-item-separator
 

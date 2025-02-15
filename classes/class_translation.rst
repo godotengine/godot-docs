@@ -111,7 +111,7 @@ Method Descriptions
 
 :ref:`StringName<class_StringName>` **_get_message**\ (\ src_message\: :ref:`StringName<class_StringName>`, context\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_Translation_private_method__get_message>`
 
-Virtual method to override :ref:`get_message<class_Translation_method_get_message>`.
+Virtual method to override :ref:`get_message()<class_Translation_method_get_message>`.
 
 .. rst-class:: classref-item-separator
 
@@ -123,7 +123,7 @@ Virtual method to override :ref:`get_message<class_Translation_method_get_messag
 
 :ref:`StringName<class_StringName>` **_get_plural_message**\ (\ src_message\: :ref:`StringName<class_StringName>`, src_plural_message\: :ref:`StringName<class_StringName>`, n\: :ref:`int<class_int>`, context\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_Translation_private_method__get_plural_message>`
 
-Virtual method to override :ref:`get_plural_message<class_Translation_method_get_plural_message>`.
+Virtual method to override :ref:`get_plural_message()<class_Translation_method_get_plural_message>`.
 
 .. rst-class:: classref-item-separator
 

@@ -19,7 +19,7 @@ Represents a class from the Java Native Interface.
 Description
 -----------
 
-Represents a class from the Java Native Interface. It is returned from :ref:`JavaClassWrapper.wrap<class_JavaClassWrapper_method_wrap>`.
+Represents a class from the Java Native Interface. It is returned from :ref:`JavaClassWrapper.wrap()<class_JavaClassWrapper_method_wrap>`.
 
 \ **Note:** This class only works on Android. On any other platform, this class does nothing.
 
@@ -68,7 +68,7 @@ Returns the Java class name.
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_java_method_list**\ (\ ) |const| :ref:`🔗<class_JavaClass_method_get_java_method_list>`
 
-Returns the object's Java methods and their signatures as an :ref:`Array<class_Array>` of dictionaries, in the same format as :ref:`Object.get_method_list<class_Object_method_get_method_list>`.
+Returns the object's Java methods and their signatures as an :ref:`Array<class_Array>` of dictionaries, in the same format as :ref:`Object.get_method_list()<class_Object_method_get_method_list>`.
 
 .. rst-class:: classref-item-separator
 

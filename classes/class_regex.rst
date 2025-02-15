@@ -21,7 +21,7 @@ Description
 
 A regular expression (or regex) is a compact language that can be used to recognize strings that follow a specific pattern, such as URLs, email addresses, complete sentences, etc. For example, a regex of ``ab[0-9]`` would find any string that is ``ab`` followed by any number from ``0`` to ``9``. For a more in-depth look, you can easily find various tutorials and detailed explanations on the Internet.
 
-To begin, the RegEx object needs to be compiled with the search pattern using :ref:`compile<class_RegEx_method_compile>` before it can be used.
+To begin, the RegEx object needs to be compiled with the search pattern using :ref:`compile()<class_RegEx_method_compile>` before it can be used.
 
 ::
 
@@ -30,7 +30,7 @@ To begin, the RegEx object needs to be compiled with the search pattern using :r
 
 The search pattern must be escaped first for GDScript before it is escaped for the expression. For example, ``compile("\\d+")`` would be read by RegEx as ``\d+``. Similarly, ``compile("\"(?:\\\\.|[^\"])*\"")`` would be read as ``"(?:\\.|[^"])*"``. In GDScript, you can also use raw string literals (r-strings). For example, ``compile(r'"(?:\\.|[^"])*"')`` would be read the same.
 
-Using :ref:`search<class_RegEx_method_search>`, you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_RegExMatch>` is returned and you can retrieve details of the results using methods such as :ref:`RegExMatch.get_string<class_RegExMatch_method_get_string>` and :ref:`RegExMatch.get_start<class_RegExMatch_method_get_start>`.
+Using :ref:`search()<class_RegEx_method_search>`, you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_RegExMatch>` is returned and you can retrieve details of the results using methods such as :ref:`RegExMatch.get_string()<class_RegExMatch_method_get_string>` and :ref:`RegExMatch.get_start()<class_RegExMatch_method_get_start>`.
 
 ::
 
@@ -52,7 +52,7 @@ This version of RegEx also supports named capturing groups, and the names can be
     if result:
         print(result.get_string("digit")) # Would print 2f
 
-If you need to process multiple results, :ref:`search_all<class_RegEx_method_search_all>` generates a list of all non-overlapping results. This can be combined with a ``for`` loop for convenience.
+If you need to process multiple results, :ref:`search_all()<class_RegEx_method_search_all>` generates a list of all non-overlapping results. This can be combined with a ``for`` loop for convenience.
 
 ::
 
@@ -144,7 +144,7 @@ Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<cla
 
 :ref:`RegEx<class_RegEx>` **create_from_string**\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ ) |static| :ref:`🔗<class_RegEx_method_create_from_string>`
 
-Creates and compiles a new **RegEx** object. See also :ref:`compile<class_RegEx_method_compile>`.
+Creates and compiles a new **RegEx** object. See also :ref:`compile()<class_RegEx_method_compile>`.
 
 .. rst-class:: classref-item-separator
 

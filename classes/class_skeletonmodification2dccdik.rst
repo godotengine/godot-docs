@@ -178,7 +178,7 @@ Returns the index of the :ref:`Bone2D<class_Bone2D>` node assigned to the CCDIK 
 
 :ref:`bool<class_bool>` **get_ccdik_joint_constraint_angle_invert**\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_SkeletonModification2DCCDIK_method_get_ccdik_joint_constraint_angle_invert>`
 
-Returns whether the CCDIK joint at ``joint_idx`` uses an inverted joint constraint. See :ref:`set_ccdik_joint_constraint_angle_invert<class_SkeletonModification2DCCDIK_method_set_ccdik_joint_constraint_angle_invert>` for details.
+Returns whether the CCDIK joint at ``joint_idx`` uses an inverted joint constraint. See :ref:`set_ccdik_joint_constraint_angle_invert()<class_SkeletonModification2DCCDIK_method_set_ccdik_joint_constraint_angle_invert>` for details.
 
 .. rst-class:: classref-item-separator
 

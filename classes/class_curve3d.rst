@@ -119,7 +119,7 @@ Property Descriptions
 - |void| **set_bake_interval**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_bake_interval**\ (\ )
 
-The distance in meters between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points<class_Curve3D_method_get_baked_points>` or :ref:`get_baked_length<class_Curve3D_method_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
+The distance in meters between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points()<class_Curve3D_method_get_baked_points>` or :ref:`get_baked_length()<class_Curve3D_method_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
 
 .. rst-class:: classref-item-separator
 
@@ -263,7 +263,7 @@ If :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` is ``false
 
 :ref:`float<class_float>` **get_closest_offset**\ (\ to_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Curve3D_method_get_closest_offset>`
 
-Returns the closest offset to ``to_point``. This offset is meant to be used in :ref:`sample_baked<class_Curve3D_method_sample_baked>` or :ref:`sample_baked_up_vector<class_Curve3D_method_sample_baked_up_vector>`.
+Returns the closest offset to ``to_point``. This offset is meant to be used in :ref:`sample_baked()<class_Curve3D_method_sample_baked>` or :ref:`sample_baked_up_vector()<class_Curve3D_method_sample_baked_up_vector>`.
 
 \ ``to_point`` must be in this curve's local space.
 
@@ -393,7 +393,7 @@ If the curve has no up vectors, the function sends an error to the console, and 
 
 :ref:`Transform3D<class_Transform3D>` **sample_baked_with_rotation**\ (\ offset\: :ref:`float<class_float>` = 0.0, cubic\: :ref:`bool<class_bool>` = false, apply_tilt\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Curve3D_method_sample_baked_with_rotation>`
 
-Returns a :ref:`Transform3D<class_Transform3D>` with ``origin`` as point position, ``basis.x`` as sideway vector, ``basis.y`` as up vector, ``basis.z`` as forward vector. When the curve length is 0, there is no reasonable way to calculate the rotation, all vectors aligned with global space axes. See also :ref:`sample_baked<class_Curve3D_method_sample_baked>`.
+Returns a :ref:`Transform3D<class_Transform3D>` with ``origin`` as point position, ``basis.x`` as sideway vector, ``basis.y`` as up vector, ``basis.z`` as forward vector. When the curve length is 0, there is no reasonable way to calculate the rotation, all vectors aligned with global space axes. See also :ref:`sample_baked()<class_Curve3D_method_sample_baked>`.
 
 .. rst-class:: classref-item-separator
 
@@ -405,7 +405,7 @@ Returns a :ref:`Transform3D<class_Transform3D>` with ``origin`` as point positio
 
 :ref:`Vector3<class_Vector3>` **samplef**\ (\ fofs\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Curve3D_method_samplef>`
 
-Returns the position at the vertex ``fofs``. It calls :ref:`sample<class_Curve3D_method_sample>` using the integer part of ``fofs`` as ``idx``, and its fractional part as ``t``.
+Returns the position at the vertex ``fofs``. It calls :ref:`sample()<class_Curve3D_method_sample>` using the integer part of ``fofs`` as ``idx``, and its fractional part as ``t``.
 
 .. rst-class:: classref-item-separator
 

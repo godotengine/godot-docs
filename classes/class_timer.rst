@@ -21,7 +21,7 @@ Description
 
 The **Timer** node is a countdown timer and is the simplest way to handle time-based logic in the engine. When a timer reaches the end of its :ref:`wait_time<class_Timer_property_wait_time>`, it will emit the :ref:`timeout<class_Timer_signal_timeout>` signal.
 
-After a timer enters the tree, it can be manually started with :ref:`start<class_Timer_method_start>`. A timer node is also started automatically if :ref:`autostart<class_Timer_property_autostart>` is ``true``.
+After a timer enters the tree, it can be manually started with :ref:`start()<class_Timer_method_start>`. A timer node is also started automatically if :ref:`autostart<class_Timer_property_autostart>` is ``true``.
 
 Without requiring much code, a timer node can be added and configured in the editor. The :ref:`timeout<class_Timer_signal_timeout>` signal it emits can also be connected through the Node dock in the editor:
 
@@ -30,7 +30,7 @@ Without requiring much code, a timer node can be added and configured in the edi
     func _on_timer_timeout():
         print("Time to attack!")
 
-\ **Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`.
+\ **Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer()<class_SceneTree_method_create_timer>`.
 
 \ **Note:** Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`. The higher the time scale, the sooner timers will end. How often a timer processes may depend on the framerate or :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`.
 
@@ -204,7 +204,7 @@ If ``true``, the timer will stop after reaching the end. Otherwise, as by defaul
 - |void| **set_paused**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_paused**\ (\ )
 
-If ``true``, the timer is paused. A paused timer does not process until this property is set back to ``false``, even when :ref:`start<class_Timer_method_start>` is called.
+If ``true``, the timer is paused. A paused timer does not process until this property is set back to ``false``, even when :ref:`start()<class_Timer_method_start>` is called.
 
 .. rst-class:: classref-item-separator
 
@@ -256,7 +256,7 @@ The timer's remaining time in seconds. This is always ``0`` if the timer is stop
 - |void| **set_wait_time**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_wait_time**\ (\ )
 
-The time required for the timer to end, in seconds. This property can also be set every time :ref:`start<class_Timer_method_start>` is called.
+The time required for the timer to end, in seconds. This property can also be set every time :ref:`start()<class_Timer_method_start>` is called.
 
 \ **Note:** Timers can only process once per physics or process frame (depending on the :ref:`process_callback<class_Timer_property_process_callback>`). An unstable framerate may cause the timer to end inconsistently, which is especially noticeable if the wait time is lower than roughly ``0.05`` seconds. For very short timers, it is recommended to write your own code instead of using a **Timer** node. Timers are also affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
 

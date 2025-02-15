@@ -156,7 +156,7 @@ Returns the number of bitmap elements that are set to ``true``.
 
 |void| **grow_mask**\ (\ pixels\: :ref:`int<class_int>`, rect\: :ref:`Rect2i<class_Rect2i>`\ ) :ref:`🔗<class_BitMap_method_grow_mask>`
 
-Applies morphological dilation or erosion to the bitmap. If ``pixels`` is positive, dilation is applied to the bitmap. If ``pixels`` is negative, erosion is applied to the bitmap. ``rect`` defines the area where the morphological operation is applied. Pixels located outside the ``rect`` are unaffected by :ref:`grow_mask<class_BitMap_method_grow_mask>`.
+Applies morphological dilation or erosion to the bitmap. If ``pixels`` is positive, dilation is applied to the bitmap. If ``pixels`` is negative, erosion is applied to the bitmap. ``rect`` defines the area where the morphological operation is applied. Pixels located outside the ``rect`` are unaffected by :ref:`grow_mask()<class_BitMap_method_grow_mask>`.
 
 .. rst-class:: classref-item-separator
 

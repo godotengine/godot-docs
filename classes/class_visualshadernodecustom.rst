@@ -217,7 +217,7 @@ Defining this method is **required**. If not overridden, the node has no input p
 
 :ref:`Variant<class_Variant>` **_get_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_input_port_default_value>`
 
-Override this method to define the default value for the specified input port. Prefer use this over :ref:`VisualShaderNode.set_input_port_default_value<class_VisualShaderNode_method_set_input_port_default_value>`.
+Override this method to define the default value for the specified input port. Prefer use this over :ref:`VisualShaderNode.set_input_port_default_value()<class_VisualShaderNode_method_set_input_port_default_value>`.
 
 Defining this method is **required**. If not overridden, the node has no default values for their input ports.
 
@@ -231,7 +231,7 @@ Defining this method is **required**. If not overridden, the node has no default
 
 :ref:`String<class_String>` **_get_input_port_name**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_input_port_name>`
 
-Override this method to define the names of input ports of the associated custom node. The names are used both for the input slots in the editor and as identifiers in the shader code, and are passed in the ``input_vars`` array in :ref:`_get_code<class_VisualShaderNodeCustom_private_method__get_code>`.
+Override this method to define the names of input ports of the associated custom node. The names are used both for the input slots in the editor and as identifiers in the shader code, and are passed in the ``input_vars`` array in :ref:`_get_code()<class_VisualShaderNodeCustom_private_method__get_code>`.
 
 Defining this method is **optional**, but recommended. If not overridden, input ports are named as ``"in" + str(port)``.
 
@@ -287,7 +287,7 @@ Defining this method is **required**. If not overridden, the node has no output 
 
 :ref:`String<class_String>` **_get_output_port_name**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_output_port_name>`
 
-Override this method to define the names of output ports of the associated custom node. The names are used both for the output slots in the editor and as identifiers in the shader code, and are passed in the ``output_vars`` array in :ref:`_get_code<class_VisualShaderNodeCustom_private_method__get_code>`.
+Override this method to define the names of output ports of the associated custom node. The names are used both for the output slots in the editor and as identifiers in the shader code, and are passed in the ``output_vars`` array in :ref:`_get_code()<class_VisualShaderNodeCustom_private_method__get_code>`.
 
 Defining this method is **optional**, but recommended. If not overridden, output ports are named as ``"out" + str(port)``.
 
@@ -413,7 +413,7 @@ Defining this method is **optional**. If not overridden, it's ``false``.
 
 :ref:`int<class_int>` **get_option_index**\ (\ option\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_VisualShaderNodeCustom_method_get_option_index>`
 
-Returns the selected index of the drop-down list option within a graph. You may use this function to define the specific behavior in the :ref:`_get_code<class_VisualShaderNodeCustom_private_method__get_code>` or :ref:`_get_global_code<class_VisualShaderNodeCustom_private_method__get_global_code>`.
+Returns the selected index of the drop-down list option within a graph. You may use this function to define the specific behavior in the :ref:`_get_code()<class_VisualShaderNodeCustom_private_method__get_code>` or :ref:`_get_global_code()<class_VisualShaderNodeCustom_private_method__get_global_code>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

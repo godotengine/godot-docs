@@ -29,7 +29,7 @@ Consider baking final CSG operation results into static geometry that replaces t
 
 Individual CSG root node results can be baked to nodes with static resources with the editor menu that appears when a CSG root node is selected.
 
-Individual CSG root nodes can also be baked to static resources with scripts by calling :ref:`bake_static_mesh<class_CSGShape3D_method_bake_static_mesh>` for the visual mesh or :ref:`bake_collision_shape<class_CSGShape3D_method_bake_collision_shape>` for the physics collision.
+Individual CSG root nodes can also be baked to static resources with scripts by calling :ref:`bake_static_mesh()<class_CSGShape3D_method_bake_static_mesh>` for the visual mesh or :ref:`bake_collision_shape()<class_CSGShape3D_method_bake_collision_shape>` for the physics collision.
 
 Entire scenes of CSG nodes can be baked to static geometry and exported with the editor gltf scene exporter.
 

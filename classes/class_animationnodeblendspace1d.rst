@@ -21,7 +21,7 @@ Description
 
 A resource used by :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
-\ **AnimationNodeBlendSpace1D** represents a virtual axis on which any type of :ref:`AnimationRootNode<class_AnimationRootNode>`\ s can be added using :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`. Outputs the linear blend of the two :ref:`AnimationRootNode<class_AnimationRootNode>`\ s adjacent to the current value.
+\ **AnimationNodeBlendSpace1D** represents a virtual axis on which any type of :ref:`AnimationRootNode<class_AnimationRootNode>`\ s can be added using :ref:`add_blend_point()<class_AnimationNodeBlendSpace1D_method_add_blend_point>`. Outputs the linear blend of the two :ref:`AnimationRootNode<class_AnimationRootNode>`\ s adjacent to the current value.
 
 You can set the extents of the axis with :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>` and :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`.
 
@@ -154,7 +154,7 @@ Controls the interpolation between animations. See :ref:`BlendMode<enum_Animatio
 - |void| **set_max_space**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_max_space**\ (\ )
 
-The blend space's axis's upper limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
+The blend space's axis's upper limit for the points' position. See :ref:`add_blend_point()<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
 
 .. rst-class:: classref-item-separator
 
@@ -171,7 +171,7 @@ The blend space's axis's upper limit for the points' position. See :ref:`add_ble
 - |void| **set_min_space**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_min_space**\ (\ )
 
-The blend space's axis's lower limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
+The blend space's axis's lower limit for the points' position. See :ref:`add_blend_point()<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
 
 .. rst-class:: classref-item-separator
 

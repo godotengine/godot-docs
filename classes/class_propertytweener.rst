@@ -19,11 +19,11 @@ Interpolates an :ref:`Object<class_Object>`'s property over time.
 Description
 -----------
 
-**PropertyTweener** is used to interpolate a property in an object. See :ref:`Tween.tween_property<class_Tween_method_tween_property>` for more usage information.
+**PropertyTweener** is used to interpolate a property in an object. See :ref:`Tween.tween_property()<class_Tween_method_tween_property>` for more usage information.
 
 The tweener will finish automatically if the target object is freed.
 
-\ **Note:** :ref:`Tween.tween_property<class_Tween_method_tween_property>` is the only correct way to create **PropertyTweener**. Any **PropertyTweener** created manually will not function correctly.
+\ **Note:** :ref:`Tween.tween_property()<class_Tween_method_tween_property>` is the only correct way to create **PropertyTweener**. Any **PropertyTweener** created manually will not function correctly.
 
 .. rst-class:: classref-reftable-group
 
@@ -122,7 +122,7 @@ Sets a custom initial value to the **PropertyTweener**.
 
 :ref:`PropertyTweener<class_PropertyTweener>` **from_current**\ (\ ) :ref:`🔗<class_PropertyTweener_method_from_current>`
 
-Makes the **PropertyTweener** use the current property value (i.e. at the time of creating this **PropertyTweener**) as a starting point. This is equivalent of using :ref:`from<class_PropertyTweener_method_from>` with the current value. These two calls will do the same:
+Makes the **PropertyTweener** use the current property value (i.e. at the time of creating this **PropertyTweener**) as a starting point. This is equivalent of using :ref:`from()<class_PropertyTweener_method_from>` with the current value. These two calls will do the same:
 
 
 .. tabs::

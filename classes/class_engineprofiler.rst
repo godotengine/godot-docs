@@ -54,7 +54,7 @@ Method Descriptions
 
 |void| **_add_frame**\ (\ data\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_EngineProfiler_private_method__add_frame>`
 
-Called when data is added to profiler using :ref:`EngineDebugger.profiler_add_frame_data<class_EngineDebugger_method_profiler_add_frame_data>`.
+Called when data is added to profiler using :ref:`EngineDebugger.profiler_add_frame_data()<class_EngineDebugger_method_profiler_add_frame_data>`.
 
 .. rst-class:: classref-item-separator
 

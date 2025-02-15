@@ -469,7 +469,7 @@ Method Descriptions
 
 Adds a point with the specified ``position`` relative to the polyline's own position. If no ``index`` is provided, the new point will be added to the end of the points array.
 
-If ``index`` is given, the new point is inserted before the existing point identified by index ``index``. The indices of the points after the new point get increased by 1. The provided ``index`` must not exceed the number of existing points in the polyline. See :ref:`get_point_count<class_Line2D_method_get_point_count>`.
+If ``index`` is given, the new point is inserted before the existing point identified by index ``index``. The indices of the points after the new point get increased by 1. The provided ``index`` must not exceed the number of existing points in the polyline. See :ref:`get_point_count()<class_Line2D_method_get_point_count>`.
 
 .. rst-class:: classref-item-separator
 

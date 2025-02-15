@@ -19,7 +19,7 @@ Holds collision data from the movement of a :ref:`PhysicsBody3D<class_PhysicsBod
 Description
 -----------
 
-Holds collision data from the movement of a :ref:`PhysicsBody3D<class_PhysicsBody3D>`, usually from :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`. When a :ref:`PhysicsBody3D<class_PhysicsBody3D>` is moved, it stops if it detects a collision with another body. If a collision is detected, a **KinematicCollision3D** object is returned.
+Holds collision data from the movement of a :ref:`PhysicsBody3D<class_PhysicsBody3D>`, usually from :ref:`PhysicsBody3D.move_and_collide()<class_PhysicsBody3D_method_move_and_collide>`. When a :ref:`PhysicsBody3D<class_PhysicsBody3D>` is moved, it stops if it detects a collision with another body. If a collision is detected, a **KinematicCollision3D** object is returned.
 
 The collision data includes the colliding object, the remaining motion, and the collision position. This data can be used to determine a custom response to the collision.
 
@@ -100,7 +100,7 @@ Returns the colliding body's attached :ref:`Object<class_Object>` given a collis
 
 :ref:`int<class_int>` **get_collider_id**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_collider_id>`
 
-Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>` given a collision index (the deepest collision by default). See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>` given a collision index (the deepest collision by default). See :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 

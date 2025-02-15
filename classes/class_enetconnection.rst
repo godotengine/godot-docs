@@ -145,7 +145,7 @@ enum **EventType**: :ref:`🔗<enum_ENetConnection_EventType>`
 
 :ref:`EventType<enum_ENetConnection_EventType>` **EVENT_ERROR** = ``-1``
 
-An error occurred during :ref:`service<class_ENetConnection_method_service>`. You will likely need to :ref:`destroy<class_ENetConnection_method_destroy>` the host and recreate it.
+An error occurred during :ref:`service()<class_ENetConnection_method_service>`. You will likely need to :ref:`destroy()<class_ENetConnection_method_destroy>` the host and recreate it.
 
 .. _class_ENetConnection_constant_EVENT_NONE:
 
@@ -169,7 +169,7 @@ A connection request initiated by enet_host_connect has completed. The array wil
 
 :ref:`EventType<enum_ENetConnection_EventType>` **EVENT_DISCONNECT** = ``2``
 
-A peer has disconnected. This event is generated on a successful completion of a disconnect initiated by :ref:`ENetPacketPeer.peer_disconnect<class_ENetPacketPeer_method_peer_disconnect>`, if a peer has timed out, or if a connection request initialized by :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` has timed out. The array will contain the peer which disconnected. The data field contains user supplied data describing the disconnection, or 0, if none is available.
+A peer has disconnected. This event is generated on a successful completion of a disconnect initiated by :ref:`ENetPacketPeer.peer_disconnect()<class_ENetPacketPeer_method_peer_disconnect>`, if a peer has timed out, or if a connection request initialized by :ref:`connect_to_host()<class_ENetConnection_method_connect_to_host>` has timed out. The array will contain the peer which disconnected. The data field contains user supplied data describing the disconnection, or 0, if none is available.
 
 .. _class_ENetConnection_constant_EVENT_RECEIVE:
 
@@ -290,7 +290,7 @@ Sets the compression method used for network packets. These have different trade
 
 Initiates a connection to a foreign ``address`` using the specified ``port`` and allocating the requested ``channels``. Optional ``data`` can be passed during connection in the form of a 32 bit integer.
 
-\ **Note:** You must call either :ref:`create_host<class_ENetConnection_method_create_host>` or :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` on both ends before calling this method.
+\ **Note:** You must call either :ref:`create_host()<class_ENetConnection_method_create_host>` or :ref:`create_host_bound()<class_ENetConnection_method_create_host_bound>` on both ends before calling this method.
 
 .. rst-class:: classref-item-separator
 
@@ -304,7 +304,7 @@ Initiates a connection to a foreign ``address`` using the specified ``port`` and
 
 Creates an ENetHost that allows up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth`` (if greater than zero).
 
-This method binds a random available dynamic UDP port on the host machine at the *unspecified* address. Use :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to specify the address and port.
+This method binds a random available dynamic UDP port on the host machine at the *unspecified* address. Use :ref:`create_host_bound()<class_ENetConnection_method_create_host_bound>` to specify the address and port.
 
 \ **Note:** It is necessary to create a host in both client and server in order to establish a connection.
 
@@ -344,7 +344,7 @@ Destroys the host and all resources associated with it.
 
 :ref:`Error<enum_@GlobalScope_Error>` **dtls_client_setup**\ (\ hostname\: :ref:`String<class_String>`, client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) :ref:`🔗<class_ENetConnection_method_dtls_client_setup>`
 
-Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet clients. Call this before :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` to have ENet connect using DTLS validating the server certificate against ``hostname``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
+Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet clients. Call this before :ref:`connect_to_host()<class_ENetConnection_method_connect_to_host>` to have ENet connect using DTLS validating the server certificate against ``hostname``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client()<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe()<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -356,7 +356,7 @@ Configure this ENetHost to use the custom Godot extension allowing DTLS encrypti
 
 :ref:`Error<enum_@GlobalScope_Error>` **dtls_server_setup**\ (\ server_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_ENetConnection_method_dtls_server_setup>`
 
-Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet servers. Call this right after :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to have ENet expect peers to connect using DTLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
+Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet servers. Call this right after :ref:`create_host_bound()<class_ENetConnection_method_create_host_bound>` to have ENet expect peers to connect using DTLS. See :ref:`TLSOptions.server()<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 
@@ -432,7 +432,7 @@ Returns and resets host statistics. See :ref:`HostStatistic<enum_ENetConnection_
 
 Configures the DTLS server to automatically drop new connections.
 
-\ **Note:** This method is only relevant after calling :ref:`dtls_server_setup<class_ENetConnection_method_dtls_server_setup>`.
+\ **Note:** This method is only relevant after calling :ref:`dtls_server_setup()<class_ENetConnection_method_dtls_server_setup>`.
 
 .. rst-class:: classref-item-separator
 

@@ -23,7 +23,7 @@ Description
 
 Base resource that provides the functionality of exporting a release build of a project to a platform, from the editor. Stores platform-specific metadata such as the name and supported features of the platform, and performs the exporting of projects, PCK files, and ZIP files. Uses an export template for the platform provided at the time of project exporting.
 
-Used in scripting by :ref:`EditorExportPlugin<class_EditorExportPlugin>` to configure platform-specific customization of scenes and resources. See :ref:`EditorExportPlugin._begin_customize_scenes<class_EditorExportPlugin_private_method__begin_customize_scenes>` and :ref:`EditorExportPlugin._begin_customize_resources<class_EditorExportPlugin_private_method__begin_customize_resources>` for more details.
+Used in scripting by :ref:`EditorExportPlugin<class_EditorExportPlugin>` to configure platform-specific customization of scenes and resources. See :ref:`EditorExportPlugin._begin_customize_scenes()<class_EditorExportPlugin_private_method__begin_customize_scenes>` and :ref:`EditorExportPlugin._begin_customize_resources()<class_EditorExportPlugin_private_method__begin_customize_resources>` for more details.
 
 .. rst-class:: classref-introduction-group
 
@@ -159,7 +159,7 @@ flags **DebugFlags**: :ref:`🔗<enum_EditorExportPlatform_DebugFlags>`
 
 :ref:`DebugFlags<enum_EditorExportPlatform_DebugFlags>` **DEBUG_FLAG_DUMB_CLIENT** = ``1``
 
-Flag is set if remotely debugged project is expected to use remote file system. If set, :ref:`gen_export_flags<class_EditorExportPlatform_method_gen_export_flags>` will add ``--remove-fs`` and ``--remote-fs-password`` (if password is set in the editor settings) command line arguments to the list.
+Flag is set if remotely debugged project is expected to use remote file system. If set, :ref:`gen_export_flags()<class_EditorExportPlatform_method_gen_export_flags>` will add ``--remove-fs`` and ``--remote-fs-password`` (if password is set in the editor settings) command line arguments to the list.
 
 .. _class_EditorExportPlatform_constant_DEBUG_FLAG_REMOTE_DEBUG:
 
@@ -167,7 +167,7 @@ Flag is set if remotely debugged project is expected to use remote file system. 
 
 :ref:`DebugFlags<enum_EditorExportPlatform_DebugFlags>` **DEBUG_FLAG_REMOTE_DEBUG** = ``2``
 
-Flag is set if remote debug is enabled. If set, :ref:`gen_export_flags<class_EditorExportPlatform_method_gen_export_flags>` will add ``--remote-debug`` and ``--breakpoints`` (if breakpoints are selected in the script editor or added by the plugin) command line arguments to the list.
+Flag is set if remote debug is enabled. If set, :ref:`gen_export_flags()<class_EditorExportPlatform_method_gen_export_flags>` will add ``--remote-debug`` and ``--breakpoints`` (if breakpoints are selected in the script editor or added by the plugin) command line arguments to the list.
 
 .. _class_EditorExportPlatform_constant_DEBUG_FLAG_REMOTE_DEBUG_LOCALHOST:
 
@@ -175,7 +175,7 @@ Flag is set if remote debug is enabled. If set, :ref:`gen_export_flags<class_Edi
 
 :ref:`DebugFlags<enum_EditorExportPlatform_DebugFlags>` **DEBUG_FLAG_REMOTE_DEBUG_LOCALHOST** = ``4``
 
-Flag is set if remotely debugged project is running on the localhost. If set, :ref:`gen_export_flags<class_EditorExportPlatform_method_gen_export_flags>` will use ``localhost`` instead of :ref:`EditorSettings.network/debug/remote_host<class_EditorSettings_property_network/debug/remote_host>` as remote debugger host.
+Flag is set if remotely debugged project is running on the localhost. If set, :ref:`gen_export_flags()<class_EditorExportPlatform_method_gen_export_flags>` will use ``localhost`` instead of :ref:`EditorSettings.network/debug/remote_host<class_EditorSettings_property_network/debug/remote_host>` as remote debugger host.
 
 .. _class_EditorExportPlatform_constant_DEBUG_FLAG_VIEW_COLLISIONS:
 
@@ -183,7 +183,7 @@ Flag is set if remotely debugged project is running on the localhost. If set, :r
 
 :ref:`DebugFlags<enum_EditorExportPlatform_DebugFlags>` **DEBUG_FLAG_VIEW_COLLISIONS** = ``8``
 
-Flag is set if "Visible Collision Shapes" remote debug option is enabled. If set, :ref:`gen_export_flags<class_EditorExportPlatform_method_gen_export_flags>` will add ``--debug-collisions`` command line arguments to the list.
+Flag is set if "Visible Collision Shapes" remote debug option is enabled. If set, :ref:`gen_export_flags()<class_EditorExportPlatform_method_gen_export_flags>` will add ``--debug-collisions`` command line arguments to the list.
 
 .. _class_EditorExportPlatform_constant_DEBUG_FLAG_VIEW_NAVIGATION:
 
@@ -191,7 +191,7 @@ Flag is set if "Visible Collision Shapes" remote debug option is enabled. If set
 
 :ref:`DebugFlags<enum_EditorExportPlatform_DebugFlags>` **DEBUG_FLAG_VIEW_NAVIGATION** = ``16``
 
-Flag is set if Visible Navigation" remote debug option is enabled. If set, :ref:`gen_export_flags<class_EditorExportPlatform_method_gen_export_flags>` will add ``--debug-navigation`` command line arguments to the list.
+Flag is set if Visible Navigation" remote debug option is enabled. If set, :ref:`gen_export_flags()<class_EditorExportPlatform_method_gen_export_flags>` will add ``--debug-navigation`` command line arguments to the list.
 
 .. rst-class:: classref-section-separator
 

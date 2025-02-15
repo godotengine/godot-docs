@@ -19,9 +19,9 @@ Runs a :ref:`Tween<class_Tween>` nested within another :ref:`Tween<class_Tween>`
 Description
 -----------
 
-**SubtweenTweener** is used to execute a :ref:`Tween<class_Tween>` as one step in a sequence defined by another :ref:`Tween<class_Tween>`. See :ref:`Tween.tween_subtween<class_Tween_method_tween_subtween>` for more usage information.
+**SubtweenTweener** is used to execute a :ref:`Tween<class_Tween>` as one step in a sequence defined by another :ref:`Tween<class_Tween>`. See :ref:`Tween.tween_subtween()<class_Tween_method_tween_subtween>` for more usage information.
 
-\ **Note:** :ref:`Tween.tween_subtween<class_Tween_method_tween_subtween>` is the only correct way to create **SubtweenTweener**. Any **SubtweenTweener** created manually will not function correctly.
+\ **Note:** :ref:`Tween.tween_subtween()<class_Tween_method_tween_subtween>` is the only correct way to create **SubtweenTweener**. Any **SubtweenTweener** created manually will not function correctly.
 
 .. rst-class:: classref-reftable-group
 

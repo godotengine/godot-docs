@@ -508,7 +508,7 @@ Display server supports setting the mouse cursor shape to a custom image. **Wind
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG** = ``9``
 
-Display server supports spawning text dialogs using the operating system's native look-and-feel. See :ref:`dialog_show<class_DisplayServer_method_dialog_show>`. **Windows, macOS**
+Display server supports spawning text dialogs using the operating system's native look-and-feel. See :ref:`dialog_show()<class_DisplayServer_method_dialog_show>`. **Windows, macOS**
 
 .. _class_DisplayServer_constant_FEATURE_IME:
 
@@ -596,7 +596,7 @@ Display server supports expanding window content to the title. See :ref:`WINDOW_
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_SCREEN_CAPTURE** = ``21``
 
-Display server supports reading screen pixels. See :ref:`screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
+Display server supports reading screen pixels. See :ref:`screen_get_pixel()<class_DisplayServer_method_screen_get_pixel>`.
 
 .. _class_DisplayServer_constant_FEATURE_STATUS_INDICATOR:
 
@@ -612,7 +612,7 @@ Display server supports application status indicators.
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_HELP** = ``23``
 
-Display server supports native help system search callbacks. See :ref:`help_set_search_callbacks<class_DisplayServer_method_help_set_search_callbacks>`.
+Display server supports native help system search callbacks. See :ref:`help_set_search_callbacks()<class_DisplayServer_method_help_set_search_callbacks>`.
 
 .. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_INPUT:
 
@@ -620,7 +620,7 @@ Display server supports native help system search callbacks. See :ref:`help_set_
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_INPUT** = ``24``
 
-Display server supports spawning text input dialogs using the operating system's native look-and-feel. See :ref:`dialog_input_text<class_DisplayServer_method_dialog_input_text>`. **Windows, macOS**
+Display server supports spawning text input dialogs using the operating system's native look-and-feel. See :ref:`dialog_input_text()<class_DisplayServer_method_dialog_input_text>`. **Windows, macOS**
 
 .. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE:
 
@@ -628,7 +628,7 @@ Display server supports spawning text input dialogs using the operating system's
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_FILE** = ``25``
 
-Display server supports spawning dialogs for selecting files or directories using the operating system's native look-and-feel. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>`. **Windows, macOS, Linux (X11/Wayland), Android**
+Display server supports spawning dialogs for selecting files or directories using the operating system's native look-and-feel. See :ref:`file_dialog_show()<class_DisplayServer_method_file_dialog_show>`. **Windows, macOS, Linux (X11/Wayland), Android**
 
 .. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE_EXTRA:
 
@@ -636,7 +636,7 @@ Display server supports spawning dialogs for selecting files or directories usin
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_FILE_EXTRA** = ``26``
 
-The display server supports all features of :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>`, with the added functionality of Options and native dialog file access to ``res://`` and ``user://`` paths. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` and :ref:`file_dialog_with_options_show<class_DisplayServer_method_file_dialog_with_options_show>`. **Windows, macOS, Linux (X11/Wayland)**
+The display server supports all features of :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>`, with the added functionality of Options and native dialog file access to ``res://`` and ``user://`` paths. See :ref:`file_dialog_show()<class_DisplayServer_method_file_dialog_show>` and :ref:`file_dialog_with_options_show()<class_DisplayServer_method_file_dialog_with_options_show>`. **Windows, macOS, Linux (X11/Wayland)**
 
 .. _class_DisplayServer_constant_FEATURE_WINDOW_DRAG:
 
@@ -644,7 +644,7 @@ The display server supports all features of :ref:`FEATURE_NATIVE_DIALOG_FILE<cla
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_DRAG** = ``27``
 
-The display server supports initiating window drag and resize operations on demand. See :ref:`window_start_drag<class_DisplayServer_method_window_start_drag>` and :ref:`window_start_resize<class_DisplayServer_method_window_start_resize>`.
+The display server supports initiating window drag and resize operations on demand. See :ref:`window_start_drag()<class_DisplayServer_method_window_start_drag>` and :ref:`window_start_resize()<class_DisplayServer_method_window_start_resize>`.
 
 .. _class_DisplayServer_constant_FEATURE_SCREEN_EXCLUDE_FROM_CAPTURE:
 
@@ -1174,7 +1174,7 @@ enum **WindowFlags**: :ref:`🔗<enum_DisplayServer_WindowFlags>`
 
 :ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_RESIZE_DISABLED** = ``0``
 
-The window can't be resized by dragging its resize grip. It's still possible to resize the window using :ref:`window_set_size<class_DisplayServer_method_window_set_size>`. This flag is ignored for full screen windows.
+The window can't be resized by dragging its resize grip. It's still possible to resize the window using :ref:`window_set_size()<class_DisplayServer_method_window_set_size>`. This flag is ignored for full screen windows.
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_BORDERLESS:
 
@@ -1200,7 +1200,7 @@ The window is floating on top of all other windows. This flag is ignored for ful
 
 The window background can be transparent.
 
-\ **Note:** This flag has no effect if :ref:`is_window_transparency_available<class_DisplayServer_method_is_window_transparency_available>` returns ``false``.
+\ **Note:** This flag has no effect if :ref:`is_window_transparency_available()<class_DisplayServer_method_is_window_transparency_available>` returns ``false``.
 
 \ **Note:** Transparency support is implemented on Linux (X11/Wayland), macOS, and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
 
@@ -1218,7 +1218,7 @@ The window can't be focused. No-focus window will ignore all input, except mouse
 
 :ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_POPUP** = ``5``
 
-Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have transient parent set (see :ref:`window_set_transient<class_DisplayServer_method_window_set_transient>`).
+Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have transient parent set (see :ref:`window_set_transient()<class_DisplayServer_method_window_set_transient>`).
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE:
 
@@ -1228,9 +1228,9 @@ Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This
 
 Window content is expanded to the full size of the window. Unlike borderless window, the frame is left intact and can be used to resize the window, title bar is transparent, but have minimize/maximize/close buttons.
 
-Use :ref:`window_set_window_buttons_offset<class_DisplayServer_method_window_set_window_buttons_offset>` to adjust minimize/maximize/close buttons offset.
+Use :ref:`window_set_window_buttons_offset()<class_DisplayServer_method_window_set_window_buttons_offset>` to adjust minimize/maximize/close buttons offset.
 
-Use :ref:`window_get_safe_title_margins<class_DisplayServer_method_window_get_safe_title_margins>` to determine area under the title bar that is not covered by decorations.
+Use :ref:`window_get_safe_title_margins()<class_DisplayServer_method_window_get_safe_title_margins>` to determine area under the title bar that is not covered by decorations.
 
 \ **Note:** This flag is implemented only on macOS.
 
@@ -1258,7 +1258,7 @@ Window style is overridden, forcing sharp corners.
 
 :ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_EXCLUDE_FROM_CAPTURE** = ``9``
 
-Windows is excluded from screenshots taken by :ref:`screen_get_image<class_DisplayServer_method_screen_get_image>`, :ref:`screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
+Windows is excluded from screenshots taken by :ref:`screen_get_image()<class_DisplayServer_method_screen_get_image>`, :ref:`screen_get_image_rect()<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`screen_get_pixel()<class_DisplayServer_method_screen_get_pixel>`.
 
 \ **Note:** This flag is implemented on macOS and Windows.
 
@@ -1826,7 +1826,7 @@ Creates a new application status indicator with the specified icon, tooltip, and
 
 :ref:`CursorShape<enum_DisplayServer_CursorShape>` **cursor_get_shape**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_cursor_get_shape>`
 
-Returns the default mouse cursor shape set by :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>`.
+Returns the default mouse cursor shape set by :ref:`cursor_set_shape()<class_DisplayServer_method_cursor_set_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1840,7 +1840,7 @@ Returns the default mouse cursor shape set by :ref:`cursor_set_shape<class_Displ
 
 Sets a custom mouse cursor image for the given ``shape``. This means the user's operating system and mouse cursor theme will no longer influence the mouse cursor's appearance.
 
-\ ``cursor`` can be either a :ref:`Texture2D<class_Texture2D>` or an :ref:`Image<class_Image>`, and it should not be larger than 256×256 to display correctly. Optionally, ``hotspot`` can be set to offset the image's position relative to the click point. By default, ``hotspot`` is set to the top-left corner of the image. See also :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>`.
+\ ``cursor`` can be either a :ref:`Texture2D<class_Texture2D>` or an :ref:`Image<class_Image>`, and it should not be larger than 256×256 to display correctly. Optionally, ``hotspot`` can be set to offset the image's position relative to the click point. By default, ``hotspot`` is set to the top-left corner of the image. See also :ref:`cursor_set_shape()<class_DisplayServer_method_cursor_set_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1852,7 +1852,7 @@ Sets a custom mouse cursor image for the given ``shape``. This means the user's 
 
 |void| **cursor_set_shape**\ (\ shape\: :ref:`CursorShape<enum_DisplayServer_CursorShape>`\ ) :ref:`🔗<class_DisplayServer_method_cursor_set_shape>`
 
-Sets the default mouse cursor shape. The cursor's appearance will vary depending on the user's operating system and mouse cursor theme. See also :ref:`cursor_get_shape<class_DisplayServer_method_cursor_get_shape>` and :ref:`cursor_set_custom_image<class_DisplayServer_method_cursor_set_custom_image>`.
+Sets the default mouse cursor shape. The cursor's appearance will vary depending on the user's operating system and mouse cursor theme. See also :ref:`cursor_get_shape()<class_DisplayServer_method_cursor_get_shape>` and :ref:`cursor_set_custom_image()<class_DisplayServer_method_cursor_set_custom_image>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1934,7 +1934,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 \ **Note:** On Android and macOS, native file dialogs have no title.
 
-\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
+\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions()<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
 
 .. rst-class:: classref-item-separator
 
@@ -1970,7 +1970,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 \ **Note:** On macOS, native file dialogs have no title.
 
-\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
+\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions()<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
 
 .. rst-class:: classref-item-separator
 
@@ -1982,7 +1982,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 |void| **force_process_and_drop_events**\ (\ ) :ref:`🔗<class_DisplayServer_method_force_process_and_drop_events>`
 
-Forces window manager processing while ignoring all :ref:`InputEvent<class_InputEvent>`\ s. See also :ref:`process_events<class_DisplayServer_method_process_events>`.
+Forces window manager processing while ignoring all :ref:`InputEvent<class_InputEvent>`\ s. See also :ref:`process_events()<class_DisplayServer_method_process_events>`.
 
 \ **Note:** This method is implemented on Windows and macOS.
 
@@ -2024,7 +2024,7 @@ Returns the OS theme base color (default control background). Returns ``Color(0,
 
 :ref:`Array<class_Array>`\[:ref:`Rect2<class_Rect2>`\] **get_display_cutouts**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_cutouts>`
 
-Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which is the bounding rectangle for a display cutout or notch. These are non-functional areas on edge-to-edge screens used by cameras and sensors. Returns an empty array if the device does not have cutouts. See also :ref:`get_display_safe_area<class_DisplayServer_method_get_display_safe_area>`.
+Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which is the bounding rectangle for a display cutout or notch. These are non-functional areas on edge-to-edge screens used by cameras and sensors. Returns an empty array if the device does not have cutouts. See also :ref:`get_display_safe_area()<class_DisplayServer_method_get_display_safe_area>`.
 
 \ **Note:** Currently only implemented on Android. Other platforms will return an empty array even if they do have display cutouts or notches.
 
@@ -2038,9 +2038,9 @@ Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which
 
 :ref:`Rect2i<class_Rect2i>` **get_display_safe_area**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_safe_area>`
 
-Returns the unobscured area of the display where interactive controls should be rendered. See also :ref:`get_display_cutouts<class_DisplayServer_method_get_display_cutouts>`.
+Returns the unobscured area of the display where interactive controls should be rendered. See also :ref:`get_display_cutouts()<class_DisplayServer_method_get_display_cutouts>`.
 
-\ **Note:** Currently only implemented on Android and iOS. On other platforms, ``screen_get_usable_rect(SCREEN_OF_MAIN_WINDOW)`` will be returned as a fallback. See also :ref:`screen_get_usable_rect<class_DisplayServer_method_screen_get_usable_rect>`.
+\ **Note:** Currently only implemented on Android and iOS. On other platforms, ``screen_get_usable_rect(SCREEN_OF_MAIN_WINDOW)`` will be returned as a fallback. See also :ref:`screen_get_usable_rect()<class_DisplayServer_method_screen_get_usable_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2116,7 +2116,7 @@ Returns the index of the screen that overlaps the most with the given rectangle.
 
 Returns ``true`` if positions of **OK** and **Cancel** buttons are swapped in dialogs. This is enabled by default on Windows to follow interface conventions, and be toggled by changing :ref:`ProjectSettings.gui/common/swap_cancel_ok<class_ProjectSettings_property_gui/common/swap_cancel_ok>`.
 
-\ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`dialog_show<class_DisplayServer_method_dialog_show>`.
+\ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`dialog_show()<class_DisplayServer_method_dialog_show>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2267,7 +2267,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
-\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`global_menu_set_item_checked<class_DisplayServer_method_global_menu_set_item_checked>` for more info on how to control it.
+\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`global_menu_set_item_checked()<class_DisplayServer_method_global_menu_set_item_checked>` for more info on how to control it.
 
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
 
@@ -2369,7 +2369,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
-\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`global_menu_set_item_checked<class_DisplayServer_method_global_menu_set_item_checked>` for more info on how to control it.
+\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`global_menu_set_item_checked()<class_DisplayServer_method_global_menu_set_item_checked>` for more info on how to control it.
 
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
 
@@ -2607,7 +2607,7 @@ Returns the callback of the item accelerator at index ``idx``.
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Returns number of states of a multistate item. See :ref:`global_menu_add_multistate_item<class_DisplayServer_method_global_menu_add_multistate_item>` for details.
+Returns number of states of a multistate item. See :ref:`global_menu_add_multistate_item()<class_DisplayServer_method_global_menu_add_multistate_item>` for details.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -2623,7 +2623,7 @@ Returns number of states of a multistate item. See :ref:`global_menu_add_multist
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Returns the state of a multistate item. See :ref:`global_menu_add_multistate_item<class_DisplayServer_method_global_menu_add_multistate_item>` for details.
+Returns the state of a multistate item. See :ref:`global_menu_add_multistate_item()<class_DisplayServer_method_global_menu_add_multistate_item>` for details.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -2639,7 +2639,7 @@ Returns the state of a multistate item. See :ref:`global_menu_add_multistate_ite
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Returns the submenu ID of the item at index ``idx``. See :ref:`global_menu_add_submenu_item<class_DisplayServer_method_global_menu_add_submenu_item>` for more info on how to add a submenu.
+Returns the submenu ID of the item at index ``idx``. See :ref:`global_menu_add_submenu_item()<class_DisplayServer_method_global_menu_add_submenu_item>` for more info on how to add a submenu.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -2655,7 +2655,7 @@ Returns the submenu ID of the item at index ``idx``. See :ref:`global_menu_add_s
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`global_menu_set_item_tag<class_DisplayServer_method_global_menu_set_item_tag>`, which provides a simple way of assigning context data to items.
+Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`global_menu_set_item_tag()<class_DisplayServer_method_global_menu_set_item_tag>`, which provides a simple way of assigning context data to items.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -2753,7 +2753,7 @@ Returns ``true`` if the item at index ``idx`` is checked.
 
 Returns ``true`` if the item at index ``idx`` is disabled. When it is disabled it can't be selected, or its action invoked.
 
-See :ref:`global_menu_set_item_disabled<class_DisplayServer_method_global_menu_set_item_disabled>` for more info on how to disable an item.
+See :ref:`global_menu_set_item_disabled()<class_DisplayServer_method_global_menu_set_item_disabled>` for more info on how to disable an item.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -2771,7 +2771,7 @@ See :ref:`global_menu_set_item_disabled<class_DisplayServer_method_global_menu_s
 
 Returns ``true`` if the item at index ``idx`` is hidden.
 
-See :ref:`global_menu_set_item_hidden<class_DisplayServer_method_global_menu_set_item_hidden>` for more info on how to hide an item.
+See :ref:`global_menu_set_item_hidden()<class_DisplayServer_method_global_menu_set_item_hidden>` for more info on how to hide an item.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -2991,7 +2991,7 @@ Sets the callback of the item at index ``idx``. Callback is emitted when its acc
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Sets number of state of a multistate item. See :ref:`global_menu_add_multistate_item<class_DisplayServer_method_global_menu_add_multistate_item>` for details.
+Sets number of state of a multistate item. See :ref:`global_menu_add_multistate_item()<class_DisplayServer_method_global_menu_add_multistate_item>` for details.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -3025,7 +3025,7 @@ Sets the type of the item at the specified index ``idx`` to radio button. If ``f
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Sets the state of a multistate item. See :ref:`global_menu_add_multistate_item<class_DisplayServer_method_global_menu_add_multistate_item>` for details.
+Sets the state of a multistate item. See :ref:`global_menu_add_multistate_item()<class_DisplayServer_method_global_menu_add_multistate_item>` for details.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -3057,7 +3057,7 @@ Sets the submenu of the item at index ``idx``. The submenu is the ID of a global
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Sets the metadata of an item, which may be of any type. You can later get it with :ref:`global_menu_get_item_tag<class_DisplayServer_method_global_menu_get_item_tag>`, which provides a simple way of assigning context data to items.
+Sets the metadata of an item, which may be of any type. You can later get it with :ref:`global_menu_get_item_tag()<class_DisplayServer_method_global_menu_get_item_tag>`, which provides a simple way of assigning context data to items.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -3117,7 +3117,7 @@ Registers callables to emit when the menu is respectively about to show or close
 
 :ref:`bool<class_bool>` **has_additional_outputs**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_has_additional_outputs>`
 
-Returns ``true`` if any additional outputs have been registered via :ref:`register_additional_output<class_DisplayServer_method_register_additional_output>`.
+Returns ``true`` if any additional outputs have been registered via :ref:`register_additional_output()<class_DisplayServer_method_register_additional_output>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3351,7 +3351,7 @@ Sets the active keyboard layout.
 
 |bitfield|\[:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\] **mouse_get_button_state**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_mouse_get_button_state>`
 
-Returns the current state of mouse buttons (whether each button is pressed) as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together. Equivalent to :ref:`Input.get_mouse_button_mask<class_Input_method_get_mouse_button_mask>`.
+Returns the current state of mouse buttons (whether each button is pressed) as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together. Equivalent to :ref:`Input.get_mouse_button_mask()<class_Input_method_get_mouse_button_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3363,7 +3363,7 @@ Returns the current state of mouse buttons (whether each button is pressed) as a
 
 :ref:`MouseMode<enum_DisplayServer_MouseMode>` **mouse_get_mode**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_mouse_get_mode>`
 
-Returns the current mouse mode. See also :ref:`mouse_set_mode<class_DisplayServer_method_mouse_set_mode>`.
+Returns the current mouse mode. See also :ref:`mouse_set_mode()<class_DisplayServer_method_mouse_set_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3387,7 +3387,7 @@ Returns the mouse cursor's current position in screen coordinates.
 
 |void| **mouse_set_mode**\ (\ mouse_mode\: :ref:`MouseMode<enum_DisplayServer_MouseMode>`\ ) :ref:`🔗<class_DisplayServer_method_mouse_set_mode>`
 
-Sets the current mouse mode. See also :ref:`mouse_get_mode<class_DisplayServer_method_mouse_get_mode>`.
+Sets the current mouse mode. See also :ref:`mouse_get_mode()<class_DisplayServer_method_mouse_get_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3399,7 +3399,7 @@ Sets the current mouse mode. See also :ref:`mouse_get_mode<class_DisplayServer_m
 
 |void| **process_events**\ (\ ) :ref:`🔗<class_DisplayServer_method_process_events>`
 
-Perform window manager processing, including input flushing. See also :ref:`force_process_and_drop_events<class_DisplayServer_method_force_process_and_drop_events>`, :ref:`Input.flush_buffered_events<class_Input_method_flush_buffered_events>` and :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>`.
+Perform window manager processing, including input flushing. See also :ref:`force_process_and_drop_events()<class_DisplayServer_method_force_process_and_drop_events>`, :ref:`Input.flush_buffered_events()<class_Input_method_flush_buffered_events>` and :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3411,7 +3411,7 @@ Perform window manager processing, including input flushing. See also :ref:`forc
 
 |void| **register_additional_output**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_DisplayServer_method_register_additional_output>`
 
-Registers an :ref:`Object<class_Object>` which represents an additional output that will be rendered too, beyond normal windows. The :ref:`Object<class_Object>` is only used as an identifier, which can be later passed to :ref:`unregister_additional_output<class_DisplayServer_method_unregister_additional_output>`.
+Registers an :ref:`Object<class_Object>` which represents an additional output that will be rendered too, beyond normal windows. The :ref:`Object<class_Object>` is only used as an identifier, which can be later passed to :ref:`unregister_additional_output()<class_DisplayServer_method_unregister_additional_output>`.
 
 This can be used to prevent Godot from skipping rendering when no normal windows are visible.
 
@@ -3500,7 +3500,7 @@ Returns the greatest scale factor of all screens.
 
 :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` **screen_get_orientation**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_orientation>`
 
-Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientation<class_DisplayServer_method_screen_set_orientation>`.
+Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientation()<class_DisplayServer_method_screen_set_orientation>`.
 
 \ **Note:** This method is implemented on Android and iOS.
 
@@ -3541,7 +3541,7 @@ Returns the screen's top-left corner position in pixels. On multi-monitor setups
     |             | |       |
     +-------------+ +-------+
 
-See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
+See also :ref:`screen_get_size()<class_DisplayServer_method_screen_get_size>`.
 
 \ **Note:** On Linux (Wayland) this method always returns ``(0, 0)``.
 
@@ -3557,7 +3557,7 @@ See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
 
 Returns the current refresh rate of the specified screen. If ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>` (the default value), a screen with the main window will be used.
 
-\ **Note:** Returns ``-1.0`` if the DisplayServer fails to find the refresh rate for the specified screen. On Web, :ref:`screen_get_refresh_rate<class_DisplayServer_method_screen_get_refresh_rate>` will always return ``-1.0`` as there is no way to retrieve the refresh rate on that platform.
+\ **Note:** Returns ``-1.0`` if the DisplayServer fails to find the refresh rate for the specified screen. On Web, :ref:`screen_get_refresh_rate()<class_DisplayServer_method_screen_get_refresh_rate>` will always return ``-1.0`` as there is no way to retrieve the refresh rate on that platform.
 
 To fallback to a default refresh rate if the method fails, try:
 
@@ -3595,7 +3595,7 @@ Returns the scale factor of the specified screen by index.
 
 :ref:`Vector2i<class_Vector2i>` **screen_get_size**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_size>`
 
-Returns the screen's size in pixels. See also :ref:`screen_get_position<class_DisplayServer_method_screen_get_position>` and :ref:`screen_get_usable_rect<class_DisplayServer_method_screen_get_usable_rect>`.
+Returns the screen's size in pixels. See also :ref:`screen_get_position()<class_DisplayServer_method_screen_get_position>` and :ref:`screen_get_usable_rect()<class_DisplayServer_method_screen_get_usable_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3607,7 +3607,7 @@ Returns the screen's size in pixels. See also :ref:`screen_get_position<class_Di
 
 :ref:`Rect2i<class_Rect2i>` **screen_get_usable_rect**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_usable_rect>`
 
-Returns the portion of the screen that is not obstructed by a status bar in pixels. See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
+Returns the portion of the screen that is not obstructed by a status bar in pixels. See also :ref:`screen_get_size()<class_DisplayServer_method_screen_get_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3619,7 +3619,7 @@ Returns the portion of the screen that is not obstructed by a status bar in pixe
 
 :ref:`bool<class_bool>` **screen_is_kept_on**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_is_kept_on>`
 
-Returns ``true`` if the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_set_keep_on<class_DisplayServer_method_screen_set_keep_on>`.
+Returns ``true`` if the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_set_keep_on()<class_DisplayServer_method_screen_set_keep_on>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3631,7 +3631,7 @@ Returns ``true`` if the screen should never be turned off by the operating syste
 
 |void| **screen_set_keep_on**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_screen_set_keep_on>`
 
-Sets whether the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_is_kept_on<class_DisplayServer_method_screen_is_kept_on>`.
+Sets whether the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_is_kept_on()<class_DisplayServer_method_screen_is_kept_on>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3643,7 +3643,7 @@ Sets whether the screen should never be turned off by the operating system's pow
 
 |void| **screen_set_orientation**\ (\ orientation\: :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>`, screen\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_screen_set_orientation>`
 
-Sets the ``screen``'s ``orientation``. See also :ref:`screen_get_orientation<class_DisplayServer_method_screen_get_orientation>`.
+Sets the ``screen``'s ``orientation``. See also :ref:`screen_get_orientation()<class_DisplayServer_method_screen_get_orientation>`.
 
 \ **Note:** On iOS, this method has no effect if :ref:`ProjectSettings.display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>` is not set to :ref:`SCREEN_SENSOR<class_DisplayServer_constant_SCREEN_SENSOR>`.
 
@@ -3657,7 +3657,7 @@ Sets the ``screen``'s ``orientation``. See also :ref:`screen_get_orientation<cla
 
 |void| **set_icon**\ (\ image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_DisplayServer_method_set_icon>`
 
-Sets the window icon (usually displayed in the top-left corner) with an :ref:`Image<class_Image>`. To use icons in the operating system's native format, use :ref:`set_native_icon<class_DisplayServer_method_set_native_icon>` instead.
+Sets the window icon (usually displayed in the top-left corner) with an :ref:`Image<class_Image>`. To use icons in the operating system's native format, use :ref:`set_native_icon()<class_DisplayServer_method_set_native_icon>` instead.
 
 \ **Note:** Requires support for :ref:`FEATURE_ICON<class_DisplayServer_constant_FEATURE_ICON>`.
 
@@ -3671,7 +3671,7 @@ Sets the window icon (usually displayed in the top-left corner) with an :ref:`Im
 
 |void| **set_native_icon**\ (\ filename\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_set_native_icon>`
 
-Sets the window icon (usually displayed in the top-left corner) in the operating system's *native* format. The file at ``filename`` must be in ``.ico`` format on Windows or ``.icns`` on macOS. By using specially crafted ``.ico`` or ``.icns`` icons, :ref:`set_native_icon<class_DisplayServer_method_set_native_icon>` allows specifying different icons depending on the size the icon is displayed at. This size is determined by the operating system and user preferences (including the display scale factor). To use icons in other formats, use :ref:`set_icon<class_DisplayServer_method_set_icon>` instead.
+Sets the window icon (usually displayed in the top-left corner) in the operating system's *native* format. The file at ``filename`` must be in ``.ico`` format on Windows or ``.icns`` on macOS. By using specially crafted ``.ico`` or ``.icns`` icons, :ref:`set_native_icon()<class_DisplayServer_method_set_native_icon>` allows specifying different icons depending on the size the icon is displayed at. This size is determined by the operating system and user preferences (including the display scale factor). To use icons in other formats, use :ref:`set_icon()<class_DisplayServer_method_set_icon>` instead.
 
 \ **Note:** Requires support for :ref:`FEATURE_NATIVE_ICON<class_DisplayServer_constant_FEATURE_NATIVE_ICON>`.
 
@@ -3981,7 +3981,7 @@ Adds a callback, which is called when the utterance has started, finished, cance
 
 Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is cleared first.
 
-- ``voice`` identifier is one of the ``"id"`` values returned by :ref:`tts_get_voices<class_DisplayServer_method_tts_get_voices>` or one of the values returned by :ref:`tts_get_voices_for_language<class_DisplayServer_method_tts_get_voices_for_language>`.
+- ``voice`` identifier is one of the ``"id"`` values returned by :ref:`tts_get_voices()<class_DisplayServer_method_tts_get_voices>` or one of the values returned by :ref:`tts_get_voices_for_language()<class_DisplayServer_method_tts_get_voices_for_language>`.
 
 - ``volume`` ranges from ``0`` (lowest) to ``100`` (highest).
 
@@ -3991,7 +3991,7 @@ Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is clear
 
 - ``utterance_id`` is passed as a parameter to the callback functions.
 
-\ **Note:** On Windows and Linux (X11/Wayland), utterance ``text`` can use SSML markup. SSML support is engine and voice dependent. If the engine does not support SSML, you should strip out all XML markup before calling :ref:`tts_speak<class_DisplayServer_method_tts_speak>`.
+\ **Note:** On Windows and Linux (X11/Wayland), utterance ``text`` can use SSML markup. SSML support is engine and voice dependent. If the engine does not support SSML, you should strip out all XML markup before calling :ref:`tts_speak()<class_DisplayServer_method_tts_speak>`.
 
 \ **Note:** The granularity of pitch, rate, and volume is engine and voice dependent. Values may be truncated.
 
@@ -4025,7 +4025,7 @@ Stops synthesis in progress and removes all utterances from the queue.
 
 |void| **unregister_additional_output**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_DisplayServer_method_unregister_additional_output>`
 
-Unregisters an :ref:`Object<class_Object>` representing an additional output, that was registered via :ref:`register_additional_output<class_DisplayServer_method_register_additional_output>`.
+Unregisters an :ref:`Object<class_Object>` representing an additional output, that was registered via :ref:`register_additional_output()<class_DisplayServer_method_register_additional_output>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4089,7 +4089,7 @@ Shows the virtual keyboard if the platform has one.
 
 Sets the mouse cursor position to the given ``position`` relative to an origin at the upper left corner of the currently focused game Window Manager window.
 
-\ **Note:** :ref:`warp_mouse<class_DisplayServer_method_warp_mouse>` is only supported on Windows, macOS, and Linux (X11/Wayland). It has no effect on Android, iOS, and Web.
+\ **Note:** :ref:`warp_mouse()<class_DisplayServer_method_warp_mouse>` is only supported on Windows, macOS, and Linux (X11/Wayland). It has no effect on Android, iOS, and Web.
 
 .. rst-class:: classref-item-separator
 
@@ -4125,7 +4125,7 @@ Returns ID of the active popup window, or :ref:`INVALID_WINDOW_ID<class_DisplayS
 
 :ref:`int<class_int>` **window_get_attached_instance_id**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_attached_instance_id>`
 
-Returns the :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` of the :ref:`Window<class_Window>` the ``window_id`` is attached to.
+Returns the :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>` of the :ref:`Window<class_Window>` the ``window_id`` is attached to.
 
 .. rst-class:: classref-item-separator
 
@@ -4137,7 +4137,7 @@ Returns the :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` o
 
 :ref:`int<class_int>` **window_get_current_screen**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_current_screen>`
 
-Returns the screen the window specified by ``window_id`` is currently positioned on. If the screen overlaps multiple displays, the screen where the window's center is located is returned. See also :ref:`window_set_current_screen<class_DisplayServer_method_window_set_current_screen>`.
+Returns the screen the window specified by ``window_id`` is currently positioned on. If the screen overlaps multiple displays, the screen where the window's center is located is returned. See also :ref:`window_set_current_screen()<class_DisplayServer_method_window_set_current_screen>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4161,7 +4161,7 @@ Returns the current value of the given window's ``flag``.
 
 :ref:`Vector2i<class_Vector2i>` **window_get_max_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_max_size>`
 
-Returns the window's maximum size (in pixels). See also :ref:`window_set_max_size<class_DisplayServer_method_window_set_max_size>`.
+Returns the window's maximum size (in pixels). See also :ref:`window_set_max_size()<class_DisplayServer_method_window_set_max_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4173,7 +4173,7 @@ Returns the window's maximum size (in pixels). See also :ref:`window_set_max_siz
 
 :ref:`Vector2i<class_Vector2i>` **window_get_min_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_min_size>`
 
-Returns the window's minimum size (in pixels). See also :ref:`window_set_min_size<class_DisplayServer_method_window_set_min_size>`.
+Returns the window's minimum size (in pixels). See also :ref:`window_set_min_size()<class_DisplayServer_method_window_set_min_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4235,7 +4235,7 @@ Returns the position of the client area of the given window on the screen.
 
 :ref:`Vector2i<class_Vector2i>` **window_get_position_with_decorations**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_position_with_decorations>`
 
-Returns the position of the given window on the screen including the borders drawn by the operating system. See also :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
+Returns the position of the given window on the screen including the borders drawn by the operating system. See also :ref:`window_get_position()<class_DisplayServer_method_window_get_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4259,7 +4259,7 @@ Returns left margins (``x``), right margins (``y``) and height (``z``) of the ti
 
 :ref:`Vector2i<class_Vector2i>` **window_get_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_size>`
 
-Returns the size of the window specified by ``window_id`` (in pixels), excluding the borders drawn by the operating system. This is also called the "client area". See also :ref:`window_get_size_with_decorations<class_DisplayServer_method_window_get_size_with_decorations>`, :ref:`window_set_size<class_DisplayServer_method_window_set_size>` and :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
+Returns the size of the window specified by ``window_id`` (in pixels), excluding the borders drawn by the operating system. This is also called the "client area". See also :ref:`window_get_size_with_decorations()<class_DisplayServer_method_window_get_size_with_decorations>`, :ref:`window_set_size()<class_DisplayServer_method_window_set_size>` and :ref:`window_get_position()<class_DisplayServer_method_window_get_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4271,7 +4271,7 @@ Returns the size of the window specified by ``window_id`` (in pixels), excluding
 
 :ref:`Vector2i<class_Vector2i>` **window_get_size_with_decorations**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_size_with_decorations>`
 
-Returns the size of the window specified by ``window_id`` (in pixels), including the borders drawn by the operating system. See also :ref:`window_get_size<class_DisplayServer_method_window_get_size>`.
+Returns the size of the window specified by ``window_id`` (in pixels), including the borders drawn by the operating system. See also :ref:`window_get_size()<class_DisplayServer_method_window_get_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4385,7 +4385,7 @@ Makes the window specified by ``window_id`` request attention, which is material
 
 |void| **window_set_current_screen**\ (\ screen\: :ref:`int<class_int>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_current_screen>`
 
-Moves the window specified by ``window_id`` to the specified ``screen``. See also :ref:`window_get_current_screen<class_DisplayServer_method_window_get_current_screen>`.
+Moves the window specified by ``window_id`` to the specified ``screen``. See also :ref:`window_get_current_screen()<class_DisplayServer_method_window_get_current_screen>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4441,7 +4441,7 @@ Enables or disables the given window's given ``flag``. See :ref:`WindowFlags<enu
 
 |void| **window_set_ime_active**\ (\ active\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_ime_active>`
 
-Sets whether `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ should be enabled for the window specified by ``window_id``. See also :ref:`window_set_ime_position<class_DisplayServer_method_window_set_ime_position>`.
+Sets whether `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ should be enabled for the window specified by ``window_id``. See also :ref:`window_set_ime_position()<class_DisplayServer_method_window_set_ime_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4453,7 +4453,7 @@ Sets whether `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`_
 
 |void| **window_set_ime_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_ime_position>`
 
-Sets the position of the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ popup for the specified ``window_id``. Only effective if :ref:`window_set_ime_active<class_DisplayServer_method_window_set_ime_active>` was set to ``true`` for the specified ``window_id``.
+Sets the position of the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ popup for the specified ``window_id``. Only effective if :ref:`window_set_ime_active()<class_DisplayServer_method_window_set_ime_active>` was set to ``true`` for the specified ``window_id``.
 
 .. rst-class:: classref-item-separator
 
@@ -4493,7 +4493,7 @@ Sets the ``callback`` that should be called when text is entered using the virtu
 
 |void| **window_set_max_size**\ (\ max_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_max_size>`
 
-Sets the maximum size of the window specified by ``window_id`` in pixels. Normally, the user will not be able to drag the window to make it larger than the specified size. See also :ref:`window_get_max_size<class_DisplayServer_method_window_get_max_size>`.
+Sets the maximum size of the window specified by ``window_id`` in pixels. Normally, the user will not be able to drag the window to make it larger than the specified size. See also :ref:`window_get_max_size()<class_DisplayServer_method_window_get_max_size>`.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.max_size<class_Window_property_max_size>` instead.
 
@@ -4509,7 +4509,7 @@ Sets the maximum size of the window specified by ``window_id`` in pixels. Normal
 
 |void| **window_set_min_size**\ (\ min_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_min_size>`
 
-Sets the minimum size for the given window to ``min_size`` in pixels. Normally, the user will not be able to drag the window to make it smaller than the specified size. See also :ref:`window_get_min_size<class_DisplayServer_method_window_get_min_size>`.
+Sets the minimum size for the given window to ``min_size`` in pixels. Normally, the user will not be able to drag the window to make it smaller than the specified size. See also :ref:`window_get_min_size()<class_DisplayServer_method_window_get_min_size>`.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.min_size<class_Window_property_min_size>` instead.
 
@@ -4611,7 +4611,7 @@ Sets the position of the given window to ``position``. On multi-monitor setups, 
     |             | |       |
     +-------------+ +-------+
 
-See also :ref:`window_get_position<class_DisplayServer_method_window_get_position>` and :ref:`window_set_size<class_DisplayServer_method_window_set_size>`.
+See also :ref:`window_get_position()<class_DisplayServer_method_window_get_position>` and :ref:`window_set_size()<class_DisplayServer_method_window_set_size>`.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.position<class_Window_property_position>` instead.
 
@@ -4641,7 +4641,7 @@ Sets the ``callback`` that will be called when the window specified by ``window_
 
 |void| **window_set_size**\ (\ size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_size>`
 
-Sets the size of the given window to ``size`` (in pixels). See also :ref:`window_get_size<class_DisplayServer_method_window_get_size>` and :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
+Sets the size of the given window to ``size`` (in pixels). See also :ref:`window_get_size()<class_DisplayServer_method_window_get_size>` and :ref:`window_get_position()<class_DisplayServer_method_window_get_position>`.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.size<class_Window_property_size>` instead.
 

@@ -425,7 +425,7 @@ enum **ToneMapper**: :ref:`🔗<enum_Environment_ToneMapper>`
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_LINEAR** = ``0``
 
-Linear tonemapper operator. Reads the linear data and passes it on unmodified. This can cause bright lighting to look blown out, with noticeable clipping in the output colors.
+Does not modify color data, resulting in a linear tonemapping curve which unnaturally clips bright values, causing bright lighting to look blown out. The simplest and fastest tonemapper.
 
 .. _class_Environment_constant_TONE_MAPPER_REINHARDT:
 
@@ -433,7 +433,9 @@ Linear tonemapper operator. Reads the linear data and passes it on unmodified. T
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_REINHARDT** = ``1``
 
-Reinhard tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color * (1 + color / (white * white)) / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull. When :ref:`tonemap_white<class_Environment_property_tonemap_white>` is left at the default value of ``1.0`` this is identical to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>` while also being slightly less performant.
+A simple tonemapping curve that rolls off bright values to prevent clipping. This results in an image that can appear dull and low contrast. Slower than :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`.
+
+\ **Note:** When :ref:`tonemap_white<class_Environment_property_tonemap_white>` is left at the default value of ``1.0``, :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>` produces an identical image to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`.
 
 .. _class_Environment_constant_TONE_MAPPER_FILMIC:
 
@@ -441,7 +443,7 @@ Reinhard tonemapper operator. Performs a variation on rendered pixels' colors by
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_FILMIC** = ``2``
 
-Filmic tonemapper operator. This avoids clipping bright highlights, with a resulting image that usually looks more vivid than :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>`.
+Uses a film-like tonemapping curve to prevent clipping of bright values and provide better contrast than :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>`. Slightly slower than :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>`.
 
 .. _class_Environment_constant_TONE_MAPPER_ACES:
 
@@ -449,7 +451,7 @@ Filmic tonemapper operator. This avoids clipping bright highlights, with a resul
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_ACES** = ``3``
 
-Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>` and :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>`.
+Uses a high-contrast film-like tonemapping curve and desaturates bright values for a more realistic appearance. Slightly slower than :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>`.
 
 \ **Note:** This tonemapping operator is called "ACES Fitted" in Godot 3.x.
 
@@ -459,7 +461,9 @@ Use the Academy Color Encoding System tonemapper. ACES is slightly more expensiv
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_AGX** = ``4``
 
-Use the AgX tonemapper. AgX is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. AgX is less likely to darken parts of the scene compared to :ref:`TONE_MAPPER_ACES<class_Environment_constant_TONE_MAPPER_ACES>` and can match the overall scene brightness of :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>` more closely.
+Uses a film-like tonemapping curve and desaturates bright values for a more realistic appearance. Better than other tonemappers at maintaining the hue of colors as they become brighter. The slowest tonemapping option.
+
+\ **Note:** :ref:`tonemap_white<class_Environment_property_tonemap_white>` is fixed at a value of ``16.29``, which makes :ref:`TONE_MAPPER_AGX<class_Environment_constant_TONE_MAPPER_AGX>` unsuitable for use with the Mobile rendering method.
 
 .. rst-class:: classref-item-separator
 
@@ -2051,7 +2055,9 @@ The maximum number of steps for screen-space reflections. Higher values are slow
 - |void| **set_tonemap_exposure**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_tonemap_exposure**\ (\ )
 
-The default exposure used for tonemapping. Higher values result in a brighter image. See also :ref:`tonemap_white<class_Environment_property_tonemap_white>`.
+Adjusts the brightness of values before they are provided to the tonemapper. Higher :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>` values result in a brighter image. See also :ref:`tonemap_white<class_Environment_property_tonemap_white>`.
+
+\ **Note:** Values provided to the tonemapper will also be multiplied by ``2.0`` and ``1.8`` for :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>` and :ref:`TONE_MAPPER_ACES<class_Environment_constant_TONE_MAPPER_ACES>` respectively to produce a similar apparent brightness as :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2085,7 +2091,7 @@ The tonemapping mode to use. Tonemapping is the process that "converts" HDR valu
 - |void| **set_tonemap_white**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_tonemap_white**\ (\ )
 
-The white reference value for tonemapping (also called "whitepoint"). Higher values can make highlights look less blown out, and will also slightly darken the whole scene as a result. See also :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`.
+The white reference value for tonemapping, which indicates where bright white is located in the scale of values provided to the tonemapper. For photorealistic lighting, recommended values are between ``6.0`` and ``8.0``. Higher values result in less blown out highlights, but may make the scene appear lower contrast. See also :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`.
 
 \ **Note:** :ref:`tonemap_white<class_Environment_property_tonemap_white>` is ignored when using :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>` or :ref:`TONE_MAPPER_AGX<class_Environment_constant_TONE_MAPPER_AGX>`.
 

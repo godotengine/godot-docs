@@ -643,7 +643,7 @@ The transition type of the time-based interpolation. See also :ref:`TransitionTy
 
 If ``true``, limits the degree of rotation. This helps prevent the character's neck from rotating 360 degrees.
 
-\ **Note:** As with :ref:`AnimationTree<class_AnimationTree>` blending, interpolation is provided that favors :ref:`Skeleton3D.get_bone_rest<class_Skeleton3D_method_get_bone_rest>`. This means that interpolation does not select the shortest path in some cases.
+\ **Note:** As with :ref:`AnimationTree<class_AnimationTree>` blending, interpolation is provided that favors :ref:`Skeleton3D.get_bone_rest()<class_Skeleton3D_method_get_bone_rest>`. This means that interpolation does not select the shortest path in some cases.
 
 \ **Note:** Some :ref:`transition_type<class_LookAtModifier3D_property_transition_type>` may exceed the limitations (e.g. `Back`, `Elastic`, and `Spring`). If interpolation occurs while overshooting the limitations, the result might possibly not respect the bone rest.
 
@@ -691,7 +691,7 @@ Returns the remaining seconds of the time-based interpolation.
 
 :ref:`bool<class_bool>` **is_interpolating**\ (\ ) |const| :ref:`🔗<class_LookAtModifier3D_method_is_interpolating>`
 
-Returns whether the time-based interpolation is running or not. If ``true``, it is equivalent to :ref:`get_interpolation_remaining<class_LookAtModifier3D_method_get_interpolation_remaining>` being ``0``.
+Returns whether the time-based interpolation is running or not. If ``true``, it is equivalent to :ref:`get_interpolation_remaining()<class_LookAtModifier3D_method_get_interpolation_remaining>` being ``0``.
 
 This is useful to determine whether a **LookAtModifier3D** can be removed safely.
 
@@ -707,7 +707,7 @@ This is useful to determine whether a **LookAtModifier3D** can be removed safely
 
 Returns whether the target is within the angle limitations. It is useful for unsetting the :ref:`target_node<class_LookAtModifier3D_property_target_node>` when the target is outside of the angle limitations.
 
-\ **Note:** The value is updated after :ref:`SkeletonModifier3D._process_modification<class_SkeletonModifier3D_private_method__process_modification>`. To retrieve this value correctly, we recommend using the signal :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`.
+\ **Note:** The value is updated after :ref:`SkeletonModifier3D._process_modification()<class_SkeletonModifier3D_private_method__process_modification>`. To retrieve this value correctly, we recommend using the signal :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

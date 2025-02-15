@@ -328,7 +328,7 @@ Method Descriptions
 
 |void| **_area_add_shape**\ (\ area\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_add_shape>`
 
-Overridable version of :ref:`PhysicsServer2D.area_add_shape<class_PhysicsServer2D_method_area_add_shape>`.
+Overridable version of :ref:`PhysicsServer2D.area_add_shape()<class_PhysicsServer2D_method_area_add_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -340,7 +340,7 @@ Overridable version of :ref:`PhysicsServer2D.area_add_shape<class_PhysicsServer2
 
 |void| **_area_attach_canvas_instance_id**\ (\ area\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_attach_canvas_instance_id>`
 
-Overridable version of :ref:`PhysicsServer2D.area_attach_canvas_instance_id<class_PhysicsServer2D_method_area_attach_canvas_instance_id>`.
+Overridable version of :ref:`PhysicsServer2D.area_attach_canvas_instance_id()<class_PhysicsServer2D_method_area_attach_canvas_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -352,7 +352,7 @@ Overridable version of :ref:`PhysicsServer2D.area_attach_canvas_instance_id<clas
 
 |void| **_area_attach_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_attach_object_instance_id>`
 
-Overridable version of :ref:`PhysicsServer2D.area_attach_object_instance_id<class_PhysicsServer2D_method_area_attach_object_instance_id>`.
+Overridable version of :ref:`PhysicsServer2D.area_attach_object_instance_id()<class_PhysicsServer2D_method_area_attach_object_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -364,7 +364,7 @@ Overridable version of :ref:`PhysicsServer2D.area_attach_object_instance_id<clas
 
 |void| **_area_clear_shapes**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_clear_shapes>`
 
-Overridable version of :ref:`PhysicsServer2D.area_clear_shapes<class_PhysicsServer2D_method_area_clear_shapes>`.
+Overridable version of :ref:`PhysicsServer2D.area_clear_shapes()<class_PhysicsServer2D_method_area_clear_shapes>`.
 
 .. rst-class:: classref-item-separator
 
@@ -376,7 +376,7 @@ Overridable version of :ref:`PhysicsServer2D.area_clear_shapes<class_PhysicsServ
 
 :ref:`RID<class_RID>` **_area_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_create>`
 
-Overridable version of :ref:`PhysicsServer2D.area_create<class_PhysicsServer2D_method_area_create>`.
+Overridable version of :ref:`PhysicsServer2D.area_create()<class_PhysicsServer2D_method_area_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -388,7 +388,7 @@ Overridable version of :ref:`PhysicsServer2D.area_create<class_PhysicsServer2D_m
 
 :ref:`int<class_int>` **_area_get_canvas_instance_id**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_canvas_instance_id>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_canvas_instance_id<class_PhysicsServer2D_method_area_get_canvas_instance_id>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_canvas_instance_id()<class_PhysicsServer2D_method_area_get_canvas_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -400,7 +400,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_canvas_instance_id<class_P
 
 :ref:`int<class_int>` **_area_get_collision_layer**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_collision_layer>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_collision_layer<class_PhysicsServer2D_method_area_get_collision_layer>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_collision_layer()<class_PhysicsServer2D_method_area_get_collision_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -412,7 +412,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_collision_layer<class_Phys
 
 :ref:`int<class_int>` **_area_get_collision_mask**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_collision_mask>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_collision_mask<class_PhysicsServer2D_method_area_get_collision_mask>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_collision_mask()<class_PhysicsServer2D_method_area_get_collision_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -424,7 +424,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_collision_mask<class_Physi
 
 :ref:`int<class_int>` **_area_get_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_object_instance_id>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_object_instance_id<class_PhysicsServer2D_method_area_get_object_instance_id>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_object_instance_id()<class_PhysicsServer2D_method_area_get_object_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -436,7 +436,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_object_instance_id<class_P
 
 :ref:`Variant<class_Variant>` **_area_get_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_param>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_param<class_PhysicsServer2D_method_area_get_param>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_param()<class_PhysicsServer2D_method_area_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -448,7 +448,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_param<class_PhysicsServer2
 
 :ref:`RID<class_RID>` **_area_get_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_shape>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_shape<class_PhysicsServer2D_method_area_get_shape>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_shape()<class_PhysicsServer2D_method_area_get_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -460,7 +460,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_shape<class_PhysicsServer2
 
 :ref:`int<class_int>` **_area_get_shape_count**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_shape_count>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_shape_count<class_PhysicsServer2D_method_area_get_shape_count>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_shape_count()<class_PhysicsServer2D_method_area_get_shape_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -472,7 +472,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_shape_count<class_PhysicsS
 
 :ref:`Transform2D<class_Transform2D>` **_area_get_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_shape_transform>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_shape_transform<class_PhysicsServer2D_method_area_get_shape_transform>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_shape_transform()<class_PhysicsServer2D_method_area_get_shape_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -484,7 +484,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_shape_transform<class_Phys
 
 :ref:`RID<class_RID>` **_area_get_space**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_space>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_space<class_PhysicsServer2D_method_area_get_space>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_space()<class_PhysicsServer2D_method_area_get_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -496,7 +496,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_space<class_PhysicsServer2
 
 :ref:`Transform2D<class_Transform2D>` **_area_get_transform**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_transform>`
 
-Overridable version of :ref:`PhysicsServer2D.area_get_transform<class_PhysicsServer2D_method_area_get_transform>`.
+Overridable version of :ref:`PhysicsServer2D.area_get_transform()<class_PhysicsServer2D_method_area_get_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -508,7 +508,7 @@ Overridable version of :ref:`PhysicsServer2D.area_get_transform<class_PhysicsSer
 
 |void| **_area_remove_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_remove_shape>`
 
-Overridable version of :ref:`PhysicsServer2D.area_remove_shape<class_PhysicsServer2D_method_area_remove_shape>`.
+Overridable version of :ref:`PhysicsServer2D.area_remove_shape()<class_PhysicsServer2D_method_area_remove_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -520,7 +520,7 @@ Overridable version of :ref:`PhysicsServer2D.area_remove_shape<class_PhysicsServ
 
 |void| **_area_set_area_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_area_monitor_callback>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_area_monitor_callback<class_PhysicsServer2D_method_area_set_area_monitor_callback>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_area_monitor_callback()<class_PhysicsServer2D_method_area_set_area_monitor_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -532,7 +532,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_area_monitor_callback<clas
 
 |void| **_area_set_collision_layer**\ (\ area\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_collision_layer>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_collision_layer<class_PhysicsServer2D_method_area_set_collision_layer>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_collision_layer()<class_PhysicsServer2D_method_area_set_collision_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -544,7 +544,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_collision_layer<class_Phys
 
 |void| **_area_set_collision_mask**\ (\ area\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_collision_mask>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_collision_mask<class_PhysicsServer2D_method_area_set_collision_mask>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_collision_mask()<class_PhysicsServer2D_method_area_set_collision_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -556,7 +556,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_collision_mask<class_Physi
 
 |void| **_area_set_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_monitor_callback>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_monitor_callback<class_PhysicsServer2D_method_area_set_monitor_callback>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_monitor_callback()<class_PhysicsServer2D_method_area_set_monitor_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -568,7 +568,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_monitor_callback<class_Phy
 
 |void| **_area_set_monitorable**\ (\ area\: :ref:`RID<class_RID>`, monitorable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_monitorable>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_monitorable<class_PhysicsServer2D_method_area_set_monitorable>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_monitorable()<class_PhysicsServer2D_method_area_set_monitorable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -580,7 +580,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_monitorable<class_PhysicsS
 
 |void| **_area_set_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_param>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_param<class_PhysicsServer2D_method_area_set_param>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_param()<class_PhysicsServer2D_method_area_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -606,7 +606,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_area_set_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_shape>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_shape<class_PhysicsServer2D_method_area_set_shape>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_shape()<class_PhysicsServer2D_method_area_set_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -618,7 +618,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_shape<class_PhysicsServer2
 
 |void| **_area_set_shape_disabled**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_shape_disabled>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_shape_disabled<class_PhysicsServer2D_method_area_set_shape_disabled>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_shape_disabled()<class_PhysicsServer2D_method_area_set_shape_disabled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -630,7 +630,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_shape_disabled<class_Physi
 
 |void| **_area_set_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_shape_transform>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_shape_transform<class_PhysicsServer2D_method_area_set_shape_transform>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_shape_transform()<class_PhysicsServer2D_method_area_set_shape_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -642,7 +642,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_shape_transform<class_Phys
 
 |void| **_area_set_space**\ (\ area\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_space>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_space<class_PhysicsServer2D_method_area_set_space>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_space()<class_PhysicsServer2D_method_area_set_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -654,7 +654,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_space<class_PhysicsServer2
 
 |void| **_area_set_transform**\ (\ area\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_transform>`
 
-Overridable version of :ref:`PhysicsServer2D.area_set_transform<class_PhysicsServer2D_method_area_set_transform>`.
+Overridable version of :ref:`PhysicsServer2D.area_set_transform()<class_PhysicsServer2D_method_area_set_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -666,7 +666,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_transform<class_PhysicsSer
 
 |void| **_body_add_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_collision_exception>`
 
-Overridable version of :ref:`PhysicsServer2D.body_add_collision_exception<class_PhysicsServer2D_method_body_add_collision_exception>`.
+Overridable version of :ref:`PhysicsServer2D.body_add_collision_exception()<class_PhysicsServer2D_method_body_add_collision_exception>`.
 
 .. rst-class:: classref-item-separator
 
@@ -678,7 +678,7 @@ Overridable version of :ref:`PhysicsServer2D.body_add_collision_exception<class_
 
 |void| **_body_add_constant_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_constant_central_force>`
 
-Overridable version of :ref:`PhysicsServer2D.body_add_constant_central_force<class_PhysicsServer2D_method_body_add_constant_central_force>`.
+Overridable version of :ref:`PhysicsServer2D.body_add_constant_central_force()<class_PhysicsServer2D_method_body_add_constant_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -690,7 +690,7 @@ Overridable version of :ref:`PhysicsServer2D.body_add_constant_central_force<cla
 
 |void| **_body_add_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_constant_force>`
 
-Overridable version of :ref:`PhysicsServer2D.body_add_constant_force<class_PhysicsServer2D_method_body_add_constant_force>`.
+Overridable version of :ref:`PhysicsServer2D.body_add_constant_force()<class_PhysicsServer2D_method_body_add_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -702,7 +702,7 @@ Overridable version of :ref:`PhysicsServer2D.body_add_constant_force<class_Physi
 
 |void| **_body_add_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_constant_torque>`
 
-Overridable version of :ref:`PhysicsServer2D.body_add_constant_torque<class_PhysicsServer2D_method_body_add_constant_torque>`.
+Overridable version of :ref:`PhysicsServer2D.body_add_constant_torque()<class_PhysicsServer2D_method_body_add_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -714,7 +714,7 @@ Overridable version of :ref:`PhysicsServer2D.body_add_constant_torque<class_Phys
 
 |void| **_body_add_shape**\ (\ body\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_shape>`
 
-Overridable version of :ref:`PhysicsServer2D.body_add_shape<class_PhysicsServer2D_method_body_add_shape>`.
+Overridable version of :ref:`PhysicsServer2D.body_add_shape()<class_PhysicsServer2D_method_body_add_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -726,7 +726,7 @@ Overridable version of :ref:`PhysicsServer2D.body_add_shape<class_PhysicsServer2
 
 |void| **_body_apply_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_central_force>`
 
-Overridable version of :ref:`PhysicsServer2D.body_apply_central_force<class_PhysicsServer2D_method_body_apply_central_force>`.
+Overridable version of :ref:`PhysicsServer2D.body_apply_central_force()<class_PhysicsServer2D_method_body_apply_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -738,7 +738,7 @@ Overridable version of :ref:`PhysicsServer2D.body_apply_central_force<class_Phys
 
 |void| **_body_apply_central_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_central_impulse>`
 
-Overridable version of :ref:`PhysicsServer2D.body_apply_central_impulse<class_PhysicsServer2D_method_body_apply_central_impulse>`.
+Overridable version of :ref:`PhysicsServer2D.body_apply_central_impulse()<class_PhysicsServer2D_method_body_apply_central_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -750,7 +750,7 @@ Overridable version of :ref:`PhysicsServer2D.body_apply_central_impulse<class_Ph
 
 |void| **_body_apply_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_force>`
 
-Overridable version of :ref:`PhysicsServer2D.body_apply_force<class_PhysicsServer2D_method_body_apply_force>`.
+Overridable version of :ref:`PhysicsServer2D.body_apply_force()<class_PhysicsServer2D_method_body_apply_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -762,7 +762,7 @@ Overridable version of :ref:`PhysicsServer2D.body_apply_force<class_PhysicsServe
 
 |void| **_body_apply_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_impulse>`
 
-Overridable version of :ref:`PhysicsServer2D.body_apply_impulse<class_PhysicsServer2D_method_body_apply_impulse>`.
+Overridable version of :ref:`PhysicsServer2D.body_apply_impulse()<class_PhysicsServer2D_method_body_apply_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -774,7 +774,7 @@ Overridable version of :ref:`PhysicsServer2D.body_apply_impulse<class_PhysicsSer
 
 |void| **_body_apply_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_torque>`
 
-Overridable version of :ref:`PhysicsServer2D.body_apply_torque<class_PhysicsServer2D_method_body_apply_torque>`.
+Overridable version of :ref:`PhysicsServer2D.body_apply_torque()<class_PhysicsServer2D_method_body_apply_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -786,7 +786,7 @@ Overridable version of :ref:`PhysicsServer2D.body_apply_torque<class_PhysicsServ
 
 |void| **_body_apply_torque_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_torque_impulse>`
 
-Overridable version of :ref:`PhysicsServer2D.body_apply_torque_impulse<class_PhysicsServer2D_method_body_apply_torque_impulse>`.
+Overridable version of :ref:`PhysicsServer2D.body_apply_torque_impulse()<class_PhysicsServer2D_method_body_apply_torque_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -798,7 +798,7 @@ Overridable version of :ref:`PhysicsServer2D.body_apply_torque_impulse<class_Phy
 
 |void| **_body_attach_canvas_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_attach_canvas_instance_id>`
 
-Overridable version of :ref:`PhysicsServer2D.body_attach_canvas_instance_id<class_PhysicsServer2D_method_body_attach_canvas_instance_id>`.
+Overridable version of :ref:`PhysicsServer2D.body_attach_canvas_instance_id()<class_PhysicsServer2D_method_body_attach_canvas_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -810,7 +810,7 @@ Overridable version of :ref:`PhysicsServer2D.body_attach_canvas_instance_id<clas
 
 |void| **_body_attach_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_attach_object_instance_id>`
 
-Overridable version of :ref:`PhysicsServer2D.body_attach_object_instance_id<class_PhysicsServer2D_method_body_attach_object_instance_id>`.
+Overridable version of :ref:`PhysicsServer2D.body_attach_object_instance_id()<class_PhysicsServer2D_method_body_attach_object_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -822,7 +822,7 @@ Overridable version of :ref:`PhysicsServer2D.body_attach_object_instance_id<clas
 
 |void| **_body_clear_shapes**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_clear_shapes>`
 
-Overridable version of :ref:`PhysicsServer2D.body_clear_shapes<class_PhysicsServer2D_method_body_clear_shapes>`.
+Overridable version of :ref:`PhysicsServer2D.body_clear_shapes()<class_PhysicsServer2D_method_body_clear_shapes>`.
 
 .. rst-class:: classref-item-separator
 
@@ -836,7 +836,7 @@ Overridable version of :ref:`PhysicsServer2D.body_clear_shapes<class_PhysicsServ
 
 Given a ``body``, a ``shape``, and their respective parameters, this method should return ``true`` if a collision between the two would occur, with additional details passed in ``results``.
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_collide`` method. Corresponds to :ref:`PhysicsDirectSpaceState2D.collide_shape<class_PhysicsDirectSpaceState2D_method_collide_shape>`.
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_collide`` method. Corresponds to :ref:`PhysicsDirectSpaceState2D.collide_shape()<class_PhysicsDirectSpaceState2D_method_collide_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -848,7 +848,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`RID<class_RID>` **_body_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_create>`
 
-Overridable version of :ref:`PhysicsServer2D.body_create<class_PhysicsServer2D_method_body_create>`.
+Overridable version of :ref:`PhysicsServer2D.body_create()<class_PhysicsServer2D_method_body_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -860,7 +860,7 @@ Overridable version of :ref:`PhysicsServer2D.body_create<class_PhysicsServer2D_m
 
 :ref:`int<class_int>` **_body_get_canvas_instance_id**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_canvas_instance_id>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_canvas_instance_id<class_PhysicsServer2D_method_body_get_canvas_instance_id>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_canvas_instance_id()<class_PhysicsServer2D_method_body_get_canvas_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -872,9 +872,9 @@ Overridable version of :ref:`PhysicsServer2D.body_get_canvas_instance_id<class_P
 
 :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **_body_get_collision_exceptions**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_exceptions>`
 
-Returns the :ref:`RID<class_RID>`\ s of all bodies added as collision exceptions for the given ``body``. See also :ref:`_body_add_collision_exception<class_PhysicsServer2DExtension_private_method__body_add_collision_exception>` and :ref:`_body_remove_collision_exception<class_PhysicsServer2DExtension_private_method__body_remove_collision_exception>`.
+Returns the :ref:`RID<class_RID>`\ s of all bodies added as collision exceptions for the given ``body``. See also :ref:`_body_add_collision_exception()<class_PhysicsServer2DExtension_private_method__body_add_collision_exception>` and :ref:`_body_remove_collision_exception()<class_PhysicsServer2DExtension_private_method__body_remove_collision_exception>`.
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_get_collision_exceptions`` method. Corresponds to :ref:`PhysicsBody2D.get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>`.
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_get_collision_exceptions`` method. Corresponds to :ref:`PhysicsBody2D.get_collision_exceptions()<class_PhysicsBody2D_method_get_collision_exceptions>`.
 
 .. rst-class:: classref-item-separator
 
@@ -886,7 +886,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`int<class_int>` **_body_get_collision_layer**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_layer>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_collision_layer<class_PhysicsServer2D_method_body_get_collision_layer>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_collision_layer()<class_PhysicsServer2D_method_body_get_collision_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -898,7 +898,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_collision_layer<class_Phys
 
 :ref:`int<class_int>` **_body_get_collision_mask**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_mask>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_collision_mask<class_PhysicsServer2D_method_body_get_collision_mask>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_collision_mask()<class_PhysicsServer2D_method_body_get_collision_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -910,7 +910,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_collision_mask<class_Physi
 
 :ref:`float<class_float>` **_body_get_collision_priority**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_priority>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_collision_priority<class_PhysicsServer2D_method_body_get_collision_priority>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_collision_priority()<class_PhysicsServer2D_method_body_get_collision_priority>`.
 
 .. rst-class:: classref-item-separator
 
@@ -922,7 +922,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_collision_priority<class_P
 
 :ref:`Vector2<class_Vector2>` **_body_get_constant_force**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_constant_force>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_constant_force<class_PhysicsServer2D_method_body_get_constant_force>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_constant_force()<class_PhysicsServer2D_method_body_get_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -934,7 +934,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_constant_force<class_Physi
 
 :ref:`float<class_float>` **_body_get_constant_torque**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_constant_torque>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_constant_torque<class_PhysicsServer2D_method_body_get_constant_torque>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_constant_torque()<class_PhysicsServer2D_method_body_get_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -960,7 +960,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` **_body_get_continuous_collision_detection_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_continuous_collision_detection_mode>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_continuous_collision_detection_mode<class_PhysicsServer2D_method_body_get_continuous_collision_detection_mode>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_continuous_collision_detection_mode()<class_PhysicsServer2D_method_body_get_continuous_collision_detection_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -972,7 +972,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_continuous_collision_detec
 
 :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` **_body_get_direct_state**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_direct_state>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_direct_state<class_PhysicsServer2D_method_body_get_direct_state>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_direct_state()<class_PhysicsServer2D_method_body_get_direct_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -984,7 +984,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_direct_state<class_Physics
 
 :ref:`int<class_int>` **_body_get_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_max_contacts_reported>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_max_contacts_reported<class_PhysicsServer2D_method_body_get_max_contacts_reported>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_max_contacts_reported()<class_PhysicsServer2D_method_body_get_max_contacts_reported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -996,7 +996,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_max_contacts_reported<clas
 
 :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` **_body_get_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_mode>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_mode<class_PhysicsServer2D_method_body_get_mode>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_mode()<class_PhysicsServer2D_method_body_get_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1008,7 +1008,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_mode<class_PhysicsServer2D
 
 :ref:`int<class_int>` **_body_get_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_object_instance_id>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_object_instance_id<class_PhysicsServer2D_method_body_get_object_instance_id>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_object_instance_id()<class_PhysicsServer2D_method_body_get_object_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1020,7 +1020,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_object_instance_id<class_P
 
 :ref:`Variant<class_Variant>` **_body_get_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_param>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_param<class_PhysicsServer2D_method_body_get_param>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_param()<class_PhysicsServer2D_method_body_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1032,7 +1032,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_param<class_PhysicsServer2
 
 :ref:`RID<class_RID>` **_body_get_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_shape>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_shape<class_PhysicsServer2D_method_body_get_shape>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_shape()<class_PhysicsServer2D_method_body_get_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1044,7 +1044,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_shape<class_PhysicsServer2
 
 :ref:`int<class_int>` **_body_get_shape_count**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_shape_count>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_shape_count<class_PhysicsServer2D_method_body_get_shape_count>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_shape_count()<class_PhysicsServer2D_method_body_get_shape_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1056,7 +1056,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_shape_count<class_PhysicsS
 
 :ref:`Transform2D<class_Transform2D>` **_body_get_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_shape_transform>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_shape_transform<class_PhysicsServer2D_method_body_get_shape_transform>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_shape_transform()<class_PhysicsServer2D_method_body_get_shape_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1068,7 +1068,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_shape_transform<class_Phys
 
 :ref:`RID<class_RID>` **_body_get_space**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_space>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_space<class_PhysicsServer2D_method_body_get_space>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_space()<class_PhysicsServer2D_method_body_get_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1080,7 +1080,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_space<class_PhysicsServer2
 
 :ref:`Variant<class_Variant>` **_body_get_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_state>`
 
-Overridable version of :ref:`PhysicsServer2D.body_get_state<class_PhysicsServer2D_method_body_get_state>`.
+Overridable version of :ref:`PhysicsServer2D.body_get_state()<class_PhysicsServer2D_method_body_get_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1092,7 +1092,7 @@ Overridable version of :ref:`PhysicsServer2D.body_get_state<class_PhysicsServer2
 
 :ref:`bool<class_bool>` **_body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_is_omitting_force_integration>`
 
-Overridable version of :ref:`PhysicsServer2D.body_is_omitting_force_integration<class_PhysicsServer2D_method_body_is_omitting_force_integration>`.
+Overridable version of :ref:`PhysicsServer2D.body_is_omitting_force_integration()<class_PhysicsServer2D_method_body_is_omitting_force_integration>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1104,7 +1104,7 @@ Overridable version of :ref:`PhysicsServer2D.body_is_omitting_force_integration<
 
 |void| **_body_remove_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_remove_collision_exception>`
 
-Overridable version of :ref:`PhysicsServer2D.body_remove_collision_exception<class_PhysicsServer2D_method_body_remove_collision_exception>`.
+Overridable version of :ref:`PhysicsServer2D.body_remove_collision_exception()<class_PhysicsServer2D_method_body_remove_collision_exception>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1116,7 +1116,7 @@ Overridable version of :ref:`PhysicsServer2D.body_remove_collision_exception<cla
 
 |void| **_body_remove_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_remove_shape>`
 
-Overridable version of :ref:`PhysicsServer2D.body_remove_shape<class_PhysicsServer2D_method_body_remove_shape>`.
+Overridable version of :ref:`PhysicsServer2D.body_remove_shape()<class_PhysicsServer2D_method_body_remove_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1128,7 +1128,7 @@ Overridable version of :ref:`PhysicsServer2D.body_remove_shape<class_PhysicsServ
 
 |void| **_body_reset_mass_properties**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_reset_mass_properties>`
 
-Overridable version of :ref:`PhysicsServer2D.body_reset_mass_properties<class_PhysicsServer2D_method_body_reset_mass_properties>`.
+Overridable version of :ref:`PhysicsServer2D.body_reset_mass_properties()<class_PhysicsServer2D_method_body_reset_mass_properties>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1140,7 +1140,7 @@ Overridable version of :ref:`PhysicsServer2D.body_reset_mass_properties<class_Ph
 
 |void| **_body_set_axis_velocity**\ (\ body\: :ref:`RID<class_RID>`, axis_velocity\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_axis_velocity>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_axis_velocity<class_PhysicsServer2D_method_body_set_axis_velocity>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_axis_velocity()<class_PhysicsServer2D_method_body_set_axis_velocity>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1152,7 +1152,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_axis_velocity<class_Physic
 
 |void| **_body_set_collision_layer**\ (\ body\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_collision_layer>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_collision_layer<class_PhysicsServer2D_method_body_set_collision_layer>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_collision_layer()<class_PhysicsServer2D_method_body_set_collision_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1164,7 +1164,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_collision_layer<class_Phys
 
 |void| **_body_set_collision_mask**\ (\ body\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_collision_mask>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_collision_mask<class_PhysicsServer2D_method_body_set_collision_mask>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_collision_mask()<class_PhysicsServer2D_method_body_set_collision_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1176,7 +1176,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_collision_mask<class_Physi
 
 |void| **_body_set_collision_priority**\ (\ body\: :ref:`RID<class_RID>`, priority\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_collision_priority>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_collision_priority<class_PhysicsServer2D_method_body_set_collision_priority>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_collision_priority()<class_PhysicsServer2D_method_body_set_collision_priority>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1188,7 +1188,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_collision_priority<class_P
 
 |void| **_body_set_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_constant_force>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_constant_force<class_PhysicsServer2D_method_body_set_constant_force>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_constant_force()<class_PhysicsServer2D_method_body_set_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1200,7 +1200,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_constant_force<class_Physi
 
 |void| **_body_set_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_constant_torque>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_constant_torque<class_PhysicsServer2D_method_body_set_constant_torque>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_constant_torque()<class_PhysicsServer2D_method_body_set_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1226,7 +1226,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_body_set_continuous_collision_detection_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_continuous_collision_detection_mode>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_continuous_collision_detection_mode<class_PhysicsServer2D_method_body_set_continuous_collision_detection_mode>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_continuous_collision_detection_mode()<class_PhysicsServer2D_method_body_set_continuous_collision_detection_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1238,7 +1238,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_continuous_collision_detec
 
 |void| **_body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_force_integration_callback>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_force_integration_callback()<class_PhysicsServer2D_method_body_set_force_integration_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1250,7 +1250,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_force_integration_callback
 
 |void| **_body_set_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`, amount\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_max_contacts_reported>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_max_contacts_reported<class_PhysicsServer2D_method_body_set_max_contacts_reported>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_max_contacts_reported()<class_PhysicsServer2D_method_body_set_max_contacts_reported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1262,7 +1262,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_max_contacts_reported<clas
 
 |void| **_body_set_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_mode>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_mode<class_PhysicsServer2D_method_body_set_mode>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_mode()<class_PhysicsServer2D_method_body_set_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1274,7 +1274,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_mode<class_PhysicsServer2D
 
 |void| **_body_set_omit_force_integration**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_omit_force_integration>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_omit_force_integration()<class_PhysicsServer2D_method_body_set_omit_force_integration>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1286,7 +1286,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_omit_force_integration<cla
 
 |void| **_body_set_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_param>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_param<class_PhysicsServer2D_method_body_set_param>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_param()<class_PhysicsServer2D_method_body_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1312,7 +1312,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_body_set_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_shape>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_shape<class_PhysicsServer2D_method_body_set_shape>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_shape()<class_PhysicsServer2D_method_body_set_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1324,7 +1324,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_shape<class_PhysicsServer2
 
 |void| **_body_set_shape_as_one_way_collision**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`, margin\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_shape_as_one_way_collision>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_shape_as_one_way_collision<class_PhysicsServer2D_method_body_set_shape_as_one_way_collision>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_shape_as_one_way_collision()<class_PhysicsServer2D_method_body_set_shape_as_one_way_collision>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1336,7 +1336,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_shape_as_one_way_collision
 
 |void| **_body_set_shape_disabled**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_shape_disabled>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_shape_disabled<class_PhysicsServer2D_method_body_set_shape_disabled>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_shape_disabled()<class_PhysicsServer2D_method_body_set_shape_disabled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1348,7 +1348,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_shape_disabled<class_Physi
 
 |void| **_body_set_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_shape_transform>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_shape_transform<class_PhysicsServer2D_method_body_set_shape_transform>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_shape_transform()<class_PhysicsServer2D_method_body_set_shape_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1360,7 +1360,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_shape_transform<class_Phys
 
 |void| **_body_set_space**\ (\ body\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_space>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_space<class_PhysicsServer2D_method_body_set_space>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_space()<class_PhysicsServer2D_method_body_set_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1372,7 +1372,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_space<class_PhysicsServer2
 
 |void| **_body_set_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_state>`
 
-Overridable version of :ref:`PhysicsServer2D.body_set_state<class_PhysicsServer2D_method_body_set_state>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_state()<class_PhysicsServer2D_method_body_set_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1384,9 +1384,9 @@ Overridable version of :ref:`PhysicsServer2D.body_set_state<class_PhysicsServer2
 
 |void| **_body_set_state_sync_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_state_sync_callback>`
 
-Assigns the ``body`` to call the given ``callable`` during the synchronization phase of the loop, before :ref:`_step<class_PhysicsServer2DExtension_private_method__step>` is called. See also :ref:`_sync<class_PhysicsServer2DExtension_private_method__sync>`.
+Assigns the ``body`` to call the given ``callable`` during the synchronization phase of the loop, before :ref:`_step()<class_PhysicsServer2DExtension_private_method__step>` is called. See also :ref:`_sync()<class_PhysicsServer2DExtension_private_method__sync>`.
 
-Overridable version of :ref:`PhysicsServer2D.body_set_state_sync_callback<class_PhysicsServer2D_method_body_set_state_sync_callback>`.
+Overridable version of :ref:`PhysicsServer2D.body_set_state_sync_callback()<class_PhysicsServer2D_method_body_set_state_sync_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1398,7 +1398,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_state_sync_callback<class_
 
 :ref:`bool<class_bool>` **_body_test_motion**\ (\ body\: :ref:`RID<class_RID>`, from\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collide_separation_ray\: :ref:`bool<class_bool>`, recovery_as_collision\: :ref:`bool<class_bool>`, result\: ``PhysicsServer2DExtensionMotionResult*``\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_test_motion>`
 
-Overridable version of :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`. Unlike the exposed implementation, this method does not receive all of the arguments inside a :ref:`PhysicsTestMotionParameters2D<class_PhysicsTestMotionParameters2D>`.
+Overridable version of :ref:`PhysicsServer2D.body_test_motion()<class_PhysicsServer2D_method_body_test_motion>`. Unlike the exposed implementation, this method does not receive all of the arguments inside a :ref:`PhysicsTestMotionParameters2D<class_PhysicsTestMotionParameters2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1410,7 +1410,7 @@ Overridable version of :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServe
 
 :ref:`RID<class_RID>` **_capsule_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__capsule_shape_create>`
 
-Overridable version of :ref:`PhysicsServer2D.capsule_shape_create<class_PhysicsServer2D_method_capsule_shape_create>`.
+Overridable version of :ref:`PhysicsServer2D.capsule_shape_create()<class_PhysicsServer2D_method_capsule_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1422,7 +1422,7 @@ Overridable version of :ref:`PhysicsServer2D.capsule_shape_create<class_PhysicsS
 
 :ref:`RID<class_RID>` **_circle_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__circle_shape_create>`
 
-Overridable version of :ref:`PhysicsServer2D.circle_shape_create<class_PhysicsServer2D_method_circle_shape_create>`.
+Overridable version of :ref:`PhysicsServer2D.circle_shape_create()<class_PhysicsServer2D_method_circle_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1434,7 +1434,7 @@ Overridable version of :ref:`PhysicsServer2D.circle_shape_create<class_PhysicsSe
 
 :ref:`RID<class_RID>` **_concave_polygon_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__concave_polygon_shape_create>`
 
-Overridable version of :ref:`PhysicsServer2D.concave_polygon_shape_create<class_PhysicsServer2D_method_concave_polygon_shape_create>`.
+Overridable version of :ref:`PhysicsServer2D.concave_polygon_shape_create()<class_PhysicsServer2D_method_concave_polygon_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1446,7 +1446,7 @@ Overridable version of :ref:`PhysicsServer2D.concave_polygon_shape_create<class_
 
 :ref:`RID<class_RID>` **_convex_polygon_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__convex_polygon_shape_create>`
 
-Overridable version of :ref:`PhysicsServer2D.convex_polygon_shape_create<class_PhysicsServer2D_method_convex_polygon_shape_create>`.
+Overridable version of :ref:`PhysicsServer2D.convex_polygon_shape_create()<class_PhysicsServer2D_method_convex_polygon_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1458,7 +1458,7 @@ Overridable version of :ref:`PhysicsServer2D.convex_polygon_shape_create<class_P
 
 :ref:`float<class_float>` **_damped_spring_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__damped_spring_joint_get_param>`
 
-Overridable version of :ref:`PhysicsServer2D.damped_spring_joint_get_param<class_PhysicsServer2D_method_damped_spring_joint_get_param>`.
+Overridable version of :ref:`PhysicsServer2D.damped_spring_joint_get_param()<class_PhysicsServer2D_method_damped_spring_joint_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1470,7 +1470,7 @@ Overridable version of :ref:`PhysicsServer2D.damped_spring_joint_get_param<class
 
 |void| **_damped_spring_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__damped_spring_joint_set_param>`
 
-Overridable version of :ref:`PhysicsServer2D.damped_spring_joint_set_param<class_PhysicsServer2D_method_damped_spring_joint_set_param>`.
+Overridable version of :ref:`PhysicsServer2D.damped_spring_joint_set_param()<class_PhysicsServer2D_method_damped_spring_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1482,7 +1482,7 @@ Overridable version of :ref:`PhysicsServer2D.damped_spring_joint_set_param<class
 
 |void| **_end_sync**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__end_sync>`
 
-Called to indicate that the physics server has stopped synchronizing. It is in the loop's iteration/physics phase, and can access physics objects even if running on a separate thread. See also :ref:`_sync<class_PhysicsServer2DExtension_private_method__sync>`.
+Called to indicate that the physics server has stopped synchronizing. It is in the loop's iteration/physics phase, and can access physics objects even if running on a separate thread. See also :ref:`_sync()<class_PhysicsServer2DExtension_private_method__sync>`.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``end_sync`` method.
 
@@ -1496,7 +1496,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_finish**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__finish>`
 
-Called when the main loop finalizes to shut down the physics server. See also :ref:`MainLoop._finalize<class_MainLoop_private_method__finalize>` and :ref:`_init<class_PhysicsServer2DExtension_private_method__init>`.
+Called when the main loop finalizes to shut down the physics server. See also :ref:`MainLoop._finalize()<class_MainLoop_private_method__finalize>` and :ref:`_init()<class_PhysicsServer2DExtension_private_method__init>`.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``finish`` method.
 
@@ -1510,7 +1510,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_flush_queries**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__flush_queries>`
 
-Called every physics step before :ref:`_step<class_PhysicsServer2DExtension_private_method__step>` to process all remaining queries.
+Called every physics step before :ref:`_step()<class_PhysicsServer2DExtension_private_method__step>` to process all remaining queries.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``flush_queries`` method.
 
@@ -1524,7 +1524,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__free_rid>`
 
-Overridable version of :ref:`PhysicsServer2D.free_rid<class_PhysicsServer2D_method_free_rid>`.
+Overridable version of :ref:`PhysicsServer2D.free_rid()<class_PhysicsServer2D_method_free_rid>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1536,7 +1536,7 @@ Overridable version of :ref:`PhysicsServer2D.free_rid<class_PhysicsServer2D_meth
 
 :ref:`int<class_int>` **_get_process_info**\ (\ process_info\: :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__get_process_info>`
 
-Overridable version of :ref:`PhysicsServer2D.get_process_info<class_PhysicsServer2D_method_get_process_info>`.
+Overridable version of :ref:`PhysicsServer2D.get_process_info()<class_PhysicsServer2D_method_get_process_info>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1548,7 +1548,7 @@ Overridable version of :ref:`PhysicsServer2D.get_process_info<class_PhysicsServe
 
 |void| **_init**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__init>`
 
-Called when the main loop is initialized and creates a new instance of this physics server. See also :ref:`MainLoop._initialize<class_MainLoop_private_method__initialize>` and :ref:`_finish<class_PhysicsServer2DExtension_private_method__finish>`.
+Called when the main loop is initialized and creates a new instance of this physics server. See also :ref:`MainLoop._initialize()<class_MainLoop_private_method__initialize>` and :ref:`_finish()<class_PhysicsServer2DExtension_private_method__finish>`.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``init`` method.
 
@@ -1562,7 +1562,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`bool<class_bool>` **_is_flushing_queries**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__is_flushing_queries>`
 
-Overridable method that should return ``true`` when the physics server is processing queries. See also :ref:`_flush_queries<class_PhysicsServer2DExtension_private_method__flush_queries>`.
+Overridable method that should return ``true`` when the physics server is processing queries. See also :ref:`_flush_queries()<class_PhysicsServer2DExtension_private_method__flush_queries>`.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``is_flushing_queries`` method.
 
@@ -1576,7 +1576,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_joint_clear**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_clear>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_clear<class_PhysicsServer2D_method_joint_clear>`.
+Overridable version of :ref:`PhysicsServer2D.joint_clear()<class_PhysicsServer2D_method_joint_clear>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1588,7 +1588,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_clear<class_PhysicsServer2D_m
 
 :ref:`RID<class_RID>` **_joint_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_create>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_create<class_PhysicsServer2D_method_joint_create>`.
+Overridable version of :ref:`PhysicsServer2D.joint_create()<class_PhysicsServer2D_method_joint_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1600,7 +1600,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_create<class_PhysicsServer2D_
 
 |void| **_joint_disable_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`, disable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_disable_collisions_between_bodies>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_disable_collisions_between_bodies<class_PhysicsServer2D_method_joint_disable_collisions_between_bodies>`.
+Overridable version of :ref:`PhysicsServer2D.joint_disable_collisions_between_bodies()<class_PhysicsServer2D_method_joint_disable_collisions_between_bodies>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1612,7 +1612,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_disable_collisions_between_bo
 
 :ref:`float<class_float>` **_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`JointParam<enum_PhysicsServer2D_JointParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_get_param>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_get_param<class_PhysicsServer2D_method_joint_get_param>`.
+Overridable version of :ref:`PhysicsServer2D.joint_get_param()<class_PhysicsServer2D_method_joint_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1624,7 +1624,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_get_param<class_PhysicsServer
 
 :ref:`JointType<enum_PhysicsServer2D_JointType>` **_joint_get_type**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_get_type>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_get_type<class_PhysicsServer2D_method_joint_get_type>`.
+Overridable version of :ref:`PhysicsServer2D.joint_get_type()<class_PhysicsServer2D_method_joint_get_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1636,7 +1636,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_get_type<class_PhysicsServer2
 
 :ref:`bool<class_bool>` **_joint_is_disabled_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_is_disabled_collisions_between_bodies>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_is_disabled_collisions_between_bodies<class_PhysicsServer2D_method_joint_is_disabled_collisions_between_bodies>`.
+Overridable version of :ref:`PhysicsServer2D.joint_is_disabled_collisions_between_bodies()<class_PhysicsServer2D_method_joint_is_disabled_collisions_between_bodies>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1648,7 +1648,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_is_disabled_collisions_betwee
 
 |void| **_joint_make_damped_spring**\ (\ joint\: :ref:`RID<class_RID>`, anchor_a\: :ref:`Vector2<class_Vector2>`, anchor_b\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_make_damped_spring>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_make_damped_spring<class_PhysicsServer2D_method_joint_make_damped_spring>`.
+Overridable version of :ref:`PhysicsServer2D.joint_make_damped_spring()<class_PhysicsServer2D_method_joint_make_damped_spring>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1660,7 +1660,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_make_damped_spring<class_Phys
 
 |void| **_joint_make_groove**\ (\ joint\: :ref:`RID<class_RID>`, a_groove1\: :ref:`Vector2<class_Vector2>`, a_groove2\: :ref:`Vector2<class_Vector2>`, b_anchor\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_make_groove>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_make_groove<class_PhysicsServer2D_method_joint_make_groove>`.
+Overridable version of :ref:`PhysicsServer2D.joint_make_groove()<class_PhysicsServer2D_method_joint_make_groove>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1672,7 +1672,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_make_groove<class_PhysicsServ
 
 |void| **_joint_make_pin**\ (\ joint\: :ref:`RID<class_RID>`, anchor\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_make_pin>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_make_pin<class_PhysicsServer2D_method_joint_make_pin>`.
+Overridable version of :ref:`PhysicsServer2D.joint_make_pin()<class_PhysicsServer2D_method_joint_make_pin>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1684,7 +1684,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_make_pin<class_PhysicsServer2
 
 |void| **_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`JointParam<enum_PhysicsServer2D_JointParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_set_param>`
 
-Overridable version of :ref:`PhysicsServer2D.joint_set_param<class_PhysicsServer2D_method_joint_set_param>`.
+Overridable version of :ref:`PhysicsServer2D.joint_set_param()<class_PhysicsServer2D_method_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1696,7 +1696,7 @@ Overridable version of :ref:`PhysicsServer2D.joint_set_param<class_PhysicsServer
 
 :ref:`bool<class_bool>` **_pin_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__pin_joint_get_flag>`
 
-Overridable version of :ref:`PhysicsServer2D.pin_joint_get_flag<class_PhysicsServer2D_method_pin_joint_get_flag>`.
+Overridable version of :ref:`PhysicsServer2D.pin_joint_get_flag()<class_PhysicsServer2D_method_pin_joint_get_flag>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1708,7 +1708,7 @@ Overridable version of :ref:`PhysicsServer2D.pin_joint_get_flag<class_PhysicsSer
 
 :ref:`float<class_float>` **_pin_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__pin_joint_get_param>`
 
-Overridable version of :ref:`PhysicsServer2D.pin_joint_get_param<class_PhysicsServer2D_method_pin_joint_get_param>`.
+Overridable version of :ref:`PhysicsServer2D.pin_joint_get_param()<class_PhysicsServer2D_method_pin_joint_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1720,7 +1720,7 @@ Overridable version of :ref:`PhysicsServer2D.pin_joint_get_param<class_PhysicsSe
 
 |void| **_pin_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>`, enabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__pin_joint_set_flag>`
 
-Overridable version of :ref:`PhysicsServer2D.pin_joint_set_flag<class_PhysicsServer2D_method_pin_joint_set_flag>`.
+Overridable version of :ref:`PhysicsServer2D.pin_joint_set_flag()<class_PhysicsServer2D_method_pin_joint_set_flag>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1732,7 +1732,7 @@ Overridable version of :ref:`PhysicsServer2D.pin_joint_set_flag<class_PhysicsSer
 
 |void| **_pin_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__pin_joint_set_param>`
 
-Overridable version of :ref:`PhysicsServer2D.pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>`.
+Overridable version of :ref:`PhysicsServer2D.pin_joint_set_param()<class_PhysicsServer2D_method_pin_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1744,7 +1744,7 @@ Overridable version of :ref:`PhysicsServer2D.pin_joint_set_param<class_PhysicsSe
 
 :ref:`RID<class_RID>` **_rectangle_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__rectangle_shape_create>`
 
-Overridable version of :ref:`PhysicsServer2D.rectangle_shape_create<class_PhysicsServer2D_method_rectangle_shape_create>`.
+Overridable version of :ref:`PhysicsServer2D.rectangle_shape_create()<class_PhysicsServer2D_method_rectangle_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1756,7 +1756,7 @@ Overridable version of :ref:`PhysicsServer2D.rectangle_shape_create<class_Physic
 
 :ref:`RID<class_RID>` **_segment_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__segment_shape_create>`
 
-Overridable version of :ref:`PhysicsServer2D.segment_shape_create<class_PhysicsServer2D_method_segment_shape_create>`.
+Overridable version of :ref:`PhysicsServer2D.segment_shape_create()<class_PhysicsServer2D_method_segment_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1768,7 +1768,7 @@ Overridable version of :ref:`PhysicsServer2D.segment_shape_create<class_PhysicsS
 
 :ref:`RID<class_RID>` **_separation_ray_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__separation_ray_shape_create>`
 
-Overridable version of :ref:`PhysicsServer2D.separation_ray_shape_create<class_PhysicsServer2D_method_separation_ray_shape_create>`.
+Overridable version of :ref:`PhysicsServer2D.separation_ray_shape_create()<class_PhysicsServer2D_method_separation_ray_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1780,7 +1780,7 @@ Overridable version of :ref:`PhysicsServer2D.separation_ray_shape_create<class_P
 
 |void| **_set_active**\ (\ active\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__set_active>`
 
-Overridable version of :ref:`PhysicsServer2D.set_active<class_PhysicsServer2D_method_set_active>`.
+Overridable version of :ref:`PhysicsServer2D.set_active()<class_PhysicsServer2D_method_set_active>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1794,7 +1794,7 @@ Overridable version of :ref:`PhysicsServer2D.set_active<class_PhysicsServer2D_me
 
 Given two shapes and their parameters, should return ``true`` if a collision between the two would occur, with additional details passed in ``results``.
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_collide`` method. Corresponds to :ref:`PhysicsDirectSpaceState2D.collide_shape<class_PhysicsDirectSpaceState2D_method_collide_shape>`.
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_collide`` method. Corresponds to :ref:`PhysicsDirectSpaceState2D.collide_shape()<class_PhysicsDirectSpaceState2D_method_collide_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1820,7 +1820,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`Variant<class_Variant>` **_shape_get_data**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_get_data>`
 
-Overridable version of :ref:`PhysicsServer2D.shape_get_data<class_PhysicsServer2D_method_shape_get_data>`.
+Overridable version of :ref:`PhysicsServer2D.shape_get_data()<class_PhysicsServer2D_method_shape_get_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1832,7 +1832,7 @@ Overridable version of :ref:`PhysicsServer2D.shape_get_data<class_PhysicsServer2
 
 :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>` **_shape_get_type**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_get_type>`
 
-Overridable version of :ref:`PhysicsServer2D.shape_get_type<class_PhysicsServer2D_method_shape_get_type>`.
+Overridable version of :ref:`PhysicsServer2D.shape_get_type()<class_PhysicsServer2D_method_shape_get_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1858,7 +1858,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_shape_set_data**\ (\ shape\: :ref:`RID<class_RID>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_set_data>`
 
-Overridable version of :ref:`PhysicsServer2D.shape_set_data<class_PhysicsServer2D_method_shape_set_data>`.
+Overridable version of :ref:`PhysicsServer2D.shape_set_data()<class_PhysicsServer2D_method_shape_set_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1870,7 +1870,7 @@ Overridable version of :ref:`PhysicsServer2D.shape_set_data<class_PhysicsServer2
 
 :ref:`RID<class_RID>` **_space_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_create>`
 
-Overridable version of :ref:`PhysicsServer2D.space_create<class_PhysicsServer2D_method_space_create>`.
+Overridable version of :ref:`PhysicsServer2D.space_create()<class_PhysicsServer2D_method_space_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1882,7 +1882,7 @@ Overridable version of :ref:`PhysicsServer2D.space_create<class_PhysicsServer2D_
 
 :ref:`int<class_int>` **_space_get_contact_count**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_contact_count>`
 
-Should return how many contacts have occurred during the last physics step in the given ``space``. See also :ref:`_space_get_contacts<class_PhysicsServer2DExtension_private_method__space_get_contacts>` and :ref:`_space_set_debug_contacts<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`.
+Should return how many contacts have occurred during the last physics step in the given ``space``. See also :ref:`_space_get_contacts()<class_PhysicsServer2DExtension_private_method__space_get_contacts>` and :ref:`_space_set_debug_contacts()<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``space_get_contact_count`` method.
 
@@ -1896,7 +1896,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **_space_get_contacts**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_contacts>`
 
-Should return the positions of all contacts that have occurred during the last physics step in the given ``space``. See also :ref:`_space_get_contact_count<class_PhysicsServer2DExtension_private_method__space_get_contact_count>` and :ref:`_space_set_debug_contacts<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`.
+Should return the positions of all contacts that have occurred during the last physics step in the given ``space``. See also :ref:`_space_get_contact_count()<class_PhysicsServer2DExtension_private_method__space_get_contact_count>` and :ref:`_space_set_debug_contacts()<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``space_get_contacts`` method.
 
@@ -1910,7 +1910,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **_space_get_direct_state**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_direct_state>`
 
-Overridable version of :ref:`PhysicsServer2D.space_get_direct_state<class_PhysicsServer2D_method_space_get_direct_state>`.
+Overridable version of :ref:`PhysicsServer2D.space_get_direct_state()<class_PhysicsServer2D_method_space_get_direct_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1922,7 +1922,7 @@ Overridable version of :ref:`PhysicsServer2D.space_get_direct_state<class_Physic
 
 :ref:`float<class_float>` **_space_get_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_param>`
 
-Overridable version of :ref:`PhysicsServer2D.space_get_param<class_PhysicsServer2D_method_space_get_param>`.
+Overridable version of :ref:`PhysicsServer2D.space_get_param()<class_PhysicsServer2D_method_space_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1934,7 +1934,7 @@ Overridable version of :ref:`PhysicsServer2D.space_get_param<class_PhysicsServer
 
 :ref:`bool<class_bool>` **_space_is_active**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_is_active>`
 
-Overridable version of :ref:`PhysicsServer2D.space_is_active<class_PhysicsServer2D_method_space_is_active>`.
+Overridable version of :ref:`PhysicsServer2D.space_is_active()<class_PhysicsServer2D_method_space_is_active>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1946,7 +1946,7 @@ Overridable version of :ref:`PhysicsServer2D.space_is_active<class_PhysicsServer
 
 |void| **_space_set_active**\ (\ space\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_set_active>`
 
-Overridable version of :ref:`PhysicsServer2D.space_set_active<class_PhysicsServer2D_method_space_set_active>`.
+Overridable version of :ref:`PhysicsServer2D.space_set_active()<class_PhysicsServer2D_method_space_set_active>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1972,7 +1972,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_space_set_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_set_param>`
 
-Overridable version of :ref:`PhysicsServer2D.space_set_param<class_PhysicsServer2D_method_space_set_param>`.
+Overridable version of :ref:`PhysicsServer2D.space_set_param()<class_PhysicsServer2D_method_space_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1984,7 +1984,7 @@ Overridable version of :ref:`PhysicsServer2D.space_set_param<class_PhysicsServer
 
 |void| **_step**\ (\ step\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__step>`
 
-Called every physics step to process the physics simulation. ``step`` is the time elapsed since the last physics step, in seconds. It is usually the same as :ref:`Node.get_physics_process_delta_time<class_Node_method_get_physics_process_delta_time>`.
+Called every physics step to process the physics simulation. ``step`` is the time elapsed since the last physics step, in seconds. It is usually the same as :ref:`Node.get_physics_process_delta_time()<class_Node_method_get_physics_process_delta_time>`.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``step`` method.
 
@@ -1998,7 +1998,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_sync**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__sync>`
 
-Called to indicate that the physics server is synchronizing and cannot access physics states if running on a separate thread. See also :ref:`_end_sync<class_PhysicsServer2DExtension_private_method__end_sync>`.
+Called to indicate that the physics server is synchronizing and cannot access physics states if running on a separate thread. See also :ref:`_end_sync()<class_PhysicsServer2DExtension_private_method__end_sync>`.
 
 Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``sync`` method.
 
@@ -2012,7 +2012,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`RID<class_RID>` **_world_boundary_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__world_boundary_shape_create>`
 
-Overridable version of :ref:`PhysicsServer2D.world_boundary_shape_create<class_PhysicsServer2D_method_world_boundary_shape_create>`.
+Overridable version of :ref:`PhysicsServer2D.world_boundary_shape_create()<class_PhysicsServer2D_method_world_boundary_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2024,7 +2024,7 @@ Overridable version of :ref:`PhysicsServer2D.world_boundary_shape_create<class_P
 
 :ref:`bool<class_bool>` **body_test_motion_is_excluding_body**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_body>`
 
-Returns ``true`` if the body with the given :ref:`RID<class_RID>` is being excluded from :ref:`_body_test_motion<class_PhysicsServer2DExtension_private_method__body_test_motion>`. See also :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns ``true`` if the body with the given :ref:`RID<class_RID>` is being excluded from :ref:`_body_test_motion()<class_PhysicsServer2DExtension_private_method__body_test_motion>`. See also :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2036,7 +2036,7 @@ Returns ``true`` if the body with the given :ref:`RID<class_RID>` is being exclu
 
 :ref:`bool<class_bool>` **body_test_motion_is_excluding_object**\ (\ object\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_object>`
 
-Returns ``true`` if the object with the given instance ID is being excluded from :ref:`_body_test_motion<class_PhysicsServer2DExtension_private_method__body_test_motion>`. See also :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns ``true`` if the object with the given instance ID is being excluded from :ref:`_body_test_motion()<class_PhysicsServer2DExtension_private_method__body_test_motion>`. See also :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

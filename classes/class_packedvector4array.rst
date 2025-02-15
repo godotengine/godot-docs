@@ -19,9 +19,9 @@ Description
 
 An array specifically designed to hold :ref:`Vector4<class_Vector4>`. Packs data tightly, so it saves memory for large array sizes.
 
-\ **Differences between packed arrays, typed arrays, and untyped arrays:** Packed arrays are generally faster to iterate on and modify compared to a typed array of the same type (e.g. **PackedVector4Array** versus ``Array[Vector4]``). Also, packed arrays consume less memory. As a downside, packed arrays are less flexible as they don't offer as many convenience methods such as :ref:`Array.map<class_Array_method_map>`. Typed arrays are in turn faster to iterate on and modify than untyped arrays.
+\ **Differences between packed arrays, typed arrays, and untyped arrays:** Packed arrays are generally faster to iterate on and modify compared to a typed array of the same type (e.g. **PackedVector4Array** versus ``Array[Vector4]``). Also, packed arrays consume less memory. As a downside, packed arrays are less flexible as they don't offer as many convenience methods such as :ref:`Array.map()<class_Array_method_map>`. Typed arrays are in turn faster to iterate on and modify than untyped arrays.
 
-\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedVector4Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate()<class_PackedVector4Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
 
 .. note::
 
@@ -173,7 +173,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **append**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_PackedVector4Array_method_append>`
 
-Appends an element at the end of the array (alias of :ref:`push_back<class_PackedVector4Array_method_push_back>`).
+Appends an element at the end of the array (alias of :ref:`push_back()<class_PackedVector4Array_method_push_back>`).
 
 .. rst-class:: classref-item-separator
 
@@ -199,7 +199,7 @@ Appends a **PackedVector4Array** at the end of this array.
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
-\ **Note:** Calling :ref:`bsearch<class_PackedVector4Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch()<class_PackedVector4Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 \ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
@@ -213,7 +213,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 |void| **clear**\ (\ ) :ref:`🔗<class_PackedVector4Array_method_clear>`
 
-Clears the array. This is equivalent to using :ref:`resize<class_PackedVector4Array_method_resize>` with a size of ``0``.
+Clears the array. This is equivalent to using :ref:`resize()<class_PackedVector4Array_method_resize>` with a size of ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -251,7 +251,7 @@ Creates a copy of the array, and returns it.
 
 |void| **fill**\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_PackedVector4Array_method_fill>`
 
-Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedVector4Array_method_resize>` to create an array with a given size and initialized elements.
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize()<class_PackedVector4Array_method_resize>` to create an array with a given size and initialized elements.
 
 .. rst-class:: classref-item-separator
 
@@ -472,7 +472,7 @@ Returns ``true`` if contents of the arrays differ.
 
 :ref:`PackedVector4Array<class_PackedVector4Array>` **operator +**\ (\ right\: :ref:`PackedVector4Array<class_PackedVector4Array>`\ ) :ref:`🔗<class_PackedVector4Array_operator_sum_PackedVector4Array>`
 
-Returns a new **PackedVector4Array** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedVector4Array_method_append_array>` instead.
+Returns a new **PackedVector4Array** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array()<class_PackedVector4Array_method_append_array>` instead.
 
 .. rst-class:: classref-item-separator
 

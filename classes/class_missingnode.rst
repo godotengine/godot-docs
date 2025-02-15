@@ -59,7 +59,7 @@ Property Descriptions
 - |void| **set_original_class**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_original_class**\ (\ )
 
-The name of the class this node was supposed to be (see :ref:`Object.get_class<class_Object_method_get_class>`).
+The name of the class this node was supposed to be (see :ref:`Object.get_class()<class_Object_method_get_class>`).
 
 .. rst-class:: classref-item-separator
 

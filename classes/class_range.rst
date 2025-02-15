@@ -277,7 +277,7 @@ If greater than 0, :ref:`value<class_Range_property_value>` will always be round
 - |void| **set_value**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_value**\ (\ )
 
-Range's current value. Changing this property (even via code) will trigger :ref:`value_changed<class_Range_signal_value_changed>` signal. Use :ref:`set_value_no_signal<class_Range_method_set_value_no_signal>` if you want to avoid it.
+Range's current value. Changing this property (even via code) will trigger :ref:`value_changed<class_Range_signal_value_changed>` signal. Use :ref:`set_value_no_signal()<class_Range_method_set_value_no_signal>` if you want to avoid it.
 
 .. rst-class:: classref-section-separator
 

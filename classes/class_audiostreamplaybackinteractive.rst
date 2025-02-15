@@ -52,7 +52,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **get_current_clip_index**\ (\ ) |const| :ref:`🔗<class_AudioStreamPlaybackInteractive_method_get_current_clip_index>`
 
-Return the index of the currently playing clip. You can use this to get the name of the currently playing clip with :ref:`AudioStreamInteractive.get_clip_name<class_AudioStreamInteractive_method_get_clip_name>`.
+Return the index of the currently playing clip. You can use this to get the name of the currently playing clip with :ref:`AudioStreamInteractive.get_clip_name()<class_AudioStreamInteractive_method_get_clip_name>`.
 
 \ **Example:** Get the currently playing clip name from inside an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` node.
 

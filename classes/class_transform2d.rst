@@ -19,7 +19,7 @@ Description
 
 The **Transform2D** built-in :ref:`Variant<class_Variant>` type is a 2×3 `matrix <https://en.wikipedia.org/wiki/Matrix_(mathematics)>`__ representing a transformation in 2D space. It contains three :ref:`Vector2<class_Vector2>` values: :ref:`x<class_Transform2D_property_x>`, :ref:`y<class_Transform2D_property_y>`, and :ref:`origin<class_Transform2D_property_origin>`. Together, they can represent translation, rotation, scale, and skew.
 
-The :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` axes form a 2×2 matrix, known as the transform's **basis**. The length of each axis (:ref:`Vector2.length<class_Vector2_method_length>`) influences the transform's scale, while the direction of all axes influence the rotation. Usually, both axes are perpendicular to one another. However, when you rotate one axis individually, the transform becomes skewed. Applying a skewed transform to a 2D sprite will make the sprite appear distorted.
+The :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` axes form a 2×2 matrix, known as the transform's **basis**. The length of each axis (:ref:`Vector2.length()<class_Vector2_method_length>`) influences the transform's scale, while the direction of all axes influence the rotation. Usually, both axes are perpendicular to one another. However, when you rotate one axis individually, the transform becomes skewed. Applying a skewed transform to a 2D sprite will make the sprite appear distorted.
 
 For a general introduction, see the :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>` tutorial.
 
@@ -337,9 +337,9 @@ Method Descriptions
 
 :ref:`Transform2D<class_Transform2D>` **affine_inverse**\ (\ ) |const| :ref:`🔗<class_Transform2D_method_affine_inverse>`
 
-Returns the inverted version of this transform. Unlike :ref:`inverse<class_Transform2D_method_inverse>`, this method works with almost any basis, including non-uniform ones, but is slower.
+Returns the inverted version of this transform. Unlike :ref:`inverse()<class_Transform2D_method_inverse>`, this method works with almost any basis, including non-uniform ones, but is slower.
 
-\ **Note:** For this method to return correctly, the transform's basis needs to have a determinant that is not exactly ``0.0`` (see :ref:`determinant<class_Transform2D_method_determinant>`).
+\ **Note:** For this method to return correctly, the transform's basis needs to have a determinant that is not exactly ``0.0`` (see :ref:`determinant()<class_Transform2D_method_determinant>`).
 
 .. rst-class:: classref-item-separator
 
@@ -363,9 +363,9 @@ Returns a copy of the ``v`` vector, transformed (multiplied) by the transform ba
 
 :ref:`Vector2<class_Vector2>` **basis_xform_inv**\ (\ v\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Transform2D_method_basis_xform_inv>`
 
-Returns a copy of the ``v`` vector, transformed (multiplied) by the inverse transform basis's matrix (see :ref:`inverse<class_Transform2D_method_inverse>`). This method ignores the :ref:`origin<class_Transform2D_property_origin>`.
+Returns a copy of the ``v`` vector, transformed (multiplied) by the inverse transform basis's matrix (see :ref:`inverse()<class_Transform2D_method_inverse>`). This method ignores the :ref:`origin<class_Transform2D_property_origin>`.
 
-\ **Note:** This method assumes that this transform's basis is *orthonormal* (see :ref:`orthonormalized<class_Transform2D_method_orthonormalized>`). If the basis is not orthonormal, ``transform.affine_inverse().basis_xform(vector)`` should be used instead (see :ref:`affine_inverse<class_Transform2D_method_affine_inverse>`).
+\ **Note:** This method assumes that this transform's basis is *orthonormal* (see :ref:`orthonormalized()<class_Transform2D_method_orthonormalized>`). If the basis is not orthonormal, ``transform.affine_inverse().basis_xform(vector)`` should be used instead (see :ref:`affine_inverse()<class_Transform2D_method_affine_inverse>`).
 
 .. rst-class:: classref-item-separator
 
@@ -379,7 +379,7 @@ Returns a copy of the ``v`` vector, transformed (multiplied) by the inverse tran
 
 Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this transform basis's matrix. For advanced math, this number can be used to determine a few attributes:
 
-- If the determinant is exactly ``0.0``, the basis is not invertible (see :ref:`inverse<class_Transform2D_method_inverse>`).
+- If the determinant is exactly ``0.0``, the basis is not invertible (see :ref:`inverse()<class_Transform2D_method_inverse>`).
 
 - If the determinant is a negative number, the basis represents a negative scale.
 
@@ -407,7 +407,7 @@ Returns this transform's translation. Equivalent to :ref:`origin<class_Transform
 
 :ref:`float<class_float>` **get_rotation**\ (\ ) |const| :ref:`🔗<class_Transform2D_method_get_rotation>`
 
-Returns this transform's rotation (in radians). This is equivalent to :ref:`x<class_Transform2D_property_x>`'s angle (see :ref:`Vector2.angle<class_Vector2_method_angle>`).
+Returns this transform's rotation (in radians). This is equivalent to :ref:`x<class_Transform2D_property_x>`'s angle (see :ref:`Vector2.angle()<class_Vector2_method_angle>`).
 
 .. rst-class:: classref-item-separator
 
@@ -450,7 +450,7 @@ Returns the length of both :ref:`x<class_Transform2D_property_x>` and :ref:`y<cl
 
 
 
-\ **Note:** If the value returned by :ref:`determinant<class_Transform2D_method_determinant>` is negative, the scale is also negative.
+\ **Note:** If the value returned by :ref:`determinant()<class_Transform2D_method_determinant>` is negative, the scale is also negative.
 
 .. rst-class:: classref-item-separator
 
@@ -490,7 +490,7 @@ The ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). Values outside
 
 Returns the `inverted version of this transform <https://en.wikipedia.org/wiki/Invertible_matrix>`__.
 
-\ **Note:** For this method to return correctly, the transform's basis needs to be *orthonormal* (see :ref:`orthonormalized<class_Transform2D_method_orthonormalized>`). That means the basis should only represent a rotation. If it does not, use :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` instead.
+\ **Note:** For this method to return correctly, the transform's basis needs to be *orthonormal* (see :ref:`orthonormalized()<class_Transform2D_method_orthonormalized>`). That means the basis should only represent a rotation. If it does not, use :ref:`affine_inverse()<class_Transform2D_method_affine_inverse>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -514,7 +514,7 @@ Returns ``true`` if this transform's basis is conformal. A conformal basis is bo
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ xform\: :ref:`Transform2D<class_Transform2D>`\ ) |const| :ref:`🔗<class_Transform2D_method_is_equal_approx>`
 
-Returns ``true`` if this transform and ``xform`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this transform and ``xform`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -526,7 +526,7 @@ Returns ``true`` if this transform and ``xform`` are approximately equal, by run
 
 :ref:`bool<class_bool>` **is_finite**\ (\ ) |const| :ref:`🔗<class_Transform2D_method_is_finite>`
 
-Returns ``true`` if this transform is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+Returns ``true`` if this transform is finite, by calling :ref:`@GlobalScope.is_finite()<class_@GlobalScope_method_is_finite>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -667,7 +667,7 @@ Operator Descriptions
 
 Returns ``true`` if the components of both transforms are not equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Transform2D_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 
@@ -711,11 +711,11 @@ This is the operation performed between parent and child :ref:`CanvasItem<class_
 
 \ **Note:** If you need to only modify one attribute of this transform, consider using one of the following methods, instead:
 
-- For translation, see :ref:`translated<class_Transform2D_method_translated>` or :ref:`translated_local<class_Transform2D_method_translated_local>`.
+- For translation, see :ref:`translated()<class_Transform2D_method_translated>` or :ref:`translated_local()<class_Transform2D_method_translated_local>`.
 
-- For rotation, see :ref:`rotated<class_Transform2D_method_rotated>` or :ref:`rotated_local<class_Transform2D_method_rotated_local>`.
+- For rotation, see :ref:`rotated()<class_Transform2D_method_rotated>` or :ref:`rotated_local()<class_Transform2D_method_rotated_local>`.
 
-- For scale, see :ref:`scaled<class_Transform2D_method_scaled>` or :ref:`scaled_local<class_Transform2D_method_scaled_local>`.
+- For scale, see :ref:`scaled()<class_Transform2D_method_scaled>` or :ref:`scaled_local()<class_Transform2D_method_scaled_local>`.
 
 .. rst-class:: classref-item-separator
 
@@ -789,7 +789,7 @@ Divides all components of the **Transform2D** by the given :ref:`int<class_int>`
 
 Returns ``true`` if the components of both transforms are exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Transform2D_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 

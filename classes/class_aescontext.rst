@@ -184,7 +184,7 @@ Method Descriptions
 
 |void| **finish**\ (\ ) :ref:`🔗<class_AESContext_method_finish>`
 
-Close this AES context so it can be started again. See :ref:`start<class_AESContext_method_start>`.
+Close this AES context so it can be started again. See :ref:`start()<class_AESContext_method_start>`.
 
 .. rst-class:: classref-item-separator
 
@@ -196,7 +196,7 @@ Close this AES context so it can be started again. See :ref:`start<class_AESCont
 
 :ref:`PackedByteArray<class_PackedByteArray>` **get_iv_state**\ (\ ) :ref:`🔗<class_AESContext_method_get_iv_state>`
 
-Get the current IV state for this context (IV gets updated when calling :ref:`update<class_AESContext_method_update>`). You normally don't need this function.
+Get the current IV state for this context (IV gets updated when calling :ref:`update()<class_AESContext_method_update>`). You normally don't need this function.
 
 \ **Note:** This function only makes sense when the context is started with :ref:`MODE_CBC_ENCRYPT<class_AESContext_constant_MODE_CBC_ENCRYPT>` or :ref:`MODE_CBC_DECRYPT<class_AESContext_constant_MODE_CBC_DECRYPT>`.
 
@@ -222,7 +222,7 @@ Start the AES context in the given ``mode``. A ``key`` of either 16 or 32 bytes 
 
 :ref:`PackedByteArray<class_PackedByteArray>` **update**\ (\ src\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_AESContext_method_update>`
 
-Run the desired operation for this AES context. Will return a :ref:`PackedByteArray<class_PackedByteArray>` containing the result of encrypting (or decrypting) the given ``src``. See :ref:`start<class_AESContext_method_start>` for mode of operation.
+Run the desired operation for this AES context. Will return a :ref:`PackedByteArray<class_PackedByteArray>` containing the result of encrypting (or decrypting) the given ``src``. See :ref:`start()<class_AESContext_method_start>` for mode of operation.
 
 \ **Note:** The size of ``src`` must be a multiple of 16. Apply some padding if needed.
 

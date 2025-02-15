@@ -119,7 +119,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         http_request.request_completed.connect(self._http_request_completed)
     
         # Perform the HTTP request. The URL below returns a PNG image as of writing.
-        var error = http_request.request("https://via.placeholder.com/512")
+        var error = http_request.request("https://placehold.co/512")
         if error != OK:
             push_error("An error occurred in the HTTP request.")
     
@@ -150,7 +150,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         httpRequest.RequestCompleted += HttpRequestCompleted;
     
         // Perform the HTTP request. The URL below returns a PNG image as of writing.
-        Error error = httpRequest.Request("https://via.placeholder.com/512");
+        Error error = httpRequest.Request("https://placehold.co/512");
         if (error != Error.Ok)
         {
             GD.PushError("An error occurred in the HTTP request.");
@@ -585,11 +585,11 @@ Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`
 
 :ref:`Error<enum_@GlobalScope_Error>` **request**\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_HTTPRequest_method_request>`
 
-Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
+Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host()<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request()<class_HTTPClient_method_request>`.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is successfully created. (Does not imply that the server has responded), :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if not in the tree, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` if still processing previous request, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if given string is not a valid URL format, or :ref:`@GlobalScope.ERR_CANT_CONNECT<class_@GlobalScope_constant_ERR_CANT_CONNECT>` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
 
-\ **Note:** When ``method`` is :ref:`HTTPClient.METHOD_GET<class_HTTPClient_constant_METHOD_GET>`, the payload sent via ``request_data`` might be ignored by the server or even cause the server to reject the request (check `RFC 7231 section 4.3.1 <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1>`__ for more details). As a workaround, you can send data as a query string in the URL (see :ref:`String.uri_encode<class_String_method_uri_encode>` for an example).
+\ **Note:** When ``method`` is :ref:`HTTPClient.METHOD_GET<class_HTTPClient_constant_METHOD_GET>`, the payload sent via ``request_data`` might be ignored by the server or even cause the server to reject the request (check `RFC 7231 section 4.3.1 <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1>`__ for more details). As a workaround, you can send data as a query string in the URL (see :ref:`String.uri_encode()<class_String_method_uri_encode>` for an example).
 
 \ **Note:** It's recommended to use transport encryption (TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
 
@@ -603,7 +603,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is suc
 
 :ref:`Error<enum_@GlobalScope_Error>` **request_raw**\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data_raw\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ ) :ref:`🔗<class_HTTPRequest_method_request_raw>`
 
-Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>` using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
+Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>` using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host()<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request()<class_HTTPClient_method_request>`.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is successfully created. (Does not imply that the server has responded), :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if not in the tree, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` if still processing previous request, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if given string is not a valid URL format, or :ref:`@GlobalScope.ERR_CANT_CONNECT<class_@GlobalScope_constant_ERR_CANT_CONNECT>` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
 
@@ -645,7 +645,7 @@ The proxy server is unset if ``host`` is empty or ``port`` is -1.
 
 |void| **set_tls_options**\ (\ client_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_HTTPRequest_method_set_tls_options>`
 
-Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HTTPS server. See :ref:`TLSOptions.client<class_TLSOptions_method_client>`.
+Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HTTPS server. See :ref:`TLSOptions.client()<class_TLSOptions_method_client>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

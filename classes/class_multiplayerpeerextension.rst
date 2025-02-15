@@ -95,7 +95,7 @@ Method Descriptions
 
 |void| **_close**\ (\ ) |virtual| :ref:`🔗<class_MultiplayerPeerExtension_private_method__close>`
 
-Called when the multiplayer peer should be immediately closed (see :ref:`MultiplayerPeer.close<class_MultiplayerPeer_method_close>`).
+Called when the multiplayer peer should be immediately closed (see :ref:`MultiplayerPeer.close()<class_MultiplayerPeer_method_close>`).
 
 .. rst-class:: classref-item-separator
 
@@ -107,7 +107,7 @@ Called when the multiplayer peer should be immediately closed (see :ref:`Multipl
 
 |void| **_disconnect_peer**\ (\ p_peer\: :ref:`int<class_int>`, p_force\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_MultiplayerPeerExtension_private_method__disconnect_peer>`
 
-Called when the connected ``p_peer`` should be forcibly disconnected (see :ref:`MultiplayerPeer.disconnect_peer<class_MultiplayerPeer_method_disconnect_peer>`).
+Called when the connected ``p_peer`` should be forcibly disconnected (see :ref:`MultiplayerPeer.disconnect_peer()<class_MultiplayerPeer_method_disconnect_peer>`).
 
 .. rst-class:: classref-item-separator
 
@@ -131,7 +131,7 @@ Called when the available packet count is internally requested by the :ref:`Mult
 
 :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` **_get_connection_status**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerPeerExtension_private_method__get_connection_status>`
 
-Called when the connection status is requested on the :ref:`MultiplayerPeer<class_MultiplayerPeer>` (see :ref:`MultiplayerPeer.get_connection_status<class_MultiplayerPeer_method_get_connection_status>`).
+Called when the connection status is requested on the :ref:`MultiplayerPeer<class_MultiplayerPeer>` (see :ref:`MultiplayerPeer.get_connection_status()<class_MultiplayerPeer_method_get_connection_status>`).
 
 .. rst-class:: classref-item-separator
 
@@ -167,7 +167,7 @@ Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_Mult
 
 :ref:`int<class_int>` **_get_packet_channel**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerPeerExtension_private_method__get_packet_channel>`
 
-Called to get the channel over which the next available packet was received. See :ref:`MultiplayerPeer.get_packet_channel<class_MultiplayerPeer_method_get_packet_channel>`.
+Called to get the channel over which the next available packet was received. See :ref:`MultiplayerPeer.get_packet_channel()<class_MultiplayerPeer_method_get_packet_channel>`.
 
 .. rst-class:: classref-item-separator
 
@@ -179,7 +179,7 @@ Called to get the channel over which the next available packet was received. See
 
 :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **_get_packet_mode**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerPeerExtension_private_method__get_packet_mode>`
 
-Called to get the transfer mode the remote peer used to send the next available packet. See :ref:`MultiplayerPeer.get_packet_mode<class_MultiplayerPeer_method_get_packet_mode>`.
+Called to get the transfer mode the remote peer used to send the next available packet. See :ref:`MultiplayerPeer.get_packet_mode()<class_MultiplayerPeer_method_get_packet_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -191,7 +191,7 @@ Called to get the transfer mode the remote peer used to send the next available 
 
 :ref:`int<class_int>` **_get_packet_peer**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerPeerExtension_private_method__get_packet_peer>`
 
-Called when the ID of the :ref:`MultiplayerPeer<class_MultiplayerPeer>` who sent the most recent packet is requested (see :ref:`MultiplayerPeer.get_packet_peer<class_MultiplayerPeer_method_get_packet_peer>`).
+Called when the ID of the :ref:`MultiplayerPeer<class_MultiplayerPeer>` who sent the most recent packet is requested (see :ref:`MultiplayerPeer.get_packet_peer()<class_MultiplayerPeer_method_get_packet_peer>`).
 
 .. rst-class:: classref-item-separator
 
@@ -203,7 +203,7 @@ Called when the ID of the :ref:`MultiplayerPeer<class_MultiplayerPeer>` who sent
 
 :ref:`PackedByteArray<class_PackedByteArray>` **_get_packet_script**\ (\ ) |virtual| :ref:`🔗<class_MultiplayerPeerExtension_private_method__get_packet_script>`
 
-Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, if :ref:`_get_packet<class_MultiplayerPeerExtension_private_method__get_packet>` isn't implemented. Use this when extending this class via GDScript.
+Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, if :ref:`_get_packet()<class_MultiplayerPeerExtension_private_method__get_packet>` isn't implemented. Use this when extending this class via GDScript.
 
 .. rst-class:: classref-item-separator
 
@@ -239,7 +239,7 @@ Called when the transfer mode to use is read on this :ref:`MultiplayerPeer<class
 
 :ref:`int<class_int>` **_get_unique_id**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerPeerExtension_private_method__get_unique_id>`
 
-Called when the unique ID of this :ref:`MultiplayerPeer<class_MultiplayerPeer>` is requested (see :ref:`MultiplayerPeer.get_unique_id<class_MultiplayerPeer_method_get_unique_id>`). The value must be between ``1`` and ``2147483647``.
+Called when the unique ID of this :ref:`MultiplayerPeer<class_MultiplayerPeer>` is requested (see :ref:`MultiplayerPeer.get_unique_id()<class_MultiplayerPeer_method_get_unique_id>`). The value must be between ``1`` and ``2147483647``.
 
 .. rst-class:: classref-item-separator
 
@@ -263,7 +263,7 @@ Called when the "refuse new connections" status is requested on this :ref:`Multi
 
 :ref:`bool<class_bool>` **_is_server**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerPeerExtension_private_method__is_server>`
 
-Called when the "is server" status is requested on the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. See :ref:`MultiplayerAPI.is_server<class_MultiplayerAPI_method_is_server>`.
+Called when the "is server" status is requested on the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. See :ref:`MultiplayerAPI.is_server()<class_MultiplayerAPI_method_is_server>`.
 
 .. rst-class:: classref-item-separator
 
@@ -275,7 +275,7 @@ Called when the "is server" status is requested on the :ref:`MultiplayerAPI<clas
 
 :ref:`bool<class_bool>` **_is_server_relay_supported**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerPeerExtension_private_method__is_server_relay_supported>`
 
-Called to check if the server can act as a relay in the current configuration. See :ref:`MultiplayerPeer.is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>`.
+Called to check if the server can act as a relay in the current configuration. See :ref:`MultiplayerPeer.is_server_relay_supported()<class_MultiplayerPeer_method_is_server_relay_supported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -287,7 +287,7 @@ Called to check if the server can act as a relay in the current configuration. S
 
 |void| **_poll**\ (\ ) |virtual| :ref:`🔗<class_MultiplayerPeerExtension_private_method__poll>`
 
-Called when the :ref:`MultiplayerAPI<class_MultiplayerAPI>` is polled. See :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_method_poll>`.
+Called when the :ref:`MultiplayerAPI<class_MultiplayerAPI>` is polled. See :ref:`MultiplayerAPI.poll()<class_MultiplayerAPI_method_poll>`.
 
 .. rst-class:: classref-item-separator
 
@@ -311,7 +311,7 @@ Called when a packet needs to be sent by the :ref:`MultiplayerAPI<class_Multipla
 
 :ref:`Error<enum_@GlobalScope_Error>` **_put_packet_script**\ (\ p_buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |virtual| :ref:`🔗<class_MultiplayerPeerExtension_private_method__put_packet_script>`
 
-Called when a packet needs to be sent by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, if :ref:`_put_packet<class_MultiplayerPeerExtension_private_method__put_packet>` isn't implemented. Use this when extending this class via GDScript.
+Called when a packet needs to be sent by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, if :ref:`_put_packet()<class_MultiplayerPeerExtension_private_method__put_packet>` isn't implemented. Use this when extending this class via GDScript.
 
 .. rst-class:: classref-item-separator
 
@@ -335,7 +335,7 @@ Called when the "refuse new connections" status is set on this :ref:`Multiplayer
 
 |void| **_set_target_peer**\ (\ p_peer\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_MultiplayerPeerExtension_private_method__set_target_peer>`
 
-Called when the target peer to use is set for this :ref:`MultiplayerPeer<class_MultiplayerPeer>` (see :ref:`MultiplayerPeer.set_target_peer<class_MultiplayerPeer_method_set_target_peer>`).
+Called when the target peer to use is set for this :ref:`MultiplayerPeer<class_MultiplayerPeer>` (see :ref:`MultiplayerPeer.set_target_peer()<class_MultiplayerPeer_method_set_target_peer>`).
 
 .. rst-class:: classref-item-separator
 

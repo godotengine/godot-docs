@@ -115,7 +115,7 @@ Returns the gravity vector computed from all sources that can affect the body, i
 
 :ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide**\ (\ motion\: :ref:`Vector2<class_Vector2>`, test_only\: :ref:`bool<class_bool>` = false, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PhysicsBody2D_method_move_and_collide>`
 
-Moves the body along the vector ``motion``. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_private_method__physics_process>` or :ref:`Node._process<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
+Moves the body along the vector ``motion``. In order to be frame rate independent in :ref:`Node._physics_process()<class_Node_private_method__physics_process>` or :ref:`Node._process()<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
 
 Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about the collision when stopped, or when touching another body along the motion.
 
@@ -147,7 +147,7 @@ Removes a body from the list of bodies that this body can't collide with.
 
 :ref:`bool<class_bool>` **test_move**\ (\ from\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, collision\: :ref:`KinematicCollision2D<class_KinematicCollision2D>` = null, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PhysicsBody2D_method_test_move>`
 
-Checks for collisions without moving the body. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_private_method__physics_process>` or :ref:`Node._process<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
+Checks for collisions without moving the body. In order to be frame rate independent in :ref:`Node._physics_process()<class_Node_private_method__physics_process>` or :ref:`Node._process()<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
 
 Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_Transform2D>`, then tries to move the body along the vector ``motion``. Returns ``true`` if a collision would stop the body from moving along the whole path.
 

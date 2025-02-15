@@ -23,7 +23,7 @@ Description
 
 **AnimatedTexture** is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture2D<class_Texture2D>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
 
-The playback of the animation is controlled by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>` property, as well as each frame's duration (see :ref:`set_frame_duration<class_AnimatedTexture_method_set_frame_duration>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
+The playback of the animation is controlled by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>` property, as well as each frame's duration (see :ref:`set_frame_duration()<class_AnimatedTexture_method_set_frame_duration>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
 \ **AnimatedTexture** currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
 
@@ -125,7 +125,7 @@ Sets the currently visible frame of the texture. Setting this frame while playin
 - |void| **set_frames**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_frames**\ (\ )
 
-Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`.
+Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture()<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`.
 
 .. rst-class:: classref-item-separator
 

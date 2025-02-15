@@ -19,7 +19,7 @@ Makes the OpenXR API available for GDExtension.
 Description
 -----------
 
-**OpenXRAPIExtension** makes OpenXR available for GDExtension. It provides the OpenXR API to GDExtension through the :ref:`get_instance_proc_addr<class_OpenXRAPIExtension_method_get_instance_proc_addr>` method, and the OpenXR instance through :ref:`get_instance<class_OpenXRAPIExtension_method_get_instance>`.
+**OpenXRAPIExtension** makes OpenXR available for GDExtension. It provides the OpenXR API to GDExtension through the :ref:`get_instance_proc_addr()<class_OpenXRAPIExtension_method_get_instance_proc_addr>` method, and the OpenXR instance through :ref:`get_instance()<class_OpenXRAPIExtension_method_get_instance>`.
 
 It also provides methods for querying the status of OpenXR initialization, and helper methods for ease of use of the API with GDExtension.
 
@@ -202,7 +202,7 @@ Returns the corresponding ``XrAction`` OpenXR handle for the given action RID.
 
 |void| **begin_debug_label_region**\ (\ label_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_begin_debug_label_region>`
 
-Begins a new debug label region, this label will be reported in debug messages for any calls following this until :ref:`end_debug_label_region<class_OpenXRAPIExtension_method_end_debug_label_region>` is called. Debug labels can be stacked.
+Begins a new debug label region, this label will be reported in debug messages for any calls following this until :ref:`end_debug_label_region()<class_OpenXRAPIExtension_method_end_debug_label_region>` is called. Debug labels can be stacked.
 
 .. rst-class:: classref-item-separator
 
@@ -226,7 +226,7 @@ Returns ``true`` if OpenXR is initialized for rendering with an XR viewport.
 
 |void| **end_debug_label_region**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_end_debug_label_region>`
 
-Marks the end of a debug label region. Removes the latest debug label region added by calling :ref:`begin_debug_label_region<class_OpenXRAPIExtension_method_begin_debug_label_region>`.
+Marks the end of a debug label region. Removes the latest debug label region added by calling :ref:`begin_debug_label_region()<class_OpenXRAPIExtension_method_begin_debug_label_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -426,7 +426,7 @@ Returns the id of the system, which is a `XrSystemId <https://registry.khronos.o
 
 |void| **insert_debug_label**\ (\ label_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_insert_debug_label>`
 
-Inserts a debug label, this label is reported in any debug message resulting from the OpenXR calls that follows, until any of :ref:`begin_debug_label_region<class_OpenXRAPIExtension_method_begin_debug_label_region>`, :ref:`end_debug_label_region<class_OpenXRAPIExtension_method_end_debug_label_region>`, or :ref:`insert_debug_label<class_OpenXRAPIExtension_method_insert_debug_label>` is called.
+Inserts a debug label, this label is reported in any debug message resulting from the OpenXR calls that follows, until any of :ref:`begin_debug_label_region()<class_OpenXRAPIExtension_method_begin_debug_label_region>`, :ref:`end_debug_label_region()<class_OpenXRAPIExtension_method_end_debug_label_region>`, or :ref:`insert_debug_label()<class_OpenXRAPIExtension_method_insert_debug_label>` is called.
 
 .. rst-class:: classref-item-separator
 

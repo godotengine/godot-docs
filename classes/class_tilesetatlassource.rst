@@ -19,13 +19,13 @@ Exposes a 2D atlas texture as a set of tiles for a :ref:`TileSet<class_TileSet>`
 Description
 -----------
 
-An atlas is a grid of tiles laid out on a texture. Each tile in the grid must be exposed using :ref:`create_tile<class_TileSetAtlasSource_method_create_tile>`. Those tiles are then indexed using their coordinates in the grid.
+An atlas is a grid of tiles laid out on a texture. Each tile in the grid must be exposed using :ref:`create_tile()<class_TileSetAtlasSource_method_create_tile>`. Those tiles are then indexed using their coordinates in the grid.
 
 Each tile can also have a size in the grid coordinates, making it more or less cells in the atlas.
 
-Alternatives version of a tile can be created using :ref:`create_alternative_tile<class_TileSetAtlasSource_method_create_alternative_tile>`, which are then indexed using an alternative ID. The main tile (the one in the grid), is accessed with an alternative ID equal to 0.
+Alternatives version of a tile can be created using :ref:`create_alternative_tile()<class_TileSetAtlasSource_method_create_alternative_tile>`, which are then indexed using an alternative ID. The main tile (the one in the grid), is accessed with an alternative ID equal to 0.
 
-Each tile alternate has a set of properties that is defined by the source's :ref:`TileSet<class_TileSet>` layers. Those properties are stored in a TileData object that can be accessed and modified using :ref:`get_tile_data<class_TileSetAtlasSource_method_get_tile_data>`.
+Each tile alternate has a set of properties that is defined by the source's :ref:`TileSet<class_TileSet>` layers. Those properties are stored in a TileData object that can be accessed and modified using :ref:`get_tile_data()<class_TileSetAtlasSource_method_get_tile_data>`.
 
 As TileData properties are stored directly in the TileSetAtlasSource resource, their properties might also be set using ``TileSetAtlasSource.set("<coords_x>:<coords_y>/<alternative_id>/<tile_data_property>")``.
 
@@ -318,7 +318,7 @@ Method Descriptions
 
 |void| **clear_tiles_outside_texture**\ (\ ) :ref:`🔗<class_TileSetAtlasSource_method_clear_tiles_outside_texture>`
 
-Removes all tiles that don't fit the available texture area. This method iterates over all the source's tiles, so it's advised to use :ref:`has_tiles_outside_texture<class_TileSetAtlasSource_method_has_tiles_outside_texture>` beforehand.
+Removes all tiles that don't fit the available texture area. This method iterates over all the source's tiles, so it's advised to use :ref:`has_tiles_outside_texture()<class_TileSetAtlasSource_method_has_tiles_outside_texture>` beforehand.
 
 .. rst-class:: classref-item-separator
 
@@ -368,7 +368,7 @@ Returns the atlas grid size, which depends on how many tiles can fit in the text
 
 :ref:`int<class_int>` **get_next_alternative_tile_id**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileSetAtlasSource_method_get_next_alternative_tile_id>`
 
-Returns the alternative ID a following call to :ref:`create_alternative_tile<class_TileSetAtlasSource_method_create_alternative_tile>` would return.
+Returns the alternative ID a following call to :ref:`create_alternative_tile()<class_TileSetAtlasSource_method_create_alternative_tile>` would return.
 
 .. rst-class:: classref-item-separator
 
@@ -392,9 +392,9 @@ If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_paddi
 
 :ref:`Rect2i<class_Rect2i>` **get_runtime_tile_texture_region**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, frame\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSetAtlasSource_method_get_runtime_tile_texture_region>`
 
-Returns the region of the tile at coordinates ``atlas_coords`` for the given ``frame`` inside the texture returned by :ref:`get_runtime_texture<class_TileSetAtlasSource_method_get_runtime_texture>`.
+Returns the region of the tile at coordinates ``atlas_coords`` for the given ``frame`` inside the texture returned by :ref:`get_runtime_texture()<class_TileSetAtlasSource_method_get_runtime_texture>`.
 
-\ **Note:** If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_padding>` is ``false``, returns the same as :ref:`get_tile_texture_region<class_TileSetAtlasSource_method_get_tile_texture_region>`.
+\ **Note:** If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_padding>` is ``false``, returns the same as :ref:`get_tile_texture_region()<class_TileSetAtlasSource_method_get_tile_texture_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -442,7 +442,7 @@ Returns how many animation frames has the tile at coordinates ``atlas_coords``.
 
 :ref:`TileAnimationMode<enum_TileSetAtlasSource_TileAnimationMode>` **get_tile_animation_mode**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileSetAtlasSource_method_get_tile_animation_mode>`
 
-Returns the tile animation mode of the tile at ``atlas_coords``. See also :ref:`set_tile_animation_mode<class_TileSetAtlasSource_method_set_tile_animation_mode>`.
+Returns the tile animation mode of the tile at ``atlas_coords``. See also :ref:`set_tile_animation_mode()<class_TileSetAtlasSource_method_set_tile_animation_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -578,7 +578,7 @@ Move the tile and its alternatives at the ``atlas_coords`` coordinates to the ``
 
 If ``new_atlas_coords`` is ``Vector2i(-1, -1)``, keeps the tile's coordinates. If ``new_size`` is ``Vector2i(-1, -1)``, keeps the tile's size.
 
-To avoid an error, first check if a move is possible using :ref:`has_room_for_tile<class_TileSetAtlasSource_method_has_room_for_tile>`.
+To avoid an error, first check if a move is possible using :ref:`has_room_for_tile()<class_TileSetAtlasSource_method_has_room_for_tile>`.
 
 .. rst-class:: classref-item-separator
 
@@ -666,7 +666,7 @@ Sets how many animation frames the tile at coordinates ``atlas_coords`` has.
 
 |void| **set_tile_animation_mode**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, mode\: :ref:`TileAnimationMode<enum_TileSetAtlasSource_TileAnimationMode>`\ ) :ref:`🔗<class_TileSetAtlasSource_method_set_tile_animation_mode>`
 
-Sets the tile animation mode of the tile at ``atlas_coords`` to ``mode``. See also :ref:`get_tile_animation_mode<class_TileSetAtlasSource_method_get_tile_animation_mode>`.
+Sets the tile animation mode of the tile at ``atlas_coords`` to ``mode``. See also :ref:`get_tile_animation_mode()<class_TileSetAtlasSource_method_get_tile_animation_mode>`.
 
 .. rst-class:: classref-item-separator
 

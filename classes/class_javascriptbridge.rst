@@ -75,7 +75,7 @@ Signals
 
 **pwa_update_available**\ (\ ) :ref:`🔗<class_JavaScriptBridge_signal_pwa_update_available>`
 
-Emitted when an update for this progressive web app has been detected but is waiting to be activated because a previous version is active. See :ref:`pwa_update<class_JavaScriptBridge_method_pwa_update>` to force the update to take place immediately.
+Emitted when an update for this progressive web app has been detected but is waiting to be activated because a previous version is active. See :ref:`pwa_update()<class_JavaScriptBridge_method_pwa_update>` to force the update to take place immediately.
 
 .. rst-class:: classref-section-separator
 
@@ -122,7 +122,7 @@ Prompts the user to download a file containing the specified ``buffer``. The fil
 
 \ **Note:** The browser may override the `MIME type <https://en.wikipedia.org/wiki/Media_type>`__ provided based on the file ``name``'s extension.
 
-\ **Note:** Browsers might block the download if :ref:`download_buffer<class_JavaScriptBridge_method_download_buffer>` is not being called from a user interaction (e.g. button click).
+\ **Note:** Browsers might block the download if :ref:`download_buffer()<class_JavaScriptBridge_method_download_buffer>` is not being called from a user interaction (e.g. button click).
 
 \ **Note:** Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.
 
@@ -188,7 +188,7 @@ Returns ``true`` if the given ``javascript_object`` is of type `[code]ArrayBuffe
 
 :ref:`PackedByteArray<class_PackedByteArray>` **js_buffer_to_packed_byte_array**\ (\ javascript_buffer\: :ref:`JavaScriptObject<class_JavaScriptObject>`\ ) :ref:`🔗<class_JavaScriptBridge_method_js_buffer_to_packed_byte_array>`
 
-Returns a copy of ``javascript_buffer``'s contents as a :ref:`PackedByteArray<class_PackedByteArray>`. See also :ref:`is_js_buffer<class_JavaScriptBridge_method_is_js_buffer>`.
+Returns a copy of ``javascript_buffer``'s contents as a :ref:`PackedByteArray<class_PackedByteArray>`. See also :ref:`is_js_buffer()<class_JavaScriptBridge_method_is_js_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -218,7 +218,7 @@ Performs the live update of the progressive web app. Forcing the new version to 
 
 \ **Note:** Your application will be **reloaded in all browser tabs**.
 
-\ **Note:** Only relevant when exported as a Progressive Web App and :ref:`pwa_needs_update<class_JavaScriptBridge_method_pwa_needs_update>` returns ``true``.
+\ **Note:** Only relevant when exported as a Progressive Web App and :ref:`pwa_needs_update()<class_JavaScriptBridge_method_pwa_needs_update>` returns ``true``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

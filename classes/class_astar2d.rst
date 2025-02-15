@@ -128,7 +128,7 @@ Note that this function is hidden in the default **AStar2D** class.
 
 Adds a new point at the given position with the given identifier. The ``id`` must be 0 or larger, and the ``weight_scale`` must be 0.0 or greater.
 
-The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower ``weight_scale``\ s to form a path.
+The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost()<class_AStar2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower ``weight_scale``\ s to form a path.
 
 
 .. tabs::
@@ -337,7 +337,7 @@ If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]``
 
 :ref:`int<class_int>` **get_point_capacity**\ (\ ) |const| :ref:`🔗<class_AStar2D_method_get_point_capacity>`
 
-Returns the capacity of the structure backing the points, useful in conjunction with :ref:`reserve_space<class_AStar2D_method_reserve_space>`.
+Returns the capacity of the structure backing the points, useful in conjunction with :ref:`reserve_space()<class_AStar2D_method_reserve_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -530,7 +530,7 @@ Sets the ``position`` for the point with the given ``id``.
 
 |void| **set_point_weight_scale**\ (\ id\: :ref:`int<class_int>`, weight_scale\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AStar2D_method_set_point_weight_scale>`
 
-Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
+Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost()<class_AStar2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

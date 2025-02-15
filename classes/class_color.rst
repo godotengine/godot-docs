@@ -19,7 +19,7 @@ Description
 
 A color represented in RGBA format by a red (:ref:`r<class_Color_property_r>`), green (:ref:`g<class_Color_property_g>`), blue (:ref:`b<class_Color_property_b>`), and alpha (:ref:`a<class_Color_property_a>`) component. Each component is a 32-bit floating-point value, usually ranging from ``0.0`` to ``1.0``. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may support values greater than ``1.0``, for overbright or HDR (High Dynamic Range) colors.
 
-Colors can be created in various ways: By the various **Color** constructors, by static methods such as :ref:`from_hsv<class_Color_method_from_hsv>`, and by using a name from the set of standardized colors based on `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__ with the addition of :ref:`TRANSPARENT<class_Color_constant_TRANSPARENT>`. GDScript also provides :ref:`@GDScript.Color8<class_@GDScript_method_Color8>`, which uses integers from ``0`` to ``255`` and doesn't support overbright colors.
+Colors can be created in various ways: By the various **Color** constructors, by static methods such as :ref:`from_hsv()<class_Color_method_from_hsv>`, and by using a name from the set of standardized colors based on `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__ with the addition of :ref:`TRANSPARENT<class_Color_constant_TRANSPARENT>`. GDScript also provides :ref:`@GDScript.Color8()<class_@GDScript_method_Color8>`, which uses integers from ``0`` to ``255`` and doesn't support overbright colors.
 
 \ **Note:** In a boolean context, a Color will evaluate to ``false`` if it is equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
@@ -1712,7 +1712,7 @@ Returns a new color resulting from overlaying this color over the given color. I
 
 :ref:`Color<class_Color>` **clamp**\ (\ min\: :ref:`Color<class_Color>` = Color(0, 0, 0, 0), max\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_Color_method_clamp>`
 
-Returns a new color with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+Returns a new color with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp()<class_@GlobalScope_method_clamp>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -1724,7 +1724,7 @@ Returns a new color with all components clamped between the components of ``min`
 
 :ref:`Color<class_Color>` **darkened**\ (\ amount\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Color_method_darkened>`
 
-Returns a new color resulting from making this color darker by the specified ``amount`` (ratio from 0.0 to 1.0). See also :ref:`lightened<class_Color_method_lightened>`.
+Returns a new color resulting from making this color darker by the specified ``amount`` (ratio from 0.0 to 1.0). See also :ref:`lightened()<class_Color_method_lightened>`.
 
 
 .. tabs::
@@ -1809,7 +1809,7 @@ Returns a **Color** constructed from red (``r8``), green (``g8``), blue (``b8``)
     var dark_blue = Color.from_rgba8(0, 0, 51)        # Same as Color(0, 0, 0.2).
     var my_color = Color.from_rgba8(306, 255, 0, 102) # Same as Color(1.2, 1, 0, 0.4).
 
-\ **Note:** Due to the lower precision of :ref:`from_rgba8<class_Color_method_from_rgba8>` compared to the standard **Color** constructor, a color created with :ref:`from_rgba8<class_Color_method_from_rgba8>` will generally not be equal to the same color created with the standard **Color** constructor. Use :ref:`is_equal_approx<class_Color_method_is_equal_approx>` for comparisons to avoid issues with floating-point precision error.
+\ **Note:** Due to the lower precision of :ref:`from_rgba8()<class_Color_method_from_rgba8>` compared to the standard **Color** constructor, a color created with :ref:`from_rgba8()<class_Color_method_from_rgba8>` will generally not be equal to the same color created with the standard **Color** constructor. Use :ref:`is_equal_approx()<class_Color_method_is_equal_approx>` for comparisons to avoid issues with floating-point precision error.
 
 .. rst-class:: classref-item-separator
 
@@ -1849,7 +1849,7 @@ If you want to create a color from String in a constant expression, use the equi
 
 Returns the light intensity of the color, as a value between 0.0 and 1.0 (inclusive). This is useful when determining light or dark color. Colors with a luminance smaller than 0.5 can be generally considered dark.
 
-\ **Note:** :ref:`get_luminance<class_Color_method_get_luminance>` relies on the color being in the linear color space to return an accurate relative luminance value. If the color is in the sRGB color space, use :ref:`srgb_to_linear<class_Color_method_srgb_to_linear>` to convert it to the linear color space first.
+\ **Note:** :ref:`get_luminance()<class_Color_method_get_luminance>` relies on the color being in the linear color space to return an accurate relative luminance value. If the color is in the sRGB color space, use :ref:`srgb_to_linear()<class_Color_method_srgb_to_linear>` to convert it to the linear color space first.
 
 .. rst-class:: classref-item-separator
 
@@ -1861,7 +1861,7 @@ Returns the light intensity of the color, as a value between 0.0 and 1.0 (inclus
 
 :ref:`Color<class_Color>` **hex**\ (\ hex\: :ref:`int<class_int>`\ ) |static| :ref:`🔗<class_Color_method_hex>`
 
-Returns the **Color** associated with the provided ``hex`` integer in 32-bit RGBA format (8 bits per channel). This method is the inverse of :ref:`to_rgba32<class_Color_method_to_rgba32>`.
+Returns the **Color** associated with the provided ``hex`` integer in 32-bit RGBA format (8 bits per channel). This method is the inverse of :ref:`to_rgba32()<class_Color_method_to_rgba32>`.
 
 In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix, making it ``"0xRRGGBBAA"``).
 
@@ -1894,7 +1894,7 @@ If you want to use hex notation in a constant expression, use the equivalent con
 
 :ref:`Color<class_Color>` **hex64**\ (\ hex\: :ref:`int<class_int>`\ ) |static| :ref:`🔗<class_Color_method_hex64>`
 
-Returns the **Color** associated with the provided ``hex`` integer in 64-bit RGBA format (16 bits per channel). This method is the inverse of :ref:`to_rgba64<class_Color_method_to_rgba64>`.
+Returns the **Color** associated with the provided ``hex`` integer in 64-bit RGBA format (16 bits per channel). This method is the inverse of :ref:`to_rgba64()<class_Color_method_to_rgba64>`.
 
 In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix, making it ``"0xRRRRGGGGBBBBAAAA"``).
 
@@ -1939,7 +1939,7 @@ Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is
 
 :ref:`bool<class_bool>` **html_is_valid**\ (\ color\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_Color_method_html_is_valid>`
 
-Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The string must be a hexadecimal value (case-insensitive) of either 3, 4, 6 or 8 digits, and may be prefixed by a hash sign (``#``). This method is identical to :ref:`String.is_valid_html_color<class_String_method_is_valid_html_color>`.
+Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The string must be a hexadecimal value (case-insensitive) of either 3, 4, 6 or 8 digits, and may be prefixed by a hash sign (``#``). This method is identical to :ref:`String.is_valid_html_color()<class_String_method_is_valid_html_color>`.
 
 
 .. tabs::
@@ -2005,7 +2005,7 @@ Returns the color with its :ref:`r<class_Color_property_r>`, :ref:`g<class_Color
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ to\: :ref:`Color<class_Color>`\ ) |const| :ref:`🔗<class_Color_method_is_equal_approx>`
 
-Returns ``true`` if this color and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this color and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -2017,7 +2017,7 @@ Returns ``true`` if this color and ``to`` are approximately equal, by running :r
 
 :ref:`Color<class_Color>` **lerp**\ (\ to\: :ref:`Color<class_Color>`, weight\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Color_method_lerp>`
 
-Returns the linear interpolation between this color's components and ``to``'s components. The interpolation factor ``weight`` should be between 0.0 and 1.0 (inclusive). See also :ref:`@GlobalScope.lerp<class_@GlobalScope_method_lerp>`.
+Returns the linear interpolation between this color's components and ``to``'s components. The interpolation factor ``weight`` should be between 0.0 and 1.0 (inclusive). See also :ref:`@GlobalScope.lerp()<class_@GlobalScope_method_lerp>`.
 
 
 .. tabs::
@@ -2052,7 +2052,7 @@ Returns the linear interpolation between this color's components and ``to``'s co
 
 :ref:`Color<class_Color>` **lightened**\ (\ amount\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Color_method_lightened>`
 
-Returns a new color resulting from making this color lighter by the specified ``amount``, which should be a ratio from 0.0 to 1.0. See also :ref:`darkened<class_Color_method_darkened>`.
+Returns a new color resulting from making this color lighter by the specified ``amount``, which should be a ratio from 0.0 to 1.0. See also :ref:`darkened()<class_Color_method_darkened>`.
 
 
 .. tabs::
@@ -2079,7 +2079,7 @@ Returns a new color resulting from making this color lighter by the specified ``
 
 :ref:`Color<class_Color>` **linear_to_srgb**\ (\ ) |const| :ref:`🔗<class_Color_method_linear_to_srgb>`
 
-Returns the color converted to the `sRGB <https://en.wikipedia.org/wiki/SRGB>`__ color space. This method assumes the original color is in the linear color space. See also :ref:`srgb_to_linear<class_Color_method_srgb_to_linear>` which performs the opposite operation.
+Returns the color converted to the `sRGB <https://en.wikipedia.org/wiki/SRGB>`__ color space. This method assumes the original color is in the linear color space. See also :ref:`srgb_to_linear()<class_Color_method_srgb_to_linear>` which performs the opposite operation.
 
 .. rst-class:: classref-item-separator
 
@@ -2091,7 +2091,7 @@ Returns the color converted to the `sRGB <https://en.wikipedia.org/wiki/SRGB>`__
 
 :ref:`Color<class_Color>` **srgb_to_linear**\ (\ ) |const| :ref:`🔗<class_Color_method_srgb_to_linear>`
 
-Returns the color converted to the linear color space. This method assumes the original color already is in the sRGB color space. See also :ref:`linear_to_srgb<class_Color_method_linear_to_srgb>` which performs the opposite operation.
+Returns the color converted to the linear color space. This method assumes the original color already is in the sRGB color space. See also :ref:`linear_to_srgb()<class_Color_method_linear_to_srgb>` which performs the opposite operation.
 
 .. rst-class:: classref-item-separator
 
@@ -2242,7 +2242,7 @@ Setting ``with_alpha`` to ``false``, excludes alpha from the hexadecimal string,
 
 :ref:`int<class_int>` **to_rgba32**\ (\ ) |const| :ref:`🔗<class_Color_method_to_rgba32>`
 
-Returns the color converted to a 32-bit integer in RGBA format (each component is 8 bits). RGBA is Godot's default format. This method is the inverse of :ref:`hex<class_Color_method_hex>`.
+Returns the color converted to a 32-bit integer in RGBA format (each component is 8 bits). RGBA is Godot's default format. This method is the inverse of :ref:`hex()<class_Color_method_hex>`.
 
 
 .. tabs::
@@ -2269,7 +2269,7 @@ Returns the color converted to a 32-bit integer in RGBA format (each component i
 
 :ref:`int<class_int>` **to_rgba64**\ (\ ) |const| :ref:`🔗<class_Color_method_to_rgba64>`
 
-Returns the color converted to a 64-bit integer in RGBA format (each component is 16 bits). RGBA is Godot's default format. This method is the inverse of :ref:`hex64<class_Color_method_hex64>`.
+Returns the color converted to a 64-bit integer in RGBA format (each component is 16 bits). RGBA is Godot's default format. This method is the inverse of :ref:`hex64()<class_Color_method_hex64>`.
 
 
 .. tabs::
@@ -2303,7 +2303,7 @@ Operator Descriptions
 
 Returns ``true`` if the colors are not exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Color_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Color_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 
@@ -2413,7 +2413,7 @@ Divides each component of the **Color** by the given :ref:`int<class_int>`.
 
 Returns ``true`` if the colors are exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Color_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_Color_method_is_equal_approx>` instead, which is more reliable.
 
 .. rst-class:: classref-item-separator
 
@@ -2449,7 +2449,7 @@ Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, 
 
 :ref:`Color<class_Color>` **operator unary-**\ (\ ) :ref:`🔗<class_Color_operator_unminus>`
 
-Inverts the given color. This is equivalent to ``Color.WHITE - c`` or ``Color(1 - c.r, 1 - c.g, 1 - c.b, 1 - c.a)``. Unlike with :ref:`inverted<class_Color_method_inverted>`, the :ref:`a<class_Color_property_a>` component is inverted, too.
+Inverts the given color. This is equivalent to ``Color.WHITE - c`` or ``Color(1 - c.r, 1 - c.g, 1 - c.b, 1 - c.a)``. Unlike with :ref:`inverted()<class_Color_method_inverted>`, the :ref:`a<class_Color_property_a>` component is inverted, too.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
