@@ -554,7 +554,7 @@ Godot Shading language supports the most common types of flow control:
     // `if`, `else if` and `else`.
     if (cond) {
 
-    } else if (cond) {
+    } else if (other_cond) {
 
     } else {
 
