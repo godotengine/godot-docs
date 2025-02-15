@@ -152,9 +152,24 @@ everything up for a new game:
         GetNode<Timer>("StartTimer").Start();
     }
 
-Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
-``ScoreTimer``, and ``MobTimer``) to the main script. ``StartTimer`` will start
-the other two timers. ``ScoreTimer`` will increment the score by 1.
+Now we'll connect the ``timeout()`` signal of each Timer node (``StartTimer``,
+``ScoreTimer``, and ``MobTimer``) to the main script. For each of the three
+timers, select the timer in the Scene dock, open the Signals tab of the Node
+dock, then double-click the ``timeout()`` signal in the list. This will open a new
+signal connection dialog. The default settings in this dialog should be fine, so
+select **Connect** to create a new signal connection.
+
+Once all three timers have this set up, you should be able to see each timer
+have a Signal connection for their respective ``timeout()`` signal, showing in
+green, within their respective Signals tabs:
+
+- (For MobTimer): ``_on_mob_timer_timeout()``
+- (For ScoreTimer): ``_on_score_timer_timeout()``
+- (For StartTimer): ``_on_start_timer_timeout()``
+
+Now we define how each of these timers operate by adding the code below. Notice
+that ``StartTimer`` will start the other two timers, and that ``ScoreTimer``
+will increment the score by 1.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
