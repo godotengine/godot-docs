@@ -1961,15 +1961,6 @@ in other scripts without the need to ``load`` or ``preload`` them:
     func _ready():
         player = Character.new()
 
-Using the name of a named class as a variable name will cause a
-:ref:`SHADOWED_GLOBAL_IDENTIFIER <class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier>`
-warning. For example, using ``Character`` as a variable name will shadow the
-``Character`` class you just defined, and cause a warning:
-
-.. code-block:: gdscript
-
-    var Character
-
 .. note::
 
     Godot initializes non-static variables every time you create an instance,
