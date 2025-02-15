@@ -217,7 +217,7 @@ Actions can be created from the Project Settings menu in the **Input Map**
 tab and assigned input events.
 
 Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_method_is_action>`,
-:ref:`InputEvent.is_pressed() <class_InputEvent_method_is_pressed>` and :ref:`InputEvent <class_InputEvent>`.
+:ref:`InputEvent.is_pressed() <class_InputEvent_method_is_pressed>` and :ref:`InputEvent.is_echo() <class_InputEvent_method_is_echo>`.
 
 Alternatively, it may be desired to supply the game back with an action
 from the game code (a good example of this is detecting gestures).
