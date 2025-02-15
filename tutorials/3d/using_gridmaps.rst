@@ -1,7 +1,7 @@
 .. _doc_using_gridmaps:
 
 Using GridMaps
-~~~~~~~~~~~~~~
+==============
 
 Introduction
 ------------
@@ -22,7 +22,8 @@ To learn how GridMaps work, start by downloading the sample project:
 `gridmap_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/gridmap_starter.zip>`_.
 
 Unzip this project and add it to the Project Manager using the "Import"
-button.
+button. You may get a popup saying that it needs to be converted to a newer Godot
+version, click **Convert project.godot**.
 
 Creating a MeshLibrary
 ----------------------
@@ -31,7 +32,7 @@ To begin, you need a :ref:`class_MeshLibrary`, which is a collection
 of individual meshes that can be used in the gridmap. Open the "mesh_library_source.tscn"
 scene to see an example of how to set up the mesh library.
 
-.. image:: img/gridmap_meshlibrary1.png
+.. image:: img/gridmap_meshlibrary1.webp
 
 As you can see, this scene has a :ref:`class_Node3D` node as its root, and
 a number of :ref:`class_MeshInstance3D` node children.
@@ -46,14 +47,14 @@ You can manually assign a :ref:`class_StaticBody3D` and
 :ref:`class_CollisionShape3D` to each mesh. Alternatively, you can use the "Mesh" menu
 to automatically create the collision body based on the mesh data.
 
-.. image:: img/gridmap_create_body.png
+.. image:: img/gridmap_create_body.webp
 
 Note that a "Convex" collision body will work better for simple meshes. For more
 complex shapes, select "Create Trimesh Static Body". Once each mesh has
 a physics body and collision shape assigned, your mesh library is ready to
 be used.
 
-.. image:: img/gridmap_mesh_scene.png
+.. image:: img/gridmap_mesh_scene.webp
 
 
 Materials
@@ -117,7 +118,7 @@ Exporting the MeshLibrary
 To export the library, click on **Scene > Export As... > MeshLibrary...**, and save it
 as a resource.
 
-.. image:: img/gridmap_export.png
+.. image:: img/gridmap_export.webp
 
 You can find an already exported MeshLibrary in the project named "MeshLibrary.tres".
 
@@ -125,34 +126,81 @@ Using GridMap
 -------------
 
 Create a new scene and add a GridMap node. Add the mesh library by dragging
-the resource file from the FileSystem dock and dropping it in the "Theme" property
-in the Inspector.
+the resource file from the FileSystem dock and dropping it in the **Mesh Library**
+property in the Inspector.
 
-.. image:: img/gridmap_main.png
+.. image:: img/gridmap_mesh_library_inspector.webp
 
-The "Cell/Size" property should be set to the size of your meshes. You can leave
-it at the default value for the demo. Set the "Center Y" property to "Off".
+Inspector properties
+~~~~~~~~~~~~~~~~~~~~
 
-Now you can start designing the level by choosing a tile from the palette and
-placing it with Left-Click in the editor window. Use Right-click to remove a tile.
+The **Physics Material** setting allows you to override the physics material for
+every mesh in the NavigationMesh.
 
-Use the arrows next to the "GridMap" menu to change the floor that you are working on.
+Under **Cells**, the **Size** property should be set to the size of your meshes. You
+can leave it at the default value for the demo. Uncheck the **Center Y** property.
 
-Click on the "GridMap" menu to see options and shortcuts. For example, pressing
-:kbd:`S` rotates a tile around the y-axis.
+The **Collision** options allow you to set the collision layer, collision mask, and
+priority for the entire grid. For more information on how those work see the
+:ref:`doc_physics_index` section.
 
-.. image:: img/gridmap_menu.png
+Under **Navigation** is the "Bake Navigation" option. If enabled it creates a
+navigation region for each cell that uses a mesh library item with a navigation
+mesh.
 
-Holding :kbd:`Shift` and dragging with the left mouse button will draw a selection
-box. You can duplicate or clear the selected area using the respective menu
-options.
+If you click on the MeshLibrary itself in the inspector you can adjust settings for
+individual meshes, such as their navigation mesh, navigation layers, or if the mesh
+casts shadows.
 
-.. image:: img/gridmap_select.png
+.. image:: img/gridmap_mesh_library_settings.webp
 
-In the menu, you can also change the axis you're drawing on, as well as shift
-the drawing plane higher or lower on its axis.
+GridMap panel
+~~~~~~~~~~~~~
 
-.. image:: img/gridmap_shift_axis.png
+At the bottom of the editor is the GridMap panel, which should have opened
+automatically when you added the GridMap node.
+
+.. image:: img/gridmap_panel.webp
+
+From left to right in the toolbar:
+
+- **Transform**: Adds a gizmo to the scene that allows you to change the
+  relative position and rotation of the gridmap in the scene.
+- **Selection**: While active you can select an area in the viewport, click and drag
+  to select more than one space on the grid.
+- **Erase**: While active, click in the viewport and delete meshes.
+- **Paint**: While active, click in the viewport and add whatever mesh is currently
+  selected in the GridMap panel to the scene.
+- **Pick**: While active, clicking on a gridmap mesh in the viewport will cause
+  it to be selected in the GridMap panel.
+- **Fill**: Fill the area that has been selected in the viewport with whatever mesh
+  is selected in the GridMap bottom panel.
+- **Move**: Move whatever mesh or meshes are currently selected in the viewport.
+- **Duplicate**: Create a copy of whatever the selected mesh or meshes in the
+  GridMap are.
+- **Delete**: Similar to erase, but for the entire selected area.
+- **Cursor Rotate X**: While the paint tool is selected, this will rotate the mesh
+  that will be painted on the X-axis. This will also rotate selected areas if they
+  are being moved.
+- **Cursor Rotate Y**: While the paint tool is selected, this will rotate the mesh
+  that will be painted on the Y-axis. This will also rotate selected areas if they
+  are being moved.
+- **Cursor Rotate Z**: While the paint tool is selected, this will rotate the mesh
+  that will be painted on the Z-axis. This will also rotate selected areas if they
+  are being moved.
+- **Change Grid Floor**: Adjusts what floor is currently being worked on, can be
+  changed with the arrows or typing
+- **Filter Meshes**: Used to search for a specific mesh in the bottom panel.
+- **Zoom**: Controls the zoom level on meshes in the bottom panel.
+- **Layout toggles**: These two buttons toggle between different layouts for meshes
+  in the bottom panel.
+- **Tools dropdown**: This button opens a dropdown menu with a few more options.
+
+.. image:: img/gridmap_dropdown.webp
+
+Clicking on **Settings** in that dropdown brings up a window that allows you to
+change the **Pick Distance**, which is the maximum distance at which tiles can be placed
+on a GridMap, relative to the camera position (in meters).
 
 Using GridMap in code
 ---------------------
