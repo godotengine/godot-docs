@@ -42,6 +42,7 @@ For compiling under Windows, the following is required:
 
               scoop install python mingw
 
+          Scons will still need to be installed via pip
 .. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
