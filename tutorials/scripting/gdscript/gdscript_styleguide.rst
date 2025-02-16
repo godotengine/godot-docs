@@ -483,8 +483,7 @@ comments from disabled code.
 
 Prefer writing comments on their own line as opposed to inline comments
 (comments written on the same line as code). Inline comments are best used for
-short comments, typically a few words at most. When using inline comments, use
-two spaces before the inline comment to better separate it from code:
+short comments, typically a few words at most:
 
 **Good**:
 
