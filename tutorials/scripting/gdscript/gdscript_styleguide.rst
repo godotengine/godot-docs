@@ -492,7 +492,7 @@ short comments, typically a few words at most:
 ::
 
     # This is a long comment that would make the line below too long if written inline.
-    print("Example")  # Short comment.
+    print("Example") # Short comment.
 
 **Bad**:
 
