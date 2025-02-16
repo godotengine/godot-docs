@@ -478,6 +478,27 @@ comments from disabled code.
     :kbd:`Ctrl + K`. This feature adds/removes a single ``#`` sign before any
     code on the selected lines.
 
+Prefer writing comments on their own line as opposed to inline comments
+(comments written on the same line as code). Inline comments are best used for
+short comments, typically a few words at most:
+
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
+
+    # This is a long comment that would make the line below too long if written inline.
+    print("Example") # Short comment.
+
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
+
+    print("Example") # This is a long comment that would make this line too long if written inline.
+
 Whitespace
 ~~~~~~~~~~
 
@@ -971,7 +992,7 @@ To declare the return type of a function, use ``-> <type>``:
 Inferred types
 ~~~~~~~~~~~~~~
 
-In most cases you can let the compiler infer the type, using ``:=``.
+In most cases, you can let the compiler infer the type using ``:=``.
 Prefer ``:=`` when the type is written on the same line as the assignment,
 otherwise prefer writing the type explicitly.
 
@@ -981,8 +1002,11 @@ otherwise prefer writing the type explicitly.
 
 ::
 
-    var health: int = 0 # The type can be int or float, and thus should be stated explicitly.
-    var direction := Vector3(1, 2, 3) # The type is clearly inferred as Vector3.
+    # The type can be int or float, and thus should be stated explicitly.
+    var health: int = 0
+
+    # The type is clearly inferred as Vector3.
+    var direction := Vector3(1, 2, 3)
 
 Include the type hint when the type is ambiguous, and
 omit the type hint when it's redundant.
@@ -993,8 +1017,11 @@ omit the type hint when it's redundant.
 
 ::
 
-    var health := 0 # Typed as int, but it could be that float was intended.
-    var direction: Vector3 = Vector3(1, 2, 3) # The type hint has redundant information.
+    # Typed as int, but it could be that float was intended.
+    var health := 0
+
+    # The type hint has redundant information.
+    var direction: Vector3 = Vector3(1, 2, 3)
 
     # What type is this? It's not immediately clear to the reader, so it's bad.
     var value := complex_function()
