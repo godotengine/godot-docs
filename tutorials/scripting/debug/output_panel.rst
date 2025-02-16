@@ -23,10 +23,10 @@ Four message categories are available:
 
 - **Log:** Standard messages printed by the project. Displayed in white or black
   (depending on the editor theme).
-- **Warning:** Messages printed by the project or editor that report important
-  information, but do not indicate a failure. Displayed in yellow.
 - **Error:** Messages printed by the project or editor that indicate a failure
   of some kind. Displayed in red.
+- **Warning:** Messages printed by the project or editor that report important
+  information, but do not indicate a failure. Displayed in yellow.
 - **Editor:** Messages printed by the editor, typically intended to be traces of
   undo/redo actions. Displayed in gray.
 
