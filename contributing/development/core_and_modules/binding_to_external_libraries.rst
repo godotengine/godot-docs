@@ -168,10 +168,10 @@ environment's paths:
     # LIBPATH and LIBS need to be set on the real "env" (not the clone)
     # to link the specified libraries to the Godot executable.
 
-    # This is a path relative to /modules/tts/ where your .a libraries reside.
-    # If you are compiling the module externally (not in the godot source tree),
-    # these will need to be full paths.
-    env.Append(LIBPATH=['libpath'])
+    # This is an absolute path where your .a libraries reside.
+    # If using a relative path, you must convert it to a
+    # full path using an utility function, such as `Dir('...').abspath`.
+    env.Append(LIBPATH=[Dir('libpath').abspath])
 
     # Check with the documentation of the external library to see which library
     # files should be included/linked.
