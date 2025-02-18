@@ -161,8 +161,8 @@ between ``-PI / 4`` radians and ``PI / 4`` radians.
     # This function will be called from the Main scene.
     func initialize(start_position, player_position):
         # We don't want the enemy to rotate up when it looks at a jumping player 
-	    # so we set the y component of the player position to 0. 
-	    player_position.y = 0
+        # so we set the y component of the player position to 0. 
+        player_position.y = 0
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
@@ -176,8 +176,8 @@ between ``-PI / 4`` radians and ``PI / 4`` radians.
     public void Initialize(Vector3 startPosition, Vector3 playerPosition)
     {
         // We don't want the enemy to rotate up when it looks at a jumping player 
-	    // so we set the y component of the player position to 0. 
-	    playerPosition.Y = 0;
+        // so we set the y component of the player position to 0. 
+        playerPosition.Y = 0;
         // We position the mob by placing it at startPosition
         // and rotate it towards playerPosition, so it looks at the player.
         LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
@@ -278,8 +278,8 @@ Here is the complete ``Mob.gd`` script for reference.
     # This function will be called from the Main scene.
     func initialize(start_position, player_position):
         # We don't want the enemy to rotate up when it looks at a jumping player 
-	    # so we set the y component of the player position to 0. 
-	    player_position.y = 0
+        # so we set the y component of the player position to 0. 
+        player_position.y = 0
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
@@ -320,8 +320,8 @@ Here is the complete ``Mob.gd`` script for reference.
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
             // We don't want the enemy to rotate up when it looks at a jumping player 
-	        // so we set the y component of the player position to 0. 
-	        playerPosition.Y = 0;
+            // so we set the y component of the player position to 0. 
+            playerPosition.Y = 0;
             // We position the mob by placing it at startPosition
             // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);

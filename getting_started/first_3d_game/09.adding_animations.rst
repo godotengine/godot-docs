@@ -579,8 +579,8 @@ And the *Mob*'s script.
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
             // We don't want the enemy to rotate up when it looks at a jumping player 
-	        // so we set the y component of the player position to 0. 
-	        playerPosition.Y = 0;
+            // so we set the y component of the player position to 0. 
+            playerPosition.Y = 0;
             // We position the mob by placing it at startPosition
             // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
