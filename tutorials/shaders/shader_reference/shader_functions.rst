@@ -287,7 +287,7 @@ Trigonometric function descriptions
 
     :return:
         The angle whose trigonometric cosine is ``x``.
-        
+
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acos.xhtml
 
 .. rst-class:: classref-item-separator
@@ -795,7 +795,7 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Returns the absolute value of ``x``. Returns ``x`` if ``x`` is positive, otherwise returns ``-1 * x``. 
+    Returns the absolute value of ``x``. Returns ``x`` if ``x`` is positive, otherwise returns ``-1 * x``.
 
     :param x:
         The value of which to return the absolute.
@@ -872,7 +872,7 @@ Exponential and math function descriptions
 
     .. note::
         Rounding of values with a fractional part of ``0.5`` is implementation-dependent.
-        This includes the possibility that ``round(x)`` returns the same value as 
+        This includes the possibility that ``round(x)`` returns the same value as
         ``roundEven(x)``for all values of ``x``.
 
     :param x:
@@ -2911,7 +2911,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
     :return:
         The partial derivative of ``p``.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdxCoarse.xhtml
+    https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -2946,7 +2946,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
     :return:
         The partial derivative of ``p``.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdxFine.xhtml
+    https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -2981,7 +2981,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
     :return:
         The partial derivative of ``p``.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdy.xhtml
+    https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -3016,7 +3016,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
     :return:
         The partial derivative of ``p``.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdyCoarse.xhtml
+    https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -3049,7 +3049,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
     :return:
         The partial derivative of ``p``.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdyFine.xhtml
+    https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -3107,7 +3107,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
     :return:
         The partial derivative.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidthCoarse.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidth.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -3138,7 +3138,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
     :return:
         The partial derivative.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidthFine.xhtml
+    https://registry.khronos.org/OpenGL-Refpages/gl4/html/fwidth.xhtml
 
 
 .. rst-class:: classref-section-separator
@@ -3566,7 +3566,7 @@ Bitwise function descriptions
 
     .. warning::
         The result will be undefined if:
-        
+
         - offset or bits is negative.
         - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
