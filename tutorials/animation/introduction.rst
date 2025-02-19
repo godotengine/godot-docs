@@ -391,3 +391,40 @@ is being animated in its previous positions in the animation.
 The three dots button next to the onion skinning button opens a dropdown
 menu that lets you adjust how it works, including the ability to use
 onion skinning for future frames.
+
+Animation Markers
+-----------------
+
+Animation markers can be used to play a specific part of an animation rather than
+the whole thing. Here is a use case example, there's an animation file that has a
+character doing two distinct actions, and the project requires the whole animation,
+as well as both actions individually. Instead of making two additional animations,
+markers can be placed on the timeline, and both actions can now be played
+individually.
+
+To add a marker to an animation right click the space above the timeline and select
+**Insert Marker...**.
+
+.. image:: img/animation_marker_click_area.webp
+
+All markers require a unique name within the animation. You can also set the color
+of the markers for improved organization.
+
+To play the part of the animation between two markers use the :ref:`play_section_with_markers()<class_AnimationPlayer_method_play_section_with_markers>`
+and :ref:`play_section_with_markers_backwards()<class_AnimationPlayer_method_play_section_with_markers_backwards>`
+methods. If no start marker is specified then the beginning of the animation is
+used, and if no end marker is specified, then the end of the animation is used.
+
+If the end marker is after the end of the animation then the ``AnimationPlayer`` will
+clamp the end of the section so it does not go past the end of the animation.
+
+To preview the animation between two markers use :kbd:`Shift + Click` to
+select the markers. When two are selected the space between them should be
+highlighted in red.
+
+.. image:: img/animation_marker_selected.webp
+
+Now all of the play animation buttons will act as if the selected
+area is the whole animation. **Play Animation from Start** will treat the first
+marker as the start of the animation, **Play Animation Backwards from End**
+will treat the second marker as the end, and so on.
