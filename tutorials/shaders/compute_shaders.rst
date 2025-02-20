@@ -377,3 +377,81 @@ shaders.
    GPU separately, which lets you compare how a similar algorithm can be
    implemented in two different ways (with the GPU implementation being faster
    in most cases).
+
+Includes Database
+-----------------
+.. warning::
+
+    The feature is experimental.
+
+Godot provides some shader includes through the ``ShaderIncludeDB`` class. The
+include operation is done automatically by Godot. Shader includes are **not**
+files in our system.
+
+To see what headers are available, use
+``ShaderIncludeDB.list_built_in_include_files``. The contents of these files
+can be found in Godot's Git repository or by calling
+``ShaderIncludeDB.get_built_in_include_file``.
+
+The example below renders a transparent pulsating circle at the center of the
+screen. The corners of the screen are colored fully white. The edge of the
+circle is smoothed.
+
+.. code-block:: glsl
+
+    #[compute]
+    #version 450
+
+    #define MAX_VIEWS 2
+    #include "godot/scene_data_inc.glsl"
+
+    layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
+
+    layout(set = 0, binding = 0, std140) uniform SceneDataBlock {
+        SceneData data;
+        SceneData prev_data;
+    } scene_data_block;
+
+    layout(rgba16f, set = 0, binding = 1) uniform image2D screen;
+
+    void main() {
+        ivec2 uv = ivec2(gl_GlobalInvocationID.xy);
+
+        vec4 color = imageLoad(screen, uv);
+
+        // Check UV is in the view.
+        if (uv.x >= scene_data_block.data.viewport_size.x || uv.y >= scene_data_block.data.viewport_size.y) {
+            return;
+        }
+
+        float maxlen = max(scene_data_block.data.viewport_size.x, scene_data_block.data.viewport_size.y);
+
+        vec2 center = vec2(scene_data_block.data.viewport_size.x / 2, scene_data_block.data.viewport_size.y / 2);
+        float r = length(abs(center - uv));
+        float alpha = smoothstep(maxlen * (0.55 + 0.3 * sin(scene_data_block.data.time)), maxlen * (0.2 + 0.2 * sin(scene_data_block.data.time)), r);
+
+        // Calculate blend between full white and image's current color.
+        color = (1 - alpha) * vec4(1, 1, 1, 1) + alpha * color;
+        imageStore(screen, uv, color);
+    }
+
+The example includes ``godot/scene_data_inc.glsl``, which defines the ``SceneData``
+data structure. ``SceneData`` needs ``MAX_VIEWS`` for some of its members.
+The ``SceneDataBlock`` uniform corresponds to the buffer got from
+``p_render_data.get_render_scene_data()``. In ``_render_callback``, you can
+bind scene data to a uniform.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    var scene_data_buffers = p_render_data.get_render_scene_data().get_uniform_buffer()
+    var uniform = RDUniform.new()
+    uniform.uniform_type = RenderingDevice.UNIFORM_TYPE_UNIFORM_BUFFER
+    uniform.binding = 0
+    uniform.add_id(scene_data_buffers)
+
+The shader uses the ``SceneDataBlock.data`` members ``viewport_size`` and
+``time``. The ``viewport`` member is the viewport's current size. It is used to
+calculate the center of the screen. The ``time`` counter represents the time
+since the start of the game. It is used to make a pulsating animation.
+
