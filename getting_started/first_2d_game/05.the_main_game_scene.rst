@@ -38,9 +38,9 @@ Spawning mobs
 -------------
 
 The Main node will be spawning new mobs, and we want them to appear at a random
-location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` node
-named ``MobPath`` as a child of ``Main``. When you select ``Path2D``, you will
-see some new buttons at the top of the editor:
+location on the edge of the screen. Click the ``Main`` node in the Scene dock, then
+add a child :ref:`Path2D <class_Path2D>` node named ``MobPath``. When you select
+``Path2D``, you will see some new buttons at the top of the editor:
 
 .. image:: img/path2d_buttons.webp
 
