@@ -134,6 +134,35 @@ use ``Input.is_action_pressed()``:
     held, ``Input.is_action_just_pressed()`` will only return ``true`` for one
     frame after the button has been pressed.
 
+Local multiplayer setup
+-----------------------
+
+If you're developing a local multiplayer game supporting multiple controllers,
+Godot provides the :ref:`PlayerId<enum_PlayerId>` enum type to query for actions
+triggered by specific players.
+By default, you can use methods like ``Input.is_action_just_pressed("ui_left")``
+without any additional argument: that would return true if player one
+has just pressed that action.
+Player one is by default assigned to the following devices: keyboard, mouse,
+touch events, and the first connected controller.
+Any additional connected controller will be automatically mapped to their
+PlayerId in an incremental way: second controller: player 2 etc.
+To check if a specific player just pressed a specific action, you want to use
+the previous method with an additional Player Id argument like this:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    if Input.is_action_just_pressed("ui_right", false, PLAYER_ID_P2):
+      # The second player just pressed "ui_right".
+
+ .. code-tab:: csharp
+
+    if (Input.IsActionJustPressed("ui_right", false, PLAYER_ID_P2))
+    {
+       // The second player just pressed "ui_right".
+    }
+
 Vibration
 ---------
 
