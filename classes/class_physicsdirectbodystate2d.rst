@@ -604,7 +604,7 @@ Returns the impulse created by the contact.
 
 :ref:`Vector2<class_Vector2>` **get_contact_local_normal**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PhysicsDirectBodyState2D_method_get_contact_local_normal>`
 
-Returns the local normal at the contact point.
+Returns the local normal in the global coordinate system at the contact point.
 
 .. rst-class:: classref-item-separator
 
