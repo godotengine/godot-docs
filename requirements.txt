@@ -21,4 +21,4 @@ sphinx-notfound-page==1.1.0
 sphinxext-opengraph==0.9.1
 
 # `.. video::` directive support to embed videos in documentation pages.
-sphinxcontrib-video==0.4.0
+sphinxcontrib-video==0.4.1
