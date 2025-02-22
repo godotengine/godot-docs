@@ -1,5 +1,3 @@
-.. _doc_c_sharp:
-
 C# basics
 =========
 

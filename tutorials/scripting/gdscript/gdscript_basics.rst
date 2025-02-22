@@ -1,4 +1,4 @@
-.. _doc_gdscript:
+.. _doc_gdscript_reference:
 
 GDScript reference
 ==================

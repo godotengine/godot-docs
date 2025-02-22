@@ -1,10 +1,13 @@
 :allow_comments: False
 
+.. _doc_c_sharp:
+
 C#/.NET
 =======
 
 C# is a high-level programming language developed by Microsoft. Godot supports
-C# as an option for a scripting language, alongside Godot's own :ref:`GDScript<toc-learn-scripting-gdscript>`.
+C# as an option for a scripting language, alongside Godot's own
+:ref:`GDScript <doc_gdscript>`.
 
 The standard Godot executable does not contain C# support out of the box. Instead,
 to enable C# support for your project you need to `download a .NET version <https://godotengine.org/download/>`_
