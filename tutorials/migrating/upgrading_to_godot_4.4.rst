@@ -145,8 +145,8 @@ Method ``_parse_file`` changes return type to ``Array`` and removes ``msgids`` a
 
 .. note::
 
-    The method ``_get_import_flags`` was never used by the engine, since it was open source. So it was removed
-    despite the compat breakage as there's no way for users to rely on this affecting engine behavior.
+    The method ``_get_import_flags`` was never used by the engine. It was removed despite the
+    compatibility breakage as there's no way for users to rely on this affecting engine behavior.
 
 Behavior changes
 ----------------
@@ -174,16 +174,16 @@ CSG
 
     The CSG implementation now uses Emmett Lalish's `Manifold <https://github.com/elalish/manifold>`_ library (`GH-94321`_).
     The new implementation is more consistent with manifold definitions and fixes a number of bugs and stability
-    issues. As a result, non-manifold meshes are no longer supported. Use ``MeshInstance3D`` for rendering quads
-    and other non-manifold geometry.
+    issues. As a result, non-manifold meshes are no longer supported. You can use ``MeshInstance3D`` for
+    rendering non-manifold geometry, such as quads or planes.
 
 Android
 ~~~~~~~
 
 .. note::
 
-    Android sensor events are no longer enabled by default (`GH-94799`_), projects that use sensor events can
-    enable them as needed in Project Settings under "input_devices/sensors/".
+    Android sensor events are no longer enabled by default (`GH-94799`_). Projects that use sensor events can
+    enable them as needed in Project Settings under **Input Devices > Sensors**.
 
 .. |❌| replace:: :abbr:`❌ (This API breaks compatibility.)`
 .. |✔️| replace:: :abbr:`✔️ (This API does not break compatibility.)`
