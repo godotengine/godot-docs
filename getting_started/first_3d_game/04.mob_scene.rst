@@ -33,7 +33,7 @@ Add a :ref:`CollisionShape3D <class_CollisionShape3D>`.
 
 In the *Inspector*, assign a *BoxShape3D* to the *Shape* property.
 
-.. image:: img/01.game_setup/08.create_box_shape3D.jpg
+.. image:: img/01.game_setup/08.create_box_shape3D.webp
 
 We should change its size to fit the 3D model better. You can do so
 interactively by clicking and dragging on the orange dots.
