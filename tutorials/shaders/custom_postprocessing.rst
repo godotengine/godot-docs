@@ -23,7 +23,8 @@ Post-processing effects are shaders applied to a frame after Godot has rendered
 it. To apply a shader to a frame, create a :ref:`CanvasLayer
 <class_CanvasLayer>`, and give it a :ref:`ColorRect <class_ColorRect>`. Assign a
 new :ref:`ShaderMaterial <class_ShaderMaterial>` to the newly created
-``ColorRect``, and set the ``Anchors Preset`` to "Full Rect" located in ``ColorRect``'s layout.
+``ColorRect``'s **Material**, and set the ``ColorRect``'s **Layout > Anchors Preset**
+to ``Full Rect``.
 
 Your scene tree will look something like this:
 
