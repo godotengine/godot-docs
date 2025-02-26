@@ -196,14 +196,17 @@ below with almost any input video format (AVI, MOV, WebM, …).
    You can check this by running ``ffmpeg`` without any arguments, then looking
    at the ``configuration:`` line in the command output.
 
+.. UPDATE: When the FFmpeg bugfixes for https://trac.ffmpeg.org/ticket/11451 and
+.. https://trac.ffmpeg.org/ticket/11454 are included in a stable FFmpeg release,
+.. this note can be removed. That will likely be FFmpeg 7.2 or 8.0, and will
+.. likely happen during the Godot 4.5 or 4.6 release cycle.
+
 .. warning::
 
    All FFmpeg releases before Feb 20th, 2025 could produce bad video streams
    due to a couple of bugs. It's highly recommended to use one of the latest
    static daily builds, or build FFmpeg from their master branch where they're
-   already fixed. More details in `FFmpeg issue #11451
-   <https://trac.ffmpeg.org/ticket/11451>`__ and `FFmpeg issue #11454
-   <https://trac.ffmpeg.org/ticket/11454>`__.
+   already fixed.
 
 Balancing quality and file size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
