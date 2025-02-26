@@ -34,12 +34,14 @@ In this scenario, you want the user to press the four directional keys (up/left/
 or W/A/S/D) and move in the selected direction. The name "8-way movement" comes from the
 fact that the player can move diagonally by pressing two keys at the same time.
 
-.. video:: img/movement_8way.webm
+.. video:: video/movement_8way.webm
     :alt: 8-way movement
     :autoplay:
     :loop:
     :muted:
     :align: default
+    :width: 100%
+    :nocontrols:
 
 Add a script to the character body and add the following code:
 
@@ -103,12 +105,14 @@ This type of movement is sometimes called "Asteroids-style" because it resembles
 how that classic arcade game worked. Pressing left/right rotates the character,
 while up/down moves it forward or backward in whatever direction it's facing.
 
-.. video:: img/movement_rotate_keyboard.webm
+.. video:: video/movement_rotate_keyboard.webm
     :alt: Rotation + movement
     :autoplay:
     :loop:
     :muted:
     :align: default
+    :width: 100%
+    :nocontrols:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -170,12 +174,14 @@ This style of movement is a variation of the previous one. This time, the direct
 is set by the mouse position instead of the keyboard. The character will always
 "look at" the mouse pointer. The forward/back inputs remain the same, however.
 
-.. video:: img/movement_rotate_mouse.webm
+.. video:: video/movement_rotate_mouse.webm
     :alt: Rotation + movement (mouse)
     :autoplay:
     :loop:
     :muted:
     :align: default
+    :width: 100%
+    :nocontrols:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -234,12 +240,14 @@ Click-and-move
 This last example uses only the mouse to control the character. Clicking
 on the screen will cause the player to move to the target location.
 
-.. video:: img/movement_click.webm
+.. video:: video/movement_click.webm
     :alt: Click-and-move
     :autoplay:
     :loop:
     :muted:
     :align: default
+    :width: 100%
+    :nocontrols:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
