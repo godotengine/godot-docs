@@ -27,9 +27,9 @@ new :ref:`ShaderMaterial <class_ShaderMaterial>` to the newly created
 
 .. figure:: img/custom_postprocessing_anchors_preset_full_rect.webp
    :align: center
-   :alt: Setting the anchors preset to Full Rect on the ColorRect node
+   :alt: Setting the anchor preset to Full Rect on the ColorRect node
 
-   Setting the anchors preset to Full Rect on the ColorRect node
+   Setting the anchor preset to Full Rect on the ColorRect node
 
 Your scene tree will look something like this:
 
