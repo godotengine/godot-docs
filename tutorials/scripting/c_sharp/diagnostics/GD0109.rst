@@ -1,0 +1,34 @@
+GD0109: The '[ExportToolButton]' attribute cannot be used with another '[Export]' attribute
+===========================================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0109
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Non-breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A property is annotated with both the ``[ExportToolButton]`` and the ``[Export]``
+attributes.
+
+Rule description
+----------------
+
+The ``[ExportToolButton]`` attribute already implies exporting the member, so
+the ``[Export]`` is unnecessary.
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, remove the ``[Export]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Multiple export attributes may lead
+to duplicated members, resulting in unexpected runtime errors.

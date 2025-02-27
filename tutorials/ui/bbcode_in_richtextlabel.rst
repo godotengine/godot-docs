@@ -355,6 +355,7 @@ Reference
       | A `drop cap <https://www.computerhope.com/jargon/d/dropcap.htm>`__ is typically one
         uppercase character, but ``[dropcap]`` supports containing multiple characters.
         ``margins`` values are comma-separated and can be positive, zero or negative.
+        Values must **not** be separated by spaces; otherwise, the values won't be parsed correctly.
         Negative top and bottom margins are particularly useful to allow the rest of
         the paragraph to display below the dropcap.
 
@@ -362,7 +363,8 @@ Reference
 
   * - | **opentype_features**
       | Enables custom OpenType font features for ``{text}``. Features must be provided as
-        a comma-separated ``{list}``.
+        a comma-separated ``{list}``. Values must **not** be separated by spaces;
+        otherwise, the list won't be parsed correctly.
 
     - | ``[opentype_features={list}]``
       | ``{text}``
@@ -508,7 +510,7 @@ Paragraph options
 - **justification_flags**, **jst**
 
   +-----------+--------------------------------------------------------------------------------------------------------+
-  | `Values`  | Comma-separated list of the following values:                                                          |
+  | `Values`  | Comma-separated list of the following values (no space after each comma):                              |
   |           | ``kashida`` (or ``k``), ``word`` (or ``w``), ``trim`` (or ``tr``), ``after_last_tab`` (or ``lt``),     |
   |           | ``skip_last`` (or ``sl``), ``skip_last_with_chars`` (or ``sv``),  ``do_not_skip_single`` (or ``ns``).  |
   +-----------+--------------------------------------------------------------------------------------------------------+
@@ -780,11 +782,11 @@ Font options
 
 - **opentype_variation**, **otv**
 
-  +-----------+------------------------------------------------------+
-  | `Values`  | Comma-separated list of the OpenType variation tags. |
-  +-----------+------------------------------------------------------+
-  | `Default` |                                                      |
-  +-----------+------------------------------------------------------+
+  +-----------+----------------------------------------------------------------------------------+
+  | `Values`  | Comma-separated list of the OpenType variation tags (no space after each comma). |
+  +-----------+----------------------------------------------------------------------------------+
+  | `Default` |                                                                                  |
+  +-----------+----------------------------------------------------------------------------------+
 
   Font OpenType variation coordinates. See `OpenType variation tags <https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg>`__.
 
@@ -796,11 +798,11 @@ Font options
 
 - **opentype_features**, **otf**
 
-  +-----------+----------------------------------------------------+
-  | `Values`  | Comma-separated list of the OpenType feature tags. |
-  +-----------+----------------------------------------------------+
-  | `Default` |                                                    |
-  +-----------+----------------------------------------------------+
+  +-----------+--------------------------------------------------------------------------------+
+  | `Values`  | Comma-separated list of the OpenType feature tags (no space after each comma). |
+  +-----------+--------------------------------------------------------------------------------+
+  | `Default` |                                                                                |
+  +-----------+--------------------------------------------------------------------------------+
 
   Font OpenType features. See `OpenType features tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
@@ -879,11 +881,11 @@ Cell options
 
 - **padding**
 
-  +-----------+--------------------------------------------+
-  | `Values`  | 4 comma-separated floating-point numbers   |
-  +-----------+--------------------------------------------+
-  | `Default` | 0, 0, 0, 0                                 |
-  +-----------+--------------------------------------------+
+  +-----------+--------------------------------------------------------------------------+
+  | `Values`  | 4 comma-separated floating-point numbers (no space after each comma)     |
+  +-----------+--------------------------------------------------------------------------+
+  | `Default` | ``0,0,0,0``                                                              |
+  +-----------+--------------------------------------------------------------------------+
 
   Left, top, right, and bottom cell padding.
 

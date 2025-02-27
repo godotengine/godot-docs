@@ -318,39 +318,46 @@ being affected by the lights that traverse the fog.
 Tonemap
 ~~~~~~~
 
-Tonemap selects the tonemapping curve that will be applied to the scene, from a
-list of standard curves used in the film and game industries. Tonemapping operators
-other than Linear are used to make light and dark areas more homogeneous,
-while also avoiding clipping of bright highlights.
+Tonemap selects the tonemapping algorithm that will be applied to the scene, from a
+list of standard algorithms used in the film and game industries. Tonemapping modes
+other than **Linear** are used to make light and dark areas more homogeneous,
+while also avoiding clipping of bright highlights. Each algorithm has a different
+performance characteristic that should be considered when choosing your tonemapper.
 
 The tone mapping options are:
 
-- **Mode:** The tone mapping mode to use.
+- **Mode:** The tonemapping mode to use.
 
-  - **Linear:** The default tonemapping mode. This is the fastest and simplest
-    tonemapping operator, but it causes bright lighting to look blown out, with
-    noticeable clipping in the output colors.
-  - **Reinhardt:** Performs a variation on rendered pixels' colors by this
-    formula: ``color = color / (1 + color)``. This avoids clipping bright
-    highlights, but the resulting image can look a bit dull.
-  - **Filmic:** This avoids clipping bright highlights, with a resulting image
-    that usually looks more vivid than Reinhardt.
-  - **ACES:** Academy Color Encoding System tonemapper.
-    ACES is slightly more expensive than other options, but it handles
-    bright lighting in a more realistic fashion by desaturating it as it becomes brighter.
-    ACES typically has a more contrasted output compared to Reinhardt and Filmic.
-    ACES is the recommended option when aiming for photorealistic visuals.
-    This tonemapping mode was called "ACES Fitted" in Godot 3.x.
+  - **Linear:** Does not modify color data, resulting in a linear tonemapping
+    curve which unnaturally clips bright values, causing bright lighting to
+    look blown out. The simplest and fastest tonemapper.
+  - **Reinhard:** A simple tonemapping curve that rolls off bright values to
+    prevent clipping. This results in an image that can appear dull and low
+    contrast. Slower than Linear. When **White** is left at the default
+    value of ``1.0``, Reinhard produces an identical image to Linear.
+  - **Filmic:** Uses a film-like tonemapping curve to prevent clipping of
+    bright values and provide better contrast than Reinhard. Slightly slower
+    than Reinhard.
+  - **ACES:** Uses a high-contrast film-like tonemapping curve and desaturates
+    bright values for a more realistic appearance. Slightly slower than Filmic.
+  - **AgX:** Uses a film-like tonemapping curve and desaturates bright values
+    for a more realistic appearance. Better than other tonemappers at
+    maintaining the hue of colors as they become brighter. The slowest
+    tonemapping option. **White** is fixed at a value of ``16.29``,
+    which makes AgX unsuitable for use with the Mobile rendering method.
 
-- **Exposure:** Tone mapping exposure which simulates amount of light received
-  over time (default: ``1.0``). Higher values result in an overall brighter appearance.
-  If the scene appears too dark as a result of a tonemapping operator or whitepoint
-  change, try increasing this value slightly.
+- **Exposure:** Adjusts the brightness of values before they are provided to
+  the tonemapper. Higher **Exposure** values result in a brighter image.
+  Values provided to the tonemapper will also be multiplied by ``2.0``
+  and ``1.8`` for **Filmic** and **ACES** respectively to produce a similar
+  apparent brightness as Linear.
 
-- **White:** Tone mapping whitepoint, which simulates where in the scale white is
-  located (default: ``1.0``). For photorealistic lighting, recommended values are
-  between ``6.0`` and ``8.0``. Higher values result in less blown out highlights,
-  but make the scene appear slightly darker as a whole.
+- **White:** The white reference value for tonemapping, which indicates where
+  bright white is located in the scale of values provided to the tonemapper.
+  For photorealistic lighting, recommended values are between ``6.0`` and
+  ``8.0``. Higher values result in less blown out highlights, but may make the
+  scene appear lower contrast. **White** is not available when using
+  **Linear** or **AgX**.
 
 Mid- and post-processing effects
 --------------------------------

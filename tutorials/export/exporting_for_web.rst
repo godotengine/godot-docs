@@ -271,7 +271,7 @@ Some browsers restrict autoplay for audio on websites. The easiest way around th
 player to click, tap or press a key/button to enable audio, for instance when displaying a splash screen at the start of your game.
 
 .. seealso:: Google offers additional information about their `Web Audio autoplay
-             policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
+             policies <https://www.chromium.org/audio-video/autoplay/>`__.
 
              Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS
              <https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/>`__.
@@ -397,7 +397,7 @@ supported on your web server for further file size savings.
 **Hosts that provide on-the-fly compression:** GitHub Pages (gzip)
 
 **Hosts that don't provide on-the-fly compression:** itch.io, GitLab Pages
-(`supports manual gzip precompression <https://webd97.de/post/gitlab-pages-compression/>`__)
+(`supports manual gzip precompression <https://docs.gitlab.com/user/project/pages/introduction/#serving-compressed-assets>`__)
 
 .. tip::
 
