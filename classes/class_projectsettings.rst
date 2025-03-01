@@ -1229,7 +1229,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`network/tls/certificate_bundle_override<class_ProjectSettings_property_network/tls/certificate_bundle_override>`                                                                                     | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`network/tls/enable_tls_v1.3<class_ProjectSettings_property_network/tls/enable_tls_v1.3>`                                                                                                             | ``false``                                                                                        |
+   | :ref:`bool<class_bool>`                           | :ref:`network/tls/enable_tls_v1.3<class_ProjectSettings_property_network/tls/enable_tls_v1.3>`                                                                                                             | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/2d/default_angular_damp<class_ProjectSettings_property_physics/2d/default_angular_damp>`                                                                                                     | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1453,19 +1453,19 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/environment/volumetric_fog/volume_size<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_size>`                                                                   | ``64``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`                                                                                                 | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`                                                                                                 | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.android<class_ProjectSettings_property_rendering/gl_compatibility/driver.android>`                                                                                 | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.android<class_ProjectSettings_property_rendering/gl_compatibility/driver.android>`                                                                                 | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.ios<class_ProjectSettings_property_rendering/gl_compatibility/driver.ios>`                                                                                         | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.ios<class_ProjectSettings_property_rendering/gl_compatibility/driver.ios>`                                                                                         | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.linuxbsd<class_ProjectSettings_property_rendering/gl_compatibility/driver.linuxbsd>`                                                                               | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.linuxbsd<class_ProjectSettings_property_rendering/gl_compatibility/driver.linuxbsd>`                                                                               | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.macos<class_ProjectSettings_property_rendering/gl_compatibility/driver.macos>`                                                                                     | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.macos<class_ProjectSettings_property_rendering/gl_compatibility/driver.macos>`                                                                                     | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.web<class_ProjectSettings_property_rendering/gl_compatibility/driver.web>`                                                                                         | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.web<class_ProjectSettings_property_rendering/gl_compatibility/driver.web>`                                                                                         | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.windows<class_ProjectSettings_property_rendering/gl_compatibility/driver.windows>`                                                                                 | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.windows<class_ProjectSettings_property_rendering/gl_compatibility/driver.windows>`                                                                                 | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/gl_compatibility/fallback_to_angle<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle>`                                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1611,17 +1611,17 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame>`                               | ``1024``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`                                                                                                 | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`                                                                                                 | ``"vulkan"``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.android<class_ProjectSettings_property_rendering/rendering_device/driver.android>`                                                                                 | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.android<class_ProjectSettings_property_rendering/rendering_device/driver.android>`                                                                                 | ``"vulkan"``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.ios<class_ProjectSettings_property_rendering/rendering_device/driver.ios>`                                                                                         | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.ios<class_ProjectSettings_property_rendering/rendering_device/driver.ios>`                                                                                         | ``"metal"``                                                                                      |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.linuxbsd<class_ProjectSettings_property_rendering/rendering_device/driver.linuxbsd>`                                                                               | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.linuxbsd<class_ProjectSettings_property_rendering/rendering_device/driver.linuxbsd>`                                                                               | ``"vulkan"``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.macos<class_ProjectSettings_property_rendering/rendering_device/driver.macos>`                                                                                     | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.macos<class_ProjectSettings_property_rendering/rendering_device/driver.macos>`                                                                                     | ``"metal"``                                                                                      |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.windows<class_ProjectSettings_property_rendering/rendering_device/driver.windows>`                                                                                 | ``"auto"``                                                                                       |
+   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.windows<class_ProjectSettings_property_rendering/rendering_device/driver.windows>`                                                                                 | ``"vulkan"``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/rendering_device/fallback_to_d3d12<class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12>`                                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -9338,11 +9338,9 @@ If in doubt, leave this setting empty.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **network/tls/enable_tls_v1.3** = ``false`` :ref:`🔗<class_ProjectSettings_property_network/tls/enable_tls_v1.3>`
+:ref:`bool<class_bool>` **network/tls/enable_tls_v1.3** = ``true`` :ref:`🔗<class_ProjectSettings_property_network/tls/enable_tls_v1.3>`
 
 If ``true``, enable TLSv1.3 negotiation.
-
-\ **Note:** This is experimental, and may cause connections to fail in some cases (notably, if the remote server uses TLS handshake fragmentation).
 
 \ **Note:** Only supported when using Mbed TLS 3.0 or later (Linux distribution packages may be compiled against older system Mbed TLS packages), otherwise the maximum supported TLS version is always TLSv1.2.
 
@@ -10952,21 +10950,23 @@ Base size used to determine size of froxel buffer in the camera X-axis and Y-axi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver>`
+:ref:`String<class_String>` **rendering/gl_compatibility/driver** = ``"opengl3"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver>`
 
-Sets the driver to be used by the renderer when using the Compatibility renderer. This property can not be edited directly, instead, set the driver using the platform-specific overrides.
+Sets the driver to be used by the renderer when using the Compatibility renderer. Editing this property has no effect in the default configuration, as first-party platforms each have platform-specific overrides. Use those overrides to configure the driver for each platform.
+
+This can be overridden using the ``--rendering-driver <driver>`` command line argument.
 
 Supported values are:
 
-- ``auto``, currently defaults to ``opengl3`` on all platforms.
-
 - ``opengl3``, OpenGL 3.3 on desktop platforms, OpenGL ES 3.0 on mobile platforms, WebGL 2.0 on web.
 
-- ``opengl3_angle``, OpenGL ES 3.0 over ANGLE compatibility layer, supported on macOS (over native OpenGL) and Windows (over Direct3D 11).
+- ``opengl3_angle``, OpenGL ES 3.0 using the ANGLE compatibility layer, supported on macOS (over native OpenGL) and Windows (over Direct3D 11).
 
 - ``opengl3_es``, OpenGL ES 3.0 on Linux/BSD.
 
 \ **Note:** The availability of these options depends on whether the engine was compiled with support for them (determined by SCons options ``opengl3`` and ``angle_libs``).
+
+\ **Note:** The actual rendering driver may be automatically changed by the engine as a result of a fallback, or a user-specified command line argument. To get the actual rendering driver that is used at runtime, use :ref:`RenderingServer.get_current_rendering_driver_name()<class_RenderingServer_method_get_current_rendering_driver_name>` instead of reading this project setting's value.
 
 .. rst-class:: classref-item-separator
 
@@ -10976,11 +10976,13 @@ Supported values are:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.android** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.android>`
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.android** = ``"opengl3"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.android>`
 
 Android override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
-The ``auto`` setting is equivalent to ``opengl3`` on this platform.
+Only one option is supported:
+
+- ``opengl3``, OpenGL ES 3.0 from native drivers.
 
 .. rst-class:: classref-item-separator
 
@@ -10990,11 +10992,13 @@ The ``auto`` setting is equivalent to ``opengl3`` on this platform.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.ios** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.ios>`
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.ios** = ``"opengl3"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.ios>`
 
 iOS override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
-The ``auto`` setting is equivalent to ``opengl3`` on this platform.
+Only one option is supported:
+
+- ``opengl3``, OpenGL ES 3.0 from native drivers.
 
 .. rst-class:: classref-item-separator
 
@@ -11004,11 +11008,15 @@ The ``auto`` setting is equivalent to ``opengl3`` on this platform.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.linuxbsd** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.linuxbsd>`
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.linuxbsd** = ``"opengl3"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.linuxbsd>`
 
 LinuxBSD override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
-The ``auto`` setting is equivalent to ``opengl3`` on this platform. ``opengl3_es`` is available as an option, which is also used as a fallback on devices that don't support OpenGL 3.3.
+Two options are supported:
+
+- ``opengl3`` (default), OpenGL 3.3 from native drivers.
+
+- ``opengl3_es``, OpenGL ES 3.0 from native drivers. If :ref:`rendering/gl_compatibility/fallback_to_gles<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_gles>` is enabled, this is used as a fallback if OpenGL 3.3 is not supported.
 
 .. rst-class:: classref-item-separator
 
@@ -11018,11 +11026,15 @@ The ``auto`` setting is equivalent to ``opengl3`` on this platform. ``opengl3_es
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.macos** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.macos>`
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.macos** = ``"opengl3"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.macos>`
 
 macOS override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
-The ``auto`` setting is equivalent to ``opengl3`` on this platform. ``opengl3_angle`` is available as an option if ANGLE support was compiled in.
+Two options are supported:
+
+- ``opengl3`` (default), OpenGL 3.3 from native drivers. If :ref:`rendering/gl_compatibility/fallback_to_native<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_native>` is enabled, this is used as a fallback if ANGLE is configured as the preferred driver but not supported.
+
+- ``opengl3_angle``, OpenGL ES 3.0 using the ANGLE compatibility layer over native OpenGL drivers. If :ref:`rendering/gl_compatibility/fallback_to_angle<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle>` is enabled, this is used as a fallback if OpenGL 3.3 is not supported.
 
 .. rst-class:: classref-item-separator
 
@@ -11032,11 +11044,13 @@ The ``auto`` setting is equivalent to ``opengl3`` on this platform. ``opengl3_an
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.web** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.web>`
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.web** = ``"opengl3"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.web>`
 
 Web override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
-The ``auto`` setting is equivalent to ``opengl3`` on this platform.
+Only one option is supported:
+
+- ``opengl3``, WebGL 2.0. The underlying native API depends on the target OS, browser, and browser configuration.
 
 .. rst-class:: classref-item-separator
 
@@ -11046,11 +11060,15 @@ The ``auto`` setting is equivalent to ``opengl3`` on this platform.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.windows** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.windows>`
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.windows** = ``"opengl3"`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.windows>`
 
 Windows override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
-The ``auto`` setting is equivalent to ``opengl3`` on this platform. ``opengl3_angle`` is available as an option if ANGLE supported was compiled in. In such case, ANGLE is used preferentially on lower end devices with known problematic native OpenGL drivers (see :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`).
+Two options are supported:
+
+- ``opengl3`` (default), OpenGL 3.3 from native drivers. If :ref:`rendering/gl_compatibility/fallback_to_native<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_native>` is enabled, this is used as a fallback if ANGLE is configured as the preferred driver but not supported.
+
+- ``opengl3_angle``, OpenGL ES 3.0 using the ANGLE compatibility layer over native Direct3D 11 drivers. If :ref:`rendering/gl_compatibility/fallback_to_angle<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle>` is enabled, this is used as a fallback if OpenGL 3.3 is not supported. By default, ANGLE is used as the default driver for some devices listed in :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12024,13 +12042,13 @@ Depending on the complexity of scenes, this value may be lowered or may need to 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver>`
+:ref:`String<class_String>` **rendering/rendering_device/driver** = ``"vulkan"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver>`
 
-Sets the driver to be used by the renderer when using a RenderingDevice-based renderer like the Forward+ or Mobile renderers. This property can't be edited directly. Instead, set the driver using the platform-specific overrides. This can be overridden using the ``--rendering-driver <driver>`` command line argument.
+Sets the driver to be used by the renderer when using a RenderingDevice-based renderer like the Forward+ or Mobile renderers. Editing this property has no effect in the default configuration, as first-party platforms each have platform-specific overrides. Use those overrides to configure the driver for each platform.
+
+This can be overridden using the ``--rendering-driver <driver>`` command line argument.
 
 Supported values are:
-
-- ``auto``, Metal on Apple Silicon Macs and iOS, Vulkan on other built-in platforms. On Windows, Direct3D 12 is the default if the engine was compiled without Vulkan support.
 
 - ``metal``, Metal (supported on Apple Silicon Macs and iOS).
 
@@ -12039,6 +12057,8 @@ Supported values are:
 - ``d3d12``, Direct3D 12 (supported on Windows).
 
 \ **Note:** The availability of these options depends on whether the engine was compiled with support for them (determined by SCons options ``vulkan``, ``metal``, and ``d3d12``).
+
+\ **Note:** If a given platform has no registered drivers, it can fall back to the Compatibility renderer (OpenGL 3) if :ref:`rendering/rendering_device/fallback_to_opengl3<class_ProjectSettings_property_rendering/rendering_device/fallback_to_opengl3>` is enabled. This fallback happens automatically for the Web platform regardless of that property.
 
 \ **Note:** The actual rendering driver may be automatically changed by the engine as a result of a fallback, or a user-specified command line argument. To get the actual rendering driver that is used at runtime, use :ref:`RenderingServer.get_current_rendering_driver_name()<class_RenderingServer_method_get_current_rendering_driver_name>` instead of reading this project setting's value.
 
@@ -12050,11 +12070,13 @@ Supported values are:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.android** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.android>`
+:ref:`String<class_String>` **rendering/rendering_device/driver.android** = ``"vulkan"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.android>`
 
 Android override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
-The ``auto`` setting is equivalent to ``vulkan`` on this platform.
+Only one option is supported:
+
+- ``vulkan``, Vulkan from native drivers.
 
 \ **Note:** If Vulkan was disabled at compile time, there is no alternative RenderingDevice driver.
 
@@ -12066,13 +12088,15 @@ The ``auto`` setting is equivalent to ``vulkan`` on this platform.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.ios** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.ios>`
+:ref:`String<class_String>` **rendering/rendering_device/driver.ios** = ``"metal"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.ios>`
 
 iOS override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
-The ``auto`` setting is equivalent to ``metal`` on this platform.
+Two options are supported:
 
-\ **Note:** If Metal was disabled at compile time, the default becomes ``vulkan``. If both Metal and Vulkan were disabled at compile time, there is no alternative RenderingDevice driver.
+- ``metal`` (default), Metal from native drivers.
+
+- ``vulkan``, Vulkan over Metal via MoltenVK.
 
 .. rst-class:: classref-item-separator
 
@@ -12082,11 +12106,13 @@ The ``auto`` setting is equivalent to ``metal`` on this platform.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.linuxbsd** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.linuxbsd>`
+:ref:`String<class_String>` **rendering/rendering_device/driver.linuxbsd** = ``"vulkan"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.linuxbsd>`
 
 LinuxBSD override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
-The ``auto`` setting is equivalent to ``vulkan`` on this platform.
+Only one option is supported:
+
+- ``vulkan``, Vulkan from native drivers.
 
 \ **Note:** If Vulkan was disabled at compile time, there is no alternative RenderingDevice driver.
 
@@ -12098,13 +12124,15 @@ The ``auto`` setting is equivalent to ``vulkan`` on this platform.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.macos** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.macos>`
+:ref:`String<class_String>` **rendering/rendering_device/driver.macos** = ``"metal"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.macos>`
 
 macOS override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
-The ``auto`` setting is equivalent to ``metal`` on Apple Silicon Macs, and ``vulkan`` (MoltenVK) on Intel Macs. Metal isn't supported on Intel Macs, so even if setting ``metal`` explicitly, it will fallback to Vulkan on Intel Macs.
+Two options are supported:
 
-\ **Note:** If Metal was disabled at compile time, the default becomes ``vulkan`` for both Apple Silicon and Intel Macs. If both Metal and Vulkan were disabled at compile time, there is no alternative RenderingDevice driver.
+- ``metal`` (default), Metal from native drivers, only supported on Apple Silicon Macs. On Intel Macs, it will automatically fall back to ``vulkan`` as Metal support is not implemented.
+
+- ``vulkan``, Vulkan over Metal via MoltenVK, supported on both Apple Silicon and Intel Macs.
 
 .. rst-class:: classref-item-separator
 
@@ -12114,13 +12142,15 @@ The ``auto`` setting is equivalent to ``metal`` on Apple Silicon Macs, and ``vul
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.windows** = ``"auto"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.windows>`
+:ref:`String<class_String>` **rendering/rendering_device/driver.windows** = ``"vulkan"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.windows>`
 
 Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
-The ``auto`` setting is equivalent to ``vulkan`` on this platform.
+Two options are supported:
 
-\ **Note:** If Vulkan was disabled at compile time, the default becomes ``d3d12``. If both Vulkan and Direct3D 12 were disabled at compile time, there is no alternative RenderingDevice driver.
+- ``vulkan`` (default), Vulkan from native drivers. If :ref:`rendering/rendering_device/fallback_to_vulkan<class_ProjectSettings_property_rendering/rendering_device/fallback_to_vulkan>` is enabled, this is used as a fallback if Direct3D 12 is not supported.
+
+- ``d3d12``, Direct3D 12 from native drivers. If :ref:`rendering/rendering_device/fallback_to_d3d12<class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12>` is enabled, this is used as a fallback if Vulkan is not supported.
 
 .. rst-class:: classref-item-separator
 
@@ -12132,7 +12162,7 @@ The ``auto`` setting is equivalent to ``vulkan`` on this platform.
 
 :ref:`bool<class_bool>` **rendering/rendering_device/fallback_to_d3d12** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12>`
 
-If ``true``, the forward renderer will fall back to Direct3D 12 if Vulkan is not supported.
+If ``true``, the forward renderer will fall back to Direct3D 12 if Vulkan is not supported. The fallback is always attempted regardless of this setting if Vulkan driver support was disabled at compile time.
 
 \ **Note:** This setting is implemented only on Windows.
 
@@ -12160,7 +12190,7 @@ If ``true``, the forward renderer will fall back to OpenGL 3 if Direct3D 12, Met
 
 :ref:`bool<class_bool>` **rendering/rendering_device/fallback_to_vulkan** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/fallback_to_vulkan>`
 
-If ``true``, the forward renderer will fall back to Vulkan if Direct3D 12 (on Windows) or Metal (on macOS x86_64) are not supported.
+If ``true``, the forward renderer will fall back to Vulkan if Direct3D 12 (on Windows) or Metal (on macOS x86_64) are not supported. The fallback is always attempted regardless of this setting if Direct3D 12 (Windows) or Metal (macOS) driver support was disabled at compile time.
 
 \ **Note:** This setting is implemented only on Windows and macOS.
 

@@ -23,7 +23,9 @@ A cubemap is made of 6 textures organized in layers. They are typically used for
 
 This resource is typically used as a uniform in custom shaders. Few core Godot methods make use of **Cubemap** resources.
 
-To create such a texture file yourself, reimport your image files using the Godot Editor import presets. The expected image order is X+, X-, Y+, Y-, Z+, Z- (in Godot's coordinate system, so Y+ is "up" and Z- is "forward"). You can use one of the following templates as a base:
+To create such a texture file yourself, reimport your image files using the Godot Editor import presets. To create a Cubemap from code, use :ref:`ImageTextureLayered.create_from_images()<class_ImageTextureLayered_method_create_from_images>` on an instance of the Cubemap class.
+
+The expected image order is X+, X-, Y+, Y-, Z+, Z- (in Godot's coordinate system, so Y+ is "up" and Z- is "forward"). You can use one of the following templates as a base:
 
 - `2×3 cubemap template (default layout option) <https://raw.githubusercontent.com/godotengine/godot-docs/master/tutorials/assets_pipeline/img/cubemap_template_2x3.webp>`__\ 
 

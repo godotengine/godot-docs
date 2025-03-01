@@ -603,6 +603,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`network/tls/editor_tls_certificates<class_EditorSettings_property_network/tls/editor_tls_certificates>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`network/tls/enable_tls_v1.3<class_EditorSettings_property_network/tls/enable_tls_v1.3>`                                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`project_manager/default_renderer<class_EditorSettings_property_project_manager/default_renderer>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`project_manager/directory_naming_convention<class_EditorSettings_property_project_manager/directory_naming_convention>`                                                                                     |
@@ -4455,6 +4457,20 @@ The port number to use to contact the HTTP and HTTPS proxy in the editor (for th
 :ref:`String<class_String>` **network/tls/editor_tls_certificates** :ref:`🔗<class_EditorSettings_property_network/tls/editor_tls_certificates>`
 
 The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_network/tls/enable_tls_v1.3:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **network/tls/enable_tls_v1.3** :ref:`🔗<class_EditorSettings_property_network/tls/enable_tls_v1.3>`
+
+If ``true``, enable TLSv1.3 negotiation.
+
+\ **Note:** Only supported when using Mbed TLS 3.0 or later (Linux distribution packages may be compiled against older system Mbed TLS packages), otherwise the maximum supported TLS version is always TLSv1.2.
 
 .. rst-class:: classref-item-separator
 

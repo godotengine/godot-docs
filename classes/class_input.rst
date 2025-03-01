@@ -536,6 +536,8 @@ Note this method returns an empty :ref:`Vector3<class_Vector3>` when running fro
 
 \ **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
+\ **Note:** For Android, :ref:`ProjectSettings.input_devices/sensors/enable_accelerometer<class_ProjectSettings_property_input_devices/sensors/enable_accelerometer>` must be enabled.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -616,6 +618,8 @@ Returns the gravity in m/s² of the device's accelerometer sensor, if the device
 
 \ **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
+\ **Note:** For Android, :ref:`ProjectSettings.input_devices/sensors/enable_gravity<class_ProjectSettings_property_input_devices/sensors/enable_gravity>` must be enabled.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -629,6 +633,8 @@ Returns the gravity in m/s² of the device's accelerometer sensor, if the device
 Returns the rotation rate in rad/s around a device's X, Y, and Z axes of the gyroscope sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 \ **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+
+\ **Note:** For Android, :ref:`ProjectSettings.input_devices/sensors/enable_gyroscope<class_ProjectSettings_property_input_devices/sensors/enable_gyroscope>` must be enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -761,6 +767,8 @@ Returns the last mouse velocity. To provide a precise and jitter-free velocity, 
 Returns the magnetic field strength in micro-Tesla for all axes of the device's magnetometer sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 \ **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+
+\ **Note:** For Android, :ref:`ProjectSettings.input_devices/sensors/enable_magnetometer<class_ProjectSettings_property_input_devices/sensors/enable_magnetometer>` must be enabled.
 
 .. rst-class:: classref-item-separator
 

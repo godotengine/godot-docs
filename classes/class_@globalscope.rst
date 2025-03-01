@@ -4219,6 +4219,14 @@ Flag for a static method.
 
 Used internally. Allows to not dump core virtual methods (such as :ref:`Object._notification()<class_Object_private_method__notification>`) to the JSON API.
 
+.. _class_@GlobalScope_constant_METHOD_FLAG_VIRTUAL_REQUIRED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_VIRTUAL_REQUIRED** = ``128``
+
+Flag for a virtual method that is required.
+
 .. _class_@GlobalScope_constant_METHOD_FLAGS_DEFAULT:
 
 .. rst-class:: classref-enumeration-constant
