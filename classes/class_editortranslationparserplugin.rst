@@ -41,7 +41,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
         var text = file.get_as_text()
         var split_strs = text.split(",", false)
         for s in split_strs:
-            msgids.append(PackedStringArray([s]))
+            ret.append(PackedStringArray([s]))
             #print("Extracted string: " + s)
     
         return ret

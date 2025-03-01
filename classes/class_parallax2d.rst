@@ -10,8 +10,6 @@
 Parallax2D
 ==========
 
-**Experimental:** This node is meant to replace :ref:`ParallaxBackground<class_ParallaxBackground>` and :ref:`ParallaxLayer<class_ParallaxLayer>`. The implementation may change in the future.
-
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node used to create a parallax scrolling background.

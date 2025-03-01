@@ -11626,7 +11626,7 @@ Updates the texture specified by the ``texture`` :ref:`RID<class_RID>`'s data wi
 
 Creates a texture based on a native handle that was created outside of Godot's renderer.
 
-\ **Note:** If using the rendering device renderer, using :ref:`RenderingDevice.texture_create_from_extension()<class_RenderingDevice_method_texture_create_from_extension>` rather than this method is recommended. It will give you much more control over the texture's format and usage.
+\ **Note:** If using only the rendering device renderer, it's recommend to use :ref:`RenderingDevice.texture_create_from_extension()<class_RenderingDevice_method_texture_create_from_extension>` together with :ref:`texture_rd_create()<class_RenderingServer_method_texture_rd_create>`, rather than this method. It will give you much more control over the texture's format and usage.
 
 .. rst-class:: classref-item-separator
 
