@@ -247,7 +247,6 @@ on the screen will cause the player to move to the target location.
     :muted:
     :align: default
     :width: 100%
-    :nocontrols:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
