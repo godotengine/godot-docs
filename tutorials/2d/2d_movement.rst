@@ -41,7 +41,6 @@ fact that the player can move diagonally by pressing two keys at the same time.
     :muted:
     :align: default
     :width: 100%
-    :nocontrols:
 
 Add a script to the character body and add the following code:
 
