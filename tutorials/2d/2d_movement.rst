@@ -112,7 +112,6 @@ while up/down moves it forward or backward in whatever direction it's facing.
     :muted:
     :align: default
     :width: 100%
-    :nocontrols:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
