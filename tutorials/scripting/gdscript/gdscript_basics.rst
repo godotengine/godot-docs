@@ -2449,20 +2449,19 @@ arguments when you emit signals; it's up to you to emit the correct values.
 
 .. image:: img/gdscript_basics_signals_node_tab_1.png
 
-GDScript can bind an array of values to connections between a signal
-and a method. When the signal is emitted, the callback method receives
-the bound values. These bound arguments are unique to each connection,
-and the values will stay the same.
+You can also create copies of GDScript Callable objects which accept additional
+arguments using :ref:`Callable.bind() <class_Callable_method_bind>`. This
+allows you to add extra information to the connection if the emitted signal
+itself doesn't give you access to all the data that you need.
 
-You can use this array of values to add extra constant information to the
-connection if the emitted signal itself doesn't give you access to all the data
-that you need.
+When the signal is emitted, the callback method receives the bound values, in
+addition to those provided by the signal.
 
 Building on the example above, let's say we want to display a log of the damage
 taken by each character on the screen, like ``Player1 took 22 damage.``. The
 ``health_changed`` signal doesn't give us the name of the character that took
 damage. So when we connect the signal to the in-game console, we can add the
-character's name in the binds array argument::
+character's name using the bind method::
 
     # game.gd
 
@@ -2472,7 +2471,7 @@ character's name in the binds array argument::
 
         character_node.health_changed.connect(battle_log_node._on_Character_health_changed.bind(character_node.name))
 
-Our ``BattleLog`` node receives each element in the binds array as an extra argument::
+Our ``BattleLog`` node receives each bound element as an extra argument::
 
     # battle_log.gd
 
