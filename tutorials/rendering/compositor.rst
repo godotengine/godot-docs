@@ -17,6 +17,7 @@ the compositor. To get started, create a new compositor on the appropriate node:
 .. image:: img/new_compositor.webp
 
 .. note::
+
     The compositor is currently a feature that is only supported by
     the Mobile and Forward+ renderers.
 
@@ -55,7 +56,8 @@ This is the boilerplate code that makes our compute shader work.
 
 .. code-block:: gdscript
 
-    const template_shader : String = "#version 450
+    const template_shader: String = """
+    #version 450
 
     // Invocations in the (x, y, z) dimension
     layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
@@ -82,7 +84,8 @@ This is the boilerplate code that makes our compute shader work.
         #COMPUTE_CODE
 
         imageStore(color_image, uv, color);
-    }"
+    }
+    """
 
 For more information on how compute shaders work,
 please check :ref:`Using compute shaders <doc_compute_shaders>`.
@@ -99,19 +102,19 @@ We'll also define a few script variables we'll be using:
 
 .. code-block:: gdscript
 
-    @export_multiline var shader_code : String = "":
+    @export_multiline var shader_code: String = "":
         set(value):
             mutex.lock()
             shader_code = value
             shader_is_dirty = true
             mutex.unlock()
 
-    var rd : RenderingDevice
-    var shader : RID
-    var pipeline : RID
+    var rd: RenderingDevice
+    var shader: RID
+    var pipeline: RID
 
-    var mutex : Mutex = Mutex.new()
-    var shader_is_dirty : bool = true
+    var mutex: Mutex = Mutex.new()
+    var shader_is_dirty: bool = true
 
 
 Note the use of a :ref:`Mutex <class_Mutex>` in our code.
@@ -176,7 +179,7 @@ code was changed.
         if not rd:
             return false
 
-        var new_shader_code : String = ""
+        var new_shader_code: String = ""
 
         # Check if our shader is dirty.
         mutex.lock()
@@ -199,10 +202,10 @@ code was changed.
             pipeline = RID()
 
         # In with the new.
-        var shader_source : RDShaderSource = RDShaderSource.new()
+        var shader_source: RDShaderSource = RDShaderSource.new()
         shader_source.language = RenderingDevice.SHADER_LANGUAGE_GLSL
         shader_source.source_compute = new_shader_code
-        var shader_spirv : RDShaderSPIRV = rd.shader_compile_spirv_from_source(shader_source)
+        var shader_spirv: RDShaderSPIRV = rd.shader_compile_spirv_from_source(shader_source)
 
         if shader_spirv.compile_error_compute != "":
             push_error(shader_spirv.compile_error_compute)
@@ -247,20 +250,20 @@ this at the right stage of rendering.
         if rd and p_effect_callback_type == EFFECT_CALLBACK_TYPE_POST_TRANSPARENT and _check_shader():
             # Get our render scene buffers object, this gives us access to our render buffers.
             # Note that implementation differs per renderer hence the need for the cast.
-            var render_scene_buffers : RenderSceneBuffersRD = p_render_data.get_render_scene_buffers()
+            var render_scene_buffers: RenderSceneBuffersRD = p_render_data.get_render_scene_buffers()
             if render_scene_buffers:
                 # Get our render size, this is the 3D render resolution!
                 var size = render_scene_buffers.get_internal_size()
                 if size.x == 0 and size.y == 0:
                     return
 
-                # We can use a compute shader here
+                # We can use a compute shader here.
                 var x_groups = (size.x - 1) / 8 + 1
                 var y_groups = (size.y - 1) / 8 + 1
                 var z_groups = 1
 
-                # Push constant
-                var push_constant : PackedFloat32Array = PackedFloat32Array()
+                # Push constant.
+                var push_constant: PackedFloat32Array = PackedFloat32Array()
                 push_constant.push_back(size.x)
                 push_constant.push_back(size.y)
                 push_constant.push_back(0.0)
@@ -272,15 +275,16 @@ this at the right stage of rendering.
                     # Get the RID for our color image, we will be reading from and writing to it.
                     var input_image = render_scene_buffers.get_color_layer(view)
 
-                    # Create a uniform set, this will be cached, the cache will be cleared if our viewports configuration is changed.
-                    var uniform : RDUniform = RDUniform.new()
+                    # Create a uniform set.
+                    # This will be cached; the cache will be cleared if our viewport's configuration is changed.
+                    var uniform: RDUniform = RDUniform.new()
                     uniform.uniform_type = RenderingDevice.UNIFORM_TYPE_IMAGE
                     uniform.binding = 0
                     uniform.add_id(input_image)
                     var uniform_set = UniformSetCacheRD.get_cache(shader, 0, [ uniform ])
 
                     # Run our compute shader.
-                    var compute_list := rd.compute_list_begin()
+                    var compute_list:= rd.compute_list_begin()
                     rd.compute_list_bind_compute_pipeline(compute_list, pipeline)
                     rd.compute_list_bind_uniform_set(compute_list, uniform_set, 0)
                     rd.compute_list_set_push_constant(compute_list, push_constant.to_byte_array(), push_constant.size() * 4)
