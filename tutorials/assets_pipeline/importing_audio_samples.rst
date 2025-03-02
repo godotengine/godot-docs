@@ -13,6 +13,12 @@ Each format has different advantages:
 - WAV files use raw data or light compression (IMA-ADPCM or QOA). They are 
   lightweight to play back on the CPU (hundreds of simultaneous voices in this
   format are fine). The downside is that they take up a lot of disk space.
+
+.. note::
+
+    Currently, it isn't possible to import compressed WAV files to Godot.
+    You can still compress imported WAV files using the Import dock.
+
 - Ogg Vorbis files use a stronger compression that results in much
   smaller file size, but require significantly more processing power to
   play back.
