@@ -64,18 +64,18 @@ supported yet, but the supported platforms continue to grow.
 
 To open the export menu, click the **Export** button:
 
-.. image:: img/export.png
+.. image:: img/export.webp
 
 The export menu will open. However, it will be completely empty.
 This is because we need to add an export preset.
 
-.. image:: img/export_dialog.png
+.. image:: img/export_dialog.webp
 
 To create an export preset, click the **Add…** button at the top
 of the export menu. This will open a drop-down list of platforms
 to choose from for an export preset.
 
-.. image:: img/export_preset.png
+.. image:: img/export_preset.webp
 
 The default options are often enough to export, so tweaking them is
 usually not necessary. However, many platforms require additional
@@ -84,7 +84,7 @@ needs export templates installed to create packages. The export menu
 will complain when something is missing and will not allow the user to
 export for that platform until they resolve it:
 
-.. image:: img/export_error.png
+.. image:: img/export_error.webp
 
 At that time, the user is expected to come back to the documentation and follow
 instructions on how to properly set up that platform.
@@ -111,7 +111,7 @@ TPZ file (which is a renamed ZIP archive) from the
 Once downloaded, they can be installed using the **Install Export Templates**
 option in the editor:
 
-.. image:: img/exptemp.png
+.. image:: img/export_templates.webp
 
 .. _doc_exporting_projects_export_mode:
 
@@ -125,14 +125,23 @@ creates the package. There are 3 different modes for exporting:
 -  Export selected scenes (and dependencies)
 -  Export selected resources (and dependencies)
 
-.. image:: img/expres.png
+.. image:: img/export_resources.webp
 
 **Export all resources in the project** will export every resource in the
 project. **Export selected scenes** and **Export selected resources** gives
 you a list of the scenes or resources in the project, and you have to
 select every scene or resource you want to export.
 
-.. image:: img/expselected.png
+.. image:: img/export_selected.webp
+
+**Export all resources in the project except resources checked below** does
+exactly what it says, everything will be exported except for what you select
+in the list.
+
+**Export as dedicated server** will remove all visuals from a project and replace
+them with a placeholder. This includes Cubemap, CubemapArray, Material, Mesh,
+Texture2D, Texture2DArray, Texture3D. You can also go into the list of files and
+specify specific visual resources that you do wish to keep.
 
 .. note::
 
