@@ -10,16 +10,9 @@ Godot provides 3 options to import your audio data: WAV, Ogg Vorbis and MP3.
 
 Each format has different advantages:
 
-- WAV files use raw data or light compression (IMA-ADPCM or QOA). They are 
+- WAV files use raw data or light compression (IMA-ADPCM or QOA). Currently, they can be imported only in raw format, but Godot can apply compression in already imported files. They are 
   lightweight to play back on the CPU (hundreds of simultaneous voices in this
   format are fine). The downside is that they take up a lot of disk space.
-
-.. note::
-
-    Currently, it isn't possible to import compressed WAV files to Godot. Save them to a raw data format to import them.
-
-    You can still compress imported WAV files using the Import dock.
-
 - Ogg Vorbis files use a stronger compression that results in much
   smaller file size, but require significantly more processing power to
   play back.
