@@ -181,7 +181,6 @@ is set by the mouse position instead of the keyboard. The character will always
     :muted:
     :align: default
     :width: 100%
-    :nocontrols:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
