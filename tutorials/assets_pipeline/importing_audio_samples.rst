@@ -16,7 +16,8 @@ Each format has different advantages:
 
 .. note::
 
-    Currently, it isn't possible to import compressed WAV files to Godot.
+    Currently, it isn't possible to import compressed WAV files to Godot. Save them to a raw data format to import them.
+
     You can still compress imported WAV files using the Import dock.
 
 - Ogg Vorbis files use a stronger compression that results in much
