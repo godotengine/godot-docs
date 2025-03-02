@@ -505,8 +505,8 @@ Scripts that extend EditorScript must be ``@tool`` scripts to function.
 
 .. note::
 
-    If you are using an external editor, open the script inside the Godot
-    script editor so you can execute the function.
+    EditorScripts can only be run from the Godot script editor. If you are using
+    an external editor, open the script inside the Godot script editor to run it.
 
 .. danger::
 
