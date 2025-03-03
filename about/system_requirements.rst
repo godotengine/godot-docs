@@ -54,18 +54,12 @@ Desktop or laptop PC - Minimum
 |                      | Exporting projects requires downloading export templates separately                     |
 |                      | (1.3 GB after installation).                                                            |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Windows 7, macOS 10.13 (Compatibility) or                          |
-|                      |   macOS 10.15 (Forward+/Mobile), Linux distribution released after 2016                 |
+| **Operating system** | - **Native editor:** Windows 10, macOS 10.13 (Compatibility) or                         |
+|                      |   macOS 10.15 (Forward+/Mobile), Linux distribution released after 2018                 |
 |                      | - **Web editor:** Firefox 79, Chrome 68, Edge 79, Safari 15.2, Opera 64                 |
 +----------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
-
-    Windows 7/8/8.1 are supported on a best-effort basis. These versions are not
-    regularly tested and some features may be missing (such as colored
-    :ref:`print_rich <class_@GlobalScope_method_print_rich>` console output).
-    Support for Windows 7/8/8.1 may be removed in a
-    :ref:`future Godot 4.x release <doc_release_policy>`.
 
     Vulkan drivers for these Windows versions are known to have issues with
     memory leaks. As a result, it's recommended to stick to the Compatibility
@@ -239,20 +233,13 @@ Desktop or laptop PC - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Windows 7 (Compatibility and Forward+/Mobile, Vulkan),        |
-|                      |   Windows 10 (Forward+/Mobile, Direct3D 12), macOS 10.13 (Compatibility), macOS 10.15   |
+| **Operating system** | - **For native exports:** Windows 10, macOS 10.13 (Compatibility), macOS 10.15          |
 |                      |   (Forward+/Mobile, Vulkan), macOS 13.0 (Forward+/Mobile, Metal), Linux distribution    |
-|                      |   released after 2016                                                                   |
+|                      |   released after 2018                                                                   |
 |                      | - **For web exports:** Firefox 79, Chrome 68, Edge 79, Safari 15.2, Opera 64            |
 +----------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
-
-    Windows 7/8/8.1 are supported on a best-effort basis. These versions are not
-    regularly tested and some features may be missing (such as colored
-    :ref:`print_rich <class_@GlobalScope_method_print_rich>` console output).
-    Support for Windows 7/8/8.1 may be removed in a
-    :ref:`future Godot 4.x release <doc_release_policy>`.
 
     Vulkan drivers for these Windows versions are known to have issues with
     memory leaks. As a result, it's recommended to stick to the Compatibility
