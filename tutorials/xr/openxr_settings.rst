@@ -102,7 +102,7 @@ Not doing so will prevent your game from being accepted on various stores.
 
 In Godot you can do this by calling the ``center_on_hmd`` function on the :ref:`XRServer <class_xrserver>`:
 
-- Calling ``XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT, true)`` will move the :ref:`XRCamera3D <class_xrcamera3d>` node
+- Calling ``XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT, false)`` will move the :ref:`XRCamera3D <class_xrcamera3d>` node
   to the :ref:`XROrigin3D <class_xrorigin3d>` node similar to the ``Local`` reference space.
 - Calling ``XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT, true)`` will move the :ref:`XRCamera3D <class_xrcamera3d>` node
   above the :ref:`XROrigin3D <class_xrorigin3d>` node keeping the player's height, similar to the ``Local Floor`` reference space.
