@@ -54,18 +54,13 @@ Desktop or laptop PC - Minimum
 |                      | Exporting projects requires downloading export templates separately                     |
 |                      | (1.3 GB after installation).                                                            |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Windows 7, macOS 10.13 (Compatibility) or                          |
-|                      |   macOS 10.15 (Forward+/Mobile), Linux distribution released after 2016                 |
-|                      | - **Web editor:** Firefox 79, Chrome 68, Edge 79, Safari 15.2, Opera 64                 |
+| **Operating system** | - **Native editor:** Windows 10, macOS 10.13 (Compatibility) or                         |
+|                      |   macOS 10.15 (Forward+/Mobile), Linux distribution released after 2018                 |
+|                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
+|                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
-
-    Windows 7/8/8.1 are supported on a best-effort basis. These versions are not
-    regularly tested and some features may be missing (such as colored
-    :ref:`print_rich <class_@GlobalScope_method_print_rich>` console output).
-    Support for Windows 7/8/8.1 may be removed in a
-    :ref:`future Godot 4.x release <doc_release_policy>`.
 
     Vulkan drivers for these Windows versions are known to have issues with
     memory leaks. As a result, it's recommended to stick to the Compatibility
@@ -101,8 +96,8 @@ Mobile device (smartphone/tablet) - Minimum
 |                      | (1.3 GB after installation)                                                             |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **Native editor:** Android 6.0 (Compatibility) or Android 9.0 (Forward+/Mobile)       |
-|                      | - **Web editor:** Firefox 79, Chrome 88, Edge 79, Safari 15.2, Opera 64,                |
-|                      |   Samsung Internet 15                                                                   |
+|                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
+|                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
 
 These are the **recommended** specifications to get a smooth experience with the
@@ -239,20 +234,14 @@ Desktop or laptop PC - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Windows 7 (Compatibility and Forward+/Mobile, Vulkan),        |
-|                      |   Windows 10 (Forward+/Mobile, Direct3D 12), macOS 10.13 (Compatibility), macOS 10.15   |
+| **Operating system** | - **For native exports:** Windows 10, macOS 10.13 (Compatibility), macOS 10.15          |
 |                      |   (Forward+/Mobile, Vulkan), macOS 13.0 (Forward+/Mobile, Metal), Linux distribution    |
-|                      |   released after 2016                                                                   |
-|                      | - **For web exports:** Firefox 79, Chrome 68, Edge 79, Safari 15.2, Opera 64            |
+|                      |   released after 2018                                                                   |
+|                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
+|                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
-
-    Windows 7/8/8.1 are supported on a best-effort basis. These versions are not
-    regularly tested and some features may be missing (such as colored
-    :ref:`print_rich <class_@GlobalScope_method_print_rich>` console output).
-    Support for Windows 7/8/8.1 may be removed in a
-    :ref:`future Godot 4.x release <doc_release_policy>`.
 
     Vulkan drivers for these Windows versions are known to have issues with
     memory leaks. As a result, it's recommended to stick to the Compatibility
@@ -293,8 +282,8 @@ Mobile device (smartphone/tablet) - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **For native exports:** Android 6.0 (Compatibility), Android 9.0 (Forward+/Mobile),   |
 |                      |   iOS 12.0 (Forward+/Mobile, Vulkan), iOS 16.0 (Forward+/Mobile, Metal)                 |
-|                      | - **For web exports:** Firefox 79, Chrome 88, Edge 79, Safari 15.2, Opera 64,           |
-|                      |   Samsung Internet 15                                                                   |
+|                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
+|                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
 
 These are the **recommended** specifications to get a smooth experience with a
