@@ -182,7 +182,7 @@ you should use a lossless or uncompressed format as an intermediate format to
 maximize the quality of the output Ogg Theora video, but this can require a lot
 of disk space.
 
-`FFmpeg <https://ffmpeg.org/>`__ (CLI) is popular open source tools
+`FFmpeg <https://ffmpeg.org/>`__ (CLI) is a popular open source tool
 for this purpose. FFmpeg has a steep learning curve, but it's powerful tool.
 
 Here are example FFmpeg commands to convert an MP4 video to Ogg Theora. Since
