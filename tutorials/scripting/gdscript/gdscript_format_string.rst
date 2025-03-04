@@ -6,7 +6,7 @@ GDScript format strings
 Godot offers multiple ways to dynamically change the contents of strings:
 
 - Format strings: ``var string = "I have %s cats." % "3"``
-- The ``String.format()`` method: ``var string = "I have {} cats.".format([3])``
+- The ``String.format()`` method: ``var string = "I have {0} cats.".format([3])``
 - String concatenation: ``var string = "I have " + str(3) + " cats."``
 
 This page explains how to use format strings, and briefly explains the ``format()``
