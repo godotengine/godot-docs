@@ -369,7 +369,11 @@ the data and print the results to our console.
 Freeing memory
 ------------------
 
+<<<<<<< HEAD
 The ``buffer``, ``pipeline``, and ``uniform_set`` variables we've been using are each an :ref:`class_RID`. Because RenderingDevice is meant to be a lower-level API, RID's aren't freed automatically. This means that once you're done using ``buffer`` or any other RID object, you are responsible for freeing its memory manually using the :ref:`class_RenderingDevice` ``free_rid`` method.
+=======
+The ``buffer``, ``pipeline``, and ``uniform_set`` variables we've been using are :ref:`class_RID`s. Because RenderingDevice is meant to be a lower-level API, RID's aren't freed automatically. This means that once you're done using ``buffer`` or any other RID object, you are responsible for freeing its memory manually using the :ref:`class_RenderingDevice` ``free_rid`` method.
+>>>>>>> d1f215ae2ca3deed1d95afbfa33fa1033a293903
 
 With that, you have everything you need to get started working with compute
 shaders.
