@@ -163,7 +163,7 @@ which can be created using the :ref:`class_RenderingServer`:
  .. code-tab:: gdscript GDScript
 
     # Create a local rendering device.
-    var rd := RenderingServer.create_local_rendering_device()
+    var rd = RenderingServer.create_local_rendering_device()
 
  .. code-tab:: csharp
 
@@ -177,9 +177,9 @@ and create a precompiled version of it using this:
  .. code-tab:: gdscript GDScript
 
     # Load GLSL shader
-    var shader_file := load("res://compute_example.glsl")
-    var shader_spirv: RDShaderSPIRV = shader_file.get_spirv()
-    var shader := rd.shader_create_from_spirv(shader_spirv)
+    var shader_file = load("res://compute_example.glsl")
+    var shader_spirv = shader_file.get_spirv()
+    var shader = rd.shader_create_from_spirv(shader_spirv)
 
  .. code-tab:: csharp
 
@@ -210,12 +210,12 @@ So let's initialize an array of floats and create a storage buffer:
  .. code-tab:: gdscript GDScript
 
     # Prepare our data. We use floats in the shader, so we need 32 bit.
-    var input := PackedFloat32Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    var input_bytes := input.to_byte_array()
+    var input = PackedFloat32Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    var input_bytes = input.to_byte_array()
 
     # Create a storage buffer that can hold our float values.
     # Each float has 4 bytes (32 bit) so 10 x 4 = 40 bytes
-    var buffer := rd.storage_buffer_create(input_bytes.size(), input_bytes)
+    var buffer = rd.storage_buffer_create(input_bytes.size(), input_bytes)
 
  .. code-tab:: csharp
 
@@ -236,11 +236,11 @@ assign it to a uniform set which we can pass to our shader later.
  .. code-tab:: gdscript GDScript
 
     # Create a uniform to assign the buffer to the rendering device
-    var uniform := RDUniform.new()
+    var uniform = RDUniform.new()
     uniform.uniform_type = RenderingDevice.UNIFORM_TYPE_STORAGE_BUFFER
     uniform.binding = 0 # this needs to match the "binding" in our shader file
     uniform.add_id(buffer)
-    var uniform_set := rd.uniform_set_create([uniform], shader, 0) # the last parameter (the 0) needs to match the "set" in our shader file
+    var uniform_set = rd.uniform_set_create([uniform], shader, 0) # the last parameter (the 0) needs to match the "set" in our shader file
 
  .. code-tab:: csharp
 
@@ -273,8 +273,8 @@ The steps we need to do to compute our result are:
  .. code-tab:: gdscript GDScript
 
     # Create a compute pipeline
-    var pipeline := rd.compute_pipeline_create(shader)
-    var compute_list := rd.compute_list_begin()
+    var pipeline = rd.compute_pipeline_create(shader)
+    var compute_list = rd.compute_list_begin()
     rd.compute_list_bind_compute_pipeline(compute_list, pipeline)
     rd.compute_list_bind_uniform_set(compute_list, uniform_set, 0)
     rd.compute_list_dispatch(compute_list, 5, 1, 1)
@@ -365,6 +365,11 @@ the data and print the results to our console.
     Buffer.BlockCopy(outputBytes, 0, output, 0, outputBytes.Length);
     GD.Print("Input: ", string.Join(", ", input));
     GD.Print("Output: ", string.Join(", ", output));
+
+Freeing memory
+------------------
+
+The ``buffer``, ``pipeline``, and ``uniform_set`` variables we've been using are each an :ref:`class_RID`. Because RenderingDevice is meant to be a lower-level API, RID's aren't freed automatically. This means that once you're done using ``buffer`` or any other RID object, you are responsible for freeing its memory manually using the :ref:`class_RenderingDevice` ``free_rid`` method.
 
 With that, you have everything you need to get started working with compute
 shaders.
