@@ -37,6 +37,8 @@ There are 3 rules to describe classes:
     See the :ref:`content guidelines <doc_content_guidelines>` for information
     on the types of documentation you can write in the official documentation.
 
+.. _doc_docs_writing_guidelines_clear_english_rules:
+
 7 rules for clear English
 -------------------------
 
@@ -283,6 +285,8 @@ element of a list with more than two elements.
 How to write methods and classes
 --------------------------------
 
+.. _doc_docs_writing_guidelines_dynamic_typing:
+
 Dynamic vs static typing
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -334,6 +338,8 @@ The exception is topics that explain static typing concepts to users.
         var size = arguments.size()
         var choice = randi() % size
         return arguments[choice]
+
+.. _doc_docs_writing_guidelines_real_world_code_example:
 
 Use real-world code examples where appropriate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -452,6 +458,7 @@ documentation and in Godot, it will display like ``this``. When you edit XML
 files in the Godot repository, replace existing arguments written like 'this' or
 \`this\` with ``[code]this[/code]``.
 
+.. _doc_docs_writing_guidelines_common_vocabulary:
 
 Common vocabulary to use in Godot's documentation
 -------------------------------------------------
@@ -487,6 +494,8 @@ class names, which you can't fold, are ``Classes`` e.g. the
 ``properties``. E.g. ``position`` or ``modulate color`` are both
 ``properties``.
 
+.. _doc_docs_writing_guidelines_keyboard_shortcuts:
+
 Keyboard shortcut guidelines
 ----------------------------
 
@@ -507,6 +516,7 @@ examples with the ``:kbd:`` tag left as-is for better visibility:
 - Press ``:kbd:`Space``` and hold the left mouse button to pan in the 2D editor.
 - Press ``:kbd:`Shift + Up Arrow``` to move the node upwards by 8 pixels.
 
+.. _doc_docs_writing_guidelines_manual_style:
 
 Manual style guidelines
 -----------------------
@@ -567,6 +577,8 @@ is fine too.
     - Godot uses *nodes* with *scripts* in a *scene tree*.
     - Godot uses **nodes** with **scripts** in a **scene tree**.
 
+.. _doc_docs_writing_guidelines_literals:
+
 Literals
 ~~~~~~~~
 
@@ -575,6 +587,8 @@ Use ``code style`` for literal values. Literals include:
     - Integer or ``int`` literals like ``0``, ``-2``, or ``100``
     - Float literals like ``0.0``, ``0.5``, ``-2.0``, or ``100.0``
     - Vector literals like ``(0.0, 0.0)``, ``(0.5, -0.5, 0.5)``, or ``(1.0, 2.0, 3.0, 4.0)``.
+
+.. _doc_docs_writing_guidelines_class_properties_methods:
 
 Classes, properties, and methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -590,6 +604,8 @@ link.
 
 When discussing properties in the context of the inspector, use **bold style**
 instead.
+
+.. _doc_docs_writing_guidelines_editor_ui:
 
 Editor UI
 ~~~~~~~~~
@@ -613,6 +629,8 @@ reader must navigate. Use ``>`` as a separator. You can omit ellipses in menu na
 .. note:: Sometimes, ``->`` or ``→`` is used as a separator. This is nonstandard.
     Replace it with ``>`` if you are already making changes to a section.
 
+.. _doc_docs_writing_guidelines_project_settings:
+
 Project settings
 ~~~~~~~~~~~~~~~~
 
@@ -624,6 +642,8 @@ rendered, prefer splitting the setting name and the section when the link is lon
     - Set the :ref:`Application > Run > Max FPS<class_ProjectSettings_property_application/run/max_fps>` setting to ``60``.
     - In the project settings under **Application > Run**, set :ref:`Max FPS<class_ProjectSettings_property_application/run/max_fps>` to ``60``.
     - In **Project Settings > Application > Run**, set :ref:`Max FPS<class_ProjectSettings_property_application/run/max_fps>` to ``60``.
+
+.. _doc_docs_writing_guidelines_manually_wrapping_lines:
 
 Manually wrapping lines
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -709,6 +729,8 @@ sub-section header (``---``) first.
 See the `Sphinx documentation <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#sections>`__
 and the `reStructuredText documentation <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`__
 for more information.
+
+.. _doc_docs_writing_guidelines_specific_version:
 
 When to refer to a specific Godot version
 -----------------------------------------
