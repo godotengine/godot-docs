@@ -1058,7 +1058,7 @@ Per-instance uniforms
 
 .. note::
 
-    Per-instance uniforms are only available in ``spatial`` (3D) shaders.
+    Per-instance uniforms are only available in ``spatial`` (3D) and ``canvas_item`` (2D) shaders.
 
 Sometimes, you want to modify a parameter on each node using the material. As an
 example, in a forest full of trees, when you want each tree to have a slightly
