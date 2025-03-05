@@ -45,7 +45,7 @@ Method ``store_string`` changes return type from ``void`` to ``bool``           
 Method ``store_var`` changes return type from ``void`` to ``bool``                                                        |✔️|                 |❌|                  |✔️|                  `GH-78289`_
 **OS**
 Method ``execute_with_pipe`` adds a new ``blocking`` optional parameter                                                   |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-94434`_
-Method ``read_string_from_stdin`` adds a new ``buffer_size`` optional parameter                                           |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-91201`_
+Method ``read_string_from_stdin`` adds a new ``buffer_size`` parameter [#f1]_                                             |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-91201`_
 **RegEx**
 Method ``compile`` adds a new ``show_error`` optional parameter                                                           |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-95212`_
 Method ``create_from_string`` adds a new ``show_error`` optional parameter                                                |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-95212`_
@@ -54,6 +54,8 @@ Method ``post`` adds a new ``count`` optional parameter                         
 **TranslationServer**
 Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter                                              |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-98972`_
 ========================================================================================================================  ===================  ====================  ====================  ============
+
+.. [#f1] Default buffer size in 4.3 is ``1024``.
 
 GUI nodes
 ~~~~~~~~~
