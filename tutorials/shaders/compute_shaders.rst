@@ -366,6 +366,16 @@ the data and print the results to our console.
     GD.Print("Input: ", string.Join(", ", input));
     GD.Print("Output: ", string.Join(", ", output));
 
+Freeing memory
+------------------
+
+The ``buffer``, ``pipeline``, and ``uniform_set`` variables we've been using are
+each an :ref:`class_RID`. Because RenderingDevice is meant to be a lower-level
+API, RIDs aren't freed automatically. This means that once you're done using
+``buffer`` or any other RID, you are responsible for freeing its memory
+manually using the RenderingDevice's
+:ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
+
 With that, you have everything you need to get started working with compute
 shaders.
 
