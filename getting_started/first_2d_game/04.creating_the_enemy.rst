@@ -87,6 +87,7 @@ and randomly choose one of the three animation types:
     func _ready():
         var mob_types = Array($AnimatedSprite2D.sprite_frames.get_animation_names())
         $AnimatedSprite2D.animation = mob_types.pick_random()
+        $AnimatedSprite2D.play()
 
  .. code-tab:: csharp
 
@@ -105,6 +106,8 @@ In the GDScript code, we use the :ref:`Array.pick_random <class_Array_method_pic
 to select one of these animation names at random. Meanwhile, in the C# code, we pick a random number 
 between ``0`` and ``2`` to select one of these names from the list (array indices start at ``0``). The 
 expression ``GD.Randi() % n`` selects a random integer between ``0`` and ``n-1``.
+
+Finally, we call $AnimatedSprite2D.play() to start playing the chosen animation.
 
 The last piece is to make the mobs delete themselves when they leave the screen.
 Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node
