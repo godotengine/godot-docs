@@ -41,7 +41,7 @@ in the user's browser.
     Since Godot 4.3, Godot supports exporting your game on a single thread, which
     solves this issue. While it has some drawbacks on its own (it cannot use threads, and is
     not as performant as the multi-threaded export), it doesn't require as much overhead to install.
-    It is also more compatible overall with stores like `itch.io <https://itch.io/>` or Web publishers like
+    It is also more compatible overall with stores like `itch.io <https://itch.io/>`__ or Web publishers like
     `Poki <https://poki.com/>`__ or `CrazyGames <https://crazygames.com/>`__. The single-threaded export
     works very well on macOS and iOS too, where it always had compatibility issues with multiple threads
     exports.
