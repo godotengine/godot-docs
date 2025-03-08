@@ -143,7 +143,11 @@ Leave the other values as default and press *OK*
 
 .. note::
 
-    If you want controllers to have different input actions, you should use the Devices option in Additional Options. Device 0 corresponds to the first plugged gamepad, Device 1 corresponds to the second plugged gamepad, and so on.
+    If you're developing a local multiplayer game with multiple controllers,
+    the common approach is to leave the Device option set to All Devices.
+    The system automatically differentiates actions triggered by different
+    controllers using the InputEvent player property,
+    so **you don't have to duplicate actions for each player!**
 
 Do the same for the other input actions. For example, bind the right arrow, D,
 and the left joystick's positive axis to ``move_right``. After binding all keys,
