@@ -570,7 +570,7 @@ Returns the factor by which the visible level of detail is scaled by this **Proj
 
 :ref:`int<class_int>` **get_pixels_per_meter**\ (\ for_pixel_width\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Projection_method_get_pixels_per_meter>`
 
-Returns the number of pixels with the given pixel width displayed per meter, after this **Projection** is applied.
+Returns ``for_pixel_width`` divided by the viewport's width measured in meters on the near plane, after this **Projection** is applied.
 
 .. rst-class:: classref-item-separator
 

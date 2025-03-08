@@ -939,7 +939,7 @@ Trims the text per word.
 
 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_ELLIPSIS** = ``3``
 
-Trims the text per character and adds an ellipsis to indicate that parts are hidden.
+Trims the text per character and adds an ellipsis to indicate that parts are hidden if trimmed text is 6 characters or longer.
 
 .. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS:
 
@@ -947,7 +947,23 @@ Trims the text per character and adds an ellipsis to indicate that parts are hid
 
 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_WORD_ELLIPSIS** = ``4``
 
-Trims the text per word and adds an ellipsis to indicate that parts are hidden.
+Trims the text per word and adds an ellipsis to indicate that parts are hidden if trimmed text is 6 characters or longer.
+
+.. _class_TextServer_constant_OVERRUN_TRIM_ELLIPSIS_FORCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_ELLIPSIS_FORCE** = ``5``
+
+Trims the text per character and adds an ellipsis to indicate that parts are hidden regardless of trimmed text length.
+
+.. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS_FORCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_WORD_ELLIPSIS_FORCE** = ``6``
+
+Trims the text per word and adds an ellipsis to indicate that parts are hidden regardless of trimmed text length.
 
 .. rst-class:: classref-item-separator
 

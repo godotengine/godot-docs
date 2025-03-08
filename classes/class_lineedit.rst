@@ -752,7 +752,7 @@ The caret's column position inside the **LineEdit**. When set, the text may scro
 - |void| **set_caret_force_displayed**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_caret_force_displayed**\ (\ )
 
-If ``true``, the **LineEdit** will always show the caret, even if focus is lost.
+If ``true``, the **LineEdit** will always show the caret, even if not editing or focus is lost.
 
 .. rst-class:: classref-item-separator
 
