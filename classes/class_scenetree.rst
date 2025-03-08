@@ -42,29 +42,31 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`auto_accept_quit<class_SceneTree_property_auto_accept_quit>`           | ``true``  |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`Node<class_Node>`     | :ref:`current_scene<class_SceneTree_property_current_scene>`                 |           |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>` | ``false`` |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>` | ``false`` |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`debug_paths_hint<class_SceneTree_property_debug_paths_hint>`           | ``false`` |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`Node<class_Node>`     | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`         |           |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`           | ``true``  |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`paused<class_SceneTree_property_paused>`                               | ``false`` |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`physics_interpolation<class_SceneTree_property_physics_interpolation>` | ``false`` |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`quit_on_go_back<class_SceneTree_property_quit_on_go_back>`             | ``true``  |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
-   | :ref:`Window<class_Window>` | :ref:`root<class_SceneTree_property_root>`                                   |           |
-   +-----------------------------+------------------------------------------------------------------------------+-----------+
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`auto_accept_quit<class_SceneTree_property_auto_accept_quit>`               | ``true``  |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`Node<class_Node>`     | :ref:`current_scene<class_SceneTree_property_current_scene>`                     |           |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>`     | ``false`` |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>`     | ``false`` |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`debug_paths_hint<class_SceneTree_property_debug_paths_hint>`               | ``false`` |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`Node<class_Node>`     | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`             |           |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`licenses_dialog_visible<class_SceneTree_property_licenses_dialog_visible>` | ``false`` |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`               | ``true``  |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`paused<class_SceneTree_property_paused>`                                   | ``false`` |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`physics_interpolation<class_SceneTree_property_physics_interpolation>`     | ``false`` |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`quit_on_go_back<class_SceneTree_property_quit_on_go_back>`                 | ``true``  |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`Window<class_Window>` | :ref:`root<class_SceneTree_property_root>`                                       |           |
+   +-----------------------------+----------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -390,6 +392,23 @@ If ``true``, curves from :ref:`Path2D<class_Path2D>` and :ref:`Path3D<class_Path
 The root of the scene currently being edited in the editor. This is usually a direct child of :ref:`root<class_SceneTree_property_root>`.
 
 \ **Note:** This property does nothing in release builds.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneTree_property_licenses_dialog_visible:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **licenses_dialog_visible** = ``false`` :ref:`🔗<class_SceneTree_property_licenses_dialog_visible>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_licenses_dialog_visible**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_licenses_dialog_visible**\ (\ )
+
+If ``true``, shows the built-in dialog which displays Godot's third-party notices. This dialog can also be toggled by pressing the :ref:`ProjectSettings.input/ui_toggle_licenses_dialog<class_ProjectSettings_property_input/ui_toggle_licenses_dialog>` built-in action. See :doc:`Complying with licenses <../complying_with_licenses>` in the documentation for more information.
 
 .. rst-class:: classref-item-separator
 

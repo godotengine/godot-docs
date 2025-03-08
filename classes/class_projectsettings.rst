@@ -711,6 +711,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_toggle_insert_mode<class_ProjectSettings_property_input/ui_text_toggle_insert_mode>`                                                                                                   |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_toggle_licenses_dialog<class_ProjectSettings_property_input/ui_toggle_licenses_dialog>`                                                                                                     |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_undo<class_ProjectSettings_property_input/ui_undo>`                                                                                                                                         |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_unicode_start<class_ProjectSettings_property_input/ui_unicode_start>`                                                                                                                       |                                                                                                  |
@@ -6178,6 +6180,20 @@ Default :ref:`InputEventAction<class_InputEventAction>` to toggle *insert mode* 
 
 ----
 
+.. _class_ProjectSettings_property_input/ui_toggle_licenses_dialog:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_toggle_licenses_dialog** :ref:`🔗<class_ProjectSettings_property_input/ui_toggle_licenses_dialog>`
+
+Toggles the built-in dialog which displays Godot's third-party notices. This can also be toggled from a script using :ref:`SceneTree.licenses_dialog_visible<class_SceneTree_property_licenses_dialog_visible>`.
+
+Since the default shortcut is not usable on mobile platforms, it is recommended to create a button that sets :ref:`SceneTree.licenses_dialog_visible<class_SceneTree_property_licenses_dialog_visible>` to ``true`` when pressed in your project's menu. See :doc:`Complying with licenses <../complying_with_licenses>` in the documentation for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_input/ui_undo:
 
 .. rst-class:: classref-property
@@ -10696,6 +10712,8 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 
 Sets how the glow effect is upscaled before being copied onto the screen. Linear is faster, but looks blocky. Bicubic is slower but looks smooth.
 
+\ **Note:** :ref:`rendering/environment/glow/upscale_mode<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>` is only effective when using the Forward+ or Mobile rendering methods, as Compatibility uses a different glow implementation.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -12787,7 +12805,7 @@ The ratio of :ref:`WorkerThreadPool<class_WorkerThreadPool>`'s threads that will
 
 :ref:`int<class_int>` **threading/worker_pool/max_threads** = ``-1`` :ref:`🔗<class_ProjectSettings_property_threading/worker_pool/max_threads>`
 
-Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``-1`` means no limit.
+Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``-1`` means ``1`` on Web, or a number of *logical* CPU cores available on other platforms (see :ref:`OS.get_processor_count()<class_OS_method_get_processor_count>`).
 
 .. rst-class:: classref-item-separator
 

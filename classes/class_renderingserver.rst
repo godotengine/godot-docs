@@ -7848,6 +7848,8 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 If ``enable`` is ``true``, enables bicubic upscaling for glow which improves quality at the cost of performance. Equivalent to :ref:`ProjectSettings.rendering/environment/glow/upscale_mode<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>`.
 
+\ **Note:** This setting is only effective when using the Forward+ or Mobile rendering methods, as Compatibility uses a different glow implementation.
+
 .. rst-class:: classref-item-separator
 
 ----
