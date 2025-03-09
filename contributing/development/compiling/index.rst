@@ -1,5 +1,7 @@
 :allow_comments: False
 
+.. _doc_compiling_index:
+
 Building from source
 ====================
 
