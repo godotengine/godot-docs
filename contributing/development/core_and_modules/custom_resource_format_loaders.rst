@@ -58,8 +58,7 @@ read and handle data serialization.
 .. code-block:: cpp
     :caption: resource_loader_json.h
 
-    #ifndef RESOURCE_LOADER_JSON_H
-    #define RESOURCE_LOADER_JSON_H
+    #pragma once
 
     #include "core/io/resource_loader.h"
 
@@ -71,7 +70,6 @@ read and handle data serialization.
         virtual bool handles_type(const String &p_type) const;
         virtual String get_resource_type(const String &p_path) const;
     };
-    #endif // RESOURCE_LOADER_JSON_H
 
 .. code-block:: cpp
     :caption: resource_loader_json.cpp
@@ -112,8 +110,7 @@ If you'd like to be able to edit and save a resource, you can implement a
 .. code-block:: cpp
     :caption: resource_saver_json.h
 
-    #ifndef RESOURCE_SAVER_JSON_H
-    #define RESOURCE_SAVER_JSON_H
+    #pragma once
 
     #include "core/io/resource_saver.h"
 
@@ -124,7 +121,6 @@ If you'd like to be able to edit and save a resource, you can implement a
         virtual bool recognize(const RES &p_resource) const;
         virtual void get_recognized_extensions(const RES &p_resource, List<String> *r_extensions) const;
     };
-    #endif // RESOURCE_SAVER_JSON_H
 
 .. code-block:: cpp
     :caption: resource_saver_json.cpp
@@ -162,8 +158,7 @@ Here is an example of creating a custom datatype:
 .. code-block:: cpp
     :caption: resource_json.h
 
-    #ifndef RESOURCE_JSON_H
-    #define RESOURCE_JSON_H
+    #pragma once
 
     #include "core/io/json.h"
     #include "core/variant_parser.h"
@@ -189,7 +184,6 @@ Here is an example of creating a custom datatype:
         void set_dict(const Dictionary &p_dict);
         Dictionary get_dict();
     };
-    #endif // RESOURCE_JSON_H
 
 .. code-block:: cpp
     :caption: resource_json.cpp
