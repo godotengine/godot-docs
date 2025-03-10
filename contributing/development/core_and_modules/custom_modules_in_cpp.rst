@@ -47,8 +47,7 @@ Inside we will create a summator class:
 .. code-block:: cpp
     :caption: godot/modules/summator/summator.h
 
-    #ifndef SUMMATOR_H
-    #define SUMMATOR_H
+    #pragma once
 
     #include "core/object/ref_counted.h"
 
@@ -67,8 +66,6 @@ Inside we will create a summator class:
 
         Summator();
     };
-
-    #endif // SUMMATOR_H
 
 And then the cpp file.
 
@@ -621,8 +618,7 @@ The procedure is the following:
 .. code-block:: cpp
     :caption: godot/modules/summator/tests/test_summator.h
 
-    #ifndef TEST_SUMMATOR_H
-    #define TEST_SUMMATOR_H
+    #pragma once
 
     #include "tests/test_macros.h"
 
@@ -648,8 +644,6 @@ The procedure is the following:
     }
 
     } // namespace TestSummator
-
-    #endif // TEST_SUMMATOR_H
 
 4. Compile the engine with ``scons tests=yes``, and run the tests with the
    following command:
