@@ -238,13 +238,19 @@ Transitions also have a few properties. Click any transition and it will be disp
 
 .. image:: img/animtree13.png
 
+
+* *Xfade Time* is the time to cross-fade between this state and the next.
+* *Xfade Curve* allows using a Curve for the transition.
+* *Reset*
+* *Priority* is used together with the ``travel()`` function from code (more on this later). Lower priority transitions are preferred when travelling through the tree.
+
 * *Switch Mode* is the transition type (see above), it can be modified after creation here.
+
 * *Auto Advance* will turn on the transition automatically when this state is reached. This works best with the *At End* switch mode.
 * *Advance Condition* will turn on auto advance when this condition is set. This is a custom text field that can be filled with a variable name.
   The variable can be modified from code (more on this later).
-* *Xfade Time* is the time to cross-fade between this state and the next.
-* *Priority* is used together with the ``travel()`` function from code (more on this later). Lower priority transitions are preferred when travelling through the tree.
-* *Disabled* toggles disabling this transition (when disabled, it will not be used during travel or auto advance).
+* *Expression* allows using code to control the transition (more on this later)
+
 
 For better blending
 -------------------
