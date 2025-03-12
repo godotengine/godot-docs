@@ -454,4 +454,4 @@ we can even call methods:
 can_attack()
 ``
 
-then, changing these variables from code will allow us to control the transitions without having to communicate with the `StateMachine`
+then, changing these variables from code will directly affect the transitions without having to keep references to the `StateMachine` or its elements.
