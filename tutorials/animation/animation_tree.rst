@@ -228,7 +228,7 @@ which are connections with special properties. Transitions are uni-directional, 
 
 There are many types of transition:
 
-.. image:: img/animtree12.png
+.. image:: img/NodeStateMachine.png
 
 * *Immediate*: Will switch to the next state immediately. The current state will end and blend into the beginning of the new one.
 * *Sync*: Will switch to the next state immediately, but will seek the new state to the playback position of the old state.
