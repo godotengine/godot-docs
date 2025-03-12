@@ -432,12 +432,13 @@ if we select our transition, we can type an expression in the ``Expression`` fie
 
 an expression must return a value that is either true or false. we can use any properties from the node:
 
-`
+``
 IsAttacking == true
-`
-`
+``
+
+``
 IsAttacking
-`
+``
 
 we can even call methods:
 
@@ -449,6 +450,8 @@ we can even call methods:
         else:
             return false
 
-`
+``
 can_attack()
-`
+``
+
+then, changing these variables from code will allow us to control the transitions without having to communicate with the `StateMachine`
