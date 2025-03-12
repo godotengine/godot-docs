@@ -249,7 +249,7 @@ Transitions also have a few properties. Click any transition and it will be disp
 * *Auto Advance* will turn on the transition automatically when this state is reached. This works best with the *At End* switch mode.
 * *Advance Condition* will turn on auto advance when this condition is set. This is a custom text field that can be filled with a variable name.
   The variable can be modified from code (more on this later).
-* *Expression* allows using code to control the transition (more on this later)
+* *Expression* This is a custom text field that uses code to control the transition (more on this later)
 
 
 For better blending
@@ -408,3 +408,47 @@ Once retrieved, it can be used by calling one of the many functions it offers:
 The state machine must be running before you can travel. Make sure to either call ``start()`` or choose a node to **Autoplay on Load**.
 
 .. image:: img/animtree18.png
+
+State machine expression
+--------------------
+
+This is a feature introduced in Godot 4 and it allows controlling the transition through code that is set in the Expression field, using the variables of a node, and this includes the ones defined in a script. This greatly simplifies the workflow compared to the older methods like Conditions and ``travel()``.
+
+In our AnimationTree node we will find a property called ``Advance Expression Base Node``, by default it is set to itself.
+the chosen node will be used by the transition`s ``Expression`` field.
+
+.. image:: img/AdvanceExpression.png
+
+in the selected node, we can attach a script and create a variable called `IsAttacking`
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    var IsAttacking : bool = false
+
+
+if we select our transition, we can type an expression in the ``Expression`` field
+
+.. image:: img/NodeStateMachine.png
+
+an expression must return a value that is either true or false. we can use any properties from the node:
+
+```
+IsAttacking == true
+```
+```
+IsAttacking
+```
+
+we can even call methods:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    func can_attack() -> bool:
+        if IsAttacking:
+            return true
+        else:
+            return false
+
+```
+can_attack()
+```
