@@ -164,8 +164,7 @@ GDExtension node we'll be creating. We will name it ``gdexample.h``:
 .. code-block:: cpp
     :caption: gdextension_cpp_example/src/gdexample.h
 
-    #ifndef GDEXAMPLE_H
-    #define GDEXAMPLE_H
+    #pragma once
 
     #include <godot_cpp/classes/sprite2d.hpp>
 
@@ -187,9 +186,7 @@ GDExtension node we'll be creating. We will name it ``gdexample.h``:
         void _process(double delta) override;
     };
 
-    }
-
-    #endif
+    } // namespace godot
 
 There are a few things of note to the above. We include ``sprite2d.hpp`` which
 contains bindings to the Sprite2D class. We'll be extending this class in our
@@ -313,8 +310,7 @@ At last, we need the header file for the ``register_types.cpp`` named
 .. code-block:: cpp
     :caption: gdextension_cpp_example/src/register_types.h
 
-    #ifndef GDEXAMPLE_REGISTER_TYPES_H
-    #define GDEXAMPLE_REGISTER_TYPES_H
+    #pragma once
 
     #include <godot_cpp/core/class_db.hpp>
 
@@ -322,9 +318,6 @@ At last, we need the header file for the ``register_types.cpp`` named
 
     void initialize_example_module(ModuleInitializationLevel p_level);
     void uninitialize_example_module(ModuleInitializationLevel p_level);
-
-    #endif // GDEXAMPLE_REGISTER_TYPES_H
-
 
 Compiling the plugin
 --------------------
