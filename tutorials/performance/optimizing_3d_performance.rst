@@ -104,8 +104,22 @@ the viewer a considerable distance for the angle of view to change
 significantly. This can be complex to get working, but may be worth it depending
 on the type of project you are making.
 
-Use instancing (MultiMesh)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use automatic instancing
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+*This is only implemented in the Forward+ renderer, not Mobile or Compatibility.*
+
+If you have many identical objects in your scene, you can use automatic
+instancing to reduce the number of draw calls. This automatically happens for
+MeshInstance3D nodes that use the same mesh and material: no manual setup is required.
+
+For automatic instancing to be effective, the material must be opaque or
+alpha-tested (alpha scissor or alpha hash). Alpha-blended or depth pre-pass
+materials are never instanced this way. Instead, you must use MultiMesh as
+described below.
+
+Use manual instancing (MultiMesh)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If several identical objects have to be drawn in the same place or nearby, try
 using :ref:`MultiMesh <class_MultiMesh>` instead. MultiMesh allows the drawing
