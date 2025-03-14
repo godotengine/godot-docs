@@ -8,6 +8,12 @@ by `Microsoft <https://microsoft.com>`_ that's free for individual use or non-co
 It has many useful features, such as memory view, performance view, source
 control and more.
 
+.. note::
+
+    This documentation is for contributions to the game engine, and not using
+    Visual Studio as a C# editor. To code C# in an external editor, see
+    :ref:`the C# guide to configure an external editor <doc_c_sharp_setup_external_editor>`.
+
 Importing the project
 ---------------------
 
