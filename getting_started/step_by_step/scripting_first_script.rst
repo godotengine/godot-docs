@@ -148,10 +148,10 @@ Add the following code to your script:
 
  .. code-tab:: csharp C#
 
-	public override void _Ready()
-	{
-		GD.Print("Hello, world!");
-	}
+    public override void _Ready()
+    {
+        GD.Print("Hello, world!");
+    }
 
 
 Let's break it down. The ``func`` keyword defines a new function named
