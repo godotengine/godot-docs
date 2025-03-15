@@ -120,6 +120,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`encode_var<class_PackedByteArray_method_encode_var>`\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`erase<class_PackedByteArray_method_erase>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                         |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`fill<class_PackedByteArray_method_fill>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                           |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_PackedByteArray_method_find>`\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const|                                                                 |
@@ -650,6 +652,18 @@ Encodes a 64-bit unsigned integer number as bytes at the index of ``byte_offset`
 :ref:`int<class_int>` **encode_var**\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PackedByteArray_method_encode_var>`
 
 Encodes a :ref:`Variant<class_Variant>` at the index of ``byte_offset`` bytes. A sufficient space must be allocated, depending on the encoded variant's size. If ``allow_objects`` is ``false``, :ref:`Object<class_Object>`-derived values are not permitted and will instead be serialized as ID-only.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_erase:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **erase**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_erase>`
+
+Removes the first occurrence of a value from the array and returns ``true``. If the value does not exist in the array, nothing happens and ``false`` is returned. To remove an element by index, use :ref:`remove_at()<class_PackedByteArray_method_remove_at>` instead.
 
 .. rst-class:: classref-item-separator
 

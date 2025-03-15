@@ -384,7 +384,7 @@ If ``true``, text can be seen from the back as well, if ``false``, it is invisib
 - |void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_Label3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_Label3D_DrawFlags>`\ ) |const|
 
-If ``true``, the label is rendered at the same size regardless of distance.
+If ``true``, the label is rendered at the same size regardless of distance. The label's size on screen is the same as if the camera was ``1.0`` units away from the label's origin, regardless of the actual distance from the camera. The :ref:`Camera3D<class_Camera3D>`'s field of view (or :ref:`Camera3D.size<class_Camera3D_property_size>` when in orthogonal/frustum mode) still affects the size the label is drawn at.
 
 .. rst-class:: classref-item-separator
 

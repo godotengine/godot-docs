@@ -64,6 +64,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`duplicate<class_PackedVector3Array_method_duplicate>`\ (\ )                                                                             |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`erase<class_PackedVector3Array_method_erase>`\ (\ value\: :ref:`Vector3<class_Vector3>`\ )                                              |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`fill<class_PackedVector3Array_method_fill>`\ (\ value\: :ref:`Vector3<class_Vector3>`\ )                                                |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_PackedVector3Array_method_find>`\ (\ value\: :ref:`Vector3<class_Vector3>`, from\: :ref:`int<class_int>` = 0\ ) |const|      |
@@ -242,6 +244,20 @@ Returns the number of times an element is in the array.
 :ref:`PackedVector3Array<class_PackedVector3Array>` **duplicate**\ (\ ) :ref:`🔗<class_PackedVector3Array_method_duplicate>`
 
 Creates a copy of the array, and returns it.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedVector3Array_method_erase:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **erase**\ (\ value\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_PackedVector3Array_method_erase>`
+
+Removes the first occurrence of a value from the array and returns ``true``. If the value does not exist in the array, nothing happens and ``false`` is returned. To remove an element by index, use :ref:`remove_at()<class_PackedVector3Array_method_remove_at>` instead.
+
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 

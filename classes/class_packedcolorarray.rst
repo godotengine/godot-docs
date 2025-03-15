@@ -64,6 +64,8 @@ Methods
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`duplicate<class_PackedColorArray_method_duplicate>`\ (\ )                                                                          |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`erase<class_PackedColorArray_method_erase>`\ (\ value\: :ref:`Color<class_Color>`\ )                                               |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                          | :ref:`fill<class_PackedColorArray_method_fill>`\ (\ value\: :ref:`Color<class_Color>`\ )                                                 |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`find<class_PackedColorArray_method_find>`\ (\ value\: :ref:`Color<class_Color>`, from\: :ref:`int<class_int>` = 0\ ) |const|       |
@@ -236,6 +238,18 @@ Returns the number of times an element is in the array.
 :ref:`PackedColorArray<class_PackedColorArray>` **duplicate**\ (\ ) :ref:`🔗<class_PackedColorArray_method_duplicate>`
 
 Creates a copy of the array, and returns it.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedColorArray_method_erase:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **erase**\ (\ value\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_PackedColorArray_method_erase>`
+
+Removes the first occurrence of a value from the array and returns ``true``. If the value does not exist in the array, nothing happens and ``false`` is returned. To remove an element by index, use :ref:`remove_at()<class_PackedColorArray_method_remove_at>` instead.
 
 .. rst-class:: classref-item-separator
 

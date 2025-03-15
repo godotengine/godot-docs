@@ -30,7 +30,7 @@ Properties
    :widths: auto
 
    +--------------------------------------------------------------+--------------------------------------------------------------+---------+
-   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`           | :ref:`format<class_RDVertexAttribute_property_format>`       | ``218`` |
+   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`           | :ref:`format<class_RDVertexAttribute_property_format>`       | ``232`` |
    +--------------------------------------------------------------+--------------------------------------------------------------+---------+
    | :ref:`VertexFrequency<enum_RenderingDevice_VertexFrequency>` | :ref:`frequency<class_RDVertexAttribute_property_frequency>` | ``0``   |
    +--------------------------------------------------------------+--------------------------------------------------------------+---------+
@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format** = ``218`` :ref:`🔗<class_RDVertexAttribute_property_format>`
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format** = ``232`` :ref:`🔗<class_RDVertexAttribute_property_format>`
 
 .. rst-class:: classref-property-setget
 

@@ -3810,7 +3810,7 @@ Hints that a property is an :ref:`Array<class_Array>` with the stored type speci
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_DICTIONARY_TYPE** = ``38``
 
-Hints that a property is a :ref:`Dictionary<class_Dictionary>` with the stored types specified in the hint string.
+Hints that a property is a :ref:`Dictionary<class_Dictionary>` with the stored types specified in the hint string. The hint string contains the key and value types separated by a semicolon (e.g. ``"int;String"``).
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LOCALE_ID:
 

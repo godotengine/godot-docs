@@ -30,6 +30,18 @@ Tutorials
 
 - :doc:`XR documentation index <../tutorials/xr/index>`
 
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------------+----------------------------+-------------------------------------------------------------------------------+
+   | :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>` | physics_interpolation_mode | ``2`` (overrides :ref:`Node<class_Node_property_physics_interpolation_mode>`) |
+   +---------------------------------------------------------------------+----------------------------+-------------------------------------------------------------------------------+
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

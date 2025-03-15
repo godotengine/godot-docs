@@ -44,7 +44,7 @@ Properties
    +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`     | keep_title_visible                                                                | ``true`` (overrides :ref:`Window<class_Window_property_keep_title_visible>`) |
    +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`ok_button_text<class_AcceptDialog_property_ok_button_text>`                 | ``"OK"``                                                                     |
+   | :ref:`String<class_String>` | :ref:`ok_button_text<class_AcceptDialog_property_ok_button_text>`                 | ``""``                                                                       |
    +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | title                                                                             | ``"Alert!"`` (overrides :ref:`Window<class_Window_property_title>`)          |
    +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -219,14 +219,14 @@ The text displayed by the dialog.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **ok_button_text** = ``"OK"`` :ref:`🔗<class_AcceptDialog_property_ok_button_text>`
+:ref:`String<class_String>` **ok_button_text** = ``""`` :ref:`🔗<class_AcceptDialog_property_ok_button_text>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_ok_button_text**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_ok_button_text**\ (\ )
 
-The text displayed by the OK button (see :ref:`get_ok_button()<class_AcceptDialog_method_get_ok_button>`).
+The text displayed by the OK button (see :ref:`get_ok_button()<class_AcceptDialog_method_get_ok_button>`). If empty, a default text will be used.
 
 .. rst-class:: classref-section-separator
 

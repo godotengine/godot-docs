@@ -66,6 +66,8 @@ Methods
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`duplicate<class_PackedInt64Array_method_duplicate>`\ (\ )                                                                          |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`erase<class_PackedInt64Array_method_erase>`\ (\ value\: :ref:`int<class_int>`\ )                                                   |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                          | :ref:`fill<class_PackedInt64Array_method_fill>`\ (\ value\: :ref:`int<class_int>`\ )                                                     |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`find<class_PackedInt64Array_method_find>`\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const|           |
@@ -232,6 +234,18 @@ Returns the number of times an element is in the array.
 :ref:`PackedInt64Array<class_PackedInt64Array>` **duplicate**\ (\ ) :ref:`🔗<class_PackedInt64Array_method_duplicate>`
 
 Creates a copy of the array, and returns it.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedInt64Array_method_erase:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **erase**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedInt64Array_method_erase>`
+
+Removes the first occurrence of a value from the array and returns ``true``. If the value does not exist in the array, nothing happens and ``false`` is returned. To remove an element by index, use :ref:`remove_at()<class_PackedInt64Array_method_remove_at>` instead.
 
 .. rst-class:: classref-item-separator
 
