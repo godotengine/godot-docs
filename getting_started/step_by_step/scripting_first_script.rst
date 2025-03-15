@@ -148,7 +148,7 @@ Add the following code to your script:
 
  .. code-tab:: csharp C#
 
-    public MySprite2D()
+    public override void _Ready()
     {
         GD.Print("Hello, world!");
     }
