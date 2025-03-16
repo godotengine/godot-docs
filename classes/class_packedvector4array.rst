@@ -351,7 +351,7 @@ Removes an element from the array by index.
 
 :ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedVector4Array_method_resize>`
 
-Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
+Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize()<class_PackedColorArray_method_resize>` returns the error value (ie: OK) not the new size of the array, use the .size() operator to find the size of the array.
 
 .. rst-class:: classref-item-separator
 
