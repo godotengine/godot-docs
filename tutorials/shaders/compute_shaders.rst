@@ -377,3 +377,62 @@ shaders.
    GPU separately, which lets you compare how a similar algorithm can be
    implemented in two different ways (with the GPU implementation being faster
    in most cases).
+
+Includes Database
+-----------------
+.. warning::
+
+    The feature is experimental.
+
+Godot provides some shader includes through ``ShaderIncludeDB`` class. Include
+operation is done automatically by Godot. They are **not** files in our
+system.
+
+To see what headers are available, use ``ShaderIncludeDB.list_built_in_include_files``
+. The source code of these files can be found in Godot's Git repository.
+
+The example below includes "godot/scene_data_inc.glsl" which defines ``SceneData``
+structure. Uniform ``SceneDataBlock`` corresponce to buffer got from 
+``p_render_data.get_render_scene_data()``. Shader uses ``time`` in ``SceneData``
+to create ``CompositorEffect`` that colours the screens with changing shades.
+Include needs ``MAX_VIEWS`` to be defined.
+
+.. code-block:: glsl
+
+  #[compute]
+  #version 450
+
+  #define MAX_VIEWS 2
+  #include "godot/scene_data_inc.glsl"
+
+  layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
+
+  layout(set = 0, binding = 0, std140) uniform SceneDataBlock {
+    SceneData data;
+    SceneData prev_data;
+  } scene_data_block;
+
+  layout(rgba16f, set = 0, binding = 1) uniform image2D color_image;
+
+  void main(){
+    ivec2 uv = ivec2(gl_GlobalInvocationID.xy);
+
+    vec4 color = imageLoad(color_image, uv);
+
+    color.x = sin(scene_data_block.data.time) / 2 + 0.5;
+    color.y = 0.5 - cos(scene_data_block.prev_data.time) / 4;
+
+    imageStore(color_image, uv, color);
+  }
+
+In ``_render_callback`` you can bind scene data to a uniform.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    var scene_data_buffers = p_render_data.get_render_scene_data().get_uniform_buffer();
+    var uniform = RDUniform.new()
+    uniform.uniform_type = RenderingDevice.UNIFORM_TYPE_UNIFORM_BUFFER;
+    uniform.binding = 0;
+    uniform.add_id(scene_data_buffers);
+
