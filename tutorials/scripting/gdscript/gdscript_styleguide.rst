@@ -186,11 +186,11 @@ indentation level to distinguish continuation lines:
         "Job": "Mechanic",
     }
 
-    enum Tiles {
-        TILE_BRICK,
-        TILE_FLOOR,
-        TILE_SPIKE,
-        TILE_TELEPORT,
+    enum Tile {
+        BRICK,
+        FLOOR,
+        SPIKE,
+        TELEPORT,
     }
 
 **Bad**:
@@ -211,11 +211,11 @@ indentation level to distinguish continuation lines:
             "Job": "Mechanic",
     }
 
-    enum Tiles {
-            TILE_BRICK,
-            TILE_FLOOR,
-            TILE_SPIKE,
-            TILE_TELEPORT,
+    enum Tile {
+            BRICK,
+            FLOOR,
+            SPIKE,
+            TELEPORT,
     }
 
 Trailing comma
@@ -738,7 +738,7 @@ underscore (\_) to separate words:
 
     const MAX_SPEED = 200
 
-Use PascalCase for enum *names* and CONSTANT\_CASE for their members, as they
+Use PascalCase for enum *names* and keep them singular, as they represent a type. Use CONSTANT\_CASE for their members, as they
 are constants:
 
 ::
@@ -872,7 +872,7 @@ variables, in that order.
 
     signal player_spawned(position)
 
-    enum Jobs {
+    enum Job {
         KNIGHT,
         WIZARD,
         ROGUE,
@@ -882,7 +882,7 @@ variables, in that order.
 
     const MAX_LIVES = 3
 
-    @export var job: Jobs = Jobs.KNIGHT
+    @export var job: Job = Job.KNIGHT
     @export var max_health = 50
     @export var attack = 5
 
