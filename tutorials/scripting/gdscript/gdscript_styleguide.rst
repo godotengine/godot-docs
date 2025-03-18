@@ -1032,6 +1032,16 @@ the function's return type. For example, ``get_node()`` cannot infer a type
 unless the scene or file of the node is loaded in memory. In this case, you
 should set the type explicitly.
 
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
+
+    # The compiler can't infer the exact type and will use Node
+    # instead of ProgressBar.
+    @onready var health_bar := get_node("UI/LifeBar")
+
 **Good**:
 
 .. rst-class:: code-example-good
@@ -1052,12 +1062,4 @@ that type will be used to infer the type of the var.
 
 This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than the first.
 
-**Bad**:
 
-.. rst-class:: code-example-bad
-
-::
-
-    # The compiler can't infer the exact type and will use Node
-    # instead of ProgressBar.
-    @onready var health_bar := get_node("UI/LifeBar")
