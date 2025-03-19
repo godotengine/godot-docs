@@ -305,6 +305,54 @@ if is_i18n and os.path.exists("../classes/" + language):
 
     os.symlink("../classes/" + language, "classes")
 
+rst_prolog = """
+.. role:: btn
+   :class: uibutton uistyle
+
+.. role:: editor
+   :class: uieditor uistyle
+
+.. role:: field
+    :class: uifield uistyle
+
+.. role:: lbl
+    :class: uilabel uistyle
+
+.. role:: menu
+    :class: uimenu uistyle
+
+.. role:: path
+    :class: uipath uistyle
+
+.. role:: property
+    :class: normalproperty
+
+.. role:: ui
+    :class: uigeneric uistyle
+
+.. role:: uiproperty
+    :class: uiproperty uistyle
+
+.. role:: uisection
+    :class: uisection uistyle
+
+.. role:: wndw
+    :class: uiwindow uistyle
+
+.. role:: projsection
+    :class: uiprojsection uistyle
+
+.. role:: tab
+    :class: uitab uistyle
+
+.. role:: dock
+    :class: uidock uistyle
+
+.. role:: panel
+    :class: uipanel uistyle
+
+"""
+
 # Couldn't find a way to retrieve variables nor do advanced string
 # concat from reST, so had to hardcode this in the "epilog" added to
 # all pages. This is used in index.rst to display the Weblate badge.
