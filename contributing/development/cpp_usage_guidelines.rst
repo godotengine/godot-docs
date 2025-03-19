@@ -45,11 +45,11 @@ variables and ``nullptr`` is encouraged when possible. Still, try to keep your
 use of modern C++ features conservative. Their use needs to serve a real
 purpose, such as improving code readability or performance.
 
-Standard Template Library
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Standard Template Library containers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We don't allow using the `STL <https://en.wikipedia.org/wiki/Standard_Template_Library>`__
-as Godot provides its own data types (among other things).
+containers as Godot provides its own data types (among other things).
 See :ref:`doc_faq_why_not_stl` for more information.
 
 This means that pull requests should **not** use ``std::string``,
@@ -94,11 +94,47 @@ Lambdas should be used conservatively when they make code effectively faster or
 simpler, and do not impede readability. Please ask before using lambdas in a
 pull request.
 
-``#pragma once`` directive
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traditional include guards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To follow the existing style, please use standard ``#ifdef``-based include
-guards instead of ``#pragma once`` in new files.
+To follow the existing style, please use ``#pragma once``
+instead of traditional header guards (``#ifndef MY_CLASS_H ...``)
+in new files:
+
+**Good**:
+
+.. rst-class:: code-example-good
+
+.. code-block:: cpp
+
+    #pragma once
+
+    #include "core/object/ref_counted.h"
+
+    class MyClass : public RefCounted {
+        GDCLASS(MyClass, RefCounted);
+
+        // ...
+    };
+
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+.. code-block:: cpp
+
+    #ifndef MY_CLASS_H
+    #define MY_CLASS_H
+
+    #include "core/object/ref_counted.h"
+
+    class MyClass : public RefCounted {
+        GDCLASS(MyClass, RefCounted);
+
+        // ...
+    };
+
+    #endif
 
 ``try``-``catch`` blocks
 ~~~~~~~~~~~~~~~~~~~~~~~~

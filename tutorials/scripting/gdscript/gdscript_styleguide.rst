@@ -801,19 +801,19 @@ We suggest to organize GDScript code this way:
     13. remaining static methods
     14. overridden built-in virtual methods:
         1. _init()
-        2. _enter_tree() 
+        2. _enter_tree()
         3. _ready()
         4. _process()
         5. _physics_process()
         6. remaining virtual methods
     15. overridden custom methods
-    16. remaining methods
+e    16. remaining methods
     17. subclasses
 
 And put the class methods and variables in the following order depending on their access modifiers:
 
 ::
-   
+
     1. public
     2. private
 
