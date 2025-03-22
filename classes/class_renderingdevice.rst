@@ -2359,11 +2359,179 @@ VRAM-compressed unsigned floating-point data format with normalized value and no
 
 16-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Stored across 3 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range.
 
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_4x4_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_4x4_SFLOAT_BLOCK** = ``218``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_5x4_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_5x4_SFLOAT_BLOCK** = ``219``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_5x5_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_5x5_SFLOAT_BLOCK** = ``220``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_6x5_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_6x5_SFLOAT_BLOCK** = ``221``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_6x6_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_6x6_SFLOAT_BLOCK** = ``222``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x5_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x5_SFLOAT_BLOCK** = ``223``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x6_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x6_SFLOAT_BLOCK** = ``224``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x8_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x8_SFLOAT_BLOCK** = ``225``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x5_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x5_SFLOAT_BLOCK** = ``226``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x6_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x6_SFLOAT_BLOCK** = ``227``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x8_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x8_SFLOAT_BLOCK** = ``228``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x10_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x10_SFLOAT_BLOCK** = ``229``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_12x10_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_12x10_SFLOAT_BLOCK** = ``230``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_12x12_SFLOAT_BLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_12x12_SFLOAT_BLOCK** = ``231``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
 .. _class_RenderingDevice_constant_DATA_FORMAT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_MAX** = ``218``
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_MAX** = ``232``
 
 Represents the size of the :ref:`DataFormat<enum_RenderingDevice_DataFormat>` enum.
 
@@ -4267,6 +4435,22 @@ Floating-point specialization constant.
 .. rst-class:: classref-enumeration
 
 enum **Features**: :ref:`🔗<enum_RenderingDevice_Features>`
+
+.. _class_RenderingDevice_constant_SUPPORTS_METALFX_SPATIAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Features<enum_RenderingDevice_Features>` **SUPPORTS_METALFX_SPATIAL** = ``3``
+
+Support for MetalFX spatial upscaling.
+
+.. _class_RenderingDevice_constant_SUPPORTS_METALFX_TEMPORAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Features<enum_RenderingDevice_Features>` **SUPPORTS_METALFX_TEMPORAL** = ``4``
+
+Support for MetalFX temporal upscaling.
 
 .. _class_RenderingDevice_constant_SUPPORTS_BUFFER_DEVICE_ADDRESS:
 

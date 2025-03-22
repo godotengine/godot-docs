@@ -41,9 +41,11 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------+--------------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>` | :ref:`setting_count<class_SpringBoneSimulator3D_property_setting_count>` | ``0`` |
-   +-----------------------+--------------------------------------------------------------------------+-------+
+   +-------------------------------+----------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`external_force<class_SpringBoneSimulator3D_property_external_force>` | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+----------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`         | :ref:`setting_count<class_SpringBoneSimulator3D_property_setting_count>`   | ``0``                |
+   +-------------------------------+----------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -360,6 +362,25 @@ Enumerated value for the unconstrained rotation.
 
 Property Descriptions
 ---------------------
+
+.. _class_SpringBoneSimulator3D_property_external_force:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **external_force** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_SpringBoneSimulator3D_property_external_force>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_external_force**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_external_force**\ (\ )
+
+The constant force that always affected bones. It is equal to the result when the parent :ref:`Skeleton3D<class_Skeleton3D>` moves at this speed in the opposite direction.
+
+This is useful for effects such as wind and anti-gravity.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_SpringBoneSimulator3D_property_setting_count:
 

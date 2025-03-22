@@ -842,7 +842,10 @@ Other objects
     class_offlinemultiplayerpeer
     class_oggpacketsequenceplayback
     class_openxrapiextension
+    class_openxrextensionwrapper
     class_openxrextensionwrapperextension
+    class_openxrfutureextension
+    class_openxrfutureresult
     class_openxrinteractionprofilemetadata
     class_openxrinterface
     class_os

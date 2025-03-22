@@ -180,6 +180,10 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`path_join<class_StringName_method_path_join>`\ (\ file\: :ref:`String<class_String>`\ ) |const|                                                                                         |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`remove_char<class_StringName_method_remove_char>`\ (\ what\: :ref:`int<class_int>`\ ) |const|                                                                                           |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`remove_chars<class_StringName_method_remove_chars>`\ (\ chars\: :ref:`String<class_String>`\ ) |const|                                                                                  |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`repeat<class_StringName_method_repeat>`\ (\ count\: :ref:`int<class_int>`\ ) |const|                                                                                                    |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`replace<class_StringName_method_replace>`\ (\ what\: :ref:`String<class_String>`, forwhat\: :ref:`String<class_String>`\ ) |const|                                                      |
@@ -1383,6 +1387,30 @@ Formats the string representing a number to have an exact number of ``digits`` *
 Concatenates ``file`` at the end of the string as a subpath, adding ``/`` if necessary.
 
 \ **Example:** ``"this/is".path_join("path") == "this/is/path"``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_remove_char:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **remove_char**\ (\ what\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_remove_char>`
+
+Removes all occurrences of the Unicode character with code ``what``. Faster version of :ref:`replace()<class_StringName_method_replace>` when the key is only one character long and the replacement is ``""``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_remove_chars:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **remove_chars**\ (\ chars\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_remove_chars>`
+
+Removes any occurrence of the characters in ``chars``. See also :ref:`remove_char()<class_StringName_method_remove_char>`.
 
 .. rst-class:: classref-item-separator
 
