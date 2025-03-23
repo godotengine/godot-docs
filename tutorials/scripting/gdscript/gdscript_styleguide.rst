@@ -1053,7 +1053,7 @@ that type will be used to infer the type of the var.
 
 .. note::
 
-    This option is considered less :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than type hints, as it silently casts the variable to null in case of a type mismatch at runtime, without an error/warning
+    This option is considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than type hints, but also less null-safe as it silently casts the variable to null in case of a type mismatch at runtime, without an error/warning.
 
 **Bad**:
 
