@@ -1032,6 +1032,14 @@ the function's return type. For example, ``get_node()`` cannot infer a type
 unless the scene or file of the node is loaded in memory. In this case, you
 should set the type explicitly.
 
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
+
+    @onready var health_bar: ProgressBar = get_node("UI/LifeBar")
+
 **Bad**:
 
 .. rst-class:: code-example-bad
@@ -1042,16 +1050,10 @@ should set the type explicitly.
     # instead of ProgressBar.
     @onready var health_bar := get_node("UI/LifeBar")
 
-**Good**:
-
-.. rst-class:: code-example-good
-
-::
-
-    @onready var health_bar: ProgressBar = get_node("UI/LifeBar")
-
 Alternatively, you can use the ``as`` keyword to cast the return type, and
 that type will be used to infer the type of the var.
+
+**Good**:
 
 .. rst-class:: code-example-good
 
