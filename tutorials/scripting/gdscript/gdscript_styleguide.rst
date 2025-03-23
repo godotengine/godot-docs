@@ -1053,8 +1053,6 @@ should set the type explicitly.
 Alternatively, you can use the ``as`` keyword to cast the return type, and
 that type will be used to infer the type of the var.
 
-**Good**:
-
 .. rst-class:: code-example-good
 
 ::
