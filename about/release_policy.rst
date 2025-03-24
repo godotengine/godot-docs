@@ -209,9 +209,9 @@ When is the next release out?
 While Godot contributors aren't working under any deadlines, we strive to
 publish minor releases relatively frequently.
 
-In particular, after the very length release cycle for 4.0, we are pivoting to
-a faster paced development workflow, 4.1 released 4 months after 4.0, and 4.2
-released 4 months after 4.1
+In particular, after the very long release cycle for 4.0, we are pivoting to
+a faster-paced development workflow, 4.1 released 4 months after 4.0, and 4.2
+released 4 months after 4.1.
 
 Frequent minor releases will enable us to ship new features faster (possibly
 as experimental), get user feedback quickly, and iterate to improve those
