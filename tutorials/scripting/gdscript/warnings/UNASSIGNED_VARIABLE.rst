@@ -7,6 +7,8 @@ The warning message is:
 
     The variable "%s" was used before being assigned a value.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

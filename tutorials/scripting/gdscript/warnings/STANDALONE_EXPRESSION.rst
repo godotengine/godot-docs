@@ -7,6 +7,8 @@ The warning message is:
 
     Standalone expression (the line may have no effect).
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

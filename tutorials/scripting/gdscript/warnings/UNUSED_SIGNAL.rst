@@ -7,6 +7,8 @@ The warning message is:
 
     The signal "%s" is declared but never explicitly used in the class.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

@@ -7,6 +7,8 @@ The warning message is:
 
     The local %s "%s" is shadowing an already-declared %s at line %s in the base class "%s".
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

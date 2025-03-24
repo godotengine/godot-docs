@@ -7,6 +7,8 @@ The warning message is:
 
     The base class script has the "@tool" annotation, but this script does not have it.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

@@ -7,6 +7,8 @@ The warning message is:
 
     The argument %s of the %s "%s()" requires the subtype "%s" but the supertype "%s" was provided.
 
+The default warning level for this warning is **Ignore**.
+
 When this warning occurs
 ------------------------
 

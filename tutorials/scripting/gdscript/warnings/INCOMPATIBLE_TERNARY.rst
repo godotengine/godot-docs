@@ -7,6 +7,8 @@ The warning message is:
 
     Values of the ternary operator are not mutually compatible.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

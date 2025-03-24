@@ -13,6 +13,8 @@ Depending on how you attempt to access the scene tree, the warning message will 
 
     The default value is using "get_node()" which won't return nodes in the scene tree before "_ready()" is called. Use the "@onready" annotation to solve this.
 
+The default warning level for this warning is **Error**.
+
 When this warning occurs
 ------------------------
 

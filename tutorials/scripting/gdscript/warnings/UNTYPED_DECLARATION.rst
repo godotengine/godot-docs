@@ -9,6 +9,8 @@ The warning message is:
 
     %s "%s" has no static type.
 
+The default warning level for this warning is **Ignore**.
+
 When this warning occurs
 ------------------------
 

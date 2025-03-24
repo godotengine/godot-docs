@@ -7,6 +7,8 @@ The warning message is:
 
     Empty script file.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

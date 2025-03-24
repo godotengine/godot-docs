@@ -7,6 +7,8 @@ The warning message is:
 
     The method "%s()" returns "void" but it's trying to return a call to "%s()" that can't be ensured to also be "void".
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

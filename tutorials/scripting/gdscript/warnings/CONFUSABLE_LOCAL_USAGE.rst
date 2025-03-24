@@ -7,6 +7,8 @@ The warning message is:
 
     The identifier "%s" will be shadowed below in the block.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

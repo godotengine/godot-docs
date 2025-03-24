@@ -7,6 +7,8 @@ The warning message is:
 
     Narrowing conversion (float is converted to int and loses precision).
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

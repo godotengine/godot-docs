@@ -7,6 +7,8 @@ The warning message is:
 
     Casting "Variant" to "%s" is unsafe.
 
+The default warning level for this warning is **Ignore**.
+
 When this warning occurs
 ------------------------
 

@@ -7,6 +7,8 @@ The warning message is:
 
     Integer used when an enum value is expected. If this is intended cast the integer to the enum type.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

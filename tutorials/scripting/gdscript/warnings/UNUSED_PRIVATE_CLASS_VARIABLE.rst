@@ -7,6 +7,8 @@ The warning message is:
 
     The class variable "%s" is declared but never used in the class.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

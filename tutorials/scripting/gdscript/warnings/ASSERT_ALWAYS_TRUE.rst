@@ -7,6 +7,8 @@ The warning message is:
 
     Assert statement is redundant because the expression is always true.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

@@ -7,6 +7,8 @@ The warning message is:
 
     The function "%s()" is a static function but was called from an instance. Instead, it should be directly called from the type: "%s.%s()".
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

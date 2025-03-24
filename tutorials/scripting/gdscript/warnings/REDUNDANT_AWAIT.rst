@@ -7,6 +7,8 @@ The warning message is:
 
     "await" keyword not needed in this case, because the expression isn't a coroutine nor a signal.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

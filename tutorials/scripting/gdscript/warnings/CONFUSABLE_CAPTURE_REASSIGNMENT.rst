@@ -7,6 +7,8 @@ The warning message is:
 
     Reassigning lambda capture does not modify the outer local variable "%s".
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

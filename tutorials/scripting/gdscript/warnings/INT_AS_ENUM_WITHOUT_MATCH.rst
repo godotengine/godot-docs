@@ -7,6 +7,8 @@ The warning message is:
 
     Cannot %s %s as Enum "%s": no enum member has matching value.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

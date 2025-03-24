@@ -7,6 +7,8 @@ The warning message is:
 
     Assert statement will raise an error because the expression is always false.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

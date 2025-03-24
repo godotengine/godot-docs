@@ -7,6 +7,8 @@ The warning message is:
 
     The function "%s()" returns a value that will be discarded if not used.
 
+The default warning level for this warning is **Ignore**.
+
 When this warning occurs
 ------------------------
 

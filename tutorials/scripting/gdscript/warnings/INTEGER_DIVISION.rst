@@ -7,6 +7,8 @@ The warning message is:
 
     Integer division, decimal part will be discarded.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

@@ -7,6 +7,8 @@ The warning message is:
 
     The identifier "%s" has misleading characters and might be confused with something else.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

@@ -7,6 +7,8 @@ The warning message is:
 
     %s "%s" has an implicitly inferred static type.
 
+The default warning level for this warning is **Ignore**.
+
 When this warning occurs
 ------------------------
 

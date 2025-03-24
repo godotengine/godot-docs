@@ -7,6 +7,8 @@ The warning message is:
 
     The method "%s()" overrides a method from native class "%s". This won't be called by the engine and may not work as expected.
 
+The default warning level for this warning is **Error**.
+
 When this warning occurs
 ------------------------
 

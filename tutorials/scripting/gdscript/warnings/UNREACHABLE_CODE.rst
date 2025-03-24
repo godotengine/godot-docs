@@ -7,6 +7,8 @@ The warning message is:
 
     Unreachable code (statement after return) in function "%s()".
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

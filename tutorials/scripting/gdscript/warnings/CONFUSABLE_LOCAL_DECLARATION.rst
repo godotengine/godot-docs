@@ -7,6 +7,8 @@ The warning message is:
 
     The %s "%s" is declared below in the parent block.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

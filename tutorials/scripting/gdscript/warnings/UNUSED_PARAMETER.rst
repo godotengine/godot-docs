@@ -7,6 +7,8 @@ The warning message is:
 
     The parameter "%s" is never used in the function "%s()". If this is intended, prefix it with an underscore: "_%s".
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

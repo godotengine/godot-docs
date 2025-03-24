@@ -7,6 +7,8 @@ The warning message is:
 
     Unreachable pattern (pattern after wildcard or bind).
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 

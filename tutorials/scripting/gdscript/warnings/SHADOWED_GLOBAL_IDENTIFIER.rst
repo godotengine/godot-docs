@@ -7,6 +7,8 @@ The warning message is:
 
     The %s "%s" has the same name as a %s.
 
+The default warning level for this warning is **Warn**.
+
 When this warning occurs
 ------------------------
 
