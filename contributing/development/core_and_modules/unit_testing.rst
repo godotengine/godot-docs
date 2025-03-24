@@ -4,7 +4,7 @@ Unit testing
 ============
 
 Godot Engine allows to write unit tests directly in C++. The engine integrates
-the `doctest <https://github.com/onqtam/doctest>`_ unit testing framework which
+the `doctest <https://github.com/doctest/doctest>`_ unit testing framework which
 gives ability to write test suites and test cases next to production code, but
 since the tests in Godot go through a different ``main`` entry point, the tests
 reside in a dedicated ``tests/`` directory instead, which is located at the root
@@ -208,7 +208,7 @@ for more complex ones if you think that it deserves a better explanation.
 
 .. seealso::
 
-    `doctest: Assertion macros <https://github.com/onqtam/doctest/blob/master/doc/markdown/assertions.md>`_.
+    `doctest: Assertion macros <https://github.com/doctest/doctest/blob/master/doc/markdown/assertions.md>`_.
 
 Logging
 ~~~~~~~
@@ -236,7 +236,7 @@ output can be redirected to an XML file:
 
 .. seealso::
 
-    `doctest: Logging macros <https://github.com/onqtam/doctest/blob/master/doc/markdown/logging.md>`_.
+    `doctest: Logging macros <https://github.com/doctest/doctest/blob/master/doc/markdown/logging.md>`_.
 
 Testing failure paths
 ~~~~~~~~~~~~~~~~~~~~~
