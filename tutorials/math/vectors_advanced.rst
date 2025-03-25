@@ -591,4 +591,4 @@ For more information on using vector math in Godot, see the following article:
 
 If you would like additional explanation, you should check out
 3Blue1Brown's excellent video series:
-- :ref:`Essence of Linear Algebra <https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`_
+`Essence of Linear Algebra <https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`_
