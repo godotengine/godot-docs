@@ -705,6 +705,12 @@ There are 2 ways to use glow in 2D:
     ``canvas_item`` shaders, so it's recommend to use it when relevant either
     way.
 
+    There is a `known issue <https://github.com/godotengine/godot/issues/80868>`__
+    where enabling 2D HDR will change how alpha blending works. Sprites with low
+    opacity values generally become more visible, and font rendering will look
+    bolder due to the low-opacity pixels from the font antialiasing becoming
+    more visible. This also affects the editor's own rendering.
+
 .. _doc_environment_and_post_processing_using_glow_to_blur_the_screen:
 
 Using glow to blur the screen
