@@ -27,6 +27,7 @@ in other sections where appropriate. For example, the :ref:`animation editor
    script_editor
    default_key_mapping
    customizing_editor
+   docks
 
 XR editor
 ---------
