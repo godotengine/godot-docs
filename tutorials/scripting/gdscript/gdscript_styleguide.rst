@@ -1040,6 +1040,16 @@ should set the type explicitly.
 
     @onready var health_bar: ProgressBar = get_node("UI/LifeBar")
 
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
+
+    # The compiler can't infer the exact type and will use Node
+    # instead of ProgressBar.
+    @onready var health_bar := get_node("UI/LifeBar")
+
 Alternatively, you can use the ``as`` keyword to cast the return type, and
 that type will be used to infer the type of the var.
 
@@ -1052,12 +1062,4 @@ that type will be used to infer the type of the var.
 
 This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than the first.
 
-**Bad**:
 
-.. rst-class:: code-example-bad
-
-::
-
-    # The compiler can't infer the exact type and will use Node
-    # instead of ProgressBar.
-    @onready var health_bar := get_node("UI/LifeBar")
