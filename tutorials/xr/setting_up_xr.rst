@@ -108,7 +108,7 @@ Next we need to add a script to our root node. Add the following code into this 
 
     using Godot;
 
-    public partial class MyNode3D : Node3D
+    public partial class Main : Node3D
     {
         private XRInterface _xrInterface;
 
