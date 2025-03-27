@@ -105,11 +105,11 @@ Contiguous memory stores imply the following operation performance:
       though. Done by re-sorting the Array after every edit and writing an
       ordered-aware search algorithm.
 
-Godot implements Dictionary as an ``OrderedHashMap<Variant, Variant>``. The engine
+Godot implements Dictionary as an ``HashMap<Variant, Variant, VariantHasher, StringLikeVariantComparator>;``. The engine
 stores a small array (initialized to 2^3 or 8 records) of key-value pairs. When
 one attempts to access a value, they provide it a key. It then *hashes* the
 key, i.e. converts it into a number. The "hash" is used to calculate the index
-into the array. As an array, the OHM then has a quick lookup within the "table"
+into the array. As an array, the HM then has a quick lookup within the "table"
 of keys mapped to values. When the HashMap becomes too full, it increases to
 the next power of 2 (so, 16 records, then 32, etc.) and rebuilds the structure.
 
