@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The identifier "%s" will be shadowed below in the block.
+    The identifier "my_var" will be shadowed below in the block.
 
 The default warning level for this warning is **Warn**.
 
