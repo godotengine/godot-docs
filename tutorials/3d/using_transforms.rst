@@ -383,8 +383,8 @@ Converting a rotation to quaternion is straightforward.
  .. code-tab:: csharp
 
     // Convert basis to quaternion, keep in mind scale is lost
-    var a = transform.Basis.GetQuaternion();
-    var b = transform2.Basis.GetQuaternion();
+    var a = new Quaternion(transform.Basis);
+    var b = new Quaternion(transform2.Basis);
     // Interpolate using spherical-linear interpolation (SLERP).
     var c = a.Slerp(b, 0.5f); // find halfway point between a and b
     // Apply back
