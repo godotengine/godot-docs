@@ -13,7 +13,7 @@ At first, this seems easy. For simple games, this way of thinking may even be en
 
 Angles in three dimensions are most commonly referred to as "Euler Angles".
 
-.. image:: img/transforms_euler.png
+.. image:: img/transforms_euler.webp
 
 Euler angles were introduced by mathematician Leonhard Euler in the early 1700s.
 
