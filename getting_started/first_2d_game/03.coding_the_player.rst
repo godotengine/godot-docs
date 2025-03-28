@@ -388,7 +388,18 @@ for you. You don't need to change the default settings right now.
     In this case, you'll need to write the function yourself into the Player's
     script file.
 
-.. image:: img/player_signal_connection.webp
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _on_body_entered(_body):
+       pass
+
+ .. code-tab:: csharp
+
+    private void OnBodyEntered(Node2D body)
+    {
+
+    }
 
 Note the green icon indicating that a signal is connected to this function; this does
 not mean the function exists, only that the signal will attempt to connect to a function
