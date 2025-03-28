@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    %s "%s" has an implicitly inferred static type.
+    "for" iterator variable "i" has an implicitly inferred static type.
 
 The default warning level for this warning is **Ignore**.
 
