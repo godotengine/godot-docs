@@ -98,10 +98,11 @@ game code. See `The Godot editor is a Godot game`_ below.
 Open source
 -----------
 
-Godot offers a fully open source codebase under the **MIT license**.
-This means all the technologies that ship with it have to be Free
-(as in freedom) as well.
-For the most part, they're developed from the ground up by contributors.
+Godot offers a fully open source codebase under the **MIT license**. This means
+that the codebase is free for anyone to download, use, modify, or share, as long
+as its license file is kept intact. Thanks to this open source license, most of
+the technologies that define Godot are developed from the ground up by
+community contributors.
 
 Anyone can plug in proprietary tools for the needs of their projects —
 they just won't ship with the engine. This may include Google AdMob,
