@@ -1,0 +1,24 @@
+INT_AS_ENUM_WITHOUT_CAST
+============================
+
+The warning message is:
+
+.. code-block:: none
+
+    Integer used when an enum value is expected. If this is intended cast the integer to the enum type.
+
+The default warning level for this warning is **Warn**.
+
+When this warning occurs
+------------------------
+
+TODO
+
+
+How to fix this warning
+-----------------------
+
+TODO
+
+
+
