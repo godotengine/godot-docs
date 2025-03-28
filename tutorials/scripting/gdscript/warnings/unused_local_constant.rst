@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The local constant "%s" is declared but never used in the block. If this is intended, prefix it with an underscore: "_%s".
+    The local constant "MAX_VALUE" is declared but never used in the block. If this is intended, prefix it with an underscore: "_MAX_VALUE".
 
 The default warning level for this warning is **Warn**.
 

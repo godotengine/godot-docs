@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The function "%s()" is a static function but was called from an instance. Instead, it should be directly called from the type: "%s.%s()".
+    The function "do_static_thing()" is a static function but was called from an instance. Instead, it should be directly called from the type: "MyClass.do_static_thing()".
 
 The default warning level for this warning is **Warn**.
 

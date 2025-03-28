@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The %s "%s" has the same name as a %s.
+    The variable "str" has the same name as a built-in function.
 
 The default warning level for this warning is **Warn**.
 

@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The method "%s()" overrides a method from native class "%s". This won't be called by the engine and may not work as expected.
+    The method "get_class()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected.
 
 The default warning level for this warning is **Error**.
 

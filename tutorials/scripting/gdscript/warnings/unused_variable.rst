@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The local variable "%s" is declared but never used in the block. If this is intended, prefix it with an underscore: "_%s".
+    The local variable "counter" is declared but never used in the block. If this is intended, prefix it with an underscore: "_counter".
 
 The default warning level for this warning is **Warn**.
 

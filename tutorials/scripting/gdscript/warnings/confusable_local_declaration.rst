@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The %s "%s" is declared below in the parent block.
+    The variable "my_param" is declared below in the parent block.
 
 The default warning level for this warning is **Warn**.
 

@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The local %s "%s" is shadowing an already-declared %s at line %s in the base class "%s".
+    The local variable "name" is shadowing an already-declared property in the base class "Node".
 
 The default warning level for this warning is **Warn**.
 

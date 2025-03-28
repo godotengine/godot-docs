@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The %s type is being inferred from a Variant value, so it will be typed as Variant.
+    The variable type is being inferred from a Variant value, so it will be typed as Variant.
 
 The default warning level for this warning is **Error**.
 

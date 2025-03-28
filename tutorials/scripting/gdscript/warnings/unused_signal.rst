@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The signal "%s" is declared but never explicitly used in the class.
+    The signal "defeated" is declared but never explicitly used in the class.
 
 The default warning level for this warning is **Warn**.
 

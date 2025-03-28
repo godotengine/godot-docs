@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The class variable "%s" is declared but never used in the class.
+    The class variable "_health" is declared but never used in the class.
 
 The default warning level for this warning is **Warn**.
 

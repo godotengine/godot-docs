@@ -5,9 +5,9 @@ The warning message is:
 
 .. code-block:: none
 
-    %s "%s()" has no static return type.
+    Function "_ready()" has no static return type.
 
-    %s "%s" has no static type.
+    Variable "my_age" has no static type.
 
 The default warning level for this warning is **Ignore**.
 

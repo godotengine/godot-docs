@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    Cannot %s %s as Enum "%s": no enum member has matching value.
+    Cannot cast 3 as Enum "MyClass.MyEnum": no enum member has matching value.
 
 The default warning level for this warning is **Warn**.
 

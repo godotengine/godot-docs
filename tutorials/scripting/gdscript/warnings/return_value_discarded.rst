@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The function "%s()" returns a value that will be discarded if not used.
+    The function "get_number()" returns a value that will be discarded if not used.
 
 The default warning level for this warning is **Ignore**.
 

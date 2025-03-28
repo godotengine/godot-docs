@@ -5,7 +5,7 @@ The warning message is:
 
 .. code-block:: none
 
-    The argument %s of the %s "%s()" requires the subtype "%s" but the supertype "%s" was provided.
+    The argument 1 of the function "set_health()" requires the subtype "int" but the supertype "Variant" was provided.
 
 The default warning level for this warning is **Ignore**.
 
