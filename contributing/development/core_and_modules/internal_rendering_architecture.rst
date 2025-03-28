@@ -426,13 +426,7 @@ release.
 2D light rendering is performed in a single pass to allow for better performance
 with large amounts of lights.
 
-.. UPDATE: Planned feature. When Forward+ and Mobile feature 2D batching,
-.. update this.
-
-The Forward+ and Mobile rendering methods don't feature 2D batching yet, but
-it's planned for a future release.
-
-The Compatibility renderer features 2D batching to improve performance, which is
+All rendering methods feature 2D batching to improve performance, which is
 especially noticeable with lots of text on screen.
 
 MSAA can be enabled in 2D to provide "automatic" line and polygon antialiasing,
