@@ -58,6 +58,3 @@ This is a collection of the warnings that GDScript can emit, and information on 
    native_method_override
    get_node_default_without_onready
    onready_with_export
-   property_used_as_function
-   constant_used_as_function
-   function_used_as_property
