@@ -95,6 +95,8 @@ Properties
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`NodePath<class_NodePath>`                                     | :ref:`focus_previous<class_Control_property_focus_previous>`                                 | ``NodePath("")``                                                              |
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>`            | :ref:`focus_recursive_behavior<class_Control_property_focus_recursive_behavior>`             | ``0``                                                                         |
+   +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                       | :ref:`global_position<class_Control_property_global_position>`                               |                                                                               |
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`GrowDirection<enum_Control_GrowDirection>`                    | :ref:`grow_horizontal<class_Control_property_grow_horizontal>`                               | ``1``                                                                         |
@@ -110,6 +112,8 @@ Properties
    | :ref:`MouseFilter<enum_Control_MouseFilter>`                        | :ref:`mouse_filter<class_Control_property_mouse_filter>`                                     | ``0``                                                                         |
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                             | :ref:`mouse_force_pass_scroll_events<class_Control_property_mouse_force_pass_scroll_events>` | ``true``                                                                      |
+   +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>`            | :ref:`mouse_recursive_behavior<class_Control_property_mouse_recursive_behavior>`             | ``0``                                                                         |
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                           | :ref:`offset_bottom<class_Control_property_offset_bottom>`                                   | ``0.0``                                                                       |
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -213,11 +217,15 @@ Methods
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                | :ref:`get_end<class_Control_method_get_end>`\ (\ ) |const|                                                                                                                                                                                                              |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`                     | :ref:`get_focus_mode_with_recursive<class_Control_method_get_focus_mode_with_recursive>`\ (\ ) |const|                                                                                                                                                                  |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`NodePath<class_NodePath>`                              | :ref:`get_focus_neighbor<class_Control_method_get_focus_neighbor>`\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|                                                                                                                                            |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2<class_Rect2>`                                    | :ref:`get_global_rect<class_Control_method_get_global_rect>`\ (\ ) |const|                                                                                                                                                                                              |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                | :ref:`get_minimum_size<class_Control_method_get_minimum_size>`\ (\ ) |const|                                                                                                                                                                                            |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>`                 | :ref:`get_mouse_filter_with_recursive<class_Control_method_get_mouse_filter_with_recursive>`\ (\ ) |const|                                                                                                                                                              |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                    | :ref:`get_offset<class_Control_method_get_offset>`\ (\ offset\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|                                                                                                                                                          |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -495,6 +503,40 @@ The node can only grab focus on mouse clicks. Use with :ref:`focus_mode<class_Co
 :ref:`FocusMode<enum_Control_FocusMode>` **FOCUS_ALL** = ``2``
 
 The node can grab focus on mouse click, using the arrows and the Tab keys on the keyboard, or using the D-pad buttons on a gamepad. Use with :ref:`focus_mode<class_Control_property_focus_mode>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_Control_RecursiveBehavior:
+
+.. rst-class:: classref-enumeration
+
+enum **RecursiveBehavior**: :ref:`🔗<enum_Control_RecursiveBehavior>`
+
+.. _class_Control_constant_RECURSIVE_BEHAVIOR_INHERITED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>` **RECURSIVE_BEHAVIOR_INHERITED** = ``0``
+
+Inherits the associated behavior from the control's parent. This is the default for any newly created control.
+
+.. _class_Control_constant_RECURSIVE_BEHAVIOR_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>` **RECURSIVE_BEHAVIOR_DISABLED** = ``1``
+
+The current control and all its recursive child controls have their associated behavior disabled, regardless of the parent control's configuration.
+
+.. _class_Control_constant_RECURSIVE_BEHAVIOR_ENABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>` **RECURSIVE_BEHAVIOR_ENABLED** = ``2``
+
+The current control and all its recursive child controls have their associated behavior enabled, regardless of the parent control's configuration.
 
 .. rst-class:: classref-item-separator
 
@@ -1480,6 +1522,23 @@ If this property is not set, Godot will select a "best guess" based on surroundi
 
 ----
 
+.. _class_Control_property_focus_recursive_behavior:
+
+.. rst-class:: classref-property
+
+:ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>` **focus_recursive_behavior** = ``0`` :ref:`🔗<class_Control_property_focus_recursive_behavior>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_focus_recursive_behavior**\ (\ value\: :ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>`\ )
+- :ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>` **get_focus_recursive_behavior**\ (\ )
+
+Controls whether the recursive child nodes should have their :ref:`focus_mode<class_Control_property_focus_mode>` overridden to :ref:`FOCUS_NONE<class_Control_constant_FOCUS_NONE>` when evaluating input.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_property_global_position:
 
 .. rst-class:: classref-property
@@ -1618,6 +1677,23 @@ When enabled, scroll wheel events processed by :ref:`_gui_input()<class_Control_
 You should disable it on the root of your UI if you do not want scroll events to go to the :ref:`Node._unhandled_input()<class_Node_private_method__unhandled_input>` processing.
 
 \ **Note:** Because this property defaults to ``true``, this allows nested scrollable containers to work out of the box.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_property_mouse_recursive_behavior:
+
+.. rst-class:: classref-property
+
+:ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>` **mouse_recursive_behavior** = ``0`` :ref:`🔗<class_Control_property_mouse_recursive_behavior>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_mouse_recursive_behavior**\ (\ value\: :ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>`\ )
+- :ref:`RecursiveBehavior<enum_Control_RecursiveBehavior>` **get_mouse_recursive_behavior**\ (\ )
+
+Controls whether the recursive child nodes should have their :ref:`mouse_filter<class_Control_property_mouse_filter>` overridden to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` when evaluating input.
 
 .. rst-class:: classref-item-separator
 
@@ -2563,6 +2639,18 @@ Returns :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offse
 
 ----
 
+.. _class_Control_method_get_focus_mode_with_recursive:
+
+.. rst-class:: classref-method
+
+:ref:`FocusMode<enum_Control_FocusMode>` **get_focus_mode_with_recursive**\ (\ ) |const| :ref:`🔗<class_Control_method_get_focus_mode_with_recursive>`
+
+Similar to the getter of :ref:`focus_mode<class_Control_property_focus_mode>`, but takes parent's :ref:`focus_recursive_behavior<class_Control_property_focus_recursive_behavior>` into account.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_method_get_focus_neighbor:
 
 .. rst-class:: classref-method
@@ -2600,6 +2688,18 @@ Returns the position and size of the control relative to the containing canvas. 
 :ref:`Vector2<class_Vector2>` **get_minimum_size**\ (\ ) |const| :ref:`🔗<class_Control_method_get_minimum_size>`
 
 Returns the minimum size for this control. See :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_method_get_mouse_filter_with_recursive:
+
+.. rst-class:: classref-method
+
+:ref:`MouseFilter<enum_Control_MouseFilter>` **get_mouse_filter_with_recursive**\ (\ ) |const| :ref:`🔗<class_Control_method_get_mouse_filter_with_recursive>`
+
+Similar to the getter of :ref:`mouse_filter<class_Control_property_mouse_filter>`, but takes parent's :ref:`mouse_recursive_behavior<class_Control_property_mouse_recursive_behavior>` into account.
 
 .. rst-class:: classref-item-separator
 

@@ -682,6 +682,8 @@ Objects are displayed without light information.
 
 Objects are displayed without textures and only with lighting information.
 
+\ **Note:** When using this debug draw mode, custom shaders are ignored since all materials in the scene temporarily use a debug material. This means the result from custom shader functions (such as vertex displacement) won't be visible anymore when using this debug draw mode.
+
 .. _class_Viewport_constant_DEBUG_DRAW_OVERDRAW:
 
 .. rst-class:: classref-enumeration-constant
@@ -689,6 +691,8 @@ Objects are displayed without textures and only with lighting information.
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_OVERDRAW** = ``3``
 
 Objects are displayed semi-transparent with additive blending so you can see where they are drawing over top of one another. A higher overdraw means you are wasting performance on drawing pixels that are being hidden behind others.
+
+\ **Note:** When using this debug draw mode, custom shaders are ignored since all materials in the scene temporarily use a debug material. This means the result from custom shader functions (such as vertex displacement) won't be visible anymore when using this debug draw mode.
 
 .. _class_Viewport_constant_DEBUG_DRAW_WIREFRAME:
 
@@ -708,13 +712,17 @@ Objects are displayed as wireframe models.
 
 Objects are displayed without lighting information and their textures replaced by normal mapping.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_Viewport_constant_DEBUG_DRAW_VOXEL_GI_ALBEDO:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_VOXEL_GI_ALBEDO** = ``6``
 
-Objects are displayed with only the albedo value from :ref:`VoxelGI<class_VoxelGI>`\ s.
+Objects are displayed with only the albedo value from :ref:`VoxelGI<class_VoxelGI>`\ s. Requires at least one visible :ref:`VoxelGI<class_VoxelGI>` node that has been baked to have a visible effect.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_VOXEL_GI_LIGHTING:
 
@@ -722,7 +730,9 @@ Objects are displayed with only the albedo value from :ref:`VoxelGI<class_VoxelG
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_VOXEL_GI_LIGHTING** = ``7``
 
-Objects are displayed with only the lighting value from :ref:`VoxelGI<class_VoxelGI>`\ s.
+Objects are displayed with only the lighting value from :ref:`VoxelGI<class_VoxelGI>`\ s. Requires at least one visible :ref:`VoxelGI<class_VoxelGI>` node that has been baked to have a visible effect.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_VOXEL_GI_EMISSION:
 
@@ -730,7 +740,9 @@ Objects are displayed with only the lighting value from :ref:`VoxelGI<class_Voxe
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_VOXEL_GI_EMISSION** = ``8``
 
-Objects are displayed with only the emission color from :ref:`VoxelGI<class_VoxelGI>`\ s.
+Objects are displayed with only the emission color from :ref:`VoxelGI<class_VoxelGI>`\ s. Requires at least one visible :ref:`VoxelGI<class_VoxelGI>` node that has been baked to have a visible effect.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_SHADOW_ATLAS:
 
@@ -756,6 +768,8 @@ Draws the shadow atlas that stores shadows from :ref:`DirectionalLight3D<class_D
 
 Draws the scene luminance buffer (if available) in the upper left quadrant of the **Viewport**.
 
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
+
 .. _class_Viewport_constant_DEBUG_DRAW_SSAO:
 
 .. rst-class:: classref-enumeration-constant
@@ -763,6 +777,8 @@ Draws the scene luminance buffer (if available) in the upper left quadrant of th
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_SSAO** = ``12``
 
 Draws the screen-space ambient occlusion texture instead of the scene so that you can clearly see how it is affecting objects. In order for this display mode to work, you must have :ref:`Environment.ssao_enabled<class_Environment_property_ssao_enabled>` set in your :ref:`WorldEnvironment<class_WorldEnvironment>`.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_SSIL:
 
@@ -772,13 +788,19 @@ Draws the screen-space ambient occlusion texture instead of the scene so that yo
 
 Draws the screen-space indirect lighting texture instead of the scene so that you can clearly see how it is affecting objects. In order for this display mode to work, you must have :ref:`Environment.ssil_enabled<class_Environment_property_ssil_enabled>` set in your :ref:`WorldEnvironment<class_WorldEnvironment>`.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_Viewport_constant_DEBUG_DRAW_PSSM_SPLITS:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_PSSM_SPLITS** = ``14``
 
-Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s in the scene a different color so you can see where the splits are. In order, they will be colored red, green, blue, and yellow.
+Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s in the scene a different color so you can see where the splits are. In order (from closest to furthest from the camera), they are colored red, green, blue, and yellow.
+
+\ **Note:** When using this debug draw mode, custom shaders are ignored since all materials in the scene temporarily use a debug material. This means the result from custom shader functions (such as vertex displacement) won't be visible anymore when using this debug draw mode.
+
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
 
 .. _class_Viewport_constant_DEBUG_DRAW_DECAL_ATLAS:
 
@@ -788,6 +810,8 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector textures in the upper left quadrant of the **Viewport**.
 
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
+
 .. _class_Viewport_constant_DEBUG_DRAW_SDFGI:
 
 .. rst-class:: classref-enumeration-constant
@@ -796,7 +820,9 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 Draws the cascades used to render signed distance field global illumination (SDFGI).
 
-Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false`` or SDFGI is not supported on the platform.
+Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false``.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_SDFGI_PROBES:
 
@@ -806,7 +832,9 @@ Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_
 
 Draws the probes used for signed distance field global illumination (SDFGI).
 
-Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false`` or SDFGI is not supported on the platform.
+Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false``.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_GI_BUFFER:
 
@@ -814,7 +842,9 @@ Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_GI_BUFFER** = ``18``
 
-Draws the buffer used for global illumination (GI).
+Draws the buffer used for global illumination from :ref:`VoxelGI<class_VoxelGI>` or SDFGI. Requires :ref:`VoxelGI<class_VoxelGI>` (at least one visible baked VoxelGI node) or SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) to be enabled to have a visible effect.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_DISABLE_LOD:
 
@@ -822,7 +852,7 @@ Draws the buffer used for global illumination (GI).
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_DISABLE_LOD** = ``19``
 
-Draws all of the objects at their highest polycount, without low level of detail (LOD).
+Draws all of the objects at their highest polycount regardless of their distance from the camera. No low level of detail (LOD) is applied.
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_OMNI_LIGHTS:
 
@@ -832,6 +862,8 @@ Draws all of the objects at their highest polycount, without low level of detail
 
 Draws the cluster used by :ref:`OmniLight3D<class_OmniLight3D>` nodes to optimize light rendering.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_SPOT_LIGHTS:
 
 .. rst-class:: classref-enumeration-constant
@@ -839,6 +871,8 @@ Draws the cluster used by :ref:`OmniLight3D<class_OmniLight3D>` nodes to optimiz
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_SPOT_LIGHTS** = ``21``
 
 Draws the cluster used by :ref:`SpotLight3D<class_SpotLight3D>` nodes to optimize light rendering.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_DECALS:
 
@@ -848,6 +882,8 @@ Draws the cluster used by :ref:`SpotLight3D<class_SpotLight3D>` nodes to optimiz
 
 Draws the cluster used by :ref:`Decal<class_Decal>` nodes to optimize decal rendering.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_REFLECTION_PROBES:
 
 .. rst-class:: classref-enumeration-constant
@@ -855,6 +891,8 @@ Draws the cluster used by :ref:`Decal<class_Decal>` nodes to optimize decal rend
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = ``23``
 
 Draws the cluster used by :ref:`ReflectionProbe<class_ReflectionProbe>` nodes to optimize decal rendering.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_Viewport_constant_DEBUG_DRAW_OCCLUDERS:
 
@@ -864,6 +902,8 @@ Draws the cluster used by :ref:`ReflectionProbe<class_ReflectionProbe>` nodes to
 
 Draws the buffer used for occlusion culling.
 
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
+
 .. _class_Viewport_constant_DEBUG_DRAW_MOTION_VECTORS:
 
 .. rst-class:: classref-enumeration-constant
@@ -872,13 +912,17 @@ Draws the buffer used for occlusion culling.
 
 Draws vector lines over the viewport to indicate the movement of pixels between frames.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_Viewport_constant_DEBUG_DRAW_INTERNAL_BUFFER:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_INTERNAL_BUFFER** = ``26``
 
-Draws the internal resolution buffer of the scene before post-processing is applied.
+Draws the internal resolution buffer of the scene in linear colorspace before tonemapping or post-processing is applied.
+
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
 
 .. rst-class:: classref-item-separator
 

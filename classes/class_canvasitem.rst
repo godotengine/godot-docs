@@ -241,7 +241,7 @@ Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICAT
 
 **hidden**\ (\ ) :ref:`🔗<class_CanvasItem_signal_hidden>`
 
-Emitted when the **CanvasItem** is hidden, i.e. it's no longer visible in the tree (see :ref:`is_visible_in_tree()<class_CanvasItem_method_is_visible_in_tree>`).
+Emitted when this node becomes hidden, i.e. it's no longer visible in the tree (see :ref:`is_visible_in_tree()<class_CanvasItem_method_is_visible_in_tree>`).
 
 .. rst-class:: classref-item-separator
 
@@ -266,6 +266,8 @@ Emitted when the **CanvasItem**'s boundaries (position or size) change, or when 
 **visibility_changed**\ (\ ) :ref:`🔗<class_CanvasItem_signal_visibility_changed>`
 
 Emitted when the **CanvasItem**'s visibility changes, either because its own :ref:`visible<class_CanvasItem_property_visible>` property changed or because its visibility in the tree changed (see :ref:`is_visible_in_tree()<class_CanvasItem_method_is_visible_in_tree>`).
+
+This signal is emitted *after* the related :ref:`NOTIFICATION_VISIBILITY_CHANGED<class_CanvasItem_constant_NOTIFICATION_VISIBILITY_CHANGED>` notification.
 
 .. rst-class:: classref-section-separator
 
@@ -378,7 +380,7 @@ The **CanvasItem** will inherit the filter from its parent.
 
 :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **TEXTURE_REPEAT_DISABLED** = ``1``
 
-Texture will not repeat.
+The texture does not repeat.
 
 .. _class_CanvasItem_constant_TEXTURE_REPEAT_ENABLED:
 
@@ -386,7 +388,7 @@ Texture will not repeat.
 
 :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **TEXTURE_REPEAT_ENABLED** = ``2``
 
-Texture will repeat normally.
+The texture repeats when exceeding the texture's size.
 
 .. _class_CanvasItem_constant_TEXTURE_REPEAT_MIRROR:
 
@@ -394,7 +396,7 @@ Texture will repeat normally.
 
 :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **TEXTURE_REPEAT_MIRROR** = ``3``
 
-Texture will repeat in a 2×2 tiled mode, where elements at even positions are mirrored.
+The texture repeats when the exceeding the texture's size in a "2×2 tiled mode". Repeated textures at even positions are mirrored.
 
 .. _class_CanvasItem_constant_TEXTURE_REPEAT_MAX:
 
@@ -420,7 +422,7 @@ enum **ClipChildrenMode**: :ref:`🔗<enum_CanvasItem_ClipChildrenMode>`
 
 :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` **CLIP_CHILDREN_DISABLED** = ``0``
 
-Child draws over parent and is not clipped.
+Children are drawn over this node and are not clipped.
 
 .. _class_CanvasItem_constant_CLIP_CHILDREN_ONLY:
 
@@ -428,7 +430,7 @@ Child draws over parent and is not clipped.
 
 :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` **CLIP_CHILDREN_ONLY** = ``1``
 
-Parent is used for the purposes of clipping only. Child is clipped to the parent's visible area, parent is not drawn.
+This node is used as a mask and is **not** drawn. The mask is based on this node's alpha channel: Opaque pixels are kept, transparent pixels are discarded, and semi-transparent pixels are blended in according to their opacity. Children are clipped to this node's drawn area.
 
 .. _class_CanvasItem_constant_CLIP_CHILDREN_AND_DRAW:
 
@@ -436,7 +438,7 @@ Parent is used for the purposes of clipping only. Child is clipped to the parent
 
 :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` **CLIP_CHILDREN_AND_DRAW** = ``2``
 
-Parent is used for clipping child, but parent is also drawn underneath child as normal before clipping child to its visible area.
+This node is used as a mask and is also drawn. The mask is based on this node's alpha channel: Opaque pixels are kept, transparent pixels are discarded, and semi-transparent pixels are blended in according to their opacity. Children are clipped to the parent's drawn area.
 
 .. _class_CanvasItem_constant_CLIP_CHILDREN_MAX:
 
@@ -461,7 +463,9 @@ Constants
 
 **NOTIFICATION_TRANSFORM_CHANGED** = ``2000`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>`
 
-The **CanvasItem**'s global transform has changed. This notification is only received if enabled by :ref:`set_notify_transform()<class_CanvasItem_method_set_notify_transform>`.
+Notification received when this node's global transform changes, if :ref:`is_transform_notification_enabled()<class_CanvasItem_method_is_transform_notification_enabled>` is ``true``. See also :ref:`set_notify_transform()<class_CanvasItem_method_set_notify_transform>` and :ref:`get_transform()<class_CanvasItem_method_get_transform>`.
+
+\ **Note:** Many canvas items such as :ref:`Camera2D<class_Camera2D>` or :ref:`CollisionObject2D<class_CollisionObject2D>` automatically enable this in order to function correctly.
 
 .. _class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED:
 
@@ -469,7 +473,9 @@ The **CanvasItem**'s global transform has changed. This notification is only rec
 
 **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = ``35`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>`
 
-The **CanvasItem**'s local transform has changed. This notification is only received if enabled by :ref:`set_notify_local_transform()<class_CanvasItem_method_set_notify_local_transform>`.
+Notification received when this node's transform changes, if :ref:`is_local_transform_notification_enabled()<class_CanvasItem_method_is_local_transform_notification_enabled>` is ``true``. This is not received when a parent :ref:`Node2D<class_Node2D>`'s transform changes. See also :ref:`set_notify_local_transform()<class_CanvasItem_method_set_notify_local_transform>`.
+
+\ **Note:** Many canvas items such as :ref:`Camera2D<class_Camera2D>` or :ref:`CollisionShape2D<class_CollisionShape2D>` automatically enable this in order to function correctly.
 
 .. _class_CanvasItem_constant_NOTIFICATION_DRAW:
 
@@ -485,7 +491,9 @@ The **CanvasItem** is requested to draw (see :ref:`_draw()<class_CanvasItem_priv
 
 **NOTIFICATION_VISIBILITY_CHANGED** = ``31`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_VISIBILITY_CHANGED>`
 
-The **CanvasItem**'s visibility has changed.
+Notification received when this node's visibility changes (see :ref:`visible<class_CanvasItem_property_visible>` and :ref:`is_visible_in_tree()<class_CanvasItem_method_is_visible_in_tree>`).
+
+This notification is received *before* the related :ref:`visibility_changed<class_CanvasItem_signal_visibility_changed>` signal.
 
 .. _class_CanvasItem_constant_NOTIFICATION_ENTER_CANVAS:
 
@@ -509,7 +517,7 @@ The **CanvasItem** has exited the canvas.
 
 **NOTIFICATION_WORLD_2D_CHANGED** = ``36`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_WORLD_2D_CHANGED>`
 
-The **CanvasItem**'s active :ref:`World2D<class_World2D>` changed.
+Notification received when this **CanvasItem** is registered to a new :ref:`World2D<class_World2D>` (see :ref:`get_world_2d()<class_CanvasItem_method_get_world_2d>`).
 
 .. rst-class:: classref-section-separator
 
@@ -531,9 +539,9 @@ Property Descriptions
 - |void| **set_clip_children_mode**\ (\ value\: :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>`\ )
 - :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` **get_clip_children_mode**\ (\ )
 
-Allows the current node to clip child nodes, essentially acting as a mask.
+The mode in which this node clips its children, acting as a mask.
 
-\ **Note:** Clipping nodes cannot be nested or placed within :ref:`CanvasGroup<class_CanvasGroup>`\ s. If an ancestor of this node clips its children or is a :ref:`CanvasGroup<class_CanvasGroup>`, then this node's clip mode should be set to :ref:`CLIP_CHILDREN_DISABLED<class_CanvasItem_constant_CLIP_CHILDREN_DISABLED>` to avoid unexpected behavior.
+\ **Note:** Clipping nodes cannot be nested or placed within a :ref:`CanvasGroup<class_CanvasGroup>`. If an ancestor of this node clips its children or is a :ref:`CanvasGroup<class_CanvasGroup>`, then this node's clip mode should be set to :ref:`CLIP_CHILDREN_DISABLED<class_CanvasItem_constant_CLIP_CHILDREN_DISABLED>` to avoid unexpected behavior.
 
 .. rst-class:: classref-item-separator
 
@@ -603,7 +611,7 @@ The color applied to this **CanvasItem**. This property does affect child **Canv
 
 The color applied to this **CanvasItem**. This property does **not** affect child **CanvasItem**\ s, unlike :ref:`modulate<class_CanvasItem_property_modulate>` which affects both the node itself and its children.
 
-\ **Note:** Internal children (e.g. sliders in :ref:`ColorPicker<class_ColorPicker>` or tab bar in :ref:`TabContainer<class_TabContainer>`) are also not affected by this property (see ``include_internal`` parameter of :ref:`Node.get_child()<class_Node_method_get_child>` and other similar methods).
+\ **Note:** Internal children are also not affected by this property (see the ``include_internal`` parameter in :ref:`Node.add_child()<class_Node_method_add_child>`). For built-in nodes this includes sliders in :ref:`ColorPicker<class_ColorPicker>`, and the tab bar in :ref:`TabContainer<class_TabContainer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -620,7 +628,7 @@ The color applied to this **CanvasItem**. This property does **not** affect chil
 - |void| **set_draw_behind_parent**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_draw_behind_parent_enabled**\ (\ )
 
-If ``true``, the object draws behind its parent.
+If ``true``, this node draws behind its parent.
 
 .. rst-class:: classref-item-separator
 
@@ -637,7 +645,7 @@ If ``true``, the object draws behind its parent.
 - |void| **set_texture_filter**\ (\ value\: :ref:`TextureFilter<enum_CanvasItem_TextureFilter>`\ )
 - :ref:`TextureFilter<enum_CanvasItem_TextureFilter>` **get_texture_filter**\ (\ )
 
-The texture filtering mode to use on this **CanvasItem**.
+The filtering mode used to render this **CanvasItem**'s texture(s).
 
 .. rst-class:: classref-item-separator
 
@@ -654,7 +662,7 @@ The texture filtering mode to use on this **CanvasItem**.
 - |void| **set_texture_repeat**\ (\ value\: :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>`\ )
 - :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **get_texture_repeat**\ (\ )
 
-The texture repeating mode to use on this **CanvasItem**.
+The repeating mode used to render this **CanvasItem**'s texture(s).
 
 .. rst-class:: classref-item-separator
 
@@ -688,7 +696,7 @@ If ``true``, this **CanvasItem** will *not* inherit its transform from parent **
 - |void| **set_use_parent_material**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_use_parent_material**\ (\ )
 
-If ``true``, the parent **CanvasItem**'s :ref:`material<class_CanvasItem_property_material>` property is used as this one's material.
+If ``true``, the parent **CanvasItem**'s :ref:`material<class_CanvasItem_property_material>` is used as this node's material.
 
 .. rst-class:: classref-item-separator
 
@@ -762,7 +770,9 @@ Nodes sort relative to each other only if they are on the same :ref:`z_index<cla
 - |void| **set_z_as_relative**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_z_relative**\ (\ )
 
-If ``true``, the node's Z index is relative to its parent's Z index. If this node's Z index is 2 and its parent's effective Z index is 3, then this node's effective Z index will be 2 + 3 = 5.
+If ``true``, this node's final Z index is relative to its parent's Z index.
+
+For example, if :ref:`z_index<class_CanvasItem_property_z_index>` is ``2`` and its parent's final Z index is ``3``, then this node's final Z index will be ``5`` (``2 + 3``).
 
 .. rst-class:: classref-item-separator
 
@@ -779,9 +789,9 @@ If ``true``, the node's Z index is relative to its parent's Z index. If this nod
 - |void| **set_z_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_z_index**\ (\ )
 
-Controls the order in which the nodes render. A node with a higher Z index will display in front of others. Must be between :ref:`RenderingServer.CANVAS_ITEM_Z_MIN<class_RenderingServer_constant_CANVAS_ITEM_Z_MIN>` and :ref:`RenderingServer.CANVAS_ITEM_Z_MAX<class_RenderingServer_constant_CANVAS_ITEM_Z_MAX>` (inclusive).
+The order in which this node is drawn. A node with a higher Z index will display in front of others. Must be between :ref:`RenderingServer.CANVAS_ITEM_Z_MIN<class_RenderingServer_constant_CANVAS_ITEM_Z_MIN>` and :ref:`RenderingServer.CANVAS_ITEM_Z_MAX<class_RenderingServer_constant_CANVAS_ITEM_Z_MAX>` (inclusive).
 
-\ **Note:** Changing the Z index of a :ref:`Control<class_Control>` only affects the drawing order, not the order in which input events are handled. This can be useful to implement certain UI animations, e.g. a menu where hovered items are scaled and should overlap others.
+\ **Note:** The Z index does **not** affect the order in which **CanvasItem** nodes are processed or the way input events are handled. This is especially important to keep in mind for :ref:`Control<class_Control>` nodes.
 
 .. rst-class:: classref-section-separator
 
@@ -1260,7 +1270,9 @@ Draws a textured rectangle from a texture's region (specified by ``src_rect``) a
 
 |void| **force_update_transform**\ (\ ) :ref:`🔗<class_CanvasItem_method_force_update_transform>`
 
-Forces the transform to update. Transform changes in physics are not instant for performance reasons. Transforms are accumulated and then set. Use this if you need an up-to-date transform when doing physics operations.
+Forces the node's transform to update. Fails if the node is not inside the tree. See also :ref:`get_transform()<class_CanvasItem_method_get_transform>`.
+
+\ **Note:** For performance reasons, transform changes are usually accumulated and applied *once* at the end of the frame. The update propagates through **CanvasItem** children, as well. Therefore, use this method only when you need an up-to-date transform (such as during physics operations).
 
 .. rst-class:: classref-item-separator
 
@@ -1272,7 +1284,7 @@ Forces the transform to update. Transform changes in physics are not instant for
 
 :ref:`RID<class_RID>` **get_canvas**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_canvas>`
 
-Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
+Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this node is registered to, used by the :ref:`RenderingServer<class_RenderingServer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1284,7 +1296,7 @@ Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas wh
 
 :ref:`RID<class_RID>` **get_canvas_item**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_canvas_item>`
 
-Returns the canvas item RID used by :ref:`RenderingServer<class_RenderingServer>` for this item.
+Returns the internal canvas item :ref:`RID<class_RID>` used by the :ref:`RenderingServer<class_RenderingServer>` for this node.
 
 .. rst-class:: classref-item-separator
 
@@ -1308,7 +1320,7 @@ Returns the :ref:`CanvasLayer<class_CanvasLayer>` that contains this node, or ``
 
 :ref:`Transform2D<class_Transform2D>` **get_canvas_transform**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_canvas_transform>`
 
-Returns the transform from the coordinate system of the canvas, this item is in, to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
+Returns the transform of this node, converted from its registered canvas's coordinate system to its viewport's coordinate system. See also :ref:`Node.get_viewport()<class_Node_method_get_viewport>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1320,7 +1332,7 @@ Returns the transform from the coordinate system of the canvas, this item is in,
 
 :ref:`Vector2<class_Vector2>` **get_global_mouse_position**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_global_mouse_position>`
 
-Returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that this **CanvasItem** is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
+Returns mouse cursor's global position relative to the :ref:`CanvasLayer<class_CanvasLayer>` that contains this node.
 
 \ **Note:** For screen-space coordinates (e.g. when using a non-embedded :ref:`Popup<class_Popup>`), you can use :ref:`DisplayServer.mouse_get_position()<class_DisplayServer_method_mouse_get_position>`.
 
@@ -1396,7 +1408,7 @@ Equals to :ref:`get_global_transform()<class_CanvasItem_method_get_global_transf
 
 :ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_transform>`
 
-Returns the transform matrix of this item.
+Returns the transform matrix of this **CanvasItem**.
 
 .. rst-class:: classref-item-separator
 
@@ -1408,7 +1420,7 @@ Returns the transform matrix of this item.
 
 :ref:`Rect2<class_Rect2>` **get_viewport_rect**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_viewport_rect>`
 
-Returns the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
+Returns this node's viewport boundaries as a :ref:`Rect2<class_Rect2>`. See also :ref:`Node.get_viewport()<class_Node_method_get_viewport>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1420,7 +1432,7 @@ Returns the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
 :ref:`Transform2D<class_Transform2D>` **get_viewport_transform**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_viewport_transform>`
 
-Returns the transform from the coordinate system of the canvas, this item is in, to the :ref:`Viewport<class_Viewport>`\ s embedders coordinate system.
+Returns the transform of this node, converted from its registered canvas's coordinate system to its viewport embedder's coordinate system. See also :ref:`Viewport.get_final_transform()<class_Viewport_method_get_final_transform>` and :ref:`Node.get_viewport()<class_Node_method_get_viewport>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1432,7 +1444,7 @@ Returns the transform from the coordinate system of the canvas, this item is in,
 
 :ref:`bool<class_bool>` **get_visibility_layer_bit**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CanvasItem_method_get_visibility_layer_bit>`
 
-Returns an individual bit on the rendering visibility layer.
+Returns ``true`` if the layer at the given index is set in :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1444,7 +1456,9 @@ Returns an individual bit on the rendering visibility layer.
 
 :ref:`World2D<class_World2D>` **get_world_2d**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_world_2d>`
 
-Returns the :ref:`World2D<class_World2D>` where this item is in.
+Returns the :ref:`World2D<class_World2D>` this node is registered to.
+
+Usually, this is the same as this node's viewport (see :ref:`Node.get_viewport()<class_Node_method_get_viewport>` and :ref:`Viewport.find_world_2d()<class_Viewport_method_find_world_2d>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1468,7 +1482,7 @@ Hide the **CanvasItem** if it's currently visible. This is equivalent to setting
 
 :ref:`bool<class_bool>` **is_local_transform_notification_enabled**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_is_local_transform_notification_enabled>`
 
-Returns ``true`` if local transform notifications are communicated to children.
+Returns ``true`` if the node receives :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` whenever its local transform changes. This is enabled with :ref:`set_notify_local_transform()<class_CanvasItem_method_set_notify_local_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1480,7 +1494,7 @@ Returns ``true`` if local transform notifications are communicated to children.
 
 :ref:`bool<class_bool>` **is_transform_notification_enabled**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_is_transform_notification_enabled>`
 
-Returns ``true`` if global transform notifications are communicated to children.
+Returns ``true`` if the node receives :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>` whenever its global transform changes. This is enabled with :ref:`set_notify_transform()<class_CanvasItem_method_set_notify_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1526,7 +1540,7 @@ For the opposite operation, use :ref:`get_global_transform_with_canvas()<class_C
 
 :ref:`InputEvent<class_InputEvent>` **make_input_local**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |const| :ref:`🔗<class_CanvasItem_method_make_input_local>`
 
-Transformations issued by ``event``'s inputs are applied in local space instead of global space.
+Returns a copy of the given ``event`` with its coordinates converted from global space to this **CanvasItem**'s local space. If not possible, returns the same :ref:`InputEvent<class_InputEvent>` unchanged.
 
 .. rst-class:: classref-item-separator
 
@@ -1538,9 +1552,7 @@ Transformations issued by ``event``'s inputs are applied in local space instead 
 
 |void| **move_to_front**\ (\ ) :ref:`🔗<class_CanvasItem_method_move_to_front>`
 
-Moves this node to display on top of its siblings.
-
-Internally, the node is moved to the bottom of parent's child list. The method has no effect on nodes without a parent.
+Moves this node below its siblings, usually causing the node to draw on top of its siblings. Does nothing if this node does not have a parent. See also :ref:`Node.move_child()<class_Node_method_move_child>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1580,7 +1592,9 @@ Set the value of a shader uniform for this instance only (`per-instance uniform 
 
 |void| **set_notify_local_transform**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CanvasItem_method_set_notify_local_transform>`
 
-If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` when its local transform changes.
+If ``true``, the node will receive :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` whenever its local transform changes.
+
+\ **Note:** Many canvas items such as :ref:`Bone2D<class_Bone2D>` or :ref:`CollisionShape2D<class_CollisionShape2D>` automatically enable this in order to function correctly.
 
 .. rst-class:: classref-item-separator
 
@@ -1592,7 +1606,9 @@ If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_LOCAL_TRANS
 
 |void| **set_notify_transform**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CanvasItem_method_set_notify_transform>`
 
-If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>` when its global transform changes.
+If ``true``, the node will receive :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>` whenever global transform changes.
+
+\ **Note:** Many canvas items such as :ref:`Camera2D<class_Camera2D>` or :ref:`Light2D<class_Light2D>` automatically enable this in order to function correctly.
 
 .. rst-class:: classref-item-separator
 
@@ -1616,7 +1632,9 @@ Set/clear individual bits on the rendering visibility layer. This simplifies edi
 
 |void| **show**\ (\ ) :ref:`🔗<class_CanvasItem_method_show>`
 
-Show the **CanvasItem** if it's currently hidden. This is equivalent to setting :ref:`visible<class_CanvasItem_property_visible>` to ``true``. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
+Show the **CanvasItem** if it's currently hidden. This is equivalent to setting :ref:`visible<class_CanvasItem_property_visible>` to ``true``.
+
+\ **Note:** For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
