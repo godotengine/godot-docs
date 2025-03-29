@@ -45,25 +45,29 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`             | :ref:`check_v_offset<class_CheckButton_theme_constant_check_v_offset>`                       | ``0`` |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_CheckButton_theme_icon_checked>`                                         |       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled<class_CheckButton_theme_icon_checked_disabled>`                       |       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled_mirrored<class_CheckButton_theme_icon_checked_disabled_mirrored>`     |       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_mirrored<class_CheckButton_theme_icon_checked_mirrored>`                       |       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked<class_CheckButton_theme_icon_unchecked>`                                     |       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled<class_CheckButton_theme_icon_unchecked_disabled>`                   |       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled_mirrored<class_CheckButton_theme_icon_unchecked_disabled_mirrored>` |       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_mirrored<class_CheckButton_theme_icon_unchecked_mirrored>`                   |       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+-------+
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`         | :ref:`button_checked_color<class_CheckButton_theme_color_button_checked_color>`              | ``Color(1, 1, 1, 1)`` |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`         | :ref:`button_unchecked_color<class_CheckButton_theme_color_button_unchecked_color>`          | ``Color(1, 1, 1, 1)`` |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`             | :ref:`check_v_offset<class_CheckButton_theme_constant_check_v_offset>`                       | ``0``                 |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_CheckButton_theme_icon_checked>`                                         |                       |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled<class_CheckButton_theme_icon_checked_disabled>`                       |                       |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled_mirrored<class_CheckButton_theme_icon_checked_disabled_mirrored>`     |                       |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_mirrored<class_CheckButton_theme_icon_checked_mirrored>`                       |                       |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked<class_CheckButton_theme_icon_unchecked>`                                     |                       |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled<class_CheckButton_theme_icon_unchecked_disabled>`                   |                       |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled_mirrored<class_CheckButton_theme_icon_unchecked_disabled_mirrored>` |                       |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_mirrored<class_CheckButton_theme_icon_unchecked_mirrored>`                   |                       |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -73,6 +77,30 @@ Theme Properties
 
 Theme Property Descriptions
 ---------------------------
+
+.. _class_CheckButton_theme_color_button_checked_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **button_checked_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_CheckButton_theme_color_button_checked_color>`
+
+The color of the checked icon when the checkbox is pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CheckButton_theme_color_button_unchecked_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **button_unchecked_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_CheckButton_theme_color_button_unchecked_color>`
+
+The color of the unchecked icon when the checkbox is not pressed.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_CheckButton_theme_constant_check_v_offset:
 

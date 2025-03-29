@@ -23,15 +23,13 @@ Description
 
 This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
 
-\ **Performance:** CSG nodes are only intended for prototyping as they have a significant CPU performance cost.
-
-Consider baking final CSG operation results into static geometry that replaces the CSG nodes.
+\ **Performance:** CSG nodes are only intended for prototyping as they have a significant CPU performance cost. Consider baking final CSG operation results into static geometry that replaces the CSG nodes.
 
 Individual CSG root node results can be baked to nodes with static resources with the editor menu that appears when a CSG root node is selected.
 
 Individual CSG root nodes can also be baked to static resources with scripts by calling :ref:`bake_static_mesh()<class_CSGShape3D_method_bake_static_mesh>` for the visual mesh or :ref:`bake_collision_shape()<class_CSGShape3D_method_bake_collision_shape>` for the physics collision.
 
-Entire scenes of CSG nodes can be baked to static geometry and exported with the editor gltf scene exporter.
+Entire scenes of CSG nodes can be baked to static geometry and exported with the editor glTF scene exporter: **Scene > Export As... > glTF 2.0 Scene...**
 
 .. rst-class:: classref-introduction-group
 
@@ -149,7 +147,7 @@ Property Descriptions
 - |void| **set_calculate_tangents**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_calculating_tangents**\ (\ )
 
-Calculate tangents for the CSG shape which allows the use of normal maps. This is only applied on the root shape, this setting is ignored on any child.
+Calculate tangents for the CSG shape which allows the use of normal and height maps. This is only applied on the root shape, this setting is ignored on any child. Setting this to ``false`` can speed up shape generation slightly.
 
 .. rst-class:: classref-item-separator
 
@@ -278,6 +276,8 @@ Returns a baked physics :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>
 
 \ **Performance:** If the CSG operation results in a very detailed geometry with many faces physics performance will be very slow. Concave shapes should in general only be used for static level geometry and not with dynamic objects that are moving.
 
+\ **Note:** CSG mesh data updates are deferred, which means they are updated with a delay of one rendered frame. To avoid getting an empty shape or outdated mesh data, make sure to call ``await get_tree().process_frame`` before using :ref:`bake_collision_shape()<class_CSGShape3D_method_bake_collision_shape>` in :ref:`Node._ready()<class_Node_private_method__ready>` or after changing properties on the **CSGShape3D**.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -289,6 +289,8 @@ Returns a baked physics :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>
 :ref:`ArrayMesh<class_ArrayMesh>` **bake_static_mesh**\ (\ ) :ref:`🔗<class_CSGShape3D_method_bake_static_mesh>`
 
 Returns a baked static :ref:`ArrayMesh<class_ArrayMesh>` of this node's CSG operation result. Materials from involved CSG nodes are added as extra mesh surfaces. Returns an empty mesh if the node is not a CSG root node or has no valid geometry.
+
+\ **Note:** CSG mesh data updates are deferred, which means they are updated with a delay of one rendered frame. To avoid getting an empty mesh or outdated mesh data, make sure to call ``await get_tree().process_frame`` before using :ref:`bake_static_mesh()<class_CSGShape3D_method_bake_static_mesh>` in :ref:`Node._ready()<class_Node_private_method__ready>` or after changing properties on the **CSGShape3D**.
 
 .. rst-class:: classref-item-separator
 
@@ -325,6 +327,8 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_CSG
 :ref:`Array<class_Array>` **get_meshes**\ (\ ) |const| :ref:`🔗<class_CSGShape3D_method_get_meshes>`
 
 Returns an :ref:`Array<class_Array>` with two elements, the first is the :ref:`Transform3D<class_Transform3D>` of this node and the second is the root :ref:`Mesh<class_Mesh>` of this node. Only works when this node is the root shape.
+
+\ **Note:** CSG mesh data updates are deferred, which means they are updated with a delay of one rendered frame. To avoid getting an empty shape or outdated mesh data, make sure to call ``await get_tree().process_frame`` before using :ref:`get_meshes()<class_CSGShape3D_method_get_meshes>` in :ref:`Node._ready()<class_Node_private_method__ready>` or after changing properties on the **CSGShape3D**.
 
 .. rst-class:: classref-item-separator
 

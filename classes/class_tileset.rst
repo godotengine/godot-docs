@@ -269,7 +269,7 @@ Rectangular tile shape.
 
 Diamond tile shape (for isometric look).
 
-\ **Note:** Isometric **TileSet** works best if :ref:`TileMap<class_TileMap>` and all its layers have Y-sort enabled.
+\ **Note:** Isometric **TileSet** works best if all sibling :ref:`TileMapLayer<class_TileMapLayer>`\ s and their parent inheriting from :ref:`Node2D<class_Node2D>` have Y-sort enabled.
 
 .. _class_TileSet_constant_TILE_SHAPE_HALF_OFFSET_SQUARE:
 
@@ -563,7 +563,7 @@ Property Descriptions
 - |void| **set_tile_layout**\ (\ value\: :ref:`TileLayout<enum_TileSet_TileLayout>`\ )
 - :ref:`TileLayout<enum_TileSet_TileLayout>` **get_tile_layout**\ (\ )
 
-For all half-offset shapes (Isometric, Hexagonal and Half-Offset square), changes the way tiles are indexed in the TileMap grid.
+For all half-offset shapes (Isometric, Hexagonal and Half-Offset square), changes the way tiles are indexed in the :ref:`TileMapLayer<class_TileMapLayer>` grid.
 
 .. rst-class:: classref-item-separator
 
@@ -1416,9 +1416,7 @@ Removes the terrain set at index ``terrain_set``. Also updates the atlas tiles a
 
 Create an alternative-level proxy for the given identifiers. A proxy will map set of tile identifiers to another set of identifiers.
 
-This can be used to replace a tile in all TileMaps using this TileSet, as TileMap nodes will find and use the proxy's target tile when one is available.
-
-Proxied tiles can be automatically replaced in TileMap nodes using the editor.
+Proxied tiles can be automatically replaced in TileMapLayer nodes using the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -1432,9 +1430,7 @@ Proxied tiles can be automatically replaced in TileMap nodes using the editor.
 
 Creates a coordinates-level proxy for the given identifiers. A proxy will map set of tile identifiers to another set of identifiers. The alternative tile ID is kept the same when using coordinates-level proxies.
 
-This can be used to replace a tile in all TileMaps using this TileSet, as TileMap nodes will find and use the proxy's target tile when one is available.
-
-Proxied tiles can be automatically replaced in TileMap nodes using the editor.
+Proxied tiles can be automatically replaced in TileMapLayer nodes using the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -1580,9 +1576,7 @@ Changes a source's ID.
 
 Creates a source-level proxy for the given source ID. A proxy will map set of tile identifiers to another set of identifiers. Both the atlas coordinates ID and the alternative tile ID are kept the same when using source-level proxies.
 
-This can be used to replace a source in all TileMaps using this TileSet, as TileMap nodes will find and use the proxy's target source when one is available.
-
-Proxied tiles can be automatically replaced in TileMap nodes using the editor.
+Proxied tiles can be automatically replaced in TileMapLayer nodes using the editor.
 
 .. rst-class:: classref-item-separator
 

@@ -111,9 +111,13 @@ Methods
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                  | :ref:`openxr_swapchain_release<class_OpenXRAPIExtension_method_openxr_swapchain_release>`\ (\ swapchain\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                          |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                                  | :ref:`register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ )                                                                                                                                            |
+   | |void|                                                                                  | :ref:`register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ )                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                                  | :ref:`register_projection_views_extension<class_OpenXRAPIExtension_method_register_projection_views_extension>`\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ )                                                                                                                                            |
+   | |void|                                                                                  | :ref:`register_frame_info_extension<class_OpenXRAPIExtension_method_register_frame_info_extension>`\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ )                                                                                                                                                                          |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                  | :ref:`register_projection_views_extension<class_OpenXRAPIExtension_method_register_projection_views_extension>`\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ )                                                                                                                                                              |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                  | :ref:`set_custom_play_space<class_OpenXRAPIExtension_method_set_custom_play_space>`\ (\ space\: ``const void*``\ )                                                                                                                                                                                                                                          |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                  | :ref:`set_emulate_environment_blend_mode_alpha_blend<class_OpenXRAPIExtension_method_set_emulate_environment_blend_mode_alpha_blend>`\ (\ enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -129,9 +133,11 @@ Methods
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform3D<class_Transform3D>`                                                   | :ref:`transform_from_pose<class_OpenXRAPIExtension_method_transform_from_pose>`\ (\ pose\: ``const void*``\ )                                                                                                                                                                                                                                               |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                                  | :ref:`unregister_composition_layer_provider<class_OpenXRAPIExtension_method_unregister_composition_layer_provider>`\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ )                                                                                                                                        |
+   | |void|                                                                                  | :ref:`unregister_composition_layer_provider<class_OpenXRAPIExtension_method_unregister_composition_layer_provider>`\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ )                                                                                                                                                          |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                                  | :ref:`unregister_projection_views_extension<class_OpenXRAPIExtension_method_unregister_projection_views_extension>`\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ )                                                                                                                                        |
+   | |void|                                                                                  | :ref:`unregister_frame_info_extension<class_OpenXRAPIExtension_method_unregister_frame_info_extension>`\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ )                                                                                                                                                                      |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                  | :ref:`unregister_projection_views_extension<class_OpenXRAPIExtension_method_unregister_projection_views_extension>`\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ )                                                                                                                                                          |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                 | :ref:`xr_result<class_OpenXRAPIExtension_method_xr_result>`\ (\ result\: :ref:`int<class_int>`, format\: :ref:`String<class_String>`, args\: :ref:`Array<class_Array>`\ )                                                                                                                                                                                   |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -556,9 +562,21 @@ Releases the image of the provided swapchain.
 
 .. rst-class:: classref-method
 
-|void| **register_composition_layer_provider**\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_register_composition_layer_provider>`
+|void| **register_composition_layer_provider**\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_register_composition_layer_provider>`
 
 Registers the given extension as a composition layer provider.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_register_frame_info_extension:
+
+.. rst-class:: classref-method
+
+|void| **register_frame_info_extension**\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_register_frame_info_extension>`
+
+Registers the given extension as modifying frame info via the :ref:`OpenXRExtensionWrapper._set_frame_wait_info_and_get_next_pointer()<class_OpenXRExtensionWrapper_private_method__set_frame_wait_info_and_get_next_pointer>`, :ref:`OpenXRExtensionWrapper._set_view_locate_info_and_get_next_pointer()<class_OpenXRExtensionWrapper_private_method__set_view_locate_info_and_get_next_pointer>`, or :ref:`OpenXRExtensionWrapper._set_frame_end_info_and_get_next_pointer()<class_OpenXRExtensionWrapper_private_method__set_frame_end_info_and_get_next_pointer>` virtual methods.
 
 .. rst-class:: classref-item-separator
 
@@ -568,9 +586,21 @@ Registers the given extension as a composition layer provider.
 
 .. rst-class:: classref-method
 
-|void| **register_projection_views_extension**\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_register_projection_views_extension>`
+|void| **register_projection_views_extension**\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_register_projection_views_extension>`
 
 Registers the given extension as a provider of additional data structures to projections views.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_set_custom_play_space:
+
+.. rst-class:: classref-method
+
+|void| **set_custom_play_space**\ (\ space\: ``const void*``\ ) :ref:`🔗<class_OpenXRAPIExtension_method_set_custom_play_space>`
+
+Sets the reference space used by OpenXR to the given `XrSpace <https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrSpace.html>`__ (cast to a ``void *``).
 
 .. rst-class:: classref-item-separator
 
@@ -664,9 +694,21 @@ Creates a :ref:`Transform3D<class_Transform3D>` from an `XrPosef <https://regist
 
 .. rst-class:: classref-method
 
-|void| **unregister_composition_layer_provider**\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_unregister_composition_layer_provider>`
+|void| **unregister_composition_layer_provider**\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_unregister_composition_layer_provider>`
 
 Unregisters the given extension as a composition layer provider.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_unregister_frame_info_extension:
+
+.. rst-class:: classref-method
+
+|void| **unregister_frame_info_extension**\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_unregister_frame_info_extension>`
+
+Unregisters the given extension as modifying frame info.
 
 .. rst-class:: classref-item-separator
 
@@ -676,7 +718,7 @@ Unregisters the given extension as a composition layer provider.
 
 .. rst-class:: classref-method
 
-|void| **unregister_projection_views_extension**\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_unregister_projection_views_extension>`
+|void| **unregister_projection_views_extension**\ (\ extension\: :ref:`OpenXRExtensionWrapper<class_OpenXRExtensionWrapper>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_unregister_projection_views_extension>`
 
 Unregisters the given extension as a provider of additional data structures to projections views.
 

@@ -203,6 +203,25 @@ Emitted immediately before :ref:`Node._process()<class_Node_private_method__proc
 
 ----
 
+.. _class_SceneTree_signal_scene_changed:
+
+.. rst-class:: classref-signal
+
+**scene_changed**\ (\ ) :ref:`🔗<class_SceneTree_signal_scene_changed>`
+
+Emitted after the new scene is added to scene tree and initialized. Can be used to reliably access :ref:`current_scene<class_SceneTree_property_current_scene>` when changing scenes.
+
+::
+
+    # This code should be inside an autoload.
+    get_tree().change_scene_to_file(other_scene_path)
+    await get_tree().scene_changed
+    print(get_tree().current_scene) # Prints the new scene.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_SceneTree_signal_tree_changed:
 
 .. rst-class:: classref-signal
@@ -446,9 +465,11 @@ If ``true``, the scene tree is considered paused. This causes the following beha
 - |void| **set_physics_interpolation_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_physics_interpolation_enabled**\ (\ )
 
-If ``true``, the renderer will interpolate the transforms of physics objects between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames.
+If ``true``, the renderer will interpolate the transforms of objects (both physics and non-physics) between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames.
 
 The default value of this property is controlled by :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`.
+
+\ **Note:** Although this is a global setting, finer control of individual branches of the **SceneTree** is possible using :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -566,6 +587,8 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 2. At the end of the frame, the formerly current scene, already removed from the tree, will be deleted (freed from memory) and then the new scene will be instantiated and added to the tree. :ref:`Node.get_tree()<class_Node_method_get_tree>` and :ref:`current_scene<class_SceneTree_property_current_scene>` will be back to working as usual.
 
 This ensures that both scenes aren't running at the same time, while still freeing the previous scene in a safe way similar to :ref:`Node.queue_free()<class_Node_method_queue_free>`.
+
+If you want to reliably access the new scene, await the :ref:`scene_changed<class_SceneTree_signal_scene_changed>` signal.
 
 .. rst-class:: classref-item-separator
 

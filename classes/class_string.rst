@@ -197,6 +197,10 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`path_join<class_String_method_path_join>`\ (\ file\: :ref:`String<class_String>`\ ) |const|                                                                                         |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`remove_char<class_String_method_remove_char>`\ (\ what\: :ref:`int<class_int>`\ ) |const|                                                                                           |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`remove_chars<class_String_method_remove_chars>`\ (\ chars\: :ref:`String<class_String>`\ ) |const|                                                                                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`repeat<class_String_method_repeat>`\ (\ count\: :ref:`int<class_int>`\ ) |const|                                                                                                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`replace<class_String_method_replace>`\ (\ what\: :ref:`String<class_String>`, forwhat\: :ref:`String<class_String>`\ ) |const|                                                      |
@@ -248,6 +252,8 @@ Methods
    | :ref:`int<class_int>`                               | :ref:`to_int<class_String_method_to_int>`\ (\ ) |const|                                                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`to_lower<class_String_method_to_lower>`\ (\ ) |const|                                                                                                                               |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_multibyte_char_buffer<class_String_method_to_multibyte_char_buffer>`\ (\ encoding\: :ref:`String<class_String>` = ""\ ) |const|                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`to_pascal_case<class_String_method_to_pascal_case>`\ (\ ) |const|                                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -492,7 +498,7 @@ Changes the appearance of the string: replaces underscores (``_``) with spaces, 
 
 Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" and "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
 
-With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
+If the character comparison reaches the end of one string, but the other string contains more characters, then it will use length as the deciding factor: ``1`` will be returned if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is always ``0``.
 
 To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to()<class_String_method_nocasecmp_to>`, :ref:`filecasecmp_to()<class_String_method_filecasecmp_to>`, and :ref:`naturalcasecmp_to()<class_String_method_naturalcasecmp_to>`.
 
@@ -1368,7 +1374,7 @@ Performs a **case-sensitive**, *natural order* comparison to another string. Ret
 
 When used for sorting, natural order comparison orders sequences of numbers by the combined value of each digit as is often expected, instead of the single digit's value. A sorted sequence of numbered strings will be ``["1", "2", "3", ...]``, not ``["1", "10", "2", "3", ...]``.
 
-With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
+If the character comparison reaches the end of one string, but the other string contains more characters, then it will use length as the deciding factor: ``1`` will be returned if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is always ``0``.
 
 To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`naturalnocasecmp_to()<class_String_method_naturalnocasecmp_to>`, :ref:`filecasecmp_to()<class_String_method_filecasecmp_to>`, and :ref:`nocasecmp_to()<class_String_method_nocasecmp_to>`.
 
@@ -1386,7 +1392,7 @@ Performs a **case-insensitive**, *natural order* comparison to another string. R
 
 When used for sorting, natural order comparison orders sequences of numbers by the combined value of each digit as is often expected, instead of the single digit's value. A sorted sequence of numbered strings will be ``["1", "2", "3", ...]``, not ``["1", "10", "2", "3", ...]``.
 
-With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
+If the character comparison reaches the end of one string, but the other string contains more characters, then it will use length as the deciding factor: ``1`` will be returned if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is always ``0``.
 
 To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`naturalcasecmp_to()<class_String_method_naturalcasecmp_to>`, :ref:`filenocasecmp_to()<class_String_method_filenocasecmp_to>`, and :ref:`casecmp_to()<class_String_method_casecmp_to>`.
 
@@ -1402,7 +1408,7 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 Performs a **case-insensitive** comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters are converted to uppercase for the comparison.
 
-With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
+If the character comparison reaches the end of one string, but the other string contains more characters, then it will use length as the deciding factor: ``1`` will be returned if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is always ``0``.
 
 To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to()<class_String_method_casecmp_to>`, :ref:`filenocasecmp_to()<class_String_method_filenocasecmp_to>`, and :ref:`naturalnocasecmp_to()<class_String_method_naturalnocasecmp_to>`.
 
@@ -1538,6 +1544,30 @@ Formats the string representing a number to have an exact number of ``digits`` *
 Concatenates ``file`` at the end of the string as a subpath, adding ``/`` if necessary.
 
 \ **Example:** ``"this/is".path_join("path") == "this/is/path"``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_String_method_remove_char:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **remove_char**\ (\ what\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_String_method_remove_char>`
+
+Removes all occurrences of the Unicode character with code ``what``. Faster version of :ref:`replace()<class_String_method_replace>` when the key is only one character long and the replacement is ``""``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_String_method_remove_chars:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **remove_chars**\ (\ chars\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_String_method_remove_chars>`
+
+Removes any occurrence of the characters in ``chars``. See also :ref:`remove_char()<class_String_method_remove_char>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1945,6 +1975,24 @@ Converts the string representing an integer number into an :ref:`int<class_int>`
 :ref:`String<class_String>` **to_lower**\ (\ ) |const| :ref:`🔗<class_String_method_to_lower>`
 
 Returns the string converted to ``lowercase``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_String_method_to_multibyte_char_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **to_multibyte_char_buffer**\ (\ encoding\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_String_method_to_multibyte_char_buffer>`
+
+Converts the string to system multibyte code page encoded :ref:`PackedByteArray<class_PackedByteArray>`. If conversion fails, empty array is returned.
+
+The values permitted for ``encoding`` are system dependent. If ``encoding`` is empty string, system default encoding is used.
+
+- For Windows, see `Code Page Identifiers <https://learn.microsoft.com/en-us/windows/win32/Intl/code-page-identifiers>`__ .NET names.
+
+- For macOS and Linux/BSD, see ``libiconv`` library documentation and ``iconv --list`` for a list of supported encodings.
 
 .. rst-class:: classref-item-separator
 

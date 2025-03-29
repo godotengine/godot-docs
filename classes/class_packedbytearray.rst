@@ -120,6 +120,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`encode_var<class_PackedByteArray_method_encode_var>`\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`erase<class_PackedByteArray_method_erase>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                         |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`fill<class_PackedByteArray_method_fill>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                           |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_PackedByteArray_method_find>`\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const|                                                                 |
@@ -127,6 +129,8 @@ Methods
    | :ref:`int<class_int>`                               | :ref:`get<class_PackedByteArray_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                     |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>`\ (\ ) |const|                                                                                                |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`get_string_from_multibyte_char<class_PackedByteArray_method_get_string_from_multibyte_char>`\ (\ encoding\: :ref:`String<class_String>` = ""\ ) |const|                                 |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`\ (\ ) |const|                                                                                                  |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -655,6 +659,18 @@ Encodes a :ref:`Variant<class_Variant>` at the index of ``byte_offset`` bytes. A
 
 ----
 
+.. _class_PackedByteArray_method_erase:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **erase**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_erase>`
+
+Removes the first occurrence of a value from the array and returns ``true``. If the value does not exist in the array, nothing happens and ``false`` is returned. To remove an element by index, use :ref:`remove_at()<class_PackedByteArray_method_remove_at>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PackedByteArray_method_fill:
 
 .. rst-class:: classref-method
@@ -698,6 +714,24 @@ Returns the byte at the given ``index`` in the array. This is the same as using 
 :ref:`String<class_String>` **get_string_from_ascii**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_ascii>`
 
 Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8()<class_PackedByteArray_method_get_string_from_utf8>` if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8()<class_PackedByteArray_method_get_string_from_utf8>`. This is the inverse of :ref:`String.to_ascii_buffer()<class_String_method_to_ascii_buffer>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_get_string_from_multibyte_char:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_string_from_multibyte_char**\ (\ encoding\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_PackedByteArray_method_get_string_from_multibyte_char>`
+
+Converts system multibyte code page encoded array to :ref:`String<class_String>`. If conversion fails, empty string is returned. This is the inverse of :ref:`String.to_multibyte_char_buffer()<class_String_method_to_multibyte_char_buffer>`.
+
+The values permitted for ``encoding`` are system dependent. If ``encoding`` is empty string, system default encoding is used.
+
+- For Windows, see `Code Page Identifiers <https://learn.microsoft.com/en-us/windows/win32/Intl/code-page-identifiers>`__ .NET names.
+
+- For macOS and Linux/BSD, see ``libiconv`` library documentation and ``iconv --list`` for a list of supported encodings.
 
 .. rst-class:: classref-item-separator
 
@@ -857,6 +891,8 @@ Removes an element from the array by index.
 :ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedByteArray_method_resize>`
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize()<class_PackedByteArray_method_resize>` once and assigning the new values is faster than adding new elements one by one.
+
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the following :ref:`Error<enum_@GlobalScope_Error>` constants if this method fails: :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if the size is negative, or :ref:`@GlobalScope.ERR_OUT_OF_MEMORY<class_@GlobalScope_constant_ERR_OUT_OF_MEMORY>` if allocations fail. Use :ref:`size()<class_PackedByteArray_method_size>` to find the actual size of the array after resize.
 
 .. rst-class:: classref-item-separator
 

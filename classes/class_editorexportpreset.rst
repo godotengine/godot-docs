@@ -273,7 +273,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **are_advanced_options_enabled**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_are_advanced_options_enabled>`
 
-Returns ``true``, is "Advanced" toggle is enabled in the export dialog.
+Returns ``true`` if "Advanced" toggle is enabled in the export dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -297,7 +297,7 @@ Returns string with a comma separated list of custom features.
 
 :ref:`Dictionary<class_Dictionary>` **get_customized_files**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_customized_files>`
 
-Returns :ref:`Dictionary<class_Dictionary>` of files selected in the "Resources" tab of the export dialog. Dictionary keys are file names and values are export mode - ``"strip``, ``"keep"``, or ``"remove"``. See also :ref:`get_file_export_mode()<class_EditorExportPreset_method_get_file_export_mode>`.
+Returns :ref:`Dictionary<class_Dictionary>` of files selected in the "Resources" tab of the export dialog. Dictionary keys are file names and values are export mode - ``"strip"``, ``"keep"``, or ``"remove"``. See also :ref:`get_file_export_mode()<class_EditorExportPreset_method_get_file_export_mode>`.
 
 .. rst-class:: classref-item-separator
 

@@ -180,6 +180,10 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`path_join<class_StringName_method_path_join>`\ (\ file\: :ref:`String<class_String>`\ ) |const|                                                                                         |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`remove_char<class_StringName_method_remove_char>`\ (\ what\: :ref:`int<class_int>`\ ) |const|                                                                                           |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`remove_chars<class_StringName_method_remove_chars>`\ (\ chars\: :ref:`String<class_String>`\ ) |const|                                                                                  |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`repeat<class_StringName_method_repeat>`\ (\ count\: :ref:`int<class_int>`\ ) |const|                                                                                                    |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`replace<class_StringName_method_replace>`\ (\ what\: :ref:`String<class_String>`, forwhat\: :ref:`String<class_String>`\ ) |const|                                                      |
@@ -231,6 +235,8 @@ Methods
    | :ref:`int<class_int>`                               | :ref:`to_int<class_StringName_method_to_int>`\ (\ ) |const|                                                                                                                                   |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`to_lower<class_StringName_method_to_lower>`\ (\ ) |const|                                                                                                                               |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_multibyte_char_buffer<class_StringName_method_to_multibyte_char_buffer>`\ (\ encoding\: :ref:`String<class_String>` = ""\ ) |const|                                                  |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`to_pascal_case<class_StringName_method_to_pascal_case>`\ (\ ) |const|                                                                                                                   |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1388,6 +1394,30 @@ Concatenates ``file`` at the end of the string as a subpath, adding ``/`` if nec
 
 ----
 
+.. _class_StringName_method_remove_char:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **remove_char**\ (\ what\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_remove_char>`
+
+Removes all occurrences of the Unicode character with code ``what``. Faster version of :ref:`replace()<class_StringName_method_replace>` when the key is only one character long and the replacement is ``""``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_remove_chars:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **remove_chars**\ (\ chars\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_remove_chars>`
+
+Removes any occurrence of the characters in ``chars``. See also :ref:`remove_char()<class_StringName_method_remove_char>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_StringName_method_repeat:
 
 .. rst-class:: classref-method
@@ -1790,6 +1820,24 @@ Converts the string representing an integer number into an :ref:`int<class_int>`
 :ref:`String<class_String>` **to_lower**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_lower>`
 
 Returns the string converted to ``lowercase``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_to_multibyte_char_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **to_multibyte_char_buffer**\ (\ encoding\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_StringName_method_to_multibyte_char_buffer>`
+
+Converts the string to system multibyte code page encoded :ref:`PackedByteArray<class_PackedByteArray>`. If conversion fails, empty array is returned.
+
+The values permitted for ``encoding`` are system dependent. If ``encoding`` is empty string, system default encoding is used.
+
+- For Windows, see `Code Page Identifiers <https://learn.microsoft.com/en-us/windows/win32/Intl/code-page-identifiers>`__ .NET names.
+
+- For macOS and Linux/BSD, see ``libiconv`` library documentation and ``iconv --list`` for a list of supported encodings.
 
 .. rst-class:: classref-item-separator
 

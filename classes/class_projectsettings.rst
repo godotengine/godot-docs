@@ -565,6 +565,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_cancel<class_ProjectSettings_property_input/ui_cancel>`                                                                                                                                     |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_colorpicker_delete_preset<class_ProjectSettings_property_input/ui_colorpicker_delete_preset>`                                                                                               |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_copy<class_ProjectSettings_property_input/ui_copy>`                                                                                                                                         |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_cut<class_ProjectSettings_property_input/ui_cut>`                                                                                                                                           |                                                                                                  |
@@ -728,6 +730,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/android/enable_long_press_as_right_click<class_ProjectSettings_property_input_devices/pointing/android/enable_long_press_as_right_click>`                                     | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/android/enable_pan_and_scale_gestures<class_ProjectSettings_property_input_devices/pointing/android/enable_pan_and_scale_gestures>`                                           | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/android/override_volume_buttons<class_ProjectSettings_property_input_devices/pointing/android/override_volume_buttons>`                                                       | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`input_devices/pointing/android/rotary_input_scroll_axis<class_ProjectSettings_property_input_devices/pointing/android/rotary_input_scroll_axis>`                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -4098,13 +4102,13 @@ Enable Swappy for stable frame pacing on Android. Highly recommended.
 
 Swappy mode to use. The options are:
 
-- pipeline_forced_on: Try to honor :ref:`Engine.max_fps<class_Engine_property_max_fps>`. Pipelining is always on. This is the same behavior as Desktop PC.
+- ``pipeline_forced_on``: Try to honor :ref:`Engine.max_fps<class_Engine_property_max_fps>`. Pipelining is always on. This is the same behavior as a desktop PC.
 
-- auto_fps_pipeline_forced_on: Autocalculate max fps. Actual max_fps will be between 0 and :ref:`Engine.max_fps<class_Engine_property_max_fps>`. While this sounds convenient, beware that Swappy will often downgrade max fps until it finds something that can be met and sustained. That means if your game runs between 40fps and 60fps on a 60hz screen, after some time Swappy will downgrade max fps so that the game renders at perfect 30fps.
+- ``auto_fps_pipeline_forced_on``: Calculate the max FPS automatically. The actual max FPS will be between ``0`` and :ref:`Engine.max_fps<class_Engine_property_max_fps>`. While this sounds convenient, beware that Swappy will often downgrade the max FPS until it finds a value that can be maintained. That means, if your game runs between 40fps and 60fps on a 60hz screen, after some time Swappy will downgrade the max FPS so that the game renders at a perfect 30fps.
 
-- auto_fps_auto_pipeline: Same as auto_fps_pipeline_forced_on, but if Swappy detects that rendering is very fast (e.g. it takes < 8ms to render on a 60hz screen) Swappy will disable pipelining to minimize input latency. This is the default.
+- ``auto_fps_auto_pipeline``: Same as ``auto_fps_pipeline_forced_on``, but if Swappy detects that rendering is very fast (for example it takes less than 8ms to render on a 60hz screen), Swappy will disable pipelining to minimize input latency. This is the default.
 
-\ **Note:** If :ref:`Engine.max_fps<class_Engine_property_max_fps>` is 0, actual max_fps will considered as to be the screen's refresh rate (often 60hz, 90hz or 120hz depending on device model and OS settings).
+\ **Note:** If :ref:`Engine.max_fps<class_Engine_property_max_fps>` is ``0``, the actual max FPS will be considered to be the screen's refresh rate (often 60hz, 90hz, or 120hz, depending on device model and OS settings).
 
 .. rst-class:: classref-item-separator
 
@@ -5173,6 +5177,20 @@ Default :ref:`InputEventAction<class_InputEventAction>` to confirm a focused but
 :ref:`Dictionary<class_Dictionary>` **input/ui_cancel** :ref:`🔗<class_ProjectSettings_property_input/ui_cancel>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to discard a modal or pending input.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_colorpicker_delete_preset:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_colorpicker_delete_preset** :ref:`🔗<class_ProjectSettings_property_input/ui_colorpicker_delete_preset>`
+
+Default :ref:`InputEventAction<class_InputEventAction>` to delete a color preset in a :ref:`ColorPicker<class_ColorPicker>`.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
@@ -6309,6 +6327,18 @@ If ``true``, long press events on an Android touchscreen are transformed into ri
 :ref:`bool<class_bool>` **input_devices/pointing/android/enable_pan_and_scale_gestures** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/pointing/android/enable_pan_and_scale_gestures>`
 
 If ``true``, multi-touch pan and scale gestures are enabled on Android devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/pointing/android/override_volume_buttons:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/pointing/android/override_volume_buttons** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/pointing/android/override_volume_buttons>`
+
+If ``true``, system volume changes are disabled when the buttons are used within the app.
 
 .. rst-class:: classref-item-separator
 
@@ -9854,11 +9884,13 @@ Controls the maximum number of physics steps that can be simulated each rendered
 
 :ref:`bool<class_bool>` **physics/common/physics_interpolation** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/common/physics_interpolation>`
 
-If ``true``, the renderer will interpolate the transforms of physics objects between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames. See also :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>` and :ref:`Node.reset_physics_interpolation()<class_Node_method_reset_physics_interpolation>`.
+If ``true``, the renderer will interpolate the transforms of objects (both physics and non-physics) between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames. See also :ref:`Node.reset_physics_interpolation()<class_Node_method_reset_physics_interpolation>`.
 
-\ **Note:** If ``true``, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0.0``.
+\ **Note:** Although this is a global setting, finer control of individual branches of the :ref:`SceneTree<class_SceneTree>` is possible using :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`.
 
 \ **Note:** This property is only read when the project starts. To toggle physics interpolation at runtime, set :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` instead.
+
+\ **Note:** Property :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` is automatically disabled if :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` is set to ``true``, as the two methods are incompatible.
 
 .. rst-class:: classref-item-separator
 
@@ -9914,8 +9946,6 @@ Collisions against an inactive edge will have its normal overridden to instead b
 
 \ **Note:** This does not apply when enabling Jolt's enhanced internal edge removal, which supersedes this.
 
-\ **Note:** This setting will only be read once during the lifetime of the application.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -9931,8 +9961,6 @@ The amount of collision margin to use for certain convex collision shapes, such 
 \ **Note:** Collision margins in Jolt do not add any extra size to the shape. Instead the shape is first shrunk by the margin and then expanded by the same amount, resulting in a shape with rounded corners.
 
 \ **Note:** Setting this value too close to ``0.0`` may also negatively affect the accuracy of the collision detection with convex shapes.
-
-\ **Note:** This setting will only be read once during the lifetime of the application.
 
 .. rst-class:: classref-item-separator
 
@@ -10056,8 +10084,6 @@ Fraction of the total penetration to depenetrate per iteration during motion que
 
 \ **Note:** This affects methods :ref:`CharacterBody3D.move_and_slide()<class_CharacterBody3D_method_move_and_slide>`, :ref:`PhysicsBody3D.move_and_collide()<class_PhysicsBody3D_method_move_and_collide>`, :ref:`PhysicsBody3D.test_move()<class_PhysicsBody3D_method_test_move>` and :ref:`PhysicsServer3D.body_test_motion()<class_PhysicsServer3D_method_body_test_motion>`.
 
-\ **Note:** This setting will only be read once during the lifetime of the application.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -10071,8 +10097,6 @@ Fraction of the total penetration to depenetrate per iteration during motion que
 The number of iterations to run when depenetrating during motion queries.
 
 \ **Note:** This affects methods :ref:`CharacterBody3D.move_and_slide()<class_CharacterBody3D_method_move_and_slide>`, :ref:`PhysicsBody3D.move_and_collide()<class_PhysicsBody3D_method_move_and_collide>`, :ref:`PhysicsBody3D.test_move()<class_PhysicsBody3D_method_test_move>` and :ref:`PhysicsServer3D.body_test_motion()<class_PhysicsServer3D_method_body_test_motion>`.
-
-\ **Note:** This setting will only be read once during the lifetime of the application.
 
 .. rst-class:: classref-item-separator
 
@@ -10088,8 +10112,6 @@ If ``true``, enables Jolt's enhanced internal edge removal during motion queries
 
 \ **Note:** This affects methods :ref:`CharacterBody3D.move_and_slide()<class_CharacterBody3D_method_move_and_slide>`, :ref:`PhysicsBody3D.move_and_collide()<class_PhysicsBody3D_method_move_and_collide>`, :ref:`PhysicsBody3D.test_move()<class_PhysicsBody3D_method_test_move>` and :ref:`PhysicsServer3D.body_test_motion()<class_PhysicsServer3D_method_body_test_motion>`.
 
-\ **Note:** This setting will only be read once during the lifetime of the application.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -10103,8 +10125,6 @@ If ``true``, enables Jolt's enhanced internal edge removal during motion queries
 If ``true``, populates the ``face_index`` field in the results of :ref:`PhysicsDirectSpaceState3D.intersect_ray()<class_PhysicsDirectSpaceState3D_method_intersect_ray>`, also accessed through :ref:`RayCast3D.get_collision_face_index()<class_RayCast3D_method_get_collision_face_index>`. If ``false``, the ``face_index`` field will be left at its default value of ``-1``.
 
 \ **Note:** Enabling this setting will increase Jolt's memory usage for :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` by around 25%.
-
-\ **Note:** This setting will only be read once during the lifetime of the application.
 
 .. rst-class:: classref-item-separator
 
@@ -10121,8 +10141,6 @@ If ``true``, enables Jolt's enhanced internal edge removal during shape queries.
 \ **Note:** This affects methods :ref:`PhysicsDirectSpaceState3D.cast_motion()<class_PhysicsDirectSpaceState3D_method_cast_motion>`, :ref:`PhysicsDirectSpaceState3D.collide_shape()<class_PhysicsDirectSpaceState3D_method_collide_shape>`, :ref:`PhysicsDirectSpaceState3D.get_rest_info()<class_PhysicsDirectSpaceState3D_method_get_rest_info>` and :ref:`PhysicsDirectSpaceState3D.intersect_shape()<class_PhysicsDirectSpaceState3D_method_intersect_shape>`.
 
 \ **Note:** Enabling this setting can cause certain shapes to be culled from the results entirely, but you will get at least one intersection per body.
-
-\ **Note:** This setting will only be read once during the lifetime of the application.
 
 .. rst-class:: classref-item-separator
 
@@ -10215,8 +10233,6 @@ If ``true``, enables the body pair contact cache, which removes the need for pot
 :ref:`float<class_float>` **physics/jolt_physics_3d/simulation/bounce_velocity_threshold** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/bounce_velocity_threshold>`
 
 The minimum velocity needed before a collision can be bouncy, in meters per second.
-
-\ **Note:** This setting will only be read once during the lifetime of the application.
 
 .. rst-class:: classref-item-separator
 
@@ -10695,6 +10711,8 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 :ref:`int<class_int>` **rendering/environment/glow/upscale_mode** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>`
 
 Sets how the glow effect is upscaled before being copied onto the screen. Linear is faster, but looks blocky. Bicubic is slower but looks smooth.
+
+\ **Note:** :ref:`rendering/environment/glow/upscale_mode<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>` is only effective when using the Forward+ or Mobile rendering methods, as Compatibility uses a different glow implementation.
 
 .. rst-class:: classref-item-separator
 
@@ -12787,7 +12805,7 @@ The ratio of :ref:`WorkerThreadPool<class_WorkerThreadPool>`'s threads that will
 
 :ref:`int<class_int>` **threading/worker_pool/max_threads** = ``-1`` :ref:`🔗<class_ProjectSettings_property_threading/worker_pool/max_threads>`
 
-Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``-1`` means no limit.
+Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``-1`` means ``1`` on Web, or a number of *logical* CPU cores available on other platforms (see :ref:`OS.get_processor_count()<class_OS_method_get_processor_count>`).
 
 .. rst-class:: classref-item-separator
 
@@ -12923,7 +12941,7 @@ If ``true``, the hand tracking extension is enabled if available.
 
 If ``true``, support for the controller inferred data source is requested. If supported, you will receive hand tracking data even if the user has a controller in hand, with finger positions automatically inferred from controller input and/or sensors.
 
-\ **Node:** This requires the OpenXR data source extension and controller inferred handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
+\ **Note:** This requires the OpenXR data source extension and controller inferred handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
 
 .. rst-class:: classref-item-separator
 
@@ -12937,7 +12955,7 @@ If ``true``, support for the controller inferred data source is requested. If su
 
 If ``true``, support for the unobstructed data source is requested. If supported, you will receive hand tracking data based on the actual finger positions of the user often determined by optical tracking.
 
-\ **Node:** This requires the OpenXR data source extension and unobstructed handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
+\ **Note:** This requires the OpenXR data source extension and unobstructed handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
 
 .. rst-class:: classref-item-separator
 

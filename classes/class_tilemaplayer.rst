@@ -69,6 +69,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`occlusion_enabled<class_TileMapLayer_property_occlusion_enabled>`                   | ``true``              |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                             | :ref:`physics_quadrant_size<class_TileMapLayer_property_physics_quadrant_size>`           | ``16``                |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                             | :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>`       | ``16``                |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                     | :ref:`tile_map_data<class_TileMapLayer_property_tile_map_data>`                           | ``PackedByteArray()`` |
@@ -325,6 +327,27 @@ Enable or disable light occlusion.
 
 ----
 
+.. _class_TileMapLayer_property_physics_quadrant_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics_quadrant_size** = ``16`` :ref:`🔗<class_TileMapLayer_property_physics_quadrant_size>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_physics_quadrant_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_physics_quadrant_size**\ (\ )
+
+The **TileMapLayer**'s physics quadrant size. Within a physics quadrant, cells with similar physics properties are grouped together and their collision shapes get merged. :ref:`physics_quadrant_size<class_TileMapLayer_property_physics_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quadrant size groups together ``16 * 16 = 256`` tiles.
+
+\ **Note:** As quadrants are created according to the map's coordinate system, the quadrant's "square shape" might not look like square in the **TileMapLayer**'s local coordinate system.
+
+\ **Note:** This impacts the value returned by :ref:`get_coords_for_body_rid()<class_TileMapLayer_method_get_coords_for_body_rid>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TileMapLayer_property_rendering_quadrant_size:
 
 .. rst-class:: classref-property
@@ -336,7 +359,7 @@ Enable or disable light occlusion.
 - |void| **set_rendering_quadrant_size**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_rendering_quadrant_size**\ (\ )
 
-The **TileMapLayer**'s quadrant size. A quadrant is a group of tiles to be drawn together on a single canvas item, for optimization purposes. :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quadrant size groups together ``16 * 16 = 256`` tiles.
+The **TileMapLayer**'s rendering quadrant size. A quadrant is a group of tiles to be drawn together on a single canvas item, for optimization purposes. :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quadrant size groups together ``16 * 16 = 256`` tiles.
 
 The quadrant size does not apply on a Y-sorted **TileMapLayer**, as tiles are grouped by Y position instead in that case.
 
@@ -598,7 +621,7 @@ Returns the :ref:`TileData<class_TileData>` object associated with the given cel
 
 :ref:`Vector2i<class_Vector2i>` **get_coords_for_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TileMapLayer_method_get_coords_for_body_rid>`
 
-Returns the coordinates of the tile for given physics body :ref:`RID<class_RID>`. Such an :ref:`RID<class_RID>` can be retrieved from :ref:`KinematicCollision2D.get_collider_rid()<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
+Returns the coordinates of the physics quadrant (see :ref:`physics_quadrant_size<class_TileMapLayer_property_physics_quadrant_size>`) for given physics body :ref:`RID<class_RID>`. Such an :ref:`RID<class_RID>` can be retrieved from :ref:`KinematicCollision2D.get_collider_rid()<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
 
 .. rst-class:: classref-item-separator
 

@@ -1225,7 +1225,7 @@ If you need to return the removed element, use :ref:`pop_at()<class_Array_method
 
 Sets the array's number of elements to ``size``. If ``size`` is smaller than the array's current size, the elements at the end are removed. If ``size`` is greater, new default elements (usually ``null``) are added, depending on the array's type.
 
-Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` constants if this method fails.
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the following :ref:`Error<enum_@GlobalScope_Error>` constants if this method fails: :ref:`@GlobalScope.ERR_LOCKED<class_@GlobalScope_constant_ERR_LOCKED>` if the array is read-only, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if the size is negative, or :ref:`@GlobalScope.ERR_OUT_OF_MEMORY<class_@GlobalScope_constant_ERR_OUT_OF_MEMORY>` if allocations fail. Use :ref:`size()<class_Array_method_size>` to find the actual size of the array after resize.
 
 \ **Note:** Calling this method once and assigning the new values is faster than calling :ref:`append()<class_Array_method_append>` for every new element.
 

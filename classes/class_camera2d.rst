@@ -77,6 +77,8 @@ Properties
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`                                                 | :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`                             | ``10000000``      |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`limit_enabled<class_Camera2D_property_limit_enabled>`                           | ``true``          |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`                                                 | :ref:`limit_left<class_Camera2D_property_limit_left>`                                 | ``-10000000``     |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`                                                 | :ref:`limit_right<class_Camera2D_property_limit_right>`                               | ``10000000``      |
@@ -471,6 +473,23 @@ If ``true``, the camera's rendered view is not affected by its :ref:`Node2D.rota
 - :ref:`int<class_int>` **get_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Bottom scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Camera2D_property_limit_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **limit_enabled** = ``true`` :ref:`🔗<class_Camera2D_property_limit_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_limit_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_limit_enabled**\ (\ )
+
+If ``true``, the limits will be enabled. Disabling this will allow the camera to focus anywhere, when the four ``limit_*`` properties will not work.
 
 .. rst-class:: classref-item-separator
 

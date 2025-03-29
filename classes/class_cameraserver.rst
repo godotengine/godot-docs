@@ -27,6 +27,18 @@ It is notably used to provide AR modules with a video feed from the camera.
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+-----------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`monitoring_feeds<class_CameraServer_property_monitoring_feeds>` | ``false`` |
+   +-------------------------+-----------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -120,6 +132,30 @@ The Y component camera image.
 :ref:`FeedImage<enum_CameraServer_FeedImage>` **FEED_CBCR_IMAGE** = ``1``
 
 The CbCr component camera image.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_CameraServer_property_monitoring_feeds:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **monitoring_feeds** = ``false`` :ref:`🔗<class_CameraServer_property_monitoring_feeds>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_monitoring_feeds**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_monitoring_feeds**\ (\ )
+
+If ``true``, the server is actively monitoring available camera feeds.
+
+This has a performance cost, so only set it to ``true`` when you're actively accessing the camera.
 
 .. rst-class:: classref-section-separator
 

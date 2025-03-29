@@ -203,7 +203,7 @@ Signals
 
 **main_screen_changed**\ (\ screen_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorPlugin_signal_main_screen_changed>`
 
-Emitted when user changes the workspace (**2D**, **3D**, **Script**, **AssetLib**). Also works with custom screens defined by plugins.
+Emitted when user changes the workspace (**2D**, **3D**, **Script**, **Game**, **AssetLib**). Also works with custom screens defined by plugins.
 
 .. rst-class:: classref-item-separator
 
@@ -837,7 +837,7 @@ This is for editors that edit script-based objects. You can return a list of bre
 
 Override this method in your plugin to return a :ref:`Texture2D<class_Texture2D>` in order to give it an icon.
 
-For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.
+For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", "Game", and "AssetLib" buttons.
 
 Ideally, the plugin icon should be white with a transparent background and 16×16 pixels in size.
 
@@ -876,7 +876,7 @@ Ideally, the plugin icon should be white with a transparent background and 16×1
 
 Override this method in your plugin to provide the name of the plugin when displayed in the Godot editor.
 
-For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.
+For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", "Game", and "AssetLib" buttons.
 
 .. rst-class:: classref-item-separator
 
@@ -984,7 +984,7 @@ Implement this function if your plugin edits a specific type of object (Resource
 
 :ref:`bool<class_bool>` **_has_main_screen**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorPlugin_private_method__has_main_screen>`
 
-Returns ``true`` if this is a main screen editor plugin (it goes in the workspace selector together with **2D**, **3D**, **Script** and **AssetLib**).
+Returns ``true`` if this is a main screen editor plugin (it goes in the workspace selector together with **2D**, **3D**, **Script**, **Game**, and **AssetLib**).
 
 When the plugin's workspace is selected, other main screen plugins will be hidden, but your plugin will not appear automatically. It needs to be added as a child of :ref:`EditorInterface.get_editor_main_screen()<class_EditorInterface_method_get_editor_main_screen>` and made visible inside :ref:`_make_visible()<class_EditorPlugin_private_method__make_visible>`.
 
@@ -1147,7 +1147,7 @@ If the dock is repositioned and as long as the plugin is active, the editor will
 
 When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_docks()<class_EditorPlugin_method_remove_control_from_docks>` and free it with :ref:`Node.queue_free()<class_Node_method_queue_free>`.
 
-Optionally, you can specify a shortcut parameter. When pressed, this shortcut will toggle the dock's visibility once it's moved to the bottom panel (this shortcut does not affect the dock otherwise). See the default editor bottom panel shortcuts in the Editor Settings for inspiration. Per convention, they all use :kbd:`Alt` modifier.
+Optionally, you can specify a shortcut parameter. When pressed, this shortcut will open and focus the dock.
 
 .. rst-class:: classref-item-separator
 

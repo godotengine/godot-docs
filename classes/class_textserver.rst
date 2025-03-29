@@ -837,6 +837,8 @@ Should be used only in conjunction with :ref:`BREAK_WORD_BOUND<class_TextServer_
 
 :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_EDGE_SPACES** = ``16``
 
+**Deprecated:** Use ``BREAK_TRIM_START_EDGE_SPACES | BREAK_TRIM_END_EDGE_SPACES`` instead.
+
 Remove edge spaces from the broken line segments.
 
 .. _class_TextServer_constant_BREAK_TRIM_INDENT:
@@ -846,6 +848,26 @@ Remove edge spaces from the broken line segments.
 :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_INDENT** = ``32``
 
 Subtract first line indentation width from all lines after the first one.
+
+.. _class_TextServer_constant_BREAK_TRIM_START_EDGE_SPACES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_START_EDGE_SPACES** = ``64``
+
+Remove spaces and line break characters from the start of broken line segments.
+
+E.g, after line breaking, the second segment of the following text ``test  \n  next``, is ``next`` if the flag is set, and ``  next`` if it is not.
+
+.. _class_TextServer_constant_BREAK_TRIM_END_EDGE_SPACES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_END_EDGE_SPACES** = ``128``
+
+Remove spaces and line break characters from the end of broken line segments.
+
+E.g, after line breaking, the first segment of the following text ``test  \n  next``, is ``test`` if the flag is set, and ``test  \n`` if it is not.
 
 .. rst-class:: classref-item-separator
 
@@ -939,7 +961,7 @@ Trims the text per word.
 
 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_ELLIPSIS** = ``3``
 
-Trims the text per character and adds an ellipsis to indicate that parts are hidden.
+Trims the text per character and adds an ellipsis to indicate that parts are hidden if trimmed text is 6 characters or longer.
 
 .. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS:
 
@@ -947,7 +969,23 @@ Trims the text per character and adds an ellipsis to indicate that parts are hid
 
 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_WORD_ELLIPSIS** = ``4``
 
-Trims the text per word and adds an ellipsis to indicate that parts are hidden.
+Trims the text per word and adds an ellipsis to indicate that parts are hidden if trimmed text is 6 characters or longer.
+
+.. _class_TextServer_constant_OVERRUN_TRIM_ELLIPSIS_FORCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_ELLIPSIS_FORCE** = ``5``
+
+Trims the text per character and adds an ellipsis to indicate that parts are hidden regardless of trimmed text length.
+
+.. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS_FORCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_WORD_ELLIPSIS_FORCE** = ``6``
+
+Trims the text per word and adds an ellipsis to indicate that parts are hidden regardless of trimmed text length.
 
 .. rst-class:: classref-item-separator
 

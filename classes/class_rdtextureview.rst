@@ -30,7 +30,7 @@ Properties
    :widths: auto
 
    +------------------------------------------------------------+----------------------------------------------------------------------+---------+
-   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`         | :ref:`format_override<class_RDTextureView_property_format_override>` | ``218`` |
+   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`         | :ref:`format_override<class_RDTextureView_property_format_override>` | ``232`` |
    +------------------------------------------------------------+----------------------------------------------------------------------+---------+
    | :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` | :ref:`swizzle_a<class_RDTextureView_property_swizzle_a>`             | ``6``   |
    +------------------------------------------------------------+----------------------------------------------------------------------+---------+
@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format_override** = ``218`` :ref:`🔗<class_RDTextureView_property_format_override>`
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format_override** = ``232`` :ref:`🔗<class_RDTextureView_property_format_override>`
 
 .. rst-class:: classref-property-setget
 

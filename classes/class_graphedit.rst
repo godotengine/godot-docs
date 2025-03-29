@@ -136,6 +136,8 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>`              | :ref:`get_connection_line<class_GraphEdit_method_get_connection_line>`\ (\ from_node\: :ref:`Vector2<class_Vector2>`, to_node\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                     |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connection_list_from_node<class_GraphEdit_method_get_connection_list_from_node>`\ (\ node\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connections_intersecting_with_rect<class_GraphEdit_method_get_connections_intersecting_with_rect>`\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const|                                                                                                                                 |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GraphFrame<class_GraphFrame>`                              | :ref:`get_element_frame<class_GraphEdit_method_get_element_frame>`\ (\ element\: :ref:`StringName<class_StringName>`\ )                                                                                                                                                                      |
@@ -1224,6 +1226,30 @@ Returns the number of connections from ``from_port`` of ``from_node``.
 :ref:`PackedVector2Array<class_PackedVector2Array>` **get_connection_line**\ (\ from_node\: :ref:`Vector2<class_Vector2>`, to_node\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_GraphEdit_method_get_connection_line>`
 
 Returns the points which would make up a connection between ``from_node`` and ``to_node``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_method_get_connection_list_from_node:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_connection_list_from_node**\ (\ node\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_GraphEdit_method_get_connection_list_from_node>`
+
+Returns an :ref:`Array<class_Array>` containing a list of all connections for ``node``.
+
+A connection is represented as a :ref:`Dictionary<class_Dictionary>` in the form of:
+
+::
+
+    {
+        from_node: StringName,
+        from_port: int,
+        to_node: StringName,
+        to_port: int,
+        keep_alive: bool
+    }
 
 .. rst-class:: classref-item-separator
 

@@ -799,7 +799,7 @@ Returns global menu close callback.
 
 Returns global menu open callback.
 
-b]Note:** This method is implemented only on macOS.
+\ **Note:** This method is implemented only on macOS.
 
 .. rst-class:: classref-item-separator
 

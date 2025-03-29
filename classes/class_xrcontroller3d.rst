@@ -25,7 +25,7 @@ Controllers are linked by their ID. You can create controller nodes before the c
 
 The position of the controller node is automatically updated by the :ref:`XRServer<class_XRServer>`. This makes this node ideal to add child nodes to visualize the controller.
 
-As many XR runtimes now use a configurable action map all inputs are named.
+The current :ref:`XRInterface<class_XRInterface>` defines the names of inputs. In the case of OpenXR, these are the names of actions in the current action set from the OpenXR action map.
 
 .. rst-class:: classref-introduction-group
 
@@ -136,6 +136,8 @@ Method Descriptions
 
 Returns a numeric value for the input with the given ``name``. This is used for triggers and grip sensors.
 
+\ **Note:** The current :ref:`XRInterface<class_XRInterface>` defines the ``name`` for each input. In the case of OpenXR, these are the names of actions in the current action set.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -147,6 +149,8 @@ Returns a numeric value for the input with the given ``name``. This is used for 
 :ref:`Variant<class_Variant>` **get_input**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRController3D_method_get_input>`
 
 Returns a :ref:`Variant<class_Variant>` for the input with the given ``name``. This works for any input type, the variant will be typed according to the actions configuration.
+
+\ **Note:** The current :ref:`XRInterface<class_XRInterface>` defines the ``name`` for each input. In the case of OpenXR, these are the names of actions in the current action set.
 
 .. rst-class:: classref-item-separator
 
@@ -172,6 +176,8 @@ Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_X
 
 Returns a :ref:`Vector2<class_Vector2>` for the input with the given ``name``. This is used for thumbsticks and thumbpads found on many controllers.
 
+\ **Note:** The current :ref:`XRInterface<class_XRInterface>` defines the ``name`` for each input. In the case of OpenXR, these are the names of actions in the current action set.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -183,6 +189,8 @@ Returns a :ref:`Vector2<class_Vector2>` for the input with the given ``name``. T
 :ref:`bool<class_bool>` **is_button_pressed**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRController3D_method_is_button_pressed>`
 
 Returns ``true`` if the button with the given ``name`` is pressed.
+
+\ **Note:** The current :ref:`XRInterface<class_XRInterface>` defines the ``name`` for each input. In the case of OpenXR, these are the names of actions in the current action set.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -31,9 +31,11 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+-------------------------------------------+
-   | :ref:`Curve3D<class_Curve3D>` | :ref:`curve<class_Path3D_property_curve>` |
-   +-------------------------------+-------------------------------------------+
+   +-------------------------------+---------------------------------------------------------------------+-----------------------+
+   | :ref:`Curve3D<class_Curve3D>` | :ref:`curve<class_Path3D_property_curve>`                           |                       |
+   +-------------------------------+---------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`debug_custom_color<class_Path3D_property_debug_custom_color>` | ``Color(0, 0, 0, 1)`` |
+   +-------------------------------+---------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -51,6 +53,18 @@ Signals
 **curve_changed**\ (\ ) :ref:`🔗<class_Path3D_signal_curve_changed>`
 
 Emitted when the :ref:`curve<class_Path3D_property_curve>` changes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Path3D_signal_debug_color_changed:
+
+.. rst-class:: classref-signal
+
+**debug_color_changed**\ (\ ) :ref:`🔗<class_Path3D_signal_debug_color_changed>`
+
+Emitted when the :ref:`debug_custom_color<class_Path3D_property_debug_custom_color>` changes.
 
 .. rst-class:: classref-section-separator
 
@@ -73,6 +87,25 @@ Property Descriptions
 - :ref:`Curve3D<class_Curve3D>` **get_curve**\ (\ )
 
 A :ref:`Curve3D<class_Curve3D>` describing the path.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Path3D_property_debug_custom_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **debug_custom_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_Path3D_property_debug_custom_color>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_debug_custom_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_debug_custom_color**\ (\ )
+
+The custom color to use to draw the shape in the editor.
+
+If set to ``Color(0.0, 0.0, 0.0)`` (by default), the color set in EditorSettings is used.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
