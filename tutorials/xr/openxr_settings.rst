@@ -9,8 +9,11 @@ we will only discuss the settings in the core of Godot here.
 
 .. image:: img/openxr_settings.webp
 
+General settings
+----------------
+
 Enabled
--------
+~~~~~~~
 
 This setting enables the OpenXR module when Godot starts.
 This is required when the Vulkan backend is used.
@@ -21,12 +24,12 @@ This also needs to be enabled to get access to the action map editor.
 You can use the ``--xr-mode on`` command line switch to force this to on.
 
 Default Action Map
-------------------
+~~~~~~~~~~~~~~~~~~
 
 This specifies the path of the action map file that OpenXR will load and communicate to the XR Runtime.
 
 Form Factor
------------
+~~~~~~~~~~~
 
 This specifies whether your game is designed for:
 
@@ -36,7 +39,7 @@ This specifies whether your game is designed for:
 If the device on which you run your game does not match the selection here, OpenXR will fail to initialise.
 
 View Configuration
-------------------
+~~~~~~~~~~~~~~~~~~
 
 This specifies the view configuration your game is designed for:
 
@@ -51,7 +54,7 @@ If the device on which you run your game does not match the selection here, Open
   These may be supported in the near future. 
 
 Reference Space
----------------
+~~~~~~~~~~~~~~~
 
 Within XR all elements like the player's head and hands are tracked within a tracking volume.
 At the base of this tracking volume is our origin point, which maps our virtual space to the real space.
@@ -60,7 +63,7 @@ depending on the XR system used.
 In OpenXR these scenarios are well defined and selected by setting a reference space.
 
 Local
-~~~~~
+^^^^^
 
 The local reference space places our origin point at the player's head by default.
 Some XR runtimes will do this each time your game starts, others will make the position persist over sessions.
@@ -83,7 +86,7 @@ so your game can react accordingly.
   You should **not** call ``center_on_hmd`` when using this reference space.
 
 Stage
-~~~~~
+^^^^^
 
 The stage reference space is our default reference space and places our origin point at the center of our play space.
 For XR runtimes that allow you to draw out a guardian boundary this location and its orientation is often set by the user.
@@ -111,7 +114,7 @@ In Godot you can do this by calling the ``center_on_hmd`` function on the :ref:`
   Any other XR tracked elements such as controllers or anchors will also be adjusted accordingly. 
 
 Local Floor
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 The local floor reference space is similar to the local reference space as it positions the origin point where the player is.
 In this mode however the height of the player is kept.
@@ -146,7 +149,7 @@ so your game can react accordingly.
   You should **not** call ``center_on_hmd`` when using this reference space.
 
 Environment Blend Mode
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 The environment blend mode defines how our rendered output is blended into "the real world" provided this is supported by the headset.
 
@@ -166,7 +169,7 @@ If a mode is selected that is not supported by the headset, the first available 
 .. _doc_openxr_settings_foveation_level:
 
 Foveation Level
----------------
+~~~~~~~~~~~~~~~
 
 Sets the foveation level used when rendering provided this feature is supported by the hardware used.
 Foveation is a technique where the further away from the center of the viewport we render content, the lower resolution we render at.
@@ -182,7 +185,7 @@ The higher the level, the better the performance gains, but also the more reduct
   This feature is disabled if post effects are used such as glow, bloom, or DOF.
 
 Foveation Dynamic
------------------
+~~~~~~~~~~~~~~~~~
 
 When enabled the foveation level will be adjusted automatically depending on current GPU load.
 It will be adjusted between low and the select foveation level in the previous setting.
@@ -192,7 +195,7 @@ It is therefore best to combine this setting with foveation level set to high.
   **Compatibility renderer only**
 
 Submit Depth Buffer
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 If enabled an OpenXR supplied depth buffer will be used while rendering which is submitted alongside the rendered image.
 The XR runtime can use this for improved reprojection.
@@ -203,7 +206,7 @@ The XR runtime can use this for improved reprojection.
   it is advised to leave this setting off unless it provides noticeable benefits for your use case.
 
 Startup Alert
--------------
+~~~~~~~~~~~~~
 
 If enabled, this will result in an alert message presented to the user if OpenXR fails to start.
 We don't always receive feedback from the XR system as to why starting fails. If we do, we log this to the console.
@@ -219,7 +222,19 @@ or if you're handling the failure condition yourself by checking ``OpenXRInterfa
 Extensions
 ----------
 
-This subsection provides access to various optional OpenXR extensions.
+This subsection allows you to enable to various optional OpenXR extensions. Keep in
+mind that the extensions will only work if the OpenXR runtime (SteamVR, Oculus, etc)
+the project is ran with supports them.
+
+Debug Utils
+~~~~~~~~~~~
+
+Enabling this will log debug messages from the XR runtime.
+
+Debug Message Types
+~~~~~~~~~~~~~~~~~~~
+
+This allows you to choose which debug messages are logged.
 
 Hand Tracking
 ~~~~~~~~~~~~~
@@ -232,6 +247,36 @@ come from optical hand tracking sensors or any other applicable source.
 If your game only supports controllers this should be turned off. 
 
 See the chapter on :ref:`hand tracking <doc_openxr_hand_tracking>` for additional details.
+
+Hand Tracking Unobstructed Data Source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enabling this means hand tracking may use the exact position of fingers, usually
+what a headset camera sees.
+
+Hand Tracking Controller Data Source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enabling this means hand tracking may use the controller itself, and infer where
+fingers are based on controller input or sensors on the controller.
+
+Hand Interaction Profile
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enabling this extension allows the use of two new hand tracking poses. Pinch pose
+which is the location between the thumb and index finger pointing forward, and poke
+pose which is at the tip of the index finger.
+
+This also allows 3 more gesture based inputs. Pinch, when the user pinches their
+thumb and index finger together. Aim activation, when the index finger is fully
+extended. And Grasps, when the user makes a fist.
+
+When a hand interaction profile and controller interaction profile are supplied, the
+runtime will switch between profiles depending on if optical tracking is used or if
+the user is holding a controller.
+
+If only a hand interaction profile is supplied any runtime should use hand
+interaction even if a controller is being held.
 
 Eye Gaze Interaction
 ~~~~~~~~~~~~~~~~~~~~
@@ -253,3 +298,19 @@ and set its ``tracker`` property to ``/user/eyes_ext``
 and set its ``pose`` property to ``eye_pose``.
 
 Now you can add things to this controller node such as a raycast, and control things with your eyes.
+
+Binding Modifiers
+-----------------
+
+These control whether or not binding modifiers can be used. Binding modifiers are
+used to apply thresholds or offset values.
+
+Analog Threshold
+~~~~~~~~~~~~~~~~
+
+Allow analog threshold binding modifiers.
+
+Dpad Binding
+~~~~~~~~~~~~
+
+Allow D-pad binding modifiers.
