@@ -8,6 +8,7 @@ The warning message is:
     The parameter "delta" is never used in the function "_process()". If this is intended, prefix it with an underscore: "_delta".
 
 The default warning level for this warning is **Warn**.
+To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/unused_parameter<class_ProjectSettings_property_debug/gdscript/warnings/unused_parameter>`.
 
 When this warning occurs
 ------------------------

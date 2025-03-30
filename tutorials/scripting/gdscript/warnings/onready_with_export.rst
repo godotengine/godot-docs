@@ -8,6 +8,7 @@ The warning message is:
     "@onready" will set the default value after "@export" takes effect and will override it.
 
 The default warning level for this warning is **Error**.
+To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/onready_with_export<class_ProjectSettings_property_debug/gdscript/warnings/onready_with_export>`.
 
 When this warning occurs
 ------------------------

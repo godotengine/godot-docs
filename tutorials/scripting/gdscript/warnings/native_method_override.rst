@@ -8,6 +8,7 @@ The warning message is:
     The method "get_class()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected.
 
 The default warning level for this warning is **Error**.
+To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/native_method_override<class_ProjectSettings_property_debug/gdscript/warnings/native_method_override>`.
 
 When this warning occurs
 ------------------------

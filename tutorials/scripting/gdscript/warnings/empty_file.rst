@@ -8,6 +8,7 @@ The warning message is:
     Empty script file.
 
 The default warning level for this warning is **Warn**.
+To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/empty_file<class_ProjectSettings_property_debug/gdscript/warnings/empty_file>`.
 
 When this warning occurs
 ------------------------
