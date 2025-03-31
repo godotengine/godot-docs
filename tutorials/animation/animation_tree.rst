@@ -197,47 +197,9 @@ You may specify a crossfade transition time. In the Inspector, you may change th
     // Get current state index (read-only).
     animationTree.Get("parameters/Transition/current_index");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-BlendSpace2D
-~~~~~~~~~~~~
-
-``BlendSpace2D`` is a node to do advanced blending in two dimensions. Points are added to a two-dimensional space and then a position
-can be controlled to determine blending:
-
-.. image:: img/animtree7.gif
-
-The ranges in X and Y can be controlled (and labeled for convenience). By default, points can be placed anywhere (right-click on
-the coordinate system or use the *add point* button) and triangles will be generated automatically using Delaunay.
-
-.. image:: img/animtree8.gif
-
-It is also possible to draw the triangles manually by disabling the *auto triangle* option, though this is rarely necessary:
-
-.. image:: img/animtree9.png
-
-Finally, it is possible to change the blend mode. By default, blending happens by interpolating points inside the closest triangle.
-When dealing with 2D animations (frame by frame), you may want to switch to *Discrete* mode.
-Alternatively, if you want to keep the current play position when switching between discrete animations, there is a *Carry* mode.
-This mode can be changed in the *Blend* menu:
-
-.. image:: img/animtree10.png
-
-BlendSpace1D
-~~~~~~~~~~~~
-
-This is similar to 2D blend spaces, but in one dimension (so triangles are not needed).
 
 StateMachine
 ~~~~~~~~~~~~
-=======
-StateMachine
-------------
->>>>>>> db6fde45d (AnimationTree documentation overhaul)
-=======
-StateMachine
-------------
->>>>>>> db6fde45d (AnimationTree documentation overhaul)
 
 When you make an ``AnimationNodeStateMachine``, you get an empty 2d graph in the bottom panel, under the AnimationTree tab. It contains a ``Start`` and ``End``
 state by default. 
