@@ -144,11 +144,6 @@ Tools must be disabled in order to use this flag, as the editor is not designed
 to operate without 3D support. Without it, the binary size can be reduced
 by about 15%.
 
-.. note::
-
-    Disabling 3D support also disables all navigation. This includes 2D navigation,
-    as it uses the 3D navigation system internally.
-
 Disabling advanced GUI objects
 ------------------------------
 
@@ -214,7 +209,7 @@ a lot of them:
 
 ::
 
-    scons target=template_release module_basis_universal_enabled=no module_bmp_enabled=no module_camera_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_jsonrpc_enabled=no module_ktx_enabled=no module_mbedtls_enabled=no module_meshoptimizer_enabled=no module_minimp3_enabled=no module_mobile_vr_enabled=no module_msdfgen_enabled=no module_multiplayer_enabled=no module_noise_enabled=no module_navigation_enabled=no module_ogg_enabled=no module_openxr_enabled=no module_raycast_enabled=no module_regex_enabled=no module_squish_enabled=no module_svg_enabled=no module_tga_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_upnp_enabled=no module_vhacd_enabled=no module_vorbis_enabled=no module_webrtc_enabled=no module_websocket_enabled=no module_webxr_enabled=no module_zip_enabled=no
+    scons target=template_release module_basis_universal_enabled=no module_bmp_enabled=no module_camera_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_jsonrpc_enabled=no module_ktx_enabled=no module_mbedtls_enabled=no module_meshoptimizer_enabled=no module_minimp3_enabled=no module_mobile_vr_enabled=no module_msdfgen_enabled=no module_multiplayer_enabled=no module_noise_enabled=no module_navigation_3d_enabled=no module_ogg_enabled=no module_openxr_enabled=no module_raycast_enabled=no module_regex_enabled=no module_squish_enabled=no module_svg_enabled=no module_tga_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_upnp_enabled=no module_vhacd_enabled=no module_vorbis_enabled=no module_webrtc_enabled=no module_websocket_enabled=no module_webxr_enabled=no module_zip_enabled=no
 
 If this proves not to work for your use case, you should review the list of
 modules and see which ones you actually still need for your game (e.g. you might
@@ -245,7 +240,7 @@ following:
     module_msdfgen_enabled= "no"
     module_multiplayer_enabled = "no"
     module_noise_enabled = "no"
-    module_navigation_enabled = "no"
+    module_navigation_3d_enabled = "no"
     module_ogg_enabled = "no"
     module_openxr_enabled = "no"
     module_raycast_enabled = "no"
