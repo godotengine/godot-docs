@@ -76,3 +76,9 @@ the export menu.
      - ``GODOT_WINDOWS_CODESIGN_IDENTITY``
    * - Options / Codesign / Password
      - ``GODOT_WINDOWS_CODESIGN_PASSWORD``
+
+Export options
+--------------
+
+You can find a full list of export options available in the
+:ref:`class_EditorExportPlatformWindows` class reference.

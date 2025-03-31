@@ -251,3 +251,9 @@ the export menu.
      - ``GODOT_MACOS_NOTARIZATION_APPLE_ID_NAME``
    * - Options / Notarization / Apple ID Password
      - ``GODOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD``
+
+Export options
+--------------
+
+You can find a full list of export options available in the
+:ref:`class_EditorExportPlatformMacOS` class reference.
