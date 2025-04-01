@@ -53,14 +53,12 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
     to work with Godot's ``master`` branch.
 
 .. warning::
-    Our long-term goal is that GDExtensions targeting an earlier version of Godot will work
-    in later minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.1
-    should work just fine in Godot 4.2, but one targeting Godot 4.2 won't work in Godot 4.1.
+    GDExtensions targeting an earlier version of Godot should work in later
+    minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
+    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
 
-    However, GDExtension is currently *experimental*, which means that we may break compatibility
-    in order to fix major bugs or include critical features. For example, GDExtensions created
-    for Godot 4.0 aren't compatible with Godot 4.1
-    (see :ref:`updating_your_gdextension_for_godot_4_1`).
+    There is one exception to this: extensions targeting Godot 4.0 will **not** work with
+    Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
 If you are versioning your project using Git, it is recommended to add it as
 a Git submodule:
