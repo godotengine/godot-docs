@@ -242,9 +242,6 @@ Multiple layered ``SubViewportContainer`` nodes, that should all receive mouse i
 Updating your GDExtension for 4.1
 ---------------------------------
 
-GDExtension is still in beta. Until it's marked as stable, compatibility may break when
-upgrading to a new minor version of Godot.
-
 In order to fix a serious bug, in Godot 4.1 we had to break binary compatibility in a big
 way and source compatibility in a small way.
 
