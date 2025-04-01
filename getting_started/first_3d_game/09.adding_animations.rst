@@ -266,7 +266,7 @@ Open the *Player* scene, select the AnimationPlayer node and then click on
 (two small squares) alongside the *float* animation. Click OK to close the window.
 
 Then open ``mob.tscn``, create an :ref:`AnimationPlayer <class_AnimationPlayer>` child
-node and select it. Click **Animation > Manage Animations**, then **Add Library**. You
+node and select it. Click **Animation > Manage Animations**, then **New Library**. You
 should see the message "Global library will be created." Leave the text field blank and
 click OK. Click the *Paste* icon (clipboard) and it should appear in the window. Click OK
 to close the window.
