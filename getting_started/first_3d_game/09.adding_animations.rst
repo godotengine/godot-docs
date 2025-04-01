@@ -342,7 +342,8 @@ Here's the *Player* script.
         # Prevent diagonal movement being very fast
         if direction != Vector3.ZERO:
             direction = direction.normalized()
-            $Pivot.look_at(position + direction,Vector3.UP)
+            # Setting the basis property will affect the rotation of the node.
+            $Pivot.basis = Basis.looking_at(direction)
             $AnimationPlayer.speed_scale = 4
         else:
             $AnimationPlayer.speed_scale = 1
@@ -448,7 +449,8 @@ Here's the *Player* script.
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
+                // Setting the basis property will affect the rotation of the node.
+                GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
                 GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 4;
             }
             else

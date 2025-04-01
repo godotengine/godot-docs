@@ -349,7 +349,8 @@ Finally, the longest script, ``player.gd``:
         # Prevent diagonal moving fast af
         if direction != Vector3.ZERO:
             direction = direction.normalized()
-            $Pivot.look_at(position + direction, Vector3.UP)
+            # Setting the basis property will affect the rotation of the node.
+            $Pivot.basis = Basis.looking_at(direction)
 
         # Ground Velocity
         target_velocity.x = direction.x * speed
@@ -450,7 +451,8 @@ Finally, the longest script, ``player.gd``:
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
+                // Setting the basis property will affect the rotation of the node.
+                GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
             }
 
             // Ground Velocity
