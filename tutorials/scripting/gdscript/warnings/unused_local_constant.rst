@@ -1,0 +1,25 @@
+UNUSED_LOCAL_CONSTANT
+=========================
+
+The warning message is:
+
+.. code-block:: none
+
+    The local constant "MAX_VALUE" is declared but never used in the block. If this is intended, prefix it with an underscore: "_MAX_VALUE".
+
+The default warning level for this warning is **Warn**.
+To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/unused_local_constant<class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant>`.
+
+When this warning occurs
+------------------------
+
+TODO
+
+
+How to fix this warning
+-----------------------
+
+TODO
+
+
+
