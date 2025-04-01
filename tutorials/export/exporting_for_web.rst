@@ -445,3 +445,9 @@ the export menu.
      - Environment variable
    * - Encryption / Encryption Key
      - ``GODOT_SCRIPT_ENCRYPTION_KEY``
+
+Export options
+--------------
+
+You can find a full list of export options available in the
+:ref:`class_EditorExportPlatformWeb` class reference.

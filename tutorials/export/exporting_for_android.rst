@@ -39,7 +39,7 @@ Download and install the Android SDK.
     - Android SDK Command-line Tools (latest)
 
   - Ensure that the `NDK and CMake are installed and configured <https://developer.android.com/studio/projects/install-ndk>`__.
-  
+
     - CMake version 3.10.2.4988404
     - NDK version r23c (23.2.8568313)
 
@@ -61,8 +61,8 @@ Download and install the Android SDK.
 Setting it up in Godot
 ----------------------
 
-Enter the Editor Settings screen (under the Godot tab for macOS, or the Editor tab 
-for other platforms). This screen contains the editor settings for the user 
+Enter the Editor Settings screen (under the Godot tab for macOS, or the Editor tab
+for other platforms). This screen contains the editor settings for the user
 account in the computer (it's independent of the project).
 
 .. image:: img/editorsettings.png
@@ -186,3 +186,9 @@ the export menu.
      - ``GODOT_ANDROID_KEYSTORE_RELEASE_USER``
    * - Options / Keystore / Release Password
      - ``GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD``
+
+Export options
+--------------
+
+You can find a full list of export options available in the
+:ref:`class_EditorExportPlatformAndroid` class reference.
