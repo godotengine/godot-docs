@@ -3,11 +3,6 @@
 Reflection probes
 =================
 
-.. note::
-
-    Reflection probes are only supported in the Forward+ and Mobile renderers,
-    not the Compatibility renderer.
-
 As stated in the :ref:`doc_standard_material_3d`, objects can show reflected and/or
 diffuse light. Reflection probes are used as a source of reflected *and* ambient
 light for objects inside their area of influence. They can be used to provide
