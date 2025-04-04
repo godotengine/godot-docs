@@ -133,8 +133,7 @@ Create the file ``init.h`` in the ``src`` folder, with the following contents:
 
 .. code-block:: c
 
-    #ifndef INIT_H
-    #define INIT_H
+    #pragma once
 
     #include "defs.h"
 
@@ -143,8 +142,6 @@ Create the file ``init.h`` in the ``src`` folder, with the following contents:
     void initialize_gdexample_module(void *p_userdata, GDExtensionInitializationLevel p_level);
     void deinitialize_gdexample_module(void *p_userdata, GDExtensionInitializationLevel p_level);
     GDExtensionBool GDE_EXPORT gdexample_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization);
-
-    #endif // INIT_H
 
 The functions declared here have the signatures expected by the GDExtension API.
 
@@ -158,8 +155,7 @@ Create the ``defs.h`` file in the ``src`` folder with the following contents:
 
 .. code-block:: c
 
-    #ifndef DEFS_H
-    #define DEFS_H
+    #pragma once
 
     #include <stdbool.h>
     #include <stddef.h>
@@ -174,8 +170,6 @@ Create the ``defs.h`` file in the ``src`` folder with the following contents:
     #define GDE_EXPORT
     #endif
     #endif // ! GDE_EXPORT
-
-    #endif // DEFS_H
 
 We also include some standard headers to make things easier. Now we only have to
 include ``defs.h`` and those will come as a bonus.
@@ -224,8 +218,7 @@ contents:
 
 .. code-block:: c
 
-    #ifndef GDEXAMPLE_H
-    #define GDEXAMPLE_H
+    #pragma once
 
     #include "gdextension_interface.h"
 
@@ -246,8 +239,6 @@ contents:
 
     // Bindings.
     void gdexample_class_bind_methods();
-
-    #endif // GDEXAMPLE_H
 
 Noteworthy here is the ``object`` field, which holds a pointer to
 the Godot object, and the ``gdexample_class_bind_methods()`` function, which will
@@ -299,8 +290,7 @@ We'll start by creating an ``api.h`` file in the ``src`` folder:
 
 .. code-block:: c
 
-    #ifndef API_H
-    #define API_H
+    #pragma once
 
     /*
     This file works as a collection of helpers to call the GDExtension API
@@ -332,10 +322,6 @@ We'll start by creating an ``api.h`` file in the ``src`` folder:
     } api;
 
     void load_api(GDExtensionInterfaceGetProcAddress p_get_proc_address);
-
-
-
-    #endif // API_H
 
 This file will include many other helpers as we fill our extension with
 something useful. For now it only has a pointer to a function that creates a

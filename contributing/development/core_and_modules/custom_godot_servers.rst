@@ -41,8 +41,7 @@ an initialization state and a cleanup procedure.
 .. code-block:: cpp
     :caption: hilbert_hotel.h
 
-    #ifndef HILBERT_HOTEL_H
-    #define HILBERT_HOTEL_H
+    #pragma once
 
     #include "core/object/object.h"
     #include "core/os/thread.h"
@@ -90,8 +89,6 @@ an initialization state and a cleanup procedure.
         void register_rooms();
         HilbertHotel();
     };
-
-    #endif
 
 .. code-block:: cpp
     :caption: hilbert_hotel.cpp
