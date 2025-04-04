@@ -450,9 +450,10 @@ used to calculate particle collisions in 2D.
 Batching and instancing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Forward+ renderer, Vulkan instancing is used to group rendering
-of identical objects for performance. This is not as fast as static mesh
-merging, but it still allows instances to be culled individually.
+In the Forward+ renderer, Vulkan instancing is used to group rendering of
+identical opaque or alpha-tested objects for performance. (Alpha-blended objects
+are never instanced.) This is not as fast as static mesh merging, but it still
+allows instances to be culled individually.
 
 Light, decal and reflection probe rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
