@@ -193,8 +193,7 @@ The output path is *relative to the project path* or *absolute*;
 The output file extension should match the one used by the Godot export process:
 
 - Windows: ``.exe``
-- macOS: ``.zip`` (from all platforms) or ``.dmg`` (only when exporting *from* macOS).
-  ``.app`` is not supported directly, although the generated ZIP archive contains an ``.app`` bundle.
+- macOS: ``.app`` or ``.zip`` (or ``.dmg`` when exporting *from* macOS)
 - Linux: Any extension (including none). ``.x86_64`` is typically used for 64-bit x86 binaries.
 - HTML5: ``.zip``
 - Android: ``.apk``
