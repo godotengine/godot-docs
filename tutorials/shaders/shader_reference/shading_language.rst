@@ -1058,9 +1058,7 @@ Per-instance uniforms
 
 .. note::
 
-    Since Godot 4.4, per-instance uniforms are available in ``canvas_item`` (2D)
-    and ``spatial`` (3D) shaders. Prior to Godot 4.4, per-instance uniforms are
-    only available in ``spatial`` shaders.
+    Per-instance uniforms are available in both ``canvas_item`` (2D) and ``spatial`` (3D) shaders.
 
 Sometimes, you want to modify a parameter on each node using the material. As an
 example, in a forest full of trees, when you want each tree to have a slightly
