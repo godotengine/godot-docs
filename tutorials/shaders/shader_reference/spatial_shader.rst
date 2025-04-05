@@ -71,7 +71,7 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **ensure_correct_normals**    | Use when non-uniform scale is applied to mesh *(note: currently unimplemented)*.                     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **shadows_disabled**          | Disable computing shadows in shader. The shader will not cast shadows, but can still receive them.   |
+| **shadows_disabled**          | Disable computing shadows in shader. The shader will not receive shadows, but can still cast them.   |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **ambient_light_disabled**    | Disable contribution from ambient light and radiance map.                                            |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
