@@ -70,7 +70,9 @@ Clears this stream, resetting the internal state.
 
 :ref:`Error<enum_@GlobalScope_Error>` **finish**\ (\ ) :ref:`🔗<class_StreamPeerGZIP_method_finish>`
 
-Finalizes the stream, compressing or decompressing any buffered chunk left.
+Finalizes the stream, compressing any buffered chunk left.
+
+You must call it only when you are compressing.
 
 .. rst-class:: classref-item-separator
 

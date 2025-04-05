@@ -41,10 +41,12 @@ The following example extend the default implementation (:ref:`SceneMultiplayer<
         # Just passthrough base signals (copied to var to avoid cyclic reference)
         var cts = connected_to_server
         var cf = connection_failed
+        var sd = server_disconnected
         var pc = peer_connected
         var pd = peer_disconnected
         base_multiplayer.connected_to_server.connect(func(): cts.emit())
         base_multiplayer.connection_failed.connect(func(): cf.emit())
+        base_multiplayer.server_disconnected.connect(func(): sd.emit())
         base_multiplayer.peer_connected.connect(func(id): pc.emit(id))
         base_multiplayer.peer_disconnected.connect(func(id): pd.emit(id))
     
@@ -81,6 +83,9 @@ The following example extend the default implementation (:ref:`SceneMultiplayer<
     
     func _get_unique_id() -> int:
         return base_multiplayer.get_unique_id()
+    
+    func _get_remote_sender_id() -> int:
+        return base_multiplayer.get_remote_sender_id()
     
     func _get_peer_ids() -> PackedInt32Array:
         return base_multiplayer.get_peers()

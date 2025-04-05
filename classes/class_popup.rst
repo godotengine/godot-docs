@@ -36,6 +36,8 @@ Properties
    +-------------------------+---------------+-------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | popup_window  | ``true`` (overrides :ref:`Window<class_Window_property_popup_window>`)  |
    +-------------------------+---------------+-------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | popup_wm_hint | ``true`` (overrides :ref:`Window<class_Window_property_popup_wm_hint>`) |
+   +-------------------------+---------------+-------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | transient     | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)     |
    +-------------------------+---------------+-------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | unresizable   | ``true`` (overrides :ref:`Window<class_Window_property_unresizable>`)   |

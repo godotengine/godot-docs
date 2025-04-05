@@ -170,6 +170,8 @@ Methods
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`_font_is_language_supported<class_TextServerExtension_private_method__font_is_language_supported>`\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                            |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`_font_is_modulate_color_glyphs<class_TextServerExtension_private_method__font_is_modulate_color_glyphs>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                              |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`_font_is_multichannel_signed_distance_field<class_TextServerExtension_private_method__font_is_multichannel_signed_distance_field>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                    |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`_font_is_script_supported<class_TextServerExtension_private_method__font_is_script_supported>`\ (\ font_rid\: :ref:`RID<class_RID>`, script\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                  |
@@ -237,6 +239,8 @@ Methods
    | |void|                                                          | :ref:`_font_set_kerning<class_TextServerExtension_private_method__font_set_kerning>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`, kerning\: :ref:`Vector2<class_Vector2>`\ ) |virtual|                                                                                                                                                           |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                          | :ref:`_font_set_language_support_override<class_TextServerExtension_private_method__font_set_language_support_override>`\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                               |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                          | :ref:`_font_set_modulate_color_glyphs<class_TextServerExtension_private_method__font_set_modulate_color_glyphs>`\ (\ font_rid\: :ref:`RID<class_RID>`, modulate\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                                                                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                          | :ref:`_font_set_msdf_pixel_range<class_TextServerExtension_private_method__font_set_msdf_pixel_range>`\ (\ font_rid\: :ref:`RID<class_RID>`, msdf_pixel_range\: :ref:`int<class_int>`\ ) |virtual|                                                                                                                                                                                                                    |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1450,6 +1454,20 @@ Returns ``true``, if font supports given language (`ISO 639 <https://en.wikipedi
 
 ----
 
+.. _class_TextServerExtension_private_method__font_is_modulate_color_glyphs:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_font_is_modulate_color_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_is_modulate_color_glyphs>`
+
+**Optional.**\ 
+
+Returns ``true``, if color modulation is applied when drawing colored glyphs.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServerExtension_private_method__font_is_multichannel_signed_distance_field:
 
 .. rst-class:: classref-method
@@ -1919,6 +1937,20 @@ Sets kerning for the pair of glyphs.
 **Optional.**\ 
 
 Adds override for :ref:`_font_is_language_supported()<class_TextServerExtension_private_method__font_is_language_supported>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_set_modulate_color_glyphs:
+
+.. rst-class:: classref-method
+
+|void| **_font_set_modulate_color_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`, modulate\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__font_set_modulate_color_glyphs>`
+
+**Optional.**\ 
+
+If set to ``true``, color modulation is applied when drawing colored glyphs, otherwise it's applied to the monochrome glyphs only.
 
 .. rst-class:: classref-item-separator
 

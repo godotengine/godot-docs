@@ -112,6 +112,8 @@ Methods
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                         | :ref:`get_64<class_FileAccess_method_get_64>`\ (\ ) |const|                                                                                                                                                                                                                                             |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                         | :ref:`get_access_time<class_FileAccess_method_get_access_time>`\ (\ file\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                                      |
+   +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                   | :ref:`get_as_text<class_FileAccess_method_get_as_text>`\ (\ skip_cr\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                                                                                        |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                                 | :ref:`get_buffer<class_FileAccess_method_get_buffer>`\ (\ length\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                     |
@@ -155,6 +157,8 @@ Methods
    | :ref:`float<class_float>`                                                     | :ref:`get_real<class_FileAccess_method_get_real>`\ (\ ) |const|                                                                                                                                                                                                                                         |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                   | :ref:`get_sha256<class_FileAccess_method_get_sha256>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                                                |
+   +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                         | :ref:`get_size<class_FileAccess_method_get_size>`\ (\ file\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |bitfield|\[:ref:`UnixPermissionFlags<enum_FileAccess_UnixPermissionFlags>`\] | :ref:`get_unix_permissions<class_FileAccess_method_get_unix_permissions>`\ (\ file\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                            |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -596,6 +600,18 @@ Returns the next 64 bits from the file as an integer. See :ref:`store_64()<class
 
 ----
 
+.. _class_FileAccess_method_get_access_time:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_access_time**\ (\ file\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_access_time>`
+
+Returns the last time the ``file`` was accessed in Unix timestamp format, or ``0`` on error. This Unix timestamp can be converted to another format using the :ref:`Time<class_Time>` singleton.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FileAccess_method_get_as_text:
 
 .. rst-class:: classref-method
@@ -881,6 +897,18 @@ Returns the next bits from the file as a floating-point number.
 :ref:`String<class_String>` **get_sha256**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_sha256>`
 
 Returns an SHA-256 :ref:`String<class_String>` representing the file at the given path or an empty :ref:`String<class_String>` on failure.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileAccess_method_get_size:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_size**\ (\ file\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_size>`
+
+Returns file size in bytes, or ``-1`` on error.
 
 .. rst-class:: classref-item-separator
 

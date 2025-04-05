@@ -292,6 +292,14 @@ Player is free to move around, full positional tracking.
 
 Same as :ref:`XR_PLAY_AREA_ROOMSCALE<class_XRInterface_constant_XR_PLAY_AREA_ROOMSCALE>` but origin point is fixed to the center of the physical space. In this mode, system-level recentering may be disabled, requiring the use of :ref:`XRServer.center_on_hmd()<class_XRServer_method_center_on_hmd>`.
 
+.. _class_XRInterface_constant_XR_PLAY_AREA_CUSTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` **XR_PLAY_AREA_CUSTOM** = ``2147483647``
+
+Custom play area set by a GDExtension.
+
 .. rst-class:: classref-item-separator
 
 ----

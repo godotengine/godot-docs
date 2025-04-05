@@ -65,6 +65,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debugger/auto_switch_to_stack_trace<class_EditorSettings_property_debugger/auto_switch_to_stack_trace>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debugger/max_node_selection<class_EditorSettings_property_debugger/max_node_selection>`                                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debugger/profile_native_calls<class_EditorSettings_property_debugger/profile_native_calls>`                                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debugger/profiler_frame_history_size<class_EditorSettings_property_debugger/profiler_frame_history_size>`                                                                                                   |
@@ -126,6 +128,8 @@ Properties
    | :ref:`Color<class_Color>`                         | :ref:`editors/2d/viewport_border_color<class_EditorSettings_property_editors/2d/viewport_border_color>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/2d/zoom_speed_factor<class_EditorSettings_property_editors/2d/zoom_speed_factor>`                                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/3d/active_selection_box_color<class_EditorSettings_property_editors/3d/active_selection_box_color>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d/default_fov<class_EditorSettings_property_editors/3d/default_fov>`                                                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -267,9 +271,15 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editors/animation/default_animation_step<class_EditorSettings_property_editors/animation/default_animation_step>`                                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/default_create_reset_tracks<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/animation/default_fps_compatibility<class_EditorSettings_property_editors/animation/default_fps_compatibility>`                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editors/animation/default_fps_mode<class_EditorSettings_property_editors/animation/default_fps_mode>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/animation/onion_layers_future_color<class_EditorSettings_property_editors/animation/onion_layers_future_color>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -487,6 +497,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`interface/editor/tablet_driver<class_EditorSettings_property_interface/editor/tablet_driver>`                                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/ui_layout_direction<class_EditorSettings_property_interface/editor/ui_layout_direction>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`                                                           |
@@ -685,6 +697,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/convert_indent_on_save<class_EditorSettings_property_text_editor/behavior/files/convert_indent_on_save>`                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/drop_preload_resources_as_uid<class_EditorSettings_property_text_editor/behavior/files/drop_preload_resources_as_uid>`                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/open_dominant_script_on_scene_change<class_EditorSettings_property_text_editor/behavior/files/open_dominant_script_on_scene_change>`                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/restore_scripts_on_load<class_EditorSettings_property_text_editor/behavior/files/restore_scripts_on_load>`                                                                       |
@@ -857,6 +871,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/user_type_color<class_EditorSettings_property_text_editor/theme/highlighting/user_type_color>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/warning_color<class_EditorSettings_property_text_editor/theme/highlighting/warning_color>`                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/theme/highlighting/word_highlighted_color>`                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/theme/line_spacing<class_EditorSettings_property_text_editor/theme/line_spacing>`                                                                                                               |
@@ -986,6 +1002,20 @@ If ``true``, automatically switches to the **Remote** scene tree when running th
 :ref:`bool<class_bool>` **debugger/auto_switch_to_stack_trace** :ref:`🔗<class_EditorSettings_property_debugger/auto_switch_to_stack_trace>`
 
 If ``true``, automatically switches to the **Stack Trace** panel when the debugger hits a breakpoint or steps.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_debugger/max_node_selection:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debugger/max_node_selection** :ref:`🔗<class_EditorSettings_property_debugger/max_node_selection>`
+
+The limit of how many remote nodes can be selected at once.
+
+\ **Warning:** Increasing this value is not recommended, as selecting too many can make the editing and inspection of remote properties unreliable.
 
 .. rst-class:: classref-item-separator
 
@@ -1366,6 +1396,20 @@ The color of the viewport border in the 2D editor. This border represents the vi
 :ref:`float<class_float>` **editors/2d/zoom_speed_factor** :ref:`🔗<class_EditorSettings_property_editors/2d/zoom_speed_factor>`
 
 The factor to use when zooming in or out in the 2D editor. For example, ``1.1`` will zoom in by 10% with every step. If set to ``2.0``, zooming will only cycle through powers of two.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/3d/active_selection_box_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/3d/active_selection_box_color** :ref:`🔗<class_EditorSettings_property_editors/3d/active_selection_box_color>`
+
+The color to use for the active selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
+
+\ **Note:** The term "active" indicates that this object is the primary selection used as the basis for certain operations. This is the last selected :ref:`Node3D<class_Node3D>`, which can be reordered with :kbd:`Shift + Left mouse button`.
 
 .. rst-class:: classref-item-separator
 
@@ -2243,6 +2287,20 @@ If ``false``, the behavior is reversed, i.e. the dialog only appears when Shift 
 
 ----
 
+.. _class_EditorSettings_property_editors/animation/default_animation_step:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/animation/default_animation_step** :ref:`🔗<class_EditorSettings_property_editors/animation/default_animation_step>`
+
+Default step used when creating a new :ref:`Animation<class_Animation>` in the Animation bottom panel. Only affects the first animation created in the :ref:`AnimationPlayer<class_AnimationPlayer>`. By default, other newly created animations will use the step from the previous ones.
+
+This value is always expressed in seconds. If you want e.g. ``10`` FPS to be the default, you need to set the default step to ``0.1``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/animation/default_create_bezier_tracks:
 
 .. rst-class:: classref-property
@@ -2262,6 +2320,30 @@ If ``true``, create a Bezier track instead of a standard track when pressing the
 :ref:`bool<class_bool>` **editors/animation/default_create_reset_tracks** :ref:`🔗<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`
 
 If ``true``, create a ``RESET`` track when creating a new animation track. This track can be used to restore the animation to a "default" state.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/animation/default_fps_compatibility:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/animation/default_fps_compatibility** :ref:`🔗<class_EditorSettings_property_editors/animation/default_fps_compatibility>`
+
+Controls whether :ref:`AnimationPlayer<class_AnimationPlayer>` will apply snapping to nearest integer FPS when snapping is in Seconds mode. The option is remembered locally for a scene and this option only determines the default value when scene doesn't have local state yet.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/animation/default_fps_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/animation/default_fps_mode** :ref:`🔗<class_EditorSettings_property_editors/animation/default_fps_mode>`
+
+Default step mode for :ref:`AnimationPlayer<class_AnimationPlayer>` (seconds or FPS). The option is remembered locally for a scene and this option only determines the default value when scene doesn't have local state yet.
 
 .. rst-class:: classref-item-separator
 
@@ -3258,7 +3340,7 @@ Input accumulation can be disabled to get slightly more precise/reactive input a
 
 How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<class_AcceptDialog>`\ s. Different platforms have different standard behaviors for this, which can be overridden using this setting. This is useful if you use Godot both on Windows and macOS/Linux and your Godot muscle memory is stronger than your OS specific one.
 
-- **Auto** follows the platform convention: Cancel first on macOS and Linux, OK first on Windows.
+- **Auto** follows the platform convention: OK first on Windows, KDE, and LXQt, Cancel first on macOS and other Linux desktop environments.
 
 - **Cancel First** forces the ordering Cancel/OK.
 
@@ -3638,7 +3720,7 @@ If ``true``, scenes and scripts are saved when the editor loses focus. Depending
 
 :ref:`bool<class_bool>` **interface/editor/separate_distraction_mode** :ref:`🔗<class_EditorSettings_property_interface/editor/separate_distraction_mode>`
 
-If ``true``, the editor's Script tab will have a separate distraction mode setting from the 2D/3D/AssetLib tabs. If ``false``, the distraction-free mode toggle is shared between all tabs.
+If ``true``, the editor's Script tab will have a separate distraction mode setting from the 2D/3D/Game/AssetLib tabs. If ``false``, the distraction-free mode toggle is shared between all tabs.
 
 .. rst-class:: classref-item-separator
 
@@ -3691,6 +3773,18 @@ This is equivalent to :ref:`ProjectSettings.display/window/subwindows/embed_subw
 \ **Note:** To query whether the editor can use multiple windows in an editor plugin, use :ref:`EditorInterface.is_multi_window_enabled()<class_EditorInterface_method_is_multi_window_enabled>` instead of querying the value of this editor setting.
 
 \ **Note:** If ``true``, game embedding is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/tablet_driver:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/tablet_driver** :ref:`🔗<class_EditorSettings_property_interface/editor/tablet_driver>`
+
+Overrides the tablet driver used by the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -4970,6 +5064,20 @@ If ``true``, converts indentation to match the script editor's indentation setti
 
 ----
 
+.. _class_EditorSettings_property_text_editor/behavior/files/drop_preload_resources_as_uid:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/behavior/files/drop_preload_resources_as_uid** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/drop_preload_resources_as_uid>`
+
+If ``true``, when dropping a :ref:`Resource<class_Resource>` file to script editor while :kbd:`Ctrl` is held, the resource will be preloaded with a UID. If ``false``, the resource will be preloaded with a path.
+
+When you hold :kbd:`Ctrl+Shift`, the behavior is reversed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/behavior/files/open_dominant_script_on_scene_change:
 
 .. rst-class:: classref-property
@@ -6019,6 +6127,18 @@ The script editor's background color for text. This should be set to a transluce
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/user_type_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/user_type_color>`
 
 The script editor's color for user-defined types (using ``class_name``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/warning_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/warning_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/warning_color>`
+
+The script editor's background color for lines with warnings. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`.
 
 .. rst-class:: classref-item-separator
 

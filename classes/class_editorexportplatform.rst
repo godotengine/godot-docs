@@ -159,7 +159,7 @@ flags **DebugFlags**: :ref:`🔗<enum_EditorExportPlatform_DebugFlags>`
 
 :ref:`DebugFlags<enum_EditorExportPlatform_DebugFlags>` **DEBUG_FLAG_DUMB_CLIENT** = ``1``
 
-Flag is set if remotely debugged project is expected to use remote file system. If set, :ref:`gen_export_flags()<class_EditorExportPlatform_method_gen_export_flags>` will add ``--remove-fs`` and ``--remote-fs-password`` (if password is set in the editor settings) command line arguments to the list.
+Flag is set if remotely debugged project is expected to use remote file system. If set, :ref:`gen_export_flags()<class_EditorExportPlatform_method_gen_export_flags>` will add ``--remote-fs`` and ``--remote-fs-password`` (if password is set in the editor settings) command line arguments to the list.
 
 .. _class_EditorExportPlatform_constant_DEBUG_FLAG_REMOTE_DEBUG:
 
@@ -288,7 +288,7 @@ Exports project files for the specified preset. This method can be used to imple
 
 \ ``shared_cb`` is called for exported native shared/static libraries and have the following arguments: ``file_path: String``, ``tags: PackedStringArray``, ``target_folder: String``.
 
-\ **Note:** ``file_index`` and ``file_count`` are intended for progress tracking only and aren't necesserely unique and precise.
+\ **Note:** ``file_index`` and ``file_count`` are intended for progress tracking only and aren't necessarily unique and precise.
 
 .. rst-class:: classref-item-separator
 

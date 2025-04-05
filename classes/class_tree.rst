@@ -203,6 +203,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_hovered_dimmed_color<class_Tree_theme_color_font_hovered_dimmed_color>`       | ``Color(0.875, 0.875, 0.875, 1)``   |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_hovered_selected_color<class_Tree_theme_color_font_hovered_selected_color>`   | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_Tree_theme_color_font_outline_color>`                     | ``Color(0, 0, 0, 1)``               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_Tree_theme_color_font_selected_color>`                   | ``Color(1, 1, 1, 1)``               |
@@ -312,6 +314,10 @@ Theme Properties
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`hovered<class_Tree_theme_style_hovered>`                                           |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`hovered_dimmed<class_Tree_theme_style_hovered_dimmed>`                             |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hovered_selected<class_Tree_theme_style_hovered_selected>`                         |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hovered_selected_focus<class_Tree_theme_style_hovered_selected_focus>`             |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_Tree_theme_style_panel>`                                               |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
@@ -1399,7 +1405,7 @@ Text :ref:`Color<class_Color>` for a :ref:`TreeItem.CELL_MODE_CHECK<class_TreeIt
 
 :ref:`Color<class_Color>` **font_hovered_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_Tree_theme_color_font_hovered_color>`
 
-Text :ref:`Color<class_Color>` used when the item is hovered.
+Text :ref:`Color<class_Color>` used when the item is hovered and not selected yet.
 
 .. rst-class:: classref-item-separator
 
@@ -1412,6 +1418,18 @@ Text :ref:`Color<class_Color>` used when the item is hovered.
 :ref:`Color<class_Color>` **font_hovered_dimmed_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_Tree_theme_color_font_hovered_dimmed_color>`
 
 Text :ref:`Color<class_Color>` used when the item is hovered, while a button of the same item is hovered as the same time.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_color_font_hovered_selected_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_hovered_selected_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Tree_theme_color_font_hovered_selected_color>`
+
+Text :ref:`Color<class_Color>` used when the item is hovered and selected.
 
 .. rst-class:: classref-item-separator
 
@@ -2061,7 +2079,7 @@ The focused style for the **Tree**, drawn on top of everything.
 
 :ref:`StyleBox<class_StyleBox>` **hovered** :ref:`🔗<class_Tree_theme_style_hovered>`
 
-:ref:`StyleBox<class_StyleBox>` for the item being hovered.
+:ref:`StyleBox<class_StyleBox>` for the item being hovered, but not selected.
 
 .. rst-class:: classref-item-separator
 
@@ -2074,6 +2092,30 @@ The focused style for the **Tree**, drawn on top of everything.
 :ref:`StyleBox<class_StyleBox>` **hovered_dimmed** :ref:`🔗<class_Tree_theme_style_hovered_dimmed>`
 
 :ref:`StyleBox<class_StyleBox>` for the item being hovered, while a button of the same item is hovered as the same time.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_style_hovered_selected:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hovered_selected** :ref:`🔗<class_Tree_theme_style_hovered_selected>`
+
+:ref:`StyleBox<class_StyleBox>` for the hovered and selected items, used when the **Tree** is not being focused.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_style_hovered_selected_focus:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hovered_selected_focus** :ref:`🔗<class_Tree_theme_style_hovered_selected_focus>`
+
+:ref:`StyleBox<class_StyleBox>` for the hovered and selected items, used when the **Tree** is being focused.
 
 .. rst-class:: classref-item-separator
 

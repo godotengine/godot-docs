@@ -76,6 +76,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`popup_window<class_Window_property_popup_window>`                           | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`popup_wm_hint<class_Window_property_popup_wm_hint>`                         | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`position<class_Window_property_position>`                                   | ``Vector2i(0, 0)``       |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`sharp_corners<class_Window_property_sharp_corners>`                         | ``false``                |
@@ -340,7 +342,7 @@ This signal can be used to handle window closing, e.g. by connecting it to :ref:
 
 Emitted when the **Window**'s DPI changes as a result of OS-level changes (e.g. moving the window from a Retina display to a lower resolution one).
 
-\ **Note:** Only implemented on macOS.
+\ **Note:** Only implemented on macOS and Linux (Wayland).
 
 .. rst-class:: classref-item-separator
 
@@ -669,11 +671,19 @@ Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_ima
 
 \ **Note:** Setting this flag will **NOT** prevent other apps from capturing an image, it should not be used as a security measure.
 
+.. _class_Window_constant_FLAG_POPUP_WM_HINT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Window_Flags>` **FLAG_POPUP_WM_HINT** = ``10``
+
+Signals the window manager that this window is supposed to be an implementation-defined "popup" (usually a floating, borderless, untileable and immovable child window).
+
 .. _class_Window_constant_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Flags<enum_Window_Flags>` **FLAG_MAX** = ``10``
+:ref:`Flags<enum_Window_Flags>` **FLAG_MAX** = ``11``
 
 Max value of the :ref:`Flags<enum_Window_Flags>`.
 
@@ -1364,6 +1374,23 @@ Passing an empty array will disable passthrough support (all mouse events will b
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
 
 If ``true``, the **Window** will be considered a popup. Popups are sub-windows that don't show as separate windows in system's window manager's window list and will send close request when anything is clicked outside of them (unless :ref:`exclusive<class_Window_property_exclusive>` is enabled).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_popup_wm_hint:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **popup_wm_hint** = ``false`` :ref:`🔗<class_Window_property_popup_wm_hint>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
+
+If ``true``, the **Window** will signal to the window manager that it is supposed to be an implementation-defined "popup" (usually a floating, borderless, untileable and immovable child window).
 
 .. rst-class:: classref-item-separator
 

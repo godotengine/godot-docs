@@ -185,6 +185,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`font_is_language_supported<class_TextServer_method_font_is_language_supported>`\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                             |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`font_is_modulate_color_glyphs<class_TextServer_method_font_is_modulate_color_glyphs>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                               |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`font_is_multichannel_signed_distance_field<class_TextServer_method_font_is_multichannel_signed_distance_field>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                     |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`font_is_script_supported<class_TextServer_method_font_is_script_supported>`\ (\ font_rid\: :ref:`RID<class_RID>`, script\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                   |
@@ -250,6 +252,8 @@ Methods
    | |void|                                                           | :ref:`font_set_kerning<class_TextServer_method_font_set_kerning>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`, kerning\: :ref:`Vector2<class_Vector2>`\ )                                                                                                                                                                            |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`font_set_language_support_override<class_TextServer_method_font_set_language_support_override>`\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`font_set_modulate_color_glyphs<class_TextServer_method_font_set_modulate_color_glyphs>`\ (\ font_rid\: :ref:`RID<class_RID>`, force_autohinter\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                         |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`font_set_msdf_pixel_range<class_TextServer_method_font_set_msdf_pixel_range>`\ (\ font_rid\: :ref:`RID<class_RID>`, msdf_pixel_range\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                     |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -837,6 +841,8 @@ Should be used only in conjunction with :ref:`BREAK_WORD_BOUND<class_TextServer_
 
 :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_EDGE_SPACES** = ``16``
 
+**Deprecated:** Use ``BREAK_TRIM_START_EDGE_SPACES | BREAK_TRIM_END_EDGE_SPACES`` instead.
+
 Remove edge spaces from the broken line segments.
 
 .. _class_TextServer_constant_BREAK_TRIM_INDENT:
@@ -846,6 +852,26 @@ Remove edge spaces from the broken line segments.
 :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_INDENT** = ``32``
 
 Subtract first line indentation width from all lines after the first one.
+
+.. _class_TextServer_constant_BREAK_TRIM_START_EDGE_SPACES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_START_EDGE_SPACES** = ``64``
+
+Remove spaces and line break characters from the start of broken line segments.
+
+E.g, after line breaking, the second segment of the following text ``test  \n  next``, is ``next`` if the flag is set, and ``  next`` if it is not.
+
+.. _class_TextServer_constant_BREAK_TRIM_END_EDGE_SPACES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_END_EDGE_SPACES** = ``128``
+
+Remove spaces and line break characters from the end of broken line segments.
+
+E.g, after line breaking, the first segment of the following text ``test  \n  next``, is ``test`` if the flag is set, and ``test  \n`` if it is not.
 
 .. rst-class:: classref-item-separator
 
@@ -939,7 +965,7 @@ Trims the text per word.
 
 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_ELLIPSIS** = ``3``
 
-Trims the text per character and adds an ellipsis to indicate that parts are hidden.
+Trims the text per character and adds an ellipsis to indicate that parts are hidden if trimmed text is 6 characters or longer.
 
 .. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS:
 
@@ -947,7 +973,23 @@ Trims the text per character and adds an ellipsis to indicate that parts are hid
 
 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_WORD_ELLIPSIS** = ``4``
 
-Trims the text per word and adds an ellipsis to indicate that parts are hidden.
+Trims the text per word and adds an ellipsis to indicate that parts are hidden if trimmed text is 6 characters or longer.
+
+.. _class_TextServer_constant_OVERRUN_TRIM_ELLIPSIS_FORCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_ELLIPSIS_FORCE** = ``5``
+
+Trims the text per character and adds an ellipsis to indicate that parts are hidden regardless of trimmed text length.
+
+.. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS_FORCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_WORD_ELLIPSIS_FORCE** = ``6``
+
+Trims the text per word and adds an ellipsis to indicate that parts are hidden regardless of trimmed text length.
 
 .. rst-class:: classref-item-separator
 
@@ -2440,6 +2482,18 @@ Returns ``true``, if font supports given language (`ISO 639 <https://en.wikipedi
 
 ----
 
+.. _class_TextServer_method_font_is_modulate_color_glyphs:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **font_is_modulate_color_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_font_is_modulate_color_glyphs>`
+
+Returns ``true``, if color modulation is applied when drawing colored glyphs.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServer_method_font_is_multichannel_signed_distance_field:
 
 .. rst-class:: classref-method
@@ -2839,6 +2893,18 @@ Sets kerning for the pair of glyphs.
 |void| **font_set_language_support_override**\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextServer_method_font_set_language_support_override>`
 
 Adds override for :ref:`font_is_language_supported()<class_TextServer_method_font_is_language_supported>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_font_set_modulate_color_glyphs:
+
+.. rst-class:: classref-method
+
+|void| **font_set_modulate_color_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`, force_autohinter\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextServer_method_font_set_modulate_color_glyphs>`
+
+If set to ``true``, color modulation is applied when drawing colored glyphs, otherwise it's applied to the monochrome glyphs only.
 
 .. rst-class:: classref-item-separator
 
