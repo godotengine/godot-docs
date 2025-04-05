@@ -197,6 +197,8 @@ binary name.
     you can enable at compile-time to better debug certain engine issues.
     See :ref:`doc_using_sanitizers` for more information.
 
+.. _doc_introduction_to_the_buildsystem_debugging_symbols:
+
 Debugging symbols
 -----------------
 
