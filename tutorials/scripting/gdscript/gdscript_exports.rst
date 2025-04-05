@@ -494,7 +494,21 @@ for a list of parameters and their allowed values.
 If you need to create a clickable inspector button, you can use ``@export_tool_button``.
 This exports a ``Callable`` property as a clickable button. When the button is pressed, the callable is called.
 
-Export a button with label ``"Hello"`` and icon ``"Callable"``. When you press it, it will print ``"Hello world!"``.
+You can specify a custom icon name, which must match one of the icon
+file names from the
+`editor/icons <https://github.com/godotengine/godot/tree/master/editor/icons>`__
+folder of the Godot source repository (case-sensitive).
+You can also browse the editor icons using the
+`Godot editor icons <https://godot-editor-icons.github.io/>`__ website.
+
+For example, if you wish to use ``Node2D.svg`` from that folder, you must
+specify ``"Node2D"`` as the second parameter of ``@export_tool_button``. It is
+not currently possible to use custom icons from the project folder; only
+built-in editor icons can be used.
+
+This exports a button with label ``"Hello"`` and icon ``"Callable"`` (which is the
+default if no icon is specified). When you press it, it will print ``"Hello
+world!"``.
 
 ::
 
