@@ -183,7 +183,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
 .. code-block:: java
 
-@Overrude
+@Override
 public List<String> getCommandLine(){
     return List.of("--main-pack","res://foo.pck");
 }
