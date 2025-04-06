@@ -455,7 +455,7 @@ following as "Thing 1", "Thing 2", "Another Thing". The value will be stored as 
     }
 
     [Export]
-    public MyEnum MyEnum { get; set; }
+    public MyEnum MyEnumCurrent { get; set; }
 
 Integer and string members can also be limited to a specific list of values using the
 ``[Export]`` annotation with the ``PropertyHint.Enum`` hint.
