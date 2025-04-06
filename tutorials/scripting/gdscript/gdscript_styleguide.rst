@@ -1060,6 +1060,11 @@ that type will be used to infer the type of the var.
     @onready var health_bar := get_node("UI/LifeBar") as ProgressBar
     # health_bar will be typed as ProgressBar
 
-This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than the first.
+
+.. note::
+
+    This option is considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than type hints,
+    but also less null-safe as it silently casts the variable to ``null`` in case of a type mismatch at runtime,
+    without an error/warning.
 
 
