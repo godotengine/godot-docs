@@ -189,12 +189,12 @@ and :ref:`Resource <class_Resource>` features:
 
 Godot makes it easy to create custom Resources in the Inspector.
 
-1. Create a plain Resource object in the Inspector. This can even be a type that derives Resource, so long as your script is extending that type.
+1. Create a new Resource object in the Inspector. This can even be a type that derives Resource, so long as your script is extending that type.
 2. Set the ``script`` property in the Inspector to be your script.
 
 The Inspector will now display your Resource script's custom properties. If one edits
 those values and saves the resource, the Inspector serializes the custom properties
-too! To save a resource from the Inspector, click the Inspector's tools menu (top right),
+too! To save a resource from the Inspector, click the save icon at the top of the Inspector,
 and select "Save" or "Save As...".
 
 If the script's language supports :ref:`script classes <doc_gdscript_basics_class_name>`,
