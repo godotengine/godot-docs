@@ -93,6 +93,7 @@ The bindings below are developed and maintained by the community:
 - `Nim <https://github.com/godot-nim/gdext-nim>`__
 - `Rust <https://github.com/godot-rust/gdext>`__
 - `Swift <https://github.com/migueldeicaza/SwiftGodot>`__
+- `Odin <https://github.com/dresswithpockets/odin-godot>`__
 
 .. note::
 
