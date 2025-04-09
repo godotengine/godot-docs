@@ -124,7 +124,7 @@ which items are available to it and its child classes.
 You can also define your own theme types, and additionally customize both built-in
 controls and your own controls. Because built-in controls have no knowledge of
 your custom theme types, you must utilize scripts to access those items. All control
-nodes have several methods that allow to fetch theme items from the theme that
+nodes have several methods that allow you to fetch theme items from the theme that
 is applied to them. Those methods accept the theme type as one of the arguments.
 
 .. tabs::
