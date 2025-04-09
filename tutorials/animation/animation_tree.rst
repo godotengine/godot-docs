@@ -30,7 +30,7 @@ new scene which contains the imported one. Afterwards, point the ``AnimationTree
 
 This is how it's done in the `Third Person Shooter demo <https://godotengine.org/asset-library/asset/678>`_, for reference:
 
-.. image:: img/animtree_treeandplayersetup.webp
+.. image:: img/animtree_treeandplayersetup.png
 
 A new scene was created for the player with a ``CharacterBody3D`` as root. Inside this scene, the original ``.dae`` (Collada) file was instantiated
 and an ``AnimationTree`` node was created.
@@ -47,7 +47,7 @@ There are 3 types of sub-nodes:
 
 A few types of root nodes are available:
 
-.. image:: img/animtree_rootnodes.webp
+.. image:: img/animtree_rootnodes.png
 
 * ``AnimationNodeAnimation``: Selects an animation from the list and plays it. This is the simplest root node, and generally not used as a root.
 * ``AnimationNodeBlendTree``: Contains multiple nodes as children in a graph. Many blend nodes are available, such as mix, blend2, blend3, one shot, etc.
@@ -69,7 +69,7 @@ In order for animations to play, a node has to be connected to to the output. Yo
 
 The simplest connection to make is to connect an ``Animation`` node to the output directly, which will just play back the animation.
 
-.. image:: img/animtree_animtooutput.webp
+.. image:: img/animtree_animtooutput.png
 
 Following is a description of the other available nodes:
 
@@ -82,7 +82,7 @@ These nodes will blend between two or three inputs by a user-specified blend val
 
 Blending can use **filters** to control individually which tracks get blended and which do not. This can be useful for layering animations on top of each other.
 
-.. image:: img/animtree_filtering.webp
+.. image:: img/animtree_filtering.png
 
 For more complex blending, it is recommended to use blend spaces instead.
 
@@ -217,7 +217,7 @@ a line with a right-facing arrow, and drag between two states. You can create 2 
 
 There are 3 types of transitions:
 
-.. image:: img/animtree_transitiontypes.webp
+.. image:: img/animtree_transitiontypes.png
 
 * *Immediate*: Will switch to the next state immediately. 
 * *Sync*: Will switch to the next state immediately, but will seek the new state to the playback position of the old state.
@@ -318,7 +318,7 @@ Finally, you may also change the blend mode. By default, blending happens by int
 animations (frame by frame), you may want to switch to *Discrete* mode. Alternatively, if you want to keep the current play position when switching 
 between discrete animations, there is a *Carry* mode. This mode can be changed in the *Blend* menu:
 
-.. image:: img/animtree_blendmode.webp
+.. image:: img/animtree_blendmode.png
 
 BlendSpace1D works just like BlendSpace2D, but in one dimension (a line). Triangles are not used.
 
