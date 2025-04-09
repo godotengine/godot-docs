@@ -156,13 +156,13 @@ In Blender, this requires using the NLA Editor and naming the Action with the ``
 ``cycle`` prefix or suffix.
 
 Material alpha (-alpha)
------------------------------------------------
+-----------------------
 
 A material with the ``-alpha`` suffix will be imported with the
 :ref:`TRANSPARENCY_ALPHA<class_BaseMaterial3D_constant_TRANSPARENCY_ALPHA>` transparency mode.
 
 Material vertex color (-vcol)
------------------------------------------------
+-----------------------------
 
 A material with the ``-vcol`` suffix will be imported with the
 :ref:`FLAG_ALBEDO_FROM_VERTEX_COLOR<class_BaseMaterial3D_constant_FLAG_ALBEDO_FROM_VERTEX_COLOR>` and
