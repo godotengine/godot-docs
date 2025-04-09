@@ -101,10 +101,10 @@ released.
 
         public override void _Ready()
         {
-            _animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+            _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         }
 
-        public override _Process(float _delta)
+        public override void _Process(double delta)
         {
             if (Input.IsActionPressed("ui_right"))
             {
@@ -252,7 +252,7 @@ released.
             _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         }
 
-        public override void _Process(float _delta)
+        public override void _Process(double delta)
         {
             if (Input.IsActionPressed("ui_right"))
             {
@@ -271,7 +271,7 @@ released.
           it's important to keep in mind that ``play()`` isn't applied instantly.
           Instead, it's applied the next time the :ref:`AnimationPlayer <class_AnimationPlayer>` is processed.
           This may end up being on the next frame, causing a 'glitch' frame,
-          where the property change was applied but the animation was not.
+          where the property change was applied, but the animation was not.
           If this turns out to be a problem, after calling ``play()``, you can call ``advance(0)``
           to update the animation immediately.
 

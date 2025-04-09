@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance** = ``0.0``
+:ref:`float<class_float>` **distance** = ``0.0`` :ref:`🔗<class_WorldBoundaryShape2D_property_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -67,7 +67,7 @@ In the scalar equation of the line ``ax + by = d``, this is ``d``, while the ``(
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **normal** = ``Vector2(0, -1)``
+:ref:`Vector2<class_Vector2>` **normal** = ``Vector2(0, -1)`` :ref:`🔗<class_WorldBoundaryShape2D_property_normal>`
 
 .. rst-class:: classref-property-setget
 

@@ -29,25 +29,27 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`Font<class_Font>`       | :ref:`font<class_LabelSettings_property_font>`                   |                       |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`font_color<class_LabelSettings_property_font_color>`       | ``Color(1, 1, 1, 1)`` |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`font_size<class_LabelSettings_property_font_size>`         | ``16``                |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`     | :ref:`line_spacing<class_LabelSettings_property_line_spacing>`   | ``3.0``               |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`outline_color<class_LabelSettings_property_outline_color>` | ``Color(1, 1, 1, 1)`` |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`outline_size<class_LabelSettings_property_outline_size>`   | ``0``                 |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`shadow_color<class_LabelSettings_property_shadow_color>`   | ``Color(0, 0, 0, 0)`` |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_LabelSettings_property_shadow_offset>` | ``Vector2(1, 1)``     |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`shadow_size<class_LabelSettings_property_shadow_size>`     | ``1``                 |
-   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Font<class_Font>`       | :ref:`font<class_LabelSettings_property_font>`                           |                       |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`font_color<class_LabelSettings_property_font_color>`               | ``Color(1, 1, 1, 1)`` |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`font_size<class_LabelSettings_property_font_size>`                 | ``16``                |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`     | :ref:`line_spacing<class_LabelSettings_property_line_spacing>`           | ``3.0``               |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`outline_color<class_LabelSettings_property_outline_color>`         | ``Color(1, 1, 1, 1)`` |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`outline_size<class_LabelSettings_property_outline_size>`           | ``0``                 |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`     | :ref:`paragraph_spacing<class_LabelSettings_property_paragraph_spacing>` | ``0.0``               |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`shadow_color<class_LabelSettings_property_shadow_color>`           | ``Color(0, 0, 0, 0)`` |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_LabelSettings_property_shadow_offset>`         | ``Vector2(1, 1)``     |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`shadow_size<class_LabelSettings_property_shadow_size>`             | ``1``                 |
+   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -62,7 +64,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_LabelSettings_property_font>`
 
 .. rst-class:: classref-property-setget
 
@@ -79,7 +81,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **font_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_LabelSettings_property_font_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +98,7 @@ Color of the text.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_size** = ``16``
+:ref:`int<class_int>` **font_size** = ``16`` :ref:`🔗<class_LabelSettings_property_font_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,14 +115,14 @@ Size of the text.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **line_spacing** = ``3.0``
+:ref:`float<class_float>` **line_spacing** = ``3.0`` :ref:`🔗<class_LabelSettings_property_line_spacing>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_line_spacing**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_line_spacing**\ (\ )
 
-Vertical space between lines when the text is multiline.
+Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
 .. rst-class:: classref-item-separator
 
@@ -130,7 +132,7 @@ Vertical space between lines when the text is multiline.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **outline_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **outline_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_LabelSettings_property_outline_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -147,7 +149,7 @@ The color of the outline.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_LabelSettings_property_outline_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -160,11 +162,28 @@ Text outline size.
 
 ----
 
+.. _class_LabelSettings_property_paragraph_spacing:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **paragraph_spacing** = ``0.0`` :ref:`🔗<class_LabelSettings_property_paragraph_spacing>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_paragraph_spacing**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_paragraph_spacing**\ (\ )
+
+Vertical space between paragraphs. Added on top of :ref:`line_spacing<class_LabelSettings_property_line_spacing>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LabelSettings_property_shadow_color:
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_LabelSettings_property_shadow_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +200,7 @@ Color of the shadow effect. If alpha is ``0``, no shadow will be drawn.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **shadow_offset** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **shadow_offset** = ``Vector2(1, 1)`` :ref:`🔗<class_LabelSettings_property_shadow_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +217,7 @@ Offset of the shadow effect, in pixels.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **shadow_size** = ``1``
+:ref:`int<class_int>` **shadow_size** = ``1`` :ref:`🔗<class_LabelSettings_property_shadow_size>`
 
 .. rst-class:: classref-property-setget
 

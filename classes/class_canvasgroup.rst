@@ -71,7 +71,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **clear_margin** = ``10.0``
+:ref:`float<class_float>` **clear_margin** = ``10.0`` :ref:`🔗<class_CanvasGroup_property_clear_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ Sets the size of the margin used to expand the clearing rect of this **CanvasGro
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fit_margin** = ``10.0``
+:ref:`float<class_float>` **fit_margin** = ``10.0`` :ref:`🔗<class_CanvasGroup_property_fit_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,7 +105,7 @@ Sets the size of a margin used to expand the drawable rect of this **CanvasGroup
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_mipmaps** = ``false``
+:ref:`bool<class_bool>` **use_mipmaps** = ``false`` :ref:`🔗<class_CanvasGroup_property_use_mipmaps>`
 
 .. rst-class:: classref-property-setget
 

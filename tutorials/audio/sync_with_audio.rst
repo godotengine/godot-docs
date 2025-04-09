@@ -23,7 +23,9 @@ The most common way to reduce latency is to shrink the audio buffers (again, by 
 
 This is a common tradeoff, so Godot ships with sensible defaults that should not need to be altered.
 
-The problem, in the end, is not this slight delay but synchronizing graphics and audio for games that require it. Beginning with Godot 3.2, some helpers were added to obtain more precise playback timing.
+The problem, in the end, is not this slight delay but synchronizing graphics and
+audio for games that require it. Some helpers are available to obtain more 
+precise playback timing.
 
 Using the system clock to sync
 ------------------------------
@@ -70,7 +72,7 @@ Add these two and it's possible to guess almost exactly when sound or music will
         GetNode<AudioStreamPlayer>("Player").Play();
     }
 
-    public override void _Process(float _delta)
+    public override void _Process(double delta)
     {
         double time = (Time.GetTicksUsec() - _timeBegin) / 1000000.0d;
         time = Math.Max(0.0d, time - _timeDelay);
@@ -138,7 +140,7 @@ Here is the same code as before using this approach:
         GetNode<AudioStreamPlayer>("Player").Play();
     }
 
-    public override void _Process(float _delta)
+    public override void _Process(double delta)
     {
         double time = GetNode<AudioStreamPlayer>("Player").GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
         // Compensate for output latency.

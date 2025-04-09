@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)`` :ref:`🔗<class_GPUParticlesAttractorVectorField3D_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -71,7 +71,7 @@ The size of the vector field box in 3D units.
 
 .. rst-class:: classref-property
 
-:ref:`Texture3D<class_Texture3D>` **texture**
+:ref:`Texture3D<class_Texture3D>` **texture** :ref:`🔗<class_GPUParticlesAttractorVectorField3D_property_texture>`
 
 .. rst-class:: classref-property-setget
 

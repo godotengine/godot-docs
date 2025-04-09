@@ -143,7 +143,7 @@ careful not to read from an index larger than the size of the buffer.
 
 Finally, we write the ``main`` function which is where all the logic happens. We
 access a position in the storage buffer using the ``gl_GlobalInvocationID``
-built in variables. ``gl_GlobalInvocationID`` gives you the global unique ID for
+built-in variables. ``gl_GlobalInvocationID`` gives you the global unique ID for
 the current invocation.
 
 To continue, write the code above into your newly created ``compute_example.glsl``
@@ -220,7 +220,7 @@ So let's initialize an array of floats and create a storage buffer:
  .. code-tab:: csharp
 
     // Prepare our data. We use floats in the shader, so we need 32 bit.
-    var input = new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    float[] input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     var inputBytes = new byte[input.Length * sizeof(float)];
     Buffer.BlockCopy(input, 0, inputBytes, 0, inputBytes.Length);
 
@@ -251,7 +251,7 @@ assign it to a uniform set which we can pass to our shader later.
         Binding = 0
     };
     uniform.AddId(buffer);
-    var uniformSet = rd.UniformSetCreate(new Array<RDUniform> { uniform }, shader, 0);
+    var uniformSet = rd.UniformSetCreate([uniform], shader, 0);
 
 
 Defining a compute pipeline
@@ -365,6 +365,16 @@ the data and print the results to our console.
     Buffer.BlockCopy(outputBytes, 0, output, 0, outputBytes.Length);
     GD.Print("Input: ", string.Join(", ", input));
     GD.Print("Output: ", string.Join(", ", output));
+
+Freeing memory
+------------------
+
+The ``buffer``, ``pipeline``, and ``uniform_set`` variables we've been using are
+each an :ref:`class_RID`. Because RenderingDevice is meant to be a lower-level
+API, RIDs aren't freed automatically. This means that once you're done using
+``buffer`` or any other RID, you are responsible for freeing its memory
+manually using the RenderingDevice's
+:ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
 With that, you have everything you need to get started working with compute
 shaders.

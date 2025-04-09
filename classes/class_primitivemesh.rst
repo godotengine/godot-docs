@@ -72,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **add_uv2** = ``false``
+:ref:`bool<class_bool>` **add_uv2** = ``false`` :ref:`🔗<class_PrimitiveMesh_property_add_uv2>`
 
 .. rst-class:: classref-property-setget
 
@@ -89,7 +89,7 @@ If set, generates UV2 UV coordinates applying a padding using the :ref:`uv2_padd
 
 .. rst-class:: classref-property
 
-:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)``
+:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)`` :ref:`🔗<class_PrimitiveMesh_property_custom_aabb>`
 
 .. rst-class:: classref-property-setget
 
@@ -106,7 +106,7 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_faces** = ``false``
+:ref:`bool<class_bool>` **flip_faces** = ``false`` :ref:`🔗<class_PrimitiveMesh_property_flip_faces>`
 
 .. rst-class:: classref-property-setget
 
@@ -125,7 +125,7 @@ This gives the same result as using :ref:`BaseMaterial3D.CULL_FRONT<class_BaseMa
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_PrimitiveMesh_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -142,7 +142,7 @@ The current :ref:`Material<class_Material>` of the primitive mesh.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **uv2_padding** = ``2.0``
+:ref:`float<class_float>` **uv2_padding** = ``2.0`` :ref:`🔗<class_PrimitiveMesh_property_uv2_padding>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +166,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **_create_mesh_array**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>` **_create_mesh_array**\ (\ ) |virtual| |const| :ref:`🔗<class_PrimitiveMesh_private_method__create_mesh_array>`
 
 Override this method to customize how this primitive mesh should be generated. Should return an :ref:`Array<class_Array>` where each element is another Array of values required for the mesh (see the :ref:`ArrayType<enum_Mesh_ArrayType>` constants).
 
@@ -178,9 +178,11 @@ Override this method to customize how this primitive mesh should be generated. S
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_mesh_arrays**\ (\ ) |const|
+:ref:`Array<class_Array>` **get_mesh_arrays**\ (\ ) |const| :ref:`🔗<class_PrimitiveMesh_method_get_mesh_arrays>`
 
-Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The result can be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface. For example:
+Returns the mesh arrays used to make up the surface of this primitive mesh.
+
+\ **Example:** Pass the result to :ref:`ArrayMesh.add_surface_from_arrays()<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface:
 
 
 .. tabs::
@@ -207,7 +209,7 @@ Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The r
 
 .. rst-class:: classref-method
 
-|void| **request_update**\ (\ )
+|void| **request_update**\ (\ ) :ref:`🔗<class_PrimitiveMesh_method_request_update>`
 
 Request an update of this primitive mesh based on its properties.
 

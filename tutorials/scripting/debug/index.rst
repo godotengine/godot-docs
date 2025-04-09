@@ -8,6 +8,7 @@ Debug
    :name: toc-learn-features-debug
 
    overview_of_debugging_tools
+   output_panel
    debugger_panel
    the_profiler
    custom_performance_monitors

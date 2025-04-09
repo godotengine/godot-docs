@@ -230,13 +230,13 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`_free_rid<class_PhysicsServer3DExtension_private_method__free_rid>`\ (\ rid\: :ref:`RID<class_RID>`\ ) |virtual|                                                                                                                                                                                                                                                                                                                                                   |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`_generic_6dof_joint_get_flag<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_get_flag>`\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`\ ) |virtual| |const|                                                                                                                                                                                                   |
+   | :ref:`bool<class_bool>`                                           | :ref:`_generic_6dof_joint_get_flag<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_get_flag>`\ (\ joint\: :ref:`RID<class_RID>`, axis\: :ref:`Axis<enum_Vector3_Axis>`, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`\ ) |virtual| |const|                                                                                                                                                                                 |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                         | :ref:`_generic_6dof_joint_get_param<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_get_param>`\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`\ ) |virtual| |const|                                                                                                                                                                                              |
+   | :ref:`float<class_float>`                                         | :ref:`_generic_6dof_joint_get_param<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_get_param>`\ (\ joint\: :ref:`RID<class_RID>`, axis\: :ref:`Axis<enum_Vector3_Axis>`, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`\ ) |virtual| |const|                                                                                                                                                                            |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                            | :ref:`_generic_6dof_joint_set_flag<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_set_flag>`\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                         |
+   | |void|                                                            | :ref:`_generic_6dof_joint_set_flag<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_set_flag>`\ (\ joint\: :ref:`RID<class_RID>`, axis\: :ref:`Axis<enum_Vector3_Axis>`, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                       |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                            | :ref:`_generic_6dof_joint_set_param<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_set_param>`\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`, value\: :ref:`float<class_float>`\ ) |virtual|                                                                                                                                                                   |
+   | |void|                                                            | :ref:`_generic_6dof_joint_set_param<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_set_param>`\ (\ joint\: :ref:`RID<class_RID>`, axis\: :ref:`Axis<enum_Vector3_Axis>`, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`, value\: :ref:`float<class_float>`\ ) |virtual|                                                                                                                                                 |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`_get_process_info<class_PhysicsServer3DExtension_private_method__get_process_info>`\ (\ process_info\: :ref:`ProcessInfo<enum_PhysicsServer3D_ProcessInfo>`\ ) |virtual|                                                                                                                                                                                                                                                                                           |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -426,7 +426,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_add_shape**\ (\ area\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_area_add_shape**\ (\ area\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_add_shape>`
 
 .. container:: contribute
 
@@ -440,7 +440,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_attach_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_attach_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_attach_object_instance_id>`
 
 .. container:: contribute
 
@@ -454,7 +454,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_clear_shapes**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_area_clear_shapes**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_clear_shapes>`
 
 .. container:: contribute
 
@@ -468,7 +468,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_area_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_area_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_create>`
 
 .. container:: contribute
 
@@ -482,7 +482,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_collision_layer**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_collision_layer**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_collision_layer>`
 
 .. container:: contribute
 
@@ -496,7 +496,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_collision_mask**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_collision_mask**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_collision_mask>`
 
 .. container:: contribute
 
@@ -510,7 +510,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_object_instance_id>`
 
 .. container:: contribute
 
@@ -524,7 +524,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_area_get_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer3D_AreaParameter>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_area_get_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer3D_AreaParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_param>`
 
 .. container:: contribute
 
@@ -538,7 +538,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_area_get_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_area_get_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_shape>`
 
 .. container:: contribute
 
@@ -552,7 +552,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_shape_count**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_shape_count**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_shape_count>`
 
 .. container:: contribute
 
@@ -566,7 +566,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **_area_get_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Transform3D<class_Transform3D>` **_area_get_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_shape_transform>`
 
 .. container:: contribute
 
@@ -580,7 +580,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_area_get_space**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_area_get_space**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_space>`
 
 .. container:: contribute
 
@@ -594,7 +594,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **_area_get_transform**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Transform3D<class_Transform3D>` **_area_get_transform**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_get_transform>`
 
 .. container:: contribute
 
@@ -608,7 +608,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_remove_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_remove_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_remove_shape>`
 
 .. container:: contribute
 
@@ -622,7 +622,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_area_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual|
+|void| **_area_set_area_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_area_monitor_callback>`
 
 .. container:: contribute
 
@@ -636,7 +636,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_collision_layer**\ (\ area\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_set_collision_layer**\ (\ area\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_collision_layer>`
 
 .. container:: contribute
 
@@ -650,7 +650,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_collision_mask**\ (\ area\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_set_collision_mask**\ (\ area\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_collision_mask>`
 
 .. container:: contribute
 
@@ -664,7 +664,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual|
+|void| **_area_set_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_monitor_callback>`
 
 .. container:: contribute
 
@@ -678,7 +678,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_monitorable**\ (\ area\: :ref:`RID<class_RID>`, monitorable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_area_set_monitorable**\ (\ area\: :ref:`RID<class_RID>`, monitorable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_monitorable>`
 
 .. container:: contribute
 
@@ -692,7 +692,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer3D_AreaParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_area_set_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer3D_AreaParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_param>`
 
 .. container:: contribute
 
@@ -706,7 +706,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_ray_pickable**\ (\ area\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_area_set_ray_pickable**\ (\ area\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_ray_pickable>`
 
 .. container:: contribute
 
@@ -720,7 +720,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_area_set_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_shape>`
 
 .. container:: contribute
 
@@ -734,7 +734,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_shape_disabled**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_area_set_shape_disabled**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_shape_disabled>`
 
 .. container:: contribute
 
@@ -748,7 +748,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_area_set_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_shape_transform>`
 
 .. container:: contribute
 
@@ -762,7 +762,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_space**\ (\ area\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_area_set_space**\ (\ area\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_space>`
 
 .. container:: contribute
 
@@ -776,7 +776,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_transform**\ (\ area\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_area_set_transform**\ (\ area\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__area_set_transform>`
 
 .. container:: contribute
 
@@ -790,7 +790,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_add_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_add_collision_exception>`
 
 .. container:: contribute
 
@@ -804,7 +804,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_constant_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_add_constant_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_add_constant_central_force>`
 
 .. container:: contribute
 
@@ -818,7 +818,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_add_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_add_constant_force>`
 
 .. container:: contribute
 
@@ -832,7 +832,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_add_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_add_constant_torque>`
 
 .. container:: contribute
 
@@ -846,7 +846,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_shape**\ (\ body\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_add_shape**\ (\ body\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_add_shape>`
 
 .. container:: contribute
 
@@ -860,7 +860,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_apply_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_apply_central_force>`
 
 .. container:: contribute
 
@@ -874,7 +874,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_central_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_apply_central_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_apply_central_impulse>`
 
 .. container:: contribute
 
@@ -888,7 +888,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_apply_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_apply_force>`
 
 .. container:: contribute
 
@@ -902,7 +902,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_apply_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_apply_impulse>`
 
 .. container:: contribute
 
@@ -916,7 +916,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_apply_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_apply_torque>`
 
 .. container:: contribute
 
@@ -930,7 +930,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_torque_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_apply_torque_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_apply_torque_impulse>`
 
 .. container:: contribute
 
@@ -944,7 +944,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_attach_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_attach_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_attach_object_instance_id>`
 
 .. container:: contribute
 
@@ -958,7 +958,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_clear_shapes**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_clear_shapes**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_clear_shapes>`
 
 .. container:: contribute
 
@@ -972,7 +972,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_body_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_body_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_create>`
 
 .. container:: contribute
 
@@ -986,7 +986,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **_body_get_collision_exceptions**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **_body_get_collision_exceptions**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_collision_exceptions>`
 
 .. container:: contribute
 
@@ -1000,7 +1000,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_collision_layer**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_collision_layer**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_collision_layer>`
 
 .. container:: contribute
 
@@ -1014,7 +1014,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_collision_mask**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_collision_mask**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_collision_mask>`
 
 .. container:: contribute
 
@@ -1028,7 +1028,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_body_get_collision_priority**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_body_get_collision_priority**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_collision_priority>`
 
 .. container:: contribute
 
@@ -1042,7 +1042,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_body_get_constant_force**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_body_get_constant_force**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_constant_force>`
 
 .. container:: contribute
 
@@ -1056,7 +1056,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_body_get_constant_torque**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_body_get_constant_torque**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_constant_torque>`
 
 .. container:: contribute
 
@@ -1070,7 +1070,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_body_get_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_body_get_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_contacts_reported_depth_threshold>`
 
 .. container:: contribute
 
@@ -1084,7 +1084,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` **_body_get_direct_state**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual|
+:ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` **_body_get_direct_state**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_direct_state>`
 
 .. container:: contribute
 
@@ -1098,7 +1098,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_max_contacts_reported>`
 
 .. container:: contribute
 
@@ -1112,7 +1112,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`BodyMode<enum_PhysicsServer3D_BodyMode>` **_body_get_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`BodyMode<enum_PhysicsServer3D_BodyMode>` **_body_get_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_mode>`
 
 .. container:: contribute
 
@@ -1126,7 +1126,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_object_instance_id>`
 
 .. container:: contribute
 
@@ -1140,7 +1140,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_body_get_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer3D_BodyParameter>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_body_get_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer3D_BodyParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_param>`
 
 .. container:: contribute
 
@@ -1154,7 +1154,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_body_get_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_body_get_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_shape>`
 
 .. container:: contribute
 
@@ -1168,7 +1168,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_shape_count**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_shape_count**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_shape_count>`
 
 .. container:: contribute
 
@@ -1182,7 +1182,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **_body_get_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Transform3D<class_Transform3D>` **_body_get_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_shape_transform>`
 
 .. container:: contribute
 
@@ -1196,7 +1196,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_body_get_space**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_body_get_space**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_space>`
 
 .. container:: contribute
 
@@ -1210,7 +1210,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_body_get_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_body_get_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_state>`
 
 .. container:: contribute
 
@@ -1224,7 +1224,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_user_flags**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_user_flags**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_get_user_flags>`
 
 .. container:: contribute
 
@@ -1238,7 +1238,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_body_is_axis_locked**\ (\ body\: :ref:`RID<class_RID>`, axis\: :ref:`BodyAxis<enum_PhysicsServer3D_BodyAxis>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_body_is_axis_locked**\ (\ body\: :ref:`RID<class_RID>`, axis\: :ref:`BodyAxis<enum_PhysicsServer3D_BodyAxis>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_is_axis_locked>`
 
 .. container:: contribute
 
@@ -1252,7 +1252,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_body_is_continuous_collision_detection_enabled**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_body_is_continuous_collision_detection_enabled**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_is_continuous_collision_detection_enabled>`
 
 .. container:: contribute
 
@@ -1266,7 +1266,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_is_omitting_force_integration>`
 
 .. container:: contribute
 
@@ -1280,7 +1280,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_remove_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_remove_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_remove_collision_exception>`
 
 .. container:: contribute
 
@@ -1294,7 +1294,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_remove_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_remove_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_remove_shape>`
 
 .. container:: contribute
 
@@ -1308,7 +1308,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_reset_mass_properties**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_reset_mass_properties**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_reset_mass_properties>`
 
 .. container:: contribute
 
@@ -1322,7 +1322,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_axis_lock**\ (\ body\: :ref:`RID<class_RID>`, axis\: :ref:`BodyAxis<enum_PhysicsServer3D_BodyAxis>`, lock\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_set_axis_lock**\ (\ body\: :ref:`RID<class_RID>`, axis\: :ref:`BodyAxis<enum_PhysicsServer3D_BodyAxis>`, lock\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_axis_lock>`
 
 .. container:: contribute
 
@@ -1336,7 +1336,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_axis_velocity**\ (\ body\: :ref:`RID<class_RID>`, axis_velocity\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_set_axis_velocity**\ (\ body\: :ref:`RID<class_RID>`, axis_velocity\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_axis_velocity>`
 
 .. container:: contribute
 
@@ -1350,7 +1350,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_collision_layer**\ (\ body\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_set_collision_layer**\ (\ body\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_collision_layer>`
 
 .. container:: contribute
 
@@ -1364,7 +1364,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_collision_mask**\ (\ body\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_set_collision_mask**\ (\ body\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_collision_mask>`
 
 .. container:: contribute
 
@@ -1378,7 +1378,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_collision_priority**\ (\ body\: :ref:`RID<class_RID>`, priority\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_set_collision_priority**\ (\ body\: :ref:`RID<class_RID>`, priority\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_collision_priority>`
 
 .. container:: contribute
 
@@ -1392,7 +1392,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_set_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_constant_force>`
 
 .. container:: contribute
 
@@ -1406,7 +1406,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_body_set_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_constant_torque>`
 
 .. container:: contribute
 
@@ -1420,7 +1420,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`, threshold\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_set_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`, threshold\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_contacts_reported_depth_threshold>`
 
 .. container:: contribute
 
@@ -1434,7 +1434,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_enable_continuous_collision_detection**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_set_enable_continuous_collision_detection**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_enable_continuous_collision_detection>`
 
 .. container:: contribute
 
@@ -1448,7 +1448,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_force_integration_callback>`
 
 .. container:: contribute
 
@@ -1462,7 +1462,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`, amount\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_set_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`, amount\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_max_contacts_reported>`
 
 .. container:: contribute
 
@@ -1476,7 +1476,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`BodyMode<enum_PhysicsServer3D_BodyMode>`\ ) |virtual|
+|void| **_body_set_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`BodyMode<enum_PhysicsServer3D_BodyMode>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_mode>`
 
 .. container:: contribute
 
@@ -1490,7 +1490,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_omit_force_integration**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_set_omit_force_integration**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_omit_force_integration>`
 
 .. container:: contribute
 
@@ -1504,7 +1504,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer3D_BodyParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_body_set_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer3D_BodyParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_param>`
 
 .. container:: contribute
 
@@ -1518,7 +1518,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_ray_pickable**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_set_ray_pickable**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_ray_pickable>`
 
 .. container:: contribute
 
@@ -1532,7 +1532,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_set_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_shape>`
 
 .. container:: contribute
 
@@ -1546,7 +1546,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_shape_disabled**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_set_shape_disabled**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_shape_disabled>`
 
 .. container:: contribute
 
@@ -1560,7 +1560,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_body_set_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_shape_transform>`
 
 .. container:: contribute
 
@@ -1574,7 +1574,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_space**\ (\ body\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_set_space**\ (\ body\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_space>`
 
 .. container:: contribute
 
@@ -1588,7 +1588,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_body_set_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_state>`
 
 .. container:: contribute
 
@@ -1602,7 +1602,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_state_sync_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ ) |virtual|
+|void| **_body_set_state_sync_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_state_sync_callback>`
 
 .. container:: contribute
 
@@ -1616,7 +1616,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_user_flags**\ (\ body\: :ref:`RID<class_RID>`, flags\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_set_user_flags**\ (\ body\: :ref:`RID<class_RID>`, flags\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_set_user_flags>`
 
 .. container:: contribute
 
@@ -1630,7 +1630,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_body_test_motion**\ (\ body\: :ref:`RID<class_RID>`, from\: :ref:`Transform3D<class_Transform3D>`, motion\: :ref:`Vector3<class_Vector3>`, margin\: :ref:`float<class_float>`, max_collisions\: :ref:`int<class_int>`, collide_separation_ray\: :ref:`bool<class_bool>`, recovery_as_collision\: :ref:`bool<class_bool>`, result\: ``PhysicsServer3DExtensionMotionResult*``\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_body_test_motion**\ (\ body\: :ref:`RID<class_RID>`, from\: :ref:`Transform3D<class_Transform3D>`, motion\: :ref:`Vector3<class_Vector3>`, margin\: :ref:`float<class_float>`, max_collisions\: :ref:`int<class_int>`, collide_separation_ray\: :ref:`bool<class_bool>`, recovery_as_collision\: :ref:`bool<class_bool>`, result\: ``PhysicsServer3DExtensionMotionResult*``\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__body_test_motion>`
 
 .. container:: contribute
 
@@ -1644,7 +1644,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_box_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_box_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__box_shape_create>`
 
 .. container:: contribute
 
@@ -1658,7 +1658,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_capsule_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_capsule_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__capsule_shape_create>`
 
 .. container:: contribute
 
@@ -1672,7 +1672,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_concave_polygon_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_concave_polygon_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__concave_polygon_shape_create>`
 
 .. container:: contribute
 
@@ -1686,7 +1686,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_cone_twist_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`ConeTwistJointParam<enum_PhysicsServer3D_ConeTwistJointParam>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_cone_twist_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`ConeTwistJointParam<enum_PhysicsServer3D_ConeTwistJointParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__cone_twist_joint_get_param>`
 
 .. container:: contribute
 
@@ -1700,7 +1700,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_cone_twist_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`ConeTwistJointParam<enum_PhysicsServer3D_ConeTwistJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_cone_twist_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`ConeTwistJointParam<enum_PhysicsServer3D_ConeTwistJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__cone_twist_joint_set_param>`
 
 .. container:: contribute
 
@@ -1714,7 +1714,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_convex_polygon_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_convex_polygon_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__convex_polygon_shape_create>`
 
 .. container:: contribute
 
@@ -1728,7 +1728,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_custom_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_custom_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__custom_shape_create>`
 
 .. container:: contribute
 
@@ -1742,7 +1742,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_cylinder_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_cylinder_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__cylinder_shape_create>`
 
 .. container:: contribute
 
@@ -1756,7 +1756,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_end_sync**\ (\ ) |virtual|
+|void| **_end_sync**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__end_sync>`
 
 .. container:: contribute
 
@@ -1770,7 +1770,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_finish**\ (\ ) |virtual|
+|void| **_finish**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__finish>`
 
 .. container:: contribute
 
@@ -1784,7 +1784,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_flush_queries**\ (\ ) |virtual|
+|void| **_flush_queries**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__flush_queries>`
 
 .. container:: contribute
 
@@ -1798,7 +1798,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__free_rid>`
 
 .. container:: contribute
 
@@ -1812,7 +1812,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_generic_6dof_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_generic_6dof_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, axis\: :ref:`Axis<enum_Vector3_Axis>`, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_get_flag>`
 
 .. container:: contribute
 
@@ -1826,7 +1826,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_generic_6dof_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_generic_6dof_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, axis\: :ref:`Axis<enum_Vector3_Axis>`, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_get_param>`
 
 .. container:: contribute
 
@@ -1840,7 +1840,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_generic_6dof_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_generic_6dof_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, axis\: :ref:`Axis<enum_Vector3_Axis>`, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_set_flag>`
 
 .. container:: contribute
 
@@ -1854,7 +1854,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_generic_6dof_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_generic_6dof_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, axis\: :ref:`Axis<enum_Vector3_Axis>`, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__generic_6dof_joint_set_param>`
 
 .. container:: contribute
 
@@ -1868,7 +1868,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_process_info**\ (\ process_info\: :ref:`ProcessInfo<enum_PhysicsServer3D_ProcessInfo>`\ ) |virtual|
+:ref:`int<class_int>` **_get_process_info**\ (\ process_info\: :ref:`ProcessInfo<enum_PhysicsServer3D_ProcessInfo>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__get_process_info>`
 
 .. container:: contribute
 
@@ -1882,7 +1882,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_heightmap_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_heightmap_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__heightmap_shape_create>`
 
 .. container:: contribute
 
@@ -1896,7 +1896,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_hinge_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`HingeJointFlag<enum_PhysicsServer3D_HingeJointFlag>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_hinge_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`HingeJointFlag<enum_PhysicsServer3D_HingeJointFlag>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__hinge_joint_get_flag>`
 
 .. container:: contribute
 
@@ -1910,7 +1910,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_hinge_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`HingeJointParam<enum_PhysicsServer3D_HingeJointParam>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_hinge_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`HingeJointParam<enum_PhysicsServer3D_HingeJointParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__hinge_joint_get_param>`
 
 .. container:: contribute
 
@@ -1924,7 +1924,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_hinge_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`HingeJointFlag<enum_PhysicsServer3D_HingeJointFlag>`, enabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_hinge_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`HingeJointFlag<enum_PhysicsServer3D_HingeJointFlag>`, enabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__hinge_joint_set_flag>`
 
 .. container:: contribute
 
@@ -1938,7 +1938,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_hinge_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`HingeJointParam<enum_PhysicsServer3D_HingeJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_hinge_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`HingeJointParam<enum_PhysicsServer3D_HingeJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__hinge_joint_set_param>`
 
 .. container:: contribute
 
@@ -1952,7 +1952,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_init**\ (\ ) |virtual|
+|void| **_init**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__init>`
 
 .. container:: contribute
 
@@ -1966,7 +1966,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_flushing_queries**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_flushing_queries**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__is_flushing_queries>`
 
 .. container:: contribute
 
@@ -1980,7 +1980,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_clear**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_joint_clear**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_clear>`
 
 .. container:: contribute
 
@@ -1994,7 +1994,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_joint_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_joint_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_create>`
 
 .. container:: contribute
 
@@ -2008,7 +2008,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_disable_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`, disable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_joint_disable_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`, disable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_disable_collisions_between_bodies>`
 
 .. container:: contribute
 
@@ -2022,7 +2022,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_joint_get_solver_priority**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_joint_get_solver_priority**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_get_solver_priority>`
 
 .. container:: contribute
 
@@ -2036,7 +2036,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`JointType<enum_PhysicsServer3D_JointType>` **_joint_get_type**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`JointType<enum_PhysicsServer3D_JointType>` **_joint_get_type**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_get_type>`
 
 .. container:: contribute
 
@@ -2050,7 +2050,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_joint_is_disabled_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_joint_is_disabled_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_is_disabled_collisions_between_bodies>`
 
 .. container:: contribute
 
@@ -2064,7 +2064,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_cone_twist**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_ref_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, local_ref_B\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_joint_make_cone_twist**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_ref_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, local_ref_B\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_make_cone_twist>`
 
 .. container:: contribute
 
@@ -2078,7 +2078,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_generic_6dof**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_ref_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, local_ref_B\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_joint_make_generic_6dof**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_ref_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, local_ref_B\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_make_generic_6dof>`
 
 .. container:: contribute
 
@@ -2092,7 +2092,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_hinge**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, hinge_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, hinge_B\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_joint_make_hinge**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, hinge_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, hinge_B\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_make_hinge>`
 
 .. container:: contribute
 
@@ -2106,7 +2106,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_hinge_simple**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, pivot_A\: :ref:`Vector3<class_Vector3>`, axis_A\: :ref:`Vector3<class_Vector3>`, body_B\: :ref:`RID<class_RID>`, pivot_B\: :ref:`Vector3<class_Vector3>`, axis_B\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_joint_make_hinge_simple**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, pivot_A\: :ref:`Vector3<class_Vector3>`, axis_A\: :ref:`Vector3<class_Vector3>`, body_B\: :ref:`RID<class_RID>`, pivot_B\: :ref:`Vector3<class_Vector3>`, axis_B\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_make_hinge_simple>`
 
 .. container:: contribute
 
@@ -2120,7 +2120,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_pin**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_A\: :ref:`Vector3<class_Vector3>`, body_B\: :ref:`RID<class_RID>`, local_B\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_joint_make_pin**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_A\: :ref:`Vector3<class_Vector3>`, body_B\: :ref:`RID<class_RID>`, local_B\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_make_pin>`
 
 .. container:: contribute
 
@@ -2134,7 +2134,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_slider**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_ref_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, local_ref_B\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_joint_make_slider**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_ref_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, local_ref_B\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_make_slider>`
 
 .. container:: contribute
 
@@ -2148,7 +2148,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_set_solver_priority**\ (\ joint\: :ref:`RID<class_RID>`, priority\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_joint_set_solver_priority**\ (\ joint\: :ref:`RID<class_RID>`, priority\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__joint_set_solver_priority>`
 
 .. container:: contribute
 
@@ -2162,7 +2162,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_pin_joint_get_local_a**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_pin_joint_get_local_a**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__pin_joint_get_local_a>`
 
 .. container:: contribute
 
@@ -2176,7 +2176,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_pin_joint_get_local_b**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_pin_joint_get_local_b**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__pin_joint_get_local_b>`
 
 .. container:: contribute
 
@@ -2190,7 +2190,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_pin_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer3D_PinJointParam>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_pin_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer3D_PinJointParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__pin_joint_get_param>`
 
 .. container:: contribute
 
@@ -2204,7 +2204,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_pin_joint_set_local_a**\ (\ joint\: :ref:`RID<class_RID>`, local_A\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_pin_joint_set_local_a**\ (\ joint\: :ref:`RID<class_RID>`, local_A\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__pin_joint_set_local_a>`
 
 .. container:: contribute
 
@@ -2218,7 +2218,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_pin_joint_set_local_b**\ (\ joint\: :ref:`RID<class_RID>`, local_B\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_pin_joint_set_local_b**\ (\ joint\: :ref:`RID<class_RID>`, local_B\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__pin_joint_set_local_b>`
 
 .. container:: contribute
 
@@ -2232,7 +2232,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_pin_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer3D_PinJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_pin_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer3D_PinJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__pin_joint_set_param>`
 
 .. container:: contribute
 
@@ -2246,7 +2246,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_separation_ray_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_separation_ray_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__separation_ray_shape_create>`
 
 .. container:: contribute
 
@@ -2260,7 +2260,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_active**\ (\ active\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_set_active**\ (\ active\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__set_active>`
 
 .. container:: contribute
 
@@ -2274,7 +2274,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_shape_get_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_shape_get_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__shape_get_custom_solver_bias>`
 
 .. container:: contribute
 
@@ -2288,7 +2288,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_shape_get_data**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_shape_get_data**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__shape_get_data>`
 
 .. container:: contribute
 
@@ -2302,7 +2302,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_shape_get_margin**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_shape_get_margin**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__shape_get_margin>`
 
 .. container:: contribute
 
@@ -2316,7 +2316,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ShapeType<enum_PhysicsServer3D_ShapeType>` **_shape_get_type**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`ShapeType<enum_PhysicsServer3D_ShapeType>` **_shape_get_type**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__shape_get_type>`
 
 .. container:: contribute
 
@@ -2330,7 +2330,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_shape_set_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`, bias\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_shape_set_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`, bias\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__shape_set_custom_solver_bias>`
 
 .. container:: contribute
 
@@ -2344,7 +2344,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_shape_set_data**\ (\ shape\: :ref:`RID<class_RID>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_shape_set_data**\ (\ shape\: :ref:`RID<class_RID>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__shape_set_data>`
 
 .. container:: contribute
 
@@ -2358,7 +2358,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_shape_set_margin**\ (\ shape\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_shape_set_margin**\ (\ shape\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__shape_set_margin>`
 
 .. container:: contribute
 
@@ -2372,7 +2372,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_slider_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_slider_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__slider_joint_get_param>`
 
 .. container:: contribute
 
@@ -2386,7 +2386,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_slider_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_slider_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__slider_joint_set_param>`
 
 .. container:: contribute
 
@@ -2400,7 +2400,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_add_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_soft_body_add_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_add_collision_exception>`
 
 .. container:: contribute
 
@@ -2414,7 +2414,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_soft_body_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_soft_body_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_create>`
 
 .. container:: contribute
 
@@ -2428,7 +2428,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AABB<class_AABB>` **_soft_body_get_bounds**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`AABB<class_AABB>` **_soft_body_get_bounds**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_bounds>`
 
 .. container:: contribute
 
@@ -2442,7 +2442,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **_soft_body_get_collision_exceptions**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **_soft_body_get_collision_exceptions**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_collision_exceptions>`
 
 .. container:: contribute
 
@@ -2456,7 +2456,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_soft_body_get_collision_layer**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_soft_body_get_collision_layer**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_collision_layer>`
 
 .. container:: contribute
 
@@ -2470,7 +2470,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_soft_body_get_collision_mask**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_soft_body_get_collision_mask**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_collision_mask>`
 
 .. container:: contribute
 
@@ -2484,7 +2484,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_soft_body_get_damping_coefficient**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_soft_body_get_damping_coefficient**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_damping_coefficient>`
 
 .. container:: contribute
 
@@ -2498,7 +2498,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_soft_body_get_drag_coefficient**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_soft_body_get_drag_coefficient**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_drag_coefficient>`
 
 .. container:: contribute
 
@@ -2512,7 +2512,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_soft_body_get_linear_stiffness**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_soft_body_get_linear_stiffness**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_linear_stiffness>`
 
 .. container:: contribute
 
@@ -2526,7 +2526,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_soft_body_get_point_global_position**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_soft_body_get_point_global_position**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_point_global_position>`
 
 .. container:: contribute
 
@@ -2540,7 +2540,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_soft_body_get_pressure_coefficient**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_soft_body_get_pressure_coefficient**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_pressure_coefficient>`
 
 .. container:: contribute
 
@@ -2554,7 +2554,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_soft_body_get_simulation_precision**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_soft_body_get_simulation_precision**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_simulation_precision>`
 
 .. container:: contribute
 
@@ -2568,7 +2568,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_soft_body_get_space**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_soft_body_get_space**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_space>`
 
 .. container:: contribute
 
@@ -2582,7 +2582,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_soft_body_get_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_soft_body_get_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_state>`
 
 .. container:: contribute
 
@@ -2596,7 +2596,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_soft_body_get_total_mass**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_soft_body_get_total_mass**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_total_mass>`
 
 .. container:: contribute
 
@@ -2610,7 +2610,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_soft_body_is_point_pinned**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_soft_body_is_point_pinned**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_is_point_pinned>`
 
 .. container:: contribute
 
@@ -2624,7 +2624,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_move_point**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`, global_position\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_soft_body_move_point**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`, global_position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_move_point>`
 
 .. container:: contribute
 
@@ -2638,7 +2638,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_pin_point**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`, pin\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_soft_body_pin_point**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`, pin\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_pin_point>`
 
 .. container:: contribute
 
@@ -2652,7 +2652,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_remove_all_pinned_points**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_soft_body_remove_all_pinned_points**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_remove_all_pinned_points>`
 
 .. container:: contribute
 
@@ -2666,7 +2666,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_remove_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_soft_body_remove_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_remove_collision_exception>`
 
 .. container:: contribute
 
@@ -2680,7 +2680,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_collision_layer**\ (\ body\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_soft_body_set_collision_layer**\ (\ body\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_collision_layer>`
 
 .. container:: contribute
 
@@ -2694,7 +2694,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_collision_mask**\ (\ body\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_soft_body_set_collision_mask**\ (\ body\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_collision_mask>`
 
 .. container:: contribute
 
@@ -2708,7 +2708,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_damping_coefficient**\ (\ body\: :ref:`RID<class_RID>`, damping_coefficient\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_soft_body_set_damping_coefficient**\ (\ body\: :ref:`RID<class_RID>`, damping_coefficient\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_damping_coefficient>`
 
 .. container:: contribute
 
@@ -2722,7 +2722,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_drag_coefficient**\ (\ body\: :ref:`RID<class_RID>`, drag_coefficient\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_soft_body_set_drag_coefficient**\ (\ body\: :ref:`RID<class_RID>`, drag_coefficient\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_drag_coefficient>`
 
 .. container:: contribute
 
@@ -2736,7 +2736,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_linear_stiffness**\ (\ body\: :ref:`RID<class_RID>`, linear_stiffness\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_soft_body_set_linear_stiffness**\ (\ body\: :ref:`RID<class_RID>`, linear_stiffness\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_linear_stiffness>`
 
 .. container:: contribute
 
@@ -2750,7 +2750,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_mesh**\ (\ body\: :ref:`RID<class_RID>`, mesh\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_soft_body_set_mesh**\ (\ body\: :ref:`RID<class_RID>`, mesh\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_mesh>`
 
 .. container:: contribute
 
@@ -2764,7 +2764,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_pressure_coefficient**\ (\ body\: :ref:`RID<class_RID>`, pressure_coefficient\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_soft_body_set_pressure_coefficient**\ (\ body\: :ref:`RID<class_RID>`, pressure_coefficient\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_pressure_coefficient>`
 
 .. container:: contribute
 
@@ -2778,7 +2778,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_ray_pickable**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_soft_body_set_ray_pickable**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_ray_pickable>`
 
 .. container:: contribute
 
@@ -2792,7 +2792,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_simulation_precision**\ (\ body\: :ref:`RID<class_RID>`, simulation_precision\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_soft_body_set_simulation_precision**\ (\ body\: :ref:`RID<class_RID>`, simulation_precision\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_simulation_precision>`
 
 .. container:: contribute
 
@@ -2806,7 +2806,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_space**\ (\ body\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_soft_body_set_space**\ (\ body\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_space>`
 
 .. container:: contribute
 
@@ -2820,7 +2820,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`, variant\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_soft_body_set_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`, variant\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_state>`
 
 .. container:: contribute
 
@@ -2834,7 +2834,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_total_mass**\ (\ body\: :ref:`RID<class_RID>`, total_mass\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_soft_body_set_total_mass**\ (\ body\: :ref:`RID<class_RID>`, total_mass\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_total_mass>`
 
 .. container:: contribute
 
@@ -2848,7 +2848,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_set_transform**\ (\ body\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_soft_body_set_transform**\ (\ body\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_transform>`
 
 .. container:: contribute
 
@@ -2862,7 +2862,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_soft_body_update_rendering_server**\ (\ body\: :ref:`RID<class_RID>`, rendering_server_handler\: :ref:`PhysicsServer3DRenderingServerHandler<class_PhysicsServer3DRenderingServerHandler>`\ ) |virtual|
+|void| **_soft_body_update_rendering_server**\ (\ body\: :ref:`RID<class_RID>`, rendering_server_handler\: :ref:`PhysicsServer3DRenderingServerHandler<class_PhysicsServer3DRenderingServerHandler>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_update_rendering_server>`
 
 .. container:: contribute
 
@@ -2876,7 +2876,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_space_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_space_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_create>`
 
 .. container:: contribute
 
@@ -2890,7 +2890,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_space_get_contact_count**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_space_get_contact_count**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_get_contact_count>`
 
 .. container:: contribute
 
@@ -2904,7 +2904,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **_space_get_contacts**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`PackedVector3Array<class_PackedVector3Array>` **_space_get_contacts**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_get_contacts>`
 
 .. container:: contribute
 
@@ -2918,7 +2918,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **_space_get_direct_state**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual|
+:ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **_space_get_direct_state**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_get_direct_state>`
 
 .. container:: contribute
 
@@ -2932,7 +2932,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_space_get_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer3D_SpaceParameter>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_space_get_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer3D_SpaceParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_get_param>`
 
 .. container:: contribute
 
@@ -2946,7 +2946,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_space_is_active**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_space_is_active**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_is_active>`
 
 .. container:: contribute
 
@@ -2960,7 +2960,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_space_set_active**\ (\ space\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_space_set_active**\ (\ space\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_set_active>`
 
 .. container:: contribute
 
@@ -2974,7 +2974,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_space_set_debug_contacts**\ (\ space\: :ref:`RID<class_RID>`, max_contacts\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_space_set_debug_contacts**\ (\ space\: :ref:`RID<class_RID>`, max_contacts\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_set_debug_contacts>`
 
 .. container:: contribute
 
@@ -2988,7 +2988,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_space_set_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer3D_SpaceParameter>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_space_set_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer3D_SpaceParameter>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__space_set_param>`
 
 .. container:: contribute
 
@@ -3002,7 +3002,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_sphere_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_sphere_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__sphere_shape_create>`
 
 .. container:: contribute
 
@@ -3016,7 +3016,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_step**\ (\ step\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_step**\ (\ step\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__step>`
 
 .. container:: contribute
 
@@ -3030,7 +3030,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_sync**\ (\ ) |virtual|
+|void| **_sync**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__sync>`
 
 .. container:: contribute
 
@@ -3044,7 +3044,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_world_boundary_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_world_boundary_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__world_boundary_shape_create>`
 
 .. container:: contribute
 
@@ -3058,7 +3058,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **body_test_motion_is_excluding_body**\ (\ body\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **body_test_motion_is_excluding_body**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer3DExtension_method_body_test_motion_is_excluding_body>`
 
 .. container:: contribute
 
@@ -3072,7 +3072,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **body_test_motion_is_excluding_object**\ (\ object\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **body_test_motion_is_excluding_object**\ (\ object\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PhysicsServer3DExtension_method_body_test_motion_is_excluding_object>`
 
 .. container:: contribute
 

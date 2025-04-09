@@ -8,6 +8,7 @@ Godot provides an :ref:`class_Expression` class you can use to evaluate expressi
 An expression can be:
 
 - A mathematical expression such as ``(2 + 4) * 16/4.0``.
+- A boolean expression such as ``true && false``.
 - A built-in method call like ``deg_to_rad(90)``.
 - A method call on a user-provided script like ``update_health()``,
   if ``base_instance`` is set to a value other than ``null`` when calling
@@ -44,7 +45,14 @@ The following operators are available:
 | Division (``/``)       | Performs and integer division if both operands are integers.                        |
 |                        | If at least one of them is a floating-point number, returns a floating-point value. |
 +------------------------+-------------------------------------------------------------------------------------+
-| Modulo (``%``)         | Returns the remainder of an integer division.                                       |
+| Remainder (``%``)      | Returns the remainder of an integer division (modulo).                              |
+|                        | The result will always have the sign of the dividend.                               |
++------------------------+-------------------------------------------------------------------------------------+
+| Conjunction (``&&``)   | Returns the result of a boolean AND.                                                |
++------------------------+-------------------------------------------------------------------------------------+
+| Disjunction (``||``)   | Returns the result of a boolean OR.                                                 |
++------------------------+-------------------------------------------------------------------------------------+
+| Negation (``!``)       | Returns the result of a boolean NOT.                                                |
 +------------------------+-------------------------------------------------------------------------------------+
 
 Spaces around operators are optional. Also, keep in mind the usual
@@ -140,6 +148,11 @@ The script below demonstrates what the Expression class is capable of::
 
 
     func _ready():
+        # Constant boolean expression.
+        evaluate("true && false")
+        # Boolean expression with variables.
+        evaluate("!(a && b)", ["a", "b"], [true, false])
+
         # Constant mathexpression.
         evaluate("2 + 2")
         # Math expression with variables.
@@ -180,6 +193,8 @@ The script below demonstrates what the Expression class is capable of::
 
 The output from the script will be::
 
+    false
+    true
     4
     160
     1.5707963267949

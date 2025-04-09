@@ -13,7 +13,7 @@ At first, this seems easy. For simple games, this way of thinking may even be en
 
 Angles in three dimensions are most commonly referred to as "Euler Angles".
 
-.. image:: img/transforms_euler.png
+.. image:: img/transforms_euler.webp
 
 Euler angles were introduced by mathematician Leonhard Euler in the early 1700s.
 
@@ -201,6 +201,8 @@ To rotate relative to object space (the node's own transform), use the following
     // Rotate around the object's local X axis by 0.1 radians.
     RotateObjectLocal(new Vector3(1, 0, 0), 0.1f);
 
+The axis should be defined in the local coordinate system of the object. For example, to rotate around the object's local X, Y, or Z axes, use ``Vector3.RIGHT`` for the X-axis, ``Vector3.UP`` for the Y-axis, and ``Vector3.FORWARD`` for the Z-axis.
+
 Precision errors
 ================
 
@@ -381,8 +383,8 @@ Converting a rotation to quaternion is straightforward.
  .. code-tab:: csharp
 
     // Convert basis to quaternion, keep in mind scale is lost
-    var a = transform.Basis.GetQuaternion();
-    var b = transform2.Basis.GetQuaternion();
+    var a = new Quaternion(transform.Basis);
+    var b = new Quaternion(transform2.Basis);
     // Interpolate using spherical-linear interpolation (SLERP).
     var c = a.Slerp(b, 0.5f); // find halfway point between a and b
     // Apply back

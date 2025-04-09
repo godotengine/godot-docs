@@ -28,9 +28,9 @@ Tutorials
 
 - :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -40,6 +40,8 @@ Properties
 .. table::
    :widths: auto
 
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                               | :ref:`advance_on_start<class_AnimationNodeAnimation_property_advance_on_start>`       | ``false`` |
    +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
    | :ref:`StringName<class_StringName>`                   | :ref:`animation<class_AnimationNodeAnimation_property_animation>`                     | ``&""``   |
    +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
@@ -69,7 +71,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **PlayMode**:
+enum **PlayMode**: :ref:`🔗<enum_AnimationNodeAnimation_PlayMode>`
 
 .. _class_AnimationNodeAnimation_constant_PLAY_MODE_FORWARD:
 
@@ -96,11 +98,30 @@ Plays animation in backward direction.
 Property Descriptions
 ---------------------
 
+.. _class_AnimationNodeAnimation_property_advance_on_start:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **advance_on_start** = ``false`` :ref:`🔗<class_AnimationNodeAnimation_property_advance_on_start>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_advance_on_start**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_advance_on_start**\ (\ )
+
+If ``true``, on receiving a request to play an animation from the start, the first frame is not drawn, but only processed, and playback starts from the next frame.
+
+See also the notes of :ref:`AnimationPlayer.play()<class_AnimationPlayer_method_play>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationNodeAnimation_property_animation:
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **animation** = ``&""``
+:ref:`StringName<class_StringName>` **animation** = ``&""`` :ref:`🔗<class_AnimationNodeAnimation_property_animation>`
 
 .. rst-class:: classref-property-setget
 
@@ -117,7 +138,7 @@ Animation to use as an output. It is one of the animations provided by :ref:`Ani
 
 .. rst-class:: classref-property
 
-:ref:`LoopMode<enum_Animation_LoopMode>` **loop_mode**
+:ref:`LoopMode<enum_Animation_LoopMode>` **loop_mode** :ref:`🔗<class_AnimationNodeAnimation_property_loop_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -125,6 +146,8 @@ Animation to use as an output. It is one of the animations provided by :ref:`Ani
 - :ref:`LoopMode<enum_Animation_LoopMode>` **get_loop_mode**\ (\ )
 
 If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_timeline>` is ``true``, override the loop settings of the original :ref:`Animation<class_Animation>` resource with the value.
+
+\ **Note:** If the :ref:`Animation.loop_mode<class_Animation_property_loop_mode>` isn't set to looping, the :ref:`Animation.track_set_interpolation_loop_wrap()<class_Animation_method_track_set_interpolation_loop_wrap>` option will not be respected. If you cannot get the expected behavior, consider duplicating the :ref:`Animation<class_Animation>` resource and changing the loop settings.
 
 .. rst-class:: classref-item-separator
 
@@ -134,7 +157,7 @@ If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_ti
 
 .. rst-class:: classref-property
 
-:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **play_mode** = ``0``
+:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **play_mode** = ``0`` :ref:`🔗<class_AnimationNodeAnimation_property_play_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +174,7 @@ Determines the playback direction of the animation.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **start_offset**
+:ref:`float<class_float>` **start_offset** :ref:`🔗<class_AnimationNodeAnimation_property_start_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -170,7 +193,7 @@ This is useful for adjusting which foot steps first in 3D walking animations.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **stretch_time_scale**
+:ref:`bool<class_bool>` **stretch_time_scale** :ref:`🔗<class_AnimationNodeAnimation_property_stretch_time_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +214,7 @@ If ``false``, the original animation length is respected. If you set the loop to
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **timeline_length**
+:ref:`float<class_float>` **timeline_length** :ref:`🔗<class_AnimationNodeAnimation_property_timeline_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -208,7 +231,7 @@ If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_ti
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_custom_timeline** = ``false``
+:ref:`bool<class_bool>` **use_custom_timeline** = ``false`` :ref:`🔗<class_AnimationNodeAnimation_property_use_custom_timeline>`
 
 .. rst-class:: classref-property-setget
 

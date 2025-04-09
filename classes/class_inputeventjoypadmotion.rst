@@ -58,7 +58,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` **axis** = ``0``
+:ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` **axis** = ``0`` :ref:`🔗<class_InputEventJoypadMotion_property_axis>`
 
 .. rst-class:: classref-property-setget
 
@@ -75,7 +75,7 @@ Axis identifier. Use one of the :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` axis c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **axis_value** = ``0.0``
+:ref:`float<class_float>` **axis_value** = ``0.0`` :ref:`🔗<class_InputEventJoypadMotion_property_axis_value>`
 
 .. rst-class:: classref-property-setget
 

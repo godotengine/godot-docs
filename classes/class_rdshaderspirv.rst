@@ -84,7 +84,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_compute** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_compute** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_compute>`
 
 .. rst-class:: classref-property-setget
 
@@ -92,6 +92,8 @@ Property Descriptions
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the compute shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -101,7 +103,7 @@ The SPIR-V bytecode for the compute shader stage.
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_fragment** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_fragment** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_fragment>`
 
 .. rst-class:: classref-property-setget
 
@@ -109,6 +111,8 @@ The SPIR-V bytecode for the compute shader stage.
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the fragment shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -118,7 +122,7 @@ The SPIR-V bytecode for the fragment shader stage.
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_tesselation_control** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_tesselation_control** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_tesselation_control>`
 
 .. rst-class:: classref-property-setget
 
@@ -126,6 +130,8 @@ The SPIR-V bytecode for the fragment shader stage.
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the tessellation control shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -135,7 +141,7 @@ The SPIR-V bytecode for the tessellation control shader stage.
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_tesselation_evaluation** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_tesselation_evaluation** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_tesselation_evaluation>`
 
 .. rst-class:: classref-property-setget
 
@@ -143,6 +149,8 @@ The SPIR-V bytecode for the tessellation control shader stage.
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the tessellation evaluation shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -152,7 +160,7 @@ The SPIR-V bytecode for the tessellation evaluation shader stage.
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_vertex** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_vertex** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_vertex>`
 
 .. rst-class:: classref-property-setget
 
@@ -160,6 +168,8 @@ The SPIR-V bytecode for the tessellation evaluation shader stage.
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the vertex shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -169,7 +179,7 @@ The SPIR-V bytecode for the vertex shader stage.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **compile_error_compute** = ``""``
+:ref:`String<class_String>` **compile_error_compute** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_compute>`
 
 .. rst-class:: classref-property-setget
 
@@ -186,7 +196,7 @@ The compilation error message for the compute shader stage (set by the SPIR-V co
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **compile_error_fragment** = ``""``
+:ref:`String<class_String>` **compile_error_fragment** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_fragment>`
 
 .. rst-class:: classref-property-setget
 
@@ -203,7 +213,7 @@ The compilation error message for the fragment shader stage (set by the SPIR-V c
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **compile_error_tesselation_control** = ``""``
+:ref:`String<class_String>` **compile_error_tesselation_control** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_tesselation_control>`
 
 .. rst-class:: classref-property-setget
 
@@ -220,7 +230,7 @@ The compilation error message for the tessellation control shader stage (set by 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **compile_error_tesselation_evaluation** = ``""``
+:ref:`String<class_String>` **compile_error_tesselation_evaluation** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_tesselation_evaluation>`
 
 .. rst-class:: classref-property-setget
 
@@ -237,7 +247,7 @@ The compilation error message for the tessellation evaluation shader stage (set 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **compile_error_vertex** = ``""``
+:ref:`String<class_String>` **compile_error_vertex** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_vertex>`
 
 .. rst-class:: classref-property-setget
 
@@ -259,7 +269,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const| :ref:`🔗<class_RDShaderSPIRV_method_get_stage_bytecode>`
 
 Equivalent to getting one of :ref:`bytecode_compute<class_RDShaderSPIRV_property_bytecode_compute>`, :ref:`bytecode_fragment<class_RDShaderSPIRV_property_bytecode_fragment>`, :ref:`bytecode_tesselation_control<class_RDShaderSPIRV_property_bytecode_tesselation_control>`, :ref:`bytecode_tesselation_evaluation<class_RDShaderSPIRV_property_bytecode_tesselation_evaluation>`, :ref:`bytecode_vertex<class_RDShaderSPIRV_property_bytecode_vertex>`.
 
@@ -271,7 +281,7 @@ Equivalent to getting one of :ref:`bytecode_compute<class_RDShaderSPIRV_property
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+:ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const| :ref:`🔗<class_RDShaderSPIRV_method_get_stage_compile_error>`
 
 Returns the compilation error message for the given shader ``stage``. Equivalent to getting one of :ref:`compile_error_compute<class_RDShaderSPIRV_property_compile_error_compute>`, :ref:`compile_error_fragment<class_RDShaderSPIRV_property_compile_error_fragment>`, :ref:`compile_error_tesselation_control<class_RDShaderSPIRV_property_compile_error_tesselation_control>`, :ref:`compile_error_tesselation_evaluation<class_RDShaderSPIRV_property_compile_error_tesselation_evaluation>`, :ref:`compile_error_vertex<class_RDShaderSPIRV_property_compile_error_vertex>`.
 
@@ -283,7 +293,7 @@ Returns the compilation error message for the given shader ``stage``. Equivalent
 
 .. rst-class:: classref-method
 
-|void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+|void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_RDShaderSPIRV_method_set_stage_bytecode>`
 
 Sets the SPIR-V ``bytecode`` for the given shader ``stage``. Equivalent to setting one of :ref:`bytecode_compute<class_RDShaderSPIRV_property_bytecode_compute>`, :ref:`bytecode_fragment<class_RDShaderSPIRV_property_bytecode_fragment>`, :ref:`bytecode_tesselation_control<class_RDShaderSPIRV_property_bytecode_tesselation_control>`, :ref:`bytecode_tesselation_evaluation<class_RDShaderSPIRV_property_bytecode_tesselation_evaluation>`, :ref:`bytecode_vertex<class_RDShaderSPIRV_property_bytecode_vertex>`.
 
@@ -295,7 +305,7 @@ Sets the SPIR-V ``bytecode`` for the given shader ``stage``. Equivalent to setti
 
 .. rst-class:: classref-method
 
-|void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+|void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RDShaderSPIRV_method_set_stage_compile_error>`
 
 Sets the compilation error message for the given shader ``stage`` to ``compile_error``. Equivalent to setting one of :ref:`compile_error_compute<class_RDShaderSPIRV_property_compile_error_compute>`, :ref:`compile_error_fragment<class_RDShaderSPIRV_property_compile_error_fragment>`, :ref:`compile_error_tesselation_control<class_RDShaderSPIRV_property_compile_error_tesselation_control>`, :ref:`compile_error_tesselation_evaluation<class_RDShaderSPIRV_property_compile_error_tesselation_evaluation>`, :ref:`compile_error_vertex<class_RDShaderSPIRV_property_compile_error_vertex>`.
 

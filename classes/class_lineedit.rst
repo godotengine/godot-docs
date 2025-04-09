@@ -22,7 +22,21 @@ An input field for single-line text.
 Description
 -----------
 
-**LineEdit** provides an input field for editing a single line of text. It features many built-in shortcuts that are always available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
+**LineEdit** provides an input field for editing a single line of text.
+
+- When the **LineEdit** control is focused using the keyboard arrow keys, it will only gain focus and not enter edit mode.
+
+- To enter edit mode, click on the control with the mouse, see also :ref:`keep_editing_on_text_submit<class_LineEdit_property_keep_editing_on_text_submit>`.
+
+- To exit edit mode, press ``ui_text_submit`` or ``ui_cancel`` (by default :kbd:`Escape`) actions.
+
+- Check :ref:`edit()<class_LineEdit_method_edit>`, :ref:`unedit()<class_LineEdit_method_unedit>`, :ref:`is_editing()<class_LineEdit_method_is_editing>`, and :ref:`editing_toggled<class_LineEdit_signal_editing_toggled>` for more information.
+
+\ **Important:**\ 
+
+- Focusing the **LineEdit** with ``ui_focus_next`` (by default :kbd:`Tab`) or ``ui_focus_prev`` (by default :kbd:`Shift + Tab`) or :ref:`Control.grab_focus()<class_Control_method_grab_focus>` still enters edit mode (for compatibility).
+
+\ **LineEdit** features many built-in shortcuts that are always available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
 
 - :kbd:`Ctrl + C`: Copy
 
@@ -66,6 +80,8 @@ On macOS, some extra keyboard shortcuts are available:
 
 - :kbd:`Cmd + Right Arrow`: Same as :kbd:`End`, move the caret to the end of the line
 
+\ **Note:** Caret movement shortcuts listed above are not affected by :ref:`shortcut_keys_enabled<class_LineEdit_property_shortcut_keys_enabled>`.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -99,11 +115,15 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`editable<class_LineEdit_property_editable>`                                                           | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`emoji_menu_enabled<class_LineEdit_property_emoji_menu_enabled>`                                       | ``true``                                                                            |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`expand_to_text_length<class_LineEdit_property_expand_to_text_length>`                                 | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`flat<class_LineEdit_property_flat>`                                                                   | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`FocusMode<enum_Control_FocusMode>`                          | focus_mode                                                                                                  | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)                 |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`keep_editing_on_text_submit<class_LineEdit_property_keep_editing_on_text_submit>`                     | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`language<class_LineEdit_property_language>`                                                           | ``""``                                                                              |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -149,6 +169,10 @@ Methods
    :widths: auto
 
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`apply_ime<class_LineEdit_method_apply_ime>`\ (\ )                                                                             |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`cancel_ime<class_LineEdit_method_cancel_ime>`\ (\ )                                                                           |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`clear<class_LineEdit_method_clear>`\ (\ )                                                                                     |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`delete_char_at_caret<class_LineEdit_method_delete_char_at_caret>`\ (\ )                                                       |
@@ -156,6 +180,8 @@ Methods
    | |void|                            | :ref:`delete_text<class_LineEdit_method_delete_text>`\ (\ from_column\: :ref:`int<class_int>`, to_column\: :ref:`int<class_int>`\ ) |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`deselect<class_LineEdit_method_deselect>`\ (\ )                                                                               |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`edit<class_LineEdit_method_edit>`\ (\ )                                                                                       |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu<class_LineEdit_method_get_menu>`\ (\ ) |const|                                                                       |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -167,9 +193,17 @@ Methods
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_selection_to_column<class_LineEdit_method_get_selection_to_column>`\ (\ ) |const|                                         |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`has_ime_text<class_LineEdit_method_has_ime_text>`\ (\ ) |const|                                                               |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`has_redo<class_LineEdit_method_has_redo>`\ (\ ) |const|                                                                       |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`has_selection<class_LineEdit_method_has_selection>`\ (\ ) |const|                                                             |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`has_undo<class_LineEdit_method_has_undo>`\ (\ ) |const|                                                                       |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`insert_text_at_caret<class_LineEdit_method_insert_text_at_caret>`\ (\ text\: :ref:`String<class_String>`\ )                   |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`is_editing<class_LineEdit_method_is_editing>`\ (\ ) |const|                                                                   |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`is_menu_visible<class_LineEdit_method_is_menu_visible>`\ (\ ) |const|                                                         |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -178,6 +212,8 @@ Methods
    | |void|                            | :ref:`select<class_LineEdit_method_select>`\ (\ from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = -1\ )                |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`select_all<class_LineEdit_method_select_all>`\ (\ )                                                                           |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`unedit<class_LineEdit_method_unedit>`\ (\ )                                                                                   |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -235,11 +271,23 @@ Theme Properties
 Signals
 -------
 
+.. _class_LineEdit_signal_editing_toggled:
+
+.. rst-class:: classref-signal
+
+**editing_toggled**\ (\ toggled_on\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_LineEdit_signal_editing_toggled>`
+
+Emitted when the **LineEdit** switches in or out of edit mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_signal_text_change_rejected:
 
 .. rst-class:: classref-signal
 
-**text_change_rejected**\ (\ rejected_substring\: :ref:`String<class_String>`\ )
+**text_change_rejected**\ (\ rejected_substring\: :ref:`String<class_String>`\ ) :ref:`🔗<class_LineEdit_signal_text_change_rejected>`
 
 Emitted when appending text that overflows the :ref:`max_length<class_LineEdit_property_max_length>`. The appended text is truncated to fit :ref:`max_length<class_LineEdit_property_max_length>`, and the part that couldn't fit is passed as the ``rejected_substring`` argument.
 
@@ -251,7 +299,7 @@ Emitted when appending text that overflows the :ref:`max_length<class_LineEdit_p
 
 .. rst-class:: classref-signal
 
-**text_changed**\ (\ new_text\: :ref:`String<class_String>`\ )
+**text_changed**\ (\ new_text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_LineEdit_signal_text_changed>`
 
 Emitted when the text changes.
 
@@ -263,9 +311,9 @@ Emitted when the text changes.
 
 .. rst-class:: classref-signal
 
-**text_submitted**\ (\ new_text\: :ref:`String<class_String>`\ )
+**text_submitted**\ (\ new_text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_LineEdit_signal_text_submitted>`
 
-Emitted when the user presses :ref:`@GlobalScope.KEY_ENTER<class_@GlobalScope_constant_KEY_ENTER>` on the **LineEdit**.
+Emitted when the user presses the ``ui_text_submit`` action (by default: :kbd:`Enter` or :kbd:`Kp Enter`) while the **LineEdit** has focus.
 
 .. rst-class:: classref-section-separator
 
@@ -280,7 +328,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **MenuItems**:
+enum **MenuItems**: :ref:`🔗<enum_LineEdit_MenuItems>`
 
 .. _class_LineEdit_constant_MENU_CUT:
 
@@ -306,7 +354,7 @@ Copies the selected text.
 
 Pastes the clipboard text over the selected text (or at the caret's position).
 
-Non-printable escape characters are automatically stripped from the OS clipboard via :ref:`String.strip_escapes<class_String_method_strip_escapes>`.
+Non-printable escape characters are automatically stripped from the OS clipboard via :ref:`String.strip_escapes()<class_String_method_strip_escapes>`.
 
 .. _class_LineEdit_constant_MENU_CLEAR:
 
@@ -524,11 +572,19 @@ Inserts word joiner (WJ) character.
 
 Inserts soft hyphen (SHY) character.
 
+.. _class_LineEdit_constant_MENU_EMOJI_AND_SYMBOL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MenuItems<enum_LineEdit_MenuItems>` **MENU_EMOJI_AND_SYMBOL** = ``30``
+
+Opens system emoji and symbol picker.
+
 .. _class_LineEdit_constant_MENU_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_LineEdit_MenuItems>` **MENU_MAX** = ``30``
+:ref:`MenuItems<enum_LineEdit_MenuItems>` **MENU_MAX** = ``31``
 
 Represents the size of the :ref:`MenuItems<enum_LineEdit_MenuItems>` enum.
 
@@ -540,7 +596,7 @@ Represents the size of the :ref:`MenuItems<enum_LineEdit_MenuItems>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **VirtualKeyboardType**:
+enum **VirtualKeyboardType**: :ref:`🔗<enum_LineEdit_VirtualKeyboardType>`
 
 .. _class_LineEdit_constant_KEYBOARD_TYPE_DEFAULT:
 
@@ -621,7 +677,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **alignment** = ``0``
+:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **alignment** = ``0`` :ref:`🔗<class_LineEdit_property_alignment>`
 
 .. rst-class:: classref-property-setget
 
@@ -638,7 +694,7 @@ Text alignment as defined in the :ref:`HorizontalAlignment<enum_@GlobalScope_Hor
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_blink** = ``false``
+:ref:`bool<class_bool>` **caret_blink** = ``false`` :ref:`🔗<class_LineEdit_property_caret_blink>`
 
 .. rst-class:: classref-property-setget
 
@@ -655,7 +711,7 @@ If ``true``, makes the caret blink.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **caret_blink_interval** = ``0.65``
+:ref:`float<class_float>` **caret_blink_interval** = ``0.65`` :ref:`🔗<class_LineEdit_property_caret_blink_interval>`
 
 .. rst-class:: classref-property-setget
 
@@ -672,7 +728,7 @@ The interval at which the caret blinks (in seconds).
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **caret_column** = ``0``
+:ref:`int<class_int>` **caret_column** = ``0`` :ref:`🔗<class_LineEdit_property_caret_column>`
 
 .. rst-class:: classref-property-setget
 
@@ -689,7 +745,7 @@ The caret's column position inside the **LineEdit**. When set, the text may scro
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_force_displayed** = ``false``
+:ref:`bool<class_bool>` **caret_force_displayed** = ``false`` :ref:`🔗<class_LineEdit_property_caret_force_displayed>`
 
 .. rst-class:: classref-property-setget
 
@@ -706,7 +762,7 @@ If ``true``, the **LineEdit** will always show the caret, even if focus is lost.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_mid_grapheme** = ``false``
+:ref:`bool<class_bool>` **caret_mid_grapheme** = ``false`` :ref:`🔗<class_LineEdit_property_caret_mid_grapheme>`
 
 .. rst-class:: classref-property-setget
 
@@ -725,7 +781,7 @@ Allow moving caret, selecting and removing the individual composite character co
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **clear_button_enabled** = ``false``
+:ref:`bool<class_bool>` **clear_button_enabled** = ``false`` :ref:`🔗<class_LineEdit_property_clear_button_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -742,7 +798,7 @@ If ``true``, the **LineEdit** will show a clear button if :ref:`text<class_LineE
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **context_menu_enabled** = ``true``
+:ref:`bool<class_bool>` **context_menu_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_context_menu_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -759,7 +815,7 @@ If ``true``, the context menu will appear when right-clicked.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **deselect_on_focus_loss_enabled** = ``true``
+:ref:`bool<class_bool>` **deselect_on_focus_loss_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_deselect_on_focus_loss_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -776,7 +832,7 @@ If ``true``, the selected text will be deselected when focus is lost.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **drag_and_drop_selection_enabled** = ``true``
+:ref:`bool<class_bool>` **drag_and_drop_selection_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_drag_and_drop_selection_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -793,7 +849,7 @@ If ``true``, allow drag and drop of selected text.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_control_chars** = ``false``
+:ref:`bool<class_bool>` **draw_control_chars** = ``false`` :ref:`🔗<class_LineEdit_property_draw_control_chars>`
 
 .. rst-class:: classref-property-setget
 
@@ -810,7 +866,7 @@ If ``true``, control characters are displayed.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editable** = ``true``
+:ref:`bool<class_bool>` **editable** = ``true`` :ref:`🔗<class_LineEdit_property_editable>`
 
 .. rst-class:: classref-property-setget
 
@@ -823,11 +879,28 @@ If ``false``, existing text cannot be modified and new text cannot be added.
 
 ----
 
+.. _class_LineEdit_property_emoji_menu_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **emoji_menu_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_emoji_menu_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_emoji_menu_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_emoji_menu_enabled**\ (\ )
+
+If ``true``, "Emoji and Symbols" menu is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_property_expand_to_text_length:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **expand_to_text_length** = ``false``
+:ref:`bool<class_bool>` **expand_to_text_length** = ``false`` :ref:`🔗<class_LineEdit_property_expand_to_text_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -844,7 +917,7 @@ If ``true``, the **LineEdit** width will increase to stay longer than the :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flat** = ``false``
+:ref:`bool<class_bool>` **flat** = ``false`` :ref:`🔗<class_LineEdit_property_flat>`
 
 .. rst-class:: classref-property-setget
 
@@ -857,11 +930,28 @@ If ``true``, the **LineEdit** doesn't display decoration.
 
 ----
 
+.. _class_LineEdit_property_keep_editing_on_text_submit:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **keep_editing_on_text_submit** = ``false`` :ref:`🔗<class_LineEdit_property_keep_editing_on_text_submit>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_keep_editing_on_text_submit**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_editing_kept_on_text_submit**\ (\ )
+
+If ``true``, the **LineEdit** will not exit edit mode when text is submitted by pressing ``ui_text_submit`` action (by default: :kbd:`Enter` or :kbd:`Kp Enter`).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_property_language:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **language** = ``""``
+:ref:`String<class_String>` **language** = ``""`` :ref:`🔗<class_LineEdit_property_language>`
 
 .. rst-class:: classref-property-setget
 
@@ -878,7 +968,7 @@ Language code used for line-breaking and text shaping algorithms. If left empty,
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_length** = ``0``
+:ref:`int<class_int>` **max_length** = ``0`` :ref:`🔗<class_LineEdit_property_max_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -887,9 +977,9 @@ Language code used for line-breaking and text shaping algorithms. If left empty,
 
 Maximum number of characters that can be entered inside the **LineEdit**. If ``0``, there is no limit.
 
-When a limit is defined, characters that would exceed :ref:`max_length<class_LineEdit_property_max_length>` are truncated. This happens both for existing :ref:`text<class_LineEdit_property_text>` contents when setting the max length, or for new text inserted in the **LineEdit**, including pasting. If any input text is truncated, the :ref:`text_change_rejected<class_LineEdit_signal_text_change_rejected>` signal is emitted with the truncated substring as parameter.
+When a limit is defined, characters that would exceed :ref:`max_length<class_LineEdit_property_max_length>` are truncated. This happens both for existing :ref:`text<class_LineEdit_property_text>` contents when setting the max length, or for new text inserted in the **LineEdit**, including pasting.
 
-\ **Example:**\ 
+If any input text is truncated, the :ref:`text_change_rejected<class_LineEdit_signal_text_change_rejected>` signal is emitted with the truncated substring as parameter:
 
 
 .. tabs::
@@ -924,7 +1014,7 @@ When a limit is defined, characters that would exceed :ref:`max_length<class_Lin
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **middle_mouse_paste_enabled** = ``true``
+:ref:`bool<class_bool>` **middle_mouse_paste_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_middle_mouse_paste_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -943,7 +1033,7 @@ If ``false``, using middle mouse button to paste clipboard will be disabled.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **placeholder_text** = ``""``
+:ref:`String<class_String>` **placeholder_text** = ``""`` :ref:`🔗<class_LineEdit_property_placeholder_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -960,7 +1050,7 @@ Text shown when the **LineEdit** is empty. It is **not** the **LineEdit**'s defa
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **right_icon**
+:ref:`Texture2D<class_Texture2D>` **right_icon** :ref:`🔗<class_LineEdit_property_right_icon>`
 
 .. rst-class:: classref-property-setget
 
@@ -977,7 +1067,7 @@ Sets the icon that will appear in the right end of the **LineEdit** if there's n
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **secret** = ``false``
+:ref:`bool<class_bool>` **secret** = ``false`` :ref:`🔗<class_LineEdit_property_secret>`
 
 .. rst-class:: classref-property-setget
 
@@ -994,7 +1084,7 @@ If ``true``, every character is replaced with the secret character (see :ref:`se
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **secret_character** = ``"•"``
+:ref:`String<class_String>` **secret_character** = ``"•"`` :ref:`🔗<class_LineEdit_property_secret_character>`
 
 .. rst-class:: classref-property-setget
 
@@ -1011,7 +1101,7 @@ The character to use to mask secret input. Only a single character can be used a
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **select_all_on_focus** = ``false``
+:ref:`bool<class_bool>` **select_all_on_focus** = ``false`` :ref:`🔗<class_LineEdit_property_select_all_on_focus>`
 
 .. rst-class:: classref-property-setget
 
@@ -1028,7 +1118,7 @@ If ``true``, the **LineEdit** will select the whole text when it gains focus.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **selecting_enabled** = ``true``
+:ref:`bool<class_bool>` **selecting_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_selecting_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1045,14 +1135,14 @@ If ``false``, it's impossible to select the text using mouse nor keyboard.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shortcut_keys_enabled** = ``true``
+:ref:`bool<class_bool>` **shortcut_keys_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_shortcut_keys_enabled>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_shortcut_keys_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_shortcut_keys_enabled**\ (\ )
 
-If ``false``, using shortcuts will be disabled.
+If ``true``, shortcut keys for context menu items are enabled, even if the context menu is disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -1062,7 +1152,7 @@ If ``false``, using shortcuts will be disabled.
 
 .. rst-class:: classref-property
 
-:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0``
+:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0`` :ref:`🔗<class_LineEdit_property_structured_text_bidi_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -1079,7 +1169,7 @@ Set BiDi algorithm override for the structured text.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]``
+:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]`` :ref:`🔗<class_LineEdit_property_structured_text_bidi_override_options>`
 
 .. rst-class:: classref-property-setget
 
@@ -1096,7 +1186,7 @@ Set additional options for BiDi override.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **text** = ``""``
+:ref:`String<class_String>` **text** = ``""`` :ref:`🔗<class_LineEdit_property_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -1115,7 +1205,7 @@ String value of the **LineEdit**.
 
 .. rst-class:: classref-property
 
-:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0``
+:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0`` :ref:`🔗<class_LineEdit_property_text_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -1132,7 +1222,7 @@ Base text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **virtual_keyboard_enabled** = ``true``
+:ref:`bool<class_bool>` **virtual_keyboard_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_virtual_keyboard_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1149,7 +1239,7 @@ If ``true``, the native virtual keyboard is shown when focused on platforms that
 
 .. rst-class:: classref-property
 
-:ref:`VirtualKeyboardType<enum_LineEdit_VirtualKeyboardType>` **virtual_keyboard_type** = ``0``
+:ref:`VirtualKeyboardType<enum_LineEdit_VirtualKeyboardType>` **virtual_keyboard_type** = ``0`` :ref:`🔗<class_LineEdit_property_virtual_keyboard_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -1167,11 +1257,35 @@ Specifies the type of virtual keyboard to show.
 Method Descriptions
 -------------------
 
+.. _class_LineEdit_method_apply_ime:
+
+.. rst-class:: classref-method
+
+|void| **apply_ime**\ (\ ) :ref:`🔗<class_LineEdit_method_apply_ime>`
+
+Applies text from the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME) and closes the IME if it is open.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_cancel_ime:
+
+.. rst-class:: classref-method
+
+|void| **cancel_ime**\ (\ ) :ref:`🔗<class_LineEdit_method_cancel_ime>`
+
+Closes the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME) if it is open. Any text in the IME will be lost.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_method_clear:
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_LineEdit_method_clear>`
 
 Erases the **LineEdit**'s :ref:`text<class_LineEdit_property_text>`.
 
@@ -1183,7 +1297,7 @@ Erases the **LineEdit**'s :ref:`text<class_LineEdit_property_text>`.
 
 .. rst-class:: classref-method
 
-|void| **delete_char_at_caret**\ (\ )
+|void| **delete_char_at_caret**\ (\ ) :ref:`🔗<class_LineEdit_method_delete_char_at_caret>`
 
 Deletes one character at the caret's current position (equivalent to pressing :kbd:`Delete`).
 
@@ -1195,7 +1309,7 @@ Deletes one character at the caret's current position (equivalent to pressing :k
 
 .. rst-class:: classref-method
 
-|void| **delete_text**\ (\ from_column\: :ref:`int<class_int>`, to_column\: :ref:`int<class_int>`\ )
+|void| **delete_text**\ (\ from_column\: :ref:`int<class_int>`, to_column\: :ref:`int<class_int>`\ ) :ref:`🔗<class_LineEdit_method_delete_text>`
 
 Deletes a section of the :ref:`text<class_LineEdit_property_text>` going from position ``from_column`` to ``to_column``. Both parameters should be within the text's length.
 
@@ -1207,9 +1321,23 @@ Deletes a section of the :ref:`text<class_LineEdit_property_text>` going from po
 
 .. rst-class:: classref-method
 
-|void| **deselect**\ (\ )
+|void| **deselect**\ (\ ) :ref:`🔗<class_LineEdit_method_deselect>`
 
 Clears the current selection.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_edit:
+
+.. rst-class:: classref-method
+
+|void| **edit**\ (\ ) :ref:`🔗<class_LineEdit_method_edit>`
+
+Allows entering edit mode whether the **LineEdit** is focused or not.
+
+See also :ref:`keep_editing_on_text_submit<class_LineEdit_property_keep_editing_on_text_submit>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1219,7 +1347,7 @@ Clears the current selection.
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_menu**\ (\ ) |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_menu**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_get_menu>`
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this **LineEdit**. By default, this menu is displayed when right-clicking on the **LineEdit**.
 
@@ -1278,7 +1406,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_scroll_offset**\ (\ ) |const|
+:ref:`float<class_float>` **get_scroll_offset**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_get_scroll_offset>`
 
 Returns the scroll offset due to :ref:`caret_column<class_LineEdit_property_caret_column>`, as a number of characters.
 
@@ -1290,7 +1418,7 @@ Returns the scroll offset due to :ref:`caret_column<class_LineEdit_property_care
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_selected_text**\ (\ )
+:ref:`String<class_String>` **get_selected_text**\ (\ ) :ref:`🔗<class_LineEdit_method_get_selected_text>`
 
 Returns the text inside the selection.
 
@@ -1302,7 +1430,7 @@ Returns the text inside the selection.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_from_column**\ (\ ) |const|
+:ref:`int<class_int>` **get_selection_from_column**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_get_selection_from_column>`
 
 Returns the selection begin column.
 
@@ -1314,9 +1442,33 @@ Returns the selection begin column.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_to_column**\ (\ ) |const|
+:ref:`int<class_int>` **get_selection_to_column**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_get_selection_to_column>`
 
 Returns the selection end column.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_has_ime_text:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_ime_text**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_has_ime_text>`
+
+Returns ``true`` if the user has text in the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_has_redo:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_redo**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_has_redo>`
+
+Returns ``true`` if a "redo" action is available.
 
 .. rst-class:: classref-item-separator
 
@@ -1326,9 +1478,21 @@ Returns the selection end column.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_selection**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_selection**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_has_selection>`
 
 Returns ``true`` if the user has selected text.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_has_undo:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_undo**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_has_undo>`
+
+Returns ``true`` if an "undo" action is available.
 
 .. rst-class:: classref-item-separator
 
@@ -1338,9 +1502,21 @@ Returns ``true`` if the user has selected text.
 
 .. rst-class:: classref-method
 
-|void| **insert_text_at_caret**\ (\ text\: :ref:`String<class_String>`\ )
+|void| **insert_text_at_caret**\ (\ text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_LineEdit_method_insert_text_at_caret>`
 
 Inserts ``text`` at the caret. If the resulting value is longer than :ref:`max_length<class_LineEdit_property_max_length>`, nothing happens.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_is_editing:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_editing**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_is_editing>`
+
+Returns whether the **LineEdit** is being edited.
 
 .. rst-class:: classref-item-separator
 
@@ -1350,7 +1526,7 @@ Inserts ``text`` at the caret. If the resulting value is longer than :ref:`max_l
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_menu_visible**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_menu_visible**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_is_menu_visible>`
 
 Returns whether the menu is visible. Use this instead of ``get_menu().visible`` to improve performance (so the creation of the menu is avoided).
 
@@ -1362,7 +1538,7 @@ Returns whether the menu is visible. Use this instead of ``get_menu().visible`` 
 
 .. rst-class:: classref-method
 
-|void| **menu_option**\ (\ option\: :ref:`int<class_int>`\ )
+|void| **menu_option**\ (\ option\: :ref:`int<class_int>`\ ) :ref:`🔗<class_LineEdit_method_menu_option>`
 
 Executes a given action as defined in the :ref:`MenuItems<enum_LineEdit_MenuItems>` enum.
 
@@ -1374,7 +1550,7 @@ Executes a given action as defined in the :ref:`MenuItems<enum_LineEdit_MenuItem
 
 .. rst-class:: classref-method
 
-|void| **select**\ (\ from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = -1\ )
+|void| **select**\ (\ from\: :ref:`int<class_int>` = 0, to\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_LineEdit_method_select>`
 
 Selects characters inside **LineEdit** between ``from`` and ``to``. By default, ``from`` is at the beginning and ``to`` at the end.
 
@@ -1405,9 +1581,21 @@ Selects characters inside **LineEdit** between ``from`` and ``to``. By default, 
 
 .. rst-class:: classref-method
 
-|void| **select_all**\ (\ )
+|void| **select_all**\ (\ ) :ref:`🔗<class_LineEdit_method_select_all>`
 
 Selects the whole :ref:`String<class_String>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_unedit:
+
+.. rst-class:: classref-method
+
+|void| **unedit**\ (\ ) :ref:`🔗<class_LineEdit_method_unedit>`
+
+Allows exiting edit mode while preserving focus.
 
 .. rst-class:: classref-section-separator
 
@@ -1422,7 +1610,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **caret_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **caret_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_LineEdit_theme_color_caret_color>`
 
 Color of the **LineEdit**'s caret (text cursor). This can be set to a fully transparent color to hide the caret entirely.
 
@@ -1434,7 +1622,7 @@ Color of the **LineEdit**'s caret (text cursor). This can be set to a fully tran
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **clear_button_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **clear_button_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_LineEdit_theme_color_clear_button_color>`
 
 Color used as default tint for the clear button.
 
@@ -1446,7 +1634,7 @@ Color used as default tint for the clear button.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **clear_button_color_pressed** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **clear_button_color_pressed** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_LineEdit_theme_color_clear_button_color_pressed>`
 
 Color used for the clear button when it's pressed.
 
@@ -1458,7 +1646,7 @@ Color used for the clear button when it's pressed.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_LineEdit_theme_color_font_color>`
 
 Default font color.
 
@@ -1470,7 +1658,7 @@ Default font color.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LineEdit_theme_color_font_outline_color>`
 
 The tint of text outline of the **LineEdit**.
 
@@ -1482,7 +1670,7 @@ The tint of text outline of the **LineEdit**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_placeholder_color** = ``Color(0.875, 0.875, 0.875, 0.6)``
+:ref:`Color<class_Color>` **font_placeholder_color** = ``Color(0.875, 0.875, 0.875, 0.6)`` :ref:`🔗<class_LineEdit_theme_color_font_placeholder_color>`
 
 Font color for :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`.
 
@@ -1494,7 +1682,7 @@ Font color for :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_selected_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_selected_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_LineEdit_theme_color_font_selected_color>`
 
 Font color for selected text (inside the selection rectangle).
 
@@ -1506,7 +1694,7 @@ Font color for selected text (inside the selection rectangle).
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_uneditable_color** = ``Color(0.875, 0.875, 0.875, 0.5)``
+:ref:`Color<class_Color>` **font_uneditable_color** = ``Color(0.875, 0.875, 0.875, 0.5)`` :ref:`🔗<class_LineEdit_theme_color_font_uneditable_color>`
 
 Font color when editing is disabled.
 
@@ -1518,7 +1706,7 @@ Font color when editing is disabled.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **selection_color** = ``Color(0.5, 0.5, 0.5, 1)``
+:ref:`Color<class_Color>` **selection_color** = ``Color(0.5, 0.5, 0.5, 1)`` :ref:`🔗<class_LineEdit_theme_color_selection_color>`
 
 Color of the selection rectangle.
 
@@ -1530,7 +1718,7 @@ Color of the selection rectangle.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **caret_width** = ``1``
+:ref:`int<class_int>` **caret_width** = ``1`` :ref:`🔗<class_LineEdit_theme_constant_caret_width>`
 
 The caret's width in pixels. Greater values can be used to improve accessibility by ensuring the caret is easily visible, or to ensure consistency with a large font size.
 
@@ -1542,7 +1730,7 @@ The caret's width in pixels. Greater values can be used to improve accessibility
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **minimum_character_width** = ``4``
+:ref:`int<class_int>` **minimum_character_width** = ``4`` :ref:`🔗<class_LineEdit_theme_constant_minimum_character_width>`
 
 Minimum horizontal space for the text (not counting the clear button and content margins). This value is measured in count of 'M' characters (i.e. this number of 'M' characters can be displayed without scrolling).
 
@@ -1554,7 +1742,7 @@ Minimum horizontal space for the text (not counting the clear button and content
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_LineEdit_theme_constant_outline_size>`
 
 The size of the text outline.
 
@@ -1568,7 +1756,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_LineEdit_theme_font_font>`
 
 Font used for the text.
 
@@ -1580,7 +1768,7 @@ Font used for the text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_size**
+:ref:`int<class_int>` **font_size** :ref:`🔗<class_LineEdit_theme_font_size_font_size>`
 
 Font size of the **LineEdit**'s text.
 
@@ -1592,7 +1780,7 @@ Font size of the **LineEdit**'s text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **clear**
+:ref:`Texture2D<class_Texture2D>` **clear** :ref:`🔗<class_LineEdit_theme_icon_clear>`
 
 Texture for the clear button. See :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`.
 
@@ -1604,7 +1792,7 @@ Texture for the clear button. See :ref:`clear_button_enabled<class_LineEdit_prop
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **focus**
+:ref:`StyleBox<class_StyleBox>` **focus** :ref:`🔗<class_LineEdit_theme_style_focus>`
 
 Background used when **LineEdit** has GUI focus. The :ref:`focus<class_LineEdit_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
@@ -1616,7 +1804,7 @@ Background used when **LineEdit** has GUI focus. The :ref:`focus<class_LineEdit_
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **normal**
+:ref:`StyleBox<class_StyleBox>` **normal** :ref:`🔗<class_LineEdit_theme_style_normal>`
 
 Default background for the **LineEdit**.
 
@@ -1628,7 +1816,7 @@ Default background for the **LineEdit**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **read_only**
+:ref:`StyleBox<class_StyleBox>` **read_only** :ref:`🔗<class_LineEdit_theme_style_read_only>`
 
 Background used when **LineEdit** is in read-only mode (:ref:`editable<class_LineEdit_property_editable>` is set to ``false``).
 

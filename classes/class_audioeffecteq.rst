@@ -61,7 +61,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_band_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_band_count**\ (\ ) |const| :ref:`🔗<class_AudioEffectEQ_method_get_band_count>`
 
 Returns the number of bands of the equalizer.
 
@@ -73,7 +73,7 @@ Returns the number of bands of the equalizer.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_band_gain_db**\ (\ band_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_band_gain_db**\ (\ band_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioEffectEQ_method_get_band_gain_db>`
 
 Returns the band's gain at the specified index, in dB.
 
@@ -85,7 +85,7 @@ Returns the band's gain at the specified index, in dB.
 
 .. rst-class:: classref-method
 
-|void| **set_band_gain_db**\ (\ band_idx\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ )
+|void| **set_band_gain_db**\ (\ band_idx\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioEffectEQ_method_set_band_gain_db>`
 
 Sets band's gain at the specified index, in dB.
 

@@ -71,7 +71,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **custom_solver_bias** = ``0.0``
+:ref:`float<class_float>` **custom_solver_bias** = ``0.0`` :ref:`🔗<class_Shape3D_property_custom_solver_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ When set to ``0``, the default value from :ref:`ProjectSettings.physics/3d/solve
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **margin** = ``0.04``
+:ref:`float<class_float>` **margin** = ``0.04`` :ref:`🔗<class_Shape3D_property_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -114,7 +114,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ArrayMesh<class_ArrayMesh>` **get_debug_mesh**\ (\ )
+:ref:`ArrayMesh<class_ArrayMesh>` **get_debug_mesh**\ (\ ) :ref:`🔗<class_Shape3D_method_get_debug_mesh>`
 
 Returns the :ref:`ArrayMesh<class_ArrayMesh>` used to draw the debug collision for this **Shape3D**.
 

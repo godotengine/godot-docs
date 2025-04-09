@@ -19,9 +19,9 @@ Creates an idle interval in a :ref:`Tween<class_Tween>` animation.
 Description
 -----------
 
-**IntervalTweener** is used to make delays in a tweening sequence. See :ref:`Tween.tween_interval<class_Tween_method_tween_interval>` for more usage information.
+**IntervalTweener** is used to make delays in a tweening sequence. See :ref:`Tween.tween_interval()<class_Tween_method_tween_interval>` for more usage information.
 
-\ **Note:** :ref:`Tween.tween_interval<class_Tween_method_tween_interval>` is the only correct way to create **IntervalTweener**. Any **IntervalTweener** created manually will not function correctly.
+\ **Note:** :ref:`Tween.tween_interval()<class_Tween_method_tween_interval>` is the only correct way to create **IntervalTweener**. Any **IntervalTweener** created manually will not function correctly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -10,7 +10,7 @@ What this tutorial covers
 
 Main screen plugins allow you to create
 new UIs in the central part of the editor, which appear next to the
-"2D", "3D", "Script", and "AssetLib" buttons. Such editor plugins are
+"2D", "3D", "Script", "Game", and "AssetLib" buttons. Such editor plugins are
 referred as "Main screen plugins".
 
 This tutorial leads you through the creation of a basic main screen plugin.
@@ -92,7 +92,7 @@ Add five extra methods such that the script looks like this:
 
         public override Texture2D _GetPluginIcon()
         {
-            return EditorInterface.GetEditorTheme().GetIcon("Node", "EditorIcons");
+            return EditorInterface.Singleton.GetEditorTheme().GetIcon("Node", "EditorIcons");
         }
     }
     #endif
@@ -210,7 +210,7 @@ Here is the full plugin script:
         {
             MainPanelInstance = (Control)MainPanel.Instantiate();
             // Add the main panel to the editor's main viewport.
-            EditorInterface.GetEditorMainScreen().AddChild(MainPanelInstance);
+            EditorInterface.Singleton.GetEditorMainScreen().AddChild(MainPanelInstance);
             // Hide the main panel. Very much required.
             _MakeVisible(false);
         }
@@ -244,7 +244,7 @@ Here is the full plugin script:
         public override Texture2D _GetPluginIcon()
         {
             // Must return some kind of Texture for the icon.
-            return EditorInterface.GetEditorTheme().GetIcon("Node", "EditorIcons");
+            return EditorInterface.Singleton.GetEditorTheme().GetIcon("Node", "EditorIcons");
         }
     }
     #endif

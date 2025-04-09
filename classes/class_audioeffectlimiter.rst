@@ -63,7 +63,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ceiling_db** = ``-0.1``
+:ref:`float<class_float>` **ceiling_db** = ``-0.1`` :ref:`🔗<class_AudioEffectLimiter_property_ceiling_db>`
 
 .. rst-class:: classref-property-setget
 
@@ -80,7 +80,7 @@ The waveform's maximum allowed value, in decibels. Value can range from -20 to -
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **soft_clip_db** = ``2.0``
+:ref:`float<class_float>` **soft_clip_db** = ``2.0`` :ref:`🔗<class_AudioEffectLimiter_property_soft_clip_db>`
 
 .. rst-class:: classref-property-setget
 
@@ -97,7 +97,7 @@ Applies a gain to the limited waves, in decibels. Value can range from 0 to 6.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **soft_clip_ratio** = ``10.0``
+:ref:`float<class_float>` **soft_clip_ratio** = ``10.0`` :ref:`🔗<class_AudioEffectLimiter_property_soft_clip_ratio>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,7 +116,7 @@ Applies a gain to the limited waves, in decibels. Value can range from 0 to 6.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **threshold_db** = ``0.0``
+:ref:`float<class_float>` **threshold_db** = ``0.0`` :ref:`🔗<class_AudioEffectLimiter_property_threshold_db>`
 
 .. rst-class:: classref-property-setget
 

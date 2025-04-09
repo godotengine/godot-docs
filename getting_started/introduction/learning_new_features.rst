@@ -56,8 +56,8 @@ A class reference's page tells you:
           <https://github.com/godotengine/godot-docs/issues>`_ GitHub repository
           to report it.
 
-You can Ctrl-click (Cmd-click on MacOS) any underlined text like the name of a class, property,
-method, signal, or constant to jump to it.
+You can hold :kbd:`Ctrl` (macOS :kbd:`Cmd`) and then mouseover text like the name of a class, property,
+method, signal, or constant to underline it, then :kbd:`Ctrl + Click` (macOS :kbd:`Cmd + Click`) it to jump to it.
 
 Learning to think like a programmer
 -----------------------------------
@@ -85,7 +85,7 @@ help on one of the many `active
 communities <https://godotengine.org/community>`_.
 
 The best place to ask questions and find already answered ones is the
-official `Questions & Answers <https://ask.godotengine.org/>`_ site. These
+official `Godot Forum <https://forum.godotengine.org/>`_. These
 responses show up in search engine results and get saved, allowing other users
 to benefit from discussions on the platform. Once you have asked a question there,
 you can share its link on other social platforms. Before asking a question, be
@@ -121,10 +121,11 @@ information:
    Also, please don't take a picture with your phone, the low quality and screen
    reflections can make it hard to understand the image. Your operating system
    should have a built-in tool to take screenshots with the :kbd:`PrtSc` (Print
-   Screen) key.
+   Screen) key (macOS: use :kbd:`Cmd + Shift + 3` for a full screen shot,
+   `more information here <https://support.apple.com/guide/mac-help/take-a-screenshot-mh26782/mac>`_).
 
    Alternatively, you can use a program like `ShareX <https://getsharex.com/>`_
-   on Windows or `FlameShot <https://flameshot.org/>`_ on Linux.
+   on Windows, or `FlameShot <https://flameshot.org/>`_ on Linux.
 
 5. Sharing a video of your running game can also be really **useful to
    troubleshoot your game**. You can use programs like `OBS Studio

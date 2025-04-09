@@ -33,7 +33,7 @@ does not allow declaring them in namespaces.
 Most global constants were moved to their own enums.
 
 Constants
-^^^^^^^^^
+~~~~~~~~~
 
 In C#, only primitive types can be constant. For example, the ``TAU`` constant
 is replaced by the ``Mathf.Tau`` constant, but the ``Vector2.RIGHT`` constant
@@ -53,7 +53,7 @@ GDScript                 C#
 =======================  ===========================================================
 
 Math functions
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Math global functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2``, are
 located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``.
@@ -66,7 +66,7 @@ contain other useful mathematical operations.
 .. _System.MathF: https://learn.microsoft.com/en-us/dotnet/api/system.mathf
 
 Random functions
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Random global functions, like ``rand_range`` and ``rand_seed``, are located under ``GD``.
 Example: ``GD.RandRange`` and ``GD.RandSeed``.
@@ -78,7 +78,7 @@ Consider using `System.Random`_ or, if you need cryptographically strong randomn
 .. _System.Security.Cryptography.RandomNumberGenerator: https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator
 
 Other functions
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Many other global functions like ``print`` and ``var_to_str`` are located under ``GD``.
 Example: ``GD.Print`` and ``GD.VarToStr``.
@@ -95,7 +95,7 @@ GDScript                      C#
 ============================  =======================================================
 
 Tips
-^^^^
+~~~~
 
 Sometimes it can be useful to use the ``using static`` directive. This directive allows
 to access the members and nested types of a class without specifying the class name.
@@ -115,7 +115,7 @@ Example:
     }
 
 Full list of equivalences
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 List of Godot's global scope functions and their equivalent in C#:
 
@@ -362,6 +362,17 @@ Example:
 .. code-block:: csharp
 
     Input.Singleton.JoyConnectionChanged += Input_JoyConnectionChanged;
+
+If you are developing main screen plugins, it is essential to note that
+``EditorInterface`` is not a static class in C#, unlike in GDScript.
+Therefore, you must use the singleton pattern to obtain an instance of the
+``EditorInterface``:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``EditorInterface``        ``EditorInterface.Singleton``
+====================  ==============================================================
 
 String
 ------

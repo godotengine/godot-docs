@@ -21,7 +21,7 @@ Description
 
 This node is used to preload sub-resources inside a scene, so when the scene is loaded, all the resources are ready to use and can be retrieved from the preloader. You can add the resources using the ResourcePreloader tab when the node is selected.
 
-GDScript has a simplified :ref:`@GDScript.preload<class_@GDScript_method_preload>` built-in method which can be used in most situations, leaving the use of **ResourcePreloader** for more advanced scenarios.
+GDScript has a simplified :ref:`@GDScript.preload()<class_@GDScript_method_preload>` built-in method which can be used in most situations, leaving the use of **ResourcePreloader** for more advanced scenarios.
 
 .. rst-class:: classref-reftable-group
 
@@ -58,7 +58,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_resource**\ (\ name\: :ref:`StringName<class_StringName>`, resource\: :ref:`Resource<class_Resource>`\ )
+|void| **add_resource**\ (\ name\: :ref:`StringName<class_StringName>`, resource\: :ref:`Resource<class_Resource>`\ ) :ref:`🔗<class_ResourcePreloader_method_add_resource>`
 
 Adds a resource to the preloader with the given ``name``. If a resource with the given ``name`` already exists, the new resource will be renamed to "``name`` N" where N is an incrementing number starting from 2.
 
@@ -70,7 +70,7 @@ Adds a resource to the preloader with the given ``name``. If a resource with the
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **get_resource**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Resource<class_Resource>` **get_resource**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ResourcePreloader_method_get_resource>`
 
 Returns the resource associated to ``name``.
 
@@ -82,7 +82,7 @@ Returns the resource associated to ``name``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_resource_list**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_resource_list**\ (\ ) |const| :ref:`🔗<class_ResourcePreloader_method_get_resource_list>`
 
 Returns the list of resources inside the preloader.
 
@@ -94,7 +94,7 @@ Returns the list of resources inside the preloader.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_resource**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_resource**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ResourcePreloader_method_has_resource>`
 
 Returns ``true`` if the preloader contains a resource associated to ``name``.
 
@@ -106,7 +106,7 @@ Returns ``true`` if the preloader contains a resource associated to ``name``.
 
 .. rst-class:: classref-method
 
-|void| **remove_resource**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_resource**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_ResourcePreloader_method_remove_resource>`
 
 Removes the resource associated to ``name`` from the preloader.
 
@@ -118,7 +118,7 @@ Removes the resource associated to ``name`` from the preloader.
 
 .. rst-class:: classref-method
 
-|void| **rename_resource**\ (\ name\: :ref:`StringName<class_StringName>`, newname\: :ref:`StringName<class_StringName>`\ )
+|void| **rename_resource**\ (\ name\: :ref:`StringName<class_StringName>`, newname\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_ResourcePreloader_method_rename_resource>`
 
 Renames a resource inside the preloader from ``name`` to ``newname``.
 

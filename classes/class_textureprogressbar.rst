@@ -96,7 +96,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FillMode**:
+enum **FillMode**: :ref:`🔗<enum_TextureProgressBar_FillMode>`
 
 .. _class_TextureProgressBar_constant_FILL_LEFT_TO_RIGHT:
 
@@ -183,7 +183,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fill_mode** = ``0``
+:ref:`int<class_int>` **fill_mode** = ``0`` :ref:`🔗<class_TextureProgressBar_property_fill_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -200,14 +200,14 @@ The fill direction. See :ref:`FillMode<enum_TextureProgressBar_FillMode>` for po
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **nine_patch_stretch** = ``false``
+:ref:`bool<class_bool>` **nine_patch_stretch** = ``false`` :ref:`🔗<class_TextureProgressBar_property_nine_patch_stretch>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_nine_patch_stretch**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_nine_patch_stretch**\ (\ )
 
-If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_NinePatchRect>`. Use the ``stretch_margin_*`` properties like :ref:`stretch_margin_bottom<class_TextureProgressBar_property_stretch_margin_bottom>` to set up the nine patch's 3×3 grid. When using a radial :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>`, this setting will enable stretching.
+If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_NinePatchRect>`. Use the ``stretch_margin_*`` properties like :ref:`stretch_margin_bottom<class_TextureProgressBar_property_stretch_margin_bottom>` to set up the nine patch's 3×3 grid. When using a radial :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>`, this setting will only enable stretching for :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>`, while :ref:`texture_under<class_TextureProgressBar_property_texture_under>` and :ref:`texture_over<class_TextureProgressBar_property_texture_over>` will be treated like in :ref:`NinePatchRect<class_NinePatchRect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -217,7 +217,7 @@ If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_N
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **radial_center_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **radial_center_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_TextureProgressBar_property_radial_center_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -225,6 +225,8 @@ If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_N
 - :ref:`Vector2<class_Vector2>` **get_radial_center_offset**\ (\ )
 
 Offsets :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>`, :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`, or :ref:`FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE>`.
+
+\ **Note:** The effective radial center always stays within the :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` bounds. If you need to move it outside the texture's bounds, modify the :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` to contain additional empty space where needed.
 
 .. rst-class:: classref-item-separator
 
@@ -234,7 +236,7 @@ Offsets :ref:`texture_progress<class_TextureProgressBar_property_texture_progres
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radial_fill_degrees** = ``360.0``
+:ref:`float<class_float>` **radial_fill_degrees** = ``360.0`` :ref:`🔗<class_TextureProgressBar_property_radial_fill_degrees>`
 
 .. rst-class:: classref-property-setget
 
@@ -253,7 +255,7 @@ See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radial_initial_angle** = ``0.0``
+:ref:`float<class_float>` **radial_initial_angle** = ``0.0`` :ref:`🔗<class_TextureProgressBar_property_radial_initial_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -261,6 +263,8 @@ See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_
 - :ref:`float<class_float>` **get_radial_initial_angle**\ (\ )
 
 Starting angle for the fill of :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>`, :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`, or :ref:`FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgressBar_property_radial_fill_degrees>`.
+
+\ **Note:** :ref:`radial_initial_angle<class_TextureProgressBar_property_radial_initial_angle>` is wrapped between ``0`` and ``360`` degrees (inclusive).
 
 .. rst-class:: classref-item-separator
 
@@ -270,7 +274,7 @@ Starting angle for the fill of :ref:`texture_progress<class_TextureProgressBar_p
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_margin_bottom** = ``0``
+:ref:`int<class_int>` **stretch_margin_bottom** = ``0`` :ref:`🔗<class_TextureProgressBar_property_stretch_margin_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -287,7 +291,7 @@ The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's botto
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_margin_left** = ``0``
+:ref:`int<class_int>` **stretch_margin_left** = ``0`` :ref:`🔗<class_TextureProgressBar_property_stretch_margin_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -304,7 +308,7 @@ The width of the 9-patch's left column. Only effective if :ref:`nine_patch_stret
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_margin_right** = ``0``
+:ref:`int<class_int>` **stretch_margin_right** = ``0`` :ref:`🔗<class_TextureProgressBar_property_stretch_margin_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -321,7 +325,7 @@ The width of the 9-patch's right column. Only effective if :ref:`nine_patch_stre
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_margin_top** = ``0``
+:ref:`int<class_int>` **stretch_margin_top** = ``0`` :ref:`🔗<class_TextureProgressBar_property_stretch_margin_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -338,7 +342,7 @@ The height of the 9-patch's top row. Only effective if :ref:`nine_patch_stretch<
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_over**
+:ref:`Texture2D<class_Texture2D>` **texture_over** :ref:`🔗<class_TextureProgressBar_property_texture_over>`
 
 .. rst-class:: classref-property-setget
 
@@ -355,7 +359,7 @@ The height of the 9-patch's top row. Only effective if :ref:`nine_patch_stretch<
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_progress**
+:ref:`Texture2D<class_Texture2D>` **texture_progress** :ref:`🔗<class_TextureProgressBar_property_texture_progress>`
 
 .. rst-class:: classref-property-setget
 
@@ -374,7 +378,7 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **texture_progress_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **texture_progress_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_TextureProgressBar_property_texture_progress_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -391,7 +395,7 @@ The offset of :ref:`texture_progress<class_TextureProgressBar_property_texture_p
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_under**
+:ref:`Texture2D<class_Texture2D>` **texture_under** :ref:`🔗<class_TextureProgressBar_property_texture_under>`
 
 .. rst-class:: classref-property-setget
 
@@ -408,7 +412,7 @@ The offset of :ref:`texture_progress<class_TextureProgressBar_property_texture_p
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **tint_over** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **tint_over** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TextureProgressBar_property_tint_over>`
 
 .. rst-class:: classref-property-setget
 
@@ -425,7 +429,7 @@ Multiplies the color of the bar's :ref:`texture_over<class_TextureProgressBar_pr
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **tint_progress** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **tint_progress** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TextureProgressBar_property_tint_progress>`
 
 .. rst-class:: classref-property-setget
 
@@ -442,7 +446,7 @@ Multiplies the color of the bar's :ref:`texture_progress<class_TextureProgressBa
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **tint_under** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **tint_under** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TextureProgressBar_property_tint_under>`
 
 .. rst-class:: classref-property-setget
 
@@ -464,7 +468,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_stretch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`int<class_int>` **get_stretch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_TextureProgressBar_method_get_stretch_margin>`
 
 Returns the stretch margin with the specified index. See :ref:`stretch_margin_bottom<class_TextureProgressBar_property_stretch_margin_bottom>` and related properties.
 
@@ -476,7 +480,7 @@ Returns the stretch margin with the specified index. See :ref:`stretch_margin_bo
 
 .. rst-class:: classref-method
 
-|void| **set_stretch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, value\: :ref:`int<class_int>`\ )
+|void| **set_stretch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextureProgressBar_method_set_stretch_margin>`
 
 Sets the stretch margin with the specified index. See :ref:`stretch_margin_bottom<class_TextureProgressBar_property_stretch_margin_bottom>` and related properties.
 

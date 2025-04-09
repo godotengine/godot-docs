@@ -19,9 +19,9 @@ A control used to edit properties of an object.
 Description
 -----------
 
-This is the control that implements property editing in the editor's Settings dialogs, the Inspector dock, etc. To get the **EditorInspector** used in the editor's Inspector dock, use :ref:`EditorInterface.get_inspector<class_EditorInterface_method_get_inspector>`.
+This is the control that implements property editing in the editor's Settings dialogs, the Inspector dock, etc. To get the **EditorInspector** used in the editor's Inspector dock, use :ref:`EditorInterface.get_inspector()<class_EditorInterface_method_get_inspector>`.
 
-\ **EditorInspector** will show properties in the same order as the array returned by :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+\ **EditorInspector** will show properties in the same order as the array returned by :ref:`Object.get_property_list()<class_Object_method_get_property_list>`.
 
 If a property's name is path-like (i.e. if it contains forward slashes), **EditorInspector** will create nested sections for "directories" along the path. For example, if a property is named ``highlighting/gdscript/node_path_color``, it will be shown as "Node Path Color" inside the "GDScript" section nested inside the "Highlighting" section.
 
@@ -40,7 +40,9 @@ Properties
    :widths: auto
 
    +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                            | follow_focus           | ``true`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_follow_focus>`)        |
+   | :ref:`bool<class_bool>`                            | draw_focus_border      | ``true`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_draw_focus_border>`)   |
+   +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`           | focus_mode             | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)                             |
    +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
    | :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | horizontal_scroll_mode | ``0`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_horizontal_scroll_mode>`) |
    +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
@@ -53,11 +55,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+----------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>` | :ref:`get_edited_object<class_EditorInspector_method_get_edited_object>`\ (\ )         |
-   +-----------------------------+----------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_selected_path<class_EditorInspector_method_get_selected_path>`\ (\ ) |const| |
-   +-----------------------------+----------------------------------------------------------------------------------------+
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                      | :ref:`edit<class_EditorInspector_method_edit>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                                                                                                                                                                                                    |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`                 | :ref:`get_edited_object<class_EditorInspector_method_get_edited_object>`\ (\ )                                                                                                                                                                                                                                                                                                                                                |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                 | :ref:`get_selected_path<class_EditorInspector_method_get_selected_path>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                        |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorProperty<class_EditorProperty>` | :ref:`instantiate_property_editor<class_EditorInspector_method_instantiate_property_editor>`\ (\ object\: :ref:`Object<class_Object>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`, path\: :ref:`String<class_String>`, hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_text\: :ref:`String<class_String>`, usage\: :ref:`int<class_int>`, wide\: :ref:`bool<class_bool>` = false\ ) |static| |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -72,7 +78,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**edited_object_changed**\ (\ )
+**edited_object_changed**\ (\ ) :ref:`🔗<class_EditorInspector_signal_edited_object_changed>`
 
 Emitted when the object being edited by the inspector has changed.
 
@@ -84,7 +90,7 @@ Emitted when the object being edited by the inspector has changed.
 
 .. rst-class:: classref-signal
 
-**object_id_selected**\ (\ id\: :ref:`int<class_int>`\ )
+**object_id_selected**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorInspector_signal_object_id_selected>`
 
 Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed in the inspector. This is mainly used in the remote scene tree Inspector.
 
@@ -96,7 +102,7 @@ Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed 
 
 .. rst-class:: classref-signal
 
-**property_deleted**\ (\ property\: :ref:`String<class_String>`\ )
+**property_deleted**\ (\ property\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInspector_signal_property_deleted>`
 
 Emitted when a property is removed from the inspector.
 
@@ -108,7 +114,7 @@ Emitted when a property is removed from the inspector.
 
 .. rst-class:: classref-signal
 
-**property_edited**\ (\ property\: :ref:`String<class_String>`\ )
+**property_edited**\ (\ property\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInspector_signal_property_edited>`
 
 Emitted when a property is edited in the inspector.
 
@@ -120,7 +126,7 @@ Emitted when a property is edited in the inspector.
 
 .. rst-class:: classref-signal
 
-**property_keyed**\ (\ property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`, advance\: :ref:`bool<class_bool>`\ )
+**property_keyed**\ (\ property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`, advance\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorInspector_signal_property_keyed>`
 
 Emitted when a property is keyed in the inspector. Properties can be keyed by clicking the "key" icon next to a property when the Animation panel is toggled.
 
@@ -132,7 +138,7 @@ Emitted when a property is keyed in the inspector. Properties can be keyed by cl
 
 .. rst-class:: classref-signal
 
-**property_selected**\ (\ property\: :ref:`String<class_String>`\ )
+**property_selected**\ (\ property\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInspector_signal_property_selected>`
 
 Emitted when a property is selected in the inspector.
 
@@ -144,7 +150,7 @@ Emitted when a property is selected in the inspector.
 
 .. rst-class:: classref-signal
 
-**property_toggled**\ (\ property\: :ref:`String<class_String>`, checked\: :ref:`bool<class_bool>`\ )
+**property_toggled**\ (\ property\: :ref:`String<class_String>`, checked\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorInspector_signal_property_toggled>`
 
 Emitted when a boolean property is toggled in the inspector.
 
@@ -158,7 +164,7 @@ Emitted when a boolean property is toggled in the inspector.
 
 .. rst-class:: classref-signal
 
-**resource_selected**\ (\ resource\: :ref:`Resource<class_Resource>`, path\: :ref:`String<class_String>`\ )
+**resource_selected**\ (\ resource\: :ref:`Resource<class_Resource>`, path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInspector_signal_resource_selected>`
 
 Emitted when a resource is selected in the inspector.
 
@@ -170,7 +176,7 @@ Emitted when a resource is selected in the inspector.
 
 .. rst-class:: classref-signal
 
-**restart_requested**\ (\ )
+**restart_requested**\ (\ ) :ref:`🔗<class_EditorInspector_signal_restart_requested>`
 
 Emitted when a property that requires a restart to be applied is edited in the inspector. This is only used in the Project Settings and Editor Settings.
 
@@ -183,11 +189,25 @@ Emitted when a property that requires a restart to be applied is edited in the i
 Method Descriptions
 -------------------
 
+.. _class_EditorInspector_method_edit:
+
+.. rst-class:: classref-method
+
+|void| **edit**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_EditorInspector_method_edit>`
+
+Shows the properties of the given ``object`` in this inspector for editing. To clear the inspector, call this method with ``null``.
+
+\ **Note:** If you want to edit an object in the editor's main inspector, use the ``edit_*`` methods in :ref:`EditorInterface<class_EditorInterface>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorInspector_method_get_edited_object:
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_edited_object**\ (\ )
+:ref:`Object<class_Object>` **get_edited_object**\ (\ ) :ref:`🔗<class_EditorInspector_method_get_edited_object>`
 
 Returns the object currently selected in this inspector.
 
@@ -199,9 +219,21 @@ Returns the object currently selected in this inspector.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_selected_path**\ (\ ) |const|
+:ref:`String<class_String>` **get_selected_path**\ (\ ) |const| :ref:`🔗<class_EditorInspector_method_get_selected_path>`
 
 Gets the path of the currently selected property.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInspector_method_instantiate_property_editor:
+
+.. rst-class:: classref-method
+
+:ref:`EditorProperty<class_EditorProperty>` **instantiate_property_editor**\ (\ object\: :ref:`Object<class_Object>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`, path\: :ref:`String<class_String>`, hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_text\: :ref:`String<class_String>`, usage\: :ref:`int<class_int>`, wide\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_EditorInspector_method_instantiate_property_editor>`
+
+Creates a property editor that can be used by plugin UI to edit the specified property of an ``object``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

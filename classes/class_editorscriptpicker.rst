@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Node<class_Node>` **script_owner**
+:ref:`Node<class_Node>` **script_owner** :ref:`🔗<class_EditorScriptPicker_property_script_owner>`
 
 .. rst-class:: classref-property-setget
 

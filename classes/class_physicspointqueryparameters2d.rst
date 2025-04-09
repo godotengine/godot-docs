@@ -12,14 +12,14 @@ PhysicsPointQueryParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Provides parameters for :ref:`PhysicsDirectSpaceState2D.intersect_point<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
+Provides parameters for :ref:`PhysicsDirectSpaceState2D.intersect_point()<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-By changing various properties of this object, such as the point position, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D.intersect_point<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
+By changing various properties of this object, such as the point position, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D.intersect_point()<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -56,14 +56,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **canvas_instance_id** = ``0``
+:ref:`int<class_int>` **canvas_instance_id** = ``0`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_canvas_instance_id>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_canvas_instance_id**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_canvas_instance_id**\ (\ )
 
-If different from ``0``, restricts the query to a specific canvas layer specified by its instance ID. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+If different from ``0``, restricts the query to a specific canvas layer specified by its instance ID. See :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 If ``0``, restricts the query to the Viewport's default canvas layer.
 
@@ -75,7 +75,7 @@ If ``0``, restricts the query to the Viewport's default canvas layer.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_areas** = ``false``
+:ref:`bool<class_bool>` **collide_with_areas** = ``false`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_collide_with_areas>`
 
 .. rst-class:: classref-property-setget
 
@@ -92,7 +92,7 @@ If ``true``, the query will take :ref:`Area2D<class_Area2D>`\ s into account.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_bodies** = ``true``
+:ref:`bool<class_bool>` **collide_with_bodies** = ``true`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_collide_with_bodies>`
 
 .. rst-class:: classref-property-setget
 
@@ -109,7 +109,7 @@ If ``true``, the query will take :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s in
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **collision_mask** = ``4294967295``
+:ref:`int<class_int>` **collision_mask** = ``4294967295`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_collision_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -126,14 +126,16 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_exclude>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_exclude**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]\ )
 - :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_exclude**\ (\ )
 
-The list of object :ref:`RID<class_RID>`\ s that will be excluded from collisions. Use :ref:`CollisionObject2D.get_rid<class_CollisionObject2D_method_get_rid>` to get the :ref:`RID<class_RID>` associated with a :ref:`CollisionObject2D<class_CollisionObject2D>`-derived node.
+The list of object :ref:`RID<class_RID>`\ s that will be excluded from collisions. Use :ref:`CollisionObject2D.get_rid()<class_CollisionObject2D_method_get_rid>` to get the :ref:`RID<class_RID>` associated with a :ref:`CollisionObject2D<class_CollisionObject2D>`-derived node.
+
+\ **Note:** The returned array is copied and any changes to it will not update the original property value. To update the value you need to modify the returned array, and then assign it to the property again.
 
 .. rst-class:: classref-item-separator
 
@@ -143,7 +145,7 @@ The list of object :ref:`RID<class_RID>`\ s that will be excluded from collision
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_position>`
 
 .. rst-class:: classref-property-setget
 

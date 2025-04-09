@@ -30,9 +30,9 @@ Tutorials
 
 - :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

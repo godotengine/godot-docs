@@ -6,6 +6,10 @@ Nodes and scene instances
 This guide explains how to get nodes, create nodes, add them as a child, and
 instantiate scenes from code.
 
+.. seealso::
+
+    Check the :ref:`doc_instancing` tutorial to learn about Godot's approach to scene instancing.
+
 Getting nodes
 -------------
 

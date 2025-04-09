@@ -8,27 +8,55 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    # Don't run scheduled runs on forks unless the CI_OFFLINE_DOCS_CRON variable is set to 'true'.
+    # Manual runs can still be triggered as normal.
+    if: ${{ github.repository_owner == 'godotengine' || github.event_name != 'schedule' || vars.CI_OFFLINE_DOCS_CRON == 'true' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
     strategy:
+      max-parallel: 1
+      fail-fast: false
       matrix:
         branch:
           - master
           - stable
           - 3.6
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ matrix.branch }}
 
+      - name: Get Python version
+        id: pythonv
+        run: |
+          echo "PYTHON_VERSION=$(python --version)" >> $GITHUB_OUTPUT
+
+      - name: Restore cached virtualenv
+        uses: actions/cache/restore@v4
+        with:
+          key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
+          path: .venv
+
       - name: Install dependencies
         run: |
-          sudo pip3 install -r requirements.txt
-          sudo pip3 install codespell
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install -r requirements.txt
+          echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH
+          echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
           sudo apt update
-          sudo apt install parallel libwebp7
+          sudo apt install parallel libwebp7 imagemagick
+
+      - name: Save virtualenv cache
+        uses: actions/cache/save@v4
+        with:
+          key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
+          path: .venv
 
       - name: Sphinx - Build HTML
-        run: make SPHINXOPTS='--color' html
+        run: make SPHINXOPTS='--color -j 4' html
 
       - uses: actions/upload-artifact@v4
         with:
@@ -50,7 +78,7 @@ jobs:
           sed -i 's/"godot_is_latest": True/"godot_is_latest": False/' conf.py
           sed -i 's/"godot_show_article_status": True/"godot_show_article_status": False/' conf.py
 
-          make SPHINXOPTS='--color' epub
+          make SPHINXOPTS='--color -j 4' epub
 
       - uses: actions/upload-artifact@v4
         with:

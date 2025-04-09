@@ -12,14 +12,14 @@ GLTFSpecGloss
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Archived GLTF extension for specular/glossy materials.
+Archived glTF extension for specular/glossy materials.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-KHR_materials_pbrSpecularGlossiness is an archived GLTF extension. This means that it is deprecated and not recommended for new files. However, it is still supported for loading old files.
+KHR_materials_pbrSpecularGlossiness is an archived glTF extension. This means that it is deprecated and not recommended for new files. However, it is still supported for loading old files.
 
 .. rst-class:: classref-introduction-group
 
@@ -28,7 +28,7 @@ Tutorials
 
 - :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
-- `KHR_materials_pbrSpecularGlossiness GLTF extension spec <https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Archived/KHR_materials_pbrSpecularGlossiness>`__
+- `KHR_materials_pbrSpecularGlossiness glTF extension spec <https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Archived/KHR_materials_pbrSpecularGlossiness>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -63,7 +63,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **diffuse_factor** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **diffuse_factor** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_GLTFSpecGloss_property_diffuse_factor>`
 
 .. rst-class:: classref-property-setget
 
@@ -80,7 +80,7 @@ The reflected diffuse factor of the material.
 
 .. rst-class:: classref-property
 
-:ref:`Image<class_Image>` **diffuse_img**
+:ref:`Image<class_Image>` **diffuse_img** :ref:`🔗<class_GLTFSpecGloss_property_diffuse_img>`
 
 .. rst-class:: classref-property-setget
 
@@ -97,7 +97,7 @@ The diffuse texture.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gloss_factor** = ``1.0``
+:ref:`float<class_float>` **gloss_factor** = ``1.0`` :ref:`🔗<class_GLTFSpecGloss_property_gloss_factor>`
 
 .. rst-class:: classref-property-setget
 
@@ -114,7 +114,7 @@ The glossiness or smoothness of the material.
 
 .. rst-class:: classref-property
 
-:ref:`Image<class_Image>` **spec_gloss_img**
+:ref:`Image<class_Image>` **spec_gloss_img** :ref:`🔗<class_GLTFSpecGloss_property_spec_gloss_img>`
 
 .. rst-class:: classref-property-setget
 
@@ -131,7 +131,7 @@ The specular-glossiness texture.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **specular_factor** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **specular_factor** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_GLTFSpecGloss_property_specular_factor>`
 
 .. rst-class:: classref-property-setget
 

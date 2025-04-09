@@ -30,11 +30,11 @@ A 3D cylinder shape, intended for use in physics. Usually used to provide a shap
 Tutorials
 ---------
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -63,7 +63,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``2.0``
+:ref:`float<class_float>` **height** = ``2.0`` :ref:`🔗<class_CylinderShape3D_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -80,7 +80,7 @@ The cylinder's height.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_CylinderShape3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 

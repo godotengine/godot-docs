@@ -23,6 +23,8 @@ Description
 
 \ **Note:** **SubViewport** is a :ref:`Viewport<class_Viewport>` that isn't a :ref:`Window<class_Window>`, i.e. it doesn't draw anything by itself. To display anything, **SubViewport** must have a non-zero size and be either put inside a :ref:`SubViewportContainer<class_SubViewportContainer>` or assigned to a :ref:`ViewportTexture<class_ViewportTexture>`.
 
+\ **Note:** :ref:`InputEvent<class_InputEvent>`\ s are not passed to a standalone **SubViewport** by default. To ensure :ref:`InputEvent<class_InputEvent>` propagation, a **SubViewport** can be placed inside of a :ref:`SubViewportContainer<class_SubViewportContainer>`.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -32,17 +34,17 @@ Tutorials
 
 - :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
-- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
+- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
 
-- `3D in 2D Demo <https://godotengine.org/asset-library/asset/128>`__
+- `3D in 2D Viewport Demo <https://godotengine.org/asset-library/asset/2804>`__
 
-- `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`__
+- `2D in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2803>`__
 
-- `Screen Capture Demo <https://godotengine.org/asset-library/asset/130>`__
+- `Screen Capture Demo <https://godotengine.org/asset-library/asset/2808>`__
 
-- `Dynamic Split Screen Demo <https://godotengine.org/asset-library/asset/541>`__
+- `Dynamic Split Screen Demo <https://godotengine.org/asset-library/asset/2806>`__
 
-- `3D Viewport Scaling Demo <https://godotengine.org/asset-library/asset/586>`__
+- `3D Resolution Scaling Demo <https://godotengine.org/asset-library/asset/2805>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -77,7 +79,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ClearMode**:
+enum **ClearMode**: :ref:`🔗<enum_SubViewport_ClearMode>`
 
 .. _class_SubViewport_constant_CLEAR_MODE_ALWAYS:
 
@@ -111,7 +113,7 @@ Clear the render target on the next frame, then switch to :ref:`CLEAR_MODE_NEVER
 
 .. rst-class:: classref-enumeration
 
-enum **UpdateMode**:
+enum **UpdateMode**: :ref:`🔗<enum_SubViewport_UpdateMode>`
 
 .. _class_SubViewport_constant_UPDATE_DISABLED:
 
@@ -166,7 +168,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ClearMode<enum_SubViewport_ClearMode>` **render_target_clear_mode** = ``0``
+:ref:`ClearMode<enum_SubViewport_ClearMode>` **render_target_clear_mode** = ``0`` :ref:`🔗<class_SubViewport_property_render_target_clear_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -185,7 +187,7 @@ The clear mode when the sub-viewport is used as a render target.
 
 .. rst-class:: classref-property
 
-:ref:`UpdateMode<enum_SubViewport_UpdateMode>` **render_target_update_mode** = ``2``
+:ref:`UpdateMode<enum_SubViewport_UpdateMode>` **render_target_update_mode** = ``2`` :ref:`🔗<class_SubViewport_property_render_target_update_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -202,7 +204,7 @@ The update mode when the sub-viewport is used as a render target.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(512, 512)``
+:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(512, 512)`` :ref:`🔗<class_SubViewport_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -221,7 +223,7 @@ The width and height of the sub-viewport. Must be set to a value greater than or
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **size_2d_override** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **size_2d_override** = ``Vector2i(0, 0)`` :ref:`🔗<class_SubViewport_property_size_2d_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -238,7 +240,7 @@ The 2D size override of the sub-viewport. If either the width or height is ``0``
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **size_2d_override_stretch** = ``false``
+:ref:`bool<class_bool>` **size_2d_override_stretch** = ``false`` :ref:`🔗<class_SubViewport_property_size_2d_override_stretch>`
 
 .. rst-class:: classref-property-setget
 

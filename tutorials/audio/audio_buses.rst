@@ -51,7 +51,7 @@ Audio buses
 
 Audio buses can be found in the bottom panel of the Godot editor:
 
-.. image:: img/audio_buses1.png
+.. image:: img/audio_buses1.webp
 
 An *audio bus* (also called an *audio channel*) can be considered a place that
 audio is channeled through on the way to playback through a device's speakers.
@@ -67,7 +67,7 @@ the left. The destination bus can be specified for each of the non-master audio
 buses. Routing always passes audio from buses on the right to buses further
 to the left. This avoids infinite routing loops.
 
-.. image:: img/audio_buses2.png
+.. image:: img/audio_buses2.webp
 
 In the above image, the output of *Bus 2* has been routed to the *Master* bus.
 
@@ -77,7 +77,7 @@ Playback of audio through a bus
 To test passing audio to a bus, create an AudioStreamPlayer node, load an
 AudioStream and select a target bus for playback:
 
-.. image:: img/audio_buses3.png
+.. image:: img/audio_buses3.webp
 
 Finally, toggle the **Playing** property to **On** and sound will flow.
 
@@ -88,10 +88,20 @@ Finally, toggle the **Playing** property to **On** and sound will flow.
 Adding effects
 --------------
 
+.. warning::
+
+    This feature is not supported on the web platform if the AudioStreamPlayer's
+    playback mode is set to **Sample**, which is the default. It will only work if the
+    playback mode is set to **Stream**, at the cost of increased latency if threads
+    are not enabled.
+
+    See :ref:`Audio playback in the Exporting for the Web documentation <doc_exporting_for_web_audio_playback>`
+    for details.
+
 Audio buses can contain all sorts of effects. These effects modify the sound in
 one way or another and are applied in order.
 
-.. image:: img/audio_buses4.png
+.. image:: img/audio_buses4.webp
 
 For information on what each effect does, see :ref:`doc_audio_effects`.
 
@@ -102,7 +112,7 @@ There is no need to disable buses manually when not in use. Godot detects
 that the bus has been silent for a few seconds and disables it (including
 all effects).
 
-.. figure:: img/audio_buses5.png
+.. figure:: img/audio_buses5.webp
 
    Disabled buses have a blue VU meter instead of a red-green one.
 

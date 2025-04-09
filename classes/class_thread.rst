@@ -29,7 +29,7 @@ To ensure proper cleanup without crashes or deadlocks, when a **Thread**'s refer
 
 - It must not be waiting on any :ref:`Semaphore<class_Semaphore>` objects.
 
-- :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` should have been called on it.
+- :ref:`wait_to_finish()<class_Thread_method_wait_to_finish>` should have been called on it.
 
 .. rst-class:: classref-introduction-group
 
@@ -40,7 +40,7 @@ Tutorials
 
 - :doc:`Thread-safe APIs <../tutorials/performance/thread_safe_apis>`
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -77,7 +77,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Priority**:
+enum **Priority**: :ref:`🔗<enum_Thread_Priority>`
 
 .. _class_Thread_constant_PRIORITY_LOW:
 
@@ -116,9 +116,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_id**\ (\ ) |const|
+:ref:`String<class_String>` **get_id**\ (\ ) |const| :ref:`🔗<class_Thread_method_get_id>`
 
-Returns the current **Thread**'s ID, uniquely identifying it among all threads. If the **Thread** has not started running or if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` has been called, this returns an empty string.
+Returns the current **Thread**'s ID, uniquely identifying it among all threads. If the **Thread** has not started running or if :ref:`wait_to_finish()<class_Thread_method_wait_to_finish>` has been called, this returns an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -128,11 +128,11 @@ Returns the current **Thread**'s ID, uniquely identifying it among all threads. 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_alive**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_alive**\ (\ ) |const| :ref:`🔗<class_Thread_method_is_alive>`
 
-Returns ``true`` if this **Thread** is currently running the provided function. This is useful for determining if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
+Returns ``true`` if this **Thread** is currently running the provided function. This is useful for determining if :ref:`wait_to_finish()<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
 
-To check if a **Thread** is joinable, use :ref:`is_started<class_Thread_method_is_started>`.
+To check if a **Thread** is joinable, use :ref:`is_started()<class_Thread_method_is_started>`.
 
 .. rst-class:: classref-item-separator
 
@@ -142,9 +142,9 @@ To check if a **Thread** is joinable, use :ref:`is_started<class_Thread_method_i
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_started**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_started**\ (\ ) |const| :ref:`🔗<class_Thread_method_is_started>`
 
-Returns ``true`` if this **Thread** has been started. Once started, this will return ``true`` until it is joined using :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`. For checking if a **Thread** is still executing its task, use :ref:`is_alive<class_Thread_method_is_alive>`.
+Returns ``true`` if this **Thread** has been started. Once started, this will return ``true`` until it is joined using :ref:`wait_to_finish()<class_Thread_method_wait_to_finish>`. For checking if a **Thread** is still executing its task, use :ref:`is_alive()<class_Thread_method_is_alive>`.
 
 .. rst-class:: classref-item-separator
 
@@ -154,7 +154,7 @@ Returns ``true`` if this **Thread** has been started. Once started, this will re
 
 .. rst-class:: classref-method
 
-|void| **set_thread_safety_checks_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |static|
+|void| **set_thread_safety_checks_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |static| :ref:`🔗<class_Thread_method_set_thread_safety_checks_enabled>`
 
 Sets whether the thread safety checks the engine normally performs in methods of certain classes (e.g., :ref:`Node<class_Node>`) should happen **on the current thread**.
 
@@ -178,11 +178,11 @@ Because of that, there may be cases where the user may want to disable them (``e
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ callable\: :ref:`Callable<class_Callable>`, priority\: :ref:`Priority<enum_Thread_Priority>` = 1\ )
+:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ callable\: :ref:`Callable<class_Callable>`, priority\: :ref:`Priority<enum_Thread_Priority>` = 1\ ) :ref:`🔗<class_Thread_method_start>`
 
 Starts a new **Thread** that calls ``callable``.
 
-If the method takes some arguments, you can pass them using :ref:`Callable.bind<class_Callable_method_bind>`.
+If the method takes some arguments, you can pass them using :ref:`Callable.bind()<class_Callable_method_bind>`.
 
 The ``priority`` of the **Thread** can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
 
@@ -196,13 +196,13 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :r
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **wait_to_finish**\ (\ )
+:ref:`Variant<class_Variant>` **wait_to_finish**\ (\ ) :ref:`🔗<class_Thread_method_wait_to_finish>`
 
-Joins the **Thread** and waits for it to finish. Returns the output of the :ref:`Callable<class_Callable>` passed to :ref:`start<class_Thread_method_start>`.
+Joins the **Thread** and waits for it to finish. Returns the output of the :ref:`Callable<class_Callable>` passed to :ref:`start()<class_Thread_method_start>`.
 
 Should either be used when you want to retrieve the value returned from the method called by the **Thread** or before freeing the instance that contains the **Thread**.
 
-To determine if this can be called without blocking the calling thread, check if :ref:`is_alive<class_Thread_method_is_alive>` is ``false``.
+To determine if this can be called without blocking the calling thread, check if :ref:`is_alive()<class_Thread_method_is_alive>` is ``false``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

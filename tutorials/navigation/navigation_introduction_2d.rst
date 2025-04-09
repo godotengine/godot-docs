@@ -13,6 +13,11 @@ Godot provides the following objects and classes for 2D navigation:
 
     The AStar2D class is best suited for cell-based 2D gameplay that does not require actors to reach any possible position within an area but only predefined, distinct positions.
 
+- :ref:`AstarGrid2D<class_AstarGrid2D>`
+    ``AstarGrid2D``  is a variant of AStar2D that is specialized for partial 2D grids. 
+
+    AstarGrid2D is simpler to use when applicable because it doesn't require you to manually create points and connect them together.
+
 - :ref:`NavigationServer2D<class_NavigationServer2D>`
     ``NavigationServer2D`` provides a powerful server API to find the shortest path between two positions on an area defined by a navigation mesh.
 
@@ -94,7 +99,7 @@ It uses the NavigationServer2D and a NavigationAgent2D for path movement.
 
    .. image:: img/nav_2d_min_setup_step1.png
 
-#. Define the moveable navigation area with the NavigationPolygon draw tool. Then click
+#. Define the movable navigation area with the NavigationPolygon draw tool. Then click
    the `Bake NavigationPolygon`` button on the toolbar.
 
    .. image:: img/nav_2d_min_setup_step2.png
@@ -131,7 +136,7 @@ It uses the NavigationServer2D and a NavigationAgent2D for path movement.
         navigation_agent.target_desired_distance = 4.0
 
         # Make sure to not await during _ready.
-        call_deferred("actor_setup")
+        actor_setup.call_deferred()
 
     func actor_setup():
         # Wait for the first physics frame so the NavigationServer can sync.

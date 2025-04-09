@@ -38,11 +38,9 @@ Tutorials
 
 - :doc:`High dynamic range lighting <../tutorials/3d/high_dynamic_range>`
 
-- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
+- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/2742>`__
 
-- `2D HDR Demo <https://godotengine.org/asset-library/asset/110>`__
-
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -277,7 +275,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **BGMode**:
+enum **BGMode**: :ref:`🔗<enum_Environment_BGMode>`
 
 .. _class_Environment_constant_BG_CLEAR_COLOR:
 
@@ -343,7 +341,7 @@ Represents the size of the :ref:`BGMode<enum_Environment_BGMode>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **AmbientSource**:
+enum **AmbientSource**: :ref:`🔗<enum_Environment_AmbientSource>`
 
 .. _class_Environment_constant_AMBIENT_SOURCE_BG:
 
@@ -385,7 +383,7 @@ Gather ambient light from the :ref:`Sky<class_Sky>` regardless of what the backg
 
 .. rst-class:: classref-enumeration
 
-enum **ReflectionSource**:
+enum **ReflectionSource**: :ref:`🔗<enum_Environment_ReflectionSource>`
 
 .. _class_Environment_constant_REFLECTION_SOURCE_BG:
 
@@ -419,7 +417,7 @@ Use the :ref:`Sky<class_Sky>` for reflections regardless of what the background 
 
 .. rst-class:: classref-enumeration
 
-enum **ToneMapper**:
+enum **ToneMapper**: :ref:`🔗<enum_Environment_ToneMapper>`
 
 .. _class_Environment_constant_TONE_MAPPER_LINEAR:
 
@@ -427,7 +425,7 @@ enum **ToneMapper**:
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_LINEAR** = ``0``
 
-Linear tonemapper operator. Reads the linear data and passes it on unmodified. This can cause bright lighting to look blown out, with noticeable clipping in the output colors.
+Does not modify color data, resulting in a linear tonemapping curve which unnaturally clips bright values, causing bright lighting to look blown out. The simplest and fastest tonemapper.
 
 .. _class_Environment_constant_TONE_MAPPER_REINHARDT:
 
@@ -435,7 +433,9 @@ Linear tonemapper operator. Reads the linear data and passes it on unmodified. T
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_REINHARDT** = ``1``
 
-Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull.
+A simple tonemapping curve that rolls off bright values to prevent clipping. This results in an image that can appear dull and low contrast. Slower than :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`.
+
+\ **Note:** When :ref:`tonemap_white<class_Environment_property_tonemap_white>` is left at the default value of ``1.0``, :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>` produces an identical image to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`.
 
 .. _class_Environment_constant_TONE_MAPPER_FILMIC:
 
@@ -443,7 +443,7 @@ Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors b
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_FILMIC** = ``2``
 
-Filmic tonemapper operator. This avoids clipping bright highlights, with a resulting image that usually looks more vivid than :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>`.
+Uses a film-like tonemapping curve to prevent clipping of bright values and provide better contrast than :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>`. Slightly slower than :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>`.
 
 .. _class_Environment_constant_TONE_MAPPER_ACES:
 
@@ -451,9 +451,19 @@ Filmic tonemapper operator. This avoids clipping bright highlights, with a resul
 
 :ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_ACES** = ``3``
 
-Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>` and :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>`.
+Uses a high-contrast film-like tonemapping curve and desaturates bright values for a more realistic appearance. Slightly slower than :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>`.
 
 \ **Note:** This tonemapping operator is called "ACES Fitted" in Godot 3.x.
+
+.. _class_Environment_constant_TONE_MAPPER_AGX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_AGX** = ``4``
+
+Uses a film-like tonemapping curve and desaturates bright values for a more realistic appearance. Better than other tonemappers at maintaining the hue of colors as they become brighter. The slowest tonemapping option.
+
+\ **Note:** :ref:`tonemap_white<class_Environment_property_tonemap_white>` is fixed at a value of ``16.29``, which makes :ref:`TONE_MAPPER_AGX<class_Environment_constant_TONE_MAPPER_AGX>` unsuitable for use with the Mobile rendering method.
 
 .. rst-class:: classref-item-separator
 
@@ -463,7 +473,7 @@ Use the Academy Color Encoding System tonemapper. ACES is slightly more expensiv
 
 .. rst-class:: classref-enumeration
 
-enum **GlowBlendMode**:
+enum **GlowBlendMode**: :ref:`🔗<enum_Environment_GlowBlendMode>`
 
 .. _class_Environment_constant_GLOW_BLEND_MODE_ADDITIVE:
 
@@ -513,7 +523,7 @@ Mixes the glow with the underlying color to avoid increasing brightness as much 
 
 .. rst-class:: classref-enumeration
 
-enum **FogMode**:
+enum **FogMode**: :ref:`🔗<enum_Environment_FogMode>`
 
 .. _class_Environment_constant_FOG_MODE_EXPONENTIAL:
 
@@ -539,7 +549,7 @@ Use a simple fog model defined by start and end positions and a custom curve. Wh
 
 .. rst-class:: classref-enumeration
 
-enum **SDFGIYScale**:
+enum **SDFGIYScale**: :ref:`🔗<enum_Environment_SDFGIYScale>`
 
 .. _class_Environment_constant_SDFGI_Y_SCALE_50_PERCENT:
 
@@ -578,7 +588,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **adjustment_brightness** = ``1.0``
+:ref:`float<class_float>` **adjustment_brightness** = ``1.0`` :ref:`🔗<class_Environment_property_adjustment_brightness>`
 
 .. rst-class:: classref-property-setget
 
@@ -595,7 +605,7 @@ The global brightness value of the rendered scene. Effective only if :ref:`adjus
 
 .. rst-class:: classref-property
 
-:ref:`Texture<class_Texture>` **adjustment_color_correction**
+:ref:`Texture<class_Texture>` **adjustment_color_correction** :ref:`🔗<class_Environment_property_adjustment_color_correction>`
 
 .. rst-class:: classref-property-setget
 
@@ -612,7 +622,7 @@ The :ref:`Texture2D<class_Texture2D>` or :ref:`Texture3D<class_Texture3D>` looku
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **adjustment_contrast** = ``1.0``
+:ref:`float<class_float>` **adjustment_contrast** = ``1.0`` :ref:`🔗<class_Environment_property_adjustment_contrast>`
 
 .. rst-class:: classref-property-setget
 
@@ -629,7 +639,7 @@ The global contrast value of the rendered scene (default value is 1). Effective 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **adjustment_enabled** = ``false``
+:ref:`bool<class_bool>` **adjustment_enabled** = ``false`` :ref:`🔗<class_Environment_property_adjustment_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -637,8 +647,6 @@ The global contrast value of the rendered scene (default value is 1). Effective 
 - :ref:`bool<class_bool>` **is_adjustment_enabled**\ (\ )
 
 If ``true``, enables the ``adjustment_*`` properties provided by this resource. If ``false``, modifications to the ``adjustment_*`` properties will have no effect on the rendered scene.
-
-\ **Note:** Adjustments are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 .. rst-class:: classref-item-separator
 
@@ -648,7 +656,7 @@ If ``true``, enables the ``adjustment_*`` properties provided by this resource. 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **adjustment_saturation** = ``1.0``
+:ref:`float<class_float>` **adjustment_saturation** = ``1.0`` :ref:`🔗<class_Environment_property_adjustment_saturation>`
 
 .. rst-class:: classref-property-setget
 
@@ -665,7 +673,7 @@ The global color saturation value of the rendered scene (default value is 1). Ef
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **ambient_light_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **ambient_light_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_Environment_property_ambient_light_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -682,7 +690,7 @@ The ambient light's :ref:`Color<class_Color>`. Only effective if :ref:`ambient_l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ambient_light_energy** = ``1.0``
+:ref:`float<class_float>` **ambient_light_energy** = ``1.0`` :ref:`🔗<class_Environment_property_ambient_light_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -699,7 +707,7 @@ The ambient light's energy. The higher the value, the stronger the light. Only e
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ambient_light_sky_contribution** = ``1.0``
+:ref:`float<class_float>` **ambient_light_sky_contribution** = ``1.0`` :ref:`🔗<class_Environment_property_ambient_light_sky_contribution>`
 
 .. rst-class:: classref-property-setget
 
@@ -718,7 +726,7 @@ Defines the amount of light that the sky brings on the scene. A value of ``0.0``
 
 .. rst-class:: classref-property
 
-:ref:`AmbientSource<enum_Environment_AmbientSource>` **ambient_light_source** = ``0``
+:ref:`AmbientSource<enum_Environment_AmbientSource>` **ambient_light_source** = ``0`` :ref:`🔗<class_Environment_property_ambient_light_source>`
 
 .. rst-class:: classref-property-setget
 
@@ -735,7 +743,7 @@ The ambient light source to use for rendering materials and global illumination.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **background_camera_feed_id** = ``1``
+:ref:`int<class_int>` **background_camera_feed_id** = ``1`` :ref:`🔗<class_Environment_property_background_camera_feed_id>`
 
 .. rst-class:: classref-property-setget
 
@@ -752,7 +760,7 @@ The ID of the camera feed to show in the background.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **background_canvas_max_layer** = ``0``
+:ref:`int<class_int>` **background_canvas_max_layer** = ``0`` :ref:`🔗<class_Environment_property_background_canvas_max_layer>`
 
 .. rst-class:: classref-property-setget
 
@@ -769,7 +777,7 @@ The maximum layer ID to display. Only effective when using the :ref:`BG_CANVAS<c
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **background_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **background_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_Environment_property_background_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -786,7 +794,7 @@ The :ref:`Color<class_Color>` displayed for clear areas of the scene. Only effec
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **background_energy_multiplier** = ``1.0``
+:ref:`float<class_float>` **background_energy_multiplier** = ``1.0`` :ref:`🔗<class_Environment_property_background_energy_multiplier>`
 
 .. rst-class:: classref-property-setget
 
@@ -803,7 +811,7 @@ Multiplier for background energy. Increase to make background brighter, decrease
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **background_intensity** = ``30000.0``
+:ref:`float<class_float>` **background_intensity** = ``30000.0`` :ref:`🔗<class_Environment_property_background_intensity>`
 
 .. rst-class:: classref-property-setget
 
@@ -820,7 +828,7 @@ Luminance of background measured in nits (candela per square meter). Only used w
 
 .. rst-class:: classref-property
 
-:ref:`BGMode<enum_Environment_BGMode>` **background_mode** = ``0``
+:ref:`BGMode<enum_Environment_BGMode>` **background_mode** = ``0`` :ref:`🔗<class_Environment_property_background_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -837,16 +845,18 @@ The background mode. See :ref:`BGMode<enum_Environment_BGMode>` for possible val
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_aerial_perspective** = ``0.0``
+:ref:`float<class_float>` **fog_aerial_perspective** = ``0.0`` :ref:`🔗<class_Environment_property_fog_aerial_perspective>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_fog_aerial_perspective**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_fog_aerial_perspective**\ (\ )
 
-If set above ``0.0`` (exclusive), blends between the fog's color and the color of the background :ref:`Sky<class_Sky>`. This has a small performance cost when set above ``0.0``. Must have :ref:`background_mode<class_Environment_property_background_mode>` set to :ref:`BG_SKY<class_Environment_constant_BG_SKY>`.
+If set above ``0.0`` (exclusive), blends between the fog's color and the color of the background :ref:`Sky<class_Sky>`, as read from the radiance cubemap. This has a small performance cost when set above ``0.0``. Must have :ref:`background_mode<class_Environment_property_background_mode>` set to :ref:`BG_SKY<class_Environment_constant_BG_SKY>`.
 
 This is useful to simulate `aerial perspective <https://en.wikipedia.org/wiki/Aerial_perspective>`__ in large scenes with low density fog. However, it is not very useful for high-density fog, as the sky will shine through. When set to ``1.0``, the fog color comes completely from the :ref:`Sky<class_Sky>`. If set to ``0.0``, aerial perspective is disabled.
+
+Notice that this does not sample the :ref:`Sky<class_Sky>` directly, but rather the radiance cubemap. The cubemap is sampled at a mipmap level depending on the depth of the rendered pixel; the farther away, the higher the resolution of the sampled mipmap. This results in the actual color being a blurred version of the sky, with more blur closer to the camera. The highest mipmap resolution is used at a depth of :ref:`Camera3D.far<class_Camera3D_property_far>`.
 
 .. rst-class:: classref-item-separator
 
@@ -856,7 +866,7 @@ This is useful to simulate `aerial perspective <https://en.wikipedia.org/wiki/Ae
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_density** = ``0.01``
+:ref:`float<class_float>` **fog_density** = ``0.01`` :ref:`🔗<class_Environment_property_fog_density>`
 
 .. rst-class:: classref-property-setget
 
@@ -877,7 +887,7 @@ The fog density to be used. This is demonstrated in different ways depending on 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_depth_begin** = ``10.0``
+:ref:`float<class_float>` **fog_depth_begin** = ``10.0`` :ref:`🔗<class_Environment_property_fog_depth_begin>`
 
 .. rst-class:: classref-property-setget
 
@@ -894,7 +904,7 @@ The fog's depth starting distance from the camera. Only available when :ref:`fog
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_depth_curve** = ``1.0``
+:ref:`float<class_float>` **fog_depth_curve** = ``1.0`` :ref:`🔗<class_Environment_property_fog_depth_curve>`
 
 .. rst-class:: classref-property-setget
 
@@ -911,7 +921,7 @@ The fog depth's intensity curve. A number of presets are available in the Inspec
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_depth_end** = ``100.0``
+:ref:`float<class_float>` **fog_depth_end** = ``100.0`` :ref:`🔗<class_Environment_property_fog_depth_end>`
 
 .. rst-class:: classref-property-setget
 
@@ -928,7 +938,7 @@ The fog's depth end distance from the camera. If this value is set to ``0``, it 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **fog_enabled** = ``false``
+:ref:`bool<class_bool>` **fog_enabled** = ``false`` :ref:`🔗<class_Environment_property_fog_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -945,7 +955,7 @@ If ``true``, fog effects are enabled.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_height** = ``0.0``
+:ref:`float<class_float>` **fog_height** = ``0.0`` :ref:`🔗<class_Environment_property_fog_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -962,7 +972,7 @@ The height at which the height fog effect begins.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_height_density** = ``0.0``
+:ref:`float<class_float>` **fog_height_density** = ``0.0`` :ref:`🔗<class_Environment_property_fog_height_density>`
 
 .. rst-class:: classref-property-setget
 
@@ -979,7 +989,7 @@ The density used to increase fog as height decreases. To make fog increase as he
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **fog_light_color** = ``Color(0.518, 0.553, 0.608, 1)``
+:ref:`Color<class_Color>` **fog_light_color** = ``Color(0.518, 0.553, 0.608, 1)`` :ref:`🔗<class_Environment_property_fog_light_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -996,7 +1006,7 @@ The fog's color.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_light_energy** = ``1.0``
+:ref:`float<class_float>` **fog_light_energy** = ``1.0`` :ref:`🔗<class_Environment_property_fog_light_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -1013,7 +1023,7 @@ The fog's brightness. Higher values result in brighter fog.
 
 .. rst-class:: classref-property
 
-:ref:`FogMode<enum_Environment_FogMode>` **fog_mode** = ``0``
+:ref:`FogMode<enum_Environment_FogMode>` **fog_mode** = ``0`` :ref:`🔗<class_Environment_property_fog_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -1030,7 +1040,7 @@ The fog mode. See :ref:`FogMode<enum_Environment_FogMode>` for possible values.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_sky_affect** = ``1.0``
+:ref:`float<class_float>` **fog_sky_affect** = ``1.0`` :ref:`🔗<class_Environment_property_fog_sky_affect>`
 
 .. rst-class:: classref-property-setget
 
@@ -1049,7 +1059,7 @@ The factor to use when affecting the sky with non-volumetric fog. ``1.0`` means 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fog_sun_scatter** = ``0.0``
+:ref:`float<class_float>` **fog_sun_scatter** = ``0.0`` :ref:`🔗<class_Environment_property_fog_sun_scatter>`
 
 .. rst-class:: classref-property-setget
 
@@ -1066,7 +1076,7 @@ If set above ``0.0``, renders the scene's directional light(s) in the fog color 
 
 .. rst-class:: classref-property
 
-:ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **glow_blend_mode** = ``2``
+:ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **glow_blend_mode** = ``2`` :ref:`🔗<class_Environment_property_glow_blend_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -1085,7 +1095,7 @@ The glow blending mode.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_bloom** = ``0.0``
+:ref:`float<class_float>` **glow_bloom** = ``0.0`` :ref:`🔗<class_Environment_property_glow_bloom>`
 
 .. rst-class:: classref-property-setget
 
@@ -1102,7 +1112,7 @@ The bloom's intensity. If set to a value higher than ``0``, this will make glow 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **glow_enabled** = ``false``
+:ref:`bool<class_bool>` **glow_enabled** = ``false`` :ref:`🔗<class_Environment_property_glow_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1123,7 +1133,7 @@ If ``true``, the glow effect is enabled. This simulates real world eye/camera be
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_hdr_luminance_cap** = ``12.0``
+:ref:`float<class_float>` **glow_hdr_luminance_cap** = ``12.0`` :ref:`🔗<class_Environment_property_glow_hdr_luminance_cap>`
 
 .. rst-class:: classref-property-setget
 
@@ -1140,7 +1150,7 @@ The higher threshold of the HDR glow. Areas brighter than this threshold will be
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_hdr_scale** = ``2.0``
+:ref:`float<class_float>` **glow_hdr_scale** = ``2.0`` :ref:`🔗<class_Environment_property_glow_hdr_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -1157,7 +1167,7 @@ The bleed scale of the HDR glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_hdr_threshold** = ``1.0``
+:ref:`float<class_float>` **glow_hdr_threshold** = ``1.0`` :ref:`🔗<class_Environment_property_glow_hdr_threshold>`
 
 .. rst-class:: classref-property-setget
 
@@ -1174,7 +1184,7 @@ The lower threshold of the HDR glow. When using the Mobile rendering method (whi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_intensity** = ``0.8``
+:ref:`float<class_float>` **glow_intensity** = ``0.8`` :ref:`🔗<class_Environment_property_glow_intensity>`
 
 .. rst-class:: classref-property-setget
 
@@ -1191,7 +1201,7 @@ The overall brightness multiplier of the glow effect. When using the Mobile rend
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/1** = ``0.0``
+:ref:`float<class_float>` **glow_levels/1** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/1>`
 
 .. rst-class:: classref-property-setget
 
@@ -1210,7 +1220,7 @@ The intensity of the 1st level of glow. This is the most "local" level (least bl
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/2** = ``0.0``
+:ref:`float<class_float>` **glow_levels/2** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/2>`
 
 .. rst-class:: classref-property-setget
 
@@ -1229,7 +1239,7 @@ The intensity of the 2nd level of glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/3** = ``1.0``
+:ref:`float<class_float>` **glow_levels/3** = ``1.0`` :ref:`🔗<class_Environment_property_glow_levels/3>`
 
 .. rst-class:: classref-property-setget
 
@@ -1248,7 +1258,7 @@ The intensity of the 3rd level of glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/4** = ``0.0``
+:ref:`float<class_float>` **glow_levels/4** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/4>`
 
 .. rst-class:: classref-property-setget
 
@@ -1267,7 +1277,7 @@ The intensity of the 4th level of glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/5** = ``1.0``
+:ref:`float<class_float>` **glow_levels/5** = ``1.0`` :ref:`🔗<class_Environment_property_glow_levels/5>`
 
 .. rst-class:: classref-property-setget
 
@@ -1286,7 +1296,7 @@ The intensity of the 5th level of glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/6** = ``0.0``
+:ref:`float<class_float>` **glow_levels/6** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/6>`
 
 .. rst-class:: classref-property-setget
 
@@ -1305,7 +1315,7 @@ The intensity of the 6th level of glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/7** = ``0.0``
+:ref:`float<class_float>` **glow_levels/7** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/7>`
 
 .. rst-class:: classref-property-setget
 
@@ -1324,7 +1334,7 @@ The intensity of the 7th level of glow. This is the most "global" level (blurrie
 
 .. rst-class:: classref-property
 
-:ref:`Texture<class_Texture>` **glow_map**
+:ref:`Texture<class_Texture>` **glow_map** :ref:`🔗<class_Environment_property_glow_map>`
 
 .. rst-class:: classref-property-setget
 
@@ -1345,14 +1355,16 @@ The texture that should be used as a glow map to *multiply* the resulting glow c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_map_strength** = ``0.8``
+:ref:`float<class_float>` **glow_map_strength** = ``0.8`` :ref:`🔗<class_Environment_property_glow_map_strength>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_glow_map_strength**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_glow_map_strength**\ (\ )
 
-How strong of an impact the :ref:`glow_map<class_Environment_property_glow_map>` should have on the overall glow effect. A strength of ``0.0`` means the glow map has no effect on the overall glow effect. A strength of ``1.0`` means the glow has a full effect on the overall glow effect (and can turn off glow entirely in specific areas of the screen if the glow map has black areas).
+How strong of an influence the :ref:`glow_map<class_Environment_property_glow_map>` should have on the overall glow effect. A strength of ``0.0`` means the glow map has no influence, while a strength of ``1.0`` means the glow map has full influence.
+
+\ **Note:** If the glow map has black areas, a value of ``1.0`` can also turn off the glow effect entirely in specific areas of the screen.
 
 \ **Note:** :ref:`glow_map_strength<class_Environment_property_glow_map_strength>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
@@ -1364,7 +1376,7 @@ How strong of an impact the :ref:`glow_map<class_Environment_property_glow_map>`
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_mix** = ``0.05``
+:ref:`float<class_float>` **glow_mix** = ``0.05`` :ref:`🔗<class_Environment_property_glow_mix>`
 
 .. rst-class:: classref-property-setget
 
@@ -1383,7 +1395,7 @@ When using the :ref:`GLOW_BLEND_MODE_MIX<class_Environment_constant_GLOW_BLEND_M
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **glow_normalized** = ``false``
+:ref:`bool<class_bool>` **glow_normalized** = ``false`` :ref:`🔗<class_Environment_property_glow_normalized>`
 
 .. rst-class:: classref-property-setget
 
@@ -1402,7 +1414,7 @@ If ``true``, glow levels will be normalized so that summed together their intens
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_strength** = ``1.0``
+:ref:`float<class_float>` **glow_strength** = ``1.0`` :ref:`🔗<class_Environment_property_glow_strength>`
 
 .. rst-class:: classref-property-setget
 
@@ -1421,7 +1433,7 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 
 .. rst-class:: classref-property
 
-:ref:`ReflectionSource<enum_Environment_ReflectionSource>` **reflected_light_source** = ``0``
+:ref:`ReflectionSource<enum_Environment_ReflectionSource>` **reflected_light_source** = ``0`` :ref:`🔗<class_Environment_property_reflected_light_source>`
 
 .. rst-class:: classref-property-setget
 
@@ -1438,7 +1450,7 @@ The reflected (specular) light source.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sdfgi_bounce_feedback** = ``0.5``
+:ref:`float<class_float>` **sdfgi_bounce_feedback** = ``0.5`` :ref:`🔗<class_Environment_property_sdfgi_bounce_feedback>`
 
 .. rst-class:: classref-property-setget
 
@@ -1459,7 +1471,7 @@ The energy multiplier applied to light every time it bounces from a surface when
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sdfgi_cascade0_distance** = ``12.8``
+:ref:`float<class_float>` **sdfgi_cascade0_distance** = ``12.8`` :ref:`🔗<class_Environment_property_sdfgi_cascade0_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -1476,7 +1488,7 @@ The energy multiplier applied to light every time it bounces from a surface when
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sdfgi_cascades** = ``4``
+:ref:`int<class_int>` **sdfgi_cascades** = ``4`` :ref:`🔗<class_Environment_property_sdfgi_cascades>`
 
 .. rst-class:: classref-property-setget
 
@@ -1493,7 +1505,7 @@ The number of cascades to use for SDFGI (between 1 and 8). A higher number of ca
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sdfgi_enabled** = ``false``
+:ref:`bool<class_bool>` **sdfgi_enabled** = ``false`` :ref:`🔗<class_Environment_property_sdfgi_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1516,7 +1528,7 @@ If ``true``, enables signed distance field global illumination for meshes that h
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sdfgi_energy** = ``1.0``
+:ref:`float<class_float>` **sdfgi_energy** = ``1.0`` :ref:`🔗<class_Environment_property_sdfgi_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -1533,7 +1545,7 @@ The energy multiplier to use for SDFGI. Higher values will result in brighter in
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sdfgi_max_distance** = ``204.8``
+:ref:`float<class_float>` **sdfgi_max_distance** = ``204.8`` :ref:`🔗<class_Environment_property_sdfgi_max_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -1552,7 +1564,7 @@ The maximum distance at which SDFGI is visible. Beyond this distance, environmen
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sdfgi_min_cell_size** = ``0.2``
+:ref:`float<class_float>` **sdfgi_min_cell_size** = ``0.2`` :ref:`🔗<class_Environment_property_sdfgi_min_cell_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -1571,7 +1583,7 @@ The cell size to use for the closest SDFGI cascade (in 3D units). Lower values a
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sdfgi_normal_bias** = ``1.1``
+:ref:`float<class_float>` **sdfgi_normal_bias** = ``1.1`` :ref:`🔗<class_Environment_property_sdfgi_normal_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -1588,7 +1600,7 @@ The normal bias to use for SDFGI probes. Increasing this value can reduce visibl
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sdfgi_probe_bias** = ``1.1``
+:ref:`float<class_float>` **sdfgi_probe_bias** = ``1.1`` :ref:`🔗<class_Environment_property_sdfgi_probe_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -1605,7 +1617,7 @@ The constant bias to use for SDFGI probes. Increasing this value can reduce visi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sdfgi_read_sky_light** = ``true``
+:ref:`bool<class_bool>` **sdfgi_read_sky_light** = ``true`` :ref:`🔗<class_Environment_property_sdfgi_read_sky_light>`
 
 .. rst-class:: classref-property-setget
 
@@ -1622,7 +1634,7 @@ If ``true``, SDFGI takes the environment lighting into account. This should be s
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sdfgi_use_occlusion** = ``false``
+:ref:`bool<class_bool>` **sdfgi_use_occlusion** = ``false`` :ref:`🔗<class_Environment_property_sdfgi_use_occlusion>`
 
 .. rst-class:: classref-property-setget
 
@@ -1639,7 +1651,7 @@ If ``true``, SDFGI uses an occlusion detection approach to reduce light leaking.
 
 .. rst-class:: classref-property
 
-:ref:`SDFGIYScale<enum_Environment_SDFGIYScale>` **sdfgi_y_scale** = ``1``
+:ref:`SDFGIYScale<enum_Environment_SDFGIYScale>` **sdfgi_y_scale** = ``1`` :ref:`🔗<class_Environment_property_sdfgi_y_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -1656,7 +1668,7 @@ The Y scale to use for SDFGI cells. Lower values will result in SDFGI cells bein
 
 .. rst-class:: classref-property
 
-:ref:`Sky<class_Sky>` **sky**
+:ref:`Sky<class_Sky>` **sky** :ref:`🔗<class_Environment_property_sky>`
 
 .. rst-class:: classref-property-setget
 
@@ -1673,7 +1685,7 @@ The :ref:`Sky<class_Sky>` resource used for this **Environment**.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sky_custom_fov** = ``0.0``
+:ref:`float<class_float>` **sky_custom_fov** = ``0.0`` :ref:`🔗<class_Environment_property_sky_custom_fov>`
 
 .. rst-class:: classref-property-setget
 
@@ -1690,7 +1702,7 @@ If set to a value greater than ``0.0``, overrides the field of view to use for s
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **sky_rotation** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **sky_rotation** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_Environment_property_sky_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -1707,7 +1719,7 @@ The rotation to use for sky rendering.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssao_ao_channel_affect** = ``0.0``
+:ref:`float<class_float>` **ssao_ao_channel_affect** = ``0.0`` :ref:`🔗<class_Environment_property_ssao_ao_channel_affect>`
 
 .. rst-class:: classref-property-setget
 
@@ -1724,7 +1736,7 @@ The screen-space ambient occlusion intensity on materials that have an AO textur
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssao_detail** = ``0.5``
+:ref:`float<class_float>` **ssao_detail** = ``0.5`` :ref:`🔗<class_Environment_property_ssao_detail>`
 
 .. rst-class:: classref-property-setget
 
@@ -1741,7 +1753,7 @@ Sets the strength of the additional level of detail for the screen-space ambient
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ssao_enabled** = ``false``
+:ref:`bool<class_bool>` **ssao_enabled** = ``false`` :ref:`🔗<class_Environment_property_ssao_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1760,7 +1772,7 @@ If ``true``, the screen-space ambient occlusion effect is enabled. This darkens 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssao_horizon** = ``0.06``
+:ref:`float<class_float>` **ssao_horizon** = ``0.06`` :ref:`🔗<class_Environment_property_ssao_horizon>`
 
 .. rst-class:: classref-property-setget
 
@@ -1777,7 +1789,7 @@ The threshold for considering whether a given point on a surface is occluded or 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssao_intensity** = ``2.0``
+:ref:`float<class_float>` **ssao_intensity** = ``2.0`` :ref:`🔗<class_Environment_property_ssao_intensity>`
 
 .. rst-class:: classref-property-setget
 
@@ -1794,7 +1806,7 @@ The primary screen-space ambient occlusion intensity. Acts as a multiplier for t
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssao_light_affect** = ``0.0``
+:ref:`float<class_float>` **ssao_light_affect** = ``0.0`` :ref:`🔗<class_Environment_property_ssao_light_affect>`
 
 .. rst-class:: classref-property-setget
 
@@ -1811,7 +1823,7 @@ The screen-space ambient occlusion intensity in direct light. In real life, ambi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssao_power** = ``1.5``
+:ref:`float<class_float>` **ssao_power** = ``1.5`` :ref:`🔗<class_Environment_property_ssao_power>`
 
 .. rst-class:: classref-property-setget
 
@@ -1828,7 +1840,7 @@ The distribution of occlusion. A higher value results in darker occlusion, simil
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssao_radius** = ``1.0``
+:ref:`float<class_float>` **ssao_radius** = ``1.0`` :ref:`🔗<class_Environment_property_ssao_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -1845,7 +1857,7 @@ The distance at which objects can occlude each other when calculating screen-spa
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssao_sharpness** = ``0.98``
+:ref:`float<class_float>` **ssao_sharpness** = ``0.98`` :ref:`🔗<class_Environment_property_ssao_sharpness>`
 
 .. rst-class:: classref-property-setget
 
@@ -1862,7 +1874,7 @@ The amount that the screen-space ambient occlusion effect is allowed to blur ove
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ssil_enabled** = ``false``
+:ref:`bool<class_bool>` **ssil_enabled** = ``false`` :ref:`🔗<class_Environment_property_ssil_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1881,7 +1893,7 @@ If ``true``, the screen-space indirect lighting effect is enabled. Screen space 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssil_intensity** = ``1.0``
+:ref:`float<class_float>` **ssil_intensity** = ``1.0`` :ref:`🔗<class_Environment_property_ssil_intensity>`
 
 .. rst-class:: classref-property-setget
 
@@ -1898,7 +1910,7 @@ The brightness multiplier for the screen-space indirect lighting effect. A highe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssil_normal_rejection** = ``1.0``
+:ref:`float<class_float>` **ssil_normal_rejection** = ``1.0`` :ref:`🔗<class_Environment_property_ssil_normal_rejection>`
 
 .. rst-class:: classref-property-setget
 
@@ -1915,7 +1927,7 @@ Amount of normal rejection used when calculating screen-space indirect lighting.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssil_radius** = ``5.0``
+:ref:`float<class_float>` **ssil_radius** = ``5.0`` :ref:`🔗<class_Environment_property_ssil_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -1932,7 +1944,7 @@ The distance that bounced lighting can travel when using the screen space indire
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssil_sharpness** = ``0.98``
+:ref:`float<class_float>` **ssil_sharpness** = ``0.98`` :ref:`🔗<class_Environment_property_ssil_sharpness>`
 
 .. rst-class:: classref-property-setget
 
@@ -1949,7 +1961,7 @@ The amount that the screen-space indirect lighting effect is allowed to blur ove
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssr_depth_tolerance** = ``0.2``
+:ref:`float<class_float>` **ssr_depth_tolerance** = ``0.2`` :ref:`🔗<class_Environment_property_ssr_depth_tolerance>`
 
 .. rst-class:: classref-property-setget
 
@@ -1966,7 +1978,7 @@ The depth tolerance for screen-space reflections.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ssr_enabled** = ``false``
+:ref:`bool<class_bool>` **ssr_enabled** = ``false`` :ref:`🔗<class_Environment_property_ssr_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1985,7 +1997,7 @@ If ``true``, screen-space reflections are enabled. Screen-space reflections are 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssr_fade_in** = ``0.15``
+:ref:`float<class_float>` **ssr_fade_in** = ``0.15`` :ref:`🔗<class_Environment_property_ssr_fade_in>`
 
 .. rst-class:: classref-property-setget
 
@@ -2002,7 +2014,7 @@ The fade-in distance for screen-space reflections. Affects the area from the ref
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssr_fade_out** = ``2.0``
+:ref:`float<class_float>` **ssr_fade_out** = ``2.0`` :ref:`🔗<class_Environment_property_ssr_fade_out>`
 
 .. rst-class:: classref-property-setget
 
@@ -2019,7 +2031,7 @@ The fade-out distance for screen-space reflections. Affects the area from the sc
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **ssr_max_steps** = ``64``
+:ref:`int<class_int>` **ssr_max_steps** = ``64`` :ref:`🔗<class_Environment_property_ssr_max_steps>`
 
 .. rst-class:: classref-property-setget
 
@@ -2036,14 +2048,16 @@ The maximum number of steps for screen-space reflections. Higher values are slow
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tonemap_exposure** = ``1.0``
+:ref:`float<class_float>` **tonemap_exposure** = ``1.0`` :ref:`🔗<class_Environment_property_tonemap_exposure>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_tonemap_exposure**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_tonemap_exposure**\ (\ )
 
-The default exposure used for tonemapping. Higher values result in a brighter image. See also :ref:`tonemap_white<class_Environment_property_tonemap_white>`.
+Adjusts the brightness of values before they are provided to the tonemapper. Higher :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>` values result in a brighter image. See also :ref:`tonemap_white<class_Environment_property_tonemap_white>`.
+
+\ **Note:** Values provided to the tonemapper will also be multiplied by ``2.0`` and ``1.8`` for :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>` and :ref:`TONE_MAPPER_ACES<class_Environment_constant_TONE_MAPPER_ACES>` respectively to produce a similar apparent brightness as :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2053,7 +2067,7 @@ The default exposure used for tonemapping. Higher values result in a brighter im
 
 .. rst-class:: classref-property
 
-:ref:`ToneMapper<enum_Environment_ToneMapper>` **tonemap_mode** = ``0``
+:ref:`ToneMapper<enum_Environment_ToneMapper>` **tonemap_mode** = ``0`` :ref:`🔗<class_Environment_property_tonemap_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -2070,14 +2084,16 @@ The tonemapping mode to use. Tonemapping is the process that "converts" HDR valu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tonemap_white** = ``1.0``
+:ref:`float<class_float>` **tonemap_white** = ``1.0`` :ref:`🔗<class_Environment_property_tonemap_white>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_tonemap_white**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_tonemap_white**\ (\ )
 
-The white reference value for tonemapping (also called "whitepoint"). Higher values can make highlights look less blown out, and will also slightly darken the whole scene as a result. Only effective if the :ref:`tonemap_mode<class_Environment_property_tonemap_mode>` isn't set to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`. See also :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`.
+The white reference value for tonemapping, which indicates where bright white is located in the scale of values provided to the tonemapper. For photorealistic lighting, recommended values are between ``6.0`` and ``8.0``. Higher values result in less blown out highlights, but may make the scene appear lower contrast. See also :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`.
+
+\ **Note:** :ref:`tonemap_white<class_Environment_property_tonemap_white>` is ignored when using :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>` or :ref:`TONE_MAPPER_AGX<class_Environment_constant_TONE_MAPPER_AGX>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2087,7 +2103,7 @@ The white reference value for tonemapping (also called "whitepoint"). Higher val
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **volumetric_fog_albedo** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **volumetric_fog_albedo** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Environment_property_volumetric_fog_albedo>`
 
 .. rst-class:: classref-property-setget
 
@@ -2104,7 +2120,7 @@ The :ref:`Color<class_Color>` of the volumetric fog when interacting with lights
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_ambient_inject** = ``0.0``
+:ref:`float<class_float>` **volumetric_fog_ambient_inject** = ``0.0`` :ref:`🔗<class_Environment_property_volumetric_fog_ambient_inject>`
 
 .. rst-class:: classref-property-setget
 
@@ -2123,7 +2139,7 @@ Scales the strength of ambient light used in the volumetric fog. A value of ``0.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_anisotropy** = ``0.2``
+:ref:`float<class_float>` **volumetric_fog_anisotropy** = ``0.2`` :ref:`🔗<class_Environment_property_volumetric_fog_anisotropy>`
 
 .. rst-class:: classref-property-setget
 
@@ -2140,7 +2156,7 @@ The direction of scattered light as it goes through the volumetric fog. A value 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_density** = ``0.05``
+:ref:`float<class_float>` **volumetric_fog_density** = ``0.05`` :ref:`🔗<class_Environment_property_volumetric_fog_density>`
 
 .. rst-class:: classref-property-setget
 
@@ -2161,7 +2177,7 @@ To make volumetric fog work as a volumetric *lighting* solution, set :ref:`volum
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_detail_spread** = ``2.0``
+:ref:`float<class_float>` **volumetric_fog_detail_spread** = ``2.0`` :ref:`🔗<class_Environment_property_volumetric_fog_detail_spread>`
 
 .. rst-class:: classref-property-setget
 
@@ -2178,7 +2194,7 @@ The distribution of size down the length of the froxel buffer. A higher value co
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **volumetric_fog_emission** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **volumetric_fog_emission** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_Environment_property_volumetric_fog_emission>`
 
 .. rst-class:: classref-property-setget
 
@@ -2195,7 +2211,7 @@ The emitted light from the volumetric fog. Even with emission, volumetric fog wi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_emission_energy** = ``1.0``
+:ref:`float<class_float>` **volumetric_fog_emission_energy** = ``1.0`` :ref:`🔗<class_Environment_property_volumetric_fog_emission_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -2212,7 +2228,7 @@ The brightness of the emitted light from the volumetric fog.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **volumetric_fog_enabled** = ``false``
+:ref:`bool<class_bool>` **volumetric_fog_enabled** = ``false`` :ref:`🔗<class_Environment_property_volumetric_fog_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -2231,7 +2247,7 @@ Enables the volumetric fog effect. Volumetric fog uses a screen-aligned froxel b
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_gi_inject** = ``1.0``
+:ref:`float<class_float>` **volumetric_fog_gi_inject** = ``1.0`` :ref:`🔗<class_Environment_property_volumetric_fog_gi_inject>`
 
 .. rst-class:: classref-property-setget
 
@@ -2252,7 +2268,7 @@ Scales the strength of Global Illumination used in the volumetric fog's albedo c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_length** = ``64.0``
+:ref:`float<class_float>` **volumetric_fog_length** = ``64.0`` :ref:`🔗<class_Environment_property_volumetric_fog_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -2269,7 +2285,7 @@ The distance over which the volumetric fog is computed. Increase to compute fog 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_sky_affect** = ``1.0``
+:ref:`float<class_float>` **volumetric_fog_sky_affect** = ``1.0`` :ref:`🔗<class_Environment_property_volumetric_fog_sky_affect>`
 
 .. rst-class:: classref-property-setget
 
@@ -2288,7 +2304,7 @@ The factor to use when affecting the sky with volumetric fog. ``1.0`` means that
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volumetric_fog_temporal_reprojection_amount** = ``0.9``
+:ref:`float<class_float>` **volumetric_fog_temporal_reprojection_amount** = ``0.9`` :ref:`🔗<class_Environment_property_volumetric_fog_temporal_reprojection_amount>`
 
 .. rst-class:: classref-property-setget
 
@@ -2305,7 +2321,7 @@ The amount by which to blend the last frame with the current frame. A higher num
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **volumetric_fog_temporal_reprojection_enabled** = ``true``
+:ref:`bool<class_bool>` **volumetric_fog_temporal_reprojection_enabled** = ``true`` :ref:`🔗<class_Environment_property_volumetric_fog_temporal_reprojection_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -2327,7 +2343,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_glow_level**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_glow_level**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Environment_method_get_glow_level>`
 
 Returns the intensity of the glow level ``idx``.
 
@@ -2339,7 +2355,7 @@ Returns the intensity of the glow level ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_glow_level**\ (\ idx\: :ref:`int<class_int>`, intensity\: :ref:`float<class_float>`\ )
+|void| **set_glow_level**\ (\ idx\: :ref:`int<class_int>`, intensity\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Environment_method_set_glow_level>`
 
 Sets the intensity of the glow level ``idx``. A value above ``0.0`` enables the level. Each level relies on the previous level. This means that enabling higher glow levels will slow down the glow effect rendering, even if previous levels aren't enabled.
 

@@ -38,7 +38,7 @@ There are several nodes involved in a complete 2D lighting setup:
 - :ref:`PointLight2D <class_PointLight2D>` (for omnidirectional or spot lights)
 - :ref:`DirectionalLight2D <class_DirectionalLight2D>` (for sunlight or moonlight)
 - :ref:`LightOccluder2D <class_LightOccluder2D>` (for light shadow casters)
-- Other 2D nodes that receive lighting, such as Sprite2D or TileMap.
+- Other 2D nodes that receive lighting, such as Sprite2D or TileMapLayer.
 
 :ref:`CanvasModulate <class_CanvasModulate>` is used to darken the scene by
 specifying a color that will act as the base "ambient" color. This is the final
@@ -55,7 +55,7 @@ to simulate lighting.
 
 :ref:`LightOccluder2Ds <class_LightOccluder2D>` are used to tell the shader
 which parts of the scene cast shadows. These occluders can be placed as
-independent nodes or can be part of a TileMap node.
+independent nodes or can be part of a TileMapLayer node.
 
 The shadows appear only on areas covered by the :ref:`PointLight2D
 <class_PointLight2D>` and their direction is based on the center of the
@@ -200,7 +200,7 @@ LightOccluder2D nodes have 2 properties:
 There are two ways to create light occluders:
 
 Automatically generating a light occluder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Occluders can be created automatically from Sprite2D nodes by selecting the
 node, clicking the **Sprite2D** menu at the top of the 2D editor then choosing
@@ -213,7 +213,7 @@ edges), adjust **Grow (pixels)** and **Shrink (pixels)**, then click **Update
 Preview**. Repeat this operation until you get satisfactory results.
 
 Manually drawing a light occluder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a LightOccluder2D node, then select the node and click the "+" button at
 the top of the 2D editor. When asked to create a polygon resource, answer
@@ -256,7 +256,7 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
    Soft shadows with streaking artifacts due to Filter Smooth being too high (PCF5, Filter Smooth 4)
 
 Occluder draw order
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **LightOccluder2Ds follows the usual 2D drawing order.** This is important for 2D
 lighting, as this is how you control whether the occluder should occlude the

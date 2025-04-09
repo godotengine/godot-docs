@@ -72,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **encode_buffer_max_size** = ``8388608``
+:ref:`int<class_int>` **encode_buffer_max_size** = ``8388608`` :ref:`🔗<class_PacketPeer_property_encode_buffer_max_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -81,7 +81,7 @@ Property Descriptions
 
 Maximum buffer size allowed when encoding :ref:`Variant<class_Variant>`\ s. Raise this value to support heavier memory allocations.
 
-The :ref:`put_var<class_PacketPeer_method_put_var>` method allocates memory on the stack, and the buffer used will grow automatically to the closest power of two to match the size of the :ref:`Variant<class_Variant>`. If the :ref:`Variant<class_Variant>` is bigger than :ref:`encode_buffer_max_size<class_PacketPeer_property_encode_buffer_max_size>`, the method will error out with :ref:`@GlobalScope.ERR_OUT_OF_MEMORY<class_@GlobalScope_constant_ERR_OUT_OF_MEMORY>`.
+The :ref:`put_var()<class_PacketPeer_method_put_var>` method allocates memory on the stack, and the buffer used will grow automatically to the closest power of two to match the size of the :ref:`Variant<class_Variant>`. If the :ref:`Variant<class_Variant>` is bigger than :ref:`encode_buffer_max_size<class_PacketPeer_property_encode_buffer_max_size>`, the method will error out with :ref:`@GlobalScope.ERR_OUT_OF_MEMORY<class_@GlobalScope_constant_ERR_OUT_OF_MEMORY>`.
 
 .. rst-class:: classref-section-separator
 
@@ -96,7 +96,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_available_packet_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_available_packet_count**\ (\ ) |const| :ref:`🔗<class_PacketPeer_method_get_available_packet_count>`
 
 Returns the number of packets currently available in the ring-buffer.
 
@@ -108,7 +108,7 @@ Returns the number of packets currently available in the ring-buffer.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_packet**\ (\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **get_packet**\ (\ ) :ref:`🔗<class_PacketPeer_method_get_packet>`
 
 Gets a raw packet.
 
@@ -120,9 +120,9 @@ Gets a raw packet.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **get_packet_error**\ (\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **get_packet_error**\ (\ ) |const| :ref:`🔗<class_PacketPeer_method_get_packet_error>`
 
-Returns the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
+Returns the error state of the last packet received (via :ref:`get_packet()<class_PacketPeer_method_get_packet>` and :ref:`get_var()<class_PacketPeer_method_get_var>`).
 
 .. rst-class:: classref-item-separator
 
@@ -132,11 +132,11 @@ Returns the error state of the last packet received (via :ref:`get_packet<class_
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_var**\ (\ allow_objects\: :ref:`bool<class_bool>` = false\ )
+:ref:`Variant<class_Variant>` **get_var**\ (\ allow_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PacketPeer_method_get_var>`
 
 Gets a Variant. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var<class_@GlobalScope_method_bytes_to_var>` method.
+Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var()<class_@GlobalScope_method_bytes_to_var>` method.
 
 \ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
@@ -148,7 +148,7 @@ Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.byte
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **put_packet**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **put_packet**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_PacketPeer_method_put_packet>`
 
 Sends a raw packet.
 
@@ -160,11 +160,11 @@ Sends a raw packet.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **put_var**\ (\ var\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ )
+:ref:`Error<enum_@GlobalScope_Error>` **put_var**\ (\ var\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PacketPeer_method_put_var>`
 
 Sends a :ref:`Variant<class_Variant>` as a packet. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 
-Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes<class_@GlobalScope_method_var_to_bytes>` method.
+Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes()<class_@GlobalScope_method_var_to_bytes>` method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

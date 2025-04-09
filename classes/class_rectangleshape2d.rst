@@ -28,9 +28,9 @@ A 2D rectangle shape, intended for use in physics. Usually used to provide a sha
 Tutorials
 ---------
 
-- `2D Pong Demo <https://godotengine.org/asset-library/asset/121>`__
+- `2D Pong Demo <https://godotengine.org/asset-library/asset/2728>`__
 
-- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -57,7 +57,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **size** = ``Vector2(20, 20)``
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2(20, 20)`` :ref:`🔗<class_RectangleShape2D_property_size>`
 
 .. rst-class:: classref-property-setget
 

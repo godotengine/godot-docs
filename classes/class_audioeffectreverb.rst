@@ -28,7 +28,7 @@ Tutorials
 
 - :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -69,7 +69,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **damping** = ``0.5``
+:ref:`float<class_float>` **damping** = ``0.5`` :ref:`🔗<class_AudioEffectReverb_property_damping>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ Defines how reflective the imaginary room's walls are. Value can range from 0 to
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **dry** = ``1.0``
+:ref:`float<class_float>` **dry** = ``1.0`` :ref:`🔗<class_AudioEffectReverb_property_dry>`
 
 .. rst-class:: classref-property-setget
 
@@ -103,7 +103,7 @@ Output percent of original sound. At 0, only modified sound is outputted. Value 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **hipass** = ``0.0``
+:ref:`float<class_float>` **hipass** = ``0.0`` :ref:`🔗<class_AudioEffectReverb_property_hipass>`
 
 .. rst-class:: classref-property-setget
 
@@ -120,7 +120,7 @@ High-pass filter passes signals with a frequency higher than a certain cutoff fr
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **predelay_feedback** = ``0.4``
+:ref:`float<class_float>` **predelay_feedback** = ``0.4`` :ref:`🔗<class_AudioEffectReverb_property_predelay_feedback>`
 
 .. rst-class:: classref-property-setget
 
@@ -137,7 +137,7 @@ Output percent of predelay. Value can range from 0 to 1.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **predelay_msec** = ``150.0``
+:ref:`float<class_float>` **predelay_msec** = ``150.0`` :ref:`🔗<class_AudioEffectReverb_property_predelay_msec>`
 
 .. rst-class:: classref-property-setget
 
@@ -154,7 +154,7 @@ Time between the original signal and the early reflections of the reverb signal,
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **room_size** = ``0.8``
+:ref:`float<class_float>` **room_size** = ``0.8`` :ref:`🔗<class_AudioEffectReverb_property_room_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -171,7 +171,7 @@ Dimensions of simulated room. Bigger means more echoes. Value can range from 0 t
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spread** = ``1.0``
+:ref:`float<class_float>` **spread** = ``1.0`` :ref:`🔗<class_AudioEffectReverb_property_spread>`
 
 .. rst-class:: classref-property-setget
 
@@ -188,7 +188,7 @@ Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Val
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wet** = ``0.5``
+:ref:`float<class_float>` **wet** = ``0.5`` :ref:`🔗<class_AudioEffectReverb_property_wet>`
 
 .. rst-class:: classref-property-setget
 

@@ -69,7 +69,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **file** = ``""``
+:ref:`String<class_String>` **file** = ``""`` :ref:`🔗<class_VideoStream_property_file>`
 
 .. rst-class:: classref-property-setget
 
@@ -93,7 +93,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`VideoStreamPlayback<class_VideoStreamPlayback>` **_instantiate_playback**\ (\ ) |virtual|
+:ref:`VideoStreamPlayback<class_VideoStreamPlayback>` **_instantiate_playback**\ (\ ) |virtual| :ref:`🔗<class_VideoStream_private_method__instantiate_playback>`
 
 Called when the video starts playing, to initialize and return a subclass of :ref:`VideoStreamPlayback<class_VideoStreamPlayback>`.
 

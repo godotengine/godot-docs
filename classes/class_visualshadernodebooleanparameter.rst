@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **default_value** = ``false``
+:ref:`bool<class_bool>` **default_value** = ``false`` :ref:`🔗<class_VisualShaderNodeBooleanParameter_property_default_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -65,7 +65,7 @@ A default value to be assigned within the shader.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+:ref:`bool<class_bool>` **default_value_enabled** = ``false`` :ref:`🔗<class_VisualShaderNodeBooleanParameter_property_default_value_enabled>`
 
 .. rst-class:: classref-property-setget
 

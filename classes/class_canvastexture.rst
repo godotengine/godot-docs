@@ -69,7 +69,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **diffuse_texture**
+:ref:`Texture2D<class_Texture2D>` **diffuse_texture** :ref:`🔗<class_CanvasTexture_property_diffuse_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ The diffuse (color) texture to use. This is the main texture you want to set in 
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **normal_texture**
+:ref:`Texture2D<class_Texture2D>` **normal_texture** :ref:`🔗<class_CanvasTexture_property_normal_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,7 +105,7 @@ The normal map texture to use. Only has a visible effect if :ref:`Light2D<class_
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **specular_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **specular_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_CanvasTexture_property_specular_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ The multiplier for specular reflection colors. The :ref:`Light2D<class_Light2D>`
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **specular_shininess** = ``1.0``
+:ref:`float<class_float>` **specular_shininess** = ``1.0`` :ref:`🔗<class_CanvasTexture_property_specular_shininess>`
 
 .. rst-class:: classref-property-setget
 
@@ -139,7 +139,7 @@ The specular exponent for :ref:`Light2D<class_Light2D>` specular reflections. Hi
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **specular_texture**
+:ref:`Texture2D<class_Texture2D>` **specular_texture** :ref:`🔗<class_CanvasTexture_property_specular_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -156,7 +156,7 @@ The specular map to use for :ref:`Light2D<class_Light2D>` specular reflections. 
 
 .. rst-class:: classref-property
 
-:ref:`TextureFilter<enum_CanvasItem_TextureFilter>` **texture_filter** = ``0``
+:ref:`TextureFilter<enum_CanvasItem_TextureFilter>` **texture_filter** = ``0`` :ref:`🔗<class_CanvasTexture_property_texture_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -173,7 +173,7 @@ The texture filtering mode to use when drawing this **CanvasTexture**.
 
 .. rst-class:: classref-property
 
-:ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **texture_repeat** = ``0``
+:ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **texture_repeat** = ``0`` :ref:`🔗<class_CanvasTexture_property_texture_repeat>`
 
 .. rst-class:: classref-property-setget
 

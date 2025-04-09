@@ -119,10 +119,9 @@ using the global ``Input`` object, in ``_physics_process()``.
         }
     }
 
-Here, we're going to make all calculations using the ``_physics_process()``
-virtual function. Like ``_process()``, it allows you to update the node every
-frame, but it's designed specifically for physics-related code like moving a
-kinematic or rigid body.
+Here, instead of ``_process()``, we're going to make all calculations using the ``_physics_process()``
+virtual function. It's designed specifically for physics-related code like moving a
+kinematic or rigid body. It updates the node using fixed time intervals.
 
 .. seealso::
 
@@ -246,7 +245,7 @@ smooth it out for you. It uses the *velocity* value native to the :ref:`Characte
 
 And that's all the code you need to move the character on the floor.
 
-Here is the complete ``Player.gd`` code for reference.
+Here is the complete ``player.gd`` code for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -275,6 +274,7 @@ Here is the complete ``Player.gd`` code for reference.
 
         if direction != Vector3.ZERO:
             direction = direction.normalized()
+            # Setting the basis property will affect the rotation of the node.
             $Pivot.basis = Basis.looking_at(direction)
 
         # Ground Velocity
@@ -328,6 +328,7 @@ Here is the complete ``Player.gd`` code for reference.
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
+                // Setting the basis property will affect the rotation of the node.
                 GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
             }
 

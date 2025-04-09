@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Operator**:
+enum **Operator**: :ref:`🔗<enum_VisualShaderNodeColorOp_Operator>`
 
 .. _class_VisualShaderNodeColorOp_constant_OP_SCREEN:
 
@@ -201,7 +201,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` **operator** = ``0``
+:ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` **operator** = ``0`` :ref:`🔗<class_VisualShaderNodeColorOp_property_operator>`
 
 .. rst-class:: classref-property-setget
 

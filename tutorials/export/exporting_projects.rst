@@ -64,18 +64,18 @@ supported yet, but the supported platforms continue to grow.
 
 To open the export menu, click the **Export** button:
 
-.. image:: img/export.png
+.. image:: img/export.webp
 
 The export menu will open. However, it will be completely empty.
 This is because we need to add an export preset.
 
-.. image:: img/export_dialog.png
+.. image:: img/export_dialog.webp
 
 To create an export preset, click the **Add…** button at the top
 of the export menu. This will open a drop-down list of platforms
 to choose from for an export preset.
 
-.. image:: img/export_preset.png
+.. image:: img/export_preset.webp
 
 The default options are often enough to export, so tweaking them is
 usually not necessary. However, many platforms require additional
@@ -84,7 +84,7 @@ needs export templates installed to create packages. The export menu
 will complain when something is missing and will not allow the user to
 export for that platform until they resolve it:
 
-.. image:: img/export_error.png
+.. image:: img/export_error.webp
 
 At that time, the user is expected to come back to the documentation and follow
 instructions on how to properly set up that platform.
@@ -111,7 +111,7 @@ TPZ file (which is a renamed ZIP archive) from the
 Once downloaded, they can be installed using the **Install Export Templates**
 option in the editor:
 
-.. image:: img/exptemp.png
+.. image:: img/export_templates.webp
 
 .. _doc_exporting_projects_export_mode:
 
@@ -125,14 +125,23 @@ creates the package. There are 3 different modes for exporting:
 -  Export selected scenes (and dependencies)
 -  Export selected resources (and dependencies)
 
-.. image:: img/expres.png
+.. image:: img/export_resources.webp
 
 **Export all resources in the project** will export every resource in the
 project. **Export selected scenes** and **Export selected resources** gives
 you a list of the scenes or resources in the project, and you have to
 select every scene or resource you want to export.
 
-.. image:: img/expselected.png
+.. image:: img/export_selected.webp
+
+**Export all resources in the project except resources checked below** does
+exactly what it says, everything will be exported except for what you select
+in the list.
+
+**Export as dedicated server** will remove all visuals from a project and replace
+them with a placeholder. This includes Cubemap, CubemapArray, Material, Mesh,
+Texture2D, Texture2DArray, Texture3D. You can also go into the list of files and
+specify specific visual resources that you do wish to keep.
 
 .. note::
 
@@ -141,7 +150,7 @@ select every scene or resource you want to export.
     ``.git`` from being included in the exported PCK file.
 
 Below the list of resources are two filters that can be setup. The first allows
-non resource files such as ``.txt``, ``.json`` and ``.csv`` to be exported with
+non-resource files such as ``.txt``, ``.json`` and ``.csv`` to be exported with
 the project. The second filter can be used to exclude every file of a certain
 type without manually deselecting every one. For example, ``.png`` files.
 
@@ -167,13 +176,13 @@ Exporting from the command line
 -------------------------------
 
 In production, it is useful to automate builds, and Godot supports this
-with the ``--export`` and ``--export-debug`` command line parameters.
+with the ``--export-release`` and ``--export-debug`` command line parameters.
 Exporting from the command line still requires an export preset to define
 the export parameters. A basic invocation of the command would be:
 
 .. code-block:: shell
 
-    godot --export "Windows Desktop" some_name.exe
+    godot --export-release "Windows Desktop" some_name.exe
 
 This will export to ``some_name.exe``, assuming there is a preset
 called "Windows Desktop" and the template can be found. (The export preset name
@@ -184,8 +193,7 @@ The output path is *relative to the project path* or *absolute*;
 The output file extension should match the one used by the Godot export process:
 
 - Windows: ``.exe``
-- macOS: ``.zip`` (from all platforms) or ``.dmg`` (only when exporting *from* macOS).
-  ``.app`` is not supported directly, although the generated ZIP archive contains an ``.app`` bundle.
+- macOS: ``.app`` or ``.zip`` (or ``.dmg`` when exporting *from* macOS)
 - Linux: Any extension (including none). ``.x86_64`` is typically used for 64-bit x86 binaries.
 - HTML5: ``.zip``
 - Android: ``.apk``
@@ -199,13 +207,13 @@ When doing so, the export preset name must still be specified on the command lin
 
     godot --export-pack "Windows Desktop" some_name.pck
 
-It is often useful to combine the ``--export`` flag with the ``--path``
+It is often useful to combine the ``--export-release`` flag with the ``--path``
 flag, so that you do not need to ``cd`` to the project folder before running
 the command:
 
 .. code-block:: shell
 
-    godot --path /path/to/project --export "Windows Desktop" some_name.exe
+    godot --path /path/to/project --export-release "Windows Desktop" some_name.exe
 
 .. seealso::
 

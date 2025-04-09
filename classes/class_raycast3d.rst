@@ -12,18 +12,18 @@ RayCast3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A ray in 3D space, used to find the first :ref:`CollisionObject3D<class_CollisionObject3D>` it intersects.
+A ray in 3D space, used to find the first object it intersects.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A raycast represents a ray from its origin to its :ref:`target_position<class_RayCast3D_property_target_position>` that finds the closest :ref:`CollisionObject3D<class_CollisionObject3D>` along its path, if it intersects any.
+A raycast represents a ray from its origin to its :ref:`target_position<class_RayCast3D_property_target_position>` that finds the closest object along its path, if it intersects any.
 
 \ **RayCast3D** can ignore some objects by adding them to an exception list, by making its detection reporting ignore :ref:`Area3D<class_Area3D>`\ s (:ref:`collide_with_areas<class_RayCast3D_property_collide_with_areas>`) or :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s (:ref:`collide_with_bodies<class_RayCast3D_property_collide_with_bodies>`), or by configuring physics layers.
 
-\ **RayCast3D** calculates intersection every physics frame, and it holds the result until the next physics frame. For an immediate raycast, or if you want to configure a **RayCast3D** multiple times within the same physics frame, use :ref:`force_raycast_update<class_RayCast3D_method_force_raycast_update>`.
+\ **RayCast3D** calculates intersection every physics frame, and it holds the result until the next physics frame. For an immediate raycast, or if you want to configure a **RayCast3D** multiple times within the same physics frame, use :ref:`force_raycast_update()<class_RayCast3D_method_force_raycast_update>`.
 
 To sweep over a region of 3D space, you can approximate the region with multiple **RayCast3D**\ s or use :ref:`ShapeCast3D<class_ShapeCast3D>`.
 
@@ -34,7 +34,7 @@ Tutorials
 
 - :doc:`Ray-casting <../tutorials/physics/ray-casting>`
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -119,7 +119,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_areas** = ``false``
+:ref:`bool<class_bool>` **collide_with_areas** = ``false`` :ref:`🔗<class_RayCast3D_property_collide_with_areas>`
 
 .. rst-class:: classref-property-setget
 
@@ -136,7 +136,7 @@ If ``true``, collisions with :ref:`Area3D<class_Area3D>`\ s will be reported.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_bodies** = ``true``
+:ref:`bool<class_bool>` **collide_with_bodies** = ``true`` :ref:`🔗<class_RayCast3D_property_collide_with_bodies>`
 
 .. rst-class:: classref-property-setget
 
@@ -153,7 +153,7 @@ If ``true``, collisions with :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s will b
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **collision_mask** = ``1``
+:ref:`int<class_int>` **collision_mask** = ``1`` :ref:`🔗<class_RayCast3D_property_collision_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -170,7 +170,7 @@ The ray's collision mask. Only objects in at least one collision layer enabled i
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug_shape_custom_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **debug_shape_custom_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_RayCast3D_property_debug_shape_custom_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -189,7 +189,7 @@ If set to ``Color(0.0, 0.0, 0.0)`` (by default), the color set in :ref:`ProjectS
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug_shape_thickness** = ``2``
+:ref:`int<class_int>` **debug_shape_thickness** = ``2`` :ref:`🔗<class_RayCast3D_property_debug_shape_thickness>`
 
 .. rst-class:: classref-property-setget
 
@@ -206,7 +206,7 @@ If set to ``1``, a line is used as the debug shape. Otherwise, a truncated pyram
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enabled** = ``true``
+:ref:`bool<class_bool>` **enabled** = ``true`` :ref:`🔗<class_RayCast3D_property_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -223,7 +223,7 @@ If ``true``, collisions will be reported.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **exclude_parent** = ``true``
+:ref:`bool<class_bool>` **exclude_parent** = ``true`` :ref:`🔗<class_RayCast3D_property_exclude_parent>`
 
 .. rst-class:: classref-property-setget
 
@@ -240,7 +240,7 @@ If ``true``, collisions will be ignored for this RayCast3D's immediate parent.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hit_back_faces** = ``true``
+:ref:`bool<class_bool>` **hit_back_faces** = ``true`` :ref:`🔗<class_RayCast3D_property_hit_back_faces>`
 
 .. rst-class:: classref-property-setget
 
@@ -257,7 +257,7 @@ If ``true``, the ray will hit back faces with concave polygon shapes with back f
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hit_from_inside** = ``false``
+:ref:`bool<class_bool>` **hit_from_inside** = ``false`` :ref:`🔗<class_RayCast3D_property_hit_from_inside>`
 
 .. rst-class:: classref-property-setget
 
@@ -274,7 +274,7 @@ If ``true``, the ray will detect a hit when starting inside shapes. In this case
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **target_position** = ``Vector3(0, -1, 0)``
+:ref:`Vector3<class_Vector3>` **target_position** = ``Vector3(0, -1, 0)`` :ref:`🔗<class_RayCast3D_property_target_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -296,7 +296,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_exception**\ (\ node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ )
+|void| **add_exception**\ (\ node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) :ref:`🔗<class_RayCast3D_method_add_exception>`
 
 Adds a collision exception so the ray does not report collisions with the specified :ref:`CollisionObject3D<class_CollisionObject3D>` node.
 
@@ -308,7 +308,7 @@ Adds a collision exception so the ray does not report collisions with the specif
 
 .. rst-class:: classref-method
 
-|void| **add_exception_rid**\ (\ rid\: :ref:`RID<class_RID>`\ )
+|void| **add_exception_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RayCast3D_method_add_exception_rid>`
 
 Adds a collision exception so the ray does not report collisions with the specified :ref:`RID<class_RID>`.
 
@@ -320,7 +320,7 @@ Adds a collision exception so the ray does not report collisions with the specif
 
 .. rst-class:: classref-method
 
-|void| **clear_exceptions**\ (\ )
+|void| **clear_exceptions**\ (\ ) :ref:`🔗<class_RayCast3D_method_clear_exceptions>`
 
 Removes all collision exceptions for this ray.
 
@@ -332,7 +332,7 @@ Removes all collision exceptions for this ray.
 
 .. rst-class:: classref-method
 
-|void| **force_raycast_update**\ (\ )
+|void| **force_raycast_update**\ (\ ) :ref:`🔗<class_RayCast3D_method_force_raycast_update>`
 
 Updates the collision information for the ray immediately, without waiting for the next ``_physics_process`` call. Use this method, for example, when the ray or its parent has changed state.
 
@@ -346,9 +346,11 @@ Updates the collision information for the ray immediately, without waiting for t
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_collider**\ (\ ) |const|
+:ref:`Object<class_Object>` **get_collider**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collider>`
 
-Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``false``).
+
+\ **Note:** This object is not guaranteed to be a :ref:`CollisionObject3D<class_CollisionObject3D>`. For example, if the ray intersects a :ref:`CSGShape3D<class_CSGShape3D>` or a :ref:`GridMap<class_GridMap>`, the method will return a :ref:`CSGShape3D<class_CSGShape3D>` or :ref:`GridMap<class_GridMap>` instance.
 
 .. rst-class:: classref-item-separator
 
@@ -358,9 +360,9 @@ Returns the first object that the ray intersects, or ``null`` if no object is in
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_collider_rid**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_collider_rid**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collider_rid>`
 
-Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, or an empty :ref:`RID<class_RID>` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, or an empty :ref:`RID<class_RID>` if no object is intersecting the ray (i.e. :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``false``).
 
 .. rst-class:: classref-item-separator
 
@@ -370,9 +372,30 @@ Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, o
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_shape**\ (\ ) |const|
+:ref:`int<class_int>` **get_collider_shape**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collider_shape>`
 
-Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``false``).
+
+To get the intersected shape node, for a :ref:`CollisionObject3D<class_CollisionObject3D>` target, use:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var target = get_collider() # A CollisionObject3D.
+    var shape_id = get_collider_shape() # The shape index in the collider.
+    var owner_id = target.shape_find_owner(shape_id) # The owner ID in the collider.
+    var shape = target.shape_owner_get_owner(owner_id)
+
+ .. code-tab:: csharp
+
+    var target = (CollisionObject3D)GetCollider(); // A CollisionObject3D.
+    var shapeId = GetColliderShape(); // The shape index in the collider.
+    var ownerId = target.ShapeFindOwner(shapeId); // The owner ID in the collider.
+    var shape = target.ShapeOwnerGetOwner(ownerId);
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -382,7 +405,7 @@ Returns the shape ID of the first object that the ray intersects, or ``0`` if no
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collision_face_index**\ (\ ) |const|
+:ref:`int<class_int>` **get_collision_face_index**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collision_face_index>`
 
 Returns the collision object's face index at the collision point, or ``-1`` if the shape intersecting the ray is not a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`.
 
@@ -394,7 +417,7 @@ Returns the collision object's face index at the collision point, or ``-1`` if t
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collision_mask_value>`
 
 Returns whether or not the specified layer of the :ref:`collision_mask<class_RayCast3D_property_collision_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -406,11 +429,11 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Ray
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_collision_normal**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_collision_normal**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collision_normal>`
 
 Returns the normal of the intersecting object's shape at the collision point, or ``Vector3(0, 0, 0)`` if the ray starts inside the shape and :ref:`hit_from_inside<class_RayCast3D_property_hit_from_inside>` is ``true``.
 
-\ **Note:** Check that :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned normal is valid and up-to-date.
+\ **Note:** Check that :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned normal is valid and up-to-date.
 
 .. rst-class:: classref-item-separator
 
@@ -420,11 +443,11 @@ Returns the normal of the intersecting object's shape at the collision point, or
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_collision_point**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_collision_point**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collision_point>`
 
 Returns the collision point at which the ray intersects the closest object, in the global coordinate system. If :ref:`hit_from_inside<class_RayCast3D_property_hit_from_inside>` is ``true`` and the ray starts inside of a collision shape, this function will return the origin point of the ray.
 
-\ **Note:** Check that :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned point is valid and up-to-date.
+\ **Note:** Check that :ref:`is_colliding()<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned point is valid and up-to-date.
 
 .. rst-class:: classref-item-separator
 
@@ -434,7 +457,7 @@ Returns the collision point at which the ray intersects the closest object, in t
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_colliding**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_colliding**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_is_colliding>`
 
 Returns whether any object is intersecting with the ray's vector (considering the vector length).
 
@@ -446,7 +469,7 @@ Returns whether any object is intersecting with the ray's vector (considering th
 
 .. rst-class:: classref-method
 
-|void| **remove_exception**\ (\ node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ )
+|void| **remove_exception**\ (\ node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) :ref:`🔗<class_RayCast3D_method_remove_exception>`
 
 Removes a collision exception so the ray does report collisions with the specified :ref:`CollisionObject3D<class_CollisionObject3D>` node.
 
@@ -458,7 +481,7 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 .. rst-class:: classref-method
 
-|void| **remove_exception_rid**\ (\ rid\: :ref:`RID<class_RID>`\ )
+|void| **remove_exception_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RayCast3D_method_remove_exception_rid>`
 
 Removes a collision exception so the ray does report collisions with the specified :ref:`RID<class_RID>`.
 
@@ -470,7 +493,7 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 .. rst-class:: classref-method
 
-|void| **set_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
+|void| **set_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RayCast3D_method_set_collision_mask_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`collision_mask<class_RayCast3D_property_collision_mask>`, given a ``layer_number`` between 1 and 32.
 

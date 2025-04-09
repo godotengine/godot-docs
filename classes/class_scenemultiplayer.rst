@@ -21,7 +21,7 @@ Description
 
 This class is the default implementation of :ref:`MultiplayerAPI<class_MultiplayerAPI>`, used to provide multiplayer functionalities in Godot Engine.
 
-This implementation supports RPCs via :ref:`Node.rpc<class_Node_method_rpc>` and :ref:`Node.rpc_id<class_Node_method_rpc_id>` and requires :ref:`MultiplayerAPI.rpc<class_MultiplayerAPI_method_rpc>` to be passed a :ref:`Node<class_Node>` (it will fail for other object types).
+This implementation supports RPCs via :ref:`Node.rpc()<class_Node_method_rpc>` and :ref:`Node.rpc_id()<class_Node_method_rpc_id>` and requires :ref:`MultiplayerAPI.rpc()<class_MultiplayerAPI_method_rpc>` to be passed a :ref:`Node<class_Node>` (it will fail for other object types).
 
 This implementation additionally provide :ref:`SceneTree<class_SceneTree>` replication via the :ref:`MultiplayerSpawner<class_MultiplayerSpawner>` and :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>` nodes, and the :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` resource.
 
@@ -90,9 +90,9 @@ Signals
 
 .. rst-class:: classref-signal
 
-**peer_authenticating**\ (\ id\: :ref:`int<class_int>`\ )
+**peer_authenticating**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SceneMultiplayer_signal_peer_authenticating>`
 
-Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` connects to a new peer and a valid :ref:`auth_callback<class_SceneMultiplayer_property_auth_callback>` is set. In this case, the :ref:`MultiplayerAPI.peer_connected<class_MultiplayerAPI_signal_peer_connected>` will not be emitted until :ref:`complete_auth<class_SceneMultiplayer_method_complete_auth>` is called with given peer ``id``. While in this state, the peer will not be included in the list returned by :ref:`MultiplayerAPI.get_peers<class_MultiplayerAPI_method_get_peers>` (but in the one returned by :ref:`get_authenticating_peers<class_SceneMultiplayer_method_get_authenticating_peers>`), and only authentication data will be sent or received. See :ref:`send_auth<class_SceneMultiplayer_method_send_auth>` for sending authentication data.
+Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` connects to a new peer and a valid :ref:`auth_callback<class_SceneMultiplayer_property_auth_callback>` is set. In this case, the :ref:`MultiplayerAPI.peer_connected<class_MultiplayerAPI_signal_peer_connected>` will not be emitted until :ref:`complete_auth()<class_SceneMultiplayer_method_complete_auth>` is called with given peer ``id``. While in this state, the peer will not be included in the list returned by :ref:`MultiplayerAPI.get_peers()<class_MultiplayerAPI_method_get_peers>` (but in the one returned by :ref:`get_authenticating_peers()<class_SceneMultiplayer_method_get_authenticating_peers>`), and only authentication data will be sent or received. See :ref:`send_auth()<class_SceneMultiplayer_method_send_auth>` for sending authentication data.
 
 .. rst-class:: classref-item-separator
 
@@ -102,7 +102,7 @@ Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_M
 
 .. rst-class:: classref-signal
 
-**peer_authentication_failed**\ (\ id\: :ref:`int<class_int>`\ )
+**peer_authentication_failed**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SceneMultiplayer_signal_peer_authentication_failed>`
 
 Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` disconnects from a peer for which authentication had not yet completed. See :ref:`peer_authenticating<class_SceneMultiplayer_signal_peer_authenticating>`.
 
@@ -114,9 +114,9 @@ Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_M
 
 .. rst-class:: classref-signal
 
-**peer_packet**\ (\ id\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+**peer_packet**\ (\ id\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_SceneMultiplayer_signal_peer_packet>`
 
-Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` receives a ``packet`` with custom data (see :ref:`send_bytes<class_SceneMultiplayer_method_send_bytes>`). ID is the peer ID of the peer that sent the packet.
+Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` receives a ``packet`` with custom data (see :ref:`send_bytes()<class_SceneMultiplayer_method_send_bytes>`). ID is the peer ID of the peer that sent the packet.
 
 .. rst-class:: classref-section-separator
 
@@ -131,7 +131,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_object_decoding** = ``false``
+:ref:`bool<class_bool>` **allow_object_decoding** = ``false`` :ref:`🔗<class_SceneMultiplayer_property_allow_object_decoding>`
 
 .. rst-class:: classref-property-setget
 
@@ -150,14 +150,14 @@ If ``true``, the MultiplayerAPI will allow encoding and decoding of object durin
 
 .. rst-class:: classref-property
 
-:ref:`Callable<class_Callable>` **auth_callback** = ``Callable()``
+:ref:`Callable<class_Callable>` **auth_callback** = ``Callable()`` :ref:`🔗<class_SceneMultiplayer_property_auth_callback>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_auth_callback**\ (\ value\: :ref:`Callable<class_Callable>`\ )
 - :ref:`Callable<class_Callable>` **get_auth_callback**\ (\ )
 
-The callback to execute when when receiving authentication data sent via :ref:`send_auth<class_SceneMultiplayer_method_send_auth>`. If the :ref:`Callable<class_Callable>` is empty (default), peers will be automatically accepted as soon as they connect.
+The callback to execute when receiving authentication data sent via :ref:`send_auth()<class_SceneMultiplayer_method_send_auth>`. If the :ref:`Callable<class_Callable>` is empty (default), peers will be automatically accepted as soon as they connect.
 
 .. rst-class:: classref-item-separator
 
@@ -167,14 +167,14 @@ The callback to execute when when receiving authentication data sent via :ref:`s
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **auth_timeout** = ``3.0``
+:ref:`float<class_float>` **auth_timeout** = ``3.0`` :ref:`🔗<class_SceneMultiplayer_property_auth_timeout>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_auth_timeout**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_auth_timeout**\ (\ )
 
-If set to a value greater than ``0.0``, the maximum amount of time peers can stay in the authenticating state, after which the authentication will automatically fail. See the :ref:`peer_authenticating<class_SceneMultiplayer_signal_peer_authenticating>` and :ref:`peer_authentication_failed<class_SceneMultiplayer_signal_peer_authentication_failed>` signals.
+If set to a value greater than ``0.0``, the maximum duration in seconds peers can stay in the authenticating state, after which the authentication will automatically fail. See the :ref:`peer_authenticating<class_SceneMultiplayer_signal_peer_authenticating>` and :ref:`peer_authentication_failed<class_SceneMultiplayer_signal_peer_authentication_failed>` signals.
 
 .. rst-class:: classref-item-separator
 
@@ -184,7 +184,7 @@ If set to a value greater than ``0.0``, the maximum amount of time peers can sta
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_delta_packet_size** = ``65535``
+:ref:`int<class_int>` **max_delta_packet_size** = ``65535`` :ref:`🔗<class_SceneMultiplayer_property_max_delta_packet_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -201,7 +201,7 @@ Maximum size of each delta packet. Higher values increase the chance of receivin
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_sync_packet_size** = ``1350``
+:ref:`int<class_int>` **max_sync_packet_size** = ``1350`` :ref:`🔗<class_SceneMultiplayer_property_max_sync_packet_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -218,7 +218,7 @@ Maximum size of each synchronization packet. Higher values increase the chance o
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **refuse_new_connections** = ``false``
+:ref:`bool<class_bool>` **refuse_new_connections** = ``false`` :ref:`🔗<class_SceneMultiplayer_property_refuse_new_connections>`
 
 .. rst-class:: classref-property-setget
 
@@ -235,7 +235,7 @@ If ``true``, the MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_Mu
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **root_path** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **root_path** = ``NodePath("")`` :ref:`🔗<class_SceneMultiplayer_property_root_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +254,7 @@ This effectively allows to have different branches of the scene tree to be manag
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **server_relay** = ``true``
+:ref:`bool<class_bool>` **server_relay** = ``true`` :ref:`🔗<class_SceneMultiplayer_property_server_relay>`
 
 .. rst-class:: classref-property-setget
 
@@ -265,7 +265,7 @@ Enable or disable the server feature that notifies clients of other peers' conne
 
 \ **Note:** Changing this option while other peers are connected may lead to unexpected behaviors.
 
-\ **Note:** Support for this feature may depend on the current :ref:`MultiplayerPeer<class_MultiplayerPeer>` configuration. See :ref:`MultiplayerPeer.is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>`.
+\ **Note:** Support for this feature may depend on the current :ref:`MultiplayerPeer<class_MultiplayerPeer>` configuration. See :ref:`MultiplayerPeer.is_server_relay_supported()<class_MultiplayerPeer_method_is_server_relay_supported>`.
 
 .. rst-class:: classref-section-separator
 
@@ -280,7 +280,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_SceneMultiplayer_method_clear>`
 
 Clears the current SceneMultiplayer network state (you shouldn't call this unless you know what you are doing).
 
@@ -292,11 +292,11 @@ Clears the current SceneMultiplayer network state (you shouldn't call this unles
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **complete_auth**\ (\ id\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **complete_auth**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SceneMultiplayer_method_complete_auth>`
 
 Mark the authentication step as completed for the remote peer identified by ``id``. The :ref:`MultiplayerAPI.peer_connected<class_MultiplayerAPI_signal_peer_connected>` signal will be emitted for this peer once the remote side also completes the authentication. No further authentication messages are expected to be received from this peer.
 
-If a peer disconnects before completing authentication, either due to a network issue, the :ref:`auth_timeout<class_SceneMultiplayer_property_auth_timeout>` expiring, or manually calling :ref:`disconnect_peer<class_SceneMultiplayer_method_disconnect_peer>`, the :ref:`peer_authentication_failed<class_SceneMultiplayer_signal_peer_authentication_failed>` signal will be emitted instead of :ref:`MultiplayerAPI.peer_disconnected<class_MultiplayerAPI_signal_peer_disconnected>`.
+If a peer disconnects before completing authentication, either due to a network issue, the :ref:`auth_timeout<class_SceneMultiplayer_property_auth_timeout>` expiring, or manually calling :ref:`disconnect_peer()<class_SceneMultiplayer_method_disconnect_peer>`, the :ref:`peer_authentication_failed<class_SceneMultiplayer_signal_peer_authentication_failed>` signal will be emitted instead of :ref:`MultiplayerAPI.peer_disconnected<class_MultiplayerAPI_signal_peer_disconnected>`.
 
 .. rst-class:: classref-item-separator
 
@@ -306,7 +306,7 @@ If a peer disconnects before completing authentication, either due to a network 
 
 .. rst-class:: classref-method
 
-|void| **disconnect_peer**\ (\ id\: :ref:`int<class_int>`\ )
+|void| **disconnect_peer**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SceneMultiplayer_method_disconnect_peer>`
 
 Disconnects the peer identified by ``id``, removing it from the list of connected peers, and closing the underlying connection with it.
 
@@ -318,7 +318,7 @@ Disconnects the peer identified by ``id``, removing it from the list of connecte
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_authenticating_peers**\ (\ )
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_authenticating_peers**\ (\ ) :ref:`🔗<class_SceneMultiplayer_method_get_authenticating_peers>`
 
 Returns the IDs of the peers currently trying to authenticate with this :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
@@ -330,7 +330,7 @@ Returns the IDs of the peers currently trying to authenticate with this :ref:`Mu
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **send_auth**\ (\ id\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **send_auth**\ (\ id\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_SceneMultiplayer_method_send_auth>`
 
 Sends the specified ``data`` to the remote peer identified by ``id`` as part of an authentication message. This can be used to authenticate peers, and control when :ref:`MultiplayerAPI.peer_connected<class_MultiplayerAPI_signal_peer_connected>` is emitted (and the remote peer accepted as one of the connected peers).
 
@@ -342,9 +342,9 @@ Sends the specified ``data`` to the remote peer identified by ``id`` as part of 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **send_bytes**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`, id\: :ref:`int<class_int>` = 0, mode\: :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` = 2, channel\: :ref:`int<class_int>` = 0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **send_bytes**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`, id\: :ref:`int<class_int>` = 0, mode\: :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` = 2, channel\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_SceneMultiplayer_method_send_bytes>`
 
-Sends the given raw ``bytes`` to a specific peer identified by ``id`` (see :ref:`MultiplayerPeer.set_target_peer<class_MultiplayerPeer_method_set_target_peer>`). Default ID is ``0``, i.e. broadcast to all peers.
+Sends the given raw ``bytes`` to a specific peer identified by ``id`` (see :ref:`MultiplayerPeer.set_target_peer()<class_MultiplayerPeer_method_set_target_peer>`). Default ID is ``0``, i.e. broadcast to all peers.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

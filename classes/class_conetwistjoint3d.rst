@@ -68,7 +68,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Param**:
+enum **Param**: :ref:`🔗<enum_ConeTwistJoint3D_Param>`
 
 .. _class_ConeTwistJoint3D_constant_PARAM_SWING_SPAN:
 
@@ -141,7 +141,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bias** = ``0.3``
+:ref:`float<class_float>` **bias** = ``0.3`` :ref:`🔗<class_ConeTwistJoint3D_property_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -160,7 +160,7 @@ The higher, the faster.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **relaxation** = ``1.0``
+:ref:`float<class_float>` **relaxation** = ``1.0`` :ref:`🔗<class_ConeTwistJoint3D_property_relaxation>`
 
 .. rst-class:: classref-property-setget
 
@@ -177,7 +177,7 @@ Defines, how fast the swing- and twist-speed-difference on both sides gets synce
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **softness** = ``0.8``
+:ref:`float<class_float>` **softness** = ``0.8`` :ref:`🔗<class_ConeTwistJoint3D_property_softness>`
 
 .. rst-class:: classref-property-setget
 
@@ -194,7 +194,7 @@ The ease with which the joint starts to twist. If it's too low, it takes more fo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **swing_span** = ``0.785398``
+:ref:`float<class_float>` **swing_span** = ``0.785398`` :ref:`🔗<class_ConeTwistJoint3D_property_swing_span>`
 
 .. rst-class:: classref-property-setget
 
@@ -217,7 +217,7 @@ If below 0.05, this behavior is locked.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **twist_span** = ``3.14159``
+:ref:`float<class_float>` **twist_span** = ``3.14159`` :ref:`🔗<class_ConeTwistJoint3D_property_twist_span>`
 
 .. rst-class:: classref-property-setget
 
@@ -241,7 +241,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_ConeTwistJoint3D_Param>`\ ) |const|
+:ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_ConeTwistJoint3D_Param>`\ ) |const| :ref:`🔗<class_ConeTwistJoint3D_method_get_param>`
 
 Returns the value of the specified parameter.
 
@@ -253,7 +253,7 @@ Returns the value of the specified parameter.
 
 .. rst-class:: classref-method
 
-|void| **set_param**\ (\ param\: :ref:`Param<enum_ConeTwistJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+|void| **set_param**\ (\ param\: :ref:`Param<enum_ConeTwistJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_ConeTwistJoint3D_method_set_param>`
 
 Sets the value of the specified parameter.
 

@@ -10,7 +10,6 @@ Shaders
    introduction_to_shaders
    shader_reference/index
    your_first_shader/index
-   shader_materials
    visual_shaders
    compute_shaders
    screen-reading_shaders

@@ -23,7 +23,7 @@ use cases:
 - If your player doesn't use a sprite, but draws itself using code, you can make
   that drawing code execute in the editor to see your player.
 
-.. DANGER::
+.. danger::
 
     ``@tool`` scripts run inside the editor, and let you access the scene tree
     of the currently edited scene. This is a powerful feature which also comes
@@ -151,6 +151,10 @@ and open a script, and change it to this:
 Save the script and return to the editor. You should now see your object rotate.
 If you run the game, it will also rotate.
 
+.. warning::
+    You may need to restart the editor. This is a known bug found in all Godot 4 versions:
+    `GH-66381 <https://github.com/godotengine/godot/issues/66381>`_.
+
 .. image:: img/rotating_in_editor.gif
 
 .. note::
@@ -208,7 +212,7 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
 
 
     func _process(delta):
-    	rotation += PI * delta * speed
+        rotation += PI * delta * speed
 
  .. code-tab:: csharp
 
@@ -244,6 +248,174 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
     but you can't access user variables. If you want to do so, other nodes have
     to run in the editor too. Autoload nodes cannot be accessed in the editor at
     all.
+
+Getting notified when resources change
+--------------------------------------
+
+Sometimes you want your tool to use a resource. However, when you change a
+property of that resource in the editor, the ``set()`` method of your tool will
+not be called.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @tool
+    class_name MyTool
+    extends Node
+
+    @export var resource: MyResource:
+        set(new_resource):
+            resource = new_resource
+            _on_resource_set()
+
+    # This will only be called when you create, delete, or paste a resource.
+    # You will not get an update when tweaking properties of it.
+    func _on_resource_set():
+        print("My resource was set!")
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    [Tool]
+    public partial class MyTool : Node
+    {
+        private MyResource _resource;
+
+        [Export]
+        public MyResource Resource
+        {
+            get => _resource;
+            set
+            {
+                _resource = value;
+                OnResourceSet();
+            }
+        }
+    }
+
+    // This will only be called when you create, delete, or paste a resource.
+    // You will not get an update when tweaking properties of it.
+    private void OnResourceSet()
+    {
+        GD.Print("My resource was set!");
+    }
+
+To get around this problem you first have to make your resource a tool and make it
+emit the ``changed`` signal whenever a property is set:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Make Your Resource a tool.
+    @tool
+    class_name MyResource
+    extends Resource
+
+    @export var property = 1:
+        set(new_setting):
+            property = new_setting
+            # Emit a signal when the property is changed.
+            changed.emit()
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    [Tool]
+    public partial class MyResource : Resource
+    {
+        private float _property = 1;
+
+        [Export]
+        public float Property
+        {
+            get => _property;
+            set
+            {
+                _property = value;
+                // Emit a signal when the property is changed.
+                EmitChanged();
+            }
+        }
+    }
+
+You then want to connect the signal when a new resource is set:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @tool
+    class_name MyTool
+    extends Node
+
+    @export var resource: MyResource:
+        set(new_resource):
+            resource = new_resource
+            # Connect the changed signal as soon as a new resource is being added.
+            resource.changed.connect(_on_resource_changed)
+
+    func _on_resource_changed():
+        print("My resource just changed!")
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    [Tool]
+    public partial class MyTool : Node
+    {
+        private MyResource _resource;
+
+        [Export]
+        public MyResource Resource
+        {
+            get => _resource;
+            set
+            {
+                _resource = value;
+                // Connect the changed signal as soon as a new resource is being added.
+                _resource.Changed += OnResourceChanged;
+            }
+        }
+    }
+
+    private void OnResourceChanged()
+    {
+        GD.Print("My resource just changed!");
+    }
+
+Lastly, remember to disconnect the signal as the old resource being used and changed somewhere else
+would cause unneeded updates.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @export var resource: MyResource:
+        set(new_resource):
+            # Disconnect the signal if the previous resource was not null.
+            if resource != null:
+                resource.changed.disconnect(_on_resource_changed)
+            resource = new_resource
+            resource.changed.connect(_on_resource_changed)
+
+ .. code-tab:: csharp
+
+    [Export]
+    public MyResource Resource
+    {
+        get => _resource;
+        set
+        {
+            // Disconnect the signal if the previous resource was not null.
+            if (_resource != null)
+            {
+                _resource.Changed -= OnResourceChanged;
+            }
+            _resource = value;
+            _resource.Changed += OnResourceChanged;
+        }
+    }
 
 Reporting node configuration warnings
 -------------------------------------
@@ -287,6 +459,8 @@ By default, the warning only updates when closing and reopening the scene.
 
         # Returning an empty array means "no warning".
         return warnings
+
+.. _doc_running_code_in_the_editor_editorscript:
 
 Running one-off scripts using EditorScript
 ------------------------------------------
@@ -335,7 +509,12 @@ currently focused on the script editor.
 
 Scripts that extend EditorScript must be ``@tool`` scripts to function.
 
-.. warning::
+.. note::
+
+    EditorScripts can only be run from the Godot script editor. If you are using
+    an external editor, open the script inside the Godot script editor to run it.
+
+.. danger::
 
     EditorScripts have no undo/redo functionality, so **make sure to save your
     scene before running one** if the script is designed to modify any data.

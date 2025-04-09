@@ -21,7 +21,7 @@ Description
 
 Imported scenes can be automatically modified right after import by setting their **Custom Script** Import property to a ``tool`` script that inherits from this class.
 
-The :ref:`_post_import<class_EditorScenePostImport_private_method__post_import>` callback receives the imported scene's root node and returns the modified version of the scene. Usage example:
+The :ref:`_post_import()<class_EditorScenePostImport_private_method__post_import>` callback receives the imported scene's root node and returns the modified version of the scene:
 
 
 .. tabs::
@@ -109,7 +109,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_post_import**\ (\ scene\: :ref:`Node<class_Node>`\ ) |virtual|
+:ref:`Object<class_Object>` **_post_import**\ (\ scene\: :ref:`Node<class_Node>`\ ) |virtual| :ref:`🔗<class_EditorScenePostImport_private_method__post_import>`
 
 Called after the scene was imported. This method must return the modified version of the scene.
 
@@ -121,7 +121,7 @@ Called after the scene was imported. This method must return the modified versio
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_source_file**\ (\ ) |const|
+:ref:`String<class_String>` **get_source_file**\ (\ ) |const| :ref:`🔗<class_EditorScenePostImport_method_get_source_file>`
 
 Returns the source file path which got imported (e.g. ``res://scene.dae``).
 

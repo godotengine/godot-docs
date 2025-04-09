@@ -35,11 +35,9 @@ Tutorials
 
 - :doc:`Environment and post-processing <../tutorials/3d/environment_and_post_processing>`
 
-- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
+- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/2742>`__
 
-- `2D HDR Demo <https://godotengine.org/asset-library/asset/110>`__
-
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -70,7 +68,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes** :ref:`🔗<class_WorldEnvironment_property_camera_attributes>`
 
 .. rst-class:: classref-property-setget
 
@@ -87,7 +85,7 @@ The default :ref:`CameraAttributes<class_CameraAttributes>` resource to use if n
 
 .. rst-class:: classref-property
 
-:ref:`Compositor<class_Compositor>` **compositor**
+:ref:`Compositor<class_Compositor>` **compositor** :ref:`🔗<class_WorldEnvironment_property_compositor>`
 
 .. rst-class:: classref-property-setget
 
@@ -104,7 +102,7 @@ The default :ref:`Compositor<class_Compositor>` resource to use if none set on t
 
 .. rst-class:: classref-property
 
-:ref:`Environment<class_Environment>` **environment**
+:ref:`Environment<class_Environment>` **environment** :ref:`🔗<class_WorldEnvironment_property_environment>`
 
 .. rst-class:: classref-property-setget
 

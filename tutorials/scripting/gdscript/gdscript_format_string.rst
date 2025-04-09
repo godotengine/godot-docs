@@ -3,21 +3,24 @@
 GDScript format strings
 =======================
 
-GDScript offers a feature called *format strings*, which allows reusing text
-templates to succinctly create different but similar strings.
+Godot offers multiple ways to dynamically change the contents of strings:
+
+- Format strings: ``var string = "I have %s cats." % "3"``
+- The ``String.format()`` method: ``var string = "I have {0} cats.".format([3])``
+- String concatenation: ``var string = "I have " + str(3) + " cats."``
+
+This page explains how to use format strings, and briefly explains the ``format()``
+method and string concatenation.
+
+Format strings
+--------------
+
+*Format strings* are a way to reuse text templates to succinctly create different
+but similar strings.
 
 Format strings are just like normal strings, except they contain certain
-placeholder character-sequences. These placeholders can then easily be replaced
-by parameters handed to the format string.
-
-As an example, with ``%s`` as a placeholder, the format string ``"Hello %s, how
-are you?"`` can easily be changed to ``"Hello World, how are you?"``. Notice
-the placeholder is in the middle of the string; modifying it without format
-strings could be cumbersome.
-
-
-Usage in GDScript
------------------
+placeholder character sequences such as ``%s``. These placeholders can then
+be replaced by parameters handed to the format string.
 
 Examine this concrete GDScript example:
 
@@ -38,34 +41,12 @@ string.
 
 The ``%s`` seen in the example above is the simplest placeholder and works for
 most use cases: it converts the value by the same method by which an implicit
-String conversion or ``str()`` would convert it. Strings remain unchanged,
-Booleans turn into either ``"True"`` or ``"False"``, an integral or real number
-becomes a decimal, other types usually return their data in a human-readable
-string.
+String conversion or :ref:`str() <class_@GlobalScope_method_str>` would convert
+it. Strings remain unchanged, booleans turn into either ``"True"`` or ``"False"``,
+an ``int`` or ``float`` becomes a decimal, and other types usually return their data
+in a human-readable string.
 
-There is also another way to format text in GDScript, namely the ``String.format()``
-method. It replaces all occurrences of a key in the string with the corresponding
-value. The method can handle arrays or dictionaries for the key/value pairs.
-
-Arrays can be used as key, index, or mixed style (see below examples). Order only
-matters when the index or mixed style of Array is used.
-
-A quick example in GDScript:
-
-::
-
-    # Define a format string
-    var format_string = "We're waiting for {str}"
-
-    # Using the 'format' method, replace the 'str' placeholder
-    var actual_string = format_string.format({"str": "Godot"})
-
-    print(actual_string)
-    # Output: "We're waiting for Godot"
-
-There are other `format specifiers`_, but they are only applicable when using
-the ``%`` operator.
-
+There are other `format specifiers`_.
 
 Multiple placeholders
 ---------------------
@@ -108,19 +89,19 @@ specifier. Apart from ``s``, these require certain types of parameters.
 | ``c`` | A single **Unicode character**. Expects an unsigned 8-bit integer   |
 |       | (0-255) for a code point or a single-character string.              |
 +-------+---------------------------------------------------------------------+
-| ``d`` | A **decimal integral** number. Expects an integral or real number   |
+| ``d`` | A **decimal integer**. Expects an integer or a real number          |
 |       | (will be floored).                                                  |
 +-------+---------------------------------------------------------------------+
-| ``o`` | An **octal integral** number. Expects an integral or real number    |
+| ``o`` | An **octal integer**. Expects an integer or a real number           |
 |       | (will be floored).                                                  |
 +-------+---------------------------------------------------------------------+
-| ``x`` | A **hexadecimal integral** number with **lower-case** letters.      |
-|       | Expects an integral or real number (will be floored).               |
+| ``x`` | A **hexadecimal integer** with **lower-case** letters.              |
+|       | Expects an integer or a real number (will be floored).              |
 +-------+---------------------------------------------------------------------+
-| ``X`` | A **hexadecimal integral** number with **upper-case** letters.      |
-|       | Expects an integral or real number (will be floored).               |
+| ``X`` | A **hexadecimal integer** with **upper-case** letters.              |
+|       | Expects an integer or a real number (will be floored).              |
 +-------+---------------------------------------------------------------------+
-| ``f`` | A **decimal real** number. Expects an integral or real number.      |
+| ``f`` | A **decimal real** number. Expects an integer or a real number.     |
 +-------+---------------------------------------------------------------------+
 | ``v`` | A **vector**. Expects any float or int-based vector object (        |
 |       | ``Vector2``, ``Vector3``, ``Vector4``, ``Vector2i``, ``Vector3i`` or|
@@ -149,7 +130,7 @@ conditions.
 +---------+-------------------------------------------------------------------+
 | ``-``   | **Pad to the right** rather than the left.                        |
 +---------+-------------------------------------------------------------------+
-| ``*``   | **Dynamic padding**, expect additional integral parameter to set  |
+| ``*``   | **Dynamic padding**, expects additional integer parameter to set  |
 |         | padding or precision after ``.``, see `dynamic padding`_.         |
 +---------+-------------------------------------------------------------------+
 
@@ -170,7 +151,7 @@ To pad a string to a minimum length, add an integer to the specifier:
     # output: "     12345"
     # 5 leading spaces for a total length of 10
 
-If the integer starts with ``0``, integral values are padded with zeroes
+If the integer starts with ``0``, integer values are padded with zeroes
 instead of white space:
 
 ::
@@ -180,7 +161,7 @@ instead of white space:
 
 Precision can be specified for real numbers by adding a ``.`` (*dot*) with an
 integer following it. With no integer after ``.``, a precision of 0 is used,
-rounding to integral value. The integer to use for padding must appear before
+rounding to integer values. The integer to use for padding must appear before
 the dot.
 
 ::
@@ -238,12 +219,36 @@ avoid reading it as a placeholder. This is done by doubling the character:
     # Output: "Remaining health: 56%"
 
 
+String format method
+--------------------
+
+There is also another way to format text in GDScript, namely the 
+:ref:`String.format() <class_String_method_format>`
+method. It replaces all occurrences of a key in the string with the corresponding
+value. The method can handle arrays or dictionaries for the key/value pairs.
+
+Arrays can be used as key, index, or mixed style (see below examples). Order only
+matters when the index or mixed style of Array is used.
+
+A quick example in GDScript:
+
+::
+
+    # Define a format string
+    var format_string = "We're waiting for {str}"
+
+    # Using the 'format' method, replace the 'str' placeholder
+    var actual_string = format_string.format({"str": "Godot"})
+
+    print(actual_string)
+    # Output: "We're waiting for Godot"
+
+
 Format method examples
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 The following are some examples of how to use the various invocations of the
-``String.format``  method.
-
+``String.format()``  method.
 
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
 | **Type**   | **Style** | **Example**                                                                  | **Result**        |
@@ -258,9 +263,9 @@ The following are some examples of how to use the various invocations of the
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
 | Array      | index     | ``"Hi, {0} v{1}!".format(["Godette","3.0"])``                                | Hi, Godette v3.0! |
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
-| Array      | mix       | ``"Hi, {name} v{0}!".format([3.0, ["name","Godette"]])``                     | Hi, Godette v3.0! |
+| Array      | mix       | ``"Hi, {name} v{0}!".format(["3.0", ["name","Godette"]])``                   | Hi, Godette v3.0! |
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
-| Array      | no index  | ``"Hi, {} v{}!".format(["Godette", 3.0], "{}")``                             | Hi, Godette v3.0! |
+| Array      | no index  | ``"Hi, {} v{}!".format(["Godette", "3.0"], "{}")``                           | Hi, Godette v3.0! |
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
 
 Placeholders can also be customized when using ``String.format``, here's some
@@ -285,3 +290,41 @@ Combining both the ``String.format`` method and the ``%`` operator could be usef
 +---------------------------------------------------------------------------+-------------------+
 | ``"Hi, {0} v{version}".format({0:"Godette", "version":"%0.2f" % 3.114})`` | Hi, Godette v3.11 |
 +---------------------------------------------------------------------------+-------------------+
+
+String concatenation
+--------------------
+
+You can also combine strings by *concatenating* them together, using the ``+``
+operator.
+
+::
+
+    # Define a base string
+    var base_string = "We're waiting for "
+
+    # Concatenate the string
+    var actual_string = base_string + "Godot"
+
+    print(actual_string)
+    # Output: "We're waiting for Godot"
+
+When using string concatenation, values that are not strings must be converted using
+the ``str()`` function. There is no way to specify the string format of converted
+values.
+
+::
+
+    var name_string = "Godette"
+    var version = 3.0
+    var actual_string = "Hi, " + name_string + " v" + str(version) + "!"
+
+    print(actual_string)
+    # Output: "Hi, Godette v3!"
+
+Because of these limitations, format strings or the ``format()`` method are often
+a better choice. In many cases, string concatenation is also less readable.
+
+.. note::
+
+    In Godot's C++ code, GDScript format strings can be accessed using the
+    ``vformat()`` helper function in the :ref:`Variant<class_Variant>` header.

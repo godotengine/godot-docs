@@ -21,6 +21,8 @@ An array specifically designed to hold 32-bit floating-point values (float). Pac
 
 If you need to pack 64-bit floats tightly, see :ref:`PackedFloat64Array<class_PackedFloat64Array>`.
 
+\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate()<class_PackedFloat32Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+
 .. note::
 
 	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
@@ -65,6 +67,8 @@ Methods
    | |void|                                              | :ref:`fill<class_PackedFloat32Array_method_fill>`\ (\ value\: :ref:`float<class_float>`\ )                                                 |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_PackedFloat32Array_method_find>`\ (\ value\: :ref:`float<class_float>`, from\: :ref:`int<class_int>` = 0\ ) |const|       |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get<class_PackedFloat32Array_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                               |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has<class_PackedFloat32Array_method_has>`\ (\ value\: :ref:`float<class_float>`\ ) |const|                                           |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,7 +128,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **PackedFloat32Array**\ (\ )
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **PackedFloat32Array**\ (\ ) :ref:`🔗<class_PackedFloat32Array_constructor_PackedFloat32Array>`
 
 Constructs an empty **PackedFloat32Array**.
 
@@ -161,9 +165,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **append**\ (\ value\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **append**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedFloat32Array_method_append>`
 
-Appends an element at the end of the array (alias of :ref:`push_back<class_PackedFloat32Array_method_push_back>`).
+Appends an element at the end of the array (alias of :ref:`push_back()<class_PackedFloat32Array_method_push_back>`).
 
 .. rst-class:: classref-item-separator
 
@@ -173,7 +177,7 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_Packe
 
 .. rst-class:: classref-method
 
-|void| **append_array**\ (\ array\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+|void| **append_array**\ (\ array\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_PackedFloat32Array_method_append_array>`
 
 Appends a **PackedFloat32Array** at the end of this array.
 
@@ -185,11 +189,11 @@ Appends a **PackedFloat32Array** at the end of this array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`float<class_float>`, before\: :ref:`bool<class_bool>` = true\ )
+:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`float<class_float>`, before\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_PackedFloat32Array_method_bsearch>`
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
-\ **Note:** Calling :ref:`bsearch<class_PackedFloat32Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch()<class_PackedFloat32Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 \ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
@@ -201,9 +205,9 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_PackedFloat32Array_method_clear>`
 
-Clears the array. This is equivalent to using :ref:`resize<class_PackedFloat32Array_method_resize>` with a size of ``0``.
+Clears the array. This is equivalent to using :ref:`resize()<class_PackedFloat32Array_method_resize>` with a size of ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -213,7 +217,7 @@ Clears the array. This is equivalent to using :ref:`resize<class_PackedFloat32Ar
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **count**\ (\ value\: :ref:`float<class_float>`\ ) |const|
+:ref:`int<class_int>` **count**\ (\ value\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_count>`
 
 Returns the number of times an element is in the array.
 
@@ -227,7 +231,7 @@ Returns the number of times an element is in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **duplicate**\ (\ )
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **duplicate**\ (\ ) :ref:`🔗<class_PackedFloat32Array_method_duplicate>`
 
 Creates a copy of the array, and returns it.
 
@@ -239,9 +243,9 @@ Creates a copy of the array, and returns it.
 
 .. rst-class:: classref-method
 
-|void| **fill**\ (\ value\: :ref:`float<class_float>`\ )
+|void| **fill**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedFloat32Array_method_fill>`
 
-Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedFloat32Array_method_resize>` to create an array with a given size and initialized elements.
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize()<class_PackedFloat32Array_method_resize>` to create an array with a given size and initialized elements.
 
 .. rst-class:: classref-item-separator
 
@@ -251,7 +255,7 @@ Assigns the given value to all elements in the array. This can typically be used
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find**\ (\ value\: :ref:`float<class_float>`, from\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **find**\ (\ value\: :ref:`float<class_float>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_find>`
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
@@ -261,11 +265,23 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 
 ----
 
+.. _class_PackedFloat32Array_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_get>`
+
+Returns the 32-bit float at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PackedFloat32Array_method_has:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has**\ (\ value\: :ref:`float<class_float>`\ ) |const|
+:ref:`bool<class_bool>` **has**\ (\ value\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_has>`
 
 Returns ``true`` if the array contains ``value``.
 
@@ -279,7 +295,7 @@ Returns ``true`` if the array contains ``value``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **insert**\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )
+:ref:`int<class_int>` **insert**\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedFloat32Array_method_insert>`
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
@@ -291,7 +307,7 @@ Inserts a new element at a given position in the array. The position must be val
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_is_empty>`
 
 Returns ``true`` if the array is empty.
 
@@ -303,7 +319,7 @@ Returns ``true`` if the array is empty.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **push_back**\ (\ value\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **push_back**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedFloat32Array_method_push_back>`
 
 Appends an element at the end of the array.
 
@@ -315,7 +331,7 @@ Appends an element at the end of the array.
 
 .. rst-class:: classref-method
 
-|void| **remove_at**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_at**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedFloat32Array_method_remove_at>`
 
 Removes an element from the array by index.
 
@@ -327,9 +343,9 @@ Removes an element from the array by index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **resize**\ (\ new_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedFloat32Array_method_resize>`
 
-Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize<class_PackedFloat32Array_method_resize>` once and assigning the new values is faster than adding new elements one by one.
+Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize()<class_PackedFloat32Array_method_resize>` once and assigning the new values is faster than adding new elements one by one.
 
 .. rst-class:: classref-item-separator
 
@@ -339,7 +355,7 @@ Sets the size of the array. If the array is grown, reserves elements at the end 
 
 .. rst-class:: classref-method
 
-|void| **reverse**\ (\ )
+|void| **reverse**\ (\ ) :ref:`🔗<class_PackedFloat32Array_method_reverse>`
 
 Reverses the order of the elements in the array.
 
@@ -351,7 +367,7 @@ Reverses the order of the elements in the array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **rfind**\ (\ value\: :ref:`float<class_float>`, from\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **rfind**\ (\ value\: :ref:`float<class_float>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_rfind>`
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
@@ -365,7 +381,7 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 .. rst-class:: classref-method
 
-|void| **set**\ (\ index\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )
+|void| **set**\ (\ index\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedFloat32Array_method_set>`
 
 Changes the float at the given index.
 
@@ -377,7 +393,7 @@ Changes the float at the given index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **size**\ (\ ) |const|
+:ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_size>`
 
 Returns the number of elements in the array.
 
@@ -389,7 +405,7 @@ Returns the number of elements in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const|
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_slice>`
 
 Returns the slice of the **PackedFloat32Array**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **PackedFloat32Array**.
 
@@ -405,7 +421,7 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 
 .. rst-class:: classref-method
 
-|void| **sort**\ (\ )
+|void| **sort**\ (\ ) :ref:`🔗<class_PackedFloat32Array_method_sort>`
 
 Sorts the elements of the array in ascending order.
 
@@ -419,9 +435,9 @@ Sorts the elements of the array in ascending order.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array**\ (\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_to_byte_array>`
 
-Returns a copy of the data converted to a :ref:`PackedByteArray<class_PackedByteArray>`, where each element have been encoded as 4 bytes.
+Returns a copy of the data converted to a :ref:`PackedByteArray<class_PackedByteArray>`, where each element has been encoded as 4 bytes.
 
 The size of the new array will be ``float32_array.size() * 4``.
 
@@ -438,7 +454,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_PackedFloat32Array_operator_neq_PackedFloat32Array>`
 
 Returns ``true`` if contents of the arrays differ.
 
@@ -450,9 +466,9 @@ Returns ``true`` if contents of the arrays differ.
 
 .. rst-class:: classref-operator
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **operator +**\ (\ right\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **operator +**\ (\ right\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_PackedFloat32Array_operator_sum_PackedFloat32Array>`
 
-Returns a new **PackedFloat32Array** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedFloat32Array_method_append_array>` instead.
+Returns a new **PackedFloat32Array** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array()<class_PackedFloat32Array_method_append_array>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -462,7 +478,7 @@ Returns a new **PackedFloat32Array** with contents of ``right`` added at the end
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_PackedFloat32Array_operator_eq_PackedFloat32Array>`
 
 Returns ``true`` if contents of both arrays are the same, i.e. they have all equal floats at the corresponding indices.
 
@@ -474,7 +490,7 @@ Returns ``true`` if contents of both arrays are the same, i.e. they have all equ
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator []**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`float<class_float>` **operator []**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedFloat32Array_operator_idx_int>`
 
 Returns the :ref:`float<class_float>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 

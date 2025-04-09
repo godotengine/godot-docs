@@ -23,7 +23,7 @@ To achieve the best results, we have two approaches:
 And preferably, we will use a blend of the two.
 
 Smoke and mirrors
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Part of working smarter is recognizing that, in games, we can often get the
 player to believe they're in a world that is far more complex, interactive, and
@@ -31,7 +31,7 @@ graphically exciting than it really is. A good programmer is a magician, and
 should strive to learn the tricks of the trade while trying to invent new ones.
 
 The nature of slowness
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 To the outside observer, performance problems are often lumped together.
 But in reality, there are several different kinds of performance problems:
@@ -59,8 +59,9 @@ There are several methods of measuring performance, including:
 - Using :ref:`external CPU profilers <doc_using_cpp_profilers>`.
 - Using external GPU profilers/debuggers such as
   `NVIDIA Nsight Graphics <https://developer.nvidia.com/nsight-graphics>`__,
-  `Radeon GPU Profiler <https://gpuopen.com/rgp/>`__ or
-  `Intel Graphics Performance Analyzers <https://www.intel.com/content/www/us/en/developer/tools/graphics-performance-analyzers/overview.html>`__.
+  `Radeon GPU Profiler <https://gpuopen.com/rgp/>`__,
+  `Intel Graphics Performance Analyzers <https://www.intel.com/content/www/us/en/developer/tools/graphics-performance-analyzers/overview.html>`__, or
+  `Arm Performance Studio <https://developer.arm.com/Tools%20and%20Software/Arm%20Performance%20Studio>`__.
 - Checking the frame rate (with V-Sync disabled). Third-party utilities such as
   `RivaTuner Statistics Server <https://www.guru3d.com/files-details/rtss-rivatuner-statistics-server-download.html>`__
   (Windows) or `MangoHud <https://github.com/flightlessmango/MangoHud>`__
@@ -72,7 +73,7 @@ different hardware. It's often a good idea to measure timings on more than one
 device. This is especially the case if you're targeting mobile devices.
 
 Limitations
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 CPU profilers are often the go-to method for measuring performance. However,
 they don't always tell the whole story.
@@ -97,7 +98,7 @@ and also in terms of bug fixing). This can include hypothesis testing, and
 binary search.
 
 Hypothesis testing
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Say, for example, that you believe sprites are slowing down your game.
 You can test this hypothesis by:
@@ -111,7 +112,7 @@ the performance drop?
   size, and measuring performance.
 
 Binary search
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 If you know that frames are taking much longer than they should, but you're
 not sure where the bottleneck lies. You could begin by commenting out
@@ -166,7 +167,7 @@ optimization is (by definition) undesirable, performant software is the result
 of performant design.
 
 Performant design
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 The danger with encouraging people to ignore optimization until necessary, is
 that it conveniently ignores that the most important time to consider
@@ -181,7 +182,7 @@ will often run many times faster than a mediocre design with low-level
 optimization.
 
 Incremental design
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Of course, in practice, unless you have prior knowledge, you are unlikely to
 come up with the best design the first time. Instead, you'll often make a series
@@ -198,7 +199,7 @@ structures and algorithms for *cache locality* of data and linear access, rather
 than jumping around in memory.
 
 The optimization process
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Assuming we have a reasonable design, and taking our lessons from Knuth, our
 first step in optimization should be to identify the biggest bottlenecks - the
@@ -215,7 +216,7 @@ The process is thus:
 3. Return to step 1.
 
 Optimizing bottlenecks
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Some profilers will even tell you which part of a function (which data accesses,
 calculations) are slowing things down.
@@ -225,7 +226,7 @@ algorithms and data structures are the best they can be. Data access should be
 local (to make best use of CPU cache), and it can often be better to use compact
 storage of data (again, always profile to test results). Often, you precalculate
 heavy computations ahead of time. This can be done by performing the computation
-when loading a level, by loading a file containing precalculated data or simply
+when loading a level, by loading a file containing precalculated data, or
 by storing the results of complex calculations into a script constant and
 reading its value.
 
@@ -243,7 +244,7 @@ Appendix
 --------
 
 Bottleneck math
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 The proverb *"a chain is only as strong as its weakest link"* applies directly to
 performance optimization. If your project is spending 90% of the time in

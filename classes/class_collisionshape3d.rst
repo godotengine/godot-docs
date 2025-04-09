@@ -30,11 +30,11 @@ Tutorials
 
 - :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
-- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`__
+- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2739>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -44,11 +44,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+-----------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape3D_property_disabled>` | ``false`` |
-   +-------------------------------+-----------------------------------------------------------+-----------+
-   | :ref:`Shape3D<class_Shape3D>` | :ref:`shape<class_CollisionShape3D_property_shape>`       |           |
-   +-------------------------------+-----------------------------------------------------------+-----------+
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape3D_property_debug_color>` | ``Color(0, 0, 0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`debug_fill<class_CollisionShape3D_property_debug_fill>`   | ``true``              |
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape3D_property_disabled>`       | ``false``             |
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
+   | :ref:`Shape3D<class_Shape3D>` | :ref:`shape<class_CollisionShape3D_property_shape>`             |                       |
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -73,11 +77,47 @@ Methods
 Property Descriptions
 ---------------------
 
+.. _class_CollisionShape3D_property_debug_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_CollisionShape3D_property_debug_color>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_debug_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_debug_color**\ (\ )
+
+The collision shape color that is displayed in the editor, or in the running project if **Debug > Visible Collision Shapes** is checked at the top of the editor.
+
+\ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 0)`` value documented here is a placeholder, and not the actual default debug color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CollisionShape3D_property_debug_fill:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debug_fill** = ``true`` :ref:`🔗<class_CollisionShape3D_property_debug_fill>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_enable_debug_fill**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_debug_fill**\ (\ )
+
+If ``true``, when the shape is displayed, it will show a solid fill color in addition to its wireframe.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CollisionShape3D_property_disabled:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disabled** = ``false``
+:ref:`bool<class_bool>` **disabled** = ``false`` :ref:`🔗<class_CollisionShape3D_property_disabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,7 +134,7 @@ A disabled collision shape has no effect in the world.
 
 .. rst-class:: classref-property
 
-:ref:`Shape3D<class_Shape3D>` **shape**
+:ref:`Shape3D<class_Shape3D>` **shape** :ref:`🔗<class_CollisionShape3D_property_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,7 +156,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **make_convex_from_siblings**\ (\ )
+|void| **make_convex_from_siblings**\ (\ ) :ref:`🔗<class_CollisionShape3D_method_make_convex_from_siblings>`
 
 Sets the collision shape's shape to the addition of all its convexed :ref:`MeshInstance3D<class_MeshInstance3D>` siblings geometry.
 
@@ -128,7 +168,7 @@ Sets the collision shape's shape to the addition of all its convexed :ref:`MeshI
 
 .. rst-class:: classref-method
 
-|void| **resource_changed**\ (\ resource\: :ref:`Resource<class_Resource>`\ )
+|void| **resource_changed**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) :ref:`🔗<class_CollisionShape3D_method_resource_changed>`
 
 **Deprecated:** Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
 

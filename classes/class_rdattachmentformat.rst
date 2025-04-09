@@ -50,7 +50,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format** = ``36``
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format** = ``36`` :ref:`🔗<class_RDAttachmentFormat_property_format>`
 
 .. rst-class:: classref-property-setget
 
@@ -67,7 +67,7 @@ The attachment's data format.
 
 .. rst-class:: classref-property
 
-:ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **samples** = ``0``
+:ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **samples** = ``0`` :ref:`🔗<class_RDAttachmentFormat_property_samples>`
 
 .. rst-class:: classref-property-setget
 
@@ -84,7 +84,7 @@ The number of samples used when sampling the attachment.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **usage_flags** = ``0``
+:ref:`int<class_int>` **usage_flags** = ``0`` :ref:`🔗<class_RDAttachmentFormat_property_usage_flags>`
 
 .. rst-class:: classref-property-setget
 

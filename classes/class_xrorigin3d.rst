@@ -61,7 +61,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **current** = ``false``
+:ref:`bool<class_bool>` **current** = ``false`` :ref:`🔗<class_XROrigin3D_property_current>`
 
 .. rst-class:: classref-property-setget
 
@@ -78,7 +78,7 @@ If ``true``, this origin node is currently being used by the :ref:`XRServer<clas
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **world_scale** = ``1.0``
+:ref:`float<class_float>` **world_scale** = ``1.0`` :ref:`🔗<class_XROrigin3D_property_world_scale>`
 
 .. rst-class:: classref-property-setget
 

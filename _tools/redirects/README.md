@@ -17,21 +17,21 @@ For more information on the scripts themselves, see their help output.
 To install requirements: `pip3 install -r requirements.txt`.
 Git is also required and needs to be available in the `PATH`.
 To interact with the Read the Docs API, a valid API key must be set as
-`RTD_AUTH_TOKEN` (either as a environment variable or in a [.env file](https://pypi.org/project/python-dotenv/)).
+`RTD_AUTH_TOKEN` (either as an environment variable or in a [.env file](https://pypi.org/project/python-dotenv/)).
 
 ## Usage
 
-Lets say we recently renamed some files in the Git branch `3.4` (compared to the `stable` branch), and now we want to create redirects for these.
+Let's say we recently renamed some files in the Git branch `3.4` (compared to the `stable` branch), and now we want to create redirects for these.
 For this, we would (after setting up the API token and requirements, see Setup above):
 
 > python convert_git_renames_to_csv.py stable 3.4
 
-This should output a list of the redirects to create. Lets append these to the redirects file:
+This should output a list of the redirects to create. Let's append these to the redirects file:
 
 > python convert_git_renames_to_csv.py stable 3.4 >> redirects.csv
 
-After this, redirects for renamed files should have been appended to `redirects.csv`. You may want to double check that!
-Now lets submit these to ReadTheDocs and create redirects there:
+After this, redirects for renamed files should have been appended to `redirects.csv`. You may want to double-check that!
+Now let's submit these to ReadTheDocs and create redirects there:
 
 > python create_redirects.py
 

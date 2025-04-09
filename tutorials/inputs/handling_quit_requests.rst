@@ -60,8 +60,10 @@ at any time by either the user or the OS. A way to plan ahead for this
 possibility is to utilize ``NOTIFICATION_APPLICATION_PAUSED`` in order to 
 perform any needed actions as the app is being suspended.
 
+.. note:: On iOS, you only have approximately 5 seconds to finish a task started by this signal. If you go over this allotment, iOS will kill the app instead of pausing it.
+
 On Android, pressing the Back button will exit the application if 
-**Application > Config > Quit** On Go Back is checked in the Project Settings 
+**Application > Config > Quit On Go Back** is checked in the Project Settings 
 (which is the default). This will fire ``NOTIFICATION_WM_GO_BACK_REQUEST``.
 
 

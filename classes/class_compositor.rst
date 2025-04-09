@@ -10,7 +10,7 @@
 Compositor
 ==========
 
-**Experimental:** More customisation of the rendering pipeline will be added in the future.
+**Experimental:** More customization of the rendering pipeline will be added in the future.
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
@@ -22,6 +22,13 @@ Description
 -----------
 
 The compositor resource stores attributes used to customize how a :ref:`Viewport<class_Viewport>` is rendered.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`The Compositor <../tutorials/rendering/compositor>`
 
 .. rst-class:: classref-reftable-group
 
@@ -48,7 +55,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`CompositorEffect<class_CompositorEffect>`\] **compositor_effects** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`CompositorEffect<class_CompositorEffect>`\] **compositor_effects** = ``[]`` :ref:`🔗<class_Compositor_property_compositor_effects>`
 
 .. rst-class:: classref-property-setget
 

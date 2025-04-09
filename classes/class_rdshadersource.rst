@@ -72,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` **language** = ``0``
+:ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` **language** = ``0`` :ref:`🔗<class_RDShaderSource_property_language>`
 
 .. rst-class:: classref-property-setget
 
@@ -89,7 +89,7 @@ The language the shader is written in.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **source_compute** = ``""``
+:ref:`String<class_String>` **source_compute** = ``""`` :ref:`🔗<class_RDShaderSource_property_source_compute>`
 
 .. rst-class:: classref-property-setget
 
@@ -106,7 +106,7 @@ Source code for the shader's compute stage.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **source_fragment** = ``""``
+:ref:`String<class_String>` **source_fragment** = ``""`` :ref:`🔗<class_RDShaderSource_property_source_fragment>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +123,7 @@ Source code for the shader's fragment stage.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **source_tesselation_control** = ``""``
+:ref:`String<class_String>` **source_tesselation_control** = ``""`` :ref:`🔗<class_RDShaderSource_property_source_tesselation_control>`
 
 .. rst-class:: classref-property-setget
 
@@ -140,7 +140,7 @@ Source code for the shader's tessellation control stage.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **source_tesselation_evaluation** = ``""``
+:ref:`String<class_String>` **source_tesselation_evaluation** = ``""`` :ref:`🔗<class_RDShaderSource_property_source_tesselation_evaluation>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ Source code for the shader's tessellation evaluation stage.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **source_vertex** = ``""``
+:ref:`String<class_String>` **source_vertex** = ``""`` :ref:`🔗<class_RDShaderSource_property_source_vertex>`
 
 .. rst-class:: classref-property-setget
 
@@ -179,7 +179,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+:ref:`String<class_String>` **get_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const| :ref:`🔗<class_RDShaderSource_method_get_stage_source>`
 
 Returns source code for the specified shader ``stage``. Equivalent to getting one of :ref:`source_compute<class_RDShaderSource_property_source_compute>`, :ref:`source_fragment<class_RDShaderSource_property_source_fragment>`, :ref:`source_tesselation_control<class_RDShaderSource_property_source_tesselation_control>`, :ref:`source_tesselation_evaluation<class_RDShaderSource_property_source_tesselation_evaluation>` or :ref:`source_vertex<class_RDShaderSource_property_source_vertex>`.
 
@@ -191,9 +191,11 @@ Returns source code for the specified shader ``stage``. Equivalent to getting on
 
 .. rst-class:: classref-method
 
-|void| **set_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ )
+|void| **set_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RDShaderSource_method_set_stage_source>`
 
 Sets ``source`` code for the specified shader ``stage``. Equivalent to setting one of :ref:`source_compute<class_RDShaderSource_property_source_compute>`, :ref:`source_fragment<class_RDShaderSource_property_source_fragment>`, :ref:`source_tesselation_control<class_RDShaderSource_property_source_tesselation_control>`, :ref:`source_tesselation_evaluation<class_RDShaderSource_property_source_tesselation_evaluation>` or :ref:`source_vertex<class_RDShaderSource_property_source_vertex>`.
+
+\ **Note:** If you set the compute shader source code using this method directly, remember to remove the Godot-specific hint ``#[compute]``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

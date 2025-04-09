@@ -23,7 +23,7 @@ A 3D convex polyhedron shape, intended for use in physics. Usually used to provi
 
 \ **ConvexPolygonShape3D** is *solid*, which means it detects collisions from objects that are fully inside it, unlike :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` which is hollow. This makes it more suitable for both detection and physics.
 
-\ **Convex decomposition:** A concave polyhedron can be split up into several convex polyhedra. This allows dynamic physics bodies to have complex concave collisions (at a performance cost) and can be achieved by using several **ConvexPolygonShape3D** nodes. To generate a convex decomposition from a mesh, select the :ref:`MeshInstance3D<class_MeshInstance3D>` node, go to the **Mesh** menu that appears above the viewport, and choose **Create Multiple Convex Collision Siblings**. Alternatively, :ref:`MeshInstance3D.create_multiple_convex_collisions<class_MeshInstance3D_method_create_multiple_convex_collisions>` can be called in a script to perform this decomposition at run-time.
+\ **Convex decomposition:** A concave polyhedron can be split up into several convex polyhedra. This allows dynamic physics bodies to have complex concave collisions (at a performance cost) and can be achieved by using several **ConvexPolygonShape3D** nodes. To generate a convex decomposition from a mesh, select the :ref:`MeshInstance3D<class_MeshInstance3D>` node, go to the **Mesh** menu that appears above the viewport, and choose **Create Multiple Convex Collision Siblings**. Alternatively, :ref:`MeshInstance3D.create_multiple_convex_collisions()<class_MeshInstance3D_method_create_multiple_convex_collisions>` can be called in a script to perform this decomposition at run-time.
 
 \ **Performance:** **ConvexPolygonShape3D** is faster to check collisions against compared to :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, but it is slower than primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` and :ref:`BoxShape3D<class_BoxShape3D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by primitive shapes.
 
@@ -32,7 +32,7 @@ A 3D convex polyhedron shape, intended for use in physics. Usually used to provi
 Tutorials
 ---------
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -59,7 +59,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **points** = ``PackedVector3Array()``
+:ref:`PackedVector3Array<class_PackedVector3Array>` **points** = ``PackedVector3Array()`` :ref:`🔗<class_ConvexPolygonShape3D_property_points>`
 
 .. rst-class:: classref-property-setget
 
@@ -67,6 +67,8 @@ Property Descriptions
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **get_points**\ (\ )
 
 The list of 3D points forming the convex polygon shape.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

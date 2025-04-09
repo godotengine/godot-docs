@@ -23,7 +23,7 @@ Description
 
 This class allows to compress or decompress data using GZIP/deflate in a streaming fashion. This is particularly useful when compressing or decompressing files that have to be sent through the network without needing to allocate them all in memory.
 
-After starting the stream via :ref:`start_compression<class_StreamPeerGZIP_method_start_compression>` (or :ref:`start_decompression<class_StreamPeerGZIP_method_start_decompression>`), calling :ref:`StreamPeer.put_partial_data<class_StreamPeer_method_put_partial_data>` on this stream will compress (or decompress) the data, writing it to the internal buffer. Calling :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` will return the pending bytes in the internal buffer, and :ref:`StreamPeer.get_partial_data<class_StreamPeer_method_get_partial_data>` will retrieve the compressed (or decompressed) bytes from it. When the stream is over, you must call :ref:`finish<class_StreamPeerGZIP_method_finish>` to ensure the internal buffer is properly flushed (make sure to call :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` on last time to check if more data needs to be read after that).
+After starting the stream via :ref:`start_compression()<class_StreamPeerGZIP_method_start_compression>` (or :ref:`start_decompression()<class_StreamPeerGZIP_method_start_decompression>`), calling :ref:`StreamPeer.put_partial_data()<class_StreamPeer_method_put_partial_data>` on this stream will compress (or decompress) the data, writing it to the internal buffer. Calling :ref:`StreamPeer.get_available_bytes()<class_StreamPeer_method_get_available_bytes>` will return the pending bytes in the internal buffer, and :ref:`StreamPeer.get_partial_data()<class_StreamPeer_method_get_partial_data>` will retrieve the compressed (or decompressed) bytes from it. When the stream is over, you must call :ref:`finish()<class_StreamPeerGZIP_method_finish>` to ensure the internal buffer is properly flushed (make sure to call :ref:`StreamPeer.get_available_bytes()<class_StreamPeer_method_get_available_bytes>` on last time to check if more data needs to be read after that).
 
 .. rst-class:: classref-reftable-group
 
@@ -56,7 +56,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_StreamPeerGZIP_method_clear>`
 
 Clears this stream, resetting the internal state.
 
@@ -68,7 +68,7 @@ Clears this stream, resetting the internal state.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **finish**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **finish**\ (\ ) :ref:`🔗<class_StreamPeerGZIP_method_finish>`
 
 Finalizes the stream, compressing or decompressing any buffered chunk left.
 
@@ -80,7 +80,7 @@ Finalizes the stream, compressing or decompressing any buffered chunk left.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **start_compression**\ (\ use_deflate\: :ref:`bool<class_bool>` = false, buffer_size\: :ref:`int<class_int>` = 65535\ )
+:ref:`Error<enum_@GlobalScope_Error>` **start_compression**\ (\ use_deflate\: :ref:`bool<class_bool>` = false, buffer_size\: :ref:`int<class_int>` = 65535\ ) :ref:`🔗<class_StreamPeerGZIP_method_start_compression>`
 
 Start the stream in compression mode with the given ``buffer_size``, if ``use_deflate`` is ``true`` uses deflate instead of GZIP.
 
@@ -92,7 +92,7 @@ Start the stream in compression mode with the given ``buffer_size``, if ``use_de
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **start_decompression**\ (\ use_deflate\: :ref:`bool<class_bool>` = false, buffer_size\: :ref:`int<class_int>` = 65535\ )
+:ref:`Error<enum_@GlobalScope_Error>` **start_decompression**\ (\ use_deflate\: :ref:`bool<class_bool>` = false, buffer_size\: :ref:`int<class_int>` = 65535\ ) :ref:`🔗<class_StreamPeerGZIP_method_start_decompression>`
 
 Start the stream in decompression mode with the given ``buffer_size``, if ``use_deflate`` is ``true`` uses deflate instead of GZIP.
 

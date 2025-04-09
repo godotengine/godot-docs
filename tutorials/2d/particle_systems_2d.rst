@@ -32,11 +32,19 @@ While GPUParticles2D is configured via a :ref:`class_ParticleProcessMaterial`
 (and optionally with a custom shader), the matching options are provided via
 node properties in CPUParticles2D (with the exception of the trail settings).
 
-You can convert a GPUParticles2D node into a CPUParticles2D node by clicking on
-the node in the inspector, selecting the 2D viewport, and selecting
-**GPUParticles2D > Convert to CPUParticles2D** in the viewport toolbar.
+Going forward there are no plans to add new features to CPUParticles2D, though
+pull requests to add features already in GPUParticles2D will be accepted. For
+that reason we recommend using GPUParticles2D unless you have an explicit reason
+not to.
+
+You can convert a CPUParticles2D node into a GPUParticles2D node by clicking on
+the node in the scene tree, selecting the 2D workspace, and selecting
+**CPUParticles2D > Convert to GPUParticles2D** in the toolbar.
 
 .. image:: img/particles_convert.webp
+
+It is also possible to convert a GPUParticles2D node to a CPUParticles2D node,
+however there may be issues if you use GPU-only features.
 
 The rest of this tutorial is going to use the GPUParticles2D node. First, add a GPUParticles2D
 node to your scene. After creating that node you will notice that only a white dot was created,
@@ -50,7 +58,7 @@ To add a process material to your particles node, go to ``Process Material`` in
 your inspector panel. Click on the box next to ``Material``, and from the dropdown
 menu select ``New ParticleProcessMaterial``.
 
-.. image:: img/particles_material.png
+.. image:: img/particles_material.webp
 
 Your GPUParticles2D node should now be emitting
 white points downward.
@@ -67,7 +75,7 @@ spritesheet for particles.
 
 The texture is set via the **Texture** property:
 
-.. image:: img/particles2.png
+.. image:: img/particles2.webp
 
 .. _doc_particle_systems_2d_using_flipbook:
 
@@ -199,10 +207,25 @@ This setting can be used to set the particle system to render at a fixed
 FPS. For instance, changing the value to ``2`` will make the particles render
 at 2 frames per second. Note this does not slow down the particle system itself.
 
+.. note::
+
+    Godot 4.3 does not currently support physics interpolation for 2D particles.
+    As a workaround, disable physics interpolation for the particles node by setting
+    **Node > Physics Interpolation > Mode** at the bottom of the inspector.
+
 Fract Delta
 ~~~~~~~~~~~
 
-This can be used to turn Fract Delta on or off.
+Setting Fract Delta to ``true`` results in fractional delta calculation,
+which has a smoother particles display effect.
+This increased smoothness stems from higher accuracy.
+The difference is more noticeable in systems with high randomness or fast-moving particles.
+It helps maintain the visual consistency of the particle system,
+making sure that each particle's motion aligns with its actual lifespan.
+Without it, particles might appear to jump or move more than they should in a single frame
+if they are emitted at a point within the frame.
+The greater accuracy has a performance tradeoff,
+particularly in systems with a higher amount of particles.
 
 Drawing parameters
 ------------------
@@ -242,240 +265,7 @@ This controls the order in which individual particles are drawn. ``Index``
 means particles are drawn according to their emission order (default).
 ``Lifetime`` means they are drawn in order of remaining lifetime.
 
-ParticleProcessMaterial settings
---------------------------------
+Particle Process Material Settings
+----------------------------------
 
-Direction
-~~~~~~~~~
-
-This is the base direction at which particles emit. The default is
-``Vector3(1, 0, 0)`` which makes particles emit to the right. However,
-with the default gravity settings, particles will go straight down.
-
-.. image:: img/direction1.png
-
-For this property to be noticeable, you need an *initial velocity* greater
-than 0. Here, we set the initial velocity to 40. You'll notice that
-particles emit toward the right, then go down because of gravity.
-
-.. image:: img/direction2.png
-
-Spread
-~~~~~~
-
-This parameter is the angle in degrees which will be randomly added in
-either direction to the base ``Direction``. A spread of ``180`` will emit
-in all directions (+/- 180). For spread to do anything the "Initial Velocity"
-parameter must be greater than 0.
-
-.. image:: img/paranim3.gif
-
-Flatness
-~~~~~~~~
-
-This property is only useful for 3D particles.
-
-Gravity
-~~~~~~~
-
-The gravity applied to every particle.
-
-.. image:: img/paranim7.gif
-
-Initial Velocity
-~~~~~~~~~~~~~~~~
-
-Initial velocity is the speed at which particles will be emitted (in
-pixels/sec). Speed might later be modified by gravity or other
-accelerations (as described further below).
-
-.. image:: img/paranim4.gif
-
-Angular Velocity
-~~~~~~~~~~~~~~~~
-
-Angular velocity is the initial angular velocity applied to particles.
-
-Spin Velocity
-~~~~~~~~~~~~~
-
-Spin velocity is the speed at which particles turn around their center
-(in degrees/sec).
-
-.. image:: img/paranim5.gif
-
-Orbit Velocity
-~~~~~~~~~~~~~~
-
-Orbit velocity is used to make particles turn around their center.
-
-.. image:: img/paranim6.gif
-
-Linear Acceleration
-~~~~~~~~~~~~~~~~~~~
-
-The linear acceleration applied to each particle.
-
-Radial Acceleration
-~~~~~~~~~~~~~~~~~~~
-
-If this acceleration is positive, particles are accelerated away from
-the center. If negative, they are absorbed towards it.
-
-.. image:: img/paranim8.gif
-
-Tangential Acceleration
-~~~~~~~~~~~~~~~~~~~~~~~
-
-This acceleration will use the tangent vector to the center. Combining
-with radial acceleration can do nice effects.
-
-.. image:: img/paranim9.gif
-
-Damping
-~~~~~~~
-
-Damping applies friction to the particles, forcing them to stop. It is
-especially useful for sparks or explosions, which usually begin with a
-high linear velocity and then stop as they fade.
-
-.. image:: img/paranim10.gif
-
-Angle
-~~~~~
-
-Determines the initial angle of the particle (in degrees). This parameter
-is mostly useful randomized.
-
-.. image:: img/paranim11.gif
-
-Scale
-~~~~~
-
-Determines the initial scale of the particles.
-
-.. image:: img/paranim12.gif
-
-Color
-~~~~~
-
-Used to change the color of the particles being emitted.
-
-Hue Variation
-~~~~~~~~~~~~~
-
-The ``Variation`` value sets the initial hue variation applied to each
-particle. The ``Variation Random`` value controls the hue variation
-randomness ratio.
-
-.. _doc_particle_systems_2d_animation:
-
-Animation
-~~~~~~~~~
-
-.. note::
-
-    Particle flipbook animation is only effective if the CanvasItemMaterial used
-    on the GPUParticles2D or CPUParticles2D node has been
-    :ref:`configured accordingly <doc_particle_systems_2d_using_flipbook>`.
-
-To set up the particle flipbook for linear playback, set the **Speed Min** and **Speed Max** values to 1:
-
-.. figure:: img/particles_flipbook_configure_animation_speed.webp
-   :align: center
-   :alt: Setting up particle animation for playback during the particle's lifetime
-
-   Setting up particle animation for playback during the particle's lifetime
-
-By default, looping is disabled. If the particle is done playing before its
-lifetime ends, the particle will keep using the flipbook's last frame (which may
-be fully transparent depending on how the flipbook texture is designed). If
-looping is enabled, the animation will loop back to the first frame and resume
-playing.
-
-Depending on how many images your sprite sheet contains and for how long your
-particle is alive, the animation might not look smooth. The relationship between
-particle lifetime, animation speed, and number of images in the sprite sheet is
-this:
-
-.. note::
-
-   At an animation speed of ``1.0``, the animation will reach the last image
-   in the sequence just as the particle's lifetime ends.
-
-   .. math::
-      Animation\ FPS = \frac{Number\ of\ images}{Lifetime}
-
-If you wish the particle flipbook to be used as a source of random particle
-textures for every particle, keep the speed values at 0 and set **Offset Max**
-to 1 instead:
-
-.. figure:: img/particles_flipbook_configure_animation_offset.webp
-   :align: center
-   :alt: Setting up particle animation for random offset on emission
-
-   Setting up particle animation for random offset on emission
-
-Note that the GPUParticles2D node's **Fixed FPS** also affects animation
-playback. For smooth animation playback, it's recommended to set it to 0 so that
-the particle is simulated on every rendered frame. If this is not an option for
-your use case, set **Fixed FPS** to be equal to the effective framerate used by
-the flipbook animation (see above for the formula).
-
-Emission Shapes
----------------
-
-ParticleProcessMaterials allow you to set an Emission Mask, which dictates
-the area and direction in which particles are emitted.
-These can be generated from textures in your project.
-
-Ensure that a ParticleProcessMaterial is set, and the GPUParticles2D node is selected.
-A "Particles" menu should appear in the Toolbar:
-
-.. image:: img/emission_shapes1.png
-
-Open it and select "Load Emission Mask":
-
-.. image:: img/emission_shapes2.png
-
-Then select which texture you want to use as your mask:
-
-.. image:: img/emission_shapes3.png
-
-A dialog box with several settings will appear.
-
-Emission Mask
-~~~~~~~~~~~~~
-
-Three types of emission masks can be generated from a texture:
-
--  Solid Pixels: Particles will spawn from any area of the texture,
-   excluding transparent areas.
-
-.. image:: img/emission_mask_solid.gif
-
--  Border Pixels: Particles will spawn from the outer edges of the texture.
-
-.. image:: img/emission_mask_border.gif
-
--  Directed Border Pixels: Similar to Border Pixels, but adds extra
-   information to the mask to give particles the ability to emit away
-   from the borders. Note that an ``Initial Velocity`` will need to
-   be set in order to utilize this.
-
-.. image:: img/emission_mask_directed_border.gif
-
-Emission Colors
-~~~~~~~~~~~~~~~
-
-``Capture from Pixel`` will cause the particles to inherit the color of the mask at their spawn points.
-
-Once you click "OK", the mask will be generated and set to the ParticleProcessMaterial, under the ``Emission Shape`` section:
-
-.. image:: img/emission_shapes4.png
-
-All of the values within this section have been automatically generated by the
-"Load Emission Mask" menu, so they should generally be left alone.
-
-.. note:: An image should not be added to ``Point Texture`` or ``Color Texture`` directly.
-          The "Load Emission Mask" menu should always be used instead.
+For information on the settings in the ParticleProcessMaterial see :ref:`this page<doc_particle_process_material_2d>`.

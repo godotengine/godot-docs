@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **window_id** = ``0``
+:ref:`int<class_int>` **window_id** = ``0`` :ref:`🔗<class_InputEventFromWindow_property_window_id>`
 
 .. rst-class:: classref-property-setget
 

@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`CurveTexture<class_CurveTexture>` **texture**
+:ref:`CurveTexture<class_CurveTexture>` **texture** :ref:`🔗<class_VisualShaderNodeCurveTexture_property_texture>`
 
 .. rst-class:: classref-property-setget
 

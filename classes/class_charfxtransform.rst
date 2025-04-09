@@ -28,8 +28,6 @@ Tutorials
 
 - :doc:`BBCode in RichTextLabel <../tutorials/ui/bbcode_in_richtextlabel>`
 
-- `RichTextEffect test project (third-party) <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`__
-
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -79,7 +77,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_CharFXTransform_property_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +94,7 @@ The color the character will be drawn with.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **elapsed_time** = ``0.0``
+:ref:`float<class_float>` **elapsed_time** = ``0.0`` :ref:`🔗<class_CharFXTransform_property_elapsed_time>`
 
 .. rst-class:: classref-property-setget
 
@@ -115,7 +113,7 @@ The time elapsed since the :ref:`RichTextLabel<class_RichTextLabel>` was added t
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **env** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **env** = ``{}`` :ref:`🔗<class_CharFXTransform_property_env>`
 
 .. rst-class:: classref-property-setget
 
@@ -138,14 +136,16 @@ For example, the opening BBCode tag ``[example foo=hello bar=true baz=42 color=#
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **font** = ``RID()``
+:ref:`RID<class_RID>` **font** = ``RID()`` :ref:`🔗<class_CharFXTransform_property_font>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_font**\ (\ value\: :ref:`RID<class_RID>`\ )
 - :ref:`RID<class_RID>` **get_font**\ (\ )
 
-Font resource used to render glyph.
+:ref:`TextServer<class_TextServer>` RID of the font used to render glyph, this value can be used with ``TextServer.font_*`` methods to retrieve font information.
+
+\ **Note:** Read-only. Setting this property won't affect drawing.
 
 .. rst-class:: classref-item-separator
 
@@ -155,14 +155,16 @@ Font resource used to render glyph.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **glyph_count** = ``0``
+:ref:`int<class_int>` **glyph_count** = ``0`` :ref:`🔗<class_CharFXTransform_property_glyph_count>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_glyph_count**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_glyph_count**\ (\ )
 
-Number of glyphs in the grapheme cluster. This value is set in the first glyph of a cluster. Setting this property won't affect drawing.
+Number of glyphs in the grapheme cluster. This value is set in the first glyph of a cluster.
+
+\ **Note:** Read-only. Setting this property won't affect drawing.
 
 .. rst-class:: classref-item-separator
 
@@ -172,14 +174,16 @@ Number of glyphs in the grapheme cluster. This value is set in the first glyph o
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **glyph_flags** = ``0``
+:ref:`int<class_int>` **glyph_flags** = ``0`` :ref:`🔗<class_CharFXTransform_property_glyph_flags>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_glyph_flags**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_glyph_flags**\ (\ )
 
-Glyph flags. See :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` for more info. Setting this property won't affect drawing.
+Glyph flags. See :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` for more info.
+
+\ **Note:** Read-only. Setting this property won't affect drawing.
 
 .. rst-class:: classref-item-separator
 
@@ -189,14 +193,14 @@ Glyph flags. See :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` for more info
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **glyph_index** = ``0``
+:ref:`int<class_int>` **glyph_index** = ``0`` :ref:`🔗<class_CharFXTransform_property_glyph_index>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_glyph_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_glyph_index**\ (\ )
 
-Font specific glyph index.
+Glyph index specific to the :ref:`font<class_CharFXTransform_property_font>`. If you want to replace this glyph, use :ref:`TextServer.font_get_glyph_index()<class_TextServer_method_font_get_glyph_index>` with :ref:`font<class_CharFXTransform_property_font>` to get a new glyph index for a single character.
 
 .. rst-class:: classref-item-separator
 
@@ -206,7 +210,7 @@ Font specific glyph index.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)`` :ref:`🔗<class_CharFXTransform_property_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -223,14 +227,16 @@ The position offset the character will be drawn with (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **outline** = ``false``
+:ref:`bool<class_bool>` **outline** = ``false`` :ref:`🔗<class_CharFXTransform_property_outline>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_outline**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_outline**\ (\ )
 
-If ``true``, FX transform is called for outline drawing. Setting this property won't affect drawing.
+If ``true``, FX transform is called for outline drawing.
+
+\ **Note:** Read-only. Setting this property won't affect drawing.
 
 .. rst-class:: classref-item-separator
 
@@ -240,14 +246,16 @@ If ``true``, FX transform is called for outline drawing. Setting this property w
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **range** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **range** = ``Vector2i(0, 0)`` :ref:`🔗<class_CharFXTransform_property_range>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_range**\ (\ value\: :ref:`Vector2i<class_Vector2i>`\ )
 - :ref:`Vector2i<class_Vector2i>` **get_range**\ (\ )
 
-Absolute character range in the string, corresponding to the glyph. Setting this property won't affect drawing.
+Absolute character range in the string, corresponding to the glyph.
+
+\ **Note:** Read-only. Setting this property won't affect drawing.
 
 .. rst-class:: classref-item-separator
 
@@ -257,14 +265,16 @@ Absolute character range in the string, corresponding to the glyph. Setting this
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **relative_index** = ``0``
+:ref:`int<class_int>` **relative_index** = ``0`` :ref:`🔗<class_CharFXTransform_property_relative_index>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_relative_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_relative_index**\ (\ )
 
-The character offset of the glyph, relative to the current :ref:`RichTextEffect<class_RichTextEffect>` custom block. Setting this property won't affect drawing.
+The character offset of the glyph, relative to the current :ref:`RichTextEffect<class_RichTextEffect>` custom block.
+
+\ **Note:** Read-only. Setting this property won't affect drawing.
 
 .. rst-class:: classref-item-separator
 
@@ -274,7 +284,7 @@ The character offset of the glyph, relative to the current :ref:`RichTextEffect<
 
 .. rst-class:: classref-property
 
-:ref:`Transform2D<class_Transform2D>` **transform** = ``Transform2D(1, 0, 0, 1, 0, 0)``
+:ref:`Transform2D<class_Transform2D>` **transform** = ``Transform2D(1, 0, 0, 1, 0, 0)`` :ref:`🔗<class_CharFXTransform_property_transform>`
 
 .. rst-class:: classref-property-setget
 
@@ -291,7 +301,7 @@ The current transform of the current glyph. It can be overridden (for example, b
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **visible** = ``true``
+:ref:`bool<class_bool>` **visible** = ``true`` :ref:`🔗<class_CharFXTransform_property_visible>`
 
 .. rst-class:: classref-property-setget
 

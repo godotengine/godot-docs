@@ -38,10 +38,6 @@ In summary, you can use the low-level networking API for maximum control and imp
           (`here <https://gafferongames.com/categories/game-networking/>`__), including the comprehensive
           `introduction to networking models in games <https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
 
-          If you want to use your low-level networking library of choice instead of Godot's built-in networking,
-          see here for an example:
-          https://github.com/PerduGames/gdnet3
-
 .. warning:: Adding networking to your game comes with some responsibility.
              It can make your application vulnerable if done wrong and may lead to cheats or exploits.
              It may even allow an attacker to compromise the machines your application runs on
@@ -101,7 +97,7 @@ for full IPv6 support.
 Initializing the network
 ------------------------
 
-High level networking in Godot is managed by the :ref:`SceneTree <class_SceneTree>`.
+High-level networking in Godot is managed by the :ref:`SceneTree <class_SceneTree>`.
 
 Each node has a ``multiplayer`` property, which is a reference to the ``MultiplayerAPI`` instance configured for it
 by the scene tree. Initially, every node is configured with the same default ``MultiplayerAPI`` object.
@@ -111,16 +107,24 @@ which will override ``multiplayer`` for the node at that path and all of its des
 This allows sibling nodes to be configured with different peers, which makes it possible to run a server
 and a client simultaneously in one instance of Godot.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # By default, these expressions are interchangeable.
     multiplayer # Get the MultiplayerAPI object configured for this node.
     get_tree().get_multiplayer() # Get the default MultiplayerAPI object.
 
+ .. code-tab:: csharp
+
+    // By default, these expressions are interchangeable.
+    Multiplayer; // Get the MultiplayerAPI object configured for this node.
+    GetTree().GetMultiplayer(); // Get the default MultiplayerAPI object.
+
 To initialize networking, a ``MultiplayerPeer`` object must be created, initialized as a server or client,
 and passed to the ``MultiplayerAPI``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Create client.
     var peer = ENetMultiplayerPeer.new()
@@ -132,11 +136,28 @@ and passed to the ``MultiplayerAPI``.
     peer.create_server(PORT, MAX_CLIENTS)
     multiplayer.multiplayer_peer = peer
 
+ .. code-tab:: csharp
+
+    // Create client.
+    var peer = new ENetMultiplayerPeer();
+    peer.CreateClient(IPAddress, Port);
+    Multiplayer.MultiplayerPeer = peer;
+
+    // Create server.
+    var peer = new ENetMultiplayerPeer();
+    peer.CreateServer(Port, MaxClients);
+    Multiplayer.MultiplayerPeer = peer;
+
 To terminate networking:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.multiplayer_peer = null
+
+ .. code-tab:: csharp
+
+    Multiplayer.MultiplayerPeer = null;
 
 .. warning::
 
@@ -163,15 +184,26 @@ The rest are only emitted on clients:
 
 To get the unique ID of the associated peer:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.get_unique_id()
 
+ .. code-tab:: csharp
+
+    Multiplayer.GetUniqueId();
+
+
 To check whether the peer is server or client:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.is_server()
+
+ .. code-tab:: csharp
+
+    Multiplayer.IsServer();
 
 Remote procedure calls
 ----------------------
@@ -180,7 +212,8 @@ Remote procedure calls, or RPCs, are functions that can be called on other peers
 before a function definition. To call an RPC, use ``Callable``'s method ``rpc()`` to call in every peer, or ``rpc_id()`` to
 call in a specific peer.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
         if multiplayer.is_server():
@@ -189,6 +222,23 @@ call in a specific peer.
     @rpc
     func print_once_per_client():
         print("I will be printed to the console once per each connected client.")
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        if (Multiplayer.IsServer())
+        {
+            Rpc(MethodName.PrintOncePerClient);
+        }
+    }
+
+    [Rpc]
+    private void PrintOncePerClient()
+    {
+        GD.Print("I will be printed to the console once per each connected client.");
+    }
+
 
 RPCs will not serialize objects or callables.
 
@@ -205,10 +255,11 @@ must have the same name. When using ``add_child()`` for nodes which are expected
     scripts and the server scripts, **even functions that are currently not in use**.
 
     The signature of the RPC includes the ``@rpc()`` declaration, the function, return type,
-    AND the nodepath. If an RPC resides in a script attached to ``/root/Main/Node1``, then it
+    **and** the NodePath. If an RPC resides in a script attached to ``/root/Main/Node1``, then it
     must reside in precisely the same path and node on both the client script and the server
-    script. Function arguments (example: ``func sendstuff():`` and ``func sendstuff(arg1, arg2):``
-    **will pass** signature matching).
+    script. Function arguments are not checked for matching between the server and client code
+    (example: ``func sendstuff():`` and ``func sendstuff(arg1, arg2):`` **will pass** signature
+    matching).
 
     If these conditions are not met (if all RPCs do not pass signature matching), the script may print an
     error or cause unwanted behavior. The error message may be unrelated to the RPC function you are
@@ -218,15 +269,22 @@ must have the same name. When using ``add_child()`` for nodes which are expected
 
 The annotation can take a number of arguments, which have default values. ``@rpc`` is equivalent to:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @rpc("authority", "call_remote", "unreliable", 0)
+
+ .. code-tab:: csharp
+
+    [Rpc(MultiplayerApi.RpcMode.Authority, CallLocal = false, TransferMode = MultiplayerPeer.TransferModeEnum.Unreliable, TransferChannel = 0)]
 
 The parameters and their functions are as follows:
 
 ``mode``:
 
-- ``"authority"``: Only the multiplayer authority (the server) can call remotely.
+- ``"authority"``: Only the multiplayer authority can call remotely.
+  The authority is the server by default, but can be changed per-node using
+  :ref:`Node.set_multiplayer_authority <class_Node_method_set_multiplayer_authority>`.
 - ``"any_peer"``: Clients are allowed to call remotely. Useful for transferring user input.
 
 ``sync``:
@@ -246,7 +304,8 @@ The first 3 can be passed in any order, but ``transfer_channel`` must always be 
 
 The function ``multiplayer.get_remote_sender_id()`` can be used to get the unique id of an rpc sender, when used within the function called by rpc.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_some_input(): # Connected to some input.
         transfer_some_input.rpc_id(1) # Send the input only to the server.
@@ -258,6 +317,22 @@ The function ``multiplayer.get_remote_sender_id()`` can be used to get the uniqu
         # The server knows who sent the input.
         var sender_id = multiplayer.get_remote_sender_id()
         # Process the input and affect game logic.
+
+ .. code-tab:: csharp
+
+    private void OnSomeInput() // Connected to some input.
+    {
+        RpcId(1, MethodName.TransferSomeInput); // Send the input only to the server.
+    }
+
+    // Call local is required if the server is also a player.
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+    private void TransferSomeInput()
+    {
+        // The server knows who sent the input.
+        int senderId = Multiplayer.GetRemoteSenderId();
+        // Process the input and affect game logic.
+    }
 
 Channels
 --------
@@ -279,7 +354,8 @@ Example lobby implementation
 This is an example lobby that can handle peers joining and leaving, notify UI scenes through signals, and start the game after all clients
 have loaded the game scene.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Node
 
@@ -339,6 +415,7 @@ have loaded the game scene.
 
     func remove_multiplayer_peer():
         multiplayer.multiplayer_peer = null
+        players.clear()
 
 
     # When the server decides to start the game from a UI scene,
@@ -391,9 +468,160 @@ have loaded the game scene.
         players.clear()
         server_disconnected.emit()
 
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class Lobby : Node
+    {
+        public static Lobby Instance { get; private set; }
+
+        // These signals can be connected to by a UI lobby scene or the game scene.
+        [Signal]
+        public delegate void PlayerConnectedEventHandler(int peerId, Godot.Collections.Dictionary<string, string> playerInfo);
+        [Signal]
+        public delegate void PlayerDisconnectedEventHandler(int peerId);
+        [Signal]
+        public delegate void ServerDisconnectedEventHandler();
+
+        private const int Port = 7000;
+        private const string DefaultServerIP = "127.0.0.1"; // IPv4 localhost
+        private const int MaxConnections = 20;
+
+        // This will contain player info for every player,
+        // with the keys being each player's unique IDs.
+        private Godot.Collections.Dictionary<long, Godot.Collections.Dictionary<string, string>> _players = new Godot.Collections.Dictionary<long, Godot.Collections.Dictionary<string, string>>();
+
+        // This is the local player info. This should be modified locally
+        // before the connection is made. It will be passed to every other peer.
+        // For example, the value of "name" can be set to something the player
+        // entered in a UI scene.
+        private Godot.Collections.Dictionary<string, string> _playerInfo = new Godot.Collections.Dictionary<string, string>()
+        {
+            { "Name", "PlayerName" },
+        };
+
+        private int _playersLoaded = 0;
+
+        public override void _Ready()
+        {
+            Instance = this;
+            Multiplayer.PeerConnected += OnPlayerConnected;
+            Multiplayer.PeerDisconnected += OnPlayerDisconnected;
+            Multiplayer.ConnectedToServer += OnConnectOk;
+            Multiplayer.ConnectionFailed += OnConnectionFail;
+            Multiplayer.ServerDisconnected += OnServerDisconnected;
+        }
+
+        private Error JoinGame(string address = "")
+        {
+            if (string.IsNullOrEmpty(address))
+            {
+                address = DefaultServerIP;
+            }
+
+            var peer = new ENetMultiplayerPeer();
+            Error error = peer.CreateClient(address, Port);
+
+            if (error != Error.Ok)
+            {
+                return error;
+            }
+
+            Multiplayer.MultiplayerPeer = peer;
+            return Error.Ok;
+        }
+
+        private Error CreateGame()
+        {
+            var peer = new ENetMultiplayerPeer();
+            Error error = peer.CreateServer(Port, MaxConnections);
+
+            if (error != Error.Ok)
+            {
+                return error;
+            }
+
+            Multiplayer.MultiplayerPeer = peer;
+            _players[1] = _playerInfo;
+            EmitSignal(SignalName.PlayerConnected, 1, _playerInfo);
+            return Error.Ok;
+        }
+
+        private void RemoveMultiplayerPeer()
+        {
+            Multiplayer.MultiplayerPeer = null;
+            _players.Clear();
+        }
+
+        // When the server decides to start the game from a UI scene,
+        // do Rpc(Lobby.MethodName.LoadGame, filePath);
+        [Rpc(CallLocal = true,TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+        private void LoadGame(string gameScenePath)
+        {
+            GetTree().ChangeSceneToFile(gameScenePath);
+        }
+
+        // Every peer will call this when they have loaded the game scene.
+        [Rpc(MultiplayerApi.RpcMode.AnyPeer,CallLocal = true,TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+        private void PlayerLoaded()
+        {
+            if (Multiplayer.IsServer())
+            {
+                _playersLoaded += 1;
+                if (_playersLoaded == _players.Count)
+                {
+                    GetNode<Game>("/root/Game").StartGame();
+                    _playersLoaded = 0;
+                }
+            }
+        }
+
+        // When a peer connects, send them my player info.
+        // This allows transfer of all desired data for each player, not only the unique ID.
+        private void OnPlayerConnected(long id)
+        {
+            RpcId(id, MethodName.RegisterPlayer, _playerInfo);
+        }
+
+        [Rpc(MultiplayerApi.RpcMode.AnyPeer,TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+        private void RegisterPlayer(Godot.Collections.Dictionary<string, string> newPlayerInfo)
+        {
+            int newPlayerId = Multiplayer.GetRemoteSenderId();
+            _players[newPlayerId] = newPlayerInfo;
+            EmitSignal(SignalName.PlayerConnected, newPlayerId, newPlayerInfo);
+        }
+
+        private void OnPlayerDisconnected(long id)
+        {
+            _players.Remove(id);
+            EmitSignal(SignalName.PlayerDisconnected, id);
+        }
+
+        private void OnConnectOk()
+        {
+            int peerId = Multiplayer.GetUniqueId();
+            _players[peerId] = _playerInfo;
+            EmitSignal(SignalName.PlayerConnected, peerId, _playerInfo);
+        }
+
+        private void OnConnectionFail()
+        {
+            Multiplayer.MultiplayerPeer = null;
+        }
+
+        private void OnServerDisconnected()
+        {
+            Multiplayer.MultiplayerPeer = null;
+            _players.Clear();
+            EmitSignal(SignalName.ServerDisconnected);
+        }
+    }
+
 The game scene's root node should be named Game. In the script attached to it:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Node3D # Or Node2D.
 
@@ -408,6 +636,26 @@ The game scene's root node should be named Game. In the script attached to it:
     # Called only on the server.
     func start_game():
         # All peers are ready to receive RPCs in this scene.
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class Game : Node3D // Or Node2D.
+    {
+        public override void _Ready()
+        {
+            // Preconfigure game.
+
+            Lobby.Instance.RpcId(1, Lobby.MethodName.PlayerLoaded); // Tell the server that this peer has loaded.
+        }
+
+        // Called only on the server.
+        public void StartGame()
+        {
+            // All peers are ready to receive RPCs in this scene.
+        }
+    }
 
 Exporting for dedicated servers
 -------------------------------

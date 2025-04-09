@@ -5,8 +5,8 @@
 Using the Web editor
 ====================
 
-Since Godot 3.3, there is a `Web editor <https://editor.godotengine.org/>`__
-you can use to work on new or existing projects.
+There is a `Web editor <https://editor.godotengine.org/>`__ you can use to work
+on new or existing projects.
 
 .. note::
 
@@ -24,6 +24,9 @@ browsers support WebAssembly threading and can therefore run the web editor:
 - Chrome 68 or later
 - Firefox 79 or later
 - Edge 79 or later
+
+.. UPDATE: Not supported yet. When Opera, Safari, or mobile browsers are
+.. supported, update or remove these paragraphs.
 
 Opera and Safari are not supported yet. Safari may work in the future once
 proper threading support is added.
@@ -69,7 +72,8 @@ of the Web platform:
 .. seealso::
 
     See the
-    `list of open issues on GitHub related to the web editor <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Aplatform%3Ahtml5+label%3Atopic%3Aeditor>`__ for a list of known bugs.
+    `list of open issues on GitHub related to the web editor <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Aplatform%3Aweb+label%3Atopic%3Aeditor>`__
+    for a list of known bugs.
 
 Importing a project
 -------------------
@@ -114,6 +118,9 @@ Where are my project files?
 Due to browser security limitations, the editor will save the project files to
 the browser's IndexedDB storage. This storage isn't accessible as a regular folder
 on your machine, but is abstracted away in a database.
+
+.. UPDATE: Not supported yet. When exporting from the web editor is supported,
+.. update this paragraph.
 
 You can download the project files as a ZIP archive by using
 **Project > Tools > Download Project Source**. This can be used to export the

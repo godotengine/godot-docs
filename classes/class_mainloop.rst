@@ -23,7 +23,7 @@ Description
 
 **MainLoop** is the abstract base class for a Godot project's game loop. It is inherited by :ref:`SceneTree<class_SceneTree>`, which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own **MainLoop** subclass instead of the scene tree.
 
-Upon the application start, a **MainLoop** implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created) unless a **MainLoop** :ref:`Script<class_Script>` is provided from the command line (with e.g. ``godot -s my_loop.gd``) or the "Main Loop Type" project setting is overwritten.
+Upon the application start, a **MainLoop** implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created) unless a **MainLoop** :ref:`Script<class_Script>` is provided from the command line (with e.g. ``godot -s my_loop.gd``) or the :ref:`ProjectSettings.application/run/main_loop_type<class_ProjectSettings_property_application/run/main_loop_type>` project setting is overwritten.
 
 Here is an example script implementing a simple **MainLoop**:
 
@@ -112,7 +112,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**on_request_permissions_result**\ (\ permission\: :ref:`String<class_String>`, granted\: :ref:`bool<class_bool>`\ )
+**on_request_permissions_result**\ (\ permission\: :ref:`String<class_String>`, granted\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MainLoop_signal_on_request_permissions_result>`
 
 Emitted when a user responds to a permission request.
 
@@ -129,7 +129,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_OS_MEMORY_WARNING** = ``2009``
+**NOTIFICATION_OS_MEMORY_WARNING** = ``2009`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_OS_MEMORY_WARNING>`
 
 Notification received from the OS when the application is exceeding its allocated memory.
 
@@ -139,15 +139,15 @@ Specific to the iOS platform.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_TRANSLATION_CHANGED** = ``2010``
+**NOTIFICATION_TRANSLATION_CHANGED** = ``2010`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_TRANSLATION_CHANGED>`
 
-Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
+Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr()<class_Object_method_tr>`.
 
 .. _class_MainLoop_constant_NOTIFICATION_WM_ABOUT:
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_WM_ABOUT** = ``2011``
+**NOTIFICATION_WM_ABOUT** = ``2011`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_WM_ABOUT>`
 
 Notification received from the OS when a request for "About" information is sent.
 
@@ -157,7 +157,7 @@ Specific to the macOS platform.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_CRASH** = ``2012``
+**NOTIFICATION_CRASH** = ``2012`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_CRASH>`
 
 Notification received from Godot's crash handler when the engine is about to crash.
 
@@ -167,7 +167,7 @@ Implemented on desktop platforms if the crash handler is enabled.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_OS_IME_UPDATE** = ``2013``
+**NOTIFICATION_OS_IME_UPDATE** = ``2013`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE>`
 
 Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
 
@@ -177,7 +177,7 @@ Specific to the macOS platform.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_APPLICATION_RESUMED** = ``2014``
+**NOTIFICATION_APPLICATION_RESUMED** = ``2014`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_APPLICATION_RESUMED>`
 
 Notification received from the OS when the application is resumed.
 
@@ -187,7 +187,7 @@ Specific to the Android and iOS platforms.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_APPLICATION_PAUSED** = ``2015``
+**NOTIFICATION_APPLICATION_PAUSED** = ``2015`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_APPLICATION_PAUSED>`
 
 Notification received from the OS when the application is paused.
 
@@ -199,7 +199,7 @@ Specific to the Android and iOS platforms.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_APPLICATION_FOCUS_IN** = ``2016``
+**NOTIFICATION_APPLICATION_FOCUS_IN** = ``2016`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_APPLICATION_FOCUS_IN>`
 
 Notification received from the OS when the application is focused, i.e. when changing the focus from the OS desktop or a thirdparty application to any open window of the Godot instance.
 
@@ -209,7 +209,7 @@ Implemented on desktop and mobile platforms.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_APPLICATION_FOCUS_OUT** = ``2017``
+**NOTIFICATION_APPLICATION_FOCUS_OUT** = ``2017`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_APPLICATION_FOCUS_OUT>`
 
 Notification received from the OS when the application is defocused, i.e. when changing the focus from any open window of the Godot instance to the OS desktop or a thirdparty application.
 
@@ -219,7 +219,7 @@ Implemented on desktop and mobile platforms.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_TEXT_SERVER_CHANGED** = ``2018``
+**NOTIFICATION_TEXT_SERVER_CHANGED** = ``2018`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_TEXT_SERVER_CHANGED>`
 
 Notification received when text server is changed.
 
@@ -236,7 +236,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_finalize**\ (\ ) |virtual|
+|void| **_finalize**\ (\ ) |virtual| :ref:`🔗<class_MainLoop_private_method__finalize>`
 
 Called before the program exits.
 
@@ -248,7 +248,7 @@ Called before the program exits.
 
 .. rst-class:: classref-method
 
-|void| **_initialize**\ (\ ) |virtual|
+|void| **_initialize**\ (\ ) |virtual| :ref:`🔗<class_MainLoop_private_method__initialize>`
 
 Called once during initialization.
 
@@ -260,11 +260,13 @@ Called once during initialization.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_physics_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|
+:ref:`bool<class_bool>` **_physics_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_MainLoop_private_method__physics_process>`
 
-Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process<class_Node_private_method__physics_process>`.
+Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process()<class_Node_private_method__physics_process>`.
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
+
+\ **Note:** ``delta`` will be larger than expected if running at a framerate lower than :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` / :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both :ref:`_process()<class_MainLoop_private_method__process>` and :ref:`_physics_process()<class_MainLoop_private_method__physics_process>`. As a result, avoid using ``delta`` for time measurements in real-world seconds. Use the :ref:`Time<class_Time>` singleton's methods for this purpose instead, such as :ref:`Time.get_ticks_usec()<class_Time_method_get_ticks_usec>`.
 
 .. rst-class:: classref-item-separator
 
@@ -274,11 +276,13 @@ If implemented, the method must return a boolean value. ``true`` ends the main l
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|
+:ref:`bool<class_bool>` **_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_MainLoop_private_method__process>`
 
-Called each process (idle) frame with the time since the last process frame as argument (in seconds). Equivalent to :ref:`Node._process<class_Node_private_method__process>`.
+Called each process (idle) frame with the time since the last process frame as argument (in seconds). Equivalent to :ref:`Node._process()<class_Node_private_method__process>`.
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
+
+\ **Note:** ``delta`` will be larger than expected if running at a framerate lower than :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` / :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both :ref:`_process()<class_MainLoop_private_method__process>` and :ref:`_physics_process()<class_MainLoop_private_method__physics_process>`. As a result, avoid using ``delta`` for time measurements in real-world seconds. Use the :ref:`Time<class_Time>` singleton's methods for this purpose instead, such as :ref:`Time.get_ticks_usec()<class_Time_method_get_ticks_usec>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

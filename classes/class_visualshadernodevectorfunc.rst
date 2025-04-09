@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Function**:
+enum **Function**: :ref:`🔗<enum_VisualShaderNodeVectorFunc_Function>`
 
 .. _class_VisualShaderNodeVectorFunc_constant_FUNC_NORMALIZE:
 
@@ -333,7 +333,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function** = ``0``
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function** = ``0`` :ref:`🔗<class_VisualShaderNodeVectorFunc_property_function>`
 
 .. rst-class:: classref-property-setget
 

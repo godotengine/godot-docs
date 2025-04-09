@@ -326,11 +326,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_add_shape**\ (\ area\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_area_add_shape**\ (\ area\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_add_shape>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_add_shape()<class_PhysicsServer2D_method_area_add_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -340,11 +338,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_attach_canvas_instance_id**\ (\ area\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_attach_canvas_instance_id**\ (\ area\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_attach_canvas_instance_id>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_attach_canvas_instance_id()<class_PhysicsServer2D_method_area_attach_canvas_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -354,11 +350,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_attach_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_attach_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_attach_object_instance_id>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_attach_object_instance_id()<class_PhysicsServer2D_method_area_attach_object_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -368,11 +362,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_clear_shapes**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_area_clear_shapes**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_clear_shapes>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_clear_shapes()<class_PhysicsServer2D_method_area_clear_shapes>`.
 
 .. rst-class:: classref-item-separator
 
@@ -382,11 +374,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_area_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_area_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_create()<class_PhysicsServer2D_method_area_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -396,11 +386,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_canvas_instance_id**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_canvas_instance_id**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_canvas_instance_id>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_canvas_instance_id()<class_PhysicsServer2D_method_area_get_canvas_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -410,11 +398,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_collision_layer**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_collision_layer**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_collision_layer>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_collision_layer()<class_PhysicsServer2D_method_area_get_collision_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -424,11 +410,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_collision_mask**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_collision_mask**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_collision_mask>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_collision_mask()<class_PhysicsServer2D_method_area_get_collision_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -438,11 +422,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_object_instance_id**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_object_instance_id>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_object_instance_id()<class_PhysicsServer2D_method_area_get_object_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -452,11 +434,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_area_get_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_area_get_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_param()<class_PhysicsServer2D_method_area_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -466,11 +446,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_area_get_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_area_get_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_shape>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_shape()<class_PhysicsServer2D_method_area_get_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -480,11 +458,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_area_get_shape_count**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_area_get_shape_count**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_shape_count>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_shape_count()<class_PhysicsServer2D_method_area_get_shape_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -494,11 +470,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **_area_get_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Transform2D<class_Transform2D>` **_area_get_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_shape_transform>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_shape_transform()<class_PhysicsServer2D_method_area_get_shape_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -508,11 +482,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_area_get_space**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_area_get_space**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_space>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_space()<class_PhysicsServer2D_method_area_get_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -522,11 +494,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **_area_get_transform**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Transform2D<class_Transform2D>` **_area_get_transform**\ (\ area\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_get_transform>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_get_transform()<class_PhysicsServer2D_method_area_get_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -536,11 +506,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_remove_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_remove_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_remove_shape>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_remove_shape()<class_PhysicsServer2D_method_area_remove_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -550,11 +518,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_area_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual|
+|void| **_area_set_area_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_area_monitor_callback>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_area_monitor_callback()<class_PhysicsServer2D_method_area_set_area_monitor_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -564,11 +530,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_collision_layer**\ (\ area\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_set_collision_layer**\ (\ area\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_collision_layer>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_collision_layer()<class_PhysicsServer2D_method_area_set_collision_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -578,11 +542,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_collision_mask**\ (\ area\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_area_set_collision_mask**\ (\ area\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_collision_mask>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_collision_mask()<class_PhysicsServer2D_method_area_set_collision_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -592,11 +554,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual|
+|void| **_area_set_monitor_callback**\ (\ area\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_monitor_callback>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_monitor_callback()<class_PhysicsServer2D_method_area_set_monitor_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -606,11 +566,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_monitorable**\ (\ area\: :ref:`RID<class_RID>`, monitorable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_area_set_monitorable**\ (\ area\: :ref:`RID<class_RID>`, monitorable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_monitorable>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_monitorable()<class_PhysicsServer2D_method_area_set_monitorable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -620,11 +578,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_area_set_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_param()<class_PhysicsServer2D_method_area_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -634,11 +590,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_pickable**\ (\ area\: :ref:`RID<class_RID>`, pickable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_area_set_pickable**\ (\ area\: :ref:`RID<class_RID>`, pickable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_pickable>`
 
-.. container:: contribute
+If set to ``true``, allows the area with the given :ref:`RID<class_RID>` to detect mouse inputs when the mouse cursor is hovering on it.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``area_set_pickable`` method. Corresponds to :ref:`CollisionObject2D.input_pickable<class_CollisionObject2D_property_input_pickable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -648,11 +604,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_area_set_shape**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_shape>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_shape()<class_PhysicsServer2D_method_area_set_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -662,11 +616,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_shape_disabled**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_area_set_shape_disabled**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_shape_disabled>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_shape_disabled()<class_PhysicsServer2D_method_area_set_shape_disabled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -676,11 +628,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual|
+|void| **_area_set_shape_transform**\ (\ area\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_shape_transform>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_shape_transform()<class_PhysicsServer2D_method_area_set_shape_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -690,11 +640,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_space**\ (\ area\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_area_set_space**\ (\ area\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_space>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_space()<class_PhysicsServer2D_method_area_set_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -704,11 +652,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_area_set_transform**\ (\ area\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual|
+|void| **_area_set_transform**\ (\ area\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_transform>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.area_set_transform()<class_PhysicsServer2D_method_area_set_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -718,11 +664,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_add_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_collision_exception>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_add_collision_exception()<class_PhysicsServer2D_method_body_add_collision_exception>`.
 
 .. rst-class:: classref-item-separator
 
@@ -732,11 +676,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_constant_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_body_add_constant_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_constant_central_force>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_add_constant_central_force()<class_PhysicsServer2D_method_body_add_constant_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -746,11 +688,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_body_add_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_constant_force>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_add_constant_force()<class_PhysicsServer2D_method_body_add_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -760,11 +700,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_add_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_constant_torque>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_add_constant_torque()<class_PhysicsServer2D_method_body_add_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -774,11 +712,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_add_shape**\ (\ body\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_add_shape**\ (\ body\: :ref:`RID<class_RID>`, shape\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_add_shape>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_add_shape()<class_PhysicsServer2D_method_body_add_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -788,11 +724,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_body_apply_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_central_force>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_apply_central_force()<class_PhysicsServer2D_method_body_apply_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -802,11 +736,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_central_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_body_apply_central_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_central_impulse>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_apply_central_impulse()<class_PhysicsServer2D_method_body_apply_central_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -816,11 +748,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_body_apply_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_force>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_apply_force()<class_PhysicsServer2D_method_body_apply_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -830,11 +760,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_body_apply_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_impulse>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_apply_impulse()<class_PhysicsServer2D_method_body_apply_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -844,11 +772,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_apply_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_torque>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_apply_torque()<class_PhysicsServer2D_method_body_apply_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -858,11 +784,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_apply_torque_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_apply_torque_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_apply_torque_impulse>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_apply_torque_impulse()<class_PhysicsServer2D_method_body_apply_torque_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -872,11 +796,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_attach_canvas_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_attach_canvas_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_attach_canvas_instance_id>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_attach_canvas_instance_id()<class_PhysicsServer2D_method_body_attach_canvas_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -886,11 +808,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_attach_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_attach_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_attach_object_instance_id>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_attach_object_instance_id()<class_PhysicsServer2D_method_body_attach_object_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -900,11 +820,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_clear_shapes**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_clear_shapes**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_clear_shapes>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_clear_shapes()<class_PhysicsServer2D_method_body_clear_shapes>`.
 
 .. rst-class:: classref-item-separator
 
@@ -914,11 +832,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_body_collide_shape**\ (\ body\: :ref:`RID<class_RID>`, body_shape\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`, shape_xform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, results\: ``void*``, result_max\: :ref:`int<class_int>`, result_count\: ``int32_t*``\ ) |virtual|
+:ref:`bool<class_bool>` **_body_collide_shape**\ (\ body\: :ref:`RID<class_RID>`, body_shape\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`, shape_xform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, results\: ``void*``, result_max\: :ref:`int<class_int>`, result_count\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_collide_shape>`
 
-.. container:: contribute
+Given a ``body``, a ``shape``, and their respective parameters, this method should return ``true`` if a collision between the two would occur, with additional details passed in ``results``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_collide`` method. Corresponds to :ref:`PhysicsDirectSpaceState2D.collide_shape()<class_PhysicsDirectSpaceState2D_method_collide_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -928,11 +846,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_body_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_body_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_create()<class_PhysicsServer2D_method_body_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -942,11 +858,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_canvas_instance_id**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_canvas_instance_id**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_canvas_instance_id>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_canvas_instance_id()<class_PhysicsServer2D_method_body_get_canvas_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -956,11 +870,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **_body_get_collision_exceptions**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **_body_get_collision_exceptions**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_exceptions>`
 
-.. container:: contribute
+Returns the :ref:`RID<class_RID>`\ s of all bodies added as collision exceptions for the given ``body``. See also :ref:`_body_add_collision_exception()<class_PhysicsServer2DExtension_private_method__body_add_collision_exception>` and :ref:`_body_remove_collision_exception()<class_PhysicsServer2DExtension_private_method__body_remove_collision_exception>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_get_collision_exceptions`` method. Corresponds to :ref:`PhysicsBody2D.get_collision_exceptions()<class_PhysicsBody2D_method_get_collision_exceptions>`.
 
 .. rst-class:: classref-item-separator
 
@@ -970,11 +884,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_collision_layer**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_collision_layer**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_layer>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_collision_layer()<class_PhysicsServer2D_method_body_get_collision_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -984,11 +896,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_collision_mask**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_collision_mask**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_mask>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_collision_mask()<class_PhysicsServer2D_method_body_get_collision_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -998,11 +908,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_body_get_collision_priority**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_body_get_collision_priority**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_priority>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_collision_priority()<class_PhysicsServer2D_method_body_get_collision_priority>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1012,11 +920,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_body_get_constant_force**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_body_get_constant_force**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_constant_force>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_constant_force()<class_PhysicsServer2D_method_body_get_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1026,11 +932,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_body_get_constant_torque**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_body_get_constant_torque**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_constant_torque>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_constant_torque()<class_PhysicsServer2D_method_body_get_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1040,11 +944,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_body_get_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_body_get_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_contacts_reported_depth_threshold>`
 
-.. container:: contribute
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_get_contacts_reported_depth_threshold`` method.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This method is currently unused by Godot's default physics implementation.
 
 .. rst-class:: classref-item-separator
 
@@ -1054,11 +958,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` **_body_get_continuous_collision_detection_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` **_body_get_continuous_collision_detection_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_continuous_collision_detection_mode>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_continuous_collision_detection_mode()<class_PhysicsServer2D_method_body_get_continuous_collision_detection_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1068,11 +970,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` **_body_get_direct_state**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual|
+:ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` **_body_get_direct_state**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_direct_state>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_direct_state()<class_PhysicsServer2D_method_body_get_direct_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1082,11 +982,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_max_contacts_reported>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_max_contacts_reported()<class_PhysicsServer2D_method_body_get_max_contacts_reported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1096,11 +994,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` **_body_get_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` **_body_get_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_mode>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_mode()<class_PhysicsServer2D_method_body_get_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1110,11 +1006,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_object_instance_id>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_object_instance_id()<class_PhysicsServer2D_method_body_get_object_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1124,11 +1018,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_body_get_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_body_get_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_param()<class_PhysicsServer2D_method_body_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1138,11 +1030,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_body_get_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_body_get_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_shape>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_shape()<class_PhysicsServer2D_method_body_get_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1152,11 +1042,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_body_get_shape_count**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_body_get_shape_count**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_shape_count>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_shape_count()<class_PhysicsServer2D_method_body_get_shape_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1166,11 +1054,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **_body_get_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Transform2D<class_Transform2D>` **_body_get_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_shape_transform>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_shape_transform()<class_PhysicsServer2D_method_body_get_shape_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1180,11 +1066,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_body_get_space**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_body_get_space**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_space>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_space()<class_PhysicsServer2D_method_body_get_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1194,11 +1078,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_body_get_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_body_get_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_state>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_get_state()<class_PhysicsServer2D_method_body_get_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1208,11 +1090,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_is_omitting_force_integration>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_is_omitting_force_integration()<class_PhysicsServer2D_method_body_is_omitting_force_integration>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1222,11 +1102,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_remove_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_remove_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_remove_collision_exception>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_remove_collision_exception()<class_PhysicsServer2D_method_body_remove_collision_exception>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1236,11 +1114,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_remove_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_remove_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_remove_shape>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_remove_shape()<class_PhysicsServer2D_method_body_remove_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1250,11 +1126,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_reset_mass_properties**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_reset_mass_properties**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_reset_mass_properties>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_reset_mass_properties()<class_PhysicsServer2D_method_body_reset_mass_properties>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1264,11 +1138,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_axis_velocity**\ (\ body\: :ref:`RID<class_RID>`, axis_velocity\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_body_set_axis_velocity**\ (\ body\: :ref:`RID<class_RID>`, axis_velocity\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_axis_velocity>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_axis_velocity()<class_PhysicsServer2D_method_body_set_axis_velocity>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1278,11 +1150,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_collision_layer**\ (\ body\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_set_collision_layer**\ (\ body\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_collision_layer>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_collision_layer()<class_PhysicsServer2D_method_body_set_collision_layer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1292,11 +1162,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_collision_mask**\ (\ body\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_set_collision_mask**\ (\ body\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_collision_mask>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_collision_mask()<class_PhysicsServer2D_method_body_set_collision_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1306,11 +1174,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_collision_priority**\ (\ body\: :ref:`RID<class_RID>`, priority\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_set_collision_priority**\ (\ body\: :ref:`RID<class_RID>`, priority\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_collision_priority>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_collision_priority()<class_PhysicsServer2D_method_body_set_collision_priority>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1320,11 +1186,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_body_set_constant_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_constant_force>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_constant_force()<class_PhysicsServer2D_method_body_set_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1334,11 +1198,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_set_constant_torque**\ (\ body\: :ref:`RID<class_RID>`, torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_constant_torque>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_constant_torque()<class_PhysicsServer2D_method_body_set_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1348,11 +1210,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`, threshold\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_set_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`, threshold\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_contacts_reported_depth_threshold>`
 
-.. container:: contribute
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_set_contacts_reported_depth_threshold`` method.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This method is currently unused by Godot's default physics implementation.
 
 .. rst-class:: classref-item-separator
 
@@ -1362,11 +1224,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_continuous_collision_detection_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>`\ ) |virtual|
+|void| **_body_set_continuous_collision_detection_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_continuous_collision_detection_mode>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_continuous_collision_detection_mode()<class_PhysicsServer2D_method_body_set_continuous_collision_detection_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1376,11 +1236,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_force_integration_callback>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_force_integration_callback()<class_PhysicsServer2D_method_body_set_force_integration_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1390,11 +1248,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`, amount\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_body_set_max_contacts_reported**\ (\ body\: :ref:`RID<class_RID>`, amount\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_max_contacts_reported>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_max_contacts_reported()<class_PhysicsServer2D_method_body_set_max_contacts_reported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1404,11 +1260,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>`\ ) |virtual|
+|void| **_body_set_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_mode>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_mode()<class_PhysicsServer2D_method_body_set_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1418,11 +1272,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_omit_force_integration**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_set_omit_force_integration**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_omit_force_integration>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_omit_force_integration()<class_PhysicsServer2D_method_body_set_omit_force_integration>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1432,11 +1284,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_body_set_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_param()<class_PhysicsServer2D_method_body_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1446,11 +1296,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_pickable**\ (\ body\: :ref:`RID<class_RID>`, pickable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_set_pickable**\ (\ body\: :ref:`RID<class_RID>`, pickable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_pickable>`
 
-.. container:: contribute
+If set to ``true``, allows the body with the given :ref:`RID<class_RID>` to detect mouse inputs when the mouse cursor is hovering on it.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_set_pickable`` method. Corresponds to :ref:`CollisionObject2D.input_pickable<class_CollisionObject2D_property_input_pickable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1460,11 +1310,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_set_shape**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_shape>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_shape()<class_PhysicsServer2D_method_body_set_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1474,11 +1322,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_shape_as_one_way_collision**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`, margin\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_body_set_shape_as_one_way_collision**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`, margin\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_shape_as_one_way_collision>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_shape_as_one_way_collision()<class_PhysicsServer2D_method_body_set_shape_as_one_way_collision>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1488,11 +1334,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_shape_disabled**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_body_set_shape_disabled**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_shape_disabled>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_shape_disabled()<class_PhysicsServer2D_method_body_set_shape_disabled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1502,11 +1346,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual|
+|void| **_body_set_shape_transform**\ (\ body\: :ref:`RID<class_RID>`, shape_idx\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_shape_transform>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_shape_transform()<class_PhysicsServer2D_method_body_set_shape_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1516,11 +1358,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_space**\ (\ body\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_body_set_space**\ (\ body\: :ref:`RID<class_RID>`, space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_space>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_space()<class_PhysicsServer2D_method_body_set_space>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1530,11 +1370,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_body_set_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_state>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_state()<class_PhysicsServer2D_method_body_set_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1544,11 +1382,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_body_set_state_sync_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ ) |virtual|
+|void| **_body_set_state_sync_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_state_sync_callback>`
 
-.. container:: contribute
+Assigns the ``body`` to call the given ``callable`` during the synchronization phase of the loop, before :ref:`_step()<class_PhysicsServer2DExtension_private_method__step>` is called. See also :ref:`_sync()<class_PhysicsServer2DExtension_private_method__sync>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_set_state_sync_callback()<class_PhysicsServer2D_method_body_set_state_sync_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1558,11 +1396,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_body_test_motion**\ (\ body\: :ref:`RID<class_RID>`, from\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collide_separation_ray\: :ref:`bool<class_bool>`, recovery_as_collision\: :ref:`bool<class_bool>`, result\: ``PhysicsServer2DExtensionMotionResult*``\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_body_test_motion**\ (\ body\: :ref:`RID<class_RID>`, from\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, margin\: :ref:`float<class_float>`, collide_separation_ray\: :ref:`bool<class_bool>`, recovery_as_collision\: :ref:`bool<class_bool>`, result\: ``PhysicsServer2DExtensionMotionResult*``\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_test_motion>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.body_test_motion()<class_PhysicsServer2D_method_body_test_motion>`. Unlike the exposed implementation, this method does not receive all of the arguments inside a :ref:`PhysicsTestMotionParameters2D<class_PhysicsTestMotionParameters2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1572,11 +1408,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_capsule_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_capsule_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__capsule_shape_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.capsule_shape_create()<class_PhysicsServer2D_method_capsule_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1586,11 +1420,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_circle_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_circle_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__circle_shape_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.circle_shape_create()<class_PhysicsServer2D_method_circle_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1600,11 +1432,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_concave_polygon_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_concave_polygon_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__concave_polygon_shape_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.concave_polygon_shape_create()<class_PhysicsServer2D_method_concave_polygon_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1614,11 +1444,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_convex_polygon_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_convex_polygon_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__convex_polygon_shape_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.convex_polygon_shape_create()<class_PhysicsServer2D_method_convex_polygon_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1628,11 +1456,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_damped_spring_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_damped_spring_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__damped_spring_joint_get_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.damped_spring_joint_get_param()<class_PhysicsServer2D_method_damped_spring_joint_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1642,11 +1468,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_damped_spring_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_damped_spring_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__damped_spring_joint_set_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.damped_spring_joint_set_param()<class_PhysicsServer2D_method_damped_spring_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1656,11 +1480,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_end_sync**\ (\ ) |virtual|
+|void| **_end_sync**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__end_sync>`
 
-.. container:: contribute
+Called to indicate that the physics server has stopped synchronizing. It is in the loop's iteration/physics phase, and can access physics objects even if running on a separate thread. See also :ref:`_sync()<class_PhysicsServer2DExtension_private_method__sync>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``end_sync`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -1670,11 +1494,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_finish**\ (\ ) |virtual|
+|void| **_finish**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__finish>`
 
-.. container:: contribute
+Called when the main loop finalizes to shut down the physics server. See also :ref:`MainLoop._finalize()<class_MainLoop_private_method__finalize>` and :ref:`_init()<class_PhysicsServer2DExtension_private_method__init>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``finish`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -1684,11 +1508,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_flush_queries**\ (\ ) |virtual|
+|void| **_flush_queries**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__flush_queries>`
 
-.. container:: contribute
+Called every physics step before :ref:`_step()<class_PhysicsServer2DExtension_private_method__step>` to process all remaining queries.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``flush_queries`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -1698,11 +1522,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__free_rid>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.free_rid()<class_PhysicsServer2D_method_free_rid>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1712,11 +1534,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_process_info**\ (\ process_info\: :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>`\ ) |virtual|
+:ref:`int<class_int>` **_get_process_info**\ (\ process_info\: :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__get_process_info>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.get_process_info()<class_PhysicsServer2D_method_get_process_info>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1726,11 +1546,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_init**\ (\ ) |virtual|
+|void| **_init**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__init>`
 
-.. container:: contribute
+Called when the main loop is initialized and creates a new instance of this physics server. See also :ref:`MainLoop._initialize()<class_MainLoop_private_method__initialize>` and :ref:`_finish()<class_PhysicsServer2DExtension_private_method__finish>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``init`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -1740,11 +1560,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_flushing_queries**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_flushing_queries**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__is_flushing_queries>`
 
-.. container:: contribute
+Overridable method that should return ``true`` when the physics server is processing queries. See also :ref:`_flush_queries()<class_PhysicsServer2DExtension_private_method__flush_queries>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``is_flushing_queries`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -1754,11 +1574,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_clear**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_joint_clear**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_clear>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_clear()<class_PhysicsServer2D_method_joint_clear>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1768,11 +1586,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_joint_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_joint_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_create()<class_PhysicsServer2D_method_joint_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1782,11 +1598,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_disable_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`, disable\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_joint_disable_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`, disable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_disable_collisions_between_bodies>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_disable_collisions_between_bodies()<class_PhysicsServer2D_method_joint_disable_collisions_between_bodies>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1796,11 +1610,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`JointParam<enum_PhysicsServer2D_JointParam>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`JointParam<enum_PhysicsServer2D_JointParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_get_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_get_param()<class_PhysicsServer2D_method_joint_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1810,11 +1622,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`JointType<enum_PhysicsServer2D_JointType>` **_joint_get_type**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`JointType<enum_PhysicsServer2D_JointType>` **_joint_get_type**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_get_type>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_get_type()<class_PhysicsServer2D_method_joint_get_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1824,11 +1634,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_joint_is_disabled_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_joint_is_disabled_collisions_between_bodies**\ (\ joint\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_is_disabled_collisions_between_bodies>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_is_disabled_collisions_between_bodies()<class_PhysicsServer2D_method_joint_is_disabled_collisions_between_bodies>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1838,11 +1646,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_damped_spring**\ (\ joint\: :ref:`RID<class_RID>`, anchor_a\: :ref:`Vector2<class_Vector2>`, anchor_b\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_joint_make_damped_spring**\ (\ joint\: :ref:`RID<class_RID>`, anchor_a\: :ref:`Vector2<class_Vector2>`, anchor_b\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_make_damped_spring>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_make_damped_spring()<class_PhysicsServer2D_method_joint_make_damped_spring>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1852,11 +1658,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_groove**\ (\ joint\: :ref:`RID<class_RID>`, a_groove1\: :ref:`Vector2<class_Vector2>`, a_groove2\: :ref:`Vector2<class_Vector2>`, b_anchor\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_joint_make_groove**\ (\ joint\: :ref:`RID<class_RID>`, a_groove1\: :ref:`Vector2<class_Vector2>`, a_groove2\: :ref:`Vector2<class_Vector2>`, b_anchor\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_make_groove>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_make_groove()<class_PhysicsServer2D_method_joint_make_groove>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1866,11 +1670,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_make_pin**\ (\ joint\: :ref:`RID<class_RID>`, anchor\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual|
+|void| **_joint_make_pin**\ (\ joint\: :ref:`RID<class_RID>`, anchor\: :ref:`Vector2<class_Vector2>`, body_a\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_make_pin>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_make_pin()<class_PhysicsServer2D_method_joint_make_pin>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1880,11 +1682,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`JointParam<enum_PhysicsServer2D_JointParam>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`JointParam<enum_PhysicsServer2D_JointParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__joint_set_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.joint_set_param()<class_PhysicsServer2D_method_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1894,11 +1694,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_pin_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_pin_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__pin_joint_get_flag>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.pin_joint_get_flag()<class_PhysicsServer2D_method_pin_joint_get_flag>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1908,11 +1706,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_pin_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_pin_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__pin_joint_get_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.pin_joint_get_param()<class_PhysicsServer2D_method_pin_joint_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1922,11 +1718,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_pin_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>`, enabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_pin_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>`, enabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__pin_joint_set_flag>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.pin_joint_set_flag()<class_PhysicsServer2D_method_pin_joint_set_flag>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1936,11 +1730,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_pin_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_pin_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__pin_joint_set_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.pin_joint_set_param()<class_PhysicsServer2D_method_pin_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1950,11 +1742,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_rectangle_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_rectangle_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__rectangle_shape_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.rectangle_shape_create()<class_PhysicsServer2D_method_rectangle_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1964,11 +1754,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_segment_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_segment_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__segment_shape_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.segment_shape_create()<class_PhysicsServer2D_method_segment_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1978,11 +1766,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_separation_ray_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_separation_ray_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__separation_ray_shape_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.separation_ray_shape_create()<class_PhysicsServer2D_method_separation_ray_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1992,11 +1778,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_active**\ (\ active\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_set_active**\ (\ active\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__set_active>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.set_active()<class_PhysicsServer2D_method_set_active>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2006,11 +1790,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_shape_collide**\ (\ shape_A\: :ref:`RID<class_RID>`, xform_A\: :ref:`Transform2D<class_Transform2D>`, motion_A\: :ref:`Vector2<class_Vector2>`, shape_B\: :ref:`RID<class_RID>`, xform_B\: :ref:`Transform2D<class_Transform2D>`, motion_B\: :ref:`Vector2<class_Vector2>`, results\: ``void*``, result_max\: :ref:`int<class_int>`, result_count\: ``int32_t*``\ ) |virtual|
+:ref:`bool<class_bool>` **_shape_collide**\ (\ shape_A\: :ref:`RID<class_RID>`, xform_A\: :ref:`Transform2D<class_Transform2D>`, motion_A\: :ref:`Vector2<class_Vector2>`, shape_B\: :ref:`RID<class_RID>`, xform_B\: :ref:`Transform2D<class_Transform2D>`, motion_B\: :ref:`Vector2<class_Vector2>`, results\: ``void*``, result_max\: :ref:`int<class_int>`, result_count\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_collide>`
 
-.. container:: contribute
+Given two shapes and their parameters, should return ``true`` if a collision between the two would occur, with additional details passed in ``results``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_collide`` method. Corresponds to :ref:`PhysicsDirectSpaceState2D.collide_shape()<class_PhysicsDirectSpaceState2D_method_collide_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2020,11 +1804,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_shape_get_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_shape_get_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_get_custom_solver_bias>`
 
-.. container:: contribute
+Should return the custom solver bias of the given ``shape``, which defines how much bodies are forced to separate on contact when this shape is involved.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_get_custom_solver_bias`` method. Corresponds to :ref:`Shape2D.custom_solver_bias<class_Shape2D_property_custom_solver_bias>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2034,11 +1818,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_shape_get_data**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_shape_get_data**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_get_data>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.shape_get_data()<class_PhysicsServer2D_method_shape_get_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2048,11 +1830,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ShapeType<enum_PhysicsServer2D_ShapeType>` **_shape_get_type**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`ShapeType<enum_PhysicsServer2D_ShapeType>` **_shape_get_type**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_get_type>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.shape_get_type()<class_PhysicsServer2D_method_shape_get_type>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2062,11 +1842,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_shape_set_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`, bias\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_shape_set_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`, bias\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_set_custom_solver_bias>`
 
-.. container:: contribute
+Should set the custom solver bias for the given ``shape``. It defines how much bodies are forced to separate on contact.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_get_custom_solver_bias`` method. Corresponds to :ref:`Shape2D.custom_solver_bias<class_Shape2D_property_custom_solver_bias>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2076,11 +1856,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_shape_set_data**\ (\ shape\: :ref:`RID<class_RID>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_shape_set_data**\ (\ shape\: :ref:`RID<class_RID>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_set_data>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.shape_set_data()<class_PhysicsServer2D_method_shape_set_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2090,11 +1868,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_space_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_space_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.space_create()<class_PhysicsServer2D_method_space_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2104,11 +1880,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_space_get_contact_count**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_space_get_contact_count**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_contact_count>`
 
-.. container:: contribute
+Should return how many contacts have occurred during the last physics step in the given ``space``. See also :ref:`_space_get_contacts()<class_PhysicsServer2DExtension_private_method__space_get_contacts>` and :ref:`_space_set_debug_contacts()<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``space_get_contact_count`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -2118,11 +1894,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **_space_get_contacts**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`PackedVector2Array<class_PackedVector2Array>` **_space_get_contacts**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_contacts>`
 
-.. container:: contribute
+Should return the positions of all contacts that have occurred during the last physics step in the given ``space``. See also :ref:`_space_get_contact_count()<class_PhysicsServer2DExtension_private_method__space_get_contact_count>` and :ref:`_space_set_debug_contacts()<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``space_get_contacts`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -2132,11 +1908,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **_space_get_direct_state**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual|
+:ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **_space_get_direct_state**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_direct_state>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.space_get_direct_state()<class_PhysicsServer2D_method_space_get_direct_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2146,11 +1920,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_space_get_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_space_get_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.space_get_param()<class_PhysicsServer2D_method_space_get_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2160,11 +1932,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_space_is_active**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_space_is_active**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_is_active>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.space_is_active()<class_PhysicsServer2D_method_space_is_active>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2174,11 +1944,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_space_set_active**\ (\ space\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_space_set_active**\ (\ space\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_set_active>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.space_set_active()<class_PhysicsServer2D_method_space_set_active>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2188,11 +1956,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_space_set_debug_contacts**\ (\ space\: :ref:`RID<class_RID>`, max_contacts\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_space_set_debug_contacts**\ (\ space\: :ref:`RID<class_RID>`, max_contacts\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`
 
-.. container:: contribute
+Used internally to allow the given ``space`` to store contact points, up to ``max_contacts``. This is automatically set for the main :ref:`World2D<class_World2D>`'s space when :ref:`SceneTree.debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>` is ``true``, or by checking "Visible Collision Shapes" in the editor. Only works in debug builds.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``space_set_debug_contacts`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -2202,11 +1970,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_space_set_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>`, value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_space_set_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>`, value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_set_param>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.space_set_param()<class_PhysicsServer2D_method_space_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2216,11 +1982,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_step**\ (\ step\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_step**\ (\ step\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__step>`
 
-.. container:: contribute
+Called every physics step to process the physics simulation. ``step`` is the time elapsed since the last physics step, in seconds. It is usually the same as :ref:`Node.get_physics_process_delta_time()<class_Node_method_get_physics_process_delta_time>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``step`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -2230,11 +1996,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_sync**\ (\ ) |virtual|
+|void| **_sync**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__sync>`
 
-.. container:: contribute
+Called to indicate that the physics server is synchronizing and cannot access physics states if running on a separate thread. See also :ref:`_end_sync()<class_PhysicsServer2DExtension_private_method__end_sync>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``sync`` method.
 
 .. rst-class:: classref-item-separator
 
@@ -2244,11 +2010,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_world_boundary_shape_create**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_world_boundary_shape_create**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__world_boundary_shape_create>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsServer2D.world_boundary_shape_create()<class_PhysicsServer2D_method_world_boundary_shape_create>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2258,11 +2022,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **body_test_motion_is_excluding_body**\ (\ body\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **body_test_motion_is_excluding_body**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_body>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the body with the given :ref:`RID<class_RID>` is being excluded from :ref:`_body_test_motion()<class_PhysicsServer2DExtension_private_method__body_test_motion>`. See also :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2272,11 +2034,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **body_test_motion_is_excluding_object**\ (\ object\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **body_test_motion_is_excluding_object**\ (\ object\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_object>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the object with the given instance ID is being excluded from :ref:`_body_test_motion()<class_PhysicsServer2DExtension_private_method__body_test_motion>`. See also :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

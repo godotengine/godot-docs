@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **energy_multiplier** = ``1.0``
+:ref:`float<class_float>` **energy_multiplier** = ``1.0`` :ref:`🔗<class_PanoramaSkyMaterial_property_energy_multiplier>`
 
 .. rst-class:: classref-property-setget
 
@@ -71,7 +71,7 @@ The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filter** = ``true``
+:ref:`bool<class_bool>` **filter** = ``true`` :ref:`🔗<class_PanoramaSkyMaterial_property_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ A boolean value to determine if the background texture should be filtered or not
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **panorama**
+:ref:`Texture2D<class_Texture2D>` **panorama** :ref:`🔗<class_PanoramaSkyMaterial_property_panorama>`
 
 .. rst-class:: classref-property-setget
 

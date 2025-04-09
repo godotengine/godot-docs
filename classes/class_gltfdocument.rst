@@ -23,9 +23,9 @@ Description
 
 GLTFDocument supports reading data from a glTF file, buffer, or Godot scene. This data can then be written to the filesystem, buffer, or used to create a Godot scene.
 
-All of the data in a GLTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself. GLTFDocument has member variables to store export configuration settings such as the image format, but is otherwise stateless. Multiple scenes can be processed with the same settings using the same GLTFDocument object and different :ref:`GLTFState<class_GLTFState>` objects.
+All of the data in a glTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself. GLTFDocument has member variables to store export configuration settings such as the image format, but is otherwise stateless. Multiple scenes can be processed with the same settings using the same GLTFDocument object and different :ref:`GLTFState<class_GLTFState>` objects.
 
-GLTFDocument can be extended with arbitrary functionality by extending the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class and registering it with GLTFDocument via :ref:`register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`. This allows for custom data to be imported and exported.
+GLTFDocument can be extended with arbitrary functionality by extending the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class and registering it with GLTFDocument via :ref:`register_gltf_document_extension()<class_GLTFDocument_method_register_gltf_document_extension>`. This allows for custom data to be imported and exported.
 
 .. rst-class:: classref-introduction-group
 
@@ -62,23 +62,29 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`append_from_buffer<class_GLTFDocument_method_append_from_buffer>`\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`, base_path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ )       |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`append_from_file<class_GLTFDocument_method_append_from_file>`\ (\ path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0, base_path\: :ref:`String<class_String>` = ""\ )                         |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`append_from_scene<class_GLTFDocument_method_append_from_scene>`\ (\ node\: :ref:`Node<class_Node>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ )                                                                         |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`generate_buffer<class_GLTFDocument_method_generate_buffer>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ )                                                                                                                                                |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`                       | :ref:`generate_scene<class_GLTFDocument_method_generate_scene>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, bake_fps\: :ref:`float<class_float>` = 30, trimming\: :ref:`bool<class_bool>` = false, remove_immutable_tracks\: :ref:`bool<class_bool>` = true\ ) |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                        | :ref:`register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`, first_priority\: :ref:`bool<class_bool>` = false\ ) |static|                       |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                        | :ref:`unregister_gltf_document_extension<class_GLTFDocument_method_unregister_gltf_document_extension>`\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`\ ) |static|                                                                     |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`write_to_filesystem<class_GLTFDocument_method_write_to_filesystem>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, path\: :ref:`String<class_String>`\ )                                                                                                    |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                         | :ref:`append_from_buffer<class_GLTFDocument_method_append_from_buffer>`\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`, base_path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ )                       |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                         | :ref:`append_from_file<class_GLTFDocument_method_append_from_file>`\ (\ path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0, base_path\: :ref:`String<class_String>` = ""\ )                                         |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                         | :ref:`append_from_scene<class_GLTFDocument_method_append_from_scene>`\ (\ node\: :ref:`Node<class_Node>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ )                                                                                         |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` | :ref:`export_object_model_property<class_GLTFDocument_method_export_object_model_property>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, node_path\: :ref:`NodePath<class_NodePath>`, godot_node\: :ref:`Node<class_Node>`, gltf_node_index\: :ref:`int<class_int>`\ ) |static| |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`                 | :ref:`generate_buffer<class_GLTFDocument_method_generate_buffer>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ )                                                                                                                                                                |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`                                       | :ref:`generate_scene<class_GLTFDocument_method_generate_scene>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, bake_fps\: :ref:`float<class_float>` = 30, trimming\: :ref:`bool<class_bool>` = false, remove_immutable_tracks\: :ref:`bool<class_bool>` = true\ )                 |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`get_supported_gltf_extensions<class_GLTFDocument_method_get_supported_gltf_extensions>`\ (\ ) |static|                                                                                                                                                                      |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` | :ref:`import_object_model_property<class_GLTFDocument_method_import_object_model_property>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, json_pointer\: :ref:`String<class_String>`\ ) |static|                                                                                 |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                        | :ref:`register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`, first_priority\: :ref:`bool<class_bool>` = false\ ) |static|                                       |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                        | :ref:`unregister_gltf_document_extension<class_GLTFDocument_method_unregister_gltf_document_extension>`\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`\ ) |static|                                                                                     |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                         | :ref:`write_to_filesystem<class_GLTFDocument_method_write_to_filesystem>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, path\: :ref:`String<class_String>`\ )                                                                                                                    |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -93,7 +99,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **RootNodeMode**:
+enum **RootNodeMode**: :ref:`🔗<enum_GLTFDocument_RootNodeMode>`
 
 .. _class_GLTFDocument_constant_ROOT_NODE_MODE_SINGLE_ROOT:
 
@@ -132,14 +138,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **image_format** = ``"PNG"``
+:ref:`String<class_String>` **image_format** = ``"PNG"`` :ref:`🔗<class_GLTFDocument_property_image_format>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_image_format**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_image_format**\ (\ )
 
-The user-friendly name of the export image format. This is used when exporting the GLTF file, including writing to a file and writing to a byte array.
+The user-friendly name of the export image format. This is used when exporting the glTF file, including writing to a file and writing to a byte array.
 
 By default, Godot allows the following options: "None", "PNG", "JPEG", "Lossless WebP", and "Lossy WebP". Support for more image formats can be added in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes.
 
@@ -151,7 +157,7 @@ By default, Godot allows the following options: "None", "PNG", "JPEG", "Lossless
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **lossy_quality** = ``0.75``
+:ref:`float<class_float>` **lossy_quality** = ``0.75`` :ref:`🔗<class_GLTFDocument_property_lossy_quality>`
 
 .. rst-class:: classref-property-setget
 
@@ -168,7 +174,7 @@ If :ref:`image_format<class_GLTFDocument_property_image_format>` is a lossy imag
 
 .. rst-class:: classref-property
 
-:ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` **root_node_mode** = ``0``
+:ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` **root_node_mode** = ``0`` :ref:`🔗<class_GLTFDocument_property_root_node_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -192,11 +198,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **append_from_buffer**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`, base_path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **append_from_buffer**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`, base_path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_GLTFDocument_method_append_from_buffer>`
 
-Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a GLTF and imports the data to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a glTF and imports the data to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
-\ **Note:** The ``base_path`` tells :ref:`append_from_buffer<class_GLTFDocument_method_append_from_buffer>` where to find dependencies and can be empty.
+\ **Note:** The ``base_path`` tells :ref:`append_from_buffer()<class_GLTFDocument_method_append_from_buffer>` where to find dependencies and can be empty.
 
 .. rst-class:: classref-item-separator
 
@@ -206,11 +212,11 @@ Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a GLTF and import
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **append_from_file**\ (\ path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0, base_path\: :ref:`String<class_String>` = ""\ )
+:ref:`Error<enum_@GlobalScope_Error>` **append_from_file**\ (\ path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0, base_path\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_GLTFDocument_method_append_from_file>`
 
-Takes a path to a GLTF file and imports the data at that file path to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+Takes a path to a glTF file and imports the data at that file path to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
-\ **Note:** The ``base_path`` tells :ref:`append_from_file<class_GLTFDocument_method_append_from_file>` where to find dependencies and can be empty.
+\ **Note:** The ``base_path`` tells :ref:`append_from_file()<class_GLTFDocument_method_append_from_file>` where to find dependencies and can be empty.
 
 .. rst-class:: classref-item-separator
 
@@ -220,9 +226,21 @@ Takes a path to a GLTF file and imports the data at that file path to the given 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **append_from_scene**\ (\ node\: :ref:`Node<class_Node>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **append_from_scene**\ (\ node\: :ref:`Node<class_Node>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_GLTFDocument_method_append_from_scene>`
 
 Takes a Godot Engine scene node and exports it and its descendants to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocument_method_export_object_model_property:
+
+.. rst-class:: classref-method
+
+:ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` **export_object_model_property**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, node_path\: :ref:`NodePath<class_NodePath>`, godot_node\: :ref:`Node<class_Node>`, gltf_node_index\: :ref:`int<class_int>`\ ) |static| :ref:`🔗<class_GLTFDocument_method_export_object_model_property>`
+
+Determines a mapping between the given Godot ``node_path`` and the corresponding glTF Object Model JSON pointer(s) in the generated glTF file. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._import_object_model_property()<class_GLTFDocumentExtension_private_method__import_object_model_property>` callback method.
 
 .. rst-class:: classref-item-separator
 
@@ -232,9 +250,9 @@ Takes a Godot Engine scene node and exports it and its descendants to the given 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **generate_buffer**\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **generate_buffer**\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) :ref:`🔗<class_GLTFDocument_method_generate_buffer>`
 
-Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a GLTF :ref:`PackedByteArray<class_PackedByteArray>`.
+Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a glTF :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -244,9 +262,37 @@ Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **generate_scene**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, bake_fps\: :ref:`float<class_float>` = 30, trimming\: :ref:`bool<class_bool>` = false, remove_immutable_tracks\: :ref:`bool<class_bool>` = true\ )
+:ref:`Node<class_Node>` **generate_scene**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, bake_fps\: :ref:`float<class_float>` = 30, trimming\: :ref:`bool<class_bool>` = false, remove_immutable_tracks\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_GLTFDocument_method_generate_scene>`
 
 Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a Godot Engine scene node.
+
+The ``bake_fps`` parameter overrides the bake_fps in ``state``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocument_method_get_supported_gltf_extensions:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_supported_gltf_extensions**\ (\ ) |static| :ref:`🔗<class_GLTFDocument_method_get_supported_gltf_extensions>`
+
+Returns a list of all support glTF extensions, including extensions supported directly by the engine, and extensions supported by user plugins registering :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes.
+
+\ **Note:** If this method is run before a GLTFDocumentExtension is registered, its extensions won't be included in the list. Be sure to only run this method after all extensions are registered. If you run this when the engine starts, consider waiting a frame before calling this method to ensure all extensions are registered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocument_method_import_object_model_property:
+
+.. rst-class:: classref-method
+
+:ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` **import_object_model_property**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, json_pointer\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_GLTFDocument_method_import_object_model_property>`
+
+Determines a mapping between the given glTF Object Model ``json_pointer`` and the corresponding Godot node path(s) in the generated Godot scene. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._export_object_model_property()<class_GLTFDocumentExtension_private_method__export_object_model_property>` callback method.
 
 .. rst-class:: classref-item-separator
 
@@ -256,9 +302,9 @@ Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter
 
 .. rst-class:: classref-method
 
-|void| **register_gltf_document_extension**\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`, first_priority\: :ref:`bool<class_bool>` = false\ ) |static|
+|void| **register_gltf_document_extension**\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`, first_priority\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_GLTFDocument_method_register_gltf_document_extension>`
 
-Registers the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` instance with GLTFDocument. If ``first_priority`` is true, this extension will be run first. Otherwise, it will be run last.
+Registers the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` instance with GLTFDocument. If ``first_priority`` is ``true``, this extension will be run first. Otherwise, it will be run last.
 
 \ **Note:** Like GLTFDocument itself, all GLTFDocumentExtension classes must be stateless in order to function properly. If you need to store data, use the ``set_additional_data`` and ``get_additional_data`` methods in :ref:`GLTFState<class_GLTFState>` or :ref:`GLTFNode<class_GLTFNode>`.
 
@@ -270,7 +316,7 @@ Registers the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` in
 
 .. rst-class:: classref-method
 
-|void| **unregister_gltf_document_extension**\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`\ ) |static|
+|void| **unregister_gltf_document_extension**\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`\ ) |static| :ref:`🔗<class_GLTFDocument_method_unregister_gltf_document_extension>`
 
 Unregisters the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` instance.
 
@@ -282,7 +328,7 @@ Unregisters the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **write_to_filesystem**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **write_to_filesystem**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_GLTFDocument_method_write_to_filesystem>`
 
 Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and writes a glTF file to the filesystem.
 

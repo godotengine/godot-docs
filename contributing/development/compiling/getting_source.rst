@@ -32,8 +32,8 @@ the following in a terminal:
 ::
 
     git clone https://github.com/godotengine/godot.git
-    # You can add the --depth 1 argument to omit the commit history.
-    # Faster, but not all Git operations (like blame) will work.
+    # You can add the --depth 1 argument to omit the commit history (shallow clone).
+    # A shallow clone is faster, but not all Git operations (like blame) will work.
 
 For any stable release, visit the `release page <https://github.com/godotengine/godot/releases>`__
 and click on the link for the release you want.
@@ -42,13 +42,24 @@ You can then download and extract the source from the download link on the page.
 With ``git``, you can also clone a stable release by specifying its branch or tag
 after the ``--branch`` (or just ``-b``) argument::
 
-    # Clone the continuously maintained stable branch (`3.x` as of writing).
-    git clone https://github.com/godotengine/godot.git -b 3.x
+    # Clone the continuously maintained stable branch (`4.4` as of writing).
+    git clone https://github.com/godotengine/godot.git -b 4.4
 
-    # Clone the `3.2.3-stable` tag. This is a fixed revision that will never change.
-    git clone https://github.com/godotengine/godot.git -b 3.2.3-stable
+    # Clone the `4.4-stable` tag. This is a fixed revision that will never change.
+    git clone https://github.com/godotengine/godot.git -b 4.4-stable
 
-There are also generally branches besides ``master`` for each major version.
+    # After cloning, optionally go to a specific commit.
+    # This can be used to access the source code at a specific point in time,
+    # e.g. for development snapshots, betas and release candidates.
+    cd godot
+    git checkout f4af8201bac157b9d47e336203d3e8a8ef729de2
+
+The `maintenance branches <https://github.com/godotengine/godot/branches/all>`__
+are used to release further patches on each minor version.
+
+You can get the source code for each release and pre-release in ``.tar.xz`` format from
+`godotengine/godot-builds on GitHub <https://github.com/godotengine/godot-builds/releases>`__.
+This lacks version control information but has a slightly smaller download size.
 
 After downloading the Godot source code,
 you can :ref:`continue to compiling Godot <doc_introduction_to_the_buildsystem>`.

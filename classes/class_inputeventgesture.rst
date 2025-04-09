@@ -55,14 +55,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventGesture_property_position>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_position**\ (\ )
 
-The local gesture position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_private_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` that received this gesture.
+The local gesture position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input()<class_Control_private_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` that received this gesture.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

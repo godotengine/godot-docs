@@ -30,12 +30,12 @@ A heightmap collision shape can also be build by using an :ref:`Image<class_Imag
 
  .. code-tab:: gdscript
 
-    var heightmap_texture: Texture = ResourceLoader.load("res://heightmap_image.exr")
-    var heightmap_image: Image = heightmap_texture.get_image()
+    var heightmap_texture = ResourceLoader.load("res://heightmap_image.exr")
+    var heightmap_image = heightmap_texture.get_image()
     heightmap_image.convert(Image.FORMAT_RF)
     
-    var height_min: float = 0.0
-    var height_max: float = 10.0
+    var height_min = 0.0
+    var height_max = 10.0
     
     update_map_data_from_image(heightmap_image, height_min, height_max)
 
@@ -86,7 +86,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **map_data** = ``PackedFloat32Array(0, 0, 0, 0)``
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **map_data** = ``PackedFloat32Array(0, 0, 0, 0)`` :ref:`🔗<class_HeightMapShape3D_property_map_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,6 +94,8 @@ Property Descriptions
 - :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_map_data**\ (\ )
 
 Height map data. The array's size must be equal to :ref:`map_width<class_HeightMapShape3D_property_map_width>` multiplied by :ref:`map_depth<class_HeightMapShape3D_property_map_depth>`.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -103,7 +105,7 @@ Height map data. The array's size must be equal to :ref:`map_width<class_HeightM
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **map_depth** = ``2``
+:ref:`int<class_int>` **map_depth** = ``2`` :ref:`🔗<class_HeightMapShape3D_property_map_depth>`
 
 .. rst-class:: classref-property-setget
 
@@ -120,7 +122,7 @@ Number of vertices in the depth of the height map. Changing this will resize the
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **map_width** = ``2``
+:ref:`int<class_int>` **map_width** = ``2`` :ref:`🔗<class_HeightMapShape3D_property_map_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -142,7 +144,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_max_height**\ (\ ) |const|
+:ref:`float<class_float>` **get_max_height**\ (\ ) |const| :ref:`🔗<class_HeightMapShape3D_method_get_max_height>`
 
 Returns the largest height value found in :ref:`map_data<class_HeightMapShape3D_property_map_data>`. Recalculates only when :ref:`map_data<class_HeightMapShape3D_property_map_data>` changes.
 
@@ -154,7 +156,7 @@ Returns the largest height value found in :ref:`map_data<class_HeightMapShape3D_
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_min_height**\ (\ ) |const|
+:ref:`float<class_float>` **get_min_height**\ (\ ) |const| :ref:`🔗<class_HeightMapShape3D_method_get_min_height>`
 
 Returns the smallest height value found in :ref:`map_data<class_HeightMapShape3D_property_map_data>`. Recalculates only when :ref:`map_data<class_HeightMapShape3D_property_map_data>` changes.
 
@@ -166,7 +168,7 @@ Returns the smallest height value found in :ref:`map_data<class_HeightMapShape3D
 
 .. rst-class:: classref-method
 
-|void| **update_map_data_from_image**\ (\ image\: :ref:`Image<class_Image>`, height_min\: :ref:`float<class_float>`, height_max\: :ref:`float<class_float>`\ )
+|void| **update_map_data_from_image**\ (\ image\: :ref:`Image<class_Image>`, height_min\: :ref:`float<class_float>`, height_max\: :ref:`float<class_float>`\ ) :ref:`🔗<class_HeightMapShape3D_method_update_map_data_from_image>`
 
 Updates :ref:`map_data<class_HeightMapShape3D_property_map_data>` with data read from an :ref:`Image<class_Image>` reference. Automatically resizes heightmap :ref:`map_width<class_HeightMapShape3D_property_map_width>` and :ref:`map_depth<class_HeightMapShape3D_property_map_depth>` to fit the full image width and height.
 

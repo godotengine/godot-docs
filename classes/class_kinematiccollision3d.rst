@@ -19,7 +19,7 @@ Holds collision data from the movement of a :ref:`PhysicsBody3D<class_PhysicsBod
 Description
 -----------
 
-Holds collision data from the movement of a :ref:`PhysicsBody3D<class_PhysicsBody3D>`, usually from :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`. When a :ref:`PhysicsBody3D<class_PhysicsBody3D>` is moved, it stops if it detects a collision with another body. If a collision is detected, a **KinematicCollision3D** object is returned.
+Holds collision data from the movement of a :ref:`PhysicsBody3D<class_PhysicsBody3D>`, usually from :ref:`PhysicsBody3D.move_and_collide()<class_PhysicsBody3D_method_move_and_collide>`. When a :ref:`PhysicsBody3D<class_PhysicsBody3D>` is moved, it stops if it detects a collision with another body. If a collision is detected, a **KinematicCollision3D** object is returned.
 
 The collision data includes the colliding object, the remaining motion, and the collision position. This data can be used to determine a custom response to the collision.
 
@@ -74,7 +74,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_angle**\ (\ collision_index\: :ref:`int<class_int>` = 0, up_direction\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0)\ ) |const|
+:ref:`float<class_float>` **get_angle**\ (\ collision_index\: :ref:`int<class_int>` = 0, up_direction\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0)\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_angle>`
 
 Returns the collision angle according to ``up_direction``, which is :ref:`Vector3.UP<class_Vector3_constant_UP>` by default. This value is always positive.
 
@@ -86,7 +86,7 @@ Returns the collision angle according to ``up_direction``, which is :ref:`Vector
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_collider**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Object<class_Object>` **get_collider**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_collider>`
 
 Returns the colliding body's attached :ref:`Object<class_Object>` given a collision index (the deepest collision by default).
 
@@ -98,9 +98,9 @@ Returns the colliding body's attached :ref:`Object<class_Object>` given a collis
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_id**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_collider_id**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_collider_id>`
 
-Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>` given a collision index (the deepest collision by default). See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>` given a collision index (the deepest collision by default). See :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -110,7 +110,7 @@ Returns the unique instance ID of the colliding body's attached :ref:`Object<cla
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_collider_rid**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`RID<class_RID>` **get_collider_rid**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_collider_rid>`
 
 Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` given a collision index (the deepest collision by default).
 
@@ -122,7 +122,7 @@ Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServ
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_collider_shape**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Object<class_Object>` **get_collider_shape**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_collider_shape>`
 
 Returns the colliding body's shape given a collision index (the deepest collision by default).
 
@@ -134,7 +134,7 @@ Returns the colliding body's shape given a collision index (the deepest collisio
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_shape_index**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_collider_shape_index**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_collider_shape_index>`
 
 Returns the colliding body's shape index given a collision index (the deepest collision by default). See :ref:`CollisionObject3D<class_CollisionObject3D>`.
 
@@ -146,7 +146,7 @@ Returns the colliding body's shape index given a collision index (the deepest co
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_collider_velocity**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_collider_velocity**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_collider_velocity>`
 
 Returns the colliding body's velocity given a collision index (the deepest collision by default).
 
@@ -158,7 +158,7 @@ Returns the colliding body's velocity given a collision index (the deepest colli
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collision_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_collision_count**\ (\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_collision_count>`
 
 Returns the number of detected collisions.
 
@@ -170,7 +170,7 @@ Returns the number of detected collisions.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_depth**\ (\ ) |const|
+:ref:`float<class_float>` **get_depth**\ (\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_depth>`
 
 Returns the colliding body's length of overlap along the collision normal.
 
@@ -182,7 +182,7 @@ Returns the colliding body's length of overlap along the collision normal.
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_local_shape**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Object<class_Object>` **get_local_shape**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_local_shape>`
 
 Returns the moving object's colliding shape given a collision index (the deepest collision by default).
 
@@ -194,7 +194,7 @@ Returns the moving object's colliding shape given a collision index (the deepest
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_normal**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_normal**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_normal>`
 
 Returns the colliding body's shape's normal at the point of collision given a collision index (the deepest collision by default).
 
@@ -206,7 +206,7 @@ Returns the colliding body's shape's normal at the point of collision given a co
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_position**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_position**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_position>`
 
 Returns the point of collision in global coordinates given a collision index (the deepest collision by default).
 
@@ -218,7 +218,7 @@ Returns the point of collision in global coordinates given a collision index (th
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_remainder**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_remainder**\ (\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_remainder>`
 
 Returns the moving object's remaining movement vector.
 
@@ -230,7 +230,7 @@ Returns the moving object's remaining movement vector.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_travel**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_travel**\ (\ ) |const| :ref:`🔗<class_KinematicCollision3D_method_get_travel>`
 
 Returns the moving object's travel before collision.
 

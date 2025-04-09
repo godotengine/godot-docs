@@ -21,7 +21,7 @@ Description
 
 Uses the :ref:`FastNoiseLite<class_FastNoiseLite>` library or other noise generators to fill the texture data of your desired size.
 
-The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data internally, so :ref:`Texture3D.get_data<class_Texture3D_method_get_data>` may return ``null`` if the generation process has not completed yet. In that case, you need to wait for the texture to be generated before accessing the image:
+The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data internally, so :ref:`Texture3D.get_data()<class_Texture3D_method_get_data>` may return ``null`` if the generation process has not completed yet. In that case, you need to wait for the texture to be generated before accessing the image:
 
 ::
 
@@ -71,7 +71,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Gradient<class_Gradient>` **color_ramp**
+:ref:`Gradient<class_Gradient>` **color_ramp** :ref:`🔗<class_NoiseTexture3D_property_color_ramp>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ A :ref:`Gradient<class_Gradient>` which is used to map the luminance of each pix
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **depth** = ``64``
+:ref:`int<class_int>` **depth** = ``64`` :ref:`🔗<class_NoiseTexture3D_property_depth>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,7 +105,7 @@ Depth of the generated texture (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **height** = ``64``
+:ref:`int<class_int>` **height** = ``64`` :ref:`🔗<class_NoiseTexture3D_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ Height of the generated texture (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **invert** = ``false``
+:ref:`bool<class_bool>` **invert** = ``false`` :ref:`🔗<class_NoiseTexture3D_property_invert>`
 
 .. rst-class:: classref-property-setget
 
@@ -139,7 +139,7 @@ If ``true``, inverts the noise texture. White becomes black, black becomes white
 
 .. rst-class:: classref-property
 
-:ref:`Noise<class_Noise>` **noise**
+:ref:`Noise<class_Noise>` **noise** :ref:`🔗<class_NoiseTexture3D_property_noise>`
 
 .. rst-class:: classref-property-setget
 
@@ -156,7 +156,7 @@ The instance of the :ref:`Noise<class_Noise>` object.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **normalize** = ``true``
+:ref:`bool<class_bool>` **normalize** = ``true`` :ref:`🔗<class_NoiseTexture3D_property_normalize>`
 
 .. rst-class:: classref-property-setget
 
@@ -175,7 +175,7 @@ Turning normalization off can affect the contrast and allows you to generate non
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **seamless** = ``false``
+:ref:`bool<class_bool>` **seamless** = ``false`` :ref:`🔗<class_NoiseTexture3D_property_seamless>`
 
 .. rst-class:: classref-property-setget
 
@@ -196,7 +196,7 @@ If ``true``, a seamless texture is requested from the :ref:`Noise<class_Noise>` 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **seamless_blend_skirt** = ``0.1``
+:ref:`float<class_float>` **seamless_blend_skirt** = ``0.1`` :ref:`🔗<class_NoiseTexture3D_property_seamless_blend_skirt>`
 
 .. rst-class:: classref-property-setget
 
@@ -215,7 +215,7 @@ Used for the default/fallback implementation of the seamless texture generation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **width** = ``64``
+:ref:`int<class_int>` **width** = ``64`` :ref:`🔗<class_NoiseTexture3D_property_width>`
 
 .. rst-class:: classref-property-setget
 

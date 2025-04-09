@@ -11,7 +11,7 @@ custom shaped object) and checking what it hits. This enables complex
 behaviors, AI, etc. to take place. This tutorial will explain how to
 do this in 2D and 3D.
 
-Godot stores all the low level game information in servers, while the
+Godot stores all the low-level game information in servers, while the
 scene is only a frontend. As such, ray casting is generally a
 lower-level task. For simple raycasts, nodes like
 :ref:`RayCast3D <class_RayCast3D>` and :ref:`RayCast2D <class_RayCast2D>`
@@ -24,7 +24,7 @@ so a way to do this by code must exist.
 Space
 -----
 
-In the physics world, Godot stores all the low level collision and
+In the physics world, Godot stores all the low-level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by accessing
 :ref:`CanvasItem.get_world_2d().space <class_CanvasItem_method_get_world_2d>`.
@@ -63,7 +63,7 @@ Use the following code in 2D:
     public override void _PhysicsProcess(double delta)
     {
         var spaceRid = GetWorld2D().Space;
-        var spaceState = Physics2DServer.SpaceGetDirectState(spaceRid);
+        var spaceState = PhysicsServer2D.SpaceGetDirectState(spaceRid);
     }
 
 Or more directly:
@@ -171,6 +171,24 @@ with Area3D, the boolean parameter ``collide_with_areas`` must be set to ``true`
 
             var result = space_state.intersect_ray(query)
 
+ .. code-tab:: csharp
+
+    private const int RayLength = 1000;
+
+    public override void _PhysicsProcess(double delta)
+    {
+        var spaceState = GetWorld3D().DirectSpaceState;
+        var cam = GetNode<Camera3D>("Camera3D");
+        var mousePos = GetViewport().GetMousePosition();
+
+        var origin = cam.ProjectRayOrigin(mousePos);
+        var end = origin + cam.ProjectRayNormal(mousePos) * RayLength;
+        var query = PhysicsRayQueryParameters3D.Create(origin, end);
+        query.CollideWithAreas = true;
+
+        var result = spaceState.IntersectRay(query);
+    }
+
 Collision exceptions
 --------------------
 
@@ -206,7 +224,7 @@ from a CharacterBody2D or any other collision object node:
         {
             var spaceState = GetWorld2D().DirectSpaceState;
             var query = PhysicsRayQueryParameters2D.Create(globalPosition, playerPosition);
-            query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
+            query.Exclude = [GetRid()];
             var result = spaceState.IntersectRay(query);
         }
     }
@@ -245,7 +263,7 @@ member variable. The array of exceptions can be supplied as the last argument as
         {
             var spaceState = GetWorld2D().DirectSpaceState;
             var query = PhysicsRayQueryParameters2D.Create(globalPosition, targetPosition,
-                CollisionMask, new Godot.Collections.Array<Rid> { GetRid() });
+                CollisionMask, [GetRid()]);
             var result = spaceState.IntersectRay(query);
         }
     }

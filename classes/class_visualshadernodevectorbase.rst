@@ -48,7 +48,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **OpType**:
+enum **OpType**: :ref:`🔗<enum_VisualShaderNodeVectorBase_OpType>`
 
 .. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_VECTOR_2D:
 
@@ -95,7 +95,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **op_type** = ``1``
+:ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **op_type** = ``1`` :ref:`🔗<class_VisualShaderNodeVectorBase_property_op_type>`
 
 .. rst-class:: classref-property-setget
 

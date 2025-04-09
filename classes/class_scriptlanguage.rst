@@ -31,7 +31,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ScriptNameCasing**:
+enum **ScriptNameCasing**: :ref:`🔗<enum_ScriptLanguage_ScriptNameCasing>`
 
 .. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_AUTO:
 

@@ -21,7 +21,7 @@ A box-shaped region of 3D space that detects whether it is visible on screen.
 Description
 -----------
 
-:ref:`VisibleOnScreenEnabler3D<class_VisibleOnScreenEnabler3D>` represents a box-shaped region of 3D space. When any part of this region becomes visible on screen or in a :ref:`Camera3D<class_Camera3D>`'s view, it will emit a :ref:`screen_entered<class_VisibleOnScreenNotifier3D_signal_screen_entered>` signal, and likewise it will emit a :ref:`screen_exited<class_VisibleOnScreenNotifier3D_signal_screen_exited>` signal when no part of it remains visible.
+**VisibleOnScreenNotifier3D** represents a box-shaped region of 3D space. When any part of this region becomes visible on screen or in a :ref:`Camera3D<class_Camera3D>`'s view, it will emit a :ref:`screen_entered<class_VisibleOnScreenNotifier3D_signal_screen_entered>` signal, and likewise it will emit a :ref:`screen_exited<class_VisibleOnScreenNotifier3D_signal_screen_exited>` signal when no part of it remains visible.
 
 If you want a node to be enabled automatically when this region is visible on screen, use :ref:`VisibleOnScreenEnabler3D<class_VisibleOnScreenEnabler3D>`.
 
@@ -64,7 +64,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**screen_entered**\ (\ )
+**screen_entered**\ (\ ) :ref:`🔗<class_VisibleOnScreenNotifier3D_signal_screen_entered>`
 
 Emitted when the **VisibleOnScreenNotifier3D** enters the screen.
 
@@ -76,7 +76,7 @@ Emitted when the **VisibleOnScreenNotifier3D** enters the screen.
 
 .. rst-class:: classref-signal
 
-**screen_exited**\ (\ )
+**screen_exited**\ (\ ) :ref:`🔗<class_VisibleOnScreenNotifier3D_signal_screen_exited>`
 
 Emitted when the **VisibleOnScreenNotifier3D** exits the screen.
 
@@ -93,7 +93,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AABB<class_AABB>` **aabb** = ``AABB(-1, -1, -1, 2, 2, 2)``
+:ref:`AABB<class_AABB>` **aabb** = ``AABB(-1, -1, -1, 2, 2, 2)`` :ref:`🔗<class_VisibleOnScreenNotifier3D_property_aabb>`
 
 .. rst-class:: classref-property-setget
 
@@ -115,7 +115,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_on_screen**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_on_screen**\ (\ ) |const| :ref:`🔗<class_VisibleOnScreenNotifier3D_method_is_on_screen>`
 
 Returns ``true`` if the bounding box is on the screen.
 

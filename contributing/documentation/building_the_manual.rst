@@ -120,7 +120,7 @@ If you run into errors, you may try the following command:
 
 If you get a ``MemoryError`` or ``EOFError``, you can remove the ``classes/`` folder and
 run ``make`` again.
-This will drop the class references from the final HTML documentation but will keep the
+This will drop the class references from the final HTML documentation, but will keep the
 rest intact.
 
 .. important::
@@ -134,7 +134,7 @@ Hints for performance
 ---------------------
 
 RAM usage
-^^^^^^^^^
+~~~~~~~~~
 
 Building the documentation requires at least 8 GB of RAM to run without disk swapping,
 which slows it down.
@@ -160,10 +160,35 @@ threads, ``-j auto`` (which corresponds to ``-j 32`` here) can require 20+ GB of
 RAM for Sphinx alone.
 
 Specifying a list of files
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+    This section will not work on Windows, since the repository is using
+    a simplified ``make.bat`` script instead of the real GNU Make program.
+    If you would like to get a Linux terminal on your system, consider using
+    `Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/>`__.
 
 You can specify a list of files to build, which can greatly speed up compilation:
 
 .. code:: sh
 
-    make FILELIST='classes/class_node.rst classes/class_resource.rst' html
+    make html FILELIST='classes/class_node.rst classes/class_resource.rst'
+
+The list of files can also be provided by the ``git`` command.
+This way you can automatically get the names of all files that have changed since
+the last commit (``sed`` is used to put them on the same line).
+
+.. code:: sh
+
+    make html FILELIST="$(git diff HEAD --name-only | sed -z 's/\n/ /g')"
+
+You can replace ``HEAD`` with ``master`` to return all files changed from the
+``master`` branch:
+
+.. code:: sh
+
+    make html FILELIST="$(git diff master --name-only | sed -z 's/\n/ /g')"
+
+If any images were modified, the output will contain some warnings about them,
+but the build will proceed correctly.

@@ -21,7 +21,7 @@ A base dialog used for user notification.
 Description
 -----------
 
-The default use of **AcceptDialog** is to allow it to only be accepted or closed, with the same result. However, the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` and :ref:`canceled<class_AcceptDialog_signal_canceled>` signals allow to make the two actions different, and the :ref:`add_button<class_AcceptDialog_method_add_button>` method allows to add custom buttons and actions.
+The default use of **AcceptDialog** is to allow it to only be accepted or closed, with the same result. However, the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` and :ref:`canceled<class_AcceptDialog_signal_canceled>` signals allow to make the two actions different, and the :ref:`add_button()<class_AcceptDialog_method_add_button>` method allows to add custom buttons and actions.
 
 .. rst-class:: classref-reftable-group
 
@@ -86,6 +86,10 @@ Theme Properties
    :widths: auto
 
    +---------------------------------+---------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`           | :ref:`buttons_min_height<class_AcceptDialog_theme_constant_buttons_min_height>` | ``0``  |
+   +---------------------------------+---------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`           | :ref:`buttons_min_width<class_AcceptDialog_theme_constant_buttons_min_width>`   | ``0``  |
+   +---------------------------------+---------------------------------------------------------------------------------+--------+
    | :ref:`int<class_int>`           | :ref:`buttons_separation<class_AcceptDialog_theme_constant_buttons_separation>` | ``10`` |
    +---------------------------------+---------------------------------------------------------------------------------+--------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_AcceptDialog_theme_style_panel>`                              |        |
@@ -104,9 +108,9 @@ Signals
 
 .. rst-class:: classref-signal
 
-**canceled**\ (\ )
+**canceled**\ (\ ) :ref:`🔗<class_AcceptDialog_signal_canceled>`
 
-Emitted when the dialog is closed or the button created with :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` is pressed.
+Emitted when the dialog is closed or the button created with :ref:`add_cancel_button()<class_AcceptDialog_method_add_cancel_button>` is pressed.
 
 .. rst-class:: classref-item-separator
 
@@ -116,7 +120,7 @@ Emitted when the dialog is closed or the button created with :ref:`add_cancel_bu
 
 .. rst-class:: classref-signal
 
-**confirmed**\ (\ )
+**confirmed**\ (\ ) :ref:`🔗<class_AcceptDialog_signal_confirmed>`
 
 Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
@@ -128,9 +132,9 @@ Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
 .. rst-class:: classref-signal
 
-**custom_action**\ (\ action\: :ref:`StringName<class_StringName>`\ )
+**custom_action**\ (\ action\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AcceptDialog_signal_custom_action>`
 
-Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_method_add_button>`.
+Emitted when a custom button is pressed. See :ref:`add_button()<class_AcceptDialog_method_add_button>`.
 
 .. rst-class:: classref-section-separator
 
@@ -145,7 +149,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **dialog_autowrap** = ``false``
+:ref:`bool<class_bool>` **dialog_autowrap** = ``false`` :ref:`🔗<class_AcceptDialog_property_dialog_autowrap>`
 
 .. rst-class:: classref-property-setget
 
@@ -162,7 +166,7 @@ Sets autowrapping for the text in the dialog.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **dialog_close_on_escape** = ``true``
+:ref:`bool<class_bool>` **dialog_close_on_escape** = ``true`` :ref:`🔗<class_AcceptDialog_property_dialog_close_on_escape>`
 
 .. rst-class:: classref-property-setget
 
@@ -179,7 +183,7 @@ If ``true``, the dialog will be hidden when the escape key (:ref:`@GlobalScope.K
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **dialog_hide_on_ok** = ``true``
+:ref:`bool<class_bool>` **dialog_hide_on_ok** = ``true`` :ref:`🔗<class_AcceptDialog_property_dialog_hide_on_ok>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +202,7 @@ If ``true``, the dialog is hidden when the OK button is pressed. You can set it 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **dialog_text** = ``""``
+:ref:`String<class_String>` **dialog_text** = ``""`` :ref:`🔗<class_AcceptDialog_property_dialog_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -215,14 +219,14 @@ The text displayed by the dialog.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **ok_button_text** = ``"OK"``
+:ref:`String<class_String>` **ok_button_text** = ``"OK"`` :ref:`🔗<class_AcceptDialog_property_ok_button_text>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_ok_button_text**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_ok_button_text**\ (\ )
 
-The text displayed by the OK button (see :ref:`get_ok_button<class_AcceptDialog_method_get_ok_button>`).
+The text displayed by the OK button (see :ref:`get_ok_button()<class_AcceptDialog_method_get_ok_button>`).
 
 .. rst-class:: classref-section-separator
 
@@ -237,13 +241,13 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Button<class_Button>` **add_button**\ (\ text\: :ref:`String<class_String>`, right\: :ref:`bool<class_bool>` = false, action\: :ref:`String<class_String>` = ""\ )
+:ref:`Button<class_Button>` **add_button**\ (\ text\: :ref:`String<class_String>`, right\: :ref:`bool<class_bool>` = false, action\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_AcceptDialog_method_add_button>`
 
 Adds a button with label ``text`` and a custom ``action`` to the dialog and returns the created button. ``action`` will be passed to the :ref:`custom_action<class_AcceptDialog_signal_custom_action>` signal when pressed.
 
 If ``true``, ``right`` will place the button to the right of any sibling buttons.
 
-You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
+You can use :ref:`remove_button()<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -253,11 +257,11 @@ You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method
 
 .. rst-class:: classref-method
 
-:ref:`Button<class_Button>` **add_cancel_button**\ (\ name\: :ref:`String<class_String>`\ )
+:ref:`Button<class_Button>` **add_cancel_button**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AcceptDialog_method_add_cancel_button>`
 
 Adds a button with label ``name`` and a cancel action to the dialog and returns the created button.
 
-You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
+You can use :ref:`remove_button()<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -267,7 +271,7 @@ You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method
 
 .. rst-class:: classref-method
 
-:ref:`Label<class_Label>` **get_label**\ (\ )
+:ref:`Label<class_Label>` **get_label**\ (\ ) :ref:`🔗<class_AcceptDialog_method_get_label>`
 
 Returns the label used for built-in text.
 
@@ -281,7 +285,7 @@ Returns the label used for built-in text.
 
 .. rst-class:: classref-method
 
-:ref:`Button<class_Button>` **get_ok_button**\ (\ )
+:ref:`Button<class_Button>` **get_ok_button**\ (\ ) :ref:`🔗<class_AcceptDialog_method_get_ok_button>`
 
 Returns the OK :ref:`Button<class_Button>` instance.
 
@@ -295,7 +299,7 @@ Returns the OK :ref:`Button<class_Button>` instance.
 
 .. rst-class:: classref-method
 
-|void| **register_text_enter**\ (\ line_edit\: :ref:`LineEdit<class_LineEdit>`\ )
+|void| **register_text_enter**\ (\ line_edit\: :ref:`LineEdit<class_LineEdit>`\ ) :ref:`🔗<class_AcceptDialog_method_register_text_enter>`
 
 Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
 
@@ -307,9 +311,9 @@ Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is
 
 .. rst-class:: classref-method
 
-|void| **remove_button**\ (\ button\: :ref:`Button<class_Button>`\ )
+|void| **remove_button**\ (\ button\: :ref:`Button<class_Button>`\ ) :ref:`🔗<class_AcceptDialog_method_remove_button>`
 
-Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button<class_AcceptDialog_method_add_button>` or :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` or :ref:`canceled<class_AcceptDialog_signal_canceled>` signals.
+Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button()<class_AcceptDialog_method_add_button>` or :ref:`add_cancel_button()<class_AcceptDialog_method_add_cancel_button>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` or :ref:`canceled<class_AcceptDialog_signal_canceled>` signals.
 
 .. rst-class:: classref-section-separator
 
@@ -320,11 +324,35 @@ Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``butt
 Theme Property Descriptions
 ---------------------------
 
+.. _class_AcceptDialog_theme_constant_buttons_min_height:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **buttons_min_height** = ``0`` :ref:`🔗<class_AcceptDialog_theme_constant_buttons_min_height>`
+
+The minimum height of each button in the bottom row (such as OK/Cancel) in pixels. This can be increased to make buttons with short texts easier to click/tap.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AcceptDialog_theme_constant_buttons_min_width:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **buttons_min_width** = ``0`` :ref:`🔗<class_AcceptDialog_theme_constant_buttons_min_width>`
+
+The minimum width of each button in the bottom row (such as OK/Cancel) in pixels. This can be increased to make buttons with short texts easier to click/tap.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AcceptDialog_theme_constant_buttons_separation:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **buttons_separation** = ``10``
+:ref:`int<class_int>` **buttons_separation** = ``10`` :ref:`🔗<class_AcceptDialog_theme_constant_buttons_separation>`
 
 The size of the vertical space between the dialog's content and the button row.
 
@@ -336,7 +364,7 @@ The size of the vertical space between the dialog's content and the button row.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel**
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_AcceptDialog_theme_style_panel>`
 
 The panel that fills the background of the window.
 

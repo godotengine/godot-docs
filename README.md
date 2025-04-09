@@ -6,25 +6,17 @@ They are meant to be parsed with the [Sphinx](https://www.sphinx-doc.org/) docum
 
 ## Download for offline use
 
-To browse the documentation offline, you can use the mirror of the documentation
-hosted on [DevDocs](https://devdocs.io/godot/). To enable offline browsing on
-DevDocs, you need to:
+To browse the documentation offline, you can download an HTML copy (updated every Monday):
+[stable](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-stable.zip),
+[latest](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip),
+[3.6](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-3.6.zip). Extract
+the ZIP archive then open the top-level `index.html` in a web browser.
 
-- Click the three dots in the top-left corner, choose **Preferences**.
-- Enable the desired version of the Godot documentation by checking the box
-  next to it in the sidebar.
-- Click the three dots in the top-left corner, choose **Offline data**.
-- Click the **Install** link next to the Godot documentation.
-
-You can also
-[download an HTML copy](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip)
-for offline reading (updated every Monday). Extract the ZIP archive then open
-the top-level `index.html` in a web browser.
-
-For mobile devices or e-readers, you can also
-[download an ePub copy](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip)
-for offline reading (updated every Monday). Extract the ZIP archive then open
-the `GodotEngine.epub` file in an e-book reader application.
+For mobile devices or e-readers, you can also download an ePub copy (updated every Monday):
+[stable](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-stable.zip),
+[latest](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip),
+[3.6](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-3.6.zip). Extract
+the ZIP archive then open the `GodotEngine.epub` file in an e-book reader application.
 
 ## Theming
 
@@ -41,7 +33,7 @@ add-on.
 
 All contributors are welcome to help on the Godot documentation.
 
-To get started, head to the [Contributing section](https://docs.godotengine.org/en/latest/contributing/ways_to_contribute.html#contributing-to-the-documentation) of the online manual. There, you will find all the information you need to write and submit changes.
+To get started, head to the [Contributing section](https://docs.godotengine.org/en/latest/contributing/how_to_contribute.html) of the online manual. There, you will find all the information you need to write and submit changes.
 
 Here are some quick links to the areas you might be interested in:
 
@@ -54,7 +46,7 @@ Here are some quick links to the areas you might be interested in:
 
 ## License
 
-At the exception of the `classes/` folder, all the content of this repository is licensed under the Creative Commons Attribution 3.0 Unported license ([CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)) and is to be attributed to "Juan Linietsky, Ariel Manzur and the Godot community".
+With the exception of the `classes/` folder, all the content of this repository is licensed under the Creative Commons Attribution 3.0 Unported license ([CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)) and is to be attributed to "Juan Linietsky, Ariel Manzur and the Godot community".
 See [LICENSE.txt](/LICENSE.txt) for details.
 
 The files in the `classes/` folder are derived from [Godot's main source repository](https://github.com/godotengine/godot) and are distributed under the MIT license, with the same authors as above.

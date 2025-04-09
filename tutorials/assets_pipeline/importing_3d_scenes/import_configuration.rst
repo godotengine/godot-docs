@@ -41,7 +41,7 @@ This import process is customizable using 3 separate interfaces, depending on yo
 - The **Advanced Import Settings** dialog, which can be accessed by double-clicking
   the 3D scene in the FileSystem dock or by clicking the **Advanced…** button in
   the Import dock. This allows you to customize per-object options in Godot.
-- :ref:`Import hints <doc_importing_3d_scenes_import_hints>`, which are special
+- :ref:`Import hints <doc_importing_3d_scenes_node_type_customization>`, which are special
   suffixes added to object names in the 3D modeling software. This allows you to
   customize per-object options in the 3D modeling software.
 
@@ -52,7 +52,7 @@ you'll need to use the Advanced Import Settings dialog, import hints, or possibl
 .. _doc_importing_3d_scenes_using_the_import_dock:
 
 Using the Import dock
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 The following options can be adjusted in the Import dock after selecting a 3D
 scene in the FileSystem dock:
@@ -157,8 +157,23 @@ exported from other tools such as Maya.
   Universal** and **Embed as Uncompressed** keeps the textures embedded in the
   imported scene, with and without VRAM compression respectively.
 
+**FBX**
+
+- **Importer** Which import method is used. ubfx handles fbx files as fbx files.
+  FBX2glTF converts FBX files to glTF on import and requires additional setup.
+  FBX2glTF is not recommended unless you have a specific rason to use it over
+  ufbx or working with a different file format.
+- **Allow Geometry Helper Nodes** enables or disables geometry helper nodes
+- **Embedded Texture Handling:** Controls how textures embedded within fbx
+  scenes should be handled. **Discard All Textures** will not import any
+  textures, which is useful if you wish to manually set up materials in Godot
+  instead. **Extract Textures** extracts textures to external images, resulting
+  in smaller file sizes and more control over import options. **Embed as Basis
+  Universal** and **Embed as Uncompressed** keeps the textures embedded in the
+  imported scene, with and without VRAM compression respectively.
+
 Using the Advanced Import Settings dialog
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first tab you'll see is the **Scene** tab. The options available in the
 panel on the right are identical to the Import dock, but you have access to a 3D
@@ -301,7 +316,7 @@ use an external material instead of the material that is included in the
 original 3D scene file; see the section below.
 
 Extracting materials to separate files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While Godot can import materials authored in 3D modeling software, the default
 configuration may not be suitable for your needs. For example:
@@ -359,7 +374,7 @@ material, enabling **Save to File**, then specifying the save path using the
 .. _doc_importing_3d_scenes_import_script:
 
 Using import scripts for automation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A special script to process the whole scene after import can be provided.
 This is great for post-processing, changing materials, doing funny stuff with
@@ -395,8 +410,10 @@ The ``_post_import(scene: Node)`` function takes the imported scene as argument
 (the parameter is actually the root node of the scene). The scene that will
 finally be used **must** be returned (even if the scene can be entirely different).
 
+To use your script, locate the script in the import tab's "Path" option under the "Import Script" category.
+
 Using animation libraries
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As of Godot 4.0, you can choose to import **only** animations from a glTF file and
 nothing else. This is used in some asset pipelines to distribute animations
@@ -423,7 +440,7 @@ Library act the same as when using the Scene import mode. See
 :ref:`doc_importing_3d_scenes_using_the_import_dock` for more information.
 
 Filter script
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 It is possible to specify a filter script in a special syntax to decide which
 tracks from which animations should be kept.
@@ -475,21 +492,21 @@ would be retained.
 Any track filter lines that do not begin with a ``+`` or ``-`` are ignored.
 
 Storage
-^^^^^^^
+~~~~~~~
 
 By default, animations are saved as built-in. It is possible to save them to a
 file instead. This allows adding custom tracks to the animations and keeping
 them after a reimport.
 
 Optimizer
-^^^^^^^^^
+~~~~~~~~~
 
 When animations are imported, an optimizer is run, which reduces the size of the
 animation considerably. In general, this should always be turned on unless you
 suspect that an animation might be broken due to it being enabled.
 
 Clips
-^^^^^
+~~~~~
 
 It is possible to specify multiple animations from a single timeline as clips.
 For this to work, the model must have only one animation that is named
@@ -522,5 +539,3 @@ In inherited scenes, the only limitations for modification are:
   described above.
 
 Other than that, everything is allowed.
-
-.. _doc_importing_3d_scenes_import_hints:

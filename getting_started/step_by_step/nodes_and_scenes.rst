@@ -58,7 +58,7 @@ you or a player runs the game.
 
 On top of acting like nodes, scenes have the following characteristics:
 
-1. They always have one root node, like the "Character" in our example.
+1. They always have one root node, like the "Player" in our example.
 2. You can save them to your local drive and load them later.
 3. You can create as many instances of a scene as you'd like. You could have
    five or ten characters in your game, created from your Character scene.
@@ -137,8 +137,8 @@ move it to the center of the view delimited by the rectangle.
 Running the scene
 -----------------
 
-Everything's ready to run the scene! Press the Play Scene button in the
-top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
+Everything's ready to run the scene! Press the **Run Current Scene** button in 
+the top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 
 .. image:: img/nodes_and_scenes_09_play_scene_button.webp
 
@@ -162,11 +162,15 @@ Close the window or press :kbd:`F8` (:kbd:`Cmd + .` on macOS) to quit the runnin
 Setting the main scene
 ----------------------
 
-To run our test scene, we used the Run Current Scene button. Another button next to it
-allows you to set and run the project's main scene. You can press :kbd:`F5`
-(:kbd:`Cmd + B` on macOS) to do so.
+To run our test scene, we used the **Run Current Scene** button. Another button 
+next to it, **Run Project**, allows you to set and run the project's 
+**main scene**. You can also press :kbd:`F5` (:kbd:`Cmd + B` on macOS) to do so.
 
 .. image:: img/nodes_and_scenes_12_play_button.webp
+
+.. note:: Running the project's *main scene* is distinct from running the 
+          *current scene*. If you encounter unexpected behavior, check 
+          to ensure you are running the correct scene.
 
 A popup window appears and invites you to select the main scene.
 

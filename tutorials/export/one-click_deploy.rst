@@ -51,7 +51,7 @@ Supported platforms
      the project should be exported to.
 
 - **Desktop platforms:** Exports the project with debugging enabled and runs it
-  on the remove computer via SSH.
+  on the remote computer via SSH.
 
 - **Web:** Starts a local web server and runs the exported project by opening
   the default web browser. This is only accessible on ``localhost`` by default.
@@ -102,7 +102,7 @@ Troubleshooting
 ---------------
 
 Android
-^^^^^^^
+~~~~~~~
 
 If you can't see the device in the list of devices when running the
 ``adb devices`` command in a terminal, it will not be visible by Godot either.
@@ -123,7 +123,7 @@ To resolve this:
 .. _doc_one-click_deploy_troubleshooting_web:
 
 Web
-^^^
+~~~
 
 By default, the web server started by the editor is only accessible from
 ``localhost``. This means the web server can't be reached by other devices on

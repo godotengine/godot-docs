@@ -56,14 +56,14 @@ use "Anchor Presets".
 .. image:: img/ui_anchor.webp
 
 ScoreLabel
-~~~~~~~~~~
+----------
 
 1. Add the text ``0``.
 2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
 3. Choose the "Anchor Preset" ``Center Top``.
 
 Message
-~~~~~~~~~~~~
+-------
 
 1. Add the text ``Dodge the Creeps!``.
 2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
@@ -72,7 +72,7 @@ Message
 5. Choose the "Anchor Preset" ``Center``.
 
 StartButton
-~~~~~~~~~~~
+-----------
 
 1. Add the text ``Start``.
 2. Under "Control - Layout/Transform", set "Size X" to ``200`` and "Size Y" to ``100``
@@ -160,10 +160,6 @@ We also need to process what happens when the player loses. The code below will 
         GetNode<Button>("StartButton").Show();
     }
 
-This function is called when the player loses. It will show "Game Over" for 2
-seconds, then return to the title screen and, after a brief pause, show the
-"Start" button.
-
 .. note:: When you need to pause for a brief time, an alternative to using a
           Timer node is to use the SceneTree's ``create_timer()`` function. This
           can be very useful to add delays such as in the above code, where we
@@ -213,7 +209,7 @@ signal of ``MessageTimer`` to the ``HUD`` node, and add the following code to th
     }
 
 Connecting HUD to Main
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Now that we're done creating the ``HUD`` scene, go back to ``Main``. Instance
 the ``HUD`` scene in ``Main`` like you did the ``Player`` scene. The scene tree
@@ -273,11 +269,10 @@ with the changing score:
     ``_ready()`` if you haven't already, otherwise
     your game will start automatically.
 
-Now you're ready to play! Click the "Play the Project" button. You will be asked
-to select a main scene, so choose ``main.tscn``.
+Now you're ready to play! Click the "Play the Project" button.
 
 Removing old creeps
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 If you play until "Game Over" and then start a new game right away, the creeps
 from the previous game may still be on the screen. It would be better if they
@@ -286,12 +281,20 @@ mobs to remove themselves. We can do this with the "group" feature.
 
 In the ``Mob`` scene, select the root node and click the "Node" tab next to the
 Inspector (the same place where you find the node's signals). Next to "Signals",
-click "Groups" and you can type a new group name and click "Add".
+click "Groups" to open the group overview
+and the "+" button to open the "Create New Group" dialog.
 
 .. image:: img/group_tab.webp
 
-Now all mobs will be in the "mobs" group. We can then add the following line to
-the ``new_game()`` function in ``Main``:
+Name the group ``mobs`` and click "ok" to add a new scene group.
+
+.. image:: img/add_group_dialog.webp
+
+Now all mobs will be in the "mobs" group.
+
+.. image:: img/scene_group_mobs.webp
+
+We can then add the following line to the ``new_game()`` function in ``Main``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

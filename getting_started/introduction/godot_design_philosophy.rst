@@ -17,7 +17,7 @@ your project, you need to try it out for yourself and
 understand its design and limitations.
 
 Please watch
-`Godot explained in 5 minutes <https://www.youtube.com/watch?v=KjX5llYZ5eQ>`_
+`Godot explained in 7 minutes <https://www.youtube.com/watch?v=yS9cuu5o5Ug>`_
 if you're looking for an overview of the engine's features.
 
 Object-oriented design and composition
@@ -76,8 +76,7 @@ the ability to hot-reload locally and on remote devices, etc.
 
 The goal is to offer a full package to create games and a continuous
 user experience. You can still work with external programs as long as
-there is an import plugin available in Godot for it. Or you can create one, like the `Tiled
-Map Importer <https://github.com/vnen/godot-tiled-importer>`__.
+there is an import plugin available in Godot for it.
 
 That is also partly why Godot offers its own programming language
 GDScript along with C#. GDScript is designed for the needs
@@ -96,18 +95,16 @@ You'll need external programs or add-ons to edit terrains, animate complex chara
 Godot provides a complete API to extend the editor's functionality using
 game code. See `The Godot editor is a Godot game`_ below.
 
-|image4|
-
-*A State Machine editor plugin in Godot 2 by kubecz3k. It lets you
-manage states and transitions visually.*
-
 Open source
 -----------
 
 Godot offers a fully open source codebase under the **MIT license**.
-This means all the technologies that ship with it have to be Free
-(as in freedom) as well.
-For the most part, they're developed from the ground up by contributors.
+This means that the codebase is free for anyone to download, use,
+modify, or share, as long as its license file is kept intact.
+
+All technologies that ship with Godot, including third-party libraries, must
+be legally compatible with this open source license. Therefore, most parts
+of Godot are developed from the ground up by community contributors.
 
 Anyone can plug in proprietary tools for the needs of their projects —
 they just won't ship with the engine. This may include Google AdMob,
@@ -148,11 +145,12 @@ and scenes for your games, or **build plugins and extend the editor.**
 This leads to a reliable and flexible UI system, as it powers the editor
 itself. With the ``@tool`` annotation, you can run any game code in the editor.
 
-|image5|
+.. figure:: img/introduction_rpg_in_a_box.webp
+   :align: center
 
-*RPG in a Box is a voxel RPG editor made with Godot 2. It uses Godot's
-UI tools for its node-based programming system and for the rest of the
-interface.*
+   RPG in a Box is a voxel RPG editor made with Godot. It uses Godot's
+   UI tools for its node-based programming system and for the rest of the
+   interface.
 
 Put the ``@tool`` annotation at the top of any GDScript file and it will run
 in the editor. This lets you import and export plugins, create plugins
@@ -176,5 +174,3 @@ interfaces over your 3D world.
 .. |image0| image:: img/engine_design_01.png
 .. |image1| image:: img/engine_design_02.png
 .. |image2| image:: img/engine_design_03.png
-.. |image4| image:: img/engine_design_fsm_plugin.png
-.. |image5| image:: img/engine_design_rpg_in_a_box.png

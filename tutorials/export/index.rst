@@ -1,7 +1,15 @@
 :allow_comments: False
 
+.. _doc_export_index:
+
 Export
 ======
+
+.. seealso::
+
+   This section is about exporting a build of your project. If you're trying
+   to export properties from a script, see :ref:`doc_gdscript_exports` or 
+   :ref:`doc_c_sharp_exports`.
 
 .. toctree::
    :maxdepth: 1

@@ -185,7 +185,7 @@ The keys of a dictionary can be iterated with the ``for`` keyword:
 
 
 
-\ **Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
+\ **Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate()<class_Dictionary_method_duplicate>`.
 
 \ **Note:** Erasing elements while iterating over dictionaries is **not** supported and will result in unpredictable behavior.
 
@@ -200,9 +200,9 @@ Tutorials
 
 - `GDScript basics: Dictionary <../tutorials/scripting/gdscript/gdscript_basics.html#dictionary>`__
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
-- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
+- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -212,11 +212,13 @@ Constructors
 .. table::
    :widths: auto
 
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`Dictionary<class_Dictionary_constructor_Dictionary>`\ (\ )                                             |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`Dictionary<class_Dictionary_constructor_Dictionary>`\ (\ from\: :ref:`Dictionary<class_Dictionary>`\ ) |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`Dictionary<class_Dictionary_constructor_Dictionary>`\ (\ )                                                                                                                                                                                                                                                                                                                           |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`Dictionary<class_Dictionary_constructor_Dictionary>`\ (\ base\: :ref:`Dictionary<class_Dictionary>`, key_type\: :ref:`int<class_int>`, key_class_name\: :ref:`StringName<class_StringName>`, key_script\: :ref:`Variant<class_Variant>`, value_type\: :ref:`int<class_int>`, value_class_name\: :ref:`StringName<class_StringName>`, value_script\: :ref:`Variant<class_Variant>`\ ) |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`Dictionary<class_Dictionary_constructor_Dictionary>`\ (\ from\: :ref:`Dictionary<class_Dictionary>`\ )                                                                                                                                                                                                                                                                               |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -226,41 +228,73 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`clear<class_Dictionary_method_clear>`\ (\ )                                                                                                          |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>`\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const|                                                  |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>`\ (\ key\: :ref:`Variant<class_Variant>`\ )                                                                     |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`find_key<class_Dictionary_method_find_key>`\ (\ value\: :ref:`Variant<class_Variant>`\ ) |const|                                                     |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>`\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const|                 |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`get_or_add<class_Dictionary_method_get_or_add>`\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ )           |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>`\ (\ key\: :ref:`Variant<class_Variant>`\ ) |const|                                                                 |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`has_all<class_Dictionary_method_has_all>`\ (\ keys\: :ref:`Array<class_Array>`\ ) |const|                                                            |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`hash<class_Dictionary_method_hash>`\ (\ ) |const|                                                                                                    |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_empty<class_Dictionary_method_is_empty>`\ (\ ) |const|                                                                                            |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_read_only<class_Dictionary_method_is_read_only>`\ (\ ) |const|                                                                                    |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`           | :ref:`keys<class_Dictionary_method_keys>`\ (\ ) |const|                                                                                                    |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`make_read_only<class_Dictionary_method_make_read_only>`\ (\ )                                                                                        |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`merge<class_Dictionary_method_merge>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ )           |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`merged<class_Dictionary_method_merged>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ ) |const| |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`size<class_Dictionary_method_size>`\ (\ ) |const|                                                                                                    |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>`\ (\ ) |const|                                                                                                |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`assign<class_Dictionary_method_assign>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ )                                                                    |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`clear<class_Dictionary_method_clear>`\ (\ )                                                                                                                        |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>`\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const|                                                                |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>`\ (\ key\: :ref:`Variant<class_Variant>`\ )                                                                                   |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`find_key<class_Dictionary_method_find_key>`\ (\ value\: :ref:`Variant<class_Variant>`\ ) |const|                                                                   |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>`\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const|                               |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`get_or_add<class_Dictionary_method_get_or_add>`\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ )                         |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_typed_key_builtin<class_Dictionary_method_get_typed_key_builtin>`\ (\ ) |const|                                                                                |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_typed_key_class_name<class_Dictionary_method_get_typed_key_class_name>`\ (\ ) |const|                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`get_typed_key_script<class_Dictionary_method_get_typed_key_script>`\ (\ ) |const|                                                                                  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_typed_value_builtin<class_Dictionary_method_get_typed_value_builtin>`\ (\ ) |const|                                                                            |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_typed_value_class_name<class_Dictionary_method_get_typed_value_class_name>`\ (\ ) |const|                                                                      |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`get_typed_value_script<class_Dictionary_method_get_typed_value_script>`\ (\ ) |const|                                                                              |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>`\ (\ key\: :ref:`Variant<class_Variant>`\ ) |const|                                                                               |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`has_all<class_Dictionary_method_has_all>`\ (\ keys\: :ref:`Array<class_Array>`\ ) |const|                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`hash<class_Dictionary_method_hash>`\ (\ ) |const|                                                                                                                  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_empty<class_Dictionary_method_is_empty>`\ (\ ) |const|                                                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_read_only<class_Dictionary_method_is_read_only>`\ (\ ) |const|                                                                                                  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_same_typed<class_Dictionary_method_is_same_typed>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |const|                                              |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_same_typed_key<class_Dictionary_method_is_same_typed_key>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |const|                                      |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_same_typed_value<class_Dictionary_method_is_same_typed_value>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |const|                                  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_typed<class_Dictionary_method_is_typed>`\ (\ ) |const|                                                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_typed_key<class_Dictionary_method_is_typed_key>`\ (\ ) |const|                                                                                                  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_typed_value<class_Dictionary_method_is_typed_value>`\ (\ ) |const|                                                                                              |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`keys<class_Dictionary_method_keys>`\ (\ ) |const|                                                                                                                  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`make_read_only<class_Dictionary_method_make_read_only>`\ (\ )                                                                                                      |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`merge<class_Dictionary_method_merge>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ )                         |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`merged<class_Dictionary_method_merged>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ ) |const|               |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`recursive_equal<class_Dictionary_method_recursive_equal>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, recursion_count\: :ref:`int<class_int>`\ ) |const| |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`set<class_Dictionary_method_set>`\ (\ key\: :ref:`Variant<class_Variant>`, value\: :ref:`Variant<class_Variant>`\ )                                                |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`size<class_Dictionary_method_size>`\ (\ ) |const|                                                                                                                  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`sort<class_Dictionary_method_sort>`\ (\ )                                                                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>`\ (\ ) |const|                                                                                                              |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -291,7 +325,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Dictionary<class_Dictionary>` **Dictionary**\ (\ )
+:ref:`Dictionary<class_Dictionary>` **Dictionary**\ (\ ) :ref:`🔗<class_Dictionary_constructor_Dictionary>`
 
 Constructs an empty **Dictionary**.
 
@@ -301,9 +335,19 @@ Constructs an empty **Dictionary**.
 
 .. rst-class:: classref-constructor
 
+:ref:`Dictionary<class_Dictionary>` **Dictionary**\ (\ base\: :ref:`Dictionary<class_Dictionary>`, key_type\: :ref:`int<class_int>`, key_class_name\: :ref:`StringName<class_StringName>`, key_script\: :ref:`Variant<class_Variant>`, value_type\: :ref:`int<class_int>`, value_class_name\: :ref:`StringName<class_StringName>`, value_script\: :ref:`Variant<class_Variant>`\ )
+
+Creates a typed dictionary from the ``base`` dictionary. A typed dictionary can only contain keys and values of the given types, or that inherit from the given classes, as described by this constructor's parameters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
 :ref:`Dictionary<class_Dictionary>` **Dictionary**\ (\ from\: :ref:`Dictionary<class_Dictionary>`\ )
 
-Returns the same dictionary as ``from``. If you need a copy of the dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
+Returns the same dictionary as ``from``. If you need a copy of the dictionary, use :ref:`duplicate()<class_Dictionary_method_duplicate>`.
 
 .. rst-class:: classref-section-separator
 
@@ -314,11 +358,23 @@ Returns the same dictionary as ``from``. If you need a copy of the dictionary, u
 Method Descriptions
 -------------------
 
+.. _class_Dictionary_method_assign:
+
+.. rst-class:: classref-method
+
+|void| **assign**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_Dictionary_method_assign>`
+
+Assigns elements of another ``dictionary`` into the dictionary. Resizes the dictionary to match ``dictionary``. Performs type conversions if the dictionary is typed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Dictionary_method_clear:
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_Dictionary_method_clear>`
 
 Clears the dictionary, removing all entries from it.
 
@@ -330,7 +386,7 @@ Clears the dictionary, removing all entries from it.
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **duplicate**\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **duplicate**\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Dictionary_method_duplicate>`
 
 Creates and returns a new copy of the dictionary. If ``deep`` is ``true``, inner **Dictionary** and :ref:`Array<class_Array>` keys and values are also copied, recursively.
 
@@ -342,11 +398,11 @@ Creates and returns a new copy of the dictionary. If ``deep`` is ``true``, inner
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **erase**\ (\ key\: :ref:`Variant<class_Variant>`\ )
+:ref:`bool<class_bool>` **erase**\ (\ key\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Dictionary_method_erase>`
 
 Removes the dictionary entry by key, if it exists. Returns ``true`` if the given ``key`` existed in the dictionary, otherwise ``false``.
 
-\ **Note:** Do not erase entries while iterating over the dictionary. You can iterate over the :ref:`keys<class_Dictionary_method_keys>` array instead.
+\ **Note:** Do not erase entries while iterating over the dictionary. You can iterate over the :ref:`keys()<class_Dictionary_method_keys>` array instead.
 
 .. rst-class:: classref-item-separator
 
@@ -356,11 +412,11 @@ Removes the dictionary entry by key, if it exists. Returns ``true`` if the given
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **find_key**\ (\ value\: :ref:`Variant<class_Variant>`\ ) |const|
+:ref:`Variant<class_Variant>` **find_key**\ (\ value\: :ref:`Variant<class_Variant>`\ ) |const| :ref:`🔗<class_Dictionary_method_find_key>`
 
 Finds and returns the first key whose associated value is equal to ``value``, or ``null`` if it is not found.
 
-\ **Note:** ``null`` is also a valid key. If inside the dictionary, :ref:`find_key<class_Dictionary_method_find_key>` may give misleading results.
+\ **Note:** ``null`` is also a valid key. If inside the dictionary, :ref:`find_key()<class_Dictionary_method_find_key>` may give misleading results.
 
 .. rst-class:: classref-item-separator
 
@@ -370,7 +426,7 @@ Finds and returns the first key whose associated value is equal to ``value``, or
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get**\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const|
+:ref:`Variant<class_Variant>` **get**\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const| :ref:`🔗<class_Dictionary_method_get>`
 
 Returns the corresponding value for the given ``key`` in the dictionary. If the ``key`` does not exist, returns ``default``, or ``null`` if the parameter is omitted.
 
@@ -382,9 +438,81 @@ Returns the corresponding value for the given ``key`` in the dictionary. If the 
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_or_add**\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ )
+:ref:`Variant<class_Variant>` **get_or_add**\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_Dictionary_method_get_or_add>`
 
-Gets a value and ensures the key is set. If the ``key`` exists in the dictionary, this behaves like :ref:`get<class_Dictionary_method_get>`. Otherwise, the ``default`` value is inserted into the dictionary and returned.
+Gets a value and ensures the key is set. If the ``key`` exists in the dictionary, this behaves like :ref:`get()<class_Dictionary_method_get>`. Otherwise, the ``default`` value is inserted into the dictionary and returned.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_get_typed_key_builtin:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_typed_key_builtin**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_get_typed_key_builtin>`
+
+Returns the built-in :ref:`Variant<class_Variant>` type of the typed dictionary's keys as a :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constant. If the keys are not typed, returns :ref:`@GlobalScope.TYPE_NIL<class_@GlobalScope_constant_TYPE_NIL>`. See also :ref:`is_typed_key()<class_Dictionary_method_is_typed_key>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_get_typed_key_class_name:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_typed_key_class_name**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_get_typed_key_class_name>`
+
+Returns the **built-in** class name of the typed dictionary's keys, if the built-in :ref:`Variant<class_Variant>` type is :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`. Otherwise, returns an empty :ref:`StringName<class_StringName>`. See also :ref:`is_typed_key()<class_Dictionary_method_is_typed_key>` and :ref:`Object.get_class()<class_Object_method_get_class>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_get_typed_key_script:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_typed_key_script**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_get_typed_key_script>`
+
+Returns the :ref:`Script<class_Script>` instance associated with this typed dictionary's keys, or ``null`` if it does not exist. See also :ref:`is_typed_key()<class_Dictionary_method_is_typed_key>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_get_typed_value_builtin:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_typed_value_builtin**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_get_typed_value_builtin>`
+
+Returns the built-in :ref:`Variant<class_Variant>` type of the typed dictionary's values as a :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constant. If the values are not typed, returns :ref:`@GlobalScope.TYPE_NIL<class_@GlobalScope_constant_TYPE_NIL>`. See also :ref:`is_typed_value()<class_Dictionary_method_is_typed_value>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_get_typed_value_class_name:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_typed_value_class_name**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_get_typed_value_class_name>`
+
+Returns the **built-in** class name of the typed dictionary's values, if the built-in :ref:`Variant<class_Variant>` type is :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`. Otherwise, returns an empty :ref:`StringName<class_StringName>`. See also :ref:`is_typed_value()<class_Dictionary_method_is_typed_value>` and :ref:`Object.get_class()<class_Object_method_get_class>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_get_typed_value_script:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_typed_value_script**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_get_typed_value_script>`
+
+Returns the :ref:`Script<class_Script>` instance associated with this typed dictionary's values, or ``null`` if it does not exist. See also :ref:`is_typed_value()<class_Dictionary_method_is_typed_value>`.
 
 .. rst-class:: classref-item-separator
 
@@ -394,7 +522,7 @@ Gets a value and ensures the key is set. If the ``key`` exists in the dictionary
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has**\ (\ key\: :ref:`Variant<class_Variant>`\ ) |const|
+:ref:`bool<class_bool>` **has**\ (\ key\: :ref:`Variant<class_Variant>`\ ) |const| :ref:`🔗<class_Dictionary_method_has>`
 
 Returns ``true`` if the dictionary contains an entry with the given ``key``.
 
@@ -420,9 +548,9 @@ Returns ``true`` if the dictionary contains an entry with the given ``key``.
         { 210, default },
     };
     
-    GD.Print(myDict.ContainsKey("Godot")); // Prints true
-    GD.Print(myDict.ContainsKey(210));     // Prints true
-    GD.Print(myDict.ContainsKey(4));       // Prints false
+    GD.Print(myDict.ContainsKey("Godot")); // Prints True
+    GD.Print(myDict.ContainsKey(210));     // Prints True
+    GD.Print(myDict.ContainsKey(4));       // Prints False
 
 
 
@@ -443,7 +571,7 @@ In GDScript, this is equivalent to the ``in`` operator:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_all**\ (\ keys\: :ref:`Array<class_Array>`\ ) |const|
+:ref:`bool<class_bool>` **has_all**\ (\ keys\: :ref:`Array<class_Array>`\ ) |const| :ref:`🔗<class_Dictionary_method_has_all>`
 
 Returns ``true`` if the dictionary contains all keys in the given ``keys`` array.
 
@@ -460,7 +588,7 @@ Returns ``true`` if the dictionary contains all keys in the given ``keys`` array
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hash**\ (\ ) |const|
+:ref:`int<class_int>` **hash**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_hash>`
 
 Returns a hashed 32-bit integer value representing the dictionary contents.
 
@@ -480,7 +608,7 @@ Returns a hashed 32-bit integer value representing the dictionary contents.
     var dict2 = new Godot.Collections.Dictionary{{"A", 10}, {"B", 2}};
     
     // Godot.Collections.Dictionary has no Hash() method. Use GD.Hash() instead.
-    GD.Print(GD.Hash(dict1) == GD.Hash(dict2)); // Prints true
+    GD.Print(GD.Hash(dict1) == GD.Hash(dict2)); // Prints True
 
 
 
@@ -496,9 +624,9 @@ Returns a hashed 32-bit integer value representing the dictionary contents.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_is_empty>`
 
-Returns ``true`` if the dictionary is empty (its size is ``0``). See also :ref:`size<class_Dictionary_method_size>`.
+Returns ``true`` if the dictionary is empty (its size is ``0``). See also :ref:`size()<class_Dictionary_method_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -508,9 +636,81 @@ Returns ``true`` if the dictionary is empty (its size is ``0``). See also :ref:`
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_read_only**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_read_only**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_is_read_only>`
 
-Returns ``true`` if the dictionary is read-only. See :ref:`make_read_only<class_Dictionary_method_make_read_only>`. Dictionaries are automatically read-only if declared with ``const`` keyword.
+Returns ``true`` if the dictionary is read-only. See :ref:`make_read_only()<class_Dictionary_method_make_read_only>`. Dictionaries are automatically read-only if declared with ``const`` keyword.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_is_same_typed:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_same_typed**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |const| :ref:`🔗<class_Dictionary_method_is_same_typed>`
+
+Returns ``true`` if the dictionary is typed the same as ``dictionary``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_is_same_typed_key:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_same_typed_key**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |const| :ref:`🔗<class_Dictionary_method_is_same_typed_key>`
+
+Returns ``true`` if the dictionary's keys are typed the same as ``dictionary``'s keys.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_is_same_typed_value:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_same_typed_value**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |const| :ref:`🔗<class_Dictionary_method_is_same_typed_value>`
+
+Returns ``true`` if the dictionary's values are typed the same as ``dictionary``'s values.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_is_typed:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_typed**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_is_typed>`
+
+Returns ``true`` if the dictionary is typed. Typed dictionaries can only store keys/values of their associated type and provide type safety for the ``[]`` operator. Methods of typed dictionary still return :ref:`Variant<class_Variant>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_is_typed_key:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_typed_key**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_is_typed_key>`
+
+Returns ``true`` if the dictionary's keys are typed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_is_typed_value:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_typed_value**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_is_typed_value>`
+
+Returns ``true`` if the dictionary's values are typed.
 
 .. rst-class:: classref-item-separator
 
@@ -520,7 +720,7 @@ Returns ``true`` if the dictionary is read-only. See :ref:`make_read_only<class_
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **keys**\ (\ ) |const|
+:ref:`Array<class_Array>` **keys**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_keys>`
 
 Returns the list of keys in the dictionary.
 
@@ -532,7 +732,7 @@ Returns the list of keys in the dictionary.
 
 .. rst-class:: classref-method
 
-|void| **make_read_only**\ (\ )
+|void| **make_read_only**\ (\ ) :ref:`🔗<class_Dictionary_method_make_read_only>`
 
 Makes the dictionary read-only, i.e. disables modification of the dictionary's contents. Does not apply to nested content, e.g. content of nested dictionaries.
 
@@ -544,7 +744,7 @@ Makes the dictionary read-only, i.e. disables modification of the dictionary's c
 
 .. rst-class:: classref-method
 
-|void| **merge**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ )
+|void| **merge**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Dictionary_method_merge>`
 
 Adds entries from ``dictionary`` to this dictionary. By default, duplicate keys are not copied over, unless ``overwrite`` is ``true``.
 
@@ -588,7 +788,7 @@ Adds entries from ``dictionary`` to this dictionary. By default, duplicate keys 
 
 
 
-\ **Note:** :ref:`merge<class_Dictionary_method_merge>` is *not* recursive. Nested dictionaries are considered as keys that can be overwritten or not depending on the value of ``overwrite``, but they will never be merged together.
+\ **Note:** :ref:`merge()<class_Dictionary_method_merge>` is *not* recursive. Nested dictionaries are considered as keys that can be overwritten or not depending on the value of ``overwrite``, but they will never be merged together.
 
 .. rst-class:: classref-item-separator
 
@@ -598,9 +798,9 @@ Adds entries from ``dictionary`` to this dictionary. By default, duplicate keys 
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **merged**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **merged**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Dictionary_method_merged>`
 
-Returns a copy of this dictionary merged with the other ``dictionary``. By default, duplicate keys are not copied over, unless ``overwrite`` is ``true``. See also :ref:`merge<class_Dictionary_method_merge>`.
+Returns a copy of this dictionary merged with the other ``dictionary``. By default, duplicate keys are not copied over, unless ``overwrite`` is ``true``. See also :ref:`merge()<class_Dictionary_method_merge>`.
 
 This method is useful for quickly making dictionaries with default values:
 
@@ -613,7 +813,29 @@ This method is useful for quickly making dictionaries with default values:
     # Prints { "fruit": "apple", "vegetable": "potato", "dressing": "vinegar" }
     print(extra.merged(base, true))
 
-See also :ref:`merge<class_Dictionary_method_merge>`.
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_recursive_equal:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **recursive_equal**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, recursion_count\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Dictionary_method_recursive_equal>`
+
+Returns ``true`` if the two dictionaries contain the same keys and values, inner **Dictionary** and :ref:`Array<class_Array>` keys and values are compared recursively.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_set:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **set**\ (\ key\: :ref:`Variant<class_Variant>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Dictionary_method_set>`
+
+Sets the value of the element at the given ``key`` to the given ``value``. This is the same as using the ``[]`` operator (``array[index] = value``).
 
 .. rst-class:: classref-item-separator
 
@@ -623,9 +845,21 @@ See also :ref:`merge<class_Dictionary_method_merge>`.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **size**\ (\ ) |const|
+:ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_size>`
 
-Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) always return ``0``. See also :ref:`is_empty<class_Dictionary_method_is_empty>`.
+Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) always return ``0``. See also :ref:`is_empty()<class_Dictionary_method_is_empty>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_sort:
+
+.. rst-class:: classref-method
+
+|void| **sort**\ (\ ) :ref:`🔗<class_Dictionary_method_sort>`
+
+Sorts the dictionary in-place by key. This can be used to ensure dictionaries with the same contents produce equivalent results when getting the :ref:`keys()<class_Dictionary_method_keys>`, getting the :ref:`values()<class_Dictionary_method_values>`, and converting to a string. This is also useful when wanting a JSON representation consistent with what is in memory, and useful for storing on a database that requires dictionaries to be sorted.
 
 .. rst-class:: classref-item-separator
 
@@ -635,7 +869,7 @@ Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) al
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **values**\ (\ ) |const|
+:ref:`Array<class_Array>` **values**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_values>`
 
 Returns the list of values in this dictionary.
 
@@ -652,7 +886,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Dictionary<class_Dictionary>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_Dictionary_operator_neq_Dictionary>`
 
 Returns ``true`` if the two dictionaries do not contain the same keys and values.
 
@@ -664,7 +898,7 @@ Returns ``true`` if the two dictionaries do not contain the same keys and values
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Dictionary<class_Dictionary>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_Dictionary_operator_eq_Dictionary>`
 
 Returns ``true`` if the two dictionaries contain the same keys and values. The order of the entries does not matter.
 
@@ -678,9 +912,9 @@ Returns ``true`` if the two dictionaries contain the same keys and values. The o
 
 .. rst-class:: classref-operator
 
-:ref:`Variant<class_Variant>` **operator []**\ (\ key\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **operator []**\ (\ key\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Dictionary_operator_idx_Variant>`
 
-Returns the corresponding value for the given ``key`` in the dictionary. If the entry does not exist, fails and returns ``null``. For safe access, use :ref:`get<class_Dictionary_method_get>` or :ref:`has<class_Dictionary_method_has>`.
+Returns the corresponding value for the given ``key`` in the dictionary. If the entry does not exist, fails and returns ``null``. For safe access, use :ref:`get()<class_Dictionary_method_get>` or :ref:`has()<class_Dictionary_method_has>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

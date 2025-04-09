@@ -12,14 +12,14 @@ PhysicsTestMotionResult3D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Describes the motion and collision result from :ref:`PhysicsServer3D.body_test_motion<class_PhysicsServer3D_method_body_test_motion>`.
+Describes the motion and collision result from :ref:`PhysicsServer3D.body_test_motion()<class_PhysicsServer3D_method_body_test_motion>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Describes the motion and collision result from :ref:`PhysicsServer3D.body_test_motion<class_PhysicsServer3D_method_body_test_motion>`.
+Describes the motion and collision result from :ref:`PhysicsServer3D.body_test_motion()<class_PhysicsServer3D_method_body_test_motion>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -72,7 +72,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_collider**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Object<class_Object>` **get_collider**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collider>`
 
 Returns the colliding body's attached :ref:`Object<class_Object>` given a collision index (the deepest collision by default), if a collision occurred.
 
@@ -84,9 +84,9 @@ Returns the colliding body's attached :ref:`Object<class_Object>` given a collis
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_id**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_collider_id**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collider_id>`
 
-Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>` given a collision index (the deepest collision by default), if a collision occurred. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>` given a collision index (the deepest collision by default), if a collision occurred. See :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -96,7 +96,7 @@ Returns the unique instance ID of the colliding body's attached :ref:`Object<cla
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_collider_rid**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`RID<class_RID>` **get_collider_rid**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collider_rid>`
 
 Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` given a collision index (the deepest collision by default), if a collision occurred.
 
@@ -108,7 +108,7 @@ Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServ
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_shape**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_collider_shape**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collider_shape>`
 
 Returns the colliding body's shape index given a collision index (the deepest collision by default), if a collision occurred. See :ref:`CollisionObject3D<class_CollisionObject3D>`.
 
@@ -120,7 +120,7 @@ Returns the colliding body's shape index given a collision index (the deepest co
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_collider_velocity**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_collider_velocity**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collider_velocity>`
 
 Returns the colliding body's velocity given a collision index (the deepest collision by default), if a collision occurred.
 
@@ -132,7 +132,7 @@ Returns the colliding body's velocity given a collision index (the deepest colli
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collision_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_collision_count**\ (\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collision_count>`
 
 Returns the number of detected collisions.
 
@@ -144,7 +144,7 @@ Returns the number of detected collisions.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_collision_depth**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`float<class_float>` **get_collision_depth**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collision_depth>`
 
 Returns the length of overlap along the collision normal given a collision index (the deepest collision by default), if a collision occurred.
 
@@ -156,7 +156,7 @@ Returns the length of overlap along the collision normal given a collision index
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collision_local_shape**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_collision_local_shape**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collision_local_shape>`
 
 Returns the moving object's colliding shape given a collision index (the deepest collision by default), if a collision occurred.
 
@@ -168,7 +168,7 @@ Returns the moving object's colliding shape given a collision index (the deepest
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_collision_normal**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_collision_normal**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collision_normal>`
 
 Returns the colliding body's shape's normal at the point of collision given a collision index (the deepest collision by default), if a collision occurred.
 
@@ -180,7 +180,7 @@ Returns the colliding body's shape's normal at the point of collision given a co
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_collision_point**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_collision_point**\ (\ collision_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collision_point>`
 
 Returns the point of collision in global coordinates given a collision index (the deepest collision by default), if a collision occurred.
 
@@ -192,7 +192,7 @@ Returns the point of collision in global coordinates given a collision index (th
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_collision_safe_fraction**\ (\ ) |const|
+:ref:`float<class_float>` **get_collision_safe_fraction**\ (\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collision_safe_fraction>`
 
 Returns the maximum fraction of the motion that can occur without a collision, between ``0`` and ``1``.
 
@@ -204,7 +204,7 @@ Returns the maximum fraction of the motion that can occur without a collision, b
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_collision_unsafe_fraction**\ (\ ) |const|
+:ref:`float<class_float>` **get_collision_unsafe_fraction**\ (\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_collision_unsafe_fraction>`
 
 Returns the minimum fraction of the motion needed to collide, if a collision occurred, between ``0`` and ``1``.
 
@@ -216,7 +216,7 @@ Returns the minimum fraction of the motion needed to collide, if a collision occ
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_remainder**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_remainder**\ (\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_remainder>`
 
 Returns the moving object's remaining movement vector.
 
@@ -228,7 +228,7 @@ Returns the moving object's remaining movement vector.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_travel**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_travel**\ (\ ) |const| :ref:`🔗<class_PhysicsTestMotionResult3D_method_get_travel>`
 
 Returns the moving object's travel before collision.
 

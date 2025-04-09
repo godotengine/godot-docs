@@ -55,7 +55,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()``
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()`` :ref:`🔗<class_PolygonOccluder3D_property_polygon>`
 
 .. rst-class:: classref-property-setget
 
@@ -65,6 +65,8 @@ Property Descriptions
 The polygon to use for occlusion culling. The polygon can be convex or concave, but it should have as few points as possible to maximize performance.
 
 The polygon must *not* have intersecting lines. Otherwise, triangulation will fail (with an error message printed).
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

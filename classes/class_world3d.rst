@@ -65,7 +65,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes** :ref:`🔗<class_World3D_property_camera_attributes>`
 
 .. rst-class:: classref-property-setget
 
@@ -82,13 +82,13 @@ The default :ref:`CameraAttributes<class_CameraAttributes>` resource to use if n
 
 .. rst-class:: classref-property
 
-:ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **direct_space_state**
+:ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **direct_space_state** :ref:`🔗<class_World3D_property_direct_space_state>`
 
 .. rst-class:: classref-property-setget
 
 - :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **get_direct_space_state**\ (\ )
 
-Direct access to the world's physics 3D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to :ref:`Node._physics_process<class_Node_private_method__physics_process>` in the main thread.
+Direct access to the world's physics 3D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to :ref:`Node._physics_process()<class_Node_private_method__physics_process>` in the main thread.
 
 .. rst-class:: classref-item-separator
 
@@ -98,7 +98,7 @@ Direct access to the world's physics 3D space state. Used for querying current a
 
 .. rst-class:: classref-property
 
-:ref:`Environment<class_Environment>` **environment**
+:ref:`Environment<class_Environment>` **environment** :ref:`🔗<class_World3D_property_environment>`
 
 .. rst-class:: classref-property-setget
 
@@ -115,7 +115,7 @@ The World3D's :ref:`Environment<class_Environment>`.
 
 .. rst-class:: classref-property
 
-:ref:`Environment<class_Environment>` **fallback_environment**
+:ref:`Environment<class_Environment>` **fallback_environment** :ref:`🔗<class_World3D_property_fallback_environment>`
 
 .. rst-class:: classref-property-setget
 
@@ -132,7 +132,7 @@ The World3D's fallback environment will be used if :ref:`environment<class_World
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **navigation_map**
+:ref:`RID<class_RID>` **navigation_map** :ref:`🔗<class_World3D_property_navigation_map>`
 
 .. rst-class:: classref-property-setget
 
@@ -148,7 +148,7 @@ The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`Navi
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **scenario**
+:ref:`RID<class_RID>` **scenario** :ref:`🔗<class_World3D_property_scenario>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ The World3D's visual scenario.
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **space**
+:ref:`RID<class_RID>` **space** :ref:`🔗<class_World3D_property_space>`
 
 .. rst-class:: classref-property-setget
 

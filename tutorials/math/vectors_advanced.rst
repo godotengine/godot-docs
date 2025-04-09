@@ -23,7 +23,7 @@ because of its usage. (Just like we call (0,0) the Origin!).
 
 The plane passes by the origin and the
 surface of it is perpendicular to the unit vector (or *normal*). The
-side towards the vector points to is the positive half-space, while the
+side the vector points to is the positive half-space, while the
 other side is the negative half-space. In 3D this is exactly the same,
 except that the plane is an infinite surface (imagine an infinite, flat
 sheet of paper that you can orient and is pinned to the origin) instead
@@ -171,7 +171,7 @@ the normal and the point.
 For two points in space, there are actually two planes that pass through
 them, sharing the same space but with normal pointing to the opposite
 directions. To compute the normal from the two points, the direction
-vector must be obtained first, and then it needs to be rotated 90°
+vector must be obtained first, and then it needs to be rotated 90
 degrees to either side:
 
 .. tabs::
@@ -590,5 +590,5 @@ For more information on using vector math in Godot, see the following article:
 - :ref:`doc_matrices_and_transforms`
 
 If you would like additional explanation, you should check out
-3Blue1Brown's excellent video series "Essence of Linear Algebra":
-https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
+3Blue1Brown's excellent video series 
+`Essence of Linear Algebra <https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`_.

@@ -19,11 +19,11 @@ Calls the specified method after optional delay.
 Description
 -----------
 
-**CallbackTweener** is used to call a method in a tweening sequence. See :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` for more usage information.
+**CallbackTweener** is used to call a method in a tweening sequence. See :ref:`Tween.tween_callback()<class_Tween_method_tween_callback>` for more usage information.
 
 The tweener will finish automatically if the callback's target object is freed.
 
-\ **Note:** :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` is the only correct way to create **CallbackTweener**. Any **CallbackTweener** created manually will not function correctly.
+\ **Note:** :ref:`Tween.tween_callback()<class_Tween_method_tween_callback>` is the only correct way to create **CallbackTweener**. Any **CallbackTweener** created manually will not function correctly.
 
 .. rst-class:: classref-reftable-group
 
@@ -50,16 +50,16 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`CallbackTweener<class_CallbackTweener>` **set_delay**\ (\ delay\: :ref:`float<class_float>`\ )
+:ref:`CallbackTweener<class_CallbackTweener>` **set_delay**\ (\ delay\: :ref:`float<class_float>`\ ) :ref:`🔗<class_CallbackTweener_method_set_delay>`
 
 Makes the callback call delayed by given time in seconds.
 
-\ **Example:**\ 
+\ **Example:** Call :ref:`Node.queue_free()<class_Node_method_queue_free>` after 2 seconds:
 
 ::
 
     var tween = get_tree().create_tween()
-    tween.tween_callback(queue_free).set_delay(2) #this will call queue_free() after 2 seconds
+    tween.tween_callback(queue_free).set_delay(2)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

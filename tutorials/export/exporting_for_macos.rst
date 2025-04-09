@@ -10,8 +10,18 @@ Exporting for macOS
     read :ref:`doc_compiling_for_macos`.
 
 macOS apps exported with the official export templates are exported as a single "Universal 2" binary ``.app`` bundle, a folder with a specific structure which stores the executable, libraries and all the project files.
-This bundle can be exported as is, packed in a ZIP archive or DMG disk image (only supported when exporting from a computer running macOS).
-`Universal binaries for macOS support both Intel x86_64 and ARM64 (Apple silicon, i.e. M1) architectures <https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary>`__.
+This bundle can be exported as is, packed in a ZIP archive, or packed in a DMG disk image (only supported when exporting from macOS).
+`Universal binaries for macOS support both Intel x86_64 and ARM64 (Apple Silicon) architectures <https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary>`__.
+
+.. warning::
+    Due to file system limitations, ``.app`` bundles exported from Windows lack the 
+    ``executable`` flag and won't run on macOS. Projects exported as ``.zip`` are not 
+    affected by this issue. To run ``.app`` bundles exported from Windows on macOS,
+    transfer the ``.app`` to a device running macOS or Linux and use the
+    ``chmod +x {executable_name}`` terminal command to add the ``executable`` permission.
+    The main executable located in the ``Contents/MacOS/`` subfolder, as well
+    as optional helper executables in the ``Contents/Helpers/`` subfolder, should have
+    the ``executable`` permission for the ``.app`` bundle to be valid.
 
 Requirements
 ------------
@@ -246,3 +256,9 @@ the export menu.
      - ``GODOT_MACOS_NOTARIZATION_APPLE_ID_NAME``
    * - Options / Notarization / Apple ID Password
      - ``GODOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD``
+
+Export options
+--------------
+
+You can find a full list of export options available in the
+:ref:`class_EditorExportPlatformMacOS` class reference.

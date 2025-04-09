@@ -19,7 +19,7 @@ Contains the results of a :ref:`RegEx<class_RegEx>` search.
 Description
 -----------
 
-Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :ref:`RegEx.search<class_RegEx_method_search>` and :ref:`RegEx.search_all<class_RegEx_method_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its substring for you.
+Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :ref:`RegEx.search()<class_RegEx_method_search>` and :ref:`RegEx.search_all()<class_RegEx_method_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its substring for you.
 
 .. rst-class:: classref-reftable-group
 
@@ -68,7 +68,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **names** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **names** = ``{}`` :ref:`🔗<class_RegExMatch_property_names>`
 
 .. rst-class:: classref-property-setget
 
@@ -84,13 +84,15 @@ A dictionary of named groups and its corresponding group number. Only groups tha
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **strings** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **strings** = ``PackedStringArray()`` :ref:`🔗<class_RegExMatch_property_strings>`
 
 .. rst-class:: classref-property-setget
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_strings**\ (\ )
 
 An :ref:`Array<class_Array>` of the match and its capturing groups.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -100,7 +102,7 @@ An :ref:`Array<class_Array>` of the match and its capturing groups.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **subject** = ``""``
+:ref:`String<class_String>` **subject** = ``""`` :ref:`🔗<class_RegExMatch_property_subject>`
 
 .. rst-class:: classref-property-setget
 
@@ -121,7 +123,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_end**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const|
+:ref:`int<class_int>` **get_end**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const| :ref:`🔗<class_RegExMatch_method_get_end>`
 
 Returns the end position of the match within the source string. The end position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
@@ -135,7 +137,7 @@ Returns -1 if the group did not match or doesn't exist.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_group_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_group_count**\ (\ ) |const| :ref:`🔗<class_RegExMatch_method_get_group_count>`
 
 Returns the number of capturing groups.
 
@@ -147,7 +149,7 @@ Returns the number of capturing groups.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_start**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const|
+:ref:`int<class_int>` **get_start**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const| :ref:`🔗<class_RegExMatch_method_get_start>`
 
 Returns the starting position of the match within the source string. The starting position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
@@ -161,7 +163,7 @@ Returns -1 if the group did not match or doesn't exist.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_string**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const|
+:ref:`String<class_String>` **get_string**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const| :ref:`🔗<class_RegExMatch_method_get_string>`
 
 Returns the substring of the match from the source string. Capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 

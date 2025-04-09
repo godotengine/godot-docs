@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
-- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
+- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -71,7 +71,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **columns** = ``1``
+:ref:`int<class_int>` **columns** = ``1`` :ref:`🔗<class_GridContainer_property_columns>`
 
 .. rst-class:: classref-property-setget
 
@@ -93,7 +93,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``4``
+:ref:`int<class_int>` **h_separation** = ``4`` :ref:`🔗<class_GridContainer_theme_constant_h_separation>`
 
 The horizontal separation of child nodes.
 
@@ -105,7 +105,7 @@ The horizontal separation of child nodes.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **v_separation** = ``4``
+:ref:`int<class_int>` **v_separation** = ``4`` :ref:`🔗<class_GridContainer_theme_constant_v_separation>`
 
 The vertical separation of child nodes.
 

@@ -31,7 +31,7 @@ The usage is mostly the same as :ref:`UndoRedo<class_UndoRedo>`. You create and 
 
 This guessing can sometimes yield false results, so you can provide a custom context object when creating an action.
 
-\ **EditorUndoRedoManager** is intended to be used by Godot editor plugins. You can obtain it using :ref:`EditorPlugin.get_undo_redo<class_EditorPlugin_method_get_undo_redo>`. For non-editor uses or plugins that don't need to integrate with the editor's undo history, use :ref:`UndoRedo<class_UndoRedo>` instead.
+\ **EditorUndoRedoManager** is intended to be used by Godot editor plugins. You can obtain it using :ref:`EditorPlugin.get_undo_redo()<class_EditorPlugin_method_get_undo_redo>`. For non-editor uses or plugins that don't need to integrate with the editor's undo history, use :ref:`UndoRedo<class_UndoRedo>` instead.
 
 The manager's API is mostly the same as in :ref:`UndoRedo<class_UndoRedo>`, so you can refer to its documentation for more examples. The main difference is that **EditorUndoRedoManager** uses object + method name for actions, instead of :ref:`Callable<class_Callable>`.
 
@@ -56,9 +56,13 @@ Methods
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`add_undo_reference<class_EditorUndoRedoManager_method_add_undo_reference>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                           |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`clear_history<class_EditorUndoRedoManager_method_clear_history>`\ (\ id\: :ref:`int<class_int>` = -99, increase_version\: :ref:`bool<class_bool>` = true\ )                                                                                                                      |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`commit_action<class_EditorUndoRedoManager_method_commit_action>`\ (\ execute\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                 |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`create_action<class_EditorUndoRedoManager_method_create_action>`\ (\ name\: :ref:`String<class_String>`, merge_mode\: :ref:`MergeMode<enum_UndoRedo_MergeMode>` = 0, custom_context\: :ref:`Object<class_Object>` = null, backward_undo_ops\: :ref:`bool<class_bool>` = false\ ) |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`force_fixed_history<class_EditorUndoRedoManager_method_force_fixed_history>`\ (\ )                                                                                                                                                                                               |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`UndoRedo<class_UndoRedo>` | :ref:`get_history_undo_redo<class_EditorUndoRedoManager_method_get_history_undo_redo>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                       |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -80,7 +84,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**history_changed**\ (\ )
+**history_changed**\ (\ ) :ref:`🔗<class_EditorUndoRedoManager_signal_history_changed>`
 
 Emitted when the list of actions in any history has changed, either when an action is committed or a history is cleared.
 
@@ -92,7 +96,7 @@ Emitted when the list of actions in any history has changed, either when an acti
 
 .. rst-class:: classref-signal
 
-**version_changed**\ (\ )
+**version_changed**\ (\ ) :ref:`🔗<class_EditorUndoRedoManager_signal_version_changed>`
 
 Emitted when the version of any history has changed as a result of undo or redo call.
 
@@ -109,7 +113,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **SpecialHistory**:
+enum **SpecialHistory**: :ref:`🔗<enum_EditorUndoRedoManager_SpecialHistory>`
 
 .. _class_EditorUndoRedoManager_constant_GLOBAL_HISTORY:
 
@@ -148,7 +152,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_do_method**\ (\ object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|
+|void| **add_do_method**\ (\ object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg| :ref:`🔗<class_EditorUndoRedoManager_method_add_do_method>`
 
 Register a method that will be called when the action is committed (i.e. the "do" action).
 
@@ -162,7 +166,7 @@ If this is the first operation, the ``object`` will be used to deduce target und
 
 .. rst-class:: classref-method
 
-|void| **add_do_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **add_do_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorUndoRedoManager_method_add_do_property>`
 
 Register a property value change for "do".
 
@@ -176,7 +180,7 @@ If this is the first operation, the ``object`` will be used to deduce target und
 
 .. rst-class:: classref-method
 
-|void| **add_do_reference**\ (\ object\: :ref:`Object<class_Object>`\ )
+|void| **add_do_reference**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_EditorUndoRedoManager_method_add_do_reference>`
 
 Register a reference for "do" that will be erased if the "do" history is lost. This is useful mostly for new nodes created for the "do" call. Do not use for resources.
 
@@ -188,7 +192,7 @@ Register a reference for "do" that will be erased if the "do" history is lost. T
 
 .. rst-class:: classref-method
 
-|void| **add_undo_method**\ (\ object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|
+|void| **add_undo_method**\ (\ object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg| :ref:`🔗<class_EditorUndoRedoManager_method_add_undo_method>`
 
 Register a method that will be called when the action is undone (i.e. the "undo" action).
 
@@ -202,7 +206,7 @@ If this is the first operation, the ``object`` will be used to deduce target und
 
 .. rst-class:: classref-method
 
-|void| **add_undo_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **add_undo_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorUndoRedoManager_method_add_undo_property>`
 
 Register a property value change for "undo".
 
@@ -216,9 +220,31 @@ If this is the first operation, the ``object`` will be used to deduce target und
 
 .. rst-class:: classref-method
 
-|void| **add_undo_reference**\ (\ object\: :ref:`Object<class_Object>`\ )
+|void| **add_undo_reference**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_EditorUndoRedoManager_method_add_undo_reference>`
 
 Register a reference for "undo" that will be erased if the "undo" history is lost. This is useful mostly for nodes removed with the "do" call (not the "undo" call!).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorUndoRedoManager_method_clear_history:
+
+.. rst-class:: classref-method
+
+|void| **clear_history**\ (\ id\: :ref:`int<class_int>` = -99, increase_version\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_EditorUndoRedoManager_method_clear_history>`
+
+Clears the given undo history. You can clear history for a specific scene, global history, or for all scenes at once if ``id`` is :ref:`INVALID_HISTORY<class_EditorUndoRedoManager_constant_INVALID_HISTORY>`.
+
+If ``increase_version`` is ``true``, the undo history version will be increased, marking it as unsaved. Useful for operations that modify the scene, but don't support undo.
+
+::
+
+    var scene_root = EditorInterface.get_edited_scene_root()
+    var undo_redo = EditorInterface.get_editor_undo_redo()
+    undo_redo.clear_history(undo_redo.get_object_history_id(scene_root))
+
+\ **Note:** If you want to mark an edited scene as unsaved without clearing its history, use :ref:`EditorInterface.mark_scene_as_unsaved()<class_EditorInterface_method_mark_scene_as_unsaved>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -228,9 +254,9 @@ Register a reference for "undo" that will be erased if the "undo" history is los
 
 .. rst-class:: classref-method
 
-|void| **commit_action**\ (\ execute\: :ref:`bool<class_bool>` = true\ )
+|void| **commit_action**\ (\ execute\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_EditorUndoRedoManager_method_commit_action>`
 
-Commit the action. If ``execute`` is true (default), all "do" methods/properties are called/set when this function is called.
+Commits the action. If ``execute`` is ``true`` (default), all "do" methods/properties are called/set when this function is called.
 
 .. rst-class:: classref-item-separator
 
@@ -240,9 +266,9 @@ Commit the action. If ``execute`` is true (default), all "do" methods/properties
 
 .. rst-class:: classref-method
 
-|void| **create_action**\ (\ name\: :ref:`String<class_String>`, merge_mode\: :ref:`MergeMode<enum_UndoRedo_MergeMode>` = 0, custom_context\: :ref:`Object<class_Object>` = null, backward_undo_ops\: :ref:`bool<class_bool>` = false\ )
+|void| **create_action**\ (\ name\: :ref:`String<class_String>`, merge_mode\: :ref:`MergeMode<enum_UndoRedo_MergeMode>` = 0, custom_context\: :ref:`Object<class_Object>` = null, backward_undo_ops\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_EditorUndoRedoManager_method_create_action>`
 
-Create a new action. After this is called, do all your calls to :ref:`add_do_method<class_EditorUndoRedoManager_method_add_do_method>`, :ref:`add_undo_method<class_EditorUndoRedoManager_method_add_undo_method>`, :ref:`add_do_property<class_EditorUndoRedoManager_method_add_do_property>`, and :ref:`add_undo_property<class_EditorUndoRedoManager_method_add_undo_property>`, then commit the action with :ref:`commit_action<class_EditorUndoRedoManager_method_commit_action>`.
+Create a new action. After this is called, do all your calls to :ref:`add_do_method()<class_EditorUndoRedoManager_method_add_do_method>`, :ref:`add_undo_method()<class_EditorUndoRedoManager_method_add_undo_method>`, :ref:`add_do_property()<class_EditorUndoRedoManager_method_add_do_property>`, and :ref:`add_undo_property()<class_EditorUndoRedoManager_method_add_undo_property>`, then commit the action with :ref:`commit_action()<class_EditorUndoRedoManager_method_commit_action>`.
 
 The way actions are merged is dictated by the ``merge_mode`` argument. See :ref:`MergeMode<enum_UndoRedo_MergeMode>` for details.
 
@@ -254,17 +280,31 @@ The way undo operation are ordered in actions is dictated by ``backward_undo_ops
 
 ----
 
+.. _class_EditorUndoRedoManager_method_force_fixed_history:
+
+.. rst-class:: classref-method
+
+|void| **force_fixed_history**\ (\ ) :ref:`🔗<class_EditorUndoRedoManager_method_force_fixed_history>`
+
+Forces the next operation (e.g. :ref:`add_do_method()<class_EditorUndoRedoManager_method_add_do_method>`) to use the action's history rather than guessing it from the object. This is sometimes needed when a history can't be correctly determined, like for a nested resource that doesn't have a path yet.
+
+This method should only be used when absolutely necessary, otherwise it might cause invalid history state. For most of complex cases, the ``custom_context`` parameter of :ref:`create_action()<class_EditorUndoRedoManager_method_create_action>` is sufficient.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorUndoRedoManager_method_get_history_undo_redo:
 
 .. rst-class:: classref-method
 
-:ref:`UndoRedo<class_UndoRedo>` **get_history_undo_redo**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`UndoRedo<class_UndoRedo>` **get_history_undo_redo**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_EditorUndoRedoManager_method_get_history_undo_redo>`
 
 Returns the :ref:`UndoRedo<class_UndoRedo>` object associated with the given history ``id``.
 
 \ ``id`` above ``0`` are mapped to the opened scene tabs (but it doesn't match their order). ``id`` of ``0`` or lower have special meaning (see :ref:`SpecialHistory<enum_EditorUndoRedoManager_SpecialHistory>`).
 
-Best used with :ref:`get_object_history_id<class_EditorUndoRedoManager_method_get_object_history_id>`. This method is only provided in case you need some more advanced methods of :ref:`UndoRedo<class_UndoRedo>` (but keep in mind that directly operating on the :ref:`UndoRedo<class_UndoRedo>` object might affect editor's stability).
+Best used with :ref:`get_object_history_id()<class_EditorUndoRedoManager_method_get_object_history_id>`. This method is only provided in case you need some more advanced methods of :ref:`UndoRedo<class_UndoRedo>` (but keep in mind that directly operating on the :ref:`UndoRedo<class_UndoRedo>` object might affect editor's stability).
 
 .. rst-class:: classref-item-separator
 
@@ -274,9 +314,9 @@ Best used with :ref:`get_object_history_id<class_EditorUndoRedoManager_method_ge
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_object_history_id**\ (\ object\: :ref:`Object<class_Object>`\ ) |const|
+:ref:`int<class_int>` **get_object_history_id**\ (\ object\: :ref:`Object<class_Object>`\ ) |const| :ref:`🔗<class_EditorUndoRedoManager_method_get_object_history_id>`
 
-Returns the history ID deduced from the given ``object``. It can be used with :ref:`get_history_undo_redo<class_EditorUndoRedoManager_method_get_history_undo_redo>`.
+Returns the history ID deduced from the given ``object``. It can be used with :ref:`get_history_undo_redo()<class_EditorUndoRedoManager_method_get_history_undo_redo>`.
 
 .. rst-class:: classref-item-separator
 
@@ -286,9 +326,9 @@ Returns the history ID deduced from the given ``object``. It can be used with :r
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_committing_action**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_committing_action**\ (\ ) |const| :ref:`🔗<class_EditorUndoRedoManager_method_is_committing_action>`
 
-Returns ``true`` if the **EditorUndoRedoManager** is currently committing the action, i.e. running its "do" method or property change (see :ref:`commit_action<class_EditorUndoRedoManager_method_commit_action>`).
+Returns ``true`` if the **EditorUndoRedoManager** is currently committing the action, i.e. running its "do" method or property change (see :ref:`commit_action()<class_EditorUndoRedoManager_method_commit_action>`).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

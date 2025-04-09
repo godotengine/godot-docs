@@ -68,7 +68,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **remote_path** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **remote_path** = ``NodePath("")`` :ref:`🔗<class_RemoteTransform2D_property_remote_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -85,7 +85,7 @@ The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **update_position** = ``true``
+:ref:`bool<class_bool>` **update_position** = ``true`` :ref:`🔗<class_RemoteTransform2D_property_update_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -102,7 +102,7 @@ If ``true``, the remote node's position is updated.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **update_rotation** = ``true``
+:ref:`bool<class_bool>` **update_rotation** = ``true`` :ref:`🔗<class_RemoteTransform2D_property_update_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -119,7 +119,7 @@ If ``true``, the remote node's rotation is updated.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **update_scale** = ``true``
+:ref:`bool<class_bool>` **update_scale** = ``true`` :ref:`🔗<class_RemoteTransform2D_property_update_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -136,7 +136,7 @@ If ``true``, the remote node's scale is updated.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_global_coordinates** = ``true``
+:ref:`bool<class_bool>` **use_global_coordinates** = ``true`` :ref:`🔗<class_RemoteTransform2D_property_use_global_coordinates>`
 
 .. rst-class:: classref-property-setget
 
@@ -158,9 +158,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **force_update_cache**\ (\ )
+|void| **force_update_cache**\ (\ ) :ref:`🔗<class_RemoteTransform2D_method_force_update_cache>`
 
-**RemoteTransform2D** caches the remote node. It may not notice if the remote node disappears; :ref:`force_update_cache<class_RemoteTransform2D_method_force_update_cache>` forces it to update the cache again.
+**RemoteTransform2D** caches the remote node. It may not notice if the remote node disappears; :ref:`force_update_cache()<class_RemoteTransform2D_method_force_update_cache>` forces it to update the cache again.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

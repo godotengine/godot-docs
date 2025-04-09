@@ -130,7 +130,7 @@ Stretch settings are located in the project settings and provide several options
 .. image:: img/stretchsettings.webp
 
 Stretch Mode
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 The **Stretch Mode** setting defines how the base size is stretched to fit
 the resolution of the window or screen. The animations below use a "base
@@ -174,7 +174,7 @@ To configure the stretch mode at runtime from a script, use the
 and the :ref:`ContentScaleMode <enum_Window_ContentScaleMode>` enum).
 
 Stretch Aspect
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The second setting is the stretch aspect. Note that this only takes effect if
 **Stretch Mode** is set to something other than **Disabled**.
@@ -247,7 +247,7 @@ to the region outside the blue frame you see in the 2D editor.
     landscape mode, use 720×720 as the project's base window size in the
     Project Settings.
 
-    To allow the user to choose their preferred screen orientation at run-time,
+    To allow the user to choose their preferred screen orientation at runtime,
     remember to set **Display > Window > Handheld > Orientation** to ``sensor``.
 
 To configure the stretch aspect at runtime from a script, use the
@@ -258,7 +258,7 @@ and the :ref:`ContentScaleAspect <enum_Window_ContentScaleAspect>` enum).
 .. _doc_multiple_resolutions_stretch_scale:
 
 Stretch Scale
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 The **Scale** setting allows you to add an extra scaling factor on top of
 what the **Stretch** options above already provide. The default value of ``1.0``
@@ -284,7 +284,7 @@ To configure the stretch scale at runtime from a script, use the
 .. _doc_multiple_resolutions_stretch_scale_mode:
 
 Stretch Scale Mode
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Since Godot 4.2, the **Stretch Scale Mode** setting allows you to constrain the
 automatically determined scale factor (as well as the manually specified
@@ -355,7 +355,7 @@ The following settings are recommended to support multiple resolutions and aspec
 ratios well.
 
 Desktop game
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 **Non-pixel art:**
 
@@ -400,7 +400,7 @@ Desktop game
     stretch mode.
 
 Mobile game in landscape mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot is configured to use landscape mode by default. This means you don't need
 to change the display orientation project setting.
@@ -429,7 +429,7 @@ to change the display orientation project setting.
     base window height to ``960``.
 
 Mobile game in portrait mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Set the base window width to ``720`` and window height to ``1280``.
 - Alternatively, if you're targeting high-end devices primarily, set the base
@@ -456,7 +456,7 @@ Mobile game in portrait mode
     base window height to ``1280``.
 
 Non-game application
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 - Set the base window width and height to the smallest window size that you intend to target.
   This is not required, but this ensures that you design your UI with small window sizes in mind.
@@ -466,6 +466,9 @@ Non-game application
 - You can define a minimum window size by calling ``get_window().set_min_size()`` in a
   script's ``_ready()`` function. This prevents the user from resizing the application
   below a certain size, which could break the UI layout.
+
+.. UPDATE: Planned feature. When manually override the 2D scale factor is supported,
+.. update this note.
 
 .. note::
 

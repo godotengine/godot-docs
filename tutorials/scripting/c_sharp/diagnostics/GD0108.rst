@@ -1,0 +1,51 @@
+GD0108: The exported tool button is not in a tool class
+=======================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0108
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Non-breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A property is annotated with the ``[ExportToolButton]`` attribute in a class that
+is **not** annotated with the ``[Tool]`` attribute.
+
+Rule description
+----------------
+
+The ``[ExportToolButton]`` is used to create clickable buttons in the inspector so,
+like every other script that runs in the editor, it needs to be annotated with the
+``[Tool]`` attribute.
+
+.. code-block:: csharp
+    :emphasize-lines: 1
+
+    [Tool]
+    public partial class MyNode : Node
+    {
+        [ExportToolButton("Click me!")]
+        public Callable ClickMeButton => Callable.From(ClickMe);
+
+        private static void ClickMe()
+        {
+            GD.Print("Hello world!");
+        }
+    }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, add the ``[Tool]`` attribute to the class that
+contains the member annotated with the ``[ExportToolButton]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. The clickable buttons in the inspector
+won't be functional if their script is not annotated with the ``[Tool]`` attribute.

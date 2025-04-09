@@ -10,7 +10,7 @@ Usage
 -----
 
 Getting started
-***************
+~~~~~~~~~~~~~~~
 
 Make sure you have enabled and successfully set up :ref:`Android Gradle Builds <doc_android_gradle_build>`.
 Follow the compiling instructions on the ``GodotGooglePlayBilling`` `github page <https://github.com/godotengine/godot-google-play-billing>`__.
@@ -21,7 +21,7 @@ The plugin should now show up in the Android export settings, where you can enab
 
 
 Initialize the plugin
-*********************
+~~~~~~~~~~~~~~~~~~~~~
 
 To use the ``GodotGooglePlayBilling`` API:
 
@@ -79,7 +79,7 @@ Return values for ``getConnectionState()``:
 
 
 Query available items
-*********************
+~~~~~~~~~~~~~~~~~~~~~
 
 Once the API has connected, query SKUs using ``querySkuDetails()``. You must successfully complete
 an SKU query before calling the ``purchase()`` or ``queryPurchases()`` functions,
@@ -106,7 +106,7 @@ Example use of ``querySkuDetails()``:
 
 
 Query user purchases
-********************
+~~~~~~~~~~~~~~~~~~~~
 
 To retrieve a user's purchases, call the ``queryPurchases()`` function passing
 a string with the type of SKU to query. The SKU type string should be
@@ -153,7 +153,7 @@ For more information on processing the purchase items returned by
 
 
 Purchase an item
-****************
+~~~~~~~~~~~~~~~~
 
 To initiate the purchase flow for an item, call ``purchase()`` passing the
 product id string of the SKU you wish to purchase.
@@ -181,7 +181,7 @@ The payment flow will send a ``purchases_updated`` signal on success or a
 
 
 Processing a purchase item
-**************************
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``query_purchases_response`` and ``purchases_updated`` signals provide an array
 of purchases in :ref:`Dictionary <class_Dictionary>` format. The purchase Dictionary
@@ -210,7 +210,7 @@ Purchase fields:
 
 
 Check purchase state
-********************
+~~~~~~~~~~~~~~~~~~~~
 
 Check the ``purchase_state`` value of a purchase to determine if a
 purchase was completed or is still pending.
@@ -237,7 +237,7 @@ in the Google Play Billing Library documentation.
 
 
 Consumables
-***********
+~~~~~~~~~~~
 
 If your in-app item is not a one-time purchase but a consumable item (e.g. coins) which can be purchased
 multiple times, you can consume an item by calling ``consumePurchase()`` passing
@@ -271,7 +271,7 @@ Example use of ``consumePurchase()``:
 
 
 Acknowledging purchases
-***********************
+~~~~~~~~~~~~~~~~~~~~~~~
 
 If your in-app item is a one-time purchase, you must acknowledge the purchase by
 calling the ``acknowledgePurchase()`` function, passing the ``purchase_token``
@@ -307,7 +307,7 @@ Example use of ``acknowledgePurchase()``:
 
 
 Subscriptions
-*************
+~~~~~~~~~~~~~
 
 Subscriptions work mostly like regular in-app items. Use ``"subs"`` as the second
 argument to ``querySkuDetails()`` to get subscription details. Pass ``"subs"``
@@ -362,7 +362,7 @@ Example use of ``updateSubscription``:
 ::
 
     payment.updateSubscription(_active_subscription_purchase.purchase_token, \
-						"new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)
+                        "new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)
 
 
 The ``confirmPriceChange()`` function can be used to launch price change confirmation flow

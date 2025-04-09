@@ -25,7 +25,7 @@ Themes also can be created from any control node. Select a control node in the s
 hierarchy, then in the inspector go to the ``theme`` property. From there you can
 select **New Theme**.
 
-.. figure:: img/new_theme.png
+.. figure:: img/new_theme.webp
    :align: center
 
 This will create an empty theme and open up the theme editor. Keep in mind that
@@ -37,13 +37,13 @@ include the default, fallback font that you can edit only using the Inspector do
 Same applies to the contents of complex resource types, such as :ref:`StyleBoxes <class_StyleBox>`
 and icons — they open for editing in the Inspector.
 
-.. figure:: img/default_font.png
+.. figure:: img/default_font.webp
    :align: center
 
 Theme editor overview
 ---------------------
 
-.. figure:: img/theme_editor.png
+.. figure:: img/theme_editor.webp
    :align: center
 
 The theme editor has two main parts. The main theme editor, located at the bottom of
@@ -60,14 +60,14 @@ The left-hand side of the main editor has a set of preview tabs. The **Default P
 tab is visible out of the box and contains most of the frequently used controls in various
 states. Previews are interactive, so intermediate states (e.g. hover) can be previewed as well.
 
-.. figure:: img/default_preview.png
+.. figure:: img/default_preview.webp
    :align: center
 
 Additional tabs can be created from arbitrary scenes in your project. The scene
 must have a control node as its root to function as a preview. To add a new tab
 click the **Add Preview** button and select the saved scene from your file system.
 
-.. figure:: img/scene_preview.png
+.. figure:: img/scene_preview.webp
    :align: center
 
 If you make changes to the scene, they will not be reflected in the preview
@@ -78,7 +78,7 @@ picker tool from the toolbar and hover over the preview area to highlight contro
 nodes. Highlighted control nodes display their class name, or type variation if available.
 Clicking on the highlighted control opens it for editing on the right-hand side.
 
-.. figure:: img/theme_preview_picker.png
+.. figure:: img/theme_preview_picker.webp
    :align: center
 
 Theme types and items
@@ -92,7 +92,7 @@ enabled, then for each built-in type its default theme values are displayed, gre
 out. If the option is disabled, only the items available in the edited theme itself
 are displayed.
 
-.. figure:: img/theme_type_editor.png
+.. figure:: img/theme_type_editor.webp
    :align: center
 
 Individual items from the default theme can be added to the current theme by
@@ -106,7 +106,7 @@ Overridden theme items can be edited directly in the right-hand panel, unless th
 are resources. Resources have rudimentary controls available for them, but must be
 edited in the Inspector dock instead.
 
-.. figure:: img/theme_item_inspector.png
+.. figure:: img/theme_item_inspector.webp
    :align: center
 
 Styleboxes have a unique feature available, where you can pin an individual
@@ -115,7 +115,7 @@ all styleboxes of the same type are updated alongside it when you change its
 properties. This allows you to edit properties of several styleboxes at the
 same time.
 
-.. figure:: img/theme_pin_the_stylebox.png
+.. figure:: img/theme_pin_the_stylebox.webp
    :align: center
 
 While theme types can be picked from a preview, they can also be added manually.
@@ -124,17 +124,21 @@ In that menu you can either select a type from the list, or you can enter an
 arbitrary name to create a custom type. Text field also filters the list of control
 nodes.
 
-.. figure:: img/add_item_type.png
+.. figure:: img/add_item_type.webp
    :align: center
 
 Manage and import items
 -----------------------
 
-Clicking the **Manage Items** button brings up the **Manage Theme Items** dialog. In
-the **Edit Items** tab you can view and add theme types, as well as view and edit
+Clicking the **Manage Items** button brings up the **Manage Theme Items** dialog.
+
+.. figure:: img/manage_items_button.webp
+   :align: center
+
+In the **Edit Items** tab you can view and add theme types, as well as view and edit
 the theme items of the selected type.
 
-.. figure:: img/manage_items.png
+.. figure:: img/manage_items.webp
    :align: center
 
 You can create, rename and remove individual theme items here by clicking the
@@ -154,5 +158,5 @@ include the data will copy all theme items as they are to your theme. Omitting t
 will create the items of the corresponding data type and name, but will leave them empty,
 creating a template of a theme in a way.
 
-.. figure:: img/import_items.png
+.. figure:: img/import_items.webp
    :align: center

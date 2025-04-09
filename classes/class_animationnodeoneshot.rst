@@ -79,7 +79,7 @@ Tutorials
 
 - :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -122,7 +122,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **OneShotRequest**:
+enum **OneShotRequest**: :ref:`🔗<enum_AnimationNodeOneShot_OneShotRequest>`
 
 .. _class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_NONE:
 
@@ -164,7 +164,7 @@ The request to fade out the animation connected to "shot" port.
 
 .. rst-class:: classref-enumeration
 
-enum **MixMode**:
+enum **MixMode**: :ref:`🔗<enum_AnimationNodeOneShot_MixMode>`
 
 .. _class_AnimationNodeOneShot_constant_MIX_MODE_BLEND:
 
@@ -195,7 +195,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **autorestart** = ``false``
+:ref:`bool<class_bool>` **autorestart** = ``false`` :ref:`🔗<class_AnimationNodeOneShot_property_autorestart>`
 
 .. rst-class:: classref-property-setget
 
@@ -214,7 +214,7 @@ In other words, to start auto restarting, the animation must be played once with
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **autorestart_delay** = ``1.0``
+:ref:`float<class_float>` **autorestart_delay** = ``1.0`` :ref:`🔗<class_AnimationNodeOneShot_property_autorestart_delay>`
 
 .. rst-class:: classref-property-setget
 
@@ -231,7 +231,7 @@ The delay after which the automatic restart is triggered, in seconds.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **autorestart_random_delay** = ``0.0``
+:ref:`float<class_float>` **autorestart_random_delay** = ``0.0`` :ref:`🔗<class_AnimationNodeOneShot_property_autorestart_random_delay>`
 
 .. rst-class:: classref-property-setget
 
@@ -248,7 +248,7 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **break_loop_at_end** = ``false``
+:ref:`bool<class_bool>` **break_loop_at_end** = ``false`` :ref:`🔗<class_AnimationNodeOneShot_property_break_loop_at_end>`
 
 .. rst-class:: classref-property-setget
 
@@ -265,14 +265,14 @@ If ``true``, breaks the loop at the end of the loop cycle for transition, even i
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **fadein_curve**
+:ref:`Curve<class_Curve>` **fadein_curve** :ref:`🔗<class_AnimationNodeOneShot_property_fadein_curve>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_fadein_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_fadein_curve**\ (\ )
 
-Determines how cross-fading between animations is eased. If empty, the transition will be linear.
+Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -282,7 +282,7 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fadein_time** = ``0.0``
+:ref:`float<class_float>` **fadein_time** = ``0.0`` :ref:`🔗<class_AnimationNodeOneShot_property_fadein_time>`
 
 .. rst-class:: classref-property-setget
 
@@ -301,14 +301,14 @@ The fade-in duration. For example, setting this to ``1.0`` for a 5 second length
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **fadeout_curve**
+:ref:`Curve<class_Curve>` **fadeout_curve** :ref:`🔗<class_AnimationNodeOneShot_property_fadeout_curve>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_fadeout_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_fadeout_curve**\ (\ )
 
-Determines how cross-fading between animations is eased. If empty, the transition will be linear.
+Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -318,7 +318,7 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fadeout_time** = ``0.0``
+:ref:`float<class_float>` **fadeout_time** = ``0.0`` :ref:`🔗<class_AnimationNodeOneShot_property_fadeout_time>`
 
 .. rst-class:: classref-property-setget
 
@@ -337,7 +337,7 @@ The fade-out duration. For example, setting this to ``1.0`` for a 5 second lengt
 
 .. rst-class:: classref-property
 
-:ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **mix_mode** = ``0``
+:ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **mix_mode** = ``0`` :ref:`🔗<class_AnimationNodeOneShot_property_mix_mode>`
 
 .. rst-class:: classref-property-setget
 
