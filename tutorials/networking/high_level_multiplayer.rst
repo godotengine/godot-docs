@@ -670,3 +670,45 @@ a dedicated server with no GPU available. See
     server. You'll have to modify them so the server isn't considered to be a
     player. You'll also have to modify the game starting mechanism so that the
     first player who joins can start the game.
+
+Authentication
+--------------
+
+Before hosting your game online to a public audience, you may want to consider adding authentication and protecting your RPCs against unauthenticated access.
+For this you can use the :ref:`SceneMultiplayer <class_SceneMultiplayer>`'s builtin authentication mechanism.
+
+On the server:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # after multiplayer.multiplayer_peer = peer
+    multiplayer.auth_timout = 3
+    multiplayer.auth_callback = func(peer_id: int, payload: PackedByteArray):
+        var auth_data: Dictionary = JSON.parse_string(payload.get_string_from_utf8())
+        # your authentication logic goes here...
+
+        # signal to the MultiplayerAPI that the authentication was successful
+        if authentication_successful:
+            multiplayer.complete_auth(peer_id)
+
+On the client:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # after multiplayer.multiplayer_peer = peer
+    multiplayer.auth_callback = func:
+        # we have to set this on the client in order for the peer_authenticating signal to fire
+        pass
+    multiplayer.peer_authenticating.connect(func(peer_id: int):
+        var auth_data = {
+            "username": "username",
+            "password": "password",
+        }
+        multiplayer.send_auth(1, JSON.stringify(auth_data).to_utf8_buffer())
+
+        # signal to the MultiplayerAPI that the authentication was successful
+        multiplayer.complete_auth(peer_id)
+
+As soon as both, the client's and the the server's :ref:`complete_auth() <class_SceneMultiplayer_method_complete_auth>`, have been called, the connection is considered to be established and the `connected_to_server` and `peer_connected` signals fire.
