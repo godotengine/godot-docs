@@ -237,6 +237,8 @@ Several compiler optimization levels can be chosen from:
   optimizations available.
 - ``optimize=size`` *(default when targeting the Web platform)*: Favors small
   binaries at the cost of slower execution speed.
+- ``optimize=size_extra``: Favors even smaller binaries, at the cost of even
+  slower execution speed compared to ``optimize=size``.
 - ``optimize=debug``: Only enables optimizations that do not impact debugging in
   any way. This results in faster binaries than ``optimize=none``, but slower
   binaries than ``optimize=speed_trace``.

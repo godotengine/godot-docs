@@ -89,6 +89,12 @@ To enable this, set the ``optimize`` flag to ``size``:
 
 Some platforms such as WebAssembly already use this mode by default.
 
+Godot 4.5 introduced the ``size_extra`` option, which can further reduce size.
+
+::
+
+    scons target=template_release optimize=size_extra
+
 Disabling advanced text server
 ------------------------------
 
