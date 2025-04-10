@@ -202,7 +202,7 @@ We got a random position, now we need a ``random_speed``. ``randi_range()`` will
         // ...
 
         // We calculate a random speed (integer).
-        int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
+        int randomSpeed = (int)GD.RandRange(MinSpeed, MaxSpeed);
         // We calculate a forward velocity that represents the speed.
         Velocity = Vector3.Forward * randomSpeed;
         // We then rotate the velocity vector based on the mob's Y rotation
@@ -316,7 +316,7 @@ Here is the complete ``mob.gd`` script for reference.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
             // We calculate a random speed (integer).
-            int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
+            int randomSpeed = (int)GD.RandRange(MinSpeed, MaxSpeed);
             // We calculate a forward velocity that represents the speed.
             Velocity = Vector3.Forward * randomSpeed;
             // We then rotate the velocity vector based on the mob's Y rotation
