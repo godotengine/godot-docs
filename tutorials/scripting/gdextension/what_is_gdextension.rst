@@ -22,11 +22,6 @@ run C or C++ code in a Godot project.
 They also both allow you to integrate third-party libraries into Godot. The one
 you should choose depends on your needs.
 
-.. warning::
-
-    GDExtension is currently *experimental*, which means that we may
-    break compatibility in order to fix major bugs or include critical features.
-
 Advantages of GDExtension
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -107,7 +102,7 @@ The bindings below are developed and maintained by the community:
 Version compatibility
 ---------------------
 
-Usually, GDExtensions targeting an earlier version of Godot will work in later
+GDExtensions targeting an earlier version of Godot should work in later
 minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
 should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
 
@@ -115,10 +110,8 @@ For this reason, when creating GDExtensions, you may want to target the lowest v
 Godot that has the features you need, *not* the most recent version of Godot. This can
 save you from needing to create multiple builds for different versions of Godot.
 
-However, GDExtension is currently *experimental*, which means that we may
-break compatibility in order to fix major bugs or include critical features.
-For example, GDExtensions created for Godot 4.0 aren't compatible with Godot
-4.1 (see :ref:`updating_your_gdextension_for_godot_4_1`).
+There is one exception to this: extensions targeting Godot 4.0 will _not_ work with
+Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
 GDExtensions are also only compatible with engine builds that use the same
 level of floating-point precision the extension was compiled for. This means
