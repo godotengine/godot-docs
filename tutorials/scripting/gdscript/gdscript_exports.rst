@@ -475,7 +475,7 @@ For example, this exposes the ``altitude`` property with no range limits but a
 
 ::
 
-    @export_custom(PROPERTY_HINT_NONE, "altitude:m") var altitude: Vector3
+    @export_custom(PROPERTY_HINT_NONE, "suffix:m") var altitude: float
 
 The above is normally not feasible with the standard ``@export_range`` syntax,
 since it requires defining a range.
