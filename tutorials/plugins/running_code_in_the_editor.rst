@@ -246,8 +246,7 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
     Code from other nodes doesn't run in the editor. Your access to other nodes
     is limited. You can access the tree and nodes, and their default properties,
     but you can't access user variables. If you want to do so, other nodes have
-    to run in the editor too. Autoload nodes cannot be accessed in the editor at
-    all.
+    to run in the editor too.
 
 Getting notified when resources change
 --------------------------------------
