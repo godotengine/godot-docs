@@ -33,7 +33,9 @@ The ``dev_build`` parameter ensures the debug symbols are included, allowing to 
 
 - Open the generated ``godot.sln`` in Rider.
 
-.. note:: Ensure that the appropriate Solution configuration is selected on the Rider toolbar. It affects resolve of the SDKs, code analysis, build, run, etc.
+.. note:: Ensure that the appropriate Solution configuration is selected on the
+          Rider toolbar. It affects resolve of the SDKs, code analysis, build, run,
+          etc.
 
 Compiling and debugging the project
 -----------------------------------
