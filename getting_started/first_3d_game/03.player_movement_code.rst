@@ -143,7 +143,7 @@ call its ``normalized()`` method.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   #func _physics_process(delta):
+   func _physics_process(delta):
        #...
 
        if direction != Vector3.ZERO:
