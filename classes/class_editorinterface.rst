@@ -100,6 +100,8 @@ Methods
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`EditorInspector<class_EditorInspector>`                  | :ref:`get_inspector<class_EditorInterface_method_get_inspector>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\]           | :ref:`get_open_scene_roots<class_EditorInterface_method_get_open_scene_roots>`\ (\ ) |const|                                                                                                                                                                                                                                                                                   |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`              | :ref:`get_open_scenes<class_EditorInterface_method_get_open_scenes>`\ (\ ) |const|                                                                                                                                                                                                                                                                                             |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                    | :ref:`get_playing_scene<class_EditorInterface_method_get_playing_scene>`\ (\ ) |const|                                                                                                                                                                                                                                                                                         |
@@ -373,7 +375,7 @@ Returns the :ref:`EditorPaths<class_EditorPaths>` singleton.
 
 Returns the actual scale of the editor UI (``1.0`` being 100% scale). This can be used to adjust position and dimensions of the UI added by plugins.
 
-\ **Note:** This value is set via the ``interface/editor/display_scale`` and ``interface/editor/custom_display_scale`` editor settings. Editor must be restarted for changes to be properly applied.
+\ **Note:** This value is set via the :ref:`EditorSettings.interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>` and :ref:`EditorSettings.interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>` settings. The editor must be restarted for changes to be properly applied.
 
 .. rst-class:: classref-item-separator
 
@@ -481,13 +483,25 @@ Returns the editor's :ref:`EditorInspector<class_EditorInspector>` instance.
 
 ----
 
+.. _class_EditorInterface_method_get_open_scene_roots:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_open_scene_roots**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_open_scene_roots>`
+
+Returns an array with references to the root nodes of the currently opened scenes.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorInterface_method_get_open_scenes:
 
 .. rst-class:: classref-method
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_open_scenes**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_open_scenes>`
 
-Returns an :ref:`Array<class_Array>` with the file paths of the currently opened scenes.
+Returns an array with the file paths of the currently opened scenes.
 
 .. rst-class:: classref-item-separator
 
@@ -943,7 +957,7 @@ A feature profile can be created programmatically using the :ref:`EditorFeatureP
 
 |void| **set_main_screen_editor**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_set_main_screen_editor>`
 
-Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the title of the tab in question exactly (e.g. ``2D``, ``3D``, ``Script``, or ``AssetLib`` for default tabs).
+Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the title of the tab in question exactly (e.g. ``2D``, ``3D``, ``Script``, ``Game``, or ``AssetLib`` for default tabs).
 
 .. rst-class:: classref-item-separator
 

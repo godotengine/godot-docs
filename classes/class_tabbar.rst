@@ -32,6 +32,8 @@ Properties
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`clip_tabs<class_TabBar_property_clip_tabs>`                                 | ``true``                                                            |
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`close_with_middle_mouse<class_TabBar_property_close_with_middle_mouse>`     | ``true``                                                            |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                 | :ref:`current_tab<class_TabBar_property_current_tab>`                             | ``-1``                                                              |
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`deselect_enabled<class_TabBar_property_deselect_enabled>`                   | ``false``                                                           |
@@ -158,6 +160,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`outline_size<class_TabBar_theme_constant_outline_size>`                | ``0``                               |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`tab_separation<class_TabBar_theme_constant_tab_separation>`            | ``0``                               |
+   +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Font<class_Font>`           | :ref:`font<class_TabBar_theme_font_font>`                                    |                                     |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`font_size<class_TabBar_theme_font_size_font_size>`                     |                                     |
@@ -252,7 +256,7 @@ Emitted when a tab is clicked, even if it is the current tab.
 
 **tab_close_pressed**\ (\ tab\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TabBar_signal_tab_close_pressed>`
 
-Emitted when a tab's close button is pressed.
+Emitted when a tab's close button is pressed or when middle-clicking on a tab, if :ref:`close_with_middle_mouse<class_TabBar_property_close_with_middle_mouse>` is enabled.
 
 \ **Note:** Tabs are not removed automatically once the close button is pressed, this behavior needs to be programmed manually. For example:
 
@@ -415,6 +419,23 @@ Property Descriptions
 - :ref:`bool<class_bool>` **get_clip_tabs**\ (\ )
 
 If ``true``, tabs overflowing this node's width will be hidden, displaying two navigation buttons instead. Otherwise, this node's minimum size is updated so that all tabs are visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_property_close_with_middle_mouse:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **close_with_middle_mouse** = ``true`` :ref:`🔗<class_TabBar_property_close_with_middle_mouse>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_close_with_middle_mouse**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_close_with_middle_mouse**\ (\ )
+
+If ``true``, middle clicking on the mouse will fire the :ref:`tab_close_pressed<class_TabBar_signal_tab_close_pressed>` signal.
 
 .. rst-class:: classref-item-separator
 
@@ -1110,6 +1131,18 @@ The maximum allowed width of the tab's icon. This limit is applied on top of the
 The size of the tab text outline.
 
 \ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_TabBar_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_constant_tab_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **tab_separation** = ``0`` :ref:`🔗<class_TabBar_theme_constant_tab_separation>`
+
+The space between tabs in the tab bar.
 
 .. rst-class:: classref-item-separator
 

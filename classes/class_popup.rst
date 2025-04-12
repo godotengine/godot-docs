@@ -31,19 +31,25 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------+---------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | borderless    | ``true`` (overrides :ref:`Window<class_Window_property_borderless>`)    |
-   +-------------------------+---------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | popup_window  | ``true`` (overrides :ref:`Window<class_Window_property_popup_window>`)  |
-   +-------------------------+---------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | transient     | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)     |
-   +-------------------------+---------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | unresizable   | ``true`` (overrides :ref:`Window<class_Window_property_unresizable>`)   |
-   +-------------------------+---------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | visible       | ``false`` (overrides :ref:`Window<class_Window_property_visible>`)      |
-   +-------------------------+---------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | wrap_controls | ``true`` (overrides :ref:`Window<class_Window_property_wrap_controls>`) |
-   +-------------------------+---------------+-------------------------------------------------------------------------+
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | borderless        | ``true`` (overrides :ref:`Window<class_Window_property_borderless>`)        |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | maximize_disabled | ``true`` (overrides :ref:`Window<class_Window_property_maximize_disabled>`) |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | minimize_disabled | ``true`` (overrides :ref:`Window<class_Window_property_minimize_disabled>`) |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | popup_window      | ``true`` (overrides :ref:`Window<class_Window_property_popup_window>`)      |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | popup_wm_hint     | ``true`` (overrides :ref:`Window<class_Window_property_popup_wm_hint>`)     |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | transient         | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)         |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | unresizable       | ``true`` (overrides :ref:`Window<class_Window_property_unresizable>`)       |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | visible           | ``false`` (overrides :ref:`Window<class_Window_property_visible>`)          |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | wrap_controls     | ``true`` (overrides :ref:`Window<class_Window_property_wrap_controls>`)     |
+   +-------------------------+-------------------+-----------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 

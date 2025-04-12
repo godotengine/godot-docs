@@ -859,7 +859,20 @@ Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) al
 
 |void| **sort**\ (\ ) :ref:`🔗<class_Dictionary_method_sort>`
 
-Sorts the dictionary in-place by key. This can be used to ensure dictionaries with the same contents produce equivalent results when getting the :ref:`keys()<class_Dictionary_method_keys>`, getting the :ref:`values()<class_Dictionary_method_values>`, and converting to a string. This is also useful when wanting a JSON representation consistent with what is in memory, and useful for storing on a database that requires dictionaries to be sorted.
+Sorts the dictionary in ascending order, by key. The final order is dependent on the "less than" (``<``) comparison between keys.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var numbers = { "c": 2, "a": 0, "b": 1 }
+    numbers.sort()
+    print(numbers) # Prints { "a": 0, "b": 1, "c": 2 }
+
+
+
+This method ensures that the dictionary's entries are ordered consistently when :ref:`keys()<class_Dictionary_method_keys>` or :ref:`values()<class_Dictionary_method_values>` are called, or when the dictionary needs to be converted to a string through :ref:`@GlobalScope.str()<class_@GlobalScope_method_str>` or :ref:`JSON.stringify()<class_JSON_method_stringify>`.
 
 .. rst-class:: classref-item-separator
 

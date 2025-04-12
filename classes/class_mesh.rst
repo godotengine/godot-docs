@@ -573,7 +573,7 @@ Flag used to mark that the array contains 2D vertices.
 
 :ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FLAG_USE_DYNAMIC_UPDATE** = ``67108864``
 
-Flag indices that the mesh data will use ``GL_DYNAMIC_DRAW`` on GLES. Unused on Vulkan.
+Flag used to mark that the mesh data will use ``GL_DYNAMIC_DRAW`` on GLES. Unused on Vulkan.
 
 .. _class_Mesh_constant_ARRAY_FLAG_USE_8_BONE_WEIGHTS:
 

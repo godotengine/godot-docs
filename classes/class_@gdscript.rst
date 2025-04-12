@@ -1089,7 +1089,7 @@ Starting from ``_ready()``, ``bar()`` would print:
 
 **Deprecated:** Consider using :ref:`JSON.from_native()<class_JSON_method_from_native>` or :ref:`Object.get_property_list()<class_Object_method_get_property_list>` instead.
 
-Returns the passed ``instance`` converted to a Dictionary. Can be useful for serializing.
+Returns the passed ``instance`` converted to a :ref:`Dictionary<class_Dictionary>`. Can be useful for serializing.
 
 ::
 
@@ -1128,7 +1128,7 @@ Returns ``true`` if ``value`` is an instance of ``type``. The ``type`` value mus
 
 - A :ref:`Script<class_Script>` (you can use any class, including inner one).
 
-Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays). Use the operator instead of this method if you do not need dynamic type checking.
+Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays). Use the operator instead of this method if you do not need to check the type dynamically.
 
 \ **Examples:**\ 
 

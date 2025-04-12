@@ -106,7 +106,7 @@ Property Descriptions
 - |void| **set_camera**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_camera**\ (\ )
 
-If this glTF node is a camera, the index of the :ref:`GLTFCamera<class_GLTFCamera>` in the :ref:`GLTFState<class_GLTFState>` that describes the camera's properties. If -1, this node is not a camera.
+If this glTF node is a camera, the index of the :ref:`GLTFCamera<class_GLTFCamera>` in the :ref:`GLTFState<class_GLTFState>` that describes the camera's properties. If ``-1``, this node is not a camera.
 
 .. rst-class:: classref-item-separator
 

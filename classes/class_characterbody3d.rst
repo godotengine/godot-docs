@@ -302,7 +302,7 @@ If ``false``, the body will slide on floor's slopes when :ref:`velocity<class_Ch
 - |void| **set_max_slides**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_max_slides**\ (\ )
 
-Maximum number of times the body can change direction before it stops when calling :ref:`move_and_slide()<class_CharacterBody3D_method_move_and_slide>`.
+Maximum number of times the body can change direction before it stops when calling :ref:`move_and_slide()<class_CharacterBody3D_method_move_and_slide>`. Must be greater than zero.
 
 .. rst-class:: classref-item-separator
 
@@ -461,7 +461,7 @@ Current velocity vector (typically meters per second), used and modified during 
 - |void| **set_wall_min_slide_angle**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_wall_min_slide_angle**\ (\ )
 
-Minimum angle (in radians) where the body is allowed to slide when it encounters a slope. The default value equals 15 degrees. When :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>` is :ref:`MOTION_MODE_GROUNDED<class_CharacterBody3D_constant_MOTION_MODE_GROUNDED>`, it only affects movement if :ref:`floor_block_on_wall<class_CharacterBody3D_property_floor_block_on_wall>` is ``true``.
+Minimum angle (in radians) where the body is allowed to slide when it encounters a wall. The default value equals 15 degrees. When :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>` is :ref:`MOTION_MODE_GROUNDED<class_CharacterBody3D_constant_MOTION_MODE_GROUNDED>`, it only affects movement if :ref:`floor_block_on_wall<class_CharacterBody3D_property_floor_block_on_wall>` is ``true``.
 
 .. rst-class:: classref-section-separator
 

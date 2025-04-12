@@ -111,7 +111,11 @@ The angular velocity of the physics body, in radians per second. This is only us
 - |void| **set_body_type**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_body_type**\ (\ )
 
-The type of the body. When importing, this controls what type of :ref:`CollisionObject3D<class_CollisionObject3D>` node Godot should generate. Valid values are "static", "animatable", "character", "rigid", "vehicle", and "trigger". When exporting, this will be squashed down to one of "static", "kinematic", or "dynamic" motion types, or the "trigger" property.
+The type of the body.
+
+When importing, this controls what type of :ref:`CollisionObject3D<class_CollisionObject3D>` node Godot should generate. Valid values are ``"static"``, ``"animatable"``, ``"character"``, ``"rigid"``, ``"vehicle"``, and ``"trigger"``.
+
+When exporting, this will be squashed down to one of ``"static"``, ``"kinematic"``, or ``"dynamic"`` motion types, or the ``"trigger"`` property.
 
 .. rst-class:: classref-item-separator
 

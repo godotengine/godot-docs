@@ -269,7 +269,7 @@ Property Descriptions
 - |void| **set_accessor_type**\ (\ value\: :ref:`GLTFAccessorType<enum_GLTFAccessor_GLTFAccessorType>`\ )
 - :ref:`GLTFAccessorType<enum_GLTFAccessor_GLTFAccessorType>` **get_accessor_type**\ (\ )
 
-The glTF accessor type as an enum. Possible values are 0 for "SCALAR", 1 for "VEC2", 2 for "VEC3", 3 for "VEC4", 4 for "MAT2", 5 for "MAT3", and 6 for "MAT4".
+The glTF accessor type, as an enum.
 
 .. rst-class:: classref-item-separator
 
@@ -513,7 +513,7 @@ The offset relative to the start of the bufferView in bytes.
 
 **Deprecated:** Use :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>` instead.
 
-The glTF accessor type as an enum. Use :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>` instead.
+The glTF accessor type, as an :ref:`int<class_int>`. Possible values are ``0`` for "SCALAR", ``1`` for "VEC2", ``2`` for "VEC3", ``3`` for "VEC4", ``4`` for "MAT2", ``5`` for "MAT3", and ``6`` for "MAT4".
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

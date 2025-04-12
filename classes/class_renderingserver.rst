@@ -363,6 +363,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_fog<class_RenderingServer_method_environment_set_fog>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, light_color\: :ref:`Color<class_Color>`, light_energy\: :ref:`float<class_float>`, sun_scatter\: :ref:`float<class_float>`, density\: :ref:`float<class_float>`, height\: :ref:`float<class_float>`, height_density\: :ref:`float<class_float>`, aerial_perspective\: :ref:`float<class_float>`, sky_affect\: :ref:`float<class_float>`, fog_mode\: :ref:`EnvironmentFogMode<enum_RenderingServer_EnvironmentFogMode>` = 0\ )                                                                                                                           |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`environment_set_fog_depth<class_RenderingServer_method_environment_set_fog_depth>`\ (\ env\: :ref:`RID<class_RID>`, curve\: :ref:`float<class_float>`, begin\: :ref:`float<class_float>`, end\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_glow<class_RenderingServer_method_environment_set_glow>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, levels\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`, intensity\: :ref:`float<class_float>`, strength\: :ref:`float<class_float>`, mix\: :ref:`float<class_float>`, bloom_threshold\: :ref:`float<class_float>`, blend_mode\: :ref:`EnvironmentGlowBlendMode<enum_RenderingServer_EnvironmentGlowBlendMode>`, hdr_bleed_threshold\: :ref:`float<class_float>`, hdr_bleed_scale\: :ref:`float<class_float>`, hdr_luminance_cap\: :ref:`float<class_float>`, glow_map_strength\: :ref:`float<class_float>`, glow_map\: :ref:`RID<class_RID>`\ ) |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_sdfgi<class_RenderingServer_method_environment_set_sdfgi>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, cascades\: :ref:`int<class_int>`, min_cell_size\: :ref:`float<class_float>`, y_scale\: :ref:`EnvironmentSDFGIYScale<enum_RenderingServer_EnvironmentSDFGIYScale>`, use_occlusion\: :ref:`bool<class_bool>`, bounce_feedback\: :ref:`float<class_float>`, read_sky\: :ref:`bool<class_bool>`, energy\: :ref:`float<class_float>`, normal_bias\: :ref:`float<class_float>`, probe_bias\: :ref:`float<class_float>`\ )                                                                                                                                 |
@@ -1720,7 +1722,7 @@ Flag used to mark that the array contains 2D vertices.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_USE_DYNAMIC_UPDATE** = ``67108864``
 
-Flag indices that the mesh data will use ``GL_DYNAMIC_DRAW`` on GLES. Unused on Vulkan.
+Flag used to mark that the mesh data will use ``GL_DYNAMIC_DRAW`` on GLES. Unused on Vulkan.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_USE_8_BONE_WEIGHTS:
 
@@ -2158,7 +2160,7 @@ Normal bias used to offset shadow lookup by object normal. Can be used to fix se
 
 :ref:`LightParam<enum_RenderingServer_LightParam>` **LIGHT_PARAM_SHADOW_BIAS** = ``15``
 
-Bias the shadow lookup to fix self-shadowing artifacts.
+Bias for the shadow lookup to fix self-shadowing artifacts.
 
 .. _class_RenderingServer_constant_LIGHT_PARAM_SHADOW_PANCAKE_SIZE:
 
@@ -2994,7 +2996,7 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_FSR** = ``1``
 
-Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_FSR2:
 
@@ -3002,7 +3004,7 @@ Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. 
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_FSR2** = ``2``
 
-Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR2. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use FSR2 at native resolution as a TAA solution.
+Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in the viewport being upscaled using FSR2. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use FSR2 at native resolution as a TAA solution.
 
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_METALFX_SPATIAL:
 
@@ -3010,7 +3012,7 @@ Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. 
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_METALFX_SPATIAL** = ``3``
 
-Use MetalFX spatial upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+Use MetalFX spatial upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
 \ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
 
@@ -3020,7 +3022,7 @@ Use MetalFX spatial upscaling for the viewport's 3D buffer. The amount of scalin
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_METALFX_TEMPORAL** = ``4``
 
-Use MetalFX temporal upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use MetalFX at native resolution as a TAA solution.
+Use MetalFX temporal upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use MetalFX at native resolution as a TAA solution.
 
 \ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
 
@@ -3544,6 +3546,8 @@ Objects are displayed without light information.
 
 Objects are displayed with only light information.
 
+\ **Note:** When using this debug draw mode, custom shaders are ignored since all materials in the scene temporarily use a debug material. This means the result from custom shader functions (such as vertex displacement) won't be visible anymore when using this debug draw mode.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_OVERDRAW:
 
 .. rst-class:: classref-enumeration-constant
@@ -3552,7 +3556,7 @@ Objects are displayed with only light information.
 
 Objects are displayed semi-transparent with additive blending so you can see where they are drawing over top of one another. A higher overdraw (represented by brighter colors) means you are wasting performance on drawing pixels that are being hidden behind others.
 
-\ **Note:** When using this debug draw mode, custom shaders will be ignored. This means vertex displacement won't be visible anymore.
+\ **Note:** When using this debug draw mode, custom shaders are ignored since all materials in the scene temporarily use a debug material. This means the result from custom shader functions (such as vertex displacement) won't be visible anymore when using this debug draw mode.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_WIREFRAME:
 
@@ -3578,7 +3582,9 @@ Normal buffer is drawn instead of regular scene so you can see the per-pixel nor
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_VOXEL_GI_ALBEDO** = ``6``
 
-Objects are displayed with only the albedo value from :ref:`VoxelGI<class_VoxelGI>`\ s.
+Objects are displayed with only the albedo value from :ref:`VoxelGI<class_VoxelGI>`\ s. Requires at least one visible :ref:`VoxelGI<class_VoxelGI>` node that has been baked to have a visible effect.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_VOXEL_GI_LIGHTING:
 
@@ -3586,7 +3592,9 @@ Objects are displayed with only the albedo value from :ref:`VoxelGI<class_VoxelG
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_VOXEL_GI_LIGHTING** = ``7``
 
-Objects are displayed with only the lighting value from :ref:`VoxelGI<class_VoxelGI>`\ s.
+Objects are displayed with only the lighting value from :ref:`VoxelGI<class_VoxelGI>`\ s. Requires at least one visible :ref:`VoxelGI<class_VoxelGI>` node that has been baked to have a visible effect.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_VOXEL_GI_EMISSION:
 
@@ -3594,7 +3602,9 @@ Objects are displayed with only the lighting value from :ref:`VoxelGI<class_Voxe
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_VOXEL_GI_EMISSION** = ``8``
 
-Objects are displayed with only the emission color from :ref:`VoxelGI<class_VoxelGI>`\ s.
+Objects are displayed with only the emission color from :ref:`VoxelGI<class_VoxelGI>`\ s. Requires at least one visible :ref:`VoxelGI<class_VoxelGI>` node that has been baked to have a visible effect.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SHADOW_ATLAS:
 
@@ -3624,6 +3634,8 @@ The last cascade shows all frustum slices to illustrate the coverage of all slic
 
 Draws the estimated scene luminance. This is a 1×1 texture that is generated when autoexposure is enabled to control the scene's exposure.
 
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SSAO:
 
 .. rst-class:: classref-enumeration-constant
@@ -3631,6 +3643,8 @@ Draws the estimated scene luminance. This is a 1×1 texture that is generated wh
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_SSAO** = ``12``
 
 Draws the screen space ambient occlusion texture instead of the scene so that you can clearly see how it is affecting objects. In order for this display mode to work, you must have :ref:`Environment.ssao_enabled<class_Environment_property_ssao_enabled>` set in your :ref:`WorldEnvironment<class_WorldEnvironment>`.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SSIL:
 
@@ -3640,13 +3654,19 @@ Draws the screen space ambient occlusion texture instead of the scene so that yo
 
 Draws the screen space indirect lighting texture instead of the scene so that you can clearly see how it is affecting objects. In order for this display mode to work, you must have :ref:`Environment.ssil_enabled<class_Environment_property_ssil_enabled>` set in your :ref:`WorldEnvironment<class_WorldEnvironment>`.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_PSSM_SPLITS:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_PSSM_SPLITS** = ``14``
 
-Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s in the scene a different color so you can see where the splits are. In order they will be colored red, green, blue, yellow.
+Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s in the scene a different color so you can see where the splits are. In order (from closest to furthest from the camera), they are colored red, green, blue, and yellow.
+
+\ **Note:** When using this debug draw mode, custom shaders are ignored since all materials in the scene temporarily use a debug material. This means the result from custom shader functions (such as vertex displacement) won't be visible anymore when using this debug draw mode.
+
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_DECAL_ATLAS:
 
@@ -3656,6 +3676,8 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 Draws the decal atlas that stores decal textures from :ref:`Decal<class_Decal>`\ s.
 
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SDFGI:
 
 .. rst-class:: classref-enumeration-constant
@@ -3663,6 +3685,8 @@ Draws the decal atlas that stores decal textures from :ref:`Decal<class_Decal>`\
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_SDFGI** = ``16``
 
 Draws SDFGI cascade data. This is the data structure that is used to bounce lighting against and create reflections.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SDFGI_PROBES:
 
@@ -3672,13 +3696,17 @@ Draws SDFGI cascade data. This is the data structure that is used to bounce ligh
 
 Draws SDFGI probe data. This is the data structure that is used to give indirect lighting dynamic objects moving within the scene.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_GI_BUFFER:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_GI_BUFFER** = ``18``
 
-Draws the global illumination buffer (:ref:`VoxelGI<class_VoxelGI>` or SDFGI).
+Draws the global illumination buffer from :ref:`VoxelGI<class_VoxelGI>` or SDFGI. Requires :ref:`VoxelGI<class_VoxelGI>` (at least one visible baked VoxelGI node) or SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) to be enabled to have a visible effect.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_DISABLE_LOD:
 
@@ -3696,6 +3724,8 @@ Disable mesh LOD. All meshes are drawn with full detail, which can be used to co
 
 Draws the :ref:`OmniLight3D<class_OmniLight3D>` cluster. Clustering determines where lights are positioned in screen-space, which allows the engine to only process these portions of the screen for lighting.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_CLUSTER_SPOT_LIGHTS:
 
 .. rst-class:: classref-enumeration-constant
@@ -3703,6 +3733,8 @@ Draws the :ref:`OmniLight3D<class_OmniLight3D>` cluster. Clustering determines w
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_CLUSTER_SPOT_LIGHTS** = ``21``
 
 Draws the :ref:`SpotLight3D<class_SpotLight3D>` cluster. Clustering determines where lights are positioned in screen-space, which allows the engine to only process these portions of the screen for lighting.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_CLUSTER_DECALS:
 
@@ -3712,6 +3744,8 @@ Draws the :ref:`SpotLight3D<class_SpotLight3D>` cluster. Clustering determines w
 
 Draws the :ref:`Decal<class_Decal>` cluster. Clustering determines where decals are positioned in screen-space, which allows the engine to only process these portions of the screen for decals.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_CLUSTER_REFLECTION_PROBES:
 
 .. rst-class:: classref-enumeration-constant
@@ -3719,6 +3753,8 @@ Draws the :ref:`Decal<class_Decal>` cluster. Clustering determines where decals 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = ``23``
 
 Draws the :ref:`ReflectionProbe<class_ReflectionProbe>` cluster. Clustering determines where reflection probes are positioned in screen-space, which allows the engine to only process these portions of the screen for reflection probes.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_OCCLUDERS:
 
@@ -3728,6 +3764,8 @@ Draws the :ref:`ReflectionProbe<class_ReflectionProbe>` cluster. Clustering dete
 
 Draws the occlusion culling buffer. This low-resolution occlusion culling buffer is rasterized on the CPU and is used to check whether instances are occluded by other objects.
 
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_MOTION_VECTORS:
 
 .. rst-class:: classref-enumeration-constant
@@ -3736,6 +3774,8 @@ Draws the occlusion culling buffer. This low-resolution occlusion culling buffer
 
 Draws the motion vectors buffer. This is used by temporal antialiasing to correct for motion that occurs during gameplay.
 
+\ **Note:** Only supported when using the Forward+ rendering method.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_INTERNAL_BUFFER:
 
 .. rst-class:: classref-enumeration-constant
@@ -3743,6 +3783,8 @@ Draws the motion vectors buffer. This is used by temporal antialiasing to correc
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_INTERNAL_BUFFER** = ``26``
 
 Internal buffer is drawn instead of regular scene so you can see the per-pixel output that will be used by post-processing effects.
+
+\ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
 
 .. rst-class:: classref-item-separator
 
@@ -7848,6 +7890,8 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 If ``enable`` is ``true``, enables bicubic upscaling for glow which improves quality at the cost of performance. Equivalent to :ref:`ProjectSettings.rendering/environment/glow/upscale_mode<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>`.
 
+\ **Note:** This setting is only effective when using the Forward+ or Mobile rendering methods, as Compatibility uses a different glow implementation.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -7943,6 +7987,18 @@ Sets the maximum layer to use if using Canvas background mode.
 |void| **environment_set_fog**\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, light_color\: :ref:`Color<class_Color>`, light_energy\: :ref:`float<class_float>`, sun_scatter\: :ref:`float<class_float>`, density\: :ref:`float<class_float>`, height\: :ref:`float<class_float>`, height_density\: :ref:`float<class_float>`, aerial_perspective\: :ref:`float<class_float>`, sky_affect\: :ref:`float<class_float>`, fog_mode\: :ref:`EnvironmentFogMode<enum_RenderingServer_EnvironmentFogMode>` = 0\ ) :ref:`🔗<class_RenderingServer_method_environment_set_fog>`
 
 Configures fog for the specified environment RID. See ``fog_*`` properties in :ref:`Environment<class_Environment>` for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_environment_set_fog_depth:
+
+.. rst-class:: classref-method
+
+|void| **environment_set_fog_depth**\ (\ env\: :ref:`RID<class_RID>`, curve\: :ref:`float<class_float>`, begin\: :ref:`float<class_float>`, end\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_environment_set_fog_depth>`
+
+Configures fog depth for the specified environment RID. Only has an effect when the fog mode of the environment is :ref:`ENV_FOG_MODE_DEPTH<class_RenderingServer_constant_ENV_FOG_MODE_DEPTH>`. See ``fog_depth_*`` properties in :ref:`Environment<class_Environment>` for more information.
 
 .. rst-class:: classref-item-separator
 

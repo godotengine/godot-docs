@@ -103,6 +103,10 @@ Methods
    +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                | :ref:`has_group<class_SceneTree_method_has_group>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                                     |
    +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`is_accessibility_enabled<class_SceneTree_method_is_accessibility_enabled>`\ (\ ) |const|                                                                                                                                                                   |
+   +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`is_accessibility_supported<class_SceneTree_method_is_accessibility_supported>`\ (\ ) |const|                                                                                                                                                               |
+   +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                 | :ref:`notify_group<class_SceneTree_method_notify_group>`\ (\ group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ )                                                                                                                |
    +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                 | :ref:`notify_group_flags<class_SceneTree_method_notify_group_flags>`\ (\ call_flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ )                                                                |
@@ -198,6 +202,25 @@ Emitted immediately before :ref:`Node._physics_process()<class_Node_private_meth
 **process_frame**\ (\ ) :ref:`🔗<class_SceneTree_signal_process_frame>`
 
 Emitted immediately before :ref:`Node._process()<class_Node_private_method__process>` is called on every node in this tree.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneTree_signal_scene_changed:
+
+.. rst-class:: classref-signal
+
+**scene_changed**\ (\ ) :ref:`🔗<class_SceneTree_signal_scene_changed>`
+
+Emitted after the new scene is added to scene tree and initialized. Can be used to reliably access :ref:`current_scene<class_SceneTree_property_current_scene>` when changing scenes.
+
+::
+
+    # This code should be inside an autoload.
+    get_tree().change_scene_to_file(other_scene_path)
+    await get_tree().scene_changed
+    print(get_tree().current_scene) # Prints the new scene.
 
 .. rst-class:: classref-item-separator
 
@@ -446,9 +469,11 @@ If ``true``, the scene tree is considered paused. This causes the following beha
 - |void| **set_physics_interpolation_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_physics_interpolation_enabled**\ (\ )
 
-If ``true``, the renderer will interpolate the transforms of physics objects between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames.
+If ``true``, the renderer will interpolate the transforms of objects (both physics and non-physics) between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames.
 
 The default value of this property is controlled by :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`.
+
+\ **Note:** Although this is a global setting, finer control of individual branches of the **SceneTree** is possible using :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -566,6 +591,8 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 2. At the end of the frame, the formerly current scene, already removed from the tree, will be deleted (freed from memory) and then the new scene will be instantiated and added to the tree. :ref:`Node.get_tree()<class_Node_method_get_tree>` and :ref:`current_scene<class_SceneTree_property_current_scene>` will be back to working as usual.
 
 This ensures that both scenes aren't running at the same time, while still freeing the previous scene in a safe way similar to :ref:`Node.queue_free()<class_Node_method_queue_free>`.
+
+If you want to reliably access the new scene, await the :ref:`scene_changed<class_SceneTree_signal_scene_changed>` signal.
 
 .. rst-class:: classref-item-separator
 
@@ -719,6 +746,30 @@ Returns an :ref:`Array<class_Array>` of currently existing :ref:`Tween<class_Twe
 :ref:`bool<class_bool>` **has_group**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_SceneTree_method_has_group>`
 
 Returns ``true`` if a node added to the given group ``name`` exists in the tree.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneTree_method_is_accessibility_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_accessibility_enabled**\ (\ ) |const| :ref:`🔗<class_SceneTree_method_is_accessibility_enabled>`
+
+Returns ``true`` if accessibility features are enabled, and accessibility information updates are actively processed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneTree_method_is_accessibility_supported:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_accessibility_supported**\ (\ ) |const| :ref:`🔗<class_SceneTree_method_is_accessibility_supported>`
+
+Returns ``true`` if accessibility features are supported by the OS and enabled in project settings.
 
 .. rst-class:: classref-item-separator
 

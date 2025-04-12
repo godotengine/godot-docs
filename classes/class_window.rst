@@ -66,7 +66,11 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`max_size<class_Window_property_max_size>`                                   | ``Vector2i(0, 0)``       |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`maximize_disabled<class_Window_property_maximize_disabled>`                 | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`min_size<class_Window_property_min_size>`                                   | ``Vector2i(0, 0)``       |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`minimize_disabled<class_Window_property_minimize_disabled>`                 | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Mode<enum_Window_Mode>`                                   | :ref:`mode<class_Window_property_mode>`                                           | ``0``                    |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
@@ -75,6 +79,8 @@ Properties
    | :ref:`PackedVector2Array<class_PackedVector2Array>`             | :ref:`mouse_passthrough_polygon<class_Window_property_mouse_passthrough_polygon>` | ``PackedVector2Array()`` |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`popup_window<class_Window_property_popup_window>`                           | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`popup_wm_hint<class_Window_property_popup_wm_hint>`                         | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`position<class_Window_property_position>`                                   | ``Vector2i(0, 0)``       |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
@@ -137,6 +143,8 @@ Methods
    | :ref:`Vector2<class_Vector2>`                       | :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>`\ (\ ) |const|                                                                                                                                                           |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`get_flag<class_Window_method_get_flag>`\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|                                                                                                                                                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Window<class_Window>`                         | :ref:`get_focused_window<class_Window_method_get_focused_window>`\ (\ ) |static|                                                                                                                                                                        |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`LayoutDirection<enum_Window_LayoutDirection>` | :ref:`get_layout_direction<class_Window_method_get_layout_direction>`\ (\ ) |const|                                                                                                                                                                     |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -340,7 +348,7 @@ This signal can be used to handle window closing, e.g. by connecting it to :ref:
 
 Emitted when the **Window**'s DPI changes as a result of OS-level changes (e.g. moving the window from a Retina display to a lower resolution one).
 
-\ **Note:** Only implemented on macOS.
+\ **Note:** Only implemented on macOS and Linux (Wayland).
 
 .. rst-class:: classref-item-separator
 
@@ -669,11 +677,39 @@ Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_ima
 
 \ **Note:** Setting this flag will **NOT** prevent other apps from capturing an image, it should not be used as a security measure.
 
+.. _class_Window_constant_FLAG_POPUP_WM_HINT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Window_Flags>` **FLAG_POPUP_WM_HINT** = ``10``
+
+Signals the window manager that this window is supposed to be an implementation-defined "popup" (usually a floating, borderless, untileable and immovable child window).
+
+.. _class_Window_constant_FLAG_MINIMIZE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Window_Flags>` **FLAG_MINIMIZE_DISABLED** = ``11``
+
+Window minimize button is disabled.
+
+\ **Note:** This flag is implemented on macOS and Windows.
+
+.. _class_Window_constant_FLAG_MAXIMIZE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Window_Flags>` **FLAG_MAXIMIZE_DISABLED** = ``12``
+
+Window maximize button is disabled.
+
+\ **Note:** This flag is implemented on macOS and Windows.
+
 .. _class_Window_constant_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Flags<enum_Window_Flags>` **FLAG_MAX** = ``10``
+:ref:`Flags<enum_Window_Flags>` **FLAG_MAX** = ``13``
 
 Max value of the :ref:`Flags<enum_Window_Flags>`.
 
@@ -1121,7 +1157,11 @@ The screen the window is currently on.
 - |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
 
-Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_image()<class_DisplayServer_method_screen_get_image>`, :ref:`DisplayServer.screen_get_image_rect()<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`DisplayServer.screen_get_pixel()<class_DisplayServer_method_screen_get_pixel>`.
+If ``true``, the **Window** is excluded from screenshots taken by :ref:`DisplayServer.screen_get_image()<class_DisplayServer_method_screen_get_image>`, :ref:`DisplayServer.screen_get_image_rect()<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`DisplayServer.screen_get_pixel()<class_DisplayServer_method_screen_get_pixel>`.
+
+\ **Note:** This property is implemented on macOS and Windows.
+
+\ **Note:** Enabling this setting does **NOT** prevent other apps from capturing an image. It should not be used as a security measure.
 
 .. rst-class:: classref-item-separator
 
@@ -1237,6 +1277,27 @@ If non-zero, the **Window** can't be resized to be bigger than this size.
 
 ----
 
+.. _class_Window_property_maximize_disabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **maximize_disabled** = ``false`` :ref:`🔗<class_Window_property_maximize_disabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
+
+If ``true``, the **Window**'s maximize button is disabled.
+
+\ **Note:** If both minimize and maximize buttons are disabled, buttons are fully hidden, and only close button is visible.
+
+\ **Note:** This property is implemented only on macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_property_min_size:
 
 .. rst-class:: classref-property
@@ -1251,6 +1312,27 @@ If non-zero, the **Window** can't be resized to be bigger than this size.
 If non-zero, the **Window** can't be resized to be smaller than this size.
 
 \ **Note:** This property will be ignored in favor of :ref:`get_contents_minimum_size()<class_Window_method_get_contents_minimum_size>` if :ref:`wrap_controls<class_Window_property_wrap_controls>` is enabled and if its size is bigger.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_minimize_disabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **minimize_disabled** = ``false`` :ref:`🔗<class_Window_property_minimize_disabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
+
+If ``true``, the **Window**'s minimize button is disabled.
+
+\ **Note:** If both minimize and maximize buttons are disabled, buttons are fully hidden, and only close button is visible.
+
+\ **Note:** This property is implemented only on macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -1364,6 +1446,23 @@ Passing an empty array will disable passthrough support (all mouse events will b
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
 
 If ``true``, the **Window** will be considered a popup. Popups are sub-windows that don't show as separate windows in system's window manager's window list and will send close request when anything is clicked outside of them (unless :ref:`exclusive<class_Window_property_exclusive>` is enabled).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_popup_wm_hint:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **popup_wm_hint** = ``false`` :ref:`🔗<class_Window_property_popup_wm_hint>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
+
+If ``true``, the **Window** will signal to the window manager that it is supposed to be an implementation-defined "popup" (usually a floating, borderless, untileable and immovable child window).
 
 .. rst-class:: classref-item-separator
 
@@ -1566,7 +1665,7 @@ If ``true``, the **Window** can't be focused nor interacted with. It can still b
 - |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
 
-If ``true``, the window can't be resized. Minimize and maximize buttons are disabled.
+If ``true``, the window can't be resized.
 
 .. rst-class:: classref-item-separator
 
@@ -1778,6 +1877,18 @@ The value returned by this method can be overridden with :ref:`_get_contents_min
 :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const| :ref:`🔗<class_Window_method_get_flag>`
 
 Returns ``true`` if the ``flag`` is set.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_get_focused_window:
+
+.. rst-class:: classref-method
+
+:ref:`Window<class_Window>` **get_focused_window**\ (\ ) |static| :ref:`🔗<class_Window_method_get_focused_window>`
+
+Returns the focused window.
 
 .. rst-class:: classref-item-separator
 
@@ -2183,7 +2294,7 @@ Returns ``true`` if the window is currently embedded in another window.
 
 :ref:`bool<class_bool>` **is_layout_rtl**\ (\ ) |const| :ref:`🔗<class_Window_method_is_layout_rtl>`
 
-Returns ``true`` if layout is right-to-left.
+Returns ``true`` if the layout is right-to-left.
 
 .. rst-class:: classref-item-separator
 

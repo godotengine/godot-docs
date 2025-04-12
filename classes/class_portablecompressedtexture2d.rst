@@ -152,6 +152,18 @@ enum **CompressionMode**: :ref:`🔗<enum_PortableCompressedTexture2D_Compressio
 
 
 
+.. _class_PortableCompressedTexture2D_constant_COMPRESSION_MODE_ASTC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionMode<enum_PortableCompressedTexture2D_CompressionMode>` **COMPRESSION_MODE_ASTC** = ``6``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
 .. rst-class:: classref-section-separator
 
 ----

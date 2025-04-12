@@ -62,35 +62,49 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>`                       | :ref:`auto_translate_mode<class_Node_property_auto_translate_mode>`               | ``0``     |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                                 | :ref:`editor_description<class_Node_property_editor_description>`                 | ``""``    |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`MultiplayerAPI<class_MultiplayerAPI>`                                 | :ref:`multiplayer<class_Node_property_multiplayer>`                               |           |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`StringName<class_StringName>`                                         | :ref:`name<class_Node_property_name>`                                             |           |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`Node<class_Node>`                                                     | :ref:`owner<class_Node_property_owner>`                                           |           |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>`         | :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>` | ``0``     |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`ProcessMode<enum_Node_ProcessMode>`                                   | :ref:`process_mode<class_Node_property_process_mode>`                             | ``0``     |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                                       | :ref:`process_physics_priority<class_Node_property_process_physics_priority>`     | ``0``     |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                                       | :ref:`process_priority<class_Node_property_process_priority>`                     | ``0``     |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>`                     | :ref:`process_thread_group<class_Node_property_process_thread_group>`             | ``0``     |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                                       | :ref:`process_thread_group_order<class_Node_property_process_thread_group_order>` |           |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | |bitfield|\[:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>`\] | :ref:`process_thread_messages<class_Node_property_process_thread_messages>`       |           |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                                 | :ref:`scene_file_path<class_Node_property_scene_file_path>`                       |           |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                                     | :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`             | ``false`` |
-   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]                | :ref:`accessibility_controls_nodes<class_Node_property_accessibility_controls_nodes>`         | ``[]``    |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]                | :ref:`accessibility_described_by_nodes<class_Node_property_accessibility_described_by_nodes>` | ``[]``    |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                                 | :ref:`accessibility_description<class_Node_property_accessibility_description>`               | ``""``    |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]                | :ref:`accessibility_flow_to_nodes<class_Node_property_accessibility_flow_to_nodes>`           | ``[]``    |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]                | :ref:`accessibility_labeled_by_nodes<class_Node_property_accessibility_labeled_by_nodes>`     | ``[]``    |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>`      | :ref:`accessibility_live<class_Node_property_accessibility_live>`                             | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                                 | :ref:`accessibility_name<class_Node_property_accessibility_name>`                             | ``""``    |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>`                       | :ref:`auto_translate_mode<class_Node_property_auto_translate_mode>`                           | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                                 | :ref:`editor_description<class_Node_property_editor_description>`                             | ``""``    |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`MultiplayerAPI<class_MultiplayerAPI>`                                 | :ref:`multiplayer<class_Node_property_multiplayer>`                                           |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`StringName<class_StringName>`                                         | :ref:`name<class_Node_property_name>`                                                         |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Node<class_Node>`                                                     | :ref:`owner<class_Node_property_owner>`                                                       |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>`         | :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`             | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`ProcessMode<enum_Node_ProcessMode>`                                   | :ref:`process_mode<class_Node_property_process_mode>`                                         | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                       | :ref:`process_physics_priority<class_Node_property_process_physics_priority>`                 | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                       | :ref:`process_priority<class_Node_property_process_priority>`                                 | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>`                     | :ref:`process_thread_group<class_Node_property_process_thread_group>`                         | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                       | :ref:`process_thread_group_order<class_Node_property_process_thread_group_order>`             |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | |bitfield|\[:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>`\] | :ref:`process_thread_messages<class_Node_property_process_thread_messages>`                   |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                                 | :ref:`scene_file_path<class_Node_property_scene_file_path>`                                   |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                     | :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`                         | ``false`` |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -105,7 +119,13 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_exit_tree<class_Node_private_method__exit_tree>`\ (\ ) |virtual|                                                                                                                                                                 |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_accessibility_configuration_warnings<class_Node_private_method__get_accessibility_configuration_warnings>`\ (\ ) |virtual| |const|                                                                                           |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`_get_accessibility_container_name<class_Node_private_method__get_accessibility_container_name>`\ (\ node\: :ref:`Node<class_Node>`\ ) |virtual| |const|                                                                           |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_configuration_warnings<class_Node_private_method__get_configuration_warnings>`\ (\ ) |virtual| |const|                                                                                                                       |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                            | :ref:`_get_focused_accessibility_element<class_Node_private_method__get_focused_accessibility_element>`\ (\ ) |virtual| |const|                                                                                                         |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_input<class_Node_private_method__input>`\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual|                                                                                                                            |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -146,6 +166,8 @@ Methods
    | :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\]             | :ref:`find_children<class_Node_method_find_children>`\ (\ pattern\: :ref:`String<class_String>`, type\: :ref:`String<class_String>` = "", recursive\: :ref:`bool<class_bool>` = true, owned\: :ref:`bool<class_bool>` = true\ ) |const| |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node<class_Node>`                                          | :ref:`find_parent<class_Node_method_find_parent>`\ (\ pattern\: :ref:`String<class_String>`\ ) |const|                                                                                                                                  |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                            | :ref:`get_accessibility_element<class_Node_method_get_accessibility_element>`\ (\ ) |const|                                                                                                                                             |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node<class_Node>`                                          | :ref:`get_child<class_Node_method_get_child>`\ (\ idx\: :ref:`int<class_int>`, include_internal\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                            |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -248,6 +270,8 @@ Methods
    | |void|                                                           | :ref:`propagate_call<class_Node_method_propagate_call>`\ (\ method\: :ref:`StringName<class_StringName>`, args\: :ref:`Array<class_Array>` = [], parent_first\: :ref:`bool<class_bool>` = false\ )                                      |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`propagate_notification<class_Node_method_propagate_notification>`\ (\ what\: :ref:`int<class_int>`\ )                                                                                                                             |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`queue_accessibility_update<class_Node_method_queue_accessibility_update>`\ (\ )                                                                                                                                                   |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`queue_free<class_Node_method_queue_free>`\ (\ )                                                                                                                                                                                   |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -624,7 +648,7 @@ enum **DuplicateFlags**: :ref:`🔗<enum_Node_DuplicateFlags>`
 
 :ref:`DuplicateFlags<enum_Node_DuplicateFlags>` **DUPLICATE_SIGNALS** = ``1``
 
-Duplicate the node's signal connections.
+Duplicate the node's signal connections that are connected with the :ref:`Object.CONNECT_PERSIST<class_Object_constant_CONNECT_PERSIST>` flag.
 
 .. _class_Node_constant_DUPLICATE_GROUPS:
 
@@ -1023,6 +1047,14 @@ Notification received when the mouse cursor enters the :ref:`Viewport<class_View
 
 Notification received when the mouse cursor leaves the :ref:`Viewport<class_Viewport>`'s visible area, that is not occluded behind other :ref:`Control<class_Control>`\ s or :ref:`Window<class_Window>`\ s, provided its :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is ``false`` and regardless if it's currently focused or not.
 
+.. _class_Node_constant_NOTIFICATION_WM_POSITION_CHANGED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_POSITION_CHANGED** = ``1012`` :ref:`🔗<class_Node_constant_NOTIFICATION_WM_POSITION_CHANGED>`
+
+Notification received when the window is moved.
+
 .. _class_Node_constant_NOTIFICATION_OS_MEMORY_WARNING:
 
 .. rst-class:: classref-constant
@@ -1131,6 +1163,22 @@ Implemented on desktop and mobile platforms.
 
 Notification received when the :ref:`TextServer<class_TextServer>` is changed.
 
+.. _class_Node_constant_NOTIFICATION_ACCESSIBILITY_UPDATE:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_ACCESSIBILITY_UPDATE** = ``3000`` :ref:`🔗<class_Node_constant_NOTIFICATION_ACCESSIBILITY_UPDATE>`
+
+Notification received when an accessibility information update is required.
+
+.. _class_Node_constant_NOTIFICATION_ACCESSIBILITY_INVALIDATE:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_ACCESSIBILITY_INVALIDATE** = ``3001`` :ref:`🔗<class_Node_constant_NOTIFICATION_ACCESSIBILITY_INVALIDATE>`
+
+Notification received when accessibility elements are invalidated. All node accessibility elements are automatically deleted after receiving this message, therefore all existing references to such elements should be discarded.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -1139,6 +1187,125 @@ Notification received when the :ref:`TextServer<class_TextServer>` is changed.
 
 Property Descriptions
 ---------------------
+
+.. _class_Node_property_accessibility_controls_nodes:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **accessibility_controls_nodes** = ``[]`` :ref:`🔗<class_Node_property_accessibility_controls_nodes>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_controls_nodes**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **get_accessibility_controls_nodes**\ (\ )
+
+The list of nodes which are controlled by this node.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_accessibility_described_by_nodes:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **accessibility_described_by_nodes** = ``[]`` :ref:`🔗<class_Node_property_accessibility_described_by_nodes>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_described_by_nodes**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **get_accessibility_described_by_nodes**\ (\ )
+
+The list of nodes which are describing this node.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_accessibility_description:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **accessibility_description** = ``""`` :ref:`🔗<class_Node_property_accessibility_description>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_description**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_accessibility_description**\ (\ )
+
+The human-readable node description that is reported to assistive apps.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_accessibility_flow_to_nodes:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **accessibility_flow_to_nodes** = ``[]`` :ref:`🔗<class_Node_property_accessibility_flow_to_nodes>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_flow_to_nodes**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **get_accessibility_flow_to_nodes**\ (\ )
+
+The list of nodes which this node flows into.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_accessibility_labeled_by_nodes:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **accessibility_labeled_by_nodes** = ``[]`` :ref:`🔗<class_Node_property_accessibility_labeled_by_nodes>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_labeled_by_nodes**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **get_accessibility_labeled_by_nodes**\ (\ )
+
+The list of nodes which label this node.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_accessibility_live:
+
+.. rst-class:: classref-property
+
+:ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>` **accessibility_live** = ``0`` :ref:`🔗<class_Node_property_accessibility_live>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_live**\ (\ value\: :ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>`\ )
+- :ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>` **get_accessibility_live**\ (\ )
+
+Live region update mode, a live region is **Node** that is updated as a result of an external event when user focus may be elsewhere.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_accessibility_name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **accessibility_name** = ``""`` :ref:`🔗<class_Node_property_accessibility_name>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_accessibility_name**\ (\ )
+
+The human-readable node name that is reported to assistive apps.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_Node_property_auto_translate_mode:
 
@@ -1428,6 +1595,32 @@ Corresponds to the :ref:`NOTIFICATION_EXIT_TREE<class_Node_constant_NOTIFICATION
 
 ----
 
+.. _class_Node_private_method__get_accessibility_configuration_warnings:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_accessibility_configuration_warnings**\ (\ ) |virtual| |const| :ref:`🔗<class_Node_private_method__get_accessibility_configuration_warnings>`
+
+The elements in the array returned from this method are displayed as warnings in the Scene dock if the script that overrides it is a ``tool`` script, and accessibility warnings are enabled in the editor settings.
+
+Returning an empty array produces no warnings.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_private_method__get_accessibility_container_name:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_accessibility_container_name**\ (\ node\: :ref:`Node<class_Node>`\ ) |virtual| |const| :ref:`🔗<class_Node_private_method__get_accessibility_container_name>`
+
+Return a human-readable description of the position of ``node`` child in the custom container, added to the node name.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_private_method__get_configuration_warnings:
 
 .. rst-class:: classref-method
@@ -1452,6 +1645,18 @@ Call :ref:`update_configuration_warnings()<class_Node_method_update_configuratio
             return ["Energy must be 0 or greater."]
         else:
             return []
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_private_method__get_focused_accessibility_element:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **_get_focused_accessibility_element**\ (\ ) |virtual| |const| :ref:`🔗<class_Node_private_method__get_focused_accessibility_element>`
+
+Called during accessibility information updates to determine the currently focused sub-element, should return a sub-element RID or the value returned by :ref:`get_accessibility_element()<class_Node_method_get_accessibility_element>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1611,7 +1816,7 @@ Adds a child ``node``. Nodes can have any number of children, but every child mu
 
 If ``force_readable_name`` is ``true``, improves the readability of the added ``node``. If not named, the ``node`` is renamed to its type, and if it shares :ref:`name<class_Node_property_name>` with a sibling, a number is suffixed more appropriately. This operation is very slow. As such, it is recommended leaving this to ``false``, which assigns a dummy name featuring ``@`` in both situations.
 
-If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. These nodes are ignored by methods like :ref:`get_children()<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``. The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
+If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. These nodes are ignored by methods like :ref:`get_children()<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``. It also prevents these nodes being duplicated with their parent. The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
 
 \ **Note:** If ``node`` already has a parent, this method will fail. Use :ref:`remove_child()<class_Node_method_remove_child>` first to remove ``node`` from its current parent. For example:
 
@@ -1805,7 +2010,7 @@ The Tween will start automatically on the next process frame or physics frame (d
 
 :ref:`Node<class_Node>` **duplicate**\ (\ flags\: :ref:`int<class_int>` = 15\ ) |const| :ref:`🔗<class_Node_method_duplicate>`
 
-Duplicates the node, returning a new node with all of its properties, signals, groups, and children copied from the original. The behavior can be tweaked through the ``flags`` (see :ref:`DuplicateFlags<enum_Node_DuplicateFlags>`).
+Duplicates the node, returning a new node with all of its properties, signals, groups, and children copied from the original. The behavior can be tweaked through the ``flags`` (see :ref:`DuplicateFlags<enum_Node_DuplicateFlags>`). Internal nodes are not duplicated.
 
 \ **Note:** For nodes with a :ref:`Script<class_Script>` attached, if :ref:`Object._init()<class_Object_private_method__init>` has been defined with required parameters, the duplicated node will not have a :ref:`Script<class_Script>`.
 
@@ -1864,6 +2069,20 @@ If ``owned`` is ``true``, only descendants with a valid :ref:`owner<class_Node_p
 Finds the first ancestor of this node whose :ref:`name<class_Node_property_name>` matches ``pattern``, returning ``null`` if no match is found. The matching is done through :ref:`String.match()<class_String_method_match>`. As such, it is case-sensitive, ``"*"`` matches zero or more characters, and ``"?"`` matches any single character. See also :ref:`find_child()<class_Node_method_find_child>` and :ref:`find_children()<class_Node_method_find_children>`.
 
 \ **Note:** As this method walks upwards in the scene tree, it can be slow in large, deeply nested nodes. Consider storing a reference to the found node in a variable. Alternatively, use :ref:`get_node()<class_Node_method_get_node>` with unique names (see :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_get_accessibility_element:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_accessibility_element**\ (\ ) |const| :ref:`🔗<class_Node_method_get_accessibility_element>`
+
+Returns main accessibility element RID.
+
+\ **Note:** This method should be called only during accessibility information updates (:ref:`NOTIFICATION_ACCESSIBILITY_UPDATE<class_Node_constant_NOTIFICATION_ACCESSIBILITY_UPDATE>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2674,6 +2893,18 @@ If ``parent_first`` is ``true``, the method is called on this node first, then o
 |void| **propagate_notification**\ (\ what\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Node_method_propagate_notification>`
 
 Calls :ref:`Object.notification()<class_Object_method_notification>` with ``what`` on this node and all of its children, recursively.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_queue_accessibility_update:
+
+.. rst-class:: classref-method
+
+|void| **queue_accessibility_update**\ (\ ) :ref:`🔗<class_Node_method_queue_accessibility_update>`
+
+Queues an accessibility information update for this node.
 
 .. rst-class:: classref-item-separator
 

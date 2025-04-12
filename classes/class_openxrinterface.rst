@@ -93,6 +93,10 @@ Methods
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                   | :ref:`set_action_set_active<class_OpenXRInterface_method_set_action_set_active>`\ (\ name\: :ref:`String<class_String>`, active\: :ref:`bool<class_bool>`\ )                                                                  |
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                   | :ref:`set_cpu_level<class_OpenXRInterface_method_set_cpu_level>`\ (\ level\: :ref:`PerfSettingsLevel<enum_OpenXRInterface_PerfSettingsLevel>`\ )                                                                              |
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                   | :ref:`set_gpu_level<class_OpenXRInterface_method_set_gpu_level>`\ (\ level\: :ref:`PerfSettingsLevel<enum_OpenXRInterface_PerfSettingsLevel>`\ )                                                                              |
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                   | :ref:`set_motion_range<class_OpenXRInterface_method_set_motion_range>`\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, motion_range\: :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>`\ )                      |
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -104,6 +108,30 @@ Methods
 
 Signals
 -------
+
+.. _class_OpenXRInterface_signal_cpu_level_changed:
+
+.. rst-class:: classref-signal
+
+**cpu_level_changed**\ (\ sub_domain\: :ref:`int<class_int>`, from_level\: :ref:`int<class_int>`, to_level\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OpenXRInterface_signal_cpu_level_changed>`
+
+Informs the device CPU performance level has changed in the specified subdomain.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_signal_gpu_level_changed:
+
+.. rst-class:: classref-signal
+
+**gpu_level_changed**\ (\ sub_domain\: :ref:`int<class_int>`, from_level\: :ref:`int<class_int>`, to_level\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OpenXRInterface_signal_gpu_level_changed>`
+
+Informs the device GPU performance level has changed in the specified subdomain.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OpenXRInterface_signal_instance_exiting:
 
@@ -312,7 +340,7 @@ The source of hand tracking is a controller, bone positions are inferred from co
 
 :ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **HAND_TRACKED_SOURCE_MAX** = ``3``
 
-Maximum value for the hand tracked source enum.
+Represents the size of the :ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -378,7 +406,7 @@ Thumb tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_METACARPAL** = ``6``
 
-Index metacarpal joint.
+Index finger metacarpal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_PROXIMAL:
 
@@ -386,7 +414,7 @@ Index metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_PROXIMAL** = ``7``
 
-Index proximal joint.
+Index finger phalanx proximal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_INTERMEDIATE:
 
@@ -394,7 +422,7 @@ Index proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_INTERMEDIATE** = ``8``
 
-Index intermediate joint.
+Index finger phalanx intermediate joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_DISTAL:
 
@@ -402,7 +430,7 @@ Index intermediate joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_DISTAL** = ``9``
 
-Index distal joint.
+Index finger phalanx distal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_TIP:
 
@@ -410,7 +438,7 @@ Index distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_TIP** = ``10``
 
-Index tip joint.
+Index finger tip joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_METACARPAL:
 
@@ -418,7 +446,7 @@ Index tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_METACARPAL** = ``11``
 
-Middle metacarpal joint.
+Middle finger metacarpal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_PROXIMAL:
 
@@ -426,7 +454,7 @@ Middle metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_PROXIMAL** = ``12``
 
-Middle proximal joint.
+Middle finger phalanx proximal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_INTERMEDIATE:
 
@@ -434,7 +462,7 @@ Middle proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_INTERMEDIATE** = ``13``
 
-Middle intermediate joint.
+Middle finger phalanx intermediate joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_DISTAL:
 
@@ -442,7 +470,7 @@ Middle intermediate joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_DISTAL** = ``14``
 
-Middle distal joint.
+Middle finger phalanx distal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_TIP:
 
@@ -450,7 +478,7 @@ Middle distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_TIP** = ``15``
 
-Middle tip joint.
+Middle finger tip joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_METACARPAL:
 
@@ -458,7 +486,7 @@ Middle tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_METACARPAL** = ``16``
 
-Ring metacarpal joint.
+Ring finger metacarpal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_PROXIMAL:
 
@@ -466,7 +494,7 @@ Ring metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_PROXIMAL** = ``17``
 
-Ring proximal joint.
+Ring finger phalanx proximal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_INTERMEDIATE:
 
@@ -474,7 +502,7 @@ Ring proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_INTERMEDIATE** = ``18``
 
-Ring intermediate joint.
+Ring finger phalanx intermediate joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_DISTAL:
 
@@ -482,7 +510,7 @@ Ring intermediate joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_DISTAL** = ``19``
 
-Ring distal joint.
+Ring finger phalanx distal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_TIP:
 
@@ -490,7 +518,7 @@ Ring distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_TIP** = ``20``
 
-Ring tip joint.
+Ring finger tip joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_METACARPAL:
 
@@ -498,7 +526,7 @@ Ring tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_METACARPAL** = ``21``
 
-Little metacarpal joint.
+Pinky finger metacarpal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_PROXIMAL:
 
@@ -506,7 +534,7 @@ Little metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_PROXIMAL** = ``22``
 
-Little proximal joint.
+Pinky finger phalanx proximal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_INTERMEDIATE:
 
@@ -514,7 +542,7 @@ Little proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_INTERMEDIATE** = ``23``
 
-Little intermediate joint.
+Pinky finger phalanx intermediate joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_DISTAL:
 
@@ -522,7 +550,7 @@ Little intermediate joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_DISTAL** = ``24``
 
-Little distal joint.
+Pinky finger phalanx distal joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_TIP:
 
@@ -530,7 +558,7 @@ Little distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_TIP** = ``25``
 
-Little tip joint.
+Pinky finger tip joint.
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MAX:
 
@@ -538,7 +566,117 @@ Little tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MAX** = ``26``
 
-Maximum value for the hand joint enum.
+Represents the size of the :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` enum.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OpenXRInterface_PerfSettingsLevel:
+
+.. rst-class:: classref-enumeration
+
+enum **PerfSettingsLevel**: :ref:`🔗<enum_OpenXRInterface_PerfSettingsLevel>`
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_LEVEL_POWER_SAVINGS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsLevel<enum_OpenXRInterface_PerfSettingsLevel>` **PERF_SETTINGS_LEVEL_POWER_SAVINGS** = ``0``
+
+The application has entered a non-XR section (head-locked / static screen), during which power savings are to be prioritized.
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_LEVEL_SUSTAINED_LOW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsLevel<enum_OpenXRInterface_PerfSettingsLevel>` **PERF_SETTINGS_LEVEL_SUSTAINED_LOW** = ``1``
+
+The application has entered a low and stable complexity section, during which reducing power is more important than occasional late rendering frames.
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_LEVEL_SUSTAINED_HIGH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsLevel<enum_OpenXRInterface_PerfSettingsLevel>` **PERF_SETTINGS_LEVEL_SUSTAINED_HIGH** = ``2``
+
+The application has entered a high or dynamic complexity section, during which the XR Runtime strives for consistent XR compositing and frame rendering within a thermally sustainable range.
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_LEVEL_BOOST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsLevel<enum_OpenXRInterface_PerfSettingsLevel>` **PERF_SETTINGS_LEVEL_BOOST** = ``3``
+
+The application has entered a section with very high complexity, during which the XR Runtime is allowed to step up beyond the thermally sustainable range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OpenXRInterface_PerfSettingsSubDomain:
+
+.. rst-class:: classref-enumeration
+
+enum **PerfSettingsSubDomain**: :ref:`🔗<enum_OpenXRInterface_PerfSettingsSubDomain>`
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_SUB_DOMAIN_COMPOSITING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsSubDomain<enum_OpenXRInterface_PerfSettingsSubDomain>` **PERF_SETTINGS_SUB_DOMAIN_COMPOSITING** = ``0``
+
+The compositing performance within the runtime has reached a new level.
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_SUB_DOMAIN_RENDERING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsSubDomain<enum_OpenXRInterface_PerfSettingsSubDomain>` **PERF_SETTINGS_SUB_DOMAIN_RENDERING** = ``1``
+
+The application rendering performance has reached a new level.
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_SUB_DOMAIN_THERMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsSubDomain<enum_OpenXRInterface_PerfSettingsSubDomain>` **PERF_SETTINGS_SUB_DOMAIN_THERMAL** = ``2``
+
+The temperature of the device has reached a new level.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OpenXRInterface_PerfSettingsNotificationLevel:
+
+.. rst-class:: classref-enumeration
+
+enum **PerfSettingsNotificationLevel**: :ref:`🔗<enum_OpenXRInterface_PerfSettingsNotificationLevel>`
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_NOTIF_LEVEL_NORMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsNotificationLevel<enum_OpenXRInterface_PerfSettingsNotificationLevel>` **PERF_SETTINGS_NOTIF_LEVEL_NORMAL** = ``0``
+
+The sub-domain has reached a level where no further actions other than currently applied are necessary.
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_NOTIF_LEVEL_WARNING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsNotificationLevel<enum_OpenXRInterface_PerfSettingsNotificationLevel>` **PERF_SETTINGS_NOTIF_LEVEL_WARNING** = ``1``
+
+The sub-domain has reached an early warning level where the application should start proactive mitigation actions.
+
+.. _class_OpenXRInterface_constant_PERF_SETTINGS_NOTIF_LEVEL_IMPAIRED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PerfSettingsNotificationLevel<enum_OpenXRInterface_PerfSettingsNotificationLevel>` **PERF_SETTINGS_NOTIF_LEVEL_IMPAIRED** = ``2``
+
+The sub-domain has reached a critical level where the application should start drastic mitigation actions.
 
 .. rst-class:: classref-item-separator
 
@@ -939,6 +1077,30 @@ Returns ``true`` if OpenXR's hand tracking is supported and enabled.
 |void| **set_action_set_active**\ (\ name\: :ref:`String<class_String>`, active\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OpenXRInterface_method_set_action_set_active>`
 
 Sets the given action set as active or inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_set_cpu_level:
+
+.. rst-class:: classref-method
+
+|void| **set_cpu_level**\ (\ level\: :ref:`PerfSettingsLevel<enum_OpenXRInterface_PerfSettingsLevel>`\ ) :ref:`🔗<class_OpenXRInterface_method_set_cpu_level>`
+
+Sets the CPU performance level of the OpenXR device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_set_gpu_level:
+
+.. rst-class:: classref-method
+
+|void| **set_gpu_level**\ (\ level\: :ref:`PerfSettingsLevel<enum_OpenXRInterface_PerfSettingsLevel>`\ ) :ref:`🔗<class_OpenXRInterface_method_set_gpu_level>`
+
+Sets the GPU performance level of the OpenXR device.
 
 .. rst-class:: classref-item-separator
 

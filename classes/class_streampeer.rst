@@ -258,7 +258,7 @@ Gets a half-precision float from the stream.
 
 :ref:`Array<class_Array>` **get_partial_data**\ (\ bytes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StreamPeer_method_get_partial_data>`
 
-Returns a chunk data with the received bytes. The number of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code, and a data array.
+Returns a chunk data with the received bytes. The number of bytes to be received can be requested in the ``bytes`` argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values: an :ref:`Error<enum_@GlobalScope_Error>` code and a data array.
 
 .. rst-class:: classref-item-separator
 

@@ -147,7 +147,7 @@ Returns the :ref:`NodePath<class_NodePath>` to the external :ref:`Skeleton3D<cla
 
 :ref:`Skeleton3D<class_Skeleton3D>` **get_skeleton**\ (\ ) :ref:`🔗<class_BoneAttachment3D_method_get_skeleton>`
 
-Get parent or external :ref:`Skeleton3D<class_Skeleton3D>` node if found.
+Returns the parent or external :ref:`Skeleton3D<class_Skeleton3D>` node if it exists, otherwise returns ``null``.
 
 .. rst-class:: classref-item-separator
 
