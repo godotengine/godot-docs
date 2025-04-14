@@ -58,7 +58,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**frame_changed**\ (\ )
+**frame_changed**\ (\ ) :ref:`🔗<class_Sprite3D_signal_frame_changed>`
 
 Emitted when the :ref:`frame<class_Sprite3D_property_frame>` changes.
 
@@ -70,7 +70,7 @@ Emitted when the :ref:`frame<class_Sprite3D_property_frame>` changes.
 
 .. rst-class:: classref-signal
 
-**texture_changed**\ (\ )
+**texture_changed**\ (\ ) :ref:`🔗<class_Sprite3D_signal_texture_changed>`
 
 Emitted when the :ref:`texture<class_Sprite3D_property_texture>` changes.
 
@@ -87,7 +87,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **frame** = ``0``
+:ref:`int<class_int>` **frame** = ``0`` :ref:`🔗<class_Sprite3D_property_frame>`
 
 .. rst-class:: classref-property-setget
 
@@ -104,7 +104,7 @@ Current frame to display from sprite sheet. :ref:`hframes<class_Sprite3D_propert
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **frame_coords** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **frame_coords** = ``Vector2i(0, 0)`` :ref:`🔗<class_Sprite3D_property_frame_coords>`
 
 .. rst-class:: classref-property-setget
 
@@ -121,7 +121,7 @@ Coordinates of the frame to display from sprite sheet. This is as an alias for t
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **hframes** = ``1``
+:ref:`int<class_int>` **hframes** = ``1`` :ref:`🔗<class_Sprite3D_property_hframes>`
 
 .. rst-class:: classref-property-setget
 
@@ -138,7 +138,7 @@ The number of columns in the sprite sheet. When this property is changed, :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **region_enabled** = ``false``
+:ref:`bool<class_bool>` **region_enabled** = ``false`` :ref:`🔗<class_Sprite3D_property_region_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -155,7 +155,7 @@ If ``true``, the sprite will use :ref:`region_rect<class_Sprite3D_property_regio
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_Sprite3D_property_region_rect>`
 
 .. rst-class:: classref-property-setget
 
@@ -172,7 +172,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_Sprite3D_property_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -189,7 +189,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **vframes** = ``1``
+:ref:`int<class_int>` **vframes** = ``1`` :ref:`🔗<class_Sprite3D_property_vframes>`
 
 .. rst-class:: classref-property-setget
 

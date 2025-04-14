@@ -53,7 +53,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**texture_changed**\ (\ )
+**texture_changed**\ (\ ) :ref:`🔗<class_MultiMeshInstance2D_signal_texture_changed>`
 
 Emitted when the :ref:`texture<class_MultiMeshInstance2D_property_texture>` is changed.
 
@@ -70,7 +70,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`MultiMesh<class_MultiMesh>` **multimesh**
+:ref:`MultiMesh<class_MultiMesh>` **multimesh** :ref:`🔗<class_MultiMeshInstance2D_property_multimesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -87,7 +87,7 @@ The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the **MultiMeshInsta
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_MultiMeshInstance2D_property_texture>`
 
 .. rst-class:: classref-property-setget
 

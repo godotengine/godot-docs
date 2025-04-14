@@ -70,7 +70,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **data_array** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **data_array** = ``PackedByteArray()`` :ref:`🔗<class_StreamPeerBuffer_property_data_array>`
 
 .. rst-class:: classref-property-setget
 
@@ -78,6 +78,8 @@ Property Descriptions
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_data_array**\ (\ )
 
 The underlying data buffer. Setting this value resets the cursor.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-section-separator
 
@@ -92,7 +94,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_StreamPeerBuffer_method_clear>`
 
 Clears the :ref:`data_array<class_StreamPeerBuffer_property_data_array>` and resets the cursor.
 
@@ -104,7 +106,7 @@ Clears the :ref:`data_array<class_StreamPeerBuffer_property_data_array>` and res
 
 .. rst-class:: classref-method
 
-:ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate**\ (\ ) |const|
+:ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate**\ (\ ) |const| :ref:`🔗<class_StreamPeerBuffer_method_duplicate>`
 
 Returns a new **StreamPeerBuffer** with the same :ref:`data_array<class_StreamPeerBuffer_property_data_array>` content.
 
@@ -116,7 +118,7 @@ Returns a new **StreamPeerBuffer** with the same :ref:`data_array<class_StreamPe
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_position**\ (\ ) |const|
+:ref:`int<class_int>` **get_position**\ (\ ) |const| :ref:`🔗<class_StreamPeerBuffer_method_get_position>`
 
 Returns the current cursor position.
 
@@ -128,7 +130,7 @@ Returns the current cursor position.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_size**\ (\ ) |const|
+:ref:`int<class_int>` **get_size**\ (\ ) |const| :ref:`🔗<class_StreamPeerBuffer_method_get_size>`
 
 Returns the size of :ref:`data_array<class_StreamPeerBuffer_property_data_array>`.
 
@@ -140,7 +142,7 @@ Returns the size of :ref:`data_array<class_StreamPeerBuffer_property_data_array>
 
 .. rst-class:: classref-method
 
-|void| **resize**\ (\ size\: :ref:`int<class_int>`\ )
+|void| **resize**\ (\ size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StreamPeerBuffer_method_resize>`
 
 Resizes the :ref:`data_array<class_StreamPeerBuffer_property_data_array>`. This *doesn't* update the cursor.
 
@@ -152,7 +154,7 @@ Resizes the :ref:`data_array<class_StreamPeerBuffer_property_data_array>`. This 
 
 .. rst-class:: classref-method
 
-|void| **seek**\ (\ position\: :ref:`int<class_int>`\ )
+|void| **seek**\ (\ position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StreamPeerBuffer_method_seek>`
 
 Moves the cursor to the specified position. ``position`` must be a valid index of :ref:`data_array<class_StreamPeerBuffer_property_data_array>`.
 

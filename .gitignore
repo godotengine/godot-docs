@@ -3,14 +3,28 @@
 .env
 
 _build/
-env/
-__pycache__
-*.pyc
 *~
 .directory
 .vs/
 .vscode/
 *.mo
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Common environment files
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# User created Python virtual environment as described in the docs
+godot-docs-venv/
 
 # Vim temp files
 *.swo
@@ -44,9 +58,6 @@ logo.h
 # Output of list-unused-images.sh tool
 tmp-unused-images
 tmp-unused-images-history
-
-# User created Python virtual environement as described in the docs
-godot-docs-venv/
 
 # Jetbrains IDE files
 /.idea/

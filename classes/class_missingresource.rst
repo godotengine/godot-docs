@@ -50,14 +50,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **original_class**
+:ref:`String<class_String>` **original_class** :ref:`🔗<class_MissingResource_property_original_class>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_original_class**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_original_class**\ (\ )
 
-The name of the class this resource was supposed to be (see :ref:`Object.get_class<class_Object_method_get_class>`).
+The name of the class this resource was supposed to be (see :ref:`Object.get_class()<class_Object_method_get_class>`).
 
 .. rst-class:: classref-item-separator
 
@@ -67,14 +67,14 @@ The name of the class this resource was supposed to be (see :ref:`Object.get_cla
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **recording_properties**
+:ref:`bool<class_bool>` **recording_properties** :ref:`🔗<class_MissingResource_property_recording_properties>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_recording_properties**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_recording_properties**\ (\ )
 
-If set to ``true``, allows new properties to be added on top of the existing ones with :ref:`Object.set<class_Object_method_set>`.
+If set to ``true``, allows new properties to be added on top of the existing ones with :ref:`Object.set()<class_Object_method_set>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

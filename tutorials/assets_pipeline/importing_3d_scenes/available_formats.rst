@@ -18,9 +18,11 @@ Godot supports the following 3D *scene file formats*:
 - OBJ (Wavefront) format + their MTL material files. This is also
   supported, but pretty limited given the format's limitations (no support for
   pivots, skeletons, animations, UV2, PBR materials, ...).
-- FBX, supported via `FBX2glTF <https://github.com/godotengine/FBX2glTF>`__ integration.
-  This requires installing an external program that links against the proprietary FBX SDK,
-  so we recommend using other formats listed above (if suitable for your workflow).
+- FBX, supported via the `ufbx <https://github.com/ufbx/ufbx>`__ library. The
+  previous import workflow used `FBX2glTF <https://github.com/godotengine/FBX2glTF>`__
+  integration. This requires installing an external program that links against the
+  proprietary FBX SDK, so we recommend using the default ubfx method or other formats
+  listed above (if suitable for your workflow).
 
 Copy the scene file together with the textures and mesh data (if separate) to
 the project repository, then Godot will do a full import when focusing the
@@ -32,17 +34,12 @@ Exporting glTF 2.0 files from Blender (recommended)
 There are 3 ways to export glTF files from Blender:
 
 - As a glTF binary file (``.glb``).
-- As a glTF text-based file with embedded binary data (``.gltf`` file)
 - As a glTF text-based file with separate binary data and textures (``.gltf``
   file + ``.bin`` file + textures).
 
-glTF binary files (``.glb``) are the smallest of the three options. They include
-the mesh and textures set up in Blender. When brought into Godot the textures
-are part of the object's material file.
-
-glTF embedded files (``.gltf``) function the same way as binary files. They
-don't provide extra functionality in Godot, and shouldn't be used since they
-have a larger file size.
+glTF binary files (``.glb``) are the smaller option. They include the mesh and
+textures set up in Blender. When brought into Godot the textures are part of the
+object's material file.
 
 There are two reasons to use glTF with the textures separate. One is to have the
 scene description in a text based format and the binary data in a separate
@@ -74,8 +71,8 @@ a Godot scene file, which is what gets used when you run/export your game.
 .. warning::
 
     If your model contains blend shapes (also known as "shape keys" and "morph
-    targets"), your glTF export setting **Export Deformation Bones Only** needs
-    to be configured to **Enabled** under the Animation export configurations.
+    targets"), your glTF export setting **Data > Armature > Export Deformation
+    Bones Only** needs to be configured to **Enabled**.
 
     Exporting non-deforming bones anyway will lead to incorrect shading.
 
@@ -106,9 +103,8 @@ Importing ``.blend`` files directly within Godot
     This avoids any issues related to packaging, such as different library
     versions that can cause incompatibilities or sandboxing restrictions.
 
-From Godot 4.0 onwards, the editor can directly import ``.blend`` files by
-calling `Blender <https://www.blender.org/>`__'s glTF export functionality in a
-transparent manner.
+The editor can directly import ``.blend`` files by calling `Blender <https://www.blender.org/>`__'s
+glTF export functionality in a transparent manner.
 
 This allows you to iterate on your 3D scenes faster, as you can save the scene
 in Blender, alt-tab back to Godot then see your changes immediately. When
@@ -119,8 +115,8 @@ To use ``.blend`` import, you must install Blender before opening the Godot
 editor (if opening a project that already contains ``.blend`` files). If you
 keep Blender installed at its default location, Godot should be able to detect
 its path automatically. If this isn't the case, configure the path to the
-directory containing the Blender executable in the Editor Settings
-(**Filesystem > Import > Blender > Blender 3 Path**).
+Blender executable in the Editor Settings
+(**Filesystem > Import > Blender > Blender Path**).
 
 If you keep ``.blend`` files within your project folder but don't want them to
 be imported by Godot, disable **Filesystem > Import > Blender > Enabled** in the
@@ -152,9 +148,8 @@ Blender has built-in COLLADA support, but it does not work properly for the
 needs of game engines and shouldn't be used as-is. However, scenes exported with
 the built-in Collada support may still work for simple scenes without animation.
 
-For complex scenes or scenes that contain animations, Godot provides a
-`Blender plugin <https://github.com/godotengine/collada-exporter>`_
-that will correctly export COLLADA scenes for use in Godot.
+For complex scenes or scenes that contain animations it is highly recommend to use
+glTF instead.
 
 Importing OBJ files in Godot
 ----------------------------
@@ -175,7 +170,7 @@ There are 2 ways to use OBJ meshes in Godot:
 
     Blender 3.4 and later can export RGB vertex colors in OBJ files (this is a
     nonstandard extension of the OBJ format). Godot is able to import those
-    vertex colors since Godot 4.0, but they will not be displayed on the
+    vertex colors, but they will not be displayed on the
     material unless you enable **Vertex Color > Use As Albedo** on the material.
 
     Vertex colors from OBJ meshes keep their original color space once imported
@@ -185,24 +180,30 @@ There are 2 ways to use OBJ meshes in Godot:
 Importing FBX files in Godot
 ----------------------------
 
-When opening a project containing FBX scenes, you will see a dialog asking you
-to configure FBX import. Click the link in the dialog to download an FBX2glTF
-binary, then extract the ZIP archive, place the binary anywhere you wish, then
-specify its path in the dialog.
+By default any FBX file added to a Godot project in Godot 4.3 or later will
+use the ufbx import method. Any file that was was added to a project in a
+previous version, such as 4.2, will continue to be imported via the FBX2glTF
+method unless you go into that files import settings, and change the importer
+to  ``ufbx``.
 
 If you keep ``.fbx`` files within your project folder but don't want them to
 be imported by Godot, disable **Filesystem > Import > FBX > Enabled** in the
 advanced Project Settings.
 
-The FBX import process converts to glTF first, so it still uses
+If you want to setup the FBX2glTF workflow, which is generally not recommend
+unless you have a specific reason to use it, you need to download the `FBX2glTF <https://github.com/godotengine/FBX2glTF>`__
+executable, then specify the path to that executable in the editor settings under
+**Filesystem > Import > FBX > FBX2glTFPath**
+
+The FBX2glTF import process converts to glTF first, so it still uses
 Godot's glTF import code. Therefore, the FBX import process is the same
 as the glTF import process, but with an extra step at the beginning.
 
 .. figure:: img/importing_3d_scenes_available_formats_fbx.webp
    :align: center
-   :alt: Diagram explaining the import process for FBX files in Godot
+   :alt: Diagram explaining the import process for FBX files in Godot  via FBX2glTF
 
 .. seealso::
 
-    The full installation process for using FBX in Godot is described on the
+    The full installation process for using FBX2glTF in Godot is described on the
     `FBX import page of the Godot website <https://godotengine.org/fbx-import>`__.

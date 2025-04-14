@@ -189,12 +189,12 @@ and :ref:`Resource <class_Resource>` features:
 
 Godot makes it easy to create custom Resources in the Inspector.
 
-1. Create a plain Resource object in the Inspector. This can even be a type that derives Resource, so long as your script is extending that type.
+1. Create a new Resource object in the Inspector. This can even be a type that derives Resource, so long as your script is extending that type.
 2. Set the ``script`` property in the Inspector to be your script.
 
 The Inspector will now display your Resource script's custom properties. If one edits
 those values and saves the resource, the Inspector serializes the custom properties
-too! To save a resource from the Inspector, click the Inspector's tools menu (top right),
+too! To save a resource from the Inspector, click the save icon at the top of the Inspector,
 and select "Save" or "Save As...".
 
 If the script's language supports :ref:`script classes <doc_gdscript_basics_class_name>`,
@@ -208,9 +208,12 @@ It should appear in your file tab with the full name ``bot_stats.tres``.
 Without a script, it's useless, so let's add some data and logic!
 Attach a script to it named ``bot_stats.gd`` (or just create a new script, and then drag it to it).
 
+.. note::
+    To make the new resource class appear in the Create Resource GUI you need to provide a class name for GDScript, or use the [GlobalClass] attribute in C#.
+
 .. tabs::
   .. code-tab:: gdscript GDScript
-
+    class_name BotStats
     extends Resource
 
     @export var health: int
@@ -232,6 +235,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 
         namespace ExampleProject
         {
+            [GlobalClass]
             public partial class BotStats : Resource
             {
                 [Export]
@@ -330,9 +334,10 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
 
         using Godot;
 
+        [GlobalClass]
         public partial class BotStatsTable : Resource
         {
-            private Godot.Dictionary<string, BotStats> _stats = new Godot.Dictionary<string, BotStats>();
+            private Godot.Collections.Dictionary<string, BotStats> _stats = new Godot.Collections.Dictionary<string, BotStats>();
 
             public BotStatsTable()
             {
@@ -384,6 +389,7 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
 
         public partial class MyNode : Node
         {
+            [GlobalClass]
             public partial class MyResource : Resource
             {
                 [Export]

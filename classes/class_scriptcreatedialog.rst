@@ -19,7 +19,7 @@ Godot editor's popup dialog for creating new :ref:`Script<class_Script>` files.
 Description
 -----------
 
-The **ScriptCreateDialog** creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Window.popup<class_Window_method_popup>` methods.
+The **ScriptCreateDialog** creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Window.popup()<class_Window_method_popup>` methods.
 
 
 .. tabs::
@@ -85,7 +85,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**script_created**\ (\ script\: :ref:`Script<class_Script>`\ )
+**script_created**\ (\ script\: :ref:`Script<class_Script>`\ ) :ref:`🔗<class_ScriptCreateDialog_signal_script_created>`
 
 Emitted when the user clicks the OK button.
 
@@ -102,7 +102,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **config**\ (\ inherits\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, built_in_enabled\: :ref:`bool<class_bool>` = true, load_enabled\: :ref:`bool<class_bool>` = true\ )
+|void| **config**\ (\ inherits\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, built_in_enabled\: :ref:`bool<class_bool>` = true, load_enabled\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ScriptCreateDialog_method_config>`
 
 Prefills required fields to configure the ScriptCreateDialog for use.
 

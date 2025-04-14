@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **length** = ``1.0``
+:ref:`float<class_float>` **length** = ``1.0`` :ref:`🔗<class_SeparationRayShape3D_property_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -65,7 +65,7 @@ The ray's length.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **slide_on_slope** = ``false``
+:ref:`bool<class_bool>` **slide_on_slope** = ``false`` :ref:`🔗<class_SeparationRayShape3D_property_slide_on_slope>`
 
 .. rst-class:: classref-property-setget
 

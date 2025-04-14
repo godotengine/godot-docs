@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_limit_enabled** = ``false``
+:ref:`bool<class_bool>` **angular_limit_enabled** = ``false`` :ref:`🔗<class_PinJoint2D_property_angular_limit_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -73,7 +73,7 @@ If ``true``, the pin maximum and minimum rotation, defined by :ref:`angular_limi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_lower** = ``0.0``
+:ref:`float<class_float>` **angular_limit_lower** = ``0.0`` :ref:`🔗<class_PinJoint2D_property_angular_limit_lower>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ The minimum rotation. Only active if :ref:`angular_limit_enabled<class_PinJoint2
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_upper** = ``0.0``
+:ref:`float<class_float>` **angular_limit_upper** = ``0.0`` :ref:`🔗<class_PinJoint2D_property_angular_limit_upper>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ The maximum rotation. Only active if :ref:`angular_limit_enabled<class_PinJoint2
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **motor_enabled** = ``false``
+:ref:`bool<class_bool>` **motor_enabled** = ``false`` :ref:`🔗<class_PinJoint2D_property_motor_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -124,7 +124,7 @@ When activated, a motor turns the pin.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **motor_target_velocity** = ``0.0``
+:ref:`float<class_float>` **motor_target_velocity** = ``0.0`` :ref:`🔗<class_PinJoint2D_property_motor_target_velocity>`
 
 .. rst-class:: classref-property-setget
 
@@ -141,7 +141,7 @@ Target speed for the motor. In radians per second.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **softness** = ``0.0``
+:ref:`float<class_float>` **softness** = ``0.0`` :ref:`🔗<class_PinJoint2D_property_softness>`
 
 .. rst-class:: classref-property-setget
 

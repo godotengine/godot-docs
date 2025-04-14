@@ -67,7 +67,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ResolverStatus**:
+enum **ResolverStatus**: :ref:`🔗<enum_IP_ResolverStatus>`
 
 .. _class_IP_constant_RESOLVER_STATUS_NONE:
 
@@ -109,7 +109,7 @@ DNS hostname resolver status: Error.
 
 .. rst-class:: classref-enumeration
 
-enum **Type**:
+enum **Type**: :ref:`🔗<enum_IP_Type>`
 
 .. _class_IP_constant_TYPE_NONE:
 
@@ -156,7 +156,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**RESOLVER_MAX_QUERIES** = ``256``
+**RESOLVER_MAX_QUERIES** = ``256`` :ref:`🔗<class_IP_constant_RESOLVER_MAX_QUERIES>`
 
 Maximum number of concurrent DNS resolver queries allowed, :ref:`RESOLVER_INVALID_ID<class_IP_constant_RESOLVER_INVALID_ID>` is returned if exceeded.
 
@@ -164,7 +164,7 @@ Maximum number of concurrent DNS resolver queries allowed, :ref:`RESOLVER_INVALI
 
 .. rst-class:: classref-constant
 
-**RESOLVER_INVALID_ID** = ``-1``
+**RESOLVER_INVALID_ID** = ``-1`` :ref:`🔗<class_IP_constant_RESOLVER_INVALID_ID>`
 
 Invalid ID constant. Returned if :ref:`RESOLVER_MAX_QUERIES<class_IP_constant_RESOLVER_MAX_QUERIES>` is exceeded.
 
@@ -181,7 +181,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear_cache**\ (\ hostname\: :ref:`String<class_String>` = ""\ )
+|void| **clear_cache**\ (\ hostname\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_IP_method_clear_cache>`
 
 Removes all of a ``hostname``'s cached references. If no ``hostname`` is given, all cached IP addresses are removed.
 
@@ -193,7 +193,7 @@ Removes all of a ``hostname``'s cached references. If no ``hostname`` is given, 
 
 .. rst-class:: classref-method
 
-|void| **erase_resolve_item**\ (\ id\: :ref:`int<class_int>`\ )
+|void| **erase_resolve_item**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_IP_method_erase_resolve_item>`
 
 Removes a given item ``id`` from the queue. This should be used to free a queue after it has completed to enable more queries to happen.
 
@@ -205,7 +205,7 @@ Removes a given item ``id`` from the queue. This should be used to free a queue 
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_local_addresses**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_local_addresses**\ (\ ) |const| :ref:`🔗<class_IP_method_get_local_addresses>`
 
 Returns all the user's current IPv4 and IPv6 addresses as an array.
 
@@ -217,7 +217,7 @@ Returns all the user's current IPv4 and IPv6 addresses as an array.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_local_interfaces**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_local_interfaces**\ (\ ) |const| :ref:`🔗<class_IP_method_get_local_interfaces>`
 
 Returns all network adapters as an array.
 
@@ -240,9 +240,9 @@ Each adapter is a dictionary of the form:
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_resolve_item_address**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_resolve_item_address**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_IP_method_get_resolve_item_address>`
 
-Returns a queued hostname's IP address, given its queue ``id``. Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>`).
+Returns a queued hostname's IP address, given its queue ``id``. Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status()<class_IP_method_get_resolve_item_status>`).
 
 .. rst-class:: classref-item-separator
 
@@ -252,9 +252,9 @@ Returns a queued hostname's IP address, given its queue ``id``. Returns an empty
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_resolve_item_addresses**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`Array<class_Array>` **get_resolve_item_addresses**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_IP_method_get_resolve_item_addresses>`
 
-Returns resolved addresses, or an empty array if an error happened or resolution didn't happen yet (see :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>`).
+Returns resolved addresses, or an empty array if an error happened or resolution didn't happen yet (see :ref:`get_resolve_item_status()<class_IP_method_get_resolve_item_status>`).
 
 .. rst-class:: classref-item-separator
 
@@ -264,7 +264,7 @@ Returns resolved addresses, or an empty array if an error happened or resolution
 
 .. rst-class:: classref-method
 
-:ref:`ResolverStatus<enum_IP_ResolverStatus>` **get_resolve_item_status**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`ResolverStatus<enum_IP_ResolverStatus>` **get_resolve_item_status**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_IP_method_get_resolve_item_status>`
 
 Returns a queued hostname's status as a :ref:`ResolverStatus<enum_IP_ResolverStatus>` constant, given its queue ``id``.
 
@@ -276,7 +276,7 @@ Returns a queued hostname's status as a :ref:`ResolverStatus<enum_IP_ResolverSta
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **resolve_hostname**\ (\ host\: :ref:`String<class_String>`, ip_type\: :ref:`Type<enum_IP_Type>` = 3\ )
+:ref:`String<class_String>` **resolve_hostname**\ (\ host\: :ref:`String<class_String>`, ip_type\: :ref:`Type<enum_IP_Type>` = 3\ ) :ref:`🔗<class_IP_method_resolve_hostname>`
 
 Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the :ref:`Type<enum_IP_Type>` constant given as ``ip_type``.
 
@@ -288,7 +288,7 @@ Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type met
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **resolve_hostname_addresses**\ (\ host\: :ref:`String<class_String>`, ip_type\: :ref:`Type<enum_IP_Type>` = 3\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **resolve_hostname_addresses**\ (\ host\: :ref:`String<class_String>`, ip_type\: :ref:`Type<enum_IP_Type>` = 3\ ) :ref:`🔗<class_IP_method_resolve_hostname_addresses>`
 
 Resolves a given hostname in a blocking way. Addresses are returned as an :ref:`Array<class_Array>` of IPv4 or IPv6 addresses depending on ``ip_type``.
 
@@ -300,7 +300,7 @@ Resolves a given hostname in a blocking way. Addresses are returned as an :ref:`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **resolve_hostname_queue_item**\ (\ host\: :ref:`String<class_String>`, ip_type\: :ref:`Type<enum_IP_Type>` = 3\ )
+:ref:`int<class_int>` **resolve_hostname_queue_item**\ (\ host\: :ref:`String<class_String>`, ip_type\: :ref:`Type<enum_IP_Type>` = 3\ ) :ref:`🔗<class_IP_method_resolve_hostname_queue_item>`
 
 Creates a queue item to resolve a hostname to an IPv4 or IPv6 address depending on the :ref:`Type<enum_IP_Type>` constant given as ``ip_type``. Returns the queue ID if successful, or :ref:`RESOLVER_INVALID_ID<class_IP_constant_RESOLVER_INVALID_ID>` on error.
 

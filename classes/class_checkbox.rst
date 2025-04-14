@@ -47,25 +47,29 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`             | :ref:`check_v_offset<class_CheckBox_theme_constant_check_v_offset>`                 | ``0`` |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_CheckBox_theme_icon_checked>`                                   |       |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled<class_CheckBox_theme_icon_checked_disabled>`                 |       |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked<class_CheckBox_theme_icon_radio_checked>`                       |       |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked_disabled<class_CheckBox_theme_icon_radio_checked_disabled>`     |       |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked<class_CheckBox_theme_icon_radio_unchecked>`                   |       |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked_disabled<class_CheckBox_theme_icon_radio_unchecked_disabled>` |       |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked<class_CheckBox_theme_icon_unchecked>`                               |       |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled<class_CheckBox_theme_icon_unchecked_disabled>`             |       |
-   +-----------------------------------+-------------------------------------------------------------------------------------+-------+
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`         | :ref:`checkbox_checked_color<class_CheckBox_theme_color_checkbox_checked_color>`     | ``Color(1, 1, 1, 1)`` |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`         | :ref:`checkbox_unchecked_color<class_CheckBox_theme_color_checkbox_unchecked_color>` | ``Color(1, 1, 1, 1)`` |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`             | :ref:`check_v_offset<class_CheckBox_theme_constant_check_v_offset>`                  | ``0``                 |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_CheckBox_theme_icon_checked>`                                    |                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled<class_CheckBox_theme_icon_checked_disabled>`                  |                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked<class_CheckBox_theme_icon_radio_checked>`                        |                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked_disabled<class_CheckBox_theme_icon_radio_checked_disabled>`      |                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked<class_CheckBox_theme_icon_radio_unchecked>`                    |                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked_disabled<class_CheckBox_theme_icon_radio_unchecked_disabled>`  |                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked<class_CheckBox_theme_icon_unchecked>`                                |                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled<class_CheckBox_theme_icon_unchecked_disabled>`              |                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -76,11 +80,35 @@ Theme Properties
 Theme Property Descriptions
 ---------------------------
 
+.. _class_CheckBox_theme_color_checkbox_checked_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **checkbox_checked_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_CheckBox_theme_color_checkbox_checked_color>`
+
+The color of the checked icon when the checkbox is pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CheckBox_theme_color_checkbox_unchecked_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **checkbox_unchecked_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_CheckBox_theme_color_checkbox_unchecked_color>`
+
+The color of the unchecked icon when the checkbox is not pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CheckBox_theme_constant_check_v_offset:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **check_v_offset** = ``0``
+:ref:`int<class_int>` **check_v_offset** = ``0`` :ref:`🔗<class_CheckBox_theme_constant_check_v_offset>`
 
 The vertical offset used when rendering the check icons (in pixels).
 
@@ -92,7 +120,7 @@ The vertical offset used when rendering the check icons (in pixels).
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **checked**
+:ref:`Texture2D<class_Texture2D>` **checked** :ref:`🔗<class_CheckBox_theme_icon_checked>`
 
 The check icon to display when the **CheckBox** is checked.
 
@@ -104,7 +132,7 @@ The check icon to display when the **CheckBox** is checked.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **checked_disabled**
+:ref:`Texture2D<class_Texture2D>` **checked_disabled** :ref:`🔗<class_CheckBox_theme_icon_checked_disabled>`
 
 The check icon to display when the **CheckBox** is checked and is disabled.
 
@@ -116,7 +144,7 @@ The check icon to display when the **CheckBox** is checked and is disabled.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **radio_checked**
+:ref:`Texture2D<class_Texture2D>` **radio_checked** :ref:`🔗<class_CheckBox_theme_icon_radio_checked>`
 
 The check icon to display when the **CheckBox** is configured as a radio button and is checked.
 
@@ -128,7 +156,7 @@ The check icon to display when the **CheckBox** is configured as a radio button 
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **radio_checked_disabled**
+:ref:`Texture2D<class_Texture2D>` **radio_checked_disabled** :ref:`🔗<class_CheckBox_theme_icon_radio_checked_disabled>`
 
 The check icon to display when the **CheckBox** is configured as a radio button, is disabled, and is unchecked.
 
@@ -140,7 +168,7 @@ The check icon to display when the **CheckBox** is configured as a radio button,
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **radio_unchecked**
+:ref:`Texture2D<class_Texture2D>` **radio_unchecked** :ref:`🔗<class_CheckBox_theme_icon_radio_unchecked>`
 
 The check icon to display when the **CheckBox** is configured as a radio button and is unchecked.
 
@@ -152,7 +180,7 @@ The check icon to display when the **CheckBox** is configured as a radio button 
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **radio_unchecked_disabled**
+:ref:`Texture2D<class_Texture2D>` **radio_unchecked_disabled** :ref:`🔗<class_CheckBox_theme_icon_radio_unchecked_disabled>`
 
 The check icon to display when the **CheckBox** is configured as a radio button, is disabled, and is unchecked.
 
@@ -164,7 +192,7 @@ The check icon to display when the **CheckBox** is configured as a radio button,
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **unchecked**
+:ref:`Texture2D<class_Texture2D>` **unchecked** :ref:`🔗<class_CheckBox_theme_icon_unchecked>`
 
 The check icon to display when the **CheckBox** is unchecked.
 
@@ -176,7 +204,7 @@ The check icon to display when the **CheckBox** is unchecked.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **unchecked_disabled**
+:ref:`Texture2D<class_Texture2D>` **unchecked_disabled** :ref:`🔗<class_CheckBox_theme_icon_unchecked_disabled>`
 
 The check icon to display when the **CheckBox** is unchecked and is disabled.
 

@@ -99,7 +99,7 @@ received input, in order:
 6. If so far no one consumed the event, the :ref:`Node._unhandled_key_input() <class_Node_private_method__unhandled_key_input>` callback
    will be called if overridden (and not disabled with
    :ref:`Node.set_process_unhandled_key_input() <class_Node_method_set_process_unhandled_key_input>`).
-   This happens only if the event is a :ref:`InputEventKey <class_InputEventKey>`.
+   This happens only if the event is an :ref:`InputEventKey <class_InputEventKey>`.
    If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
    event will not spread any more. The unhandled key input callback is ideal for key events.
 7. If so far no one consumed the event, the :ref:`Node._unhandled_input() <class_Node_private_method__unhandled_input>` callback
@@ -121,10 +121,17 @@ the following graphic, in a reverse depth-first order, starting with the node at
 the scene tree, and ending at the root node. Excluded from this process are Windows
 and SubViewports.
 
-.. image:: img/input_event_scene_flow.png
+.. image:: img/input_event_scene_flow.webp
 
-This order doesn't apply to :ref:`Control._gui_input() <class_Control_private_method__gui_input>`, which uses
-a different method based on event location or focused Control.
+.. note::
+
+   This order doesn't apply to :ref:`Control._gui_input() <class_Control_private_method__gui_input>`, which uses
+   a different method based on event location or focused Control. GUI **mouse** events also travel 
+   up the scene tree, subject to the :ref:`Control.mouse_filter <class_Control_property_mouse_filter>`
+   restrictions described above. However, since these events target specific Controls, only direct ancestors of 
+   the targeted Control node receive the event. GUI **keyboard and joypad** events *do not* travel
+   up the scene tree, and can only be handled by the Control that received them. Otherwise, they will be
+   propagated as non-GUI events through :ref:`Node._unhandled_input() <class_Node_private_method__unhandled_input>`.
 
 Since Viewports don't send events to other :ref:`SubViewports <class_SubViewport>`, one of the following
 methods has to be used:
@@ -133,9 +140,6 @@ methods has to be used:
    sends events to its child :ref:`SubViewports <class_SubViewport>` after
    :ref:`Node._input() <class_Node_private_method__input>` or :ref:`Control._gui_input() <class_Control_private_method__gui_input>`.
 2. Implement event propagation based on the individual requirements.
-
-GUI events also travel up the scene tree but, since these events target
-specific Controls, only direct ancestors of the targeted Control node receive the event.
 
 In accordance with Godot's node-based design, this enables
 specialized child nodes to handle and consume particular events, while
@@ -194,10 +198,10 @@ There are several specialized types of InputEvent, described in the table below:
 |                                                                   | as feedback. (more on this below)       |
 +-------------------------------------------------------------------+-----------------------------------------+
 
-Actions
--------
+Input actions
+-------------
 
-Actions are a grouping of zero or more InputEvents into a commonly
+Input actions are a grouping of zero or more InputEvents into a commonly
 understood title (for example, the default "ui_left" action grouping both joypad-left input and a keyboard's left arrow key). They are not required to represent an
 InputEvent but are useful because they abstract various inputs when
 programming the game logic.
@@ -206,14 +210,14 @@ This allows for:
 
 -  The same code to work on different devices with different inputs (e.g.,
    keyboard on PC, Joypad on console).
--  Input to be reconfigured at run-time.
--  Actions to be triggered programmatically at run-time.
+-  Input to be reconfigured at runtime.
+-  Actions to be triggered programmatically at runtime.
 
 Actions can be created from the Project Settings menu in the **Input Map**
 tab and assigned input events.
 
 Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_method_is_action>`,
-:ref:`InputEvent.is_pressed() <class_InputEvent_method_is_pressed>` and :ref:`InputEvent <class_InputEvent>`.
+:ref:`InputEvent.is_pressed() <class_InputEvent_method_is_pressed>` and :ref:`InputEvent.is_echo() <class_InputEvent_method_is_echo>`.
 
 Alternatively, it may be desired to supply the game back with an action
 from the game code (a good example of this is detecting gestures).
@@ -234,17 +238,23 @@ The Input singleton has a method for this:
 
     var ev = new InputEventAction();
     // Set as ui_left, pressed.
-    ev.SetAction("ui_left");
-    ev.SetPressed(true);
+    ev.Action = "ui_left";
+    ev.Pressed = true;
     // Feedback.
     Input.ParseInputEvent(ev);
+
+
+.. seealso::
+
+   See :ref:`doc_first_3d_game_input_actions` for a tutorial on adding input
+   actions in the project settings.
 
 InputMap
 --------
 
 Customizing and re-mapping input from code is often desired. If your
 whole workflow depends on actions, the :ref:`InputMap <class_InputMap>` singleton is
-ideal for reassigning or creating different actions at run-time. This
+ideal for reassigning or creating different actions at runtime. This
 singleton is not saved (must be modified manually) and its state is run
 from the project settings (project.godot). So any dynamic system of this
 type needs to store settings in the way the programmer best sees fit.

@@ -59,7 +59,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FFTSize**:
+enum **FFTSize**: :ref:`🔗<enum_AudioEffectPitchShift_FFTSize>`
 
 .. _class_AudioEffectPitchShift_constant_FFT_SIZE_256:
 
@@ -122,7 +122,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`FFTSize<enum_AudioEffectPitchShift_FFTSize>` **fft_size** = ``3``
+:ref:`FFTSize<enum_AudioEffectPitchShift_FFTSize>` **fft_size** = ``3`` :ref:`🔗<class_AudioEffectPitchShift_property_fft_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -139,7 +139,7 @@ The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Four
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **oversampling** = ``4``
+:ref:`int<class_int>` **oversampling** = ``4`` :ref:`🔗<class_AudioEffectPitchShift_property_oversampling>`
 
 .. rst-class:: classref-property-setget
 
@@ -156,7 +156,7 @@ The oversampling factor to use. Higher values result in better quality, but are 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pitch_scale** = ``1.0``
+:ref:`float<class_float>` **pitch_scale** = ``1.0`` :ref:`🔗<class_AudioEffectPitchShift_property_pitch_scale>`
 
 .. rst-class:: classref-property-setget
 

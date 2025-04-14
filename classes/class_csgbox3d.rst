@@ -57,7 +57,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGBox3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -74,7 +74,7 @@ The material used to render the box.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_CSGBox3D_property_size>`
 
 .. rst-class:: classref-property-setget
 

@@ -21,7 +21,7 @@ The **float** built-in type is a 64-bit double-precision floating-point number, 
 
 Many methods and properties in the engine use 32-bit single-precision floating-point numbers instead, equivalent to ``float`` in C++, which have 6 reliable decimal digits of precision. For data structures such as :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, Godot uses 32-bit floating-point numbers by default, but it can be changed to use 64-bit doubles if Godot is compiled with the ``precision=double`` option.
 
-Math done using the **float** type is not guaranteed to be exact and will often result in small errors. You should usually use the :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` and :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` methods instead of ``==`` to compare **float** values for equality.
+Math done using the **float** type is not guaranteed to be exact and will often result in small errors. You should usually use the :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` and :ref:`@GlobalScope.is_zero_approx()<class_@GlobalScope_method_is_zero_approx>` methods instead of ``==`` to compare **float** values for equality.
 
 .. rst-class:: classref-introduction-group
 
@@ -139,7 +139,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`float<class_float>` **float**\ (\ )
+:ref:`float<class_float>` **float**\ (\ ) :ref:`🔗<class_float_constructor_float>`
 
 Constructs a default-initialized **float** set to ``0.0``.
 
@@ -161,7 +161,7 @@ Constructs a **float** as a copy of the given **float**.
 
 :ref:`float<class_float>` **float**\ (\ from\: :ref:`String<class_String>`\ )
 
-Converts a :ref:`String<class_String>` to a **float**, following the same rules as :ref:`String.to_float<class_String_method_to_float>`.
+Converts a :ref:`String<class_String>` to a **float**, following the same rules as :ref:`String.to_float()<class_String_method_to_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -196,7 +196,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_neq_float>`
 
 Returns ``true`` if two floats are different from each other.
 
@@ -210,7 +210,7 @@ Returns ``true`` if two floats are different from each other.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_neq_int>`
 
 Returns ``true`` if the integer has different value than the float.
 
@@ -222,13 +222,13 @@ Returns ``true`` if the integer has different value than the float.
 
 .. rst-class:: classref-operator
 
-:ref:`Color<class_Color>` **operator ***\ (\ right\: :ref:`Color<class_Color>`\ )
+:ref:`Color<class_Color>` **operator ***\ (\ right\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_float_operator_mul_Color>`
 
 Multiplies each component of the :ref:`Color<class_Color>`, including the alpha, by the given **float**.
 
 ::
 
-    print(1.5 * Color(0.5, 0.5, 0.5)) # Prints "(0.75, 0.75, 0.75, 1.5)"
+    print(1.5 * Color(0.5, 0.5, 0.5)) # Prints (0.75, 0.75, 0.75, 1.5)
 
 .. rst-class:: classref-item-separator
 
@@ -238,7 +238,7 @@ Multiplies each component of the :ref:`Color<class_Color>`, including the alpha,
 
 .. rst-class:: classref-operator
 
-:ref:`Quaternion<class_Quaternion>` **operator ***\ (\ right\: :ref:`Quaternion<class_Quaternion>`\ )
+:ref:`Quaternion<class_Quaternion>` **operator ***\ (\ right\: :ref:`Quaternion<class_Quaternion>`\ ) :ref:`🔗<class_float_operator_mul_Quaternion>`
 
 Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the given **float**. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
@@ -250,13 +250,13 @@ Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the give
 
 .. rst-class:: classref-operator
 
-:ref:`Vector2<class_Vector2>` **operator ***\ (\ right\: :ref:`Vector2<class_Vector2>`\ )
+:ref:`Vector2<class_Vector2>` **operator ***\ (\ right\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_float_operator_mul_Vector2>`
 
 Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given **float**.
 
 ::
 
-    print(2.5 * Vector2(1, 3)) # Prints "(2.5, 7.5)"
+    print(2.5 * Vector2(1, 3)) # Prints (2.5, 7.5)
 
 .. rst-class:: classref-item-separator
 
@@ -266,13 +266,13 @@ Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given **fl
 
 .. rst-class:: classref-operator
 
-:ref:`Vector2<class_Vector2>` **operator ***\ (\ right\: :ref:`Vector2i<class_Vector2i>`\ )
+:ref:`Vector2<class_Vector2>` **operator ***\ (\ right\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_float_operator_mul_Vector2i>`
 
 Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given **float**. Returns a :ref:`Vector2<class_Vector2>`.
 
 ::
 
-    print(0.9 * Vector2i(10, 15)) # Prints "(9, 13.5)"
+    print(0.9 * Vector2i(10, 15)) # Prints (9.0, 13.5)
 
 .. rst-class:: classref-item-separator
 
@@ -282,7 +282,7 @@ Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given **
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`Vector3<class_Vector3>`\ )
+:ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_float_operator_mul_Vector3>`
 
 Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given **float**.
 
@@ -294,13 +294,13 @@ Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given **fl
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_float_operator_mul_Vector3i>`
 
 Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given **float**. Returns a :ref:`Vector3<class_Vector3>`.
 
 ::
 
-    print(0.9 * Vector3i(10, 15, 20)) # Prints "(9, 13.5, 18)"
+    print(0.9 * Vector3i(10, 15, 20)) # Prints (9.0, 13.5, 18.0)
 
 .. rst-class:: classref-item-separator
 
@@ -310,7 +310,7 @@ Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given **
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4<class_Vector4>` **operator ***\ (\ right\: :ref:`Vector4<class_Vector4>`\ )
+:ref:`Vector4<class_Vector4>` **operator ***\ (\ right\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_float_operator_mul_Vector4>`
 
 Multiplies each component of the :ref:`Vector4<class_Vector4>` by the given **float**.
 
@@ -322,13 +322,13 @@ Multiplies each component of the :ref:`Vector4<class_Vector4>` by the given **fl
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4<class_Vector4>` **operator ***\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`Vector4<class_Vector4>` **operator ***\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_float_operator_mul_Vector4i>`
 
 Multiplies each component of the :ref:`Vector4i<class_Vector4i>` by the given **float**. Returns a :ref:`Vector4<class_Vector4>`.
 
 ::
 
-    print(0.9 * Vector4i(10, 15, 20, -10)) # Prints "(9, 13.5, 18, -9)"
+    print(0.9 * Vector4i(10, 15, 20, -10)) # Prints (9.0, 13.5, 18.0, -9.0)
 
 .. rst-class:: classref-item-separator
 
@@ -338,7 +338,7 @@ Multiplies each component of the :ref:`Vector4i<class_Vector4i>` by the given **
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator ***\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **operator ***\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_mul_float>`
 
 Multiplies two **float**\ s.
 
@@ -350,7 +350,7 @@ Multiplies two **float**\ s.
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator ***\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`float<class_float>` **operator ***\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_mul_int>`
 
 Multiplies a **float** and an :ref:`int<class_int>`. The result is a **float**.
 
@@ -362,7 +362,7 @@ Multiplies a **float** and an :ref:`int<class_int>`. The result is a **float**.
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator ****\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **operator ****\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_pow_float>`
 
 Raises a **float** to a power of a **float**.
 
@@ -378,7 +378,7 @@ Raises a **float** to a power of a **float**.
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator ****\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`float<class_float>` **operator ****\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_pow_int>`
 
 Raises a **float** to a power of an :ref:`int<class_int>`. The result is a **float**.
 
@@ -394,7 +394,7 @@ Raises a **float** to a power of an :ref:`int<class_int>`. The result is a **flo
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator +**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **operator +**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_sum_float>`
 
 Adds two floats.
 
@@ -406,7 +406,7 @@ Adds two floats.
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator +**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`float<class_float>` **operator +**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_sum_int>`
 
 Adds a **float** and an :ref:`int<class_int>`. The result is a **float**.
 
@@ -418,7 +418,7 @@ Adds a **float** and an :ref:`int<class_int>`. The result is a **float**.
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator -**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **operator -**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_dif_float>`
 
 Subtracts a float from a float.
 
@@ -430,7 +430,7 @@ Subtracts a float from a float.
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator -**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`float<class_float>` **operator -**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_dif_int>`
 
 Subtracts an :ref:`int<class_int>` from a **float**. The result is a **float**.
 
@@ -442,7 +442,7 @@ Subtracts an :ref:`int<class_int>` from a **float**. The result is a **float**.
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator /**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **operator /**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_div_float>`
 
 Divides two floats.
 
@@ -454,7 +454,7 @@ Divides two floats.
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator /**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`float<class_float>` **operator /**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_div_int>`
 
 Divides a **float** by an :ref:`int<class_int>`. The result is a **float**.
 
@@ -466,7 +466,7 @@ Divides a **float** by an :ref:`int<class_int>`. The result is a **float**.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_lt_float>`
 
 Returns ``true`` if the left float is less than the right one.
 
@@ -480,7 +480,7 @@ Returns ``true`` if the left float is less than the right one.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_lt_int>`
 
 Returns ``true`` if this **float** is less than the given :ref:`int<class_int>`.
 
@@ -492,7 +492,7 @@ Returns ``true`` if this **float** is less than the given :ref:`int<class_int>`.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_lte_float>`
 
 Returns ``true`` if the left float is less than or equal to the right one.
 
@@ -506,7 +506,7 @@ Returns ``true`` if the left float is less than or equal to the right one.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_lte_int>`
 
 Returns ``true`` if this **float** is less than or equal to the given :ref:`int<class_int>`.
 
@@ -518,11 +518,11 @@ Returns ``true`` if this **float** is less than or equal to the given :ref:`int<
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_eq_float>`
 
 Returns ``true`` if both floats are exactly equal.
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx()<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx()<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
 
 \ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this operator may not be accurate if NaNs are included.
 
@@ -534,7 +534,7 @@ Returns ``true`` if both floats are exactly equal.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_eq_int>`
 
 Returns ``true`` if the **float** and the given :ref:`int<class_int>` are equal.
 
@@ -546,7 +546,7 @@ Returns ``true`` if the **float** and the given :ref:`int<class_int>` are equal.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_gt_float>`
 
 Returns ``true`` if the left float is greater than the right one.
 
@@ -560,7 +560,7 @@ Returns ``true`` if the left float is greater than the right one.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_gt_int>`
 
 Returns ``true`` if this **float** is greater than the given :ref:`int<class_int>`.
 
@@ -572,7 +572,7 @@ Returns ``true`` if this **float** is greater than the given :ref:`int<class_int
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_float_operator_gte_float>`
 
 Returns ``true`` if the left float is greater than or equal to the right one.
 
@@ -586,7 +586,7 @@ Returns ``true`` if the left float is greater than or equal to the right one.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_float_operator_gte_int>`
 
 Returns ``true`` if this **float** is greater than or equal to the given :ref:`int<class_int>`.
 
@@ -598,7 +598,7 @@ Returns ``true`` if this **float** is greater than or equal to the given :ref:`i
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator unary+**\ (\ )
+:ref:`float<class_float>` **operator unary+**\ (\ ) :ref:`🔗<class_float_operator_unplus>`
 
 Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
 
@@ -610,7 +610,7 @@ Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, 
 
 .. rst-class:: classref-operator
 
-:ref:`float<class_float>` **operator unary-**\ (\ )
+:ref:`float<class_float>` **operator unary-**\ (\ ) :ref:`🔗<class_float_operator_unminus>`
 
 Returns the negative value of the **float**. If positive, turns the number negative. If negative, turns the number positive. With floats, the number zero can be either positive or negative.
 

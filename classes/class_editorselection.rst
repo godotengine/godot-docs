@@ -21,7 +21,7 @@ Description
 
 This object manages the SceneTree selection in the editor.
 
-\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_selection<class_EditorInterface_method_get_selection>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_selection()<class_EditorInterface_method_get_selection>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -37,6 +37,8 @@ Methods
    | |void|                                               | :ref:`clear<class_EditorSelection_method_clear>`\ (\ )                                                       |
    +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] | :ref:`get_selected_nodes<class_EditorSelection_method_get_selected_nodes>`\ (\ )                             |
+   +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] | :ref:`get_top_selected_nodes<class_EditorSelection_method_get_top_selected_nodes>`\ (\ )                     |
    +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] | :ref:`get_transformable_selected_nodes<class_EditorSelection_method_get_transformable_selected_nodes>`\ (\ ) |
    +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -56,7 +58,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**selection_changed**\ (\ )
+**selection_changed**\ (\ ) :ref:`🔗<class_EditorSelection_signal_selection_changed>`
 
 Emitted when the selection changes.
 
@@ -73,11 +75,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_node**\ (\ node\: :ref:`Node<class_Node>`\ )
+|void| **add_node**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_EditorSelection_method_add_node>`
 
 Adds a node to the selection.
 
-\ **Note:** The newly selected node will not be automatically edited in the inspector. If you want to edit a node, use :ref:`EditorInterface.edit_node<class_EditorInterface_method_edit_node>`.
+\ **Note:** The newly selected node will not be automatically edited in the inspector. If you want to edit a node, use :ref:`EditorInterface.edit_node()<class_EditorInterface_method_edit_node>`.
 
 .. rst-class:: classref-item-separator
 
@@ -87,7 +89,7 @@ Adds a node to the selection.
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_EditorSelection_method_clear>`
 
 Clear the selection.
 
@@ -99,9 +101,23 @@ Clear the selection.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_selected_nodes**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_selected_nodes**\ (\ ) :ref:`🔗<class_EditorSelection_method_get_selected_nodes>`
 
 Returns the list of selected nodes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSelection_method_get_top_selected_nodes:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_top_selected_nodes**\ (\ ) :ref:`🔗<class_EditorSelection_method_get_top_selected_nodes>`
+
+Returns the list of top selected nodes only, excluding any children. This is useful for performing transform operations (moving them, rotating, etc.).
+
+For example, if there is a node A with a child B and a sibling C, then selecting all three will cause this method to return only A and C. Changing the global transform of A will affect the global transform of B, so there is no need to change B separately.
 
 .. rst-class:: classref-item-separator
 
@@ -111,9 +127,11 @@ Returns the list of selected nodes.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_transformable_selected_nodes**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_transformable_selected_nodes**\ (\ ) :ref:`🔗<class_EditorSelection_method_get_transformable_selected_nodes>`
 
-Returns the list of selected nodes, optimized for transform operations (i.e. moving them, rotating, etc.). This list can be used to avoid situations where a node is selected and is also a child/grandchild.
+**Deprecated:** Use :ref:`get_top_selected_nodes()<class_EditorSelection_method_get_top_selected_nodes>` instead.
+
+Returns the list of top selected nodes only, excluding any children. This is useful for performing transform operations (moving them, rotating, etc.). See :ref:`get_top_selected_nodes()<class_EditorSelection_method_get_top_selected_nodes>`.
 
 .. rst-class:: classref-item-separator
 
@@ -123,7 +141,7 @@ Returns the list of selected nodes, optimized for transform operations (i.e. mov
 
 .. rst-class:: classref-method
 
-|void| **remove_node**\ (\ node\: :ref:`Node<class_Node>`\ )
+|void| **remove_node**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_EditorSelection_method_remove_node>`
 
 Removes a node from the selection.
 

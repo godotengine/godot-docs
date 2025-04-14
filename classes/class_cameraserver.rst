@@ -23,7 +23,19 @@ The **CameraServer** keeps track of different cameras accessible in Godot. These
 
 It is notably used to provide AR modules with a video feed from the camera.
 
-\ **Note:** This class is currently only implemented on macOS and iOS. On other platforms, no :ref:`CameraFeed<class_CameraFeed>`\ s will be available.
+\ **Note:** This class is currently only implemented on Linux, macOS, and iOS. On other platforms no :ref:`CameraFeed<class_CameraFeed>`\ s will be available. To get a :ref:`CameraFeed<class_CameraFeed>` on iOS, the camera plugin from `godot-ios-plugins <https://github.com/godotengine/godot-ios-plugins>`__ is required.
+
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+-----------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`monitoring_feeds<class_CameraServer_property_monitoring_feeds>` | ``false`` |
+   +-------------------------+-----------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -58,7 +70,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**camera_feed_added**\ (\ id\: :ref:`int<class_int>`\ )
+**camera_feed_added**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_signal_camera_feed_added>`
 
 Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. a webcam is plugged in).
 
@@ -70,7 +82,7 @@ Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. a webcam is pl
 
 .. rst-class:: classref-signal
 
-**camera_feed_removed**\ (\ id\: :ref:`int<class_int>`\ )
+**camera_feed_removed**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_signal_camera_feed_removed>`
 
 Emitted when a :ref:`CameraFeed<class_CameraFeed>` is removed (e.g. a webcam is unplugged).
 
@@ -87,7 +99,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FeedImage**:
+enum **FeedImage**: :ref:`🔗<enum_CameraServer_FeedImage>`
 
 .. _class_CameraServer_constant_FEED_RGBA_IMAGE:
 
@@ -127,6 +139,30 @@ The CbCr component camera image.
 
 .. rst-class:: classref-descriptions-group
 
+Property Descriptions
+---------------------
+
+.. _class_CameraServer_property_monitoring_feeds:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **monitoring_feeds** = ``false`` :ref:`🔗<class_CameraServer_property_monitoring_feeds>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_monitoring_feeds**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_monitoring_feeds**\ (\ )
+
+If ``true``, the server is actively monitoring available camera feeds.
+
+This has a performance cost, so only set it to ``true`` when you're actively accessing the camera.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Method Descriptions
 -------------------
 
@@ -134,7 +170,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ )
+|void| **add_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ ) :ref:`🔗<class_CameraServer_method_add_feed>`
 
 Adds the camera ``feed`` to the camera server.
 
@@ -146,7 +182,7 @@ Adds the camera ``feed`` to the camera server.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`CameraFeed<class_CameraFeed>`\] **feeds**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`CameraFeed<class_CameraFeed>`\] **feeds**\ (\ ) :ref:`🔗<class_CameraServer_method_feeds>`
 
 Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
 
@@ -158,7 +194,7 @@ Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
 
 .. rst-class:: classref-method
 
-:ref:`CameraFeed<class_CameraFeed>` **get_feed**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`CameraFeed<class_CameraFeed>` **get_feed**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_method_get_feed>`
 
 Returns the :ref:`CameraFeed<class_CameraFeed>` corresponding to the camera with the given ``index``.
 
@@ -170,7 +206,7 @@ Returns the :ref:`CameraFeed<class_CameraFeed>` corresponding to the camera with
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_feed_count**\ (\ )
+:ref:`int<class_int>` **get_feed_count**\ (\ ) :ref:`🔗<class_CameraServer_method_get_feed_count>`
 
 Returns the number of :ref:`CameraFeed<class_CameraFeed>`\ s registered.
 
@@ -182,7 +218,7 @@ Returns the number of :ref:`CameraFeed<class_CameraFeed>`\ s registered.
 
 .. rst-class:: classref-method
 
-|void| **remove_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ )
+|void| **remove_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ ) :ref:`🔗<class_CameraServer_method_remove_feed>`
 
 Removes the specified camera ``feed``.
 

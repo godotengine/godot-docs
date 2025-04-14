@@ -23,7 +23,7 @@ Description
 
 **AnimatedTexture** is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture2D<class_Texture2D>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
 
-The playback of the animation is controlled by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>` property, as well as each frame's duration (see :ref:`set_frame_duration<class_AnimatedTexture_method_set_frame_duration>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
+The playback of the animation is controlled by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>` property, as well as each frame's duration (see :ref:`set_frame_duration()<class_AnimatedTexture_method_set_frame_duration>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
 \ **AnimatedTexture** currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
 
@@ -84,7 +84,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**MAX_FRAMES** = ``256``
+**MAX_FRAMES** = ``256`` :ref:`🔗<class_AnimatedTexture_constant_MAX_FRAMES>`
 
 The maximum number of frames supported by **AnimatedTexture**. If you need more frames in your animation, use :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`.
 
@@ -101,7 +101,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **current_frame**
+:ref:`int<class_int>` **current_frame** :ref:`🔗<class_AnimatedTexture_property_current_frame>`
 
 .. rst-class:: classref-property-setget
 
@@ -118,14 +118,14 @@ Sets the currently visible frame of the texture. Setting this frame while playin
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **frames** = ``1``
+:ref:`int<class_int>` **frames** = ``1`` :ref:`🔗<class_AnimatedTexture_property_frames>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_frames**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_frames**\ (\ )
 
-Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`.
+Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture()<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`.
 
 .. rst-class:: classref-item-separator
 
@@ -135,7 +135,7 @@ Number of frames to use in the animation. While you can create the frames indepe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **one_shot** = ``false``
+:ref:`bool<class_bool>` **one_shot** = ``false`` :ref:`🔗<class_AnimatedTexture_property_one_shot>`
 
 .. rst-class:: classref-property-setget
 
@@ -152,7 +152,7 @@ If ``true``, the animation will only play once and will not loop back to the fir
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pause** = ``false``
+:ref:`bool<class_bool>` **pause** = ``false`` :ref:`🔗<class_AnimatedTexture_property_pause>`
 
 .. rst-class:: classref-property-setget
 
@@ -169,7 +169,7 @@ If ``true``, the animation will pause where it currently is (i.e. at :ref:`curre
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **speed_scale** = ``1.0``
+:ref:`float<class_float>` **speed_scale** = ``1.0`` :ref:`🔗<class_AnimatedTexture_property_speed_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +191,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_frame_duration**\ (\ frame\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_frame_duration**\ (\ frame\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AnimatedTexture_method_get_frame_duration>`
 
 Returns the given ``frame``'s duration, in seconds.
 
@@ -203,7 +203,7 @@ Returns the given ``frame``'s duration, in seconds.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_frame_texture**\ (\ frame\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_frame_texture**\ (\ frame\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AnimatedTexture_method_get_frame_texture>`
 
 Returns the given frame's :ref:`Texture2D<class_Texture2D>`.
 
@@ -215,7 +215,7 @@ Returns the given frame's :ref:`Texture2D<class_Texture2D>`.
 
 .. rst-class:: classref-method
 
-|void| **set_frame_duration**\ (\ frame\: :ref:`int<class_int>`, duration\: :ref:`float<class_float>`\ )
+|void| **set_frame_duration**\ (\ frame\: :ref:`int<class_int>`, duration\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AnimatedTexture_method_set_frame_duration>`
 
 Sets the duration of any given ``frame``. The final duration is affected by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>`. If set to ``0``, the frame is skipped during playback.
 
@@ -227,7 +227,7 @@ Sets the duration of any given ``frame``. The final duration is affected by the 
 
 .. rst-class:: classref-method
 
-|void| **set_frame_texture**\ (\ frame\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_frame_texture**\ (\ frame\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_AnimatedTexture_method_set_frame_texture>`
 
 Assigns a :ref:`Texture2D<class_Texture2D>` to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID :ref:`frames<class_AnimatedTexture_property_frames>` - 1.
 

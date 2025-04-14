@@ -27,7 +27,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
-\ **Example of contacting a REST API and printing one of its returned fields:**\ 
+\ **Example:** Contact a REST API and print one of its returned fields:
 
 
 .. tabs::
@@ -67,7 +67,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     public override void _Ready()
     {
         // Create an HTTP request node and connect its completion signal.
-        var httpRequest = new HTTPRequest();
+        var httpRequest = new HttpRequest();
         AddChild(httpRequest);
         httpRequest.RequestCompleted += HttpRequestCompleted;
     
@@ -85,7 +85,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         {
             { "name", "Godette" }
         });
-        error = httpRequest.Request("https://httpbin.org/post", null, HTTPClient.Method.Post, body);
+        error = httpRequest.Request("https://httpbin.org/post", null, HttpClient.Method.Post, body);
         if (error != Error.Ok)
         {
             GD.PushError("An error occurred in the HTTP request.");
@@ -105,7 +105,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Example of loading and displaying an image using HTTPRequest:**\ 
+\ **Example:** Load an image using **HTTPRequest** and display it:
 
 
 .. tabs::
@@ -119,7 +119,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         http_request.request_completed.connect(self._http_request_completed)
     
         # Perform the HTTP request. The URL below returns a PNG image as of writing.
-        var error = http_request.request("https://via.placeholder.com/512")
+        var error = http_request.request("https://placehold.co/512")
         if error != OK:
             push_error("An error occurred in the HTTP request.")
     
@@ -145,12 +145,12 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     public override void _Ready()
     {
         // Create an HTTP request node and connect its completion signal.
-        var httpRequest = new HTTPRequest();
+        var httpRequest = new HttpRequest();
         AddChild(httpRequest);
         httpRequest.RequestCompleted += HttpRequestCompleted;
     
         // Perform the HTTP request. The URL below returns a PNG image as of writing.
-        Error error = httpRequest.Request("https://via.placeholder.com/512");
+        Error error = httpRequest.Request("https://placehold.co/512");
         if (error != Error.Ok)
         {
             GD.PushError("An error occurred in the HTTP request.");
@@ -160,7 +160,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     // Called when the HTTP request is completed.
     private void HttpRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
     {
-        if (result != (long)HTTPRequest.Result.Success)
+        if (result != (long)HttpRequest.Result.Success)
         {
             GD.PushError("Image couldn't be downloaded. Try a different image.");
         }
@@ -181,7 +181,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Gzipped response bodies**: HTTPRequest will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
+\ **Note:** **HTTPRequest** nodes will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
 
 .. rst-class:: classref-introduction-group
 
@@ -257,7 +257,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**request_completed**\ (\ result\: :ref:`int<class_int>`, response_code\: :ref:`int<class_int>`, headers\: :ref:`PackedStringArray<class_PackedStringArray>`, body\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+**request_completed**\ (\ result\: :ref:`int<class_int>`, response_code\: :ref:`int<class_int>`, headers\: :ref:`PackedStringArray<class_PackedStringArray>`, body\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_HTTPRequest_signal_request_completed>`
 
 Emitted when a request is completed.
 
@@ -274,7 +274,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Result**:
+enum **Result**: :ref:`🔗<enum_HTTPRequest_Result>`
 
 .. _class_HTTPRequest_constant_RESULT_SUCCESS:
 
@@ -290,11 +290,7 @@ Request successful.
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_CHUNKED_BODY_SIZE_MISMATCH** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Request failed due to a mismatch between the expected and actual chunked body size during transfer. Possible causes include network errors, server misconfiguration, or issues with chunked encoding.
 
 .. _class_HTTPRequest_constant_RESULT_CANT_CONNECT:
 
@@ -350,11 +346,7 @@ Request exceeded its maximum size limit, see :ref:`body_size_limit<class_HTTPReq
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_BODY_DECOMPRESS_FAILED** = ``8``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Request failed due to an error while decompressing the response body. Possible causes include unsupported or incorrect compression format, corrupted data, or incomplete transfer.
 
 .. _class_HTTPRequest_constant_RESULT_REQUEST_FAILED:
 
@@ -409,7 +401,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **accept_gzip** = ``true``
+:ref:`bool<class_bool>` **accept_gzip** = ``true`` :ref:`🔗<class_HTTPRequest_property_accept_gzip>`
 
 .. rst-class:: classref-property-setget
 
@@ -432,7 +424,7 @@ If ``false`` no header will be added, and no decompression will be performed on 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **body_size_limit** = ``-1``
+:ref:`int<class_int>` **body_size_limit** = ``-1`` :ref:`🔗<class_HTTPRequest_property_body_size_limit>`
 
 .. rst-class:: classref-property-setget
 
@@ -449,7 +441,7 @@ Maximum allowed size for response bodies. If the response body is compressed, th
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **download_chunk_size** = ``65536``
+:ref:`int<class_int>` **download_chunk_size** = ``65536`` :ref:`🔗<class_HTTPRequest_property_download_chunk_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -468,7 +460,7 @@ Set this to a lower value (e.g. 4096 for 4 KiB) when downloading small files to 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **download_file** = ``""``
+:ref:`String<class_String>` **download_file** = ``""`` :ref:`🔗<class_HTTPRequest_property_download_file>`
 
 .. rst-class:: classref-property-setget
 
@@ -485,7 +477,7 @@ The file to download into. Will output any received file into it.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_redirects** = ``8``
+:ref:`int<class_int>` **max_redirects** = ``8`` :ref:`🔗<class_HTTPRequest_property_max_redirects>`
 
 .. rst-class:: classref-property-setget
 
@@ -502,7 +494,7 @@ Maximum number of allowed redirects.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **timeout** = ``0.0``
+:ref:`float<class_float>` **timeout** = ``0.0`` :ref:`🔗<class_HTTPRequest_property_timeout>`
 
 .. rst-class:: classref-property-setget
 
@@ -519,7 +511,7 @@ The duration to wait in seconds before a request times out. If :ref:`timeout<cla
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_threads** = ``false``
+:ref:`bool<class_bool>` **use_threads** = ``false`` :ref:`🔗<class_HTTPRequest_property_use_threads>`
 
 .. rst-class:: classref-property-setget
 
@@ -541,7 +533,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **cancel_request**\ (\ )
+|void| **cancel_request**\ (\ ) :ref:`🔗<class_HTTPRequest_method_cancel_request>`
 
 Cancels the current request.
 
@@ -553,7 +545,7 @@ Cancels the current request.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_body_size**\ (\ ) |const|
+:ref:`int<class_int>` **get_body_size**\ (\ ) |const| :ref:`🔗<class_HTTPRequest_method_get_body_size>`
 
 Returns the response body length.
 
@@ -567,7 +559,7 @@ Returns the response body length.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_downloaded_bytes**\ (\ ) |const|
+:ref:`int<class_int>` **get_downloaded_bytes**\ (\ ) |const| :ref:`🔗<class_HTTPRequest_method_get_downloaded_bytes>`
 
 Returns the number of bytes this HTTPRequest downloaded.
 
@@ -579,7 +571,7 @@ Returns the number of bytes this HTTPRequest downloaded.
 
 .. rst-class:: classref-method
 
-:ref:`Status<enum_HTTPClient_Status>` **get_http_client_status**\ (\ ) |const|
+:ref:`Status<enum_HTTPClient_Status>` **get_http_client_status**\ (\ ) |const| :ref:`🔗<class_HTTPRequest_method_get_http_client_status>`
 
 Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See :ref:`Status<enum_HTTPClient_Status>`.
 
@@ -591,13 +583,13 @@ Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **request**\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data\: :ref:`String<class_String>` = ""\ )
+:ref:`Error<enum_@GlobalScope_Error>` **request**\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_HTTPRequest_method_request>`
 
-Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
+Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host()<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request()<class_HTTPClient_method_request>`.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is successfully created. (Does not imply that the server has responded), :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if not in the tree, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` if still processing previous request, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if given string is not a valid URL format, or :ref:`@GlobalScope.ERR_CANT_CONNECT<class_@GlobalScope_constant_ERR_CANT_CONNECT>` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
 
-\ **Note:** When ``method`` is :ref:`HTTPClient.METHOD_GET<class_HTTPClient_constant_METHOD_GET>`, the payload sent via ``request_data`` might be ignored by the server or even cause the server to reject the request (check `RFC 7231 section 4.3.1 <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1>`__ for more details). As a workaround, you can send data as a query string in the URL (see :ref:`String.uri_encode<class_String_method_uri_encode>` for an example).
+\ **Note:** When ``method`` is :ref:`HTTPClient.METHOD_GET<class_HTTPClient_constant_METHOD_GET>`, the payload sent via ``request_data`` might be ignored by the server or even cause the server to reject the request (check `RFC 7231 section 4.3.1 <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1>`__ for more details). As a workaround, you can send data as a query string in the URL (see :ref:`String.uri_encode()<class_String_method_uri_encode>` for an example).
 
 \ **Note:** It's recommended to use transport encryption (TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
 
@@ -609,9 +601,9 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is suc
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **request_raw**\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data_raw\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ )
+:ref:`Error<enum_@GlobalScope_Error>` **request_raw**\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data_raw\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ ) :ref:`🔗<class_HTTPRequest_method_request_raw>`
 
-Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>` using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
+Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>` using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host()<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request()<class_HTTPClient_method_request>`.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is successfully created. (Does not imply that the server has responded), :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if not in the tree, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` if still processing previous request, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if given string is not a valid URL format, or :ref:`@GlobalScope.ERR_CANT_CONNECT<class_@GlobalScope_constant_ERR_CANT_CONNECT>` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
 
@@ -623,7 +615,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is suc
 
 .. rst-class:: classref-method
 
-|void| **set_http_proxy**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ )
+|void| **set_http_proxy**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_HTTPRequest_method_set_http_proxy>`
 
 Sets the proxy server for HTTP requests.
 
@@ -637,7 +629,7 @@ The proxy server is unset if ``host`` is empty or ``port`` is -1.
 
 .. rst-class:: classref-method
 
-|void| **set_https_proxy**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ )
+|void| **set_https_proxy**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_HTTPRequest_method_set_https_proxy>`
 
 Sets the proxy server for HTTPS requests.
 
@@ -651,9 +643,9 @@ The proxy server is unset if ``host`` is empty or ``port`` is -1.
 
 .. rst-class:: classref-method
 
-|void| **set_tls_options**\ (\ client_options\: :ref:`TLSOptions<class_TLSOptions>`\ )
+|void| **set_tls_options**\ (\ client_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_HTTPRequest_method_set_tls_options>`
 
-Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HTTPS server. See :ref:`TLSOptions.client<class_TLSOptions_method_client>`.
+Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HTTPS server. See :ref:`TLSOptions.client()<class_TLSOptions_method_client>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -42,7 +42,7 @@ Command key names use slash delimiters to distinguish sections, for example: ``"
 
 
 
-\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_command_palette<class_EditorInterface_method_get_command_palette>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_command_palette()<class_EditorInterface_method_get_command_palette>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -83,7 +83,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_command**\ (\ command_name\: :ref:`String<class_String>`, key_name\: :ref:`String<class_String>`, binded_callable\: :ref:`Callable<class_Callable>`, shortcut_text\: :ref:`String<class_String>` = "None"\ )
+|void| **add_command**\ (\ command_name\: :ref:`String<class_String>`, key_name\: :ref:`String<class_String>`, binded_callable\: :ref:`Callable<class_Callable>`, shortcut_text\: :ref:`String<class_String>` = "None"\ ) :ref:`🔗<class_EditorCommandPalette_method_add_command>`
 
 Adds a custom command to EditorCommandPalette.
 
@@ -103,7 +103,7 @@ Adds a custom command to EditorCommandPalette.
 
 .. rst-class:: classref-method
 
-|void| **remove_command**\ (\ key_name\: :ref:`String<class_String>`\ )
+|void| **remove_command**\ (\ key_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorCommandPalette_method_remove_command>`
 
 Removes the custom command from EditorCommandPalette.
 

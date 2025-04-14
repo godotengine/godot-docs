@@ -26,21 +26,32 @@ Installing XR Tools
 
 Continuing on from our project we started in :ref:`doc_setting_up_xr` we want to add in the Godot XR Tools library.
 This can be downloaded from the `Godot XR Tools releases page <https://github.com/GodotVR/godot-xr-tools/releases>`_.
-Simply find the latest pre-release for Godot 4 and then under assets download the ``godot-xr-tools.zip`` file.
+Find the latest release for Godot 4, and under **Assets**, download the
+``godot-xr-tools.zip`` file.
 
 Once downloaded unzip the file.
 You will notice the files are held within a ``godot-xr-tools`` subfolder.
 Inside of this folder you will find an ``addons`` folder.
-It is this folder that you want to copy in its entirety to your Godot project folder, your project should now look something like this:
+It is this folder that you want to copy in its entirety to your Godot project folder. Your project should now look something like this:
 
 .. image:: img/godot_xr_tools_root_folder.webp
 
-Now open up your project in Godot, if you haven't already, and give it a minute or so to import all the resources of the plugin.
+Now open up your project in Godot, if you haven't already, and give it a minute or
+so to import all the resources of the plugin. If it asks for a path to Blender to
+be set you can just click the option to disable blender import and restart the
+editor.
+
+After the import finishes you may notice that several "failed to load script"
+messages popped up, that's normal, the plugin just needs to be enabled in the
+project settings.
 
 Next open the ``Project`` menu and select ``Project Settings..``.
 Now go to the ``Plugins`` tab and enable the plugin.
 
 .. image:: img/godot_xr_tools_enable.webp
+
+After doing that you need to close and re-open your project so everything is
+properly enabled.
 
 Basic hands
 -----------
@@ -53,8 +64,9 @@ As a reliable alternative Godot XR Tools comes with a number of rigged hand scen
 These hands come in low and high poly versions, come in a few configurations, a number of animation files to control finger positions and a number of different textures.
 
 In your scene tree select your left hand :ref:`XRController3D <class_xrcontroller3d>` node.
-Now click on the ``instantiate Child Scene`` button to add a child scene.
-And select ``addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn``.
+Now click on the **instantiate Child Scene** button to add a child scene. Click the
+**addons** toggle so the addons folder can be searched. Then search for ``left_hand_low.tscn``,
+and select it.
 
 As you can see from the path of this scene, low poly models are in the ``lowpoly`` subfolder while high poly models are in the ``highpoly`` subfolder.
 You will want to use the low poly versions if you plan to release your game on mobile devices.

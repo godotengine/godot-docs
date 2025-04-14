@@ -247,7 +247,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
         Using this value ensures that your movement will remain consistent even
         if the frame rate changes.
 
-Click "Play Scene" (:kbd:`F6`, :kbd:`Cmd + R` on macOS) and confirm you can move
+Click "Run Current Scene" (:kbd:`F6`, :kbd:`Cmd + R` on macOS) and confirm you can move
 the player around the screen in all directions.
 
 .. warning:: If you get an error in the "Debugger" panel that says
@@ -260,7 +260,7 @@ the player around the screen in all directions.
             the name you see in the scene tree.
 
 Choosing animations
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Now that the player can move, we need to change which animation the
 AnimatedSprite2D is playing based on its direction. We have the "walk" animation,
@@ -341,7 +341,7 @@ When you're sure the movement is working correctly, add this line to
     Hide();
 
 Preparing for collisions
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 We want ``Player`` to detect when it's hit by an enemy, but we haven't made any
 enemies yet! That's OK, because we're going to use Godot's *signal*
@@ -399,7 +399,7 @@ Next, add this code to the function:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_body_entered(body):
+    func _on_body_entered(_body):
         hide() # Player disappears after being hit.
         hit.emit()
         # Must be deferred as we can't change physics properties on a physics callback.

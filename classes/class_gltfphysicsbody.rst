@@ -12,14 +12,14 @@ GLTFPhysicsBody
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Represents a GLTF physics body.
+Represents a glTF physics body.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Represents a physics body as an intermediary between the ``OMI_physics_body`` GLTF data and Godot's nodes, and it's abstracted in a way that allows adding support for different GLTF physics extensions in the future.
+Represents a physics body as an intermediary between the ``OMI_physics_body`` glTF data and Godot's nodes, and it's abstracted in a way that allows adding support for different glTF physics extensions in the future.
 
 .. rst-class:: classref-introduction-group
 
@@ -28,7 +28,7 @@ Tutorials
 
 - :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
-- `OMI_physics_body GLTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_physics_body>`__
+- `OMI_physics_body glTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_physics_body>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -87,7 +87,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **angular_velocity** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **angular_velocity** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_GLTFPhysicsBody_property_angular_velocity>`
 
 .. rst-class:: classref-property-setget
 
@@ -104,14 +104,18 @@ The angular velocity of the physics body, in radians per second. This is only us
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **body_type** = ``"rigid"``
+:ref:`String<class_String>` **body_type** = ``"rigid"`` :ref:`🔗<class_GLTFPhysicsBody_property_body_type>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_body_type**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_body_type**\ (\ )
 
-The type of the body. When importing, this controls what type of :ref:`CollisionObject3D<class_CollisionObject3D>` node Godot should generate. Valid values are "static", "animatable", "character", "rigid", "vehicle", and "trigger". When exporting, this will be squashed down to one of "static", "kinematic", or "dynamic" motion types, or the "trigger" property.
+The type of the body.
+
+When importing, this controls what type of :ref:`CollisionObject3D<class_CollisionObject3D>` node Godot should generate. Valid values are ``"static"``, ``"animatable"``, ``"character"``, ``"rigid"``, ``"vehicle"``, and ``"trigger"``.
+
+When exporting, this will be squashed down to one of ``"static"``, ``"kinematic"``, or ``"dynamic"`` motion types, or the ``"trigger"`` property.
 
 .. rst-class:: classref-item-separator
 
@@ -121,7 +125,7 @@ The type of the body. When importing, this controls what type of :ref:`Collision
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **center_of_mass** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **center_of_mass** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_GLTFPhysicsBody_property_center_of_mass>`
 
 .. rst-class:: classref-property-setget
 
@@ -138,7 +142,7 @@ The center of mass of the body, in meters. This is in local space relative to th
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **inertia_diagonal** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **inertia_diagonal** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_GLTFPhysicsBody_property_inertia_diagonal>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +161,7 @@ When converted to a Godot :ref:`RigidBody3D<class_RigidBody3D>` node, if this va
 
 .. rst-class:: classref-property
 
-:ref:`Quaternion<class_Quaternion>` **inertia_orientation** = ``Quaternion(0, 0, 0, 1)``
+:ref:`Quaternion<class_Quaternion>` **inertia_orientation** = ``Quaternion(0, 0, 0, 1)`` :ref:`🔗<class_GLTFPhysicsBody_property_inertia_orientation>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +178,7 @@ The inertia orientation of the physics body. This defines the rotation of the in
 
 .. rst-class:: classref-property
 
-:ref:`Basis<class_Basis>` **inertia_tensor** = ``Basis(0, 0, 0, 0, 0, 0, 0, 0, 0)``
+:ref:`Basis<class_Basis>` **inertia_tensor** = ``Basis(0, 0, 0, 0, 0, 0, 0, 0, 0)`` :ref:`🔗<class_GLTFPhysicsBody_property_inertia_tensor>`
 
 .. rst-class:: classref-property-setget
 
@@ -195,7 +199,7 @@ When converted to a Godot :ref:`RigidBody3D<class_RigidBody3D>` node, if this va
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **linear_velocity** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **linear_velocity** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_GLTFPhysicsBody_property_linear_velocity>`
 
 .. rst-class:: classref-property-setget
 
@@ -212,7 +216,7 @@ The linear velocity of the physics body, in meters per second. This is only used
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **mass** = ``1.0``
+:ref:`float<class_float>` **mass** = ``1.0`` :ref:`🔗<class_GLTFPhysicsBody_property_mass>`
 
 .. rst-class:: classref-property-setget
 
@@ -234,9 +238,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|
+:ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static| :ref:`🔗<class_GLTFPhysicsBody_method_from_dictionary>`
 
-Creates a new GLTFPhysicsBody instance by parsing the given :ref:`Dictionary<class_Dictionary>` in the ``OMI_physics_body`` GLTF extension format.
+Creates a new GLTFPhysicsBody instance by parsing the given :ref:`Dictionary<class_Dictionary>` in the ``OMI_physics_body`` glTF extension format.
 
 .. rst-class:: classref-item-separator
 
@@ -246,9 +250,9 @@ Creates a new GLTFPhysicsBody instance by parsing the given :ref:`Dictionary<cla
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_node**\ (\ body_node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) |static|
+:ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_node**\ (\ body_node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) |static| :ref:`🔗<class_GLTFPhysicsBody_method_from_node>`
 
-Create a new GLTFPhysicsBody instance from the given Godot :ref:`CollisionObject3D<class_CollisionObject3D>` node.
+Creates a new GLTFPhysicsBody instance from the given Godot :ref:`CollisionObject3D<class_CollisionObject3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -258,9 +262,9 @@ Create a new GLTFPhysicsBody instance from the given Godot :ref:`CollisionObject
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const| :ref:`🔗<class_GLTFPhysicsBody_method_to_dictionary>`
 
-Serializes this GLTFPhysicsBody instance into a :ref:`Dictionary<class_Dictionary>`. It will be in the format expected by the ``OMI_physics_body`` GLTF extension.
+Serializes this GLTFPhysicsBody instance into a :ref:`Dictionary<class_Dictionary>`. It will be in the format expected by the ``OMI_physics_body`` glTF extension.
 
 .. rst-class:: classref-item-separator
 
@@ -270,7 +274,7 @@ Serializes this GLTFPhysicsBody instance into a :ref:`Dictionary<class_Dictionar
 
 .. rst-class:: classref-method
 
-:ref:`CollisionObject3D<class_CollisionObject3D>` **to_node**\ (\ ) |const|
+:ref:`CollisionObject3D<class_CollisionObject3D>` **to_node**\ (\ ) |const| :ref:`🔗<class_GLTFPhysicsBody_method_to_node>`
 
 Converts this GLTFPhysicsBody instance into a Godot :ref:`CollisionObject3D<class_CollisionObject3D>` node.
 

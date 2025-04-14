@@ -1,6 +1,6 @@
 .. _doc_web_javascript_bridge:
 
-The JavaScriptBridge Singleton
+The JavaScriptBridge singleton
 ==============================
 
 In web builds, the :ref:`JavaScriptBridge <class_JavaScriptBridge>` singleton
@@ -93,6 +93,13 @@ Arguments passed by JavaScript to the callback will be passed as a single Godot
         js_event.preventDefault()
         js_event.returnValue = ''
 
+.. warning::
+
+    Callback methods created via :ref:`JavaScriptBridge.get_interface() <class_JavaScriptBridge_method_get_interface>`
+    (``_my_callback`` in the above example) **must** take exactly one :ref:`Array<class_Array>`
+    argument, which is going to be the JavaScript `arguments object <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments>`__
+    converted to an array. Otherwise, the callback method will not be called.
+
 Here is another example that asks the user for the `Notification permission <https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API>`__
 and waits asynchronously to deliver a notification if the permission is
 granted:
@@ -130,7 +137,7 @@ Can I use my favorite library?
 ------------------------------
 
 You most likely can. First, you have to
-include your library in the page. You can simply customize the
+include your library in the page. You can customize the
 :ref:`Head Include <doc_javascript_export_options>` during export (see below),
 or even :ref:`write your own template <doc_customizing_html5_shell>`.
 

@@ -23,7 +23,7 @@ InputEventMIDI stores information about messages from `MIDI <https://en.wikipedi
 
 MIDI messages can be received over a 5-pin MIDI connector or over USB. If your device supports both be sure to check the settings in the device to see which output it is using.
 
-By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_midi_inputs<class_OS_method_open_midi_inputs>`, first. You can check which devices are detected with :ref:`OS.get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>`, and close the connection with :ref:`OS.close_midi_inputs<class_OS_method_close_midi_inputs>`.
+By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_midi_inputs()<class_OS_method_open_midi_inputs>`, first. You can check which devices are detected with :ref:`OS.get_connected_midi_inputs()<class_OS_method_get_connected_midi_inputs>`, and close the connection with :ref:`OS.close_midi_inputs()<class_OS_method_close_midi_inputs>`.
 
 
 .. tabs::
@@ -59,13 +59,13 @@ By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_m
     
     public override void _Input(InputEvent inputEvent)
     {
-        if (inputEvent is InputEventMIDI midiEvent)
+        if (inputEvent is InputEventMidi midiEvent)
         {
             PrintMIDIInfo(midiEvent);
         }
     }
     
-    private void PrintMIDIInfo(InputEventMIDI midiEvent)
+    private void PrintMIDIInfo(InputEventMidi midiEvent)
     {
         GD.Print(midiEvent);
         GD.Print($"Channel {midiEvent.Channel}");
@@ -81,6 +81,8 @@ By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_m
 
 
 \ **Note:** Godot does not support MIDI output, so there is no way to emit MIDI messages from Godot. Only MIDI input is supported.
+
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`OS.open_midi_inputs()<class_OS_method_open_midi_inputs>`. MIDI input will not work until the user accepts the permission request.
 
 .. rst-class:: classref-introduction-group
 
@@ -132,7 +134,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **channel** = ``0``
+:ref:`int<class_int>` **channel** = ``0`` :ref:`🔗<class_InputEventMIDI_property_channel>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +151,7 @@ The MIDI channel of this message, ranging from ``0`` to ``15``. MIDI channel ``9
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **controller_number** = ``0``
+:ref:`int<class_int>` **controller_number** = ``0`` :ref:`🔗<class_InputEventMIDI_property_controller_number>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +168,7 @@ The unique number of the controller, if :ref:`message<class_InputEventMIDI_prope
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **controller_value** = ``0``
+:ref:`int<class_int>` **controller_value** = ``0`` :ref:`🔗<class_InputEventMIDI_property_controller_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -183,7 +185,7 @@ The value applied to the controller. If :ref:`message<class_InputEventMIDI_prope
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **instrument** = ``0``
+:ref:`int<class_int>` **instrument** = ``0`` :ref:`🔗<class_InputEventMIDI_property_instrument>`
 
 .. rst-class:: classref-property-setget
 
@@ -202,7 +204,7 @@ To see what each value means, refer to the `General MIDI's instrument list <http
 
 .. rst-class:: classref-property
 
-:ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **message** = ``0``
+:ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **message** = ``0`` :ref:`🔗<class_InputEventMIDI_property_message>`
 
 .. rst-class:: classref-property-setget
 
@@ -221,7 +223,7 @@ For more information, see the `MIDI message status byte list chart <https://www.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **pitch** = ``0``
+:ref:`int<class_int>` **pitch** = ``0`` :ref:`🔗<class_InputEventMIDI_property_pitch>`
 
 .. rst-class:: classref-property-setget
 
@@ -240,7 +242,7 @@ On a piano, the **middle C** is ``60``, followed by a **C-sharp** (``61``), then
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **pressure** = ``0``
+:ref:`int<class_int>` **pressure** = ``0`` :ref:`🔗<class_InputEventMIDI_property_pressure>`
 
 .. rst-class:: classref-property-setget
 
@@ -259,7 +261,7 @@ The strength of the key being pressed. This value ranges from ``0`` to ``127``.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **velocity** = ``0``
+:ref:`int<class_int>` **velocity** = ``0`` :ref:`🔗<class_InputEventMIDI_property_velocity>`
 
 .. rst-class:: classref-property-setget
 

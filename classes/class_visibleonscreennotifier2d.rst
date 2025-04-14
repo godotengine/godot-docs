@@ -21,7 +21,7 @@ A rectangular region of 2D space that detects whether it is visible on screen.
 Description
 -----------
 
-:ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>` represents a rectangular region of 2D space. When any part of this region becomes visible on screen or in a viewport, it will emit a :ref:`screen_entered<class_VisibleOnScreenNotifier2D_signal_screen_entered>` signal, and likewise it will emit a :ref:`screen_exited<class_VisibleOnScreenNotifier2D_signal_screen_exited>` signal when no part of it remains visible.
+**VisibleOnScreenNotifier2D** represents a rectangular region of 2D space. When any part of this region becomes visible on screen or in a viewport, it will emit a :ref:`screen_entered<class_VisibleOnScreenNotifier2D_signal_screen_entered>` signal, and likewise it will emit a :ref:`screen_exited<class_VisibleOnScreenNotifier2D_signal_screen_exited>` signal when no part of it remains visible.
 
 If you want a node to be enabled automatically when this region is visible on screen, use :ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>`.
 
@@ -32,7 +32,7 @@ If you want a node to be enabled automatically when this region is visible on sc
 Tutorials
 ---------
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -42,9 +42,11 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+------------------------------------------------------------+-----------------------------+
-   | :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibleOnScreenNotifier2D_property_rect>` | ``Rect2(-10, -10, 20, 20)`` |
-   +---------------------------+------------------------------------------------------------+-----------------------------+
+   +---------------------------+----------------------------------------------------------------------+-----------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibleOnScreenNotifier2D_property_rect>`           | ``Rect2(-10, -10, 20, 20)`` |
+   +---------------------------+----------------------------------------------------------------------+-----------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`show_rect<class_VisibleOnScreenNotifier2D_property_show_rect>` | ``true``                    |
+   +---------------------------+----------------------------------------------------------------------+-----------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -71,7 +73,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**screen_entered**\ (\ )
+**screen_entered**\ (\ ) :ref:`🔗<class_VisibleOnScreenNotifier2D_signal_screen_entered>`
 
 Emitted when the VisibleOnScreenNotifier2D enters the screen.
 
@@ -83,7 +85,7 @@ Emitted when the VisibleOnScreenNotifier2D enters the screen.
 
 .. rst-class:: classref-signal
 
-**screen_exited**\ (\ )
+**screen_exited**\ (\ ) :ref:`🔗<class_VisibleOnScreenNotifier2D_signal_screen_exited>`
 
 Emitted when the VisibleOnScreenNotifier2D exits the screen.
 
@@ -100,7 +102,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-10, -10, 20, 20)``
+:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-10, -10, 20, 20)`` :ref:`🔗<class_VisibleOnScreenNotifier2D_property_rect>`
 
 .. rst-class:: classref-property-setget
 
@@ -108,6 +110,23 @@ Property Descriptions
 - :ref:`Rect2<class_Rect2>` **get_rect**\ (\ )
 
 The VisibleOnScreenNotifier2D's bounding rectangle.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VisibleOnScreenNotifier2D_property_show_rect:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **show_rect** = ``true`` :ref:`🔗<class_VisibleOnScreenNotifier2D_property_show_rect>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_show_rect**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_rect**\ (\ )
+
+If ``true``, shows the rectangle area of :ref:`rect<class_VisibleOnScreenNotifier2D_property_rect>` in the editor with a translucent magenta fill. Unlike changing the visibility of the VisibleOnScreenNotifier2D, this does not affect the screen culling detection.
 
 .. rst-class:: classref-section-separator
 
@@ -122,7 +141,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_on_screen**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_on_screen**\ (\ ) |const| :ref:`🔗<class_VisibleOnScreenNotifier2D_method_is_on_screen>`
 
 If ``true``, the bounding rectangle is on the screen.
 

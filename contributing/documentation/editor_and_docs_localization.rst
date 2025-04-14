@@ -12,12 +12,11 @@ translation effort of the community.
 
 These resources include:
 
-1. The `Godot editor's interface <https://hosted.weblate.org/projects/godot-engine/godot/>`__
-   (ca. 15,000 words).
-2. The `online documentation <https://hosted.weblate.org/projects/godot-engine/godot-docs/>`__
-   (editor manual and tutorials, ca. 300,000 words).
-3. The `class reference <https://hosted.weblate.org/projects/godot-engine/godot-class-reference/>`__,
-   available both online and in the editor (ca. 200,000 words).
+1. The `Godot editor's interface <https://hosted.weblate.org/projects/godot-engine/godot/>`__.
+2. The `class reference <https://hosted.weblate.org/projects/godot-engine/godot-class-reference/>`__,
+   available both online and in the editor.
+3. The `online documentation <https://hosted.weblate.org/projects/godot-engine/godot-docs/>`__
+   (editor manual and tutorials).
 
 To manage translations, we use the GNU gettext file format (``PO`` files), and
 the open source `Weblate <https://weblate.org>`__ web-based localization
@@ -33,8 +32,7 @@ localization of images.
 
     Translating all the official Godot content is a massive undertaking, so we
     advise prioritizing the resources as they are listed above: first the editor
-    interface, then the online documentation, and eventually the class reference
-    if there are enough translators to keep up with updates.
+    interface, then the class reference, then the online documentation.
 
 Using Weblate for translations
 ------------------------------
@@ -61,7 +59,7 @@ as an example) to find the list of all languages:
     more details.
 
 Adding a new language
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 If your language is already listed, click on its name to access the overview,
 and skip the rest of this section.
@@ -94,7 +92,7 @@ to translate to:
     ``pt_PT``).
 
 Translation interface
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 Once a language has been selected, you will see an overview of the translation
 status, including how many strings are left to translate or review. Each item
@@ -210,7 +208,7 @@ having some notions on the markup language used for each resource is important
 to avoid creating syntax errors in your translations.
 
 Editor interface (C++)
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 The editor translations originate from C++ strings, and may use:
 
@@ -248,7 +246,7 @@ The editor translations originate from C++ strings, and may use:
   specifiers may be displayed as ``s%``.
 
 Online documentation (RST)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The documentation translations originate from reStructuredText (RST) files,
 which also use their own markup syntax to style text, create internal and
@@ -298,7 +296,7 @@ external links, etc. Here are some examples::
     and the internal and external hyperlink markup.
 
 Class reference (BBCode)
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The class reference is documented in the main Godot repository using XML files,
 and with BBCode-like markup for styling and internal references.

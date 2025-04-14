@@ -21,7 +21,9 @@ Abstract base class for input events affected by modifier keys like :kbd:`Shift`
 Description
 -----------
 
-Stores information about mouse, keyboard, and touch gesture input events. This includes information about which modifier keys are pressed, such as :kbd:`Shift` or :kbd:`Alt`. See :ref:`Node._input<class_Node_private_method__input>`.
+Stores information about mouse, keyboard, and touch gesture input events. This includes information about which modifier keys are pressed, such as :kbd:`Shift` or :kbd:`Alt`. See :ref:`Node._input()<class_Node_private_method__input>`.
+
+\ **Note:** Modifier keys are considered modifiers only when used in combination with another key. As a result, their corresponding member variables, such as :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>`, will return ``false`` if the key is pressed on its own.
 
 .. rst-class:: classref-introduction-group
 
@@ -77,7 +79,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **alt_pressed** = ``false``
+:ref:`bool<class_bool>` **alt_pressed** = ``false`` :ref:`🔗<class_InputEventWithModifiers_property_alt_pressed>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,7 +96,7 @@ State of the :kbd:`Alt` modifier.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **command_or_control_autoremap** = ``false``
+:ref:`bool<class_bool>` **command_or_control_autoremap** = ``false`` :ref:`🔗<class_InputEventWithModifiers_property_command_or_control_autoremap>`
 
 .. rst-class:: classref-property-setget
 
@@ -111,7 +113,7 @@ Automatically use :kbd:`Meta` (:kbd:`Cmd`) on macOS and :kbd:`Ctrl` on other pla
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ctrl_pressed** = ``false``
+:ref:`bool<class_bool>` **ctrl_pressed** = ``false`` :ref:`🔗<class_InputEventWithModifiers_property_ctrl_pressed>`
 
 .. rst-class:: classref-property-setget
 
@@ -128,7 +130,7 @@ State of the :kbd:`Ctrl` modifier.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **meta_pressed** = ``false``
+:ref:`bool<class_bool>` **meta_pressed** = ``false`` :ref:`🔗<class_InputEventWithModifiers_property_meta_pressed>`
 
 .. rst-class:: classref-property-setget
 
@@ -145,7 +147,7 @@ State of the :kbd:`Meta` modifier. On Windows and Linux, this represents the Win
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shift_pressed** = ``false``
+:ref:`bool<class_bool>` **shift_pressed** = ``false`` :ref:`🔗<class_InputEventWithModifiers_property_shift_pressed>`
 
 .. rst-class:: classref-property-setget
 
@@ -167,7 +169,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|bitfield|\[:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\] **get_modifiers_mask**\ (\ ) |const|
+|bitfield|\[:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\] **get_modifiers_mask**\ (\ ) |const| :ref:`🔗<class_InputEventWithModifiers_method_get_modifiers_mask>`
 
 Returns the keycode combination of modifier keys.
 
@@ -179,7 +181,7 @@ Returns the keycode combination of modifier keys.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_command_or_control_pressed**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_command_or_control_pressed**\ (\ ) |const| :ref:`🔗<class_InputEventWithModifiers_method_is_command_or_control_pressed>`
 
 On macOS, returns ``true`` if :kbd:`Meta` (:kbd:`Cmd`) is pressed.
 

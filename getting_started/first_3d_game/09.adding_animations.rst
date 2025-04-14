@@ -266,7 +266,7 @@ Open the *Player* scene, select the AnimationPlayer node and then click on
 (two small squares) alongside the *float* animation. Click OK to close the window.
 
 Then open ``mob.tscn``, create an :ref:`AnimationPlayer <class_AnimationPlayer>` child
-node and select it. Click **Animation > Manage Animations**, then **Add Library**. You
+node and select it. Click **Animation > Manage Animations**, then **New Library**. You
 should see the message "Global library will be created." Leave the text field blank and
 click OK. Click the *Paste* icon (clipboard) and it should appear in the window. Click OK
 to close the window.
@@ -298,8 +298,8 @@ And with that, you finished coding your first complete 3D game.
 **Congratulations**!
 
 In the next part, we'll quickly recap what you learned and give you some links
-to keep learning more. But for now, here are the complete ``Player.gd`` and
-``Mob.gd`` so you can check your code against them.
+to keep learning more. But for now, here are the complete ``player.gd`` and
+``mob.gd`` so you can check your code against them.
 
 Here's the *Player* script.
 
@@ -342,7 +342,8 @@ Here's the *Player* script.
         # Prevent diagonal movement being very fast
         if direction != Vector3.ZERO:
             direction = direction.normalized()
-            $Pivot.look_at(position + direction,Vector3.UP)
+            # Setting the basis property will affect the rotation of the node.
+            $Pivot.basis = Basis.looking_at(direction)
             $AnimationPlayer.speed_scale = 4
         else:
             $AnimationPlayer.speed_scale = 1
@@ -448,7 +449,8 @@ Here's the *Player* script.
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
+                // Setting the basis property will affect the rotation of the node.
+                GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
                 GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 4;
             }
             else
@@ -537,7 +539,7 @@ And the *Mob*'s script.
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
-        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # Rotate this mob randomly within range of -45 and +45 degrees,
         # so that it doesn't move directly towards the player.
         rotate_y(randf_range(-PI / 4, PI / 4))
 
@@ -586,7 +588,7 @@ And the *Mob*'s script.
             // We position the mob by placing it at startPosition
             // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
-            // Rotate this mob randomly within range of -90 and +90 degrees,
+            // Rotate this mob randomly within range of -45 and +45 degrees,
             // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
@@ -639,4 +641,4 @@ And the *Mob*'s script.
 .. |animation_final_keyframes| image:: img/09.adding_animations/animation_final_keyframes.webp
 .. |second_keys_both| image:: img/09.adding_animations/second_keys_both.webp
 .. |timeline_05_click| image:: img/09.adding_animations/timeline_05_click.webp
-.. |Autoplay| image:: img/09.adding_animations/
+.. |Autoplay| image:: img/09.adding_animations/autoplay_button.webp

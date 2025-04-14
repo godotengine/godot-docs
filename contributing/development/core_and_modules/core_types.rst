@@ -103,36 +103,35 @@ which are equivalent to new, delete, new[] and delete[].
 memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
-For dynamic memory, the PoolVector<> template is provided. PoolVector is a
-standard vector class, and is very similar to vector in the C++ standard library.
-To create a PoolVector buffer, use this:
+For dynamic memory, use one of Godot's sequence types such as ``Vector<>``
+or ``LocalVector<>``. ``Vector<>`` behaves much like an STL ``std::vector<>``,
+but is simpler and uses Copy-On-Write (CoW) semantics. CoW copies of
+``Vector<>`` can safely access the same data from different threads, but
+several threads cannot access the same ``Vector<>`` instance safely.
+It can be safely passed via public API if it has a ``Packed`` alias.
 
-.. code-block:: cpp
+The ``Packed*Array`` :ref:`types <doc_gdscript_packed_arrays>` are aliases
+for specific ``Vector<*>`` types (e.g., ``PackedByteArray``,
+``PackedInt32Array``) that are accessible via GDScript. Outside of core,
+prefer using the ``Packed*Array`` aliases for functions exposed to scripts,
+and ``Vector<>`` for other occasions.
 
-    PoolVector<int> data;
+``LocalVector<>`` is much more like ``std::vector`` than ``Vector<>``.
+It is non-CoW, with less overhead. It is intended for internal use where
+the benefits of CoW are not needed. Note that neither ``LocalVector<>``
+nor ``Vector<>`` are drop-in replacements for each other. They are two
+unrelated types with similar interfaces, both using a buffer as their
+storage strategy.
 
-PoolVector can be accessed using the [] operator and a few helpers exist for this:
-
-.. code-block:: cpp
-
-    PoolVector<int>::Read r = data.read()
-    int someint = r[4]
-
-.. code-block:: cpp
-
-    PoolVector<int>::Write w = data.write()
-    w[4] = 22;
-
-These operations allow fast read/write from PoolVectors and keep it
-locked until they go out of scope. However, PoolVectors should be used
-for small, dynamic memory operations, as read() and write() are too slow for a
-large amount of accesses.
+``List<>`` is another Godot sequence type, using a doubly-linked list as
+its storage strategy. Prefer ``Vector<>`` (or ``LocalVector<>``) over
+``List<>`` unless you're sure you need it, as cache locality and memory
+fragmentation tend to be more important with small collections.
 
 References:
 ~~~~~~~~~~~
 
 -  `core/os/memory.h <https://github.com/godotengine/godot/blob/master/core/os/memory.h>`__
--  `core/pool_vector.h <https://github.com/godotengine/godot/blob/master/core/pool_vector.cpp>`__
 
 Containers
 ----------

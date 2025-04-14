@@ -4,7 +4,7 @@ Unit testing
 ============
 
 Godot Engine allows to write unit tests directly in C++. The engine integrates
-the `doctest <https://github.com/onqtam/doctest>`_ unit testing framework which
+the `doctest <https://github.com/doctest/doctest>`_ unit testing framework which
 gives ability to write test suites and test cases next to production code, but
 since the tests in Godot go through a different ``main`` entry point, the tests
 reside in a dedicated ``tests/`` directory instead, which is located at the root
@@ -129,6 +129,12 @@ Here's a minimal working test suite with a single test case written:
 
     #endif // TEST_STRING_H
 
+.. note::
+    You can quickly generate new tests using the ``create_test.py`` script found in the ``tests/`` directory.
+    This script automatically creates a new test file with the required boilerplate code in the appropriate location.
+    It's also able to automatically include the new header in ``tests/test_main.cpp`` using invasive mode (``-i`` flag).
+    To view usage instructions, run the script with the ``-h`` flag.
+
 The ``tests/test_macros.h`` header encapsulates everything which is needed for
 writing C++ unit tests in Godot. It includes doctest assertion and logging
 macros such as ``CHECK`` as seen above, and of course the definitions for
@@ -141,7 +147,7 @@ writing test cases themselves.
 
 Test cases are created using ``TEST_CASE`` function-like macro. Each test case
 must have a brief description written in parentheses, optionally including
-custom tags which allow to filter the tests at run-time, such as ``[String]``,
+custom tags which allow to filter the tests at runtime, such as ``[String]``,
 ``[Stress]`` etc.
 
 Test cases are written in a dedicated namespace. This is not required, but
@@ -151,6 +157,26 @@ common test data for each test, or writing parameterized tests.
 
 Godot supports writing tests per C++ module. For instructions on how to write
 module tests, refer to :ref:`doc_custom_module_unit_tests`.
+
+Subcases
+~~~~~~~~
+
+In situations where you have a common setup for several test cases with only slight variations, subcases can be very helpful. Here's an example:
+
+.. code-block:: cpp
+
+    TEST_CASE("[SceneTree][Node] Testing node operations with a very simple scene tree") {
+        // ... common setup (e.g. creating a scene tree with a few nodes)
+        SUBCASE("Move node to specific index") {
+            // ... setup and checks for moving a node
+        }
+        SUBCASE("Remove node at specific index") {
+            // ... setup and checks for removing a node
+        }
+    }
+
+Each ``SUBCASE`` causes the ``TEST_CASE`` to be executed from the beginning.
+Subcases can be nested to an arbitrary depth, but it is advised to limit nesting to no more than one level deep.
 
 Assertions
 ~~~~~~~~~~
@@ -182,7 +208,7 @@ for more complex ones if you think that it deserves a better explanation.
 
 .. seealso::
 
-    `doctest: Assertion macros <https://github.com/onqtam/doctest/blob/master/doc/markdown/assertions.md>`_.
+    `doctest: Assertion macros <https://github.com/doctest/doctest/blob/master/doc/markdown/assertions.md>`_.
 
 Logging
 ~~~~~~~
@@ -201,8 +227,8 @@ macros which allow to log test output in a format written by doctest.
 | ``FAIL``       | Fails the test immediately. Can be wrapped in conditionals for complex checks.                            |
 +----------------+-----------------------------------------------------------------------------------------------------------+
 
-Different reporters can be chosen at run-time. For instance, here's how the
-output can be redirected to a XML file:
+Different reporters can be chosen at runtime. For instance, here's how the
+output can be redirected to an XML file:
 
 .. code-block:: shell
 
@@ -210,7 +236,7 @@ output can be redirected to a XML file:
 
 .. seealso::
 
-    `doctest: Logging macros <https://github.com/onqtam/doctest/blob/master/doc/markdown/logging.md>`_.
+    `doctest: Logging macros <https://github.com/doctest/doctest/blob/master/doc/markdown/logging.md>`_.
 
 Testing failure paths
 ~~~~~~~~~~~~~~~~~~~~~
@@ -239,6 +265,69 @@ the engine, for instance:
         CHECK_MESSAGE(html_invalid.is_equal_approx(Color()),
             "Invalid HTML notation should result in a Color with the default values.");
     }
+
+Special tags in test case names
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These tags can be added to the test case name to modify or extend the test environment:
+
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Tag**            | **Description**                                                                                                                                                      |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``[SceneTree]``    | Required for test cases that rely on a scene tree with MessageQueue to be available. It also enables a mock rendering server and :ref:`ThemeDB<class_ThemeDB>`.      |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``[Editor]``       | Like ``[SceneTree]``, but with additional editor-related infrastructure available, such as :ref:`EditorSettings<class_EditorSettings>`.                              |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``[Audio]``        | Initializes the :ref:`AudioServer<class_AudioServer>` using a mock audio driver.                                                                                     |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``[Navigation2D]`` | Creates the default 2D navigation server and makes it available for testing.                                                                                         |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``[Navigation3D]`` | Creates the default 3D navigation server and makes it available for testing.                                                                                         |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+You can use them together to combine multiple test environment extensions.
+
+Testing signals
+~~~~~~~~~~~~~~~
+
+The following macros can be use to test signals:
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Macro
+     - Description
+   * - ``SIGNAL_WATCH(object, "signal_name")``
+     - Starts watching the specified signal on the given object.
+   * - ``SIGNAL_UNWATCH(object, "signal_name")``
+     - Stops watching the specified signal on the given object.
+   * - ``SIGNAL_CHECK("signal_name", Vector<Vector<Variant>>)``
+     - Checks the arguments of all fired signals. The outer vector contains each fired signal, while the inner vector contains the list of arguments for that signal. The order of signals is significant.
+   * - ``SIGNAL_CHECK_FALSE("signal_name")``
+     - Checks if the specified signal was not fired.
+   * - ``SIGNAL_DISCARD("signal_name")``
+     - Discards all records of the specified signal.
+
+Below is an example demonstrating the use of these macros:
+
+.. code-block:: cpp
+
+    //...
+    SUBCASE("[Timer] Timer process timeout signal must be emitted") {
+        SIGNAL_WATCH(test_timer, SNAME("timeout"));
+        test_timer->start(0.1);
+
+        SceneTree::get_singleton()->process(0.2);
+
+        Array signal_args;
+        signal_args.push_back(Array());
+
+        SIGNAL_CHECK(SNAME("timeout"), signal_args);
+
+        SIGNAL_UNWATCH(test_timer, SNAME("timeout"));
+    }
+    //...
 
 Test tools
 ----------

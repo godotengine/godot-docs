@@ -21,7 +21,7 @@ Description
 
 The X509Certificate class represents an X509 certificate. Certificates can be loaded and saved like any other :ref:`Resource<class_Resource>`.
 
-They can be used as the server certificate in :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to a TLS server via :ref:`StreamPeerTLS.connect_to_stream<class_StreamPeerTLS_method_connect_to_stream>`.
+They can be used as the server certificate in :ref:`StreamPeerTLS.accept_stream()<class_StreamPeerTLS_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to a TLS server via :ref:`StreamPeerTLS.connect_to_stream()<class_StreamPeerTLS_method_connect_to_stream>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -61,7 +61,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_X509Certificate_method_load>`
 
 Loads a certificate from ``path`` ("\*.crt" file).
 
@@ -73,7 +73,7 @@ Loads a certificate from ``path`` ("\*.crt" file).
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_from_string**\ (\ string\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_from_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_X509Certificate_method_load_from_string>`
 
 Loads a certificate from the given ``string``.
 
@@ -85,7 +85,7 @@ Loads a certificate from the given ``string``.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **save**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_X509Certificate_method_save>`
 
 Saves a certificate to the given ``path`` (should be a "\*.crt" file).
 
@@ -97,7 +97,7 @@ Saves a certificate to the given ``path`` (should be a "\*.crt" file).
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **save_to_string**\ (\ )
+:ref:`String<class_String>` **save_to_string**\ (\ ) :ref:`🔗<class_X509Certificate_method_save_to_string>`
 
 Returns a string representation of the certificate, or an empty string if the certificate is invalid.
 

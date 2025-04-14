@@ -23,7 +23,7 @@ Description
 
 Multiple **AtlasTexture** resources can be cropped from the same :ref:`atlas<class_AtlasTexture_property_atlas>`. Packing many smaller textures into a singular large texture helps to optimize video memory costs and render calls.
 
-\ **Note:** **AtlasTexture** cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, and may not tile properly in nodes such as :ref:`TextureRect<class_TextureRect>`, when inside other **AtlasTexture** resources.
+\ **Note:** **AtlasTexture** cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, and will not tile properly in nodes such as :ref:`TextureRect<class_TextureRect>` or :ref:`Sprite2D<class_Sprite2D>`. To tile an **AtlasTexture**, modify its :ref:`region<class_AtlasTexture_property_region>` instead.
 
 .. rst-class:: classref-reftable-group
 
@@ -58,7 +58,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **atlas**
+:ref:`Texture2D<class_Texture2D>` **atlas** :ref:`🔗<class_AtlasTexture_property_atlas>`
 
 .. rst-class:: classref-property-setget
 
@@ -75,7 +75,7 @@ The texture that contains the atlas. Can be any type inheriting from :ref:`Textu
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filter_clip** = ``false``
+:ref:`bool<class_bool>` **filter_clip** = ``false`` :ref:`🔗<class_AtlasTexture_property_filter_clip>`
 
 .. rst-class:: classref-property-setget
 
@@ -92,7 +92,7 @@ If ``true``, the area outside of the :ref:`region<class_AtlasTexture_property_re
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **margin** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **margin** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_AtlasTexture_property_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -109,14 +109,14 @@ The margin around the :ref:`region<class_AtlasTexture_property_region>`. Useful 
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **region** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **region** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_AtlasTexture_property_region>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_region**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
 - :ref:`Rect2<class_Rect2>` **get_region**\ (\ )
 
-The region used to draw the :ref:`atlas<class_AtlasTexture_property_atlas>`.
+The region used to draw the :ref:`atlas<class_AtlasTexture_property_atlas>`. If either dimension of the region's size is ``0``, the value from :ref:`atlas<class_AtlasTexture_property_atlas>` size will be used for that axis instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

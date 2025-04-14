@@ -69,7 +69,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **indices** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **indices** = ``PackedInt32Array()`` :ref:`🔗<class_ArrayOccluder3D_property_indices>`
 
 .. rst-class:: classref-property-setget
 
@@ -78,7 +78,9 @@ Property Descriptions
 
 The occluder's index position. Indices determine which points from the :ref:`vertices<class_ArrayOccluder3D_property_vertices>` array should be drawn, and in which order.
 
-\ **Note:** The occluder is always updated after setting this value. If creating occluders procedurally, consider using :ref:`set_arrays<class_ArrayOccluder3D_method_set_arrays>` instead to avoid updating the occluder twice when it's created.
+\ **Note:** The occluder is always updated after setting this value. If creating occluders procedurally, consider using :ref:`set_arrays()<class_ArrayOccluder3D_method_set_arrays>` instead to avoid updating the occluder twice when it's created.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -88,7 +90,7 @@ The occluder's index position. Indices determine which points from the :ref:`ver
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()``
+:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()`` :ref:`🔗<class_ArrayOccluder3D_property_vertices>`
 
 .. rst-class:: classref-property-setget
 
@@ -97,7 +99,9 @@ The occluder's index position. Indices determine which points from the :ref:`ver
 
 The occluder's vertex positions in local 3D coordinates.
 
-\ **Note:** The occluder is always updated after setting this value. If creating occluders procedurally, consider using :ref:`set_arrays<class_ArrayOccluder3D_method_set_arrays>` instead to avoid updating the occluder twice when it's created.
+\ **Note:** The occluder is always updated after setting this value. If creating occluders procedurally, consider using :ref:`set_arrays()<class_ArrayOccluder3D_method_set_arrays>` instead to avoid updating the occluder twice when it's created.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
 
 .. rst-class:: classref-section-separator
 
@@ -112,7 +116,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **set_arrays**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, indices\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+|void| **set_arrays**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, indices\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_ArrayOccluder3D_method_set_arrays>`
 
 Sets :ref:`indices<class_ArrayOccluder3D_property_indices>` and :ref:`vertices<class_ArrayOccluder3D_property_vertices>`, while updating the final occluder only once after both values are set.
 

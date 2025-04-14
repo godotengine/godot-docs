@@ -59,7 +59,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **StretchMode**:
+enum **StretchMode**: :ref:`🔗<enum_AspectRatioContainer_StretchMode>`
 
 .. _class_AspectRatioContainer_constant_STRETCH_WIDTH_CONTROLS_HEIGHT:
 
@@ -103,7 +103,7 @@ When the bounding rectangle of child controls exceed the container's size and :r
 
 .. rst-class:: classref-enumeration
 
-enum **AlignmentMode**:
+enum **AlignmentMode**: :ref:`🔗<enum_AspectRatioContainer_AlignmentMode>`
 
 .. _class_AspectRatioContainer_constant_ALIGNMENT_BEGIN:
 
@@ -142,7 +142,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_horizontal** = ``1``
+:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_horizontal** = ``1`` :ref:`🔗<class_AspectRatioContainer_property_alignment_horizontal>`
 
 .. rst-class:: classref-property-setget
 
@@ -159,7 +159,7 @@ Specifies the horizontal relative position of child controls.
 
 .. rst-class:: classref-property
 
-:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_vertical** = ``1``
+:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_vertical** = ``1`` :ref:`🔗<class_AspectRatioContainer_property_alignment_vertical>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +176,7 @@ Specifies the vertical relative position of child controls.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ratio** = ``1.0``
+:ref:`float<class_float>` **ratio** = ``1.0`` :ref:`🔗<class_AspectRatioContainer_property_ratio>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +193,7 @@ The aspect ratio to enforce on child controls. This is the width divided by the 
 
 .. rst-class:: classref-property
 
-:ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **stretch_mode** = ``2``
+:ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **stretch_mode** = ``2`` :ref:`🔗<class_AspectRatioContainer_property_stretch_mode>`
 
 .. rst-class:: classref-property-setget
 

@@ -33,7 +33,7 @@ material, the material must be attached to each object.
 
 All objects derived from a :ref:`CanvasItem <class_CanvasItem>` have a material
 property. This includes all :ref:`GUI elements <class_Control>`, :ref:`Sprite2Ds
-<class_Sprite2D>`, :ref:`TileMaps <class_Tilemap>`, :ref:`MeshInstance2Ds
+<class_Sprite2D>`, :ref:`TileMapLayers <class_TileMapLayer>`, :ref:`MeshInstance2Ds
 <class_MeshInstance2D>` etc. They also have an option to inherit their parent's
 material. This can be useful if you have a large number of nodes that you want
 to use the same material.
@@ -52,6 +52,14 @@ resource. Click on the sphere that appears. Godot currently doesn't know whether
 you are writing a CanvasItem Shader or a Spatial Shader and it previews the
 output of spatial shaders. So what you are seeing is the output of the default
 Spatial Shader.
+
+.. note::
+  Materials that inherit from the :ref:`class_Material` resource, such as :ref:`class_StandardMaterial3D`
+  and :ref:`class_ParticleProcessMaterial`, can be converted to a :ref:`class_ShaderMaterial`
+  and their existing properties will be converted to an accompanying text shader.
+  To do so, right-click on the material in the FileSystem dock and choose
+  **Convert to ShaderMaterial**. You can also do so by right-clicking on any
+  property holding a reference to the material in the inspector.
 
 Click beside "Shader" and select "New Shader". Finally, click on the shader
 you just created and the shader editor will open. You are now ready to begin writing
@@ -130,7 +138,7 @@ other functions or to assign values to ``COLOR`` directly.
 .. image:: img/UV.png
 
 Using ``TEXTURE`` built-in
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The default fragment function reads from the set Sprite2D texture and displays it.
 
@@ -159,7 +167,7 @@ this variable. Use them to redraw the Sprite2D with the texture.
 .. image:: img/blue-tex.png
 
 Uniform input
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Uniform input is used to pass data into a shader that will be the same across
 the entire shader.
@@ -191,16 +199,23 @@ declared. If you change the value in the editor, it will overwrite the default
 value you provided in the shader.
 
 Interacting with shaders from code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can change uniforms from code using the function ``set_shader_parameter()``
 which is called on the node's material resource. With a Sprite2D node, the
 following code can be used to set the ``blue`` uniform.
 
-::
+.. tabs::
+ 
+ .. code-tab:: gdscript
 
   var blue_value = 1.0
   material.set_shader_parameter("blue", blue_value)
+
+ .. code-tab:: csharp
+  
+  var blueValue = 1.0;
+  ((ShaderMaterial)Material).SetShaderParameter("blue", blueValue);
 
 Note that the name of the uniform is a string. The string must match exactly
 with how it is written in the shader, including spelling and case.

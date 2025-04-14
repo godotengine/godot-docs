@@ -46,9 +46,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **generate**\ (\ from\: :ref:`Translation<class_Translation>`\ )
+|void| **generate**\ (\ from\: :ref:`Translation<class_Translation>`\ ) :ref:`🔗<class_OptimizedTranslation_method_generate>`
 
 Generates and sets an optimized translation from the given :ref:`Translation<class_Translation>` resource.
+
+\ **Note:** This method is intended to be used in the editor. It does nothing when called from an exported project.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

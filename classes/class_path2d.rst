@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Curve2D<class_Curve2D>` **curve**
+:ref:`Curve2D<class_Curve2D>` **curve** :ref:`🔗<class_Path2D_property_curve>`
 
 .. rst-class:: classref-property-setget
 

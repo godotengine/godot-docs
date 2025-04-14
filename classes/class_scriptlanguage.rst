@@ -31,7 +31,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ScriptNameCasing**:
+enum **ScriptNameCasing**: :ref:`🔗<enum_ScriptLanguage_ScriptNameCasing>`
 
 .. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_AUTO:
 
@@ -74,6 +74,18 @@ enum **ScriptNameCasing**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_KEBAB_CASE** = ``3``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_CAMEL_CASE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_CAMEL_CASE** = ``4``
 
 .. container:: contribute
 

@@ -21,7 +21,7 @@ Description
 
 A regular expression (or regex) is a compact language that can be used to recognize strings that follow a specific pattern, such as URLs, email addresses, complete sentences, etc. For example, a regex of ``ab[0-9]`` would find any string that is ``ab`` followed by any number from ``0`` to ``9``. For a more in-depth look, you can easily find various tutorials and detailed explanations on the Internet.
 
-To begin, the RegEx object needs to be compiled with the search pattern using :ref:`compile<class_RegEx_method_compile>` before it can be used.
+To begin, the RegEx object needs to be compiled with the search pattern using :ref:`compile()<class_RegEx_method_compile>` before it can be used.
 
 ::
 
@@ -30,7 +30,7 @@ To begin, the RegEx object needs to be compiled with the search pattern using :r
 
 The search pattern must be escaped first for GDScript before it is escaped for the expression. For example, ``compile("\\d+")`` would be read by RegEx as ``\d+``. Similarly, ``compile("\"(?:\\\\.|[^\"])*\"")`` would be read as ``"(?:\\.|[^"])*"``. In GDScript, you can also use raw string literals (r-strings). For example, ``compile(r'"(?:\\.|[^"])*"')`` would be read the same.
 
-Using :ref:`search<class_RegEx_method_search>`, you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_RegExMatch>` is returned and you can retrieve details of the results using methods such as :ref:`RegExMatch.get_string<class_RegExMatch_method_get_string>` and :ref:`RegExMatch.get_start<class_RegExMatch_method_get_start>`.
+Using :ref:`search()<class_RegEx_method_search>`, you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_RegExMatch>` is returned and you can retrieve details of the results using methods such as :ref:`RegExMatch.get_string()<class_RegExMatch_method_get_string>` and :ref:`RegExMatch.get_start()<class_RegExMatch_method_get_start>`.
 
 ::
 
@@ -52,7 +52,7 @@ This version of RegEx also supports named capturing groups, and the names can be
     if result:
         print(result.get_string("digit")) # Would print 2f
 
-If you need to process multiple results, :ref:`search_all<class_RegEx_method_search_all>` generates a list of all non-overlapping results. This can be combined with a ``for`` loop for convenience.
+If you need to process multiple results, :ref:`search_all()<class_RegEx_method_search_all>` generates a list of all non-overlapping results. This can be combined with a ``for`` loop for convenience.
 
 ::
 
@@ -60,7 +60,7 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
         print(result.get_string("digit"))
     # Would print 01 03 0 3f 42
 
-\ **Example of splitting a string using a RegEx:**\ 
+\ **Example:** Split a string using a RegEx:
 
 ::
 
@@ -69,7 +69,7 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
     var results = []
     for result in regex.search_all("One  Two \n\tThree"):
         results.push_back(result.get_string())
-    # The `results` array now contains "One", "Two", "Three".
+    # The `results` array now contains "One", "Two", and "Three".
 
 \ **Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`__ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`__.
 
@@ -86,9 +86,9 @@ Methods
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`clear<class_RegEx_method_clear>`\ (\ )                                                                                                                                                                                                    |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`compile<class_RegEx_method_compile>`\ (\ pattern\: :ref:`String<class_String>`\ )                                                                                                                                                         |
+   | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`compile<class_RegEx_method_compile>`\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ )                                                                                                            |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RegEx<class_RegEx>`                                        | :ref:`create_from_string<class_RegEx_method_create_from_string>`\ (\ pattern\: :ref:`String<class_String>`\ ) |static|                                                                                                                          |
+   | :ref:`RegEx<class_RegEx>`                                        | :ref:`create_from_string<class_RegEx_method_create_from_string>`\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ ) |static|                                                                             |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`get_group_count<class_RegEx_method_get_group_count>`\ (\ ) |const|                                                                                                                                                                        |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,7 +118,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_RegEx_method_clear>`
 
 This method resets the state of the object, as if it was freshly created. Namely, it unassigns the regular expression of this object.
 
@@ -130,9 +130,9 @@ This method resets the state of the object, as if it was freshly created. Namely
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **compile**\ (\ pattern\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **compile**\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RegEx_method_compile>`
 
-Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the compilation is successful. If an error is encountered, details are printed to standard output and an error is returned.
+Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the compilation is successful. If compilation fails, returns :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` and when ``show_error`` is ``true``, details are printed to standard output.
 
 .. rst-class:: classref-item-separator
 
@@ -142,9 +142,9 @@ Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<cla
 
 .. rst-class:: classref-method
 
-:ref:`RegEx<class_RegEx>` **create_from_string**\ (\ pattern\: :ref:`String<class_String>`\ ) |static|
+:ref:`RegEx<class_RegEx>` **create_from_string**\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ ) |static| :ref:`🔗<class_RegEx_method_create_from_string>`
 
-Creates and compiles a new **RegEx** object.
+Creates and compiles a new **RegEx** object. See also :ref:`compile()<class_RegEx_method_compile>`.
 
 .. rst-class:: classref-item-separator
 
@@ -154,7 +154,7 @@ Creates and compiles a new **RegEx** object.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_group_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_group_count**\ (\ ) |const| :ref:`🔗<class_RegEx_method_get_group_count>`
 
 Returns the number of capturing groups in compiled pattern.
 
@@ -166,7 +166,7 @@ Returns the number of capturing groups in compiled pattern.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_names**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_names**\ (\ ) |const| :ref:`🔗<class_RegEx_method_get_names>`
 
 Returns an array of names of named capturing groups in the compiled pattern. They are ordered by appearance.
 
@@ -178,7 +178,7 @@ Returns an array of names of named capturing groups in the compiled pattern. The
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_pattern**\ (\ ) |const|
+:ref:`String<class_String>` **get_pattern**\ (\ ) |const| :ref:`🔗<class_RegEx_method_get_pattern>`
 
 Returns the original search pattern that was compiled.
 
@@ -190,7 +190,7 @@ Returns the original search pattern that was compiled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid**\ (\ ) |const| :ref:`🔗<class_RegEx_method_is_valid>`
 
 Returns whether this object has a valid search pattern assigned.
 
@@ -202,7 +202,7 @@ Returns whether this object has a valid search pattern assigned.
 
 .. rst-class:: classref-method
 
-:ref:`RegExMatch<class_RegExMatch>` **search**\ (\ subject\: :ref:`String<class_String>`, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`RegExMatch<class_RegExMatch>` **search**\ (\ subject\: :ref:`String<class_String>`, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_RegEx_method_search>`
 
 Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_RegExMatch>` container of the first matching result if found, otherwise ``null``.
 
@@ -216,7 +216,7 @@ The region to search within can be specified with ``offset`` and ``end``. This i
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RegExMatch<class_RegExMatch>`\] **search_all**\ (\ subject\: :ref:`String<class_String>`, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`RegExMatch<class_RegExMatch>`\] **search_all**\ (\ subject\: :ref:`String<class_String>`, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_RegEx_method_search_all>`
 
 Searches the text for the compiled pattern. Returns an array of :ref:`RegExMatch<class_RegExMatch>` containers for each non-overlapping result. If no results were found, an empty array is returned instead.
 
@@ -230,7 +230,7 @@ The region to search within can be specified with ``offset`` and ``end``. This i
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **sub**\ (\ subject\: :ref:`String<class_String>`, replacement\: :ref:`String<class_String>`, all\: :ref:`bool<class_bool>` = false, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`String<class_String>` **sub**\ (\ subject\: :ref:`String<class_String>`, replacement\: :ref:`String<class_String>`, all\: :ref:`bool<class_bool>` = false, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_RegEx_method_sub>`
 
 Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``$1`` and ``$name`` are expanded and resolved. By default, only the first instance is replaced, but it can be changed for all instances (global replacement).
 

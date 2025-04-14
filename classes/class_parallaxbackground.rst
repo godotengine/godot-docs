@@ -60,7 +60,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scroll_base_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **scroll_base_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_ParallaxBackground_property_scroll_base_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -77,7 +77,7 @@ The base position offset for all :ref:`ParallaxLayer<class_ParallaxLayer>` child
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scroll_base_scale** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **scroll_base_scale** = ``Vector2(1, 1)`` :ref:`🔗<class_ParallaxBackground_property_scroll_base_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,7 +94,7 @@ The base motion scale for all :ref:`ParallaxLayer<class_ParallaxLayer>` children
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **scroll_ignore_camera_zoom** = ``false``
+:ref:`bool<class_bool>` **scroll_ignore_camera_zoom** = ``false`` :ref:`🔗<class_ParallaxBackground_property_scroll_ignore_camera_zoom>`
 
 .. rst-class:: classref-property-setget
 
@@ -111,7 +111,7 @@ If ``true``, elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't 
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scroll_limit_begin** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **scroll_limit_begin** = ``Vector2(0, 0)`` :ref:`🔗<class_ParallaxBackground_property_scroll_limit_begin>`
 
 .. rst-class:: classref-property-setget
 
@@ -128,7 +128,7 @@ Top-left limits for scrolling to begin. If the camera is outside of this limit, 
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scroll_limit_end** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **scroll_limit_end** = ``Vector2(0, 0)`` :ref:`🔗<class_ParallaxBackground_property_scroll_limit_end>`
 
 .. rst-class:: classref-property-setget
 
@@ -145,7 +145,7 @@ Bottom-right limits for scrolling to end. If the camera is outside of this limit
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scroll_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **scroll_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_ParallaxBackground_property_scroll_offset>`
 
 .. rst-class:: classref-property-setget
 

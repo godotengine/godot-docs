@@ -103,7 +103,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_category**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_category**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_category>`
 
 Override this method to define the path to the associated custom node in the Visual Shader Editor's members dialog. The path may look like ``"MyGame/MyFunctions/Noise"``.
 
@@ -117,7 +117,7 @@ Defining this method is **optional**. If not overridden, the node will be filed 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_code**\ (\ input_vars\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], output_vars\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], mode\: :ref:`Mode<enum_Shader_Mode>`, type\: :ref:`Type<enum_VisualShader_Type>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_code**\ (\ input_vars\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], output_vars\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], mode\: :ref:`Mode<enum_Shader_Mode>`, type\: :ref:`Type<enum_VisualShader_Type>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_code>`
 
 Override this method to define the actual shader code of the associated custom node. The shader code should be returned as a string, which can have multiple lines (the ``"""`` multiline string construct can be used for convenience).
 
@@ -137,7 +137,7 @@ Defining this method is **required**.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_default_input_port**\ (\ type\: :ref:`PortType<enum_VisualShaderNode_PortType>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_default_input_port**\ (\ type\: :ref:`PortType<enum_VisualShaderNode_PortType>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_default_input_port>`
 
 Override this method to define the input port which should be connected by default when this node is created as a result of dragging a connection from an existing node to the empty space on the graph.
 
@@ -151,7 +151,7 @@ Defining this method is **optional**. If not overridden, the connection will be 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_description**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_description**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_description>`
 
 Override this method to define the description of the associated custom node in the Visual Shader Editor's members dialog.
 
@@ -165,7 +165,7 @@ Defining this method is **optional**.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_func_code**\ (\ mode\: :ref:`Mode<enum_Shader_Mode>`, type\: :ref:`Type<enum_VisualShader_Type>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_func_code**\ (\ mode\: :ref:`Mode<enum_Shader_Mode>`, type\: :ref:`Type<enum_VisualShader_Type>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_func_code>`
 
 Override this method to add a shader code to the beginning of each shader function (once). The shader code should be returned as a string, which can have multiple lines (the ``"""`` multiline string construct can be used for convenience).
 
@@ -183,7 +183,7 @@ Defining this method is **optional**.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_global_code**\ (\ mode\: :ref:`Mode<enum_Shader_Mode>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_global_code**\ (\ mode\: :ref:`Mode<enum_Shader_Mode>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_global_code>`
 
 Override this method to add shader code on top of the global shader, to define your own standard library of reusable methods, varyings, constants, uniforms, etc. The shader code should be returned as a string, which can have multiple lines (the ``"""`` multiline string construct can be used for convenience).
 
@@ -201,7 +201,7 @@ Defining this method is **optional**.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_input_port_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_input_port_count**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_input_port_count>`
 
 Override this method to define the number of input ports of the associated custom node.
 
@@ -215,9 +215,9 @@ Defining this method is **required**. If not overridden, the node has no input p
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_get_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_get_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_input_port_default_value>`
 
-Override this method to define the default value for the specified input port. Prefer use this over :ref:`VisualShaderNode.set_input_port_default_value<class_VisualShaderNode_method_set_input_port_default_value>`.
+Override this method to define the default value for the specified input port. Prefer use this over :ref:`VisualShaderNode.set_input_port_default_value()<class_VisualShaderNode_method_set_input_port_default_value>`.
 
 Defining this method is **required**. If not overridden, the node has no default values for their input ports.
 
@@ -229,9 +229,9 @@ Defining this method is **required**. If not overridden, the node has no default
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_input_port_name**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_input_port_name**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_input_port_name>`
 
-Override this method to define the names of input ports of the associated custom node. The names are used both for the input slots in the editor and as identifiers in the shader code, and are passed in the ``input_vars`` array in :ref:`_get_code<class_VisualShaderNodeCustom_private_method__get_code>`.
+Override this method to define the names of input ports of the associated custom node. The names are used both for the input slots in the editor and as identifiers in the shader code, and are passed in the ``input_vars`` array in :ref:`_get_code()<class_VisualShaderNodeCustom_private_method__get_code>`.
 
 Defining this method is **optional**, but recommended. If not overridden, input ports are named as ``"in" + str(port)``.
 
@@ -243,7 +243,7 @@ Defining this method is **optional**, but recommended. If not overridden, input 
 
 .. rst-class:: classref-method
 
-:ref:`PortType<enum_VisualShaderNode_PortType>` **_get_input_port_type**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`PortType<enum_VisualShaderNode_PortType>` **_get_input_port_type**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_input_port_type>`
 
 Override this method to define the returned type of each input port of the associated custom node (see :ref:`PortType<enum_VisualShaderNode_PortType>` for possible types).
 
@@ -257,7 +257,7 @@ Defining this method is **optional**, but recommended. If not overridden, input 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_name>`
 
 Override this method to define the name of the associated custom node in the Visual Shader Editor's members dialog and graph.
 
@@ -271,7 +271,7 @@ Defining this method is **optional**, but recommended. If not overridden, the no
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_output_port_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_output_port_count**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_output_port_count>`
 
 Override this method to define the number of output ports of the associated custom node.
 
@@ -285,9 +285,9 @@ Defining this method is **required**. If not overridden, the node has no output 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_output_port_name**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_output_port_name**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_output_port_name>`
 
-Override this method to define the names of output ports of the associated custom node. The names are used both for the output slots in the editor and as identifiers in the shader code, and are passed in the ``output_vars`` array in :ref:`_get_code<class_VisualShaderNodeCustom_private_method__get_code>`.
+Override this method to define the names of output ports of the associated custom node. The names are used both for the output slots in the editor and as identifiers in the shader code, and are passed in the ``output_vars`` array in :ref:`_get_code()<class_VisualShaderNodeCustom_private_method__get_code>`.
 
 Defining this method is **optional**, but recommended. If not overridden, output ports are named as ``"out" + str(port)``.
 
@@ -299,7 +299,7 @@ Defining this method is **optional**, but recommended. If not overridden, output
 
 .. rst-class:: classref-method
 
-:ref:`PortType<enum_VisualShaderNode_PortType>` **_get_output_port_type**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`PortType<enum_VisualShaderNode_PortType>` **_get_output_port_type**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_output_port_type>`
 
 Override this method to define the returned type of each output port of the associated custom node (see :ref:`PortType<enum_VisualShaderNode_PortType>` for possible types).
 
@@ -313,7 +313,7 @@ Defining this method is **optional**, but recommended. If not overridden, output
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_property_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_property_count**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_property_count>`
 
 Override this method to define the number of the properties.
 
@@ -327,7 +327,7 @@ Defining this method is **optional**.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_property_default_index**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_property_default_index**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_property_default_index>`
 
 Override this method to define the default index of the property of the associated custom node.
 
@@ -341,7 +341,7 @@ Defining this method is **optional**.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_property_name**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_property_name**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_property_name>`
 
 Override this method to define the names of the property of the associated custom node.
 
@@ -355,7 +355,7 @@ Defining this method is **optional**.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_property_options**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_property_options**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_property_options>`
 
 Override this method to define the options inside the drop-down list property of the associated custom node.
 
@@ -369,7 +369,7 @@ Defining this method is **optional**.
 
 .. rst-class:: classref-method
 
-:ref:`PortType<enum_VisualShaderNode_PortType>` **_get_return_icon_type**\ (\ ) |virtual| |const|
+:ref:`PortType<enum_VisualShaderNode_PortType>` **_get_return_icon_type**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_return_icon_type>`
 
 Override this method to define the return icon of the associated custom node in the Visual Shader Editor's members dialog.
 
@@ -383,7 +383,7 @@ Defining this method is **optional**. If not overridden, no return icon is shown
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_available**\ (\ mode\: :ref:`Mode<enum_Shader_Mode>`, type\: :ref:`Type<enum_VisualShader_Type>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_available**\ (\ mode\: :ref:`Mode<enum_Shader_Mode>`, type\: :ref:`Type<enum_VisualShader_Type>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__is_available>`
 
 Override this method to prevent the node to be visible in the member dialog for the certain ``mode`` (see :ref:`Mode<enum_Shader_Mode>`) and/or ``type`` (see :ref:`Type<enum_VisualShader_Type>`).
 
@@ -397,7 +397,7 @@ Defining this method is **optional**. If not overridden, it's ``true``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_highend**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_highend**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__is_highend>`
 
 Override this method to enable high-end mark in the Visual Shader Editor's members dialog.
 
@@ -411,9 +411,9 @@ Defining this method is **optional**. If not overridden, it's ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_option_index**\ (\ option\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_option_index**\ (\ option\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_VisualShaderNodeCustom_method_get_option_index>`
 
-Returns the selected index of the drop-down list option within a graph. You may use this function to define the specific behavior in the :ref:`_get_code<class_VisualShaderNodeCustom_private_method__get_code>` or :ref:`_get_global_code<class_VisualShaderNodeCustom_private_method__get_global_code>`.
+Returns the selected index of the drop-down list option within a graph. You may use this function to define the specific behavior in the :ref:`_get_code()<class_VisualShaderNodeCustom_private_method__get_code>` or :ref:`_get_global_code()<class_VisualShaderNodeCustom_private_method__get_global_code>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

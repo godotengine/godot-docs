@@ -22,7 +22,7 @@ Overrides the location sounds are heard from.
 Description
 -----------
 
-Once added to the scene tree and enabled using :ref:`make_current<class_AudioListener2D_method_make_current>`, this node will override the location sounds are heard from. Only one **AudioListener2D** can be current. Using :ref:`make_current<class_AudioListener2D_method_make_current>` will disable the previous **AudioListener2D**.
+Once added to the scene tree and enabled using :ref:`make_current()<class_AudioListener2D_method_make_current>`, this node will override the location sounds are heard from. Only one **AudioListener2D** can be current. Using :ref:`make_current()<class_AudioListener2D_method_make_current>` will disable the previous **AudioListener2D**.
 
 If there is no active **AudioListener2D** in the current :ref:`Viewport<class_Viewport>`, center of the screen will be used as a hearing point for the audio. **AudioListener2D** needs to be inside :ref:`SceneTree<class_SceneTree>` to function.
 
@@ -55,7 +55,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear_current**\ (\ )
+|void| **clear_current**\ (\ ) :ref:`🔗<class_AudioListener2D_method_clear_current>`
 
 Disables the **AudioListener2D**. If it's not set as current, this method will have no effect.
 
@@ -67,7 +67,7 @@ Disables the **AudioListener2D**. If it's not set as current, this method will h
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_current**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_current**\ (\ ) |const| :ref:`🔗<class_AudioListener2D_method_is_current>`
 
 Returns ``true`` if this **AudioListener2D** is currently active.
 
@@ -79,7 +79,7 @@ Returns ``true`` if this **AudioListener2D** is currently active.
 
 .. rst-class:: classref-method
 
-|void| **make_current**\ (\ )
+|void| **make_current**\ (\ ) :ref:`🔗<class_AudioListener2D_method_make_current>`
 
 Makes the **AudioListener2D** active, setting it as the hearing point for the sounds. If there is already another active **AudioListener2D**, it will be disabled.
 

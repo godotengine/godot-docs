@@ -52,7 +52,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **base_texture**
+:ref:`Texture2D<class_Texture2D>` **base_texture** :ref:`🔗<class_MeshTexture_property_base_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -69,7 +69,7 @@ Sets the base texture that the Mesh will use to draw.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **image_size** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **image_size** = ``Vector2(0, 0)`` :ref:`🔗<class_MeshTexture_property_image_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ Sets the size of the image, needed for reference.
 
 .. rst-class:: classref-property
 
-:ref:`Mesh<class_Mesh>` **mesh**
+:ref:`Mesh<class_Mesh>` **mesh** :ref:`🔗<class_MeshTexture_property_mesh>`
 
 .. rst-class:: classref-property-setget
 

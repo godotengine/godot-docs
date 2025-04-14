@@ -22,7 +22,7 @@ Represents a mouse button being pressed or released.
 Description
 -----------
 
-Stores information about mouse click events. See :ref:`Node._input<class_Node_private_method__input>`.
+Stores information about mouse click events. See :ref:`Node._input()<class_Node_private_method__input>`.
 
 \ **Note:** On Wear OS devices, rotary input is mapped to :ref:`@GlobalScope.MOUSE_BUTTON_WHEEL_UP<class_@GlobalScope_constant_MOUSE_BUTTON_WHEEL_UP>` and :ref:`@GlobalScope.MOUSE_BUTTON_WHEEL_DOWN<class_@GlobalScope_constant_MOUSE_BUTTON_WHEEL_DOWN>`. This can be changed to :ref:`@GlobalScope.MOUSE_BUTTON_WHEEL_LEFT<class_@GlobalScope_constant_MOUSE_BUTTON_WHEEL_LEFT>` and :ref:`@GlobalScope.MOUSE_BUTTON_WHEEL_RIGHT<class_@GlobalScope_constant_MOUSE_BUTTON_WHEEL_RIGHT>` with the :ref:`ProjectSettings.input_devices/pointing/android/rotary_input_scroll_axis<class_ProjectSettings_property_input_devices/pointing/android/rotary_input_scroll_axis>` setting.
 
@@ -68,7 +68,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **button_index** = ``0``
+:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **button_index** = ``0`` :ref:`🔗<class_InputEventMouseButton_property_button_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -85,7 +85,7 @@ The mouse button identifier, one of the :ref:`MouseButton<enum_@GlobalScope_Mous
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **canceled** = ``false``
+:ref:`bool<class_bool>` **canceled** = ``false`` :ref:`🔗<class_InputEventMouseButton_property_canceled>`
 
 .. rst-class:: classref-property-setget
 
@@ -102,7 +102,7 @@ If ``true``, the mouse button event has been canceled.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **double_click** = ``false``
+:ref:`bool<class_bool>` **double_click** = ``false`` :ref:`🔗<class_InputEventMouseButton_property_double_click>`
 
 .. rst-class:: classref-property-setget
 
@@ -119,7 +119,7 @@ If ``true``, the mouse button's state is a double-click.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **factor** = ``1.0``
+:ref:`float<class_float>` **factor** = ``1.0`` :ref:`🔗<class_InputEventMouseButton_property_factor>`
 
 .. rst-class:: classref-property-setget
 
@@ -136,7 +136,7 @@ The amount (or delta) of the event. When used for high-precision scroll events, 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pressed** = ``false``
+:ref:`bool<class_bool>` **pressed** = ``false`` :ref:`🔗<class_InputEventMouseButton_property_pressed>`
 
 .. rst-class:: classref-property-setget
 

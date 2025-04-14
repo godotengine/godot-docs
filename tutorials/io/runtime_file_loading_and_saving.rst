@@ -45,9 +45,10 @@ Plain text and binary files
 Godot's :ref:`class_FileAccess` class provides methods to access files on the
 filesystem for reading and writing:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
-     func save_file(content):
+    func save_file(content):
         var file = FileAccess.open("/path/to/file.txt", FileAccess.WRITE)
         file.store_string(content)
 
@@ -55,6 +56,21 @@ filesystem for reading and writing:
         var file = FileAccess.open("/path/to/file.txt", FileAccess.READ)
         var content = file.get_as_text()
         return content
+
+ .. code-tab:: csharp
+
+    private void SaveFile(string content)
+    {
+        using var file = FileAccess.Open("/Path/To/File.txt", FileAccess.ModeFlags.Write);
+        file.StoreString(content);
+    }
+
+    private string LoadFile()
+    {
+        using var file = FileAccess.Open("/Path/To/File.txt", FileAccess.ModeFlags.Read);
+        string content = file.GetAsText();
+        return content;
+    }
 
 To handle custom binary formats (such as loading file formats not supported by
 Godot), :ref:`class_FileAccess` provides several methods to read/write integers,
@@ -76,7 +92,7 @@ Image's :ref:`Image.load_from_file <class_Image_method_load_from_file>` static m
 handles everything, from format detection based on file extension to reading the
 file from disk.
 
-If you need error handling or more control (such as changing the scale a SVG is
+If you need error handling or more control (such as changing the scale an SVG is
 loaded at), use one of the following methods depending on the file format:
 
 - :ref:`Image.load_jpg_from_buffer <class_Image_method_load_jpg_from_buffer>`
@@ -116,7 +132,8 @@ increase performance by reducing I/O utilization.
 Example of loading an image and displaying it in a :ref:`class_TextureRect` node
 (which requires conversion to :ref:`class_ImageTexture`):
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # Load an image of any format supported by Godot from the filesystem.
     var image = Image.load_from_file(path)
@@ -131,25 +148,46 @@ Example of loading an image and displaying it in a :ref:`class_TextureRect` node
     # Save the converted ImageTexture to a PNG image.
     $TextureRect.texture.get_image().save_png("/path/to/file.png")
 
+ .. code-tab:: csharp
+
+    // Load an image of any format supported by Godot from the filesystem.
+    var image = Image.LoadFromFile(path);
+    // Optionally, generate mipmaps if displaying the texture on a 3D surface
+    // so that the texture doesn't look grainy when viewed at a distance.
+    // image.GenerateMipmaps();
+    GetNode<TextureRect>("TextureRect").Texture = ImageTexture.CreateFromImage(image);
+
+    // Save the loaded Image to a PNG image.
+    image.SavePng("/Path/To/File.png");
+
+    // Save the converted ImageTexture to a PNG image.
+    GetNode<TextureRect>("TextureRect").Texture.GetImage().SavePng("/Path/To/File.png");
+
 .. _doc_runtime_file_loading_and_saving_audio_video_files:
 
 Audio/video files
 -----------------
 
-Godot supports loading Ogg Vorbis audio at runtime. Note that not *all* files
-with an ``.ogg`` extension may be Ogg Vorbis files. Some may be Ogg Theora
+Godot supports loading Ogg Vorbis, MP3, and WAV audio at runtime. Note that not *all*
+files with an ``.ogg`` extension are Ogg Vorbis files. Some may be Ogg Theora
 videos, or contain Opus audio within an Ogg container. These files will **not**
 load correctly as audio files in Godot.
 
 Example of loading an Ogg Vorbis audio file in an :ref:`class_AudioStreamPlayer` node:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     $AudioStreamPlayer.stream = AudioStreamOggVorbis.load_from_file(path)
 
+ .. code-tab:: csharp
+
+    GetNode<AudioStreamPlayer>("AudioStreamPlayer").Stream = AudioStreamOggVorbis.LoadFromFile(path);
+
 Example of loading an Ogg Theora video file in a :ref:`class_VideoStreamPlayer` node:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     var video_stream_theora = VideoStreamTheora.new()
     # File extension is ignored, so it is possible to load Ogg Theora videos
@@ -161,16 +199,17 @@ Example of loading an Ogg Theora video file in a :ref:`class_VideoStreamPlayer` 
     # before this property is set, so call `play()` after setting `stream`.
     $VideoStreamPlayer.play()
 
-.. note::
+ .. code-tab:: csharp
 
-    Godot doesn't support runtime loading of MP3 or WAV files yet. Until this is
-    implemented, it's feasible to implement runtime WAV loading using a script
-    since :ref:`class_AudioStreamWAV`'s ``data`` property is exposed to
-    scripting.
+    var videoStreamTheora = new VideoStreamTheora();
+    // File extension is ignored, so it is possible to load Ogg Theora videos
+    // that have an `.ogg` extension this way.
+    videoStreamTheora.File = "/Path/To/File.ogv";
+    GetNode<VideoStreamPlayer>("VideoStreamPlayer").Stream = videoStreamTheora;
 
-    It's still possible to *save* WAV files using
-    :ref:`AudioStreamWAV.save_to_wav <class_AudioStreamWAV_method_save_to_wav>`, which is useful
-    for procedurally generated audio or microphone recordings.
+    // VideoStreamPlayer's Autoplay property won't work if the stream is empty
+    // before this property is set, so call `Play()` after setting `Stream`.
+    GetNode<VideoStreamPlayer>("VideoStreamPlayer").Play();
 
 .. _doc_runtime_file_loading_and_saving_3d_scenes:
 
@@ -185,7 +224,8 @@ as it's faster to write and smaller, but the text format is easier to debug.
 
 Example of loading a glTF scene and appending its root node to the scene:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # Load an existing glTF scene.
     # GLTFState is used by GLTFDocument to store the loaded scene's state.
@@ -208,6 +248,34 @@ Example of loading a glTF scene and appending its root node to the scene:
     # whether the output uses text or binary format.
     # `GLTFDocument.generate_buffer()` is also available for saving to memory.
     gltf_document_save.write_to_filesystem(gltf_state_save, path)
+
+ .. code-tab:: csharp
+
+    // Load an existing glTF scene.
+    // GLTFState is used by GLTFDocument to store the loaded scene's state.
+    // GLTFDocument is the class that handles actually loading glTF data into a Godot node tree,
+    // which means it supports glTF features such as lights and cameras.
+    var gltfDocumentLoad = new GltfDocument();
+    var gltfStateLoad = new GltfState();
+    var error = gltfDocumentLoad.AppendFromFile("/Path/To/File.gltf", gltfStateLoad);
+    if (error == Error.Ok)
+    {
+        var gltfSceneRootNode = gltfDocumentLoad.GenerateScene(gltfStateLoad);
+        AddChild(gltfSceneRootNode);
+    }
+    else
+    {
+        GD.PrintErr($"Couldn't load glTF scene (error code: {error}).");
+    }
+
+    // Save a new glTF scene.
+    var gltfDocumentSave = new GltfDocument();
+    var gltfStateSave = new GltfState();
+    gltfDocumentSave.AppendFromScene(gltfSceneRootNode, gltfStateSave);
+    // The file extension in the output `path` (`.gltf` or `.glb`) determines
+    // whether the output uses text or binary format.
+    // `GltfDocument.GenerateBuffer()` is also available for saving to memory.
+    gltfDocumentSave.WriteToFilesystem(gltfStateSave, path);
 
 .. note::
 
@@ -240,7 +308,8 @@ Godot's support for :ref:`doc_using_fonts_system_fonts`.
 Example of loading a font file automatically according to its file extension,
 then adding it as a theme override to a :ref:`class_Label` node:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     var path = "/path/to/font.ttf"
     var path_lower = path.to_lower()
@@ -262,6 +331,37 @@ then adding it as a theme override to a :ref:`class_Label` node:
     if not font_file.data.is_empty():
         # If font was loaded successfully, add it as a theme override.
         $Label.add_theme_font_override("font", font_file)
+
+ .. code-tab:: csharp
+
+    string path = "/Path/To/Font.ttf";
+    var fontFile = new FontFile();
+
+    if (
+        path.EndsWith(".ttf", StringComparison.OrdinalIgnoreCase)
+        || path.EndsWith(".otf", StringComparison.OrdinalIgnoreCase)
+        || path.EndsWith(".woff", StringComparison.OrdinalIgnoreCase)
+        || path.EndsWith(".woff2", StringComparison.OrdinalIgnoreCase)
+        || path.EndsWith(".pfb", StringComparison.OrdinalIgnoreCase)
+        || path.EndsWith(".pfm", StringComparison.OrdinalIgnoreCase)
+    )
+    {
+        fontFile.LoadDynamicFont(path);
+    }
+    else if (path.EndsWith(".fnt", StringComparison.OrdinalIgnoreCase) || path.EndsWith(".font", StringComparison.OrdinalIgnoreCase))
+    {
+        fontFile.LoadBitmapFont(path);
+    }
+    else
+    {
+        GD.PrintErr("Invalid font file format.");
+    }
+
+    if (!fontFile.Data.IsEmpty())
+    {
+        // If font was loaded successfully, add it as a theme override.
+        GetNode<Label>("Label").AddThemeFontOverride("font", fontFile);
+    }
 
 ZIP archives
 ------------
@@ -285,7 +385,8 @@ through the Godot editor to generate PCK/ZIP files.
 Example that lists files in a ZIP archive in an :ref:`class_ItemList` node,
 then writes contents read from it to a new ZIP archive (essentially duplicating the archive):
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # Load an existing ZIP archive.
     var zip_reader = ZIPReader.new()
@@ -312,3 +413,37 @@ then writes contents read from it to a new ZIP archive (essentially duplicating 
         zip_packer.close_file()
 
     zip_packer.close()
+
+ .. code-tab:: csharp
+
+    // Load an existing ZIP archive.
+    var zipReader = new ZipReader();
+    zipReader.Open(path);
+    string[] files = zipReader.GetFiles();
+    // The list of files isn't sorted by default. Sort it for more consistent processing.
+    Array.Sort(files);
+    foreach (string file in files)
+    {
+        GetNode<ItemList>("ItemList").AddItem(file);
+        // Make folders disabled in the list.
+        GetNode<ItemList>("ItemList").SetItemDisabled(-1, file.EndsWith('/'));
+    }
+
+    // Save a new ZIP archive.
+    var zipPacker = new ZipPacker();
+    var error = zipPacker.Open(path);
+    if (error != Error.Ok)
+    {
+        GD.PrintErr($"Couldn't open path for saving ZIP archive (error code: {error}).");
+        return;
+    }
+
+    // Reuse the above ZIPReader instance to read files from an existing ZIP archive.
+    foreach (string file in zipReader.GetFiles())
+    {
+        zipPacker.StartFile(file);
+        zipPacker.WriteFile(zipReader.ReadFile(file));
+        zipPacker.CloseFile();
+    }
+
+    zipPacker.Close();

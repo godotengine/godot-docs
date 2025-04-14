@@ -254,12 +254,12 @@ You will have to code a function to perform this and draw it yourself.
 
     The following instructions use a fixed set of coordinates that could be too small
     for high resolution screens (larger than 1080p). If that is your case, and the
-    drawing is too small consider increasing your window scale in
-    ``Menu > Project > Project settings > display/window/stretch/scale`` to adjust
-    the project to a higher resolution (a 2 or 4 scale tends to work well).
+    drawing is too small consider increasing your window scale in the project setting
+    :ref:`Display > Window > Stretch > Scale<class_ProjectSettings_property_display/window/stretch/scale>`
+    to adjust the project to a higher resolution (a 2 or 4 scale tends to work well).
 
 Drawing a custom polygon shape
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While there is a dedicated node to draw custom polygons (
 :ref:`Polygon2D <class_Polygon2D>`), we will use in this case exclusively lower
@@ -377,7 +377,7 @@ like this:
         // We are going to paint with this color.
         Color godotBlue = new Color("478cbf");
         // We pass the array of Vector2 to draw the shape.
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
     }
 
 When running it you should see something like this:
@@ -394,7 +394,7 @@ Polygons will always **connect its last defined point to its first
 one** in order to have a closed shape.
 
 Drawing connected lines
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Drawing a sequence of connected lines that don't close down to form a polygon
 is very similar to the previous method. We will use a connected set of lines to
@@ -474,7 +474,7 @@ draw the line, like this:
         Color white = Colors.White;
         Color godotBlue = new Color("478cbf");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
 
         // We draw the while line on top of the previous shape.
         DrawPolyline(_mouth, white, _mouthWidth);
@@ -487,7 +487,7 @@ You should get the following output:
 Unlike ``draw_polygon()``, polylines can only have a single unique color
 for all its points (the second argument). This method has 2 additional
 arguments: the width of the line (which is as small as possible by default)
-and enabling or disabling the anti-aliasing (it is disabled by default).
+and enabling or disabling the antialiasing (it is disabled by default).
 
 The order of the ``_draw`` calls is important- like with the Node positions on
 the tree hierarchy, the different shapes will be drawn from top to bottom,
@@ -499,7 +499,7 @@ code or a predefined color name. Check the class :ref:`Color <class_Color>` for 
 constants and ways to define Colors.
 
 Drawing circles
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 To create the eyes, we are going to add 4 additional calls to draw the eye
 shapes, in different sizes, colors and positions.
@@ -535,7 +535,7 @@ its radius, and the third is its color:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
 
         // Four circles for the 2 eyes: 2 white, 2 grey.
@@ -555,7 +555,7 @@ arbitrary angles), you can use the method
 :ref:`draw_arc <class_CanvasItem_method_draw_arc>`.
 
 Drawing lines
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 To draw the final shape (the nose) we will use a line to approximate it.
 
@@ -589,7 +589,7 @@ like this:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
@@ -610,10 +610,10 @@ you may get additional performance by drawing all of them in a single call, usin
 the :ref:`draw_multiline <class_CanvasItem_method_draw_multiline>` method.
 
 Drawing text
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 While using the :ref:`Label <class_Label>` Node is the most common way to add
-text to your application, the low level `_draw` function includes functionality
+text to your application, the low-level `_draw` function includes functionality
 to add text to your custom Node drawing. We will use it to add the name "GODOT"
 under the robot head.
 
@@ -652,7 +652,7 @@ to do it, like this:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
@@ -680,7 +680,7 @@ can be found on the :ref:`CanvasItem <class_CanvasItem>` class reference.
 .. _doc_draw_show_drawing_while_editing_example:
 
 Show the drawing while editing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While the code so far is able to draw the logo on a running window, it will
 not show up on the ``2D view`` on the editor. In certain cases you would
@@ -710,7 +710,7 @@ to refresh the current node in the ``2D`` view the first time you add or remove
 the ``@tool`` annotation.
 
 Animation
-^^^^^^^^^
+~~~~~~~~~
 
 If we wanted to make the custom shape change at runtime, we could modify the
 methods called or its arguments at execution time, or apply a transform.
@@ -844,7 +844,7 @@ It will look somewhat like this when run:
 
 Please note that ``_mouth_width`` is a user defined property like any other
 and it or any other used as a drawing argument can be animated using more
-standard and high level methods such as a :ref:`Tween<class_Tween>` or an
+standard and high-level methods such as a :ref:`Tween<class_Tween>` or an
 :ref:`AnimationPlayer<class_AnimationPlayer>` Node. The only difference is
 that a ``queue_redraw()`` call is needed to apply those changes so they get
 shown on screen.
@@ -870,7 +870,7 @@ will see how to draw a dynamic line whose coordinates are not known beforehand,
 and are affected by the user's input.
 
 Drawing a straight line between 2 points
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's assume we want to draw a straight line between 2 points, the first one
 will be fixed on the upper left corner ``(0, 0)`` and the second will be defined
@@ -943,7 +943,7 @@ It should look like this when run:
 .. image:: img/draw_line_between_2_points.webp
 
 Drawing an arc between 2 points
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The above example works, but we may want to join those 2 points with a
 different shape or function, other than a straight line.
@@ -1005,9 +1005,10 @@ Calculating this arc will be more complex than in the case of the line:
  .. code-tab:: gdscript GDScript
 
     func _draw():
-        # Calculate the arc parameters.
-        var center : Vector2 = Vector2((_point2.x - point1.x) / 2,
-                                       (_point2.y - point1.y) / 2)
+        # Average points to get center.
+        var center : Vector2 = Vector2((_point2.x + point1.x) / 2,
+                                       (_point2.y + point1.y) / 2)
+        # Calculate the rest of the arc parameters. 
         var radius : float = point1.distance_to(_point2) / 2
         var start_angle : float = (_point2 - point1).angle()
         var end_angle : float = (point1 - _point2).angle()
@@ -1022,9 +1023,10 @@ Calculating this arc will be more complex than in the case of the line:
 
     public override void _Draw()
     {
-        // Calculate the arc parameters.
-        Vector2 center = new Vector2((_point2.X - Point1.X) / 2.0f,
-                                        (_point2.Y - Point1.Y) / 2.0f);
+        // Average points to get center.
+        Vector2 center = new Vector2((_point2.X + Point1.X) / 2.0f,
+                                        (_point2.Y + Point1.Y) / 2.0f);
+        // Calculate the rest of the arc parameters. 
         float radius = Point1.DistanceTo(_point2) / 2.0f;
         float startAngle = (_point2 - Point1).Angle();
         float endAngle = (Point1 - _point2).Angle();

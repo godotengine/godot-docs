@@ -65,7 +65,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **inner_radius** = ``0.5``
+:ref:`float<class_float>` **inner_radius** = ``0.5`` :ref:`🔗<class_CSGTorus3D_property_inner_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -82,7 +82,7 @@ The inner radius of the torus.
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGTorus3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -99,7 +99,7 @@ The material used to render the torus.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **outer_radius** = ``1.0``
+:ref:`float<class_float>` **outer_radius** = ``1.0`` :ref:`🔗<class_CSGTorus3D_property_outer_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,7 +116,7 @@ The outer radius of the torus.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **ring_sides** = ``6``
+:ref:`int<class_int>` **ring_sides** = ``6`` :ref:`🔗<class_CSGTorus3D_property_ring_sides>`
 
 .. rst-class:: classref-property-setget
 
@@ -133,7 +133,7 @@ The number of edges each ring of the torus is constructed of.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sides** = ``8``
+:ref:`int<class_int>` **sides** = ``8`` :ref:`🔗<class_CSGTorus3D_property_sides>`
 
 .. rst-class:: classref-property-setget
 
@@ -150,7 +150,7 @@ The number of slices the torus is constructed of.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **smooth_faces** = ``true``
+:ref:`bool<class_bool>` **smooth_faces** = ``true`` :ref:`🔗<class_CSGTorus3D_property_smooth_faces>`
 
 .. rst-class:: classref-property-setget
 

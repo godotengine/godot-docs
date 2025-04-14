@@ -104,7 +104,7 @@ effects of each of them.
     *Viewport's* :ref:`canvas transform <class_Viewport_property_canvas_transform>` and the
     *CanvasLayer's* :ref:`follow viewport scale <class_CanvasLayer_property_follow_viewport_scale>`
     and can be used, if :ref:`enabled <class_CanvasLayer_property_follow_viewport_enabled>`, to
-    achieve a pseudo 3D effect. It affects the same child nodes as the *CanvasLayer transform*.
+    achieve a pseudo-3D effect. It affects the same child nodes as the *CanvasLayer transform*.
 
 - **Viewport canvas transform**
     The :ref:`canvas transform <class_Viewport_property_canvas_transform>` affects all
@@ -141,5 +141,5 @@ effects of each of them.
 - **SubViewportContainer shrink transform**
     :ref:`stretch <class_SubViewportContainer_property_stretch>` together with
     :ref:`stretch_shrink <class_SubViewportContainer_property_stretch_shrink>` declare for a
-    *SubViewportContaner* if and by what integer factor the contained *SubViewport* should be
+    *SubViewportContainer* if and by what integer factor the contained *SubViewport* should be
     scaled in comparison to the container's size.

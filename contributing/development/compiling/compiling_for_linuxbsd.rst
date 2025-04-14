@@ -16,24 +16,15 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
-- GCC 7+ or Clang 6+.
-
-- `Python 3.6+ <https://www.python.org/downloads/>`_.
-
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
-
-  .. note::
-
-      If your distribution uses Python 2 by default, or you are using a version of SCons prior to 3.1.2,
-      you will need to change the version of Python that SCons uses by changing the shebang
-      (the first line) of the SCons script file to ``#! /usr/bin/python3``.
-      Use the command ``which scons`` to find the location of the SCons script file.
-
+- GCC 9+ or Clang 6+.
+- `Python 3.8+ <https://www.python.org/downloads/>`_.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - pkg-config (used to detect the development libraries listed below).
 - Development libraries:
 
   - X11, Xcursor, Xinerama, Xi and XRandR.
-  - MesaGL.
+  - Wayland and wayland-scanner.
+  - Mesa.
   - ALSA.
   - PulseAudio.
 
@@ -48,7 +39,7 @@ required:
 .. _doc_compiling_for_linuxbsd_oneliners:
 
 Distro-specific one-liners
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -67,7 +58,6 @@ Distro-specific one-liners
               libxi-dev \
               libxrandr-dev \
               mesa-dev \
-              libexecinfo-dev \
               eudev-dev \
               alsa-lib-dev \
               pulseaudio-dev
@@ -76,7 +66,7 @@ Distro-specific one-liners
 
         ::
 
-            pacman -S --needed \
+            pacman -Sy --noconfirm --needed \
               scons \
               pkgconf \
               gcc \
@@ -84,6 +74,7 @@ Distro-specific one-liners
               libxinerama \
               libxi \
               libxrandr \
+              wayland-utils \
               mesa \
               glu \
               libglvnd \
@@ -94,7 +85,8 @@ Distro-specific one-liners
 
         ::
 
-            apt-get install \
+            sudo apt-get update
+            sudo apt-get install -y \
               build-essential \
               scons \
               pkg-config \
@@ -102,33 +94,24 @@ Distro-specific one-liners
               libxcursor-dev \
               libxinerama-dev \
               libgl1-mesa-dev \
-              libglu-dev \
+              libglu1-mesa-dev \
               libasound2-dev \
               libpulse-dev \
               libudev-dev \
               libxi-dev \
-              libxrandr-dev
+              libxrandr-dev \
+              libwayland-dev
 
     .. tab:: Fedora
 
         ::
 
-            dnf install \
+            sudo dnf install -y \
               scons \
               pkgconfig \
-              libX11-devel \
-              libXcursor-devel \
-              libXrandr-devel \
-              libXinerama-devel \
-              libXi-devel \
-              mesa-libGL-devel \
-              mesa-libGLU-devel \
-              alsa-lib-devel \
-              pulseaudio-libs-devel \
-              libudev-devel \
               gcc-c++ \
               libstdc++-static \
-              libatomic-static
+              wayland-devel
 
     .. tab:: FreeBSD
 
@@ -141,7 +124,8 @@ Distro-specific one-liners
               libXcursor \
               libXrandr \
               libXi \
-              xorgproto libGLU \
+              xorgproto \
+              libGLU \
               alsa-lib \
               pulseaudio
 
@@ -149,12 +133,14 @@ Distro-specific one-liners
 
         ::
 
+            emerge --sync
             emerge -an \
-              dev-util/scons \
+              dev-build/scons \
               x11-libs/libX11 \
               x11-libs/libXcursor \
               x11-libs/libXinerama \
               x11-libs/libXi \
+              dev-util/wayland-scanner \
               media-libs/mesa \
               media-libs/glu \
               media-libs/alsa-lib \
@@ -164,10 +150,10 @@ Distro-specific one-liners
 
         ::
 
-            urpmi \
+            sudo urpmi --auto \
               scons \
               task-c++-devel \
-              pkgconfig \
+              wayland-devel \
               "pkgconfig(alsa)" \
               "pkgconfig(glu)" \
               "pkgconfig(libpulse)" \
@@ -177,34 +163,6 @@ Distro-specific one-liners
               "pkgconfig(xinerama)" \
               "pkgconfig(xi)" \
               "pkgconfig(xrandr)"
-
-    .. tab:: OpenBSD
-
-        ::
-
-            pkg_add \
-              python \
-              scons \
-              llvm
-
-    .. tab:: openSUSE
-
-        ::
-
-            zypper install \
-              scons \
-              pkgconfig \
-              libX11-devel \
-              libXcursor-devel \
-              libXrandr-devel \
-              libXinerama-devel \
-              libXi-devel \
-              Mesa-libGL-devel \
-              alsa-devel \
-              libpulse-devel \
-              libudev-devel \
-              gcc-c++ \
-              libGLU1
 
     .. tab:: NetBSD
 
@@ -218,17 +176,69 @@ Distro-specific one-liners
 
             For audio support, you can optionally install ``pulseaudio``.
 
+    .. tab:: OpenBSD
+
+        ::
+
+            pkg_add \
+              python \
+              scons \
+              llvm
+
+    .. tab:: openKylin
+
+        ::
+
+            sudo apt update
+            sudo apt install -y \
+              python3-pip \
+              build-essential \
+              pkg-config \
+              libx11-dev \
+              libxcursor-dev \
+              libxinerama-dev \
+              libgl1-mesa-dev \
+              libglu1-mesa-dev \
+              libasound2-dev \
+              libpulse-dev \
+              libudev-dev \
+              libxi-dev \
+              libxrandr-dev \
+              libwayland-dev
+            sudo pip install scons
+
+    .. tab:: openSUSE
+
+        ::
+
+            sudo zypper install -y \
+              scons \
+              pkgconfig \
+              libX11-devel \
+              libXcursor-devel \
+              libXrandr-devel \
+              libXinerama-devel \
+              libXi-devel \
+              wayland-devel \
+              Mesa-libGL-devel \
+              alsa-devel \
+              libpulse-devel \
+              libudev-devel \
+              gcc-c++ \
+              libGLU1
+
     .. tab:: Solus
 
         ::
 
-            eopkg install -c \
-              system.devel \
+            eopkg install -y \
+              -c system.devel \
               scons \
               libxcursor-devel \
               libxinerama-devel \
               libxi-devel \
               libxrandr-devel \
+              wayland-devel \
               mesalib-devel \
               libglu \
               alsa-lib-devel \
@@ -249,6 +259,12 @@ Start a terminal, go to the root dir of the engine source code and type:
     ``linuxbsd``. If you are looking to compile Godot 3.x, make sure to use the
     `3.x branch of this documentation <https://docs.godotengine.org/en/3.6/development/compiling/compiling_for_x11.html>`__.
 
+.. tip::
+    If you are compiling Godot to make changes or contribute to the engine,
+    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``.
+    See :ref:`doc_introduction_to_the_buildsystem_development_and_production_aliases`
+    for more info.
+
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
 runs without any dependencies. Executing it will bring up the Project
@@ -266,14 +282,15 @@ Manager.
     would not build.
     For RISC-V architecture devices, use the Clang compiler instead of the GCC compiler.
 
-.. note:: If you are compiling Godot for production use, then you can
-          make the final executable smaller and faster by adding the
-          SCons options ``target=template_release production=yes``.
+.. tip:: If you are compiling Godot for production use, you can
+         make the final executable smaller and faster by adding the
+         SCons option ``production=yes``. This enables additional compiler
+         optimizations and link-time optimization.
 
-          If you are compiling Godot with GCC, you can make the binary
-          even smaller and faster by adding the SCons option ``lto=full``.
-          As link-time optimization is a memory-intensive process,
-          this will require about 7 GB of available RAM while compiling.
+         LTO takes some time to run and requires about 7 GB of available RAM
+         while compiling. If you're running out of memory with the above option,
+         use ``production=yes lto=none`` or ``production=yes lto=thin`` for a
+         lightweight but less effective form of LTO.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable
@@ -344,10 +361,14 @@ and named like this (even for \*BSD which is seen as "Linux/X11" by Godot):
 
 ::
 
-    linux_x11_32_debug
-    linux_x11_32_release
-    linux_x11_64_debug
-    linux_x11_64_release
+    linux_debug.arm32
+    linux_debug.arm64
+    linux_debug.x86_32
+    linux_debug.x86_64
+    linux_release.arm32
+    linux_release.arm64
+    linux_release.x86_32
+    linux_release.x86_64
 
 However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your binaries as custom export templates
@@ -358,6 +379,83 @@ here:
 You don't even need to copy them, you can just reference the resulting
 files in the ``bin/`` directory of your Godot source folder, so the next
 time you build, you automatically have the custom templates referenced.
+
+Cross-compiling for RISC-V devices
+----------------------------------
+
+To cross-compile Godot for RISC-V devices, we need to setup the following items:
+
+- `riscv-gnu-toolchain <https://github.com/riscv-collab/riscv-gnu-toolchain/releases>`__.
+  While we are not going to use this directly, it provides us with a sysroot, as well
+  as header and libraries files that we will need. There are many versions to choose
+  from, however, the older the toolchain, the more compatible our final binaries will be.
+  If in doubt, `use this version <https://github.com/riscv-collab/riscv-gnu-toolchain/releases/tag/2021.12.22>`__,
+  and download ``riscv64-glibc-ubuntu-18.04-nightly-2021.12.22-nightly.tar.gz``. Extract
+  it somewhere and remember its path.
+- `mold <https://github.com/rui314/mold/releases>`__. This fast linker,
+  is the only one that correctly links the resulting binary. Download it, extract it,
+  and make sure to add its ``bin`` folder to your PATH. Run
+  ``mold --help | grep support`` to check if your version of Mold supports RISC-V.
+  If you don't see RISC-V, your Mold may need to be updated.
+
+To make referencing our toolchain easier, we can set an environment
+variable like this:
+
+::
+
+    export RISCV_TOOLCHAIN_PATH="path to toolchain here"
+
+This way, we won't have to manually set the directory location
+each time we want to reference it.
+
+With all the above setup, we are now ready to build Godot.
+
+Go to the root of the source code, and execute the following build command:
+
+::
+
+    PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH" \
+    scons arch=rv64 use_llvm=yes linker=mold lto=none target=editor \
+        ccflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu" \
+        linkflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu"
+
+.. note::
+
+    RISC-V GCC has `bugs with its atomic operations <https://github.com/riscv-collab/riscv-gcc/issues/15>`__
+    which prevent it from compiling Godot correctly. That's why Clang is used instead. Make sure that
+    it *can* compile to RISC-V. You can verify by executing this command ``clang -print-targets``,
+    make sure you see ``riscv64`` on the list of targets.
+
+.. warning:: The code above includes adding ``$RISCV_TOOLCHAIN_PATH/bin`` to the PATH,
+             but only for the following ``scons`` command. Since riscv-gnu-toolchain uses
+             its own Clang located in the ``bin`` folder, adding ``$RISCV_TOOLCHAIN_PATH/bin``
+             to your user's PATH environment variable may block you from accessing another
+             version of Clang if one is installed. For this reason it's not recommended to make
+             adding the bin folder permanent. You can also omit the ``PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"`` line
+             if you want to use scons with self-installed version of Clang, but it may have
+             compatibility issues with riscv-gnu-toolchain.
+
+The command is similar in nature, but with some key changes. ``ccflags`` and
+``linkflags`` append additional flags to the build. ``--sysroot`` points to
+a folder simulating a Linux system, it contains all the headers, libraries,
+and ``.so`` files Clang will use. ``--gcc-toolchain`` tells Clang where
+the complete toolchain is, and ``-target riscv64-unknown-linux-gnu``
+indicates to Clang the target architecture, and OS we want to build for.
+
+If all went well, you should now see a ``bin`` directory, and within it,
+a binary similar to the following:
+
+::
+
+    godot.linuxbsd.editor.rv64.llvm
+
+You can now copy this executable to your favorite RISC-V device,
+then launch it there by double-clicking, which should bring up
+the project manager.
+
+If you later decide to compile the export templates, copy the above
+build command but change the value of ``target`` to ``template_debug`` for
+a debug build, or ``template_release`` for a release build.
 
 Using Clang and LLD for faster development
 ------------------------------------------
@@ -390,7 +488,7 @@ There are two solutions:
 - Follow `these instructions <https://github.com/ivmai/libatomic_ops#installation-and-usage>`__ to configure, build, and
   install ``libatomic_ops``. Then, copy ``/usr/lib/libatomic_ops.a`` to ``/usr/lib/libatomic.a``, or create a soft link
   to ``libatomic_ops`` by command ``ln -s /usr/lib/libatomic_ops.a /usr/lib/libatomic.a``. The soft link can ensure the
-  latest ``libatomic_ops`` will be used without the need to copy it everytime when it is updated.
+  latest ``libatomic_ops`` will be used without the need to copy it every time when it is updated.
 
 Using mold for faster development
 ---------------------------------
@@ -402,7 +500,7 @@ As of January 2023, mold is not readily available in Linux distribution
 repositories, so you will have to install its binaries manually.
 
 - Download mold binaries from its `releases page <https://github.com/rui314/mold/releases/latest>`__.
-- Extract the ``.tar.gz`` file, then move the extraced folder to a location such as ``.local/share/mold``.
+- Extract the ``.tar.gz`` file, then move the extracted folder to a location such as ``.local/share/mold``.
 - Add ``$HOME/.local/share/mold/bin`` to your user's ``PATH`` environment variable.
   For example, you can add the following line at the end of your ``$HOME/.bash_profile`` file:
 
@@ -433,16 +531,53 @@ you may not be able to use system libraries for everything due to bugs in the
 system library packages (or in the build system, as this feature is less
 tested).
 
-To compile Godot with system libraries, install these dependencies *on top* of the ones
+To compile Godot with system libraries, install these dependencies **on top** of the ones
 listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
 
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Fedora**       | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     sudo dnf install embree3-devel enet-devel glslang-devel graphite2-devel harfbuzz-devel libicu-devel \ |
-|                  |         libsquish-devel libtheora-devel libvorbis-devel libwebp-devel libzstd-devel mbedtls-devel \       |
-|                  |         miniupnpc-devel                                                                                   |
-+------------------+-----------------------------------------------------------------------------------------------------------+
+.. tabs::
+
+    .. tab:: Debian/Ubuntu
+
+        ::
+
+            sudo apt-get update
+            sudo apt-get install -y \
+              libembree-dev \
+              libenet-dev \
+              libfreetype-dev \
+              libpng-dev \
+              zlib1g-dev \
+              libgraphite2-dev \
+              libharfbuzz-dev \
+              libogg-dev \
+              libtheora-dev \
+              libvorbis-dev \
+              libwebp-dev \
+              libmbedtls-dev \
+              libminiupnpc-dev \
+              libpcre2-dev \
+              libzstd-dev \
+              libsquish-dev \
+              libicu-dev
+
+    .. tab:: Fedora
+
+        ::
+
+            sudo dnf install -y \
+              embree-devel \
+              enet-devel \
+              glslang-devel \
+              graphite2-devel \
+              harfbuzz-devel \
+              libicu-devel \
+              libsquish-devel \
+              libtheora-devel \
+              libvorbis-devel \
+              libwebp-devel \
+              libzstd-devel \
+              mbedtls-devel \
+              miniupnpc-devel
 
 After installing all required packages, use the following command to build Godot:
 
@@ -453,43 +588,16 @@ After installing all required packages, use the following command to build Godot
 
     scons platform=linuxbsd builtin_embree=no builtin_enet=no builtin_freetype=no builtin_graphite=no builtin_harfbuzz=no builtin_libogg=no builtin_libpng=no builtin_libtheora=no builtin_libvorbis=no builtin_libwebp=no builtin_mbedtls=no builtin_miniupnpc=no builtin_pcre2=no builtin_zlib=no builtin_zstd=no
 
+On Debian stable, you will need to remove `builtin_embree=no` as the system-provided
+Embree version is too old to work with Godot's latest `master` branch
+(which requires Embree 4).
+
 You can view a list of all built-in libraries that have system alternatives by
 running ``scons -h``, then looking for options starting with ``builtin_``.
 
 .. warning::
 
-    When using system libraries, the resulting library is **not** portable
+    When using system libraries, the resulting binary is **not** portable
     across Linux distributions anymore. Do not use this approach for creating
     binaries you intend to distribute to others, unless you're creating a
     package for a Linux distribution.
-
-Using Pyston for faster development
------------------------------------
-
-You can use `Pyston <https://www.pyston.org/>`__ to run SCons. Pyston is a JIT-enabled
-implementation of the Python language (which SCons is written in). It is currently
-only compatible with Linux. Pyston can speed up incremental builds significantly,
-often by a factor between 1.5× and 2×. Pyston can be combined with Clang and LLD
-to get even faster builds.
-
-- Download the `latest portable Pyston release <https://github.com/pyston/pyston/releases/latest>`__.
-- Extract the portable ``.tar.gz`` to a set location, such as ``$HOME/.local/opt/pyston/`` (create folders as needed).
-- Use ``cd`` to reach the extracted Pyston folder from a terminal,
-  then run ``./pyston -m pip install scons`` to install SCons within Pyston.
-- To make SCons via Pyston easier to run, create a symbolic link of its wrapper
-  script to a location in your ``PATH`` environment variable::
-
-    ln -s ~/.local/opt/pyston/bin/scons ~/.local/bin/pyston-scons
-
-- Instead of running ``scons <build arguments>``, run ``pyston-scons <build arguments>``
-  to compile Godot.
-
-If you can't run ``pyston-scons`` after creating the symbolic link,
-make sure ``$HOME/.local/bin/`` is part of your user's ``PATH`` environment variable.
-
-.. note::
-
-    Alternatively, you can run ``python -m pip install pyston_lite_autoload``
-    then run SCons as usual. This will automatically load a subset of Pyston's
-    optimizations in any Python program you run. However, this won't bring as
-    much of a performance improvement compared to installing "full" Pyston.

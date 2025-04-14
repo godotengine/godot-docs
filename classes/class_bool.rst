@@ -71,7 +71,7 @@ Booleans can be combined with the logical operators ``and``, ``or``, ``not`` to 
 
 \ **Note:** In modern programming languages, logical operators are evaluated in order. All remaining conditions are skipped if their result would have no effect on the final value. This concept is known as `short-circuit evaluation <https://en.wikipedia.org/wiki/Short-circuit_evaluation>`__ and can be useful to avoid evaluating expensive conditions in some performance-critical cases.
 
-\ **Note:** By convention, built-in methods and properties that return booleans are usually defined as yes-no questions, single adjectives, or similar (:ref:`String.is_empty<class_String_method_is_empty>`, :ref:`Node.can_process<class_Node_method_can_process>`, :ref:`Camera2D.enabled<class_Camera2D_property_enabled>`, etc.).
+\ **Note:** By convention, built-in methods and properties that return booleans are usually defined as yes-no questions, single adjectives, or similar (:ref:`String.is_empty()<class_String_method_is_empty>`, :ref:`Node.can_process()<class_Node_method_can_process>`, :ref:`Camera2D.enabled<class_Camera2D_property_enabled>`, etc.).
 
 .. rst-class:: classref-reftable-group
 
@@ -122,7 +122,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`bool<class_bool>` **bool**\ (\ )
+:ref:`bool<class_bool>` **bool**\ (\ ) :ref:`🔗<class_bool_constructor_bool>`
 
 Constructs a **bool** set to ``false``.
 
@@ -169,7 +169,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`bool<class_bool>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_neq_bool>`
 
 Returns ``true`` if the two booleans are not equal. That is, one is ``true`` and the other is ``false``. This operation can be seen as a logical XOR.
 
@@ -181,7 +181,7 @@ Returns ``true`` if the two booleans are not equal. That is, one is ``true`` and
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`bool<class_bool>`\ )
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_lt_bool>`
 
 Returns ``true`` if the left operand is ``false`` and the right operand is ``true``.
 
@@ -193,7 +193,7 @@ Returns ``true`` if the left operand is ``false`` and the right operand is ``tru
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`bool<class_bool>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_eq_bool>`
 
 Returns ``true`` if the two booleans are equal. That is, both are ``true`` or both are ``false``. This operation can be seen as a logical EQ or XNOR.
 
@@ -205,7 +205,7 @@ Returns ``true`` if the two booleans are equal. That is, both are ``true`` or bo
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`bool<class_bool>`\ )
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_gt_bool>`
 
 Returns ``true`` if the left operand is ``true`` and the right operand is ``false``.
 

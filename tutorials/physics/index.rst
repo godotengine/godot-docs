@@ -1,5 +1,7 @@
 :allow_comments: False
 
+.. _doc_physics_index:
+
 Physics
 =======
 
@@ -8,6 +10,7 @@ Physics
    :name: toc-learn-features-physics
 
    physics_introduction
+   using_jolt_physics
    rigid_body
    using_area_2d
    using_character_body_2d
@@ -18,4 +21,5 @@ Physics
    collision_shapes_2d
    collision_shapes_3d
    large_world_coordinates
+   interpolation/index
    troubleshooting_physics_issues

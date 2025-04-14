@@ -57,7 +57,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_faces** = ``false``
+:ref:`bool<class_bool>` **flip_faces** = ``false`` :ref:`🔗<class_CSGPrimitive3D_property_flip_faces>`
 
 .. rst-class:: classref-property-setget
 

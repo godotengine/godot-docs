@@ -27,13 +27,27 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------+--------------------------------------------------------+----------+
-   | :ref:`Image<class_Image>`   | :ref:`icon<class_StatusIndicator_property_icon>`       |          |
-   +-----------------------------+--------------------------------------------------------+----------+
-   | :ref:`String<class_String>` | :ref:`tooltip<class_StatusIndicator_property_tooltip>` | ``""``   |
-   +-----------------------------+--------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`     | :ref:`visible<class_StatusIndicator_property_visible>` | ``true`` |
-   +-----------------------------+--------------------------------------------------------+----------+
+   +-----------------------------------+--------------------------------------------------------+------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`icon<class_StatusIndicator_property_icon>`       |                  |
+   +-----------------------------------+--------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>`   | :ref:`menu<class_StatusIndicator_property_menu>`       | ``NodePath("")`` |
+   +-----------------------------------+--------------------------------------------------------+------------------+
+   | :ref:`String<class_String>`       | :ref:`tooltip<class_StatusIndicator_property_tooltip>` | ``""``           |
+   +-----------------------------------+--------------------------------------------------------+------------------+
+   | :ref:`bool<class_bool>`           | :ref:`visible<class_StatusIndicator_property_visible>` | ``true``         |
+   +-----------------------------------+--------------------------------------------------------+------------------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`get_rect<class_StatusIndicator_method_get_rect>`\ (\ ) |const| |
+   +---------------------------+----------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -48,7 +62,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**pressed**\ (\ mouse_button\: :ref:`int<class_int>`, position\: :ref:`Vector2i<class_Vector2i>`\ )
+**pressed**\ (\ mouse_button\: :ref:`int<class_int>`, mouse_position\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_StatusIndicator_signal_pressed>`
 
 Emitted when the status indicator is pressed.
 
@@ -65,14 +79,33 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Image<class_Image>` **icon**
+:ref:`Texture2D<class_Texture2D>` **icon** :ref:`🔗<class_StatusIndicator_property_icon>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_icon**\ (\ value\: :ref:`Image<class_Image>`\ )
-- :ref:`Image<class_Image>` **get_icon**\ (\ )
+- |void| **set_icon**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_icon**\ (\ )
 
 Status indicator icon.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StatusIndicator_property_menu:
+
+.. rst-class:: classref-property
+
+:ref:`NodePath<class_NodePath>` **menu** = ``NodePath("")`` :ref:`🔗<class_StatusIndicator_property_menu>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_menu**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_menu**\ (\ )
+
+Status indicator native popup menu. If this is set, the :ref:`pressed<class_StatusIndicator_signal_pressed>` signal is not emitted.
+
+\ **Note:** Native popup is only supported if :ref:`NativeMenu<class_NativeMenu>` supports :ref:`NativeMenu.FEATURE_POPUP_MENU<class_NativeMenu_constant_FEATURE_POPUP_MENU>` feature.
 
 .. rst-class:: classref-item-separator
 
@@ -82,7 +115,7 @@ Status indicator icon.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **tooltip** = ``""``
+:ref:`String<class_String>` **tooltip** = ``""`` :ref:`🔗<class_StatusIndicator_property_tooltip>`
 
 .. rst-class:: classref-property-setget
 
@@ -99,7 +132,7 @@ Status indicator tooltip.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **visible** = ``true``
+:ref:`bool<class_bool>` **visible** = ``true`` :ref:`🔗<class_StatusIndicator_property_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,6 +140,23 @@ Status indicator tooltip.
 - :ref:`bool<class_bool>` **is_visible**\ (\ )
 
 If ``true``, the status indicator is visible.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_StatusIndicator_method_get_rect:
+
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **get_rect**\ (\ ) |const| :ref:`🔗<class_StatusIndicator_method_get_rect>`
+
+Returns the status indicator rectangle in screen coordinates. If this status indicator is not visible, returns an empty :ref:`Rect2<class_Rect2>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

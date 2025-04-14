@@ -12,7 +12,7 @@ PhysicsServer3DRenderingServerHandler
 
 **Inherits:** :ref:`Object<class_Object>`
 
-A class used to provide :ref:`PhysicsServer3DExtension._soft_body_update_rendering_server<class_PhysicsServer3DExtension_private_method__soft_body_update_rendering_server>` with a rendering handler for soft bodies.
+A class used to provide :ref:`PhysicsServer3DExtension._soft_body_update_rendering_server()<class_PhysicsServer3DExtension_private_method__soft_body_update_rendering_server>` with a rendering handler for soft bodies.
 
 .. rst-class:: classref-reftable-group
 
@@ -49,7 +49,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) |virtual|
+|void| **_set_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DRenderingServerHandler_private_method__set_aabb>`
 
 Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the bounding box for the :ref:`SoftBody3D<class_SoftBody3D>`.
 
@@ -61,7 +61,7 @@ Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the bounding 
 
 .. rst-class:: classref-method
 
-|void| **_set_normal**\ (\ vertex_id\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_set_normal**\ (\ vertex_id\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DRenderingServerHandler_private_method__set_normal>`
 
 Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the normal for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index specified by ``vertex_id``.
 
@@ -75,7 +75,7 @@ Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the normal fo
 
 .. rst-class:: classref-method
 
-|void| **_set_vertex**\ (\ vertex_id\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_set_vertex**\ (\ vertex_id\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DRenderingServerHandler_private_method__set_vertex>`
 
 Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the position for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index specified by ``vertex_id``.
 
@@ -89,7 +89,7 @@ Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the position 
 
 .. rst-class:: classref-method
 
-|void| **set_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`\ )
+|void| **set_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) :ref:`🔗<class_PhysicsServer3DRenderingServerHandler_method_set_aabb>`
 
 Sets the bounding box for the :ref:`SoftBody3D<class_SoftBody3D>`.
 
@@ -101,7 +101,7 @@ Sets the bounding box for the :ref:`SoftBody3D<class_SoftBody3D>`.
 
 .. rst-class:: classref-method
 
-|void| **set_normal**\ (\ vertex_id\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_normal**\ (\ vertex_id\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_PhysicsServer3DRenderingServerHandler_method_set_normal>`
 
 Sets the normal for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index specified by ``vertex_id``.
 
@@ -113,7 +113,7 @@ Sets the normal for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index 
 
 .. rst-class:: classref-method
 
-|void| **set_vertex**\ (\ vertex_id\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_vertex**\ (\ vertex_id\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_PhysicsServer3DRenderingServerHandler_method_set_vertex>`
 
 Sets the position for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index specified by ``vertex_id``.
 

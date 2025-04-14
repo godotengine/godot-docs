@@ -45,11 +45,31 @@ The region RID can then be obtained from NavigationRegion Nodes with ``get_rid()
 
     var navigationserver_region_rid: RID = get_rid()
 
+ .. code-tab:: csharp 2D C#
+
+    public partial class MyNavigationRegion2D : NavigationRegion2D
+    {
+        public override void _Ready()
+        {
+            Rid navigationServerRegionRid = GetRid();
+        }
+    }
+
  .. code-tab:: gdscript 3D GDScript
 
     extends NavigationRegion3D
 
     var navigationserver_region_rid: RID = get_rid()
+
+ .. code-tab:: csharp 3D C#
+
+    public partial class MyNavigationRegion3D : NavigationRegion3D
+    {
+        public override void _Ready()
+        {
+            Rid navigationServerRegionRid = GetRid();
+        }
+    }
 
 New regions can also be created with the NavigationServer API and added to any existing map.
 
@@ -65,6 +85,18 @@ If regions are created with the NavigationServer API directly they need to be as
         var default_map_rid: RID = get_world_2d().get_navigation_map()
         NavigationServer2D.region_set_map(new_region_rid, default_map_rid)
 
+ .. code-tab:: csharp 2D C#
+
+    public partial class MyNode2D : Node2D
+    {
+        public override void _Ready()
+        {
+            Rid newRegionRid = NavigationServer2D.RegionCreate();
+            Rid defaultMapRid = GetWorld2D().NavigationMap;
+            NavigationServer2D.RegionSetMap(newRegionRid, defaultMapRid);
+        }
+    }
+
  .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
@@ -73,6 +105,18 @@ If regions are created with the NavigationServer API directly they need to be as
         var new_region_rid: RID = NavigationServer3D.region_create()
         var default_map_rid: RID = get_world_3d().get_navigation_map()
         NavigationServer3D.region_set_map(new_region_rid, default_map_rid)
+
+ .. code-tab:: csharp 3D C#
+
+    public partial class MyNode3D : Node3D
+    {
+        public override void _Ready()
+        {
+            Rid newRegionRid = NavigationServer3D.RegionCreate();
+            Rid defaultMapRid = GetWorld3D().NavigationMap;
+            NavigationServer3D.RegionSetMap(newRegionRid, defaultMapRid);
+        }
+    }
 
 .. note::
 

@@ -59,6 +59,8 @@ methods, properties, constants, etc. from the value:
     **Text Editor > Completion > Add Type Hints** editor setting. Also consider
     enabling `some warnings <Warning system_>`_ that are disabled by default.
 
+.. UPDATE: Planned feature. If JIT/AOT are implemented, update this paragraph.
+
 Also, typed GDScript improves performance by using optimized opcodes when operand/argument
 types are known at compile time. More GDScript optimizations are planned in the future,
 such as JIT/AOT compilation.
@@ -198,14 +200,17 @@ To define the type of an ``Array``, enclose the type name in ``[]``.
 An array's type applies to ``for`` loop variables, as well as some operators like
 ``[]``, ``[]=``, and ``+``. Array methods (such as ``push_back``) and other operators
 (such as ``==``) are still untyped. Built-in types, native and custom classes,
-and enums may be used as element types. Nested array types are not supported.
+and enums may be used as element types. Nested array types
+(like ``Array[Array[int]]``) are not supported.
+
 
 ::
 
     var scores: Array[int] = [10, 20, 30]
     var vehicles: Array[Node] = [$Car, $Plane]
     var items: Array[Item] = [Item.new()]
-    # var arrays: Array[Array] -- disallowed
+    var array_of_arrays: Array[Array] = [[], []]
+    # var arrays: Array[Array[int]] -- disallowed
 
     for score in scores:
         # score has type `int`
@@ -269,7 +274,12 @@ get full autocompletion on the player variable thanks to that cast.
 
         player.damage()
 
-    or ``assert()`` statement::
+    You can also simplify the code by using the ``is not`` operator::
+
+        if body is not PlayerController:
+            push_error("Bug: body is not PlayerController")
+
+    Alternatively, you can use the ``assert()`` statement::
 
         assert(body is PlayerController, "Bug: body is not PlayerController.")
 
@@ -278,6 +288,7 @@ get full autocompletion on the player variable thanks to that cast.
             return
 
         player.damage()
+
 
 .. note::
 
@@ -381,9 +392,9 @@ Warning system
     Detailed documentation about the GDScript warning system has been moved to
     :ref:`doc_gdscript_warning_system`.
 
-From version 3.1, Godot gives you warnings about your code as you write it:
-the engine identifies sections of your code that may lead to issues at runtime,
-but lets you decide whether or not you want to leave the code as it is.
+Godot gives you warnings about your code as you write it. The engine identifies
+sections of your code that may lead to issues at runtime, but lets you decide
+whether or not you want to leave the code as it is.
 
 We have a number of warnings aimed specifically at users of typed GDScript.
 By default, these warnings are disabled, you can enable them in Project Settings
@@ -407,10 +418,10 @@ that has a script attached with ``class_name MyScript`` and that ``extends
 Node2D``. If we have a reference to the object as a ``Node2D`` (for instance,
 as it was passed to us by the physics system), we can first check if the
 property and method exist and then set and call them if they do::
-    
+
     if "some_property" in node_2d:
         node_2d.some_property = 20  # Produces UNSAFE_PROPERTY_ACCESS warning.
-    
+
     if node_2d.has_method("some_function"):
         node_2d.some_function()  # Produces UNSAFE_METHOD_ACCESS warning.
 
@@ -420,7 +431,7 @@ in the referenced type - in this case a ``Node2D``. To make these operations
 safe, you can first check if the object is of type ``MyScript`` using the
 ``is`` keyword and then declare a variable with the type ``MyScript`` on
 which you can set its properties and call its methods::
-    
+
     if node_2d is MyScript:
         var my_script: MyScript = node_2d
         my_script.some_property = 20
@@ -443,7 +454,7 @@ collision area to show the area's name. Once the object enters the collision
 area, the physics system sends a signal with a ``Node2D`` object, and the most
 straightforward (but not statically typed) solution to do what we want could
 be achieved like this::
-    
+
     func _on_body_entered(body: Node2D) -> void:
         body.label.text = name  # Produces UNSAFE_PROPERTY_ACCESS warning.
 
@@ -472,6 +483,8 @@ finally declare a statically typed variable with the object::
 Cases where you can't specify types
 -----------------------------------
 
+.. UPDATE: Not supported. If nested types are supported, update this section.
+
 To wrap up this introduction, let's mention cases where you can't use type hints.
 This will trigger a **syntax error**.
 
@@ -488,12 +501,11 @@ This will trigger a **syntax error**.
 
         var teams: Array[Array[Character]] = []
 
-3. Typed dictionaries are not currently supported::
-
-        var map: Dictionary[Vector2i, Item] = {}
-
 Summary
 -------
+
+.. UPDATE: Planned feature. If more optimizations (possibly JIT/AOT?) are
+.. implemented, update this paragraph.
 
 Typed GDScript is a powerful tool. It helps you write more structured code,
 avoid common errors, and create scalable and reliable systems. Static types

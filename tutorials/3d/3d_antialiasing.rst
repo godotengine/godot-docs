@@ -41,6 +41,8 @@ detailed below.
 Multisample antialiasing (MSAA)
 -------------------------------
 
+*This is available in all renderers.*
+
 This technique is the "historical" way of dealing with aliasing. MSAA is very
 effective on geometry edges (especially at higher levels). MSAA does not
 introduce any blurriness whatsoever.
@@ -64,9 +66,12 @@ StandardMaterial3D or ORMMaterial3D properties. Alpha to coverage has a
 moderate performance cost, but it's effective at reducing aliasing on
 transparent materials without introducing any blurriness.
 
+To make specular aliasing less noticeable, use the `Screen-space roughness limiter`_,
+which is enabled by default.
+
 MSAA can be enabled in the Project Settings by changing the value of the
-**Rendering > Anti Aliasing > Quality > MSAA 3D** setting. It's important to change
-the value of the **MSAA 3D** setting and not **MSAA 2D**, as these are entirely
+:ref:`Rendering > Anti Aliasing > Quality > MSAA 3D<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>`
+setting. It's important to change the value of the **MSAA 3D** setting and not **MSAA 2D**, as these are entirely
 separate settings.
 
 Comparison between no antialiasing (left) and various MSAA levels (right).
@@ -83,8 +88,8 @@ Note that alpha antialiasing is not used here:
 Temporal antialiasing (TAA)
 ---------------------------
 
-*This is only available in the Clustered Forward backend, not the Forward Mobile
-or Compatibility backends.*
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
 
 Temporal antialiasing works by *converging* the result of previously rendered
 frames into a single, high-quality frame. This is a continuous process that
@@ -103,8 +108,9 @@ downside of TAA is that it can exhibit *ghosting* artifacts behind moving
 objects. Rendering at a higher framerate will allow TAA to converge faster,
 therefore making those ghosting artifacts less visible.
 
-Temporal antialiasing can be enabled in the Project Settings by changing the
-value of the **Rendering > Anti Aliasing > Quality > Use TAA** setting.
+Temporal antialiasing can be enabled in the Project Settings by changing the value of the
+:ref:`Rendering > Anti Aliasing > Quality > TAA<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`
+setting.
 
 Comparison between no antialiasing (left) and TAA (right):
 
@@ -115,8 +121,11 @@ Comparison between no antialiasing (left) and TAA (right):
 AMD FidelityFX Super Resolution 2.2 (FSR2)
 ------------------------------------------
 
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
+
 Since Godot 4.2, there is built-in support for
-`AMD FidelityFX Super Resolution <https://www.amd.com/en/technologies/fidelityfx-super-resolution>`__
+`AMD FidelityFX Super Resolution <https://www.amd.com/en/products/graphics/technologies/fidelityfx/super-resolution.html>`__
 2.2. This is an :ref:`upscaling method <doc_resolution_scaling>`
 compatible with all recent GPUs from any vendor. FSR2 is normally designed to
 improve performance by lowering the internal 3D rendering resolution,
@@ -148,8 +157,8 @@ Comparison between no antialiasing (left) and FSR2 at native resolution (right):
 Fast approximate antialiasing (FXAA)
 ------------------------------------
 
-*This is only available in the Clustered Forward and Forward Mobile backends,
-not the Compatibility backend.*
+*This is only available in the Forward+ and Mobile renderers, not the Compatibility
+renderer.*
 
 Fast approximate antialiasing is a post-processing antialiasing solution. It is
 faster to run than any other antialiasing technique and also supports
@@ -164,9 +173,9 @@ as an in-game option may still be worthwhile for players with low-end GPUs.
 FXAA introduces a moderate amount of blur when enabled (more than TAA when
 still, but less than TAA when the camera is moving).
 
-FXAA can be enabled in the Project Settings by changing the
-value of the **Rendering > Anti Aliasing > Quality > Screen Space AA** setting to
-**FXAA**.
+FXAA can be enabled in the Project Settings by changing the value of the
+:ref:`Rendering > Anti Aliasing > Quality > Screen Space AA<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`
+setting to ``FXAA``.
 
 Comparison between no antialiasing (left) and FXAA (right):
 
@@ -175,8 +184,7 @@ Comparison between no antialiasing (left) and FXAA (right):
 Supersample antialiasing (SSAA)
 -------------------------------
 
-*This is only available in the Clustered Forward and Forward Mobile backends,
-not the Compatibility backend.*
+*This is available in all renderers.*
 
 Supersampling provides the highest quality of antialiasing possible, but it's
 also the most expensive. It works by shading every pixel in the scene multiple
@@ -187,9 +195,11 @@ The downside of SSAA is its *extremely* high cost. This cost generally makes
 SSAA difficult to use for game purposes, but you may still find supersampling
 useful for :ref:`offline rendering <doc_creating_movies>`.
 
-Supersample antialiasing is performed by increasing the **Rendering > Scaling 3D
-> Scale** advanced project setting above ``1.0`` while ensuring
-**Rendering > Scaling 3D > Mode** is set to **Bilinear** (the default).
+Supersample antialiasing is performed by increasing the
+:ref:`Rendering > Scaling 3D > Scale<class_ProjectSettings_property_rendering/scaling_3d/scale>`
+advanced project setting above ``1.0`` while ensuring
+:ref:`Rendering > Scaling 3D > Mode<class_ProjectSettings_property_rendering/scaling_3d/mode>`
+is set to ``Bilinear`` (the default).
 Since the scale factor is defined per-axis, a scale factor of ``1.5`` will result
 in 2.25× SSAA while a scale factor of ``2.0`` will result in 4× SSAA. Since Godot
 uses the hardware's own bilinear filtering to perform the downsampling, the result
@@ -216,8 +226,8 @@ Comparison between no antialiasing (left) and various SSAA levels (right):
 Screen-space roughness limiter
 ------------------------------
 
-*This is only available in the Clustered Forward and Forward Mobile backends,
-not the Compatibility backend.*
+*This is only available in the Forward+ and Mobile renderers, not the Compatibility
+renderer.*
 
 This is not an edge antialiasing method, but it is a way of reducing specular
 aliasing in 3D.
@@ -227,7 +237,9 @@ an effect on roughness map rendering itself, its impact is limited there.
 
 The screen-space roughness limiter is enabled by default; it doesn't require
 any manual setup. It has a small performance impact, so consider disabling it
-if your project isn't affected by specular aliasing much.
+if your project isn't affected by specular aliasing much. You can disable it
+with the **Rendering > Quality > Screen Space Filters > Screen Space Roughness Limiter**
+project setting.
 
 Texture roughness limiter on import
 -----------------------------------
@@ -275,3 +287,41 @@ usually unnecessary, but it can provide better visuals on high-end GPUs or for
 :ref:`non-real-time rendering <doc_creating_movies>`. For example, to make
 moving edges look better when TAA is enabled, you can also enable MSAA at the
 same time.
+
+Antialiasing comparison
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. Note that this table uses emojis, which are not monospaced in most editors.
+.. The table looks malformed but is not. When making changes, check the nearby
+.. lines for guidance.
+
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Feature                  | MSAA                     | TAA                      | FSR2                     | FXAA                     | SSAA                     | SSRL                     |
++==========================+==========================+==========================+==========================+==========================+==========================+==========================+
+| Edge antialiasing        | 🟢 Yes                   | 🟢 Yes                   | 🟢 Yes                   | 🟢 Yes                   | 🟢 Yes                   | 🔴 No                    |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Specular antialiasing    | 🟡 Some                  | 🟢 Yes                   | 🟢 Yes                   | 🟡 Some                  | 🟢 Yes                   | 🟢 Yes                   |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Transparency antialiasing| 🟡 Some [1]_             | 🟢 Yes [2]_              | 🟢 Yes [2]_              | 🟢 Yes                   | 🟢 Yes                   | 🔴 No                    |
+|                          |                          |                          |                          |                          |                          |                          |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Added blur               | 🟢 None                  | 🟡 Some                  | 🟡 Some                  | 🟡 Some                  | 🟡 Some [3]_             | 🟢 None                  |
+|                          |                          |                          |                          |                          |                          |                          |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Ghosting artifacts       | 🟢 None                  | 🔴 Yes                   | 🔴 Yes                   | 🟢 None                  | 🟢 None                  | 🟢 None                  |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Performance cost         | 🟡 Medium                | 🟡 Medium                | 🔴 High                  | 🟢 Low                   | 🔴 Very High             | 🟢 Low                   |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Forward+                 | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Mobile                   | ✔️ Yes                   | ❌ No                    | ❌ No                    | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Compatibility            | ✔️ Yes                   | ❌ No                    | ❌ No                    | ❌ No                    | ✔️ Yes                   | ❌ No                    |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+
+
+.. [1] MSAA does not work well with materials with Alpha Scissor (1-bit transparency).
+       This can be mitigated by enabling ``alpha antialiasing`` on the material.
+.. [2] TAA/FSR2 transparency antialiasing is most effective when using Alpha Scissor.
+.. [3] SSAA has some blur from bilinear downscaling. This can be mitigated by
+       using an integer scaling factor of ``2.0``.

@@ -32,7 +32,7 @@ Tutorials
 
 - :doc:`Faking global illumination <../tutorials/3d/global_illumination/faking_global_illumination>`
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -75,7 +75,7 @@ Properties
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`              | :ref:`light_size<class_Light3D_property_light_size>`                                   | ``0.0``               |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_specular<class_Light3D_property_light_specular>`                           | ``0.5``               |
+   | :ref:`float<class_float>`              | :ref:`light_specular<class_Light3D_property_light_specular>`                           | ``1.0``               |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`              | :ref:`light_temperature<class_Light3D_property_light_temperature>`                     |                       |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
@@ -84,6 +84,8 @@ Properties
    | :ref:`float<class_float>`              | :ref:`shadow_bias<class_Light3D_property_shadow_bias>`                                 | ``0.1``               |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`              | :ref:`shadow_blur<class_Light3D_property_shadow_blur>`                                 | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                  | :ref:`shadow_caster_mask<class_Light3D_property_shadow_caster_mask>`                   | ``4294967295``        |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                | :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>`                           | ``false``             |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
@@ -125,7 +127,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Param**:
+enum **Param**: :ref:`🔗<enum_Light3D_Param>`
 
 .. _class_Light3D_constant_PARAM_ENERGY:
 
@@ -311,7 +313,7 @@ Represents the size of the :ref:`Param<enum_Light3D_Param>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **BakeMode**:
+enum **BakeMode**: :ref:`🔗<enum_Light3D_BakeMode>`
 
 .. _class_Light3D_constant_BAKE_DISABLED:
 
@@ -321,7 +323,7 @@ enum **BakeMode**:
 
 Light is ignored when baking. This is the fastest mode, but the light will be taken into account when baking global illumination. This mode should generally be used for dynamic lights that change quickly, as the effect of global illumination is less noticeable on those lights.
 
-\ **Note:** Hiding a light does *not* affect baking :ref:`LightmapGI<class_LightmapGI>`. Hiding a light will still affect baking :ref:`VoxelGI<class_VoxelGI>` and SDFGI (see [member Environment.sdfgi_enabled).
+\ **Note:** Hiding a light does *not* affect baking :ref:`LightmapGI<class_LightmapGI>`. Hiding a light will still affect baking :ref:`VoxelGI<class_VoxelGI>` and SDFGI (see :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`).
 
 .. _class_Light3D_constant_BAKE_STATIC:
 
@@ -354,7 +356,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance_fade_begin** = ``40.0``
+:ref:`float<class_float>` **distance_fade_begin** = ``40.0`` :ref:`🔗<class_Light3D_property_distance_fade_begin>`
 
 .. rst-class:: classref-property-setget
 
@@ -373,7 +375,7 @@ The distance from the camera at which the light begins to fade away (in 3D units
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **distance_fade_enabled** = ``false``
+:ref:`bool<class_bool>` **distance_fade_enabled** = ``false`` :ref:`🔗<class_Light3D_property_distance_fade_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -392,7 +394,7 @@ If ``true``, the light will smoothly fade away when far from the active :ref:`Ca
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance_fade_length** = ``10.0``
+:ref:`float<class_float>` **distance_fade_length** = ``10.0`` :ref:`🔗<class_Light3D_property_distance_fade_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -411,7 +413,7 @@ Distance over which the light and its shadow fades. The light's energy and shado
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance_fade_shadow** = ``50.0``
+:ref:`float<class_float>` **distance_fade_shadow** = ``50.0`` :ref:`🔗<class_Light3D_property_distance_fade_shadow>`
 
 .. rst-class:: classref-property-setget
 
@@ -430,7 +432,7 @@ The distance from the camera at which the light's shadow cuts off (in 3D units).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor_only** = ``false``
+:ref:`bool<class_bool>` **editor_only** = ``false`` :ref:`🔗<class_Light3D_property_editor_only>`
 
 .. rst-class:: classref-property-setget
 
@@ -447,7 +449,7 @@ If ``true``, the light only appears in the editor and will not be visible at run
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_angular_distance** = ``0.0``
+:ref:`float<class_float>` **light_angular_distance** = ``0.0`` :ref:`🔗<class_Light3D_property_light_angular_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -468,7 +470,7 @@ The light's angular size in degrees. Increasing this will make shadows softer at
 
 .. rst-class:: classref-property
 
-:ref:`BakeMode<enum_Light3D_BakeMode>` **light_bake_mode** = ``2``
+:ref:`BakeMode<enum_Light3D_BakeMode>` **light_bake_mode** = ``2`` :ref:`🔗<class_Light3D_property_light_bake_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -487,14 +489,14 @@ The light's bake mode. This will affect the global illumination techniques that 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **light_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **light_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Light3D_property_light_color>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_color**\ (\ value\: :ref:`Color<class_Color>`\ )
 - :ref:`Color<class_Color>` **get_color**\ (\ )
 
-The light's color. An *overbright* color can be used to achieve a result equivalent to increasing the light's :ref:`light_energy<class_Light3D_property_light_energy>`.
+The light's color in the nonlinear sRGB color space. An *overbright* color can be used to achieve a result equivalent to increasing the light's :ref:`light_energy<class_Light3D_property_light_energy>`.
 
 .. rst-class:: classref-item-separator
 
@@ -504,7 +506,7 @@ The light's color. An *overbright* color can be used to achieve a result equival
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **light_cull_mask** = ``4294967295``
+:ref:`int<class_int>` **light_cull_mask** = ``4294967295`` :ref:`🔗<class_Light3D_property_light_cull_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -521,7 +523,7 @@ The light will affect objects in the selected layers.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_energy** = ``1.0``
+:ref:`float<class_float>` **light_energy** = ``1.0`` :ref:`🔗<class_Light3D_property_light_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -538,7 +540,7 @@ The light's strength multiplier (this is not a physical unit). For :ref:`OmniLig
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_indirect_energy** = ``1.0``
+:ref:`float<class_float>` **light_indirect_energy** = ``1.0`` :ref:`🔗<class_Light3D_property_light_indirect_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -557,7 +559,7 @@ Secondary multiplier used with indirect light (light bounces). Used with :ref:`V
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_intensity_lumens**
+:ref:`float<class_float>` **light_intensity_lumens** :ref:`🔗<class_Light3D_property_light_intensity_lumens>`
 
 .. rst-class:: classref-property-setget
 
@@ -578,7 +580,7 @@ A typical household lightbulb can range from around 600 lumens to 1,200 lumens, 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_intensity_lux**
+:ref:`float<class_float>` **light_intensity_lux** :ref:`🔗<class_Light3D_property_light_intensity_lux>`
 
 .. rst-class:: classref-property-setget
 
@@ -597,7 +599,7 @@ On a clear sunny day a surface in direct sunlight may be approximately 100,000 l
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **light_negative** = ``false``
+:ref:`bool<class_bool>` **light_negative** = ``false`` :ref:`🔗<class_Light3D_property_light_negative>`
 
 .. rst-class:: classref-property-setget
 
@@ -614,7 +616,7 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **light_projector**
+:ref:`Texture2D<class_Texture2D>` **light_projector** :ref:`🔗<class_Light3D_property_light_projector>`
 
 .. rst-class:: classref-property-setget
 
@@ -635,7 +637,7 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_size** = ``0.0``
+:ref:`float<class_float>` **light_size** = ``0.0`` :ref:`🔗<class_Light3D_property_light_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -656,7 +658,7 @@ The size of the light in Godot units. Only available for :ref:`OmniLight3D<class
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_specular** = ``0.5``
+:ref:`float<class_float>` **light_specular** = ``1.0`` :ref:`🔗<class_Light3D_property_light_specular>`
 
 .. rst-class:: classref-property-setget
 
@@ -673,7 +675,7 @@ The intensity of the specular blob in objects affected by the light. At ``0``, t
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_temperature**
+:ref:`float<class_float>` **light_temperature** :ref:`🔗<class_Light3D_property_light_temperature>`
 
 .. rst-class:: classref-property-setget
 
@@ -692,7 +694,7 @@ The sun on a cloudy day is approximately 6500 Kelvin, on a clear day it is betwe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_volumetric_fog_energy** = ``1.0``
+:ref:`float<class_float>` **light_volumetric_fog_energy** = ``1.0`` :ref:`🔗<class_Light3D_property_light_volumetric_fog_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -711,7 +713,7 @@ Secondary multiplier multiplied with :ref:`light_energy<class_Light3D_property_l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **shadow_bias** = ``0.1``
+:ref:`float<class_float>` **shadow_bias** = ``0.1`` :ref:`🔗<class_Light3D_property_shadow_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -728,7 +730,7 @@ Used to adjust shadow appearance. Too small a value results in self-shadowing ("
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **shadow_blur** = ``1.0``
+:ref:`float<class_float>` **shadow_blur** = ``1.0`` :ref:`🔗<class_Light3D_property_shadow_blur>`
 
 .. rst-class:: classref-property-setget
 
@@ -741,11 +743,28 @@ Blurs the edges of the shadow. Can be used to hide pixel artifacts in low-resolu
 
 ----
 
+.. _class_Light3D_property_shadow_caster_mask:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **shadow_caster_mask** = ``4294967295`` :ref:`🔗<class_Light3D_property_shadow_caster_mask>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_shadow_caster_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_shadow_caster_mask**\ (\ )
+
+The light will only cast shadows using objects in the selected layers.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Light3D_property_shadow_enabled:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shadow_enabled** = ``false``
+:ref:`bool<class_bool>` **shadow_enabled** = ``false`` :ref:`🔗<class_Light3D_property_shadow_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -762,7 +781,7 @@ If ``true``, the light will cast real-time shadows. This has a significant perfo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **shadow_normal_bias** = ``2.0``
+:ref:`float<class_float>` **shadow_normal_bias** = ``2.0`` :ref:`🔗<class_Light3D_property_shadow_normal_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -779,7 +798,7 @@ Offsets the lookup into the shadow map by the object's normal. This can be used 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **shadow_opacity** = ``1.0``
+:ref:`float<class_float>` **shadow_opacity** = ``1.0`` :ref:`🔗<class_Light3D_property_shadow_opacity>`
 
 .. rst-class:: classref-property-setget
 
@@ -796,7 +815,7 @@ The opacity to use when rendering the light's shadow map. Values lower than ``1.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shadow_reverse_cull_face** = ``false``
+:ref:`bool<class_bool>` **shadow_reverse_cull_face** = ``false`` :ref:`🔗<class_Light3D_property_shadow_reverse_cull_face>`
 
 .. rst-class:: classref-property-setget
 
@@ -813,7 +832,7 @@ If ``true``, reverses the backface culling of the mesh. This can be useful when 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **shadow_transmittance_bias** = ``0.05``
+:ref:`float<class_float>` **shadow_transmittance_bias** = ``0.05`` :ref:`🔗<class_Light3D_property_shadow_transmittance_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -837,7 +856,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_correlated_color**\ (\ ) |const|
+:ref:`Color<class_Color>` **get_correlated_color**\ (\ ) |const| :ref:`🔗<class_Light3D_method_get_correlated_color>`
 
 Returns the :ref:`Color<class_Color>` of an idealized blackbody at the given :ref:`light_temperature<class_Light3D_property_light_temperature>`. This value is calculated internally based on the :ref:`light_temperature<class_Light3D_property_light_temperature>`. This :ref:`Color<class_Color>` is multiplied by :ref:`light_color<class_Light3D_property_light_color>` before being sent to the :ref:`RenderingServer<class_RenderingServer>`.
 
@@ -849,7 +868,7 @@ Returns the :ref:`Color<class_Color>` of an idealized blackbody at the given :re
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`\ ) |const|
+:ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`\ ) |const| :ref:`🔗<class_Light3D_method_get_param>`
 
 Returns the value of the specified :ref:`Param<enum_Light3D_Param>` parameter.
 
@@ -861,7 +880,7 @@ Returns the value of the specified :ref:`Param<enum_Light3D_Param>` parameter.
 
 .. rst-class:: classref-method
 
-|void| **set_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`, value\: :ref:`float<class_float>`\ )
+|void| **set_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Light3D_method_set_param>`
 
 Sets the value of the specified :ref:`Param<enum_Light3D_Param>` parameter.
 

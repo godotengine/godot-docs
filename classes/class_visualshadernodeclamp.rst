@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **OpType**:
+enum **OpType**: :ref:`🔗<enum_VisualShaderNodeClamp_OpType>`
 
 .. _class_VisualShaderNodeClamp_constant_OP_TYPE_FLOAT:
 
@@ -117,7 +117,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **op_type** = ``0``
+:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **op_type** = ``0`` :ref:`🔗<class_VisualShaderNodeClamp_property_op_type>`
 
 .. rst-class:: classref-property-setget
 

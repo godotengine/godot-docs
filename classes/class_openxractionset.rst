@@ -68,7 +68,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **actions** = ``[]``
+:ref:`Array<class_Array>` **actions** = ``[]`` :ref:`🔗<class_OpenXRActionSet_property_actions>`
 
 .. rst-class:: classref-property-setget
 
@@ -85,7 +85,7 @@ Collection of actions for this action set.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **localized_name** = ``""``
+:ref:`String<class_String>` **localized_name** = ``""`` :ref:`🔗<class_OpenXRActionSet_property_localized_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -102,7 +102,7 @@ The localized name of this action set.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **priority** = ``0``
+:ref:`int<class_int>` **priority** = ``0`` :ref:`🔗<class_OpenXRActionSet_property_priority>`
 
 .. rst-class:: classref-property-setget
 
@@ -124,7 +124,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_action**\ (\ action\: :ref:`OpenXRAction<class_OpenXRAction>`\ )
+|void| **add_action**\ (\ action\: :ref:`OpenXRAction<class_OpenXRAction>`\ ) :ref:`🔗<class_OpenXRActionSet_method_add_action>`
 
 Add an action to this action set.
 
@@ -136,7 +136,7 @@ Add an action to this action set.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_action_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_action_count**\ (\ ) |const| :ref:`🔗<class_OpenXRActionSet_method_get_action_count>`
 
 Retrieve the number of actions in our action set.
 
@@ -148,7 +148,7 @@ Retrieve the number of actions in our action set.
 
 .. rst-class:: classref-method
 
-|void| **remove_action**\ (\ action\: :ref:`OpenXRAction<class_OpenXRAction>`\ )
+|void| **remove_action**\ (\ action\: :ref:`OpenXRAction<class_OpenXRAction>`\ ) :ref:`🔗<class_OpenXRActionSet_method_remove_action>`
 
 Remove an action from this action set.
 

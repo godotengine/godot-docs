@@ -41,18 +41,20 @@ In the advanced Project Settings' **Rendering > Scaling 3D** section, you can
 find several options for 3D resolution scaling:
 
 Scaling mode
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
-- **Bilinear:** Standard bilinear filtering (default).
+- **Bilinear:** Standard bilinear filtering (default). This is used as a fallback
+  when the current renderer doesn't support FSR 1.0 or FSR 2.2. *Available in
+  all renderers.*
 - **FSR 1.0:** `AMD FidelityFX Super Resolution 1.0 <https://gpuopen.com/fidelityfx-superresolution/>`__.
   Slower, but higher quality compared to bilinear scaling. On very slow GPUs,
   the cost of FSR1 may be too expensive to be worth using it over bilinear
-  scaling.
+  scaling. *Only available when using the Forward+ renderer.*
 - **FSR 2.2:** AMD FidelityFX Super Resolution 2.2 (since Godot 4.2). Slowest,
   but even higher quality compared to FSR1 and bilinear scaling. On slow GPUs,
   the cost of FSR2 may be too expensive to be worth using it over bilinear
   scaling or FSR1. To match FSR2 performance with FSR1, you need to use a lower
-  resolution scale factor.
+  resolution scale factor. *Only available when using the Forward+ renderer.*
 
 Here are comparison images between native resolution, bilinear scaling with 50%
 resolution scale, FSR1, and FSR2 scaling with 50% resolution scale:
@@ -86,14 +88,14 @@ MSAA is enabled. However, FSR2 doesn't benefit much from enabling MSAA since it
 already performs temporal antialiasing.
 
 Rendering scale
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 The **Rendering > Scaling 3D > Scale** setting adjusts the resolution scale.
 ``1.0`` represents the full resolution scale, with the 3D rendering resolution
 matching the 2D rendering resolution. Resolution scales *below* ``1.0`` can be
 used to speed up rendering, at the cost of a blurrier final image and more aliasing.
 
-The rendering scale can be adjusted at run-time by changing the ``scaling_3d_scale``
+The rendering scale can be adjusted at runtime by changing the ``scaling_3d_scale``
 property on a :ref:`class_Viewport` node.
 
 Resolution scales *above* ``1.0`` can be used for supersample antialiasing
@@ -181,7 +183,10 @@ in each table.
 +--------------------------+-------------------------+-------------------------------+
 
 FSR Sharpness
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
+
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
 
 When using the FSR1 or FSR2 scaling modes, the sharpness can be controlled using the
 **Rendering > Scaling 3D > FSR Sharpness** advanced project setting.
@@ -211,7 +216,10 @@ to oversharpening.
 .. _doc_resolution_scaling_mipmap_bias:
 
 Mipmap bias
-^^^^^^^^^^^
+~~~~~~~~~~~
+
+*This is only available in the Forward+ and Mobile renderers, not the Compatibility
+renderer.*
 
 Godot automatically uses a negative texture mipmap bias when the 3D resolution
 scale is set below ``1.0``. This allows for better preservation of texture
@@ -234,7 +242,7 @@ not change depending on resolution scale.
 
 The texture LOD bias can manually be changed by adjusting the **Rendering >
 Textures > Default Filters > Texture Mipmap Bias** advanced project setting. It
-can also be changed at run-time on :ref:`Viewports <class_Viewport>` by
+can also be changed at runtime on :ref:`Viewports <class_Viewport>` by
 adjusting the ``texture_mipmap_bias`` property.
 
 .. warning::
@@ -261,7 +269,7 @@ Troubleshooting
 ---------------
 
 Performance does not increase much when decreasing resolution scale
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If performance doesn't increase much when decreasing resolution scale to a value
 like ``0.5``, it likely means the performance bottleneck is elsewhere in your

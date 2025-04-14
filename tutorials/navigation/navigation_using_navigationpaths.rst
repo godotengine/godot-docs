@@ -52,6 +52,33 @@ Outside of grids due to polygons often covering large open areas with a single, 
         )
         return path
 
+ .. code-tab:: csharp 2D C#
+
+    using Godot;
+    using System;
+
+    public partial class MyNode2D : Node2D
+    {
+        // Basic query for a navigation path using the default navigation map.
+
+        private Vector2[] GetNavigationPath(Vector2 startPosition, Vector2 targetPosition)
+        {
+            if (!IsInsideTree())
+            {
+                return Array.Empty<Vector2>();
+            }
+
+            Rid defaultMapRid = GetWorld2D().NavigationMap;
+            Vector2[] path = NavigationServer2D.MapGetPath(
+                defaultMapRid,
+                startPosition,
+                targetPosition,
+                true
+            );
+            return path;
+        }
+    }
+
  .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
@@ -70,6 +97,33 @@ Outside of grids due to polygons often covering large open areas with a single, 
             true
         )
         return path
+
+ .. code-tab:: csharp 3D C#
+
+    using Godot;
+    using System;
+
+    public partial class MyNode3D : Node3D
+    {
+        // Basic query for a navigation path using the default navigation map.
+
+        private Vector3[] GetNavigationPath(Vector3 startPosition, Vector3 targetPosition)
+        {
+            if (!IsInsideTree())
+            {
+                return Array.Empty<Vector3>();
+            }
+
+            Rid defaultMapRid = GetWorld3D().NavigationMap;
+            Vector3[] path = NavigationServer3D.MapGetPath(
+                defaultMapRid,
+                startPosition,
+                targetPosition,
+                true
+            );
+            return path;
+        }
+    }
 
 A returned ``path`` by the NavigationServer will be a ``PackedVector2Array`` for 2D or a ``PackedVector3Array`` for 3D.
 These are just a memory-optimized ``Array`` of vector positions.
@@ -134,3 +188,67 @@ the default navigation map by setting the target position with ``set_movement_ta
         var new_velocity: Vector3 = global_transform.origin.direction_to(current_path_point) * movement_delta
 
         global_transform.origin = global_transform.origin.move_toward(global_transform.origin + new_velocity, movement_delta)
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        private Rid _default3DMapRid;
+
+        private float _movementSpeed = 4.0f;
+        private float _movementDelta;
+        private float _pathPointMargin = 0.5f;
+
+        private int _currentPathIndex = 0;
+        private Vector3 _currentPathPoint;
+        private Vector3[] _currentPath;
+
+        public override void _Ready()
+        {
+            _default3DMapRid = GetWorld3D().NavigationMap;
+        }
+
+        private void SetMovementTarget(Vector3 targetPosition)
+        {
+            Vector3 startPosition = GlobalTransform.Origin;
+
+            _currentPath = NavigationServer3D.MapGetPath(_default3DMapRid, startPosition, targetPosition, true);
+
+            if (!_currentPath.IsEmpty())
+            {
+                _currentPathIndex = 0;
+                _currentPathPoint = _currentPath[0];
+            }
+        }
+
+        public override void _PhysicsProcess(double delta)
+        {
+            if (_currentPath.IsEmpty())
+            {
+                return;
+            }
+
+            _movementDelta = _movementSpeed * (float)delta;
+
+            if (GlobalTransform.Origin.DistanceTo(_currentPathPoint) <= _pathPointMargin)
+            {
+                _currentPathIndex += 1;
+                if (_currentPathIndex >= _currentPath.Length)
+                {
+                    _currentPath = Array.Empty<Vector3>();
+                    _currentPathIndex = 0;
+                    _currentPathPoint = GlobalTransform.Origin;
+                    return;
+                }
+            }
+
+            _currentPathPoint = _currentPath[_currentPathIndex];
+
+            Vector3 newVelocity = GlobalTransform.Origin.DirectionTo(_currentPathPoint) * _movementDelta;
+            var globalTransform = GlobalTransform;
+            globalTransform.Origin = globalTransform.Origin.MoveToward(globalTransform.Origin + newVelocity, _movementDelta);
+            GlobalTransform = globalTransform;
+        }
+    }

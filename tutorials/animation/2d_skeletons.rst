@@ -13,8 +13,7 @@ and most 3D modeling applications support it. For 2D, as this function is not
 used as often, it's difficult to find mainstream software aimed for this.
 
 One option is to create animations in third-party software such as Spine or
-Dragonbones. From Godot 3.1 onwards, though, this functionality is supported
-built-in.
+Dragonbones. This functionality is also supported built-in.
 
 Why would you want to do skeletal animations directly in Godot? The answer is
 that there are many advantages to it:

@@ -40,6 +40,8 @@ Properties
    +---------------------------+---------------------------------------------------------------------------------------+----------+
    | :ref:`bool<class_bool>`   | :ref:`print_error_messages<class_Engine_property_print_error_messages>`               | ``true`` |
    +---------------------------+---------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`print_to_stdout<class_Engine_property_print_to_stdout>`                         | ``true`` |
+   +---------------------------+---------------------------------------------------------------------------------------+----------+
    | :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                                   | ``1.0``  |
    +---------------------------+---------------------------------------------------------------------------------------+----------+
 
@@ -92,6 +94,8 @@ Methods
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`is_editor_hint<class_Engine_method_is_editor_hint>`\ (\ ) |const|                                                                                     |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_embedded_in_editor<class_Engine_method_is_embedded_in_editor>`\ (\ ) |const|                                                                       |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`is_in_physics_frame<class_Engine_method_is_in_physics_frame>`\ (\ ) |const|                                                                           |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`register_script_language<class_Engine_method_register_script_language>`\ (\ language\: :ref:`ScriptLanguage<class_ScriptLanguage>`\ )                 |
@@ -116,7 +120,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_fps** = ``0``
+:ref:`int<class_int>` **max_fps** = ``0`` :ref:`🔗<class_Engine_property_max_fps>`
 
 .. rst-class:: classref-property-setget
 
@@ -129,7 +133,7 @@ Limiting the FPS can be useful to reduce the host machine's power consumption, w
 
 If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled** or **Adaptive**, the setting takes precedence and the max FPS number cannot exceed the monitor's refresh rate.
 
-If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled**, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using a FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
+If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled**, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using an FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
 
 See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` and :ref:`ProjectSettings.application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`.
 
@@ -145,7 +149,7 @@ See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_physics_steps_per_frame** = ``8``
+:ref:`int<class_int>` **max_physics_steps_per_frame** = ``8`` :ref:`🔗<class_Engine_property_max_physics_steps_per_frame>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +168,7 @@ The maximum number of physics steps that can be simulated each rendered frame.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics_jitter_fix** = ``0.5``
+:ref:`float<class_float>` **physics_jitter_fix** = ``0.5`` :ref:`🔗<class_Engine_property_physics_jitter_fix>`
 
 .. rst-class:: classref-property-setget
 
@@ -185,14 +189,14 @@ How much physics ticks are synchronized with real time. If ``0`` or less, the ti
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **physics_ticks_per_second** = ``60``
+:ref:`int<class_int>` **physics_ticks_per_second** = ``60`` :ref:`🔗<class_Engine_property_physics_ticks_per_second>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_physics_ticks_per_second**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_physics_ticks_per_second**\ (\ )
 
-The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_private_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`max_fps<class_Engine_property_max_fps>` and :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
+The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process()<class_Node_private_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`max_fps<class_Engine_property_max_fps>` and :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
 
 \ **Note:** Only :ref:`max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` physics ticks may be simulated per rendered frame at most. If more physics ticks have to be simulated per rendered frame to keep up with rendering, the project will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended to also increase :ref:`max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` if increasing :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` significantly above its default value.
 
@@ -204,7 +208,7 @@ The number of fixed iterations per second. This controls how often physics simul
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **print_error_messages** = ``true``
+:ref:`bool<class_bool>` **print_error_messages** = ``true`` :ref:`🔗<class_Engine_property_print_error_messages>`
 
 .. rst-class:: classref-property-setget
 
@@ -221,11 +225,30 @@ If ``false``, stops printing error and warning messages to the console and edito
 
 ----
 
+.. _class_Engine_property_print_to_stdout:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **print_to_stdout** = ``true`` :ref:`🔗<class_Engine_property_print_to_stdout>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_print_to_stdout**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_printing_to_stdout**\ (\ )
+
+If ``false``, stops printing messages (for example using :ref:`@GlobalScope.print()<class_@GlobalScope_method_print>`) to the console, log files, and editor Output log. This property is equivalent to the :ref:`ProjectSettings.application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>` project setting.
+
+\ **Note:** This does not stop printing errors or warnings produced by scripts to the console or log files, for more details see :ref:`print_error_messages<class_Engine_property_print_error_messages>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Engine_property_time_scale:
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **time_scale** = ``1.0``
+:ref:`float<class_float>` **time_scale** = ``1.0`` :ref:`🔗<class_Engine_property_time_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -234,7 +257,7 @@ If ``false``, stops printing error and warning messages to the console and edito
 
 The speed multiplier at which the in-game clock updates, compared to real time. For example, if set to ``2.0`` the game runs twice as fast, and if set to ``0.5`` the game runs half as fast.
 
-This value affects :ref:`Timer<class_Timer>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, and all other simulations that make use of ``delta`` time (such as :ref:`Node._process<class_Node_private_method__process>` and :ref:`Node._physics_process<class_Node_private_method__physics_process>`).
+This value affects :ref:`Timer<class_Timer>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, and all other simulations that make use of ``delta`` time (such as :ref:`Node._process()<class_Node_private_method__process>` and :ref:`Node._physics_process()<class_Node_private_method__physics_process>`).
 
 \ **Note:** It's recommended to keep this property above ``0.0``, as the game may behave unexpectedly otherwise.
 
@@ -255,32 +278,13 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_architecture_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_architecture_name**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_architecture_name>`
 
 Returns the name of the CPU architecture the Godot binary was built for. Possible return values include ``"x86_64"``, ``"x86_32"``, ``"arm64"``, ``"arm32"``, ``"rv64"``, ``"riscv"``, ``"ppc64"``, ``"ppc"``, ``"wasm64"``, and ``"wasm32"``.
 
-To detect whether the current build is 64-bit, you can use the fact that all 64-bit architecture names contain ``64`` in their name:
+To detect whether the current build is 64-bit, or the type of architecture, don't use the architecture name. Instead, use :ref:`OS.has_feature()<class_OS_method_has_feature>` to check for the ``"64"`` feature tag, or tags such as ``"x86"`` or ``"arm"``. See the :doc:`Feature Tags <../tutorials/export/feature_tags>` documentation for more details.
 
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    if "64" in Engine.get_architecture_name():
-        print("Running a 64-bit build of Godot.")
-    else:
-        print("Running a 32-bit build of Godot.")
-
- .. code-tab:: csharp
-
-    if (Engine.GetArchitectureName().Contains("64"))
-        GD.Print("Running a 64-bit build of Godot.");
-    else
-        GD.Print("Running a 32-bit build of Godot.");
-
-
-
-\ **Note:** This method does *not* return the name of the system's CPU architecture (like :ref:`OS.get_processor_name<class_OS_method_get_processor_name>`). For example, when running a ``x86_32`` Godot binary on a ``x86_64`` system, the returned value will still be ``"x86_32"``.
+\ **Note:** This method does *not* return the name of the system's CPU architecture (like :ref:`OS.get_processor_name()<class_OS_method_get_processor_name>`). For example, when running an ``x86_32`` Godot binary on an ``x86_64`` system, the returned value will still be ``"x86_32"``.
 
 .. rst-class:: classref-item-separator
 
@@ -290,7 +294,7 @@ To detect whether the current build is 64-bit, you can use the fact that all 64-
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_author_info**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **get_author_info**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_author_info>`
 
 Returns the engine author information as a :ref:`Dictionary<class_Dictionary>`, where each entry is an :ref:`Array<class_Array>` of strings with the names of notable contributors to the Godot Engine: ``lead_developers``, ``founders``, ``project_managers``, and ``developers``.
 
@@ -302,7 +306,7 @@ Returns the engine author information as a :ref:`Dictionary<class_Dictionary>`, 
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_copyright_info**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_copyright_info**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_copyright_info>`
 
 Returns an :ref:`Array<class_Array>` of dictionaries with copyright information for every component of Godot's source code.
 
@@ -322,7 +326,7 @@ Every :ref:`Dictionary<class_Dictionary>` contains a ``name`` identifier, and a 
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_donor_info**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **get_donor_info**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_donor_info>`
 
 Returns a :ref:`Dictionary<class_Dictionary>` of categorized donor names. Each entry is an :ref:`Array<class_Array>` of strings:
 
@@ -336,11 +340,11 @@ Returns a :ref:`Dictionary<class_Dictionary>` of categorized donor names. Each e
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_frames_drawn**\ (\ )
+:ref:`int<class_int>` **get_frames_drawn**\ (\ ) :ref:`🔗<class_Engine_method_get_frames_drawn>`
 
 Returns the total number of frames drawn since the engine started.
 
-\ **Note:** On headless platforms, or if rendering is disabled with ``--disable-render-loop`` via command line, this method always returns ``0``. See also :ref:`get_process_frames<class_Engine_method_get_process_frames>`.
+\ **Note:** On headless platforms, or if rendering is disabled with ``--disable-render-loop`` via command line, this method always returns ``0``. See also :ref:`get_process_frames()<class_Engine_method_get_process_frames>`.
 
 .. rst-class:: classref-item-separator
 
@@ -350,7 +354,7 @@ Returns the total number of frames drawn since the engine started.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_frames_per_second**\ (\ ) |const|
+:ref:`float<class_float>` **get_frames_per_second**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_frames_per_second>`
 
 Returns the average frames rendered every second (FPS), also known as the framerate.
 
@@ -362,7 +366,7 @@ Returns the average frames rendered every second (FPS), also known as the framer
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_license_info**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **get_license_info**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_license_info>`
 
 Returns a :ref:`Dictionary<class_Dictionary>` of licenses used by Godot and included third party components. Each entry is a license name (such as "`Expat <https://en.wikipedia.org/wiki/MIT_License#Ambiguity_and_variants>`__") and its associated text.
 
@@ -374,7 +378,7 @@ Returns a :ref:`Dictionary<class_Dictionary>` of licenses used by Godot and incl
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_license_text**\ (\ ) |const|
+:ref:`String<class_String>` **get_license_text**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_license_text>`
 
 Returns the full Godot license text.
 
@@ -386,9 +390,9 @@ Returns the full Godot license text.
 
 .. rst-class:: classref-method
 
-:ref:`MainLoop<class_MainLoop>` **get_main_loop**\ (\ ) |const|
+:ref:`MainLoop<class_MainLoop>` **get_main_loop**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_main_loop>`
 
-Returns the instance of the :ref:`MainLoop<class_MainLoop>`. This is usually the main :ref:`SceneTree<class_SceneTree>` and is the same as :ref:`Node.get_tree<class_Node_method_get_tree>`.
+Returns the instance of the :ref:`MainLoop<class_MainLoop>`. This is usually the main :ref:`SceneTree<class_SceneTree>` and is the same as :ref:`Node.get_tree()<class_Node_method_get_tree>`.
 
 \ **Note:** The type instantiated as the main loop can changed with :ref:`ProjectSettings.application/run/main_loop_type<class_ProjectSettings_property_application/run/main_loop_type>`.
 
@@ -400,9 +404,9 @@ Returns the instance of the :ref:`MainLoop<class_MainLoop>`. This is usually the
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_physics_frames**\ (\ ) |const|
+:ref:`int<class_int>` **get_physics_frames**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_physics_frames>`
 
-Returns the total number of frames passed since the engine started. This number is increased every **physics frame**. See also :ref:`get_process_frames<class_Engine_method_get_process_frames>`.
+Returns the total number of frames passed since the engine started. This number is increased every **physics frame**. See also :ref:`get_process_frames()<class_Engine_method_get_process_frames>`.
 
 This method can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
 
@@ -437,7 +441,7 @@ This method can be used to run expensive logic less often without relying on a :
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_physics_interpolation_fraction**\ (\ ) |const|
+:ref:`float<class_float>` **get_physics_interpolation_fraction**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_physics_interpolation_fraction>`
 
 Returns the fraction through the current physics tick we are at the time of rendering the frame. This can be used to implement fixed timestep interpolation.
 
@@ -449,9 +453,9 @@ Returns the fraction through the current physics tick we are at the time of rend
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_process_frames**\ (\ ) |const|
+:ref:`int<class_int>` **get_process_frames**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_process_frames>`
 
-Returns the total number of frames passed since the engine started. This number is increased every **process frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` and :ref:`get_physics_frames<class_Engine_method_get_physics_frames>`.
+Returns the total number of frames passed since the engine started. This number is increased every **process frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn()<class_Engine_method_get_frames_drawn>` and :ref:`get_physics_frames()<class_Engine_method_get_physics_frames>`.
 
 This method can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
 
@@ -486,7 +490,7 @@ This method can be used to run expensive logic less often without relying on a :
 
 .. rst-class:: classref-method
 
-:ref:`ScriptLanguage<class_ScriptLanguage>` **get_script_language**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`ScriptLanguage<class_ScriptLanguage>` **get_script_language**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Engine_method_get_script_language>`
 
 Returns an instance of a :ref:`ScriptLanguage<class_ScriptLanguage>` with the given ``index``.
 
@@ -498,9 +502,9 @@ Returns an instance of a :ref:`ScriptLanguage<class_ScriptLanguage>` with the gi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_script_language_count**\ (\ )
+:ref:`int<class_int>` **get_script_language_count**\ (\ ) :ref:`🔗<class_Engine_method_get_script_language_count>`
 
-Returns the number of available script languages. Use with :ref:`get_script_language<class_Engine_method_get_script_language>`.
+Returns the number of available script languages. Use with :ref:`get_script_language()<class_Engine_method_get_script_language>`.
 
 .. rst-class:: classref-item-separator
 
@@ -510,9 +514,9 @@ Returns the number of available script languages. Use with :ref:`get_script_lang
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Object<class_Object>` **get_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Engine_method_get_singleton>`
 
-Returns the global singleton with the given ``name``, or ``null`` if it does not exist. Often used for plugins. See also :ref:`has_singleton<class_Engine_method_has_singleton>` and :ref:`get_singleton_list<class_Engine_method_get_singleton_list>`.
+Returns the global singleton with the given ``name``, or ``null`` if it does not exist. Often used for plugins. See also :ref:`has_singleton()<class_Engine_method_has_singleton>` and :ref:`get_singleton_list()<class_Engine_method_get_singleton_list>`.
 
 \ **Note:** Global singletons are not the same as autoloaded nodes, which are configurable in the project settings.
 
@@ -524,9 +528,9 @@ Returns the global singleton with the given ``name``, or ``null`` if it does not
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_singleton_list**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_singleton_list**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_singleton_list>`
 
-Returns a list of names of all available global singletons. See also :ref:`get_singleton<class_Engine_method_get_singleton>`.
+Returns a list of names of all available global singletons. See also :ref:`get_singleton()<class_Engine_method_get_singleton>`.
 
 .. rst-class:: classref-item-separator
 
@@ -536,7 +540,7 @@ Returns a list of names of all available global singletons. See also :ref:`get_s
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_version_info**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **get_version_info**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_version_info>`
 
 Returns the current engine version information as a :ref:`Dictionary<class_Dictionary>` containing the following entries:
 
@@ -593,7 +597,7 @@ The ``hex`` value is encoded as follows, from left to right: one byte for the ma
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_write_movie_path**\ (\ ) |const|
+:ref:`String<class_String>` **get_write_movie_path**\ (\ ) |const| :ref:`🔗<class_Engine_method_get_write_movie_path>`
 
 Returns the path to the :ref:`MovieWriter<class_MovieWriter>`'s output file, or an empty string if the engine wasn't started in Movie Maker mode. The default path can be changed in :ref:`ProjectSettings.editor/movie_writer/movie_file<class_ProjectSettings_property_editor/movie_writer/movie_file>`.
 
@@ -605,9 +609,9 @@ Returns the path to the :ref:`MovieWriter<class_MovieWriter>`'s output file, or 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Engine_method_has_singleton>`
 
-Returns ``true`` if a singleton with the given ``name`` exists in the global scope. See also :ref:`get_singleton<class_Engine_method_get_singleton>`.
+Returns ``true`` if a singleton with the given ``name`` exists in the global scope. See also :ref:`get_singleton()<class_Engine_method_get_singleton>`.
 
 
 .. tabs::
@@ -621,10 +625,10 @@ Returns ``true`` if a singleton with the given ``name`` exists in the global sco
 
  .. code-tab:: csharp
 
-    GD.Print(Engine.HasSingleton("OS"));          // Prints true
-    GD.Print(Engine.HasSingleton("Engine"));      // Prints true
-    GD.Print(Engine.HasSingleton("AudioServer")); // Prints true
-    GD.Print(Engine.HasSingleton("Unknown"));     // Prints false
+    GD.Print(Engine.HasSingleton("OS"));          // Prints True
+    GD.Print(Engine.HasSingleton("Engine"));      // Prints True
+    GD.Print(Engine.HasSingleton("AudioServer")); // Prints True
+    GD.Print(Engine.HasSingleton("Unknown"));     // Prints False
 
 
 
@@ -638,7 +642,7 @@ Returns ``true`` if a singleton with the given ``name`` exists in the global sco
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_editor_hint**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_editor_hint**\ (\ ) |const| :ref:`🔗<class_Engine_method_is_editor_hint>`
 
 Returns ``true`` if the script is currently running inside the editor, otherwise returns ``false``. This is useful for ``@tool`` scripts to conditionally draw editor helpers, or prevent accidentally running "game" code that would affect the scene state while in the editor:
 
@@ -663,7 +667,19 @@ Returns ``true`` if the script is currently running inside the editor, otherwise
 
 See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_editor>` in the documentation for more information.
 
-\ **Note:** To detect whether the script is running on an editor *build* (such as when pressing :kbd:`F5`), use :ref:`OS.has_feature<class_OS_method_has_feature>` with the ``"editor"`` argument instead. ``OS.has_feature("editor")`` evaluate to ``true`` both when the script is running in the editor and when running the project from the editor, but returns ``false`` when run from an exported project.
+\ **Note:** To detect whether the script is running on an editor *build* (such as when pressing :kbd:`F5`), use :ref:`OS.has_feature()<class_OS_method_has_feature>` with the ``"editor"`` argument instead. ``OS.has_feature("editor")`` evaluate to ``true`` both when the script is running in the editor and when running the project from the editor, but returns ``false`` when run from an exported project.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Engine_method_is_embedded_in_editor:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_embedded_in_editor**\ (\ ) |const| :ref:`🔗<class_Engine_method_is_embedded_in_editor>`
+
+Returns ``true`` if the engine is running embedded in the editor. This is useful to prevent attempting to update window mode or window flags that are not supported when running the project embedded in the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -673,7 +689,7 @@ See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_e
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_in_physics_frame**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_in_physics_frame**\ (\ ) |const| :ref:`🔗<class_Engine_method_is_in_physics_frame>`
 
 Returns ``true`` if the engine is inside the fixed physics process step of the main loop.
 
@@ -698,7 +714,7 @@ Returns ``true`` if the engine is inside the fixed physics process step of the m
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **register_script_language**\ (\ language\: :ref:`ScriptLanguage<class_ScriptLanguage>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **register_script_language**\ (\ language\: :ref:`ScriptLanguage<class_ScriptLanguage>`\ ) :ref:`🔗<class_Engine_method_register_script_language>`
 
 Registers a :ref:`ScriptLanguage<class_ScriptLanguage>` instance to be available with ``ScriptServer``.
 
@@ -718,7 +734,7 @@ Returns:
 
 .. rst-class:: classref-method
 
-|void| **register_singleton**\ (\ name\: :ref:`StringName<class_StringName>`, instance\: :ref:`Object<class_Object>`\ )
+|void| **register_singleton**\ (\ name\: :ref:`StringName<class_StringName>`, instance\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_Engine_method_register_singleton>`
 
 Registers the given :ref:`Object<class_Object>` ``instance`` as a singleton, available globally under ``name``. Useful for plugins.
 
@@ -730,7 +746,7 @@ Registers the given :ref:`Object<class_Object>` ``instance`` as a singleton, ava
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **unregister_script_language**\ (\ language\: :ref:`ScriptLanguage<class_ScriptLanguage>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **unregister_script_language**\ (\ language\: :ref:`ScriptLanguage<class_ScriptLanguage>`\ ) :ref:`🔗<class_Engine_method_unregister_script_language>`
 
 Unregisters the :ref:`ScriptLanguage<class_ScriptLanguage>` instance from ``ScriptServer``.
 
@@ -748,9 +764,9 @@ Returns:
 
 .. rst-class:: classref-method
 
-|void| **unregister_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **unregister_singleton**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Engine_method_unregister_singleton>`
 
-Removes the singleton registered under ``name``. The singleton object is *not* freed. Only works with user-defined singletons registered with :ref:`register_singleton<class_Engine_method_register_singleton>`.
+Removes the singleton registered under ``name``. The singleton object is *not* freed. Only works with user-defined singletons registered with :ref:`register_singleton()<class_Engine_method_register_singleton>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

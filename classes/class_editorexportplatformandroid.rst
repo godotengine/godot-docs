@@ -54,6 +54,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`custom_template/release<class_EditorExportPlatformAndroid_property_custom_template/release>`                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`gesture/swipe_to_dismiss<class_EditorExportPlatformAndroid_property_gesture/swipe_to_dismiss>`                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`gradle_build/android_source_template<class_EditorExportPlatformAndroid_property_gradle_build/android_source_template>`                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`gradle_build/compress_native_libraries<class_EditorExportPlatformAndroid_property_gradle_build/compress_native_libraries>`                 |
@@ -86,6 +88,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`launcher_icons/adaptive_foreground_432x432<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_foreground_432x432>`         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`launcher_icons/adaptive_monochrome_432x432<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_monochrome_432x432>`         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`launcher_icons/main_192x192<class_EditorExportPlatformAndroid_property_launcher_icons/main_192x192>`                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`package/app_category<class_EditorExportPlatformAndroid_property_package/app_category>`                                                     |
@@ -113,6 +117,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`permissions/access_fine_location<class_EditorExportPlatformAndroid_property_permissions/access_fine_location>`                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/access_location_extra_commands<class_EditorExportPlatformAndroid_property_permissions/access_location_extra_commands>`         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`permissions/access_media_location<class_EditorExportPlatformAndroid_property_permissions/access_media_location>`                           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/access_mock_location<class_EditorExportPlatformAndroid_property_permissions/access_mock_location>`                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -270,6 +276,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/persistent_activity<class_EditorExportPlatformAndroid_property_permissions/persistent_activity>`                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`permissions/post_notifications<class_EditorExportPlatformAndroid_property_permissions/post_notifications>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/process_outgoing_calls<class_EditorExportPlatformAndroid_property_permissions/process_outgoing_calls>`                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/read_calendar<class_EditorExportPlatformAndroid_property_permissions/read_calendar>`                                           |
@@ -287,6 +295,14 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`permissions/read_input_state<class_EditorExportPlatformAndroid_property_permissions/read_input_state>`                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/read_logs<class_EditorExportPlatformAndroid_property_permissions/read_logs>`                                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`permissions/read_media_audio<class_EditorExportPlatformAndroid_property_permissions/read_media_audio>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`permissions/read_media_images<class_EditorExportPlatformAndroid_property_permissions/read_media_images>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`permissions/read_media_video<class_EditorExportPlatformAndroid_property_permissions/read_media_video>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`permissions/read_media_visual_user_selected<class_EditorExportPlatformAndroid_property_permissions/read_media_visual_user_selected>`       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/read_phone_state<class_EditorExportPlatformAndroid_property_permissions/read_phone_state>`                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -432,7 +448,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **apk_expansion/SALT**
+:ref:`String<class_String>` **apk_expansion/SALT** :ref:`🔗<class_EditorExportPlatformAndroid_property_apk_expansion/SALT>`
 
 Array of random bytes that the licensing Policy uses to create an `Obfuscator <https://developer.android.com/google/play/licensing/adding-licensing#impl-Obfuscator>`__.
 
@@ -444,11 +460,11 @@ Array of random bytes that the licensing Policy uses to create an `Obfuscator <h
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **apk_expansion/enable**
+:ref:`bool<class_bool>` **apk_expansion/enable** :ref:`🔗<class_EditorExportPlatformAndroid_property_apk_expansion/enable>`
 
-If ``true``, project resources are stored in the separate APK expansion file, instead APK.
+If ``true``, project resources are stored in the separate APK expansion file, instead of the APK.
 
-\ **Note:** APK expansion should be enabled to use PCK encryption.
+\ **Note:** APK expansion should be enabled to use PCK encryption. See `APK Expansion Files <https://developer.android.com/google/play/expansion-files>`__
 
 .. rst-class:: classref-item-separator
 
@@ -458,9 +474,9 @@ If ``true``, project resources are stored in the separate APK expansion file, in
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **apk_expansion/public_key**
+:ref:`String<class_String>` **apk_expansion/public_key** :ref:`🔗<class_EditorExportPlatformAndroid_property_apk_expansion/public_key>`
 
-Base64 encoded RSA public key for your publisher account, available from the profile page on the "Play Console".
+Base64 encoded RSA public key for your publisher account, available from the profile page on the "Google Play Console".
 
 .. rst-class:: classref-item-separator
 
@@ -470,7 +486,7 @@ Base64 encoded RSA public key for your publisher account, available from the pro
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **architectures/arm64-v8a**
+:ref:`bool<class_bool>` **architectures/arm64-v8a** :ref:`🔗<class_EditorExportPlatformAndroid_property_architectures/arm64-v8a>`
 
 If ``true``, ``arm64`` binaries are included into exported project.
 
@@ -482,7 +498,7 @@ If ``true``, ``arm64`` binaries are included into exported project.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **architectures/armeabi-v7a**
+:ref:`bool<class_bool>` **architectures/armeabi-v7a** :ref:`🔗<class_EditorExportPlatformAndroid_property_architectures/armeabi-v7a>`
 
 If ``true``, ``arm32`` binaries are included into exported project.
 
@@ -494,7 +510,7 @@ If ``true``, ``arm32`` binaries are included into exported project.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **architectures/x86**
+:ref:`bool<class_bool>` **architectures/x86** :ref:`🔗<class_EditorExportPlatformAndroid_property_architectures/x86>`
 
 If ``true``, ``x86_32`` binaries are included into exported project.
 
@@ -506,7 +522,7 @@ If ``true``, ``x86_32`` binaries are included into exported project.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **architectures/x86_64**
+:ref:`bool<class_bool>` **architectures/x86_64** :ref:`🔗<class_EditorExportPlatformAndroid_property_architectures/x86_64>`
 
 If ``true``, ``x86_64`` binaries are included into exported project.
 
@@ -518,9 +534,9 @@ If ``true``, ``x86_64`` binaries are included into exported project.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **command_line/extra_args**
+:ref:`String<class_String>` **command_line/extra_args** :ref:`🔗<class_EditorExportPlatformAndroid_property_command_line/extra_args>`
 
-A list of additional command line arguments, exported project will receive when started.
+A list of additional command line arguments, separated by space, which the exported project will receive when started.
 
 .. rst-class:: classref-item-separator
 
@@ -530,7 +546,7 @@ A list of additional command line arguments, exported project will receive when 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **custom_template/debug**
+:ref:`String<class_String>` **custom_template/debug** :ref:`🔗<class_EditorExportPlatformAndroid_property_custom_template/debug>`
 
 Path to an APK file to use as a custom export template for debug exports. If left empty, default template is used.
 
@@ -544,7 +560,7 @@ Path to an APK file to use as a custom export template for debug exports. If lef
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **custom_template/release**
+:ref:`String<class_String>` **custom_template/release** :ref:`🔗<class_EditorExportPlatformAndroid_property_custom_template/release>`
 
 Path to an APK file to use as a custom export template for release exports. If left empty, default template is used.
 
@@ -554,11 +570,27 @@ Path to an APK file to use as a custom export template for release exports. If l
 
 ----
 
+.. _class_EditorExportPlatformAndroid_property_gesture/swipe_to_dismiss:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **gesture/swipe_to_dismiss** :ref:`🔗<class_EditorExportPlatformAndroid_property_gesture/swipe_to_dismiss>`
+
+If ``true``, `Swipe to dismiss <https://developer.android.com/design/ui/wear/guides/components/swipe-to-dismiss>`__ will be enabled.
+
+This functionality is intended for smartwatches and is generally ignored on standard Android devices. However, some devices may not ignore it. Therefore, it is recommended to keep this feature disabled for standard Android apps to avoid unexpected behavior.
+
+\ **Note:** This is ``false`` by default. To enable this behavior, :ref:`gradle_build/use_gradle_build<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>` is required.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformAndroid_property_gradle_build/android_source_template:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **gradle_build/android_source_template**
+:ref:`String<class_String>` **gradle_build/android_source_template** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/android_source_template>`
 
 Path to a ZIP file holding the source for the export template used in a Gradle build. If left empty, the default template is used.
 
@@ -570,7 +602,7 @@ Path to a ZIP file holding the source for the export template used in a Gradle b
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gradle_build/compress_native_libraries**
+:ref:`bool<class_bool>` **gradle_build/compress_native_libraries** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/compress_native_libraries>`
 
 If ``true``, native libraries are compressed when performing a Gradle build.
 
@@ -584,9 +616,9 @@ If ``true``, native libraries are compressed when performing a Gradle build.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **gradle_build/export_format**
+:ref:`int<class_int>` **gradle_build/export_format** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/export_format>`
 
-Export format for Gradle build.
+Application export format (\*.apk or \*.aab).
 
 .. rst-class:: classref-item-separator
 
@@ -596,7 +628,7 @@ Export format for Gradle build.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **gradle_build/gradle_build_directory**
+:ref:`String<class_String>` **gradle_build/gradle_build_directory** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/gradle_build_directory>`
 
 Path to the Gradle build directory. If left empty, then ``res://android`` will be used.
 
@@ -608,9 +640,9 @@ Path to the Gradle build directory. If left empty, then ``res://android`` will b
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **gradle_build/min_sdk**
+:ref:`String<class_String>` **gradle_build/min_sdk** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/min_sdk>`
 
-Minimal Android SDK version for Gradle build.
+Minimum Android API level required for the application to run (used during Gradle build). See `android:minSdkVersion <https://developer.android.com/guide/topics/manifest/uses-sdk-element#uses>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -620,9 +652,9 @@ Minimal Android SDK version for Gradle build.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **gradle_build/target_sdk**
+:ref:`String<class_String>` **gradle_build/target_sdk** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/target_sdk>`
 
-Target Android SDK version for Gradle build.
+The Android API level on which the application is designed to run (used during Gradle build). See `android:targetSdkVersion <https://developer.android.com/guide/topics/manifest/uses-sdk-element#uses>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -632,7 +664,7 @@ Target Android SDK version for Gradle build.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gradle_build/use_gradle_build**
+:ref:`bool<class_bool>` **gradle_build/use_gradle_build** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>`
 
 If ``true``, Gradle build is used instead of pre-built APK.
 
@@ -644,7 +676,7 @@ If ``true``, Gradle build is used instead of pre-built APK.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **graphics/opengl_debug**
+:ref:`bool<class_bool>` **graphics/opengl_debug** :ref:`🔗<class_EditorExportPlatformAndroid_property_graphics/opengl_debug>`
 
 If ``true``, OpenGL ES debug context will be created (additional runtime checking, validation, and logging).
 
@@ -656,7 +688,7 @@ If ``true``, OpenGL ES debug context will be created (additional runtime checkin
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **keystore/debug**
+:ref:`String<class_String>` **keystore/debug** :ref:`🔗<class_EditorExportPlatformAndroid_property_keystore/debug>`
 
 Path of the debug keystore file.
 
@@ -672,7 +704,7 @@ Fallbacks to ``EditorSettings.export/android/debug_keystore`` if empty.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **keystore/debug_password**
+:ref:`String<class_String>` **keystore/debug_password** :ref:`🔗<class_EditorExportPlatformAndroid_property_keystore/debug_password>`
 
 Password for the debug keystore file.
 
@@ -688,7 +720,7 @@ Fallbacks to ``EditorSettings.export/android/debug_keystore_pass`` if both it an
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **keystore/debug_user**
+:ref:`String<class_String>` **keystore/debug_user** :ref:`🔗<class_EditorExportPlatformAndroid_property_keystore/debug_user>`
 
 User name for the debug keystore file.
 
@@ -704,7 +736,7 @@ Fallbacks to ``EditorSettings.export/android/debug_keystore_user`` if both it an
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **keystore/release**
+:ref:`String<class_String>` **keystore/release** :ref:`🔗<class_EditorExportPlatformAndroid_property_keystore/release>`
 
 Path of the release keystore file.
 
@@ -718,7 +750,7 @@ Can be overridden with the environment variable ``GODOT_ANDROID_KEYSTORE_RELEASE
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **keystore/release_password**
+:ref:`String<class_String>` **keystore/release_password** :ref:`🔗<class_EditorExportPlatformAndroid_property_keystore/release_password>`
 
 Password for the release keystore file.
 
@@ -732,7 +764,7 @@ Can be overridden with the environment variable ``GODOT_ANDROID_KEYSTORE_RELEASE
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **keystore/release_user**
+:ref:`String<class_String>` **keystore/release_user** :ref:`🔗<class_EditorExportPlatformAndroid_property_keystore/release_user>`
 
 User name for the release keystore file.
 
@@ -746,9 +778,9 @@ Can be overridden with the environment variable ``GODOT_ANDROID_KEYSTORE_RELEASE
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **launcher_icons/adaptive_background_432x432**
+:ref:`String<class_String>` **launcher_icons/adaptive_background_432x432** :ref:`🔗<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_background_432x432>`
 
-Background layer of the application adaptive icon file.
+Background layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -758,9 +790,21 @@ Background layer of the application adaptive icon file.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **launcher_icons/adaptive_foreground_432x432**
+:ref:`String<class_String>` **launcher_icons/adaptive_foreground_432x432** :ref:`🔗<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_foreground_432x432>`
 
-Foreground layer of the application adaptive icon file.
+Foreground layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_monochrome_432x432:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **launcher_icons/adaptive_monochrome_432x432** :ref:`🔗<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_monochrome_432x432>`
+
+Monochrome layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -770,7 +814,7 @@ Foreground layer of the application adaptive icon file.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **launcher_icons/main_192x192**
+:ref:`String<class_String>` **launcher_icons/main_192x192** :ref:`🔗<class_EditorExportPlatformAndroid_property_launcher_icons/main_192x192>`
 
 Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
 
@@ -782,9 +826,9 @@ Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **package/app_category**
+:ref:`int<class_int>` **package/app_category** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/app_category>`
 
-Application category for the Play Store.
+Application category for the Google Play Store. Only define this if your application fits one of the categories well. See `android:appCategory <https://developer.android.com/guide/topics/manifest/application-element#appCategory>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -794,9 +838,9 @@ Application category for the Play Store.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **package/exclude_from_recents**
+:ref:`bool<class_bool>` **package/exclude_from_recents** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/exclude_from_recents>`
 
-If ``true``, task initiated by main activity will be excluded from the list of recently used applications.
+If ``true``, task initiated by main activity will be excluded from the list of recently used applications. See `android:excludeFromRecents <https://developer.android.com/guide/topics/manifest/activity-element#exclude>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -806,7 +850,7 @@ If ``true``, task initiated by main activity will be excluded from the list of r
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **package/name**
+:ref:`String<class_String>` **package/name** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/name>`
 
 Name of the application.
 
@@ -818,9 +862,9 @@ Name of the application.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **package/retain_data_on_uninstall**
+:ref:`bool<class_bool>` **package/retain_data_on_uninstall** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/retain_data_on_uninstall>`
 
-If ``true``, when the user uninstalls an app, a prompt to keep the app's data will be shown.
+If ``true``, when the user uninstalls an app, a prompt to keep the app's data will be shown. See `android:hasFragileUserData <https://developer.android.com/guide/topics/manifest/application-element#fragileuserdata>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -830,7 +874,7 @@ If ``true``, when the user uninstalls an app, a prompt to keep the app's data wi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **package/show_as_launcher_app**
+:ref:`bool<class_bool>` **package/show_as_launcher_app** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/show_as_launcher_app>`
 
 If ``true``, the user will be able to set this app as the system launcher in Android preferences.
 
@@ -842,7 +886,7 @@ If ``true``, the user will be able to set this app as the system launcher in And
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **package/show_in_android_tv**
+:ref:`bool<class_bool>` **package/show_in_android_tv** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/show_in_android_tv>`
 
 If ``true``, this app will show in Android TV launcher UI.
 
@@ -854,7 +898,7 @@ If ``true``, this app will show in Android TV launcher UI.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **package/show_in_app_library**
+:ref:`bool<class_bool>` **package/show_in_app_library** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/show_in_app_library>`
 
 If ``true``, this app will show in the device's app library.
 
@@ -868,7 +912,7 @@ If ``true``, this app will show in the device's app library.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **package/signed**
+:ref:`bool<class_bool>` **package/signed** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/signed>`
 
 If ``true``, package signing is enabled.
 
@@ -880,7 +924,7 @@ If ``true``, package signing is enabled.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **package/unique_name**
+:ref:`String<class_String>` **package/unique_name** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/unique_name>`
 
 Unique application identifier in a reverse-DNS format. The reverse DNS format should preferably match a domain name you control, but this is not strictly required. For instance, if you own ``example.com``, your package unique name should preferably be of the form ``com.example.mygame``. This identifier can only contain lowercase alphanumeric characters (``a-z``, and ``0-9``), underscores (``_``), and periods (``.``). Each component of the reverse DNS format must start with a letter: for instance, ``com.example.8game`` is not valid.
 
@@ -898,7 +942,7 @@ If ``$genname`` is present in the value, it will be replaced by the project name
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/access_checkin_properties**
+:ref:`bool<class_bool>` **permissions/access_checkin_properties** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_checkin_properties>`
 
 Allows read/write access to the "properties" table in the checkin database. See `ACCESS_CHECKIN_PROPERTIES <https://developer.android.com/reference/android/Manifest.permission#ACCESS_CHECKIN_PROPERTIES>`__.
 
@@ -910,7 +954,7 @@ Allows read/write access to the "properties" table in the checkin database. See 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/access_coarse_location**
+:ref:`bool<class_bool>` **permissions/access_coarse_location** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_coarse_location>`
 
 Allows access to the approximate location information. See `ACCESS_COARSE_LOCATION <https://developer.android.com/reference/android/Manifest.permission#ACCESS_COARSE_LOCATION>`__.
 
@@ -922,7 +966,7 @@ Allows access to the approximate location information. See `ACCESS_COARSE_LOCATI
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/access_fine_location**
+:ref:`bool<class_bool>` **permissions/access_fine_location** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_fine_location>`
 
 Allows access to the precise location information. See `ACCESS_FINE_LOCATION <https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION>`__.
 
@@ -934,9 +978,21 @@ Allows access to the precise location information. See `ACCESS_FINE_LOCATION <ht
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/access_location_extra_commands**
+:ref:`bool<class_bool>` **permissions/access_location_extra_commands** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_location_extra_commands>`
 
 Allows access to the extra location provider commands. See `ACCESS_LOCATION_EXTRA_COMMANDS <https://developer.android.com/reference/android/Manifest.permission#ACCESS_LOCATION_EXTRA_COMMANDS>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_permissions/access_media_location:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **permissions/access_media_location** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_media_location>`
+
+Allows an application to access any geographic locations persisted in the user's shared collection. See `ACCESS_MEDIA_LOCATION <https://developer.android.com/reference/android/Manifest.permission#ACCESS_MEDIA_LOCATION>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -946,7 +1002,7 @@ Allows access to the extra location provider commands. See `ACCESS_LOCATION_EXTR
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/access_mock_location**
+:ref:`bool<class_bool>` **permissions/access_mock_location** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_mock_location>`
 
 Allows an application to create mock location providers for testing.
 
@@ -958,7 +1014,7 @@ Allows an application to create mock location providers for testing.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/access_network_state**
+:ref:`bool<class_bool>` **permissions/access_network_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_network_state>`
 
 Allows access to the information about networks. See `ACCESS_NETWORK_STATE <https://developer.android.com/reference/android/Manifest.permission#ACCESS_NETWORK_STATE>`__.
 
@@ -970,7 +1026,7 @@ Allows access to the information about networks. See `ACCESS_NETWORK_STATE <http
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/access_surface_flinger**
+:ref:`bool<class_bool>` **permissions/access_surface_flinger** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_surface_flinger>`
 
 Allows an application to use SurfaceFlinger's low level features.
 
@@ -982,7 +1038,7 @@ Allows an application to use SurfaceFlinger's low level features.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/access_wifi_state**
+:ref:`bool<class_bool>` **permissions/access_wifi_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/access_wifi_state>`
 
 Allows access to the information about Wi-Fi networks. See `ACCESS_WIFI_STATE <https://developer.android.com/reference/android/Manifest.permission#ACCESS_WIFI_STATE>`__.
 
@@ -994,7 +1050,7 @@ Allows access to the information about Wi-Fi networks. See `ACCESS_WIFI_STATE <h
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/account_manager**
+:ref:`bool<class_bool>` **permissions/account_manager** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/account_manager>`
 
 Allows applications to call into AccountAuthenticators. See `ACCOUNT_MANAGER <https://developer.android.com/reference/android/Manifest.permission#ACCOUNT_MANAGER>`__.
 
@@ -1006,7 +1062,7 @@ Allows applications to call into AccountAuthenticators. See `ACCOUNT_MANAGER <ht
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/add_voicemail**
+:ref:`bool<class_bool>` **permissions/add_voicemail** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/add_voicemail>`
 
 Allows an application to add voicemails into the system. See `ADD_VOICEMAIL <https://developer.android.com/reference/android/Manifest.permission#ADD_VOICEMAIL>`__.
 
@@ -1018,7 +1074,7 @@ Allows an application to add voicemails into the system. See `ADD_VOICEMAIL <htt
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/authenticate_accounts**
+:ref:`bool<class_bool>` **permissions/authenticate_accounts** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/authenticate_accounts>`
 
 Allows an application to act as an AccountAuthenticator for the AccountManager.
 
@@ -1030,7 +1086,7 @@ Allows an application to act as an AccountAuthenticator for the AccountManager.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/battery_stats**
+:ref:`bool<class_bool>` **permissions/battery_stats** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/battery_stats>`
 
 Allows an application to collect battery statistics. See `BATTERY_STATS <https://developer.android.com/reference/android/Manifest.permission#BATTERY_STATS>`__.
 
@@ -1042,7 +1098,7 @@ Allows an application to collect battery statistics. See `BATTERY_STATS <https:/
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_accessibility_service**
+:ref:`bool<class_bool>` **permissions/bind_accessibility_service** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_accessibility_service>`
 
 Must be required by an AccessibilityService, to ensure that only the system can bind to it. See `BIND_ACCESSIBILITY_SERVICE <https://developer.android.com/reference/android/Manifest.permission#BIND_ACCESSIBILITY_SERVICE>`__.
 
@@ -1054,7 +1110,7 @@ Must be required by an AccessibilityService, to ensure that only the system can 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_appwidget**
+:ref:`bool<class_bool>` **permissions/bind_appwidget** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_appwidget>`
 
 Allows an application to tell the AppWidget service which application can access AppWidget's data. See `BIND_APPWIDGET <https://developer.android.com/reference/android/Manifest.permission#BIND_APPWIDGET>`__.
 
@@ -1066,7 +1122,7 @@ Allows an application to tell the AppWidget service which application can access
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_device_admin**
+:ref:`bool<class_bool>` **permissions/bind_device_admin** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_device_admin>`
 
 Must be required by device administration receiver, to ensure that only the system can interact with it. See `BIND_DEVICE_ADMIN <https://developer.android.com/reference/android/Manifest.permission#BIND_DEVICE_ADMIN>`__.
 
@@ -1078,7 +1134,7 @@ Must be required by device administration receiver, to ensure that only the syst
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_input_method**
+:ref:`bool<class_bool>` **permissions/bind_input_method** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_input_method>`
 
 Must be required by an InputMethodService, to ensure that only the system can bind to it. See `BIND_INPUT_METHOD <https://developer.android.com/reference/android/Manifest.permission#BIND_INPUT_METHOD>`__.
 
@@ -1090,7 +1146,7 @@ Must be required by an InputMethodService, to ensure that only the system can bi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_nfc_service**
+:ref:`bool<class_bool>` **permissions/bind_nfc_service** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_nfc_service>`
 
 Must be required by a HostApduService or OffHostApduService to ensure that only the system can bind to it. See `BIND_NFC_SERVICE <https://developer.android.com/reference/android/Manifest.permission#BIND_NFC_SERVICE>`__.
 
@@ -1102,7 +1158,7 @@ Must be required by a HostApduService or OffHostApduService to ensure that only 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_notification_listener_service**
+:ref:`bool<class_bool>` **permissions/bind_notification_listener_service** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_notification_listener_service>`
 
 Must be required by a NotificationListenerService, to ensure that only the system can bind to it. See `BIND_NOTIFICATION_LISTENER_SERVICE <https://developer.android.com/reference/android/Manifest.permission#BIND_NOTIFICATION_LISTENER_SERVICE>`__.
 
@@ -1114,7 +1170,7 @@ Must be required by a NotificationListenerService, to ensure that only the syste
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_print_service**
+:ref:`bool<class_bool>` **permissions/bind_print_service** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_print_service>`
 
 Must be required by a PrintService, to ensure that only the system can bind to it. See `BIND_PRINT_SERVICE <https://developer.android.com/reference/android/Manifest.permission#BIND_PRINT_SERVICE>`__.
 
@@ -1126,7 +1182,7 @@ Must be required by a PrintService, to ensure that only the system can bind to i
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_remoteviews**
+:ref:`bool<class_bool>` **permissions/bind_remoteviews** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_remoteviews>`
 
 Must be required by a RemoteViewsService, to ensure that only the system can bind to it. See `BIND_REMOTEVIEWS <https://developer.android.com/reference/android/Manifest.permission#BIND_REMOTEVIEWS>`__.
 
@@ -1138,7 +1194,7 @@ Must be required by a RemoteViewsService, to ensure that only the system can bin
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_text_service**
+:ref:`bool<class_bool>` **permissions/bind_text_service** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_text_service>`
 
 Must be required by a TextService (e.g. SpellCheckerService) to ensure that only the system can bind to it. See `BIND_TEXT_SERVICE <https://developer.android.com/reference/android/Manifest.permission#BIND_TEXT_SERVICE>`__.
 
@@ -1150,7 +1206,7 @@ Must be required by a TextService (e.g. SpellCheckerService) to ensure that only
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_vpn_service**
+:ref:`bool<class_bool>` **permissions/bind_vpn_service** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_vpn_service>`
 
 Must be required by a VpnService, to ensure that only the system can bind to it. See `BIND_VPN_SERVICE <https://developer.android.com/reference/android/Manifest.permission#BIND_VPN_SERVICE>`__.
 
@@ -1162,7 +1218,7 @@ Must be required by a VpnService, to ensure that only the system can bind to it.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bind_wallpaper**
+:ref:`bool<class_bool>` **permissions/bind_wallpaper** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bind_wallpaper>`
 
 Must be required by a WallpaperService, to ensure that only the system can bind to it. See `BIND_WALLPAPER <https://developer.android.com/reference/android/Manifest.permission#BIND_WALLPAPER>`__.
 
@@ -1174,7 +1230,7 @@ Must be required by a WallpaperService, to ensure that only the system can bind 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bluetooth**
+:ref:`bool<class_bool>` **permissions/bluetooth** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bluetooth>`
 
 Allows applications to connect to paired bluetooth devices. See `BLUETOOTH <https://developer.android.com/reference/android/Manifest.permission#BLUETOOTH>`__.
 
@@ -1186,7 +1242,7 @@ Allows applications to connect to paired bluetooth devices. See `BLUETOOTH <http
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bluetooth_admin**
+:ref:`bool<class_bool>` **permissions/bluetooth_admin** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bluetooth_admin>`
 
 Allows applications to discover and pair bluetooth devices. See `BLUETOOTH_ADMIN <https://developer.android.com/reference/android/Manifest.permission#BLUETOOTH_ADMIN>`__.
 
@@ -1198,7 +1254,7 @@ Allows applications to discover and pair bluetooth devices. See `BLUETOOTH_ADMIN
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/bluetooth_privileged**
+:ref:`bool<class_bool>` **permissions/bluetooth_privileged** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/bluetooth_privileged>`
 
 Allows applications to pair bluetooth devices without user interaction, and to allow or disallow phonebook access or message access. See `BLUETOOTH_PRIVILEGED <https://developer.android.com/reference/android/Manifest.permission#BLUETOOTH_PRIVILEGED>`__.
 
@@ -1210,7 +1266,7 @@ Allows applications to pair bluetooth devices without user interaction, and to a
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/brick**
+:ref:`bool<class_bool>` **permissions/brick** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/brick>`
 
 Required to be able to disable the device (very dangerous!).
 
@@ -1222,7 +1278,7 @@ Required to be able to disable the device (very dangerous!).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/broadcast_package_removed**
+:ref:`bool<class_bool>` **permissions/broadcast_package_removed** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/broadcast_package_removed>`
 
 Allows an application to broadcast a notification that an application package has been removed. See `BROADCAST_PACKAGE_REMOVED <https://developer.android.com/reference/android/Manifest.permission#BROADCAST_PACKAGE_REMOVED>`__.
 
@@ -1234,7 +1290,7 @@ Allows an application to broadcast a notification that an application package ha
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/broadcast_sms**
+:ref:`bool<class_bool>` **permissions/broadcast_sms** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/broadcast_sms>`
 
 Allows an application to broadcast an SMS receipt notification. See `BROADCAST_SMS <https://developer.android.com/reference/android/Manifest.permission#BROADCAST_SMS>`__.
 
@@ -1246,7 +1302,7 @@ Allows an application to broadcast an SMS receipt notification. See `BROADCAST_S
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/broadcast_sticky**
+:ref:`bool<class_bool>` **permissions/broadcast_sticky** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/broadcast_sticky>`
 
 Allows an application to broadcast sticky intents. See `BROADCAST_STICKY <https://developer.android.com/reference/android/Manifest.permission#BROADCAST_STICKY>`__.
 
@@ -1258,7 +1314,7 @@ Allows an application to broadcast sticky intents. See `BROADCAST_STICKY <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/broadcast_wap_push**
+:ref:`bool<class_bool>` **permissions/broadcast_wap_push** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/broadcast_wap_push>`
 
 Allows an application to broadcast a WAP PUSH receipt notification. See `BROADCAST_WAP_PUSH <https://developer.android.com/reference/android/Manifest.permission#BROADCAST_WAP_PUSH>`__.
 
@@ -1270,7 +1326,7 @@ Allows an application to broadcast a WAP PUSH receipt notification. See `BROADCA
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/call_phone**
+:ref:`bool<class_bool>` **permissions/call_phone** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/call_phone>`
 
 Allows an application to initiate a phone call without going through the Dialer user interface. See `CALL_PHONE <https://developer.android.com/reference/android/Manifest.permission#CALL_PHONE>`__.
 
@@ -1282,7 +1338,7 @@ Allows an application to initiate a phone call without going through the Dialer 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/call_privileged**
+:ref:`bool<class_bool>` **permissions/call_privileged** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/call_privileged>`
 
 Allows an application to call any phone number, including emergency numbers, without going through the Dialer user interface. See `CALL_PRIVILEGED <https://developer.android.com/reference/android/Manifest.permission#CALL_PRIVILEGED>`__.
 
@@ -1294,7 +1350,7 @@ Allows an application to call any phone number, including emergency numbers, wit
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/camera**
+:ref:`bool<class_bool>` **permissions/camera** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/camera>`
 
 Required to be able to access the camera device. See `CAMERA <https://developer.android.com/reference/android/Manifest.permission#CAMERA>`__.
 
@@ -1306,7 +1362,7 @@ Required to be able to access the camera device. See `CAMERA <https://developer.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/capture_audio_output**
+:ref:`bool<class_bool>` **permissions/capture_audio_output** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/capture_audio_output>`
 
 Allows an application to capture audio output. See `CAPTURE_AUDIO_OUTPUT <https://developer.android.com/reference/android/Manifest.permission#CAPTURE_AUDIO_OUTPUT>`__.
 
@@ -1318,7 +1374,7 @@ Allows an application to capture audio output. See `CAPTURE_AUDIO_OUTPUT <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/capture_secure_video_output**
+:ref:`bool<class_bool>` **permissions/capture_secure_video_output** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/capture_secure_video_output>`
 
 Allows an application to capture secure video output.
 
@@ -1330,7 +1386,7 @@ Allows an application to capture secure video output.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/capture_video_output**
+:ref:`bool<class_bool>` **permissions/capture_video_output** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/capture_video_output>`
 
 Allows an application to capture video output.
 
@@ -1342,7 +1398,7 @@ Allows an application to capture video output.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/change_component_enabled_state**
+:ref:`bool<class_bool>` **permissions/change_component_enabled_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/change_component_enabled_state>`
 
 Allows an application to change whether an application component (other than its own) is enabled or not. See `CHANGE_COMPONENT_ENABLED_STATE <https://developer.android.com/reference/android/Manifest.permission#CHANGE_COMPONENT_ENABLED_STATE>`__.
 
@@ -1354,7 +1410,7 @@ Allows an application to change whether an application component (other than its
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/change_configuration**
+:ref:`bool<class_bool>` **permissions/change_configuration** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/change_configuration>`
 
 Allows an application to modify the current configuration, such as locale. See `CHANGE_CONFIGURATION <https://developer.android.com/reference/android/Manifest.permission#CHANGE_CONFIGURATION>`__.
 
@@ -1366,7 +1422,7 @@ Allows an application to modify the current configuration, such as locale. See `
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/change_network_state**
+:ref:`bool<class_bool>` **permissions/change_network_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/change_network_state>`
 
 Allows applications to change network connectivity state. See `CHANGE_NETWORK_STATE <https://developer.android.com/reference/android/Manifest.permission#CHANGE_NETWORK_STATE>`__.
 
@@ -1378,7 +1434,7 @@ Allows applications to change network connectivity state. See `CHANGE_NETWORK_ST
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/change_wifi_multicast_state**
+:ref:`bool<class_bool>` **permissions/change_wifi_multicast_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/change_wifi_multicast_state>`
 
 Allows applications to enter Wi-Fi Multicast mode. See `CHANGE_WIFI_MULTICAST_STATE <https://developer.android.com/reference/android/Manifest.permission#CHANGE_WIFI_MULTICAST_STATE>`__.
 
@@ -1390,7 +1446,7 @@ Allows applications to enter Wi-Fi Multicast mode. See `CHANGE_WIFI_MULTICAST_ST
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/change_wifi_state**
+:ref:`bool<class_bool>` **permissions/change_wifi_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/change_wifi_state>`
 
 Allows applications to change Wi-Fi connectivity state. See `CHANGE_WIFI_STATE <https://developer.android.com/reference/android/Manifest.permission#CHANGE_WIFI_STATE>`__.
 
@@ -1402,7 +1458,7 @@ Allows applications to change Wi-Fi connectivity state. See `CHANGE_WIFI_STATE <
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/clear_app_cache**
+:ref:`bool<class_bool>` **permissions/clear_app_cache** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/clear_app_cache>`
 
 Allows an application to clear the caches of all installed applications on the device. See `CLEAR_APP_CACHE <https://developer.android.com/reference/android/Manifest.permission#CLEAR_APP_CACHE>`__.
 
@@ -1414,7 +1470,7 @@ Allows an application to clear the caches of all installed applications on the d
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/clear_app_user_data**
+:ref:`bool<class_bool>` **permissions/clear_app_user_data** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/clear_app_user_data>`
 
 Allows an application to clear user data.
 
@@ -1426,7 +1482,7 @@ Allows an application to clear user data.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/control_location_updates**
+:ref:`bool<class_bool>` **permissions/control_location_updates** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/control_location_updates>`
 
 Allows enabling/disabling location update notifications from the radio. See `CONTROL_LOCATION_UPDATES <https://developer.android.com/reference/android/Manifest.permission#CONTROL_LOCATION_UPDATES>`__.
 
@@ -1438,9 +1494,11 @@ Allows enabling/disabling location update notifications from the radio. See `CON
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **permissions/custom_permissions**
+:ref:`PackedStringArray<class_PackedStringArray>` **permissions/custom_permissions** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/custom_permissions>`
 
 Array of custom permission strings.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -1450,7 +1508,7 @@ Array of custom permission strings.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/delete_cache_files**
+:ref:`bool<class_bool>` **permissions/delete_cache_files** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/delete_cache_files>`
 
 **Deprecated:** This property may be changed or removed in future versions.
 
@@ -1462,7 +1520,7 @@ Array of custom permission strings.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/delete_packages**
+:ref:`bool<class_bool>` **permissions/delete_packages** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/delete_packages>`
 
 Allows an application to delete packages. See `DELETE_PACKAGES <https://developer.android.com/reference/android/Manifest.permission#DELETE_PACKAGES>`__.
 
@@ -1474,7 +1532,7 @@ Allows an application to delete packages. See `DELETE_PACKAGES <https://develope
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/device_power**
+:ref:`bool<class_bool>` **permissions/device_power** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/device_power>`
 
 Allows low-level access to power management.
 
@@ -1486,7 +1544,7 @@ Allows low-level access to power management.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/diagnostic**
+:ref:`bool<class_bool>` **permissions/diagnostic** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/diagnostic>`
 
 Allows applications to RW to diagnostic resources. See `DIAGNOSTIC <https://developer.android.com/reference/android/Manifest.permission#DIAGNOSTIC>`__.
 
@@ -1498,7 +1556,7 @@ Allows applications to RW to diagnostic resources. See `DIAGNOSTIC <https://deve
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/disable_keyguard**
+:ref:`bool<class_bool>` **permissions/disable_keyguard** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/disable_keyguard>`
 
 Allows applications to disable the keyguard if it is not secure. See `DISABLE_KEYGUARD <https://developer.android.com/reference/android/Manifest.permission#DISABLE_KEYGUARD>`__.
 
@@ -1510,7 +1568,7 @@ Allows applications to disable the keyguard if it is not secure. See `DISABLE_KE
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/dump**
+:ref:`bool<class_bool>` **permissions/dump** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/dump>`
 
 Allows an application to retrieve state dump information from system services. See `DUMP <https://developer.android.com/reference/android/Manifest.permission#DUMP>`__.
 
@@ -1522,7 +1580,7 @@ Allows an application to retrieve state dump information from system services. S
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/expand_status_bar**
+:ref:`bool<class_bool>` **permissions/expand_status_bar** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/expand_status_bar>`
 
 Allows an application to expand or collapse the status bar. See `EXPAND_STATUS_BAR <https://developer.android.com/reference/android/Manifest.permission#EXPAND_STATUS_BAR>`__.
 
@@ -1534,7 +1592,7 @@ Allows an application to expand or collapse the status bar. See `EXPAND_STATUS_B
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/factory_test**
+:ref:`bool<class_bool>` **permissions/factory_test** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/factory_test>`
 
 Run as a manufacturer test application, running as the root user. See `FACTORY_TEST <https://developer.android.com/reference/android/Manifest.permission#FACTORY_TEST>`__.
 
@@ -1546,7 +1604,7 @@ Run as a manufacturer test application, running as the root user. See `FACTORY_T
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/flashlight**
+:ref:`bool<class_bool>` **permissions/flashlight** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/flashlight>`
 
 Allows access to the flashlight.
 
@@ -1558,7 +1616,7 @@ Allows access to the flashlight.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/force_back**
+:ref:`bool<class_bool>` **permissions/force_back** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/force_back>`
 
 Allows an application to force a BACK operation on whatever is the top activity.
 
@@ -1570,7 +1628,7 @@ Allows an application to force a BACK operation on whatever is the top activity.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/get_accounts**
+:ref:`bool<class_bool>` **permissions/get_accounts** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/get_accounts>`
 
 Allows access to the list of accounts in the Accounts Service. See `GET_ACCOUNTS <https://developer.android.com/reference/android/Manifest.permission#GET_ACCOUNTS>`__.
 
@@ -1582,7 +1640,7 @@ Allows access to the list of accounts in the Accounts Service. See `GET_ACCOUNTS
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/get_package_size**
+:ref:`bool<class_bool>` **permissions/get_package_size** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/get_package_size>`
 
 Allows an application to find out the space used by any package. See `GET_PACKAGE_SIZE <https://developer.android.com/reference/android/Manifest.permission#GET_PACKAGE_SIZE>`__.
 
@@ -1594,7 +1652,7 @@ Allows an application to find out the space used by any package. See `GET_PACKAG
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/get_tasks**
+:ref:`bool<class_bool>` **permissions/get_tasks** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/get_tasks>`
 
 **Deprecated:** Deprecated in API level 21.
 
@@ -1606,7 +1664,7 @@ Allows an application to find out the space used by any package. See `GET_PACKAG
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/get_top_activity_info**
+:ref:`bool<class_bool>` **permissions/get_top_activity_info** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/get_top_activity_info>`
 
 Allows an application to retrieve private information about the current top activity.
 
@@ -1618,7 +1676,7 @@ Allows an application to retrieve private information about the current top acti
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/global_search**
+:ref:`bool<class_bool>` **permissions/global_search** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/global_search>`
 
 Used on content providers to allow the global search system to access their data. See `GLOBAL_SEARCH <https://developer.android.com/reference/android/Manifest.permission#GLOBAL_SEARCH>`__.
 
@@ -1630,7 +1688,7 @@ Used on content providers to allow the global search system to access their data
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/hardware_test**
+:ref:`bool<class_bool>` **permissions/hardware_test** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/hardware_test>`
 
 Allows access to hardware peripherals.
 
@@ -1642,7 +1700,7 @@ Allows access to hardware peripherals.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/inject_events**
+:ref:`bool<class_bool>` **permissions/inject_events** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/inject_events>`
 
 Allows an application to inject user events (keys, touch, trackball) into the event stream and deliver them to ANY window.
 
@@ -1654,7 +1712,7 @@ Allows an application to inject user events (keys, touch, trackball) into the ev
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/install_location_provider**
+:ref:`bool<class_bool>` **permissions/install_location_provider** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/install_location_provider>`
 
 Allows an application to install a location provider into the Location Manager. See `INSTALL_LOCATION_PROVIDER <https://developer.android.com/reference/android/Manifest.permission#INSTALL_LOCATION_PROVIDER>`__.
 
@@ -1666,7 +1724,7 @@ Allows an application to install a location provider into the Location Manager. 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/install_packages**
+:ref:`bool<class_bool>` **permissions/install_packages** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/install_packages>`
 
 Allows an application to install packages. See `INSTALL_PACKAGES <https://developer.android.com/reference/android/Manifest.permission#INSTALL_PACKAGES>`__.
 
@@ -1678,7 +1736,7 @@ Allows an application to install packages. See `INSTALL_PACKAGES <https://develo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/install_shortcut**
+:ref:`bool<class_bool>` **permissions/install_shortcut** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/install_shortcut>`
 
 Allows an application to install a shortcut in Launcher. See `INSTALL_SHORTCUT <https://developer.android.com/reference/android/Manifest.permission#INSTALL_SHORTCUT>`__.
 
@@ -1690,7 +1748,7 @@ Allows an application to install a shortcut in Launcher. See `INSTALL_SHORTCUT <
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/internal_system_window**
+:ref:`bool<class_bool>` **permissions/internal_system_window** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/internal_system_window>`
 
 Allows an application to open windows that are for use by parts of the system user interface.
 
@@ -1702,7 +1760,7 @@ Allows an application to open windows that are for use by parts of the system us
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/internet**
+:ref:`bool<class_bool>` **permissions/internet** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/internet>`
 
 Allows applications to open network sockets. See `INTERNET <https://developer.android.com/reference/android/Manifest.permission#INTERNET>`__.
 
@@ -1714,7 +1772,7 @@ Allows applications to open network sockets. See `INTERNET <https://developer.an
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/kill_background_processes**
+:ref:`bool<class_bool>` **permissions/kill_background_processes** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/kill_background_processes>`
 
 Allows an application to call ActivityManager.killBackgroundProcesses(String). See `KILL_BACKGROUND_PROCESSES <https://developer.android.com/reference/android/Manifest.permission#KILL_BACKGROUND_PROCESSES>`__.
 
@@ -1726,7 +1784,7 @@ Allows an application to call ActivityManager.killBackgroundProcesses(String). S
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/location_hardware**
+:ref:`bool<class_bool>` **permissions/location_hardware** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/location_hardware>`
 
 Allows an application to use location features in hardware, such as the geofencing api. See `LOCATION_HARDWARE <https://developer.android.com/reference/android/Manifest.permission#LOCATION_HARDWARE>`__.
 
@@ -1738,7 +1796,7 @@ Allows an application to use location features in hardware, such as the geofenci
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/manage_accounts**
+:ref:`bool<class_bool>` **permissions/manage_accounts** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/manage_accounts>`
 
 Allows an application to manage the list of accounts in the AccountManager.
 
@@ -1750,7 +1808,7 @@ Allows an application to manage the list of accounts in the AccountManager.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/manage_app_tokens**
+:ref:`bool<class_bool>` **permissions/manage_app_tokens** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/manage_app_tokens>`
 
 Allows an application to manage (create, destroy, Z-order) application tokens in the window manager.
 
@@ -1762,7 +1820,7 @@ Allows an application to manage (create, destroy, Z-order) application tokens in
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/manage_documents**
+:ref:`bool<class_bool>` **permissions/manage_documents** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/manage_documents>`
 
 Allows an application to manage access to documents, usually as part of a document picker. See `MANAGE_DOCUMENTS <https://developer.android.com/reference/android/Manifest.permission#MANAGE_DOCUMENTS>`__.
 
@@ -1774,7 +1832,7 @@ Allows an application to manage access to documents, usually as part of a docume
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/manage_external_storage**
+:ref:`bool<class_bool>` **permissions/manage_external_storage** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/manage_external_storage>`
 
 Allows an application a broad access to external storage in scoped storage. See `MANAGE_EXTERNAL_STORAGE <https://developer.android.com/reference/android/Manifest.permission#MANAGE_EXTERNAL_STORAGE>`__.
 
@@ -1786,7 +1844,7 @@ Allows an application a broad access to external storage in scoped storage. See 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/master_clear**
+:ref:`bool<class_bool>` **permissions/master_clear** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/master_clear>`
 
 See `MASTER_CLEAR <https://developer.android.com/reference/android/Manifest.permission#MASTER_CLEAR>`__.
 
@@ -1798,7 +1856,7 @@ See `MASTER_CLEAR <https://developer.android.com/reference/android/Manifest.perm
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/media_content_control**
+:ref:`bool<class_bool>` **permissions/media_content_control** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/media_content_control>`
 
 Allows an application to know what content is playing and control its playback. See `MEDIA_CONTENT_CONTROL <https://developer.android.com/reference/android/Manifest.permission#MEDIA_CONTENT_CONTROL>`__.
 
@@ -1810,7 +1868,7 @@ Allows an application to know what content is playing and control its playback. 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/modify_audio_settings**
+:ref:`bool<class_bool>` **permissions/modify_audio_settings** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/modify_audio_settings>`
 
 Allows an application to modify global audio settings. See `MODIFY_AUDIO_SETTINGS <https://developer.android.com/reference/android/Manifest.permission#MODIFY_AUDIO_SETTINGS>`__.
 
@@ -1822,7 +1880,7 @@ Allows an application to modify global audio settings. See `MODIFY_AUDIO_SETTING
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/modify_phone_state**
+:ref:`bool<class_bool>` **permissions/modify_phone_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/modify_phone_state>`
 
 Allows modification of the telephony state - power on, mmi, etc. Does not include placing calls. See `MODIFY_PHONE_STATE <https://developer.android.com/reference/android/Manifest.permission#MODIFY_PHONE_STATE>`__.
 
@@ -1834,7 +1892,7 @@ Allows modification of the telephony state - power on, mmi, etc. Does not includ
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/mount_format_filesystems**
+:ref:`bool<class_bool>` **permissions/mount_format_filesystems** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/mount_format_filesystems>`
 
 Allows formatting file systems for removable storage. See `MOUNT_FORMAT_FILESYSTEMS <https://developer.android.com/reference/android/Manifest.permission#MOUNT_FORMAT_FILESYSTEMS>`__.
 
@@ -1846,7 +1904,7 @@ Allows formatting file systems for removable storage. See `MOUNT_FORMAT_FILESYST
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/mount_unmount_filesystems**
+:ref:`bool<class_bool>` **permissions/mount_unmount_filesystems** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/mount_unmount_filesystems>`
 
 Allows mounting and unmounting file systems for removable storage. See `MOUNT_UNMOUNT_FILESYSTEMS <https://developer.android.com/reference/android/Manifest.permission#MOUNT_UNMOUNT_FILESYSTEMS>`__.
 
@@ -1858,7 +1916,7 @@ Allows mounting and unmounting file systems for removable storage. See `MOUNT_UN
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/nfc**
+:ref:`bool<class_bool>` **permissions/nfc** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/nfc>`
 
 Allows applications to perform I/O operations over NFC. See `NFC <https://developer.android.com/reference/android/Manifest.permission#NFC>`__.
 
@@ -1870,11 +1928,23 @@ Allows applications to perform I/O operations over NFC. See `NFC <https://develo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/persistent_activity**
+:ref:`bool<class_bool>` **permissions/persistent_activity** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/persistent_activity>`
 
 **Deprecated:** Deprecated in API level 15.
 
-Allow an application to make its activities persistent.
+Allows an application to make its activities persistent.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_permissions/post_notifications:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **permissions/post_notifications** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/post_notifications>`
+
+Allows an application to post notifications. Added in API level 33. See `Notification runtime permission <https://developer.android.com/develop/ui/views/notifications/notification-permission>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1884,7 +1954,7 @@ Allow an application to make its activities persistent.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/process_outgoing_calls**
+:ref:`bool<class_bool>` **permissions/process_outgoing_calls** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/process_outgoing_calls>`
 
 **Deprecated:** Deprecated in API level 29.
 
@@ -1898,7 +1968,7 @@ Allows an application to see the number being dialed during an outgoing call wit
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_calendar**
+:ref:`bool<class_bool>` **permissions/read_calendar** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_calendar>`
 
 Allows an application to read the user's calendar data. See `READ_CALENDAR <https://developer.android.com/reference/android/Manifest.permission#READ_CALENDAR>`__.
 
@@ -1910,7 +1980,7 @@ Allows an application to read the user's calendar data. See `READ_CALENDAR <http
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_call_log**
+:ref:`bool<class_bool>` **permissions/read_call_log** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_call_log>`
 
 Allows an application to read the user's call log. See `READ_CALL_LOG <https://developer.android.com/reference/android/Manifest.permission#READ_CALL_LOG>`__.
 
@@ -1922,7 +1992,7 @@ Allows an application to read the user's call log. See `READ_CALL_LOG <https://d
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_contacts**
+:ref:`bool<class_bool>` **permissions/read_contacts** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_contacts>`
 
 Allows an application to read the user's contacts data. See `READ_CONTACTS <https://developer.android.com/reference/android/Manifest.permission#READ_CONTACTS>`__.
 
@@ -1934,7 +2004,7 @@ Allows an application to read the user's contacts data. See `READ_CONTACTS <http
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_external_storage**
+:ref:`bool<class_bool>` **permissions/read_external_storage** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_external_storage>`
 
 **Deprecated:** Deprecated in API level 33.
 
@@ -1948,7 +2018,7 @@ Allows an application to read from external storage. See `READ_EXTERNAL_STORAGE 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_frame_buffer**
+:ref:`bool<class_bool>` **permissions/read_frame_buffer** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_frame_buffer>`
 
 Allows an application to take screen shots and more generally get access to the frame buffer data.
 
@@ -1960,7 +2030,7 @@ Allows an application to take screen shots and more generally get access to the 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_history_bookmarks**
+:ref:`bool<class_bool>` **permissions/read_history_bookmarks** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_history_bookmarks>`
 
 Allows an application to read (but not write) the user's browsing history and bookmarks.
 
@@ -1972,7 +2042,7 @@ Allows an application to read (but not write) the user's browsing history and bo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_input_state**
+:ref:`bool<class_bool>` **permissions/read_input_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_input_state>`
 
 **Deprecated:** Deprecated in API level 16.
 
@@ -1984,9 +2054,57 @@ Allows an application to read (but not write) the user's browsing history and bo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_logs**
+:ref:`bool<class_bool>` **permissions/read_logs** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_logs>`
 
 Allows an application to read the low-level system log files. See `READ_LOGS <https://developer.android.com/reference/android/Manifest.permission#READ_LOGS>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_permissions/read_media_audio:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **permissions/read_media_audio** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_media_audio>`
+
+Allows an application to read audio files from external storage. See `READ_MEDIA_AUDIO <https://developer.android.com/reference/android/Manifest.permission#READ_MEDIA_AUDIO>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_permissions/read_media_images:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **permissions/read_media_images** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_media_images>`
+
+Allows an application to read image files from external storage. See `READ_MEDIA_IMAGES <https://developer.android.com/reference/android/Manifest.permission#READ_MEDIA_IMAGES>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_permissions/read_media_video:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **permissions/read_media_video** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_media_video>`
+
+Allows an application to read video files from external storage. See `READ_MEDIA_VIDEO <https://developer.android.com/reference/android/Manifest.permission#READ_MEDIA_VIDEO>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_permissions/read_media_visual_user_selected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **permissions/read_media_visual_user_selected** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_media_visual_user_selected>`
+
+Allows an application to read image or video files from external storage that a user has selected via the permission prompt photo picker. See `READ_MEDIA_VISUAL_USER_SELECTED <https://developer.android.com/reference/android/Manifest.permission#READ_MEDIA_VISUAL_USER_SELECTED>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1996,7 +2114,7 @@ Allows an application to read the low-level system log files. See `READ_LOGS <ht
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_phone_state**
+:ref:`bool<class_bool>` **permissions/read_phone_state** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_phone_state>`
 
 Allows read only access to phone state. See `READ_PHONE_STATE <https://developer.android.com/reference/android/Manifest.permission#READ_PHONE_STATE>`__.
 
@@ -2008,7 +2126,7 @@ Allows read only access to phone state. See `READ_PHONE_STATE <https://developer
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_profile**
+:ref:`bool<class_bool>` **permissions/read_profile** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_profile>`
 
 Allows an application to read the user's personal profile data.
 
@@ -2020,7 +2138,7 @@ Allows an application to read the user's personal profile data.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_sms**
+:ref:`bool<class_bool>` **permissions/read_sms** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_sms>`
 
 Allows an application to read SMS messages. See `READ_SMS <https://developer.android.com/reference/android/Manifest.permission#READ_SMS>`__.
 
@@ -2032,7 +2150,7 @@ Allows an application to read SMS messages. See `READ_SMS <https://developer.and
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_social_stream**
+:ref:`bool<class_bool>` **permissions/read_social_stream** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_social_stream>`
 
 Allows an application to read from the user's social stream.
 
@@ -2044,7 +2162,7 @@ Allows an application to read from the user's social stream.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_sync_settings**
+:ref:`bool<class_bool>` **permissions/read_sync_settings** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_sync_settings>`
 
 Allows applications to read the sync settings. See `READ_SYNC_SETTINGS <https://developer.android.com/reference/android/Manifest.permission#READ_SYNC_SETTINGS>`__.
 
@@ -2056,7 +2174,7 @@ Allows applications to read the sync settings. See `READ_SYNC_SETTINGS <https://
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_sync_stats**
+:ref:`bool<class_bool>` **permissions/read_sync_stats** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_sync_stats>`
 
 Allows applications to read the sync stats. See `READ_SYNC_STATS <https://developer.android.com/reference/android/Manifest.permission#READ_SYNC_STATS>`__.
 
@@ -2068,7 +2186,7 @@ Allows applications to read the sync stats. See `READ_SYNC_STATS <https://develo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/read_user_dictionary**
+:ref:`bool<class_bool>` **permissions/read_user_dictionary** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/read_user_dictionary>`
 
 Allows an application to read the user dictionary.
 
@@ -2080,7 +2198,7 @@ Allows an application to read the user dictionary.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/reboot**
+:ref:`bool<class_bool>` **permissions/reboot** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/reboot>`
 
 Required to be able to reboot the device. See `REBOOT <https://developer.android.com/reference/android/Manifest.permission#REBOOT>`__.
 
@@ -2092,7 +2210,7 @@ Required to be able to reboot the device. See `REBOOT <https://developer.android
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/receive_boot_completed**
+:ref:`bool<class_bool>` **permissions/receive_boot_completed** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/receive_boot_completed>`
 
 Allows an application to receive the Intent.ACTION_BOOT_COMPLETED that is broadcast after the system finishes booting. See `RECEIVE_BOOT_COMPLETED <https://developer.android.com/reference/android/Manifest.permission#RECEIVE_BOOT_COMPLETED>`__.
 
@@ -2104,7 +2222,7 @@ Allows an application to receive the Intent.ACTION_BOOT_COMPLETED that is broadc
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/receive_mms**
+:ref:`bool<class_bool>` **permissions/receive_mms** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/receive_mms>`
 
 Allows an application to monitor incoming MMS messages. See `RECEIVE_MMS <https://developer.android.com/reference/android/Manifest.permission#RECEIVE_MMS>`__.
 
@@ -2116,7 +2234,7 @@ Allows an application to monitor incoming MMS messages. See `RECEIVE_MMS <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/receive_sms**
+:ref:`bool<class_bool>` **permissions/receive_sms** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/receive_sms>`
 
 Allows an application to receive SMS messages. See `RECEIVE_SMS <https://developer.android.com/reference/android/Manifest.permission#RECEIVE_SMS>`__.
 
@@ -2128,7 +2246,7 @@ Allows an application to receive SMS messages. See `RECEIVE_SMS <https://develop
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/receive_wap_push**
+:ref:`bool<class_bool>` **permissions/receive_wap_push** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/receive_wap_push>`
 
 Allows an application to receive WAP push messages. See `RECEIVE_WAP_PUSH <https://developer.android.com/reference/android/Manifest.permission#RECEIVE_WAP_PUSH>`__.
 
@@ -2140,7 +2258,7 @@ Allows an application to receive WAP push messages. See `RECEIVE_WAP_PUSH <https
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/record_audio**
+:ref:`bool<class_bool>` **permissions/record_audio** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/record_audio>`
 
 Allows an application to record audio. See `RECORD_AUDIO <https://developer.android.com/reference/android/Manifest.permission#RECORD_AUDIO>`__.
 
@@ -2152,7 +2270,7 @@ Allows an application to record audio. See `RECORD_AUDIO <https://developer.andr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/reorder_tasks**
+:ref:`bool<class_bool>` **permissions/reorder_tasks** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/reorder_tasks>`
 
 Allows an application to change the Z-order of tasks. See `REORDER_TASKS <https://developer.android.com/reference/android/Manifest.permission#REORDER_TASKS>`__.
 
@@ -2164,7 +2282,7 @@ Allows an application to change the Z-order of tasks. See `REORDER_TASKS <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/restart_packages**
+:ref:`bool<class_bool>` **permissions/restart_packages** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/restart_packages>`
 
 **Deprecated:** Deprecated in API level 15.
 
@@ -2176,7 +2294,7 @@ Allows an application to change the Z-order of tasks. See `REORDER_TASKS <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/send_respond_via_message**
+:ref:`bool<class_bool>` **permissions/send_respond_via_message** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/send_respond_via_message>`
 
 Allows an application (Phone) to send a request to other applications to handle the respond-via-message action during incoming calls. See `SEND_RESPOND_VIA_MESSAGE <https://developer.android.com/reference/android/Manifest.permission#SEND_RESPOND_VIA_MESSAGE>`__.
 
@@ -2188,7 +2306,7 @@ Allows an application (Phone) to send a request to other applications to handle 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/send_sms**
+:ref:`bool<class_bool>` **permissions/send_sms** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/send_sms>`
 
 Allows an application to send SMS messages. See `SEND_SMS <https://developer.android.com/reference/android/Manifest.permission#SEND_SMS>`__.
 
@@ -2200,7 +2318,7 @@ Allows an application to send SMS messages. See `SEND_SMS <https://developer.and
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_activity_watcher**
+:ref:`bool<class_bool>` **permissions/set_activity_watcher** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_activity_watcher>`
 
 Allows an application to watch and control how activities are started globally in the system.
 
@@ -2212,7 +2330,7 @@ Allows an application to watch and control how activities are started globally i
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_alarm**
+:ref:`bool<class_bool>` **permissions/set_alarm** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_alarm>`
 
 Allows an application to broadcast an Intent to set an alarm for the user. See `SET_ALARM <https://developer.android.com/reference/android/Manifest.permission#SET_ALARM>`__.
 
@@ -2224,7 +2342,7 @@ Allows an application to broadcast an Intent to set an alarm for the user. See `
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_always_finish**
+:ref:`bool<class_bool>` **permissions/set_always_finish** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_always_finish>`
 
 Allows an application to control whether activities are immediately finished when put in the background. See `SET_ALWAYS_FINISH <https://developer.android.com/reference/android/Manifest.permission#SET_ALWAYS_FINISH>`__.
 
@@ -2236,7 +2354,7 @@ Allows an application to control whether activities are immediately finished whe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_animation_scale**
+:ref:`bool<class_bool>` **permissions/set_animation_scale** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_animation_scale>`
 
 Allows to modify the global animation scaling factor. See `SET_ANIMATION_SCALE <https://developer.android.com/reference/android/Manifest.permission#SET_ANIMATION_SCALE>`__.
 
@@ -2248,7 +2366,7 @@ Allows to modify the global animation scaling factor. See `SET_ANIMATION_SCALE <
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_debug_app**
+:ref:`bool<class_bool>` **permissions/set_debug_app** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_debug_app>`
 
 Configure an application for debugging. See `SET_DEBUG_APP <https://developer.android.com/reference/android/Manifest.permission#SET_DEBUG_APP>`__.
 
@@ -2260,7 +2378,7 @@ Configure an application for debugging. See `SET_DEBUG_APP <https://developer.an
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_orientation**
+:ref:`bool<class_bool>` **permissions/set_orientation** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_orientation>`
 
 Allows low-level access to setting the orientation (actually rotation) of the screen.
 
@@ -2272,7 +2390,7 @@ Allows low-level access to setting the orientation (actually rotation) of the sc
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_pointer_speed**
+:ref:`bool<class_bool>` **permissions/set_pointer_speed** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_pointer_speed>`
 
 Allows low-level access to setting the pointer speed.
 
@@ -2284,7 +2402,7 @@ Allows low-level access to setting the pointer speed.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_preferred_applications**
+:ref:`bool<class_bool>` **permissions/set_preferred_applications** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_preferred_applications>`
 
 **Deprecated:** Deprecated in API level 15.
 
@@ -2296,7 +2414,7 @@ Allows low-level access to setting the pointer speed.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_process_limit**
+:ref:`bool<class_bool>` **permissions/set_process_limit** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_process_limit>`
 
 Allows an application to set the maximum number of (not needed) application processes that can be running. See `SET_PROCESS_LIMIT <https://developer.android.com/reference/android/Manifest.permission#SET_PROCESS_LIMIT>`__.
 
@@ -2308,7 +2426,7 @@ Allows an application to set the maximum number of (not needed) application proc
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_time**
+:ref:`bool<class_bool>` **permissions/set_time** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_time>`
 
 Allows applications to set the system time directly. See `SET_TIME <https://developer.android.com/reference/android/Manifest.permission#SET_TIME>`__.
 
@@ -2320,7 +2438,7 @@ Allows applications to set the system time directly. See `SET_TIME <https://deve
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_time_zone**
+:ref:`bool<class_bool>` **permissions/set_time_zone** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_time_zone>`
 
 Allows applications to set the system time zone directly. See `SET_TIME_ZONE <https://developer.android.com/reference/android/Manifest.permission#SET_TIME_ZONE>`__.
 
@@ -2332,7 +2450,7 @@ Allows applications to set the system time zone directly. See `SET_TIME_ZONE <ht
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_wallpaper**
+:ref:`bool<class_bool>` **permissions/set_wallpaper** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_wallpaper>`
 
 Allows applications to set the wallpaper. See `SET_WALLPAPER <https://developer.android.com/reference/android/Manifest.permission#SET_WALLPAPER>`__.
 
@@ -2344,7 +2462,7 @@ Allows applications to set the wallpaper. See `SET_WALLPAPER <https://developer.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/set_wallpaper_hints**
+:ref:`bool<class_bool>` **permissions/set_wallpaper_hints** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/set_wallpaper_hints>`
 
 Allows applications to set the wallpaper hints. See `SET_WALLPAPER_HINTS <https://developer.android.com/reference/android/Manifest.permission#SET_WALLPAPER_HINTS>`__.
 
@@ -2356,7 +2474,7 @@ Allows applications to set the wallpaper hints. See `SET_WALLPAPER_HINTS <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/signal_persistent_processes**
+:ref:`bool<class_bool>` **permissions/signal_persistent_processes** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/signal_persistent_processes>`
 
 Allow an application to request that a signal be sent to all persistent processes. See `SIGNAL_PERSISTENT_PROCESSES <https://developer.android.com/reference/android/Manifest.permission#SIGNAL_PERSISTENT_PROCESSES>`__.
 
@@ -2368,7 +2486,7 @@ Allow an application to request that a signal be sent to all persistent processe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/status_bar**
+:ref:`bool<class_bool>` **permissions/status_bar** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/status_bar>`
 
 Allows an application to open, close, or disable the status bar and its icons. See `STATUS_BAR <https://developer.android.com/reference/android/Manifest.permission#STATUS_BAR>`__.
 
@@ -2380,7 +2498,7 @@ Allows an application to open, close, or disable the status bar and its icons. S
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/subscribed_feeds_read**
+:ref:`bool<class_bool>` **permissions/subscribed_feeds_read** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/subscribed_feeds_read>`
 
 Allows an application to allow access the subscribed feeds ContentProvider.
 
@@ -2392,7 +2510,7 @@ Allows an application to allow access the subscribed feeds ContentProvider.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/subscribed_feeds_write**
+:ref:`bool<class_bool>` **permissions/subscribed_feeds_write** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/subscribed_feeds_write>`
 
 **Deprecated:** This property may be changed or removed in future versions.
 
@@ -2404,7 +2522,7 @@ Allows an application to allow access the subscribed feeds ContentProvider.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/system_alert_window**
+:ref:`bool<class_bool>` **permissions/system_alert_window** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/system_alert_window>`
 
 Allows an app to create windows using the type WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY, shown on top of all other apps. See `SYSTEM_ALERT_WINDOW <https://developer.android.com/reference/android/Manifest.permission#SYSTEM_ALERT_WINDOW>`__.
 
@@ -2416,7 +2534,7 @@ Allows an app to create windows using the type WindowManager.LayoutParams.TYPE_A
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/transmit_ir**
+:ref:`bool<class_bool>` **permissions/transmit_ir** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/transmit_ir>`
 
 Allows using the device's IR transmitter, if available. See `TRANSMIT_IR <https://developer.android.com/reference/android/Manifest.permission#TRANSMIT_IR>`__.
 
@@ -2428,7 +2546,7 @@ Allows using the device's IR transmitter, if available. See `TRANSMIT_IR <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/uninstall_shortcut**
+:ref:`bool<class_bool>` **permissions/uninstall_shortcut** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/uninstall_shortcut>`
 
 **Deprecated:** This property may be changed or removed in future versions.
 
@@ -2440,7 +2558,7 @@ Allows using the device's IR transmitter, if available. See `TRANSMIT_IR <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/update_device_stats**
+:ref:`bool<class_bool>` **permissions/update_device_stats** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/update_device_stats>`
 
 Allows an application to update device statistics. See `UPDATE_DEVICE_STATS <https://developer.android.com/reference/android/Manifest.permission#UPDATE_DEVICE_STATS>`__.
 
@@ -2452,7 +2570,7 @@ Allows an application to update device statistics. See `UPDATE_DEVICE_STATS <htt
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/use_credentials**
+:ref:`bool<class_bool>` **permissions/use_credentials** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/use_credentials>`
 
 Allows an application to request authtokens from the AccountManager.
 
@@ -2464,7 +2582,7 @@ Allows an application to request authtokens from the AccountManager.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/use_sip**
+:ref:`bool<class_bool>` **permissions/use_sip** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/use_sip>`
 
 Allows an application to use SIP service. See `USE_SIP <https://developer.android.com/reference/android/Manifest.permission#USE_SIP>`__.
 
@@ -2476,7 +2594,7 @@ Allows an application to use SIP service. See `USE_SIP <https://developer.androi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/vibrate**
+:ref:`bool<class_bool>` **permissions/vibrate** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/vibrate>`
 
 Allows access to the vibrator. See `VIBRATE <https://developer.android.com/reference/android/Manifest.permission#VIBRATE>`__.
 
@@ -2488,7 +2606,7 @@ Allows access to the vibrator. See `VIBRATE <https://developer.android.com/refer
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/wake_lock**
+:ref:`bool<class_bool>` **permissions/wake_lock** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/wake_lock>`
 
 Allows using PowerManager WakeLocks to keep processor from sleeping or screen from dimming. See `WAKE_LOCK <https://developer.android.com/reference/android/Manifest.permission#WAKE_LOCK>`__.
 
@@ -2500,7 +2618,7 @@ Allows using PowerManager WakeLocks to keep processor from sleeping or screen fr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_apn_settings**
+:ref:`bool<class_bool>` **permissions/write_apn_settings** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_apn_settings>`
 
 Allows applications to write the apn settings and read sensitive fields of an existing apn settings like user and password. See `WRITE_APN_SETTINGS <https://developer.android.com/reference/android/Manifest.permission#WRITE_APN_SETTINGS>`__.
 
@@ -2512,7 +2630,7 @@ Allows applications to write the apn settings and read sensitive fields of an ex
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_calendar**
+:ref:`bool<class_bool>` **permissions/write_calendar** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_calendar>`
 
 Allows an application to write the user's calendar data. See `WRITE_CALENDAR <https://developer.android.com/reference/android/Manifest.permission#WRITE_CALENDAR>`__.
 
@@ -2524,7 +2642,7 @@ Allows an application to write the user's calendar data. See `WRITE_CALENDAR <ht
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_call_log**
+:ref:`bool<class_bool>` **permissions/write_call_log** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_call_log>`
 
 Allows an application to write (but not read) the user's call log data. See `WRITE_CALL_LOG <https://developer.android.com/reference/android/Manifest.permission#WRITE_CALL_LOG>`__.
 
@@ -2536,7 +2654,7 @@ Allows an application to write (but not read) the user's call log data. See `WRI
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_contacts**
+:ref:`bool<class_bool>` **permissions/write_contacts** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_contacts>`
 
 Allows an application to write the user's contacts data. See `WRITE_CONTACTS <https://developer.android.com/reference/android/Manifest.permission#WRITE_CONTACTS>`__.
 
@@ -2548,7 +2666,7 @@ Allows an application to write the user's contacts data. See `WRITE_CONTACTS <ht
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_external_storage**
+:ref:`bool<class_bool>` **permissions/write_external_storage** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_external_storage>`
 
 Allows an application to write to external storage. See `WRITE_EXTERNAL_STORAGE <https://developer.android.com/reference/android/Manifest.permission#WRITE_EXTERNAL_STORAGE>`__.
 
@@ -2560,7 +2678,7 @@ Allows an application to write to external storage. See `WRITE_EXTERNAL_STORAGE 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_gservices**
+:ref:`bool<class_bool>` **permissions/write_gservices** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_gservices>`
 
 Allows an application to modify the Google service map. See `WRITE_GSERVICES <https://developer.android.com/reference/android/Manifest.permission#WRITE_GSERVICES>`__.
 
@@ -2572,7 +2690,7 @@ Allows an application to modify the Google service map. See `WRITE_GSERVICES <ht
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_history_bookmarks**
+:ref:`bool<class_bool>` **permissions/write_history_bookmarks** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_history_bookmarks>`
 
 Allows an application to write (but not read) the user's browsing history and bookmarks.
 
@@ -2584,7 +2702,7 @@ Allows an application to write (but not read) the user's browsing history and bo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_profile**
+:ref:`bool<class_bool>` **permissions/write_profile** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_profile>`
 
 Allows an application to write (but not read) the user's personal profile data.
 
@@ -2596,7 +2714,7 @@ Allows an application to write (but not read) the user's personal profile data.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_secure_settings**
+:ref:`bool<class_bool>` **permissions/write_secure_settings** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_secure_settings>`
 
 Allows an application to read or write the secure system settings. See `WRITE_SECURE_SETTINGS <https://developer.android.com/reference/android/Manifest.permission#WRITE_SECURE_SETTINGS>`__.
 
@@ -2608,7 +2726,7 @@ Allows an application to read or write the secure system settings. See `WRITE_SE
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_settings**
+:ref:`bool<class_bool>` **permissions/write_settings** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_settings>`
 
 Allows an application to read or write the system settings. See `WRITE_SETTINGS <https://developer.android.com/reference/android/Manifest.permission#WRITE_SETTINGS>`__.
 
@@ -2620,7 +2738,7 @@ Allows an application to read or write the system settings. See `WRITE_SETTINGS 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_sms**
+:ref:`bool<class_bool>` **permissions/write_sms** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_sms>`
 
 Allows an application to write SMS messages.
 
@@ -2632,7 +2750,7 @@ Allows an application to write SMS messages.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_social_stream**
+:ref:`bool<class_bool>` **permissions/write_social_stream** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_social_stream>`
 
 Allows an application to write (but not read) the user's social stream data.
 
@@ -2644,7 +2762,7 @@ Allows an application to write (but not read) the user's social stream data.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_sync_settings**
+:ref:`bool<class_bool>` **permissions/write_sync_settings** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_sync_settings>`
 
 Allows applications to write the sync settings. See `WRITE_SYNC_SETTINGS <https://developer.android.com/reference/android/Manifest.permission#WRITE_SYNC_SETTINGS>`__.
 
@@ -2656,7 +2774,7 @@ Allows applications to write the sync settings. See `WRITE_SYNC_SETTINGS <https:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **permissions/write_user_dictionary**
+:ref:`bool<class_bool>` **permissions/write_user_dictionary** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_user_dictionary>`
 
 Allows an application to write to the user dictionary.
 
@@ -2668,9 +2786,9 @@ Allows an application to write to the user dictionary.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **screen/immersive_mode**
+:ref:`bool<class_bool>` **screen/immersive_mode** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/immersive_mode>`
 
-If ``true``, hides navigation and status bar.
+If ``true``, hides the navigation and status bar. Set :ref:`DisplayServer.window_set_mode()<class_DisplayServer_method_window_set_mode>` to change this at runtime.
 
 .. rst-class:: classref-item-separator
 
@@ -2680,7 +2798,7 @@ If ``true``, hides navigation and status bar.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **screen/support_large**
+:ref:`bool<class_bool>` **screen/support_large** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/support_large>`
 
 Indicates whether the application supports larger screen form-factors.
 
@@ -2692,7 +2810,7 @@ Indicates whether the application supports larger screen form-factors.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **screen/support_normal**
+:ref:`bool<class_bool>` **screen/support_normal** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/support_normal>`
 
 Indicates whether an application supports the "normal" screen form-factors.
 
@@ -2704,7 +2822,7 @@ Indicates whether an application supports the "normal" screen form-factors.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **screen/support_small**
+:ref:`bool<class_bool>` **screen/support_small** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/support_small>`
 
 Indicates whether the application supports smaller screen form-factors.
 
@@ -2716,7 +2834,7 @@ Indicates whether the application supports smaller screen form-factors.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **screen/support_xlarge**
+:ref:`bool<class_bool>` **screen/support_xlarge** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/support_xlarge>`
 
 Indicates whether the application supports extra large screen form-factors.
 
@@ -2728,7 +2846,7 @@ Indicates whether the application supports extra large screen form-factors.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **user_data_backup/allow**
+:ref:`bool<class_bool>` **user_data_backup/allow** :ref:`🔗<class_EditorExportPlatformAndroid_property_user_data_backup/allow>`
 
 If ``true``, allows the application to participate in the backup and restore infrastructure.
 
@@ -2740,7 +2858,7 @@ If ``true``, allows the application to participate in the backup and restore inf
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **version/code**
+:ref:`int<class_int>` **version/code** :ref:`🔗<class_EditorExportPlatformAndroid_property_version/code>`
 
 Machine-readable application version. This must be incremented for every new release pushed to the Play Store.
 
@@ -2752,7 +2870,7 @@ Machine-readable application version. This must be incremented for every new rel
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **version/name**
+:ref:`String<class_String>` **version/name** :ref:`🔗<class_EditorExportPlatformAndroid_property_version/name>`
 
 Application version visible to the user. Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
 
@@ -2764,11 +2882,9 @@ Application version visible to the user. Falls back to :ref:`ProjectSettings.app
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **xr_features/xr_mode**
+:ref:`int<class_int>` **xr_features/xr_mode** :ref:`🔗<class_EditorExportPlatformAndroid_property_xr_features/xr_mode>`
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The extended reality (XR) mode for this application.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

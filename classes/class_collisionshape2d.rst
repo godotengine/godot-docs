@@ -28,11 +28,11 @@ Tutorials
 
 - :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
 
-- `2D Pong Demo <https://godotengine.org/asset-library/asset/121>`__
+- `2D Pong Demo <https://godotengine.org/asset-library/asset/2728>`__
 
-- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -43,7 +43,7 @@ Properties
    :widths: auto
 
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape2D_property_debug_color>`                           | ``Color(0, 0, 0, 1)`` |
+   | :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape2D_property_debug_color>`                           | ``Color(0, 0, 0, 0)`` |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 | ``false``             |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
@@ -67,16 +67,16 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_CollisionShape2D_property_debug_color>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_debug_color**\ (\ value\: :ref:`Color<class_Color>`\ )
 - :ref:`Color<class_Color>` **get_debug_color**\ (\ )
 
-The collision shape debug color.
+The collision shape color that is displayed in the editor, or in the running project if **Debug > Visible Collision Shapes** is checked at the top of the editor.
 
-\ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 1)`` value documented here is a placeholder, and not the actual default debug color.
+\ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 0)`` value documented here is a placeholder, and not the actual default debug color.
 
 .. rst-class:: classref-item-separator
 
@@ -86,14 +86,14 @@ The collision shape debug color.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disabled** = ``false``
+:ref:`bool<class_bool>` **disabled** = ``false`` :ref:`🔗<class_CollisionShape2D_property_disabled>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_disabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_disabled**\ (\ )
 
-A disabled collision shape has no effect in the world. This property should be changed with :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
+A disabled collision shape has no effect in the world. This property should be changed with :ref:`Object.set_deferred()<class_Object_method_set_deferred>`.
 
 .. rst-class:: classref-item-separator
 
@@ -103,7 +103,7 @@ A disabled collision shape has no effect in the world. This property should be c
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **one_way_collision** = ``false``
+:ref:`bool<class_bool>` **one_way_collision** = ``false`` :ref:`🔗<class_CollisionShape2D_property_one_way_collision>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ Sets whether this collision shape should only detect collision on one side (top 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **one_way_collision_margin** = ``1.0``
+:ref:`float<class_float>` **one_way_collision_margin** = ``1.0`` :ref:`🔗<class_CollisionShape2D_property_one_way_collision_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -139,7 +139,7 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 .. rst-class:: classref-property
 
-:ref:`Shape2D<class_Shape2D>` **shape**
+:ref:`Shape2D<class_Shape2D>` **shape** :ref:`🔗<class_CollisionShape2D_property_shape>`
 
 .. rst-class:: classref-property-setget
 

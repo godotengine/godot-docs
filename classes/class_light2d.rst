@@ -97,7 +97,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ShadowFilter**:
+enum **ShadowFilter**: :ref:`🔗<enum_Light2D_ShadowFilter>`
 
 .. _class_Light2D_constant_SHADOW_FILTER_NONE:
 
@@ -131,7 +131,7 @@ Percentage closer filtering (13 samples) applies to the shadow map. This is the 
 
 .. rst-class:: classref-enumeration
 
-enum **BlendMode**:
+enum **BlendMode**: :ref:`🔗<enum_Light2D_BlendMode>`
 
 .. _class_Light2D_constant_BLEND_MODE_ADD:
 
@@ -170,7 +170,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`BlendMode<enum_Light2D_BlendMode>` **blend_mode** = ``0``
+:ref:`BlendMode<enum_Light2D_BlendMode>` **blend_mode** = ``0`` :ref:`🔗<class_Light2D_property_blend_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -187,7 +187,7 @@ The Light2D's blend mode. See :ref:`BlendMode<enum_Light2D_BlendMode>` constants
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Light2D_property_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -204,7 +204,7 @@ The Light2D's :ref:`Color<class_Color>`.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor_only** = ``false``
+:ref:`bool<class_bool>` **editor_only** = ``false`` :ref:`🔗<class_Light2D_property_editor_only>`
 
 .. rst-class:: classref-property-setget
 
@@ -221,7 +221,7 @@ If ``true``, Light2D will only appear when editing the scene.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enabled** = ``true``
+:ref:`bool<class_bool>` **enabled** = ``true`` :ref:`🔗<class_Light2D_property_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -238,7 +238,7 @@ If ``true``, Light2D will emit light.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **energy** = ``1.0``
+:ref:`float<class_float>` **energy** = ``1.0`` :ref:`🔗<class_Light2D_property_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -255,7 +255,7 @@ The Light2D's energy value. The larger the value, the stronger the light.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_item_cull_mask** = ``1``
+:ref:`int<class_int>` **range_item_cull_mask** = ``1`` :ref:`🔗<class_Light2D_property_range_item_cull_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -274,7 +274,7 @@ The layer mask. Only objects with a matching :ref:`CanvasItem.light_mask<class_C
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_layer_max** = ``0``
+:ref:`int<class_int>` **range_layer_max** = ``0`` :ref:`🔗<class_Light2D_property_range_layer_max>`
 
 .. rst-class:: classref-property-setget
 
@@ -291,7 +291,7 @@ Maximum layer value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_layer_min** = ``0``
+:ref:`int<class_int>` **range_layer_min** = ``0`` :ref:`🔗<class_Light2D_property_range_layer_min>`
 
 .. rst-class:: classref-property-setget
 
@@ -308,7 +308,7 @@ Minimum layer value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_z_max** = ``1024``
+:ref:`int<class_int>` **range_z_max** = ``1024`` :ref:`🔗<class_Light2D_property_range_z_max>`
 
 .. rst-class:: classref-property-setget
 
@@ -325,7 +325,7 @@ Maximum ``z`` value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **range_z_min** = ``-1024``
+:ref:`int<class_int>` **range_z_min** = ``-1024`` :ref:`🔗<class_Light2D_property_range_z_min>`
 
 .. rst-class:: classref-property-setget
 
@@ -342,7 +342,7 @@ Minimum ``z`` value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_Light2D_property_shadow_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -359,7 +359,7 @@ Minimum ``z`` value of objects that are affected by the Light2D.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shadow_enabled** = ``false``
+:ref:`bool<class_bool>` **shadow_enabled** = ``false`` :ref:`🔗<class_Light2D_property_shadow_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -376,7 +376,7 @@ If ``true``, the Light2D will cast shadows.
 
 .. rst-class:: classref-property
 
-:ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **shadow_filter** = ``0``
+:ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **shadow_filter** = ``0`` :ref:`🔗<class_Light2D_property_shadow_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -393,7 +393,7 @@ Shadow filter type. See :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` for possi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **shadow_filter_smooth** = ``0.0``
+:ref:`float<class_float>` **shadow_filter_smooth** = ``0.0`` :ref:`🔗<class_Light2D_property_shadow_filter_smooth>`
 
 .. rst-class:: classref-property-setget
 
@@ -410,7 +410,7 @@ Smoothing value for shadows. Higher values will result in softer shadows, at the
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **shadow_item_cull_mask** = ``1``
+:ref:`int<class_int>` **shadow_item_cull_mask** = ``1`` :ref:`🔗<class_Light2D_property_shadow_item_cull_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -432,7 +432,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_height**\ (\ ) |const|
+:ref:`float<class_float>` **get_height**\ (\ ) |const| :ref:`🔗<class_Light2D_method_get_height>`
 
 Returns the light's height, which is used in 2D normal mapping. See :ref:`PointLight2D.height<class_PointLight2D_property_height>` and :ref:`DirectionalLight2D.height<class_DirectionalLight2D_property_height>`.
 
@@ -444,7 +444,7 @@ Returns the light's height, which is used in 2D normal mapping. See :ref:`PointL
 
 .. rst-class:: classref-method
 
-|void| **set_height**\ (\ height\: :ref:`float<class_float>`\ )
+|void| **set_height**\ (\ height\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Light2D_method_set_height>`
 
 Sets the light's height, which is used in 2D normal mapping. See :ref:`PointLight2D.height<class_PointLight2D_property_height>` and :ref:`DirectionalLight2D.height<class_DirectionalLight2D_property_height>`.
 

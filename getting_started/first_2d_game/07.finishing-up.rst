@@ -9,7 +9,7 @@ remaining steps to add a bit more "juice" to improve the game experience.
 Feel free to expand the gameplay with your own ideas.
 
 Background
-~~~~~~~~~~
+----------
 
 The default gray background is not very appealing, so let's change its color.
 One way to do this is to use a :ref:`ColorRect <class_ColorRect>` node. Make it
@@ -18,10 +18,10 @@ the first node under ``Main`` so that it will be drawn behind the other nodes.
 select "Layout" -> "Anchors Preset" -> "Full Rect" either in the toolbar at the top of the viewport or in the inspector so that it covers the screen.
 
 You could also add a background image, if you have one, by using a
-``TextureRect`` node instead.
+:ref:`TextureRect <class_TextureRect>` node instead.
 
 Sound effects
-~~~~~~~~~~~~~
+-------------
 
 Sound and music can be the single most effective way to add appeal to the game
 experience. In your game's **art** folder, you have two sound files: "House In a
@@ -36,6 +36,8 @@ audio file.
 All audio is automatically imported with the ``Loop`` setting disabled.
 If you want the music to loop seamlessly, click on the Stream file arrow,
 select ``Make Unique``, then click on the Stream file and check the ``Loop`` box.
+
+.. image:: img/unique_resource_music.webp
 
 To play the music, add ``$Music.play()`` in the ``new_game()``
 function and ``$Music.stop()`` in the ``game_over()`` function.
@@ -71,7 +73,7 @@ Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
 
 
 Keyboard shortcut
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Since the game is played with keyboard controls, it would be convenient if we
 could also start the game by pressing a key on the keyboard. We can do this with
@@ -119,3 +121,14 @@ achieved.
 
 And when you're ready, you can move on to :ref:`doc_your_first_3d_game` to learn
 to create a complete 3D game from scratch, in Godot.
+
+Sharing the finished game with others
+-------------------------------------
+
+If you want people to try out your game without having to install Godot, you'll
+need to export the project for each operating system you want the game to be
+playable on. See :ref:`doc_exporting_projects` for instructions.
+
+After exporting the project, compress the exported executable and PCK file (not
+the raw project files) to a ZIP file, then upload this ZIP file to a file
+sharing website.

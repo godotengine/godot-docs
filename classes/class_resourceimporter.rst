@@ -43,7 +43,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ImportOrder**:
+enum **ImportOrder**: :ref:`🔗<enum_ResourceImporter_ImportOrder>`
 
 .. _class_ResourceImporter_constant_IMPORT_ORDER_DEFAULT:
 

@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **camera_feed_id** = ``0``
+:ref:`int<class_int>` **camera_feed_id** = ``0`` :ref:`🔗<class_CameraTexture_property_camera_feed_id>`
 
 .. rst-class:: classref-property-setget
 
@@ -71,7 +71,7 @@ The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display t
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **camera_is_active** = ``false``
+:ref:`bool<class_bool>` **camera_is_active** = ``false`` :ref:`🔗<class_CameraTexture_property_camera_is_active>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ Convenience property that gives access to the active property of the :ref:`Camer
 
 .. rst-class:: classref-property
 
-:ref:`FeedImage<enum_CameraServer_FeedImage>` **which_feed** = ``0``
+:ref:`FeedImage<enum_CameraServer_FeedImage>` **which_feed** = ``0`` :ref:`🔗<class_CameraTexture_property_which_feed>`
 
 .. rst-class:: classref-property-setget
 

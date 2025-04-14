@@ -87,7 +87,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **CompressionMode**:
+enum **CompressionMode**: :ref:`🔗<enum_ENetConnection_CompressionMode>`
 
 .. _class_ENetConnection_constant_COMPRESS_NONE:
 
@@ -137,7 +137,7 @@ ENet's built-in range encoding. Works well on small packets, but is not the most
 
 .. rst-class:: classref-enumeration
 
-enum **EventType**:
+enum **EventType**: :ref:`🔗<enum_ENetConnection_EventType>`
 
 .. _class_ENetConnection_constant_EVENT_ERROR:
 
@@ -145,7 +145,7 @@ enum **EventType**:
 
 :ref:`EventType<enum_ENetConnection_EventType>` **EVENT_ERROR** = ``-1``
 
-An error occurred during :ref:`service<class_ENetConnection_method_service>`. You will likely need to :ref:`destroy<class_ENetConnection_method_destroy>` the host and recreate it.
+An error occurred during :ref:`service()<class_ENetConnection_method_service>`. You will likely need to :ref:`destroy()<class_ENetConnection_method_destroy>` the host and recreate it.
 
 .. _class_ENetConnection_constant_EVENT_NONE:
 
@@ -169,7 +169,7 @@ A connection request initiated by enet_host_connect has completed. The array wil
 
 :ref:`EventType<enum_ENetConnection_EventType>` **EVENT_DISCONNECT** = ``2``
 
-A peer has disconnected. This event is generated on a successful completion of a disconnect initiated by :ref:`ENetPacketPeer.peer_disconnect<class_ENetPacketPeer_method_peer_disconnect>`, if a peer has timed out, or if a connection request initialized by :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` has timed out. The array will contain the peer which disconnected. The data field contains user supplied data describing the disconnection, or 0, if none is available.
+A peer has disconnected. This event is generated on a successful completion of a disconnect initiated by :ref:`ENetPacketPeer.peer_disconnect()<class_ENetPacketPeer_method_peer_disconnect>`, if a peer has timed out, or if a connection request initialized by :ref:`connect_to_host()<class_ENetConnection_method_connect_to_host>` has timed out. The array will contain the peer which disconnected. The data field contains user supplied data describing the disconnection, or 0, if none is available.
 
 .. _class_ENetConnection_constant_EVENT_RECEIVE:
 
@@ -187,7 +187,7 @@ A packet has been received from a peer. The array will contain the peer which se
 
 .. rst-class:: classref-enumeration
 
-enum **HostStatistic**:
+enum **HostStatistic**: :ref:`🔗<enum_ENetConnection_HostStatistic>`
 
 .. _class_ENetConnection_constant_HOST_TOTAL_SENT_DATA:
 
@@ -234,7 +234,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **bandwidth_limit**\ (\ in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ )
+|void| **bandwidth_limit**\ (\ in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_bandwidth_limit>`
 
 Adjusts the bandwidth limits of a host.
 
@@ -246,7 +246,7 @@ Adjusts the bandwidth limits of a host.
 
 .. rst-class:: classref-method
 
-|void| **broadcast**\ (\ channel\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`, flags\: :ref:`int<class_int>`\ )
+|void| **broadcast**\ (\ channel\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`, flags\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ENetConnection_method_broadcast>`
 
 Queues a ``packet`` to be sent to all peers associated with the host over the specified ``channel``. See :ref:`ENetPacketPeer<class_ENetPacketPeer>` ``FLAG_*`` constants for available packet flags.
 
@@ -258,7 +258,7 @@ Queues a ``packet`` to be sent to all peers associated with the host over the sp
 
 .. rst-class:: classref-method
 
-|void| **channel_limit**\ (\ limit\: :ref:`int<class_int>`\ )
+|void| **channel_limit**\ (\ limit\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ENetConnection_method_channel_limit>`
 
 Limits the maximum allowed channels of future incoming connections.
 
@@ -270,7 +270,7 @@ Limits the maximum allowed channels of future incoming connections.
 
 .. rst-class:: classref-method
 
-|void| **compress**\ (\ mode\: :ref:`CompressionMode<enum_ENetConnection_CompressionMode>`\ )
+|void| **compress**\ (\ mode\: :ref:`CompressionMode<enum_ENetConnection_CompressionMode>`\ ) :ref:`🔗<class_ENetConnection_method_compress>`
 
 Sets the compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
 
@@ -286,11 +286,11 @@ Sets the compression method used for network packets. These have different trade
 
 .. rst-class:: classref-method
 
-:ref:`ENetPacketPeer<class_ENetPacketPeer>` **connect_to_host**\ (\ address\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`, channels\: :ref:`int<class_int>` = 0, data\: :ref:`int<class_int>` = 0\ )
+:ref:`ENetPacketPeer<class_ENetPacketPeer>` **connect_to_host**\ (\ address\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`, channels\: :ref:`int<class_int>` = 0, data\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_connect_to_host>`
 
 Initiates a connection to a foreign ``address`` using the specified ``port`` and allocating the requested ``channels``. Optional ``data`` can be passed during connection in the form of a 32 bit integer.
 
-\ **Note:** You must call either :ref:`create_host<class_ENetConnection_method_create_host>` or :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` before calling this method.
+\ **Note:** You must call either :ref:`create_host()<class_ENetConnection_method_create_host>` or :ref:`create_host_bound()<class_ENetConnection_method_create_host_bound>` on both ends before calling this method.
 
 .. rst-class:: classref-item-separator
 
@@ -300,9 +300,13 @@ Initiates a connection to a foreign ``address`` using the specified ``port`` and
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_host**\ (\ max_peers\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **create_host**\ (\ max_peers\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_create_host>`
 
-Create an ENetHost that will allow up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth``.
+Creates an ENetHost that allows up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth`` (if greater than zero).
+
+This method binds a random available dynamic UDP port on the host machine at the *unspecified* address. Use :ref:`create_host_bound()<class_ENetConnection_method_create_host_bound>` to specify the address and port.
+
+\ **Note:** It is necessary to create a host in both client and server in order to establish a connection.
 
 .. rst-class:: classref-item-separator
 
@@ -312,9 +316,11 @@ Create an ENetHost that will allow up to ``max_peers`` connected peers, each all
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_host_bound**\ (\ bind_address\: :ref:`String<class_String>`, bind_port\: :ref:`int<class_int>`, max_peers\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **create_host_bound**\ (\ bind_address\: :ref:`String<class_String>`, bind_port\: :ref:`int<class_int>`, max_peers\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_create_host_bound>`
 
-Create an ENetHost like :ref:`create_host<class_ENetConnection_method_create_host>` which is also bound to the given ``bind_address`` and ``bind_port``.
+Creates an ENetHost bound to the given ``bind_address`` and ``bind_port`` that allows up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth`` (if greater than zero).
+
+\ **Note:** It is necessary to create a host in both client and server in order to establish a connection.
 
 .. rst-class:: classref-item-separator
 
@@ -324,7 +330,7 @@ Create an ENetHost like :ref:`create_host<class_ENetConnection_method_create_hos
 
 .. rst-class:: classref-method
 
-|void| **destroy**\ (\ )
+|void| **destroy**\ (\ ) :ref:`🔗<class_ENetConnection_method_destroy>`
 
 Destroys the host and all resources associated with it.
 
@@ -336,9 +342,9 @@ Destroys the host and all resources associated with it.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **dtls_client_setup**\ (\ hostname\: :ref:`String<class_String>`, client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ )
+:ref:`Error<enum_@GlobalScope_Error>` **dtls_client_setup**\ (\ hostname\: :ref:`String<class_String>`, client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) :ref:`🔗<class_ENetConnection_method_dtls_client_setup>`
 
-Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet clients. Call this before :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` to have ENet connect using DTLS validating the server certificate against ``hostname``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
+Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet clients. Call this before :ref:`connect_to_host()<class_ENetConnection_method_connect_to_host>` to have ENet connect using DTLS validating the server certificate against ``hostname``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client()<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe()<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -348,9 +354,9 @@ Configure this ENetHost to use the custom Godot extension allowing DTLS encrypti
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **dtls_server_setup**\ (\ server_options\: :ref:`TLSOptions<class_TLSOptions>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **dtls_server_setup**\ (\ server_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_ENetConnection_method_dtls_server_setup>`
 
-Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet servers. Call this right after :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to have ENet expect peers to connect using DTLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
+Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet servers. Call this right after :ref:`create_host_bound()<class_ENetConnection_method_create_host_bound>` to have ENet expect peers to connect using DTLS. See :ref:`TLSOptions.server()<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 
@@ -360,7 +366,7 @@ Configure this ENetHost to use the custom Godot extension allowing DTLS encrypti
 
 .. rst-class:: classref-method
 
-|void| **flush**\ (\ )
+|void| **flush**\ (\ ) :ref:`🔗<class_ENetConnection_method_flush>`
 
 Sends any queued packets on the host specified to its designated peers.
 
@@ -372,7 +378,7 @@ Sends any queued packets on the host specified to its designated peers.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_local_port**\ (\ ) |const|
+:ref:`int<class_int>` **get_local_port**\ (\ ) |const| :ref:`🔗<class_ENetConnection_method_get_local_port>`
 
 Returns the local port to which this peer is bound.
 
@@ -384,7 +390,7 @@ Returns the local port to which this peer is bound.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_max_channels**\ (\ ) |const|
+:ref:`int<class_int>` **get_max_channels**\ (\ ) |const| :ref:`🔗<class_ENetConnection_method_get_max_channels>`
 
 Returns the maximum number of channels allowed for connected peers.
 
@@ -396,7 +402,7 @@ Returns the maximum number of channels allowed for connected peers.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`ENetPacketPeer<class_ENetPacketPeer>`\] **get_peers**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`ENetPacketPeer<class_ENetPacketPeer>`\] **get_peers**\ (\ ) :ref:`🔗<class_ENetConnection_method_get_peers>`
 
 Returns the list of peers associated with this host.
 
@@ -410,7 +416,7 @@ Returns the list of peers associated with this host.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **pop_statistic**\ (\ statistic\: :ref:`HostStatistic<enum_ENetConnection_HostStatistic>`\ )
+:ref:`float<class_float>` **pop_statistic**\ (\ statistic\: :ref:`HostStatistic<enum_ENetConnection_HostStatistic>`\ ) :ref:`🔗<class_ENetConnection_method_pop_statistic>`
 
 Returns and resets host statistics. See :ref:`HostStatistic<enum_ENetConnection_HostStatistic>` for more info.
 
@@ -422,11 +428,11 @@ Returns and resets host statistics. See :ref:`HostStatistic<enum_ENetConnection_
 
 .. rst-class:: classref-method
 
-|void| **refuse_new_connections**\ (\ refuse\: :ref:`bool<class_bool>`\ )
+|void| **refuse_new_connections**\ (\ refuse\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ENetConnection_method_refuse_new_connections>`
 
 Configures the DTLS server to automatically drop new connections.
 
-\ **Note:** This method is only relevant after calling :ref:`dtls_server_setup<class_ENetConnection_method_dtls_server_setup>`.
+\ **Note:** This method is only relevant after calling :ref:`dtls_server_setup()<class_ENetConnection_method_dtls_server_setup>`.
 
 .. rst-class:: classref-item-separator
 
@@ -436,11 +442,13 @@ Configures the DTLS server to automatically drop new connections.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **service**\ (\ timeout\: :ref:`int<class_int>` = 0\ )
+:ref:`Array<class_Array>` **service**\ (\ timeout\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_service>`
 
-Waits for events on the host specified and shuttles packets between the host and its peers. The returned :ref:`Array<class_Array>` will have 4 elements. An :ref:`EventType<enum_ENetConnection_EventType>`, the :ref:`ENetPacketPeer<class_ENetPacketPeer>` which generated the event, the event associated data (if any), the event associated channel (if any). If the generated event is :ref:`EVENT_RECEIVE<class_ENetConnection_constant_EVENT_RECEIVE>`, the received packet will be queued to the associated :ref:`ENetPacketPeer<class_ENetPacketPeer>`.
+Waits for events on this connection and shuttles packets between the host and its peers, with the given ``timeout`` (in milliseconds). The returned :ref:`Array<class_Array>` will have 4 elements. An :ref:`EventType<enum_ENetConnection_EventType>`, the :ref:`ENetPacketPeer<class_ENetPacketPeer>` which generated the event, the event associated data (if any), the event associated channel (if any). If the generated event is :ref:`EVENT_RECEIVE<class_ENetConnection_constant_EVENT_RECEIVE>`, the received packet will be queued to the associated :ref:`ENetPacketPeer<class_ENetPacketPeer>`.
 
 Call this function regularly to handle connections, disconnections, and to receive new packets.
+
+\ **Note:** This method must be called on both ends involved in the event (sending and receiving hosts).
 
 .. rst-class:: classref-item-separator
 
@@ -450,9 +458,9 @@ Call this function regularly to handle connections, disconnections, and to recei
 
 .. rst-class:: classref-method
 
-|void| **socket_send**\ (\ destination_address\: :ref:`String<class_String>`, destination_port\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+|void| **socket_send**\ (\ destination_address\: :ref:`String<class_String>`, destination_port\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_ENetConnection_method_socket_send>`
 
-Sends a ``packet`` toward a destination from the address and port currently bound by this ENetConnection instance. 
+Sends a ``packet`` toward a destination from the address and port currently bound by this ENetConnection instance.
 
 This is useful as it serves to establish entries in NAT routing tables on all devices between this bound instance and the public facing internet, allowing a prospective client's connection packets to be routed backward through the NAT device(s) between the public internet and this host.
 

@@ -1,0 +1,38 @@
+GD0110: The exported tool button is not a Callable
+==================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0110
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking - If the property's type is changed to ``Callable``
+
+                                      Non-breaking - If the ``[ExportToolButton]`` is replaced with ``[Export]``
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A property of a type different from ``Callable`` is annotated with the
+``[ExportToolButton]`` attribute.
+
+Rule description
+----------------
+
+The ``[ExportToolButton]`` attribute is used to create clickable buttons in the inspector so,
+the property must be a ``Callable`` that will be executed when clicking the button.
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, change the type of the property to ``Callable``.
+Alternatively, if you intended to export a normal property, replace the
+``[ExportToolButton]`` attribute with ``[Export]``.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. The exported property must be a ``Callable``
+so it can executed in the editor when clicking the button in the inspector.

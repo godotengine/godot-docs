@@ -37,8 +37,6 @@ Tutorials
 
 - :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`
 
-- `WebRTC Signaling Demo <https://godotengine.org/asset-library/asset/537>`__
-
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -100,7 +98,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**peer_connected**\ (\ id\: :ref:`int<class_int>`\ )
+**peer_connected**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MultiplayerPeer_signal_peer_connected>`
 
 Emitted when a remote peer connects.
 
@@ -112,7 +110,7 @@ Emitted when a remote peer connects.
 
 .. rst-class:: classref-signal
 
-**peer_disconnected**\ (\ id\: :ref:`int<class_int>`\ )
+**peer_disconnected**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MultiplayerPeer_signal_peer_disconnected>`
 
 Emitted when a remote peer has disconnected.
 
@@ -129,7 +127,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ConnectionStatus**:
+enum **ConnectionStatus**: :ref:`🔗<enum_MultiplayerPeer_ConnectionStatus>`
 
 .. _class_MultiplayerPeer_constant_CONNECTION_DISCONNECTED:
 
@@ -163,7 +161,7 @@ This MultiplayerPeer is connected.
 
 .. rst-class:: classref-enumeration
 
-enum **TransferMode**:
+enum **TransferMode**: :ref:`🔗<enum_MultiplayerPeer_TransferMode>`
 
 .. _class_MultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE:
 
@@ -202,7 +200,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**TARGET_PEER_BROADCAST** = ``0``
+**TARGET_PEER_BROADCAST** = ``0`` :ref:`🔗<class_MultiplayerPeer_constant_TARGET_PEER_BROADCAST>`
 
 Packets are sent to all connected peers.
 
@@ -210,7 +208,7 @@ Packets are sent to all connected peers.
 
 .. rst-class:: classref-constant
 
-**TARGET_PEER_SERVER** = ``1``
+**TARGET_PEER_SERVER** = ``1`` :ref:`🔗<class_MultiplayerPeer_constant_TARGET_PEER_SERVER>`
 
 Packets are sent to the remote peer acting as server.
 
@@ -227,7 +225,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **refuse_new_connections** = ``false``
+:ref:`bool<class_bool>` **refuse_new_connections** = ``false`` :ref:`🔗<class_MultiplayerPeer_property_refuse_new_connections>`
 
 .. rst-class:: classref-property-setget
 
@@ -244,7 +242,7 @@ If ``true``, this **MultiplayerPeer** refuses new connections.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **transfer_channel** = ``0``
+:ref:`int<class_int>` **transfer_channel** = ``0`` :ref:`🔗<class_MultiplayerPeer_property_transfer_channel>`
 
 .. rst-class:: classref-property-setget
 
@@ -263,14 +261,14 @@ The channel to use to send packets. Many network APIs such as ENet and WebRTC al
 
 .. rst-class:: classref-property
 
-:ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **transfer_mode** = ``2``
+:ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **transfer_mode** = ``2`` :ref:`🔗<class_MultiplayerPeer_property_transfer_mode>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_transfer_mode**\ (\ value\: :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`\ )
 - :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **get_transfer_mode**\ (\ )
 
-The manner in which to send packets to the target peer. See :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`, and the :ref:`set_target_peer<class_MultiplayerPeer_method_set_target_peer>` method.
+The manner in which to send packets to the target peer. See :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`, and the :ref:`set_target_peer()<class_MultiplayerPeer_method_set_target_peer>` method.
 
 .. rst-class:: classref-section-separator
 
@@ -285,7 +283,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **close**\ (\ )
+|void| **close**\ (\ ) :ref:`🔗<class_MultiplayerPeer_method_close>`
 
 Immediately close the multiplayer peer returning to the state :ref:`CONNECTION_DISCONNECTED<class_MultiplayerPeer_constant_CONNECTION_DISCONNECTED>`. Connected peers will be dropped without emitting :ref:`peer_disconnected<class_MultiplayerPeer_signal_peer_disconnected>`.
 
@@ -297,7 +295,7 @@ Immediately close the multiplayer peer returning to the state :ref:`CONNECTION_D
 
 .. rst-class:: classref-method
 
-|void| **disconnect_peer**\ (\ peer\: :ref:`int<class_int>`, force\: :ref:`bool<class_bool>` = false\ )
+|void| **disconnect_peer**\ (\ peer\: :ref:`int<class_int>`, force\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_MultiplayerPeer_method_disconnect_peer>`
 
 Disconnects the given ``peer`` from this host. If ``force`` is ``true`` the :ref:`peer_disconnected<class_MultiplayerPeer_signal_peer_disconnected>` signal will not be emitted for this peer.
 
@@ -309,7 +307,7 @@ Disconnects the given ``peer`` from this host. If ``force`` is ``true`` the :ref
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **generate_unique_id**\ (\ ) |const|
+:ref:`int<class_int>` **generate_unique_id**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_generate_unique_id>`
 
 Returns a randomly generated integer that can be used as a network unique ID.
 
@@ -321,7 +319,7 @@ Returns a randomly generated integer that can be used as a network unique ID.
 
 .. rst-class:: classref-method
 
-:ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` **get_connection_status**\ (\ ) |const|
+:ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` **get_connection_status**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_connection_status>`
 
 Returns the current state of the connection. See :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>`.
 
@@ -333,9 +331,9 @@ Returns the current state of the connection. See :ref:`ConnectionStatus<enum_Mul
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_packet_channel**\ (\ ) |const|
+:ref:`int<class_int>` **get_packet_channel**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_packet_channel>`
 
-Returns the channel over which the next available packet was received. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+Returns the channel over which the next available packet was received. See :ref:`PacketPeer.get_available_packet_count()<class_PacketPeer_method_get_available_packet_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -345,9 +343,9 @@ Returns the channel over which the next available packet was received. See :ref:
 
 .. rst-class:: classref-method
 
-:ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **get_packet_mode**\ (\ ) |const|
+:ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **get_packet_mode**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_packet_mode>`
 
-Returns the transfer mode the remote peer used to send the next available packet. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+Returns the transfer mode the remote peer used to send the next available packet. See :ref:`PacketPeer.get_available_packet_count()<class_PacketPeer_method_get_available_packet_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -357,9 +355,9 @@ Returns the transfer mode the remote peer used to send the next available packet
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_packet_peer**\ (\ ) |const|
+:ref:`int<class_int>` **get_packet_peer**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_packet_peer>`
 
-Returns the ID of the **MultiplayerPeer** who sent the next available packet. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+Returns the ID of the **MultiplayerPeer** who sent the next available packet. See :ref:`PacketPeer.get_available_packet_count()<class_PacketPeer_method_get_available_packet_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -369,7 +367,7 @@ Returns the ID of the **MultiplayerPeer** who sent the next available packet. Se
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_unique_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_unique_id**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_unique_id>`
 
 Returns the ID of this **MultiplayerPeer**.
 
@@ -381,9 +379,9 @@ Returns the ID of this **MultiplayerPeer**.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_server_relay_supported**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_server_relay_supported**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_is_server_relay_supported>`
 
-Returns true if the server can act as a relay in the current configuration (i.e. if the higher level :ref:`MultiplayerAPI<class_MultiplayerAPI>` should notify connected clients of other peers, and implement a relay protocol to allow communication between them).
+Returns ``true`` if the server can act as a relay in the current configuration. That is, if the higher level :ref:`MultiplayerAPI<class_MultiplayerAPI>` should notify connected clients of other peers, and implement a relay protocol to allow communication between them.
 
 .. rst-class:: classref-item-separator
 
@@ -393,7 +391,7 @@ Returns true if the server can act as a relay in the current configuration (i.e.
 
 .. rst-class:: classref-method
 
-|void| **poll**\ (\ )
+|void| **poll**\ (\ ) :ref:`🔗<class_MultiplayerPeer_method_poll>`
 
 Waits up to 1 second to receive a new network event.
 
@@ -405,7 +403,7 @@ Waits up to 1 second to receive a new network event.
 
 .. rst-class:: classref-method
 
-|void| **set_target_peer**\ (\ id\: :ref:`int<class_int>`\ )
+|void| **set_target_peer**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MultiplayerPeer_method_set_target_peer>`
 
 Sets the peer to which packets will be sent.
 

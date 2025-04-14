@@ -11,7 +11,7 @@ Frequently asked questions
 What can I do with Godot? How much does it cost? What are the license terms?
 ----------------------------------------------------------------------------
 
-Godot is `Free and open source Software <https://en.wikipedia.org/wiki/Free_and_open source_software>`_
+Godot is `Free and open source Software <https://en.wikipedia.org/wiki/Free_and_open_source_software>`_
 available under the `OSI-approved <https://opensource.org/licenses/MIT>`_ MIT license. This means it is
 free as in "free speech" as well as in "free beer."
 
@@ -115,9 +115,8 @@ If you've ever written anything in a language like Python before, then you'll fe
 right at home. For examples and a complete overview of the power GDScript offers
 you, check out the :ref:`GDScript scripting guide <doc_gdscript>`.
 
-There are several reasons to use GDScript, especially when you are prototyping, in
-alpha/beta stages of your project, or are not creating the next AAA title. The
-most salient reason is the overall **reduction of complexity**.
+There are several reasons to use GDScript, but the most salient reason is the overall
+**reduction of complexity**.
 
 The original intent of creating a tightly integrated, custom scripting language for
 Godot was two-fold: first, it reduces the amount of time necessary to get up and running
@@ -133,7 +132,7 @@ more familiar programming languages, especially when supporting those more famil
 languages would result in a worse experience. We understand if you would rather use
 another language in Godot (see the list of supported options above). That being said, if
 you haven't given GDScript a try, try it for **three days**. Just like Godot,
-once you see how powerful it is and rapid your development becomes, we think GDScript
+once you see how powerful it is and how rapid your development becomes, we think GDScript
 will grow on you.
 
 More information about getting comfortable with GDScript or dynamically typed
@@ -167,6 +166,38 @@ The main reasons for creating a custom scripting language for Godot were:
    completion, live editing, etc. (all of them).
 
 GDScript was designed to curtail the issues above, and more.
+
+.. _doc_faq_which_programming_language_is_fastest:
+
+Which programming language is fastest?
+--------------------------------------
+
+In most games, the *scripting language* itself is not the cause of performance
+problems. Instead, performance is slowed by inefficient algorithms (which are
+slow in all languages), by GPU performance, or by the common C++ engine code
+like physics or navigation. All languages supported by Godot are fast enough for
+general-purpose scripting. You should choose a language based on other factors,
+like ease-of-use, familiarity, platform support, or language features.
+
+In general, the performance of C# and GDScript is within the same order of
+magnitude, and C++ is faster than both.
+
+Comparing GDScript performance to C# is tricky, since C# can be faster in some
+specific cases. The C# *language* itself tends to be faster than GDScript, which
+means that C# can be faster in situations with few calls to Godot engine code.
+However, C# can be slower than GDScript when making many Godot API calls, due
+to the cost of *marshalling*. C#'s performance can also be brought down by garbage
+collection which occurs at random and unpredictable moments. This can result in
+stuttering issues in complex projects, and is not exclusive to Godot.
+
+C++, using :ref:`GDExtension <doc_what_is_gdextension>`, will almost always be
+faster than either C# or GDScript. However, C++ is less easy to use than C# or
+GDScript, and is slower to develop with.
+
+You can also use multiple languages within a single project, with
+:ref:`cross-language scripting <doc_cross_language_scripting>`, or by using
+GDExtension and scripting languages together. Be aware that doing so comes with
+its own complications.
 
 What 3D model formats does Godot support?
 -----------------------------------------
@@ -225,7 +256,7 @@ This will automatically perform the required steps for desktop integration.
 Alternatively, you can manually perform the steps that an installer would do for you:
 
 Windows
-^^^^^^^
+~~~~~~~
 
 - Move the Godot executable to a stable location (i.e. outside of your Downloads folder),
   so you don't accidentally move it and break the shortcut in the future.
@@ -236,14 +267,14 @@ Windows
   **Pin to Task Bar**.
 
 macOS
-^^^^^
+~~~~~
 
 Drag the extracted Godot application to ``/Applications/Godot.app``, then drag it
 to the Dock if desired. Spotlight will be able to find Godot as long as it's in
 ``/Applications`` or ``~/Applications``.
 
 Linux
-^^^^^
+~~~~~
 
 - Move the Godot binary to a stable location (i.e. outside of your Downloads folder),
   so you don't accidentally move it and break the shortcut in the future.
@@ -275,11 +306,11 @@ data directory. This is usually a good approach, but this means configuration fi
 will not carry across machines if you copy the folder containing the Godot executable.
 See :ref:`doc_data_paths` for more information.
 
-If *true* portable operation is desired (e.g. for use on an USB stick),
+If *true* portable operation is desired (e.g. for use on a USB stick),
 follow the steps in :ref:`doc_data_paths_self_contained_mode`.
 
-Why does Godot use Vulkan or OpenGL instead of Direct3D?
---------------------------------------------------------
+Why does Godot prioritize Vulkan and OpenGL over Direct3D?
+----------------------------------------------------------
 
 Godot aims for cross-platform compatibility and open standards first and
 foremost. OpenGL and Vulkan are the technologies that are both open and
@@ -287,14 +318,11 @@ available on (nearly) all platforms. Thanks to this design decision, a project
 developed with Godot on Windows will run out of the box on Linux, macOS, and
 more.
 
-Since Godot only has a few people working on its renderer, we would prefer
-having fewer rendering backends to maintain. On top of that, using a single API
-on all platforms allows for greater consistency with fewer platform-specific
-issues.
-
-In the long term, we may develop a Direct3D 12 renderer for Godot (mainly for
-Xbox), but Vulkan and OpenGL will remain the default rendering
-backends on all platforms, including Windows.
+While Vulkan and OpenGL remain our primary focus for their open standard and
+cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12.
+This addition aims to enhance performance and compatibility on platforms where
+Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL
+will continue as the default rendering drivers on all platforms, including Windows.
 
 Why does Godot aim to keep its core feature set small?
 ------------------------------------------------------
@@ -396,6 +424,11 @@ Should I upgrade my project to use new Godot versions?
 Some new versions are safer to upgrade to than others. In general, whether you
 should upgrade depends on your project's circumstances. See
 :ref:`doc_release_policy_should_i_upgrade_my_project` for more information.
+
+Should I use the Forward+, Mobile, or Compatibility renderer?
+-------------------------------------------------------------
+
+You can find a detailed comparison of the renderers in :ref:`doc_renderers`.
 
 I would like to contribute! How can I get started?
 --------------------------------------------------
@@ -566,7 +599,7 @@ resulted in better usability while still being fast enough for most use cases.
 
 That said, nothing prevents you from making use of composition in your project
 by creating child Nodes with individual scripts. These nodes can then be added and
-removed at run-time to dynamically add and remove behaviors.
+removed at runtime to dynamically add and remove behaviors.
 
 More information about Godot's design choices can be found in
 `this article <https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine>`__.

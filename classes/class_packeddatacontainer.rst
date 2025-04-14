@@ -35,11 +35,14 @@ You can retrieve the data by iterating on the container, which will work as if i
     var container = load("packed_data.res")
     for key in container:
         prints(key, container[key])
-    
-    # Prints:
-    # key value
-    # lock (0, 0)
-    # another_key 123
+
+Prints:
+
+.. code:: text
+
+    key value
+    lock (0, 0)
+    another_key 123
 
 Nested containers will be packed recursively. While iterating, they will be returned as :ref:`PackedDataContainerRef<class_PackedDataContainerRef>`.
 
@@ -70,7 +73,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **pack**\ (\ value\: :ref:`Variant<class_Variant>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **pack**\ (\ value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_PackedDataContainer_method_pack>`
 
 Packs the given container into a binary representation. The ``value`` must be either :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, any other type will result in invalid data error.
 
@@ -84,9 +87,9 @@ Packs the given container into a binary representation. The ``value`` must be ei
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **size**\ (\ ) |const|
+:ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_PackedDataContainer_method_size>`
 
-Returns the size of the packed container (see :ref:`Array.size<class_Array_method_size>` and :ref:`Dictionary.size<class_Dictionary_method_size>`).
+Returns the size of the packed container (see :ref:`Array.size()<class_Array_method_size>` and :ref:`Dictionary.size()<class_Dictionary_method_size>`).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -105,11 +105,11 @@ Contiguous memory stores imply the following operation performance:
       though. Done by re-sorting the Array after every edit and writing an
       ordered-aware search algorithm.
 
-Godot implements Dictionary as an ``OrderedHashMap<Variant, Variant>``. The engine
+Godot implements Dictionary as an ``HashMap<Variant, Variant, VariantHasher, StringLikeVariantComparator>``. The engine
 stores a small array (initialized to 2^3 or 8 records) of key-value pairs. When
 one attempts to access a value, they provide it a key. It then *hashes* the
 key, i.e. converts it into a number. The "hash" is used to calculate the index
-into the array. As an array, the OHM then has a quick lookup within the "table"
+into the array. As an array, the HM then has a quick lookup within the "table"
 of keys mapped to values. When the HashMap becomes too full, it increases to
 the next power of 2 (so, 16 records, then 32, etc.) and rebuilds the structure.
 
@@ -240,7 +240,7 @@ tree structures.
     class_name TreeNode
 
     var _parent: TreeNode = null
-    var _children: = [] setget
+    var _children := []
 
     func _notification(p_what):
         match p_what:
@@ -259,7 +259,7 @@ tree structures.
     {
         private TreeNode _parent = null;
 
-        private List<TreeNode> _children = new();
+        private List<TreeNode> _children = [];
 
         public override void _Notification(int what)
         {
@@ -283,7 +283,7 @@ Enumerations: int vs. string
 
 Most languages offer an enumeration type option. GDScript is no different, but
 unlike most other languages, it allows one to use either integers or strings for
-the enum values (the latter only when using the ``export`` keyword in GDScript).
+the enum values (the latter only when using the ``@export_enum`` annotation in GDScript).
 The question then arises, "which should one use?"
 
 The short answer is, "whichever you are more comfortable with." This
@@ -329,18 +329,18 @@ the other :ref:`Node <class_Node>` objects discussed here. One might create
 a :ref:`Sprite2D <class_Sprite2D>` node that uses AnimatedTexture as its texture.
 Or (something the others can't do) one could add AnimatedTextures as tiles
 in a :ref:`TileSet <class_TileSet>` and integrate it with a
-:ref:`TileMap <class_TileMap>` for many auto-animating backgrounds that
+:ref:`TileMapLayer <class_TileMapLayer>` for many auto-animating backgrounds that
 all render in a single batched draw call.
 
-The AnimatedSprite2D node, in combination with the
+The :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` node, in combination with the
 :ref:`SpriteFrames <class_SpriteFrames>` resource, allows one to create a
 variety of animation sequences through spritesheets, flip between animations,
 and control their speed, regional offset, and orientation. This makes them
 well-suited to controlling 2D frame-based animations.
 
-If one needs trigger other effects in relation to animation changes (for
+If one needs to trigger other effects in relation to animation changes (for
 example, create particle effects, call functions, or manipulate other
-peripheral elements besides the frame-based animation), then will need to use
+peripheral elements besides the frame-based animation), then one will need to use
 an :ref:`AnimationPlayer <class_AnimationPlayer>` node in conjunction with
 the AnimatedSprite2D.
 

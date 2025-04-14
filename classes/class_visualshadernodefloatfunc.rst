@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Function**:
+enum **Function**: :ref:`🔗<enum_VisualShaderNodeFloatFunc_Function>`
 
 .. _class_VisualShaderNodeFloatFunc_constant_FUNC_SIN:
 
@@ -325,7 +325,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Function<enum_VisualShaderNodeFloatFunc_Function>` **function** = ``13``
+:ref:`Function<enum_VisualShaderNodeFloatFunc_Function>` **function** = ``13`` :ref:`🔗<class_VisualShaderNodeFloatFunc_property_function>`
 
 .. rst-class:: classref-property-setget
 

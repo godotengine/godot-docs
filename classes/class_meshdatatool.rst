@@ -21,7 +21,7 @@ Description
 
 MeshDataTool provides access to individual vertices in a :ref:`Mesh<class_Mesh>`. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges.
 
-To use MeshDataTool, load a mesh with :ref:`create_from_surface<class_MeshDataTool_method_create_from_surface>`. When you are finished editing the data commit the data to a mesh with :ref:`commit_to_surface<class_MeshDataTool_method_commit_to_surface>`.
+To use MeshDataTool, load a mesh with :ref:`create_from_surface()<class_MeshDataTool_method_create_from_surface>`. When you are finished editing the data commit the data to a mesh with :ref:`commit_to_surface()<class_MeshDataTool_method_commit_to_surface>`.
 
 Below is an example of how MeshDataTool may be used.
 
@@ -178,7 +178,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_MeshDataTool_method_clear>`
 
 Clears all data currently in MeshDataTool.
 
@@ -190,7 +190,7 @@ Clears all data currently in MeshDataTool.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **commit_to_surface**\ (\ mesh\: :ref:`ArrayMesh<class_ArrayMesh>`, compression_flags\: :ref:`int<class_int>` = 0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **commit_to_surface**\ (\ mesh\: :ref:`ArrayMesh<class_ArrayMesh>`, compression_flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_MeshDataTool_method_commit_to_surface>`
 
 Adds a new surface to specified :ref:`Mesh<class_Mesh>` with edited data.
 
@@ -202,7 +202,7 @@ Adds a new surface to specified :ref:`Mesh<class_Mesh>` with edited data.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_from_surface**\ (\ mesh\: :ref:`ArrayMesh<class_ArrayMesh>`, surface\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **create_from_surface**\ (\ mesh\: :ref:`ArrayMesh<class_ArrayMesh>`, surface\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MeshDataTool_method_create_from_surface>`
 
 Uses specified surface of given :ref:`Mesh<class_Mesh>` to populate data for MeshDataTool.
 
@@ -216,7 +216,7 @@ Requires :ref:`Mesh<class_Mesh>` with primitive type :ref:`Mesh.PRIMITIVE_TRIANG
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_edge_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_edge_count**\ (\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_edge_count>`
 
 Returns the number of edges in this :ref:`Mesh<class_Mesh>`.
 
@@ -228,7 +228,7 @@ Returns the number of edges in this :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_edge_faces**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_edge_faces**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_edge_faces>`
 
 Returns array of faces that touch given edge.
 
@@ -240,7 +240,7 @@ Returns array of faces that touch given edge.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_edge_meta**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_edge_meta**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_edge_meta>`
 
 Returns meta information assigned to given edge.
 
@@ -252,7 +252,7 @@ Returns meta information assigned to given edge.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_edge_vertex**\ (\ idx\: :ref:`int<class_int>`, vertex\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_edge_vertex**\ (\ idx\: :ref:`int<class_int>`, vertex\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_edge_vertex>`
 
 Returns index of specified vertex connected to given edge.
 
@@ -266,7 +266,7 @@ Vertex argument can only be 0 or 1 because edges are comprised of two vertices.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_face_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_face_count**\ (\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_face_count>`
 
 Returns the number of faces in this :ref:`Mesh<class_Mesh>`.
 
@@ -278,7 +278,7 @@ Returns the number of faces in this :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_face_edge**\ (\ idx\: :ref:`int<class_int>`, edge\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_face_edge**\ (\ idx\: :ref:`int<class_int>`, edge\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_face_edge>`
 
 Returns specified edge associated with given face.
 
@@ -292,7 +292,7 @@ Edge argument must be either 0, 1, or 2 because a face only has three edges.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_face_meta**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_face_meta**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_face_meta>`
 
 Returns the metadata associated with the given face.
 
@@ -304,7 +304,7 @@ Returns the metadata associated with the given face.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_face_normal**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_face_normal**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_face_normal>`
 
 Calculates and returns the face normal of the given face.
 
@@ -316,13 +316,11 @@ Calculates and returns the face normal of the given face.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_face_vertex**\ (\ idx\: :ref:`int<class_int>`, vertex\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_face_vertex**\ (\ idx\: :ref:`int<class_int>`, vertex\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_face_vertex>`
 
 Returns the specified vertex index of the given face.
 
-Vertex argument must be either 0, 1, or 2 because faces contain three vertices.
-
-\ **Example:**\ 
+\ ``vertex`` must be either ``0``, ``1``, or ``2`` because faces contain three vertices.
 
 
 .. tabs::
@@ -349,7 +347,7 @@ Vertex argument must be either 0, 1, or 2 because faces contain three vertices.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_format**\ (\ ) |const|
+:ref:`int<class_int>` **get_format**\ (\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_format>`
 
 Returns the :ref:`Mesh<class_Mesh>`'s format as a combination of the :ref:`ArrayFormat<enum_Mesh_ArrayFormat>` flags. For example, a mesh containing both vertices and normals would return a format of ``3`` because :ref:`Mesh.ARRAY_FORMAT_VERTEX<class_Mesh_constant_ARRAY_FORMAT_VERTEX>` is ``1`` and :ref:`Mesh.ARRAY_FORMAT_NORMAL<class_Mesh_constant_ARRAY_FORMAT_NORMAL>` is ``2``.
 
@@ -361,7 +359,7 @@ Returns the :ref:`Mesh<class_Mesh>`'s format as a combination of the :ref:`Array
 
 .. rst-class:: classref-method
 
-:ref:`Material<class_Material>` **get_material**\ (\ ) |const|
+:ref:`Material<class_Material>` **get_material**\ (\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_material>`
 
 Returns the material assigned to the :ref:`Mesh<class_Mesh>`.
 
@@ -373,7 +371,7 @@ Returns the material assigned to the :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_vertex**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_vertex**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex>`
 
 Returns the position of the given vertex.
 
@@ -385,7 +383,7 @@ Returns the position of the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_bones**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_bones**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_bones>`
 
 Returns the bones of the given vertex.
 
@@ -397,7 +395,7 @@ Returns the bones of the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_vertex_color**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_vertex_color**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_color>`
 
 Returns the color of the given vertex.
 
@@ -409,7 +407,7 @@ Returns the color of the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_vertex_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_vertex_count**\ (\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_count>`
 
 Returns the total number of vertices in :ref:`Mesh<class_Mesh>`.
 
@@ -421,7 +419,7 @@ Returns the total number of vertices in :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_edges**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_edges**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_edges>`
 
 Returns an array of edges that share the given vertex.
 
@@ -433,7 +431,7 @@ Returns an array of edges that share the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_faces**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_faces**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_faces>`
 
 Returns an array of faces that share the given vertex.
 
@@ -445,7 +443,7 @@ Returns an array of faces that share the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_vertex_meta**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_vertex_meta**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_meta>`
 
 Returns the metadata associated with the given vertex.
 
@@ -457,7 +455,7 @@ Returns the metadata associated with the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_vertex_normal**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_vertex_normal**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_normal>`
 
 Returns the normal of the given vertex.
 
@@ -469,7 +467,7 @@ Returns the normal of the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`Plane<class_Plane>` **get_vertex_tangent**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Plane<class_Plane>` **get_vertex_tangent**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_tangent>`
 
 Returns the tangent of the given vertex.
 
@@ -481,7 +479,7 @@ Returns the tangent of the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_vertex_uv**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_vertex_uv**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_uv>`
 
 Returns the UV of the given vertex.
 
@@ -493,7 +491,7 @@ Returns the UV of the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_vertex_uv2**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_vertex_uv2**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_uv2>`
 
 Returns the UV2 of the given vertex.
 
@@ -505,7 +503,7 @@ Returns the UV2 of the given vertex.
 
 .. rst-class:: classref-method
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_vertex_weights**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_vertex_weights**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_vertex_weights>`
 
 Returns bone weights of the given vertex.
 
@@ -517,7 +515,7 @@ Returns bone weights of the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_edge_meta**\ (\ idx\: :ref:`int<class_int>`, meta\: :ref:`Variant<class_Variant>`\ )
+|void| **set_edge_meta**\ (\ idx\: :ref:`int<class_int>`, meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_MeshDataTool_method_set_edge_meta>`
 
 Sets the metadata of the given edge.
 
@@ -529,7 +527,7 @@ Sets the metadata of the given edge.
 
 .. rst-class:: classref-method
 
-|void| **set_face_meta**\ (\ idx\: :ref:`int<class_int>`, meta\: :ref:`Variant<class_Variant>`\ )
+|void| **set_face_meta**\ (\ idx\: :ref:`int<class_int>`, meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_MeshDataTool_method_set_face_meta>`
 
 Sets the metadata of the given face.
 
@@ -541,7 +539,7 @@ Sets the metadata of the given face.
 
 .. rst-class:: classref-method
 
-|void| **set_material**\ (\ material\: :ref:`Material<class_Material>`\ )
+|void| **set_material**\ (\ material\: :ref:`Material<class_Material>`\ ) :ref:`🔗<class_MeshDataTool_method_set_material>`
 
 Sets the material to be used by newly-constructed :ref:`Mesh<class_Mesh>`.
 
@@ -553,7 +551,7 @@ Sets the material to be used by newly-constructed :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex**\ (\ idx\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_vertex**\ (\ idx\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex>`
 
 Sets the position of the given vertex.
 
@@ -565,7 +563,7 @@ Sets the position of the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex_bones**\ (\ idx\: :ref:`int<class_int>`, bones\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+|void| **set_vertex_bones**\ (\ idx\: :ref:`int<class_int>`, bones\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex_bones>`
 
 Sets the bones of the given vertex.
 
@@ -577,7 +575,7 @@ Sets the bones of the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex_color**\ (\ idx\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_vertex_color**\ (\ idx\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex_color>`
 
 Sets the color of the given vertex.
 
@@ -589,7 +587,7 @@ Sets the color of the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex_meta**\ (\ idx\: :ref:`int<class_int>`, meta\: :ref:`Variant<class_Variant>`\ )
+|void| **set_vertex_meta**\ (\ idx\: :ref:`int<class_int>`, meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex_meta>`
 
 Sets the metadata associated with the given vertex.
 
@@ -601,7 +599,7 @@ Sets the metadata associated with the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex_normal**\ (\ idx\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_vertex_normal**\ (\ idx\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex_normal>`
 
 Sets the normal of the given vertex.
 
@@ -613,7 +611,7 @@ Sets the normal of the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex_tangent**\ (\ idx\: :ref:`int<class_int>`, tangent\: :ref:`Plane<class_Plane>`\ )
+|void| **set_vertex_tangent**\ (\ idx\: :ref:`int<class_int>`, tangent\: :ref:`Plane<class_Plane>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex_tangent>`
 
 Sets the tangent of the given vertex.
 
@@ -625,7 +623,7 @@ Sets the tangent of the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex_uv**\ (\ idx\: :ref:`int<class_int>`, uv\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_vertex_uv**\ (\ idx\: :ref:`int<class_int>`, uv\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex_uv>`
 
 Sets the UV of the given vertex.
 
@@ -637,7 +635,7 @@ Sets the UV of the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex_uv2**\ (\ idx\: :ref:`int<class_int>`, uv2\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_vertex_uv2**\ (\ idx\: :ref:`int<class_int>`, uv2\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex_uv2>`
 
 Sets the UV2 of the given vertex.
 
@@ -649,7 +647,7 @@ Sets the UV2 of the given vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_vertex_weights**\ (\ idx\: :ref:`int<class_int>`, weights\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+|void| **set_vertex_weights**\ (\ idx\: :ref:`int<class_int>`, weights\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_MeshDataTool_method_set_vertex_weights>`
 
 Sets the bone weights of the given vertex.
 

@@ -31,23 +31,39 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                | :ref:`flat<class_EditorSpinSlider_property_flat>`               | ``false``                                                                    |
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`FocusMode<enum_Control_FocusMode>`               | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)          |
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                | :ref:`hide_slider<class_EditorSpinSlider_property_hide_slider>` | ``false``                                                                    |
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                            | :ref:`label<class_EditorSpinSlider_property_label>`             | ``""``                                                                       |
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                | :ref:`read_only<class_EditorSpinSlider_property_read_only>`     | ``false``                                                                    |
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | |bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\] | size_flags_vertical                                             | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                              | step                                                            | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)                  |
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                            | :ref:`suffix<class_EditorSpinSlider_property_suffix>`           | ``""``                                                                       |
-   +--------------------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`editing_integer<class_EditorSpinSlider_property_editing_integer>` | ``false``                                                                    |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`flat<class_EditorSpinSlider_property_flat>`                       | ``false``                                                                    |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`               | focus_mode                                                              | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)          |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`hide_slider<class_EditorSpinSlider_property_hide_slider>`         | ``false``                                                                    |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                            | :ref:`label<class_EditorSpinSlider_property_label>`                     | ``""``                                                                       |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`read_only<class_EditorSpinSlider_property_read_only>`             | ``false``                                                                    |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | |bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\] | size_flags_vertical                                                     | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                              | step                                                                    | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)                  |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                            | :ref:`suffix<class_EditorSpinSlider_property_suffix>`                   | ``""``                                                                       |
+   +--------------------------------------------------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
+
+Theme Properties
+----------------
+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+---------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`updown<class_EditorSpinSlider_theme_icon_updown>`                   |
+   +-----------------------------------+---------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`updown_disabled<class_EditorSpinSlider_theme_icon_updown_disabled>` |
+   +-----------------------------------+---------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -62,7 +78,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**grabbed**\ (\ )
+**grabbed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_grabbed>`
 
 Emitted when the spinner/slider is grabbed.
 
@@ -74,9 +90,21 @@ Emitted when the spinner/slider is grabbed.
 
 .. rst-class:: classref-signal
 
-**ungrabbed**\ (\ )
+**ungrabbed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_ungrabbed>`
 
 Emitted when the spinner/slider is ungrabbed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_signal_updown_pressed:
+
+.. rst-class:: classref-signal
+
+**updown_pressed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_updown_pressed>`
+
+Emitted when the updown button is pressed.
 
 .. rst-class:: classref-item-separator
 
@@ -86,7 +114,7 @@ Emitted when the spinner/slider is ungrabbed.
 
 .. rst-class:: classref-signal
 
-**value_focus_entered**\ (\ )
+**value_focus_entered**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_value_focus_entered>`
 
 Emitted when the value form gains focus.
 
@@ -98,7 +126,7 @@ Emitted when the value form gains focus.
 
 .. rst-class:: classref-signal
 
-**value_focus_exited**\ (\ )
+**value_focus_exited**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_value_focus_exited>`
 
 Emitted when the value form loses focus.
 
@@ -111,11 +139,28 @@ Emitted when the value form loses focus.
 Property Descriptions
 ---------------------
 
+.. _class_EditorSpinSlider_property_editing_integer:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editing_integer** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_editing_integer>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_editing_integer**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_editing_integer**\ (\ )
+
+If ``true``, the **EditorSpinSlider** is considered to be editing an integer value. If ``false``, the **EditorSpinSlider** is considered to be editing a floating-point value. This is used to determine whether a slider should be drawn. The slider is only drawn for floats; integers use up-down arrows similar to :ref:`SpinBox<class_SpinBox>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSpinSlider_property_flat:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flat** = ``false``
+:ref:`bool<class_bool>` **flat** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_flat>`
 
 .. rst-class:: classref-property-setget
 
@@ -132,7 +177,7 @@ If ``true``, the slider will not draw background.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hide_slider** = ``false``
+:ref:`bool<class_bool>` **hide_slider** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_hide_slider>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +194,7 @@ If ``true``, the slider and up/down arrows are hidden.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **label** = ``""``
+:ref:`String<class_String>` **label** = ``""`` :ref:`🔗<class_EditorSpinSlider_property_label>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +211,7 @@ The text that displays to the left of the value.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **read_only** = ``false``
+:ref:`bool<class_bool>` **read_only** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_read_only>`
 
 .. rst-class:: classref-property-setget
 
@@ -183,7 +228,7 @@ If ``true``, the slider can't be interacted with.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **suffix** = ``""``
+:ref:`String<class_String>` **suffix** = ``""`` :ref:`🔗<class_EditorSpinSlider_property_suffix>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,6 +236,35 @@ If ``true``, the slider can't be interacted with.
 - :ref:`String<class_String>` **get_suffix**\ (\ )
 
 The suffix to display after the value (in a faded color). This should generally be a plural word. You may have to use an abbreviation if the suffix is too long to be displayed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_EditorSpinSlider_theme_icon_updown:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **updown** :ref:`🔗<class_EditorSpinSlider_theme_icon_updown>`
+
+Single texture representing both the up and down buttons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_theme_icon_updown_disabled:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **updown_disabled** :ref:`🔗<class_EditorSpinSlider_theme_icon_updown_disabled>`
+
+Single texture representing both the up and down buttons, when the control is readonly or disabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -25,9 +25,17 @@ For example, you might have a life bar on the screen that represents the
 player's health. When the player takes damage or uses a healing potion, you want
 the bar to reflect the change. To do so, in Godot, you would use signals.
 
-.. note:: As mentioned in the introduction, signals are Godot's version of the
-          observer pattern. You can learn more about it here:
-          https://gameprogrammingpatterns.com/observer.html
+Like methods (:ref:`class_callable`), signals are a first-class type since Godot
+4.0. This means you can pass them around as method arguments directly without
+having to pass them as strings, which allows for better autocompletion and is
+less error-prone. See the :ref:`class_signal` class reference for a list of
+what you can do with the Signal type directly.
+
+.. seealso::
+
+    As mentioned in the introduction, signals are Godot's version of the
+    observer pattern. You can learn more about it in
+    `Game Programming Patterns <https://gameprogrammingpatterns.com/observer.html>`__.
 
 We will now use a signal to make our Godot icon from the previous lesson
 (:ref:`doc_scripting_player_input`) move and stop by pressing a button.
@@ -42,8 +50,6 @@ We will now use a signal to make our Godot icon from the previous lesson
             private fields use _camelCase, local variables and parameters use
             camelCase (See :ref:`doc_c_sharp_styleguide`). Be careful to type
             the method names precisely when connecting signals.
-
-.. Example
 
 Scene setup
 -----------
@@ -138,6 +144,12 @@ methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
    function, add arguments to the callback, and set options. You can
    toggle the mode in the window's bottom-right by clicking the Advanced
    button.
+
+.. note::
+
+    If you are using an external editor (such as VS Code), this
+    automatic code generation might not work. In this case, you need to connect
+    the signal via code as explained in the next section.
 
 Click the Connect button to complete the signal connection and jump to the
 Script workspace. You should see the new method with a connection icon in the
@@ -240,7 +252,8 @@ Your complete ``sprite_2d.gd`` code should look like the following.
         }
     }
 
-Run the scene now and click the button to see the sprite start and stop.
+Run the current scene by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS),
+and click the button to see the sprite start and stop.
 
 Connecting a signal via code
 ----------------------------

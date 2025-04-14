@@ -19,9 +19,9 @@ A script that is executed when exporting the project.
 Description
 -----------
 
-**EditorExportPlugin**\ s are automatically invoked whenever the user exports the project. Their most common use is to determine what files are being included in the exported project. For each plugin, :ref:`_export_begin<class_EditorExportPlugin_private_method__export_begin>` is called at the beginning of the export process and then :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>` is called for each exported file.
+**EditorExportPlugin**\ s are automatically invoked whenever the user exports the project. Their most common use is to determine what files are being included in the exported project. For each plugin, :ref:`_export_begin()<class_EditorExportPlugin_private_method__export_begin>` is called at the beginning of the export process and then :ref:`_export_file()<class_EditorExportPlugin_private_method__export_file>` is called for each exported file.
 
-To use **EditorExportPlugin**, register it using the :ref:`EditorPlugin.add_export_plugin<class_EditorPlugin_method_add_export_plugin>` method first.
+To use **EditorExportPlugin**, register it using the :ref:`EditorPlugin.add_export_plugin()<class_EditorPlugin_method_add_export_plugin>` method first.
 
 .. rst-class:: classref-introduction-group
 
@@ -73,6 +73,8 @@ Methods
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_export_features<class_EditorExportPlugin_private_method__get_export_features>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const|                                                             |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_get_export_option_visibility<class_EditorExportPlugin_private_method__get_export_option_visibility>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, option\: :ref:`String<class_String>`\ ) |virtual| |const|                                      |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_get_export_option_warning<class_EditorExportPlugin_private_method__get_export_option_warning>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, option\: :ref:`String<class_String>`\ ) |virtual| |const|                                            |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_get_export_options<class_EditorExportPlugin_private_method__get_export_options>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const|                                                                                                |
@@ -84,6 +86,8 @@ Methods
    | :ref:`bool<class_bool>`                                          | :ref:`_should_update_export_options<class_EditorExportPlugin_private_method__should_update_export_options>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const|                                                                            |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`_supports_platform<class_EditorExportPlugin_private_method__supports_platform>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const|                                                                                                  |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`                    | :ref:`_update_android_prebuilt_manifest<class_EditorExportPlugin_private_method__update_android_prebuilt_manifest>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, manifest_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |virtual| |const|     |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`add_file<class_EditorExportPlugin_method_add_file>`\ (\ path\: :ref:`String<class_String>`, file\: :ref:`PackedByteArray<class_PackedByteArray>`, remap\: :ref:`bool<class_bool>`\ )                                                                                         |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,6 +109,10 @@ Methods
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>`\ (\ path\: :ref:`String<class_String>`, tags\: :ref:`PackedStringArray<class_PackedStringArray>`, target\: :ref:`String<class_String>`\ )                                                              |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorExportPlatform<class_EditorExportPlatform>`          | :ref:`get_export_platform<class_EditorExportPlugin_method_get_export_platform>`\ (\ ) |const|                                                                                                                                                                                      |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorExportPreset<class_EditorExportPreset>`              | :ref:`get_export_preset<class_EditorExportPlugin_method_get_export_preset>`\ (\ ) |const|                                                                                                                                                                                          |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                    | :ref:`get_option<class_EditorExportPlugin_method_get_option>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                                            |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`skip<class_EditorExportPlugin_method_skip>`\ (\ )                                                                                                                                                                                                                            |
@@ -123,11 +131,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_begin_customize_resources**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_begin_customize_resources**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__begin_customize_resources>`
 
 Return ``true`` if this plugin will customize resources based on the platform and features used.
 
-When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>`, :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` will be called and must be implemented.
+When enabled, :ref:`_get_customization_configuration_hash()<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_resource()<class_EditorExportPlugin_private_method__customize_resource>` will be called and must be implemented.
 
 .. rst-class:: classref-item-separator
 
@@ -137,9 +145,13 @@ When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlug
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_begin_customize_scenes**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_begin_customize_scenes**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__begin_customize_scenes>`
 
-Return true if this plugin will customize scenes based on the platform and features used.
+Return ``true`` if this plugin will customize scenes based on the platform and features used.
+
+When enabled, :ref:`_get_customization_configuration_hash()<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_scene()<class_EditorExportPlugin_private_method__customize_scene>` will be called and must be implemented.
+
+\ **Note:** :ref:`_customize_scene()<class_EditorExportPlugin_private_method__customize_scene>` will only be called for scenes that have been modified since the last export.
 
 .. rst-class:: classref-item-separator
 
@@ -149,13 +161,27 @@ Return true if this plugin will customize scenes based on the platform and featu
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **_customize_resource**\ (\ resource\: :ref:`Resource<class_Resource>`, path\: :ref:`String<class_String>`\ ) |virtual|
+:ref:`Resource<class_Resource>` **_customize_resource**\ (\ resource\: :ref:`Resource<class_Resource>`, path\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__customize_resource>`
 
-Customize a resource. If changes are made to it, return the same or a new resource. Otherwise, return ``null``.
+Customize a resource. If changes are made to it, return the same or a new resource. Otherwise, return ``null``. When a new resource is returned, ``resource`` will be replaced by a copy of the new resource.
 
-The *path* argument is only used when customizing an actual file, otherwise this means that this resource is part of another one and it will be empty.
+The ``path`` argument is only used when customizing an actual file, otherwise this means that this resource is part of another one and it will be empty.
 
-Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
+Implementing this method is required if :ref:`_begin_customize_resources()<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
+
+\ **Note:** When customizing any of the following types and returning another resource, the other resource should not be skipped using :ref:`skip()<class_EditorExportPlugin_method_skip>` in :ref:`_export_file()<class_EditorExportPlugin_private_method__export_file>`:
+
+- :ref:`AtlasTexture<class_AtlasTexture>`\ 
+
+- :ref:`CompressedCubemap<class_CompressedCubemap>`\ 
+
+- :ref:`CompressedCubemapArray<class_CompressedCubemapArray>`\ 
+
+- :ref:`CompressedTexture2D<class_CompressedTexture2D>`\ 
+
+- :ref:`CompressedTexture2DArray<class_CompressedTexture2DArray>`\ 
+
+- :ref:`CompressedTexture3D<class_CompressedTexture3D>`
 
 .. rst-class:: classref-item-separator
 
@@ -165,11 +191,11 @@ Implementing this method is required if :ref:`_begin_customize_resources<class_E
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **_customize_scene**\ (\ scene\: :ref:`Node<class_Node>`, path\: :ref:`String<class_String>`\ ) |virtual|
+:ref:`Node<class_Node>` **_customize_scene**\ (\ scene\: :ref:`Node<class_Node>`, path\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__customize_scene>`
 
 Customize a scene. If changes are made to it, return the same or a new scene. Otherwise, return ``null``. If a new scene is returned, it is up to you to dispose of the old one.
 
-Implementing this method is required if :ref:`_begin_customize_scenes<class_EditorExportPlugin_private_method__begin_customize_scenes>` returns ``true``.
+Implementing this method is required if :ref:`_begin_customize_scenes()<class_EditorExportPlugin_private_method__begin_customize_scenes>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -179,7 +205,7 @@ Implementing this method is required if :ref:`_begin_customize_scenes<class_Edit
 
 .. rst-class:: classref-method
 
-|void| **_end_customize_resources**\ (\ ) |virtual|
+|void| **_end_customize_resources**\ (\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__end_customize_resources>`
 
 This is called when the customization process for resources ends.
 
@@ -191,7 +217,7 @@ This is called when the customization process for resources ends.
 
 .. rst-class:: classref-method
 
-|void| **_end_customize_scenes**\ (\ ) |virtual|
+|void| **_end_customize_scenes**\ (\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__end_customize_scenes>`
 
 This is called when the customization process for scenes ends.
 
@@ -203,7 +229,7 @@ This is called when the customization process for scenes ends.
 
 .. rst-class:: classref-method
 
-|void| **_export_begin**\ (\ features\: :ref:`PackedStringArray<class_PackedStringArray>`, is_debug\: :ref:`bool<class_bool>`, path\: :ref:`String<class_String>`, flags\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_export_begin**\ (\ features\: :ref:`PackedStringArray<class_PackedStringArray>`, is_debug\: :ref:`bool<class_bool>`, path\: :ref:`String<class_String>`, flags\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__export_begin>`
 
 Virtual method to be overridden by the user. It is called when the export starts and provides all information about the export. ``features`` is the list of features for the export, ``is_debug`` is ``true`` for debug builds, ``path`` is the target path for the exported project. ``flags`` is only used when running a runnable profile, e.g. when using native run on Android.
 
@@ -215,7 +241,7 @@ Virtual method to be overridden by the user. It is called when the export starts
 
 .. rst-class:: classref-method
 
-|void| **_export_end**\ (\ ) |virtual|
+|void| **_export_end**\ (\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__export_end>`
 
 Virtual method to be overridden by the user. Called when the export is finished.
 
@@ -227,11 +253,11 @@ Virtual method to be overridden by the user. Called when the export is finished.
 
 .. rst-class:: classref-method
 
-|void| **_export_file**\ (\ path\: :ref:`String<class_String>`, type\: :ref:`String<class_String>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual|
+|void| **_export_file**\ (\ path\: :ref:`String<class_String>`, type\: :ref:`String<class_String>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__export_file>`
 
-Virtual method to be overridden by the user. Called for each exported file, providing arguments that can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`) and ``features`` is the list of features for the export.
+Virtual method to be overridden by the user. Called for each exported file before :ref:`_customize_resource()<class_EditorExportPlugin_private_method__customize_resource>` and :ref:`_customize_scene()<class_EditorExportPlugin_private_method__customize_scene>`. The arguments can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`), and ``features`` is the list of features for the export.
 
-Calling :ref:`skip<class_EditorExportPlugin_method_skip>` inside this callback will make the file not included in the export.
+Calling :ref:`skip()<class_EditorExportPlugin_method_skip>` inside this callback will make the file not included in the export.
 
 .. rst-class:: classref-item-separator
 
@@ -241,7 +267,7 @@ Calling :ref:`skip<class_EditorExportPlugin_method_skip>` inside this callback w
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_android_dependencies**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_android_dependencies**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_android_dependencies>`
 
 Virtual method to be overridden by the user. This is called to retrieve the set of Android dependencies provided by this plugin. Each returned Android dependency should have the format of an Android remote binary dependency: ``org.godot.example:my-plugin:0.0.0``\ 
 
@@ -257,7 +283,7 @@ For more information see `Android documentation on dependencies <https://develop
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_android_dependencies_maven_repos**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_android_dependencies_maven_repos**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_android_dependencies_maven_repos>`
 
 Virtual method to be overridden by the user. This is called to retrieve the URLs of Maven repositories for the set of Android dependencies provided by this plugin.
 
@@ -275,7 +301,7 @@ For more information see `Gradle documentation on dependency management <https:/
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_android_libraries**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_android_libraries**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_android_libraries>`
 
 Virtual method to be overridden by the user. This is called to retrieve the local paths of the Android libraries archive (AAR) files provided by this plugin.
 
@@ -291,7 +317,7 @@ Virtual method to be overridden by the user. This is called to retrieve the loca
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_android_manifest_activity_element_contents**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_android_manifest_activity_element_contents**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_android_manifest_activity_element_contents>`
 
 Virtual method to be overridden by the user. This is used at export time to update the contents of the ``activity`` element in the generated Android manifest.
 
@@ -305,7 +331,7 @@ Virtual method to be overridden by the user. This is used at export time to upda
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_android_manifest_application_element_contents**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_android_manifest_application_element_contents**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_android_manifest_application_element_contents>`
 
 Virtual method to be overridden by the user. This is used at export time to update the contents of the ``application`` element in the generated Android manifest.
 
@@ -319,7 +345,7 @@ Virtual method to be overridden by the user. This is used at export time to upda
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_android_manifest_element_contents**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_android_manifest_element_contents**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_android_manifest_element_contents>`
 
 Virtual method to be overridden by the user. This is used at export time to update the contents of the ``manifest`` element in the generated Android manifest.
 
@@ -333,11 +359,11 @@ Virtual method to be overridden by the user. This is used at export time to upda
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_customization_configuration_hash**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_customization_configuration_hash**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_customization_configuration_hash>`
 
 Return a hash based on the configuration passed (for both scenes and resources). This helps keep separate caches for separate export configurations.
 
-Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
+Implementing this method is required if :ref:`_begin_customize_resources()<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -347,9 +373,23 @@ Implementing this method is required if :ref:`_begin_customize_resources<class_E
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_export_features**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_export_features**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, debug\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_export_features>`
 
 Return a :ref:`PackedStringArray<class_PackedStringArray>` of additional features this preset, for the given ``platform``, should have.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_private_method__get_export_option_visibility:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_get_export_option_visibility**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, option\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_export_option_visibility>`
+
+**Optional.**\ 
+
+Validates ``option`` and returns the visibility for the specified ``platform``. The default implementation returns ``true`` for all options.
 
 .. rst-class:: classref-item-separator
 
@@ -359,11 +399,11 @@ Return a :ref:`PackedStringArray<class_PackedStringArray>` of additional feature
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_export_option_warning**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, option\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_export_option_warning**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, option\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_export_option_warning>`
 
 Check the requirements for the given ``option`` and return a non-empty warning string if they are not met.
 
-\ **Note:** Use :ref:`get_option<class_EditorExportPlugin_method_get_option>` to check the value of the export options.
+\ **Note:** Use :ref:`get_option()<class_EditorExportPlugin_method_get_option>` to check the value of the export options.
 
 .. rst-class:: classref-item-separator
 
@@ -373,13 +413,13 @@ Check the requirements for the given ``option`` and return a non-empty warning s
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_export_options**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_export_options**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_export_options>`
 
 Return a list of export options that can be configured for this export plugin.
 
 Each element in the return value is a :ref:`Dictionary<class_Dictionary>` with the following keys:
 
-- ``option``: A dictionary with the structure documented by :ref:`Object.get_property_list<class_Object_method_get_property_list>`, but all keys are optional.
+- ``option``: A dictionary with the structure documented by :ref:`Object.get_property_list()<class_Object_method_get_property_list>`, but all keys are optional.
 
 - ``default_value``: The default value for this option.
 
@@ -393,7 +433,7 @@ Each element in the return value is a :ref:`Dictionary<class_Dictionary>` with t
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_export_options_overrides**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_get_export_options_overrides**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_export_options_overrides>`
 
 Return a :ref:`Dictionary<class_Dictionary>` of override values for export options, that will be used instead of user-provided values. Overridden options will be hidden from the user interface.
 
@@ -423,7 +463,7 @@ Return a :ref:`Dictionary<class_Dictionary>` of override values for export optio
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__get_name>`
 
 Return the name identifier of this plugin (for future identification by the exporter). The plugins are sorted by name before exporting.
 
@@ -437,9 +477,9 @@ Implementing this method is required.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_should_update_export_options**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_should_update_export_options**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__should_update_export_options>`
 
-Return ``true``, if the result of :ref:`_get_export_options<class_EditorExportPlugin_private_method__get_export_options>` has changed and the export options of preset corresponding to ``platform`` should be updated.
+Return ``true``, if the result of :ref:`_get_export_options()<class_EditorExportPlugin_private_method__get_export_options>` has changed and the export options of preset corresponding to ``platform`` should be updated.
 
 .. rst-class:: classref-item-separator
 
@@ -449,9 +489,25 @@ Return ``true``, if the result of :ref:`_get_export_options<class_EditorExportPl
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_supports_platform**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_supports_platform**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__supports_platform>`
 
 Return ``true`` if the plugin supports the given ``platform``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_private_method__update_android_prebuilt_manifest:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **_update_android_prebuilt_manifest**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, manifest_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__update_android_prebuilt_manifest>`
+
+Provide access to the Android prebuilt manifest and allows the plugin to modify it if needed.
+
+Implementers of this virtual method should take the binary manifest data from ``manifest_data``, copy it, modify it, and then return it with the modifications.
+
+If no modifications are needed, then an empty :ref:`PackedByteArray<class_PackedByteArray>` should be returned.
 
 .. rst-class:: classref-item-separator
 
@@ -461,11 +517,13 @@ Return ``true`` if the plugin supports the given ``platform``.
 
 .. rst-class:: classref-method
 
-|void| **add_file**\ (\ path\: :ref:`String<class_String>`, file\: :ref:`PackedByteArray<class_PackedByteArray>`, remap\: :ref:`bool<class_bool>`\ )
+|void| **add_file**\ (\ path\: :ref:`String<class_String>`, file\: :ref:`PackedByteArray<class_PackedByteArray>`, remap\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_file>`
 
 Adds a custom file to be exported. ``path`` is the virtual path that can be used to load the file, ``file`` is the binary data of the file.
 
-When called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>` and ``remap`` is ``true``, the current file will not be exported, but instead remapped to this custom file. ``remap`` is ignored when called in other places.
+When called inside :ref:`_export_file()<class_EditorExportPlugin_private_method__export_file>` and ``remap`` is ``true``, the current file will not be exported, but instead remapped to this custom file. ``remap`` is ignored when called in other places.
+
+\ ``file`` will not be imported, so consider using :ref:`_customize_resource()<class_EditorExportPlugin_private_method__customize_resource>` to remap imported resources.
 
 .. rst-class:: classref-item-separator
 
@@ -475,7 +533,7 @@ When called inside :ref:`_export_file<class_EditorExportPlugin_private_method__e
 
 .. rst-class:: classref-method
 
-|void| **add_ios_bundle_file**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **add_ios_bundle_file**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_bundle_file>`
 
 Adds an iOS bundle file from the given ``path`` to the exported project.
 
@@ -487,7 +545,7 @@ Adds an iOS bundle file from the given ``path`` to the exported project.
 
 .. rst-class:: classref-method
 
-|void| **add_ios_cpp_code**\ (\ code\: :ref:`String<class_String>`\ )
+|void| **add_ios_cpp_code**\ (\ code\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_cpp_code>`
 
 Adds a C++ code to the iOS export. The final code is created from the code appended by each active export plugin.
 
@@ -499,11 +557,11 @@ Adds a C++ code to the iOS export. The final code is created from the code appen
 
 .. rst-class:: classref-method
 
-|void| **add_ios_embedded_framework**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **add_ios_embedded_framework**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_embedded_framework>`
 
 Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project and embeds it into resulting binary.
 
-\ **Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>`.
+\ **Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework()<class_EditorExportPlugin_method_add_ios_framework>`.
 
 \ **Note:** This method should not be used for System libraries as they are already present on the device.
 
@@ -515,7 +573,7 @@ Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode 
 
 .. rst-class:: classref-method
 
-|void| **add_ios_framework**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **add_ios_framework**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_framework>`
 
 Adds a static library (\*.a) or dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project.
 
@@ -527,7 +585,7 @@ Adds a static library (\*.a) or dynamic library (\*.dylib, \*.framework) to Link
 
 .. rst-class:: classref-method
 
-|void| **add_ios_linker_flags**\ (\ flags\: :ref:`String<class_String>`\ )
+|void| **add_ios_linker_flags**\ (\ flags\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_linker_flags>`
 
 Adds linker flags for the iOS export.
 
@@ -539,7 +597,7 @@ Adds linker flags for the iOS export.
 
 .. rst-class:: classref-method
 
-|void| **add_ios_plist_content**\ (\ plist_content\: :ref:`String<class_String>`\ )
+|void| **add_ios_plist_content**\ (\ plist_content\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_plist_content>`
 
 Adds content for iOS Property List files.
 
@@ -551,7 +609,7 @@ Adds content for iOS Property List files.
 
 .. rst-class:: classref-method
 
-|void| **add_ios_project_static_lib**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **add_ios_project_static_lib**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_project_static_lib>`
 
 Adds a static lib from the given ``path`` to the iOS project.
 
@@ -563,7 +621,7 @@ Adds a static lib from the given ``path`` to the iOS project.
 
 .. rst-class:: classref-method
 
-|void| **add_macos_plugin_file**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **add_macos_plugin_file**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_macos_plugin_file>`
 
 Adds file or directory matching ``path`` to ``PlugIns`` directory of macOS app bundle.
 
@@ -577,7 +635,7 @@ Adds file or directory matching ``path`` to ``PlugIns`` directory of macOS app b
 
 .. rst-class:: classref-method
 
-|void| **add_shared_object**\ (\ path\: :ref:`String<class_String>`, tags\: :ref:`PackedStringArray<class_PackedStringArray>`, target\: :ref:`String<class_String>`\ )
+|void| **add_shared_object**\ (\ path\: :ref:`String<class_String>`, tags\: :ref:`PackedStringArray<class_PackedStringArray>`, target\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_shared_object>`
 
 Adds a shared object or a directory containing only shared objects with the given ``tags`` and destination ``path``.
 
@@ -589,13 +647,37 @@ In case of a directory code-sign will error if you place non code object in dire
 
 ----
 
+.. _class_EditorExportPlugin_method_get_export_platform:
+
+.. rst-class:: classref-method
+
+:ref:`EditorExportPlatform<class_EditorExportPlatform>` **get_export_platform**\ (\ ) |const| :ref:`🔗<class_EditorExportPlugin_method_get_export_platform>`
+
+Returns currently used export platform.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method_get_export_preset:
+
+.. rst-class:: classref-method
+
+:ref:`EditorExportPreset<class_EditorExportPreset>` **get_export_preset**\ (\ ) |const| :ref:`🔗<class_EditorExportPlugin_method_get_export_preset>`
+
+Returns currently used export preset.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlugin_method_get_option:
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_option**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_option**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_EditorExportPlugin_method_get_option>`
 
-Returns the current value of an export option supplied by :ref:`_get_export_options<class_EditorExportPlugin_private_method__get_export_options>`.
+Returns the current value of an export option supplied by :ref:`_get_export_options()<class_EditorExportPlugin_private_method__get_export_options>`.
 
 .. rst-class:: classref-item-separator
 
@@ -605,9 +687,9 @@ Returns the current value of an export option supplied by :ref:`_get_export_opti
 
 .. rst-class:: classref-method
 
-|void| **skip**\ (\ )
+|void| **skip**\ (\ ) :ref:`🔗<class_EditorExportPlugin_method_skip>`
 
-To be called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>`. Skips the current file, so it's not included in the export.
+To be called inside :ref:`_export_file()<class_EditorExportPlugin_private_method__export_file>`. Skips the current file, so it's not included in the export.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

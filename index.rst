@@ -53,12 +53,10 @@ into your language, or talk to us on the ``#documentation`` channel on the
 Offline documentation
 ---------------------
 
-To browse the documentation offline, you can `download an HTML copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip>`__
-for offline reading (updated every Monday). Extract the ZIP archive then open
+To browse the documentation offline, you can download an HTML copy (updated every Monday): `stable <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-stable.zip>`__, `latest <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip>`__, `3.6 <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-3.6.zip>`__. Extract the ZIP archive then open
 the top-level ``index.html`` in a web browser.
 
-For mobile devices or e-readers, you can also `download an ePub copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip>`__
-for offline reading (updated every Monday). Extract the ZIP archive then open
+For mobile devices or e-readers, you can also download an ePub copy (updated every Monday): `stable <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-stable.zip>`__, `latest <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip>`__, `3.6 <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-3.6.zip>`__. Extract the ZIP archive then open
 the ``GodotEngine.epub`` file in an e-book reader application.
 
 .. Below is the main table-of-content tree of the documentation website.
@@ -133,7 +131,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
    :caption: Contributing
    :name: sec-contributing
 
-   contributing/ways_to_contribute
+   contributing/how_to_contribute
    contributing/workflow/index
    contributing/development/index
    contributing/documentation/index

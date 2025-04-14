@@ -4,7 +4,7 @@
     - Giving a *short* and sweet hands-on intro to GDScript. The page should
       focus on working in the code editor.
     - We assume the reader has programming foundations. If you don't, consider
-      taking the course we recommend in the :ref:`introduction to Godot page <doc_learning_programming>`.
+      taking the course we recommend in the :ref:`introduction to Godot page <doc_introduction_learning_programming>`.
 
     Techniques:
 
@@ -19,16 +19,18 @@ Creating your first script
 ==========================
 
 In this lesson, you will code your first script to make the Godot icon turn in
-circles using GDScript. As we mentioned :ref:`in the introduction
-<toc-learn-introduction>`, we assume you have programming foundations.
-The equivalent C# code has been included in another tab for convenience.
+circles. As we mentioned :ref:`in the introduction
+<doc_introduction_learning_programming>`, we assume you have programming
+foundations. 
+
+This tutorial is written for GDScript, and the equivalent C# code is included in
+another tab of each codeblock for convenience.
 
 .. image:: img/scripting_first_script_rotating_godot.gif
 
 .. seealso:: To learn more about GDScript, its keywords, and its syntax, head to
-             the :ref:`GDScript reference<doc_gdscript>`.
-
-.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
+             the :ref:`doc_gdscript` section. To learn more about C#,
+             head to the :ref:`doc_c_sharp` section.
 
 Project setup
 -------------
@@ -37,10 +39,10 @@ Please :ref:`create a new project <doc_creating_and_importing_projects>` to
 start with a clean slate. Your project should contain one picture: the Godot
 icon, which we often use for prototyping in the community.
 
-.. Godot icon
+.. image:: img/scripting_first_script_icon.svg
 
 We need to create a Sprite2D node to display it in the game. In the Scene dock,
-click the Other Node button.
+click the **Other Node** button.
 
 .. image:: img/scripting_first_script_click_other_node.webp
 
@@ -54,7 +56,7 @@ Your Scene tab should now only have a Sprite2D node.
 .. image:: img/scripting_first_script_scene_tree.webp
 
 A Sprite2D node needs a texture to display. In the Inspector on the right, you
-can see that the Texture property says "[empty]". To display the Godot icon,
+can see that the **Texture** property says ``<empty>``. To display the Godot icon,
 click and drag the file ``icon.svg`` from the FileSystem dock onto the Texture
 slot.
 
@@ -73,15 +75,16 @@ Creating a new script
 ---------------------
 
 To create and attach a new script to our node, right-click on Sprite2D in the
-scene dock and select "Attach Script".
+Scene dock and select **Attach Script**.
 
 .. image:: img/scripting_first_script_attach_script.webp
 
-The Attach Node Script window appears. It allows you to select the script's
+The **Attach Node Script** window appears. It allows you to select the script's
 language and file path, among other options.
 
-Change the Template field from "Node: Default" to "Object: Empty" to start with a clean file. Leave the
-other options set to their default values and click the Create button to create the script.
+Change the **Template** field from ``Node: Default`` to ``Object: Empty`` to
+start with a clean file. Leave the other options set to their default values and
+click the **Create** button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
@@ -101,7 +104,8 @@ the following line of code:
  .. code-tab:: csharp C#
 
     using Godot;
-
+    using System;
+    
     public partial class MySprite2D : Sprite2D
     {
     }
@@ -245,9 +249,10 @@ our sprite's rotation every frame. Here, ``rotation`` is a property inherited
 from the class ``Node2D``, which ``Sprite2D`` extends. It controls the rotation
 of our node and works with radians.
 
-.. tip:: In the code editor, you can ctrl-click on any built-in property or
-         function like ``position``, ``rotation``, or ``_process`` to open the
-         corresponding documentation in a new tab.
+.. tip:: In the code editor, you can :kbd:`Ctrl + Click` (:kbd:`Cmd + Click` on
+         macOS) on any built-in property or function like ``position``,
+         ``rotation``, or ``_process`` to open the corresponding documentation
+         in a new tab.
 
 Run the scene to see the Godot icon turn in-place.
 
@@ -327,7 +332,8 @@ Here is the complete ``sprite_2d.gd`` file for reference.
  .. code-tab:: csharp C#
 
     using Godot;
-
+    using System;
+    
     public partial class MySprite2D : Sprite2D
     {
         private int _speed = 400;

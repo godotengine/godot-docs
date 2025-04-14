@@ -23,13 +23,19 @@ script editor's status bar. The example below has 2 warnings:
 
 .. image:: img/typed_gdscript_warning_example.webp
 
-To ignore specific warnings in one file, insert an annotation of the
-form ``@warning_ignore("warning-id")``, or click on the ignore link to the
-left of the warning's description. Godot will add an annotation above the
-corresponding line and the code won't trigger the corresponding warning
-anymore:
+To ignore single warnings within a file, use the
+:ref:`@warning_ignore <class_@GDScript_annotation_@warning_ignore>` annotation.
+You can click on the ignore link to the left of the warning's description.
+Godot will add an annotation above the corresponding line and the code
+won't trigger the corresponding warning anymore:
 
 .. image:: img/typed_gdscript_warning_system_ignore.webp
+
+To ignore multiple warnings in a region within a file, use the
+:ref:`@warning_ignore_start <class_@GDScript_annotation_@warning_ignore_start>`
+and :ref:`@warning_ignore_restore <class_@GDScript_annotation_@warning_ignore_restore>`
+annotations. You can omit ``@warning_ignore_restore`` if you want to ignore
+the specified warning types until the end of the file.
 
 Warnings won't prevent the game from running, but you can turn them into
 errors if you'd like. This way your game won't compile unless you fix

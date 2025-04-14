@@ -54,7 +54,7 @@ If the file has no resources, ``load_steps`` is omitted. The engine will
 still load the file correctly if ``load_steps`` is incorrect, but this will affect
 loading bars and any other piece of code relying on that value.
 
-``uid`` is an unique string-based identifier representing the scene. This is
+``uid`` is a unique string-based identifier representing the scene. This is
 used by the engine to track files that are moved around, even while the editor
 is closed. Scripts can also load UID-based resources using the ``uid://`` path
 prefix to avoid relying on filesystem paths. This makes it possible to move
@@ -127,8 +127,8 @@ the path should be ``"."``. Here is an example scene tree
 
 .. tip::
 
-    To make the file structure easier to grasp, you can saving a file with any
-    given node or resource then inspect it yourself in an external editor. You
+    To make the file structure easier to grasp, you can save a file with any
+    given node or resource and then inspect it yourself in an external editor. You
     can also make incremental changes in the Godot editor, and keep an external
     text editor open on the ``.tscn`` or ``.tres`` file with auto-reload enabled
     to see what changes.
@@ -193,7 +193,7 @@ For example, the ``skeleton`` property in the MeshInstance3D node called
 Skeleton3D
 ~~~~~~~~~~
 
-The :ref:`class_Skeleton3D` node inherits the Node3D node, but may alsohave a
+The :ref:`class_Skeleton3D` node inherits the Node3D node, but may also have a
 list of bones described in key-value pairs in the format
 ``bones/<id>/<attribute> = value``. The bone attributes consist of:
 
@@ -279,8 +279,8 @@ External resources
 ~~~~~~~~~~~~~~~~~~
 
 External resources are links to resources not contained within the TSCN file
-itself. An external resource consists of a path, a type, an UID (used to map its
-filesystem location to an unique identifier) and an ID (used to refer to the
+itself. An external resource consists of a path, a type, a UID (used to map its
+filesystem location to a unique identifier) and an ID (used to refer to the
 resource in the scene file).
 
 Godot always generates absolute paths relative to the resource directory and
@@ -328,8 +328,6 @@ An ArrayMesh consists of several surfaces contained in the ``_surfaces`` array
 with the following keys:
 
 - ``aabb``: The computed axis-aligned bounding box for visibility.
-  ``Mesh.PrimitiveType`` Godot enum. ``0`` = points, ``1`` = lines, ``2`` = line
-  strip, ``3`` = triangles (most common), ``4`` = triangle strip.
 - ``attribute_data``: Vertex attribute data, such as normals, tangents, vertex
   colors, UV1, UV2 and custom vertex data.
 - ``bone_aabbs``: The axis-aligned bounding box of each bone for visibility.
@@ -345,7 +343,8 @@ with the following keys:
 - ``material``: The material used when drawing the surface.
 - ``name``: The surface's name. This can be used in scripts and is imported from
   3D DCCs.
-- ``primitive``: The surface's primitive type, matching the
+- ``primitive``: The surface's primitive type, matching the ``Mesh.PrimitiveType`` Godot enum. ``0`` = points, ``1`` = lines, ``2`` = line
+  strip, ``3`` = triangles (most common), ``4`` = triangle strip.
 - ``skin_data``: Bone weight data.
 - ``vertex_count``: Number of vertices in the surface. This must match ``vertex_data``'s size.
 - ``vertex_data``: The vertex position data.

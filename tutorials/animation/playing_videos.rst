@@ -8,9 +8,9 @@ Godot supports video playback with the :ref:`class_VideoStreamPlayer` node.
 Supported playback formats
 --------------------------
 
-The only supported format in core is **Ogg Theora** (not to be confused with Ogg
-Vorbis audio). It's possible for extensions to bring support for additional
-formats, but no such extensions exist yet as of July 2022.
+The only supported format in core is **Ogg Theora** (not to be confused with
+Ogg Vorbis audio) with optional Ogg Vorbis audio tracks. It's possible for
+extensions to bring support for additional formats.
 
 H.264 and H.265 cannot be supported in core Godot, as they are both encumbered
 by software patents. AV1 is royalty-free, but it remains slow to decode on the
@@ -45,7 +45,7 @@ Setting up VideoStreamPlayer
    desired.
 
 Handling resizing and different aspect ratios
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default in Godot 4.0, the VideoStreamPlayer will automatically be resized to match
 the video's resolution. You can make it follow usual :ref:`class_Control` sizing
@@ -85,7 +85,7 @@ to fit the whole screen while avoiding distortion.
     aspect ratios in your project.
 
 Displaying a video on a 3D surface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using a VideoStreamPlayer node as a child of a :ref:`class_SubViewport` node,
 it's possible to display any 2D node on a 3D surface. For example, this can be
@@ -117,7 +117,7 @@ See :ref:`doc_viewports` and the
 for more information on setting this up.
 
 Looping a video
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 For looping a video, the **Loop** property can be enabled. This will seamlessly
 restart the video when it reaches its end.
@@ -156,6 +156,7 @@ There are several limitations with the current implementation of video playback 
 - Changing playback speed is not supported. VideoStreamPlayer also won't follow
   :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
 - Streaming a video from a URL is not supported.
+- Only mono and stereo audio output is supported.
 
 .. _doc_playing_videos_recommended_theora_encoding_settings:
 
@@ -181,11 +182,10 @@ you should use a lossless or uncompressed format as an intermediate format to
 maximize the quality of the output Ogg Theora video, but this can require a lot
 of disk space.
 
-`HandBrake <https://handbrake.fr/>`__
-(GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open source tools
-for this purpose. FFmpeg has a steeper learning curve, but it's more powerful.
+`FFmpeg <https://ffmpeg.org/>`__ (CLI) is a popular open source tool
+for this purpose. FFmpeg has a steep learning curve, but it's powerful tool.
 
-Here are example FFmpeg commands to convert a MP4 video to Ogg Theora. Since
+Here are example FFmpeg commands to convert an MP4 video to Ogg Theora. Since
 FFmpeg supports a lot of input formats, you should be able to use the commands
 below with almost any input video format (AVI, MOV, WebM, …).
 
@@ -195,8 +195,20 @@ below with almost any input video format (AVI, MOV, WebM, …).
    You can check this by running ``ffmpeg`` without any arguments, then looking
    at the ``configuration:`` line in the command output.
 
+.. UPDATE: When the FFmpeg bugfixes for https://trac.ffmpeg.org/ticket/11451 and
+.. https://trac.ffmpeg.org/ticket/11454 are included in a stable FFmpeg release,
+.. this note can be removed. That will likely be FFmpeg 7.2 or 8.0, and will
+.. likely happen during the Godot 4.5 or 4.6 release cycle.
+
+.. warning::
+
+   All FFmpeg releases before Feb 20th, 2025 could produce bad video streams
+   due to a couple of bugs. It's highly recommended to use one of the latest
+   static daily builds, or build FFmpeg from their master branch where they're
+   already fixed.
+
 Balancing quality and file size
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **video quality** level (``-q:v``) must be between ``1`` and ``10``. Quality
 ``6`` is a good compromise between quality and file size. If encoding at a high
@@ -217,8 +229,16 @@ dropouts in case of high system load. See
 for a table listing Ogg Vorbis audio quality presets and their respective
 variable bitrates.
 
+The **GOP (Group of Pictures) size** (``-g:v``) is the max interval between
+keyframes. Increasing this value can improve compression with almost no impact
+on quality. The valid range goes from ``0`` to ``2,147,483,648``, although
+compression benefits will fade away and even be reversed as the GOP size
+increases. The default size (``12``) is too low for most types of content, it's
+therefore recommended to test higher GOP sizes before reducing video quality.
+Values between ``64`` and ``512`` usually give the best compression.
+
 FFmpeg: Convert while preserving original video resolution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following command converts the video while keeping its original resolution.
 The video and audio's bitrate will be variable to maximize quality while saving
@@ -227,10 +247,10 @@ static scenes).
 
 ::
 
-    ffmpeg -i input.mp4 -q:v 6 -q:a 6 output.ogv
+    ffmpeg -i input.mp4 -q:v 6 -q:a 6 -g:v 64 output.ogv
 
 FFmpeg: Resize the video then convert it
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following command resizes a video to be 720 pixels tall (720p), while
 preserving its existing aspect ratio. This helps decrease the file size
@@ -238,7 +258,7 @@ significantly if the source is recorded at a higher resolution than 720p:
 
 ::
 
-    ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
+    ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 -g:v 64 output.ogv
 
 
 .. Chroma Key Functionality Documentation
@@ -253,14 +273,14 @@ Chroma key, commonly known as the "green screen" or "blue screen" effect, allows
 We will achieve the chroma key effect by writing a custom shader in GDScript and using a `VideoStreamPlayer` node to display the video content.
 
 Scene Setup
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Ensure that the scene contains a `VideoStreamPlayer` node to play the video and a `Control` node to hold the UI elements for controlling the chroma key effect.
 
    .. image:: img/chroma_key_scene.webp
 
 Writing the Custom Shader
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To implement the chroma key effect, follow these steps:
 
@@ -268,81 +288,120 @@ To implement the chroma key effect, follow these steps:
 
 2. In the "ChromaKeyShader.gdshader" file, write the custom shader code as shown below:
 
-.. code-block:: gd
+.. code-block:: glsl
 
    shader_type canvas_item;
 
-   # Uniform variables for chroma key effect
+   // Uniform variables for chroma key effect
    uniform vec3 chroma_key_color : source_color = vec3(0.0, 1.0, 0.0);
    uniform float pickup_range : hint_range(0.0, 1.0) = 0.1;
    uniform float fade_amount : hint_range(0.0, 1.0) = 0.1;
 
    void fragment() {
-       # Get the color from the texture at the given UV coordinates
+       // Get the color from the texture at the given UV coordinates
        vec4 color = texture(TEXTURE, UV);
 
-       # Calculate the distance between the current color and the chroma key color
+       // Calculate the distance between the current color and the chroma key color
        float distance = length(color.rgb - chroma_key_color);
 
-       # If the distance is within the pickup range, discard the pixel
-       # the lesser the distance more likely the colors are
+       // If the distance is within the pickup range, discard the pixel
+       // the lesser the distance more likely the colors are
        if (distance <= pickup_range) {
            discard;
        }
 
-       # Calculate the fade factor based on the pickup range and fade amount
+       // Calculate the fade factor based on the pickup range and fade amount
        float fade_factor = smoothstep(pickup_range, pickup_range + fade_amount, distance);
 
-       # Set the output color with the original RGB values and the calculated fade factor
+       // Set the output color with the original RGB values and the calculated fade factor
        COLOR = vec4(color.rgb, fade_factor);
    }
 
-The shader uses the distance calculation to identify pixels close to the chroma key color and discards them, 
-effectively removing the selected color. Pixels that are slightly further away from the chroma key color are 
-faded based on the fade_factor, blending them smoothly with the surrounding colors. 
-This process creates the desired chroma key effect, making it appear as if the background has been replaced with 
+The shader uses the distance calculation to identify pixels close to the chroma key color and discards them,
+effectively removing the selected color. Pixels that are slightly further away from the chroma key color are
+faded based on the fade_factor, blending them smoothly with the surrounding colors.
+This process creates the desired chroma key effect, making it appear as if the background has been replaced with
 another image or video.
 
-The code above represents a simple demonstration of the Chroma Key shader, 
+The code above represents a simple demonstration of the Chroma Key shader,
 and users can customize it according to their specific requirements.
 
 UI Controls
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 To allow users to manipulate the chroma key effect in real-time, we created sliders in the `Control` node. The `Control` node's script contains the following functions:
 
-.. code-block:: gd
+.. tabs::
+ .. code-tab:: gdscript
 
-   extends Control
+    extends Control
 
-   func _on_color_picker_button_color_changed(color):
-       # Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/chroma_key_color", color)
+    func _on_color_picker_button_color_changed(color):
+        # Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/chroma_key_color", color)
 
-   func _on_h_slider_value_changed(value):
-       # Update the "pickup_range" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/pickup_range", value)
+    func _on_h_slider_value_changed(value):
+        # Update the "pickup_range" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/pickup_range", value)
 
-   func _on_h_slider_2_value_changed(value):
-       # Update the "fade_amount" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/fade_amount", value)
+    func _on_h_slider_2_value_changed(value):
+        # Update the "fade_amount" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/fade_amount", value)
 
    func _on_video_stream_player_finished():
-       # Restart the video playback when it's finished
-       $VideoStreamPlayer.play()
+        # Restart the video playback when it's finished.
+        $VideoStreamPlayer.play()
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyControl : Control
+    {
+        private VideoStreamPlayer _videoStreamPlayer;
+
+        public override void _Ready()
+        {
+            _videoStreamPlayer = GetNode<VideoStreamPlayer>("VideoStreamPlayer");
+        }
+
+        private void OnColorPickerButtonColorChanged(Color color)
+        {
+            // Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/chroma_key_color", color);
+        }
+
+        private void OnHSliderValueChanged(double value)
+        {
+            // Update the "pickup_range" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/pickup_range", value);
+        }
+
+        private void OnHSlider2ValueChanged(double value)
+        {
+            // Update the "fade_amount" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/fade_amount", value);
+        }
+
+        private void OnVideoStreamPlayerFinished()
+        {
+            // Restart the video playback when it's finished.
+            _videoStreamPlayer.Play();
+        }
+    }
 
 also make sure that the range of the sliders are appropriate, our settings are :
 
    .. image:: img/slider_range.webp
 
 Signal Handling
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
-Connect the appropriate signal from the UI elements to the `Control` node's script. 
-you created in the `Control` node's script to control the chroma key effect. 
-These signal handlers will update the shader's uniform variables 
+Connect the appropriate signal from the UI elements to the `Control` node's script.
+you created in the `Control` node's script to control the chroma key effect.
+These signal handlers will update the shader's uniform variables
 in response to user input.
 
-Save and run the scene to see the chroma key effect in action! With the provided UI controls, 
-you can now adjust the chroma key color, pickup range, and fade amount in real-time, achieving the desired 
+Save and run the scene to see the chroma key effect in action! With the provided UI controls,
+you can now adjust the chroma key color, pickup range, and fade amount in real-time, achieving the desired
 chroma key functionality for your video content.

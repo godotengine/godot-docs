@@ -22,21 +22,24 @@ Creating a VisualShader
 VisualShaders can be created in any :ref:`class_ShaderMaterial`. To begin using
 VisualShaders, create a new ``ShaderMaterial`` in an object of your choice.
 
-.. image:: img/shader_material_create_mesh.png
+.. image:: img/shader_material_create_mesh.webp
 
-Then assign a :ref:`class_VisualShader` resource to the ``Shader`` property.
+Then assign a :ref:`class_Shader` resource to the ``Shader`` property.
 
 .. image:: img/visual_shader_create.webp
 
 Click on the new ``Shader`` resource and the Create Shader dialog will
-open automatically. Change the Type option to VisualShader in the dropdown.
+open automatically. Change the Type option to :ref:`class_VisualShader`
+in the dropdown, then give it a name.
 
 .. image:: img/visual_shader_create2.webp
 
-The layout of the Visual Shader Editor comprises two parts:
-the upper toolbar and the graph itself.
+Click on the visual shader you just created to open the Shader Editor.
+The layout of the Shader Editor comprises four parts, a file list on
+the right, the upper toolbar, the graph itself, and a material preview
+on the right that can be toggled off
 
-.. image:: img/visual_shader_editor2.png
+.. image:: img/visual_shader_editor2.webp
 
 From left to right in the toolbar:
 
@@ -46,7 +49,14 @@ From left to right in the toolbar:
   script shaders, it defines what built-in nodes will be available.
 - The following buttons and number input control the zooming level, grid
   snapping and distance between grid lines (in pixels).
-- The last icon shows the generated shader code corresponding to your graph.
+- The toggle controls if the graph minimap in the bottom right of the editor
+  is visible or not.
+- The automatically arrange selected nodes button will try to organize any
+  nodes you have selected as efficiently and cleanly as possible.
+- The Manage Varyings button opens a dropdown that lets you add or remove a
+  varying.
+- The show generated code button shows shader code corresponding to your graph.
+- The last icon toggles the material preview on or off.
 
 .. note::
 
@@ -68,7 +78,7 @@ create your shader. To add a new node, click on the ``Add Node`` button on the
 upper left corner or right click on any empty location in the graph, and a menu
 will pop up.
 
-.. image:: img/vs_popup.png
+.. image:: img/vs_popup.webp
 
 This popup has the following properties:
 
@@ -117,7 +127,7 @@ These ports are colored to differentiate type of port:
      - Description
      - Example
    * - Scalar
-     - Cyan
+     - Gray
      - Scalar is a single value.
      - |scalar|
    * - Vector
@@ -125,15 +135,15 @@ These ports are colored to differentiate type of port:
      - Vector is a set of values.
      - |vector|
    * - Boolean
-     - Blue
+     - Green
      - On or off, true or false.
      - |boolean|
    * - Transform
-     - Orange
+     - Pink
      - A matrix, usually used to transform vertices.
      - |transform|
    * - Sampler
-     - Yellow
+     - Orange
      - A texture sampler. It can be used to sample textures.
      - |sampler|
 
@@ -149,7 +159,7 @@ Below are some special nodes that are worth knowing about. The list is not
 exhaustive and might be expanded with more nodes and examples.
 
 Expression node
-+++++++++++++++
+~~~~~~~~~~~~~~~
 
 The ``Expression`` node allows you to write Godot Shading Language (GLSL-like)
 expressions inside your visual shaders. The node has buttons to add any amount
@@ -160,26 +170,40 @@ parsing or compilation errors will be printed to the Output tab. The outputs are
 initialized to their zero value by default. The node is located under the
 Special tab and can be used in all shader modes.
 
-.. image:: img/vs_expression.gif
-
 The possibilities of this node are almost limitless – you can write complex
 procedures, and use all the power of text-based shaders, such as loops, the
 ``discard`` keyword, extended types, etc. For example:
 
 .. image:: img/vs_expression2.png
 
+Reroute node
+~~~~~~~~~~~~
+
+The ``Reroute`` node is used purely for organizational purposes. In a complicated
+shader with many nodes you may find that the paths between nodes can make
+things hard to read. Reroute, as its name suggests, allows you to adjust the path
+between nodes to make things easier to read. You can even have multiple reroute
+nodes for a single path, which can be used to make right angles.
+
+.. image:: img/vs_reroute.webp
+
+To move a reroute node move your mouse cursor above it, and grab the handle that
+appears.
+
+.. image:: img/vs_reroute_handle.webp
+
 Fresnel node
-++++++++++++
+~~~~~~~~~~~~
 
 The ``Fresnel`` node is designed to accept normal and view vectors and produces
 a scalar which is the saturated dot product between them. Additionally, you can
 setup the inversion and the power of equation. The ``Fresnel`` node is great for
 adding a rim-like lighting effect to objects.
 
-.. image:: img/vs_fresnel.png
+.. image:: img/vs_fresnel.webp
 
 Boolean node
-++++++++++++
+~~~~~~~~~~~~
 
 The ``Boolean`` node can be converted to ``Scalar`` or ``Vector`` to represent
 ``0`` or ``1`` and ``(0, 0, 0)`` or ``(1, 1, 1)`` respectively. This property
@@ -188,7 +212,7 @@ can be used to enable or disable some effect parts with one click.
 .. image:: img/vs_boolean.gif
 
 If node
-+++++++
+~~~~~~~
 
 The ``If`` node allows you to setup a vector which will be returned the result
 of the comparison between ``a`` and ``b``. There are three vectors which can be
@@ -199,10 +223,25 @@ comparison threshold – by default it is equal to the minimal value, i.e.
 .. image:: img/vs_if.png
 
 Switch node
-+++++++++++
+~~~~~~~~~~~
 
 The ``Switch`` node returns a vector if the boolean condition is ``true`` or
-``false``. ``Boolean`` was introduced above. If you convert a vector to a true
-boolean, all components of the vector should be above zero.
+``false``. ``Boolean`` was introduced above. If you want to convert a vector
+to a true boolean, all components of the vector should be non-zero.
 
-.. image:: img/vs_switch.png
+.. image:: img/vs_switch.webp
+
+Mesh Emitter
+~~~~~~~~~~~~
+
+The ``Mesh Emitter`` node is used for emitting particles from mesh vertices. This is
+only available for shaders that are in ``Particles`` mode.
+
+Keep in mind that not all 3D objects are mesh files. a glTF file can't be dragged
+and dropped into the graph. However, you can create an inherited scene from it,
+save the mesh in that scene as it's own file, and use that.
+
+.. image:: img/vs_meshemitter.webp
+
+You can also drag and drop obj files into the graph editor to add the node
+for that specific mesh, other mesh files will not work for this.

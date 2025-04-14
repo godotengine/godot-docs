@@ -50,7 +50,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Source**:
+enum **Source**: :ref:`🔗<enum_VisualShaderNodeTexture_Source>`
 
 .. _class_VisualShaderNodeTexture_constant_SOURCE_TEXTURE:
 
@@ -132,7 +132,7 @@ Represents the size of the :ref:`Source<enum_VisualShaderNodeTexture_Source>` en
 
 .. rst-class:: classref-enumeration
 
-enum **TextureType**:
+enum **TextureType**: :ref:`🔗<enum_VisualShaderNodeTexture_TextureType>`
 
 .. _class_VisualShaderNodeTexture_constant_TYPE_DATA:
 
@@ -179,7 +179,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Source<enum_VisualShaderNodeTexture_Source>` **source** = ``0``
+:ref:`Source<enum_VisualShaderNodeTexture_Source>` **source** = ``0`` :ref:`🔗<class_VisualShaderNodeTexture_property_source>`
 
 .. rst-class:: classref-property-setget
 
@@ -196,7 +196,7 @@ Determines the source for the lookup. See :ref:`Source<enum_VisualShaderNodeText
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_VisualShaderNodeTexture_property_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -213,7 +213,7 @@ The source texture, if needed for the selected :ref:`source<class_VisualShaderNo
 
 .. rst-class:: classref-property
 
-:ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **texture_type** = ``0``
+:ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **texture_type** = ``0`` :ref:`🔗<class_VisualShaderNodeTexture_property_texture_type>`
 
 .. rst-class:: classref-property-setget
 

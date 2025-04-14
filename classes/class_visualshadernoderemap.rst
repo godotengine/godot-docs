@@ -19,7 +19,122 @@ A visual shader node for remap function.
 Description
 -----------
 
-Remap will transform the input range into output range, e.g. you can change a ``0..1`` value to ``-2..2`` etc. See :ref:`@GlobalScope.remap<class_@GlobalScope_method_remap>` for more details.
+Remap will transform the input range into output range, e.g. you can change a ``0..1`` value to ``-2..2`` etc. See :ref:`@GlobalScope.remap()<class_@GlobalScope_method_remap>` for more details.
+
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------+--------------------------------------------------------------+-------+
+   | :ref:`OpType<enum_VisualShaderNodeRemap_OpType>` | :ref:`op_type<class_VisualShaderNodeRemap_property_op_type>` | ``0`` |
+   +--------------------------------------------------+--------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_VisualShaderNodeRemap_OpType:
+
+.. rst-class:: classref-enumeration
+
+enum **OpType**: :ref:`🔗<enum_VisualShaderNodeRemap_OpType>`
+
+.. _class_VisualShaderNodeRemap_constant_OP_TYPE_SCALAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **OP_TYPE_SCALAR** = ``0``
+
+A floating-point scalar type.
+
+.. _class_VisualShaderNodeRemap_constant_OP_TYPE_VECTOR_2D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **OP_TYPE_VECTOR_2D** = ``1``
+
+A 2D vector type.
+
+.. _class_VisualShaderNodeRemap_constant_OP_TYPE_VECTOR_2D_SCALAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **OP_TYPE_VECTOR_2D_SCALAR** = ``2``
+
+The ``value`` port uses a 2D vector type, while the ``input min``, ``input max``, ``output min``, and ``output max`` ports use a floating-point scalar type.
+
+.. _class_VisualShaderNodeRemap_constant_OP_TYPE_VECTOR_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **OP_TYPE_VECTOR_3D** = ``3``
+
+A 3D vector type.
+
+.. _class_VisualShaderNodeRemap_constant_OP_TYPE_VECTOR_3D_SCALAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **OP_TYPE_VECTOR_3D_SCALAR** = ``4``
+
+The ``value`` port uses a 3D vector type, while the ``input min``, ``input max``, ``output min``, and ``output max`` ports use a floating-point scalar type.
+
+.. _class_VisualShaderNodeRemap_constant_OP_TYPE_VECTOR_4D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **OP_TYPE_VECTOR_4D** = ``5``
+
+A 4D vector type.
+
+.. _class_VisualShaderNodeRemap_constant_OP_TYPE_VECTOR_4D_SCALAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **OP_TYPE_VECTOR_4D_SCALAR** = ``6``
+
+The ``value`` port uses a 4D vector type, while the ``input min``, ``input max``, ``output min``, and ``output max`` ports use a floating-point scalar type.
+
+.. _class_VisualShaderNodeRemap_constant_OP_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **OP_TYPE_MAX** = ``7``
+
+Represents the size of the :ref:`OpType<enum_VisualShaderNodeRemap_OpType>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_VisualShaderNodeRemap_property_op_type:
+
+.. rst-class:: classref-property
+
+:ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **op_type** = ``0`` :ref:`🔗<class_VisualShaderNodeRemap_property_op_type>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_op_type**\ (\ value\: :ref:`OpType<enum_VisualShaderNodeRemap_OpType>`\ )
+- :ref:`OpType<enum_VisualShaderNodeRemap_OpType>` **get_op_type**\ (\ )
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

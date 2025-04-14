@@ -31,11 +31,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------+-------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`custom_step<class_ScrollBar_property_custom_step>` | ``-1.0``                                                    |
-   +---------------------------+----------------------------------------------------------+-------------------------------------------------------------+
-   | :ref:`float<class_float>` | step                                                     | ``0.0`` (overrides :ref:`Range<class_Range_property_step>`) |
-   +---------------------------+----------------------------------------------------------+-------------------------------------------------------------+
+   +------------------------------------------+----------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`float<class_float>`                | :ref:`custom_step<class_ScrollBar_property_custom_step>` | ``-1.0``                                                            |
+   +------------------------------------------+----------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                               | ``3`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
+   +------------------------------------------+----------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`float<class_float>`                | step                                                     | ``0.0`` (overrides :ref:`Range<class_Range_property_step>`)         |
+   +------------------------------------------+----------------------------------------------------------+---------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -82,7 +84,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**scrolling**\ (\ )
+**scrolling**\ (\ ) :ref:`🔗<class_ScrollBar_signal_scrolling>`
 
 Emitted when the scrollbar is being scrolled.
 
@@ -99,7 +101,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **custom_step** = ``-1.0``
+:ref:`float<class_float>` **custom_step** = ``-1.0`` :ref:`🔗<class_ScrollBar_property_custom_step>`
 
 .. rst-class:: classref-property-setget
 
@@ -121,7 +123,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **decrement**
+:ref:`Texture2D<class_Texture2D>` **decrement** :ref:`🔗<class_ScrollBar_theme_icon_decrement>`
 
 Icon used as a button to scroll the **ScrollBar** left/up. Supports custom step using the :ref:`custom_step<class_ScrollBar_property_custom_step>` property.
 
@@ -133,7 +135,7 @@ Icon used as a button to scroll the **ScrollBar** left/up. Supports custom step 
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **decrement_highlight**
+:ref:`Texture2D<class_Texture2D>` **decrement_highlight** :ref:`🔗<class_ScrollBar_theme_icon_decrement_highlight>`
 
 Displayed when the mouse cursor hovers over the decrement button.
 
@@ -145,7 +147,7 @@ Displayed when the mouse cursor hovers over the decrement button.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **decrement_pressed**
+:ref:`Texture2D<class_Texture2D>` **decrement_pressed** :ref:`🔗<class_ScrollBar_theme_icon_decrement_pressed>`
 
 Displayed when the decrement button is being pressed.
 
@@ -157,7 +159,7 @@ Displayed when the decrement button is being pressed.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **increment**
+:ref:`Texture2D<class_Texture2D>` **increment** :ref:`🔗<class_ScrollBar_theme_icon_increment>`
 
 Icon used as a button to scroll the **ScrollBar** right/down. Supports custom step using the :ref:`custom_step<class_ScrollBar_property_custom_step>` property.
 
@@ -169,7 +171,7 @@ Icon used as a button to scroll the **ScrollBar** right/down. Supports custom st
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **increment_highlight**
+:ref:`Texture2D<class_Texture2D>` **increment_highlight** :ref:`🔗<class_ScrollBar_theme_icon_increment_highlight>`
 
 Displayed when the mouse cursor hovers over the increment button.
 
@@ -181,7 +183,7 @@ Displayed when the mouse cursor hovers over the increment button.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **increment_pressed**
+:ref:`Texture2D<class_Texture2D>` **increment_pressed** :ref:`🔗<class_ScrollBar_theme_icon_increment_pressed>`
 
 Displayed when the increment button is being pressed.
 
@@ -193,7 +195,7 @@ Displayed when the increment button is being pressed.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **grabber**
+:ref:`StyleBox<class_StyleBox>` **grabber** :ref:`🔗<class_ScrollBar_theme_style_grabber>`
 
 Used as texture for the grabber, the draggable element representing current scroll.
 
@@ -205,7 +207,7 @@ Used as texture for the grabber, the draggable element representing current scro
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **grabber_highlight**
+:ref:`StyleBox<class_StyleBox>` **grabber_highlight** :ref:`🔗<class_ScrollBar_theme_style_grabber_highlight>`
 
 Used when the mouse hovers over the grabber.
 
@@ -217,7 +219,7 @@ Used when the mouse hovers over the grabber.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **grabber_pressed**
+:ref:`StyleBox<class_StyleBox>` **grabber_pressed** :ref:`🔗<class_ScrollBar_theme_style_grabber_pressed>`
 
 Used when the grabber is being dragged.
 
@@ -229,7 +231,7 @@ Used when the grabber is being dragged.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **scroll**
+:ref:`StyleBox<class_StyleBox>` **scroll** :ref:`🔗<class_ScrollBar_theme_style_scroll>`
 
 Used as background of this **ScrollBar**.
 
@@ -241,7 +243,7 @@ Used as background of this **ScrollBar**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **scroll_focus**
+:ref:`StyleBox<class_StyleBox>` **scroll_focus** :ref:`🔗<class_ScrollBar_theme_style_scroll_focus>`
 
 Used as background when the **ScrollBar** has the GUI focus.
 
