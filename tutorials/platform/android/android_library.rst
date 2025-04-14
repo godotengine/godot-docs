@@ -177,7 +177,13 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
   Note that it's also possible to create the Godot project in a separate directory and export it as a `PCK or ZIP file <https://docs.godotengine.org/en/stable/tutorials/export/exporting_projects.html#pck-versus-zip-pack-file-formats>`_
   to the Android app's ``assets`` directory.
-  Using this approach requires passing the ``--main-pack <pck_or_zip_filepath_relative_to_assets_dir>`` argument to the hosted Godot Engine instance using `GodotHost#getCommandLine() <https://github.com/godotengine/godot/blob/6916349697a4339216469e9bf5899b983d78db07/platform/android/java/lib/src/org/godotengine/godot/GodotHost.java#L45>`_.
+  Using this approach requires passing the ``--main-pack res://<pck_or_zip_filepath_relative_to_assets_dir>`` argument to the hosted Godot Engine instance using `GodotHost#getCommandLine() <https://github.com/godotengine/godot/blob/6916349697a4339216469e9bf5899b983d78db07/platform/android/java/lib/src/org/godotengine/godot/GodotHost.java#L45>`_.
+
+  .. code-block:: kotlin
+
+    override fun getCommandLine(): MutableList<String> {
+        return mutableListOf("--main-pack", "res://game.pck");
+    }
 
   The instructions below and the sample app follow the first approach of creating the Godot project in the Android app's ``assets`` directory.
 
