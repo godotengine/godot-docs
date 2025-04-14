@@ -48,7 +48,7 @@ This also means OpenXR needs to be enabled when Godot starts in order to set thi
 up correctly. Check the :ref:`Enabled<class_ProjectSettings_property_xr/openxr/enabled>`
 setting in your project settings under **XR > OpenXR**.
 
-.. image:: img/openxr_settings.webp
+.. image:: img/openxr_enabled.webp
 
 You can find several other settings related to OpenXR here as well. These can't be
 changed while your application is running. The default settings will get us started,
