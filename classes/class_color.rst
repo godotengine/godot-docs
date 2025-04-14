@@ -21,6 +21,8 @@ A color represented in RGBA format by a red (:ref:`r<class_Color_property_r>`), 
 
 Colors can be created in various ways: By the various **Color** constructors, by static methods such as :ref:`from_hsv()<class_Color_method_from_hsv>`, and by using a name from the set of standardized colors based on `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__ with the addition of :ref:`TRANSPARENT<class_Color_constant_TRANSPARENT>`. GDScript also provides :ref:`@GDScript.Color8()<class_@GDScript_method_Color8>`, which uses integers from ``0`` to ``255`` and doesn't support overbright colors.
 
+Color data may be stored in many color spaces and encodings. The :ref:`srgb_to_linear()<class_Color_method_srgb_to_linear>` and :ref:`linear_to_srgb()<class_Color_method_linear_to_srgb>` methods can convert between nonlinear sRGB encoding and linear RGB encoding.
+
 \ **Note:** In a boolean context, a Color will evaluate to ``false`` if it is equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
 \ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
@@ -1394,6 +1396,8 @@ Property Descriptions
 
 The color's alpha component, typically on the range of 0 to 1. A value of 0 means that the color is fully transparent. A value of 1 means that the color is fully opaque.
 
+\ **Note:** The alpha channel is always stored with linear encoding, regardless of the color space of the other color channels. The :ref:`linear_to_srgb()<class_Color_method_linear_to_srgb>` and :ref:`srgb_to_linear()<class_Color_method_srgb_to_linear>` methods do not affect the alpha channel.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2081,6 +2085,8 @@ Returns a new color resulting from making this color lighter by the specified ``
 
 Returns the color converted to the `sRGB <https://en.wikipedia.org/wiki/SRGB>`__ color space. This method assumes the original color is in the linear color space. See also :ref:`srgb_to_linear()<class_Color_method_srgb_to_linear>` which performs the opposite operation.
 
+\ **Note:** The color's :ref:`a<class_Color_property_a>`\ lpha channel is not affected. The alpha channel is always stored with linear encoding, regardless of the color space of the other color channels.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2092,6 +2098,8 @@ Returns the color converted to the `sRGB <https://en.wikipedia.org/wiki/SRGB>`__
 :ref:`Color<class_Color>` **srgb_to_linear**\ (\ ) |const| :ref:`🔗<class_Color_method_srgb_to_linear>`
 
 Returns the color converted to the linear color space. This method assumes the original color already is in the sRGB color space. See also :ref:`linear_to_srgb()<class_Color_method_linear_to_srgb>` which performs the opposite operation.
+
+\ **Note:** The color's :ref:`a<class_Color_property_a>`\ lpha channel is not affected. The alpha channel is always stored with linear encoding, regardless of the color space of the other color channels.
 
 .. rst-class:: classref-item-separator
 

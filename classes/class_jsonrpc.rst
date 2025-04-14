@@ -42,7 +42,7 @@ Methods
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`process_string<class_JSONRPC_method_process_string>`\ (\ action\: :ref:`String<class_String>`\ )                                                                                             |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`set_scope<class_JSONRPC_method_set_scope>`\ (\ scope\: :ref:`String<class_String>`, target\: :ref:`Object<class_Object>`\ )                                                                  |
+   | |void|                              | :ref:`set_method<class_JSONRPC_method_set_method>`\ (\ name\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ )                                                           |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -207,15 +207,17 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 ----
 
-.. _class_JSONRPC_method_set_scope:
+.. _class_JSONRPC_method_set_method:
 
 .. rst-class:: classref-method
 
-|void| **set_scope**\ (\ scope\: :ref:`String<class_String>`, target\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_JSONRPC_method_set_scope>`
+|void| **set_method**\ (\ name\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_JSONRPC_method_set_method>`
 
-.. container:: contribute
+Registers a callback for the given method name.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+- ``name`` The name that clients can use to access the callback.
+
+- ``callback`` The callback which will handle the specific method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

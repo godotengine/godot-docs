@@ -98,7 +98,7 @@ Property Descriptions
 - |void| **set_height**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_height**\ (\ )
 
-The height of the shape, in meters. This is only used when the shape type is "capsule" or "cylinder". This value should not be negative, and for "capsule" it should be at least twice the radius.
+The height of the shape, in meters. This is only used when the shape type is ``"capsule"`` or ``"cylinder"``. This value should not be negative, and for ``"capsule"`` it should be at least twice the radius.
 
 .. rst-class:: classref-item-separator
 
@@ -115,7 +115,7 @@ The height of the shape, in meters. This is only used when the shape type is "ca
 - |void| **set_importer_mesh**\ (\ value\: :ref:`ImporterMesh<class_ImporterMesh>`\ )
 - :ref:`ImporterMesh<class_ImporterMesh>` **get_importer_mesh**\ (\ )
 
-The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only used when the shape type is "hull" (convex hull) or "trimesh" (concave trimesh).
+The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only used when the shape type is ``"hull"`` (convex hull) or ``"trimesh"`` (concave trimesh).
 
 .. rst-class:: classref-item-separator
 
@@ -132,7 +132,7 @@ The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only 
 - |void| **set_is_trigger**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_is_trigger**\ (\ )
 
-If ``true``, indicates that this shape is a trigger. For Godot, this means that the shape should be a child of an Area3D node.
+If ``true``, indicates that this shape is a trigger. For Godot, this means that the shape should be a child of an :ref:`Area3D<class_Area3D>` node.
 
 This is the only variable not used in the :ref:`to_node()<class_GLTFPhysicsShape_method_to_node>` method, it's intended to be used alongside when deciding where to add the generated node as a child.
 
@@ -151,7 +151,7 @@ This is the only variable not used in the :ref:`to_node()<class_GLTFPhysicsShape
 - |void| **set_mesh_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_mesh_index**\ (\ )
 
-The index of the shape's mesh in the glTF file. This is only used when the shape type is "hull" (convex hull) or "trimesh" (concave trimesh).
+The index of the shape's mesh in the glTF file. This is only used when the shape type is ``"hull"`` (convex hull) or ``"trimesh"`` (concave trimesh).
 
 .. rst-class:: classref-item-separator
 
@@ -168,7 +168,7 @@ The index of the shape's mesh in the glTF file. This is only used when the shape
 - |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_radius**\ (\ )
 
-The radius of the shape, in meters. This is only used when the shape type is "capsule", "cylinder", or "sphere". This value should not be negative.
+The radius of the shape, in meters. This is only used when the shape type is ``"capsule"``, ``"cylinder"``, or ``"sphere"``. This value should not be negative.
 
 .. rst-class:: classref-item-separator
 
@@ -185,7 +185,7 @@ The radius of the shape, in meters. This is only used when the shape type is "ca
 - |void| **set_shape_type**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_shape_type**\ (\ )
 
-The type of shape this shape represents. Valid values are "box", "capsule", "cylinder", "sphere", "hull", and "trimesh".
+The type of shape this shape represents. Valid values are ``"box"``, ``"capsule"``, ``"cylinder"``, ``"sphere"``, ``"hull"``, and ``"trimesh"``.
 
 .. rst-class:: classref-item-separator
 
@@ -202,7 +202,7 @@ The type of shape this shape represents. Valid values are "box", "capsule", "cyl
 - |void| **set_size**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
 - :ref:`Vector3<class_Vector3>` **get_size**\ (\ )
 
-The size of the shape, in meters. This is only used when the shape type is "box", and it represents the "diameter" of the box. This value should not be negative.
+The size of the shape, in meters. This is only used when the shape type is ``"box"``, and it represents the ``"diameter"`` of the box. This value should not be negative.
 
 .. rst-class:: classref-section-separator
 

@@ -41,9 +41,11 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------+--------------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>` | :ref:`setting_count<class_SpringBoneSimulator3D_property_setting_count>` | ``0`` |
-   +-----------------------+--------------------------------------------------------------------------+-------+
+   +-------------------------------+----------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`external_force<class_SpringBoneSimulator3D_property_external_force>` | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+----------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`         | :ref:`setting_count<class_SpringBoneSimulator3D_property_setting_count>`   | ``0``                |
+   +-------------------------------+----------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -361,6 +363,25 @@ Enumerated value for the unconstrained rotation.
 Property Descriptions
 ---------------------
 
+.. _class_SpringBoneSimulator3D_property_external_force:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **external_force** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_SpringBoneSimulator3D_property_external_force>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_external_force**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_external_force**\ (\ )
+
+The constant force that always affected bones. It is equal to the result when the parent :ref:`Skeleton3D<class_Skeleton3D>` moves at this speed in the opposite direction.
+
+This is useful for effects such as wind and anti-gravity.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_SpringBoneSimulator3D_property_setting_count:
 
 .. rst-class:: classref-property
@@ -389,7 +410,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **are_all_child_collisions_enabled**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_SpringBoneSimulator3D_method_are_all_child_collisions_enabled>`
 
-Returns ``true`` if the all child :ref:`SpringBoneCollision3D<class_SpringBoneCollision3D>`\ s are contained in the collision list at ``index`` in the settings.
+Returns ``true`` if all child :ref:`SpringBoneCollision3D<class_SpringBoneCollision3D>`\ s are contained in the collision list at ``index`` in the settings.
 
 .. rst-class:: classref-item-separator
 
@@ -975,9 +996,9 @@ Sets the drag force damping curve of the bone chain.
 
 |void| **set_enable_all_child_collisions**\ (\ index\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SpringBoneSimulator3D_method_set_enable_all_child_collisions>`
 
-If sets ``enabled`` to ``true``, the all child :ref:`SpringBoneCollision3D<class_SpringBoneCollision3D>`\ s are collided and :ref:`set_exclude_collision_path()<class_SpringBoneSimulator3D_method_set_exclude_collision_path>` is enabled as an exclusion list at ``index`` in the settings.
+If ``enabled`` is ``true``, all child :ref:`SpringBoneCollision3D<class_SpringBoneCollision3D>`\ s are colliding and :ref:`set_exclude_collision_path()<class_SpringBoneSimulator3D_method_set_exclude_collision_path>` is enabled as an exclusion list at ``index`` in the settings.
 
-If sets ``enabled`` to ``false``, you need to manually register all valid collisions with :ref:`set_collision_path()<class_SpringBoneSimulator3D_method_set_collision_path>`.
+If ``enabled`` is ``false``, you need to manually register all valid collisions with :ref:`set_collision_path()<class_SpringBoneSimulator3D_method_set_collision_path>`.
 
 .. rst-class:: classref-item-separator
 

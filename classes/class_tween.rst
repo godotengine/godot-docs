@@ -33,8 +33,8 @@ A tween animation is created by adding :ref:`Tweener<class_Tweener>`\ s to the *
  .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
-    tween.tween_property($Sprite, "modulate", Color.RED, 1)
-    tween.tween_property($Sprite, "scale", Vector2(), 1)
+    tween.tween_property($Sprite, "modulate", Color.RED, 1.0)
+    tween.tween_property($Sprite, "scale", Vector2(), 1.0)
     tween.tween_callback($Sprite.queue_free)
 
  .. code-tab:: csharp
@@ -56,8 +56,8 @@ When a :ref:`Tweener<class_Tweener>` is created with one of the ``tween_*`` meth
  .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
-    tween.tween_property($Sprite, "modulate", Color.RED, 1).set_trans(Tween.TRANS_SINE)
-    tween.tween_property($Sprite, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
+    tween.tween_property($Sprite, "modulate", Color.RED, 1.0).set_trans(Tween.TRANS_SINE)
+    tween.tween_property($Sprite, "scale", Vector2(), 1.0).set_trans(Tween.TRANS_BOUNCE)
     tween.tween_callback($Sprite.queue_free)
 
  .. code-tab:: csharp
@@ -77,8 +77,8 @@ Most of the **Tween** methods can be chained this way too. In the following exam
  .. code-tab:: gdscript
 
     var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
-    tween.tween_property($Sprite, "modulate", Color.RED, 1)
-    tween.tween_property($Sprite, "scale", Vector2(), 1)
+    tween.tween_property($Sprite, "modulate", Color.RED, 1.0)
+    tween.tween_property($Sprite, "scale", Vector2(), 1.0)
     tween.tween_callback($Sprite.queue_free)
 
  .. code-tab:: csharp
@@ -99,7 +99,7 @@ Another interesting use for **Tween**\ s is animating arbitrary sets of objects:
 
     var tween = create_tween()
     for sprite in get_children():
-        tween.tween_property(sprite, "position", Vector2(0, 0), 1)
+        tween.tween_property(sprite, "position", Vector2(0, 0), 1.0)
 
  .. code-tab:: csharp
 
@@ -852,7 +852,7 @@ Creates and appends a :ref:`CallbackTweener<class_CallbackTweener>`. This method
  .. code-tab:: gdscript
 
     var tween = get_tree().create_tween().set_loops()
-    tween.tween_callback(shoot).set_delay(1)
+    tween.tween_callback(shoot).set_delay(1.0)
 
  .. code-tab:: csharp
 
@@ -920,10 +920,10 @@ Creates and appends an :ref:`IntervalTweener<class_IntervalTweener>`. This metho
  .. code-tab:: gdscript
 
     var tween = create_tween().set_loops()
-    tween.tween_property($Sprite, "position:x", 200.0, 1).as_relative()
+    tween.tween_property($Sprite, "position:x", 200.0, 1.0).as_relative()
     tween.tween_callback(jump)
     tween.tween_interval(2)
-    tween.tween_property($Sprite, "position:x", -200.0, 1).as_relative()
+    tween.tween_property($Sprite, "position:x", -200.0, 1.0).as_relative()
     tween.tween_callback(jump)
     tween.tween_interval(2)
 
@@ -959,7 +959,7 @@ Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is 
  .. code-tab:: gdscript
 
     var tween = create_tween()
-    tween.tween_method(look_at.bind(Vector3.UP), Vector3(-1, 0, -1), Vector3(1, 0, -1), 1) # The look_at() method takes up vector as second argument.
+    tween.tween_method(look_at.bind(Vector3.UP), Vector3(-1, 0, -1), Vector3(1, 0, -1), 1.0) # The look_at() method takes up vector as second argument.
 
  .. code-tab:: csharp
 
@@ -977,7 +977,7 @@ Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is 
 
     func _ready():
         var tween = create_tween()
-        tween.tween_method(set_label_text, 0, 10, 1).set_delay(1)
+        tween.tween_method(set_label_text, 0, 10, 1.0).set_delay(1.0)
     
     func set_label_text(value: int):
         $Label.text = "Counting " + str(value)
@@ -1017,8 +1017,8 @@ Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method
  .. code-tab:: gdscript
 
     var tween = create_tween()
-    tween.tween_property($Sprite, "position", Vector2(100, 200), 1)
-    tween.tween_property($Sprite, "position", Vector2(200, 300), 1)
+    tween.tween_property($Sprite, "position", Vector2(100, 200), 1.0)
+    tween.tween_property($Sprite, "position", Vector2(200, 300), 1.0)
 
  .. code-tab:: csharp
 
@@ -1040,8 +1040,8 @@ will move the sprite to position (100, 200) and then to (200, 300). If you use :
  .. code-tab:: gdscript
 
     var tween = create_tween()
-    tween.tween_property($Sprite, "position", Vector2.RIGHT * 300, 1).as_relative().set_trans(Tween.TRANS_SINE)
-    tween.tween_property($Sprite, "position", Vector2.RIGHT * 300, 1).as_relative().from_current().set_trans(Tween.TRANS_EXPO)
+    tween.tween_property($Sprite, "position", Vector2.RIGHT * 300, 1.0).as_relative().set_trans(Tween.TRANS_SINE)
+    tween.tween_property($Sprite, "position", Vector2.RIGHT * 300, 1.0).as_relative().from_current().set_trans(Tween.TRANS_EXPO)
 
  .. code-tab:: csharp
 

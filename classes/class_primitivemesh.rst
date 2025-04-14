@@ -113,7 +113,7 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 - |void| **set_flip_faces**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flip_faces**\ (\ )
 
-If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
+If ``true``, the order of the vertices in each triangle is reversed, resulting in the backside of the mesh being drawn.
 
 This gives the same result as using :ref:`BaseMaterial3D.CULL_FRONT<class_BaseMaterial3D_constant_CULL_FRONT>` in :ref:`BaseMaterial3D.cull_mode<class_BaseMaterial3D_property_cull_mode>`.
 

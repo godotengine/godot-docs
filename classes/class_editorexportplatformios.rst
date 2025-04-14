@@ -878,7 +878,7 @@ Additional data added to the root ``<dict>`` section of the `.entitlements <http
 
 :ref:`bool<class_bool>` **entitlements/game_center** :ref:`🔗<class_EditorExportPlatformIOS_property_entitlements/game_center>`
 
-Enable to allow access to Game Center features. `com.apple.developer.game-center <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_game-center>`__.
+If ``true``, allows access to Game Center features. See `com.apple.developer.game-center <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_game-center>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -890,7 +890,7 @@ Enable to allow access to Game Center features. `com.apple.developer.game-center
 
 :ref:`bool<class_bool>` **entitlements/increased_memory_limit** :ref:`🔗<class_EditorExportPlatformIOS_property_entitlements/increased_memory_limit>`
 
-Enable if app may perform better with a higher memory limit. `com.apple.developer.kernel.increased-memory-limit <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_kernel_increased-memory-limit>`__.
+If ``true``, hints that the app might perform better with a higher memory limit. See `com.apple.developer.kernel.increased-memory-limit <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_kernel_increased-memory-limit>`__.
 
 .. rst-class:: classref-item-separator
 

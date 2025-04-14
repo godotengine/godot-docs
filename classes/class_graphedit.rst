@@ -82,6 +82,8 @@ Properties
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`snapping_enabled<class_GraphEdit_property_snapping_enabled>`                         | ``true``                                                                  |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`type_names<class_GraphEdit_property_type_names>`                                     | ``{}``                                                                    |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`zoom<class_GraphEdit_property_zoom>`                                                 | ``1.0``                                                                   |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`zoom_max<class_GraphEdit_property_zoom_max>`                                         | ``2.0736``                                                                |
@@ -135,6 +137,8 @@ Methods
    | :ref:`int<class_int>`                                            | :ref:`get_connection_count<class_GraphEdit_method_get_connection_count>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`\ )                                                                                                                           |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>`              | :ref:`get_connection_line<class_GraphEdit_method_get_connection_line>`\ (\ from_node\: :ref:`Vector2<class_Vector2>`, to_node\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connection_list_from_node<class_GraphEdit_method_get_connection_list_from_node>`\ (\ node\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                         |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connections_intersecting_with_rect<class_GraphEdit_method_get_connections_intersecting_with_rect>`\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const|                                                                                                                                 |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -205,6 +209,8 @@ Theme Properties
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`menu_panel<class_GraphEdit_theme_style_menu_panel>`                                                 |                               |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_GraphEdit_theme_style_panel>`                                                           |                               |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel_focus<class_GraphEdit_theme_style_panel_focus>`                                               |                               |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -864,6 +870,23 @@ If ``true``, enables snapping.
 
 ----
 
+.. _class_GraphEdit_property_type_names:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **type_names** = ``{}`` :ref:`🔗<class_GraphEdit_property_type_names>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_type_names**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
+- :ref:`Dictionary<class_Dictionary>` **get_type_names**\ (\ )
+
+:ref:`Dictionary<class_Dictionary>` of human readable port type names.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphEdit_property_zoom:
 
 .. rst-class:: classref-property
@@ -1224,6 +1247,30 @@ Returns the number of connections from ``from_port`` of ``from_node``.
 :ref:`PackedVector2Array<class_PackedVector2Array>` **get_connection_line**\ (\ from_node\: :ref:`Vector2<class_Vector2>`, to_node\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_GraphEdit_method_get_connection_line>`
 
 Returns the points which would make up a connection between ``from_node`` and ``to_node``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_method_get_connection_list_from_node:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_connection_list_from_node**\ (\ node\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_GraphEdit_method_get_connection_list_from_node>`
+
+Returns an :ref:`Array<class_Array>` containing a list of all connections for ``node``.
+
+A connection is represented as a :ref:`Dictionary<class_Dictionary>` in the form of:
+
+::
+
+    {
+        from_node: StringName,
+        from_port: int,
+        to_node: StringName,
+        to_port: int,
+        keep_alive: bool
+    }
 
 .. rst-class:: classref-item-separator
 
@@ -1609,6 +1656,18 @@ The icon for the zoom reset button.
 :ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_GraphEdit_theme_style_panel>`
 
 The background drawn under the grid.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_theme_style_panel_focus:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **panel_focus** :ref:`🔗<class_GraphEdit_theme_style_panel_focus>`
+
+:ref:`StyleBox<class_StyleBox>` used when the **GraphEdit** is focused (when used with assistive apps).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

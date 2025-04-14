@@ -489,7 +489,7 @@ Appends an extension to the list of extensions used by this glTF file during ser
 
 :ref:`int<class_int>` **append_data_to_buffers**\ (\ data\: :ref:`PackedByteArray<class_PackedByteArray>`, deduplication\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_GLTFState_method_append_data_to_buffers>`
 
-Appends the given byte array data to the buffers and creates a :ref:`GLTFBufferView<class_GLTFBufferView>` for it. The index of the destination :ref:`GLTFBufferView<class_GLTFBufferView>` is returned. If ``deduplication`` is ``true``, the buffers will first be searched for duplicate data, otherwise new bytes will always be appended.
+Appends the given byte array ``data`` to the buffers and creates a :ref:`GLTFBufferView<class_GLTFBufferView>` for it. The index of the destination :ref:`GLTFBufferView<class_GLTFBufferView>` is returned. If ``deduplication`` is ``true``, the buffers are first searched for duplicate data, otherwise new bytes are always appended.
 
 .. rst-class:: classref-item-separator
 
@@ -501,7 +501,7 @@ Appends the given byte array data to the buffers and creates a :ref:`GLTFBufferV
 
 :ref:`int<class_int>` **append_gltf_node**\ (\ gltf_node\: :ref:`GLTFNode<class_GLTFNode>`, godot_scene_node\: :ref:`Node<class_Node>`, parent_node_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GLTFState_method_append_gltf_node>`
 
-Append the given :ref:`GLTFNode<class_GLTFNode>` to the state, and return its new index. This can be used to export one Godot node as multiple glTF nodes, or inject new glTF nodes at import time. On import, this must be called before :ref:`GLTFDocumentExtension._generate_scene_node()<class_GLTFDocumentExtension_private_method__generate_scene_node>` finishes for the parent node. On export, this must be called before :ref:`GLTFDocumentExtension._export_node()<class_GLTFDocumentExtension_private_method__export_node>` runs for the parent node.
+Appends the given :ref:`GLTFNode<class_GLTFNode>` to the state, and returns its new index. This can be used to export one Godot node as multiple glTF nodes, or inject new glTF nodes at import time. On import, this must be called before :ref:`GLTFDocumentExtension._generate_scene_node()<class_GLTFDocumentExtension_private_method__generate_scene_node>` finishes for the parent node. On export, this must be called before :ref:`GLTFDocumentExtension._export_node()<class_GLTFDocumentExtension_private_method__export_node>` runs for the parent node.
 
 The ``godot_scene_node`` parameter is the Godot scene node that corresponds to this glTF node. This is highly recommended to be set to a valid node, but may be ``null`` if there is no corresponding Godot scene node. One Godot scene node may be used for multiple glTF nodes, so if exporting multiple glTF nodes for one Godot scene node, use the same Godot scene node for each.
 

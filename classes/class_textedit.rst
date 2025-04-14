@@ -26,6 +26,14 @@ Description
 
 A multiline text editor. It also has limited facilities for editing code, such as syntax highlighting support. For more advanced facilities for editing code, see :ref:`CodeEdit<class_CodeEdit>`.
 
+While entering text, it is possible to insert special characters using Unicode, OEM or Windows alt codes:
+
+- To enter Unicode codepoints, hold :kbd:`Alt` and type the codepoint on the numpad. For example, to enter the character ``á`` (U+00E1), hold :kbd:`Alt` and type :kbd:`+E1` on the numpad (the leading zeroes can be omitted).
+
+- To enter OEM codepoints, hold :kbd:`Alt` and type the code on the numpad. For example, to enter the character ``á`` (OEM 160), hold :kbd:`Alt` and type ``160`` on the numpad.
+
+- To enter Windows codepoints, hold :kbd:`Alt` and type the code on the numpad. For example, to enter the character ``á`` (Windows 0225), hold :kbd:`Alt` and type :kbd:`0`, :kbd:`2`, :kbd:`2`, :kbd:`5` on the numpad. The leading zero here must **not** be omitted, as this is how Windows codepoints are distinguished from OEM codepoints.
+
 \ **Note:** Most viewport, caret, and edit methods contain a ``caret_index`` argument for :ref:`caret_multiple<class_TextEdit_property_caret_multiple>` support. The argument should be one of the following: ``-1`` for all carets, ``0`` for the main caret, or greater than ``0`` for secondary carets in the order they were created.
 
 \ **Note:** When holding down :kbd:`Alt`, the vertical scroll wheel will scroll 5 times as fast as it would normally do. This also works in the Godot script editor.
@@ -120,6 +128,8 @@ Properties
    | :ref:`Array<class_Array>`                                         | :ref:`structured_text_bidi_override_options<class_TextEdit_property_structured_text_bidi_override_options>` | ``[]``                                                                              |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`SyntaxHighlighter<class_SyntaxHighlighter>`                 | :ref:`syntax_highlighter<class_TextEdit_property_syntax_highlighter>`                                       |                                                                                     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`tab_input_mode<class_TextEdit_property_tab_input_mode>`                                               | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`text<class_TextEdit_property_text>`                                                                   | ``""``                                                                              |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -1750,6 +1760,23 @@ Set additional options for BiDi override.
 The syntax highlighter to use.
 
 \ **Note:** A :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` instance should not be used across multiple **TextEdit** nodes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_property_tab_input_mode:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **tab_input_mode** = ``true`` :ref:`🔗<class_TextEdit_property_tab_input_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_tab_input_mode**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_tab_input_mode**\ (\ )
+
+If ``true``, :ref:`ProjectSettings.input/ui_text_indent<class_ProjectSettings_property_input/ui_text_indent>` input ``Tab`` character, otherwise it moves keyboard focus to the next :ref:`Control<class_Control>` in the scene.
 
 .. rst-class:: classref-item-separator
 

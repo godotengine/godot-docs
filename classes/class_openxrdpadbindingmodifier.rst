@@ -124,9 +124,9 @@ Input path for this dpad binding modifier.
 - |void| **set_is_sticky**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_is_sticky**\ (\ )
 
-If ``false``, when the joystick enters a new dpad zone this becomes true.
+If ``false``, when the joystick enters a new dpad zone this becomes ``true``.
 
-If ``true``, when the joystick remains in active dpad zone, this remains true even if we overlap with another zone.
+If ``true``, when the joystick remains in active dpad zone, this remains ``true`` even if we overlap with another zone.
 
 .. rst-class:: classref-item-separator
 
@@ -177,7 +177,7 @@ Haptic pulse to emit when the user presses the input.
 - |void| **set_threshold**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_threshold**\ (\ )
 
-When our input value is equal or larger than this value, our dpad in that direction becomes true. It stays true until it falls under the :ref:`threshold_released<class_OpenXRDpadBindingModifier_property_threshold_released>` value.
+When our input value is equal or larger than this value, our dpad in that direction becomes ``true``. It stays ``true`` until it falls under the :ref:`threshold_released<class_OpenXRDpadBindingModifier_property_threshold_released>` value.
 
 .. rst-class:: classref-item-separator
 
@@ -194,7 +194,7 @@ When our input value is equal or larger than this value, our dpad in that direct
 - |void| **set_threshold_released**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_threshold_released**\ (\ )
 
-When our input value falls below this, our output becomes false.
+When our input value falls below this, our output becomes ``false``.
 
 .. rst-class:: classref-item-separator
 

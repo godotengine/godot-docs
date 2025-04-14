@@ -61,6 +61,8 @@ Methods
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`add_bone<class_Skeleton3D_method_add_bone>`\ (\ name\: :ref:`String<class_String>`\ )                                                                                                                                                                         |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`advance<class_Skeleton3D_method_advance>`\ (\ delta\: :ref:`float<class_float>`\ )                                                                                                                                                                            |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`clear_bones<class_Skeleton3D_method_clear_bones>`\ (\ )                                                                                                                                                                                                       |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`clear_bones_global_pose_override<class_Skeleton3D_method_clear_bones_global_pose_override>`\ (\ )                                                                                                                                                             |
@@ -268,6 +270,14 @@ Set a flag to process modification during physics frames (see :ref:`Node.NOTIFIC
 
 Set a flag to process modification during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
+.. _class_Skeleton3D_constant_MODIFIER_CALLBACK_MODE_PROCESS_MANUAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ModifierCallbackModeProcess<enum_Skeleton3D_ModifierCallbackModeProcess>` **MODIFIER_CALLBACK_MODE_PROCESS_MANUAL** = ``2``
+
+Do not process modification. Use :ref:`advance()<class_Skeleton3D_method_advance>` to process the modification manually.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -382,6 +392,20 @@ Method Descriptions
 Adds a new bone with the given name. Returns the new bone's index, or ``-1`` if this method fails.
 
 \ **Note:** Bone names should be unique, non empty, and cannot include the ``:`` and ``/`` characters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Skeleton3D_method_advance:
+
+.. rst-class:: classref-method
+
+|void| **advance**\ (\ delta\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Skeleton3D_method_advance>`
+
+Manually advance the child :ref:`SkeletonModifier3D<class_SkeletonModifier3D>`\ s by the specified time (in seconds).
+
+\ **Note:** The ``delta`` is temporarily accumulated in the **Skeleton3D**, and the deferred process uses the accumulated value to process the modification.
 
 .. rst-class:: classref-item-separator
 
@@ -549,7 +573,7 @@ Returns the global rest transform for ``bone_idx``.
 
 :ref:`Variant<class_Variant>` **get_bone_meta**\ (\ bone_idx\: :ref:`int<class_int>`, key\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_meta>`
 
-Returns bone metadata for ``bone_idx`` with ``key``.
+Returns the metadata for the bone at index ``bone_idx`` with ``key``.
 
 .. rst-class:: classref-item-separator
 
@@ -561,7 +585,7 @@ Returns bone metadata for ``bone_idx`` with ``key``.
 
 :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_bone_meta_list**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_meta_list>`
 
-Returns a list of all metadata keys for ``bone_idx``.
+Returns the list of all metadata keys for the bone at index ``bone_idx``.
 
 .. rst-class:: classref-item-separator
 
@@ -703,7 +727,7 @@ Use for invalidating caches in IK solvers and other nodes which process bones.
 
 :ref:`bool<class_bool>` **has_bone_meta**\ (\ bone_idx\: :ref:`int<class_int>`, key\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_has_bone_meta>`
 
-Returns whether there exists any bone metadata for ``bone_idx`` with key ``key``.
+Returns ``true`` if the bone at index ``bone_idx`` has metadata with the key ``key``.
 
 .. rst-class:: classref-item-separator
 
@@ -881,7 +905,7 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 |void| **set_bone_meta**\ (\ bone_idx\: :ref:`int<class_int>`, key\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_meta>`
 
-Sets bone metadata for ``bone_idx``, will set the ``key`` meta to ``value``.
+Sets the metadata for the bone at index ``bone_idx``, setting the ``key`` meta to ``value``.
 
 .. rst-class:: classref-item-separator
 

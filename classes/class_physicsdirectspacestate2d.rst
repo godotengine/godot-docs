@@ -99,9 +99,7 @@ Returned points are a list of pairs of contact points. For each pair the first o
 
 :ref:`Dictionary<class_Dictionary>` **get_rest_info**\ (\ parameters\: :ref:`PhysicsShapeQueryParameters2D<class_PhysicsShapeQueryParameters2D>`\ ) :ref:`🔗<class_PhysicsDirectSpaceState2D_method_get_rest_info>`
 
-Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters2D<class_PhysicsShapeQueryParameters2D>` object, against the space. If it collides with more than one shape, the nearest one is selected. If the shape did not intersect anything, then an empty dictionary is returned instead.
-
-\ **Note:** This method does not take into account the ``motion`` property of the object. The returned object is a dictionary containing the following fields:
+Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters2D<class_PhysicsShapeQueryParameters2D>` object, against the space. If it collides with more than one shape, the nearest one is selected. The returned object is a dictionary containing the following fields:
 
 \ ``collider_id``: The colliding object's ID.
 
@@ -114,6 +112,8 @@ Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryPara
 \ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
 \ ``shape``: The shape index of the colliding shape.
+
+If the shape did not intersect anything, then an empty dictionary is returned instead.
 
 .. rst-class:: classref-item-separator
 

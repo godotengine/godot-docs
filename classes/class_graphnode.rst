@@ -38,6 +38,8 @@ Properties
    :widths: auto
 
    +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`     | focus_mode                                                                                     | ``3`` (overrides :ref:`Control<class_Control_property_focus_mode>`)   |
+   +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                      | :ref:`ignore_invalid_connection_type<class_GraphNode_property_ignore_invalid_connection_type>` | ``false``                                                             |
    +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
    | :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                                                   | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
@@ -140,9 +142,13 @@ Theme Properties
    +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_GraphNode_theme_style_panel>`                         |                                   |
    +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel_focus<class_GraphNode_theme_style_panel_focus>`             |                                   |
+   +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel_selected<class_GraphNode_theme_style_panel_selected>`       |                                   |
    +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`slot<class_GraphNode_theme_style_slot>`                           |                                   |
+   +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`slot_selected<class_GraphNode_theme_style_slot_selected>`         |                                   |
    +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`titlebar<class_GraphNode_theme_style_titlebar>`                   |                                   |
    +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
@@ -689,6 +695,18 @@ The default background for the slot area of the **GraphNode**.
 
 ----
 
+.. _class_GraphNode_theme_style_panel_focus:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **panel_focus** :ref:`🔗<class_GraphNode_theme_style_panel_focus>`
+
+:ref:`StyleBox<class_StyleBox>` used when the **GraphNode** is focused (when used with assistive apps).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphNode_theme_style_panel_selected:
 
 .. rst-class:: classref-themeproperty
@@ -708,6 +726,18 @@ The :ref:`StyleBox<class_StyleBox>` used for the slot area when selected.
 :ref:`StyleBox<class_StyleBox>` **slot** :ref:`🔗<class_GraphNode_theme_style_slot>`
 
 The :ref:`StyleBox<class_StyleBox>` used for each slot of the **GraphNode**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphNode_theme_style_slot_selected:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **slot_selected** :ref:`🔗<class_GraphNode_theme_style_slot_selected>`
+
+:ref:`StyleBox<class_StyleBox>` used when the slot is focused (when used with assistive apps).
 
 .. rst-class:: classref-item-separator
 

@@ -298,7 +298,7 @@ If ``false``, the body will slide on floor's slopes when :ref:`velocity<class_Ch
 - |void| **set_max_slides**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_max_slides**\ (\ )
 
-Maximum number of times the body can change direction before it stops when calling :ref:`move_and_slide()<class_CharacterBody2D_method_move_and_slide>`.
+Maximum number of times the body can change direction before it stops when calling :ref:`move_and_slide()<class_CharacterBody2D_method_move_and_slide>`. Must be greater than zero.
 
 .. rst-class:: classref-item-separator
 
@@ -457,7 +457,7 @@ Current velocity vector in pixels per second, used and modified during calls to 
 - |void| **set_wall_min_slide_angle**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_wall_min_slide_angle**\ (\ )
 
-Minimum angle (in radians) where the body is allowed to slide when it encounters a slope. The default value equals 15 degrees. This property only affects movement when :ref:`motion_mode<class_CharacterBody2D_property_motion_mode>` is :ref:`MOTION_MODE_FLOATING<class_CharacterBody2D_constant_MOTION_MODE_FLOATING>`.
+Minimum angle (in radians) where the body is allowed to slide when it encounters a wall. The default value equals 15 degrees. This property only affects movement when :ref:`motion_mode<class_CharacterBody2D_property_motion_mode>` is :ref:`MOTION_MODE_FLOATING<class_CharacterBody2D_constant_MOTION_MODE_FLOATING>`.
 
 .. rst-class:: classref-section-separator
 

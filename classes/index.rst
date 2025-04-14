@@ -105,6 +105,7 @@ Nodes
     class_filesystemdock
     class_flowcontainer
     class_fogvolume
+    class_foldablecontainer
     class_generic6dofjoint3d
     class_geometryinstance3d
     class_gpuparticles2d
@@ -417,6 +418,7 @@ Resources
     class_fbxdocument
     class_fbxstate
     class_fogmaterial
+    class_foldablegroup
     class_font
     class_fontfile
     class_fontvariation
@@ -842,7 +844,10 @@ Other objects
     class_offlinemultiplayerpeer
     class_oggpacketsequenceplayback
     class_openxrapiextension
+    class_openxrextensionwrapper
     class_openxrextensionwrapperextension
+    class_openxrfutureextension
+    class_openxrfutureresult
     class_openxrinteractionprofilemetadata
     class_openxrinterface
     class_os

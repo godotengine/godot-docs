@@ -622,7 +622,7 @@ Returns the start time of the section currently being played.
 
 :ref:`bool<class_bool>` **has_section**\ (\ ) |const| :ref:`🔗<class_AnimationPlayer_method_has_section>`
 
-Returns ``true`` if an animation is currently playing with section.
+Returns ``true`` if an animation is currently playing with a section.
 
 .. rst-class:: classref-item-separator
 
@@ -787,7 +787,7 @@ Queues an animation for playback once the current animation and all previously q
 
 |void| **reset_section**\ (\ ) :ref:`🔗<class_AnimationPlayer_method_reset_section>`
 
-Resets the current section if section is set.
+Resets the current section. Does nothing if a section has not been set.
 
 .. rst-class:: classref-item-separator
 

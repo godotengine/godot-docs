@@ -66,6 +66,8 @@ Methods
    +---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                   | :ref:`get_preset_name<class_EditorExportPreset_method_get_preset_name>`\ (\ ) |const|                                                                                                                            |
    +---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                 | :ref:`get_project_setting<class_EditorExportPreset_method_get_project_setting>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                |
+   +---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                         | :ref:`get_script_export_mode<class_EditorExportPreset_method_get_script_export_mode>`\ (\ ) |const|                                                                                                              |
    +---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                   | :ref:`get_version<class_EditorExportPreset_method_get_version>`\ (\ name\: :ref:`StringName<class_StringName>`, windows_version\: :ref:`bool<class_bool>`\ ) |const|                                             |
@@ -273,7 +275,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **are_advanced_options_enabled**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_are_advanced_options_enabled>`
 
-Returns ``true``, is "Advanced" toggle is enabled in the export dialog.
+Returns ``true`` if "Advanced" toggle is enabled in the export dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -297,7 +299,7 @@ Returns string with a comma separated list of custom features.
 
 :ref:`Dictionary<class_Dictionary>` **get_customized_files**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_customized_files>`
 
-Returns :ref:`Dictionary<class_Dictionary>` of files selected in the "Resources" tab of the export dialog. Dictionary keys are file names and values are export mode - ``"strip``, ``"keep"``, or ``"remove"``. See also :ref:`get_file_export_mode()<class_EditorExportPreset_method_get_file_export_mode>`.
+Returns :ref:`Dictionary<class_Dictionary>` of files selected in the "Resources" tab of the export dialog. Dictionary keys are file names and values are export mode - ``"strip"``, ``"keep"``, or ``"remove"``. See also :ref:`get_file_export_mode()<class_EditorExportPreset_method_get_file_export_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -321,7 +323,7 @@ Returns number of files selected in the "Resources" tab of the export dialog.
 
 :ref:`bool<class_bool>` **get_encrypt_directory**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_encrypt_directory>`
 
-Returns ``true``, PCK directory encryption is enabled in the export dialog.
+Returns ``true`` if PCK directory encryption is enabled in the export dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -333,7 +335,7 @@ Returns ``true``, PCK directory encryption is enabled in the export dialog.
 
 :ref:`bool<class_bool>` **get_encrypt_pck**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_encrypt_pck>`
 
-Returns ``true``, PCK encryption is enabled in the export dialog.
+Returns ``true`` if PCK encryption is enabled in the export dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -483,6 +485,18 @@ Returns export preset name.
 
 ----
 
+.. _class_EditorExportPreset_method_get_project_setting:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_project_setting**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EditorExportPreset_method_get_project_setting>`
+
+Returns the value of the setting identified by ``name`` using export preset feature tag overrides instead of current OS features.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPreset_method_get_script_export_mode:
 
 .. rst-class:: classref-method
@@ -515,7 +529,7 @@ If ``windows_version`` is ``true``, formats the returned version number to be co
 
 :ref:`bool<class_bool>` **has**\ (\ property\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_EditorExportPreset_method_has>`
 
-Returns ``true`` if preset has specified property.
+Returns ``true`` if the preset has the property named ``property``.
 
 .. rst-class:: classref-item-separator
 

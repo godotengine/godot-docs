@@ -185,6 +185,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`font_is_language_supported<class_TextServer_method_font_is_language_supported>`\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                             |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`font_is_modulate_color_glyphs<class_TextServer_method_font_is_modulate_color_glyphs>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                               |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`font_is_multichannel_signed_distance_field<class_TextServer_method_font_is_multichannel_signed_distance_field>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                     |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`font_is_script_supported<class_TextServer_method_font_is_script_supported>`\ (\ font_rid\: :ref:`RID<class_RID>`, script\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                   |
@@ -250,6 +252,8 @@ Methods
    | |void|                                                           | :ref:`font_set_kerning<class_TextServer_method_font_set_kerning>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`, kerning\: :ref:`Vector2<class_Vector2>`\ )                                                                                                                                                                            |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`font_set_language_support_override<class_TextServer_method_font_set_language_support_override>`\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`font_set_modulate_color_glyphs<class_TextServer_method_font_set_modulate_color_glyphs>`\ (\ font_rid\: :ref:`RID<class_RID>`, force_autohinter\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                         |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`font_set_msdf_pixel_range<class_TextServer_method_font_set_msdf_pixel_range>`\ (\ font_rid\: :ref:`RID<class_RID>`, msdf_pixel_range\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                     |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -335,11 +339,33 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`save_support_data<class_TextServer_method_save_support_data>`\ (\ filename\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                                                                 |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`shaped_get_run_count<class_TextServer_method_shaped_get_run_count>`\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                   |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Direction<enum_TextServer_Direction>`                      | :ref:`shaped_get_run_direction<class_TextServer_method_shaped_get_run_direction>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                            |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                            | :ref:`shaped_get_run_font_rid<class_TextServer_method_shaped_get_run_font_rid>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                              |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`shaped_get_run_font_size<class_TextServer_method_shaped_get_run_font_size>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                            |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`shaped_get_run_language<class_TextServer_method_shaped_get_run_language>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                              |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                    | :ref:`shaped_get_run_object<class_TextServer_method_shaped_get_run_object>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                  |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                                  | :ref:`shaped_get_run_range<class_TextServer_method_shaped_get_run_range>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                    |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`shaped_get_run_text<class_TextServer_method_shaped_get_run_text>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                      |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`shaped_get_span_count<class_TextServer_method_shaped_get_span_count>`\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                 |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                    | :ref:`shaped_get_span_embedded_object<class_TextServer_method_shaped_get_span_embedded_object>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                              |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                    | :ref:`shaped_get_span_meta<class_TextServer_method_shaped_get_span_meta>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                    |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                    | :ref:`shaped_get_span_object<class_TextServer_method_shaped_get_span_object>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`shaped_get_span_text<class_TextServer_method_shaped_get_span_text>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                    |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`shaped_get_text<class_TextServer_method_shaped_get_text>`\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                             |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`shaped_set_span_update_font<class_TextServer_method_shaped_set_span_update_font>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, fonts\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], size\: :ref:`int<class_int>`, opentype_features\: :ref:`Dictionary<class_Dictionary>` = {}\ )                                                                                      |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -525,7 +551,7 @@ Font glyphs are rasterized as 8-bit grayscale anti-aliased bitmaps.
 
 Font glyphs are rasterized for LCD screens.
 
-LCD subpixel layout is determined by the value of ``gui/theme/lcd_subpixel_layout`` project settings.
+LCD subpixel layout is determined by the value of the :ref:`ProjectSettings.gui/theme/lcd_subpixel_layout<class_ProjectSettings_property_gui/theme/lcd_subpixel_layout>` setting.
 
 LCD subpixel anti-aliasing mode is suitable only for rendering horizontal, unscaled text in 2D.
 
@@ -837,6 +863,8 @@ Should be used only in conjunction with :ref:`BREAK_WORD_BOUND<class_TextServer_
 
 :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_EDGE_SPACES** = ``16``
 
+**Deprecated:** Use ``BREAK_TRIM_START_EDGE_SPACES | BREAK_TRIM_END_EDGE_SPACES`` instead.
+
 Remove edge spaces from the broken line segments.
 
 .. _class_TextServer_constant_BREAK_TRIM_INDENT:
@@ -846,6 +874,26 @@ Remove edge spaces from the broken line segments.
 :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_INDENT** = ``32``
 
 Subtract first line indentation width from all lines after the first one.
+
+.. _class_TextServer_constant_BREAK_TRIM_START_EDGE_SPACES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_START_EDGE_SPACES** = ``64``
+
+Remove spaces and line break characters from the start of broken line segments.
+
+E.g, after line breaking, the second segment of the following text ``test  \n  next``, is ``next`` if the flag is set, and ``  next`` if it is not.
+
+.. _class_TextServer_constant_BREAK_TRIM_END_EDGE_SPACES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_END_EDGE_SPACES** = ``128``
+
+Remove spaces and line break characters from the end of broken line segments.
+
+E.g, after line breaking, the first segment of the following text ``test  \n  next``, is ``test`` if the flag is set, and ``test  \n`` if it is not.
 
 .. rst-class:: classref-item-separator
 
@@ -939,7 +987,7 @@ Trims the text per word.
 
 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_ELLIPSIS** = ``3``
 
-Trims the text per character and adds an ellipsis to indicate that parts are hidden.
+Trims the text per character and adds an ellipsis to indicate that parts are hidden if trimmed text is 6 characters or longer.
 
 .. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS:
 
@@ -947,7 +995,23 @@ Trims the text per character and adds an ellipsis to indicate that parts are hid
 
 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_WORD_ELLIPSIS** = ``4``
 
-Trims the text per word and adds an ellipsis to indicate that parts are hidden.
+Trims the text per word and adds an ellipsis to indicate that parts are hidden if trimmed text is 6 characters or longer.
+
+.. _class_TextServer_constant_OVERRUN_TRIM_ELLIPSIS_FORCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_ELLIPSIS_FORCE** = ``5``
+
+Trims the text per character and adds an ellipsis to indicate that parts are hidden regardless of trimmed text length.
+
+.. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS_FORCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **OVERRUN_TRIM_WORD_ELLIPSIS_FORCE** = ``6``
+
+Trims the text per word and adds an ellipsis to indicate that parts are hidden regardless of trimmed text length.
 
 .. rst-class:: classref-item-separator
 
@@ -2440,6 +2504,18 @@ Returns ``true``, if font supports given language (`ISO 639 <https://en.wikipedi
 
 ----
 
+.. _class_TextServer_method_font_is_modulate_color_glyphs:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **font_is_modulate_color_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_font_is_modulate_color_glyphs>`
+
+Returns ``true``, if color modulation is applied when drawing colored glyphs.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServer_method_font_is_multichannel_signed_distance_field:
 
 .. rst-class:: classref-method
@@ -2839,6 +2915,18 @@ Sets kerning for the pair of glyphs.
 |void| **font_set_language_support_override**\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextServer_method_font_set_language_support_override>`
 
 Adds override for :ref:`font_is_language_supported()<class_TextServer_method_font_is_language_supported>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_font_set_modulate_color_glyphs:
+
+.. rst-class:: classref-method
+
+|void| **font_set_modulate_color_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`, force_autohinter\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextServer_method_font_set_modulate_color_glyphs>`
+
+If set to ``true``, color modulation is applied when drawing colored glyphs, otherwise it's applied to the monochrome glyphs only.
 
 .. rst-class:: classref-item-separator
 
@@ -3384,6 +3472,102 @@ Saves optional TextServer database (e.g. ICU break iterators and dictionaries) t
 
 ----
 
+.. _class_TextServer_method_shaped_get_run_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **shaped_get_run_count**\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_run_count>`
+
+Returns the number of uniform text runs in the buffer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_run_direction:
+
+.. rst-class:: classref-method
+
+:ref:`Direction<enum_TextServer_Direction>` **shaped_get_run_direction**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_run_direction>`
+
+Returns the direction of the ``index`` text run (in visual order).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_run_font_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **shaped_get_run_font_rid**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_run_font_rid>`
+
+Returns the font RID of the ``index`` text run (in visual order).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_run_font_size:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **shaped_get_run_font_size**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_run_font_size>`
+
+Returns the font size of the ``index`` text run (in visual order).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_run_language:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **shaped_get_run_language**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_run_language>`
+
+Returns the language of the ``index`` text run (in visual order).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_run_object:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **shaped_get_run_object**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_run_object>`
+
+Returns the embedded object of the ``index`` text run (in visual order).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_run_range:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2i<class_Vector2i>` **shaped_get_run_range**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_run_range>`
+
+Returns the source text range of the ``index`` text run (in visual order).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_run_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **shaped_get_run_text**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_run_text>`
+
+Returns the source text of the ``index`` text run (in visual order).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServer_method_shaped_get_span_count:
 
 .. rst-class:: classref-method
@@ -3415,6 +3599,42 @@ Returns text embedded object key.
 :ref:`Variant<class_Variant>` **shaped_get_span_meta**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_span_meta>`
 
 Returns text span metadata.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_span_object:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **shaped_get_span_object**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_span_object>`
+
+Returns the text span embedded object key.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_span_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **shaped_get_span_text**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_span_text>`
+
+Returns the text span source text.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **shaped_get_text**\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_text>`
+
+Returns the text buffer source text, including object replacement characters.
 
 .. rst-class:: classref-item-separator
 

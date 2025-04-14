@@ -732,7 +732,7 @@ By using this in combination with :ref:`get_root_motion_rotation_accumulator()<c
 
 
 
-If :ref:`root_motion_local<class_AnimationMixer_property_root_motion_local>` is ``true``, return the pre-multiplied translation value with the inverted rotation.
+If :ref:`root_motion_local<class_AnimationMixer_property_root_motion_local>` is ``true``, returns the pre-multiplied translation value with the inverted rotation.
 
 In this case, the code can be written as follows:
 

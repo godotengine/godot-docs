@@ -266,7 +266,7 @@ Output latency of the :ref:`AudioServer<class_AudioServer>`. Equivalent to calli
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_ACTIVE_MAPS** = ``24``
 
-Number of active navigation maps in the :ref:`NavigationServer3D<class_NavigationServer3D>`. This also includes the two empty default navigation maps created by World2D and World3D.
+Number of active navigation maps in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`. This also includes the two empty default navigation maps created by World2D and World3D.
 
 .. _class_Performance_constant_NAVIGATION_REGION_COUNT:
 
@@ -274,7 +274,7 @@ Number of active navigation maps in the :ref:`NavigationServer3D<class_Navigatio
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_REGION_COUNT** = ``25``
 
-Number of active navigation regions in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Number of active navigation regions in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. _class_Performance_constant_NAVIGATION_AGENT_COUNT:
 
@@ -282,7 +282,7 @@ Number of active navigation regions in the :ref:`NavigationServer3D<class_Naviga
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_AGENT_COUNT** = ``26``
 
-Number of active navigation agents processing avoidance in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Number of active navigation agents processing avoidance in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. _class_Performance_constant_NAVIGATION_LINK_COUNT:
 
@@ -290,7 +290,7 @@ Number of active navigation agents processing avoidance in the :ref:`NavigationS
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_LINK_COUNT** = ``27``
 
-Number of active navigation links in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Number of active navigation links in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. _class_Performance_constant_NAVIGATION_POLYGON_COUNT:
 
@@ -298,7 +298,7 @@ Number of active navigation links in the :ref:`NavigationServer3D<class_Navigati
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_POLYGON_COUNT** = ``28``
 
-Number of navigation mesh polygons in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Number of navigation mesh polygons in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. _class_Performance_constant_NAVIGATION_EDGE_COUNT:
 
@@ -306,7 +306,7 @@ Number of navigation mesh polygons in the :ref:`NavigationServer3D<class_Navigat
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_EDGE_COUNT** = ``29``
 
-Number of navigation mesh polygon edges in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Number of navigation mesh polygon edges in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. _class_Performance_constant_NAVIGATION_EDGE_MERGE_COUNT:
 
@@ -314,7 +314,7 @@ Number of navigation mesh polygon edges in the :ref:`NavigationServer3D<class_Na
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_EDGE_MERGE_COUNT** = ``30``
 
-Number of navigation mesh polygon edges that were merged due to edge key overlap in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Number of navigation mesh polygon edges that were merged due to edge key overlap in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. _class_Performance_constant_NAVIGATION_EDGE_CONNECTION_COUNT:
 
@@ -322,7 +322,7 @@ Number of navigation mesh polygon edges that were merged due to edge key overlap
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_EDGE_CONNECTION_COUNT** = ``31``
 
-Number of polygon edges that are considered connected by edge proximity :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Number of polygon edges that are considered connected by edge proximity :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. _class_Performance_constant_NAVIGATION_EDGE_FREE_COUNT:
 
@@ -330,7 +330,7 @@ Number of polygon edges that are considered connected by edge proximity :ref:`Na
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_EDGE_FREE_COUNT** = ``32``
 
-Number of navigation mesh polygon edges that could not be merged in the :ref:`NavigationServer3D<class_NavigationServer3D>`. The edges still may be connected by edge proximity or with links.
+Number of navigation mesh polygon edges that could not be merged in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`. The edges still may be connected by edge proximity or with links.
 
 .. _class_Performance_constant_NAVIGATION_OBSTACLE_COUNT:
 
@@ -338,7 +338,7 @@ Number of navigation mesh polygon edges that could not be merged in the :ref:`Na
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_OBSTACLE_COUNT** = ``33``
 
-Number of active navigation obstacles in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Number of active navigation obstacles in the :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. _class_Performance_constant_PIPELINE_COMPILATIONS_CANVAS:
 
@@ -380,11 +380,171 @@ Number of pipeline compilations that were triggered while drawing the scene. The
 
 Number of pipeline compilations that were triggered to optimize the current scene. These compilations are done in the background and should not cause any stutters whatsoever.
 
+.. _class_Performance_constant_NAVIGATION_2D_ACTIVE_MAPS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_ACTIVE_MAPS** = ``39``
+
+Number of active navigation maps in the :ref:`NavigationServer2D<class_NavigationServer2D>`. This also includes the two empty default navigation maps created by World2D.
+
+.. _class_Performance_constant_NAVIGATION_2D_REGION_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_REGION_COUNT** = ``40``
+
+Number of active navigation regions in the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+.. _class_Performance_constant_NAVIGATION_2D_AGENT_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_AGENT_COUNT** = ``41``
+
+Number of active navigation agents processing avoidance in the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+.. _class_Performance_constant_NAVIGATION_2D_LINK_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_LINK_COUNT** = ``42``
+
+Number of active navigation links in the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+.. _class_Performance_constant_NAVIGATION_2D_POLYGON_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_POLYGON_COUNT** = ``43``
+
+Number of navigation mesh polygons in the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+.. _class_Performance_constant_NAVIGATION_2D_EDGE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_EDGE_COUNT** = ``44``
+
+Number of navigation mesh polygon edges in the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+.. _class_Performance_constant_NAVIGATION_2D_EDGE_MERGE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_EDGE_MERGE_COUNT** = ``45``
+
+Number of navigation mesh polygon edges that were merged due to edge key overlap in the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+.. _class_Performance_constant_NAVIGATION_2D_EDGE_CONNECTION_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_EDGE_CONNECTION_COUNT** = ``46``
+
+Number of polygon edges that are considered connected by edge proximity :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+.. _class_Performance_constant_NAVIGATION_2D_EDGE_FREE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_EDGE_FREE_COUNT** = ``47``
+
+Number of navigation mesh polygon edges that could not be merged in the :ref:`NavigationServer2D<class_NavigationServer2D>`. The edges still may be connected by edge proximity or with links.
+
+.. _class_Performance_constant_NAVIGATION_2D_OBSTACLE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_OBSTACLE_COUNT** = ``48``
+
+Number of active navigation obstacles in the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+.. _class_Performance_constant_NAVIGATION_3D_ACTIVE_MAPS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_ACTIVE_MAPS** = ``49``
+
+Number of active navigation maps in the :ref:`NavigationServer3D<class_NavigationServer3D>`. This also includes the two empty default navigation maps created by World3D.
+
+.. _class_Performance_constant_NAVIGATION_3D_REGION_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_REGION_COUNT** = ``50``
+
+Number of active navigation regions in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_3D_AGENT_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_AGENT_COUNT** = ``51``
+
+Number of active navigation agents processing avoidance in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_3D_LINK_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_LINK_COUNT** = ``52``
+
+Number of active navigation links in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_3D_POLYGON_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_POLYGON_COUNT** = ``53``
+
+Number of navigation mesh polygons in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_3D_EDGE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_EDGE_COUNT** = ``54``
+
+Number of navigation mesh polygon edges in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_3D_EDGE_MERGE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_EDGE_MERGE_COUNT** = ``55``
+
+Number of navigation mesh polygon edges that were merged due to edge key overlap in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_3D_EDGE_CONNECTION_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_EDGE_CONNECTION_COUNT** = ``56``
+
+Number of polygon edges that are considered connected by edge proximity :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_3D_EDGE_FREE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_EDGE_FREE_COUNT** = ``57``
+
+Number of navigation mesh polygon edges that could not be merged in the :ref:`NavigationServer3D<class_NavigationServer3D>`. The edges still may be connected by edge proximity or with links.
+
+.. _class_Performance_constant_NAVIGATION_3D_OBSTACLE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_OBSTACLE_COUNT** = ``58``
+
+Number of active navigation obstacles in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
 .. _class_Performance_constant_MONITOR_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``39``
+:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``59``
 
 Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 
