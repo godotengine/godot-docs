@@ -73,23 +73,24 @@ opening the project, you should see an empty editor.
 .. image:: img/nodes_and_scenes_01_empty_editor.webp
 
 In an empty scene, the Scene dock on the left shows several options to add a
-root node quickly. "2D Scene" adds a :ref:`Node2D <class_Node2D>` node,
-"3D Scene" adds a :ref:`Node3D <class_Node3D>` node,
-and "User Interface" adds a :ref:`Control <class_Control>` node.
+root node quickly. :button:`2D Scene` adds a :ref:`Node2D <class_Node2D>` node,
+:button:`3D Scene` adds a :ref:`Node3D <class_Node3D>` node,
+and :button:`User Interface` adds a :ref:`Control <class_Control>` node.
 These presets are here for convenience; they are not mandatory.
-"Other Node" lets you select any node to be the root node.
-In an empty scene, "Other Node" is equivalent to pressing the "Add Child Node"
+:button:`Other Node` lets you select any node to be the root node.
+In an empty scene, :button:`Other Node` is equivalent to pressing the :button:`Add Child Node`
 button at the top-left of the Scene dock, which usually adds
 a new node as a child of the currently selected node.
 
 We're going to add a single :ref:`Label <class_Label>` node to our scene. Its function is to draw
 text on the screen.
 
-Press the "Add Child Node" button or "Other Node" to create a root node.
+Press the :button:`Add Child Node` button or :button:`Other Node` to create a
+root node.
 
 .. image:: img/nodes_and_scenes_02_scene_dock.webp
 
-The Create Node dialog opens, showing the long list of available nodes.
+The :ui:`Create New Node` dialog opens, showing the long list of available nodes.
 
 .. image:: img/nodes_and_scenes_03_create_node_window.webp
 
@@ -97,8 +98,8 @@ Select the Label node. You can type its name to filter down the list.
 
 .. image:: img/nodes_and_scenes_04_create_label_window.webp
 
-Click on the Label node to select it and click the Create button at the bottom
-of the window.
+Click on the Label node to select it and click the :button:`Create` button at
+the bottom of the window.
 
 .. image:: img/nodes_and_scenes_05_editor_with_label.webp
 
@@ -110,11 +111,11 @@ and the node's properties appear in the Inspector dock on the right.
 Changing a node's properties
 ----------------------------
 
-The next step is to change the Label's "Text" property. Let's change it to
-"Hello World".
+The next step is to change the Label's :inspector:`Text` property. Let's change
+it to "Hello World".
 
 Head to the Inspector dock on the right of the viewport. Click inside the field
-below the Text property and type "Hello World".
+below the :inspector:`Text` property and type "Hello World".
 
 .. image:: img/nodes_and_scenes_06_label_text.webp
 
@@ -137,17 +138,18 @@ move it to the center of the view delimited by the rectangle.
 Running the scene
 -----------------
 
-Everything's ready to run the scene! Press the **Run Current Scene** button in 
-the top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
+Everything's ready to run the scene! Press the :button:`Run Current Scene`
+button in the top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on
+macOS).
 
 .. image:: img/nodes_and_scenes_09_play_scene_button.webp
 
-A popup invites you to save the scene, which is required to run it.
-Click the Save button in the file browser to save it as ``label.tscn``.
+A popup invites you to save the scene, which is required to run it. Click the
+:button:`Save` button in the file browser to save it as ``label.tscn``.
 
 .. image:: img/nodes_and_scenes_10_save_scene_as.webp
 
-.. note:: The Save Scene As dialog, like other file dialogs in the editor, only
+.. note:: The :ui:`Save Scene As` dialog, like other file dialogs in the editor, only
           allows you to save files inside the project. The ``res://`` path at
           the top of the window represents the project's root directory and
           stands for "resource path". For more information about file paths in
@@ -162,8 +164,8 @@ Close the window or press :kbd:`F8` (:kbd:`Cmd + .` on macOS) to quit the runnin
 Setting the main scene
 ----------------------
 
-To run our test scene, we used the **Run Current Scene** button. Another button 
-next to it, **Run Project**, allows you to set and run the project's 
+To run our test scene, we used the :button:`Run Current Scene` button. Another button 
+next to it, :button:`Run Project`, allows you to set and run the project's 
 **main scene**. You can also press :kbd:`F5` (:kbd:`Cmd + B` on macOS) to do so.
 
 .. image:: img/nodes_and_scenes_12_play_button.webp
@@ -176,8 +178,8 @@ A popup window appears and invites you to select the main scene.
 
 .. image:: img/nodes_and_scenes_13_main_scene_popup.webp
 
-Click the Select button, and in the file dialog that appears, double click on
-``label.tscn``.
+Click the :button:`Select` button, and in the file dialog that appears, double
+click on ``label.tscn``.
 
 .. image:: img/nodes_and_scenes_14_select_main_scene.webp
 
@@ -186,9 +188,8 @@ will use this scene as a starting point.
 
 .. note:: The editor saves the main scene's path in a project.godot file in your
           project's directory. While you can edit this text file directly to
-          change project settings, you can also use the "Project -> Project
-          Settings" window to do so. For more information, see
-          :ref:`doc_project_settings`.
+          change project settings, you can also use the :menu:`Project > Project Settings`
+          window to do so. For more information, see :ref:`doc_project_settings`.
 
 In the next part, we will discuss another key concept in games and in Godot:
 creating instances of a scene.
