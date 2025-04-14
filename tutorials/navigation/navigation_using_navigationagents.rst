@@ -40,7 +40,7 @@ NavigationAgent Pathfollowing
 After a ``target_position`` has been set for the agent, the next position to follow in the path
 can be retrieved with the ``get_next_path_position()`` function.
 
-Once the next path position is received move the parent actor node of the agent
+Once the next path position is received, move the parent actor node of the agent
 towards this path position with your own movement code.
 
 .. note::

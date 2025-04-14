@@ -426,13 +426,7 @@ release.
 2D light rendering is performed in a single pass to allow for better performance
 with large amounts of lights.
 
-.. UPDATE: Planned feature. When Forward+ and Mobile feature 2D batching,
-.. update this.
-
-The Forward+ and Mobile rendering methods don't feature 2D batching yet, but
-it's planned for a future release.
-
-The Compatibility renderer features 2D batching to improve performance, which is
+All rendering methods feature 2D batching to improve performance, which is
 especially noticeable with lots of text on screen.
 
 MSAA can be enabled in 2D to provide "automatic" line and polygon antialiasing,
@@ -456,9 +450,10 @@ used to calculate particle collisions in 2D.
 Batching and instancing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Forward+ renderer, Vulkan instancing is used to group rendering
-of identical objects for performance. This is not as fast as static mesh
-merging, but it still allows instances to be culled individually.
+In the Forward+ renderer, Vulkan instancing is used to group rendering of
+identical opaque or alpha-tested objects for performance. (Alpha-blended objects
+are never instanced.) This is not as fast as static mesh merging, but it still
+allows instances to be culled individually.
 
 Light, decal and reflection probe rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

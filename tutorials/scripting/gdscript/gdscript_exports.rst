@@ -5,8 +5,9 @@ GDScript exported properties
 
 In Godot, class members can be exported. This means their value gets saved along
 with the resource (such as the :ref:`scene <class_PackedScene>`) they're
-attached to. They will also be available for editing in the property editor.
-Exporting is done by using the ``@export`` annotation.
+attached to, and get transferred over when using :ref:`RPCs <doc_high_level_multiplayer_rpcs>`.
+They will also be available for editing in the property editor. Exporting is done by using
+the ``@export`` annotation.
 
 ::
 
@@ -475,7 +476,7 @@ For example, this exposes the ``altitude`` property with no range limits but a
 
 ::
 
-    @export_custom(PROPERTY_HINT_NONE, "altitude:m") var altitude: Vector3
+    @export_custom(PROPERTY_HINT_NONE, "suffix:m") var altitude: float
 
 The above is normally not feasible with the standard ``@export_range`` syntax,
 since it requires defining a range.

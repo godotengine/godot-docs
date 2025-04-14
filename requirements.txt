@@ -18,7 +18,7 @@ sphinx-copybutton==0.5.2
 # Custom 404 error page (more useful than the default).
 sphinx-notfound-page==1.1.0
 # Adds Open Graph tags in the HTML `<head>` tag.
-sphinxext-opengraph==0.9.1
+sphinxext-opengraph==0.10.0
 
 # `.. video::` directive support to embed videos in documentation pages.
 sphinxcontrib-video==0.4.1

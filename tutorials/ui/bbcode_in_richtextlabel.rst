@@ -389,12 +389,20 @@ Reference
   * - | **bgcolor**
       | Draws the color behind ``{text}``. This can be used to highlight text.
         Accepts same values as the ``color`` tag.
+        By default, there is a slight padding which is controlled by the
+        ``text_highlight_h_padding`` and ``text_highlight_v_padding`` theme items
+        in the RichTextLabel node. Set padding to ``0`` to avoid potential overlapping
+        issues when there are background colors on neighboring lines/columns.
 
     - ``[bgcolor={code/name}]{text}[/bgcolor]``
 
   * - | **fgcolor**
       | Draws the color in front of ``{text}``. This can be used to "redact" text by using
         an opaque foreground color. Accepts same values as the ``color`` tag.
+        By default, there is a slight padding which is controlled by the
+        ``text_highlight_h_padding`` and ``text_highlight_v_padding`` theme items
+        in the RichTextLabel node. Set padding to ``0`` to avoid potential overlapping
+        issues when there are foreground colors on neighboring lines/columns.
 
     - ``[fgcolor={code/name}]{text}[/fgcolor]``
 

@@ -10,7 +10,7 @@ What this tutorial covers
 
 Main screen plugins allow you to create
 new UIs in the central part of the editor, which appear next to the
-"2D", "3D", "Script", and "AssetLib" buttons. Such editor plugins are
+"2D", "3D", "Script", "Game", and "AssetLib" buttons. Such editor plugins are
 referred as "Main screen plugins".
 
 This tutorial leads you through the creation of a basic main screen plugin.

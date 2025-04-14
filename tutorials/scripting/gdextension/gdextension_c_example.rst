@@ -760,7 +760,7 @@ the destructor.
 
     ...
 
-In the ``gdexample.cpp`` file, we will initialize these values in the constructor
+In the ``gdexample.c`` file, we will initialize these values in the constructor
 and add the implementations for those new functions, which are quite trivial:
 
 .. code-block:: c

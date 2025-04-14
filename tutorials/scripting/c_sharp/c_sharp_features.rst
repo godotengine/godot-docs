@@ -111,7 +111,7 @@ For example, you can change code based on the platform:
 
         public override void _Ready()
         {
-    #if (GODOT_32 || GODOT_MOBILE || GODOT_WEB)
+    #if (GODOT_MOBILE || GODOT_WEB)
             // Use simple objects when running on less powerful systems.
             SpawnSimpleObjects();
     #else
@@ -156,8 +156,6 @@ Full list of defines
 * ``TOOLS`` is defined when building with the Debug configuration (editor and editor player).
 
 * ``GODOT_REAL_T_IS_DOUBLE`` is defined when the ``GodotFloat64`` property is set to ``true``.
-
-* One of ``GODOT_64`` or ``GODOT_32`` is defined depending on if the architecture is 64-bit or 32-bit.
 
 * One of ``GODOT_LINUXBSD``, ``GODOT_WINDOWS``, ``GODOT_OSX``,
   ``GODOT_ANDROID``, ``GODOT_IOS``, ``GODOT_WEB``
