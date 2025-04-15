@@ -84,7 +84,7 @@ GDExtension
 ~~~~~~~~~~~
 
 - :ref:`doc_gdextension_file`
-- :ref:`doc_gdextension_docs_system`
+- :ref:`doc_godot_cpp_docs_system`
 
 Migrating
 ~~~~~~~~~
