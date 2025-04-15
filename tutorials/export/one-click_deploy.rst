@@ -38,7 +38,7 @@ Supported platforms
      the project should be exported to.
 
 - **iOS:** Exports the project with debugging enabled and runs it on the
-  connected device or simulator.
+  connected device.
 
    - Make sure to follow the steps described in :ref:`doc_exporting_for_ios`.
      Otherwise, the one-click deploy button won't appear.
@@ -80,8 +80,6 @@ Using one-click deploy
       - Make sure the device is on the same local network and a correct network
         interface is selected in the editor settings (see `Network ⇾ Debug ⇾ Remote Host`).
         By default, the editor is listening for `localhost` connections only.
-   - For running in simulator:
-      - Install and start simulator from the Xcode.
    - Device screen should be unlocked.
 
 - **Desktop platforms:**

@@ -59,17 +59,6 @@ To compile a release build:
 
     scons platform=ios target=template_release generate_bundle=yes
 
-Alternatively, you can run the following command for Xcode simulator libraries (optional):
-
-::
-
-    scons platform=ios target=template_debug ios_simulator=yes arch=arm64
-    scons platform=ios target=template_debug ios_simulator=yes arch=x86_64 generate_bundle=yes
-
-These simulator libraries cannot be used to run the exported project on the
-target device. Instead, they can be used to run the exported project directly on
-your Mac while still testing iOS platform-specific functionality.
-
 To create an Xcode project like in the official builds, you need to use the
 template located in ``misc/dist/ios_xcode``. The release and debug libraries
 should be placed in ``libgodot.ios.debug.xcframework`` and
@@ -84,8 +73,12 @@ linked on iOS; there is no dynamic linking option available, unlike macOS.
 Run
 ---
 
-To run on a device or simulator, follow these instructions:
+To run on a device, follow these instructions:
 :ref:`doc_exporting_for_ios`.
+
+iOS exports can run directly on an Apple Silicon Mac. To run exported iOS project
+on Mac, open exported project in Xcode and select ``My Mac`` in the ``Run Destinations``
+dropdown.
 
 Troubleshooting
 ---------------
