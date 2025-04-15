@@ -181,16 +181,16 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
   Example:
 
-.. code-block:: java
-
-@Override
-public List<String> getCommandLine(){
-    List<String> results = new ArrayList<>();
-    results.addAll(super.getCommandLine());
-    results.add("--main-pack");
-    results.add("res://foo.pck");
-    return results;
-}
+  .. code-block:: java
+  
+    @Override
+    public List<String> getCommandLine(){
+        List<String> results = new ArrayList<>();
+        results.addAll(super.getCommandLine());
+        results.add("--main-pack");
+        results.add("res://foo.pck");
+        return results;
+    }
 
   The instructions below and the sample app follow the first approach of creating the Godot project in the Android app's ``assets`` directory.
 
