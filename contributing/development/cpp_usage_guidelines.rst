@@ -84,8 +84,26 @@ Keep in mind hover documentation often isn't readily available for pull request
 reviewers. Most of the time, reviewers will use GitHub's online viewer to review
 pull requests.
 
-We chose to forbid ``auto`` instead of allowing it on a case-by-case basis to
-avoid having to decide on difficult edge cases. Thank you for your understanding.
+The ``auto`` keyword can be used in some special cases, like C++ lambda or Objective-C block
+definitions and C++ templates. Please ask before using templates with ``auto`` in a pull request.
+
+.. code-block:: cpp
+
+    // Full type definitions.
+    void (*mult64to128)(uint64_t, uint64_t, uint64_t &, uint64_t &) = [](uint64_t u, uint64_t v, uint64_t &h, uint64_t &l) { ... }
+    void (^JOYSTICK_LEFT)(GCControllerDirectionPad *__strong, float, float) = ^(GCControllerDirectionPad *dpad, float xValue, float yValue) { ... }
+
+    // Less clutter with auto.
+    auto mult64to128 = [](uint64_t u, uint64_t v, uint64_t &h, uint64_t &l) { ... }
+    auto JOYSTICK_LEFT = ^(GCControllerDirectionPad *dpad, float xValue, float yValue) { ... }
+
+    // Compare function for different types.
+    template <typename T1, typename T2>
+    constexpr auto MIN(const T1 m_a, const T2 m_b) {
+        return m_a < m_b ? m_a : m_b;
+    }
+
+We chose to forbid ``auto`` in all other cases. Thank you for your understanding.
 
 Lambdas
 ~~~~~~~
