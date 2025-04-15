@@ -203,18 +203,13 @@ Example:
     /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
     /**************************************************************************/
 
-    #ifndef MY_NEW_FILE_H
-    #define MY_NEW_FILE_H
+    #pragma once
 
     #include "core/hash_map.h"
     #include "core/list.h"
     #include "scene/gui/control.h"
 
     #include <png.h>
-
-    ...
-
-    #endif // MY_NEW_FILE_H
 
 .. code-block:: cpp
     :caption: my_new_file.cpp

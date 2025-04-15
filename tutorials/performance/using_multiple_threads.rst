@@ -49,8 +49,7 @@ To create a thread, use the following code:
 
  .. code-tab:: cpp C++ .H File
 
-    #ifndef MULTITHREADING_DEMO_H
-    #define MULTITHREADING_DEMO_H
+    #pragma once
 
     #include <godot_cpp/classes/node.hpp>
     #include <godot_cpp/classes/thread.hpp>
@@ -73,8 +72,6 @@ To create a thread, use the following code:
             void demo_threaded_function();
         };
     } // namespace godot
-
-    #endif // MULTITHREADING_DEMO_H
 
  .. code-tab:: cpp C++ .CPP File
 
@@ -209,8 +206,7 @@ Here is an example of using a Mutex:
 
  .. code-tab:: cpp C++ .H File
 
-    #ifndef MUTEX_DEMO_H
-    #define MUTEX_DEMO_H
+    #pragma once
 
     #include <godot_cpp/classes/mutex.hpp>
     #include <godot_cpp/classes/node.hpp>
@@ -236,8 +232,6 @@ Here is an example of using a Mutex:
             void thread_function();
         };
     } // namespace godot
-
-    #endif // MUTEX_DEMO_H
 
  .. code-tab:: cpp C++ .CPP File
 
@@ -379,8 +373,7 @@ ready to be processed:
 
  .. code-tab:: cpp C++ .H File
 
-    #ifndef SEMAPHORE_DEMO_H
-    #define SEMAPHORE_DEMO_H
+    #pragma once
 
     #include <godot_cpp/classes/mutex.hpp>
     #include <godot_cpp/classes/node.hpp>
@@ -411,8 +404,6 @@ ready to be processed:
             int get_counter();
         };
     } // namespace godot
-
-    #endif // SEMAPHORE_DEMO_H
 
  .. code-tab:: cpp C++ .CPP File
 

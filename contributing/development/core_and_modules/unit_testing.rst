@@ -113,8 +113,7 @@ Here's a minimal working test suite with a single test case written:
 
 .. code-block:: cpp
 
-    #ifndef TEST_STRING_H
-    #define TEST_STRING_H
+    #pragma once
 
     #include "tests/test_macros.h"
 
@@ -126,8 +125,6 @@ Here's a minimal working test suite with a single test case written:
     }
 
     } // namespace TestString
-
-    #endif // TEST_STRING_H
 
 .. note::
     You can quickly generate new tests using the ``create_test.py`` script found in the ``tests/`` directory.

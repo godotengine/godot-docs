@@ -112,11 +112,12 @@ Lambdas should be used conservatively when they make code effectively faster or
 simpler, and do not impede readability. Please ask before using lambdas in a
 pull request.
 
-``#pragma once`` directive
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+``#ifdef``-based include guards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To follow the existing style, please use standard ``#ifdef``-based include
-guards instead of ``#pragma once`` in new files.
+Starting with 4.5, all files now use the ``#pragma once`` directive, as they
+improve readability and declutter macros. Use of ``#ifdef``-based include
+guards are now actively discouraged.
 
 ``try``-``catch`` blocks
 ~~~~~~~~~~~~~~~~~~~~~~~~

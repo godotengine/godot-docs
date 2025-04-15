@@ -22,8 +22,7 @@ Next, you will create a header file with a TTS class:
 .. code-block:: cpp
     :caption: godot/modules/tts/tts.h
 
-    #ifndef GODOT_TTS_H
-    #define GODOT_TTS_H
+    #pragma once
 
     #include "core/object/ref_counted.h"
 
@@ -38,8 +37,6 @@ Next, you will create a header file with a TTS class:
 
         TTS();
     };
-
-    #endif // GODOT_TTS_H
 
 And then you'll add the cpp file.
 
