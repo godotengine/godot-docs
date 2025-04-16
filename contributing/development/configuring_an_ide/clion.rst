@@ -17,6 +17,19 @@ CLion can import a project's `compilation database file <https://clang.llvm.org/
 
 Then, open the Godot root directory with CLion. CLion will import the compilation database, index the codebase, and provide autocompletion and other advanced code navigation and refactoring functionality.
 
+   .. note:: Windows Users:
+
+      For ``compile_commands.json`` to load correctly in CLion, you must first have the Visual Studio toolchain configured for CLion.
+
+      - Navigate to **Preferences > Build, Execution, Deployment > Toolchains**
+      - Click the **+** button and select  ``Visual Studio``
+      - CLion will attempt to detect your Visual Studio installation. If it is unsuccessful, use the file icon to the right of ``Toolset:`` to select the directory with your Visual Studio installation.
+
+      You may exit and reload CLion and it will reload ``compile_commands.json``
+  
+.. figure:: img/clion_visual_studio_toolchain.webp
+   :align: center
+
 Compiling and debugging the project
 -----------------------------------
 
