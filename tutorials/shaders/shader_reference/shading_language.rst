@@ -1257,7 +1257,7 @@ Built-in variables
 A large number of built-in variables are available, like ``UV``, ``COLOR`` and
 ``VERTEX``. What variables are available depends on the type of shader
 (``spatial``, ``canvas_item``, ``particle``, etc) and the
-function used (``vertex``, ``fragment``, ``light``, ``start``, ``process,
+function used (``vertex``, ``fragment``, ``light``, ``start``, ``process``,
 ``sky``, or ``fog``). For a list of the built-in variables that are available,
 please see the corresponding pages:
 
