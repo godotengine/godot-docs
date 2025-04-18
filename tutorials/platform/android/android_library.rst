@@ -179,6 +179,19 @@ Below we break-down the steps used to create the GLTF Viewer app.
   to the Android app's ``assets`` directory.
   Using this approach requires passing the ``--main-pack <pck_or_zip_filepath_relative_to_assets_dir>`` argument to the hosted Godot Engine instance using `GodotHost#getCommandLine() <https://github.com/godotengine/godot/blob/6916349697a4339216469e9bf5899b983d78db07/platform/android/java/lib/src/org/godotengine/godot/GodotHost.java#L45>`_.
 
+  Example:
+
+  .. code-block:: java
+  
+    @Override
+    public List<String> getCommandLine(){
+        List<String> results = new ArrayList<>();
+        results.addAll(super.getCommandLine());
+        results.add("--main-pack");
+        results.add("res://foo.pck");
+        return results;
+    }
+
   The instructions below and the sample app follow the first approach of creating the Godot project in the Android app's ``assets`` directory.
 
 
