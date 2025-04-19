@@ -37,6 +37,8 @@ what you can do with the Signal type directly.
     observer pattern. You can learn more about it in
     `Game Programming Patterns <https://gameprogrammingpatterns.com/observer.html>`__.
 
+.. note:: Signals in godot-cpp are used in slightly different ways than GDScript or CSharp. To learn more head to the :ref:`GDExtension C++ example <doc_gdextension_cpp_signals_example>` page.
+
 We will now use a signal to make our Godot icon from the previous lesson
 (:ref:`doc_scripting_player_input`) move and stop by pressing a button.
 
