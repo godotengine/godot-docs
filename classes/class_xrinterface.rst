@@ -334,6 +334,40 @@ Additive blend mode. This is typically used for AR devices or VR devices with pa
 
 Alpha blend mode. This is typically used for AR or VR devices with passthrough capabilities. The alpha channel controls how much of the passthrough is visible. Alpha of 0.0 means the passthrough is visible and this pixel works in ADDITIVE mode. Alpha of 1.0 means that the passthrough is not visible and this pixel works in OPAQUE mode.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_XRInterface_VRSTextureFormat:
+
+.. rst-class:: classref-enumeration
+
+enum **VRSTextureFormat**: :ref:`🔗<enum_XRInterface_VRSTextureFormat>`
+
+.. _class_XRInterface_constant_XR_VRS_TEXTURE_FORMAT_UNIFIED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VRSTextureFormat<enum_XRInterface_VRSTextureFormat>` **XR_VRS_TEXTURE_FORMAT_UNIFIED** = ``0``
+
+The texture format is the same as returned by :ref:`XRVRS.make_vrs_texture()<class_XRVRS_method_make_vrs_texture>`.
+
+.. _class_XRInterface_constant_XR_VRS_TEXTURE_FORMAT_FRAGMENT_SHADING_RATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VRSTextureFormat<enum_XRInterface_VRSTextureFormat>` **XR_VRS_TEXTURE_FORMAT_FRAGMENT_SHADING_RATE** = ``1``
+
+The texture format is the same as expected by the Vulkan ``VK_KHR_fragment_shading_rate`` extension.
+
+.. _class_XRInterface_constant_XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VRSTextureFormat<enum_XRInterface_VRSTextureFormat>` **XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP** = ``2``
+
+The texture format is the same as expected by the Vulkan ``VK_EXT_fragment_density_map`` extension.
+
 .. rst-class:: classref-section-separator
 
 ----

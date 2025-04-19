@@ -970,6 +970,8 @@ A signal can only be connected once to the same :ref:`Callable<class_Callable>`.
 
 \ **Note:** In GDScript, it is generally recommended to connect signals with :ref:`Signal.connect()<class_Signal_method_connect>` instead.
 
+\ **Note:** This operation (and all other signal related operations) is thread-safe.
+
 .. rst-class:: classref-item-separator
 
 ----

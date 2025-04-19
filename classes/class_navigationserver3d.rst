@@ -311,6 +311,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`region_get_enter_cost<class_NavigationServer3D_method_region_get_enter_cost>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                            |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`region_get_iteration_id<class_NavigationServer3D_method_region_get_iteration_id>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                        |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`region_get_map<class_NavigationServer3D_method_region_get_map>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                          |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`region_get_navigation_layers<class_NavigationServer3D_method_region_get_navigation_layers>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                              |
@@ -2064,6 +2066,20 @@ Returns ``true`` if the specified ``region`` is enabled.
 :ref:`float<class_float>` **region_get_enter_cost**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_region_get_enter_cost>`
 
 Returns the enter cost of this ``region``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_get_iteration_id:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **region_get_iteration_id**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_region_get_iteration_id>`
+
+Returns the current iteration ID of the navigation region. Every time the navigation region changes and synchronizes, the iteration ID increases. An iteration ID of ``0`` means the navigation region has never synchronized.
+
+\ **Note:** The iteration ID will wrap around to ``1`` after reaching its range limit.
 
 .. rst-class:: classref-item-separator
 

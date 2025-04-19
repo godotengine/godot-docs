@@ -109,7 +109,9 @@ Positive floating-point infinity. This is the result of floating-point division 
 
 **NAN** = ``nan`` :ref:`🔗<class_@GDScript_constant_NAN>`
 
-"Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that ``!=`` always returns ``true``, while other comparison operators always return ``false``. This is true even when comparing with itself (``NAN == NAN`` returns ``false`` and ``NAN != NAN`` returns ``true``). It is returned by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
+"Not a Number", an invalid floating-point value. It is returned by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
+
+\ :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that ``!=`` always returns ``true``, while other comparison operators always return ``false``. This is true even when comparing with itself (``NAN == NAN`` returns ``false`` and ``NAN != NAN`` returns ``true``). Due to this, you must use :ref:`@GlobalScope.is_nan()<class_@GlobalScope_method_is_nan>` to check whether a number is equal to :ref:`NAN<class_@GDScript_constant_NAN>`.
 
 \ **Warning:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
 

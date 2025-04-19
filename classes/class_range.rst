@@ -158,7 +158,7 @@ If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min
 - |void| **set_exp_ratio**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_ratio_exp**\ (\ )
 
-If ``true``, and :ref:`min_value<class_Range_property_min_value>` is greater than 0, :ref:`value<class_Range_property_value>` will be represented exponentially rather than linearly.
+If ``true``, and :ref:`min_value<class_Range_property_min_value>` is greater or equal to ``0``, :ref:`value<class_Range_property_value>` will be represented exponentially rather than linearly.
 
 .. rst-class:: classref-item-separator
 

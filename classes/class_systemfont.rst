@@ -68,7 +68,7 @@ Properties
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`multichannel_signed_distance_field<class_SystemFont_property_multichannel_signed_distance_field>` | ``false``               |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-   | :ref:`float<class_float>`                                       | :ref:`oversampling<class_SystemFont_property_oversampling>`                                             | ``0.0``                 |
+   | :ref:`float<class_float>`                                       | :ref:`oversampling<class_SystemFont_property_oversampling>`                                             |                         |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` | :ref:`subpixel_positioning<class_SystemFont_property_subpixel_positioning>`                             | ``1``                   |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
@@ -343,14 +343,16 @@ If set to ``true``, glyphs of all sizes are rendered using single multichannel s
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **oversampling** = ``0.0`` :ref:`🔗<class_SystemFont_property_oversampling>`
+:ref:`float<class_float>` **oversampling** :ref:`🔗<class_SystemFont_property_oversampling>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_oversampling**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_oversampling**\ (\ )
 
-Font oversampling factor, if set to ``0.0`` global oversampling factor is used instead.
+**Deprecated:** Use the ``oversampling`` argument of the ``draw_*`` methods instead.
+
+Deprecated. This property does nothing.
 
 .. rst-class:: classref-item-separator
 
