@@ -15,21 +15,16 @@ We'll be using this as a base for our documentation here.
 It helps developers hit the ground running but for more specific use cases building your own logic is just as valid.
 In that case XR tools can help in providing inspiration.
 
-.. note::
-  The current stable release of Godot XR Tools available on the Asset Library is the version for Godot 3.
-  The port of Godot XR Tools for Godot 4 is available for download from the github website.
-  We will walk through the step of downloading and installing it here.
-  We will update the documentation once Godot XR Tools becomes available for Godot 4 through the asset library.
-
 Installing XR Tools
 -------------------
 
 Continuing on from our project we started in :ref:`doc_setting_up_xr` we want to add in the Godot XR Tools library.
 This can be downloaded from the `Godot XR Tools releases page <https://github.com/GodotVR/godot-xr-tools/releases>`_.
 Find the latest release for Godot 4, and under **Assets**, download the
-``godot-xr-tools.zip`` file.
+``godot-xr-tools.zip`` file. You can also find it in the asset library with the
+title "Godot XR Tools for Godot 4".
 
-Once downloaded unzip the file.
+If you're using the zip file, once it's downloaded unzip it.
 You will notice the files are held within a ``godot-xr-tools`` subfolder.
 Inside of this folder you will find an ``addons`` folder.
 It is this folder that you want to copy in its entirety to your Godot project folder. Your project should now look something like this:

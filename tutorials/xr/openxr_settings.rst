@@ -246,7 +246,7 @@ come from optical hand tracking sensors or any other applicable source.
 
 If your game only supports controllers this should be turned off. 
 
-See the chapter on :ref:`hand tracking <doc_openxr_hand_tracking>` for additional details.
+See the page on :ref:`hand tracking <doc_openxr_hand_tracking>` for additional details.
 
 Hand Tracking Unobstructed Data Source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -303,7 +303,8 @@ Binding Modifiers
 -----------------
 
 These control whether or not binding modifiers can be used. Binding modifiers are
-used to apply thresholds or offset values.
+used to apply thresholds or offset values. You can find information on how to use
+and set them up on the XR action map page :ref:`here <doc_binding_modifiers>`.
 
 Analog Threshold
 ~~~~~~~~~~~~~~~~
