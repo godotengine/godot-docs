@@ -605,7 +605,7 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/touchscreen/scale_gizmo_handles<class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`network/connection/engine_version_update_mode<class_EditorSettings_property_network/connection/engine_version_update_mode>`                                                                                 |
+   | :ref:`int<class_int>`                             | :ref:`network/connection/check_for_updates<class_EditorSettings_property_network/connection/check_for_updates>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/connection/network_mode<class_EditorSettings_property_network/connection/network_mode>`                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4488,11 +4488,11 @@ Specify the multiplier to apply to the scale for the editor gizmo handles to imp
 
 ----
 
-.. _class_EditorSettings_property_network/connection/engine_version_update_mode:
+.. _class_EditorSettings_property_network/connection/check_for_updates:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/connection/engine_version_update_mode** :ref:`🔗<class_EditorSettings_property_network/connection/engine_version_update_mode>`
+:ref:`int<class_int>` **network/connection/check_for_updates** :ref:`🔗<class_EditorSettings_property_network/connection/check_for_updates>`
 
 Specifies how the engine should check for updates.
 

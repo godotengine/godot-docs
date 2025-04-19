@@ -6015,7 +6015,7 @@ Infinity values of the same sign are considered equal.
 
 :ref:`bool<class_bool>` **is_finite**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_is_finite>`
 
-Returns whether ``x`` is a finite value, i.e. it is not :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`, positive infinity, or negative infinity.
+Returns whether ``x`` is a finite value, i.e. it is not :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`, positive infinity, or negative infinity. See also :ref:`is_inf()<class_@GlobalScope_method_is_inf>` and :ref:`is_nan()<class_@GlobalScope_method_is_nan>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6027,7 +6027,7 @@ Returns whether ``x`` is a finite value, i.e. it is not :ref:`@GDScript.NAN<clas
 
 :ref:`bool<class_bool>` **is_inf**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_is_inf>`
 
-Returns ``true`` if ``x`` is either positive infinity or negative infinity.
+Returns ``true`` if ``x`` is either positive infinity or negative infinity. See also :ref:`is_finite()<class_@GlobalScope_method_is_finite>` and :ref:`is_nan()<class_@GlobalScope_method_is_nan>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6063,7 +6063,7 @@ Returns ``true`` if ``instance`` is a valid Object (e.g. has not been deleted fr
 
 :ref:`bool<class_bool>` **is_nan**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_is_nan>`
 
-Returns ``true`` if ``x`` is a NaN ("Not a Number" or invalid) value.
+Returns ``true`` if ``x`` is a NaN ("Not a Number" or invalid) value. This method is needed as :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` is not equal to itself, which means ``x == NAN`` can't be used to check whether a value is a NaN.
 
 .. rst-class:: classref-item-separator
 

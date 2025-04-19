@@ -97,6 +97,10 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`MSAA<enum_Viewport_MSAA>`                                                               | :ref:`msaa_3d<class_Viewport_property_msaa_3d>`                                                       | ``0``                                                                         |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                                       | :ref:`oversampling<class_Viewport_property_oversampling>`                                             | ``true``                                                                      |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                                     | :ref:`oversampling_override<class_Viewport_property_oversampling_override>`                           | ``0.0``                                                                       |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`own_world_3d<class_Viewport_property_own_world_3d>`                                             | ``false``                                                                     |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>`                           | physics_interpolation_mode                                                                            | ``1`` (overrides :ref:`Node<class_Node_property_physics_interpolation_mode>`) |
@@ -186,6 +190,8 @@ Methods
    | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`get_final_transform<class_Viewport_method_get_final_transform>`\ (\ ) |const|                                                                                                                                                                                   |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                                                 | :ref:`get_mouse_position<class_Viewport_method_get_mouse_position>`\ (\ ) |const|                                                                                                                                                                                     |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                                     | :ref:`get_oversampling<class_Viewport_method_get_oversampling>`\ (\ ) |const|                                                                                                                                                                                         |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalShadowAtlasQuadrantSubdiv>` | :ref:`get_positional_shadow_atlas_quadrant_subdiv<class_Viewport_method_get_positional_shadow_atlas_quadrant_subdiv>`\ (\ quadrant\: :ref:`int<class_int>`\ ) |const|                                                                                                 |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1535,6 +1541,40 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_Pro
 
 ----
 
+.. _class_Viewport_property_oversampling:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **oversampling** = ``true`` :ref:`🔗<class_Viewport_property_oversampling>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_oversampling**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_oversampling**\ (\ )
+
+If ``true`` and one of the following conditions is true: :ref:`SubViewport.size_2d_override_stretch<class_SubViewport_property_size_2d_override_stretch>` and :ref:`SubViewport.size_2d_override<class_SubViewport_property_size_2d_override>` are set, :ref:`Window.content_scale_factor<class_Window_property_content_scale_factor>` is set and scaling is enabled, :ref:`oversampling_override<class_Viewport_property_oversampling_override>` is set, font oversampling is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_property_oversampling_override:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **oversampling_override** = ``0.0`` :ref:`🔗<class_Viewport_property_oversampling_override>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_oversampling_override**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_oversampling_override**\ (\ )
+
+If greater than zero, this value is used as the font oversampling factor, otherwise oversampling is equal to viewport scale.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_property_own_world_3d:
 
 .. rst-class:: classref-property
@@ -2207,6 +2247,18 @@ Returns the transform from the viewport's coordinate system to the embedder's co
 :ref:`Vector2<class_Vector2>` **get_mouse_position**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_mouse_position>`
 
 Returns the mouse's position in this **Viewport** using the coordinate system of this **Viewport**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_get_oversampling:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_oversampling**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_oversampling>`
+
+Returns viewport oversampling factor.
 
 .. rst-class:: classref-item-separator
 

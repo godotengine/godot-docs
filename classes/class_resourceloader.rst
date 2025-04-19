@@ -286,7 +286,16 @@ Once a resource has been loaded by the engine, it is cached in memory for faster
 
 :ref:`PackedStringArray<class_PackedStringArray>` **list_directory**\ (\ directory_path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_list_directory>`
 
-Lists a directory (as example: "res://assets/enemies"), returning all resources contained within. The resource files are the original file names as visible in the editor before exporting.
+Lists a directory, returning all resources and subdirectories contained within. The resource files have the original file names as visible in the editor before exporting. The directories have ``"/"`` appended.
+
+::
+
+    # Prints ["extra_data/", "model.gltf", "model.tscn", "model_slime.png"]
+    print(ResourceLoader.list_directory("res://assets/enemies/slime"))
+
+\ **Note:** The order of files and directories returned by this method is not deterministic, and can vary between operating systems.
+
+\ **Note:** To normally traverse the filesystem, see :ref:`DirAccess<class_DirAccess>`.
 
 .. rst-class:: classref-item-separator
 

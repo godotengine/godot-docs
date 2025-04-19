@@ -13483,8 +13483,6 @@ Specify whether OpenXR should be configured for an HMD or a hand held device.
 
 If ``true`` and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
 
-\ **Note:** Only works on the Compatibility rendering method.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -13497,7 +13495,7 @@ If ``true`` and foveation is supported, will automatically adjust foveation leve
 
 Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
 
-\ **Note:** Only works on the Compatibility rendering method. On platforms other than Android, if :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` is enabled, this feature will be disabled.
+\ **Note:** On platforms other than Android, if :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` is enabled, this feature will be disabled.
 
 .. rst-class:: classref-item-separator
 
