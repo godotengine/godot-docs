@@ -55,16 +55,39 @@ See :ref:`doc_faq_why_not_stl` for more information.
 This means that pull requests should **not** use ``std::string``,
 ``std::vector`` and the like. Instead, use Godot's datatypes as described below:
 
-- Use ``String`` instead of ``std::string``.
-- Use ``Vector`` instead of ``std::vector``. In some cases, ``LocalVector``
-  can be used as an alternative (ask core developers first).
-- Use ``Array`` instead of ``std::array``.
++------------------------+----------------------------+-------------------------------------------+
+| C++ STL datatype       | Recommended Godot datatype | Alternative Godot datatype*               |
++========================+============================+===========================================+
+| ``std::string``        | ``String``                 | ``StringName``                            |
++------------------------+----------------------------+-------------------------------------------+
+| ``std::vector``        | ``Vector``                 | ``LocalVector``                           |
++------------------------+----------------------------+-------------------------------------------+
+| ``std::array``         | ``Array``                  | ``TypedArray``                            |
++------------------------+----------------------------+-------------------------------------------+
+| ``std::span``          | ``Span``                   |                                           |
++------------------------+----------------------------+-------------------------------------------+
+| ``std::set``           | ``HashSet``                | ``RBSet``                                 |
++------------------------+----------------------------+-------------------------------------------+
+| ``std::map``           | ``OAHashMap``              | ``AHashMap``, ``HashMap``, ``Dictionary`` |
++------------------------+----------------------------+-------------------------------------------+
+| ``std::unordered_map`` | ``OAHashMap``              | ``AHashMap``, ``HashMap``, ``Dictionary`` |
++------------------------+----------------------------+-------------------------------------------+
+| ``std::pair``          | ``Pair``                   |                                           |
++------------------------+----------------------------+-------------------------------------------+
+| ``std::variant``       | ``Variant``                |                                           |
++------------------------+----------------------------+-------------------------------------------+
+
+\*: For certain use cases, this alternative datatype is more performant or has
+characteristics that are more suitable for the task at hand. However, it is not
+always a direct replacement for the recommended datatype. Ask for advice if you
+are unsure.
 
 .. note::
 
-    Godot also has a List datatype (which is a linked list). While List is already used
-    in the codebase, it typically performs worse than other datatypes like Vector
-    and Array. Therefore, List should be avoided in new code unless necessary.
+    Godot also has a ``List`` datatype (which is a linked list). While ``List``
+    is already used in the codebase, it typically performs worse than other
+    datatypes like ``Vector`` and ``Array``. Therefore, ``List`` should be
+    avoided in new code unless necessary.
 
 ``auto`` keyword
 ~~~~~~~~~~~~~~~~
