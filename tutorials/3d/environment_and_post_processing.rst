@@ -290,14 +290,19 @@ Both of these fog types can have their curve tweaked, making their transition mo
 
 Two properties can be tweaked to make the fog effect more interesting:
 
-The first is **Sun Amount**, which makes use of the Sun Color property of the fog.
-When looking towards a directional light (usually a sun), the color of the fog
-will be changed, simulating the sunlight passing through the fog.
+The first is **Sun Scatter**, which makes use of the DirectionalLight3D's color
+and energy in the current scene. When looking towards the directional light
+(usually a sun), the fog will be tinted according to the light's color to
+simulate the sunlight passing through the fog.
 
-The second is **Transmit Enabled** which simulates more realistic light transmittance.
-In practice, it makes light stand out more across the fog.
+The second is **Aerial Perspective**, which tints the fog color according to the
+sky color to better blend the sky with the background. Higher values will result
+in more tinting, with ``1.0`` fully replacing the regular fog color with aerial
+perspective. This can be used in large open world levels to provide a better
+sense of depth, or to avoid color discontinuities between the sky and fog colors.
 
-.. image:: img/environment_fog_transmission.webp
+If both **Sun Scatter** and **Aerial Perspective** are greater than ``0.0``, sun
+scattering is applied on top of aerial perspective.
 
 .. note::
 
