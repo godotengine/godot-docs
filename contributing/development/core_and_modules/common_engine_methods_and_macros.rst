@@ -149,7 +149,7 @@ declaration.
 
 .. note::
 
-    You may have to ``#include "core/os/os.h"`` if it's not present already.
+    You may have to ``#include "core/os/time.h"`` if it's not present already.
 
     When opening a pull request, make sure to remove this snippet as well as the
     include if it wasn't there previously.
