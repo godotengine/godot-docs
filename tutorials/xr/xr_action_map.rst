@@ -17,7 +17,7 @@ and binding these to the actual inputs and outputs on your XR devices.
 As the XR action map is currently part of the OpenXR module, OpenXR needs to be enabled
 in your project settings to expose it:
 
-.. image:: img/openxr_settings.webp
+.. image:: img/openxr_enabled.webp
 
 You will then find the XR Action Map interface in the bottom of the screen:
 
@@ -479,6 +479,8 @@ to use bindings from one of the more popular systems as a fallback first.
   The Oculus Touch controller is widely used as a fallback controller by many runtimes.
   If you are able to test your game using a Meta Rift or Quest and add this profile
   there is a high probability your game will work with other headsets.
+
+.. _doc_binding_modifiers:
 
 Binding Modifiers
 -----------------
