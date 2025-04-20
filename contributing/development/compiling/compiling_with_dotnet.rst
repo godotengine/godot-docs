@@ -137,6 +137,7 @@ argument for scons, the managed libraries must also be built without dependencie
 This is done by passing the ``--no-deprecated`` argument:
 
 ::
+
     ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local <my_local_source> --no-deprecated
 
 Double Precision Support (REAL_T_IS_DOUBLE)
