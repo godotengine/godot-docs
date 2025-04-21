@@ -84,7 +84,7 @@ from left to right:
   The node rotates considering this point. If you have multiple nodes selected, this icon 
   will add a temporary pivot to be used commonly by all selected nodes. Pressing :kbd:`Shift` 
   and clicking this button will create the pivot at the center of selected nodes. If any of 
-  the snap options are enabled, the pivot will also snap to them it when dragged.
+  the snap options are enabled, the pivot will also snap to them when dragged.
 - **Pan Mode** (:kbd:`G`): Allows you to navigate in the viewport without accidentally selecting any nodes.
   In other modes, you can also hold :kbd:`Space` and drag with the left mouse button to do the same.
 - **Ruler Mode**: After enabling, click on the viewport to display the current global 
