@@ -91,7 +91,7 @@ Please follow `RIDER-123535 <https://youtrack.jetbrains.com/issue/RIDER-123535/n
 Unit testing
 ------------
 Leverage Rider :ref:`doctest<doc_unit_testing>` support.
-Please follow `RIDER-122019 <https://youtrack.jetbrains.com/issue/RIDER-122019/Godot-doctest-Unit-Tests-Stuck-in-pending>`_.
+Please refer to `the instructions <https://github.com/JetBrains/godot-support/wiki/Godot-doctest-Unit-Tests>`_.
 
 Profiling
 ---------
