@@ -144,8 +144,8 @@ space those two sets of characters when placed next to eachother.
 
 .. figure:: img/using_fonts_bitmap_kerning_pairs_example.webp
 
-If needed, your kerning pair characters can be specified by unicode character code
-by entering ``\uXXXX`` where XXXX is the hexadecimal value of the unicode character.
+If needed, your kerning pair characters can be specified by Unicode character code
+by entering ``\uXXXX`` where XXXX is the hexadecimal value of the Unicode character.
 
 Loading a font file
 -------------------
