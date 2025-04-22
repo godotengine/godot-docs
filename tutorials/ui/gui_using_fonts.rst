@@ -137,8 +137,6 @@ your lowercase letters are thinner than your uppercase letters.
    :alt: Diagram showing the advance and offset values being used in character ranges.
 
    Do note that the offsets can cause your text to be cropped off the edge of your label boundaries.
-
-
 Secondly, you can also set up **Kerning Pairs** for individual characters.
 Specify your kerning pair by typing two sets of characters separated by a space,
 then followed by another space, a number to specify how many extra/less pixels to
