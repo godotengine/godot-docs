@@ -105,20 +105,33 @@ Here is how a ``_process()`` function might look for you:
         // Code to execute both in editor and in game.
     }
 
+.. _doc_running_code_in_the_editor_important_information:
+
 Important information
 ---------------------
 
-Any other GDScript that your tool script uses must *also* be a tool. Any
-GDScript without ``@tool`` used by the editor will act like an empty file!
+The general rule is that **any other GDScript that your tool script uses must
+*also* be a tool**. The editor is not able to construct instances from GDScript
+files without ``@tool``, which means you cannot call methods or reference member
+variables from them otherwise. However, since static methods, constants and
+enums can be used without creating an instance, it is possible to call them or
+reference them from a ``@tool`` script onto other non-tool scripts. One exception to
+this are :ref:`static variables <doc_gdscript_basics_static_variables>`.
+If you try to read a static variable's value in a script that does not have
+``@tool``, it will always return ``null`` but won't print a warning or error
+when doing so. This restriction does not apply to static methods, which can be
+called regardless of whether the target script is in tool mode.
 
 Extending a ``@tool`` script does not automatically make the extending script
 a ``@tool``. Omitting ``@tool`` from the extending script will disable tool
-behavior from the super class. Therefore the extending script should also
+behavior from the super class. Therefore, the extending script should also
 specify the ``@tool`` annotation.
 
-Modifications in the editor are permanent. For example, in the next
-section when we remove the script, the node will keep its rotation. Be careful
-to avoid making unwanted modifications.
+Modifications in the editor are permanent, with no undo/redo possible. For
+example, in the next section when we remove the script, the node will keep its
+rotation. Be careful to avoid making unwanted modifications. Consider setting up
+:ref:`version control <doc_version_control_systems>` to avoid losing work in
+case you make a mistake.
 
 Try ``@tool`` out
 -----------------
