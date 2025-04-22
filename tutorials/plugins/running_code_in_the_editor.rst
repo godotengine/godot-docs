@@ -237,7 +237,7 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
 
         public override void _Process(double delta)
         {
-            Rotation += Mathf.Pi * (float)delta * speed;
+            Rotation += Mathf.Pi * (float)delta * _speed;
         }
     }
 
