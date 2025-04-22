@@ -120,6 +120,11 @@ Modifications in the editor are permanent. For example, in the next
 section when we remove the script, the node will keep its rotation. Be careful
 to avoid making unwanted modifications.
 
+Using the debugger and breakpoints on tool scripts is not currently supported.
+Breakpoints placed in the script editor or using the ``breakpoint`` keyword are
+ignored. You can use print statements to display the contents of variables
+instead.
+
 Try ``@tool`` out
 -----------------
 

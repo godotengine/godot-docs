@@ -48,6 +48,13 @@ You can use the buttons in the top-right corner to:
 - **Break**. This button pauses the game's execution.
 - **Continue**. This button resumes the game after a breakpoint or pause.
 
+.. note::
+
+    Using the debugger and breakpoints on :ref:`tool scripts <doc_running_code_in_the_editor>`
+    is not currently supported. Breakpoints placed in the script editor or using
+    the ``breakpoint`` keyword are ignored. You can use print statements to
+    display the contents of variables instead.
+
 Errors
 ------
 
