@@ -68,7 +68,8 @@ Godot supports the BMFont (``.fnt``) bitmap font format. This is a format create
 by the `BMFont <https://www.angelcode.com/products/bmfont/>`__ program. Many
 BMFont-compatible programs also exist, like `BMGlyph <https://www.bmglyph.com/>`__ or web-based `fontcutter <https://github.com/fabienbk/fontcutter>`__.
 
-Alternatively, you can import any image to be used as a bitmap font. To do so, select the image in the FileSystem dock, go to the
+Alternatively, you can import any image to be used as a bitmap font.
+To do so, select the image in the FileSystem dock, go to the
 Import dock, change its import type to **Font Data (Image Font)** then
 click **Reimport**:
 
