@@ -705,6 +705,11 @@ There are 2 ways to use glow in 2D:
     ``canvas_item`` shaders, so it's recommend to use it when relevant either
     way.
 
+    Using linear color space also means that alpha blending will change. Sprites
+    with low opacity values generally become more visible, and font rendering will
+    look bolder due to the low-opacity pixels from the font antialiasing becoming
+    more visible. This also affects the editor's own rendering.
+
 .. _doc_environment_and_post_processing_using_glow_to_blur_the_screen:
 
 Using glow to blur the screen
