@@ -68,17 +68,16 @@ Godot supports the BMFont (``.fnt``) bitmap font format. This is a format create
 by the `BMFont <https://www.angelcode.com/products/bmfont/>`__ program. Many
 BMFont-compatible programs also exist, like `BMGlyph <https://www.bmglyph.com/>`__ or web-based `fontcutter <https://github.com/fabienbk/fontcutter>`__.
 
-Alternatively, you can import any image to be used as a bitmap font. This is
-only supported for **monospaced** fonts (fonts where each character has the same
-width). To do so, select the image in the FileSystem dock, go to the
-Import dock, change its import type to **Font Data (Monospace Image Font)** then
+Alternatively, you can import any image to be used as a bitmap font.
+To do so, select the image in the FileSystem dock, go to the
+Import dock, change its import type to **Font Data (Image Font)** then
 click **Reimport**:
 
 .. figure:: img/using_fonts_bitmap_font_from_image_import_options.webp
    :align: center
-   :alt: Changing import type to Font Data (Monospace Image Font)
+   :alt: Changing import type to Font Data (Image Font)
 
-   Changing import type to **Font Data (Monospace Image Font)**
+   Changing import type to **Font Data (Image Font)**
 
 The font's character set layout can be in any order, but orders that match
 standard Unicode are recommended as they'll require far less configuration to
@@ -121,6 +120,33 @@ applied only once around the whole image.
 If your font image contains guides (in the form of lines between glyphs) or
 if spacing between characters appears incorrect, try adjusting **Character
 Margin**. This margin is applied for every imported glyph.
+
+If you need finer control over character spacing than
+what the **Character Margin** options provide, you have more options.
+
+For one, **Character Ranges** supports 3 additional arguments after the
+specified range of characters.
+These additional arguments control their positioning and spacing.
+They represent space advance, X axis offset, and Y axis offset in that order.
+They will change the space advance and offset of each character
+by the amount of pixels written. Space advance is most useful if, for example,
+your lowercase letters are thinner than your uppercase letters.
+
+.. figure:: img/using_fonts_bitmap_font_advance_offsets_diagram.webp
+   :align: center
+   :alt: Diagram showing the advance and offset values being used in character ranges.
+
+   Do note that the offsets can cause your text to be cropped off the edge of your label boundaries.
+
+Secondly, you can also set up **Kerning Pairs** for individual characters.
+Specify your kerning pair by typing two sets of characters separated by a space,
+then followed by another space, a number to specify how many extra/less pixels to
+space those two sets of characters when placed next to each other.
+
+.. figure:: img/using_fonts_bitmap_kerning_pairs_example.webp
+
+If needed, your kerning pair characters can be specified by Unicode character code
+by entering ``\uXXXX`` where XXXX is the hexadecimal value of the Unicode character.
 
 Loading a font file
 -------------------
