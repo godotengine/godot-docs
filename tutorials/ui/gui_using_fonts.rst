@@ -141,7 +141,7 @@ your lowercase letters are thinner than your uppercase letters.
 Secondly, you can also set up **Kerning Pairs** for individual characters.
 Specify your kerning pair by typing two sets of characters separated by a space,
 then followed by another space, a number to specify how many extra/less pixels to
-space those two sets of characters when placed next to eachother.
+space those two sets of characters when placed next to each other.
 
 .. figure:: img/using_fonts_bitmap_kerning_pairs_example.webp
 
