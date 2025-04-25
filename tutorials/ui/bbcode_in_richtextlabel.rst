@@ -277,6 +277,11 @@ Reference
     - | ``[p]{text}[/p]``
       | ``[p {options}]{text}[/p]``
 
+  * - | **br**
+      | Adds line break in a text.
+
+    - ``[br]``
+
   * - | **center**
       | Makes ``{text}`` horizontally centered.
       | Same as ``[p align=center]``.
