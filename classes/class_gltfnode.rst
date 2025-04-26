@@ -65,6 +65,8 @@ Properties
    +-------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`skin<class_GLTFNode_property_skin>`                   | ``-1``                                              |
    +-------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`visible<class_GLTFNode_property_visible>`             | ``true``                                            |
+   +-------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
    | :ref:`Transform3D<class_Transform3D>`           | :ref:`xform<class_GLTFNode_property_xform>`                 | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
    +-------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
 
@@ -296,6 +298,23 @@ If this glTF node has a skeleton, the index of the :ref:`GLTFSkeleton<class_GLTF
 - :ref:`int<class_int>` **get_skin**\ (\ )
 
 If this glTF node has a skin, the index of the :ref:`GLTFSkin<class_GLTFSkin>` in the :ref:`GLTFState<class_GLTFState>` that describes the skin's properties. If -1, this node does not have a skin.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFNode_property_visible:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **visible** = ``true`` :ref:`🔗<class_GLTFNode_property_visible>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_visible**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_visible**\ (\ )
+
+If ``true``, the GLTF node is visible. If ``false``, the GLTF node is not visible. This is translated to the :ref:`Node3D.visible<class_Node3D_property_visible>` property in the Godot scene, and is exported to ``KHR_node_visibility`` when ``false``.
 
 .. rst-class:: classref-item-separator
 

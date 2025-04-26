@@ -567,6 +567,7 @@ Resources
     class_styleboxflat
     class_styleboxline
     class_styleboxtexture
+    class_svgtexture
     class_syntaxhighlighter
     class_systemfont
     class_textmesh
@@ -819,6 +820,7 @@ Other objects
     class_kinematiccollision3d
     class_lightmapper
     class_lightmapperrd
+    class_logger
     class_mainloop
     class_marshalls
     class_meshconvexdecompositionsettings
@@ -932,6 +934,7 @@ Other objects
     class_resourceimporteroggvorbis
     class_resourceimporterscene
     class_resourceimportershaderfile
+    class_resourceimportersvg
     class_resourceimportertexture
     class_resourceimportertextureatlas
     class_resourceimporterwav
@@ -942,6 +945,7 @@ Other objects
     class_scenestate
     class_scenetree
     class_scenetreetimer
+    class_scriptbacktrace
     class_scriptlanguage
     class_scriptlanguageextension
     class_semaphore

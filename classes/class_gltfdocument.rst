@@ -46,13 +46,19 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+-------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                         | :ref:`image_format<class_GLTFDocument_property_image_format>`     | ``"PNG"`` |
-   +-----------------------------------------------------+-------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                           | :ref:`lossy_quality<class_GLTFDocument_property_lossy_quality>`   | ``0.75``  |
-   +-----------------------------------------------------+-------------------------------------------------------------------+-----------+
-   | :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` | :ref:`root_node_mode<class_GLTFDocument_property_root_node_mode>` | ``0``     |
-   +-----------------------------------------------------+-------------------------------------------------------------------+-----------+
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------+------------+
+   | :ref:`String<class_String>`                             | :ref:`fallback_image_format<class_GLTFDocument_property_fallback_image_format>`   | ``"None"`` |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                               | :ref:`fallback_image_quality<class_GLTFDocument_property_fallback_image_quality>` | ``0.25``   |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------+------------+
+   | :ref:`String<class_String>`                             | :ref:`image_format<class_GLTFDocument_property_image_format>`                     | ``"PNG"``  |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                               | :ref:`lossy_quality<class_GLTFDocument_property_lossy_quality>`                   | ``0.75``   |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------+------------+
+   | :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>`     | :ref:`root_node_mode<class_GLTFDocument_property_root_node_mode>`                 | ``0``      |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------+------------+
+   | :ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` | :ref:`visibility_mode<class_GLTFDocument_property_visibility_mode>`               | ``0``      |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------+------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -125,6 +131,40 @@ Treat the Godot scene's root node as the root node of the glTF file, but do not 
 
 Treat the Godot scene's root node as the name of the glTF scene, and add all of its children as root nodes of the glTF file. This uses only vanilla glTF features. This avoids an extra root node, but only the name of the Godot scene's root node will be preserved, as it will not be saved as a node.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_GLTFDocument_VisibilityMode:
+
+.. rst-class:: classref-enumeration
+
+enum **VisibilityMode**: :ref:`🔗<enum_GLTFDocument_VisibilityMode>`
+
+.. _class_GLTFDocument_constant_VISIBILITY_MODE_INCLUDE_REQUIRED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` **VISIBILITY_MODE_INCLUDE_REQUIRED** = ``0``
+
+If the scene contains any non-visible nodes, include them, mark them as non-visible with ``KHR_node_visibility``, and require that importers respect their non-visibility. Downside: If the importer does not support ``KHR_node_visibility``, the file cannot be imported.
+
+.. _class_GLTFDocument_constant_VISIBILITY_MODE_INCLUDE_OPTIONAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` **VISIBILITY_MODE_INCLUDE_OPTIONAL** = ``1``
+
+If the scene contains any non-visible nodes, include them, mark them as non-visible with ``KHR_node_visibility``, and do not impose any requirements on importers. Downside: If the importer does not support ``KHR_node_visibility``, invisible objects will be visible.
+
+.. _class_GLTFDocument_constant_VISIBILITY_MODE_EXCLUDE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` **VISIBILITY_MODE_EXCLUDE** = ``2``
+
+If the scene contains any non-visible nodes, do not include them in the export. This is the same as the behavior in Godot 4.4 and earlier. Downside: Invisible nodes will not exist in the exported file.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -133,6 +173,42 @@ Treat the Godot scene's root node as the name of the glTF scene, and add all of 
 
 Property Descriptions
 ---------------------
+
+.. _class_GLTFDocument_property_fallback_image_format:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **fallback_image_format** = ``"None"`` :ref:`🔗<class_GLTFDocument_property_fallback_image_format>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_fallback_image_format**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_fallback_image_format**\ (\ )
+
+The user-friendly name of the fallback image format. This is used when exporting the glTF file, including writing to a file and writing to a byte array.
+
+This property may only be one of "None", "PNG", or "JPEG", and is only used when the :ref:`image_format<class_GLTFDocument_property_image_format>` is not one of "None", "PNG", or "JPEG". If having multiple extension image formats is desired, that can be done using a :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class - this property only covers the use case of providing a base glTF fallback image when using a custom image format.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocument_property_fallback_image_quality:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **fallback_image_quality** = ``0.25`` :ref:`🔗<class_GLTFDocument_property_fallback_image_quality>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_fallback_image_quality**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_fallback_image_quality**\ (\ )
+
+The quality of the fallback image, if any. For PNG files, this downscales the image on both dimensions by this factor. For JPEG files, this is the lossy quality of the image. A low value is recommended, since including multiple high quality images in a glTF file defeats the file size gains of using a more efficient image format.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_GLTFDocument_property_image_format:
 
@@ -147,7 +223,7 @@ Property Descriptions
 
 The user-friendly name of the export image format. This is used when exporting the glTF file, including writing to a file and writing to a byte array.
 
-By default, Godot allows the following options: "None", "PNG", "JPEG", "Lossless WebP", and "Lossy WebP". Support for more image formats can be added in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes.
+By default, Godot allows the following options: "None", "PNG", "JPEG", "Lossless WebP", and "Lossy WebP". Support for more image formats can be added in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes. A single extension class can provide multiple options for the specific format to use, or even an option that uses multiple formats at once.
 
 .. rst-class:: classref-item-separator
 
@@ -184,6 +260,23 @@ If :ref:`image_format<class_GLTFDocument_property_image_format>` is a lossy imag
 How to process the root node during export. See :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` for details. The default and recommended value is :ref:`ROOT_NODE_MODE_SINGLE_ROOT<class_GLTFDocument_constant_ROOT_NODE_MODE_SINGLE_ROOT>`.
 
 \ **Note:** Regardless of how the glTF file is exported, when importing, the root node type and name can be overridden in the scene import settings tab.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocument_property_visibility_mode:
+
+.. rst-class:: classref-property
+
+:ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` **visibility_mode** = ``0`` :ref:`🔗<class_GLTFDocument_property_visibility_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_visibility_mode**\ (\ value\: :ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>`\ )
+- :ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` **get_visibility_mode**\ (\ )
+
+How to deal with node visibility during export. This setting does nothing if all nodes are visible. See :ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` for details. The default and recommended value is :ref:`VISIBILITY_MODE_INCLUDE_REQUIRED<class_GLTFDocument_constant_VISIBILITY_MODE_INCLUDE_REQUIRED>`, which uses the ``KHR_node_visibility`` extension.
 
 .. rst-class:: classref-section-separator
 
