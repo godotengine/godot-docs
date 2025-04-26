@@ -2545,6 +2545,13 @@ This also means that returning a signal from a function that isn't a coroutine w
           With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
 
+When awaiting a signal which had multiple parameters, such as ``signal item_dropped(item_name, amount)``, the result of the await will become an array of the parameter's values::
+
+    func dropped_item():
+        var result = await item_dropped
+        print(result[0] + " was dropped " + result[1] + " times")
+
+
 Assert keyword
 --------------
 
