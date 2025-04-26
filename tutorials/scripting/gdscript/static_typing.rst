@@ -230,6 +230,35 @@ For instance, you can write::
 The array will remain untyped, but the ``name`` variable within the ``for`` loop
 will always be of ``String`` type.
 
+Specify the element type of a ``Dictionary``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To define the type of a ``Dictionary``'s keys and values, enclose the type name in ``[]``
+and separate the key and value type with a comma.
+
+A dictionary's value type applies to ``for`` loop variables, as well as some operators like
+``[]`` and ``[]=``. Dictionary methods that return values and other operators
+(such as ``==``) are still untyped. Built-in types, native and custom classes,
+and enums may be used as element types. Nested typed collections
+(like ``Dictionary[String, Dictionary[String, int]]``) are not supported.
+
+
+::
+
+    var fruit_costs: Dictionary[String, int] = { "apple": 5, "orange": 10 }
+    var vehicles: Dictionary[String, Node] = { "car": $Car, "plane": $Plane }
+    var item_tiles: Dictionary[Vector2i, Item] = { Vector2i(0, 0): Item.new(), Vector2i(0, 1): Item.new() }
+    var dictionary_of_dictionaries: Dictionary[String, Dictionary] = { { } }
+    # var dicts: Dictionary[String, Dictionary[String, int]] -- disallowed
+
+    for cost in fruit_costs:
+        # cost has type `int`
+
+    # The following would be errors:
+    fruit_costs["pear"] += vehicles
+    var s: String = fruit_costs["apple"]
+    fruit_costs["orange"] = "lots"
+
 Type casting
 ~~~~~~~~~~~~
 

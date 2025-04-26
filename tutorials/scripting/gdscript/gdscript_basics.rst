@@ -979,6 +979,33 @@ assign to it::
     this, use the :ref:`Object.get() <class_Object_method_get>` and
     :ref:`Object.set() <class_Object_method_set>` methods instead.
 
+Typed dictionaries
+^^^^^^^^^^^^^^^^^^
+
+Godot 4.4 added support for typed dictionaries. On write operations, Godot checks that
+element keys and values match the specified type, so the dictionary cannot contain invalid
+keys or values. The GDScript static analyzer takes typed dictionaries into account. However,
+dictionary methods that return values still have the ``Variant`` return type.
+
+Typed dictionaries have the syntax ``Dictionary[KeyType, ValueType]``, where ``KeyType`` and ``ValueType``
+can be any ``Variant`` type, native or user class, or enum. Both the key and value type **must** be specified,
+but you can use ``Variant`` to make either of them untyped.
+Nested typed collections (like ``Dictionary[String, Dictionary[String, int]]``)
+are not supported.
+
+::
+
+    var a: Dictionary[String, int]
+    var b: Dictionary[String, Node]
+    var c: Dictionary[Vector2i, MyClass]
+    var d: Dictionary[MyEnum, float]
+    # String keys, values can be any type.
+    var e: Dictionary[String, Variant]
+    # Keys can be any type, boolean values.
+    var f: Dictionary[Variant, bool]
+
+``Dictionary`` and ``Dictionary[Variant, Variant]`` are the same thing.
+
 :ref:`Signal <class_Signal>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
