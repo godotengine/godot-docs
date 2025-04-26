@@ -599,11 +599,11 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/enable_pan_and_scale_gestures<class_EditorSettings_property_interface/touchscreen/enable_pan_and_scale_gestures>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/enable_touch_actions_panel<class_EditorSettings_property_interface/touchscreen/enable_touch_actions_panel>`                                                                           |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/increase_scrollbar_touch_area<class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/touchscreen/scale_gizmo_handles<class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles>`                                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`interface/touchscreen/touch_actions_panel<class_EditorSettings_property_interface/touchscreen/touch_actions_panel>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/connection/check_for_updates<class_EditorSettings_property_network/connection/check_for_updates>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4446,20 +4446,6 @@ If ``true``, enable two finger pan and scale gestures on touchscreen devices.
 
 ----
 
-.. _class_EditorSettings_property_interface/touchscreen/enable_touch_actions_panel:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **interface/touchscreen/enable_touch_actions_panel** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/enable_touch_actions_panel>`
-
-If ``true``, enables the TouchActionsPanel to provide easy access to keyboard shortcuts on touchscreen devices.
-
-\ **Note:** Only available in the Android editor.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area:
 
 .. rst-class:: classref-property
@@ -4483,6 +4469,20 @@ If ``true``, increases the scrollbar touch area to improve usability on touchscr
 Specify the multiplier to apply to the scale for the editor gizmo handles to improve usability on touchscreen devices.
 
 \ **Note:** Defaults to ``1`` on non-touchscreen devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/touchscreen/touch_actions_panel:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/touchscreen/touch_actions_panel** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/touch_actions_panel>`
+
+A touch-friendly panel that provides easy access to common actions such as save, delete, undo, and redo without requiring a keyboard.
+
+\ **Note:** Only available in the Android and XR editor.
 
 .. rst-class:: classref-item-separator
 

@@ -1552,7 +1552,7 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_Pro
 - |void| **set_use_oversampling**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_oversampling**\ (\ )
 
-If ``true`` and one of the following conditions is true: :ref:`SubViewport.size_2d_override_stretch<class_SubViewport_property_size_2d_override_stretch>` and :ref:`SubViewport.size_2d_override<class_SubViewport_property_size_2d_override>` are set, :ref:`Window.content_scale_factor<class_Window_property_content_scale_factor>` is set and scaling is enabled, :ref:`oversampling_override<class_Viewport_property_oversampling_override>` is set, font oversampling is enabled.
+If ``true`` and one of the following conditions is true: :ref:`SubViewport.size_2d_override_stretch<class_SubViewport_property_size_2d_override_stretch>` and :ref:`SubViewport.size_2d_override<class_SubViewport_property_size_2d_override>` are set, :ref:`Window.content_scale_factor<class_Window_property_content_scale_factor>` is set and scaling is enabled, :ref:`oversampling_override<class_Viewport_property_oversampling_override>` is set, font and :ref:`SVGTexture<class_SVGTexture>` oversampling is enabled.
 
 .. rst-class:: classref-item-separator
 

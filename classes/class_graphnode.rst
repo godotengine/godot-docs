@@ -164,6 +164,18 @@ Theme Properties
 Signals
 -------
 
+.. _class_GraphNode_signal_slot_sizes_changed:
+
+.. rst-class:: classref-signal
+
+**slot_sizes_changed**\ (\ ) :ref:`🔗<class_GraphNode_signal_slot_sizes_changed>`
+
+Emitted when any slot's size might have changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphNode_signal_slot_updated:
 
 .. rst-class:: classref-signal

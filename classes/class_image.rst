@@ -1600,7 +1600,7 @@ Resizes the image to the given ``width`` and ``height``. New pixels are calculat
 
 |void| **resize_to_po2**\ (\ square\: :ref:`bool<class_bool>` = false, interpolation\: :ref:`Interpolation<enum_Image_Interpolation>` = 1\ ) :ref:`🔗<class_Image_method_resize_to_po2>`
 
-Resizes the image to the nearest power of 2 for the width and height. If ``square`` is ``true`` then set width and height to be the same. New pixels are calculated using the ``interpolation`` mode defined via :ref:`Interpolation<enum_Image_Interpolation>` constants.
+Resizes the image to the nearest power of 2 for the width and height. If ``square`` is ``true``, sets width and height to be the same. New pixels are calculated using the ``interpolation`` mode defined via :ref:`Interpolation<enum_Image_Interpolation>` constants.
 
 .. rst-class:: classref-item-separator
 
@@ -1692,7 +1692,7 @@ Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the
 
 Saves the image as an EXR file to a byte array. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return an empty byte array if Godot was compiled without the TinyEXR module.
 
-\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr()<class_Image_method_save_exr>` will return an empty byte array when it is called from an exported project.
+\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr_to_buffer()<class_Image_method_save_exr_to_buffer>` will return an empty byte array when it is called from an exported project.
 
 .. rst-class:: classref-item-separator
 
