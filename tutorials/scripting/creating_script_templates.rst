@@ -205,6 +205,9 @@ Base placeholders
 +--------------------------+----------------------------------------------------+
 | ``_CLASS_``              | The name of the new class.                         |
 +--------------------------+----------------------------------------------------+
+| ``_CLASS_SNAKE_CASE_``   | The name of the new class as ``snake_case``        |
+|                          | (used in GDScript only).                           |
++--------------------------+----------------------------------------------------+
 | ``_BASE_``               | The base type a new script inherits from.          |
 +--------------------------+----------------------------------------------------+
 | ``_TS_``                 | Indentation placeholder. The exact type and number |
