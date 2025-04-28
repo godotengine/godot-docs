@@ -255,20 +255,6 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
 
    Soft shadows with streaking artifacts due to Filter Smooth being too high (PCF5, Filter Smooth 4)
 
-Occluder draw order
-~~~~~~~~~~~~~~~~~~~
-
-**LightOccluder2Ds follows the usual 2D drawing order.** This is important for 2D
-lighting, as this is how you control whether the occluder should occlude the
-sprite itself or not.
-
-If the LightOccluder2D node is a *sibling* of the sprite, the occluder will
-occlude the sprite itself if it's placed *below* the sprite in the scene tree.
-
-If the LightOccluder2D node is a *child* of the sprite, the occluder will
-occlude the sprite itself if **Show Behind Parent** is disabled on the
-LightOccluder2D node (which is the default).
-
 Normal and specular maps
 ------------------------
 
