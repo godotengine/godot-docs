@@ -53,18 +53,72 @@ as Godot provides its own data types (among other things).
 See :ref:`doc_faq_why_not_stl` for more information.
 
 This means that pull requests should **not** use ``std::string``,
-``std::vector`` and the like. Instead, use Godot's datatypes as described below:
+``std::vector`` and the like. Instead, use Godot's datatypes as described below.
+A 📜 icon denotes the type is part of :ref:`Variant <doc_variant_class>`. This
+means it can be used as a parameter or return value of a method exposed to the
+scripting API.
 
-- Use ``String`` instead of ``std::string``.
-- Use ``Vector`` instead of ``std::vector``. In some cases, ``LocalVector``
-  can be used as an alternative (ask core developers first).
-- Use ``Array`` instead of ``std::array``.
-
-.. note::
-
-    Godot also has a List datatype (which is a linked list). While List is already used
-    in the codebase, it typically performs worse than other datatypes like Vector
-    and Array. Therefore, List should be avoided in new code unless necessary.
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| Godot datatype         | Closest C++ STL datatype | Comment                                                                               |
++========================+==========================+=======================================================================================+
+| ``String`` 📜          | ``std::string``          | **Use this as the "default" string type.** ``String`` uses UTF-32 encoding            |
+|                        |                          | to improve performance thanks to its fixed character size.                            |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``StringName`` 📜      | ``std::string``          | Uses string interning for fast comparisons. Use this for static strings that are      |
+|                        |                          | referenced frequently and used in multiple locations in the engine.                   |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``Vector``             | ``std::vector``          | **Use this as the "default" vector type.** Uses copy-on-write (COW) semantics.        |
+|                        |                          | This means it's generally slower but can be copied around almost for free.            |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``LocalVector``        | ``std::vector``          | Closer to ``std::vector`` in semantics. In most situations, ``Vector`` should be      |
+|                        |                          | preferred.                                                                            |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``Array`` 📜           | ``std::vector``          | Values can be of any Variant type. No static typing is imposed.                       |
+|                        |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``TypedArray`` 📜      | ``std::vector``          | Subclass of ``Array`` but with static typing for its elements.                        |
+|                        |                          | Not to be confused with ``Packed*Array``, which is internally a ``Vector``.           |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``Packed*Array`` 📜    | ``std::vector``          | Alias of ``Vector``, e.g. ``PackedColorArray = Vector<Color>``.                       |
+|                        |                          | Only a limited list of packed array types are available                               |
+|                        |                          | (use ``TypedArray`` otherwise).                                                       |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``List``               | ``std::list``            | Linked list type. Generally slower than other array/vector types. Prefer using        |
+|                        |                          | other types in new code, unless using ``List`` avoids the need for type conversions.  |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``Span``               | ``std::span``            | Represents read-only access to a contiguous array without needing to copy any data.   |
+|                        |                          | See `pull request description <https://github.com/godotengine/godot/pull/100293>`__   |
+|                        |                          | for details.                                                                          |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``HashSet``            | ``std::unordered_set``   | **Use this as the "default" set type.**                                               |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``RBSet``              | ``std::set``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black_tree>`__              |
+|                        |                          | for faster access.                                                                    |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``VSet``               | ``std::flat_set``        | Uses copy-on-write (COW) semantics.                                                   |
+|                        |                          | This means it's generally slower but can be copied around almost for free.            |
+|                        |                          | The performance benefits of ``VSet`` aren't established, so prefer using other types. |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``HashMap``            | ``std::unordered_map``   | **Use this as the "default" map type.** Does not preserve insertion order.            |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``AHashMap``           | ``std::unordered_map``   | Array-based implementation of a hash map. Does not preserve insertion order.          |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``OAHashMap``          | ``std::unordered_map``   | Does not preserve insertion order.                                                    |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``RBMap``              | ``std::map``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black_tree>`__              |
+|                        |                          | for faster access.                                                                    |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``VMap``               | ``std::flat_map``        | Uses copy-on-write (COW) semantics.                                                   |
+|                        |                          | This means it's generally slower but can be copied around almost for free.            |
+|                        |                          | The performance benefits of ``VMap`` aren't established, so prefer using other types. |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``Dictionary`` 📜      | ``std::unordered_map``   | Keys and values can be of any Variant type. No static typing is imposed.              |
+|                        |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``TypedDictionary`` 📜 | ``std::unordered_map``   | Subclass of ``Dictionary`` but with static typing for its keys and values.            |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``Pair``               | ``std::pair``            | Stores a single key-value pair.                                                       |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
 
 ``auto`` keyword
 ~~~~~~~~~~~~~~~~
