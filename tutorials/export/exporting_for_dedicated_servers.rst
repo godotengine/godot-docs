@@ -281,7 +281,10 @@ On Linux, to make your dedicated server restart after a crash or system reboot,
 you can
 `create a systemd service <https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6>`__.
 This also lets you view server logs in a more convenient fashion, with automatic
-log rotation provided by systemd.
+log rotation provided by systemd. When making your project hostable as a systemd service,
+you should also enable the ``application/run/flush_stdout_on_print``
+project setting. This way, journald (the systemd logging service) can collect
+logs while the process is running.
 
 If you have experience with containers, you could also look into wrapping your
 dedicated server in a `Docker <https://www.docker.com/>`__ container. This way,
