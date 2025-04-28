@@ -83,19 +83,28 @@ Steps to link a Godot project folder to Xcode
 1. Start from an exported iOS project (follow the steps above).
 2. In Finder, drag the Godot project folder into the Xcode file browser.
 
-.. image:: img/ios_export_add_dir.png
+.. image:: img/ios_export_add_dir.webp
 
-3. In the dialog, make sure **Create folder references** is selected. This means
-you will be able to continue to edit your Godot project in its current location.
+3. In the dialog, make sure to select Action: **Reference files in place** and Groups: **Create folders**. Uncheck Targets: **exported_xcode_project_name**.
 
-.. image:: img/ios_export_file_ref.png
+.. image:: img/ios_export_file_ref.webp
 
 4. See the **godot_project_to_export** folder in the Xcode file browser.
-5. Delete **exported_xcode_project_name.pck** from the Xcode project.
+
+5. Select the godot project in the Project navigator. Then on the other side of the XCode window, in the File Inspector, make these selections:
+  * **Location**: Relative to Project
+  * **Build Rules**: Apply Once to Folder
+  * add your project to **Target Membership**
+
+.. image:: img/ios_export_file_inspector.webp
+
+.. image:: img/ios_export_target_membership.webp
+
+7. Delete **exported_xcode_project_name.pck** from the Xcode project in the project navigator.
 
 .. image:: img/ios_export_delete_pck.png
 
-6. Open **exported_xcode_project_name-Info.plist** and add a string property named
+8. Open **exported_xcode_project_name-Info.plist** and add a string property named
 **godot_path** (this is the real key name) with a value **godot_project_to_export**
 (this is the name of your project)
 
