@@ -8,8 +8,8 @@ members of a script. There are two differences between a normal comment and a do
 comment. Firstly, a documentation comment should start with double hash symbols
 ``##``. Secondly, it must immediately precede a script member, or for script descriptions,
 be placed at the top of the script. If an exported variable is documented,
-its description is used as a tooltip in the editor. This documentation can be
-generated as XML files by the editor.
+its description is used as a tooltip in the editor. The editor can also export XML files
+of this documentation, see `Generating XML files`_ for details on this.
 
 Documenting a script
 --------------------
@@ -355,3 +355,22 @@ the ``lang`` attribute. Currently supported options are:
 - ``[codeblock lang=text]`` disables syntax highlighting;
 - ``[codeblock lang=gdscript]`` highlights GDScript syntax;
 - ``[codeblock lang=csharp]`` highlights C# syntax (only in .NET version).
+
+Generating XML files
+--------------------
+
+The editor can generate XML files from your documentation comments, which can be useful to create
+an online documentation. To generate the XML files, you can execute the following command from your
+project's root folder:
+
+::
+
+    godot --doctool <destination> --gdscript-docs <path>
+
+The XML files will be generated in the ``<destination>`` folder, or ``docs`` if omitted.
+The target ``<path>`` specifies which scripts will be included, and Godot will recursively generate
+XML files for all scripts in this folder and all subfolders.
+
+.. warning::
+
+    ``<path>`` must start with ``res://``, otherwise Godot will not be able to find scripts!
