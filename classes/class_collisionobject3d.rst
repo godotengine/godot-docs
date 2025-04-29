@@ -130,7 +130,10 @@ Emitted when the object receives an unhandled :ref:`InputEvent<class_InputEvent>
 
 **mouse_entered**\ (\ ) :ref:`🔗<class_CollisionObject3D_signal_mouse_entered>`
 
-Emitted when the mouse pointer enters any of this object's shapes. Requires :ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
+Emitted when the mouse pointer enters any of this object's shapes.
+Requires :ref:`is_visible_in_tree()<class_Node3D_method_is_visible_in_tree>` to return ``true``, 
+:ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true``,
+and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
 
 \ **Note:** Due to the lack of continuous collision detection, this signal may not be emitted in the expected order if the mouse moves fast enough and the **CollisionObject3D**'s area is small. This signal may also not be emitted if another **CollisionObject3D** is overlapping the **CollisionObject3D** in question.
 
@@ -144,7 +147,11 @@ Emitted when the mouse pointer enters any of this object's shapes. Requires :ref
 
 **mouse_exited**\ (\ ) :ref:`🔗<class_CollisionObject3D_signal_mouse_exited>`
 
-Emitted when the mouse pointer exits all this object's shapes. Requires :ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
+Emitted when the mouse pointer exits all of this object's shapes.
+
+Requires :ref:`is_visible_in_tree()<class_Node3D_method_is_visible_in_tree>` to return ``true``, 
+:ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true``,
+and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
 
 \ **Note:** Due to the lack of continuous collision detection, this signal may not be emitted in the expected order if the mouse moves fast enough and the **CollisionObject3D**'s area is small. This signal may also not be emitted if another **CollisionObject3D** is overlapping the **CollisionObject3D** in question.
 
