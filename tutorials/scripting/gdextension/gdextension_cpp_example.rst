@@ -439,6 +439,7 @@ Here is another overview to check the correct file structure:
     |   +--bin/
     |       |
     |       +--gdexample.gdextension
+    |       +--libgdexample.windows.template_debug.x86_64.dll # and/or all the other builds you compiled
     |
     +--godot-cpp/             # C++ bindings
     |
