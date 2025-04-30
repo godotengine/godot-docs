@@ -863,6 +863,8 @@ If ``parent`` is ``null``, the root item will be the parent, or the new item wil
 
 The new item will be the ``index``-th child of parent, or it will be the last child if there are not enough siblings.
 
+Returns ``null`` if called while a mouse selection occurs.
+
 .. rst-class:: classref-item-separator
 
 ----
