@@ -640,9 +640,9 @@ Path simplification can be helpful to mitigate various path following issues tha
 
 The distance threshold before the target is considered to be reached. On reaching the target, :ref:`target_reached<class_NavigationAgent2D_signal_target_reached>` is emitted and navigation ends (see :ref:`is_navigation_finished()<class_NavigationAgent2D_method_is_navigation_finished>` and :ref:`navigation_finished<class_NavigationAgent2D_signal_navigation_finished>`).
 
-You can make navigation end early by setting this property to a value greater than :ref:`path_desired_distance<class_NavigationAgent2D_property_path_desired_distance>` (navigation will end before reaching the last waypoint).
+You can make navigation end early by setting this property to a value greater than :ref:`distance_to_target<class_NavigationAgent2D_method_distance_to_target>` (navigation will end before reaching the last waypoint).
 
-You can also make navigation end closer to the target than each individual path position by setting this property to a value lower than :ref:`path_desired_distance<class_NavigationAgent2D_property_path_desired_distance>` (navigation won't immediately end when reaching the last waypoint). However, if the value set is too low, the agent will be stuck in a repath loop because it will constantly overshoot the distance to the target on each physics frame update.
+You can also make navigation end closer to the target than each individual path position by setting this property to a value lower than :ref:`distance_to_target<class_NavigationAgent2D_method_distance_to_target>` (navigation won't immediately end when reaching the last waypoint). However, if the value set is too low, the agent will be stuck in a repath loop because it will constantly overshoot the distance to the target on each physics frame update.
 
 .. rst-class:: classref-item-separator
 
