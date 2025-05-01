@@ -703,6 +703,8 @@ footer {
 
 .wy-nav-content-wrap {
     background-color: var(--content-wrap-background-color);
+    position: relative;
+    overflow-x: auto;
 }
 
 .wy-nav-content {
@@ -1814,30 +1816,22 @@ p + .classref-constant {
     padding: 0.5em 0.75em;
 }
 
-/* Allow :abbr: tags' content to be displayed on mobile platforms by tapping the word */
-@media (hover: none), (hover: on-demand), (-moz-touch-enabled: 1), (pointer:coarse) {
-    /* Do not enable on desktop platforms to avoid doubling the tooltip */
-    abbr[title] {
-        position: relative;
-    }
-
-    abbr[title]:hover::after,
-    abbr[title]:focus::after {
-        content: attr(title);
-
-        position: absolute;
-        left: 0;
-        bottom: -32px;
-        width: auto;
-        white-space: nowrap;
-
-        background-color: #1e1e1e;
-        color: #fff;
-        border-radius: 3px;
-        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
-        font-size: 14px;
-        padding: 3px 5px;
-    }
+.abbr-tooltip {
+    position: absolute;
+    transform: translate(var(--offset-x), var(--offset-y));
+    width: max-content;
+    max-width: 100vw;
+    padding: 0 1rem;
+    z-index: 1;
+}
+.abbr-tooltip > div {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    padding: 3px 5px;
+    white-space: normal;
 }
 
 /* Giscus */

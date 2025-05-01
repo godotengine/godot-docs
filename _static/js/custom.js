@@ -477,6 +477,39 @@ $(document).ready(() => {
       }
   });
 
+  /** @type HTMLElement */
+  let currentlyShownTooltip = null;
+  const touchDeviceQuery = window.matchMedia('(hover: none), (hover: on-demand), (-moz-touch-enabled: 1), (pointer:coarse)');
+  
+  /* Allow :abbr: tags' content to be displayed on mobile platforms by tapping the word */
+  document.addEventListener('click', (event) => {
+    if (currentlyShownTooltip) {
+      currentlyShownTooltip.remove();
+      currentlyShownTooltip = null;
+    }
+
+    /* Do not enable on desktop platforms to avoid doubling the tooltip */
+    if (!touchDeviceQuery.matches) {
+      return;
+    }
+
+    /** @type HTMLElement */
+    const abbr = event.target;
+
+    if (abbr.matches('abbr[title]')) {
+      currentlyShownTooltip = document.createElement('div');
+      currentlyShownTooltip.classList.add('abbr-tooltip')
+      currentlyShownTooltip.appendChild(document.createElement('div')).innerText = abbr.getAttribute('title');
+      abbr.appendChild(currentlyShownTooltip);
+
+      const tooltipRect = currentlyShownTooltip.getBoundingClientRect();
+      const distanceOffScreenX = Math.max(0, tooltipRect.right - window.innerWidth);
+      const distanceOffScreenY = Math.max(0, tooltipRect.bottom - window.innerHeight);
+      currentlyShownTooltip.style.setProperty('--offset-x', -distanceOffScreenX + 'px');
+      currentlyShownTooltip.style.setProperty('--offset-y', -distanceOffScreenY + 'px');
+    }
+  });
+
   // Unfold the first (general information) section on the home page.
   if (!hasCurrent && menuHeaders.length > 0) {
     menuHeaders[0].classList.add('active');
