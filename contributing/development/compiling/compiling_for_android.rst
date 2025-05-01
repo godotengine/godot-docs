@@ -104,21 +104,21 @@ root directory with the following arguments:
 ::
 
     scons platform=android target=template_release arch=arm32
-    scons platform=android target=template_release arch=arm64 generate_apk=yes
+    scons platform=android target=template_release arch=arm64 generate_android_binaries=yes
 
 -  Debug template (used when exporting with **Debugging Enabled** checked)
 
 ::
 
     scons platform=android target=template_debug arch=arm32
-    scons platform=android target=template_debug arch=arm64 generate_apk=yes
+    scons platform=android target=template_debug arch=arm64 generate_android_binaries=yes
 
 - (**Optional**) Dev template (used when troubleshooting)
 
 ::
 
     scons platform=android target=template_debug arch=arm32 dev_build=yes
-    scons platform=android target=template_debug arch=arm64 dev_build=yes generate_apk=yes
+    scons platform=android target=template_debug arch=arm64 dev_build=yes generate_android_binaries=yes
 
 The resulting templates will be located under the ``bin`` directory:
 
@@ -129,9 +129,11 @@ The resulting templates will be located under the ``bin`` directory:
 
 .. note::
 
-   - If you are changing the list of architectures you're building, remember to add ``generate_apk=yes`` to the *last* architecture you're building, so that the template files are generated after the build.
+   - If you are changing the list of architectures you're building, remember to add ``generate_android_binaries=yes`` to the *last* architecture you're building, so that the template files are generated after the build.
 
-   - To include debug symbols in the generated templates, add the ``debug_symbols=yes`` parameter to the SCons command.
+   - To include debug symbols in the generated templates, add the ``debug_symbols=yes`` parameters to the SCons command.
+
+       - Note that you can include ``separate_debug_symbols=yes`` to generate the debug symbols in a separate ``*-native-debug-symbols.zip`` file.
 
 .. seealso::
 
@@ -151,7 +153,7 @@ example, for the release template:
     scons platform=android target=template_release arch=arm32
     scons platform=android target=template_release arch=arm64
     scons platform=android target=template_release arch=x86_32
-    scons platform=android target=template_release arch=x86_64 generate_apk=yes
+    scons platform=android target=template_release arch=x86_64 generate_android_binaries=yes
 
 This will create template binaries that works on all platforms.
 The final binary size of exported projects will depend on the platforms you choose
@@ -222,15 +224,17 @@ root directory with the following arguments:
    scons platform=android arch=arm32 production=yes target=editor
    scons platform=android arch=arm64 production=yes target=editor
    scons platform=android arch=x86_32 production=yes target=editor
-   scons platform=android arch=x86_64 production=yes target=editor generate_apk=yes
+   scons platform=android arch=x86_64 production=yes target=editor generate_android_binaries=yes
 
 - You can add the ``dev_build=yes`` parameter to generate a dev build of the Godot editor.
 
-- You can add the ``debug_symbols=yes`` parameter to include the debug symbols in the generated build.
+- You can add the ``debug_symbols=yes`` parameters to include the debug symbols in the generated build.
+
+    - Note that you can include ``separate_debug_symbols=yes`` to generate the debug symbols in a separate ``*-native-debug-symbols.zip`` file.
 
 - You can skip certain architectures depending on your target device to speed up compilation.
 
-Remember to add ``generate_apk=yes`` to the *last* architecture you're building, so that binaries are generated after the build.
+Remember to add ``generate_android_binaries=yes`` to the *last* architecture you're building, so that binaries are generated after the build.
 
 The resulting binaries will be located under ``bin/android_editor_builds/``.
 
