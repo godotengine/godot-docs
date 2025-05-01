@@ -579,6 +579,8 @@ general-purpose library, but we had special requirements for Godot.
 * We use our custom String type, as the one provided by STL is too basic and lacks proper
   internationalization support.
 
+Check out :ref:`Godot's container types <doc_cpp_godot_types>` for alternatives.
+
 Why does Godot not use exceptions?
 ----------------------------------
 

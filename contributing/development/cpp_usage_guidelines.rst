@@ -45,6 +45,8 @@ variables and ``nullptr`` is encouraged when possible. Still, try to keep your
 use of modern C++ features conservative. Their use needs to serve a real
 purpose, such as improving code readability or performance.
 
+.. _doc_cpp_godot_types:
+
 Standard Template Library
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -75,6 +77,7 @@ scripting API.
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
 | ``Array`` 📜           | ``std::vector``          | Values can be of any Variant type. No static typing is imposed.                       |
 |                        |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
+|                        |                          | Uses Vector<Variant> internally.                                                      |
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
 | ``TypedArray`` 📜      | ``std::vector``          | Subclass of ``Array`` but with static typing for its elements.                        |
 |                        |                          | Not to be confused with ``Packed*Array``, which is internally a ``Vector``.           |
@@ -99,7 +102,7 @@ scripting API.
 |                        |                          | This means it's generally slower but can be copied around almost for free.            |
 |                        |                          | The performance benefits of ``VSet`` aren't established, so prefer using other types. |
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
-| ``HashMap``            | ``std::unordered_map``   | **Use this as the "default" map type.** Does not preserve insertion order.            |
+| ``HashMap``            | ``std::unordered_map``   | **Use this as the "default" map type.** Preserves insertion order.                    |
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
 | ``AHashMap``           | ``std::unordered_map``   | Array-based implementation of a hash map. Does not preserve insertion order.          |
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
@@ -114,6 +117,7 @@ scripting API.
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
 | ``Dictionary`` 📜      | ``std::unordered_map``   | Keys and values can be of any Variant type. No static typing is imposed.              |
 |                        |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
+|                        |                          | Preserves insertion order. Uses ``HashMap<Variant>`` internally.                      |
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
 | ``TypedDictionary`` 📜 | ``std::unordered_map``   | Subclass of ``Dictionary`` but with static typing for its keys and values.            |
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
