@@ -86,6 +86,10 @@ scripting API.
 | ``List``               | ``std::list``            | Linked list type. Generally slower than other array/vector types. Prefer using        |
 |                        |                          | other types in new code, unless using ``List`` avoids the need for type conversions.  |
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
+| ``FixedVector``        | ``std::array``           | Vector with a fixed capacity (more similar to ``boost::container::static_vector``).   |
+|                        |                          | This container type is more efficient than other vector-like types because it makes   |
+|                        |                          | no heap allocations.                                                                  |
++------------------------+--------------------------+---------------------------------------------------------------------------------------+
 | ``Span``               | ``std::span``            | Represents read-only access to a contiguous array without needing to copy any data.   |
 |                        |                          | See `pull request description <https://github.com/godotengine/godot/pull/100293>`__   |
 |                        |                          | for details.                                                                          |
