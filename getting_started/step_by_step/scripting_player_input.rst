@@ -56,6 +56,18 @@ code below.
 
     Rotation += _angularSpeed * direction * (float)delta;
 
+ .. code-tab:: cpp C++
+
+    int direction = 0;
+    if (Input::get_singleton()->is_action_pressed("ui_left")) {
+        direction = -1;
+    }
+    if (Input::get_singleton()->is_action_pressed("ui_right")) {
+        direction = 1;
+    }
+
+    set_rotation(get_rotation() + angular_speed * direction * p_delta); 
+
 Our ``direction`` local variable is a multiplier representing the direction in
 which the player wants to turn. A value of ``0`` means the player isn't pressing
 the left or the right arrow key. A value of ``1`` means the player wants to turn
@@ -96,6 +108,12 @@ Comment out the lines ``var velocity = Vector2.UP.rotated(rotation) * speed`` an
 
     //Position += velocity * (float)delta;
 
+ .. code-tab:: cpp C++
+
+    //Vector2 velocity = Vector2(0, -1).rotated(get_rotation()) * speed;
+
+    //set_position(get_position() + velocity * p_delta);
+
 This will ignore the code that moved the icon's position in a circle without user input from the previous exercise.
 
 If you run the scene with this code, the icon should rotate when you press
@@ -120,6 +138,13 @@ velocity. Uncomment the code and replace the line starting with ``var velocity``
     if (Input.IsActionPressed("ui_up"))
     {
         velocity = Vector2.Up.Rotated(Rotation) * _speed;
+    }
+
+ .. code-tab:: cpp C++
+
+    Vector2 velocity = Vector2(0, 0);
+    if (Input::get_singleton()->is_action_pressed("ui_up")) {
+        velocity = Vector2(0, -1).rotated(get_rotation()) * speed;
     }
 
 We initialize the ``velocity`` with a value of ``Vector2.ZERO``, another
@@ -189,6 +214,55 @@ Here is the complete ``sprite_2d.gd`` file for reference.
             Position += velocity * (float)delta;
         }
     }
+
+ .. code-tab:: cpp C++
+
+    #ifndef MY_SPRITE_2D_H
+    #define MY_SPRITE_2D_H
+
+    #include <godot_cpp/classes/input.hpp>
+    #include <godot_cpp/classes/sprite2d.hpp>
+    #include <godot_cpp/core/math.hpp>
+
+    using namespace godot;
+
+    namespace CustomNamespace {
+
+    class MySprite2D : public Sprite2D {
+        GDCLASS(MySprite2D, Sprite2D)
+
+        int speed = 400;
+        float angular_speed = Math_PI;
+
+    protected:
+        static void _bind_methods() {}
+
+    public:
+        MySprite2D() {}
+
+        void _process(double p_delta) override {
+            int direction = 0;
+            if (Input::get_singleton()->is_action_pressed("ui_left")) {
+                direction = -1;
+            }
+            if (Input::get_singleton()->is_action_pressed("ui_right")) {
+                direction = 1;
+            }
+
+            set_rotation(get_rotation() + angular_speed * p_delta);
+
+            Vector2 velocity = Vector2(0, 0);
+            if (Input::get_singleton()->is_action_pressed("ui_up")) {
+                velocity = Vector2(0, -1).rotated(get_rotation()) * speed;
+            }
+
+            set_position(get_position() + velocity * p_delta);
+        }
+    };
+
+    } //namespace CustomNamespace
+
+    #endif // MY_SPRITE_2D_H
 
 If you run the scene, you should now be able to rotate with the left and right
 arrow keys and move forward by pressing :kbd:`Up`.

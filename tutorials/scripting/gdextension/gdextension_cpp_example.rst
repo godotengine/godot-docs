@@ -602,6 +602,8 @@ The first two arguments are the minimum and maximum value and the third is the s
     There are a lot more options to choose from. These can be used to
     further configure how properties are displayed and set on the Godot side.
 
+.. _doc_gdextension_cpp_signals_example:
+
 Signals
 -------
 
