@@ -231,7 +231,7 @@ At build time, the contents of the ``export_scripts_template`` directory as well
 Packaging a v2 Android plugin with GDExtension capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For GDExtension, we follow the same steps as for `Packaging a v2 Android plugin`_ and add the `GDExtension config file <https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html#using-the-gdextension-module>`_ in
+For GDExtension, we follow the same steps as for `Packaging a v2 Android plugin`_ and add the `GDExtension config file <https://docs.godotengine.org/en/stable/tutorials/scripting/cpp/gdextension_cpp_example.html#using-the-gdextension-module>`_ in
 the same location as ``plugin.cfg``.
 
 For reference, here is the `folder structure for the GDExtension Android plugin project template <https://github.com/m4gr3d/GDExtension-Android-Plugin-Template/tree/main/plugin/export_scripts_template>`_.

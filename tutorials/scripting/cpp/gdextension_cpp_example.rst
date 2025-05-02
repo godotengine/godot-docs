@@ -1,29 +1,38 @@
-.. _doc_gdextension_cpp_example:
+.. _doc_godot_cpp_getting_started:
 
-GDExtension C++ example
-=======================
+Getting started
+===============
 
-Introduction
-------------
+Workflow overview
+-----------------
 
-The C++ bindings for GDExtension are built on top of the C GDExtension API
-and provide a nicer way to "extend" nodes and other built-in classes in Godot using C++.
-This new system allows the extension of Godot to nearly the same
-level as statically linked C++ modules.
+As a GDExtension, godot-cpp is more complicated to use than :ref:`GDScript <doc_gdscript>` and :ref:`C# <doc_c_sharp>`.
+If you decide to work with it, here's what to expect your workflow to look like:
 
-You can download the included example in the test folder of the godot-cpp
-repository `on GitHub <https://github.com/godotengine/godot-cpp>`__.
+* Create a new godot-cpp project (from the `template <https://github.com/godotengine/godot-cpp-template>`__, or from scratch, as explained below).
+* Develop your code with your :ref:`favorite IDE <toc-devel-configuring_an_ide>` locally.
+* Build and test your code with the earliest compatible Godot version.
+* Create builds for all platforms you want to support (e.g. using `GitHub Actions <https://github.com/godotengine/godot-cpp-template/blob/main/.github/workflows/builds.yml>`__).
+* Optional: Publish on the `Godot Asset Library <https://godotengine.org/asset-library/asset>`__.
+
+Example project
+---------------
+
+For your first godot-cpp project, we recommend starting with this guide to understand the technology involved with
+godot-cpp. After you're done, you can use the `godot-cpp template <https://github.com/godotengine/godot-cpp-template>`__,
+which has better coverage of features, such as a GitHub action pipeline and useful ``SConstruct`` boilerplate code.
+However, the template does not explain itself to a high level of detail, which is why we recommend going through this
+guide first.
 
 Setting up the project
 ----------------------
 
 There are a few prerequisites you'll need:
 
-- a Godot 4 executable,
-- a C++ compiler,
-- SCons as a build tool,
-- a copy of the `godot-cpp
-  repository <https://github.com/godotengine/godot-cpp>`__.
+- A Godot 4 executable.
+- A C++ compiler.
+- SCons as a build tool.
+- A copy of the `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__.
 
 See also :ref:`Configuring an IDE <toc-devel-configuring_an_ide>`
 and :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
@@ -712,6 +721,9 @@ Every second, we output our position to the console.
 Next steps
 ----------
 
-We hope the above example showed you the basics. You can
-build upon this example to create full-fledged scripts to control nodes in Godot
-using C++.
+We hope the above example showed you the basics. You can build upon this example to create full-fledged scripts
+to control nodes in Godot using C++!
+
+Instead of basing your project off the above example setup, we recommend to restart now by cloning the
+`godot-cpp template <https://github.com/godotengine/godot-cpp-template>`__, and base your project off of that.
+It has better coverage of features, such as a GitHub build action and additional useful ``SConstruct`` boilerplate.

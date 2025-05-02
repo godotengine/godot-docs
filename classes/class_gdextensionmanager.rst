@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`GDExtension overview <../tutorials/scripting/gdextension/what_is_gdextension>`
 
-- :doc:`GDExtension example in C++ <../tutorials/scripting/gdextension/gdextension_cpp_example>`
+- :doc:`GDExtension example in C++ <../tutorials/scripting/cpp/gdextension_cpp_example>`
 
 .. rst-class:: classref-reftable-group
 
