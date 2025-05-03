@@ -40,27 +40,27 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`FocusMode<enum_Control_FocusMode>`                          | focus_mode                                                                           | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)   |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`FoldableGroup<class_FoldableGroup>`                         | :ref:`foldable_group<class_FoldableContainer_property_foldable_group>`               |                                                                       |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`folded<class_FoldableContainer_property_folded>`                               | ``false``                                                             |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                       | :ref:`language<class_FoldableContainer_property_language>`                           | ``""``                                                                |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`MouseFilter<enum_Control_MouseFilter>`                      | mouse_filter                                                                         | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                       | :ref:`text<class_FoldableContainer_property_text>`                                   | ``""``                                                                |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_FoldableContainer_property_text_direction>`               | ``0``                                                                 |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_FoldableContainer_property_text_overrun_behavior>` | ``0``                                                                 |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`title_alignment<class_FoldableContainer_property_title_alignment>`             | ``0``                                                                 |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`TitlePosition<enum_FoldableContainer_TitlePosition>`        | :ref:`title_position<class_FoldableContainer_property_title_position>`               | ``0``                                                                 |
-   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`                          | focus_mode                                                                                       | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)   |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`FoldableGroup<class_FoldableGroup>`                         | :ref:`foldable_group<class_FoldableContainer_property_foldable_group>`                           |                                                                       |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`folded<class_FoldableContainer_property_folded>`                                           | ``false``                                                             |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`language<class_FoldableContainer_property_language>`                                       | ``""``                                                                |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>`                      | mouse_filter                                                                                     | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`title<class_FoldableContainer_property_title>`                                             | ``""``                                                                |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`title_alignment<class_FoldableContainer_property_title_alignment>`                         | ``0``                                                                 |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`TitlePosition<enum_FoldableContainer_TitlePosition>`        | :ref:`title_position<class_FoldableContainer_property_title_position>`                           | ``0``                                                                 |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`title_text_direction<class_FoldableContainer_property_title_text_direction>`               | ``0``                                                                 |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`title_text_overrun_behavior<class_FoldableContainer_property_title_text_overrun_behavior>` | ``0``                                                                 |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -194,7 +194,7 @@ Property Descriptions
 - |void| **set_foldable_group**\ (\ value\: :ref:`FoldableGroup<class_FoldableGroup>`\ )
 - :ref:`FoldableGroup<class_FoldableGroup>` **get_foldable_group**\ (\ )
 
-The :ref:`FoldableGroup<class_FoldableGroup>` associated with the container.
+The :ref:`FoldableGroup<class_FoldableGroup>` associated with the container. When multiple **FoldableContainer** nodes share the same group, only one of them is allowed to be unfolded.
 
 .. rst-class:: classref-item-separator
 
@@ -234,52 +234,18 @@ Language code used for text shaping algorithms. If left empty, current locale is
 
 ----
 
-.. _class_FoldableContainer_property_text:
+.. _class_FoldableContainer_property_title:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **text** = ``""`` :ref:`🔗<class_FoldableContainer_property_text>`
+:ref:`String<class_String>` **title** = ``""`` :ref:`🔗<class_FoldableContainer_property_title>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_text**\ (\ value\: :ref:`String<class_String>`\ )
-- :ref:`String<class_String>` **get_text**\ (\ )
+- |void| **set_title**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_title**\ (\ )
 
-The Container's title text.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_FoldableContainer_property_text_direction:
-
-.. rst-class:: classref-property
-
-:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0`` :ref:`🔗<class_FoldableContainer_property_text_direction>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_text_direction**\ (\ value\: :ref:`TextDirection<enum_Control_TextDirection>`\ )
-- :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction**\ (\ )
-
-Base text writing direction.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_FoldableContainer_property_text_overrun_behavior:
-
-.. rst-class:: classref-property
-
-:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior** = ``0`` :ref:`🔗<class_FoldableContainer_property_text_overrun_behavior>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_text_overrun_behavior**\ (\ value\: :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ )
-- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior**\ (\ )
-
-Defines the behavior of the **FoldableContainer** when the text is longer than the available space.
+The container's title text.
 
 .. rst-class:: classref-item-separator
 
@@ -314,6 +280,40 @@ Title's horizontal text alignment as defined in the :ref:`HorizontalAlignment<en
 - :ref:`TitlePosition<enum_FoldableContainer_TitlePosition>` **get_title_position**\ (\ )
 
 Title's position as defined in the :ref:`TitlePosition<enum_FoldableContainer_TitlePosition>` enum.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FoldableContainer_property_title_text_direction:
+
+.. rst-class:: classref-property
+
+:ref:`TextDirection<enum_Control_TextDirection>` **title_text_direction** = ``0`` :ref:`🔗<class_FoldableContainer_property_title_text_direction>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_title_text_direction**\ (\ value\: :ref:`TextDirection<enum_Control_TextDirection>`\ )
+- :ref:`TextDirection<enum_Control_TextDirection>` **get_title_text_direction**\ (\ )
+
+Title text writing direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FoldableContainer_property_title_text_overrun_behavior:
+
+.. rst-class:: classref-property
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **title_text_overrun_behavior** = ``0`` :ref:`🔗<class_FoldableContainer_property_title_text_overrun_behavior>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_title_text_overrun_behavior**\ (\ value\: :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ )
+- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_title_text_overrun_behavior**\ (\ )
+
+Defines the behavior of the title when the text is longer than the available space.
 
 .. rst-class:: classref-section-separator
 

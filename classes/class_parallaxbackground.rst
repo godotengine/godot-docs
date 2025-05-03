@@ -10,6 +10,8 @@
 ParallaxBackground
 ==================
 
+**Deprecated:** Use the :ref:`Parallax2D<class_Parallax2D>` node instead.
+
 **Inherits:** :ref:`CanvasLayer<class_CanvasLayer>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node used to create a parallax scrolling background.

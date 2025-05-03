@@ -38,6 +38,18 @@ This class implements a writer that allows storing the multiple blobs in a ZIP a
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-----------------------+----------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>` | :ref:`compression_level<class_ZIPPacker_property_compression_level>` | ``-1`` |
+   +-----------------------+----------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -94,6 +106,70 @@ Append a new zip archive to the end of the already existing file at the given pa
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_ADDINZIP** = ``2``
 
 Add new files to the existing zip archive at the given path.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_ZIPPacker_CompressionLevel:
+
+.. rst-class:: classref-enumeration
+
+enum **CompressionLevel**: :ref:`🔗<enum_ZIPPacker_CompressionLevel>`
+
+.. _class_ZIPPacker_constant_COMPRESSION_DEFAULT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionLevel<enum_ZIPPacker_CompressionLevel>` **COMPRESSION_DEFAULT** = ``-1``
+
+Start a file with the default Deflate compression level (``6``). This is a good compromise between speed and file size.
+
+.. _class_ZIPPacker_constant_COMPRESSION_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionLevel<enum_ZIPPacker_CompressionLevel>` **COMPRESSION_NONE** = ``0``
+
+Start a file with no compression. This is also known as the "Store" compression mode and is the fastest method of packing files inside a ZIP archive. Consider using this mode for files that are already compressed (such as JPEG, PNG, MP3, or Ogg Vorbis files).
+
+.. _class_ZIPPacker_constant_COMPRESSION_FAST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionLevel<enum_ZIPPacker_CompressionLevel>` **COMPRESSION_FAST** = ``1``
+
+Start a file with the fastest Deflate compression level (``1``). This is fast to compress, but results in larger file sizes than :ref:`COMPRESSION_DEFAULT<class_ZIPPacker_constant_COMPRESSION_DEFAULT>`. Decompression speed is generally unaffected by the chosen compression level.
+
+.. _class_ZIPPacker_constant_COMPRESSION_BEST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionLevel<enum_ZIPPacker_CompressionLevel>` **COMPRESSION_BEST** = ``9``
+
+Start a file with the the best Deflate compression level (``9``). This is slow to compress, but results in smaller file sizes than :ref:`COMPRESSION_DEFAULT<class_ZIPPacker_constant_COMPRESSION_DEFAULT>`. Decompression speed is generally unaffected by the chosen compression level.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_ZIPPacker_property_compression_level:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **compression_level** = ``-1`` :ref:`🔗<class_ZIPPacker_property_compression_level>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_compression_level**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_compression_level**\ (\ )
+
+The compression level used when :ref:`start_file()<class_ZIPPacker_method_start_file>` is called. Use :ref:`CompressionLevel<enum_ZIPPacker_CompressionLevel>` as a reference.
 
 .. rst-class:: classref-section-separator
 
