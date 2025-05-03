@@ -1233,42 +1233,44 @@ See also `Static functions`_ and `Static constructor`_.
 Casting
 ~~~~~~~
 
-Values assigned to typed variables must have a compatible type. If it's needed to
-coerce a value to be of a certain type, in particular for object types, you can
-use the casting operator ``as``.
-
-Casting between object types results in the same object if the value is of the
-same type or a subtype of the cast type.
+Values assigned to typed variables must have be of the given, or a derived class.
 
 ::
 
-    var my_node2D: Node2D
-    my_node2D = $Sprite2D as Node2D # Works since Sprite2D is a subtype of Node2D.
+    var my_node_2d: Node2D
+    my_node_2d = $Node2D # This is valid as Node2D matches the variable's type
+    my_node_2d = $Sprite2D # This is valid as Sprite2D inherits from Node2D
 
-If the value is not a subtype, the casting operation will result in a ``null`` value.
+However, it can be helpful to cast a value to a subclass, as we can then access
+the subclass's methods and fields on the object. We use the ``as`` keyword to do this.
 
 ::
 
-    var my_node2D: Node2D
-    my_node2D = $Button as Node2D # Results in 'null' since a Button is not a subtype of Node2D.
+    var my_sprite_2d: Sprite2D
+    my_sprite_2d = my_node_2d as Sprite2D # This is valid as my_node_2d is a Sprite2D
 
-For built-in types, they will be forcibly converted if possible, otherwise the
-engine will raise an error.
+If we attempt to cast a value to a type that is not a subtype, the casting operation will
+result in a ``null`` value.
+
+::
+
+    var my_button: Button
+    my_button = my_sprite_2d as Button # Results in 'null' since Button is not a subtype of Sprite2D.
+
+Many built-in types, such as ``int`` or ``Vector2`` do not derive from each other, and will as such
+not be able to be casted using ``as``. Instead, for casting to primitives such as ``int`` or ``String``,
+use their build in casting methods, for example ``int()`` or ``str()``. For complex objects such as a
+``Vector2``, create them from the object's constructor instead.
 
 ::
 
     var my_int: int
-    my_int = "123" as int # The string can be converted to int.
-    my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error.
+    my_int = "123" as int # A string can't be converted to int, this will cause an error.
+    my_int = int("123") # Using the 'int()' built-in method.
 
-Casting is also useful to have better type-safe variables when interacting with
-the scene tree::
-
-    # Will infer the variable to be of type Sprite2D.
-    var my_sprite := $Character as Sprite2D
-
-    # Will fail if $AnimPlayer is not an AnimationPlayer, even if it has the method 'play()'.
-    ($AnimPlayer as AnimationPlayer).play("walk")
+    var my_vector: Vector2
+    my_vector = 12 as Vector2 # Vector2 does not derive from int, so this will cause an error.
+    my_vector = Vector2.new(12, 0) # Using the Vector2 constructor.
 
 Constants
 ---------
