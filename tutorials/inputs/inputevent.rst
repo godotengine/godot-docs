@@ -72,7 +72,7 @@ received input, in order:
 1. If the Viewport is embedding Windows, the Viewport tries to interpret the event in its
    capability as a Window-Manager (e.g. for resizing or moving Windows).
 2. Next if an embedded Window is focused, the event is sent to that Window and processed in
-   the Windows Viewport and afterwards treated as handled. If no embedded Window is focused,
+   the Window's Viewport and afterwards treated as handled. If no embedded Window is focused,
    the event is sent to the nodes of the current viewport in the following order.
 3. First of all, the standard :ref:`Node._input() <class_Node_private_method__input>` function
    will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_method_set_process_input>`).
