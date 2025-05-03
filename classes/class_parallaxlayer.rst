@@ -10,6 +10,8 @@
 ParallaxLayer
 =============
 
+**Deprecated:** Use the :ref:`Parallax2D<class_Parallax2D>` node instead.
+
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A parallax scrolling layer to be used with :ref:`ParallaxBackground<class_ParallaxBackground>`.

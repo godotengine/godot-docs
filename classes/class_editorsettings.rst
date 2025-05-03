@@ -313,6 +313,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/panning/warped_mouse_panning<class_EditorSettings_property_editors/panning/warped_mouse_panning>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editors/panning/zoom_style<class_EditorSettings_property_editors/panning/zoom_style>`                                                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/polygon_editor/auto_bake_delay<class_EditorSettings_property_editors/polygon_editor/auto_bake_delay>`                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/polygon_editor/point_grab_radius<class_EditorSettings_property_editors/polygon_editor/point_grab_radius>`                                                                                           |
@@ -2548,6 +2550,18 @@ Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of
 :ref:`bool<class_bool>` **editors/panning/warped_mouse_panning** :ref:`🔗<class_EditorSettings_property_editors/panning/warped_mouse_panning>`
 
 If ``true``, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/panning/zoom_style:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/panning/zoom_style** :ref:`🔗<class_EditorSettings_property_editors/panning/zoom_style>`
+
+The mouse cursor movement direction to use when drag-zooming in any editor (except 3D scene editor) by moving the mouse. This does not affect zooming with the mouse wheel.
 
 .. rst-class:: classref-item-separator
 

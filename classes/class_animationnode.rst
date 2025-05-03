@@ -31,9 +31,9 @@ You can access the time information as read-only parameter which is processed an
 
 ::
 
-    var current_length = $AnimationTree[parameters/AnimationNodeName/current_length]
-    var current_position = $AnimationTree[parameters/AnimationNodeName/current_position]
-    var current_delta = $AnimationTree[parameters/AnimationNodeName/current_delta]
+    var current_length = $AnimationTree["parameters/AnimationNodeName/current_length"]
+    var current_position = $AnimationTree["parameters/AnimationNodeName/current_position"]
+    var current_delta = $AnimationTree["parameters/AnimationNodeName/current_delta"]
 
 .. rst-class:: classref-introduction-group
 

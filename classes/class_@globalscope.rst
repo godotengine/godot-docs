@@ -3671,6 +3671,8 @@ If a property is :ref:`String<class_String>`, hints that the property represents
 
 If a property is :ref:`Array<class_Array>`, hints the editor how to show elements. The ``hint_string`` must encode nested types using ``":"`` and ``"/"``.
 
+If a property is :ref:`Dictionary<class_Dictionary>`, hints the editor how to show elements. The ``hint_string`` is the same as :ref:`Array<class_Array>`, with a ``";"`` separating the key and value.
+
 
 .. tabs::
 
@@ -3802,7 +3804,9 @@ Hints that an :ref:`int<class_int>` property is a pointer. Used by GDExtension.
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_ARRAY_TYPE** = ``31``
 
-Hints that a property is an :ref:`Array<class_Array>` with the stored type specified in the hint string.
+Hints that a property is an :ref:`Array<class_Array>` with the stored type specified in the hint string. The hint string contains the type of the array (e.g. ``"String"``).
+
+Use the hint string format from :ref:`PROPERTY_HINT_TYPE_STRING<class_@GlobalScope_constant_PROPERTY_HINT_TYPE_STRING>` for more control over the stored type.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_DICTIONARY_TYPE:
 
@@ -3811,6 +3815,8 @@ Hints that a property is an :ref:`Array<class_Array>` with the stored type speci
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_DICTIONARY_TYPE** = ``38``
 
 Hints that a property is a :ref:`Dictionary<class_Dictionary>` with the stored types specified in the hint string. The hint string contains the key and value types separated by a semicolon (e.g. ``"int;String"``).
+
+Use the hint string format from :ref:`PROPERTY_HINT_TYPE_STRING<class_@GlobalScope_constant_PROPERTY_HINT_TYPE_STRING>` for more control over the stored types.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LOCALE_ID:
 
@@ -7214,7 +7220,7 @@ Returns the square root of ``x``, where ``x`` is a non-negative number.
     sqrt(10.24) # Returns 3.2
     sqrt(-1)    # Returns NaN
 
-\ **Note:** Negative values of ``x`` return NaN ("Not a Number"). in C#, if you need negative inputs, use ``System.Numerics.Complex``.
+\ **Note:** Negative values of ``x`` return NaN ("Not a Number"). In C#, if you need negative inputs, use ``System.Numerics.Complex``.
 
 .. rst-class:: classref-item-separator
 
