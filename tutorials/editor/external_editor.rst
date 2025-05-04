@@ -54,10 +54,17 @@ Some example **Exec Flags** for various editors include:
 +---------------------+-----------------------------------------------------+
 | Emacs               | ``emacs +{line}:{col} {file}``                      |
 +---------------------+-----------------------------------------------------+
-| Sublime Text        | ``{project} {file}:{line}:{column}``                |
+| Sublime Text        | ``{project} {file}:{line}:{col}``                   |
 +---------------------+-----------------------------------------------------+
-| Visual Studio       | ``/edit "file"``                                    |
+| Visual Studio*      | ``/edit "file"``                                    |
 +---------------------+-----------------------------------------------------+
+
+\*: Arguments are not automatically detected, so you must fill them in manually.
+
+Since Godot 4.5, **Exec Flags** are automatically detected for all editors
+listed above (unless denoted with an asterisk). You don't need to paste them
+from this page for it to work, unless your editor has an executable name not
+recognized automatically (e.g. a fork of an editor listed here).
 
 .. note::
 
