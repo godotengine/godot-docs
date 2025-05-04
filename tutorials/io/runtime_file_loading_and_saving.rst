@@ -17,7 +17,7 @@ Example use cases for runtime file loading and saving include:
 - Loading texture packs designed for the game.
 - Loading user-provided audio tracks and playing them back in an in-game radio station.
 - Loading custom levels or 3D models that can be designed with any 3D DCC that
-  can export to glTF (including glTF scenes saved by Godot at runtime).
+  can export to glTF or FBX (including glTF scenes saved by Godot at runtime).
 - Using user-provided fonts for menus and HUD.
 - Saving/loading a file format that can contain multiple files but can still
   easily be read by other applications (ZIP).
@@ -221,6 +221,13 @@ projects. Using :ref:`class_gltfdocument` and :ref:`class_gltfstate` together,
 Godot can load and save glTF files in exported projects, in both text
 (``.gltf``) and binary (``.glb``) formats. The binary format should be preferred
 as it's faster to write and smaller, but the text format is easier to debug.
+
+Since Godot 4.3, FBX scenes can also be loaded (but not saved) at runtime using the
+:ref:`class_fbxdocument` and :ref:`class_fbxstate` classes. The code to do so
+is the same as glTF, but you will need to replace all instances of
+``GLTFDocument`` and ``GLTFState`` with ``FBXDocument`` and ``FBXState`` in the
+code samples below. There are `known issues <https://github.com/godotengine/godot/issues/96043>`__
+with runtime FBX loading, so using glTF instead is preferred for now.
 
 Example of loading a glTF scene and appending its root node to the scene:
 
