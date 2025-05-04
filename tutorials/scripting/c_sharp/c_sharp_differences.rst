@@ -381,7 +381,7 @@ Use ``System.String`` (``string``). Most of Godot's String methods have an
 equivalent in ``System.String`` or are provided by the ``StringExtensions``
 class as extension methods.
 
-Note that C# strings uses UTF-16 encoding, while Godot Strings uses UTF-32 encoding.
+Note that C# strings use UTF-16 encoding, while Godot Strings use UTF-32 encoding.
 
 Example:
 
