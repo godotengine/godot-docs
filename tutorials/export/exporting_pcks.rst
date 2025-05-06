@@ -1,7 +1,14 @@
 .. _doc_exporting_pcks:
 
-Exporting packs, patches, and mods
-==================================
+Exporting packs and patches
+===========================
+
+.. warning::
+    We changed our stance about exporting mods using PCK files for security reasons.
+
+    **We don't recommend anymore using PCK files to add modding functionality to your game.**
+
+    Please read :ref:`doc_exporting_pcks_about_mods_using_pck_files` for more information.
 
 Use cases
 ---------
@@ -15,8 +22,10 @@ Examples of this include...
 - Patches: the ability to fix a bug that is present in a shipped product.
 - Mods: grant other people the ability to create content for one's game.
 
-These tools help developers to extend their development beyond the initial
+Godot offers some tools to help developers to extend their development beyond the initial
 release.
+
+.. _doc_exporting_pcks_overview_of_pck_files:
 
 Overview of PCK files
 ---------------------
@@ -28,7 +37,7 @@ with extension ``.pck``).
 
 - incremental updates/patches
 - offer DLCs
-- offer mod support
+- offer mod support (see :ref:`doc_exporting_pcks_about_mods_using_pck_files` for more info)
 - no source code disclosure needed for mods
 - more modular project structure
 - users don't have to replace the entire game
@@ -51,6 +60,23 @@ PCK files usually contain, but are not limited to:
 The PCK files can even be an entirely different Godot project, which the
 original game loads in at runtime.
 
+.. _doc_exporting_pcks_about_mods_using_pck_files:
+
+About mods using PCK files
+--------------------------
+
+While it's easy enough to create mods for a Godot game using PCK files, **we don't recommend doing it**.
+
+The reason is simple: :ref:`PCK files are very powerful <doc_exporting_pcks_overview_of_pck_files>`. They can override and replace content in a Godot game.
+While this seems ideal for modding purposes (and yes, it is), it comes with the downside of giving the keys to the castle to any bad actor.
+
+While replacing shaders and models is quite benign, replacing scripts is problematic, as the GDScript scripting engine doesn't have actually
+any concept of a `sandbox <https://en.wikipedia.org/wiki/Sandbox_(computer_security)>`__. Every mod containing GDScript files have access
+to the entire Godot Engine API, including making network calls and accessing the filesystem.
+
+We do currently encourage game developers to create their own modding system for the time being. To be really secure, any modding system
+should limit the scope of scripting calls being made by a mod, as it may be compromised by an untrustworthy actor.
+
 Generating PCK files
 --------------------
 
@@ -66,7 +92,8 @@ process will build that type of file for the chosen platform.
 
 .. note::
 
-    If one wishes to support mods for their game, they will need their users to
+    If one wishes to support mods for their game using PCK files, even after reading
+    :ref:`doc_exporting_pcks_about_mods_using_pck_files`, they will need their users to
     create similarly exported files. Assuming the original game expects a
     certain structure for the PCK's resources and/or a certain interface for
     its scripts, then either...
@@ -90,31 +117,31 @@ Opening PCK files at runtime
 ----------------------------
 
 To import a PCK file, one uses the ProjectSettings singleton. The following
-example expects a “mod.pck” file in the directory of the games executable.
-The PCK file contains a “mod_scene.tscn” test scene in its root.
+example expects a ”dlc.pck” file in the directory of the games executable.
+The PCK file contains a ”dlc_scene.tscn” test scene in its root.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _your_function():
-        # This could fail if, for example, mod.pck cannot be found.
-        var success = ProjectSettings.load_resource_pack("res://mod.pck")
+        # This could fail if, for example, dlc.pck cannot be found.
+        var success = ProjectSettings.load_resource_pack("res://dlc.pck")
 
         if success:
             # Now one can use the assets as if they had them in the project from the start.
-            var imported_scene = load("res://mod_scene.tscn")
+            var imported_scene = load("res://dlc_scene.tscn")
 
  .. code-tab:: csharp
 
     private void YourFunction()
     {
-        // This could fail if, for example, mod.pck cannot be found.
-        var success = ProjectSettings.LoadResourcePack("res://mod.pck");
+        // This could fail if, for example, dlc.pck cannot be found.
+        var success = ProjectSettings.LoadResourcePack("res://dlc.pck");
 
         if (success)
         {
             // Now one can use the assets as if they had them in the project from the start.
-            var importedScene = (PackedScene)ResourceLoader.Load("res://mod_scene.tscn");
+            var importedScene = (PackedScene)ResourceLoader.Load("res://dlc_scene.tscn");
         }
     }
 
@@ -122,7 +149,7 @@ The PCK file contains a “mod_scene.tscn” test scene in its root.
 
     By default, if you import a file with the same file path/name as one you already have in your
     project, the imported one will replace it. This is something to watch out for when
-    creating DLC or mods. You can solve this problem by using a tool that isolates mods to a specific mods subfolder.
+    creating DLCs. You can solve this problem by using a tool that isolates DLCs to a specific DLCs subfolder.
     However, it is also a way of creating patches for one's own game. A
     PCK file of this kind can fix the content of a previously loaded PCK.
 
@@ -132,12 +159,12 @@ The PCK file contains a “mod_scene.tscn” test scene in its root.
 .. note::
     For a C# project, you need to build the DLL and place it in the project directory first.
     Then, before loading the resource pack, you need to load its DLL as follows:
-    ``Assembly.LoadFile("mod.dll")``
+    ``Assembly.LoadFile("dlc.dll")``
 
 Summary
 -------
 
-This tutorial explains how to add mods, patches, or DLC to a game.
+This tutorial explains how to add patches or DLCs to a game.
 The most important thing is to identify how one plans to distribute future
 content for their game and develop a workflow that is customized for that
 purpose. Godot should make that process smooth regardless of which route a
