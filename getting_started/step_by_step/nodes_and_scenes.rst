@@ -102,10 +102,19 @@ of the window.
 
 .. image:: img/nodes_and_scenes_05_editor_with_label.webp
 
-A lot happens when you add a scene's first node. The scene changes to the 2D
-workspace because Label is a 2D node type. The Label appears, selected, in the
-top-left corner of the viewport. The node appears in the Scene dock on the left,
-and the node's properties appear in the Inspector dock on the right.
+A lot happens when you add a scene's first node:
+
+- The scene changes to the 2D workspace because Label is a 2D node type.
+- The Label appears, selected, in the top-left corner of the viewport.
+- The Label is also in the top-left corner of a larger indigo-colored rectangle
+  that represents the game's default window dimensions.
+- The node appears in the Scene dock on the left.
+- The node's properties appear in the Inspector dock on the right.
+
+If the default-dimensions rectangle appears small relative to the full 2D
+viewport, then scroll around the viewport and use its zoom controls—located in
+the top-left corner of the viewport—so that the rectangle fills most of the
+viewport.
 
 Changing a node's properties
 ----------------------------
@@ -124,13 +133,15 @@ You will see the text draw in the viewport as you type.
              the Text. For a complete reference of the Inspector dock, see
              :ref:`doc_editor_inspector_dock`.
 
-You can move your Label node in the viewport by selecting the move tool in the
-toolbar.
+Move the Label to the center of the indigo default-dimensions rectangle. Follow
+these steps:
+
+1. In the toolbar, select the move tool.
 
 .. image:: img/nodes_and_scenes_07_move_tool.webp
 
-With the Label selected, click and drag anywhere in the viewport to
-move it to the center of the view delimited by the rectangle.
+2. In the Scene dock, select the Label.
+3. Click and drag anywhere in the viewport.
 
 .. image:: img/nodes_and_scenes_08_hello_world_text.webp
 
