@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_gui_containers:
 
 Using Containers
@@ -170,7 +168,7 @@ It has multiple stretch modes, providing options for adjusting the child control
 
    .. image:: img/containers_aspectratio.webp
 
-useful when you have a container that needs to be dynamic and responsive to different screen sizes,
+It is useful when you have a container that needs to be dynamic and responsive to different screen sizes,
 and you want the child elements to scale proportionally without losing their intended shapes.
 
    .. image:: img/containers_aspectratio_drag.webp
@@ -193,7 +191,7 @@ CenterContainer
 ~~~~~~~~~~~~~~~
 
 CenterContainer is a container that automatically keeps all of its child controls centered within it at their minimum size.
-It ensures that the child controls are always aligned to the center, making it easier to create centered layouts without manual positioning.
+It ensures that the child controls are always aligned to the center, making it easier to create centered layouts without manual positioning
 (via :ref:`CenterContainer <class_CenterContainer>`).
 
    .. image:: img/containers_center.webp
@@ -210,7 +208,7 @@ Creating custom Containers
 --------------------------
 
 It is possible to create a custom container using a script.
-Here is an example of a container that fits children to its rect size:
+Here is an example of a container that fits children to its size:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -222,7 +220,7 @@ Here is an example of a container that fits children to its rect size:
             # Must re-sort the children
             for c in get_children():
                 # Fit to own size
-                fit_child_in_rect(c, Rect2(Vector2(), rect_size))
+                fit_child_in_rect(c, Rect2(Vector2(), size))
 
     func set_some_setting():
         # Some setting changed, ask for children re-sort.
@@ -242,7 +240,7 @@ Here is an example of a container that fits children to its rect size:
                 foreach (Control c in GetChildren())
                 {
                     // Fit to own size
-                    FitChildInRect(c, new Rect2(new Vector2(), RectSize));
+                    FitChildInRect(c, new Rect2(new Vector2(), Size));
                 }
             }
         }
