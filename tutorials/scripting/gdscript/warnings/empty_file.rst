@@ -13,13 +13,12 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/empty_file<class
 When this warning occurs
 ------------------------
 
-TODO
-
+This warning may appear when you create a ``.gd`` file with no code to run. A completely blank file will raise this warning, as will a file that only contains comments.
 
 How to fix this warning
 -----------------------
 
-TODO
+Add code to the ``.gd`` file or delete it.
 
 
 
