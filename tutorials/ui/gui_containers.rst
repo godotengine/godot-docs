@@ -142,7 +142,7 @@ It respects both the horizontal and vertical sizing options.
 This container is useful as a top-level control, or just to add custom backgrounds to sections of a layout.
 
 FoldableContainer
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 A container that can be expanded/collapsed
 (via :ref:`FoldableContainer <class_FoldableContainer>`).
