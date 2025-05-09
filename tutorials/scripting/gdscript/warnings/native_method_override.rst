@@ -13,13 +13,25 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/native_method_ov
 When this warning occurs
 ------------------------
 
-TODO
+This warning may appear if you try to define a method in a script that has the name as a native class's method:
 
+.. code-block::
+
+    extends Node
+
+    func get_class():  # Will give warning NATIVE_METHOD_OVERRIDE.
+        return "MyCoolClass"
+
+Here, ``get_class()`` is a method on ``Object``. When Godot tries to call this class's ``get_class()`` method for internal purposes, it will use the already-existing definition, not the one the user has defined here.
 
 How to fix this warning
 -----------------------
 
-TODO
+Name the function something else:
 
+.. code-block::
 
+    func get_class_name():  # Will not give a warning.
+        return "MyCoolClass"
 
+(Note that doing this still won't override the behavior of a native method.)
