@@ -181,7 +181,7 @@ Operating systems generally don't come with tools that are flexible enough
 for this, so you'll need to install a third-party utility.
 
 `OBS Studio <https://obsproject.com/>`__ is the most popular option, but
-`SimpleScreenRecorder <https://www.maartenbaert.be/simplescreenrecorder/>`__
+`GPU Screen Recorder <https://git.dec05eba.com/gpu-screen-recorder/about/>`__
 can be used as an alternative on Linux. `ShareX <https://getsharex.com/>`__
 can be used as an alternative on Windows. All these tools can be configured
 to record the entire screen, a specific window or a predetermined rectangle.
