@@ -346,7 +346,7 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
 **Post-processing:**
 
-- Tonemapping (Linear, Reinhard, Filmic, ACES).
+- Tonemapping (Linear, Reinhard, Filmic, ACES, AgX).
 - Automatic exposure adjustments based on viewport brightness (and manual exposure override).
 - Near and far depth of field with adjustable bokeh simulation (box, hexagon, circle).
 - Screen-space ambient occlusion (SSAO) at half or full resolution.
