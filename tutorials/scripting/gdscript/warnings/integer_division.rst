@@ -1,0 +1,41 @@
+INTEGER_DIVISION
+====================
+
+The warning message is:
+
+.. code-block:: none
+
+    Integer division, decimal part will be discarded.
+
+The default warning level for this warning is **Warn**.
+To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`.
+
+When this warning occurs
+------------------------
+
+This warning may appear when attempting to divide two integers:
+
+.. code-block::
+
+    var result = 5 / 3  # Will give warning INTEGER_DIVISION.
+
+Because both operands are integers, the result will be an integer as well. Integers can't store fractional parts of numbers, so the result must be a whole number. Godot discards anything after the decimal point in the mathematical result to obtain the integer result. **Note that the number is not rounded to the nearest whole number.**
+
+
+How to fix this warning
+-----------------------
+
+Use floating-point numbers (``float``s) for the division operation:
+
+.. code-block::
+
+    var result = 5.0 / 3.0
+
+If the integers being divided are variables, cast them to ``float``:
+
+.. code-block::
+
+    var a: int = 5
+    var b: int = 3
+    var result = float(a) / float(b)
+
