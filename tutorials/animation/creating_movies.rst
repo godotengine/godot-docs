@@ -46,7 +46,7 @@ Compared to real-time video recording, some advantages of non-real-time recordin
     **This feature is not designed for capturing real-time footage during gameplay.**
 
     Players should use something like `OBS Studio <https://obsproject.com/>`__ or
-    `SimpleScreenRecorder <https://www.maartenbaert.be/simplescreenrecorder/>`__
+    `GPU Screen Recorder <https://git.dec05eba.com/gpu-screen-recorder/about/>`__
     to record gameplay videos, as they do a much better job at intercepting the
     compositor than Godot can do using Vulkan or OpenGL natively.
 
