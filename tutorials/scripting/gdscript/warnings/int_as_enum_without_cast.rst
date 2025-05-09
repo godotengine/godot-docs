@@ -13,13 +13,18 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/int_as_enum_with
 When this warning occurs
 ------------------------
 
-TODO
+This warning may appear when attempting to use an integer value in place of an enum value:
 
+.. code-block::
+
+    var my_var: MyEnum
+    my_var = 1  # Will give warning INT_AS_ENUM_WITHOUT_CAST.
 
 How to fix this warning
 -----------------------
 
-TODO
+Cast the integer value to the enum type.
 
-
-
+.. code-block::
+    var my_var: MyEnum
+    my_var = 1 as MyEnum
