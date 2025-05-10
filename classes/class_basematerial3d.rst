@@ -115,6 +115,8 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`disable_receive_shadows<class_BaseMaterial3D_property_disable_receive_shadows>`                             | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`disable_specular_occlusion<class_BaseMaterial3D_property_disable_specular_occlusion>`                       | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                       | :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>`                       | ``10.0``              |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                       | :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`                       | ``0.0``               |
@@ -1111,11 +1113,19 @@ Enables multichannel signed distance field rendering shader.
 
 Disables receiving depth-based or volumetric fog.
 
+.. _class_BaseMaterial3D_constant_FLAG_DISABLE_SPECULAR_OCCLUSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_DISABLE_SPECULAR_OCCLUSION** = ``22``
+
+Disables specular occlusion.
+
 .. _class_BaseMaterial3D_constant_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_MAX** = ``22``
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_MAX** = ``23``
 
 Represents the size of the :ref:`Flags<enum_BaseMaterial3D_Flags>` enum.
 
@@ -1178,6 +1188,10 @@ enum **SpecularMode**: :ref:`🔗<enum_BaseMaterial3D_SpecularMode>`
 :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` **SPECULAR_SCHLICK_GGX** = ``0``
 
 Default specular blob.
+
+\ **Note:** Forward+ uses multiscattering for more accurate reflections, although the impact of multiscattering is more noticeable on rough metallic surfaces than on smooth, non-metallic surfaces.
+
+\ **Note:** Mobile and Compatibility don't perform multiscattering for performance reasons. Instead, they perform single scattering, which means rough metallic surfaces may look slightly darker than intended.
 
 .. _class_BaseMaterial3D_constant_SPECULAR_TOON:
 
@@ -2029,6 +2043,23 @@ If ``true``, the object will not be affected by fog (neither volumetric nor dept
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the object receives no shadow that would otherwise be cast onto it.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_disable_specular_occlusion:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_specular_occlusion** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_disable_specular_occlusion>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
+
+If ``true``, disables specular occlusion even if :ref:`ProjectSettings.rendering/reflections/specular_occlusion/enabled<class_ProjectSettings_property_rendering/reflections/specular_occlusion/enabled>` is ``false``.
 
 .. rst-class:: classref-item-separator
 

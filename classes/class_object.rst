@@ -521,6 +521,8 @@ Called when the object's script is instantiated, oftentimes after the object is 
 
 Returns the current iterable value. ``iter`` stores the iteration state, but unlike :ref:`_iter_init()<class_Object_private_method__iter_init>` and :ref:`_iter_next()<class_Object_private_method__iter_next>` the state is supposed to be read-only, so there is no :ref:`Array<class_Array>` wrapper.
 
+\ **Tip:** In GDScript, you can use a subtype of :ref:`Variant<class_Variant>` as the return type for :ref:`_iter_get()<class_Object_private_method__iter_get>`. The specified type will be used to set the type of the iterator variable in ``for`` loops, enhancing type safety.
+
 .. rst-class:: classref-item-separator
 
 ----

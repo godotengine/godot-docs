@@ -315,7 +315,7 @@ Used by the inspector, set to ``true`` when the property can be deleted by the u
 - |void| **set_draw_background**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_draw_background**\ (\ )
 
-Used by the inspector, set to ``true`` when the property label is drawn.
+Used by the inspector, set to ``true`` when the property background is drawn.
 
 .. rst-class:: classref-item-separator
 
@@ -332,7 +332,7 @@ Used by the inspector, set to ``true`` when the property label is drawn.
 - |void| **set_draw_label**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_draw_label**\ (\ )
 
-Used by the inspector, set to ``true`` when the property background is drawn.
+Used by the inspector, set to ``true`` when the property label is drawn.
 
 .. rst-class:: classref-item-separator
 

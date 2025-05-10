@@ -449,6 +449,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/collapse_main_menu<class_EditorSettings_property_interface/editor/collapse_main_menu>`                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>`                                                                                                               |
@@ -880,8 +882,6 @@ Properties
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/warning_color<class_EditorSettings_property_text_editor/theme/highlighting/warning_color>`                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/theme/highlighting/word_highlighted_color>`                                                                 |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`text_editor/theme/line_spacing<class_EditorSettings_property_text_editor/theme/line_spacing>`                                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`version_control/ssh_private_key_path<class_EditorSettings_property_version_control/ssh_private_key_path>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3458,6 +3458,22 @@ The size of the font in the script editor. This setting does not impact the font
 
 ----
 
+.. _class_EditorSettings_property_interface/editor/collapse_main_menu:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/collapse_main_menu** :ref:`🔗<class_EditorSettings_property_interface/editor/collapse_main_menu>`
+
+If ``true``, the main menu collapses into a :ref:`MenuButton<class_MenuButton>`.
+
+\ **Note:** This setting is only applicable on macOS when :ref:`interface/editor/use_embedded_menu<class_EditorSettings_property_interface/editor/use_embedded_menu>` is ``true``.
+
+\ **Note:** Defaults to ``true`` on the Android editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/custom_display_scale:
 
 .. rst-class:: classref-property
@@ -5078,7 +5094,11 @@ If ``true``, tool scripts will be automatically soft-reloaded after they are sav
 
 :ref:`bool<class_bool>` **text_editor/behavior/files/auto_reload_scripts_on_external_change** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/auto_reload_scripts_on_external_change>`
 
-If ``true``, automatically reloads scripts in the editor when they have been modified and saved by external editors.
+If ``true``, automatically reloads scripts and text-based shaders in the editor when they have been modified and saved by external editors or tools and the editor regains focus. External changes can be discarded by using the Undo function after they've been loaded in the editor.
+
+If ``false``, a file conflict dialog will always be displayed when the editor regains focus. This dialog allows you to choose whether to keep local changes or discard them.
+
+\ **Note:** Even when this setting is ``true``, a file conflict dialog is still displayed in certain situations. For instance, it will display when the script editor has unsaved changes that the external editor did not account for.
 
 .. rst-class:: classref-item-separator
 
@@ -6195,18 +6215,6 @@ The script editor's background color for lines with warnings. This should be set
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/word_highlighted_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/word_highlighted_color>`
 
 The script editor's color for words highlighted by selecting them. Only visible if :ref:`text_editor/appearance/caret/highlight_all_occurrences<class_EditorSettings_property_text_editor/appearance/caret/highlight_all_occurrences>` is ``true``.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_text_editor/theme/line_spacing:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **text_editor/theme/line_spacing** :ref:`🔗<class_EditorSettings_property_text_editor/theme/line_spacing>`
-
-The vertical line separation used in text editors, in pixels.
 
 .. rst-class:: classref-item-separator
 

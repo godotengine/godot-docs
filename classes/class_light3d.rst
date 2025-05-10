@@ -321,7 +321,7 @@ enum **BakeMode**: :ref:`🔗<enum_Light3D_BakeMode>`
 
 :ref:`BakeMode<enum_Light3D_BakeMode>` **BAKE_DISABLED** = ``0``
 
-Light is ignored when baking. This is the fastest mode, but the light will be taken into account when baking global illumination. This mode should generally be used for dynamic lights that change quickly, as the effect of global illumination is less noticeable on those lights.
+Light is ignored when baking. This is the fastest mode, but the light will not be taken into account when baking global illumination. This mode should generally be used for dynamic lights that change quickly, as the effect of global illumination is less noticeable on those lights.
 
 \ **Note:** Hiding a light does *not* affect baking :ref:`LightmapGI<class_LightmapGI>`. Hiding a light will still affect baking :ref:`VoxelGI<class_VoxelGI>` and SDFGI (see :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`).
 

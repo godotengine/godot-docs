@@ -178,7 +178,7 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`pad_zeros<class_StringName_method_pad_zeros>`\ (\ digits\: :ref:`int<class_int>`\ ) |const|                                                                                             |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                         | :ref:`path_join<class_StringName_method_path_join>`\ (\ file\: :ref:`String<class_String>`\ ) |const|                                                                                         |
+   | :ref:`String<class_String>`                         | :ref:`path_join<class_StringName_method_path_join>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                                         |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`remove_char<class_StringName_method_remove_char>`\ (\ what\: :ref:`int<class_int>`\ ) |const|                                                                                           |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1392,9 +1392,9 @@ Formats the string representing a number to have an exact number of ``digits`` *
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **path_join**\ (\ file\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_path_join>`
+:ref:`String<class_String>` **path_join**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_path_join>`
 
-Concatenates ``file`` at the end of the string as a subpath, adding ``/`` if necessary.
+Concatenates ``path`` at the end of the string as a subpath, adding ``/`` if necessary.
 
 \ **Example:** ``"this/is".path_join("path") == "this/is/path"``.
 

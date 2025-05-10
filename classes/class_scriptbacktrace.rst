@@ -62,6 +62,8 @@ Methods
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>` | :ref:`get_member_variable_value<class_ScriptBacktrace_method_get_member_variable_value>`\ (\ frame_index\: :ref:`int<class_int>`, variable_index\: :ref:`int<class_int>`\ ) |const| |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_empty<class_ScriptBacktrace_method_is_empty>`\ (\ ) |const|                                                                                                                |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -261,6 +263,18 @@ Returns the name of the member variable at the specified ``variable_index`` in t
 Returns the value of the member variable at the specified ``variable_index`` in the stack frame at the specified ``frame_index``.
 
 \ **Warning:** With GDScript backtraces, the returned :ref:`Variant<class_Variant>` will be the variable's actual value, including any object references. This means that storing the returned :ref:`Variant<class_Variant>` will prevent any such object from being deallocated, so it's generally recommended not to do so.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptBacktrace_method_is_empty:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_ScriptBacktrace_method_is_empty>`
+
+Returns ``true`` if the backtrace has no stack frames.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
