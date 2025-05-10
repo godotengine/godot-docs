@@ -72,7 +72,7 @@ Property Descriptions
 - |void| **set_action**\ (\ value\: :ref:`StringName<class_StringName>`\ )
 - :ref:`StringName<class_StringName>` **get_action**\ (\ )
 
-The action's name. Actions are accessed via this :ref:`String<class_String>`.
+The action's name. This is usually the name of an existing action in the :ref:`InputMap<class_InputMap>` which you want this custom event to match.
 
 .. rst-class:: classref-item-separator
 

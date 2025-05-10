@@ -585,7 +585,7 @@ The pathfinding algorithm used in the path query.
 
 The radius of the avoidance agent. This is the "body" of the avoidance agent and not the avoidance maneuver starting radius (which is controlled by :ref:`neighbor_distance<class_NavigationAgent2D_property_neighbor_distance>`).
 
-Does not affect normal pathfinding. To change an actor's pathfinding radius bake :ref:`NavigationMesh<class_NavigationMesh>` resources with a different :ref:`NavigationMesh.agent_radius<class_NavigationMesh_property_agent_radius>` property and use different navigation maps for each actor size.
+Does not affect normal pathfinding. To change an actor's pathfinding radius bake :ref:`NavigationPolygon<class_NavigationPolygon>` resources with a different :ref:`NavigationPolygon.agent_radius<class_NavigationPolygon_property_agent_radius>` property and use different navigation maps for each actor size.
 
 .. rst-class:: classref-item-separator
 
