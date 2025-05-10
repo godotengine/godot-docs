@@ -46,14 +46,10 @@ of these expensive state changes.
 
 In 2D, the costs of treating each item individually can be prohibitively high -
 there can easily be thousands of them on the screen. This is why 2D *batching*
-is used with OpenGL-based rendering methods. Multiple similar items are grouped
+is used. Multiple similar items are grouped
 together and rendered in a batch, via a single draw call, rather than making a
 separate draw call for each item. In addition, this means state changes,
 material and texture changes can be kept to a minimum.
-
-Vulkan-based rendering methods do not use 2D batching yet. Since draw calls are
-much cheaper with Vulkan compared to OpenGL, there is less of a need to have 2D
-batching (although it can still be beneficial in some cases).
 
 3D batching
 ~~~~~~~~~~~
