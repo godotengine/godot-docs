@@ -13,13 +13,25 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/shadowed_variabl
 When this warning occurs
 ------------------------
 
-TODO
+This warning may appear when giving something the same name as a variable previously defined in the class.
+
+.. code-block::
+
+    extends Node
+
+    var level = 3
+
+    func _ready():
+        var level = 1
+        print("Time for level %s" % level)
+
+In this example, the script class has a property ``level`` which can be accessed from its functions. However, at the first line of ``_ready()``, a new ``level`` variable is declared for that function specifically. After this declaration, any references to ``level`` will go to that version and not the shared variable for the class. This is called *shadowing*.
 
 
 How to fix this warning
 -----------------------
 
-TODO
+Change the name to something that isn't being used by the class. For example, if receiving a warning about using the identifier ``level``, consider using something more descriptive like ``new_level``.
 
 
 
