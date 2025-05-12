@@ -45,6 +45,8 @@ You can set up your InputMap under **Project > Project Settings > Input Map** an
     func _process(delta):
         if Input.is_action_pressed("ui_right"):
             # Move right.
+        if Input.is_action_pressed("ui_select", PLAYER_ID_P2):
+            # Query second player "ui_select" action.
 
  .. code-tab:: csharp
 
@@ -53,6 +55,11 @@ You can set up your InputMap under **Project > Project Settings > Input Map** an
         if (Input.IsActionPressed("ui_right"))
         {
             // Move right.
+        }
+
+        if (Input.IsActionPressed("ui_select", PLAYER_ID_P2))
+        {
+            // Query second player "ui_select" action.
         }
     }
 
@@ -248,6 +255,41 @@ The Input singleton has a method for this:
 
    See :ref:`doc_first_3d_game_input_actions` for a tutorial on adding input
    actions in the project settings.
+
+Local multiplayer input actions
+-------------------------------
+
+If you're making a local multiplayer game where multiple players share the same keyboard,
+you can supply the game back with the appropriate actions just like shown before,
+but adding the appropriate :ref:`InputEvent.player <class_input_property_player>` property:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _input(event: InputEvent):
+      if event.keycode == KEY_J && event.is_pressed():
+         var ev = InputEventAction.new()
+         # Set as player 2.
+         ev.player = PLAYER_ID_P2
+         ev.action = "ui_left"
+         ev.pressed = true
+         Input.parse_input_event(ev)
+
+ .. code-tab:: csharp
+
+    public override void _Input(InputEvent @event)
+    {
+      if (event.keycode == KEY_J && event.is_pressed())
+      {
+         var ev = new InputEventAction();
+         // Set as player 2.
+         ev.Player = PLAYER_ID_P2;
+         ev.Action = "ui_left";
+         ev.Pressed = true;
+         Input.ParseInputEvent(ev);
+      }
+    }
+
 
 InputMap
 --------
