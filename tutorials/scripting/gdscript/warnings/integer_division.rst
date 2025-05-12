@@ -25,7 +25,7 @@ Because both operands are integers, the result will be an integer as well. Integ
 How to fix this warning
 -----------------------
 
-Use floating-point numbers (``float``s) for the division operation:
+Use floating-point numbers (``float``) for the division operation:
 
 .. code-block::
 

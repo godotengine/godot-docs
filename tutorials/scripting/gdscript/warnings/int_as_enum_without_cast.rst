@@ -26,5 +26,6 @@ How to fix this warning
 Cast the integer value to the enum type.
 
 .. code-block::
+    
     var my_var: MyEnum
     my_var = 1 as MyEnum

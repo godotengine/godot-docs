@@ -31,6 +31,7 @@ How to fix this warning
 If initializing a variable based on the return value of a function (like in the example above), give the function an explicit return type:
 
 .. code-block::
+    
     func get_value() -> int:
         return 3
 
