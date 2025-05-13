@@ -322,8 +322,11 @@ Reference
 
   * - | **hint**
       | Creates a tooltip hint that is displayed when hovering the text with the mouse.
-        Tooltip text should not be quoted (quotes will appear as-is in the tooltip otherwise).
-    - | ``[hint={tooltip text displayed on hover}]{text}[/hint]``
+        While not required, it's recommended to put tooltip text between double or single quotes.
+        Note that it is not possible to escape quotes using ``\"`` or ``\'``. To use
+        single quotes for apostrophes in the hint string, you must use double quotes
+        to surround the string.
+    - | ``[hint="{tooltip text displayed on hover}"]{text}[/hint]``
 
   * - | **img**
       | Inserts an image from the ``{path}`` (can be any valid :ref:`class_Texture2D` resource).
