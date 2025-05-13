@@ -20,6 +20,7 @@ This warning may appear when using a name for something that the script's base c
     extends Node
 
     func _ready():
+        # Will give warning SHADOWED_VARIABLE_BASE_CLASS.
         var name = "Bob"
         print("Hi, my name is %s" % name)
 

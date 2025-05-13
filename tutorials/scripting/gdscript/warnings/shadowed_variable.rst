@@ -22,6 +22,7 @@ This warning may appear when giving something the same name as a variable previo
     var level = 3
 
     func _ready():
+        # Will give warning SHADOWED_VARIABLE.
         var level = 1
         print("Time for level %s" % level)
 
