@@ -220,6 +220,8 @@ the command:
     See :ref:`doc_command_line_tutorial` for more information about using Godot
     from the command line.
 
+.. _doc_exporting_projects_pck_versus_zip:
+
 PCK versus ZIP pack file formats
 --------------------------------
 
