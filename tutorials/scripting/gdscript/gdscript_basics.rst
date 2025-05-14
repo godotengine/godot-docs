@@ -2002,6 +2002,70 @@ in other scripts without the need to ``load`` or ``preload`` them:
     automatically hidden by the editor windows along with the built-in editor nodes used
     by the Godot editor.
 
+.. _doc_gdscript_basics_abstract_class:
+
+Registering abstract classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since Godot 4.5, you can register abstract classes using the ``abstract`` keyword.
+An abstract class is a class that cannot be instantiated directly. Instead, it
+is meant to be subclassed by other classes. Attempting to instantiate
+an abstract class will result in an error.
+
+For example, you could have an abstract class called ``Shape`` that defines
+a method called ``draw()``. You can then create subclasses like ``Circle``
+and ``Square`` that implement the ``draw()`` method in their own way.
+This allows you to define a common *interface* for all shapes without
+having to implement all the details in the abstract class itself:
+
+.. code-block:: gdscript
+
+    abstract class Shape:
+        func draw():
+            # It is possible for subclasses to call the parent class method using `super()`.
+            # In this example, we won't use `super()` to call the parent class method,
+            # so we can leave this method empty.
+            pass
+
+    # This is a concrete (non-abstract) subclass of Shape.
+    class Circle extends Shape:
+        func draw():
+            print("Drawing a circle.")
+
+    class Square extends Shape:
+        func draw():
+            print("Drawing a square.")
+
+Both subclasses and classes created using ``class_name`` can be abstract. This
+example creates two abstract classes, one of which is a subclass of another
+abstract class:
+
+.. code-block:: gdscript
+
+    abstract class_name AbstractClass
+    extends Node
+
+    abstract class AbstractSubClass:
+        func _ready():
+            pass
+
+    # This is an example of a concrete subclass of AbstractSubClass.
+    # This class can be instantiated using `AbstractClass.ConcreteSubclass.new()`
+    # in other scripts, even though it's part of an abstract `class_name` script.
+    class ConcreteClass extends AbstractSubClass:
+        func _ready():
+            print("Concrete class ready.")
+
+.. warning::
+
+    Since an abstract class cannot be instantiated, it is not possible to attach
+    an abstract class to a node. If you attempt to do so, the engine will print
+    an error when running the scene:
+
+    ::
+
+        Cannot set object script. Script '<path to script>' should not be abstract.
+
 Inheritance
 ~~~~~~~~~~~
 
