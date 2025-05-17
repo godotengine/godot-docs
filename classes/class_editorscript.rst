@@ -21,6 +21,8 @@ Description
 
 Scripts extending this class and implementing its :ref:`_run()<class_EditorScript_private_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing :kbd:`Ctrl + Shift + X`) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
 
+If a script extending this class also has a global class name, it will be included in the editor's command palette.
+
 \ **Note:** Extending scripts need to have ``tool`` mode enabled.
 
 \ **Example:** Running the following script prints "Hello from the Godot Editor!":

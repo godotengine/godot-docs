@@ -505,7 +505,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 :ref:`bool<class_bool>` **_is_abstract**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__is_abstract>`
 
-Returns ``true`` if the script is an abstract script. An abstract script does not have a constructor and cannot be instantiated.
+Returns ``true`` if the script is an abstract script. Abstract scripts cannot be instantiated directly, instead other scripts should inherit them. Abstract scripts will be either unselectable or hidden in the Create New Node dialog (unselectable if there are non-abstract classes inheriting it, otherwise hidden).
 
 .. rst-class:: classref-item-separator
 
