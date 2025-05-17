@@ -665,6 +665,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/appearance/caret/type<class_EditorSettings_property_text_editor/appearance/caret/type>`                                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/appearance/enable_inline_color_picker<class_EditorSettings_property_text_editor/appearance/enable_inline_color_picker>`                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/appearance/guidelines/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_hard_column>`                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/appearance/guidelines/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_soft_column>`                                     |
@@ -4879,6 +4881,18 @@ If ``true``, colors the background of the line the caret is currently on with :r
 :ref:`int<class_int>` **text_editor/appearance/caret/type** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/caret/type>`
 
 The shape of the caret to use in the script editor. **Line** displays a vertical line to the left of the current character, whereas **Block** displays an outline over the current character.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/enable_inline_color_picker:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/enable_inline_color_picker** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/enable_inline_color_picker>`
+
+If ``true``, displays a colored button before any :ref:`Color<class_Color>` constructor in the script editor. Clicking on them allows the color to be modified through a color picker.
 
 .. rst-class:: classref-item-separator
 

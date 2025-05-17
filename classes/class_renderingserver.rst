@@ -6576,7 +6576,7 @@ Draws the specified region of a 2D textured rectangle on the :ref:`CanvasItem<cl
 
 Draws a triangle array on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. This is internally used by :ref:`Line2D<class_Line2D>` and :ref:`StyleBoxFlat<class_StyleBoxFlat>` for rendering. :ref:`canvas_item_add_triangle_array()<class_RenderingServer_method_canvas_item_add_triangle_array>` is highly flexible, but more complex to use than :ref:`canvas_item_add_polygon()<class_RenderingServer_method_canvas_item_add_polygon>`.
 
-\ **Note:** ``count`` is unused and can be left unspecified.
+\ **Note:** If ``count`` is set to a non-negative value, only the first ``count * 3`` indices (corresponding to ``count`` triangles) will be drawn. Otherwise, all indices are drawn.
 
 .. rst-class:: classref-item-separator
 

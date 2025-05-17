@@ -48,8 +48,6 @@ Properties
    +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                                                                                 |
    +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | ok_button_text                                                              | ``"Save"`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_ok_button_text>`)   |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`option_count<class_FileDialog_property_option_count>`                 | ``0``                                                                                    |
    +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`root_subfolder<class_FileDialog_property_root_subfolder>`             | ``""``                                                                                   |
@@ -131,6 +129,8 @@ Theme Properties
    | :ref:`Texture2D<class_Texture2D>` | :ref:`parent_folder<class_FileDialog_theme_icon_parent_folder>`                   |                          |
    +-----------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`reload<class_FileDialog_theme_icon_reload>`                                 |                          |
+   +-----------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`sort<class_FileDialog_theme_icon_sort>`                                     |                          |
    +-----------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`toggle_filename_filter<class_FileDialog_theme_icon_toggle_filename_filter>` |                          |
    +-----------------------------------+-----------------------------------------------------------------------------------+--------------------------+
@@ -833,6 +833,18 @@ Custom icon for the parent folder arrow.
 :ref:`Texture2D<class_Texture2D>` **reload** :ref:`🔗<class_FileDialog_theme_icon_reload>`
 
 Custom icon for the reload button.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_theme_icon_sort:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **sort** :ref:`🔗<class_FileDialog_theme_icon_sort>`
+
+Custom icon for the sorting options menu.
 
 .. rst-class:: classref-item-separator
 
