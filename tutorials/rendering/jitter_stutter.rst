@@ -147,6 +147,261 @@ iOS
 iOS devices are generally stutter-free, but older devices running newer versions
 of the operating system may exhibit problems. This is generally unavoidable.
 
+Troubleshooting guide
+---------------------
+
+After an extensive evaluation of reported tickets and thorough testing of Godot on different hardware,
+we found that Godot is blamed for many stutter, jitter or input lag that is not caused by Godot,
+but rather by third-party software or malfunctioning hardware.
+This guide will help you find the root cause of these issues.
+**Please read it carefully and exhaust all options before reporting a ticket on Godot.**
+
+Bad HDMI / DisplayPort cable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A broken cable may appear to function properly, but cause signal synchronization
+issues that go apparently unnoticed. However, these issues can manifest when V-Sync
+is enabled and apps (including but not limited to Godot) running in exclusive fullscreen
+constantly have FPS jitter or slowdowns, even in the most basic of scenes.
+If you see simple demo apps struggle to reach 60 FPS (e.g. it reaches 60 FPS, then
+every 2 seconds slows down to 55 or 40 FPS and then goes back up), you may have a bad cable.
+
+**Solution:** Replace the HDMI / DP cable.
+
+**Workaround:** Disable V-Sync and use the FPS limiter by launching with: ``--disable-vsync --max-fps <fps>``
+
+Broken monitor firmware
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Similar to a bad HDMI / DP cable, a poor interaction between your monitor firmware and
+your GPU can cause jitter or periodic slowdown.
+
+Some monitors (typically the more recent/high-end ones) allow you to update their firmware.
+In this case, download the latest firmware and apply it.
+For many other monitors, this is not an option. Unfortunately, in this case,
+the simple answer is to replace the monitor. You might have luck contacting
+your monitor manufacturer (e.g. LG, Samsung, ViewSonic, etc) and/or your GPU vendor
+(e.g. NVIDIA, AMD, Intel) and ask them for a solution or workaround.
+
+**Solution:** Update firmware if possible, replace the monitor, or ask the manufacturer for a firmware/driver update.
+
+**Workaround:** Disable V-Sync and use the FPS limiter by launching with: ``--disable-vsync --max-fps <fps>``
+
+Multiple monitors
+~~~~~~~~~~~~~~~~~
+
+If you've got multiple monitors, ensure they are all in the same resolution, frequency (Hz),
+and bit depth (e.g. 16-bit vs 24-bit, HDR vs SDR).
+
+If they're not, change their settings until they match. If problems persist,
+try disabling all but one of the monitors.
+
+Overheating and throttling
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Jitter or stutter may be caused by an overheating CPU and/or GPU that throttles itself down.
+You can use temperature monitor software such as
+`Libre Hardware Monitor <https://github.com/LibreHardwareMonitor/LibreHardwareMonitor>`__ on Windows or
+`lm-sensors <https://wiki.archlinux.org/title/Lm_sensors>`__ on Linux
+to see if this is the case.
+
+**Solution:** Fix the cooling problem.
+
+Inconsistent power saving
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In some cases, the OS or driver keeps switching the CPU and/or GPU frequencies up and
+down. This causes an uneven experience.
+
+**Solution (Windows):** Set the Power Profile to "High Performance":
+
+.. image:: img/windows-high-performance-profile.webp
+
+.. tip::
+
+    Sometimes "CPU Boost" where a single CPU core goes into overdrive can be a problem.
+    You can prevent CPU Boost by editing your *current* energy plan and set
+    **Processor power management > Maximum processor state** to 99% instead of 100%:
+
+    .. image:: img/windows-no-boost.webp
+
+For NVIDIA on Windows, set "Power management mode" on "Prefer maximum performance".
+
+.. image:: img/nv-power-profile.webp
+
+**Solution (Linux):** Set the CPU governor to Performance:
+
+.. code:: sh
+
+    sudo cpupower frequency-set -g performance
+
+    # AMD
+    echo high | sudo tee /sys/class/drm/card1/device/power_dpm_force_performance_level
+
+You can try `CoreCtrl <https://gitlab.com/corectrl/corectrl>`__ or `Feral GameMode <https://github.com/FeralInteractive/gamemode>`__
+for user-friendly GUI to control power profiles for individual applications.
+
+On NVIDIA, open **nvidia-settings** and go to **GPU 0 > PowerMizer > Preferred Mode: Prefer Maximum Performance**.
+
+.. image:: img/nv-linux-powermizer.webp
+
+Windows: Unlicensed
+~~~~~~~~~~~~~~~~~~~
+
+First of all, "unactivated" or "unlicensed" Windows can have arbitrary limitations imposed by Microsoft.
+These limitations can change over time and an important one is that Microsoft may decide to restrict
+applications from entering "Hardware Independent Flip" modes which provides the lowest latency experience
+while in fullscreen.
+
+Second, even if Microsoft decides to not artificially limit "Hardware Independent Flip"; if
+you're seeing this watermark:
+
+.. image:: img/activate-windows.webp
+
+Chances are you're not running in "Hardware Independent Flip" because Windows must use DWM
+compositing to display the watermark on top of Godot. DWM Compositing prevents entering
+the desired mode, which increases jitter and input lag.
+
+**Solution:** Activate Windows by buying an original license key.
+
+Windows: Presentation Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Windows has many ways of presenting to the screen. `Special K has an in-depth explanation of them <https://wiki.special-k.info/Presentation_Model>`__
+
+But we can basically reduce them to the following:
+
+**Good**
+
+1. Hardware: Independent Flip (also called "iFlip").
+2. Hardware: Legacy Flip.
+3. Hardware Composed: Independent Flip.
+
+**Bad**
+
+1. Composed: Flip.
+
+You can use `PresentMon <https://github.com/GameTechDev/PresentMon/releases>`__ to see which mode Godot is in.
+While in Fullscreen, Godot should be in one of the "good" ones.
+
+If Godot is not in one of the "bad" ones, there may be an overlay that is causing problems
+(e.g. AMD Overlay, NVIDIA's overlay, Microsoft Game Bar, "Activate Windows" watermark, etc).
+
+Godot can only enter the good ones if it's fully covering a single monitor with nothing on top.
+Some newer hardware may be able to enter "Hardware Composed: Independent Flip" even if not
+fullscreen though, thanks to support for multiple plane overlays (MPO).
+This behavior can sometimes be unreliable (e.g. it may vary depending on monitor count or
+whether HDR is enabled), so it's still better to use fullscreen whenever possible.
+
+.. warning::
+
+    **Set PresentMon to windowed mode**. Otherwise, PresentMon's overlay
+    `ironically prevents apps <https://github.com/GameTechDev/PresentMon/issues/367>`__
+    from entering the "good" modes as it is displayed on top of Godot.
+    You will have to use the recording option and later see the CSV capture
+    to see what mode Godot was in.
+
+.. warning::
+
+    Resources online assert that "Hardware Composed: Independent Flip" is the superior method of all.
+    However, our measurements do not conclusively align with such claims. Ultimately, the best experience
+    is done when all resources are entirely dedicated to one process. "Hardware Composed: Independent Flip"
+    implies that resources are being diverted to display something else too, even if that something is
+    just the kernel giving CPU time to the DWM process.
+
+
+Windows: NVIDIA Presentation Method
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This section only applies to Vulkan and OpenGL. It does not affect D3D12.
+
+NVIDIA has two presentation methods: "Prefer native" and "Prefer layered on DXGI Swapchain":
+
+.. image:: img/nv-present-method.webp
+
+Switching to one or the other may give you better results. 
+
+Linux: NVIDIA
+~~~~~~~~~~~~~
+
+On Linux machines using proprietary NVIDIA drivers, every time the process **nvidia-smi** is launched, it
+causes a stutter. Unfortunately, many third-party apps periodically launch **nvidia-smi** to get GPU temperature
+and frequency and display it on an overlay or similar. For example, running **nvidia-smi** once
+per second completely ruins the gaming experience.
+
+If an app can tell you GPU frequency, fan speed or temperature, then it is a suspect.
+Disabling or removing such apps will fix the problem.
+
+You should report the developer of those broken apps that they must not launch **nvidia-smi** to
+query such information, and ask them to use `NVML <https://developer.nvidia.com/management-library-nvml>`__ instead.
+
+.. note::
+
+    Regularly launching nvidia-smi is a widespread problem on Linux, big enough to have its own section,
+    **but nvidia-smi.exe is also present on Windows**. It is rare for a Windows program to regularly
+    launch nvidia-smi.exe, thus this specific problem is rare on that platform. But if nvidia-smi.exe gets
+    periodically launched on Windows, the same problems (and solutions) apply.
+
+The following is a non-exhaustive list of known apps to cause stutter on NVIDIA Linux systems:
+
+ - `CPU-X <https://github.com/TheTumultuousUnicornOfDarkness/CPU-X>`__.
+ - Linux Mint's Mate panel application "CPU Frequency Scaling Monitor" applet.
+
+Linux: Xfce
+~~~~~~~~~~~
+
+Xfce's compositor is not good for low-latency games and can cause jitter. Disable it.
+
+Open the **Start menu > Window Manager Tweaks > Compositor** and uncheck **Enable display compositing**.
+
+.. image:: img/xfce-disable-compositor.webp
+
+If you still want to use a compositor on Xfce, prefer using a better one like picom:
+
+.. code:: sh
+
+    sudo apt install picom
+
+You can configure picom at ``~/.config/picom/picom.conf``:
+
+.. code:: text
+
+    # menu        = { shadow = false; };
+    dropdown_menu = { shadow = false; };
+    popup_menu    = { shadow = false; };
+    utility       = { shadow = false; };
+    unredir-if-possible = true;
+
+The important one is **unredir-if-possible** which allows Godot to draw directly to screen in
+fullscreen mode, which minimizes latency.
+
+Third-party software
+~~~~~~~~~~~~~~~~~~~~
+
+Software installed from third-parties (or even from OEM manufacturers) can cause stutter,
+jitter, or considerable input lag. This is a very broad, general, and hard to diagnose problem
+because the situation changes all the time with Software updates.
+
+However there are a few things we've noticed (this list is not exhaustive):
+
+- `OBS (Open Broadcaster Software) <https://obsproject.com/>`__ installs an implicit Vulkan Layer. Older versions of OBS caused problems with Godot. They should've been fixed, but implicit layers can always reintroduce problems. If you've got OBS Studio and suffer from stutter, jitter, or latency issues, try upgrading to latest version or uninstalling it.
+- `RTSS (aka Rivatuner Statistics Server) <https://www.guru3d.com/download/rtss-rivatuner-statistics-server-download/>`__ installs an implicit Vulkan Layer and tries to inject inself into D3D12. Like OBS, this can cause problems. Try uninstalling it.
+- `MSI Afterburner <https://www.msi.com/Landing/afterburner/graphics-cards>`__ uses RTSS under the hood and is subject to the same problems. Additionally, monitoring certain sensors (like GPU voltage and power draw) is known to cause stutter on certain hardware configurations. Try updating to latest version or uninstalling it. If the problem is resolved, you may try to narrow down which sensor is causing problems.
+- `Steam Overlays <https://help.steampowered.com/en/faqs/view/3978-072C-18DF-FBF9>`__ use an implicit Vulkan Layer that can mess up with presentation or force serialization of GPU commands that could be executed in parallel for greater performance. Try disabling them.
+- `Game Bar <https://www.microsoft.com/windows/tips/game-bar>`__ as previously covered, Game Bar may prevent Godot from entering "Hardware Independent Flip". Disable it to see if that fixes problems.
+- `Discord Game Overlay <https://support.discord.com/hc/en-us/articles/217659737-Game-Overlay-101#h_01JPT35B3CA450SKEF4N9DX70R>`__. Same deal as with the other overlays.
+- WeChat / WeGame is known to cause problems with Godot (`#83307 <https://github.com/godotengine/godot/issues/83307>`__, `#81652 <https://github.com/godotengine/godot/issues/81652>`__). Either uninstall it, remove the implicit Vulkan Layer, or use the `VK_LOADER_LAYERS_DISABLE environment variable <https://github.com/godotengine/godot/issues/81652#issuecomment-2510962586>`__ to disable it.
+- RGB Led control software. A lot of software to control RGB lights (whether it's the keyboard, mouse, RAM sticks, fans, GPU, etc) are poorly written and known to cause stutter and jitter problems. Uninstall them. Prefer purchasing devices that are compatible with `Windows 11' Dynamic Lighting <https://support.microsoft.com/en-us/windows/control-dynamic-lighting-devices-in-windows-8e8f22e3-e820-476c-8f9d-9ffc7b6ffcd2>`__ control.
+
+It is important that you first disable everything on this list and anything that you can think of that
+could affect your system's smooth performance, since two or more of these apps could be simultaneously
+causing problems. Therefore, disabling just one at a time will not solve anything.
+
+If disabling everything fixes the problem, you can start enabling these apps and services one by one
+until you find the culprit(s).
+
 Input lag
 ---------
 
@@ -240,6 +495,127 @@ If your mouse offers multiple :abbr:`DPI (Dots Per Inch)` settings, consider als
 
 On Linux, disabling compositing in window managers that allow it (such as KWin
 or Xfwm) can reduce input lag significantly.
+
+Latency reduction
+~~~~~~~~~~~~~~~~~
+
+Starting with Godot 4.5, new pacing methods were introduced to reduce latency (and alleviate jitter):
+
+1. ``rendering/rendering_device/vsync/latency_mode``. It supports 4 options:
+
+  * ``low_extreme`` (only available through the GDScript API and command line interface. Cannot be set by default).
+  * ``low`` (default).
+  * ``medium``.
+  * ``high_throughput``.
+
+2. ``PacingMethod``, a fallback solution when Waitable Swapchains is not available:
+
+  * ``SEQUENTIAL``: The CPU always stalls for the GPU to minimize latency. **This can heavily penalize framerate and does not always result in lower latency**. This method can only reduce latency if the system was already fast enough to hit V-Sync's framerate.
+  * ``PARALLEL``: The CPU and GPU try to run in parallel. This is the usual method of 2D and 3D rendering.
+  * ``AUTO`` automatically selects between ``SEQUENTIAL`` or ``PARALLEL`` based on current CPU and GPU performance. ``AUTO`` will only select ``SEQUENTIAL`` if the system is fast enough.
+
+Waitable Swapchains are by far the superior method, but if that's not available, ``AUTO``/``SEQUENTIAL`` will be used instead.
+
+.. warning::
+
+    In all cases (*including* Waitable Swapchain method), **lowering latency implies sacrificing framerate**.
+    The question is, how much FPS (frames per second) are you willing to sacrifice for latency. The relationship is not linear.
+    This means the lower the latency you want to achieve, the greater the FPS sacrifice, which can become very significant.
+    This is not a bug, it is just the nature of how it works.
+
+.. warning::
+
+    Lowering latency makes Godot more susceptible to **microstutter**.
+    Thus if you're experiencing microstutter, use these options to *increase* latency instead.
+
+.. warning::
+
+    ``low_extreme`` might get you better latency (or even be a placebo) but always at a very large FPS cost.
+    Furthermore it may reintroduce microstutter. Caution is advised when seeking to lower latency too much.
+
+    Just because ``low_extreme`` works great in your machine doesn't mean it will work fine
+    in other machines. Don't deploy to end users with this setting as a default.
+
+The following table summarizes what Godot does based on each setting and available feature:
+
+.. table::
+   :widths: auto
+
+   +-----------------+-----------------------------------------------------------------+---------------------------------+
+   | Setting         | Target: Frames of latency (if Waitable Swapchains are available)| Waitable Swapchains unavailable |
+   +=================+=================================================================+=================================+
+   | low_extreme     | 0                                                               | ``SEQUENTIAL``                  |
+   +-----------------+-----------------------------------------------------------------+---------------------------------+
+   | low             | 1                                                               | ``AUTO``                        |
+   +-----------------+-----------------------------------------------------------------+---------------------------------+
+   | medium          | rendering/rendering_device/vsync/frame_queue_size               | ``PARALLEL`` (Disabled)         |
+   +-----------------+-----------------------------------------------------------------+---------------------------------+
+   | high_throughput | Disabled                                                        | ``PARALLEL`` (Disabled)         |
+   +-----------------+-----------------------------------------------------------------+---------------------------------+
+
+
+This table is read like this:
+ 
+ - If Waitable Swapchains are available, at "low", Godot will target 1 frame of latency. Otherwise, at "low" it will use ``AUTO`` as fallback.
+ - If Waitable Swapchains are available, at "medium" Godot will use the value in ``frame_queue_size`` as target for frames of latency. Otherwise, it uses ``PARALLEL`` mode (which is the same as having no pacing method).
+
+.. tip::
+
+    Godot's behavior on version 4.4 and earlier corresponds to ``high_throughput``.
+
+**Troubleshooting:**
+
+If you suspect Godot's pacing methods are malfunctioning, there are several steps you can take.
+
+The first thing we need to do is to run with ``--verbose`` to know which pacing methods are available.
+You should see something like this:
+
+.. code:: text
+
+    Supported Pacing Methods (mask 03):
+        SEQUENTIAL_SYNC
+        WAITABLE_SWAPCHAIN
+    Current Pacing Method (may change later): WAITABLE_SWAPCHAIN
+
+In this case, Waitable Swapchain is being used. This is great! The second thing we should try is running with a different latency mode:
+Let's say: ``--latency-mode medium``. There's 4 options to try (note: ``high_throughput`` just disables any pacing method).
+If the problem is gone, then we're done.
+
+But let's say we want to try another method. For some reason, we suspect waitable swapchains are malfunctioning.
+We can try masking this feature out:
+
+- ``--pacing-mode-mask 0x01`` will force to only use ``SEQUENTIAL_SYNC`` (if available).
+- ``--pacing-mode-mask 0x02`` will force to only use ``WAITABLE_SWAPCHAIN`` (if available).
+
+The following table shows the masks for each settings (these masks can be OR'ed together):
+
+.. table::
+   :widths: auto
+
+   +--------------------+------+
+   | Setting            | Mask |
+   +====================+======+
+   | SEQUENTIAL_SYNC    | 0x01 |
+   +--------------------+------+
+   | WAITABLE_SWAPCHAIN | 0x02 |
+   +--------------------+------+
+   | ANDROID_SWAPPY     | 0x04 |
+   +--------------------+------+
+
+Thus, by launching with ``--pacing-mode-mask 0x01`` we can experience how it runs by using ``SEQUENTIAL_SYNC``.
+Now that we are in sequential sync pacing mode; again we can try ``--latency-mode`` makes any difference.
+You can try ``low_extreme`` (``SEQUENTIAL``), ``low`` (``AUTO``) and ``medium`` (``PARALLEL``) to see if they make a difference.
+
+**When to report issues:**
+
+ - If ``WAITABLE_SWAPCHAIN`` at ``low`` or ``medium`` settings are causing problems. This could indicate an issue with the rendering API, the OS, or hardware.
+ - If ``SEQUENTIAL_SYNC`` at ``low`` is causing problems but works fine at ``low_extreme`` or ``medium``. This would indicate a problem in Godot's ``AUTO`` algorithm.
+ - If ``ANDROID_SWAPPY`` is causing problems.
+
+**What NOT to report:**
+ - ``low`` or ``low_extreme`` reduces the FPS.
+ - ``AUTO`` does not improve latency.
+ - ``SEQUENTIAL_SYNC`` does not improve latency.
 
 Reporting jitter, stutter or input lag problems
 -----------------------------------------------
