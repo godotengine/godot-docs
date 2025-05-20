@@ -136,7 +136,7 @@ If a runnable web export template is available, a button appears between the
 *Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
 game in the default browser for testing.
 
-If your project uses GDExtension **Extension Support** needs to be enabled.
+If your project uses GDExtension, **Extension Support** needs to be enabled.
 
 If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
 **VRAM Texture Compression** is enabled for the targeted platforms (enabling
@@ -149,6 +149,13 @@ the default HTML page. See :ref:`doc_customizing_html5_shell`.
 **Head Include** is appended into the ``<head>`` element of the generated
 HTML page. This allows to, for example, load webfonts and third-party
 JavaScript APIs, include CSS, or run JavaScript code.
+
+The window size will automatically match the browser window size by default.
+If you want to use a fixed size instead regardless of the browser window size,
+change **Canvas Resize Policy** to **None**. This allows controlling the window
+size with custom JavaScript code in the HTML shell. You can also set it to
+**Project** to make it behave closer to a native export, according to the
+:ref:`project settings <doc_multiple_resolutions>`.
 
 .. important:: Each project must generate their own HTML file. On export,
                several text placeholders are replaced in the generated HTML
