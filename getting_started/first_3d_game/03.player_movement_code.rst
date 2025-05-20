@@ -188,7 +188,9 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
         target_velocity.z = direction.z * speed
 
         # Vertical Velocity
-        if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
+        if is_on_floor(): # Stop falling
+            target_velocity.y = 0
+        else: # If in the air, fall towards the floor. Literally gravity
             target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 
         # Moving the Character
@@ -210,7 +212,11 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
         _targetVelocity.Z = direction.Z * Speed;
 
         // Vertical velocity
-        if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
+        if (IsOnFloor()) // Stop falling
+        {
+            _targetVelocity.Y = 0.0f;
+        }
+        else // If in the air, fall towards the floor. Literally gravity
         {
             _targetVelocity.Y -= FallAcceleration * (float)delta;
         }
@@ -221,11 +227,11 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
     }
 
 The ``CharacterBody3D.is_on_floor()`` function returns ``true`` if the body collided with the floor in this frame. That's why
-we apply gravity to the ``Player`` only while it is in the air.
+we apply gravity to the ``Player`` only while it is in the air and reset the vertical velocity otherwise.
 
-For the vertical velocity, we subtract the fall acceleration multiplied by the
-delta time every frame.
+We subtract the fall acceleration multiplied by the delta time every frame.
 This line of code will cause our character to fall in every frame, as long as it is not on or colliding with the floor.
+If we are colliding with the floor, we instead reset the vertical component of the velocity.
 
 The physics engine can only detect interactions with walls, the floor, or other
 bodies during a given frame if movement and collisions happen. We will use this
@@ -282,7 +288,9 @@ Here is the complete ``player.gd`` code for reference.
         target_velocity.z = direction.z * speed
 
         # Vertical Velocity
-        if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
+        if is_on_floor(): # Stop falling
+            target_velocity.y = 0
+        else: # If in the air, fall towards the floor. Literally gravity
             target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 
         # Moving the Character
@@ -337,7 +345,11 @@ Here is the complete ``player.gd`` code for reference.
             _targetVelocity.Z = direction.Z * Speed;
 
             // Vertical velocity
-            if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
+            if (IsOnFloor()) // Stop falling
+            {
+                _targetVelocity.Y = 0.0f;
+            }
+            else // If in the air, fall towards the floor. Literally gravity
             {
                 _targetVelocity.Y -= FallAcceleration * (float)delta;
             }
