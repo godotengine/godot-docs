@@ -23,6 +23,10 @@ Install OpenJDK 17
 
 Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant=openjdk17>`__.
 
+.. note::
+
+    Higher versions of the JDK are also supported, but we recommend using JDK 17 for optimal compatibility and stability.
+
 Download the Android SDK
 ------------------------
 
