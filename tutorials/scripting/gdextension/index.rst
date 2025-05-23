@@ -9,6 +9,9 @@ The GDExtension system
 native `shared libraries <https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries>`__
 at runtime. You can use it to run native code without compiling it with the engine.
 
+In order to use a pre-compiled GDExtension in your Godot project, place the `.gdextension` file somewhere inside your
+project's directory. Godot will then load the extension and you should be able to use it in your project.
+
 .. note:: GDExtension is *not* a scripting language and has no relation to
           :ref:`GDScript <doc_gdscript>`.
 
