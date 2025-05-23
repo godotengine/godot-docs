@@ -351,7 +351,7 @@ The package names may differ based on your distribution, here are some known one
 +----------------+--------------------------------------------------------------+
 | **Arch Linux** | ::                                                           |
 |                |                                                              |
-|                |     pacman -Sy mingw-w64                                     |
+|                |     pacman -S mingw-w64                                      |
 +----------------+--------------------------------------------------------------+
 | **Debian** /   | ::                                                           |
 | **Ubuntu**     |                                                              |
