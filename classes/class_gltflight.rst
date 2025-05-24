@@ -47,7 +47,7 @@ Properties
    +-----------------------------+--------------------------------------------------------------------+-----------------------+
    | :ref:`String<class_String>` | :ref:`light_type<class_GLTFLight_property_light_type>`             | ``""``                |
    +-----------------------------+--------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`   | :ref:`outer_cone_angle<class_GLTFLight_property_outer_cone_angle>` | ``0.785398``          |
+   | :ref:`float<class_float>`   | :ref:`outer_cone_angle<class_GLTFLight_property_outer_cone_angle>` | ``0.7853982``         |
    +-----------------------------+--------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`   | :ref:`range<class_GLTFLight_property_range>`                       | ``inf``               |
    +-----------------------------+--------------------------------------------------------------------+-----------------------+
@@ -159,7 +159,7 @@ The type of the light. The values accepted by Godot are "point", "spot", and "di
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **outer_cone_angle** = ``0.785398`` :ref:`🔗<class_GLTFLight_property_outer_cone_angle>`
+:ref:`float<class_float>` **outer_cone_angle** = ``0.7853982`` :ref:`🔗<class_GLTFLight_property_outer_cone_angle>`
 
 .. rst-class:: classref-property-setget
 

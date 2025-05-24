@@ -972,7 +972,7 @@ Returns ``true`` if the string is a path, and its starting point is dependent on
 
 :ref:`bool<class_bool>` **is_subsequence_of**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_is_subsequence_of>`
 
-Returns ``true`` if all characters of this string can be found in ``text`` in their original order.
+Returns ``true`` if all characters of this string can be found in ``text`` in their original order. This is not the same as :ref:`contains()<class_StringName_method_contains>`.
 
 ::
 
@@ -993,7 +993,7 @@ Returns ``true`` if all characters of this string can be found in ``text`` in th
 
 :ref:`bool<class_bool>` **is_subsequence_ofn**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_is_subsequence_ofn>`
 
-Returns ``true`` if all characters of this string can be found in ``text`` in their original order, **ignoring case**.
+Returns ``true`` if all characters of this string can be found in ``text`` in their original order, **ignoring case**. This is not the same as :ref:`containsn()<class_StringName_method_containsn>`.
 
 .. rst-class:: classref-item-separator
 

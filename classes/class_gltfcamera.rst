@@ -40,17 +40,17 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------------+------------+
-   | :ref:`float<class_float>` | :ref:`depth_far<class_GLTFCamera_property_depth_far>`     | ``4000.0`` |
-   +---------------------------+-----------------------------------------------------------+------------+
-   | :ref:`float<class_float>` | :ref:`depth_near<class_GLTFCamera_property_depth_near>`   | ``0.05``   |
-   +---------------------------+-----------------------------------------------------------+------------+
-   | :ref:`float<class_float>` | :ref:`fov<class_GLTFCamera_property_fov>`                 | ``1.309``  |
-   +---------------------------+-----------------------------------------------------------+------------+
-   | :ref:`bool<class_bool>`   | :ref:`perspective<class_GLTFCamera_property_perspective>` | ``true``   |
-   +---------------------------+-----------------------------------------------------------+------------+
-   | :ref:`float<class_float>` | :ref:`size_mag<class_GLTFCamera_property_size_mag>`       | ``0.5``    |
-   +---------------------------+-----------------------------------------------------------+------------+
+   +---------------------------+-----------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`depth_far<class_GLTFCamera_property_depth_far>`     | ``4000.0``    |
+   +---------------------------+-----------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`depth_near<class_GLTFCamera_property_depth_near>`   | ``0.05``      |
+   +---------------------------+-----------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`fov<class_GLTFCamera_property_fov>`                 | ``1.3089969`` |
+   +---------------------------+-----------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`   | :ref:`perspective<class_GLTFCamera_property_perspective>` | ``true``      |
+   +---------------------------+-----------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`size_mag<class_GLTFCamera_property_size_mag>`       | ``0.5``       |
+   +---------------------------+-----------------------------------------------------------+---------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -117,7 +117,7 @@ The distance to the near culling boundary for this camera relative to its local 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fov** = ``1.309`` :ref:`🔗<class_GLTFCamera_property_fov>`
+:ref:`float<class_float>` **fov** = ``1.3089969`` :ref:`🔗<class_GLTFCamera_property_fov>`
 
 .. rst-class:: classref-property-setget
 

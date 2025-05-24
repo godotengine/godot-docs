@@ -1165,7 +1165,7 @@ Returns ``-1`` if the ``pid`` is not a PID of a spawned child process, the proce
 
 Returns the number used by the host machine to uniquely identify this application.
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS, and Windows.
+\ **Note:** On Web, this method always returns ``0``.
 
 .. rst-class:: classref-item-separator
 

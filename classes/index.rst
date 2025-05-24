@@ -754,11 +754,13 @@ Other objects
     class_editordebuggersession
     class_editorexportplatform
     class_editorexportplatformandroid
+    class_editorexportplatformappleembedded
     class_editorexportplatformextension
     class_editorexportplatformios
     class_editorexportplatformlinuxbsd
     class_editorexportplatformmacos
     class_editorexportplatformpc
+    class_editorexportplatformvisionos
     class_editorexportplatformweb
     class_editorexportplatformwindows
     class_editorexportplugin
@@ -1022,11 +1024,13 @@ Editor-only
     class_editordebuggersession
     class_editorexportplatform
     class_editorexportplatformandroid
+    class_editorexportplatformappleembedded
     class_editorexportplatformextension
     class_editorexportplatformios
     class_editorexportplatformlinuxbsd
     class_editorexportplatformmacos
     class_editorexportplatformpc
+    class_editorexportplatformvisionos
     class_editorexportplatformweb
     class_editorexportplatformwindows
     class_editorexportplugin

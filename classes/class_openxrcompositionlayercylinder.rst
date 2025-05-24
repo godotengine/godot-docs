@@ -31,15 +31,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>` | :ref:`aspect_ratio<class_OpenXRCompositionLayerCylinder_property_aspect_ratio>`           | ``1.0``    |
-   +---------------------------+-------------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>` | :ref:`central_angle<class_OpenXRCompositionLayerCylinder_property_central_angle>`         | ``1.5708`` |
-   +---------------------------+-------------------------------------------------------------------------------------------+------------+
-   | :ref:`int<class_int>`     | :ref:`fallback_segments<class_OpenXRCompositionLayerCylinder_property_fallback_segments>` | ``10``     |
-   +---------------------------+-------------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>` | :ref:`radius<class_OpenXRCompositionLayerCylinder_property_radius>`                       | ``1.0``    |
-   +---------------------------+-------------------------------------------------------------------------------------------+------------+
+   +---------------------------+-------------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`aspect_ratio<class_OpenXRCompositionLayerCylinder_property_aspect_ratio>`           | ``1.0``       |
+   +---------------------------+-------------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`central_angle<class_OpenXRCompositionLayerCylinder_property_central_angle>`         | ``1.5707964`` |
+   +---------------------------+-------------------------------------------------------------------------------------------+---------------+
+   | :ref:`int<class_int>`     | :ref:`fallback_segments<class_OpenXRCompositionLayerCylinder_property_fallback_segments>` | ``10``        |
+   +---------------------------+-------------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`radius<class_OpenXRCompositionLayerCylinder_property_radius>`                       | ``1.0``       |
+   +---------------------------+-------------------------------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-section-separator
 
@@ -71,7 +71,7 @@ The aspect ratio of the slice. Used to set the height relative to the width.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **central_angle** = ``1.5708`` :ref:`🔗<class_OpenXRCompositionLayerCylinder_property_central_angle>`
+:ref:`float<class_float>` **central_angle** = ``1.5707964`` :ref:`🔗<class_OpenXRCompositionLayerCylinder_property_central_angle>`
 
 .. rst-class:: classref-property-setget
 

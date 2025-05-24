@@ -86,9 +86,9 @@ Properties
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`zoom<class_GraphEdit_property_zoom>`                                                 | ``1.0``                                                                   |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                        | :ref:`zoom_max<class_GraphEdit_property_zoom_max>`                                         | ``2.0736``                                                                |
+   | :ref:`float<class_float>`                                        | :ref:`zoom_max<class_GraphEdit_property_zoom_max>`                                         | ``2.0736003``                                                             |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                        | :ref:`zoom_min<class_GraphEdit_property_zoom_min>`                                         | ``0.232568``                                                              |
+   | :ref:`float<class_float>`                                        | :ref:`zoom_min<class_GraphEdit_property_zoom_min>`                                         | ``0.23256795``                                                            |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`zoom_step<class_GraphEdit_property_zoom_step>`                                       | ``1.2``                                                                   |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -908,7 +908,7 @@ The current zoom value.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **zoom_max** = ``2.0736`` :ref:`🔗<class_GraphEdit_property_zoom_max>`
+:ref:`float<class_float>` **zoom_max** = ``2.0736003`` :ref:`🔗<class_GraphEdit_property_zoom_max>`
 
 .. rst-class:: classref-property-setget
 
@@ -925,7 +925,7 @@ The upper zoom limit.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **zoom_min** = ``0.232568`` :ref:`🔗<class_GraphEdit_property_zoom_min>`
+:ref:`float<class_float>` **zoom_min** = ``0.23256795`` :ref:`🔗<class_GraphEdit_property_zoom_min>`
 
 .. rst-class:: classref-property-setget
 
