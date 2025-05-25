@@ -7391,13 +7391,28 @@ Returns the internal type of the given ``variable``, using the :ref:`Variant.Typ
 
 ::
 
-    var json = JSON.new()
-    json.parse('["a", "b", "c"]')
-    var result = json.get_data()
-    if result is Array:
-        print(result[0]) # Prints "a"
-    else:
-        print("Unexpected result!")
+    var myIntVariable = 0
+    print( typeof(myIntVariable) ) # TYPE_INT = 2
+    var myFooArray = [null, 1.2, "my string variable"]
+    print( typeof(myFooArray) == TYPE_ARRAY ) # TYPE_ARRAY = 28
+    for foo in myFooArray:
+        match typeof(foo):
+            TYPE_NIL:# TYPE_NIL = 0
+                print("myFooArray[0] is null")
+            TYPE_FLOAT:# TYPE_FLOAT = 3
+                print("myFooArray[1] is a float")
+            TYPE_STRING:# TYPE_STRING = 4
+                print("myFooArray[2] is a string")
+
+Prints:
+
+.. code:: text
+
+    2
+    true
+    myFooArray[0] is null
+    myFooArray[1] is a float
+    myFooArray[2] is a string
 
 See also :ref:`type_string()<class_@GlobalScope_method_type_string>`.
 
