@@ -265,7 +265,7 @@ Gets the unique name of the importer.
 
 :ref:`bool<class_bool>` **_get_option_visibility**\ (\ path\: :ref:`String<class_String>`, option_name\: :ref:`StringName<class_StringName>`, options\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_option_visibility>`
 
-This method can be overridden to hide specific import options if conditions are met. This is mainly useful for hiding options that depend on others if one of them is disabled.
+Gets whether the import option specified by ``option_name`` should be visible in the Import dock. The default implementation always returns ``true``, making all options visible. This is mainly useful for hiding options that depend on others if one of them is disabled.
 
 
 .. tabs::
@@ -293,8 +293,6 @@ This method can be overridden to hide specific import options if conditions are 
     }
 
 
-
-Returns ``true`` to make all options always visible.
 
 .. rst-class:: classref-item-separator
 

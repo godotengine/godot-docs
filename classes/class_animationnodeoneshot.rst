@@ -291,7 +291,7 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 
 The fade-in duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a cross-fade that starts at 0 second and ends at 1 second during the animation.
 
-\ **Note:** **AnimationNodeOneShot** transitions the current state after the end of the fading. When :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` is considered as the most upstream, so the :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>` is scaled depending on the downstream delta. For example, if this value is set to ``1.0`` and a :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>` with a value of ``2.0`` is chained downstream, the actual processing time will be 0.5 second.
+\ **Note:** **AnimationNodeOneShot** transitions the current state after the fading has finished.
 
 .. rst-class:: classref-item-separator
 
@@ -327,7 +327,7 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 
 The fade-out duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a cross-fade that starts at 4 second and ends at 5 second during the animation.
 
-\ **Note:** **AnimationNodeOneShot** transitions the current state after the end of the fading. When :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` is considered as the most upstream, so the :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>` is scaled depending on the downstream delta. For example, if this value is set to ``1.0`` and an :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>` with a value of ``2.0`` is chained downstream, the actual processing time will be 0.5 second.
+\ **Note:** **AnimationNodeOneShot** transitions the current state after the fading has finished.
 
 .. rst-class:: classref-item-separator
 

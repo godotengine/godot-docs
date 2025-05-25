@@ -261,8 +261,6 @@ The assigned video stream. See description for supported formats.
 
 The current position of the stream, in seconds.
 
-\ **Note:** Changing this value won't have any effect as seeking is not implemented yet, except in video formats implemented by a GDExtension add-on.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -313,8 +311,6 @@ Method Descriptions
 :ref:`float<class_float>` **get_stream_length**\ (\ ) |const| :ref:`🔗<class_VideoStreamPlayer_method_get_stream_length>`
 
 The length of the current stream, in seconds.
-
-\ **Note:** For :ref:`VideoStreamTheora<class_VideoStreamTheora>` streams (the built-in format supported by Godot), this value will always be zero, as getting the stream length is not implemented yet. The feature may be supported by video formats implemented by a GDExtension add-on.
 
 .. rst-class:: classref-item-separator
 

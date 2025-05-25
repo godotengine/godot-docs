@@ -56,13 +56,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`_process_modification<class_SkeletonModifier3D_private_method__process_modification>`\ (\ ) |virtual|                                                          |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`_process_modification_with_delta<class_SkeletonModifier3D_private_method__process_modification_with_delta>`\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Skeleton3D<class_Skeleton3D>` | :ref:`get_skeleton<class_SkeletonModifier3D_method_get_skeleton>`\ (\ ) |const|                                                                                      |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`_process_modification<class_SkeletonModifier3D_private_method__process_modification>`\ (\ ) |virtual|                                                                                                 |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`_process_modification_with_delta<class_SkeletonModifier3D_private_method__process_modification_with_delta>`\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|                                        |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`_skeleton_changed<class_SkeletonModifier3D_private_method__skeleton_changed>`\ (\ old_skeleton\: :ref:`Skeleton3D<class_Skeleton3D>`, new_skeleton\: :ref:`Skeleton3D<class_Skeleton3D>`\ ) |virtual| |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`_validate_bone_names<class_SkeletonModifier3D_private_method__validate_bone_names>`\ (\ ) |virtual|                                                                                                   |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Skeleton3D<class_Skeleton3D>` | :ref:`get_skeleton<class_SkeletonModifier3D_method_get_skeleton>`\ (\ ) |const|                                                                                                                             |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -223,6 +227,30 @@ Override this virtual method to implement a custom skeleton modifier. You should
 \ :ref:`_process_modification_with_delta()<class_SkeletonModifier3D_private_method__process_modification_with_delta>` must not apply :ref:`influence<class_SkeletonModifier3D_property_influence>` to bone poses because the :ref:`Skeleton3D<class_Skeleton3D>` automatically applies influence to all bone poses set by the modifier.
 
 \ ``delta`` is passed from parent :ref:`Skeleton3D<class_Skeleton3D>`. See also :ref:`Skeleton3D.advance()<class_Skeleton3D_method_advance>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SkeletonModifier3D_private_method__skeleton_changed:
+
+.. rst-class:: classref-method
+
+|void| **_skeleton_changed**\ (\ old_skeleton\: :ref:`Skeleton3D<class_Skeleton3D>`, new_skeleton\: :ref:`Skeleton3D<class_Skeleton3D>`\ ) |virtual| :ref:`🔗<class_SkeletonModifier3D_private_method__skeleton_changed>`
+
+Called when the skeleton is changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SkeletonModifier3D_private_method__validate_bone_names:
+
+.. rst-class:: classref-method
+
+|void| **_validate_bone_names**\ (\ ) |virtual| :ref:`🔗<class_SkeletonModifier3D_private_method__validate_bone_names>`
+
+Called when bone name and index need to be validated such as the timing of the entering tree or changing skeleton.
 
 .. rst-class:: classref-item-separator
 

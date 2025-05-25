@@ -89,6 +89,20 @@ Methods
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                    | :ref:`_update_android_prebuilt_manifest<class_EditorExportPlugin_private_method__update_android_prebuilt_manifest>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, manifest_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |virtual| |const|     |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_apple_embedded_platform_bundle_file<class_EditorExportPlugin_method_add_apple_embedded_platform_bundle_file>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                  |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_apple_embedded_platform_cpp_code<class_EditorExportPlugin_method_add_apple_embedded_platform_cpp_code>`\ (\ code\: :ref:`String<class_String>`\ )                                                                                                                        |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_apple_embedded_platform_embedded_framework<class_EditorExportPlugin_method_add_apple_embedded_platform_embedded_framework>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                    |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_apple_embedded_platform_framework<class_EditorExportPlugin_method_add_apple_embedded_platform_framework>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                      |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_apple_embedded_platform_linker_flags<class_EditorExportPlugin_method_add_apple_embedded_platform_linker_flags>`\ (\ flags\: :ref:`String<class_String>`\ )                                                                                                               |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_apple_embedded_platform_plist_content<class_EditorExportPlugin_method_add_apple_embedded_platform_plist_content>`\ (\ plist_content\: :ref:`String<class_String>`\ )                                                                                                     |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_apple_embedded_platform_project_static_lib<class_EditorExportPlugin_method_add_apple_embedded_platform_project_static_lib>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                    |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`add_file<class_EditorExportPlugin_method_add_file>`\ (\ path\: :ref:`String<class_String>`, file\: :ref:`PackedByteArray<class_PackedByteArray>`, remap\: :ref:`bool<class_bool>`\ )                                                                                         |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`add_ios_bundle_file<class_EditorExportPlugin_method_add_ios_bundle_file>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                                                          |
@@ -513,6 +527,94 @@ If no modifications are needed, then an empty :ref:`PackedByteArray<class_Packed
 
 ----
 
+.. _class_EditorExportPlugin_method_add_apple_embedded_platform_bundle_file:
+
+.. rst-class:: classref-method
+
+|void| **add_apple_embedded_platform_bundle_file**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_apple_embedded_platform_bundle_file>`
+
+Adds an Apple embedded platform bundle file from the given ``path`` to the exported project.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method_add_apple_embedded_platform_cpp_code:
+
+.. rst-class:: classref-method
+
+|void| **add_apple_embedded_platform_cpp_code**\ (\ code\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_apple_embedded_platform_cpp_code>`
+
+Adds C++ code to the Apple embedded platform export. The final code is created from the code appended by each active export plugin.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method_add_apple_embedded_platform_embedded_framework:
+
+.. rst-class:: classref-method
+
+|void| **add_apple_embedded_platform_embedded_framework**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_apple_embedded_platform_embedded_framework>`
+
+Adds a dynamic library (\*.dylib, \*.framework) to the Linking Phase in the Apple embedded platform's Xcode project and embeds it into the resulting binary.
+
+\ **Note:** For static libraries (\*.a), this works in the same way as :ref:`add_apple_embedded_platform_framework()<class_EditorExportPlugin_method_add_apple_embedded_platform_framework>`.
+
+\ **Note:** This method should not be used for System libraries as they are already present on the device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method_add_apple_embedded_platform_framework:
+
+.. rst-class:: classref-method
+
+|void| **add_apple_embedded_platform_framework**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_apple_embedded_platform_framework>`
+
+Adds a static library (\*.a) or a dynamic library (\*.dylib, \*.framework) to the Linking Phase to the Apple embedded platform's Xcode project.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method_add_apple_embedded_platform_linker_flags:
+
+.. rst-class:: classref-method
+
+|void| **add_apple_embedded_platform_linker_flags**\ (\ flags\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_apple_embedded_platform_linker_flags>`
+
+Adds linker flags for the Apple embedded platform export.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method_add_apple_embedded_platform_plist_content:
+
+.. rst-class:: classref-method
+
+|void| **add_apple_embedded_platform_plist_content**\ (\ plist_content\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_apple_embedded_platform_plist_content>`
+
+Adds additional fields to the Apple embedded platform's project Info.plist file.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method_add_apple_embedded_platform_project_static_lib:
+
+.. rst-class:: classref-method
+
+|void| **add_apple_embedded_platform_project_static_lib**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_apple_embedded_platform_project_static_lib>`
+
+Adds a static library from the given ``path`` to the Apple embedded platform project.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlugin_method_add_file:
 
 .. rst-class:: classref-method
@@ -535,6 +637,8 @@ When called inside :ref:`_export_file()<class_EditorExportPlugin_private_method_
 
 |void| **add_ios_bundle_file**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_bundle_file>`
 
+**Deprecated:** Use :ref:`add_apple_embedded_platform_bundle_file()<class_EditorExportPlugin_method_add_apple_embedded_platform_bundle_file>` instead.
+
 Adds an iOS bundle file from the given ``path`` to the exported project.
 
 .. rst-class:: classref-item-separator
@@ -547,7 +651,9 @@ Adds an iOS bundle file from the given ``path`` to the exported project.
 
 |void| **add_ios_cpp_code**\ (\ code\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_cpp_code>`
 
-Adds a C++ code to the iOS export. The final code is created from the code appended by each active export plugin.
+**Deprecated:** Use :ref:`add_apple_embedded_platform_cpp_code()<class_EditorExportPlugin_method_add_apple_embedded_platform_cpp_code>` instead.
+
+Adds C++ code to the iOS export. The final code is created from the code appended by each active export plugin.
 
 .. rst-class:: classref-item-separator
 
@@ -559,9 +665,11 @@ Adds a C++ code to the iOS export. The final code is created from the code appen
 
 |void| **add_ios_embedded_framework**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_embedded_framework>`
 
+**Deprecated:** Use :ref:`add_apple_embedded_platform_embedded_framework()<class_EditorExportPlugin_method_add_apple_embedded_platform_embedded_framework>` instead.
+
 Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project and embeds it into resulting binary.
 
-\ **Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework()<class_EditorExportPlugin_method_add_ios_framework>`.
+\ **Note:** For static libraries (\*.a), this works the in same way as :ref:`add_apple_embedded_platform_framework()<class_EditorExportPlugin_method_add_apple_embedded_platform_framework>`.
 
 \ **Note:** This method should not be used for System libraries as they are already present on the device.
 
@@ -575,7 +683,9 @@ Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode 
 
 |void| **add_ios_framework**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_framework>`
 
-Adds a static library (\*.a) or dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project.
+**Deprecated:** Use :ref:`add_apple_embedded_platform_framework()<class_EditorExportPlugin_method_add_apple_embedded_platform_framework>` instead.
+
+Adds a static library (\*.a) or a dynamic library (\*.dylib, \*.framework) to the Linking Phase to the iOS Xcode project.
 
 .. rst-class:: classref-item-separator
 
@@ -586,6 +696,8 @@ Adds a static library (\*.a) or dynamic library (\*.dylib, \*.framework) to Link
 .. rst-class:: classref-method
 
 |void| **add_ios_linker_flags**\ (\ flags\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_linker_flags>`
+
+**Deprecated:** Use :ref:`add_apple_embedded_platform_linker_flags()<class_EditorExportPlugin_method_add_apple_embedded_platform_linker_flags>` instead.
 
 Adds linker flags for the iOS export.
 
@@ -599,7 +711,9 @@ Adds linker flags for the iOS export.
 
 |void| **add_ios_plist_content**\ (\ plist_content\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_plist_content>`
 
-Adds content for iOS Property List files.
+**Deprecated:** Use :ref:`add_apple_embedded_platform_plist_content()<class_EditorExportPlugin_method_add_apple_embedded_platform_plist_content>` instead.
+
+Adds additional fields to the iOS project Info.plist file.
 
 .. rst-class:: classref-item-separator
 
@@ -611,7 +725,9 @@ Adds content for iOS Property List files.
 
 |void| **add_ios_project_static_lib**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_ios_project_static_lib>`
 
-Adds a static lib from the given ``path`` to the iOS project.
+**Deprecated:** Use :ref:`add_apple_embedded_platform_project_static_lib()<class_EditorExportPlugin_method_add_apple_embedded_platform_project_static_lib>` instead.
+
+Adds a static library from the given ``path`` to the iOS project.
 
 .. rst-class:: classref-item-separator
 

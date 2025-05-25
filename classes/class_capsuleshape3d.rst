@@ -38,11 +38,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`height<class_CapsuleShape3D_property_height>` | ``2.0`` |
-   +---------------------------+-----------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape3D_property_radius>` | ``0.5`` |
-   +---------------------------+-----------------------------------------------------+---------+
+   +---------------------------+-------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`height<class_CapsuleShape3D_property_height>`         | ``2.0`` |
+   +---------------------------+-------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`mid_height<class_CapsuleShape3D_property_mid_height>` |         |
+   +---------------------------+-------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape3D_property_radius>`         | ``0.5`` |
+   +---------------------------+-------------------------------------------------------------+---------+
 
 .. rst-class:: classref-section-separator
 
@@ -64,7 +66,24 @@ Property Descriptions
 - |void| **set_height**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_height**\ (\ )
 
-The capsule's height.
+The capsule's full height, including the hemispheres.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CapsuleShape3D_property_mid_height:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **mid_height** :ref:`🔗<class_CapsuleShape3D_property_mid_height>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_mid_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mid_height**\ (\ )
+
+The capsule's height, excluding the hemispheres. This is the height of the central cylindrical part in the middle of the capsule, and is the distance between the centers of the two hemispheres. This is a wrapper for :ref:`height<class_CapsuleShape3D_property_height>`.
 
 .. rst-class:: classref-item-separator
 
