@@ -2573,6 +2573,7 @@ Our ``BattleLog`` node receives each bound element as an extra argument::
         var damage = old_value - new_value
         label.text += character_name + " took " + str(damage) + " damage."
 
+.. _doc_gdscript_awaiting_signals_or_coroutines:
 
 Awaiting signals or coroutines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2590,7 +2591,33 @@ For example, to stop execution until the user presses a button, you can do somet
         print("User confirmed")
         return true
 
-In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await it::
+If the signal emits a **single** argument, ``await`` returns a value with the same type as the argument::
+
+    signal user_accepted(accepted_analytics)
+
+    func wait_confirmation():
+        print("Prompting user")
+        var analytics = await user_accepted
+        print("User confirmed")
+        if analytics:
+            print("User accepted analytics")
+        return true
+
+However, if the signal emits **multiple** arguments, ``await`` returns an :ref:`Array<class_Array>` containing the signal arguments in order::
+
+    signal user_accepted(accepted_analytics, accepted_crash_report_upload)
+
+    func wait_confirmation():
+        print("Prompting user")
+        var result = await user_accepted
+        print("User confirmed")
+        if result[0]:
+            print("User accepted analytics")
+        if result[1]:
+            print("User accepted crash report upload")
+        return true
+
+When you use ``await`` inside ``wait_confirmation``, the function becomes a coroutine, which means that the caller also needs to await it::
 
     func request_confirmation():
         print("Will ask the user")
