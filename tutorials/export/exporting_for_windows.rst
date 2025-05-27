@@ -18,6 +18,14 @@ system. When exporting for Windows, the exporter takes all the project files and
 creates a ``data.pck`` file. This file is bundled with a specially optimized
 binary that is smaller, faster and does not contain the editor and debugger.
 
+Changing the executable icon
+----------------------------
+
+To change the exported executable icon from the default Godot icon,
+you need to set up a tool called *rcedit*. Godot will then call this tool
+on export automatically. This process is documented in
+:ref:`doc_changing_application_icon_for_windows`.
+
 Code signing
 ------------
 
