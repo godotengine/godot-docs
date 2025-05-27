@@ -372,7 +372,9 @@ There are also two constructs that look like literals, but actually are not:
 +---------------------------------+-------------------------------------------+
 
 Integers and floats can have their numbers separated with ``_`` to make them more readable.
-The following ways to write numbers are all valid::
+The following ways to write numbers are all valid:
+
+::
 
     12_345_678  # Equal to 12345678.
     3.141_592_7  # Equal to 3.1415927.
@@ -455,7 +457,9 @@ Every annotation starts with the ``@`` character and is specified by a name. A
 detailed description and example for each annotation can be found inside the
 :ref:`GDScript class reference <class_@GDScript>`.
 
-For instance, you can use it to export a value to the editor::
+For instance, you can use it to export a value to the editor:
+
+::
 
     @export_range(1, 100, 1, "or_greater")
     var ranged_var: int = 50
@@ -463,7 +467,9 @@ For instance, you can use it to export a value to the editor::
 For more information about exporting properties, read the :ref:`GDScript exports <doc_gdscript_exports>`
 article.
 
-Any constant expression compatible with the required argument type can be passed as an annotation argument value::
+Any constant expression compatible with the required argument type can be passed as an annotation argument value:
+
+::
 
     const MAX_SPEED = 120.0
 
@@ -474,7 +480,9 @@ Annotations can be specified one per line or all in the same line. They affect
 the next statement that isn't an annotation. Annotations can have arguments sent
 between parentheses and separated by commas.
 
-Both of these are the same::
+Both of these are the same:
+
+::
 
     @annotation_a
     @annotation_b
@@ -503,7 +511,9 @@ be obtained when a call to ``Node._ready()`` is made.
 This can get a little cumbersome, especially when nodes and external
 references pile up. For this, GDScript has the ``@onready`` annotation, that
 defers initialization of a member variable until ``_ready()`` is called. It
-can replace the above code with a single line::
+can replace the above code with a single line:
+
+::
 
     @onready var my_label = get_node("MyLabel")
 
@@ -512,7 +522,9 @@ can replace the above code with a single line::
     Applying ``@onready`` and any ``@export`` annotation to the same variable
     doesn't work as you might expect. The ``@onready`` annotation will cause
     the default value to be set after the ``@export`` takes effect and will
-    override it::
+    override it:
+
+    ::
 
         @export var a = "init_value_a"
         @onready @export var b = "init_value_b"
@@ -958,7 +970,9 @@ identifier), and must be string literals.
     }
 
 To add a key to an existing dictionary, access it like an existing key and
-assign to it::
+assign to it:
+
+::
 
     var d = {} # Create an empty Dictionary.
     d.waiting = 14 # Add String "waiting" as a key and assign the value 14 to it.
@@ -1053,7 +1067,9 @@ after the variable name, followed by the type.
     var my_node: Node = Sprite2D.new()
 
 If the variable is initialized within the declaration, the type can be inferred, so
-it's possible to omit the type name::
+it's possible to omit the type name:
+
+::
 
     var my_vector2 := Vector2() # 'my_vector2' is of type 'Vector2'.
     var my_node := Sprite2D.new() # 'my_node' is of type 'Sprite2D'.
@@ -1103,7 +1119,9 @@ Member variables are initialized in the following order:
 
     You can specify a complex expression as a variable initializer, including function calls.
     Make sure the variables are initialized in the correct order, otherwise your values
-    may be overwritten. For example::
+    may be overwritten. For example:
+
+    ::
 
         var a: int = proxy("a", 1)
         var b: int = proxy("b", 2)
@@ -1117,7 +1135,9 @@ Member variables are initialized in the following order:
         func _init() -> void:
             print(_data)
 
-    Will print::
+    Will print:
+
+    ::
 
         { "a": 1 }
         { "a": 1, "b": 2 }
@@ -1129,7 +1149,9 @@ Member variables are initialized in the following order:
 Static variables
 ~~~~~~~~~~~~~~~~
 
-A class member variable can be declared static::
+A class member variable can be declared static:
+
+::
 
     static var a
 
@@ -1183,7 +1205,9 @@ and every instance have the same ``max_id`` value, because the variable is stati
         print(person1.max_id) # 2
         print(person2.max_id) # 2
 
-Static variables can have type hints, setters and getters::
+Static variables can have type hints, setters and getters:
+
+::
 
     static var balance: int = 0
 
@@ -1193,7 +1217,9 @@ Static variables can have type hints, setters and getters::
         set(value):
             balance = -value
 
-A base class static variable can also be accessed via a child class::
+A base class static variable can also be accessed via a child class:
+
+::
 
     class A:
         static var x = 1
@@ -1262,7 +1288,9 @@ engine will raise an error.
     my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error.
 
 Casting is also useful to have better type-safe variables when interacting with
-the scene tree::
+the scene tree:
+
+::
 
     # Will infer the variable to be of type Sprite2D.
     var my_sprite := $Character as Sprite2D
@@ -1292,7 +1320,9 @@ We recommend using constants whenever a value is not meant to change.
     const H = A + 20 # Constant expression: 25 (`A` is a constant).
 
 Although the type of constants is inferred from the assigned value, it's also
-possible to add explicit type specification::
+possible to add explicit type specification:
+
+::
 
     const A: int = 5
     const B: Vector2 = Vector2()
@@ -1368,7 +1398,9 @@ function's first argument, unlike Python).
 
 A function can ``return`` at any point. The default return value is ``null``.
 
-If a function contains only one line of code, it can be written on one line::
+If a function contains only one line of code, it can be written on one line:
+
+::
 
     func square(a): return a * a
 
@@ -1377,12 +1409,16 @@ If a function contains only one line of code, it can be written on one line::
     func empty_function(): pass
 
 Functions can also have type specification for the arguments and for the return
-value. Types for arguments can be added in a similar way to variables::
+value. Types for arguments can be added in a similar way to variables:
+
+::
 
     func my_function(a: int, b: String):
         pass
 
-If a function argument has a default value, it's possible to infer the type::
+If a function argument has a default value, it's possible to infer the type:
+
+::
 
     func my_function(int_arg := 42, String_arg := "string"):
         pass
@@ -1459,7 +1495,9 @@ Lambda functions can be named for debugging purposes (the name is displayed in t
     var lambda = func my_lambda(x):
         print(x)
 
-You can specify type hints for lambda functions in the same way as for regular ones::
+You can specify type hints for lambda functions in the same way as for regular ones:
+
+::
 
     var lambda := func (x: int) -> void:
         print(x)
@@ -1470,7 +1508,9 @@ is required (you can't omit ``return``)::
     var lambda = func (x): return x ** 2
     print(lambda.call(2)) # Prints `4`.
 
-Lambda functions capture the local environment::
+Lambda functions capture the local environment:
+
+::
 
     var x = 42
     var lambda = func ():
@@ -1480,7 +1520,9 @@ Lambda functions capture the local environment::
 .. warning::
 
     Local variables are captured by value once, when the lambda is created.
-    So they won't be updated in the lambda if reassigned in the outer function::
+    So they won't be updated in the lambda if reassigned in the outer function:
+
+    ::
 
         var x = 42
         var lambda = func (): print(x)
@@ -1489,7 +1531,9 @@ Lambda functions capture the local environment::
         lambda.call() # Prints `42`.
 
     Also, a lambda cannot reassign an outer local variable. After exiting the lambda,
-    the variable will be unchanged, because the lambda capture implicitly shadows it::
+    the variable will be unchanged, because the lambda capture implicitly shadows it:
+
+    ::
 
         var x = 42
         var lambda = func ():
@@ -1500,7 +1544,9 @@ Lambda functions capture the local environment::
         print(x) # Prints `42`.
 
     However, if you use pass-by-reference data types (arrays, dictionaries, and objects),
-    then the content changes are shared until you reassign the variable::
+    then the content changes are shared until you reassign the variable:
+
+    ::
 
         var a = []
         var lambda = func ():
@@ -1515,7 +1561,9 @@ Static functions
 ~~~~~~~~~~~~~~~~
 
 A function can be declared static. When a function is static, it has no access to the instance member variables or ``self``.
-A static function has access to static variables. Also static functions are useful to make libraries of helper functions::
+A static function has access to static variables. Also static functions are useful to make libraries of helper functions:
+
+::
 
     static func sum2(a, b):
         return a + b
@@ -1540,7 +1588,9 @@ statement too, though only calls are reasonable to use as statements since other
 Expressions return values that can be assigned to valid targets. Operands to some operator can be another
 expression. An assignment is not an expression and thus does not return any value.
 
-Here are some examples of expressions::
+Here are some examples of expressions:
+
+::
 
     2 + 2 # Binary operation.
     -5 # Unary operation.
@@ -1609,7 +1659,9 @@ nature of the tab-based indentation, ``elif`` can be used instead of
     else:
         statement(s)
 
-Short statements can be written on the same line as the condition::
+Short statements can be written on the same line as the condition:
+
+::
 
     if 1 + 1 == 2: return 2 + 2
     else:
@@ -1617,14 +1669,18 @@ Short statements can be written on the same line as the condition::
         return x
 
 Sometimes, you might want to assign a different initial value based on a
-boolean expression. In this case, ternary-if expressions come in handy::
+boolean expression. In this case, ternary-if expressions come in handy:
+
+::
 
     var x = (value) if (expression) else (value)
     y += 3 if y < 10 else -1
 
 Ternary-if expressions can be nested to handle more than 2 cases. When nesting
 ternary-if expressions, it is recommended to wrap the complete expression over
-multiple lines to preserve readability::
+multiple lines to preserve readability:
+
+::
 
     var count = 0
 
@@ -1646,7 +1702,9 @@ multiple lines to preserve readability::
     print(fruit_alt)  # banana
 
 You may also wish to check if a value is contained within something. You can
-use an ``if`` statement combined with the ``in`` operator to accomplish this::
+use an ``if`` statement combined with the ``in`` operator to accomplish this:
+
+::
 
     # Check if a letter is in a string.
     var text = "abc"
@@ -1798,7 +1856,9 @@ The following pattern types are available:
 - Wildcard pattern
     This pattern matches everything. It's written as a single underscore.
 
-    It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages::
+    It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages:
+
+    ::
 
         match x:
             1:
@@ -1810,7 +1870,9 @@ The following pattern types are available:
 
 - Binding pattern
     A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
-    It's especially useful in array and dictionary patterns::
+    It's especially useful in array and dictionary patterns:
+
+    ::
 
         match x:
             1:
@@ -1935,7 +1997,9 @@ Registering named classes
 You can give your class a name to register it as a new type in Godot's
 editor. For that, you use the ``class_name`` keyword. You can optionally use
 the ``@icon`` annotation with a path to an image, to use it as an icon. Your
-class will then appear with its new icon in the editor::
+class will then appear with its new icon in the editor:
+
+::
 
    # item.gd
 
@@ -1974,7 +2038,9 @@ Here's a class file example:
         print(ResourceLoader.load("res://character.gd"))
         print(Character)
 
-If you want to use ``extends`` too, you can keep both on the same line::
+If you want to use ``extends`` too, you can keep both on the same line:
+
+::
 
     class_name MyNode extends Node
 
@@ -2094,7 +2160,9 @@ Inheritance uses the ``extends`` keyword::
     :ref:`class_RefCounted`.
 
 To check if a given instance inherits from a given class,
-the ``is`` keyword can be used::
+the ``is`` keyword can be used:
+
+::
 
     # Cache the enemy class.
     const Enemy = preload("enemy.gd")
@@ -2118,7 +2186,9 @@ call them, you can use ``super``::
         super(x) # Calls the same function on the super class.
 
 If you need to call a different function from the super class, you can specify
-the function name with the attribute operator::
+the function name with the attribute operator:
+
+::
 
     func overriding():
         return 0 # This overrides the method in the base class.
@@ -2150,12 +2220,16 @@ The class constructor, called on class instantiation, is named ``_init``. If you
 want to call the base class constructor, you can also use the ``super`` syntax.
 Note that every class has an implicit constructor that is always called
 (defining the default values of class variables). ``super`` is used to call the
-explicit constructor::
+explicit constructor:
+
+::
 
     func _init(arg):
        super("some_default", arg) # Call the custom base constructor.
 
-This is better explained through examples. Consider this scenario::
+This is better explained through examples. Consider this scenario:
+
+::
 
     # state.gd (inherited class).
     var entity = null
@@ -2200,7 +2274,9 @@ Static constructor
 ~~~~~~~~~~~~~~~~~~
 
 A static constructor is a static function ``_static_init`` that is called automatically
-when the class is loaded, after the static variables have been initialized::
+when the class is loaded, after the static variables have been initialized:
+
+::
 
     static var my_static_var = 1
 
@@ -2244,7 +2320,9 @@ Classes as resources
 Classes stored as files are treated as :ref:`GDScripts <class_GDScript>`. They
 must be loaded from disk to access them in other classes. This is done using
 either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
-class resource is done by calling the ``new`` function on the class object::
+class resource is done by calling the ``new`` function on the class object:
+
+::
 
     # Load the class resource when calling load().
     var MyClass = load("myclass.gd")
@@ -2303,7 +2381,9 @@ or you need to reuse the code across multiple properties (but you can't distingu
     var my_prop:
         get = get_my_prop, set = set_my_prop
 
-This can also be done in the same line::
+This can also be done in the same line:
+
+::
 
     var my_prop: get = get_my_prop, set = set_my_prop
 
@@ -2322,7 +2402,9 @@ When a variable is initialized, the value of the initializer will be written dir
 Including if the ``@onready`` annotation is applied to the variable.
 
 Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
-so it won't generate infinite recursion and saves you from explicitly declaring another variable::
+so it won't generate infinite recursion and saves you from explicitly declaring another variable:
+
+::
 
     signal changed(new_value)
     var warns_when_changed = "some value":
@@ -2332,7 +2414,9 @@ so it won't generate infinite recursion and saves you from explicitly declaring 
             changed.emit(value)
             warns_when_changed = value
 
-This also applies to the alternative syntax::
+This also applies to the alternative syntax:
+
+::
 
     var my_prop: set = set_my_prop
 
@@ -2342,7 +2426,9 @@ This also applies to the alternative syntax::
 .. warning::
 
     The exception does **not** propagate to other functions called in the setter/getter.
-    For example, the following code **will** cause an infinite recursion::
+    For example, the following code **will** cause an infinite recursion:
+
+::
 
         var my_prop:
             set(value):
@@ -2360,7 +2446,9 @@ By default, scripts don't run inside the editor and only the exported
 properties can be changed. In some cases, it is desired that they do run
 inside the editor (as long as they don't execute game code or manually
 avoid doing so). For this, the ``@tool`` annotation exists and must be
-placed at the top of the file::
+placed at the top of the file:
+
+::
 
     @tool
     extends Button
@@ -2454,7 +2542,9 @@ signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
-signal, the game node's ``_on_character_health_depleted`` is called::
+signal, the game node's ``_on_character_health_depleted`` is called:
+
+::
 
     # game.gd
 
@@ -2552,7 +2642,9 @@ Building on the example above, let's say we want to display a log of the damage
 taken by each character on the screen, like ``Player1 took 22 damage.``. The
 ``health_changed`` signal doesn't give us the name of the character that took
 damage. So when we connect the signal to the in-game console, we can add the
-character's name using the bind method::
+character's name using the bind method:
+
+::
 
     # game.gd
 
@@ -2562,7 +2654,9 @@ character's name using the bind method::
 
         character_node.health_changed.connect(battle_log_node._on_Character_health_changed.bind(character_node.name))
 
-Our ``BattleLog`` node receives each bound element as an extra argument::
+Our ``BattleLog`` node receives each bound element as an extra argument:
+
+::
 
     # battle_log.gd
 
@@ -2582,7 +2676,9 @@ which wait until a signal is emitted before continuing execution. Using the ``aw
 call to a function that is also a coroutine will immediately return the control to the caller. When the signal is
 emitted (or the called coroutine finishes), it will resume execution from the point on where it stopped.
 
-For example, to stop execution until the user presses a button, you can do something like this::
+For example, to stop execution until the user presses a button, you can do something like this:
+
+::
 
     func wait_confirmation():
         print("Prompting user")
@@ -2590,7 +2686,9 @@ For example, to stop execution until the user presses a button, you can do somet
         print("User confirmed")
         return true
 
-In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await it::
+In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await it:
+
+::
 
     func request_confirmation():
         print("Will ask the user")
@@ -2600,20 +2698,26 @@ In this case, the ``wait_confirmation`` becomes a coroutine, which means that th
         else:
             print("User cancelled")
 
-Note that requesting a coroutine's return value without ``await`` will trigger an error::
+Note that requesting a coroutine's return value without ``await`` will trigger an error:
+
+::
 
     func wrong():
         var confirmed = wait_confirmation() # Will give an error.
 
 However, if you don't depend on the result, you can just call it asynchronously, which won't stop execution and won't
-make the current function a coroutine::
+make the current function a coroutine:
+
+::
 
     func okay():
         wait_confirmation()
         print("This will be printed immediately, before the user press the button.")
 
 If you use await with an expression that isn't a signal nor a coroutine, the value will be returned immediately and the
-function won't give the control back to the caller::
+function won't give the control back to the caller:
+
+::
 
     func no_wait():
         var x = await get_five()
@@ -2622,7 +2726,9 @@ function won't give the control back to the caller::
     func get_five():
         return 5
 
-This also means that returning a signal from a function that isn't a coroutine will make the caller await that signal::
+This also means that returning a signal from a function that isn't a coroutine will make the caller await that signal:
+
+::
 
     func get_signal():
         return $Button.button_up

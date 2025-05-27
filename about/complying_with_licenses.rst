@@ -42,7 +42,9 @@ Requirements
 In the case of the MIT license, the only requirement is to include the license
 text somewhere in your game or derivative project.
 
-This text reads as follows::
+This text reads as follows:
+
+::
 
     This game uses Godot Engine, available under the following license:
 

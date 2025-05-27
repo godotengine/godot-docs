@@ -38,13 +38,17 @@ For compiling under Windows, the following is required:
   Studio releases.
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
-          install MinGW and other dependencies using the following command::
+          install MinGW and other dependencies using the following command:
+
+          ::
 
               scoop install python mingw
 
           Scons will still need to be installed via pip
 .. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
-          install MinGW and other dependencies using the following command::
+          install MinGW and other dependencies using the following command:
+
+          ::
 
               pacman -S mingw-w64-x86_64-python3-pip mingw-w64-x86_64-gcc  \
                   mingw-w64-i686-python3-pip mingw-w64-i686-gcc make
@@ -61,7 +65,9 @@ For compiling under Windows, the following is required:
 Setting up SCons
 ----------------
 
-To install SCons, open the command prompt and run the following command::
+To install SCons, open the command prompt and run the following command:
+
+::
 
     python -m pip install scons
 
@@ -205,7 +211,9 @@ optional PIX and Agility SDK components).
              which is needed to generate some files.
           2. Clone the `godot-nir-static <https://github.com/godotengine/godot-nir-static>`_
              directory and navigate to it.
-          3. Run the following::
+          3. Run the following:
+
+          ::
 
               git submodule update --init
               ./update_mesa.sh
@@ -244,7 +252,9 @@ Optionally, you can compile with the following for additional features:
           developer mode in Windows; otherwise it won't be used.
 
 .. note:: If you want to use a PIX with MinGW build, navigate to PIX runtime
-          directory and use the following commands to generate import library::
+          directory and use the following commands to generate import library:
+
+          ::
 
             # For x86-64:
             gendef ./bin/x64/WinPixEventRuntime.dll
@@ -300,7 +310,9 @@ To compile Godot with statically linked ANGLE:
 
           1. Clone the `godot-angle-static <https://github.com/godotengine/godot-angle-static>`_
              directory and navigate to it.
-          2. Run the following command::
+          2. Run the following command:
+
+          ::
 
               git submodule update --init
               ./update_angle.sh
@@ -330,7 +342,9 @@ Folder-based editors don't require any particular setup to start working with Go
 codebase. To edit projects with Visual Studio they need to be set up as a solution.
 
 You can create a Visual Studio solution via SCons by running SCons with
-the ``vsproj=yes`` parameter, like this::
+the ``vsproj=yes`` parameter, like this:
+
+::
 
    scons platform=windows vsproj=yes
 
@@ -373,7 +387,9 @@ The package names may differ based on your distribution, here are some known one
 +----------------+--------------------------------------------------------------+
 
 Before attempting the compilation, SCons will check for
-the following binaries in your ``PATH`` environment variable::
+the following binaries in your ``PATH`` environment variable:
+
+::
 
     # for MinGW-w64
     i686-w64-mingw32-gcc
@@ -386,7 +402,9 @@ the following binaries in your ``PATH`` environment variable::
 
 If the binaries are not located in the ``PATH`` (e.g. ``/usr/bin``),
 you can define the following environment variable to give a hint to
-the build system::
+the build system:
+
+::
 
     export MINGW_PREFIX="/path/to/mingw"
 
@@ -452,7 +470,9 @@ following location, replacing ``<version>`` with the version identifier
 
     %APPDATA%\Godot\export_templates\<version>\
 
-With the following names::
+With the following names:
+
+::
 
     windows_debug_x86_32_console.exe
     windows_debug_x86_32.exe

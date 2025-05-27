@@ -250,7 +250,9 @@ Online documentation (RST)
 
 The documentation translations originate from reStructuredText (RST) files,
 which also use their own markup syntax to style text, create internal and
-external links, etc. Here are some examples::
+external links, etc. Here are some examples:
+
+::
 
     # "development" is styled bold.
     # "Have a look here" is a link pointing to https://docs.godotengine.org/en/latest.

@@ -79,7 +79,9 @@ and then calling
 :ref:`TranslationServer.reload_pseudolocalization() <class_TranslationServer_method_reload_pseudolocalization>`
 which reparses the pseudolocalization properties and reloads the pseudolocalization.
 The following code snippet shall turn on ``replace_with_accents`` and ``double_vowels`` properties
-and then call ``reload_pseudolocalization()`` for the changes to get reflected::
+and then call ``reload_pseudolocalization()`` for the changes to get reflected:
+
+::
 
     ProjectSettings.set_setting("internationalization/pseudolocalization/replace_with_accents", true)
     ProjectSettings.set_setting("internationalization/pseudolocalization/double_vowels", true)

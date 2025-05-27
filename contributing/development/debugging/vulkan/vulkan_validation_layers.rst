@@ -164,7 +164,9 @@ Copy libraries
 Copy libraries from ``Vulkan-ValidationLayers/build-android/libs`` to
 ``godot/platform/android/java/app/libs/debug/vulkan_validation_layers``.
 
-Your Godot source directory tree should look like on the example below::
+Your Godot source directory tree should look like on the example below:
+
+::
 
     godot
     |-- platform

@@ -34,7 +34,9 @@ and ``source ./emsdk_env.sh``/``emsdk_env.bat``.
 
 Open a terminal and navigate to the root directory of the engine source code.
 Then instruct SCons to build the Web platform. Specify ``target`` as
-either ``template_release`` for a release build or ``template_debug`` for a debug build::
+either ``template_release`` for a release build or ``template_debug`` for a debug build:
+
+::
 
     scons platform=web target=template_release
     scons platform=web target=template_debug
@@ -42,13 +44,17 @@ either ``template_release`` for a release build or ``template_debug`` for a debu
 By default, the :ref:`JavaScriptBridge singleton <doc_web_javascript_bridge>` will be built
 into the engine. Official export templates also have the JavaScript singleton
 enabled. Since ``eval()`` calls can be a security concern, the
-``javascript_eval`` option can be used to build without the singleton::
+``javascript_eval`` option can be used to build without the singleton:
+
+::
 
     scons platform=web target=template_release javascript_eval=no
     scons platform=web target=template_debug javascript_eval=no
 
 By default, WebWorker threads support is enabled. To disable it and only use a single thread,
-the ``threads`` option can be used to build the web template without threads support::
+the ``threads`` option can be used to build the web template without threads support:
+
+::
 
     scons platform=web target=template_release threads=no
     scons platform=web target=template_debug threads=no
@@ -59,11 +65,15 @@ the resulting file will be placed in the ``bin`` subdirectory. Its name is
 for debug.
 
 Finally, rename the zip archive to ``web_release.zip`` for the
-release template::
+release template:
+
+::
 
     mv bin/godot.web.template_release.wasm32.zip bin/web_release.zip
 
-And ``web_debug.zip`` for the debug template::
+And ``web_debug.zip`` for the debug template:
+
+::
 
     mv bin/godot.web.template_debug.wasm32.zip bin/web_debug.zip
 
@@ -75,7 +85,9 @@ performance and compatibility reasons. See the
 :ref:`export page <doc_javascript_export_options>` for more info.
 
 You can build the export templates using the option ``dlink_enabled=yes``
-to enable GDExtension support::
+to enable GDExtension support:
+
+::
 
     scons platform=web dlink_enabled=yes target=template_release
     scons platform=web dlink_enabled=yes target=template_debug
@@ -84,7 +96,9 @@ Once finished, the resulting file will be placed in the ``bin`` subdirectory.
 Its name will have ``_dlink`` added.
 
 Finally, rename the zip archives to ``web_dlink_release.zip`` and
-``web_dlink_release.zip`` for the release template::
+``web_dlink_release.zip`` for the release template:
+
+::
 
     mv bin/godot.web.template_release.wasm32.dlink.zip bin/web_dlink_release.zip
     mv bin/godot.web.template_debug.wasm32.dlink.zip bin/web_dlink_debug.zip
@@ -94,7 +108,9 @@ Building the editor
 
 It is also possible to build a version of the Godot editor that can run in the
 browser. The editor version is not recommended
-over the native build. You can build the editor with::
+over the native build. You can build the editor with:
+
+::
 
     scons platform=web target=editor
 

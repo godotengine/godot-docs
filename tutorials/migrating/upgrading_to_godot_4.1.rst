@@ -281,7 +281,9 @@ There are two small changes:
 #. The first argument changes from ``const GDExtensionInterface *p_interface`` to ``GDExtensionInterfaceGetProcAddress p_get_proc_address``
 #. The constructor for the `init_obj` variable now receives ``p_get_proc_address`` as its first parameter
 
-You also need to add an extra ``compatibility_minimum`` line to your ``.gdextension`` file, so that it looks something like::
+You also need to add an extra ``compatibility_minimum`` line to your ``.gdextension`` file, so that it looks something like:
+
+::
 
   [configuration]
 

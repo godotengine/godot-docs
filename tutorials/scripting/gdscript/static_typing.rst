@@ -27,7 +27,9 @@ of your scripts.
 Imagine you're programming an inventory system. You code an ``Item`` class,
 then an ``Inventory``. To add items to the inventory, the people who work with
 your code should always pass an ``Item`` to the ``Inventory.add()`` method.
-With types, you can enforce this::
+With types, you can enforce this:
+
+::
 
     class_name Inventory
 
@@ -78,14 +80,18 @@ How to use static typing
 
 To define the type of a variable, parameter, or constant, write a colon after the name,
 followed by its type. E.g. ``var health: int``. This forces the variable's type
-to always stay the same::
+to always stay the same:
+
+::
 
     var damage: float = 10.5
     const MOVE_SPEED: float = 50.0
     func sum(a: float = 0.0, b: float = 0.0) -> float:
         return a + b
 
-Godot will try to infer types if you write a colon, but you omit the type::
+Godot will try to infer types if you write a colon, but you omit the type:
+
+::
 
     var damage := 10.5
     const MOVE_SPEED := 50.0
@@ -119,19 +125,25 @@ Here is a complete list of what can be used as a type hint:
 
 You can use any class, including your custom classes, as types. There are two ways
 to use them in scripts. The first method is to preload the script you want to use
-as a type in a constant::
+as a type in a constant:
+
+::
 
     const Rifle = preload("res://player/weapons/rifle.gd")
     var my_rifle: Rifle
 
 The second method is to use the ``class_name`` keyword when you create.
-For the example above, your ``rifle.gd`` would look like this::
+For the example above, your ``rifle.gd`` would look like this:
+
+::
 
     class_name Rifle
     extends Node2D
 
 If you use ``class_name``, Godot registers the ``Rifle`` type globally in the editor,
-and you can use it anywhere, without having to preload it into a constant::
+and you can use it anywhere, without having to preload it into a constant:
+
+::
 
     var my_rifle: Rifle
 
@@ -139,19 +151,25 @@ Specify the return type of a function with the arrow ``->``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To define the return type of a function, write a dash and a right angle bracket ``->``
-after its declaration, followed by the return type::
+after its declaration, followed by the return type:
+
+::
 
     func _process(delta: float) -> void:
         pass
 
 The type ``void`` means the function does not return anything. You can use any type,
-as with variables::
+as with variables:
+
+::
 
     func hit(damage: float) -> bool:
         health_points -= damage
         return health_points <= 0
 
-You can also use your own classes as return types::
+You can also use your own classes as return types:
+
+::
 
     # Adds an item to the inventory and returns it.
     func add(reference: Item, amount: int) -> Item:
@@ -221,7 +239,9 @@ and enums may be used as element types. Nested array types
     scores[0] = "lots"
 
 Since Godot 4.2, you can also specify a type for the loop variable in a ``for`` loop.
-For instance, you can write::
+For instance, you can write:
+
+::
 
     var names = ["John", "Marta", "Samantha", "Jimmy"]
     for name: String in names:
@@ -353,7 +373,9 @@ green at the left of the script editor.
 .. note::
 
     Safe lines do not always mean better or more reliable code. See the note above
-    about the ``as`` keyword. For example::
+    about the ``as`` keyword. For example:
+
+    ::
 
         @onready var node_1 := $Node1 as Type1 # Safe line.
         @onready var node_2: Type2 = $Node2 # Unsafe line.
@@ -377,7 +399,9 @@ and for your peers. It's easier for everyone to work together if you follow
 the same guidelines, and faster to read and understand other people's code.
 
 Typed code takes a little more writing, but you get the benefits we discussed
-above. Here's an example of the same, empty script, in a dynamic style::
+above. Here's an example of the same, empty script, in a dynamic style:
+
+::
 
     extends Node
 
@@ -389,7 +413,9 @@ above. Here's an example of the same, empty script, in a dynamic style::
     func _process(delta):
         pass
 
-And with static typing::
+And with static typing:
+
+::
 
     extends Node
 
@@ -403,12 +429,16 @@ And with static typing::
 
 As you can see, you can also use types with the engine's virtual methods.
 Signal callbacks, like any methods, can also use types. Here's a ``body_entered``
-signal in a dynamic style::
+signal in a dynamic style:
+
+::
 
     func _on_area_2d_body_entered(body):
         pass
 
-And the same callback, with type hints::
+And the same callback, with type hints:
+
+::
 
     func _on_area_entered(area: CollisionObject2D) -> void:
         pass
@@ -446,7 +476,9 @@ In this example, we aim to set a property and call a method on an object
 that has a script attached with ``class_name MyScript`` and that ``extends
 Node2D``. If we have a reference to the object as a ``Node2D`` (for instance,
 as it was passed to us by the physics system), we can first check if the
-property and method exist and then set and call them if they do::
+property and method exist and then set and call them if they do:
+
+::
 
     if "some_property" in node_2d:
         node_2d.some_property = 20  # Produces UNSAFE_PROPERTY_ACCESS warning.
@@ -459,7 +491,9 @@ However, this code will produce ``UNSAFE_PROPERTY_ACCESS`` and
 in the referenced type - in this case a ``Node2D``. To make these operations
 safe, you can first check if the object is of type ``MyScript`` using the
 ``is`` keyword and then declare a variable with the type ``MyScript`` on
-which you can set its properties and call its methods::
+which you can set its properties and call its methods:
+
+::
 
     if node_2d is MyScript:
         var my_script: MyScript = node_2d
@@ -468,7 +502,9 @@ which you can set its properties and call its methods::
 
 Alternatively, you can declare a variable and use the ``as`` operator to try
 to cast the object. You'll then want to check whether the cast was successful
-by confirming that the variable was assigned::
+by confirming that the variable was assigned:
+
+::
 
     var my_script := node_2d as MyScript
     if my_script != null:
@@ -482,7 +518,9 @@ In this example, we would like the label connected to an object entering our
 collision area to show the area's name. Once the object enters the collision
 area, the physics system sends a signal with a ``Node2D`` object, and the most
 straightforward (but not statically typed) solution to do what we want could
-be achieved like this::
+be achieved like this:
+
+::
 
     func _on_body_entered(body: Node2D) -> void:
         body.label.text = name  # Produces UNSAFE_PROPERTY_ACCESS warning.
@@ -490,7 +528,9 @@ be achieved like this::
 This piece of code produces an ``UNSAFE_PROPERTY_ACCESS`` warning because
 ``label`` is not defined in ``Node2D``. To solve this, we could first check if the
 ``label`` property exist and cast it to type ``Label`` before settings its text
-property like so::
+property like so:
+
+::
 
     func _on_body_entered(body: Node2D) -> void:
         if "label" in body:
@@ -501,7 +541,9 @@ However, this produces an ``UNSAFE_CAST`` warning because ``body.label`` is of a
 ``Object.get()`` method which returns the object as a ``Variant`` value or returns
 ``null`` if the property doesn't exist. You can then determine whether the
 property contains an object of the right type using the ``is`` keyword, and
-finally declare a statically typed variable with the object::
+finally declare a statically typed variable with the object:
+
+::
 
     func _on_body_entered(body: Node2D) -> void:
         var label_variant: Variant = body.get("label")
@@ -517,7 +559,9 @@ Cases where you can't specify types
 To wrap up this introduction, let's mention cases where you can't use type hints.
 This will trigger a **syntax error**.
 
-1. You can't specify the type of individual elements in an array or a dictionary::
+1. You can't specify the type of individual elements in an array or a dictionary:
+
+::
 
         var enemies: Array = [$Goblin: Enemy, $Zombie: Enemy]
         var character: Dictionary = {
@@ -526,7 +570,9 @@ This will trigger a **syntax error**.
             inventory: Inventory = $Inventory,
         }
 
-2. Nested types are not currently supported::
+2. Nested types are not currently supported:
+
+::
 
         var teams: Array[Array[Character]] = []
 

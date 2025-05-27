@@ -559,7 +559,7 @@ Emphasis
 
 Use either **bold style** or *italic style* to emphasize words or sentences.
 In most cases, either **bold** or *italics* is fine. Use whichever seems best,
-or whatever the page already uses. 
+or whatever the page already uses.
 
 Prefer using **bold style** for simple emphasis.
 
@@ -642,6 +642,58 @@ rendered, prefer splitting the setting name and the section when the link is lon
     - Set the :ref:`Application > Run > Max FPS<class_ProjectSettings_property_application/run/max_fps>` setting to ``60``.
     - In the project settings under **Application > Run**, set :ref:`Max FPS<class_ProjectSettings_property_application/run/max_fps>` to ``60``.
     - In **Project Settings > Application > Run**, set :ref:`Max FPS<class_ProjectSettings_property_application/run/max_fps>` to ``60``.
+
+Code blocks and adominitions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Code blocks should use the ``::`` syntax on its own line. Do not use the short
+form where it's at the end of a paragraph, as the trailing ``::`` would be included
+in the localizable string otherwise. Weblate would show a warning due to the trailing ``::``,
+and if the localized string does not end with ``::``, it would break the code block entirely
+in the translated manual.
+
+
+**Bad:**
+
+::
+
+    This is a code block::
+
+        The code block's contents.
+
+**Good:**
+
+::
+
+    This is a code block:
+
+    ::
+
+        The code block's contents.
+
+As for admonitions (note, warning, etc. blocks), you should write the admonition tag on its own line,
+then the admonition's contents indented by 4 spaces. Do not write the first line of the contents
+on the same line as the admonition tag.
+
+**Bad:**
+
+::
+
+    This is an admonition:
+
+    .. note:: First line of the note's contents.
+              Second line of the note's contents.
+
+**Good:**
+
+::
+
+    This is an admonition:
+
+    .. note::
+
+        First line of the note's contents.
+        Second line of the note's contents.
 
 .. _doc_docs_writing_guidelines_manually_wrapping_lines:
 
@@ -759,6 +811,6 @@ Follow these guidelines for when to refer to a specific Godot version:
 - If the default approach to a problem is changed in a 4.x minor version, **do
   specify** the minor version in which a new default approach was added. For example,
   the change from ``TileMap`` to ``TileMapLayer`` in 4.3.
-- If a feature was added in a 3.x major or minor version, **do not specify** when 
+- If a feature was added in a 3.x major or minor version, **do not specify** when
   the feature was added. These features are old enough that the exact version
   in which they were added is not relevant.

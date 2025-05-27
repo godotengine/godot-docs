@@ -301,11 +301,15 @@ Running a headless/server build
 -------------------------------
 
 To run in *headless* mode which provides editor functionality to export
-projects in an automated manner, use the normal build::
+projects in an automated manner, use the normal build:
+
+::
 
     scons platform=linuxbsd target=editor
 
-And then use the ``--headless`` command line argument::
+And then use the ``--headless`` command line argument:
+
+::
 
     ./bin/godot.linuxbsd.editor.x86_64 --headless
 
@@ -468,7 +472,9 @@ the default GCC + GNU ld setup:
 - Clang tends to give more useful error messages compared to GCC.
 
 To do so, install Clang and the ``lld`` package from your distribution's package manager
-then use the following SCons command::
+then use the following SCons command:
+
+::
 
     scons platform=linuxbsd use_llvm=yes linker=lld
 
@@ -478,7 +484,9 @@ created in the ``bin/`` folder.
 It's still recommended to use GCC for production builds as they can be compiled using
 link-time optimization, making the resulting binaries smaller and faster.
 
-If this error occurs::
+If this error occurs:
+
+::
 
     /usr/bin/ld: cannot find -l:libatomic.a: No such file or directory
 
