@@ -155,7 +155,7 @@ Fragment processor
 
 The ``fragment()`` processing function is used to set up the Godot material
 parameters per pixel. This code runs on every visible pixel the object or
-primitive draws. It is only available in ``spatial``, ``canvas_item``, and ``sky`` shaders.
+primitive draws. It is only available in ``spatial`` and ``canvas_item`` shaders.
 
 The standard use of the fragment function is to set up material properties used
 to calculate lighting. For example, you would set values for ``ROUGHNESS``,
