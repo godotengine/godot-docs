@@ -150,11 +150,9 @@ To ensure your videos decode smoothly on varied hardware:
 Playback limitations
 --------------------
 
-There are several limitations with the current implementation of video playback in Godot:
+There are some limitations with the current implementation of video playback in Godot:
 
-- Seeking a video to a certain point is not supported.
-- Changing playback speed is not supported. VideoStreamPlayer also won't follow
-  :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
+- Changing playback speed is not supported.
 - Streaming a video from a URL is not supported.
 - Only mono and stereo audio output is supported.
 
@@ -182,8 +180,9 @@ you should use a lossless or uncompressed format as an intermediate format to
 maximize the quality of the output Ogg Theora video, but this can require a lot
 of disk space.
 
-`FFmpeg <https://ffmpeg.org/>`__ (CLI) is a popular open source tool
-for this purpose. FFmpeg has a steep learning curve, but it's powerful tool.
+`Shutter Encoder <https://www.shutterencoder.com/>`__ (GUI) and `FFmpeg
+<https://ffmpeg.org/>`__ (CLI) are popular open source tools for this purpose.
+FFmpeg has a steep learning curve, but it's a powerful tool.
 
 Here are example FFmpeg commands to convert an MP4 video to Ogg Theora. Since
 FFmpeg supports a lot of input formats, you should be able to use the commands
@@ -202,10 +201,9 @@ below with almost any input video format (AVI, MOV, WebM, …).
 
 .. warning::
 
-   All FFmpeg releases before Feb 20th, 2025 could produce bad video streams
-   due to a couple of bugs. It's highly recommended to use one of the latest
-   static daily builds, or build FFmpeg from their master branch where they're
-   already fixed.
+   Current FFmpeg releases up to 7.1.1 have some bugs in their OGG/Theora
+   multiplexer. It's highly recommended to use one of the latest static daily
+   builds, or build from their master branch where they are already fixed.
 
 Balancing quality and file size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,11 +229,10 @@ variable bitrates.
 
 The **GOP (Group of Pictures) size** (``-g:v``) is the max interval between
 keyframes. Increasing this value can improve compression with almost no impact
-on quality. The valid range goes from ``0`` to ``2,147,483,648``, although
-compression benefits will fade away and even be reversed as the GOP size
-increases. The default size (``12``) is too low for most types of content, it's
-therefore recommended to test higher GOP sizes before reducing video quality.
-Values between ``64`` and ``512`` usually give the best compression.
+on quality. The default size (``12``) is too low for most types of content,
+it's therefore recommended to test higher GOP sizes to improve compression
+without compromising video quality. Values between ``64`` and ``512`` usually
+give the best compression.
 
 FFmpeg: Convert while preserving original video resolution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
