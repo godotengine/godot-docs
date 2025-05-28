@@ -115,10 +115,6 @@ scripting API.
 | ``RBMap``              | ``std::map``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black_tree>`__              |
 |                        |                          | for faster access.                                                                    |
 +------------------------+--------------------------+---------------------------------------------------------------------------------------+
-| ``VMap``               | ``std::flat_map``        | Uses copy-on-write (COW) semantics.                                                   |
-|                        |                          | This means it's generally slower but can be copied around almost for free.            |
-|                        |                          | The performance benefits of ``VMap`` aren't established, so prefer using other types. |
-+------------------------+--------------------------+---------------------------------------------------------------------------------------+
 | ``Dictionary`` 📜      | ``std::unordered_map``   | Keys and values can be of any Variant type. No static typing is imposed.              |
 |                        |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
 |                        |                          | Preserves insertion order. Uses ``HashMap<Variant>`` internally.                      |
