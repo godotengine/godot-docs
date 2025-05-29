@@ -136,8 +136,8 @@ xcode-select points at wrong SDK location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 xcode-select is a tool that comes with Xcode and among other things points at iOS SDKs on your Mac.
-If you have Xcode installed, opened it, agreed to the license agreement, and installed the command line tools, 
-xcode-select should point at the right location for the iPhone SDK. 
+If you have Xcode installed, opened it, agreed to the license agreement, and installed the command line tools,
+xcode-select should point at the right location for the iPhone SDK.
 If it somehow doesn't, Godot will fail exporting to iOS with an error that may look like this:
 
 ::
@@ -145,9 +145,9 @@ If it somehow doesn't, Godot will fail exporting to iOS with an error that may l
     MSB3073: The command ""clang" <LOTS OF PATHS AND COMMAND LINE ARGUMENTS HERE>
     "/Library/Developer/CommandLineTools/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk"" exited with code 1.
 
-In this case, Godot is trying to find the ``Platforms`` folder containing the iPhone SDK inside the 
-``/Library/Developer/CommandLineTools/`` folder, but the ``Platforms`` folder with the iPhone SDK is 
-actually located under ``/Applications/Xcode.app/Contents/Developer``. To verify this, you can open 
+In this case, Godot is trying to find the ``Platforms`` folder containing the iPhone SDK inside the
+``/Library/Developer/CommandLineTools/`` folder, but the ``Platforms`` folder with the iPhone SDK is
+actually located under ``/Applications/Xcode.app/Contents/Developer``. To verify this, you can open
 up Terminal and run the following command to see what xcode-select points at:
 
 ::
@@ -161,3 +161,9 @@ To fix xcode-select pointing at a wrong location, enter this command in Terminal
     sudo xcode-select -switch /Applications/Xcode.app
 
 After running this command, Godot should be able to successfully export to iOS.
+
+Export options
+--------------
+
+You can find a full list of export options available in the
+:ref:`class_EditorExportPlatformIOS` class reference.

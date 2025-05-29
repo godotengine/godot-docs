@@ -646,6 +646,17 @@ There are 2 main use cases for a glow map texture:
 
 .. image:: img/environment_glow_map.webp
 
+By default, glow uses a bicubic scaling filter on desktop platforms and a
+bilinear scaling filter on mobile platforms. The bicubic scaling filter results
+in higher quality with a less blocky appearance, but it has a performance cost
+on the GPU which can be significant on integrated graphics.
+The scale mode can be controlled using the
+**Rendering > Environment > Glow > Upscale Mode** project setting.
+This setting is only effective when using the Forward+ or Mobile renderers,
+as Compatibility uses a different glow implementation.
+
+.. image:: img/environment_and_post_processing_glow_scale_mode.webp
+
 .. _doc_environment_and_post_processing_using_glow_in_2d:
 
 Using glow in 2D

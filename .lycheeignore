@@ -12,6 +12,8 @@ tcp:\/\/.*
 .*asecuritysite\.com.*
 .*intel\.com.*
 .*reddit\.com.*
+.*inkscape.org.*
+.*computerhope.com*
 
 # Don't check URLs from these websites due to frequent rate limits (error 429) or timeouts.
 .*adobe\.com.*

@@ -99,9 +99,12 @@ Open source
 -----------
 
 Godot offers a fully open source codebase under the **MIT license**.
-This means all the technologies that ship with it have to be Free
-(as in freedom) as well.
-For the most part, they're developed from the ground up by contributors.
+This means that the codebase is free for anyone to download, use,
+modify, or share, as long as its license file is kept intact.
+
+All technologies that ship with Godot, including third-party libraries, must
+be legally compatible with this open source license. Therefore, most parts
+of Godot are developed from the ground up by community contributors.
 
 Anyone can plug in proprietary tools for the needs of their projects —
 they just won't ship with the engine. This may include Google AdMob,
@@ -142,11 +145,12 @@ and scenes for your games, or **build plugins and extend the editor.**
 This leads to a reliable and flexible UI system, as it powers the editor
 itself. With the ``@tool`` annotation, you can run any game code in the editor.
 
-|image5|
+.. figure:: img/introduction_rpg_in_a_box.webp
+   :align: center
 
-*RPG in a Box is a voxel RPG editor made with Godot 2. It uses Godot's
-UI tools for its node-based programming system and for the rest of the
-interface.*
+   RPG in a Box is a voxel RPG editor made with Godot. It uses Godot's
+   UI tools for its node-based programming system and for the rest of the
+   interface.
 
 Put the ``@tool`` annotation at the top of any GDScript file and it will run
 in the editor. This lets you import and export plugins, create plugins
@@ -170,4 +174,3 @@ interfaces over your 3D world.
 .. |image0| image:: img/engine_design_01.png
 .. |image1| image:: img/engine_design_02.png
 .. |image2| image:: img/engine_design_03.png
-.. |image5| image:: img/engine_design_rpg_in_a_box.png

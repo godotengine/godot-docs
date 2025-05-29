@@ -160,10 +160,6 @@ We also need to process what happens when the player loses. The code below will 
         GetNode<Button>("StartButton").Show();
     }
 
-This function is called when the player loses. It will show "Game Over" for 2
-seconds, then return to the title screen and, after a brief pause, show the
-"Start" button.
-
 .. note:: When you need to pause for a brief time, an alternative to using a
           Timer node is to use the SceneTree's ``create_timer()`` function. This
           can be very useful to add delays such as in the above code, where we

@@ -31,8 +31,11 @@ Then create a ``BoxShape`` as our shape.
 We set the size of this box shape to 100 x 1 x 100 meters.
 We also need to move our collision shape down by 0.5 meters so the top of our box is flush with the floor.
 
-To make it easier to see that we're actually moving around our world, a white floor isn't going to do it.
-For this we add a material to our PlaneMesh and set the albedo to a grid texture we've created with `Wahooneys excellent free texture generator <https://wahooney.itch.io/texture-grid-generator>`_. 
+To make it easier to see that we're actually moving around our world, a white floor
+isn't going to do it. Create a texture using `Wahooneys excellent free texture generator <https://wahooney.itch.io/texture-grid-generator>`_.
+Once you've created the texture add it to your project. Then create a new material
+for the MeshInstance3D node, add your texture as the albedo, and enable
+**Triplaner** under **UV1** in the material properties.
 
 .. image:: img/godot_xr_tools_floor.webp
 

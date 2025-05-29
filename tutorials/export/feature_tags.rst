@@ -37,91 +37,95 @@ Default features
 
 Here is a list of most feature tags in Godot. Keep in mind they are **case-sensitive**:
 
-+-----------------+----------------------------------------------------------+
-| **Feature tag** | **Description**                                          |
-+=================+==========================================================+
-| **android**     | Running on Android (but not within a Web browser)        |
-+-----------------+----------------------------------------------------------+
-| **bsd**         | Running on \*BSD (but not within a Web browser)          |
-+-----------------+----------------------------------------------------------+
-| **linux**       | Running on Linux (but not within a Web browser)          |
-+-----------------+----------------------------------------------------------+
-| **macos**       | Running on macOS (but not within a Web browser)          |
-+-----------------+----------------------------------------------------------+
-| **ios**         | Running on iOS (but not within a Web browser)            |
-+-----------------+----------------------------------------------------------+
-| **windows**     | Running on Windows                                       |
-+-----------------+----------------------------------------------------------+
-| **linuxbsd**    | Running on Linux or \*BSD                                |
-+-----------------+----------------------------------------------------------+
-| **debug**       | Running on a debug build (including the editor)          |
-+-----------------+----------------------------------------------------------+
-| **release**     | Running on a release build                               |
-+-----------------+----------------------------------------------------------+
-| **editor**      | Running on an editor build                               |
-+-----------------+----------------------------------------------------------+
-| **template**    | Running on a non-editor (export template) build          |
-+-----------------+----------------------------------------------------------+
-| **double**      | Running on a double-precision build                      |
-+-----------------+----------------------------------------------------------+
-| **single**      | Running on a single-precision build                      |
-+-----------------+----------------------------------------------------------+
-| **64**          | Running on a 64-bit build (any architecture)             |
-+-----------------+----------------------------------------------------------+
-| **32**          | Running on a 32-bit build (any architecture)             |
-+-----------------+----------------------------------------------------------+
-| **x86_64**      | Running on a 64-bit x86 build                            |
-+-----------------+----------------------------------------------------------+
-| **x86_32**      | Running on a 32-bit x86 build                            |
-+-----------------+----------------------------------------------------------+
-| **x86**         | Running on an x86 build (any bitness)                    |
-+-----------------+----------------------------------------------------------+
-| **arm64**       | Running on a 64-bit ARM build                            |
-+-----------------+----------------------------------------------------------+
-| **arm32**       | Running on a 32-bit ARM build                            |
-+-----------------+----------------------------------------------------------+
-| **arm**         | Running on an ARM build (any bitness)                    |
-+-----------------+----------------------------------------------------------+
-| **rv64**        | Running on a 64-bit RISC-V build                         |
-+-----------------+----------------------------------------------------------+
-| **riscv**       | Running on a RISC-V build (any bitness)                  |
-+-----------------+----------------------------------------------------------+
-| **ppc64**       | Running on a 64-bit PowerPC build                        |
-+-----------------+----------------------------------------------------------+
-| **ppc32**       | Running on a 32-bit PowerPC build                        |
-+-----------------+----------------------------------------------------------+
-| **ppc**         | Running on a PowerPC build (any bitness)                 |
-+-----------------+----------------------------------------------------------+
-| **wasm64**      | Running on a 64-bit WebAssembly build (not yet possible) |
-+-----------------+----------------------------------------------------------+
-| **wasm32**      | Running on a 32-bit WebAssembly build                    |
-+-----------------+----------------------------------------------------------+
-| **wasm**        | Running on a WebAssembly build (any bitness)             |
-+-----------------+----------------------------------------------------------+
-| **mobile**      | Host OS is a mobile platform                             |
-+-----------------+----------------------------------------------------------+
-| **pc**          | Host OS is a PC platform (desktop/laptop)                |
-+-----------------+----------------------------------------------------------+
-| **web**         | Host OS is a Web browser                                 |
-+-----------------+----------------------------------------------------------+
-| **web_android** | Host OS is a Web browser running on Android              |
-+-----------------+----------------------------------------------------------+
-| **web_ios**     | Host OS is a Web browser running on iOS                  |
-+-----------------+----------------------------------------------------------+
-| **web_linuxbsd**| Host OS is a Web browser running on Linux or \*BSD       |
-+-----------------+----------------------------------------------------------+
-| **web_macos**   | Host OS is a Web browser running on macOS                |
-+-----------------+----------------------------------------------------------+
-| **web_windows** | Host OS is a Web browser running on Windows              |
-+-----------------+----------------------------------------------------------+
-| **etc**         | Textures using ETC1 compression are supported            |
-+-----------------+----------------------------------------------------------+
-| **etc2**        | Textures using ETC2 compression are supported            |
-+-----------------+----------------------------------------------------------+
-| **s3tc**        | Textures using S3TC (DXT/BC) compression are supported   |
-+-----------------+----------------------------------------------------------+
-| **movie**       | :ref:`Movie Maker mode <doc_creating_movies>` is active  |
-+-----------------+----------------------------------------------------------+
++--------------------+----------------------------------------------------------+
+| **Feature tag**    | **Description**                                          |
++====================+==========================================================+
+| **android**        | Running on Android (but not within a Web browser)        |
++--------------------+----------------------------------------------------------+
+| **bsd**            | Running on \*BSD (but not within a Web browser)          |
++--------------------+----------------------------------------------------------+
+| **linux**          | Running on Linux (but not within a Web browser)          |
++--------------------+----------------------------------------------------------+
+| **macos**          | Running on macOS (but not within a Web browser)          |
++--------------------+----------------------------------------------------------+
+| **ios**            | Running on iOS (but not within a Web browser)            |
++--------------------+----------------------------------------------------------+
+| **windows**        | Running on Windows                                       |
++--------------------+----------------------------------------------------------+
+| **linuxbsd**       | Running on Linux or \*BSD                                |
++--------------------+----------------------------------------------------------+
+| **debug**          | Running on a debug build (including the editor)          |
++--------------------+----------------------------------------------------------+
+| **release**        | Running on a release build                               |
++--------------------+----------------------------------------------------------+
+| **editor**         | Running on an editor build                               |
++--------------------+----------------------------------------------------------+
+| **editor_hint**    | Running on an editor build, and inside the editor        |
++--------------------+----------------------------------------------------------+
+| **editor_runtime** | Running on an editor build, and running the project      |
++--------------------+----------------------------------------------------------+
+| **template**       | Running on a non-editor (export template) build          |
++--------------------+----------------------------------------------------------+
+| **double**         | Running on a double-precision build                      |
++--------------------+----------------------------------------------------------+
+| **single**         | Running on a single-precision build                      |
++--------------------+----------------------------------------------------------+
+| **64**             | Running on a 64-bit build (any architecture)             |
++--------------------+----------------------------------------------------------+
+| **32**             | Running on a 32-bit build (any architecture)             |
++--------------------+----------------------------------------------------------+
+| **x86_64**         | Running on a 64-bit x86 build                            |
++--------------------+----------------------------------------------------------+
+| **x86_32**         | Running on a 32-bit x86 build                            |
++--------------------+----------------------------------------------------------+
+| **x86**            | Running on an x86 build (any bitness)                    |
++--------------------+----------------------------------------------------------+
+| **arm64**          | Running on a 64-bit ARM build                            |
++--------------------+----------------------------------------------------------+
+| **arm32**          | Running on a 32-bit ARM build                            |
++--------------------+----------------------------------------------------------+
+| **arm**            | Running on an ARM build (any bitness)                    |
++--------------------+----------------------------------------------------------+
+| **rv64**           | Running on a 64-bit RISC-V build                         |
++--------------------+----------------------------------------------------------+
+| **riscv**          | Running on a RISC-V build (any bitness)                  |
++--------------------+----------------------------------------------------------+
+| **ppc64**          | Running on a 64-bit PowerPC build                        |
++--------------------+----------------------------------------------------------+
+| **ppc32**          | Running on a 32-bit PowerPC build                        |
++--------------------+----------------------------------------------------------+
+| **ppc**            | Running on a PowerPC build (any bitness)                 |
++--------------------+----------------------------------------------------------+
+| **wasm64**         | Running on a 64-bit WebAssembly build (not yet possible) |
++--------------------+----------------------------------------------------------+
+| **wasm32**         | Running on a 32-bit WebAssembly build                    |
++--------------------+----------------------------------------------------------+
+| **wasm**           | Running on a WebAssembly build (any bitness)             |
++--------------------+----------------------------------------------------------+
+| **mobile**         | Host OS is a mobile platform                             |
++--------------------+----------------------------------------------------------+
+| **pc**             | Host OS is a PC platform (desktop/laptop)                |
++--------------------+----------------------------------------------------------+
+| **web**            | Host OS is a Web browser                                 |
++--------------------+----------------------------------------------------------+
+| **web_android**    | Host OS is a Web browser running on Android              |
++--------------------+----------------------------------------------------------+
+| **web_ios**        | Host OS is a Web browser running on iOS                  |
++--------------------+----------------------------------------------------------+
+| **web_linuxbsd**   | Host OS is a Web browser running on Linux or \*BSD       |
++--------------------+----------------------------------------------------------+
+| **web_macos**      | Host OS is a Web browser running on macOS                |
++--------------------+----------------------------------------------------------+
+| **web_windows**    | Host OS is a Web browser running on Windows              |
++--------------------+----------------------------------------------------------+
+| **etc**            | Textures using ETC1 compression are supported            |
++--------------------+----------------------------------------------------------+
+| **etc2**           | Textures using ETC2 compression are supported            |
++--------------------+----------------------------------------------------------+
+| **s3tc**           | Textures using S3TC (DXT/BC) compression are supported   |
++--------------------+----------------------------------------------------------+
+| **movie**          | :ref:`Movie Maker mode <doc_creating_movies>` is active  |
++--------------------+----------------------------------------------------------+
 
 .. warning::
 
@@ -183,6 +187,28 @@ There are already a lot of settings that come with overrides by default; they ca
 in many sections of the project settings.
 
 .. image:: img/feature_tags4.webp
+
+Taking feature tags into account when reading project settings
+--------------------------------------------------------------
+
+By default, feature tags are **not** taken into account when reading project settings
+using the typical approaches (:ref:`ProjectSettings.get_setting<class_ProjectSettings_method_get_setting>`
+or :ref:`ProjectSettings.get <class_Object_private_method__get>`).
+Instead, you must use :ref:`ProjectSettings.get_setting_with_override <class_ProjectSettings_method_get_setting>`.
+
+For example, with the following project settings:
+
+::
+
+    [section]
+
+    subsection/example = "Release"
+    subsection/example.debug = "Debug"
+
+Using ``ProjectSettings.get_setting("section/subsection/example")`` will return
+``"Release"`` regardless of whether a debug build is currently running. On the
+other hand, ``ProjectSettings.get_setting_with_override("section/subsection/example")``
+will obey feature tags and will return ``"Debug"`` if using a debug build.
 
 Customizing the build
 ---------------------
