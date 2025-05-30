@@ -13,21 +13,21 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/assert_always_fa
 When this warning occurs
 ------------------------
 
-The :ref:`assert() <class_@GDScript_method_assert>` keyword can be used to ensure that a given condition is met before allowing code execution to continue. If the first argument passed to it is truthy, the rest of the function will run as expected; if it is falsy, then the project will stop.
+The :ref:`assert() <class_@GDScript_method_assert>` keyword can be used to ensure that a given condition is met before allowing code execution to continue. If the first argument passed to it is true in a boolean context, the rest of the function will run as expected; if it is false in a boolean context, then the project will stop.
 
-If ``assert()`` is passed something guaranteed to be falsy, then the ``assert()`` call will always stop the project.
+If ``assert()`` is passed something guaranteed to be false in a boolean context, then the ``assert()`` call will always stop the project.
 
 .. code-block::
 
     # Zero always evaluates to false.
-    assert(0, "Zero is falsy")
+    assert(0, "Zero is false in a boolean context")
 
     # Likewise, an empty string always evaluates to false.
-    assert("", "An empty string is falsy")
+    assert("", "An empty string is false in a boolean context")
 
 .. note::
 
-    Godot will *not* raise this warning if a literal falsy boolean is passed:
+    Godot will *not* raise this warning if a literal false boolean is passed:
 
     .. code-block::
 
