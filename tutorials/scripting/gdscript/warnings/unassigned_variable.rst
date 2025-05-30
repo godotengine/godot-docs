@@ -20,7 +20,7 @@ This warning may appear when attempting to use a variable that hasn't had a valu
     var my_var
     print(my_var)
 
-Without having a value assigned to the variable, Godot may not know what to do with it.
+By default, the variable will be ``null``. However, Godot considers this a warning because the user did not explicitly assign the value, and as such might be unaware of it.
 
 How to fix this warning
 -----------------------
