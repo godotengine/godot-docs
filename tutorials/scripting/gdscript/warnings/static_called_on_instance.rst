@@ -30,7 +30,9 @@ This warning may appear when attempting to call a static function on an instance
         # Will give warning STATIC_CALLED_ON_INSTANCE.
         var result = my_math_funcs.subtract_two(5)
 
-When a function is *static*, it belongs to the class as a whole, not any one specific instance of the class. This can be quite handy for writing functions that you want to access from anywhere, without needing a class instance.
+When a function is *static*, it belongs to the class as a whole, not any one specific instance of the class. See :ref:`Static variables <doc_gdscript_basics_static_variables>` and :ref:`Static functions <doc_gdscript_basics_static_functions>` for more information.
+
+There is often no need to call a static function on an instance of a class. In the example above, the function ``subtract_two()`` will always perform the same operation; one instance of the ``MathFuncs`` class would never return a different value than another instance. As such, when the user tries to call ``subtract_two()`` from an instance of ``MathFuncs``, it suggests the user may not understand what the function does.
 
 How to fix this warning
 -----------------------
