@@ -26,7 +26,7 @@ This warning may appear when declaring a variable whose type is an enum with val
     func _ready():
         var my_var: MyEnum  # Will give warning ENUM_VARIABLE_WITHOUT_DEFAULT.
 
-Godot will usually default an enum-typed variable to the integer 0. However, if the enum does not have a member that corresponds to 0, Godot will be confused on how to assign it.
+Godot will usually default an enum-typed variable to the integer ``0``. However, if the enum does not have a member that corresponds to ``0``, Godot will be confused on how to assign it.
 
 How to fix this warning
 -----------------------

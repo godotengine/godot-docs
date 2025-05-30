@@ -13,7 +13,7 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/confusable_ident
 When this warning occurs
 ------------------------
 
-Some alphabets such as Cyrillic have characters that look like Latin (i.e., English, Spanish, etc.) characters, but are actually different.
+Some alphabets such as Cyrillic have characters that look like Latin (such as English, Spanish, etc.) characters, but are actually different.
 
 .. code-block::
 
@@ -25,7 +25,7 @@ In this code snippet, the ``print`` statement would fail, because ``engine_name`
 How to fix this warning
 -----------------------
 
-Avoid using Cyrillic or other alphabets' characters that are visually similar to Latin ones. A good rule of thumb is to always use the Latin alphabet for program identifiers.
+Avoid using Cyrillic or other alphabets' characters that are visually similar to Latin ones. A good rule of thumb is to prefer the Latin alphabet for program identifiers.
 
 
 

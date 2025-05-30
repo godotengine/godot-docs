@@ -37,5 +37,5 @@ Assign the returned value to a variable for use later.
         var num = get_number()
         print("Got a number! It's %s" % num)
 
-However, some methods in Godot's APIs return values that are not necessary to store. As such, depending on the situation it may make more sense to ignore this warning.
+However, some methods in Godot's APIs return values that are not necessary to store. As such, depending on the situation, it may make more sense to ignore this warning.
 

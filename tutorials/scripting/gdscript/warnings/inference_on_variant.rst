@@ -13,7 +13,7 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/inference_on_var
 When this warning occurs
 ------------------------
 
-This warning may appear when using the ``:=`` operator to declare a variable with an inferred type, when the inferred type is Variant.
+This warning may appear when using the ``:=`` operator to declare a variable with an inferred type, when the inferred type is :ref:`Variant <class_Variant>`.
 
 .. code-block::
 
@@ -23,7 +23,7 @@ This warning may appear when using the ``:=`` operator to declare a variable wit
     func get_value():
         return 3
 
-Because the return type of ``get_value()`` isn't explicitly stated to be ``int``, Godot won't assume that it only returns an ``int``, and thus will consider its return type to be ``Variant``. The ``:=`` operator will then only be able to set the type of ``my_var`` to ``Variant``, which is effectively the same as not setting a type for ``my_var`` at all.
+Because the return type of ``get_value()`` isn't explicitly stated to be ``int``, Godot won't assume that it only returns an ``int``, and thus will consider its return type to be ``Variant``. The ``:=`` operator will then only be able to infer the type of ``my_var`` to ``Variant``, which is effectively the same as not inferring a type for ``my_var`` at all.
 
 How to fix this warning
 -----------------------

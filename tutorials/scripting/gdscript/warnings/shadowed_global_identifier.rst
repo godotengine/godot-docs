@@ -20,13 +20,13 @@ This warning may appear when using a name for something that is already being us
 * global class defined in another script file,
 * or built-in type (like ``int`` or ``String``).
 
-When something is *shadowed*, its name is taken by something else, and as such, it can't be accessed any more within that scope. For example, if you used the code:
+When something is *shadowed*, its name is taken by something else, and as such, it can't be accessed anymore within that scope. For example, if you used the code:
 
 .. code-block::
 
     var char = "A"
 
-and later within this block of code, you wanted to convert an ``int`` ASCII/Unicode character point into a ``String`` (i.e., what the ``char()`` function does), you would be out of luck.
+and later within this block of code, you wanted to convert an ``int`` ASCII/Unicode character point into a ``String`` (that's what the ``char()`` function does), you would be out of luck.
 
 
 How to fix this warning

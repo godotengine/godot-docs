@@ -20,7 +20,7 @@ This warning may appear when creating a variable for a particular scope, such as
     for i in 10:  # Will give warning INFERRED_DECLARATION. 
         print(i)
 
-In this example, the variable ``i`` did not have its type specified. It is implied to be an ``int``, but not outright stated in the code.
+In this example, the variable ``i`` did not have its type specified. It is inferred to be an ``int``, but not outright stated in the code.
 
 How to fix this warning
 -----------------------

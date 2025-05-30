@@ -25,7 +25,7 @@ This warning may appear when passing a value of a certain type to a function tha
     func set_health(new_health: int):
         current_health = new_health
 
-Because the type of ``original_health`` was not explicitly stated, it is inferred to be a ``Variant``. The ``Variant`` type is broader than the ``int`` type expected by the ``set_health()`` function, so it is possible that the variable ``original_health`` could hold a kind of value incompatible with it.
+Because the type of ``original_health`` was not explicitly stated, it is inferred to be a ``Variant``. The ``Variant`` type is broader than the ``int`` type expected by the ``set_health()`` function's parameter, so it is possible that the variable ``original_health`` could be an incompatible type.
 
 This warning may also appear when other supertypes are passed in to functions:
 

@@ -36,7 +36,7 @@ Provide a value for the enum that corresponds to the intended integer value.
     func _ready():
         var my_var = 3 as MyEnum  # Will now correspond to MyEnum.THREE.
 
-Remember that while Godot will assign integer values to enum members by default, you can also explicitly define their corresponding values:
+Remember that, while Godot will assign integer values to enum members by default, you can also explicitly define their corresponding values:
 
 .. code-block::
 

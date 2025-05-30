@@ -13,7 +13,7 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/standalone_expre
 When this warning occurs
 ------------------------
 
-This warning may appear when writing an expression (a combination of values) that aren't assigned to anything or passed to a function:
+This warning may appear when writing an expression that is not assigned to anything or passed to a function:
 
 .. code-block::
 
@@ -38,12 +38,12 @@ Note that the warning states the expression *may* have no effect, not that it *w
         counter += 1
         return val + 2
 
-Here, the line in ``_ready()`` receives the ``STANDALONE_EXPRESSION`` warning, even though the call to ``add_to_val()`` changes the ``counter`` property. (The other math calculations still won't have any effect, though.)
+Here, the line in ``_ready()`` receives the ``STANDALONE_EXPRESSION`` warning, even though the call to ``add_to_val()`` changes the ``counter`` property. The other math calculations won't have any effect.
 
 How to fix this warning
 -----------------------
 
-If you've written an expression in your code, it's likely because you intended to use it for something. Make sure you're assigning it to a variable or passing it to a function if so.
+If you've written an expression in your code, it's likely because you intended to use it for something. Make sure you're assigning it to a variable or passing it to a function.
 
 If you're certain that you don't need the expression for anything, remove it. Make sure to keep function calls that may have side effects (such as the ``add_to_val()`` call in the example above).
 

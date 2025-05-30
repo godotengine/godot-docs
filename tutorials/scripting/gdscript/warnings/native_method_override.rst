@@ -13,7 +13,7 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/native_method_ov
 When this warning occurs
 ------------------------
 
-This warning may appear if you try to define a method in a script that has the name as a native class's method:
+This warning may appear if you try to define a method in a script that has the same name as a native class's method:
 
 .. code-block::
 
@@ -22,7 +22,7 @@ This warning may appear if you try to define a method in a script that has the n
     func get_class():  # Will give warning NATIVE_METHOD_OVERRIDE.
         return "MyCoolClass"
 
-Here, ``get_class()`` is a method on ``Object``. When Godot tries to call this class's ``get_class()`` method for internal purposes, it will use the already-existing definition, not the one the user has defined here.
+Here, ``get_class()`` is a method on ``Object``. When Godot tries to call this class's ``get_class()`` method internally, it will use its own internal method, not the one the user has defined here.
 
 How to fix this warning
 -----------------------

@@ -13,7 +13,7 @@ To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/unreachable_code
 When this warning occurs
 ------------------------
 
-This warning may appear if there is code in a function that can never be reached because all possible code paths before it would hit a ``return`` statement and leave the function:
+This warning may appear if there is code that can never be reached because all possible code paths before it would hit a ``return`` statement and leave a function:
 
 .. code-block::
 
