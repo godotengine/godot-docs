@@ -25,11 +25,11 @@ Because both operands are integers, the result will be an integer as well. Integ
 How to fix this warning
 -----------------------
 
-Use floating-point numbers (``float``) for the division operation:
+Use a floating-point number (``float``) for at least one operand of the division operation:
 
 .. code-block::
 
-    var result = 5.0 / 3.0
+    var result = 5.0 / 3
 
 If the integers being divided are variables, cast them to ``float``:
 
