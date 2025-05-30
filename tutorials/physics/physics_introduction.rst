@@ -168,17 +168,25 @@ would be as follows::
     # Example: Setting mask value for enabling layers 1, 3 and 4
 
     # Binary - set the bit corresponding to the layers you want to enable (1, 3, and 4) to 1, set all other bits to 0.
-    # Note: Layer 32 is the first bit, layer 1 is the last. The mask for layers 4,3 and 1 is therefore
+    # Note: Layer 32 is the first bit, layer 1 is the last. The mask for layers 4, 3 and 1 is therefore:
     0b00000000_00000000_00000000_00001101
     # (This can be shortened to 0b1101)
 
-    # Hexadecimal equivalent (1101 binary converted to hexadecimal)
+    # Hexadecimal equivalent (1101 binary converted to hexadecimal).
     0x000d
-    # (This value can be shortened to 0xd)
+    # (This value can be shortened to 0xd.)
 
     # Decimal - Add the results of 2 to the power of (layer to be enabled - 1).
     # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
-    pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
+    #
+    # We can use the `<<` operator to shift the bit to the left by the layer number we want to enable.
+    # This is a faster way to multiply by powers of 2 than `pow()`.
+    # Additionally, we use the `|` (binary OR) operator to combine the results of each layer.
+    # This ensures we don't add the same layer multiple times, which would behave incorrectly.
+    (1 << 1 - 1) | (1 << 3 - 1) | (1 << 4 - 1)
+
+    # The above can alternatively be written as:
+    # pow(2, 1 - 1) + pow(2, 3 - 1) + pow(2, 4 - 1)
 
 You can also set bits independently by calling ``set_collision_layer_value(layer_number, value)``
 or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`CollisionObject2D <class_CollisionObject2D>` as follows::
