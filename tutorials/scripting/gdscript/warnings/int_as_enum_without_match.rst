@@ -27,7 +27,16 @@ The purpose of the enum is to keep track of a pre-determined number of possible 
 How to fix this warning
 -----------------------
 
-Provide a value for the enum that corresponds to the intended integer value.
+Ensure that the enum type you're attempting to cast an integer to has a corresponding value. If it doesn't, it may be a sign that you're attempting to use the wrong integer.
+
+.. code-block::
+
+    enum MyEnum { ZERO, ONE, TWO }
+
+    func _ready():
+        var my_var = 2 as MyEnum  # Will correspond to MyEnum.TWO
+
+If you're certain that the integer is correct, then modify the enum's list of values so that it has one that corresponds to the integer.
 
 .. code-block::
     
@@ -45,11 +54,3 @@ Remember that, while Godot will assign integer values to enum members by default
     func _ready():
         var my_var = 10000 as MyEnum  # Will correspond to MyEnum.TEN_THOUSAND.
 
-Alternatively, you may just need to change the integer number you're attempting to cast as an enum value to be within the range of valid values.
-
-.. code-block::
-
-    enum MyEnum { ZERO, ONE, TWO }
-
-    func _ready():
-        var my_var = 2 as MyEnum  # Will correspond to MyEnum.TWO
