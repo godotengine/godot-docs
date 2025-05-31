@@ -34,7 +34,9 @@ little-endian-encoded. All packets have a 4-byte header representing an
 integer, specifying the type of data.
 
 The lowest value two bytes are used to determine the type, while the highest value
-two bytes contain flags::
+two bytes contain flags:
+
+::
 
     base_type = val & 0xFFFF;
     flags = val >> 16;

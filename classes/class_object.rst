@@ -274,6 +274,14 @@ One-shot connections disconnect themselves after emission.
 
 Reference-counted connections can be assigned to the same :ref:`Callable<class_Callable>` multiple times. Each disconnection decreases the internal counter. The signal fully disconnects only when the counter reaches 0.
 
+.. _class_Object_constant_CONNECT_APPEND_SOURCE_OBJECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectFlags<enum_Object_ConnectFlags>` **CONNECT_APPEND_SOURCE_OBJECT** = ``16``
+
+The source object is automatically bound when a :ref:`PackedScene<class_PackedScene>` is instantiated. If this flag bit is enabled, the source object will be appended right after the original arguments of the signal.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -520,6 +528,8 @@ Called when the object's script is instantiated, oftentimes after the object is 
 :ref:`Variant<class_Variant>` **_iter_get**\ (\ iter\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_Object_private_method__iter_get>`
 
 Returns the current iterable value. ``iter`` stores the iteration state, but unlike :ref:`_iter_init()<class_Object_private_method__iter_init>` and :ref:`_iter_next()<class_Object_private_method__iter_next>` the state is supposed to be read-only, so there is no :ref:`Array<class_Array>` wrapper.
+
+\ **Tip:** In GDScript, you can use a subtype of :ref:`Variant<class_Variant>` as the return type for :ref:`_iter_get()<class_Object_private_method__iter_get>`. The specified type will be used to set the type of the iterator variable in ``for`` loops, enhancing type safety.
 
 .. rst-class:: classref-item-separator
 

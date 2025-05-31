@@ -32,6 +32,8 @@ Properties
    :widths: auto
 
    +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`enabled<class_TranslationDomain_property_enabled>`                                                                           | ``true``  |
+   +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`pseudolocalization_accents_enabled<class_TranslationDomain_property_pseudolocalization_accents_enabled>`                     | ``true``  |
    +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`pseudolocalization_double_vowels_enabled<class_TranslationDomain_property_pseudolocalization_double_vowels_enabled>`         | ``false`` |
@@ -64,11 +66,15 @@ Methods
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                | :ref:`clear<class_TranslationDomain_method_clear>`\ (\ )                                                                                                                                                                                                                    |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_locale_override<class_TranslationDomain_method_get_locale_override>`\ (\ ) |const|                                                                                                                                                                                |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Translation<class_Translation>` | :ref:`get_translation_object<class_TranslationDomain_method_get_translation_object>`\ (\ locale\: :ref:`String<class_String>`\ ) |const|                                                                                                                                    |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`   | :ref:`pseudolocalize<class_TranslationDomain_method_pseudolocalize>`\ (\ message\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                           |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                | :ref:`remove_translation<class_TranslationDomain_method_remove_translation>`\ (\ translation\: :ref:`Translation<class_Translation>`\ )                                                                                                                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_locale_override<class_TranslationDomain_method_set_locale_override>`\ (\ locale\: :ref:`String<class_String>`\ )                                                                                                                                                  |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`   | :ref:`translate<class_TranslationDomain_method_translate>`\ (\ message\: :ref:`StringName<class_StringName>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const|                                                                                                |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,6 +89,23 @@ Methods
 
 Property Descriptions
 ---------------------
+
+.. _class_TranslationDomain_property_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **enabled** = ``true`` :ref:`🔗<class_TranslationDomain_property_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_enabled**\ (\ )
+
+If ``true``, translation is enabled. Otherwise, :ref:`translate()<class_TranslationDomain_method_translate>` and :ref:`translate_plural()<class_TranslationDomain_method_translate_plural>` will return the input message unchanged regardless of the current locale.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_TranslationDomain_property_pseudolocalization_accents_enabled:
 
@@ -284,6 +307,18 @@ Removes all translations.
 
 ----
 
+.. _class_TranslationDomain_method_get_locale_override:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_locale_override**\ (\ ) |const| :ref:`🔗<class_TranslationDomain_method_get_locale_override>`
+
+Returns the locale override of the domain. Returns an empty string if locale override is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TranslationDomain_method_get_translation_object:
 
 .. rst-class:: classref-method
@@ -315,6 +350,22 @@ Returns the pseudolocalized string based on the ``message`` passed in.
 |void| **remove_translation**\ (\ translation\: :ref:`Translation<class_Translation>`\ ) :ref:`🔗<class_TranslationDomain_method_remove_translation>`
 
 Removes the given translation.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TranslationDomain_method_set_locale_override:
+
+.. rst-class:: classref-method
+
+|void| **set_locale_override**\ (\ locale\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TranslationDomain_method_set_locale_override>`
+
+Sets the locale override of the domain.
+
+If ``locale`` is an empty string, locale override is disabled. Otherwise, ``locale`` will be standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
+
+\ **Note:** Calling this method does not automatically update texts in the scene tree. Please propagate the :ref:`MainLoop.NOTIFICATION_TRANSLATION_CHANGED<class_MainLoop_constant_NOTIFICATION_TRANSLATION_CHANGED>` signal manually.
 
 .. rst-class:: classref-item-separator
 

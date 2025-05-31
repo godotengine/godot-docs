@@ -315,7 +315,7 @@ Used by the inspector, set to ``true`` when the property can be deleted by the u
 - |void| **set_draw_background**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_draw_background**\ (\ )
 
-Used by the inspector, set to ``true`` when the property label is drawn.
+Used by the inspector, set to ``true`` when the property background is drawn.
 
 .. rst-class:: classref-item-separator
 
@@ -332,7 +332,7 @@ Used by the inspector, set to ``true`` when the property label is drawn.
 - |void| **set_draw_label**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_draw_label**\ (\ )
 
-Used by the inspector, set to ``true`` when the property background is drawn.
+Used by the inspector, set to ``true`` when the property label is drawn.
 
 .. rst-class:: classref-item-separator
 
@@ -528,7 +528,9 @@ If one or several properties have changed, this must be called. ``field`` is use
 
 :ref:`Object<class_Object>` **get_edited_object**\ (\ ) :ref:`🔗<class_EditorProperty_method_get_edited_object>`
 
-Gets the edited object.
+Returns the edited object.
+
+\ **Note:** This method could return ``null`` if the editor has not yet been associated with a property. However, in :ref:`_update_property()<class_EditorProperty_private_method__update_property>` and :ref:`_set_read_only()<class_EditorProperty_private_method__set_read_only>`, this value is *guaranteed* to be non-``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -540,7 +542,9 @@ Gets the edited object.
 
 :ref:`StringName<class_StringName>` **get_edited_property**\ (\ ) |const| :ref:`🔗<class_EditorProperty_method_get_edited_property>`
 
-Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin._parse_property()<class_EditorInspectorPlugin_private_method__parse_property>`), then this will return the property.
+Returns the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin._parse_property()<class_EditorInspectorPlugin_private_method__parse_property>`), then this will return the property.
+
+\ **Note:** This method could return ``null`` if the editor has not yet been associated with a property. However, in :ref:`_update_property()<class_EditorProperty_private_method__update_property>` and :ref:`_set_read_only()<class_EditorProperty_private_method__set_read_only>`, this value is *guaranteed* to be non-``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -612,7 +616,7 @@ Assigns object and property to edit.
 
 |void| **update_property**\ (\ ) :ref:`🔗<class_EditorProperty_method_update_property>`
 
-Forces refresh of the property display.
+Forces a refresh of the property display.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

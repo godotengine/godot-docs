@@ -23,6 +23,10 @@ Install OpenJDK 17
 
 Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant=openjdk17>`__.
 
+.. note::
+
+    Higher versions of the JDK are also supported, but we recommend using JDK 17 for optimal compatibility and stability.
+
 Download the Android SDK
 ------------------------
 
@@ -41,7 +45,7 @@ Download and install the Android SDK.
   - Ensure that the `NDK and CMake are installed and configured <https://developer.android.com/studio/projects/install-ndk>`__.
 
     - CMake version 3.10.2.4988404
-    - NDK version r23c (23.2.8568313)
+    - NDK version r27c (27.2.12479018)
 
 - Alternatively, you can install the Android SDK with the `sdkmanager` command line tool.
 
@@ -50,7 +54,7 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;27.2.12479018"
 
 .. note::
 

@@ -447,6 +447,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`display/display_server/driver.macos<class_ProjectSettings_property_display/display_server/driver.macos>`                                                                                             |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`display/display_server/driver.visionos<class_ProjectSettings_property_display/display_server/driver.visionos>`                                                                                       |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`display/display_server/driver.windows<class_ProjectSettings_property_display/display_server/driver.windows>`                                                                                         |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`display/mouse_cursor/custom_image<class_ProjectSettings_property_display/mouse_cursor/custom_image>`                                                                                                 | ``""``                                                                                           |
@@ -1319,7 +1321,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`physics/2d/run_on_separate_thread<class_ProjectSettings_property_physics/2d/run_on_separate_thread>`                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`physics/2d/sleep_threshold_angular<class_ProjectSettings_property_physics/2d/sleep_threshold_angular>`                                                                                               | ``0.139626``                                                                                     |
+   | :ref:`float<class_float>`                         | :ref:`physics/2d/sleep_threshold_angular<class_ProjectSettings_property_physics/2d/sleep_threshold_angular>`                                                                                               | ``0.13962634``                                                                                   |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/2d/sleep_threshold_linear<class_ProjectSettings_property_physics/2d/sleep_threshold_linear>`                                                                                                 | ``2.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1347,9 +1349,11 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`physics/3d/physics_engine<class_ProjectSettings_property_physics/3d/physics_engine>`                                                                                                                 | ``"DEFAULT"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`physics/3d/physics_interpolation/scene_traversal<class_ProjectSettings_property_physics/3d/physics_interpolation/scene_traversal>`                                                                   | ``"DEFAULT"``                                                                                    |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`physics/3d/run_on_separate_thread<class_ProjectSettings_property_physics/3d/run_on_separate_thread>`                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`physics/3d/sleep_threshold_angular<class_ProjectSettings_property_physics/3d/sleep_threshold_angular>`                                                                                               | ``0.139626``                                                                                     |
+   | :ref:`float<class_float>`                         | :ref:`physics/3d/sleep_threshold_angular<class_ProjectSettings_property_physics/3d/sleep_threshold_angular>`                                                                                               | ``0.13962634``                                                                                   |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/3d/sleep_threshold_linear<class_ProjectSettings_property_physics/3d/sleep_threshold_linear>`                                                                                                 | ``0.1``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1375,13 +1379,13 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`                                                                                     | ``60``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/collisions/active_edge_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/active_edge_threshold>`                                                   | ``0.872665``                                                                                     |
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/collisions/active_edge_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/active_edge_threshold>`                                                   | ``0.87266463``                                                                                   |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/collisions/collision_margin_fraction<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/collision_margin_fraction>`                                           | ``0.08``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/joints/world_node<class_ProjectSettings_property_physics/jolt_physics_3d/joints/world_node>`                                                                                 | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/limits/max_angular_velocity<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_angular_velocity>`                                                             | ``47.1239``                                                                                      |
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/limits/max_angular_velocity<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_angular_velocity>`                                                             | ``47.12389``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/limits/max_bodies<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_bodies>`                                                                                 | ``10240``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1411,7 +1415,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor>`                                 | ``0.2``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold>`               | ``0.0349066``                                                                                    |
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold>`               | ``0.034906585``                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/body_pair_contact_cache_distance_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_distance_threshold>`         | ``0.001``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1460,6 +1464,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>`                                                                                     | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`                                                                     | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`rendering/anti_aliasing/quality/smaa_edge_detection_threshold<class_ProjectSettings_property_rendering/anti_aliasing/quality/smaa_edge_detection_threshold>`                                         | ``0.05``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`                                                                         | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1673,6 +1679,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/reflections/sky_reflections/texture_array_reflections.mobile<class_ProjectSettings_property_rendering/reflections/sky_reflections/texture_array_reflections.mobile>`                       | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/reflections/specular_occlusion/enabled<class_ProjectSettings_property_rendering/reflections/specular_occlusion/enabled>`                                                                   | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method<class_ProjectSettings_property_rendering/renderer/rendering_method>`                                                                                             | ``"forward_plus"``                                                                               |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method.mobile<class_ProjectSettings_property_rendering/renderer/rendering_method.mobile>`                                                                               | ``"mobile"``                                                                                     |
@@ -1696,6 +1704,8 @@ Properties
    | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.linuxbsd<class_ProjectSettings_property_rendering/rendering_device/driver.linuxbsd>`                                                                               | ``"vulkan"``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.macos<class_ProjectSettings_property_rendering/rendering_device/driver.macos>`                                                                                     | ``"metal"``                                                                                      |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.visionos<class_ProjectSettings_property_rendering/rendering_device/driver.visionos>`                                                                               | ``"metal"``                                                                                      |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.windows<class_ProjectSettings_property_rendering/rendering_device/driver.windows>`                                                                                 | ``"vulkan"``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1748,6 +1758,12 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`rendering/shading/overrides/force_lambert_over_burley.mobile<class_ProjectSettings_property_rendering/shading/overrides/force_lambert_over_burley.mobile>`                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/shading/overrides/force_vertex_shading<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>`                                                                   | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rendering/textures/basis_universal/rdo_dict_size<class_ProjectSettings_property_rendering/textures/basis_universal/rdo_dict_size>`                                                                   | ``1024``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/basis_universal/zstd_supercompression<class_ProjectSettings_property_rendering/textures/basis_universal/zstd_supercompression>`                                                   | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rendering/textures/basis_universal/zstd_supercompression_level<class_ProjectSettings_property_rendering/textures/basis_universal/zstd_supercompression_level>`                                       | ``6``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/textures/canvas_textures/default_texture_filter<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_filter>`                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -4415,6 +4431,18 @@ LinuxBSD override for :ref:`display/display_server/driver<class_ProjectSettings_
 :ref:`String<class_String>` **display/display_server/driver.macos** :ref:`🔗<class_ProjectSettings_property_display/display_server/driver.macos>`
 
 MacOS override for :ref:`display/display_server/driver<class_ProjectSettings_property_display/display_server/driver>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_display/display_server/driver.visionos:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **display/display_server/driver.visionos** :ref:`🔗<class_ProjectSettings_property_display/display_server/driver.visionos>`
+
+visionOS override for :ref:`display/display_server/driver<class_ProjectSettings_property_display/display_server/driver>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10046,7 +10074,7 @@ If ``true``, the 2D physics server runs on a separate thread, making better use 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/sleep_threshold_angular** = ``0.139626`` :ref:`🔗<class_ProjectSettings_property_physics/2d/sleep_threshold_angular>`
+:ref:`float<class_float>` **physics/2d/sleep_threshold_angular** = ``0.13962634`` :ref:`🔗<class_ProjectSettings_property_physics/2d/sleep_threshold_angular>`
 
 Threshold angular velocity under which a 2D physics body will be considered inactive. See :ref:`PhysicsServer2D.SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer2D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD>`.
 
@@ -10274,6 +10302,24 @@ Third-party extensions and modules can add other physics engines to select with 
 
 ----
 
+.. _class_ProjectSettings_property_physics/3d/physics_interpolation/scene_traversal:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **physics/3d/physics_interpolation/scene_traversal** = ``"DEFAULT"`` :ref:`🔗<class_ProjectSettings_property_physics/3d/physics_interpolation/scene_traversal>`
+
+The approach used for 3D scene traversal when physics interpolation is enabled.
+
+- ``DEFAULT``: The default optimized method.
+
+- ``Legacy``: The previous reference method used for scene tree traversal, which is slower.
+
+- ``Debug``: Swaps between ``DEFAULT`` and ``Legacy`` methods on alternating frames, and provides logging information (which in turn makes it slower). Intended for debugging only; you should use the ``DEFAULT`` method in most cases.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_physics/3d/run_on_separate_thread:
 
 .. rst-class:: classref-property
@@ -10292,7 +10338,7 @@ If ``true``, the 3D physics server runs on a separate thread, making better use 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/sleep_threshold_angular** = ``0.139626`` :ref:`🔗<class_ProjectSettings_property_physics/3d/sleep_threshold_angular>`
+:ref:`float<class_float>` **physics/3d/sleep_threshold_angular** = ``0.13962634`` :ref:`🔗<class_ProjectSettings_property_physics/3d/sleep_threshold_angular>`
 
 Threshold angular velocity under which a 3D physics body will be considered inactive. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD>`.
 
@@ -10468,7 +10514,7 @@ The number of fixed iterations per second. This controls how often physics simul
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/jolt_physics_3d/collisions/active_edge_threshold** = ``0.872665`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/active_edge_threshold>`
+:ref:`float<class_float>` **physics/jolt_physics_3d/collisions/active_edge_threshold** = ``0.87266463`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/active_edge_threshold>`
 
 The maximum angle, in radians, between two adjacent triangles in a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` or :ref:`HeightMapShape3D<class_HeightMapShape3D>` for which the edge between those triangles is considered inactive.
 
@@ -10518,7 +10564,7 @@ Which of the two nodes bound by a joint should represent the world when one of t
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/jolt_physics_3d/limits/max_angular_velocity** = ``47.1239`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_angular_velocity>`
+:ref:`float<class_float>` **physics/jolt_physics_3d/limits/max_angular_velocity** = ``47.12389`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_angular_velocity>`
 
 The maximum angular velocity that a :ref:`RigidBody3D<class_RigidBody3D>` can reach, in radians per second.
 
@@ -10728,7 +10774,7 @@ How much of the position error of a :ref:`RigidBody3D<class_RigidBody3D>` to fix
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold** = ``0.0349066`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold>`
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold** = ``0.034906585`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold>`
 
 The maximum relative angle by which a body pair can move and still reuse the collision results from the previous physics step, in radians.
 
@@ -11059,6 +11105,20 @@ Another way to combat specular aliasing is to enable :ref:`rendering/anti_aliasi
 \ **Note:** Screen-space antialiasing is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 \ **Note:** This property is only read when the project starts. To set the screen-space antialiasing mode at runtime, set :ref:`Viewport.screen_space_aa<class_Viewport_property_screen_space_aa>` on the root :ref:`Viewport<class_Viewport>` instead, or use :ref:`RenderingServer.viewport_set_screen_space_aa()<class_RenderingServer_method_viewport_set_screen_space_aa>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/anti_aliasing/quality/smaa_edge_detection_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **rendering/anti_aliasing/quality/smaa_edge_detection_threshold** = ``0.05`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/smaa_edge_detection_threshold>`
+
+Sets the sensitivity to edges when using SMAA for antialiasing. Lower values will catch more edges, at a potentially higher performance cost.
+
+\ **Note:** This property is only read when the project starts. There is currently no way to change this setting at run-time.
 
 .. rst-class:: classref-item-separator
 
@@ -12492,6 +12552,18 @@ Lower-end override for :ref:`rendering/reflections/sky_reflections/texture_array
 
 ----
 
+.. _class_ProjectSettings_property_rendering/reflections/specular_occlusion/enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/reflections/specular_occlusion/enabled** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/specular_occlusion/enabled>`
+
+If ``true``, reduces reflections based on ambient light.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/renderer/rendering_method:
 
 .. rst-class:: classref-property
@@ -12687,6 +12759,22 @@ Two options are supported:
 - ``metal`` (default), Metal from native drivers, only supported on Apple Silicon Macs. On Intel Macs, it will automatically fall back to ``vulkan`` as Metal support is not implemented.
 
 - ``vulkan``, Vulkan over Metal via MoltenVK, supported on both Apple Silicon and Intel Macs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/rendering_device/driver.visionos:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **rendering/rendering_device/driver.visionos** = ``"metal"`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.visionos>`
+
+visionOS override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
+
+Only one option is supported:
+
+- ``metal`` (default), Metal from native drivers.
 
 .. rst-class:: classref-item-separator
 
@@ -13055,6 +13143,44 @@ Lower-end override for :ref:`rendering/shading/overrides/force_lambert_over_burl
 :ref:`bool<class_bool>` **rendering/shading/overrides/force_vertex_shading** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>`
 
 If ``true``, forces vertex shading for all rendering. This can increase performance a lot, but also reduces quality immensely. Can be used to optimize performance on low-end mobile devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/textures/basis_universal/rdo_dict_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering/textures/basis_universal/rdo_dict_size** = ``1024`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/basis_universal/rdo_dict_size>`
+
+The dictionary size for Rate-Distortion Optimization (RDO) when importing textures as Basis Universal and when RDO is enabled, ranging from ``64`` to ``65536``. Higher values reduce the file sizes further, but make encoding times significantly longer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/textures/basis_universal/zstd_supercompression:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/textures/basis_universal/zstd_supercompression** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/basis_universal/zstd_supercompression>`
+
+If ``true``, enables Zstandard supercompression to reduce file size when importing textures as Basis Universal.
+
+\ **Note:** Basis Universal textures need to be compressed to gain the benefit of smaller file sizes, otherwise they are as large as VRAM-compressed textures.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/textures/basis_universal/zstd_supercompression_level:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering/textures/basis_universal/zstd_supercompression_level** = ``6`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/basis_universal/zstd_supercompression_level>`
+
+Specify the compression level for Basis Universal Zstandard supercompression, ranging from ``1`` to ``22``.
 
 .. rst-class:: classref-item-separator
 
@@ -13645,6 +13771,8 @@ Adds a custom property info to a property. The dictionary must contain:
     ProjectSettings.AddPropertyInfo(propertyInfo);
 
 
+
+\ **Note:** Setting ``"usage"`` for the property is not supported. Use :ref:`set_as_basic()<class_ProjectSettings_method_set_as_basic>`, :ref:`set_restart_if_changed()<class_ProjectSettings_method_set_restart_if_changed>`, and :ref:`set_as_internal()<class_ProjectSettings_method_set_as_internal>` to modify usage flags.
 
 .. rst-class:: classref-item-separator
 

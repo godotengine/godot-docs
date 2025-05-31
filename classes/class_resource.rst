@@ -64,39 +64,41 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_private_method__get_rid>`\ (\ ) |virtual| |const|                                                           |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`_reset_state<class_Resource_private_method__reset_state>`\ (\ ) |virtual|                                                           |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`_set_path_cache<class_Resource_private_method__set_path_cache>`\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const|         |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>`\ (\ ) |virtual|                                         |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>`\ (\ subresources\: :ref:`bool<class_bool>` = false\ ) |const|                           |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`emit_changed<class_Resource_method_emit_changed>`\ (\ )                                                                             |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`     | :ref:`generate_scene_unique_id<class_Resource_method_generate_scene_unique_id>`\ (\ ) |static|                                            |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`     | :ref:`get_id_for_path<class_Resource_method_get_id_for_path>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                           |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>`\ (\ ) |const|                                                               |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>`\ (\ ) |const|                                                                               |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`is_built_in<class_Resource_method_is_built_in>`\ (\ ) |const|                                                                       |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`reset_state<class_Resource_method_reset_state>`\ (\ )                                                                               |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`set_id_for_path<class_Resource_method_set_id_for_path>`\ (\ path\: :ref:`String<class_String>`, id\: :ref:`String<class_String>`\ ) |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`set_path_cache<class_Resource_method_set_path_cache>`\ (\ path\: :ref:`String<class_String>`\ )                                     |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>`\ (\ )                                                             |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`take_over_path<class_Resource_method_take_over_path>`\ (\ path\: :ref:`String<class_String>`\ )                                     |
-   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_private_method__get_rid>`\ (\ ) |virtual| |const|                                                                                                   |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`_reset_state<class_Resource_private_method__reset_state>`\ (\ ) |virtual|                                                                                                   |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`_set_path_cache<class_Resource_private_method__set_path_cache>`\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const|                                                 |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>`\ (\ ) |virtual|                                                                                 |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>`\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const|                                                                           |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`duplicate_deep<class_Resource_method_duplicate_deep>`\ (\ deep_subresources_mode\: :ref:`ResourceDeepDuplicateMode<enum_Resource_ResourceDeepDuplicateMode>` = 1\ ) |const| |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`emit_changed<class_Resource_method_emit_changed>`\ (\ )                                                                                                                     |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`generate_scene_unique_id<class_Resource_method_generate_scene_unique_id>`\ (\ ) |static|                                                                                    |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`get_id_for_path<class_Resource_method_get_id_for_path>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                   |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>`\ (\ ) |const|                                                                                                       |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>`\ (\ ) |const|                                                                                                                       |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`is_built_in<class_Resource_method_is_built_in>`\ (\ ) |const|                                                                                                               |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`reset_state<class_Resource_method_reset_state>`\ (\ )                                                                                                                       |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_id_for_path<class_Resource_method_set_id_for_path>`\ (\ path\: :ref:`String<class_String>`, id\: :ref:`String<class_String>`\ )                                         |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_path_cache<class_Resource_method_set_path_cache>`\ (\ path\: :ref:`String<class_String>`\ )                                                                             |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>`\ (\ )                                                                                                     |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`take_over_path<class_Resource_method_take_over_path>`\ (\ path\: :ref:`String<class_String>`\ )                                                                             |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -130,6 +132,45 @@ Emitted when the resource changes, usually when one of its properties is modifie
 **Deprecated:** This signal is only emitted when the resource is created. Override :ref:`_setup_local_to_scene()<class_Resource_private_method__setup_local_to_scene>` instead.
 
 Emitted by a newly duplicated resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` set to ``true``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_Resource_ResourceDeepDuplicateMode:
+
+.. rst-class:: classref-enumeration
+
+enum **ResourceDeepDuplicateMode**: :ref:`🔗<enum_Resource_ResourceDeepDuplicateMode>`
+
+.. _class_Resource_constant_RESOURCE_DEEP_DUPLICATE_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ResourceDeepDuplicateMode<enum_Resource_ResourceDeepDuplicateMode>` **RESOURCE_DEEP_DUPLICATE_NONE** = ``0``
+
+No subresorces at all are duplicated. This is useful even in a deep duplication to have all the arrays and dictionaries duplicated but still pointing to the original resources.
+
+.. _class_Resource_constant_RESOURCE_DEEP_DUPLICATE_INTERNAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ResourceDeepDuplicateMode<enum_Resource_ResourceDeepDuplicateMode>` **RESOURCE_DEEP_DUPLICATE_INTERNAL** = ``1``
+
+Only subresources without a path or with a scene-local path will be duplicated.
+
+.. _class_Resource_constant_RESOURCE_DEEP_DUPLICATE_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ResourceDeepDuplicateMode<enum_Resource_ResourceDeepDuplicateMode>` **RESOURCE_DEEP_DUPLICATE_ALL** = ``2``
+
+Every subresource found will be duplicated, even if it has a non-local path. In other words, even potentially big resources stored separately will be duplicated.
 
 .. rst-class:: classref-section-separator
 
@@ -288,21 +329,37 @@ Override this method to customize the newly duplicated resource created from :re
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **duplicate**\ (\ subresources\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Resource_method_duplicate>`
+:ref:`Resource<class_Resource>` **duplicate**\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Resource_method_duplicate>`
 
 Duplicates this resource, returning a new resource with its ``export``\ ed or :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` properties copied from the original.
 
-If ``subresources`` is ``false``, a shallow copy is returned; nested resources within subresources are not duplicated and are shared with the original resource (with one exception; see below). If ``subresources`` is ``true``, a deep copy is returned; nested subresources will be duplicated and are not shared (with two exceptions; see below).
+If ``deep`` is ``false``, a **shallow** copy is returned: nested :ref:`Array<class_Array>`, :ref:`Dictionary<class_Dictionary>`, and **Resource** properties are not duplicated and are shared with the original resource.
 
-\ ``subresources`` is usually respected, with the following exceptions:
+If ``deep`` is ``true``, a **deep** copy is returned: all nested arrays, dictionaries, and packed arrays are also duplicated (recursively). Any **Resource** found inside will only be duplicated if it's local, like :ref:`RESOURCE_DEEP_DUPLICATE_INTERNAL<class_Resource_constant_RESOURCE_DEEP_DUPLICATE_INTERNAL>` used with :ref:`duplicate_deep()<class_Resource_method_duplicate_deep>`.
 
-- Subresource properties with the :ref:`@GlobalScope.PROPERTY_USAGE_ALWAYS_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_ALWAYS_DUPLICATE>` flag are always duplicated.
+The following exceptions apply:
+
+- Subresource properties with the :ref:`@GlobalScope.PROPERTY_USAGE_ALWAYS_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_ALWAYS_DUPLICATE>` flag are always duplicated (recursively or not, depending on ``deep``).
 
 - Subresource properties with the :ref:`@GlobalScope.PROPERTY_USAGE_NEVER_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_NEVER_DUPLICATE>` flag are never duplicated.
 
-- Subresources inside :ref:`Array<class_Array>` and :ref:`Dictionary<class_Dictionary>` properties are never duplicated.
-
 \ **Note:** For custom resources, this method will fail if :ref:`Object._init()<class_Object_private_method__init>` has been defined with required parameters.
+
+\ **Note:** When duplicating with ``deep`` set to ``true``, each resource found, including the one on which this method is called, will be only duplicated once and referenced as many times as needed in the duplicate. For instance, if you are duplicating resource A that happens to have resource B referenced twice, you'll get a new resource A' referencing a new resource B' twice.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Resource_method_duplicate_deep:
+
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **duplicate_deep**\ (\ deep_subresources_mode\: :ref:`ResourceDeepDuplicateMode<enum_Resource_ResourceDeepDuplicateMode>` = 1\ ) |const| :ref:`🔗<class_Resource_method_duplicate_deep>`
+
+Duplicates this resource, deeply, like :ref:`duplicate()<class_Resource_method_duplicate>`\ ``(true)``, with extra control over how subresources are handled.
+
+\ ``deep_subresources_mode`` must be one of the values from :ref:`ResourceDeepDuplicateMode<enum_Resource_ResourceDeepDuplicateMode>`.
 
 .. rst-class:: classref-item-separator
 

@@ -8,18 +8,24 @@ Introduction to the buildsystem
 
 Godot is a primarily C++ project and it :ref:`uses the SCons build system. <doc_faq_why_scons>`
 We love SCons for how maintainable and easy to set up it makes our buildsystem. And thanks to
-that compiling Godot from source can be as simple as running::
+that compiling Godot from source can be as simple as running:
+
+::
 
     scons
 
 This produces an editor build for your current platform, operating system, and architecture.
 You can change what gets built by specifying a target, a platform, and/or an architecture.
-For example, to build an export template used for running exported games, you can run::
+For example, to build an export template used for running exported games, you can run:
+
+::
 
     scons target=template_release
 
 If you plan to debug or develop the engine, then you might want to enable the ``dev_build``
-option to enable dev-only debugging code::
+option to enable dev-only debugging code:
+
+::
 
     scons dev_build=yes
 
@@ -90,7 +96,9 @@ Resulting binary
 ----------------
 
 The resulting binaries will be placed in the ``bin/`` subdirectory,
-generally with this naming convention::
+generally with this naming convention:
+
+::
 
     godot.<platform>.<target>[.dev][.double].<arch>[.<extra_suffix>][.<ext>]
 
@@ -196,6 +204,8 @@ binary name.
     There are additional SCons options to enable *sanitizers*, which are tools
     you can enable at compile-time to better debug certain engine issues.
     See :ref:`doc_using_sanitizers` for more information.
+
+.. _doc_introduction_to_the_buildsystem_debugging_symbols:
 
 Debugging symbols
 -----------------

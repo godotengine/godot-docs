@@ -160,7 +160,9 @@ All images are stored in folders named ``img`` next to the page they are used in
 
 To add your image, add it to the ``img`` folder that's in the same folder as the
 ``.rst`` file for the page (create it if it doesn't exist). In the ``.rst`` page,
-images should be included with the following code snippet::
+images should be included with the following code snippet:
+
+::
 
     .. image:: img/documentation_image.webp
 
@@ -245,7 +247,9 @@ All videos are stored in folders named ``video`` next to the page they are used 
 
 To add your video, add it to the ``video`` folder that's in the same folder as the
 ``.rst`` file for the page (create it if it doesn't exist). In the ``.rst`` page,
-videos should be included with the following code snippet::
+videos should be included with the following code snippet:
+
+::
 
     .. video:: video/csg_tools.webm
        :alt: Put a text description of the video here

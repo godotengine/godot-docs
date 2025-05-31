@@ -495,8 +495,6 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`instance_geometry_set_visibility_range<class_RenderingServer_method_instance_geometry_set_visibility_range>`\ (\ instance\: :ref:`RID<class_RID>`, min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`, min_margin\: :ref:`float<class_float>`, max_margin\: :ref:`float<class_float>`, fade_mode\: :ref:`VisibilityRangeFadeMode<enum_RenderingServer_VisibilityRangeFadeMode>`\ )                                                                                                                                                                                                                                                                                                  |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                           | :ref:`instance_reset_physics_interpolation<class_RenderingServer_method_instance_reset_physics_interpolation>`\ (\ instance\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>`\ (\ instance\: :ref:`RID<class_RID>`, base\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`instance_set_blend_shape_weight<class_RenderingServer_method_instance_set_blend_shape_weight>`\ (\ instance\: :ref:`RID<class_RID>`, shape\: :ref:`int<class_int>`, weight\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -506,8 +504,6 @@ Methods
    | |void|                                                                           | :ref:`instance_set_extra_visibility_margin<class_RenderingServer_method_instance_set_extra_visibility_margin>`\ (\ instance\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`instance_set_ignore_culling<class_RenderingServer_method_instance_set_ignore_culling>`\ (\ instance\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                           | :ref:`instance_set_interpolated<class_RenderingServer_method_instance_set_interpolated>`\ (\ instance\: :ref:`RID<class_RID>`, interpolated\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`instance_set_layer_mask<class_RenderingServer_method_instance_set_layer_mask>`\ (\ instance\: :ref:`RID<class_RID>`, mask\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3388,11 +3384,19 @@ Do not perform any antialiasing in the full screen post-process.
 
 Use fast approximate antialiasing. FXAA is a popular screen-space antialiasing method, which is fast but will make the image look blurry, especially at lower resolutions. It can still work relatively well at large resolutions such as 1440p and 4K.
 
+.. _class_RenderingServer_constant_VIEWPORT_SCREEN_SPACE_AA_SMAA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_SMAA** = ``2``
+
+Use subpixel morphological antialiasing. SMAA may produce clearer results than FXAA, but at a slightly higher performance cost.
+
 .. _class_RenderingServer_constant_VIEWPORT_SCREEN_SPACE_AA_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_MAX** = ``2``
+:ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_MAX** = ``3``
 
 Represents the size of the :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` enum.
 
@@ -6580,7 +6584,7 @@ Draws the specified region of a 2D textured rectangle on the :ref:`CanvasItem<cl
 
 Draws a triangle array on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. This is internally used by :ref:`Line2D<class_Line2D>` and :ref:`StyleBoxFlat<class_StyleBoxFlat>` for rendering. :ref:`canvas_item_add_triangle_array()<class_RenderingServer_method_canvas_item_add_triangle_array>` is highly flexible, but more complex to use than :ref:`canvas_item_add_polygon()<class_RenderingServer_method_canvas_item_add_polygon>`.
 
-\ **Note:** ``count`` is unused and can be left unspecified.
+\ **Note:** If ``count`` is set to a non-negative value, only the first ``count * 3`` indices (corresponding to ``count`` triangles) will be drawn. Otherwise, all indices are drawn.
 
 .. rst-class:: classref-item-separator
 
@@ -8862,20 +8866,6 @@ Sets the visibility range values for the given geometry instance. Equivalent to 
 
 ----
 
-.. _class_RenderingServer_method_instance_reset_physics_interpolation:
-
-.. rst-class:: classref-method
-
-|void| **instance_reset_physics_interpolation**\ (\ instance\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_instance_reset_physics_interpolation>`
-
-Prevents physics interpolation for the current physics tick.
-
-This is useful when moving an instance to a new location, to give an instantaneous change rather than interpolation from the previous location.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_RenderingServer_method_instance_set_base:
 
 .. rst-class:: classref-method
@@ -8931,18 +8921,6 @@ Sets a margin to increase the size of the AABB when culling objects from the vie
 |void| **instance_set_ignore_culling**\ (\ instance\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_instance_set_ignore_culling>`
 
 If ``true``, ignores both frustum and occlusion culling on the specified 3D geometry instance. This is not the same as :ref:`GeometryInstance3D.ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`, which only ignores occlusion culling and leaves frustum culling intact.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_RenderingServer_method_instance_set_interpolated:
-
-.. rst-class:: classref-method
-
-|void| **instance_set_interpolated**\ (\ instance\: :ref:`RID<class_RID>`, interpolated\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_instance_set_interpolated>`
-
-Turns on and off physics interpolation for the instance.
 
 .. rst-class:: classref-item-separator
 

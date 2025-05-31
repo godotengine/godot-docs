@@ -10,7 +10,7 @@
 EditorExportPlatformIOS
 =======================
 
-**Inherits:** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`EditorExportPlatformAppleEmbedded<class_EditorExportPlatformAppleEmbedded>` **<** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Exporter for iOS.
 
@@ -500,6 +500,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`privacy/user_defaults_access_reasons<class_EditorExportPlatformIOS_property_privacy/user_defaults_access_reasons>`                                                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`shader_baker/enabled<class_EditorExportPlatformIOS_property_shader_baker/enabled>`                                                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`storyboard/custom_bg_color<class_EditorExportPlatformIOS_property_storyboard/custom_bg_color>`                                                                                 |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`storyboard/custom_image@2x<class_EditorExportPlatformIOS_property_storyboard/custom_image@2x>`                                                                                 |
@@ -571,7 +573,7 @@ Unique application identifier in a reverse-DNS format, can only contain alphanum
 
 :ref:`String<class_String>` **application/code_sign_identity_debug** :ref:`🔗<class_EditorExportPlatformIOS_property_application/code_sign_identity_debug>`
 
-The "Full Name", "Common Name" or SHA-1 hash of the signing identity used for debug export.
+The "Full Name", "Common Name", or SHA-1 hash of the signing identity used for debug export.
 
 .. rst-class:: classref-item-separator
 
@@ -583,7 +585,7 @@ The "Full Name", "Common Name" or SHA-1 hash of the signing identity used for de
 
 :ref:`String<class_String>` **application/code_sign_identity_release** :ref:`🔗<class_EditorExportPlatformIOS_property_application/code_sign_identity_release>`
 
-The "Full Name", "Common Name" or SHA-1 hash of the signing identity used for release export.
+The "Full Name", "Common Name", or SHA-1 hash of the signing identity used for release export.
 
 .. rst-class:: classref-item-separator
 
@@ -667,9 +669,9 @@ Minimum version of iOS required for this application to run in the ``major.minor
 
 :ref:`String<class_String>` **application/provisioning_profile_specifier_debug** :ref:`🔗<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_debug>`
 
-Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for debug. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
+Name of the provisioning profile. Sets Xcode PROVISIONING_PROFILE_SPECIFIER for debug. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
 
-Can be overridden with the environment variable ``GODOT_IOS_PROFILE_SPECIFIER_DEBUG``.
+Can be overridden with the environment variable ``GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_DEBUG``.
 
 .. rst-class:: classref-item-separator
 
@@ -681,9 +683,9 @@ Can be overridden with the environment variable ``GODOT_IOS_PROFILE_SPECIFIER_DE
 
 :ref:`String<class_String>` **application/provisioning_profile_specifier_release** :ref:`🔗<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_release>`
 
-Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for release. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
+Name of the provisioning profile. Sets Xcode PROVISIONING_PROFILE_SPECIFIER for release. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
 
-Can be overridden with the environment variable ``GODOT_IOS_PROFILE_SPECIFIER_RELEASE``.
+Can be overridden with the environment variable ``GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_RELEASE``.
 
 .. rst-class:: classref-item-separator
 
@@ -697,7 +699,7 @@ Can be overridden with the environment variable ``GODOT_IOS_PROFILE_SPECIFIER_RE
 
 UUID of the provisioning profile. If left empty, Xcode will download or create a provisioning profile automatically. See `Edit, download, or delete provisioning profiles <https://developer.apple.com/help/account/manage-profiles/edit-download-or-delete-profiles>`__.
 
-Can be overridden with the environment variable ``GODOT_IOS_PROVISIONING_PROFILE_UUID_DEBUG``.
+Can be overridden with the environment variable ``GODOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_DEBUG``.
 
 .. rst-class:: classref-item-separator
 
@@ -711,7 +713,7 @@ Can be overridden with the environment variable ``GODOT_IOS_PROVISIONING_PROFILE
 
 UUID of the provisioning profile. If left empty, Xcode will download or create a provisioning profile automatically. See `Edit, download, or delete provisioning profiles <https://developer.apple.com/help/account/manage-profiles/edit-download-or-delete-profiles>`__.
 
-Can be overridden with the environment variable ``GODOT_IOS_PROVISIONING_PROFILE_UUID_RELEASE``.
+Can be overridden with the environment variable ``GODOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_RELEASE``.
 
 .. rst-class:: classref-item-separator
 
@@ -811,7 +813,7 @@ Additional data added to the ``UIRequiredDeviceCapabilities`` array of the ``Inf
 
 Requires the graphics performance and features of the A12 Bionic and later chips (devices supporting all Vulkan renderer features).
 
-Enabling this option limits supported devices to: iPhone XS, iPhone XR, iPad Mini (5th gen.), iPad Air (3rd gen.), iPad (8th gen) and newer.
+Enabling this option limits supported devices to: iPhone XS, iPhone XR, iPad Mini (5th gen.), iPad Air (3rd gen.), iPad (8th gen), and newer.
 
 .. rst-class:: classref-item-separator
 
@@ -3353,6 +3355,18 @@ Indicates whether your app uses data for tracking. See `Privacy manifest files <
 :ref:`int<class_int>` **privacy/user_defaults_access_reasons** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/user_defaults_access_reasons>`
 
 The reasons your app use user defaults API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_shader_baker/enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **shader_baker/enabled** :ref:`🔗<class_EditorExportPlatformIOS_property_shader_baker/enabled>`
+
+If ``true``, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ or Mobile renderers.
 
 .. rst-class:: classref-item-separator
 

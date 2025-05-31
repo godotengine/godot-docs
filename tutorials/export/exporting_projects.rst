@@ -220,6 +220,8 @@ the command:
     See :ref:`doc_command_line_tutorial` for more information about using Godot
     from the command line.
 
+.. _doc_exporting_projects_pck_versus_zip:
+
 PCK versus ZIP pack file formats
 --------------------------------
 
@@ -246,7 +248,9 @@ depending on your needs.
     Due to a `known bug <https://github.com/godotengine/godot/pull/42123>`__,
     when using a ZIP file as a pack file, the exported binary will not try to use
     it automatically. Therefore, you have to create a *launcher script* that
-    the player can double-click or run from a terminal to launch the project::
+    the player can double-click or run from a terminal to launch the project:
+
+    ::
 
         :: launch.bat (Windows)
         @echo off

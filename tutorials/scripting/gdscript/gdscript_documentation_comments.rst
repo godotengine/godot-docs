@@ -45,7 +45,9 @@ Tags
 |                   | | ``@experimental: This class is unstable.``           |
 +-------------------+--------------------------------------------------------+
 
-For example::
+For example:
+
+::
 
     extends Node2D
     ## A brief description of the class's role and functionality.
@@ -98,13 +100,17 @@ Tags
 |              | | ``@experimental: This method is incomplete.``  |
 +--------------+--------------------------------------------------+
 
-For example::
+For example:
+
+::
 
     ## The description of the variable.
     ## @deprecated: Use [member other_var] instead.
     var my_var
 
-Alternatively, you can use inline documentation comments::
+Alternatively, you can use inline documentation comments:
+
+::
 
     signal my_signal ## My signal.
 

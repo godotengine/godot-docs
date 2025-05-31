@@ -478,7 +478,9 @@ script.
 
 For example: include all tracks in animations with names ending in ``"_Loop"``,
 but discard any tracks affecting a ``"Skeleton"`` which end in ``"Control"``,
-unless they have ``"Arm"`` in their name::
+unless they have ``"Arm"`` in their name:
+
+::
 
     @+*_Loop
     +*

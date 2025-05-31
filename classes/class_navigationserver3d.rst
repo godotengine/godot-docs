@@ -151,6 +151,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`link_get_enter_cost<class_NavigationServer3D_method_link_get_enter_cost>`\ (\ link\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                  |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`link_get_iteration_id<class_NavigationServer3D_method_link_get_iteration_id>`\ (\ link\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                              |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`link_get_map<class_NavigationServer3D_method_link_get_map>`\ (\ link\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`link_get_navigation_layers<class_NavigationServer3D_method_link_get_navigation_layers>`\ (\ link\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                    |
@@ -1082,6 +1084,20 @@ Returns the ending position of this ``link``.
 :ref:`float<class_float>` **link_get_enter_cost**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_link_get_enter_cost>`
 
 Returns the enter cost of this ``link``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_link_get_iteration_id:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **link_get_iteration_id**\ (\ link\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_link_get_iteration_id>`
+
+Returns the current iteration ID of the navigation link. Every time the navigation link changes and synchronizes, the iteration ID increases. An iteration ID of ``0`` means the navigation link has never synchronized.
+
+\ **Note:** The iteration ID will wrap around to ``1`` after reaching its range limit.
 
 .. rst-class:: classref-item-separator
 

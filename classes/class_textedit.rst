@@ -143,6 +143,8 @@ Properties
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`virtual_keyboard_enabled<class_TextEdit_property_virtual_keyboard_enabled>`                                           | ``true``                                                                            |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`virtual_keyboard_show_on_focus<class_TextEdit_property_virtual_keyboard_show_on_focus>`                               | ``true``                                                                            |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`LineWrappingMode<enum_TextEdit_LineWrappingMode>`           | :ref:`wrap_mode<class_TextEdit_property_wrap_mode>`                                                                         | ``0``                                                                               |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
@@ -1884,7 +1886,24 @@ If ``false``, using :kbd:`Ctrl + Left` or :kbd:`Ctrl + Right` (:kbd:`Cmd + Left`
 - |void| **set_virtual_keyboard_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_virtual_keyboard_enabled**\ (\ )
 
-If ``true``, the native virtual keyboard is shown when focused on platforms that support it.
+If ``true``, the native virtual keyboard is enabled on platforms that support it.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_property_virtual_keyboard_show_on_focus:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **virtual_keyboard_show_on_focus** = ``true`` :ref:`🔗<class_TextEdit_property_virtual_keyboard_show_on_focus>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_virtual_keyboard_show_on_focus**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_virtual_keyboard_show_on_focus**\ (\ )
+
+If ``true``, the native virtual keyboard is shown on focus events on platforms that support it.
 
 .. rst-class:: classref-item-separator
 

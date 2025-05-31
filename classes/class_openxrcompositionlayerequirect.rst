@@ -31,17 +31,17 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+---------------------------------------------------------------------------------------------------------+--------------+
-   | :ref:`float<class_float>` | :ref:`central_horizontal_angle<class_OpenXRCompositionLayerEquirect_property_central_horizontal_angle>` | ``1.5708``   |
-   +---------------------------+---------------------------------------------------------------------------------------------------------+--------------+
-   | :ref:`int<class_int>`     | :ref:`fallback_segments<class_OpenXRCompositionLayerEquirect_property_fallback_segments>`               | ``10``       |
-   +---------------------------+---------------------------------------------------------------------------------------------------------+--------------+
-   | :ref:`float<class_float>` | :ref:`lower_vertical_angle<class_OpenXRCompositionLayerEquirect_property_lower_vertical_angle>`         | ``0.785398`` |
-   +---------------------------+---------------------------------------------------------------------------------------------------------+--------------+
-   | :ref:`float<class_float>` | :ref:`radius<class_OpenXRCompositionLayerEquirect_property_radius>`                                     | ``1.0``      |
-   +---------------------------+---------------------------------------------------------------------------------------------------------+--------------+
-   | :ref:`float<class_float>` | :ref:`upper_vertical_angle<class_OpenXRCompositionLayerEquirect_property_upper_vertical_angle>`         | ``0.785398`` |
-   +---------------------------+---------------------------------------------------------------------------------------------------------+--------------+
+   +---------------------------+---------------------------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`central_horizontal_angle<class_OpenXRCompositionLayerEquirect_property_central_horizontal_angle>` | ``1.5707964`` |
+   +---------------------------+---------------------------------------------------------------------------------------------------------+---------------+
+   | :ref:`int<class_int>`     | :ref:`fallback_segments<class_OpenXRCompositionLayerEquirect_property_fallback_segments>`               | ``10``        |
+   +---------------------------+---------------------------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`lower_vertical_angle<class_OpenXRCompositionLayerEquirect_property_lower_vertical_angle>`         | ``0.7853982`` |
+   +---------------------------+---------------------------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`radius<class_OpenXRCompositionLayerEquirect_property_radius>`                                     | ``1.0``       |
+   +---------------------------+---------------------------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>` | :ref:`upper_vertical_angle<class_OpenXRCompositionLayerEquirect_property_upper_vertical_angle>`         | ``0.7853982`` |
+   +---------------------------+---------------------------------------------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-section-separator
 
@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **central_horizontal_angle** = ``1.5708`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_central_horizontal_angle>`
+:ref:`float<class_float>` **central_horizontal_angle** = ``1.5707964`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_central_horizontal_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ The number of segments to use in the fallback mesh.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **lower_vertical_angle** = ``0.785398`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_lower_vertical_angle>`
+:ref:`float<class_float>` **lower_vertical_angle** = ``0.7853982`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_lower_vertical_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -124,7 +124,7 @@ The radius of the sphere.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **upper_vertical_angle** = ``0.785398`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_upper_vertical_angle>`
+:ref:`float<class_float>` **upper_vertical_angle** = ``0.7853982`` :ref:`🔗<class_OpenXRCompositionLayerEquirect_property_upper_vertical_angle>`
 
 .. rst-class:: classref-property-setget
 

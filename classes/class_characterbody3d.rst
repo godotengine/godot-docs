@@ -51,7 +51,7 @@ Properties
    +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`floor_constant_speed<class_CharacterBody3D_property_floor_constant_speed>`   | ``false``            |
    +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`                                    | :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>`             | ``0.785398``         |
+   | :ref:`float<class_float>`                                    | :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>`             | ``0.7853982``        |
    +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
    | :ref:`float<class_float>`                                    | :ref:`floor_snap_length<class_CharacterBody3D_property_floor_snap_length>`         | ``0.1``              |
    +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
@@ -75,7 +75,7 @@ Properties
    +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
    | :ref:`Vector3<class_Vector3>`                                | :ref:`velocity<class_CharacterBody3D_property_velocity>`                           | ``Vector3(0, 0, 0)`` |
    +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`                                    | :ref:`wall_min_slide_angle<class_CharacterBody3D_property_wall_min_slide_angle>`   | ``0.261799``         |
+   | :ref:`float<class_float>`                                    | :ref:`wall_min_slide_angle<class_CharacterBody3D_property_wall_min_slide_angle>`   | ``0.2617994``        |
    +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-reftable-group
@@ -240,7 +240,7 @@ If ``true``, the body will always move at the same speed on the ground no matter
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **floor_max_angle** = ``0.785398`` :ref:`🔗<class_CharacterBody3D_property_floor_max_angle>`
+:ref:`float<class_float>` **floor_max_angle** = ``0.7853982`` :ref:`🔗<class_CharacterBody3D_property_floor_max_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -454,7 +454,7 @@ Current velocity vector (typically meters per second), used and modified during 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wall_min_slide_angle** = ``0.261799`` :ref:`🔗<class_CharacterBody3D_property_wall_min_slide_angle>`
+:ref:`float<class_float>` **wall_min_slide_angle** = ``0.2617994`` :ref:`🔗<class_CharacterBody3D_property_wall_min_slide_angle>`
 
 .. rst-class:: classref-property-setget
 

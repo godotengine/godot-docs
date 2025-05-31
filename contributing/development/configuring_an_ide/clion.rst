@@ -3,8 +3,8 @@
 CLion
 =====
 
-`CLion <https://www.jetbrains.com/clion/>`_ is a commercial
-`JetBrains <https://www.jetbrains.com/>`_ IDE for C++.
+`CLion <https://www.jetbrains.com/clion/>`_ is a
+`JetBrains <https://www.jetbrains.com/>`_ IDE for C++ that's free for individual, non-commercial development.
 
 Importing the project
 ---------------------

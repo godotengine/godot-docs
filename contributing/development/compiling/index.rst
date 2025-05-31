@@ -9,7 +9,9 @@ Building from source
 
 Godot prides itself on being very easy to build, by C++ projects' standards.
 :ref:`Godot uses the SCons build system <doc_faq_why_scons>`, and after the initial
-setup compiling the engine for your current platform should be as easy as running::
+setup compiling the engine for your current platform should be as easy as running:
+
+::
 
     scons
 

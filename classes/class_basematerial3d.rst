@@ -77,6 +77,10 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Texture2D<class_Texture2D>`                               | :ref:`backlight_texture<class_BaseMaterial3D_property_backlight_texture>`                                         |                       |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`bent_normal_enabled<class_BaseMaterial3D_property_bent_normal_enabled>`                                     | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>`                               | :ref:`bent_normal_texture<class_BaseMaterial3D_property_bent_normal_texture>`                                     |                       |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`billboard_keep_scale<class_BaseMaterial3D_property_billboard_keep_scale>`                                   | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`         | :ref:`billboard_mode<class_BaseMaterial3D_property_billboard_mode>`                                               | ``0``                 |
@@ -115,6 +119,8 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`disable_receive_shadows<class_BaseMaterial3D_property_disable_receive_shadows>`                             | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`disable_specular_occlusion<class_BaseMaterial3D_property_disable_specular_occlusion>`                       | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                       | :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>`                       | ``10.0``              |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                       | :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`                       | ``0.0``               |
@@ -136,6 +142,8 @@ Properties
    | :ref:`Texture2D<class_Texture2D>`                               | :ref:`emission_texture<class_BaseMaterial3D_property_emission_texture>`                                           |                       |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`fixed_size<class_BaseMaterial3D_property_fixed_size>`                                                       | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                       | :ref:`fov_override<class_BaseMaterial3D_property_fov_override>`                                                   | ``75.0``              |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`grow<class_BaseMaterial3D_property_grow>`                                                                   | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -245,9 +253,13 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Transparency<enum_BaseMaterial3D_Transparency>`           | :ref:`transparency<class_BaseMaterial3D_property_transparency>`                                                   | ``0``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`use_fov_override<class_BaseMaterial3D_property_use_fov_override>`                                           | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`use_particle_trails<class_BaseMaterial3D_property_use_particle_trails>`                                     | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`use_point_size<class_BaseMaterial3D_property_use_point_size>`                                               | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`use_z_clip_scale<class_BaseMaterial3D_property_use_z_clip_scale>`                                           | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Vector3<class_Vector3>`                                   | :ref:`uv1_offset<class_BaseMaterial3D_property_uv1_offset>`                                                       | ``Vector3(0, 0, 0)``  |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -272,6 +284,8 @@ Properties
    | :ref:`bool<class_bool>`                                         | :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`                                   | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>`                       | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                       | :ref:`z_clip_scale<class_BaseMaterial3D_property_z_clip_scale>`                                                   | ``1.0``               |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
@@ -350,6 +364,14 @@ Texture specifying per-pixel emission color.
 :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` **TEXTURE_NORMAL** = ``4``
 
 Texture specifying per-pixel normal vector.
+
+.. _class_BaseMaterial3D_constant_TEXTURE_BENT_NORMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` **TEXTURE_BENT_NORMAL** = ``18``
+
+Texture specifying per-pixel bent normal vector.
 
 .. _class_BaseMaterial3D_constant_TEXTURE_RIM:
 
@@ -459,7 +481,7 @@ Texture holding ambient occlusion, roughness, and metallic.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` **TEXTURE_MAX** = ``18``
+:ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` **TEXTURE_MAX** = ``19``
 
 Represents the size of the :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` enum.
 
@@ -761,11 +783,19 @@ Constant for setting :ref:`refraction_enabled<class_BaseMaterial3D_property_refr
 
 Constant for setting :ref:`detail_enabled<class_BaseMaterial3D_property_detail_enabled>`.
 
+.. _class_BaseMaterial3D_constant_FEATURE_BENT_NORMAL_MAPPING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_BaseMaterial3D_Feature>` **FEATURE_BENT_NORMAL_MAPPING** = ``12``
+
+Constant for setting :ref:`bent_normal_enabled<class_BaseMaterial3D_property_bent_normal_enabled>`.
+
 .. _class_BaseMaterial3D_constant_FEATURE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Feature<enum_BaseMaterial3D_Feature>` **FEATURE_MAX** = ``12``
+:ref:`Feature<enum_BaseMaterial3D_Feature>` **FEATURE_MAX** = ``13``
 
 Represents the size of the :ref:`Feature<enum_BaseMaterial3D_Feature>` enum.
 
@@ -1111,11 +1141,35 @@ Enables multichannel signed distance field rendering shader.
 
 Disables receiving depth-based or volumetric fog.
 
+.. _class_BaseMaterial3D_constant_FLAG_DISABLE_SPECULAR_OCCLUSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_DISABLE_SPECULAR_OCCLUSION** = ``22``
+
+Disables specular occlusion.
+
+.. _class_BaseMaterial3D_constant_FLAG_USE_Z_CLIP_SCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_USE_Z_CLIP_SCALE** = ``23``
+
+Enables using :ref:`z_clip_scale<class_BaseMaterial3D_property_z_clip_scale>`.
+
+.. _class_BaseMaterial3D_constant_FLAG_USE_FOV_OVERRIDE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_USE_FOV_OVERRIDE** = ``24``
+
+Enables using :ref:`fov_override<class_BaseMaterial3D_property_fov_override>`.
+
 .. _class_BaseMaterial3D_constant_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_MAX** = ``22``
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_MAX** = ``25``
 
 Represents the size of the :ref:`Flags<enum_BaseMaterial3D_Flags>` enum.
 
@@ -1178,6 +1232,10 @@ enum **SpecularMode**: :ref:`🔗<enum_BaseMaterial3D_SpecularMode>`
 :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` **SPECULAR_SCHLICK_GGX** = ``0``
 
 Default specular blob.
+
+\ **Note:** Forward+ uses multiscattering for more accurate reflections, although the impact of multiscattering is more noticeable on rough metallic surfaces than on smooth, non-metallic surfaces.
+
+\ **Note:** Mobile and Compatibility don't perform multiscattering for performance reasons. Instead, they perform single scattering, which means rough metallic surfaces may look slightly darker than intended.
 
 .. _class_BaseMaterial3D_constant_SPECULAR_TOON:
 
@@ -1701,6 +1759,46 @@ Texture used to control the backlight effect per-pixel. Added to :ref:`backlight
 
 ----
 
+.. _class_BaseMaterial3D_property_bent_normal_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **bent_normal_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_bent_normal_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
+
+If ``true``, the bent normal map is enabled. This allows for more accurate indirect lighting and specular occlusion.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_bent_normal_texture:
+
+.. rst-class:: classref-property
+
+:ref:`Texture2D<class_Texture2D>` **bent_normal_texture** :ref:`🔗<class_BaseMaterial3D_property_bent_normal_texture>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
+
+Texture that specifies the average direction of incoming ambient light at a given pixel. The :ref:`bent_normal_texture<class_BaseMaterial3D_property_bent_normal_texture>` only uses the red and green channels; the blue and alpha channels are ignored. The normal read from :ref:`bent_normal_texture<class_BaseMaterial3D_property_bent_normal_texture>` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
+
+\ **Note:** A bent normal map is different from a regular normal map. When baking a bent normal map make sure to use **a cosine distribution** for the bent normal map to work correctly.
+
+\ **Note:** The mesh must have both normals and tangents defined in its vertex data. Otherwise, the shading produced by the bent normal map will not look correct. If creating geometry with :ref:`SurfaceTool<class_SurfaceTool>`, you can use :ref:`SurfaceTool.generate_normals()<class_SurfaceTool_method_generate_normals>` and :ref:`SurfaceTool.generate_tangents()<class_SurfaceTool_method_generate_tangents>` to automatically generate normals and tangents respectively.
+
+\ **Note:** Godot expects the bent normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_BaseMaterial3D_property_billboard_keep_scale:
 
 .. rst-class:: classref-property
@@ -2034,6 +2132,23 @@ If ``true``, the object receives no shadow that would otherwise be cast onto it.
 
 ----
 
+.. _class_BaseMaterial3D_property_disable_specular_occlusion:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_specular_occlusion** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_disable_specular_occlusion>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
+
+If ``true``, disables specular occlusion even if :ref:`ProjectSettings.rendering/reflections/specular_occlusion/enabled<class_ProjectSettings_property_rendering/reflections/specular_occlusion/enabled>` is ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_BaseMaterial3D_property_distance_fade_max_distance:
 
 .. rst-class:: classref-property
@@ -2220,6 +2335,25 @@ Texture that specifies how much surface emits light at a given point.
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the object is rendered at the same size regardless of distance. The object's size on screen is the same as if the camera was ``1.0`` units away from the object's origin, regardless of the actual distance from the camera. The :ref:`Camera3D<class_Camera3D>`'s field of view (or :ref:`Camera3D.size<class_Camera3D_property_size>` when in orthogonal/frustum mode) still affects the size the object is drawn at.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_fov_override:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **fov_override** = ``75.0`` :ref:`🔗<class_BaseMaterial3D_property_fov_override>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_fov_override**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_fov_override**\ (\ )
+
+Overrides the :ref:`Camera3D<class_Camera3D>`'s field of view angle (in degrees).
+
+\ **Note:** This behaves as if the field of view is set on a :ref:`Camera3D<class_Camera3D>` with :ref:`Camera3D.keep_aspect<class_Camera3D_property_keep_aspect>` set to :ref:`Camera3D.KEEP_HEIGHT<class_Camera3D_constant_KEEP_HEIGHT>`. Additionally, it may not look correct on a non-perspective camera where the field of view setting is ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -3175,6 +3309,23 @@ The material's transparency mode. Some transparency modes will disable shadow ca
 
 ----
 
+.. _class_BaseMaterial3D_property_use_fov_override:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_fov_override** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_use_fov_override>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
+
+If ``true`` use :ref:`fov_override<class_BaseMaterial3D_property_fov_override>` to override the :ref:`Camera3D<class_Camera3D>`'s field of view angle.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_BaseMaterial3D_property_use_particle_trails:
 
 .. rst-class:: classref-property
@@ -3206,6 +3357,23 @@ If ``true``, enables parts of the shader required for :ref:`GPUParticles3D<class
 If ``true``, render point size can be changed.
 
 \ **Note:** This is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`point_size<class_BaseMaterial3D_property_point_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_use_z_clip_scale:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_z_clip_scale** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_use_z_clip_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
+
+If ``true`` use :ref:`z_clip_scale<class_BaseMaterial3D_property_z_clip_scale>` to scale the object being rendered towards the camera to avoid clipping into things like walls.
 
 .. rst-class:: classref-item-separator
 
@@ -3416,6 +3584,23 @@ If ``true``, vertex colors are considered to be stored in sRGB color space and a
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the vertex color is used as albedo color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_z_clip_scale:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **z_clip_scale** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_z_clip_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_z_clip_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_z_clip_scale**\ (\ )
+
+Scales the object being rendered towards the camera to avoid clipping into things like walls. This is intended to be used for objects that are fixed with respect to the camera like player arms, tools, etc. Lighting and shadows will continue to work correctly when this setting is adjusted, but screen-space effects like SSAO and SSR may break with lower scales. Therefore, try to keep this setting as close to ``1.0`` as possible.
 
 .. rst-class:: classref-section-separator
 

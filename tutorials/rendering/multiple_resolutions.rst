@@ -20,14 +20,11 @@ Nowadays, this is no longer the case, as there are plenty of different screen
 sizes, densities, and aspect ratios. Non-conventional sizes are also becoming
 increasingly popular, such as ultrawide displays.
 
-For 3D games, there is not much of a need to support multiple resolutions (from
-the aesthetic point of view). The 3D geometry will just fill the screen based on
-the field of view, disregarding the aspect ratio. The main reason one may want
-to support this, in this case, is for *performance* reasons (running in lower
-resolution to increase frames per second).
-
-For 2D and game UIs, this is a different matter, as art needs to be created
-using specific pixel sizes in software such as Photoshop, GIMP or Krita.
+For 3D rendering, there is not much of a need to support multiple resolutions.
+Thanks to its vector-based nature, 3D geometry will just fill the screen based
+on the viewport size. For 2D and game UIs, this is a different matter,
+as art needs to be created using specific pixel sizes in software such
+as Photoshop, GIMP or Krita.
 
 Since layouts, aspect ratios, resolutions, and pixel densities can change so
 much, it is no longer possible to design UIs for every specific screen.
@@ -121,6 +118,14 @@ In any case, while changing the root Viewport params is probably the
 most flexible way to deal with the problem, it can be a lot of work,
 code and guessing, so Godot provides a set of parameters in the
 project settings to handle multiple resolutions.
+
+.. tip::
+
+    To render 3D at a lower resolution than 2D elements (without needing
+    separate viewports), you can use Godot's
+    :ref:`resolution scaling <doc_resolution_scaling>` support. This is a good way
+    to improve performance significantly in GPU-bottlenecked scenarios.
+    This works with any stretch mode and stretch aspect combination.
 
 Stretch settings
 ----------------
@@ -373,6 +378,9 @@ Desktop game
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
+- For 3D games, consider exposing :ref:`doc_resolution_scaling` in the game's options menu
+  to allow players to adjust the 3D rendering resolution separately from UI elements.
+  This is useful for performance tuning, especially on lower-end hardware.
 
 **Pixel art:**
 

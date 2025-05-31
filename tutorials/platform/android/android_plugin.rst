@@ -128,11 +128,13 @@ Use the following steps if you have a v1 Android plugin you want to migrate to v
 2. Update the Godot Android library build dependency:
 
     - You can continue using the ``godot-lib.<version>.<status>.aar`` binary from `Godot's download page <https://godotengine.org/download>`_ if that's your preference. Make sure it's updated to the latest stable version.
-    - Or you can switch to the MavenCentral provided dependency::
+    - Or you can switch to the MavenCentral provided dependency:
 
-        dependencies {
-            implementation("org.godotengine:godot:4.2.0.stable")
-        }
+::
+
+    dependencies {
+        implementation("org.godotengine:godot:4.2.0.stable")
+    }
 
 3. After updating the Godot Android library dependency, sync or build the plugin and resolve any compile errors:
 
@@ -150,46 +152,48 @@ As mentioned, a v2 Android plugin is now provided to the Godot Editor as an ``Ed
 2. Add the `tool script <https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html#the-script-file>`_ for the export functionality within the plugin directory (e.g: in ``addons/<plugin_name>/``)
 
     - The created script must be a ``@tool`` script, or else it will not work properly
-    - The export tool script is used to configure the Android plugin and hook it within the Godot Editor's export process. It should look something like this::
+    - The export tool script is used to configure the Android plugin and hook it within the Godot Editor's export process. It should look something like this:
 
-        @tool
-        extends EditorPlugin
+::
 
-        # A class member to hold the editor export plugin during its lifecycle.
-        var export_plugin : AndroidExportPlugin
+    @tool
+    extends EditorPlugin
 
-        func _enter_tree():
-            # Initialization of the plugin goes here.
-            export_plugin = AndroidExportPlugin.new()
-            add_export_plugin(export_plugin)
+    # A class member to hold the editor export plugin during its lifecycle.
+    var export_plugin : AndroidExportPlugin
 
-
-        func _exit_tree():
-            # Clean-up of the plugin goes here.
-            remove_export_plugin(export_plugin)
-            export_plugin = null
+    func _enter_tree():
+        # Initialization of the plugin goes here.
+        export_plugin = AndroidExportPlugin.new()
+        add_export_plugin(export_plugin)
 
 
-        class AndroidExportPlugin extends EditorExportPlugin:
-            # Plugin's name.
-            var _plugin_name = "<plugin_name>"
+    func _exit_tree():
+        # Clean-up of the plugin goes here.
+        remove_export_plugin(export_plugin)
+        export_plugin = null
 
-            # Specifies which platform is supported by the plugin.
-            func _supports_platform(platform):
-                if platform is EditorExportPlatformAndroid:
-                    return true
-                return false
 
-            # Return the paths of the plugin's AAR binaries relative to the 'addons' directory.
-            func _get_android_libraries(platform, debug):
-                if debug:
-                    return PackedStringArray(["<paths_to_debug_android_plugin_aar_binaries>"])
-                else:
-                    return PackedStringArray(["<paths_to_release_android_plugin_aar_binaries>"])
+    class AndroidExportPlugin extends EditorExportPlugin:
+        # Plugin's name.
+        var _plugin_name = "<plugin_name>"
 
-            # Return the plugin's name.
-            func _get_name():
-                return _plugin_name
+        # Specifies which platform is supported by the plugin.
+        func _supports_platform(platform):
+            if platform is EditorExportPlatformAndroid:
+                return true
+            return false
+
+        # Return the paths of the plugin's AAR binaries relative to the 'addons' directory.
+        func _get_android_libraries(platform, debug):
+            if debug:
+                return PackedStringArray(["<paths_to_debug_android_plugin_aar_binaries>"])
+            else:
+                return PackedStringArray(["<paths_to_release_android_plugin_aar_binaries>"])
+
+        # Return the plugin's name.
+        func _get_name():
+            return _plugin_name
 
 
     - Here are the set of `EditorExportPlugin APIs <https://docs.godotengine.org/en/stable/classes/class_editorexportplugin.html>`_ most relevant to use in this tool script:
@@ -206,7 +210,9 @@ As mentioned, a v2 Android plugin is now provided to the Godot Editor as an ``Ed
         to the app's manifest which are preserved when the Godot Editor is updated, resolving a long standing issue with v1 Android plugins.
 
 
-3. Create a ``plugin.cfg``. This is an INI file with metadata about your plugin::
+3. Create a ``plugin.cfg``. This is an INI file with metadata about your plugin:
+
+::
 
       [plugin]
 
@@ -231,7 +237,7 @@ At build time, the contents of the ``export_scripts_template`` directory as well
 Packaging a v2 Android plugin with GDExtension capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For GDExtension, we follow the same steps as for `Packaging a v2 Android plugin`_ and add the `GDExtension config file <https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html#using-the-gdextension-module>`_ in
+For GDExtension, we follow the same steps as for `Packaging a v2 Android plugin`_ and add the `GDExtension config file <https://docs.godotengine.org/en/stable/tutorials/scripting/cpp/gdextension_cpp_example.html#using-the-gdextension-module>`_ in
 the same location as ``plugin.cfg``.
 
 For reference, here is the `folder structure for the GDExtension Android plugin project template <https://github.com/m4gr3d/GDExtension-Android-Plugin-Template/tree/main/plugin/export_scripts_template>`_.
@@ -248,7 +254,9 @@ At build time, the contents of the ``export_scripts_template`` directory as well
     +--plugin.gdextension       # GDExtension config file
 
 
-Here is what the ``plugin.gdextension`` config file should look like::
+Here is what the ``plugin.gdextension`` config file should look like:
+
+::
 
     [configuration]
 
@@ -298,7 +306,9 @@ Using a v2 Android plugin
 
 7. In the ``Android export preset``, scroll to ``Gradle Build`` and set ``Use Gradle Build`` to ``true``
 
-8. Update the project's scripts as needed to access the plugin's functionality. For example::
+8. Update the project's scripts as needed to access the plugin's functionality. For example:
+
+::
 
     if Engine.has_singleton("MyPlugin"):
             var singleton = Engine.get_singleton("MyPlugin")
@@ -332,7 +342,9 @@ Simplify access to the exposed Java / Kotlin APIs
 To make it easier to access the exposed Java / Kotlin APIs in the Godot Editor, it's recommended to
 provide one (or multiple) gdscript wrapper class(es) for your plugin users to interface with.
 
-For example::
+For example:
+
+::
 
     class_name PluginInterface extends Object
 

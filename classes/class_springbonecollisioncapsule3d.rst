@@ -29,13 +29,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>` | :ref:`height<class_SpringBoneCollisionCapsule3D_property_height>` | ``0.5``   |
-   +---------------------------+-------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`   | :ref:`inside<class_SpringBoneCollisionCapsule3D_property_inside>` | ``false`` |
-   +---------------------------+-------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>` | :ref:`radius<class_SpringBoneCollisionCapsule3D_property_radius>` | ``0.1``   |
-   +---------------------------+-------------------------------------------------------------------+-----------+
+   +---------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`height<class_SpringBoneCollisionCapsule3D_property_height>`         | ``0.5``   |
+   +---------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`inside<class_SpringBoneCollisionCapsule3D_property_inside>`         | ``false`` |
+   +---------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`mid_height<class_SpringBoneCollisionCapsule3D_property_mid_height>` |           |
+   +---------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`radius<class_SpringBoneCollisionCapsule3D_property_radius>`         | ``0.1``   |
+   +---------------------------+---------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-section-separator
 
@@ -57,7 +59,7 @@ Property Descriptions
 - |void| **set_height**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_height**\ (\ )
 
-The capsule's height.
+The capsule's full height, including the hemispheres.
 
 .. rst-class:: classref-item-separator
 
@@ -75,6 +77,23 @@ The capsule's height.
 - :ref:`bool<class_bool>` **is_inside**\ (\ )
 
 If ``true``, the collision acts to trap the joint within the collision.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpringBoneCollisionCapsule3D_property_mid_height:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **mid_height** :ref:`🔗<class_SpringBoneCollisionCapsule3D_property_mid_height>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_mid_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mid_height**\ (\ )
+
+The capsule's height, excluding the hemispheres. This is the height of the central cylindrical part in the middle of the capsule, and is the distance between the centers of the two hemispheres. This is a wrapper for :ref:`height<class_SpringBoneCollisionCapsule3D_property_height>`.
 
 .. rst-class:: classref-item-separator
 

@@ -322,8 +322,11 @@ Reference
 
   * - | **hint**
       | Creates a tooltip hint that is displayed when hovering the text with the mouse.
-        Tooltip text should not be quoted (quotes will appear as-is in the tooltip otherwise).
-    - | ``[hint={tooltip text displayed on hover}]{text}[/hint]``
+        While not required, it's recommended to put tooltip text between double or single quotes.
+        Note that it is not possible to escape quotes using ``\"`` or ``\'``. To use
+        single quotes for apostrophes in the hint string, you must use double quotes
+        to surround the string.
+    - | ``[hint="{tooltip text displayed on hover}"]{text}[/hint]``
 
   * - | **img**
       | Inserts an image from the ``{path}`` (can be any valid :ref:`class_Texture2D` resource).
@@ -578,7 +581,9 @@ To handle clicked ``[url]`` tags, connect the ``RichTextLabel`` node's
 :ref:`meta_clicked <class_RichTextLabel_signal_meta_clicked>` signal to a script function.
 
 For example, the following method can be connected to ``meta_clicked`` to open
-clicked URLs using the user's default web browser::
+clicked URLs using the user's default web browser:
+
+::
 
     # This assumes RichTextLabel's `meta_clicked` signal was connected to
     # the function below using the signal connection dialog.

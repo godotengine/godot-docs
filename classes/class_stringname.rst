@@ -178,7 +178,7 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`pad_zeros<class_StringName_method_pad_zeros>`\ (\ digits\: :ref:`int<class_int>`\ ) |const|                                                                                             |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                         | :ref:`path_join<class_StringName_method_path_join>`\ (\ file\: :ref:`String<class_String>`\ ) |const|                                                                                         |
+   | :ref:`String<class_String>`                         | :ref:`path_join<class_StringName_method_path_join>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                                         |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`remove_char<class_StringName_method_remove_char>`\ (\ what\: :ref:`int<class_int>`\ ) |const|                                                                                           |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -972,7 +972,7 @@ Returns ``true`` if the string is a path, and its starting point is dependent on
 
 :ref:`bool<class_bool>` **is_subsequence_of**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_is_subsequence_of>`
 
-Returns ``true`` if all characters of this string can be found in ``text`` in their original order.
+Returns ``true`` if all characters of this string can be found in ``text`` in their original order. This is not the same as :ref:`contains()<class_StringName_method_contains>`.
 
 ::
 
@@ -993,7 +993,7 @@ Returns ``true`` if all characters of this string can be found in ``text`` in th
 
 :ref:`bool<class_bool>` **is_subsequence_ofn**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_is_subsequence_ofn>`
 
-Returns ``true`` if all characters of this string can be found in ``text`` in their original order, **ignoring case**.
+Returns ``true`` if all characters of this string can be found in ``text`` in their original order, **ignoring case**. This is not the same as :ref:`containsn()<class_StringName_method_containsn>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1026,7 +1026,7 @@ See also :ref:`is_valid_unicode_identifier()<class_StringName_method_is_valid_un
 
 :ref:`bool<class_bool>` **is_valid_filename**\ (\ ) |const| :ref:`🔗<class_StringName_method_is_valid_filename>`
 
-Returns ``true`` if this string does not contain characters that are not allowed in file names (``:`` ``/`` ``\`` ``?`` ``*`` ``"`` ``|`` ``%`` ``<`` ``>``).
+Returns ``true`` if this string is a valid file name. A valid file name cannot be empty, begin or end with space characters, or contain characters that are not allowed (``:`` ``/`` ``\`` ``?`` ``*`` ``"`` ``|`` ``%`` ``<`` ``>``).
 
 .. rst-class:: classref-item-separator
 
@@ -1392,9 +1392,9 @@ Formats the string representing a number to have an exact number of ``digits`` *
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **path_join**\ (\ file\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_path_join>`
+:ref:`String<class_String>` **path_join**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_path_join>`
 
-Concatenates ``file`` at the end of the string as a subpath, adding ``/`` if necessary.
+Concatenates ``path`` at the end of the string as a subpath, adding ``/`` if necessary.
 
 \ **Example:** ``"this/is".path_join("path") == "this/is/path"``.
 

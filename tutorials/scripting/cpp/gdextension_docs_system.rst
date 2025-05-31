@@ -1,7 +1,7 @@
-.. _doc_gdextension_docs_system:
+.. _doc_godot_cpp_docs_system:
 
-GDExtension documentation system
-================================
+Adding documentation
+====================
 
 .. note::
 
@@ -15,7 +15,7 @@ XML files (one per class) to document the exposed constructors, properties, meth
 
 .. note::
 
-    We are assuming you are using the project files explained in the :ref:`GDExtension C++ Example <doc_gdextension_cpp_example>`
+    We are assuming you are using the project files explained in the :ref:`example project <doc_godot_cpp_getting_started>`
     with the following structure:
 
 .. code-block:: none

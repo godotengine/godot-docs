@@ -29,27 +29,27 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>` | :ref:`angular_limit/bias<class_HingeJoint3D_property_angular_limit/bias>`             | ``0.3``     |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`bool<class_bool>`   | :ref:`angular_limit/enable<class_HingeJoint3D_property_angular_limit/enable>`         | ``false``   |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>` | :ref:`angular_limit/lower<class_HingeJoint3D_property_angular_limit/lower>`           | ``-1.5708`` |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>` | :ref:`angular_limit/relaxation<class_HingeJoint3D_property_angular_limit/relaxation>` | ``1.0``     |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>` | :ref:`angular_limit/softness<class_HingeJoint3D_property_angular_limit/softness>`     | ``0.9``     |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>` | :ref:`angular_limit/upper<class_HingeJoint3D_property_angular_limit/upper>`           | ``1.5708``  |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`bool<class_bool>`   | :ref:`motor/enable<class_HingeJoint3D_property_motor/enable>`                         | ``false``   |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>` | :ref:`motor/max_impulse<class_HingeJoint3D_property_motor/max_impulse>`               | ``1.0``     |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>` | :ref:`motor/target_velocity<class_HingeJoint3D_property_motor/target_velocity>`       | ``1.0``     |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>` | :ref:`params/bias<class_HingeJoint3D_property_params/bias>`                           | ``0.3``     |
-   +---------------------------+---------------------------------------------------------------------------------------+-------------+
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`float<class_float>` | :ref:`angular_limit/bias<class_HingeJoint3D_property_angular_limit/bias>`             | ``0.3``        |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`bool<class_bool>`   | :ref:`angular_limit/enable<class_HingeJoint3D_property_angular_limit/enable>`         | ``false``      |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`float<class_float>` | :ref:`angular_limit/lower<class_HingeJoint3D_property_angular_limit/lower>`           | ``-1.5707964`` |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`float<class_float>` | :ref:`angular_limit/relaxation<class_HingeJoint3D_property_angular_limit/relaxation>` | ``1.0``        |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`float<class_float>` | :ref:`angular_limit/softness<class_HingeJoint3D_property_angular_limit/softness>`     | ``0.9``        |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`float<class_float>` | :ref:`angular_limit/upper<class_HingeJoint3D_property_angular_limit/upper>`           | ``1.5707964``  |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`bool<class_bool>`   | :ref:`motor/enable<class_HingeJoint3D_property_motor/enable>`                         | ``false``      |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`float<class_float>` | :ref:`motor/max_impulse<class_HingeJoint3D_property_motor/max_impulse>`               | ``1.0``        |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`float<class_float>` | :ref:`motor/target_velocity<class_HingeJoint3D_property_motor/target_velocity>`       | ``1.0``        |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
+   | :ref:`float<class_float>` | :ref:`params/bias<class_HingeJoint3D_property_params/bias>`                           | ``0.3``        |
+   +---------------------------+---------------------------------------------------------------------------------------+----------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -239,7 +239,7 @@ If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit/lower** = ``-1.5708`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/lower>`
+:ref:`float<class_float>` **angular_limit/lower** = ``-1.5707964`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/lower>`
 
 .. rst-class:: classref-property-setget
 
@@ -290,7 +290,7 @@ The lower this value, the more the rotation gets slowed down.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit/upper** = ``1.5708`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/upper>`
+:ref:`float<class_float>` **angular_limit/upper** = ``1.5707964`` :ref:`🔗<class_HingeJoint3D_property_angular_limit/upper>`
 
 .. rst-class:: classref-property-setget
 

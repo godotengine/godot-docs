@@ -310,7 +310,9 @@ See :ref:`@export_flags <class_@GDScript_annotation_@export_flags>`.
 
 Integers used as bit flags can store multiple ``true``/``false`` (boolean)
 values in one property. By using the ``@export_flags`` annotation, they
-can be set from the editor::
+can be set from the editor:
+
+::
 
     # Set any of the given flags from the editor.
     @export_flags("Fire", "Water", "Earth", "Wind") var spell_elements = 0
@@ -320,18 +322,24 @@ has value 1, ``Water`` has value 2, ``Earth`` has value 4 and ``Wind``
 corresponds to value 8. Usually, constants should be defined accordingly (e.g.
 ``const ELEMENT_WIND = 8`` and so on).
 
-You can add explicit values using a colon::
+You can add explicit values using a colon:
+
+::
 
     @export_flags("Self:4", "Allies:8", "Foes:16") var spell_targets = 0
 
 Only power of 2 values are valid as bit flags options. The lowest allowed value
 is 1, as 0 means that nothing is selected. You can also add options that are a
-combination of other flags::
+combination of other flags:
+
+::
 
     @export_flags("Self:4", "Allies:8", "Self and Allies:12", "Foes:16")
     var spell_targets = 0
 
-Export annotations are also provided for the physics, render, and navigation layers defined in the project settings::
+Export annotations are also provided for the physics, render, and navigation layers defined in the project settings:
+
+::
 
     @export_flags_2d_physics var layers_2d_physics
     @export_flags_2d_render var layers_2d_render
@@ -367,7 +375,9 @@ of the selected option (i.e. ``0``, ``1``,  or ``2``).
 
     @export_enum("Warrior", "Magician", "Thief") var character_class: int
 
-You can add explicit values using a colon::
+You can add explicit values using a colon:
+
+::
 
     @export_enum("Slow:30", "Average:60", "Very Fast:200") var character_speed: int
 
@@ -377,7 +387,9 @@ If the type is String, the value will be stored as a string.
 
     @export_enum("Rebecca", "Mary", "Leah") var character_name: String
 
-If you want to set an initial value, you must specify it explicitly::
+If you want to set an initial value, you must specify it explicitly:
+
+::
 
     @export_enum("Rebecca", "Mary", "Leah") var character_name: String = "Rebecca"
 

@@ -1265,6 +1265,8 @@ Stores a floating-point number as 32 bits in the file.
 
 Stores a half-precision floating-point number as 16 bits in the file.
 
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
+
 .. rst-class:: classref-item-separator
 
 ----

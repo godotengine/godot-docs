@@ -1,0 +1,24 @@
+:github_url: hide
+:allow_comments: False
+
+Page not found
+==============
+
+.. https://github.com/readthedocs/sphinx-notfound-page
+
+.. raw:: html
+
+    <p>
+        Sorry, we couldn't find that page. It may have been renamed or removed
+        in the version of the documentation you're currently browsing.
+    </p>
+    <p>
+        If you're currently browsing the
+        <em>latest</em> version of the documentation, try browsing the
+        <a href="/en/stable/"><em>stable</em> version of the documentation</a>.
+    </p>
+    <p>
+        Alternatively, use the
+        <a href="#" onclick="$('#rtd-search-form [name=\\'q\\']').focus()">Search docs</a>
+        box on the left or <a href="/">go to the homepage</a>.
+    </p>

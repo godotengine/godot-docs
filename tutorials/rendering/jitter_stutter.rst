@@ -37,41 +37,80 @@ Finally, a game exhibiting *stutter* will appear smooth, but appear to *stop* or
 Jitter
 ------
 
-There can be many causes of jitter, the most typical one happens when the game
+There can be many causes of jitter. The most typical one happens when the game
 *physics frequency* (usually 60 Hz) runs at a different resolution than the
 monitor refresh rate. Check whether your monitor refresh rate is different from
 60 Hz.
 
-This is generally not a problem, given that most monitors are 60 Hz, and
-starting with Godot 3.1, a frame timer was introduced that tries to synchronize
-with refresh as well as possible.
-
-Sometimes only some objects appear to jitter (character or background). This
+Sometimes, only some objects appear to jitter (character or background). This
 happens when they are processed in different time sources (one is processed in
-the physics step while another is processed in the idle step). Godot 3.1 does
-some improvements to this, from allowing kinematic bodies to be animated in the
-regular ``_process()`` loop, to further fixes in the frame timer.
+the physics step while another is processed in the idle step).
+
+This cause of jitter can be alleviated by enabling
+:ref:`physics interpolation <doc_physics_interpolation_quick_start_guide>`
+in the Project Settings. Physics interpolation will smooth out physics updates by
+interpolating the transforms of physics objects between physics frames.
+This way, the visual representation of physics objects will always look
+smooth no matter the framerate and physics tick rate.
+
+Enabling physics interpolation has some caveats you should be aware of.
+For example, care should be taken when teleporting objects so that they
+don't visibly interpolate between the old position and new position
+when it's not intended. See the
+:ref:`doc_physics_interpolation` documentation for details.
+
+.. note::
+
+    Enabling physics interpolation will increase input lag for behavior
+    that depends on the physics tick, such as player movement.
+    In most games, this is generally preferable to jitter, but consider this carefully
+    for games that operate on a fixed framerate (like fighting or rhythm games).
+    This increase in input lag can be compensated by increasing the physics
+    tick rate as described in the :ref:`doc_jitter_stutter_input_lag` section.
 
 Stutter
 -------
 
-Stutter may happen due to two different reasons. The first, and most obvious
-one, is the game not being able to keep full framerate performance. Solving this
-is game specific and will require optimization.
+Stutter may happen due to several different reasons. One reason is the game
+not being able to keep full framerate performance due to a CPU or GPU bottleneck.
+Solving this is game-specific and will require
+:ref:`optimization <doc_general_optimization>`.
 
-The second is more complicated, because it is often not associated to the engine
-or game but the underlying operating system. Here is some information regarding
-stutter on different OSs.
+Another common reason for stuttering is *shader compilation stutter*. This occurs
+when a shader needs to be compiled when a new material or particle effect is spawned
+for the first time in a game. This kind of stuttering generally only happens on the first
+playthrough, or after a graphics driver update when the shader cache is invalidated.
 
-On platforms that support disabling V-Sync, stuttering can be made less
-noticeable by disabling V-Sync in the project settings. This will however cause
-tearing to appear, especially on monitors with low refresh rates. If your
-monitor supports it, consider enabling variable refresh rate (G-Sync/FreeSync)
-while leaving V-Sync enabled. This avoids mitigating some forms of stuttering
-without introducing tearing.
+Since Godot 4.4, when using the Forward+ or Mobile renderers, the engine tries to
+avoid shader compilation stutter using an ubershader approach.
+For this approach to be most effective, care must be taken
+when designing scenes and resources so that Godot can gather as much information as
+possible when the scene/resource is loaded, as opposed as to when it's being drawn
+for the first time. See :ref:`doc_pipeline_compilations` for more information.
 
-Forcing your graphics card to use the maximum performance profile can also help
-reduce stuttering, at the cost of increased GPU power draw.
+However, when using the Compatibility renderer, it is not possible to use this
+ubershader approach due to technical limitations in OpenGL. Therefore, to avoid
+shader compilation stutter in the Compatibility renderer, you need to spawn every
+mesh and visual effect in front of the camera for a single frame when the level is loading.
+This will ensure the shader is compiled when the level is loaded, as opposed to
+occurring during gameplay. This can be done behind solid 2D UI (such as a fullscreen
+:ref:`class_ColorRect` node) so that it's not visible to the player.
+
+.. note::
+
+    On platforms that support disabling V-Sync, stuttering can be made less
+    noticeable by disabling V-Sync in the project settings. This will however cause
+    tearing to appear, especially on monitors with low refresh rates. If your
+    monitor supports it, consider enabling variable refresh rate (G-Sync/FreeSync)
+    while leaving V-Sync enabled. This allows mitigating some forms of stuttering
+    without introducing tearing. However, it will not help with large stutters,
+    such as the ones caused by shader compilation stutter.
+
+    Forcing your graphics card to use the maximum performance profile can also help
+    reduce stuttering, at the cost of increased GPU power draw.
+
+Additionally, stutter may be induced by the underlying operating system.
+Here is some information regarding stutter on different OSes:
 
 Windows
 ~~~~~~~
@@ -79,11 +118,11 @@ Windows
 Windows is known to cause stutter in windowed games. This mostly depends on the
 hardware installed, drivers version and processes running in parallel (e.g.
 having many browser tabs open may cause stutter in a running game). To avoid
-this, starting with 3.1, Godot raises the game priority to "Above Normal". This
-helps considerably but may not completely eliminate stutter.
+this, Godot raises the game priority to "Above Normal". This helps considerably,
+but may not completely eliminate stutter.
 
 Eliminating this completely requires giving your game full privileges to become
-"time critical", which is not advised. Some games may do it, but it is advised
+"Time Critical", which is not advised. Some games may do it, but it is advised
 to learn to live with this problem, as it is common for Windows games and most
 users won't play games windowed (games that are played in a window, e.g. puzzle
 games, will usually not exhibit this problem anyway).
@@ -146,6 +185,8 @@ iOS
 
 iOS devices are generally stutter-free, but older devices running newer versions
 of the operating system may exhibit problems. This is generally unavoidable.
+
+.. _doc_jitter_stutter_input_lag:
 
 Input lag
 ---------
@@ -238,8 +279,8 @@ however result in high CPU usage, so 500 Hz may be a safer bet on low-end CPUs.
 If your mouse offers multiple :abbr:`DPI (Dots Per Inch)` settings, consider also
 `using the highest possible setting and reducing in-game sensitivity to reduce mouse latency <https://www.youtube.com/watch?v=6AoRfv9W110>`__.
 
-On Linux, disabling compositing in window managers that allow it (such as KWin
-or Xfwm) can reduce input lag significantly.
+On Linux when using X11, disabling compositing in window managers that allow it
+(such as KWin or Xfwm) can reduce input lag significantly.
 
 Reporting jitter, stutter or input lag problems
 -----------------------------------------------

@@ -29,27 +29,73 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`Font<class_Font>`       | :ref:`font<class_LabelSettings_property_font>`                           |                       |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`font_color<class_LabelSettings_property_font_color>`               | ``Color(1, 1, 1, 1)`` |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`font_size<class_LabelSettings_property_font_size>`                 | ``16``                |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`     | :ref:`line_spacing<class_LabelSettings_property_line_spacing>`           | ``3.0``               |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`outline_color<class_LabelSettings_property_outline_color>`         | ``Color(1, 1, 1, 1)`` |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`outline_size<class_LabelSettings_property_outline_size>`           | ``0``                 |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`     | :ref:`paragraph_spacing<class_LabelSettings_property_paragraph_spacing>` | ``0.0``               |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`shadow_color<class_LabelSettings_property_shadow_color>`           | ``Color(0, 0, 0, 0)`` |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_LabelSettings_property_shadow_offset>`         | ``Vector2(1, 1)``     |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`shadow_size<class_LabelSettings_property_shadow_size>`             | ``1``                 |
-   +-------------------------------+--------------------------------------------------------------------------+-----------------------+
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Font<class_Font>`       | :ref:`font<class_LabelSettings_property_font>`                                   |                       |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`font_color<class_LabelSettings_property_font_color>`                       | ``Color(1, 1, 1, 1)`` |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`font_size<class_LabelSettings_property_font_size>`                         | ``16``                |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`     | :ref:`line_spacing<class_LabelSettings_property_line_spacing>`                   | ``3.0``               |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`outline_color<class_LabelSettings_property_outline_color>`                 | ``Color(1, 1, 1, 1)`` |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`outline_size<class_LabelSettings_property_outline_size>`                   | ``0``                 |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`     | :ref:`paragraph_spacing<class_LabelSettings_property_paragraph_spacing>`         | ``0.0``               |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`shadow_color<class_LabelSettings_property_shadow_color>`                   | ``Color(0, 0, 0, 0)`` |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_LabelSettings_property_shadow_offset>`                 | ``Vector2(1, 1)``     |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`shadow_size<class_LabelSettings_property_shadow_size>`                     | ``1``                 |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`stacked_outline_count<class_LabelSettings_property_stacked_outline_count>` | ``0``                 |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`stacked_shadow_count<class_LabelSettings_property_stacked_shadow_count>`   | ``0``                 |
+   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`add_stacked_outline<class_LabelSettings_method_add_stacked_outline>`\ (\ index\: :ref:`int<class_int>` = -1\ )                                                  |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`add_stacked_shadow<class_LabelSettings_method_add_stacked_shadow>`\ (\ index\: :ref:`int<class_int>` = -1\ )                                                    |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`get_stacked_outline_color<class_LabelSettings_method_get_stacked_outline_color>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                   |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_stacked_outline_size<class_LabelSettings_method_get_stacked_outline_size>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                     |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`get_stacked_shadow_color<class_LabelSettings_method_get_stacked_shadow_color>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                     |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_stacked_shadow_offset<class_LabelSettings_method_get_stacked_shadow_offset>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                   |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_stacked_shadow_outline_size<class_LabelSettings_method_get_stacked_shadow_outline_size>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                       |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`move_stacked_outline<class_LabelSettings_method_move_stacked_outline>`\ (\ from_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )           |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`move_stacked_shadow<class_LabelSettings_method_move_stacked_shadow>`\ (\ from_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )             |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`remove_stacked_outline<class_LabelSettings_method_remove_stacked_outline>`\ (\ index\: :ref:`int<class_int>`\ )                                                 |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`remove_stacked_shadow<class_LabelSettings_method_remove_stacked_shadow>`\ (\ index\: :ref:`int<class_int>`\ )                                                   |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_stacked_outline_color<class_LabelSettings_method_set_stacked_outline_color>`\ (\ index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )        |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_stacked_outline_size<class_LabelSettings_method_set_stacked_outline_size>`\ (\ index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ )               |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_stacked_shadow_color<class_LabelSettings_method_set_stacked_shadow_color>`\ (\ index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )          |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_stacked_shadow_offset<class_LabelSettings_method_set_stacked_shadow_offset>`\ (\ index\: :ref:`int<class_int>`, offset\: :ref:`Vector2<class_Vector2>`\ )   |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_stacked_shadow_outline_size<class_LabelSettings_method_set_stacked_shadow_outline_size>`\ (\ index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -225,6 +271,237 @@ Offset of the shadow effect, in pixels.
 - :ref:`int<class_int>` **get_shadow_size**\ (\ )
 
 Size of the shadow effect.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_property_stacked_outline_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **stacked_outline_count** = ``0`` :ref:`🔗<class_LabelSettings_property_stacked_outline_count>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stacked_outline_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_stacked_outline_count**\ (\ )
+
+The number of stacked outlines.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_property_stacked_shadow_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **stacked_shadow_count** = ``0`` :ref:`🔗<class_LabelSettings_property_stacked_shadow_count>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stacked_shadow_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_stacked_shadow_count**\ (\ )
+
+Returns the stacked shadow count.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_LabelSettings_method_add_stacked_outline:
+
+.. rst-class:: classref-method
+
+|void| **add_stacked_outline**\ (\ index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_LabelSettings_method_add_stacked_outline>`
+
+Adds a new stacked outline to the label at the given ``index``. If ``index`` is ``-1``, the new stacked outline will be added at the end of the list.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_add_stacked_shadow:
+
+.. rst-class:: classref-method
+
+|void| **add_stacked_shadow**\ (\ index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_LabelSettings_method_add_stacked_shadow>`
+
+Adds a new stacked shadow to the label at the given ``index``. If ``index`` is ``-1``, the new stacked shadow will be added at the end of the list.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_get_stacked_outline_color:
+
+.. rst-class:: classref-method
+
+:ref:`Color<class_Color>` **get_stacked_outline_color**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_LabelSettings_method_get_stacked_outline_color>`
+
+Returns the color of the stacked outline at ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_get_stacked_outline_size:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_stacked_outline_size**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_LabelSettings_method_get_stacked_outline_size>`
+
+Returns the size of the stacked outline at ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_get_stacked_shadow_color:
+
+.. rst-class:: classref-method
+
+:ref:`Color<class_Color>` **get_stacked_shadow_color**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_LabelSettings_method_get_stacked_shadow_color>`
+
+Returns the color of the stacked shadow at ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_get_stacked_shadow_offset:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_stacked_shadow_offset**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_LabelSettings_method_get_stacked_shadow_offset>`
+
+Returns the offset of the stacked shadow at ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_get_stacked_shadow_outline_size:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_stacked_shadow_outline_size**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_LabelSettings_method_get_stacked_shadow_outline_size>`
+
+Returns the outline size of the stacked shadow at ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_move_stacked_outline:
+
+.. rst-class:: classref-method
+
+|void| **move_stacked_outline**\ (\ from_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_LabelSettings_method_move_stacked_outline>`
+
+Moves the stacked outline at index ``from_index`` to the given position ``to_position`` in the array.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_move_stacked_shadow:
+
+.. rst-class:: classref-method
+
+|void| **move_stacked_shadow**\ (\ from_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_LabelSettings_method_move_stacked_shadow>`
+
+Moves the stacked shadow at index ``from_index`` to the given position ``to_position`` in the array.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_remove_stacked_outline:
+
+.. rst-class:: classref-method
+
+|void| **remove_stacked_outline**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_LabelSettings_method_remove_stacked_outline>`
+
+Removes the stacked outline at index ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_remove_stacked_shadow:
+
+.. rst-class:: classref-method
+
+|void| **remove_stacked_shadow**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_LabelSettings_method_remove_stacked_shadow>`
+
+Removes the stacked shadow at index ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_set_stacked_outline_color:
+
+.. rst-class:: classref-method
+
+|void| **set_stacked_outline_color**\ (\ index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_LabelSettings_method_set_stacked_outline_color>`
+
+Sets the color of the stacked outline identified by the given ``index`` to ``color``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_set_stacked_outline_size:
+
+.. rst-class:: classref-method
+
+|void| **set_stacked_outline_size**\ (\ index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_LabelSettings_method_set_stacked_outline_size>`
+
+Sets the size of the stacked outline identified by the given ``index`` to ``size``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_set_stacked_shadow_color:
+
+.. rst-class:: classref-method
+
+|void| **set_stacked_shadow_color**\ (\ index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_LabelSettings_method_set_stacked_shadow_color>`
+
+Sets the color of the stacked shadow identified by the given ``index`` to ``color``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_set_stacked_shadow_offset:
+
+.. rst-class:: classref-method
+
+|void| **set_stacked_shadow_offset**\ (\ index\: :ref:`int<class_int>`, offset\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_LabelSettings_method_set_stacked_shadow_offset>`
+
+Sets the offset of the stacked shadow identified by the given ``index`` to ``offset``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_method_set_stacked_shadow_outline_size:
+
+.. rst-class:: classref-method
+
+|void| **set_stacked_shadow_outline_size**\ (\ index\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_LabelSettings_method_set_stacked_shadow_outline_size>`
+
+Sets the outline size of the stacked shadow identified by the given ``index`` to ``size``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

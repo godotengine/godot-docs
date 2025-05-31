@@ -177,7 +177,7 @@ Sets autowrapping for the text in the dialog.
 - |void| **set_close_on_escape**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_close_on_escape**\ (\ )
 
-If ``true``, the dialog will be hidden when the escape key (:ref:`@GlobalScope.KEY_ESCAPE<class_@GlobalScope_constant_KEY_ESCAPE>`) is pressed.
+If ``true``, the dialog will be hidden when the ``ui_cancel`` action is pressed (by default, this action is bound to :ref:`@GlobalScope.KEY_ESCAPE<class_@GlobalScope_constant_KEY_ESCAPE>`).
 
 .. rst-class:: classref-item-separator
 

@@ -49,6 +49,10 @@ Properties
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`       | :ref:`compress/normal_map<class_ResourceImporterTexture_property_compress/normal_map>`                                         | ``0``     |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`   | :ref:`compress/rdo_quality_loss<class_ResourceImporterTexture_property_compress/rdo_quality_loss>`                             | ``0.0``   |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`       | :ref:`compress/uastc_level<class_ResourceImporterTexture_property_compress/uastc_level>`                                       | ``0``     |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`       | :ref:`detect_3d/compress_to<class_ResourceImporterTexture_property_detect_3d/compress_to>`                                     | ``1``     |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`editor/convert_colors_with_editor_theme<class_ResourceImporterTexture_property_editor/convert_colors_with_editor_theme>` | ``false`` |
@@ -58,6 +62,14 @@ Properties
    | :ref:`bool<class_bool>`     | :ref:`mipmaps/generate<class_ResourceImporterTexture_property_mipmaps/generate>`                                               | ``false`` |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`       | :ref:`mipmaps/limit<class_ResourceImporterTexture_property_mipmaps/limit>`                                                     | ``-1``    |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`       | :ref:`process/channel_remap/alpha<class_ResourceImporterTexture_property_process/channel_remap/alpha>`                         | ``3``     |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`       | :ref:`process/channel_remap/blue<class_ResourceImporterTexture_property_process/channel_remap/blue>`                           | ``2``     |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`       | :ref:`process/channel_remap/green<class_ResourceImporterTexture_property_process/channel_remap/green>`                         | ``1``     |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`       | :ref:`process/channel_remap/red<class_ResourceImporterTexture_property_process/channel_remap/red>`                             | ``0``     |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`process/fix_alpha_border<class_ResourceImporterTexture_property_process/fix_alpha_border>`                               | ``true``  |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------+
@@ -189,6 +201,34 @@ Note that RGTC compression affects the resulting normal map image. You will have
 
 ----
 
+.. _class_ResourceImporterTexture_property_compress/rdo_quality_loss:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **compress/rdo_quality_loss** = ``0.0`` :ref:`🔗<class_ResourceImporterTexture_property_compress/rdo_quality_loss>`
+
+If greater than or equal to ``0.01``, enables Rate-Distortion Optimization (RDO) to reduce file size. Higher values result in smaller file sizes but lower quality.
+
+\ **Note:** Enabling RDO makes encoding times significantly longer, especially when the image is large.
+
+See also :ref:`ProjectSettings.rendering/textures/basis_universal/rdo_dict_size<class_ProjectSettings_property_rendering/textures/basis_universal/rdo_dict_size>` and :ref:`ProjectSettings.rendering/textures/basis_universal/zstd_supercompression_level<class_ProjectSettings_property_rendering/textures/basis_universal/zstd_supercompression_level>` if you want to reduce the file size further.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterTexture_property_compress/uastc_level:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **compress/uastc_level** = ``0`` :ref:`🔗<class_ResourceImporterTexture_property_compress/uastc_level>`
+
+The UASTC encoding level. Higher values result in better quality but make encoding times longer.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ResourceImporterTexture_property_detect_3d/compress_to:
 
 .. rst-class:: classref-property
@@ -263,6 +303,142 @@ Unimplemented. This currently has no effect when changed.
 
 ----
 
+.. _class_ResourceImporterTexture_property_process/channel_remap/alpha:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **process/channel_remap/alpha** = ``3`` :ref:`🔗<class_ResourceImporterTexture_property_process/channel_remap/alpha>`
+
+Specifies the data source of the output image's alpha channel.
+
+\ **Red:** Use the values from the source image's red channel.
+
+\ **Green:** Use the values from the source image's green channel.
+
+\ **Blue:** Use the values from the source image's blue channel.
+
+\ **Alpha:** Use the values from the source image's alpha channel.
+
+\ **Red Inverted:** Use inverted values from the source image's red channel (``1.0 - R``).
+
+\ **Green Inverted:** Use inverted values from the source image's green channel (``1.0 - G``).
+
+\ **Blue Inverted:** Use inverted values from the source image's blue channel (``1.0 - B``).
+
+\ **Alpha Inverted:** Use inverted values from the source image's alpha channel (``1.0 - A``).
+
+\ **Unused:** Set the color channel's value to the default (``1.0`` for alpha, ``0.0`` for red, green or blue).
+
+\ **Zero:** Set the color channel's value to ``0.0``.
+
+\ **One:** Set the color channel's value to ``1.0``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterTexture_property_process/channel_remap/blue:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **process/channel_remap/blue** = ``2`` :ref:`🔗<class_ResourceImporterTexture_property_process/channel_remap/blue>`
+
+Specifies the data source of the output image's blue channel.
+
+\ **Red:** Use the values from the source image's red channel.
+
+\ **Green:** Use the values from the source image's green channel.
+
+\ **Blue:** Use the values from the source image's blue channel.
+
+\ **Alpha:** Use the values from the source image's alpha channel.
+
+\ **Red Inverted:** Use inverted values from the source image's red channel (``1.0 - R``).
+
+\ **Green Inverted:** Use inverted values from the source image's green channel (``1.0 - G``).
+
+\ **Blue Inverted:** Use inverted values from the source image's blue channel (``1.0 - B``).
+
+\ **Alpha Inverted:** Use inverted values from the source image's alpha channel (``1.0 - A``).
+
+\ **Unused:** Set the color channel's value to the default (``1.0`` for alpha, ``0.0`` for red, green or blue).
+
+\ **Zero:** Set the color channel's value to ``0.0``.
+
+\ **One:** Set the color channel's value to ``1.0``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterTexture_property_process/channel_remap/green:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **process/channel_remap/green** = ``1`` :ref:`🔗<class_ResourceImporterTexture_property_process/channel_remap/green>`
+
+Specifies the data source of the output image's green channel.
+
+\ **Red:** Use the values from the source image's red channel.
+
+\ **Green:** Use the values from the source image's green channel.
+
+\ **Blue:** Use the values from the source image's blue channel.
+
+\ **Alpha:** Use the values from the source image's alpha channel.
+
+\ **Red Inverted:** Use inverted values from the source image's red channel (``1.0 - R``).
+
+\ **Green Inverted:** Use inverted values from the source image's green channel (``1.0 - G``).
+
+\ **Blue Inverted:** Use inverted values from the source image's blue channel (``1.0 - B``).
+
+\ **Alpha Inverted:** Use inverted values from the source image's alpha channel (``1.0 - A``).
+
+\ **Unused:** Set the color channel's value to the default (``1.0`` for alpha, ``0.0`` for red, green or blue).
+
+\ **Zero:** Set the color channel's value to ``0.0``.
+
+\ **One:** Set the color channel's value to ``1.0``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterTexture_property_process/channel_remap/red:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **process/channel_remap/red** = ``0`` :ref:`🔗<class_ResourceImporterTexture_property_process/channel_remap/red>`
+
+Specifies the data source of the output image's red channel.
+
+\ **Red:** Use the values from the source image's red channel.
+
+\ **Green:** Use the values from the source image's green channel.
+
+\ **Blue:** Use the values from the source image's blue channel.
+
+\ **Alpha:** Use the values from the source image's alpha channel.
+
+\ **Red Inverted:** Use inverted values from the source image's red channel (``1.0 - R``).
+
+\ **Green Inverted:** Use inverted values from the source image's green channel (``1.0 - G``).
+
+\ **Blue Inverted:** Use inverted values from the source image's blue channel (``1.0 - B``).
+
+\ **Alpha Inverted:** Use inverted values from the source image's alpha channel (``1.0 - A``).
+
+\ **Unused:** Set the color channel's value to the default (``1.0`` for alpha, ``0.0`` for red, green or blue).
+
+\ **Zero:** Set the color channel's value to ``0.0``.
+
+\ **One:** Set the color channel's value to ``1.0``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ResourceImporterTexture_property_process/fix_alpha_border:
 
 .. rst-class:: classref-property
@@ -312,6 +488,8 @@ While these HDR panorama images are accurate to real life, this can cause the ra
 .. rst-class:: classref-property
 
 :ref:`bool<class_bool>` **process/normal_map_invert_y** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_process/normal_map_invert_y>`
+
+**Deprecated:** The same result can be achieved by setting :ref:`process/channel_remap/green<class_ResourceImporterTexture_property_process/channel_remap/green>` to ``Green Inverted``.
 
 If ``true``, convert the normal map from Y- (DirectX-style) to Y+ (OpenGL-style) by inverting its green color channel. This is the normal map convention expected by Godot.
 

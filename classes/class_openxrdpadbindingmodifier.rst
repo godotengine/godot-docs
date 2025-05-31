@@ -33,25 +33,25 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`OpenXRActionSet<class_OpenXRActionSet>`   | :ref:`action_set<class_OpenXRDpadBindingModifier_property_action_set>`                 |            |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                       | :ref:`center_region<class_OpenXRDpadBindingModifier_property_center_region>`           | ``0.1``    |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`String<class_String>`                     | :ref:`input_path<class_OpenXRDpadBindingModifier_property_input_path>`                 | ``""``     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`bool<class_bool>`                         | :ref:`is_sticky<class_OpenXRDpadBindingModifier_property_is_sticky>`                   | ``false``  |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`OpenXRHapticBase<class_OpenXRHapticBase>` | :ref:`off_haptic<class_OpenXRDpadBindingModifier_property_off_haptic>`                 |            |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`OpenXRHapticBase<class_OpenXRHapticBase>` | :ref:`on_haptic<class_OpenXRDpadBindingModifier_property_on_haptic>`                   |            |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                       | :ref:`threshold<class_OpenXRDpadBindingModifier_property_threshold>`                   | ``0.6``    |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                       | :ref:`threshold_released<class_OpenXRDpadBindingModifier_property_threshold_released>` | ``0.4``    |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                       | :ref:`wedge_angle<class_OpenXRDpadBindingModifier_property_wedge_angle>`               | ``1.5708`` |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------+------------+
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`OpenXRActionSet<class_OpenXRActionSet>`   | :ref:`action_set<class_OpenXRDpadBindingModifier_property_action_set>`                 |               |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                       | :ref:`center_region<class_OpenXRDpadBindingModifier_property_center_region>`           | ``0.1``       |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`String<class_String>`                     | :ref:`input_path<class_OpenXRDpadBindingModifier_property_input_path>`                 | ``""``        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_sticky<class_OpenXRDpadBindingModifier_property_is_sticky>`                   | ``false``     |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`OpenXRHapticBase<class_OpenXRHapticBase>` | :ref:`off_haptic<class_OpenXRDpadBindingModifier_property_off_haptic>`                 |               |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`OpenXRHapticBase<class_OpenXRHapticBase>` | :ref:`on_haptic<class_OpenXRDpadBindingModifier_property_on_haptic>`                   |               |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                       | :ref:`threshold<class_OpenXRDpadBindingModifier_property_threshold>`                   | ``0.6``       |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                       | :ref:`threshold_released<class_OpenXRDpadBindingModifier_property_threshold_released>` | ``0.4``       |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                       | :ref:`wedge_angle<class_OpenXRDpadBindingModifier_property_wedge_angle>`               | ``1.5707964`` |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-section-separator
 
@@ -204,7 +204,7 @@ When our input value falls below this, our output becomes ``false``.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wedge_angle** = ``1.5708`` :ref:`🔗<class_OpenXRDpadBindingModifier_property_wedge_angle>`
+:ref:`float<class_float>` **wedge_angle** = ``1.5707964`` :ref:`🔗<class_OpenXRDpadBindingModifier_property_wedge_angle>`
 
 .. rst-class:: classref-property-setget
 
