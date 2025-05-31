@@ -10,3 +10,4 @@ Android
    android_library
    android_plugin
    android_in_app_purchases
+   javaclasswrapper_and_androidruntimeplugin
