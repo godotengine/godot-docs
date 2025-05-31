@@ -523,6 +523,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/auto_unfold_foreign_scenes<class_EditorSettings_property_interface/inspector/auto_unfold_foreign_scenes>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/color_picker_show_intensity<class_EditorSettings_property_interface/inspector/color_picker_show_intensity>`                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/inspector/default_color_picker_mode<class_EditorSettings_property_interface/inspector/default_color_picker_mode>`                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/inspector/default_color_picker_shape<class_EditorSettings_property_interface/inspector/default_color_picker_shape>`                                                                               |
@@ -3951,6 +3953,18 @@ If ``true``, the Scene dock will display buttons to quickly add a root node to a
 :ref:`bool<class_bool>` **interface/inspector/auto_unfold_foreign_scenes** :ref:`🔗<class_EditorSettings_property_interface/inspector/auto_unfold_foreign_scenes>`
 
 If ``true``, automatically expands property groups in the Inspector dock when opening a scene that hasn't been opened previously. If ``false``, all groups remain collapsed by default.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/inspector/color_picker_show_intensity:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/inspector/color_picker_show_intensity** :ref:`🔗<class_EditorSettings_property_interface/inspector/color_picker_show_intensity>`
+
+If ``true``, show the intensity slider in the :ref:`ColorPicker<class_ColorPicker>`\ s opened in the editor.
 
 .. rst-class:: classref-item-separator
 

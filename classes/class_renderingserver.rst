@@ -3384,11 +3384,19 @@ Do not perform any antialiasing in the full screen post-process.
 
 Use fast approximate antialiasing. FXAA is a popular screen-space antialiasing method, which is fast but will make the image look blurry, especially at lower resolutions. It can still work relatively well at large resolutions such as 1440p and 4K.
 
+.. _class_RenderingServer_constant_VIEWPORT_SCREEN_SPACE_AA_SMAA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_SMAA** = ``2``
+
+Use subpixel morphological antialiasing. SMAA may produce clearer results than FXAA, but at a slightly higher performance cost.
+
 .. _class_RenderingServer_constant_VIEWPORT_SCREEN_SPACE_AA_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_MAX** = ``2``
+:ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_MAX** = ``3``
 
 Represents the size of the :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` enum.
 

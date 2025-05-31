@@ -274,6 +274,14 @@ One-shot connections disconnect themselves after emission.
 
 Reference-counted connections can be assigned to the same :ref:`Callable<class_Callable>` multiple times. Each disconnection decreases the internal counter. The signal fully disconnects only when the counter reaches 0.
 
+.. _class_Object_constant_CONNECT_APPEND_SOURCE_OBJECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectFlags<enum_Object_ConnectFlags>` **CONNECT_APPEND_SOURCE_OBJECT** = ``16``
+
+The source object is automatically bound when a :ref:`PackedScene<class_PackedScene>` is instantiated. If this flag bit is enabled, the source object will be appended right after the original arguments of the signal.
+
 .. rst-class:: classref-section-separator
 
 ----

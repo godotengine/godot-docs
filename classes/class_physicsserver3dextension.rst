@@ -316,6 +316,14 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`_soft_body_add_collision_exception<class_PhysicsServer3DExtension_private_method__soft_body_add_collision_exception>`\ (\ body\: :ref:`RID<class_RID>`, body_b\: :ref:`RID<class_RID>`\ ) |virtual|                                                                                                                                                                                                                                                                |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`_soft_body_apply_central_force<class_PhysicsServer3DExtension_private_method__soft_body_apply_central_force>`\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual|                                                                                                                                                                                                                                                                 |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`_soft_body_apply_central_impulse<class_PhysicsServer3DExtension_private_method__soft_body_apply_central_impulse>`\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual|                                                                                                                                                                                                                                                           |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`_soft_body_apply_point_force<class_PhysicsServer3DExtension_private_method__soft_body_apply_point_force>`\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual|                                                                                                                                                                                                                                |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`_soft_body_apply_point_impulse<class_PhysicsServer3DExtension_private_method__soft_body_apply_point_impulse>`\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`, impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual|                                                                                                                                                                                                                          |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`_soft_body_create<class_PhysicsServer3DExtension_private_method__soft_body_create>`\ (\ ) |virtual|                                                                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`AABB<class_AABB>`                                           | :ref:`_soft_body_get_bounds<class_PhysicsServer3DExtension_private_method__soft_body_get_bounds>`\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                                  |
@@ -335,6 +343,8 @@ Methods
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`_soft_body_get_point_global_position<class_PhysicsServer3DExtension_private_method__soft_body_get_point_global_position>`\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                                                                                               |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`_soft_body_get_pressure_coefficient<class_PhysicsServer3DExtension_private_method__soft_body_get_pressure_coefficient>`\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                                      |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                         | :ref:`_soft_body_get_shrinking_factor<class_PhysicsServer3DExtension_private_method__soft_body_get_shrinking_factor>`\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                                              |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`_soft_body_get_simulation_precision<class_PhysicsServer3DExtension_private_method__soft_body_get_simulation_precision>`\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -369,6 +379,8 @@ Methods
    | |void|                                                            | :ref:`_soft_body_set_pressure_coefficient<class_PhysicsServer3DExtension_private_method__soft_body_set_pressure_coefficient>`\ (\ body\: :ref:`RID<class_RID>`, pressure_coefficient\: :ref:`float<class_float>`\ ) |virtual|                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`_soft_body_set_ray_pickable<class_PhysicsServer3DExtension_private_method__soft_body_set_ray_pickable>`\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                                                                                                                            |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`_soft_body_set_shrinking_factor<class_PhysicsServer3DExtension_private_method__soft_body_set_shrinking_factor>`\ (\ body\: :ref:`RID<class_RID>`, shrinking_factor\: :ref:`float<class_float>`\ ) |virtual|                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`_soft_body_set_simulation_precision<class_PhysicsServer3DExtension_private_method__soft_body_set_simulation_precision>`\ (\ body\: :ref:`RID<class_RID>`, simulation_precision\: :ref:`int<class_int>`\ ) |virtual|                                                                                                                                                                                                                                                |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2410,6 +2422,62 @@ Method Descriptions
 
 ----
 
+.. _class_PhysicsServer3DExtension_private_method__soft_body_apply_central_force:
+
+.. rst-class:: classref-method
+
+|void| **_soft_body_apply_central_force**\ (\ body\: :ref:`RID<class_RID>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_apply_central_force>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer3DExtension_private_method__soft_body_apply_central_impulse:
+
+.. rst-class:: classref-method
+
+|void| **_soft_body_apply_central_impulse**\ (\ body\: :ref:`RID<class_RID>`, impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_apply_central_impulse>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer3DExtension_private_method__soft_body_apply_point_force:
+
+.. rst-class:: classref-method
+
+|void| **_soft_body_apply_point_force**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`, force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_apply_point_force>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer3DExtension_private_method__soft_body_apply_point_impulse:
+
+.. rst-class:: classref-method
+
+|void| **_soft_body_apply_point_impulse**\ (\ body\: :ref:`RID<class_RID>`, point_index\: :ref:`int<class_int>`, impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_apply_point_impulse>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PhysicsServer3DExtension_private_method__soft_body_create:
 
 .. rst-class:: classref-method
@@ -2541,6 +2609,20 @@ Method Descriptions
 .. rst-class:: classref-method
 
 :ref:`float<class_float>` **_soft_body_get_pressure_coefficient**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_pressure_coefficient>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer3DExtension_private_method__soft_body_get_shrinking_factor:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **_soft_body_get_shrinking_factor**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_get_shrinking_factor>`
 
 .. container:: contribute
 
@@ -2779,6 +2861,20 @@ Method Descriptions
 .. rst-class:: classref-method
 
 |void| **_soft_body_set_ray_pickable**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_ray_pickable>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer3DExtension_private_method__soft_body_set_shrinking_factor:
+
+.. rst-class:: classref-method
+
+|void| **_soft_body_set_shrinking_factor**\ (\ body\: :ref:`RID<class_RID>`, shrinking_factor\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer3DExtension_private_method__soft_body_set_shrinking_factor>`
 
 .. container:: contribute
 

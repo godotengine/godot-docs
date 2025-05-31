@@ -51,6 +51,8 @@ Properties
    +----------------------------------------------------------+----------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                  | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`                   | ``true``              |
    +----------------------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`edit_intensity<class_ColorPicker_property_edit_intensity>`           | ``true``              |
+   +----------------------------------------------------------+----------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                  | :ref:`hex_visible<class_ColorPicker_property_hex_visible>`                 | ``true``              |
    +----------------------------------------------------------+----------------------------------------------------------------------------+-----------------------+
    | :ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` | :ref:`picker_shape<class_ColorPicker_property_picker_shape>`               | ``0``                 |
@@ -112,6 +114,8 @@ Theme Properties
    | :ref:`Texture2D<class_Texture2D>` | :ref:`bar_arrow<class_ColorPicker_theme_icon_bar_arrow>`                                                |                           |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                                                |                           |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`color_script<class_ColorPicker_theme_icon_color_script>`                                          |                           |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`expanded_arrow<class_ColorPicker_theme_icon_expanded_arrow>`                                      |                           |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------+
@@ -206,7 +210,7 @@ enum **ColorModeType**: :ref:`🔗<enum_ColorPicker_ColorModeType>`
 
 :ref:`ColorModeType<enum_ColorPicker_ColorModeType>` **MODE_RGB** = ``0``
 
-Allows editing the color with Red/Green/Blue sliders.
+Allows editing the color with Red/Green/Blue sliders in sRGB color space.
 
 .. _class_ColorPicker_constant_MODE_HSV:
 
@@ -222,7 +226,17 @@ Allows editing the color with Hue/Saturation/Value sliders.
 
 :ref:`ColorModeType<enum_ColorPicker_ColorModeType>` **MODE_RAW** = ``2``
 
-Allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
+**Deprecated:** This is replaced by :ref:`MODE_LINEAR<class_ColorPicker_constant_MODE_LINEAR>`.
+
+
+
+.. _class_ColorPicker_constant_MODE_LINEAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorModeType<enum_ColorPicker_ColorModeType>` **MODE_LINEAR** = ``2``
+
+Allows editing the color with Red/Green/Blue sliders in linear color space.
 
 .. _class_ColorPicker_constant_MODE_OKHSL:
 
@@ -392,6 +406,23 @@ If ``true``, the color will apply only after the user releases the mouse button,
 - :ref:`bool<class_bool>` **is_editing_alpha**\ (\ )
 
 If ``true``, shows an alpha channel slider (opacity).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ColorPicker_property_edit_intensity:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **edit_intensity** = ``true`` :ref:`🔗<class_ColorPicker_property_edit_intensity>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_edit_intensity**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_editing_intensity**\ (\ )
+
+If ``true``, shows an intensity slider. The intensity is applied as follows: multiply the color by ``2 ** intensity`` in linear RGB space, and then convert it back to sRGB.
 
 .. rst-class:: classref-item-separator
 
@@ -683,6 +714,18 @@ The texture for the arrow grabber.
 :ref:`Texture2D<class_Texture2D>` **color_hue** :ref:`🔗<class_ColorPicker_theme_icon_color_hue>`
 
 Custom texture for the hue selection slider on the right.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ColorPicker_theme_icon_color_script:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **color_script** :ref:`🔗<class_ColorPicker_theme_icon_color_script>`
+
+The icon for the button that switches color text to hexadecimal.
 
 .. rst-class:: classref-item-separator
 
