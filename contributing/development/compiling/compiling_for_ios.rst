@@ -24,7 +24,9 @@ Requirements
    from the `MoltenVK SDK <https://github.com/KhronosGroup/MoltenVK#fetching-moltenvk-source-code>`__.
 
 .. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
-          install SCons using the following command::
+          install SCons using the following command:
+
+          ::
 
               brew install scons
 
@@ -33,7 +35,9 @@ Requirements
 
           Similarly, if you have `MacPorts <https://www.macports.org/>`_
           installed, you can easily install SCons using the
-          following command::
+          following command:
+
+          ::
 
               sudo port install scons
 

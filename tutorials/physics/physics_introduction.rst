@@ -163,7 +163,9 @@ can use binary, hexadecimal, or decimal notation for layer masks, depending
 on your preference.
 
 The code equivalent of the above example where layers 1, 3 and 4 were enabled
-would be as follows::
+would be as follows:
+
+::
 
     # Example: Setting mask value for enabling layers 1, 3 and 4
 
@@ -181,7 +183,9 @@ would be as follows::
     pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
 
 You can also set bits independently by calling ``set_collision_layer_value(layer_number, value)``
-or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`CollisionObject2D <class_CollisionObject2D>` as follows::
+or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`CollisionObject2D <class_CollisionObject2D>` as follows:
+
+::
 
     # Example: Setting mask value to enable layers 1, 3, and 4.
 

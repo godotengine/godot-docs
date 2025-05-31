@@ -25,7 +25,9 @@ For compiling under macOS, the following is required:
   ``misc/scripts/install_vulkan_sdk_macos.sh`` within the Godot source repository.
 
 .. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
-          install SCons using the following command::
+          install SCons using the following command:
+
+          ::
 
               brew install scons
 
@@ -34,7 +36,9 @@ For compiling under macOS, the following is required:
 
           Similarly, if you have `MacPorts <https://www.macports.org/>`_
           installed, you can easily install SCons using the
-          following command::
+          following command:
+
+          ::
 
               sudo port install scons
 
@@ -80,7 +84,9 @@ Automatic ``.app`` bundle creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To automatically create an ``.app`` bundle like in the official builds, use the ``generate_bundle=yes`` option on the *last*
-SCons command used to build editor::
+SCons command used to build editor:
+
+::
 
     scons platform=macos arch=x86_64
     scons platform=macos arch=arm64 generate_bundle=yes
@@ -89,7 +95,9 @@ Manual ``.app`` bundle creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To support both architectures in a single "Universal 2" binary,
-run the above two commands and then use ``lipo`` to bundle them together::
+run the above two commands and then use ``lipo`` to bundle them together:
+
+::
 
     lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
 
@@ -117,11 +125,15 @@ Running a headless/server build
 -------------------------------
 
 To run in *headless* mode which provides editor functionality to export
-projects in an automated manner, use the normal build::
+projects in an automated manner, use the normal build:
+
+::
 
     scons platform=macos target=editor
 
-And then use the ``--headless`` command line argument::
+And then use the ``--headless`` command line argument:
+
+::
 
     ./bin/godot.macos.editor.x86_64 --headless
 
@@ -179,7 +191,9 @@ an *Universal 2* binary from two separate ARM64 and x86_64 binaries (if both wer
     MoltenVK without having to recompile export templates.
 
 You can then zip the ``macos_template.app`` folder to reproduce the ``macos.zip``
-template from the official Godot distribution::
+template from the official Godot distribution:
+
+::
 
     zip -r9 macos.zip macos_template.app
 
@@ -208,7 +222,9 @@ repository/extracted the zip), e.g.::
 
     export OSXCROSS_ROOT="$HOME/osxcross"
 
-Now you can compile with SCons like you normally would::
+Now you can compile with SCons like you normally would:
+
+::
 
     scons platform=macos
 

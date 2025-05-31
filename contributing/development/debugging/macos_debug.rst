@@ -34,7 +34,9 @@ Create an ``editor.entitlements`` text file with the following contents:
         </dict>
     </plist>
 
-Then use the following command to re-sign the editor::
+Then use the following command to re-sign the editor:
+
+::
 
     codesign -s - --deep --force --options=runtime --entitlements ./editor.entitlements ./path/to/Godot.app
 

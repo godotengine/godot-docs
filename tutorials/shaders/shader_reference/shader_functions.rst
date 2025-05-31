@@ -1346,7 +1346,9 @@ Exponential and math function descriptions
     Performs smooth Hermite interpolation between ``0`` and ``1`` when a < c < b.
     This is useful in cases where a threshold function with a smooth transition is desired.
 
-    Smoothstep is equivalent to::
+    Smoothstep is equivalent to:
+
+    ::
 
         vec_type t;
         t = clamp((c - a) / (b - a), 0.0, 1.0);
@@ -1751,7 +1753,9 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta) :ref:`🔗<shader_func_refract>`
 
     For a given incident vector ``I``, surface normal ``N`` and ratio of indices of refraction, ``eta``, refract returns the refraction vector, ``R``.
 
-    ``R`` is calculated as::
+    ``R`` is calculated as:
+
+    ::
 
         k = 1.0 - eta * eta * (1.0 - dot(N, I) * dot(N, I));
         if (k < 0.0)
@@ -2143,7 +2147,9 @@ bool **any**\ (\ |vec_bool_type| x) :ref:`🔗<shader_func_any>`
 
     Returns ``true`` if any element of a boolean vector is ``true``, ``false`` otherwise.
 
-    Functionally equivalent to::
+    Functionally equivalent to:
+
+    ::
 
         bool any(bvec x) {     // bvec can be bvec2, bvec3 or bvec4
             bool result = false;
@@ -2177,7 +2183,9 @@ bool **all**\ (\ |vec_bool_type| x) :ref:`🔗<shader_func_all>`
 
     Returns ``true`` if all elements of a boolean vector are ``true``, ``false`` otherwise.
 
-    Functionally equivalent to::
+    Functionally equivalent to:
+
+    ::
 
         bool all(bvec x)       // bvec can be bvec2, bvec3 or bvec4
         {
@@ -2594,7 +2602,9 @@ vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod) :ref:`🔗<shader
 
     Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
     an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
-    partial derivatives as follows::
+    partial derivatives as follows:
+
+    ::
 
         δu/δx=0, δv/δx=0, δw/δx=0
         δu/δy=0, δv/δy=0, δw/δy=0
@@ -2815,7 +2825,9 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
 
     Gathers four texels from a texture.
 
-    Returns the value::
+    Returns the value:
+
+    ::
 
         vec4(Sample_i0_j1(p, base).comps,
              Sample_i1_j1(p, base).comps,
@@ -3258,7 +3270,9 @@ uint **packUnorm2x16**\ (\ vec2 v) :ref:`🔗<shader_func_packUnorm2x16>`
 
     Converts each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
-    The conversion for component c of ``v`` to fixed-point is performed as follows::
+    The conversion for component c of ``v`` to fixed-point is performed as follows:
+
+    ::
 
         round(clamp(c, 0.0, 1.0) * 65535.0)
 
@@ -3319,7 +3333,9 @@ uint **packSnorm2x16**\ (\ vec2 v) :ref:`🔗<shader_func_packSnorm2x16>`
 
     Convert each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
-    The conversion for component c of ``v`` to fixed-point is performed as follows::
+    The conversion for component c of ``v`` to fixed-point is performed as follows:
+
+    ::
 
         round(clamp(c, -1.0, 1.0) * 32767.0)
 
@@ -3379,7 +3395,9 @@ uint **packUnorm4x8**\ (\ vec4 v) :ref:`🔗<shader_func_packUnorm4x8>`
 
     Converts each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
-    The conversion for component c of ``v`` to fixed-point is performed as follows::
+    The conversion for component c of ``v`` to fixed-point is performed as follows:
+
+    ::
 
         round(clamp(c, 0.0, 1.0) * 255.0)
 
@@ -3440,7 +3458,9 @@ uint **packSnorm4x8**\ (\ vec4 v) :ref:`🔗<shader_func_packSnorm4x8>`
 
     Convert each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
-    The conversion for component c of ``v`` to fixed-point is performed as follows::
+    The conversion for component c of ``v`` to fixed-point is performed as follows:
+
+    ::
 
         round(clamp(c, -1.0, 1.0) * 127.0)
 
@@ -3954,7 +3974,9 @@ Bitwise function descriptions
 
     |componentwise|
 
-    Extracts ``x`` into a floating-point significand in the range ``[0.5, 1.0)`` and in integral exponent of two, such that::
+    Extracts ``x`` into a floating-point significand in the range ``[0.5, 1.0)`` and in integral exponent of two, such that:
+
+    ::
 
         x = significand * 2 ^ exponent
 

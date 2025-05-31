@@ -581,7 +581,9 @@ To handle clicked ``[url]`` tags, connect the ``RichTextLabel`` node's
 :ref:`meta_clicked <class_RichTextLabel_signal_meta_clicked>` signal to a script function.
 
 For example, the following method can be connected to ``meta_clicked`` to open
-clicked URLs using the user's default web browser::
+clicked URLs using the user's default web browser:
+
+::
 
     # This assumes RichTextLabel's `meta_clicked` signal was connected to
     # the function below using the signal connection dialog.

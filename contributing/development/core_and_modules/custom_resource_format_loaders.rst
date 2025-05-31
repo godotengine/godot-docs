@@ -362,7 +362,9 @@ project's root folder:
       ]
     }
 
-Then attach the following script to any node::
+Then attach the following script to any node:
+
+::
 
     extends Node
 

@@ -113,7 +113,9 @@ in general).
 
 On Windows 10, to further avoid mistakes related to case sensitivity,
 you can also make the project folder case-sensitive. After enabling the Windows
-Subsystem for Linux feature, run the following command in a PowerShell window::
+Subsystem for Linux feature, run the following command in a PowerShell window:
+
+::
 
     # To enable case-sensitivity:
     fsutil file setcasesensitiveinfo <path to project folder> enable
@@ -123,6 +125,8 @@ Subsystem for Linux feature, run the following command in a PowerShell window::
 
 If you haven't enabled the Windows Subsystem for Linux, you can enter the
 following line in a PowerShell window *running as Administrator* then reboot
-when asked::
+when asked:
+
+::
 
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
