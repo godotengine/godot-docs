@@ -8,7 +8,7 @@ The warning message is:
     Narrowing conversion (float is converted to int and loses precision).
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/narrowing_conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Narrowing Conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`.
 
 When this warning occurs
 ------------------------

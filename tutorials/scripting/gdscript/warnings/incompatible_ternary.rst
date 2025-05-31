@@ -8,7 +8,7 @@ The warning message is:
     Values of the ternary operator are not mutually compatible.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/incompatible_ternary<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Incompatible Ternary<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`.
 
 When this warning occurs
 ------------------------

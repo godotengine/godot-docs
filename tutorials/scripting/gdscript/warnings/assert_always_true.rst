@@ -8,7 +8,7 @@ The warning message is:
     Assert statement is redundant because the expression is always true.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/assert_always_true<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Assert Always True<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`.
 
 When this warning occurs
 ------------------------

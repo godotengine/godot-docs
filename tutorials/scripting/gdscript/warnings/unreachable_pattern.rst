@@ -8,7 +8,7 @@ The warning message is:
     Unreachable pattern (pattern after wildcard or bind).
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/unreachable_pattern<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_pattern>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Unreachable Pattern<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_pattern>`.
 
 When this warning occurs
 ------------------------

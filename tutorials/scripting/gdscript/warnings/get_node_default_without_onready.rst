@@ -14,7 +14,7 @@ Depending on how you attempt to access the scene tree, the warning message will 
     The default value is using "get_node()" which won't return nodes in the scene tree before "_ready()" is called. Use the "@onready" annotation to solve this.
 
 The default warning level for this warning is **Error**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/get_node_default_without_onready<class_ProjectSettings_property_debug/gdscript/warnings/get_node_default_without_onready>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Get Node Default Without Onready<class_ProjectSettings_property_debug/gdscript/warnings/get_node_default_without_onready>`.
 
 When this warning occurs
 ------------------------

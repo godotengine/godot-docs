@@ -8,7 +8,7 @@ The warning message is:
     The variable "my_var" is used before being assigned a value.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/unassigned_variable<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Unassigned Variable<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`.
 
 When this warning occurs
 ------------------------

@@ -8,7 +8,7 @@ The warning message is:
     The "..." keyword is deprecated and will be removed in a future release, please replace its uses by "...".
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Deprecated Keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`.
 
 When this warning occurs
 ------------------------

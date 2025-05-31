@@ -8,7 +8,7 @@ The warning message is:
     Standalone expression (the line may have no effect).
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/standalone_expression<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Standalone Expression<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`.
 
 When this warning occurs
 ------------------------

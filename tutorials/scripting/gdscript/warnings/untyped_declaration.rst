@@ -10,7 +10,7 @@ The warning message is:
     Variable "my_age" has no static type.
 
 The default warning level for this warning is **Ignore**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/untyped_declaration<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Untyped Declaration<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>`.
 
 When this warning occurs
 ------------------------

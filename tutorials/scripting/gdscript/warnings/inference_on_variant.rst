@@ -8,7 +8,7 @@ The warning message is:
     The variable type is being inferred from a Variant value, so it will be typed as Variant.
 
 The default warning level for this warning is **Error**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/inference_on_variant<class_ProjectSettings_property_debug/gdscript/warnings/inference_on_variant>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Inference on Variant<class_ProjectSettings_property_debug/gdscript/warnings/inference_on_variant>`.
 
 When this warning occurs
 ------------------------

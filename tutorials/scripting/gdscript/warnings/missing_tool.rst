@@ -8,7 +8,7 @@ The warning message is:
     The base class script has the "@tool" annotation, but this script does not have it.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/missing_tool<class_ProjectSettings_property_debug/gdscript/warnings/missing_tool>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Missing Tool<class_ProjectSettings_property_debug/gdscript/warnings/missing_tool>`.
 
 When this warning occurs
 ------------------------

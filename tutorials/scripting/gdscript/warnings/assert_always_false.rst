@@ -8,7 +8,7 @@ The warning message is:
     Assert statement will raise an error because the expression is always false.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/assert_always_false<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Assert Always False<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false>`.
 
 When this warning occurs
 ------------------------

@@ -8,7 +8,7 @@ The warning message is:
     Integer division, decimal part will be discarded.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Integer Division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`.
 
 When this warning occurs
 ------------------------

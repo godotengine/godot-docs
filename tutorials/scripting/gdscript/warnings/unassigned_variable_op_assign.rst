@@ -8,7 +8,7 @@ The warning message is:
     The variable "my_counter" is modified with the compound-assignment operator "+=" but was not previously initialized.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/unassigned_variable_op_assign<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Unassigned Variable Op Assign<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`.
 
 When this warning occurs
 ------------------------

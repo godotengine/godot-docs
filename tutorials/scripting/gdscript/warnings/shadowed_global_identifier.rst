@@ -8,7 +8,7 @@ The warning message is:
     The variable "char" has the same name as a built-in function.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/shadowed_global_identifier<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Shadowed Global Identifier<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier>`.
 
 When this warning occurs
 ------------------------

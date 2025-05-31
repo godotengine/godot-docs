@@ -8,7 +8,7 @@ The warning message is:
     The local variable "level" is shadowing an already-declared variable at line 3 in the current class.
 
 The default warning level for this warning is **Warn**.
-To modify it, see :ref:`ProjectSettings.debug/gdscript/warnings/shadowed_variable<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`.
+To modify it, set :ref:`Project Settings > Debug > GDScript > Warnings > Shadowed Variable<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`.
 
 When this warning occurs
 ------------------------
