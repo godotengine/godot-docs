@@ -34,10 +34,6 @@ If ``assert()`` is passed something guaranteed to be false in a boolean context,
         # Despite false being passed, this won't raise ASSERT_ALWAYS_FALSE.
         assert(false, "False is false")
 
-        # This evaluates to a boolean which is false, so it also won't raise
-        # the warning.
-        assert(3 == 4, "3 isn't equal to 4")
-
     This is because ``assert(false)`` calls are often used in development to forcibly halt program execution and avoid strange errors later on.
 
     See `GH-58087 <https://github.com/godotengine/godot/issues/58087>`_ for more information.
