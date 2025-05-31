@@ -58,6 +58,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`gradle_build/android_source_template<class_EditorExportPlatformAndroid_property_gradle_build/android_source_template>`                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`gradle_build/custom_theme_attributes<class_EditorExportPlatformAndroid_property_gradle_build/custom_theme_attributes>`                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`gradle_build/export_format<class_EditorExportPlatformAndroid_property_gradle_build/export_format>`                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`gradle_build/gradle_build_directory<class_EditorExportPlatformAndroid_property_gradle_build/gradle_build_directory>`                       |
@@ -424,6 +426,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`screen/support_xlarge<class_EditorExportPlatformAndroid_property_screen/support_xlarge>`                                                   |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`shader_baker/enabled<class_EditorExportPlatformAndroid_property_shader_baker/enabled>`                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`user_data_backup/allow<class_EditorExportPlatformAndroid_property_user_data_backup/allow>`                                                 |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`version/code<class_EditorExportPlatformAndroid_property_version/code>`                                                                     |
@@ -591,6 +595,24 @@ This functionality is intended for smartwatches and is generally ignored on stan
 :ref:`String<class_String>` **gradle_build/android_source_template** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/android_source_template>`
 
 Path to a ZIP file holding the source for the export template used in a Gradle build. If left empty, the default template is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_gradle_build/custom_theme_attributes:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **gradle_build/custom_theme_attributes** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/custom_theme_attributes>`
+
+A dictionary of custom theme attributes to include in the exported Android project. Each entry defines a theme attribute name and its value, and will be added to the **GodotAppMainTheme**.
+
+For example, the key ``android:windowSwipeToDismiss`` with the value ``false`` is resolved to ``<item name="android:windowSwipeToDismiss">false</item>``.
+
+\ **Note:** To add a custom attribute to the **GodotAppSplashTheme**, prefix the attribute name with ``[splash]``.
+
+\ **Note:** Reserved attributes configured via other export options or project settings cannot be overridden by ``custom_theme_attributes`` and are skipped during export.
 
 .. rst-class:: classref-item-separator
 
@@ -2821,6 +2843,18 @@ Indicates whether the application supports smaller screen form-factors.
 :ref:`bool<class_bool>` **screen/support_xlarge** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/support_xlarge>`
 
 Indicates whether the application supports extra large screen form-factors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_shader_baker/enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **shader_baker/enabled** :ref:`🔗<class_EditorExportPlatformAndroid_property_shader_baker/enabled>`
+
+If ``true``, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ or Mobile renderers.
 
 .. rst-class:: classref-item-separator
 

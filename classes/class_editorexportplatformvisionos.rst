@@ -402,6 +402,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`privacy/user_defaults_access_reasons<class_EditorExportPlatformVisionOS_property_privacy/user_defaults_access_reasons>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`shader_baker/enabled<class_EditorExportPlatformVisionOS_property_shader_baker/enabled>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`user_data/accessible_from_files_app<class_EditorExportPlatformVisionOS_property_user_data/accessible_from_files_app>`                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`user_data/accessible_from_itunes_sharing<class_EditorExportPlatformVisionOS_property_user_data/accessible_from_itunes_sharing>`                                                     |
@@ -2659,6 +2661,18 @@ Indicates whether your app uses data for tracking. See `Privacy manifest files <
 :ref:`int<class_int>` **privacy/user_defaults_access_reasons** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/user_defaults_access_reasons>`
 
 The reasons your app use user defaults API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformVisionOS_property_shader_baker/enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **shader_baker/enabled** :ref:`🔗<class_EditorExportPlatformVisionOS_property_shader_baker/enabled>`
+
+If ``true``, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ and Mobile renderers.
 
 .. rst-class:: classref-item-separator
 

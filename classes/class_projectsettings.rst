@@ -1349,6 +1349,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`physics/3d/physics_engine<class_ProjectSettings_property_physics/3d/physics_engine>`                                                                                                                 | ``"DEFAULT"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`physics/3d/physics_interpolation/scene_traversal<class_ProjectSettings_property_physics/3d/physics_interpolation/scene_traversal>`                                                                   | ``"DEFAULT"``                                                                                    |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`physics/3d/run_on_separate_thread<class_ProjectSettings_property_physics/3d/run_on_separate_thread>`                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/3d/sleep_threshold_angular<class_ProjectSettings_property_physics/3d/sleep_threshold_angular>`                                                                                               | ``0.13962634``                                                                                   |
@@ -1462,6 +1464,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>`                                                                                     | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`                                                                     | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`rendering/anti_aliasing/quality/smaa_edge_detection_threshold<class_ProjectSettings_property_rendering/anti_aliasing/quality/smaa_edge_detection_threshold>`                                         | ``0.05``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`                                                                         | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -10298,6 +10302,24 @@ Third-party extensions and modules can add other physics engines to select with 
 
 ----
 
+.. _class_ProjectSettings_property_physics/3d/physics_interpolation/scene_traversal:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **physics/3d/physics_interpolation/scene_traversal** = ``"DEFAULT"`` :ref:`🔗<class_ProjectSettings_property_physics/3d/physics_interpolation/scene_traversal>`
+
+The approach used for 3D scene traversal when physics interpolation is enabled.
+
+- ``DEFAULT``: The default optimized method.
+
+- ``Legacy``: The previous reference method used for scene tree traversal, which is slower.
+
+- ``Debug``: Swaps between ``DEFAULT`` and ``Legacy`` methods on alternating frames, and provides logging information (which in turn makes it slower). Intended for debugging only; you should use the ``DEFAULT`` method in most cases.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_physics/3d/run_on_separate_thread:
 
 .. rst-class:: classref-property
@@ -11083,6 +11105,20 @@ Another way to combat specular aliasing is to enable :ref:`rendering/anti_aliasi
 \ **Note:** Screen-space antialiasing is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 \ **Note:** This property is only read when the project starts. To set the screen-space antialiasing mode at runtime, set :ref:`Viewport.screen_space_aa<class_Viewport_property_screen_space_aa>` on the root :ref:`Viewport<class_Viewport>` instead, or use :ref:`RenderingServer.viewport_set_screen_space_aa()<class_RenderingServer_method_viewport_set_screen_space_aa>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/anti_aliasing/quality/smaa_edge_detection_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **rendering/anti_aliasing/quality/smaa_edge_detection_threshold** = ``0.05`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/smaa_edge_detection_threshold>`
+
+Sets the sensitivity to edges when using SMAA for antialiasing. Lower values will catch more edges, at a potentially higher performance cost.
+
+\ **Note:** This property is only read when the project starts. There is currently no way to change this setting at run-time.
 
 .. rst-class:: classref-item-separator
 

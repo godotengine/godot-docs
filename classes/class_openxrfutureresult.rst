@@ -29,13 +29,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------+
-   | |void|                                                    | :ref:`cancel_future<class_OpenXRFutureResult_method_cancel_future>`\ (\ )   |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                     | :ref:`get_future<class_OpenXRFutureResult_method_get_future>`\ (\ ) |const| |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------+
-   | :ref:`ResultStatus<enum_OpenXRFutureResult_ResultStatus>` | :ref:`get_status<class_OpenXRFutureResult_method_get_status>`\ (\ ) |const| |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------+
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`cancel_future<class_OpenXRFutureResult_method_cancel_future>`\ (\ )                                                     |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                     | :ref:`get_future<class_OpenXRFutureResult_method_get_future>`\ (\ ) |const|                                                   |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                             | :ref:`get_result_value<class_OpenXRFutureResult_method_get_result_value>`\ (\ ) |const|                                       |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ResultStatus<enum_OpenXRFutureResult_ResultStatus>` | :ref:`get_status<class_OpenXRFutureResult_method_get_status>`\ (\ ) |const|                                                   |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`set_result_value<class_OpenXRFutureResult_method_set_result_value>`\ (\ result_value\: :ref:`Variant<class_Variant>`\ ) |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -126,6 +130,18 @@ Return the ``XrFutureEXT`` value this result relates to.
 
 ----
 
+.. _class_OpenXRFutureResult_method_get_result_value:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_result_value**\ (\ ) |const| :ref:`🔗<class_OpenXRFutureResult_method_get_result_value>`
+
+Returns the result value of our asynchronous function (if set by the extension). The type of this result value depends on the function being called. Consult the documentation of the relevant function.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRFutureResult_method_get_status:
 
 .. rst-class:: classref-method
@@ -133,6 +149,20 @@ Return the ``XrFutureEXT`` value this result relates to.
 :ref:`ResultStatus<enum_OpenXRFutureResult_ResultStatus>` **get_status**\ (\ ) |const| :ref:`🔗<class_OpenXRFutureResult_method_get_status>`
 
 Returns the status of this result.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRFutureResult_method_set_result_value:
+
+.. rst-class:: classref-method
+
+|void| **set_result_value**\ (\ result_value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_OpenXRFutureResult_method_set_result_value>`
+
+Stores the result value we expose to the user.
+
+\ **Note:** This method should only be called by an OpenXR extension that implements an asynchronous function.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

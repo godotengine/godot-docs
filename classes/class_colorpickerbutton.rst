@@ -42,13 +42,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_property_color>`           | ``Color(0, 0, 0, 1)``                                                         |
-   +---------------------------+----------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>` | ``true``                                                                      |
-   +---------------------------+----------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | toggle_mode                                                    | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
-   +---------------------------+----------------------------------------------------------------+-------------------------------------------------------------------------------+
+   +---------------------------+------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_property_color>`                   | ``Color(0, 0, 0, 1)``                                                         |
+   +---------------------------+------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>`         | ``true``                                                                      |
+   +---------------------------+------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`edit_intensity<class_ColorPickerButton_property_edit_intensity>` | ``true``                                                                      |
+   +---------------------------+------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | toggle_mode                                                            | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
+   +---------------------------+------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -155,6 +157,23 @@ The currently selected color.
 - :ref:`bool<class_bool>` **is_editing_alpha**\ (\ )
 
 If ``true``, the alpha channel in the displayed :ref:`ColorPicker<class_ColorPicker>` will be visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ColorPickerButton_property_edit_intensity:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **edit_intensity** = ``true`` :ref:`🔗<class_ColorPickerButton_property_edit_intensity>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_edit_intensity**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_editing_intensity**\ (\ )
+
+If ``true``, the intensity slider in the displayed :ref:`ColorPicker<class_ColorPicker>` will be visible.
 
 .. rst-class:: classref-section-separator
 

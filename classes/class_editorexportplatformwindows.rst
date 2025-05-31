@@ -93,6 +93,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/export_console_wrapper<class_EditorExportPlatformWindows_property_debug/export_console_wrapper>`                       |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`shader_baker/enabled<class_EditorExportPlatformWindows_property_shader_baker/enabled>`                                       |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`ssh_remote_deploy/cleanup_script<class_EditorExportPlatformWindows_property_ssh_remote_deploy/cleanup_script>`               |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`ssh_remote_deploy/enabled<class_EditorExportPlatformWindows_property_ssh_remote_deploy/enabled>`                             |
@@ -462,6 +464,18 @@ Path to the custom export template. If left empty, default template is used.
 :ref:`int<class_int>` **debug/export_console_wrapper** :ref:`🔗<class_EditorExportPlatformWindows_property_debug/export_console_wrapper>`
 
 If ``true``, a console wrapper executable is exported alongside the main executable, which allows running the project with enabled console output.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformWindows_property_shader_baker/enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **shader_baker/enabled** :ref:`🔗<class_EditorExportPlatformWindows_property_shader_baker/enabled>`
+
+If ``true``, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ and Mobile renderers.
 
 .. rst-class:: classref-item-separator
 

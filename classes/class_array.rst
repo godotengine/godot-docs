@@ -123,6 +123,8 @@ Methods
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`           | :ref:`duplicate<class_Array_method_duplicate>`\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                    |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`duplicate_deep<class_Array_method_duplicate_deep>`\ (\ deep_subresources_mode\: :ref:`int<class_int>` = 1\ ) |const|                                                                              |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`erase<class_Array_method_erase>`\ (\ value\: :ref:`Variant<class_Variant>`\ )                                                                                                                     |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`fill<class_Array_method_fill>`\ (\ value\: :ref:`Variant<class_Variant>`\ )                                                                                                                       |
@@ -661,9 +663,23 @@ To count how many elements in an array satisfy a condition, see :ref:`reduce()<c
 
 Returns a new copy of the array.
 
-By default, a **shallow** copy is returned: all nested **Array** and :ref:`Dictionary<class_Dictionary>` elements are shared with the original array. Modifying them in one array will also affect them in the other.
+By default, a **shallow** copy is returned: all nested **Array**, :ref:`Dictionary<class_Dictionary>`, and :ref:`Resource<class_Resource>` elements are shared with the original array. Modifying any of those in one array will also affect them in the other.
 
-If ``deep`` is ``true``, a **deep** copy is returned: all nested arrays and dictionaries are also duplicated (recursively).
+If ``deep`` is ``true``, a **deep** copy is returned: all nested arrays and dictionaries are also duplicated (recursively). Any :ref:`Resource<class_Resource>` is still shared with the original array, though.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Array_method_duplicate_deep:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **duplicate_deep**\ (\ deep_subresources_mode\: :ref:`int<class_int>` = 1\ ) |const| :ref:`🔗<class_Array_method_duplicate_deep>`
+
+Duplicates this array, deeply, like :ref:`duplicate()<class_Array_method_duplicate>`\ ``(true)``, with extra control over how subresources are handled.
+
+\ ``deep_subresources_mode`` must be one of the values from :ref:`ResourceDeepDuplicateMode<enum_Resource_ResourceDeepDuplicateMode>`. By default, only internal resources will be duplicated (recursively).
 
 .. rst-class:: classref-item-separator
 
