@@ -21,7 +21,7 @@ binary in headless mode. Which one you should use depends on your use case:
 - **Export template:** Use this one for running dedicated servers. It does not
   contain editor functionality, and is therefore smaller and more optimized.
 - **Editor:** This binary contains editor functionality and is intended to be
-  used for exporting projects. This binary *can* be used to run dedicated
+  used for debugging projects. This binary *can* be used to run dedicated
   servers, but it's not recommended as it's larger and less optimized.
 
 Export approaches
