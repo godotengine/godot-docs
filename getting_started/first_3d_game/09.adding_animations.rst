@@ -451,11 +451,11 @@ Here's the *Player* script.
                 direction = direction.Normalized();
                 // Setting the basis property will affect the rotation of the node.
                 GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
-                GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 4;
+                GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = 4;
             }
             else
             {
-                GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 1;
+                GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = 1;
             }
 
             // Ground velocity
