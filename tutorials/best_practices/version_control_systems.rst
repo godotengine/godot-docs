@@ -130,7 +130,7 @@ order to access the LFS files.
 Below is an example ``.gitattributes`` file that you can use as a starting point for Git LFS. 
 These file types were chosen because they are commonly used, but you can modify the list to include any binary types you may have in your project.
 
-.. code-block:: gitignore
+.. code-block:: unixconfig
 
     # Normalize EOL for all files that Git considers text files.
     * text=auto eol=lf
