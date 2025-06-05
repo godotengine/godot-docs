@@ -101,17 +101,25 @@ Stencil modes
     Stencil support is experimental, use at your own risk.
     We will try to not break compatibility as much as possible, but if major flaws are found in the API, it may change in the next version.
 
+Stencil operations are a set of operations that allow to write to
+an efficient buffer in an hardware-accelerated manner.
+Stencil is generally used to mask in or out parts of the scene.
 
-Stencil operations are a set of operations that allow to write into an efficient, often hardeware integrated, buffer.
-Stencil is generally use to mask in or out parts of the scene.
+Some of the most well-known uses are:
 
-Some of the most known uses are:
-- Outlines: stencil allows to mask out the inner mesh that is being outlined to avoid inner outlines.
-- Xray: display a mesh behind other objects.
-- Portals: Draw impossible geometry by masking objects
+- Outlines: Stencil allows to mask out the inner mesh that is being outlined to avoid inner outlines.
+- X-Ray: Display a mesh behind other objects.
+- Portals: Draw geometry that is normally "impossible" (non-Euclidian) by masking objects.
+- Shadows: Draw sharp shadows without relying on shadow maps.
 
-NOTE: You can only read stencil in the transparent pass. Any attempt to read in the opaque pass will fail and it's not supported behaviour.
-NOTE: Stencil operations aren't yet supported in compositor effects. Please use full screen quad method.
+.. note::
+
+    You can only read stencil in the transparent pass.
+    Any attempt to read in the opaque pass will fail, as it's not supported behavior.
+
+    Also, stencil operations aren't yet supported in compositor effects.
+    Please use the full screen quad method described in
+    :ref:`doc_advanced_postprocessing` instead.
 
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | Stencil mode                  | Description                                                                                          |
