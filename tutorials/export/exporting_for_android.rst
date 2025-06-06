@@ -37,15 +37,15 @@ Download and install the Android SDK.
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#required>`__ are installed as well.
 
-    - Android SDK Platform-Tools version 34.0.0 or later
-    - Android SDK Build-Tools version 34.0.0
-    - Android SDK Platform 34
+    - Android SDK Platform-Tools version 35.0.0 or later
+    - Android SDK Build-Tools version 35.0.0
+    - Android SDK Platform 35
     - Android SDK Command-line Tools (latest)
 
   - Ensure that the `NDK and CMake are installed and configured <https://developer.android.com/studio/projects/install-ndk>`__.
 
     - CMake version 3.10.2.4988404
-    - NDK version r27c (27.2.12479018)
+    - NDK version r28b (28.1.13356709)
 
 - Alternatively, you can install the Android SDK with the `sdkmanager` command line tool.
 
@@ -54,7 +54,7 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;27.2.12479018"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;35.0.0" "platforms;android-35" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;28.1.13356709"
 
 .. note::
 
