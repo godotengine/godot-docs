@@ -124,23 +124,23 @@ Some of the most well-known uses are:
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | Stencil mode                  | Description                                                                                          |
 +===============================+======================================================================================================+
-| **read**                      | Read from stencil buffer.                                                                            |
+| **read**                      | Read from the stencil buffer.                                                                        |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **write**                     | Write reference value to stencil buffer.                                                             |
+| **write**                     | Write reference value to the stencil buffer.                                                         |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **write_if_depth_fail**       | Write reference value to stencil buffer if depth test fails.                                         |
+| **write_if_depth_fail**       | Write reference value to the stencil buffer if the depth test fails.                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **compare_equal**             | Pass stencil test if ref value is equal to stencil buffer value.                                     |
+| **compare_equal**             | Pass stencil test if the reference value is equal to the stencil buffer value.                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **compare_not_equal**         | Pass stencil test if ref value is not equal to stencil buffer value.                                 |
+| **compare_not_equal**         | Pass stencil test if the reference value is not equal to the stencil buffer value.                   |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **compare_less**              | Pass stencil test if ref value is lesser than stencil buffer value.                                  |
+| **compare_less**              | Pass stencil test if the reference value is less than the stencil buffer value.                    |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **compare_less_or_equal**     | Pass stencil test if ref value is lesser or equal than stencil buffer value.                         |
+| **compare_less_or_equal**     | Pass stencil test if the reference value is less or equal than the stencil buffer value.           |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **compare_greater**           | Pass stencil test if ref value is greater than stencil buffer value.                                 |
+| **compare_greater**           | Pass stencil test if the reference value is greater than the stencil buffer value.                   |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **compare_greater_or_equal**  | Pass stencil test if ref value is lesser or equal than stencil buffer value.                         |
+| **compare_greater_or_equal**  | Pass stencil test if the reference value is greater or equal than the stencil buffer value.           |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
