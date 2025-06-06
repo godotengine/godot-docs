@@ -152,7 +152,6 @@ Playback limitations
 
 There are some limitations with the current implementation of video playback in Godot:
 
-- Changing playback speed is not supported.
 - Streaming a video from a URL is not supported.
 - Only mono and stereo audio output is supported.
 
