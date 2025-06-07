@@ -52,7 +52,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **create**\ (\ format\: :ref:`Format<enum_Image_Format>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, data\: :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]\ ) :ref:`🔗<class_ImageTexture3D_method_create>`
 
-Creates the **ImageTexture3D** with specified ``width``, ``height``, and ``depth``. See :ref:`Format<enum_Image_Format>` for ``format`` options. If ``use_mipmaps`` is ``true``, then generate mipmaps for the **ImageTexture3D**.
+Creates the **ImageTexture3D** with specified ``format``, ``width``, ``height``, and ``depth``. If ``use_mipmaps`` is ``true``, generates mipmaps for the **ImageTexture3D**.
 
 .. rst-class:: classref-item-separator
 
@@ -67,6 +67,7 @@ Creates the **ImageTexture3D** with specified ``width``, ``height``, and ``depth
 Replaces the texture's existing data with the layers specified in ``data``. The size of ``data`` must match the parameters that were used for :ref:`create()<class_ImageTexture3D_method_create>`. In other words, the texture cannot be resized or have its format changed by calling :ref:`update()<class_ImageTexture3D_method_update>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -322,7 +322,7 @@ Returns font stretch amount, compared to a normal width. A percentage value betw
 
 |bitfield|\[:ref:`FontStyle<enum_TextServer_FontStyle>`\] **get_font_style**\ (\ ) |const| :ref:`🔗<class_Font_method_get_font_style>`
 
-Returns font style flags, see :ref:`FontStyle<enum_TextServer_FontStyle>`.
+Returns font style flags.
 
 .. rst-class:: classref-item-separator
 
@@ -422,7 +422,7 @@ Returns :ref:`Array<class_Array>` of valid **Font** :ref:`RID<class_RID>`\ s, wh
 
 :ref:`int<class_int>` **get_spacing**\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`\ ) |const| :ref:`🔗<class_Font_method_get_spacing>`
 
-Returns the spacing for the given ``type`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`).
+Returns the amount of spacing for the given ``spacing`` type.
 
 .. rst-class:: classref-item-separator
 
@@ -587,6 +587,7 @@ Returns ``true``, if font supports given script (`ISO 15924 <https://en.wikipedi
 Sets LRU cache capacity for ``draw_*`` methods.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

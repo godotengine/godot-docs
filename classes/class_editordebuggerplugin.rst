@@ -34,19 +34,19 @@ You can retrieve the available :ref:`EditorDebuggerSession<class_EditorDebuggerS
 
     @tool
     extends EditorPlugin
-    
+
     class ExampleEditorDebugger extends EditorDebuggerPlugin:
-    
+
         func _has_capture(capture):
             # Return true if you wish to handle messages with the prefix "my_plugin:".
             return capture == "my_plugin"
-    
+
         func _capture(message, data, session_id):
             if message == "my_plugin:ping":
                 get_session(session_id).send_message("my_plugin:echo", data)
                 return true
             return false
-    
+
         func _setup_session(session_id):
             # Add a new tab in the debugger session UI containing a label.
             var label = Label.new()
@@ -57,12 +57,12 @@ You can retrieve the available :ref:`EditorDebuggerSession<class_EditorDebuggerS
             session.started.connect(func (): print("Session started"))
             session.stopped.connect(func (): print("Session stopped"))
             session.add_session_tab(label)
-    
+
     var debugger = ExampleEditorDebugger.new()
-    
+
     func _enter_tree():
         add_debugger_plugin(debugger)
-    
+
     func _exit_tree():
         remove_debugger_plugin(debugger)
 
@@ -76,11 +76,11 @@ To connect on the running game side, use the :ref:`EngineDebugger<class_EngineDe
  .. code-tab:: gdscript
 
     extends Node
-    
+
     func _ready():
         EngineDebugger.register_message_capture("my_plugin", _capture)
         EngineDebugger.send_message("my_plugin:ping", ["test"])
-    
+
     func _capture(message, data):
         # Note that the "my_plugin:" prefix is not used here.
         if message == "echo":
@@ -222,6 +222,7 @@ Returns an array of :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` cu
 \ **Note:** Sessions in the array may be inactive, check their state via :ref:`EditorDebuggerSession.is_active()<class_EditorDebuggerSession_method_is_active>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

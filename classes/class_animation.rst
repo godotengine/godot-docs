@@ -1553,9 +1553,10 @@ A ``backward`` mainly affects the direction of key retrieval of the track with :
 
 |void| **value_track_set_update_mode**\ (\ track_idx\: :ref:`int<class_int>`, mode\: :ref:`UpdateMode<enum_Animation_UpdateMode>`\ ) :ref:`🔗<class_Animation_method_value_track_set_update_mode>`
 
-Sets the update mode (see :ref:`UpdateMode<enum_Animation_UpdateMode>`) of a value track.
+Sets the update mode of a value track.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

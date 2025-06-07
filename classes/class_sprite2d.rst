@@ -231,6 +231,8 @@ The number of columns in the sprite sheet. When this property is changed, :ref:`
 
 The texture's drawing offset.
 
+\ **Note:** When you increase :ref:`offset<class_Sprite2D_property_offset>`.y in Sprite2D, the sprite moves downward on screen (i.e., +Y is down).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -378,6 +380,7 @@ Returns ``true``, if the pixel at the given position is opaque and ``false`` in 
 \ **Note:** It also returns ``false``, if the sprite's texture is ``null`` or if the given position is invalid.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

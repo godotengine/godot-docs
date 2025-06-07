@@ -26,10 +26,10 @@ UDP packet peer. Can be used to send and receive raw UDP packets as well as :ref
 ::
 
     var peer = PacketPeerUDP.new()
-    
+
     # Optionally, you can select the local port used to send the packet.
     peer.bind(4444)
-    
+
     peer.set_dest_address("1.1.1.1", 4433)
     peer.put_packet("hello".to_utf8_buffer())
 
@@ -38,12 +38,12 @@ UDP packet peer. Can be used to send and receive raw UDP packets as well as :ref
 ::
 
     var peer
-    
+
     func _ready():
         peer = PacketPeerUDP.new()
         peer.bind(4433)
-    
-    
+
+
     func _process(_delta):
         if peer.get_available_packet_count() > 0:
             var array_bytes = peer.get_packet()
@@ -276,7 +276,7 @@ Waits for a packet to arrive on the bound address. See :ref:`bind()<class_Packet
     # Server
     socket.set_dest_address("127.0.0.1", 789)
     socket.put_packet("Time to stop".to_ascii_buffer())
-    
+
     # Client
     while socket.wait() == OK:
         var data = socket.get_packet().get_string_from_ascii()
@@ -289,7 +289,7 @@ Waits for a packet to arrive on the bound address. See :ref:`bind()<class_Packet
     // Server
     socket.SetDestAddress("127.0.0.1", 789);
     socket.PutPacket("Time to stop".ToAsciiBuffer());
-    
+
     // Client
     while (socket.Wait() == OK)
     {
@@ -303,6 +303,7 @@ Waits for a packet to arrive on the bound address. See :ref:`bind()<class_Packet
 
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

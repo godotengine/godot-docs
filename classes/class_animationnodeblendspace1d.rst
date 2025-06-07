@@ -137,7 +137,7 @@ Property Descriptions
 - |void| **set_blend_mode**\ (\ value\: :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>`\ )
 - :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` **get_blend_mode**\ (\ )
 
-Controls the interpolation between animations. See :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` constants.
+Controls the interpolation between animations.
 
 .. rst-class:: classref-item-separator
 
@@ -316,6 +316,7 @@ Changes the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at
 Updates the position of the point at index ``point`` on the blend axis.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

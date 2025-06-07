@@ -197,7 +197,7 @@ Returns whether the specified ``class`` is available or not.
 
 :ref:`APIType<enum_ClassDB_APIType>` **class_get_api_type**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_api_type>`
 
-Returns the API type of ``class``. See :ref:`APIType<enum_ClassDB_APIType>`.
+Returns the API type of the specified ``class``.
 
 .. rst-class:: classref-item-separator
 
@@ -514,6 +514,7 @@ Returns whether ``class`` (or its ancestor classes if ``no_inheritance`` is ``fa
 Returns whether ``inherits`` is an ancestor of ``class`` or not.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

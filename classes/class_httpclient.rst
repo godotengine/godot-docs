@@ -1070,11 +1070,11 @@ Reads one chunk from the response.
 
 :ref:`Error<enum_@GlobalScope_Error>` **request**\ (\ method\: :ref:`Method<enum_HTTPClient_Method>`, url\: :ref:`String<class_String>`, headers\: :ref:`PackedStringArray<class_PackedStringArray>`, body\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_HTTPClient_method_request>`
 
-Sends a request to the connected host.
+Sends an HTTP request to the connected host with the given ``method``.
 
 The URL parameter is usually just the part after the host, so for ``https://example.com/index.php``, it is ``/index.php``. When sending requests to an HTTP proxy server, it should be an absolute URL. For :ref:`METHOD_OPTIONS<class_HTTPClient_constant_METHOD_OPTIONS>` requests, ``*`` is also allowed. For :ref:`METHOD_CONNECT<class_HTTPClient_constant_METHOD_CONNECT>` requests, it should be the authority component (``host:port``).
 
-Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
+\ ``headers`` are HTTP request headers.
 
 To create a POST request with query strings to push to the server, do:
 
@@ -1109,11 +1109,11 @@ To create a POST request with query strings to push to the server, do:
 
 :ref:`Error<enum_@GlobalScope_Error>` **request_raw**\ (\ method\: :ref:`Method<enum_HTTPClient_Method>`, url\: :ref:`String<class_String>`, headers\: :ref:`PackedStringArray<class_PackedStringArray>`, body\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_HTTPClient_method_request_raw>`
 
-Sends a raw request to the connected host.
+Sends a raw HTTP request to the connected host with the given ``method``.
 
 The URL parameter is usually just the part after the host, so for ``https://example.com/index.php``, it is ``/index.php``. When sending requests to an HTTP proxy server, it should be an absolute URL. For :ref:`METHOD_OPTIONS<class_HTTPClient_constant_METHOD_OPTIONS>` requests, ``*`` is also allowed. For :ref:`METHOD_CONNECT<class_HTTPClient_constant_METHOD_CONNECT>` requests, it should be the authority component (``host:port``).
 
-Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
+\ ``headers`` are HTTP request headers.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
 
@@ -1146,6 +1146,7 @@ Sets the proxy server for HTTPS requests.
 The proxy server is unset if ``host`` is empty or ``port`` is -1.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -1050,7 +1050,7 @@ Returns the currently edited item. Can be used with :ref:`item_edited<class_Tree
 
     func _ready():
         $Tree.item_edited.connect(on_Tree_item_edited)
-    
+
     func on_Tree_item_edited():
         print($Tree.get_edited()) # This item just got edited (e.g. checked).
 
@@ -1060,7 +1060,7 @@ Returns the currently edited item. Can be used with :ref:`item_edited<class_Tree
     {
         GetNode<Tree>("Tree").ItemEdited += OnTreeItemEdited;
     }
-    
+
     public void OnTreeItemEdited()
     {
         GD.Print(GetNode<Tree>("Tree").GetEdited()); // This item just got edited (e.g. checked).
@@ -2190,6 +2190,7 @@ Default :ref:`StyleBox<class_StyleBox>` for the title button.
 :ref:`StyleBox<class_StyleBox>` used when the title button is being pressed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -233,7 +233,7 @@ Threshold at which antialiasing will be applied on the alpha channel.
 - |void| **set_alpha_antialiasing**\ (\ value\: :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`\ )
 - :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **get_alpha_antialiasing**\ (\ )
 
-The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`.
+The type of alpha antialiasing to apply.
 
 .. rst-class:: classref-item-separator
 
@@ -250,7 +250,7 @@ The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMa
 - |void| **set_alpha_cut_mode**\ (\ value\: :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>`\ )
 - :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **get_alpha_cut_mode**\ (\ )
 
-The alpha cutting mode to use for the sprite. See :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` for possible values.
+The alpha cutting mode to use for the sprite.
 
 .. rst-class:: classref-item-separator
 
@@ -318,7 +318,7 @@ The direction in which the front of the texture faces.
 - |void| **set_billboard_mode**\ (\ value\: :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`\ )
 - :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **get_billboard_mode**\ (\ )
 
-The billboard mode to use for the sprite. See :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` for possible values.
+The billboard mode to use for the sprite.
 
 \ **Note:** When billboarding is enabled and the material also casts shadows, billboards will face **the** camera in the scene when rendering shadows. In scenes with multiple cameras, the intended shadow cannot be determined and this will result in undefined behavior. See `GitHub Pull Request #72638 <https://github.com/godotengine/godot/pull/72638>`__ for details.
 
@@ -462,6 +462,8 @@ If ``true``, depth testing is disabled and the object will be drawn in render or
 
 The texture's drawing offset.
 
+\ **Note:** When you increase :ref:`offset<class_SpriteBase3D_property_offset>`.y in Sprite3D, the sprite moves upward in world space (i.e., +Y is up).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -532,7 +534,7 @@ If ``true``, the :ref:`Light3D<class_Light3D>` in the :ref:`Environment<class_En
 - |void| **set_texture_filter**\ (\ value\: :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>`\ )
 - :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **get_texture_filter**\ (\ )
 
-Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` for options.
+Filter flags for the texture.
 
 \ **Note:** Linear filtering may cause artifacts around the edges, which are especially noticeable on opaque textures. To prevent this, use textures with transparent or identical colors around the edges.
 
@@ -604,9 +606,10 @@ Returns the rectangle representing this sprite.
 
 |void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SpriteBase3D_method_set_draw_flag>`
 
-If ``true``, the specified flag will be enabled. See :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` for a list of flags.
+If ``true``, the specified flag will be enabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

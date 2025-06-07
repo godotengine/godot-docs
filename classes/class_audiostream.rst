@@ -57,6 +57,8 @@ Methods
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_get_stream_name<class_AudioStream_private_method__get_stream_name>`\ (\ ) |virtual| |const|           |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_get_tags<class_AudioStream_private_method__get_tags>`\ (\ ) |virtual| |const|                         |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`_has_loop<class_AudioStream_private_method__has_loop>`\ (\ ) |virtual| |const|                         |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`            | :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>`\ (\ ) |virtual| |const| |
@@ -178,6 +180,20 @@ Override this method to customize the name assigned to this audio stream. Unused
 
 ----
 
+.. _class_AudioStream_private_method__get_tags:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **_get_tags**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__get_tags>`
+
+Override this method to customize the tags for this audio stream. Should return a :ref:`Dictionary<class_Dictionary>` of strings with the tag as the key and its content as the value.
+
+Commonly used tags include ``title``, ``artist``, ``album``, ``tracknumber``, and ``date``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AudioStream_private_method__has_loop:
 
 .. rst-class:: classref-method
@@ -287,6 +303,7 @@ Returns ``true`` if the stream is a collection of other streams, ``false`` other
 Returns ``true`` if this audio stream only supports one channel (*monophony*), or ``false`` if the audio stream supports two or more channels (*polyphony*).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

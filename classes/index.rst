@@ -29,6 +29,7 @@ Nodes
 
     class_node
     class_acceptdialog
+    class_aimmodifier3d
     class_animatablebody2d
     class_animatablebody3d
     class_animatedsprite2d
@@ -48,6 +49,7 @@ Nodes
     class_basebutton
     class_bone2d
     class_boneattachment3d
+    class_boneconstraint3d
     class_boxcontainer
     class_button
     class_camera2d
@@ -75,6 +77,8 @@ Nodes
     class_confirmationdialog
     class_container
     class_control
+    class_converttransformmodifier3d
+    class_copytransformmodifier3d
     class_cpuparticles2d
     class_cpuparticles3d
     class_csgbox3d
@@ -159,6 +163,7 @@ Nodes
     class_meshinstance2d
     class_meshinstance3d
     class_missingnode
+    class_modifierbonetarget3d
     class_multimeshinstance2d
     class_multimeshinstance3d
     class_multiplayerspawner

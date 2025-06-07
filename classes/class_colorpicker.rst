@@ -354,7 +354,7 @@ The currently selected color.
 - |void| **set_color_mode**\ (\ value\: :ref:`ColorModeType<enum_ColorPicker_ColorModeType>`\ )
 - :ref:`ColorModeType<enum_ColorPicker_ColorModeType>` **get_color_mode**\ (\ )
 
-The currently selected color mode. See :ref:`ColorModeType<enum_ColorPicker_ColorModeType>`.
+The currently selected color mode.
 
 .. rst-class:: classref-item-separator
 
@@ -456,7 +456,7 @@ If ``true``, the hex color code input field is visible.
 - |void| **set_picker_shape**\ (\ value\: :ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>`\ )
 - :ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` **get_picker_shape**\ (\ )
 
-The shape of the color space view. See :ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>`.
+The shape of the color space view.
 
 .. rst-class:: classref-item-separator
 
@@ -908,6 +908,7 @@ The :ref:`StyleBox<class_StyleBox>` used when the rectangle-shaped part of the p
 The :ref:`StyleBox<class_StyleBox>` used for the old color sample part when it is focused. Displayed *over* the sample, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the picker shape remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -427,7 +427,7 @@ If ``true``, tabs can be rearranged with mouse drag.
 - |void| **set_tab_alignment**\ (\ value\: :ref:`AlignmentMode<enum_TabBar_AlignmentMode>`\ )
 - :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **get_tab_alignment**\ (\ )
 
-Sets the position at which tabs will be placed. See :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` for details.
+The position at which tabs will be placed.
 
 .. rst-class:: classref-item-separator
 
@@ -461,7 +461,7 @@ The focus access mode for the internal :ref:`TabBar<class_TabBar>` node.
 - |void| **set_tabs_position**\ (\ value\: :ref:`TabPosition<enum_TabContainer_TabPosition>`\ )
 - :ref:`TabPosition<enum_TabContainer_TabPosition>` **get_tabs_position**\ (\ )
 
-Sets the position of the tab bar. See :ref:`TabPosition<enum_TabContainer_TabPosition>` for details.
+The position of the tab bar.
 
 .. rst-class:: classref-item-separator
 
@@ -1187,6 +1187,7 @@ The style of the other, unselected tabs.
 The style for the background fill of the :ref:`TabBar<class_TabBar>` area.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

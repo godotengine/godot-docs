@@ -24,23 +24,23 @@ JavaScriptObject is used to interact with JavaScript objects retrieved or create
 ::
 
     extends Node
-    
+
     var _my_js_callback = JavaScriptBridge.create_callback(myCallback) # This reference must be kept
     var console = JavaScriptBridge.get_interface("console")
-    
+
     func _init():
         var buf = JavaScriptBridge.create_object("ArrayBuffer", 10) # new ArrayBuffer(10)
         print(buf) # Prints [JavaScriptObject:OBJECT_ID]
         var uint8arr = JavaScriptBridge.create_object("Uint8Array", buf) # new Uint8Array(buf)
         uint8arr[1] = 255
         prints(uint8arr[1], uint8arr.byteLength) # Prints "255 10"
-    
+
         # Prints "Uint8Array(10) [ 0, 255, 0, 0, 0, 0, 0, 0, 0, 0 ]" in the browser's console.
         console.log(uint8arr)
-    
+
         # Equivalent of JavaScriptBridge: Array.from(uint8arr).forEach(myCallback)
         JavaScriptBridge.get_interface("Array").from(uint8arr).forEach(_my_js_callback)
-    
+
     func myCallback(args):
         # Will be called with the parameters passed to the "forEach" callback
         # [0, 0, [JavaScriptObject:1173]]
@@ -52,6 +52,7 @@ JavaScriptObject is used to interact with JavaScript objects retrieved or create
 \ **Note:** Only available in the Web platform.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

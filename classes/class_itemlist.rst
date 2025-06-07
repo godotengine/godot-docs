@@ -641,7 +641,7 @@ Allows single or multiple item selection. See the :ref:`SelectMode<enum_ItemList
 - |void| **set_text_overrun_behavior**\ (\ value\: :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ )
 - :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior**\ (\ )
 
-Sets the clipping behavior when the text exceeds an item's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
+The clipping behavior when the text exceeds an item's bounding rectangle.
 
 .. rst-class:: classref-item-separator
 
@@ -1535,6 +1535,7 @@ The background style for the **ItemList**.
 :ref:`StyleBox<class_StyleBox>` for the selected items, used when the **ItemList** is being focused.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

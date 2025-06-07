@@ -115,7 +115,7 @@ Creates a new **ImageTexture** and initializes it by allocating and setting the 
 
 :ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const| :ref:`🔗<class_ImageTexture_method_get_format>`
 
-Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
+Returns the format of the texture.
 
 .. rst-class:: classref-item-separator
 
@@ -160,6 +160,7 @@ Replaces the texture's data with a new :ref:`Image<class_Image>`.
 Use this method over :ref:`set_image()<class_ImageTexture_method_set_image>` if you need to update the texture frequently, which is faster than allocating additional memory for a new texture each time.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

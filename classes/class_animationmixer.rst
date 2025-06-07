@@ -55,7 +55,7 @@ Properties
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`bool<class_bool>`                                                                 | :ref:`reset_on_save<class_AnimationMixer_property_reset_on_save>`                   | ``true``           |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
-   | :ref:`bool<class_bool>`                                                                 | :ref:`root_motion_local<class_AnimationMixer_property_root_motion_local>`           |                    |
+   | :ref:`bool<class_bool>`                                                                 | :ref:`root_motion_local<class_AnimationMixer_property_root_motion_local>`           | ``false``          |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`NodePath<class_NodePath>`                                                         | :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>`           | ``NodePath("")``   |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
@@ -480,7 +480,7 @@ This makes it more convenient to preview and edit animations in the editor, as c
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **root_motion_local** :ref:`🔗<class_AnimationMixer_property_root_motion_local>`
+:ref:`bool<class_bool>` **root_motion_local** = ``false`` :ref:`🔗<class_AnimationMixer_property_root_motion_local>`
 
 .. rst-class:: classref-property-setget
 
@@ -704,7 +704,7 @@ The most basic example is applying position to :ref:`CharacterBody3D<class_Chara
  .. code-tab:: gdscript
 
     var current_rotation
-    
+
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             current_rotation = get_quaternion()
@@ -773,7 +773,7 @@ For example, if an animation with only one key ``Vector3(0, 0, 0)`` is played in
  .. code-tab:: gdscript
 
     var prev_root_motion_position_accumulator
-    
+
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
@@ -840,7 +840,7 @@ For example, if an animation with only one key ``Quaternion(0, 0, 0, 1)`` is pla
  .. code-tab:: gdscript
 
     var prev_root_motion_rotation_accumulator
-    
+
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
@@ -878,7 +878,7 @@ The most basic example is applying scale to :ref:`CharacterBody3D<class_Characte
 
     var current_scale = Vector3(1, 1, 1)
     var scale_accum = Vector3(1, 1, 1)
-    
+
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             current_scale = get_scale()
@@ -909,7 +909,7 @@ For example, if an animation with only one key ``Vector3(1, 1, 1)`` is played in
  .. code-tab:: gdscript
 
     var prev_root_motion_scale_accumulator
-    
+
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
@@ -971,6 +971,7 @@ Removes the :ref:`AnimationLibrary<class_AnimationLibrary>` associated with the 
 Moves the :ref:`AnimationLibrary<class_AnimationLibrary>` associated with the key ``name`` to the key ``newname``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

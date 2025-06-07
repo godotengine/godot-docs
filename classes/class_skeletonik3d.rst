@@ -27,19 +27,19 @@ SkeletonIK3D is used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>
 
     # Apply IK effect automatically on every new frame (not the current)
     skeleton_ik_node.start()
-    
+
     # Apply IK effect only on the current frame
     skeleton_ik_node.start(true)
-    
+
     # Stop IK effect and reset bones_global_pose_override on Skeleton
     skeleton_ik_node.stop()
-    
+
     # Apply full IK effect
     skeleton_ik_node.set_influence(1.0)
-    
+
     # Apply half IK effect
     skeleton_ik_node.set_influence(0.5)
-    
+
     # Apply zero IK effect (a value at or below 0.01 also removes bones_global_pose_override on Skeleton)
     skeleton_ik_node.set_influence(0.0)
 
@@ -322,6 +322,7 @@ Starts applying IK effects on each frame to the :ref:`Skeleton3D<class_Skeleton3
 Stops applying IK effects on each frame to the :ref:`Skeleton3D<class_Skeleton3D>` bones and also calls :ref:`Skeleton3D.clear_bones_global_pose_override()<class_Skeleton3D_method_clear_bones_global_pose_override>` to remove existing overrides on all bones.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

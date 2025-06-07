@@ -572,21 +572,21 @@ Adds a custom monitor with the name ``id``. You can specify the category of the 
 
     func _ready():
         var monitor_value = Callable(self, "get_monitor_value")
-    
+
         # Adds monitor with name "MyName" to category "MyCategory".
         Performance.add_custom_monitor("MyCategory/MyMonitor", monitor_value)
-    
+
         # Adds monitor with name "MyName" to category "Custom".
         # Note: "MyCategory/MyMonitor" and "MyMonitor" have same name but different IDs, so the code is valid.
         Performance.add_custom_monitor("MyMonitor", monitor_value)
-    
+
         # Adds monitor with name "MyName" to category "Custom".
         # Note: "MyMonitor" and "Custom/MyMonitor" have same name and same category but different IDs, so the code is valid.
         Performance.add_custom_monitor("Custom/MyMonitor", monitor_value)
-    
+
         # Adds monitor with name "MyCategoryOne/MyCategoryTwo/MyMonitor" to category "Custom".
         Performance.add_custom_monitor("MyCategoryOne/MyCategoryTwo/MyMonitor", monitor_value)
-    
+
     func get_monitor_value():
         return randi() % 25
 
@@ -595,21 +595,21 @@ Adds a custom monitor with the name ``id``. You can specify the category of the 
     public override void _Ready()
     {
         var monitorValue = new Callable(this, MethodName.GetMonitorValue);
-    
+
         // Adds monitor with name "MyName" to category "MyCategory".
         Performance.AddCustomMonitor("MyCategory/MyMonitor", monitorValue);
         // Adds monitor with name "MyName" to category "Custom".
         // Note: "MyCategory/MyMonitor" and "MyMonitor" have same name but different ids so the code is valid.
         Performance.AddCustomMonitor("MyMonitor", monitorValue);
-    
+
         // Adds monitor with name "MyName" to category "Custom".
         // Note: "MyMonitor" and "Custom/MyMonitor" have same name and same category but different ids so the code is valid.
         Performance.AddCustomMonitor("Custom/MyMonitor", monitorValue);
-    
+
         // Adds monitor with name "MyCategoryOne/MyCategoryTwo/MyMonitor" to category "Custom".
         Performance.AddCustomMonitor("MyCategoryOne/MyCategoryTwo/MyMonitor", monitorValue);
     }
-    
+
     public int GetMonitorValue()
     {
         return GD.Randi() % 25;
@@ -709,6 +709,7 @@ Returns ``true`` if custom monitor with the given ``id`` is present, ``false`` o
 Removes the custom monitor with given ``id``. Prints an error if the given ``id`` is already absent.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

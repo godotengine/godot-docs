@@ -37,7 +37,7 @@ In computer programming, a Variant class is a class that is designed to store a 
     // foo = "foo was and will always be an integer. It cannot be turned into a string!";
     var boo = "Boo is a string!";
     var ref = new RefCounted(); // var is especially useful when used together with a constructor.
-    
+
     // Godot also provides a Variant type that works like a union of all the Variant-compatible types.
     Variant fooVar = 2; // fooVar is dynamically an integer (stored as a `long` in the Variant type).
     fooVar = "Now fooVar is a string!";
@@ -133,6 +133,7 @@ Tutorials
 - :doc:`Variant class introduction <../contributing/development/core_and_modules/variant_class>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

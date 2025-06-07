@@ -180,7 +180,7 @@ Property Descriptions
 - |void| **set_process_mode**\ (\ value\: :ref:`ProcessMode<enum_Sky_ProcessMode>`\ )
 - :ref:`ProcessMode<enum_Sky_ProcessMode>` **get_process_mode**\ (\ )
 
-Sets the method for generating the radiance map from the sky. The radiance map is a cubemap with increasingly blurry versions of the sky corresponding to different levels of roughness. Radiance maps can be expensive to calculate. See :ref:`ProcessMode<enum_Sky_ProcessMode>` for options.
+The method for generating the radiance map from the sky. The radiance map is a cubemap with increasingly blurry versions of the sky corresponding to different levels of roughness. Radiance maps can be expensive to calculate.
 
 .. rst-class:: classref-item-separator
 
@@ -198,8 +198,6 @@ Sets the method for generating the radiance map from the sky. The radiance map i
 - :ref:`RadianceSize<enum_Sky_RadianceSize>` **get_radiance_size**\ (\ )
 
 The **Sky**'s radiance map size. The higher the radiance map size, the more detailed the lighting from the **Sky** will be.
-
-See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 
 \ **Note:** Some hardware will have trouble with higher radiance sizes, especially :ref:`RADIANCE_SIZE_512<class_Sky_constant_RADIANCE_SIZE_512>` and above. Only use such high values on high-end hardware.
 
@@ -221,6 +219,7 @@ See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 :ref:`Material<class_Material>` used to draw the background. Can be :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`, :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, :ref:`PhysicalSkyMaterial<class_PhysicalSkyMaterial>`, or even a :ref:`ShaderMaterial<class_ShaderMaterial>` if you want to use your own custom shader.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

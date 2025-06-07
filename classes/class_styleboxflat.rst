@@ -575,7 +575,7 @@ Returns the smallest border width out of all four borders.
 
 :ref:`int<class_int>` **get_corner_radius**\ (\ corner\: :ref:`Corner<enum_@GlobalScope_Corner>`\ ) |const| :ref:`🔗<class_StyleBoxFlat_method_get_corner_radius>`
 
-Returns the given ``corner``'s radius. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
+Returns the given ``corner``'s radius.
 
 .. rst-class:: classref-item-separator
 
@@ -623,7 +623,7 @@ Sets the border width to ``width`` pixels for all sides.
 
 |void| **set_corner_radius**\ (\ corner\: :ref:`Corner<enum_@GlobalScope_Corner>`, radius\: :ref:`int<class_int>`\ ) :ref:`🔗<class_StyleBoxFlat_method_set_corner_radius>`
 
-Sets the corner radius to ``radius`` pixels for the given ``corner``. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
+Sets the corner radius to ``radius`` pixels for the given ``corner``.
 
 .. rst-class:: classref-item-separator
 
@@ -662,6 +662,7 @@ Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@Glo
 Sets the expand margin to ``size`` pixels for all sides.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

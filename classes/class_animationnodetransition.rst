@@ -34,12 +34,12 @@ After setting the request and changing the animation playback, the transition no
     animation_tree.set("parameters/Transition/transition_request", "state_2")
     # Alternative syntax (same result as above).
     animation_tree["parameters/Transition/transition_request"] = "state_2"
-    
+
     # Get current state name (read-only).
     animation_tree.get("parameters/Transition/current_state")
     # Alternative syntax (same result as above).
     animation_tree["parameters/Transition/current_state"]
-    
+
     # Get current state index (read-only).
     animation_tree.get("parameters/Transition/current_index")
     # Alternative syntax (same result as above).
@@ -49,10 +49,10 @@ After setting the request and changing the animation playback, the transition no
 
     // Play child animation connected to "state_2" port.
     animationTree.Set("parameters/Transition/transition_request", "state_2");
-    
+
     // Get current state name (read-only).
     animationTree.Get("parameters/Transition/current_state");
-    
+
     // Get current state index (read-only).
     animationTree.Get("parameters/Transition/current_index");
 
@@ -262,6 +262,7 @@ If ``true``, breaks the loop at the end of the loop cycle for transition, even i
 If ``true``, the destination animation is restarted when the animation transitions.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

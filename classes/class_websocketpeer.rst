@@ -31,12 +31,12 @@ To start a WebSocket client, first call :ref:`connect_to_url()<class_WebSocketPe
  .. code-tab:: gdscript
 
     extends Node
-    
+
     var socket = WebSocketPeer.new()
-    
+
     func _ready():
         socket.connect_to_url("wss://example.com")
-    
+
     func _process(delta):
         socket.poll()
         var state = socket.get_ready_state()
@@ -433,7 +433,7 @@ Returns the current amount of data in the outbound websocket buffer. **Note:** W
 
 :ref:`State<enum_WebSocketPeer_State>` **get_ready_state**\ (\ ) |const| :ref:`🔗<class_WebSocketPeer_method_get_ready_state>`
 
-Returns the ready state of the connection. See :ref:`State<enum_WebSocketPeer_State>`.
+Returns the ready state of the connection.
 
 .. rst-class:: classref-item-separator
 
@@ -522,6 +522,7 @@ Disable Nagle's algorithm on the underlying TCP socket (default). See :ref:`Stre
 Returns ``true`` if the last received packet was sent as a text payload. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

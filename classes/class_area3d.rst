@@ -169,7 +169,7 @@ Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``area`` enters a s
 
     var other_shape_owner = area.shape_find_owner(area_shape_index)
     var other_shape_node = area.shape_owner_get_owner(other_shape_owner)
-    
+
     var local_shape_owner = shape_find_owner(local_shape_index)
     var local_shape_node = shape_owner_get_owner(local_shape_owner)
 
@@ -236,7 +236,7 @@ Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``body`` enters a s
 
     var body_shape_owner = body.shape_find_owner(body_shape_index)
     var body_shape_node = body.shape_owner_get_owner(body_shape_owner)
-    
+
     var local_shape_owner = shape_find_owner(local_shape_index)
     var local_shape_node = shape_owner_get_owner(local_shape_owner)
 
@@ -350,7 +350,7 @@ See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_
 - |void| **set_angular_damp_space_override_mode**\ (\ value\: :ref:`SpaceOverride<enum_Area3D_SpaceOverride>`\ )
 - :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_angular_damp_space_override_mode**\ (\ )
 
-Override mode for angular damping calculations within this area. See :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` for possible values.
+Override mode for angular damping calculations within this area.
 
 .. rst-class:: classref-item-separator
 
@@ -488,7 +488,7 @@ The above is true only when the unit distance is a positive number. When this is
 - |void| **set_gravity_space_override_mode**\ (\ value\: :ref:`SpaceOverride<enum_Area3D_SpaceOverride>`\ )
 - :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_gravity_space_override_mode**\ (\ )
 
-Override mode for gravity calculations within this area. See :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` for possible values.
+Override mode for gravity calculations within this area.
 
 .. rst-class:: classref-item-separator
 
@@ -524,7 +524,7 @@ See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_p
 - |void| **set_linear_damp_space_override_mode**\ (\ value\: :ref:`SpaceOverride<enum_Area3D_SpaceOverride>`\ )
 - :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_linear_damp_space_override_mode**\ (\ )
 
-Override mode for linear damping calculations within this area. See :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` for possible values.
+Override mode for linear damping calculations within this area.
 
 .. rst-class:: classref-item-separator
 
@@ -794,6 +794,7 @@ Returns ``true`` if the given physics body intersects or overlaps this **Area3D*
 The ``body`` argument can either be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>` instance. While GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

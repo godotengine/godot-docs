@@ -110,7 +110,7 @@ Property Descriptions
 - |void| **set_billboard_type**\ (\ value\: :ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>`\ )
 - :ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>` **get_billboard_type**\ (\ )
 
-Controls how the object faces the camera. See :ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>`.
+Controls how the object faces the camera.
 
 .. rst-class:: classref-item-separator
 
@@ -130,6 +130,7 @@ Controls how the object faces the camera. See :ref:`BillboardType<enum_VisualSha
 If ``true``, the shader will keep the scale set for the mesh. Otherwise, the scale is lost when billboarding.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

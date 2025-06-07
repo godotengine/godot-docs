@@ -208,9 +208,10 @@ Property Descriptions
 - |void| **set_operator**\ (\ value\: :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>`\ )
 - :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` **get_operator**\ (\ )
 
-An operator to be applied to the inputs. See :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` for options.
+An operator to be applied to the inputs.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

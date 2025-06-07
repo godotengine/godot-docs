@@ -196,7 +196,7 @@ Property Descriptions
 - |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>`\ )
 - :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **get_function**\ (\ )
 
-A derivative function type. See :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` for options.
+A derivative function type.
 
 .. rst-class:: classref-item-separator
 
@@ -213,7 +213,7 @@ A derivative function type. See :ref:`Function<enum_VisualShaderNodeDerivativeFu
 - |void| **set_op_type**\ (\ value\: :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>`\ )
 - :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **get_op_type**\ (\ )
 
-A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` for options.
+A type of operands and returned value.
 
 .. rst-class:: classref-item-separator
 
@@ -230,9 +230,10 @@ A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDer
 - |void| **set_precision**\ (\ value\: :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>`\ )
 - :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **get_precision**\ (\ )
 
-Sets the level of precision to use for the derivative function. See :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` for options. When using the Compatibility renderer, this setting has no effect.
+Sets the level of precision to use for the derivative function. When using the Compatibility renderer, this setting has no effect.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

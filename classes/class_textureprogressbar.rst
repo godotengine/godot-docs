@@ -485,6 +485,7 @@ Returns the stretch margin with the specified index. See :ref:`stretch_margin_bo
 Sets the stretch margin with the specified index. See :ref:`stretch_margin_bottom<class_TextureProgressBar_property_stretch_margin_bottom>` and related properties.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

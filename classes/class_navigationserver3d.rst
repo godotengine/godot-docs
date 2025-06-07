@@ -1023,7 +1023,7 @@ Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationSer
 
 :ref:`int<class_int>` **get_process_info**\ (\ process_info\: :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_get_process_info>`
 
-Returns information about the current state of the NavigationServer. See :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` for a list of available states.
+Returns information about the current state of the NavigationServer.
 
 .. rst-class:: classref-item-separator
 
@@ -2378,6 +2378,7 @@ Sets the ``callback`` :ref:`Callable<class_Callable>` for the specific source ge
 - ``node`` - The :ref:`Node<class_Node>` that is parsed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

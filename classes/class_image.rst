@@ -1016,7 +1016,7 @@ The dictionary contains ``max``, ``mean``, ``mean_squared``, ``root_mean_squared
 
 |void| **convert**\ (\ format\: :ref:`Format<enum_Image_Format>`\ ) :ref:`🔗<class_Image_method_convert>`
 
-Converts the image's format. See :ref:`Format<enum_Image_Format>` constants.
+Converts this image's format to the given ``format``.
 
 .. rst-class:: classref-item-separator
 
@@ -1042,7 +1042,7 @@ Copies ``src`` image to this image.
 
 **Deprecated:** Use :ref:`create_empty()<class_Image_method_create_empty>`.
 
-Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
+Creates an empty image of the given size and format. If ``use_mipmaps`` is ``true``, generates mipmaps for this image. See the :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1054,7 +1054,7 @@ Creates an empty image of given size and format. See :ref:`Format<enum_Image_For
 
 :ref:`Image<class_Image>` **create_empty**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static| :ref:`🔗<class_Image_method_create_empty>`
 
-Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
+Creates an empty image of the given size and format. If ``use_mipmaps`` is ``true``, generates mipmaps for this image. See the :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1066,7 +1066,7 @@ Creates an empty image of given size and format. See :ref:`Format<enum_Image_For
 
 :ref:`Image<class_Image>` **create_from_data**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_Image_method_create_from_data>`
 
-Creates a new image of given size and format. See :ref:`Format<enum_Image_Format>` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then loads mipmaps for this image from ``data``. See :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
+Creates a new image of the given size and format. Fills the image with the given raw data. If ``use_mipmaps`` is ``true``, loads the mipmaps for this image from ``data``. See :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1116,7 +1116,7 @@ Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has da
 
 :ref:`UsedChannels<enum_Image_UsedChannels>` **detect_used_channels**\ (\ source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0\ ) |const| :ref:`🔗<class_Image_method_detect_used_channels>`
 
-Returns the color channels used by this image, as one of the :ref:`UsedChannels<enum_Image_UsedChannels>` constants. If the image is compressed, the original ``source`` must be specified.
+Returns the color channels used by this image. If the image is compressed, the original ``source`` must be specified.
 
 .. rst-class:: classref-item-separator
 
@@ -1226,7 +1226,7 @@ Returns size (in bytes) of the image's raw data.
 
 :ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const| :ref:`🔗<class_Image_method_get_format>`
 
-Returns the image's format. See :ref:`Format<enum_Image_Format>` constants.
+Returns this image's format.
 
 .. rst-class:: classref-item-separator
 
@@ -1806,7 +1806,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` to ``color``.
     var img_width = 10
     var img_height = 5
     var img = Image.create(img_width, img_height, false, Image.FORMAT_RGBA8)
-    
+
     img.set_pixel(1, 2, Color.RED) # Sets the color at (1, 2) to red.
 
  .. code-tab:: csharp
@@ -1814,7 +1814,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` to ``color``.
     int imgWidth = 10;
     int imgHeight = 5;
     var img = Image.Create(imgWidth, imgHeight, false, Image.Format.Rgba8);
-    
+
     img.SetPixel(1, 2, Colors.Red); // Sets the color at (1, 2) to red.
 
 
@@ -1841,7 +1841,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
     var img_width = 10
     var img_height = 5
     var img = Image.create(img_width, img_height, false, Image.FORMAT_RGBA8)
-    
+
     img.set_pixelv(Vector2i(1, 2), Color.RED) # Sets the color at (1, 2) to red.
 
  .. code-tab:: csharp
@@ -1849,7 +1849,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
     int imgWidth = 10;
     int imgHeight = 5;
     var img = Image.Create(imgWidth, imgHeight, false, Image.Format.Rgba8);
-    
+
     img.SetPixelv(new Vector2I(1, 2), Colors.Red); // Sets the color at (1, 2) to red.
 
 
@@ -1881,6 +1881,7 @@ Shrinks the image by a factor of 2 on each axis (this divides the pixel count by
 Converts the raw data from the sRGB colorspace to a linear scale. Only works on images with :ref:`FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` or :ref:`FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` formats.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -35,7 +35,7 @@ Description
         button.text = "Click me"
         button.pressed.connect(_button_pressed)
         add_child(button)
-    
+
     func _button_pressed():
         print("Hello world!")
 
@@ -48,7 +48,7 @@ Description
         button.Pressed += ButtonPressed;
         AddChild(button);
     }
-    
+
     private void ButtonPressed()
     {
         GD.Print("Hello world!");
@@ -199,7 +199,7 @@ Property Descriptions
 - |void| **set_text_alignment**\ (\ value\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`\ )
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_text_alignment**\ (\ )
 
-Text alignment policy for the button's text, use one of the :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants.
+Text alignment policy for the button's text.
 
 .. rst-class:: classref-item-separator
 
@@ -388,7 +388,7 @@ Base text writing direction.
 - |void| **set_text_overrun_behavior**\ (\ value\: :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ )
 - :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior**\ (\ )
 
-Sets the clipping behavior when the text exceeds the node's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
+Sets the clipping behavior when the text exceeds the node's bounding rectangle.
 
 .. rst-class:: classref-item-separator
 
@@ -799,6 +799,7 @@ Default :ref:`StyleBox<class_StyleBox>` for the **Button** (for right-to-left la
 :ref:`StyleBox<class_StyleBox>` used when the **Button** is being pressed (for right-to-left layouts).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

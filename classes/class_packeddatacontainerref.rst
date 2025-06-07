@@ -27,7 +27,7 @@ When packing nested containers using :ref:`PackedDataContainer<class_PackedDataC
 
     var packed = PackedDataContainer.new()
     packed.pack([1, 2, 3, ["nested1", "nested2"], 4, 5, 6])
-    
+
     for element in packed:
         if element is PackedDataContainerRef:
             for subelement in element:
@@ -78,6 +78,7 @@ Method Descriptions
 Returns the size of the packed container (see :ref:`Array.size()<class_Array_method_size>` and :ref:`Dictionary.size()<class_Dictionary_method_size>`).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

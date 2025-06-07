@@ -88,7 +88,7 @@ Context menu of Script editor's script tabs. :ref:`_popup_menu()<class_EditorCon
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_FILESYSTEM_CREATE** = ``3``
 
-The "Create..." submenu of FileSystem dock's context menu, or the "New" section of the main context menu when empty space is clicked. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with list of paths of the currently selected files. When clicking the empty space, the list of paths for popup method will be empty.
+The "Create..." submenu of FileSystem dock's context menu, or the "New" section of the main context menu when empty space is clicked. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with the path of the currently selected folder, wrapped in a list. When clicking the empty space, the list of paths for popup method will be empty.
 
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCRIPT_EDITOR_CODE:
 
@@ -180,7 +180,7 @@ Add custom option to the context menu of the plugin's specified slot. The option
 
     func _init():
         add_menu_shortcut(SHORTCUT, handle)
-    
+
     func _popup_menu(paths):
         add_context_menu_item_from_shortcut("File Custom options", SHORTCUT, ICON)
 
@@ -203,7 +203,7 @@ Add a submenu to the context menu of the plugin's specified slot. The submenu is
         popup_menu.add_item("Blue")
         popup_menu.add_item("White")
         popup_menu.id_pressed.connect(_on_color_submenu_option)
-    
+
         add_context_submenu_item("Set Node Color", popup_menu)
 
 .. rst-class:: classref-item-separator
@@ -224,6 +224,7 @@ Registers a shortcut associated with the plugin's context menu. This method shou
         add_menu_shortcut(SHORTCUT, handle)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

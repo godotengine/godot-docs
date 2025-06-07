@@ -571,7 +571,7 @@ If ``true``, enables selecting a tab with the right mouse button.
 - |void| **set_tab_alignment**\ (\ value\: :ref:`AlignmentMode<enum_TabBar_AlignmentMode>`\ )
 - :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **get_tab_alignment**\ (\ )
 
-Sets the position at which tabs will be placed. See :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` for details.
+The position at which tabs will be placed.
 
 .. rst-class:: classref-item-separator
 
@@ -588,7 +588,7 @@ Sets the position at which tabs will be placed. See :ref:`AlignmentMode<enum_Tab
 - |void| **set_tab_close_display_policy**\ (\ value\: :ref:`CloseButtonDisplayPolicy<enum_TabBar_CloseButtonDisplayPolicy>`\ )
 - :ref:`CloseButtonDisplayPolicy<enum_TabBar_CloseButtonDisplayPolicy>` **get_tab_close_display_policy**\ (\ )
 
-Sets when the close button will appear on the tabs. See :ref:`CloseButtonDisplayPolicy<enum_TabBar_CloseButtonDisplayPolicy>` for details.
+When the close button will appear on the tabs.
 
 .. rst-class:: classref-item-separator
 
@@ -1327,6 +1327,7 @@ The style of the currently selected tab.
 The style of the other, unselected tabs.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

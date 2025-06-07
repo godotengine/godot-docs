@@ -723,11 +723,99 @@ Right pinky finger phalanx distal joint.
 
 Right pinky finger tip joint.
 
+.. _class_XRBodyTracker_constant_JOINT_LOWER_CHEST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LOWER_CHEST** = ``76``
+
+Lower chest joint.
+
+.. _class_XRBodyTracker_constant_JOINT_LEFT_SCAPULA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_SCAPULA** = ``77``
+
+Left scapula joint.
+
+.. _class_XRBodyTracker_constant_JOINT_LEFT_WRIST_TWIST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_WRIST_TWIST** = ``78``
+
+Left wrist twist joint.
+
+.. _class_XRBodyTracker_constant_JOINT_RIGHT_SCAPULA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_SCAPULA** = ``79``
+
+Right scapula joint.
+
+.. _class_XRBodyTracker_constant_JOINT_RIGHT_WRIST_TWIST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_WRIST_TWIST** = ``80``
+
+Right wrist twist joint.
+
+.. _class_XRBodyTracker_constant_JOINT_LEFT_ANKLE_TWIST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_ANKLE_TWIST** = ``81``
+
+Left ankle twist joint.
+
+.. _class_XRBodyTracker_constant_JOINT_LEFT_ANKLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_ANKLE** = ``82``
+
+Left ankle joint.
+
+.. _class_XRBodyTracker_constant_JOINT_LEFT_MIDDLE_FOOT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_MIDDLE_FOOT** = ``83``
+
+Left middle foot joint.
+
+.. _class_XRBodyTracker_constant_JOINT_RIGHT_ANKLE_TWIST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_ANKLE_TWIST** = ``84``
+
+Right ankle twist joint.
+
+.. _class_XRBodyTracker_constant_JOINT_RIGHT_ANKLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_ANKLE** = ``85``
+
+Right ankle joint.
+
+.. _class_XRBodyTracker_constant_JOINT_RIGHT_MIDDLE_FOOT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_MIDDLE_FOOT** = ``86``
+
+Right middle foot joint.
+
 .. _class_XRBodyTracker_constant_JOINT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_MAX** = ``76``
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_MAX** = ``87``
 
 Represents the size of the :ref:`Joint<enum_XRBodyTracker_Joint>` enum.
 
@@ -827,7 +915,7 @@ Method Descriptions
 
 |bitfield|\[:ref:`JointFlags<enum_XRBodyTracker_JointFlags>`\] **get_joint_flags**\ (\ joint\: :ref:`Joint<enum_XRBodyTracker_Joint>`\ ) |const| :ref:`🔗<class_XRBodyTracker_method_get_joint_flags>`
 
-Returns flags about the validity of the tracking data for the given body joint (see :ref:`JointFlags<enum_XRBodyTracker_JointFlags>`).
+Returns flags about the validity of the tracking data for the given body joint.
 
 .. rst-class:: classref-item-separator
 
@@ -866,6 +954,7 @@ Sets flags about the validity of the tracking data for the given body joint.
 Sets the transform for the given body joint.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

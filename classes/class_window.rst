@@ -366,7 +366,7 @@ Emitted when files are dragged from the OS file manager and dropped in the game 
 
     func _ready():
         get_window().files_dropped.connect(on_files_dropped)
-    
+
     func on_files_dropped(files):
         print(files)
 
@@ -1235,7 +1235,7 @@ If ``true``, native window will be used regardless of parent viewport and projec
 - |void| **set_initial_position**\ (\ value\: :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>`\ )
 - :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **get_initial_position**\ (\ )
 
-Specifies the initial type of position for the **Window**. See :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` constants.
+Specifies the initial type of position for the **Window**.
 
 .. rst-class:: classref-item-separator
 
@@ -1402,10 +1402,10 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
     # Set region, using Path2D node.
     $Window.mouse_passthrough_polygon = $Path2D.curve.get_baked_points()
-    
+
     # Set region, using Polygon2D node.
     $Window.mouse_passthrough_polygon = $Polygon2D.polygon
-    
+
     # Reset region to default.
     $Window.mouse_passthrough_polygon = []
 
@@ -1413,10 +1413,10 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
     // Set region, using Path2D node.
     GetNode<Window>("Window").MousePassthroughPolygon = GetNode<Path2D>("Path2D").Curve.GetBakedPoints();
-    
+
     // Set region, using Polygon2D node.
     GetNode<Window>("Window").MousePassthroughPolygon = GetNode<Polygon2D>("Polygon2D").Polygon;
-    
+
     // Reset region to default.
     GetNode<Window>("Window").MousePassthroughPolygon = [];
 
@@ -2858,6 +2858,7 @@ The background style used when the **Window** is embedded. Note that this is dra
 The background style used when the **Window** is embedded and unfocused.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -351,7 +351,7 @@ Sets the default color if no texture is assigned to the uniform.
 - |void| **set_texture_filter**\ (\ value\: :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>`\ )
 - :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **get_texture_filter**\ (\ )
 
-Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` for options.
+Sets the texture filtering mode.
 
 .. rst-class:: classref-item-separator
 
@@ -368,7 +368,7 @@ Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTe
 - |void| **set_texture_repeat**\ (\ value\: :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>`\ )
 - :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **get_texture_repeat**\ (\ )
 
-Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` for options.
+Sets the texture repeating mode.
 
 .. rst-class:: classref-item-separator
 
@@ -385,7 +385,7 @@ Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTe
 - |void| **set_texture_source**\ (\ value\: :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>`\ )
 - :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **get_texture_source**\ (\ )
 
-Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture. See :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` for options.
+Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture.
 
 .. rst-class:: classref-item-separator
 
@@ -402,9 +402,10 @@ Sets the texture source mode. Used for reading from the screen, depth, or normal
 - |void| **set_texture_type**\ (\ value\: :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>`\ )
 - :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **get_texture_type**\ (\ )
 
-Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` for options.
+Defines the type of data provided by the source texture.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

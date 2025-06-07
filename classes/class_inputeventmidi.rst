@@ -33,11 +33,11 @@ By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_m
     func _ready():
         OS.open_midi_inputs()
         print(OS.get_connected_midi_inputs())
-    
+
     func _input(input_event):
         if input_event is InputEventMIDI:
             _print_midi_info(input_event)
-    
+
     func _print_midi_info(midi_event):
         print(midi_event)
         print("Channel ", midi_event.channel)
@@ -56,7 +56,7 @@ By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_m
         OS.OpenMidiInputs();
         GD.Print(OS.GetConnectedMidiInputs());
     }
-    
+
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent is InputEventMidi midiEvent)
@@ -64,7 +64,7 @@ By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_m
             PrintMIDIInfo(midiEvent);
         }
     }
-    
+
     private void PrintMIDIInfo(InputEventMidi midiEvent)
     {
         GD.Print(midiEvent);
@@ -280,6 +280,7 @@ The velocity of the MIDI message. This value ranges from ``0`` to ``127``. For a
                 print("Note pressed!")
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

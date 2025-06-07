@@ -433,7 +433,7 @@ Returns the length of both :ref:`x<class_Transform2D_property_x>` and :ref:`y<cl
     )
     # Rotating the Transform2D in any way preserves its scale.
     my_transform = my_transform.rotated(TAU / 2)
-    
+
     print(my_transform.get_scale()) # Prints (2.0, 4.0)
 
  .. code-tab:: csharp
@@ -445,7 +445,7 @@ Returns the length of both :ref:`x<class_Transform2D_property_x>` and :ref:`y<cl
     );
     // Rotating the Transform2D in any way preserves its scale.
     myTransform = myTransform.Rotated(Mathf.Tau / 2.0f);
-    
+
     GD.Print(myTransform.GetScale()); // Prints (2, 4)
 
 
@@ -804,6 +804,7 @@ Returns ``true`` if the components of both transforms are exactly equal.
 Accesses each axis (column) of this transform by their index. Index ``0`` is the same as :ref:`x<class_Transform2D_property_x>`, index ``1`` is the same as :ref:`y<class_Transform2D_property_y>`, and index ``2`` is the same as :ref:`origin<class_Transform2D_property_origin>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

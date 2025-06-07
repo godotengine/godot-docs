@@ -29,30 +29,30 @@ Currently, this includes asymmetric key encryption/decryption, signing/verificat
  .. code-tab:: gdscript
 
     var crypto = Crypto.new()
-    
+
     # Generate new RSA key.
     var key = crypto.generate_rsa(4096)
-    
+
     # Generate new self-signed certificate with the given key.
     var cert = crypto.generate_self_signed_certificate(key, "CN=mydomain.com,O=My Game Company,C=IT")
-    
+
     # Save key and certificate in the user folder.
     key.save("user://generated.key")
     cert.save("user://generated.crt")
-    
+
     # Encryption
     var data = "Some data"
     var encrypted = crypto.encrypt(key, data.to_utf8_buffer())
-    
+
     # Decryption
     var decrypted = crypto.decrypt(key, encrypted)
-    
+
     # Signing
     var signature = crypto.sign(HashingContext.HASH_SHA256, data.sha256_buffer(), key)
-    
+
     # Verifying
     var verified = crypto.verify(HashingContext.HASH_SHA256, data.sha256_buffer(), signature, key)
-    
+
     # Checks
     assert(verified)
     assert(data.to_utf8_buffer() == decrypted)
@@ -61,32 +61,32 @@ Currently, this includes asymmetric key encryption/decryption, signing/verificat
 
     using Godot;
     using System.Diagnostics;
-    
+
     Crypto crypto = new Crypto();
-    
+
     // Generate new RSA key.
     CryptoKey key = crypto.GenerateRsa(4096);
-    
+
     // Generate new self-signed certificate with the given key.
     X509Certificate cert = crypto.GenerateSelfSignedCertificate(key, "CN=mydomain.com,O=My Game Company,C=IT");
-    
+
     // Save key and certificate in the user folder.
     key.Save("user://generated.key");
     cert.Save("user://generated.crt");
-    
+
     // Encryption
     string data = "Some data";
     byte[] encrypted = crypto.Encrypt(key, data.ToUtf8Buffer());
-    
+
     // Decryption
     byte[] decrypted = crypto.Decrypt(key, encrypted);
-    
+
     // Signing
     byte[] signature = crypto.Sign(HashingContext.HashType.Sha256, Data.Sha256Buffer(), key);
-    
+
     // Verifying
     bool verified = crypto.Verify(HashingContext.HashType.Sha256, Data.Sha256Buffer(), signature, key);
-    
+
     // Checks
     Debug.Assert(verified);
     Debug.Assert(data.ToUtf8Buffer() == decrypted);
@@ -266,6 +266,7 @@ Sign a given ``hash`` of type ``hash_type`` with the provided private ``key``.
 Verify that a given ``signature`` for ``hash`` of type ``hash_type`` against the provided public ``key``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -31,7 +31,7 @@ Objects of this class cannot be instantiated directly, and one of the static met
     # Create a TLS client configuration which uses our custom trusted CA chain.
     var client_trusted_cas = load("res://my_trusted_cas.crt")
     var client_tls_options = TLSOptions.client(client_trusted_cas)
-    
+
     # Create a TLS server configuration.
     var server_certs = load("res://my_server_cas.crt")
     var server_key = load("res://my_server_key.key")
@@ -189,6 +189,7 @@ Creates a TLS server configuration using the provided ``key`` and ``certificate`
 \ **Note:** The ``certificate`` should include the full certificate chain up to the signing CA (certificates file can be concatenated using a general purpose text editor).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

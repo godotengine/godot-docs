@@ -673,7 +673,7 @@ Returns the first :ref:`Node<class_Node>` found inside the tree, that has been a
 
 :ref:`int<class_int>` **get_frame**\ (\ ) |const| :ref:`🔗<class_SceneTree_method_get_frame>`
 
-Returns how many frames have been processed, since the application started. This is *not* a measurement of elapsed time.
+Returns how many physics process steps have been processed, since the application started. This is *not* a measurement of elapsed time. See also :ref:`physics_frame<class_SceneTree_signal_physics_frame>`. For the number of frames rendered, see :ref:`Engine.get_process_frames()<class_Engine_method_get_process_frames>`.
 
 .. rst-class:: classref-item-separator
 
@@ -898,6 +898,7 @@ Sets a custom :ref:`MultiplayerAPI<class_MultiplayerAPI>` with the given ``root_
 If a current scene is loaded, calling this method will unload it.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

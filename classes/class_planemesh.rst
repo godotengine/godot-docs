@@ -121,7 +121,7 @@ Offset of the generated plane. Useful for particles.
 - |void| **set_orientation**\ (\ value\: :ref:`Orientation<enum_PlaneMesh_Orientation>`\ )
 - :ref:`Orientation<enum_PlaneMesh_Orientation>` **get_orientation**\ (\ )
 
-Direction that the **PlaneMesh** is facing. See :ref:`Orientation<enum_PlaneMesh_Orientation>` for options.
+Direction that the **PlaneMesh** is facing.
 
 .. rst-class:: classref-item-separator
 
@@ -175,6 +175,7 @@ Number of subdivision along the Z axis.
 Number of subdivision along the X axis.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -34,14 +34,14 @@ If a script extending this class also has a global class name, it will be includ
 
     @tool
     extends EditorScript
-    
+
     func _run():
         print("Hello from the Godot Editor!")
 
  .. code-tab:: csharp
 
     using Godot;
-    
+
     [Tool]
     public partial class HelloEditor : EditorScript
     {
@@ -66,7 +66,7 @@ Methods
    :widths: auto
 
    +-----------------------------------------------+-----------------------------------------------------------------------------------------------------+
-   | |void|                                        | :ref:`_run<class_EditorScript_private_method__run>`\ (\ ) |virtual|                                 |
+   | |void|                                        | :ref:`_run<class_EditorScript_private_method__run>`\ (\ ) |virtual| |required|                      |
    +-----------------------------------------------+-----------------------------------------------------------------------------------------------------+
    | |void|                                        | :ref:`add_root_node<class_EditorScript_method_add_root_node>`\ (\ node\: :ref:`Node<class_Node>`\ ) |
    +-----------------------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -88,7 +88,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_run**\ (\ ) |virtual| :ref:`🔗<class_EditorScript_private_method__run>`
+|void| **_run**\ (\ ) |virtual| |required| :ref:`🔗<class_EditorScript_private_method__run>`
 
 This method is executed by the Editor when **File > Run** is used.
 
@@ -131,6 +131,7 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 Returns the edited (current) scene's root :ref:`Node<class_Node>`. Equivalent of :ref:`EditorInterface.get_edited_scene_root()<class_EditorInterface_method_get_edited_scene_root>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

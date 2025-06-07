@@ -407,7 +407,7 @@ Only used when :ref:`parsed_geometry_type<class_NavigationPolygon_property_parse
 - |void| **set_parsed_geometry_type**\ (\ value\: :ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>`\ )
 - :ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` **get_parsed_geometry_type**\ (\ )
 
-Determines which type of nodes will be parsed as geometry. See :ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` for possible values.
+Determines which type of nodes will be parsed as geometry.
 
 .. rst-class:: classref-item-separator
 
@@ -424,7 +424,7 @@ Determines which type of nodes will be parsed as geometry. See :ref:`ParsedGeome
 - |void| **set_sample_partition_type**\ (\ value\: :ref:`SamplePartitionType<enum_NavigationPolygon_SamplePartitionType>`\ )
 - :ref:`SamplePartitionType<enum_NavigationPolygon_SamplePartitionType>` **get_sample_partition_type**\ (\ )
 
-Partitioning algorithm for creating the navigation mesh polys. See :ref:`SamplePartitionType<enum_NavigationPolygon_SamplePartitionType>` for possible values.
+Partitioning algorithm for creating the navigation mesh polys.
 
 .. rst-class:: classref-item-separator
 
@@ -460,7 +460,7 @@ Only used when :ref:`source_geometry_mode<class_NavigationPolygon_property_sourc
 - |void| **set_source_geometry_mode**\ (\ value\: :ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>`\ )
 - :ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` **get_source_geometry_mode**\ (\ )
 
-The source of the geometry used when baking. See :ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` for possible values.
+The source of the geometry used when baking.
 
 .. rst-class:: classref-section-separator
 
@@ -686,6 +686,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`parsed_
 Sets the vertices that can be then indexed to create polygons with the :ref:`add_polygon()<class_NavigationPolygon_method_add_polygon>` method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

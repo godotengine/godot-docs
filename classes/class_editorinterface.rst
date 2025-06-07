@@ -60,6 +60,8 @@ Methods
    :widths: auto
 
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`close_scene<class_EditorInterface_method_close_scene>`\ (\ )                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`edit_node<class_EditorInterface_method_edit_node>`\ (\ node\: :ref:`Node<class_Node>`\ )                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`edit_resource<class_EditorInterface_method_edit_resource>`\ (\ resource\: :ref:`Resource<class_Resource>`\ )                                                                                                                                                                                                                                                             |
@@ -222,6 +224,18 @@ If ``true``, the Movie Maker mode is enabled in the editor. See :ref:`MovieWrite
 
 Method Descriptions
 -------------------
+
+.. _class_EditorInterface_method_close_scene:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **close_scene**\ (\ ) :ref:`🔗<class_EditorInterface_method_close_scene>`
+
+Closes the currently active scene, discarding any pending changes in the process. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.ERR_DOES_NOT_EXIST<class_@GlobalScope_constant_ERR_DOES_NOT_EXIST>` if there is no scene to close.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_EditorInterface_method_edit_node:
 
@@ -816,7 +830,7 @@ Pops up an editor dialog for selecting a :ref:`Node<class_Node>` from the edited
     func _ready():
         if Engine.is_editor_hint():
             EditorInterface.popup_node_selector(_on_node_selected, ["Button"])
-    
+
     func _on_node_selected(node_path):
         if node_path.is_empty():
             print("node selection canceled")
@@ -840,7 +854,7 @@ Pops up an editor dialog for selecting properties from ``object``. The ``callbac
     func _ready():
         if Engine.is_editor_hint():
             EditorInterface.popup_property_selector(this, _on_property_selected, [TYPE_INT])
-    
+
     func _on_property_selected(property_path):
         if property_path.is_empty():
             print("property selection canceled")
@@ -919,6 +933,8 @@ Saves the currently active scene. Returns either :ref:`@GlobalScope.OK<class_@Gl
 
 Saves the currently active scene as a file at ``path``.
 
+\ **Note:** The ``with_preview`` parameter has no effect.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -984,6 +1000,7 @@ Sets the enabled status of a plugin. The plugin name is the same as its director
 Stops the scene that is currently playing.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

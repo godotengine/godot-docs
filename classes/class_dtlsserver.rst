@@ -30,17 +30,17 @@ Below a small example of how to use it:
 
     # server_node.gd
     extends Node
-    
+
     var dtls = DTLSServer.new()
     var server = UDPServer.new()
     var peers = []
-    
+
     func _ready():
         server.listen(4242)
         var key = load("key.key") # Your private key.
         var cert = load("cert.crt") # Your X509 certificate.
         dtls.setup(TlsOptions.server(key, cert))
-    
+
     func _process(delta):
         while server.is_connection_available():
             var peer = server.take_connection()
@@ -49,7 +49,7 @@ Below a small example of how to use it:
                 continue # It is normal that 50% of the connections fails due to cookie exchange.
             print("Peer connected!")
             peers.append(dtls_peer)
-    
+
         for p in peers:
             p.poll() # Must poll to update the state.
             if p.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
@@ -61,13 +61,13 @@ Below a small example of how to use it:
 
     // ServerNode.cs
     using Godot;
-    
+
     public partial class ServerNode : Node
     {
         private DtlsServer _dtls = new DtlsServer();
         private UdpServer _server = new UdpServer();
         private Godot.Collections.Array<PacketPeerDtls> _peers = [];
-    
+
         public override void _Ready()
         {
             _server.Listen(4242);
@@ -75,7 +75,7 @@ Below a small example of how to use it:
             var cert = GD.Load<X509Certificate>("cert.crt"); // Your X509 certificate.
             _dtls.Setup(TlsOptions.Server(key, cert));
         }
-    
+
         public override void _Process(double delta)
         {
             while (_server.IsConnectionAvailable())
@@ -89,7 +89,7 @@ Below a small example of how to use it:
                 GD.Print("Peer connected!");
                 _peers.Add(dtlsPeer);
             }
-    
+
             foreach (var p in _peers)
             {
                 p.Poll(); // Must poll to update the state.
@@ -114,15 +114,15 @@ Below a small example of how to use it:
 
     # client_node.gd
     extends Node
-    
+
     var dtls = PacketPeerDTLS.new()
     var udp = PacketPeerUDP.new()
     var connected = false
-    
+
     func _ready():
         udp.connect_to_host("127.0.0.1", 4242)
         dtls.connect_to_peer(udp, false) # Use true in production for certificate validation!
-    
+
     func _process(delta):
         dtls.poll()
         if dtls.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
@@ -138,19 +138,19 @@ Below a small example of how to use it:
     // ClientNode.cs
     using Godot;
     using System.Text;
-    
+
     public partial class ClientNode : Node
     {
         private PacketPeerDtls _dtls = new PacketPeerDtls();
         private PacketPeerUdp _udp = new PacketPeerUdp();
         private bool _connected = false;
-    
+
         public override void _Ready()
         {
             _udp.ConnectToHost("127.0.0.1", 4242);
             _dtls.ConnectToPeer(_udp, validateCerts: false); // Use true in production for certificate validation!
         }
-    
+
         public override void _Process(double delta)
         {
             _dtls.Poll();
@@ -218,6 +218,7 @@ Try to initiate the DTLS handshake with the given ``udp_peer`` which must be alr
 \ **Note:** You must check that the state of the return PacketPeerUDP is :ref:`PacketPeerDTLS.STATUS_HANDSHAKING<class_PacketPeerDTLS_constant_STATUS_HANDSHAKING>`, as it is normal that 50% of the new connections will be invalid due to cookie exchange.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

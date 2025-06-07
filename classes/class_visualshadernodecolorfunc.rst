@@ -165,9 +165,10 @@ Property Descriptions
 - |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeColorFunc_Function>`\ )
 - :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **get_function**\ (\ )
 
-A function to be applied to the input color. See :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` for options.
+A function to be applied to the input color.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

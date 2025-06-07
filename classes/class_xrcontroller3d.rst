@@ -162,7 +162,7 @@ Returns a :ref:`Variant<class_Variant>` for the input with the given ``name``. T
 
 :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` **get_tracker_hand**\ (\ ) |const| :ref:`🔗<class_XRController3D_method_get_tracker_hand>`
 
-Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>`.
+Returns the hand holding this controller, if known.
 
 .. rst-class:: classref-item-separator
 
@@ -193,6 +193,7 @@ Returns ``true`` if the button with the given ``name`` is pressed.
 \ **Note:** The current :ref:`XRInterface<class_XRInterface>` defines the ``name`` for each input. In the case of OpenXR, these are the names of actions in the current action set.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

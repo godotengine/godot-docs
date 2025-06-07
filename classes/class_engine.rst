@@ -444,7 +444,7 @@ This method can be used to run expensive logic less often without relying on a :
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-    
+
         if (Engine.GetPhysicsFrames() % 2 == 0)
         {
             // Run expensive logic only once every 2 physics frames here.
@@ -493,7 +493,7 @@ This method can be used to run expensive logic less often without relying on a :
     public override void _Process(double delta)
     {
         base._Process(delta);
-    
+
         if (Engine.GetProcessFrames() % 5 == 0)
         {
             // Run expensive logic only once every 5 process (render) frames here.
@@ -719,10 +719,10 @@ Returns ``true`` if the engine is inside the fixed physics process step of the m
         # Depending on when the node is added to the tree,
         # prints either "true" or "false".
         print(Engine.is_in_physics_frame())
-    
+
     func _process(delta):
         print(Engine.is_in_physics_frame()) # Prints false
-    
+
     func _physics_process(delta):
         print(Engine.is_in_physics_frame()) # Prints true
 
@@ -789,6 +789,7 @@ Returns:
 Removes the singleton registered under ``name``. The singleton object is *not* freed. Only works with user-defined singletons registered with :ref:`register_singleton()<class_Engine_method_register_singleton>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

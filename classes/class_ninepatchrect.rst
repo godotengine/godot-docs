@@ -141,7 +141,7 @@ Property Descriptions
 - |void| **set_h_axis_stretch_mode**\ (\ value\: :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>`\ )
 - :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **get_h_axis_stretch_mode**\ (\ )
 
-The stretch mode to use for horizontal stretching/tiling. See :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` for possible values.
+The stretch mode to use for horizontal stretching/tiling.
 
 .. rst-class:: classref-item-separator
 
@@ -158,7 +158,7 @@ The stretch mode to use for horizontal stretching/tiling. See :ref:`AxisStretchM
 - |void| **set_v_axis_stretch_mode**\ (\ value\: :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>`\ )
 - :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **get_v_axis_stretch_mode**\ (\ )
 
-The stretch mode to use for vertical stretching/tiling. See :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` for possible values.
+The stretch mode to use for vertical stretching/tiling.
 
 .. rst-class:: classref-item-separator
 
@@ -309,6 +309,7 @@ Returns the size of the margin on the specified :ref:`Side<enum_@GlobalScope_Sid
 Sets the size of the margin on the specified :ref:`Side<enum_@GlobalScope_Side>` to ``value`` pixels.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -264,7 +264,7 @@ Returns the sub-protocol assigned to this channel during creation. An empty stri
 
 :ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>` **get_ready_state**\ (\ ) |const| :ref:`🔗<class_WebRTCDataChannel_method_get_ready_state>`
 
-Returns the current state of this channel, see :ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>`.
+Returns the current state of this channel.
 
 .. rst-class:: classref-item-separator
 
@@ -315,6 +315,7 @@ Reserved, but not used for now.
 Returns ``true`` if the last received packet was transferred as text. See :ref:`write_mode<class_WebRTCDataChannel_property_write_mode>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

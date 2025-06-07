@@ -53,6 +53,8 @@ Properties
    +-----------------------------------------------+-------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                       | :ref:`stereo<class_AudioStreamWAV_property_stereo>`         | ``false``             |
    +-----------------------------------------------+-------------------------------------------------------------+-----------------------+
+   | :ref:`Dictionary<class_Dictionary>`           | :ref:`tags<class_AudioStreamWAV_property_tags>`             | ``{}``                |
+   +-----------------------------------------------+-------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -202,7 +204,7 @@ Contains the audio data in bytes.
 - |void| **set_format**\ (\ value\: :ref:`Format<enum_AudioStreamWAV_Format>`\ )
 - :ref:`Format<enum_AudioStreamWAV_Format>` **get_format**\ (\ )
 
-Audio format. See :ref:`Format<enum_AudioStreamWAV_Format>` constants for values.
+Audio format.
 
 .. rst-class:: classref-item-separator
 
@@ -253,7 +255,7 @@ The loop end point (in number of samples, relative to the beginning of the strea
 - |void| **set_loop_mode**\ (\ value\: :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>`\ )
 - :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` **get_loop_mode**\ (\ )
 
-The loop mode. See :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` constants for values.
+The loop mode.
 
 .. rst-class:: classref-item-separator
 
@@ -293,6 +295,29 @@ According to the `Nyquist-Shannon sampling theorem <https://en.wikipedia.org/wik
 
 If ``true``, audio is stereo.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamWAV_property_tags:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **tags** = ``{}`` :ref:`🔗<class_AudioStreamWAV_property_tags>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_tags**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
+- :ref:`Dictionary<class_Dictionary>` **get_tags**\ (\ )
+
+Contains user-defined tags if found in the WAV data.
+
+Commonly used tags include ``title``, ``artist``, ``album``, ``tracknumber``, and ``date`` (``date`` does not have a standard date format).
+
+\ **Note:** No tag is *guaranteed* to be present in every file, so make sure to account for the keys not always existing.
+
+\ **Note:** Only WAV files using a ``LIST`` chunk with an identifier of ``INFO`` to encode the tags are currently supported.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -331,10 +356,10 @@ The keys and values of ``options`` match the properties of :ref:`ResourceImporte
 ::
 
     @onready var audio_player = $AudioStreamPlayer
-    
+
     func _ready():
         get_window().files_dropped.connect(_on_files_dropped)
-    
+
     func _on_files_dropped(files):
         if files[0].get_extension() == "wav":
             audio_player.stream = AudioStreamWAV.load_from_file(files[0], {
@@ -358,6 +383,7 @@ Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM or Qu
 \ **Note:** A ``.wav`` extension is automatically appended to ``path`` if it is missing.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

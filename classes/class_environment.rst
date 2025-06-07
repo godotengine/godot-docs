@@ -835,7 +835,7 @@ Luminance of background measured in nits (candela per square meter). Only used w
 - |void| **set_background**\ (\ value\: :ref:`BGMode<enum_Environment_BGMode>`\ )
 - :ref:`BGMode<enum_Environment_BGMode>` **get_background**\ (\ )
 
-The background mode. See :ref:`BGMode<enum_Environment_BGMode>` for possible values.
+The background mode.
 
 .. rst-class:: classref-item-separator
 
@@ -1030,7 +1030,7 @@ The fog's brightness. Higher values result in brighter fog.
 - |void| **set_fog_mode**\ (\ value\: :ref:`FogMode<enum_Environment_FogMode>`\ )
 - :ref:`FogMode<enum_Environment_FogMode>` **get_fog_mode**\ (\ )
 
-The fog mode. See :ref:`FogMode<enum_Environment_FogMode>` for possible values.
+The fog mode.
 
 .. rst-class:: classref-item-separator
 
@@ -2360,6 +2360,7 @@ Returns the intensity of the glow level ``idx``.
 Sets the intensity of the glow level ``idx``. A value above ``0.0`` enables the level. Each level relies on the previous level. This means that enabling higher glow levels will slow down the glow effect rendering, even if previous levels aren't enabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

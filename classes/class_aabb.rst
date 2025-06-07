@@ -286,7 +286,7 @@ Returns ``true`` if this bounding box *completely* encloses the ``with`` box. Th
     var a = AABB(Vector3(0, 0, 0), Vector3(4, 4, 4))
     var b = AABB(Vector3(1, 1, 1), Vector3(3, 3, 3))
     var c = AABB(Vector3(2, 2, 2), Vector3(8, 8, 8))
-    
+
     print(a.encloses(a)) # Prints true
     print(a.encloses(b)) # Prints true
     print(a.encloses(c)) # Prints false
@@ -296,7 +296,7 @@ Returns ``true`` if this bounding box *completely* encloses the ``with`` box. Th
     var a = new Aabb(new Vector3(0, 0, 0), new Vector3(4, 4, 4));
     var b = new Aabb(new Vector3(1, 1, 1), new Vector3(3, 3, 3));
     var c = new Aabb(new Vector3(2, 2, 2), new Vector3(8, 8, 8));
-    
+
     GD.Print(a.Encloses(a)); // Prints True
     GD.Print(a.Encloses(b)); // Prints True
     GD.Print(a.Encloses(c)); // Prints False
@@ -321,11 +321,11 @@ Returns a copy of this bounding box expanded to align the edges with the given `
  .. code-tab:: gdscript
 
     var box = AABB(Vector3(0, 0, 0), Vector3(5, 2, 5))
-    
+
     box = box.expand(Vector3(10, 0, 0))
     print(box.position) # Prints (0.0, 0.0, 0.0)
     print(box.size)     # Prints (10.0, 2.0, 5.0)
-    
+
     box = box.expand(Vector3(-5, 0, 5))
     print(box.position) # Prints (-5.0, 0.0, 0.0)
     print(box.size)     # Prints (15.0, 2.0, 5.0)
@@ -333,11 +333,11 @@ Returns a copy of this bounding box expanded to align the edges with the given `
  .. code-tab:: csharp
 
     var box = new Aabb(new Vector3(0, 0, 0), new Vector3(5, 2, 5));
-    
+
     box = box.Expand(new Vector3(10, 0, 0));
     GD.Print(box.Position); // Prints (0, 0, 0)
     GD.Print(box.Size);     // Prints (10, 2, 5)
-    
+
     box = box.Expand(new Vector3(-5, 0, 5));
     GD.Print(box.Position); // Prints (-5, 0, 0)
     GD.Print(box.Size);     // Prints (15, 2, 5)
@@ -386,7 +386,7 @@ Returns the longest normalized axis of this bounding box's :ref:`size<class_AABB
  .. code-tab:: gdscript
 
     var box = AABB(Vector3(0, 0, 0), Vector3(2, 4, 8))
-    
+
     print(box.get_longest_axis())       # Prints (0.0, 0.0, 1.0)
     print(box.get_longest_axis_index()) # Prints 2
     print(box.get_longest_axis_size())  # Prints 8.0
@@ -394,7 +394,7 @@ Returns the longest normalized axis of this bounding box's :ref:`size<class_AABB
  .. code-tab:: csharp
 
     var box = new Aabb(new Vector3(0, 0, 0), new Vector3(2, 4, 8));
-    
+
     GD.Print(box.GetLongestAxis());      // Prints (0, 0, 1)
     GD.Print(box.GetLongestAxisIndex()); // Prints Z
     GD.Print(box.GetLongestAxisSize());  // Prints 8
@@ -449,7 +449,7 @@ Returns the shortest normalized axis of this bounding box's :ref:`size<class_AAB
  .. code-tab:: gdscript
 
     var box = AABB(Vector3(0, 0, 0), Vector3(2, 4, 8))
-    
+
     print(box.get_shortest_axis())       # Prints (1.0, 0.0, 0.0)
     print(box.get_shortest_axis_index()) # Prints 0
     print(box.get_shortest_axis_size())  # Prints 2.0
@@ -457,7 +457,7 @@ Returns the shortest normalized axis of this bounding box's :ref:`size<class_AAB
  .. code-tab:: csharp
 
     var box = new Aabb(new Vector3(0, 0, 0), new Vector3(2, 4, 8));
-    
+
     GD.Print(box.GetShortestAxis());      // Prints (1, 0, 0)
     GD.Print(box.GetShortestAxisIndex()); // Prints X
     GD.Print(box.GetShortestAxisSize());  // Prints 2
@@ -538,7 +538,7 @@ Returns a copy of this bounding box extended on all sides by the given amount ``
     var a = AABB(Vector3(4, 4, 4), Vector3(8, 8, 8)).grow(4)
     print(a.position) # Prints (0.0, 0.0, 0.0)
     print(a.size)     # Prints (16.0, 16.0, 16.0)
-    
+
     var b = AABB(Vector3(0, 0, 0), Vector3(8, 4, 2)).grow(2)
     print(b.position) # Prints (-2.0, -2.0, -2.0)
     print(b.size)     # Prints (12.0, 8.0, 6.0)
@@ -548,7 +548,7 @@ Returns a copy of this bounding box extended on all sides by the given amount ``
     var a = new Aabb(new Vector3(4, 4, 4), new Vector3(8, 8, 8)).Grow(4);
     GD.Print(a.Position); // Prints (0, 0, 0)
     GD.Print(a.Size);     // Prints (16, 16, 16)
-    
+
     var b = new Aabb(new Vector3(0, 0, 0), new Vector3(8, 4, 2)).Grow(2);
     GD.Print(b.Position); // Prints (-2, -2, -2)
     GD.Print(b.Size);     // Prints (12, 8, 6)
@@ -612,7 +612,7 @@ Returns the intersection between this bounding box and ``with``. If the boxes do
 
     var box1 = AABB(Vector3(0, 0, 0), Vector3(5, 2, 8))
     var box2 = AABB(Vector3(2, 0, 2), Vector3(8, 4, 4))
-    
+
     var intersection = box1.intersection(box2)
     print(intersection.position) # Prints (2.0, 0.0, 2.0)
     print(intersection.size)     # Prints (3.0, 2.0, 4.0)
@@ -621,7 +621,7 @@ Returns the intersection between this bounding box and ``with``. If the boxes do
 
     var box1 = new Aabb(new Vector3(0, 0, 0), new Vector3(5, 2, 8));
     var box2 = new Aabb(new Vector3(2, 0, 2), new Vector3(8, 4, 4));
-    
+
     var intersection = box1.Intersection(box2);
     GD.Print(intersection.Position); // Prints (2, 0, 2)
     GD.Print(intersection.Size);     // Prints (3, 2, 4)
@@ -768,6 +768,7 @@ Returns ``true`` if both :ref:`position<class_AABB_property_position>` and :ref:
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx()<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

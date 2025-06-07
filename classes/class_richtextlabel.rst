@@ -29,7 +29,7 @@ A control for displaying text that can contain custom fonts, images, and basic f
 
 \ **Note:** ``push_*/pop_*`` functions won't affect BBCode.
 
-\ **Note:** Unlike :ref:`Label<class_Label>`, **RichTextLabel** doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content<class_RichTextLabel_property_fit_content>` property.
+\ **Note:** While :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` is enabled, alignment tags such as ``[center]`` will take priority over the :ref:`horizontal_alignment<class_RichTextLabel_property_horizontal_alignment>` setting which determines the default text alignment.
 
 .. rst-class:: classref-introduction-group
 
@@ -243,11 +243,11 @@ Methods
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`push_paragraph<class_RichTextLabel_method_push_paragraph>`\ (\ alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`, base_direction\: :ref:`TextDirection<enum_Control_TextDirection>` = 0, language\: :ref:`String<class_String>` = "", st_parser\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` = 0, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 163, tab_stops\: :ref:`PackedFloat32Array<class_PackedFloat32Array>` = PackedFloat32Array()\ )                                                                                   |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`push_strikethrough<class_RichTextLabel_method_push_strikethrough>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+   | |void|                              | :ref:`push_strikethrough<class_RichTextLabel_method_push_strikethrough>`\ (\ color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 0)\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`push_table<class_RichTextLabel_method_push_table>`\ (\ columns\: :ref:`int<class_int>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 0, align_to_row\: :ref:`int<class_int>` = -1, name\: :ref:`String<class_String>` = ""\ )                                                                                                                                                                                                                                                                                                                                                                             |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`push_underline<class_RichTextLabel_method_push_underline>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+   | |void|                              | :ref:`push_underline<class_RichTextLabel_method_push_underline>`\ (\ color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 0)\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`reload_effects<class_RichTextLabel_method_reload_effects>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -311,6 +311,8 @@ Theme Properties
    +---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`int<class_int>`           | :ref:`shadow_outline_size<class_RichTextLabel_theme_constant_shadow_outline_size>`           | ``1``                       |
    +---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`           | :ref:`strikethrough_alpha<class_RichTextLabel_theme_constant_strikethrough_alpha>`           | ``50``                      |
+   +---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`int<class_int>`           | :ref:`table_h_separation<class_RichTextLabel_theme_constant_table_h_separation>`             | ``3``                       |
    +---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`int<class_int>`           | :ref:`table_v_separation<class_RichTextLabel_theme_constant_table_v_separation>`             | ``3``                       |
@@ -318,6 +320,8 @@ Theme Properties
    | :ref:`int<class_int>`           | :ref:`text_highlight_h_padding<class_RichTextLabel_theme_constant_text_highlight_h_padding>` | ``3``                       |
    +---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`int<class_int>`           | :ref:`text_highlight_v_padding<class_RichTextLabel_theme_constant_text_highlight_v_padding>` | ``3``                       |
+   +---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`           | :ref:`underline_alpha<class_RichTextLabel_theme_constant_underline_alpha>`                   | ``50``                      |
    +---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`Font<class_Font>`         | :ref:`bold_font<class_RichTextLabel_theme_font_bold_font>`                                   |                             |
    +---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
@@ -623,7 +627,7 @@ Property Descriptions
 - |void| **set_autowrap_mode**\ (\ value\: :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`\ )
 - :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **get_autowrap_mode**\ (\ )
 
-If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
+If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle.
 
 .. rst-class:: classref-item-separator
 
@@ -780,7 +784,7 @@ If ``true``, the label underlines hint tags such as ``[hint=description]{text}[/
 - |void| **set_horizontal_alignment**\ (\ value\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`\ )
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment**\ (\ )
 
-Controls the text's horizontal alignment. Supports left, center, right, and fill, or justify. Set it to one of the :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants.
+Controls the text's horizontal alignment. Supports left, center, right, and fill, or justify.
 
 .. rst-class:: classref-item-separator
 
@@ -797,7 +801,7 @@ Controls the text's horizontal alignment. Supports left, center, right, and fill
 - |void| **set_justification_flags**\ (\ value\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\]\ )
 - |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **get_justification_flags**\ (\ )
 
-Line fill alignment rules. See :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` for more information.
+Line fill alignment rules.
 
 .. rst-class:: classref-item-separator
 
@@ -1058,7 +1062,7 @@ If ``true``, text processing is done in a background thread.
 - |void| **set_vertical_alignment**\ (\ value\: :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>`\ )
 - :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **get_vertical_alignment**\ (\ )
 
-Controls the text's vertical alignment. Supports top, center, bottom, and fill. Set it to one of the :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` constants.
+Controls the text's vertical alignment. Supports top, center, bottom, and fill.
 
 .. rst-class:: classref-item-separator
 
@@ -1094,7 +1098,7 @@ The number of characters to display. If set to ``-1``, all characters are displa
 - |void| **set_visible_characters_behavior**\ (\ value\: :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>`\ )
 - :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` **get_visible_characters_behavior**\ (\ )
 
-Sets the clipping behavior when :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` or :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` is set. See :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` for more info.
+The clipping behavior when :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` or :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` is set.
 
 .. rst-class:: classref-item-separator
 
@@ -1354,7 +1358,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
         menu.add_item("Duplicate Text", MENU_MAX + 1)
         # Connect callback.
         menu.id_pressed.connect(_on_item_pressed)
-    
+
     func _on_item_pressed(id):
         if id == MENU_MAX + 1:
             add_text("\n" + get_parsed_text())
@@ -1372,7 +1376,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
         // Add event handler.
         menu.IdPressed += OnItemPressed;
     }
-    
+
     public void OnItemPressed(int id)
     {
         if (id == TextEdit.MenuItems.Max + 1)
@@ -1544,9 +1548,9 @@ Installs a custom effect. This can also be done in the Inspector through the :re
     # effect.gd
     class_name MyCustomEffect
     extends RichTextEffect
-    
+
     var bbcode = "my_custom_effect"
-    
+
     # ...
 
 The above effect can be installed in **RichTextLabel** from a script:
@@ -1555,10 +1559,10 @@ The above effect can be installed in **RichTextLabel** from a script:
 
     # rich_text_label.gd
     extends RichTextLabel
-    
+
     func _ready():
         install_effect(MyCustomEffect.new())
-    
+
         # Alternatively, if not using `class_name` in the script that extends RichTextEffect:
         install_effect(preload("res://effect.gd").new())
 
@@ -1978,9 +1982,9 @@ Adds a ``[p]`` tag to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_strikethrough**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_strikethrough>`
+|void| **push_strikethrough**\ (\ color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 0)\ ) :ref:`🔗<class_RichTextLabel_method_push_strikethrough>`
 
-Adds a ``[s]`` tag to the tag stack.
+Adds a ``[s]`` tag to the tag stack. If ``color`` alpha value is zero, current font color with alpha multiplied by :ref:`strikethrough_alpha<class_RichTextLabel_theme_constant_strikethrough_alpha>` is used.
 
 .. rst-class:: classref-item-separator
 
@@ -2002,9 +2006,9 @@ Adds a ``[table=columns,inline_align]`` tag to the tag stack. Use :ref:`set_tabl
 
 .. rst-class:: classref-method
 
-|void| **push_underline**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_underline>`
+|void| **push_underline**\ (\ color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 0)\ ) :ref:`🔗<class_RichTextLabel_method_push_underline>`
 
-Adds a ``[u]`` tag to the tag stack.
+Adds a ``[u]`` tag to the tag stack. If ``color`` alpha value is zero, current font color with alpha multiplied by :ref:`underline_alpha<class_RichTextLabel_theme_constant_underline_alpha>` is used.
 
 .. rst-class:: classref-item-separator
 
@@ -2339,6 +2343,18 @@ The size of the shadow outline.
 
 ----
 
+.. _class_RichTextLabel_theme_constant_strikethrough_alpha:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **strikethrough_alpha** = ``50`` :ref:`🔗<class_RichTextLabel_theme_constant_strikethrough_alpha>`
+
+The default strikethrough color transparency (percent). For strikethroughs with a custom color, this theme item is only used if the custom color's alpha is ``0.0`` (fully transparent).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RichTextLabel_theme_constant_table_h_separation:
 
 .. rst-class:: classref-themeproperty
@@ -2382,6 +2398,18 @@ The horizontal padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]``
 :ref:`int<class_int>` **text_highlight_v_padding** = ``3`` :ref:`🔗<class_RichTextLabel_theme_constant_text_highlight_v_padding>`
 
 The vertical padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection. To avoid any risk of neighboring highlights overlapping each other, set this to ``0`` to disable padding.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RichTextLabel_theme_constant_underline_alpha:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **underline_alpha** = ``50`` :ref:`🔗<class_RichTextLabel_theme_constant_underline_alpha>`
+
+The default underline color transparency (percent). For underlines with a custom color, this theme item is only used if the custom color's alpha is ``0.0`` (fully transparent).
 
 .. rst-class:: classref-item-separator
 
@@ -2528,6 +2556,7 @@ The background used when the **RichTextLabel** is focused. The :ref:`focus<class
 The normal background for the **RichTextLabel**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

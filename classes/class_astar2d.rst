@@ -23,6 +23,13 @@ An implementation of the A\* algorithm, used to find the shortest path between t
 
 See :ref:`AStar3D<class_AStar3D>` for a more thorough explanation on how to use this class. **AStar2D** is a wrapper for :ref:`AStar3D<class_AStar3D>` that enforces 2D coordinates.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Grid-based Navigation with AStarGrid2D Demo <https://godotengine.org/asset-library/asset/2723>`__
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -301,12 +308,12 @@ If there is no valid path to the target, and ``allow_partial_path`` is ``true``,
     astar.add_point(2, Vector2(0, 1), 1) # Default weight is 1
     astar.add_point(3, Vector2(1, 1))
     astar.add_point(4, Vector2(2, 0))
-    
+
     astar.connect_points(1, 2, false)
     astar.connect_points(2, 3, false)
     astar.connect_points(4, 3, false)
     astar.connect_points(1, 4, false)
-    
+
     var res = astar.get_id_path(1, 3) # Returns [1, 2, 3]
 
  .. code-tab:: csharp
@@ -316,7 +323,7 @@ If there is no valid path to the target, and ``allow_partial_path`` is ``true``,
     astar.AddPoint(2, new Vector2(0, 1), 1); // Default weight is 1
     astar.AddPoint(3, new Vector2(1, 1));
     astar.AddPoint(4, new Vector2(2, 0));
-    
+
     astar.ConnectPoints(1, 2, false);
     astar.ConnectPoints(2, 3, false);
     astar.ConnectPoints(4, 3, false);
@@ -361,10 +368,10 @@ Returns an array with the IDs of the points that form the connection with the gi
     astar.add_point(2, Vector2(0, 1))
     astar.add_point(3, Vector2(1, 1))
     astar.add_point(4, Vector2(2, 0))
-    
+
     astar.connect_points(1, 2, true)
     astar.connect_points(1, 3, true)
-    
+
     var neighbors = astar.get_point_connections(1) # Returns [2, 3]
 
  .. code-tab:: csharp
@@ -374,10 +381,10 @@ Returns an array with the IDs of the points that form the connection with the gi
     astar.AddPoint(2, new Vector2(0, 1));
     astar.AddPoint(3, new Vector2(1, 1));
     astar.AddPoint(4, new Vector2(2, 0));
-    
+
     astar.ConnectPoints(1, 2, true);
     astar.ConnectPoints(1, 3, true);
-    
+
     long[] neighbors = astar.GetPointConnections(1); // Returns [2, 3]
 
 
@@ -533,6 +540,7 @@ Sets the ``position`` for the point with the given ``id``.
 Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost()<class_AStar2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

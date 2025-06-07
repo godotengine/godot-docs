@@ -113,6 +113,7 @@ If ``true``, performs the logic operation defined in :ref:`logic_op<class_RDPipe
 The logic operation to perform for blending. Only effective if :ref:`enable_logic_op<class_RDPipelineColorBlendState_property_enable_logic_op>` is ``true``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

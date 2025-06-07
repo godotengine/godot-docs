@@ -163,10 +163,10 @@ Returns a random index with non-uniform weights. Prints an error and returns ``-
  .. code-tab:: gdscript
 
     var rng = RandomNumberGenerator.new()
-    
+
     var my_array = ["one", "two", "three", "four"]
     var weights = PackedFloat32Array([0.5, 1, 1, 2])
-    
+
     # Prints one of the four elements in `my_array`.
     # It is more likely to print "four", and less likely to print "one".
     print(my_array[rng.rand_weighted(weights)])
@@ -248,6 +248,7 @@ Returns a pseudo-random 32-bit signed integer between ``from`` and ``to`` (inclu
 Sets up a time-based seed for this **RandomNumberGenerator** instance. Unlike the :ref:`@GlobalScope<class_@GlobalScope>` random number generation functions, different **RandomNumberGenerator** instances can use different seeds.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

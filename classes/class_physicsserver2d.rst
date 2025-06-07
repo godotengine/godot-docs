@@ -1219,7 +1219,7 @@ Returns the ``ObjectID`` attached to the area. Use :ref:`@GlobalScope.instance_f
 
 :ref:`Variant<class_Variant>` **area_get_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_area_get_param>`
 
-Returns the value of the given area parameter. See :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` for the list of available parameters.
+Returns the value of the given area parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -1387,7 +1387,7 @@ Sets whether the area is monitorable or not. If ``monitorable`` is ``true``, the
 
 |void| **area_set_param**\ (\ area\: :ref:`RID<class_RID>`, param\: :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_PhysicsServer2D_method_area_set_param>`
 
-Sets the value of the given area parameter. See :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` for the list of available parameters.
+Sets the value of the given area parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -1737,7 +1737,7 @@ See :ref:`body_add_constant_torque()<class_PhysicsServer2D_method_body_add_const
 
 :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` **body_get_continuous_collision_detection_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_body_get_continuous_collision_detection_mode>`
 
-Returns the body's continuous collision detection mode (see :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>`).
+Returns the body's continuous collision detection mode.
 
 .. rst-class:: classref-item-separator
 
@@ -1773,7 +1773,7 @@ Returns the maximum number of contacts that the body can report. See :ref:`body_
 
 :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` **body_get_mode**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_body_get_mode>`
 
-Returns the body's mode (see :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>`).
+Returns the body's mode.
 
 .. rst-class:: classref-item-separator
 
@@ -1797,7 +1797,7 @@ Returns the ``ObjectID`` attached to the body. Use :ref:`@GlobalScope.instance_f
 
 :ref:`Variant<class_Variant>` **body_get_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_body_get_param>`
 
-Returns the value of the given body parameter. See :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` for the list of available parameters.
+Returns the value of the given body parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -1857,7 +1857,7 @@ Returns the :ref:`RID<class_RID>` of the space assigned to the body. Returns an 
 
 :ref:`Variant<class_Variant>` **body_get_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_body_get_state>`
 
-Returns the value of the given state of the body. See :ref:`BodyState<enum_PhysicsServer2D_BodyState>` for the list of available states.
+Returns the value of the given state of the body.
 
 .. rst-class:: classref-item-separator
 
@@ -1993,7 +1993,7 @@ See :ref:`body_add_constant_torque()<class_PhysicsServer2D_method_body_add_const
 
 |void| **body_set_continuous_collision_detection_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>`\ ) :ref:`🔗<class_PhysicsServer2D_method_body_set_continuous_collision_detection_mode>`
 
-Sets the continuous collision detection mode using one of the :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` constants.
+Sets the continuous collision detection mode.
 
 Continuous collision detection tries to predict where a moving body would collide in between physics updates, instead of moving it and correcting its movement if it collided.
 
@@ -2041,7 +2041,7 @@ Sets the maximum number of contacts that the body can report. If ``amount`` is g
 
 |void| **body_set_mode**\ (\ body\: :ref:`RID<class_RID>`, mode\: :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>`\ ) :ref:`🔗<class_PhysicsServer2D_method_body_set_mode>`
 
-Sets the body's mode. See :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` for the list of available modes.
+Sets the body's mode.
 
 .. rst-class:: classref-item-separator
 
@@ -2067,7 +2067,7 @@ This method is called when the property :ref:`RigidBody2D.custom_integrator<clas
 
 |void| **body_set_param**\ (\ body\: :ref:`RID<class_RID>`, param\: :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_PhysicsServer2D_method_body_set_param>`
 
-Sets the value of the given body parameter. See :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` for the list of available parameters.
+Sets the value of the given body parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2145,7 +2145,7 @@ Adds the body to the given space, after removing the body from the previously as
 
 |void| **body_set_state**\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_PhysicsServer2D_method_body_set_state>`
 
-Sets the value of a body's state. See :ref:`BodyState<enum_PhysicsServer2D_BodyState>` for the list of available states.
+Sets the value of a body's state.
 
 \ **Note:** The state change doesn't take effect immediately. The state will change on the next physics frame.
 
@@ -2237,7 +2237,7 @@ Creates a 2D convex polygon shape in the physics server, and returns the :ref:`R
 
 :ref:`float<class_float>` **damped_spring_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_damped_spring_joint_get_param>`
 
-Returns the value of the given damped spring joint parameter. See :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` for the list of available parameters.
+Returns the value of the given damped spring joint parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2249,7 +2249,7 @@ Returns the value of the given damped spring joint parameter. See :ref:`DampedSp
 
 |void| **damped_spring_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PhysicsServer2D_method_damped_spring_joint_set_param>`
 
-Sets the value of the given damped spring joint parameter. See :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` for the list of available parameters.
+Sets the value of the given damped spring joint parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2273,7 +2273,7 @@ Destroys any of the objects created by PhysicsServer2D. If the :ref:`RID<class_R
 
 :ref:`int<class_int>` **get_process_info**\ (\ process_info\: :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>`\ ) :ref:`🔗<class_PhysicsServer2D_method_get_process_info>`
 
-Returns information about the current state of the 2D physics engine. See :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>` for the list of available states.
+Returns the value of a physics engine state specified by ``process_info``.
 
 .. rst-class:: classref-item-separator
 
@@ -2321,7 +2321,7 @@ Sets whether the bodies attached to the :ref:`Joint2D<class_Joint2D>` will colli
 
 :ref:`float<class_float>` **joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`JointParam<enum_PhysicsServer2D_JointParam>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_joint_get_param>`
 
-Returns the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` for the list of available parameters.
+Returns the value of the given joint parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2333,7 +2333,7 @@ Returns the value of the given joint parameter. See :ref:`JointParam<enum_Physic
 
 :ref:`JointType<enum_PhysicsServer2D_JointType>` **joint_get_type**\ (\ joint\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_joint_get_type>`
 
-Returns the joint's type (see :ref:`JointType<enum_PhysicsServer2D_JointType>`).
+Returns the joint's type.
 
 .. rst-class:: classref-item-separator
 
@@ -2393,7 +2393,7 @@ Makes the joint a pin joint. If ``body_b`` is an empty :ref:`RID<class_RID>`, th
 
 |void| **joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`JointParam<enum_PhysicsServer2D_JointParam>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PhysicsServer2D_method_joint_set_param>`
 
-Sets the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` for the list of available parameters.
+Sets the value of the given joint parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2405,7 +2405,7 @@ Sets the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsSe
 
 :ref:`bool<class_bool>` **pin_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_pin_joint_get_flag>`
 
-Gets a pin joint flag (see :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` constants).
+Gets a pin joint flag.
 
 .. rst-class:: classref-item-separator
 
@@ -2417,7 +2417,7 @@ Gets a pin joint flag (see :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>
 
 :ref:`float<class_float>` **pin_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_pin_joint_get_param>`
 
-Returns the value of a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` for a list of available parameters.
+Returns the value of a pin joint parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2429,7 +2429,7 @@ Returns the value of a pin joint parameter. See :ref:`PinJointParam<enum_Physics
 
 |void| **pin_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, flag\: :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PhysicsServer2D_method_pin_joint_set_flag>`
 
-Sets a pin joint flag (see :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` constants).
+Sets a pin joint flag.
 
 .. rst-class:: classref-item-separator
 
@@ -2441,7 +2441,7 @@ Sets a pin joint flag (see :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>
 
 |void| **pin_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, param\: :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PhysicsServer2D_method_pin_joint_set_param>`
 
-Sets a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` for a list of available parameters.
+Sets a pin joint parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2513,7 +2513,7 @@ Returns the shape data that defines the configuration of the shape, such as the 
 
 :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>` **shape_get_type**\ (\ shape\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_shape_get_type>`
 
-Returns the shape's type (see :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>`).
+Returns the shape's type.
 
 .. rst-class:: classref-item-separator
 
@@ -2579,7 +2579,7 @@ Returns the state of a space, a :ref:`PhysicsDirectSpaceState2D<class_PhysicsDir
 
 :ref:`float<class_float>` **space_get_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_space_get_param>`
 
-Returns the value of the given space parameter. See :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` for the list of available parameters.
+Returns the value of the given space parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2615,7 +2615,7 @@ Activates or deactivates the space. If ``active`` is ``false``, then the physics
 
 |void| **space_set_param**\ (\ space\: :ref:`RID<class_RID>`, param\: :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PhysicsServer2D_method_space_set_param>`
 
-Sets the value of the given space parameter. See :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` for the list of available parameters.
+Sets the value of the given space parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2630,6 +2630,7 @@ Sets the value of the given space parameter. See :ref:`SpaceParameter<enum_Physi
 Creates a 2D world boundary shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data()<class_PhysicsServer2D_method_shape_set_data>` to set the shape's normal direction and distance properties.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

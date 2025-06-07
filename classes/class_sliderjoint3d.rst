@@ -688,7 +688,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_SliderJoint3D_Param>`\ ) |const| :ref:`🔗<class_SliderJoint3D_method_get_param>`
 
-Returns the value of the given parameter (see :ref:`Param<enum_SliderJoint3D_Param>` constants).
+Returns the value of the given parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -700,9 +700,10 @@ Returns the value of the given parameter (see :ref:`Param<enum_SliderJoint3D_Par
 
 |void| **set_param**\ (\ param\: :ref:`Param<enum_SliderJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_SliderJoint3D_method_set_param>`
 
-Assigns ``value`` to the given parameter (see :ref:`Param<enum_SliderJoint3D_Param>` constants).
+Assigns ``value`` to the given parameter.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

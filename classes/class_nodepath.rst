@@ -177,18 +177,18 @@ The following strings can be valid node paths:
 
     # Points to the Sprite2D node.
     "Level/RigidBody2D/Sprite2D"
-    
+
     # Points to the Sprite2D node and its "texture" resource.
     # get_node() would retrieve the Sprite2D, while get_node_and_resource()
     # would retrieve both the Sprite2D node and the "texture" resource.
     "Level/RigidBody2D/Sprite2D:texture"
-    
+
     # Points to the Sprite2D node and its "position" property.
     "Level/RigidBody2D/Sprite2D:position"
-    
+
     # Points to the Sprite2D node and the "x" component of its "position" property.
     "Level/RigidBody2D/Sprite2D:position:x"
-    
+
     # Points to the RigidBody2D node as an absolute path beginning from the SceneTree.
     "/root/Level/RigidBody2D"
 
@@ -218,7 +218,7 @@ Returns a copy of this node path with a colon character (``:``) prefixed, transf
 
     # node_path points to the "x" property of the child node named "position".
     var node_path = ^"position:x"
-    
+
     # property_path points to the "position" in the "x" axis of this node.
     var property_path = node_path.get_as_property_path()
     print(property_path) # Prints ":position:x"
@@ -227,7 +227,7 @@ Returns a copy of this node path with a colon character (``:``) prefixed, transf
 
     // nodePath points to the "x" property of the child node named "position".
     var nodePath = new NodePath("position:x");
-    
+
     // propertyPath points to the "position" in the "x" axis of this node.
     NodePath propertyPath = nodePath.GetAsPropertyPath();
     GD.Print(propertyPath); // Prints ":position:x"
@@ -445,6 +445,7 @@ Returns ``true`` if two node paths are not equal.
 Returns ``true`` if two node paths are equal, that is, they are composed of the same node names and subnames in the same order.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

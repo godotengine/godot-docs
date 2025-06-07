@@ -257,7 +257,7 @@ If :ref:`image_format<class_GLTFDocument_property_image_format>` is a lossy imag
 - |void| **set_root_node_mode**\ (\ value\: :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>`\ )
 - :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` **get_root_node_mode**\ (\ )
 
-How to process the root node during export. See :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` for details. The default and recommended value is :ref:`ROOT_NODE_MODE_SINGLE_ROOT<class_GLTFDocument_constant_ROOT_NODE_MODE_SINGLE_ROOT>`.
+How to process the root node during export. The default and recommended value is :ref:`ROOT_NODE_MODE_SINGLE_ROOT<class_GLTFDocument_constant_ROOT_NODE_MODE_SINGLE_ROOT>`.
 
 \ **Note:** Regardless of how the glTF file is exported, when importing, the root node type and name can be overridden in the scene import settings tab.
 
@@ -276,7 +276,7 @@ How to process the root node during export. See :ref:`RootNodeMode<enum_GLTFDocu
 - |void| **set_visibility_mode**\ (\ value\: :ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>`\ )
 - :ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` **get_visibility_mode**\ (\ )
 
-How to deal with node visibility during export. This setting does nothing if all nodes are visible. See :ref:`VisibilityMode<enum_GLTFDocument_VisibilityMode>` for details. The default and recommended value is :ref:`VISIBILITY_MODE_INCLUDE_REQUIRED<class_GLTFDocument_constant_VISIBILITY_MODE_INCLUDE_REQUIRED>`, which uses the ``KHR_node_visibility`` extension.
+How to deal with node visibility during export. This setting does nothing if all nodes are visible. The default and recommended value is :ref:`VISIBILITY_MODE_INCLUDE_REQUIRED<class_GLTFDocument_constant_VISIBILITY_MODE_INCLUDE_REQUIRED>`, which uses the ``KHR_node_visibility`` extension.
 
 .. rst-class:: classref-section-separator
 
@@ -428,6 +428,7 @@ Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter
 \ **Note:** The extension of the glTF file determines if it is a .glb binary file or a .gltf text file.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

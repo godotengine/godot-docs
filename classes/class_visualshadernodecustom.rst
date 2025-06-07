@@ -125,7 +125,7 @@ The ``input_vars`` and ``output_vars`` arrays contain the string names of the va
 
 The output ports can be assigned values in the shader code. For example, ``return output_vars[0] + " = " + input_vars[0] + ";"``.
 
-You can customize the generated code based on the shader ``mode`` (see :ref:`Mode<enum_Shader_Mode>`) and/or ``type`` (see :ref:`Type<enum_VisualShader_Type>`).
+You can customize the generated code based on the shader ``mode`` and/or ``type``.
 
 Defining this method is **required**.
 
@@ -171,7 +171,7 @@ Override this method to add a shader code to the beginning of each shader functi
 
 If there are multiple custom nodes of different types which use this feature the order of each insertion is undefined.
 
-You can customize the generated code based on the shader ``mode`` (see :ref:`Mode<enum_Shader_Mode>`) and/or ``type`` (see :ref:`Type<enum_VisualShader_Type>`).
+You can customize the generated code based on the shader ``mode`` and/or ``type``.
 
 Defining this method is **optional**.
 
@@ -189,7 +189,7 @@ Override this method to add shader code on top of the global shader, to define y
 
 Be careful with this functionality as it can cause name conflicts with other custom nodes, so be sure to give the defined entities unique names.
 
-You can customize the generated code based on the shader ``mode`` (see :ref:`Mode<enum_Shader_Mode>`).
+You can customize the generated code based on the shader ``mode``.
 
 Defining this method is **optional**.
 
@@ -245,7 +245,7 @@ Defining this method is **optional**, but recommended. If not overridden, input 
 
 :ref:`PortType<enum_VisualShaderNode_PortType>` **_get_input_port_type**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_input_port_type>`
 
-Override this method to define the returned type of each input port of the associated custom node (see :ref:`PortType<enum_VisualShaderNode_PortType>` for possible types).
+Override this method to define the returned type of each input port of the associated custom node.
 
 Defining this method is **optional**, but recommended. If not overridden, input ports will return the :ref:`VisualShaderNode.PORT_TYPE_SCALAR<class_VisualShaderNode_constant_PORT_TYPE_SCALAR>` type.
 
@@ -301,7 +301,7 @@ Defining this method is **optional**, but recommended. If not overridden, output
 
 :ref:`PortType<enum_VisualShaderNode_PortType>` **_get_output_port_type**\ (\ port\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__get_output_port_type>`
 
-Override this method to define the returned type of each output port of the associated custom node (see :ref:`PortType<enum_VisualShaderNode_PortType>` for possible types).
+Override this method to define the returned type of each output port of the associated custom node.
 
 Defining this method is **optional**, but recommended. If not overridden, output ports will return the :ref:`VisualShaderNode.PORT_TYPE_SCALAR<class_VisualShaderNode_constant_PORT_TYPE_SCALAR>` type.
 
@@ -385,7 +385,7 @@ Defining this method is **optional**. If not overridden, no return icon is shown
 
 :ref:`bool<class_bool>` **_is_available**\ (\ mode\: :ref:`Mode<enum_Shader_Mode>`, type\: :ref:`Type<enum_VisualShader_Type>`\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__is_available>`
 
-Override this method to prevent the node to be visible in the member dialog for the certain ``mode`` (see :ref:`Mode<enum_Shader_Mode>`) and/or ``type`` (see :ref:`Type<enum_VisualShader_Type>`).
+Override this method to prevent the node to be visible in the member dialog for the certain ``mode`` and/or ``type``.
 
 Defining this method is **optional**. If not overridden, it's ``true``.
 
@@ -416,6 +416,7 @@ Defining this method is **optional**. If not overridden, it's ``false``.
 Returns the selected index of the drop-down list option within a graph. You may use this function to define the specific behavior in the :ref:`_get_code()<class_VisualShaderNodeCustom_private_method__get_code>` or :ref:`_get_global_code()<class_VisualShaderNodeCustom_private_method__get_global_code>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

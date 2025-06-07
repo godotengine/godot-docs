@@ -1128,7 +1128,7 @@ Property Descriptions
 - |void| **set_autowrap_mode**\ (\ value\: :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`\ )
 - :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **get_autowrap_mode**\ (\ )
 
-If :ref:`wrap_mode<class_TextEdit_property_wrap_mode>` is set to :ref:`LINE_WRAPPING_BOUNDARY<class_TextEdit_constant_LINE_WRAPPING_BOUNDARY>`, sets text wrapping mode. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
+If :ref:`wrap_mode<class_TextEdit_property_wrap_mode>` is set to :ref:`LINE_WRAPPING_BOUNDARY<class_TextEdit_constant_LINE_WRAPPING_BOUNDARY>`, sets text wrapping mode.
 
 .. rst-class:: classref-item-separator
 
@@ -2416,7 +2416,7 @@ Returns the name of the gutter at the given index.
 
 :ref:`GutterType<enum_TextEdit_GutterType>` **get_gutter_type**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_gutter_type>`
 
-Returns the type of the gutter at the given index. Gutters can contain icons, text, or custom visuals. See :ref:`GutterType<enum_TextEdit_GutterType>` for options.
+Returns the type of the gutter at the given index. Gutters can contain icons, text, or custom visuals.
 
 .. rst-class:: classref-item-separator
 
@@ -2718,7 +2718,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
         menu.add_item("Insert Date", MENU_MAX + 1)
         # Connect callback.
         menu.id_pressed.connect(_on_item_pressed)
-    
+
     func _on_item_pressed(id):
         if id == MENU_MAX + 1:
             insert_text_at_caret(Time.get_date_string_from_system())
@@ -2736,7 +2736,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
         // Add event handler.
         menu.IdPressed += OnItemPressed;
     }
-    
+
     public void OnItemPressed(int id)
     {
         if (id == TextEdit.MenuItems.Max + 1)
@@ -3710,7 +3710,7 @@ If ``true``, the line data of the gutter at the given index can be overridden wh
 
 |void| **set_gutter_type**\ (\ gutter\: :ref:`int<class_int>`, type\: :ref:`GutterType<enum_TextEdit_GutterType>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_type>`
 
-Sets the type of gutter at the given index. Gutters can contain icons, text, or custom visuals. See :ref:`GutterType<enum_TextEdit_GutterType>` for options.
+Sets the type of gutter at the given index. Gutters can contain icons, text, or custom visuals.
 
 .. rst-class:: classref-item-separator
 
@@ -4292,6 +4292,7 @@ Sets the :ref:`StyleBox<class_StyleBox>` of this **TextEdit**.
 Sets the :ref:`StyleBox<class_StyleBox>` of this **TextEdit** when :ref:`editable<class_TextEdit_property_editable>` is disabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -241,6 +241,7 @@ If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_ti
 If ``true``, :ref:`AnimationNode<class_AnimationNode>` provides an animation based on the :ref:`Animation<class_Animation>` resource with some parameters adjusted.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

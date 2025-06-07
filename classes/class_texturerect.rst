@@ -201,7 +201,7 @@ Property Descriptions
 
 **Experimental:** Using :ref:`EXPAND_FIT_WIDTH<class_TextureRect_constant_EXPAND_FIT_WIDTH>`, :ref:`EXPAND_FIT_WIDTH_PROPORTIONAL<class_TextureRect_constant_EXPAND_FIT_WIDTH_PROPORTIONAL>`, :ref:`EXPAND_FIT_HEIGHT<class_TextureRect_constant_EXPAND_FIT_HEIGHT>`, or :ref:`EXPAND_FIT_HEIGHT_PROPORTIONAL<class_TextureRect_constant_EXPAND_FIT_HEIGHT_PROPORTIONAL>` may result in unstable behavior in some :ref:`Container<class_Container>` controls. This behavior may be re-evaluated and changed in the future.
 
-Defines how minimum size is determined based on the texture's size. See :ref:`ExpandMode<enum_TextureRect_ExpandMode>` for options.
+Defines how minimum size is determined based on the texture's size.
 
 .. rst-class:: classref-item-separator
 
@@ -252,7 +252,7 @@ If ``true``, texture is flipped vertically.
 - |void| **set_stretch_mode**\ (\ value\: :ref:`StretchMode<enum_TextureRect_StretchMode>`\ )
 - :ref:`StretchMode<enum_TextureRect_StretchMode>` **get_stretch_mode**\ (\ )
 
-Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_TextureRect_StretchMode>`.
+Controls the texture's behavior when resizing the node's bounding rectangle.
 
 .. rst-class:: classref-item-separator
 
@@ -272,6 +272,7 @@ Controls the texture's behavior when resizing the node's bounding rectangle. See
 The node's :ref:`Texture2D<class_Texture2D>` resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -210,6 +210,18 @@ Emit it if you want to key a property with a single value.
 
 ----
 
+.. _class_EditorProperty_signal_property_overridden:
+
+.. rst-class:: classref-signal
+
+**property_overridden**\ (\ ) :ref:`🔗<class_EditorProperty_signal_property_overridden>`
+
+Emitted when a setting override for the current project is requested.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorProperty_signal_property_pinned:
 
 .. rst-class:: classref-signal
@@ -619,6 +631,7 @@ Assigns object and property to edit.
 Forces a refresh of the property display.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
