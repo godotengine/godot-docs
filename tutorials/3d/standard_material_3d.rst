@@ -189,6 +189,9 @@ other than *Mix* forces the object to go through the transparent pipeline.
   screen.
 * **Mul:** The final color of the object is multiplied with the color of the
   screen.
+* **Premultiplied Alpha:** The color of the object is expected to have already been
+  multiplied by the alpha. This behaves like **Add** when the alpha is ``0.0``
+  (fully transparent) and like **Mix** when the alpha is ``1.0`` (opaque).
 
 .. image:: img/spatial_material8.png
 
