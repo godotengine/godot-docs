@@ -35,6 +35,10 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **depth_test_disabled**       | Disable depth testing.                                                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_test_default**        | Depth test will discard the pixel if it is behind other pixels.                                      |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_test_inverted**       | Depth test will discard the pixel if it is in front of other pixels. Useful for stencil effects      |
++-------------------------------+------------------------------------------------------------------------------------------------------+
 | **sss_mode_skin**             | Subsurface Scattering mode for skin (optimizes visuals for human skin, e.g. boosted red channel).    |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **cull_back**                 | Cull back-faces (default).                                                                           |
@@ -88,6 +92,55 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 | **alpha_to_coverage_and_one** | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **fog_disabled**              | Disable receiving depth-based or volumetric fog. Useful for ``blend_add`` materials like particles.  |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+
+Stencil modes
+-------------
+
+.. note::
+    Stencil support is experimental, use at your own risk.
+    We will try to not break compatibility as much as possible, but if major flaws are found in the API, it may change in the next version.
+
+Stencil operations are a set of operations that allow to write to
+an efficient buffer in an hardware-accelerated manner.
+Stencil is generally used to mask in or out parts of the scene.
+
+Some of the most well-known uses are:
+
+- Outlines: Stencil allows to mask out the inner mesh that is being outlined to avoid inner outlines.
+- X-Ray: Display a mesh behind other objects.
+- Portals: Draw geometry that is normally "impossible" (non-Euclidian) by masking objects.
+- Shadows: Draw sharp shadows without relying on shadow maps.
+
+.. note::
+
+    You can only read stencil in the transparent pass.
+    Any attempt to read in the opaque pass will fail, as it's not supported behavior.
+
+    Also, stencil operations aren't yet supported in compositor effects.
+    Please use the full screen quad method described in
+    :ref:`doc_advanced_postprocessing` instead.
+
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| Stencil mode                  | Description                                                                                          |
++===============================+======================================================================================================+
+| **read**                      | Read from the stencil buffer.                                                                        |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **write**                     | Write reference value to the stencil buffer.                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **write_if_depth_fail**       | Write reference value to the stencil buffer if the depth test fails.                                 |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_equal**             | Pass stencil test if the reference value is equal to the stencil buffer value.                       |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_not_equal**         | Pass stencil test if the reference value is not equal to the stencil buffer value.                   |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_less**              | Pass stencil test if the reference value is less than the stencil buffer value.                    |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_less_or_equal**     | Pass stencil test if the reference value is less or equal than the stencil buffer value.           |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_greater**           | Pass stencil test if the reference value is greater than the stencil buffer value.                   |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_greater_or_equal**  | Pass stencil test if the reference value is greater or equal than the stencil buffer value.           |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
