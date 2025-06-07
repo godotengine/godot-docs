@@ -41,12 +41,6 @@ complex static geometry, such as :ref:`class_ConcavePolygonShape3D` or
 :ref:`class_HeightMapShape3D`, you can end up wasting a significant amount of CPU
 performance and memory without realizing it.
 
-For this reason this behavior is opt-in through the project setting
-:ref:`Physics > Jolt Physics 3D > Simulation > Areas Detect Static Bodies<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/areas_detect_static_bodies>`,
-with the recommendation that you set up your collision layers and masks in such a
-way that only a few small :ref:`class_Area3D` are able to detect collisions with
-static bodies.
-
 Joint properties
 ~~~~~~~~~~~~~~~~
 
