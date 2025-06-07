@@ -271,7 +271,7 @@ In most cases :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths
 - |void| **set_object_model_type**\ (\ value\: :ref:`GLTFObjectModelType<enum_GLTFObjectModelProperty_GLTFObjectModelType>`\ )
 - :ref:`GLTFObjectModelType<enum_GLTFObjectModelProperty_GLTFObjectModelType>` **get_object_model_type**\ (\ )
 
-The type of data stored in the glTF file as defined by the object model. This is a superset of the available accessor types, and determines the accessor type. See :ref:`GLTFObjectModelType<enum_GLTFObjectModelProperty_GLTFObjectModelType>` for possible values.
+The type of data stored in the glTF file as defined by the object model. This is a superset of the available accessor types, and determines the accessor type.
 
 .. rst-class:: classref-item-separator
 
@@ -368,6 +368,7 @@ Returns ``true`` if :ref:`node_paths<class_GLTFObjectModelProperty_property_node
 Sets the :ref:`variant_type<class_GLTFObjectModelProperty_property_variant_type>` and :ref:`object_model_type<class_GLTFObjectModelProperty_property_object_model_type>` properties. This is a convenience method to set both properties at once, since they are almost always known at the same time. This method should be called once. Calling it again with the same values will have no effect.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

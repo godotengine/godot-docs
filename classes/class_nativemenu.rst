@@ -28,7 +28,7 @@ To create a menu, use :ref:`create_menu()<class_NativeMenu_method_create_menu>`,
 ::
 
     var menu
-    
+
     func _menu_callback(item_id):
         if item_id == "ITEM_CUT":
             cut()
@@ -36,7 +36,7 @@ To create a menu, use :ref:`create_menu()<class_NativeMenu_method_create_menu>`,
             copy()
         elif item_id == "ITEM_PASTE":
             paste()
-    
+
     func _enter_tree():
         # Create new menu and add items:
         menu = NativeMenu.create_menu()
@@ -44,11 +44,11 @@ To create a menu, use :ref:`create_menu()<class_NativeMenu_method_create_menu>`,
         NativeMenu.add_item(menu, "Copy", _menu_callback, Callable(), "ITEM_COPY")
         NativeMenu.add_separator(menu)
         NativeMenu.add_item(menu, "Paste", _menu_callback, Callable(), "ITEM_PASTE")
-    
+
     func _on_button_pressed():
         # Show popup menu at mouse position:
         NativeMenu.popup(menu, DisplayServer.mouse_get_position())
-    
+
     func _exit_tree():
         # Remove menu when it's no longer needed:
         NativeMenu.free_menu(menu)
@@ -1326,6 +1326,7 @@ Registers callable to emit after the menu is closed.
 \ **Note:** This method is implemented only on macOS.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

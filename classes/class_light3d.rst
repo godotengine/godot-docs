@@ -477,7 +477,7 @@ The light's angular size in degrees. Increasing this will make shadows softer at
 - |void| **set_bake_mode**\ (\ value\: :ref:`BakeMode<enum_Light3D_BakeMode>`\ )
 - :ref:`BakeMode<enum_Light3D_BakeMode>` **get_bake_mode**\ (\ )
 
-The light's bake mode. This will affect the global illumination techniques that have an effect on the light's rendering. See :ref:`BakeMode<enum_Light3D_BakeMode>`.
+The light's bake mode. This will affect the global illumination techniques that have an effect on the light's rendering.
 
 \ **Note:** Meshes' global illumination mode will also affect the global illumination rendering. See :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>`.
 
@@ -885,6 +885,7 @@ Returns the value of the specified :ref:`Param<enum_Light3D_Param>` parameter.
 Sets the value of the specified :ref:`Param<enum_Light3D_Param>` parameter.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

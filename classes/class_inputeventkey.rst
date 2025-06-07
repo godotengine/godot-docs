@@ -127,10 +127,10 @@ To get a human-readable representation of the **InputEventKey**, use ``OS.get_ke
 
 .. code:: text
 
-        +-----+ +-----+
-        | Q   | | Q   | - "Q" - keycode
-        |   Й | |  ض | - "Й" and "ض" - key_label
-        +-----+ +-----+
+    +-----+ +-----+
+    | Q   | | Q   | - "Q" - keycode
+    |   Й | |  ض | - "Й" and "ض" - key_label
+    +-----+ +-----+
 
 .. rst-class:: classref-item-separator
 
@@ -153,10 +153,10 @@ To get a human-readable representation of the **InputEventKey**, use ``OS.get_ke
 
 .. code:: text
 
-        +-----+ +-----+
-        | Q   | | Q   | - "Q" - keycode
-        |   Й | |  ض | - "Й" and "ض" - key_label
-        +-----+ +-----+
+    +-----+ +-----+
+    | Q   | | Q   | - "Q" - keycode
+    |   Й | |  ض | - "Й" and "ض" - key_label
+    +-----+ +-----+
 
 .. rst-class:: classref-item-separator
 
@@ -347,6 +347,7 @@ Returns the physical keycode combined with modifier keys such as :kbd:`Shift` or
 To get a human-readable representation of the **InputEventKey** with modifiers, use ``OS.get_keycode_string(event.get_physical_keycode_with_modifiers())`` where ``event`` is the **InputEventKey**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

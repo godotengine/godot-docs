@@ -75,6 +75,7 @@ ID of the texture sampler to use when sampling the image. If -1, then the defaul
 The index of the image associated with this texture, see :ref:`GLTFState.get_images()<class_GLTFState_method_get_images>`. If -1, then this texture does not have an image assigned.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

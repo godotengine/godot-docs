@@ -261,7 +261,7 @@ Extra condition which is applied if :ref:`type<class_VisualShaderNodeCompare_pro
 - |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeCompare_Function>`\ )
 - :ref:`Function<enum_VisualShaderNodeCompare_Function>` **get_function**\ (\ )
 
-A comparison function. See :ref:`Function<enum_VisualShaderNodeCompare_Function>` for options.
+A comparison function.
 
 .. rst-class:: classref-item-separator
 
@@ -278,9 +278,10 @@ A comparison function. See :ref:`Function<enum_VisualShaderNodeCompare_Function>
 - |void| **set_comparison_type**\ (\ value\: :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>`\ )
 - :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **get_comparison_type**\ (\ )
 
-The type to be used in the comparison. See :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` for options.
+The type to be used in the comparison.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

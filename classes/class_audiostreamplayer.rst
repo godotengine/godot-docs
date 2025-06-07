@@ -228,7 +228,7 @@ The maximum number of sounds this node can play at the same time. Calling :ref:`
 - |void| **set_mix_target**\ (\ value\: :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>`\ )
 - :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` **get_mix_target**\ (\ )
 
-The mix target channels, as one of the :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` constants. Has no effect when two speakers or less are detected (see :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>`).
+The mix target channels. Has no effect when two speakers or less are detected (see :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>`).
 
 .. rst-class:: classref-item-separator
 
@@ -439,6 +439,7 @@ Restarts all sounds to be played from the given ``to_position``, in seconds. Doe
 Stops all sounds from this node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

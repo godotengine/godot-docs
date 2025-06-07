@@ -240,7 +240,7 @@ If ``true``, the polyline's border will be anti-aliased.
 - |void| **set_begin_cap_mode**\ (\ value\: :ref:`LineCapMode<enum_Line2D_LineCapMode>`\ )
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_begin_cap_mode**\ (\ )
 
-The style of the beginning of the polyline, if :ref:`closed<class_Line2D_property_closed>` is ``false``. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
+The style of the beginning of the polyline, if :ref:`closed<class_Line2D_property_closed>` is ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -295,7 +295,7 @@ The color of the polyline. Will not be used if a gradient is set.
 - |void| **set_end_cap_mode**\ (\ value\: :ref:`LineCapMode<enum_Line2D_LineCapMode>`\ )
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_end_cap_mode**\ (\ )
 
-The style of the end of the polyline, if :ref:`closed<class_Line2D_property_closed>` is ``false``. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
+The style of the end of the polyline, if :ref:`closed<class_Line2D_property_closed>` is ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -329,7 +329,7 @@ The gradient is drawn through the whole line from start to finish. The :ref:`def
 - |void| **set_joint_mode**\ (\ value\: :ref:`LineJointMode<enum_Line2D_LineJointMode>`\ )
 - :ref:`LineJointMode<enum_Line2D_LineJointMode>` **get_joint_mode**\ (\ )
 
-The style of the connections between segments of the polyline. Use :ref:`LineJointMode<enum_Line2D_LineJointMode>` constants.
+The style of the connections between segments of the polyline.
 
 .. rst-class:: classref-item-separator
 
@@ -416,7 +416,7 @@ The texture used for the polyline. Uses :ref:`texture_mode<class_Line2D_property
 - |void| **set_texture_mode**\ (\ value\: :ref:`LineTextureMode<enum_Line2D_LineTextureMode>`\ )
 - :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **get_texture_mode**\ (\ )
 
-The style to render the :ref:`texture<class_Line2D_property_texture>` of the polyline. Use :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` constants.
+The style to render the :ref:`texture<class_Line2D_property_texture>` of the polyline.
 
 .. rst-class:: classref-item-separator
 
@@ -532,6 +532,7 @@ Removes the point at index ``index`` from the polyline.
 Overwrites the position of the point at the given ``index`` with the supplied ``position``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

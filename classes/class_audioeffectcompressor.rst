@@ -25,7 +25,7 @@ Dynamic range compressor reduces the level of the sound when the amplitude goes 
 
 Compressor has many uses in the mix:
 
-- In the Master bus to compress the whole output (although an :ref:`AudioEffectLimiter<class_AudioEffectLimiter>` is probably better).
+- In the Master bus to compress the whole output (although an :ref:`AudioEffectHardLimiter<class_AudioEffectHardLimiter>` is probably better).
 
 - In voice channels to ensure they sound as balanced as possible.
 
@@ -189,6 +189,7 @@ Reduce the sound level using another audio bus for threshold detection.
 The level above which compression is applied to the audio. Value can range from -60 to 0.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

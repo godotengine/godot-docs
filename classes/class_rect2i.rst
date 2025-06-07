@@ -288,14 +288,14 @@ Returns a copy of this rectangle expanded to align the edges with the given ``to
  .. code-tab:: gdscript
 
     var rect = Rect2i(0, 0, 5, 2)
-    
+
     rect = rect.expand(Vector2i(10, 0)) # rect is Rect2i(0, 0, 10, 2)
     rect = rect.expand(Vector2i(-5, 5)) # rect is Rect2i(-5, 0, 15, 5)
 
  .. code-tab:: csharp
 
     var rect = new Rect2I(0, 0, 5, 2);
-    
+
     rect = rect.Expand(new Vector2I(10, 0)); // rect is Rect2I(0, 0, 10, 2)
     rect = rect.Expand(new Vector2I(-5, 5)); // rect is Rect2I(-5, 0, 15, 5)
 
@@ -423,14 +423,14 @@ Returns the intersection between this rectangle and ``b``. If the rectangles do 
 
     var a = Rect2i(0, 0, 5, 10)
     var b = Rect2i(2, 0, 8, 4)
-    
+
     var c = a.intersection(b) # c is Rect2i(2, 0, 3, 4)
 
  .. code-tab:: csharp
 
     var a = new Rect2I(0, 0, 5, 10);
     var b = new Rect2I(2, 0, 8, 4);
-    
+
     var c = rect1.Intersection(rect2); // c is Rect2I(2, 0, 3, 4)
 
 
@@ -491,6 +491,7 @@ Returns ``true`` if the :ref:`position<class_Rect2i_property_position>` or :ref:
 Returns ``true`` if both :ref:`position<class_Rect2i_property_position>` and :ref:`size<class_Rect2i_property_size>` of the rectangles are equal, respectively.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

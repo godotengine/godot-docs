@@ -2314,7 +2314,7 @@ Returns list of the font sizes in the cache. Each size is :ref:`Vector2i<class_V
 
 :ref:`int<class_int>` **font_get_spacing**\ (\ font_rid\: :ref:`RID<class_RID>`, spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`\ ) |const| :ref:`🔗<class_TextServer_method_font_get_spacing>`
 
-Returns the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) in pixels (not relative to the font size).
+Returns the spacing for ``spacing`` in pixels (not relative to the font size).
 
 .. rst-class:: classref-item-separator
 
@@ -2338,7 +2338,7 @@ Returns font stretch amount, compared to a normal width. A percentage value betw
 
 |bitfield|\[:ref:`FontStyle<enum_TextServer_FontStyle>`\] **font_get_style**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_font_get_style>`
 
-Returns font style flags, see :ref:`FontStyle<enum_TextServer_FontStyle>`.
+Returns font style flags.
 
 .. rst-class:: classref-item-separator
 
@@ -3070,7 +3070,7 @@ Adds override for :ref:`font_is_script_supported()<class_TextServer_method_font_
 
 |void| **font_set_spacing**\ (\ font_rid\: :ref:`RID<class_RID>`, spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextServer_method_font_set_spacing>`
 
-Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) to ``value`` in pixels (not relative to the font size).
+Sets the spacing for ``spacing`` to ``value`` in pixels (not relative to the font size).
 
 .. rst-class:: classref-item-separator
 
@@ -3096,7 +3096,7 @@ Sets font stretch amount, compared to a normal width. A percentage value between
 
 |void| **font_set_style**\ (\ font_rid\: :ref:`RID<class_RID>`, style\: |bitfield|\[:ref:`FontStyle<enum_TextServer_FontStyle>`\]\ ) :ref:`🔗<class_TextServer_method_font_set_style>`
 
-Sets the font style flags, see :ref:`FontStyle<enum_TextServer_FontStyle>`.
+Sets the font style flags.
 
 \ **Note:** This value is used for font matching only and will not affect font rendering. Use :ref:`font_set_face_index()<class_TextServer_method_font_set_face_index>`, :ref:`font_set_variation_coordinates()<class_TextServer_method_font_set_variation_coordinates>`, :ref:`font_set_embolden()<class_TextServer_method_font_set_embolden>`, or :ref:`font_set_transform()<class_TextServer_method_font_set_transform>` instead.
 
@@ -3474,7 +3474,7 @@ Converts ``number`` from the numeral systems used in ``language`` to Western Ara
 
 :ref:`Array<class_Array>`\[:ref:`Vector3i<class_Vector3i>`\] **parse_structured_text**\ (\ parser_type\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`, args\: :ref:`Array<class_Array>`, text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TextServer_method_parse_structured_text>`
 
-Default implementation of the BiDi algorithm override function. See :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` for more info.
+Default implementation of the BiDi algorithm override function.
 
 .. rst-class:: classref-item-separator
 
@@ -4178,7 +4178,7 @@ Returns width (for horizontal layout) or height (for vertical) of the text.
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **shaped_text_get_word_breaks**\ (\ shaped\: :ref:`RID<class_RID>`, grapheme_flags\: |bitfield|\[:ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`\] = 264, skip_grapheme_flags\: |bitfield|\[:ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`\] = 4\ ) |const| :ref:`🔗<class_TextServer_method_shaped_text_get_word_breaks>`
 
-Breaks text into words and returns array of character ranges. Use ``grapheme_flags`` to set what characters are used for breaking (see :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`).
+Breaks text into words and returns array of character ranges. Use ``grapheme_flags`` to set what characters are used for breaking.
 
 .. rst-class:: classref-item-separator
 
@@ -4582,6 +4582,7 @@ Strips diacritics from the string.
 Converts OpenType tag to readable feature, variation, script, or language name.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

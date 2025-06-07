@@ -315,6 +315,7 @@ Determines whether angle constraints on the CCDIK joint at ``joint_idx`` are ena
 Sets whether the joint at ``joint_idx`` is set to rotate from the joint, ``true``, or to rotate from the tip, ``false``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

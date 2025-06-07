@@ -57,15 +57,15 @@ Can be used to save a node to a file. When saving, the node as well as all the n
     var node = Node2D.new()
     var body = RigidBody2D.new()
     var collision = CollisionShape2D.new()
-    
+
     # Create the object hierarchy.
     body.add_child(collision)
     node.add_child(body)
-    
+
     # Change owner of `body`, but not of `collision`.
     body.owner = node
     var scene = PackedScene.new()
-    
+
     # Only `node` and `body` are now packed.
     var result = scene.pack(node)
     if result == OK:
@@ -79,15 +79,15 @@ Can be used to save a node to a file. When saving, the node as well as all the n
     var node = new Node2D();
     var body = new RigidBody2D();
     var collision = new CollisionShape2D();
-    
+
     // Create the object hierarchy.
     body.AddChild(collision);
     node.AddChild(body);
-    
+
     // Change owner of `body`, but not of `collision`.
     body.Owner = node;
     var scene = new PackedScene();
-    
+
     // Only `node` and `body` are now packed.
     Error result = scene.Pack(node);
     if (result == Error.Ok)
@@ -233,6 +233,7 @@ Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). 
 Packs the ``path`` node, and all owned sub-nodes, into this **PackedScene**. Any existing data will be cleared. See :ref:`Node.owner<class_Node_property_owner>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

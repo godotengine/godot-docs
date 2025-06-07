@@ -186,7 +186,7 @@ Property Descriptions
 - |void| **set_source**\ (\ value\: :ref:`Source<enum_VisualShaderNodeTexture_Source>`\ )
 - :ref:`Source<enum_VisualShaderNodeTexture_Source>` **get_source**\ (\ )
 
-Determines the source for the lookup. See :ref:`Source<enum_VisualShaderNodeTexture_Source>` for options.
+Determines the source for the lookup.
 
 .. rst-class:: classref-item-separator
 
@@ -220,9 +220,10 @@ The source texture, if needed for the selected :ref:`source<class_VisualShaderNo
 - |void| **set_texture_type**\ (\ value\: :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>`\ )
 - :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **get_texture_type**\ (\ )
 
-Specifies the type of the texture if :ref:`source<class_VisualShaderNodeTexture_property_source>` is set to :ref:`SOURCE_TEXTURE<class_VisualShaderNodeTexture_constant_SOURCE_TEXTURE>`. See :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` for options.
+Specifies the type of the texture if :ref:`source<class_VisualShaderNodeTexture_property_source>` is set to :ref:`SOURCE_TEXTURE<class_VisualShaderNodeTexture_constant_SOURCE_TEXTURE>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

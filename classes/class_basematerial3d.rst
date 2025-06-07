@@ -1526,7 +1526,7 @@ Threshold at which antialiasing will be applied on the alpha channel.
 - |void| **set_alpha_antialiasing**\ (\ value\: :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`\ )
 - :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **get_alpha_antialiasing**\ (\ )
 
-The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`.
+The type of alpha antialiasing to apply.
 
 .. rst-class:: classref-item-separator
 
@@ -1827,7 +1827,7 @@ If ``true``, the shader will keep the scale set for the mesh. Otherwise, the sca
 - |void| **set_billboard_mode**\ (\ value\: :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`\ )
 - :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **get_billboard_mode**\ (\ )
 
-Controls how the object faces the camera. See :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`.
+Controls how the object faces the camera.
 
 \ **Note:** Billboard mode is not suitable for VR because the left-right vector of the camera is not horizontal when the screen is attached to your head instead of on the table. See `GitHub issue #41567 <https://github.com/godotengine/godot/issues/41567>`__ for details.
 
@@ -1848,7 +1848,7 @@ Controls how the object faces the camera. See :ref:`BillboardMode<enum_BaseMater
 
 The material's blend mode.
 
-\ **Note:** Values other than ``Mix`` force the object into the transparent pipeline. See :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>`.
+\ **Note:** Values other than ``Mix`` force the object into the transparent pipeline.
 
 .. rst-class:: classref-item-separator
 
@@ -1935,7 +1935,7 @@ Texture that defines the strength of the clearcoat effect and the glossiness of 
 - |void| **set_cull_mode**\ (\ value\: :ref:`CullMode<enum_BaseMaterial3D_CullMode>`\ )
 - :ref:`CullMode<enum_BaseMaterial3D_CullMode>` **get_cull_mode**\ (\ )
 
-Determines which side of the triangle to cull depending on whether the triangle faces towards or away from the camera. See :ref:`CullMode<enum_BaseMaterial3D_CullMode>`.
+Determines which side of the triangle to cull depending on whether the triangle faces towards or away from the camera.
 
 .. rst-class:: classref-item-separator
 
@@ -1952,7 +1952,7 @@ Determines which side of the triangle to cull depending on whether the triangle 
 - |void| **set_depth_draw_mode**\ (\ value\: :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>`\ )
 - :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>` **get_depth_draw_mode**\ (\ )
 
-Determines when depth rendering takes place. See :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>`. See also :ref:`transparency<class_BaseMaterial3D_property_transparency>`.
+Determines when depth rendering takes place. See also :ref:`transparency<class_BaseMaterial3D_property_transparency>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1988,7 +1988,7 @@ Texture that specifies the color of the detail overlay. :ref:`detail_albedo<clas
 - |void| **set_detail_blend_mode**\ (\ value\: :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>`\ )
 - :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **get_detail_blend_mode**\ (\ )
 
-Specifies how the :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>` should blend with the current ``ALBEDO``. See :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` for options.
+Specifies how the :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>` should blend with the current ``ALBEDO``.
 
 .. rst-class:: classref-item-separator
 
@@ -2058,7 +2058,7 @@ Texture that specifies the per-pixel normal of the detail overlay. The :ref:`det
 - |void| **set_detail_uv**\ (\ value\: :ref:`DetailUV<enum_BaseMaterial3D_DetailUV>`\ )
 - :ref:`DetailUV<enum_BaseMaterial3D_DetailUV>` **get_detail_uv**\ (\ )
 
-Specifies whether to use ``UV`` or ``UV2`` for the detail layer. See :ref:`DetailUV<enum_BaseMaterial3D_DetailUV>` for options.
+Specifies whether to use ``UV`` or ``UV2`` for the detail layer.
 
 .. rst-class:: classref-item-separator
 
@@ -2075,7 +2075,7 @@ Specifies whether to use ``UV`` or ``UV2`` for the detail layer. See :ref:`Detai
 - |void| **set_diffuse_mode**\ (\ value\: :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>`\ )
 - :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>` **get_diffuse_mode**\ (\ )
 
-The algorithm used for diffuse light scattering. See :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>`.
+The algorithm used for diffuse light scattering.
 
 .. rst-class:: classref-item-separator
 
@@ -2300,7 +2300,7 @@ Use ``UV2`` to read from the :ref:`emission_texture<class_BaseMaterial3D_propert
 - |void| **set_emission_operator**\ (\ value\: :ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>`\ )
 - :ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>` **get_emission_operator**\ (\ )
 
-Sets how :ref:`emission<class_BaseMaterial3D_property_emission>` interacts with :ref:`emission_texture<class_BaseMaterial3D_property_emission_texture>`. Can either add or multiply. See :ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>` for options.
+Sets how :ref:`emission<class_BaseMaterial3D_property_emission>` interacts with :ref:`emission_texture<class_BaseMaterial3D_property_emission_texture>`. Can either add or multiply.
 
 .. rst-class:: classref-item-separator
 
@@ -3095,7 +3095,7 @@ If ``true``, enables the "shadow to opacity" render mode where lighting modifies
 - |void| **set_specular_mode**\ (\ value\: :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>`\ )
 - :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` **get_specular_mode**\ (\ )
 
-The method for rendering the specular blob. See :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>`.
+The method for rendering the specular blob.
 
 \ **Note:** :ref:`specular_mode<class_BaseMaterial3D_property_specular_mode>` only applies to the specular blob. It does not affect specular reflections from the sky, screen-space reflections, :ref:`VoxelGI<class_VoxelGI>`, SDFGI or :ref:`ReflectionProbe<class_ReflectionProbe>`\ s. To disable reflections from these sources as well, set :ref:`metallic_specular<class_BaseMaterial3D_property_metallic_specular>` to ``0.0`` instead.
 
@@ -3267,7 +3267,7 @@ The texture to use for multiplying the intensity of the subsurface scattering tr
 - |void| **set_texture_filter**\ (\ value\: :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>`\ )
 - :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **get_texture_filter**\ (\ )
 
-Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` for options.
+Filter flags for the texture.
 
 \ **Note:** :ref:`heightmap_texture<class_BaseMaterial3D_property_heightmap_texture>` is always sampled with linear filtering, even if nearest-neighbor filtering is selected here. This is to ensure the heightmap effect looks as intended. If you need sharper height transitions between pixels, resize the heightmap texture in an image editor with nearest-neighbor filtering.
 
@@ -3286,7 +3286,7 @@ Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_Textur
 - |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
-Repeat flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` for options.
+If ``true``, the texture repeats when exceeding the texture's size. See :ref:`FLAG_USE_TEXTURE_REPEAT<class_BaseMaterial3D_constant_FLAG_USE_TEXTURE_REPEAT>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3629,7 +3629,7 @@ Returns ``true``, if the specified :ref:`Feature<enum_BaseMaterial3D_Feature>` i
 
 :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const| :ref:`🔗<class_BaseMaterial3D_method_get_flag>`
 
-Returns ``true``, if the specified flag is enabled. See :ref:`Flags<enum_BaseMaterial3D_Flags>` enumerator for options.
+Returns ``true`` if the specified flag is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -3665,7 +3665,7 @@ If ``true``, enables the specified :ref:`Feature<enum_BaseMaterial3D_Feature>`. 
 
 |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_BaseMaterial3D_method_set_flag>`
 
-If ``true``, enables the specified flag. Flags are optional behavior that can be turned on and off. Only one flag can be enabled at a time with this function, the flag enumerators cannot be bit-masked together to enable or disable multiple flags at once. Flags can also be enabled by setting the corresponding member to ``true``. See :ref:`Flags<enum_BaseMaterial3D_Flags>` enumerator for options.
+If ``true``, enables the specified flag. Flags are optional behavior that can be turned on and off. Only one flag can be enabled at a time with this function, the flag enumerators cannot be bit-masked together to enable or disable multiple flags at once. Flags can also be enabled by setting the corresponding member to ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -3677,9 +3677,10 @@ If ``true``, enables the specified flag. Flags are optional behavior that can be
 
 |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_BaseMaterial3D_method_set_texture>`
 
-Sets the texture for the slot specified by ``param``. See :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` for available slots.
+Sets the texture for the slot specified by ``param``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

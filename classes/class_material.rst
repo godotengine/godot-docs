@@ -61,9 +61,9 @@ Methods
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`         | :ref:`_can_use_render_priority<class_Material_private_method__can_use_render_priority>`\ (\ ) |virtual| |const| |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | :ref:`Mode<enum_Shader_Mode>`   | :ref:`_get_shader_mode<class_Material_private_method__get_shader_mode>`\ (\ ) |virtual| |const|                 |
+   | :ref:`Mode<enum_Shader_Mode>`   | :ref:`_get_shader_mode<class_Material_private_method__get_shader_mode>`\ (\ ) |virtual| |required| |const|      |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`           | :ref:`_get_shader_rid<class_Material_private_method__get_shader_rid>`\ (\ ) |virtual| |const|                   |
+   | :ref:`RID<class_RID>`           | :ref:`_get_shader_rid<class_Material_private_method__get_shader_rid>`\ (\ ) |virtual| |required| |const|        |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
    | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_Material_method_create_placeholder>`\ (\ ) |const|                               |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -179,7 +179,7 @@ Only exposed for the purpose of overriding. You cannot call this function direct
 
 .. rst-class:: classref-method
 
-:ref:`Mode<enum_Shader_Mode>` **_get_shader_mode**\ (\ ) |virtual| |const| :ref:`🔗<class_Material_private_method__get_shader_mode>`
+:ref:`Mode<enum_Shader_Mode>` **_get_shader_mode**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_Material_private_method__get_shader_mode>`
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally by various editor tools.
 
@@ -191,7 +191,7 @@ Only exposed for the purpose of overriding. You cannot call this function direct
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_get_shader_rid**\ (\ ) |virtual| |const| :ref:`🔗<class_Material_private_method__get_shader_rid>`
+:ref:`RID<class_RID>` **_get_shader_rid**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_Material_private_method__get_shader_rid>`
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally by various editor tools. Used to access the RID of the **Material**'s :ref:`Shader<class_Shader>`.
 
@@ -220,6 +220,7 @@ Creates a placeholder version of this resource (:ref:`PlaceholderMaterial<class_
 Only available when running in the editor. Opens a popup that visualizes the generated shader code, including all variants and internal shader code. See also :ref:`Shader.inspect_native_shader_code()<class_Shader_method_inspect_native_shader_code>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

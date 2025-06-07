@@ -30,14 +30,14 @@ The :ref:`_post_import()<class_EditorScenePostImport_private_method__post_import
 
     @tool # Needed so it runs in editor.
     extends EditorScenePostImport
-    
+
     # This sample changes all node names.
     # Called right after the scene is imported and gets the root node.
     func _post_import(scene):
         # Change all node names to "modified_[oldnodename]"
         iterate(scene)
         return scene # Remember to return the imported scene
-    
+
     func iterate(node):
         if node != null:
             node.name = "modified_" + node.name
@@ -47,7 +47,7 @@ The :ref:`_post_import()<class_EditorScenePostImport_private_method__post_import
  .. code-tab:: csharp
 
     using Godot;
-    
+
     // This sample changes all node names.
     // Called right after the scene is imported and gets the root node.
     [Tool]
@@ -59,7 +59,7 @@ The :ref:`_post_import()<class_EditorScenePostImport_private_method__post_import
             Iterate(scene);
             return scene; // Remember to return the imported scene
         }
-    
+
         public void Iterate(Node node)
         {
             if (node != null)
@@ -126,6 +126,7 @@ Called after the scene was imported. This method must return the modified versio
 Returns the source file path which got imported (e.g. ``res://scene.dae``).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

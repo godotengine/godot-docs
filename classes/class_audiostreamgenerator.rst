@@ -32,16 +32,16 @@ Here's a sample on how to use it to generate a sine wave:
     @onready var sample_hz = $AudioStreamPlayer.stream.mix_rate
     var pulse_hz = 440.0 # The frequency of the sound wave.
     var phase = 0.0
-    
+
     func _ready():
         $AudioStreamPlayer.play()
         playback = $AudioStreamPlayer.get_stream_playback()
         fill_buffer()
-    
+
     func fill_buffer():
         var increment = pulse_hz / sample_hz
         var frames_available = playback.get_frames_available()
-    
+
         for i in range(frames_available):
             playback.push_frame(Vector2.ONE * sin(phase * TAU))
             phase = fmod(phase + increment, 1.0)
@@ -49,12 +49,12 @@ Here's a sample on how to use it to generate a sine wave:
  .. code-tab:: csharp
 
     [Export] public AudioStreamPlayer Player { get; set; }
-    
+
     private AudioStreamGeneratorPlayback _playback; // Will hold the AudioStreamGeneratorPlayback.
     private float _sampleHz;
     private float _pulseHz = 440.0f; // The frequency of the sound wave.
     private double phase = 0.0;
-    
+
     public override void _Ready()
     {
         if (Player.Stream is AudioStreamGenerator generator) // Type as a generator to access MixRate.
@@ -65,12 +65,12 @@ Here's a sample on how to use it to generate a sine wave:
             FillBuffer();
         }
     }
-    
+
     public void FillBuffer()
     {
         float increment = _pulseHz / _sampleHz;
         int framesAvailable = _playback.GetFramesAvailable();
-    
+
         for (int i = 0; i < framesAvailable; i++)
         {
             _playback.PushFrame(Vector2.One * (float)Mathf.Sin(phase * Mathf.Tau));
@@ -221,6 +221,7 @@ According to the `Nyquist-Shannon sampling theorem <https://en.wikipedia.org/wik
 Mixing rate mode. If set to :ref:`MIX_RATE_CUSTOM<class_AudioStreamGenerator_constant_MIX_RATE_CUSTOM>`, :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>` is used, otherwise current :ref:`AudioServer<class_AudioServer>` mixing rate is used.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

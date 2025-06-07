@@ -597,7 +597,7 @@ Called by the engine when the 3D editor's viewport is updated. ``viewport_contro
     func _forward_3d_draw_over_viewport(overlay):
         # Draw a circle at the cursor's position.
         overlay.draw_circle(overlay.get_local_mouse_position(), 64, Color.WHITE)
-    
+
     func _forward_3d_gui_input(camera, event):
         if event is InputEventMouseMotion:
             # Redraw the viewport when the cursor is moved.
@@ -612,7 +612,7 @@ Called by the engine when the 3D editor's viewport is updated. ``viewport_contro
         // Draw a circle at the cursor's position.
         viewportControl.DrawCircle(viewportControl.GetLocalMousePosition(), 64, Colors.White);
     }
-    
+
     public override EditorPlugin.AfterGuiInput _Forward3DGuiInput(Camera3D viewportCamera, InputEvent @event)
     {
         if (@event is InputEventMouseMotion)
@@ -712,7 +712,7 @@ Called by the engine when the 2D editor's viewport is updated. ``viewport_contro
     func _forward_canvas_draw_over_viewport(overlay):
         # Draw a circle at the cursor's position.
         overlay.draw_circle(overlay.get_local_mouse_position(), 64, Color.WHITE)
-    
+
     func _forward_canvas_gui_input(event):
         if event is InputEventMouseMotion:
             # Redraw the viewport when the cursor is moved.
@@ -727,7 +727,7 @@ Called by the engine when the 2D editor's viewport is updated. ``viewport_contro
         // Draw a circle at the cursor's position.
         viewportControl.DrawCircle(viewportControl.GetLocalMousePosition(), 64, Colors.White);
     }
-    
+
     public override bool _ForwardCanvasGuiInput(InputEvent @event)
     {
         if (@event is InputEventMouseMotion)
@@ -923,12 +923,12 @@ If the user confirms saving, :ref:`_save_external_data()<class_EditorPlugin_priv
     func _get_unsaved_status(for_scene):
         if not unsaved:
             return ""
-    
+
         if for_scene.is_empty():
             return "Save changes in MyCustomPlugin before closing?"
         else:
             return "Scene %s has changes from MyCustomPlugin. Save before closing?" % for_scene.get_file()
-    
+
     func _save_external_data():
         unsaved = false
 
@@ -993,21 +993,21 @@ Use :ref:`_get_plugin_name()<class_EditorPlugin_private_method__get_plugin_name>
 ::
 
     var plugin_control
-    
+
     func _enter_tree():
         plugin_control = preload("my_plugin_control.tscn").instantiate()
         EditorInterface.get_editor_main_screen().add_child(plugin_control)
         plugin_control.hide()
-    
+
     func _has_main_screen():
         return true
-    
+
     func _make_visible(visible):
         plugin_control.visible = visible
-    
+
     func _get_plugin_name():
         return "My Super Cool Plugin 3000"
-    
+
     func _get_plugin_icon():
         return EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
 
@@ -1099,7 +1099,7 @@ Adds a script at ``path`` to the Autoload list as ``name``.
 
 Adds a plugin to the context menu. ``slot`` is the context menu where the plugin will be added.
 
-See :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` for available context menus. A plugin instance can belong only to a single context menu slot.
+\ **Note:** A plugin instance can belong only to a single context menu slot.
 
 .. rst-class:: classref-item-separator
 
@@ -1125,7 +1125,7 @@ Optionally, you can specify a shortcut parameter. When pressed, this shortcut wi
 
 |void| **add_control_to_container**\ (\ container\: :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>`, control\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_EditorPlugin_method_add_control_to_container>`
 
-Adds a custom control to a container (see :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>`). There are many locations where custom controls can be added in the editor UI.
+Adds a custom control to a container in the editor UI.
 
 Please remember that you have to manage the visibility of your custom controls yourself (and likely hide it after adding it).
 
@@ -1141,7 +1141,7 @@ When your plugin is deactivated, make sure to remove your custom control with :r
 
 |void| **add_control_to_dock**\ (\ slot\: :ref:`DockSlot<enum_EditorPlugin_DockSlot>`, control\: :ref:`Control<class_Control>`, shortcut\: :ref:`Shortcut<class_Shortcut>` = null\ ) :ref:`🔗<class_EditorPlugin_method_add_control_to_dock>`
 
-Adds the control to a specific dock slot (see :ref:`DockSlot<enum_EditorPlugin_DockSlot>` for options).
+Adds the control to a specific dock slot.
 
 If the dock is repositioned and as long as the plugin is active, the editor will save the dock position on further sessions.
 
@@ -1248,10 +1248,10 @@ Registers a new :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`. Inspe
 
     const MyInspectorPlugin = preload("res://addons/your_addon/path/to/your/script.gd")
     var inspector_plugin = MyInspectorPlugin.new()
-    
+
     func _enter_tree():
         add_inspector_plugin(inspector_plugin)
-    
+
     func _exit_tree():
         remove_inspector_plugin(inspector_plugin)
 
@@ -1730,6 +1730,7 @@ Use this method if you always want to receive inputs from 3D view screen inside 
 Updates the overlays of the 2D and 3D editor viewport. Causes methods :ref:`_forward_canvas_draw_over_viewport()<class_EditorPlugin_private_method__forward_canvas_draw_over_viewport>`, :ref:`_forward_canvas_force_draw_over_viewport()<class_EditorPlugin_private_method__forward_canvas_force_draw_over_viewport>`, :ref:`_forward_3d_draw_over_viewport()<class_EditorPlugin_private_method__forward_3d_draw_over_viewport>` and :ref:`_forward_3d_force_draw_over_viewport()<class_EditorPlugin_private_method__forward_3d_force_draw_over_viewport>` to be called.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -218,7 +218,7 @@ See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_
 - |void| **set_angular_damp_mode**\ (\ value\: :ref:`DampMode<enum_PhysicalBone3D_DampMode>`\ )
 - :ref:`DampMode<enum_PhysicalBone3D_DampMode>` **get_angular_damp_mode**\ (\ )
 
-Defines how :ref:`angular_damp<class_PhysicalBone3D_property_angular_damp>` is applied. See :ref:`DampMode<enum_PhysicalBone3D_DampMode>` for possible values.
+Defines how :ref:`angular_damp<class_PhysicalBone3D_property_angular_damp>` is applied.
 
 .. rst-class:: classref-item-separator
 
@@ -392,7 +392,7 @@ Sets the joint's rotation in radians.
 - |void| **set_joint_type**\ (\ value\: :ref:`JointType<enum_PhysicalBone3D_JointType>`\ )
 - :ref:`JointType<enum_PhysicalBone3D_JointType>` **get_joint_type**\ (\ )
 
-Sets the joint type. See :ref:`JointType<enum_PhysicalBone3D_JointType>` for possible values.
+Sets the joint type.
 
 .. rst-class:: classref-item-separator
 
@@ -428,7 +428,7 @@ See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_p
 - |void| **set_linear_damp_mode**\ (\ value\: :ref:`DampMode<enum_PhysicalBone3D_DampMode>`\ )
 - :ref:`DampMode<enum_PhysicalBone3D_DampMode>` **get_linear_damp_mode**\ (\ )
 
-Defines how :ref:`linear_damp<class_PhysicalBone3D_property_linear_damp>` is applied. See :ref:`DampMode<enum_PhysicalBone3D_DampMode>` for possible values.
+Defines how :ref:`linear_damp<class_PhysicalBone3D_property_linear_damp>` is applied.
 
 .. rst-class:: classref-item-separator
 
@@ -550,6 +550,7 @@ Returns ``true`` if the PhysicsBone3D is allowed to simulate physics.
 Returns ``true`` if the PhysicsBone3D is currently simulating physics.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

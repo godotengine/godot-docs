@@ -908,7 +908,7 @@ Draws the cluster used by :ref:`Decal<class_Decal>` nodes to optimize decal rend
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = ``23``
 
-Draws the cluster used by :ref:`ReflectionProbe<class_ReflectionProbe>` nodes to optimize decal rendering.
+Draws the cluster used by :ref:`ReflectionProbe<class_ReflectionProbe>` nodes to optimize reflection probes.
 
 \ **Note:** Only supported when using the Forward+ rendering method.
 
@@ -1308,7 +1308,7 @@ The rendering layers in which this **Viewport** renders :ref:`CanvasItem<class_C
 - |void| **set_default_canvas_item_texture_filter**\ (\ value\: :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>`\ )
 - :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` **get_default_canvas_item_texture_filter**\ (\ )
 
-Sets the default filter mode used by :ref:`CanvasItem<class_CanvasItem>`\ s in this Viewport. See :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` for options.
+Sets the default filter mode used by :ref:`CanvasItem<class_CanvasItem>`\ s in this Viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -1325,7 +1325,7 @@ Sets the default filter mode used by :ref:`CanvasItem<class_CanvasItem>`\ s in t
 - |void| **set_default_canvas_item_texture_repeat**\ (\ value\: :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>`\ )
 - :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` **get_default_canvas_item_texture_repeat**\ (\ )
 
-Sets the default repeat mode used by :ref:`CanvasItem<class_CanvasItem>`\ s in this Viewport. See :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` for options.
+Sets the default repeat mode used by :ref:`CanvasItem<class_CanvasItem>`\ s in this Viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -2290,7 +2290,7 @@ Returns the positional shadow atlas quadrant subdivision of the specified quadra
 
 :ref:`int<class_int>` **get_render_info**\ (\ type\: :ref:`RenderInfoType<enum_Viewport_RenderInfoType>`, info\: :ref:`RenderInfo<enum_Viewport_RenderInfo>`\ ) :ref:`🔗<class_Viewport_method_get_render_info>`
 
-Returns rendering statistics of the given type. See :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` and :ref:`RenderInfo<enum_Viewport_RenderInfo>` for options.
+Returns rendering statistics of the given type.
 
 .. rst-class:: classref-item-separator
 
@@ -2659,6 +2659,7 @@ Moves the mouse pointer to the specified position in this **Viewport** using the
 \ **Note:** :ref:`warp_mouse()<class_Viewport_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

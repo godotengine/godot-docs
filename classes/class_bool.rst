@@ -51,7 +51,7 @@ Booleans can be combined with the logical operators ``and``, ``or``, ``not`` to 
 
     if bullets > 0 and not is_reloading():
         launch_bullet()
-    
+
     if bullets == 0 or is_reloading():
         play_clack_sound()
 
@@ -61,7 +61,7 @@ Booleans can be combined with the logical operators ``and``, ``or``, ``not`` to 
     {
         LaunchBullet();
     }
-    
+
     if (bullets == 0 || IsReloading())
     {
         PlayClackSound();
@@ -210,6 +210,7 @@ Returns ``true`` if the two booleans are equal. That is, both are ``true`` or bo
 Returns ``true`` if the left operand is ``true`` and the right operand is ``false``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

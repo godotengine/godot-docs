@@ -22,6 +22,7 @@ Description
 ``OuterProduct`` treats the first parameter ``c`` as a column vector (matrix with one column) and the second parameter ``r`` as a row vector (matrix with one row) and does a linear algebraic matrix multiply ``c * r``, yielding a matrix whose number of rows is the number of components in ``c`` and whose number of columns is the number of components in ``r``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -12,14 +12,14 @@ PhysicsShapeQueryParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Provides parameters for :ref:`PhysicsDirectSpaceState2D.intersect_shape()<class_PhysicsDirectSpaceState2D_method_intersect_shape>`.
+Provides parameters for :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`'s methods.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-By changing various properties of this object, such as the shape, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D.intersect_shape()<class_PhysicsDirectSpaceState2D_method_intersect_shape>`.
+By changing various properties of this object, such as the shape, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`'s methods.
 
 .. rst-class:: classref-reftable-group
 
@@ -200,12 +200,12 @@ The queried shape's :ref:`RID<class_RID>` that will be used for collision/inters
     var shape_rid = PhysicsServer2D.circle_shape_create()
     var radius = 64
     PhysicsServer2D.shape_set_data(shape_rid, radius)
-    
+
     var params = PhysicsShapeQueryParameters2D.new()
     params.shape_rid = shape_rid
-    
+
     # Execute physics queries here...
-    
+
     # Release the shape when done with physics queries.
     PhysicsServer2D.free_rid(shape_rid)
 
@@ -214,12 +214,12 @@ The queried shape's :ref:`RID<class_RID>` that will be used for collision/inters
     RID shapeRid = PhysicsServer2D.CircleShapeCreate();
     int radius = 64;
     PhysicsServer2D.ShapeSetData(shapeRid, radius);
-    
+
     var params = new PhysicsShapeQueryParameters2D();
     params.ShapeRid = shapeRid;
-    
+
     // Execute physics queries here...
-    
+
     // Release the shape when done with physics queries.
     PhysicsServer2D.FreeRid(shapeRid);
 
@@ -243,6 +243,7 @@ The queried shape's :ref:`RID<class_RID>` that will be used for collision/inters
 The queried shape's transform matrix.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

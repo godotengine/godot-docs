@@ -631,7 +631,7 @@ Returns the index of the **first** occurrence of ``what`` in this string, or ``-
  .. code-tab:: gdscript
 
     print("Team".find("I")) # Prints -1
-    
+
     print("Potato".find("t"))    # Prints 2
     print("Potato".find("t", 3)) # Prints 4
     print("Potato".find("t", 5)) # Prints -1
@@ -639,7 +639,7 @@ Returns the index of the **first** occurrence of ``what`` in this string, or ``-
  .. code-tab:: csharp
 
     GD.Print("Team".Find("I")); // Prints -1
-    
+
     GD.Print("Potato".Find("t"));    // Prints 2
     GD.Print("Potato".Find("t", 3)); // Prints 4
     GD.Print("Potato".Find("t", 5)); // Prints -1
@@ -679,7 +679,7 @@ Formats the string by replacing all occurrences of ``placeholder`` with the elem
     # Prints "Waiting for Godot is a play by Samuel Beckett, and Godot Engine is named after it."
     var use_array_values = "Waiting for {0} is a play by {1}, and {0} Engine is named after it."
     print(use_array_values.format(["Godot", "Samuel Beckett"]))
-    
+
     # Prints "User 42 is Godot."
     print("User {id} is {name}.".format({"id": 42, "name": "Godot"}))
 
@@ -762,7 +762,7 @@ If the string is a valid file name or path, returns the file extension without t
     var b = "cool.txt".get_extension()          # b is "txt"
     var c = "cool.font.tres".get_extension()    # c is "tres"
     var d = ".pack1".get_extension()            # d is "pack1"
-    
+
     var e = "file.txt.".get_extension()  # e is ""
     var f = "file.txt..".get_extension() # f is ""
     var g = "txt".get_extension()        # g is ""
@@ -977,7 +977,7 @@ Returns ``true`` if all characters of this string can be found in ``text`` in th
 ::
 
     var text = "Wow, incredible!"
-    
+
     print("inedible".is_subsequence_of(text)) # Prints true
     print("Word!".is_subsequence_of(text))    # Prints true
     print("Window".is_subsequence_of(text))   # Prints false
@@ -1066,7 +1066,7 @@ If ``with_prefix`` is ``true``, the hexadecimal number needs to prefixed by ``"0
     print("A08E".is_valid_hex_number())    # Prints true
     print("-AbCdEf".is_valid_hex_number()) # Prints true
     print("2.5".is_valid_hex_number())     # Prints false
-    
+
     print("0xDEADC0DE".is_valid_hex_number(true)) # Prints true
 
 .. rst-class:: classref-item-separator
@@ -1179,14 +1179,14 @@ Returns the concatenation of ``parts``' elements, with each element separated by
  .. code-tab:: gdscript
 
     var fruits = ["Apple", "Orange", "Pear", "Kiwi"]
-    
+
     print(", ".join(fruits))  # Prints "Apple, Orange, Pear, Kiwi"
     print("---".join(fruits)) # Prints "Apple---Orange---Pear---Kiwi"
 
  .. code-tab:: csharp
 
     string[] fruits = ["Apple", "Orange", "Pear", "Kiwi"];
-    
+
     // In C#, this method is static.
     GD.Print(string.Join(", ", fruits));  // Prints "Apple, Orange, Pear, Kiwi"
     GD.Print(string.Join("---", fruits)); // Prints "Apple---Orange---Pear---Kiwi"
@@ -1570,7 +1570,7 @@ If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``max
 
     var some_string = "One,Two,Three,Four"
     var some_array = some_string.rsplit(",", true, 1)
-    
+
     print(some_array.size()) # Prints 2
     print(some_array[0])     # Prints "One,Two,Three"
     print(some_array[1])     # Prints "Four"
@@ -1701,7 +1701,7 @@ If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``max
  .. code-tab:: gdscript
 
     var some_array = "One,Two,Three,Four".split(",", true, 2)
-    
+
     print(some_array.size()) # Prints 3
     print(some_array[0])     # Prints "One"
     print(some_array[1])     # Prints "Two"
@@ -1711,7 +1711,7 @@ If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``max
 
     // C#'s `Split()` does not support the `maxsplit` parameter.
     var someArray = "One,Two,Three".Split(",");
-    
+
     GD.Print(someArray[0]); // Prints "One"
     GD.Print(someArray[1]); // Prints "Two"
     GD.Print(someArray[2]); // Prints "Three"
@@ -2089,14 +2089,14 @@ Encodes the string to URL-friendly format. This method is meant to properly enco
 
     var prefix = "$DOCS_URL/?highlight="
     var url = prefix + "Godot Engine:docs".uri_encode()
-    
+
     print(url) # Prints "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
 
  .. code-tab:: csharp
 
     var prefix = "$DOCS_URL/?highlight=";
     var url = prefix + "Godot Engine:docs".URIEncode();
-    
+
     GD.Print(url); // Prints "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
 
 
@@ -2303,6 +2303,7 @@ Returns ``true`` if the left **StringName**'s pointer comes after ``right``. Not
 Returns ``true`` if the left **StringName**'s pointer comes after ``right`` or if they are the same. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

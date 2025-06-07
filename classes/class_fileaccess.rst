@@ -31,7 +31,7 @@ This class can be used to permanently store data in the user device's file syste
     func save_to_file(content):
         var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
         file.store_string(content)
-    
+
     func load_from_file():
         var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
         var content = file.get_as_text()
@@ -44,7 +44,7 @@ This class can be used to permanently store data in the user device's file syste
         using var file = FileAccess.Open("user://save_game.dat", FileAccess.ModeFlags.Write);
         file.StoreString(content);
     }
-    
+
     public string LoadFromFile()
     {
         using var file = FileAccess.Open("user://save_game.dat", FileAccess.ModeFlags.Read);
@@ -1131,10 +1131,10 @@ To store a signed integer, use :ref:`store_64()<class_FileAccess_method_store_64
 
     const MAX_15B = 1 << 15
     const MAX_16B = 1 << 16
-    
+
     func unsigned16_to_signed(unsigned):
         return (unsigned + MAX_15B) % MAX_16B - MAX_15B
-    
+
     func _ready():
         var f = FileAccess.open("user://file.dat", FileAccess.WRITE_READ)
         f.store_16(-42) # This wraps around and stores 65494 (2^16 - 42).
@@ -1346,6 +1346,7 @@ Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

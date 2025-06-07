@@ -2175,7 +2175,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
 
     func _can_drop_data(position, data):
         return typeof(data) == TYPE_DICTIONARY and data.has("color")
-    
+
     func _drop_data(position, data):
         var color = data["color"]
 
@@ -2185,7 +2185,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
     {
         return data.VariantType == Variant.Type.Dictionary && data.AsGodotDictionary().ContainsKey("color");
     }
-    
+
     public override void _DropData(Vector2 atPosition, Variant data)
     {
         Color color = data.AsGodotDictionary()["color"].AsColor();
@@ -2711,7 +2711,7 @@ Returns combined minimum size from :ref:`custom_minimum_size<class_Control_prope
 
 :ref:`CursorShape<enum_Control_CursorShape>` **get_cursor_shape**\ (\ position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const| :ref:`🔗<class_Control_method_get_cursor_shape>`
 
-Returns the mouse cursor shape for this control when hovered over ``position`` in local coordinates. For most controls, this is the same as :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`, but some built-in controls implement more complex logic. See :ref:`CursorShape<enum_Control_CursorShape>`.
+Returns the mouse cursor shape for this control when hovered over ``position`` in local coordinates. For most controls, this is the same as :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`, but some built-in controls implement more complex logic.
 
 .. rst-class:: classref-item-separator
 
@@ -3479,7 +3479,7 @@ Shows the given control at the mouse pointer. A good time to call this method is
  .. code-tab:: gdscript
 
     @export var color = Color(1, 0, 0, 1)
-    
+
     func _get_drag_data(position):
         # Use a control that is not in the tree
         var cpb = ColorPickerButton.new()
@@ -3492,7 +3492,7 @@ Shows the given control at the mouse pointer. A good time to call this method is
 
     [Export]
     private Color _color = new Color(1, 0, 0, 1);
-    
+
     public override Variant _GetDragData(Vector2 atPosition)
     {
         // Use a control that is not in the tree
@@ -3626,6 +3626,7 @@ Moves the mouse cursor to ``position``, relative to :ref:`position<class_Control
 \ **Note:** :ref:`warp_mouse()<class_Control_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

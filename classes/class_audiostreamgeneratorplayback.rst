@@ -130,6 +130,7 @@ Pushes several audio data frames to the buffer. This is usually more efficient t
 Pushes a single audio data frame to the buffer. This is usually less efficient than :ref:`push_buffer()<class_AudioStreamGeneratorPlayback_method_push_buffer>` in C# and compiled languages via GDExtension, but :ref:`push_frame()<class_AudioStreamGeneratorPlayback_method_push_frame>` may be *more* efficient in GDScript.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

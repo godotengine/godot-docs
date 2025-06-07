@@ -41,30 +41,30 @@ To close a specific port (e.g. after you have finished using it):
 
     # Emitted when UPnP port mapping setup is completed (regardless of success or failure).
     signal upnp_completed(error)
-    
+
     # Replace this with your own server port number between 1024 and 65535.
     const SERVER_PORT = 3928
     var thread = null
-    
+
     func _upnp_setup(server_port):
         # UPNP queries take some time.
         var upnp = UPNP.new()
         var err = upnp.discover()
-    
+
         if err != OK:
             push_error(str(err))
             upnp_completed.emit(err)
             return
-    
+
         if upnp.get_gateway() and upnp.get_gateway().is_valid_gateway():
             upnp.add_port_mapping(server_port, server_port, ProjectSettings.get_setting("application/config/name"), "UDP")
             upnp.add_port_mapping(server_port, server_port, ProjectSettings.get_setting("application/config/name"), "TCP")
             upnp_completed.emit(OK)
-    
+
     func _ready():
         thread = Thread.new()
         thread.start(_upnp_setup.bind(SERVER_PORT))
-    
+
     func _exit_tree():
         # Wait for thread finish here to handle game exit while the thread is running.
         thread.wait_to_finish()
@@ -588,6 +588,7 @@ Removes the device at ``index`` from the list of discovered devices.
 Sets the device at ``index`` from the list of discovered devices to ``device``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

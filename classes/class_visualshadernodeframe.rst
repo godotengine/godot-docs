@@ -183,6 +183,7 @@ Adds a node to the list of nodes attached to the frame. Should not be called dir
 Removes a node from the list of nodes attached to the frame. Should not be called directly, use the :ref:`VisualShader.detach_node_from_frame()<class_VisualShader_method_detach_node_from_frame>` method instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

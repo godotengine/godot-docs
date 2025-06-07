@@ -1412,9 +1412,13 @@ The owner of this node. The owner must be an ancestor of this node. When packing
 - |void| **set_physics_interpolation_mode**\ (\ value\: :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>`\ )
 - :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>` **get_physics_interpolation_mode**\ (\ )
 
-Allows enabling or disabling physics interpolation per node, offering a finer grain of control than turning physics interpolation on and off globally. See :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` and :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` for the global setting.
+The physics interpolation mode to use for this node. Only effective if :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` or :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` is ``true``.
 
-\ **Note:** When teleporting a node to a distant position you should temporarily disable interpolation with :ref:`reset_physics_interpolation()<class_Node_method_reset_physics_interpolation>`.
+By default, nodes inherit the physics interpolation mode from their parent. This property can enable or disable physics interpolation individually for each node, regardless of their parents' physics interpolation mode.
+
+\ **Note:** Some node types like :ref:`VehicleWheel3D<class_VehicleWheel3D>` have physics interpolation disabled by default, as they rely on their own custom solution.
+
+\ **Note:** When teleporting a node to a distant position, it's recommended to temporarily disable interpolation with :ref:`reset_physics_interpolation()<class_Node_method_reset_physics_interpolation>` *after* moving the node. This avoids creating a visual streak between the old and new positions.
 
 .. rst-class:: classref-item-separator
 
@@ -1431,7 +1435,7 @@ Allows enabling or disabling physics interpolation per node, offering a finer gr
 - |void| **set_process_mode**\ (\ value\: :ref:`ProcessMode<enum_Node_ProcessMode>`\ )
 - :ref:`ProcessMode<enum_Node_ProcessMode>` **get_process_mode**\ (\ )
 
-The node's processing behavior (see :ref:`ProcessMode<enum_Node_ProcessMode>`). To check if the node can process in its current mode, use :ref:`can_process()<class_Node_method_can_process>`.
+The node's processing behavior. To check if the node can process in its current mode, use :ref:`can_process()<class_Node_method_can_process>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1641,7 +1645,7 @@ Call :ref:`update_configuration_warnings()<class_Node_method_update_configuratio
         set(value):
             energy = value
             update_configuration_warnings()
-    
+
     func _get_configuration_warnings():
         if energy < 0:
             return ["Energy must be 0 or greater."]
@@ -1818,7 +1822,7 @@ Adds a child ``node``. Nodes can have any number of children, but every child mu
 
 If ``force_readable_name`` is ``true``, improves the readability of the added ``node``. If not named, the ``node`` is renamed to its type, and if it shares :ref:`name<class_Node_property_name>` with a sibling, a number is suffixed more appropriately. This operation is very slow. As such, it is recommended leaving this to ``false``, which assigns a dummy name featuring ``@`` in both situations.
 
-If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. These nodes are ignored by methods like :ref:`get_children()<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``. It also prevents these nodes being duplicated with their parent. The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
+If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. These nodes are ignored by methods like :ref:`get_children()<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``. It also prevents these nodes being duplicated with their parent. The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`.
 
 \ **Note:** If ``node`` already has a parent, this method will fail. Use :ref:`remove_child()<class_Node_method_remove_child>` first to remove ``node`` from its current parent. For example:
 
@@ -2104,7 +2108,7 @@ If ``include_internal`` is ``false``, internal children are ignored (see :ref:`a
 
     # Assuming the following are children of this node, in order:
     # First, Middle, Last.
-    
+
     var a = get_child(0).name  # a is "First"
     var b = get_child(1).name  # b is "Middle"
     var b = get_child(2).name  # b is "Last"
@@ -2296,12 +2300,12 @@ Fetches a node and its most nested resource as specified by the :ref:`NodePath<c
     print(a[0].name) # Prints Sprite2D
     print(a[1])      # Prints <null>
     print(a[2])      # Prints ^""
-    
+
     var b = get_node_and_resource("Area2D/Sprite2D:texture:atlas")
     print(b[0].name)        # Prints Sprite2D
     print(b[1].get_class()) # Prints AtlasTexture
     print(b[2])             # Prints ^""
-    
+
     var c = get_node_and_resource("Area2D/Sprite2D:texture:atlas:region")
     print(c[0].name)        # Prints Sprite2D
     print(c[1].get_class()) # Prints AtlasTexture
@@ -2313,12 +2317,12 @@ Fetches a node and its most nested resource as specified by the :ref:`NodePath<c
     GD.Print(a[0].Name); // Prints Sprite2D
     GD.Print(a[1]);      // Prints <null>
     GD.Print(a[2]);      // Prints ^"
-    
+
     var b = GetNodeAndResource(NodePath("Area2D/Sprite2D:texture:atlas"));
     GD.Print(b[0].name);        // Prints Sprite2D
     GD.Print(b[1].get_class()); // Prints AtlasTexture
     GD.Print(b[2]);             // Prints ^""
-    
+
     var c = GetNodeAndResource(NodePath("Area2D/Sprite2D:texture:atlas:region"));
     GD.Print(c[0].name);        // Prints Sprite2D
     GD.Print(c[1].get_class()); // Prints AtlasTexture
@@ -3297,6 +3301,7 @@ This is the default behavior for all nodes. Calling :ref:`Object.set_translation
 Refreshes the warnings displayed for this node in the Scene dock. Use :ref:`_get_configuration_warnings()<class_Node_private_method__get_configuration_warnings>` to customize the warning messages to display.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

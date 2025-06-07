@@ -402,14 +402,14 @@ Constructs a new **Basis** that only represents rotation from the given :ref:`Ve
 
     # Creates a Basis whose z axis points down.
     var my_basis = Basis.from_euler(Vector3(TAU / 4, 0, 0))
-    
+
     print(my_basis.z) # Prints (0.0, -1.0, 0.0)
 
  .. code-tab:: csharp
 
     // Creates a Basis whose z axis points down.
     var myBasis = Basis.FromEuler(new Vector3(Mathf.Tau / 4.0f, 0.0f, 0.0f));
-    
+
     GD.Print(myBasis.Z); // Prints (0, -1, 0)
 
 
@@ -434,7 +434,7 @@ Constructs a new **Basis** that only represents scale, with no rotation or shear
  .. code-tab:: gdscript
 
     var my_basis = Basis.from_scale(Vector3(2, 4, 8))
-    
+
     print(my_basis.x) # Prints (2.0, 0.0, 0.0)
     print(my_basis.y) # Prints (0.0, 4.0, 0.0)
     print(my_basis.z) # Prints (0.0, 0.0, 8.0)
@@ -442,7 +442,7 @@ Constructs a new **Basis** that only represents scale, with no rotation or shear
  .. code-tab:: csharp
 
     var myBasis = Basis.FromScale(new Vector3(2.0f, 4.0f, 8.0f));
-    
+
     GD.Print(myBasis.X); // Prints (2, 0, 0)
     GD.Print(myBasis.Y); // Prints (0, 4, 0)
     GD.Print(myBasis.Z); // Prints (0, 0, 8)
@@ -516,7 +516,7 @@ Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>
     # Rotating the Basis in any way preserves its scale.
     my_basis = my_basis.rotated(Vector3.UP, TAU / 2)
     my_basis = my_basis.rotated(Vector3.RIGHT, TAU / 4)
-    
+
     print(my_basis.get_scale()) # Prints (2.0, 4.0, 8.0)
 
  .. code-tab:: csharp
@@ -529,7 +529,7 @@ Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>
     // Rotating the Basis in any way preserves its scale.
     myBasis = myBasis.Rotated(Vector3.Up, Mathf.Tau / 2.0f);
     myBasis = myBasis.Rotated(Vector3.Right, Mathf.Tau / 4.0f);
-    
+
     GD.Print(myBasis.Scale); // Prints (2, 4, 8)
 
 
@@ -625,7 +625,6 @@ It is often useful to call this method to avoid rounding errors on a rotating ba
     func _process(delta):
         basis = basis.rotated(Vector3.UP, TAU * delta)
         basis = basis.rotated(Vector3.RIGHT, TAU * delta)
-    
         basis = basis.orthonormalized()
 
  .. code-tab:: csharp
@@ -634,8 +633,8 @@ It is often useful to call this method to avoid rounding errors on a rotating ba
     public override void _Process(double delta)
     {
         Basis = Basis.Rotated(Vector3.Up, Mathf.Tau * (float)delta)
-                     .Rotated(Vector3.Right, Mathf.Tau * (float)delta)
-                     .Orthonormalized();
+                .Rotated(Vector3.Right, Mathf.Tau * (float)delta)
+                .Orthonormalized();
     }
 
 
@@ -661,7 +660,7 @@ The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized()<class_V
 
     var my_basis = Basis.IDENTITY
     var angle = TAU / 2
-    
+
     my_basis = my_basis.rotated(Vector3.UP, angle)    # Rotate around the up axis (yaw).
     my_basis = my_basis.rotated(Vector3.RIGHT, angle) # Rotate around the right axis (pitch).
     my_basis = my_basis.rotated(Vector3.BACK, angle)  # Rotate around the back axis (roll).
@@ -670,7 +669,7 @@ The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized()<class_V
 
     var myBasis = Basis.Identity;
     var angle = Mathf.Tau / 2.0f;
-    
+
     myBasis = myBasis.Rotated(Vector3.Up, angle);    // Rotate around the up axis (yaw).
     myBasis = myBasis.Rotated(Vector3.Right, angle); // Rotate around the right axis (pitch).
     myBasis = myBasis.Rotated(Vector3.Back, angle);  // Rotate around the back axis (roll).
@@ -702,7 +701,7 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
         Vector3(3, 3, 3)
     )
     my_basis = my_basis.scaled(Vector3(0, 2, -2))
-    
+
     print(my_basis.x) # Prints (0.0, 2.0, -2.0)
     print(my_basis.y) # Prints (0.0, 4.0, -4.0)
     print(my_basis.z) # Prints (0.0, 6.0, -6.0)
@@ -715,7 +714,7 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
         new Vector3(3.0f, 3.0f, 3.0f)
     );
     myBasis = myBasis.Scaled(new Vector3(0.0f, 2.0f, -2.0f));
-    
+
     GD.Print(myBasis.X); // Prints (0, 2, -2)
     GD.Print(myBasis.Y); // Prints (0, 4, -4)
     GD.Print(myBasis.Z); // Prints (0, 6, -6)
@@ -740,10 +739,10 @@ Performs a spherical-linear interpolation with the ``to`` basis, given a ``weigh
 
     var start_basis = Basis.IDENTITY
     var target_basis = Basis.IDENTITY.rotated(Vector3.UP, TAU / 2)
-    
+
     func _ready():
         create_tween().tween_method(interpolate, 0.0, 1.0, 5.0).set_trans(Tween.TRANS_EXPO)
-    
+
     func interpolate(weight):
         basis = start_basis.slerp(target_basis, weight)
 
@@ -812,7 +811,7 @@ Returns the transposed version of this basis. This turns the basis matrix's colu
         Vector3(7, 8, 9)
     )
     my_basis = my_basis.transposed()
-    
+
     print(my_basis.x) # Prints (1.0, 4.0, 7.0)
     print(my_basis.y) # Prints (2.0, 5.0, 8.0)
     print(my_basis.z) # Prints (3.0, 6.0, 9.0)
@@ -825,7 +824,7 @@ Returns the transposed version of this basis. This turns the basis matrix's colu
         new Vector3(7.0f, 8.0f, 9.0f)
     );
     myBasis = myBasis.Transposed();
-    
+
     GD.Print(myBasis.X); // Prints (1, 4, 7)
     GD.Print(myBasis.Y); // Prints (2, 5, 8)
     GD.Print(myBasis.Z); // Prints (3, 6, 9)
@@ -971,6 +970,7 @@ Accesses each axis (column) of this basis by their index. Index ``0`` is the sam
 \ **Note:** In C++, this operator accesses the rows of the basis matrix, *not* the columns. For the same behavior as scripting languages, use the ``set_column`` and ``get_column`` methods.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -154,7 +154,7 @@ Finds the index of the given ``path``.
 
 :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>` **property_get_replication_mode**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_get_replication_mode>`
 
-Returns the replication mode for the property identified by the given ``path``. See :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>`.
+Returns the replication mode for the property identified by the given ``path``.
 
 .. rst-class:: classref-item-separator
 
@@ -206,7 +206,7 @@ Returns ``true`` if the property identified by the given ``path`` is configured 
 
 |void| **property_set_replication_mode**\ (\ path\: :ref:`NodePath<class_NodePath>`, mode\: :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>`\ ) :ref:`🔗<class_SceneReplicationConfig_method_property_set_replication_mode>`
 
-Sets the synchronization mode for the property identified by the given ``path``. See :ref:`ReplicationMode<enum_SceneReplicationConfig_ReplicationMode>`.
+Sets the synchronization mode for the property identified by the given ``path``.
 
 .. rst-class:: classref-item-separator
 
@@ -261,6 +261,7 @@ Sets whether the property identified by the given ``path`` is configured to be r
 Removes the property identified by the given ``path`` from the configuration.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

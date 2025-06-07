@@ -27,7 +27,7 @@ In GDScript, signals can be declared with the ``signal`` keyword. In C#, you may
  .. code-tab:: gdscript
 
     signal attacked
-    
+
     # Additional arguments may be declared.
     # These arguments must be passed when the signal is emitted.
     signal item_dropped(item_name, amount)
@@ -36,7 +36,7 @@ In GDScript, signals can be declared with the ``signal`` keyword. In C#, you may
 
     [Signal]
     delegate void AttackedEventHandler();
-    
+
     // Additional arguments may be declared.
     // These arguments must be passed when the signal is emitted.
     [Signal]
@@ -56,16 +56,16 @@ Connecting signals is one of the most common operations in Godot and the API giv
         # `button_down` here is a Signal Variant type. We therefore call the Signal.connect() method, not Object.connect().
         # See discussion below for a more in-depth overview of the API.
         button.button_down.connect(_on_button_down)
-    
+
         # This assumes that a `Player` class exists, which defines a `hit` signal.
         var player = Player.new()
         # We use Signal.connect() again, and we also use the Callable.bind() method,
         # which returns a new Callable with the parameter binds.
         player.hit.connect(_on_player_hit.bind("sword", 100))
-    
+
     func _on_button_down():
         print("Button down!")
-    
+
     func _on_player_hit(weapon_type, damage):
         print("Hit with weapon %s for %d damage." % [weapon_type, damage])
 
@@ -76,18 +76,18 @@ Connecting signals is one of the most common operations in Godot and the API giv
         var button = new Button();
         // C# supports passing signals as events, so we can use this idiomatic construct:
         button.ButtonDown += OnButtonDown;
-    
+
         // This assumes that a `Player` class exists, which defines a `Hit` signal.
         var player = new Player();
         // We can use lambdas when we need to bind additional parameters.
         player.Hit += () => OnPlayerHit("sword", 100);
     }
-    
+
     private void OnButtonDown()
     {
         GD.Print("Button down!");
     }
-    
+
     private void OnPlayerHit(string weaponType, int damage)
     {
         GD.Print($"Hit with weapon {weaponType} for {damage} damage.");
@@ -114,7 +114,7 @@ As seen above, the recommended method to connect signals is not :ref:`Object.con
         button.button_down.connect(_on_button_down)
         # Option 4: Signal.connect() with a constructed Callable using a target object and method name.
         button.button_down.connect(Callable(self, "_on_button_down"))
-    
+
     func _on_button_down():
         print("Button down!")
 
@@ -130,7 +130,7 @@ As seen above, the recommended method to connect signals is not :ref:`Object.con
         // Option 3: GodotObject.Connect() with a constructed Callable using a target object and method name.
         button.Connect(Button.SignalName.ButtonDown, new Callable(this, MethodName.OnButtonDown));
     }
-    
+
     private void OnButtonDown()
     {
         GD.Print("Button down!");
@@ -156,10 +156,10 @@ When calling :ref:`emit()<class_Signal_method_emit>` or :ref:`Object.emit_signal
         var player = Player.new()
         # Using Callable.bind().
         player.hit.connect(_on_player_hit.bind("sword", 100))
-    
+
         # Parameters added when emitting the signal are passed first.
         player.hit.emit("Dark lord", 5)
-    
+
     # We pass two arguments when emitting (`hit_by`, `level`),
     # and bind two more arguments when connecting (`weapon_type`, `damage`).
     func _on_player_hit(hit_by, level, weapon_type, damage):
@@ -174,11 +174,11 @@ When calling :ref:`emit()<class_Signal_method_emit>` or :ref:`Object.emit_signal
         // Using lambda expressions that create a closure that captures the additional parameters.
         // The lambda only receives the parameters defined by the signal's delegate.
         player.Hit += (hitBy, level) => OnPlayerHit(hitBy, level, "sword", 100);
-    
+
         // Parameters added when emitting the signal are passed first.
         player.EmitSignal(SignalName.Hit, "Dark lord", 5);
     }
-    
+
     // We pass two arguments when emitting (`hit_by`, `level`),
     // and bind two more arguments when connecting (`weapon_type`, `damage`).
     private void OnPlayerHit(string hitBy, int level, string weaponType, int damage)
@@ -321,7 +321,7 @@ A signal can only be connected once to the same :ref:`Callable<class_Callable>`.
 
     for button in $Buttons.get_children():
         button.pressed.connect(_on_pressed.bind(button))
-    
+
     func _on_pressed(button):
         print(button.name, " was pressed")
 
@@ -471,6 +471,7 @@ Returns ``true`` if the signals do not share the same object and name.
 Returns ``true`` if both signals share the same object and name.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

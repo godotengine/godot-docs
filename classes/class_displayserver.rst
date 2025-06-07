@@ -1246,19 +1246,11 @@ Tooltip element.
 
 enum **AccessibilityPopupType**: :ref:`🔗<enum_DisplayServer_AccessibilityPopupType>`
 
-.. _class_DisplayServer_constant_POPUP_UNKNOWN:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_UNKNOWN** = ``0``
-
-Other/unknown popup type.
-
 .. _class_DisplayServer_constant_POPUP_MENU:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_MENU** = ``1``
+:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_MENU** = ``0``
 
 Popup menu.
 
@@ -1266,7 +1258,7 @@ Popup menu.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_LIST** = ``2``
+:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_LIST** = ``1``
 
 Popup list.
 
@@ -1274,7 +1266,7 @@ Popup list.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_TREE** = ``3``
+:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_TREE** = ``2``
 
 Popup tree view.
 
@@ -1282,7 +1274,7 @@ Popup tree view.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_DIALOG** = ``4``
+:ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_DIALOG** = ``3``
 
 Popup dialog.
 
@@ -1304,23 +1296,11 @@ enum **AccessibilityFlags**: :ref:`🔗<enum_DisplayServer_AccessibilityFlags>`
 
 Element is hidden for accessibility tools.
 
-.. _class_DisplayServer_constant_FLAG_LINKED:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_LINKED** = ``1``
-
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
-
 .. _class_DisplayServer_constant_FLAG_MULTISELECTABLE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_MULTISELECTABLE** = ``2``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_MULTISELECTABLE** = ``1``
 
 Element is support multiple item selection.
 
@@ -1328,7 +1308,7 @@ Element is support multiple item selection.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_REQUIRED** = ``3``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_REQUIRED** = ``2``
 
 Element require user input.
 
@@ -1336,7 +1316,7 @@ Element require user input.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_VISITED** = ``4``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_VISITED** = ``3``
 
 Element is a visited link.
 
@@ -1344,7 +1324,7 @@ Element is a visited link.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_BUSY** = ``5``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_BUSY** = ``4``
 
 Element content is not ready (e.g. loading).
 
@@ -1352,7 +1332,7 @@ Element content is not ready (e.g. loading).
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_MODAL** = ``6``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_MODAL** = ``5``
 
 Element is modal window.
 
@@ -1360,7 +1340,7 @@ Element is modal window.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_TOUCH_PASSTHROUGH** = ``7``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_TOUCH_PASSTHROUGH** = ``6``
 
 Element allows touches to be passed through when a screen reader is in touch exploration mode.
 
@@ -1368,7 +1348,7 @@ Element allows touches to be passed through when a screen reader is in touch exp
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_READONLY** = ``8``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_READONLY** = ``7``
 
 Element is text field with selectable but read-only text.
 
@@ -1376,7 +1356,7 @@ Element is text field with selectable but read-only text.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_DISABLED** = ``9``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_DISABLED** = ``8``
 
 Element is disabled.
 
@@ -1384,7 +1364,7 @@ Element is disabled.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_CLIPS_CHILDREN** = ``10``
+:ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_CLIPS_CHILDREN** = ``9``
 
 Element clips children.
 
@@ -2611,6 +2591,14 @@ Utterance reached a word or sentence boundary.
 Constants
 ---------
 
+.. _class_DisplayServer_constant_INVALID_SCREEN:
+
+.. rst-class:: classref-constant
+
+**INVALID_SCREEN** = ``-1`` :ref:`🔗<class_DisplayServer_constant_INVALID_SCREEN>`
+
+The ID that refers to a screen that does not exist. This is returned by some **DisplayServer** methods if no screen matches the requested result.
+
 .. _class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS:
 
 .. rst-class:: classref-constant
@@ -2619,7 +2607,7 @@ Constants
 
 Represents the screen containing the mouse pointer.
 
-\ **Note:** On Linux (Wayland), this constant always represents the screen at index ``0``.
+\ **Note:** On Android, iOS, Web, and Linux (Wayland), this constant always represents the screen at index ``0``.
 
 .. _class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS:
 
@@ -2629,7 +2617,7 @@ Represents the screen containing the mouse pointer.
 
 Represents the screen containing the window with the keyboard focus.
 
-\ **Note:** On Linux (Wayland), this constant always represents the screen at index ``0``.
+\ **Note:** On Android, iOS, Web, and Linux (Wayland), this constant always represents the screen at index ``0``.
 
 .. _class_DisplayServer_constant_SCREEN_PRIMARY:
 
@@ -2639,7 +2627,7 @@ Represents the screen containing the window with the keyboard focus.
 
 Represents the primary screen.
 
-\ **Note:** On Linux (Wayland), this constant always represents the screen at index ``0``.
+\ **Note:** On Android, iOS, Web, and Linux (Wayland), this constant always represents the screen at index ``0``.
 
 .. _class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW:
 
@@ -2649,7 +2637,7 @@ Represents the primary screen.
 
 Represents the screen where the main window is located. This is usually the default value in functions that allow specifying one of several screens.
 
-\ **Note:** On Linux (Wayland), this constant always represents the screen at index ``0``.
+\ **Note:** On Android, iOS, Web, and Linux (Wayland), this constant always represents the screen at index ``0``.
 
 .. _class_DisplayServer_constant_MAIN_WINDOW_ID:
 
@@ -3098,7 +3086,7 @@ Sets element accessibility extra information added to the element name.
 
 |void| **accessibility_update_set_flag**\ (\ id\: :ref:`RID<class_RID>`, flag\: :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_flag>`
 
-Sets element flag, see :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>`.
+Sets element flag.
 
 .. rst-class:: classref-item-separator
 
@@ -3990,6 +3978,8 @@ Returns the unobscured area of the display where interactive controls should be 
 
 Returns the index of the screen containing the window with the keyboard focus, or the primary screen if there's no focused window.
 
+\ **Note:** This method is implemented on Linux/X11, macOS, and Windows. On other platforms, this method always returns the primary screen.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -4016,6 +4006,8 @@ The names of built-in display servers are ``Windows``, ``macOS``, ``X11`` (Linux
 
 Returns index of the primary screen.
 
+\ **Note:** This method is implemented on Linux/X11, macOS, and Windows. On other platforms, this method always returns ``0``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -4028,6 +4020,8 @@ Returns index of the primary screen.
 
 Returns the number of displays available.
 
+\ **Note:** This method is implemented on Linux (X11 and Wayland), macOS, and Windows. On other platforms, this method always returns ``1``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -4038,7 +4032,7 @@ Returns the number of displays available.
 
 :ref:`int<class_int>` **get_screen_from_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const| :ref:`🔗<class_DisplayServer_method_get_screen_from_rect>`
 
-Returns the index of the screen that overlaps the most with the given rectangle. Returns ``-1`` if the rectangle doesn't overlap with any screen or has no area.
+Returns the index of the screen that overlaps the most with the given rectangle. Returns :ref:`INVALID_SCREEN<class_DisplayServer_constant_INVALID_SCREEN>` if the rectangle doesn't overlap with any screen or has no area.
 
 .. rst-class:: classref-item-separator
 
@@ -5361,7 +5355,9 @@ This can be used to prevent Godot from skipping rendering when no normal windows
 
 :ref:`int<class_int>` **screen_get_dpi**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_dpi>`
 
-Returns the dots per inch density of the specified screen. If ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>` (the default value), a screen with the main window will be used.
+Returns the dots per inch density of the specified screen. Returns platform specific default value if ``screen`` is invalid.
+
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
 
 \ **Note:** On macOS, returned value is inaccurate if fractional display scaling mode is used.
 
@@ -5376,7 +5372,7 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
      xxhdpi - 480 dpi
     xxxhdpi - 640 dpi
 
-\ **Note:** This method is implemented on Android, Linux (X11/Wayland), macOS and Windows. Returns ``72`` on unsupported platforms.
+\ **Note:** This method is implemented on Android, iOS, Linux (X11/Wayland), macOS, Web, and Windows. On other platforms, this method always returns ``72``.
 
 .. rst-class:: classref-item-separator
 
@@ -5388,9 +5384,11 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
 
 :ref:`Image<class_Image>` **screen_get_image**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_image>`
 
-Returns a screenshot of the ``screen``.
+Returns a screenshot of the ``screen``. Returns ``null`` if ``screen`` is invalid or the **DisplayServer** fails to capture screenshot.
 
-\ **Note:** This method is implemented on Linux (X11), macOS, and Windows.
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
+
+\ **Note:** This method is implemented on Linux (X11, excluding XWayland), macOS, and Windows. On other platforms, this method always returns ``null``.
 
 \ **Note:** On macOS, this method requires the "Screen Recording" permission. If permission is not granted, this method returns a screenshot that will not include other application windows or OS elements not related to the application.
 
@@ -5404,9 +5402,9 @@ Returns a screenshot of the ``screen``.
 
 :ref:`Image<class_Image>` **screen_get_image_rect**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_image_rect>`
 
-Returns a screenshot of the screen region defined by ``rect``.
+Returns a screenshot of the screen region defined by ``rect``. Returns ``null`` if ``rect`` is outside screen bounds or the **DisplayServer** fails to capture screenshot.
 
-\ **Note:** This method is implemented on macOS and Windows.
+\ **Note:** This method is implemented on macOS and Windows. On other platforms, this method always returns ``null``.
 
 \ **Note:** On macOS, this method requires the "Screen Recording" permission. If permission is not granted, this method returns a screenshot that will not include other application windows or OS elements not related to the application.
 
@@ -5436,9 +5434,11 @@ Returns the greatest scale factor of all screens.
 
 :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` **screen_get_orientation**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_orientation>`
 
-Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientation()<class_DisplayServer_method_screen_set_orientation>`.
+Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientation()<class_DisplayServer_method_screen_set_orientation>`. Returns :ref:`SCREEN_LANDSCAPE<class_DisplayServer_constant_SCREEN_LANDSCAPE>` if ``screen`` is invalid.
 
-\ **Note:** This method is implemented on Android and iOS.
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
+
+\ **Note:** This method is implemented on Android and iOS. On other platforms, this method always returns :ref:`SCREEN_LANDSCAPE<class_DisplayServer_constant_SCREEN_LANDSCAPE>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5452,9 +5452,9 @@ Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientat
 
 Returns color of the display pixel at the ``position``.
 
-\ **Note:** This method is implemented on Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Linux (X11, excluding XWayland), macOS, and Windows. On other platforms, this method always returns :ref:`Color<class_Color>`.
 
-\ **Note:** On macOS, this method requires "Screen Recording" permission, if permission is not granted it will return desktop wallpaper color.
+\ **Note:** On macOS, this method requires the "Screen Recording" permission. If permission is not granted, this method returns a screenshot that will only contain the desktop wallpaper, the current application's window, and other related UI elements.
 
 .. rst-class:: classref-item-separator
 
@@ -5466,7 +5466,7 @@ Returns color of the display pixel at the ``position``.
 
 :ref:`Vector2i<class_Vector2i>` **screen_get_position**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_position>`
 
-Returns the screen's top-left corner position in pixels. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
+Returns the screen's top-left corner position in pixels. Returns :ref:`Vector2i.ZERO<class_Vector2i_constant_ZERO>` if ``screen`` is invalid. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin might be located outside any display like this:
 
 .. code:: text
 
@@ -5479,7 +5479,7 @@ Returns the screen's top-left corner position in pixels. On multi-monitor setups
 
 See also :ref:`screen_get_size()<class_DisplayServer_method_screen_get_size>`.
 
-\ **Note:** On Linux (Wayland) this method always returns ``(0, 0)``.
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5491,9 +5491,7 @@ See also :ref:`screen_get_size()<class_DisplayServer_method_screen_get_size>`.
 
 :ref:`float<class_float>` **screen_get_refresh_rate**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_refresh_rate>`
 
-Returns the current refresh rate of the specified screen. If ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>` (the default value), a screen with the main window will be used.
-
-\ **Note:** Returns ``-1.0`` if the DisplayServer fails to find the refresh rate for the specified screen. On Web, :ref:`screen_get_refresh_rate()<class_DisplayServer_method_screen_get_refresh_rate>` will always return ``-1.0`` as there is no way to retrieve the refresh rate on that platform.
+Returns the current refresh rate of the specified screen. Returns ``-1.0`` if ``screen`` is invalid or the **DisplayServer** fails to find the refresh rate for the specified screen.
 
 To fallback to a default refresh rate if the method fails, try:
 
@@ -5502,6 +5500,10 @@ To fallback to a default refresh rate if the method fails, try:
     var refresh_rate = DisplayServer.screen_get_refresh_rate()
     if refresh_rate < 0:
         refresh_rate = 60.0
+
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
+
+\ **Note:** This method is implemented on Android, iOS, macOS, Linux (X11 and Wayland), and Windows. On other platforms, this method always returns ``-1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -5513,13 +5515,15 @@ To fallback to a default refresh rate if the method fails, try:
 
 :ref:`float<class_float>` **screen_get_scale**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_scale>`
 
-Returns the scale factor of the specified screen by index.
+Returns the scale factor of the specified screen by index. Returns ``1.0`` if ``screen`` is invalid.
+
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
 
 \ **Note:** On macOS, the returned value is ``2.0`` for hiDPI (Retina) screens, and ``1.0`` for all other cases.
 
 \ **Note:** On Linux (Wayland), the returned value is accurate only when ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`. Due to API limitations, passing a direct index will return a rounded-up integer, if the screen has a fractional scale (e.g. ``1.25`` would get rounded up to ``2.0``).
 
-\ **Note:** This method is implemented on Android, iOS, Web, macOS, and Linux (Wayland).
+\ **Note:** This method is implemented on Android, iOS, Web, macOS, and Linux (Wayland). On other platforms, this method always returns ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -5531,7 +5535,9 @@ Returns the scale factor of the specified screen by index.
 
 :ref:`Vector2i<class_Vector2i>` **screen_get_size**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_size>`
 
-Returns the screen's size in pixels. See also :ref:`screen_get_position()<class_DisplayServer_method_screen_get_position>` and :ref:`screen_get_usable_rect()<class_DisplayServer_method_screen_get_usable_rect>`.
+Returns the screen's size in pixels. See also :ref:`screen_get_position()<class_DisplayServer_method_screen_get_position>` and :ref:`screen_get_usable_rect()<class_DisplayServer_method_screen_get_usable_rect>`. Returns :ref:`Vector2i.ZERO<class_Vector2i_constant_ZERO>` if ``screen`` is invalid.
+
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5544,6 +5550,10 @@ Returns the screen's size in pixels. See also :ref:`screen_get_position()<class_
 :ref:`Rect2i<class_Rect2i>` **screen_get_usable_rect**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_usable_rect>`
 
 Returns the portion of the screen that is not obstructed by a status bar in pixels. See also :ref:`screen_get_size()<class_DisplayServer_method_screen_get_size>`.
+
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
+
+\ **Note:** This method is implemented on Linux/X11, macOS, and Windows. On other platforms, this method always returns ``Rect2i(screen_get_position(screen), screen_get_size(screen))``.
 
 .. rst-class:: classref-item-separator
 
@@ -5580,6 +5590,10 @@ Sets whether the screen should never be turned off by the operating system's pow
 |void| **screen_set_orientation**\ (\ orientation\: :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>`, screen\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_screen_set_orientation>`
 
 Sets the ``screen``'s ``orientation``. See also :ref:`screen_get_orientation()<class_DisplayServer_method_screen_get_orientation>`.
+
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
+
+\ **Note:** This method is implemented on Android and iOS.
 
 \ **Note:** On iOS, this method has no effect if :ref:`ProjectSettings.display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>` is not set to :ref:`SCREEN_SENSOR<class_DisplayServer_constant_SCREEN_SENSOR>`.
 
@@ -5783,7 +5797,7 @@ Set active tablet driver name.
 
 Supported drivers:
 
-- ``winink``: Windows Ink API, default (Windows 8.1+ required).
+- ``winink``: Windows Ink API, default.
 
 - ``wintab``: Wacom Wintab API (compatible device driver required).
 
@@ -6069,7 +6083,9 @@ Returns the :ref:`Object.get_instance_id()<class_Object_method_get_instance_id>`
 
 :ref:`int<class_int>` **window_get_current_screen**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_current_screen>`
 
-Returns the screen the window specified by ``window_id`` is currently positioned on. If the screen overlaps multiple displays, the screen where the window's center is located is returned. See also :ref:`window_set_current_screen()<class_DisplayServer_method_window_set_current_screen>`.
+Returns the screen the window specified by ``window_id`` is currently positioned on. If the screen overlaps multiple displays, the screen where the window's center is located is returned. See also :ref:`window_set_current_screen()<class_DisplayServer_method_window_set_current_screen>`. Returns :ref:`INVALID_SCREEN<class_DisplayServer_constant_INVALID_SCREEN>` if ``window_id`` is invalid.
+
+\ **Note:** This method is implemented on Linux/X11, macOS, and Windows. On other platforms, this method always returns ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -6319,6 +6335,10 @@ Makes the window specified by ``window_id`` request attention, which is material
 
 Moves the window specified by ``window_id`` to the specified ``screen``. See also :ref:`window_get_current_screen()<class_DisplayServer_method_window_get_current_screen>`.
 
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
+
+\ **Note:** This method is implemented on Linux/X11, macOS, and Windows.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -6361,7 +6381,7 @@ If set to ``true``, this window will always stay on top of its parent window, pa
 
 |void| **window_set_flag**\ (\ flag\: :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`, enabled\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_flag>`
 
-Enables or disables the given window's given ``flag``. See :ref:`WindowFlags<enum_DisplayServer_WindowFlags>` for possible values and their behavior.
+Enables or disables the given window's given ``flag``.
 
 .. rst-class:: classref-item-separator
 
@@ -6459,7 +6479,7 @@ Sets the minimum size for the given window to ``min_size`` in pixels. Normally, 
 
 |void| **window_set_mode**\ (\ mode\: :ref:`WindowMode<enum_DisplayServer_WindowMode>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_mode>`
 
-Sets window mode for the given window to ``mode``. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
+Sets window mode for the given window to ``mode``.
 
 \ **Note:** On Android, setting it to :ref:`WINDOW_MODE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN>` or :ref:`WINDOW_MODE_EXCLUSIVE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_EXCLUSIVE_FULLSCREEN>` will enable immersive mode.
 
@@ -6486,10 +6506,10 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
     # Set region, using Path2D node.
     DisplayServer.window_set_mouse_passthrough($Path2D.curve.get_baked_points())
-    
+
     # Set region, using Polygon2D node.
     DisplayServer.window_set_mouse_passthrough($Polygon2D.polygon)
-    
+
     # Reset region to default.
     DisplayServer.window_set_mouse_passthrough([])
 
@@ -6497,10 +6517,10 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
     // Set region, using Path2D node.
     DisplayServer.WindowSetMousePassthrough(GetNode<Path2D>("Path2D").Curve.GetBakedPoints());
-    
+
     // Set region, using Polygon2D node.
     DisplayServer.WindowSetMousePassthrough(GetNode<Polygon2D>("Polygon2D").Polygon);
-    
+
     // Reset region to default.
     DisplayServer.WindowSetMousePassthrough([]);
 
@@ -6621,8 +6641,6 @@ Sets window transient parent. Transient window will be destroyed with its transi
 
 Sets the V-Sync mode of the given window. See also :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>`.
 
-See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
-
 Depending on the platform and used renderer, the engine will fall back to :ref:`VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>` if the desired mode is not supported.
 
 \ **Note:** V-Sync modes other than :ref:`VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>` are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
@@ -6684,6 +6702,7 @@ Starts an interactive resize operation on the window with the given ``window_id`
 \ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

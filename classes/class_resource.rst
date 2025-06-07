@@ -315,9 +315,9 @@ Override this method to customize the newly duplicated resource created from :re
 ::
 
     extends Resource
-    
+
     var damage = 0
-    
+
     func _setup_local_to_scene():
         damage = randi_range(10, 40)
 
@@ -510,6 +510,7 @@ Calls :ref:`_setup_local_to_scene()<class_Resource_private_method__setup_local_t
 Sets the :ref:`resource_path<class_Resource_property_resource_path>` to ``path``, potentially overriding an existing cache entry for this path. Further attempts to load an overridden resource by path will instead return this resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

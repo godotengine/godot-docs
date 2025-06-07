@@ -294,7 +294,9 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 
 :ref:`String<class_String>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedStringArray_method_get>`
 
-Returns the :ref:`String<class_String>` at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
+Returns the :ref:`String<class_String>` at the given ``index`` in the array. Returns an empty string and prints an error if the access is out of bounds. Negative indices are not supported; they will always consider the value to be out of bounds and return an empty string.
+
+This is similar to using the ``[]`` operator (``array[index]``), except that operator supports negative indices and causes a debugger break if out-of-bounds access is performed.
 
 .. rst-class:: classref-item-separator
 
@@ -512,6 +514,7 @@ Returns ``true`` if contents of both arrays are the same, i.e. they have all equ
 Returns the :ref:`String<class_String>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -305,7 +305,7 @@ Multiplier for particle's collision radius. ``1.0`` corresponds to the size of t
 - |void| **set_draw_order**\ (\ value\: :ref:`DrawOrder<enum_GPUParticles2D_DrawOrder>`\ )
 - :ref:`DrawOrder<enum_GPUParticles2D_DrawOrder>` **get_draw_order**\ (\ )
 
-Particle draw order. Uses :ref:`DrawOrder<enum_GPUParticles2D_DrawOrder>` values.
+Particle draw order.
 
 .. rst-class:: classref-item-separator
 
@@ -775,6 +775,7 @@ Restarts the particle emission cycle, clearing existing particles. To avoid part
 If ``keep_seed`` is ``true``, the current random seed will be preserved. Useful for seeking and playback.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

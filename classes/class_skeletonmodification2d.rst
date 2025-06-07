@@ -224,6 +224,7 @@ Sets whether this modification will call :ref:`_draw_editor_gizmo()<class_Skelet
 Manually allows you to set the setup state of the modification. This function should only rarely be used, as the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` the modification is bound to should handle setting the modification up.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

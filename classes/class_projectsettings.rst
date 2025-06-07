@@ -109,6 +109,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/run/frame_delay_msec<class_ProjectSettings_property_application/run/frame_delay_msec>`                                                                                                   | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`application/run/load_shell_environment<class_ProjectSettings_property_application/run/load_shell_environment>`                                                                                       | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`application/run/low_processor_mode<class_ProjectSettings_property_application/run/low_processor_mode>`                                                                                               | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/run/low_processor_mode_sleep_usec<class_ProjectSettings_property_application/run/low_processor_mode_sleep_usec>`                                                                         | ``6900``                                                                                         |
@@ -1411,8 +1413,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/simulation/allow_sleep<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/allow_sleep>`                                                                       | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/simulation/areas_detect_static_bodies<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/areas_detect_static_bodies>`                                         | ``false``                                                                                        |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor>`                                 | ``0.2``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold>`               | ``0.034906585``                                                                                  |
@@ -2332,6 +2332,20 @@ This setting can be overridden using the ``--frame-delay <ms;>`` command line ar
 
 ----
 
+.. _class_ProjectSettings_property_application/run/load_shell_environment:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **application/run/load_shell_environment** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/run/load_shell_environment>`
+
+If ``true``, loads the default shell and copies environment variables set by the shell startup scripts to the app environment.
+
+\ **Note:** This setting is implemented on macOS for non-sandboxed applications only.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_application/run/low_processor_mode:
 
 .. rst-class:: classref-property
@@ -2480,7 +2494,7 @@ To query the value that is being used at run-time (which may be overridden by co
 
 If ``true``, microphone input will be allowed. This requires appropriate permissions to be set when exporting to Android or iOS.
 
-\ **Note:** If the operating system blocks access to audio input devices (due to the user's privacy settings), audio capture will only return silence. On Windows 10 and later, make sure that apps are allowed to access the microphone in the OS' privacy settings.
+\ **Note:** If the operating system blocks access to audio input devices (due to the user's privacy settings), audio capture will only return silence. On Windows, make sure that apps are allowed to access the microphone in the OS' privacy settings.
 
 .. rst-class:: classref-item-separator
 
@@ -2526,7 +2540,7 @@ Audio output latency may be constrained by the host operating system and audio h
 
 Audio output latency can be overridden using the ``--audio-output-latency <ms>`` command line argument.
 
-\ **Note:** This setting is ignored on Android, and on all versions of Windows prior to Windows 10.
+\ **Note:** This setting is ignored on Android.
 
 .. rst-class:: classref-item-separator
 
@@ -10738,24 +10752,6 @@ If ``true``, :ref:`RigidBody3D<class_RigidBody3D>` nodes are allowed to go to sl
 
 ----
 
-.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/areas_detect_static_bodies:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **physics/jolt_physics_3d/simulation/areas_detect_static_bodies** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/areas_detect_static_bodies>`
-
-If ``true``, :ref:`Area3D<class_Area3D>` nodes are able to detect overlaps with :ref:`StaticBody3D<class_StaticBody3D>` nodes.
-
-\ **Note:** Enabling this setting can come at a heavy CPU and memory cost if you allow many/large :ref:`Area3D<class_Area3D>` to overlap with complex static geometry, such as :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` or :ref:`HeightMapShape3D<class_HeightMapShape3D>`. It is strongly recommended that you set up your collision layers and masks in such a way that only a few small :ref:`Area3D<class_Area3D>` nodes can detect :ref:`StaticBody3D<class_StaticBody3D>` nodes.
-
-\ **Note:** This also applies to overlaps with a :ref:`RigidBody3D<class_RigidBody3D>` frozen with :ref:`RigidBody3D.FREEZE_MODE_STATIC<class_RigidBody3D_constant_FREEZE_MODE_STATIC>`.
-
-\ **Note:** This is not needed to detect overlaps with :ref:`AnimatableBody3D<class_AnimatableBody3D>`, as it is a kinematic body, despite inheriting from :ref:`StaticBody3D<class_StaticBody3D>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor:
 
 .. rst-class:: classref-property
@@ -13746,20 +13742,20 @@ Adds a custom property info to a property. The dictionary must contain:
  .. code-tab:: gdscript
 
     ProjectSettings.set("category/property_name", 0)
-    
+
     var property_info = {
         "name": "category/property_name",
         "type": TYPE_INT,
         "hint": PROPERTY_HINT_ENUM,
         "hint_string": "one,two,three"
     }
-    
+
     ProjectSettings.add_property_info(property_info)
 
  .. code-tab:: csharp
 
     ProjectSettings.Singleton.Set("category/property_name", 0);
-    
+
     var propertyInfo = new Godot.Collections.Dictionary
     {
         {"name", "category/propertyName"},
@@ -13767,7 +13763,7 @@ Adds a custom property info to a property. The dictionary must contain:
         {"hint", (int)PropertyHint.Enum},
         {"hint_string", "one,two,three"},
     };
-    
+
     ProjectSettings.AddPropertyInfo(propertyInfo);
 
 
@@ -13851,6 +13847,8 @@ Returns the value of the setting identified by ``name``. If the setting doesn't 
 
 \ **Note:** This method doesn't take potential feature overrides into account automatically. Use :ref:`get_setting_with_override()<class_ProjectSettings_method_get_setting_with_override>` to handle seamlessly.
 
+See also :ref:`has_setting()<class_ProjectSettings_method_has_setting>` to check whether a setting exists.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -13929,6 +13927,8 @@ Returns the absolute, native OS path corresponding to the localized ``path`` (st
 :ref:`bool<class_bool>` **has_setting**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_ProjectSettings_method_has_setting>`
 
 Returns ``true`` if a configuration value is present.
+
+\ **Note:** In order to be be detected, custom settings have to be either defined with :ref:`set_setting()<class_ProjectSettings_method_set_setting>`, or exist in the ``project.godot`` file. This is especially relevant when using :ref:`set_initial_value()<class_ProjectSettings_method_set_initial_value>`.
 
 .. rst-class:: classref-item-separator
 
@@ -14020,7 +14020,22 @@ Defines if the specified setting is considered internal. An internal setting won
 
 |void| **set_initial_value**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_ProjectSettings_method_set_initial_value>`
 
-Sets the specified setting's initial value. This is the value the setting reverts to.
+Sets the specified setting's initial value. This is the value the setting reverts to. The setting should already exist before calling this method. Note that project settings equal to their default value are not saved, so your code needs to account for that.
+
+::
+
+    extends EditorPlugin
+
+    const SETTING_NAME = "addons/my_setting"
+    const SETTING_DEFAULT = 10.0
+
+    func _enter_tree():
+        if not ProjectSettings.has_setting(SETTING_NAME):
+            ProjectSettings.set_setting(SETTING_NAME, SETTING_DEFAULT)
+
+        ProjectSettings.set_initial_value(SETTING_NAME, SETTING_DEFAULT)
+
+If you have a project setting defined by an :ref:`EditorPlugin<class_EditorPlugin>`, but want to use it in a running project, you will need a similar code at runtime.
 
 .. rst-class:: classref-item-separator
 
@@ -14076,6 +14091,7 @@ Sets the value of a setting.
 This can also be used to erase custom project settings. To do this change the setting value to ``null``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

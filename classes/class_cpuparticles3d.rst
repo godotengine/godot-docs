@@ -880,7 +880,7 @@ Unit vector specifying the particles' emission direction.
 - |void| **set_draw_order**\ (\ value\: :ref:`DrawOrder<enum_CPUParticles3D_DrawOrder>`\ )
 - :ref:`DrawOrder<enum_CPUParticles3D_DrawOrder>` **get_draw_order**\ (\ )
 
-Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles3D_DrawOrder>` values.
+Particle draw order.
 
 .. rst-class:: classref-item-separator
 
@@ -1060,7 +1060,7 @@ The radius of the ring when using the emitter :ref:`EMISSION_SHAPE_RING<class_CP
 - |void| **set_emission_shape**\ (\ value\: :ref:`EmissionShape<enum_CPUParticles3D_EmissionShape>`\ )
 - :ref:`EmissionShape<enum_CPUParticles3D_EmissionShape>` **get_emission_shape**\ (\ )
 
-Particles will be emitted inside this region. See :ref:`EmissionShape<enum_CPUParticles3D_EmissionShape>` for possible values.
+Particles will be emitted inside this region.
 
 .. rst-class:: classref-item-separator
 
@@ -1921,7 +1921,7 @@ Returns the minimum value range for the given parameter.
 
 :ref:`bool<class_bool>` **get_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles3D_ParticleFlags>`\ ) |const| :ref:`🔗<class_CPUParticles3D_method_get_particle_flag>`
 
-Returns the enabled state of the given particle flag (see :ref:`ParticleFlags<enum_CPUParticles3D_ParticleFlags>` for options).
+Returns the enabled state of the given particle flag.
 
 .. rst-class:: classref-item-separator
 
@@ -1997,9 +1997,10 @@ Sets the minimum value for the given parameter.
 
 |void| **set_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles3D_ParticleFlags>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CPUParticles3D_method_set_particle_flag>`
 
-Enables or disables the given particle flag (see :ref:`ParticleFlags<enum_CPUParticles3D_ParticleFlags>` for options).
+Enables or disables the given particle flag.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

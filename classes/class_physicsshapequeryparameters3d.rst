@@ -12,14 +12,14 @@ PhysicsShapeQueryParameters3D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Provides parameters for :ref:`PhysicsDirectSpaceState3D.intersect_shape()<class_PhysicsDirectSpaceState3D_method_intersect_shape>`.
+Provides parameters for :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`'s methods.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-By changing various properties of this object, such as the shape, you can configure the parameters for :ref:`PhysicsDirectSpaceState3D.intersect_shape()<class_PhysicsDirectSpaceState3D_method_intersect_shape>`.
+By changing various properties of this object, such as the shape, you can configure the parameters for :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`'s methods.
 
 .. rst-class:: classref-reftable-group
 
@@ -200,12 +200,12 @@ The queried shape's :ref:`RID<class_RID>` that will be used for collision/inters
     var shape_rid = PhysicsServer3D.shape_create(PhysicsServer3D.SHAPE_SPHERE)
     var radius = 2.0
     PhysicsServer3D.shape_set_data(shape_rid, radius)
-    
+
     var params = PhysicsShapeQueryParameters3D.new()
     params.shape_rid = shape_rid
-    
+
     # Execute physics queries here...
-    
+
     # Release the shape when done with physics queries.
     PhysicsServer3D.free_rid(shape_rid)
 
@@ -214,12 +214,12 @@ The queried shape's :ref:`RID<class_RID>` that will be used for collision/inters
     RID shapeRid = PhysicsServer3D.ShapeCreate(PhysicsServer3D.ShapeType.Sphere);
     float radius = 2.0f;
     PhysicsServer3D.ShapeSetData(shapeRid, radius);
-    
+
     var params = new PhysicsShapeQueryParameters3D();
     params.ShapeRid = shapeRid;
-    
+
     // Execute physics queries here...
-    
+
     // Release the shape when done with physics queries.
     PhysicsServer3D.FreeRid(shapeRid);
 
@@ -243,6 +243,7 @@ The queried shape's :ref:`RID<class_RID>` that will be used for collision/inters
 The queried shape's transform matrix.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

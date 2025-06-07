@@ -236,7 +236,7 @@ If set to ``true`` text will display invalid characters.
 - |void| **set_text_overrun_behavior**\ (\ value\: :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ )
 - :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior**\ (\ )
 
-Sets the clipping behavior when the text exceeds the text line's set width. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
+The clipping behavior when the text exceeds the text line's set width.
 
 .. rst-class:: classref-item-separator
 
@@ -491,6 +491,7 @@ Override ranges should cover full source text without overlaps. BiDi algorithm w
 Aligns text to the given tab-stops.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

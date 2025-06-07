@@ -87,6 +87,7 @@ The height of the light. Used with 2D normal mapping. Ranges from 0 (parallel to
 The maximum distance from the camera center objects can be before their shadows are culled (in pixels). Decreasing this value can prevent objects located outside the camera from casting shadows (while also improving performance). :ref:`Camera2D.zoom<class_Camera2D_property_zoom>` is not taken into account by :ref:`max_distance<class_DirectionalLight2D_property_max_distance>`, which means that at higher zoom values, shadows will appear to fade out sooner when zooming onto a given point.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

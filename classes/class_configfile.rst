@@ -39,13 +39,13 @@ The following example shows how to create a simple **ConfigFile** and save it on
 
     # Create new ConfigFile object.
     var config = ConfigFile.new()
-    
+
     # Store some values.
     config.set_value("Player1", "player_name", "Steve")
     config.set_value("Player1", "best_score", 10)
     config.set_value("Player2", "player_name", "V3geta")
     config.set_value("Player2", "best_score", 9001)
-    
+
     # Save it to a file (overwrite if already exists).
     config.save("user://scores.cfg")
 
@@ -53,13 +53,13 @@ The following example shows how to create a simple **ConfigFile** and save it on
 
     // Create new ConfigFile object.
     var config = new ConfigFile();
-    
+
     // Store some values.
     config.SetValue("Player1", "player_name", "Steve");
     config.SetValue("Player1", "best_score", 10);
     config.SetValue("Player2", "player_name", "V3geta");
     config.SetValue("Player2", "best_score", 9001);
-    
+
     // Save it to a file (overwrite if already exists).
     config.Save("user://scores.cfg");
 
@@ -74,14 +74,14 @@ This example shows how the above file could be loaded:
 
     var score_data = {}
     var config = ConfigFile.new()
-    
+
     # Load data from a file.
     var err = config.load("user://scores.cfg")
-    
+
     # If the file didn't load, ignore it.
     if err != OK:
         return
-    
+
     # Iterate over all sections.
     for player in config.get_sections():
         # Fetch the data for each section.
@@ -93,16 +93,16 @@ This example shows how the above file could be loaded:
 
     var score_data = new Godot.Collections.Dictionary();
     var config = new ConfigFile();
-    
+
     // Load data from a file.
     Error err = config.Load("user://scores.cfg");
-    
+
     // If the file didn't load, ignore it.
     if (err != Error.Ok)
     {
         return;
     }
-    
+
     // Iterate over all sections.
     foreach (String player in config.GetSections())
     {
@@ -390,6 +390,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or on
 Assigns a value to the specified key of the specified section. If either the section or the key do not exist, they are created. Passing a ``null`` value deletes the specified key if it exists, and deletes the section if it ends up empty once the key has been removed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

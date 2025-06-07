@@ -123,6 +123,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/2d/guides_color<class_EditorSettings_property_editors/2d/guides_color>`                                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editors/2d/ruler_width<class_EditorSettings_property_editors/2d/ruler_width>`                                                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/2d/smart_snapping_line_color<class_EditorSettings_property_editors/2d/smart_snapping_line_color>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/2d/use_integer_zoom_by_default<class_EditorSettings_property_editors/2d/use_integer_zoom_by_default>`                                                                                               |
@@ -605,7 +607,7 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/enable_pan_and_scale_gestures<class_EditorSettings_property_interface/touchscreen/enable_pan_and_scale_gestures>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/increase_scrollbar_touch_area<class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area>`                                                                     |
+   | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/enable_touch_optimizations<class_EditorSettings_property_interface/touchscreen/enable_touch_optimizations>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/touchscreen/scale_gizmo_handles<class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1370,6 +1372,18 @@ The grid color to use in the 2D editor.
 :ref:`Color<class_Color>` **editors/2d/guides_color** :ref:`🔗<class_EditorSettings_property_editors/2d/guides_color>`
 
 The guides color to use in the 2D editor. Guides can be created by dragging the mouse cursor from the rulers.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/2d/ruler_width:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/2d/ruler_width** :ref:`🔗<class_EditorSettings_property_editors/2d/ruler_width>`
+
+The thickness of the coordinate ruler in the 2D editor. Increasing this will also increase the size of the ruler font, improving readability when using a lower editor scale. The editor may force a minimum size to keep the ruler numbers legible.
 
 .. rst-class:: classref-item-separator
 
@@ -3688,6 +3702,8 @@ The amount of sleeping between frames when the low-processor usage mode is enabl
 
 The font to use for the editor interface. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
 
+\ **Note:** If the provided font is variable, a weight of 400 (normal) will be used.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3699,6 +3715,8 @@ The font to use for the editor interface. Must be a resource of a :ref:`Font<cla
 :ref:`String<class_String>` **interface/editor/main_font_bold** :ref:`🔗<class_EditorSettings_property_interface/editor/main_font_bold>`
 
 The font to use for bold text in the editor interface. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
+
+\ **Note:** If the provided font is variable, a weight of 700 (bold) will be used.
 
 .. rst-class:: classref-item-separator
 
@@ -4492,13 +4510,13 @@ If ``true``, enable two finger pan and scale gestures on touchscreen devices.
 
 ----
 
-.. _class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area:
+.. _class_EditorSettings_property_interface/touchscreen/enable_touch_optimizations:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/touchscreen/increase_scrollbar_touch_area** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area>`
+:ref:`bool<class_bool>` **interface/touchscreen/enable_touch_optimizations** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/enable_touch_optimizations>`
 
-If ``true``, increases the scrollbar touch area to improve usability on touchscreen devices.
+If ``true``, increases the scrollbar touch area and enables a larger dragger for split containers to improve usability on touchscreen devices
 
 \ **Note:** Defaults to ``true`` on touchscreen devices.
 
@@ -6310,21 +6328,21 @@ Adds a custom property info to a property. The dictionary must contain:
 
     var settings = EditorInterface.get_editor_settings()
     settings.set("category/property_name", 0)
-    
+
     var property_info = {
         "name": "category/property_name",
         "type": TYPE_INT,
         "hint": PROPERTY_HINT_ENUM,
         "hint_string": "one,two,three"
     }
-    
+
     settings.add_property_info(property_info)
 
  .. code-tab:: csharp
 
     var settings = GetEditorInterface().GetEditorSettings();
     settings.Set("category/property_name", 0);
-    
+
     var propertyInfo = new Godot.Collections.Dictionary
     {
         {"name", "category/propertyName"},
@@ -6332,7 +6350,7 @@ Adds a custom property info to a property. The dictionary must contain:
         {"hint", PropertyHint.Enum},
         {"hint_string", "one,two,three"}
     };
-    
+
     settings.AddPropertyInfo(propertyInfo);
 
 
@@ -6518,6 +6536,7 @@ Sets the list of recently visited folders in the file dialog for this project.
 Sets the ``value`` of the setting specified by ``name``. This is equivalent to using :ref:`Object.set()<class_Object_method_set>` on the EditorSettings instance.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

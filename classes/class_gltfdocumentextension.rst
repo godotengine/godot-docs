@@ -424,6 +424,7 @@ Part of the export process. This method is run after :ref:`_save_image_at_path()
 This method can be used to set up the extensions for the texture JSON by editing ``texture_json``. The extension must also be added as used extension with :ref:`GLTFState.add_used_extension()<class_GLTFState_method_add_used_extension>`, be sure to set ``required`` to ``true`` if you are not providing a fallback.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

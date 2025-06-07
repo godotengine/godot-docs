@@ -28,7 +28,7 @@ The HMACContext class is useful for advanced HMAC use cases, such as streaming t
 
     extends Node
     var ctx = HMACContext.new()
-    
+
     func _ready():
         var key = "supersecret".to_utf8_buffer()
         var err = ctx.start(HashingContext.HASH_SHA256, key)
@@ -41,17 +41,16 @@ The HMACContext class is useful for advanced HMAC use cases, such as streaming t
         assert(err == OK)
         var hmac = ctx.finish()
         print(hmac.hex_encode())
-    
 
  .. code-tab:: csharp
 
     using Godot;
     using System.Diagnostics;
-    
+
     public partial class MyNode : Node
     {
         private HmacContext _ctx = new HmacContext();
-    
+
         public override void _Ready()
         {
             byte[] key = "supersecret".ToUtf8Buffer();
@@ -128,6 +127,7 @@ Initializes the HMACContext. This method cannot be called again on the same HMAC
 Updates the message to be HMACed. This can be called multiple times before :ref:`finish()<class_HMACContext_method_finish>` is called to append ``data`` to the message, but cannot be called until :ref:`start()<class_HMACContext_method_start>` has been called.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

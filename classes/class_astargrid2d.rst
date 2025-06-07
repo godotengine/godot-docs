@@ -48,6 +48,13 @@ To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_
 
 To remove a point from the pathfinding grid, it must be set as "solid" with :ref:`set_point_solid()<class_AStarGrid2D_method_set_point_solid>`.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Grid-based Navigation with AStarGrid2D Demo <https://godotengine.org/asset-library/asset/2723>`__
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -692,6 +699,7 @@ Updates the internal state of the grid according to the parameters to prepare it
 \ **Note:** All point data (solidity and weight scale) will be cleared.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

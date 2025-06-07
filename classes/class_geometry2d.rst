@@ -421,7 +421,7 @@ Returns the point of intersection between the two lines (``from_a``, ``dir_a``) 
     var from_a = Vector2.ZERO
     var dir_a = Vector2.RIGHT
     var from_b = Vector2.DOWN
-    
+
     # Returns Vector2(1, 0)
     Geometry2D.line_intersects_line(from_a, dir_a, from_b, Vector2(1, -1))
     # Returns Vector2(-1, 0)
@@ -434,7 +434,7 @@ Returns the point of intersection between the two lines (``from_a``, ``dir_a``) 
     var fromA = Vector2.Zero;
     var dirA = Vector2.Right;
     var fromB = Vector2.Down;
-    
+
     // Returns new Vector2(1, 0)
     Geometry2D.LineIntersectsLine(fromA, dirA, fromB, new Vector2(1, -1));
     // Returns new Vector2(-1, 0)
@@ -482,7 +482,7 @@ The operation may result in an outer polygon (boundary) and multiple inner polyg
 
 Inflates or deflates ``polygon`` by ``delta`` units (pixels). If ``delta`` is positive, makes the polygon grow outward. If ``delta`` is negative, shrinks the polygon inward. Returns an array of polygons because inflating/deflating may result in multiple discrete polygons. Returns an empty array if ``delta`` is negative and the absolute value of it approximately exceeds the minimum bounding rectangle dimensions of the polygon.
 
-Each polygon's vertices will be rounded as determined by ``join_type``, see :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>`.
+Each polygon's vertices will be rounded as determined by ``join_type``.
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise()<class_Geometry2D_method_is_polygon_clockwise>`.
 
@@ -519,9 +519,9 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
 Inflates or deflates ``polyline`` by ``delta`` units (pixels), producing polygons. If ``delta`` is positive, makes the polyline grow outward. Returns an array of polygons because inflating/deflating may result in multiple discrete polygons. If ``delta`` is negative, returns an empty array.
 
-Each polygon's vertices will be rounded as determined by ``join_type``, see :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>`.
+Each polygon's vertices will be rounded as determined by ``join_type``.
 
-Each polygon's endpoints will be rounded as determined by ``end_type``, see :ref:`PolyEndType<enum_Geometry2D_PolyEndType>`.
+Each polygon's endpoints will be rounded as determined by ``end_type``.
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise()<class_Geometry2D_method_is_polygon_clockwise>`.
 
@@ -586,6 +586,7 @@ Triangulates the area specified by discrete set of ``points`` such that no point
 Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PackedInt32Array<class_PackedInt32Array>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). Output triangles will always be counter clockwise, and the contour will be flipped if it's clockwise. If the triangulation did not succeed, an empty :ref:`PackedInt32Array<class_PackedInt32Array>` is returned.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

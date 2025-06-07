@@ -137,7 +137,7 @@ Disconnects this peer, terminating the DTLS session.
 
 :ref:`Status<enum_PacketPeerDTLS_Status>` **get_status**\ (\ ) |const| :ref:`🔗<class_PacketPeerDTLS_method_get_status>`
 
-Returns the status of the connection. See :ref:`Status<enum_PacketPeerDTLS_Status>` for values.
+Returns the status of the connection.
 
 .. rst-class:: classref-item-separator
 
@@ -152,6 +152,7 @@ Returns the status of the connection. See :ref:`Status<enum_PacketPeerDTLS_Statu
 Poll the connection to check for incoming packets. Call this frequently to update the status and keep the connection working.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

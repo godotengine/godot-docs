@@ -403,7 +403,7 @@ Returns the remote port of this peer.
 
 :ref:`PeerState<enum_ENetPacketPeer_PeerState>` **get_state**\ (\ ) |const| :ref:`🔗<class_ENetPacketPeer_method_get_state>`
 
-Returns the current peer state. See :ref:`PeerState<enum_ENetPacketPeer_PeerState>`.
+Returns the current peer state.
 
 .. rst-class:: classref-item-separator
 
@@ -415,7 +415,7 @@ Returns the current peer state. See :ref:`PeerState<enum_ENetPacketPeer_PeerStat
 
 :ref:`float<class_float>` **get_statistic**\ (\ statistic\: :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>`\ ) :ref:`🔗<class_ENetPacketPeer_method_get_statistic>`
 
-Returns the requested ``statistic`` for this peer. See :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>`.
+Returns the requested ``statistic`` for this peer.
 
 .. rst-class:: classref-item-separator
 
@@ -548,6 +548,7 @@ When the throttle has a value of ``0``, all unreliable packets are dropped by EN
 Intermediate values for the throttle represent intermediate probabilities between 0% and 100% of unreliable packets being sent. The bandwidth limits of the local and foreign hosts are taken into account to determine a sensible limit for the throttle probability above which it should not raise even in the best of conditions.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

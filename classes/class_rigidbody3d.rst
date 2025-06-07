@@ -345,7 +345,7 @@ See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_
 - |void| **set_angular_damp_mode**\ (\ value\: :ref:`DampMode<enum_RigidBody3D_DampMode>`\ )
 - :ref:`DampMode<enum_RigidBody3D_DampMode>` **get_angular_damp_mode**\ (\ )
 
-Defines how :ref:`angular_damp<class_RigidBody3D_property_angular_damp>` is applied. See :ref:`DampMode<enum_RigidBody3D_DampMode>` for possible values.
+Defines how :ref:`angular_damp<class_RigidBody3D_property_angular_damp>` is applied.
 
 .. rst-class:: classref-item-separator
 
@@ -415,7 +415,7 @@ When :ref:`center_of_mass_mode<class_RigidBody3D_property_center_of_mass_mode>` 
 - |void| **set_center_of_mass_mode**\ (\ value\: :ref:`CenterOfMassMode<enum_RigidBody3D_CenterOfMassMode>`\ )
 - :ref:`CenterOfMassMode<enum_RigidBody3D_CenterOfMassMode>` **get_center_of_mass_mode**\ (\ )
 
-Defines the way the body's center of mass is set. See :ref:`CenterOfMassMode<enum_RigidBody3D_CenterOfMassMode>` for possible values.
+Defines the way the body's center of mass is set.
 
 .. rst-class:: classref-item-separator
 
@@ -548,7 +548,7 @@ For a body that is always frozen, use :ref:`StaticBody3D<class_StaticBody3D>` or
 - |void| **set_freeze_mode**\ (\ value\: :ref:`FreezeMode<enum_RigidBody3D_FreezeMode>`\ )
 - :ref:`FreezeMode<enum_RigidBody3D_FreezeMode>` **get_freeze_mode**\ (\ )
 
-The body's freeze mode. Can be used to set the body's behavior when :ref:`freeze<class_RigidBody3D_property_freeze>` is enabled. See :ref:`FreezeMode<enum_RigidBody3D_FreezeMode>` for possible values.
+The body's freeze mode. Can be used to set the body's behavior when :ref:`freeze<class_RigidBody3D_property_freeze>` is enabled.
 
 For a body that is always frozen, use :ref:`StaticBody3D<class_StaticBody3D>` or :ref:`AnimatableBody3D<class_AnimatableBody3D>` instead.
 
@@ -596,19 +596,19 @@ If set to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, inertia is automatic
  .. code-tab:: gdscript
 
     @onready var ball = $Ball
-    
+
     func get_ball_inertia():
         return PhysicsServer3D.body_get_direct_state(ball.get_rid()).inverse_inertia.inverse()
 
  .. code-tab:: csharp
 
     private RigidBody3D _ball;
-    
+
     public override void _Ready()
     {
         _ball = GetNode<RigidBody3D>("Ball");
     }
-    
+
     private Vector3 GetBallInertia()
     {
         return PhysicsServer3D.BodyGetDirectState(_ball.GetRid()).InverseInertia.Inverse();
@@ -650,7 +650,7 @@ See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_p
 - |void| **set_linear_damp_mode**\ (\ value\: :ref:`DampMode<enum_RigidBody3D_DampMode>`\ )
 - :ref:`DampMode<enum_RigidBody3D_DampMode>` **get_linear_damp_mode**\ (\ )
 
-Defines how :ref:`linear_damp<class_RigidBody3D_property_linear_damp>` is applied. See :ref:`DampMode<enum_RigidBody3D_DampMode>` for possible values.
+Defines how :ref:`linear_damp<class_RigidBody3D_property_linear_damp>` is applied.
 
 .. rst-class:: classref-item-separator
 
@@ -958,6 +958,7 @@ Returns the inverse inertia tensor basis. This is used to calculate the angular 
 Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

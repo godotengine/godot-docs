@@ -42,7 +42,7 @@ Likewise, :ref:`float<class_float>`\ s can be automatically converted into **int
     // We use long below, because GDScript's int is 64-bit while C#'s int is 32-bit.
     long maxLong = 9223372036854775807; // Biggest value a long can store
     maxLong++; // maxLong is now -9223372036854775808, because it wrapped around.
-    
+
     // Alternatively with C#'s 32-bit int type, which has a smaller maximum value.
     int maxInt = 2147483647; // Biggest value an int can store
     maxInt++; // maxInt is now -2147483648, because it wrapped around
@@ -777,6 +777,7 @@ Performs the bitwise ``NOT`` operation on the **int**. Due to `2's complement <h
     print(~(-7)) # Prints 6
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

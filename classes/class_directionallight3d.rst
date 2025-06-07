@@ -205,7 +205,7 @@ The maximum distance for shadow splits. Increasing this value will make directio
 - |void| **set_shadow_mode**\ (\ value\: :ref:`ShadowMode<enum_DirectionalLight3D_ShadowMode>`\ )
 - :ref:`ShadowMode<enum_DirectionalLight3D_ShadowMode>` **get_shadow_mode**\ (\ )
 
-The light's shadow rendering algorithm. See :ref:`ShadowMode<enum_DirectionalLight3D_ShadowMode>`.
+The light's shadow rendering algorithm.
 
 .. rst-class:: classref-item-separator
 
@@ -290,9 +290,10 @@ The distance from shadow split 2 to split 3. Relative to :ref:`directional_shado
 - |void| **set_sky_mode**\ (\ value\: :ref:`SkyMode<enum_DirectionalLight3D_SkyMode>`\ )
 - :ref:`SkyMode<enum_DirectionalLight3D_SkyMode>` **get_sky_mode**\ (\ )
 
-Set whether this **DirectionalLight3D** is visible in the sky, in the scene, or both in the sky and in the scene. See :ref:`SkyMode<enum_DirectionalLight3D_SkyMode>` for options.
+Whether this **DirectionalLight3D** is visible in the sky, in the scene, or both in the sky and in the scene.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

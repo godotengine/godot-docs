@@ -343,7 +343,7 @@ Combined with :ref:`_set()<class_Object_private_method__set>` and :ref:`_get_pro
         if property == "fake_property":
             print("Getting my property!")
             return 4
-    
+
     func _get_property_list():
         return [
             { "name": "fake_property", "type": TYPE_INT }
@@ -360,7 +360,7 @@ Combined with :ref:`_set()<class_Object_private_method__set>` and :ref:`_get_pro
         }
         return default;
     }
-    
+
     public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetPropertyList()
     {
         return
@@ -400,18 +400,18 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
 
     @tool
     extends Node
-    
+
     @export var number_count = 3:
         set(nc):
             number_count = nc
             numbers.resize(number_count)
             notify_property_list_changed()
-    
+
     var numbers = PackedInt32Array([0, 0, 0])
-    
+
     func _get_property_list():
         var properties = []
-    
+
         for i in range(number_count):
             properties.append({
                 "name": "number_%d" % i,
@@ -419,14 +419,14 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
                 "hint": PROPERTY_HINT_ENUM,
                 "hint_string": "ZERO,ONE,TWO,THREE,FOUR,FIVE",
             })
-    
+
         return properties
-    
+
     func _get(property):
         if property.begins_with("number_"):
             var index = property.get_slice("_", 1).to_int()
             return numbers[index]
-    
+
     func _set(property, value):
         if property.begins_with("number_"):
             var index = property.get_slice("_", 1).to_int()
@@ -440,7 +440,7 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
     public partial class MyNode : Node
     {
         private int _numberCount;
-    
+
         [Export]
         public int NumberCount
         {
@@ -452,13 +452,13 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
                 NotifyPropertyListChanged();
             }
         }
-    
+
         private Godot.Collections.Array<int> _numbers = [];
-    
+
         public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetPropertyList()
         {
             Godot.Collections.Array<Godot.Collections.Dictionary> properties = [];
-    
+
             for (int i = 0; i < _numberCount; i++)
             {
                 properties.Add(new Godot.Collections.Dictionary()
@@ -469,10 +469,10 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
                     { "hint_string", "Zero,One,Two,Three,Four,Five" },
                 });
             }
-    
+
             return properties;
         }
-    
+
         public override Variant _Get(StringName property)
         {
             string propertyName = property.ToString();
@@ -483,7 +483,7 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
             }
             return default;
         }
-    
+
         public override bool _Set(StringName property, Variant value)
         {
             string propertyName = property.ToString();
@@ -548,23 +548,23 @@ Initializes the iterator. ``iter`` stores the iteration state. Since GDScript do
     class MyRange:
         var _from
         var _to
-    
+
         func _init(from, to):
             assert(from <= to)
             _from = from
             _to = to
-    
+
         func _iter_init(iter):
             iter[0] = _from
             return iter[0] < _to
-    
+
         func _iter_next(iter):
             iter[0] += 1
             return iter[0] < _to
-    
+
         func _iter_get(iter):
             return iter
-    
+
     func _ready():
         var my_range = MyRange.new(2, 5)
         for x in my_range:
@@ -667,14 +667,14 @@ Combined with :ref:`_get()<class_Object_private_method__get>` and :ref:`_get_pro
  .. code-tab:: gdscript
 
     var internal_data = {}
-    
+
     func _set(property, value):
         if property == "fake_property":
             # Storing the value in the fake property.
             internal_data["fake_property"] = value
             return true
         return false
-    
+
     func _get_property_list():
         return [
             { "name": "fake_property", "type": TYPE_INT }
@@ -683,7 +683,7 @@ Combined with :ref:`_get()<class_Object_private_method__get>` and :ref:`_get_pro
  .. code-tab:: csharp
 
     private Godot.Collections.Dictionary _internalData = new Godot.Collections.Dictionary();
-    
+
     public override bool _Set(StringName property, Variant value)
     {
         if (property == "FakeProperty")
@@ -692,10 +692,10 @@ Combined with :ref:`_get()<class_Object_private_method__get>` and :ref:`_get_pro
             _internalData["FakeProperty"] = value;
             return true;
         }
-    
+
         return false;
     }
-    
+
     public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetPropertyList()
     {
         return
@@ -726,7 +726,7 @@ Override this method to customize the return value of :ref:`to_string()<class_Ob
 
     func _to_string():
         return "Welcome to Godot 4!"
-    
+
     func _init():
         print(self)       # Prints "Welcome to Godot 4!"
         var a = str(self) # a is "Welcome to Godot 4!"
@@ -750,13 +750,13 @@ Override this method to customize existing properties. Every property info goes 
 
     @tool
     extends Node
-    
+
     @export var is_number_editable: bool:
         set(value):
             is_number_editable = value
             notify_property_list_changed()
     @export var number: int
-    
+
     func _validate_property(property: Dictionary):
         if property.name == "number" and not is_number_editable:
             property.usage |= PROPERTY_USAGE_READ_ONLY
@@ -767,7 +767,7 @@ Override this method to customize existing properties. Every property info goes 
     public partial class MyNode : Node
     {
         private bool _isNumberEditable;
-    
+
         [Export]
         public bool IsNumberEditable
         {
@@ -778,10 +778,10 @@ Override this method to customize existing properties. Every property info goes 
                 NotifyPropertyListChanged();
             }
         }
-    
+
         [Export]
         public int Number { get; set; }
-    
+
         public override void _ValidateProperty(Godot.Collections.Dictionary property)
         {
             if (property["name"].AsStringName() == PropertyName.Number && !IsNumberEditable)
@@ -1035,7 +1035,7 @@ Returns :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVA
 
 |void| **free**\ (\ ) :ref:`🔗<class_Object_method_free>`
 
-Deletes the object from memory. Pre-existing references to the object become invalid, and any attempt to access them will result in a run-time error. Checking the references with :ref:`@GlobalScope.is_instance_valid()<class_@GlobalScope_method_is_instance_valid>` will return ``false``.
+Deletes the object from memory. Pre-existing references to the object become invalid, and any attempt to access them will result in a runtime error. Checking the references with :ref:`@GlobalScope.is_instance_valid()<class_@GlobalScope_method_is_instance_valid>` will return ``false``. This is equivalent to the ``memdelete`` function in GDExtension C++.
 
 .. rst-class:: classref-item-separator
 
@@ -1463,10 +1463,10 @@ If ``reversed`` is ``true``, the call order is reversed.
 
     var player = Node2D.new()
     player.set_script(load("res://player.gd"))
-    
+
     player.notification(NOTIFICATION_ENTER_TREE)
     # The call order is Object -> Node -> Node2D -> player.gd.
-    
+
     player.notification(NOTIFICATION_ENTER_TREE, true)
     # The call order is player.gd -> Node2D -> Node -> Object.
 
@@ -1474,10 +1474,10 @@ If ``reversed`` is ``true``, the call order is reversed.
 
     var player = new Node2D();
     player.SetScript(GD.Load("res://player.gd"));
-    
+
     player.Notification(NotificationEnterTree);
     // The call order is GodotObject -> Node -> Node2D -> player.gd.
-    
+
     player.Notification(NotificationEnterTree, true);
     // The call order is player.gd -> Node2D -> Node -> GodotObject.
 
@@ -1613,11 +1613,11 @@ Assigns ``value`` to the given ``property``, at the end of the current frame. Th
 
     var node = Node2D.new()
     add_child(node)
-    
+
     node.rotation = 1.5
     node.set_deferred("rotation", 3.0)
     print(node.rotation) # Prints 1.5
-    
+
     await get_tree().process_frame
     print(node.rotation) # Prints 3.0
 
@@ -1627,7 +1627,7 @@ Assigns ``value`` to the given ``property``, at the end of the current frame. Th
     node.Rotation = 1.5f;
     node.SetDeferred(Node2D.PropertyName.Rotation, 3f);
     GD.Print(node.Rotation); // Prints 1.5
-    
+
     await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
     GD.Print(node.Rotation); // Prints 3.0
 
@@ -1777,6 +1777,7 @@ For detailed examples, see :doc:`Localization using gettext <../tutorials/i18n/l
 \ **Note:** This method can't be used without an **Object** instance, as it requires the :ref:`can_translate_messages()<class_Object_method_can_translate_messages>` method. To translate strings in a static context, use :ref:`TranslationServer.translate_plural()<class_TranslationServer_method_translate_plural>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

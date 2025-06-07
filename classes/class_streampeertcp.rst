@@ -187,7 +187,7 @@ Returns the local port to which this peer is bound.
 
 :ref:`Status<enum_StreamPeerTCP_Status>` **get_status**\ (\ ) |const| :ref:`🔗<class_StreamPeerTCP_method_get_status>`
 
-Returns the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status>`.
+Returns the status of the connection.
 
 .. rst-class:: classref-item-separator
 
@@ -216,6 +216,7 @@ If ``enabled`` is ``true``, packets will be sent immediately. If ``enabled`` is 
 \ **Note:** It's recommended to leave this disabled for applications that send large packets or need to transfer a lot of data, as enabling this can decrease the total available bandwidth.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

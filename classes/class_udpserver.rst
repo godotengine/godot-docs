@@ -33,13 +33,13 @@ Below a small example of how it can be used:
     # server_node.gd
     class_name ServerNode
     extends Node
-    
+
     var server = UDPServer.new()
     var peers = []
-    
+
     func _ready():
         server.listen(4242)
-    
+
     func _process(delta):
         server.poll() # Important!
         if server.is_connection_available():
@@ -51,7 +51,7 @@ Below a small example of how it can be used:
             peer.put_packet(packet)
             # Keep a reference so we can keep contacting the remote peer.
             peers.append(peer)
-    
+
         for i in range(0, peers.size()):
             pass # Do something with the connected peers.
 
@@ -60,17 +60,17 @@ Below a small example of how it can be used:
     // ServerNode.cs
     using Godot;
     using System.Collections.Generic;
-    
+
     public partial class ServerNode : Node
     {
         private UdpServer _server = new UdpServer();
         private List<PacketPeerUdp> _peers  = new List<PacketPeerUdp>();
-    
+
         public override void _Ready()
         {
             _server.Listen(4242);
         }
-    
+
         public override void _Process(double delta)
         {
             _server.Poll(); // Important!
@@ -102,13 +102,13 @@ Below a small example of how it can be used:
     # client_node.gd
     class_name ClientNode
     extends Node
-    
+
     var udp = PacketPeerUDP.new()
     var connected = false
-    
+
     func _ready():
         udp.connect_to_host("127.0.0.1", 4242)
-    
+
     func _process(delta):
         if !connected:
             # Try to contact server
@@ -121,17 +121,17 @@ Below a small example of how it can be used:
 
     // ClientNode.cs
     using Godot;
-    
+
     public partial class ClientNode : Node
     {
         private PacketPeerUdp _udp = new PacketPeerUdp();
         private bool _connected = false;
-    
+
         public override void _Ready()
         {
             _udp.ConnectToHost("127.0.0.1", 4242);
         }
-    
+
         public override void _Process(double delta)
         {
             if (!_connected)
@@ -297,6 +297,7 @@ Stops the server, closing the UDP socket if open. Will close all connected :ref:
 Returns the first pending connection (connected to the appropriate address/port). Will return ``null`` if no new connection is available. See also :ref:`is_connection_available()<class_UDPServer_method_is_connection_available>`, :ref:`PacketPeerUDP.connect_to_host()<class_PacketPeerUDP_method_connect_to_host>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

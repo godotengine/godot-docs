@@ -31,13 +31,13 @@ Here's an example on how to add an action:
  .. code-tab:: gdscript
 
     var undo_redo = UndoRedo.new()
-    
+
     func do_something():
         pass # Put your code here.
-    
+
     func undo_something():
         pass # Put here the code that reverts what's done by "do_something()".
-    
+
     func _on_my_button_pressed():
         var node = get_node("MyNode2D")
         undo_redo.create_action("Move the node")
@@ -50,22 +50,22 @@ Here's an example on how to add an action:
  .. code-tab:: csharp
 
     private UndoRedo _undoRedo;
-    
+
     public override void _Ready()
     {
         _undoRedo = new UndoRedo();
     }
-    
+
     public void DoSomething()
     {
         // Put your code here.
     }
-    
+
     public void UndoSomething()
     {
         // Put here the code that reverts what's done by "DoSomething()".
     }
-    
+
     private void OnMyButtonPressed()
     {
         var node = GetNode<Node2D>("MyNode2D");
@@ -93,29 +93,29 @@ If you are registering multiple properties/method which depend on one another, b
  .. code-tab:: gdscript
 
     undo_redo.create_action("Add object")
-    
+
     # DO
     undo_redo.add_do_method(_create_object)
     undo_redo.add_do_method(_add_object_to_singleton)
-    
+
     # UNDO
     undo_redo.add_undo_method(_remove_object_from_singleton)
     undo_redo.add_undo_method(_destroy_that_object)
-    
+
     undo_redo.commit_action()
 
  .. code-tab:: csharp
 
     _undo_redo.CreateAction("Add object");
-    
+
     // DO
     _undo_redo.AddDoMethod(new Callable(this, MethodName.CreateObject));
     _undo_redo.AddDoMethod(new Callable(this, MethodName.AddObjectToSingleton));
-    
+
     // UNDO
     _undo_redo.AddUndoMethod(new Callable(this, MethodName.RemoveObjectFromSingleton));
     _undo_redo.AddUndoMethod(new Callable(this, MethodName.DestroyThatObject));
-    
+
     _undo_redo.CommitAction();
 
 
@@ -399,7 +399,7 @@ Commit the action. If ``execute`` is ``true`` (which it is by default), all "do"
 
 Create a new action. After this is called, do all your calls to :ref:`add_do_method()<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method()<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property()<class_UndoRedo_method_add_do_property>`, and :ref:`add_undo_property()<class_UndoRedo_method_add_undo_property>`, then commit the action with :ref:`commit_action()<class_UndoRedo_method_commit_action>`.
 
-The way actions are merged is dictated by ``merge_mode``. See :ref:`MergeMode<enum_UndoRedo_MergeMode>` for details.
+The way actions are merged is dictated by ``merge_mode``.
 
 The way undo operation are ordered in actions is dictated by ``backward_undo_ops``. When ``backward_undo_ops`` is ``false`` undo option are ordered in the same order they were added. Which means the first operation to be added will be the first to be undone.
 
@@ -550,6 +550,7 @@ Marks the next "do" and "undo" operations to be processed even if the action get
 Undo the last action.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

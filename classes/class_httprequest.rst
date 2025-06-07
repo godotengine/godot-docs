@@ -39,12 +39,12 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         var http_request = HTTPRequest.new()
         add_child(http_request)
         http_request.request_completed.connect(self._http_request_completed)
-    
+
         # Perform a GET request. The URL below returns JSON as of writing.
         var error = http_request.request("https://httpbin.org/get")
         if error != OK:
             push_error("An error occurred in the HTTP request.")
-    
+
         # Perform a POST request. The URL below returns JSON as of writing.
         # Note: Don't make simultaneous requests using a single HTTPRequest node.
         # The snippet below is provided for reference only.
@@ -52,13 +52,13 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         error = http_request.request("https://httpbin.org/post", [], HTTPClient.METHOD_POST, body)
         if error != OK:
             push_error("An error occurred in the HTTP request.")
-    
+
     # Called when the HTTP request is completed.
     func _http_request_completed(result, response_code, headers, body):
         var json = JSON.new()
         json.parse(body.get_string_from_utf8())
         var response = json.get_data()
-    
+
         # Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
         print(response.headers["User-Agent"])
 
@@ -70,14 +70,14 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         var httpRequest = new HttpRequest();
         AddChild(httpRequest);
         httpRequest.RequestCompleted += HttpRequestCompleted;
-    
+
         // Perform a GET request. The URL below returns JSON as of writing.
         Error error = httpRequest.Request("https://httpbin.org/get");
         if (error != Error.Ok)
         {
             GD.PushError("An error occurred in the HTTP request.");
         }
-    
+
         // Perform a POST request. The URL below returns JSON as of writing.
         // Note: Don't make simultaneous requests using a single HTTPRequest node.
         // The snippet below is provided for reference only.
@@ -91,14 +91,14 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
             GD.PushError("An error occurred in the HTTP request.");
         }
     }
-    
+
     // Called when the HTTP request is completed.
     private void HttpRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
     {
         var json = new Json();
         json.Parse(body.GetStringFromUtf8());
         var response = json.GetData().AsGodotDictionary();
-    
+
         // Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
         GD.Print((response["headers"].AsGodotDictionary())["User-Agent"]);
     }
@@ -117,24 +117,24 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         var http_request = HTTPRequest.new()
         add_child(http_request)
         http_request.request_completed.connect(self._http_request_completed)
-    
+
         # Perform the HTTP request. The URL below returns a PNG image as of writing.
         var error = http_request.request("https://placehold.co/512")
         if error != OK:
             push_error("An error occurred in the HTTP request.")
-    
+
     # Called when the HTTP request is completed.
     func _http_request_completed(result, response_code, headers, body):
         if result != HTTPRequest.RESULT_SUCCESS:
             push_error("Image couldn't be downloaded. Try a different image.")
-    
+
         var image = Image.new()
         var error = image.load_png_from_buffer(body)
         if error != OK:
             push_error("Couldn't load the image.")
-    
+
         var texture = ImageTexture.create_from_image(image)
-    
+
         # Display the image in a TextureRect node.
         var texture_rect = TextureRect.new()
         add_child(texture_rect)
@@ -148,7 +148,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         var httpRequest = new HttpRequest();
         AddChild(httpRequest);
         httpRequest.RequestCompleted += HttpRequestCompleted;
-    
+
         // Perform the HTTP request. The URL below returns a PNG image as of writing.
         Error error = httpRequest.Request("https://placehold.co/512");
         if (error != Error.Ok)
@@ -156,7 +156,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
             GD.PushError("An error occurred in the HTTP request.");
         }
     }
-    
+
     // Called when the HTTP request is completed.
     private void HttpRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
     {
@@ -170,9 +170,9 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         {
             GD.PushError("Couldn't load the image.");
         }
-    
+
         var texture = ImageTexture.CreateFromImage(image);
-    
+
         // Display the image in a TextureRect node.
         var textureRect = new TextureRect();
         AddChild(textureRect);
@@ -573,7 +573,7 @@ Returns the number of bytes this HTTPRequest downloaded.
 
 :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status**\ (\ ) |const| :ref:`🔗<class_HTTPRequest_method_get_http_client_status>`
 
-Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See :ref:`Status<enum_HTTPClient_Status>`.
+Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`.
 
 .. rst-class:: classref-item-separator
 
@@ -648,6 +648,7 @@ The proxy server is unset if ``host`` is empty or ``port`` is -1.
 Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HTTPS server. See :ref:`TLSOptions.client()<class_TLSOptions_method_client>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

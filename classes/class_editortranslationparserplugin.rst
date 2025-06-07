@@ -34,7 +34,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
 
     @tool
     extends EditorTranslationParserPlugin
-    
+
     func _parse_file(path):
         var ret: Array[PackedStringArray] = []
         var file = FileAccess.open(path, FileAccess.READ)
@@ -43,16 +43,16 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
         for s in split_strs:
             ret.append(PackedStringArray([s]))
             #print("Extracted string: " + s)
-    
+
         return ret
-    
+
     func _get_recognized_extensions():
         return ["csv"]
 
  .. code-tab:: csharp
 
     using Godot;
-    
+
     [Tool]
     public partial class CustomParser : EditorTranslationParserPlugin
     {
@@ -69,7 +69,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
             }
             return ret;
         }
-    
+
         public override string[] _GetRecognizedExtensions()
         {
             return ["csv"];
@@ -114,7 +114,7 @@ To add a translatable string associated with a context, plural, or comment:
         var res = ResourceLoader.load(path, "Script")
         var text = res.source_code
         # Parsing logic.
-    
+
     func _get_recognized_extensions():
         return ["gd"]
 
@@ -126,7 +126,7 @@ To add a translatable string associated with a context, plural, or comment:
         string text = res.SourceCode;
         // Parsing logic.
     }
-    
+
     public override string[] _GetRecognizedExtensions()
     {
         return ["gd"];
@@ -180,6 +180,7 @@ Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``
 Override this method to define a custom parsing logic to extract the translatable strings.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -26,7 +26,7 @@ Description
 
     func print_args(arg1, arg2, arg3 = ""):
         prints(arg1, arg2, arg3)
-    
+
     func test():
         var callable = Callable(self, "print_args")
         callable.call("hello", "world")  # Prints "hello world ".
@@ -40,7 +40,7 @@ Description
     {
         GD.PrintS(arg1, arg2, arg3);
     }
-    
+
     public void Test()
     {
         // Invalid calls fail silently.
@@ -59,10 +59,10 @@ In GDScript, it's possible to create lambda functions within a method. Lambda fu
     func _init():
         var my_lambda = func (message):
             print(message)
-    
+
         # Prints "Hello everyone!"
         my_lambda.call("Hello everyone!")
-    
+
         # Prints "Attack!", when the button_pressed signal is emitted.
         button_pressed.connect(func(): print("Attack!"))
 
@@ -79,10 +79,10 @@ In GDScript, you can access methods and global functions as **Callable**\ s:
 ::
 
     var dictionary = {"hello": "world"}
-    
+
     # This will not work, `clear` is treated as a key.
     tween.tween_callback(dictionary.clear)
-    
+
     # This will work.
     tween.tween_callback(Callable.create(dictionary, "clear"))
 
@@ -557,6 +557,7 @@ Returns ``true`` if both **Callable**\ s invoke different targets.
 Returns ``true`` if both **Callable**\ s invoke the same custom target.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

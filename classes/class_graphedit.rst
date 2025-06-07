@@ -990,7 +990,7 @@ Below is a sample code to help get started:
         var port_size = Vector2(get_theme_constant("port_grab_distance_horizontal"), get_theme_constant("port_grab_distance_vertical"))
         var port_pos = in_node.get_position() + in_node.get_input_port_position(in_port) - port_size / 2
         var rect = Rect2(port_pos, port_size)
-    
+
         return rect.has_point(mouse_position)
 
 .. rst-class:: classref-item-separator
@@ -1013,7 +1013,7 @@ Below is a sample code to help get started:
         var port_size = Vector2(get_theme_constant("port_grab_distance_horizontal"), get_theme_constant("port_grab_distance_vertical"))
         var port_pos = in_node.get_position() + in_node.get_output_port_position(in_port) - port_size / 2
         var rect = Rect2(port_pos, port_size)
-    
+
         return rect.has_point(mouse_position)
 
 .. rst-class:: classref-item-separator
@@ -1670,6 +1670,7 @@ The background drawn under the grid.
 :ref:`StyleBox<class_StyleBox>` used when the **GraphEdit** is focused (when used with assistive apps).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -24,6 +24,7 @@ This is the default :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_p
 This means that the :ref:`SceneTree<class_SceneTree>` will act as the multiplayer authority by default. Calls to :ref:`MultiplayerAPI.is_server()<class_MultiplayerAPI_method_is_server>` will return ``true``, and calls to :ref:`MultiplayerAPI.get_unique_id()<class_MultiplayerAPI_method_get_unique_id>` will return :ref:`MultiplayerPeer.TARGET_PEER_SERVER<class_MultiplayerPeer_constant_TARGET_PEER_SERVER>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

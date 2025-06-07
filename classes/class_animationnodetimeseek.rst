@@ -32,7 +32,7 @@ After setting the time and changing the animation playback, the time seek node a
     animation_tree.set("parameters/TimeSeek/seek_request", 0.0)
     # Alternative syntax (same result as above).
     animation_tree["parameters/TimeSeek/seek_request"] = 0.0
-    
+
     # Play child animation from 12 second timestamp.
     animation_tree.set("parameters/TimeSeek/seek_request", 12.0)
     # Alternative syntax (same result as above).
@@ -42,7 +42,7 @@ After setting the time and changing the animation playback, the time seek node a
 
     // Play child animation from the start.
     animationTree.Set("parameters/TimeSeek/seek_request", 0.0);
-    
+
     // Play child animation from 12 second timestamp.
     animationTree.Set("parameters/TimeSeek/seek_request", 12.0);
 
@@ -90,6 +90,7 @@ Property Descriptions
 If ``true``, some processes are executed to handle keys between seeks, such as calculating root motion and finding the nearest discrete key.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -177,7 +177,7 @@ Property Descriptions
 - |void| **set_blend_mode**\ (\ value\: :ref:`BlendMode<enum_Light2D_BlendMode>`\ )
 - :ref:`BlendMode<enum_Light2D_BlendMode>` **get_blend_mode**\ (\ )
 
-The Light2D's blend mode. See :ref:`BlendMode<enum_Light2D_BlendMode>` constants for values.
+The Light2D's blend mode.
 
 .. rst-class:: classref-item-separator
 
@@ -383,7 +383,7 @@ If ``true``, the Light2D will cast shadows.
 - |void| **set_shadow_filter**\ (\ value\: :ref:`ShadowFilter<enum_Light2D_ShadowFilter>`\ )
 - :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **get_shadow_filter**\ (\ )
 
-Shadow filter type. See :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` for possible values.
+Shadow filter type.
 
 .. rst-class:: classref-item-separator
 
@@ -449,6 +449,7 @@ Returns the light's height, which is used in 2D normal mapping. See :ref:`PointL
 Sets the light's height, which is used in 2D normal mapping. See :ref:`PointLight2D.height<class_PointLight2D_property_height>` and :ref:`DirectionalLight2D.height<class_DirectionalLight2D_property_height>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

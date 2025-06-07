@@ -164,7 +164,7 @@ To give the script a global name, you can use the ``class_name`` keyword in GDSc
  .. code-tab:: csharp
 
     using Godot;
-    
+
     [GlobalClass]
     public partial class MyNode : Node
     {
@@ -232,6 +232,8 @@ Returns a dictionary containing constant names and their values.
 
 Returns the list of methods in this **Script**.
 
+\ **Note:** The dictionaries returned by this method are formatted identically to those returned by :ref:`Object.get_method_list()<class_Object_method_get_method_list>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -244,6 +246,8 @@ Returns the list of methods in this **Script**.
 
 Returns the list of properties in this **Script**.
 
+\ **Note:** The dictionaries returned by this method are formatted identically to those returned by :ref:`Object.get_property_list()<class_Object_method_get_property_list>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -255,6 +259,8 @@ Returns the list of properties in this **Script**.
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_script_signal_list**\ (\ ) :ref:`🔗<class_Script_method_get_script_signal_list>`
 
 Returns the list of user signals defined in this **Script**.
+
+\ **Note:** The dictionaries returned by this method are formatted identically to those returned by :ref:`Object.get_signal_list()<class_Object_method_get_signal_list>`.
 
 .. rst-class:: classref-item-separator
 
@@ -331,6 +337,7 @@ Returns ``true`` if the script is a tool script. A tool script can run in the ed
 Reloads the script's class implementation. Returns an error code.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

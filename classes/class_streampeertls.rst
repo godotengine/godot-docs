@@ -158,7 +158,7 @@ Disconnects from host.
 
 :ref:`Status<enum_StreamPeerTLS_Status>` **get_status**\ (\ ) |const| :ref:`🔗<class_StreamPeerTLS_method_get_status>`
 
-Returns the status of the connection. See :ref:`Status<enum_StreamPeerTLS_Status>` for values.
+Returns the status of the connection.
 
 .. rst-class:: classref-item-separator
 
@@ -185,6 +185,7 @@ Returns the underlying :ref:`StreamPeer<class_StreamPeer>` connection, used in :
 Poll the connection to check for incoming bytes. Call this right before :ref:`StreamPeer.get_available_bytes()<class_StreamPeer_method_get_available_bytes>` for it to work properly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

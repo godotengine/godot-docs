@@ -268,7 +268,7 @@ The channel to use to send packets. Many network APIs such as ENet and WebRTC al
 - |void| **set_transfer_mode**\ (\ value\: :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`\ )
 - :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **get_transfer_mode**\ (\ )
 
-The manner in which to send packets to the target peer. See :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`, and the :ref:`set_target_peer()<class_MultiplayerPeer_method_set_target_peer>` method.
+The manner in which to send packets to the target peer. See the :ref:`set_target_peer()<class_MultiplayerPeer_method_set_target_peer>` method.
 
 .. rst-class:: classref-section-separator
 
@@ -321,7 +321,7 @@ Returns a randomly generated integer that can be used as a network unique ID.
 
 :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` **get_connection_status**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_get_connection_status>`
 
-Returns the current state of the connection. See :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>`.
+Returns the current state of the connection.
 
 .. rst-class:: classref-item-separator
 
@@ -410,6 +410,7 @@ Sets the peer to which packets will be sent.
 The ``id`` can be one of: :ref:`TARGET_PEER_BROADCAST<class_MultiplayerPeer_constant_TARGET_PEER_BROADCAST>` to send to all connected peers, :ref:`TARGET_PEER_SERVER<class_MultiplayerPeer_constant_TARGET_PEER_SERVER>` to send to the peer acting as server, a valid peer ID to send to that specific peer, a negative peer ID to send to all peers except that one. By default, the target peer is :ref:`TARGET_PEER_BROADCAST<class_MultiplayerPeer_constant_TARGET_PEER_BROADCAST>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

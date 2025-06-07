@@ -248,7 +248,7 @@ IGD service type.
 - |void| **set_igd_status**\ (\ value\: :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`\ )
 - :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **get_igd_status**\ (\ )
 
-IGD status. See :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`.
+IGD status.
 
 .. rst-class:: classref-item-separator
 
@@ -321,6 +321,7 @@ Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentiall
 Returns the external IP address of this **UPNPDevice** or an empty string.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

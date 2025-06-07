@@ -1417,7 +1417,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
         menu.add_item("Insert Date", MENU_MAX + 1)
         # Connect callback.
         menu.id_pressed.connect(_on_item_pressed)
-    
+
     func _on_item_pressed(id):
         if id == MENU_MAX + 1:
             insert_text_at_caret(Time.get_date_string_from_system())
@@ -1435,7 +1435,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
         // Add event handler.
         menu.IdPressed += OnItemPressed;
     }
-    
+
     public void OnItemPressed(int id)
     {
         if (id == LineEdit.MenuItems.Max + 1)
@@ -1899,6 +1899,7 @@ Default background for the **LineEdit**.
 Background used when **LineEdit** is in read-only mode (:ref:`editable<class_LineEdit_property_editable>` is set to ``false``).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

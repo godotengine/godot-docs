@@ -1954,7 +1954,7 @@ Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The stri
     Color.html_is_valid("#55AAFF20") # Returns true
     Color.html_is_valid("55AAFF")    # Returns true
     Color.html_is_valid("#F2C")      # Returns true
-    
+
     Color.html_is_valid("#AABBC")    # Returns false
     Color.html_is_valid("#55aaFF5")  # Returns false
 
@@ -1964,7 +1964,7 @@ Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The stri
     Color.HtmlIsValid("#55AAFF20"); // Returns true
     Color.HtmlIsValid("55AAFF");    // Returns true
     Color.HtmlIsValid("#F2C");      // Returns true
-    
+
     Color.HtmlIsValid("#AABBC");    // Returns false
     Color.HtmlIsValid("#55aaFF5");  // Returns false
 
@@ -2030,7 +2030,7 @@ Returns the linear interpolation between this color's components and ``to``'s co
 
     var red = Color(1.0, 0.0, 0.0)
     var aqua = Color(0.0, 1.0, 0.8)
-    
+
     red.lerp(aqua, 0.2) # Returns Color(0.8, 0.2, 0.16)
     red.lerp(aqua, 0.5) # Returns Color(0.5, 0.5, 0.4)
     red.lerp(aqua, 1.0) # Returns Color(0.0, 1.0, 0.8)
@@ -2039,7 +2039,7 @@ Returns the linear interpolation between this color's components and ``to``'s co
 
     var red = new Color(1.0f, 0.0f, 0.0f);
     var aqua = new Color(0.0f, 1.0f, 0.8f);
-    
+
     red.Lerp(aqua, 0.2f); // Returns Color(0.8f, 0.2f, 0.16f)
     red.Lerp(aqua, 0.5f); // Returns Color(0.5f, 0.5f, 0.4f)
     red.Lerp(aqua, 1.0f); // Returns Color(0.0f, 1.0f, 0.8f)
@@ -2460,6 +2460,7 @@ Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, 
 Inverts the given color. This is equivalent to ``Color.WHITE - c`` or ``Color(1 - c.r, 1 - c.g, 1 - c.b, 1 - c.a)``. Unlike with :ref:`inverted()<class_Color_method_inverted>`, the :ref:`a<class_Color_property_a>` component is inverted, too.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

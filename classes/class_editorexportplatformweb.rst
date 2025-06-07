@@ -75,7 +75,11 @@ Properties
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`       | :ref:`progressive_web_app/orientation<class_EditorExportPlatformWeb_property_progressive_web_app/orientation>`                                                     |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`variant/emscripten_pool_size<class_EditorExportPlatformWeb_property_variant/emscripten_pool_size>`                                                           |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`     | :ref:`variant/extensions_support<class_EditorExportPlatformWeb_property_variant/extensions_support>`                                                               |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`variant/godot_pool_size<class_EditorExportPlatformWeb_property_variant/godot_pool_size>`                                                                     |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`     | :ref:`variant/thread_support<class_EditorExportPlatformWeb_property_variant/thread_support>`                                                                       |
    +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -331,6 +335,20 @@ The orientation to use when the web application is run through a mobile device.
 
 ----
 
+.. _class_EditorExportPlatformWeb_property_variant/emscripten_pool_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **variant/emscripten_pool_size** :ref:`🔗<class_EditorExportPlatformWeb_property_variant/emscripten_pool_size>`
+
+The number of threads that emscripten will allocate at startup. A smaller value will allocate fewer threads and consume fewer system resources, but you may run the risk of running out of threads in the pool and needing to allocate more threads at run time which may cause a deadlock.
+
+\ **Note:** Some browsers have a hard cap on the number of threads that can be allocated, so it is best to be cautious and keep this number low.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformWeb_property_variant/extensions_support:
 
 .. rst-class:: classref-property
@@ -338,6 +356,20 @@ The orientation to use when the web application is run through a mobile device.
 :ref:`bool<class_bool>` **variant/extensions_support** :ref:`🔗<class_EditorExportPlatformWeb_property_variant/extensions_support>`
 
 If ``true`` enables :ref:`GDExtension<class_GDExtension>` support for this web build.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformWeb_property_variant/godot_pool_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **variant/godot_pool_size** :ref:`🔗<class_EditorExportPlatformWeb_property_variant/godot_pool_size>`
+
+Override for the default size of the :ref:`WorkerThreadPool<class_WorkerThreadPool>`. This setting is used when :ref:`ProjectSettings.threading/worker_pool/max_threads<class_ProjectSettings_property_threading/worker_pool/max_threads>` size is set to -1 (which it is by default). This size must be smaller than :ref:`variant/emscripten_pool_size<class_EditorExportPlatformWeb_property_variant/emscripten_pool_size>` otherwise deadlocks may occur.
+
+When using threads this size needs to be large enough to accommodate features that rely on having a dedicated thread like :ref:`ProjectSettings.physics/2d/run_on_separate_thread<class_ProjectSettings_property_physics/2d/run_on_separate_thread>` or :ref:`ProjectSettings.rendering/driver/threads/thread_model<class_ProjectSettings_property_rendering/driver/threads/thread_model>`. In general, it is best to ensure that this is at least 4 and is at least 2 or 3 less than :ref:`variant/emscripten_pool_size<class_EditorExportPlatformWeb_property_variant/emscripten_pool_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -378,6 +410,7 @@ If ``true``, allows textures to be optimized for desktop through the S3TC/BPTC a
 If ``true`` allows textures to be optimized for mobile through the ETC2/ASTC algorithm.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

@@ -155,7 +155,7 @@ The :ref:`Cubemap<class_Cubemap>` texture to sample when using :ref:`SOURCE_TEXT
 - |void| **set_source**\ (\ value\: :ref:`Source<enum_VisualShaderNodeCubemap_Source>`\ )
 - :ref:`Source<enum_VisualShaderNodeCubemap_Source>` **get_source**\ (\ )
 
-Defines which source should be used for the sampling. See :ref:`Source<enum_VisualShaderNodeCubemap_Source>` for options.
+Defines which source should be used for the sampling.
 
 .. rst-class:: classref-item-separator
 
@@ -172,9 +172,10 @@ Defines which source should be used for the sampling. See :ref:`Source<enum_Visu
 - |void| **set_texture_type**\ (\ value\: :ref:`TextureType<enum_VisualShaderNodeCubemap_TextureType>`\ )
 - :ref:`TextureType<enum_VisualShaderNodeCubemap_TextureType>` **get_texture_type**\ (\ )
 
-Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeCubemap_TextureType>` for options.
+Defines the type of data provided by the source texture.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

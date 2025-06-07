@@ -240,7 +240,7 @@ Ellipsis character used for text clipping.
 - |void| **set_justification_flags**\ (\ value\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\]\ )
 - |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **get_justification_flags**\ (\ )
 
-Line fill alignment rules. See :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` for more information.
+Line fill alignment rules.
 
 .. rst-class:: classref-item-separator
 
@@ -342,7 +342,7 @@ If set to ``true`` text will display invalid characters.
 - |void| **set_text_overrun_behavior**\ (\ value\: :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ )
 - :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior**\ (\ )
 
-Sets the clipping behavior when the text exceeds the paragraph's set width. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
+The clipping behavior when the text exceeds the paragraph's set width.
 
 .. rst-class:: classref-item-separator
 
@@ -777,6 +777,7 @@ Sets drop cap, overrides previously set drop cap. Drop cap (dropped capital) is 
 Aligns paragraph to the given tab-stops.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

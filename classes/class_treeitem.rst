@@ -1382,7 +1382,7 @@ Sets the tooltip text for the button at index ``button_index`` in the given ``co
 
 |void| **set_cell_mode**\ (\ column\: :ref:`int<class_int>`, mode\: :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>`\ ) :ref:`🔗<class_TreeItem_method_set_cell_mode>`
 
-Sets the given column's cell mode to ``mode``. This determines how the cell is displayed and edited. See :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` constants for details.
+Sets the given column's cell mode to ``mode``. This determines how the cell is displayed and edited.
 
 .. rst-class:: classref-item-separator
 
@@ -1730,7 +1730,7 @@ Sets the given column's text value.
 
 |void| **set_text_alignment**\ (\ column\: :ref:`int<class_int>`, text_alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`\ ) :ref:`🔗<class_TreeItem_method_set_text_alignment>`
 
-Sets the given column's text alignment. See :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` for possible values.
+Sets the given column's text alignment to ``text_alignment``.
 
 .. rst-class:: classref-item-separator
 
@@ -1781,6 +1781,7 @@ Sets the given column's tooltip text.
 Uncollapses all **TreeItem**\ s necessary to reveal this **TreeItem**, i.e. all ancestor **TreeItem**\ s.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

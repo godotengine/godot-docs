@@ -666,7 +666,7 @@ An ``id`` can optionally be provided, as well as an accelerator (``accel``). If 
 
     func _ready():
         add_multistate_item("Item", 3, 0)
-    
+
         index_pressed.connect(func(index: int):
                 toggle_item_multistate(index)
                 match get_item_multistate(index):
@@ -1882,6 +1882,7 @@ Font size of the menu items.
 :ref:`StyleBox<class_StyleBox>` used for the separators. See :ref:`add_separator()<class_PopupMenu_method_add_separator>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

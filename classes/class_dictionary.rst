@@ -29,16 +29,16 @@ Creating a dictionary:
  .. code-tab:: gdscript
 
     var my_dict = {} # Creates an empty dictionary.
-    
+
     var dict_variable_key = "Another key name"
     var dict_variable_value = "value2"
     var another_dict = {
         "Some key name": "value1",
         dict_variable_key: dict_variable_value,
     }
-    
+
     var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
-    
+
     # Alternative Lua-style syntax.
     # Doesn't require quotes around keys, but only string constants can be used as key names.
     # Additionally, key names must start with a letter or an underscore.
@@ -82,7 +82,7 @@ You can access a dictionary's value by referencing its corresponding key. In the
         {"Yellow", 75},
         {"Orange", 100}
     };
-    
+
     public override void _Ready()
     {
         int points = (int)_pointsDict[MyColor];
@@ -555,7 +555,7 @@ Returns ``true`` if the dictionary contains an entry with the given ``key``.
         "Godot" : 4,
         210 : null,
     }
-    
+
     print(my_dict.has("Godot")) # Prints true
     print(my_dict.has(210))     # Prints true
     print(my_dict.has(4))       # Prints false
@@ -567,7 +567,7 @@ Returns ``true`` if the dictionary contains an entry with the given ``key``.
         { "Godot", 4 },
         { 210, default },
     };
-    
+
     GD.Print(myDict.ContainsKey("Godot")); // Prints True
     GD.Print(myDict.ContainsKey(210));     // Prints True
     GD.Print(myDict.ContainsKey(4));       // Prints False
@@ -619,14 +619,14 @@ Returns a hashed 32-bit integer value representing the dictionary contents.
 
     var dict1 = {"A": 10, "B": 2}
     var dict2 = {"A": 10, "B": 2}
-    
+
     print(dict1.hash() == dict2.hash()) # Prints true
 
  .. code-tab:: csharp
 
     var dict1 = new Godot.Collections.Dictionary{{"A", 10}, {"B", 2}};
     var dict2 = new Godot.Collections.Dictionary{{"A", 10}, {"B", 2}};
-    
+
     // Godot.Collections.Dictionary has no Hash() method. Use GD.Hash() instead.
     GD.Print(GD.Hash(dict1) == GD.Hash(dict2)); // Prints True
 
@@ -775,11 +775,11 @@ Adds entries from ``dictionary`` to this dictionary. By default, duplicate keys 
 
     var dict = { "item": "sword", "quantity": 2 }
     var other_dict = { "quantity": 15, "color": "silver" }
-    
+
     # Overwriting of existing keys is disabled by default.
     dict.merge(other_dict)
     print(dict)  # { "item": "sword", "quantity": 2, "color": "silver" }
-    
+
     # With overwriting of existing keys enabled.
     dict.merge(other_dict, true)
     print(dict)  # { "item": "sword", "quantity": 15, "color": "silver" }
@@ -791,17 +791,17 @@ Adds entries from ``dictionary`` to this dictionary. By default, duplicate keys 
         ["item"] = "sword",
         ["quantity"] = 2,
     };
-    
+
     var otherDict = new Godot.Collections.Dictionary
     {
         ["quantity"] = 15,
         ["color"] = "silver",
     };
-    
+
     // Overwriting of existing keys is disabled by default.
     dict.Merge(otherDict);
     GD.Print(dict); // { "item": "sword", "quantity": 2, "color": "silver" }
-    
+
     // With overwriting of existing keys enabled.
     dict.Merge(otherDict, true);
     GD.Print(dict); // { "item": "sword", "quantity": 15, "color": "silver" }
@@ -950,6 +950,7 @@ Returns ``true`` if the two dictionaries contain the same keys and values. The o
 Returns the corresponding value for the given ``key`` in the dictionary. If the entry does not exist, fails and returns ``null``. For safe access, use :ref:`get()<class_Dictionary_method_get>` or :ref:`has()<class_Dictionary_method_has>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

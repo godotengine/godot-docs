@@ -34,12 +34,12 @@ It is also possible to use non-Euclidean distances. To do so, create a script th
 
     class_name MyAStar3D
     extends AStar3D
-    
+
     func _compute_cost(u, v):
         var u_pos = get_point_position(u)
         var v_pos = get_point_position(v)
         return abs(u_pos.x - v_pos.x) + abs(u_pos.y - v_pos.y) + abs(u_pos.z - v_pos.z)
-    
+
     func _estimate_cost(u, v):
         var u_pos = get_point_position(u)
         var v_pos = get_point_position(v)
@@ -48,7 +48,7 @@ It is also possible to use non-Euclidean distances. To do so, create a script th
  .. code-tab:: csharp
 
     using Godot;
-    
+
     [GlobalClass]
     public partial class MyAStar3D : AStar3D
     {
@@ -56,10 +56,10 @@ It is also possible to use non-Euclidean distances. To do so, create a script th
         {
             Vector3 fromPoint = GetPointPosition(fromId);
             Vector3 toPoint = GetPointPosition(toId);
-    
+
             return Mathf.Abs(fromPoint.X - toPoint.X) + Mathf.Abs(fromPoint.Y - toPoint.Y) + Mathf.Abs(fromPoint.Z - toPoint.Z);
         }
-    
+
         public override float _EstimateCost(long fromId, long toId)
         {
             Vector3 fromPoint = GetPointPosition(fromId);
@@ -352,12 +352,12 @@ If there is no valid path to the target, and ``allow_partial_path`` is ``true``,
     astar.add_point(2, Vector3(0, 1, 0), 1) # Default weight is 1
     astar.add_point(3, Vector3(1, 1, 0))
     astar.add_point(4, Vector3(2, 0, 0))
-    
+
     astar.connect_points(1, 2, false)
     astar.connect_points(2, 3, false)
     astar.connect_points(4, 3, false)
     astar.connect_points(1, 4, false)
-    
+
     var res = astar.get_id_path(1, 3) # Returns [1, 2, 3]
 
  .. code-tab:: csharp
@@ -411,10 +411,10 @@ Returns an array with the IDs of the points that form the connection with the gi
     astar.add_point(2, Vector3(0, 1, 0))
     astar.add_point(3, Vector3(1, 1, 0))
     astar.add_point(4, Vector3(2, 0, 0))
-    
+
     astar.connect_points(1, 2, true)
     astar.connect_points(1, 3, true)
-    
+
     var neighbors = astar.get_point_connections(1) # Returns [2, 3]
 
  .. code-tab:: csharp
@@ -426,7 +426,7 @@ Returns an array with the IDs of the points that form the connection with the gi
     astar.AddPoint(4, new Vector3(2, 0, 0));
     astar.ConnectPoints(1, 2, true);
     astar.ConnectPoints(1, 3, true);
-    
+
     long[] neighbors = astar.GetPointConnections(1); // Returns [2, 3]
 
 
@@ -582,6 +582,7 @@ Sets the ``position`` for the point with the given ``id``.
 Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost()<class_AStar3D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

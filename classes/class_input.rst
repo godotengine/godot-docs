@@ -438,7 +438,7 @@ If ``true``, sends touch input events when clicking or dragging the mouse. See a
 - |void| **set_mouse_mode**\ (\ value\: :ref:`MouseMode<enum_Input_MouseMode>`\ )
 - :ref:`MouseMode<enum_Input_MouseMode>` **get_mouse_mode**\ (\ )
 
-Controls the mouse mode. See :ref:`MouseMode<enum_Input_MouseMode>` for more information.
+Controls the mouse mode.
 
 .. rst-class:: classref-item-separator
 
@@ -602,7 +602,7 @@ Returns an :ref:`Array<class_Array>` containing the device IDs of all currently 
 
 :ref:`CursorShape<enum_Input_CursorShape>` **get_current_cursor_shape**\ (\ ) |const| :ref:`🔗<class_Input_method_get_current_cursor_shape>`
 
-Returns the currently assigned cursor shape (see :ref:`CursorShape<enum_Input_CursorShape>`).
+Returns the currently assigned cursor shape.
 
 .. rst-class:: classref-item-separator
 
@@ -646,7 +646,7 @@ Returns the rotation rate in rad/s around a device's X, Y, and Z axes of the gyr
 
 :ref:`float<class_float>` **get_joy_axis**\ (\ device\: :ref:`int<class_int>`, axis\: :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>`\ ) |const| :ref:`🔗<class_Input_method_get_joy_axis>`
 
-Returns the current value of the joypad axis at given index (see :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>`).
+Returns the current value of the joypad axis at index ``axis``.
 
 .. rst-class:: classref-item-separator
 
@@ -876,7 +876,7 @@ Returns ``true`` if any action, key, joypad button, or mouse button is being pre
 
 :ref:`bool<class_bool>` **is_joy_button_pressed**\ (\ device\: :ref:`int<class_int>`, button\: :ref:`JoyButton<enum_@GlobalScope_JoyButton>`\ ) |const| :ref:`🔗<class_Input_method_is_joy_button_pressed>`
 
-Returns ``true`` if you are pressing the joypad button (see :ref:`JoyButton<enum_@GlobalScope_JoyButton>`).
+Returns ``true`` if you are pressing the joypad button at index ``button``.
 
 .. rst-class:: classref-item-separator
 
@@ -1017,7 +1017,7 @@ Sets the acceleration value of the accelerometer sensor. Can be used for debuggi
 
 |void| **set_custom_mouse_cursor**\ (\ image\: :ref:`Resource<class_Resource>`, shape\: :ref:`CursorShape<enum_Input_CursorShape>` = 0, hotspot\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) :ref:`🔗<class_Input_method_set_custom_mouse_cursor>`
 
-Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See :ref:`CursorShape<enum_Input_CursorShape>` for the list of shapes.
+Sets a custom mouse cursor image, which is only visible inside the game window, for the given mouse ``shape``. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor.
 
 \ ``image`` can be either :ref:`Texture2D<class_Texture2D>` or :ref:`Image<class_Image>` and its size must be lower than or equal to 256×256. To avoid rendering issues, sizes lower than or equal to 128×128 are recommended.
 
@@ -1170,6 +1170,7 @@ Mouse position is clipped to the limits of the screen resolution, or to the limi
 \ **Note:** :ref:`warp_mouse()<class_Input_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`

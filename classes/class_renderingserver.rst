@@ -631,6 +631,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_attribute_stride<class_RenderingServer_method_mesh_surface_get_format_attribute_stride>`\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_index_stride<class_RenderingServer_method_mesh_surface_get_format_index_stride>`\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_normal_tangent_stride<class_RenderingServer_method_mesh_surface_get_format_normal_tangent_stride>`\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_offset<class_RenderingServer_method_mesh_surface_get_format_offset>`\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`, array_index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -646,6 +648,8 @@ Methods
    | |void|                                                                           | :ref:`mesh_surface_set_material<class_RenderingServer_method_mesh_surface_set_material>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, material\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_surface_update_attribute_region<class_RenderingServer_method_mesh_surface_update_attribute_region>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`mesh_surface_update_index_region<class_RenderingServer_method_mesh_surface_update_index_region>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_surface_update_skin_region<class_RenderingServer_method_mesh_surface_update_skin_region>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5955,6 +5959,22 @@ The minimum Z-layer for canvas items.
 
 The maximum Z-layer for canvas items.
 
+.. _class_RenderingServer_constant_CANVAS_LAYER_MIN:
+
+.. rst-class:: classref-constant
+
+**CANVAS_LAYER_MIN** = ``-2147483648`` :ref:`🔗<class_RenderingServer_constant_CANVAS_LAYER_MIN>`
+
+The minimum canvas layer.
+
+.. _class_RenderingServer_constant_CANVAS_LAYER_MAX:
+
+.. rst-class:: classref-constant
+
+**CANVAS_LAYER_MAX** = ``2147483647`` :ref:`🔗<class_RenderingServer_constant_CANVAS_LAYER_MAX>`
+
+The maximum canvas layer.
+
 .. _class_RenderingServer_constant_MAX_GLOW_LEVELS:
 
 .. rst-class:: classref-constant
@@ -6174,7 +6194,7 @@ Sets the parameters to use with the DOF blur effect. These parameters take on th
 
 |void| **camera_attributes_set_dof_blur_bokeh_shape**\ (\ shape\: :ref:`DOFBokehShape<enum_RenderingServer_DOFBokehShape>`\ ) :ref:`🔗<class_RenderingServer_method_camera_attributes_set_dof_blur_bokeh_shape>`
 
-Sets the shape of the DOF bokeh pattern. Different shapes may be used to achieve artistic effect, or to meet performance targets. For more detail on available options see :ref:`DOFBokehShape<enum_RenderingServer_DOFBokehShape>`.
+Sets the shape of the DOF bokeh pattern to ``shape``. Different shapes may be used to achieve artistic effect, or to meet performance targets.
 
 .. rst-class:: classref-item-separator
 
@@ -6186,7 +6206,7 @@ Sets the shape of the DOF bokeh pattern. Different shapes may be used to achieve
 
 |void| **camera_attributes_set_dof_blur_quality**\ (\ quality\: :ref:`DOFBlurQuality<enum_RenderingServer_DOFBlurQuality>`, use_jitter\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_camera_attributes_set_dof_blur_quality>`
 
-Sets the quality level of the DOF blur effect to one of the options in :ref:`DOFBlurQuality<enum_RenderingServer_DOFBlurQuality>`. ``use_jitter`` can be used to jitter samples taken during the blur pass to hide artifacts at the cost of looking more fuzzy.
+Sets the quality level of the DOF blur effect to ``quality``. ``use_jitter`` can be used to jitter samples taken during the blur pass to hide artifacts at the cost of looking more fuzzy.
 
 .. rst-class:: classref-item-separator
 
@@ -7168,7 +7188,7 @@ This is useful when moving a canvas item to a new location, to give an instantan
 
 |void| **canvas_light_set_blend_mode**\ (\ light\: :ref:`RID<class_RID>`, mode\: :ref:`CanvasLightBlendMode<enum_RenderingServer_CanvasLightBlendMode>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_light_set_blend_mode>`
 
-Sets the blend mode for the given canvas light. See :ref:`CanvasLightBlendMode<enum_RenderingServer_CanvasLightBlendMode>` for options. Equivalent to :ref:`Light2D.blend_mode<class_Light2D_property_blend_mode>`.
+Sets the blend mode for the given canvas light to ``mode``. Equivalent to :ref:`Light2D.blend_mode<class_Light2D_property_blend_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7276,7 +7296,7 @@ The layer range that gets rendered with this light.
 
 |void| **canvas_light_set_mode**\ (\ light\: :ref:`RID<class_RID>`, mode\: :ref:`CanvasLightMode<enum_RenderingServer_CanvasLightMode>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_light_set_mode>`
 
-The mode of the light, see :ref:`CanvasLightMode<enum_RenderingServer_CanvasLightMode>` constants.
+Sets the mode of the canvas light.
 
 .. rst-class:: classref-item-separator
 
@@ -7312,7 +7332,7 @@ Enables or disables the canvas light's shadow.
 
 |void| **canvas_light_set_shadow_filter**\ (\ light\: :ref:`RID<class_RID>`, filter\: :ref:`CanvasLightShadowFilter<enum_RenderingServer_CanvasLightShadowFilter>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_light_set_shadow_filter>`
 
-Sets the canvas light's shadow's filter, see :ref:`CanvasLightShadowFilter<enum_RenderingServer_CanvasLightShadowFilter>` constants.
+Sets the canvas light's shadow's filter.
 
 .. rst-class:: classref-item-separator
 
@@ -7426,7 +7446,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 |void| **canvas_occluder_polygon_set_cull_mode**\ (\ occluder_polygon\: :ref:`RID<class_RID>`, mode\: :ref:`CanvasOccluderPolygonCullMode<enum_RenderingServer_CanvasOccluderPolygonCullMode>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_occluder_polygon_set_cull_mode>`
 
-Sets an occluder polygons cull mode. See :ref:`CanvasOccluderPolygonCullMode<enum_RenderingServer_CanvasOccluderPolygonCullMode>` constants.
+Sets an occluder polygon's cull mode.
 
 .. rst-class:: classref-item-separator
 
@@ -8376,7 +8396,7 @@ Returns the global RenderingDevice.
 
 :ref:`int<class_int>` **get_rendering_info**\ (\ info\: :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>`\ ) :ref:`🔗<class_RenderingServer_method_get_rendering_info>`
 
-Returns a statistic about the rendering engine which can be used for performance profiling. See :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` for a list of values that can be queried. See also :ref:`viewport_get_render_info()<class_RenderingServer_method_viewport_get_render_info>`, which returns information specific to a viewport.
+Returns a statistic about the rendering engine which can be used for performance profiling. See also :ref:`viewport_get_render_info()<class_RenderingServer_method_viewport_get_render_info>`, which returns information specific to a viewport.
 
 \ **Note:** Only 3D rendering is currently taken into account by some of these values, such as the number of draw calls.
 
@@ -8387,7 +8407,7 @@ Returns a statistic about the rendering engine which can be used for performance
     func _ready():
         for _i in 2:
             await get_tree().process_frame
-    
+
         print(RenderingServer.get_rendering_info(RENDERING_INFO_TOTAL_DRAW_CALLS_IN_FRAME))
 
 .. rst-class:: classref-item-separator
@@ -8758,7 +8778,7 @@ Returns a dictionary of per-instance shader uniform names of the per-instance sh
 
 |void| **instance_geometry_set_cast_shadows_setting**\ (\ instance\: :ref:`RID<class_RID>`, shadow_casting_setting\: :ref:`ShadowCastingSetting<enum_RenderingServer_ShadowCastingSetting>`\ ) :ref:`🔗<class_RenderingServer_method_instance_geometry_set_cast_shadows_setting>`
 
-Sets the shadow casting setting to one of :ref:`ShadowCastingSetting<enum_RenderingServer_ShadowCastingSetting>`. Equivalent to :ref:`GeometryInstance3D.cast_shadow<class_GeometryInstance3D_property_cast_shadow>`.
+Sets the shadow casting setting. Equivalent to :ref:`GeometryInstance3D.cast_shadow<class_GeometryInstance3D_property_cast_shadow>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8770,7 +8790,7 @@ Sets the shadow casting setting to one of :ref:`ShadowCastingSetting<enum_Render
 
 |void| **instance_geometry_set_flag**\ (\ instance\: :ref:`RID<class_RID>`, flag\: :ref:`InstanceFlags<enum_RenderingServer_InstanceFlags>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_instance_geometry_set_flag>`
 
-Sets the flag for a given :ref:`InstanceFlags<enum_RenderingServer_InstanceFlags>`. See :ref:`InstanceFlags<enum_RenderingServer_InstanceFlags>` for more details.
+Sets the ``flag`` for a given ``instance`` to ``enabled``.
 
 .. rst-class:: classref-item-separator
 
@@ -9094,7 +9114,7 @@ If ``true``, this directional light will blend between shadow map splits resulti
 
 |void| **light_directional_set_shadow_mode**\ (\ light\: :ref:`RID<class_RID>`, mode\: :ref:`LightDirectionalShadowMode<enum_RenderingServer_LightDirectionalShadowMode>`\ ) :ref:`🔗<class_RenderingServer_method_light_directional_set_shadow_mode>`
 
-Sets the shadow mode for this directional light. Equivalent to :ref:`DirectionalLight3D.directional_shadow_mode<class_DirectionalLight3D_property_directional_shadow_mode>`. See :ref:`LightDirectionalShadowMode<enum_RenderingServer_LightDirectionalShadowMode>` for options.
+Sets the shadow mode for this directional light. Equivalent to :ref:`DirectionalLight3D.directional_shadow_mode<class_DirectionalLight3D_property_directional_shadow_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9214,7 +9234,7 @@ If ``true``, the 3D light will subtract light instead of adding light. Equivalen
 
 |void| **light_set_param**\ (\ light\: :ref:`RID<class_RID>`, param\: :ref:`LightParam<enum_RenderingServer_LightParam>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_light_set_param>`
 
-Sets the specified 3D light parameter. See :ref:`LightParam<enum_RenderingServer_LightParam>` for options. Equivalent to :ref:`Light3D.set_param()<class_Light3D_method_set_param>`.
+Sets the specified 3D light parameter. Equivalent to :ref:`Light3D.set_param()<class_Light3D_method_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9728,6 +9748,18 @@ Returns the stride of the attribute buffer for a mesh with given ``format``.
 
 ----
 
+.. _class_RenderingServer_method_mesh_surface_get_format_index_stride:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **mesh_surface_get_format_index_stride**\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_format_index_stride>`
+
+Returns the stride of the index buffer for a mesh with the given ``format``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_mesh_surface_get_format_normal_tangent_stride:
 
 .. rst-class:: classref-method
@@ -9821,6 +9853,18 @@ Sets a mesh's surface's material.
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_mesh_surface_update_index_region:
+
+.. rst-class:: classref-method
+
+|void| **mesh_surface_update_index_region**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_RenderingServer_method_mesh_surface_update_index_region>`
+
+Updates the index buffer of the mesh surface with the given ``data``. The expected data are 16 or 32-bit unsigned integers, which can be determined with :ref:`mesh_surface_get_format_index_stride()<class_RenderingServer_method_mesh_surface_get_format_index_stride>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10574,7 +10618,7 @@ Sets a custom axis-aligned bounding box for the particle system. Equivalent to :
 
 |void| **particles_set_draw_order**\ (\ particles\: :ref:`RID<class_RID>`, order\: :ref:`ParticlesDrawOrder<enum_RenderingServer_ParticlesDrawOrder>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_draw_order>`
 
-Sets the draw order of the particles to one of the named enums from :ref:`ParticlesDrawOrder<enum_RenderingServer_ParticlesDrawOrder>`. See :ref:`ParticlesDrawOrder<enum_RenderingServer_ParticlesDrawOrder>` for options. Equivalent to :ref:`GPUParticles3D.draw_order<class_GPUParticles3D_property_draw_order>`.
+Sets the draw order of the particles. Equivalent to :ref:`GPUParticles3D.draw_order<class_GPUParticles3D_property_draw_order>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11070,7 +11114,7 @@ Sets the size of the area that the reflection probe will capture. Equivalent to 
 
 |void| **reflection_probe_set_update_mode**\ (\ probe\: :ref:`RID<class_RID>`, mode\: :ref:`ReflectionProbeUpdateMode<enum_RenderingServer_ReflectionProbeUpdateMode>`\ ) :ref:`🔗<class_RenderingServer_method_reflection_probe_set_update_mode>`
 
-Sets how often the reflection probe updates. Can either be once or every frame. See :ref:`ReflectionProbeUpdateMode<enum_RenderingServer_ReflectionProbeUpdateMode>` for options.
+Sets how often the reflection probe updates. Can either be once or every frame.
 
 .. rst-class:: classref-item-separator
 
@@ -11929,7 +11973,7 @@ Returns the GPU time taken to render the last frame in milliseconds. To get a co
 
 :ref:`int<class_int>` **viewport_get_render_info**\ (\ viewport\: :ref:`RID<class_RID>`, type\: :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>`, info\: :ref:`ViewportRenderInfo<enum_RenderingServer_ViewportRenderInfo>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_get_render_info>`
 
-Returns a statistic about the rendering engine which can be used for performance profiling. This is separated into render pass ``type``\ s, each of them having the same ``info``\ s you can query (different passes will return different values). See :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` for a list of render pass types and :ref:`ViewportRenderInfo<enum_RenderingServer_ViewportRenderInfo>` for a list of information that can be queried.
+Returns a statistic about the rendering engine which can be used for performance profiling. This is separated into render pass ``type``\ s, each of them having the same ``info``\ s you can query (different passes will return different values).
 
 See also :ref:`get_rendering_info()<class_RenderingServer_method_get_rendering_info>`, which returns global information across all viewports.
 
@@ -11940,7 +11984,7 @@ See also :ref:`get_rendering_info()<class_RenderingServer_method_get_rendering_i
     func _ready():
         for _i in 2:
             await get_tree().process_frame
-    
+
         print(
                 RenderingServer.viewport_get_render_info(get_viewport().get_viewport_rid(),
                 RenderingServer.VIEWPORT_RENDER_INFO_TYPE_VISIBLE,
@@ -11981,7 +12025,7 @@ Returns the viewport's last rendered frame.
 
 :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>` **viewport_get_update_mode**\ (\ viewport\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_viewport_get_update_mode>`
 
-Returns the viewport's update mode. See :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>` constants for options.
+Returns the viewport's update mode.
 
 \ **Warning:** Calling this from any thread other than the rendering thread will be detrimental to performance.
 
@@ -12053,6 +12097,8 @@ Sets the stacking order for a viewport's canvas.
 
 \ ``layer`` is the actual canvas layer, while ``sublayer`` specifies the stacking order of the canvas among those in the same layer.
 
+\ **Note:** ``layer`` should be between :ref:`CANVAS_LAYER_MIN<class_RenderingServer_constant_CANVAS_LAYER_MIN>` and :ref:`CANVAS_LAYER_MAX<class_RenderingServer_constant_CANVAS_LAYER_MAX>` (inclusive). Any other value will wrap around.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -12075,7 +12121,7 @@ Sets the transformation of a viewport's canvas.
 
 |void| **viewport_set_clear_mode**\ (\ viewport\: :ref:`RID<class_RID>`, clear_mode\: :ref:`ViewportClearMode<enum_RenderingServer_ViewportClearMode>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_clear_mode>`
 
-Sets the clear mode of a viewport. See :ref:`ViewportClearMode<enum_RenderingServer_ViewportClearMode>` for options.
+Sets the clear mode of a viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -12087,7 +12133,7 @@ Sets the clear mode of a viewport. See :ref:`ViewportClearMode<enum_RenderingSer
 
 |void| **viewport_set_debug_draw**\ (\ viewport\: :ref:`RID<class_RID>`, draw\: :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_debug_draw>`
 
-Sets the debug draw mode of a viewport. See :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` for options.
+Sets the debug draw mode of a viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -12099,7 +12145,7 @@ Sets the debug draw mode of a viewport. See :ref:`ViewportDebugDraw<enum_Renderi
 
 |void| **viewport_set_default_canvas_item_texture_filter**\ (\ viewport\: :ref:`RID<class_RID>`, filter\: :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_default_canvas_item_texture_filter>`
 
-Sets the default texture filtering mode for the specified ``viewport`` RID. See :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` for options.
+Sets the default texture filtering mode for the specified ``viewport`` RID.
 
 .. rst-class:: classref-item-separator
 
@@ -12111,7 +12157,7 @@ Sets the default texture filtering mode for the specified ``viewport`` RID. See 
 
 |void| **viewport_set_default_canvas_item_texture_repeat**\ (\ viewport\: :ref:`RID<class_RID>`, repeat\: :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_default_canvas_item_texture_repeat>`
 
-Sets the default texture repeat mode for the specified ``viewport`` RID. See :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` for options.
+Sets the default texture repeat mode for the specified ``viewport`` RID.
 
 .. rst-class:: classref-item-separator
 
@@ -12195,7 +12241,7 @@ Sets the measurement for the given ``viewport`` RID (obtained using :ref:`Viewpo
 
 |void| **viewport_set_msaa_2d**\ (\ viewport\: :ref:`RID<class_RID>`, msaa\: :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_msaa_2d>`
 
-Sets the multisample antialiasing mode for 2D/Canvas on the specified ``viewport`` RID. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_2d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>` or :ref:`Viewport.msaa_2d<class_Viewport_property_msaa_2d>`.
+Sets the multisample antialiasing mode for 2D/Canvas on the specified ``viewport`` RID. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_2d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>` or :ref:`Viewport.msaa_2d<class_Viewport_property_msaa_2d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12207,7 +12253,7 @@ Sets the multisample antialiasing mode for 2D/Canvas on the specified ``viewport
 
 |void| **viewport_set_msaa_3d**\ (\ viewport\: :ref:`RID<class_RID>`, msaa\: :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_msaa_3d>`
 
-Sets the multisample antialiasing mode for 3D on the specified ``viewport`` RID. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` or :ref:`Viewport.msaa_3d<class_Viewport_property_msaa_3d>`.
+Sets the multisample antialiasing mode for 3D on the specified ``viewport`` RID. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` or :ref:`Viewport.msaa_3d<class_Viewport_property_msaa_3d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12417,7 +12463,7 @@ If ``true``, the viewport renders its background as transparent.
 
 |void| **viewport_set_update_mode**\ (\ viewport\: :ref:`RID<class_RID>`, update_mode\: :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_update_mode>`
 
-Sets when the viewport should be updated. See :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>` constants for options.
+Sets when the viewport should be updated.
 
 .. rst-class:: classref-item-separator
 
@@ -12788,6 +12834,7 @@ Sets the :ref:`ProjectSettings.rendering/global_illumination/voxel_gi/quality<cl
 Sets the :ref:`VoxelGIData.use_two_bounces<class_VoxelGIData_property_use_two_bounces>` value to use on the specified ``voxel_gi``'s :ref:`RID<class_RID>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
