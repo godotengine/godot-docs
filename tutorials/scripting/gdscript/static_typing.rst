@@ -122,8 +122,7 @@ Here is a complete list of what can be used as a type hint:
 7. Global, native and custom named enums. Note that an enum type is just an ``int``,
    there is no guarantee that the value belongs to the set of enum values.
 8. Constants (including local ones) if they contain a preloaded class or enum.
-9. :ref:`Global traits <doc_gdscript_basics_trait_name>`.
-10. :ref:`Inner traits <_doc_gdscript_basics_inner_traits>`.
+9. :ref:`Traits <doc_gdscript_basics_traits>`.
 
 You can use any class or trait, including your custom classes and traits, as types. There are two ways
 to use them in scripts. The first method is to preload the script you want to use
@@ -148,20 +147,7 @@ and you can use it anywhere, without having to preload it into a constant:
 ::
 
     var my_rifle: Rifle
-
-These methods also work with traits, except using ``trait_name`` and ``uses`` in place
-of ``class_name`` and ``extends``::
-
-    const Shootable = preload("res://player/weapons/shootable.gdt")
-    var something_shootable: Shootable
-
-::
-
-    class_name Rifle
-    uses Shootable
-
-    # Somewhere else...
-    var my_shootable_thing: Shootable
+    
 
 Specify the return type of a function with the arrow ``->``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

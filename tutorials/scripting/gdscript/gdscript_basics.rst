@@ -190,9 +190,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | extends    | Defines what class to extend with the current class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| trait      | Defines an inner trait. See `Inner traits`_.                                                                                                      |
-+------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| trait_name | Defines the script as a globally accessible trait with the specified name. See `Registering named traits`_.                                       |
+| trait      | Defines a trait. See `Traits`_.                                                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | uses       | Defines what trait(s) the current class should use.                                                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1107,7 +1105,6 @@ Valid types are:
 - Constant names if they contain a script or trait resource (``MyScript`` if you declared ``const MyScript = preload("res://my_script.gd")``).
 - Other classes or traits in the same file, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
 - Script classes declared with the ``class_name`` keyword.
-- Traits declared with the ``trait_name`` keyword.
 - Autoloads registered as singletons.
 
 .. note::
@@ -1257,18 +1254,6 @@ A base class static variable can also be accessed via a child class:
         prints(A.x, B.x) # 2 2
         B.x = 3
         prints(A.x, B.x) # 3 3
-
-Likewise, if a class uses a trait with static variables, it will inherit those
-variables::
-
-    trait HasStatic:
-        static var static_var = 3
-
-    class UsingClass:
-        uses HasStatic
-
-    func _ready():
-        print(UsingClass.static_var)
 
 ``@static_unload`` annotation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2381,6 +2366,9 @@ class resource is done by calling the ``new`` function on the class object:
         var a = MyClass.new()
         a.some_function()
 
+
+.. _doc_gdscript_basics_traits:
+
 Traits
 ------
 
@@ -2388,129 +2376,64 @@ Since Godot 4.x, GDScript supports traits, which are collections of behaviors an
 that classes can use to guarantee
 functionality to themselves and other objects that may be attempting to use them.
 
-Like classes, by default all ``.gdt`` files are unnamed traits, and you must reference
-them using a relative or absolute path.
-::
-    # Use the trait 'interactable.gdt'.
-    uses "res://path/to/interactable.gdt"
-
 Note that traits on their own *cannot* be instantiated the same way that classes can.
 
-.. _doc_gdscript_basics_trait_name:
-
-Registering named traits
+Registering traits
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Traits can be given a global name by using the ``trait_name`` keyword.
+Traits can be created inside of a GDScript class by using the ``trait`` keyword.
 ::
-    trait_name MyTrait
+
+    trait Damageable:
+        signal died
+
+        const MAX_HEALTH = 100
+        var health = MAX_HEALTH
+
+        func take_damage(amount):  # Will automatically exist in any class using this trait.
+            health -= amount
+            on_hit()
+            if health <= 0:
+                on_death()
+                died.emit()
+
+        func on_hit()  # Unimplemented method - Must be overriden in any class using this trait.
     
 Using traits in a class
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-For a class to use a trait, use the ``uses`` keyword:
+For a class to use a trait, include the ``uses`` keyword:
 ::
-    class_name MyScript
-    uses MyTrait
-
-
-Traits may also extend classes. If a trait extends a class, then any class
-that uses that trait must also have that class as an ancestor.
-::
-    # movable.gdt
-    trait_name Movable
-    extends PhysicsBody2D
-
-    # character.gd
-    class_name Character
-    extends CharacterBody2D
-    uses Movable  # Allowed, since CharacterBody2D inherits from PhysicsBody2D.
+    class_name Player
+    uses Damageable
 
 The ``is`` keyword can be used to determine if a given instance uses a particular trait.
 ::
-    if entity is Movable:
-        entity.move()
+    if entity is Damageable:
+        entity.take_damage(1)
 
 If a trait provides a method signature, but no body, then the using class must implement
 a body for the method.
 ::
-    # explosive.gdt
-    trait_name Explosive
-    
-    func explode()  # Body is not defined here, so it must be defined in each class that uses it.
+    class_name Player
+    extends CharacterBody2D
+    uses Damageable
 
-
-    # exploding_barrel.gd
-    class_name ExplodingBarrel
-    extends Sprite2D
-    uses Explosive
-
-    func explode():  # If this definition of Explosive.explode isn't provided, we will get an error.
-        print("Kaboom!")
-        queue_free()
+    func on_hit():
+        print("Ouch, that hurt!")
 
 If a trait provides a method signature *and* a body, then the using class inherits it by default
 and doesn't need to provide its own implementation. It still can override the trait's
 implementation if desired, but the parameter count must stay the same, and the parameter and return
 types must be compatible.
 ::
-    # damageable.gdt
-    trait_name Damageable
-
-    func take_damage():
-        print("Ouch!")
-
-
-    # invincible_npc.gd
     class_name InvincibleNPC
     extends Sprite2D
     uses Damageable
 
     # Allowed, and will run instead of Damageable's original take_damage method.
-    func take_damage():
-        print("You can't hurt me!")
-
-..
-    TODO: Confirm these behaviors
-
-Other class members have similar rules:
-
-- Variables and constants can be overridden, as long as the type is compatible and the value is changed.
-- Signals can be overriden, as long as the parameter count is maintained and the parameter types are compatible.
-- Named enums can be overriden and have new enum values.
-
-.. _doc_gdscript_basics_inner_traits:
-
-Inner traits
-~~~~~~~~~~~~
-
-Like inner classes, a class or trait file may contain inner traits, defined with the ``trait``
-keyword. Unlike inner classes, they cannot be instantiated directly, but their name can be
-referenced for using or checking use of themselves.
-::
-    # An inner trait in this class file.
-    trait SomeInnerTrait:
-        func do_something():
-            print("I did something!")
-
-
-    # An inner class in this class file, which uses the inner trait.    
-    class SomeInnerClass:
-        uses SomeInnerTrait
-
-
-    func _init():
-        var c = SomeInnerClass.new()
-        if c is SomeInnerTrait:
-            c.do_something()
-
-.. _doc_gdscript_basics_traits_as_resources:
-
-Traits as resources
-~~~~~~~~~~~~~~~~~~~
-
-Traits stored as files are treated as :ref:`GDTraits <class_GDTrait>`, and must
-be loaded similarly to classes (see `Classes as resources`_).
+    func take_damage(amount):
+        print("Ah ha ha! You can't hurt me!")
 
 Exports
 -------

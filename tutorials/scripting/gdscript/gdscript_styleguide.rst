@@ -651,7 +651,7 @@ code. As a summary table:
 +---------------+----------------+----------------------------------------------------+
 | Class names   | PascalCase     | ``class_name YAMLParser``                          |
 +---------------+----------------+----------------------------------------------------+
-| Trait names   | PascalCase     | ``trait_name Interactable``                        |
+| Trait names   | PascalCase     | ``trait Interactable``                             |
 +---------------+----------------+----------------------------------------------------+
 | Node names    | PascalCase     | ``Camera3D``, ``Player``                           |
 +---------------+----------------+----------------------------------------------------+
@@ -671,8 +671,7 @@ code. As a summary table:
 File names
 ~~~~~~~~~~
 
-Use snake_case for file names. For named classes and traits, convert the PascalCase class or trait
-name to snake_case::
+Use snake\_case for file names. For named classes, convert the PascalCase class name to snake_case::
 
     # This file should be saved as `weapon.gd`.
     class_name Weapon
@@ -683,12 +682,6 @@ name to snake_case::
     # This file should be saved as `yaml_parser.gd`.
     class_name YAMLParser
     extends Object
-
-::
-    
-    # This file should be saved as `interactable.gdt`.
-    trait_name Interactable
-    extends Node
 
 This is consistent with how C++ files are named in Godot's source code. This
 also avoids case sensitivity issues that can crop up when exporting a project
