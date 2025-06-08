@@ -243,8 +243,7 @@ the ``lang`` attribute. Currently supported options are:
 .. warning::
 
     Use ``[codeblock]`` for pre-formatted code blocks. Since Godot 4.5,
-    **tabs** should be used for indentation. Four spaces are still 
-    supported, but not recommended.
+    **tabs** should be used for indentation.
 
 For example:
 
