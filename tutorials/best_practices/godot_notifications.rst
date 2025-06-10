@@ -360,7 +360,7 @@ nodes that one might create at runtime.
             return _parentCache.HasUserSignal("InteractedWith");
         }
 
-        public void _Notification(long what)
+        public override void _Notification(int what)
         {
             switch (what)
             {
