@@ -830,7 +830,22 @@ Text is interpreted as being UTF-8 encoded.
 
 :ref:`String<class_String>` **get_path**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_path>`
 
-Returns the path as a :ref:`String<class_String>` for the current open file.
+
+Returns the path that was used to open the current file.
+
+The returned path uses Godot's virtual file system format, such as ``res://`` or ``user://``, depending on how the file was opened using :ref:`FileAccess.open() <class_FileAccess_method_open>`.
+
+If no file is currently open, this method returns an empty string (``""``). It does not throw an error in this case.
+
+This method is useful for verifying which file is in use or debugging file access logic.
+
+**Example:**
+
+.. code-block:: gdscript
+
+    var file := FileAccess.open("user://save_data.json", FileAccess.READ)
+    if file:
+        print(file.get_path()) # Prints: user://save_data.json open file.
 
 .. rst-class:: classref-item-separator
 
