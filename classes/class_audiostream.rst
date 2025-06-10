@@ -264,7 +264,7 @@ Generates an :ref:`AudioSample<class_AudioSample>` based on the current stream.
 
 :ref:`float<class_float>` **get_length**\ (\ ) |const| :ref:`🔗<class_AudioStream_method_get_length>`
 
-Returns the length of the audio stream in seconds.
+Returns the length of the audio stream in seconds. For streams that play one of multiple other streams (such as :ref:`AudioStreamRandomizer<class_AudioStreamRandomizer>`), this will return the length of the last played stream. If an AudioStream has an indefinite length (such as :ref:`AudioStreamRandomizer<class_AudioStreamGenerator>` and :ref:`AudioStreamRandomizer<class_AudioStreamMicrophone>`) it will return 0.
 
 .. rst-class:: classref-item-separator
 
