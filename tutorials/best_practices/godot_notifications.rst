@@ -362,7 +362,7 @@ nodes that one might create at runtime.
 
         public override void _Notification(int what)
         {
-            switch (what)
+            switch ((long)what)
             {
                 case NotificationParented:
                     _parentCache = GetParent();
