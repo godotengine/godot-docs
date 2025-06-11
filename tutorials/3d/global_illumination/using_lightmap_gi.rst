@@ -645,6 +645,14 @@ Reducing LightmapGI artifacts
 
 If you notice LightmapGI nodes popping in and out of existence as the camera
 moves, this is most likely because the engine is rendering too many LightmapGI
-instances at once. Godot is limited to rendering 8 LightmapGI nodes at once,
-which means up to 8 instances can be in the camera view before some of them will
-start flickering.
+instances at once.
+
+Here are the limits for each renderer:
+
+- **Forward+**: Up to 8 LightmapGI nodes can be rendered at once.
+- **Forward Mobile**: Up to 2 LightmapGI nodes can be rendered at once.
+- **Compatibility**: An unlimited number of LightmapGI nodes can be rendered at once.
+
+If this limit is exceeded, meshes that use lightmaps from extraneous LightmapGI
+nodes will not display lightmaps on them. Dynamic objects within their bounds also
+won't receive lighting.
