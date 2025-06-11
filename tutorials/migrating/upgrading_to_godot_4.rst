@@ -787,7 +787,7 @@ editor is closed.
 
 
 Updating version control settings
------------------------
+---------------------------------
 
-Godot 3.x and 4.0 have entirely different lists of files and folders that should
-be ignored by your :ref:`version control systems <doc_version_control_systems>`.
+Godot 3.x and 4.x have entirely different lists of files and folders that should
+be ignored by your :ref:`version control system<doc_version_control_systems>`.
