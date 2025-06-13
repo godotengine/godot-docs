@@ -282,6 +282,13 @@ Reference
 
     - ``[br]``
 
+  * - | **hr**
+      | Adds new a horizontal rule to separate content. Supports configuration options,
+        see :ref:`doc_bbcode_in_richtextlabel_hr_options`.
+
+    - | ``[hr]``
+      | ``[hr {options}]``
+
   * - | **center**
       | Makes ``{text}`` horizontally centered.
       | Same as ``[p align=center]``.
@@ -601,6 +608,52 @@ For example:
   [url={"example": "value"}]JSON[/url]
 
 
+.. _doc_bbcode_in_richtextlabel_hr_options:
+
+Horizontal rule options
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- **color**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Color name or color in HEX format          |
+  +-----------+--------------------------------------------+
+  | `Default` | ``Color(1, 1, 1, 1)``                      |
+  +-----------+--------------------------------------------+
+
+  Color tint of the rule (modulation).
+
+- **height**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Integer number                             |
+  +-----------+--------------------------------------------+
+  | `Default` | ``2``                                      |
+  +-----------+--------------------------------------------+
+
+  Target height of the rule in pixels, add ``%`` to the end of value to specify it as percentages of the control width instead of pixels.
+
+- **width**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Integer number                             |
+  +-----------+--------------------------------------------+
+  | `Default` | ``90%``                                    |
+  +-----------+--------------------------------------------+
+
+  Target width of the rule in pixels, add ``%`` to the end of value to specify it as percentages of the control width instead of pixels.
+
+- **align**
+
+  +-----------+----------------------------------------------------------------------------------------+
+  | `Values`  | ``left`` (or ``l``), ``center`` (or ``c``), ``right`` (or ``r``)                       |
+  +-----------+----------------------------------------------------------------------------------------+
+  | `Default` | ``left``                                                                               |
+  +-----------+----------------------------------------------------------------------------------------+
+
+  Horizontal alignment.
+
+
 .. _doc_bbcode_in_richtextlabel_image_options:
 
 Image options
@@ -634,7 +687,7 @@ Image options
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Target width of the image, add ``%`` to the end of value to specify it as percentages of the control width instead of pixels.
+  Target width of the image in pixels, add ``%`` to the end of value to specify it as percentages of the control width instead of pixels.
 
 - **region**
 
