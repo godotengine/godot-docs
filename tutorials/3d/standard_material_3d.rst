@@ -732,18 +732,18 @@ features such as the ability to cast shadows.
     **Pixel Dither**).
 
 **Pixel Alpha** mode: The actual transparency of a pixel of the object changes
-with distance to the camera. This is the most effect, but forces the material
+with distance to the camera. This is the smoothest fade, but forces the material
 into the transparency pipeline (which leads, for example, to no shadows).
 
 .. image:: img/standart_material_distance_fade_pixel_alpha_mode.webp
 
-**Pixel Dither** mode: What this does is sort of approximate the transparency
-by only having a fraction of the pixels rendered.
+**Pixel Dither** mode: This approximates transparency by only having a fraction 
+of the pixels rendered using a 4x4 Bayer matrix (ordered dithering).
 
 .. image:: img/standart_material_distance_fade_pixel_dither_mode.webp
 
-**Object Dither** mode: Like the previous mode, but the calculated transparency
-is the same across the entire object's surface.
+**Object Dither** mode: Like the previous mode, but the calculated transparency, 
+and therefore dither pattern, is the same across the entire object's surface.
 
 .. image:: img/standart_material_distance_fade_object_dither_mode.webp
 
