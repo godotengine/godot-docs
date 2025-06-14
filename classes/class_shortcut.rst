@@ -19,9 +19,69 @@ A shortcut for binding input.
 Description
 -----------
 
-Shortcuts are commonly used for interacting with a :ref:`Control<class_Control>` element from an :ref:`InputEvent<class_InputEvent>` (also known as hotkeys).
+Shortcuts (also known as hotkeys) are containers of :ref:`InputEvent<class_InputEvent>` resources. They are commonly used to interact with a :ref:`Control<class_Control>` element from an :ref:`InputEvent<class_InputEvent>`.
 
-One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>`\ s, allowing the possibility of triggering one action with multiple different inputs.
+One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>` resources, making it possible to trigger one action with multiple different inputs.
+
+\ **Example:** Capture the :kbd:`Ctrl + S` shortcut using a **Shortcut** resource:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    extends Node
+
+    var save_shortcut = Shortcut.new()
+    func _ready():
+        var key_event = InputEventKey.new()
+        key_event.keycode = KEY_S
+        key_event.ctrl_pressed = true
+        key_event.command_or_control_autoremap = true # Swaps ctrl for Command on Mac.
+        save_shortcut.set_events([key_event])
+
+    func _input(event):
+        if save_shortcut.matches_event(event) and event.is_pressed() and not event.is_echo():
+            print("Save shortcut pressed!")
+            get_viewport().set_input_as_handled()
+
+ .. code-tab:: csharp
+
+    public partial class YourScriptName : Godot.Node
+        {
+            private Godot.Shortcut saveShortcut;
+
+            public override void _Ready()
+            {
+                // Enable input processing explicitly (optional for Node, but included for clarity)
+                SetProcessInput(true);
+
+                saveShortcut = new Godot.Shortcut();
+
+                Godot.InputEventKey keyEvent = new Godot.InputEventKey
+                {
+                    Keycode = Godot.Key.S,
+                    CtrlPressed = true,
+                    CommandOrControlAutoremap = true
+                };
+
+                Godot.Collections.Array<Godot.InputEvent> events = new Godot.Collections.Array<Godot.InputEvent> { keyEvent };
+                saveShortcut.SetEvents(events);
+            }
+
+            public override void _Input(Godot.InputEvent @event)
+            {
+                if (@event is Godot.InputEventKey keyEvent &&
+                    saveShortcut.MatchesEvent(@event) &&
+                    keyEvent.Pressed && !keyEvent.Echo)
+                {
+                    Godot.GD.Print("Save shortcut pressed!");
+                    GetViewport().SetInputAsHandled();
+                }
+            }
+        }
+
+
 
 .. rst-class:: classref-reftable-group
 

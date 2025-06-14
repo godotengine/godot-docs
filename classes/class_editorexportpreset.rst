@@ -19,7 +19,7 @@ Export preset configuration.
 Description
 -----------
 
-Export preset configuration. Instances of **EditorExportPreset** by editor UI and intended to be used a read-only configuration passed to the :ref:`EditorExportPlatform<class_EditorExportPlatform>` methods when exporting the project.
+Represents the configuration of an export preset, as created by the editor's export dialog. An **EditorExportPreset** instance is intended to be used a read-only configuration passed to the :ref:`EditorExportPlatform<class_EditorExportPlatform>` methods when exporting the project.
 
 .. rst-class:: classref-reftable-group
 
@@ -275,7 +275,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **are_advanced_options_enabled**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_are_advanced_options_enabled>`
 
-Returns ``true`` if "Advanced" toggle is enabled in the export dialog.
+Returns ``true`` if the "Advanced" toggle is enabled in the export dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -287,7 +287,7 @@ Returns ``true`` if "Advanced" toggle is enabled in the export dialog.
 
 :ref:`String<class_String>` **get_custom_features**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_custom_features>`
 
-Returns string with a comma separated list of custom features.
+Returns a comma-separated list of custom features added to this preset, as a string. See :doc:`Feature tags <../tutorials/export/feature_tags>` in the documentation for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -299,7 +299,7 @@ Returns string with a comma separated list of custom features.
 
 :ref:`Dictionary<class_Dictionary>` **get_customized_files**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_customized_files>`
 
-Returns :ref:`Dictionary<class_Dictionary>` of files selected in the "Resources" tab of the export dialog. Dictionary keys are file names and values are export mode - ``"strip"``, ``"keep"``, or ``"remove"``. See also :ref:`get_file_export_mode()<class_EditorExportPreset_method_get_file_export_mode>`.
+Returns a dictionary of files selected in the "Resources" tab of the export dialog. The dictionary's keys are file paths, and its values are the corresponding export modes: ``"strip"``, ``"keep"``, or ``"remove"``. See also :ref:`get_file_export_mode()<class_EditorExportPreset_method_get_file_export_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -311,7 +311,7 @@ Returns :ref:`Dictionary<class_Dictionary>` of files selected in the "Resources"
 
 :ref:`int<class_int>` **get_customized_files_count**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_customized_files_count>`
 
-Returns number of files selected in the "Resources" tab of the export dialog.
+Returns the number of files selected in the "Resources" tab of the export dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -479,7 +479,7 @@ Returns the list of packs on which to base a patch export on.
 
 :ref:`String<class_String>` **get_preset_name**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_preset_name>`
 
-Returns export preset name.
+Returns this export preset's name.
 
 .. rst-class:: classref-item-separator
 
@@ -503,7 +503,7 @@ Returns the value of the setting identified by ``name`` using export preset feat
 
 :ref:`int<class_int>` **get_script_export_mode**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_script_export_mode>`
 
-Returns script export mode.
+Returns the export mode used by GDScript files. ``0`` for "Text", ``1`` for "Binary tokens", and ``2`` for "Compressed binary tokens (smaller files)".
 
 .. rst-class:: classref-item-separator
 
@@ -541,7 +541,7 @@ Returns ``true`` if the preset has the property named ``property``.
 
 :ref:`bool<class_bool>` **has_export_file**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorExportPreset_method_has_export_file>`
 
-Returns ``true`` if specified file is exported.
+Returns ``true`` if the file at the specified ``path`` will be exported.
 
 .. rst-class:: classref-item-separator
 
@@ -553,7 +553,7 @@ Returns ``true`` if specified file is exported.
 
 :ref:`bool<class_bool>` **is_dedicated_server**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_is_dedicated_server>`
 
-Returns ``true`` if dedicated server export mode is selected in the export dialog.
+Returns ``true`` if the dedicated server export mode is selected in the export dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -565,7 +565,7 @@ Returns ``true`` if dedicated server export mode is selected in the export dialo
 
 :ref:`bool<class_bool>` **is_runnable**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_is_runnable>`
 
-Returns ``true`` if "Runnable" toggle is enabled in the export dialog.
+Returns ``true`` if the "Runnable" toggle is enabled in the export dialog.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

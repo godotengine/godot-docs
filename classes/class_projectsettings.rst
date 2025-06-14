@@ -545,11 +545,17 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/mix_rate<class_ProjectSettings_property_editor/movie_writer/mix_rate>`                                                                                                           | ``48000``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`                                                                                                 | ``0.75``                                                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`editor/movie_writer/movie_file<class_ProjectSettings_property_editor/movie_writer/movie_file>`                                                                                                       | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editor/movie_writer/ogv/audio_quality<class_ProjectSettings_property_editor/movie_writer/ogv/audio_quality>`                                                                                         | ``0.5``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/ogv/encoding_speed<class_ProjectSettings_property_editor/movie_writer/ogv/encoding_speed>`                                                                                       | ``4``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/ogv/keyframe_interval<class_ProjectSettings_property_editor/movie_writer/ogv/keyframe_interval>`                                                                                 | ``64``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/speaker_mode<class_ProjectSettings_property_editor/movie_writer/speaker_mode>`                                                                                                   | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editor/movie_writer/video_quality<class_ProjectSettings_property_editor/movie_writer/video_quality>`                                                                                                 | ``0.75``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`editor/naming/default_signal_callback_name<class_ProjectSettings_property_editor/naming/default_signal_callback_name>`                                                                               | ``"_on_{node_name}_{signal_name}"``                                                              |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -826,6 +832,8 @@ Properties
    | :ref:`String<class_String>`                       | :ref:`internationalization/locale/fallback<class_ProjectSettings_property_internationalization/locale/fallback>`                                                                                           | ``"en"``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`internationalization/locale/include_text_server_data<class_ProjectSettings_property_internationalization/locale/include_text_server_data>`                                                           | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`internationalization/locale/line_breaking_strictness<class_ProjectSettings_property_internationalization/locale/line_breaking_strictness>`                                                           | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`internationalization/locale/test<class_ProjectSettings_property_internationalization/locale/test>`                                                                                                   | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1292,6 +1300,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`navigation/pathfinding/max_threads<class_ProjectSettings_property_navigation/pathfinding/max_threads>`                                                                                               | ``4``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/world/map_use_async_iterations<class_ProjectSettings_property_navigation/world/map_use_async_iterations>`                                                                                 | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/world/region_use_async_iterations<class_ProjectSettings_property_navigation/world/region_use_async_iterations>`                                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_chars_per_second<class_ProjectSettings_property_network/limits/debugger/max_chars_per_second>`                                                                           | ``32768``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1928,13 +1938,13 @@ Property Descriptions
 
 Accessibility support mode:
 
-- **Auto** (``0``): accessibility support is enabled, but accessibility information updates are processed only if an assistive app (e.g. screen reader or Braille display) is active (default).
+- **Auto** (``0``): Accessibility support is enabled, but updates to the accessibility information are processed only if an assistive app (such as a screen reader or a Braille display) is active (default).
 
-- **Always Active** (``1``): accessibility support is enabled, and accessibility information updates are processed regardless of current assistive apps' status.
+- **Always Active** (``1``): Accessibility support is enabled, and updates to the accessibility information are always processed, regardless of the status of assistive apps.
 
-- **Disabled** (``2``): accessibility support is fully disabled.
+- **Disabled** (``2``): Accessibility support is fully disabled.
 
-\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, macOS Accessibility Inspector, or AT-SPI Browser do not count as assistive apps. To test your app with these tools, use ``1``.
+\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD) do not count as assistive apps. To test your project with these tools, use **Always Active**.
 
 .. rst-class:: classref-item-separator
 
@@ -5118,20 +5128,6 @@ The audio mix rate to use in the recorded audio when writing a movie (in Hz). Th
 
 ----
 
-.. _class_ProjectSettings_property_editor/movie_writer/mjpeg_quality:
-
-.. rst-class:: classref-property
-
-:ref:`float<class_float>` **editor/movie_writer/mjpeg_quality** = ``0.75`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`
-
-The JPEG quality to use when writing a video to an AVI file, between ``0.01`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger file sizes. Recommended ``quality`` values are between ``0.75`` and ``0.9``. Even at quality ``1.0``, JPEG compression remains lossy.
-
-\ **Note:** This does not affect the audio quality or writing PNG image sequences.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_editor/movie_writer/movie_file:
 
 .. rst-class:: classref-property
@@ -5140,15 +5136,55 @@ The JPEG quality to use when writing a video to an AVI file, between ``0.01`` an
 
 The output path for the movie. The file extension determines the :ref:`MovieWriter<class_MovieWriter>` that will be used.
 
-Godot has 2 built-in :ref:`MovieWriter<class_MovieWriter>`\ s:
+Godot has 3 built-in :ref:`MovieWriter<class_MovieWriter>`\ s:
 
-- AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. MJPEG does not support transparency. AVI output is currently limited to a file of 4 GB in size at most.
+- OGV container with Theora for video and Vorbis for audio (``.ogv`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`editor/movie_writer/video_quality<class_ProjectSettings_property_editor/movie_writer/video_quality>` and :ref:`editor/movie_writer/ogv/audio_quality<class_ProjectSettings_property_editor/movie_writer/ogv/audio_quality>`. The resulting file can be viewed in Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>` and most video players, but not web browsers as they don't support Theora.
+
+- AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`editor/movie_writer/video_quality<class_ProjectSettings_property_editor/movie_writer/video_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. MJPEG does not support transparency. AVI output is currently limited to a file of 4 GB in size at most.
 
 - PNG image sequence for video and WAV for audio (``.png`` file extension). Lossless compression, large file sizes, slow encoding. Designed to be encoded to a video file with another tool such as `FFmpeg <https://ffmpeg.org/>`__ after recording. Transparency is currently not supported, even if the root viewport is set to be transparent.
 
 If you need to encode to a different format or pipe a stream through third-party software, you can extend this :ref:`MovieWriter<class_MovieWriter>` class to create your own movie writers.
 
 When using PNG output, the frame number will be appended at the end of the file name. It starts from 0 and is padded with 8 digits to ensure correct sorting and easier processing. For example, if the output path is ``/tmp/hello.png``, the first two frames will be ``/tmp/hello00000000.png`` and ``/tmp/hello00000001.png``. The audio will be saved at ``/tmp/hello.wav``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_editor/movie_writer/ogv/audio_quality:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editor/movie_writer/ogv/audio_quality** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/ogv/audio_quality>`
+
+The audio encoding quality to use when writing Vorbis audio to a file, between ``-0.1`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-sounding output at the cost of larger file sizes. Even at quality ``1.0``, compression remains lossy.
+
+\ **Note:** This does not affect video quality, which is controlled by :ref:`editor/movie_writer/video_quality<class_ProjectSettings_property_editor/movie_writer/video_quality>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_editor/movie_writer/ogv/encoding_speed:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editor/movie_writer/ogv/encoding_speed** = ``4`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/ogv/encoding_speed>`
+
+The tradeoff between encoding speed and compression efficiency. Speed ``1`` is the slowest but provides the best compression. Speed ``4`` is the fastest but provides the worst compression. Video quality is generally not affected significantly by this setting.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_editor/movie_writer/ogv/keyframe_interval:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editor/movie_writer/ogv/keyframe_interval** = ``64`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/ogv/keyframe_interval>`
+
+Forces keyframes at the specified interval (in frame count). Higher values can improve compression up to a certain level at the expense of higher latency when seeking.
 
 .. rst-class:: classref-item-separator
 
@@ -5161,6 +5197,18 @@ When using PNG output, the frame number will be appended at the end of the file 
 :ref:`int<class_int>` **editor/movie_writer/speaker_mode** = ``0`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/speaker_mode>`
 
 The speaker mode to use in the recorded audio when writing a movie. See :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` for possible values.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_editor/movie_writer/video_quality:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editor/movie_writer/video_quality** = ``0.75`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/video_quality>`
+
+The video encoding quality to use when writing a Theora or AVI (MJPEG) video to a file, between ``0.0`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger file sizes. Recommended ``quality`` values are between ``0.75`` and ``0.9``. Even at quality ``1.0``, compression remains lossy.
 
 .. rst-class:: classref-item-separator
 
@@ -7029,6 +7077,28 @@ If ``true``, text server break iteration rule sets, dictionaries and other optio
 \ **Note:** "ICU / HarfBuzz / Graphite" text server data includes dictionaries for Burmese, Chinese, Japanese, Khmer, Lao and Thai as well as Unicode Standard Annex #29 and Unicode Standard Annex #14 word and line breaking rules. Data is about 4 MB large.
 
 \ **Note:** :ref:`TextServerFallback<class_TextServerFallback>` does not use additional data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_internationalization/locale/line_breaking_strictness:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **internationalization/locale/line_breaking_strictness** = ``0`` :ref:`🔗<class_ProjectSettings_property_internationalization/locale/line_breaking_strictness>`
+
+Default strictness of line-breaking rules. Can be overridden by adding ``@lb={auto,loose,normal,strict}`` to the language code.
+
+- **Auto** (``0``) - strictness is based on the length of the line.
+
+- **Loose** (``1``) - the least restrictive set of line-breaking rules. Typically used for short lines.
+
+- **Normal** (``2``) - the most common set of line-breaking rules.
+
+- **Strict** (``3``) - the most stringent set of line-breaking rules.
+
+See `Line Breaking Strictness: the line-break property <https://www.w3.org/TR/css-text-3/#line-break-property>`__ for more info.
 
 .. rst-class:: classref-item-separator
 
@@ -9842,6 +9912,18 @@ If enabled, navigation map synchronization uses an async process that runs on a 
 
 ----
 
+.. _class_ProjectSettings_property_navigation/world/region_use_async_iterations:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/world/region_use_async_iterations** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/world/region_use_async_iterations>`
+
+If enabled, navigation region synchronization uses an async process that runs on a background thread. This avoids stalling the main thread but adds an additional delay to any navigation region change.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_network/limits/debugger/max_chars_per_second:
 
 .. rst-class:: classref-property
@@ -10972,7 +11054,7 @@ Maximum number of canvas item commands that can be batched into a single draw ca
 
 Maximum number of uniform sets that will be cached by the 2D renderer when batching draw calls.
 
-\ **Note:** A project that uses a large number of unique sprite textures per frame may benefit from increasing this value.
+\ **Note:** Increasing this value can improve performance if the project renders many unique sprite textures every frame.
 
 .. rst-class:: classref-item-separator
 
@@ -11688,7 +11770,7 @@ Two options are supported:
 
 :ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_angle** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle>`
 
-If ``true``, the compatibility renderer will fall back to ANGLE if native OpenGL is not supported or the device is listed in :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`.
+If ``true``, the Compatibility renderer will fall back to ANGLE if native OpenGL is not supported or the device is listed in :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`.
 
 \ **Note:** This setting is implemented only on Windows.
 
@@ -11702,7 +11784,7 @@ If ``true``, the compatibility renderer will fall back to ANGLE if native OpenGL
 
 :ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_gles** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_gles>`
 
-If ``true``, the compatibility renderer will fall back to OpenGLES if desktop OpenGL is not supported.
+If ``true``, the Compatibility renderer will fall back to OpenGLES if desktop OpenGL is not supported.
 
 \ **Note:** This setting is implemented only on Linux/X11.
 
@@ -11716,7 +11798,7 @@ If ``true``, the compatibility renderer will fall back to OpenGLES if desktop Op
 
 :ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_native** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_native>`
 
-If ``true``, the compatibility renderer will fall back to native OpenGL if ANGLE is not supported, or ANGLE dynamic libraries aren't found.
+If ``true``, the Compatibility renderer will fall back to native OpenGL if ANGLE is not supported, or ANGLE dynamic libraries aren't found.
 
 \ **Note:** This setting is implemented on macOS and Windows.
 
@@ -12134,7 +12216,7 @@ Use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv>`
 
-Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
+The subdivision amount of the first quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12146,7 +12228,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv>`
 
-Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
+The subdivision amount of the second quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12158,7 +12240,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv** = ``3`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv>`
 
-Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
+The subdivision amount of the third quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12170,7 +12252,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv** = ``4`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv>`
 
-Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
+The subdivision amount of the fourth quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12182,7 +12264,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_size** = ``4096`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_size>`
 
-Size for shadow atlas (used for OmniLights and SpotLights). See documentation.
+The size of the shadow atlas used for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>` nodes. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -13758,10 +13840,10 @@ Adds a custom property info to a property. The dictionary must contain:
 
     var propertyInfo = new Godot.Collections.Dictionary
     {
-        {"name", "category/propertyName"},
-        {"type", (int)Variant.Type.Int},
-        {"hint", (int)PropertyHint.Enum},
-        {"hint_string", "one,two,three"},
+        { "name", "category/propertyName" },
+        { "type", (int)Variant.Type.Int },
+        { "hint", (int)PropertyHint.Enum },
+        { "hint_string", "one,two,three" },
     };
 
     ProjectSettings.AddPropertyInfo(propertyInfo);

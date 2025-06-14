@@ -37,7 +37,7 @@ Creating a dictionary:
         dict_variable_key: dict_variable_value,
     }
 
-    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
+    var points_dict = { "White": 50, "Yellow": 75, "Orange": 100 }
 
     # Alternative Lua-style syntax.
     # Doesn't require quotes around keys, but only string constants can be used as key names.
@@ -52,9 +52,9 @@ Creating a dictionary:
     var myDict = new Godot.Collections.Dictionary(); // Creates an empty dictionary.
     var pointsDict = new Godot.Collections.Dictionary
     {
-        {"White", 50},
-        {"Yellow", 75},
-        {"Orange", 100}
+        { "White", 50 },
+        { "Yellow", 75 },
+        { "Orange", 100 },
     };
 
 
@@ -67,7 +67,7 @@ You can access a dictionary's value by referencing its corresponding key. In the
  .. code-tab:: gdscript
 
     @export_enum("White", "Yellow", "Orange") var my_color: String
-    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
+    var points_dict = { "White": 50, "Yellow": 75, "Orange": 100 }
     func _ready():
         # We can't use dot syntax here as `my_color` is a variable.
         var points = points_dict[my_color]
@@ -78,9 +78,9 @@ You can access a dictionary's value by referencing its corresponding key. In the
     public string MyColor { get; set; }
     private Godot.Collections.Dictionary _pointsDict = new Godot.Collections.Dictionary
     {
-        {"White", 50},
-        {"Yellow", 75},
-        {"Orange", 100}
+        { "White", 50 },
+        { "Yellow", 75 },
+        { "Orange", 100 },
     };
 
     public override void _Ready()
@@ -107,7 +107,7 @@ Dictionaries can contain more complex data:
 
     var myDict = new Godot.Collections.Dictionary
     {
-        {"First Array", new Godot.Collections.Array{1, 2, 3, 4}}
+        { "First Array", new Godot.Collections.Array { 1, 2, 3, 4 } }
     };
 
 
@@ -119,16 +119,16 @@ To add a key to an existing dictionary, access it like an existing key and assig
 
  .. code-tab:: gdscript
 
-    var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
+    var points_dict = { "White": 50, "Yellow": 75, "Orange": 100 }
     points_dict["Blue"] = 150 # Add "Blue" as a key and assign 150 as its value.
 
  .. code-tab:: csharp
 
     var pointsDict = new Godot.Collections.Dictionary
     {
-        {"White", 50},
-        {"Yellow", 75},
-        {"Orange", 100}
+        { "White", 50 },
+        { "Yellow", 75 },
+        { "Orange", 100 },
     };
     pointsDict["Blue"] = 150; // Add "Blue" as a key and assign 150 as its value.
 
@@ -148,7 +148,7 @@ Finally, dictionaries can contain different types of keys and values in the same
         "String Key": 5,
         4: [1, 2, 3],
         7: "Hello",
-        "sub_dict": {"sub_key": "Nested value"},
+        "sub_dict": { "sub_key": "Nested value" },
     }
 
  .. code-tab:: csharp
@@ -156,10 +156,10 @@ Finally, dictionaries can contain different types of keys and values in the same
     // This is a valid dictionary.
     // To access the string "Nested value" below, use `((Godot.Collections.Dictionary)myDict["sub_dict"])["sub_key"]`.
     var myDict = new Godot.Collections.Dictionary {
-        {"String Key", 5},
-        {4, new Godot.Collections.Array{1,2,3}},
-        {7, "Hello"},
-        {"sub_dict", new Godot.Collections.Dictionary{{"sub_key", "Nested value"}}}
+        { "String Key", 5 },
+        { 4, new Godot.Collections.Array { 1, 2, 3 } },
+        { 7, "Hello" },
+        { "sub_dict", new Godot.Collections.Dictionary { { "sub_key", "Nested value" } } },
     };
 
 
@@ -171,13 +171,13 @@ The keys of a dictionary can be iterated with the ``for`` keyword:
 
  .. code-tab:: gdscript
 
-    var groceries = {"Orange": 20, "Apple": 2, "Banana": 4}
+    var groceries = { "Orange": 20, "Apple": 2, "Banana": 4 }
     for fruit in groceries:
         var amount = groceries[fruit]
 
  .. code-tab:: csharp
 
-    var groceries = new Godot.Collections.Dictionary{{"Orange", 20}, {"Apple", 2}, {"Banana", 4}};
+    var groceries = new Godot.Collections.Dictionary { { "Orange", 20 }, { "Apple", 2 }, { "Banana", 4 } };
     foreach (var (fruit, amount) in groceries)
     {
         // `fruit` is the key, `amount` is the value.
@@ -578,7 +578,7 @@ In GDScript, this is equivalent to the ``in`` operator:
 
 ::
 
-    if "Godot" in {"Godot": 4}:
+    if "Godot" in { "Godot": 4 }:
         print("The key is here!") # Will be printed.
 
 \ **Note:** This method returns ``true`` as long as the ``key`` exists, even if its corresponding value is ``null``.
@@ -597,7 +597,7 @@ Returns ``true`` if the dictionary contains all keys in the given ``keys`` array
 
 ::
 
-    var data = {"width" : 10, "height" : 20}
+    var data = { "width": 10, "height": 20 }
     data.has_all(["height", "width"]) # Returns true
 
 .. rst-class:: classref-item-separator
@@ -617,15 +617,15 @@ Returns a hashed 32-bit integer value representing the dictionary contents.
 
  .. code-tab:: gdscript
 
-    var dict1 = {"A": 10, "B": 2}
-    var dict2 = {"A": 10, "B": 2}
+    var dict1 = { "A": 10, "B": 2 }
+    var dict2 = { "A": 10, "B": 2 }
 
     print(dict1.hash() == dict2.hash()) # Prints true
 
  .. code-tab:: csharp
 
-    var dict1 = new Godot.Collections.Dictionary{{"A", 10}, {"B", 2}};
-    var dict2 = new Godot.Collections.Dictionary{{"A", 10}, {"B", 2}};
+    var dict1 = new Godot.Collections.Dictionary { { "A", 10 }, { "B", 2 } };
+    var dict2 = new Godot.Collections.Dictionary { { "A", 10 }, { "B", 2 } };
 
     // Godot.Collections.Dictionary has no Hash() method. Use GD.Hash() instead.
     GD.Print(GD.Hash(dict1) == GD.Hash(dict2)); // Prints True

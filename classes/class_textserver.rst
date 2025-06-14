@@ -1287,7 +1287,7 @@ Glyph horizontal position is rounded to one quarter of the pixel size, each glyp
 
 :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **SUBPIXEL_POSITIONING_ONE_HALF_MAX_SIZE** = ``20``
 
-Maximum font size which will use one half of the pixel subpixel positioning in :ref:`SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` mode.
+Maximum font size which will use "one half of the pixel" subpixel positioning in :ref:`SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` mode.
 
 .. _class_TextServer_constant_SUBPIXEL_POSITIONING_ONE_QUARTER_MAX_SIZE:
 
@@ -1295,7 +1295,7 @@ Maximum font size which will use one half of the pixel subpixel positioning in :
 
 :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **SUBPIXEL_POSITIONING_ONE_QUARTER_MAX_SIZE** = ``16``
 
-Maximum font size which will use one quarter of the pixel subpixel positioning in :ref:`SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` mode.
+Maximum font size which will use "one quarter of the pixel" subpixel positioning in :ref:`SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` mode.
 
 .. rst-class:: classref-item-separator
 
@@ -1543,7 +1543,7 @@ Font is italic or oblique.
 
 :ref:`FontStyle<enum_TextServer_FontStyle>` **FONT_FIXED_WIDTH** = ``4``
 
-Font have fixed-width characters.
+Font has fixed-width characters (also known as monospace).
 
 .. rst-class:: classref-item-separator
 
@@ -3742,6 +3742,8 @@ Returns composite character position closest to the ``pos``.
 
 Draw shaped text into a canvas item at a given position, with ``color``. ``pos`` specifies the leftmost point of the baseline (for horizontal layout) or topmost point of the baseline (for vertical layout). If ``oversampling`` is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
+\ ``clip_l`` and ``clip_r`` are offsets relative to ``pos``, going to the right in horizontal layout and downward in vertical layout. If ``clip_l`` is not negative, glyphs starting before the offset are clipped. If ``clip_r`` is not negative, glyphs ending after the offset are clipped.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3753,6 +3755,8 @@ Draw shaped text into a canvas item at a given position, with ``color``. ``pos``
 |void| **shaped_text_draw_outline**\ (\ shaped\: :ref:`RID<class_RID>`, canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, clip_l\: :ref:`float<class_float>` = -1, clip_r\: :ref:`float<class_float>` = -1, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), oversampling\: :ref:`float<class_float>` = 0.0\ ) |const| :ref:`🔗<class_TextServer_method_shaped_text_draw_outline>`
 
 Draw the outline of the shaped text into a canvas item at a given position, with ``color``. ``pos`` specifies the leftmost point of the baseline (for horizontal layout) or topmost point of the baseline (for vertical layout). If ``oversampling`` is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
+
+\ ``clip_l`` and ``clip_r`` are offsets relative to ``pos``, going to the right in horizontal layout and downward in vertical layout. If ``clip_l`` is not negative, glyphs starting before the offset are clipped. If ``clip_r`` is not negative, glyphs ending after the offset are clipped.
 
 .. rst-class:: classref-item-separator
 

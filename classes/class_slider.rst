@@ -31,19 +31,21 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 | ``true``                                                            |
-   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
-   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             | ``true``                                                            |
-   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`float<class_float>`                | step                                                            | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)         |
-   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             | ``0``                                                               |
-   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false``                                                           |
-   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   +-----------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`editable<class_Slider_property_editable>`                 | ``true``                                                            |
+   +-----------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
+   +-----------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`scrollable<class_Slider_property_scrollable>`             | ``true``                                                            |
+   +-----------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`float<class_float>`                     | step                                                            | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)         |
+   +-----------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`tick_count<class_Slider_property_tick_count>`             | ``0``                                                               |
+   +-----------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false``                                                           |
+   +-----------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`TickPosition<enum_Slider_TickPosition>` | :ref:`ticks_position<class_Slider_property_ticks_position>`     | ``0``                                                               |
+   +-----------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -57,6 +59,8 @@ Theme Properties
    | :ref:`int<class_int>`             | :ref:`center_grabber<class_Slider_theme_constant_center_grabber>`              | ``0`` |
    +-----------------------------------+--------------------------------------------------------------------------------+-------+
    | :ref:`int<class_int>`             | :ref:`grabber_offset<class_Slider_theme_constant_grabber_offset>`              | ``0`` |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`tick_offset<class_Slider_theme_constant_tick_offset>`                    | ``0`` |
    +-----------------------------------+--------------------------------------------------------------------------------+-------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_Slider_theme_icon_grabber>`                                |       |
    +-----------------------------------+--------------------------------------------------------------------------------+-------+
@@ -101,6 +105,53 @@ Emitted when the grabber stops being dragged. If ``value_changed`` is ``true``, 
 **drag_started**\ (\ ) :ref:`🔗<class_Slider_signal_drag_started>`
 
 Emitted when the grabber starts being dragged. This is emitted before the corresponding :ref:`Range.value_changed<class_Range_signal_value_changed>` signal.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_Slider_TickPosition:
+
+.. rst-class:: classref-enumeration
+
+enum **TickPosition**: :ref:`🔗<enum_Slider_TickPosition>`
+
+.. _class_Slider_constant_TICK_POSITION_BOTTOM_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TickPosition<enum_Slider_TickPosition>` **TICK_POSITION_BOTTOM_RIGHT** = ``0``
+
+Places the ticks at the bottom of the :ref:`HSlider<class_HSlider>`, or right of the :ref:`VSlider<class_VSlider>`.
+
+.. _class_Slider_constant_TICK_POSITION_TOP_LEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TickPosition<enum_Slider_TickPosition>` **TICK_POSITION_TOP_LEFT** = ``1``
+
+Places the ticks at the top of the :ref:`HSlider<class_HSlider>`, or left of the :ref:`VSlider<class_VSlider>`.
+
+.. _class_Slider_constant_TICK_POSITION_BOTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TickPosition<enum_Slider_TickPosition>` **TICK_POSITION_BOTH** = ``2``
+
+Places the ticks at the both sides of the slider.
+
+.. _class_Slider_constant_TICK_POSITION_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TickPosition<enum_Slider_TickPosition>` **TICK_POSITION_CENTER** = ``3``
+
+Places the ticks at the center of the slider.
 
 .. rst-class:: classref-section-separator
 
@@ -175,6 +226,23 @@ Number of ticks displayed on the slider, including border ticks. Ticks are unifo
 
 If ``true``, the slider will display ticks for minimum and maximum values.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_property_ticks_position:
+
+.. rst-class:: classref-property
+
+:ref:`TickPosition<enum_Slider_TickPosition>` **ticks_position** = ``0`` :ref:`🔗<class_Slider_property_ticks_position>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_ticks_position**\ (\ value\: :ref:`TickPosition<enum_Slider_TickPosition>`\ )
+- :ref:`TickPosition<enum_Slider_TickPosition>` **get_ticks_position**\ (\ )
+
+Sets the position of the ticks. See :ref:`TickPosition<enum_Slider_TickPosition>` for details.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -203,6 +271,18 @@ Boolean constant. If ``1``, the grabber texture size will be ignored and it will
 :ref:`int<class_int>` **grabber_offset** = ``0`` :ref:`🔗<class_Slider_theme_constant_grabber_offset>`
 
 Vertical or horizontal offset of the grabber.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_constant_tick_offset:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **tick_offset** = ``0`` :ref:`🔗<class_Slider_theme_constant_tick_offset>`
+
+Vertical or horizontal offset of the ticks. The offset is reversed for top or left ticks.
 
 .. rst-class:: classref-item-separator
 
