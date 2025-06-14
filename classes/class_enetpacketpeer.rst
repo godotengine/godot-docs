@@ -143,7 +143,7 @@ The peer is currently connected and ready to communicate with.
 
 :ref:`PeerState<enum_ENetPacketPeer_PeerState>` **STATE_DISCONNECT_LATER** = ``6``
 
-The peer is slated to disconnect after it has no more outgoing packets to send.
+The peer is expected to disconnect after it has no more outgoing packets to send.
 
 .. _class_ENetPacketPeer_constant_STATE_DISCONNECTING:
 

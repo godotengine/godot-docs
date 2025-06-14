@@ -300,6 +300,22 @@ HSL OK Color Model circle color space.
 
 The color space shape and the shape select button are hidden. Can't be selected from the shapes popup.
 
+.. _class_ColorPicker_constant_SHAPE_OK_HS_RECTANGLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` **SHAPE_OK_HS_RECTANGLE** = ``5``
+
+OKHSL Color Model rectangle with constant lightness.
+
+.. _class_ColorPicker_constant_SHAPE_OK_HL_RECTANGLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` **SHAPE_OK_HL_RECTANGLE** = ``6``
+
+OKHSL Color Model rectangle with constant saturation.
+
 .. rst-class:: classref-section-separator
 
 ----

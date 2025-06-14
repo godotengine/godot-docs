@@ -1773,7 +1773,7 @@ Sets the minimum value for the given parameter.
 
 |void| **set_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CPUParticles2D_method_set_particle_flag>`
 
-Enables or disables the given flag.
+Enables or disables the given particle flag.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

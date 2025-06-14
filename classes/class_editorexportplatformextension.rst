@@ -308,7 +308,7 @@ See also :ref:`Object._get_property_list()<class_Object_private_method__get_prop
 
 :ref:`Texture2D<class_Texture2D>` **_get_logo**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_logo>`
 
-Returns platform logo displayed in the export dialog, logo should be 32x32 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`.
+Returns the platform logo displayed in the export dialog. The logo should be 32×32 pixels, adjusted for the current editor scale (see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`).
 
 .. rst-class:: classref-item-separator
 
@@ -332,7 +332,7 @@ Returns export platform name.
 
 :ref:`ImageTexture<class_ImageTexture>` **_get_option_icon**\ (\ device\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_option_icon>`
 
-Returns one-click deploy menu item icon for the specified ``device``, icon should be 16x16 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`.
+Returns the item icon for the specified ``device`` in the one-click deploy menu. The icon should be 16×16 pixels, adjusted for the current editor scale (see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`).
 
 .. rst-class:: classref-item-separator
 
@@ -368,7 +368,7 @@ Returns one-click deploy menu item tooltip for the specified ``device``.
 
 :ref:`int<class_int>` **_get_options_count**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_options_count>`
 
-Returns number one-click deploy devices (or other one-click option displayed in the menu).
+Returns the number of devices (or other options) available in the one-click deploy menu.
 
 .. rst-class:: classref-item-separator
 
@@ -428,7 +428,7 @@ Returns array of platform specific features for the specified ``preset``.
 
 :ref:`Texture2D<class_Texture2D>` **_get_run_icon**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_run_icon>`
 
-Returns icon of the one-click deploy menu button, icon should be 16x16 adjusted to the current editor scale, see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`.
+Returns the icon of the one-click deploy menu button. The icon should be 16×16 pixels, adjusted for the current editor scale (see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`).
 
 .. rst-class:: classref-item-separator
 

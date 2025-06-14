@@ -3587,7 +3587,7 @@ Hints that an integer property is a bitmask using the optionally named avoidance
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_FILE** = ``13``
 
-Hints that a :ref:`String<class_String>` property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+Hints that a :ref:`String<class_String>` property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``. By default the file will be stored as UID whenever available. You can use :ref:`ResourceUID<class_ResourceUID>` methods to convert it back to path. For storing a raw path, use :ref:`PROPERTY_HINT_FILE_PATH<class_@GlobalScope_constant_PROPERTY_HINT_FILE_PATH>`.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_DIR:
 
@@ -3887,7 +3887,7 @@ Hints that a property will be changed on its own after setting, such as :ref:`Au
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_GROUP_ENABLE** = ``42``
 
-Hints that a boolean property will enable the feature associated with the group that it occurs in. Only works within a group or subgroup. Use the optional hint string ``"feature"`` when the group only has variables that are meaningful when the feature is enabled.
+Hints that a boolean property will enable the feature associated with the group that it occurs in. Only works within a group or subgroup. Use the optional hint string ``"feature"`` when the group only has properties that are meaningful when the feature is enabled.
 
 \ **Note:** The ``"feature"`` hint string does not modify or reset any values.
 
@@ -3903,11 +3903,19 @@ Hints that a :ref:`String<class_String>` or :ref:`StringName<class_StringName>` 
 
 - If it contains ``"loose_mode"``, loose mode is enabled. This allows inserting any action name even if it's not present in the input map.
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_FILE_PATH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_FILE_PATH** = ``44``
+
+Like :ref:`PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPERTY_HINT_FILE>`, but the property is stored as a raw path, not UID. That means the reference will be broken if you move the file. Consider using :ref:`PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPERTY_HINT_FILE>` when possible.
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``44``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``45``
 
 Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` enum.
 
@@ -4253,7 +4261,7 @@ Used internally. Allows to not dump core virtual methods (such as :ref:`Object._
 
 :ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_VIRTUAL_REQUIRED** = ``128``
 
-Flag for a virtual method that is required.
+Flag for a virtual method that is required. In GDScript, this flag is set for abstract functions.
 
 .. _class_@GlobalScope_constant_METHOD_FLAGS_DEFAULT:
 

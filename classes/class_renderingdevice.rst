@@ -361,7 +361,7 @@ enum **DriverResource**: :ref:`🔗<enum_RenderingDevice_DriverResource>`
 
 Specific device object based on a physical device.
 
-- Vulkan: Vulkan device driver resource (``VkDevice``). (``rid`` argument doesn't apply.)
+- Vulkan: Vulkan device driver resource (``VkDevice``) (``rid`` parameter is ignored).
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_PHYSICAL_DEVICE:
 
@@ -371,7 +371,7 @@ Specific device object based on a physical device.
 
 Physical device the specific logical device is based on.
 
-- Vulkan: ``VkDevice``. (``rid`` argument doesn't apply.)
+- Vulkan: ``VkDevice`` (``rid`` parameter is ignored).
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_TOPMOST_OBJECT:
 
@@ -381,7 +381,7 @@ Physical device the specific logical device is based on.
 
 Top-most graphics API entry object.
 
-- Vulkan: ``VkInstance``. (``rid`` argument doesn't apply.)
+- Vulkan: ``VkInstance`` (``rid`` parameter is ignored).
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_COMMAND_QUEUE:
 
@@ -391,7 +391,7 @@ Top-most graphics API entry object.
 
 The main graphics-compute command queue.
 
-- Vulkan: ``VkQueue``. (``rid`` argument doesn't apply.)
+- Vulkan: ``VkQueue`` (``rid`` parameter is ignored).
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_QUEUE_FAMILY:
 
@@ -401,7 +401,7 @@ The main graphics-compute command queue.
 
 The specific family the main queue belongs to.
 
-- Vulkan: the queue family index, an ``uint32_t``. (``rid`` argument doesn't apply.)
+- Vulkan: The queue family index, a ``uint32_t`` (``rid`` parameter is ignored).
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE:
 

@@ -38,7 +38,7 @@ Using :ref:`search()<class_RegEx_method_search>`, you can find the pattern withi
     regex.compile("\\w-(\\d+)")
     var result = regex.search("abc n-0123")
     if result:
-        print(result.get_string()) # Would print n-0123
+        print(result.get_string()) # Prints "n-0123"
 
 The results of capturing groups ``()`` can be retrieved by passing the group number to the various methods in :ref:`RegExMatch<class_RegExMatch>`. Group 0 is the default and will always refer to the entire pattern. In the above example, calling ``result.get_string(1)`` would give you ``0123``.
 
@@ -50,15 +50,15 @@ This version of RegEx also supports named capturing groups, and the names can be
     regex.compile("d(?<digit>[0-9]+)|x(?<digit>[0-9a-f]+)")
     var result = regex.search("the number is x2f")
     if result:
-        print(result.get_string("digit")) # Would print 2f
+        print(result.get_string("digit")) # Prints "2f"
 
 If you need to process multiple results, :ref:`search_all()<class_RegEx_method_search_all>` generates a list of all non-overlapping results. This can be combined with a ``for`` loop for convenience.
 
 ::
 
+    # Prints "01 03 0 3f 42"
     for result in regex.search_all("d01, d03, d0c, x3f and x42"):
         print(result.get_string("digit"))
-    # Would print 01 03 0 3f 42
 
 \ **Example:** Split a string using a RegEx:
 
@@ -69,7 +69,7 @@ If you need to process multiple results, :ref:`search_all()<class_RegEx_method_s
     var results = []
     for result in regex.search_all("One  Two \n\tThree"):
         results.push_back(result.get_string())
-    # The `results` array now contains "One", "Two", and "Three".
+    print(results) # Prints ["One", "Two", "Three"]
 
 \ **Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`__ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`__.
 

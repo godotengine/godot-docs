@@ -19,7 +19,7 @@ A physics joint that connects two 2D physics bodies with a spring-like force.
 Description
 -----------
 
-A physics joint that connects two 2D physics bodies with a spring-like force. This resembles a spring that always wants to stretch to a given length.
+A physics joint that connects two 2D physics bodies with a spring-like force. This behaves like a spring that always wants to stretch to a given length.
 
 .. rst-class:: classref-reftable-group
 

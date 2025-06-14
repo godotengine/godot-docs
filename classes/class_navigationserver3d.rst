@@ -327,6 +327,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`region_get_travel_cost<class_NavigationServer3D_method_region_get_travel_cost>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                          |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`region_get_use_async_iterations<class_NavigationServer3D_method_region_get_use_async_iterations>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                        |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`region_get_use_edge_connections<class_NavigationServer3D_method_region_get_use_edge_connections>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                        |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`region_owns_point<class_NavigationServer3D_method_region_owns_point>`\ (\ region\: :ref:`RID<class_RID>`, point\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                                                                                                             |
@@ -346,6 +348,8 @@ Methods
    | |void|                                              | :ref:`region_set_transform<class_NavigationServer3D_method_region_set_transform>`\ (\ region\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )                                                                                                                                                                                                   |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`region_set_travel_cost<class_NavigationServer3D_method_region_set_travel_cost>`\ (\ region\: :ref:`RID<class_RID>`, travel_cost\: :ref:`float<class_float>`\ )                                                                                                                                                                                                         |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`region_set_use_async_iterations<class_NavigationServer3D_method_region_set_use_async_iterations>`\ (\ region\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                             |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`region_set_use_edge_connections<class_NavigationServer3D_method_region_set_use_edge_connections>`\ (\ region\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                             |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -863,7 +867,7 @@ Sets the maximum distance to other agents this agent takes into account in the n
 
 |void| **agent_set_paused**\ (\ agent\: :ref:`RID<class_RID>`, paused\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer3D_method_agent_set_paused>`
 
-If ``paused`` is ``true`` the specified ``agent`` will not be processed, e.g. calculate avoidance velocities or receive avoidance callbacks.
+If ``paused`` is ``true`` the specified ``agent`` will not be processed. For example, it will not calculate avoidance velocities or receive avoidance callbacks.
 
 .. rst-class:: classref-item-separator
 
@@ -1857,7 +1861,7 @@ Assigns the ``obstacle`` to a navigation map.
 
 |void| **obstacle_set_paused**\ (\ obstacle\: :ref:`RID<class_RID>`, paused\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer3D_method_obstacle_set_paused>`
 
-If ``paused`` is ``true`` the specified ``obstacle`` will not be processed, e.g. affect avoidance velocities.
+If ``paused`` is ``true`` the specified ``obstacle`` will not be processed. For example, it will no longer affect avoidance velocities.
 
 .. rst-class:: classref-item-separator
 
@@ -2177,6 +2181,18 @@ Returns the travel cost of this ``region``.
 
 ----
 
+.. _class_NavigationServer3D_method_region_get_use_async_iterations:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **region_get_use_async_iterations**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_region_get_use_async_iterations>`
+
+Returns ``true`` if the ``region`` uses an async synchronization process that runs on a background thread.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer3D_method_region_get_use_edge_connections:
 
 .. rst-class:: classref-method
@@ -2296,6 +2312,18 @@ Sets the global transformation for the region.
 |void| **region_set_travel_cost**\ (\ region\: :ref:`RID<class_RID>`, travel_cost\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer3D_method_region_set_travel_cost>`
 
 Sets the ``travel_cost`` for this ``region``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_set_use_async_iterations:
+
+.. rst-class:: classref-method
+
+|void| **region_set_use_async_iterations**\ (\ region\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer3D_method_region_set_use_async_iterations>`
+
+If ``enabled`` is ``true`` the ``region`` uses an async synchronization process that runs on a background thread.
 
 .. rst-class:: classref-item-separator
 

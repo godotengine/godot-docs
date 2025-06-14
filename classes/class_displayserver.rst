@@ -680,7 +680,7 @@ Display server supports `Input Method Editor <https://en.wikipedia.org/wiki/Inpu
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_TRANSPARENCY** = ``11``
 
-Display server supports windows can use per-pixel transparency to make windows behind them partially or fully visible. **Windows, macOS, Linux (X11/Wayland)**
+Display server supports windows can use per-pixel transparency to make windows behind them partially or fully visible. **Windows, macOS, Linux (X11/Wayland), Android**
 
 .. _class_DisplayServer_constant_FEATURE_HIDPI:
 
@@ -1552,7 +1552,7 @@ Set scroll offset action, callback argument is set to :ref:`Vector2<class_Vector
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SET_VALUE** = ``20``
 
-Set value action action, callback argument is set to :ref:`String<class_String>` or number with the new value.
+Set value action, callback argument is set to :ref:`String<class_String>` or number with the new value.
 
 .. _class_DisplayServer_constant_ACTION_SHOW_CONTEXT_MENU:
 
@@ -1568,7 +1568,7 @@ Show context menu action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_CUSTOM** = ``22``
 
-Custom action, callback argument is set to the integer action id.
+Custom action, callback argument is set to the integer action ID.
 
 .. rst-class:: classref-item-separator
 
@@ -2126,7 +2126,7 @@ The window background can be transparent.
 
 \ **Note:** This flag has no effect if :ref:`is_window_transparency_available()<class_DisplayServer_method_is_window_transparency_available>` returns ``false``.
 
-\ **Note:** Transparency support is implemented on Linux (X11/Wayland), macOS, and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
+\ **Note:** Transparency support is implemented on Android, Linux (X11/Wayland), macOS, and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_NO_FOCUS:
 
@@ -5959,7 +5959,7 @@ Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is clear
 
 Stops synthesis in progress and removes all utterances from the queue.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Linux), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 

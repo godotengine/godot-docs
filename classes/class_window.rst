@@ -34,9 +34,13 @@ Properties
    :widths: auto
 
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`String<class_String>`                                     | :ref:`accessibility_description<class_Window_property_accessibility_description>` | ``""``                   |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`String<class_String>`                                     | :ref:`accessibility_name<class_Window_property_accessibility_name>`               | ``""``                   |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`always_on_top<class_Window_property_always_on_top>`                         | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
-   | :ref:`bool<class_bool>`                                         | :ref:`auto_translate<class_Window_property_auto_translate>`                       | ``true``                 |
+   | :ref:`bool<class_bool>`                                         | :ref:`auto_translate<class_Window_property_auto_translate>`                       |                          |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`borderless<class_Window_property_borderless>`                               | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
@@ -543,8 +547,6 @@ Full screen window covers the entire display area of a screen and has no decorat
 
 \ **On Android:** This enables immersive mode.
 
-\ **On Windows:** Multi-window full-screen mode has a 1px border of the :ref:`ProjectSettings.rendering/environment/defaults/default_clear_color<class_ProjectSettings_property_rendering/environment/defaults/default_clear_color>` color.
-
 \ **On macOS:** A new desktop is used to display the running project.
 
 \ **Note:** Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
@@ -991,6 +993,40 @@ Sent when the node needs to refresh its theme items. This happens in one of the 
 Property Descriptions
 ---------------------
 
+.. _class_Window_property_accessibility_description:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **accessibility_description** = ``""`` :ref:`🔗<class_Window_property_accessibility_description>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_description**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_accessibility_description**\ (\ )
+
+The human-readable node description that is reported to assistive apps.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_accessibility_name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **accessibility_name** = ``""`` :ref:`🔗<class_Window_property_accessibility_name>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessibility_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_accessibility_name**\ (\ )
+
+The human-readable node name that is reported to assistive apps.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_property_always_on_top:
 
 .. rst-class:: classref-property
@@ -1012,14 +1048,14 @@ If ``true``, the window will be on top of all other windows. Does not work if :r
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **auto_translate** = ``true`` :ref:`🔗<class_Window_property_auto_translate>`
+:ref:`bool<class_bool>` **auto_translate** :ref:`🔗<class_Window_property_auto_translate>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_auto_translate**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_auto_translating**\ (\ )
 
-**Deprecated:** Use :ref:`Node.auto_translate_mode<class_Node_property_auto_translate_mode>` instead.
+**Deprecated:** Use :ref:`Node.auto_translate_mode<class_Node_property_auto_translate_mode>` and :ref:`Node.can_auto_translate()<class_Node_method_can_auto_translate>` instead.
 
 Toggles if any text should automatically change to its translated version depending on the current locale.
 
@@ -2733,7 +2769,7 @@ The color of the title's text outline.
 
 :ref:`int<class_int>` **close_h_offset** = ``18`` :ref:`🔗<class_Window_theme_constant_close_h_offset>`
 
-Horizontal position offset of the close button.
+Horizontal position offset of the close button, relative to the end of the title bar, towards the beginning of the title bar.
 
 .. rst-class:: classref-item-separator
 
@@ -2745,7 +2781,7 @@ Horizontal position offset of the close button.
 
 :ref:`int<class_int>` **close_v_offset** = ``24`` :ref:`🔗<class_Window_theme_constant_close_v_offset>`
 
-Vertical position offset of the close button.
+Vertical position offset of the close button, relative to the bottom of the title bar, towards the top of the title bar.
 
 .. rst-class:: classref-item-separator
 

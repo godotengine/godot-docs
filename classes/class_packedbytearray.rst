@@ -174,6 +174,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`sort<class_PackedByteArray_method_sort>`\ (\ )                                                                                                                                          |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedColorArray<class_PackedColorArray>`     | :ref:`to_color_array<class_PackedByteArray_method_to_color_array>`\ (\ ) |const|                                                                                                              |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`to_float32_array<class_PackedByteArray_method_to_float32_array>`\ (\ ) |const|                                                                                                          |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedFloat64Array<class_PackedFloat64Array>` | :ref:`to_float64_array<class_PackedByteArray_method_to_float64_array>`\ (\ ) |const|                                                                                                          |
@@ -181,6 +183,12 @@ Methods
    | :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`to_int32_array<class_PackedByteArray_method_to_int32_array>`\ (\ ) |const|                                                                                                              |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`to_int64_array<class_PackedByteArray_method_to_int64_array>`\ (\ ) |const|                                                                                                              |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`to_vector2_array<class_PackedByteArray_method_to_vector2_array>`\ (\ ) |const|                                                                                                          |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`to_vector3_array<class_PackedByteArray_method_to_vector3_array>`\ (\ ) |const|                                                                                                          |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector4Array<class_PackedVector4Array>` | :ref:`to_vector4_array<class_PackedByteArray_method_to_vector4_array>`\ (\ ) |const|                                                                                                          |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -1018,6 +1026,20 @@ Sorts the elements of the array in ascending order.
 
 ----
 
+.. _class_PackedByteArray_method_to_color_array:
+
+.. rst-class:: classref-method
+
+:ref:`PackedColorArray<class_PackedColorArray>` **to_color_array**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_to_color_array>`
+
+Returns a copy of the data converted to a :ref:`PackedColorArray<class_PackedColorArray>`, where each block of 16 bytes has been converted to a :ref:`Color<class_Color>` variant.
+
+\ **Note:** The size of the input array must be a multiple of 16 (size of four 32-bit float variables). The size of the new array will be ``byte_array.size() / 16``. If the original data can't be converted to :ref:`Color<class_Color>` variants, the resulting data is undefined.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PackedByteArray_method_to_float32_array:
 
 .. rst-class:: classref-method
@@ -1077,6 +1099,48 @@ Returns a copy of the data converted to a :ref:`PackedInt64Array<class_PackedInt
 The size of the input array must be a multiple of 8 (size of 64-bit integer). The size of the new array will be ``byte_array.size() / 8``.
 
 If the original data can't be converted to signed 64-bit integers, the resulting data is undefined.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_to_vector2_array:
+
+.. rst-class:: classref-method
+
+:ref:`PackedVector2Array<class_PackedVector2Array>` **to_vector2_array**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_to_vector2_array>`
+
+Returns a copy of the data converted to a :ref:`PackedVector2Array<class_PackedVector2Array>`, where each block of 8 bytes or 16 bytes (32-bit or 64-bit) has been converted to a :ref:`Vector2<class_Vector2>` variant.
+
+\ **Note:** The size of the input array must be a multiple of 8 or 16 (depending on the build settings, see :ref:`Vector2<class_Vector2>` for more details). The size of the new array will be ``byte_array.size() / (8 or 16)``. If the original data can't be converted to :ref:`Vector2<class_Vector2>` variants, the resulting data is undefined.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_to_vector3_array:
+
+.. rst-class:: classref-method
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **to_vector3_array**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_to_vector3_array>`
+
+Returns a copy of the data converted to a :ref:`PackedVector3Array<class_PackedVector3Array>`, where each block of 12 or 24 bytes (32-bit or 64-bit) has been converted to a :ref:`Vector3<class_Vector3>` variant.
+
+\ **Note:** The size of the input array must be a multiple of 12 or 24 (depending on the build settings, see :ref:`Vector3<class_Vector3>` for more details). The size of the new array will be ``byte_array.size() / (12 or 24)``. If the original data can't be converted to :ref:`Vector3<class_Vector3>` variants, the resulting data is undefined.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_to_vector4_array:
+
+.. rst-class:: classref-method
+
+:ref:`PackedVector4Array<class_PackedVector4Array>` **to_vector4_array**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_to_vector4_array>`
+
+Returns a copy of the data converted to a :ref:`PackedVector4Array<class_PackedVector4Array>`, where each block of 16 or 32 bytes (32-bit or 64-bit) has been converted to a :ref:`Vector4<class_Vector4>` variant.
+
+\ **Note:** The size of the input array must be a multiple of 16 or 32 (depending on the build settings, see :ref:`Vector4<class_Vector4>` for more details). The size of the new array will be ``byte_array.size() / (16 or 32)``. If the original data can't be converted to :ref:`Vector4<class_Vector4>` variants, the resulting data is undefined.
 
 .. rst-class:: classref-section-separator
 

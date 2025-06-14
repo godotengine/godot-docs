@@ -269,6 +269,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/3d_gizmos/gizmo_settings/bone_shape<class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/bone_shape>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editors/3d_gizmos/gizmo_settings/lightmap_gi_probe_size<class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/lightmap_gi_probe_size>`                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size<class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size>`                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                                                                 |
@@ -436,6 +438,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`input/buffering/agile_event_flushing<class_EditorSettings_property_input/buffering/agile_event_flushing>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input/buffering/use_accumulated_input<class_EditorSettings_property_input/buffering/use_accumulated_input>`                                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`interface/accessibility/accessibility_support<class_EditorSettings_property_interface/accessibility/accessibility_support>`                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/accept_dialog_cancel_ok_buttons<class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2285,6 +2289,18 @@ The shape of :ref:`Skeleton3D<class_Skeleton3D>` bone gizmos in the 3D editor. *
 
 ----
 
+.. _class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/lightmap_gi_probe_size:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d_gizmos/gizmo_settings/lightmap_gi_probe_size** :ref:`🔗<class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/lightmap_gi_probe_size>`
+
+Size of probe gizmos displayed when editing :ref:`LightmapGI<class_LightmapGI>` and :ref:`LightmapProbe<class_LightmapProbe>` nodes. Setting this to ``0.0`` will hide the probe spheres of :ref:`LightmapGI<class_LightmapGI>` and wireframes of :ref:`LightmapProbe<class_LightmapProbe>` nodes, but will keep the wireframes linking probes from :ref:`LightmapGI<class_LightmapGI>` and billboard icons from :ref:`LightmapProbe<class_LightmapProbe>` intact.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size:
 
 .. rst-class:: classref-property
@@ -3280,7 +3296,11 @@ If set to ``Adaptive``, the dialog opens in list view or grid view depending on 
 
 :ref:`bool<class_bool>` **filesystem/quick_open_dialog/enable_fuzzy_matching** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/enable_fuzzy_matching>`
 
-If ``true``, fuzzy matching of search tokens is allowed.
+If ``true``, together with exact matches of a filename, the dialog includes approximate matches.
+
+This is useful for finding the correct files even when there are typos in the search query; for example, searching "nprmal" will find "normal". Additionally, it allows you to write shorter search queries; for example, searching "nml" will also find "normal".
+
+See also :ref:`filesystem/quick_open_dialog/max_fuzzy_misses<class_EditorSettings_property_filesystem/quick_open_dialog/max_fuzzy_misses>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3304,7 +3324,7 @@ If ``true``, results will include files located in the ``addons`` folder.
 
 :ref:`int<class_int>` **filesystem/quick_open_dialog/max_fuzzy_misses** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/max_fuzzy_misses>`
 
-The number of allowed missed query characters in a match, if fuzzy matching is enabled. For example, with the default value of 2, ``foobar`` would match ``foobur`` and ``foob`` but not ``foo``.
+The number of missed query characters allowed in a match when fuzzy matching is enabled. For example, with the default value of ``2``, ``"normal"`` would match ``"narmal"`` and ``"norma"`` but not ``"nor"``.
 
 .. rst-class:: classref-item-separator
 
@@ -3375,6 +3395,26 @@ If ``true``, similar input events sent by the operating system are accumulated. 
 Input accumulation can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage.
 
 \ **Note:** Input accumulation is *enabled* by default.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/accessibility/accessibility_support:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/accessibility/accessibility_support** :ref:`🔗<class_EditorSettings_property_interface/accessibility/accessibility_support>`
+
+Editor accessibility support mode:
+
+- **Auto** (``0``): Accessibility support is enabled, but updates to the accessibility information are processed only if an assistive app (such as a screen reader or a Braille display) is active (default).
+
+- **Always Active** (``1``): Accessibility support is enabled, and updates to the accessibility information are always processed, regardless of the status of assistive apps.
+
+- **Disabled** (``2``): Accessibility support is fully disabled.
+
+\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD) do not count as assistive apps. To test your project with these tools, use **Always Active**.
 
 .. rst-class:: classref-item-separator
 
@@ -3686,7 +3726,7 @@ If ``true``, setting names in the editor are localized when possible.
 
 :ref:`int<class_int>` **interface/editor/low_processor_mode_sleep_usec** :ref:`🔗<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`
 
-The amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops. However, higher values will result in a less responsive editor. The default value is set to allow for maximum smoothness on monitors up to 144 Hz. See also :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`.
+The amount of sleeping between frames in the editor (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops. However, higher values will result in a less responsive editor. The default value is set to allow for maximum smoothness on monitors up to 144 Hz. See also :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`.
 
 \ **Note:** This setting is ignored if :ref:`interface/editor/update_continuously<class_EditorSettings_property_interface/editor/update_continuously>` is ``true``, as enabling that setting disables low-processor mode.
 
@@ -3876,7 +3916,7 @@ Editor UI default layout direction.
 
 :ref:`int<class_int>` **interface/editor/unfocused_low_processor_mode_sleep_usec** :ref:`🔗<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`
 
-When the editor window is unfocused, the amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops (in addition to improving the running project's performance if the editor has to redraw continuously). However, higher values will result in a less responsive editor. The default value is set to limit the editor to 20 FPS when the editor window is unfocused. See also :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`.
+When the editor window is unfocused, the amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops (in addition to improving the running project's performance if the editor has to redraw continuously). However, higher values will result in a less responsive editor. The default value is set to limit the editor to 10 FPS when the editor window is unfocused. See also :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`.
 
 \ **Note:** This setting is ignored if :ref:`interface/editor/update_continuously<class_EditorSettings_property_interface/editor/update_continuously>` is ``true``, as enabling that setting disables low-processor mode.
 
@@ -6345,10 +6385,10 @@ Adds a custom property info to a property. The dictionary must contain:
 
     var propertyInfo = new Godot.Collections.Dictionary
     {
-        {"name", "category/propertyName"},
-        {"type", Variant.Type.Int},
-        {"hint", PropertyHint.Enum},
-        {"hint_string", "one,two,three"}
+        { "name", "category/propertyName" },
+        { "type", Variant.Type.Int },
+        { "hint", PropertyHint.Enum },
+        { "hint_string", "one,two,three" },
     };
 
     settings.AddPropertyInfo(propertyInfo);

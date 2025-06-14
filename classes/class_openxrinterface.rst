@@ -783,7 +783,7 @@ The display refresh rate for the current HMD. Only functional if this feature is
 
 Enable dynamic foveation adjustment, the interface must be initialized before this is accessible. If enabled foveation will automatically adjusted between low and :ref:`foveation_level<class_OpenXRInterface_property_foveation_level>`.
 
-\ **Note:** Only works on compatibility renderer.
+\ **Note:** Only works on the Compatibility renderer.
 
 .. rst-class:: classref-item-separator
 
@@ -802,7 +802,7 @@ Enable dynamic foveation adjustment, the interface must be initialized before th
 
 Set foveation level from 0 (off) to 3 (high), the interface must be initialized before this is accessible.
 
-\ **Note:** Only works on compatibility renderer.
+\ **Note:** Only works on the Compatibility renderer.
 
 .. rst-class:: classref-item-separator
 
@@ -1036,7 +1036,7 @@ Returns the capabilities of the eye gaze interaction extension.
 
 Returns ``true`` if OpenXR's foveation extension is supported, the interface must be initialized before this returns a valid value.
 
-\ **Note:** This feature is only available on the compatibility renderer and currently only available on some stand alone headsets. For Vulkan set :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to ``VRS_XR`` on desktop.
+\ **Note:** This feature is only available on the Compatibility renderer and currently only available on some stand alone headsets. For Vulkan set :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to ``VRS_XR`` on desktop.
 
 .. rst-class:: classref-item-separator
 

@@ -641,11 +641,11 @@ The transition type of the time-based interpolation. See also :ref:`TransitionTy
 - |void| **set_use_angle_limitation**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_angle_limitation**\ (\ )
 
-If ``true``, limits the degree of rotation. This helps prevent the character's neck from rotating 360 degrees.
+If ``true``, limits the amount of rotation. For example, this helps to prevent a character's neck from rotating 360 degrees.
 
 \ **Note:** As with :ref:`AnimationTree<class_AnimationTree>` blending, interpolation is provided that favors :ref:`Skeleton3D.get_bone_rest()<class_Skeleton3D_method_get_bone_rest>`. This means that interpolation does not select the shortest path in some cases.
 
-\ **Note:** Some :ref:`transition_type<class_LookAtModifier3D_property_transition_type>` may exceed the limitations (e.g. `Back`, `Elastic`, and `Spring`). If interpolation occurs while overshooting the limitations, the result might possibly not respect the bone rest.
+\ **Note:** Some values for :ref:`transition_type<class_LookAtModifier3D_property_transition_type>` (such as :ref:`Tween.TRANS_BACK<class_Tween_constant_TRANS_BACK>`, :ref:`Tween.TRANS_ELASTIC<class_Tween_constant_TRANS_ELASTIC>`, and :ref:`Tween.TRANS_SPRING<class_Tween_constant_TRANS_SPRING>`) may exceed the limitations. If interpolation occurs while overshooting the limitations, the result might not respect the bone rest.
 
 .. rst-class:: classref-item-separator
 

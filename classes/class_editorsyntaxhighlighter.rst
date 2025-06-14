@@ -33,11 +33,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`_get_name<class_EditorSyntaxHighlighter_private_method__get_name>`\ (\ ) |virtual| |const|                               |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_languages<class_EditorSyntaxHighlighter_private_method__get_supported_languages>`\ (\ ) |virtual| |const| |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` | :ref:`_create<class_EditorSyntaxHighlighter_private_method__create>`\ (\ ) |virtual| |const|                                   |
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                   | :ref:`_get_name<class_EditorSyntaxHighlighter_private_method__get_name>`\ (\ ) |virtual| |const|                               |
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`             | :ref:`_get_supported_languages<class_EditorSyntaxHighlighter_private_method__get_supported_languages>`\ (\ ) |virtual| |const| |
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -47,6 +49,18 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_EditorSyntaxHighlighter_private_method__create:
+
+.. rst-class:: classref-method
+
+:ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` **_create**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorSyntaxHighlighter_private_method__create>`
+
+Virtual method which creates a new instance of the syntax highlighter.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_EditorSyntaxHighlighter_private_method__get_name:
 

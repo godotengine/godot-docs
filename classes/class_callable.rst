@@ -78,7 +78,7 @@ In GDScript, you can access methods and global functions as **Callable**\ s:
 
 ::
 
-    var dictionary = {"hello": "world"}
+    var dictionary = { "hello": "world" }
 
     # This will not work, `clear` is treated as a key.
     tween.tween_callback(dictionary.clear)

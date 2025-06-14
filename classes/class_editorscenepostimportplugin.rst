@@ -251,7 +251,7 @@ Process a specific node or resource for a given category.
 
 |void| **_post_process**\ (\ scene\: :ref:`Node<class_Node>`\ ) |virtual| :ref:`🔗<class_EditorScenePostImportPlugin_private_method__post_process>`
 
-Post process the scene. This function is called after the final scene has been configured.
+Post-process the scene. This function is called after the final scene has been configured.
 
 .. rst-class:: classref-item-separator
 
@@ -263,9 +263,9 @@ Post process the scene. This function is called after the final scene has been c
 
 |void| **_pre_process**\ (\ scene\: :ref:`Node<class_Node>`\ ) |virtual| :ref:`🔗<class_EditorScenePostImportPlugin_private_method__pre_process>`
 
-Pre Process the scene. This function is called right after the scene format loader loaded the scene and no changes have been made.
+Pre-process the scene. This function is called right after the scene format loader loaded the scene and no changes have been made.
 
-Pre process may be used to adjust internal import options in the ``"nodes"``, ``"meshes"``, ``"animations"`` or ``"materials"`` keys inside ``get_option_value("_subresources")``.
+Pre-process may be used to adjust internal import options in the ``"nodes"``, ``"meshes"``, ``"animations"`` or ``"materials"`` keys inside ``get_option_value("_subresources")``.
 
 .. rst-class:: classref-item-separator
 

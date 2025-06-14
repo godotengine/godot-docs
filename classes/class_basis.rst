@@ -135,6 +135,8 @@ Methods
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Basis<class_Basis>`           | :ref:`scaled<class_Basis_method_scaled>`\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                     |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`           | :ref:`scaled_local<class_Basis_method_scaled_local>`\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                         |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Basis<class_Basis>`           | :ref:`slerp<class_Basis_method_slerp>`\ (\ to\: :ref:`Basis<class_Basis>`, weight\: :ref:`float<class_float>`\ ) |const|                                                                                          |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`           | :ref:`tdotx<class_Basis_method_tdotx>`\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                        |
@@ -718,6 +720,51 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
     GD.Print(myBasis.X); // Prints (0, 2, -2)
     GD.Print(myBasis.Y); // Prints (0, 4, -4)
     GD.Print(myBasis.Z); // Prints (0, 6, -6)
+
+
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Basis_method_scaled_local:
+
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **scaled_local**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Basis_method_scaled_local>`
+
+Returns this basis with each axis scaled by the corresponding component in the given ``scale``.
+
+The basis matrix's columns are multiplied by ``scale``'s components. This operation is a local scale (relative to self).
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var my_basis = Basis(
+        Vector3(1, 1, 1),
+        Vector3(2, 2, 2),
+        Vector3(3, 3, 3)
+    )
+    my_basis = my_basis.scaled_local(Vector3(0, 2, -2))
+
+    print(my_basis.x) # Prints (0.0, 0.0, 0.0)
+    print(my_basis.y) # Prints (4.0, 4.0, 4.0)
+    print(my_basis.z) # Prints (-6.0, -6.0, -6.0)
+
+ .. code-tab:: csharp
+
+    var myBasis = new Basis(
+        new Vector3(1.0f, 1.0f, 1.0f),
+        new Vector3(2.0f, 2.0f, 2.0f),
+        new Vector3(3.0f, 3.0f, 3.0f)
+    );
+    myBasis = myBasis.ScaledLocal(new Vector3(0.0f, 2.0f, -2.0f));
+
+    GD.Print(myBasis.X); // Prints (0, 0, 0)
+    GD.Print(myBasis.Y); // Prints (4, 4, 4)
+    GD.Print(myBasis.Z); // Prints (-6, -6, -6)
 
 
 

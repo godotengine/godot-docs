@@ -899,7 +899,7 @@ Use :ref:`_set_state()<class_EditorPlugin_private_method__set_state>` to restore
 ::
 
     func _get_state():
-        var state = {"zoom": zoom, "preferred_color": my_color}
+        var state = { "zoom": zoom, "preferred_color": my_color }
         return state
 
 .. rst-class:: classref-item-separator

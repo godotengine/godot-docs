@@ -12,14 +12,14 @@ ReferenceRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A rectangle hint for designing UIs.
+A rectangular box for designing UIs.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A rectangle box that displays only a colored border around its rectangle. It is used to visualize the extents of a :ref:`Control<class_Control>`.
+A rectangular box that displays only a colored border around its rectangle (see :ref:`Control.get_rect()<class_Control_method_get_rect>`). It can be used to visualize the extents of a :ref:`Control<class_Control>` node, for testing purposes.
 
 .. rst-class:: classref-reftable-group
 

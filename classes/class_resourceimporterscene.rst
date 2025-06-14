@@ -12,7 +12,7 @@ ResourceImporterScene
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Imports a glTF, FBX, Collada or Blender 3D scene.
+Imports a glTF, FBX, COLLADA, or Blender 3D scene.
 
 .. rst-class:: classref-introduction-group
 
@@ -55,6 +55,12 @@ Properties
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`String<class_String>`         | :ref:`import_script/path<class_ResourceImporterScene_property_import_script/path>`                               | ``""``    |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`               | :ref:`materials/extract<class_ResourceImporterScene_property_materials/extract>`                                 | ``0``     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`               | :ref:`materials/extract_format<class_ResourceImporterScene_property_materials/extract_format>`                   | ``0``     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`         | :ref:`materials/extract_path<class_ResourceImporterScene_property_materials/extract_path>`                       | ``""``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`             | :ref:`meshes/create_shadow_meshes<class_ResourceImporterScene_property_meshes/create_shadow_meshes>`             | ``true``  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`             | :ref:`meshes/ensure_tangents<class_ResourceImporterScene_property_meshes/ensure_tangents>`                       | ``true``  |
@@ -74,6 +80,8 @@ Properties
    | :ref:`String<class_String>`         | :ref:`nodes/root_name<class_ResourceImporterScene_property_nodes/root_name>`                                     | ``""``    |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`           | :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>`                                   | ``1.0``   |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Script<class_Script>`         | :ref:`nodes/root_script<class_ResourceImporterScene_property_nodes/root_script>`                                 | ``null``  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`String<class_String>`         | :ref:`nodes/root_type<class_ResourceImporterScene_property_nodes/root_type>`                                     | ``""``    |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
@@ -172,6 +180,54 @@ If ``true``, trim the beginning and end of animations if there are no keyframe c
 :ref:`String<class_String>` **import_script/path** = ``""`` :ref:`🔗<class_ResourceImporterScene_property_import_script/path>`
 
 Path to an import script, which can run code after the import process has completed for custom processing. See `Using import scripts for automation <../tutorials/assets_pipeline/importing_3d_scenes/import_configuration.html#using-import-scripts-for-automation>`__ for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterScene_property_materials/extract:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **materials/extract** = ``0`` :ref:`🔗<class_ResourceImporterScene_property_materials/extract>`
+
+Material extraction mode.
+
+- ``0 (Keep Internal)``, materials are not extracted.
+
+- ``1 (Extract Once)``, materials are extracted once and reused on subsequent import.
+
+- ``2 (Extract and Overwrite)``, materials are extracted and overwritten on every import.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterScene_property_materials/extract_format:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **materials/extract_format** = ``0`` :ref:`🔗<class_ResourceImporterScene_property_materials/extract_format>`
+
+Extracted material file format.
+
+- ``0 (Text)``, text file format (``*.tres``).
+
+- ``1 (Binary)``, binary file format (``*.res``).
+
+- ``2 (Material)``, binary file format (``*.material``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterScene_property_materials/extract_path:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **materials/extract_path** = ``""`` :ref:`🔗<class_ResourceImporterScene_property_materials/extract_path>`
+
+Path extracted materials are saved to. If empty, source scene path is used.
 
 .. rst-class:: classref-item-separator
 
@@ -296,6 +352,18 @@ Override for the root node name. If empty, the root node will use what the scene
 :ref:`float<class_float>` **nodes/root_scale** = ``1.0`` :ref:`🔗<class_ResourceImporterScene_property_nodes/root_scale>`
 
 The uniform scale to use for the scene root. The default value of ``1.0`` will not perform any rescaling. See :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>` for details of how this scale is applied.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterScene_property_nodes/root_script:
+
+.. rst-class:: classref-property
+
+:ref:`Script<class_Script>` **nodes/root_script** = ``null`` :ref:`🔗<class_ResourceImporterScene_property_nodes/root_script>`
+
+If set to a valid script, attaches the script to the root node of the imported scene. If the type of the root node is not compatible with the script, the root node will be replaced with a type that is compatible with the script. This setting can also be used on other non-mesh nodes in the scene to attach scripts to them.
 
 .. rst-class:: classref-item-separator
 

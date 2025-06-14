@@ -99,6 +99,8 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>`         | :ref:`depth_draw_mode<class_BaseMaterial3D_property_depth_draw_mode>`                                             | ``0``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`DepthTest<enum_BaseMaterial3D_DepthTest>`                 | :ref:`depth_test<class_BaseMaterial3D_property_depth_test>`                                                       | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Texture2D<class_Texture2D>`                               | :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>`                                                 |                       |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>`                 | :ref:`detail_blend_mode<class_BaseMaterial3D_property_detail_blend_mode>`                                         | ``0``                 |
@@ -228,6 +230,18 @@ Properties
    | :ref:`bool<class_bool>`                                         | :ref:`shadow_to_opacity<class_BaseMaterial3D_property_shadow_to_opacity>`                                         | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>`           | :ref:`specular_mode<class_BaseMaterial3D_property_specular_mode>`                                                 | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                       | :ref:`stencil_color<class_BaseMaterial3D_property_stencil_color>`                                                 | ``Color(0, 0, 0, 1)`` |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>`       | :ref:`stencil_compare<class_BaseMaterial3D_property_stencil_compare>`                                             | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                           | :ref:`stencil_flags<class_BaseMaterial3D_property_stencil_flags>`                                                 | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`StencilMode<enum_BaseMaterial3D_StencilMode>`             | :ref:`stencil_mode<class_BaseMaterial3D_property_stencil_mode>`                                                   | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                       | :ref:`stencil_outline_thickness<class_BaseMaterial3D_property_stencil_outline_thickness>`                         | ``0.01``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                           | :ref:`stencil_reference<class_BaseMaterial3D_property_stencil_reference>`                                         | ``1``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`subsurf_scatter_enabled<class_BaseMaterial3D_property_subsurf_scatter_enabled>`                             | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -923,6 +937,32 @@ Objects will not write their depth to the depth buffer, even during the depth pr
 
 ----
 
+.. _enum_BaseMaterial3D_DepthTest:
+
+.. rst-class:: classref-enumeration
+
+enum **DepthTest**: :ref:`🔗<enum_BaseMaterial3D_DepthTest>`
+
+.. _class_BaseMaterial3D_constant_DEPTH_TEST_DEFAULT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DepthTest<enum_BaseMaterial3D_DepthTest>` **DEPTH_TEST_DEFAULT** = ``0``
+
+Depth test will discard the pixel if it is behind other pixels.
+
+.. _class_BaseMaterial3D_constant_DEPTH_TEST_INVERTED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DepthTest<enum_BaseMaterial3D_DepthTest>` **DEPTH_TEST_INVERTED** = ``1``
+
+Depth test will discard the pixel if it is in front of other pixels. Useful for stencil effects.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_BaseMaterial3D_CullMode:
 
 .. rst-class:: classref-enumeration
@@ -1414,6 +1454,152 @@ Smoothly fades the object out based on each pixel's distance from the camera usi
 :ref:`DistanceFadeMode<enum_BaseMaterial3D_DistanceFadeMode>` **DISTANCE_FADE_OBJECT_DITHER** = ``3``
 
 Smoothly fades the object out based on the object's distance from the camera using a dithering approach. Dithering discards pixels based on a set pattern to smoothly fade without enabling transparency. On certain hardware, this can be faster than :ref:`DISTANCE_FADE_PIXEL_ALPHA<class_BaseMaterial3D_constant_DISTANCE_FADE_PIXEL_ALPHA>` and :ref:`DISTANCE_FADE_PIXEL_DITHER<class_BaseMaterial3D_constant_DISTANCE_FADE_PIXEL_DITHER>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_BaseMaterial3D_StencilMode:
+
+.. rst-class:: classref-enumeration
+
+enum **StencilMode**: :ref:`🔗<enum_BaseMaterial3D_StencilMode>`
+
+.. _class_BaseMaterial3D_constant_STENCIL_MODE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilMode<enum_BaseMaterial3D_StencilMode>` **STENCIL_MODE_DISABLED** = ``0``
+
+Disables stencil operations.
+
+.. _class_BaseMaterial3D_constant_STENCIL_MODE_OUTLINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilMode<enum_BaseMaterial3D_StencilMode>` **STENCIL_MODE_OUTLINE** = ``1``
+
+Stencil preset which applies an outline to the object.
+
+\ **Note:** Requires a :ref:`Material.next_pass<class_Material_property_next_pass>` material which will be automatically applied. Any manual changes made to :ref:`Material.next_pass<class_Material_property_next_pass>` will be lost when the stencil properties are modified or the scene is reloaded. To safely apply a :ref:`Material.next_pass<class_Material_property_next_pass>` material on a material that uses stencil presets, use :ref:`GeometryInstance3D.material_overlay<class_GeometryInstance3D_property_material_overlay>` instead.
+
+.. _class_BaseMaterial3D_constant_STENCIL_MODE_XRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilMode<enum_BaseMaterial3D_StencilMode>` **STENCIL_MODE_XRAY** = ``2``
+
+Stencil preset which shows a silhouette of the object behind walls.
+
+\ **Note:** Requires a :ref:`Material.next_pass<class_Material_property_next_pass>` material which will be automatically applied. Any manual changes made to :ref:`Material.next_pass<class_Material_property_next_pass>` will be lost when the stencil properties are modified or the scene is reloaded. To safely apply a :ref:`Material.next_pass<class_Material_property_next_pass>` material on a material that uses stencil presets, use :ref:`GeometryInstance3D.material_overlay<class_GeometryInstance3D_property_material_overlay>` instead.
+
+.. _class_BaseMaterial3D_constant_STENCIL_MODE_CUSTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilMode<enum_BaseMaterial3D_StencilMode>` **STENCIL_MODE_CUSTOM** = ``3``
+
+Enables stencil operations without a preset.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_BaseMaterial3D_StencilFlags:
+
+.. rst-class:: classref-enumeration
+
+enum **StencilFlags**: :ref:`🔗<enum_BaseMaterial3D_StencilFlags>`
+
+.. _class_BaseMaterial3D_constant_STENCIL_FLAG_READ:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilFlags<enum_BaseMaterial3D_StencilFlags>` **STENCIL_FLAG_READ** = ``1``
+
+The material will only be rendered where it passes a stencil comparison with existing stencil buffer values. See :ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>`.
+
+.. _class_BaseMaterial3D_constant_STENCIL_FLAG_WRITE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilFlags<enum_BaseMaterial3D_StencilFlags>` **STENCIL_FLAG_WRITE** = ``2``
+
+The material will write the reference value to the stencil buffer where it passes the depth test.
+
+.. _class_BaseMaterial3D_constant_STENCIL_FLAG_WRITE_DEPTH_FAIL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilFlags<enum_BaseMaterial3D_StencilFlags>` **STENCIL_FLAG_WRITE_DEPTH_FAIL** = ``4``
+
+The material will write the reference value to the stencil buffer where it fails the depth test.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_BaseMaterial3D_StencilCompare:
+
+.. rst-class:: classref-enumeration
+
+enum **StencilCompare**: :ref:`🔗<enum_BaseMaterial3D_StencilCompare>`
+
+.. _class_BaseMaterial3D_constant_STENCIL_COMPARE_ALWAYS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **STENCIL_COMPARE_ALWAYS** = ``0``
+
+Always passes the stencil test.
+
+.. _class_BaseMaterial3D_constant_STENCIL_COMPARE_LESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **STENCIL_COMPARE_LESS** = ``1``
+
+Passes the stencil test when the reference value is less than the existing stencil value.
+
+.. _class_BaseMaterial3D_constant_STENCIL_COMPARE_EQUAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **STENCIL_COMPARE_EQUAL** = ``2``
+
+Passes the stencil test when the reference value is equal to the existing stencil value.
+
+.. _class_BaseMaterial3D_constant_STENCIL_COMPARE_LESS_OR_EQUAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **STENCIL_COMPARE_LESS_OR_EQUAL** = ``3``
+
+Passes the stencil test when the reference value is less than or equal to the existing stencil value.
+
+.. _class_BaseMaterial3D_constant_STENCIL_COMPARE_GREATER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **STENCIL_COMPARE_GREATER** = ``4``
+
+Passes the stencil test when the reference value is greater than the existing stencil value.
+
+.. _class_BaseMaterial3D_constant_STENCIL_COMPARE_NOT_EQUAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **STENCIL_COMPARE_NOT_EQUAL** = ``5``
+
+Passes the stencil test when the reference value is not equal to the existing stencil value.
+
+.. _class_BaseMaterial3D_constant_STENCIL_COMPARE_GREATER_OR_EQUAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **STENCIL_COMPARE_GREATER_OR_EQUAL** = ``6``
+
+Passes the stencil test when the reference value is greater than or equal to the existing stencil value.
 
 .. rst-class:: classref-section-separator
 
@@ -1953,6 +2139,27 @@ Determines which side of the triangle to cull depending on whether the triangle 
 - :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>` **get_depth_draw_mode**\ (\ )
 
 Determines when depth rendering takes place. See also :ref:`transparency<class_BaseMaterial3D_property_transparency>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_depth_test:
+
+.. rst-class:: classref-property
+
+:ref:`DepthTest<enum_BaseMaterial3D_DepthTest>` **depth_test** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_depth_test>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_depth_test**\ (\ value\: :ref:`DepthTest<enum_BaseMaterial3D_DepthTest>`\ )
+- :ref:`DepthTest<enum_BaseMaterial3D_DepthTest>` **get_depth_test**\ (\ )
+
+**Experimental:** May be affected by future rendering pipeline changes.
+
+Determines which comparison operator is used when testing depth. See :ref:`DepthTest<enum_BaseMaterial3D_DepthTest>`.
+
+\ **Note:** Changing :ref:`depth_test<class_BaseMaterial3D_property_depth_test>` to a non-default value only has a visible effect when used on a transparent material, or a material that has :ref:`depth_draw_mode<class_BaseMaterial3D_property_depth_draw_mode>` set to :ref:`DEPTH_DRAW_DISABLED<class_BaseMaterial3D_constant_DEPTH_DRAW_DISABLED>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3098,6 +3305,120 @@ If ``true``, enables the "shadow to opacity" render mode where lighting modifies
 The method for rendering the specular blob.
 
 \ **Note:** :ref:`specular_mode<class_BaseMaterial3D_property_specular_mode>` only applies to the specular blob. It does not affect specular reflections from the sky, screen-space reflections, :ref:`VoxelGI<class_VoxelGI>`, SDFGI or :ref:`ReflectionProbe<class_ReflectionProbe>`\ s. To disable reflections from these sources as well, set :ref:`metallic_specular<class_BaseMaterial3D_property_metallic_specular>` to ``0.0`` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_stencil_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **stencil_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_BaseMaterial3D_property_stencil_color>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stencil_effect_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_stencil_effect_color**\ (\ )
+
+**Experimental:** May be affected by future rendering pipeline changes.
+
+The primary color of the stencil effect.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_stencil_compare:
+
+.. rst-class:: classref-property
+
+:ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **stencil_compare** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_stencil_compare>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stencil_compare**\ (\ value\: :ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>`\ )
+- :ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>` **get_stencil_compare**\ (\ )
+
+**Experimental:** May be affected by future rendering pipeline changes.
+
+The comparison operator to use for stencil masking operations. See :ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_stencil_flags:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **stencil_flags** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_stencil_flags>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stencil_flags**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_stencil_flags**\ (\ )
+
+**Experimental:** May be affected by future rendering pipeline changes.
+
+The flags dictating how the stencil operation behaves. See :ref:`StencilFlags<enum_BaseMaterial3D_StencilFlags>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_stencil_mode:
+
+.. rst-class:: classref-property
+
+:ref:`StencilMode<enum_BaseMaterial3D_StencilMode>` **stencil_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_stencil_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stencil_mode**\ (\ value\: :ref:`StencilMode<enum_BaseMaterial3D_StencilMode>`\ )
+- :ref:`StencilMode<enum_BaseMaterial3D_StencilMode>` **get_stencil_mode**\ (\ )
+
+**Experimental:** May be affected by future rendering pipeline changes.
+
+The stencil effect mode. See :ref:`StencilMode<enum_BaseMaterial3D_StencilMode>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_stencil_outline_thickness:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **stencil_outline_thickness** = ``0.01`` :ref:`🔗<class_BaseMaterial3D_property_stencil_outline_thickness>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stencil_effect_outline_thickness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_stencil_effect_outline_thickness**\ (\ )
+
+**Experimental:** May be affected by future rendering pipeline changes.
+
+The outline thickness for :ref:`STENCIL_MODE_OUTLINE<class_BaseMaterial3D_constant_STENCIL_MODE_OUTLINE>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_stencil_reference:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **stencil_reference** = ``1`` :ref:`🔗<class_BaseMaterial3D_property_stencil_reference>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stencil_reference**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_stencil_reference**\ (\ )
+
+**Experimental:** May be affected by future rendering pipeline changes.
+
+The stencil reference value (0-255). Typically a power of 2.
 
 .. rst-class:: classref-item-separator
 

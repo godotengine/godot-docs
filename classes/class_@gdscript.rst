@@ -41,7 +41,7 @@ Methods
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`assert<class_@GDScript_method_assert>`\ (\ condition\: :ref:`bool<class_bool>`, message\: :ref:`String<class_String>` = ""\ )                                      |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`char<class_@GDScript_method_char>`\ (\ char\: :ref:`int<class_int>`\ )                                                                                             |
+   | :ref:`String<class_String>`         | :ref:`char<class_@GDScript_method_char>`\ (\ code\: :ref:`int<class_int>`\ )                                                                                             |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`convert<class_@GDScript_method_convert>`\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ )                   |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -56,6 +56,8 @@ Methods
    | :ref:`int<class_int>`               | :ref:`len<class_@GDScript_method_len>`\ (\ var\: :ref:`Variant<class_Variant>`\ )                                                                                        |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Resource<class_Resource>`     | :ref:`load<class_@GDScript_method_load>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                       |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`ord<class_@GDScript_method_ord>`\ (\ char\: :ref:`String<class_String>`\ )                                                                                         |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Resource<class_Resource>`     | :ref:`preload<class_@GDScript_method_preload>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                 |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -323,6 +325,20 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPE
     @export_file var sound_effect_path: String
     @export_file("*.txt") var notes_path: String
     @export_file var level_paths: Array[String]
+
+\ **Note:** The file will be stored and referenced as UID, if available. This ensures that the reference is valid even when the file is moved. You can use :ref:`ResourceUID<class_ResourceUID>` methods to convert it to path.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@export_file_path:
+
+.. rst-class:: classref-annotation
+
+**@export_file_path**\ (\ filter\: :ref:`String<class_String>` = "", ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_file_path>`
+
+Same as :ref:`@export_file<class_@GDScript_annotation_@export_file>`, except the file will be stored as a raw path. This means that it may become invalid when the file is moved. If you are exporting a :ref:`Resource<class_Resource>` path, consider using :ref:`@export_file<class_@GDScript_annotation_@export_file>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -999,15 +1015,16 @@ An optional ``message`` can be shown in addition to the generic "Assertion faile
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **char**\ (\ char\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GDScript_method_char>`
+:ref:`String<class_String>` **char**\ (\ code\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GDScript_method_char>`
 
-Returns a single character (as a :ref:`String<class_String>`) of the given Unicode code point (which is compatible with ASCII code).
+Returns a single character (as a :ref:`String<class_String>` of length 1) of the given Unicode code point ``code``.
 
 ::
 
-    var upper = char(65)      # upper is "A"
-    var lower = char(65 + 32) # lower is "a"
-    var euro = char(8364)     # euro is "€"
+    print(char(65))     # Prints "A"
+    print(char(129302)) # Prints "🤖" (robot face emoji)
+
+This is the inverse of :ref:`ord()<class_@GDScript_method_ord>`. See also :ref:`String.chr()<class_String_method_chr>` and :ref:`String.unicode_at()<class_String_method_unicode_at>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1191,6 +1208,25 @@ This function is a simplified version of :ref:`ResourceLoader.load()<class_Resou
 \ **Note:** Files have to be imported into the engine first to load them using this function. If you want to load :ref:`Image<class_Image>`\ s at run-time, you may use :ref:`Image.load()<class_Image_method_load>`. If you want to import audio files, you can use the snippet described in :ref:`AudioStreamMP3.data<class_AudioStreamMP3_property_data>`.
 
 \ **Note:** If :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` is ``true``, :ref:`load()<class_@GDScript_method_load>` will not be able to read converted files in an exported project. If you rely on run-time loading of files present within the PCK, set :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` to ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_method_ord:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **ord**\ (\ char\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GDScript_method_ord>`
+
+Returns an integer representing the Unicode code point of the given character ``char``, which should be a string of length 1.
+
+::
+
+    print(ord("A")) # Prints 65
+    print(ord("🤖")) # Prints 129302
+
+This is the inverse of :ref:`char()<class_@GDScript_method_char>`. See also :ref:`String.chr()<class_String_method_chr>` and :ref:`String.unicode_at()<class_String_method_unicode_at>`.
 
 .. rst-class:: classref-item-separator
 

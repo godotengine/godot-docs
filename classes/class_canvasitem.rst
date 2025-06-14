@@ -380,7 +380,7 @@ The **CanvasItem** will inherit the filter from its parent.
 
 :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **TEXTURE_REPEAT_DISABLED** = ``1``
 
-The texture does not repeat.
+The texture does not repeat. Sampling the texture outside its extents will result in "stretching" of the edge pixels. You can avoid this by ensuring a 1-pixel fully transparent border on each side of the texture.
 
 .. _class_CanvasItem_constant_TEXTURE_REPEAT_ENABLED:
 
@@ -662,7 +662,9 @@ The filtering mode used to render this **CanvasItem**'s texture(s).
 - |void| **set_texture_repeat**\ (\ value\: :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>`\ )
 - :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **get_texture_repeat**\ (\ )
 
-The repeating mode used to render this **CanvasItem**'s texture(s).
+The repeating mode used to render this **CanvasItem**'s texture(s). It affects what happens when the texture is sampled outside its extents, for example by setting a :ref:`Sprite2D.region_rect<class_Sprite2D_property_region_rect>` that is larger than the texture or assigning :ref:`Polygon2D<class_Polygon2D>` UV points outside the texture.
+
+\ **Note:** :ref:`TextureRect<class_TextureRect>` is not affected by :ref:`texture_repeat<class_CanvasItem_property_texture_repeat>`, as it uses its own texture repeating implementation.
 
 .. rst-class:: classref-item-separator
 
@@ -987,7 +989,7 @@ Draws a :ref:`Mesh<class_Mesh>` in 2D, using the provided texture. See :ref:`Mes
 
 |void| **draw_msdf_texture_rect_region**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), outline\: :ref:`float<class_float>` = 0.0, pixel_range\: :ref:`float<class_float>` = 4.0, scale\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_CanvasItem_method_draw_msdf_texture_rect_region>`
 
-Draws a textured rectangle region of the multi-channel signed distance field texture at a given position, optionally modulated by a color. See :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` for more information and caveats about MSDF font rendering.
+Draws a textured rectangle region of the multichannel signed distance field texture at a given position, optionally modulated by a color. See :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` for more information and caveats about MSDF font rendering.
 
 If ``outline`` is positive, each alpha channel value of pixel in region is set to maximum value of true distance in the ``outline`` radius.
 
