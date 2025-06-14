@@ -385,7 +385,7 @@ for you. You don't need to change the default settings right now.
     there's a chance you'll be sent to the editor but the new function isn't there.
 
     In this case, you'll need to write the function yourself into the Player's
-    script file. (`func _on_body_entered(body):`)
+    script file: ``func _on_body_entered(body):``
 
 .. image:: img/player_signal_connection.webp
 
