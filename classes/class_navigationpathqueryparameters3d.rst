@@ -38,29 +38,37 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]                                             | :ref:`excluded_regions<class_NavigationPathQueryParameters3D_property_excluded_regions>`           | ``[]``               |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]                                             | :ref:`included_regions<class_NavigationPathQueryParameters3D_property_included_regions>`           | ``[]``               |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`RID<class_RID>`                                                                          | :ref:`map<class_NavigationPathQueryParameters3D_property_map>`                                     | ``RID()``            |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | |bitfield|\[:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>`\] | :ref:`metadata_flags<class_NavigationPathQueryParameters3D_property_metadata_flags>`               | ``7``                |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                                                                          | :ref:`navigation_layers<class_NavigationPathQueryParameters3D_property_navigation_layers>`         | ``1``                |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>`             | :ref:`path_postprocessing<class_NavigationPathQueryParameters3D_property_path_postprocessing>`     | ``0``                |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>`         | :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>` | ``0``                |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`                                                                      | :ref:`simplify_epsilon<class_NavigationPathQueryParameters3D_property_simplify_epsilon>`           | ``0.0``              |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                                                                        | :ref:`simplify_path<class_NavigationPathQueryParameters3D_property_simplify_path>`                 | ``false``            |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>`                                                                  | :ref:`start_position<class_NavigationPathQueryParameters3D_property_start_position>`               | ``Vector3(0, 0, 0)`` |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>`                                                                  | :ref:`target_position<class_NavigationPathQueryParameters3D_property_target_position>`             | ``Vector3(0, 0, 0)`` |
-   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]                                             | :ref:`excluded_regions<class_NavigationPathQueryParameters3D_property_excluded_regions>`                 | ``[]``               |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]                                             | :ref:`included_regions<class_NavigationPathQueryParameters3D_property_included_regions>`                 | ``[]``               |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`RID<class_RID>`                                                                          | :ref:`map<class_NavigationPathQueryParameters3D_property_map>`                                           | ``RID()``            |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | |bitfield|\[:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>`\] | :ref:`metadata_flags<class_NavigationPathQueryParameters3D_property_metadata_flags>`                     | ``7``                |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                                                                          | :ref:`navigation_layers<class_NavigationPathQueryParameters3D_property_navigation_layers>`               | ``1``                |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>`             | :ref:`path_postprocessing<class_NavigationPathQueryParameters3D_property_path_postprocessing>`           | ``0``                |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`path_return_max_length<class_NavigationPathQueryParameters3D_property_path_return_max_length>`     | ``0.0``              |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`path_return_max_radius<class_NavigationPathQueryParameters3D_property_path_return_max_radius>`     | ``0.0``              |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`path_search_max_distance<class_NavigationPathQueryParameters3D_property_path_search_max_distance>` | ``0.0``              |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                                                                          | :ref:`path_search_max_polygons<class_NavigationPathQueryParameters3D_property_path_search_max_polygons>` | ``4096``             |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>`         | :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>`       | ``0``                |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`simplify_epsilon<class_NavigationPathQueryParameters3D_property_simplify_epsilon>`                 | ``0.0``              |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`simplify_path<class_NavigationPathQueryParameters3D_property_simplify_path>`                       | ``false``            |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                                                  | :ref:`start_position<class_NavigationPathQueryParameters3D_property_start_position>`                     | ``Vector3(0, 0, 0)`` |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                                                  | :ref:`target_position<class_NavigationPathQueryParameters3D_property_target_position>`                   | ``Vector3(0, 0, 0)`` |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -279,6 +287,76 @@ The navigation layers the query will use (as a bitmask).
 - :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **get_path_postprocessing**\ (\ )
 
 The path postprocessing applied to the raw path corridor found by the :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryParameters3D_property_path_return_max_length:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **path_return_max_length** = ``0.0`` :ref:`🔗<class_NavigationPathQueryParameters3D_property_path_return_max_length>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_path_return_max_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_path_return_max_length**\ (\ )
+
+The maximum allowed length of the returned path in world units. A path will be clipped when going over this length. A value of ``0`` or below counts as disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryParameters3D_property_path_return_max_radius:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **path_return_max_radius** = ``0.0`` :ref:`🔗<class_NavigationPathQueryParameters3D_property_path_return_max_radius>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_path_return_max_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_path_return_max_radius**\ (\ )
+
+The maximum allowed radius in world units that the returned path can be from the path start. The path will be clipped when going over this radius. A value of ``0`` or below counts as disabled.
+
+\ **Note:** This will perform a sphere shaped clip operation on the path with the first path position being the sphere's center position.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryParameters3D_property_path_search_max_distance:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **path_search_max_distance** = ``0.0`` :ref:`🔗<class_NavigationPathQueryParameters3D_property_path_search_max_distance>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_path_search_max_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_path_search_max_distance**\ (\ )
+
+The maximum distance a searched polygon can be away from the start polygon before the pathfinding cancels the search for a path to the (possibly unreachable or very far away) target position polygon. In this case the pathfinding resets and builds a path from the start polygon to the polygon that was found closest to the target position so far. A value of ``0`` or below counts as unlimited. In case of unlimited the pathfinding will search all polygons connected with the start polygon until either the target position polygon is found or all available polygon search options are exhausted.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryParameters3D_property_path_search_max_polygons:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **path_search_max_polygons** = ``4096`` :ref:`🔗<class_NavigationPathQueryParameters3D_property_path_search_max_polygons>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_path_search_max_polygons**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_path_search_max_polygons**\ (\ )
+
+The maximum number of polygons that are searched before the pathfinding cancels the search for a path to the (possibly unreachable or very far away) target position polygon. In this case the pathfinding resets and builds a path from the start polygon to the polygon that was found closest to the target position so far. A value of ``0`` or below counts as unlimited. In case of unlimited the pathfinding will search all polygons connected with the start polygon until either the target position polygon is found or all available polygon search options are exhausted.
 
 .. rst-class:: classref-item-separator
 

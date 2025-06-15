@@ -104,7 +104,7 @@ A lattice of points are assigned random values then interpolated based on neighb
 
 :ref:`NoiseType<enum_FastNoiseLite_NoiseType>` **TYPE_VALUE_CUBIC** = ``4``
 
-Similar to Value noise, but slower. Has more variance in peaks and valleys.
+Similar to value noise (:ref:`TYPE_VALUE<class_FastNoiseLite_constant_TYPE_VALUE>`), but slower. Has more variance in peaks and valleys.
 
 Cubic noise can be used to avoid certain artifacts when using value noise to create a bumpmap. In general, you should always use this mode if the value noise is being used for a heightmap or bumpmap.
 
@@ -482,7 +482,7 @@ A low value places more emphasis on the lower frequency base layers, while a hig
 - |void| **set_domain_warp_fractal_lacunarity**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_domain_warp_fractal_lacunarity**\ (\ )
 
-Octave lacunarity of the fractal noise which warps the space. Increasing this value results in higher octaves producing noise with finer details and a rougher appearance.
+The change in frequency between octaves, also known as "lacunarity", of the fractal noise which warps the space. Increasing this value results in higher octaves, producing noise with finer details and a rougher appearance.
 
 .. rst-class:: classref-item-separator
 

@@ -21,7 +21,7 @@ Description
 
 The **Timer** node is a countdown timer and is the simplest way to handle time-based logic in the engine. When a timer reaches the end of its :ref:`wait_time<class_Timer_property_wait_time>`, it will emit the :ref:`timeout<class_Timer_signal_timeout>` signal.
 
-After a timer enters the tree, it can be manually started with :ref:`start()<class_Timer_method_start>`. A timer node is also started automatically if :ref:`autostart<class_Timer_property_autostart>` is ``true``.
+After a timer enters the scene tree, it can be manually started with :ref:`start()<class_Timer_method_start>`. A timer node is also started automatically if :ref:`autostart<class_Timer_property_autostart>` is ``true``.
 
 Without requiring much code, a timer node can be added and configured in the editor. The :ref:`timeout<class_Timer_signal_timeout>` signal it emits can also be connected through the Node dock in the editor:
 
@@ -32,7 +32,7 @@ Without requiring much code, a timer node can be added and configured in the edi
 
 \ **Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer()<class_SceneTree_method_create_timer>`.
 
-\ **Note:** Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`. The higher the time scale, the sooner timers will end. How often a timer processes may depend on the framerate or :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`.
+\ **Note:** Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>` unless :ref:`ignore_time_scale<class_Timer_property_ignore_time_scale>` is ``true``. The higher the time scale, the sooner timers will end. How often a timer processes may depend on the framerate or :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -204,7 +204,7 @@ If ``true``, the timer will stop after reaching the end. Otherwise, as by defaul
 - |void| **set_paused**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_paused**\ (\ )
 
-If ``true``, the timer is paused. A paused timer does not process until this property is set back to ``false``, even when :ref:`start()<class_Timer_method_start>` is called.
+If ``true``, the timer is paused. A paused timer does not process until this property is set back to ``false``, even when :ref:`start()<class_Timer_method_start>` is called. See also :ref:`stop()<class_Timer_method_stop>`.
 
 .. rst-class:: classref-item-separator
 
@@ -287,7 +287,7 @@ Returns ``true`` if the timer is stopped or has not started.
 
 |void| **start**\ (\ time_sec\: :ref:`float<class_float>` = -1\ ) :ref:`🔗<class_Timer_method_start>`
 
-Starts the timer, or resets the timer if it was started already. Fails if the timer is not inside the tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
+Starts the timer, or resets the timer if it was started already. Fails if the timer is not inside the scene tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
 
 \ **Note:** This method does not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 
@@ -301,7 +301,9 @@ Starts the timer, or resets the timer if it was started already. Fails if the ti
 
 |void| **stop**\ (\ ) :ref:`🔗<class_Timer_method_stop>`
 
-Stops the timer.
+Stops the timer. See also :ref:`paused<class_Timer_property_paused>`. Unlike :ref:`start()<class_Timer_method_start>`, this can safely be called if the timer is not inside the scene tree.
+
+\ **Note:** Calling :ref:`stop()<class_Timer_method_stop>` does not emit the :ref:`timeout<class_Timer_signal_timeout>` signal, as the timer is not considered to have timed out. If this is desired, use ``$Timer.timeout.emit()`` after calling :ref:`stop()<class_Timer_method_stop>` to manually emit the signal.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

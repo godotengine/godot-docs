@@ -254,9 +254,9 @@ Returns meta information assigned to given edge.
 
 :ref:`int<class_int>` **get_edge_vertex**\ (\ idx\: :ref:`int<class_int>`, vertex\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_edge_vertex>`
 
-Returns index of specified vertex connected to given edge.
+Returns the index of the specified ``vertex`` connected to the edge at index ``idx``.
 
-Vertex argument can only be 0 or 1 because edges are comprised of two vertices.
+\ ``vertex`` can only be ``0`` or ``1``, as edges are composed of two vertices.
 
 .. rst-class:: classref-item-separator
 
@@ -280,9 +280,9 @@ Returns the number of faces in this :ref:`Mesh<class_Mesh>`.
 
 :ref:`int<class_int>` **get_face_edge**\ (\ idx\: :ref:`int<class_int>`, edge\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshDataTool_method_get_face_edge>`
 
-Returns specified edge associated with given face.
+Returns the edge associated with the face at index ``idx``.
 
-Edge argument must be either 0, 1, or 2 because a face only has three edges.
+\ ``edge`` argument must be either ``0``, ``1``, or ``2`` because a face only has three edges.
 
 .. rst-class:: classref-item-separator
 

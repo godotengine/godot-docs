@@ -21,9 +21,11 @@ Description
 
 Godot can record videos with non-real-time simulation. Like the ``--fixed-fps`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`, this forces the reported ``delta`` in :ref:`Node._process()<class_Node_private_method__process>` functions to be identical across frames, regardless of how long it actually took to render the frame. This can be used to record high-quality videos with perfect frame pacing regardless of your hardware's capabilities.
 
-Godot has 2 built-in **MovieWriter**\ s:
+Godot has 3 built-in **MovieWriter**\ s:
 
-- AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`ProjectSettings.editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. MJPEG does not support transparency. AVI output is currently limited to a file of 4 GB in size at most.
+- OGV container with Theora for video and Vorbis for audio (``.ogv`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`ProjectSettings.editor/movie_writer/video_quality<class_ProjectSettings_property_editor/movie_writer/video_quality>` and :ref:`ProjectSettings.editor/movie_writer/ogv/audio_quality<class_ProjectSettings_property_editor/movie_writer/ogv/audio_quality>`. The resulting file can be viewed in Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>` and most video players, but not web browsers as they don't support Theora.
+
+- AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`ProjectSettings.editor/movie_writer/video_quality<class_ProjectSettings_property_editor/movie_writer/video_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. MJPEG does not support transparency. AVI output is currently limited to a file of 4 GB in size at most.
 
 - PNG image sequence for video and WAV for audio (``.png`` file extension). Lossless compression, large file sizes, slow encoding. Designed to be encoded to a video file with another tool such as `FFmpeg <https://ffmpeg.org/>`__ after recording. Transparency is currently not supported, even if the root viewport is set to be transparent.
 
@@ -34,6 +36,8 @@ If you need to encode to a different format or pipe a stream through third-party
 \ **Note:** MovieWriter is available for use in both the editor and exported projects, but it is *not* designed for use by end users to record videos while playing. Players wishing to record gameplay videos should install tools such as `OBS Studio <https://obsproject.com/>`__ or `SimpleScreenRecorder <https://www.maartenbaert.be/simplescreenrecorder/>`__ instead.
 
 \ **Note:** MJPEG support (``.avi`` file extension) depends on the ``jpg`` module being enabled at compile time (default behavior).
+
+\ **Note:** OGV support (``.ogv`` file extension) depends on the ``theora`` module being enabled at compile time (default behavior). Theora compression is only available in editor binaries.
 
 .. rst-class:: classref-reftable-group
 

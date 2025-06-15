@@ -1456,7 +1456,7 @@ Replaces all occurrences of ``what`` inside the string with the given ``forwhat`
 
 :ref:`String<class_String>` **replace_char**\ (\ key\: :ref:`int<class_int>`, with\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_replace_char>`
 
-Replaces all occurrences of the Unicode character with code ``key`` with the Unicode character with code ``with``. Faster version of :ref:`replace()<class_StringName_method_replace>` when the key is only one character long. To get a single character use ``"X".unicode_at(0)`` (note that some strings, like compound letters and emoji, can be made up of multiple unicode codepoints, and will not work with this method, use :ref:`length()<class_StringName_method_length>` to make sure).
+Replaces all occurrences of the Unicode character with code ``key`` with the Unicode character with code ``with``. Faster version of :ref:`replace()<class_StringName_method_replace>` when the key is only one character long. To get a single character use ``"X".unicode_at(0)`` (note that some strings, like compound letters and emoji, can be composed of multiple unicode codepoints, and will not work with this method, use :ref:`length()<class_StringName_method_length>` to make sure).
 
 .. rst-class:: classref-item-separator
 
@@ -2040,6 +2040,8 @@ Removes the given ``suffix`` from the end of the string, or returns the string u
 :ref:`int<class_int>` **unicode_at**\ (\ at\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_unicode_at>`
 
 Returns the character code at position ``at``.
+
+See also :ref:`String.chr()<class_String_method_chr>`, :ref:`@GDScript.char()<class_@GDScript_method_char>`, and :ref:`@GDScript.ord()<class_@GDScript_method_ord>`.
 
 .. rst-class:: classref-item-separator
 

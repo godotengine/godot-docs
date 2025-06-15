@@ -41,6 +41,8 @@ Properties
    +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`path<class_NavigationPathQueryResult2D_property_path>`                     | ``PackedVector2Array()`` |
    +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`path_length<class_NavigationPathQueryResult2D_property_path_length>`       | ``0.0``                  |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
    | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`path_owner_ids<class_NavigationPathQueryResult2D_property_path_owner_ids>` | ``PackedInt64Array()``   |
    +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]  | :ref:`path_rids<class_NavigationPathQueryResult2D_property_path_rids>`           | ``[]``                   |
@@ -114,6 +116,23 @@ Property Descriptions
 The resulting path array from the navigation query. All path array positions are in global coordinates. Without customized query parameters this is the same path as returned by :ref:`NavigationServer2D.map_get_path()<class_NavigationServer2D_method_map_get_path>`.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryResult2D_property_path_length:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **path_length** = ``0.0`` :ref:`🔗<class_NavigationPathQueryResult2D_property_path_length>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_path_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_path_length**\ (\ )
+
+Returns the length of the path.
 
 .. rst-class:: classref-item-separator
 

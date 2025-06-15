@@ -29,39 +29,53 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`Access<enum_FileDialog_Access>`             | :ref:`access<class_FileDialog_property_access>`                             | ``0``                                                                                    |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`current_dir<class_FileDialog_property_current_dir>`                   |                                                                                          |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`current_file<class_FileDialog_property_current_file>`                 |                                                                                          |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`current_path<class_FileDialog_property_current_path>`                 |                                                                                          |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | dialog_hide_on_ok                                                           | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`) |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`DisplayMode<enum_FileDialog_DisplayMode>`   | :ref:`display_mode<class_FileDialog_property_display_mode>`                 | ``0``                                                                                    |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`FileMode<enum_FileDialog_FileMode>`         | :ref:`file_mode<class_FileDialog_property_file_mode>`                       | ``4``                                                                                    |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`filename_filter<class_FileDialog_property_filename_filter>`           | ``""``                                                                                   |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                           | ``PackedStringArray()``                                                                  |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                                                                                 |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`option_count<class_FileDialog_property_option_count>`                 | ``0``                                                                                    |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`root_subfolder<class_FileDialog_property_root_subfolder>`             | ``""``                                                                                   |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                                                                                |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i<class_Vector2i>`                   | size                                                                        | ``Vector2i(640, 360)`` (overrides :ref:`Window<class_Window_property_size>`)             |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | title                                                                       | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`use_native_dialog<class_FileDialog_property_use_native_dialog>`       | ``false``                                                                                |
-   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`Access<enum_FileDialog_Access>`             | :ref:`access<class_FileDialog_property_access>`                                           | ``0``                                                                                    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`current_dir<class_FileDialog_property_current_dir>`                                 |                                                                                          |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`current_file<class_FileDialog_property_current_file>`                               |                                                                                          |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`current_path<class_FileDialog_property_current_path>`                               |                                                                                          |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | dialog_hide_on_ok                                                                         | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`) |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`DisplayMode<enum_FileDialog_DisplayMode>`   | :ref:`display_mode<class_FileDialog_property_display_mode>`                               | ``0``                                                                                    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`favorites_enabled<class_FileDialog_property_favorites_enabled>`                     | ``true``                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`file_filter_toggle_enabled<class_FileDialog_property_file_filter_toggle_enabled>`   | ``true``                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`FileMode<enum_FileDialog_FileMode>`         | :ref:`file_mode<class_FileDialog_property_file_mode>`                                     | ``4``                                                                                    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`file_sort_options_enabled<class_FileDialog_property_file_sort_options_enabled>`     | ``true``                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`filename_filter<class_FileDialog_property_filename_filter>`                         | ``""``                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                                         | ``PackedStringArray()``                                                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`folder_creation_enabled<class_FileDialog_property_folder_creation_enabled>`         | ``true``                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`hidden_files_toggle_enabled<class_FileDialog_property_hidden_files_toggle_enabled>` | ``true``                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`layout_toggle_enabled<class_FileDialog_property_layout_toggle_enabled>`             | ``true``                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>`               | ``true``                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`option_count<class_FileDialog_property_option_count>`                               | ``0``                                                                                    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`recent_list_enabled<class_FileDialog_property_recent_list_enabled>`                 | ``true``                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`root_subfolder<class_FileDialog_property_root_subfolder>`                           | ``""``                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`                     | ``false``                                                                                |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                   | size                                                                                      | ``Vector2i(640, 360)`` (overrides :ref:`Window<class_Window_property_size>`)             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | title                                                                                     | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`use_native_dialog<class_FileDialog_property_use_native_dialog>`                     | ``false``                                                                                |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -95,6 +109,10 @@ Methods
    | :ref:`VBoxContainer<class_VBoxContainer>`         | :ref:`get_vbox<class_FileDialog_method_get_vbox>`\ (\ )                                                                                                                                                  |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`invalidate<class_FileDialog_method_invalidate>`\ (\ )                                                                                                                                              |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_customization_flag_enabled<class_FileDialog_method_is_customization_flag_enabled>`\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|                                    |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_customization_flag_enabled<class_FileDialog_method_set_customization_flag_enabled>`\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )       |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`set_option_default<class_FileDialog_method_set_option_default>`\ (\ option\: :ref:`int<class_int>`, default_value_index\: :ref:`int<class_int>`\ )                                                 |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -323,6 +341,86 @@ The dialog displays files as a grid of thumbnails. Use :ref:`thumbnail_size<clas
 
 The dialog displays files as a list of filenames.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_FileDialog_Customization:
+
+.. rst-class:: classref-enumeration
+
+enum **Customization**: :ref:`🔗<enum_FileDialog_Customization>`
+
+.. _class_FileDialog_constant_CUSTOMIZATION_HIDDEN_FILES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Customization<enum_FileDialog_Customization>` **CUSTOMIZATION_HIDDEN_FILES** = ``0``
+
+Toggles visibility of the favorite button, and the favorite list on the left side of the dialog.
+
+Equivalent to :ref:`hidden_files_toggle_enabled<class_FileDialog_property_hidden_files_toggle_enabled>`.
+
+.. _class_FileDialog_constant_CUSTOMIZATION_CREATE_FOLDER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Customization<enum_FileDialog_Customization>` **CUSTOMIZATION_CREATE_FOLDER** = ``1``
+
+If enabled, shows the button for creating new directories (when using :ref:`FILE_MODE_OPEN_DIR<class_FileDialog_constant_FILE_MODE_OPEN_DIR>`, :ref:`FILE_MODE_OPEN_ANY<class_FileDialog_constant_FILE_MODE_OPEN_ANY>`, or :ref:`FILE_MODE_SAVE_FILE<class_FileDialog_constant_FILE_MODE_SAVE_FILE>`).
+
+Equivalent to :ref:`folder_creation_enabled<class_FileDialog_property_folder_creation_enabled>`.
+
+.. _class_FileDialog_constant_CUSTOMIZATION_FILE_FILTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Customization<enum_FileDialog_Customization>` **CUSTOMIZATION_FILE_FILTER** = ``2``
+
+If enabled, shows the toggle file filter button.
+
+Equivalent to :ref:`file_filter_toggle_enabled<class_FileDialog_property_file_filter_toggle_enabled>`.
+
+.. _class_FileDialog_constant_CUSTOMIZATION_FILE_SORT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Customization<enum_FileDialog_Customization>` **CUSTOMIZATION_FILE_SORT** = ``3``
+
+If enabled, shows the file sorting options button.
+
+Equivalent to :ref:`file_sort_options_enabled<class_FileDialog_property_file_sort_options_enabled>`.
+
+.. _class_FileDialog_constant_CUSTOMIZATION_FAVORITES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Customization<enum_FileDialog_Customization>` **CUSTOMIZATION_FAVORITES** = ``4``
+
+If enabled, shows the toggle favorite button and favorite list on the left side of the dialog.
+
+Equivalent to :ref:`favorites_enabled<class_FileDialog_property_favorites_enabled>`.
+
+.. _class_FileDialog_constant_CUSTOMIZATION_RECENT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Customization<enum_FileDialog_Customization>` **CUSTOMIZATION_RECENT** = ``5``
+
+If enabled, shows the recent directories list on the left side of the dialog.
+
+Equivalent to :ref:`recent_list_enabled<class_FileDialog_property_recent_list_enabled>`.
+
+.. _class_FileDialog_constant_CUSTOMIZATION_LAYOUT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Customization<enum_FileDialog_Customization>` **CUSTOMIZATION_LAYOUT** = ``6``
+
+If enabled, shows the layout switch buttons (list/thumbnails).
+
+Equivalent to :ref:`layout_toggle_enabled<class_FileDialog_property_layout_toggle_enabled>`.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -421,6 +519,40 @@ Display mode of the dialog's file list.
 
 ----
 
+.. _class_FileDialog_property_favorites_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **favorites_enabled** = ``true`` :ref:`🔗<class_FileDialog_property_favorites_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|
+
+If ``true``, shows the toggle favorite button and favorite list on the left side of the dialog.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_file_filter_toggle_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **file_filter_toggle_enabled** = ``true`` :ref:`🔗<class_FileDialog_property_file_filter_toggle_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|
+
+If ``true``, shows the toggle file filter button.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FileDialog_property_file_mode:
 
 .. rst-class:: classref-property
@@ -433,6 +565,23 @@ Display mode of the dialog's file list.
 - :ref:`FileMode<enum_FileDialog_FileMode>` **get_file_mode**\ (\ )
 
 The dialog's open or save mode, which affects the selection behavior.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_file_sort_options_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **file_sort_options_enabled** = ``true`` :ref:`🔗<class_FileDialog_property_file_sort_options_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|
+
+If ``true``, shows the file sorting options button.
 
 .. rst-class:: classref-item-separator
 
@@ -478,6 +627,57 @@ The available file type filters. Each filter string in the array should be forma
 
 ----
 
+.. _class_FileDialog_property_folder_creation_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **folder_creation_enabled** = ``true`` :ref:`🔗<class_FileDialog_property_folder_creation_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|
+
+If ``true``, shows the button for creating new directories (when using :ref:`FILE_MODE_OPEN_DIR<class_FileDialog_constant_FILE_MODE_OPEN_DIR>`, :ref:`FILE_MODE_OPEN_ANY<class_FileDialog_constant_FILE_MODE_OPEN_ANY>`, or :ref:`FILE_MODE_SAVE_FILE<class_FileDialog_constant_FILE_MODE_SAVE_FILE>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_hidden_files_toggle_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **hidden_files_toggle_enabled** = ``true`` :ref:`🔗<class_FileDialog_property_hidden_files_toggle_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|
+
+If ``true``, shows the toggle hidden files button.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_layout_toggle_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **layout_toggle_enabled** = ``true`` :ref:`🔗<class_FileDialog_property_layout_toggle_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|
+
+If ``true``, shows the layout switch buttons (list/thumbnails).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FileDialog_property_mode_overrides_title:
 
 .. rst-class:: classref-property
@@ -507,6 +707,23 @@ If ``true``, changing the :ref:`file_mode<class_FileDialog_property_file_mode>` 
 - :ref:`int<class_int>` **get_option_count**\ (\ )
 
 The number of additional :ref:`OptionButton<class_OptionButton>`\ s and :ref:`CheckBox<class_CheckBox>`\ es in the dialog.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_recent_list_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **recent_list_enabled** = ``true`` :ref:`🔗<class_FileDialog_property_recent_list_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|
+
+If ``true``, shows the recent directories list on the left side of the dialog.
 
 .. rst-class:: classref-item-separator
 
@@ -586,7 +803,7 @@ Method Descriptions
 
 |void| **add_filter**\ (\ filter\: :ref:`String<class_String>`, description\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_FileDialog_method_add_filter>`
 
-Adds a comma-delimited file name ``filter`` option to the **FileDialog** with an optional ``description``, which restricts what files can be picked.
+Adds a comma-separated file name ``filter`` option to the **FileDialog** with an optional ``description``, which restricts what files can be picked.
 
 A ``filter`` should be of the form ``"filename.extension"``, where filename and extension can be ``*`` to match any string. Filters starting with ``.`` (i.e. empty filenames) are not allowed.
 
@@ -733,6 +950,30 @@ Returns the vertical box container of the dialog, custom controls can be added t
 Invalidate and update the current dialog content list.
 
 \ **Note:** This method does nothing on native file dialogs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_method_is_customization_flag_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const| :ref:`🔗<class_FileDialog_method_is_customization_flag_enabled>`
+
+Returns ``true`` if the provided ``flag`` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_method_set_customization_flag_enabled:
+
+.. rst-class:: classref-method
+
+|void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_FileDialog_method_set_customization_flag_enabled>`
+
+Toggles the specified customization ``flag``, allowing to customize features available in this **FileDialog**. See :ref:`Customization<enum_FileDialog_Customization>` for options.
 
 .. rst-class:: classref-item-separator
 

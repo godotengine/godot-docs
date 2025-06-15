@@ -361,13 +361,13 @@ Sets the feed as external feed provided by another library.
 
 :ref:`bool<class_bool>` **set_format**\ (\ index\: :ref:`int<class_int>`, parameters\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_CameraFeed_method_set_format>`
 
-Sets the feed format parameters for the given index in the :ref:`formats<class_CameraFeed_property_formats>` array. Returns ``true`` on success. By default YUYV encoded stream is transformed to FEED_RGB. YUYV encoded stream output format can be changed with ``parameters``.output value:
+Sets the feed format parameters for the given ``index`` in the :ref:`formats<class_CameraFeed_property_formats>` array. Returns ``true`` on success. By default, the YUYV encoded stream is transformed to :ref:`FEED_RGB<class_CameraFeed_constant_FEED_RGB>`. The YUYV encoded stream output format can be changed by setting ``parameters``'s ``output`` entry to one of the following:
 
-\ ``separate`` will result in FEED_YCBCR_SEP
+- ``"separate"`` will result in :ref:`FEED_YCBCR_SEP<class_CameraFeed_constant_FEED_YCBCR_SEP>`;
 
-\ ``grayscale`` will result in desaturated FEED_RGB
+- ``"grayscale"`` will result in desaturated :ref:`FEED_RGB<class_CameraFeed_constant_FEED_RGB>`;
 
-\ ``copy`` will result in FEED_YCBCR
+- ``"copy"`` will result in :ref:`FEED_YCBCR<class_CameraFeed_constant_FEED_YCBCR>`.
 
 .. rst-class:: classref-item-separator
 

@@ -40,37 +40,37 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`GLTFAccessorType<enum_GLTFAccessor_GLTFAccessorType>` | :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>`                                 | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`buffer_view<class_GLTFAccessor_property_buffer_view>`                                     | ``-1``                   |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`byte_offset<class_GLTFAccessor_property_byte_offset>`                                     | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`component_type<class_GLTFAccessor_property_component_type>`                               | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`count<class_GLTFAccessor_property_count>`                                                 | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`PackedFloat64Array<class_PackedFloat64Array>`         | :ref:`max<class_GLTFAccessor_property_max>`                                                     | ``PackedFloat64Array()`` |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`PackedFloat64Array<class_PackedFloat64Array>`         | :ref:`min<class_GLTFAccessor_property_min>`                                                     | ``PackedFloat64Array()`` |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`bool<class_bool>`                                     | :ref:`normalized<class_GLTFAccessor_property_normalized>`                                       | ``false``                |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`sparse_count<class_GLTFAccessor_property_sparse_count>`                                   | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`sparse_indices_buffer_view<class_GLTFAccessor_property_sparse_indices_buffer_view>`       | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`sparse_indices_byte_offset<class_GLTFAccessor_property_sparse_indices_byte_offset>`       | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`sparse_indices_component_type<class_GLTFAccessor_property_sparse_indices_component_type>` | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`sparse_values_buffer_view<class_GLTFAccessor_property_sparse_values_buffer_view>`         | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`sparse_values_byte_offset<class_GLTFAccessor_property_sparse_values_byte_offset>`         | ``0``                    |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                                       | :ref:`type<class_GLTFAccessor_property_type>`                                                   |                          |
-   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`GLTFAccessorType<enum_GLTFAccessor_GLTFAccessorType>`   | :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>`                                 | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`buffer_view<class_GLTFAccessor_property_buffer_view>`                                     | ``-1``                   |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`byte_offset<class_GLTFAccessor_property_byte_offset>`                                     | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` | :ref:`component_type<class_GLTFAccessor_property_component_type>`                               | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`count<class_GLTFAccessor_property_count>`                                                 | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedFloat64Array<class_PackedFloat64Array>`           | :ref:`max<class_GLTFAccessor_property_max>`                                                     | ``PackedFloat64Array()`` |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedFloat64Array<class_PackedFloat64Array>`           | :ref:`min<class_GLTFAccessor_property_min>`                                                     | ``PackedFloat64Array()`` |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                       | :ref:`normalized<class_GLTFAccessor_property_normalized>`                                       | ``false``                |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`sparse_count<class_GLTFAccessor_property_sparse_count>`                                   | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`sparse_indices_buffer_view<class_GLTFAccessor_property_sparse_indices_buffer_view>`       | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`sparse_indices_byte_offset<class_GLTFAccessor_property_sparse_indices_byte_offset>`       | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` | :ref:`sparse_indices_component_type<class_GLTFAccessor_property_sparse_indices_component_type>` | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`sparse_values_buffer_view<class_GLTFAccessor_property_sparse_values_buffer_view>`         | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`sparse_values_byte_offset<class_GLTFAccessor_property_sparse_values_byte_offset>`         | ``0``                    |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`type<class_GLTFAccessor_property_type>`                                                   |                          |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -313,12 +313,12 @@ The offset relative to the start of the buffer view in bytes.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **component_type** = ``0`` :ref:`🔗<class_GLTFAccessor_property_component_type>`
+:ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` **component_type** = ``0`` :ref:`🔗<class_GLTFAccessor_property_component_type>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_component_type**\ (\ value\: :ref:`int<class_int>`\ )
-- :ref:`int<class_int>` **get_component_type**\ (\ )
+- |void| **set_component_type**\ (\ value\: :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>`\ )
+- :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` **get_component_type**\ (\ )
 
 The glTF component type as an enum. See :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` for possible values. Within the core glTF specification, a value of 5125 or "UNSIGNED_INT" must not be used for any accessor that is not referenced by mesh.primitive.indices.
 
@@ -453,12 +453,12 @@ The offset relative to the start of the buffer view in bytes.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sparse_indices_component_type** = ``0`` :ref:`🔗<class_GLTFAccessor_property_sparse_indices_component_type>`
+:ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` **sparse_indices_component_type** = ``0`` :ref:`🔗<class_GLTFAccessor_property_sparse_indices_component_type>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_sparse_indices_component_type**\ (\ value\: :ref:`int<class_int>`\ )
-- :ref:`int<class_int>` **get_sparse_indices_component_type**\ (\ )
+- |void| **set_sparse_indices_component_type**\ (\ value\: :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>`\ )
+- :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` **get_sparse_indices_component_type**\ (\ )
 
 The indices component data type as an enum. Possible values are 5121 for "UNSIGNED_BYTE", 5123 for "UNSIGNED_SHORT", and 5125 for "UNSIGNED_INT".
 

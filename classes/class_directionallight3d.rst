@@ -22,7 +22,9 @@ Directional light from a distance, as from the Sun.
 Description
 -----------
 
-A directional light is a type of :ref:`Light3D<class_Light3D>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldspace location of the DirectionalLight3D transform (origin) is ignored. Only the basis is used to determine light direction.
+A directional light is a type of :ref:`Light3D<class_Light3D>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene to model sunlight or moonlight.
+
+Light is emitted in the -Z direction of the node's global basis. For an unrotated light, this means that the light is emitted forwards, illuminating the front side of a 3D model (see :ref:`Vector3.FORWARD<class_Vector3_constant_FORWARD>` and :ref:`Vector3.MODEL_FRONT<class_Vector3_constant_MODEL_FRONT>`). The position of the node is ignored; only the basis is used to determine light direction.
 
 .. rst-class:: classref-introduction-group
 

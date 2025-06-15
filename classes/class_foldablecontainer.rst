@@ -262,7 +262,7 @@ The container's title text.
 - |void| **set_title_alignment**\ (\ value\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`\ )
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_title_alignment**\ (\ )
 
-Title's horizontal text alignment as defined in the :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` enum.
+Title's horizontal text alignment.
 
 .. rst-class:: classref-item-separator
 
@@ -279,7 +279,7 @@ Title's horizontal text alignment as defined in the :ref:`HorizontalAlignment<en
 - |void| **set_title_position**\ (\ value\: :ref:`TitlePosition<enum_FoldableContainer_TitlePosition>`\ )
 - :ref:`TitlePosition<enum_FoldableContainer_TitlePosition>` **get_title_position**\ (\ )
 
-Title's position as defined in the :ref:`TitlePosition<enum_FoldableContainer_TitlePosition>` enum.
+Title's position.
 
 .. rst-class:: classref-item-separator
 

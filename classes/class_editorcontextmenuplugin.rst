@@ -88,7 +88,15 @@ Context menu of Script editor's script tabs. :ref:`_popup_menu()<class_EditorCon
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_FILESYSTEM_CREATE** = ``3``
 
-The "Create..." submenu of FileSystem dock's context menu, or the "New" section of the main context menu when empty space is clicked. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with the path of the currently selected folder, wrapped in a list. When clicking the empty space, the list of paths for popup method will be empty.
+The "Create..." submenu of FileSystem dock's context menu, or the "New" section of the main context menu when empty space is clicked. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with the path of the currently selected folder. When clicking the empty space, the list of paths for popup method will be empty.
+
+::
+
+    func _popup_menu(paths):
+        if paths.is_empty():
+            add_context_menu_item("New Image File...", create_image)
+        else:
+            add_context_menu_item("Image File...", create_image)
 
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCRIPT_EDITOR_CODE:
 

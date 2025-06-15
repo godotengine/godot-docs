@@ -304,7 +304,7 @@ The number of stacked outlines.
 - |void| **set_stacked_shadow_count**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_stacked_shadow_count**\ (\ )
 
-Returns the stacked shadow count.
+The number of stacked shadows.
 
 .. rst-class:: classref-section-separator
 

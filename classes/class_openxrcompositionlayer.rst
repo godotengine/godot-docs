@@ -144,7 +144,7 @@ enum **MipmapMode**: :ref:`🔗<enum_OpenXRCompositionLayer_MipmapMode>`
 
 Disable mipmapping.
 
-\ **Note:** Mipmapping can only be disabled in the compatibility renderer.
+\ **Note:** Mipmapping can only be disabled in the Compatibility renderer.
 
 .. _class_OpenXRCompositionLayer_constant_MIPMAP_MODE_NEAREST:
 
@@ -212,7 +212,7 @@ Repeat the texture infinitely, mirroring it on each repeat.
 
 Mirror the texture once and then clamp the texture to its edge color.
 
-\ **Note:** This wrap mode is not available in the compatibility renderer.
+\ **Note:** This wrap mode is not available in the Compatibility renderer.
 
 .. rst-class:: classref-item-separator
 
