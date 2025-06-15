@@ -168,6 +168,8 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | return     | Returns a value from a function.                                                                                                                  |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| abstract   | Defines an abstract class or method. See `Abstract classes and methods`_.                                                                         |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | class      | Defines an inner class. See `Inner classes`_.                                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | class_name | Defines the script as a globally accessible class with the specified name. See `Registering named classes`_.                                      |
@@ -1572,6 +1574,61 @@ Lambda functions cannot be declared static.
 
 See also `Static variables`_ and `Static constructor`_.
 
+Variadic functions
+~~~~~~~~~~~~~~~~~~
+
+A variadic function is a function that can take a variable number of arguments. Since Godot 4.5, GDScript supports
+variadic functions. To declare a variadic function, you need to use the *rest parameter*, which collects
+all the excess arguments into an array. Example:
+
+::
+
+    func my_func(a, b = 0, ...args):
+        prints(a, b, args)
+
+    func _ready():
+        my_func(1)             # 1 0 []
+        my_func(1, 2)          # 1 2 []
+        my_func(1, 2, 3)       # 1 2 [3]
+        my_func(1, 2, 3, 4)    # 1 2 [3, 4]
+        my_func(1, 2, 3, 4, 5) # 1 2 [3, 4, 5]
+
+A function can have at most one rest parameter, which must be the last one in the parameter list.
+The rest parameter cannot have a default value. Static and lambda functions can also be variadic.
+
+Static typing works for variadic functions too. However, typed arrays are not currently supported as a static type
+of the rest parameter:
+
+::
+
+    # You cannot specify `...values: Array[int]`.
+    func sum(...values: Array) -> int:
+        var result := 0
+        for value in values:
+            assert(value is int)
+            result += value
+        return result
+
+.. note::
+
+    Although you can declare functions as variadic using rest parameter, unpacking parameters when calling a function
+    using *spread syntax* that exists in some languages ​​(JavaScript, PHP) is not currently supported in GDScript.
+    However, you can use ``callv()`` to call a function with an array of arguments:
+
+    ::
+
+        func log_data(...values):
+            # ...
+
+        func other_func(...args):
+            #log_data(...args) # This won't work.
+            log_data.callv(args) # This will work.
+
+Abstract functions
+~~~~~~~~~~~~~~~~~~
+
+See `Abstract classes and methods`_.
+
 Statements and control flow
 ---------------------------
 
@@ -2047,7 +2104,7 @@ If you want to use ``extends`` too, you can keep both on the same line:
 Named classes are globally registered, which means they become available to use
 in other scripts without the need to ``load`` or ``preload`` them:
 
-.. code-block:: gdscript
+::
 
     var player
 
@@ -2070,30 +2127,42 @@ in other scripts without the need to ``load`` or ``preload`` them:
 
 .. _doc_gdscript_basics_abstract_class:
 
-Registering abstract classes
+Abstract classes and methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since Godot 4.5, you can register abstract classes using the ``abstract`` keyword.
+Since Godot 4.5, you can define abstract classes and methods using the ``abstract`` keyword.
+
 An abstract class is a class that cannot be instantiated directly. Instead, it
 is meant to be subclassed by other classes. Attempting to instantiate
 an abstract class will result in an error.
 
+An abstract method is a non-static member function that has no implementation.
+An abstract function has no body; instead, a newline or semicolon is expected after
+the function header. An abstract method defines an interface that subclasses must conform to,
+because the method signature must be compatible when overriding a base class method.
+
+If a class has at least one unimplemented abstract method (either its own or inherited),
+then it must also be declared abstract. However, the reverse is not true; an abstract class
+may not have any abstract methods.
+
+.. tip::
+
+    If you want a method overriding to be optional, you should use a non-abstract method
+    and provide a default implementation.
+
 For example, you could have an abstract class called ``Shape`` that defines
-a method called ``draw()``. You can then create subclasses like ``Circle``
+an abstract method called ``draw()``. You can then create subclasses like ``Circle``
 and ``Square`` that implement the ``draw()`` method in their own way.
 This allows you to define a common *interface* for all shapes without
 having to implement all the details in the abstract class itself:
 
-.. code-block:: gdscript
+::
 
     abstract class Shape:
-        func draw():
-            # It is possible for subclasses to call the parent class method using `super()`.
-            # In this example, we won't use `super()` to call the parent class method,
-            # so we can leave this method empty.
-            pass
+        abstract func draw()
 
     # This is a concrete (non-abstract) subclass of Shape.
+    # You **must** implement all abstract methods in concrete classes.
     class Circle extends Shape:
         func draw():
             print("Drawing a circle.")
@@ -2102,11 +2171,11 @@ having to implement all the details in the abstract class itself:
         func draw():
             print("Drawing a square.")
 
-Both subclasses and classes created using ``class_name`` can be abstract. This
+Both inner classes and classes created using ``class_name`` can be abstract. This
 example creates two abstract classes, one of which is a subclass of another
 abstract class:
 
-.. code-block:: gdscript
+::
 
     abstract class_name AbstractClass
     extends Node
@@ -2131,6 +2200,14 @@ abstract class:
     ::
 
         Cannot set object script. Script '<path to script>' should not be abstract.
+
+Unnamed classes can also be defined as abstract, the ``abstract`` keyword
+must precede ``extends``:
+
+::
+
+    abstract
+    extends Node
 
 Inheritance
 ~~~~~~~~~~~
