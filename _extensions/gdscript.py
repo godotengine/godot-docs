@@ -142,6 +142,7 @@ class GDScriptLexer(RegexLexer):
                     (
                         # modules/gdscript/gdscript.cpp - GDScriptLanguage::get_reserved_words()
                         # Declarations.
+                        "abstract",
                         "class",
                         "class_name",
                         "const",
@@ -324,6 +325,7 @@ class GDScriptLexer(RegexLexer):
                         "is_instance_of",
                         "len",
                         "load",
+                        "ord",
                         "preload",
                         "print_debug",
                         "print_stack",
@@ -404,6 +406,7 @@ class GDScriptLexer(RegexLexer):
                         "@export_enum",
                         "@export_exp_easing",
                         "@export_file",
+                        "@export_file_path",
                         "@export_flags",
                         "@export_flags_2d_navigation",
                         "@export_flags_2d_physics",
