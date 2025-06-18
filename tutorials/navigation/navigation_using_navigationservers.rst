@@ -7,9 +7,6 @@ Using NavigationServer
 :ref:`NavigationServer2D<class_NavigationServer2D>` and
 :ref:`NavigationServer3D<class_NavigationServer3D>` respectively.
 
-Both 2D and 3D use the same NavigationServer with NavigationServer3D being the primary server. The NavigationServer2D is a frontend that converts 2D positions into 3D positions and back.
-Hence it is entirely possible (if not a little cumbersome) to exclusively use the NavigationServer3D API for 2D navigation.
-
 Communicating with the NavigationServer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -47,33 +44,12 @@ Synchronization for the NavigationServer happens in the middle of the physics fr
 2D and 3D NavigationServer differences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-NavigationServer2D and NavigationServer3D are equivalent in functionality
-for their dimension and both use the same NavigationServer behind the scene.
-
-Strictly technical a NavigationServer2D is a myth.
-The NavigationServer2D is a frontend to facilitate conversions of ``Vector2(x, y)`` to
-``Vector3(x, 0.0, z)`` and back for the NavigationServer3D API. 2D uses a flat 3D mesh
-pathfinding and the NavigationServer2D facilitates the conversions.
-When a guide uses just NavigationServer without the 2D or 3D suffix it usually works for both servers
-by exchange ``Vector2(x, y)`` with ``Vector3(x, 0.0, z)`` or reverse.
+NavigationServer2D and NavigationServer3D are equivalent in functionality for their dimension.
 
 Technically it is possible to use the tools for creating navigation meshes in one dimension for the other
 dimension, e.g. baking a 2D navigation mesh with the 3D NavigationMesh when using
 flat 3D source geometry or creating 3D flat navigation meshes with the
 polygon outline draw tools of NavigationRegion2D and NavigationPolygons.
-
-Any RID created with the NavigationServer2D API works on the NavigationServer3D API
-as well and both 2D and 3D avoidance agents can exist on the same map.
-
-.. note::
-    Regions created in 2D and 3D will merge their navigation meshes when placed on the same map and merge conditions apply.
-    The NavigationServer does not discriminate between NavigationRegion2D and NavigationRegion3D nodes as both are regions on the server.
-    By default those nodes register on different navigation maps so this merge can only happen when maps are changed manually e.g. with scripts.
-
-    Actors with avoidance enabled will avoid both 2D and 3D avoidance agents when placed on the same map.
-
-.. warning::
-    It is not possible to use NavigationServer2D while disabling 3D on a Godot custom build.
 
 Waiting for synchronization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
