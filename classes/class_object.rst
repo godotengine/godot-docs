@@ -1231,7 +1231,7 @@ Returns this object's methods and their signatures as an :ref:`Array<class_Array
 
 Returns the object's property list as an :ref:`Array<class_Array>` of dictionaries. Each :ref:`Dictionary<class_Dictionary>` contains the following entries:
 
-- ``name`` is the property's name, as a :ref:`String<class_String>`;
+- ``name`` is the property's name, as a :ref:`StringName<class_StringName>`;
 
 - ``class_name`` is an empty :ref:`StringName<class_StringName>`, unless the property is :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>` and it inherits from a class;
 
