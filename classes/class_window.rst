@@ -561,6 +561,8 @@ A single window full screen mode. This mode has less overhead, but only one wind
 
 Full screen window covers the entire display area of a screen and has no border or decorations. The display's video mode is not changed.
 
+\ **Note:** This mode might not work with screen recording software.
+
 \ **On Android:** This enables immersive mode.
 
 \ **On Windows:** Depending on video driver, full screen transition might cause screens to go black for a moment.
@@ -568,6 +570,8 @@ Full screen window covers the entire display area of a screen and has no border 
 \ **On macOS:** A new desktop is used to display the running project. Exclusive full screen mode prevents Dock and Menu from showing up when the mouse pointer is hovering the edge of the screen.
 
 \ **On Linux (X11):** Exclusive full screen mode bypasses compositor.
+
+\ **On Linux (Wayland):** Equivalent to :ref:`MODE_FULLSCREEN<class_Window_constant_MODE_FULLSCREEN>`.
 
 \ **Note:** Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
@@ -677,7 +681,7 @@ Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_ima
 
 \ **Note:** This flag is implemented on macOS and Windows.
 
-\ **Note:** Setting this flag will **NOT** prevent other apps from capturing an image, it should not be used as a security measure.
+\ **Note:** Setting this flag will prevent standard screenshot methods from capturing a window image, but does **NOT** guarantee that other apps won't be able to capture an image. It should not be used as a DRM or security measure.
 
 .. _class_Window_constant_FLAG_POPUP_WM_HINT:
 
@@ -1197,7 +1201,7 @@ If ``true``, the **Window** is excluded from screenshots taken by :ref:`DisplayS
 
 \ **Note:** This property is implemented on macOS and Windows.
 
-\ **Note:** Enabling this setting does **NOT** prevent other apps from capturing an image. It should not be used as a security measure.
+\ **Note:** Enabling this setting will prevent standard screenshot methods from capturing a window image, but does **NOT** guarantee that other apps won't be able to capture an image. It should not be used as a DRM or security measure.
 
 .. rst-class:: classref-item-separator
 

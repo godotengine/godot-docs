@@ -189,6 +189,8 @@ Nodes
     class_openxrhand
     class_openxrinteractionprofileeditor
     class_openxrinteractionprofileeditorbase
+    class_openxrrendermodel
+    class_openxrrendermodelmanager
     class_openxrvisibilitymask
     class_optionbutton
     class_panel
@@ -859,6 +861,7 @@ Other objects
     class_openxrfutureresult
     class_openxrinteractionprofilemetadata
     class_openxrinterface
+    class_openxrrendermodelextension
     class_os
     class_packeddatacontainerref
     class_packetpeer

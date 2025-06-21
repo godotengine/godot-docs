@@ -37,8 +37,8 @@ One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>` resources,
         var key_event = InputEventKey.new()
         key_event.keycode = KEY_S
         key_event.ctrl_pressed = true
-        key_event.command_or_control_autoremap = true # Swaps ctrl for Command on Mac.
-        save_shortcut.set_events([key_event])
+        key_event.command_or_control_autoremap = true # Swaps Ctrl for Command on Mac.
+        save_shortcut.events = [key_event]
 
     func _input(event):
         if save_shortcut.matches_event(event) and event.is_pressed() and not event.is_echo():
@@ -47,39 +47,35 @@ One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>` resources,
 
  .. code-tab:: csharp
 
-    public partial class YourScriptName : Godot.Node
+    using Godot;
+
+    public partial class MyNode : Node
+    {
+        private readonly Shortcut _saveShortcut = new Shortcut();
+
+        public override void _Ready()
         {
-            private Godot.Shortcut saveShortcut;
-
-            public override void _Ready()
+            InputEventKey keyEvent = new InputEventKey
             {
-                // Enable input processing explicitly (optional for Node, but included for clarity)
-                SetProcessInput(true);
+                Keycode = Key.S,
+                CtrlPressed = true,
+                CommandOrControlAutoremap = true, // Swaps Ctrl for Command on Mac.
+            };
 
-                saveShortcut = new Godot.Shortcut();
+            _saveShortcut.Events = [keyEvent];
+        }
 
-                Godot.InputEventKey keyEvent = new Godot.InputEventKey
-                {
-                    Keycode = Godot.Key.S,
-                    CtrlPressed = true,
-                    CommandOrControlAutoremap = true
-                };
-
-                Godot.Collections.Array<Godot.InputEvent> events = new Godot.Collections.Array<Godot.InputEvent> { keyEvent };
-                saveShortcut.SetEvents(events);
-            }
-
-            public override void _Input(Godot.InputEvent @event)
+        public override void _Input(InputEvent @event)
+        {
+            if (@event is InputEventKey keyEvent &&
+                _saveShortcut.MatchesEvent(@event) &&
+                keyEvent.Pressed && !keyEvent.Echo)
             {
-                if (@event is Godot.InputEventKey keyEvent &&
-                    saveShortcut.MatchesEvent(@event) &&
-                    keyEvent.Pressed && !keyEvent.Echo)
-                {
-                    Godot.GD.Print("Save shortcut pressed!");
-                    GetViewport().SetInputAsHandled();
-                }
+                GD.Print("Save shortcut pressed!");
+                GetViewport().SetInputAsHandled();
             }
         }
+    }
 
 
 

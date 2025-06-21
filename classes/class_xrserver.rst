@@ -408,7 +408,7 @@ Registers a new :ref:`XRTracker<class_XRTracker>` that tracks a physical object.
 
 This is an important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
 
-For platforms that do not offer spatial tracking, our origin point (0, 0, 0) is the location of our HMD, but you have little control over the direction the player is facing in the real world.
+For platforms that do not offer spatial tracking, our origin point ``(0, 0, 0)`` is the location of our HMD, but you have little control over the direction the player is facing in the real world.
 
 For platforms that do offer spatial tracking, our origin point depends very much on the system. For OpenVR, our origin point is usually the center of the tracking space, on the ground. For other platforms, it's often the location of the tracking camera.
 

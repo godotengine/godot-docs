@@ -25,7 +25,7 @@ This :ref:`SkeletonModification2D<class_SkeletonModification2D>` uses an algorit
 
 FABRIK works by knowing the positions and lengths of a series of bones, typically called a "bone chain". It first starts by running a forward pass, which places the final bone at the target's position. Then all other bones are moved towards the tip bone, so they stay at the defined bone length away. Then a backwards pass is performed, where the root/first bone in the FABRIK chain is placed back at the origin. Then all other bones are moved so they stay at the defined bone length away. This positions the bone chain so that it reaches the target when possible, but all of the bones stay the correct length away from each other.
 
-Because of how FABRIK works, it often gives more natural results than those seen in :ref:`SkeletonModification2DCCDIK<class_SkeletonModification2DCCDIK>`. FABRIK also supports angle constraints, which are fully taken into account when solving.
+Because of how FABRIK works, it often gives more natural results than those seen in :ref:`SkeletonModification2DCCDIK<class_SkeletonModification2DCCDIK>`.
 
 \ **Note:** The FABRIK modifier has ``fabrik_joints``, which are the data objects that hold the data for each joint in the FABRIK chain. This is different from :ref:`Bone2D<class_Bone2D>` nodes! FABRIK joints hold the data needed for each :ref:`Bone2D<class_Bone2D>` in the bone chain used by FABRIK.
 

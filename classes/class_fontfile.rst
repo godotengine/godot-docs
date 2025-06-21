@@ -110,7 +110,7 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Dictionary<class_Dictionary>`                             | :ref:`opentype_feature_overrides<class_FontFile_property_opentype_feature_overrides>`                 | ``{}``                |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                       | :ref:`oversampling<class_FontFile_property_oversampling>`                                             |                       |
+   | :ref:`float<class_float>`                                       | :ref:`oversampling<class_FontFile_property_oversampling>`                                             | ``0.0``               |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`String<class_String>`                                     | :ref:`style_name<class_FontFile_property_style_name>`                                                 | ``""``                |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
@@ -603,16 +603,14 @@ Font OpenType feature set override.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **oversampling** :ref:`🔗<class_FontFile_property_oversampling>`
+:ref:`float<class_float>` **oversampling** = ``0.0`` :ref:`🔗<class_FontFile_property_oversampling>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_oversampling**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_oversampling**\ (\ )
 
-**Deprecated:** Use the ``oversampling`` argument of the ``draw_*`` methods instead.
-
-Deprecated. This property does nothing.
+If set to a positive value, overrides the oversampling factor of the viewport this font is used in. See :ref:`Viewport.oversampling<class_Viewport_property_oversampling>`. This value doesn't override the ``oversampling`` parameter of ``draw_*`` methods.
 
 .. rst-class:: classref-item-separator
 

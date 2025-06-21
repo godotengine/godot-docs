@@ -2240,9 +2240,7 @@ Returns :ref:`Dictionary<class_Dictionary>` with OpenType font name strings (loc
 
 :ref:`float<class_float>` **font_get_oversampling**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_font_get_oversampling>`
 
-**Deprecated:** Use :ref:`Viewport<class_Viewport>` oversampling, or the ``oversampling`` argument of the ``draw_*`` methods instead.
-
-Deprecated. This method always returns ``1.0``.
+Returns oversampling factor override. If set to a positive value, overrides the oversampling factor of the viewport this font is used in. See :ref:`Viewport.oversampling<class_Viewport_property_oversampling>`. This value doesn't override the ``oversampling`` parameter of ``draw_*`` methods. Used by dynamic fonts only.
 
 .. rst-class:: classref-item-separator
 
@@ -3032,9 +3030,7 @@ Sets font OpenType feature set override.
 
 |void| **font_set_oversampling**\ (\ font_rid\: :ref:`RID<class_RID>`, oversampling\: :ref:`float<class_float>`\ ) :ref:`🔗<class_TextServer_method_font_set_oversampling>`
 
-**Deprecated:** Use :ref:`Viewport<class_Viewport>` oversampling, or the ``oversampling`` argument of the ``draw_*`` methods instead.
-
-Deprecated. This method does nothing.
+If set to a positive value, overrides the oversampling factor of the viewport this font is used in. See :ref:`Viewport.oversampling<class_Viewport_property_oversampling>`. This value doesn't override the ``oversampling`` parameter of ``draw_*`` methods. Used by dynamic fonts only.
 
 .. rst-class:: classref-item-separator
 

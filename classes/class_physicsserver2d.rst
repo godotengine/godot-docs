@@ -690,7 +690,7 @@ Constant to set/get a body's inertia. The default value of this parameter is ``0
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_CENTER_OF_MASS** = ``4``
 
-Constant to set/get a body's center of mass position in the body's local coordinate system. The default value of this parameter is ``Vector2(0,0)``. If this parameter is never set explicitly, then it is recalculated based on the body's shapes when setting the parameter :ref:`BODY_PARAM_MASS<class_PhysicsServer2D_constant_BODY_PARAM_MASS>` or when calling :ref:`body_set_space()<class_PhysicsServer2D_method_body_set_space>`.
+Constant to set/get a body's center of mass position in the body's local coordinate system. The default value of this parameter is ``Vector2(0, 0)``. If this parameter is never set explicitly, then it is recalculated based on the body's shapes when setting the parameter :ref:`BODY_PARAM_MASS<class_PhysicsServer2D_constant_BODY_PARAM_MASS>` or when calling :ref:`body_set_space()<class_PhysicsServer2D_method_body_set_space>`.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_GRAVITY_SCALE:
 

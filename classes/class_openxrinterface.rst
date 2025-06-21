@@ -81,6 +81,8 @@ Methods
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>`             | :ref:`get_motion_range<class_OpenXRInterface_method_get_motion_range>`\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`\ ) |const|                                                                                           |
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SessionState<enum_OpenXRInterface_SessionState>`                   | :ref:`get_session_state<class_OpenXRInterface_method_get_session_state>`\ (\ )                                                                                                                                                |
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                  | :ref:`is_action_set_active<class_OpenXRInterface_method_is_action_set_active>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                                                              |
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                  | :ref:`is_eye_gaze_interaction_supported<class_OpenXRInterface_method_is_eye_gaze_interaction_supported>`\ (\ )                                                                                                                |
@@ -189,7 +191,7 @@ Informs our OpenXR session has been started.
 
 **session_focussed**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_session_focussed>`
 
-Informs our OpenXR session now has focus.
+Informs our OpenXR session now has focus, for example output is sent to the HMD and we're receiving XR input.
 
 .. rst-class:: classref-item-separator
 
@@ -219,13 +221,25 @@ Informs our OpenXR session is stopping.
 
 ----
 
+.. _class_OpenXRInterface_signal_session_synchronized:
+
+.. rst-class:: classref-signal
+
+**session_synchronized**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_session_synchronized>`
+
+Informs our OpenXR session has been synchronized.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRInterface_signal_session_visible:
 
 .. rst-class:: classref-signal
 
 **session_visible**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_session_visible>`
 
-Informs our OpenXR session is now visible (output is being sent to the HMD).
+Informs our OpenXR session is now visible, for example output is sent to the HMD but we don't receive XR input.
 
 .. rst-class:: classref-section-separator
 
@@ -235,6 +249,92 @@ Informs our OpenXR session is now visible (output is being sent to the HMD).
 
 Enumerations
 ------------
+
+.. _enum_OpenXRInterface_SessionState:
+
+.. rst-class:: classref-enumeration
+
+enum **SessionState**: :ref:`🔗<enum_OpenXRInterface_SessionState>`
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_UNKNOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_UNKNOWN** = ``0``
+
+The state of the session is unknown, we haven't tried setting up OpenXR yet.
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_IDLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_IDLE** = ``1``
+
+The initial state after the OpenXR session is created or after the session is destroyed.
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_READY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_READY** = ``2``
+
+OpenXR is ready to begin our session. :ref:`session_begun<class_OpenXRInterface_signal_session_begun>` is emitted when we change to this state.
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_SYNCHRONIZED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_SYNCHRONIZED** = ``3``
+
+The application has synched its frame loop with the runtime but we're not rendering anything. :ref:`session_synchronized<class_OpenXRInterface_signal_session_synchronized>` is emitted when we change to this state.
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_VISIBLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_VISIBLE** = ``4``
+
+The application has synched its frame loop with the runtime and we're rendering output to the user, however we receive no user input. :ref:`session_visible<class_OpenXRInterface_signal_session_visible>` is emitted when we change to this state.
+
+\ **Note:** This is the current state just before we get the focused state, whenever the user opens a system menu, switches to another application, or takes off their headset.
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_FOCUSED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_FOCUSED** = ``5``
+
+The application has synched its frame loop with the runtime, we're rendering output to the user and we're receiving XR input. :ref:`session_focussed<class_OpenXRInterface_signal_session_focussed>` is emitted when we change to this state.
+
+\ **Note:** This is the state OpenXR will be in when the user can fully interact with your game.
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_STOPPING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_STOPPING** = ``6``
+
+Our session is being stopped. :ref:`session_stopping<class_OpenXRInterface_signal_session_stopping>` is emitted when we change to this state.
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_LOSS_PENDING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_LOSS_PENDING** = ``7``
+
+The session is about to be lost. :ref:`session_loss_pending<class_OpenXRInterface_signal_session_loss_pending>` is emitted when we change to this state.
+
+.. _class_OpenXRInterface_constant_SESSION_STATE_EXITING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_EXITING** = ``8``
+
+The OpenXR instance is about to be destroyed and we're existing. :ref:`instance_exiting<class_OpenXRInterface_signal_instance_exiting>` is emitted when we change to this state.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _enum_OpenXRInterface_Hand:
 
@@ -997,6 +1097,18 @@ If handtracking is enabled and hand tracking source is supported, gets the sourc
 :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` **get_motion_range**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_motion_range>`
 
 If handtracking is enabled and motion range is supported, gets the currently configured motion range for ``hand``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_get_session_state:
+
+.. rst-class:: classref-method
+
+:ref:`SessionState<enum_OpenXRInterface_SessionState>` **get_session_state**\ (\ ) :ref:`🔗<class_OpenXRInterface_method_get_session_state>`
+
+Returns the current state of our OpenXR session.
 
 .. rst-class:: classref-item-separator
 

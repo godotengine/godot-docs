@@ -27,9 +27,11 @@ The body's behavior can be adjusted via :ref:`lock_rotation<class_RigidBody3D_pr
 
 A rigid body will always maintain its shape and size, even when forces are applied to it. It is useful for objects that can be interacted with in an environment, such as a tree that can be knocked over or a stack of crates that can be pushed around.
 
+If you need to directly affect the body, prefer :ref:`_integrate_forces()<class_RigidBody3D_private_method__integrate_forces>` as it allows you to directly access the physics state.
+
 If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody3D_property_custom_integrator>`.
 
-\ **Note:** Changing the 3D transform or :ref:`linear_velocity<class_RigidBody3D_property_linear_velocity>` of a **RigidBody3D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces()<class_RigidBody3D_private_method__integrate_forces>` as it allows you to directly access the physics state.
+\ **Note:** Changing the 3D transform or :ref:`linear_velocity<class_RigidBody3D_property_linear_velocity>` of a **RigidBody3D** very often may lead to some unpredictable behaviors. This also happens when a **RigidBody3D** is the descendant of a constantly moving node, like another **RigidBody3D**, as that will cause its global transform to be set whenever its ancestor moves.
 
 .. rst-class:: classref-introduction-group
 

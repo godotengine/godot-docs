@@ -230,13 +230,16 @@ Returns the cached resource reference for the given ``path``.
 
 Returns the dependencies for the resource at the given ``path``.
 
-\ **Note:** The dependencies are returned with slices separated by ``::``. You can use :ref:`String.get_slice()<class_String_method_get_slice>` to get their components.
+Each dependency is a string that can be divided into sections by ``::``. There can be either one section or three sections, with the second section always being empty. When there is one section, it contains the file path. When there are three sections, the first section contains the UID and the third section contains the fallback path.
 
 ::
 
     for dependency in ResourceLoader.get_dependencies(path):
-        print(dependency.get_slice("::", 0)) # Prints the UID.
-        print(dependency.get_slice("::", 2)) # Prints the path.
+        if dependency.contains("::"):
+            print(dependency.get_slice("::", 0)) # Prints the UID.
+            print(dependency.get_slice("::", 2)) # Prints the fallback path.
+        else:
+            print(dependency) # Prints the path.
 
 .. rst-class:: classref-item-separator
 
