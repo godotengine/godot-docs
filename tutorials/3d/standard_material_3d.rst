@@ -325,6 +325,11 @@ Disable Fog
 
 Makes the object unaffected by depth-based or volumetric fog. This is useful for particles or other additively blended materials that would otherwise show the shape of the mesh (even in places where it would be invisible without the fog).
 
+Disable Specular Occlusion
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Makes the object not have its reflections reduced where they would usually be occluded.
+
 Vertex Color
 ------------
 
@@ -416,6 +421,43 @@ and wider compatibility.
   More information about normal maps (including a coordinate order table for
   popular engines) can be found
   `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__.
+
+Bent normal map
+---------------
+
+A bent normal map describes the average direction of ambient lighting. Unlike a
+regular normal map, this is used to improve how a material reacts to lighting
+rather than add surface detail.
+
+This is achieved in two ways:
+
+* Indirect diffuse lighting is made to match global illumination more closely.
+* If specular occlusion is enabled, it is calculated using the bent normals and
+  ambient occlusion instead of just from ambient light.
+  This includes screen-space ambient occlusion (SSAO) and other sources of
+  ambient occlusion.
+
+.. image:: img/spatial_material_bentnormals.webp
+
+Godot only uses the red and green channels of a bent normal map for better
+compression and wider compatibility.
+
+When creating a bent normal map, there are three things required for it to
+work correctly in Godot:
+
+* A **cosine distribution** of rays has to be used when baking.
+* The texture must be created in **tangent space**.
+* The bent normal map needs to use the X+, Y+, and Z+ coordinates, this is
+  known as OpenGL style. If you've imported a material made to be used with
+  another engine it may be DirectX style, in which case the bent normal map
+  needs to be converted so its Y axis is flipped. This can be achieved by
+  setting the green channel under the **Channel Remap** section to
+  **Inverted Green** in the import dock.
+
+.. note::
+
+  A bent normal map is different from a regular normal map. The two are not
+  interchangeable.
 
 Rim
 ---
