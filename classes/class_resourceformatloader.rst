@@ -155,9 +155,25 @@ Method Descriptions
 
 :ref:`PackedStringArray<class_PackedStringArray>` **_get_dependencies**\ (\ path\: :ref:`String<class_String>`, add_types\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_ResourceFormatLoader_private_method__get_dependencies>`
 
-If implemented, gets the dependencies of a given resource. If ``add_types`` is ``true``, paths should be appended ``::TypeName``, where ``TypeName`` is the class name of the dependency.
+Should return the dependencies for the resource at the given ``path``. Each dependency is a string composed of one to three sections separated by ``::``, with trailing empty sections omitted:
 
-\ **Note:** Custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
+- The first section should contain the UID if the resource has one. Otherwise, it should contain the file path.
+
+- The second section should contain the class name of the dependency if ``add_types`` is ``true``. Otherwise, it should be empty.
+
+- The third section should contain the fallback path if the resource has a UID. Otherwise, it should be empty.
+
+::
+
+    func _get_dependencies(path, add_types):
+        return [
+            "uid://fqgvuwrkuixh::Script::res://script.gd",
+            "uid://fqgvuwrkuixh::::res://script.gd",
+            "res://script.gd::Script",
+            "res://script.gd",
+        ]
+
+\ **Note:** Custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so ``"Resource"`` can be used for the class name.
 
 .. rst-class:: classref-item-separator
 

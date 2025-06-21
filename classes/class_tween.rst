@@ -109,7 +109,7 @@ Another interesting use for **Tween**\ s is animating arbitrary sets of objects:
 
 
 
-In the example above, all children of a node are moved one after another to position (0, 0).
+In the example above, all children of a node are moved one after another to position ``(0, 0)``.
 
 You should avoid using more than one **Tween** per object's property. If two or more tweens animate one property at the same time, the last one created will take priority and assign the final value. If you want to interrupt and restart an animation, consider assigning the **Tween** to a variable:
 

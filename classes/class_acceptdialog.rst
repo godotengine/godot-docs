@@ -138,7 +138,7 @@ Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
 **custom_action**\ (\ action\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AcceptDialog_signal_custom_action>`
 
-Emitted when a custom button is pressed. See :ref:`add_button()<class_AcceptDialog_method_add_button>`.
+Emitted when a custom button with an action is pressed. See :ref:`add_button()<class_AcceptDialog_method_add_button>`.
 
 .. rst-class:: classref-section-separator
 
@@ -247,7 +247,9 @@ Method Descriptions
 
 :ref:`Button<class_Button>` **add_button**\ (\ text\: :ref:`String<class_String>`, right\: :ref:`bool<class_bool>` = false, action\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_AcceptDialog_method_add_button>`
 
-Adds a button with label ``text`` and a custom ``action`` to the dialog and returns the created button. ``action`` will be passed to the :ref:`custom_action<class_AcceptDialog_signal_custom_action>` signal when pressed.
+Adds a button with label ``text`` and a custom ``action`` to the dialog and returns the created button.
+
+If ``action`` is not empty, pressing the button will emit the :ref:`custom_action<class_AcceptDialog_signal_custom_action>` signal with the specified action string.
 
 If ``true``, ``right`` will place the button to the right of any sibling buttons.
 

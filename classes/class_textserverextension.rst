@@ -1078,7 +1078,7 @@ Returns :ref:`Dictionary<class_Dictionary>` with OpenType font name strings (loc
 
 :ref:`float<class_float>` **_font_get_oversampling**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_oversampling>`
 
-Returns font oversampling factor, if set to ``0.0`` global oversampling factor is used instead. Used by dynamic fonts only.
+Returns oversampling factor override. If set to a positive value, overrides the oversampling factor of the viewport this font is used in. See :ref:`Viewport.oversampling<class_Viewport_property_oversampling>`. This value doesn't override the ``oversampling`` parameter of ``draw_*`` methods. Used by dynamic fonts only.
 
 .. rst-class:: classref-item-separator
 
@@ -1870,7 +1870,7 @@ Sets font OpenType feature set override.
 
 |void| **_font_set_oversampling**\ (\ font_rid\: :ref:`RID<class_RID>`, oversampling\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__font_set_oversampling>`
 
-Sets font oversampling factor, if set to ``0.0`` global oversampling factor is used instead. Used by dynamic fonts only.
+If set to a positive value, overrides the oversampling factor of the viewport this font is used in. See :ref:`Viewport.oversampling<class_Viewport_property_oversampling>`. This value doesn't override the ``oversampling`` parameter of ``draw_*`` methods. Used by dynamic fonts only.
 
 .. rst-class:: classref-item-separator
 

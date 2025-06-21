@@ -62,8 +62,6 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`gradle_build/export_format<class_EditorExportPlatformAndroid_property_gradle_build/export_format>`                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`gradle_build/google_play_instant<class_EditorExportPlatformAndroid_property_gradle_build/google_play_instant>`                             |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`gradle_build/gradle_build_directory<class_EditorExportPlatformAndroid_property_gradle_build/gradle_build_directory>`                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`gradle_build/min_sdk<class_EditorExportPlatformAndroid_property_gradle_build/min_sdk>`                                                     |
@@ -627,22 +625,6 @@ For example, the key ``android:windowSwipeToDismiss`` with the value ``false`` i
 :ref:`int<class_int>` **gradle_build/export_format** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/export_format>`
 
 Application export format (\*.apk or \*.aab).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformAndroid_property_gradle_build/google_play_instant:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **gradle_build/google_play_instant** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/google_play_instant>`
-
-If ``true``, configures the exported project for Play Instant Build.
-
-Use this option when targeting Play Instant to allow users to launch the app without installation. See `Google Play Instant <https://developer.android.com/topic/google-play-instant/overview>`__.
-
-\ **Note:** Instant play games also need to be optimized for size. See `Optimizing a build for size <https://docs.godotengine.org/en/stable/contributing/development/compiling/optimizing_for_size.html>`__.
 
 .. rst-class:: classref-item-separator
 

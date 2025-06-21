@@ -21,7 +21,7 @@ Description
 
 This resource holds a set of cells to help bulk manipulations of :ref:`TileMap<class_TileMap>`.
 
-A pattern always start at the ``(0,0)`` coordinates and cannot have cells with negative coordinates.
+A pattern always starts at the ``(0, 0)`` coordinates and cannot have cells with negative coordinates.
 
 .. rst-class:: classref-reftable-group
 

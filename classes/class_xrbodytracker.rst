@@ -763,21 +763,21 @@ Right scapula joint.
 
 Right wrist twist joint.
 
-.. _class_XRBodyTracker_constant_JOINT_LEFT_ANKLE_TWIST:
+.. _class_XRBodyTracker_constant_JOINT_LEFT_FOOT_TWIST:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_ANKLE_TWIST** = ``81``
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_FOOT_TWIST** = ``81``
 
-Left ankle twist joint.
+Left foot twist joint.
 
-.. _class_XRBodyTracker_constant_JOINT_LEFT_ANKLE:
+.. _class_XRBodyTracker_constant_JOINT_LEFT_HEEL:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_ANKLE** = ``82``
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_LEFT_HEEL** = ``82``
 
-Left ankle joint.
+Left heel joint.
 
 .. _class_XRBodyTracker_constant_JOINT_LEFT_MIDDLE_FOOT:
 
@@ -787,21 +787,21 @@ Left ankle joint.
 
 Left middle foot joint.
 
-.. _class_XRBodyTracker_constant_JOINT_RIGHT_ANKLE_TWIST:
+.. _class_XRBodyTracker_constant_JOINT_RIGHT_FOOT_TWIST:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_ANKLE_TWIST** = ``84``
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_FOOT_TWIST** = ``84``
 
-Right ankle twist joint.
+Right foot twist joint.
 
-.. _class_XRBodyTracker_constant_JOINT_RIGHT_ANKLE:
+.. _class_XRBodyTracker_constant_JOINT_RIGHT_HEEL:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_ANKLE** = ``85``
+:ref:`Joint<enum_XRBodyTracker_Joint>` **JOINT_RIGHT_HEEL** = ``85``
 
-Right ankle joint.
+Right heel joint.
 
 .. _class_XRBodyTracker_constant_JOINT_RIGHT_MIDDLE_FOOT:
 

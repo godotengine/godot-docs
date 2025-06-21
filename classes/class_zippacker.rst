@@ -147,7 +147,7 @@ Start a file with the fastest Deflate compression level (``1``). This is fast to
 
 :ref:`CompressionLevel<enum_ZIPPacker_CompressionLevel>` **COMPRESSION_BEST** = ``9``
 
-Start a file with the the best Deflate compression level (``9``). This is slow to compress, but results in smaller file sizes than :ref:`COMPRESSION_DEFAULT<class_ZIPPacker_constant_COMPRESSION_DEFAULT>`. Decompression speed is generally unaffected by the chosen compression level.
+Start a file with the best Deflate compression level (``9``). This is slow to compress, but results in smaller file sizes than :ref:`COMPRESSION_DEFAULT<class_ZIPPacker_constant_COMPRESSION_DEFAULT>`. Decompression speed is generally unaffected by the chosen compression level.
 
 .. rst-class:: classref-section-separator
 

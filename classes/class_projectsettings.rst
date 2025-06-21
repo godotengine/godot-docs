@@ -1839,6 +1839,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking_unobstructed_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source>`                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/render_model<class_ProjectSettings_property_xr/openxr/extensions/render_model>`                                                                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_dynamic<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`                                                                                                             | ``false``                                                                                        |
@@ -13696,6 +13698,20 @@ If ``true``, support for the controller inferred data source is requested. If su
 If ``true``, support for the unobstructed data source is requested. If supported, you will receive hand tracking data based on the actual finger positions of the user often determined by optical tracking.
 
 \ **Note:** This requires the OpenXR data source extension and unobstructed handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/render_model:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/render_model** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/render_model>`
+
+If ``true`` we enable the render model extension if available.
+
+\ **Note:** This relates to the core OpenXR render model extension and has no relation to any vendor render model extensions.
 
 .. rst-class:: classref-item-separator
 
