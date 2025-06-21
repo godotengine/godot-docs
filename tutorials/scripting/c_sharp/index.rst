@@ -57,7 +57,7 @@ C# platform support
     See `supported OS <https://github.com/dotnet/core/tree/main/release-notes#supported-os>`_.
 
 Since Godot 4.2, projects written in C# support all desktop platforms (Windows, Linux,
-and macOS), as well as Android and iOS.
+and macOS), as well as Android and iOS. And since 4.5, web is supported too.
 
 Android support is currently experimental.
 
@@ -67,5 +67,10 @@ iOS support is currently experimental and has a few limitations.
 
 - Exporting to iOS can only be done from a MacOS device.
 
-Currently, projects written in C# cannot be exported to the web platform. To use C#
-on that platform, consider Godot 3 instead.
+Web support is currently experimental and has a few limitations.
+
+- The WASM features enabled in the C# project must match the ones enabled by the template used to export the project.
+
+- Globalization is not supported, `invariant mode <https://learn.microsoft.com/en-us/dotnet/core/runtime-config/globalization#invariant-mode>`_ is always enabled on exported games. This does not affect Godot's localization features, only .NET APIs.
+
+- .NET APIs implemented using browser APIs (such as cryptography) are not available and may fail in unexpected ways.

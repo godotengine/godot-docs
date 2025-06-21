@@ -46,10 +46,8 @@ Godot aims to be as platform-independent as possible and can be
 
 .. note::
 
-    Projects written in C# using Godot 4 currently cannot be exported to the
-    web platform. To use C# on that platform, consider Godot 3 instead.
-    Android and iOS platform support is available as of Godot 4.2, but is
-    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
+    Projects written in C# using Godot 4 have experimental support for Android and iOS since 4.2,
+    and for the web platform since 4.5. See :ref:`doc_c_sharp_platforms` for more information.
 
 Editor
 ------
@@ -467,11 +465,10 @@ Scripting
 
    - Full support for the C# 12.0 syntax and features.
 
-- Supports Windows, Linux, and macOS. Since Godot 4.2, experimental support for Android and iOS is also available.
+- Supports Windows, Linux, and macOS. Since Godot 4.2, experimental support for Android and iOS is also available. Since 4.5, experimental support for web is also available.
 
    - On the iOS platform only some architectures are supported: ``arm64``.
-   - The web platform is currently unsupported. To use C# on that platform,
-     consider Godot 3 instead.
+   - The web platform has :ref:`some limitations <doc_c_sharp_platforms>`.
 
 - Using an external editor is recommended to benefit from IDE functionality.
 
