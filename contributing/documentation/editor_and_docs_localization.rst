@@ -217,13 +217,15 @@ The editor translations originate from C++ strings, and may use:
   placed in your translation where necessary for it to be meaningful after
   substitution. You may need to refer to the source string location to
   understand what kind of content will be substituted if it's not clear from the
-  sentence. Example (``%s``  will be substituted with a file name or path)::
+  sentence. Example (``%s``  will be substituted with a file name or path):
 
-    # PO file:
-    "There is no '%s' file."
+    ::
 
-    # Weblate:
-    There is no '%s' file.
+        # PO file:
+        "There is no '%s' file."
+
+        # Weblate:
+        There is no '%s' file.
 
 - **C escape characters** such as ``\n`` (line break) or ``\t`` (tabulation). In
   the Weblate editor, the ``\n`` characters are replaced by ``↵`` (return) and
@@ -231,15 +233,17 @@ The editor translations originate from C++ strings, and may use:
   breaks in the same way as the original English string (Weblate will issue a
   warning if you don't). Line breaks might sometimes be used for vertical
   spacing, or manual wrapping of long lines which would otherwise be too long
-  especially in the editor translation). Example::
+  especially in the editor translation). Example:
 
-    # PO file:
-    "Scene '%s' is currently being edited.\n"
-    "Changes will only take effect when reloaded."
+    ::
 
-    # Weblate:
-    Scene '%s' is currently being edited.↵
-    Changes will only take effect when reloaded.
+        # PO file:
+        "Scene '%s' is currently being edited.\n"
+        "Changes will only take effect when reloaded."
+
+        # Weblate:
+        Scene '%s' is currently being edited.↵
+        Changes will only take effect when reloaded.
 
 .. note::
   Only logical order of the characters matters, in the right-to-left text, format
@@ -307,7 +311,9 @@ Some of the tags used are from the original BBCode (e.g. ``[b]Bold[/b]`` and
 ``[i]Italics[/i]``), while others are Godot-specific and used for advanced
 features such as inline code (e.g. ``[code]true[/code]``), linking to another
 class (e.g. ``[Node2D]``) or to a property in a given class (e.g.
-``[member Node2D.position]``), or for multiline code blocks. Example::
+``[member Node2D.position]``), or for multiline code blocks. Example:
+
+::
 
     Returns a color according to the standardized [code]name[/code] with [code]alpha[/code] ranging from 0 to 1.
     [codeblock]

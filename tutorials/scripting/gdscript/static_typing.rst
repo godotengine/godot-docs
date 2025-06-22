@@ -192,7 +192,9 @@ more specific (**subtype**) than the parent method.
 **Contravariance:** When you inherit a method, you can specify a parameter type
 that is less specific (**supertype**) than the parent method.
 
-Example::
+Example:
+
+::
 
     class_name Parent
 
@@ -293,7 +295,9 @@ and not your ``PlayerController`` on the ``_on_body_entered`` callback.
 
 You can check if this ``PhysicsBody2D`` is your ``Player`` with the ``as`` keyword,
 and using the colon ``:`` again to force the variable to use this type.
-This forces the variable to stick to the ``PlayerController`` type::
+This forces the variable to stick to the ``PlayerController`` type:
+
+::
 
     func _on_body_entered(body: PhysicsBody2D) -> void:
         var player := body as PlayerController
@@ -312,7 +316,9 @@ get full autocompletion on the player variable thanks to that cast.
     The ``as`` keyword silently casts the variable to ``null`` in case of a type
     mismatch at runtime, without an error/warning. While this may be convenient
     in some cases, it can also lead to bugs. Use the ``as`` keyword only if this
-    behavior is intended. A safer alternative is to use the ``is`` keyword::
+    behavior is intended. A safer alternative is to use the ``is`` keyword:
+
+    ::
 
         if not (body is PlayerController):
             push_error("Bug: body is not PlayerController.")
@@ -323,12 +329,16 @@ get full autocompletion on the player variable thanks to that cast.
 
         player.damage()
 
-    You can also simplify the code by using the ``is not`` operator::
+    You can also simplify the code by using the ``is not`` operator:
+
+    ::
 
         if body is not PlayerController:
             push_error("Bug: body is not PlayerController")
 
-    Alternatively, you can use the ``assert()`` statement::
+    Alternatively, you can use the ``assert()`` statement:
+
+    ::
 
         assert(body is PlayerController, "Bug: body is not PlayerController.")
 

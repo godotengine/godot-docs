@@ -202,7 +202,9 @@ or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`Collisio
     collider.set_collision_mask_value(3, true)
     collider.set_collision_mask_value(4, true)
 
-Export annotations can be used to export bitmasks in the editor with a user-friendly GUI::
+Export annotations can be used to export bitmasks in the editor with a user-friendly GUI:
+
+::
 
     @export_flags_2d_physics var layers_2d_physics
 

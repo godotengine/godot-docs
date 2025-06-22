@@ -64,7 +64,9 @@ Building the managed libraries
 ------------------------------
 
 Once you have generated the .NET glue, you can build the managed libraries with
-the ``build_assemblies.py`` script::
+the ``build_assemblies.py`` script:
+
+::
 
     ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin
 

@@ -23,20 +23,22 @@ working with shaders, you need to code and think differently from other
 programming languages.
 
 Suppose you want to update all the pixels in a texture to a given color. In
-GDScript, your code would use ``for`` loops::
+GDScript, your code would use ``for`` loops:
 
-  for x in range(width):
-    for y in range(height):
-      set_color(x, y, some_color)
+::
+
+    for x in range(width):
+        for y in range(height):
+            set_color(x, y, some_color)
 
 Your code is already part of a loop in a shader, so the corresponding code would
 look like this.
 
 .. code-block:: glsl
 
-  void fragment() {
-    COLOR = some_color;
-  }
+    void fragment() {
+        COLOR = some_color;
+    }
 
 .. note::
 

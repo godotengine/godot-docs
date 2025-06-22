@@ -3,6 +3,8 @@
 Exporting for dedicated servers
 ===============================
 
+.. highlight:: none
+
 If you want to run a dedicated server for your project on a machine that doesn't
 have a GPU or display server available, you'll need to run Godot with the ``headless``
 display server and ``Dummy`` :ref:`audio driver <class_ProjectSettings_property_audio/driver/driver>`.
@@ -129,8 +131,6 @@ use **Keep** for that particular image.
 With the above options used, a PCK for the client (which exports all resources
 normally) will look as follows:
 
-.. highlight:: none
-
 ::
 
     .
@@ -158,8 +158,6 @@ normally) will look as follows:
     ├── scene.tscn.remap
 
 The PCK's file structure for the server will look as follows:
-
-.. highlight:: none
 
 ::
 

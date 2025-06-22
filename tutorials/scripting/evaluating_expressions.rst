@@ -22,7 +22,9 @@ An expression can be:
 Basic usage
 -----------
 
-To evaluate a mathematical expression, use::
+To evaluate a mathematical expression, use:
+
+::
 
     var expression = Expression.new()
     expression.parse("20 + 10*2 - 5/2.0")
@@ -62,7 +64,9 @@ applies. Use parentheses to override the order of operations if needed.
 All the Variant types supported in Godot can be used: integers, floating-point
 numbers, strings, arrays, dictionaries, colors, vectors, …
 
-Arrays and dictionaries can be indexed like in GDScript::
+Arrays and dictionaries can be indexed like in GDScript:
+
+::
 
     # Returns 1.
     [1, 2][0]
