@@ -3,6 +3,10 @@
 Using NavigationAgents
 ======================
 
+.. tip::
+
+    For more advanced uses consider :ref:`doc_navigation_using_navigationpathqueryobjects` over NavigationAgent nodes.
+
 NavigationsAgents are helper nodes that combine functionality
 for pathfinding, path following and agent avoidance for a Node2D/3D inheriting parent node.
 They facilitate common calls to the NavigationServer API on
