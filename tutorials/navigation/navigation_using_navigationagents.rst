@@ -91,7 +91,7 @@ NavigationAgent Avoidance
 
 This section explains how to use the navigation avoidance specific to NavigationAgents.
 
-In order for NavigationAgents to use the avoidance feature the ``enable_avoidance`` property must be set to ``true``.
+In order for NavigationAgents to use the avoidance feature the ``avoidance_enabled`` property must be set to ``true``.
 
 .. image:: img/agent_avoidance_enabled.png
 
@@ -137,7 +137,7 @@ NavigationObstacles can be used to add some environment constrains to the avoida
     RVO avoidance makes implicit assumptions about natural agent behavior. E.g. that agents move on reasonable passing sides that can be assigned when they encounter each other.
     This means that very clinical avoidance test scenarios will commonly fail. E.g. agents moved directly against each other with perfect opposite velocities will fail because the agents can not get their passing sides assigned.
 
-Using the NavigationAgent ``enable_avoidance`` property is the preferred option
+Using the NavigationAgent ``avoidance_enabled`` property is the preferred option
 to toggle avoidance. The following code snippets can be used to
 toggle avoidance on agents, create or delete avoidance callbacks or switch avoidance modes.
 
