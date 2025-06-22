@@ -24,7 +24,7 @@ Click Scene -> New Scene from the top menu and add the following nodes:
 Don't forget to set the children so they can't be selected, like you did with
 the Player scene. As a reminder, select the node and click
 the icon to the right of the lock. Its tooltip says "Groups the selected node
-with its children.
+with its children".
 
 .. image:: img/lock_children.webp
 
