@@ -17,6 +17,10 @@ New NavigationAgent nodes will automatically join the default navigation map on 
 NavigationsAgent nodes are optional and not a hard requirement to use the navigation system.
 Their entire functionality can be replaced with scripts and direct calls to the NavigationServer API.
 
+.. tip::
+
+    For more advanced uses consider :ref:`doc_navigation_using_navigationpathqueryobjects` over NavigationAgent nodes.
+
 NavigationAgent Pathfinding
 ---------------------------
 
