@@ -784,3 +784,10 @@ editor is closed.
     Many settings' names and categories have changed since Godot 3.x. Editor settings
     whose name or category has changed won't carry over to Godot 4.0; you will
     have to set their values again.
+
+
+Updating version control settings
+---------------------------------
+
+Godot 3.x and 4.x have entirely different lists of files and folders that should
+be ignored by your :ref:`version control system<doc_version_control_systems>`.
