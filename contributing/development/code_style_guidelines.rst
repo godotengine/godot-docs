@@ -73,8 +73,8 @@ To set up:
 
 ::
 
-  pip install pre-commit
-  pre-commit install
+    pip install pre-commit
+    pre-commit install
 
 
 You can also run the hook manually with ``pre-commit run``.

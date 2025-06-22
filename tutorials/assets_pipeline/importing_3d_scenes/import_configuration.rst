@@ -450,14 +450,18 @@ match, with support for ``?`` and ``*`` wildcards (using
 
 The script must start with an animation filter statement (as denoted by the line
 beginning with an ``@``). For example, if we would like to apply filters to all
-imported animations which have a name ending in ``"_Loop"``::
+imported animations which have a name ending in ``"_Loop"``:
+
+.. code:: text
 
     @+*_Loop
 
 Similarly, additional patterns can be added to the same line, separated by
 commas. Here is a modified example to additionally *include* all animations with
 names that begin with ``"Arm_Left"``, but also *exclude* all animations which
-have names ending in ``"Attack"``::
+have names ending in ``"Attack"``:
+
+.. code:: text
 
     @+*_Loop, +Arm_Left*, -*Attack
 

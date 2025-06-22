@@ -40,7 +40,9 @@ and click on the link for the release you want.
 You can then download and extract the source from the download link on the page.
 
 With ``git``, you can also clone a stable release by specifying its branch or tag
-after the ``--branch`` (or just ``-b``) argument::
+after the ``--branch`` (or just ``-b``) argument:
+
+::
 
     # Clone the continuously maintained stable branch (`4.4` as of writing).
     git clone https://github.com/godotengine/godot.git -b 4.4
