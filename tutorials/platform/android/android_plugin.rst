@@ -72,25 +72,31 @@ To provide further understanding, here is a break-down of the steps used to crea
 
 1. Create an Android library module using `these instructions <https://developer.android.com/studio/projects/android-library>`_
 
-2. Add the Godot Android library as a dependency by updating the module's ``gradle`` `build file <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/main/plugin/build.gradle.kts#L42>`_::
+2. Add the Godot Android library as a dependency by updating the module's ``gradle`` `build file <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/main/plugin/build.gradle.kts#L42>`_:
 
-      dependencies {
-          implementation("org.godotengine:godot:4.2.0.stable")
-      }
+    .. code:: text
+
+        dependencies {
+            implementation("org.godotengine:godot:4.2.0.stable")
+        }
 
   The Godot Android library is `hosted on MavenCentral <https://central.sonatype.com/artifact/org.godotengine/godot>`_, and updated for each release.
 
 3. Create `GodotAndroidPlugin <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/a01286b4cb459133bf07b11dfabdfd3980268797/plugin/src/main/java/org/godotengine/plugin/android/template/GodotAndroidPlugin.kt#L10>`_, an init class for the plugin extending `GodotPlugin <https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L80>`_.
 
-    - If the plugin exposes Kotlin or Java methods to be called from GDScript, they must be annotated with `@UsedByGodot <https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/UsedByGodot.java#L45>`_. The name called from GDScript **must match the method name exactly**. There is **no** coercing ``snake_case`` to ``camelCase``. For example, from GDScript::
+    - If the plugin exposes Kotlin or Java methods to be called from GDScript, they must be annotated with `@UsedByGodot <https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/UsedByGodot.java#L45>`_. The name called from GDScript **must match the method name exactly**. There is **no** coercing ``snake_case`` to ``camelCase``. For example, from GDScript:
 
-          if Engine.has_singleton("MyPlugin"):
-              var singleton = Engine.get_singleton("MyPlugin")
-              print(singleton.myPluginFunction("World"))
+        ::
+
+            if Engine.has_singleton("MyPlugin"):
+                var singleton = Engine.get_singleton("MyPlugin")
+                print(singleton.myPluginFunction("World"))
 
     - If the plugin uses `signals <https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html>`_, the init class must return the set of signals used by overriding `GodotPlugin::getPluginSignals() <https://github.com/godotengine/godot/blob/fa3428ff25bc577d2a3433090478a6d615567056/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L302>`_. To emit signals, the plugin can use the `GodotPlugin::emitSignal(...) method <https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L317>`_.
 
-4. Update the plugin ``AndroidManifest.xml`` `file <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/main/plugin/src/main/AndroidManifest.xml>`_ with the following meta-data::
+4. Update the plugin ``AndroidManifest.xml`` `file <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/main/plugin/src/main/AndroidManifest.xml>`_ with the following meta-data:
+
+    .. code-block:: xml
 
         <meta-data
             android:name="org.godotengine.plugin.v2.[PluginName]"

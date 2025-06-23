@@ -669,7 +669,9 @@ File names
 ~~~~~~~~~~
 
 Use snake_case for file names. For named classes, convert the PascalCase class
-name to snake_case::
+name to snake_case:
+
+::
 
     # This file should be saved as `weapon.gd`.
     class_name Weapon
