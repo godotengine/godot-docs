@@ -330,7 +330,7 @@ Editor integration
 
 Many IDEs or code editors have beautifier plugins that can be configured to run
 ruff automatically, for example, each time you save a file. For details, you can
-check `Ruff Integrations <https://docs.astral.sh/ruff/integrations/>`__.
+check `Ruff Editor Integrations <https://docs.astral.sh/ruff/editors/>`__.
 
 Comment style guide
 -------------------
