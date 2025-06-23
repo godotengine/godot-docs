@@ -148,7 +148,7 @@ to a non-zero value, the code block is included, otherwise it is skipped.
 To evaluate correctly, the condition must be an expression giving a simple
 floating-point, integer or boolean result. There may be multiple condition
 blocks connected by ``&&`` (AND) or ``||`` (OR) operators. It may be continued
-by a ``#else`` block, but **must** be ended with the ``#endif`` directive.
+by an ``#else`` block, but **must** be ended with the ``#endif`` directive.
 
 .. code-block:: glsl
 
@@ -163,7 +163,7 @@ by a ``#else`` block, but **must** be ended with the ``#endif`` directive.
 Using the ``defined()`` *preprocessor function*, you can check whether the
 passed identifier is defined a by ``#define`` placed above that directive. This
 is useful for creating multiple shader versions in the same file. It may be
-continued by a ``#else`` block, but must be ended with the ``#endif`` directive.
+continued by an ``#else`` block, but must be ended with the ``#endif`` directive.
 
 The ``defined()`` function's result can be negated by using the ``!`` (boolean NOT)
 symbol in front of it. This can be used to check whether a define is *not* set.
@@ -273,7 +273,7 @@ Like with ``#if``, the ``defined()`` preprocessor function can be used:
 
 This is a shorthand for ``#if defined(...)``. Checks whether the passed
 identifier is defined by ``#define`` placed above that directive. This is useful
-for creating multiple shader versions in the same file. It may be continued by a
+for creating multiple shader versions in the same file. It may be continued by an
 ``#else`` block, but must be ended with the ``#endif`` directive.
 
 .. code-block:: glsl

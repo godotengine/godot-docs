@@ -167,7 +167,7 @@ environment's paths:
 
     # This is an absolute path where your .a libraries reside.
     # If using a relative path, you must convert it to a
-    # full path using an utility function, such as `Dir('...').abspath`.
+    # full path using a utility function, such as `Dir('...').abspath`.
     env.Append(LIBPATH=[Dir('libpath').abspath])
 
     # Check with the documentation of the external library to see which library

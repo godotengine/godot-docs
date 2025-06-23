@@ -223,7 +223,7 @@ an underscore (``_``) as a prefix for private fields (but not for methods or pro
 
 .. code-block:: csharp
 
-    private Vector3 _aimingAt; // Use a `_` prefix for private fields.
+    private Vector3 _aimingAt; // Use an `_` prefix for private fields.
 
     private void Attack(float attackStrength)
     {

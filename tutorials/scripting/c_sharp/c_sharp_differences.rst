@@ -3,7 +3,7 @@
 C# API differences to GDScript
 ==============================
 
-This is a (incomplete) list of API differences between C# and GDScript.
+This is an (incomplete) list of API differences between C# and GDScript.
 
 General differences
 -------------------

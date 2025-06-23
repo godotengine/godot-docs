@@ -1802,7 +1802,7 @@ To complete this tutorial, let's see how you can register a custom signal and
 emit it when appropriate. As you might have guessed, we'll need a few more
 function pointers from the API and more helper functions.
 
-In the ``api.h`` file we're adding two things. One is a an API function to
+In the ``api.h`` file we're adding two things. One is an API function to
 register a signal, the other is a helper function to wrap the signal binding.
 
 .. code-block:: c

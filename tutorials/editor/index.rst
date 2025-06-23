@@ -13,7 +13,7 @@ Editor's interface
 ------------------
 
 The following pages explain how to use the various windows, workspaces, and
-docks that make up the Godot editor. We cover some specific editors' interface
+docks that make up the Godot editor. We cover some specific editors' interfaces
 in other sections where appropriate. For example, the :ref:`animation editor
 <doc_introduction_animation>`.
 

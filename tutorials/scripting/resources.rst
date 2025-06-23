@@ -17,7 +17,7 @@ arrange user interfaces, etc. **Resources** are **data containers**. They don't
 do anything on their own: instead, nodes use the data contained in resources.
 
 Anything Godot saves or loads from disk is a resource. Be it a scene (a ``.tscn``
-or an ``.scn`` file), an image, a script... Here are some :ref:`Resource <class_Resource>` examples:
+or a ``.scn`` file), an image, a script... Here are some :ref:`Resource <class_Resource>` examples:
 
 - :ref:`Texture <class_Texture>`
 - :ref:`Script <class_Script>`

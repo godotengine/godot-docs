@@ -189,7 +189,7 @@ Every face whose front-side is hit by the light rays is lit, while the others
 stay dark. Unlike most other light types, directional lights don't have specific
 parameters.
 
-The directional light also offers a **Angular Distance** property, which
+The directional light also offers an **Angular Distance** property, which
 determines the light's angular size in degrees. Increasing this above ``0.0``
 will make shadows softer at greater distances from the caster, while also
 affecting the sun's appearance in procedural sky materials. This is called a

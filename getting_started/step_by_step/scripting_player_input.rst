@@ -212,7 +212,7 @@ with the engine. These include ``_process()``, to apply changes to the node
 every frame, and ``_unhandled_input()``, to receive input events like key and
 button presses from the users. There are quite a few more.
 
-The ``Input`` singleton allows you to react to the players' input anywhere in
+The ``Input`` singleton allows you to react to the player's input anywhere in
 your code. In particular, you'll get to use it in the ``_process()`` loop.
 
 In the next lesson, :ref:`doc_signals`, we'll build upon the relationship between

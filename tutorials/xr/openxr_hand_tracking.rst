@@ -135,7 +135,7 @@ We also need to enable editable children to gain access to our :ref:`Skeleton3D 
 The hand skeleton modifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Finally we need to add a :ref:`XRHandModifier3D <class_xrhandmodifier3d>` node as a child to our ``Skeleton3D`` node.
+Finally we need to add an :ref:`XRHandModifier3D <class_xrhandmodifier3d>` node as a child to our ``Skeleton3D`` node.
 This node will obtain the finger tracking data from OpenXR and apply it the hand model.
 
 You need to set the ``Hand Tracker`` property to either ``/user/hand_tracker/left`` or ``/user/hand_tracker/right``

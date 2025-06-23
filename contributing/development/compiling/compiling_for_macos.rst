@@ -72,7 +72,7 @@ If all goes well, the resulting binary executable will be placed in the
 runs without any dependencies. Executing it will bring up the Project
 Manager.
 
-.. note:: Using a standalone editor executable is not recommended, it should be always packaged into an
+.. note:: Using a standalone editor executable is not recommended, it should be always packaged into a
           ``.app`` bundle to avoid UI activation issues.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
@@ -83,7 +83,7 @@ Manager.
 Automatic ``.app`` bundle creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To automatically create an ``.app`` bundle like in the official builds, use the ``generate_bundle=yes`` option on the *last*
+To automatically create a ``.app`` bundle like in the official builds, use the ``generate_bundle=yes`` option on the *last*
 SCons command used to build editor:
 
 ::
@@ -101,7 +101,7 @@ run the above two commands and then use ``lipo`` to bundle them together:
 
     lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
 
-To create an ``.app`` bundle, you need to use the template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
+To create a ``.app`` bundle, you need to use the template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
 editor binary built with ``dev_build=yes``::
 
     cp -r misc/dist/macos_tools.app ./bin/Godot.app
@@ -169,11 +169,11 @@ x86_64 architectures.
     scons platform=macos target=template_debug arch=arm64
     scons platform=macos target=template_release arch=arm64 generate_bundle=yes
 
-To create an ``.app`` bundle like in the official builds, you need to use the
+To create a ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/macos_template.app``. This process can be automated by using
 the ``generate_bundle=yes`` option on the *last* SCons command used to build export templates
 (so that all binaries can be included). This option also takes care of calling ``lipo`` to create
-an *Universal 2* binary from two separate ARM64 and x86_64 binaries (if both were compiled beforehand).
+a *Universal 2* binary from two separate ARM64 and x86_64 binaries (if both were compiled beforehand).
 
 .. note::
 

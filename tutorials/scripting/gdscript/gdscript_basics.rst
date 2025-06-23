@@ -2255,7 +2255,7 @@ This is better explained through examples. Consider this scenario:
 
 There are a few things to keep in mind here:
 
-1. If the inherited class (``state.gd``) defines a ``_init`` constructor that takes
+1. If the inherited class (``state.gd``) defines an ``_init`` constructor that takes
    arguments (``e`` in this case), then the inheriting class (``idle.gd``) *must*
    define ``_init`` as well and pass appropriate parameters to ``_init`` from ``state.gd``.
 2. ``idle.gd`` can have a different number of arguments than the base class ``state.gd``.

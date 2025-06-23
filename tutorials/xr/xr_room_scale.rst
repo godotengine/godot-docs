@@ -28,7 +28,7 @@ The movement through controller input, and the physical movement of the player i
 
 As a result, the origin node does not represent the position of the player.
 It represents the center, or start of, the tracking space in which the player can physically move.
-As the player moves around their room this movement is represented through the tracking of the players headset.
+As the player moves around their room this movement is represented through the tracking of the player's headset.
 In game this translates to the camera node's position being updated accordingly.
 For all intents and purposes, we are tracking a disembodied head.
 Unless body tracking is available, we have no knowledge of the position or orientation of the player's body.
@@ -229,7 +229,7 @@ In this approach step 1 is where all the magic happens.
 Just like with our previous approach we will be applying our physical movement to the character body,
 but we will counter that movement on the origin node.
 
-This will ensure that the players location stays in sync with the character body's location.
+This will ensure that the player's location stays in sync with the character body's location.
 
 .. code-block:: gdscript
 
@@ -377,7 +377,7 @@ The problem with this approach is that physical movement is now not replicated i
 This will cause nausea for the player.
 
 What many XR games do instead, is to measure the distance between where the player physically is,
-and where the players virtual body has been left behind.
+and where the player's virtual body has been left behind.
 As this distance increases, usually to a distance of a few centimeters, the screen slowly blacks out.
 
 Our solutions up above would allow us to add this logic into the code at the end of step 1.
