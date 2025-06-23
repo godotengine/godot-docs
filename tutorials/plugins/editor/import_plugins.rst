@@ -241,7 +241,7 @@ you do this you have to be careful when you add more presets.
 This is the method which defines the available options.
 :ref:`_get_import_options() <class_EditorImportPlugin_private_method__get_import_options>` returns
 an array of dictionaries, and each dictionary contains a few keys that are
-checked to customize the option as its shown to the user. The following table
+checked to customize the option as it's shown to the user. The following table
 shows the possible keys:
 
 +-------------------+------------+----------------------------------------------------------------------------------------------------------+

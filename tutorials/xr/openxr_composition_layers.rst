@@ -142,7 +142,7 @@ This implementation only works for our ``OpenXRCompositionLayerQuad`` node.
     ...
 
 We also define a helper function that takes our ``intersect`` value and
-returns our location in the viewports local coordinate system:
+returns our location in the viewport's local coordinate system:
 
 .. code:: gdscript
 
@@ -195,7 +195,7 @@ If so, we check if our button is pressed and place our pointer at our intersecti
     ...
 
 If we were intersecting in our previous process call and our pointer has moved,
-we prepare a :ref:`InputEventMouseMotion <class_InputEventMouseMotion>` object
+we prepare an :ref:`InputEventMouseMotion <class_InputEventMouseMotion>` object
 to simulate our mouse moving and send that to our viewport for further processing.
 
 .. code:: gdscript
@@ -216,7 +216,7 @@ to simulate our mouse moving and send that to our viewport for further processin
     ...
 
 If we've just released our button we also prepare
-a :ref:`InputEventMouseButton <class_InputEventMouseButton>` object
+an :ref:`InputEventMouseButton <class_InputEventMouseButton>` object
 to simulate a button release and send that to our viewport for further processing.
 
 .. code:: gdscript
@@ -234,7 +234,7 @@ to simulate a button release and send that to our viewport for further processin
     ...
 
 Or if we've just pressed our button we prepare
-a :ref:`InputEventMouseButton <class_InputEventMouseButton>` object
+an :ref:`InputEventMouseButton <class_InputEventMouseButton>` object
 to simulate a button press and send that to our viewport for further processing.
 
 .. code:: gdscript
@@ -292,5 +292,5 @@ the XR compositor will now draw the viewport first, and then overlay our renderi
 .. figure:: img/openxr_composition_layer_hole_punch.webp
    :align: center
 
-   Use case showing how the users hand is incorrectly obscured
+   Use case showing how the user's hand is incorrectly obscured
    by a composition layer when hole punching is not used.

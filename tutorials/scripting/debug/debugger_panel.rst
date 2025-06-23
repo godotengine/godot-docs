@@ -227,7 +227,7 @@ the total bandwidth usage at any given moment.
 Monitors
 --------
 
-The monitors are graphs of several aspects of the game while its running such as
+The monitors are graphs of several aspects of the game while it's running such as
 FPS, memory usage, how many nodes are in a scene and more. All monitors keep
 track of stats automatically, so even if one monitor isn't open while the game
 is running, you can open it later and see how the values changed.

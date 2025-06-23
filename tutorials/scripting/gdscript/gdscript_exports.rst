@@ -483,7 +483,7 @@ annotations, you can use ``@export_custom`` instead. This allows defining any
 property hint, hint string and usage flags, with a syntax similar to the one
 used by the editor for built-in nodes.
 
-For example, this exposes the ``altitude`` property with no range limits but a
+For example, this exposes the ``altitude`` property with no range limits but an
 ``m`` (meter) suffix defined:
 
 ::

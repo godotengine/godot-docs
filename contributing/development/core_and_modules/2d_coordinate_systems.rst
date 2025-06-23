@@ -10,7 +10,7 @@ This is a detailed overview of the available 2D coordinate systems and 2D transf
 built in. The basic concepts are covered in :ref:`doc_viewport_and_canvas_transforms`.
 
 :ref:`Transform2D <class_Transform2D>` are matrices that convert coordinates from one coordinate
-system to an other. In order to use them, it is beneficial to know which coordinate systems are
+system to another. In order to use them, it is beneficial to know which coordinate systems are
 available in Godot. For a deeper understanding, the :ref:`doc_matrices_and_transforms` tutorial
 offers insights to the underlying functionality.
 
@@ -122,7 +122,7 @@ effects of each of them.
     viewport. This transform is used for :ref:`Windows <class_Window>` as described in
     :ref:`doc_multiple_resolutions`, but can also be manually set on *SubViewports* by means of
     :ref:`size <class_SubViewport_property_size>` and
-    :ref:`size_2d_override <class_SubViewport_property_size_2d_override>`. It's
+    :ref:`size_2d_override <class_SubViewport_property_size_2d_override>`. Its
     :ref:`translation <class_Transform2D_method_get_origin>`,
     :ref:`rotation <class_Transform2D_method_get_rotation>` and
     :ref:`skew <class_Transform2D_method_get_skew>` are the default values and it can only have

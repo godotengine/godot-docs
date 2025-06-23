@@ -22,7 +22,7 @@ as it was too buggy and difficult to maintain.
 
 .. note::
 
-    You may find videos with an ``.ogg`` or ``.ogx`` extensions, which are generic
+    You may find videos with a ``.ogg`` or ``.ogx`` extensions, which are generic
     extensions for data within an Ogg container.
 
     Renaming these file extensions to ``.ogv`` *may* allow the videos to be
@@ -34,7 +34,7 @@ Setting up VideoStreamPlayer
 
 1. Create a VideoStreamPlayer node using the Create New Node dialog.
 2. Select the VideoStreamPlayer node in the scene tree dock, go to the inspector
-   and load an ``.ogv`` file in the Stream property.
+   and load a ``.ogv`` file in the Stream property.
 
    - If you don't have your video in Ogg Theora format yet, jump to
      :ref:`doc_playing_videos_recommended_theora_encoding_settings`.
@@ -183,7 +183,7 @@ maximize the quality of the output Ogg Theora video, but this can require a lot
 of disk space.
 
 `FFmpeg <https://ffmpeg.org/>`__ (CLI) is a popular open source tool
-for this purpose. FFmpeg has a steep learning curve, but it's powerful tool.
+for this purpose. FFmpeg has a steep learning curve, but it's a powerful tool.
 
 Here are example FFmpeg commands to convert an MP4 video to Ogg Theora. Since
 FFmpeg supports a lot of input formats, you should be able to use the commands

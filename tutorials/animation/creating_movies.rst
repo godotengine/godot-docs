@@ -169,7 +169,7 @@ to another format for viewing on the web or by Godot with the VideoStreamPlayer
 node. MJPEG does not support transparency. AVI output is currently limited to a
 file of 4 GB in size at most.
 
-To use AVI, specify a path to an ``.avi`` file to be created in the
+To use AVI, specify a path to a ``.avi`` file to be created in the
 **Editor > Movie Writer > Movie File** project setting.
 
 PNG

@@ -60,7 +60,7 @@ Adapt the tick rate?
 ~~~~~~~~~~~~~~~~~~~~
 
 Instead of designing the game at a fixed physics tick rate, we could allow the tick
-rate to scale according to the end users hardware. We could for example use a fixed
+rate to scale according to the end user's hardware. We could for example use a fixed
 tick rate that works for that hardware, or even vary the duration of each physics
 tick to match a particular frame duration.
 
@@ -70,7 +70,7 @@ run in the ``_physics_process``) work best and most consistently when run at a
 that has been designed for 60 TPS (ticks per second) at e.g. 10 TPS, the physics
 will behave completely differently. Controls may be less responsive, collisions /
 trajectories can be completely different. You may test your game thoroughly at 60
-TPS, then find it breaks on end users machines when it runs at a different tick
+TPS, then find it breaks on end users' machines when it runs at a different tick
 rate.
 
 This can make quality assurance difficult with hard to reproduce bugs, especially

@@ -34,7 +34,7 @@ This has some implications:
   Controlling the on / off behavior of 2D nodes therefore requires a little more
   thought and planning.
 - On the positive side, pivot behavior in the scene tree is perfectly preserved
-  during interpolation in 2D, which gives super smooth behaviour.
+  during interpolation in 2D, which gives super smooth behavior.
 
 Resetting physics interpolation
 -------------------------------

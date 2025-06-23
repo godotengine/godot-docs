@@ -21,7 +21,7 @@ We are introducing 3 signals to our script so that our game can add further logi
 
 - ``focus_lost`` is emitted when the player takes off their headset or when the player enters the menu system of the headset.
 - ``focus_gained`` is emitted when the player puts their headset back on or exits the menu system and returns to the game.
-- ``pose_recentered`` is emitted when the headset requests the players position to be reset.
+- ``pose_recentered`` is emitted when the headset requests the player's position to be reset.
 
 Our game should react accordingly to these signals.
 
@@ -93,7 +93,7 @@ Our updated ready function
 
 We add a few things to the ready function.
 
-If we're using the mobile or forward+ renderer we set the viewports ``vrs_mode`` to ``VRS_XR``.
+If we're using the mobile or forward+ renderer we set the viewport's ``vrs_mode`` to ``VRS_XR``.
 On platforms that support this, this will enable foveated rendering.
 
 If we're using the compatibility renderer, we check if the OpenXR foveated rendering settings
@@ -199,7 +199,7 @@ This signal is emitted by OpenXR when our session is setup.
 This means the headset has run through setting everything up and is ready to begin receiving content from us.
 Only at this time various information is properly available.
 
-The main thing we do here is to check our headsets refresh rate.
+The main thing we do here is to check our headset's refresh rate.
 We also check the available refresh rates reported by the XR runtime to determine if we want to set our headset to a higher refresh rate.
 
 Finally we match our physics update rate to our headset update rate.
@@ -297,13 +297,13 @@ Not matching the physics update rate will cause stuttering as frames are rendere
 On visible state
 ----------------
 
-This signal is emitted by OpenXR when our game becomes visible but is not focussed.
+This signal is emitted by OpenXR when our game becomes visible but is not focused.
 This is a bit of a weird description in OpenXR but it basically means that our game has just started
-and we're about to switch to the focussed state next,
-that the user has opened a system menu or the users has just took their headset off.
+and we're about to switch to the focused state next,
+that the user has opened a system menu or the user has just took their headset off.
 
-On receiving this signal we'll update our focussed state,
-we'll change the process mode of our node to disabled which will pause processing on this node and it's children,
+On receiving this signal we'll update our focused state,
+we'll change the process mode of our node to disabled which will pause processing on this node and its children,
 and emit our ``focus_lost`` signal.
 
 If you've added this script to your root node,
@@ -377,12 +377,12 @@ the game stays in 'visible' state until the user puts their headset on.
 
   It is thus important to keep your game paused while in visible mode.
   If you don't the game will keep on running while your user isn't interacting with your game.
-  Also when the game returns to focussed mode,
+  Also when the game returns to the focused mode,
   suddenly all controller and hand tracking is re-enabled and could have game breaking consequences
   if you do not react to this accordingly.
-  Be sure to test this behaviour in your game!
+  Be sure to test this behavior in your game!
 
-While handling our signal we will update the focusses state, unpause our node and emit our ``focus_gained`` signal.
+While handling our signal we will update the focuses state, unpause our node and emit our ``focus_gained`` signal.
 
 .. tabs::
   .. code-tab:: gdscript GDScript

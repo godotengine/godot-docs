@@ -150,7 +150,7 @@ The columns in our table are as follows:
   * - 3
     - 0
     - This is the priority of the action set.
-      If multiple active action sets have actions bound to the same controllers inputs or
+      If multiple active action sets have actions bound to the same controller's inputs or
       outputs, the action set with the highest priority value will determine the action
       that is updated.
 
@@ -572,7 +572,7 @@ These settings are used as follows:
   * ``On Haptic`` lets us define a haptic output that is automatically activated
     when an action becomes pressed.
   * ``Off Haptic`` lets us define a haptic output that is automatically activated
-    when a action is released.
+    when an action is released.
 
 
 Binding modifiers on individual bindings

@@ -126,7 +126,7 @@ File logging can also be disabled completely using the
 ``debug/file_logging/enable_file_logging`` project setting.
 
 When the project crashes, crash logs are written to the same file as the log
-file. The crash log will only contain an usable backtrace if the binary that was
+file. The crash log will only contain a usable backtrace if the binary that was
 run contains debugging symbols, or if it can find a debug symbols file that
 matches the binary. Official binaries don't provide debugging symbols, so this
 requires a custom build to work. See

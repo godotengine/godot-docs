@@ -134,7 +134,7 @@ the project or the environment. The pipeline precompilation system will keep
 track of these features as they're encountered for the first time and enable
 precompilation of them for any meshes or surfaces that are created afterwards.
 
-If your game makes use of these features, **make sure to have an scene that uses
+If your game makes use of these features, **make sure to have a scene that uses
 them as early as possible** before loading the majority of the assets. This
 scene can be very simple and will do the job as long as it uses the features the
 game plans to use. It can even be rendered off-screen for at least one frame if

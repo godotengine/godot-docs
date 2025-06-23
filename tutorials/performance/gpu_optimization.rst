@@ -65,7 +65,7 @@ other). This can be done by artists, or programmatically within Godot using an a
 There is also a cost to batching together objects in 3D. Several objects
 rendered as one cannot be individually culled. An entire city that is off-screen
 will still be rendered if it is joined to a single blade of grass that is on
-screen. Thus, you should always take objects' location and culling into account
+screen. Thus, you should always take objects' locations and culling into account
 when attempting to batch 3D objects together. Despite this, the benefits of
 joining static objects often outweigh other considerations, especially for large
 numbers of distant or low-poly objects.

@@ -169,7 +169,7 @@ Audio/video files
 -----------------
 
 Godot supports loading Ogg Vorbis, MP3, and WAV audio at runtime. Note that not *all*
-files with an ``.ogg`` extension are Ogg Vorbis files. Some may be Ogg Theora
+files with a ``.ogg`` extension are Ogg Vorbis files. Some may be Ogg Theora
 videos, or contain Opus audio within an Ogg container. These files will **not**
 load correctly as audio files in Godot.
 
@@ -191,7 +191,7 @@ Example of loading an Ogg Theora video file in a :ref:`class_VideoStreamPlayer` 
 
     var video_stream_theora = VideoStreamTheora.new()
     # File extension is ignored, so it is possible to load Ogg Theora videos
-    # that have an `.ogg` extension this way.
+    # that have a `.ogg` extension this way.
     video_stream_theora.file = "/path/to/file.ogv"
     $VideoStreamPlayer.stream = video_stream_theora
 
@@ -203,7 +203,7 @@ Example of loading an Ogg Theora video file in a :ref:`class_VideoStreamPlayer` 
 
     var videoStreamTheora = new VideoStreamTheora();
     // File extension is ignored, so it is possible to load Ogg Theora videos
-    // that have an `.ogg` extension this way.
+    // that have a `.ogg` extension this way.
     videoStreamTheora.File = "/Path/To/File.ogv";
     GetNode<VideoStreamPlayer>("VideoStreamPlayer").Stream = videoStreamTheora;
 

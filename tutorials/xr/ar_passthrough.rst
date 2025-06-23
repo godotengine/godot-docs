@@ -162,9 +162,9 @@ This has two consequences:
   objects cast shadows on real world objects [#]_.
 
 .. figure:: img/xr_passthrough_example.webp
-    :alt: Image showing shadow to opacity being used to show the users desk.
+    :alt: Image showing shadow to opacity being used to show the user's desk.
 
-    Image showing shadow to opacity being used to show the users desk.
+    Image showing shadow to opacity being used to show the user's desk.
 
 This enabled the following use cases:
 

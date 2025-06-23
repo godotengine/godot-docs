@@ -44,7 +44,7 @@ the code, usually placed next to ``_bind_methods()``:
         static void _bind_compatibility_methods();
     #endif
 
-They should start with a ``_`` to indicate that they are internal, and end with ``_bind_compat_`` followed by the PR number
+They should start with an ``_`` to indicate that they are internal, and end with ``_bind_compat_`` followed by the PR number
 that introduced the change (``88047`` in this example). These compatibility methods need to be implemented in a dedicated file,
 like ``core/math/a_star_grid_2d.compat.inc`` in this case:
 

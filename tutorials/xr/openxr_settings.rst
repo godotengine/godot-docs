@@ -175,7 +175,7 @@ Sets the foveation level used when rendering provided this feature is supported 
 Foveation is a technique where the further away from the center of the viewport we render content, the lower resolution we render at.
 Most XR runtimes only support fixed foveation, but some will take eye tracking into account and use the focal point for this effect.
 
-The higher the level, the better the performance gains, but also the more reduction in quality there is in the users peripheral vision.
+The higher the level, the better the performance gains, but also the more reduction in quality there is in the user's peripheral vision.
 
 .. Note::
   **Compatibility renderer only**,

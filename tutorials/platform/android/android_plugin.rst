@@ -138,7 +138,7 @@ Use the following steps if you have a v1 Android plugin you want to migrate to v
 
 3. After updating the Godot Android library dependency, sync or build the plugin and resolve any compile errors:
 
-    - The ``Godot`` instance provided by ``GodotPlugin::getGodot()`` no longer has access to a ``android.content.Context`` reference. Use ``GodotPlugin::getActivity()`` instead.
+    - The ``Godot`` instance provided by ``GodotPlugin::getGodot()`` no longer has access to an ``android.content.Context`` reference. Use ``GodotPlugin::getActivity()`` instead.
 
 4. Delete the ``gdap`` configuration file(s) and follow the instructions in the `Packaging a v2 Android plugin`_ section to set up the plugin configuration.
 

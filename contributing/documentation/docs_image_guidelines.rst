@@ -25,7 +25,7 @@ On macOS, pressing :kbd:`Shift + Command + 3` does the same.
 To take a picture of the entire screen press :kbd:`Shift + Command + 4`.
 All screenshots taken will be saved to the desktop.
 
-Each Linux desktop environment has it's own screenshot tool. For example,
+Each Linux desktop environment has its own screenshot tool. For example,
 on KDE Plasma the program Spectacle is used for taking screenshots. If your
 distribution doesn't come with one by default try searching its package
 repository, or Flathub if that's supported.

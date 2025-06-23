@@ -60,7 +60,7 @@ order to achieve greater productivity. In this case, *a solution is needed*.
 
 Believing that problems may arise in the future and that the software needs to
 be ready to solve them by the time they appear is called *"Future proofing"* and
-its characterized by lines of thought such as:
+it's characterized by lines of thought such as:
 
 - I think it would be useful for users to...
 - I think users will eventually need to...

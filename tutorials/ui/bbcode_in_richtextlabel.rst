@@ -599,7 +599,7 @@ clicked URLs using the user's default web browser:
         # to avoid script errors at runtime.
         OS.shell_open(str(meta))
 
-For more advanced use cases, it's also possible to store JSON in an ``[url]``
+For more advanced use cases, it's also possible to store JSON in a ``[url]``
 tag's option and parse it in the function that handles the ``meta_clicked`` signal.
 For example:
 
@@ -1001,7 +1001,7 @@ All examples below mention the default values for options in the listed tag form
 
 .. note::
 
-    Text effects that move characters' position may result in characters being
+    Text effects that move characters' positions may result in characters being
     clipped by the RichTextLabel node bounds.
 
     You can resolve this by disabling **Control > Layout > Clip Contents** in

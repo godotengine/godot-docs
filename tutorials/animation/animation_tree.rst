@@ -24,7 +24,7 @@ and then use an ``AnimationTree`` to control the playback.
 
 ``AnimationPlayer`` and ``AnimationTree`` can be used in both 2D and 3D scenes. When importing 3D scenes and their animations, you can use
 `name suffixes <https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/node_type_customization.html#animation-loop-loop-cycle>`_
-to simplify the process and import with the correct properties. At the end, the imported Godot scene will contain the animations in a ``AnimationPlayer`` node.
+to simplify the process and import with the correct properties. At the end, the imported Godot scene will contain the animations in an ``AnimationPlayer`` node.
 Since you rarely use imported scenes directly in Godot (they are either instantiated or inherited from), you can place the ``AnimationTree`` node in your
 new scene which contains the imported one. Afterwards, point the ``AnimationTree`` node to the ``AnimationPlayer`` that was created in the imported scene.
 

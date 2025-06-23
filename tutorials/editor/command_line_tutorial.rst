@@ -16,7 +16,7 @@ suitable for this workflow.
     On Windows and Linux, you can run a Godot binary in a terminal by specifying
     its relative or absolute path.
 
-    On macOS, the process is different due to Godot being contained within an
+    On macOS, the process is different due to Godot being contained within a
     ``.app`` bundle (which is a *folder*, not a file). To run a Godot binary
     from a terminal on macOS, you have to ``cd`` to the folder where the Godot
     application bundle is located, then run ``Godot.app/Contents/MacOS/Godot``

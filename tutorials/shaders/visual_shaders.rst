@@ -239,7 +239,7 @@ only available for shaders that are in ``Particles`` mode.
 
 Keep in mind that not all 3D objects are mesh files. a glTF file can't be dragged
 and dropped into the graph. However, you can create an inherited scene from it,
-save the mesh in that scene as it's own file, and use that.
+save the mesh in that scene as its own file, and use that.
 
 .. image:: img/vs_meshemitter.webp
 

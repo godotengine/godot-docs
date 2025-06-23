@@ -8,7 +8,7 @@ Introduction
 
 The Jolt physics engine was added as an alternative to the existing Godot Physics
 physics engine in 4.4. Jolt is developed by Jorrit Rouwe with a focus on games and
-VR applications. Previously it was available as a extension but is now built into
+VR applications. Previously it was available as an extension but is now built into
 Godot.
 
 It is important to note that the built-in Jolt Physics module is considered
