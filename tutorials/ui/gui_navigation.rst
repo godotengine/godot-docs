@@ -58,22 +58,25 @@ have well-defined vertical or horizontal navigation flow.
 Necessary code
 --------------
 
-For keyboard and controller navigation to work correctly, any node must be focused on
+For keyboard and controller navigation to work correctly, any node must be focused by
 using code when the scene starts. Without doing this, pressing buttons or keys won't
-do anything. Here is a basic example of setting initial focus with code:
+do anything.
+
+You can use the :ref:`Control.grab_focus() <class_Control_method_grab_focus>` method
+to focus a control. Here is a basic example of setting initial focus with code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        $StartButton.grab_focus()
+        $StartButton.grab_focus.call_deferred()
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        GetNode<Button>("StartButton").GrabFocus();
+        GetNode<Button>("StartButton").GrabFocus.CallDeferred();
     }
 
-Now when the scene starts the "Start Button" node will be focused, and the keyboard
+Now when the scene starts, the "Start Button" node will be focused, and the keyboard
 or a controller can be used to navigate between it and other UI elements.
