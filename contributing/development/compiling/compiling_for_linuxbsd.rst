@@ -564,6 +564,7 @@ listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
               libmbedtls-dev \
               libminiupnpc-dev \
               libpcre2-dev \
+              libsdl3-dev \
               libzstd-dev \
               libsquish-dev \
               libicu-dev
@@ -585,7 +586,8 @@ listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
               libwebp-devel \
               libzstd-devel \
               mbedtls-devel \
-              miniupnpc-devel
+              miniupnpc-devel \
+              SDL3-devel
 
 After installing all required packages, use the following command to build Godot:
 
@@ -594,7 +596,7 @@ After installing all required packages, use the following command to build Godot
 
 ::
 
-    scons platform=linuxbsd builtin_embree=no builtin_enet=no builtin_freetype=no builtin_graphite=no builtin_harfbuzz=no builtin_libogg=no builtin_libpng=no builtin_libtheora=no builtin_libvorbis=no builtin_libwebp=no builtin_mbedtls=no builtin_miniupnpc=no builtin_pcre2=no builtin_zlib=no builtin_zstd=no
+    scons platform=linuxbsd builtin_embree=no builtin_enet=no builtin_freetype=no builtin_graphite=no builtin_harfbuzz=no builtin_libogg=no builtin_libpng=no builtin_libtheora=no builtin_libvorbis=no builtin_libwebp=no builtin_mbedtls=no builtin_miniupnpc=no builtin_pcre2=no builtin_sdl=no builtin_zlib=no builtin_zstd=no
 
 On Debian stable, you will need to remove `builtin_embree=no` as the system-provided
 Embree version is too old to work with Godot's latest `master` branch
