@@ -125,7 +125,7 @@ information:
    `more information here <https://support.apple.com/guide/mac-help/take-a-screenshot-mh26782/mac>`_).
 
    Alternatively, you can use a program like `ShareX <https://getsharex.com/>`_
-   on Windows, or `FlameShot <https://flameshot.org/>`_ on Linux.
+   on Windows, or `Flameshot <https://flameshot.org/>`_ on Windows/macOS/Linux.
 
 5. Sharing a video of your running game can also be really **useful to
    troubleshoot your game**. You can use programs like `OBS Studio
