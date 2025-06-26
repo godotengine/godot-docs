@@ -56,7 +56,7 @@ Building & debugging the editor module
    - Select **Run > Run 'editor'** from the top menu or `click the Run icon <https://developer.android.com/studio/run/rundebugconfig#running>`_.
 - To debug the ``editor`` module:
    - Open the **Build Variants** window using **View > Tools Windows > Build Variants** from the top menu.
-   - In the **Build Variants** window, make sure that in the **Active Build Variant** column, the ``:editor`` entry is set to **dev**.
+   - In the **Build Variants** window, make sure that in the **Active Build Variant** column, the ``:editor`` entry is set to one of the **Dev** variants.
 
    .. figure:: img/android_studio_editor_build_variant.webp
       :figclass: figure-w480
@@ -64,6 +64,7 @@ Building & debugging the editor module
 
    - Open the **Run/Debug Configurations** window by clicking on **Run > Edit Configurations...** on the top menu.
    - In the **Run/Debug Configurations** window, select the ``editor`` entry, and under **Debugger** make sure the **Debug Type** is set to ``Dual (Java + Native)``
+   - Click the ``+`` sign under the **Symbol Directories** section, and add the ``lib`` module directory: ``platform/android/java/lib``
 
    .. figure:: img/android_studio_editor_debug_type_setup.webp
       :figclass: figure-w480
@@ -89,7 +90,7 @@ Once that's done, you can follow the instructions below to run/debug the ``app``
    - Select **Run > Run 'app'** from the top menu or `click the Run icon <https://developer.android.com/studio/run/rundebugconfig#running>`_.
 - To debug the ``app`` module:
    - Open the **Build Variants** window using **View > Tools Windows > Build Variants** from the top menu.
-   - In the **Build Variants** window, make sure that in the **Active Build Variant** column, the ``:app`` entry is set to **dev**.
+   - In the **Build Variants** window, make sure that in the **Active Build Variant** column, the ``:app`` entry is set to one of the **Dev** variants.
 
    .. figure:: img/android_studio_app_build_variant.webp
       :figclass: figure-w480
@@ -97,6 +98,7 @@ Once that's done, you can follow the instructions below to run/debug the ``app``
 
    - Open the **Run/Debug Configurations** window by clicking on **Run > Edit Configurations...** on the top menu.
    - In the **Run/Debug Configurations** window, select the ``app`` entry, and under **Debugger** make sure the **Debug Type** is set to ``Dual (Java + Native)``
+   - Click the ``+`` sign under the **Symbol Directories** section, and add the ``lib`` module directory: ``platform/android/java/lib``
 
    .. figure:: img/android_studio_app_debug_type_setup.webp
       :figclass: figure-w480
