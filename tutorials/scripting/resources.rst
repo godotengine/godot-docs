@@ -362,9 +362,9 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
 
     Beware that resource files (\*.tres/\*.res) will store the path of the script
     they use in the file. When loaded, they will fetch and load this script as an
-    extension of their type. This means that trying to assign a subclass, i.e. an
-    inner class of a script (such as using the ``class`` keyword in GDScript) won't
-    work. Godot will not serialize the custom properties on the script subclass properly.
+    extension of their type. This means that trying to assign an
+    inner class of a script (i.e. using the ``class`` keyword in GDScript) won't
+    work. Godot will not serialize the custom properties on the script inner class properly.
 
     In the example below, Godot would load the ``Node`` script, see that it doesn't
     extend ``Resource``, and then determine that the script failed to load for the
