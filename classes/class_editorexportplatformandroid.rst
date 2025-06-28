@@ -416,6 +416,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/write_user_dictionary<class_EditorExportPlatformAndroid_property_permissions/write_user_dictionary>`                           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`screen/edge_to_edge<class_EditorExportPlatformAndroid_property_screen/edge_to_edge>`                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`screen/immersive_mode<class_EditorExportPlatformAndroid_property_screen/immersive_mode>`                                                   |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`screen/support_large<class_EditorExportPlatformAndroid_property_screen/support_large>`                                                     |
@@ -2783,6 +2785,20 @@ Allows applications to write the sync settings. See `WRITE_SYNC_SETTINGS <https:
 :ref:`bool<class_bool>` **permissions/write_user_dictionary** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/write_user_dictionary>`
 
 Allows an application to write to the user dictionary.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_screen/edge_to_edge:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **screen/edge_to_edge** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/edge_to_edge>`
+
+If ``true``, this makes the navigation and status bars translucent and allows the application content to extend edge to edge.
+
+\ **Note:** You should ensure that none of the application content is occluded by system elements by using the :ref:`DisplayServer.get_display_safe_area()<class_DisplayServer_method_get_display_safe_area>` and :ref:`DisplayServer.get_display_cutouts()<class_DisplayServer_method_get_display_cutouts>` methods.
 
 .. rst-class:: classref-item-separator
 

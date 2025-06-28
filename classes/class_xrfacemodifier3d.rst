@@ -21,7 +21,7 @@ A node for driving standard face meshes from :ref:`XRFaceTracker<class_XRFaceTra
 Description
 -----------
 
-This node applies weights from a :ref:`XRFaceTracker<class_XRFaceTracker>` to a mesh with supporting face blend shapes.
+This node applies weights from an :ref:`XRFaceTracker<class_XRFaceTracker>` to a mesh with supporting face blend shapes.
 
 The `Unified Expressions <https://docs.vrcft.io/docs/tutorial-avatars/tutorial-avatars-extras/unified-blendshapes>`__ blend shapes are supported, as well as ARKit and SRanipal blend shapes.
 

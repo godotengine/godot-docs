@@ -26,7 +26,7 @@ Description
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
-\ **Note:** The ID values used for items are limited to 32 bits, not full 64 bits of :ref:`int<class_int>`. This has a range of ``-2^32`` to ``2^32 - 1``, i.e. ``-2147483648`` to ``2147483647``.
+\ **Note:** The IDs used for items are limited to signed 32-bit integers, not the full 64 bits of :ref:`int<class_int>`. These have a range of ``-2^31`` to ``2^31 - 1``, that is, ``-2147483648`` to ``2147483647``.
 
 \ **Note:** The :ref:`Button.text<class_Button_property_text>` and :ref:`Button.icon<class_Button_property_icon>` properties are set automatically based on the selected item. They shouldn't be changed manually.
 

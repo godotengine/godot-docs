@@ -23,7 +23,7 @@ It uses floating-point coordinates. The 2D counterpart to **AABB** is :ref:`Rect
 
 \ **Note:** Negative values for :ref:`size<class_AABB_property_size>` are not supported. With negative size, most **AABB** methods do not work correctly. Use :ref:`abs()<class_AABB_method_abs>` to get an equivalent **AABB** with a non-negative size.
 
-\ **Note:** In a boolean context, a **AABB** evaluates to ``false`` if both :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>` are zero (equal to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`). Otherwise, it always evaluates to ``true``.
+\ **Note:** In a boolean context, an **AABB** evaluates to ``false`` if both :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>` are zero (equal to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`). Otherwise, it always evaluates to ``true``.
 
 .. note::
 
@@ -366,7 +366,7 @@ Returns the center point of the bounding box. This is the same as ``position + (
 
 :ref:`Vector3<class_Vector3>` **get_endpoint**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AABB_method_get_endpoint>`
 
-Returns the position of one of the 8 vertices that compose this bounding box. With a ``idx`` of ``0`` this is the same as :ref:`position<class_AABB_property_position>`, and a ``idx`` of ``7`` is the same as :ref:`end<class_AABB_property_end>`.
+Returns the position of one of the 8 vertices that compose this bounding box. With an ``idx`` of ``0`` this is the same as :ref:`position<class_AABB_property_position>`, and an ``idx`` of ``7`` is the same as :ref:`end<class_AABB_property_end>`.
 
 .. rst-class:: classref-item-separator
 

@@ -362,7 +362,7 @@ Number of pipeline compilations that were triggered by loading meshes. These com
 
 :ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_SURFACE** = ``36``
 
-Number of pipeline compilations that were triggered by building the surface cache before rendering the scene. These compilations will show up as a stutter when loading an scene the first time a user runs the game and the pipeline is required.
+Number of pipeline compilations that were triggered by building the surface cache before rendering the scene. These compilations will show up as a stutter when loading a scene the first time a user runs the game and the pipeline is required.
 
 .. _class_Performance_constant_PIPELINE_COMPILATIONS_DRAW:
 

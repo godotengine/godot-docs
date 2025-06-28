@@ -12,14 +12,14 @@ SpringBoneCollisionPlane3D
 
 **Inherits:** :ref:`SpringBoneCollision3D<class_SpringBoneCollision3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A infinite plane collision that interacts with :ref:`SpringBoneSimulator3D<class_SpringBoneSimulator3D>`.
+An infinite plane collision that interacts with :ref:`SpringBoneSimulator3D<class_SpringBoneSimulator3D>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A infinite plane collision that interacts with :ref:`SpringBoneSimulator3D<class_SpringBoneSimulator3D>`. It is an infinite size XZ plane, and the +Y direction is treated as normal.
+An infinite plane collision that interacts with :ref:`SpringBoneSimulator3D<class_SpringBoneSimulator3D>`. It is an infinite size XZ plane, and the +Y direction is treated as normal.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

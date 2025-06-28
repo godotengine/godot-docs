@@ -3644,7 +3644,7 @@ Returns the user's clipboard as a string if possible.
 
 Returns the user's clipboard as an image if possible.
 
-\ **Note:** This method uses the copied pixel data, e.g. from a image editing software or a web browser, not an image file copied from file explorer.
+\ **Note:** This method uses the copied pixel data, e.g. from an image editing software or a web browser, not an image file copied from file explorer.
 
 .. rst-class:: classref-item-separator
 
@@ -3850,7 +3850,7 @@ Each filter string in the ``filters`` array should be formatted like this: ``*.p
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int``. **On Android,** the third callback argument (``selected_filter_index``) is always ``0``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, macOS, and Android.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, macOS, and Android (API level 29+).
 
 \ **Note:** ``current_directory`` might be ignored.
 
@@ -5841,7 +5841,7 @@ Note that Godot depends on system libraries for text-to-speech functionality. Th
 
 :ref:`PackedStringArray<class_PackedStringArray>` **tts_get_voices_for_language**\ (\ language\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_DisplayServer_method_tts_get_voices_for_language>`
 
-Returns an :ref:`PackedStringArray<class_PackedStringArray>` of voice identifiers for the ``language``.
+Returns a :ref:`PackedStringArray<class_PackedStringArray>` of voice identifiers for the ``language``.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 

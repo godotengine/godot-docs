@@ -44,6 +44,8 @@ Properties
    +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
    | :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                                                   | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
    +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`     | :ref:`slots_focus_mode<class_GraphNode_property_slots_focus_mode>`                             | ``3``                                                                 |
+   +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
    | :ref:`String<class_String>`                  | :ref:`title<class_GraphNode_property_title>`                                                   | ``""``                                                                |
    +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
@@ -205,6 +207,29 @@ Property Descriptions
 - :ref:`bool<class_bool>` **is_ignoring_valid_connection_type**\ (\ )
 
 If ``true``, you can connect ports with different types, even if the connection was not explicitly allowed in the parent :ref:`GraphEdit<class_GraphEdit>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphNode_property_slots_focus_mode:
+
+.. rst-class:: classref-property
+
+:ref:`FocusMode<enum_Control_FocusMode>` **slots_focus_mode** = ``3`` :ref:`🔗<class_GraphNode_property_slots_focus_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_slots_focus_mode**\ (\ value\: :ref:`FocusMode<enum_Control_FocusMode>`\ )
+- :ref:`FocusMode<enum_Control_FocusMode>` **get_slots_focus_mode**\ (\ )
+
+Determines how connection slots can be focused.
+
+- If set to :ref:`Control.FOCUS_CLICK<class_Control_constant_FOCUS_CLICK>`, connections can only be made with the mouse.
+
+- If set to :ref:`Control.FOCUS_ALL<class_Control_constant_FOCUS_ALL>`, slots can also be focused using the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` and :ref:`ProjectSettings.input/ui_down<class_ProjectSettings_property_input/ui_down>` and connected using :ref:`ProjectSettings.input/ui_left<class_ProjectSettings_property_input/ui_left>` and :ref:`ProjectSettings.input/ui_right<class_ProjectSettings_property_input/ui_right>` input actions.
+
+- If set to :ref:`Control.FOCUS_ACCESSIBILITY<class_Control_constant_FOCUS_ACCESSIBILITY>`, slot input actions are only enabled when the screen reader is active.
 
 .. rst-class:: classref-item-separator
 

@@ -193,8 +193,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_local_usage<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_usage>`                                                                       | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`                                                                 | ``1``                                                                                            |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                                                               | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/empty_file<class_ProjectSettings_property_debug/gdscript/warnings/empty_file>`                                                                                               | ``1``                                                                                            |
@@ -204,8 +202,6 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/enum_variable_without_default<class_ProjectSettings_property_debug/gdscript/warnings/enum_variable_without_default>`                                                         | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/exclude_addons<class_ProjectSettings_property_debug/gdscript/warnings/exclude_addons>`                                                                                       | ``true``                                                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/function_used_as_property<class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/get_node_default_without_onready<class_ProjectSettings_property_debug/gdscript/warnings/get_node_default_without_onready>`                                                   | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -228,8 +224,6 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/native_method_override<class_ProjectSettings_property_debug/gdscript/warnings/native_method_override>`                                                                       | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/onready_with_export<class_ProjectSettings_property_debug/gdscript/warnings/onready_with_export>`                                                                             | ``2``                                                                                            |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_await<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`                                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1270,6 +1264,8 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_edge_connection_margin<class_ProjectSettings_property_navigation/2d/default_edge_connection_margin>`                                                                           | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_link_connection_radius<class_ProjectSettings_property_navigation/2d/default_link_connection_radius>`                                                                           | ``4.0``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`navigation/2d/merge_rasterizer_cell_scale<class_ProjectSettings_property_navigation/2d/merge_rasterizer_cell_scale>`                                                                                 | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/use_edge_connections<class_ProjectSettings_property_navigation/2d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2904,20 +2900,6 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
-.. _class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **debug/gdscript/warnings/constant_used_as_function** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`
-
-**Deprecated:** This warning is never produced. Instead, an error is generated if the expression type is known at compile time.
-
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a constant is used as a function.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword:
 
 .. rst-class:: classref-property
@@ -2975,20 +2957,6 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`bool<class_bool>` **debug/gdscript/warnings/exclude_addons** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/exclude_addons>`
 
 If ``true``, scripts in the ``res://addons`` folder will not generate warnings.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **debug/gdscript/warnings/function_used_as_property** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property>`
-
-**Deprecated:** This warning is never produced. When a function is used as a property, a :ref:`Callable<class_Callable>` is returned.
-
-When set to ``warn`` or ``error``, produces a warning or an error respectively when using a function as if it is a property.
 
 .. rst-class:: classref-item-separator
 
@@ -3123,20 +3091,6 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/onready_with_export** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/onready_with_export>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when the ``@onready`` annotation is used together with the ``@export`` annotation, since it may not behave as expected.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **debug/gdscript/warnings/property_used_as_function** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`
-
-**Deprecated:** This warning is never produced. Instead, an error is generated if the expression type is known at compile time.
-
-When set to ``warn`` or ``error``, produces a warning or an error respectively when using a property as if it is a function.
 
 .. rst-class:: classref-item-separator
 
@@ -9734,6 +9688,18 @@ Default link connection radius for 2D navigation maps. See :ref:`NavigationServe
 
 ----
 
+.. _class_ProjectSettings_property_navigation/2d/merge_rasterizer_cell_scale:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **navigation/2d/merge_rasterizer_cell_scale** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/merge_rasterizer_cell_scale>`
+
+Default merge rasterizer cell scale for 2D navigation maps. See :ref:`NavigationServer2D.map_set_merge_rasterizer_cell_scale()<class_NavigationServer2D_method_map_set_merge_rasterizer_cell_scale>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_navigation/2d/use_edge_connections:
 
 .. rst-class:: classref-property
@@ -13468,7 +13434,7 @@ The default compression factor for lossless WebP. Decompression speed is mostly 
 
 :ref:`bool<class_bool>` **rendering/viewport/hdr_2d** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
 
-If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root viewport. 2D rendering will use an high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ renderer this will be an ``RGBA16`` framebuffer, while when using the Mobile renderer it will be an ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen. Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
+If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root viewport. 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ renderer this will be an ``RGBA16`` framebuffer, while when using the Mobile renderer it will be an ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen. Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
 \ **Note:** This setting will have no effect when using the Compatibility renderer, which always renders in low dynamic range for performance reasons.
 

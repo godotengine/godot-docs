@@ -5722,7 +5722,7 @@ Cubemap sampler global shader parameter (``global uniform samplerCube ...``). Ex
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLEREXT** = ``28``
 
-External sampler global shader parameter (``global uniform samplerExternalOES ...``). Exposed as a :ref:`ExternalTexture<class_ExternalTexture>` in the editor UI.
+External sampler global shader parameter (``global uniform samplerExternalOES ...``). Exposed as an :ref:`ExternalTexture<class_ExternalTexture>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAX:
 
@@ -5812,7 +5812,7 @@ Number of pipeline compilations that were triggered by loading meshes. These com
 
 :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_PIPELINE_COMPILATIONS_SURFACE** = ``8``
 
-Number of pipeline compilations that were triggered by building the surface cache before rendering the scene. These compilations will show up as a stutter when loading an scene the first time a user runs the game and the pipeline is required.
+Number of pipeline compilations that were triggered by building the surface cache before rendering the scene. These compilations will show up as a stutter when loading a scene the first time a user runs the game and the pipeline is required.
 
 .. _class_RenderingServer_constant_RENDERING_INFO_PIPELINE_COMPILATIONS_DRAW:
 
@@ -6142,7 +6142,7 @@ Bakes the material data of the Mesh passed in the ``base`` parameter with option
 
 |void| **call_on_render_thread**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_RenderingServer_method_call_on_render_thread>`
 
-As the RenderingServer actual logic may run on an separate thread, accessing its internals from the main (or any other) thread will result in errors. To make it easier to run code that can safely access the rendering internals (such as :ref:`RenderingDevice<class_RenderingDevice>` and similar RD classes), push a callable via this function so it will be executed on the render thread.
+As the RenderingServer actual logic may run on a separate thread, accessing its internals from the main (or any other) thread will result in errors. To make it easier to run code that can safely access the rendering internals (such as :ref:`RenderingDevice<class_RenderingDevice>` and similar RD classes), push a callable via this function so it will be executed on the render thread.
 
 .. rst-class:: classref-item-separator
 

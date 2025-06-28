@@ -12,7 +12,7 @@ ResourceImporterSVG
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Imports a SVG file as a scalable texture for use in 2D or 3D rendering.
+Imports an SVG file as a scalable texture for use in 2D or 3D rendering.
 
 .. rst-class:: classref-introduction-group
 

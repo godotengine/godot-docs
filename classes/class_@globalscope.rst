@@ -3887,9 +3887,9 @@ Hints that a property will be changed on its own after setting, such as :ref:`Au
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_GROUP_ENABLE** = ``42``
 
-Hints that a boolean property will enable the feature associated with the group that it occurs in. Only works within a group or subgroup. Use the optional hint string ``"feature"`` when the group only has properties that are meaningful when the feature is enabled.
+Hints that a boolean property will enable the feature associated with the group that it occurs in. The property will be displayed as a checkbox on the group header. Only works within a group or subgroup.
 
-\ **Note:** The ``"feature"`` hint string does not modify or reset any values.
+By default, disabling the property hides all properties in the group. Use the optional hint string ``"checkbox_only"`` to disable this behavior.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_INPUT_NAME:
 

@@ -66,7 +66,7 @@ Return the description of this class that is used for the title bar of the bindi
 
 Returns the data that is sent to OpenXR when submitting the suggested interacting bindings this modifier is a part of.
 
-\ **Note:** This must be data compatible with a ``XrBindingModificationBaseHeaderKHR`` structure.
+\ **Note:** This must be data compatible with an ``XrBindingModificationBaseHeaderKHR`` structure.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

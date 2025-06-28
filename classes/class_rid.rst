@@ -102,7 +102,7 @@ Constructs an empty **RID** with the invalid ID ``0``.
 
 :ref:`RID<class_RID>` **RID**\ (\ from\: :ref:`RID<class_RID>`\ )
 
-Constructs a **RID** as a copy of the given **RID**.
+Constructs an **RID** as a copy of the given **RID**.
 
 .. rst-class:: classref-section-separator
 

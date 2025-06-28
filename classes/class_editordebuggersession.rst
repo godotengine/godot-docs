@@ -19,7 +19,7 @@ A class to interact with the editor debugger.
 Description
 -----------
 
-This class cannot be directly instantiated and must be retrieved via a :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`.
+This class cannot be directly instantiated and must be retrieved via an :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`.
 
 You can add tabs to the session UI via :ref:`add_session_tab()<class_EditorDebuggerSession_method_add_session_tab>`, send messages via :ref:`send_message()<class_EditorDebuggerSession_method_send_message>`, and toggle :ref:`EngineProfiler<class_EngineProfiler>`\ s via :ref:`toggle_profiler()<class_EditorDebuggerSession_method_toggle_profiler>`.
 

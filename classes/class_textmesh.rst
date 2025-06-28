@@ -12,14 +12,14 @@ TextMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Generate an :ref:`PrimitiveMesh<class_PrimitiveMesh>` from the text.
+Generate a :ref:`PrimitiveMesh<class_PrimitiveMesh>` from the text.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Generate an :ref:`PrimitiveMesh<class_PrimitiveMesh>` from the text.
+Generate a :ref:`PrimitiveMesh<class_PrimitiveMesh>` from the text.
 
 TextMesh can be generated only when using dynamic fonts with vector glyph contours. Bitmap fonts (including bitmap data in the TrueType/OpenType containers, like color emoji fonts) are not supported.
 
