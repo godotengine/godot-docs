@@ -294,10 +294,6 @@ The options are as follows:
   :ref:`doc_importing_3d_scenes_using_the_import_dock`. **Default** will use the
   scene-wide import option, while **Enable** or **Disable** can forcibly enable
   or disable this behavior on a specific mesh.
-- **LODs > Normal Split Angle:** The minimum angle difference between two
-  vertices required to preserve a geometry edge in mesh LOD generation. If
-  running into visual issues with LOD generation, decreasing this value may help
-  (at the cost of less efficient LOD generation).
 - **LODs > Normal Merge Angle:** The minimum angle difference between two
   vertices required to preserve a geometry edge in mesh LOD generation. If
   running into visual issues with LOD generation, decreasing this value may help
