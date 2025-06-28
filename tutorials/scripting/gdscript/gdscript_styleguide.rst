@@ -839,7 +839,7 @@ Follow with the optional ``@icon`` then the ``class_name`` if necessary. You can
 GDScript file into a global type in your project using ``class_name``. For more
 information, see :ref:`doc_gdscript_basics_class_name`. If the class is meant
 to be an :ref:`abstract class <doc_gdscript_basics_abstract_class>`,
-add ``abstract`` *before* the ``class_name`` keyword, but on the same line.
+add ``@abstract`` *before* the ``class_name`` keyword.
 
 Then, add the ``extends`` keyword if the class extends a built-in type.
 
@@ -850,12 +850,24 @@ and how other developers should use it, for example.
 
 ::
 
-    abstract class_name MyNode
+    @abstract
+    class_name MyNode
     extends Node
     ## A brief description of the class's role and functionality.
     ##
     ## The description of the script, what it can do,
     ## and any further detail.
+
+For inner classes, use single-line declarations:
+
+::
+
+    ## A brief description of the class's role and functionality.
+    ##
+    ## The description of the script, what it can do,
+    ## and any further detail.
+    @abstract class MyNode extends Node:
+        pass
 
 Signals and properties
 ~~~~~~~~~~~~~~~~~~~~~~
