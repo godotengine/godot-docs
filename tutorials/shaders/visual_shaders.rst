@@ -36,7 +36,7 @@ in the dropdown, then give it a name.
 
 Click on the visual shader you just created to open the Shader Editor.
 The layout of the Shader Editor comprises four parts, a file list on
-the right, the upper toolbar, the graph itself, and a material preview
+the left, the upper toolbar, the graph itself, and a material preview
 on the right that can be toggled off
 
 .. image:: img/visual_shader_editor2.webp
