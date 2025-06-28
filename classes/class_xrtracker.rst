@@ -85,19 +85,19 @@ The description of this tracker.
 
 The unique name of this tracker. The trackers that are available differ between various XR runtimes and can often be configured by the user. Godot maintains a number of reserved names that it expects the :ref:`XRInterface<class_XRInterface>` to implement if applicable:
 
-- ``head`` identifies the :ref:`XRPositionalTracker<class_XRPositionalTracker>` of the players head
+- ``"head"`` identifies the :ref:`XRPositionalTracker<class_XRPositionalTracker>` of the player's head
 
-- ``left_hand`` identifies the :ref:`XRControllerTracker<class_XRControllerTracker>` in the players left hand
+- ``"left_hand"`` identifies the :ref:`XRControllerTracker<class_XRControllerTracker>` in the player's left hand
 
-- ``right_hand`` identifies the :ref:`XRControllerTracker<class_XRControllerTracker>` in the players right hand
+- ``"right_hand"`` identifies the :ref:`XRControllerTracker<class_XRControllerTracker>` in the player's right hand
 
-- ``/user/hand_tracker/left`` identifies the :ref:`XRHandTracker<class_XRHandTracker>` for the players left hand
+- ``"/user/hand_tracker/left"`` identifies the :ref:`XRHandTracker<class_XRHandTracker>` for the player's left hand
 
-- ``/user/hand_tracker/right`` identifies the :ref:`XRHandTracker<class_XRHandTracker>` for the players right hand
+- ``"/user/hand_tracker/right"`` identifies the :ref:`XRHandTracker<class_XRHandTracker>` for the player's right hand
 
-- ``/user/body_tracker`` identifies the :ref:`XRBodyTracker<class_XRBodyTracker>` for the players body
+- ``"/user/body_tracker"`` identifies the :ref:`XRBodyTracker<class_XRBodyTracker>` for the player's body
 
-- ``/user/face_tracker`` identifies the :ref:`XRFaceTracker<class_XRFaceTracker>` for the players face
+- ``"/user/face_tracker"`` identifies the :ref:`XRFaceTracker<class_XRFaceTracker>` for the player's face
 
 .. rst-class:: classref-item-separator
 

@@ -12,7 +12,7 @@ ResourceImporterImage
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Imports a image for use in scripting, with no rendering capabilities.
+Imports an image for use in scripting, with no rendering capabilities.
 
 .. rst-class:: classref-introduction-group
 

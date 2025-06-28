@@ -27,6 +27,8 @@ Dynamic obstacles are avoided using RVO collision avoidance. Avoidance is comput
 
 \ **Note:** After setting the :ref:`target_position<class_NavigationAgent2D_property_target_position>` property, the :ref:`get_next_path_position()<class_NavigationAgent2D_method_get_next_path_position>` method must be used once every physics frame to update the internal path logic of the navigation agent. The vector position it returns should be used as the next movement position for the agent's parent node.
 
+\ **Note:** Several methods of this class, such as :ref:`get_next_path_position()<class_NavigationAgent2D_method_get_next_path_position>`, can trigger a new path calculation. Calling these in your callback to an agent's signal, such as :ref:`waypoint_reached<class_NavigationAgent2D_signal_waypoint_reached>`, can cause infinite recursion. It is recommended to call these methods in the physics step or, alternatively, delay their call until the end of the frame (see :ref:`Object.call_deferred()<class_Object_method_call_deferred>` or :ref:`Object.CONNECT_DEFERRED<class_Object_constant_CONNECT_DEFERRED>`).
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

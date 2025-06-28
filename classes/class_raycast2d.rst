@@ -12,14 +12,14 @@ RayCast2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A ray in 2D space, used to find the first :ref:`CollisionObject2D<class_CollisionObject2D>` it intersects.
+A ray in 2D space, used to find the first collision object it intersects.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A raycast represents a ray from its origin to its :ref:`target_position<class_RayCast2D_property_target_position>` that finds the closest :ref:`CollisionObject2D<class_CollisionObject2D>` along its path, if it intersects any.
+A raycast represents a ray from its origin to its :ref:`target_position<class_RayCast2D_property_target_position>` that finds the closest object along its path, if it intersects any.
 
 \ **RayCast2D** can ignore some objects by adding them to an exception list, by making its detection reporting ignore :ref:`Area2D<class_Area2D>`\ s (:ref:`collide_with_areas<class_RayCast2D_property_collide_with_areas>`) or :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s (:ref:`collide_with_bodies<class_RayCast2D_property_collide_with_bodies>`), or by configuring physics layers.
 
@@ -184,7 +184,7 @@ If ``true``, collisions will be reported.
 - |void| **set_exclude_parent_body**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_exclude_parent_body**\ (\ )
 
-If ``true``, the parent node will be excluded from collision detection.
+If ``true``, this raycast will not report collisions with its parent node. This property only has an effect if the parent node is a :ref:`CollisionObject2D<class_CollisionObject2D>`. See also :ref:`Node.get_parent()<class_Node_method_get_parent>` and :ref:`add_exception()<class_RayCast2D_method_add_exception>`.
 
 .. rst-class:: classref-item-separator
 
@@ -218,7 +218,7 @@ If ``true``, the ray will detect a hit when starting inside shapes. In this case
 - |void| **set_target_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_target_position**\ (\ )
 
-The ray's destination point, relative to the RayCast's ``position``.
+The ray's destination point, relative to this raycast's :ref:`Node2D.position<class_Node2D_property_position>`.
 
 .. rst-class:: classref-section-separator
 
@@ -235,7 +235,7 @@ Method Descriptions
 
 |void| **add_exception**\ (\ node\: :ref:`CollisionObject2D<class_CollisionObject2D>`\ ) :ref:`🔗<class_RayCast2D_method_add_exception>`
 
-Adds a collision exception so the ray does not report collisions with the specified :ref:`CollisionObject2D<class_CollisionObject2D>` node.
+Adds a collision exception so the ray does not report collisions with the specified ``node``.
 
 .. rst-class:: classref-item-separator
 
@@ -286,6 +286,8 @@ Updates the collision information for the ray immediately, without waiting for t
 :ref:`Object<class_Object>` **get_collider**\ (\ ) |const| :ref:`🔗<class_RayCast2D_method_get_collider>`
 
 Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding()<class_RayCast2D_method_is_colliding>` returns ``false``).
+
+\ **Note:** This object is not guaranteed to be a :ref:`CollisionObject2D<class_CollisionObject2D>`. For example, if the ray intersects a :ref:`TileMapLayer<class_TileMapLayer>`, the method will return a :ref:`TileMapLayer<class_TileMapLayer>` instance.
 
 .. rst-class:: classref-item-separator
 
@@ -394,7 +396,7 @@ Returns whether any object is intersecting with the ray's vector (considering th
 
 |void| **remove_exception**\ (\ node\: :ref:`CollisionObject2D<class_CollisionObject2D>`\ ) :ref:`🔗<class_RayCast2D_method_remove_exception>`
 
-Removes a collision exception so the ray does report collisions with the specified :ref:`CollisionObject2D<class_CollisionObject2D>` node.
+Removes a collision exception so the ray can report collisions with the specified specified ``node``.
 
 .. rst-class:: classref-item-separator
 
@@ -406,7 +408,7 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 |void| **remove_exception_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RayCast2D_method_remove_exception_rid>`
 
-Removes a collision exception so the ray does report collisions with the specified :ref:`RID<class_RID>`.
+Removes a collision exception so the ray can report collisions with the specified :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 

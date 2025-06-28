@@ -939,6 +939,8 @@ On Android devices: Returns the list of dangerous permissions that have been gra
 
 On macOS: Returns the list of granted permissions and user selected folders accessible to the application (sandboxed applications only). Use the native file dialog to request folder access permission.
 
+On iOS, visionOS: Returns the list of granted permissions.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1703,7 +1705,7 @@ Opens one or more files/directories with the specified application. The ``progra
 
 \ **Note:** This method is mostly only relevant for macOS, where opening files using :ref:`create_process()<class_OS_method_create_process>` might fail. On other platforms, this falls back to using :ref:`create_process()<class_OS_method_create_process>`.
 
-\ **Note:** On macOS, ``program_path`` should ideally be the path to an ``.app`` bundle.
+\ **Note:** On macOS, ``program_path`` should ideally be the path to a ``.app`` bundle.
 
 .. rst-class:: classref-item-separator
 
@@ -1783,9 +1785,11 @@ The ``name`` must be the full permission name. For example:
 
 - ``OS.request_permission("macos.permission.RECORD_SCREEN")``\ 
 
+- ``OS.request_permission("appleembedded.permission.AUDIO_RECORD")``\ 
+
 \ **Note:** On Android, permission must be checked during export.
 
-\ **Note:** This method is implemented on Android and macOS.
+\ **Note:** This method is implemented on Android, macOS, and visionOS platforms.
 
 .. rst-class:: classref-item-separator
 

@@ -61,6 +61,8 @@ Property Descriptions
 
 The capsule's full height, including the semicircles.
 
+\ **Note:** The :ref:`height<class_CapsuleShape2D_property_height>` of a capsule must be at least twice its :ref:`radius<class_CapsuleShape2D_property_radius>`. Otherwise, the capsule becomes a circle. If the :ref:`height<class_CapsuleShape2D_property_height>` is less than twice the :ref:`radius<class_CapsuleShape2D_property_radius>`, the properties adjust to a valid value.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -94,6 +96,8 @@ The capsule's height, excluding the semicircles. This is the height of the centr
 - :ref:`float<class_float>` **get_radius**\ (\ )
 
 The capsule's radius.
+
+\ **Note:** The :ref:`radius<class_CapsuleShape2D_property_radius>` of a capsule cannot be greater than half of its :ref:`height<class_CapsuleShape2D_property_height>`. Otherwise, the capsule becomes a circle. If the :ref:`radius<class_CapsuleShape2D_property_radius>` is greater than half of the :ref:`height<class_CapsuleShape2D_property_height>`, the properties adjust to a valid value.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

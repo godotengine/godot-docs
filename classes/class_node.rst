@@ -2156,7 +2156,7 @@ Fetches a node and its most nested resource as specified by the :ref:`NodePath<c
 
 - Element ``2`` is the remaining :ref:`NodePath<class_NodePath>`, referring to an existing, non-:ref:`Resource<class_Resource>` property (see :ref:`Object.get_indexed()<class_Object_method_get_indexed>`).
 
-\ **Example:** Assume that the child's :ref:`Sprite2D.texture<class_Sprite2D_property_texture>` has been assigned a :ref:`AtlasTexture<class_AtlasTexture>`:
+\ **Example:** Assume that the child's :ref:`Sprite2D.texture<class_Sprite2D_property_texture>` has been assigned an :ref:`AtlasTexture<class_AtlasTexture>`:
 
 
 .. tabs::
@@ -3127,7 +3127,7 @@ If set to ``true``, enables unhandled key input processing.
 
 |void| **set_scene_instance_load_placeholder**\ (\ load_placeholder\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Node_method_set_scene_instance_load_placeholder>`
 
-If set to ``true``, the node becomes a :ref:`InstancePlaceholder<class_InstancePlaceholder>` when packed and instantiated from a :ref:`PackedScene<class_PackedScene>`. See also :ref:`get_scene_instance_load_placeholder()<class_Node_method_get_scene_instance_load_placeholder>`.
+If set to ``true``, the node becomes an :ref:`InstancePlaceholder<class_InstancePlaceholder>` when packed and instantiated from a :ref:`PackedScene<class_PackedScene>`. See also :ref:`get_scene_instance_load_placeholder()<class_Node_method_get_scene_instance_load_placeholder>`.
 
 .. rst-class:: classref-item-separator
 

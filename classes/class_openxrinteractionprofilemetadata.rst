@@ -96,7 +96,7 @@ Registers a top level path to which profiles can be bound. For instance ``/user/
 
 \ ``display_name`` is the name shown to the user. ``openxr_path`` is the top level path being registered. ``openxr_extension_name`` is optional and ensures the top level path is only used if the specified extension is available/enabled.
 
-When a top level path ends up being bound by OpenXR, a :ref:`XRPositionalTracker<class_XRPositionalTracker>` is instantiated to manage the state of the device.
+When a top level path ends up being bound by OpenXR, an :ref:`XRPositionalTracker<class_XRPositionalTracker>` is instantiated to manage the state of the device.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

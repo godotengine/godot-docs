@@ -1309,7 +1309,7 @@ If ``first_priority`` is ``true``, the new import plugin is inserted first in th
 
 |void| **add_scene_post_import_plugin**\ (\ scene_import_plugin\: :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>`, first_priority\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_EditorPlugin_method_add_scene_post_import_plugin>`
 
-Add a :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>`. These plugins allow customizing the import process of 3D assets by adding new options to the import dialogs.
+Add an :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>`. These plugins allow customizing the import process of 3D assets by adding new options to the import dialogs.
 
 If ``first_priority`` is ``true``, the new import plugin is inserted first in the list and takes precedence over pre-existing plugins.
 

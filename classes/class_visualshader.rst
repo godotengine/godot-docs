@@ -30,6 +30,18 @@ Tutorials
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_VisualShader_property_graph_offset>` |
+   +-------------------------------+---------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -321,6 +333,30 @@ Indicates an invalid **VisualShader** node.
 **NODE_ID_OUTPUT** = ``0`` :ref:`🔗<class_VisualShader_constant_NODE_ID_OUTPUT>`
 
 Indicates an output node of **VisualShader**.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_VisualShader_property_graph_offset:
+
+.. rst-class:: classref-property
+
+:ref:`Vector2<class_Vector2>` **graph_offset** :ref:`🔗<class_VisualShader_property_graph_offset>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_graph_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_graph_offset**\ (\ )
+
+**Deprecated:** This property does nothing and always equals to zero.
+
+Deprecated.
 
 .. rst-class:: classref-section-separator
 

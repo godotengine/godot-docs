@@ -182,7 +182,7 @@ enum **TrackerType**: :ref:`🔗<enum_XRServer_TrackerType>`
 
 :ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_HEAD** = ``1``
 
-The tracker tracks the location of the players head. This is usually a location centered between the players eyes. Note that for handheld AR devices this can be the current location of the device.
+The tracker tracks the location of the player's head. This is usually a location centered between the player's eyes. Note that for handheld AR devices this can be the current location of the device.
 
 .. _class_XRServer_constant_TRACKER_CONTROLLER:
 

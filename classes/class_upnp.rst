@@ -186,7 +186,7 @@ Inconsistent parameters.
 
 :ref:`UPNPResult<enum_UPNP_UPNPResult>` **UPNP_RESULT_NO_SUCH_ENTRY_IN_ARRAY** = ``4``
 
-No such entry in array. May be returned if a given port, protocol combination is not found on an :ref:`UPNPDevice<class_UPNPDevice>`.
+No such entry in array. May be returned if a given port, protocol combination is not found on a :ref:`UPNPDevice<class_UPNPDevice>`.
 
 .. _class_UPNP_constant_UPNP_RESULT_ACTION_FAILED:
 

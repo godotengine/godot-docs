@@ -485,7 +485,7 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 A comma-seperated list of reference space types used by :ref:`XRInterface.initialize()<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
-The reference space types are requested in order, and the first one supported by the users device or browser will be used. The :ref:`reference_space_type<class_WebXRInterface_property_reference_space_type>` property contains the reference space type that was ultimately selected.
+The reference space types are requested in order, and the first one supported by the user's device or browser will be used. The :ref:`reference_space_type<class_WebXRInterface_property_reference_space_type>` property contains the reference space type that was ultimately selected.
 
 This doesn't have any effect on the interface when already initialized.
 

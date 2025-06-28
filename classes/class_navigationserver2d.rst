@@ -195,6 +195,8 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]  | :ref:`map_get_links<class_NavigationServer2D_method_map_get_links>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                        |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`map_get_merge_rasterizer_cell_scale<class_NavigationServer2D_method_map_get_merge_rasterizer_cell_scale>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                            |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]  | :ref:`map_get_obstacles<class_NavigationServer2D_method_map_get_obstacles>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`map_get_path<class_NavigationServer2D_method_map_get_path>`\ (\ map\: :ref:`RID<class_RID>`, origin\: :ref:`Vector2<class_Vector2>`, destination\: :ref:`Vector2<class_Vector2>`, optimize\: :ref:`bool<class_bool>`, navigation_layers\: :ref:`int<class_int>` = 1\ )                                                                                                          |
@@ -216,6 +218,8 @@ Methods
    | |void|                                              | :ref:`map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`\ (\ map\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`map_set_link_connection_radius<class_NavigationServer2D_method_map_set_link_connection_radius>`\ (\ map\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`map_set_merge_rasterizer_cell_scale<class_NavigationServer2D_method_map_set_merge_rasterizer_cell_scale>`\ (\ map\: :ref:`RID<class_RID>`, scale\: :ref:`float<class_float>`\ )                                                                                                                                                                                                 |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`map_set_use_async_iterations<class_NavigationServer2D_method_map_set_use_async_iterations>`\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                               |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1327,6 +1331,18 @@ Returns all navigation link :ref:`RID<class_RID>`\ s that are currently assigned
 
 ----
 
+.. _class_NavigationServer2D_method_map_get_merge_rasterizer_cell_scale:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **map_get_merge_rasterizer_cell_scale**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_merge_rasterizer_cell_scale>`
+
+Returns map's internal merge rasterizer cell scale.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer2D_method_map_get_obstacles:
 
 .. rst-class:: classref-method
@@ -1458,6 +1474,18 @@ Set the map edge connection margin used to weld the compatible region edges.
 |void| **map_set_link_connection_radius**\ (\ map\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_link_connection_radius>`
 
 Set the map's link connection radius used to connect links to navigation polygons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_map_set_merge_rasterizer_cell_scale:
+
+.. rst-class:: classref-method
+
+|void| **map_set_merge_rasterizer_cell_scale**\ (\ map\: :ref:`RID<class_RID>`, scale\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_merge_rasterizer_cell_scale>`
+
+Set the map's internal merge rasterizer cell scale used to control merging sensitivity.
 
 .. rst-class:: classref-item-separator
 

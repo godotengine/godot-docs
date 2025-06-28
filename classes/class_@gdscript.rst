@@ -124,6 +124,37 @@ Positive floating-point infinity. This is the result of floating-point division 
 Annotations
 -----------
 
+.. _class_@GDScript_annotation_@abstract:
+
+.. rst-class:: classref-annotation
+
+**@abstract**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@abstract>`
+
+Marks a class or a method as abstract.
+
+An abstract class is a class that cannot be instantiated directly. Instead, it is meant to be inherited by other classes. Attempting to instantiate an abstract class will result in an error.
+
+An abstract method is a method that has no implementation. Therefore, a newline or a semicolon is expected after the function header. This defines a contract that inheriting classes must conform to, because the method signature must be compatible when overriding.
+
+Inheriting classes must either provide implementations for all abstract methods, or the inheriting class must be marked as abstract. If a class has at least one abstract method (either its own or an unimplemented inherited one), then it must also be marked as abstract. However, the reverse is not true: an abstract class is allowed to have no abstract methods.
+
+::
+
+    @abstract class Shape:
+        @abstract func draw()
+
+    class Circle extends Shape:
+        func draw():
+            print("Drawing a circle.")
+
+    class Square extends Shape:
+        func draw():
+            print("Drawing a square.")
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GDScript_annotation_@export:
 
 .. rst-class:: classref-annotation
@@ -856,6 +887,8 @@ The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter, but value
     @rpc("authority", "call_remote", "unreliable", 0) # Equivalent to @rpc
     func fn_default(): pass
 
+\ **Note:** Methods annotated with :ref:`@rpc<class_@GDScript_annotation_@rpc>` cannot receive objects which define required parameters in :ref:`Object._init()<class_Object_private_method__init>`. See :ref:`Object._init()<class_Object_private_method__init>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1073,7 +1106,7 @@ Converts a ``dictionary`` (created with :ref:`inst_to_dict()<class_@GDScript_met
 
 :ref:`Array<class_Array>` **get_stack**\ (\ ) :ref:`🔗<class_@GDScript_method_get_stack>`
 
-Returns an array of dictionaries representing the current call stack. See also :ref:`print_stack()<class_@GDScript_method_print_stack>`.
+Returns an array of dictionaries representing the current call stack.
 
 ::
 
@@ -1092,9 +1125,9 @@ Starting from ``_ready()``, ``bar()`` would print:
 
     [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
 
-\ **Note:** This function only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`get_stack()<class_@GDScript_method_get_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
+See also :ref:`print_debug()<class_@GDScript_method_print_debug>`, :ref:`print_stack()<class_@GDScript_method_print_stack>`, and :ref:`Engine.capture_script_backtraces()<class_Engine_method_capture_script_backtraces>`.
 
-\ **Note:** Calling this function from a :ref:`Thread<class_Thread>` is not supported. Doing so will return an empty array.
+\ **Note:** By default, backtraces are only available in editor builds and debug builds. To enable them for release builds as well, you need to enable :ref:`ProjectSettings.debug/settings/gdscript/always_track_call_stacks<class_ProjectSettings_property_debug/settings/gdscript/always_track_call_stacks>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1268,7 +1301,9 @@ The output in the console may look like the following:
     Test print
     At: res://test.gd:15:_process()
 
-\ **Note:** Calling this function from a :ref:`Thread<class_Thread>` is not supported. Doing so will instead print the thread ID.
+See also :ref:`print_stack()<class_@GDScript_method_print_stack>`, :ref:`get_stack()<class_@GDScript_method_get_stack>`, and :ref:`Engine.capture_script_backtraces()<class_Engine_method_capture_script_backtraces>`.
+
+\ **Note:** By default, backtraces are only available in editor builds and debug builds. To enable them for release builds as well, you need to enable :ref:`ProjectSettings.debug/settings/gdscript/always_track_call_stacks<class_ProjectSettings_property_debug/settings/gdscript/always_track_call_stacks>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1280,7 +1315,7 @@ The output in the console may look like the following:
 
 |void| **print_stack**\ (\ ) :ref:`🔗<class_@GDScript_method_print_stack>`
 
-Prints a stack trace at the current code location. See also :ref:`get_stack()<class_@GDScript_method_get_stack>`.
+Prints a stack trace at the current code location.
 
 The output in the console may look like the following:
 
@@ -1288,9 +1323,9 @@ The output in the console may look like the following:
 
     Frame 0 - res://test.gd:16 in function '_process'
 
-\ **Note:** This function only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`print_stack()<class_@GDScript_method_print_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
+See also :ref:`print_debug()<class_@GDScript_method_print_debug>`, :ref:`get_stack()<class_@GDScript_method_get_stack>`, and :ref:`Engine.capture_script_backtraces()<class_Engine_method_capture_script_backtraces>`.
 
-\ **Note:** Calling this function from a :ref:`Thread<class_Thread>` is not supported. Doing so will instead print the thread ID.
+\ **Note:** By default, backtraces are only available in editor builds and debug builds. To enable them for release builds as well, you need to enable :ref:`ProjectSettings.debug/settings/gdscript/always_track_call_stacks<class_ProjectSettings_property_debug/settings/gdscript/always_track_call_stacks>`.
 
 .. rst-class:: classref-item-separator
 

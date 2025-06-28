@@ -12,7 +12,7 @@ ResourceImporterShaderFile
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Imports native GLSL shaders (not Godot shaders) as a :ref:`RDShaderFile<class_RDShaderFile>`.
+Imports native GLSL shaders (not Godot shaders) as an :ref:`RDShaderFile<class_RDShaderFile>`.
 
 .. rst-class:: classref-introduction-group
 

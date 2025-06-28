@@ -181,7 +181,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Note:** **HTTPRequest** nodes will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
+\ **Note:** **HTTPRequest** nodes will automatically handle decompression of response bodies. An ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
 
 .. rst-class:: classref-introduction-group
 

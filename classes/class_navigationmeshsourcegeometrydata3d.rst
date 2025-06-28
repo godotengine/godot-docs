@@ -116,7 +116,7 @@ Adds an :ref:`Array<class_Array>` the size of :ref:`Mesh.ARRAY_MAX<class_Mesh_co
 
 |void| **add_projected_obstruction**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, elevation\: :ref:`float<class_float>`, height\: :ref:`float<class_float>`, carve\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationMeshSourceGeometryData3D_method_add_projected_obstruction>`
 
-Adds a projected obstruction shape to the source geometry. The ``vertices`` are considered projected on a xz-axes plane, placed at the global y-axis ``elevation`` and extruded by ``height``. If ``carve`` is ``true`` the carved shape will not be affected by additional offsets (e.g. agent radius) of the navigation mesh baking process.
+Adds a projected obstruction shape to the source geometry. The ``vertices`` are considered projected on an xz-axes plane, placed at the global y-axis ``elevation`` and extruded by ``height``. If ``carve`` is ``true`` the carved shape will not be affected by additional offsets (e.g. agent radius) of the navigation mesh baking process.
 
 .. rst-class:: classref-item-separator
 

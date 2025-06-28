@@ -241,7 +241,7 @@ Returns a list of active subaction paths for this ``render_model``.
 
 :ref:`String<class_String>` **render_model_get_top_level_path**\ (\ render_model\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_OpenXRRenderModelExtension_method_render_model_get_top_level_path>`
 
-Returns the top level path associated with this ``render_model``. If provided this identifies whether the render model is associated with the players hands or other body part.
+Returns the top level path associated with this ``render_model``. If provided this identifies whether the render model is associated with the player's hands or other body part.
 
 .. rst-class:: classref-item-separator
 

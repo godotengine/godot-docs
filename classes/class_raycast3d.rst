@@ -12,7 +12,7 @@ RayCast3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A ray in 3D space, used to find the first object it intersects.
+A ray in 3D space, used to find the first collision object it intersects.
 
 .. rst-class:: classref-introduction-group
 
@@ -230,7 +230,7 @@ If ``true``, collisions will be reported.
 - |void| **set_exclude_parent_body**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_exclude_parent_body**\ (\ )
 
-If ``true``, collisions will be ignored for this RayCast3D's immediate parent.
+If ``true``, this raycast will not report collisions with its parent node. This property only has an effect if the parent node is a :ref:`CollisionObject3D<class_CollisionObject3D>`. See also :ref:`Node.get_parent()<class_Node_method_get_parent>` and :ref:`add_exception()<class_RayCast3D_method_add_exception>`.
 
 .. rst-class:: classref-item-separator
 
@@ -281,7 +281,7 @@ If ``true``, the ray will detect a hit when starting inside shapes. In this case
 - |void| **set_target_position**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
 - :ref:`Vector3<class_Vector3>` **get_target_position**\ (\ )
 
-The ray's destination point, relative to the RayCast's ``position``.
+The ray's destination point, relative to this raycast's :ref:`Node3D.position<class_Node3D_property_position>`.
 
 .. rst-class:: classref-section-separator
 
@@ -298,7 +298,7 @@ Method Descriptions
 
 |void| **add_exception**\ (\ node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) :ref:`🔗<class_RayCast3D_method_add_exception>`
 
-Adds a collision exception so the ray does not report collisions with the specified :ref:`CollisionObject3D<class_CollisionObject3D>` node.
+Adds a collision exception so the ray does not report collisions with the specified ``node``.
 
 .. rst-class:: classref-item-separator
 
@@ -471,7 +471,7 @@ Returns whether any object is intersecting with the ray's vector (considering th
 
 |void| **remove_exception**\ (\ node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) :ref:`🔗<class_RayCast3D_method_remove_exception>`
 
-Removes a collision exception so the ray does report collisions with the specified :ref:`CollisionObject3D<class_CollisionObject3D>` node.
+Removes a collision exception so the ray can report collisions with the specified ``node``.
 
 .. rst-class:: classref-item-separator
 
@@ -483,7 +483,7 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 |void| **remove_exception_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RayCast3D_method_remove_exception_rid>`
 
-Removes a collision exception so the ray does report collisions with the specified :ref:`RID<class_RID>`.
+Removes a collision exception so the ray can report collisions with the specified :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 

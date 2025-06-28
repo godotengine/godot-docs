@@ -933,8 +933,6 @@ Saves the currently active scene. Returns either :ref:`@GlobalScope.OK<class_@Gl
 
 Saves the currently active scene as a file at ``path``.
 
-\ **Note:** The ``with_preview`` parameter has no effect.
-
 .. rst-class:: classref-item-separator
 
 ----

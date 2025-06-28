@@ -892,7 +892,7 @@ Override this method to define how the selected entry should be inserted. If ``r
 
 Override this method to define what items in ``candidates`` should be displayed.
 
-Both ``candidates`` and the return is a :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>`, see :ref:`get_code_completion_option()<class_CodeEdit_method_get_code_completion_option>` for :ref:`Dictionary<class_Dictionary>` content.
+Both ``candidates`` and the return is an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>`, see :ref:`get_code_completion_option()<class_CodeEdit_method_get_code_completion_option>` for :ref:`Dictionary<class_Dictionary>` content.
 
 .. rst-class:: classref-item-separator
 

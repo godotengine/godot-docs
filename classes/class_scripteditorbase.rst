@@ -175,7 +175,7 @@ Method Descriptions
 
 |void| **add_syntax_highlighter**\ (\ highlighter\: :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>`\ ) :ref:`🔗<class_ScriptEditorBase_method_add_syntax_highlighter>`
 
-Adds a :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` to the open script.
+Adds an :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` to the open script.
 
 .. rst-class:: classref-item-separator
 

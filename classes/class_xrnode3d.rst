@@ -21,7 +21,7 @@ A 3D node that has its position automatically updated by the :ref:`XRServer<clas
 Description
 -----------
 
-This node can be bound to a specific pose of a :ref:`XRPositionalTracker<class_XRPositionalTracker>` and will automatically have its :ref:`Node3D.transform<class_Node3D_property_transform>` updated by the :ref:`XRServer<class_XRServer>`. Nodes of this type must be added as children of the :ref:`XROrigin3D<class_XROrigin3D>` node.
+This node can be bound to a specific pose of an :ref:`XRPositionalTracker<class_XRPositionalTracker>` and will automatically have its :ref:`Node3D.transform<class_Node3D_property_transform>` updated by the :ref:`XRServer<class_XRServer>`. Nodes of this type must be added as children of the :ref:`XROrigin3D<class_XROrigin3D>` node.
 
 .. rst-class:: classref-introduction-group
 
