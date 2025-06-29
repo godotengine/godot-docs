@@ -1146,6 +1146,9 @@ Member variables are initialized in the following order:
     To fix this, move the ``_data`` variable definition above the ``a`` definition
     or remove the empty dictionary assignment (``= {}``).
 
+
+.. _doc_gdscript_basics_static_variables:
+
 Static variables
 ~~~~~~~~~~~~~~~~
 
@@ -1556,6 +1559,9 @@ Lambda functions capture the local environment:
             print(a) # Prints `[2]`.
         lambda.call()
         print(a) # Prints `[1]`.
+
+
+.. _doc_gdscript_basics_static_functions:
 
 Static functions
 ~~~~~~~~~~~~~~~~
