@@ -439,8 +439,7 @@ signal in a dynamic style:
 And the same callback, with type hints:
 
 ::
-
-    func _on_area_entered(area: CollisionObject2D) -> void:
+    func _on_area_2d_body_entered(body: PhysicsBody2D) -> void:
         pass
 
 Warning system
