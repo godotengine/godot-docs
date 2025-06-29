@@ -449,9 +449,9 @@ GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 Annotations
 -----------
 
-Annotations are special tokens in GDScript that act as modifiers to a script or
-its code and may affect how the script is treated by the Godot engine or
-editor.
+Annotations are special tokens in GDScript that act as modifiers to an entire script,
+a declaration, a statement, or a location in the source code. Annotations may affect
+how the script is treated by the Godot editor and the GDScript compiler.
 
 Every annotation starts with the ``@`` character and is specified by a name. A
 detailed description and example for each annotation can be found inside the
