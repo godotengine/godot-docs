@@ -281,7 +281,7 @@ Gets whether the import option specified by ``option_name`` should be visible in
 
  .. code-tab:: csharp
 
-    public void _GetOptionVisibility(string option, Godot.Collections.Dictionary options)
+    public bool _GetOptionVisibility(string option, Godot.Collections.Dictionary options)
     {
         // Only show the lossy quality setting if the compression mode is set to "Lossy".
         if (option == "compress/lossy_quality" && options.ContainsKey("compress/mode"))
