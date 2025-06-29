@@ -2,8 +2,8 @@
 
 .. _doc_soft_body:
 
-Using SoftBody
-==============
+Using SoftBody3D
+================
 
 Soft bodies (or *soft-body dynamics*) simulate movement, changing shape and other physical properties of deformable objects.
 This can for example be used to simulate cloth or to create more realistic characters.
@@ -15,7 +15,7 @@ A :ref:`SoftBody3D <class_SoftBody3D>` node is used for soft body simulations.
 
 We will create a bouncy cube to demonstrate the setup of a soft body.
 
-Create a new scene with a ``Node3D`` node as root. Then, create a ``Softbody`` node. Add a ``CubeMesh`` in the ``mesh`` property of the node in the inspector and increase the subdivision of the mesh for simulation.
+Create a new scene with a ``Node3D`` node as root. Then, create a ``SoftBody3D`` node. Add a ``CubeMesh`` in the ``mesh`` property of the node in the inspector and increase the subdivision of the mesh for simulation.
 
 .. image:: img/softbody_cube.png
 
@@ -36,9 +36,9 @@ Let's make a cloak in the Platformer3D demo.
 
 .. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>`_ or `the Asset Library <https://godotengine.org/asset-library/asset/2748>`_.
 
-Open the ``Player`` scene, add a ``SoftBody`` node and assign a ``PlaneMesh`` to it.
+Open the ``Player`` scene, add a ``SoftBody3D`` node and assign a ``PlaneMesh`` to it.
 
-Open the ``PlaneMesh`` properties and set the size(x: 0.5 y: 1) then set ``Subdivide Width`` and ``Subdivide Depth`` to 5. Adjust the ``SoftBody``'s position. You should end up with something like this:
+Open the ``PlaneMesh`` properties and set the size(x: 0.5 y: 1) then set ``Subdivide Width`` and ``Subdivide Depth`` to 5. Adjust the ``SoftBody3D``'s position. You should end up with something like this:
 
 .. image:: img/softbody_cloak_subdivide.png
 
@@ -50,15 +50,15 @@ Add a :ref:`BoneAttachment3D <class_BoneAttachment3D>` node under the skeleton n
 
 .. image:: img/softbody_cloak_bone_attach.png
 
-To create pinned joints, select the upper vertices in the ``SoftBody`` node:
+To create pinned joints, select the upper vertices in the ``SoftBody3D`` node:
 
 .. image:: img/softbody_cloak_pinned.png
 
-The pinned joints can be found in ``SoftBody``'s ``Attachments`` property, choose the ``BoneAttachment`` as the ``SpatialAttachment`` for each pinned joints, the pinned joints are now attached to the neck.
+The pinned joints can be found in ``SoftBody3D``'s ``Attachments`` property, choose the ``BoneAttachment`` as the ``SpatialAttachment`` for each pinned joints, the pinned joints are now attached to the neck.
 
 .. image:: img/softbody_cloak_pinned_attach.png
 
-Last step is to avoid clipping by adding the Kinematic Body `Player` to ``Parent Collision Ignore`` of the ``SoftBody``.
+Last step is to avoid clipping by adding the Kinematic Body `Player` to ``Parent Collision Ignore`` of the ``SoftBody3D``.
 
 .. image:: img/softbody_cloak_ignore.png
 
