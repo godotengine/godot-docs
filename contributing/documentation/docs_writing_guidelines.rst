@@ -814,3 +814,104 @@ Follow these guidelines for when to refer to a specific Godot version:
 - If a feature was added in a 3.x major or minor version, **do not specify** when
   the feature was added. These features are old enough that the exact version
   in which they were added is not relevant.
+
+Use roles for editor UI
+-----------------------
+
+Much of the manual involves describing a sequence of UI actions in the editor,
+like clicking a button, opening a menu, or setting a property in the inspector.
+To keep formatting standardized, we use custom Sphinx roles for UI elements.
+
+The following roles are defined:
+
+- ``:button:``  A button, toggle, or other clickable UI element. If the reader
+  is meant to click on it, and it's not a menu, use this. Renders as
+  :button:`bold, with a background`.
+- ``:menu:``  A series of menus to click through. When listing a series of
+  menus, separate them with ``>``.  Renders as :menu:`bold, with a background`.
+- ``:inspector:`` A property *in the inspector*. When describing a property in
+  *code*, instead either use ``code style`` or link to the property, as
+  described earlier. Renders as :inspector:`bold`. 
+- ``:ui:`` A role for any other editor UI elements. Use this if you would have
+  otherwise just used **bold style**. Use this for input fields, docks, tabs,
+  windows, bottom panels, etc. Also used for nested project settings or
+  inspector sections. Renders as :ui:`bold`.
+
+The first two roles, ``:button:`` and ``:menu:`` are used for editor UI that the
+reader is meant to click on, and they use an attention-grabbing visual style. The
+other roles, ``:inspector:`` and ``:ui:``, are used for other UI and show up 
+often in text, so they just use bold text to be less distracting.
+
+Our custom roles are inspired by the Sphinx `guilabel <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-guilabel>`_
+and `menuselection <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-menuselection>`_
+roles. However, we use our own implementation to better match the specific needs
+of Godot's documentation, using `custom RST roles <https://docutils.sourceforge.io/docs/ref/rst/directives.html#custom-interpreted-text-roles>`_
+and some custom CSS.
+
+Examples
+~~~~~~~~
+
+These are some example sections that use the roles, in context. Check the source
+of this page to see which roles are used.
+
+Adding a sprite and setting some properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the :ui:`Scene` dock, click :button:`2D Scene` to create a new scene.
+
+Add a new :ref:`Sprite2D <class_Sprite2D>` to the scene by right-clicking on the
+root node and choosing :button:`Add Child Node...`. In the :ui:`Create New Node`
+window, search for "Sprite2D", select it, and then click :button:`Create`.
+
+On the sprite, under :ui:`Offset`, set :inspector:`Offset` to ``(16, 32)``
+and enable :inspector:`Flip H`. Set :inspector:`Animation > HFrames` to ``10``.
+In :ui:`CanvasItem > Visibility`, set the :inspector:`Modulate` color to
+``ff0000``.
+
+.. tip:: 
+    
+    Don't forget to save your scene in :menu:`Scene > Save Scene...`. When the
+    :ui:`Save Scene As...` window pops up, enter "my_scene.tscn" in the
+    :ui:`File` field, then click :button:`Save`.
+
+Setting project settings
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Go to :menu:`Project > Project Settings`, then select the
+:ref:`Max FPS <class_ProjectSettings_property_application/run/max_fps>`
+setting under :ui:`Application > Run`. Don't forget to click the
+:button:`Advanced Settings` toggle. Then, in :ui:`Filter Settings`, search for
+"physics". Under :ui:`Physics > 3D > Solver`, set
+:inspector:`Solver Iterations` to ``16``.
+
+All styles in context
+^^^^^^^^^^^^^^^^^^^^^
+
+Use this section to see how the custom roles look, particularly within admonitions. 
+
+|styleroles|
+
+.. note::
+    
+    |styleroles|
+
+.. warning::
+
+    |styleroles|
+
+.. danger::
+
+    |styleroles|
+
+.. tip::
+
+    |styleroles|
+
+.. admonition:: Custom admonition
+
+    |styleroles|
+
+.. All the inline roles which are used in the docs. External links don't work in a substitution.
+.. |styleroles| replace:: Built-in styles: ``code``, **bold**, and *italics*.
+    Built-in roles: :kbd:`kbd`, :ref:`ref <doc_about_intro>`, :ref:`ref <class_node>`.
+    Custom roles: :button:`button`, :menu:`menu > submenu`, :inspector:`inspector`, :ui:`ui`.
