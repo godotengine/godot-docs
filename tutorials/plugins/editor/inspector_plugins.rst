@@ -27,15 +27,16 @@ Create a new empty plugin to get started.
 
 .. seealso:: See :ref:`doc_making_plugins` guide to set up your new plugin.
 
-Let's assume you've called your plugin folder ``my_inspector_plugin``. If so,
-you should end up with a new ``addons/my_inspector_plugin`` folder that contains
-two files: ``plugin.cfg`` and ``plugin.gd``.
+Let's assume you've called your plugin folder ``my_inspector_plugin`` and named
+the script accordingly. If so, you should end up with a new
+``addons/my_inspector_plugin`` folder that contains two files: ``plugin.cfg``
+and ``my_inspector_plugin.gd``.
 
-As before, ``plugin.gd`` is a script extending :ref:`class_EditorPlugin` and you
-need to introduce new code for its ``_enter_tree`` and ``_exit_tree`` methods.
-To set up your inspector plugin, you must load its script, then create and add
-the instance by calling ``add_inspector_plugin()``. If the plugin is disabled,
-you should remove the instance you have added by calling
+As before, ``my_inspector_plugin.gd`` is a script extending
+:ref:`class_EditorPlugin` and you need to introduce new code for its ``_enter_tree``
+and ``_exit_tree`` methods. To set up your inspector plugin, you must load its
+script, then create and add the instance by calling ``add_inspector_plugin()``.
+If the plugin is disabled, you should remove the instance you have added by calling
 ``remove_inspector_plugin()``.
 
 .. note:: Here, you are loading a script and not a packed scene. Therefore you
