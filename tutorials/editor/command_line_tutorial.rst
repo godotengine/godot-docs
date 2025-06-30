@@ -43,17 +43,19 @@ given build type.
 
 **General options**
 
-+----------------------------+-----------------------------------------------------------------------------+
-| Command                    | Description                                                                 |
-+----------------------------+-----------------------------------------------------------------------------+
-| ``-h``, ``--help``         | |release| Display the list of command line options.                         |
-+----------------------------+-----------------------------------------------------------------------------+
-| ``--version``              | |release| Display the version string.                                       |
-+----------------------------+-----------------------------------------------------------------------------+
-| ``-v``, ``--verbose``      | |release| Use verbose stdout mode.                                          |
-+----------------------------+-----------------------------------------------------------------------------+
-| ``-q``, ``--quiet``        | |release| Quiet mode, silences stdout messages. Errors are still displayed. |
-+----------------------------+-----------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------+
+| Command                    | Description                                                                   |
++----------------------------+-------------------------------------------------------------------------------+
+| ``-h``, ``--help``         | |release| Display the list of command line options.                           |
++----------------------------+-------------------------------------------------------------------------------+
+| ``--version``              | |release| Display the version string.                                         |
++----------------------------+-------------------------------------------------------------------------------+
+| ``-v``, ``--verbose``      | |release| Use verbose stdout mode.                                            |
++----------------------------+-------------------------------------------------------------------------------+
+| ``-q``, ``--quiet``        | |release| Quiet mode, silences stdout messages. Errors are still displayed.   |
++----------------------------+-------------------------------------------------------------------------------+
+| ``--no-header``            | |release| Do not print engine version and rendering method header on startup. |
++----------------------------+-------------------------------------------------------------------------------+
 
 **Run options**
 
@@ -65,6 +67,9 @@ given build type.
 | ``-e``, ``--editor``                     | |editor| Start the editor instead of running the scene.                                                                                                      |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``-p``, ``--project-manager``            | |editor| Start the Project Manager, even if a project is auto-detected.                                                                                      |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--recovery-mode``                      | |editor| "Start the editor in recovery mode, which disables features that can typically cause startup crashes, such as tool scripts, editor plugins,         |
+|                                          | GDExtension addons, and others.                                                                                                                              |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--debug-server <uri>``                 | |editor| Start the editor debug server (``<protocol>://<host/IP>[:<port>]``, e.g. ``tcp://127.0.0.1:6007``)                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,6 +86,8 @@ given build type.
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--path <directory>``                   | |release| Path to a project (``<directory>`` must contain a 'project.godot' file).                                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``scene <path>``                         | |release| Path or UID of a scene in the project that should be started.                                                                                      |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``-u``, ``--upwards``                    | |release| Scan folders upwards for 'project.godot' file.                                                                                                     |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--main-pack <file>``                   | |release| Path to a pack (.pck) file to load.                                                                                                                |
@@ -96,6 +103,9 @@ given build type.
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--display-driver <driver>``            | |release| Display driver (and rendering driver). Use ``--help`` first to display the list of available drivers.                                              |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--audio-output-latency`` <ms>          | |release| Override audio output latency in milliseconds (default is 15 ms). Lower values make sound playback more reactive but increase CPU usage, and may   |
+|                                          | result in audio cracking if the CPU can't keep up                                                                                                            |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--rendering-method <renderer>``        | |release| Renderer name. Requires driver support.                                                                                                            |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--rendering-driver <driver>``          | |release| Rendering driver (depends on display driver). Use ``--help`` first to display the list of available drivers.                                       |
@@ -107,6 +117,9 @@ given build type.
 | ``--tablet-driver <driver>``             | |release| Pen tablet input driver.                                                                                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--headless``                           | |release| Enable headless mode (``--display-driver headless --audio-driver Dummy``). Useful for servers and with ``--script``.                               |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--log-file``                           | |release| Write output/error log to the specified path instead of the default location defined by the project. <file> path should be absolute or relative to |
+|                                          | the project directory.                                                                                                                                       |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--write-movie <file>``                 | |release| Run the engine in a way that a movie is written (usually with .avi or .png extension).                                                             |
 |                                          | ``--fixed-fps`` is forced when enabled, but can be used to change movie FPS.                                                                                 |
@@ -137,6 +150,11 @@ given build type.
 +------------------------------------+----------------------------------------------------------------------------+
 | ``--xr-mode <mode>``               | |release| Select XR mode ('default', 'off', 'on').                         |
 +------------------------------------+----------------------------------------------------------------------------+
+| ``--wid <window_id>``              | |release| Request parented to window.                                      |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--accessibility <mode>``         | |release| Select accessibility mode ['auto' (when screen reader is running,|
+|                                    | default), 'always', 'disabled'].                                           |
++------------------------------------+----------------------------------------------------------------------------+
 
 **Debug options**
 
@@ -147,6 +165,8 @@ given build type.
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``-b``, ``--breakpoints``      | |release| Breakpoint list as source::line comma-separated pairs, no spaces (use ``%20`` instead).               |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--ignore-error-breaks``      | |release| If debugger is connected, prevents sending error breakpoints.                                         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--profiling``                | |release| Enable profiling in the script debugger.                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--gpu-profile``              | |release| Show a GPU profile of the tasks that took the most time during frame rendering.                       |
@@ -154,6 +174,16 @@ given build type.
 | ``--gpu-validation``           | |release| Enable graphics API :ref:`validation layers <doc_vulkan_validation_layers>` for debugging.            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--gpu-abort``                | |debug| Abort on GPU errors (usually validation layer errors), may help see the problem if your system freezes. |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--generate-spirv-debug-info``| |debug| Generate SPIR-V debug information. This allows source-level shader debugging with RenderDoc.            |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--extra-gpu-memory-tracking``| |debug| Enables additional memory tracking (see class reference for                                             |
+|                                | `RenderingDevice.get_driver_and_device_memory_report()` and linked methods). Currently only implemented for     |
+|                                | Vulkan. Enabling this feature may cause crashes on some systems due to buggy drivers or bugs in the Vulkan      |
+|                                | Loader. See https://github.com/godotengine/godot/issues/95967                                                   |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--accurate-breadcrumbs``     | |debug| Force barriers between breadcrumbs. Useful for narrowing down a command causing GPU resets. Currently   |
+|                                | only implemented for Vulkan.                                                                                    |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--remote-debug <uri>``       | |release| Remote debug (``<protocol>://<host/IP>[:<port>]``, e.g. ``tcp://127.0.0.1:6007``).                    |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -169,7 +199,14 @@ given build type.
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--debug-stringnames``        | |debug| Print all StringName allocations to stdout when the engine quits.                                       |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--frame-delay <ms>``         | |release| Simulate high CPU load (delay each frame by <ms> milliseconds).                                       |
+| ``--debug-canvas-item-redraw`` | |debug| Display a rectangle each time a canvas item requests a redraw (useful to troubleshoot low processor     |
+|                                | mode).                                                                                                          |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--max-fps <fps>``            | |release| Set a maximum number of frames per second rendered (can be used to limit power usage). A value of 0   |
+|                                | results in unlimited framerate.                                                                                 |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--frame-delay <ms>``         | |release| Simulate high CPU load (delay each frame by <ms> milliseconds). Do not use as a FPS limiter; use      |
+|                                | --max-fps instead.                                                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--time-scale <scale>``       | |release| Force time scale (higher values are faster, 1.0 is normal speed).                                     |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -186,6 +223,8 @@ given build type.
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--print-fps``                | |release| Print the frames per second to the stdout.                                                            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--editor-pseudolocalization``| |editor| Enable pseudolocalization for the editor and the project manager.                                      |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 **Standalone tools**
 
@@ -195,18 +234,26 @@ given build type.
 | ``-s``, ``--script <script>``                                    | |release| Run a script. ``<script>`` must be a resource path relative to the project (``myscript.gd`` will be interpreted as ``res://myscript.gd``)     |
 |                                                                  | or an absolute filesystem path (for example on Windows ``C:/tmp/myscript.gd``)                                                                          |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--main-loop <main_loop_name>``                                 | |release| Run a MainLoop specified by its global class name.                                                                                            |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--check-only``                                                 | |release| Only parse for errors and quit (use with ``--script``).                                                                                       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--import``                                                     | |editor| Starts the editor, waits for any resources to be imported, and then quits. Implies ``--editor`` and ``--quit``.                                |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--export-release <preset> <path>``                             | |editor| Export the project using the given preset and matching release template. The preset name should match one defined in export_presets.cfg.       |
+| ``--export-release <preset> <path>``                             | |editor| Export the project in release mode using the given preset and output path. The preset name should match one defined in 'export_presets.cfg'.   |
 |                                                                  | ``<path>`` should be absolute or relative to the project directory, and include the filename for the binary (e.g. 'builds/game.exe'). The target        |
-|                                                                  | directory should exist. Implies ``--import``.                                                                                                           |
+|                                                                  | directory must exist.                                                                                                                                   |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--export-debug <preset> <path>``                               | |editor| Like ``--export-release``, but use debug template. Implies ``--import``.                                                                       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--export-pack <preset> <path>``                                | |editor| Like ``--export-release``, but only export the game pack for the given preset. The ``<path>`` extension determines whether it will be in PCK   |
 |                                                                  | or ZIP format. Implies ``--import``.                                                                                                                    |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-patch <preset> <path>``                               | |editor| Export pack with changed files only. See --export-pack description for other considerations.                                                   |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--patches <paths>``                                            | |editor| List of patches to use with --export-patch. The list is comma-separated.                                                                       |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--install-android-build-template``                             | |editor| Install the Android build template. Used in conjunction with --export-release or --export-debug.                                               |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--convert-3to4 [<max_file_kb>] [<max_line_size>]``             | |editor| Convert project from Godot 3.x to Godot 4.x.                                                                                                   |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -232,6 +279,9 @@ given build type.
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--benchmark-file <path>``                                      | |editor| Benchmark the run time and save it to a given file in JSON format. The path should be absolute.                                                |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+|``--test [--help]``                                               | |editor| Run unit tests. Use --test --help for more information.                                                                                        |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Path
 ----
