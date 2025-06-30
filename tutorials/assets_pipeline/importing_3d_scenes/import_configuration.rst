@@ -503,13 +503,13 @@ When animations are imported, an optimizer is run, which reduces the size of the
 animation considerably. In general, this should always be turned on unless you
 suspect that an animation might be broken due to it being enabled.
 
-Clips
-~~~~~
+Slices
+~~~~~~
 
-It is possible to specify multiple animations from a single timeline as clips.
+It is possible to specify multiple animations from a single timeline as slices.
 For this to work, the model must have only one animation that is named
-``default``. To create clips, change the clip amount to something greater than
-zero. You can then name a clip, specify which frames it starts and stops on, and
+``default``. To create slices, change the slice amount to something greater than
+zero. You can then name a slice, specify which frames it starts and stops on, and
 choose whether the animation loops or not.
 
 Scene inheritance
