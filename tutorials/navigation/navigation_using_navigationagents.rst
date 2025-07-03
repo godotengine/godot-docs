@@ -110,7 +110,7 @@ This velocity vector should be used to move the NavigationAgent's parent node in
 
 The following NavigationAgent properties are relevant for avoidance:
 
-  - The property ``height`` is available in 3D only. The height together with the current global y-axis position of the agent determines the vertical placement of the agent in the avoidance simulation. Agents using the 2D avoidance will automatically ignore other agents or obstacles that are below or above them.
+  - The property ``height`` together with the current global y-axis position of the agent determines the vertical placement of the agent in the avoidance simulation. Agents using the 2D avoidance will automatically ignore other agents or obstacles that are below or above them.
   - The property ``radius`` controls the size of the avoidance circle, or in case of 3D sphere, around the agent. This area describes the agents body and not the avoidance maneuver distance.
   - The property ``neighbor_distance`` controls the search radius of the agent when searching for other agents that should be avoided. A lower value reduces processing cost.
   - The property ``max_neighbors`` controls how many other agents are considered in the avoidance calculation if they all have overlapping radius.
