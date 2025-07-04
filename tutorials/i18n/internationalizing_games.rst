@@ -311,11 +311,13 @@ It is possible to override text and control layout direction by using the follow
 Adding break iterator data to exported project
 ----------------------------------------------
 
-Some languages are written without spaces, and word and line breaking requires more than rules over character sequences.
-Godot includes ICU rule and dictionary based, break iterator data, but this data is not included into exported projects by default.
-To include it go to **Project → Project Settings → Localization → Text Server Data** and click **Install support data...**. Break iterator data is about 4 MB large.
+Some languages are written without spaces. In those languages,
+word and line breaking require more than rules over character sequences.
+Godot includes ICU rule and dictionary-based break iterator data, but this data
+is not included in exported projects by default.
 
-.. image:: img/icu_data.png
+To include it, go to **Project → Project Settings**, enable **Internationalization → Locale → Include Text Server Data**,
+then export the project. Break iterator data is about 4 MB in size.
 
 Structured text BiDi override
 -----------------------------
