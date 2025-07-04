@@ -67,3 +67,21 @@ Play the scene and the cloak should simulate correctly.
 .. image:: img/softbody_cloak_finish.png
 
 This covers the basic settings of softbody, experiment with the parameters to achieve the effect you are aiming for when making your game.
+
+Using Imported Meshes
+~~~~~~~~~~~~~~~~~~~~~
+
+The **Save to File** option in the Advanced Import Settings dialog allows you
+to save a mesh to a standalone resource file that you can then attach to
+``SoftBody3D`` nodes.
+
+You may also want to disable LOD generation or change the LOD generation options
+when importing a mesh for use with ``SoftBody3D``. The default import settings
+will produce an LOD that merges adjacent faces that are nearly flat with
+respect to each other, even at very close render distances. This works well for
+static meshes, but is often undesirable for use with ``SoftBody3D`` if you want
+these faces to be able to bend and move with respect to each other, instead of
+being rendered as a single plane.
+
+See :ref:`doc_importing_3d_scenes_import_configuration` and :ref:`doc_mesh_lod`
+for more details.
