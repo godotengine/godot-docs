@@ -130,7 +130,7 @@ everything up for a new game:
 
     func new_game():
         score = 0
-        $Player.start($StartPosition.position)
+        $Player.Start($StartPosition.position)
         $StartTimer.start()
 
  .. code-tab:: csharp
