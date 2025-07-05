@@ -1272,6 +1272,27 @@ A connection is represented as a :ref:`Dictionary<class_Dictionary>` in the form
         keep_alive: bool
     }
 
+\ **Example:** Get all connections on a specific port:
+
+::
+
+    func get_connection_list_from_port(node, port):
+        var connections = get_connection_list_from_node(node)
+        var result = []
+        for connection in connections:
+            var dict = {}
+            if connection["from_node"] == node and connection["from_port"] == port:
+                dict["node"] = connection["to_node"]
+                dict["port"] = connection["to_port"]
+                dict["type"] = "left"
+                result.push_back(dict)
+            elif connection["to_node"] == node and connection["to_port"] == port:
+                dict["node"] = connection["from_node"]
+                dict["port"] = connection["from_port"]
+                dict["type"] = "right"
+                result.push_back(dict)
+        return result
+
 .. rst-class:: classref-item-separator
 
 ----

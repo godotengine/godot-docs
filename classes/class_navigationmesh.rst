@@ -330,6 +330,8 @@ The distance to erode/shrink the walkable area of the heightfield away from obst
 
 \ **Note:** While baking, this value will be rounded up to the nearest multiple of :ref:`cell_size<class_NavigationMesh_property_cell_size>`.
 
+\ **Note:** The radius must be equal or higher than ``0.0``. If the radius is ``0.0``, it won't be possible to fix invalid outline overlaps and other precision errors during the baking process. As a result, some obstacles may be excluded incorrectly from the final navigation mesh, or may delete the navigation mesh's polygons.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -349,7 +351,7 @@ The size of the non-navigable border around the bake bounding area.
 
 In conjunction with the :ref:`filter_baking_aabb<class_NavigationMesh_property_filter_baking_aabb>` and a :ref:`edge_max_error<class_NavigationMesh_property_edge_max_error>` value at ``1.0`` or below the border size can be used to bake tile aligned navigation meshes without the tile edges being shrunk by :ref:`agent_radius<class_NavigationMesh_property_agent_radius>`.
 
-\ **Note:** While baking and not zero, this value will be rounded up to the nearest multiple of :ref:`cell_size<class_NavigationMesh_property_cell_size>`.
+\ **Note:** If this value is not ``0.0``, it will be rounded up to the nearest multiple of :ref:`cell_size<class_NavigationMesh_property_cell_size>` during baking.
 
 .. rst-class:: classref-item-separator
 
