@@ -21,7 +21,7 @@ Description
 
 Node for 2D tile-based maps. A **TileMapLayer** uses a :ref:`TileSet<class_TileSet>` which contain a list of tiles which are used to create grid-based maps. Unlike the :ref:`TileMap<class_TileMap>` node, which is deprecated, **TileMapLayer** has only one layer of tiles. You can use several **TileMapLayer** to achieve the same result as a :ref:`TileMap<class_TileMap>` node.
 
-For performance reasons, all TileMap updates are batched at the end of a frame. Notably, this means that scene tiles from a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` may be initialized after their parent. This is only queued when inside the scene tree.
+For performance reasons, all TileMap updates are batched at the end of a frame. Notably, this means that scene tiles from a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` are initialized after their parent. This is only queued when inside the scene tree.
 
 To force an update earlier on, call :ref:`update_internals()<class_TileMapLayer_method_update_internals>`.
 

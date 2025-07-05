@@ -3430,8 +3430,6 @@ Editor-only override for :ref:`debug/settings/crash_handler/message<class_Projec
 
 Whether GDScript call stacks will be tracked in release builds, thus allowing :ref:`Engine.capture_script_backtraces()<class_Engine_method_capture_script_backtraces>` to function.
 
-Enabling this comes at the cost of roughly 40 KiB for every thread that runs any GDScript code.
-
 \ **Note:** This setting has no effect on editor builds or debug builds, where GDScript call stacks are tracked regardless.
 
 .. rst-class:: classref-item-separator

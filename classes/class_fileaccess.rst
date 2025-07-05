@@ -1104,7 +1104,7 @@ Sets file UNIX permissions.
 
 :ref:`bool<class_bool>` **store_8**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_8>`
 
-Stores an integer as 8 bits in the file. This advances the file cursor by 1 byte.
+Stores an integer as 8 bits in the file. This advances the file cursor by 1 byte. Returns ``true`` if the operation is successful.
 
 \ **Note:** The ``value`` should lie in the interval ``[0, 255]``. Any other value will overflow and wrap around.
 
@@ -1122,7 +1122,7 @@ To store a signed integer, use :ref:`store_64()<class_FileAccess_method_store_64
 
 :ref:`bool<class_bool>` **store_16**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_16>`
 
-Stores an integer as 16 bits in the file. This advances the file cursor by 2 bytes.
+Stores an integer as 16 bits in the file. This advances the file cursor by 2 bytes. Returns ``true`` if the operation is successful.
 
 \ **Note:** The ``value`` should lie in the interval ``[0, 2^16 - 1]``. Any other value will overflow and wrap around.
 
@@ -1177,7 +1177,7 @@ To store a signed integer, use :ref:`store_64()<class_FileAccess_method_store_64
 
 :ref:`bool<class_bool>` **store_32**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_32>`
 
-Stores an integer as 32 bits in the file. This advances the file cursor by 4 bytes.
+Stores an integer as 32 bits in the file. This advances the file cursor by 4 bytes. Returns ``true`` if the operation is successful.
 
 \ **Note:** The ``value`` should lie in the interval ``[0, 2^32 - 1]``. Any other value will overflow and wrap around.
 
@@ -1195,7 +1195,7 @@ To store a signed integer, use :ref:`store_64()<class_FileAccess_method_store_64
 
 :ref:`bool<class_bool>` **store_64**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_64>`
 
-Stores an integer as 64 bits in the file. This advances the file cursor by 8 bytes.
+Stores an integer as 64 bits in the file. This advances the file cursor by 8 bytes. Returns ``true`` if the operation is successful.
 
 \ **Note:** The ``value`` must lie in the interval ``[-2^63, 2^63 - 1]`` (i.e. be a valid :ref:`int<class_int>` value).
 
@@ -1211,7 +1211,7 @@ Stores an integer as 64 bits in the file. This advances the file cursor by 8 byt
 
 :ref:`bool<class_bool>` **store_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_FileAccess_method_store_buffer>`
 
-Stores the given array of bytes in the file. This advances the file cursor by the number of bytes written.
+Stores the given array of bytes in the file. This advances the file cursor by the number of bytes written. Returns ``true`` if the operation is successful.
 
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
@@ -1227,7 +1227,7 @@ Stores the given array of bytes in the file. This advances the file cursor by th
 
 Store the given :ref:`PackedStringArray<class_PackedStringArray>` in the file as a line formatted in the CSV (Comma-Separated Values) format. You can pass a different delimiter ``delim`` to use other than the default ``","`` (comma). This delimiter must be one-character long.
 
-Text will be encoded as UTF-8.
+Text will be encoded as UTF-8. Returns ``true`` if the operation is successful.
 
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
@@ -1241,7 +1241,7 @@ Text will be encoded as UTF-8.
 
 :ref:`bool<class_bool>` **store_double**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_double>`
 
-Stores a floating-point number as 64 bits in the file. This advances the file cursor by 8 bytes.
+Stores a floating-point number as 64 bits in the file. This advances the file cursor by 8 bytes. Returns ``true`` if the operation is successful.
 
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
@@ -1255,7 +1255,7 @@ Stores a floating-point number as 64 bits in the file. This advances the file cu
 
 :ref:`bool<class_bool>` **store_float**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_float>`
 
-Stores a floating-point number as 32 bits in the file. This advances the file cursor by 4 bytes.
+Stores a floating-point number as 32 bits in the file. This advances the file cursor by 4 bytes. Returns ``true`` if the operation is successful.
 
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
@@ -1269,7 +1269,7 @@ Stores a floating-point number as 32 bits in the file. This advances the file cu
 
 :ref:`bool<class_bool>` **store_half**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_half>`
 
-Stores a half-precision floating-point number as 16 bits in the file. This advances the file cursor by 2 bytes.
+Stores a half-precision floating-point number as 16 bits in the file. This advances the file cursor by 2 bytes. Returns ``true`` if the operation is successful.
 
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
@@ -1283,7 +1283,7 @@ Stores a half-precision floating-point number as 16 bits in the file. This advan
 
 :ref:`bool<class_bool>` **store_line**\ (\ line\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_line>`
 
-Stores ``line`` in the file followed by a newline character (``\n``), encoding the text as UTF-8. This advances the file cursor by the length of the line, after the newline character. The amount of bytes written depends on the UTF-8 encoded bytes, which may be different from :ref:`String.length()<class_String_method_length>` which counts the number of UTF-32 codepoints.
+Stores ``line`` in the file followed by a newline character (``\n``), encoding the text as UTF-8. This advances the file cursor by the length of the line, after the newline character. The amount of bytes written depends on the UTF-8 encoded bytes, which may be different from :ref:`String.length()<class_String_method_length>` which counts the number of UTF-32 codepoints. Returns ``true`` if the operation is successful.
 
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
@@ -1297,7 +1297,7 @@ Stores ``line`` in the file followed by a newline character (``\n``), encoding t
 
 :ref:`bool<class_bool>` **store_pascal_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_pascal_string>`
 
-Stores the given :ref:`String<class_String>` as a line in the file in Pascal format (i.e. also store the length of the string). Text will be encoded as UTF-8. This advances the file cursor by the number of bytes written depending on the UTF-8 encoded bytes, which may be different from :ref:`String.length()<class_String_method_length>` which counts the number of UTF-32 codepoints.
+Stores the given :ref:`String<class_String>` as a line in the file in Pascal format (i.e. also store the length of the string). Text will be encoded as UTF-8. This advances the file cursor by the number of bytes written depending on the UTF-8 encoded bytes, which may be different from :ref:`String.length()<class_String_method_length>` which counts the number of UTF-32 codepoints. Returns ``true`` if the operation is successful.
 
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
@@ -1313,7 +1313,7 @@ Stores the given :ref:`String<class_String>` as a line in the file in Pascal for
 
 Stores a floating-point number in the file. This advances the file cursor by either 4 or 8 bytes, depending on the precision used by the current Godot build.
 
-If using a Godot build compiled with the ``precision=single`` option (the default), this method will save a 32-bit float. Otherwise, if compiled with the ``precision=double`` option, this will save a 64-bit float.
+If using a Godot build compiled with the ``precision=single`` option (the default), this method will save a 32-bit float. Otherwise, if compiled with the ``precision=double`` option, this will save a 64-bit float. Returns ``true`` if the operation is successful.
 
 \ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
@@ -1327,7 +1327,7 @@ If using a Godot build compiled with the ``precision=single`` option (the defaul
 
 :ref:`bool<class_bool>` **store_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_string>`
 
-Stores ``string`` in the file without a newline character (``\n``), encoding the text as UTF-8. This advances the file cursor by the length of the string in UTF-8 encoded bytes, which may be different from :ref:`String.length()<class_String_method_length>` which counts the number of UTF-32 codepoints.
+Stores ``string`` in the file without a newline character (``\n``), encoding the text as UTF-8. This advances the file cursor by the length of the string in UTF-8 encoded bytes, which may be different from :ref:`String.length()<class_String_method_length>` which counts the number of UTF-32 codepoints. Returns ``true`` if the operation is successful.
 
 \ **Note:** This method is intended to be used to write text files. The string is stored as a UTF-8 encoded buffer without string length or terminating zero, which means that it can't be loaded back easily. If you want to store a retrievable string in a binary file, consider using :ref:`store_pascal_string()<class_FileAccess_method_store_pascal_string>` instead. For retrieving strings from a text file, you can use ``get_buffer(length).get_string_from_utf8()`` (if you know the length) or :ref:`get_as_text()<class_FileAccess_method_get_as_text>`.
 
@@ -1343,7 +1343,7 @@ Stores ``string`` in the file without a newline character (``\n``), encoding the
 
 :ref:`bool<class_bool>` **store_var**\ (\ value\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_FileAccess_method_store_var>`
 
-Stores any Variant value in the file. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code). This advances the file cursor by the number of bytes written.
+Stores any Variant value in the file. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code). This advances the file cursor by the number of bytes written. Returns ``true`` if the operation is successful.
 
 Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes()<class_@GlobalScope_method_var_to_bytes>` method, as described in the :doc:`Binary serialization API <../tutorials/io/binary_serialization_api>` documentation.
 

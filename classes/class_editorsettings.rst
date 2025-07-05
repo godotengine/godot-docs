@@ -5492,7 +5492,15 @@ If ``true``, uses :ref:`StringName<class_StringName>` instead of :ref:`String<cl
 
 :ref:`bool<class_bool>` **text_editor/completion/add_type_hints** :ref:`🔗<class_EditorSettings_property_text_editor/completion/add_type_hints>`
 
-If ``true``, adds :doc:`GDScript static typing <../tutorials/scripting/gdscript/static_typing>` hints such as ``-> void`` and ``: int`` when using code autocompletion or when creating onready variables by drag and dropping nodes into the script editor while pressing the :kbd:`Ctrl` key. If ``true``, newly created scripts will also automatically have type hints added to their method parameters and return types.
+If ``true``, automatically adds :doc:`GDScript static typing <../tutorials/scripting/gdscript/static_typing>` (such as ``-> void`` and ``: int``) in many situations where it's possible to, including when:
+
+- Accepting a suggestion from code autocompletion;
+
+- Creating a new script from a template;
+
+- Connecting signals from the Node dock;
+
+- Creating variables prefixed with :ref:`@GDScript.@onready<class_@GDScript_annotation_@onready>`, by dropping nodes from the Scene dock into the script editor while holding :kbd:`Ctrl`.
 
 .. rst-class:: classref-item-separator
 
