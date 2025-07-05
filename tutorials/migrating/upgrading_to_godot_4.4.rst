@@ -52,8 +52,7 @@ Method ``create_from_string`` adds a new ``show_error`` optional parameter      
 **Semaphore**
 Method ``post`` adds a new ``count`` optional parameter                                                                   |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-93605`_
 **TranslationServer**
-Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter 
-                                             |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-98972`_
+Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter                                              |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-98972`_
 ========================================================================================================================  ===================  ====================  ====================  ============
 **Export annotations**
 
