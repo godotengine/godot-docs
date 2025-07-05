@@ -153,6 +153,10 @@ field in the *export preset* used to generate it:
     running the project from the editor, even if the export preset marked as
     **Runnable** for your current platform has custom feature tags defined.
 
+    Custom feature tags are also not used in :ref:`class_EditorExportPlugin`
+    scripts. Instead, feature tags in :ref:`class_EditorExportPlugin`
+    will reflect the device the editor is currently running on.
+
 Overriding project settings
 ---------------------------
 
