@@ -10,16 +10,15 @@ Godot provides 3 options to import your audio data: WAV, Ogg Vorbis and MP3.
 
 Each format has different advantages:
 
-- WAV files use raw data or light compression (IMA-ADPCM or QOA). Currently
-  they can only be imported in raw format, but Godot allows compression after
-  import. They are lightweight to play back on the CPU (hundreds of simultaneous
-  voices in this format are fine). The downside is that they take up a lot of disk space.
-- Ogg Vorbis files use a stronger compression that results in much
-  smaller file size, but require significantly more processing power to
-  play back.
-- MP3 files use better compression than WAV with IMA-ADPCM or QOA, but worse 
-  than Ogg Vorbis. This means that an MP3 file with roughly equal quality to
-  Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
+- WAV files use raw data or light compression (IMA ADPCM or Quite OK Audio). Currently
+  they can only be imported in raw format, but Godot allows compression after import.
+  They are lightweight to play back on the CPU (hundreds of simultaneous voices
+  in this format are fine). The downside is that they take up a lot of disk space.
+- Ogg Vorbis files use a stronger compression that results in much smaller file
+  size, but require significantly more processing power to play back.
+- MP3 files use better compression than WAV with IMA ADPCM or Quite OK Audio, but
+  worse than Ogg Vorbis. This means that an MP3 file with roughly equal quality 
+  to Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
   less CPU usage to play back compared to Ogg Vorbis.
 
 .. note::
@@ -30,23 +29,23 @@ Each format has different advantages:
 Here is a comparative chart representing the file size of 1 second of audio with
 each format:
 
-+-----------------------------+-------------------+
-| Format                      | 1 second of audio |
-+=============================+===================+
-| WAV 24-bit, 96 kHz, stereo  | 576 KB            |
-+-----------------------------+-------------------+
-| WAV 16-bit, 44 kHz, mono    | 88 KB             |
-+-----------------------------+-------------------+
-| WAV IMA-ADPCM, 44 kHz, mono | 22 KB             |
-+-----------------------------+-------------------+
-| WAV QOA, 44 kHz, mono       | 17 KB             |
-+-----------------------------+-------------------+
-| MP3 192 Kb/s, stereo        | 24 KB             |
-+-----------------------------+-------------------+
-| Ogg Vorbis 128 Kb/s, stereo | 16 KB             |
-+-----------------------------+-------------------+
-| Ogg Vorbis 96 Kb/s, stereo  | 12 KB             |
-+-----------------------------+-------------------+
++------------------------------+-------------------+
+| Format                       | 1 second of audio |
++==============================+===================+
+| WAV 24-bit, 96 kHz, stereo   | 576 KB            |
++------------------------------+-------------------+
+| WAV 16-bit, 44 kHz, mono     | 88 KB             |
++------------------------------+-------------------+
+| WAV IMA ADPCM, 44 kHz, mono  | 22 KB             |
++------------------------------+-------------------+
+| Quite OK Audio, 44 kHz, mono | 17 KB             |
++------------------------------+-------------------+
+| MP3 192 Kb/s, stereo         | 24 KB             |
++------------------------------+-------------------+
+| Ogg Vorbis 128 Kb/s, stereo  | 16 KB             |
++------------------------------+-------------------+
+| Ogg Vorbis 96 Kb/s, stereo   | 12 KB             |
++------------------------------+-------------------+
 
 Note that the MP3 and Ogg Vorbis figures can vary depending on the encoding
 type. The above figures use :abbr:`CBR (Constant Bit Rate)` encoding for
@@ -125,8 +124,8 @@ saving to a waveform, which increases their size unnecessarily and add latency
 to the moment they are played back.
 
 Enabling **Trim** will automatically trim the beginning and end of the audio if
-it's lower than -50 dB *after* normalization (see **Edit > Normalize** below). A
-fade-in/fade-out period of 500 samples is also used during trimming to avoid
+it's lower than -50 dB *after* normalization (see **Edit > Normalize** below).
+A fade-in/fade-out period of 500 samples is also used during trimming to avoid
 audible pops.
 
 Edit > Normalize
@@ -143,13 +142,15 @@ Unlike Ogg Vorbis and MP3, WAV files can contain metadata to indicate whether
 they're looping (in addition to loop points). By default, Godot will follow this
 metadata, but you can choose to apply a specific loop mode:
 
+- **Detect from WAV:** Uses loop information from the WAV metadata.
 - **Disabled:** Don't loop audio, even if metadata indicates the file should be
   played back looping.
-- **Forward:** Standard audio looping.
-- **Ping-Pong:** Play audio forward until it's done playing, then play it
-  backward and repeat. This is similar to mirrored texture repeat, but for
-  audio.
-- **Backward:** Play audio in reverse and loop back to the end when done playing.
+- **Forward:** Standard audio looping. Plays the audio forward from the beginning 
+  to the loop end, then returns to the loop beginning and repeats.
+- **Ping-Pong:** Plays the audio forward until the loop end, then backwards to 
+  the loop beginning, repeating this cycle.
+- **Backward:** Plays the audio backwards from the loop end to the loop beginning, 
+  then repeats.
 
 When choosing one of the **Forward**, **Ping-Pong** or **Backward** loop modes,
 loop points can also be defined to make only a specific part of the sound loop.
@@ -166,12 +167,12 @@ the end of the audio file if set to ``-1``.
 Compress > Mode
 ---------------
 
-Three compression modes can be chosen from for WAV files: **Disabled** (default),
-**RAM (Ima-ADPCM)**, or **QOA (Quite OK Audio)**. **RAM (Ima-ADPCM)** reduces
-file size and memory usage a little, at the cost of decreasing quality in an
-audible manner. **QOA (Quite OK Audio)** reduces file size a bit more than
-**RAM (Ima-ADPCM)** and the quality decrease is much less noticeable, at the
-cost of higher CPU usage (still much lower than MP3).
+Three compression modes can be chosen from for WAV files: **PCM (Uncompressed)**,
+**IMA ADPCM**, or **Quite OK Audio** (default). **IMA ADPCM** reduces file size
+and memory usage a little, at the cost of decreasing quality in an audible manner.
+**Quite OK Audio** reduces file size a bit more than **IMA ADPCM** and the quality
+decrease is much less noticeable, at the cost of slightly higher CPU usage (still
+much lower than MP3).
 
 Ogg Vorbis and MP3 don't decrease quality as much and can provide greater file
 size reductions, at the cost of higher CPU usage during playback. This higher
@@ -265,8 +266,8 @@ music tracks).
 .. note::
 
     Unlike WAV files, Ogg Vorbis and MP3 only support a "loop begin" loop point,
-    not a "loop end" point. Looping can also be only be standard forward
-    looping, not ping-pong or backward.
+    not a "loop end" point. Looping can also be only be standard forward looping,
+    not ping-pong or backward.
 
 .. _doc_importing_audio_samples_best_practices:
 
