@@ -66,6 +66,7 @@ Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter    
     In 4.4, the only way to retain the ``res://`` format is to **manually edit** the `.tscn` or `.tres` files in a text editor. Starting in Godot 4.5, a new annotation ``@export_file_path`` can be used to explicitly retain the old behavior and export raw ``res://`` paths.
 
     Related issues:
+
     - PR: `Add @export_file_path to export raw paths (no UID) <https://github.com/godotengine/godot/pull/105414>`_
     - Issue: `@export_file behavior change is breaking <https://github.com/godotengine/godot/issues/11065>`_
     - See also: `ProjectSettings stores UIDs for file paths <https://github.com/godotengine/godot/pull/104818>`_
