@@ -54,6 +54,7 @@ Method ``post`` adds a new ``count`` optional parameter                         
 **TranslationServer**
 Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter                                              |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-98972`_
 ========================================================================================================================  ===================  ====================  ====================  ============
+
 **Export annotations**
 
 .. warning::
