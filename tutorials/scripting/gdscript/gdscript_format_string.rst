@@ -86,8 +86,8 @@ specifier. Apart from ``s``, these require certain types of parameters.
 | ``s`` | **Simple** conversion to String by the same method as implicit      |
 |       | String conversion.                                                  |
 +-------+---------------------------------------------------------------------+
-| ``c`` | A single **Unicode character**. Expects an unsigned 8-bit integer   |
-|       | (0-255) for a code point or a single-character string.              |
+| ``c`` | A single **Unicode character**. Accepts a Unicode code point        |
+|       | (integer) or a single-character string. Supports values beyond 255. |
 +-------+---------------------------------------------------------------------+
 | ``d`` | A **decimal integer**. Expects an integer or a real number          |
 |       | (will be floored).                                                  |
