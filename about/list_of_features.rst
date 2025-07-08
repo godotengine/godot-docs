@@ -36,6 +36,13 @@ Platforms
 - :ref:`Web browsers <doc_using_the_web_editor>`. Experimental in 4.0,
   using Godot 3.x is recommended instead when targeting HTML5.
 
+.. note::
+
+    Linux supports rv64 (RISC-V), ppc64 & ppc32 (PowerPC), and loongarch64. However
+    you must compile the editor for that platform (as well as export templates)
+    yourself, no official downloads are currently provided. RISC-V compiling
+    instructions can be found on the :ref:`doc_compiling_for_linuxbsd` page.
+
 **Runs exported projects:**
 
 - iOS.
