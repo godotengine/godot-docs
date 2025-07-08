@@ -376,9 +376,10 @@ and named like this (even for \*BSD which is seen as "Linux/X11" by Godot):
 
 However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your binaries as custom export templates
-here:
+in the project export menu. You must have **Advanced Options** enabled
+to set this.
 
-.. image:: img/lintemplates.png
+.. image:: img/lintemplates.webp
 
 You don't even need to copy them, you can just reference the resulting
 files in the ``bin/`` directory of your Godot source folder, so the next
