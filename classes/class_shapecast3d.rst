@@ -173,7 +173,7 @@ The shape's collision mask. Only objects in at least one collision layer enabled
 
 - :ref:`Array<class_Array>` **get_collision_result**\ (\ )
 
-Returns the complete collision information from the collision sweep. The data returned is the same as in the :ref:`PhysicsDirectSpaceState3D.get_rest_info()<class_PhysicsDirectSpaceState3D_method_get_rest_info>` method.
+Returns the complete collision information from the collision sweep. Returns a :ref:`Dictionary<class_Dictionary>` containing all fields from the :ref:`PhysicsDirectSpaceState3D.get_rest_info()<class_PhysicsDirectSpaceState3D_method_get_rest_info>` method, with an additional `collider` field for the collided :ref:`Object<class_Object>`.
 
 .. rst-class:: classref-item-separator
 
