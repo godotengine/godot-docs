@@ -62,9 +62,11 @@ Desktop or laptop PC - Minimum
 
 .. note::
 
-    Vulkan drivers for these Windows versions are known to have issues with
-    memory leaks. As a result, it's recommended to stick to the Compatibility
-    renderer when running Godot on a Windows version older than 10.
+    While supported on Linux, we have no official minimum requirements for running on
+    rv64 (RISC-V), ppc64 & ppc32 (PowerPC), and loongarch64. In addition you must
+    compile the editor for that platform (as well as export templates) yourself,
+    no official downloads are currently provided. RISC-V compiling instructions can
+    be found on the :ref:`doc_compiling_for_linuxbsd` page.
 
 Mobile device (smartphone/tablet) - Minimum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
