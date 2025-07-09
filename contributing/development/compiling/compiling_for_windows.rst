@@ -489,11 +489,10 @@ With the following names:
 
 However, if you are using custom modules or custom engine code, you
 may instead want to configure your binaries as custom export templates
-here:
+in the project export menu. You must have **Advanced Options** enabled
+to set this.
 
 .. image:: img/wintemplates.webp
-
-Select matching architecture in the export config.
 
 You don't need to copy them in this case, just reference the resulting
 files in the ``bin\`` directory of your Godot source folder, so the next
