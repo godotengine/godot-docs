@@ -23,17 +23,18 @@ Desktop or laptop PC - Minimum
 .. which can run up to macOS 10.13.
 
 +----------------------+-----------------------------------------------------------------------------------------+
-| **CPU**              | - **Windows:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv8 CPU                 |
+| **CPU**              | - **Windows:** x86_32 CPU with SSE2 support, x86_64 CPU with SSE4.2 support, ARMv8 CPU  |
 |                      |                                                                                         |
-|                      |   - *Example: Intel Core 2 Duo E8200, AMD Athlon XE BE-2300, Snapdragon X Elite*        |
+|                      |   - *Example: Intel Core 2 Duo E8200, AMD FX-4100, Snapdragon X Elite*                  |
 |                      |                                                                                         |
 |                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                          |
 |                      |                                                                                         |
 |                      |   - *Example: Intel Core 2 Duo SU9400, Apple M1*                                        |
 |                      |                                                                                         |
-|                      | - **Linux:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv7 or ARMv8 CPU          |
+|                      | - **Linux:** x86_32 CPU with SSE2 support, x86_64 CPU with SSE4.2 support, ARMv7 or     |
+|                      |   ARMv8 CPU                                                                             |
 |                      |                                                                                         |
-|                      |   - *Example: Intel Core 2 Duo E8200, AMD Athlon XE BE-2300, Raspberry Pi 4*            |
+|                      |   - *Example: Intel Core 2 Duo E8200, AMD FX-4100, Raspberry Pi 4*                      |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **GPU**              | - **Forward+ renderer:** Integrated graphics with full Vulkan 1.0 support               |
 |                      |                                                                                         |
@@ -61,6 +62,9 @@ Desktop or laptop PC - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
+
+    If your x86_64 CPU does not support SSE4.2, you can still run the 32-bit Godot
+    executable which only has a SSE2 requirement (all x86_64 CPUs support SSE2).
 
     While supported on Linux, we have no official minimum requirements for running on
     rv64 (RISC-V), ppc64 & ppc32 (PowerPC), and loongarch64. In addition you must
@@ -109,7 +113,7 @@ Desktop or laptop PC - Recommended
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+---------------------------------------------------------------------------------------------+
-| **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 instructions, with 4 physical cores or more, ARMv8 CPU|
+| **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 support, with 4 physical cores or more, ARMv8 CPU     |
 |                      |                                                                                             |
 |                      |   - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Snapdragon X Elite*                    |
 |                      |                                                                                             |
@@ -117,7 +121,7 @@ Desktop or laptop PC - Recommended
 |                      |                                                                                             |
 |                      |   - *Example: Intel Core i5-8500, Apple M1*                                                 |
 |                      |                                                                                             |
-|                      | - **Linux:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv7 or ARMv8 CPU              |
+|                      | - **Linux:** x86_64 CPU with SSE4.2 support, ARMv7 or ARMv8 CPU                             |
 |                      |                                                                                             |
 |                      |   - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Raspberry Pi 5 with overclocking*      |
 +----------------------+---------------------------------------------------------------------------------------------+
@@ -204,17 +208,19 @@ Desktop or laptop PC - Minimum
 .. which can run up to macOS 10.13.
 
 +----------------------+-----------------------------------------------------------------------------------------+
-| **CPU**              | - **Windows:** x86_32 CPU with SSE2 instructions, any x86_64 CPU, ARMv8 CPU             |
+| **CPU**              | - **Windows:** x86_32 CPU with SSE2 support, x86_64 CPU with SSE4.2 support,            |
+|                      |   ARMv8 CPU                                                                             |
 |                      |                                                                                         |
-|                      |   - *Example: Intel Core 2 Duo E8200, AMD Athlon XE BE-2300, Snapdragon X Elite*        |
+|                      |   - *Example: Intel Core 2 Duo E8200, AMD FX-4100, Snapdragon X Elite*                  |
 |                      |                                                                                         |
 |                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                          |
 |                      |                                                                                         |
 |                      |   - *Example: Intel Core 2 Duo SU9400, Apple M1*                                        |
 |                      |                                                                                         |
-|                      | - **Linux:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv7 or ARMv8 CPU          |
+|                      | - **Linux:** x86_32 CPU with SSE2 support, x86_64 CPU with SSE4.2 support,              |
+|                      |   ARMv7 or ARMv8 CPU                                                                    |
 |                      |                                                                                         |
-|                      |   - *Example: Intel Core 2 Duo E8200, AMD Athlon XE BE-2300, Raspberry Pi 4*            |
+|                      |   - *Example: Intel Core 2 Duo E8200, AMD FX-4100, Raspberry Pi 4*                      |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **GPU**              | - **Forward+ renderer:** Integrated graphics with full Vulkan 1.0 support,              |
 |                      |   Metal 3 support (macOS) or Direct3D 12 (12_0 feature level) support (Windows)         |
@@ -242,12 +248,6 @@ Desktop or laptop PC - Minimum
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
-
-.. note::
-
-    Vulkan drivers for these Windows versions are known to have issues with
-    memory leaks. As a result, it's recommended to stick to the Compatibility
-    renderer when running Godot on a Windows version older than 10.
 
 Mobile device (smartphone/tablet) - Minimum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -295,7 +295,7 @@ Desktop or laptop PC - Recommended
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+----------------------------------------------------------------------------------------------+
-| **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 instructions, with 4 physical cores or more, ARMv8 CPU |
+| **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 support, with 4 physical cores or more, ARMv8 CPU      |
 |                      |                                                                                              |
 |                      |   - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Snapdragon X Elite*                     |
 |                      |                                                                                              |
@@ -303,7 +303,8 @@ Desktop or laptop PC - Recommended
 |                      |                                                                                              |
 |                      |   - *Example: Intel Core i5-8500, Apple M1*                                                  |
 |                      |                                                                                              |
-|                      | - **Linux:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv7 or ARMv8 CPU               |
+|                      | - **Linux:** x86_64 CPU with SSE4.2 support, with 4 physical cores or more,                  |
+|                      |   ARMv7 or ARMv8 CPU                                                                         |
 |                      |                                                                                              |
 |                      |   - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Raspberry Pi 5 with overclocking*       |
 +----------------------+----------------------------------------------------------------------------------------------+
