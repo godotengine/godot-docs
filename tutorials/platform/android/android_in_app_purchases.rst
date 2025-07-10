@@ -22,8 +22,8 @@ Initialize the plugin
 To use the ``GodotGooglePlayBilling`` API:
 
 1. Access the ``BillingClient`` autoload singleton, it's automatically added when the plugin is enabled.
-2. Connect to its signals to receive billing results
-3. Call ``start_connection``
+2. Connect to its signals to receive billing results.
+3. Call ``start_connection``.
 
 Initialization example:
 
@@ -58,7 +58,7 @@ Return values for ``get_connection_state()``:
     	DISCONNECTED, # This client was not yet connected to billing service or was already closed.
     	CONNECTING, # This client is currently in process of connecting to billing service.
     	CONNECTED, # This client is currently connected to billing service.
-    	CLOSED # This client was already closed and shouldn't be used again.
+    	CLOSED, # This client was already closed and shouldn't be used again.
     }
 
 
@@ -66,9 +66,9 @@ Query available items
 ~~~~~~~~~~~~~~~~~~~~~
 
 Once the API has connected, query product IDs using `query_product_details()`. You must successfully complete
-an product details query before calling the ``purchase()``, ``purchase_subscription()``, or ``update_subscription()`` functions,
+a product details query before calling the ``purchase()``, ``purchase_subscription()``, or ``update_subscription()`` functions,
 or they will return an error. ``query_product_details()`` takes two parameters: an array
-of product ID strings, and the type of product being queried.
+of product ID strings and the type of product being queried.
 The product type should be ``BillingClient.ProductType.INAPP`` for normal in-app purchases or ``BillingClient.ProductType.SUBS`` for subscriptions.
 The ID strings in the array should match the product IDs defined in the Google Play Console entry
 for your app.
@@ -78,7 +78,7 @@ Example use of ``query_product_details()``:
 ::
 
     func _on_connected():
-      BillingClient.query_product_details(["my_iap_item"], BillingClient.ProductType.INAPP) # BillingClient.ProductType.SUBS for subscriptions
+      BillingClient.query_product_details(["my_iap_item"], BillingClient.ProductType.INAPP) # BillingClient.ProductType.SUBS for subscriptions.
 
     func _on_query_product_details_response(query_result: Dictionary):
         if query_result.response_code == BillingClient.BillingResponseCode.OK:
@@ -98,7 +98,7 @@ a product type to query. The product type should be
 ``BillingClient.ProductType.INAPP`` for normal in-app purchases or ``BillingClient.ProductType.SUBS`` for subscriptions.
 The ``query_purchases_response`` signal is sent with the result.
 The signal has a single parameter: a :ref:`Dictionary <class_Dictionary>` with
-a response code and either an array of purchases or debug message.
+a response code and either an array of purchases or a debug message.
 Only active subscriptions and non-consumed one-time purchases are
 included in the purchase array.
 
@@ -107,7 +107,7 @@ Example use of ``query_purchases()``:
 ::
 
     func _query_purchases():
-        BillingClient.query_purchases(BillingClient.ProductType.INAPP) # Or BillingClient.ProductType.SUBS for subscriptions
+        BillingClient.query_purchases(BillingClient.ProductType.INAPP) # Or BillingClient.ProductType.SUBS for subscriptions.
 
     func _on_query_purchases_response(query_result: Dictionary):
         if query_result.response_code == BillingClient.BillingResponseCode.OK:
@@ -132,7 +132,7 @@ offers are `personallised <https://developer.android.com/google/play/billing/int
 Reminder: you **must** query the product details for an item before you can
 pass it to ``purchase()``.
 This method returns a dictionary indicating whether the billing flow was successfully launched.
-It includes a response code and either an array of purchases or debug message.
+It includes a response code and either an array of purchases or a debug message.
 
 Example use of ``purchase()``:
 
@@ -273,9 +273,9 @@ Example use of ``acknowledge_purchase()``:
         if result.response_code == BillingClient.BillingResponseCode.OK:
             print("Acknowledge purchase success")
             _handle_purchase_token(result.token, true)
-    else:
-        print("Acknowledge purchase failed")
-        print("response_code: ", result.response_code, "debug_message: ", result.debug_message, "purchase_token: ", result.token)
+        else:
+            print("Acknowledge purchase failed")
+            print("response_code: ", result.response_code, "debug_message: ", result.debug_message, "purchase_token: ", result.token)
 
     # Find the product associated with the purchase token and award the
     # product if successful
@@ -301,7 +301,7 @@ If you support upgrading or downgrading between different subscription levels,
 you should use ``update_subscription()`` to use the subscription update flow to
 change an active subscription. Like ``purchase()``, results are returned by the
 ``on_purchases_updated`` signal.
-There are following parameters to ``update_subscription()``:
+These are the parameters of ``update_subscription()``:
 
 1. old_purchase_token: The purchase token of the currently active subscription
 2. replacement_mode: The replacement mode to apply to the subscription
@@ -334,7 +334,7 @@ The replacement modes values are defined as:
     	CHARGE_FULL_PRICE = 5,
 
     	# The new purchase takes effect immediately, the new plan will take effect when the old item expires.
-    	DEFERRED = 6
+    	DEFERRED = 6,
     }
 
 
