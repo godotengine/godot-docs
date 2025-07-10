@@ -767,6 +767,7 @@ Use FOV Override
 Overrides the ``Camera3D``'s field of view angle (in degrees).
 
 .. note::
+
   This behaves as if the field of view is set on a ``Camera3D`` with
   ``Camera3D.keep_aspect`` set to ``Camera3D.KEEP_HEIGHT``. Additionally, it may not
   look correct on a non-perspective camera where the field of view setting is
