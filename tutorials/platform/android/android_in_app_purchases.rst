@@ -13,11 +13,7 @@ Getting started
 ~~~~~~~~~~~~~~~
 
 Make sure you have enabled and successfully set up :ref:`Android Gradle Builds <doc_android_gradle_build>`.
-Follow the compiling instructions on the ``GodotGooglePlayBilling`` `github page <https://github.com/godotengine/godot-google-play-billing>`__.
-
-Then put the files `./godot-google-play-billing/build/outputs/aar/GodotGooglePlayBilling.***.release.aar` and `./GodotGooglePlayBilling.gdap` into your project in the `res://android/plugins` folder.
-
-The plugin should now show up in the Android export settings, where you can enable it.
+Follow the installation instructions on the ``GodotGooglePlayBilling`` `github page <https://github.com/godotengine/godot-google-play-billing>`__.
 
 
 Initialize the plugin
@@ -25,165 +21,149 @@ Initialize the plugin
 
 To use the ``GodotGooglePlayBilling`` API:
 
-1. Obtain a reference to the ``GodotGooglePlayBilling`` singleton
-2. Connect handlers for the plugin signals
-3. Call ``startConnection``
+1. Access the ``BillingClient`` autoload singleton, it's automatically added when the plugin is enabled.
+2. Connect to its signals to receive billing results.
+3. Call ``start_connection``.
 
 Initialization example:
 
 ::
 
-    var payment
+    var billing_client
 
     func _ready():
-        if Engine.has_singleton("GodotGooglePlayBilling"):
-            payment = Engine.get_singleton("GodotGooglePlayBilling")
+        BillingClient.connected.connect(_on_connected) # No params
+        BillingClient.disconnected.connect(_on_disconnected) # No params
+        BillingClient.connect_error.connect(_on_connect_error) # response_code: int, debug_message: String
+        BillingClient.query_product_details_response.connect(_on_query_product_details_response) # response: Dictionary
+        BillingClient.query_purchases_response.connect(_on_query_purchases_response) # response: Dictionary
+        BillingClient.on_purchase_updated.connect(_on_purchase_updated) # response: Dictionary
+        BillingClient.consume_purchase_response.connect(_on_consume_purchase_response) # response: Dictionary
+        BillingClient.acknowledge_purchase_response.connect(_on_acknowledge_purchase_response) # response: Dictionary
 
-            # These are all signals supported by the API
-            # You can drop some of these based on your needs
-            payment.billing_resume.connect(_on_billing_resume) # No params
-            payment.connected.connect(_on_connected) # No params
-            payment.disconnected.connect(_on_disconnected) # No params
-            payment.connect_error.connect(_on_connect_error) # Response ID (int), Debug message (string)
-            payment.price_change_acknowledged.connect(_on_price_acknowledged) # Response ID (int)
-            payment.purchases_updated.connect(_on_purchases_updated) # Purchases (Dictionary[])
-            payment.purchase_error.connect(_on_purchase_error) # Response ID (int), Debug message (string)
-            payment.sku_details_query_completed.connect(_on_product_details_query_completed) # Products (Dictionary[])
-            payment.sku_details_query_error.connect(_on_product_details_query_error) # Response ID (int), Debug message (string), Queried SKUs (string[])
-            payment.purchase_acknowledged.connect(_on_purchase_acknowledged) # Purchase token (string)
-            payment.purchase_acknowledgement_error.connect(_on_purchase_acknowledgement_error) # Response ID (int), Debug message (string), Purchase token (string)
-            payment.purchase_consumed.connect(_on_purchase_consumed) # Purchase token (string)
-            payment.purchase_consumption_error.connect(_on_purchase_consumption_error) # Response ID (int), Debug message (string), Purchase token (string)
-            payment.query_purchases_response.connect(_on_query_purchases_response) # Purchases (Dictionary[])
-
-            payment.startConnection()
-        else:
-            print("Android IAP support is not enabled. Make sure you have enabled 'Gradle Build' and the GodotGooglePlayBilling plugin in your Android export settings! IAP will not work.")
+        BillingClient.start_connection()
 
 The API must be in a connected state prior to use. The ``connected`` signal is sent
 when the connection process succeeds. You can also use ``isReady()`` to determine if the plugin
-is ready for use. The ``getConnectionState()`` function returns the current connection state
-of the plugin.
+is ready for use. The ``get_connection_state()`` function returns the current connection state
+of the plugin. 
 
-Return values for ``getConnectionState()``:
+Return values for ``get_connection_state()``:
 
 ::
 
-    # Matches BillingClient.ConnectionState in the Play Billing Library
+    # Matches BillingClient.ConnectionState in the Play Billing Library.
+    # Access in your script as: BillingClient.ConnectionState.CONNECTED
     enum ConnectionState {
-        DISCONNECTED, # not yet connected to billing service or was already closed
-        CONNECTING, # currently in process of connecting to billing service
-        CONNECTED, # currently connected to billing service
-        CLOSED, # already closed and shouldn't be used again
+    	DISCONNECTED, # This client was not yet connected to billing service or was already closed.
+    	CONNECTING, # This client is currently in process of connecting to billing service.
+    	CONNECTED, # This client is currently connected to billing service.
+    	CLOSED, # This client was already closed and shouldn't be used again.
     }
 
 
 Query available items
 ~~~~~~~~~~~~~~~~~~~~~
 
-Once the API has connected, query SKUs using ``querySkuDetails()``. You must successfully complete
-an SKU query before calling the ``purchase()`` or ``queryPurchases()`` functions,
-or they will return an error. ``querySkuDetails()`` takes two parameters: an array
-of SKU name strings, and a string specifying the type of SKU being queried.
-The SKU type string should be ``"inapp"`` for normal in-app purchases or ``"subs"`` for subscriptions.
-The name strings in the array should match the SKU product ids defined in the Google Play Console entry
+Once the API has connected, query product IDs using `query_product_details()`. You must successfully complete
+a product details query before calling the ``purchase()``, ``purchase_subscription()``, or ``update_subscription()`` functions,
+or they will return an error. ``query_product_details()`` takes two parameters: an array
+of product ID strings and the type of product being queried.
+The product type should be ``BillingClient.ProductType.INAPP`` for normal in-app purchases or ``BillingClient.ProductType.SUBS`` for subscriptions.
+The ID strings in the array should match the product IDs defined in the Google Play Console entry
 for your app.
 
-Example use of ``querySkuDetails()``:
+Example use of ``query_product_details()``:
 
 ::
 
     func _on_connected():
-      payment.querySkuDetails(["my_iap_item"], "inapp") # "subs" for subscriptions
+      BillingClient.query_product_details(["my_iap_item"], BillingClient.ProductType.INAPP) # BillingClient.ProductType.SUBS for subscriptions.
 
-    func _on_product_details_query_completed(product_details):
-      for available_product in product_details:
-        print(available_product)
-
-    func _on_product_details_query_error(response_id, error_message, products_queried):
-        print("on_product_details_query_error id:", response_id, " message: ",
-                error_message, " products: ", products_queried)
+    func _on_query_product_details_response(query_result: Dictionary):
+        if query_result.response_code == BillingClient.BillingResponseCode.OK:
+            print("Product details query success")
+            for available_product in query_result.result_array:
+                print(available_product)
+        else:
+            print("Product details query failed")
+            print("response_code: ", query_result.response_code, "debug_message: ", query_result.debug_message)
 
 
 Query user purchases
 ~~~~~~~~~~~~~~~~~~~~
 
-To retrieve a user's purchases, call the ``queryPurchases()`` function passing
-a string with the type of SKU to query. The SKU type string should be
-``"inapp"`` for normal in-app purchases or ``"subs"`` for subscriptions.
+To retrieve a user's purchases, call the ``query_purchases()`` function passing
+a product type to query. The product type should be
+``BillingClient.ProductType.INAPP`` for normal in-app purchases or ``BillingClient.ProductType.SUBS`` for subscriptions.
 The ``query_purchases_response`` signal is sent with the result.
 The signal has a single parameter: a :ref:`Dictionary <class_Dictionary>` with
-a status code and either an array of purchases or an error message.
+a response code and either an array of purchases or a debug message.
 Only active subscriptions and non-consumed one-time purchases are
 included in the purchase array.
 
-Example use of ``queryPurchases()``:
+Example use of ``query_purchases()``:
 
 ::
 
     func _query_purchases():
-        payment.queryPurchases("inapp") # Or "subs" for subscriptions
+        BillingClient.query_purchases(BillingClient.ProductType.INAPP) # Or BillingClient.ProductType.SUBS for subscriptions.
 
-    func _on_query_purchases_response(query_result):
-        if query_result.status == OK:
-            for purchase in query_result.purchases:
+    func _on_query_purchases_response(query_result: Dictionary):
+        if query_result.response_code == BillingClient.BillingResponseCode.OK:
+            print("Purchase query success")
+            for purchase in query_result.result_array:
                 _process_purchase(purchase)
         else:
-            print("queryPurchases failed, response code: ",
-                    query_result.response_code,
-                    " debug message: ", query_result.debug_message)
-
-
-You should query purchases during startup after successfully retrieving SKU details.
-Since the user may make a purchase or resolve a pending transaction from
-outside your app, you should recheck for purchases when resuming from the
-background. To accomplish this, you can use the ``billing_resume`` signal.
-
-Example use of ``billing_resume``:
-
-::
-
-    func _on_billing_resume():
-        if payment.getConnectionState() == ConnectionState.CONNECTED:
-            _query_purchases()
-
-
-For more information on processing the purchase items returned by
-``queryPurchases()``, see `Processing a purchase item`_
+            print("Purchase query failed")
+            print("response_code: ", query_result.response_code, "debug_message: ", query_result.debug_message)
 
 
 Purchase an item
 ~~~~~~~~~~~~~~~~
 
-To initiate the purchase flow for an item, call ``purchase()`` passing the
-product id string of the SKU you wish to purchase.
-Reminder: you **must** query the SKU details for an item before you can
+To launch the billing flow for an item:
+- Use ``purchase()`` for in-app products, passing the product ID string.
+- Use ``purchase_subscription()`` for subscriptions, passing the product ID and base plan ID. You may also optionally provide an offer ID.
+
+For both ``purchase()`` and ``purchase_subscription()``, you can optionally pass a boolean to indicate whether
+offers are `personallised <https://developer.android.com/google/play/billing/integrate#personalized-price>`_
+
+Reminder: you **must** query the product details for an item before you can
 pass it to ``purchase()``.
+This method returns a dictionary indicating whether the billing flow was successfully launched.
+It includes a response code and either an array of purchases or a debug message.
 
 Example use of ``purchase()``:
 
 ::
 
-    payment.purchase("my_iap_item")
+    var result = BillingClient.purchase("my_iap_item")
+    if result.response_code == BillingClient.BillingResponseCode.OK:
+        print("Billing flow launch success")
+    else:
+        print("Billing flow launch failed")
+        print("response_code: ", result.response_code, "debug_message: ", result.debug_message)
 
 
-The payment flow will send a ``purchases_updated`` signal on success or a
-``purchase_error`` signal on failure.
+The result of the purchase will be sent through the ``on_purchases_updated`` signal.
 
 ::
 
-    func _on_purchases_updated(purchases):
-        for purchase in purchases:
-            _process_purchase(purchase)
-
-    func _on_purchase_error(response_id, error_message):
-        print("purchase_error id:", response_id, " message: ", error_message)
+    func _on_purchases_updated(result: Dictionary):
+        if result.response_code == BillingClient.BillingResponseCode.OK:
+            print("Purchase update received")
+            for purchase in result.result_array:
+                _process_purchase(purchase)
+        else:
+            print("Purchase update error")
+            print("response_code: ", result.response_code, "debug_message: ", result.debug_message)
 
 
 Processing a purchase item
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``query_purchases_response`` and ``purchases_updated`` signals provide an array
+The ``query_purchases_response`` and ``on_purchases_updated`` signals provide an array
 of purchases in :ref:`Dictionary <class_Dictionary>` format. The purchase Dictionary
 includes keys that map to values of the Google Play Billing
 `Purchase <https://developer.android.com/reference/com/android/billingclient/api/Purchase>`_ class.
@@ -192,21 +172,17 @@ Purchase fields:
 
 ::
 
-    dictionary.put("order_id", purchase.getOrderId());
-    dictionary.put("package_name", purchase.getPackageName());
-    dictionary.put("purchase_state", purchase.getPurchaseState());
-    dictionary.put("purchase_time", purchase.getPurchaseTime());
-    dictionary.put("purchase_token", purchase.getPurchaseToken());
-    dictionary.put("quantity", purchase.getQuantity());
-    dictionary.put("signature", purchase.getSignature());
-    // PBL V4 replaced getSku with getSkus to support multi-sku purchases,
-    // use the first entry for "sku" and generate an array for "skus"
-    ArrayList<String> skus = purchase.getSkus();
-    dictionary.put("sku", skus.get(0)); # Not available in plugin
-    String[] skusArray = skus.toArray(new String[0]);
-    dictionary.put("products", productsArray);
-    dictionary.put("is_acknowledged", purchase.isAcknowledged());
-    dictionary.put("is_auto_renewing", purchase.isAutoRenewing());
+    order_id: String
+    purchase_token: String
+    package_name: String
+    purchase_state: int
+    purchase_time: int (milliseconds since the epoch (Jan 1, 1970))
+    original_json: String
+    is_acknowledged: bool
+    is_auto_renewing: bool
+    quantity: int
+    signature: String
+    product_ids: PackedStringArray
 
 
 Check purchase state
@@ -220,6 +196,7 @@ PurchaseState values:
 ::
 
     # Matches Purchase.PurchaseState in the Play Billing Library
+    # Access in your script as: BillingClient.PurchaseState.PURCHASED
     enum PurchaseState {
         UNSPECIFIED,
         PURCHASED,
@@ -240,31 +217,31 @@ Consumables
 ~~~~~~~~~~~
 
 If your in-app item is not a one-time purchase but a consumable item (e.g. coins) which can be purchased
-multiple times, you can consume an item by calling ``consumePurchase()`` passing
+multiple times, you can consume an item by calling ``consume_purchase()`` passing
 the ``purchase_token`` value from the purchase dictionary.
-Calling ``consumePurchase()`` automatically acknowledges a purchase.
+Calling ``consume_purchase()`` automatically acknowledges a purchase.
 Consuming a product allows the user to purchase it again, it will no longer appear
-in subsequent ``queryPurchases()`` calls unless it is repurchased.
+in subsequent ``query_purchases()`` calls unless it is repurchased.
 
-Example use of ``consumePurchase()``:
+Example use of ``consume_purchase()``:
 
 ::
 
     func _process_purchase(purchase):
-        if "my_consumable_iap_item" in purchase.products and purchase.purchase_state == PurchaseState.PURCHASED:
+        if "my_consumable_iap_item" in purchase.product_ids and purchase.purchase_state == BillingClient.PurchaseState.PURCHASED:
             # Add code to store payment so we can reconcile the purchase token
             # in the completion callback against the original purchase
-            payment.consumePurchase(purchase.purchase_token)
+            BillingClient.consume_purchase(purchase.purchase_token)
 
-    func _on_purchase_consumed(purchase_token):
-        _handle_purchase_token(purchase_token, true)
+    func _on_consume_purchase_response(result: Dictionary):
+        if result.response_code == BillingClient.BillingResponseCode.OK:
+            print("Consume purchase success")
+            _handle_purchase_token(result.token, true)
+        else:
+            print("Consume purchase failed")
+            print("response_code: ", result.response_code, "debug_message: ", result.debug_message, "purchase_token: ", result.token)
 
-    func _on_purchase_consumption_error(response_id, error_message, purchase_token):
-        print("_on_purchase_consumption_error id:", response_id,
-                " message: ", error_message)
-        _handle_purchase_token(purchase_token, false)
-
-    # Find the sku associated with the purchase token and award the
+    # Find the product associated with the purchase token and award the
     # product if successful
     func _handle_purchase_token(purchase_token, purchase_successful):
         # check/award logic, remove purchase from tracking list
@@ -274,33 +251,33 @@ Acknowledging purchases
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 If your in-app item is a one-time purchase, you must acknowledge the purchase by
-calling the ``acknowledgePurchase()`` function, passing the ``purchase_token``
+calling the ``acknowledge_purchase()`` function, passing the ``purchase_token``
 value from the purchase dictionary. If you do not acknowledge a purchase within
 three days, the user automatically receives a refund, and Google Play revokes the purchase.
-If you are calling ``comsumePurchase()`` it automatically acknowledges the purchase and
-you do not need to call ``acknowledgePurchase()``.
+If you are calling ``comsume_purchase()`` it automatically acknowledges the purchase and
+you do not need to call ``acknowledge_purchase()``.
 
-Example use of ``acknowledgePurchase()``:
+Example use of ``acknowledge_purchase()``:
 
 ::
 
     func _process_purchase(purchase):
-        if "my_one_time_iap_item" in purchase.products and \
-                purchase.purchase_state == PurchaseState.PURCHASED and \
+        if "my_one_time_iap_item" in purchase.product_ids and \
+                purchase.purchase_state == BillingClient.PurchaseState.PURCHASED and \
                 not purchase.is_acknowledged:
             # Add code to store payment so we can reconcile the purchase token
             # in the completion callback against the original purchase
-            payment.acknowledgePurchase(purchase.purchase_token)
+            BillingClient.acknowledge_purchase(purchase.purchase_token)
 
-    func _on_purchase_acknowledged(purchase_token):
-        _handle_purchase_token(purchase_token, true)
+    func _on_acknowledge_purchase_response(result: Dictionary):
+        if result.response_code == BillingClient.BillingResponseCode.OK:
+            print("Acknowledge purchase success")
+            _handle_purchase_token(result.token, true)
+        else:
+            print("Acknowledge purchase failed")
+            print("response_code: ", result.response_code, "debug_message: ", result.debug_message, "purchase_token: ", result.token)
 
-    func _on_purchase_acknowledgement_error(response_id, error_message, purchase_token):
-        print("_on_purchase_acknowledgement_error id: ", response_id,
-                " message: ", error_message)
-        _handle_purchase_token(purchase_token, false)
-
-    # Find the sku associated with the purchase token and award the
+    # Find the product associated with the purchase token and award the
     # product if successful
     func _handle_purchase_token(purchase_token, purchase_successful):
         # check/award logic, remove purchase from tracking list
@@ -309,77 +286,64 @@ Example use of ``acknowledgePurchase()``:
 Subscriptions
 ~~~~~~~~~~~~~
 
-Subscriptions work mostly like regular in-app items. Use ``"subs"`` as the second
-argument to ``querySkuDetails()`` to get subscription details. Pass ``"subs"``
-to ``queryPurchases()`` to get subscription purchase details.
+Subscriptions work mostly like regular in-app items. Use ``BillingClient.ProductType.SUBS`` as the second
+argument to ``query_product_details()`` to get subscription details. Pass ``BillingClient.ProductType.SUBS``
+to ``query_purchases()`` to get subscription purchase details.
 
 You can check ``is_auto_renewing`` in the a subscription purchase
-returned from ``queryPurchases()`` to see if a user has cancelled an
+returned from ``query_purchases()`` to see if a user has cancelled an
 auto-renewing subscription.
 
 You need to acknowledge new subscription purchases, but not automatic
 subscription renewals.
 
 If you support upgrading or downgrading between different subscription levels,
-you should use ``updateSubscription()`` to use the subscription update flow to
+you should use ``update_subscription()`` to use the subscription update flow to
 change an active subscription. Like ``purchase()``, results are returned by the
-``purchases_updated`` and ``purchase_error`` signals.
-There are three parameters to ``updateSubscription()``:
+``on_purchases_updated`` signal.
+These are the parameters of ``update_subscription()``:
 
-1. The purchase token of the currently active subscription
-2. The product id string of the subscription SKU to change to
-3. The proration mode to apply to the subscription.
+1. old_purchase_token: The purchase token of the currently active subscription
+2. replacement_mode: The replacement mode to apply to the subscription
+3. product_id: The product ID of the new subscription to switch to
+4. base_plan_id: The base plan ID of the target subscription
+5. offer_id: The offer ID under the base plan (optional)
+6. is_offer_personalized: Whether to enable personalized pricing (optional)
 
-The proration values are defined as:
+The replacement modes values are defined as:
 
 ::
 
-    enum SubscriptionProrationMode {
-        # Replacement takes effect immediately, and the remaining time
-        # will be prorated and credited to the user.
-        IMMEDIATE_WITH_TIME_PRORATION = 1,
-        # Replacement takes effect immediately, and the billing cycle remains the same.
-        # The price for the remaining period will be charged.
-        # This option is only available for subscription upgrade.
-        IMMEDIATE_AND_CHARGE_PRORATED_PRICE,
-        # Replacement takes effect immediately, and the new price will be charged on
-        # next recurrence time. The billing cycle stays the same.
-        IMMEDIATE_WITHOUT_PRORATION,
-        # Replacement takes effect when the old plan expires, and the new price
-        # will be charged at the same time.
-        DEFERRED,
-        # Replacement takes effect immediately, and the user is charged full price
-        # of new plan and is given a full billing cycle of subscription,
-        # plus remaining prorated time from the old plan.
-        IMMEDIATE_AND_CHARGE_FULL_PRICE,
+    # Access in your script as: BillingClient.ReplacementMode.WITH_TIME_PRORATION
+    enum ReplacementMode {
+    	# Unknown...
+    	UNKNOWN_REPLACEMENT_MODE = 0,
+
+    	# The new plan takes effect immediately, and the remaining time will be prorated and credited to the user.
+    	# Note: This is the default behavior.
+    	WITH_TIME_PRORATION = 1,
+
+    	# The new plan takes effect immediately, and the billing cycle remains the same.
+    	CHARGE_PRORATED_PRICE = 2,
+
+    	# The new plan takes effect immediately, and the new price will be charged on next recurrence time.
+    	WITHOUT_PRORATION = 3,
+
+    	# Replacement takes effect immediately, and the user is charged full price of new plan and
+    	# is given a full billing cycle of subscription, plus remaining prorated time from the old plan.
+    	CHARGE_FULL_PRICE = 5,
+
+    	# The new purchase takes effect immediately, the new plan will take effect when the old item expires.
+    	DEFERRED = 6,
     }
 
 
-Default behavior is ``IMMEDIATE_WITH_TIME_PRORATION``.
+Default behavior is ``WITH_TIME_PRORATION``.
 
-Example use of ``updateSubscription``:
-
-::
-
-    payment.updateSubscription(_active_subscription_purchase.purchase_token, \
-                        "new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)
-
-
-The ``confirmPriceChange()`` function can be used to launch price change confirmation flow
-for a subscription. Pass the product id of the subscription SKU subject to the price change.
-The result will be sent by the ``price_change_acknowledged`` signal.
-
-Example use of ``confirmPriceChange()``:
+Example use of ``update_subscription``:
 
 ::
 
-    enum BillingResponse {SUCCESS = 0, CANCELLED = 1}
+    BillingClient.update_subscription(_active_subscription_purchase.purchase_token, \
+                        BillingClient.ReplacementMode.WITH_TIME_PRORATION, "new_sub_product_id", "base_plan_id")
 
-    func confirm_price_change(product_id):
-        payment.confirmPriceChange(product_id)
-
-    func _on_price_acknowledged(response_id):
-        if response_id == BillingResponse.SUCCESS:
-            print("price_change_accepted")
-        elif response_id == BillingResponse.CANCELED:
-            print("price_change_canceled")
