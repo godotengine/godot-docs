@@ -119,7 +119,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         http_request.request_completed.connect(self._http_request_completed)
 
         # Perform the HTTP request. The URL below returns a PNG image as of writing.
-        var error = http_request.request("https://placehold.co/512")
+        var error = http_request.request("https://placehold.co/512.png")
         if error != OK:
             push_error("An error occurred in the HTTP request.")
 
@@ -150,7 +150,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         httpRequest.RequestCompleted += HttpRequestCompleted;
 
         // Perform the HTTP request. The URL below returns a PNG image as of writing.
-        Error error = httpRequest.Request("https://placehold.co/512");
+        Error error = httpRequest.Request("https://placehold.co/512.png");
         if (error != Error.Ok)
         {
             GD.PushError("An error occurred in the HTTP request.");
