@@ -87,6 +87,8 @@ Properties
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                                           | ``false``                                                                 |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                     | :ref:`scroll_following_visible_characters<class_RichTextLabel_property_scroll_following_visible_characters>`     | ``false``                                                                 |
+   +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                                         | ``false``                                                                 |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`shortcut_keys_enabled<class_RichTextLabel_property_shortcut_keys_enabled>`                                 | ``true``                                                                  |
@@ -172,6 +174,8 @@ Methods
    | :ref:`int<class_int>`               | :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scroll_bar<class_RichTextLabel_method_get_v_scroll_bar>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2i<class_Rect2i>`         | :ref:`get_visible_content_rect<class_RichTextLabel_method_get_visible_content_rect>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`get_visible_line_count<class_RichTextLabel_method_get_visible_line_count>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -900,6 +904,23 @@ If ``true``, the window scrolls down to display new content automatically.
 
 ----
 
+.. _class_RichTextLabel_property_scroll_following_visible_characters:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **scroll_following_visible_characters** = ``false`` :ref:`🔗<class_RichTextLabel_property_scroll_following_visible_characters>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_scroll_follow_visible_characters**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_scroll_following_visible_characters**\ (\ )
+
+If ``true``, the window scrolls to display the last visible line when :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` or :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` is changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RichTextLabel_property_selection_enabled:
 
 .. rst-class:: classref-property
@@ -1264,6 +1285,8 @@ Returns the paragraph number of the character position provided. Paragraph and c
 
 Returns the height of the content.
 
+\ **Note:** This method always returns the full content size, and is not affected by :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` and :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`. To get the visible content size, use :ref:`get_visible_content_rect()<class_RichTextLabel_method_get_visible_content_rect>`.
+
 \ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_finished()<class_RichTextLabel_method_is_finished>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
 
 .. rst-class:: classref-item-separator
@@ -1277,6 +1300,8 @@ Returns the height of the content.
 :ref:`int<class_int>` **get_content_width**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_content_width>`
 
 Returns the width of the content.
+
+\ **Note:** This method always returns the full content size, and is not affected by :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` and :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`. To get the visible content size, use :ref:`get_visible_content_rect()<class_RichTextLabel_method_get_visible_content_rect>`.
 
 \ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_finished()<class_RichTextLabel_method_is_finished>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
 
@@ -1527,6 +1552,51 @@ Returns the vertical scrollbar.
 
 ----
 
+.. _class_RichTextLabel_method_get_visible_content_rect:
+
+.. rst-class:: classref-method
+
+:ref:`Rect2i<class_Rect2i>` **get_visible_content_rect**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_visible_content_rect>`
+
+Returns the bounding rectangle of the visible content.
+
+\ **Note:** This method returns a correct value only after the label has been drawn.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    extends RichTextLabel
+
+    @export var background_panel: Panel
+
+    func _ready():
+        await draw
+        background_panel.position = get_visible_content_rect().position
+        background_panel.size = get_visible_content_rect().size
+
+ .. code-tab:: csharp
+
+    public partial class TestLabel : RichTextLabel
+    {
+        [Export]
+        public Panel BackgroundPanel { get; set; }
+
+        public override async void _Ready()
+        {
+            await ToSignal(this, Control.SignalName.Draw);
+            BackgroundGPanel.Position = GetVisibleContentRect().Position;
+            BackgroundPanel.Size = GetVisibleContentRect().Size;
+        }
+    }
+
+
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RichTextLabel_method_get_visible_line_count:
 
 .. rst-class:: classref-method
@@ -1534,6 +1604,8 @@ Returns the vertical scrollbar.
 :ref:`int<class_int>` **get_visible_line_count**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_visible_line_count>`
 
 Returns the number of visible lines.
+
+\ **Note:** This method returns a correct value only after the label has been drawn.
 
 \ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_finished()<class_RichTextLabel_method_is_finished>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
 
@@ -1548,6 +1620,8 @@ Returns the number of visible lines.
 :ref:`int<class_int>` **get_visible_paragraph_count**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_visible_paragraph_count>`
 
 Returns the number of visible paragraphs. A paragraph is considered visible if at least one of its lines is visible.
+
+\ **Note:** This method returns a correct value only after the label has been drawn.
 
 \ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_finished()<class_RichTextLabel_method_is_finished>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
 
