@@ -21,10 +21,10 @@ binary that is smaller, faster and does not contain the editor and debugger.
 Changing the executable icon
 ----------------------------
 
-To change the exported executable icon from the default Godot icon,
-you need to set up a tool called *rcedit*. Godot will then call this tool
-on export automatically. This process is documented in
-:ref:`doc_changing_application_icon_for_windows`.
+Godot will automatically use whatever image is set as your project's icon in the project
+settings, and convert it to an ICO file for the exported project. If you want to
+manually create an ICO file for greater control over how the icon looks at different
+resolutions then see the :ref:`doc_changing_application_icon_for_windows` page.
 
 Code signing
 ------------
