@@ -170,9 +170,13 @@ it is nicer to exit on failure than to hang the system.
 
                 // Enable VRS
                 if (RenderingServer.GetRenderingDevice() != null)
+                {
                     vp.VrsMode = Viewport.VrsModeEnum.XR;
+                }
                 else if ((int)ProjectSettings.GetSetting("xr/openxr/foveation_level") == 0)
+                {
                     GD.PushWarning("OpenXR: Recommend setting Foveation level to High in Project Settings");
+                }
 
                 // Connect the OpenXR events
                 _xrInterface.SessionBegun += OnOpenXRSessionBegun;
@@ -276,8 +280,12 @@ Not matching the physics update rate will cause stuttering as frames are rendere
             {
                 GD.Print("OpenXR: Available refresh rates: ", availableRates);
                 foreach (float rate in availableRates)
+                {
                     if (rate > newRate && rate <= MaximumRefreshRate)
+                    {
                         newRate = rate;
+                    }
+                }
             }
 
             // Did we find a better rate?
