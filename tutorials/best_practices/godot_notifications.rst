@@ -166,7 +166,9 @@ delta time methods as needed.
         public void _Process(double delta)
         {
             if (Input.IsActionJustPressed("ui_select"))
+            {
                 GD.Print(delta);
+            }
         }
 
         // Called during every input event. Equally true for _input().
@@ -176,7 +178,9 @@ delta time methods as needed.
             {
                 case InputEventKey:
                     if (Input.IsActionJustPressed("ui_accept"))
+                    {
                         GD.Print(GetProcessDeltaTime());
+                    }
                     break;
             }
         }

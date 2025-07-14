@@ -27,8 +27,12 @@ Here is a quick example, closing your game if the escape key is hit:
     public override void _UnhandledInput(InputEvent @event)
     {
         if (@event is InputEventKey eventKey)
+        {
             if (eventKey.Pressed && eventKey.Keycode == Key.Escape)
+            {
                 GetTree().Quit();
+            }
+        }
     }
 
 However, it is cleaner and more flexible to use the provided :ref:`InputMap <class_InputMap>` feature,

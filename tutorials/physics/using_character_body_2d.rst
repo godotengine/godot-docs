@@ -508,7 +508,9 @@ Here's the code for the player body:
 
             // Handle jump.
             if (Input.IsActionJustPressed("jump") && IsOnFloor())
+            {
                 velocity.Y = _jumpSpeed;
+            }
 
             // Get the input direction.
             float direction = Input.GetAxis("ui_left", "ui_right");
