@@ -43,6 +43,9 @@ on the right that can be toggled off
 
 From left to right in the toolbar:
 
+- The arrow can be used to toggle the files panel's visibility.
+- The ``File`` button opens a dropdown menu for saving, loading, and creating
+  files.
 - The ``Add Node`` button displays a popup menu to let you add nodes to the
   shader graph.
 - The drop-down menu is the shader type: Vertex, Fragment and Light. Like for
@@ -56,7 +59,10 @@ From left to right in the toolbar:
 - The Manage Varyings button opens a dropdown that lets you add or remove a
   varying.
 - The show generated code button shows shader code corresponding to your graph.
-- The last icon toggles the material preview on or off.
+- The toggle turns the material preview on or off.
+- The ``Online Docs`` button opens this documentation page in your web browser.
+- The last button allows you to put the shader editor in its own window,
+  separate from the rest of the editor.
 
 .. note::
 
