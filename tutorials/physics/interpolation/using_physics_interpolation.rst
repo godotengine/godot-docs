@@ -97,7 +97,8 @@ Testing and debugging tips
 
 Even if you intend to run physics at 60 ticks per second, in order to thoroughly test your
 interpolation and get the smoothest gameplay, it is highly recommended to
-temporarily set the physics tick rate to a low value such as 10 ticks per second.
+temporarily set the physics tick rate to a low value such as 10 ticks per second. This can be
+done in the project settings under Physics -> Common -> Physics Ticks per Second.
 
 The gameplay may not work perfectly, but it should enable you to more easily see
 cases where you should be using your own custom interpolation on e.g. a
