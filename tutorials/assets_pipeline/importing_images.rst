@@ -27,7 +27,7 @@ Godot can import the following image formats:
 - Truevision Targa (``.tga``)
 - SVG (``.svg``)
   - SVGs are rasterized using `ThorVG <https://www.thorvg.org/>`__
-  when importing them. `Support is limited <https://www.thorvg.org/about#:~:text=among%20the%20svg%20tiny%20specs%2C%20yet%20unsupported%20features%20in%20the%20thorvg%20are%20the%20following>`__;
+  when importing them. `Support is limited <https://www.thorvg.org/about#:~:text=certain%20features%20remain%20unsupported%20within%20the%20current%20framework>`__;
   complex vectors may not render correctly. :ref:`Text must be converted to paths <doc_importing_images_svg_text>`;
   otherwise, it won't appear in the rasterized image.
   You can check whether ThorVG can render a certain vector correctly using its
