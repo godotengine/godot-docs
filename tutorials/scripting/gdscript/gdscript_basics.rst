@@ -1146,6 +1146,8 @@ Member variables are initialized in the following order:
     To fix this, move the ``_data`` variable definition above the ``a`` definition
     or remove the empty dictionary assignment (``= {}``).
 
+.. _doc_gdscript_basics_static_variables:
+
 Static variables
 ~~~~~~~~~~~~~~~~
 
@@ -1233,6 +1235,13 @@ A base class static variable can also be accessed via a child class:
         prints(A.x, B.x) # 2 2
         B.x = 3
         prints(A.x, B.x) # 3 3
+
+.. note::
+
+    When referencing a static variable from a tool script, the other script
+    containing the static variable **must** also be a tool script.
+    See :ref:`Running code in the editor <doc_running_code_in_the_editor_important_information>`
+    for details.
 
 ``@static_unload`` annotation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
