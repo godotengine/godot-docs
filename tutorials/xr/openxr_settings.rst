@@ -299,6 +299,13 @@ and set its ``pose`` property to ``eye_pose``.
 
 Now you can add things to this controller node such as a raycast, and control things with your eyes.
 
+Render Models
+~~~~~~~~~~~~~
+
+This extension is used to query the XR runtime for 3D assets of the hardware being
+used, usually a controller, as well as the position of that hardware. You can find a
+detailed guide on how to use it :ref:`here <doc_openxr_render_models>`.
+
 Binding Modifiers
 -----------------
 
