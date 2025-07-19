@@ -2128,7 +2128,9 @@ The window background can be transparent.
 
 \ **Note:** This flag has no effect if :ref:`is_window_transparency_available()<class_DisplayServer_method_is_window_transparency_available>` returns ``false``.
 
-\ **Note:** Transparency support is implemented on Android, Linux (X11/Wayland), macOS, and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
+\ **Note:** Transparency support is implemented on Linux (X11/Wayland), macOS, and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
+
+\ **Note:** Transparency support is implemented on Android, but can only be enabled via :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`. This flag has no effect on Android.
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_NO_FOCUS:
 
@@ -5986,6 +5988,8 @@ Unregisters an :ref:`Object<class_Object>` representing an additional output, th
 :ref:`int<class_int>` **virtual_keyboard_get_height**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_virtual_keyboard_get_height>`
 
 Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or if it is currently hidden.
+
+\ **Note:** On Android 7 and 8, the keyboard height may return 0 the first time the keyboard is opened in non-immersive mode. This behavior does not occur in immersive mode.
 
 .. rst-class:: classref-item-separator
 

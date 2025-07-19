@@ -4794,6 +4794,8 @@ If ``true``, enables a window manager hint that the main window background *can*
 
 \ **Note:** This setting has no effect if :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``.
 
+\ **Note:** This setting has no effect on Android as transparency is controlled only via :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -11174,7 +11176,7 @@ Sets the sensitivity to edges when using SMAA for antialiasing. Lower values wil
 
 :ref:`bool<class_bool>` **rendering/anti_aliasing/quality/use_debanding** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`
 
-If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`.
+If ``true``, uses a fast post-processing filter to make banding significantly less visible. If :ref:`rendering/viewport/hdr_2d<class_ProjectSettings_property_rendering/viewport/hdr_2d>` is ``false``, 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`. If :ref:`rendering/viewport/hdr_2d<class_ProjectSettings_property_rendering/viewport/hdr_2d>` is ``true``, debanding will affect all 2D and 3D rendering, including canvas items.
 
 In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
 

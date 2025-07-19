@@ -208,7 +208,9 @@ Changes the alignment of the underlying :ref:`LineEdit<class_LineEdit>`.
 - |void| **set_custom_arrow_step**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_custom_arrow_step**\ (\ )
 
-If not ``0``, :ref:`Range.value<class_Range_property_value>` will always be rounded to a multiple of :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>` when interacting with the arrow buttons of the **SpinBox**.
+If not ``0``, sets the step when interacting with the arrow buttons of the **SpinBox**.
+
+\ **Note:** :ref:`Range.value<class_Range_property_value>` will still be rounded to a multiple of :ref:`step<class_SpinBox_property_step>`.
 
 .. rst-class:: classref-item-separator
 

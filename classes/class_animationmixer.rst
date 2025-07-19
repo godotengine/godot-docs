@@ -169,6 +169,8 @@ Notifies when an animation list is changed.
 
 Notifies when an animation starts playing.
 
+\ **Note:** This signal is not emitted if an animation is looping.
+
 .. rst-class:: classref-item-separator
 
 ----
