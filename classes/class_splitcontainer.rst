@@ -82,27 +82,33 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`int<class_int>`             | :ref:`autohide<class_SplitContainer_theme_constant_autohide>`                             | ``1``  |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`int<class_int>`             | :ref:`minimum_grab_thickness<class_SplitContainer_theme_constant_minimum_grab_thickness>` | ``6``  |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`int<class_int>`             | :ref:`separation<class_SplitContainer_theme_constant_separation>`                         | ``12`` |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_SplitContainer_theme_icon_grabber>`                                   |        |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`h_grabber<class_SplitContainer_theme_icon_h_grabber>`                               |        |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`h_touch_dragger<class_SplitContainer_theme_icon_h_touch_dragger>`                   |        |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`touch_dragger<class_SplitContainer_theme_icon_touch_dragger>`                       |        |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`v_grabber<class_SplitContainer_theme_icon_v_grabber>`                               |        |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`v_touch_dragger<class_SplitContainer_theme_icon_v_touch_dragger>`                   |        |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`split_bar_background<class_SplitContainer_theme_style_split_bar_background>`        |        |
-   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`touch_dragger_color<class_SplitContainer_theme_color_touch_dragger_color>`                 | ``Color(1, 1, 1, 0.3)`` |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`touch_dragger_hover_color<class_SplitContainer_theme_color_touch_dragger_hover_color>`     | ``Color(1, 1, 1, 0.6)`` |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`touch_dragger_pressed_color<class_SplitContainer_theme_color_touch_dragger_pressed_color>` | ``Color(1, 1, 1, 1)``   |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`             | :ref:`autohide<class_SplitContainer_theme_constant_autohide>`                                    | ``1``                   |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`             | :ref:`minimum_grab_thickness<class_SplitContainer_theme_constant_minimum_grab_thickness>`        | ``6``                   |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`             | :ref:`separation<class_SplitContainer_theme_constant_separation>`                                | ``12``                  |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_SplitContainer_theme_icon_grabber>`                                          |                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`h_grabber<class_SplitContainer_theme_icon_h_grabber>`                                      |                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`h_touch_dragger<class_SplitContainer_theme_icon_h_touch_dragger>`                          |                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`touch_dragger<class_SplitContainer_theme_icon_touch_dragger>`                              |                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`v_grabber<class_SplitContainer_theme_icon_v_grabber>`                                      |                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`v_touch_dragger<class_SplitContainer_theme_icon_v_touch_dragger>`                          |                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`split_bar_background<class_SplitContainer_theme_style_split_bar_background>`               |                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------+-------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -412,6 +418,42 @@ Returns the drag area :ref:`Control<class_Control>`. For example, you can move a
 
 Theme Property Descriptions
 ---------------------------
+
+.. _class_SplitContainer_theme_color_touch_dragger_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **touch_dragger_color** = ``Color(1, 1, 1, 0.3)`` :ref:`🔗<class_SplitContainer_theme_color_touch_dragger_color>`
+
+The color of the touch dragger.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SplitContainer_theme_color_touch_dragger_hover_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **touch_dragger_hover_color** = ``Color(1, 1, 1, 0.6)`` :ref:`🔗<class_SplitContainer_theme_color_touch_dragger_hover_color>`
+
+The color of the touch dragger when hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SplitContainer_theme_color_touch_dragger_pressed_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **touch_dragger_pressed_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_SplitContainer_theme_color_touch_dragger_pressed_color>`
+
+The color of the touch dragger when pressed.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_SplitContainer_theme_constant_autohide:
 
