@@ -102,7 +102,7 @@ High-level networking in Godot is managed by the :ref:`SceneTree <class_SceneTre
 Each node has a ``multiplayer`` property, which is a reference to the ``MultiplayerAPI`` instance configured for it
 by the scene tree. Initially, every node is configured with the same default ``MultiplayerAPI`` object.
 
-It is possible to create a new ``MultiplayerAPI`` object and assign it to a ``NodePath`` in the the scene tree,
+It is possible to create a new ``MultiplayerAPI`` object and assign it to a ``NodePath`` in the scene tree,
 which will override ``multiplayer`` for the node at that path and all of its descendants.
 This allows sibling nodes to be configured with different peers, which makes it possible to run a server
 and a client simultaneously in one instance of Godot.
