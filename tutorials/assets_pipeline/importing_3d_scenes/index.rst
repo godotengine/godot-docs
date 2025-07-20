@@ -21,6 +21,7 @@ dialog, and inherited scenes.
    model_export_considerations
    node_type_customization
    import_configuration
+   advanced_import_settings
 
 .. seealso::
 
