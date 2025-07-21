@@ -66,8 +66,9 @@ corner of the editor *before* running the project:
 
    Movie Maker mode is disabled, click the "movie reel" icon to enable
 
-The icon gets a background matching the accent color when Movie Maker mode is
-enabled:
+A menu will be displayed with options to enable Movie Maker mode and to go to
+the settings. The icon gets a background matching the accent color when Movie
+Maker mode is enabled:
 
 .. figure:: img/creating_movies_disable_movie_maker_mode.webp
    :align: center
@@ -153,16 +154,45 @@ Choosing an output format
 -------------------------
 
 Output formats are provided by the :ref:`MovieWriter <class_MovieWriter>` class.
-Godot has 2 built-in :ref:`MovieWriters <class_MovieWriter>`, and more can be
+Godot has 3 built-in :ref:`MovieWriters <class_MovieWriter>`, and more can be
 implemented by extensions:
 
-AVI (recommended)
+OGV (recommended)
 ~~~~~~~~~~~~~~~~~
+
+OGV container with Theora for video and Vorbis for audio. Features lossy video
+and audio compression with a good balance of file size and encoding speed, with
+a better image quality than MJPEG. It has 4 speed levels that can be adjusted
+by changing **Editor > Movie Writer > Encoding Speed** with the fastest one
+being around as fast as AVI with better compression. At slower speed levels, it
+can compress even better while keeping the same image quality. The lossy
+compression quality can be adjusted by changing **Editor > Movie Writer > Video
+Quality** for video and **Editor > Movie Writer > Audio Quality** for audio.
+
+The Keyframe Interval can be adjusted by changing **Editor > Movie Writer >
+Keyframe Interval**. In some cases, increasing this setting can improve
+compression efficiency without downsides.
+
+The resulting file can be viewed in Godot with :ref:`VideoStreamPlayer
+<class_VideoStreamPlayer>` and most video players but not web browsers. OGV
+does not support transparency.
+
+To use OGV, specify a path to a ``.ogv`` file to be created in the **Editor >
+Movie Writer > Movie File** project setting.
+
+.. note::
+
+   OGV can only be recorded in editor builds.
+   On the other hand, :ref:`OGV playback <doc_playing_videos>`
+   is possible in both editor and export template builds.
+
+AVI
+~~~
 
 AVI container with MJPEG for video and uncompressed audio. Features lossy video
 compression, resulting in medium file sizes and fast encoding. The lossy
 compression quality can be adjusted by changing
-**Editor > Movie Writer > MJPEG Quality**.
+**Editor > Movie Writer > Video Quality**.
 
 The resulting file can be viewed in most video players, but it must be converted
 to another format for viewing on the web or by Godot with the VideoStreamPlayer
@@ -213,12 +243,12 @@ the **Advanced** toggle in the top-right corner of the Project Settings dialog.
   desynchronizing over time.
 - **Speaker Mode:** The speaker mode to use in the recorded audio when writing
   a movie (stereo, 5.1 surround or 7.1 surround).
-- **MJPEG Quality:** The JPEG quality to use when writing a video to an AVI
-  file, between ``0.01`` and ``1.0`` (inclusive). Higher quality values result
+- **Video Quality:** The image quality to use when writing a video to an OGV or
+  AVI file, between ``0.01`` and ``1.0`` (inclusive). Higher quality values result
   in better-looking output at the cost of larger file sizes. Recommended quality
-  values are between ``0.75`` and ``0.9``. Even at quality ``1.0``, JPEG
-  compression remains lossy. This setting does not affect audio quality and is
-  ignored when writing to a PNG image sequence.
+  values are between ``0.75`` and ``0.9``. Even at quality ``1.0``, compression
+  remains lossy. This setting does not affect audio quality and is ignored when
+  writing to a PNG image sequence.
 - **Movie File:** The output path for the movie. This can be absolute or
   relative to the project root.
 - **Disable V-Sync:** If enabled, requests V-Sync to be disabled when writing a
@@ -231,6 +261,18 @@ the **Advanced** toggle in the top-right corner of the Project Settings dialog.
   output file sizes. Most video hosting platforms do not support FPS values
   higher than 60, but you can use a higher value and use that to generate motion
   blur.
+- **Audio Quality:** The audio quality to use when writing a video to an OGV
+  file, between ``-0.1`` and ``1.0`` (inclusive). Higher quality values result
+  in better audio quality at the cost of very slightly larger file sizes.
+  Recommended quality values are between ``0.3`` and ``0.5``. Even at quality
+  ``1.0``, compression remains lossy.
+- **Encoding Speed:** The speed level to use when writing a video to an OGV
+  file. Faster speed levels have less compression efficiency. The image quality
+  stays barely the same.
+- **Keyframe Interval:** Also known as GOP (Group Of Pictures), the maximum
+  number of inter-frames to use when writing to an OGV file. Higher values can
+  improve compression efficiency without quality loss but at the cost of slower
+  video seeks.
 
 .. note::
 
@@ -254,8 +296,9 @@ to render before quitting.
 Pressing :kbd:`F8` (:kbd:`Cmd + .` on macOS) or pressing :kbd:`Ctrl + C` on the
 terminal running Godot is **not recommended**, as it will result in an
 improperly formatted AVI file with no duration information. For PNG image
-sequences, PNG images will not be negatively altered, but the associated WAV file
-will still lack duration information.
+sequences, PNG images will not be negatively altered, but the associated WAV
+file will still lack duration information. OGV files might end up with slightly
+different duration video and audio tracks but still valid.
 
 Some video players may still be able to play the AVI or WAV file with working
 video and audio. However, software that makes use of the AVI or WAV file such as
@@ -370,18 +413,18 @@ Some common post-processing steps are listed below.
 
 .. _doc_creating_movies_converting_avi:
 
-Converting AVI video to MP4
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Converting OGV/AVI video to MP4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While some platforms such as YouTube support uploading the AVI file directly, many
 others will require a conversion step beforehand. `HandBrake <https://handbrake.fr/>`__
 (GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open source tools
 for this purpose. FFmpeg has a steeper learning curve, but it's more powerful.
 
-The command below converts an AVI video to an MP4 (H.264) video with a Constant
-Rate Factor (CRF) of 15. This results in a relatively large file, but is
-well-suited for platforms that will re-encode your videos to reduce their size
-(such as most video sharing websites):
+The command below converts an OGV/AVI video to an MP4 (H.264) video with a
+Constant Rate Factor (CRF) of 15. This results in a relatively large file, but
+is well-suited for platforms that will re-encode your videos to reduce their
+size (such as most video sharing websites):
 
 ::
 
