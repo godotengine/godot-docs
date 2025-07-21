@@ -63,11 +63,13 @@ initialize it:
 
      .. code-tab:: csharp
 
-       // Parent
-       GetNode("Child").Connect("SignalName", Callable.From(ObjectWithMethod.MethodOnTheObject));
-
        // Child
-       EmitSignal("SignalName"); // Triggers parent-defined behavior.
+       [Signal] public delegate void SignalEmittedEventHandler();
+
+       EmitSignal(SignalName.SignalEmitted);
+
+       // Parent
+       ((ChildClass) GetNode("Child")).Connect(ChildClass.SignalName.SignalEmitted, Callable.From(ObjectWithMethod.MethodOnTheObject)); // Triggers parent-defined behavior.
 
      .. code-tab:: cpp C++
 
