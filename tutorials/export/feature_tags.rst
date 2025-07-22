@@ -108,6 +108,10 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +--------------------+----------------------------------------------------------+
 | **web**            | Host OS is a Web browser                                 |
 +--------------------+----------------------------------------------------------+
+| **nothreads**      | Running without threading support                        |
++--------------------+----------------------------------------------------------+
+| **threads**        | Running with threading support                           |
++--------------------+----------------------------------------------------------+
 | **web_android**    | Host OS is a Web browser running on Android              |
 +--------------------+----------------------------------------------------------+
 | **web_ios**        | Host OS is a Web browser running on iOS                  |
