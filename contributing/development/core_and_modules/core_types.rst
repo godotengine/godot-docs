@@ -132,7 +132,7 @@ Containers
 ----------
 
 Godot provides its own set of containers, which means STL containers like ``std::string``
-and ``std::vector`` are generally not used in the codebase.
+and ``std::vector`` are generally not used in the codebase. See :ref:`doc_faq_why_not_stl` for more information.
 
 A 📜 icon denotes the type is part of :ref:`Variant <doc_variant_class>`. This
 means it can be used as a parameter or return value of a method exposed to the
