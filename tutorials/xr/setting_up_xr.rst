@@ -9,7 +9,12 @@ Introduction to the XR system in Godot
 Godot provides a modular XR system that abstracts many of the different XR platform specifics away from the user.
 At the core sits the :ref:`XRServer <class_xrserver>` which acts as a central interface to the XR system that allows users to discover interfaces and interact with the components of the XR system.
 
-Each supported XR platform is implemented as an :ref:`XRInterface <class_xrinterface>`. Supported interfaces register themselves with the :ref:`XRServer <class_xrserver>` and can be queried with the ``find_interface`` method on the :ref:`XRServer <class_xrserver>`. When the desired interface is found it can be initialized by calling ``initialize`` on the interface.
+Each supported XR platform is implemented as an :ref:`XRInterface <class_xrinterface>`.
+A list of supported platforms can be found on the list of features page :ref:`here <doc_xr_support>`.
+Supported interfaces register themselves with the :ref:`XRServer <class_xrserver>`
+and can be queried with the ``find_interface`` method on the :ref:`XRServer <class_xrserver>`.
+When the desired interface is found it can be initialized by calling ``initialize``
+on the interface.
 
 .. warning::
     A registered interface means nothing more than that the interface is available, if the interface is not supported by the host system, initialization may fail and return ``false``. This can have many reasons and sadly the reasons differ from platform to platform. It can be because the user hasn't installed the required software, or that the user simply hasn't plugged in their headset. You as a developer must thus react properly on an interface failing to initialize.
