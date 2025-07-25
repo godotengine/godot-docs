@@ -149,7 +149,9 @@ scripting API.
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |hash_set|            | ``std::unordered_set``   | **Use this as the "default" set type.**                                               |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
-| |hash_map|            | ``std::unordered_map``   | **Use this as the "default" map type.** Preserves insertion order.                    |
+| |a_hash_map|          | ``std::unordered_map``   | **Use this as the "default" map type.** Does not preserve insertion order.            |
+|                       |                          | Note that pointers into the map, as well as iterators, are not stable under mutations.|
+|                       |                          | If either of these affordances are needed, use ``HashMap`` instead.                   |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |string_name| 📜      | ``std::string``          | Uses string interning for fast comparisons. Use this for static strings that are      |
 |                       |                          | referenced frequently and used in multiple locations in the engine.                   |
@@ -186,7 +188,10 @@ scripting API.
 |                       |                          | This means it's generally slower but can be copied around almost for free.            |
 |                       |                          | The performance benefits of ``VSet`` aren't established, so prefer using other types. |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
-| |a_hash_map|          | ``std::unordered_map``   | Array-based implementation of a hash map. Does not preserve insertion order.          |
+| |hash_map|            | ``std::unordered_map``   | Defensive (robust but slow) map type. Preserves insertion order.                      |
+|                       |                          | Pointers to keys and values, as well as iterators, are stable under mutation.         |
+|                       |                          | Use this map type when either of these affordances are needed. Use ``AHashMap``       |
+|                       |                          | otherwise.                                                                            |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |rb_map|              | ``std::map``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black-tree>`__              |
 |                       |                          | for faster access.                                                                    |
