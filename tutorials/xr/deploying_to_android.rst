@@ -40,7 +40,7 @@ Installing the vendors plugin
 -----------------------------
 
 The vendors plugin can be downloaded from the asset library, search for "OpenXR vendors"
-and install the one named "Godot OpenXR Vendors plugin for Godot 4.3".
+and install the one named "Godot OpenXR Vendors plugin v4".
 
 .. image:: img/openxr_loader_asset_lib.webp
 
