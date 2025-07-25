@@ -355,10 +355,10 @@ buttons). Otherwise, they can remain the same.
 Testing translations
 --------------------
 
-You may want to test a project's translation before releasing it. Godot provides two ways
+You may want to test a project's translation before releasing it. Godot provides three ways
 to do this.
 
-First, in the Project Settings, under **Internationalization > Locale** (with advanced settings enabled), there is a **Test**
+First, in the Project Settings, under :menu:`Internationalization > Locale` (with advanced settings enabled), there is a **Test**
 property. Set this property to the locale code of the language you want to test. Godot will
 run the project with that locale when the project is run (either from the editor or when
 exported).
@@ -368,6 +368,13 @@ exported).
 Keep in mind that since this is a project setting, it will show up in version control when
 it is set to a non-empty value. Therefore, it should be set back to an empty value before
 committing changes to version control.
+
+Second, from within the editor go to the top bar and click on :button:`View` on the top bar, then go down to
+:ui:`Preview Translation` and select the language you want to preview.
+
+.. image:: img/locale_editor_preview.webp
+
+All text in scenes in the editor should now be displayed using the selected language.
 
 Translations can also be tested when :ref:`running Godot from the command line <doc_command_line_tutorial>`.
 For example, to test a game in French, the following argument can be
