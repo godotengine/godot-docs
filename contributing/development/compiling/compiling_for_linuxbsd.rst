@@ -314,12 +314,15 @@ And then use the ``--headless`` command line argument:
     ./bin/godot.linuxbsd.editor.x86_64 --headless
 
 To compile a debug *server* build which can be used with
-:ref:`remote debugging tools <doc_command_line_tutorial>`, use::
+:ref:`remote debugging tools <doc_command_line_tutorial>`, use:
+
+::
 
     scons platform=linuxbsd target=template_debug
 
-To compile a *server* build which is optimized to run dedicated game servers,
-use::
+To compile a *server* build which is optimized to run dedicated game servers, use:
+
+::
 
     scons platform=linuxbsd target=template_release production=yes
 
@@ -363,7 +366,7 @@ must be copied to:
 
 and named like this (even for \*BSD which is seen as "Linux/X11" by Godot):
 
-::
+.. code:: text
 
     linux_debug.arm32
     linux_debug.arm64
@@ -450,7 +453,7 @@ indicates to Clang the target architecture, and OS we want to build for.
 If all went well, you should now see a ``bin`` directory, and within it,
 a binary similar to the following:
 
-::
+.. code:: text
 
     godot.linuxbsd.editor.rv64.llvm
 
@@ -487,7 +490,7 @@ link-time optimization, making the resulting binaries smaller and faster.
 
 If this error occurs:
 
-::
+.. code:: text
 
     /usr/bin/ld: cannot find -l:libatomic.a: No such file or directory
 
@@ -518,7 +521,9 @@ repositories, so you will have to install its binaries manually.
     PATH="$HOME/.local/share/mold/bin:$PATH"
 
 - Open a new terminal (or run ``source "$HOME/.bash_profile"``),
-  then use the following SCons command when compiling Godot::
+  then use the following SCons command when compiling Godot:
+
+  ::
 
     scons platform=linuxbsd linker=mold
 

@@ -19,6 +19,10 @@ jobs:
       - name: Style checks via pre-commit
         uses: pre-commit/action@v3.0.1
 
+      - name: Custom RST checks (check-rst.sh)
+        run: |
+          bash ./_tools/check-rst.sh
+
       - name: Get Python version
         id: pythonv
         run: |

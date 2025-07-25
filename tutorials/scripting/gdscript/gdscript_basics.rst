@@ -885,7 +885,9 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
     even if the type is a subtype of the required type.
 
     If you want to *convert* a typed array, you can create a new array and use the
-    :ref:`Array.assign() <class_Array_method_assign>` method::
+    :ref:`Array.assign() <class_Array_method_assign>` method:
+
+    ::
 
         var a: Array[Node2D] = [Node2D.new()]
 
@@ -1257,7 +1259,9 @@ annotation if static variables don't store important data and can be reset.
     Currently, due to a bug, scripts are never freed, even if ``@static_unload`` annotation is used.
 
 Note that ``@static_unload`` applies to the entire script (including inner classes)
-and must be placed at the top of the script, before ``class_name`` and ``extends``::
+and must be placed at the top of the script, before ``class_name`` and ``extends``:
+
+::
 
     @static_unload
     class_name MyNode
@@ -1433,7 +1437,9 @@ If a function argument has a default value, it's possible to infer the type:
         pass
 
 The return type of the function can be specified after the arguments list using
-the arrow token (``->``)::
+the arrow token (``->``):
+
+::
 
     func my_int_function() -> int:
         return 0
@@ -1495,11 +1501,15 @@ This can be useful to create callables to pass around without polluting the clas
     var lambda = func (x):
         print(x)
 
-To call the created lambda you can use the :ref:`call() <class_Callable_method_call>` method::
+To call the created lambda you can use the :ref:`call() <class_Callable_method_call>` method:
+
+::
 
     lambda.call(42) # Prints `42`.
 
-Lambda functions can be named for debugging purposes (the name is displayed in the Debugger)::
+Lambda functions can be named for debugging purposes (the name is displayed in the Debugger):
+
+::
 
     var lambda = func my_lambda(x):
         print(x)
@@ -1512,7 +1522,9 @@ You can specify type hints for lambda functions in the same way as for regular o
         print(x)
 
 Note that if you want to return a value from a lambda function, an explicit ``return``
-is required (you can't omit ``return``)::
+is required (you can't omit ``return``):
+
+::
 
     var lambda = func (x): return x ** 2
     print(lambda.call(2)) # Prints `4`.
@@ -1897,7 +1909,9 @@ If a pattern matches, the first corresponding block will be executed. After that
 The following pattern types are available:
 
 - Literal pattern
-    Matches a `literal <Literals_>`_::
+    Matches a `literal <Literals_>`_:
+
+    ::
 
         match x:
             1:
@@ -1908,7 +1922,9 @@ The following pattern types are available:
                 print("Oh snap! It's a string!")
 
 - Expression pattern
-    Matches a constant expression, an identifier, or an attribute access (``A.B``)::
+    Matches a constant expression, an identifier, or an attribute access (``A.B``):
+
+    ::
 
         match typeof(x):
             TYPE_FLOAT:
@@ -2015,7 +2031,9 @@ Unlike a pattern, a pattern guard can be an arbitrary expression.
 
 Only one branch can be executed per ``match``. Once a branch is chosen, the rest are not checked.
 If you want to use the same pattern for multiple branches or to prevent choosing a branch with too general pattern,
-you can specify a pattern guard after the list of patterns with the ``when`` keyword::
+you can specify a pattern guard after the list of patterns with the ``when`` keyword:
+
+::
 
     match point:
         [0, 0]:
@@ -2043,7 +2061,9 @@ Classes
 
 By default, all script files are unnamed classes. In this case, you can only
 reference them using the file's path, using either a relative or an absolute
-path. For example, if you name a script file ``character.gd``::
+path. For example, if you name a script file ``character.gd``:
+
+::
 
    # Inherit from 'character.gd'.
 
@@ -2232,7 +2252,9 @@ A class (stored as a file) can inherit from:
 
 Multiple inheritance is not allowed.
 
-Inheritance uses the ``extends`` keyword::
+Inheritance uses the ``extends`` keyword:
+
+::
 
     # Inherit/extend a globally available class.
     extends SomeClass
@@ -2263,13 +2285,17 @@ the ``is`` keyword can be used:
         entity.apply_damage()
 
 To call a function in a *super class* (i.e. one ``extend``-ed in your current
-class), use the ``super`` keyword::
+class), use the ``super`` keyword:
+
+::
 
     super(args)
 
 This is especially useful because functions in extending classes replace
 functions with the same name in their super classes. If you still want to
-call them, you can use ``super``::
+call them, you can use ``super``:
+
+::
 
     func some_func(x):
         super(x) # Calls the same function on the super class.
@@ -2352,12 +2378,14 @@ There are a few things to keep in mind here:
    in to ``idle.gd``.
 4. If ``idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
    to the ``state.gd`` base class, even if it does nothing. This brings us to the fact that you
-   can pass expressions to the base constructor as well, not just variables, e.g.::
+   can pass expressions to the base constructor as well, not just variables, e.g.:
 
-    # idle.gd
+   ::
 
-    func _init():
-        super(5)
+   # idle.gd
+
+   func _init():
+       super(5)
 
 Static constructor
 ~~~~~~~~~~~~~~~~~~
@@ -2445,7 +2473,9 @@ For this, GDScript provides a special syntax to define properties using the ``se
 keywords after a variable declaration. Then you can define a code block that will be executed
 when the variable is accessed or assigned.
 
-Example::
+Example:
+
+::
 
     var milliseconds: int = 0
     var seconds: int:
@@ -2465,7 +2495,9 @@ Alternative syntax
 ~~~~~~~~~~~~~~~~~~
 
 Also there is another notation to use existing class functions if you want to split the code from the variable declaration
-or you need to reuse the code across multiple properties (but you can't distinguish which property the setter/getter is being called for)::
+or you need to reuse the code across multiple properties (but you can't distinguish which property the setter/getter is being called for):
+
+::
 
     var my_prop:
         get = get_my_prop, set = set_my_prop
@@ -2654,7 +2686,9 @@ interface separate from the player in our scene tree.
 In our ``character.gd`` script, we define a ``health_changed`` signal and emit
 it with :ref:`Signal.emit() <class_Signal_method_emit>`, and from
 a ``Game`` node higher up our scene tree, we connect it to the ``Lifebar`` using
-the :ref:`Signal.connect() <class_Signal_method_connect>` method::
+the :ref:`Signal.connect() <class_Signal_method_connect>` method:
+
+::
 
     # character.gd
 
@@ -2707,8 +2741,9 @@ node in this case.
 This allows the ``Lifebar`` to react to health changes without coupling it to
 the ``Character`` node.
 
-You can write optional argument names in parentheses after the signal's
-definition::
+You can write optional argument names in parentheses after the signal's definition:
+
+::
 
     # Defining a signal that forwards two arguments.
     signal health_changed(old_value, new_value)
@@ -2849,7 +2884,8 @@ depending on whether the project is run in a debug build.
 When running a project from the editor, the project will be paused if an
 assertion error occurs.
 
-You can optionally pass a custom error message to be shown if the assertion
-fails::
+You can optionally pass a custom error message to be shown if the assertion fails:
+
+::
 
     assert(enemy_power < 256, "Enemy is too powerful!")

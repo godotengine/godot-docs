@@ -99,9 +99,7 @@ This example will show you how to create a WebSocket connection to a remote serv
 
 This will print something similar to:
 
-.. highlight:: none
-
-::
+.. code:: text
 
     Connecting to wss://echo.websocket.org...
     < Got text data from server: Request served by 7811941c69e658
@@ -112,8 +110,6 @@ Minimal server example
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This example will show you how to create a WebSocket server that listens for remote connections, and how to send and receive data.
-
-.. highlight:: gdscript
 
 ::
 
@@ -178,9 +174,7 @@ This example will show you how to create a WebSocket server that listens for rem
 
 When a client connects, this will print something similar to this:
 
-.. highlight:: none
-
-::
+.. code:: text
 
     Server started.
     + Peer 2 connected.
