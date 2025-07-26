@@ -181,7 +181,7 @@ it using (for example):
  .. code-tab:: csharp
 
     // Wait until the frame has finished before getting the texture.
-    await RenderingServer.Singleton.ToSignal(RenderingServer.SignalName.FramePostDraw);
+    await ToSignal(RenderingServer.Singleton, RenderingServer.SignalName.FramePostDraw);
     // You can get the image after this.
 
 Viewport Container
