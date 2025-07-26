@@ -45,7 +45,7 @@ language specifically for Godot and the needs of game developers. It has a
 lightweight and straightforward syntax and provides the tightest integration
 with Godot.
 
-.. image:: img/scripting_gdscript.png
+.. image:: img/scripting_gdscript.webp
 
 For C#, you will need an external code editor like
 `VSCode <https://code.visualstudio.com/>`_ or Visual Studio. While C# support is

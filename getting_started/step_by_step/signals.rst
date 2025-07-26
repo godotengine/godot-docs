@@ -271,16 +271,16 @@ In the Scene dock, right-click on the Sprite2D node and add a new child node.
 Search for Timer and add the corresponding node. Your scene should now look like
 this.
 
-.. image:: img/signals_15_scene_tree.png
+.. image:: img/signals_15_scene_tree.webp
 
 With the Timer node selected, go to the Inspector and enable the **Autostart**
 property.
 
-.. image:: img/signals_18_timer_autostart.png
+.. image:: img/signals_18_timer_autostart.webp
 
 Click the script icon next to Sprite2D to jump back to the scripting workspace.
 
-.. image:: img/signals_16_click_script.png
+.. image:: img/signals_16_click_script.webp
 
 We need to do two operations to connect the nodes via code:
 
