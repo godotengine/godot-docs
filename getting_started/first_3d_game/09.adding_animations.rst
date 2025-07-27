@@ -56,17 +56,15 @@ nodes.
 
 Set the animation duration to ``1.2`` seconds in the top-right of the dock.
 
-|image7|
-
 You should see the gray ribbon widen a bit. It shows you the start and end of
 your animation and the vertical blue line is your time cursor.
 
-|image8|
+|image7|
 
 You can click and drag the slider in the bottom-right to zoom in and out of the
 timeline.
 
-|image9|
+|image8|
 
 The float animation
 -------------------
@@ -82,7 +80,7 @@ rotation of the ``Character`` node.
 
 Select the ``Character`` and in the *Inspector* expand the *Transform* section. Click the key icon next to *Position*, and *Rotation*.
 
-|image10|
+|image9|
 
 .. image:: img/09.adding_animations/curves.webp
 
@@ -90,15 +88,15 @@ For this tutorial, just create RESET Track(s) which is the default choice
 
 Two tracks appear in the editor with a diamond icon representing each keyframe.
 
-|image11|
+|image10|
 
 You can click and drag on the diamonds to move them in time. Move the
 position key to ``0.3`` seconds and the rotation key to ``0.1`` seconds.
 
-|image12|
+|image11|
 
 Move the time cursor to ``0.5`` seconds by clicking and dragging on the gray
-timeline.
+timeline, or by entering it into the input field.
 
 |timeline_05_click|
 
@@ -108,7 +106,7 @@ In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the
 If you don't see the properties in the *Inspector* panel, first click on the
 ``Character`` node again in the *Scene* dock.
 
-|image13|
+|image12|
 
 Create a keyframe for both properties
 
@@ -117,7 +115,7 @@ Create a keyframe for both properties
 Now, move the position keyframe to ``0.7``
 seconds by dragging it on the timeline.
 
-|image14|
+|image13|
 
 .. note::
 
@@ -136,7 +134,7 @@ create a key for both properties.
 You can preview the result by clicking the play button or pressing :kbd:`Shift + D`.
 Click the stop button or press :kbd:`S` to stop playback.
 
-|image15|
+|image14|
 
 You can see that the engine interpolates between your keyframes to produce a
 continuous animation. At the moment, though, the motion feels very robotic. This
@@ -147,33 +145,33 @@ We can control the transition between keyframes using easing curves.
 
 Click and drag around the first two keys in the timeline to box select them.
 
-|image16|
+|image15|
 
 You can edit the properties of both keys simultaneously in the *Inspector*,
 where you can see an *Easing* property.
 
-|image17|
+|image16|
 
 Click and drag on the curve, pulling it towards the left. This will make it
 ease-out, that is to say, transition fast initially and slow down as the time
 cursor reaches the next keyframe.
 
-|image18|
+|image17|
 
 Play the animation again to see the difference. The first half should already
 feel a bit bouncier.
 
 Apply an ease-out to the second keyframe in the rotation track.
 
-|image19|
+|image18|
 
 Do the opposite for the second position keyframe, dragging it to the right.
 
-|image20|
+|image19|
 
 Your animation should look something like this.
 
-|image21|
+|image20|
 
 .. note::
 
@@ -197,7 +195,7 @@ Let's change the animation speed when the character is moving.
 
 Open the ``Player``'s script by clicking the script icon next to it.
 
-|image22|
+|image21|
 
 In ``_physics_process()``, after the line where we check the ``direction``
 vector, add the following code.
@@ -618,26 +616,25 @@ And the *Mob*'s script.
 .. |image0| image:: img/squash-the-creeps-final.gif
 .. |image1| image:: img/09.adding_animations/animation_player_dock.webp
 .. |image2| image:: img/09.adding_animations/02.new_animation.webp
-.. |image3| image:: img/09.adding_animations/03.float_name.png
-.. |image4| image:: img/09.adding_animations/03.timeline.png
-.. |image5| image:: img/09.adding_animations/04.autoplay_and_loop.png
-.. |image6| image:: img/09.adding_animations/05.pin_icon.png
+.. |image3| image:: img/09.adding_animations/03.float_name.webp
+.. |image4| image:: img/09.adding_animations/03.timeline.webp
+.. |image5| image:: img/09.adding_animations/04.autoplay_and_loop.webp
+.. |image6| image:: img/09.adding_animations/05.pin_icon.webp
 .. |image7| image:: img/09.adding_animations/06.animation_duration.webp
-.. |image8| image:: img/09.adding_animations/07.editable_timeline.webp
-.. |image9| image:: img/09.adding_animations/08.zoom_slider.webp
-.. |image10| image:: img/09.adding_animations/09.creating_first_keyframe.webp
-.. |image11| image:: img/09.adding_animations/10.initial_keys.webp
-.. |image12| image:: img/09.adding_animations/11.moving_keys.webp
-.. |image13| image:: img/09.adding_animations/12.second_keys_values.webp
-.. |image14| image:: img/09.adding_animations/13.second_keys.webp
-.. |image15| image:: img/09.adding_animations/14.play_button.png
-.. |image16| image:: img/09.adding_animations/15.box_select.webp
-.. |image17| image:: img/09.adding_animations/16.easing_property.png
-.. |image18| image:: img/09.adding_animations/17.ease_out.png
-.. |image19| image:: img/09.adding_animations/18.ease_out_second_rotation_key.png
-.. |image20| image:: img/09.adding_animations/19.ease_in_second_translation_key.png
-.. |image21| image:: img/09.adding_animations/20.float_animation.gif
-.. |image22| image:: img/09.adding_animations/21.script_icon.png
+.. |image8| image:: img/09.adding_animations/08.zoom_slider.webp
+.. |image9| image:: img/09.adding_animations/09.creating_first_keyframe.webp
+.. |image10| image:: img/09.adding_animations/10.initial_keys.webp
+.. |image11| image:: img/09.adding_animations/11.moving_keys.webp
+.. |image12| image:: img/09.adding_animations/12.second_keys_values.webp
+.. |image13| image:: img/09.adding_animations/13.second_keys.webp
+.. |image14| image:: img/09.adding_animations/14.play_button.webp
+.. |image15| image:: img/09.adding_animations/15.box_select.webp
+.. |image16| image:: img/09.adding_animations/16.easing_property.webp
+.. |image17| image:: img/09.adding_animations/17.ease_out.webp
+.. |image18| image:: img/09.adding_animations/18.ease_out_second_rotation_key.webp
+.. |image19| image:: img/09.adding_animations/19.ease_in_second_translation_key.webp
+.. |image20| image:: img/09.adding_animations/20.float_animation.gif
+.. |image21| image:: img/09.adding_animations/21.script_icon.webp
 .. |animation_final_keyframes| image:: img/09.adding_animations/animation_final_keyframes.webp
 .. |second_keys_both| image:: img/09.adding_animations/second_keys_both.webp
 .. |timeline_05_click| image:: img/09.adding_animations/timeline_05_click.webp

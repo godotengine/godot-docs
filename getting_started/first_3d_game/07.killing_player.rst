@@ -511,9 +511,9 @@ Finally, the longest script, ``player.gd``:
 
 See you in the next lesson to add the score and the retry option.
 
-.. |image0| image:: img/07.killing_player/01.adding_area_node.png
-.. |image1| image:: img/07.killing_player/02.cylinder_shape.png
+.. |image0| image:: img/07.killing_player/01.adding_area_node.webp
+.. |image1| image:: img/07.killing_player/02.cylinder_shape.webp
 .. |image2| image:: img/07.killing_player/03.cylinder_in_editor.png
 .. |image3| image:: img/07.killing_player/04.mob_detector_properties.webp
-.. |image4| image:: img/07.killing_player/05.body_entered_signal.png
-.. |image5| image:: img/07.killing_player/06.player_hit_signal.png
+.. |image4| image:: img/07.killing_player/05.body_entered_signal.webp
+.. |image5| image:: img/07.killing_player/06.player_hit_signal.webp
