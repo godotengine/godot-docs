@@ -59,21 +59,24 @@ Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter    
 
 .. warning::
 
-    The behavior of ``@export_file`` changed in Godot 4.4. When assigning a new value from the Inspector, the path is now stored and returned as a ``uid://`` reference instead of the traditional ``res://`` path. This is a **breaking change** and may cause issues if you're expecting ``res://``-based paths in scripts or serialized files.
+    The behavior of ``@export_file`` changed in Godot 4.4. When assigning a new value
+    from the Inspector, the path is now stored and returned as a ``uid://`` reference
+    instead of the traditional ``res://`` path. This is a **breaking change** and may
+    cause issues if you're expecting ``res://``-based paths in scripts or serialized
+    files. This change was introduced in
+    `PR #105414 <https://github.com/godotengine/godot/pull/105414>`_.
 
-    For example, exported arrays of files may now contain a mix of ``uid://`` and ``res://`` paths, especially if they were edited partially in the Inspector.
+    For example, exported arrays of files may now contain a mix of ``uid://`` and
+    ``res://`` paths, especially if they were partially edited in the Inspector.
 
-    In 4.4, the only way to retain the ``res://`` format is to **manually edit** the `.tscn` or `.tres` files in a text editor. Starting in Godot 4.5, a new annotation ``@export_file_path`` can be used to explicitly retain the old behavior and export raw ``res://`` paths.
-
-    Related issues:
-
-    - PR: `Add @export_file_path to export raw paths (no UID) <https://github.com/godotengine/godot/pull/105414>`_
-    - Issue: `@export_file behavior change is breaking <https://github.com/godotengine/godot/issues/11065>`_
-    - See also: `ProjectSettings stores UIDs for file paths <https://github.com/godotengine/godot/pull/104818>`_
-
+    In 4.4, the only way to retain the ``res://`` format is to **manually edit** the
+    `.tscn` or `.tres` files in a text editor. Starting in Godot 4.5, a new annotation
+    ``@export_file_path`` can be used to explicitly retain the old behavior and export
+    raw ``res://`` paths.
 
 .. [#f1] Default buffer size in 4.3 is ``1024``.
 
+9
 GUI nodes
 ~~~~~~~~~
 
