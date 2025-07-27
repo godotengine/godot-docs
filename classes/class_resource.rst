@@ -284,7 +284,7 @@ Override this method to return a custom :ref:`RID<class_RID>` when :ref:`get_rid
 
 |void| **_reset_state**\ (\ ) |virtual| :ref:`🔗<class_Resource_private_method__reset_state>`
 
-For resources that use a variable number of properties, either via :ref:`Object._validate_property()<class_Object_private_method__validate_property>` or :ref:`Object._get_property_list()<class_Object_private_method__get_property_list>`, this method should be implemented to correctly clear the resource's state.
+For resources that store state in non-exported properties, such as via :ref:`Object._validate_property()<class_Object_private_method__validate_property>` or :ref:`Object._get_property_list()<class_Object_private_method__get_property_list>`, this method must be implemented to clear them.
 
 .. rst-class:: classref-item-separator
 
@@ -296,7 +296,7 @@ For resources that use a variable number of properties, either via :ref:`Object.
 
 |void| **_set_path_cache**\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_Resource_private_method__set_path_cache>`
 
-Sets the resource's path to ``path`` without involving the resource cache.
+Override this method to execute additional logic after :ref:`set_path_cache()<class_Resource_method_set_path_cache>` is called on this object.
 
 .. rst-class:: classref-item-separator
 
@@ -405,7 +405,7 @@ Generates a unique identifier for a resource to be contained inside a :ref:`Pack
 
 :ref:`String<class_String>` **get_id_for_path**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_Resource_method_get_id_for_path>`
 
-Returns the unique identifier for the resource with the given ``path`` from the resource cache. If the resource is not loaded and cached, an empty string is returned.
+From the internal cache for scene-unique IDs, returns the ID of this resource for the scene at ``path``. If there is no entry, an empty string is returned. Useful to keep scene-unique IDs the same when implementing a VCS-friendly custom resource format by extending :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` and :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
 
 \ **Note:** This method is only implemented when running in an editor context. At runtime, it returns an empty string.
 
@@ -443,7 +443,7 @@ Returns the :ref:`RID<class_RID>` of this resource (or an empty RID). Many resou
 
 :ref:`bool<class_bool>` **is_built_in**\ (\ ) |const| :ref:`🔗<class_Resource_method_is_built_in>`
 
-Returns ``true`` if the resource is built-in (from the engine) or ``false`` if it is user-defined.
+Returns ``true`` if the resource is saved on disk as a part of another resource's file.
 
 .. rst-class:: classref-item-separator
 
@@ -455,7 +455,7 @@ Returns ``true`` if the resource is built-in (from the engine) or ``false`` if i
 
 |void| **reset_state**\ (\ ) :ref:`🔗<class_Resource_method_reset_state>`
 
-For resources that use a variable number of properties, either via :ref:`Object._validate_property()<class_Object_private_method__validate_property>` or :ref:`Object._get_property_list()<class_Object_private_method__get_property_list>`, override :ref:`_reset_state()<class_Resource_private_method__reset_state>` to correctly clear the resource's state.
+Makes the resource clear its non-exported properties. See also :ref:`_reset_state()<class_Resource_private_method__reset_state>`. Useful when implementing a custom resource format by extending :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` and :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
 
 .. rst-class:: classref-item-separator
 
@@ -467,7 +467,7 @@ For resources that use a variable number of properties, either via :ref:`Object.
 
 |void| **set_id_for_path**\ (\ path\: :ref:`String<class_String>`, id\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Resource_method_set_id_for_path>`
 
-Sets the unique identifier to ``id`` for the resource with the given ``path`` in the resource cache. If the unique identifier is empty, the cache entry using ``path`` is removed if it exists.
+In the internal cache for scene-unique IDs, sets the ID of this resource to ``id`` for the scene at ``path``. If ``id`` is empty, the cache entry for ``path`` is cleared. Useful to keep scene-unique IDs the same when implementing a VCS-friendly custom resource format by extending :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` and :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
 
 \ **Note:** This method is only implemented when running in an editor context.
 
@@ -481,7 +481,7 @@ Sets the unique identifier to ``id`` for the resource with the given ``path`` in
 
 |void| **set_path_cache**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Resource_method_set_path_cache>`
 
-Sets the resource's path to ``path`` without involving the resource cache.
+Sets the resource's path to ``path`` without involving the resource cache. Useful for handling :ref:`CacheMode<enum_ResourceFormatLoader_CacheMode>` values when implementing a custom resource format by extending :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` and :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
 
 .. rst-class:: classref-item-separator
 

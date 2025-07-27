@@ -49,12 +49,16 @@ Using multi-threading
 
 The build process may take a while, depending on how powerful your system is. By default, Godot's
 SCons setup is configured to use all CPU threads but one (to keep the system responsive during
-compilation). If you want to adjust how many CPU threads SCons will use, use the ``-j <threads>``
+compilation). If the system has 4 CPU threads or fewer, it will use all threads by default.
+
+If you want to adjust how many CPU threads SCons will use, use the ``-j<threads>``
 parameter to specify how many threads will be used for the build.
 
-Example for using 4 threads::
+Example for using 12 threads:
 
-    scons -j4
+::
+
+    scons -j12
 
 Platform selection
 ------------------
@@ -68,7 +72,9 @@ SCons is invoked by just calling ``scons``. If no platform is specified,
 SCons will detect the target platform automatically based on the host platform.
 It will then start building for the target platform right away.
 
-To list the available target platforms, use ``scons platform=list``::
+To list the available target platforms, use ``scons platform=list``:
+
+.. code:: text
 
     scons platform=list
     scons: Reading SConscript files ...

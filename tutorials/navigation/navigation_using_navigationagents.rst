@@ -17,6 +17,10 @@ New NavigationAgent nodes will automatically join the default navigation map on 
 NavigationsAgent nodes are optional and not a hard requirement to use the navigation system.
 Their entire functionality can be replaced with scripts and direct calls to the NavigationServer API.
 
+.. tip::
+
+    For more advanced uses consider :ref:`doc_navigation_using_navigationpathqueryobjects` over NavigationAgent nodes.
+
 NavigationAgent Pathfinding
 ---------------------------
 
@@ -505,7 +509,7 @@ The following sections provides script templates for nodes commonly used with Na
 
             @export var movement_speed: float = 4.0
             @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
-            var movement_delta: float
+            var physics_delta: float
 
             func _ready() -> void:
                 navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
@@ -514,22 +518,23 @@ The following sections provides script templates for nodes commonly used with Na
                 navigation_agent.set_target_position(movement_target)
 
             func _physics_process(delta):
+                # Save the delta for use in _on_velocity_computed.
+                physics_delta = delta
                 # Do not query when the map has never synchronized and is empty.
                 if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
                     return
                 if navigation_agent.is_navigation_finished():
                     return
 
-                movement_delta = movement_speed * delta
                 var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-                var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_delta
+                var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
                 if navigation_agent.avoidance_enabled:
                     navigation_agent.set_velocity(new_velocity)
                 else:
                     _on_velocity_computed(new_velocity)
 
             func _on_velocity_computed(safe_velocity: Vector3) -> void:
-                global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
+                global_position = global_position.move_toward(global_position + safe_velocity, physics_delta * movement_speed)
 
          .. code-tab:: gdscript CharacterBody3D
 

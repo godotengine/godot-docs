@@ -30,6 +30,8 @@ Tutorials
 
 - :doc:`Internationalizing games <../tutorials/i18n/internationalizing_games>`
 
+- :doc:`Localization using gettext <../tutorials/i18n/localization_using_gettext>`
+
 - :doc:`Locales <../tutorials/i18n/locales>`
 
 .. rst-class:: classref-reftable-group
@@ -153,6 +155,8 @@ Adds a message involving plural translation if nonexistent, followed by its tran
 
 An additional context could be used to specify the translation context or differentiate polysemic words.
 
+\ **Note:** Plurals are only supported in :doc:`gettext-based translations (PO) <../tutorials/i18n/localization_using_gettext>`, not CSV.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -214,6 +218,8 @@ Returns all the messages (keys).
 Returns a message's translation involving plurals.
 
 The number ``n`` is the number or quantity of the plural object. It will be used to guide the translation system to fetch the correct plural form for the selected language.
+
+\ **Note:** Plurals are only supported in :doc:`gettext-based translations (PO) <../tutorials/i18n/localization_using_gettext>`, not CSV.
 
 .. rst-class:: classref-item-separator
 

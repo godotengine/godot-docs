@@ -833,6 +833,18 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/comment_color<class_EditorSettings_property_text_editor/theme/highlighting/comment_color>`                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/comment_markers/critical_color<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/critical_color>`                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`text_editor/theme/highlighting/comment_markers/critical_list<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/critical_list>`                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/comment_markers/notice_color<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/notice_color>`                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`text_editor/theme/highlighting/comment_markers/notice_list<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/notice_list>`                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/comment_markers/warning_color<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/warning_color>`                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`text_editor/theme/highlighting/comment_markers/warning_list<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/warning_list>`                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/completion_background_color<class_EditorSettings_property_text_editor/theme/highlighting/completion_background_color>`                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/completion_existing_color<class_EditorSettings_property_text_editor/theme/highlighting/completion_existing_color>`                                                           |
@@ -858,6 +870,18 @@ Properties
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/folded_code_region_color<class_EditorSettings_property_text_editor/theme/highlighting/folded_code_region_color>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/function_color<class_EditorSettings_property_text_editor/theme/highlighting/function_color>`                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/gdscript/annotation_color<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/annotation_color>`                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/gdscript/function_definition_color<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/function_definition_color>`                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/gdscript/global_function_color<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/global_function_color>`                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/gdscript/node_path_color<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/node_path_color>`                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/gdscript/node_reference_color<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/node_reference_color>`                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/gdscript/string_name_color<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/string_name_color>`                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/keyword_color<class_EditorSettings_property_text_editor/theme/highlighting/keyword_color>`                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4010,7 +4034,9 @@ If ``true``, the Scene dock will display buttons to quickly add a root node to a
 
 :ref:`bool<class_bool>` **interface/inspector/auto_unfold_foreign_scenes** :ref:`🔗<class_EditorSettings_property_interface/inspector/auto_unfold_foreign_scenes>`
 
-If ``true``, automatically expands property groups in the Inspector dock when opening a scene that hasn't been opened previously. If ``false``, all groups remain collapsed by default.
+If ``true``, automatically unfolds Inspector property groups containing modified values when opening a scene for the first time. Only affects scenes without saved folding preferences and only unfolds groups with properties that have been changed from their default values.
+
+\ **Note:** This setting only works in specific scenarios: when opening a scene brought in from another project, or when opening a new scene that already has modified properties (e.g., from version control). Duplicated scenes are not considered foreign, so this setting will not affect them.
 
 .. rst-class:: classref-item-separator
 
@@ -4621,6 +4647,8 @@ All update modes will ignore builds with different major versions (e.g. Godot 4 
 :ref:`int<class_int>` **network/connection/network_mode** :ref:`🔗<class_EditorSettings_property_network/connection/network_mode>`
 
 Determines whether online features are enabled in the editor, such as the Asset Library or update checks. Disabling these online features helps alleviate privacy concerns by preventing the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Library.
+
+Editor plugins and tool scripts are recommended to follow this setting. However, Godot can't prevent them from violating this rule.
 
 .. rst-class:: classref-item-separator
 
@@ -5492,7 +5520,15 @@ If ``true``, uses :ref:`StringName<class_StringName>` instead of :ref:`String<cl
 
 :ref:`bool<class_bool>` **text_editor/completion/add_type_hints** :ref:`🔗<class_EditorSettings_property_text_editor/completion/add_type_hints>`
 
-If ``true``, adds :doc:`GDScript static typing <../tutorials/scripting/gdscript/static_typing>` hints such as ``-> void`` and ``: int`` when using code autocompletion or when creating onready variables by drag and dropping nodes into the script editor while pressing the :kbd:`Ctrl` key. If ``true``, newly created scripts will also automatically have type hints added to their method parameters and return types.
+If ``true``, automatically adds :doc:`GDScript static typing <../tutorials/scripting/gdscript/static_typing>` (such as ``-> void`` and ``: int``) in many situations where it's possible to, including when:
+
+- Accepting a suggestion from code autocompletion;
+
+- Creating a new script from a template;
+
+- Connecting signals from the Node dock;
+
+- Creating variables prefixed with :ref:`@GDScript.@onready<class_@GDScript_annotation_@onready>`, by dropping nodes from the Scene dock into the script editor while holding :kbd:`Ctrl`.
 
 .. rst-class:: classref-item-separator
 
@@ -5940,6 +5976,84 @@ The script editor's comment color.
 
 ----
 
+.. _class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/critical_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/comment_markers/critical_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/critical_color>`
+
+The script editor's critical comment marker text color. These markers are determined by :ref:`text_editor/theme/highlighting/comment_markers/critical_list<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/critical_list>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/critical_list:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **text_editor/theme/highlighting/comment_markers/critical_list** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/critical_list>`
+
+A comma-separated list of case-sensitive words to highlight in comments. The text will be highlighted in the script editor with the :ref:`text_editor/theme/highlighting/comment_markers/critical_color<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/critical_color>` color. These must not include spaces or symbols or they will not be highlighted.
+
+\ **Note:** This is only implemented in the GDScript syntax highlighter.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/notice_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/comment_markers/notice_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/notice_color>`
+
+The script editor's notice comment marker text color. These markers are determined by :ref:`text_editor/theme/highlighting/comment_markers/notice_list<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/notice_list>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/notice_list:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **text_editor/theme/highlighting/comment_markers/notice_list** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/notice_list>`
+
+A comma-separated list of case-sensitive words to highlight in comments. The text will be highlighted in the script editor with the :ref:`text_editor/theme/highlighting/comment_markers/notice_color<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/notice_color>` color. These must not include spaces or symbols or they will not be highlighted.
+
+\ **Note:** This is only implemented in the GDScript syntax highlighter.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/warning_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/comment_markers/warning_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/warning_color>`
+
+The script editor's warning comment marker text color. These markers are determined by :ref:`text_editor/theme/highlighting/comment_markers/warning_list<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/warning_list>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/warning_list:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **text_editor/theme/highlighting/comment_markers/warning_list** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/warning_list>`
+
+A comma-separated list of case-sensitive words to highlight in comments. The text will be highlighted in the script editor with the :ref:`text_editor/theme/highlighting/comment_markers/warning_color<class_EditorSettings_property_text_editor/theme/highlighting/comment_markers/warning_color>` color. These must not include spaces or symbols or they will not be highlighted.
+
+\ **Note:** This is only implemented in the GDScript syntax highlighter.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/theme/highlighting/completion_background_color:
 
 .. rst-class:: classref-property
@@ -6092,7 +6206,79 @@ The script editor's background line highlighting color for folded code region.
 
 The script editor's function call color.
 
-\ **Note:** When using the GDScript syntax highlighter, this is replaced by the function definition color configured in the syntax theme for function definitions (e.g. ``func _ready():``).
+\ **Note:** When using the GDScript syntax highlighter, this is only used when calling some functions since function definitions and global functions have their own colors :ref:`text_editor/theme/highlighting/gdscript/function_definition_color<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/function_definition_color>` and :ref:`text_editor/theme/highlighting/gdscript/global_function_color<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/global_function_color>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/gdscript/annotation_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/gdscript/annotation_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/annotation_color>`
+
+The GDScript syntax highlighter text color for annotations (e.g. ``@export``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/gdscript/function_definition_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/gdscript/function_definition_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/function_definition_color>`
+
+The GDScript syntax highlighter text color for function definitions (e.g. the ``_ready`` in ``func _ready():``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/gdscript/global_function_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/gdscript/global_function_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/global_function_color>`
+
+The GDScript syntax highlighter text color for global functions, such as the ones in :ref:`@GlobalScope<class_@GlobalScope>` (e.g. ``preload()``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/gdscript/node_path_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/gdscript/node_path_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/node_path_color>`
+
+The GDScript syntax highlighter text color for :ref:`NodePath<class_NodePath>` literals (e.g. ``^"position:x"``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/gdscript/node_reference_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/gdscript/node_reference_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/node_reference_color>`
+
+The GDScript syntax highlighter text color for node reference literals (e.g. ``$"Sprite"`` and ``%"Sprite"``]).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/gdscript/string_name_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/gdscript/string_name_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/gdscript/string_name_color>`
+
+The GDScript syntax highlighter text color for :ref:`StringName<class_StringName>` literals (e.g. ``>"example"``).
 
 .. rst-class:: classref-item-separator
 

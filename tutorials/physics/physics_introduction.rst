@@ -202,7 +202,9 @@ or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`Collisio
     collider.set_collision_mask_value(3, true)
     collider.set_collision_mask_value(4, true)
 
-Export annotations can be used to export bitmasks in the editor with a user-friendly GUI::
+Export annotations can be used to export bitmasks in the editor with a user-friendly GUI:
+
+::
 
     @export_flags_2d_physics var layers_2d_physics
 
@@ -316,15 +318,23 @@ For example, here is the code for an "Asteroids" style spaceship:
         public override void _IntegrateForces(PhysicsDirectBodyState2D state)
         {
             if (Input.IsActionPressed("ui_up"))
+            {
                 state.ApplyForce(_thrust.Rotated(Rotation));
+            }
             else
+            {
                 state.ApplyForce(new Vector2());
+            }
 
             var rotationDir = 0;
             if (Input.IsActionPressed("ui_right"))
+            {
                 rotationDir += 1;
+            }
             if (Input.IsActionPressed("ui_left"))
+            {
                 rotationDir -= 1;
+            }
             state.ApplyTorque(rotationDir * _torque);
         }
     }
@@ -441,7 +451,9 @@ Or to bounce off of the colliding object:
         {
             var collisionInfo = MoveAndCollide(_velocity * (float)delta);
             if (collisionInfo != null)
+            {
                 _velocity = _velocity.Bounce(collisionInfo.GetNormal());
+            }
         }
     }
 
@@ -510,11 +522,17 @@ the ground (including slopes) and jump when standing on the ground:
             var jump = Input.IsActionPressed("ui_select");
 
             if (IsOnFloor() && jump)
+            {
                 velocity.Y = _jumpSpeed;
+            }
             if (right)
+            {
                 velocity.X += _runSpeed;
+            }
             if (left)
+            {
                 velocity.X -= _runSpeed;
+            }
 
             Velocity = velocity;
         }

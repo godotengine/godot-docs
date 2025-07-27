@@ -108,6 +108,10 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +--------------------+----------------------------------------------------------+
 | **web**            | Host OS is a Web browser                                 |
 +--------------------+----------------------------------------------------------+
+| **nothreads**      | Running without threading support                        |
++--------------------+----------------------------------------------------------+
+| **threads**        | Running with threading support                           |
++--------------------+----------------------------------------------------------+
 | **web_android**    | Host OS is a Web browser running on Android              |
 +--------------------+----------------------------------------------------------+
 | **web_ios**        | Host OS is a Web browser running on iOS                  |
@@ -152,6 +156,10 @@ field in the *export preset* used to generate it:
     (including with :ref:`doc_one-click_deploy`). They are **not used** when
     running the project from the editor, even if the export preset marked as
     **Runnable** for your current platform has custom feature tags defined.
+
+    Custom feature tags are also not used in :ref:`class_EditorExportPlugin`
+    scripts. Instead, feature tags in :ref:`class_EditorExportPlugin`
+    will reflect the device the editor is currently running on.
 
 Overriding project settings
 ---------------------------

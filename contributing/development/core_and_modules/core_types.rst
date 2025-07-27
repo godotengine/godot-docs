@@ -20,19 +20,16 @@ more difficult to read.
 In general, care is not taken to use the most efficient datatype for a
 given task unless using large structures or arrays. ``int`` is used
 through most of the code unless necessary. This is done because nowadays
-every device has at least a 32 bits bus and can do such operations in
+every device has at least a 32-bit bus and can do such operations in
 one cycle. It makes code more readable too.
 
-For files or memory sizes, ``size_t`` is used, which is warranted to be
-64 bits.
+For files or memory sizes, ``size_t`` is used, which is guaranteed to be
+64-bit.
 
 For Unicode characters, CharType instead of wchar_t is used, because
 many architectures have 4 bytes long wchar_t, where 2 bytes might be
 desired. However, by default, this has not been forced and CharType maps
 directly to wchar_t.
-
-References:
-~~~~~~~~~~~
 
 -  `core/typedefs.h <https://github.com/godotengine/godot/blob/master/core/typedefs.h>`__
 
@@ -63,7 +60,7 @@ remain constant. In other words, leave 10-20% of your memory free
 and perform all small allocations and you are fine.
 
 Godot ensures that all objects that can be allocated dynamically are
-small (less than a few kb at most). But what happens if an allocation is
+small (less than a few kB at most). But what happens if an allocation is
 too large (like an image or mesh geometry or large array)? In this case
 Godot has the option to use a dynamic memory pool. This memory needs to
 be locked to be accessed, and if an allocation runs out of memory, the
@@ -85,20 +82,21 @@ For C-style allocation, Godot provides a few macros:
     memrealloc()
     memfree()
 
-These are equivalent to the usual malloc, realloc, free of the standard C
-library.
+These are equivalent to the usual ``malloc()``, ``realloc()``, and ``free()``
+of the C standard library.
 
 For C++-style allocation, special macros are provided:
 
 .. code-block:: none
 
-    memnew( Class / Class(args) )
-    memdelete( instance )
+    memnew(Class / Class(args))
+    memdelete(instance)
 
-    memnew_arr( Class , amount )
-    memdelete_arr( pointer to array )
+    memnew_arr(Class, amount)
+    memdelete_arr(pointer_to_array)
 
-which are equivalent to new, delete, new[] and delete[].
+These are equivalent to ``new``, ``delete``, ``new[]``, and ``delete[]``
+respectively.
 
 memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
@@ -128,84 +126,110 @@ its storage strategy. Prefer ``Vector<>`` (or ``LocalVector<>``) over
 ``List<>`` unless you're sure you need it, as cache locality and memory
 fragmentation tend to be more important with small collections.
 
-References:
-~~~~~~~~~~~
-
 -  `core/os/memory.h <https://github.com/godotengine/godot/blob/master/core/os/memory.h>`__
 
 Containers
 ----------
 
-Godot provides also a set of common containers:
+Godot provides its own set of containers, which means STL containers like ``std::string``
+and ``std::vector`` are generally not used in the codebase. See :ref:`doc_faq_why_not_stl` for more information.
 
--  Vector
--  List
--  Set
--  Map
+A 📜 icon denotes the type is part of :ref:`Variant <doc_variant_class>`. This
+means it can be used as a parameter or return value of a method exposed to the
+scripting API.
 
-They aim to be as minimal as possible, as templates
-in C++ are often inlined and make the binary size much fatter, both in
-debug symbols and code. List, Set and Map can be iterated using
-pointers, like this:
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| Godot datatype        | Closest C++ STL datatype | Comment                                                                               |
++=======================+==========================+=======================================================================================+
+| |string| 📜           | ``std::string``          | **Use this as the "default" string type.** ``String`` uses UTF-32 encoding            |
+|                       |                          | to improve performance thanks to its fixed character size.                            |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |vector|              | ``std::vector``          | **Use this as the "default" vector type.** Uses copy-on-write (COW) semantics.        |
+|                       |                          | This means it's generally slower but can be copied around almost for free.            |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |hash_set|            | ``std::unordered_set``   | **Use this as the "default" set type.**                                               |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |a_hash_map|          | ``std::unordered_map``   | **Use this as the "default" map type.** Does not preserve insertion order.            |
+|                       |                          | Note that pointers into the map, as well as iterators, are not stable under mutations.|
+|                       |                          | If either of these affordances are needed, use ``HashMap`` instead.                   |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |string_name| 📜      | ``std::string``          | Uses string interning for fast comparisons. Use this for static strings that are      |
+|                       |                          | referenced frequently and used in multiple locations in the engine.                   |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |local_vector|        | ``std::vector``          | Closer to ``std::vector`` in semantics. In most situations, ``Vector`` should be      |
+|                       |                          | preferred.                                                                            |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |array| 📜            | ``std::vector``          | Values can be of any Variant type. No static typing is imposed.                       |
+|                       |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
+|                       |                          | Uses Vector<Variant> internally.                                                      |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |typed_array| 📜      | ``std::vector``          | Subclass of ``Array`` but with static typing for its elements.                        |
+|                       |                          | Not to be confused with ``Packed*Array``, which is internally a ``Vector``.           |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |packed_array| 📜     | ``std::vector``          | Alias of ``Vector``, e.g. ``PackedColorArray = Vector<Color>``.                       |
+|                       |                          | Only a limited list of packed array types are available                               |
+|                       |                          | (use ``TypedArray`` otherwise).                                                       |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |list|                | ``std::list``            | Linked list type. Generally slower than other array/vector types. Prefer using        |
+|                       |                          | other types in new code, unless using ``List`` avoids the need for type conversions.  |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |fixed_vector|        | ``std::array``           | Vector with a fixed capacity (more similar to ``boost::container::static_vector``).   |
+|                       |                          | This container type is more efficient than other vector-like types because it makes   |
+|                       |                          | no heap allocations.                                                                  |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |span|                | ``std::span``            | Represents read-only access to a contiguous array without needing to copy any data.   |
+|                       |                          | See `pull request description <https://github.com/godotengine/godot/pull/100293>`__   |
+|                       |                          | for details.                                                                          |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |rb_set|              | ``std::set``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black_tree>`__              |
+|                       |                          | for faster access.                                                                    |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |v_set|               | ``std::flat_set``        | Uses copy-on-write (COW) semantics.                                                   |
+|                       |                          | This means it's generally slower but can be copied around almost for free.            |
+|                       |                          | The performance benefits of ``VSet`` aren't established, so prefer using other types. |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |hash_map|            | ``std::unordered_map``   | Defensive (robust but slow) map type. Preserves insertion order.                      |
+|                       |                          | Pointers to keys and values, as well as iterators, are stable under mutation.         |
+|                       |                          | Use this map type when either of these affordances are needed. Use ``AHashMap``       |
+|                       |                          | otherwise.                                                                            |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |rb_map|              | ``std::map``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black-tree>`__              |
+|                       |                          | for faster access.                                                                    |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |dictionary| 📜       | ``std::unordered_map``   | Keys and values can be of any Variant type. No static typing is imposed.              |
+|                       |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
+|                       |                          | Preserves insertion order. Uses ``HashMap<Variant>`` internally.                      |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |typed_dictionary| 📜 | ``std::unordered_map``   | Subclass of ``Dictionary`` but with static typing for its keys and values.            |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |pair|                | ``std::pair``            | Stores a single key-value pair.                                                       |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 
-.. code-block:: cpp
-
-    for(List<int>::Element *E=somelist.front();E;E=E->next()) {
-        print_line(E->get()); // print the element
-    }
-
-The Vector<> class also has a few nice features:
-
--  It does copy on write, so making copies of it is cheap as long as
-   they are not modified.
--  It supports multi-threading, by using atomic operations on the
-   reference counter.
-
-References:
-~~~~~~~~~~~
-
--  `core/templates/vector.h <https://github.com/godotengine/godot/blob/master/core/templates/vector.h>`__
--  `core/templates/list.h <https://github.com/godotengine/godot/blob/master/core/templates/list.h>`__
--  `core/templates/set.h <https://github.com/godotengine/godot/blob/master/core/templates/hash_set.h>`__
--  `core/templates/map.h <https://github.com/godotengine/godot/blob/master/core/templates/hash_map.h>`__
-
-String
-------
-
-Godot also provides a String class. This class has a huge amount of
-features, full Unicode support in all the functions (like case
-operations) and utf8 parsing/extracting, as well as helpers for
-conversion and visualization.
-
-References:
-~~~~~~~~~~~
-
--  `core/string/ustring.h <https://github.com/godotengine/godot/blob/master/core/string/ustring.h>`__
-
-StringName
-----------
-
-StringNames are like a String, but they are unique. Creating a
-StringName from a string results in a unique internal pointer for all
-equal strings. StringNames are useful for using strings as
-identifier, as comparing them is basically comparing a pointer.
-
-Creation of a StringName (especially a new one) is slow, but comparison
-is fast.
-
-References:
-~~~~~~~~~~~
-
--  `core/string/string_name.h <https://github.com/godotengine/godot/blob/master/core/string/string_name.h>`__
+.. |string| replace:: `String <https://github.com/godotengine/godot/blob/master/core/string/ustring.h>`__
+.. |vector| replace:: `Vector <https://github.com/godotengine/godot/blob/master/core/templates/vector.h>`__
+.. |hash_set| replace:: `HashSet <https://github.com/godotengine/godot/blob/master/core/templates/hash_set.h>`__
+.. |hash_map| replace:: `HashMap <https://github.com/godotengine/godot/blob/master/core/templates/hash_map.h>`__
+.. |string_name| replace:: `StringName <https://github.com/godotengine/godot/blob/master/core/string/string_name.h>`__
+.. |local_vector| replace:: `LocalVector <https://github.com/godotengine/godot/blob/master/core/templates/local_vector.h>`__
+.. |array| replace:: `Array <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
+.. |typed_array| replace:: `TypedArray <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
+.. |packed_array| replace:: `Packed*Array <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
+.. |list| replace:: `List <https://github.com/godotengine/godot/blob/master/core/templates/list.h>`__
+.. |fixed_vector| replace:: `FixedVector <https://github.com/godotengine/godot/blob/master/core/templates/fixed_vector.h>`__
+.. |span| replace:: `Span <https://github.com/godotengine/godot/blob/master/core/templates/span.h>`__
+.. |rb_set| replace:: `RBSet <https://github.com/godotengine/godot/blob/master/core/templates/rb_set.h>`__
+.. |v_set| replace:: `VSet <https://github.com/godotengine/godot/blob/master/core/templates/vset.h>`__
+.. |a_hash_map| replace:: `AHashMap <https://github.com/godotengine/godot/blob/master/core/templates/a_hash_map.h>`__
+.. |rb_map| replace:: `RBMap <https://github.com/godotengine/godot/blob/master/core/templates/rb_map.h>`__
+.. |dictionary| replace:: `Dictionary <https://github.com/godotengine/godot/blob/master/core/variant/dictionary.h>`__
+.. |typed_dictionary| replace:: `TypedDictionary <https://github.com/godotengine/godot/blob/master/core/variant/dictionary.h>`__
+.. |pair| replace:: `Pair <https://github.com/godotengine/godot/blob/master/core/templates/pair.h>`__
 
 Math types
 ----------
 
-There are several linear math types available in the core/math
-directory.
-
-References:
-~~~~~~~~~~~
+There are several linear math types available in the ``core/math``
+directory:
 
 -  `core/math <https://github.com/godotengine/godot/tree/master/core/math>`__
 
@@ -213,22 +237,16 @@ NodePath
 --------
 
 This is a special datatype used for storing paths in a scene tree and
-referencing them fast.
-
-References:
-~~~~~~~~~~~
+referencing them in an optimized manner:
 
 -  `core/string/node_path.h <https://github.com/godotengine/godot/blob/master/core/string/node_path.h>`__
 
 RID
 ---
 
-RIDs are resource IDs. Servers use these to reference data stored in
+RIDs are *Resource IDs*. Servers use these to reference data stored in
 them. RIDs are opaque, meaning that the data they reference can't be
 accessed directly. RIDs are unique, even for different types of
-referenced data.
-
-References:
-~~~~~~~~~~~
+referenced data:
 
 -  `core/templates/rid.h <https://github.com/godotengine/godot/blob/master/core/templates/rid.h>`__

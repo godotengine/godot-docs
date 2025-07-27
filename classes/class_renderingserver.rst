@@ -12475,7 +12475,7 @@ Sets when the viewport should be updated.
 
 |void| **viewport_set_use_debanding**\ (\ viewport\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_use_debanding>`
 
-If ``true``, enables debanding on the specified viewport. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>` or :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>`.
+Equivalent to :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>`. See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`.
 
 .. rst-class:: classref-item-separator
 

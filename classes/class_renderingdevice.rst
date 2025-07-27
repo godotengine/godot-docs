@@ -4460,6 +4460,14 @@ Support for MetalFX temporal upscaling.
 
 Features support for buffer device address extension.
 
+.. _class_RenderingDevice_constant_SUPPORTS_IMAGE_ATOMIC_32_BIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Features<enum_RenderingDevice_Features>` **SUPPORTS_IMAGE_ATOMIC_32_BIT** = ``7``
+
+Support for 32-bit image atomic operations.
+
 .. rst-class:: classref-item-separator
 
 ----

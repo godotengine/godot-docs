@@ -21,7 +21,7 @@ The following steps detail what is needed to set up the Android SDK and the engi
 Install OpenJDK 17
 ------------------
 
-Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant=openjdk17>`__.
+Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant=openjdk17&version=17&os=any&arch=any>`__.
 
 .. note::
 

@@ -204,9 +204,9 @@ next to your export templates.
 
 However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your template binaries as custom export templates
-here:
+in the project export menu. You must have **Advanced Options** enabled to set this.
 
-.. image:: img/andtemplates.png
+.. image:: img/andtemplates.webp
 
 You don't even need to copy them, you can just reference the resulting
 file in the ``bin\`` directory of your Godot source folder, so that the

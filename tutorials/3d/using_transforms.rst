@@ -305,7 +305,9 @@ Jump:
 
     // Keep in mind Y is up-axis
     if (Input.IsActionJustPressed("jump"))
+    {
         velocity.Y = JumpSpeed;
+    }
 
     MoveAndSlide();
 

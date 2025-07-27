@@ -301,9 +301,11 @@ By default, Godot is built with dynamically linked ANGLE, you can use it by plac
 To compile Godot with statically linked ANGLE:
 
 - Download pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them.
-- When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries::
+- When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries:
 
-    scons platform=windows angle_libs=<...>
+    ::
+
+        scons platform=windows angle_libs=<...>
 
 .. note:: You can optionally build the godot-angle-static libraries yourself with
           the following steps:
@@ -414,7 +416,9 @@ Where ``/path/to/mingw`` is the path containing the ``bin`` directory where
 
 To make sure you are doing things correctly, executing the following in
 the shell should result in a working compiler (the version output may
-differ based on your system)::
+differ based on your system):
+
+::
 
     ${MINGW_PREFIX}/bin/x86_64-w64-mingw32-gcc --version
     # x86_64-w64-mingw32-gcc (GCC) 13.2.0
@@ -432,15 +436,18 @@ Cross-compiling from some Ubuntu versions may lead to
 `this bug <https://github.com/godotengine/godot/issues/9258>`_,
 due to a default configuration lacking support for POSIX threading.
 
-You can change that configuration following those instructions,
-for 64-bit::
+You can change that configuration following those instructions, for 64-bit:
+
+::
 
     sudo update-alternatives --config x86_64-w64-mingw32-gcc
     <choose x86_64-w64-mingw32-gcc-posix from the list>
     sudo update-alternatives --config x86_64-w64-mingw32-g++
     <choose x86_64-w64-mingw32-g++-posix from the list>
 
-And for 32-bit::
+And for 32-bit:
+
+::
 
     sudo update-alternatives --config i686-w64-mingw32-gcc
     <choose i686-w64-mingw32-gcc-posix from the list>
@@ -489,11 +496,10 @@ With the following names:
 
 However, if you are using custom modules or custom engine code, you
 may instead want to configure your binaries as custom export templates
-here:
+in the project export menu. You must have **Advanced Options** enabled
+to set this.
 
 .. image:: img/wintemplates.webp
-
-Select matching architecture in the export config.
 
 You don't need to copy them in this case, just reference the resulting
 files in the ``bin\`` directory of your Godot source folder, so the next

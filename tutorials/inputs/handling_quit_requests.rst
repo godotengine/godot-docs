@@ -32,7 +32,9 @@ Handling the notification is done as follows (on any node):
     public override void _Notification(int what)
     {
         if (what == NotificationWMCloseRequest)
+        {
             GetTree().Quit(); // default behavior
+        }
     }
 
 It is important to note that by default, Godot apps have the built-in

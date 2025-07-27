@@ -303,6 +303,8 @@ Property Descriptions
 
 The distance to erode/shrink the walkable surface when baking the navigation mesh.
 
+\ **Note:** The radius must be equal or higher than ``0.0``. If the radius is ``0.0``, it won't be possible to fix invalid outline overlaps and other precision errors during the baking process. As a result, some obstacles may be excluded incorrectly from the final navigation mesh, or may delete the navigation mesh's polygons.
+
 .. rst-class:: classref-item-separator
 
 ----

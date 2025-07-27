@@ -150,6 +150,8 @@
     --kbd-shadow-color: #b0b7bf;
     --kbd-text-color: #444d56;
 
+    --role-button-background-color: #d3d7e1;
+
     --code-example-good-color: #3fb950;
     --code-example-bad-color: #f85149;
 
@@ -279,6 +281,8 @@
         --kbd-outline-color: #3d4144;
         --kbd-shadow-color: #1e2023;
         --kbd-text-color: #e2f2ff;
+        
+        --role-button-background-color: #22252d;
 
         --code-example-good-color: #3fb950;
         --code-example-bad-color: #f85149;
@@ -1843,4 +1847,19 @@ p + .classref-constant {
 /* Giscus */
 #godot-giscus {
     margin-bottom: 1em;
+}
+
+/* Custom Sphinx roles for editor UI */
+/* The :ui: and :inspector: roles just render as bold. */
+.role-ui {
+    font-weight: 700;
+}
+
+.role-button, .role-menu {
+    font-size: 80%;
+    border-radius: 4px;
+    padding: 2.4px 6px;
+    margin: auto 2px;
+    border: 0px solid #7fbbe3;
+    background: var(--role-button-background-color);
 }

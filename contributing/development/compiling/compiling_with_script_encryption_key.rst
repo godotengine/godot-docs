@@ -22,12 +22,6 @@ with that same key.
     It is absolutely **required** to compile your own export templates to use
     PCK encryption.
 
-.. warning::
-
-    By default, Android exports store assets directly in the APK file and
-    aren't affected by PCK encryption. To use PCK encryption on Android, enable
-    **APK expansion** in the export options.
-
 Step by step
 ------------
 

@@ -134,7 +134,9 @@ be empty. If it did hit something, it will contain collision information:
  .. code-tab:: csharp
 
         if (result.Count > 0)
+        {
             GD.Print("Hit at point: ", result["position"]);
+        }
 
 The ``result`` dictionary when a collision occurs contains the following
 data:

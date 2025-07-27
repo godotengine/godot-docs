@@ -537,6 +537,8 @@ This controls how much light from the lit side (visible to light) is transferred
 to the dark side (opposite from the light). This works well for thin objects
 such as plant leaves, grass, human ears, etc.
 
+.. image:: img/spatial_material22.png
+
 Refraction
 ----------
 
@@ -741,14 +743,35 @@ Point Size
 
 When drawing points, specify the point size in pixels.
 
-Transmission
-~~~~~~~~~~~~
+Use Particle Trails
+~~~~~~~~~~~~~~~~~~~
 
-This controls how much light from the lit side (visible to light) is transferred
-to the dark side (opposite from the light). This works well for thin objects
-such as plant leaves, grass, human ears, etc.
+If true, enables parts of the shader required for GPUParticles3D trails to function.
+This also requires using a mesh with appropriate skinning, such as RibbonTrailMesh
+or TubeTrailMesh. Enabling this feature outside of materials used in GPUParticles3D
+meshes will break material rendering.
 
-.. image:: img/spatial_material22.png
+Use Z Clip Scale
+~~~~~~~~~~~~~~~~
+
+Scales the object being rendered towards the camera to avoid clipping into things
+like walls. This is intended to be used for objects that are fixed with respect to
+the camera like player arms, tools, etc. Lighting and shadows will continue to work
+correctly when this setting is adjusted, but screen-space effects like SSAO and SSR
+may break with lower scales. Therefore, try to keep this setting as close to 1.0 as
+possible.
+
+Use FOV Override
+~~~~~~~~~~~~~~~~
+
+Overrides the ``Camera3D``'s field of view angle (in degrees).
+
+.. note::
+
+  This behaves as if the field of view is set on a ``Camera3D`` with
+  ``Camera3D.keep_aspect`` set to ``Camera3D.KEEP_HEIGHT``. Additionally, it may not
+  look correct on a non-perspective camera where the field of view setting is
+  ignored.
 
 Proximity and Distance Fade
 ---------------------------

@@ -21,7 +21,7 @@ Description
 
 When placed on a :ref:`TileMapLayer<class_TileMapLayer>`, tiles from **TileSetScenesCollectionSource** will automatically instantiate an associated scene at the cell's position in the TileMapLayer.
 
-Scenes are instantiated as children of the :ref:`TileMapLayer<class_TileMapLayer>` when it enters the tree. If you add/remove a scene tile in the :ref:`TileMapLayer<class_TileMapLayer>` that is already inside the tree, the :ref:`TileMapLayer<class_TileMapLayer>` will automatically instantiate/free the scene accordingly.
+Scenes are instantiated as children of the :ref:`TileMapLayer<class_TileMapLayer>` after it enters the tree, at the end of the frame (their creation is deferred). If you add/remove a scene tile in the :ref:`TileMapLayer<class_TileMapLayer>` that is already inside the tree, the :ref:`TileMapLayer<class_TileMapLayer>` will automatically instantiate/free the scene accordingly.
 
 \ **Note:** Scene tiles all occupy one tile slot and instead use alternate tile ID to identify scene index. :ref:`TileSetSource.get_tiles_count()<class_TileSetSource_method_get_tiles_count>` will always return ``1``. Use :ref:`get_scene_tiles_count()<class_TileSetScenesCollectionSource_method_get_scene_tiles_count>` to get a number of scenes in a **TileSetScenesCollectionSource**.
 
