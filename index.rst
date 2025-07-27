@@ -31,8 +31,86 @@ to this documentation, we recommend that you read the
 :ref:`introduction page <doc_about_intro>` to get an overview of what this
 documentation has to offer.
 
-The table of contents in the sidebar should let you easily access the documentation
-for your topic of interest. You can also use the search function in the top-left corner.
+To begin reading the relevant documentation, select the tile that matches your profile:
+
+.. raw:: html
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 0.375rem;
+            grid-auto-flow: row;
+            grid-template-areas:
+            "new-to-game know-game-learn-godot"
+            "know-godot-learn-godot contribute-to-godot";
+        }
+
+        .grid-item {
+            color: hsla(0, 0%, 100%, 0.9);
+            padding: 1rem;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+
+        .grid-item:visited {
+            color: unset;
+        }
+
+        .grid-item:hover,
+        .grid-item:focus {
+            text-decoration: none;
+            filter: brightness(120%);
+        }
+
+        .grid-item:active {
+            filter: brightness(80%);
+        }
+
+        .new-to-game {
+            grid-area: new-to-game;
+            background-color: #166534;
+        }
+
+        .know-game-learn-godot {
+            grid-area: know-game-learn-godot;
+            background-color: #115e59;
+        }
+
+        .know-godot-learn-godot {
+            grid-area: know-godot-learn-godot;
+            background-color: #1e3a8a;
+        }
+
+        .contribute-to-godot {
+            grid-area: contribute-to-godot;
+            background-color: #831843;
+        }
+    </style>
+    <div class="grid-container">
+        <a class="grid-item new-to-game" href="about/introduction.html">
+            I've never made a game before,<br>
+            <strong>I want to make a game.</strong>
+        </a>
+        <a class="grid-item know-game-learn-godot" href="getting_started/step_by_step/index.html">
+            I know how to make a game,<br>
+            <strong>I want to know how to use Godot.</strong>
+            </a>
+        <a class="grid-item know-godot-learn-godot" href="tutorials/index.html">
+            I know how to use Godot,<br>
+            <strong>I want to learn more advanced Godot topics.</strong>
+        </a>
+        <a class="grid-item contribute-to-godot" href="contributing/how_to_contribute.html">
+            I know how to use Godot,<br>
+            <strong>I want to contribute to Godot.</strong>
+        </a>
+    </div>
+    <br>
+
+You can also use the table of contents in the sidebar to access easily access
+any section of the documentation for your topic of interest. You can also use
+the search function in the top-left corner.
 
 Get involved
 ------------
