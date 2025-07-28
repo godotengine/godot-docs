@@ -17,9 +17,9 @@ CLion can import a project's `compilation database file <https://clang.llvm.org/
 
 Then, open the Godot root directory with CLion and wait for the project to be fully
 indexed. If code completion, parameter information, or refactoring are not enabled,
-you will need to load the project with CMake. To do this, find the `CMakeLists.txt`
-file in the `platform\android\java\nativeSrcsConfigs` directory, right click and
-select `Load CMake Project`. Once the project reloads, a `godot` build configuration
+you will need to load the project with CMake. To do this, find the ``CMakeLists.txt``
+file in the ``platform\android\java\nativeSrcsConfigs`` directory, right click and
+select :button:`Load CMake Project`. Once the project reloads, a ``godot`` build configuration
 will be added. This configuration can be safely deleted as the CMake file will not
 build the project and only exists for loading the project in JetBrains IDEs.
 
