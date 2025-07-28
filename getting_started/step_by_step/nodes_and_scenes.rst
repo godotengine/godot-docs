@@ -48,7 +48,7 @@ Scenes allow you to structure your game's code however you want. You can
 **compose nodes** to create custom and complex node types, like a game character
 that runs and jumps, a life bar, a chest with which you can interact, and more.
 
-.. image:: img/nodes_and_scenes_3d_scene_example.png
+.. image:: img/nodes_and_scenes_3d_scene_example.webp
 
 The Godot editor essentially is a **scene editor**. It has plenty of tools for
 editing 2D and 3D scenes, as well as user interfaces. A Godot project can
