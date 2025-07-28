@@ -76,7 +76,7 @@ Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter    
 
 .. [#f1] Default buffer size in 4.3 is ``1024``.
 
-9
+
 GUI nodes
 ~~~~~~~~~
 
