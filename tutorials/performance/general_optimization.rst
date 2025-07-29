@@ -60,11 +60,13 @@ There are several methods of measuring performance, including:
 - Using external GPU profilers/debuggers such as
   `NVIDIA Nsight Graphics <https://developer.nvidia.com/nsight-graphics>`__,
   `Radeon GPU Profiler <https://gpuopen.com/rgp/>`__,
-  `Intel Graphics Performance Analyzers <https://www.intel.com/content/www/us/en/developer/tools/graphics-performance-analyzers/overview.html>`__, or
+  `PIX <https://devblogs.microsoft.com/pix/download/>`__ (Direct3D 12 only),
+  `Xcode <https://developer.apple.com/documentation/xcode/optimizing-gpu-performance>`__ (Metal only), or
   `Arm Performance Studio <https://developer.arm.com/Tools%20and%20Software/Arm%20Performance%20Studio>`__.
 - Checking the frame rate (with V-Sync disabled). Third-party utilities such as
-  `RivaTuner Statistics Server <https://www.guru3d.com/files-details/rtss-rivatuner-statistics-server-download.html>`__
-  (Windows) or `MangoHud <https://github.com/flightlessmango/MangoHud>`__
+  `RivaTuner Statistics Server <https://www.guru3d.com/files-details/rtss-rivatuner-statistics-server-download.html>`__ (Windows),
+  `Special K <https://www.special-k.info/>`__ (Windows),
+  or `MangoHud <https://github.com/flightlessmango/MangoHud>`__
   (Linux) can also be useful here.
 - Using an unofficial `debug menu add-on <https://github.com/godot-extended-libraries/godot-debug-menu>`__.
 
