@@ -113,3 +113,22 @@ Java inner classes can be accessed using the ``$`` sign:
         # Do something specific on android 11 devices.
     else:
         # All other devices
+
+Example: Calling a constructor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A constructor is invoked by calling a method with the same name as the class.
+
+This example creates an intent to send a text:
+
+.. code-block:: gdscript
+    # Retrieve the AndroidRuntime singleton.
+    var android_runtime = Engine.get_singleton("AndroidRuntime")
+    if android_runtime:
+        var Intent = JavaClassWrapper.wrap("android.content.Intent")
+        var activity = android_runtime.getActivity()
+        var intent = Intent.Intent() # Call the constructor.
+        intent.setAction(Intent.ACTION_SEND)
+        intent.putExtra(Intent.EXTRA_TEXT, "This is a test message.")
+        intent.setType("text/plain")
+        activity.startActivity(intent)
