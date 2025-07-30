@@ -111,6 +111,7 @@ shrinks the vertex array to remove duplicate vertices.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     # Suppose we have a quad defined by 6 vertices as follows
     st.add_vertex(Vector3(-1, 1, 0))
     st.add_vertex(Vector3(1, 1, 0))
