@@ -38,11 +38,11 @@ Desktop or laptop PC - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **GPU**              | - **Forward+ renderer:** Integrated graphics with full Vulkan 1.0 support               |
 |                      |                                                                                         |
-|                      |   - *Example: Intel HD Graphics 5500 (Broadwell), AMD Radeon R5 Graphics (Kaveri)*      |
+|                      |   - *Example: Intel HD Graphics 510 (Skylake), AMD Radeon R5 Graphics (Kaveri)*         |
 |                      |                                                                                         |
 |                      | - **Mobile renderer:** Integrated graphics with full Vulkan 1.0 support                 |
 |                      |                                                                                         |
-|                      |   - *Example: Intel HD Graphics 5500 (Broadwell), AMD Radeon R5 Graphics (Kaveri)*      |
+|                      |   - *Example: Intel HD Graphics 510 (Skylake), AMD Radeon R5 Graphics (Kaveri)*         |
 |                      |                                                                                         |
 |                      | - **Compatibility renderer:** Integrated graphics with full OpenGL 3.3 support          |
 |                      |                                                                                         |
@@ -225,12 +225,12 @@ Desktop or laptop PC - Minimum
 | **GPU**              | - **Forward+ renderer:** Integrated graphics with full Vulkan 1.0 support,              |
 |                      |   Metal 3 support (macOS) or Direct3D 12 (12_0 feature level) support (Windows)         |
 |                      |                                                                                         |
-|                      |   - *Example: Intel HD Graphics 5500 (Broadwell), AMD Radeon R5 Graphics (Kaveri)*      |
+|                      |   - *Example: Intel HD Graphics 510 (Skylake), AMD Radeon R5 Graphics (Kaveri)*         |
 |                      |                                                                                         |
 |                      | - **Mobile renderer:** Integrated graphics with full Vulkan 1.0 support,                |
 |                      |   Metal 3 support (macOS) or Direct3D 12 (12_0 feature level) support (Windows)         |
 |                      |                                                                                         |
-|                      |   - *Example: Intel HD Graphics 5500 (Broadwell), AMD Radeon R5 Graphics (Kaveri)*      |
+|                      |   - *Example: Intel HD Graphics 510 (Skylake), AMD Radeon R5 Graphics (Kaveri)*         |
 |                      |                                                                                         |
 |                      | - **Compatibility renderer:** Integrated graphics with full OpenGL 3.3 support          |
 |                      |   or Direct3D 11 support (Windows).                                                     |
