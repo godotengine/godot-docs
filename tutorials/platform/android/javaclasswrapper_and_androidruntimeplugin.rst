@@ -122,6 +122,7 @@ A constructor is invoked by calling a method with the same name as the class.
 This example creates an intent to send a text:
 
 .. code-block:: gdscript
+
     # Retrieve the AndroidRuntime singleton.
     var android_runtime = Engine.get_singleton("AndroidRuntime")
     if android_runtime:
