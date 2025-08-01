@@ -44,9 +44,9 @@ Try to restrict your icon's color palette to colors found in the list above.
 Otherwise, your icon may become difficult to read on a light background.
 
 .. note::
-To enable color conversion for light editor themes:
-	1. Import → Import As → Texture2D
-	2. Set editor/convert_colors_with_editor_theme = true
+	To enable color conversion for light editor themes:
+		1. **Import > Import As > Texture2D**
+		2. Set ``editor/convert_colors_with_editor_theme`` to ``true``
 
 Icon optimization
 ~~~~~~~~~~~~~~~~~
