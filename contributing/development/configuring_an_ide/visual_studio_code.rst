@@ -7,7 +7,8 @@ Visual Studio Code
 
     This documentation is for contributions to the game engine, and not using
     Visual Studio Code as a C# or GDScript editor. To code C# or GDScript in an external editor, see
-    :ref:`the C# guide to configure an external editor <doc_c_sharp_setup_external_editor>`.
+    :ref:`the C# guide to configure an external editor <doc_c_sharp_setup_external_editor>` or
+    :ref:`the GDScript guide to using an external text editor <doc_external_editor>`.
 
 `Visual Studio Code <https://code.visualstudio.com>`_ is a free cross-platform code editor
 by `Microsoft <https://microsoft.com>`_ (not to be confused with :ref:`doc_configuring_an_ide_vs`).
