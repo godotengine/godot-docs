@@ -213,7 +213,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 
 .. tabs::
   .. code-tab:: gdscript GDScript
-    
+
     class_name BotStats
     extends Resource
 
