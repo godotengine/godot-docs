@@ -152,7 +152,7 @@ Overall comparison
 |                     |                          |                          | Compatibility instead.   |
 +---------------------+--------------------------+--------------------------+--------------------------+
 | XR                  | ✔️ Yes. Recommended for  | ✔️ Yes. Recommended for  | ⚠️ Supported, but poorly |
-|                     | standalone headsets.     |  desktop headsets.       | optimized. Use Mobile or |
+|                     | standalone headsets.     | desktop headsets.        | optimized. Use Mobile or |
 |                     |                          |                          | Compatibility instead.   |
 +---------------------+--------------------------+--------------------------+--------------------------+
 | Web                 | ✔️ Yes.                  | ❌ No.                   | ❌ No.                   |
