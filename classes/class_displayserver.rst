@@ -1488,7 +1488,7 @@ Scroll backward action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_DOWN** = ``12``
 
-Scroll down action, callback argument is not set.
+Scroll down action, callback argument is set to :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>`.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_FORWARD:
 
@@ -1504,7 +1504,7 @@ Scroll forward action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_LEFT** = ``14``
 
-Scroll left action, callback argument is not set.
+Scroll left action, callback argument is set to :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>`.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_RIGHT:
 
@@ -1512,7 +1512,7 @@ Scroll left action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_RIGHT** = ``15``
 
-Scroll right action, callback argument is not set.
+Scroll right action, callback argument is set to :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>`.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_UP:
 
@@ -1520,7 +1520,7 @@ Scroll right action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_UP** = ``16``
 
-Scroll up action, callback argument is not set.
+Scroll up action, callback argument is set to :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>`.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_INTO_VIEW:
 
@@ -1528,7 +1528,7 @@ Scroll up action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_INTO_VIEW** = ``17``
 
-Scroll into view action, callback argument is not set.
+Scroll into view action, callback argument is set to :ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>`.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_TO_POINT:
 
@@ -1603,6 +1603,90 @@ Indicates that updates to the live region should be presented at the next opport
 :ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>` **LIVE_ASSERTIVE** = ``2``
 
 Indicates that updates to the live region have the highest priority and should be presented immediately.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_DisplayServer_AccessibilityScrollUnit:
+
+.. rst-class:: classref-enumeration
+
+enum **AccessibilityScrollUnit**: :ref:`🔗<enum_DisplayServer_AccessibilityScrollUnit>`
+
+.. _class_DisplayServer_constant_SCROLL_UNIT_ITEM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>` **SCROLL_UNIT_ITEM** = ``0``
+
+The amount by which to scroll. A single item of a list, line of text.
+
+.. _class_DisplayServer_constant_SCROLL_UNIT_PAGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>` **SCROLL_UNIT_PAGE** = ``1``
+
+The amount by which to scroll. A single page.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_DisplayServer_AccessibilityScrollHint:
+
+.. rst-class:: classref-enumeration
+
+enum **AccessibilityScrollHint**: :ref:`🔗<enum_DisplayServer_AccessibilityScrollHint>`
+
+.. _class_DisplayServer_constant_SCROLL_HINT_TOP_LEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_TOP_LEFT** = ``0``
+
+A preferred position for the node scrolled into view. Top-left edge of the scroll container.
+
+.. _class_DisplayServer_constant_SCROLL_HINT_BOTTOM_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_BOTTOM_RIGHT** = ``1``
+
+A preferred position for the node scrolled into view. Bottom-right edge of the scroll container.
+
+.. _class_DisplayServer_constant_SCROLL_HINT_TOP_EDGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_TOP_EDGE** = ``2``
+
+A preferred position for the node scrolled into view. Top edge of the scroll container.
+
+.. _class_DisplayServer_constant_SCROLL_HINT_BOTTOM_EDGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_BOTTOM_EDGE** = ``3``
+
+A preferred position for the node scrolled into view. Bottom edge of the scroll container.
+
+.. _class_DisplayServer_constant_SCROLL_HINT_LEFT_EDGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_LEFT_EDGE** = ``4``
+
+A preferred position for the node scrolled into view. Left edge of the scroll container.
+
+.. _class_DisplayServer_constant_SCROLL_HINT_RIGHT_EDGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_RIGHT_EDGE** = ``5``
+
+A preferred position for the node scrolled into view. Right edge of the scroll container.
 
 .. rst-class:: classref-item-separator
 

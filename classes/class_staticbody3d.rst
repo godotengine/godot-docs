@@ -32,6 +32,10 @@ When **StaticBody3D** is moved, it is teleported to its new position without aff
 Tutorials
 ---------
 
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
+
+- :doc:`Troubleshooting physics issues <../tutorials/physics/troubleshooting_physics_issues>`
+
 - `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
 - `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__

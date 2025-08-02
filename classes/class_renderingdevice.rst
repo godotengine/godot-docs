@@ -359,9 +359,13 @@ enum **DriverResource**: :ref:`🔗<enum_RenderingDevice_DriverResource>`
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_LOGICAL_DEVICE** = ``0``
 
-Specific device object based on a physical device.
+Specific device object based on a physical device (``rid`` parameter is ignored).
 
-- Vulkan: Vulkan device driver resource (``VkDevice``) (``rid`` parameter is ignored).
+- Vulkan: Vulkan device driver resource (``VkDevice``).
+
+- D3D12: D3D12 device driver resource (``ID3D12Device``).
+
+- Metal: Metal device driver resource (``MTLDevice``).
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_PHYSICAL_DEVICE:
 
@@ -369,9 +373,11 @@ Specific device object based on a physical device.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_PHYSICAL_DEVICE** = ``1``
 
-Physical device the specific logical device is based on.
+Physical device the specific logical device is based on (``rid`` parameter is ignored).
 
-- Vulkan: ``VkDevice`` (``rid`` parameter is ignored).
+- Vulkan: ``VkPhysicalDevice``.
+
+- D3D12: ``IDXGIAdapter``.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_TOPMOST_OBJECT:
 
@@ -379,9 +385,9 @@ Physical device the specific logical device is based on.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_TOPMOST_OBJECT** = ``2``
 
-Top-most graphics API entry object.
+Top-most graphics API entry object (``rid`` parameter is ignored).
 
-- Vulkan: ``VkInstance`` (``rid`` parameter is ignored).
+- Vulkan: ``VkInstance``.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_COMMAND_QUEUE:
 
@@ -389,9 +395,11 @@ Top-most graphics API entry object.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_COMMAND_QUEUE** = ``3``
 
-The main graphics-compute command queue.
+The main graphics-compute command queue (``rid`` parameter is ignored).
 
-- Vulkan: ``VkQueue`` (``rid`` parameter is ignored).
+- Vulkan: ``VkQueue``.
+
+- Metal: ``MTLCommandQueue``.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_QUEUE_FAMILY:
 
@@ -399,9 +407,9 @@ The main graphics-compute command queue.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_QUEUE_FAMILY** = ``4``
 
-The specific family the main queue belongs to.
+The specific family the main queue belongs to (``rid`` parameter is ignored).
 
-- Vulkan: The queue family index, a ``uint32_t`` (``rid`` parameter is ignored).
+- Vulkan: The queue family index, a ``uint32_t``.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE:
 
@@ -421,6 +429,8 @@ The view of an owned or shared texture.
 
 - Vulkan: ``VkImageView``.
 
+- D3D12: ``ID3D12Resource``.
+
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_DATA_FORMAT:
 
 .. rst-class:: classref-enumeration-constant
@@ -430,6 +440,8 @@ The view of an owned or shared texture.
 The native id of the data format of the texture.
 
 - Vulkan: ``VkFormat``.
+
+- D3D12: ``DXGI_FORMAT``.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_SAMPLER:
 
@@ -457,6 +469,8 @@ Buffer of any kind of (storage, vertex, etc.).
 
 - Vulkan: ``VkBuffer``.
 
+- D3D12: ``ID3D12Resource``.
+
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_COMPUTE_PIPELINE:
 
 .. rst-class:: classref-enumeration-constant
@@ -465,6 +479,8 @@ Buffer of any kind of (storage, vertex, etc.).
 
 - Vulkan: ``VkPipeline``.
 
+- Metal: ``MTLComputePipelineState``.
+
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_RENDER_PIPELINE:
 
 .. rst-class:: classref-enumeration-constant
@@ -472,6 +488,8 @@ Buffer of any kind of (storage, vertex, etc.).
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_RENDER_PIPELINE** = ``12``
 
 - Vulkan: ``VkPipeline``.
+
+- Metal: ``MTLRenderPipelineState``.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_DEVICE:
 

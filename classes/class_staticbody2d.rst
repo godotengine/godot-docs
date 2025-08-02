@@ -27,6 +27,15 @@ When **StaticBody2D** is moved, it is teleported to its new position without aff
 
 \ **StaticBody2D** is useful for completely static objects like floors and walls, as well as moving surfaces like conveyor belts and circular revolving platforms (by using :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>` and :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>`).
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
+
+- :doc:`Troubleshooting physics issues <../tutorials/physics/troubleshooting_physics_issues>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

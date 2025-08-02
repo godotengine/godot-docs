@@ -38,6 +38,10 @@ If you need to override the default physics behavior, you can write a custom for
 Tutorials
 ---------
 
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
+
+- :doc:`Troubleshooting physics issues <../tutorials/physics/troubleshooting_physics_issues>`
+
 - `2D Physics Platformer Demo <https://godotengine.org/asset-library/asset/2725>`__
 
 - `Instancing Demo <https://godotengine.org/asset-library/asset/2716>`__
@@ -430,7 +434,7 @@ If ``true``, the body can enter sleep mode when there is no movement. See :ref:`
 
 The body's custom center of mass, relative to the body's origin position, when :ref:`center_of_mass_mode<class_RigidBody2D_property_center_of_mass_mode>` is set to :ref:`CENTER_OF_MASS_MODE_CUSTOM<class_RigidBody2D_constant_CENTER_OF_MASS_MODE_CUSTOM>`. This is the balanced point of the body, where applied forces only cause linear acceleration. Applying forces outside of the center of mass causes angular acceleration.
 
-When :ref:`center_of_mass_mode<class_RigidBody2D_property_center_of_mass_mode>` is set to :ref:`CENTER_OF_MASS_MODE_AUTO<class_RigidBody2D_constant_CENTER_OF_MASS_MODE_AUTO>` (default value), the center of mass is automatically computed.
+When :ref:`center_of_mass_mode<class_RigidBody2D_property_center_of_mass_mode>` is set to :ref:`CENTER_OF_MASS_MODE_AUTO<class_RigidBody2D_constant_CENTER_OF_MASS_MODE_AUTO>` (default value), the center of mass is automatically determined, but this does not update the value of :ref:`center_of_mass<class_RigidBody2D_property_center_of_mass>`.
 
 .. rst-class:: classref-item-separator
 

@@ -53,8 +53,6 @@ If a script extending this class also has a global class name, it will be includ
 
 
 
-\ **Note:** The script is run in the Editor context, which means the output is visible in the console window started with the Editor (stdout) instead of the usual Godot **Output** dock.
-
 \ **Note:** EditorScript is :ref:`RefCounted<class_RefCounted>`, meaning it is destroyed when nothing references it. This can cause errors during asynchronous operations if there are no references to the script.
 
 .. rst-class:: classref-reftable-group

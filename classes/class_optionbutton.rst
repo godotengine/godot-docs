@@ -260,6 +260,8 @@ Method Descriptions
 
 Adds an item, with a ``texture`` icon, text ``label`` and (optionally) ``id``. If no ``id`` is passed, the item index will be used as the item's ID. New items are appended at the end.
 
+\ **Note:** The item will be selected if there are no other items.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -271,6 +273,8 @@ Adds an item, with a ``texture`` icon, text ``label`` and (optionally) ``id``. I
 |void| **add_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_OptionButton_method_add_item>`
 
 Adds an item, with text ``label`` and (optionally) ``id``. If no ``id`` is passed, the item index will be used as the item's ID. New items are appended at the end.
+
+\ **Note:** The item will be selected if there are no other items.
 
 .. rst-class:: classref-item-separator
 
