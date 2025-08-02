@@ -123,6 +123,15 @@ Link to the license
 The Godot Engine developers consider that a link to ``godotengine.org/license``
 in your game documentation or credits would be an acceptable way to satisfy
 the license terms.
+Also note that by opening the mentioned link the user may
+navigate to the licensing terms of the thirdparty libraries that Godot Engine uses,
+and, from our own understanding of the licensing terms, this may also enough to
+satisfy the thirdparty licenses as well.
+
+.. warning::
+
+    Again, the recommendations in this page **are not legal advice.**
+    If you have any questions, please speak to a professional lawyer.
 
 .. tip::
 
