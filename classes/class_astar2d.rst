@@ -32,6 +32,18 @@ Tutorials
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`neighbor_filter_enabled<class_AStar2D_property_neighbor_filter_enabled>` | ``false`` |
+   +-------------------------+--------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -42,6 +54,8 @@ Methods
    | :ref:`float<class_float>`                           | :ref:`_compute_cost<class_AStar2D_private_method__compute_cost>`\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`\ ) |virtual| |const|                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`_estimate_cost<class_AStar2D_private_method__estimate_cost>`\ (\ from_id\: :ref:`int<class_int>`, end_id\: :ref:`int<class_int>`\ ) |virtual| |const|                                     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`_filter_neighbor<class_AStar2D_private_method__filter_neighbor>`\ (\ from_id\: :ref:`int<class_int>`, neighbor_id\: :ref:`int<class_int>`\ ) |virtual| |const|                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`add_point<class_AStar2D_method_add_point>`\ (\ id\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`, weight_scale\: :ref:`float<class_float>` = 1.0\ )                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,6 +110,28 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Property Descriptions
+---------------------
+
+.. _class_AStar2D_property_neighbor_filter_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **neighbor_filter_enabled** = ``false`` :ref:`🔗<class_AStar2D_property_neighbor_filter_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_neighbor_filter_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_neighbor_filter_enabled**\ (\ )
+
+If ``true`` enables the filtering of neighbors via :ref:`_filter_neighbor()<class_AStar2D_private_method__filter_neighbor>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Method Descriptions
 -------------------
 
@@ -120,6 +156,20 @@ Note that this function is hidden in the default **AStar2D** class.
 :ref:`float<class_float>` **_estimate_cost**\ (\ from_id\: :ref:`int<class_int>`, end_id\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_AStar2D_private_method__estimate_cost>`
 
 Called when estimating the cost between a point and the path's ending point.
+
+Note that this function is hidden in the default **AStar2D** class.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AStar2D_private_method__filter_neighbor:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_filter_neighbor**\ (\ from_id\: :ref:`int<class_int>`, neighbor_id\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_AStar2D_private_method__filter_neighbor>`
+
+Called when neighboring enters processing and if :ref:`neighbor_filter_enabled<class_AStar2D_property_neighbor_filter_enabled>` is ``true``. If ``true`` is returned the point will not be processed.
 
 Note that this function is hidden in the default **AStar2D** class.
 

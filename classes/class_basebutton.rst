@@ -307,6 +307,8 @@ If ``true``, the button's state is pressed. Means the button is pressed down or 
 
 If ``true``, the button is in disabled state and can't be clicked or toggled.
 
+\ **Note:** If the button is disabled while held down, :ref:`button_up<class_BaseButton_signal_button_up>` will be emitted.
+
 .. rst-class:: classref-item-separator
 
 ----

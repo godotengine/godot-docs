@@ -32,6 +32,8 @@ Tutorials
 
 - :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
+- :doc:`Troubleshooting physics issues <../tutorials/physics/troubleshooting_physics_issues>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

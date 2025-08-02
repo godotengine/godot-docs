@@ -89,6 +89,13 @@ Wraps a class defined in Java, and returns it as a :ref:`JavaClass<class_JavaCla
 
 When wrapping inner (nested) classes, use ``$`` instead of ``.`` to separate them. For example, ``JavaClassWrapper.wrap("android.view.WindowManager$LayoutParams")`` wraps the **WindowManager.LayoutParams** class.
 
+\ **Note:** To invoke a constructor, call a method with the same name as the class. For example:
+
+::
+
+    var Intent = JavaClassWrapper.wrap("android.content.Intent")
+    var intent = Intent.Intent()
+
 \ **Note:** This method only works on Android. On every other platform, this method does nothing and returns an empty :ref:`JavaClass<class_JavaClass>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`

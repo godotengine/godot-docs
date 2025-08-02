@@ -28,6 +28,10 @@ For game objects that don't require complex movement or collision detection, suc
 Tutorials
 ---------
 
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
+
+- :doc:`Troubleshooting physics issues <../tutorials/physics/troubleshooting_physics_issues>`
+
 - :doc:`Kinematic character (2D) <../tutorials/physics/kinematic_character_2d>`
 
 - :doc:`Using CharacterBody2D <../tutorials/physics/using_character_body_2d>`

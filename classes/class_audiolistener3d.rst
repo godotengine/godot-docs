@@ -26,6 +26,18 @@ Once added to the scene tree and enabled using :ref:`make_current()<class_AudioL
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
+   | :ref:`DopplerTracking<enum_AudioListener3D_DopplerTracking>` | :ref:`doppler_tracking<class_AudioListener3D_property_doppler_tracking>` | ``0`` |
+   +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -41,6 +53,69 @@ Methods
    +---------------------------------------+--------------------------------------------------------------------------------------------------+
    | |void|                                | :ref:`make_current<class_AudioListener3D_method_make_current>`\ (\ )                             |
    +---------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_AudioListener3D_DopplerTracking:
+
+.. rst-class:: classref-enumeration
+
+enum **DopplerTracking**: :ref:`🔗<enum_AudioListener3D_DopplerTracking>`
+
+.. _class_AudioListener3D_constant_DOPPLER_TRACKING_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DopplerTracking<enum_AudioListener3D_DopplerTracking>` **DOPPLER_TRACKING_DISABLED** = ``0``
+
+Disables `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ simulation (default).
+
+.. _class_AudioListener3D_constant_DOPPLER_TRACKING_IDLE_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DopplerTracking<enum_AudioListener3D_DopplerTracking>` **DOPPLER_TRACKING_IDLE_STEP** = ``1``
+
+Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this listener compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
+
+.. _class_AudioListener3D_constant_DOPPLER_TRACKING_PHYSICS_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DopplerTracking<enum_AudioListener3D_DopplerTracking>` **DOPPLER_TRACKING_PHYSICS_STEP** = ``2``
+
+Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this listener compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_AudioListener3D_property_doppler_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`DopplerTracking<enum_AudioListener3D_DopplerTracking>` **doppler_tracking** = ``0`` :ref:`🔗<class_AudioListener3D_property_doppler_tracking>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_doppler_tracking**\ (\ value\: :ref:`DopplerTracking<enum_AudioListener3D_DopplerTracking>`\ )
+- :ref:`DopplerTracking<enum_AudioListener3D_DopplerTracking>` **get_doppler_tracking**\ (\ )
+
+If not :ref:`DOPPLER_TRACKING_DISABLED<class_AudioListener3D_constant_DOPPLER_TRACKING_DISABLED>`, this listener will simulate the `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ for objects changed in particular ``_process`` methods.
+
+\ **Note:** The Doppler effect will only be heard on :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`\ s if :ref:`AudioStreamPlayer3D.doppler_tracking<class_AudioStreamPlayer3D_property_doppler_tracking>` is not set to :ref:`AudioStreamPlayer3D.DOPPLER_TRACKING_DISABLED<class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_DISABLED>`.
 
 .. rst-class:: classref-section-separator
 
