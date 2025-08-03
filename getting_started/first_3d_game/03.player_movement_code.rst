@@ -449,12 +449,12 @@ Ultimately, we have both player movement and the view in place. Next, we will
 work on the monsters.
 
 .. |image0| image:: img/03.player_movement_code/01.attach_script_to_player.webp
-.. |image1| image:: img/03.player_movement_code/02.clicking_main_tab.png
+.. |image1| image:: img/03.player_movement_code/02.clicking_main_tab.webp
 .. |image2| image:: img/03.player_movement_code/03.instance_child_scene.webp
 .. |image3| image:: img/03.player_movement_code/04.scene_tree_with_camera.webp
-.. |image4| image:: img/03.player_movement_code/05.camera_preview_checkbox.png
-.. |image5| image:: img/03.player_movement_code/06.two_viewports.png
-.. |image6| image:: img/03.player_movement_code/07.camera_preview_checkbox.png
+.. |image4| image:: img/03.player_movement_code/05.camera_preview_checkbox.webp
+.. |image5| image:: img/03.player_movement_code/06.two_viewports.webp
+.. |image6| image:: img/03.player_movement_code/07.camera_preview_checkbox.webp
 .. |image7| image:: img/03.player_movement_code/08.camera_moved.png
 .. |image8| image:: img/03.player_movement_code/09.camera_rotated.png
 .. |image9| image:: img/03.player_movement_code/10.camera_perspective.png
