@@ -78,7 +78,7 @@ Debugging the project
 - Select **Executable** option and specify the path to your executable located in
   the ``<Godot root directory>/bin`` folder. The name depends on your build configuration,
   e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
-  ``platform=linuxbsd``, ``target=editor`` and ``dev_build=yes``.
+  ``platform=linuxbsd``, ``target=editor``, and ``dev_build=yes``.
 
 .. figure:: img/kdevelop_configlaunches2.png
    :figclass: figure-w480
