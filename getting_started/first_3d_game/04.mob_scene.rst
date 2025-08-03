@@ -331,13 +331,13 @@ Here is the complete ``mob.gd`` script for reference.
         }
     }
 
-.. |image0| image:: img/04.mob_scene/01.initial_three_nodes.png
-.. |image1| image:: img/04.mob_scene/02.add_child_node.png
-.. |image2| image:: img/04.mob_scene/03.scene_with_collision_shape.png
+.. |image0| image:: img/04.mob_scene/01.initial_three_nodes.webp
+.. |image1| image:: img/04.mob_scene/02.add_child_node.webp
+.. |image2| image:: img/04.mob_scene/03.scene_with_collision_shape.webp
 .. |image4| image:: img/04.mob_scene/05.box_final_size.png
-.. |image5| image:: img/04.mob_scene/06.visibility_notifier.png
+.. |image5| image:: img/04.mob_scene/06.visibility_notifier.webp
 .. |image6| image:: img/04.mob_scene/07.visibility_notifier_bbox_resized.png
-.. |image7| image:: img/04.mob_scene/08.mob_attach_script.png
-.. |image8| image:: img/04.mob_scene/09.switch_to_3d_workspace.png
+.. |image7| image:: img/04.mob_scene/08.mob_attach_script.webp
+.. |image8| image:: img/04.mob_scene/09.switch_to_3d_workspace.webp
 .. |image9| image:: img/04.mob_scene/10.node_dock.webp
 .. |image10| image:: img/04.mob_scene/11.connect_signal.webp
