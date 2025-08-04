@@ -278,7 +278,9 @@ Reference
       | ``[p {options}]{text}[/p]``
 
   * - | **br**
-      | Adds line break in a text.
+      | Adds line break in a text, without adding a new paragraph.
+        If used within a list, this won't create a new list item,
+        but will add a line break within the current item instead.
 
     - ``[br]``
 
@@ -968,9 +970,9 @@ Unordered list bullet
 By default, the ``[ul]`` tag uses the ``U+2022`` "Bullet" Unicode glyph as the
 bullet character. This behavior is similar to web browsers. The bullet character
 can be customized using ``[ul bullet={bullet}]``. If provided, this ``{bullet}``
-parameter must be a *single* character with no enclosing quotes (for example,
-``[bullet=*]``). Additional characters are ignored. The bullet character's
-width does not affect the list's formatting.
+parameter must be a string with no enclosing quotes (for example,
+``[bullet=*]``). You can add trailing spaces after the bullet character
+to increase the spacing between the bullet and the list item text.
 
 See `Bullet (typography) on Wikipedia <https://en.wikipedia.org/wiki/Bullet_(typography)>`__
 for a list of common bullet characters that you can paste directly in the ``bullet`` parameter.
