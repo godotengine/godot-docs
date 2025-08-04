@@ -332,7 +332,7 @@ Building export templates
 .. warning:: Linux binaries usually won't run on distributions that are
              older than the distribution they were built on. If you wish to
              distribute binaries that work on most distributions,
-             you should build them on an old distribution such as Ubuntu 16.04.
+             you should build them on an old distribution such as Ubuntu 20.04.
              You can use a virtual machine or a container to set up a suitable
              build environment.
 
