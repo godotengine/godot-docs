@@ -382,7 +382,7 @@ shaders.
 .. seealso::
 
    The demo projects repository contains a
-   `Compute Shader Heightmap demo <https://github.com/godotengine/godot-demo-projects/tree/master/misc/compute_shader_heightmap>`__
+   `Compute Shader Heightmap demo <https://github.com/godotengine/godot-demo-projects/tree/master/compute/heightmap>`__
    This project performs heightmap image generation on the CPU and
    GPU separately, which lets you compare how a similar algorithm can be
    implemented in two different ways (with the GPU implementation being faster
