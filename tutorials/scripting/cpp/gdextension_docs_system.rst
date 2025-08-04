@@ -59,11 +59,11 @@ you need to add the following lines to your SConstruct file:
 .. code-block:: py
 
     if env["target"] in ["editor", "template_debug"]:
-    try:
-        doc_data = env.GodotCPPDocData("src/gen/doc_data.gen.cpp", source=Glob("doc_classes/*.xml"))
-        sources.append(doc_data)
-    except AttributeError:
-        print("Not including class reference as we're targeting a pre-4.3 baseline.")
+        try:
+            doc_data = env.GodotCPPDocData("src/gen/doc_data.gen.cpp", source=Glob("doc_classes/*.xml"))
+            sources.append(doc_data)
+        except AttributeError:
+            print("Not including class reference as we're targeting a pre-4.3 baseline.")
 
 The if-statement checks if we are compiling the GDExtension library with the ``editor`` and ``template_debug``
 flags. SCons then tries to load all the XML files inside the ``doc_classes`` directory and appends them
