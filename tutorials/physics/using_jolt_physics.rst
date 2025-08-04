@@ -32,15 +32,6 @@ Notable differences to Godot Physics
 
 There are many differences between the existing Godot Physics engine and Jolt.
 
-Area3D and static bodies
-~~~~~~~~~~~~~~~~~~~~~~~~
-When using Jolt, :ref:`class_Area3D` will not detect overlaps with :ref:`class_StaticBody3D`
-(nor a :ref:`class_RigidBody3D` frozen with ``FREEZE_MODE_STATIC``) by default, for
-performance reasons. If you have many/large :ref:`class_Area3D` overlapping with
-complex static geometry, such as :ref:`class_ConcavePolygonShape3D` or
-:ref:`class_HeightMapShape3D`, you can end up wasting a significant amount of CPU
-performance and memory without realizing it.
-
 Joint properties
 ~~~~~~~~~~~~~~~~
 
