@@ -63,7 +63,7 @@ node by default.
 
 .. image:: img/animtree_emptyblendtree.webp
 
-In order for animations to play, a node has to be connected to to the output. You can add nodes from the **Add Node..** menu or by right clicking an empty space:
+In order for animations to play, a node has to be connected to the output. You can add nodes from the **Add Node..** menu or by right clicking an empty space:
 
 .. image:: img/animtree_blendnodes.webp
 
