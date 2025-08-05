@@ -41,8 +41,8 @@ icon, which we often use for prototyping in the community.
 
 .. image:: img/scripting_first_script_icon.svg
 
-We need to create a Sprite2D node to display it in the game. In the Scene dock,
-click the **Other Node** button.
+We need to create a Sprite2D node to display it in the game. In the :ui:`Scene` dock,
+click the :button:`Other Node` button.
 
 .. image:: img/scripting_first_script_click_other_node.webp
 
@@ -51,14 +51,14 @@ to create the node.
 
 .. image:: img/scripting_first_script_add_sprite_node.webp
 
-Your Scene tab should now only have a Sprite2D node.
+Your :ui:`Scene` tab should now only have a Sprite2D node.
 
 .. image:: img/scripting_first_script_scene_tree.webp
 
-A Sprite2D node needs a texture to display. In the Inspector on the right, you
-can see that the **Texture** property says ``<empty>``. To display the Godot icon,
-click and drag the file ``icon.svg`` from the FileSystem dock onto the Texture
-slot.
+A Sprite2D node needs a texture to display. In the :ui:`Inspector` on the right, you
+can see that the :inspector:`Texture` property says ``<empty>``. To display the
+Godot icon, click and drag the file ``icon.svg`` from the FileSystem dock onto the
+Texture slot.
 
 .. image:: img/scripting_first_script_setting_texture.webp
 
@@ -75,16 +75,16 @@ Creating a new script
 ---------------------
 
 To create and attach a new script to our node, right-click on Sprite2D in the
-Scene dock and select **Attach Script**.
+Scene dock and select :button:`Attach Script`.
 
 .. image:: img/scripting_first_script_attach_script.webp
 
-The **Attach Node Script** window appears. It allows you to select the script's
+The :ui:`Attach Node Script` window appears. It allows you to select the script's
 language and file path, among other options.
 
-Change the **Template** field from ``Node: Default`` to ``Object: Empty`` to
+Change the :ui:`Template` field from ``Node: Default`` to ``Object: Empty`` to
 start with a clean file. Leave the other options set to their default values and
-click the **Create** button to create the script.
+click the :button:`Create` button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
@@ -93,7 +93,7 @@ click the **Create** button to create the script.
     C# script names need to match their class name. In this case, you should name the
     file ``MySprite2D.cs``.
 
-The Script workspace should appear with your new ``sprite_2d.gd`` file open and
+The :ui:`Script` workspace should appear with your new ``sprite_2d.gd`` file open and
 the following line of code:
 
 .. tabs::
@@ -120,16 +120,16 @@ node, including classes it extends, like ``Node2D``, ``CanvasItem``, and
           class will implicitly extend :ref:`RefCounted <class_RefCounted>`, which
           Godot uses to manage your application's memory.
 
-Inherited properties include the ones you can see in the Inspector dock, like
+Inherited properties include the ones you can see in the :ui:`Inspector` dock, like
 our node's ``texture``.
 
 .. note::
 
-    By default, the Inspector displays a node's properties in "Title Case", with
+    By default, the :ui:`Inspector` displays a node's properties in "Title Case", with
     capitalized words separated by a space. In GDScript code, these properties
     are in "snake_case", which is lowercase with words separated by an underscore.
 
-    You can hover over any property's name in the Inspector to see a description and
+    You can hover over any property's name in the :ui:`Inspector` to see a description and
     its identifier in code.
 
 Hello, world!
@@ -165,7 +165,7 @@ this function.
           red and display the following error message: "Indented block expected".
 
 Save the scene as ``sprite_2d.tscn`` if you haven't already, then press :kbd:`F6` (:kbd:`Cmd + R` on macOS)
-to run it. Look at the **Output** bottom panel that expands.
+to run it. Look at the :ui:`Output` bottom panel that expands.
 It should display "Hello, world!".
 
 .. image:: img/scripting_first_script_print_hello_world.webp
@@ -178,7 +178,7 @@ Turning around
 
 It's time to make our node move and rotate. To do so, we're going to add two
 member variables to our script: the movement speed in pixels per second and the
-angular speed in radians per second.  Add the following after the ``extends Sprite2D`` line.
+angular speed in radians per second. Add the following after the ``extends Sprite2D`` line.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
