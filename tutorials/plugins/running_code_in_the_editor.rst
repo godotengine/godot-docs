@@ -370,7 +370,8 @@ You then want to connect the signal when a new resource is set:
         set(new_resource):
             resource = new_resource
             # Connect the changed signal as soon as a new resource is being added.
-            resource.changed.connect(_on_resource_changed)
+            if resource != null:
+                resource.changed.connect(_on_resource_changed)
 
     func _on_resource_changed():
         print("My resource just changed!")
@@ -392,7 +393,10 @@ You then want to connect the signal when a new resource is set:
             {
                 _resource = value;
                 // Connect the changed signal as soon as a new resource is being added.
-                _resource.Changed += OnResourceChanged;
+                if (_resource != null)
+                {
+                    _resource.Changed += OnResourceChanged;
+                }
             }
         }
     }
@@ -414,7 +418,8 @@ would cause unneeded updates.
             if resource != null:
                 resource.changed.disconnect(_on_resource_changed)
             resource = new_resource
-            resource.changed.connect(_on_resource_changed)
+            if resource != null:
+                resource.changed.connect(_on_resource_changed)
 
  .. code-tab:: csharp
 
@@ -430,7 +435,10 @@ would cause unneeded updates.
                 _resource.Changed -= OnResourceChanged;
             }
             _resource = value;
-            _resource.Changed += OnResourceChanged;
+            if (_resource != null)
+            {
+                _resource.Changed += OnResourceChanged;
+            }
         }
     }
 
