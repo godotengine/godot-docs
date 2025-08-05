@@ -652,6 +652,8 @@ Mobile
   and :ref:`iOS <doc_plugins_for_ios>`.
 - Support for advertisements using third-party modules.
 
+.. _doc_xr_support:
+
 XR support (AR and VR)
 ----------------------
 
@@ -663,6 +665,11 @@ XR support (AR and VR)
 
   - Including support for popular stand alone headsets like the Meta Quest 1/2/3 and Pro, Pico 4, Magic Leap 2, and Lynx R1.
 
+- Out of the box limited support for visionOS Apple headsets.
+
+  - Currently only exporting an application for use on a flat plane within the
+    headset is supported. Immersive experiences are not supported.
+ 
 - Other devices supported through an XR plugin structure.
 - Various advanced toolkits are available that implement common features required by XR applications.
 
