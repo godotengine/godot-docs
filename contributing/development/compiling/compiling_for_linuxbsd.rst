@@ -397,8 +397,8 @@ To cross-compile Godot for RISC-V devices, we need to setup the following items:
   While we are not going to use this directly, it provides us with a sysroot, as well
   as header and libraries files that we will need. There are many versions to choose
   from, however, the older the toolchain, the more compatible our final binaries will be.
-  If in doubt, `use this version <https://github.com/riscv-collab/riscv-gnu-toolchain/releases/tag/2021.12.22>`__,
-  and download ``riscv64-glibc-ubuntu-18.04-nightly-2021.12.22-nightly.tar.gz``. Extract
+  If in doubt, `use this version <https://github.com/riscv-collab/riscv-gnu-toolchain/releases/tag/2023.07.07>`__,
+  and download ``riscv64-glibc-ubuntu-20.04-gcc-nightly-2023.07.07-nightly.tar.gz``. Extract
   it somewhere and remember its path.
 - `mold <https://github.com/rui314/mold/releases>`__. This fast linker,
   is the only one that correctly links the resulting binary. Download it, extract it,
