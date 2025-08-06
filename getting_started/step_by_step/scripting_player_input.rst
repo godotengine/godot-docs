@@ -74,8 +74,8 @@ The two actions we use above, "ui_left" and "ui_right", are predefined in every
 Godot project. They respectively trigger when the player presses the left and
 right arrows on the keyboard or left and right on a gamepad's D-pad.
 
-.. note:: You can see and edit input actions in your project by going to Project
-          -> Project Settings and clicking on the Input Map tab.
+.. note:: You can see and edit input actions in your project by going to
+          :menu:`Project > Project Settings` and clicking on the :ui:`Input Map` tab.
 
 Finally, we use the ``direction`` as a multiplier when we update the node's
 ``rotation``: ``rotation += angular_speed * direction * delta``.

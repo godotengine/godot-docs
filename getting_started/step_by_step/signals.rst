@@ -58,11 +58,11 @@ To add a button to our game, we will create a new scene which will include
 both a :ref:`Button <class_button>` and the ``sprite_2d.tscn`` scene we created in
 the :ref:`doc_scripting_first_script` lesson.
 
-Create a new scene by going to the menu Scene -> New Scene.
+Create a new scene by going to the menu :menu:`Scene > New Scene`.
 
 .. image:: img/signals_01_new_scene.webp
 
-In the Scene dock, click the 2D Scene button. This will add
+In the Scene dock, click the :button:`2D Scene`` button. This will add
 a :ref:`Node2D <class_Node2D>` as our root.
 
 .. image:: img/signals_02_2d_scene.webp
@@ -73,7 +73,7 @@ previously onto the Node2D to instantiate it.
 .. image:: img/signals_03_dragging_scene.png
 
 We want to add another node as a sibling of the Sprite2D. To do so, right-click
-on Node2D and select Add Child Node.
+on Node2D and select :button:`Add Child Node`.
 
 .. image:: img/signals_04_add_child_node.webp
 
@@ -92,8 +92,8 @@ If you don't see the handles, ensure the select tool is active in the toolbar.
 
 Click and drag on the button itself to move it closer to the sprite.
 
-You can also write a label on the Button by editing its Text property in the
-Inspector. Enter ``Toggle motion``.
+You can also write a label on the Button by editing its :inspector:`Text` property
+in the :ui:`Inspector`. Enter ``Toggle motion``.
 
 .. image:: img/signals_08_toggle_motion_text.webp
 
@@ -114,8 +114,9 @@ want to call a new function that will toggle its motion on and off. We need to
 have a script attached to the Sprite2D node, which we do from the previous
 lesson.
 
-You can connect signals in the Node dock. Select the Button node and, on the
-right side of the editor, click on the tab named "Node" next to the Inspector.
+You can connect signals in the :ui:`Node` dock. Select the Button node and, on the
+right side of the editor, click on the tab named :ui:`Node` next to the
+:ui:`Inspector`.
 
 .. image:: img/signals_10_node_dock.webp
 
@@ -142,7 +143,7 @@ methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
 
    The advanced view lets you connect to any node and any built-in
    function, add arguments to the callback, and set options. You can
-   toggle the mode in the window's bottom-right by clicking the Advanced
+   toggle the mode in the window's bottom-right by clicking the :button:`Advanced`
    button.
 
 .. note::
@@ -151,8 +152,8 @@ methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
     automatic code generation might not work. In this case, you need to connect
     the signal via code as explained in the next section.
 
-Click the Connect button to complete the signal connection and jump to the
-Script workspace. You should see the new method with a connection icon in the
+Click the :button:`Connect` button to complete the signal connection and jump to the
+:ui:`Script` workspace. You should see the new method with a connection icon in the
 left margin.
 
 .. image:: img/signals_13_signals_connection_icon.webp
@@ -273,7 +274,7 @@ this.
 
 .. image:: img/signals_15_scene_tree.webp
 
-With the Timer node selected, go to the Inspector and enable the **Autostart**
+With the Timer node selected, go to the :ui:`Inspector` and enable the :inspector:`Autostart`
 property.
 
 .. image:: img/signals_18_timer_autostart.webp
@@ -466,7 +467,7 @@ reaches 0.
 .. note:: As signals represent events that just occurred, we generally use an
           action verb in the past tense in their names.
 
-Your signals work the same way as built-in ones: they appear in the Node tab and
+Your signals work the same way as built-in ones: they appear in the :ui:`Node` tab and
 you can connect to them like any other.
 
 .. image:: img/signals_17_custom_signal.webp

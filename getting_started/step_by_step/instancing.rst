@@ -52,9 +52,10 @@ you to download the ball's sample project we prepared for you:
 `instancing_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/instancing_starter.zip>`_.
 
 Extract the archive on your computer. To import it, you need the Project Manager.
-The Project Manager is accessed by opening Godot, or if you already have Godot opened, click on *Project -> Quit to Project List* (:kbd:`Ctrl + Shift + Q`, :kbd:`Ctrl + Option + Cmd + Q` on macOS)
+The Project Manager is accessed by opening Godot, or if you already have Godot
+opened, click on :menu:`Project > Quit to Project List` (:kbd:`Ctrl + Shift + Q`, :kbd:`Ctrl + Option + Cmd + Q` on macOS)
 
-In the Project Manager, click the *Import* button to import the project.
+In the Project Manager, click the :button:`Import` button to import the project.
 
 .. image:: img/instancing_import_button.webp
 
@@ -63,12 +64,12 @@ Double-click the ``project.godot`` file to open it.
 
 .. image:: img/instancing_import_project_file.webp
 
-Finally, click the Import & Edit button.
+Finally, click the :button:`Import`` button.
 
 .. image:: img/instancing_import_and_edit_button.webp
 
 A window notifying you that the project was last opened in an older Godot version
-may appear, that's not an issue. Click *Ok* to open the project.
+may appear, that's not an issue. Click :button:`Ok`` to open the project.
 
 The project contains two packed scenes: ``main.tscn``, containing walls against
 which the ball collides, and ``ball.tscn``. The Main scene should open
@@ -118,7 +119,7 @@ Editing scenes and instances
 There is more to instances. With this feature, you can:
 
 1. Change the properties of one ball without affecting the others using the
-   Inspector.
+   :ui:`Inspector`.
 2. Change the default properties of every Ball by opening the ``ball.tscn`` scene
    and making a change to the Ball node there. Upon saving, all instances of the
    Ball in the project will see their values update.
@@ -130,8 +131,8 @@ Let's try this. Double-click ``ball.tscn`` in the FileSystem to open it.
 
 .. image:: img/instancing_ball_scene_open.webp
 
-In the Scene dock on the left, select the Ball node. Then, in the Inspector on the right, click on the PhysicsMaterial
-property to expand it.
+In the Scene dock on the left, select the Ball node. Then, in the :ui:`Inspector` on the
+right, click on the :inspector:`PhysicsMaterial`` property to expand it.
 
 .. image:: img/instancing_physics_material_expand.webp
 
@@ -149,8 +150,8 @@ on the corresponding tab above the viewport.
 
 .. image:: img/instancing_scene_tabs.webp
 
-Select one of the instanced Ball nodes and, in the Inspector, set its Gravity
-Scale value to ``10``.
+Select one of the instanced Ball nodes and, in the :ui:`Inspector`, set its
+:inspector:`Gravity Scale` value to ``10``.
 
 .. image:: img/instancing_property_gravity_scale.png
 
@@ -167,11 +168,11 @@ Rerun the game and notice how this ball now falls much faster than the others.
 
 .. note::
 
-    You may notice you are unable to change the values of the PhysicsMaterial
-    of the ball. This is because PhysicsMaterial is a *resource*, and needs
+    You may notice you are unable to change the values of the :inspector:`PhysicsMaterial`
+    of the ball. This is because :inspector:`PhysicsMaterial` is a *resource*, and needs
     to be made unique before you can edit it in a scene that is linking to its
     original scene. To make a resource unique for one instance, right-click on
-    the **Physics Material** property in the Inspector and click **Make Unique**
+    the :inspector:`Physics Material` property in the :ui:`Inspector`` and click :button:`Make Unique``
     in the context menu.
 
     Resources are another essential building block of Godot games we will cover
