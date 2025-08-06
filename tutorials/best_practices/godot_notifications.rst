@@ -292,7 +292,7 @@ values will set up according to the following sequence:
 
     public:
         String get_test() { return test; }
-        void set_test(String p_test) { return test = p_test + "!"; }
+        void set_test(String p_test) { test = p_test + "!"; }
 
         MyNode() {
             // Triggers the setter, changing _test's value from "one" to "two!".
