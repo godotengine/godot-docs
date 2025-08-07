@@ -16,10 +16,8 @@ it is implemented with .NET 8.0.
 
 .. attention::
 
-    Projects written in C# using Godot 4 currently cannot be exported to the web
-    platform. To use C# on the web platform, consider Godot 3 instead.
-    Android and iOS platform support is available as of Godot 4.2, but is
-    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
+    Projects written in C# using Godot 4 have experimental support for Android and iOS since 4.2,
+    and for the web platform since 4.5. See :ref:`doc_c_sharp_platforms` for more information.
 
 .. note::
 
