@@ -1,7 +1,7 @@
 :allow_comments: False
 
-Engine core and modules
-=======================
+Engine architecture
+===================
 
 The following pages are meant to introduce the global organization of Godot Engine's
 source code, and give useful tips for extending and fixing the engine on the C++ side.
