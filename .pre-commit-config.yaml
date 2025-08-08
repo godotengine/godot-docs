@@ -6,7 +6,7 @@ repos:
     rev: v2.3.0
     hooks:
       - id: codespell
-        files: ^(about|community|contributing|getting_started|tutorials)/.*\.rst$
+        files: ^(about|community|engine_details|getting_started|tutorials)/.*\.rst$
         additional_dependencies: [tomli]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks

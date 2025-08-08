@@ -788,7 +788,7 @@ Miscellaneous
 
 - Licensed under the permissive MIT license.
 
-   - Open development process with :ref:`contributions welcome <doc_ways_to_contribute>`.
+   - Open development process with `contributions welcome <https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html>`__.
 
 .. seealso::
 
