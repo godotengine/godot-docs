@@ -448,7 +448,7 @@ compile the engine from sources, or how to build the documentation. You also nee
 get familiar with Git, a version control system that Godot developers use.
 
 We explain how to work with the engine source, how to edit the documentation, and
-what other ways to contribute are there in our :ref:`documentation for contributors <doc_ways_to_contribute>`.
+what other ways to contribute are there in our `documentation for contributors <https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html>`__.
 
 I have a great idea for Godot. How can I share it?
 --------------------------------------------------
@@ -629,7 +629,7 @@ for the rest of the game.
 How can I support Godot development or contribute?
 --------------------------------------------------
 
-See :ref:`doc_ways_to_contribute`.
+See `How to contribute <https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html>`__.
 
 Who is working on Godot? How can I contact you?
 -----------------------------------------------

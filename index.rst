@@ -128,13 +128,14 @@ the ``GodotEngine.epub`` file in an e-book reader application.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: Contributing
-   :name: sec-contributing
+   :caption: Engine details
+   :name: sec-engine-details
 
-   contributing/how_to_contribute
-   contributing/workflow/index
-   contributing/development/index
-   contributing/documentation/index
+   engine_details/architecture/index
+   engine_details/development/index
+   engine_details/editor/index
+   engine_details/class_reference/index
+   engine_details/file_formats/index
 
 
 .. toctree::

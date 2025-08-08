@@ -78,7 +78,6 @@ Contributing
 ~~~~~~~~~~~~
 
 - :ref:`doc_handling_compatibility_breakages`
-- :ref:`doc_ways_to_contribute`
 
 GDExtension
 ~~~~~~~~~~~
@@ -215,11 +214,6 @@ Shaders
 
 - :ref:`doc_compute_shaders`
 
-Workflow
-~~~~~~~~
-
-- :ref:`doc_pr_review_guidelines`
-
 XR
 ~~
 
@@ -253,11 +247,6 @@ Editor
 New pages since version 3.3
 ---------------------------
 
-C++
-~~~
-
-- :ref:`doc_cpp_usage_guidelines`
-
 GDScript
 ~~~~~~~~
 
@@ -283,19 +272,10 @@ Best practices
 
 - :ref:`doc_version_control_systems`
 
-Community
-~~~~~~~~~
-
-- :ref:`doc_best_practices_for_engine_contributors`
-- :ref:`doc_bisecting_regressions`
-- :ref:`doc_editor_and_docs_localization`
-
 Development
 ~~~~~~~~~~~
 
-- :ref:`doc_introduction_to_editor_development`
-- :ref:`doc_editor_style_guide`
-- :ref:`doc_common_engine_methods_and_macros`
+- :ref:`doc_common_engine_methods_and_macros_error_macros`
 - :ref:`doc_vulkan_validation_layers`
 - :ref:`doc_gdscript_grammar`
 - Configuring an IDE: :ref:`doc_configuring_an_ide_code_blocks`
