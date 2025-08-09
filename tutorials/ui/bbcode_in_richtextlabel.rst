@@ -1139,8 +1139,6 @@ This is where the logic of each effect takes place and is called once per glyph
 during the draw phase of text rendering. This passes in a :ref:`class_CharFXTransform`
 object, which holds a few variables to control how the associated glyph is rendered:
 
-- ``identity`` specifies which custom effect is being processed. You should use that for
-  code flow control.
 - ``outline`` is ``true`` if effect is called for drawing text outline.
 - ``range`` tells you how far into a given custom effect block you are in as an
   index.
