@@ -1481,6 +1481,30 @@ The second element holds the driver version. For example, on the ``nvidia`` driv
 
 \ **Note:** This method is only supported on Linux/BSD and Windows when not running in headless mode. On other platforms, it returns an empty array.
 
+\ **Note:** This method will run slowly the first time it is called in a session; it can take several seconds depending on the operating system and hardware. It is blocking if called on the main thread, so it's recommended to call it on a separate thread using :ref:`Thread<class_Thread>`. This allows the engine to keep running while the information is being retrieved. However, :ref:`get_video_adapter_driver_info()<class_OS_method_get_video_adapter_driver_info>` is *not* thread-safe, so it should not be called from multiple threads at the same time.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var thread = Thread.new()
+
+    func _ready():
+        thread.start(
+            func():
+                var driver_info = OS.get_video_adapter_driver_info()
+                if not driver_info.is_empty():
+                    print("Driver: %s %s" % [driver_info[0], driver_info[1]])
+                else:
+                    print("Driver: (unknown)")
+        )
+
+    func _exit_tree():
+        thread.wait_to_finish()
+
+
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -443,7 +443,9 @@ Emitted when an item is double-clicked, or selected with a ``ui_accept`` input e
 
 **item_collapsed**\ (\ item\: :ref:`TreeItem<class_TreeItem>`\ ) :ref:`🔗<class_Tree_signal_item_collapsed>`
 
-Emitted when an item is collapsed by a click on the folding arrow.
+Emitted when an item is expanded or collapsed by clicking on the folding arrow or through code.
+
+\ **Note:** Despite its name, this signal is also emitted when an item is expanded.
 
 .. rst-class:: classref-item-separator
 

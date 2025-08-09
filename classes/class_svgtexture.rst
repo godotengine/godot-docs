@@ -50,6 +50,8 @@ Methods
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`SVGTexture<class_SVGTexture>` | :ref:`create_from_string<class_SVGTexture_method_create_from_string>`\ (\ source\: :ref:`String<class_String>`, scale\: :ref:`float<class_float>` = 1.0, saturation\: :ref:`float<class_float>` = 1.0, color_map\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`               | :ref:`get_scaled_rid<class_SVGTexture_method_get_scaled_rid>`\ (\ ) |const|                                                                                                                                                                                             |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`get_source<class_SVGTexture_method_get_source>`\ (\ ) |const|                                                                                                                                                                                                     |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`set_size_override<class_SVGTexture_method_set_size_override>`\ (\ size\: :ref:`Vector2i<class_Vector2i>`\ )                                                                                                                                                       |
@@ -129,6 +131,18 @@ Method Descriptions
 :ref:`SVGTexture<class_SVGTexture>` **create_from_string**\ (\ source\: :ref:`String<class_String>`, scale\: :ref:`float<class_float>` = 1.0, saturation\: :ref:`float<class_float>` = 1.0, color_map\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| :ref:`🔗<class_SVGTexture_method_create_from_string>`
 
 Creates a new **SVGTexture** and initializes it by allocating and setting the SVG data from string.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SVGTexture_method_get_scaled_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_scaled_rid**\ (\ ) |const| :ref:`🔗<class_SVGTexture_method_get_scaled_rid>`
+
+Returns the :ref:`RID<class_RID>` of the texture rasterized to match the oversampling of the currently drawn canvas item.
 
 .. rst-class:: classref-item-separator
 

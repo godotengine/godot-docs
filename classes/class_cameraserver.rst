@@ -86,6 +86,18 @@ Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. a webcam is pl
 
 Emitted when a :ref:`CameraFeed<class_CameraFeed>` is removed (e.g. a webcam is unplugged).
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CameraServer_signal_camera_feeds_updated:
+
+.. rst-class:: classref-signal
+
+**camera_feeds_updated**\ (\ ) :ref:`🔗<class_CameraServer_signal_camera_feeds_updated>`
+
+Emitted when camera feeds are updated.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -156,6 +168,35 @@ Property Descriptions
 If ``true``, the server is actively monitoring available camera feeds.
 
 This has a performance cost, so only set it to ``true`` when you're actively accessing the camera.
+
+\ **Note:** After setting it to ``true``, you can receive updated camera feeds through the :ref:`camera_feeds_updated<class_CameraServer_signal_camera_feeds_updated>` signal.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _ready():
+        CameraServer.camera_feeds_updated.connect(_on_camera_feeds_updated)
+        CameraServer.monitoring_feeds = true
+
+    func _on_camera_feeds_updated():
+        var feeds = CameraServer.feeds()
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        CameraServer.CameraFeedsUpdated += OnCameraFeedsUpdated;
+        CameraServer.MonitoringFeeds = true;
+    }
+
+    void OnCameraFeedsUpdated()
+    {
+        var feeds = CameraServer.Feeds();
+    }
+
+
 
 .. rst-class:: classref-section-separator
 
