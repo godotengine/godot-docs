@@ -1110,6 +1110,8 @@ The number of characters to display. If set to ``-1``, all characters are displa
 
 \ **Note:** Setting this property updates :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` accordingly.
 
+\ **Note:** Characters are counted as Unicode codepoints. A single visible grapheme may contain multiple codepoints (e.g. certain emoji use three codepoints). A single codepoint may contain two UTF-16 characters, which are used in C# strings.
+
 .. rst-class:: classref-item-separator
 
 ----
