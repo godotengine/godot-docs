@@ -64,12 +64,12 @@ Double-click the ``project.godot`` file to open it.
 
 .. image:: img/instancing_import_project_file.webp
 
-Finally, click the :button:`Import`` button.
+Finally, click the :button:`Import` button.
 
 .. image:: img/instancing_import_and_edit_button.webp
 
 A window notifying you that the project was last opened in an older Godot version
-may appear, that's not an issue. Click :button:`Ok`` to open the project.
+may appear, that's not an issue. Click :button:`Ok` to open the project.
 
 The project contains two packed scenes: ``main.tscn``, containing walls against
 which the ball collides, and ``ball.tscn``. The Main scene should open
@@ -132,7 +132,7 @@ Let's try this. Double-click ``ball.tscn`` in the FileSystem to open it.
 .. image:: img/instancing_ball_scene_open.webp
 
 In the Scene dock on the left, select the Ball node. Then, in the :ui:`Inspector` on the
-right, click on the :inspector:`PhysicsMaterial`` property to expand it.
+right, click on the :inspector:`PhysicsMaterial` property to expand it.
 
 .. image:: img/instancing_physics_material_expand.webp
 
@@ -172,7 +172,7 @@ Rerun the game and notice how this ball now falls much faster than the others.
     of the ball. This is because :inspector:`PhysicsMaterial` is a *resource*, and needs
     to be made unique before you can edit it in a scene that is linking to its
     original scene. To make a resource unique for one instance, right-click on
-    the :inspector:`Physics Material` property in the :ui:`Inspector`` and click :button:`Make Unique``
+    the :inspector:`Physics Material` property in the :ui:`Inspector` and click :button:`Make Unique`
     in the context menu.
 
     Resources are another essential building block of Godot games we will cover

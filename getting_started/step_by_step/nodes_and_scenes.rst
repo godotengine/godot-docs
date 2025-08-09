@@ -72,7 +72,7 @@ opening the project, you should see an empty editor.
 
 .. image:: img/nodes_and_scenes_01_empty_editor.webp
 
-In an empty scene, the :ui:`Scene`` dock on the left shows several options to add a
+In an empty scene, the :ui:`Scene` dock on the left shows several options to add a
 root node quickly. :button:`2D Scene` adds a :ref:`Node2D <class_Node2D>` node,
 :button:`3D Scene` adds a :ref:`Node3D <class_Node3D>` node,
 and :button:`User Interface` adds a :ref:`Control <class_Control>` node.

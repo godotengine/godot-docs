@@ -62,7 +62,7 @@ Create a new scene by going to the menu :menu:`Scene > New Scene`.
 
 .. image:: img/signals_01_new_scene.webp
 
-In the Scene dock, click the :button:`2D Scene`` button. This will add
+In the Scene dock, click the :button:`2D Scene` button. This will add
 a :ref:`Node2D <class_Node2D>` as our root.
 
 .. image:: img/signals_02_2d_scene.webp
