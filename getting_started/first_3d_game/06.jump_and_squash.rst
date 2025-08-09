@@ -181,17 +181,22 @@ collisions with the floor. To do so, we can use Godot's :ref:`group
 Open the scene ``mob.tscn`` again and select the *Mob* node. Go to the *Node*
 dock on the right to see a list of signals. The *Node* dock has two tabs:
 *Signals*, which you've already used, and *Groups*, which allows you to assign
-tags to nodes.
-
-Click on it to reveal a field where you can write a tag name. Enter "mob" in the
-field and click the *Add* button.
+tags to nodes. Click on the *+* button to open the *Create new Group* dialog.
 
 |image7|
+
+Enter "mob" in the *Name* field and click the *Ok* button.
+
+|image8|
+
+The "mob" group is now shown under the *Scene Groups* section.
+
+|image9|
 
 An icon appears in the *Scene* dock to indicate the node is part of at least one
 group.
 
-|image8|
+|image10|
 
 We can now use the group from the code to distinguish collisions with monsters
 from collisions with the floor.
@@ -367,12 +372,14 @@ With that, you should be able to kill monsters by jumping on them. You can press
 
 However, the player won't die yet. We'll work on that in the next part.
 
-.. |image0| image:: img/06.jump_and_squash/02.project_settings.png
+.. |image0| image:: img/06.jump_and_squash/02.project_settings.webp
 .. |image1| image:: img/06.jump_and_squash/03.physics_layers.webp
 .. |image2| image:: img/06.jump_and_squash/04.default_physics_properties.webp
 .. |image3| image:: img/06.jump_and_squash/05.toggle_layer_and_mask.webp
-.. |image4| image:: img/06.jump_and_squash/06.named_checkboxes.png
+.. |image4| image:: img/06.jump_and_squash/06.named_checkboxes.webp
 .. |image5| image:: img/06.jump_and_squash/07.player_physics_mask.webp
 .. |image6| image:: img/06.jump_and_squash/08.mob_physics_mask.webp
-.. |image7| image:: img/06.jump_and_squash/09.groups_tab.png
-.. |image8| image:: img/06.jump_and_squash/10.group_scene_icon.png
+.. |image7| image:: img/06.jump_and_squash/09.groups_tab.webp
+.. |image8| image:: img/06.jump_and_squash/10.group_create_new.webp
+.. |image9| image:: img/06.jump_and_squash/11.group_scene_groups.webp
+.. |image10| image:: img/06.jump_and_squash/12.group_scene_icon.webp
