@@ -561,7 +561,7 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 Returns the 2D analog of the cross product for this vector and ``with``.
 
-This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area. If the two vectors are parallel this returns zero, making it useful for testing if two vectors are parallel.
+This is the signed area of the parallelogram formed by the two vectors. If the second vector is counter-clockwise from the first vector, then the cross product is the positive area. If clockwise, the cross product is the negative area. If the two vectors are parallel this returns zero, making it useful for testing if two vectors are parallel.
 
 \ **Note:** Cross product is not defined in 2D mathematically. This method embeds the 2D vectors in the XY plane of 3D space and uses their cross product's Z component as the analog.
 
