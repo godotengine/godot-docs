@@ -309,13 +309,13 @@ not be called.
                 OnResourceSet();
             }
         }
-    }
 
-    // This will only be called when you create, delete, or paste a resource.
-    // You will not get an update when tweaking properties of it.
-    private void OnResourceSet()
-    {
-        GD.Print("My resource was set!");
+        // This will only be called when you create, delete, or paste a resource.
+        // You will not get an update when tweaking properties of it.
+        private void OnResourceSet()
+        {
+            GD.Print("My resource was set!");
+        }
     }
 
 To get around this problem you first have to make your resource a tool and make it
@@ -399,11 +399,11 @@ You then want to connect the signal when a new resource is set:
                 }
             }
         }
-    }
 
-    private void OnResourceChanged()
-    {
-        GD.Print("My resource just changed!");
+        private void OnResourceChanged()
+        {
+            GD.Print("My resource just changed!");
+        }
     }
 
 Lastly, remember to disconnect the signal as the old resource being used and changed somewhere else
