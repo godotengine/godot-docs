@@ -50,8 +50,7 @@ For compiling under Windows, the following is required:
 
           ::
 
-              pacman -S mingw-w64-x86_64-python3-pip mingw-w64-x86_64-gcc  \
-                  mingw-w64-i686-python3-pip mingw-w64-i686-gcc make
+              pacman -S mingw-w64-x86_64-gcc mingw-w64-i686-gcc make python-pip
 
           For each MSYS2 MinGW subsystem, you should then run
           `pip3 install scons` in its shell.
