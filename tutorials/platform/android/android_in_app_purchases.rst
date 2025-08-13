@@ -3,7 +3,7 @@
 Android in-app purchases
 ========================
 
-Godot offers a first-party ``GodotGooglePlayBilling`` Android plugin compatible with Godot 4 which uses the `Google Play Billing library <https://developer.android.com/google/play/billing>`_.
+Godot offers a first-party ``GodotGooglePlayBilling`` Android plugin compatible with Godot 4.2+ which uses the `Google Play Billing library <https://developer.android.com/google/play/billing>`_.
 
 
 Usage
@@ -29,8 +29,6 @@ Initialization example:
 
 ::
 
-    var billing_client
-
     func _ready():
         BillingClient.connected.connect(_on_connected) # No params
         BillingClient.disconnected.connect(_on_disconnected) # No params
@@ -44,7 +42,7 @@ Initialization example:
         BillingClient.start_connection()
 
 The API must be in a connected state prior to use. The ``connected`` signal is sent
-when the connection process succeeds. You can also use ``isReady()`` to determine if the plugin
+when the connection process succeeds. You can also use ``is_ready()`` to determine if the plugin
 is ready for use. The ``get_connection_state()`` function returns the current connection state
 of the plugin. 
 
