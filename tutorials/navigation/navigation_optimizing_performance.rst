@@ -53,7 +53,7 @@ Baking navigation meshes at runtime should always be done in a background thread
 Complexity of source geometry data parsed from scene tree nodes has big impact on baking performance as everything needs to be mapped to a grid / voxels.
 For runtime baking performance the NavigationMesh cell size and cell height should be set as high as possible without causing navigation mesh quality problems for a game.
 If cell size or cell height is set too low the baking is forced to create an excessive amount of voxels to process the source geometry.
-If the source geometry spans over a very large game world it is even possible that the baking process runs out off memory in the middle and crashes the game.
+If the source geometry spans over a very large game world it is even possible that the baking process runs out of memory in the middle and crashes the game.
 The partition type can also be lowered depending on how complex the games source geometry is to gain some performance.
 E.g. games with mostly flat surfaces with blocky geometry can get away with the monotone or layers mode that are a lot faster to bake (e.g. because they require no distance field pass).
 
