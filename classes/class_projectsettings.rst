@@ -2022,6 +2022,8 @@ Path to an image used as the boot splash. If left empty, the default Godot Engin
 
 \ **Note:** The image will also show when opening the project in the editor. If you want to display the default splash image in the editor, add an empty override for ``editor_hint`` feature.
 
+\ **Note:** Due to a bug in Godot 4.3 and 4.4 when using a differrent or no image for the ``editor_hint`` feature the boot splash image may not always be included in the exported PCK. The image must be imported with the option **Keep File (exported as is)** in the Import dock, rather than as a :ref:`Texture2D<class_Texture2D>`.
+
 .. rst-class:: classref-item-separator
 
 ----
