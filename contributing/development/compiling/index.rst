@@ -52,8 +52,9 @@ will try their best to cover all possible situations.
    compiling_for_macos
    compiling_for_android
    compiling_for_ios
-   cross-compiling_for_ios_on_linux
+   compiling_for_visionos
    compiling_for_web
+   cross-compiling_for_ios_on_linux
 
 .. rubric:: Other compilation targets and options
    :heading-level: 2
