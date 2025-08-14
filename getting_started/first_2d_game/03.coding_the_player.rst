@@ -151,7 +151,7 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
         if Input.is_action_pressed("move_up"):
             velocity.y -= 1
 
-        if velocity.length() > 0:
+        if velocity.length() >= 0:
             velocity = velocity.normalized() * speed
             $AnimatedSprite2D.play()
         else:
