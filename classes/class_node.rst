@@ -1549,9 +1549,9 @@ For gameplay input, :ref:`_unhandled_input()<class_Node_private_method__unhandle
 
 |void| **_physics_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_Node_private_method__physics_process>`
 
-Called during the physics processing step of the main loop. Physics processing means that the frame rate is synced to the physics, i.e. the ``delta`` parameter will *generally* be constant (see exceptions below). ``delta`` is in seconds.
+Called once on each physics tick, and allows Nodes to synchronize their logic with physics ticks. ``delta`` is the logical time between physics ticks in seconds and is equal to :ref:`Engine.time_scale<class_Engine_property_time_scale>` / :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`.
 
-It is only called if physics processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_physics_process()<class_Node_method_set_physics_process>`.
+It is only called if physics processing is enabled for this Node, which is done automatically if this method is overridden, and can be toggled with :ref:`set_physics_process()<class_Node_method_set_physics_process>`.
 
 Processing happens in order of :ref:`process_physics_priority<class_Node_property_process_physics_priority>`, lower priority values are called first. Nodes with the same priority are processed in tree order, or top to bottom as seen in the editor (also known as pre-order traversal).
 
@@ -1559,7 +1559,7 @@ Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFI
 
 \ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
-\ **Note:** ``delta`` will be larger than expected if running at a framerate lower than :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` / :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both :ref:`_process()<class_Node_private_method__process>` and :ref:`_physics_process()<class_Node_private_method__physics_process>`. As a result, avoid using ``delta`` for time measurements in real-world seconds. Use the :ref:`Time<class_Time>` singleton's methods for this purpose instead, such as :ref:`Time.get_ticks_usec()<class_Time_method_get_ticks_usec>`.
+\ **Note:** Accumulated ``delta`` may diverge from real world seconds.
 
 .. rst-class:: classref-item-separator
 
@@ -1571,9 +1571,9 @@ Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFI
 
 |void| **_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_Node_private_method__process>`
 
-Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the ``delta`` time since the previous frame is not constant. ``delta`` is in seconds.
+Called on each idle frame, prior to rendering, and after physics ticks have been processed. ``delta`` is the time between frames in seconds.
 
-It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process()<class_Node_method_set_process>`.
+It is only called if processing is enabled for this Node, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process()<class_Node_method_set_process>`.
 
 Processing happens in order of :ref:`process_priority<class_Node_property_process_priority>`, lower priority values are called first. Nodes with the same priority are processed in tree order, or top to bottom as seen in the editor (also known as pre-order traversal).
 
@@ -1581,7 +1581,11 @@ Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_P
 
 \ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
-\ **Note:** ``delta`` will be larger than expected if running at a framerate lower than :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` / :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both :ref:`_process()<class_Node_private_method__process>` and :ref:`_physics_process()<class_Node_private_method__physics_process>`. As a result, avoid using ``delta`` for time measurements in real-world seconds. Use the :ref:`Time<class_Time>` singleton's methods for this purpose instead, such as :ref:`Time.get_ticks_usec()<class_Time_method_get_ticks_usec>`.
+\ **Note:** When the engine is struggling and the frame rate is lowered, ``delta`` will increase. When ``delta`` is increased, it's capped at a maximum of :ref:`Engine.time_scale<class_Engine_property_time_scale>` \* :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` / :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`. As a result, accumulated ``delta`` may not represent real world time.
+
+\ **Note:** When ``--fixed-fps`` is enabled or the engine is running in Movie Maker mode (see :ref:`MovieWriter<class_MovieWriter>`), process ``delta`` will always be the same for every frame, regardless of how much time the frame took to render.
+
+\ **Note:** Frame delta may be post-processed by :ref:`OS.delta_smoothing<class_OS_property_delta_smoothing>` if this is enabled for the project.
 
 .. rst-class:: classref-item-separator
 

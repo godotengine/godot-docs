@@ -56,6 +56,10 @@ Methods
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_center_of_mass_local<class_PhysicsDirectBodyState3DExtension_private_method__get_center_of_mass_local>`\ (\ ) |virtual| |required| |const|                                                                        |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                             | :ref:`_get_collision_layer<class_PhysicsDirectBodyState3DExtension_private_method__get_collision_layer>`\ (\ ) |virtual| |required| |const|                                                                                  |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                             | :ref:`_get_collision_mask<class_PhysicsDirectBodyState3DExtension_private_method__get_collision_mask>`\ (\ ) |virtual| |required| |const|                                                                                    |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_constant_force<class_PhysicsDirectBodyState3DExtension_private_method__get_constant_force>`\ (\ ) |virtual| |required| |const|                                                                                    |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_constant_torque<class_PhysicsDirectBodyState3DExtension_private_method__get_constant_torque>`\ (\ ) |virtual| |required| |const|                                                                                  |
@@ -113,6 +117,10 @@ Methods
    | :ref:`bool<class_bool>`                                           | :ref:`_is_sleeping<class_PhysicsDirectBodyState3DExtension_private_method__is_sleeping>`\ (\ ) |virtual| |required| |const|                                                                                                  |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`_set_angular_velocity<class_PhysicsDirectBodyState3DExtension_private_method__set_angular_velocity>`\ (\ velocity\: :ref:`Vector3<class_Vector3>`\ ) |virtual| |required|                                              |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`_set_collision_layer<class_PhysicsDirectBodyState3DExtension_private_method__set_collision_layer>`\ (\ layer\: :ref:`int<class_int>`\ ) |virtual| |required|                                                           |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`_set_collision_mask<class_PhysicsDirectBodyState3DExtension_private_method__set_collision_mask>`\ (\ mask\: :ref:`int<class_int>`\ ) |virtual| |required|                                                              |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`_set_constant_force<class_PhysicsDirectBodyState3DExtension_private_method__set_constant_force>`\ (\ force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| |required|                                                     |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -293,6 +301,34 @@ Method Descriptions
 .. rst-class:: classref-method
 
 :ref:`Vector3<class_Vector3>` **_get_center_of_mass_local**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_center_of_mass_local>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState3DExtension_private_method__get_collision_layer:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_collision_layer**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_collision_layer>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState3DExtension_private_method__get_collision_mask:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_collision_mask**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_collision_mask>`
 
 .. container:: contribute
 
@@ -699,6 +735,34 @@ Method Descriptions
 .. rst-class:: classref-method
 
 |void| **_set_angular_velocity**\ (\ velocity\: :ref:`Vector3<class_Vector3>`\ ) |virtual| |required| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_angular_velocity>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState3DExtension_private_method__set_collision_layer:
+
+.. rst-class:: classref-method
+
+|void| **_set_collision_layer**\ (\ layer\: :ref:`int<class_int>`\ ) |virtual| |required| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_collision_layer>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState3DExtension_private_method__set_collision_mask:
+
+.. rst-class:: classref-method
+
+|void| **_set_collision_mask**\ (\ mask\: :ref:`int<class_int>`\ ) |virtual| |required| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_collision_mask>`
 
 .. container:: contribute
 

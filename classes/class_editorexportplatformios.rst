@@ -725,7 +725,9 @@ Can be overridden with the environment variable ``GODOT_APPLE_PLATFORM_PROVISION
 
 :ref:`String<class_String>` **application/short_version** :ref:`🔗<class_EditorExportPlatformIOS_property_application/short_version>`
 
-Application version visible to the user, can only contain numeric characters (``0-9``) and periods (``.``). Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
+Application version visible to the user. Can only contain numeric characters (``0-9``) and periods (``.``). Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
+
+\ **Note:** This value is used for the *Identity > Version* value in the generated Xcode project.
 
 .. rst-class:: classref-item-separator
 
@@ -761,7 +763,9 @@ Supported device family.
 
 :ref:`String<class_String>` **application/version** :ref:`🔗<class_EditorExportPlatformIOS_property_application/version>`
 
-Machine-readable application version, in the ``major.minor.patch`` format, can only contain numeric characters (``0-9``) and periods (``.``). This must be incremented on every new release pushed to the App Store.
+Machine-readable application version in the ``major.minor.patch`` format. Can only contain numeric characters (``0-9``) and periods (``.``). This must be incremented with every new release pushed to the App Store. Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
+
+\ **Note:** This value is used for the *Identity > Build* value in the generated Xcode project.
 
 .. rst-class:: classref-item-separator
 

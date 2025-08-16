@@ -109,7 +109,11 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>`\ (\ action\: :ref:`StringName<class_StringName>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                                 |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`is_action_just_pressed_by_event<class_Input_method_is_action_just_pressed_by_event>`\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const|                                                                  |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_action_just_released<class_Input_method_is_action_just_released>`\ (\ action\: :ref:`StringName<class_StringName>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                               |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`is_action_just_released_by_event<class_Input_method_is_action_just_released_by_event>`\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const|                                                                |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_action_pressed<class_Input_method_is_action_pressed>`\ (\ action\: :ref:`StringName<class_StringName>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                                           |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -818,7 +822,27 @@ If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:
 
 \ **Note:** Due to keyboard ghosting, :ref:`is_action_just_pressed()<class_Input_method_is_action_just_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
-\ **Note:** During input handling (e.g. :ref:`Node._input()<class_Node_private_method__input>`), use :ref:`InputEvent.is_action_pressed()<class_InputEvent_method_is_action_pressed>` instead to query the action state of the current event.
+\ **Note:** During input handling (e.g. :ref:`Node._input()<class_Node_private_method__input>`), use :ref:`InputEvent.is_action_pressed()<class_InputEvent_method_is_action_pressed>` instead to query the action state of the current event. See also :ref:`is_action_just_pressed_by_event()<class_Input_method_is_action_just_pressed_by_event>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_method_is_action_just_pressed_by_event:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_action_just_pressed_by_event**\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Input_method_is_action_just_pressed_by_event>`
+
+Returns ``true`` when the user has *started* pressing the action event in the current frame or physics tick, and the first event that triggered action press in the current frame/physics tick was ``event``. It will only return ``true`` on the frame or tick that the user pressed down the button.
+
+This is useful for code that needs to run only once when an action is pressed, and the action is processed during input handling (e.g. :ref:`Node._input()<class_Node_private_method__input>`).
+
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+
+\ **Note:** Returning ``true`` does not imply that the action is *still* pressed. An action can be pressed and released again rapidly, and ``true`` will still be returned so as not to miss input.
+
+\ **Note:** Due to keyboard ghosting, :ref:`is_action_just_pressed()<class_Input_method_is_action_just_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -836,7 +860,25 @@ Returns ``true`` when the user *stops* pressing the action event in the current 
 
 If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
-\ **Note:** During input handling (e.g. :ref:`Node._input()<class_Node_private_method__input>`), use :ref:`InputEvent.is_action_released()<class_InputEvent_method_is_action_released>` instead to query the action state of the current event.
+\ **Note:** During input handling (e.g. :ref:`Node._input()<class_Node_private_method__input>`), use :ref:`InputEvent.is_action_released()<class_InputEvent_method_is_action_released>` instead to query the action state of the current event. See also :ref:`is_action_just_released_by_event()<class_Input_method_is_action_just_released_by_event>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_method_is_action_just_released_by_event:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_action_just_released_by_event**\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Input_method_is_action_just_released_by_event>`
+
+Returns ``true`` when the user *stops* pressing the action event in the current frame or physics tick, and the first event that triggered action release in the current frame/physics tick was ``event``. It will only return ``true`` on the frame or tick that the user releases the button.
+
+This is useful when an action is processed during input handling (e.g. :ref:`Node._input()<class_Node_private_method__input>`).
+
+\ **Note:** Returning ``true`` does not imply that the action is *still* not pressed. An action can be released and pressed again rapidly, and ``true`` will still be returned so as not to miss input.
+
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 .. rst-class:: classref-item-separator
 

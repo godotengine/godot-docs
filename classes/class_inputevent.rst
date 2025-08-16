@@ -224,7 +224,7 @@ If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:
 
 :ref:`bool<class_bool>` **is_action_type**\ (\ ) |const| :ref:`🔗<class_InputEvent_method_is_action_type>`
 
-Returns ``true`` if this input event's type is one that can be assigned to an input action.
+Returns ``true`` if this input event's type is one that can be assigned to an input action: :ref:`InputEventKey<class_InputEventKey>`, :ref:`InputEventMouseButton<class_InputEventMouseButton>`, :ref:`InputEventJoypadButton<class_InputEventJoypadButton>`, :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`, :ref:`InputEventAction<class_InputEventAction>`. Returns ``false`` for all other input event types.
 
 .. rst-class:: classref-item-separator
 
