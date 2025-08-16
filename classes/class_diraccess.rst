@@ -446,7 +446,7 @@ Use :ref:`get_directories()<class_DirAccess_method_get_directories>` if you want
 
 On Windows, returns the number of drives (partitions) mounted on the current filesystem.
 
-On macOS, returns the number of mounted volumes.
+On macOS and Android, returns the number of mounted volumes.
 
 On Linux, returns the number of mounted volumes and GTK 3 bookmarks.
 
@@ -467,6 +467,8 @@ On Windows, returns the name of the drive (partition) passed as an argument (e.g
 On macOS, returns the path to the mounted volume passed as an argument.
 
 On Linux, returns the path to the mounted volume or GTK 3 bookmark passed as an argument.
+
+On Android (API level 30+), returns the path to the mounted volume as an argument.
 
 On other platforms, or if the requested drive does not exist, the method returns an empty String.
 

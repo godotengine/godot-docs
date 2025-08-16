@@ -47,6 +47,10 @@ Properties
    +---------------------------------------+-------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`         | :ref:`center_of_mass_local<class_PhysicsDirectBodyState2D_property_center_of_mass_local>` |
    +---------------------------------------+-------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`collision_layer<class_PhysicsDirectBodyState2D_property_collision_layer>`           |
+   +---------------------------------------+-------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`collision_mask<class_PhysicsDirectBodyState2D_property_collision_mask>`             |
+   +---------------------------------------+-------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`             | :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>`           |
    +---------------------------------------+-------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`             | :ref:`inverse_mass<class_PhysicsDirectBodyState2D_property_inverse_mass>`                 |
@@ -185,6 +189,40 @@ The body's center of mass position relative to the body's center in the global c
 - :ref:`Vector2<class_Vector2>` **get_center_of_mass_local**\ (\ )
 
 The body's center of mass position in the body's local coordinate system.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState2D_property_collision_layer:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **collision_layer** :ref:`🔗<class_PhysicsDirectBodyState2D_property_collision_layer>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_collision_layer**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_layer**\ (\ )
+
+The body's collision layer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState2D_property_collision_mask:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **collision_mask** :ref:`🔗<class_PhysicsDirectBodyState2D_property_collision_mask>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_mask**\ (\ )
+
+The body's collision mask.
 
 .. rst-class:: classref-item-separator
 
