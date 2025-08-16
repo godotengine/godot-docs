@@ -72,8 +72,8 @@ where:
 
 For example:
 
--  ``template_scripts/Node/smooth_camera.gd``
--  ``template_scripts/CharacterBody3D/platformer_movement.gd``
+-  ``script_templates/Node/smooth_camera.gd``
+-  ``script_templates/CharacterBody3D/platformer_movement.gd``
 
 Default behavior and overriding it
 ----------------------------------
