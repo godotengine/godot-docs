@@ -1443,6 +1443,98 @@ p + .classref-constant {
     color: var(--navbar-level-1-color);
 }
 
+/* Make mobile navbar sticky and always accessible */
+@media screen and (max-width: 768px) {
+    .wy-nav-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        min-height: 44px; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Adjust main content to account for fixed navbar */
+    .wy-nav-content-wrap {
+        padding-top: 50px; /* Height of the mobile navbar */
+    }
+    
+    .wy-nav-top {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 1em;
+    }
+
+    /* Improve mobile nav menu button visibility and accessibility */
+    .wy-nav-top .wy-nav-top-menu {
+        font-size: 18px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+
+    .wy-nav-top .wy-nav-top-menu:hover,
+    .wy-nav-top .wy-nav-top-menu:focus {
+        background-color: var(--navbar-background-color-hover);
+        outline: 2px solid var(--input-focus-border-color);
+        outline-offset: 2px;
+    }
+
+    /* Ensure proper contrast and readability on mobile */
+    .wy-nav-top a {
+        text-decoration: none;
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+
+    .wy-nav-top a:hover,
+    .wy-nav-top a:focus {
+        background-color: var(--navbar-background-color-hover);
+        color: var(--navbar-level-1-color);
+    }
+}
+
+/* Additional responsive improvements for very small screens */
+@media screen and (max-width: 480px) {
+    .wy-nav-top {
+        padding: 0 0.5em;
+        font-size: 14px;
+    }
+    
+    .wy-nav-content-wrap {
+        padding-top: 52px;
+    }
+    
+    /* Improve touch targets on very small screens */
+    .wy-nav-top .wy-nav-top-menu {
+        padding: 10px 14px;
+        font-size: 16px;
+    }
+}
+
+/* Landscape mobile optimization */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .wy-nav-top {
+        height: 45px;
+        min-height: 40px;
+    }
+    
+    .wy-nav-content-wrap {
+        padding-top: 45px;
+    }
+    
+    .wy-nav-side {
+        top: 45px;
+        height: calc(100vh - 45px);
+    }
+}
+
 /* Navigational sidebar */
 
 .wy-nav-side {
@@ -1451,7 +1543,6 @@ p + .classref-constant {
 
 @media only screen and (min-width: 769px) {
     .wy-nav-side {
-        /* Required to center the page on wide displays */
         left: inherit;
     }
 }
@@ -1714,6 +1805,9 @@ p + .classref-constant {
 @media screen and (max-width: 768px) {
     .wy-nav-side {
         padding-bottom: 44px;
+        /* Adjust sidebar position when navbar is fixed */
+        top: 50px;
+        height: calc(100vh - 50px);
     }
     .wy-menu.wy-menu-vertical {
         overflow-y: initial;
