@@ -298,9 +298,9 @@ To obtain it using a camera, the following code can be used:
 
     func _input(event):
         if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-              var camera3d = $Camera3D
-              var from = camera3d.project_ray_origin(event.position)
-              var to = from + camera3d.project_ray_normal(event.position) * RAY_LENGTH
+            var camera3d = $Camera3D
+            var from = camera3d.project_ray_origin(event.position)
+            var to = from + camera3d.project_ray_normal(event.position) * RAY_LENGTH
 
  .. code-tab:: csharp
 
