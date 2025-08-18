@@ -132,8 +132,8 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +----------------------+-----------------------------------------------------------------------------------------+
 | **movie**            | :ref:`Movie Maker mode <doc_creating_movies>` is active                                 |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **shader_baker**     | Project was exported with shader baking enabled                                         |
-|                      | (only applies to the exported project, not when running in the editor)                  |
+| **shader_baker**     | Project was exported with :ref:`shader baking <doc_pipeline_compilations_shader_baker>` |
+|                      | enabled (only applies to the exported project, not when running in the editor)          |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **dedicated_server** | Project was exported as a :ref:`dedicated server <doc_exporting_for_dedicated_servers>` |
 |                      | (only applies to the exported project, not when running in the editor)                  |
