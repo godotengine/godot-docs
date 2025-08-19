@@ -80,7 +80,7 @@
 
     --tabs-background-color: #e1e4e5;
     --tabs-selected-color: #a2a9ae;
-    --code-tabs-background-color: #e3ecd1;
+    --code-tabs-background-color: #e6e6e6;
     --code-tabs-selected-color: #8a9378;
 
     --classref-primary-color: #252525;
@@ -100,20 +100,30 @@
     --search-highlighted-color: rgb(255 205 0 / 25%);
     --search-context-color: #6c6e72;
 
-    --highlight-background-color: #f5ffe1;
+    --highlight-background-color: #ffffff;
     --highlight-background-emph-color: #dbe6c3;
     --highlight-default-color: #404040;
-    --highlight-comment-color: #408090;
-    --highlight-keyword-color: #007020;
-    --highlight-keyword2-color: #902000;
-    --highlight-control-flow-keyword-color: #902060;
-    --highlight-number-color: #208050;
-    --highlight-decorator-color: #4070a0;
-    --highlight-type-color: #007020;
-    --highlight-type2-color: #0e84b5;
-    --highlight-function-color: #06287e;
-    --highlight-operator-color: #666666;
-    --highlight-string-color: #4070a0;
+    --highlight-comment-color: rgba(20, 20, 20, 0.5);
+    --highlight-doc-comment-color: rgba(38, 38, 102, 0.7);
+    --highlight-region-comment-color: rgba(173, 117, 196, 20);
+    --highlight-keyword-color: #e62282;
+    --highlight-literal-color: var(--highlight-keyword-color);
+    --highlight-keyword2-color: #009933;
+    --highlight-control-flow-keyword-color: #bd1fcc;
+    --highlight-number-color: #008c47;
+    --highlight-decorator-color: #cc5e00;
+    --highlight-base-type-color: #009933;
+    --highlight-engine-type-color: #1c8c66;
+    --highlight-user-type-color: #2e7366;
+    --highlight-member-variable-color: #0066ad;
+    --highlight-function-color: #0039e6;
+    --highlight-function-declaration-color: #009999;
+    --highlight-global-function-color: #5c2eb8;
+    --highlight-operator-color: #00009c;
+    --highlight-string-color: #996b00;
+    --highlight-get-node-shorthand-color: #2e8c00;
+    --highlight-node-path-color: #008000;
+    --highlight-string-name-color: #ffc2a6;
 
     --copybtn-background-color: #f6f8fa;
     --copybtn-background-color-hover: #f3f4f6;
@@ -236,16 +246,26 @@
         --highlight-background-emph-color: #2d3444;
         --highlight-default-color: rgba(255, 255, 255, 0.85);
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
+        --highlight-doc-comment-color: rgba(153, 179, 204, 0.8);
+        --highlight-region-comment-color: rgba(173, 117, 196, 20);
         --highlight-keyword-color: #ff7085;
+        --highlight-literal-color: var(--highlight-keyword-color);
         --highlight-keyword2-color: #42ffc2;
         --highlight-control-flow-keyword-color: #ff8ccc;
         --highlight-number-color: #a1ffe0;
         --highlight-decorator-color: #ffb373;
-        --highlight-type-color: #8effda;
-        --highlight-type2-color: #c6ffed;
+        --highlight-base-type-color: #42ffc2;
+        --highlight-engine-type-color: #8fffdb;
+        --highlight-user-type-color: #c7ffed;
+        --highlight-member-variable-color: #bce0ff;
         --highlight-function-color: #57b3ff;
+        --highlight-function-declaration-color: #66e6ff;
+        --highlight-global-function-color: #a3a3f5;
         --highlight-operator-color: #abc8ff;
         --highlight-string-color: #ffeca1;
+        --highlight-get-node-shorthand-color: #63c259;
+        --highlight-node-path-color: #b8c47d;
+        --highlight-string-name-color: #ffc2a6;
 
         --copybtn-background-color: #2a303c;
         --copybtn-background-color-hover: #3e4450;
@@ -281,7 +301,7 @@
         --kbd-outline-color: #3d4144;
         --kbd-shadow-color: #1e2023;
         --kbd-text-color: #e2f2ff;
-        
+
         --role-button-background-color: #22252d;
 
         --code-example-good-color: #3fb950;
@@ -544,7 +564,7 @@ html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(
     padding: 6px 8px;
 }
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .sig-prename.descclassname {
-    color: var(--highlight-type2-color);
+    color: var(--highlight-engine-type-color);
     font-weight: normal;
 }
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .sig-name.descname {
@@ -917,19 +937,45 @@ code,
 
 /* Syntax highlighting */
 
-/* Remove default red boxes around Pygments errors */
-.highlight .err {
-    border: none;
-}
-
 .highlight {
     background-color: var(--highlight-background-color);
     tab-size: 4;
 }
 
+/* Remove default red boxes around Pygments errors */
+.highlight .err {
+    border: none;
+}
+
+/* Default Pygments styles make all of these bold */
+.highlight .k /* Keyword */,
+.highlight .ges /* Generic.EmphStrong */,
+.highlight .gh /* Generic.Heading */,
+.highlight .gp /* Generic.Prompt */,
+.highlight .gs /* Generic.Strong */,
+.highlight .gu /* Generic.Subheading */,
+.highlight .kc /* Keyword.Constant */,
+.highlight .kd /* Keyword.Declaration */,
+.highlight .kn /* Keyword.Namespace */,
+.highlight .kr /* Keyword.Reserved */,
+.highlight .nc /* Name.Class */,
+.highlight .nd /* Name.Decorator */,
+.highlight .ni /* Name.Entity */,
+.highlight .nl /* Name.Label */,
+.highlight .nn /* Name.Namespace */,
+.highlight .nt /* Name.Tag */,
+.highlight .ow /* Operator.Word */,
+.highlight .se /* Literal.String.Escape */ {
+    font-weight: revert;
+}
+
 /* Emphasized lines */
 .highlight .hll {
     background-color: var(--highlight-background-emph-color);
+}
+
+.highlight .n /* Name */ {
+    color: var(--body-color);
 }
 
 .highlight .gh /* Generic.Heading */,
@@ -967,6 +1013,10 @@ code,
     color: var(--highlight-keyword2-color);
 }
 
+.highlight .l  /* Literal */ {
+    color: var(--highlight-literal-color)
+}
+
 .highlight .m  /* Literal.Number */,
 .highlight .mf /* Literal.Number.Float */,
 .highlight .mi /* Literal.Number.Integer */,
@@ -986,7 +1036,7 @@ code,
 
 .highlight .nb /* Name.Builtin */,
 .highlight .ne /* Name.Exception */ {
-    color: var(--highlight-type-color);
+    color: var(--highlight-engine-type-color);
 }
 
 .highlight .nc /* Name.Class */,
@@ -995,9 +1045,12 @@ code,
 .highlight .nv /* Name.Variable */,
 .highlight .vc /* Name.Variable.Class */,
 .highlight .vg /* Name.Variable.Global */,
-.highlight .vi /* Name.Variable.Instance */,
 .highlight .vm /* Name.Variable.Magic */ {
-    color: var(--highlight-type2-color);
+    color: var(--highlight-user-type-color);
+}
+
+.highlight .vi /* Name.Variable.Instance */ {
+    color: var(--highlight-member-variable-color);
 }
 
 .highlight .nf /* Name.Function */,
@@ -1007,6 +1060,7 @@ code,
 }
 
 .highlight .o  /* Operator */,
+.highlight .p  /* Punctuation */,
 .highlight .si /* Literal.String.Interpol */,
 .highlight .sx /* Literal.String.Other */,
 .highlight .sr /* Literal.String.Regex */,
@@ -1027,6 +1081,39 @@ code,
 .highlight .sh /* Literal.String.Heredoc */ {
     color: var(--highlight-string-color);
 }
+
+.highlight .nf.nf-Declaration /* Name.Function.Declaration */ {
+	color: var(--highlight-function-declaration-color);
+}
+
+.highlight .nb.nb-Type /* Name.Builtin.Type */ {
+	color: var(--highlight-base-type-color);
+}
+
+.highlight .c.c-Doc /* Comment.Doc */ {
+	color: var(--highlight-doc-comment-color);
+}
+
+.highlight .c.c-Region /* Comment.Region */ {
+	color: var(--highlight-region-comment-color);
+}
+
+.highlight .nb.nb-Function /* Name.Builtin.Function */ {
+	color: var(--highlight-global-function-color);
+}
+
+.highlight .sx /* String.Other */ {
+	color: var(--highlight-get-node-shorthand-color);
+}
+
+.highlight .s.s-NodePath /* String.NodePath */ {
+	color: var(--highlight-node-path-color);
+}
+
+.highlight .s.s-StringName /* String.StringName */ {
+	color: var(--highlight-string-name-color);
+}
+
 
 /* Call to action for missing documentation */
 .rst-content .contribute {
