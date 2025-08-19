@@ -104,16 +104,23 @@
     --highlight-background-emph-color: #dbe6c3;
     --highlight-default-color: #404040;
     --highlight-comment-color: #408090;
+    --highlight-doc-comment-color: rgba(38, 38, 102, 70);
+    --highlight-region-comment-color: rgba(173, 117, 196, 20);
     --highlight-keyword-color: #007020;
     --highlight-keyword2-color: #902000;
     --highlight-control-flow-keyword-color: #902060;
     --highlight-number-color: #208050;
     --highlight-decorator-color: #4070a0;
-    --highlight-type-color: #007020;
-    --highlight-type2-color: #0e84b5;
+    --highlight-type-color: #009933;
+    --highlight-type2-color: #1c8c66;
+    --highlight-type3-color: #2e7366;
     --highlight-function-color: #06287e;
+    --highlight-global-function-color: #5c2eb8;
     --highlight-operator-color: #666666;
     --highlight-string-color: #4070a0;
+    --highlight-get-node-shorthand-color: #2e8c00;
+    --highlight-node-path-color: #008000;
+    --highlight-string-name-color: #cc5e00;
 
     --copybtn-background-color: #f6f8fa;
     --copybtn-background-color-hover: #f3f4f6;
@@ -236,16 +243,23 @@
         --highlight-background-emph-color: #2d3444;
         --highlight-default-color: rgba(255, 255, 255, 0.85);
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
+        --highlight-doc-comment-color: rgba(153, 179, 204, 0.8);
+        --highlight-region-comment-color: rgba(173, 117, 196, 20);
         --highlight-keyword-color: #ff7085;
         --highlight-keyword2-color: #42ffc2;
         --highlight-control-flow-keyword-color: #ff8ccc;
         --highlight-number-color: #a1ffe0;
         --highlight-decorator-color: #ffb373;
-        --highlight-type-color: #8effda;
-        --highlight-type2-color: #c6ffed;
+        --highlight-type-color: #42ffc2;
+        --highlight-type2-color: #8fffdb;
+        --highlight-type3-color: #c7ffed;
         --highlight-function-color: #57b3ff;
+        --highlight-global-function-color: #a3a3f5;
         --highlight-operator-color: #abc8ff;
         --highlight-string-color: #ffeca1;
+        --highlight-get-node-shorthand-color: #63c259;
+        --highlight-node-path-color: #b8c47d;
+        --highlight-string-name-color: #ffc2a6;
 
         --copybtn-background-color: #2a303c;
         --copybtn-background-color-hover: #3e4450;
@@ -281,7 +295,7 @@
         --kbd-outline-color: #3d4144;
         --kbd-shadow-color: #1e2023;
         --kbd-text-color: #e2f2ff;
-        
+
         --role-button-background-color: #22252d;
 
         --code-example-good-color: #3fb950;
@@ -1027,6 +1041,35 @@ code,
 .highlight .sh /* Literal.String.Heredoc */ {
     color: var(--highlight-string-color);
 }
+
+.highlight .nb.nb-Type /* Name.Builtin.Type */ {
+	color: var(--highlight-type3-color);
+}
+
+.highlight .c.c-Doc /* Comment.Doc */ {
+	color: var(--highlight-doc-comment-color);
+}
+
+.highlight .c.c-Region /* Comment.Region */ {
+	color: var(--highlight-region-comment-color);
+}
+
+.highlight .nb.nb-Function /* Name.Builtin.Function */ {
+	color: var(--highlight-global-function-color);
+}
+
+.highlight .sx /* String.Other */ {
+	color: var(--highlight-get-node-shorthand-color);
+}
+
+.highlight .s.s-NodePath /* String.NodePath */ {
+	color: var(--highlight-node-path-color);
+}
+
+.highlight .s.s-StringName /* String.StringName */ {
+	color: var(--highlight-string-name-color);
+}
+
 
 /* Call to action for missing documentation */
 .rst-content .contribute {
