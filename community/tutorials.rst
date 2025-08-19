@@ -12,6 +12,16 @@ Think there is something missing here? Feel free to submit a `Pull Request <http
 
 Where to start
 --------------
+Not entirely sure where to start? If you follow this flowchart all the way
+to the bottom you should be well prepared to start experimenting with making
+your very own games. If you're stuck, remember that you can always ask the
+community for help!
+
+.. raw:: html
+
+    <object type="image/svg+xml" data="../_images/godotbeginnerchart.svg">
+        Your browser does not support SVGs.
+    </object>
 
 The Godot video tutorials by `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_ are well-regarded in the community and often recommended as a gentle introduction to beginners.
 
@@ -43,3 +53,5 @@ Resources
 - `awesome-godot: A curated list of free/libre plugins, scripts and add-ons <https://github.com/godotengine/awesome-godot>`_
 - `Godot Asset Library <https://godotengine.org/asset-library/asset>`_
 - `Godot Shaders: A community-driven shader library <https://godotshaders.com/>`_
+
+.. |image0| image:: img/godotbeginnerchart.svg
