@@ -95,7 +95,7 @@ class GDScriptLexer(RegexLexer):
                         # Not really keywords, but used in property syntax.
                         # also colored like functions, not keywords
                         #"set",
-                        # "get",
+                        #"get",
                     ),
                     suffix=r"\b",
                 ),
