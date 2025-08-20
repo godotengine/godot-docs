@@ -174,6 +174,76 @@ exported from other tools such as Maya.
   Universal** and **Embed as Uncompressed** keeps the textures embedded in the
   imported scene, with and without VRAM compression respectively.
 
+**Blender-specific options**
+
+Only visible for ``.blend`` files.
+
+**Nodes**
+
+- **Visible:** **All** imports everything, even invisible objects. **Visible Only**
+  only imports visible objects. **Renderable** only imports objects that are marked
+  as renderable in Blender, regardless of whether they are actually visible.
+  In Blender, renderability is toggled by clicking the camera icon next to each object
+  in the Outliner, while visibility is toggled by the eye icon.
+- **Active Collection Only:** If checked, only imports nodes that are in the active collection
+  in Blender.
+- **Punctual Lights:** If checked, imports lights (directional, omni, and spot) from Blender.
+  "Punctual" is not to be confused with "positional", which is why directional lights
+  are also included.
+- **Cameras:** If checked, imports cameras from Blender.
+- **Custom Properties:** If checked, imports custom properties from Blender as glTF extras.
+  This data can then be used from an editor plugin that uses
+  :ref:`GLTFDocument.register_gltf_document_extension() <class_GLTFDocument_method_register_gltf_document_extension>`,
+  which can set node metadata on import (among other use cases).
+- **Modifiers:** If set to **No Modifiers**, object modifiers are ignored on import.
+  If set to **All Modifiers**, applies modifiers to objects on import.
+
+**Meshes**
+
+- **Colors:** If checked, imports vertex colors from Blender.
+- **UVs:** If checked, imports vertex UV1 and UV2 from Blender.
+- **Normals:** If checked, imports vertex normals from Blender.
+- **Export Geometry Nodes Instances:** If checked, imports
+  `geometry node <https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/introduction.html>`__
+  instances from Blender.
+- **Tangents:** If checked, imports vertex tangents from Blender.
+- **Skins:** **None** skips skeleton skin data import from Blender. **4 Influences (Compatible)**
+  imports skin data to be compatible with all renderers, at the cost of lower precision
+  for certain rigs. **All Influences** imports skin data with all influences
+  (up to 8 in Godot), which is more precise but may not be compatible with all renderers.
+- **Export Bones Deforming Mesh Only:** If checked, only imports bones that deform the mesh
+  from Blender.
+
+**Materials**
+
+- **Unpack Enabled:** If checked, unpacks the original images to the Godot filesystem
+  and uses them. This allows changing image import settings like VRAM compression.
+  If unchecked, allows Blender to convert the original images, such as repacking
+  roughness and metallic into one roughness + metallic texture. In most cases,
+  this option should be left checked, but if the ``.blend`` file's images
+  aren't in the correct format, this must be disabled for correct behavior.
+- **Export Materials:** If set to **Placeholder**, does not import materials,
+  but keeps surface slots so that separate materials can be assigned to different surfaces.
+  If set to **Export**, imports materials as-is (note that procedural Blender materials
+  may not work correctly). If set to **Named Placeholder**, imports materials,
+  but doesn't import images that are packed into the ``.blend`` file.
+  Textures will have to be reassigned manually in the imported materials.
+
+**Animation**
+
+- **Limit Playback:** If checked, limits animation import to the playback range
+  defined in Blender (the **Start** and **End** options at the right of the animation timeline
+  in Blender). This can avoid including unused animation data, making the imported scene smaller
+  and faster to load. However, this can also result in missing animation data if the playback range
+  is not set correctly in Blender.
+- **Always Sample:** If checked, forces animation sampling on import to ensure consistency
+  between how Blender and glTF perform animation interpolation, at the cost of larger file sizes.
+  If unchecked, there may be differences in how animations are interpolated between what you see
+  in Blender and the imported scene in Godot, due to different interpolation semantics
+  between both.
+- **Group Tracks:** If checked, imports animations (actives and on NLA tracks) as
+  separate tracks. If unchecked, all the currently assigned actions become one glTF animation.
+
 .. _doc_importing_3d_scenes_import_script:
 
 Using import scripts for automation
