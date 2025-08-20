@@ -1410,7 +1410,7 @@ class GDScriptLexer(RegexLexer):
                 r"!=|==|<<|>>|&&|\+=|-=|\*=|/=|%=|&=|\|=|\|\||:=|[-~+/*%=<>&^.!|$]",
                 Operator,
             ),
-            (r"(in|and|or|not)\b", Operator.Word),
+            (r"(in|is|and|as|or|not)\b", Operator.Word),
         ],
         "numbers": [
             (r"([\d_]+\.[\d_]*|[\d_]*\.[\d_]+)([eE][+-]?[\d_]+)?", Number.Float),
