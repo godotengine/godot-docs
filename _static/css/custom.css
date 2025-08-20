@@ -931,14 +931,36 @@ code,
 
 /* Syntax highlighting */
 
-/* Remove default red boxes around Pygments errors */
 .highlight {
     background-color: var(--highlight-background-color);
     tab-size: 4;
 }
 
+/* Remove default red boxes around Pygments errors */
 .highlight .err {
     border: none;
+}
+
+/* Default Pygments styles make all of these bold */
+.highlight .k /* Keyword */,
+.highlight .ges /* Generic.EmphStrong */,
+.highlight .gh /* Generic.Heading */,
+.highlight .gp /* Generic.Prompt */,
+.highlight .gs /* Generic.Strong */,
+.highlight .gu /* Generic.Subheading */,
+.highlight .kc /* Keyword.Constant */,
+.highlight .kd /* Keyword.Declaration */,
+.highlight .kn /* Keyword.Namespace */,
+.highlight .kr /* Keyword.Reserved */,
+.highlight .nc /* Name.Class */,
+.highlight .nd /* Name.Decorator */,
+.highlight .ni /* Name.Entity */,
+.highlight .nl /* Name.Label */,
+.highlight .nn /* Name.Namespace */,
+.highlight .nt /* Name.Tag */,
+.highlight .ow /* Operator.Word */,
+.highlight .se /* Literal.String.Escape */ {
+    font-weight: revert;
 }
 
 /* Emphasized lines */
@@ -1016,11 +1038,6 @@ code,
 .highlight .vi /* Name.Variable.Instance */,
 .highlight .vm /* Name.Variable.Magic */ {
     color: var(--highlight-type2-color);
-}
-
-.highlight .nc /* Name.Class */ {
-    /* Default Pygments styles make .nc bold */
-    font-weight: revert;
 }
 
 .highlight .nf /* Name.Function */,
