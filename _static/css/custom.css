@@ -932,18 +932,22 @@ code,
 /* Syntax highlighting */
 
 /* Remove default red boxes around Pygments errors */
-.highlight .err {
-    border: none;
-}
-
 .highlight {
     background-color: var(--highlight-background-color);
     tab-size: 4;
 }
 
+.highlight .err {
+    border: none;
+}
+
 /* Emphasized lines */
 .highlight .hll {
     background-color: var(--highlight-background-emph-color);
+}
+
+.highlight .n /* Name */ {
+    color: var(--body-color);
 }
 
 .highlight .gh /* Generic.Heading */,
@@ -1021,6 +1025,7 @@ code,
 }
 
 .highlight .o  /* Operator */,
+.highlight .p  /* Punctuation */,
 .highlight .si /* Literal.String.Interpol */,
 .highlight .sx /* Literal.String.Other */,
 .highlight .sr /* Literal.String.Regex */,
