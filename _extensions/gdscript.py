@@ -1564,7 +1564,7 @@ class GDScriptLexer(RegexLexer):
             #   This matches all PascalCase as a class. If this raises issues
             #   please report it.
             # see: https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html#naming-conventions
-            # (r"\s*([A-Z][a-zA-Z0-9_]*)", Name.Class),
+            #(r"\s*([A-Z][a-zA-Z0-9_]*)", Name.Class),
             # Only PascalCase, but exclude SCREAMING_SNAKE for constants
             (r"\b([A-Z][a-z0-9]+(?:[A-Z][a-z0-9]+)*)\b", Name.Class),
             include("name"),
