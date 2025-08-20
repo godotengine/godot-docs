@@ -126,7 +126,6 @@ class GDScriptLexer(RegexLexer):
                 Keyword.ControlFlow,
             ),
         ],
-
         "builtins": [
             (
                 words(
