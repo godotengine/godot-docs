@@ -1018,6 +1018,11 @@ code,
     color: var(--highlight-type2-color);
 }
 
+.highlight .nc /* Name.Class */ {
+    /* Default Pygments styles make .nc bold */
+    font-weight: revert;
+}
+
 .highlight .nf /* Name.Function */,
 .highlight .fm /* Name.Function.Magic */,
 .highlight .nt /* Name.Tag */ {
