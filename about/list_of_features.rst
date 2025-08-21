@@ -669,7 +669,7 @@ XR support (AR and VR)
 
   - Currently only exporting an application for use on a flat plane within the
     headset is supported. Immersive experiences are not supported.
- 
+
 - Other devices supported through an XR plugin structure.
 - Various advanced toolkits are available that implement common features required by XR applications.
 
@@ -776,8 +776,16 @@ Miscellaneous
    - Print colored text to standard output on all platforms using
      :ref:`print_rich <class_@GlobalScope_method_print_rich>`.
 
+- The editor can
+  :ref:`detect features used in a project and create a compilation profile <doc_engine_compilation_configuration_editor>`,
+  which can be used to create smaller export template binaries
+  with unneeded features disabled.
 - Support for :ref:`C++ modules <doc_custom_modules_in_cpp>` statically linked
   into the engine binary.
+
+  - Most built-in modules can be disabled at compile-time to reduce binary size
+    in custom builds. See :ref:`doc_optimizing_for_size` for details.
+
 - Engine and editor written in C++17.
 
    - Can be :ref:`compiled <doc_introduction_to_the_buildsystem>` using GCC,
