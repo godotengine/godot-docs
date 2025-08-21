@@ -107,7 +107,8 @@ an input variable to the fragment function and the final output from it.
 .. code-block:: glsl
 
   void fragment(){
-    COLOR = vec4(0.4, 0.6, 0.9, 1.0);
+    ALBEDO = vec3(0.4, 0.6, 0.9);
+    ALPHA = 1.0;
   }
 
 .. image:: img/blue-box.png
@@ -132,7 +133,8 @@ other functions or to assign values to ``COLOR`` directly.
 .. code-block:: glsl
 
   void fragment() {
-    COLOR = vec4(UV, 0.5, 1.0);
+    ALBEDO = vec3(UV, 0.5);
+    ALPHA = 1.0;
   }
 
 .. image:: img/UV.png
@@ -149,7 +151,7 @@ from the texture manually like in the code below.
 
   void fragment(){
     // This shader will result in a blue-tinted icon
-    COLOR.b = 1.0;
+    ALBEDO.b = 1.0;
   }
 
 Certain nodes, like Sprite2Ds, have a dedicated texture variable that can be accessed
