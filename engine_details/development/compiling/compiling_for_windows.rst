@@ -371,12 +371,25 @@ ANGLE provides a translation layer from OpenGL ES 3.x to Direct3D 11 and can be 
 to improve support for the Compatibility renderer on some older GPUs with outdated
 OpenGL drivers and on Windows for ARM.
 
-Compiling with ANGLE requires additional dependencies to be installed.
-If you wish to skip this step, you can use the ``angle=no`` SCons option.
+By default, Godot is built with dynamically linked ANGLE, you can use it by placing
+``libEGL.dll`` and ``libGLESv2.dll`` alongside the executable.
 
-You can install the required dependencies by running
-``python misc/scripts/install_angle.py``
-in the Godot source repository. After running this script, compile Godot as usual.
+.. note:: You can use dynamically linked ANGLE with export templates as well, rename
+          aforementioned DLLs to ``libEGL.{architecture}.dll`` and ``libGLESv2.{architecture}.dll``
+          and place them alongside export template executables, and libraries will
+          be automatically copied during the export process.
+
+To compile Godot with statically linked ANGLE:
+
+- Run ``misc/scripts/install_angle.py`` in the Godot source repository.
+- When building Godot, add ``angle=yes`` to tell SCons to statically link ANGLE:
+
+    ::
+
+        scons platform=windows angle=yes
+
+If you've manually installed ANGLE, you can specify a custom path using the ``angle_libs``
+SCons option.
 
 .. note:: You can optionally build the godot-angle-static libraries yourself with
           the following steps:
