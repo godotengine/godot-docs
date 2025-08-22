@@ -13,10 +13,10 @@ Exporting for Android
 Exporting for Android has fewer requirements than compiling Godot for Android.
 The following steps detail what is needed to set up the Android SDK and the engine.
 
-Install OpenJDK 11
+Install OpenJDK 17
 ------------------
 
-Download and install  `OpenJDK 11 <https://adoptium.net/?variant=openjdk11>`__.
+Download and install  `OpenJDK 17 <https://adoptium.net/?variant=openjdk17>`__.
 
 Download the Android SDK
 ------------------------
