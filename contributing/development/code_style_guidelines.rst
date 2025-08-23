@@ -293,9 +293,9 @@ command:
 
 ::
 
-    ruff -l 120 <path/to/file(s)>
+    ruff format --line-length 120 <path/to/file(s)>
 
-- ``-l 120`` means that the allowed number of characters per line is 120.
+- ``--line-length 120`` means that the allowed number of characters per line is 120.
   This number was agreed upon by the developers.
 - The path can point to several files, either one after the other or using
   wildcards like in a typical Unix shell.
