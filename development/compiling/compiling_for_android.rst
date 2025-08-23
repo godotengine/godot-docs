@@ -36,9 +36,9 @@ For compiling under Windows, Linux or macOS, the following is required:
       **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
 -  Gradle (will be downloaded and installed automatically if missing).
--  JDK 11 (either OpenJDK or Oracle JDK).
+-  JDK 17 (either OpenJDK or Oracle JDK).
 
-   -  You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_.
+   -  You can download a build from `Adoptium <https://adoptium.net/?variant=openjdk17>`_.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
@@ -51,13 +51,13 @@ For compiling under Windows, Linux or macOS, the following is required:
 Setting up the buildsystem
 --------------------------
 
--  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android 
+-  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android
    SDK. If you downloaded the Android command-line tools, this would be
    the folder where you extracted the contents of the ZIP archive.
 
 -  Install the necessary SDK components in this folder:
 
-    -  Accept the SDK component licenses by running the following command 
+    -  Accept the SDK component licenses by running the following command
        where ``android_sdk_path`` is the path to the Android SDK, then answering all the prompts with ``y``:
 
     ::
@@ -70,7 +70,7 @@ Setting up the buildsystem
 
         tools/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
 
-.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type 
+.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type
             "control system", then click on **Advanced system settings** in the left
             pane, then click on **Environment variables** on the window that appears.
 
@@ -219,7 +219,7 @@ Android might complain the application is not correctly installed.
 If so:
 
 -  Check that the debug keystore is properly generated.
--  Check that the jarsigner executable is from JDK 8.
+-  Check that the jarsigner executable is from JDK 17.
 
 If it still fails, open a command line and run `logcat <https://developer.android.com/studio/command-line/logcat>`_:
 
