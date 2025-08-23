@@ -6,8 +6,8 @@ CanvasItem shaders
 CanvasItem shaders are used to draw all 2D elements in Godot. These include
 all nodes that inherit from CanvasItems, and all GUI elements.
 
-CanvasItem shaders contain fewer built-in variables and functionality than 
-:ref:`Spatial shaders<doc_spatial_shader>`, but they maintain the same basic structure 
+CanvasItem shaders contain fewer built-in variables and functionality than
+:ref:`Spatial shaders<doc_spatial_shader>`, but they maintain the same basic structure
 with vertex, fragment, and light processor functions.
 
 Render modes
@@ -223,6 +223,10 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to inverse of resolution.    |
 +---------------------------------------------+---------------------------------------------------------------+
+| in vec4 **REGION_RECT**                     | Visible area of the sprite region in format                   |
+|                                             | ``(x, y, width, height)``. Varies according to                |
+|                                             | Sprite2D's ``region_enabled`` property.                       |
++---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **POINT_COORD**                     | Coordinate for drawing points.                                |
 +---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **TEXTURE**                       | Default 2D texture.                                           |
@@ -238,6 +242,9 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 | in vec4 **SPECULAR_SHININESS**              | Specular shininess color, as sampled from the texture.        |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **UV**                              | UV from the ``vertex()`` function.                            |
+|                                             | For Sprite2D with region enabled, this will sample the entire |
+|                                             | texture. Use ``REGION_RECT`` instead to sample only the       |
+|                                             | region defined in the Sprite2D's properties.                  |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **SCREEN_UV**                       | Screen UV coordinate for current pixel.                       |
 +---------------------------------------------+---------------------------------------------------------------+
