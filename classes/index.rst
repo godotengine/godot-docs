@@ -416,6 +416,7 @@ Resources
     class_curvexyztexture
     class_cylindermesh
     class_cylindershape3d
+    class_dpitexture
     class_editornode3dgizmoplugin
     class_editorsettings
     class_editorsyntaxhighlighter
@@ -574,7 +575,6 @@ Resources
     class_styleboxflat
     class_styleboxline
     class_styleboxtexture
-    class_svgtexture
     class_syntaxhighlighter
     class_systemfont
     class_textmesh
