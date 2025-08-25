@@ -241,11 +241,12 @@ dynamically adjusting control sizes may help.
 options available in :ref:`Label <class_Label>`.
 
 To check whether your UI can accommodate translations with longer strings than
-the original, you can enable *pseudolocalization* in the advanced Project
-Settings. This will replace all your localizable strings with longer versions of
-themselves, while also replacing some characters in the original strings with
-accented versions (while still being readable). Placeholders are kept as-is,
-so that they keep working when pseudolocalization is enabled.
+the original, you can enable :ref:`pseudolocalization <doc_pseudolocalization>`
+in the advanced Project Settings. This will replace all your localizable strings
+with longer versions of themselves, while also replacing some characters in the
+original strings with accented versions (while still being readable).
+Placeholders are kept as-is, so that they keep working when pseudolocalization
+is enabled.
 
 For example, the string ``Hello world, this is %s!`` becomes
 ``[Ĥéłłô ŵôŕłd́, ŧh̀íš íš %s!]`` when pseudolocalization is enabled.
