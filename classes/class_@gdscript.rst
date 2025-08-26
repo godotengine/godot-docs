@@ -322,6 +322,8 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPE
     @export_file("*.txt") var notes_path: String
     @export_file var level_paths: Array[String]
 
+\ **Note:** The file will be stored and referenced as UID, if available. This ensures that the reference is valid even when the file is moved. You can use :ref:`ResourceUID<class_ResourceUID>` methods to convert it to path.
+
 .. rst-class:: classref-item-separator
 
 ----
