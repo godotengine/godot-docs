@@ -10,27 +10,29 @@ GLSL ES 3.0 specification.
     The following type aliases only used in documentation to reduce repetitive function declarations.
     They can each refer to any of several actual types.
 
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | alias           | actual types                                        | glsl documentation alias |
-    +=================+=====================================================+==========================+
-    | vec_type        | float, vec2, vec3, or vec4                          | genType                  |
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | vec_int_type    | int, ivec2, ivec3, or ivec4                         | genIType                 |
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | vec_uint_type   | uint, uvec2, uvec3, or uvec4                        | genUType                 |
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | vec_bool_type   | bool, bvec2, bvec3, or bvec4                        | genBType                 |
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | mat_type        | mat2, mat3, or mat4                                 | mat                      |
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | gvec4_type      | vec4, ivec4, or uvec4                               | gvec4                    |
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | gsampler2D      | sampler2D, isampler2D, or uSampler2D                | gsampler2D               |
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | gsampler2DArray | sampler2DArray, isampler2DArray, or uSampler2DArray | gsampler2DArray          |
-    +-----------------+-----------------------------------------------------+--------------------------+
-    | gsampler3D      | sampler3D, isampler3D, or uSampler3D                | gsampler3D               |
-    +-----------------+-----------------------------------------------------+--------------------------+
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | Alias              | Actual types                                        | GLSL documentation alias |
+    +====================+=====================================================+==========================+
+    | vec_type           | float, vec2, vec3, or vec4                          | genType                  |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | vec_type_no_scalar | vec2, vec3, or vec4                                 | vec                      |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | vec_int_type       | int, ivec2, ivec3, or ivec4                         | genIType                 |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | vec_uint_type      | uint, uvec2, uvec3, or uvec4                        | genUType                 |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | vec_bool_type      | bool, bvec2, bvec3, or bvec4                        | genBType                 |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | mat_type           | mat2, mat3, or mat4                                 | mat                      |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | gvec4_type         | vec4, ivec4, or uvec4                               | gvec4                    |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | gsampler2D         | sampler2D, isampler2D, or uSampler2D                | gsampler2D               |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | gsampler2DArray    | sampler2DArray, isampler2DArray, or uSampler2DArray | gsampler2DArray          |
+    +--------------------+-----------------------------------------------------+--------------------------+
+    | gsampler3D         | sampler3D, isampler3D, or uSampler3D                | gsampler3D               |
+    +--------------------+-----------------------------------------------------+--------------------------+
 
     If any of these are specified for multiple parameters, they must all be the same type unless otherwise noted.
 
@@ -1988,7 +1990,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **lessThan**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_lessThan>`
+|vec_bool_type| **lessThan**\ (\ |vec_type_no_scalar| x, |vec_type_no_scalar| y) :ref:`🔗<shader_func_lessThan>`
 
     Performs a :ref:`component-wise<shading_componentwise>` less-than comparison of two vectors.
 
@@ -2014,7 +2016,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **greaterThan**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_greaterThan>`
+|vec_bool_type| **greaterThan**\ (\ |vec_type_no_scalar| x, |vec_type_no_scalar| y) :ref:`🔗<shader_func_greaterThan>`
 
     Performs a :ref:`component-wise<shading_componentwise>` greater-than comparison of two vectors.
 
@@ -2040,7 +2042,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **lessThanEqual**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_lessThanEqual>`
+|vec_bool_type| **lessThanEqual**\ (\ |vec_type_no_scalar| x, |vec_type_no_scalar| y) :ref:`🔗<shader_func_lessThanEqual>`
 
     Performs a :ref:`component-wise<shading_componentwise>` less-than-or-equal comparison of two vectors.
 
@@ -2066,7 +2068,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **greaterThanEqual**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_greaterThanEqual>`
+|vec_bool_type| **greaterThanEqual**\ (\ |vec_type_no_scalar| x, |vec_type_no_scalar| y) :ref:`🔗<shader_func_greaterThanEqual>`
 
     Performs a :ref:`component-wise<shading_componentwise>` greater-than-or-equal comparison of two vectors.
 
@@ -2092,7 +2094,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **equal**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_equal>`
+|vec_bool_type| **equal**\ (\ |vec_type_no_scalar| x, |vec_type_no_scalar| y) :ref:`🔗<shader_func_equal>`
 
     Performs a :ref:`component-wise<shading_componentwise>` equal-to comparison of two vectors.
 
@@ -2118,7 +2120,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **notEqual**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_notEqual>`
+|vec_bool_type| **notEqual**\ (\ |vec_type_no_scalar| x, |vec_type_no_scalar| y) :ref:`🔗<shader_func_notEqual>`
 
     Performs a :ref:`component-wise<shading_componentwise>` not-equal-to comparison of two vectors.
 
@@ -4006,6 +4008,7 @@ Bitwise function descriptions
 
 .. |void| replace:: :abbr:`void (No return value.)`
 .. |vec_type| replace:: :abbr:`vec_type (Any of: float, vec2, vec3, vec4)`
+.. |vec_type_no_scalar| replace:: :abbr:`vec_type (Any of: vec2, vec3, vec4)`
 .. |vec_int_type| replace:: :abbr:`vec_int_type (Any of: int, ivec2, ivec3, ivec4)`
 .. |vec_uint_type| replace:: :abbr:`vec_uint_type (Any of: float, uvec2, uvec3, uvec4)`
 .. |vec_bool_type| replace:: :abbr:`vec_bool_type (Any of: bool, bvec2, bvec3, bvec4)`
