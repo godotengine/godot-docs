@@ -218,10 +218,11 @@ Specify the element type of an ``Array``
 To define the type of an ``Array``, enclose the type name in ``[]``.
 
 An array's type applies to ``for`` loop variables, as well as some operators like
-``[]``, ``[]=``, and ``+``. Array methods (such as ``push_back``) and other operators
-(such as ``==``) are still untyped. Built-in types, native and custom classes,
-and enums may be used as element types. Nested array types
-(like ``Array[Array[int]]``) are not supported.
+``[]``, ``[...] =`` (assignment), and ``+``. Array methods
+(such as ``push_back``) and other operators (such as ``==``)
+are still untyped. Built-in types, native and custom classes,
+and enums may be used as element types. Nested array types (like ``Array[Array[int]]``)
+are not supported.
 
 
 ::
@@ -259,9 +260,9 @@ To define the type of a ``Dictionary``'s keys and values, enclose the type name 
 and separate the key and value type with a comma.
 
 A dictionary's value type applies to ``for`` loop variables, as well as some operators like
-``[]`` and ``[]=``. Dictionary methods that return values and other operators
-(such as ``==``) are still untyped. Built-in types, native and custom classes,
-and enums may be used as element types. Nested typed collections
+``[]`` and ``[...] =`` (assignment). Dictionary methods that return values
+and other operators (such as ``==``) are still untyped. Built-in types, native
+and custom classes, and enums may be used as element types. Nested typed collections
 (like ``Dictionary[String, Dictionary[String, int]]``) are not supported.
 
 
