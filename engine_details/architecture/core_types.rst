@@ -218,8 +218,8 @@ scripting API.
 .. |string_name| replace:: `StringName <https://github.com/godotengine/godot/blob/master/core/string/string_name.h>`__
 .. |local_vector| replace:: `LocalVector <https://github.com/godotengine/godot/blob/master/core/templates/local_vector.h>`__
 .. |array| replace:: `Array <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
-.. |typed_array| replace:: `TypedArray <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
-.. |packed_array| replace:: `Packed*Array <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
+.. |typed_array| replace:: `TypedArray <https://github.com/godotengine/godot/blob/master/core/variant/typed_array.h>`__
+.. |packed_array| replace:: `Packed*Array <https://github.com/godotengine/godot/blob/master/core/variant/variant.h>`__
 .. |list| replace:: `List <https://github.com/godotengine/godot/blob/master/core/templates/list.h>`__
 .. |fixed_vector| replace:: `FixedVector <https://github.com/godotengine/godot/blob/master/core/templates/fixed_vector.h>`__
 .. |span| replace:: `Span <https://github.com/godotengine/godot/blob/master/core/templates/span.h>`__
@@ -228,7 +228,7 @@ scripting API.
 .. |a_hash_map| replace:: `AHashMap <https://github.com/godotengine/godot/blob/master/core/templates/a_hash_map.h>`__
 .. |rb_map| replace:: `RBMap <https://github.com/godotengine/godot/blob/master/core/templates/rb_map.h>`__
 .. |dictionary| replace:: `Dictionary <https://github.com/godotengine/godot/blob/master/core/variant/dictionary.h>`__
-.. |typed_dictionary| replace:: `TypedDictionary <https://github.com/godotengine/godot/blob/master/core/variant/dictionary.h>`__
+.. |typed_dictionary| replace:: `TypedDictionary <https://github.com/godotengine/godot/blob/master/core/variant/typed_dictionary.h>`__
 .. |pair| replace:: `Pair <https://github.com/godotengine/godot/blob/master/core/templates/pair.h>`__
 
 Math types
