@@ -93,6 +93,29 @@ Godot 4.5 introduced the ``size_extra`` option, which can further reduce size.
 
     scons target=template_release optimize=size_extra
 
+Detecting used features from the current project and disabling unused features
+------------------------------------------------------------------------------
+
+- **Space savings:** Moderate to high depending on project
+- **Difficulty:** Easy to medium depending on project
+- **Performed in official builds:** No
+
+Godot features an :ref:`doc_engine_compilation_configuration_editor` tool that can detect
+the features used in the current project and create a build profile. Once saved,
+this build profile can then be passed to SCons when compiling custom export templates:
+
+::
+
+    scons target=template_release build_profile=/path/to/profile.gdbuild
+
+Note that for certain projects, the feature detection may be too aggressive and disable
+features that are actually needed at runtime. This can occur if certain features are used
+in a way that their usage cannot be detected statically (such as a script being procedurally
+created and run at runtime).
+
+More specific features can be disabled by following the sections below, but remember
+that many of them are automatically detected by the engine compilation configuration detector.
+
 Disabling advanced text server
 ------------------------------
 
