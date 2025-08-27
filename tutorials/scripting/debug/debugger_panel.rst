@@ -120,6 +120,8 @@ and how that effects performance.
     A detailed explanation of how to use the profiler can be found in the
     dedicated :ref:`doc_the_profiler` page.
 
+.. _doc_debugger_panel_visual_profiler:
+
 Visual Profiler
 ---------------
 
