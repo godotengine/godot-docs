@@ -1104,7 +1104,7 @@ method on a node that inherits from :ref:`class_GeometryInstance3D`:
 
 When using per-instance uniforms, there are some restrictions you should be aware of:
 
-- **Per-instance uniforms do not support textures**, only regular scalar and
+- **Per-instance uniforms do not support textures or arrays**, only regular scalar and
   vector types. As a workaround, you can pass a texture array as a regular
   uniform, then pass the index of the texture to be drawn using a per-instance
   uniform.
