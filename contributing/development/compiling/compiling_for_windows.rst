@@ -299,12 +299,15 @@ By default, Godot is built with dynamically linked ANGLE, you can use it by plac
 
 To compile Godot with statically linked ANGLE:
 
-- Download pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them.
-- When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries:
+- Run ``misc/scripts/install_angle.py`` in the Godot source repository.
+- When building Godot, add ``angle=yes`` to tell SCons to statically link ANGLE:
 
     ::
 
-        scons platform=windows angle_libs=<...>
+        scons platform=windows angle=yes
+
+If you've manually installed ANGLE, you can specify a custom path using the ``angle_libs``
+SCons option.
 
 .. note:: You can optionally build the godot-angle-static libraries yourself with
           the following steps:
