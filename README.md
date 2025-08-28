@@ -42,7 +42,7 @@ Here are some quick links to the areas you might be interested in:
 3. [Content guidelines](https://docs.godotengine.org/en/latest/contributing/documentation/content_guidelines.html)
 4. [Writing guidelines](https://docs.godotengine.org/en/latest/contributing/documentation/docs_writing_guidelines.html)
 5. [Building the manual](https://docs.godotengine.org/en/latest/contributing/documentation/building_the_manual.html)
-6. [Translating the documentation](https://docs.godotengine.org/en/latest/contributing/documentation/editor_and_docs_localization.html)
+6. [Translating the documentation](https://contributing.godotengine.org/en/latest/documentation/translation/index.html)
 
 ## License
 
