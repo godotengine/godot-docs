@@ -556,21 +556,11 @@ more sense to use **Keep Width** instead (also called *Vert-*). This way,
 smartphones with an aspect ratio taller than 16:9 (e.g. 19:9) will use a
 *taller* field of view, which is more logical here.
 
-Scaling 2D and 3D elements differently using Viewports
-------------------------------------------------------
+Scaling 2D and 3D elements differently
+--------------------------------------
 
-Using multiple Viewport nodes, you can have different scales for various
-elements. For instance, you can use this to render the 3D world at a low
-resolution while keeping 2D elements at the native resolution. This can improve
-performance significantly while keeping the HUD and other 2D elements crisp.
-
-This is done by using the root Viewport node only for 2D elements, then creating
-a Viewport node to display the 3D world and displaying it using a
-SubViewportContainer or TextureRect node. There will effectively be two viewports
-in the final project. One upside of using TextureRect over SubViewportContainer is
-that it allows enable linear filtering. This makes scaled 3D viewports look
-better in many cases.
-
-See the
-`3D viewport scaling demo <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/3d_scaling>`__
-for examples.
+To render 3D at a different resolution from 2D elements (such as the UI), use Godot's
+:ref:`resolution scaling <doc_resolution_scaling>` functionality. This allows you to
+control the resolution scale factor used for 3D without needing to use a separate Viewport
+node. This can either be used to improve performance by rendering 3D at a lower resolution,
+or improve quality via supersampling.
