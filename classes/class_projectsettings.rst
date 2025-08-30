@@ -3004,7 +3004,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/inferred_declaration** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/inferred_declaration>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable, constant, or parameter has an implicitly inferred static type.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable, constant, or parameter has an implicitly inferred static type. In GDScript, type inference is performed by declaring a variable with ``:=`` instead of ``=`` and leaving out the type specifier. For example, ``var x := 1`` will *infer* the :ref:`int<class_int>` type, while ``var x: int = 1`` explicitly declares the variable as :ref:`int<class_int>`.
 
 \ **Note:** This warning is recommended *in addition* to :ref:`debug/gdscript/warnings/untyped_declaration<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>` if you want to always specify the type explicitly. Having ``INFERRED_DECLARATION`` warning level higher than ``UNTYPED_DECLARATION`` warning level makes little sense and is not recommended.
 
@@ -13515,7 +13515,7 @@ The ratio of :ref:`WorkerThreadPool<class_WorkerThreadPool>`'s threads that will
 
 :ref:`int<class_int>` **threading/worker_pool/max_threads** = ``-1`` :ref:`🔗<class_ProjectSettings_property_threading/worker_pool/max_threads>`
 
-Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``0`` or less means ``1`` on Web, or a number of *logical* CPU cores available on other platforms (see :ref:`OS.get_processor_count()<class_OS_method_get_processor_count>`).
+Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``-1`` means ``1`` on Web, or a number of *logical* CPU cores available on other platforms (see :ref:`OS.get_processor_count()<class_OS_method_get_processor_count>`).
 
 .. rst-class:: classref-item-separator
 
