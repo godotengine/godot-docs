@@ -250,6 +250,8 @@ The texture's drawing offset.
 
 If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<class_Sprite2D_property_region_rect>`.
 
+\ **Note:** When using a custom :ref:`Shader<class_Shader>` on a **Sprite2D**, the ``UV`` shader built-in will refer to the entire texture space. Use the ``REGION_RECT`` built-in to get the currently visible region defined in :ref:`region_rect<class_Sprite2D_property_region_rect>` instead. See :doc:`CanvasItem shaders <../tutorials/shaders/shader_reference/canvas_item_shader>` for details.
+
 .. rst-class:: classref-item-separator
 
 ----

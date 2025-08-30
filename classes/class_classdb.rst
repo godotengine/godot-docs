@@ -19,7 +19,9 @@ A class information repository.
 Description
 -----------
 
-Provides access to metadata stored for every available class.
+Provides access to metadata stored for every available engine class.
+
+\ **Note:** Script-defined classes with ``class_name`` are not part of **ClassDB**, so they will not return reflection data such as a method or property list. However, :ref:`GDExtension<class_GDExtension>`-defined classes *are* part of **ClassDB**, so they will return reflection data.
 
 .. rst-class:: classref-reftable-group
 
@@ -439,7 +441,9 @@ Sets ``property`` value of ``object`` to ``value``.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_class_list**\ (\ ) |const| :ref:`🔗<class_ClassDB_method_get_class_list>`
 
-Returns the names of all the classes available.
+Returns the names of all engine classes available.
+
+\ **Note:** Script-defined classes with ``class_name`` are not included in this list. Use :ref:`ProjectSettings.get_global_class_list()<class_ProjectSettings_method_get_global_class_list>` to get a list of script-defined classes instead.
 
 .. rst-class:: classref-item-separator
 
@@ -451,7 +455,7 @@ Returns the names of all the classes available.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_inheriters_from_class**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_get_inheriters_from_class>`
 
-Returns the names of all the classes that directly or indirectly inherit from ``class``.
+Returns the names of all engine classes that directly or indirectly inherit from ``class``.
 
 .. rst-class:: classref-item-separator
 
