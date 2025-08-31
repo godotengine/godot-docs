@@ -229,13 +229,14 @@ Put together, the full code looks like:
 The code that goes in the middle can be whatever you want. Below we will present some
 example code for generating shapes, starting with a rectangle.
 
-Generating a Rectangle
--------------------
+Generating a rectangle
+----------------------
+
 Since we are using ``Mesh.PRIMITIVE_TRIANGLES`` to render, we will construct a rectangle
 with triangles.
 
 A rectangle is formed by two triangles sharing four vertices. For our example, we will create
-a rectangle with its top left point at (0,0,0) with a width and length of one as shown below:
+a rectangle with its top left point at ``(0, 0, 0)`` with a width and length of one as shown below:
 
 .. image:: img/array_mesh_rectangle_as_triangles.png
   :scale: 33%
@@ -449,7 +450,7 @@ Put together, the rectangle generation code looks like:
 
 For a more complex example, see the sphere generation section below.
 
-Generating a Sphere
+Generating a sphere
 -------------------
 
 Here is sample code for generating a sphere. Although the code is presented in
