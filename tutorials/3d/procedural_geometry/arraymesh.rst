@@ -248,11 +248,11 @@ To draw this rectangle, define the coordinates of each vertex in the ``verts`` a
   .. code-tab:: gdscript GDScript
 
     verts = PackedVector3Array([
-        Vector3(0, 0, 0),
-        Vector3(0, 0, 1),
-        Vector3(1, 0, 0),
-        Vector3(1, 0, 1)
-    ])
+            Vector3(0, 0, 0),
+            Vector3(0, 0, 1),
+            Vector3(1, 0, 0),
+            Vector3(1, 0, 1),
+        ])
 
   .. code-tab:: csharp C#
 
@@ -261,7 +261,7 @@ To draw this rectangle, define the coordinates of each vertex in the ``verts`` a
         new Vector3(0, 0, 0),
         new Vector3(0, 0, 1),
         new Vector3(1, 0, 0),
-        new Vector3(1, 0, 1)
+        new Vector3(1, 0, 1),
     });
 
 The ``uvs`` array helps describe where parts of a texture should go onto the mesh. The values
@@ -271,11 +271,11 @@ range from 0 to 1. Depending on your texture, you may want to change these value
   .. code-tab:: gdscript GDScript
 
     uvs = PackedVector2Array([
-        Vector2(0, 0),
-        Vector2(1, 0),
-        Vector2(0, 1),
-        Vector2(1, 1)
-    ])
+            Vector2(0, 0),
+            Vector2(1, 0),
+            Vector2(0, 1),
+            Vector2(1, 1),
+        ])
 
   .. code-tab:: csharp C#
 
@@ -284,7 +284,7 @@ range from 0 to 1. Depending on your texture, you may want to change these value
         new Vector2(0, 0),
         new Vector2(1, 0),
         new Vector2(0, 1),
-        new Vector2(1, 1)
+        new Vector2(1, 1),
     });
 
 The ``normals`` array is used to describe the direction the vertices face and is
@@ -295,11 +295,11 @@ direction.
   .. code-tab:: gdscript GDScript
 
     normals = PackedVector3Array([
-        Vector3.UP,
-        Vector3.UP,
-        Vector3.UP,
-        Vector3.UP
-    ])
+            Vector3.UP,
+            Vector3.UP,
+            Vector3.UP,
+            Vector3.UP,
+        ])
 
   .. code-tab:: csharp C#
 
@@ -308,17 +308,17 @@ direction.
         Vector3.Up,
         Vector3.Up,
         Vector3.Up,
-        Vector3.Up
+        Vector3.Up,
     });
 
 The ``indices`` array defines the order vertices are drawn. Godot
 renders in a *clockwise* direction, meaning that we must specify the vertices
 of a triangle we want to draw in clockwise order.
 
-For example, to draw the first triangle, we will want to draw the vertices (0, 0, 0),
-(1, 0, 0), and (0, 0, 1) in that order. This correlates to drawing ``vert[0]``, ``vert[2]``, and
+For example, to draw the first triangle, we will want to draw the vertices ``(0, 0, 0)``,
+``(1, 0, 0)``, and ``(0, 0, 1)`` in that order. This is the same as drawing ``vert[0]``, ``vert[2]``, and
 ``vert[1]``, i.e., indices 0, 2, and 1, in the ``verts`` array. These index values are what the
-indices array defines.
+``indices`` array defines.
 
 .. list-table::
    :header-rows: 1
@@ -353,16 +353,16 @@ indices array defines.
   .. code-tab:: gdscript GDScript
 
     indices = PackedInt32Array([
-        0, 2, 1, # Draw the first triangle
-        2, 3, 1  # Draw the second triangle
-    ])
+            0, 2, 1, # Draw the first triangle.
+            2, 3, 1, # Draw the second triangle.
+        ])
 
   .. code-tab:: csharp C#
 
     indices.AddRange(new int[]
     {
-        0, 2, 1, // Draw the first triangle
-        2, 3, 1  // Draw the second triangle
+        0, 2, 1, // Draw the first triangle.
+        2, 3, 1, // Draw the second triangle.
     });
 
 Put together, the rectangle generation code looks like:
@@ -377,30 +377,30 @@ Put together, the rectangle generation code looks like:
       # Insert setting up the PackedVector**Arrays here.
 
       verts = PackedVector3Array([
-          Vector3(0, 0, 0),
-          Vector3(0, 0, 1),
-          Vector3(1, 0, 0),
-          Vector3(1, 0, 1)
-      ])
+              Vector3(0, 0, 0),
+              Vector3(0, 0, 1),
+              Vector3(1, 0, 0),
+              Vector3(1, 0, 1),
+          ])
 
       uvs = PackedVector2Array([
-          Vector2(0, 0),
-          Vector2(1, 0),
-          Vector2(0, 1),
-          Vector2(1, 1)
-      ])
+              Vector2(0, 0),
+              Vector2(1, 0),
+              Vector2(0, 1),
+              Vector2(1, 1),
+          ])
 
       normals = PackedVector3Array([
-          Vector3.UP,
-          Vector3.UP,
-          Vector3.UP,
-          Vector3.UP
-      ])
+              Vector3.UP,
+              Vector3.UP,
+              Vector3.UP,
+              Vector3.UP,
+          ])
 
       indices = PackedInt32Array([
-          0, 2, 1,
-          2, 3, 1
-      ])
+              0, 2, 1,
+              2, 3, 1,
+          ])
 
       # Insert committing to the ArrayMesh here.
 
@@ -419,7 +419,7 @@ Put together, the rectangle generation code looks like:
               new Vector3(0, 0, 0),
               new Vector3(0, 0, 1),
               new Vector3(1, 0, 0),
-              new Vector3(1, 0, 1)
+              new Vector3(1, 0, 1),
           });
 
           uvs.AddRange(new Vector2[]
@@ -427,7 +427,7 @@ Put together, the rectangle generation code looks like:
               new Vector2(0, 0),
               new Vector2(1, 0),
               new Vector2(0, 1),
-              new Vector2(1, 1)
+              new Vector2(1, 1),
           });
 
           normals.AddRange(new Vector3[]
@@ -435,13 +435,13 @@ Put together, the rectangle generation code looks like:
               Vector3.Up,
               Vector3.Up,
               Vector3.Up,
-              Vector3.Up
+              Vector3.Up,
           });
 
           indices.AddRange(new int[]
           {
               0, 2, 1,
-              2, 3, 1
+              2, 3, 1,
           });
 
           // Insert committing to the ArrayMesh here.
