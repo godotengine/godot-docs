@@ -4,7 +4,20 @@ Controllers, gamepads, and joysticks
 ====================================
 
 Godot supports hundreds of controller models out of the box.
-Controllers are supported on Windows, macOS, Linux, Android, iOS, and HTML5.
+Controllers are supported on Windows, macOS, Linux, Android, iOS, and Web.
+
+.. note::
+
+    Since Godot 4.5, the engine relies on `SDL 3 <https://www.libsdl.org/index.php>`__
+    for controller support on Windows, macOS, and Linux. This means the list of
+    supported controllers and their behavior should closely match what is available
+    in other games and engines using SDL 3. Note that SDL is only used for input,
+    not for windowing or sound.
+
+    Prior to Godot 4.5, the engine used its own controller support code.
+    This can cause certain controllers to behave incorrectly.
+    This custom code is still used to support controllers on Android, iOS,
+    and Web, so it may result in issues appearing only on those platforms.
 
 Note that more specialized devices such as steering wheels, rudder pedals and
 `HOTAS <https://en.wikipedia.org/wiki/HOTAS>`__ are less tested and may not
@@ -354,10 +367,24 @@ Controllers can still work without udev support, but it is less reliable as
 regular polling must be used to check for controllers being connected or
 disconnected during gameplay (hotplugging).
 
-HTML5
-^^^^^
+Android/iOS
+^^^^^^^^^^^
 
-HTML5 controller support is often less reliable compared to "native" platforms.
+As described at the top of the page, controller support on mobile platforms relies
+on a custom implementation instead of using SDL for input. This means controller
+support may be less reliable than on desktop platforms.
+
+Support for SDL-based controller input on mobile platforms is
+`planned <https://github.com/godotengine/godot/pull/109645>`__
+in a future release.
+
+Web
+^^^
+
+Web controller support is often less reliable compared to "native" platforms.
 The quality of controller support tends to vary wildly across browsers. As a
 result, you may have to instruct your players to use a different browser if they
 can't get their controller to work.
+
+Like for mobile platforms, support for SDL-based controller input on the web platform
+is `planned <https://github.com/godotengine/godot/pull/109645>`__ in a future release.
