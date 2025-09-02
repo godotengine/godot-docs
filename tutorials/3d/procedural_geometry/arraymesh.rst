@@ -240,7 +240,7 @@ a rectangle with its top left point at ``(0, 0, 0)`` with a width and length of 
 
 .. image:: img/array_mesh_rectangle_as_triangles.png
   :scale: 33%
-  :alt: A rectangle made of two triangles sharing four verticies.
+  :alt: A rectangle made of two triangles sharing four vertices.
 
 To draw this rectangle, define the coordinates of each vertex in the ``verts`` array.
 
