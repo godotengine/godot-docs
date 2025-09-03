@@ -122,7 +122,7 @@ a single action set and to not over-engineer things.
 
 For our walkthrough in this document we will thus create a single action set
 called ``my_first_action_set``.
-We do this by pressing the ``Add action set`` button:
+We do this by pressing the :button:`Add action set` button:
 
 .. image:: img/xr_my_first_action_set.webp
 
@@ -516,7 +516,7 @@ through the modifier button on the right side of the interaction profile editor.
 
 .. image:: img/openxr_ip_binding_modifier.webp
 
-You can add a new modifier by pressing the ``Add binding modifier`` button.
+You can add a new modifier by pressing the :button:`Add binding modifier` button.
 
 .. warning::
   As Godot doesn't know which controllers and runtimes support a modifier,
@@ -583,7 +583,7 @@ the binding modifier button next to action attached to an input:
 
 .. image:: img/openxr_action_binding_modifier.webp
 
-You can add a new modifier by pressing the ``Add binding modifier`` button.
+You can add a new modifier by pressing the :button:`Add binding modifier` button.
 
 .. warning::
   As Godot doesn't know which inputs on each runtime support a modifier,

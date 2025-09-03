@@ -49,6 +49,6 @@ The default values are good enough for many cases, but you can change growth and
 
 .. image:: img/mesh2d4.png
 
-Finally, push the ``Convert 2D Mesh`` button and your Sprite2D will be replaced:
+Finally, push the :button:`Convert 2D Mesh` button and your Sprite2D will be replaced:
 
 .. image:: img/mesh2d5.png
