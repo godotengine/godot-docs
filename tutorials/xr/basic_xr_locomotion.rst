@@ -13,7 +13,7 @@ Because XR supports roomscale tracking you can't simply add your XR setup to a :
 You will run into trouble when the user moves around their physical space and is no longer standing in the center of their room.
 Godot XR Tools embeds the needed logic into a helper node called ``PlayerBody``.
 
-Select your :ref:`XROrigin3D <class_xrorigin3d>` node and click on the :button:`instantiate Child Scene` button to add a child scene.
+Select your :ref:`XROrigin3D <class_xrorigin3d>` node and click on the :button:`Instantiate Child Scene` button to add a child scene.
 Select ``addons/godot-xr-tools/player/player_body.tscn`` and add this node.
 
 Adding a floor
