@@ -403,7 +403,8 @@ Quaternions are useful when doing camera/path/etc. interpolations, as the result
 Angular velocity and quaternions
 ================================
 
-While angular velocity is stored in a :ref:`class_Vector3`, it is not in fact a vector, and using Euler angles for angular velocity will result in errors. The correct value can be obtained from a quaternion, by multiplying the axis vector with the angle.
+While angular velocity is stored in a :ref:`class_Vector3`, it is in fact *not* a vector. Using Euler angles for angular velocity will result in errors.
+The correct value can be obtained from a quaternion by multiplying the axis vector with the angle.
 
 Example of making a :ref:`class_RigidBody3D` rotate over time so it ends up with the same orientation than another node two seconds later:
 
