@@ -100,7 +100,7 @@ It uses the NavigationServer2D and a NavigationAgent2D for path movement.
    .. image:: img/nav_2d_min_setup_step1.png
 
 #. Define the movable navigation area with the NavigationPolygon draw tool. Then click
-   the `Bake NavigationPolygon`` button on the toolbar.
+   the :button:`Bake NavigationPolygon` button on the toolbar.
 
    .. image:: img/nav_2d_min_setup_step2.png
 
