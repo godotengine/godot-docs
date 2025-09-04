@@ -143,7 +143,7 @@ performance overhead is larger compared to height fields, so they're best suited
 
 To create an SDF collision node, add a new child node to your scene and select ``GPUParticlesCollisionSDF3D``
 from the list of available nodes. SDF collision nodes have to be baked in order to have any effect on particles
-in the level. To do that, click the ``Bake SDF`` button in the viewport toolbar
+in the level. To do that, click the :button:`Bake SDF` button in the viewport toolbar
 while the SDF collision node is selected and choose a directory to store the baked data. Since SDF collision needs
 to be baked in the editor, it's static and cannot change at runtime.
 

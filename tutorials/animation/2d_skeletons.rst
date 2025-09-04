@@ -144,7 +144,7 @@ Keep going and build the whole skeleton:
 You will notice that all bones raise a warning about a missing rest pose. A rest
 pose is the default pose for a skeleton, you can come back to it anytime you want
 (which is very handy for animating). To set one click on the *skeleton* node in
-the scene tree, then click on the ``Skeleton2D`` button in the toolbar, and select
+the scene tree, then click on the :button:`Skeleton2D` button in the toolbar, and select
 ``Overwrite Rest Pose`` from the dropdown menu.
 
 .. image:: img/skel2d14.webp
