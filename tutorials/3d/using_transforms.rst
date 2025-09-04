@@ -413,7 +413,7 @@ Example of making a :ref:`class_RigidBody3D` rotate over time so it ends up with
     func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
         var a = global_basis.get_rotation_quaternion()
         var b = other_node.global_basis.get_rotation_quaternion()
-        # Interpolate the orientation for the next frame
+        # Interpolate the orientation for the next frame (SLERP).
         var c = a.slerp(b, 0.5 * state.step)
         var d = (c * a.inverse()).normalized()
         state.angular_velocity = d.get_axis() * (d.get_angle() / state.step)
@@ -421,12 +421,14 @@ Example of making a :ref:`class_RigidBody3D` rotate over time so it ends up with
  .. code-tab:: csharp
 
     _IntegrateForces(PhysicsDirectBodyState3D state)
+    {
         var a = new Quaternion(transform.Basis);
         var b = new Quaternion(transform2.Basis);
-        // Interpolate using spherical-linear interpolation (SLERP).
+        // Interpolate the orientation for the next frame (SLERP).
         var c = a.Slerp(b, 0.1f * state.Step);
         var d = (c * a.Inverse()).Normalized();
         state.AngularVelocity = d.getAxis() * (d.getAngle() / state.Step)
+    }
 
 Note that the built-in functions for getting the angle and axis from the quaternion are not perfect, and will have issues for very small angles. If you need accurate small angles, you will have to use your own function for obtaining them.
 
@@ -438,7 +440,7 @@ Example with accurate small angle results, using the algorithm taken from the Jo
     func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
         var a = global_basis.get_rotation_quaternion()
         var b = other_node.global_basis.get_rotation_quaternion()
-        # Interpolate the orientation for the next frame
+        # Interpolate the orientation for the next frame (SLERP).
         var c = a.slerp(b, 0.5 * state.step)
         var d = (c * a.inverse()).normalized()
 
@@ -449,15 +451,16 @@ Example with accurate small angle results, using the algorithm taken from the Jo
         else:
             var angle = 2 * acos(in_quat.w)
             var axis = Vector3(in_quat.x, in_quat.y, in_quat.z)
-            axis = axis.normalized() if axis.length() > 0 else Vector3.ZERO
+            axis = axis.normalized() if axis.length_squared() > 0.0 else Vector3.ZERO
             state.angular_velocity = axis * (angle / state.step)
 
  .. code-tab:: csharp
 
     _IntegrateForces(PhysicsDirectBodyState3D state)
+    {
         var a = new Quaternion(transform.Basis);
         var b = new Quaternion(transform2.Basis);
-        // Interpolate using spherical-linear interpolation (SLERP).
+        // Interpolate the orientation for the next frame (SLERP).
         var c = a.Slerp(b, 0.1f * state.Step);
         var d = (c * a.Inverse()).Normalized();
         
@@ -474,9 +477,10 @@ Example with accurate small angle results, using the algorithm taken from the Jo
         {
             float angle = 2 * (float)Math.Acos(d.W);
             Vector3 axis = new(d.X, d.Y, d.Z);
-            axis = axis.Length() > 0 ? axis.Normalized() : Vector3.Zero;
+            axis = axis.LengthSquared() > 0.0 ? axis.Normalized() : Vector3.Zero;
             state.AngularVelocity = axis * (angle / delta);
         }
+    }
 
 
 Transforms are your friend
