@@ -400,6 +400,85 @@ suffer from numerical precision errors.
 
 Quaternions are useful when doing camera/path/etc. interpolations, as the result will always be correct and smooth.
 
+Angular velocity and quaternions
+================================
+
+While angular velocity is stored in a :ref:`class_Vector3`, it is not in fact a vector, and using Euler angles for angular velocity will result in errors. The correct value can be obtained from a quaternion, by multiplying the axis vector with the angle.
+
+Example of making a :ref:`class_RigidBody3D` rotate over time so it ends up with the same orientation than another node two seconds later:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    
+    func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+        var a = global_basis.get_rotation_quaternion()
+        var b = other_node.global_basis.get_rotation_quaternion()
+        # Interpolate the orientation for the next frame
+        var c = a.slerp(b, 0.5 * state.step)
+        var d = (c * a.inverse()).normalized()
+        state.angular_velocity = d.get_axis() * (d.get_angle() / state.step)
+
+ .. code-tab:: csharp
+
+    _IntegrateForces(PhysicsDirectBodyState3D state)
+        var a = new Quaternion(transform.Basis);
+        var b = new Quaternion(transform2.Basis);
+        // Interpolate using spherical-linear interpolation (SLERP).
+        var c = a.Slerp(b, 0.1f * state.Step);
+        var d = (c * a.Inverse()).Normalized();
+        state.AngularVelocity = d.getAxis() * (d.getAngle() / state.Step)
+
+Note that the built-in functions for getting the angle and axis from the quaternion are not perfect, and will have issues for very small angles. If you need accurate small angles, you will have to use your own function for obtaining them.
+
+Example with accurate small angle results, using the algorithm taken from the Jolt source code:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    
+    func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+        var a = global_basis.get_rotation_quaternion()
+        var b = other_node.global_basis.get_rotation_quaternion()
+        # Interpolate the orientation for the next frame
+        var c = a.slerp(b, 0.5 * state.step)
+        var d = (c * a.inverse()).normalized()
+
+        if d.w > 0:
+            c = c * -1
+        if d.w >= 1
+            state.angular_velocity = Vector3.ZERO
+        else:
+            var angle = 2 * acos(in_quat.w)
+            var axis = Vector3(in_quat.x, in_quat.y, in_quat.z)
+            axis = axis.normalized() if axis.length() > 0 else Vector3.ZERO
+            state.angular_velocity = axis * (angle / state.step)
+
+ .. code-tab:: csharp
+
+    _IntegrateForces(PhysicsDirectBodyState3D state)
+        var a = new Quaternion(transform.Basis);
+        var b = new Quaternion(transform2.Basis);
+        // Interpolate using spherical-linear interpolation (SLERP).
+        var c = a.Slerp(b, 0.1f * state.Step);
+        var d = (c * a.Inverse()).Normalized();
+        
+        if (d.W < 0)
+        {
+            c *= -1;
+        }
+        
+        if (d.W >= 1)
+        {
+            state.AngularVelocity = Vector3.Zero;
+        }
+        else
+        {
+            float angle = 2 * (float)Math.Acos(d.W);
+            Vector3 axis = new(d.X, d.Y, d.Z);
+            axis = axis.Length() > 0 ? axis.Normalized() : Vector3.Zero;
+            state.AngularVelocity = axis * (angle / delta);
+        }
+
+
 Transforms are your friend
 --------------------------
 
