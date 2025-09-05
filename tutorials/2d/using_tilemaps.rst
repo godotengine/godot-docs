@@ -202,7 +202,7 @@ select multiple with a rectangle in the 2D editor. Note that empty space cannot 
 selected: if you create a rectangle selection, only non-empty tiles will be selected.
 
 To append to the current selection, hold :kbd:`Shift` then select a tile.
-To remove from the current selection, hold :kbd:`Ctrl` then select a tile.
+To remove from the current selection, hold :kbd:`Shift` then click a tile that is already selected.
 
 The selection can then be used in any other painting mode to quickly create copies
 of an already-placed pattern.
