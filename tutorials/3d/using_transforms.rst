@@ -428,7 +428,7 @@ Example of making a :ref:`class_RigidBody3D` rotate over time so it ends up with
         // Interpolate the orientation for the next frame (SLERP).
         var c = a.Slerp(b, 0.1f * state.Step);
         var d = (c * a.Inverse()).Normalized();
-        state.AngularVelocity = d.getAxis() * (d.getAngle() / state.Step)
+        state.AngularVelocity = d.GetAxis() * (d.GetAngle() / state.Step);
     }
 
 Note that the built-in functions for getting the angle and axis from the quaternion are not perfect, and will have issues for very small angles. If you need accurate small angles, you will have to use your own function for obtaining them.
@@ -445,9 +445,9 @@ Example with accurate small angle results, using the algorithm taken from the Jo
         var c = a.slerp(b, 0.5 * state.step)
         var d = (c * a.inverse()).normalized()
 
-        if d.w > 0:
+        if d.w < 0:
             c = c * -1
-        if d.w >= 1
+        if d.w >= 1:
             state.angular_velocity = Vector3.ZERO
         else:
             var angle = 2 * acos(in_quat.w)
