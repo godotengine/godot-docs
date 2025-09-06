@@ -678,17 +678,9 @@ On Windows, all XInput joypad GUIDs will be overridden by Godot to ``__XINPUT_DE
 
 Returns a dictionary with extra platform-specific information about the device, e.g. the raw gamepad name from the OS or the Steam Input index.
 
-On Windows, the dictionary contains the following fields:
+On Windows, Linux, and macOS, the dictionary contains the following fields:
 
-\ ``xinput_index``: The index of the controller in the XInput system. Undefined for DirectInput devices.
-
-\ ``vendor_id``: The USB vendor ID of the device.
-
-\ ``product_id``: The USB product ID of the device.
-
-On Linux:
-
-\ ``raw_name``: The name of the controller as it came from the OS, before getting renamed by the godot controller database.
+\ ``raw_name``: The name of the controller as it came from the OS, before getting renamed by the controller database.
 
 \ ``vendor_id``: The USB vendor ID of the device.
 
@@ -696,7 +688,11 @@ On Linux:
 
 \ ``steam_input_index``: The Steam Input gamepad index, if the device is not a Steam Input device this key won't be present.
 
-\ **Note:** The returned dictionary is always empty on Web, iOS, Android, and macOS.
+On Windows, the dictionary can have an additional field:
+
+\ ``xinput_index``: The index of the controller in the XInput system. This key won't be present for devices not handled by XInput.
+
+\ **Note:** The returned dictionary is always empty on Android, iOS, visionOS, and Web.
 
 .. rst-class:: classref-item-separator
 

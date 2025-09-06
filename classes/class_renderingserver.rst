@@ -12491,7 +12491,11 @@ Equivalent to :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding
 
 |void| **viewport_set_use_hdr_2d**\ (\ viewport\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_use_hdr_2d>`
 
-If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility rendering method this will be an ``RGBA16`` framebuffer, while when using the Mobile rendering method it will be an ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen). Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
+If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an ``RGBA16`` framebuffer. When using the Mobile renderer, it will be an ``RGB10_A2`` framebuffer.
+
+Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen).
+
+Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
 
 .. rst-class:: classref-item-separator
 
