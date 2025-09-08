@@ -198,7 +198,7 @@ and ``angular_speed`` properties.
 
 .. note::
 
-    Angles in Godot work in radians by default,
+    Angles in Godot are in radians by default,
     but you have built-in functions and properties available if you prefer
     to calculate angles in degrees instead.
 
