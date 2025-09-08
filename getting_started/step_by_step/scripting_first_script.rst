@@ -231,7 +231,7 @@ At the bottom of the script, define the function:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _process(delta : float) -> void:
+    func _process(delta: float) -> void:
         rotation += angular_speed * delta
 
  .. code-tab:: csharp C#
