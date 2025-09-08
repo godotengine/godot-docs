@@ -183,8 +183,8 @@ angular speed in radians per second. Add the following after the ``extends Sprit
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var speed : int = 400
-    var angular_speed : float = PI
+    var speed: int = 400
+    var angular_speed: float = PI
 
  .. code-tab:: csharp C#
 
