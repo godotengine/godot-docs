@@ -204,7 +204,7 @@ and ``angular_speed`` properties.
 
     We are taking the speed as ``int`` which can be ``float``. Here, ``: int``/ ``: float``
     are static type castings where we explicitly mention the type of the variable 
-    and what it allows. This is very helpful when calling in-built functions which 
+    and what it allows. This is very helpful when calling built-in functions which 
     only take certain types and behave differently for other types.
 
 To move our icon, we need to update its position and rotation every frame in the
