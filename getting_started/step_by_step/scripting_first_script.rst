@@ -279,7 +279,7 @@ them.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var velocity : Vector2 = Vector2.UP.rotated(rotation) * speed
+    var velocity: Vector2 = Vector2.UP.rotated(rotation) * speed
 
     position += velocity * delta
 
