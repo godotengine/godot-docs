@@ -13,7 +13,7 @@ split for use and reuse in different modules.
 
 Modules are located in the ``modules/`` subdirectory of the build system.
 By default, dozens of modules are enabled, such as GDScript (which, yes,
-is not part of the base engine), the Mono runtime, a regular expressions
+is not part of the base engine), GridMap support, a regular expressions
 module, and others. As many new modules as desired can be
 created and combined. The SCons build system will take care of it
 transparently.
@@ -30,6 +30,16 @@ instead. Adding C++ modules can be useful in the following scenarios:
 -  Adding new functionality to the engine and/or editor.
 -  Porting an existing game to Godot.
 -  Write a whole, new game in C++ because you can't live without C++.
+
+
+.. note::
+
+    While it is possible to use modules for custom game logic,
+    :ref:`GDExtension <doc_gdextension>` is generally more suited as it doesn't
+    require recompiling the engine after every code change.
+
+    C++ modules are mainly needed when GDExtension doesn't suffice and deeper engine
+    integration is required.
 
 Creating a new module
 ---------------------
@@ -377,119 +387,6 @@ We now need to add this method to ``register_types`` header and source files:
     void unregister_summator_types() {
        // Nothing to do here in this example.
     }
-
-Improving the build system for development
-------------------------------------------
-
-.. warning::
-
-    This shared library support is not designed to support distributing a module
-    to other users without recompiling the engine. For that purpose, use
-    a GDExtension instead.
-
-So far, we defined a clean SCsub that allows us to add the sources
-of our new module as part of the Godot binary.
-
-This static approach is fine when we want to build a release version of our
-game, given we want all the modules in a single binary.
-
-However, the trade-off is that every single change requires a full recompilation of the
-game. Even though SCons is able to detect and recompile only the file that was
-changed, finding such files and eventually linking the final binary takes a long time.
-
-The solution to avoid such a cost is to build our own module as a shared
-library that will be dynamically loaded when starting our game's binary.
-
-.. code-block:: python
-    :caption: godot/modules/summator/SCsub
-
-    Import('env')
-
-    sources = [
-        "register_types.cpp",
-        "summator.cpp"
-    ]
-
-    # First, create a custom env for the shared library.
-    module_env = env.Clone()
-
-    # Position-independent code is required for a shared library.
-    module_env.Append(CCFLAGS=['-fPIC'])
-
-    # Don't inject Godot's dependencies into our shared library.
-    module_env['LIBS'] = []
-
-    # Define the shared library. By default, it would be built in the module's
-    # folder, however it's better to output it into `bin` next to the
-    # Godot binary.
-    shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
-
-    # Finally, notify the main build environment it now has our shared library
-    # as a new dependency.
-
-    # LIBPATH and LIBS need to be set on the real "env" (not the clone)
-    # to link the specified libraries to the Godot executable.
-
-    env.Append(LIBPATH=['#bin'])
-
-    # SCons wants the name of the library with it custom suffixes
-    # (e.g. ".linuxbsd.tools.64") but without the final ".so".
-    shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
-    env.Append(LIBS=[shared_lib_shim])
-
-Once compiled, we should end up with a ``bin`` directory containing both the
-``godot*`` binary and our ``libsummator*.so``. However given the .so is not in
-a standard directory (like ``/usr/lib``), we have to help our binary find it
-during runtime with the ``LD_LIBRARY_PATH`` environment variable:
-
-.. code-block:: shell
-
-    export LD_LIBRARY_PATH="$PWD/bin/"
-    ./bin/godot*
-
-.. note::
-  You have to ``export`` the environment variable. Otherwise,
-  you won't be able to run your project from the editor.
-
-On top of that, it would be nice to be able to select whether to compile our
-module as shared library (for development) or as a part of the Godot binary
-(for release). To do that we can define a custom flag to be passed to SCons
-using the ``ARGUMENT`` command:
-
-.. code-block:: python
-    :caption: godot/modules/summator/SCsub
-
-    Import('env')
-
-    sources = [
-        "register_types.cpp",
-        "summator.cpp"
-    ]
-
-    module_env = env.Clone()
-    module_env.Append(CCFLAGS=['-O2'])
-
-    if ARGUMENTS.get('summator_shared', 'no') == 'yes':
-        # Shared lib compilation
-        module_env.Append(CCFLAGS=['-fPIC'])
-        module_env['LIBS'] = []
-        shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
-        shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
-        env.Append(LIBS=[shared_lib_shim])
-        env.Append(LIBPATH=['#bin'])
-    else:
-        # Static compilation
-        module_env.add_source_files(env.modules_sources, sources)
-
-Now by default ``scons`` command will build our module as part of Godot's binary
-and as a shared library when passing ``summator_shared=yes``.
-
-Finally, you can even speed up the build further by explicitly specifying your
-shared module as target in the SCons command:
-
-.. code-block:: shell
-
-    scons summator_shared=yes platform=linuxbsd bin/libsummator.linuxbsd.tools.64.so
 
 Writing custom documentation
 ----------------------------
