@@ -51,6 +51,9 @@ that increases CPU utilization and may not be viable for mobile/web platforms.
 Multipliers of the default value of ``60`` (such as ``120``, ``180`` or ``240``)
 should be preferred for a smooth appearance on most displays.
 
+In 3D, switching the physics engine from the default GodotPhysics to Jolt
+can also improve stability. See :ref:`doc_using_jolt_physics` for more information.
+
 Scaled physics bodies or collision shapes do not collide correctly
 ------------------------------------------------------------------
 
@@ -96,16 +99,21 @@ displays.
 Cylinder collision shapes are unstable
 --------------------------------------
 
+Switching the physics engine from the default GodotPhysics to Jolt
+should make cylinder collision shapes more reliable.
+See :ref:`doc_using_jolt_physics` for more information.
+
 During the transition from Bullet to GodotPhysics in Godot 4, cylinder collision
 shapes had to be reimplemented from scratch. However, cylinder collision shapes
 are one of the most difficult shapes to support, which is why many other physics
 engines don't provide any support for them. There are several known bugs with
 cylinder collision shapes currently.
 
-We recommend using box or capsule collision shapes for characters for now. Boxes
-generally provide the best reliability, but have the downside of making the
-character take more space diagonally. Capsule collision shapes do not have this
-downside, but their shape can make precision platforming more difficult.
+If you are sticking to GodotPhysics, we recommend using box or capsule collision
+shapes for characters for now. Boxes generally provide the best reliability,
+but have the downside of making the character take more space diagonally.
+Capsule collision shapes do not have this downside, but their shape can make
+precision platforming more difficult.
 
 VehicleBody simulation is unstable, especially at high speeds
 -------------------------------------------------------------
@@ -144,6 +152,14 @@ Using a composite collider can also improve physics simulation performance in
 certain cases. However, since the composite collision shape is much more
 complex, this may not be a net performance win in all cases.
 
+.. tip::
+
+    In Godot 4.5 and later, creating a composite collider is automatically done
+    when using a TileMapLayer node. The chunk size (``16`` tiles on each axis
+    by default) can be set using the **Physics Quadrant Size** property in the
+    TileMapLayer inspector. Larger values provide more reliable collision,
+    at the cost of slower updates when the TileMap is changed.
+
 Framerate drops when an object touches another object
 -----------------------------------------------------
 
@@ -161,6 +177,9 @@ This issue can also occur with StaticBodies that use very detailed trimesh
 geometry as a collider. Not only this will improve physics simulation
 performance significantly, but this can also improve stability by letting you
 remove small fixtures and crevices from being considered by collision.
+
+In 3D, switching the physics engine from the default GodotPhysics to Jolt
+can also improve performance. See :ref:`doc_using_jolt_physics` for more information.
 
 Framerate suddenly drops to a very low value beyond a certain amount of physics simulation
 ------------------------------------------------------------------------------------------
