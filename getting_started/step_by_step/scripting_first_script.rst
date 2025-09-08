@@ -325,8 +325,8 @@ Here is the complete ``sprite_2d.gd`` file for reference.
 
     extends Sprite2D
 
-    var speed : int = 400
-    var angular_speed : float = PI
+    var speed: int = 400
+    var angular_speed: float = PI
 
 
     func _process(delta : float) -> void:
