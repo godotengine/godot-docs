@@ -293,7 +293,7 @@ As we already saw, the ``var`` keyword defines a new variable. If you put it at
 the top of the script, it defines a property of the class. Inside a function, it
 defines a local variable: it only exists within the function's scope.
 
-We define a local variable named ``velocity``, a 2D vector (static type: ``: Vector2``) representing both a
+We define a local variable named ``velocity``, a 2D vector representing both a
 direction and a speed. To make the node move forward, we start from the Vector2
 class's constant ``Vector2.UP``, a vector pointing up, and rotate it by calling the
 Vector2 method ``rotated()``. This expression, ``Vector2.UP.rotated(rotation)``,
