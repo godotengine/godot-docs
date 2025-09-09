@@ -268,6 +268,10 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | out float **Z_CLIP_SCALE**             | If written to, scales the vertex towards the camera to |
 |                                        | avoid clipping into things like walls.                 |
+|                                        | Lighting and shadows will continue to work correctly   |
+|                                        | when this is written to, but screen-space effects like |
+|                                        | SSAO and SSR may break with lower scales. Try to keep  |
+|                                        | this value as close to ``1.0`` as possible.            |
 +----------------------------------------+--------------------------------------------------------+
 
 .. note::
