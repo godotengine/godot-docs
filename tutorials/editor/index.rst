@@ -81,6 +81,7 @@ like Visual Studio Code or Emacs.
 
    command_line_tutorial
    external_editor
+   using_engine_compilation_configuration_editor
 
 Managing editor features
 ------------------------
