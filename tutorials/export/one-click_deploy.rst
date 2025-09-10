@@ -157,3 +157,11 @@ Web > Use TLS**.
     the paths to the key and certificate files in the **Export > Web > TLS Key**
     and **Export > Web > TLS Certificate**. This will only work if the project
     is accessed through a domain name that is part of the TLS certificate.
+
+.. warning::
+
+    When using one-click deploy on different projects, it's possible that
+    a previously edited project is being shown instead. This is due to service
+    worker caching not being cleared automatically. See
+    :ref:`doc_exporting_for_web_troubleshooting` for instructions on unregistering
+    the service worker, which will effectively clear the cache and resolve the issue.
