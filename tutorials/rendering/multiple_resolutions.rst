@@ -286,6 +286,12 @@ To configure the stretch scale at runtime from a script, use the
 ``get_tree().root.content_scale_factor`` property (see
 :ref:`Window.content_scale_factor <class_Window_property_content_scale_factor>`).
 
+You can also adjust the scale at which the default project theme is generated
+using the **GUI > Theme > Default Theme Scale** project setting. This can be
+used to create more logically-sized UIs at base resolutions that are
+significantly higher or lower than the default. However, this project setting
+cannot be changed at runtime, as its value is only read once when the project starts.
+
 .. _doc_multiple_resolutions_stretch_scale_mode:
 
 Stretch Scale Mode
@@ -370,10 +376,14 @@ Desktop game
 - Alternatively, if you're targeting high-end devices primarily, set the base
   window width to ``3840`` and window height to ``2160``.
   This allows you to provide higher resolution 2D assets, resulting in crisper
-  visuals at the cost of higher memory usage and file sizes.
-  Note that this will make non-mipmapped textures grainy on low resolution devices,
-  so make sure to follow the instructions described in
-  :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+  visuals at the cost of higher memory usage and file sizes. You'll also want
+  to increase **GUI > Theme > Default Theme Scale** to a value between ``2.0``
+  and ``3.0`` to ensure UI elements remain readable.
+
+  - Note that this will make non-mipmapped textures grainy on low resolution devices,
+    so make sure to follow the instructions described in
+    :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+
 - Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
@@ -419,10 +429,14 @@ to change the display orientation project setting.
   This allows you to provide higher resolution 2D assets, resulting in crisper
   visuals at the cost of higher memory usage and file sizes. Many devices have
   even higher resolution displays (1440p), but the difference with 1080p is
-  barely visible given the small size of smartphone displays.
-  Note that this will make non-mipmapped textures grainy on low resolution devices,
-  so make sure to follow the instructions described in
-  :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+  barely visible given the small size of smartphone displays. You'll also want
+  to increase **GUI > Theme > Default Theme Scale** to a value between ``1.5``
+  and ``2.0`` to ensure UI elements remain readable.
+
+  - Note that this will make non-mipmapped textures grainy on low resolution devices,
+    so make sure to follow the instructions described in
+    :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+
 - Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
@@ -445,10 +459,14 @@ Mobile game in portrait mode
   This allows you to provide higher resolution 2D assets, resulting in crisper
   visuals at the cost of higher memory usage and file sizes. Many devices have
   even higher resolution displays (1440p), but the difference with 1080p is
-  barely visible given the small size of smartphone displays.
-  Note that this will make non-mipmapped textures grainy on low resolution devices,
-  so make sure to follow the instructions described in
-  :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+  barely visible given the small size of smartphone displays. You'll also want
+  to increase **GUI > Theme > Default Theme Scale** to a value between ``1.5``
+  and ``2.0`` to ensure UI elements remain readable.
+
+  - Note that this will make non-mipmapped textures grainy on low resolution devices,
+    so make sure to follow the instructions described in
+    :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
+
 - Set **Display > Window > Handheld > Orientation** to ``portrait``.
 - Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
@@ -474,22 +492,16 @@ Non-game application
 - You can define a minimum window size by calling ``get_window().set_min_size()`` in a
   script's ``_ready()`` function. This prevents the user from resizing the application
   below a certain size, which could break the UI layout.
-
-.. UPDATE: Planned feature. When manually override the 2D scale factor is supported,
-.. update this note.
-
-.. note::
-
-    Godot doesn't support manually overriding the 2D scale factor yet, so it is
-    not possible to have hiDPI support in non-game applications. Due to this, it
-    is recommended to leave **Allow Hidpi** disabled in non-game applications to
-    allow for the OS to use its low-DPI fallback.
+- Add a setting in the application's settings to change the root viewport's
+  :ref:`stretch scale <doc_multiple_resolutions_stretch_scale>`,
+  so that the UI can be made larger to account for hiDPI displays.
+  See also the section on hiDPI support below.
 
 hiDPI support
 -------------
 
 By default, Godot projects are considered DPI-aware by the operating system.
-This is controlled by the **Display > Window > Dpi > Allow Hidpi** project setting,
+This is controlled by the **Display > Window > DPI > Allow hiDPI** project setting,
 which should be left enabled whenever possible. Disabling DPI awareness can break
 fullscreen behavior on Windows.
 
@@ -508,19 +520,19 @@ To ensure 2D elements don't appear too small on hiDPI displays:
   stretch scale to a value corresponding to the display scale factor in an
   :ref:`autoload <doc_singletons_autoload>`'s ``_ready()`` function.
   The display scale factor is set in the operating system's settings and can be queried
-  using :ref:`screen_get_scale<class_DisplayServer_method_screen_get_scale>`. This
-  method is currently only implemented on macOS. On other operating systems, you
-  will need to implement a method to guess the display scale factor based on the
-  screen resolution (with a setting to let the user override this if needed). This
-  is the approach currently used by the Godot editor.
+  using :ref:`screen_get_scale <class_DisplayServer_method_screen_get_scale>`. This
+  method is currently implemented on Android, iOS, Linux (Wayland only), macOS and Web.
+  On other platforms, you'll have to implement a method to guess the display
+  scale factor based on the screen resolution (with a setting to let the
+  user override this if needed). This is the approach currently used by the Godot editor.
 
-The **Allow Hidpi** setting is only effective on Windows and macOS. It's ignored
+The **Allow hiDPI** setting is only effective on Windows and macOS. It's ignored
 on all other platforms.
 
 .. note::
 
     The Godot editor itself is always marked as DPI-aware. Running the project
-    from the editor will only be DPI-aware if **Allow Hidpi** is enabled in the
+    from the editor will only be DPI-aware if **Allow hiDPI** is enabled in the
     Project Settings.
 
 .. _doc_multiple_resolutions_reducing_aliasing_on_downsampling:
