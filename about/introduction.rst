@@ -77,11 +77,8 @@ This documentation is organized into several sections:
   if you're new!**
 - The **Manual** can be read or referenced as needed,
   in any order. It contains feature-specific tutorials and documentation.
-- **Contributing** gives information related to contributing to
-  Godot, whether to the core engine, documentation, demos or other parts.
-  It describes how to report bugs, how contributor workflows are organized, etc.
-  It also contains sections intended for advanced users and contributors,
-  with information on compiling the engine, contributing to the editor,
+- **Engine details** contains sections intended for advanced users and contributors,
+  with information on compiling the engine, working on the editor,
   or developing C++ modules.
 - **Community** is dedicated to the life of Godot's community and contains a list of
   recommended third-party tutorials and materials outside of this documentation.
