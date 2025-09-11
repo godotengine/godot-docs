@@ -354,6 +354,14 @@ and able to build Godot using Visual Studio's **Build** button.
 
 .. seealso:: See :ref:`doc_configuring_an_ide_vs` for further details.
 
+Troubleshooting
+~~~~~~~~~~~~~~~
+
+If you get a compilation failure when using MSVC, make sure to apply the
+latest updates. You can do so by starting the Visual Studio IDE and using
+:button:`Continue without code`, then :menu:`Help > Check for Updates` in the
+menu bar at the top. Install all updates, then try compiling again.
+
 Cross-compiling for Windows from other operating systems
 --------------------------------------------------------
 
