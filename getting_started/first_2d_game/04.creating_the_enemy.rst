@@ -22,7 +22,9 @@ Click Scene -> New Scene from the top menu and add the following nodes:
    - :ref:`VisibleOnScreenNotifier2D <class_VisibleOnScreenNotifier2D>`
 
 Don't forget to set the children so they can't be selected, like you did with
-the Player scene.
+the Player scene. This is done by selecting the parent node (``RigidBody2D``) in the
+Scene tree dock, then using the :button:`Group` button at the top of the 2D editor
+(or pressing :kbd:`Ctrl + G`).
 
 Select the ``Mob`` node and set its ``Gravity Scale``
 property in the :ref:`RigidBody2D <class_RigidBody2D>`
@@ -102,9 +104,9 @@ First, we get the list of animation names from the AnimatedSprite2D's ``sprite_f
 property. This returns an Array containing all three animation names: ``["walk",
 "swim", "fly"]``.
 
-In the GDScript code, we use the :ref:`Array.pick_random <class_Array_method_pick_random>` method 
-to select one of these animation names at random. Meanwhile, in the C# code, we pick a random number 
-between ``0`` and ``2`` to select one of these names from the list (array indices start at ``0``). The 
+In the GDScript code, we use the :ref:`Array.pick_random <class_Array_method_pick_random>` method
+to select one of these animation names at random. Meanwhile, in the C# code, we pick a random number
+between ``0`` and ``2`` to select one of these names from the list (array indices start at ``0``). The
 expression ``GD.Randi() % n`` selects a random integer between ``0`` and ``n-1``.
 
 Finally, we call ``play()`` to start playing the chosen animation.
