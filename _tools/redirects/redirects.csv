@@ -42,7 +42,7 @@ source,destination
 /development/cpp/custom_audiostreams.html,/engine_details/development/core_and_modules/custom_audiostreams.html
 /development/cpp/custom_godot_servers.html,/engine_details/development/core_and_modules/custom_godot_servers.html
 /development/cpp/custom_modules_in_cpp.html,/engine_details/development/core_and_modules/custom_modules_in_cpp.html
-/development/cpp/custom_resource_format_loaders.html,/contributing/development/core_and_modules/custom_resource_format_loaders.html
+/development/cpp/custom_resource_format_loaders.html,/engine_details/development/core_and_modules/custom_resource_format_loaders.html
 /development/cpp/index.html,/engine_details/development/core_and_modules/index.html
 /development/cpp/inheritance_class_tree.html,/engine_details/development/core_and_modules/inheritance_class_tree.html
 /development/cpp/introduction_to_godot_development.html,/engine_details/development/core_and_modules/introduction_to_godot_development.html
