@@ -56,7 +56,7 @@ Lastly, every object can also contain metadata (data about data). :ref:`set_meta
 Tutorials
 ---------
 
-- :doc:`Object class introduction <../contributing/development/core_and_modules/object_class>`
+- :doc:`Object class introduction <../engine_details/architecture/object_class>`
 
 - :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
 

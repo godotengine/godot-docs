@@ -130,7 +130,7 @@ Modifications to a container will modify all references to it. A :ref:`Mutex<cla
 Tutorials
 ---------
 
-- :doc:`Variant class introduction <../contributing/development/core_and_modules/variant_class>`
+- :doc:`Variant class introduction <../engine_details/architecture/variant_class>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

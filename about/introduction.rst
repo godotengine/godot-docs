@@ -100,8 +100,8 @@ About this documentation
 Members of the Godot Engine community continuously write, correct, edit, and
 improve this documentation. We are always looking for more help. You can also
 contribute by opening Github issues or translating the documentation into your language.
-If you are interested in helping, see :ref:`Ways to contribute <doc_ways_to_contribute>`
-and :ref:`Writing documentation <doc_contributing_writing_documentation>`,
+If you are interested in helping, see `How to contribute <https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html>`__
+and `Writing documentation <https://contributing.godotengine.org/en/latest/documentation/manual/index.html>`__,
 or get in touch with the `Documentation team <https://godotengine.org/teams/#documentation>`_
 on `Godot Contributors Chat <https://chat.godotengine.org/>`_.
 
