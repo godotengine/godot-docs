@@ -76,9 +76,9 @@ Setting up
 
 .. warning::
 
-    Baking lightmaps in the Android and web editors is not supported due to
-    graphics API limitations on those devices. On Android and web platforms,
-    only *rendering* lightmaps that were baked on a desktop PC is supported.
+    Baking lightmaps in the web editors is not supported due to
+    graphics API limitations. On the web platform, only *rendering* lightmaps
+    that were baked on a different platform is supported.
 
 .. note::
 
