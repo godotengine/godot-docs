@@ -414,8 +414,8 @@ if it was attached to a crane.
 
 |image8|
 
-You can run the scene by pressing :kbd:`F6` and press the arrow keys to move the
-character.
+You can run the scene by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS) and 
+press the arrow keys to move the character.
 
 |image9|
 
