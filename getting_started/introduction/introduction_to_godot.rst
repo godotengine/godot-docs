@@ -89,9 +89,10 @@ Godot-specific and tightly integrated language with a lightweight syntax, or
 :ref:`C# <doc_c_sharp>`, which is popular in the games industry.
 These are the two main scripting languages we support.
 
-With the GDExtension technology, you can also write
-gameplay or high-performance algorithms in C or C++ without recompiling the
-engine. You can use this technology to integrate third-party libraries and other
+With the :ref:`GDExtension <doc_what_is_gdextension>` technology, you can also
+write gameplay or high-performance algorithms in :ref:`C++ <doc_godot_cpp>` or
+:ref:`other languages <doc_scripting_languages>` without recompiling the engine.
+You can use this technology to integrate third-party libraries and other
 Software Development Kits (SDK) in the engine.
 
 Of course, you can also directly add modules and features to the engine, as it's
