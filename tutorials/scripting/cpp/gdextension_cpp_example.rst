@@ -97,44 +97,6 @@ following commands:
 
 This will initialize the repository in your project folder.
 
-Building the C++ bindings
--------------------------
-
-Now that we've downloaded our prerequisites, it is time to build the C++
-bindings.
-
-The repository contains a copy of the metadata for the current Godot release,
-but if you need to build these bindings for a newer version of Godot, call
-the Godot executable:
-
-.. code-block:: none
-
-    godot --dump-extension-api
-
-The resulting ``extension_api.json`` file will be created in the executable's
-directory. Copy it to the project folder and add ``custom_api_file=<PATH_TO_FILE>``
-to the scons command below.
-
-To generate and compile the bindings, use this command (replacing ``<platform>``
-with ``windows``, ``linux`` or ``macos`` depending on your OS):
-
-The build process automatically detects the number of CPU threads to use for
-parallel builds. To specify a number of CPU threads to use, add ``-jN`` at the
-end of the SCons command line where ``N`` is the number of CPU threads to use.
-
-.. code-block:: none
-
-    cd godot-cpp
-    scons platform=<platform> custom_api_file=<PATH_TO_FILE>
-    cd ..
-
-This step will take a while. When it is completed, you should have static
-libraries that can be compiled into your project stored in ``godot-cpp/bin/``.
-
-.. note::
-
-    You may need to add ``bits=64`` to the command on Windows or Linux.
-
 Creating a simple plugin
 ------------------------
 

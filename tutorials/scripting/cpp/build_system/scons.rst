@@ -73,3 +73,37 @@ There are two popular ways by which cross platform builds can be achieved:
 `godot-cpp-template <https://github.com/godotengine/godot-cpp-template>`__ contains an
 `example setup <https://github.com/godotengine/godot-cpp-template/tree/main/.github/workflows>`__
 for a GitHub based CI workflow.
+
+Using custom bindings
+---------------------
+
+Every branch of godot-cpp comes with bindings appropriate for the respective Godot version
+(e.g. the ``4.3`` branch comes with bindings compatible with Godot version ``4.3`` and
+later).
+
+However, you may want to use custom bindings, for example:
+
+* If you want to use the latest bindings from Godot ``master``.
+* If you want to use bindings exposed by custom modules.
+
+To use custom bindings, you first have to generate them from the appropriate Godot
+executable:
+
+.. code-block:: shell
+
+    godot --dump-extension-api
+
+The resulting ``extension_api.json`` file will be created in the executable's
+directory. To use these custom bindings, you can add ``custom_api_file`` to
+your build command:
+
+.. code-block:: shell
+
+    scons platform=<platform> custom_api_file=<PATH_TO_FILE>
+
+Alternatively, you can add them as the default bindings to your project by adding
+the following line to your SConstruct file:
+
+.. code-block:: python
+
+    localEnv["custom_api_file"] = "extension_api.json"
