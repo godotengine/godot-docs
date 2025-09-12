@@ -73,3 +73,37 @@ There are two popular ways by which cross platform builds can be achieved:
 `godot-cpp-template <https://github.com/godotengine/godot-cpp-template>`__ contains an
 `example setup <https://github.com/godotengine/godot-cpp-template/tree/main/.github/workflows>`__
 for a GitHub based CI workflow.
+
+Using a custom API file
+-----------------------
+
+Every branch of godot-cpp comes with an API file (``extension_api.json``) appropriate for
+the respective Godot version (e.g. the ``4.3`` branch comes with the API file compatible
+with Godot version ``4.3`` and later).
+
+However, you may want to use a custom ``extension_api.json``, for example:
+
+* If you want to use the latest APIs from Godot ``master``.
+* If you :ref:`build Godot yourself <doc_compiling_index>` with different options than the official builds (e.g. ``disable_3d=yes`` or ``precision=double``).
+* If you want to use APIs exposed by custom modules.
+
+To use a custom API file, you first have to generate it from the appropriate Godot
+executable:
+
+.. code-block:: shell
+
+    godot --dump-extension-api
+
+The resulting ``extension_api.json`` file will be created in the executable's
+directory. To use it, you can add ``custom_api_file`` to your build command:
+
+.. code-block:: shell
+
+    scons platform=<platform> custom_api_file=<PATH_TO_FILE>
+
+Alternatively, you can add it as the default API file to your project by adding
+the following line to your SConstruct file:
+
+.. code-block:: python
+
+    localEnv["custom_api_file"] = "extension_api.json"

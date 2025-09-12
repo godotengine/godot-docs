@@ -85,4 +85,5 @@ for details.
 
 Generally speaking, if you build a custom version of Godot, you should generate an
 ``extension_api.json`` from it for your GDExtensions, because it may have some differences
-from official Godot builds.
+from official Godot builds. You can learn more about the process of using custom
+``extension_api.json`` files in the :ref:`build system section <doc_godot_cpp_build_system>`.
