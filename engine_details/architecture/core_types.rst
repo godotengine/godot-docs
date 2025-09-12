@@ -146,6 +146,7 @@ scripting API.
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |vector|              | ``std::vector``          | **Use this as the "default" vector type.** Uses copy-on-write (COW) semantics.        |
 |                       |                          | This means it's generally slower but can be copied around almost for free.            |
+|                       |                          | Use ``LocalVector`` instead where COW isn't needed and performance matters.           |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |hash_set|            | ``std::unordered_set``   | **Use this as the "default" set type.**                                               |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
@@ -156,8 +157,9 @@ scripting API.
 | |string_name| 📜      | ``std::string``          | Uses string interning for fast comparisons. Use this for static strings that are      |
 |                       |                          | referenced frequently and used in multiple locations in the engine.                   |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
-| |local_vector|        | ``std::vector``          | Closer to ``std::vector`` in semantics. In most situations, ``Vector`` should be      |
-|                       |                          | preferred.                                                                            |
+| |local_vector|        | ``std::vector``          | Closer to ``std::vector`` in semantics, doesn't use copy-on-write (COW) thus it's     |
+|                       |                          | faster than ``Vector``. Prefer it over ``Vector`` when copying it cheaply             |
+|                       |                          | is not needed.                                                                        |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |array| 📜            | ``std::vector``          | Values can be of any Variant type. No static typing is imposed.                       |
 |                       |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
