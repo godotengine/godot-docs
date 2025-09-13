@@ -68,7 +68,7 @@ author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
-version = os.getenv("READTHEDOCS_VERSION", "latest")
+version = os.getenv("READTHEDOCS_VERSION", "4.4")
 # The full version, including alpha/beta/rc tags
 release = version
 
@@ -161,7 +161,7 @@ html_context = {
     "display_github": not is_i18n,  # Integrate GitHub
     "github_user": "godotengine",  # Username
     "github_repo": "godot-docs",  # Repo name
-    "github_version": "master",  # Version
+    "github_version": "master",  # Version for Edit on GitHub - keep `master` for 4.x branches
     "conf_py_path": "/",  # Path in the checkout to the docs root
     "godot_docs_title": supported_languages[language],
     "godot_docs_basepath": "https://docs.godotengine.org/",
