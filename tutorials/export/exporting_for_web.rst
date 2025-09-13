@@ -453,6 +453,46 @@ the export menu.
    * - Encryption / Encryption Key
      - ``GODOT_SCRIPT_ENCRYPTION_KEY``
 
+.. _doc_exporting_for_web_troubleshooting:
+
+Troubleshooting
+---------------
+
+Running the export locally shows another project instead
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you use one-click deploy in multiple projects, you may notice that one
+of the projects you've previously deployed is shown instead of the project
+you're currently working on. This is due to service worker caching which
+currently lacks an automated cache busting mechanism.
+
+As a workaround, you can manually unregister the current service worker
+so that the cache is reset. This also allows a new service worker to be registered.
+In Chromium-based browsers, open the Developer Tools by pressing
+:kbd:`F12` or :kbd:`Ctrl + Shift + I` (:kbd:`Cmd + Option + I` on macOS),
+then click on the Application tab in DevTools (it may be hidden behind a chevron
+icon if the devtools pane is narrow). You can either check
+:button:`Update on reload` and reload the page, or click :button:`Unregister`
+next to the service worker that is currently registered, then reload the page.
+
+.. figure:: img/exporting_for_web_reset_unregister_service_worker_chromium.webp
+   :align: center
+   :alt: Unregistering the service worker in Chromium-based browsers' DevTools
+
+   Unregistering the service worker in Chromium-based browsers' DevTools
+
+The procedure is similar in Firefox. Open developer tools by pressing
+:kbd:`F12` or :kbd:`Ctrl + Shift + I` (:kbd:`Cmd + Option + I` on macOS),
+click on the Application tab in DevTools (it may be hidden behind a chevron
+icon if the devtools pane is narrow). Click :button:`Unregister` next to the
+service worker that is currently registered, then reload the page.
+
+.. figure:: img/exporting_for_web_reset_unregister_service_worker_firefox.webp
+   :align: center
+   :alt: Unregistering the service worker in Firefox's DevTools
+
+   Unregistering the service worker in Firefox's DevTools
+
 Export options
 --------------
 
