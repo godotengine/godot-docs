@@ -1,6 +1,6 @@
 :allow_comments: False
 
-Godot Docs – *4.4* branch
+Godot Docs – *4.5* branch
 =========================
 
 .. only:: not i18n
