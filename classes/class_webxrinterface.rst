@@ -448,7 +448,7 @@ If a user's browser or device doesn't support one of the given features, initial
 
 This doesn't have any effect on the interface when already initialized.
 
-Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__, or include other features like ``"hand-tracking"`` to enable hand tracking.
+See the MDN documentation on `WebXR's session features <https://developer.mozilla.org/en-US/docs/Web/API/XRSystem/requestSession#session_features>`__ for a list of possible values.
 
 .. rst-class:: classref-item-separator
 
@@ -512,7 +512,7 @@ If a user's browser or device doesn't support one of the given features, initial
 
 This doesn't have any effect on the interface when already initialized.
 
-Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__, or include other features like ``"hand-tracking"`` to enable hand tracking.
+See the MDN documentation on `WebXR's session features <https://developer.mozilla.org/en-US/docs/Web/API/XRSystem/requestSession#session_features>`__ for a list of possible values.
 
 .. rst-class:: classref-item-separator
 
