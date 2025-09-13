@@ -190,6 +190,17 @@ Behavior changes
 
 In 4.5 some behavior changes have been introduced, which might require you to adjust your project.
 
+3D Model Import
+~~~~~~~~~~~~~~~
+
+A fix has been made to the 3D model importers to correctly handle non-joint nodes within a skeleton hierarchy (`GH-104184`_).
+To preserve compatibility, the default behavior is to import existing files with the same behavior as before (`GH-107352`_).
+New ``.gltf``, ``.glb``, ``.blend``, and ``.fbx`` files (without a corresponding ``.import`` file)
+will be imported with the new behavior. However, for existing files, if you want to use the
+new behavior, you must change the "Naming Version" option at the bottom of the Import dock:
+
+.. image:: img/gltf_naming_version.webp
+
 Core
 ~~~~
 
@@ -240,6 +251,7 @@ Text
 .. _GH-103869: https://github.com/godotengine/godot/pull/103869
 .. _GH-103941: https://github.com/godotengine/godot/pull/103941
 .. _GH-104087: https://github.com/godotengine/godot/pull/104087
+.. _GH-104184: https://github.com/godotengine/godot/pull/104184
 .. _GH-104269: https://github.com/godotengine/godot/pull/104269
 .. _GH-104872: https://github.com/godotengine/godot/pull/104872
 .. _GH-104890: https://github.com/godotengine/godot/pull/104890
@@ -251,6 +263,7 @@ Text
 .. _GH-106300: https://github.com/godotengine/godot/pull/106300
 .. _GH-106848: https://github.com/godotengine/godot/pull/106848
 .. _GH-107347: https://github.com/godotengine/godot/pull/107347
+.. _GH-107352: https://github.com/godotengine/godot/pull/107352
 .. _GH-107618: https://github.com/godotengine/godot/pull/107618
 .. _GH-108041: https://github.com/godotengine/godot/pull/108041
 .. _GH-108825: https://github.com/godotengine/godot/pull/108825
