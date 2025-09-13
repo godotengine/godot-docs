@@ -114,44 +114,9 @@ through the :ref:`JavaScriptBridge <class_JavaScriptBridge>` singleton.)
 File logging
 ------------
 
-By default, Godot writes log files in ``user://logs/godot.log`` on desktop
-platforms. You can change this location by modifying the
-``debug/file_logging/log_path`` project setting. Logs are rotated to keep older
-files available for inspection. Each session creates a new log file, with the
-old file renamed to contain the date at which it was rotated. Up to 5 log files
-are kept by default, which can be adjusted using the
-``debug/file_logging/max_log_files`` project setting.
+.. seealso::
 
-File logging can also be disabled completely using the
-``debug/file_logging/enable_file_logging`` project setting.
-
-When the project crashes, crash logs are written to the same file as the log
-file. The crash log will only contain a usable backtrace if the binary that was
-run contains debugging symbols, or if it can find a debug symbols file that
-matches the binary. Official binaries don't provide debugging symbols, so this
-requires a custom build to work. See
-:ref:`Debugging symbols <doc_introduction_to_the_buildsystem_debugging_symbols>`.
-for guidance on compiling binaries with debugging symbols enabled.
-
-.. note::
-
-    Log files for :ref:`print<class_@GlobalScope_method_print>`
-    statements are updated when standard output is *flushed* by the engine.
-    Standard output is flushed on every print in debug builds only. In projects that
-    are exported in release mode, standard output is only flushed when the project exits
-    or crashes to improve performance, especially if the project is often printing
-    text to standard output.
-
-    On the other hand, the standard error stream
-    (used by :ref:`printerr<class_@GlobalScope_method_printerr>`,
-    :ref:`push_error<class_@GlobalScope_method_push_error>` and
-    :ref:`push_warning<class_@GlobalScope_method_push_warning>`) is always
-    flushed on every print, even in projects exported in release mode.
-
-    For some use cases like dedicated servers, it can be preferred to have release
-    builds always flush stdout on print, so that logging services like journald can
-    collect logs while the process is running. This can be done by enabling
-    ``application/run/flush_stdout_on_print`` in the Project Settings.
+    Documentation on file logging has been moved to :ref:`doc_logging`.
 
 Converting paths to absolute paths or "local" paths
 ---------------------------------------------------
