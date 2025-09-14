@@ -47,6 +47,8 @@ is controlled by the **Run > Output > Always Clear Output on Play** editor setti
 Additionally, you can manually clear messages by clicking the "cleaning brush" icon
 in the top-right corner of the Output panel.
 
+.. _doc_output_panel_printing_messages:
+
 Printing messages
 -----------------
 
@@ -54,6 +56,8 @@ Several methods are available to print messages:
 
 - :ref:`print() <class_@GlobalScope_method_print>`: Prints a message.
   This method accepts multiple arguments which are concatenated together upon printing.
+  This method has variants that separate arguments with tabs and spaces respectively:
+  :ref:`printt() <class_@GlobalScope_method_printt>` and :ref:`prints() <class_@GlobalScope_method_prints>`.
 - :ref:`print_rich() <class_@GlobalScope_method_print_rich>`: Same as ``print()``,
   but BBCode can be used to format the text that is printed (see below).
 - :ref:`push_error() <class_@GlobalScope_method_push_error>`: Prints an error message.
@@ -63,8 +67,36 @@ Several methods are available to print messages:
   When a warning is printed in a running project, it's displayed in the **Debugger > Errors**
   tab instead.
 
+For more complex use cases, these can be used:
+
+- :ref:`print_verbose() <class_@GlobalScope_method_print_verbose>`: Same as ``print()``,
+  but only prints when verbose mode is enabled in the Project Settings
+  or the project is run with the ``--verbose`` command line argument.
+- :ref:`printerr() <class_@GlobalScope_method_printerr>`: Same as ``print()``,
+  but prints to the standard error stream instead of the standard output string.
+  ``push_error()`` should be preferred in most cases.
+- :ref:`printraw() <class_@GlobalScope_method_printraw>`: Same as ``print()``,
+  but prints without a blank line at the end. This is the only method
+  that does **not** print to the editor Output panel.
+  It prints to the standard output stream *only*, which means it's still included
+  in file logging.
+- :ref:`print_stack() <class_@GDScript_method_print_stack>`: Print a stack trace
+  from the current location. Only supported when running from the editor,
+  or when the project is exported in debug mode.
+- :ref:`print_tree() <class_Node_method_print_tree>`: Prints the scene tree
+  relative to the current node. Useful for debugging node structures created at runtime.
+- :ref:`print_tree_pretty() <class_Node_method_print_tree_pretty>`: Same as
+  ``print_tree()``, but with Unicode characters for a more tree-like appearance. This relies on
+  `box-drawing characters <https://en.wikipedia.org/wiki/Box-drawing_characters>`__,
+  so it may not render correctly with all fonts.
+
 To get more advanced formatting capabilities, consider using
 :ref:`doc_gdscript_printf` along with the above printing functions.
+
+.. seealso::
+
+    The engine's logging facilities are covered in the :ref:`logging <doc_logging>`
+    documentation.
 
 .. _doc_output_panel_printing_rich_text:
 
@@ -85,9 +117,5 @@ same colors as they would in the project.
 
 .. note::
 
-    ANSI escape code support varies across terminal emulators. On Windows, only
-    Windows 10 and later can display ANSI escape codes in its default terminal
-    application.
-
-    The exact colors displayed in terminal output also depend on the terminal
-    theme chosen by the user.
+    ANSI escape code support varies across terminal emulators. The exact colors
+    displayed in terminal output also depend on the terminal theme chosen by the user.
