@@ -108,7 +108,7 @@ Crash backtraces
 When the project crashes, a crash backtrace is printed to the standard error stream. This is what
 it can look like in a build with debug symbols:
 
-::
+.. code-block:: none
 
     ================================================================
     handle_crash: Program crashed with signal 4
@@ -135,7 +135,7 @@ it can look like in a build with debug symbols:
 
 On the other hand, without debug symbols, it will look like this instead:
 
-::
+.. code-block:: none
 
     ================================================================
     handle_crash: Program crashed with signal 4
@@ -256,7 +256,7 @@ or :ref:`push_warning() <class_@GlobalScope_method_push_warning>` in
 as the original message. This message is not available in the custom logger,
 which is what prevents infinite recursion from occurring:
 
-::
+.. code-block:: none
 
     While attempting to print a message, another message was printed:
     ...
