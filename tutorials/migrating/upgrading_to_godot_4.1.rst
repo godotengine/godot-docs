@@ -195,7 +195,7 @@ Method ``create_action`` adds a new ``backward_undo_ops`` optional parameter    
 Behavior changes
 ----------------
 
-In 4.1 some behavior changes have been introduced, which might require you to adjust your project.
+In 4.1, some behavior changes have been introduced, which might require you to adjust your project.
 
 ==================================================================================================================================================================================================  ===========
 Change                                                                                                                                                                                              Introduced
