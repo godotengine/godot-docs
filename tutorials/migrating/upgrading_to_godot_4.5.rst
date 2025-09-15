@@ -188,7 +188,7 @@ Method ``_get_option_icon`` changes return type from ``ImageTexture`` to ``Textu
 Behavior changes
 ----------------
 
-In 4.5 some behavior changes have been introduced, which might require you to adjust your project.
+In 4.5, some behavior changes have been introduced, which might require you to adjust your project.
 
 TileMapLayer
 ~~~~~~~~~~~~
@@ -215,6 +215,16 @@ new behavior, you must change the "Naming Version" option at the bottom of the I
 
 Core
 ~~~~
+
+.. note::
+
+    :ref:`Resource.duplicate(true) <class_Resource_method_duplicate>` (which performs
+    deep duplication) now only duplicates resources internal to the resource file
+    it's called on. In 4.4, this duplicated everything instead, including external resources.
+    If you were deep-duplicating a resource that contained references to other
+    external resources, those external resources aren't duplicated anymore. You must call
+    :ref:`Resource.duplicate_deep(RESOURCE_DEEP_DUPLICATE_ALL) <class_Resource_method_duplicate_deep>`
+    instead to keep the old behavior.
 
 .. note::
 
