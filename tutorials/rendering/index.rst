@@ -17,4 +17,5 @@ Rendering
    multiple_resolutions
    jitter_stutter
    compositor
+   drawable_textures
    hdr_output

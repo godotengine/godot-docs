@@ -118,7 +118,8 @@ Here are the available types:
 * :ref:`canvas_item <doc_canvas_item_shader>` for 2D rendering.
 * :ref:`particles <doc_particle_shader>` for particle systems.
 * :ref:`sky <doc_sky_shader>` to render :ref:`Skies <class_Sky>`.
-* :ref:`fog <doc_fog_shader>` to render :ref:`FogVolumes <class_FogVolume>`
+* :ref:`fog <doc_fog_shader>` to render :ref:`FogVolumes <class_FogVolume>`.
+* :ref:`texture_blit <doc_texture_blit_shader>` to render :ref:`DrawableTexture2Ds <class_DrawableTexture2D>`.
 
 Render modes
 ------------
