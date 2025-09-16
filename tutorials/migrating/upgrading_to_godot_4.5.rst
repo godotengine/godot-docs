@@ -190,6 +190,18 @@ Behavior changes
 
 In 4.5 some behavior changes have been introduced, which might require you to adjust your project.
 
+TileMapLayer
+~~~~~~~~~~~~
+
+:ref:`TileMapLayer.get_coords_for_body_rid() <class_TileMapLayer_method_get_coords_for_body_rid>`
+will return different values in 4.5 compared to 4.4,
+as TileMapLayer physics chunking is enabled by default. Higher values of
+:ref:`TileMapLayer.physics_quadrant_size <class_TileMapLayer_property_physics_quadrant_size>`
+will make this function less precise. To get the exact cell coordinates like in 4.4 and prior
+versions, you need to set
+:ref:`TileMapLayer.physics_quadrant_size <class_TileMapLayer_property_physics_quadrant_size>`
+to ``1``, which disables physics chunking.
+
 3D Model Import
 ~~~~~~~~~~~~~~~
 
