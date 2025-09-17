@@ -50,7 +50,7 @@ def parse_command_line_args():
         "-f",
         "--file",
         metavar="file",
-        default="redirects.csv",
+        default="../../_static/redirects.csv",
         type=str,
         help="Path to a CSV file used to keep a list of redirects, containing two columns: source and destination.",
     )

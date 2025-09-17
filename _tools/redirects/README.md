@@ -21,19 +21,26 @@ To interact with the Read the Docs API, a valid API key must be set as
 
 ## Usage
 
-Let's say we recently renamed some files in the Git branch `3.4` (compared to the `stable` branch), and now we want to create redirects for these.
-For this, we would (after setting up the API token and requirements, see Setup above):
+Let's say we recently renamed some files in the Git branch `3.4` (compared to the `stable` branch),
+and now we want to create redirects for these. For this, we would (after setting up the API token
+and requirements, see Setup above):
 
-> python convert_git_renames_to_csv.py stable 3.4
+```
+python convert_git_renames_to_csv.py stable 3.4
+```
 
 This should output a list of the redirects to create. Let's append these to the redirects file:
 
-> python convert_git_renames_to_csv.py stable 3.4 >> redirects.csv
+```
+python convert_git_renames_to_csv.py stable 3.4 >> ../../_tools/redirects.csv
+```
 
-After this, redirects for renamed files should have been appended to `redirects.csv`. You may want to double-check that!
-Now let's submit these to ReadTheDocs and create redirects there:
+After this, redirects for renamed files should have been appended to `../../_tools/redirects.csv`.
+You may want to double-check that! Now let's submit these to ReadTheDocs and create redirects there:
 
-> python create_redirects.py
+```
+python create_redirects.py
+```
 
 And that should be it!
 
