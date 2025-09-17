@@ -64,7 +64,7 @@ Method ``instance_set_interpolated`` removed                                    
 .. note::
 
     In C#, the enum ``RenderingDevice.Features`` breaks compatibility because of the way the bindings generator
-    detects the enum prefix. New members where added to the enum in `GH-103941`_ that caused the enum member
+    detects the enum prefix. New members were added to the enum in `GH-103941`_ that caused the enum member
     ``Address`` to be renamed to ``BufferDeviceAddress``.
 
 GLTF
