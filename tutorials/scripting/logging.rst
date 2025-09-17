@@ -225,6 +225,8 @@ Here is a minimal working example of a custom logger, with the script added as a
         func _log_message(message: String, error: bool) -> void:
             # Do something with `message`.
             # `error` is `true` for messages printed to the standard error stream (stderr) with `print_error()`.
+            # Note that this method will be called from threads other than the main thread, possibly at the same
+            # time, so you will need to have some kind of thread-safety as part of it, like a Mutex.
             pass
 
         func _log_error(
@@ -239,6 +241,8 @@ Here is a minimal working example of a custom logger, with the script added as a
         ) -> void:
             # Do something with the error. The error text is in `rationale`.
             # See the Logger class reference for details on other parameters.
+            # Note that this method will be called from threads other than the main thread, possibly at the same
+            # time, so you will need to have some kind of thread-safety as part of it, like a Mutex.
             pass
 
     # Use `_init()` to initialize the logger as early as possible, which ensures that messages
