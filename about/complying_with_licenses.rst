@@ -44,7 +44,7 @@ text somewhere in your game or derivative project.
 
 This text reads as follows:
 
-::
+.. code-block:: none
 
     This game uses Godot Engine, available under the following license:
 
