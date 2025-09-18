@@ -43,6 +43,8 @@ Method ``set_scope`` replaced by ``set_method`` optional parameter              
 **Node**
 Method ``get_rpc_config`` renamed to ``get_node_rpc_config``                                                              |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-106848`_
 Method ``set_name`` changes ``name`` parameter type from ``String`` to ``StringName``                                     |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-76560`_
+**Logger**
+New built-in class ``Logger`` introduced.                                                                                 |❌|                 |❌|                  |❌|                  `GH-91006`_
 ========================================================================================================================  ===================  ====================  ====================  ============
 
 Rendering
