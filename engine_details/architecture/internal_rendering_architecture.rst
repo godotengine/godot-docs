@@ -300,7 +300,7 @@ This diagram represents the structure of rendering classes in Godot, including t
 
 .. image:: img/rendering_architecture_diagram.webp
 
-`View at full size <https://raw.githubusercontent.com/godotengine/godot-docs/master/contributing/development/core_and_modules/img/rendering_architecture_diagram.webp>`__
+`View at full size <https://raw.githubusercontent.com/godotengine/godot-docs/master/engine_details/architecture/img/rendering_architecture_diagram.webp>`__
 
 .. _doc_internal_rendering_architecture_core_shaders:
 
