@@ -206,6 +206,17 @@ Core
 
 .. note::
 
+    :ref:`ProjectSettings.add_property_info() <class_ProjectSettings_method_add_property_info>`
+    now prints a warning when the dictionary parameter has missing keys or invalid keys.
+    Most importantly, it will now warn when a ``usage`` key is passed, as this key is not used.
+    This was also the case before 4.5, but it was silently ignored instead.
+    As a reminder, to set property usage information correctly, you must use
+    :ref:`ProjectSettings.set_as_basic() <class_ProjectSettings_method_set_as_basic>`,
+    :ref:`ProjectSettings.set_restart_if_changed() <class_ProjectSettings_method_set_restart_if_changed>`,
+    or :ref:`ProjectSettings.set_as_internal() <class_ProjectSettings_method_set_as_internal>` instead.
+
+.. note::
+
     In C#, ``StringExtensions.PathJoin`` now avoids adding an extra path separator when the original string is empty,
     or when the appended path starts with a path separator (`GH-105281`_).
 
