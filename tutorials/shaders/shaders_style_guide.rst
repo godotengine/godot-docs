@@ -377,6 +377,44 @@ the console, extra indentation should **not** be added within ``#if``,
         #endif
     }
 
+Applying formatting automatically
+---------------------------------
+
+To automatically format shader files, you can use
+`clang-format <https://clang.llvm.org/docs/ClangFormat.html>`__ on one or several
+``.gdshader`` files, as the syntax is close enough to a C-style language.
+
+However, the default style in clang-format doesn't follow this style guide,
+so you need to save this file as ``.clang-format`` in your project's root folder:
+
+.. code-block:: yaml
+
+    BasedOnStyle: LLVM
+    AlignAfterOpenBracket: DontAlign
+    AlignOperands: DontAlign
+    AlignTrailingComments:
+    Kind: Never
+    OverEmptyLines: 0
+    AllowAllParametersOfDeclarationOnNextLine: false
+    AllowShortFunctionsOnASingleLine: Inline
+    BreakConstructorInitializers: AfterColon
+    ColumnLimit: 0
+    ContinuationIndentWidth: 8
+    IndentCaseLabels: true
+    IndentWidth: 4
+    InsertBraces: true
+    KeepEmptyLinesAtTheStartOfBlocks: false
+    RemoveSemicolon: true
+    SpacesInLineCommentPrefix:
+    Minimum: 0 # We want a minimum of 1 for comments, but allow 0 for disabled code.
+    Maximum: -1
+    TabWidth: 4
+    UseTab: Always
+
+While in the project root, you can then call ``clang-format -i path/to/shader.gdshader``
+in a terminal to format a single shader file, or ``clang-format -i path/to/folder/*.gdshader``
+to format all shaders in a folder.
+
 Code order
 ----------
 
