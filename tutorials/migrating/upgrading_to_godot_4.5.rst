@@ -231,6 +231,25 @@ Core
     the shortest arc between the two input vectors. Previously, it would return incorrect values for certain inputs
     (`GH-107618`_).
 
+Navigation
+~~~~~~~~~~
+
+.. note::
+
+    By default, the regions in a NavigationServer map now update asynchronously using threads to improve performance.
+    This can cause additional delay in the update due to thread synchronisation.
+    The asynchronous region update can be toggled with the ``navigation/world/region_use_async_iterations`` project setting.
+
+.. note::
+    The merging of navmeshes in the NavigationServer has changed processing order. Regions now merge and cache
+    internal navmeshes first, then the remaining free edges are merged by the navigation map.
+    If a project had navigation map synchronisation errors before, it might now have shifted
+    affected edges, making already existing errors in a layout more noticeable in the pathfinding.
+    The ``navigation/2d_or_3d/merge_rasterizer_cell_scale`` project setting can be set to a lower value
+    to increase the detail of the rasterization grid (with `0.01` being the smallest cell size possible).
+    If edge merge errors still persist with the lowest possible rasterization scale value,
+    the error may be caused by overlap: two navmeshes are stacked on top of each other, causing geometry conflict.
+
 Physics
 ~~~~~~~
 
