@@ -121,6 +121,8 @@ Positive floating-point infinity. This is the result of floating-point division 
 
 ----
 
+.. rst-class:: classref-descriptions-group
+
 Annotations
 -----------
 

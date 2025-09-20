@@ -4924,7 +4924,7 @@ If ``true``, subwindows are embedded in the main window (this is also called sin
 
 If ``false``, subwindows are created as separate windows (this is also called multi-window mode). This allows them to be moved outside the main window and use native operating system window decorations.
 
-This is equivalent to :ref:`EditorSettings.interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` in the editor, except the setting's value is inverted.
+This is equivalent to :ref:`EditorSettings.interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` in the editor.
 
 .. rst-class:: classref-item-separator
 

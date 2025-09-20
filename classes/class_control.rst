@@ -2521,7 +2521,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
 
 
-\ **Example:** Usa a scene instance as a tooltip:
+\ **Example:** Use a scene instance as a tooltip:
 
 
 .. tabs::

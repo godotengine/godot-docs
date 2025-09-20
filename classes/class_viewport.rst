@@ -1930,6 +1930,8 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 
 If ``true``, the viewport should render its background as transparent.
 
+\ **Note:** Due to technical limitations, certain rendering features are disabled when a viewport has a transparent background. This currently applies to screen-space reflections, subsurface scattering, and depth of field.
+
 .. rst-class:: classref-item-separator
 
 ----

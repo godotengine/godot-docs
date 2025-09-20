@@ -515,6 +515,8 @@ The light's color in the nonlinear sRGB color space. An *overbright* color can b
 
 The light will affect objects in the selected layers.
 
+\ **Note:** The light cull mask is ignored by :ref:`VoxelGI<class_VoxelGI>`, SDFGI, :ref:`LightmapGI<class_LightmapGI>`, and volumetric fog. These will always render lights in a way that ignores the cull mask. See also :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>`.
+
 .. rst-class:: classref-item-separator
 
 ----
