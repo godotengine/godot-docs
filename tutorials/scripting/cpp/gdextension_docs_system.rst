@@ -85,7 +85,7 @@ You can set text as bold, italic, underlined, colored, codeblocks etc. by embedd
 
     [b]this text will be shown as bold[/b]
 
-Currently they supported tags for the GDExtension documentation system are:
+Currently, the supported tags for the GDExtension documentation system are:
 
 .. list-table::
   :class: wrap-normal
