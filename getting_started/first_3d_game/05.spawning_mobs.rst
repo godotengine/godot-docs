@@ -335,8 +335,8 @@ Here is the complete ``main.gd`` script so far, for reference.
         }
     }
 
-You can test the scene by pressing :kbd:`F6`. You should see the monsters spawn and
-move in a straight line.
+You can test the scene by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS). You should see
+the monsters spawn and move in a straight line.
 
 |image25|
 
