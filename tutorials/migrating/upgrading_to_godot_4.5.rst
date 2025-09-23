@@ -39,7 +39,7 @@ Core
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
 ========================================================================================================================  ===================  ====================  ====================  ============
 **JSONRPC**
-Method ``set_scope`` replaced by ``set_method`` optional parameter                                                        |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-104890`_
+Method ``set_scope`` replaced by ``set_method``                                                                           |❌|                 |❌ with stub|        |❌ with stub|        `GH-104890`_
 **Node**
 Method ``get_rpc_config`` renamed to ``get_node_rpc_config``                                                              |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-106848`_
 Method ``set_name`` changes ``name`` parameter type from ``String`` to ``StringName``                                     |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-76560`_
@@ -293,6 +293,7 @@ Text
     to the same value you were passing as ``size_in_percent``.
 
 .. |❌| replace:: :abbr:`❌ (This API breaks compatibility.)`
+.. |❌ with stub| replace:: :abbr:`❌ (Stub compatibility methods were added to prevent crashes. However, this API is not functional anymore.)`
 .. |✔️| replace:: :abbr:`✔️ (This API does not break compatibility.)`
 .. |✔️ with compat| replace:: :abbr:`✔️ (This API does not break compatibility. A compatibility method was added.)`
 
