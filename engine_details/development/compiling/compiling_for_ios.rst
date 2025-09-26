@@ -74,6 +74,14 @@ The MoltenVK static ``.xcframework`` folder must also be placed in the
 ``ios_xcode`` folder once it has been created. MoltenVK is always statically
 linked on iOS; there is no dynamic linking option available, unlike macOS.
 
+.. warning::
+
+    Compiling for the iOS simulator is currently not supported as per
+    `GH-102149 <https://github.com/godotengine/godot/issues/102149>`__.
+
+    Apple Silicon Macs can run iOS apps natively, so you can run exported iOS projects
+    directly on an Apple Silicon Mac without needing the iOS simulator.
+
 Run
 ---
 
