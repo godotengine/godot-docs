@@ -18,7 +18,7 @@ Usage
 If the inspector dock is visible, clicking on a node in the scene tree will automatically
 display its properties.
 If it is not visible, you can show it by navigating to
-**Editor > Editor Settings > Editor Docks > Inspector**.
+**Editor > Editor Docks > Inspector**.
 
 At the top of the dock are the file and navigation buttons.
 
