@@ -1,4 +1,3 @@
-
 // Handle page scroll and adjust sidebar accordingly.
 
 // Each page has two scrolls: the main scroll, which is moving the content of the page;
@@ -298,6 +297,37 @@ const registerGiscus = function () {
 };
 
 $(document).ready(() => {
+  const httpResponseStatus = window.performance.getEntries()[0].responseStatus;
+  if (httpResponseStatus === 404) {
+    // Check for redirects if on a currently invalid page.
+    // This is done in JavaScript, as Read the Docs' own redirect functionality
+    // is unreliable with large amounts of redirects defined.
+    fetch("https://raw.githubusercontent.com/godotengine/godot-docs/refs/heads/master/_tools/redirects/redirects.csv")
+      .then(response => response.text())
+      .then(csvText => {
+        const lines = csvText.trim().split('\n');
+        const redirects = {};
+        for (const line of lines) {
+          if (!line.trim()) {
+            continue;
+          }
+          const [from, to] = line.split(',').map(s => s.trim());
+          if (from && to) {
+            redirects[from] = to;
+          }
+        }
+
+        if (redirects.hasOwnProperty(window.location.pathname)) {
+          const newUrl = window.location.href.replace(window.location.pathname, redirects[window.location.pathname]);
+          console.log(`Redirecting to: ${newUrl}`);
+          window.location.replace(newUrl);
+        }
+      })
+      .catch(err => {
+        console.error("Couldn't fetch redirects list:", err);
+      });
+  }
+
   // Remove the search match highlights from the page, and adjust the URL in the
   // navigation history.
   const url = new URL(location.href);
