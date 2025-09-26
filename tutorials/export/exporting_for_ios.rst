@@ -57,6 +57,15 @@ When the export completes, the output folder should look like this:
 
 .. image:: img/ios_export_output.webp
 
+
+.. warning::
+
+    Exporting for the iOS simulator is currently not supported as per
+    `GH-102149 <https://github.com/godotengine/godot/issues/102149>`__.
+
+    Apple Silicon Macs can run iOS apps natively, so you can run exported iOS projects
+    directly on an Apple Silicon Mac without needing the iOS simulator.
+
 Opening **exported_xcode_project_name.xcodeproj** lets you build and deploy
 like any other iOS app.
 
