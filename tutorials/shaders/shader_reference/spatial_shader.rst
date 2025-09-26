@@ -192,7 +192,9 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in vec3 **NODE_POSITION_VIEW**         | Node position, in view space.                          |
 +----------------------------------------+--------------------------------------------------------+
-| in vec3 **CAMERA_POSITION_WORLD**      | Camera position, in world space.                       |
+| in vec3 **CAMERA_POSITION_WORLD**      | Camera position, in world space. Represents the        |
+|                                        | midpoint of the two eyes when in multiview/stereo      |
+|                                        | rendering.                                             |
 +----------------------------------------+--------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera direction, in world space.                      |
 +----------------------------------------+--------------------------------------------------------+
@@ -210,8 +212,8 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in int **VIEW_RIGHT**                  | Constant for right eye, always ``1``.                  |
 +----------------------------------------+--------------------------------------------------------+
-| in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered.            |
-|                                        | Only applicable for multiview rendering.               |
+| in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered, in view    |
+|                                        | space. Only applicable for multiview rendering.        |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec3 **VERTEX**                  | Position of the vertex, in model space.                |
 |                                        | In world space if ``world_vertex_coords`` is used.     |
@@ -322,7 +324,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **NODE_POSITION_VIEW**         | Node position, in view space.                                                                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **CAMERA_POSITION_WORLD**      | Camera position, in world space.                                                                 |
+| in vec3 **CAMERA_POSITION_WORLD**      | Camera position, in world space. Represents the midpoint of the two eyes when in                 |
+|                                        | multiview/stereo rendering.                                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera direction, in world space.                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -343,7 +346,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in int **VIEW_RIGHT**                  | Constant for right eye, always ``1``.                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered. Only applicable for multiview rendering.             |
+| in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered, in view space. Only applicable for multiview         |
+|                                        | rendering.                                                                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | sampler2D **SCREEN_TEXTURE**           | Removed in Godot 4. Use a ``sampler2D`` with ``hint_screen_texture`` instead.                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
