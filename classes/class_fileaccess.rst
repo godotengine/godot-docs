@@ -246,7 +246,7 @@ Opens the file for read operations. The file cursor is positioned at the beginni
 
 :ref:`ModeFlags<enum_FileAccess_ModeFlags>` **WRITE** = ``2``
 
-Opens the file for write operations. The file is created if it does not exist, and truncated if it does.
+Opens the file for write operations. If the file exists, it is truncated to zero length and its contents are cleared. Otherwise, it is created.
 
 \ **Note:** When creating a file it must be in an already existing directory. To recursively create directories for a file path, see :ref:`DirAccess.make_dir_recursive()<class_DirAccess_method_make_dir_recursive>`.
 
@@ -264,7 +264,7 @@ Opens the file for read and write operations. Does not truncate the file. The fi
 
 :ref:`ModeFlags<enum_FileAccess_ModeFlags>` **WRITE_READ** = ``7``
 
-Opens the file for read and write operations. The file is created if it does not exist, and truncated if it does. The file cursor is positioned at the beginning of the file.
+Opens the file for read and write operations. If the file exists, it is truncated to zero length and its contents are cleared. Otherwise, it is created. The file cursor is positioned at the beginning of the file.
 
 \ **Note:** When creating a file it must be in an already existing directory. To recursively create directories for a file path, see :ref:`DirAccess.make_dir_recursive()<class_DirAccess_method_make_dir_recursive>`.
 

@@ -261,7 +261,7 @@ OpenGL texture format ``RG`` with two components and a bitdepth of 8 for each.
 
 OpenGL texture format ``RGB`` with three components, each with a bitdepth of 8.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_RGBA8:
 
@@ -271,7 +271,7 @@ OpenGL texture format ``RGB`` with three components, each with a bitdepth of 8.
 
 OpenGL texture format ``RGBA`` with four components, each with a bitdepth of 8.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_RGBA4444:
 
@@ -369,7 +369,7 @@ A special OpenGL texture format where the three color components have 9 bits of 
 
 The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format that uses Block Compression 1, and is the smallest variation of S3TC, only providing 1 bit of alpha and color data being premultiplied with alpha.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_DXT3:
 
@@ -379,7 +379,7 @@ The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture form
 
 The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format that uses Block Compression 2, and color data is interpreted as not having been premultiplied by alpha. Well suited for images with sharp alpha transitions between translucent and opaque areas.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_DXT5:
 
@@ -389,7 +389,7 @@ The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture form
 
 The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format also known as Block Compression 3 or BC3 that contains 64 bits of alpha channel data followed by 64 bits of DXT1-encoded color data. Color data is not premultiplied by alpha, same as DXT3. DXT5 generally produces superior results for transparent gradients compared to DXT3.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_RGTC_R:
 
@@ -415,7 +415,7 @@ Texture format that uses `Red Green Texture Compression <https://www.khronos.org
 
 Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`__ compression with unsigned normalized RGBA components.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_BPTC_RGBF:
 
@@ -481,7 +481,7 @@ Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture
 
 `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGB8`` variant), which is a follow-up of ETC1 and compresses RGB888 data.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_ETC2_RGBA8:
 
@@ -491,7 +491,7 @@ Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture
 
 `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGBA8``\ variant), which compresses RGBA8888 data with full alpha support.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_ETC2_RGB8A1:
 
@@ -501,7 +501,7 @@ Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture
 
 `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGB8_PUNCHTHROUGH_ALPHA1`` variant), which compresses RGBA data to make alpha either fully transparent or fully opaque.
 
-\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, a nonlinear sRGB to linear encoding conversion is performed.
 
 .. _class_Image_constant_FORMAT_ETC2_RA_AS_RG:
 
@@ -551,11 +551,99 @@ Same format as :ref:`FORMAT_ASTC_4x4<class_Image_constant_FORMAT_ASTC_4x4>`, but
 
 Same format as :ref:`FORMAT_ASTC_8x8<class_Image_constant_FORMAT_ASTC_8x8>`, but with the hint to let the GPU know it is used for HDR.
 
+.. _class_Image_constant_FORMAT_R16:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_R16** = ``39``
+
+OpenGL texture format ``GL_R16`` where there's one component, a 16-bit unsigned normalized integer value. Since the value is normalized, each component is clamped between ``0.0`` and ``1.0`` (inclusive).
+
+\ **Note:** Due to limited hardware support, it is mainly recommended to be used on desktop or console devices. It may be unsupported on mobile or web, and will consequently be converted to :ref:`FORMAT_RF<class_Image_constant_FORMAT_RF>`.
+
+.. _class_Image_constant_FORMAT_RG16:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_RG16** = ``40``
+
+OpenGL texture format ``GL_RG16`` where there are two components, each a 16-bit unsigned normalized integer value. Since the value is normalized, each component is clamped between ``0.0`` and ``1.0`` (inclusive).
+
+\ **Note:** Due to limited hardware support, it is mainly recommended to be used on desktop or console devices. It may be unsupported on mobile or web, and will consequently be converted to :ref:`FORMAT_RGF<class_Image_constant_FORMAT_RGF>`.
+
+.. _class_Image_constant_FORMAT_RGB16:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_RGB16** = ``41``
+
+OpenGL texture format ``GL_RGB16`` where there are three components, each a 16-bit unsigned normalized integer value. Since the value is normalized, each component is clamped between ``0.0`` and ``1.0`` (inclusive).
+
+\ **Note:** Due to limited hardware support, it is mainly recommended to be used on desktop or console devices. It may be unsupported on mobile or web, and will consequently be converted to :ref:`FORMAT_RGBF<class_Image_constant_FORMAT_RGBF>`.
+
+.. _class_Image_constant_FORMAT_RGBA16:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_RGBA16** = ``42``
+
+OpenGL texture format ``GL_RGBA16`` where there are four components, each a 16-bit unsigned normalized integer value. Since the value is normalized, each component is clamped between ``0.0`` and ``1.0`` (inclusive).
+
+\ **Note:** Due to limited hardware support, it is mainly recommended to be used on desktop or console devices. It may be unsupported on mobile or web, and will consequently be converted to :ref:`FORMAT_RGBAF<class_Image_constant_FORMAT_RGBAF>`.
+
+.. _class_Image_constant_FORMAT_R16I:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_R16I** = ``43``
+
+OpenGL texture format ``GL_R16UI`` where there's one component, a 16-bit unsigned integer value. Each component is clamped between ``0`` and ``65535`` (inclusive).
+
+\ **Note:** When used in a shader, the texture requires usage of ``usampler`` samplers. Additionally, it only supports nearest-neighbor filtering under the Compatibility renderer.
+
+\ **Note:** When sampling using :ref:`get_pixel()<class_Image_method_get_pixel>`, returned :ref:`Color<class_Color>`\ s have to be divided by ``65535`` to get the correct color value.
+
+.. _class_Image_constant_FORMAT_RG16I:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_RG16I** = ``44``
+
+OpenGL texture format ``GL_RG16UI`` where there are two components, each a 16-bit unsigned integer value. Each component is clamped between ``0`` and ``65535`` (inclusive).
+
+\ **Note:** When used in a shader, the texture requires usage of ``usampler`` samplers. Additionally, it only supports nearest-neighbor filtering under the Compatibility renderer.
+
+\ **Note:** When sampling using :ref:`get_pixel()<class_Image_method_get_pixel>`, returned :ref:`Color<class_Color>`\ s have to be divided by ``65535`` to get the correct color value.
+
+.. _class_Image_constant_FORMAT_RGB16I:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_RGB16I** = ``45``
+
+OpenGL texture format ``GL_RGB16UI`` where there are three components, each a 16-bit unsigned integer value. Each component is clamped between ``0`` and ``65535`` (inclusive).
+
+\ **Note:** When used in a shader, the texture requires usage of ``usampler`` samplers. Additionally, it only supports nearest-neighbor filtering under the Compatibility renderer.
+
+\ **Note:** When sampling using :ref:`get_pixel()<class_Image_method_get_pixel>`, returned :ref:`Color<class_Color>`\ s have to be divided by ``65535`` to get the correct color value.
+
+.. _class_Image_constant_FORMAT_RGBA16I:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_RGBA16I** = ``46``
+
+OpenGL texture format ``GL_RGBA16UI`` where there are four components, each a 16-bit unsigned integer value. Each component is clamped between ``0`` and ``65535`` (inclusive).
+
+\ **Note:** When used in a shader, the texture requires usage of ``usampler`` samplers. Additionally, it only supports nearest-neighbor filtering under the Compatibility renderer.
+
+\ **Note:** When sampling using :ref:`get_pixel()<class_Image_method_get_pixel>`, returned :ref:`Color<class_Color>`\ s have to be divided by ``65535`` to get the correct color value.
+
 .. _class_Image_constant_FORMAT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Format<enum_Image_Format>` **FORMAT_MAX** = ``39``
+:ref:`Format<enum_Image_Format>` **FORMAT_MAX** = ``47``
 
 Represents the size of the :ref:`Format<enum_Image_Format>` enum.
 
@@ -633,7 +721,7 @@ enum **AlphaMode**: :ref:`🔗<enum_Image_AlphaMode>`
 
 :ref:`AlphaMode<enum_Image_AlphaMode>` **ALPHA_NONE** = ``0``
 
-Image does not have alpha.
+Image is fully opaque. It does not store alpha data.
 
 .. _class_Image_constant_ALPHA_BIT:
 
@@ -641,7 +729,7 @@ Image does not have alpha.
 
 :ref:`AlphaMode<enum_Image_AlphaMode>` **ALPHA_BIT** = ``1``
 
-Image stores alpha in a single bit.
+Image stores either fully opaque or fully transparent pixels. Also known as punchthrough alpha.
 
 .. _class_Image_constant_ALPHA_BLEND:
 
@@ -649,7 +737,7 @@ Image stores alpha in a single bit.
 
 :ref:`AlphaMode<enum_Image_AlphaMode>` **ALPHA_BLEND** = ``2``
 
-Image uses alpha.
+Image stores alpha data with values varying between ``0.0`` and ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -791,7 +879,7 @@ Source texture (before compression) is a regular texture. Default for all textur
 
 :ref:`CompressSource<enum_Image_CompressSource>` **COMPRESS_SOURCE_SRGB** = ``1``
 
-Source texture (before compression) is in sRGB space.
+Source texture (before compression) uses nonlinear sRGB encoding.
 
 .. _class_Image_constant_COMPRESS_SOURCE_NORMAL:
 
@@ -1398,7 +1486,7 @@ Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``f
 
 |void| **linear_to_srgb**\ (\ ) :ref:`🔗<class_Image_method_linear_to_srgb>`
 
-Converts the entire image from the linear colorspace to the sRGB colorspace. Only works on images with :ref:`FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` or :ref:`FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` formats.
+Converts the entire image from linear encoding to nonlinear sRGB encoding by using a lookup table. Only works on images with :ref:`FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` or :ref:`FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` formats.
 
 .. rst-class:: classref-item-separator
 
@@ -1612,7 +1700,7 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 
 :ref:`Image<class_Image>` **rgbe_to_srgb**\ (\ ) :ref:`🔗<class_Image_method_rgbe_to_srgb>`
 
-Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
+Converts a standard linear RGBE (Red Green Blue Exponent) image to an image that uses nonlinear sRGB encoding.
 
 .. rst-class:: classref-item-separator
 
@@ -1878,7 +1966,9 @@ Shrinks the image by a factor of 2 on each axis (this divides the pixel count by
 
 |void| **srgb_to_linear**\ (\ ) :ref:`🔗<class_Image_method_srgb_to_linear>`
 
-Converts the raw data from the sRGB colorspace to a linear scale. Only works on images with :ref:`FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` or :ref:`FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` formats.
+Converts the raw data from nonlinear sRGB encoding to linear encoding using a lookup table. Only works on images with :ref:`FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` or :ref:`FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` formats.
+
+\ **Note:** The 8-bit formats required by this method are not suitable for storing linearly encoded values; a significant amount of color information will be lost in darker values. To maintain image quality, this method should not be used.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

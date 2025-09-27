@@ -1025,7 +1025,7 @@ Set ``ALBEDO`` to the per-vertex color specified in the mesh.
 
 :ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_SRGB_VERTEX_COLOR** = ``2``
 
-Vertex colors are considered to be stored in sRGB color space and are converted to linear color space during rendering. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
+Vertex colors are considered to be stored in nonlinear sRGB encoding and are converted to linear encoding during rendering. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
 
 \ **Note:** Only effective when using the Forward+ and Mobile rendering methods.
 
@@ -1107,7 +1107,7 @@ Use ``UV2`` coordinates to look up from the :ref:`emission_texture<class_BaseMat
 
 :ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = ``12``
 
-Forces the shader to convert albedo from sRGB space to linear space. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
+Forces the shader to convert albedo from nonlinear sRGB encoding to linear encoding. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
 
 .. _class_BaseMaterial3D_constant_FLAG_DONT_RECEIVE_SHADOWS:
 
@@ -1659,7 +1659,7 @@ If the texture appears unexpectedly too dark or too bright, check :ref:`albedo_t
 - |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
-If ``true``, forces a conversion of the :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>` from sRGB color space to linear color space. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
+If ``true``, forces a conversion of the :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>` from nonlinear sRGB encoding to linear encoding. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
 
 This should only be enabled when needed (typically when using a :ref:`ViewportTexture<class_ViewportTexture>` as :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>`). If :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>` is ``true`` when it shouldn't be, the texture will appear to be too dark. If :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>` is ``false`` when it shouldn't be, the texture will appear to be too bright.
 
@@ -3437,6 +3437,8 @@ The stencil reference value (0-255). Typically a power of 2.
 
 If ``true``, subsurface scattering is enabled. Emulates light that penetrates an object's surface, is scattered, and then emerges. Subsurface scattering quality is controlled by :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_quality<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_quality>`.
 
+\ **Note:** Subsurface scattering is not supported on viewports that have a transparent background (where :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` is ``true``).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3885,7 +3887,7 @@ If ``true``, triplanar mapping for ``UV2`` is calculated in world space rather t
 - |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
-If ``true``, vertex colors are considered to be stored in sRGB color space and are converted to linear color space during rendering. If ``false``, vertex colors are considered to be stored in linear color space and are rendered as-is. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
+If ``true``, vertex colors are considered to be stored in nonlinear sRGB encoding and are converted to linear encoding during rendering. If ``false``, vertex colors are considered to be stored in linear encoding and are rendered as-is. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
 
 \ **Note:** Only effective when using the Forward+ and Mobile rendering methods, not Compatibility.
 

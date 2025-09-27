@@ -1930,6 +1930,8 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 
 If ``true``, the viewport should render its background as transparent.
 
+\ **Note:** Due to technical limitations, certain rendering features are disabled when a viewport has a transparent background. This currently applies to screen-space reflections, subsurface scattering, and depth of field.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1968,9 +1970,9 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<cla
 
 If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an ``RGBA16`` framebuffer. When using the Mobile renderer, it will be an ``RGB10_A2`` framebuffer.
 
-Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen).
+Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
 
-Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
+Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color encoding adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
 .. rst-class:: classref-item-separator
 
@@ -2354,7 +2356,7 @@ Returns the viewport's texture.
 
 
 
-\ **Note:** When :ref:`use_hdr_2d<class_Viewport_property_use_hdr_2d>` is ``true`` the returned texture will be an HDR image encoded in linear space.
+\ **Note:** When :ref:`use_hdr_2d<class_Viewport_property_use_hdr_2d>` is ``true`` the returned texture will be an HDR image using linear encoding.
 
 .. rst-class:: classref-item-separator
 
