@@ -21,7 +21,7 @@ Initialize the plugin
 
 To use the ``GodotGooglePlayBilling`` API:
 
-1. Access the ``BillingClient`` autoload singleton, it's automatically added when the plugin is enabled.
+1. Access the ``BillingClient``.
 2. Connect to its signals to receive billing results.
 3. Call ``start_connection``.
 
@@ -29,17 +29,19 @@ Initialization example:
 
 ::
 
+    var billing_client: BillingClient
     func _ready():
-        BillingClient.connected.connect(_on_connected) # No params
-        BillingClient.disconnected.connect(_on_disconnected) # No params
-        BillingClient.connect_error.connect(_on_connect_error) # response_code: int, debug_message: String
-        BillingClient.query_product_details_response.connect(_on_query_product_details_response) # response: Dictionary
-        BillingClient.query_purchases_response.connect(_on_query_purchases_response) # response: Dictionary
-        BillingClient.on_purchase_updated.connect(_on_purchase_updated) # response: Dictionary
-        BillingClient.consume_purchase_response.connect(_on_consume_purchase_response) # response: Dictionary
-        BillingClient.acknowledge_purchase_response.connect(_on_acknowledge_purchase_response) # response: Dictionary
+        billing_client = BillingClient.new()
+        billing_client.connected.connect(_on_connected) # No params
+        billing_client.disconnected.connect(_on_disconnected) # No params
+        billing_client.connect_error.connect(_on_connect_error) # response_code: int, debug_message: String
+        billing_client.query_product_details_response.connect(_on_query_product_details_response) # response: Dictionary
+        billing_client.query_purchases_response.connect(_on_query_purchases_response) # response: Dictionary
+        billing_client.on_purchase_updated.connect(_on_purchase_updated) # response: Dictionary
+        billing_client.consume_purchase_response.connect(_on_consume_purchase_response) # response: Dictionary
+        billing_client.acknowledge_purchase_response.connect(_on_acknowledge_purchase_response) # response: Dictionary
 
-        BillingClient.start_connection()
+        billing_client.start_connection()
 
 The API must be in a connected state prior to use. The ``connected`` signal is sent
 when the connection process succeeds. You can also use ``is_ready()`` to determine if the plugin
@@ -76,12 +78,12 @@ Example use of ``query_product_details()``:
 ::
 
     func _on_connected():
-      BillingClient.query_product_details(["my_iap_item"], BillingClient.ProductType.INAPP) # BillingClient.ProductType.SUBS for subscriptions.
+      billing_client.query_product_details(["my_iap_item"], BillingClient.ProductType.INAPP) # BillingClient.ProductType.SUBS for subscriptions.
 
     func _on_query_product_details_response(query_result: Dictionary):
         if query_result.response_code == BillingClient.BillingResponseCode.OK:
             print("Product details query success")
-            for available_product in query_result.result_array:
+            for available_product in query_result.product_details:
                 print(available_product)
         else:
             print("Product details query failed")
@@ -105,12 +107,12 @@ Example use of ``query_purchases()``:
 ::
 
     func _query_purchases():
-        BillingClient.query_purchases(BillingClient.ProductType.INAPP) # Or BillingClient.ProductType.SUBS for subscriptions.
+        billing_client.query_purchases(BillingClient.ProductType.INAPP) # Or BillingClient.ProductType.SUBS for subscriptions.
 
     func _on_query_purchases_response(query_result: Dictionary):
         if query_result.response_code == BillingClient.BillingResponseCode.OK:
             print("Purchase query success")
-            for purchase in query_result.result_array:
+            for purchase in query_result.purchases:
                 _process_purchase(purchase)
         else:
             print("Purchase query failed")
@@ -120,9 +122,8 @@ Example use of ``query_purchases()``:
 Purchase an item
 ~~~~~~~~~~~~~~~~
 
-To launch the billing flow for an item:
-- Use ``purchase()`` for in-app products, passing the product ID string.
-- Use ``purchase_subscription()`` for subscriptions, passing the product ID and base plan ID. You may also optionally provide an offer ID.
+To launch the billing flow for an item: Use ``purchase()`` for in-app products, passing the product ID string.
+Use ``purchase_subscription()`` for subscriptions, passing the product ID and base plan ID. You may also optionally provide an offer ID.
 
 For both ``purchase()`` and ``purchase_subscription()``, you can optionally pass a boolean to indicate whether
 offers are `personallised <https://developer.android.com/google/play/billing/integrate#personalized-price>`_
@@ -136,7 +137,7 @@ Example use of ``purchase()``:
 
 ::
 
-    var result = BillingClient.purchase("my_iap_item")
+    var result = billing_client.purchase("my_iap_item")
     if result.response_code == BillingClient.BillingResponseCode.OK:
         print("Billing flow launch success")
     else:
@@ -151,7 +152,7 @@ The result of the purchase will be sent through the ``on_purchases_updated`` sig
     func _on_purchases_updated(result: Dictionary):
         if result.response_code == BillingClient.BillingResponseCode.OK:
             print("Purchase update received")
-            for purchase in result.result_array:
+            for purchase in result.purchases:
                 _process_purchase(purchase)
         else:
             print("Purchase update error")
@@ -229,7 +230,7 @@ Example use of ``consume_purchase()``:
         if "my_consumable_iap_item" in purchase.product_ids and purchase.purchase_state == BillingClient.PurchaseState.PURCHASED:
             # Add code to store payment so we can reconcile the purchase token
             # in the completion callback against the original purchase
-            BillingClient.consume_purchase(purchase.purchase_token)
+            billing_client.consume_purchase(purchase.purchase_token)
 
     func _on_consume_purchase_response(result: Dictionary):
         if result.response_code == BillingClient.BillingResponseCode.OK:
@@ -265,7 +266,7 @@ Example use of ``acknowledge_purchase()``:
                 not purchase.is_acknowledged:
             # Add code to store payment so we can reconcile the purchase token
             # in the completion callback against the original purchase
-            BillingClient.acknowledge_purchase(purchase.purchase_token)
+            billing_client.acknowledge_purchase(purchase.purchase_token)
 
     func _on_acknowledge_purchase_response(result: Dictionary):
         if result.response_code == BillingClient.BillingResponseCode.OK:
@@ -342,6 +343,6 @@ Example use of ``update_subscription``:
 
 ::
 
-    BillingClient.update_subscription(_active_subscription_purchase.purchase_token, \
+    billing_client.update_subscription(_active_subscription_purchase.purchase_token, \
                         BillingClient.ReplacementMode.WITH_TIME_PRORATION, "new_sub_product_id", "base_plan_id")
 
