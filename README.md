@@ -19,11 +19,13 @@ the ZIP archive then open the `RedotEngine.epub` file in an e-book reader applic
 ## Migrating
 
 We are transitioning from Godot to Redot. In this period, a temporary solution is available.
+
 ```
 python migrate.py . _migrated True
 ```
 
 After the docs are converted, you can build with
+
 ```
 sphinx-build -b html ./_migrated/ _build/html
 ```
@@ -54,9 +56,31 @@ Here are some quick links to the areas you might be interested in:
 5. [Building the manual](https://docs.redotengine.org/contributing/documentation/building_the_manual.html)
 6. [Translating the documentation](https://docs.redotengine.org/contributing/documentation/editor_and_docs_localization.html)
 
+### How to build with anaconda/miniconda
+
+```
+# 1) create env with Python 3.11
+conda create -n redot-docs python=3.11 -y
+
+# 2) activate it
+conda activate redot-docs
+
+# 3) ensure pip is available (usually is)
+conda install pip -y
+
+# 4) from the repo root, install requirements via pip
+python -m pip install -r requirements.txt
+
+# 5) Migration
+python migrate.py . _migrated True
+
+# 6) build the docs
+sphinx-build -b html ./_migrated/ _build/html
+```
+
 ## License
 
-With the exception of the `classes/` folder, all the content of this repository is licensed under the Creative Commons Attribution 
+With the exception of the `classes/` folder, all the content of this repository is licensed under the Creative Commons Attribution
 3.0 Unported license ([CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)) and is to be attributed to "the Redot community, modified from an original work by Juan Linietsky, Ariel Manzur and the Godot community".
 See [LICENSE.txt](/LICENSE.txt) for details.
 

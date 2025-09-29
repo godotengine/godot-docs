@@ -208,6 +208,7 @@ html_logo = "img/docs_logo.svg"
 html_static_path = ["_static"]
 
 html_extra_path = ["robots.txt"]
+html_extra_path = ["sitemap.xml"]
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (e.g. https://...)
