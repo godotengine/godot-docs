@@ -238,7 +238,7 @@ with triangles.
 A rectangle is formed by two triangles sharing four vertices. For our example, we will create
 a rectangle with its top left point at ``(0, 0, 0)`` with a width and length of one as shown below:
 
-.. image:: img/array_mesh_rectangle_as_triangles.png
+.. image:: img/array_mesh_rectangle_as_triangles.webp
   :scale: 33%
   :alt: A rectangle made of two triangles sharing four vertices.
 
