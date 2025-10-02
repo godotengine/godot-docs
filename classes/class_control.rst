@@ -2230,7 +2230,7 @@ The tooltip popup will use either a default implementation, or a custom one that
     styleBox.SetBgColor(new Color(1, 1, 0));
     styleBox.SetBorderWidthAll(2);
     // We assume here that the `Theme` property has been assigned a custom Theme beforehand.
-    Theme.SetStyleBox("panel", "TooltipPanel", styleBox);
+    Theme.SetStylebox("panel", "TooltipPanel", styleBox);
     Theme.SetColor("font_color", "TooltipLabel", new Color(0, 1, 1));
 
 
