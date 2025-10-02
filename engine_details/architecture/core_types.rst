@@ -142,7 +142,7 @@ scripting API.
 | Godot datatype        | Closest C++ STL datatype | Comment                                                                               |
 +=======================+==========================+=======================================================================================+
 | |string| 📜           | ``std::string``          | **Use this as the "default" string type.** ``String`` uses UTF-32 encoding            |
-|                       |                          | to improve performance thanks to its fixed character size.                            |
+|                       |                          | to simplify processing thanks to its fixed character size.                            |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |vector|              | ``std::vector``          | **Use this as the "default" vector type.** Uses copy-on-write (COW) semantics.        |
 |                       |                          | This means it's generally slower but can be copied around almost for free.            |
@@ -180,8 +180,10 @@ scripting API.
 |                       |                          | no heap allocations.                                                                  |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |span|                | ``std::span``            | Represents read-only access to a contiguous array without needing to copy any data.   |
-|                       |                          | See `pull request description <https://github.com/godotengine/godot/pull/100293>`__   |
-|                       |                          | for details.                                                                          |
+|                       |                          | Note that ``Span`` is designed to be a high performance API: It does not perform      |
+|                       |                          | parameter correctness checks in the same way you might be used to with other Godot    |
+|                       |                          | containers. Use with care.                                                            |
+|                       |                          | `Span` can be constructed from most array-like containers (e.g. ``vector.span()``).   |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |rb_set|              | ``std::set``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black_tree>`__              |
 |                       |                          | for faster access.                                                                    |
@@ -195,8 +197,9 @@ scripting API.
 |                       |                          | Use this map type when either of these affordances are needed. Use ``AHashMap``       |
 |                       |                          | otherwise.                                                                            |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
-| |rb_map|              | ``std::map``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black-tree>`__              |
-|                       |                          | for faster access.                                                                    |
+| |rb_map|              | ``std::map``             | Map type that uses a                                                                  |
+|                       |                          | `red-black tree <https://en.wikipedia.org/wiki/Red-black-tree>`__ to find keys.       |
+|                       |                          | The performance benefits of ``RBMap`` aren't established, so prefer using other types.|
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |dictionary| 📜       | ``std::unordered_map``   | Keys and values can be of any Variant type. No static typing is imposed.              |
 |                       |                          | Uses shared reference counting, similar to ``std::shared_ptr``.                       |
@@ -204,7 +207,8 @@ scripting API.
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |typed_dictionary| 📜 | ``std::unordered_map``   | Subclass of ``Dictionary`` but with static typing for its keys and values.            |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
-| |pair|                | ``std::pair``            | Stores a single key-value pair.                                                       |
+| |pair|                | ``std::pair``            | Stores a single pair. See also ``KeyValue`` in the same file, which uses read-only    |
+|                       |                          | keys.                                                                                 |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 
 .. |string| replace:: `String <https://github.com/godotengine/godot/blob/master/core/string/ustring.h>`__
@@ -214,8 +218,8 @@ scripting API.
 .. |string_name| replace:: `StringName <https://github.com/godotengine/godot/blob/master/core/string/string_name.h>`__
 .. |local_vector| replace:: `LocalVector <https://github.com/godotengine/godot/blob/master/core/templates/local_vector.h>`__
 .. |array| replace:: `Array <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
-.. |typed_array| replace:: `TypedArray <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
-.. |packed_array| replace:: `Packed*Array <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
+.. |typed_array| replace:: `TypedArray <https://github.com/godotengine/godot/blob/master/core/variant/typed_array.h>`__
+.. |packed_array| replace:: `Packed*Array <https://github.com/godotengine/godot/blob/master/core/variant/variant.h>`__
 .. |list| replace:: `List <https://github.com/godotengine/godot/blob/master/core/templates/list.h>`__
 .. |fixed_vector| replace:: `FixedVector <https://github.com/godotengine/godot/blob/master/core/templates/fixed_vector.h>`__
 .. |span| replace:: `Span <https://github.com/godotengine/godot/blob/master/core/templates/span.h>`__
@@ -224,7 +228,7 @@ scripting API.
 .. |a_hash_map| replace:: `AHashMap <https://github.com/godotengine/godot/blob/master/core/templates/a_hash_map.h>`__
 .. |rb_map| replace:: `RBMap <https://github.com/godotengine/godot/blob/master/core/templates/rb_map.h>`__
 .. |dictionary| replace:: `Dictionary <https://github.com/godotengine/godot/blob/master/core/variant/dictionary.h>`__
-.. |typed_dictionary| replace:: `TypedDictionary <https://github.com/godotengine/godot/blob/master/core/variant/dictionary.h>`__
+.. |typed_dictionary| replace:: `TypedDictionary <https://github.com/godotengine/godot/blob/master/core/variant/typed_dictionary.h>`__
 .. |pair| replace:: `Pair <https://github.com/godotengine/godot/blob/master/core/templates/pair.h>`__
 
 Math types

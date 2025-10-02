@@ -39,7 +39,7 @@ Core
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
 ========================================================================================================================  ===================  ====================  ====================  ============
 **JSONRPC**
-Method ``set_scope`` replaced by ``set_method`` optional parameter                                                        |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-104890`_
+Method ``set_scope`` replaced by ``set_method``                                                                           |❌|                 |❌ with stub|        |❌ with stub|        `GH-104890`_
 **Node**
 Method ``get_rpc_config`` renamed to ``get_node_rpc_config``                                                              |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-106848`_
 Method ``set_name`` changes ``name`` parameter type from ``String`` to ``StringName``                                     |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-76560`_
@@ -64,7 +64,7 @@ Method ``instance_set_interpolated`` removed                                    
 .. note::
 
     In C#, the enum ``RenderingDevice.Features`` breaks compatibility because of the way the bindings generator
-    detects the enum prefix. New members where added to the enum in `GH-103941`_ that caused the enum member
+    detects the enum prefix. New members were added to the enum in `GH-103941`_ that caused the enum member
     ``Address`` to be renamed to ``BufferDeviceAddress``.
 
 GLTF
@@ -188,7 +188,19 @@ Method ``_get_option_icon`` changes return type from ``ImageTexture`` to ``Textu
 Behavior changes
 ----------------
 
-In 4.5 some behavior changes have been introduced, which might require you to adjust your project.
+In 4.5, some behavior changes have been introduced, which might require you to adjust your project.
+
+TileMapLayer
+~~~~~~~~~~~~
+
+:ref:`TileMapLayer.get_coords_for_body_rid() <class_TileMapLayer_method_get_coords_for_body_rid>`
+will return different values in 4.5 compared to 4.4,
+as TileMapLayer physics chunking is enabled by default. Higher values of
+:ref:`TileMapLayer.physics_quadrant_size <class_TileMapLayer_property_physics_quadrant_size>`
+will make this function less precise. To get the exact cell coordinates like in 4.4 and prior
+versions, you need to set
+:ref:`TileMapLayer.physics_quadrant_size <class_TileMapLayer_property_physics_quadrant_size>`
+to ``1``, which disables physics chunking.
 
 3D Model Import
 ~~~~~~~~~~~~~~~
@@ -206,6 +218,27 @@ Core
 
 .. note::
 
+    :ref:`Resource.duplicate(true) <class_Resource_method_duplicate>` (which performs
+    deep duplication) now only duplicates resources internal to the resource file
+    it's called on. In 4.4, this duplicated everything instead, including external resources.
+    If you were deep-duplicating a resource that contained references to other
+    external resources, those external resources aren't duplicated anymore. You must call
+    :ref:`Resource.duplicate_deep(RESOURCE_DEEP_DUPLICATE_ALL) <class_Resource_method_duplicate_deep>`
+    instead to keep the old behavior.
+
+.. note::
+
+    :ref:`ProjectSettings.add_property_info() <class_ProjectSettings_method_add_property_info>`
+    now prints a warning when the dictionary parameter has missing keys or invalid keys.
+    Most importantly, it will now warn when a ``usage`` key is passed, as this key is not used.
+    This was also the case before 4.5, but it was silently ignored instead.
+    As a reminder, to set property usage information correctly, you must use
+    :ref:`ProjectSettings.set_as_basic() <class_ProjectSettings_method_set_as_basic>`,
+    :ref:`ProjectSettings.set_restart_if_changed() <class_ProjectSettings_method_set_restart_if_changed>`,
+    or :ref:`ProjectSettings.set_as_internal() <class_ProjectSettings_method_set_as_internal>` instead.
+
+.. note::
+
     In C#, ``StringExtensions.PathJoin`` now avoids adding an extra path separator when the original string is empty,
     or when the appended path starts with a path separator (`GH-105281`_).
 
@@ -219,6 +252,25 @@ Core
     In C#, the ``Quaternion(Vector3, Vector3)`` constructor now correctly creates a quaternion representing
     the shortest arc between the two input vectors. Previously, it would return incorrect values for certain inputs
     (`GH-107618`_).
+
+Navigation
+~~~~~~~~~~
+
+.. note::
+
+    By default, the regions in a NavigationServer map now update asynchronously using threads to improve performance.
+    This can cause additional delay in the update due to thread synchronisation.
+    The asynchronous region update can be toggled with the ``navigation/world/region_use_async_iterations`` project setting.
+
+.. note::
+    The merging of navmeshes in the NavigationServer has changed processing order. Regions now merge and cache
+    internal navmeshes first, then the remaining free edges are merged by the navigation map.
+    If a project had navigation map synchronisation errors before, it might now have shifted
+    affected edges, making already existing errors in a layout more noticeable in the pathfinding.
+    The ``navigation/2d_or_3d/merge_rasterizer_cell_scale`` project setting can be set to a lower value
+    to increase the detail of the rasterization grid (with `0.01` being the smallest cell size possible).
+    If edge merge errors still persist with the lowest possible rasterization scale value,
+    the error may be caused by overlap: two navmeshes are stacked on top of each other, causing geometry conflict.
 
 Physics
 ~~~~~~~
@@ -241,6 +293,7 @@ Text
     to the same value you were passing as ``size_in_percent``.
 
 .. |❌| replace:: :abbr:`❌ (This API breaks compatibility.)`
+.. |❌ with stub| replace:: :abbr:`❌ (Stub compatibility methods were added to prevent crashes. However, this API is not functional anymore.)`
 .. |✔️| replace:: :abbr:`✔️ (This API does not break compatibility.)`
 .. |✔️ with compat| replace:: :abbr:`✔️ (This API does not break compatibility. A compatibility method was added.)`
 
