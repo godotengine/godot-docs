@@ -1,4 +1,3 @@
-
 // Handle page scroll and adjust sidebar accordingly.
 
 // Each page has two scrolls: the main scroll, which is moving the content of the page;
@@ -298,6 +297,37 @@ const registerGiscus = function () {
 };
 
 $(document).ready(() => {
+  const httpResponseStatus = window.performance.getEntries()[0].responseStatus;
+  if (httpResponseStatus === 404) {
+    // Check for redirects if on a currently invalid page.
+    // This is done in JavaScript, as we exceed Read the Docs' limit for the amount of redirects configurable.
+    // When testing this feature on a local web server, replace the URL below with just `/_static/redirects.csv`.
+    fetch("/en/latest/_static/redirects.csv")
+      .then(response => response.text())
+      .then(csvText => {
+        const lines = csvText.trim().split('\n');
+        for (const line of lines) {
+          if (!line.trim()) {
+            continue;
+          }
+          const [from, to] = line.split(',').map(s => s.trim());
+          if (from && to) {
+            if (window.location.pathname.endsWith(from)) {
+              if (to.startsWith('https://')) {
+                window.location.replace(to);
+              } else {
+                const newUrl = window.location.href.replace(window.location.pathname, to);
+                window.location.replace(newUrl);
+              }
+            }
+          }
+        }
+      })
+      .catch(err => {
+        console.error("Couldn't fetch redirects list:", err);
+      });
+  }
+
   // Remove the search match highlights from the page, and adjust the URL in the
   // navigation history.
   const url = new URL(location.href);
