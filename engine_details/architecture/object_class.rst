@@ -227,12 +227,13 @@ languages). This example shows how to connect to them:
 
 .. code-block:: cpp
 
-    obj->connect(<signal>, target_instance, target_method)
-    // for example:
-    obj->connect("enter_tree", this, "_node_entered_tree")
+    // This is the function signature
+    // Error 	connect (const StringName &p_signal, const Callable &p_callable, uint32_t p_flags=0)
+    // for example
+    obj->connect("signal_name_here",callable_mp(this, &MyCustomType::method),CONNECT_DEFERRED)
 
-The method ``_node_entered_tree`` must be registered to the class using
-``ClassDB::bind_method`` (explained before).
+``callable_mp`` is a macro to create a custom callabled function pointer to member functions.
+The enum definitions for p_flags are noted at :ref:`ConnectFlags <enum_Object_ConnectFlags>`
 
 Adding signals to a class is done in ``_bind_methods``, using the
 ``ADD_SIGNAL`` macro, for example:
