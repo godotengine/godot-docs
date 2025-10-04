@@ -44,39 +44,39 @@ Methods
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                            | :ref:`_get_bar_beats<class_AudioStream_private_method__get_bar_beats>`\ (\ ) |virtual| |const|               |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                            | :ref:`_get_beat_count<class_AudioStream_private_method__get_beat_count>`\ (\ ) |virtual| |const|             |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                        | :ref:`_get_bpm<class_AudioStream_private_method__get_bpm>`\ (\ ) |virtual| |const|                           |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                        | :ref:`_get_length<class_AudioStream_private_method__get_length>`\ (\ ) |virtual| |const|                     |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_get_parameter_list<class_AudioStream_private_method__get_parameter_list>`\ (\ ) |virtual| |const|     |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                      | :ref:`_get_stream_name<class_AudioStream_private_method__get_stream_name>`\ (\ ) |virtual| |const|           |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_get_tags<class_AudioStream_private_method__get_tags>`\ (\ ) |virtual| |const|                         |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`_has_loop<class_AudioStream_private_method__has_loop>`\ (\ ) |virtual| |const|                         |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`            | :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>`\ (\ ) |virtual| |const| |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`_is_monophonic<class_AudioStream_private_method__is_monophonic>`\ (\ ) |virtual| |const|               |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`can_be_sampled<class_AudioStream_method_can_be_sampled>`\ (\ ) |const|                                 |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioSample<class_AudioSample>`                            | :ref:`generate_sample<class_AudioStream_method_generate_sample>`\ (\ ) |const|                               |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                        | :ref:`get_length<class_AudioStream_method_get_length>`\ (\ ) |const|                                         |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`            | :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>`\ (\ )                             |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`is_meta_stream<class_AudioStream_method_is_meta_stream>`\ (\ ) |const|                                 |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>`\ (\ ) |const|                                   |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`_get_bar_beats<class_AudioStream_private_method__get_bar_beats>`\ (\ ) |virtual| |const|                          |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`_get_beat_count<class_AudioStream_private_method__get_beat_count>`\ (\ ) |virtual| |const|                        |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`_get_bpm<class_AudioStream_private_method__get_bpm>`\ (\ ) |virtual| |const|                                      |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`_get_length<class_AudioStream_private_method__get_length>`\ (\ ) |virtual| |const|                                |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_get_parameter_list<class_AudioStream_private_method__get_parameter_list>`\ (\ ) |virtual| |const|                |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`_get_stream_name<class_AudioStream_private_method__get_stream_name>`\ (\ ) |virtual| |const|                      |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_get_tags<class_AudioStream_private_method__get_tags>`\ (\ ) |virtual| |const|                                    |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_has_loop<class_AudioStream_private_method__has_loop>`\ (\ ) |virtual| |const|                                    |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`            | :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>`\ (\ ) |virtual| |required| |const| |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_is_monophonic<class_AudioStream_private_method__is_monophonic>`\ (\ ) |virtual| |const|                          |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`can_be_sampled<class_AudioStream_method_can_be_sampled>`\ (\ ) |const|                                            |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioSample<class_AudioSample>`                            | :ref:`generate_sample<class_AudioStream_method_generate_sample>`\ (\ ) |const|                                          |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`get_length<class_AudioStream_method_get_length>`\ (\ ) |const|                                                    |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`            | :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>`\ (\ )                                        |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_meta_stream<class_AudioStream_method_is_meta_stream>`\ (\ ) |const|                                            |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>`\ (\ ) |const|                                              |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -210,7 +210,7 @@ Override this method to return ``true`` if this stream has a loop.
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__instantiate_playback>`
+:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_AudioStream_private_method__instantiate_playback>`
 
 Override this method to customize the returned value of :ref:`instantiate_playback()<class_AudioStream_method_instantiate_playback>`. Should return a new :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` created when the stream is played (such as by an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`).
 

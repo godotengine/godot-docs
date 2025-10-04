@@ -102,7 +102,7 @@ Applies sepia tone effect using the following formula:
 
 :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **FUNC_LINEAR_TO_SRGB** = ``4``
 
-Converts color from linear color space to sRGB color space using the following formula:
+Converts color from linear encoding to nonlinear sRGB encoding using the following formula:
 
 ::
 
@@ -123,7 +123,7 @@ The Compatibility renderer uses a simpler formula:
 
 :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **FUNC_SRGB_TO_LINEAR** = ``5``
 
-Converts color from sRGB color space to linear color space using the following formula:
+Converts color from nonlinear sRGB encoding to linear encoding using the following formula:
 
 ::
 

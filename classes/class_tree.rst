@@ -129,6 +129,8 @@ Methods
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`get_column_title_language<class_Tree_method_get_column_title_language>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                                |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`get_column_title_tooltip_text<class_Tree_method_get_column_title_tooltip_text>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                        |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_column_width<class_Tree_method_get_column_width>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                                                  |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2<class_Rect2>`                                         | :ref:`get_custom_popup_rect<class_Tree_method_get_custom_popup_rect>`\ (\ ) |const|                                                                                                                        |
@@ -176,6 +178,8 @@ Methods
    | |void|                                                            | :ref:`set_column_title_direction<class_Tree_method_set_column_title_direction>`\ (\ column\: :ref:`int<class_int>`, direction\: :ref:`TextDirection<enum_Control_TextDirection>`\ )                        |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`set_column_title_language<class_Tree_method_set_column_title_language>`\ (\ column\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ )                                                |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`set_column_title_tooltip_text<class_Tree_method_set_column_title_tooltip_text>`\ (\ column\: :ref:`int<class_int>`, tooltip_text\: :ref:`String<class_String>`\ )                                    |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`set_selected<class_Tree_method_set_selected>`\ (\ item\: :ref:`TreeItem<class_TreeItem>`, column\: :ref:`int<class_int>`\ )                                                                          |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -997,6 +1001,18 @@ Returns column title language code.
 
 ----
 
+.. _class_Tree_method_get_column_title_tooltip_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_column_title_tooltip_text**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Tree_method_get_column_title_tooltip_text>`
+
+Returns the column title's tooltip text.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Tree_method_get_column_width:
 
 .. rst-class:: classref-method
@@ -1319,6 +1335,18 @@ Sets column title base writing direction.
 |void| **set_column_title_language**\ (\ column\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Tree_method_set_column_title_language>`
 
 Sets language code of column title used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_method_set_column_title_tooltip_text:
+
+.. rst-class:: classref-method
+
+|void| **set_column_title_tooltip_text**\ (\ column\: :ref:`int<class_int>`, tooltip_text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Tree_method_set_column_title_tooltip_text>`
+
+Sets the column title's tooltip text.
 
 .. rst-class:: classref-item-separator
 

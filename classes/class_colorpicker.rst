@@ -438,7 +438,7 @@ If ``true``, shows an alpha channel slider (opacity).
 - |void| **set_edit_intensity**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_editing_intensity**\ (\ )
 
-If ``true``, shows an intensity slider. The intensity is applied as follows: multiply the color by ``2 ** intensity`` in linear RGB space, and then convert it back to sRGB.
+If ``true``, shows an intensity slider. The intensity is applied as follows: convert the color to linear encoding, multiply it by ``2 ** intensity``, and then convert it back to nonlinear sRGB encoding.
 
 .. rst-class:: classref-item-separator
 

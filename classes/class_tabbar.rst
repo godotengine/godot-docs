@@ -154,6 +154,14 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_unselected_color<class_TabBar_theme_color_font_unselected_color>` | ``Color(0.7, 0.7, 0.7, 1)``         |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_disabled_color<class_TabBar_theme_color_icon_disabled_color>`     | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_hovered_color<class_TabBar_theme_color_icon_hovered_color>`       | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_selected_color<class_TabBar_theme_color_icon_selected_color>`     | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_unselected_color<class_TabBar_theme_color_icon_unselected_color>` | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`h_separation<class_TabBar_theme_constant_h_separation>`                | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`icon_max_width<class_TabBar_theme_constant_icon_max_width>`            | ``0``                               |
@@ -1093,6 +1101,54 @@ Font color of the currently selected tab.
 :ref:`Color<class_Color>` **font_unselected_color** = ``Color(0.7, 0.7, 0.7, 1)`` :ref:`🔗<class_TabBar_theme_color_font_unselected_color>`
 
 Font color of the other, unselected tabs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_color_icon_disabled_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **icon_disabled_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TabBar_theme_color_icon_disabled_color>`
+
+Icon color of disabled tabs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_color_icon_hovered_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **icon_hovered_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TabBar_theme_color_icon_hovered_color>`
+
+Icon color of the currently hovered tab. Does not apply to the selected tab.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_color_icon_selected_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **icon_selected_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TabBar_theme_color_icon_selected_color>`
+
+Icon color of the currently selected tab.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_color_icon_unselected_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **icon_unselected_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TabBar_theme_color_icon_unselected_color>`
+
+Icon color of the other, unselected tabs.
 
 .. rst-class:: classref-item-separator
 

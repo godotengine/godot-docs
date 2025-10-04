@@ -75,7 +75,7 @@ Property Descriptions
 
 Controls how color channels should be used in the imported texture.
 
-\ **sRGB Friendly:**, prevents the RG color format from being used, as it does not support sRGB color.
+\ **sRGB Friendly:**, prevents the R and RG color formats from being used, as they do not support nonlinear sRGB encoding.
 
 \ **Optimized:**, allows the RG color format to be used if the texture does not use the blue channel. This reduces memory usage if the texture's blue channel can be discarded (all pixels must have a blue value of ``0``).
 

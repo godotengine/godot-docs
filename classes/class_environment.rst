@@ -1989,6 +1989,8 @@ If ``true``, screen-space reflections are enabled. Screen-space reflections are 
 
 \ **Note:** SSR is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
+\ **Note:** SSR is not supported on viewports that have a transparent background (where :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` is ``true``).
+
 .. rst-class:: classref-item-separator
 
 ----

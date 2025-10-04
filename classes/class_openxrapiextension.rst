@@ -420,7 +420,7 @@ Returns the name of the specified swapchain format.
 
 :ref:`int<class_int>` **get_system_id**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_get_system_id>`
 
-Returns the id of the system, which is an `XrSystemId <https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrSystemId.html>`__ cast to an integer.
+Returns the ID of the system, which is an `XrSystemId <https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrSystemId.html>`__ cast to an integer.
 
 .. rst-class:: classref-item-separator
 

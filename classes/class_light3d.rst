@@ -496,7 +496,7 @@ The light's bake mode. This will affect the global illumination techniques that 
 - |void| **set_color**\ (\ value\: :ref:`Color<class_Color>`\ )
 - :ref:`Color<class_Color>` **get_color**\ (\ )
 
-The light's color in the nonlinear sRGB color space. An *overbright* color can be used to achieve a result equivalent to increasing the light's :ref:`light_energy<class_Light3D_property_light_energy>`.
+The light's color in nonlinear sRGB encoding. An *overbright* color can be used to achieve a result equivalent to increasing the light's :ref:`light_energy<class_Light3D_property_light_energy>`.
 
 .. rst-class:: classref-item-separator
 
@@ -514,6 +514,8 @@ The light's color in the nonlinear sRGB color space. An *overbright* color can b
 - :ref:`int<class_int>` **get_cull_mask**\ (\ )
 
 The light will affect objects in the selected layers.
+
+\ **Note:** The light cull mask is ignored by :ref:`VoxelGI<class_VoxelGI>`, SDFGI, :ref:`LightmapGI<class_LightmapGI>`, and volumetric fog. These will always render lights in a way that ignores the cull mask. See also :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>`.
 
 .. rst-class:: classref-item-separator
 

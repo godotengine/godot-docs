@@ -151,7 +151,7 @@ AES electronic codebook decryption mode.
 
 :ref:`Mode<enum_AESContext_Mode>` **MODE_CBC_ENCRYPT** = ``2``
 
-AES cipher blocker chaining encryption mode.
+AES cipher block chaining encryption mode.
 
 .. _class_AESContext_constant_MODE_CBC_DECRYPT:
 
@@ -159,7 +159,7 @@ AES cipher blocker chaining encryption mode.
 
 :ref:`Mode<enum_AESContext_Mode>` **MODE_CBC_DECRYPT** = ``3``
 
-AES cipher blocker chaining decryption mode.
+AES cipher block chaining decryption mode.
 
 .. _class_AESContext_constant_MODE_MAX:
 

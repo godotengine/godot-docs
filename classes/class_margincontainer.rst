@@ -15,6 +15,8 @@ MarginContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`EditorDock<class_EditorDock>`
+
 A container that keeps a margin around its child controls.
 
 .. rst-class:: classref-introduction-group
