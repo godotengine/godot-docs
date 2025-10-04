@@ -54,11 +54,6 @@ in a way similar to C's ``sprintf()``:
     vformat("%d bugs on the wall!", 1234);
     vformat("Pi is approximately %f.", 3.1416);
 
-    // Converts the resulting String into a `const char *`.
-    // You may need to do this if passing the result as an argument
-    // to a method that expects a `const char *` instead of a String.
-    vformat("My name is %s.", "Godette").c_str();
-
 In most cases, try to use ``vformat()`` instead of string concatenation as it
 makes for more readable code.
 
