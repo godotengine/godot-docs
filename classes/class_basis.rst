@@ -377,7 +377,7 @@ Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this 
 
 - If the determinant is a negative number, the basis represents a negative scale.
 
-\ **Note:** If the basis's scale is the same for every axis, its determinant is always that scale by the power of 2.
+\ **Note:** If the basis's scale is the same for every axis, its determinant is always that scale by the power of 3.
 
 .. rst-class:: classref-item-separator
 

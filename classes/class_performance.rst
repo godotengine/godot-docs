@@ -154,7 +154,9 @@ Number of nodes currently instantiated in the scene tree. This also includes the
 
 :ref:`Monitor<enum_Performance_Monitor>` **OBJECT_ORPHAN_NODE_COUNT** = ``10``
 
-Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree. *Lower is better.*
+Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree. *Lower is better.*\ 
+
+\ **Note:** This is only available in debug mode and will always return ``0`` when used in a project exported in release mode.
 
 .. _class_Performance_constant_RENDER_TOTAL_OBJECTS_IN_FRAME:
 

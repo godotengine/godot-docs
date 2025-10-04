@@ -103,7 +103,7 @@ The type of error provided by ``error_type`` is described in the :ref:`ErrorType
 
 Additionally, ``script_backtraces`` provides backtraces for each of the script languages. These will only contain stack frames in editor builds and debug builds by default. To enable them for release builds as well, you need to enable :ref:`ProjectSettings.debug/settings/gdscript/always_track_call_stacks<class_ProjectSettings_property_debug/settings/gdscript/always_track_call_stacks>`.
 
-\ **Warning:** This function may be called from multiple different threads, so you may need to do your own locking.
+\ **Warning:** This method will be called from threads other than the main thread, possibly at the same time, so you will need to have some kind of thread-safety in your implementation of it, like a :ref:`Mutex<class_Mutex>`.
 
 \ **Note:** ``script_backtraces`` will not contain any captured variables, due to its prohibitively high cost. To get those you will need to capture the backtraces yourself, from within the **Logger** virtual methods, using :ref:`Engine.capture_script_backtraces()<class_Engine_method_capture_script_backtraces>`.
 
@@ -119,7 +119,7 @@ Additionally, ``script_backtraces`` provides backtraces for each of the script l
 
 Called when a message is logged. If ``error`` is ``true``, then this message was meant to be sent to ``stderr``.
 
-\ **Warning:** This function may be called from multiple different threads, so you may need to do your own locking.
+\ **Warning:** This method will be called from threads other than the main thread, possibly at the same time, so you will need to have some kind of thread-safety in your implementation of it, like a :ref:`Mutex<class_Mutex>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

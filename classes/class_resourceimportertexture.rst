@@ -107,7 +107,7 @@ Property Descriptions
 
 Controls how color channels should be used in the imported texture.
 
-\ **sRGB Friendly:** Prevents the RG color format from being used, as it does not support sRGB color.
+\ **sRGB Friendly:** Prevents the R and RG color formats from being used, as they do not support nonlinear sRGB encoding.
 
 \ **Optimized:** Allows the RG color format to be used if the texture does not use the blue channel. This reduces memory usage if the texture's blue channel can be discarded (all pixels must have a blue value of ``0``).
 
@@ -459,7 +459,7 @@ It's recommended to leave this enabled (as it is by default), unless this causes
 
 :ref:`bool<class_bool>` **process/hdr_as_srgb** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_process/hdr_as_srgb>`
 
-Some HDR images you can find online may be broken and contain sRGB color data (instead of linear color data). It is advised not to use those files. If you absolutely have to, enabling :ref:`process/hdr_as_srgb<class_ResourceImporterTexture_property_process/hdr_as_srgb>` will make them look correct.
+Some HDR images you can find online may be broken and contain data that is encoded using the nonlinear sRGB transfer function (instead of using linear encoding). It is advised not to use those files. If you absolutely have to, enabling :ref:`process/hdr_as_srgb<class_ResourceImporterTexture_property_process/hdr_as_srgb>` will make them look correct.
 
 \ **Warning:** Enabling :ref:`process/hdr_as_srgb<class_ResourceImporterTexture_property_process/hdr_as_srgb>` on well-formatted HDR images will cause the resulting image to look too dark, so leave this on ``false`` if unsure.
 

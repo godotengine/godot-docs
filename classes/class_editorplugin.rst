@@ -103,6 +103,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`add_debugger_plugin<class_EditorPlugin_method_add_debugger_plugin>`\ (\ script\: :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`\ )                                                                                                      |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`add_dock<class_EditorPlugin_method_add_dock>`\ (\ dock\: :ref:`EditorDock<class_EditorDock>`\ )                                                                                                                                                  |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`add_export_platform<class_EditorPlugin_method_add_export_platform>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ )                                                                                                    |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`add_export_plugin<class_EditorPlugin_method_add_export_plugin>`\ (\ plugin\: :ref:`EditorExportPlugin<class_EditorExportPlugin>`\ )                                                                                                              |
@@ -156,6 +158,8 @@ Methods
    | |void|                                                    | :ref:`remove_custom_type<class_EditorPlugin_method_remove_custom_type>`\ (\ type\: :ref:`String<class_String>`\ )                                                                                                                                      |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`remove_debugger_plugin<class_EditorPlugin_method_remove_debugger_plugin>`\ (\ script\: :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`\ )                                                                                                |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`remove_dock<class_EditorPlugin_method_remove_dock>`\ (\ dock\: :ref:`EditorDock<class_EditorDock>`\ )                                                                                                                                            |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`remove_export_platform<class_EditorPlugin_method_remove_export_platform>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ )                                                                                              |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -387,6 +391,14 @@ Tab of Project Settings dialog, to the right of other tabs.
 .. rst-class:: classref-enumeration
 
 enum **DockSlot**: :ref:`🔗<enum_EditorPlugin_DockSlot>`
+
+.. _class_EditorPlugin_constant_DOCK_SLOT_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DockSlot<enum_EditorPlugin_DockSlot>` **DOCK_SLOT_NONE** = ``-1``
+
+The dock is closed.
 
 .. _class_EditorPlugin_constant_DOCK_SLOT_LEFT_UL:
 
@@ -1141,6 +1153,8 @@ When your plugin is deactivated, make sure to remove your custom control with :r
 
 |void| **add_control_to_dock**\ (\ slot\: :ref:`DockSlot<enum_EditorPlugin_DockSlot>`, control\: :ref:`Control<class_Control>`, shortcut\: :ref:`Shortcut<class_Shortcut>` = null\ ) :ref:`🔗<class_EditorPlugin_method_add_control_to_dock>`
 
+**Deprecated:** Use :ref:`add_dock()<class_EditorPlugin_method_add_dock>` instead.
+
 Adds the control to a specific dock slot.
 
 If the dock is repositioned and as long as the plugin is active, the editor will save the dock position on further sessions.
@@ -1182,6 +1196,20 @@ During run-time, this will be a simple object with a script so this function doe
 |void| **add_debugger_plugin**\ (\ script\: :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`\ ) :ref:`🔗<class_EditorPlugin_method_add_debugger_plugin>`
 
 Adds a :ref:`Script<class_Script>` as debugger plugin to the Debugger. The script must extend :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_method_add_dock:
+
+.. rst-class:: classref-method
+
+|void| **add_dock**\ (\ dock\: :ref:`EditorDock<class_EditorDock>`\ ) :ref:`🔗<class_EditorPlugin_method_add_dock>`
+
+Adds a new dock.
+
+When your plugin is deactivated, make sure to remove your custom dock with :ref:`remove_dock()<class_EditorPlugin_method_remove_dock>` and free it with :ref:`Node.queue_free()<class_Node_method_queue_free>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1523,6 +1551,8 @@ Removes the control from the specified container. You have to manually :ref:`Nod
 
 |void| **remove_control_from_docks**\ (\ control\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_EditorPlugin_method_remove_control_from_docks>`
 
+**Deprecated:** Use :ref:`remove_dock()<class_EditorPlugin_method_remove_dock>` instead.
+
 Removes the control from the dock. You have to manually :ref:`Node.queue_free()<class_Node_method_queue_free>` the control.
 
 .. rst-class:: classref-item-separator
@@ -1548,6 +1578,18 @@ Removes a custom type added by :ref:`add_custom_type()<class_EditorPlugin_method
 |void| **remove_debugger_plugin**\ (\ script\: :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`\ ) :ref:`🔗<class_EditorPlugin_method_remove_debugger_plugin>`
 
 Removes the debugger plugin with given script from the Debugger.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_method_remove_dock:
+
+.. rst-class:: classref-method
+
+|void| **remove_dock**\ (\ dock\: :ref:`EditorDock<class_EditorDock>`\ ) :ref:`🔗<class_EditorPlugin_method_remove_dock>`
+
+Removes ``dock`` from the available docks. You should manually call :ref:`Node.queue_free()<class_Node_method_queue_free>` to free it.
 
 .. rst-class:: classref-item-separator
 
@@ -1690,6 +1732,8 @@ Removes a callback previously added by :ref:`add_undo_redo_inspector_hook_callba
 .. rst-class:: classref-method
 
 |void| **set_dock_tab_icon**\ (\ control\: :ref:`Control<class_Control>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_EditorPlugin_method_set_dock_tab_icon>`
+
+**Deprecated:** Use :ref:`EditorDock.dock_icon<class_EditorDock_property_dock_icon>` instead.
 
 Sets the tab icon for the given control in a dock slot. Setting to ``null`` removes the icon.
 

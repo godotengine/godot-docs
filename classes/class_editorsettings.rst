@@ -287,6 +287,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/animation/default_fps_mode<class_EditorSettings_property_editors/animation/default_fps_mode>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/animation/insert_at_current_time<class_EditorSettings_property_editors/animation/insert_at_current_time>`                                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/animation/onion_layers_future_color<class_EditorSettings_property_editors/animation/onion_layers_future_color>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/animation/onion_layers_past_color<class_EditorSettings_property_editors/animation/onion_layers_past_color>`                                                                                         |
@@ -298,8 +300,6 @@ Properties
    | :ref:`Color<class_Color>`                         | :ref:`editors/bone_mapper/handle_colors/set<class_EditorSettings_property_editors/bone_mapper/handle_colors/set>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/bone_mapper/handle_colors/unset<class_EditorSettings_property_editors/bone_mapper/handle_colors/unset>`                                                                                             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`editors/grid_map/palette_min_width<class_EditorSettings_property_editors/grid_map/palette_min_width>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/grid_map/pick_distance<class_EditorSettings_property_editors/grid_map/pick_distance>`                                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -548,6 +548,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/horizontal_vector2_editing<class_EditorSettings_property_interface/inspector/horizontal_vector2_editing>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/horizontal_vector_types_editing<class_EditorSettings_property_interface/inspector/horizontal_vector_types_editing>`                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`interface/inspector/integer_drag_speed<class_EditorSettings_property_interface/inspector/integer_drag_speed>`                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/inspector/max_array_dictionary_items_per_page<class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2425,6 +2427,20 @@ Default step mode for :ref:`AnimationPlayer<class_AnimationPlayer>` (seconds or 
 
 ----
 
+.. _class_EditorSettings_property_editors/animation/insert_at_current_time:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/animation/insert_at_current_time** :ref:`🔗<class_EditorSettings_property_editors/animation/insert_at_current_time>`
+
+If ``true``, animation keys and markers are inserted at the current time in the animation.
+
+If ``false``, they are inserted at the mouse cursor's position.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/animation/onion_layers_future_color:
 
 .. rst-class:: classref-property
@@ -2500,18 +2516,6 @@ The modulate color to use for "past" frames displayed in the animation editor's 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_editors/grid_map/palette_min_width:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **editors/grid_map/palette_min_width** :ref:`🔗<class_EditorSettings_property_editors/grid_map/palette_min_width>`
-
-Minimum width of GridMap's mesh palette side panel.
 
 .. rst-class:: classref-item-separator
 
@@ -4167,6 +4171,18 @@ If ``true``, :ref:`Vector2<class_Vector2>` and :ref:`Vector2i<class_Vector2i>` p
 :ref:`bool<class_bool>` **interface/inspector/horizontal_vector_types_editing** :ref:`🔗<class_EditorSettings_property_interface/inspector/horizontal_vector_types_editing>`
 
 If ``true``, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`, :ref:`Rect2<class_Rect2>`, :ref:`Rect2i<class_Rect2i>`, :ref:`Plane<class_Plane>`, and :ref:`Quaternion<class_Quaternion>` properties are shown on a single line in the inspector instead of multiple lines. This is overall more compact, but it can be harder to view and edit large values without expanding the inspector horizontally.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/inspector/integer_drag_speed:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/inspector/integer_drag_speed** :ref:`🔗<class_EditorSettings_property_interface/inspector/integer_drag_speed>`
+
+Base speed for increasing/decreasing integer values by dragging them in the inspector.
 
 .. rst-class:: classref-item-separator
 
