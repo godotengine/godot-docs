@@ -104,9 +104,9 @@ desired balance between performance and visual fidelity.
 Render modes
 ------------
 
-Subpasses allow you to do more expensive calculations at a lower resolution
-to speed up your shaders. For example the following code renders clouds at
-a lower resolution than the rest of the sky:
+In the Forward+ and Mobile renderers, subpasses allow you to do more expensive
+calculations at a lower resolution to speed up your shaders. For example, the
+following code renders clouds at a lower resolution than the rest of the sky:
 
 .. code-block:: glsl
 
@@ -126,21 +126,23 @@ a lower resolution than the rest of the sky:
         }
     }
 
-+--------------------------+-----------------------------------------------------------------------+
-| Render mode              | Description                                                           |
-+==========================+=======================================================================+
-| **use_half_res_pass**    | Allows the shader to write to and access the half resolution pass.    |
-+--------------------------+-----------------------------------------------------------------------+
-| **use_quarter_res_pass** | Allows the shader to write to and access the quarter resolution pass. |
-+--------------------------+-----------------------------------------------------------------------+
-| **disable_fog**          | If used, fog will not affect the sky.                                 |
-+--------------------------+-----------------------------------------------------------------------+
++--------------------------+---------------------------------------------------------------------------+
+| Render mode              | Description                                                               |
++==========================+===========================================================================+
+| **use_half_res_pass**    | Allows the shader to write to and access the half resolution pass.        |
+|                          | *Only available in the Forward+ and Mobile renderers, not Compatibility.* |
++--------------------------+---------------------------------------------------------------------------+
+| **use_quarter_res_pass** | Allows the shader to write to and access the quarter resolution pass.     |
+|                          | *Only available in the Forward+ and Mobile renderers, not Compatibility.* |
++--------------------------+---------------------------------------------------------------------------+
+| **disable_fog**          | If used, fog will not affect the sky.                                     |
++--------------------------+---------------------------------------------------------------------------+
 
 Built-ins
 ---------
 
-Values marked as ``in`` are read-only. Values marked as ``out`` can optionally 
-be written to and will not necessarily contain sensible values. Samplers cannot 
+Values marked as ``in`` are read-only. Values marked as ``out`` can optionally
+be written to and will not necessarily contain sensible values. Samplers cannot
 be written to so they are not marked.
 
 Global built-ins
@@ -149,7 +151,6 @@ Global built-ins
 Global built-ins are available everywhere, including in custom functions.
 
 There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, and ``LIGHT3``.
-
 
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | Built-in                        | Description                                                                                                              |
@@ -206,8 +207,10 @@ Sky built-ins
 | in vec2 **SKY_COORDS**        | Sphere UV. Used to map a panorama texture to the sky.                                           |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec4 **HALF_RES_COLOR**    | Color value of corresponding pixel from half resolution pass. Uses linear filter.               |
+|                               | *Only available in the Forward+ and Mobile renderers, not Compatibility.*                       |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec4 **QUARTER_RES_COLOR** | Color value of corresponding pixel from quarter resolution pass. Uses linear filter.            |
+|                               | *Only available in the Forward+ and Mobile renderers, not Compatibility.*                       |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | out vec3 **COLOR**            | Output color.                                                                                   |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
