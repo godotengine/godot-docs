@@ -95,6 +95,11 @@ Creating a sprite
 This is an example of how to create a sprite from code and move it using the low-level
 :ref:`CanvasItem <class_CanvasItem>` API.
 
+.. note:: When creating canvas items using the RenderingServer, you should reset physics 
+          interpolation on the first frame using 
+          :ref:`RenderingServer.canvas_item_reset_physics_interpolation(RID) <class_RenderingServer_method_canvas_item_reset_physics_interpolation>`. 
+          This ensures proper synchronization between the rendering and physics systems.
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
