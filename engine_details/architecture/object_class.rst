@@ -232,7 +232,7 @@ languages). This example shows how to connect to them:
     // for example
     obj->connect("signal_name_here",callable_mp(this, &MyCustomType::method),CONNECT_DEFERRED)
 
-``callable_mp`` is a macro to create a custom callabled function pointer to member functions.
+``callable_mp`` is a macro to create a custom callable function pointer to member functions.
 The enum definitions for p_flags are noted at :ref:`ConnectFlags <enum_Object_ConnectFlags>`
 
 Adding signals to a class is done in ``_bind_methods``, using the
