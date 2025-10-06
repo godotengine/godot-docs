@@ -228,7 +228,7 @@ languages). This example shows how to connect to them:
 .. code-block:: cpp
 
     // This is the function signature
-    // Error 	connect (const StringName &p_signal, const Callable &p_callable, uint32_t p_flags=0)
+    // Error connect(const StringName &p_signal, const Callable &p_callable, uint32_t p_flags = 0)
     // for example
     obj->connect("signal_name_here",callable_mp(this, &MyCustomType::method),CONNECT_DEFERRED)
 
