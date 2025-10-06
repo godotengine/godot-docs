@@ -233,7 +233,7 @@ languages). This example shows how to connect to them:
     obj->connect("signal_name_here", callable_mp(this, &MyCustomType::method), CONNECT_DEFERRED);
 
 ``callable_mp`` is a macro to create a custom callable function pointer to member functions.
-The enum definitions for p_flags are noted at :ref:`ConnectFlags <enum_Object_ConnectFlags>`
+For the values of ``p_flags``, see :ref:`ConnectFlags <enum_Object_ConnectFlags>`.
 
 Adding signals to a class is done in ``_bind_methods``, using the
 ``ADD_SIGNAL`` macro, for example:
