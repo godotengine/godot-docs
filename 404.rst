@@ -24,6 +24,15 @@ Page not found
     </p>
 
     <script>
+    // If we were redirected to `/en/4.x/` as a result of the RTD language selector,
+    // redirect to `/en/stable/` instead, as English does not have a `4.x` branch.
+    // (For maintenance reasons, non-English languages have a single `4.x` branch
+    // that is the counterpart of `4.3`, `4.4`, `4.5`, and so on.)
+    if (window.location.pathname.includes('/en/4.x/')) {
+      const newUrl = window.location.pathname.replace('/en/4.x/', '/en/stable/');
+      window.location.replace(newUrl);
+    }
+
     // Check for redirects if on a currently invalid page.
     // This is done in JavaScript, as we exceed Read the Docs' limit for the amount of redirects configurable.
     // When testing this feature on a local web server, replace the URL below with just `/_static/redirects.csv`.
