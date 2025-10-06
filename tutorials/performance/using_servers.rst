@@ -97,7 +97,7 @@ This is an example of how to create a sprite from code and move it using the low
 
 .. note:: When creating canvas items using the RenderingServer, you should reset physics 
           interpolation on the first frame using 
-          :ref:`RenderingServer.canvas_item_reset_physics_interpolation(RID) <class_RenderingServer_method_canvas_item_reset_physics_interpolation>`. 
+          :ref:`RenderingServer.canvas_item_reset_physics_interpolation <class_RenderingServer_method_canvas_item_reset_physics_interpolation>`.
           This ensures proper synchronization between the rendering and physics systems.
 
 .. tabs::
