@@ -271,10 +271,6 @@ movement. Let's place this code at the end of the ``_process()`` function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-        # to allow the 
-        
-
-        
         if velocity.x != 0:
             $AnimatedSprite2D.animation = "walk"
         elif velocity.y != 0:
