@@ -283,6 +283,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
     		$AnimatedSprite2D.flip_h = velocity.x < 0
     	if velocity.y != 0:
     		$AnimatedSprite2D.flip_v = velocity.y > 0
+
  .. code-tab:: csharp
 
         if (velocity.X != 0)
