@@ -1140,6 +1140,7 @@ When using per-instance uniforms, there are some restrictions you should be awar
           
           COLOR = color;
       }
+
 - There is a practical maximum limit of 16 instance uniforms per shader.
 - If your mesh uses multiple materials, the parameters for the first mesh
   material found will "win" over the subsequent ones, unless they have the same
