@@ -276,7 +276,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
         elif velocity.y != 0:
             $AnimatedSprite2D.animation = "up"
 
-        # Allow the character to flip in both directions 
+        # Allow the character to flip in both directions.
         if velocity.x != 0:
             # See the note below about the following boolean assignment.
     		$AnimatedSprite2D.flip_v = false
@@ -289,13 +289,22 @@ movement. Let's place this code at the end of the ``_process()`` function:
         if (velocity.X != 0)
         {
             animatedSprite2D.Animation = "walk";
-            animatedSprite2D.FlipV = false;
-            // See the note below about the following boolean assignment.
-            animatedSprite2D.FlipH = velocity.X < 0;
+            
         }
         else if (velocity.Y != 0)
         {
             animatedSprite2D.Animation = "up";
+        }
+        
+        # Allow the character to flip in both directions.
+        if (velocity.X != 0)
+        {
+            animatedSprite2D.FlipV = false;
+            // See the note below about the following boolean assignment.
+            animatedSprite2D.FlipH = velocity.X < 0;
+        }
+        if (velocity.Y != 0)
+        {
             animatedSprite2D.FlipV = velocity.Y > 0;
         }
 
