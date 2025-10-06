@@ -227,9 +227,11 @@ languages). This example shows how to connect to them:
 
 .. code-block:: cpp
 
-    // This is the function signature
+    // This is the function signature:
+    //
     // Error connect(const StringName &p_signal, const Callable &p_callable, uint32_t p_flags = 0)
-    // for example
+    //
+    // For example:
     obj->connect("signal_name_here", callable_mp(this, &MyCustomType::method), CONNECT_DEFERRED);
 
 ``callable_mp`` is a macro to create a custom callable function pointer to member functions.
