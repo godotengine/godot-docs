@@ -253,8 +253,8 @@ Color given as red-green-blue value (alpha will always be 1). See :ref:`@export_
 Nodes
 -----
 
-Since Godot 4.0, nodes can be directly exported as properties in a script
-without having to use NodePaths:
+Nodes can also be directly exported as properties in a script without
+having to use NodePaths:
 
 ::
 

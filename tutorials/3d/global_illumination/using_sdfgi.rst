@@ -4,7 +4,7 @@ Signed distance field global illumination (SDFGI)
 =================================================
 
 Signed distance field global illumination (SDFGI) is a novel technique available
-in Godot 4.0. It provides semi-real-time global illumination that scales to any
+in Godot. It provides semi-real-time global illumination that scales to any
 world size and works with procedurally generated levels.
 
 SDFGI supports dynamic lights, but *not* dynamic occluders or dynamic emissive surfaces.

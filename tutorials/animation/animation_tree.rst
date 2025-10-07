@@ -12,14 +12,13 @@ function calling, audio, and sub-animation tracks.
 
 However, the support for blending those animations via ``AnimationPlayer`` is limited, as you can only set a fixed cross-fade transition time.
 
-:ref:`AnimationTree <class_AnimationTree>` is a new node introduced in Godot 3.1 to deal with advanced transitions.
-It replaces the ancient ``AnimationTreePlayer``, while adding a huge amount of features and flexibility.
+:ref:`AnimationTree <class_AnimationTree>` is a node designed to deal with advanced transitions.
 
 AnimationTree and AnimationPlayer
 ---------------------------------
 
 Before starting, know that an ``AnimationTree`` node does not contain its own animations.
-Instead, it uses animations contained in an ``AnimationPlayer`` node. You create, edit, or import your animations in an ``AnimationPlayer`` 
+Instead, it uses animations contained in an ``AnimationPlayer`` node. You create, edit, or import your animations in an ``AnimationPlayer``
 and then use an ``AnimationTree`` to control the playback.
 
 ``AnimationPlayer`` and ``AnimationTree`` can be used in both 2D and 3D scenes. When importing 3D scenes and their animations, you can use
@@ -38,8 +37,8 @@ and an ``AnimationTree`` node was created.
 Creating a tree
 ---------------
 
-To use an ``AnimationTree``, you have to set a root node. An animation root node is a class that contains and evaluates sub-nodes and outputs an animation. 
-There are 3 types of sub-nodes: 
+To use an ``AnimationTree``, you have to set a root node. An animation root node is a class that contains and evaluates sub-nodes and outputs an animation.
+There are 3 types of sub-nodes:
 
 1. Animation nodes, which reference an animation from the linked ``AnimationPlayer``.
 2. Animation Root nodes, which are used to blend sub-nodes and can be nested.
@@ -59,7 +58,7 @@ Blend tree
 ----------
 
 When you make an ``AnimationNodeBlendTree``, you get an empty 2d graph in the bottom panel, under the AnimationTree tab. It contains only an ``Output``
-node by default. 
+node by default.
 
 .. image:: img/animtree_emptyblendtree.webp
 
@@ -202,11 +201,11 @@ StateMachine
 ~~~~~~~~~~~~
 
 When you make an ``AnimationNodeStateMachine``, you get an empty 2d graph in the bottom panel, under the AnimationTree tab. It contains a ``Start`` and ``End``
-state by default. 
+state by default.
 
 .. image:: img/animtree_emptystatemachine.webp
 
-To add states, right click or use the **create new nodes** button, whose icon is a plus in a box. You can add animations, blendspaces, blendtrees, or even 
+To add states, right click or use the **create new nodes** button, whose icon is a plus in a box. You can add animations, blendspaces, blendtrees, or even
 another StateMachine. To edit one of these more complex sub-nodes, click on the pencil icon on the right of the state. To return to the original StateMachine,
 click **Root** on the top left of the panel.
 
@@ -219,7 +218,7 @@ There are 3 types of transitions:
 
 .. image:: img/animtree_transitiontypes.png
 
-* *Immediate*: Will switch to the next state immediately. 
+* *Immediate*: Will switch to the next state immediately.
 * *Sync*: Will switch to the next state immediately, but will seek the new state to the playback position of the old state.
 * *At End*: Will wait for the current state playback to end, then switch to the beginning of the next state animation.
 
@@ -240,12 +239,12 @@ Advance Condition and Advance Expression
 The last 2 properties in a StateMachine transition are ``Advance Condition`` and ``Advance Expression.`` When the Advance Mode is set to *Auto*, these
 determine if the transition will advance or not.
 
-Advance Condition is a true/false check. You may put a custom variable name in the text field, and when the StateMachine reaches this transition, 
-it will check if your variable is *true*. If so, the transition continues. Note that the advance condition **only** checks if a variable is *true*, 
+Advance Condition is a true/false check. You may put a custom variable name in the text field, and when the StateMachine reaches this transition,
+it will check if your variable is *true*. If so, the transition continues. Note that the advance condition **only** checks if a variable is *true*,
 and it cannot check for falseness.
 
-This gives the Advance Condition a very limited capability. If you wanted to make a transition back and forth based on one property, you would need to make 
-2 variables that have opposite values, and check if either of them are true. This is why, in Godot 4, the Advance Expression was added. 
+This gives the Advance Condition a very limited capability. If you wanted to make a transition back and forth based on one property, you would need to make
+2 variables that have opposite values, and check if either of them are true. This is why, in Godot 4, the Advance Expression was added.
 
 The Advance Expression works similar to the Advance Condition, but instead of checking if one variable is true, it evaluates any expression. An expression
 is anything you could put in an ``if`` statement. These are all examples of expressions that would work in the Advance Expression:
@@ -308,14 +307,14 @@ is controlled to determine the blending:
 
 .. image:: img/animtree_blendspace2d.gif
 
-You may place these points anywhere on the graph by right clicking or using the **add point** button, whose icon is a pen and point. 
+You may place these points anywhere on the graph by right clicking or using the **add point** button, whose icon is a pen and point.
 Wherever you place the points, the triangle between them will be generated automatically using Delaunay.
-You may also control and label the ranges in X and Y. 
+You may also control and label the ranges in X and Y.
 
 .. image:: img/animtree_blendspacepoints.gif
 
-Finally, you may also change the blend mode. By default, blending happens by interpolating points inside the closest triangle. When dealing with 2D 
-animations (frame by frame), you may want to switch to *Discrete* mode. Alternatively, if you want to keep the current play position when switching 
+Finally, you may also change the blend mode. By default, blending happens by interpolating points inside the closest triangle. When dealing with 2D
+animations (frame by frame), you may want to switch to *Discrete* mode. Alternatively, if you want to keep the current play position when switching
 between discrete animations, there is a *Carry* mode. This mode can be changed in the *Blend* menu:
 
 .. image:: img/animtree_blendmode.png
@@ -327,7 +326,7 @@ BlendSpace1D works just like BlendSpace2D, but in one dimension (a line). Triang
 For better blending
 -------------------
 
-In Godot 4.0+, in order for the blending results to be deterministic (reproducible and always consistent),
+For the blending results to be deterministic (reproducible and always consistent),
 the blended property values must have a specific initial value.
 For example, in the case of two animations to be blended, if one animation has a property track and the other does not,
 the blended animation is calculated as if the latter animation had a property track with the initial value.
@@ -354,7 +353,7 @@ This problem can be solved by adding a Property track for Position as an initial
           It is assumed to have only one frame and is not expected to be played back using the timeline.
 
 Also keep in mind that the Rotation 3D tracks and the Property tracks for 2D rotation
-with Interpolation Type set to Linear Angle or Cubic Angle will prevent rotations greater than 180 degrees 
+with Interpolation Type set to Linear Angle or Cubic Angle will prevent rotations greater than 180 degrees
 from the initial value as blended animation.
 
 This can be useful for Skeleton3Ds to prevent the bones penetrating the body when blending animations.
@@ -447,5 +446,5 @@ Then you can set or read them:
 
     animationTree.Set("parameters/eye_blend/blend_amount", 1.0);
 
-.. note:: Advance Expressions from a StateMachine will not be found under the parameters. This is because they are held in another script rather than the 
+.. note:: Advance Expressions from a StateMachine will not be found under the parameters. This is because they are held in another script rather than the
          AnimationTree itself. Advance `Conditions` will be found under parameters.

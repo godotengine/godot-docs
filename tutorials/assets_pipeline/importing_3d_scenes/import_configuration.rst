@@ -288,7 +288,7 @@ To use your script, locate the script in the import tab's "Path" option under th
 Using animation libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As of Godot 4.0, you can choose to import **only** animations from a glTF file and
+You can also choose to import **only** animations from a glTF file and
 nothing else. This is used in some asset pipelines to distribute animations
 separately from models. For example, this allows you to use one set of
 animations for several characters, without having to duplicate animation data in

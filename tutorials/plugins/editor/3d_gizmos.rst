@@ -59,8 +59,7 @@ This would be a basic setup:
 
 
 For simple gizmos, inheriting :ref:`EditorNode3DGizmoPlugin <class_EditorNode3DGizmoPlugin>`
-is enough. If you want to store some per-gizmo data or you are porting a Godot 3.0 gizmo
-to 3.1+, you should go with the second approach.
+is enough. If you want to store some per-gizmo data, you should go with the second approach.
 
 
 Simple approach

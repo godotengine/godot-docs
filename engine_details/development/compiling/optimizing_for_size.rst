@@ -78,7 +78,7 @@ Optimizing for size instead of speed
 - **Difficulty:** Easy
 - **Performed in official builds:** Yes, but only for web builds
 
-Godot 3.1 onwards allows compiling using size optimizations (instead of speed).
+It is possible to compile Godot using size optimizations (instead of speed).
 To enable this, set the ``optimize`` flag to ``size``:
 
 ::

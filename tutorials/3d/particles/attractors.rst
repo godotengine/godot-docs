@@ -73,12 +73,6 @@ on each system's :ref:`visibility layers <class_VisualInstance3D>`. A particle s
 affected by an attractor if at least one of the system's visibility layers is enabled in the
 attractor's cull mask.
 
-.. warning::
-
-   There is a `known issue <https://github.com/godotengine/godot/issues/61014>`_ with
-   GPU particle attractors that prevent the cull mask from working properly in Godot 4.0. We will
-   update the documentation as soon as it is fixed.
-
 Box attractors
 ~~~~~~~~~~~~~~
 

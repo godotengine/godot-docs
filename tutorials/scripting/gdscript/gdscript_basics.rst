@@ -859,7 +859,7 @@ Negative indices count from the end.
 Typed arrays
 ^^^^^^^^^^^^
 
-Godot 4.0 added support for typed arrays. On write operations, Godot checks that
+Godot also features support for typed arrays. On write operations, Godot checks that
 element values match the specified type, so the array cannot contain invalid values.
 The GDScript static analyzer takes typed arrays into account, however array methods like
 ``front()`` and ``back()`` still have the ``Variant`` return type.
