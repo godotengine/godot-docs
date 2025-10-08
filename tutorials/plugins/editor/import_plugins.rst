@@ -315,9 +315,9 @@ that the import wasn't successful.
 
     var color
     if options.use_red_anyway:
-        color = Color8.from_rgba8(255, 0, 0)
+        color = Color.from_rgba8(255, 0, 0)
     else:
-        color = Color8.from_rgba8(int(channels[0]), int(channels[1]), int(channels[2]))
+        color = Color.from_rgba8(int(channels[0]), int(channels[1]), int(channels[2]))
 
 This code takes the line of the file it read before and splits it in pieces
 that are separated by a comma. If there are more or less than the three values,
