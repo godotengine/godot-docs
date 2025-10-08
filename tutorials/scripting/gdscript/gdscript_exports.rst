@@ -11,10 +11,9 @@ the ``@export`` annotation.
 
 ::
 
-    ## This is the description.
     @export var number: int = 5
 
-In that example the value ``5`` will be saved and visible in the property editor. The description, shown on mouse over in the inspector, is set using a double ``##`` comment directly above the property.
+In that example the value ``5`` will be saved and visible in the property editor.
 
 An exported variable must be initialized to a constant expression or have a type specifier
 in the variable. Some of the export annotations have a specific type and don't need the variable to be typed (see the
@@ -23,7 +22,8 @@ in the variable. Some of the export annotations have a specific type and don't n
 One of the fundamental benefits of exporting member variables is to have
 them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
-special export syntax is provided.
+special export syntax is provided. Aditionally, :ref:`documentation<doc_gdscript_documentation_comments>` can be 
+used for tooltip descriptions visible on mouse over.
 
 .. note::
 
