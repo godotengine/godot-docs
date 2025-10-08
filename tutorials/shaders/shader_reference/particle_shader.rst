@@ -5,7 +5,7 @@ Particle shaders
 
 Particle shaders are a special type of shader that runs before the object is
 drawn. They are used for calculating material properties such as color,
-position, and rotation. They are drawn with any regular material for CanvasItem
+position, and rotation. They can be drawn with any regular material for CanvasItem
 or Spatial, depending on whether they are 2D or 3D.
 
 Particle shaders are unique because they are not used to draw the object itself;
@@ -54,26 +54,26 @@ Global built-ins
 
 Global built-ins are available everywhere, including custom functions.
 
-+-------------------+------------------------------------------------------------------------------------------+
-| Built-in          | Description                                                                              |
-+===================+==========================================================================================+
-| in float **TIME** | Global time since the engine has started, in seconds. It repeats after every ``3,600``   |
-|                   | seconds (which can  be changed with the                                                  |
-|                   | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>` |
-|                   | setting). It's affected by                                                               |
-|                   | :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a    |
-|                   | ``TIME`` variable that is not affected by time scale, add your own                       |
-|                   | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each    |
-|                   | frame.                                                                                   |
-+-------------------+------------------------------------------------------------------------------------------+
-| in float **PI**   | A ``PI`` constant (``3.141592``).                                                        |
-|                   | A ratio of a circle's circumference to its diameter and amount of radians in half turn.  |
-+-------------------+------------------------------------------------------------------------------------------+
-| in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                       |
-|                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                          |
-+-------------------+------------------------------------------------------------------------------------------+
-| in float **E**    | An ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.    |
-+-------------------+------------------------------------------------------------------------------------------+
++-------------------+-------------------------------------------------------------------------------------------------+
+| Built-in          | Description                                                                                     |
++===================+=================================================================================================+
+| in float **TIME** | Global time since the engine has started, in seconds. It repeats after every ``3,600``          |
+|                   | seconds (which can be changed with the                                                          |
+|                   | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`        |
+|                   | setting). It's affected by                                                                      |
+|                   | :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a           |
+|                   | ``TIME`` variable that is not affected by time scale, add your own                              |
+|                   | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each           |
+|                   | frame.                                                                                          |
++-------------------+-------------------------------------------------------------------------------------------------+
+| in float **PI**   | A ``PI`` constant (``3.141592``).                                                               |
+|                   | The ratio of a circle's circumference to its diameter and the number of radians in a half turn. |
++-------------------+-------------------------------------------------------------------------------------------------+
+| in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                              |
+|                   | Equivalent to ``PI * 2`` and the number of radians in a full turn.                              |
++-------------------+-------------------------------------------------------------------------------------------------+
+| in float **E**    | An ``E`` constant (``2.718281``). Euler's number, the base of the natural logarithm.            |
++-------------------+-------------------------------------------------------------------------------------------------+
 
 Start and Process built-ins
 ---------------------------
@@ -95,38 +95,38 @@ These properties can be accessed from both the ``start()`` and ``process()`` fun
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | in uint **RANDOM_SEED**            | Random seed used as base for random.                                                                                                    |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| inout bool **ACTIVE**              | ``true`` when the particle is active, can be set ``false``.                                                                             |
+| inout bool **ACTIVE**              | ``true`` when the particle is active, can be set to ``false``.                                                                          |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| inout vec4 **COLOR**               | Particle color, can be written to and accessed in mesh's vertex function.                                                               |
+| inout vec4 **COLOR**               | Particle color, can be written to and accessed in the mesh's vertex function.                                                           |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | inout vec3 **VELOCITY**            | Particle velocity, can be modified.                                                                                                     |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | inout mat4 **TRANSFORM**           | Particle transform.                                                                                                                     |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| inout vec4 **CUSTOM**              | Custom particle data. Accessible from shader of mesh as ``INSTANCE_CUSTOM``.                                                            |
+| inout vec4 **CUSTOM**              | Custom particle data. Accessible from the mesh's shader as ``INSTANCE_CUSTOM``.                                                         |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| inout float **MASS**               | Particle mass, intended to be used with attractors. Equals ``1.0`` by default.                                                          |
+| inout float **MASS**               | Particle mass, intended to be used with attractors. ``1.0`` by default.                                                                 |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | in vec4 **USERDATAX**              | Vector that enables the integration of supplementary user-defined data into the particle process shader.                                |
 |                                    | ``USERDATAX`` are six built-ins identified by number, ``X`` can be numbers between 1 and 6, for example ``USERDATA3``.                  |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in uint **FLAG_EMIT_POSITION**     | A flag for using on the last argument of ``emit_subparticle()`` function to assign a position to a new particle's transform.            |
+| in uint **FLAG_EMIT_POSITION**     | A flag for the last argument of the ``emit_subparticle()`` function to assign a position to a new particle's transform.                 |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in uint **FLAG_EMIT_ROT_SCALE**    | A flag for using on the last argument of ``emit_subparticle()`` function to assign the rotation and scale to a new particle's transform.|
+| in uint **FLAG_EMIT_ROT_SCALE**    | A flag for the last argument of the ``emit_subparticle()`` function to assign a rotation and scale to a new particle's transform.       |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in uint **FLAG_EMIT_VELOCITY**     | A flag for using on the last argument of ``emit_subparticle()`` function to assign a velocity to a new particle.                        |
+| in uint **FLAG_EMIT_VELOCITY**     | A flag for the last argument of the ``emit_subparticle()`` function to assign a velocity to a new particle.                             |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in uint **FLAG_EMIT_COLOR**        | A flag for using on the last argument of ``emit_subparticle()`` function to assign a color to a new particle.                           |
+| in uint **FLAG_EMIT_COLOR**        | A flag for the last argument of the ``emit_subparticle()`` function to assign a color to a new particle.                                |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in uint **FLAG_EMIT_CUSTOM**       | A flag for using on the last argument of ``emit_subparticle()`` function to assign a custom data vector to a new particle.              |
+| in uint **FLAG_EMIT_CUSTOM**       | A flag for the last argument of the ``emit_subparticle()`` function to assign a custom data vector to a new particle.                   |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | in vec3 **EMITTER_VELOCITY**       | Velocity of the :ref:`Particles2D<class_GPUParticles2D>` (:ref:`3D<class_GPUParticles3D>`) node.                                        |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in float **INTERPOLATE_TO_END**    | Value of :ref:`interp_to_end<class_GPUParticles2D_property_interp_to_end>`                                                              |
-|                                    | (:ref:`3D<class_GPUParticles3D_property_interp_to_end>`) property of Particles node.                                                    |
+| in float **INTERPOLATE_TO_END**    | Value of the :ref:`interp_to_end<class_GPUParticles2D_property_interp_to_end>`                                                          |
+|                                    | (:ref:`3D<class_GPUParticles3D_property_interp_to_end>`) property of the Particles node.                                                |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in uint **AMOUNT_RATIO**           | Value of :ref:`amount_ratio<class_GPUParticles2D_property_amount_ratio>`                                                                |
-|                                    | (:ref:`3D<class_GPUParticles3D_property_amount_ratio>`) property of Particles node.                                                     |
+| in uint **AMOUNT_RATIO**           | Value of the :ref:`amount_ratio<class_GPUParticles2D_property_amount_ratio>`                                                            |
+|                                    | (:ref:`3D<class_GPUParticles3D_property_amount_ratio>`) property of the Particles node.                                                 |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note:: In order to use the ``COLOR`` variable in a StandardMaterial3D, set ``vertex_color_use_as_albedo``
@@ -152,25 +152,25 @@ Start built-ins
 Process built-ins
 -----------------
 
-+------------------------------------+-------------------------------------------------------------------------------------------------------+
-| Built-in                           | Description                                                                                           |
-+====================================+=======================================================================================================+
-| in bool **RESTART**                | ``true`` if the current process frame is first for the particle.                                      |
-+------------------------------------+-------------------------------------------------------------------------------------------------------+
-| in bool **COLLIDED**               | ``true`` when the particle has collided with a particle collider.                                     |
-+------------------------------------+-------------------------------------------------------------------------------------------------------+
-| in vec3 **COLLISION_NORMAL**       | A normal of the last collision. If there is no collision detected it is equal to ``(0.0, 0.0, 0.0)``. |
-+------------------------------------+-------------------------------------------------------------------------------------------------------+
-| in float **COLLISION_DEPTH**       | A length of normal of the last collision. If there is no collision detected it is equal to ``0.0``.   |
-+------------------------------------+-------------------------------------------------------------------------------------------------------+
-| in vec3 **ATTRACTOR_FORCE**        | A combined force of the attractors at the moment on that particle.                                    |
-+------------------------------------+-------------------------------------------------------------------------------------------------------+
++------------------------------------+---------------------------------------------------------------------------------------------------------+
+| Built-in                           | Description                                                                                             |
++====================================+=========================================================================================================+
+| in bool **RESTART**                | ``true`` if the current process frame is the first for the particle.                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------+
+| in bool **COLLIDED**               | ``true`` when the particle has collided with a particle collider.                                       |
++------------------------------------+---------------------------------------------------------------------------------------------------------+
+| in vec3 **COLLISION_NORMAL**       | A normal of the last collision. If there is no collision detected it is equal to ``(0.0, 0.0, 0.0)``.   |
++------------------------------------+---------------------------------------------------------------------------------------------------------+
+| in float **COLLISION_DEPTH**       | A length of the normal of the last collision. If there is no collision detected it is equal to ``0.0``. |
++------------------------------------+---------------------------------------------------------------------------------------------------------+
+| in vec3 **ATTRACTOR_FORCE**        | A combined force of the attractors at the moment on that particle.                                      |
++------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Process functions
 -----------------
 
 ``emit_subparticle()`` is currently the only custom function supported by
-particles shaders. It allows users to add a new particle with specified
+particle shaders. It allows users to add a new particle with specified
 parameters from a sub-emitter. The newly created particle will only use the
 properties that match the ``flags`` parameter. For example, the
 following code will emit a particle with a specified position, velocity, and
