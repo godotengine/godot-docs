@@ -22,8 +22,8 @@ in the variable. Some of the export annotations have a specific type and don't n
 One of the fundamental benefits of exporting member variables is to have
 them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
-special export syntax is provided. Aditionally, :ref:`documentation<doc_gdscript_documentation_comments>` can be 
-used for tooltip descriptions visible on mouse over.
+special export syntax is provided. Additionally, :ref:`documentation<doc_gdscript_documentation_comments>` can be 
+used for tooltip descriptions, visible on mouse over.
 
 .. note::
 
