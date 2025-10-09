@@ -237,6 +237,27 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
 - **Item Cull Mask:** Controls which LightOccluder2D nodes cast shadows,
   depending on their respective **Occluder Light Mask** properties.
 
+.. note::
+
+    **Lighting and shadow resolution in pixel-art games**
+
+    The engine computes 2D lighting and shadows at the **Viewport's pixel resolution**,
+    not at the source texture's texel resolution. The appearance of lights and shadows
+    depends on your window or Viewport resolution, not on the resolution of individual
+    sprite textures.
+
+    If you create a pixel-art game and want pixelated or blocky lighting and shadows
+    that match your art style, **Nearest** texture filtering will **not** achieve
+    this effect. Nearest filtering affects only how the engine samples textures—it
+    does not change how the engine renders lighting and shadows.
+
+    To achieve pixelated lighting and shadows, lower the Viewport resolution (or
+    render to a lower-resolution SubViewport and upscale it). This ensures that all
+    rendering—including sprites, lights, and shadows—occurs at a coarser pixel grid,
+    which the engine then upscales to your window size. See
+    :ref:`Multiple resolutions <doc_multiple_resolutions>` for more information on
+    viewport scaling techniques.
+
 .. figure:: img/2d_lights_and_shadows_hard_shadow.webp
    :align: center
    :alt: Hard shadows
