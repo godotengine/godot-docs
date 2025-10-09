@@ -84,16 +84,18 @@ on GitHub.
 +--------------+----------------------+--------------------------------------------------------------------------+
 | **Version**  | **Release date**     | **Support level**                                                        |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.5    | Q3 2025 (estimate)   | |unstable| *Development.* Receives new features, usability and           |
+| Godot 4.6    | Q1 2026 (estimate)   | |unstable| *Development.* Receives new features, usability and           |
 | (`master`)   |                      | performance improvements, as well as bug fixes, while under development. |
++--------------+----------------------+--------------------------------------------------------------------------+
+| Godot 4.5    | September 2025       | |supported| Receives fixes for bugs and security issues, as well as      |
+|              |                      | patches that enable platform support.                                    |
 +--------------+----------------------+--------------------------------------------------------------------------+
 | Godot 4.4    | March 2025           | |supported| Receives fixes for bugs and security issues, as well as      |
 |              |                      | patches that enable platform support.                                    |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.3    | August 2024          | |supported| Receives fixes for bugs and security issues, as well as      |
-|              |                      | patches that enable platform support.                                    |
+| Godot 4.3    | August 2024          | |partial| Receives fixes for security and platform support issues only.  |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.2    | November 2023        | |partial| Receives fixes for security and platform support issues only.  |
+| Godot 4.2    | November 2023        | |eol| No longer supported (last update: 4.2.2).                          |
 +--------------+----------------------+--------------------------------------------------------------------------+
 | Godot 4.1    | July 2023            | |eol| No longer supported (last update: 4.1.4).                          |
 +--------------+----------------------+--------------------------------------------------------------------------+
