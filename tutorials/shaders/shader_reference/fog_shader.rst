@@ -3,7 +3,7 @@
 Fog shaders
 ===========
 
-Fog shaders are used to define how fog is added (or subtracted) from a scene in
+Fog shaders are used to define how fog is added to (or subtracted from) a scene in
 a given area. Fog shaders are always used together with
 :ref:`FogVolumes <class_FogVolume>` and volumetric fog. Fog shaders only have
 one processing function, the ``fog()`` function.
@@ -14,7 +14,7 @@ can add depends on how close the :ref:`FogVolume <class_FogVolume>` is to the
 camera.
 
 Fog shaders are a special form of compute shader that is called once for
-every froxel that is touched by an axis aligned bounding box of the associated
+every froxel that is touched by an axis-aligned bounding box of the associated
 :ref:`FogVolume <class_FogVolume>`. This means that froxels that just barely
 touch a given :ref:`FogVolume <class_FogVolume>` will still be used.
 
@@ -30,28 +30,27 @@ Global built-ins
 
 Global built-ins are available everywhere, including in custom functions.
 
-
-+-----------------------------------+------------------------------------------------------------------------------------------+
-| Built-in                          | Description                                                                              |
-+===================================+==========================================================================================+
-| in float **TIME**                 | Global time since the engine has started, in seconds. It repeats after every ``3,600``   |
-|                                   | seconds (which can  be changed with the                                                  |
-|                                   | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>` |
-|                                   | setting). It's affected by                                                               |
-|                                   | :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a    |
-|                                   | ``TIME`` variable that is not affected by time scale, add your own                       |
-|                                   | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each    |
-|                                   | frame.                                                                                   |
-+-----------------------------------+------------------------------------------------------------------------------------------+
-| in float **PI**                   | A ``PI`` constant (``3.141592``).                                                        |
-|                                   | A ratio of a circle's circumference to its diameter and amount of radians in half turn.  |
-+-----------------------------------+------------------------------------------------------------------------------------------+
-| in float **TAU**                  | A ``TAU`` constant (``6.283185``).                                                       |
-|                                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                          |
-+-----------------------------------+------------------------------------------------------------------------------------------+
-| in float **E**                    | An ``E`` constant (``2.718281``).                                                        |
-|                                   | Euler's number and a base of the natural logarithm.                                      |
-+-----------------------------------+------------------------------------------------------------------------------------------+
++-----------------------------------+-------------------------------------------------------------------------------------------------+
+| Built-in                          | Description                                                                                     |
++===================================+=================================================================================================+
+| in float **TIME**                 | Global time since the engine has started, in seconds. It repeats after every ``3,600``          |
+|                                   | seconds (which can be changed with the                                                          |
+|                                   | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`        |
+|                                   | setting). It's affected by                                                                      |
+|                                   | :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a           |
+|                                   | ``TIME`` variable that is not affected by time scale, add your own                              |
+|                                   | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each           |
+|                                   | frame.                                                                                          |
++-----------------------------------+-------------------------------------------------------------------------------------------------+
+| in float **PI**                   | A ``PI`` constant (``3.141592``).                                                               |
+|                                   | The ratio of a circle's circumference to its diameter and the number of radians in a half turn. |
++-----------------------------------+-------------------------------------------------------------------------------------------------+
+| in float **TAU**                  | A ``TAU`` constant (``6.283185``).                                                              |
+|                                   | Equivalent to ``PI * 2`` and the number of radians in a full turn.                              |
++-----------------------------------+-------------------------------------------------------------------------------------------------+
+| in float **E**                    | An ``E`` constant (``2.718281``).                                                               |
+|                                   | Euler's number, the base of the natural logarithm.                                              |
++-----------------------------------+-------------------------------------------------------------------------------------------------+
 
 Fog built-ins
 -------------
