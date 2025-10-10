@@ -251,12 +251,31 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
     this effect. Nearest filtering affects only how the engine samples textures—it
     does not change how the engine renders lighting and shadows.
 
-    To achieve pixelated lighting and shadows, lower the Viewport resolution (or
-    render to a lower-resolution SubViewport and upscale it). This ensures that all
-    rendering—including sprites, lights, and shadows—occurs at a coarser pixel grid,
-    which the engine then upscales to your window size. See
-    :ref:`Multiple resolutions <doc_multiple_resolutions>` for more information on
-    viewport scaling techniques.
+    To achieve pixelated lighting and shadows, use a custom shader to modify 
+    ``LIGHT_VERTEX`` and ``SHADOW_VERTEX`` to snap light sampling to a pixel grid.
+    The following shader snaps lighting to a grid using the ``floor()`` function:
+
+    .. code-block:: glsl
+
+        shader_type canvas_item;
+
+        uniform float pixel_size = 4.0;
+
+        void fragment() {
+            // Snap lighting and shadows to pixel grid
+            LIGHT_VERTEX.xy = floor(LIGHT_VERTEX.xy / pixel_size) * pixel_size;
+            SHADOW_VERTEX = floor(SHADOW_VERTEX / pixel_size) * pixel_size;
+
+            // Normal rendering
+            COLOR = texture(TEXTURE, UV);
+        }
+
+    This works by dividing the position by ``pixel_size`` to convert to grid space,
+    using ``floor()`` to round down to the nearest grid point, then multiplying back
+    to convert to screen space. The result forces the engine to sample lighting from
+    discrete grid positions, which creates the pixelated effect.
+
+    For more information on canvas item shaders, see :ref:`CanvasItem shaders <doc_canvas_item_shader>`.
 
 .. figure:: img/2d_lights_and_shadows_hard_shadow.webp
    :align: center
