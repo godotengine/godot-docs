@@ -3473,7 +3473,7 @@ Hints that an :ref:`int<class_int>` or :ref:`float<class_float>` property should
 
 \ **Example:** ``"-360,360,1,or_greater,or_less"``.
 
-Additionally, other keywords can be included: ``"exp"`` for exponential range editing, ``"radians_as_degrees"`` for editing radian angles in degrees (the range values are also in degrees), ``"degrees"`` to hint at an angle and ``"hide_slider"`` to hide the slider.
+Additionally, other keywords can be included: ``"exp"`` for exponential range editing, ``"radians_as_degrees"`` for editing radian angles in degrees (the range values are also in degrees), ``"degrees"`` to hint at an angle, ``"prefer_slider"`` to show the slider for integers, and ``"hide_control"`` to hide the slider or up-down arrows.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM:
 
