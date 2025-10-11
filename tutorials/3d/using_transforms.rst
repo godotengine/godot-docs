@@ -375,8 +375,8 @@ Converting a rotation to quaternion is straightforward.
  .. code-tab:: gdscript GDScript
 
     # Convert basis to quaternion, keep in mind scale is lost
-    var a = Quaternion(transform.basis)
-    var b = Quaternion(transform2.basis)
+    var a = Quaternion(transform.basis.orthonormalized())
+    var b = Quaternion(transform2.basis.orthonormalized())
     # Interpolate using spherical-linear interpolation (SLERP).
     var c = a.slerp(b,0.5) # find halfway point between a and b
     # Apply back
@@ -385,8 +385,8 @@ Converting a rotation to quaternion is straightforward.
  .. code-tab:: csharp
 
     // Convert basis to quaternion, keep in mind scale is lost
-    var a = new Quaternion(transform.Basis);
-    var b = new Quaternion(transform2.Basis);
+    var a = new Quaternion(transform.Basis.Orthonormalized());
+    var b = new Quaternion(transform2.Basis.Orthonormalized());
     // Interpolate using spherical-linear interpolation (SLERP).
     var c = a.Slerp(b, 0.5f); // find halfway point between a and b
     // Apply back
