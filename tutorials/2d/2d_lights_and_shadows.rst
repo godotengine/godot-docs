@@ -114,10 +114,9 @@ transparent white, and move its starting location to be in the center.
 Directional light
 -----------------
 
-New in Godot 4.0 is the ability to have directional lighting in 2D. Directional
-lighting is used to represent sunlight or moonlight. Light rays are casted
-parallel to each other, as if the sun or moon was infinitely far away from the
-surface that is receiving the light.
+Directional lighting is used to represent sunlight or moonlight. Light rays are
+casted parallel to each other, as if the sun or moon was infinitely far away
+from the surface that is receiving the light.
 
 DirectionalLight2D offers the following properties:
 
@@ -265,8 +264,8 @@ the surface receiving light (on a per-pixel basis). Specular maps further help
 improve visuals by making some of the light reflect back to the viewer.
 
 Both PointLight2D and DirectionalLight2D support normal mapping and specular
-mapping. Since Godot 4.0, normal and specular maps can be assigned to any 2D
-element, including nodes that inherit from Node2D or Control.
+mapping. Normal and specular maps can be assigned to any 2D element,
+including nodes that inherit from Node2D or Control.
 
 A normal map represents the direction in which each pixel is "pointing" towards.
 This information is then used by the engine to correctly apply lighting to 2D

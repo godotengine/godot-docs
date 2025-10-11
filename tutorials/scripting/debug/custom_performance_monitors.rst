@@ -11,8 +11,8 @@ As explained in the :ref:`doc_debugger_panel` documentation, Godot features a
 graphs showing their evolution over time. The data for those graphs is sourced
 from the engine's :ref:`class_Performance` singleton.
 
-Since Godot 4.0, you can declare custom values to be displayed in the Monitors
-tab. Example use cases for custom performance monitors include:
+Godot lets you declare custom values to be displayed in the Monitors tab.
+Example use cases for custom performance monitors include:
 
 - Displaying performance metrics that are specific to your project. For
   instance, in a voxel game, you could create a performance monitor to track the

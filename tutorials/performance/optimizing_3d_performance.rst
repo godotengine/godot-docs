@@ -32,7 +32,7 @@ Compatibility rendering methods. However, unneeded objects are still reducing
 performance.
 
 One way we can potentially reduce the amount to be rendered is to **take advantage
-of occlusion**. Godot 4.0 and later offers a new approach to occlusion culling
+of occlusion**. Godot offers an approach to occlusion culling
 using occluder nodes. See :ref:`doc_occlusion_culling` for instructions on
 setting up occlusion culling in your scene.
 

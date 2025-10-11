@@ -54,7 +54,7 @@ Godot supports the following dynamic font formats:
 - TrueType Font or Collection (``.ttf``, ``.ttc``)
 - OpenType Font or Collection (``.otf``, ``.otc``)
 - Web Open Font Format 1 (``.woff``)
-- Web Open Font Format 2 (``.woff2``, since Godot 3.5)
+- Web Open Font Format 2 (``.woff2``)
 
 While ``.woff`` and especially ``.woff2`` tend to result in smaller file sizes,
 there is no universally "better" font format. In most situations, it's

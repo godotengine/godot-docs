@@ -157,7 +157,7 @@ three vertical dots menu button at the top of the TileSet editor and choose
 Using a collection of scenes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since Godot 4.0, you can place actual *scenes* as tiles. This allows you to use
+You can also place actual *scenes* as tiles. This allows you to use
 any collection of nodes as a tile. For example, you could use scene tiles to
 place gameplay elements, such as shops the player may be able to interact with.
 You could also use scene tiles to place AudioStreamPlayer2Ds (for ambient

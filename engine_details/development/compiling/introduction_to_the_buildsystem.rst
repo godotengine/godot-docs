@@ -485,7 +485,7 @@ create its own template.
 The ``version.txt`` file should contain the corresponding Godot version
 identifier. This file is used to install export templates in a version-specific
 directory to avoid conflicts. For instance, if you are building export templates
-for Godot 3.1.1, ``version.txt`` should contain ``3.1.1.stable`` on the first
+for Godot 4.4.1, ``version.txt`` should contain ``4.4.1.stable`` on the first
 line (and nothing else). This version identifier is based on the ``major``,
 ``minor``, ``patch`` (if present) and ``status`` lines of the
 `version.py file in the Godot Git repository <https://github.com/godotengine/godot/blob/master/version.py>`__.

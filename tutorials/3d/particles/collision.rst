@@ -28,12 +28,6 @@ on each system's :ref:`visibility layers <class_VisualInstance3D>`. A particle s
 collision node only if at least one of the system's visibility layers is enabled in the
 collider's cull mask.
 
-.. warning::
-
-   There is a `known issue <https://github.com/godotengine/godot/issues/61014>`_ with
-   GPU particle collision that prevent the cull mask from working properly in Godot 4.0. We will
-   update the documentation as soon as it is fixed.
-
 Box collision
 ~~~~~~~~~~~~~
 
