@@ -109,6 +109,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_add_clip_ignore<class_RenderingServer_method_canvas_item_add_clip_ignore>`\ (\ item\: :ref:`RID<class_RID>`, ignore\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`canvas_item_add_ellipse<class_RenderingServer_method_canvas_item_add_ellipse>`\ (\ item\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, major\: :ref:`float<class_float>`, minor\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, antialiased\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                                                   |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_add_lcd_texture_rect_region<class_RenderingServer_method_canvas_item_add_lcd_texture_rect_region>`\ (\ item\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`, texture\: :ref:`RID<class_RID>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_add_line<class_RenderingServer_method_canvas_item_add_line>`\ (\ item\: :ref:`RID<class_RID>`, from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                                                |
@@ -598,6 +600,8 @@ Methods
    | |void|                                                                           | :ref:`material_set_render_priority<class_RenderingServer_method_material_set_render_priority>`\ (\ material\: :ref:`RID<class_RID>`, priority\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`material_set_shader<class_RenderingServer_method_material_set_shader>`\ (\ shader_material\: :ref:`RID<class_RID>`, shader\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`material_set_use_debanding<class_RenderingServer_method_material_set_use_debanding>`\ (\ enable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_add_surface<class_RenderingServer_method_mesh_add_surface>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`Dictionary<class_Dictionary>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -6414,6 +6418,18 @@ If ``ignore`` is ``true``, ignore clipping on items drawn with this canvas item 
 
 ----
 
+.. _class_RenderingServer_method_canvas_item_add_ellipse:
+
+.. rst-class:: classref-method
+
+|void| **canvas_item_add_ellipse**\ (\ item\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, major\: :ref:`float<class_float>`, minor\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_ellipse>`
+
+Draws an ellipse with semi-major axis ``major`` and semi-minor axis ``minor`` on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_ellipse()<class_CanvasItem_method_draw_ellipse>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_canvas_item_add_lcd_texture_rect_region:
 
 .. rst-class:: classref-method
@@ -7884,7 +7900,7 @@ Sets the filter ``quality`` for directional light shadows in 3D. See also :ref:`
 
 Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``environment`` RID's sky. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`sky_bake_panorama()<class_RenderingServer_method_sky_bake_panorama>`.
 
-\ **Note:** The image is saved in linear color space without any tonemapping performed, which means it will look too dark if viewed directly in an image editor.
+\ **Note:** The image is saved using linear encoding without any tonemapping performed, which means it will look too dark if viewed directly in an image editor.
 
 \ **Note:** ``size`` should be a 2:1 aspect ratio for the generated panorama to have square pixels. For radiance maps, there is no point in using a height greater than :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`, as it won't increase detail. Irradiance maps only contain low-frequency data, so there is usually no point in going past a size of 128×64 pixels when saving an irradiance map.
 
@@ -9544,6 +9560,22 @@ Sets a shader material's shader.
 
 ----
 
+.. _class_RenderingServer_method_material_set_use_debanding:
+
+.. rst-class:: classref-method
+
+|void| **material_set_use_debanding**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_material_set_use_debanding>`
+
+When using the Mobile renderer, :ref:`material_set_use_debanding()<class_RenderingServer_method_material_set_use_debanding>` can be used to enable or disable the debanding feature of 3D materials (:ref:`BaseMaterial3D<class_BaseMaterial3D>` and :ref:`ShaderMaterial<class_ShaderMaterial>`).
+
+\ :ref:`material_set_use_debanding()<class_RenderingServer_method_material_set_use_debanding>` has no effect when using the Compatibility or Forward+ renderer. In Forward+, :ref:`Viewport<class_Viewport>` debanding can be used instead.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>` and :ref:`viewport_set_use_debanding()<class_RenderingServer_method_viewport_set_use_debanding>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_mesh_add_surface:
 
 .. rst-class:: classref-method
@@ -11094,7 +11126,9 @@ Sets the render reflection mask for this reflection probe. Only instances with a
 
 |void| **reflection_probe_set_resolution**\ (\ probe\: :ref:`RID<class_RID>`, resolution\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_reflection_probe_set_resolution>`
 
-Sets the resolution to use when rendering the specified reflection probe. The ``resolution`` is specified for each cubemap face: for instance, specifying ``512`` will allocate 6 faces of 512×512 each (plus mipmaps for roughness levels).
+**Deprecated:** This method has not done anything since Godot 3.
+
+Deprecated. This method does nothing.
 
 .. rst-class:: classref-item-separator
 
@@ -11452,7 +11486,7 @@ Returns the number of bones allocated for this skeleton.
 
 Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``sky`` RID. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`environment_bake_panorama()<class_RenderingServer_method_environment_bake_panorama>`.
 
-\ **Note:** The image is saved in linear color space without any tonemapping performed, which means it will look too dark if viewed directly in an image editor. ``energy`` values above ``1.0`` can be used to brighten the resulting image.
+\ **Note:** The image is saved using linear encoding without any tonemapping performed, which means it will look too dark if viewed directly in an image editor. ``energy`` values above ``1.0`` can be used to brighten the resulting image.
 
 \ **Note:** ``size`` should be a 2:1 aspect ratio for the generated panorama to have square pixels. For radiance maps, there is no point in using a height greater than :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`, as it won't increase detail. Irradiance maps only contain low-frequency data, so there is usually no point in going past a size of 128×64 pixels when saving an irradiance map.
 
@@ -11748,6 +11782,8 @@ Returns the format for the texture.
 
 Returns the internal graphics handle for this texture object. For use when communicating with third-party APIs mostly with GDExtension.
 
+\ ``srgb`` should be ``true`` when the texture uses nonlinear sRGB encoding and ``false`` when the texture uses linear encoding.
+
 \ **Note:** This function returns a ``uint64_t`` which internally maps to a ``GLuint`` (OpenGL) or ``VkImage`` (Vulkan).
 
 .. rst-class:: classref-item-separator
@@ -11775,6 +11811,8 @@ Returns the internal graphics handle for this texture object. For use when commu
 :ref:`RID<class_RID>` **texture_get_rd_texture**\ (\ texture\: :ref:`RID<class_RID>`, srgb\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_RenderingServer_method_texture_get_rd_texture>`
 
 Returns a texture :ref:`RID<class_RID>` that can be used with :ref:`RenderingDevice<class_RenderingDevice>`.
+
+\ ``srgb`` should be ``true`` when the texture uses nonlinear sRGB encoding and ``false`` when the texture uses linear encoding.
 
 .. rst-class:: classref-item-separator
 
@@ -12493,9 +12531,9 @@ Equivalent to :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding
 
 If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an ``RGBA16`` framebuffer. When using the Mobile renderer, it will be an ``RGB10_A2`` framebuffer.
 
-Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen).
+Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
 
-Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
+Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color encoding adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
 
 .. rst-class:: classref-item-separator
 

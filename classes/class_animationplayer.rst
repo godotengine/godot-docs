@@ -47,11 +47,11 @@ Properties
    :widths: auto
 
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                      | :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`                                       |           |
+   | :ref:`StringName<class_StringName>`              | :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`                                       |           |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                      | :ref:`autoplay<class_AnimationPlayer_property_autoplay>`                                                           | ``""``    |
+   | :ref:`StringName<class_StringName>`              | :ref:`autoplay<class_AnimationPlayer_property_autoplay>`                                                           | ``&""``   |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                      | :ref:`current_animation<class_AnimationPlayer_property_current_animation>`                                         | ``""``    |
+   | :ref:`StringName<class_StringName>`              | :ref:`current_animation<class_AnimationPlayer_property_current_animation>`                                         | ``&""``   |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                        | :ref:`current_animation_length<class_AnimationPlayer_property_current_animation_length>`                           |           |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
@@ -95,7 +95,7 @@ Methods
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>` | :ref:`get_process_callback<class_AnimationPlayer_method_get_process_callback>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                      |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>`                              | :ref:`get_queue<class_AnimationPlayer_method_get_queue>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                    |
+   | :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\]               | :ref:`get_queue<class_AnimationPlayer_method_get_queue>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                    |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`NodePath<class_NodePath>`                                                | :ref:`get_root<class_AnimationPlayer_method_get_root>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                              |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -104,6 +104,8 @@ Methods
    | :ref:`float<class_float>`                                                      | :ref:`get_section_start_time<class_AnimationPlayer_method_get_section_start_time>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                  |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                        | :ref:`has_section<class_AnimationPlayer_method_has_section>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                        |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                        | :ref:`is_animation_active<class_AnimationPlayer_method_is_animation_active>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                        |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                        | :ref:`is_playing<class_AnimationPlayer_method_is_playing>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                          |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,7 +173,7 @@ Emitted when a queued animation plays after the previous animation finished. See
 
 .. rst-class:: classref-signal
 
-**current_animation_changed**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AnimationPlayer_signal_current_animation_changed>`
+**current_animation_changed**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationPlayer_signal_current_animation_changed>`
 
 Emitted when :ref:`current_animation<class_AnimationPlayer_property_current_animation>` changes.
 
@@ -263,12 +265,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **assigned_animation** :ref:`🔗<class_AnimationPlayer_property_assigned_animation>`
+:ref:`StringName<class_StringName>` **assigned_animation** :ref:`🔗<class_AnimationPlayer_property_assigned_animation>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_assigned_animation**\ (\ value\: :ref:`String<class_String>`\ )
-- :ref:`String<class_String>` **get_assigned_animation**\ (\ )
+- |void| **set_assigned_animation**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_assigned_animation**\ (\ )
 
 If playing, the current animation's key, otherwise, the animation last played. When set, this changes the animation, but will not play it unless already playing. See also :ref:`current_animation<class_AnimationPlayer_property_current_animation>`.
 
@@ -280,12 +282,12 @@ If playing, the current animation's key, otherwise, the animation last played. W
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **autoplay** = ``""`` :ref:`🔗<class_AnimationPlayer_property_autoplay>`
+:ref:`StringName<class_StringName>` **autoplay** = ``&""`` :ref:`🔗<class_AnimationPlayer_property_autoplay>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_autoplay**\ (\ value\: :ref:`String<class_String>`\ )
-- :ref:`String<class_String>` **get_autoplay**\ (\ )
+- |void| **set_autoplay**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_autoplay**\ (\ )
 
 The key of the animation to play when the scene loads.
 
@@ -297,12 +299,12 @@ The key of the animation to play when the scene loads.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **current_animation** = ``""`` :ref:`🔗<class_AnimationPlayer_property_current_animation>`
+:ref:`StringName<class_StringName>` **current_animation** = ``&""`` :ref:`🔗<class_AnimationPlayer_property_current_animation>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_current_animation**\ (\ value\: :ref:`String<class_String>`\ )
-- :ref:`String<class_String>` **get_current_animation**\ (\ )
+- |void| **set_current_animation**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_current_animation**\ (\ )
 
 The key of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See :ref:`play()<class_AnimationPlayer_method_play>` for more information on playing animations.
 
@@ -570,7 +572,7 @@ Returns the process notification in which to update animations.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_queue**\ (\ ) :ref:`🔗<class_AnimationPlayer_method_get_queue>`
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_queue**\ (\ ) :ref:`🔗<class_AnimationPlayer_method_get_queue>`
 
 Returns a list of the animation keys that are currently queued to play.
 
@@ -623,6 +625,25 @@ Returns the start time of the section currently being played.
 :ref:`bool<class_bool>` **has_section**\ (\ ) |const| :ref:`🔗<class_AnimationPlayer_method_has_section>`
 
 Returns ``true`` if an animation is currently playing with a section.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_is_animation_active:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_animation_active**\ (\ ) |const| :ref:`🔗<class_AnimationPlayer_method_is_animation_active>`
+
+Returns ``true`` if the an animation is currently active. An animation is active if it was played by calling :ref:`play()<class_AnimationPlayer_method_play>` and was not finished yet, or was stopped by calling :ref:`stop()<class_AnimationPlayer_method_stop>`.
+
+This can be used to check whether an animation is currently paused or stopped.
+
+::
+
+    var is_paused = not is_playing() and is_animation_active()
+    var is_stopped = not is_playing() and not is_animation_active()
 
 .. rst-class:: classref-item-separator
 

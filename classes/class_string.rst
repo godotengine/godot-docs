@@ -696,6 +696,8 @@ Returns the index of the **first** occurrence of ``what`` in this string, or ``-
 
 \ **Note:** If you just want to know whether the string contains ``what``, use :ref:`contains()<class_String_method_contains>`. In GDScript, you may also use the ``in`` operator.
 
+\ **Note:** A negative value of ``from`` is converted to a starting index by counting back from the last possible index with enough space to find ``what``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -844,7 +846,7 @@ If the string is a valid file path, returns the file name, including the extensi
 
 Splits the string using a ``delimiter`` and returns the substring at index ``slice``. Returns the original string if ``delimiter`` does not occur in the string. Returns an empty string if the ``slice`` does not exist.
 
-This is faster than :ref:`split()<class_String_method_split>`, if you only need one substring.
+This is faster than :ref:`split()<class_String_method_split>`, if you only need one or two substrings.
 
 ::
 
@@ -862,6 +864,13 @@ This is faster than :ref:`split()<class_String_method_split>`, if you only need 
 
 Returns the total number of slices when the string is split with the given ``delimiter`` (see :ref:`split()<class_String_method_split>`).
 
+Use :ref:`get_slice()<class_String_method_get_slice>` to extract a specific slice.
+
+::
+
+    print("i/am/example/string".get_slice_count("/")) # Prints '4'.
+    print("i am example string".get_slice_count("/")) # Prints '1'.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -874,7 +883,9 @@ Returns the total number of slices when the string is split with the given ``del
 
 Splits the string using a Unicode character with code ``delimiter`` and returns the substring at index ``slice``. Returns an empty string if the ``slice`` does not exist.
 
-This is faster than :ref:`split()<class_String_method_split>`, if you only need one substring.
+This is faster than :ref:`split()<class_String_method_split>`, if you only need one or two substrings.
+
+This is a Unicode version of :ref:`get_slice()<class_String_method_get_slice>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1662,6 +1673,10 @@ Returns the copy of this string in reverse order. This operation works on unicod
 :ref:`int<class_int>` **rfind**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_String_method_rfind>`
 
 Returns the index of the **last** occurrence of ``what`` in this string, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the beginning of the string. This method is the reverse of :ref:`find()<class_String_method_find>`.
+
+\ **Note:** A negative value of ``from`` is converted to a starting index by counting back from the last possible index with enough space to find ``what``.
+
+\ **Note:** A value of ``from`` that is greater than the last possible index with enough space to find ``what`` is considered out-of-bounds, and returns ``-1``.
 
 .. rst-class:: classref-item-separator
 

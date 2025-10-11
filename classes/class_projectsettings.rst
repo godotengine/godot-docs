@@ -75,6 +75,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/config/description<class_ProjectSettings_property_application/config/description>`                                                                                                       | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`application/config/disable_project_settings_override<class_ProjectSettings_property_application/config/disable_project_settings_override>`                                                           | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/config/icon<class_ProjectSettings_property_application/config/icon>`                                                                                                                     | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/config/macos_native_icon<class_ProjectSettings_property_application/config/macos_native_icon>`                                                                                           | ``""``                                                                                           |
@@ -216,6 +218,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_as_enum_without_match<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_match>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`                                                                                   | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/missing_await<class_ProjectSettings_property_debug/gdscript/warnings/missing_await>`                                                                                         | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/missing_tool<class_ProjectSettings_property_debug/gdscript/warnings/missing_tool>`                                                                                           | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -584,6 +588,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`filesystem/import/fbx2gltf/enabled.android<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled.android>`                                                                               | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`filesystem/import/fbx2gltf/enabled.web<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled.web>`                                                                                       | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`gui/common/always_show_focus_state<class_ProjectSettings_property_gui/common/always_show_focus_state>`                                                                                               | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                                                               | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1269,6 +1275,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/use_edge_connections<class_ProjectSettings_property_navigation/2d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/warnings/navmesh_cell_size_mismatch<class_ProjectSettings_property_navigation/2d/warnings/navmesh_cell_size_mismatch>`                                                                 | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/warnings/navmesh_edge_merge_errors<class_ProjectSettings_property_navigation/2d/warnings/navmesh_edge_merge_errors>`                                                                   | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`navigation/3d/default_cell_height<class_ProjectSettings_property_navigation/3d/default_cell_height>`                                                                                                 | ``0.25``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`navigation/3d/default_cell_size<class_ProjectSettings_property_navigation/3d/default_cell_size>`                                                                                                     | ``0.25``                                                                                         |
@@ -1282,6 +1292,10 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`navigation/3d/merge_rasterizer_cell_scale<class_ProjectSettings_property_navigation/3d/merge_rasterizer_cell_scale>`                                                                                 | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/3d/use_edge_connections<class_ProjectSettings_property_navigation/3d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/3d/warnings/navmesh_cell_size_mismatch<class_ProjectSettings_property_navigation/3d/warnings/navmesh_cell_size_mismatch>`                                                                 | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/3d/warnings/navmesh_edge_merge_errors<class_ProjectSettings_property_navigation/3d/warnings/navmesh_edge_merge_errors>`                                                                   | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/avoidance/thread_model/avoidance_use_high_priority_threads<class_ProjectSettings_property_navigation/avoidance/thread_model/avoidance_use_high_priority_threads>`                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1310,6 +1324,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`network/limits/packet_peer_stream/max_buffer_po2<class_ProjectSettings_property_network/limits/packet_peer_stream/max_buffer_po2>`                                                                   | ``16``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/tcp/connect_timeout_seconds<class_ProjectSettings_property_network/limits/tcp/connect_timeout_seconds>`                                                                               | ``30``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`network/limits/unix/connect_timeout_seconds<class_ProjectSettings_property_network/limits/unix/connect_timeout_seconds>`                                                                             | ``30``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/webrtc/max_channel_in_buffer_kb<class_ProjectSettings_property_network/limits/webrtc/max_channel_in_buffer_kb>`                                                                       | ``64``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1837,6 +1853,26 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/render_model<class_ProjectSettings_property_xr/openxr/extensions/render_model>`                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`xr/openxr/extensions/spatial_entity/april_tag_dict<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/april_tag_dict>`                                                               | ``"3"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`xr/openxr/extensions/spatial_entity/aruco_dict<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/aruco_dict>`                                                                       | ``"15"``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/spatial_entity/enable_builtin_anchor_detection<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_anchor_detection>`                             | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/spatial_entity/enable_builtin_marker_tracking<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_marker_tracking>`                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/spatial_entity/enable_builtin_plane_detection<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_plane_detection>`                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/spatial_entity/enable_marker_tracking<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_marker_tracking>`                                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/spatial_entity/enable_persistent_anchors<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_persistent_anchors>`                                         | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/spatial_entity/enable_plane_tracking<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_plane_tracking>`                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/spatial_entity/enable_spatial_anchors<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_spatial_anchors>`                                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/spatial_entity/enabled<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enabled>`                                                                             | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_dynamic<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`                                                                                                             | ``false``                                                                                        |
@@ -2097,6 +2133,18 @@ The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_
 :ref:`String<class_String>` **application/config/description** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/description>`
 
 The project's description, displayed as a tooltip in the Project Manager when hovering the project.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_application/config/disable_project_settings_override:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **application/config/disable_project_settings_override** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/config/disable_project_settings_override>`
+
+If ``true``, disables loading of project settings overrides (file defined in :ref:`application/config/project_settings_override<class_ProjectSettings_property_application/config/project_settings_override>` and ``res://override.cfg``) and related CLI arguments.
 
 .. rst-class:: classref-item-separator
 
@@ -3043,6 +3091,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/integer_division** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when dividing an integer by another integer (the decimal part will be discarded).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/missing_await:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/missing_await** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/missing_await>`
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a coroutine without ``await``.
 
 .. rst-class:: classref-item-separator
 
@@ -4924,7 +4984,7 @@ If ``true``, subwindows are embedded in the main window (this is also called sin
 
 If ``false``, subwindows are created as separate windows (this is also called multi-window mode). This allows them to be moved outside the main window and use native operating system window decorations.
 
-This is equivalent to :ref:`EditorSettings.interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` in the editor, except the setting's value is inverted.
+This is equivalent to :ref:`EditorSettings.interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` in the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -5387,6 +5447,18 @@ Override for :ref:`filesystem/import/fbx2gltf/enabled<class_ProjectSettings_prop
 :ref:`bool<class_bool>` **filesystem/import/fbx2gltf/enabled.web** = ``false`` :ref:`🔗<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled.web>`
 
 Override for :ref:`filesystem/import/fbx2gltf/enabled<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled>` on the Web where FBX2glTF can't easily be accessed from Godot.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_gui/common/always_show_focus_state:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **gui/common/always_show_focus_state** = ``false`` :ref:`🔗<class_ProjectSettings_property_gui/common/always_show_focus_state>`
+
+If ``true``, :ref:`Control<class_Control>`\ s will always show if they're focused, even if said focus was gained via mouse/touch input.
 
 .. rst-class:: classref-item-separator
 
@@ -9712,6 +9784,30 @@ If enabled 2D navigation regions will use edge connections to connect with other
 
 ----
 
+.. _class_ProjectSettings_property_navigation/2d/warnings/navmesh_cell_size_mismatch:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/2d/warnings/navmesh_cell_size_mismatch** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/warnings/navmesh_cell_size_mismatch>`
+
+If ``true``, the navigation system will print warnings when a navigation mesh with a small cell size is used on a navigation map with a larger size as this commonly causes rasterization errors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/2d/warnings/navmesh_edge_merge_errors:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/2d/warnings/navmesh_edge_merge_errors** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/warnings/navmesh_edge_merge_errors>`
+
+If ``true``, the navigation system will print warnings about navigation mesh edge merge errors occurring in navigation regions or maps.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_navigation/3d/default_cell_height:
 
 .. rst-class:: classref-property
@@ -9791,6 +9887,30 @@ Default merge rasterizer cell scale for 3D navigation maps. See :ref:`Navigation
 :ref:`bool<class_bool>` **navigation/3d/use_edge_connections** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/use_edge_connections>`
 
 If enabled 3D navigation regions will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin. This setting only affects World3D default navigation maps.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/3d/warnings/navmesh_cell_size_mismatch:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/3d/warnings/navmesh_cell_size_mismatch** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/warnings/navmesh_cell_size_mismatch>`
+
+If ``true``, the navigation system will print warnings when a navigation mesh with a small cell size (or in 3D height) is used on a navigation map with a larger size as this commonly causes rasterization errors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/3d/warnings/navmesh_edge_merge_errors:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/3d/warnings/navmesh_edge_merge_errors** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/warnings/navmesh_edge_merge_errors>`
+
+If ``true``, the navigation system will print warnings about navigation mesh edge merge errors occurring in navigation regions or maps.
 
 .. rst-class:: classref-item-separator
 
@@ -9959,6 +10079,18 @@ Default size of packet peer stream for deserializing Godot data (in bytes, speci
 :ref:`int<class_int>` **network/limits/tcp/connect_timeout_seconds** = ``30`` :ref:`🔗<class_ProjectSettings_property_network/limits/tcp/connect_timeout_seconds>`
 
 Timeout (in seconds) for connection attempts using TCP.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_network/limits/unix/connect_timeout_seconds:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **network/limits/unix/connect_timeout_seconds** = ``30`` :ref:`🔗<class_ProjectSettings_property_network/limits/unix/connect_timeout_seconds>`
+
+Timeout (in seconds) for connection attempts using UNIX domain socket.
 
 .. rst-class:: classref-item-separator
 
@@ -10356,7 +10488,7 @@ Sets which physics engine to use for 3D physics.
 
 \ **GodotPhysics3D** is Godot's internal 3D physics engine.
 
-\ **Jolt Physics** is an alternative physics engine that is generally faster and more reliable than **GodotPhysics3D**. As it was recently implemented, it is currently considered experimental and its behavior may change in future releases.
+\ **Jolt Physics** is an alternative physics engine that is generally faster and more reliable than **GodotPhysics3D**. Jolt Physics is the default for projects created starting in Godot 4.6.
 
 \ **Dummy** is a 3D physics server that does nothing and returns only dummy values, effectively disabling all 3D physics functionality.
 
@@ -11178,11 +11310,11 @@ Sets the sensitivity to edges when using SMAA for antialiasing. Lower values wil
 
 :ref:`bool<class_bool>` **rendering/anti_aliasing/quality/use_debanding** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`
 
-If ``true``, uses a fast post-processing filter to make banding significantly less visible. If :ref:`rendering/viewport/hdr_2d<class_ProjectSettings_property_rendering/viewport/hdr_2d>` is ``false``, 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`. If :ref:`rendering/viewport/hdr_2d<class_ProjectSettings_property_rendering/viewport/hdr_2d>` is ``true``, debanding will affect all 2D and 3D rendering, including canvas items.
+If ``true``, uses a fast dithering filter just before transforming floating point color values to integer color values to make banding significantly less visible. Debanding is applied at different steps of the rendering process depending on the rendering method and :ref:`rendering/viewport/hdr_2d<class_ProjectSettings_property_rendering/viewport/hdr_2d>` setting.
 
 In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
 
-\ **Note:** This property is only read when the project starts. To set debanding at runtime, set :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>` on the root :ref:`Viewport<class_Viewport>` instead, or use :ref:`RenderingServer.viewport_set_use_debanding()<class_RenderingServer_method_viewport_set_use_debanding>`.
+\ **Note:** This property is only read when the project starts and configures :ref:`RenderingServer.material_set_use_debanding()<class_RenderingServer_method_material_set_use_debanding>` and :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>` of the root :ref:`Viewport<class_Viewport>`. When :ref:`rendering/viewport/hdr_2d<class_ProjectSettings_property_rendering/viewport/hdr_2d>` is disabled, you should additionally set the :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>` of other viewports in your project. To set debanding at run-time, the property that should be set depends on the renderer: Forward+ only uses :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>` and Mobile uses both :ref:`RenderingServer.material_set_use_debanding()<class_RenderingServer_method_material_set_use_debanding>` and :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12186,7 +12318,7 @@ Use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv>`
 
-The subdivision amount of the first quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The subdivision amount of the first quadrant on the shadow atlas. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12198,7 +12330,7 @@ The subdivision amount of the first quadrant on the shadow atlas. See the `docum
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv>`
 
-The subdivision amount of the second quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The subdivision amount of the second quadrant on the shadow atlas. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12210,7 +12342,7 @@ The subdivision amount of the second quadrant on the shadow atlas. See the `docu
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv** = ``3`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv>`
 
-The subdivision amount of the third quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The subdivision amount of the third quadrant on the shadow atlas. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12222,7 +12354,7 @@ The subdivision amount of the third quadrant on the shadow atlas. See the `docum
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv** = ``4`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv>`
 
-The subdivision amount of the fourth quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The subdivision amount of the fourth quadrant on the shadow atlas. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12234,7 +12366,7 @@ The subdivision amount of the fourth quadrant on the shadow atlas. See the `docu
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_size** = ``4096`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_size>`
 
-The size of the shadow atlas used for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>` nodes. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The size of the shadow atlas used for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>` nodes. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12624,7 +12756,7 @@ Sets the renderer that will be used by the project. Options are:
 
 \ **mobile** (Mobile): Modern renderer designed for mobile devices. Has a lower base overhead than Forward+, but does not scale as well to large scenes with many elements.
 
-\ **gl_compatibility** (Compatibility): Low-end renderer designed for older devices. Based on the limitations of the OpenGL 3.3 / OpenGL ES 3.0 / WebGL 2 APIs.
+\ **gl_compatibility** (Compatibility): Low-end renderer designed for older devices. Based on the limitations of the OpenGL 3.3 / OpenGL ES 3.0 / WebGL 2 APIs. Lighting calculations are performed on nonlinear sRGB-encoded color data, which produces inaccurate results that may look acceptable for some games.
 
 This can be overridden using the ``--rendering-method <method>`` command line argument.
 
@@ -13438,9 +13570,9 @@ The default compression factor for lossless WebP. Decompression speed is mostly 
 
 If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root viewport. 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an ``RGBA16`` framebuffer. When using the Mobile renderer, it will be an ``RGB10_A2`` framebuffer.
 
-Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen).
+Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
 
-Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
+Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color encoding adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
 \ **Note:** This property is only read when the project starts. To toggle HDR 2D at runtime, set :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root :ref:`Viewport<class_Viewport>`.
 
@@ -13682,6 +13814,142 @@ If ``true``, support for the unobstructed data source is requested. If supported
 If ``true`` we enable the render model extension if available.
 
 \ **Note:** This relates to the core OpenXR render model extension and has no relation to any vendor render model extensions.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/april_tag_dict:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **xr/openxr/extensions/spatial_entity/april_tag_dict** = ``"3"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/april_tag_dict>`
+
+The April Tag marker types the built-in marker tracking is set to recognize (if April Tag marker tracking is available and enabled).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/aruco_dict:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **xr/openxr/extensions/spatial_entity/aruco_dict** = ``"15"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/aruco_dict>`
+
+The ArUco marker types the built-in marker tracking is set to recognize (if ArUco marker tracking is available and enabled).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_anchor_detection:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/spatial_entity/enable_builtin_anchor_detection** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_anchor_detection>`
+
+If ``true``, we enable the built-in logic for handling anchors. Godot will query (persistent) anchors and manage :ref:`OpenXRAnchorTracker<class_OpenXRAnchorTracker>` instances for you. If disabled you'll need to create your own spatial and persistence context and perform your own discovery queries.
+
+\ **Note:** This functionality requires that spatial anchors are supported and enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_marker_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/spatial_entity/enable_builtin_marker_tracking** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_marker_tracking>`
+
+If ``true``, we enable the built-in logic for handling marker tracking. Godot will query markers and manage :ref:`OpenXRMarkerTracker<class_OpenXRMarkerTracker>` instances for you. If disabled you'll need to create your own spatial context and perform your own discovery queries.
+
+\ **Note:** This functionality requires that marker tracking is supported and enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_plane_detection:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/spatial_entity/enable_builtin_plane_detection** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_builtin_plane_detection>`
+
+If ``true``, we enable the built-in logic for handling plane detection. Godot will query detected planes (walls, floors, ceilings, etc.) and manage :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` instances for you. If disabled you'll need to create your own spatial context and perform your own discovery queries.
+
+\ **Note:** This functionality requires that plane tracking is supported and enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_marker_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/spatial_entity/enable_marker_tracking** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_marker_tracking>`
+
+If ``true``, support for the marker tracking extension is requested. If supported, you will be able to query information about markers detected by the XR runtime, e.g. QR codes, aruca markers and april tags.
+
+\ **Note:** This requires that the OpenXR spatial entities and marker tracking extensions are supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/spatial_entity/enabled<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enabled>` must be enabled for this setting to be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_persistent_anchors:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/spatial_entity/enable_persistent_anchors** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_persistent_anchors>`
+
+If ``true``, support for the persistent anchors extension is requested. If supported, you will be able to store spatial anchors and they will be restored on application startup.
+
+\ **Note:** This requires that the OpenXR spatial entities, spatial anchors, and spatial persistence extensions are supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/spatial_entity/enabled<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enabled>` and :ref:`xr/openxr/extensions/spatial_entity/enable_spatial_anchors<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_spatial_anchors>` must be enabled for this setting to be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_plane_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/spatial_entity/enable_plane_tracking** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_plane_tracking>`
+
+If ``true``, support for the plane tracking extension is requested. If supported, you will be able to query information about planes detected by the XR runtime, e.g. walls, floors, etc.
+
+\ **Note:** This requires that the OpenXR spatial entities and plane tracking extensions are supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/spatial_entity/enabled<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enabled>` must be enabled for this setting to be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_spatial_anchors:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/spatial_entity/enable_spatial_anchors** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enable_spatial_anchors>`
+
+If ``true``, support for the spatial anchors extension is requested. If supported, you will be able to register anchor locations in the real world that the XR runtime will adjust as needed and/or potentially share with other headsets.
+
+\ **Note:** This requires that the OpenXR spatial entities and spatial anchors extensions are supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/spatial_entity/enabled<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enabled>` must be enabled for this setting to be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/spatial_entity/enabled** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/spatial_entity/enabled>`
+
+If ``true``, support for the spatial entity extension is requested. If supported, you will be able to access spatial information about the real environment around you. What information is available is dependent on additional extensions.
+
+\ **Note:** This requires that the OpenXR spatial entities extension is supported by the XR runtime. If not supported this setting will be ignored.
 
 .. rst-class:: classref-item-separator
 
