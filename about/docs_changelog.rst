@@ -13,6 +13,24 @@ added since version 3.0.
 .. note:: This document only contains new pages so not all changes are reflected,
           many pages have been substantially updated but are not reflected in this document.
 
+New pages since version 4.4
+---------------------------
+
+Editor
+~~~~~~
+
+- :ref:`doc_using_engine_compilation_configuration_editor`
+
+Migrating
+~~~~~~~~~
+
+- :ref:`doc_upgrading_to_godot_4.5`
+
+Scripting
+~~~~~~~~~
+
+- :ref:`doc_logging`
+
 New pages since version 4.3
 ---------------------------
 
@@ -35,6 +53,16 @@ Editor
 ~~~~~~
 
 - :ref:`doc_using_the_xr_editor`
+
+GDExtension
+~~~~~~~~~~~
+
+- :ref:`doc_gdextension_c_example`
+
+Migrating
+~~~~~~~~~
+
+- :ref:`doc_upgrading_to_godot_4.4`
 
 Performance
 ~~~~~~~~~~~
