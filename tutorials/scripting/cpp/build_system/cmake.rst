@@ -37,7 +37,7 @@ of which may help with configuring your project.
 CMake's ``Debug`` vs Godot's ``template_debug``
 -----------------------------------------------
 
-Something that has come come up during many discussions is the conflation of a
+Something that has come up during many discussions is the conflation of a
 compilation of C++ source code with debug symbols enabled, and compiling a
 Godot extension with debug features enabled. The two concepts are not mutually
 exclusive.
@@ -79,7 +79,7 @@ Not all code from the SCons system can be perfectly represented in CMake, here
 are the notable differences.
 
 - debug_symbols
-    Is no longer has an explicit option, and is enabled when using CMake build
+    Is no longer an explicit option, and is enabled when using CMake build
     configurations; ``Debug``, ``RelWithDebInfo``.
 
 - dev_build
@@ -131,16 +131,16 @@ Basic walkthrough
 
     .. code-block::
 
-        # current working directory is the godot-cpp source root
+        # Current working directory is the godot-cpp source root.
         cmake . -B build-dir
 
-        # current working directory is an empty godot-cpp/build-dir
+        # Current working directory is an empty godot-cpp/build-dir.
         cmake ../
 
-        # current working directory is an existing build path
+        # Current working directory is an existing build path.
         cmake .
 
-    The build directory is specified so that generated files do not clutter up
+    The build directory is specified so that generated files do not clutter
     the source tree with build artifacts.
 
     CMake doesn't build the code, it generates the files that a build tool
