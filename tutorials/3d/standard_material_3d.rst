@@ -185,9 +185,9 @@ other than *Mix* forces the object to go through the transparent pipeline.
 * **Mix:** Default blend mode, alpha controls how much the object is visible.
 * **Add:** The final color of the object is added to the color of the screen,
   nice for flares or some fire-like effects.
-* **Sub:** The final color of the object is subtracted from the color of the
+* **Subtract:** The final color of the object is subtracted from the color of the
   screen.
-* **Mul:** The final color of the object is multiplied with the color of the
+* **Multiply:** The final color of the object is multiplied with the color of the
   screen.
 * **Premultiplied Alpha:** The color of the object is expected to have already been
   multiplied by the alpha. This behaves like **Add** when the alpha is ``0.0``
