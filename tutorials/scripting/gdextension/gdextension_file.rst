@@ -50,21 +50,25 @@ Here is an example of what that can look like:
 
 .. code-block:: none
 
+    ; A comment line starts with a semicolon. This line is ignored by the engine.
     [libraries]
 
-    macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
-    macos.release = "res://bin/libgdexample.macos.template_release.framework"
-    windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
-    windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
-    windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
-    windows.release.x86_64 = "res://bin/libgdexample.windows.template_release.x86_64.dll"
-    linux.debug.x86_64 = "res://bin/libgdexample.linux.template_debug.x86_64.so"
-    linux.release.x86_64 = "res://bin/libgdexample.linux.template_release.x86_64.so"
-    linux.debug.arm64 = "res://bin/libgdexample.linux.template_debug.arm64.so"
-    linux.release.arm64 = "res://bin/libgdexample.linux.template_release.arm64.so"
-    linux.debug.rv64 = "res://bin/libgdexample.linux.template_debug.rv64.so"
-    linux.release.rv64 = "res://bin/libgdexample.linux.template_release.rv64.so"
+    macos.debug = "./bin/libgdexample.macos.template_debug.dylib" ; Inline comments are also allowed.
+    macos.release = "./bin/libgdexample.macos.template_release.dylib"
+    windows.debug.x86_32 = "./bin/libgdexample.windows.template_debug.x86_32.dll"
+    windows.release.x86_32 = "./bin/libgdexample.windows.template_release.x86_32.dll"
+    windows.debug.x86_64 = "./bin/libgdexample.windows.template_debug.x86_64.dll"
+    windows.release.x86_64 = "./bin/libgdexample.windows.template_release.x86_64.dll"
+    linux.debug.x86_64 = "./bin/libgdexample.linux.template_debug.x86_64.so"
+    linux.release.x86_64 = "./bin/libgdexample.linux.template_release.x86_64.so"
+    linux.debug.arm64 = "./bin/libgdexample.linux.template_debug.arm64.so"
+    linux.release.arm64 = "./bin/libgdexample.linux.template_release.arm64.so"
+    linux.debug.rv64 = "./bin/libgdexample.linux.template_debug.rv64.so"
+    linux.release.rv64 = "./bin/libgdexample.linux.template_release.rv64.so"
 
+Paths can be relative or absolute (starting with ``res://``). Relative paths are recommended,
+as they allow the extension to keep working if it's installed to a different folder than what's
+specified in the path.
 
 Entries are matched in order, so if two sets of feature tags could match
 the same system, be sure to put the more specific ones first:
@@ -73,8 +77,8 @@ the same system, be sure to put the more specific ones first:
 
     [libraries]
 
-    linux.release.editor.x86_64 = "res://bin/libgdexample.linux.template_release.x86_64.so"
-    linux.release.x86_64 = "res://bin/libgdexample.linux.noeditor.template_release.x86_64.so"
+    linux.release.editor.x86_64 = "./bin/libgdexample.linux.template_release.x86_64.so"
+    linux.release.x86_64 = "./bin/libgdexample.linux.noeditor.template_release.x86_64.so"
 
 Here are lists of some of the available built-in options (for more look at the :ref:`feature tags <doc_feature_tags>`):
 
@@ -107,9 +111,9 @@ Build
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | Flag                          | Description                                                                                          |
 +===============================+======================================================================================================+
-| **debug**                     | Build with debug symbols                                                                             |
+| **debug**                     | Build with debugging features (editor builds always have debugging features)                         |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **release**                   | Optimized build without debug symbols                                                                |
+| **release**                   | Optimized build without debugging features                                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **editor**                    | Editor build                                                                                         |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -138,8 +142,8 @@ Architecture
 Icons section
 -------------
 
-By default, Godot uses the Node icon in the scene dock for GDExtension nodes. A custom icon can be
-set by reference to its name and resource path of an SVG file.
+By default, Godot uses the Node icon in the scene dock for GDExtension nodes.
+A custom icon can be set by reference to its name and resource path of an SVG file.
 
 For example:
 
@@ -149,20 +153,28 @@ For example:
 
     GDExample = "res://icons/gd_example.svg"
 
-The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
+The path should point to a 16×16 pixel SVG image, with two options enabled on the
+image in the Import dock:
+
+- **Editor > Scale with Editor Scale**.
+- **Editor > Convert Colors with Editor Theme**.
+
+Enabling both options ensures the icon behaves as closely as possible to
+the stock editor icons. Read the guide for :ref:`creating icons <doc_editor_icons>`
 for more information.
 
 Dependencies section
 --------------------
 
-In this section you set the paths of the GDExtension dependencies. This is used internally to export the dependencies
+In this section, you set the paths of the GDExtension dependencies. This is used internally to export the dependencies
 when exporting your game executable. You are able to set which dependency is loaded depending on the feature flags
 of the exported executable. In addition, you are able to set an optional subdirectory to move your dependencies into.
-If no path is supplied Godot will move the libraries into the same directory as your game executable.
+If no path is supplied, Godot will move the libraries into the same directory as your game executable.
 
 .. warning::
-    In MacOS it is necessary to have shared libraries inside a folder called ``Frameworks`` with a directory structure
-    like this: ``Game.app/Contents/Frameworks``.
+
+    On macOS, it is necessary to have shared libraries inside a folder called ``Frameworks``
+    with a directory structure like this: ``Game.app/Contents/Frameworks``.
 
 .. code-block:: none
 

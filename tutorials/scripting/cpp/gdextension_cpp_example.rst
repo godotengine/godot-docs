@@ -338,18 +338,18 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     [libraries]
 
-    macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
-    macos.release = "res://bin/libgdexample.macos.template_release.framework"
-    windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
-    windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
-    windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
-    windows.release.x86_64 = "res://bin/libgdexample.windows.template_release.x86_64.dll"
-    linux.debug.x86_64 = "res://bin/libgdexample.linux.template_debug.x86_64.so"
-    linux.release.x86_64 = "res://bin/libgdexample.linux.template_release.x86_64.so"
-    linux.debug.arm64 = "res://bin/libgdexample.linux.template_debug.arm64.so"
-    linux.release.arm64 = "res://bin/libgdexample.linux.template_release.arm64.so"
-    linux.debug.rv64 = "res://bin/libgdexample.linux.template_debug.rv64.so"
-    linux.release.rv64 = "res://bin/libgdexample.linux.template_release.rv64.so"
+    macos.debug = "./bin/libgdexample.macos.template_debug.dylib"
+    macos.release = "./bin/libgdexample.macos.template_release.dylib"
+    windows.debug.x86_32 = "./bin/libgdexample.windows.template_debug.x86_32.dll"
+    windows.release.x86_32 = "./bin/libgdexample.windows.template_release.x86_32.dll"
+    windows.debug.x86_64 = "./bin/libgdexample.windows.template_debug.x86_64.dll"
+    windows.release.x86_64 = "./bin/libgdexample.windows.template_release.x86_64.dll"
+    linux.debug.x86_64 = "./bin/libgdexample.linux.template_debug.x86_64.so"
+    linux.release.x86_64 = "./bin/libgdexample.linux.template_release.x86_64.so"
+    linux.debug.arm64 = "./bin/libgdexample.linux.template_debug.arm64.so"
+    linux.release.arm64 = "./bin/libgdexample.linux.template_release.arm64.so"
+    linux.debug.rv64 = "./bin/libgdexample.linux.template_debug.rv64.so"
+    linux.release.rv64 = "./bin/libgdexample.linux.template_release.rv64.so"
 
 This file contains a ``configuration`` section that controls the entry function of the module.
 You should also set the minimum compatible Godot version with ``compatibility_minimum``,
