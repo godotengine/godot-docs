@@ -241,6 +241,16 @@ and works very well with the *Render Priority* property of Material
 
 .. image:: img/spatial_material3.png
 
+Depth Test
+~~~~~~~~~~
+
+This can be used to invert the standard depth test. When set to **Inverted**,
+the object will only appear when occluded, and will be hidden otherwise.
+
+This has no effect if **No Depth Test** is enabled.
+
+.. image:: img/material_depth_test.webp
+
 Shading
 -------
 
@@ -272,7 +282,7 @@ You can also use per-vertex lighting to achieve a retro look.
 .. figure:: img/standard_material_shading_modes_textured.webp
   :align: center
   :alt: Two cubes with a brick texture, one shaded and one unshaded.
-  
+
   Texture from `AmbientCG <https://ambientcg.com/view?id=Bricks051>`__
 
 The **Unshaded** shading mode does not calculate lighting at all. Instead, the
@@ -703,6 +713,8 @@ Billboard Keep Scale
 
 Enables scaling a mesh in billboard mode.
 
+.. _ref_standard_material_3d_grow:
+
 Grow
 ----
 
@@ -720,6 +732,10 @@ make it black and unshaded, reverse culling (Cull Front), and add some grow:
     For Grow to work as expected, the mesh must have connected faces with shared
     vertices, or "smooth shading". If the mesh has disconnected faces with unique
     vertices, or "flat shading", the mesh will appear to have gaps when using Grow.
+
+Note that in Godot 4.5 onwards, stencil buffer-based outlines are available
+using the **Outline** :ref:`stencil mode <doc_standard_material_3d_stencil>`.
+This can be used as an alternative to Grow for outlines.
 
 Transform
 ---------
@@ -811,6 +827,36 @@ by only having a fraction of the pixels rendered.
 is the same across the entire object's surface.
 
 .. image:: img/standart_material_distance_fade_object_dither_mode.webp
+
+.. _doc_standard_material_3d_stencil:
+
+Stencil
+-------
+
+Since Godot 4.5, Godot allows materials to make use of the stencil buffer.
+This feature is commonly used to create outlines and X-ray effects,
+which can be useful to highlight objects, especially behind walls.
+
+The **Outline** and **X-Ray** modes assign a preconfigured stencil material
+in the material's **Next Pass** property. The **Custom** mode can be used for
+advanced effects.
+
+.. image:: img/material_stencil.webp
+
+Materials that write to the stencil buffer are always drawn in the transparent pass,
+so they are subject to the usual
+:ref:`transparency limitations <doc_3d_rendering_limitations_transparency_sorting>`.
+
+.. note::
+
+    Like with the :ref:`Grow property <ref_standard_material_3d_grow>`, for the
+    stencil outline to work as expected, the mesh must have connected faces with
+    shared vertices, or "smooth shading". If the mesh has disconnected faces with
+    unique vertices, or "flat shading", the mesh will appear to have gaps when using
+    a stencil outline.
+
+    Stencil outlines render similarly to the Grow property, but won't look identical
+    in every scenario, especially when intersections with opaque surfaces are involved.
 
 Material Settings
 -----------------
