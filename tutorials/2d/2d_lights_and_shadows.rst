@@ -248,7 +248,7 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
 
     If you create a pixel-art game and want pixelated or blocky lighting and shadows
     that match your art style, **Nearest** texture filtering will **not** achieve
-    this effect. Nearest filtering affects only how the engine samples textures—it
+    this effect. Nearest filtering affects only how the engine samples textures — it
     does not change how the engine renders lighting and shadows.
 
     To achieve pixelated lighting and shadows, use a custom shader to modify 
@@ -262,11 +262,11 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
         uniform float pixel_size = 4.0;
 
         void fragment() {
-            // Snap lighting and shadows to pixel grid
+            // Snap lighting and shadows to pixel grid.
             LIGHT_VERTEX.xy = floor(LIGHT_VERTEX.xy / pixel_size) * pixel_size;
             SHADOW_VERTEX = floor(SHADOW_VERTEX / pixel_size) * pixel_size;
 
-            // Normal rendering
+            // Normal rendering.
             COLOR = texture(TEXTURE, UV);
         }
 
