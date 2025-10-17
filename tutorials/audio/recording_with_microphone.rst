@@ -14,6 +14,8 @@ support for this tutorial:
 
 You will need to enable audio input in the :ref:`Audio > Driver > Enable Input<class_ProjectSettings_property_audio/driver/enable_input>` project setting, or you'll just get empty audio files.
 
+On iOS and iPadOS, it is also important to set the advanced **Audio > General > iOS > Session Category** setting to include **Record** or **Play and Record**.
+
 The structure of the demo
 -------------------------
 
