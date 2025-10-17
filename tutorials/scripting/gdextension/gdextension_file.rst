@@ -50,21 +50,25 @@ Here is an example of what that can look like:
 
 .. code-block:: none
 
+    ; A comment line starts with a semicolon. This line is ignored by the engine.
     [libraries]
 
-    macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
-    macos.release = "res://bin/libgdexample.macos.template_release.framework"
-    windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
-    windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
-    windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
-    windows.release.x86_64 = "res://bin/libgdexample.windows.template_release.x86_64.dll"
-    linux.debug.x86_64 = "res://bin/libgdexample.linux.template_debug.x86_64.so"
-    linux.release.x86_64 = "res://bin/libgdexample.linux.template_release.x86_64.so"
-    linux.debug.arm64 = "res://bin/libgdexample.linux.template_debug.arm64.so"
-    linux.release.arm64 = "res://bin/libgdexample.linux.template_release.arm64.so"
-    linux.debug.rv64 = "res://bin/libgdexample.linux.template_debug.rv64.so"
-    linux.release.rv64 = "res://bin/libgdexample.linux.template_release.rv64.so"
+    macos.debug = "bin/libgdexample.macos.template_debug.framework" ; Inline comments are also allowed.
+    macos.release = "bin/libgdexample.macos.template_release.framework"
+    windows.debug.x86_32 = "bin/libgdexample.windows.template_debug.x86_32.dll"
+    windows.release.x86_32 = "bin/libgdexample.windows.template_release.x86_32.dll"
+    windows.debug.x86_64 = "bin/libgdexample.windows.template_debug.x86_64.dll"
+    windows.release.x86_64 = "bin/libgdexample.windows.template_release.x86_64.dll"
+    linux.debug.x86_64 = "bin/libgdexample.linux.template_debug.x86_64.so"
+    linux.release.x86_64 = "bin/libgdexample.linux.template_release.x86_64.so"
+    linux.debug.arm64 = "bin/libgdexample.linux.template_debug.arm64.so"
+    linux.release.arm64 = "bin/libgdexample.linux.template_release.arm64.so"
+    linux.debug.rv64 = "bin/libgdexample.linux.template_debug.rv64.so"
+    linux.release.rv64 = "bin/libgdexample.linux.template_release.rv64.so"
 
+Paths can be relative or absolute (starting with ``res://``). Relative paths are recommended,
+as they allow the extension to keep working if it's installed to a different folder than what's
+specified in the path.
 
 Entries are matched in order, so if two sets of feature tags could match
 the same system, be sure to put the more specific ones first:
@@ -138,8 +142,8 @@ Architecture
 Icons section
 -------------
 
-By default, Godot uses the Node icon in the scene dock for GDExtension nodes. A custom icon can be
-set by reference to its name and resource path of an SVG file.
+By default, Godot uses the Node icon in the scene dock for GDExtension nodes.
+A custom icon can be set by reference to its name and resource path of an SVG file.
 
 For example:
 
@@ -149,7 +153,14 @@ For example:
 
     GDExample = "res://icons/gd_example.svg"
 
-The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
+The path should point to a 16×16 pixel SVG image, with two options enabled on the
+image in the Import dock:
+
+- **Editor > Scale with Editor Scale**.
+- **Editor > Convert Colors with Editor Theme**.
+
+Enabling both options ensures the icon behaves as closely as possible to
+the stock editor icons. Read the guide for :ref:`creating icons <doc_editor_icons>`
 for more information.
 
 Dependencies section
