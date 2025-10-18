@@ -500,8 +500,6 @@ in the appropriately named ``defs.h`` file:
         uint8_t data[STRING_NAME_SIZE];
     } StringName;
 
-    #endif // DEFS_H
-
 As mentioned in the comment, the sizes can be found in the
 ``extension_api.json`` file that we generated earlier, under the
 ``builtin_class_sizes`` property. The ``BUILD_32`` is never defined, as we
