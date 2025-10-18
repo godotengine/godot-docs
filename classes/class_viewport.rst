@@ -2638,7 +2638,7 @@ Set/clear individual bits on the rendering layer mask. This simplifies editing t
 
 |void| **set_input_as_handled**\ (\ ) :ref:`🔗<class_Viewport_method_set_input_as_handled>`
 
-Stops the input from propagating further down the :ref:`SceneTree<class_SceneTree>`.
+Stops the input from propagating further up the :ref:`SceneTree<class_SceneTree>`.
 
 \ **Note:** This does not affect the methods in :ref:`Input<class_Input>`, only the way events are propagated.
 
