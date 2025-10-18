@@ -399,6 +399,8 @@ The main graphics-compute command queue (``rid`` parameter is ignored).
 
 - Vulkan: ``VkQueue``.
 
+- D3D12: ``ID3D12CommandQueue``.
+
 - Metal: ``MTLCommandQueue``.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_QUEUE_FAMILY:
@@ -418,6 +420,8 @@ The specific family the main queue belongs to (``rid`` parameter is ignored).
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_TEXTURE** = ``5``
 
 - Vulkan: ``VkImage``.
+
+- D3D12: ``ID3D12Resource``.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_VIEW:
 
