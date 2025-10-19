@@ -351,10 +351,10 @@ in the ``src`` folder, adding the following code:
         GDExtensionInterfaceVariantGetPtrDestructor variant_get_ptr_destructor = (GDExtensionInterfaceVariantGetPtrDestructor)p_get_proc_address("variant_get_ptr_destructor");
 
         // API.
-        api.classdb_register_extension_class2 = p_get_proc_address("classdb_register_extension_class2");
+        api.classdb_register_extension_class2 = (GDExtensionInterfaceClassdbRegisterExtensionClass2)p_get_proc_address("classdb_register_extension_class2");
 
         // Constructors.
-        constructors.string_name_new_with_latin1_chars = p_get_proc_address("string_name_new_with_latin1_chars");
+        constructors.string_name_new_with_latin1_chars = (GDExtensionInterfaceStringNameNewWithLatin1Chars)p_get_proc_address("string_name_new_with_latin1_chars");
 
         // Destructors.
         destructors.string_name_destructor = variant_get_ptr_destructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME);
@@ -560,8 +560,8 @@ Then we change the ``load_api()`` function in ``api.c`` to grab these new functi
         // API.
         api.classdb_register_extension_class2 = p_get_proc_address("classdb_register_extension_class2");
         api.classdb_construct_object = (GDExtensionInterfaceClassdbConstructObject)p_get_proc_address("classdb_construct_object");
-        api.object_set_instance = p_get_proc_address("object_set_instance");
-        api.object_set_instance_binding = p_get_proc_address("object_set_instance_binding");
+        api.object_set_instance = (GDExtensionInterfaceObjectSetInstance)p_get_proc_address("object_set_instance");
+        api.object_set_instance_binding = (GDExtensionInterfaceObjectSetInstanceBinding)p_get_proc_address("object_set_instance_binding");
         api.mem_alloc = (GDExtensionInterfaceMemAlloc)p_get_proc_address("mem_alloc");
         api.mem_free = (GDExtensionInterfaceMemFree)p_get_proc_address("mem_free");
     }
@@ -1077,11 +1077,11 @@ added to the API.
         ...
         // API
         ...
-        api.classdb_register_extension_class_method = p_get_proc_address("classdb_register_extension_class_method");
+        api.classdb_register_extension_class_method = (GDExtensionInterfaceClassdbRegisterExtensionClassMethod)p_get_proc_address("classdb_register_extension_class_method");
 
         // Constructors.
         ...
-        constructors.string_new_with_utf8_chars = p_get_proc_address("string_new_with_utf8_chars");
+        constructors.string_new_with_utf8_chars = (GDExtensionInterfaceStringNewWithUtf8Chars)p_get_proc_address("string_new_with_utf8_chars");
 
         // Destructors.
         ...
@@ -1352,7 +1352,7 @@ In the ``api.c`` file, we can load the new API function:
     {
         // API
         ...
-        api.classdb_register_extension_class_property = p_get_proc_address("classdb_register_extension_class_property");
+        api.classdb_register_extension_class_property = (GDExtensionInterfaceClassdbRegisterExtensionClassProperty)p_get_proc_address("classdb_register_extension_class_property");
 
         ...
     }
@@ -1687,7 +1687,7 @@ Then in the ``api.c`` file we can grab the function pointers from Godot:
         // API.
         ...
         api.classdb_get_method_bind = (GDExtensionInterfaceClassdbGetMethodBind)p_get_proc_address("classdb_get_method_bind");
-        api.object_method_bind_ptrcall = p_get_proc_address("object_method_bind_ptrcall");
+        api.object_method_bind_ptrcall = (GDExtensionInterfaceObjectMethodBindPtrcall)p_get_proc_address("object_method_bind_ptrcall");
 
         // Constructors.
         ...
@@ -1834,7 +1834,7 @@ implement the helper:
     {
         // API.
         ...
-        api.classdb_register_extension_class_signal = p_get_proc_address("classdb_register_extension_class_signal");
+        api.classdb_register_extension_class_signal = (GDExtensionInterfaceClassdbRegisterExtensionClassSignal)p_get_proc_address("classdb_register_extension_class_signal");
 
         ...
     }
@@ -1973,7 +1973,7 @@ implement the helper function.
     {
         // API.
         ...
-        api.object_method_bind_call = p_get_proc_address("object_method_bind_call");
+        api.object_method_bind_call = (GDExtensionInterfaceObjectMethodBindCall)p_get_proc_address("object_method_bind_call");
 
         // Constructors.
         ...
@@ -1982,7 +1982,7 @@ implement the helper function.
 
         // Destructors.
         ...
-        destructors.variant_destroy = p_get_proc_address("variant_destroy");
+        destructors.variant_destroy = (GDExtensionInterfaceVariantDestroy)p_get_proc_address("variant_destroy");
 
         ...
     }
