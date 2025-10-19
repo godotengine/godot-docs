@@ -306,17 +306,17 @@ We'll start by creating an ``api.h`` file in the ``src`` folder:
 
     // API methods.
 
-    struct Constructors
+    extern struct Constructors
     {
         GDExtensionInterfaceStringNameNewWithLatin1Chars string_name_new_with_latin1_chars;
     } constructors;
 
-    struct Destructors
+    extern struct Destructors
     {
         GDExtensionPtrDestructor string_name_destructor;
     } destructors;
 
-    struct API
+    extern struct API
     {
         GDExtensionInterfaceClassdbRegisterExtensionClass2 classdb_register_extension_class2;
     } api;
@@ -344,6 +344,10 @@ in the ``src`` folder, adding the following code:
     #include "api.h"
 
     GDExtensionClassLibraryPtr class_library = NULL;
+
+    struct Constructors constructors;
+    struct Destructors destructors;
+    struct API api;
 
     void load_api(GDExtensionInterfaceGetProcAddress p_get_proc_address)
     {
@@ -539,7 +543,7 @@ So let's change the ``api.h`` to include these new functions:
 .. code-block:: c
 
     ...
-    struct API
+    extern struct API
     {
         GDExtensionInterfaceClassdbRegisterExtensionClass2 classdb_register_extension_class2;
         GDExtensionInterfaceClassdbConstructObject classdb_construct_object;
@@ -862,13 +866,13 @@ structs:
 
 .. code-block:: c
 
-    struct Constructors {
+    extern struct Constructors {
         ...
         GDExtensionVariantFromTypeConstructorFunc variant_from_float_constructor;
         GDExtensionTypeFromVariantConstructorFunc float_from_variant_constructor;
     } constructors;
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceGetVariantFromTypeConstructor get_variant_from_type_constructor;
@@ -1006,19 +1010,19 @@ function for actually binding our custom method.
 
 .. code-block:: c
 
-    struct Constructors
+    extern struct Constructors
     {
         ...
         GDExtensionInterfaceStringNewWithUtf8Chars string_new_with_utf8_chars;
     } constructors;
 
-    struct Destructors
+    extern struct Destructors
     {
         ...
         GDExtensionPtrDestructor string_destructor;
     } destructors;
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceClassdbRegisterExtensionClassMethod classdb_register_extension_class_method;
@@ -1328,7 +1332,7 @@ the ``api.h`` file:
 
 .. code-block:: c
 
-    struct API {
+    extern struct API {
         ...
         GDExtensionInterfaceClassdbRegisterExtensionClassProperty classdb_register_extension_class_property;
     } api;
@@ -1487,7 +1491,7 @@ We'll also add a new struct to this file, to hold function pointers for custom o
 
 .. code-block:: c
 
-    struct Operators
+    extern struct Operators
     {
         GDExtensionPtrOperatorEvaluator string_name_equal;
     } operators;
@@ -1495,6 +1499,8 @@ We'll also add a new struct to this file, to hold function pointers for custom o
 Then in the ``api.c`` file we'll load the function pointer from the API:
 
 .. code-block:: c
+
+    struct Operators operators;
 
     void load_api(GDExtensionInterfaceGetProcAddress p_get_proc_address)
     {
@@ -1654,7 +1660,7 @@ new one for holding engine methods to call.
 
 .. code-block:: c
 
-    struct Constructors
+    extern struct Constructors
     {
         ...
         GDExtensionPtrConstructor vector2_constructor_x_y;
@@ -1662,12 +1668,12 @@ new one for holding engine methods to call.
 
     ...
 
-    struct Methods
+    extern struct Methods
     {
         GDExtensionMethodBindPtr node2d_set_position;
     } methods;
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceClassdbGetMethodBind classdb_get_method_bind;
@@ -1677,6 +1683,8 @@ new one for holding engine methods to call.
 Then in the ``api.c`` file we can grab the function pointers from Godot:
 
 .. code-block::
+
+    struct Methods methods;
 
     void load_api(GDExtensionInterfaceGetProcAddress p_get_proc_address)
     {
@@ -1807,7 +1815,7 @@ register a signal, the other is a helper function to wrap the signal binding.
 
 .. code-block:: c
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceClassdbRegisterExtensionClassSignal classdb_register_extension_class_signal;
@@ -1928,14 +1936,14 @@ helper function for the call:
 
 .. code-block:: c
 
-    struct Constructors
+    extern struct Constructors
     {
         ...
         GDExtensionVariantFromTypeConstructorFunc variant_from_string_name_constructor;
         GDExtensionVariantFromTypeConstructorFunc variant_from_vector2_constructor;
     } constructors;
 
-    struct Destructors
+    extern struct Destructors
     {
         ..
         GDExtensionInterfaceVariantDestroy variant_destroy;
@@ -1943,13 +1951,13 @@ helper function for the call:
 
     ...
 
-    struct Methods
+    extern struct Methods
     {
         ...
         GDExtensionMethodBindPtr object_emit_signal;
     } methods;
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceObjectMethodBindCall object_method_bind_call;
