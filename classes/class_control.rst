@@ -141,6 +141,8 @@ Properties
    +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                          | :ref:`pivot_offset<class_Control_property_pivot_offset>`                                         | ``Vector2(0, 0)``                                                             |
    +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                          | :ref:`pivot_offset_ratio<class_Control_property_pivot_offset_ratio>`                             | ``Vector2(0, 0)``                                                             |
+   +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                          | :ref:`position<class_Control_property_position>`                                                 | ``Vector2(0, 0)``                                                             |
    +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                              | :ref:`rotation<class_Control_property_rotation>`                                                 | ``0.0``                                                                       |
@@ -234,6 +236,8 @@ Methods
    | :ref:`Vector2<class_Vector2>`                                | :ref:`get_begin<class_Control_method_get_begin>`\ (\ ) |const|                                                                                                                                                                                                          |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                | :ref:`get_combined_minimum_size<class_Control_method_get_combined_minimum_size>`\ (\ ) |const|                                                                                                                                                                          |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                | :ref:`get_combined_pivot_offset<class_Control_method_get_combined_pivot_offset>`\ (\ ) |const|                                                                                                                                                                          |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`CursorShape<enum_Control_CursorShape>`                 | :ref:`get_cursor_shape<class_Control_method_get_cursor_shape>`\ (\ position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const|                                                                                                                                  |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1969,7 +1973,28 @@ Offsets are often controlled by one or multiple parent :ref:`Container<class_Con
 - |void| **set_pivot_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_pivot_offset**\ (\ )
 
-By default, the node's pivot is its top-left corner. When you change its :ref:`rotation<class_Control_property_rotation>` or :ref:`scale<class_Control_property_scale>`, it will rotate or scale around this pivot. Set this property to :ref:`size<class_Control_property_size>` / 2 to pivot around the Control's center.
+By default, the node's pivot is its top-left corner. When you change its :ref:`rotation<class_Control_property_rotation>` or :ref:`scale<class_Control_property_scale>`, it will rotate or scale around this pivot.
+
+The actual offset is the combined value of this property and :ref:`pivot_offset_ratio<class_Control_property_pivot_offset_ratio>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_property_pivot_offset_ratio:
+
+.. rst-class:: classref-property
+
+:ref:`Vector2<class_Vector2>` **pivot_offset_ratio** = ``Vector2(0, 0)`` :ref:`🔗<class_Control_property_pivot_offset_ratio>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_pivot_offset_ratio**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_pivot_offset_ratio**\ (\ )
+
+Same as :ref:`pivot_offset<class_Control_property_pivot_offset>`, but expressed as uniform vector, where ``Vector2(0, 0)`` is the top-left corner of this control, and ``Vector2(1, 1)`` is its bottom-right corner. Set this property to ``Vector2(0.5, 0.5)`` to pivot around this control's center.
+
+The actual offset is the combined value of this property and :ref:`pivot_offset<class_Control_property_pivot_offset>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2847,6 +2872,18 @@ Returns :ref:`offset_left<class_Control_property_offset_left>` and :ref:`offset_
 :ref:`Vector2<class_Vector2>` **get_combined_minimum_size**\ (\ ) |const| :ref:`🔗<class_Control_method_get_combined_minimum_size>`
 
 Returns combined minimum size from :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` and :ref:`get_minimum_size()<class_Control_method_get_minimum_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_method_get_combined_pivot_offset:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_combined_pivot_offset**\ (\ ) |const| :ref:`🔗<class_Control_method_get_combined_pivot_offset>`
+
+Returns the combined value of :ref:`pivot_offset<class_Control_property_pivot_offset>` and :ref:`pivot_offset_ratio<class_Control_property_pivot_offset_ratio>`, in pixels. The ratio is multiplied by the control's size.
 
 .. rst-class:: classref-item-separator
 

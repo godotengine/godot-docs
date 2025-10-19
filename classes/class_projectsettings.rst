@@ -645,6 +645,14 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_end<class_ProjectSettings_property_input/ui_end>`                                                                                                                                           |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_filedialog_delete<class_ProjectSettings_property_input/ui_filedialog_delete>`                                                                                                               |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_filedialog_find<class_ProjectSettings_property_input/ui_filedialog_find>`                                                                                                                   |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_filedialog_focus_path<class_ProjectSettings_property_input/ui_filedialog_focus_path>`                                                                                                       |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_filedialog_focus_path.macos<class_ProjectSettings_property_input/ui_filedialog_focus_path.macos>`                                                                                           |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_filedialog_refresh<class_ProjectSettings_property_input/ui_filedialog_refresh>`                                                                                                             |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_filedialog_show_hidden<class_ProjectSettings_property_input/ui_filedialog_show_hidden>`                                                                                                     |                                                                                                  |
@@ -5823,6 +5831,60 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move down in the UI.
 Default :ref:`InputEventAction<class_InputEventAction>` to go to the end position of a :ref:`Control<class_Control>` (e.g. last item in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_END<class_@GlobalScope_constant_KEY_END>` on typical desktop UI systems.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_filedialog_delete:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_delete** :ref:`🔗<class_ProjectSettings_property_input/ui_filedialog_delete>`
+
+Default :ref:`InputEventAction<class_InputEventAction>` to delete the selected file in a :ref:`FileDialog<class_FileDialog>`.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_filedialog_find:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_find** :ref:`🔗<class_ProjectSettings_property_input/ui_filedialog_find>`
+
+Default :ref:`InputEventAction<class_InputEventAction>` to open file filter in a :ref:`FileDialog<class_FileDialog>`.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_filedialog_focus_path:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_focus_path** :ref:`🔗<class_ProjectSettings_property_input/ui_filedialog_focus_path>`
+
+Default :ref:`InputEventAction<class_InputEventAction>` to focus path edit field in a :ref:`FileDialog<class_FileDialog>`.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_filedialog_focus_path.macos:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_focus_path.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_filedialog_focus_path.macos>`
+
+macOS specific override for the shortcut to focus path edit field in :ref:`FileDialog<class_FileDialog>`.
 
 .. rst-class:: classref-item-separator
 
