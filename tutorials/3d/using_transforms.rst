@@ -241,7 +241,7 @@ Obtaining information
 
 You might be thinking at this point: **"Ok, but how do I get angles from a transform?"**. The answer again is: you don't. You must do your best to stop thinking in angles.
 
-Imagine you need to shoot a bullet in the direction your player is facing. Just use the forward axis (commonly ``Z`` or ``-Z``).
+Imagine you need to shoot a bullet in the direction your player is facing. Just use the forward axis.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -282,13 +282,13 @@ Strafe left:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Remember that +X is right
+    # Keep in mind that -X is left
     if Input.is_action_pressed("strafe_left"):
         translate_object_local(-transform.basis.x)
 
  .. code-tab:: csharp
 
-    // Remember that +X is right
+    // Keep in mind that -X is left
     if (Input.IsActionPressed("strafe_left"))
     {
         TranslateObjectLocal(-Transform.Basis.X);
@@ -300,7 +300,7 @@ Jump:
  .. code-tab:: gdscript GDScript
     # On CharacterBody3D
 
-    # Keep in mind Y is up-axis
+    # Keep in mind that +Y is up
     if Input.is_action_just_pressed("jump"):
         velocity.y = JUMP_SPEED
 
@@ -309,7 +309,7 @@ Jump:
  .. code-tab:: csharp
     # On CharacterBody3D
 
-    // Keep in mind Y is up-axis
+    // Keep in mind that +Y is up
     if (Input.IsActionJustPressed("jump"))
     {
         Velocity.Y = JumpSpeed;
