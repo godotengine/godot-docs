@@ -245,14 +245,18 @@ Imagine you need to shoot a bullet in the direction your player is facing. Just 
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+    # On RigidBody3D
 
+    # Keep in mind that -Z is forward.
     bullet.transform = transform
-    bullet.speed = transform.basis.z * BULLET_SPEED
+    bullet.linear_velocity = -transform.basis.z * BULLET_SPEED
 
  .. code-tab:: csharp
+    # On RigidBody3D
 
-    bullet.Transform = transform;
-    bullet.LinearVelocity = transform.Basis.Z * BulletSpeed;
+    # Keep in mind that -Z is forward.
+    bullet.Transform = Transform;
+    bullet.LinearVelocity = -Transform.Basis.Z * BulletSpeed;
 
 Is the enemy looking at the player? Use the dot product for this (see the :ref:`doc_vector_math` tutorial for an explanation of the dot product):
 
