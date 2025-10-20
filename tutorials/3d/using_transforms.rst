@@ -324,7 +324,7 @@ Jump:
     // Keep in mind that +Y is up.
     if (Input.IsActionJustPressed("jump"))
     {
-        Velocity.Y = JumpSpeed;
+        Velocity = Vector3.Up * JumpSpeed;
     }
 
     MoveAndSlide();
