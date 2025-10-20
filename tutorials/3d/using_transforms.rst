@@ -406,7 +406,7 @@ Angular velocity and quaternions
 While angular velocity is stored in a :ref:`class_Vector3`, it is in fact *not* a vector. Using Euler angles for angular velocity will result in errors.
 The correct value can be obtained from a quaternion by multiplying the axis vector with the angle.
 
-Example of making a :ref:`class_RigidBody3D` rotate over time so it ends up with the same orientation than another node two seconds later:
+Example of making a :ref:`class_RigidBody3D` rotate over time so it ends up with the same orientation as another node two seconds later:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -431,7 +431,7 @@ Example of making a :ref:`class_RigidBody3D` rotate over time so it ends up with
         state.AngularVelocity = d.GetAxis() * (d.GetAngle() / state.Step);
     }
 
-Note that the built-in functions for getting the angle and axis from the quaternion are not perfect, and will have issues for very small angles. If you need accurate small angles, you will have to use your own function for obtaining them.
+Note that the built-in functions for getting the angle and axis from the quaternion are not perfect, and will have issues for very small angles. If you need accurate small angles, you will have to use your own function to obtain them.
 
 Example with accurate small angle results, using the algorithm taken from the Jolt source code:
 
