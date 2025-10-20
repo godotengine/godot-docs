@@ -298,6 +298,7 @@ Jump:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+    # On CharacterBody3D
 
     # Keep in mind Y is up-axis
     if Input.is_action_just_pressed("jump"):
@@ -306,11 +307,12 @@ Jump:
     move_and_slide()
 
  .. code-tab:: csharp
+    # On CharacterBody3D
 
     // Keep in mind Y is up-axis
     if (Input.IsActionJustPressed("jump"))
     {
-        velocity.Y = JumpSpeed;
+        Velocity.Y = JumpSpeed;
     }
 
     MoveAndSlide();
