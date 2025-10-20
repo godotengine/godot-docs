@@ -281,18 +281,24 @@ Strafe left:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+    # On CharacterBody3D
 
     # Keep in mind that -X is left
     if Input.is_action_pressed("strafe_left"):
-        translate_object_local(-transform.basis.x)
+        velocity = -transform.basis.x * MOVE_SPEED)
+
+    move_and_slide()
 
  .. code-tab:: csharp
+    # On CharacterBody3D
 
     // Keep in mind that -X is left
     if (Input.IsActionPressed("strafe_left"))
     {
-        TranslateObjectLocal(-Transform.Basis.X);
+        Velocity = -Transform.Basis.X * MoveSpeed;
     }
+
+    MoveAndSlide();
 
 Jump:
 
