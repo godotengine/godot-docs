@@ -245,16 +245,18 @@ Imagine you need to shoot a bullet in the direction your player is facing. Just 
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    # On RigidBody3D
+
+    # On RigidBody3D.
 
     # Keep in mind that -Z is forward.
     bullet.transform = transform
     bullet.linear_velocity = -transform.basis.z * BULLET_SPEED
 
  .. code-tab:: csharp
-    # On RigidBody3D
 
-    # Keep in mind that -Z is forward.
+    // On RigidBody3D.
+
+    // Keep in mind that -Z is forward.
     bullet.Transform = Transform;
     bullet.LinearVelocity = -Transform.Basis.Z * BulletSpeed;
 
@@ -281,18 +283,20 @@ Strafe left:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    # On CharacterBody3D
 
-    # Keep in mind that -X is left
+    # On CharacterBody3D.
+
+    # Keep in mind that -X is left.
     if Input.is_action_pressed("strafe_left"):
-        velocity = -transform.basis.x * MOVE_SPEED)
+        velocity = -transform.basis.x * MOVE_SPEED
 
     move_and_slide()
 
  .. code-tab:: csharp
-    # On CharacterBody3D
 
-    // Keep in mind that -X is left
+    // On CharacterBody3D.
+
+    // Keep in mind that -X is left.
     if (Input.IsActionPressed("strafe_left"))
     {
         Velocity = -Transform.Basis.X * MoveSpeed;
@@ -304,18 +308,20 @@ Jump:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    # On CharacterBody3D
 
-    # Keep in mind that +Y is up
+    # On CharacterBody3D.
+
+    # Keep in mind that +Y is up.
     if Input.is_action_just_pressed("jump"):
         velocity.y = JUMP_SPEED
 
     move_and_slide()
 
  .. code-tab:: csharp
-    # On CharacterBody3D
 
-    // Keep in mind that +Y is up
+    // On CharacterBody3D.
+
+    // Keep in mind that +Y is up.
     if (Input.IsActionJustPressed("jump"))
     {
         Velocity.Y = JumpSpeed;
