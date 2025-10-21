@@ -135,26 +135,27 @@ This example creates an intent to send a text:
         activity.startActivity(intent)
 
 Example: Using an Intent to Save an Image to an Android Gallery
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
+
     # Retrieve the AndroidRuntime singleton.
-	var android_runtime = Engine.get_singleton("AndroidRuntime")	
-	if android_runtime:
-		var Intent = JavaClassWrapper.wrap("android.content.Intent")
-		var activity = android_runtime.getActivity()
+    var android_runtime = Engine.get_singleton("AndroidRuntime")	
+    if android_runtime:
+        var Intent = JavaClassWrapper.wrap("android.content.Intent")
+        var activity = android_runtime.getActivity()
         var intent = Intent.Intent()
 
-		# Create the File and Uri
+        # Create the File and Uri.
         var Uri = JavaClassWrapper.wrap("android.net.Uri")
-		var File = JavaClassWrapper.wrap("java.io.File")
-		var file = File.File(file_path_to_image_here)
-		var uri = Uri.fromFile(file)
+        var File = JavaClassWrapper.wrap("java.io.File")
+        var file = File.File(file_path_to_image_here)
+        var uri = Uri.fromFile(file)
 
-		# Build the Intent
-		var intent = Intent.Intent()
-		intent.setAction(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
-		intent.setData(uri)
+        # Build the Intent.
+        var intent = Intent.Intent()
+        intent.setAction(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+        intent.setData(uri)
 
-		# Broadcast it
-		activity.sendBroadcast(intent)
+        # Broadcast it.
+        activity.sendBroadcast(intent)
