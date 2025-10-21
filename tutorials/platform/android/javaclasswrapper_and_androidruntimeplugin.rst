@@ -142,10 +142,12 @@ Example: Using an Intent to Save an Image to an Android Gallery
 	var android_runtime = Engine.get_singleton("AndroidRuntime")	
 	if android_runtime:
 		var Intent = JavaClassWrapper.wrap("android.content.Intent")
-		var Uri = JavaClassWrapper.wrap("android.net.Uri")
-		var File = JavaClassWrapper.wrap("java.io.File")
+		var activity = android_runtime.getActivity()
+        var intent = Intent.Intent()
 
 		# Create the File and Uri
+        var Uri = JavaClassWrapper.wrap("android.net.Uri")
+		var File = JavaClassWrapper.wrap("java.io.File")
 		var file = File.File(file_path_to_image_here)
 		var uri = Uri.fromFile(file)
 
@@ -155,5 +157,4 @@ Example: Using an Intent to Save an Image to an Android Gallery
 		intent.setData(uri)
 
 		# Broadcast it
-		var activity = android_runtime.getActivity()
 		activity.sendBroadcast(intent)
