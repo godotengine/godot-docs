@@ -134,7 +134,7 @@ This example creates an intent to send a text:
         intent.setType("text/plain")
         activity.startActivity(intent)
 
-Example: Using an Intent to Save an Image to an Android Gallery
+Example: Saving an image to the Android gallery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
