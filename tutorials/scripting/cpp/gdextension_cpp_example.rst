@@ -338,18 +338,18 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     [libraries]
 
-    macos.debug = "./bin/libgdexample.macos.template_debug.dylib"
-    macos.release = "./bin/libgdexample.macos.template_release.dylib"
-    windows.debug.x86_32 = "./bin/libgdexample.windows.template_debug.x86_32.dll"
-    windows.release.x86_32 = "./bin/libgdexample.windows.template_release.x86_32.dll"
-    windows.debug.x86_64 = "./bin/libgdexample.windows.template_debug.x86_64.dll"
-    windows.release.x86_64 = "./bin/libgdexample.windows.template_release.x86_64.dll"
-    linux.debug.x86_64 = "./bin/libgdexample.linux.template_debug.x86_64.so"
-    linux.release.x86_64 = "./bin/libgdexample.linux.template_release.x86_64.so"
-    linux.debug.arm64 = "./bin/libgdexample.linux.template_debug.arm64.so"
-    linux.release.arm64 = "./bin/libgdexample.linux.template_release.arm64.so"
-    linux.debug.rv64 = "./bin/libgdexample.linux.template_debug.rv64.so"
-    linux.release.rv64 = "./bin/libgdexample.linux.template_release.rv64.so"
+    macos.debug = "./libgdexample.macos.template_debug.dylib"
+    macos.release = "./libgdexample.macos.template_release.dylib"
+    windows.debug.x86_32 = "./gdexample.windows.template_debug.x86_32.dll"
+    windows.release.x86_32 = "./gdexample.windows.template_release.x86_32.dll"
+    windows.debug.x86_64 = "./gdexample.windows.template_debug.x86_64.dll"
+    windows.release.x86_64 = "./gdexample.windows.template_release.x86_64.dll"
+    linux.debug.x86_64 = "./libgdexample.linux.template_debug.x86_64.so"
+    linux.release.x86_64 = "./libgdexample.linux.template_release.x86_64.so"
+    linux.debug.arm64 = "./libgdexample.linux.template_debug.arm64.so"
+    linux.release.arm64 = "./libgdexample.linux.template_release.arm64.so"
+    linux.debug.rv64 = "./libgdexample.linux.template_debug.rv64.so"
+    linux.release.rv64 = "./libgdexample.linux.template_release.rv64.so"
 
 This file contains a ``configuration`` section that controls the entry function of the module.
 You should also set the minimum compatible Godot version with ``compatibility_minimum``,
@@ -363,10 +363,7 @@ also result in *just* that file being exported when you export the project,
 which means the data pack won't contain libraries that are incompatible with the
 target platform.
 
-Finally, the ``dependencies`` section allows you to name additional dynamic
-libraries that should be included as well. This is important when your GDExtension
-plugin implements someone else's library and requires you to supply a
-third-party dynamic library with your project.
+You can learn more about ``.gdextension`` files at :ref:`doc_gdextension_file`.
 
 Here is another overview to check the correct file structure:
 
