@@ -12,7 +12,7 @@ jobs:
     # Manual runs can still be triggered as normal.
     if: ${{ github.repository_owner == 'godotengine' || github.event_name != 'schedule' || vars.CI_OFFLINE_DOCS_CRON == 'true' }}
     runs-on: ubuntu-24.04
-    timeout-minutes: 180
+    timeout-minutes: 240
     strategy:
       max-parallel: 1
       fail-fast: false
