@@ -63,12 +63,12 @@ Debug
 Sets compiler flags so that debug symbols are generated to help godot extension
 developers debug their extension.
 
-``Debug`` is the default build type for CMake projects, to select another it
+``Debug`` is the default build type for CMake projects, the way to select another
 depends on the generator used:
 
 * For single configuration generators, add ``-DCMAKE_BUILD_TYPE=<type>`` to the
   configure command.
-* For multi-config generators add ``--config <type>`` to the build command.
+* For multi-config generators, add ``--config <type>`` to the build command.
 
 Where ``<type>`` is one of ``Debug``, ``Release``, ``RelWithDebInfo``, and
 ``MinSizeRel``.
