@@ -2866,6 +2866,30 @@ This also means that returning a signal from a function that isn't a coroutine w
           With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
 
+You can store the arguments passed to the signal's parameters. If there is only one parameter, the awaited value will have the same type as the argument:
+
+::
+
+    func toggled():
+        var signal_args = await $Button.toggled
+        assert(typeof(signal_args) == TYPE_BOOL)
+
+If there is more than one parameter, the awaited value will be of type ``Array``:
+
+::
+
+    func request_completed():
+        var signal_args = await $HTTPRequest.request_completed
+        assert(typeof(signal_args) == TYPE_ARRAY)
+
+Otherwise, the awaited value will be ``null``:
+
+::
+
+    func button_up():
+        var signal_args = await $Button.button_up
+        assert(signal_args == null)
+
 Assert keyword
 --------------
 
