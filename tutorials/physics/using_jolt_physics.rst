@@ -186,7 +186,7 @@ Area3D and SoftBody3D
 ~~~~~~~~~~~~~~~~~~~~~
 
 Jolt does not currently support any interactions between :ref:`class_SoftBody3D`
-and :ref:`class_Area3D`, such as overlap events, or the wind properties found on
+and :ref:`class_Area3D`, such as the wind and gravity properties found on
 :ref:`class_Area3D`.
 
 WorldBoundaryShape3D
