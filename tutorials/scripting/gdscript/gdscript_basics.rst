@@ -2866,6 +2866,14 @@ This also means that returning a signal from a function that isn't a coroutine w
           With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
 
+You can store the arguments passed to the signal's parameters in an ``Array``-type variable:
+
+::
+
+    func process_response():
+        var signal_args := await $HTTPRequest.request_completed as Array
+        print("Response arguments: " + ", ".join(signal_args))
+
 Assert keyword
 --------------
 
