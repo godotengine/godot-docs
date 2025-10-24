@@ -121,6 +121,23 @@ There are 3 global illumination modes available for meshes:
   This option is much slower compared to **Static**. Only use the **Dynamic**
   global illumination mode on large meshes that will change significantly during gameplay.
 
+.. note::
+
+    For meshes with the **Static** bake mode, the VoxelGI baking system is not able
+    to make use of custom shaders (:ref:`class_ShaderMaterial`). These meshes will be
+    considered to be pure black, only acting as light blockers. You can make
+    VoxelGI take custom shaders into account by using the **Dynamic** bake mode
+    for these objects, but this has a performance cost.
+
+    For :ref:`class_BaseMaterial3D`, some properties are currently ignored during baking.
+    This can impact visuals if the material's albedo or emission texture was designed
+    around using certain UV mappings:
+
+    - **UV1 > Offset**
+    - **UV1 > Scale**
+    - **UV1 > Triplanar**
+    - **Emission > On UV2**
+
 Additionally, there are 3 bake modes available for lights
 (DirectionalLight3D, OmniLight3D and SpotLight3D):
 
