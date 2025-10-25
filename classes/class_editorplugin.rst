@@ -83,6 +83,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`_make_visible<class_EditorPlugin_private_method__make_visible>`\ (\ visible\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                               |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`         | :ref:`_run_scene<class_EditorPlugin_private_method__run_scene>`\ (\ scene\: :ref:`String<class_String>`, args\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const|                                                                 |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`_save_external_data<class_EditorPlugin_private_method__save_external_data>`\ (\ ) |virtual|                                                                                                                                                      |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`_set_state<class_EditorPlugin_private_method__set_state>`\ (\ state\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual|                                                                                                                           |
@@ -1036,6 +1038,26 @@ Use :ref:`_get_plugin_name()<class_EditorPlugin_private_method__get_plugin_name>
 This function will be called when the editor is requested to become visible. It is used for plugins that edit a specific object type.
 
 Remember that you have to manage the visibility of all your editor controls manually.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_private_method__run_scene:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_run_scene**\ (\ scene\: :ref:`String<class_String>`, args\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const| :ref:`🔗<class_EditorPlugin_private_method__run_scene>`
+
+This function is called when an individual scene is about to be played in the editor. ``args`` is a list of command line arguments that will be passed to the new Godot instance, which will be replaced by the list returned by this function.
+
+::
+
+    func _run_scene(scene, args):
+        args.append("--an-extra-argument")
+        return args
+
+\ **Note:** Text that is printed in this method will not be visible in the editor's Output panel unless :ref:`EditorSettings.run/output/always_clear_output_on_play<class_EditorSettings_property_run/output/always_clear_output_on_play>` is ``false``.
 
 .. rst-class:: classref-item-separator
 

@@ -493,7 +493,9 @@ Adds an additional :ref:`OptionButton<class_OptionButton>` to the file dialog. I
 
 |void| **add_side_menu**\ (\ menu\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_EditorFileDialog_method_add_side_menu>`
 
-Adds the given ``menu`` to the side of the file dialog with the given ``title`` text on top. Only one side menu is allowed.
+**Deprecated:** This feature is no longer supported.
+
+This method is kept for compatibility and does nothing. As an alternative, you can display another dialog after showing the file dialog.
 
 .. rst-class:: classref-item-separator
 

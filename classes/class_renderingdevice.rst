@@ -3322,11 +3322,35 @@ Uniform buffer uniform.
 
 Input attachment uniform.
 
+.. _class_RenderingDevice_constant_UNIFORM_TYPE_UNIFORM_BUFFER_DYNAMIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_UNIFORM_BUFFER_DYNAMIC** = ``10``
+
+Same as UNIFORM_TYPE_UNIFORM_BUFFER but for buffers created with BUFFER_CREATION_DYNAMIC_PERSISTENT_BIT.
+
+\ **Note:** This flag is not available to GD users due to being too dangerous (i.e. wrong usage can result in visual glitches).
+
+It's exposed in case GD users receive a buffer created with such flag from Godot.
+
+.. _class_RenderingDevice_constant_UNIFORM_TYPE_STORAGE_BUFFER_DYNAMIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_STORAGE_BUFFER_DYNAMIC** = ``11``
+
+Same as UNIFORM_TYPE_STORAGE_BUFFER but for buffers created with BUFFER_CREATION_DYNAMIC_PERSISTENT_BIT.
+
+\ **Note:** This flag is not available to GD users due to being too dangerous (i.e. wrong usage can result in visual glitches).
+
+It's exposed in case GD users receive a buffer created with such flag from Godot.
+
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_MAX** = ``10``
+:ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_MAX** = ``12``
 
 Represents the size of the :ref:`UniformType<enum_RenderingDevice_UniformType>` enum.
 
