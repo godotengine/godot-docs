@@ -23,6 +23,16 @@ Description
 
 **OpenXRExtensionWrapper** allows implementing OpenXR extensions with GDExtension. The extension should be registered with :ref:`register_extension_wrapper()<class_OpenXRExtensionWrapper_method_register_extension_wrapper>`.
 
+When :ref:`OpenXRInterface<class_OpenXRInterface>` is initialized as the primary interface and any :ref:`Viewport<class_Viewport>` has :ref:`Viewport.use_xr<class_Viewport_property_use_xr>` set to ``true``, OpenXR will become involved in Godot's rendering process. If :ref:`ProjectSettings.rendering/driver/threads/thread_model<class_ProjectSettings_property_rendering/driver/threads/thread_model>` is set to "Separate", Godot's renderer will run on its own thread, and special care must be taken in all **OpenXRExtensionWrapper**\ s in order to prevent crashes or unexpected behavior. Some virtual methods will be called on the render thread, and any data they access should not be directly written to on the main thread. This is to prevent two potential issues:
+
+1. Changes intended for the next frame, taking effect on the current frame. When using the "Separate" thread model, the main thread will immediately start working on the next frame while the render thread may still be rendering the current frame. If the main thread changes anything used by the render thread directly, the change could end up being used one frame earlier than intended.
+
+2. Reading and writing to the same data at the same time from different threads can lead to the render thread using data in an invalid state.
+
+In most cases, the solution is to use :ref:`RenderingServer.call_on_render_thread()<class_RenderingServer_method_call_on_render_thread>` to schedule :ref:`Callable<class_Callable>`\ s to write to any data used on the render thread. When using the "Separate" thread model, these :ref:`Callable<class_Callable>`\ s will run after the renderer finishes the current frame and before it starts rendering the next frame. When not using this mode, they'll run immediately, so it's recommended to always use :ref:`RenderingServer.call_on_render_thread()<class_RenderingServer_method_call_on_render_thread>` in these cases, which will allow your code to do the right thing regardless of the thread model.
+
+Any virtual methods that run on the render thread will be noted below.
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -138,6 +148,8 @@ Returns a pointer to an ``XrCompositionLayerBaseHeader`` struct to provide the g
 
 This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider()<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
 
+\ **Note:** This virtual method will be called on the render thread. Additionally, the data it returns will be used shortly after this method is called, so it needs to remain valid until the next time :ref:`_on_pre_render()<class_OpenXRExtensionWrapper_private_method__on_pre_render>` runs.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -152,6 +164,8 @@ Returns the number of composition layers this extension wrapper provides via :re
 
 This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider()<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
 
+\ **Note:** This virtual method will be called on the render thread. Additionally, the data it returns will be used shortly after this method is called, so it needs to remain valid until the next time :ref:`_on_pre_render()<class_OpenXRExtensionWrapper_private_method__on_pre_render>` runs.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -165,6 +179,8 @@ This will only be called if the extension previously registered itself with :ref
 Returns an integer that will be used to sort the given composition layer provided via :ref:`_get_composition_layer()<class_OpenXRExtensionWrapper_private_method__get_composition_layer>`. Lower numbers will move the layer to the front of the list, and higher numbers to the end. The default projection layer has an order of ``0``, so layers provided by this method should probably be above or below (but not exactly) ``0``.
 
 This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider()<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+
+\ **Note:** This virtual method will be called on the render thread. Additionally, the data it returns will be used shortly after this method is called, so it needs to remain valid until the next time :ref:`_on_pre_render()<class_OpenXRExtensionWrapper_private_method__on_pre_render>` runs.
 
 .. rst-class:: classref-item-separator
 
@@ -206,6 +222,8 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` of positional tracke
 
 Gets an array of :ref:`Dictionary<class_Dictionary>`\ s that represent properties, just like :ref:`Object._get_property_list()<class_Object_private_method__get_property_list>`, that will be added to :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` nodes.
 
+\ **Note:** This virtual method will be called on the render thread.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -229,6 +247,8 @@ Gets a :ref:`Dictionary<class_Dictionary>` containing the default values for the
 |void| **_on_before_instance_created**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapper_private_method__on_before_instance_created>`
 
 Called before the OpenXR instance is created.
+
+\ **Note:** This virtual method will be called on the main thread, however, it will be called *before* OpenXR becomes involved in rendering, so it is safe to write to data that will be used by the render thread.
 
 .. rst-class:: classref-item-separator
 
@@ -254,6 +274,8 @@ Called when there is an OpenXR event to process. When implementing, return ``tru
 
 Called right after the OpenXR instance is created.
 
+\ **Note:** This virtual method will be called on the main thread, however, it will be called *before* OpenXR becomes involved in rendering, so it is safe to write to data that will be used by the render thread.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -266,6 +288,8 @@ Called right after the OpenXR instance is created.
 
 Called right before the OpenXR instance is destroyed.
 
+\ **Note:** This virtual method will be called on the main thread, however, it will be called *after* OpenXR is done being involved in rendering, so it is safe to write to data that was used by the render thread.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -277,6 +301,8 @@ Called right before the OpenXR instance is destroyed.
 |void| **_on_main_swapchains_created**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapper_private_method__on_main_swapchains_created>`
 
 Called right after the main swapchains are (re)created.
+
+\ **Note:** This virtual method will be called on the render thread.
 
 .. rst-class:: classref-item-separator
 
@@ -292,6 +318,8 @@ Called right after the given viewport is rendered.
 
 \ **Note:** The draw commands might only be queued at this point, not executed.
 
+\ **Note:** This virtual method will be called on the render thread.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -304,6 +332,8 @@ Called right after the given viewport is rendered.
 
 Called right before the given viewport is rendered.
 
+\ **Note:** This virtual method will be called on the render thread.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -315,6 +345,8 @@ Called right before the given viewport is rendered.
 |void| **_on_pre_render**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapper_private_method__on_pre_render>`
 
 Called right before the XR viewports begin their rendering step.
+
+\ **Note:** This virtual method will be called on the render thread.
 
 .. rst-class:: classref-item-separator
 
@@ -354,6 +386,8 @@ Extensions should also provide metadata regardless of whether they are supported
 
 Called right after the OpenXR session is created.
 
+\ **Note:** This virtual method will be called on the main thread, however, it will be called *before* OpenXR becomes involved in rendering, so it is safe to write to data that will be used by the render thread.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -365,6 +399,8 @@ Called right after the OpenXR session is created.
 |void| **_on_session_destroyed**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapper_private_method__on_session_destroyed>`
 
 Called right before the OpenXR session is destroyed.
+
+\ **Note:** This virtual method will be called on the main thread, however, it will be called *after* OpenXR is done being involved in rendering, so it is safe to write to data that was used by the render thread.
 
 .. rst-class:: classref-item-separator
 
@@ -502,6 +538,8 @@ Adds additional data structures to Android surface swapchains created by :ref:`O
 
 \ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties()<class_OpenXRExtensionWrapper_private_method__get_viewport_composition_layer_extension_properties>`.
 
+\ **Note:** This virtual method will be called on the render thread.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -516,6 +554,8 @@ Adds additional data structures to ``XrFrameEndInfo``.
 
 This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_frame_info_extension()<class_OpenXRAPIExtension_method_register_frame_info_extension>`.
 
+\ **Note:** This virtual method will be called on the render thread. Additionally, the data it returns will be used shortly after this method is called, so it needs to remain valid until the next time :ref:`_on_pre_render()<class_OpenXRExtensionWrapper_private_method__on_pre_render>` runs.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -529,6 +569,8 @@ This will only be called if the extension previously registered itself with :ref
 Adds additional data structures to ``XrFrameWaitInfo``.
 
 This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_frame_info_extension()<class_OpenXRAPIExtension_method_register_frame_info_extension>`.
+
+\ **Note:** This virtual method will be called on the render thread.
 
 .. rst-class:: classref-item-separator
 
@@ -565,6 +607,8 @@ Adds additional data structures when the OpenXR instance is created.
 :ref:`int<class_int>` **_set_projection_views_and_get_next_pointer**\ (\ view_index\: :ref:`int<class_int>`, next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapper_private_method__set_projection_views_and_get_next_pointer>`
 
 Adds additional data structures to the projection view of the given ``view_index``.
+
+\ **Note:** This virtual method will be called on the render thread. Additionally, the data it returns will be used shortly after this method is called, so it needs to remain valid until the next time :ref:`_on_pre_render()<class_OpenXRExtensionWrapper_private_method__on_pre_render>` runs.
 
 .. rst-class:: classref-item-separator
 
@@ -628,6 +672,8 @@ Adds additional data structures to ``XrViewLocateInfo``.
 
 This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_frame_info_extension()<class_OpenXRAPIExtension_method_register_frame_info_extension>`.
 
+\ **Note:** This virtual method will be called on the render thread. Additionally, the data it returns will be used shortly after this method is called, so it needs to remain valid until the next time :ref:`_on_pre_render()<class_OpenXRExtensionWrapper_private_method__on_pre_render>` runs.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -643,6 +689,8 @@ Adds additional data structures to composition layers created by :ref:`OpenXRCom
 \ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties()<class_OpenXRExtensionWrapper_private_method__get_viewport_composition_layer_extension_properties>`.
 
 \ ``layer`` is a pointer to an ``XrCompositionLayerBaseHeader`` struct.
+
+\ **Note:** This virtual method will be called on the render thread. Additionally, the data it returns will be used shortly after this method is called, so it needs to remain valid until the next time :ref:`_on_pre_render()<class_OpenXRExtensionWrapper_private_method__on_pre_render>` runs.
 
 .. rst-class:: classref-item-separator
 
@@ -667,6 +715,8 @@ Returns the created :ref:`OpenXRAPIExtension<class_OpenXRAPIExtension>`, which c
 |void| **register_extension_wrapper**\ (\ ) :ref:`🔗<class_OpenXRExtensionWrapper_method_register_extension_wrapper>`
 
 Registers the extension. This should happen at core module initialization level.
+
+\ **Note:** This cannot be called once OpenXR has been initialized.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

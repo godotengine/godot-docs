@@ -59,13 +59,13 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`                                                                                                   | ``Color(0.14, 0.14, 0.14, 1)``                                                                   |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`application/boot_splash/fullsize<class_ProjectSettings_property_application/boot_splash/fullsize>`                                                                                                   | ``true``                                                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`                                                                                                         | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/boot_splash/minimum_display_time<class_ProjectSettings_property_application/boot_splash/minimum_display_time>`                                                                           | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>`                                                                                               | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/boot_splash/stretch_mode<class_ProjectSettings_property_application/boot_splash/stretch_mode>`                                                                                           | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`application/boot_splash/use_filter<class_ProjectSettings_property_application/boot_splash/use_filter>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -537,6 +537,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editor/import/use_multiple_threads<class_ProjectSettings_property_editor/import/use_multiple_threads>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/audio_bit_depth<class_ProjectSettings_property_editor/movie_writer/audio_bit_depth>`                                                                                             | ``16``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editor/movie_writer/disable_vsync<class_ProjectSettings_property_editor/movie_writer/disable_vsync>`                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/fps<class_ProjectSettings_property_editor/movie_writer/fps>`                                                                                                                     | ``60``                                                                                           |
@@ -589,9 +591,9 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`filesystem/import/fbx2gltf/enabled.web<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled.web>`                                                                                       | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`gui/common/always_show_focus_state<class_ProjectSettings_property_gui/common/always_show_focus_state>`                                                                                               | ``false``                                                                                        |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                                                               | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`gui/common/show_focus_state_on_pointer_event<class_ProjectSettings_property_gui/common/show_focus_state_on_pointer_event>`                                                                           | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`gui/common/snap_controls_to_pixels<class_ProjectSettings_property_gui/common/snap_controls_to_pixels>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -634,6 +636,10 @@ Properties
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_accessibility_drag_and_drop<class_ProjectSettings_property_input/ui_accessibility_drag_and_drop>`                                                                                           |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_cancel<class_ProjectSettings_property_input/ui_cancel>`                                                                                                                                     |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_close_dialog<class_ProjectSettings_property_input/ui_close_dialog>`                                                                                                                         |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_close_dialog.macos<class_ProjectSettings_property_input/ui_close_dialog.macos>`                                                                                                             |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_colorpicker_delete_preset<class_ProjectSettings_property_input/ui_colorpicker_delete_preset>`                                                                                               |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1527,7 +1533,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/environment/glow/upscale_mode.mobile<class_ProjectSettings_property_rendering/environment/glow/upscale_mode.mobile>`                                                                       | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/environment/screen_space_reflection/roughness_quality<class_ProjectSettings_property_rendering/environment/screen_space_reflection/roughness_quality>`                                     | ``1``                                                                                            |
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/environment/screen_space_reflection/half_size<class_ProjectSettings_property_rendering/environment/screen_space_reflection/half_size>`                                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/environment/ssao/adaptive_target<class_ProjectSettings_property_rendering/environment/ssao/adaptive_target>`                                                                               | ``0.5``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2040,18 +2046,6 @@ Background color for the boot splash.
 
 ----
 
-.. _class_ProjectSettings_property_application/boot_splash/fullsize:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **application/boot_splash/fullsize** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/fullsize>`
-
-If ``true``, scale the boot splash image to the full window size (preserving the aspect ratio) when the engine starts. If ``false``, the engine will leave it at the default pixel size.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_application/boot_splash/image:
 
 .. rst-class:: classref-property
@@ -2089,6 +2083,18 @@ Minimum boot splash display time (in milliseconds). It is not recommended to set
 :ref:`bool<class_bool>` **application/boot_splash/show_image** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/show_image>`
 
 If ``true``, displays the image specified in :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>` when the engine starts. If ``false``, only displays the plain color specified in :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_application/boot_splash/stretch_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **application/boot_splash/stretch_mode** = ``1`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/stretch_mode>`
+
+Specifies how the splash image will be stretched. For the original size without stretching, set to disabled. See :ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` constants for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -5112,6 +5118,18 @@ If ``true`` importing of resources is run on multiple threads.
 
 ----
 
+.. _class_ProjectSettings_property_editor/movie_writer/audio_bit_depth:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editor/movie_writer/audio_bit_depth** = ``16`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/audio_bit_depth>`
+
+Number of bits per audio sample written to the ``.avi`` file. Only 16 and 32-bit are supported.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_editor/movie_writer/disable_vsync:
 
 .. rst-class:: classref-property
@@ -5460,18 +5478,6 @@ Override for :ref:`filesystem/import/fbx2gltf/enabled<class_ProjectSettings_prop
 
 ----
 
-.. _class_ProjectSettings_property_gui/common/always_show_focus_state:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **gui/common/always_show_focus_state** = ``false`` :ref:`🔗<class_ProjectSettings_property_gui/common/always_show_focus_state>`
-
-If ``true``, :ref:`Control<class_Control>`\ s will always show if they're focused, even if said focus was gained via mouse/touch input.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_gui/common/default_scroll_deadzone:
 
 .. rst-class:: classref-property
@@ -5479,6 +5485,24 @@ If ``true``, :ref:`Control<class_Control>`\ s will always show if they're focuse
 :ref:`int<class_int>` **gui/common/default_scroll_deadzone** = ``0`` :ref:`🔗<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`
 
 Default value for :ref:`ScrollContainer.scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`, which will be used for all :ref:`ScrollContainer<class_ScrollContainer>`\ s unless overridden.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_gui/common/show_focus_state_on_pointer_event:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **gui/common/show_focus_state_on_pointer_event** = ``1`` :ref:`🔗<class_ProjectSettings_property_gui/common/show_focus_state_on_pointer_event>`
+
+Determines whether a :ref:`Control<class_Control>` should visually indicate focus when said focus is gained using a mouse or touch input.
+
+- **Never** (``0``) show the focused state for mouse/touch input.
+
+- **Control Supports Keyboard Input** (``1``) shows the focused state even when gained via mouse/touch input (similar to how browsers handle focus).
+
+- **Always** (``2``) show the focused state, even if said focus was gained via mouse/touch input.
 
 .. rst-class:: classref-item-separator
 
@@ -5761,6 +5785,32 @@ Default :ref:`InputEventAction<class_InputEventAction>` to start or end a drag-a
 Default :ref:`InputEventAction<class_InputEventAction>` to discard a modal or pending input.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_close_dialog:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_close_dialog** :ref:`🔗<class_ProjectSettings_property_input/ui_close_dialog>`
+
+Default :ref:`InputEventAction<class_InputEventAction>` to close a dialog window.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_close_dialog.macos:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_close_dialog.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_close_dialog.macos>`
+
+macOS specific override for the shortcut to close a dialog window.
 
 .. rst-class:: classref-item-separator
 
@@ -11566,13 +11616,13 @@ Lower-end override for :ref:`rendering/environment/glow/upscale_mode<class_Proje
 
 ----
 
-.. _class_ProjectSettings_property_rendering/environment/screen_space_reflection/roughness_quality:
+.. _class_ProjectSettings_property_rendering/environment/screen_space_reflection/half_size:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/screen_space_reflection/roughness_quality** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/screen_space_reflection/roughness_quality>`
+:ref:`bool<class_bool>` **rendering/environment/screen_space_reflection/half_size** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/screen_space_reflection/half_size>`
 
-Sets the quality for rough screen-space reflections. Turning off will make all screen space reflections sharp, while higher values make rough reflections look better.
+If ``true``, screen-space reflections will be rendered at half size and then upscaled before being added to the scene. This is faster but may look pixelated or cause flickering. If ``false``, screen-space reflections will be rendered at full size.
 
 .. rst-class:: classref-item-separator
 
@@ -13200,7 +13250,7 @@ Use double-buffering with :ref:`DisplayServer.VSYNC_ENABLED<class_DisplayServer_
 
 Try the `V-Sync Simulator <https://darksylinc.github.io/vsync_simulator/>`__, an interactive interface that simulates presentation to better understand how it is affected by different variables under various conditions.
 
-\ **Note:** This property is only read when the project starts. There is currently no way to change this value at run-time.
+\ **Note:** Changes to this setting will only be applied on startup or when the swapchain is recreated (e.g. when setting the V-Sync mode).
 
 \ **Note:** Some platforms may restrict the actual value.
 

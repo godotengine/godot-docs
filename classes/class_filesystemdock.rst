@@ -152,6 +152,18 @@ Emitted when the given scenes are being instantiated in the editor.
 
 Emitted when an external ``resource`` had its file removed.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileSystemDock_signal_selection_changed:
+
+.. rst-class:: classref-signal
+
+**selection_changed**\ (\ ) :ref:`🔗<class_FileSystemDock_signal_selection_changed>`
+
+Emitted when the selection changes. Use :ref:`EditorInterface.get_selected_paths()<class_EditorInterface_method_get_selected_paths>` in the connected method to get the selected paths.
+
 .. rst-class:: classref-section-separator
 
 ----

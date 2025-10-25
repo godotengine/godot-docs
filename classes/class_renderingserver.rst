@@ -391,6 +391,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_ssr<class_RenderingServer_method_environment_set_ssr>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, max_steps\: :ref:`int<class_int>`, fade_in\: :ref:`float<class_float>`, fade_out\: :ref:`float<class_float>`, depth_tolerance\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`environment_set_ssr_half_size<class_RenderingServer_method_environment_set_ssr_half_size>`\ (\ half_size\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_ssr_roughness_quality<class_RenderingServer_method_environment_set_ssr_roughness_quality>`\ (\ quality\: :ref:`EnvironmentSSRRoughnessQuality<enum_RenderingServer_EnvironmentSSRRoughnessQuality>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_tonemap<class_RenderingServer_method_environment_set_tonemap>`\ (\ env\: :ref:`RID<class_RID>`, tone_mapper\: :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>`, exposure\: :ref:`float<class_float>`, white\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -697,6 +699,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_instance_set_transform_2d<class_RenderingServer_method_multimesh_instance_set_transform_2d>`\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`multimesh_instances_reset_physics_interpolation<class_RenderingServer_method_multimesh_instances_reset_physics_interpolation>`\ (\ multimesh\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>`\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_set_buffer_interpolated<class_RenderingServer_method_multimesh_set_buffer_interpolated>`\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`, buffer_previous\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -862,6 +866,8 @@ Methods
    | |void|                                                                           | :ref:`screen_space_roughness_limiter_set_active<class_RenderingServer_method_screen_space_roughness_limiter_set_active>`\ (\ enable\: :ref:`bool<class_bool>`, amount\: :ref:`float<class_float>`, limit\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`set_boot_image<class_RenderingServer_method_set_boot_image>`\ (\ image\: :ref:`Image<class_Image>`, color\: :ref:`Color<class_Color>`, scale\: :ref:`bool<class_bool>`, use_filter\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`set_boot_image_with_stretch<class_RenderingServer_method_set_boot_image_with_stretch>`\ (\ image\: :ref:`Image<class_Image>`, color\: :ref:`Color<class_Color>`, stretch_mode\: :ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>`, use_filter\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                                                                                                                                                                                                                                                  |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`set_debug_generate_wireframes<class_RenderingServer_method_set_debug_generate_wireframes>`\ (\ generate\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5896,6 +5902,64 @@ Represents the size of the :ref:`PipelineSource<enum_RenderingServer_PipelineSou
 
 ----
 
+.. _enum_RenderingServer_SplashStretchMode:
+
+.. rst-class:: classref-enumeration
+
+enum **SplashStretchMode**: :ref:`🔗<enum_RenderingServer_SplashStretchMode>`
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_DISABLED** = ``0``
+
+No stretching is applied.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_KEEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_KEEP** = ``1``
+
+Stretches image to fullscreen while preserving aspect ratio.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_KEEP_WIDTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_KEEP_WIDTH** = ``2``
+
+Stretches the height of the image based on the width of the screen.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_KEEP_HEIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_KEEP_HEIGHT** = ``3``
+
+Stretches the width of the image based on the height of the screen.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_COVER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_COVER** = ``4``
+
+Stretches the image to cover the entire screen while preserving aspect ratio.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_IGNORE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_IGNORE** = ``5``
+
+Stretches the image to cover the entire screen but doesn't preserve aspect ratio.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_RenderingServer_Features:
 
 .. rst-class:: classref-enumeration
@@ -8190,15 +8254,25 @@ Sets the variables to be used with the screen-space reflections (SSR) post-proce
 
 ----
 
+.. _class_RenderingServer_method_environment_set_ssr_half_size:
+
+.. rst-class:: classref-method
+
+|void| **environment_set_ssr_half_size**\ (\ half_size\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_environment_set_ssr_half_size>`
+
+Sets whether screen-space reflections will be rendered at full or half size. Half size is faster, but may look pixelated or cause flickering.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_environment_set_ssr_roughness_quality:
 
 .. rst-class:: classref-method
 
 |void| **environment_set_ssr_roughness_quality**\ (\ quality\: :ref:`EnvironmentSSRRoughnessQuality<enum_RenderingServer_EnvironmentSSRRoughnessQuality>`\ ) :ref:`🔗<class_RenderingServer_method_environment_set_ssr_roughness_quality>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+**Deprecated:** This option no longer does anything.
 
 .. rst-class:: classref-item-separator
 
@@ -10193,6 +10267,20 @@ Sets the :ref:`Transform2D<class_Transform2D>` for this instance. For use when m
 
 ----
 
+.. _class_RenderingServer_method_multimesh_instances_reset_physics_interpolation:
+
+.. rst-class:: classref-method
+
+|void| **multimesh_instances_reset_physics_interpolation**\ (\ multimesh\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_instances_reset_physics_interpolation>`
+
+Prevents physics interpolation for all instances during the current physics tick.
+
+This is useful when moving all instances to new locations, to give instantaneous changes rather than interpolation from the previous locations.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_multimesh_set_buffer:
 
 .. rst-class:: classref-method
@@ -11252,7 +11340,21 @@ Sets the screen-space roughness limiter parameters, such as whether it should be
 
 |void| **set_boot_image**\ (\ image\: :ref:`Image<class_Image>`, color\: :ref:`Color<class_Color>`, scale\: :ref:`bool<class_bool>`, use_filter\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RenderingServer_method_set_boot_image>`
 
-Sets a boot image. The color defines the background color. If ``scale`` is ``true``, the image will be scaled to fit the screen size. If ``use_filter`` is ``true``, the image will be scaled with linear interpolation. If ``use_filter`` is ``false``, the image will be scaled with nearest-neighbor interpolation.
+**Deprecated:** Use :ref:`set_boot_image_with_stretch()<class_RenderingServer_method_set_boot_image_with_stretch>` instead.
+
+Sets a boot image. The ``color`` defines the background color. The value of ``scale`` indicates if the image will be scaled to fit the screen size. If ``use_filter`` is ``true``, the image will be scaled with linear interpolation. If ``use_filter`` is ``false``, the image will be scaled with nearest-neighbor interpolation.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_set_boot_image_with_stretch:
+
+.. rst-class:: classref-method
+
+|void| **set_boot_image_with_stretch**\ (\ image\: :ref:`Image<class_Image>`, color\: :ref:`Color<class_Color>`, stretch_mode\: :ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>`, use_filter\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RenderingServer_method_set_boot_image_with_stretch>`
+
+Sets a boot image. The ``color`` defines the background color. The value of ``stretch_mode`` indicates how the image will be stretched (see :ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` for possible values). If ``use_filter`` is ``true``, the image will be scaled with linear interpolation. If ``use_filter`` is ``false``, the image will be scaled with nearest-neighbor interpolation.
 
 .. rst-class:: classref-item-separator
 

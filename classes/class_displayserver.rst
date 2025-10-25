@@ -3942,7 +3942,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 \ **Note:** ``current_directory`` might be ignored.
 
-\ **Note:** Embedded file dialog and Windows file dialog support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
+\ **Note:** Embedded file dialogs and Windows file dialogs support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
 
 \ **Note:** On Android and Linux, ``show_hidden`` is ignored.
 
@@ -3978,7 +3978,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 \ **Note:** ``current_directory`` might be ignored.
 
-\ **Note:** Embedded file dialog and Windows file dialog support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
+\ **Note:** Embedded file dialogs and Windows file dialogs support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
 
 \ **Note:** On Linux (X11), ``show_hidden`` is ignored.
 

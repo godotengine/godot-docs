@@ -1237,8 +1237,6 @@ If you need to return the removed element, use :ref:`pop_at()<class_Array_method
 
 \ **Note:** This method shifts every element's index after ``position`` back, which may have a noticeable performance cost, especially on larger arrays.
 
-\ **Note:** The ``position`` cannot be negative. To remove an element relative to the end of the array, use ``arr.remove_at(arr.size() - (i + 1))``. To remove the last element from the array, use ``arr.resize(arr.size() - 1)``.
-
 .. rst-class:: classref-item-separator
 
 ----

@@ -81,6 +81,8 @@ Properties
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`int<class_int>`                    | :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>`                     | ``0``                                                                     |
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`enable_drag_unfolding<class_Tree_property_enable_drag_unfolding>`         | ``true``                                                                  |
+   +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                  | :ref:`enable_recursive_folding<class_Tree_property_enable_recursive_folding>`   | ``true``                                                                  |
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)       |
@@ -224,6 +226,8 @@ Theme Properties
    | :ref:`int<class_int>`             | :ref:`button_margin<class_Tree_theme_constant_button_margin>`                            | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`children_hl_line_width<class_Tree_theme_constant_children_hl_line_width>`          | ``1``                               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`dragging_unfold_wait_msec<class_Tree_theme_constant_dragging_unfold_wait_msec>`    | ``500``                             |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`draw_guides<class_Tree_theme_constant_draw_guides>`                                | ``1``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
@@ -733,6 +737,23 @@ The number of columns.
 The drop mode as an OR combination of flags. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control._can_drop_data()<class_Control_private_method__can_drop_data>` is recommended.
 
 This controls the drop sections, i.e. the decision and drawing of possible drop locations based on the mouse position.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_property_enable_drag_unfolding:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **enable_drag_unfolding** = ``true`` :ref:`🔗<class_Tree_property_enable_drag_unfolding>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_enable_drag_unfolding**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_drag_unfolding_enabled**\ (\ )
+
+If ``true``, tree items will unfold when hovered over during a drag-and-drop. The delay for when this happens is dictated by :ref:`dragging_unfold_wait_msec<class_Tree_theme_constant_dragging_unfold_wait_msec>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1556,6 +1577,18 @@ The horizontal space between each button in a cell.
 :ref:`int<class_int>` **children_hl_line_width** = ``1`` :ref:`🔗<class_Tree_theme_constant_children_hl_line_width>`
 
 The width of the relationship lines between the selected :ref:`TreeItem<class_TreeItem>` and its children.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_constant_dragging_unfold_wait_msec:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **dragging_unfold_wait_msec** = ``500`` :ref:`🔗<class_Tree_theme_constant_dragging_unfold_wait_msec>`
+
+During a drag-and-drop, this is how many milliseconds to wait over a section before the section unfolds.
 
 .. rst-class:: classref-item-separator
 
