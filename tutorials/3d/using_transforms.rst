@@ -241,18 +241,24 @@ Obtaining information
 
 You might be thinking at this point: **"Ok, but how do I get angles from a transform?"**. The answer again is: you don't. You must do your best to stop thinking in angles.
 
-Imagine you need to shoot a bullet in the direction your player is facing. Just use the forward axis (commonly ``Z`` or ``-Z``).
+Imagine you need to shoot a bullet in the direction your player is facing. Just use the forward axis.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
+    # On RigidBody3D.
+
+    # Keep in mind that -Z is forward.
     bullet.transform = transform
-    bullet.speed = transform.basis.z * BULLET_SPEED
+    bullet.linear_velocity = -transform.basis.z * BULLET_SPEED
 
  .. code-tab:: csharp
 
-    bullet.Transform = transform;
-    bullet.LinearVelocity = transform.Basis.Z * BulletSpeed;
+    // On RigidBody3D.
+
+    // Keep in mind that -Z is forward.
+    bullet.Transform = Transform;
+    bullet.LinearVelocity = -Transform.Basis.Z * BulletSpeed;
 
 Is the enemy looking at the player? Use the dot product for this (see the :ref:`doc_vector_math` tutorial for an explanation of the dot product):
 
@@ -278,24 +284,34 @@ Strafe left:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Remember that +X is right
+    # On CharacterBody3D.
+
+    # Keep in mind that -X is left.
     if Input.is_action_pressed("strafe_left"):
-        translate_object_local(-transform.basis.x)
+        velocity = -transform.basis.x * MOVE_SPEED
+
+    move_and_slide()
 
  .. code-tab:: csharp
 
-    // Remember that +X is right
+    // On CharacterBody3D.
+
+    // Keep in mind that -X is left.
     if (Input.IsActionPressed("strafe_left"))
     {
-        TranslateObjectLocal(-Transform.Basis.X);
+        Velocity = -Transform.Basis.X * MoveSpeed;
     }
+
+    MoveAndSlide();
 
 Jump:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Keep in mind Y is up-axis
+    # On CharacterBody3D.
+
+    # Keep in mind that +Y is up.
     if Input.is_action_just_pressed("jump"):
         velocity.y = JUMP_SPEED
 
@@ -303,10 +319,12 @@ Jump:
 
  .. code-tab:: csharp
 
-    // Keep in mind Y is up-axis
+    // On CharacterBody3D.
+
+    // Keep in mind that +Y is up.
     if (Input.IsActionJustPressed("jump"))
     {
-        velocity.Y = JumpSpeed;
+        Velocity = Vector3.Up * JumpSpeed;
     }
 
     MoveAndSlide();
@@ -332,8 +350,8 @@ Example of looking around, FPS style:
     func _input(event):
         if event is InputEventMouseMotion and event.button_mask & 1:
             # modify accumulated mouse rotation
-            rot_x += event.relative.x * LOOKAROUND_SPEED
-            rot_y += event.relative.y * LOOKAROUND_SPEED
+            rot_x -= event.relative.x * LOOKAROUND_SPEED
+            rot_y -= event.relative.y * LOOKAROUND_SPEED
             transform.basis = Basis() # reset rotation
             rotate_object_local(Vector3(0, 1, 0), rot_x) # first rotate in Y
             rotate_object_local(Vector3(1, 0, 0), rot_y) # then rotate in X
@@ -349,8 +367,8 @@ Example of looking around, FPS style:
         if (@event is InputEventMouseMotion mouseMotion)
         {
             // modify accumulated mouse rotation
-            _rotationX += mouseMotion.Relative.X * LookAroundSpeed;
-            _rotationY += mouseMotion.Relative.Y * LookAroundSpeed;
+            _rotationX -= mouseMotion.Relative.X * LookAroundSpeed;
+            _rotationY -= mouseMotion.Relative.Y * LookAroundSpeed;
 
             // reset rotation
             Transform3D transform = Transform;
