@@ -21,8 +21,7 @@ Advantages
 - gettext is a standard format, which can be edited using any text editor
   or GUI editors such as `Poedit <https://poedit.net/>`_. This can be significant
   as it provides a lot of tools for translators, such as marking outdated
-  strings, finding strings that haven't been translated etc. 
-- gettext supports plurals and context.
+  strings, finding strings that haven't been translated etc.
 - gettext is supported by translation platforms such as
   `Transifex <https://www.transifex.com/>`_ and `Weblate <https://weblate.org/>`_,
   which makes it easier for people to collaborate to localization.
@@ -39,8 +38,8 @@ Disadvantages
 - People who maintain localization files will have to install gettext tools
   on their system. However, as Godot supports using text-based message files
   (``.po``), translators can test their work without having to install gettext tools.
-- gettext PO files usually use English as the base language. Translators will use 
-  this base language to translate to other languages. You could still user other 
+- gettext PO files usually use English as the base language. Translators will use
+  this base language to translate to other languages. You could still user other
   languages as the base language, but this is not common.
 
 Installing gettext tools
@@ -286,7 +285,7 @@ Using context
 The ``context`` parameter can be used to differentiate the situation where a translation
 is used, or to differentiate polysemic words (words with multiple meanings).
 
-For example: 
+For example:
 
 ::
 
@@ -298,13 +297,16 @@ For example:
 Updating PO files
 -----------------
 
-Some time or later, you'll add new content to our game, and there will be new strings that need to be translated. When this happens, you'll
+Some time or later, you'll add new content to our game, and there will
+be new strings that need to be translated. When this happens, you'll
 need to update the existing PO files to include the new strings.
 
-First, generate a new POT file containing all the existing strings plus the newly added strings. After that, merge the existing 
-PO files with the new POT file. There are two ways to do this:
+First, generate a new POT file containing all the existing strings plus
+the newly added strings. After that, merge the existing PO files
+with the new POT file. There are two ways to do this:
 
-- Use a gettext editor, and it should have an option to update a PO file from a POT file.
+- Use a gettext editor, and it should have an option to update a PO file
+  from a POT file.
 
 - Use the gettext ``msgmerge`` tool:
 
@@ -313,12 +315,14 @@ PO files with the new POT file. There are two ways to do this:
     # The order matters: specify the message file *then* the PO template!
     msgmerge --update --backup=none fr.po messages.pot
 
-If you want to keep a backup of the original message file (which would be saved as ``fr.po~`` in this example), 
-remove the ``--backup=none`` argument.
+If you want to keep a backup of the original message file (which would be saved
+as ``fr.po~`` in this example), remove the ``--backup=none`` argument.
 
 POT generation custom plugin
 ----------------------------
 
-If you have any extra file format to deal with, you could write a custom plugin to parse and and extract the strings from the custom file. 
-This custom plugin will extract the strings and write into the POT file when you hit **Generate POT**. To learn more about how to
-create the translation parser plugin, see :ref:`EditorTranslationParserPlugin <class_EditorTranslationParserPlugin>`.
+If you have any extra file format to deal with, you could write a custom plugin
+to parse and and extract the strings from the custom file. This custom plugin
+will extract the strings and write into the POT file when you hit **Generate POT**.
+To learn more about how to create the translation parser plugin, see
+:ref:`EditorTranslationParserPlugin <class_EditorTranslationParserPlugin>`.

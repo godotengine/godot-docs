@@ -6,11 +6,10 @@ Internationalizing games
 Introduction
 ------------
 
-While indie or niche games usually
-do not need localization, games targeting a more massive market
-often require localization. Godot offers many tools to make this process
-more straightforward, so this tutorial is more like a collection of
-tips and tricks.
+While indie or niche games usually do not need localization, games targeting
+a more massive market often require localization. Godot offers many tools to
+make this process more straightforward, so this tutorial is more like a
+collection of tips and tricks.
 
 Localization is usually done by specific studios hired for the job. Despite the
 huge amount of software and file formats available for this, the most common way
@@ -60,10 +59,14 @@ Select the resource to be remapped then add some alternatives for each locale.
 
 Automatically setting a language
 --------------------------------
-It is recommended to default to the user's preferred language which can be obtained via :ref:`OS.get_locale_language() <class_OS_method_get_locale_language>`.
-If your game is not available in that language, it will fall back to the :ref:`Fallback <class_ProjectSettings_property_internationalization/locale/fallback>`
+
+It is recommended to default to the user's preferred language which can be
+obtained via :ref:`OS.get_locale_language() <class_OS_method_get_locale_language>`.
+If your game is not available in that language, it will fall back to the
+:ref:`Fallback <class_ProjectSettings_property_internationalization/locale/fallback>`
 in **Project Settings > Internationalization > Locale**, or to ``en`` if empty.
-Nevertheless letting players change the language in game is recommended for various reasons (e.g. translation quality or player preference).
+Nevertheless, letting players change the language in game is recommended for
+various reasons (e.g. translation quality or player preference).
 
 .. tabs::
  .. code-tab:: gdscript
@@ -78,7 +81,9 @@ Nevertheless letting players change the language in game is recommended for vari
 
 Locale vs. language
 -------------------
-A :ref:`locale <doc_locales>` is commonly a combination of a language with a region or country, but can also contain information like a script or a variant.
+
+A :ref:`locale <doc_locales>` is commonly a combination of a language with a
+region or country, but can also contain information like a script or a variant.
 
 Examples:
 
@@ -87,21 +92,26 @@ Examples:
 - ``en_US``: English in the USA / American English
 - ``en_DE``: English in Germany
 
-Indie games generally only need to care about language, but read on for more information.
+Indie games generally only need to care about language, but read on for more
+information.
 
-Why locales exist can be illustrated through the USA and Great Britain. Both speak the same language (English), yet differ in many aspects:
-- Spelling: E.g. gray (USA), grey (GB)
-- Use of words: E.g. eggplant (USA), aubergine (GB)
-- Units or currencies: E.g. feet/inches (USA), metres/cm (GB)
+Why locales exist can be illustrated through the USA and Great Britain.
+Both speak the same language (English), yet differ in many aspects:
 
-It can get more complex however. Imagine you offer different content in Europe and in China (e.g. in an MMO). You will need to translate each of those content variations into many languages and store and load them accordingly.
+- Spelling: e.g. gray (USA), grey (GB)
+- Use of words: e.g. eggplant (USA), aubergine (GB)
+- Units or currencies: e.g. feet/inches (USA), metres/cm (GB)
+
+It can get more complex however. Imagine you offer different content in Europe
+and in China (e.g. in an MMO). You will need to translate each of those content
+variations into many languages and store and load them accordingly.
 
 Converting keys to text
 -----------------------
 
 Some controls, such as :ref:`Button <class_Button>` and :ref:`Label <class_Label>`,
 will automatically fetch a translation if their text matches a translation key.
-For example, if a label's text is "MAIN_SCREEN_GREETING1" and that key exists
+For example, if a label's text is ``MAIN_SCREEN_GREETING1`` and that key exists
 in the current translation, then the text will automatically be translated.
 
 This automatic translation behavior may be undesirable in certain cases. For
@@ -160,6 +170,8 @@ allow translators to choose the *order* in which placeholders appear:
     # Additionally, this form gives more context for translators to work with.
     message.text = tr("{character} picked up the {weapon}").format({character = "Ogre", weapon = "Sword"})
 
+.. _doc_internationalizing_games_translation_contexts:
+
 Translation contexts
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -186,6 +198,8 @@ identical:
 
     // "Close", as in a distance (opposite of "far").
     GetNode<Label>("Distance").Text = Tr("Close", "Distance");
+
+.. _doc_internationalizing_games_pluralization:
 
 Pluralization
 ~~~~~~~~~~~~~
@@ -225,11 +239,6 @@ This can be combined with a context if needed:
 
     int numJobs = 1;
     GetNode<Label>("Label").Text = string.Format(TrN("{0} job", "{0} jobs", numJobs, "Task Manager"), numJobs);
-
-.. note::
-
-    Providing pluralized translations is only supported with
-    :ref:`doc_localization_using_gettext`, not CSV.
 
 Making controls resizable
 -------------------------
@@ -277,7 +286,7 @@ the current language can also be changed at runtime.
 
 .. _doc_internationalizing_games_bidi:
 
-Bidirectional text and UI Mirroring
+Bidirectional text and UI mirroring
 -----------------------------------
 
 Arabic and Hebrew are written from right to left (except for the numbers and Latin
@@ -289,18 +298,27 @@ usually need to change anything or have any knowledge of the specific writing sy
 
 For RTL languages, Godot will automatically do the following changes to the UI:
 
--  Mirrors left/right anchors and margins.
--  Swaps left and right text alignment.
--  Mirrors horizontal order of the child controls in the containers, and items in Tree/ItemList controls.
--  Uses mirrored order of the internal control elements (e.g. OptionButton dropdown button, checkbox alignment, List column order, Tree item icons and connecting line alignment, e.t.c.), in some cases mirrored controls use separate theme styles.
--  Coordinate system is not mirrored, and non-UI nodes (sprites, e.t.c) are not affected.
+- Mirrors left/right anchors and margins.
+- Swaps left and right text alignment.
+- Mirrors horizontal order of the child controls in the containers, and items in
+  Tree/ItemList controls.
+- Uses mirrored order of the internal control elements (e.g., OptionButton
+  dropdown button, CheckBox/CheckButton alignment, List column order, TreeItem icons
+  and connecting line alignment). In some cases, mirrored controls
+  use separate theme styles.
+- Coordinate system is **not** mirrored.
+- Non-UI nodes (sprites, etc.) are **not** affected.
 
-It is possible to override text and control layout direction by using the following control properties:
+It is possible to override text and control layout direction by using
+the following control properties:
 
--  ``text_direction``, sets the base text direction. When set to "auto", direction depends on the first strong directional character in the text according to the Unicode Bidirectional Algorithm,
--  ``language``, overrides current project locale.
--  ``structured_text_bidi_override`` property and ``_structured_text_parser`` callback, enables special handling for structured text.
--  ``layout_direction``, overrides control mirroring.
+- ``text_direction``, sets the base text direction. When set to "auto",
+  the direction depends on the first strong directional character in the text
+  according to the Unicode Bidirectional Algorithm.
+- ``language``, overrides the current project locale.
+- The ``structured_text_bidi_override`` property and ``_structured_text_parser``
+  callback, enable special handling for structured text.
+- ``layout_direction``, overrides control mirroring.
 
 .. image:: img/ui_mirror.png
 
@@ -317,7 +335,8 @@ word and line breaking require more than rules over character sequences.
 Godot includes ICU rule and dictionary-based break iterator data, but this data
 is not included in exported projects by default.
 
-To include it, go to **Project → Project Settings**, enable **Internationalization → Locale → Include Text Server Data**,
+To include it, go to **Project → Project Settings**, enable
+**Internationalization → Locale → Include Text Server Data**,
 then export the project. Break iterator data is about 4 MB in size.
 
 Structured text BiDi override
@@ -359,10 +378,10 @@ Testing translations
 You may want to test a project's translation before releasing it. Godot provides three ways
 to do this.
 
-First, in the Project Settings, under :menu:`Internationalization > Locale` (with advanced settings enabled), there is a **Test**
-property. Set this property to the locale code of the language you want to test. Godot will
-run the project with that locale when the project is run (either from the editor or when
-exported).
+First, in the Project Settings, under :menu:`Internationalization > Locale`
+(with advanced settings enabled), there is a **Test** property. Set this property
+to the locale code of the language you want to test. Godot will run the project
+with that locale when the project is run (either from the editor or when exported).
 
 .. image:: img/locale_test.webp
 
@@ -370,8 +389,8 @@ Keep in mind that since this is a project setting, it will show up in version co
 it is set to a non-empty value. Therefore, it should be set back to an empty value before
 committing changes to version control.
 
-Second, from within the editor go to the top bar and click on :button:`View` on the top bar, then go down to
-:ui:`Preview Translation` and select the language you want to preview.
+Second, from within the editor go to the top bar and click on :button:`View` on the top bar,
+then go down to :ui:`Preview Translation` and select the language you want to preview.
 
 .. image:: img/locale_editor_preview.webp
 
