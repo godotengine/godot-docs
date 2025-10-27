@@ -58,7 +58,7 @@ jobs:
       - name: Sphinx - Build HTML
         run: make SPHINXOPTS='--color -j 4' html
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: godot-docs-html-${{ matrix.branch }}
           path: _build/html
@@ -80,7 +80,7 @@ jobs:
 
           make SPHINXOPTS='--color -j 4' epub
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: godot-docs-epub-${{ matrix.branch }}
           path: _build/epub/GodotEngine.epub
