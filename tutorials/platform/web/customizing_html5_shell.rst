@@ -92,8 +92,8 @@ The following optional placeholders will enable some extra features in your cust
   
   - :ref:`Show Image <class_ProjectSettings_property_application/boot_splash/show_image>`:
     ``show-image--true``, ``show-image--false``
-  - :ref:`Fullsize <class_ProjectSettings_property_application/boot_splash/fullsize>`:
-    ``fullsize--true``, ``fullsize--false``
+  - :ref:`Stretch Mode <class_ProjectSettings_property_application/boot_splash/stretch_mode>`:
+    ``fullsize--true`` (if **not** Disabled), ``fullsize--false``
   - :ref:`Use Filter <class_ProjectSettings_property_application/boot_splash/use_filter>`:
     ``use-filter--true``, ``use-filter--false``
 
