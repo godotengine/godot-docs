@@ -11,4 +11,5 @@ Debug
    output_panel
    debugger_panel
    the_profiler
+   objectdb_profiler
    custom_performance_monitors
