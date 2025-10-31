@@ -17,6 +17,9 @@ In this tutorial, we will be using the Platformer 3D demo to set up a ragdoll.
     `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>`_
     or using the `Asset Library <https://godotengine.org/asset-library/asset/2748>`_.
 
+    You can also check out an example of a complete ragdoll setup in the
+    `Ragdoll Physics demo <https://github.com/godotengine/godot-demo-projects/tree/master/3d/ragdoll_physics>`_.
+
 Setting up the ragdoll
 ----------------------
 
@@ -267,6 +270,13 @@ as well, so that the player can still collect coins:
 You can find the GridMap in the 3D platformer demo in ``stage/grid_map.scn``.
 The coin's Area3D node (on which the layers and masks must be adjusted)
 can be found at ``coin/coin.tscn``.
+
+.. tip::
+
+    To select all PhysicalBone3D nodes quickly, enter ``t:PhysicalBone3D`` in the
+    search bar at the top of the scene tree dock. This filters the scene tree
+    to only show PhysicalBone3D nodes, which allows you to select them all at once
+    using :kbd:`Shift + Left mouse button` on the first and last entries.
 
 If this is not done, collision will behave incorrectly as the player will collide
 with its own (inactive) ragdoll. This can cause the player to wildly
