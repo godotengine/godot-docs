@@ -30,7 +30,7 @@ The graphic is based on a node tree of the following form: ``Root Window (embed 
 SubViewports, however this example intends to provide an overview of the methodology in general.
 
 .. image:: img/transforms_overview.webp
-    :target: ../../../_images/transforms_overview.webp
+    :target: ../../_images/transforms_overview.webp
 
 Click graphic to enlarge.
 
