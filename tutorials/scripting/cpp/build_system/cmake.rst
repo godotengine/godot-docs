@@ -1,9 +1,12 @@
+.. _doc_godot_cpp_build_system_cmake:
+
 Secondary build system: Working with CMake
 ==========================================
 
-.. seealso:: This page documents how to compile godot-cpp. If you're looking to
-             compile Godot instead, see
-             :ref:`doc_introduction_to_the_buildsystem`.
+.. seealso::
+
+    This page documents how to compile godot-cpp. If you're looking to compile
+    Godot instead, see :ref:`doc_introduction_to_the_buildsystem`.
 
 Beside the SCons_ based build system, godot-cpp also provides a CMakeLists.txt_
 file to support users that prefer using CMake_ over SCons for their build
@@ -33,7 +36,6 @@ extension project:
 Examples for configuring godot-cpp are listed at the bottom of the page, many
 of which may help with configuring your project.
 
-
 CMake's ``Debug`` vs Godot's ``template_debug``
 -----------------------------------------------
 
@@ -42,170 +44,171 @@ compilation of C++ source code with debug symbols enabled, and compiling a
 Godot extension with debug features enabled. The two concepts are not mutually
 exclusive.
 
-- debug_features
-    Enables a pre-processor definition to selectively compile code to help
-    users of a Godot extension with their own project.
+Debug Features
+~~~~~~~~~~~~~~
 
-    debug features are enabled in ``editor`` and ``template_debug`` builds,
-    which can be specified during the configure phase like so:
+Enables a pre-processor definition to selectively compile code to help users of
+a Godot extension with their own project.
 
-    .. code-block::
+Debug features are enabled in ``editor`` and ``template_debug`` builds, which
+can be specified during the configure phase like so:
 
-        cmake -S godot-cpp -B cmake-build -DGODOTCPP_TARGET=<target choice>
+.. code-block:: shell
 
-- Debug
-    Sets compiler flags so that debug symbols are generated to help godot
-    extension developers debug their extension.
+    cmake -S godot-cpp -B cmake-build -DGODOTCPP_TARGET=<target choice>
 
-    ``Debug`` is the default build type for CMake projects, to select another
-    it depends on the generator used
+Debug
+~~~~~
 
-    For single configuration generators, add to the configure command:
+Sets compiler flags so that debug symbols are generated to help godot extension
+developers debug their extension.
 
-    ``-DCMAKE_BUILD_TYPE=<type>``
+``Debug`` is the default build type for CMake projects, the way to select another
+depends on the generator used:
 
-    For multi-config generators add to the build command:
+* For single configuration generators, add ``-DCMAKE_BUILD_TYPE=<type>`` to the
+  configure command.
+* For multi-config generators, add ``--config <type>`` to the build command.
 
-    ``--config <type>``
-
-    where ``<type>`` is one of ``Debug``, ``Release``, ``RelWithDebInfo``,
-    ``MinSizeRel``
-
+Where ``<type>`` is one of ``Debug``, ``Release``, ``RelWithDebInfo``, and
+``MinSizeRel``.
 
 SCons Deviations
 ----------------
 
 Not all code from the SCons system can be perfectly represented in CMake, here
-are the notable differences.
+are the notable differences:
 
-- debug_symbols
+- ``debug_symbols``
+
     Is no longer an explicit option, and is enabled when using CMake build
     configurations; ``Debug``, ``RelWithDebInfo``.
 
-- dev_build
+- ``dev_build``
+
     Does not define ``NDEBUG`` when disabled, ``NDEBUG`` is set when using
     CMake build configurations; ``Release``, ``MinSizeRel``.
 
-- arch
+- ``arch``
+
     CMake sets the architecture via the toolchain files, macOS universal is
-    controlled via the ``CMAKE_OSX_ARCHITECTURES``
-    property which is copied to targets when they are defined.
+    controlled via the ``CMAKE_OSX_ARCHITECTURES`` property which is copied to
+    targets when they are defined.
 
-- debug_crt
+- ``debug_crt``
+
     CMake controls linking to Windows runtime libraries by copying the value of
-    ``CMAKE_MSVC_RUNTIME_LIBRARIES`` to targets as they are defined.
-    godot-cpp will set this variable if it isn't already set. So, include it
-    before other dependencies to have the value propagate across the projects.
+    ``CMAKE_MSVC_RUNTIME_LIBRARIES`` to targets as they are defined. godot-cpp
+    will set this variable if it isn't already set. So, include it before other
+    dependencies to have the value propagate across the projects.
 
+Basic Walk-Through
+------------------
 
-Basic walkthrough
------------------
+Clone the git repository
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. topic:: Clone the git repository
+.. code-block:: shell
 
-    .. code-block::
+    git clone https://github.com/godotengine/godot-cpp.git
+    Cloning into 'godot-cpp'...
+    ...
 
-        git clone https://github.com/godotengine/godot-cpp.git
-        Cloning into 'godot-cpp'...
-        ...
+Configure the build
+~~~~~~~~~~~~~~~~~~~
 
+.. code-block:: shell
 
-.. topic:: Configure the build
+    cmake -S godot-cpp -B cmake-build -G Ninja
 
-    .. code-block::
+- ``-S`` Specifies the source directory as ``godot-cpp``
+- ``-B`` Specifies the build directory as ``cmake-build``
+- ``-G`` Specifies the Generator as ``Ninja``
 
-        cmake -S godot-cpp -B cmake-build -G Ninja
+The source directory in this example is the source root for the freshly cloned
+godot-cpp. CMake will also interpret the first path in the command as the
+source path, or if an existing build path is specified it will deduce the
+source path from the build cache.
 
-    ``-S`` Specifies the source directory as ``godot-cpp``
+The following three commands are equivalent:
 
-    ``-B`` Specifies the build directory as ``cmake-build``
+.. code-block:: shell
 
-    ``-G`` Specifies the Generator as ``Ninja``
+    # Current working directory is the godot-cpp source root.
+    cmake . -B build-dir
 
-    The source directory in this example is the source root for the freshly
-    cloned godot-cpp. CMake will also interpret the first path in the command
-    as the source path, or if an existing build path is specified it will
-    deduce the source path from the build cache.
+    # Current working directory is an empty godot-cpp/build-dir.
+    cmake ../
 
-    The following three commands are equivalent.
+    # Current working directory is an existing build path.
+    cmake .
 
-    .. code-block::
+The build directory is specified so that generated files do not clutter the
+source tree with build artifacts.
 
-        # Current working directory is the godot-cpp source root.
-        cmake . -B build-dir
+CMake doesn't build the code, it generates the files that a build tool uses, in
+this case the ``Ninja`` generator creates Ninja_ build files.
 
-        # Current working directory is an empty godot-cpp/build-dir.
-        cmake ../
+To see the list of generators run ``cmake --help``.
 
-        # Current working directory is an existing build path.
-        cmake .
+.. _Ninja: https://ninja-build.org/
 
-    The build directory is specified so that generated files do not clutter
-    the source tree with build artifacts.
+Build Options
+~~~~~~~~~~~~~
 
-    CMake doesn't build the code, it generates the files that a build tool
-    uses, in this case the ``Ninja`` generator creates Ninja_ build files.
+To list the available options use the ``-L[AH]`` command flags. ``A`` is for
+advanced, and ``H`` is for help strings:
 
-    To see the list of generators run ``cmake --help``.
+.. code-block:: shell
 
-    .. _Ninja: https://ninja-build.org/
+    cmake -S godot-cpp -LH
 
-.. topic:: Build Options
+Options are specified on the command line when configuring, for example:
 
-    To list the available options use the ``-L[AH]`` command flags.
+.. code-block:: shell
 
-    ``A`` is for advanced, and ``H`` is for help strings:
+    cmake -S godot-cpp -DGODOTCPP_USE_HOT_RELOAD:BOOL=ON \
+        -DGODOTCPP_PRECISION:STRING=double \
+        -DCMAKE_BUILD_TYPE:STRING=Debug
 
-    .. code-block::
+See setting-build-variables_ and build-configurations_ for more information.
 
-        cmake -S godot-cpp -LH
+.. _setting-build-variables: https://cmake.org/cmake/help/latest/guide/user-interaction/index.html#setting-build-variables
+.. _build-configurations: https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#build-configurations
 
-    Options are specified on the command line when configuring, for example:
+A non-exhaustive list of options:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. code-block::
+.. code-block:: text
 
-        cmake -S godot-cpp -DGODOTCPP_USE_HOT_RELOAD:BOOL=ON \
-            -DGODOTCPP_PRECISION:STRING=double \
-            -DCMAKE_BUILD_TYPE:STRING=Debug
+    // Path to a custom GDExtension API JSON file.
+    // (takes precedence over GODOTCPP_GDEXTENSION_DIR)
+    // ( /path/to/custom_api_file )
+    GODOTCPP_CUSTOM_API_FILE:FILEPATH=
 
-    Review setting-build-variables_ and build-configurations_ for more
-    information.
+    // Force disabling exception handling code. (ON|OFF)
+    GODOTCPP_DISABLE_EXCEPTIONS:BOOL=ON
 
-    .. _setting-build-variables: https://cmake.org/cmake/help/latest/guide/user-interaction/index.html#setting-build-variables
-    .. _build-configurations: https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#build-configurations
+    // Path to a custom directory containing the GDExtension interface
+    // header and API JSON file. ( /path/to/gdextension_dir )
+    GODOTCPP_GDEXTENSION_DIR:PATH=gdextension
 
-    A non-exhaustive list of options:
+    // Set the floating-point precision level. (single|double)
+    GODOTCPP_PRECISION:STRING=single
 
-    .. code-block::
+    // Enable the extra accounting required to support hot reload. (ON|OFF)
+    GODOTCPP_USE_HOT_RELOAD:BOOL=
 
-        // Path to a custom GDExtension API JSON file.
-        // (takes precedence over `GODOTCPP_GDEXTENSION_DIR`)
-        // ( /path/to/custom_api_file )
-        GODOTCPP_CUSTOM_API_FILE:FILEPATH=
+Compiling
+~~~~~~~~~
 
-        // Force disabling exception handling code. (ON|OFF)
-        GODOTCPP_DISABLE_EXCEPTIONS:BOOL=ON
+Tell CMake to invoke the build system it generated in the specified directory.
+The default target is ``template_debug`` and the default build configuration is
+Debug.
 
-        // Path to a custom directory containing the GDExtension interface
-        // header and API JSON file. ( /path/to/gdextension_dir )
-        GODOTCPP_GDEXTENSION_DIR:PATH=gdextension
+.. code-block:: shell
 
-        // Set the floating-point precision level. (single|double)
-        GODOTCPP_PRECISION:STRING=single
-
-        // Enable the extra accounting required to support hot reload. (ON|OFF)
-        GODOTCPP_USE_HOT_RELOAD:BOOL=
-
-
-.. topic:: Compiling
-
-    Tell CMake to invoke the build system it generated in the specified
-    directory. The default target is ``template_debug`` and the default build
-    configuration is Debug.
-
-    .. code-block::
-
-        cmake --build cmake-build
+    cmake --build cmake-build
 
 Examples
 --------
@@ -214,7 +217,7 @@ These examples, while intended for godot-cpp developers, package maintainers,
 and CI/CD may help you configure your own extension project.
 
 Practical examples for how to consume the godot-cpp library as part of an
-extension project are listed in the `Introduction`_
+extension project are listed in the `Introduction`_.
 
 Enabling Integration Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -225,7 +228,7 @@ which is off by default.
 To configure and build the godot-cpp project to enable the integration
 testing targets the command will look something like:
 
-.. code-block::
+.. code-block:: shell
 
     cmake -S godot-cpp -B cmake-build -DGODOTCPP_ENABLE_TESTING=YES
     cmake --build cmake-build --target godot-cpp-test
@@ -242,23 +245,22 @@ needs to be specified at build time, for example, ``--config Release``.
 
 .. _CMake downloads: https://cmake.org/download/
 
-.. code-block::
+.. code-block:: shell
 
     cmake -S godot-cpp -B cmake-build -DGODOTCPP_ENABLE_TESTING=YES
     cmake --build cmake-build -t godot-cpp-test --config Release
-
 
 MSys2/clang64, "Ninja" - Debug
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Assumes the ``ming-w64-clang-x86_64``-toolchain is installed.
 
-Note that Ninja is a Single-Config Generator so the build type
-needs to be specified at configuration time.
+Note that Ninja is a Single-Config Generator so the build type needs to be
+specified at configuration time.
 
 Using the ``msys2/clang64`` shell:
 
-.. code-block::
+.. code-block:: shell
 
     cmake -S godot-cpp -B cmake-build -G"Ninja" \
         -DGODOTCPP_ENABLE_TESTING=YES -DCMAKE_BUILD_TYPE=Release
@@ -274,7 +276,7 @@ type is specified at build time.
 
 Using the ``msys2/clang64`` shell:
 
-.. code-block::
+.. code-block:: shell
 
     cmake -S godot-cpp -B cmake-build -G"Ninja Multi-Config" \
         -DGODOTCPP_ENABLE_TESTING=YES -DGODOTCPP_DEV_BUILD:BOOL=ON
@@ -292,7 +294,7 @@ This has only been tested on Windows so far. You can use this example workflow:
   command. It can also be added manually;
   the location is listed inside the ``emcmake.bat`` file
 
-.. code-block::
+.. code-block:: powershell
 
     C:\emsdk\emsdk.ps1 activate latest
     emcmake.bat cmake -S godot-cpp -B cmake-build-web -DCMAKE_BUILD_TYPE=Release
@@ -315,44 +317,50 @@ is for the Android sdk platform, (tested with ``android-29``).
 
 .. warning::
 
-    The Android SDK website explicitly states that they do not support using
+    The Android SDK website_ explicitly states that they do not support using
     the CMake built-in method, and recommends you stick with their toolchain
     files.
 
-.. topic:: Using your own toolchain file as described in the CMake documentation
+    .. _website: https://developer.android.com/ndk/guides/cmake
 
-    .. code-block::
+Using your own toolchain file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        cmake -S godot-cpp -B cmake-build --toolchain my_toolchain.cmake
-        cmake --build cmake-build -t template_release
+As described in the CMake documentation:
 
-    Doing the equivalent on just using the command line:
+.. code-block:: shell
 
-    .. code-block::
+    cmake -S godot-cpp -B cmake-build --toolchain my_toolchain.cmake
+    cmake --build cmake-build -t template_release
 
-        cmake -S godot-cpp -B cmake-build \
-            -DCMAKE_SYSTEM_NAME=Android \
-            -DCMAKE_SYSTEM_VERSION=<platform> \
-            -DCMAKE_ANDROID_ARCH_ABI=<arch> \
-            -DCMAKE_ANDROID_NDK=/path/to/android-ndk
-        cmake --build cmake-build
+Doing the equivalent just using the command line:
 
-.. topic:: Using the toolchain file from the Android SDK
+.. code-block:: shell
 
-    This defaults to the minimum supported version and armv7-a:
+    cmake -S godot-cpp -B cmake-build \
+        -DCMAKE_SYSTEM_NAME=Android \
+        -DCMAKE_SYSTEM_VERSION=<platform> \
+        -DCMAKE_ANDROID_ARCH_ABI=<arch> \
+        -DCMAKE_ANDROID_NDK=/path/to/android-ndk
+    cmake --build cmake-build
 
-    .. code-block::
+Using the Android SDK toolchain file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        cmake -S godot-cpp -B cmake-build \
-            --toolchain $ANDROID_HOME/ndk/<version>/build/cmake/android.toolchain.cmake
-        cmake --build cmake-build
+This defaults to the minimum supported version and armv7-a:
 
-    Specifying the Android platform and ABI:
+.. code-block:: shell
 
-    .. code-block::
+    cmake -S godot-cpp -B cmake-build \
+        --toolchain $ANDROID_HOME/ndk/<version>/build/cmake/android.toolchain.cmake
+    cmake --build cmake-build
 
-        cmake -S godot-cpp -B cmake-build \
-            --toolchain $ANDROID_HOME/ndk/<version>/build/cmake/android.toolchain.cmake \
-            -DANDROID_PLATFORM:STRING=android-29 \
-            -DANDROID_ABI:STRING=armeabi-v7a
-        cmake --build cmake-build
+Specifying the Android platform and ABI:
+
+.. code-block:: shell
+
+    cmake -S godot-cpp -B cmake-build \
+        --toolchain $ANDROID_HOME/ndk/<version>/build/cmake/android.toolchain.cmake \
+        -DANDROID_PLATFORM:STRING=android-29 \
+        -DANDROID_ABI:STRING=armeabi-v7a
+    cmake --build cmake-build
