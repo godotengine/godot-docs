@@ -150,6 +150,8 @@ wait until the thread is done (if not done yet), then properly dispose of it.
     operation. Locking should be done carefully; avoid locking too often (or for
     too long).
 
+.. _doc_using_multiple_threads_mutexes:
+
 Mutexes
 -------
 
