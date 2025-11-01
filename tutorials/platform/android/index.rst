@@ -11,3 +11,4 @@ Android
    android_plugin
    android_in_app_purchases
    javaclasswrapper_and_androidruntimeplugin
+   native_debug_symbols
