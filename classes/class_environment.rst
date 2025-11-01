@@ -119,11 +119,11 @@ Properties
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_hdr_scale<class_Environment_property_glow_hdr_scale>`                                                             | ``2.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>`                                                     | ``1.0``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>`                                                     | ``0.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_intensity<class_Environment_property_glow_intensity>`                                                             | ``0.3``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_levels/1<class_Environment_property_glow_levels/1>`                                                               | ``1.0``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_levels/1<class_Environment_property_glow_levels/1>`                                                               | ``0.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_levels/2<class_Environment_property_glow_levels/2>`                                                               | ``0.8``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -1169,7 +1169,7 @@ The bleed scale of the HDR glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_hdr_threshold** = ``1.0`` :ref:`🔗<class_Environment_property_glow_hdr_threshold>`
+:ref:`float<class_float>` **glow_hdr_threshold** = ``0.0`` :ref:`🔗<class_Environment_property_glow_hdr_threshold>`
 
 .. rst-class:: classref-property-setget
 
@@ -1203,7 +1203,7 @@ The overall brightness multiplier of the glow effect. When using the Mobile rend
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/1** = ``1.0`` :ref:`🔗<class_Environment_property_glow_levels/1>`
+:ref:`float<class_float>` **glow_levels/1** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/1>`
 
 .. rst-class:: classref-property-setget
 
