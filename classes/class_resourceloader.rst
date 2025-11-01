@@ -340,6 +340,8 @@ Returns the resource loaded by :ref:`load_threaded_request()<class_ResourceLoade
 
 If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status()<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading. However, it's recommended to use :ref:`load_threaded_get_status()<class_ResourceLoader_method_load_threaded_get_status>` to known when the load has actually completed.
 
+\ **Note:** The returned Resource remains in memory as long as it has at least one active reference. You do not need to manage freeing its memory manually.
+
 .. rst-class:: classref-item-separator
 
 ----
