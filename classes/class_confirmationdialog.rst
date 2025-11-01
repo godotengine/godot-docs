@@ -38,6 +38,8 @@ To get cancel action, you can use:
 
 
 
+\ **Note:** :ref:`AcceptDialog<class_AcceptDialog>` is invisible by default. To make it visible, call one of the ``popup_*`` methods from :ref:`Window<class_Window>` on the node, such as :ref:`Window.popup_centered_clamped()<class_Window_method_popup_centered_clamped>`.
+
 .. rst-class:: classref-reftable-group
 
 Properties

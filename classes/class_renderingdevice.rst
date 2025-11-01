@@ -5515,6 +5515,8 @@ Creates a new compute pipeline. It can be accessed with the RID that is returned
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
+This will be freed automatically when the ``shader`` is freed.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -5826,6 +5828,8 @@ Creates a new framebuffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
+This will be freed automatically when any of the ``textures`` is freed.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -5853,6 +5857,8 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 Creates a new multipass framebuffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
+
+This will be freed automatically when any of the ``textures`` is freed.
 
 .. rst-class:: classref-item-separator
 
@@ -6318,6 +6324,8 @@ Creates a new index array. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
+This will be freed automatically when the ``index_buffer`` is freed.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -6359,6 +6367,8 @@ Limits for various graphics hardware can be found in the `Vulkan Hardware Databa
 Creates a new render pipeline. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
+
+This will be freed automatically when the ``shader`` is freed.
 
 .. rst-class:: classref-item-separator
 
@@ -6672,6 +6682,8 @@ Returns an RID for an existing ``image`` (``VkImage``) with the given ``type``, 
 
 Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``.
 
+This will be freed automatically when the ``with_texture`` is freed.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -6687,6 +6699,8 @@ Creates a shared texture using the specified ``view`` and the texture informatio
 For 2D textures (which only have one layer), ``layer`` must be ``0``.
 
 \ **Note:** Layer slicing is only supported for 2D texture arrays, not 3D textures or cubemaps.
+
+This will be freed automatically when the ``with_texture`` is freed.
 
 .. rst-class:: classref-item-separator
 
@@ -6895,6 +6909,8 @@ Creates a new uniform set. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
 
+This will be freed automatically when the ``shader`` or any of the RIDs in the ``uniforms`` is freed.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -6918,6 +6934,10 @@ Checks if the ``uniform_set`` is valid, i.e. is owned.
 :ref:`RID<class_RID>` **vertex_array_create**\ (\ vertex_count\: :ref:`int<class_int>`, vertex_format\: :ref:`int<class_int>`, src_buffers\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], offsets\: :ref:`PackedInt64Array<class_PackedInt64Array>` = PackedInt64Array()\ ) :ref:`🔗<class_RenderingDevice_method_vertex_array_create>`
 
 Creates a vertex array based on the specified buffers. Optionally, ``offsets`` (in bytes) may be defined for each buffer.
+
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
+
+This will be freed automatically when any of the ``src_buffers`` is freed.
 
 .. rst-class:: classref-item-separator
 
