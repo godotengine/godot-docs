@@ -57,7 +57,7 @@ in a way similar to C's ``sprintf()``:
     // Converts the resulting String into a `const char *`.
     // You may need to do this if passing the result as an argument
     // to a method that expects a `const char *` instead of a String.
-    vformat("My name is %s.", "Godette")..utf8().get_data();
+    vformat("My name is %s.", "Godette").utf8().get_data();
 
 In most cases, try to use ``vformat()`` instead of string concatenation as it
 makes for more readable code.
