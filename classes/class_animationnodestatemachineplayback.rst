@@ -70,7 +70,15 @@ Methods
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`get_current_play_position<class_AnimationNodeStateMachinePlayback_method_get_current_play_position>`\ (\ ) |const|                                                      |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`get_fading_from_length<class_AnimationNodeStateMachinePlayback_method_get_fading_from_length>`\ (\ ) |const|                                                            |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`                              | :ref:`get_fading_from_node<class_AnimationNodeStateMachinePlayback_method_get_fading_from_node>`\ (\ ) |const|                                                                |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`get_fading_from_play_position<class_AnimationNodeStateMachinePlayback_method_get_fading_from_play_position>`\ (\ ) |const|                                              |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`get_fading_length<class_AnimationNodeStateMachinePlayback_method_get_fading_length>`\ (\ ) |const|                                                                      |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`get_fading_position<class_AnimationNodeStateMachinePlayback_method_get_fading_position>`\ (\ ) |const|                                                                  |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_method_get_travel_path>`\ (\ ) |const|                                                                          |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -165,6 +173,18 @@ Returns the playback position within the current animation state.
 
 ----
 
+.. _class_AnimationNodeStateMachinePlayback_method_get_fading_from_length:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_fading_from_length**\ (\ ) |const| :ref:`🔗<class_AnimationNodeStateMachinePlayback_method_get_fading_from_length>`
+
+Returns the playback state length of the node from :ref:`get_fading_from_node()<class_AnimationNodeStateMachinePlayback_method_get_fading_from_node>`. Returns ``0`` if no animation fade is occurring.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationNodeStateMachinePlayback_method_get_fading_from_node:
 
 .. rst-class:: classref-method
@@ -172,6 +192,42 @@ Returns the playback position within the current animation state.
 :ref:`StringName<class_StringName>` **get_fading_from_node**\ (\ ) |const| :ref:`🔗<class_AnimationNodeStateMachinePlayback_method_get_fading_from_node>`
 
 Returns the starting state of currently fading animation.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeStateMachinePlayback_method_get_fading_from_play_position:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_fading_from_play_position**\ (\ ) |const| :ref:`🔗<class_AnimationNodeStateMachinePlayback_method_get_fading_from_play_position>`
+
+Returns the playback position of the node from :ref:`get_fading_from_node()<class_AnimationNodeStateMachinePlayback_method_get_fading_from_node>`. Returns ``0`` if no animation fade is occurring.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeStateMachinePlayback_method_get_fading_length:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_fading_length**\ (\ ) |const| :ref:`🔗<class_AnimationNodeStateMachinePlayback_method_get_fading_length>`
+
+Returns the length of the current fade animation. Returns ``0`` if no animation fade is occurring.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeStateMachinePlayback_method_get_fading_position:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_fading_position**\ (\ ) |const| :ref:`🔗<class_AnimationNodeStateMachinePlayback_method_get_fading_position>`
+
+Returns the playback position of the current fade animation. Returns ``0`` if no animation fade is occurring.
 
 .. rst-class:: classref-item-separator
 

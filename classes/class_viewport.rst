@@ -85,6 +85,8 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`gui_disable_input<class_Viewport_property_gui_disable_input>`                                   | ``false``                                                                     |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                                         | :ref:`gui_drag_threshold<class_Viewport_property_gui_drag_threshold>`                                 | ``10``                                                                        |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`                             | ``false``                                                                     |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`gui_snap_controls_to_pixels<class_Viewport_property_gui_snap_controls_to_pixels>`               | ``true``                                                                      |
@@ -1430,6 +1432,23 @@ The global canvas transform of the viewport. The canvas transform is relative to
 - :ref:`bool<class_bool>` **is_input_disabled**\ (\ )
 
 If ``true``, the viewport will not receive input events.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_property_gui_drag_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **gui_drag_threshold** = ``10`` :ref:`🔗<class_Viewport_property_gui_drag_threshold>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_drag_threshold**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_drag_threshold**\ (\ )
+
+The minimum distance the mouse cursor must move while pressed before a drag operation begins.
 
 .. rst-class:: classref-item-separator
 

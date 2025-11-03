@@ -75,7 +75,7 @@ Building & debugging the editor module
 Building & debugging the app module
 -----------------------------------
 
-The ``app`` module requires the presence of a Godot project in its ``assets`` directory (``<Godot root directory>/platform/android/java/app/assets``) to run.
+The ``app`` module requires the presence of a Godot project in its ``assets`` directory (``<Godot root directory>/platform/android/java/app/src/main/assets``) to run.
 This is usually handled by the Godot Editor during the export process.
 While developing in Android Studio, it's necessary to manually add a Godot project under that directory to replicate the export process.
 Once that's done, you can follow the instructions below to run/debug the ``app`` module:

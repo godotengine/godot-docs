@@ -851,7 +851,9 @@ Other objects
     class_navigationpathqueryresult2d
     class_navigationpathqueryresult3d
     class_navigationserver2d
+    class_navigationserver2dmanager
     class_navigationserver3d
+    class_navigationserver3dmanager
     class_node
     class_node3dgizmo
     class_offlinemultiplayerpeer

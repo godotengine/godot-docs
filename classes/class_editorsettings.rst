@@ -597,6 +597,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/theme/border_size<class_EditorSettings_property_interface/theme/border_size>`                                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`interface/theme/color_preset<class_EditorSettings_property_interface/theme/color_preset>`                                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/theme/contrast<class_EditorSettings_property_interface/theme/contrast>`                                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/theme/corner_radius<class_EditorSettings_property_interface/theme/corner_radius>`                                                                                                                 |
@@ -605,17 +607,19 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/theme/draw_extra_borders<class_EditorSettings_property_interface/theme/draw_extra_borders>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`interface/theme/draw_relationship_lines<class_EditorSettings_property_interface/theme/draw_relationship_lines>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/theme/follow_system_theme<class_EditorSettings_property_interface/theme/follow_system_theme>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/theme/icon_and_font_color<class_EditorSettings_property_interface/theme/icon_and_font_color>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/theme/icon_saturation<class_EditorSettings_property_interface/theme/icon_saturation>`                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`interface/theme/preset<class_EditorSettings_property_interface/theme/preset>`                                                                                                                               |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/theme/relationship_line_opacity<class_EditorSettings_property_interface/theme/relationship_line_opacity>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`interface/theme/spacing_preset<class_EditorSettings_property_interface/theme/spacing_preset>`                                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`interface/theme/style<class_EditorSettings_property_interface/theme/style>`                                                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/theme/use_system_accent_color<class_EditorSettings_property_interface/theme/use_system_accent_color>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4484,6 +4488,18 @@ The border size to use for interface elements (in pixels).
 
 ----
 
+.. _class_EditorSettings_property_interface/theme/color_preset:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/theme/color_preset** :ref:`🔗<class_EditorSettings_property_interface/theme/color_preset>`
+
+The editor color preset to use.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/theme/contrast:
 
 .. rst-class:: classref-property
@@ -4527,6 +4543,24 @@ The custom theme resource to use for the editor. Must be a Godot theme resource 
 :ref:`bool<class_bool>` **interface/theme/draw_extra_borders** :ref:`🔗<class_EditorSettings_property_interface/theme/draw_extra_borders>`
 
 If ``true``, draws additional borders around interactive UI elements in the editor. This is automatically enabled when using the **Black (OLED)** theme preset, as this theme preset uses a fully black background.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/theme/draw_relationship_lines:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/theme/draw_relationship_lines** :ref:`🔗<class_EditorSettings_property_interface/theme/draw_relationship_lines>`
+
+What relationship lines to draw in the editor's :ref:`Tree<class_Tree>`-based GUIs (such as the Scene tree dock).
+
+- **None** will make it so that no relationship lines are drawn.
+
+- **Selected Only** will only draw them for selected items.
+
+- **All** will always draw them for all items.
 
 .. rst-class:: classref-item-separator
 
@@ -4576,18 +4610,6 @@ The saturation to use for editor icons. Higher values result in more vibrant col
 
 ----
 
-.. _class_EditorSettings_property_interface/theme/preset:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **interface/theme/preset** :ref:`🔗<class_EditorSettings_property_interface/theme/preset>`
-
-The editor theme preset to use.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorSettings_property_interface/theme/relationship_line_opacity:
 
 .. rst-class:: classref-property
@@ -4607,6 +4629,18 @@ The opacity to use when drawing relationship lines in the editor's :ref:`Tree<cl
 :ref:`String<class_String>` **interface/theme/spacing_preset** :ref:`🔗<class_EditorSettings_property_interface/theme/spacing_preset>`
 
 The editor theme spacing preset to use. See also :ref:`interface/theme/base_spacing<class_EditorSettings_property_interface/theme/base_spacing>` and :ref:`interface/theme/additional_spacing<class_EditorSettings_property_interface/theme/additional_spacing>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/theme/style:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/theme/style** :ref:`🔗<class_EditorSettings_property_interface/theme/style>`
+
+The editor theme style to use.
 
 .. rst-class:: classref-item-separator
 
