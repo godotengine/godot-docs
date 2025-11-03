@@ -542,6 +542,8 @@ automatically. To update it, call
 :ref:`notify_property_list_changed() <class_Object_method_notify_property_list_changed>`
 after setting the exported variable's value.
 
+.. warning:: For `export_tool_button` you must restart the scene upon first creation for it to work properly
+
 Advanced exports
 ----------------
 
