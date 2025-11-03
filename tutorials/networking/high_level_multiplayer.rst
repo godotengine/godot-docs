@@ -60,7 +60,7 @@ This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits al
 This class interface can abstract most types of network layers, topologies and libraries. By default, Godot
 provides an implementation based on ENet (:ref:`ENetMultiplayerPeer <class_ENetMultiplayerPeer>`),
 one based on WebRTC (:ref:`WebRTCMultiplayerPeer <class_WebRTCMultiplayerPeer>`), and one based on WebSocket
-(:ref:`WebSocketPeer <class_WebSocketPeer>`), but this could be used to implement
+(:ref:`WebSocketMultiplayerPeer <class_WebSocketMultiplayerPeer>`), but this could be used to implement
 mobile APIs (for ad hoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
 For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.

@@ -648,6 +648,8 @@ Returns the index of the **first** occurrence of ``what`` in this string, or ``-
 
 \ **Note:** If you just want to know whether the string contains ``what``, use :ref:`contains()<class_StringName_method_contains>`. In GDScript, you may also use the ``in`` operator.
 
+\ **Note:** A negative value of ``from`` is converted to a starting index by counting back from the last possible index with enough space to find ``what``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1505,6 +1507,10 @@ Returns the copy of this string in reverse order. This operation works on unicod
 :ref:`int<class_int>` **rfind**\ (\ what\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_StringName_method_rfind>`
 
 Returns the index of the **last** occurrence of ``what`` in this string, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the beginning of the string. This method is the reverse of :ref:`find()<class_StringName_method_find>`.
+
+\ **Note:** A negative value of ``from`` is converted to a starting index by counting back from the last possible index with enough space to find ``what``.
+
+\ **Note:** A value of ``from`` that is greater than the last possible index with enough space to find ``what`` is considered out-of-bounds, and returns ``-1``.
 
 .. rst-class:: classref-item-separator
 

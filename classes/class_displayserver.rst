@@ -522,6 +522,8 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_request_attention<class_DisplayServer_method_window_request_attention>`\ (\ window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`window_set_color<class_DisplayServer_method_window_set_color>`\ (\ color\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_current_screen<class_DisplayServer_method_window_set_current_screen>`\ (\ screen\: :ref:`int<class_int>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_drop_files_callback<class_DisplayServer_method_window_set_drop_files_callback>`\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -3940,7 +3942,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 \ **Note:** ``current_directory`` might be ignored.
 
-\ **Note:** Embedded file dialog and Windows file dialog support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
+\ **Note:** Embedded file dialogs and Windows file dialogs support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
 
 \ **Note:** On Android and Linux, ``show_hidden`` is ignored.
 
@@ -3976,7 +3978,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 \ **Note:** ``current_directory`` might be ignored.
 
-\ **Note:** Embedded file dialog and Windows file dialog support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
+\ **Note:** Embedded file dialogs and Windows file dialogs support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
 
 \ **Note:** On Linux (X11), ``show_hidden`` is ignored.
 
@@ -6412,6 +6414,20 @@ Moves the window specified by ``window_id`` to the foreground, so that it is vis
 |void| **window_request_attention**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_request_attention>`
 
 Makes the window specified by ``window_id`` request attention, which is materialized by the window title and taskbar entry blinking until the window is focused. This usually has no visible effect if the window is currently focused. The exact behavior varies depending on the operating system.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_window_set_color:
+
+.. rst-class:: classref-method
+
+|void| **window_set_color**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_DisplayServer_method_window_set_color>`
+
+Sets the background color of the root window.
+
+\ **Note:** This method is implemented only on Android.
 
 .. rst-class:: classref-item-separator
 

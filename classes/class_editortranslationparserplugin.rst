@@ -21,7 +21,7 @@ Description
 
 **EditorTranslationParserPlugin** is invoked when a file is being parsed to extract strings that require translation. To define the parsing and string extraction logic, override the :ref:`_parse_file()<class_EditorTranslationParserPlugin_private_method__parse_file>` method in script.
 
-The return value should be an :ref:`Array<class_Array>` of :ref:`PackedStringArray<class_PackedStringArray>`\ s, one for each extracted translatable string. Each entry should contain ``[msgid, msgctxt, msgid_plural, comment]``, where all except ``msgid`` are optional. Empty strings will be ignored.
+The return value should be an :ref:`Array<class_Array>` of :ref:`PackedStringArray<class_PackedStringArray>`\ s, one for each extracted translatable string. Each entry should contain ``[msgid, msgctxt, msgid_plural, comment, source_line]``, where all except ``msgid`` are optional. Empty strings will be ignored.
 
 The extracted strings will be written into a POT file selected by user under "POT Generation" in "Localization" tab in "Project Settings" menu.
 
@@ -78,15 +78,15 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
 
 
 
-To add a translatable string associated with a context, plural, or comment:
+To add a translatable string associated with a context, plural, comment, or source line:
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    # This will add a message with msgid "Test 1", msgctxt "context", msgid_plural "test 1 plurals", and comment "test 1 comment".
-    ret.append(PackedStringArray(["Test 1", "context", "test 1 plurals", "test 1 comment"]))
+    # This will add a message with msgid "Test 1", msgctxt "context", msgid_plural "test 1 plurals", comment "test 1 comment", and source line "7".
+    ret.append(PackedStringArray(["Test 1", "context", "test 1 plurals", "test 1 comment", "7"]))
     # This will add a message with msgid "A test without context" and msgid_plural "plurals".
     ret.append(PackedStringArray(["A test without context", "", "plurals"]))
     # This will add a message with msgid "Only with context" and msgctxt "a friendly context".
@@ -94,8 +94,8 @@ To add a translatable string associated with a context, plural, or comment:
 
  .. code-tab:: csharp
 
-    // This will add a message with msgid "Test 1", msgctxt "context", msgid_plural "test 1 plurals", and comment "test 1 comment".
-    ret.Add(["Test 1", "context", "test 1 plurals", "test 1 comment"]);
+    // This will add a message with msgid "Test 1", msgctxt "context", msgid_plural "test 1 plurals", comment "test 1 comment", and source line "7".
+    ret.Add(["Test 1", "context", "test 1 plurals", "test 1 comment", "7"]);
     // This will add a message with msgid "A test without context" and msgid_plural "plurals".
     ret.Add(["A test without context", "", "plurals"]);
     // This will add a message with msgid "Only with context" and msgctxt "a friendly context".

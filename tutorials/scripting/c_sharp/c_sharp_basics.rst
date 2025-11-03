@@ -12,7 +12,7 @@ and (re)visit the :ref:`Scripting section <doc_scripting>` of the
 step-by-step tutorial.
 
 C# is a high-level programming language developed by Microsoft. In Godot,
-it is implemented with .NET 8.0.
+it is implemented with the modern .NET runtime.
 
 .. attention::
 
@@ -33,7 +33,7 @@ it is implemented with .NET 8.0.
 Prerequisites
 -------------
 
-Godot bundles the parts of .NET needed to run already compiled games.
+Godot bundles the parts of .NET needed to run already-compiled games.
 However, Godot does not bundle the tools required to build and compile
 games, such as MSBuild and the C# compiler. These are
 included in the .NET SDK, and need to be installed separately.
@@ -43,6 +43,7 @@ version of Godot.
 
 Download and install the latest stable version of the SDK from the
 `.NET download page <https://dotnet.microsoft.com/download>`__.
+Godot 4.5 requires .NET 8 or later, but exporting to Android requires .NET 9 or later.
 
 .. important::
 
@@ -355,8 +356,8 @@ You can read more about this error on the `C# language reference <https://learn.
 Performance of C# in Godot
 --------------------------
 
-.. seealso:: 
-    
+.. seealso::
+
     For a performance comparison of the languages Godot supports,
     see :ref:`doc_faq_which_programming_language_is_fastest`.
 
@@ -419,8 +420,8 @@ the ``.csproj`` file located in the project root:
         ...
     </Project>
 
-As of Godot 3.2.3, Godot automatically downloads and sets up newly added NuGet
-packages the next time it builds the project.
+Godot automatically downloads and sets up newly added NuGet packages
+the next time it builds the project.
 
 Profiling your C# code
 ----------------------

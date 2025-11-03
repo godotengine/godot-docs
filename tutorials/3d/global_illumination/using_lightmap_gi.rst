@@ -20,9 +20,9 @@ light bleeding, and indirect light will often look better. The downside is that
 baking lightmaps takes longer compared to baking VoxelGI. While baking VoxelGI
 can be done in a matter of seconds, baking lightmaps can take several minutes if
 not more. This can slow down iteration speed significantly, so it is recommended
-to bake lightmaps only when you actually need to see changes in lighting. Since
-Godot 4.0, lightmaps are baked on the GPU, making light baking faster if you
-have a mid-range or high-end dedicated GPU.
+to bake lightmaps only when you actually need to see changes in lighting.
+Lightmaps are baked on the GPU, making light baking faster if you have a
+mid-range or high-end dedicated GPU.
 
 Baking lightmaps will also reserve baked materials' UV2 slot, which means you can
 no longer use it for other purposes in materials (either in the built-in

@@ -95,6 +95,7 @@ Nodes
     class_directionallight2d
     class_directionallight3d
     class_editorcommandpalette
+    class_editordock
     class_editorfiledialog
     class_editorfilesystem
     class_editorinspector
@@ -809,6 +810,7 @@ Other objects
     class_geometry2d
     class_geometry3d
     class_gltfobjectmodelproperty
+    class_godotinstance
     class_hashingcontext
     class_hmaccontext
     class_httpclient
@@ -849,11 +851,14 @@ Other objects
     class_navigationpathqueryresult2d
     class_navigationpathqueryresult3d
     class_navigationserver2d
+    class_navigationserver2dmanager
     class_navigationserver3d
+    class_navigationserver3dmanager
     class_node
     class_node3dgizmo
     class_offlinemultiplayerpeer
     class_oggpacketsequenceplayback
+    class_openxranchortracker
     class_openxrapiextension
     class_openxrextensionwrapper
     class_openxrextensionwrapperextension
@@ -861,7 +866,36 @@ Other objects
     class_openxrfutureresult
     class_openxrinteractionprofilemetadata
     class_openxrinterface
+    class_openxrmarkertracker
+    class_openxrplanetracker
     class_openxrrendermodelextension
+    class_openxrspatialanchorcapability
+    class_openxrspatialcapabilityconfigurationanchor
+    class_openxrspatialcapabilityconfigurationapriltag
+    class_openxrspatialcapabilityconfigurationaruco
+    class_openxrspatialcapabilityconfigurationbaseheader
+    class_openxrspatialcapabilityconfigurationmicroqrcode
+    class_openxrspatialcapabilityconfigurationplanetracking
+    class_openxrspatialcapabilityconfigurationqrcode
+    class_openxrspatialcomponentanchorlist
+    class_openxrspatialcomponentbounded2dlist
+    class_openxrspatialcomponentbounded3dlist
+    class_openxrspatialcomponentdata
+    class_openxrspatialcomponentmarkerlist
+    class_openxrspatialcomponentmesh2dlist
+    class_openxrspatialcomponentmesh3dlist
+    class_openxrspatialcomponentparentlist
+    class_openxrspatialcomponentpersistencelist
+    class_openxrspatialcomponentplanealignmentlist
+    class_openxrspatialcomponentplanesemanticlabellist
+    class_openxrspatialcomponentpolygon2dlist
+    class_openxrspatialcontextpersistenceconfig
+    class_openxrspatialentityextension
+    class_openxrspatialentitytracker
+    class_openxrspatialmarkertrackingcapability
+    class_openxrspatialplanetrackingcapability
+    class_openxrspatialqueryresultdata
+    class_openxrstructurebase
     class_os
     class_packeddatacontainerref
     class_packetpeer
@@ -961,12 +995,15 @@ Other objects
     class_semaphore
     class_shaderincludedb
     class_skinreference
+    class_socketserver
     class_streampeer
     class_streampeerbuffer
     class_streampeerextension
     class_streampeergzip
+    class_streampeersocket
     class_streampeertcp
     class_streampeertls
+    class_streampeeruds
     class_subtweentweener
     class_surfacetool
     class_tcpserver
@@ -990,6 +1027,7 @@ Other objects
     class_tween
     class_tweener
     class_udpserver
+    class_udsserver
     class_undoredo
     class_uniformsetcacherd
     class_upnp
@@ -1030,6 +1068,7 @@ Editor-only
     class_editorcontextmenuplugin
     class_editordebuggerplugin
     class_editordebuggersession
+    class_editordock
     class_editorexportplatform
     class_editorexportplatformandroid
     class_editorexportplatformappleembedded

@@ -12,14 +12,16 @@ OptimizedTranslation
 
 **Inherits:** :ref:`Translation<class_Translation>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-An optimized translation, used by default for CSV Translations.
+An optimized translation.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-An optimized translation, used by default for CSV Translations. Uses real-time compressed translations, which results in very small dictionaries.
+An optimized translation. Uses real-time compressed translations, which results in very small dictionaries.
+
+This class does not store the untranslated strings for optimization purposes. Therefore, :ref:`Translation.get_message_list()<class_Translation_method_get_message_list>` always returns an empty array, and :ref:`Translation.get_message_count()<class_Translation_method_get_message_count>` always returns ``0``.
 
 .. rst-class:: classref-reftable-group
 
@@ -49,6 +51,8 @@ Method Descriptions
 |void| **generate**\ (\ from\: :ref:`Translation<class_Translation>`\ ) :ref:`🔗<class_OptimizedTranslation_method_generate>`
 
 Generates and sets an optimized translation from the given :ref:`Translation<class_Translation>` resource.
+
+\ **Note:** Messages in ``from`` should not use context or plural forms.
 
 \ **Note:** This method is intended to be used in the editor. It does nothing when called from an exported project.
 

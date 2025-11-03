@@ -139,10 +139,7 @@ Import options
 
 .. seealso::
 
-    In Godot 4.0, changing the texture filter and repeat mode is no longer done
-    in the import options.
-
-    Instead, texture filter and repeat modes are changed in the CanvasItem
+    Since Godot 4.0, texture filter and repeat modes are set in the CanvasItem
     properties in 2D (with a project setting acting as a default), and in a
     :ref:`per-material configuration in 3D <doc_standard_material_3d_sampling>`.
     In custom shaders, filter and repeat mode is changed on the ``sampler2D``

@@ -30,7 +30,7 @@ Render modes
 +---------------------------------+----------------------------------------------------------------------+
 | **unshaded**                    | Result is just albedo. No lighting/shading happens in material.      |
 +---------------------------------+----------------------------------------------------------------------+
-| **light_only**                  | Only draw on light pass.                                             |
+| **light_only**                  | Only draw in the light pass.                                         |
 +---------------------------------+----------------------------------------------------------------------+
 | **skip_vertex_transform**       | ``VERTEX`` needs to be transformed manually in the ``vertex()``      |
 |                                 | function.                                                            |
@@ -54,27 +54,27 @@ Global built-ins
 
 Global built-ins are available everywhere, including custom functions.
 
-+-------------------+------------------------------------------------------------------------------------------+
-| Built-in          | Description                                                                              |
-+===================+==========================================================================================+
-| in float **TIME** | Global time since the engine has started, in seconds. It repeats after every ``3,600``   |
-|                   | seconds (which can  be changed with the                                                  |
-|                   | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>` |
-|                   | setting). It's affected by                                                               |
-|                   | :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a    |
-|                   | ``TIME`` variable that is not affected by time scale, add your own                       |
-|                   | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each    |
-|                   | frame.                                                                                   |
-+-------------------+------------------------------------------------------------------------------------------+
-| in float **PI**   | A ``PI`` constant (``3.141592``).                                                        |
-|                   | A ratio of a circle's circumference to its diameter and amount of radians in half turn.  |
-+-------------------+------------------------------------------------------------------------------------------+
-| in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                       |
-|                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                          |
-+-------------------+------------------------------------------------------------------------------------------+
-| in float **E**    | An ``E`` constant (``2.718281``).                                                        |
-|                   | Euler's number and a base of the natural logarithm.                                      |
-+-------------------+------------------------------------------------------------------------------------------+
++-------------------+-------------------------------------------------------------------------------------------------+
+| Built-in          | Description                                                                                     |
++===================+=================================================================================================+
+| in float **TIME** | Global time since the engine has started, in seconds. It repeats after every ``3,600``          |
+|                   | seconds (which can be changed with the                                                          |
+|                   | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`        |
+|                   | setting). It's affected by                                                                      |
+|                   | :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a           |
+|                   | ``TIME`` variable that is not affected by time scale, add your own                              |
+|                   | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each           |
+|                   | frame.                                                                                          |
++-------------------+-------------------------------------------------------------------------------------------------+
+| in float **PI**   | A ``PI`` constant (``3.141592``).                                                               |
+|                   | The ratio of a circle's circumference to its diameter and the number of radians in a half turn. |
++-------------------+-------------------------------------------------------------------------------------------------+
+| in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                              |
+|                   | Equivalent to ``PI * 2`` and the number of radians in a full turn.                              |
++-------------------+-------------------------------------------------------------------------------------------------+
+| in float **E**    | An ``E`` constant (``2.718281``).                                                               |
+|                   | Euler's number, the base of the natural logarithm.                                              |
++-------------------+-------------------------------------------------------------------------------------------------+
 
 Vertex built-ins
 ----------------
@@ -112,11 +112,11 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | in mat4 **CANVAS_MATRIX**      | World space to canvas space transform. In canvas               |
 |                                | space the origin is the upper-left corner of the               |
-|                                | screen and coordinates ranging from ``(0.0, 0.0)``             |
+|                                | screen and coordinates range from ``(0.0, 0.0)``               |
 |                                | to viewport size.                                              |
 +--------------------------------+----------------------------------------------------------------+
-| in mat4 **SCREEN_MATRIX**      | Canvas space to clip space. In clip space                      |
-|                                | coordinates ranging from ``(-1.0, -1.0)`` to                   |
+| in mat4 **SCREEN_MATRIX**      | Canvas space to clip space transform. In clip space            |
+|                                | coordinates range from ``(-1.0, -1.0)`` to                     |
 |                                | ``(1.0, 1.0).``                                                |
 +--------------------------------+----------------------------------------------------------------+
 | in int  **INSTANCE_ID**        | Instance ID for instancing.                                    |
@@ -125,7 +125,7 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**      | Always ``false``.                                              |
 +--------------------------------+----------------------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.                   |
+| in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of the default 2D texture.               |
 |                                | For a Sprite2D with a texture of size 64x32px,                 |
 |                                | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``                  |
 +--------------------------------+----------------------------------------------------------------+
@@ -137,7 +137,7 @@ is usually:
 | inout vec2 **UV**              | Normalized texture coordinates. Range from ``0.0``             |
 |                                | to ``1.0``.                                                    |
 +--------------------------------+----------------------------------------------------------------+
-| inout vec4 **COLOR**           | Color from vertex primitive multiplied by CanvasItem's         |
+| inout vec4 **COLOR**           | Color from vertex primitive multiplied by the CanvasItem's     |
 |                                | :ref:`modulate<class_CanvasItem_property_modulate>`            |
 |                                | multiplied by CanvasItem's                                     |
 |                                | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`. |
@@ -221,7 +221,7 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 |                                             | position in viewport. Upper-left of the viewport is the       |
 |                                             | origin, ``(0.0, 0.0)``.                                       |
 +---------------------------------------------+---------------------------------------------------------------+
-| in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to inverse of resolution.    |
+| in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to the inverse of resolution.|
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec4 **REGION_RECT**                     | Visible area of the sprite region in format                   |
 |                                             | ``(x, y, width, height)``. Varies according to                |
@@ -231,7 +231,7 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 +---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **TEXTURE**                       | Default 2D texture.                                           |
 +---------------------------------------------+---------------------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of default 2D texture.                  |
+| in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of the default 2D texture.              |
 |                                             | For a Sprite2D with a texture of size 64x32px,                |
 |                                             | ``TEXTURE_PIXEL_SIZE`` = ``vec2(1/64, 1/32)``                 |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -242,11 +242,11 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 | in vec4 **SPECULAR_SHININESS**              | Specular shininess color, as sampled from the texture.        |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **UV**                              | UV from the ``vertex()`` function.                            |
-|                                             | For Sprite2D with region enabled, this will sample the entire |
-|                                             | texture. Use ``REGION_RECT`` instead to sample only the       |
-|                                             | region defined in the Sprite2D's properties.                  |
+|                                             | For a Sprite2D with region enabled, this will sample the      |
+|                                             | entire texture. Use ``REGION_RECT`` instead to sample only    |
+|                                             | the region defined in the Sprite2D's properties.              |
 +---------------------------------------------+---------------------------------------------------------------+
-| in vec2 **SCREEN_UV**                       | Screen UV coordinate for current pixel.                       |
+| in vec2 **SCREEN_UV**                       | Screen UV coordinate for the current pixel.                   |
 +---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **SCREEN_TEXTURE**                | Removed in Godot 4. Use a ``sampler2D`` with                  |
 |                                             | ``hint_screen_texture`` instead.                              |
@@ -309,13 +309,13 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 | in vec2 **UV**                   | UV from the ``vertex()`` function, equivalent to the UV in the               |
 |                                  | ``fragment()`` function.                                                     |
 +----------------------------------+------------------------------------------------------------------------------+
-| sampler2D **TEXTURE**            | Current texture in use for CanvasItem.                                       |
+| sampler2D **TEXTURE**            | Current texture in use for the CanvasItem.                                   |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**   | Normalized pixel size of ``TEXTURE``.                                        |
 |                                  | For a Sprite2D with a ``TEXTURE`` of size ``64x32`` pixels,                  |
 |                                  | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``                                |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec2 **SCREEN_UV**            | Screen UV coordinate for current pixel.                                      |
+| in vec2 **SCREEN_UV**            | Screen UV coordinate for the current pixel.                                  |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**          | UV for Point Sprite.                                                         |
 +----------------------------------+------------------------------------------------------------------------------+
@@ -346,9 +346,9 @@ SDF functions
 -------------
 
 There are a few additional functions implemented to sample an automatically
-generated Signed Distance Field texture. These functions available for the ``fragment()``
+generated Signed Distance Field texture. These functions are available in the ``fragment()``
 and ``light()`` functions of CanvasItem shaders. Custom functions may also use them as long
-as they called from supported functions.
+as they are called from supported functions.
 
 The signed distance field is generated from :ref:`class_LightOccluder2D` nodes
 present in the scene with the **SDF Collision** property enabled (which is the

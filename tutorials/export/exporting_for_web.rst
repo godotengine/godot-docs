@@ -73,7 +73,7 @@ parent directory, usually hiding the name of that file.
 WebGL version
 -------------
 
-Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
+Godot 4 can only target WebGL 2.0 (using the Compatibility rendering
 method). Forward+/Mobile are not supported on the web platform, as these
 rendering methods are designed around modern low-level graphics APIs. Godot
 currently does not support WebGPU, which is a prerequisite for allowing

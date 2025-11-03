@@ -23,9 +23,11 @@ Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironme
 
 - Depth of Field Blur
 
+- Auto Exposure
+
 - Glow
 
-- Tonemap (Auto Exposure)
+- Tonemap
 
 - Adjustments
 
@@ -107,7 +109,7 @@ Properties
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`fog_sun_scatter<class_Environment_property_fog_sun_scatter>`                                                           | ``0.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>`       | :ref:`glow_blend_mode<class_Environment_property_glow_blend_mode>`                                                           | ``2``                             |
+   | :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>`       | :ref:`glow_blend_mode<class_Environment_property_glow_blend_mode>`                                                           | ``1``                             |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_bloom<class_Environment_property_glow_bloom>`                                                                     | ``0.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -117,19 +119,19 @@ Properties
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_hdr_scale<class_Environment_property_glow_hdr_scale>`                                                             | ``2.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>`                                                     | ``1.0``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>`                                                     | ``0.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_intensity<class_Environment_property_glow_intensity>`                                                             | ``0.8``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_intensity<class_Environment_property_glow_intensity>`                                                             | ``0.3``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_levels/1<class_Environment_property_glow_levels/1>`                                                               | ``0.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_levels/2<class_Environment_property_glow_levels/2>`                                                               | ``0.0``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_levels/2<class_Environment_property_glow_levels/2>`                                                               | ``0.8``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_levels/3<class_Environment_property_glow_levels/3>`                                                               | ``1.0``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_levels/3<class_Environment_property_glow_levels/3>`                                                               | ``0.4``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_levels/4<class_Environment_property_glow_levels/4>`                                                               | ``0.0``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_levels/4<class_Environment_property_glow_levels/4>`                                                               | ``0.1``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_levels/5<class_Environment_property_glow_levels/5>`                                                               | ``1.0``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_levels/5<class_Environment_property_glow_levels/5>`                                                               | ``0.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_levels/6<class_Environment_property_glow_levels/6>`                                                               | ``0.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -205,7 +207,7 @@ Properties
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`ssil_sharpness<class_Environment_property_ssil_sharpness>`                                                             | ``0.98``                          |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`ssr_depth_tolerance<class_Environment_property_ssr_depth_tolerance>`                                                   | ``0.2``                           |
+   | :ref:`float<class_float>`                                  | :ref:`ssr_depth_tolerance<class_Environment_property_ssr_depth_tolerance>`                                                   | ``0.5``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`bool<class_bool>`                                    | :ref:`ssr_enabled<class_Environment_property_ssr_enabled>`                                                                   | ``false``                         |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -481,7 +483,7 @@ enum **GlowBlendMode**: :ref:`🔗<enum_Environment_GlowBlendMode>`
 
 :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **GLOW_BLEND_MODE_ADDITIVE** = ``0``
 
-Additive glow blending mode. Mostly used for particles, glows (bloom), lens flare, bright sources.
+Adds the glow effect to the scene.
 
 .. _class_Environment_constant_GLOW_BLEND_MODE_SCREEN:
 
@@ -489,7 +491,7 @@ Additive glow blending mode. Mostly used for particles, glows (bloom), lens flar
 
 :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **GLOW_BLEND_MODE_SCREEN** = ``1``
 
-Screen glow blending mode. Increases brightness, used frequently with bloom.
+Adds the glow effect to the scene after modifying the glow influence based on the scene value; dark values will be highly influenced by glow and bright values will not be influenced by glow. This approach avoids bright values becoming overly bright from the glow effect. :ref:`tonemap_white<class_Environment_property_tonemap_white>` is used to determine the maximum scene value where the glow should have no influence. When :ref:`tonemap_mode<class_Environment_property_tonemap_mode>` is set to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`, a value of ``1.0`` will be used as the maximum scene value.
 
 .. _class_Environment_constant_GLOW_BLEND_MODE_SOFTLIGHT:
 
@@ -497,7 +499,7 @@ Screen glow blending mode. Increases brightness, used frequently with bloom.
 
 :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **GLOW_BLEND_MODE_SOFTLIGHT** = ``2``
 
-Soft light glow blending mode. Modifies contrast, exposes shadows and highlights (vivid bloom).
+Adds the glow effect to the tonemapped image after modifying the glow influence based on the image value; dark values and bright values will not be influenced by glow and mid-range values will be highly influenced by glow. This approach avoids bright values becoming overly bright from the glow effect. The glow will have the largest influence on image values of ``0.25`` and will have no influence when applied to image values greater than ``1.0``.
 
 .. _class_Environment_constant_GLOW_BLEND_MODE_REPLACE:
 
@@ -505,7 +507,7 @@ Soft light glow blending mode. Modifies contrast, exposes shadows and highlights
 
 :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **GLOW_BLEND_MODE_REPLACE** = ``3``
 
-Replace glow blending mode. Replaces all pixels' color by the glow value. This can be used to simulate a full-screen blur effect by tweaking the glow parameters to match the original image's brightness.
+Replaces all pixels' color by the glow effect. This can be used to simulate a full-screen blur effect by tweaking the glow parameters to match the original image's brightness or to preview glow configuration in the editor.
 
 .. _class_Environment_constant_GLOW_BLEND_MODE_MIX:
 
@@ -513,7 +515,7 @@ Replace glow blending mode. Replaces all pixels' color by the glow value. This c
 
 :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **GLOW_BLEND_MODE_MIX** = ``4``
 
-Mixes the glow with the underlying color to avoid increasing brightness as much while still maintaining a glow effect.
+Mixes the glow image with the scene image. Best used with :ref:`glow_bloom<class_Environment_property_glow_bloom>` to avoid darkening the scene.
 
 .. rst-class:: classref-item-separator
 
@@ -595,7 +597,7 @@ Property Descriptions
 - |void| **set_adjustment_brightness**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_adjustment_brightness**\ (\ )
 
-The global brightness value of the rendered scene. Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
+Applies a simple brightness adjustment to the rendered image after tonemaping. To adjust scene brightness use :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>` instead, which is applied before tonemapping and thus less prone to issues with bright colors. Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -629,7 +631,7 @@ The :ref:`Texture2D<class_Texture2D>` or :ref:`Texture3D<class_Texture3D>` looku
 - |void| **set_adjustment_contrast**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_adjustment_contrast**\ (\ )
 
-The global contrast value of the rendered scene (default value is 1). Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
+Increasing :ref:`adjustment_contrast<class_Environment_property_adjustment_contrast>` will make dark values darker and bright values brighter. This simple adjustment is applied to the rendered image after tonemaping. When set to a value greater than ``1.0``, :ref:`adjustment_contrast<class_Environment_property_adjustment_contrast>` is prone to clipping colors that become too bright or too dark. Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -663,7 +665,7 @@ If ``true``, enables the ``adjustment_*`` properties provided by this resource. 
 - |void| **set_adjustment_saturation**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_adjustment_saturation**\ (\ )
 
-The global color saturation value of the rendered scene (default value is 1). Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
+Applies a simple saturation adjustment to the rendered image after tonemaping. When :ref:`adjustment_saturation<class_Environment_property_adjustment_saturation>` is set to ``0.0``, the rendered image will be fully converted to a grayscale image. Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -1076,7 +1078,7 @@ If set above ``0.0``, renders the scene's directional light(s) in the fog color 
 
 .. rst-class:: classref-property
 
-:ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **glow_blend_mode** = ``2`` :ref:`🔗<class_Environment_property_glow_blend_mode>`
+:ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **glow_blend_mode** = ``1`` :ref:`🔗<class_Environment_property_glow_blend_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -1085,7 +1087,7 @@ If set above ``0.0``, renders the scene's directional light(s) in the fog color 
 
 The glow blending mode.
 
-\ **Note:** :ref:`glow_blend_mode<class_Environment_property_glow_blend_mode>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+\ **Note:** The Compatibility renderer always uses :ref:`GLOW_BLEND_MODE_SCREEN<class_Environment_constant_GLOW_BLEND_MODE_SCREEN>` and :ref:`glow_blend_mode<class_Environment_property_glow_blend_mode>` will have no effect.
 
 .. rst-class:: classref-item-separator
 
@@ -1119,7 +1121,7 @@ The bloom's intensity. If set to a value higher than ``0``, this will make glow 
 - |void| **set_glow_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_glow_enabled**\ (\ )
 
-If ``true``, the glow effect is enabled. This simulates real world eye/camera behavior where bright pixels bleed onto surrounding pixels.
+If ``true``, the glow effect is enabled. This simulates real world atmosphere and eye/camera behavior by causing bright pixels to bleed onto surrounding pixels.
 
 \ **Note:** When using the Mobile rendering method, glow looks different due to the lower dynamic range available in the Mobile rendering method.
 
@@ -1167,7 +1169,7 @@ The bleed scale of the HDR glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_hdr_threshold** = ``1.0`` :ref:`🔗<class_Environment_property_glow_hdr_threshold>`
+:ref:`float<class_float>` **glow_hdr_threshold** = ``0.0`` :ref:`🔗<class_Environment_property_glow_hdr_threshold>`
 
 .. rst-class:: classref-property-setget
 
@@ -1184,7 +1186,7 @@ The lower threshold of the HDR glow. When using the Mobile rendering method (whi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_intensity** = ``0.8`` :ref:`🔗<class_Environment_property_glow_intensity>`
+:ref:`float<class_float>` **glow_intensity** = ``0.3`` :ref:`🔗<class_Environment_property_glow_intensity>`
 
 .. rst-class:: classref-property-setget
 
@@ -1220,7 +1222,7 @@ The intensity of the 1st level of glow. This is the most "local" level (least bl
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/2** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/2>`
+:ref:`float<class_float>` **glow_levels/2** = ``0.8`` :ref:`🔗<class_Environment_property_glow_levels/2>`
 
 .. rst-class:: classref-property-setget
 
@@ -1239,7 +1241,7 @@ The intensity of the 2nd level of glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/3** = ``1.0`` :ref:`🔗<class_Environment_property_glow_levels/3>`
+:ref:`float<class_float>` **glow_levels/3** = ``0.4`` :ref:`🔗<class_Environment_property_glow_levels/3>`
 
 .. rst-class:: classref-property-setget
 
@@ -1258,7 +1260,7 @@ The intensity of the 3rd level of glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/4** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/4>`
+:ref:`float<class_float>` **glow_levels/4** = ``0.1`` :ref:`🔗<class_Environment_property_glow_levels/4>`
 
 .. rst-class:: classref-property-setget
 
@@ -1277,7 +1279,7 @@ The intensity of the 4th level of glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_levels/5** = ``1.0`` :ref:`🔗<class_Environment_property_glow_levels/5>`
+:ref:`float<class_float>` **glow_levels/5** = ``0.0`` :ref:`🔗<class_Environment_property_glow_levels/5>`
 
 .. rst-class:: classref-property-setget
 
@@ -1961,7 +1963,7 @@ The amount that the screen-space indirect lighting effect is allowed to blur ove
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ssr_depth_tolerance** = ``0.2`` :ref:`🔗<class_Environment_property_ssr_depth_tolerance>`
+:ref:`float<class_float>` **ssr_depth_tolerance** = ``0.5`` :ref:`🔗<class_Environment_property_ssr_depth_tolerance>`
 
 .. rst-class:: classref-property-setget
 
@@ -1988,6 +1990,8 @@ The depth tolerance for screen-space reflections.
 If ``true``, screen-space reflections are enabled. Screen-space reflections are more accurate than reflections from :ref:`VoxelGI<class_VoxelGI>`\ s or :ref:`ReflectionProbe<class_ReflectionProbe>`\ s, but are slower and can't reflect surfaces occluded by others.
 
 \ **Note:** SSR is only supported in the Forward+ rendering method, not Mobile or Compatibility.
+
+\ **Note:** SSR is not supported on viewports that have a transparent background (where :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` is ``true``).
 
 .. rst-class:: classref-item-separator
 

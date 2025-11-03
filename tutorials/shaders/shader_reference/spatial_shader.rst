@@ -5,11 +5,12 @@ Spatial shaders
 
 Spatial shaders are used for shading 3D objects. They are the most complex type of shader Godot offers.
 Spatial shaders are highly configurable with different render modes and different rendering options
-(e.g. Subsurface Scattering, Transmission, Ambient Occlusion, Rim lighting etc). Users can optionally
+(e.g. Subsurface Scattering, Transmission, Ambient Occlusion, Rim lighting, etc.). Users can optionally
 write vertex, fragment, and light processor functions to affect how objects are drawn.
 
 Render modes
 ------------
+
 For visual examples of these render modes, see :ref:`Standard Material 3D and ORM Material 3D<doc_standard_material_3d>`.
 
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -34,6 +35,11 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 | **depth_prepass_alpha**       | Do opaque depth pre-pass for transparent geometry.                                                   |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **depth_test_disabled**       | Disable depth testing.                                                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_test_default**        | Depth test will discard the pixel if it is behind other pixels.                                      |
+|                               | In Forward+ only, the pixel is also discarded if it's at the exact same depth as another pixel.      |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_test_inverted**       | Depth test will discard the pixel if it is in front of other pixels. Useful for stencil effects.     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **sss_mode_skin**             | Subsurface Scattering mode for skin (optimizes visuals for human skin, e.g. boosted red channel).    |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -81,13 +87,65 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **vertex_lighting**           | Use vertex-based lighting instead of per-pixel lighting.                                             |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **particle_trails**           | Enables the trails when used on particles geometry.                                                  |
+| **particle_trails**           | Enables the trails when used on particle geometry.                                                   |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **alpha_to_coverage**         | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **alpha_to_coverage_and_one** | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **fog_disabled**              | Disable receiving depth-based or volumetric fog. Useful for ``blend_add`` materials like particles.  |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+
+Stencil modes
+-------------
+
+.. note::
+
+    Stencil support is experimental, use at your own risk.
+    We will try to not break compatibility as much as possible,
+    but if significant flaws are found in the API, it may change
+    in the next minor version.
+
+Stencil operations are a set of operations that allow writing to
+an efficient buffer in an hardware-accelerated manner.
+This is generally used to mask in or out parts of the scene.
+
+Some of the most well-known uses are:
+
+- Outlines: Mask out the inner mesh that is being outlined to avoid inner outlines.
+- X-Ray: Display a mesh behind other objects.
+- Portals: Draw geometry that is normally "impossible" (non-Euclidian) by masking objects.
+
+.. note::
+
+    You can only read from the stencil buffer in the transparent pass.
+    Any attempt to read in the opaque pass will fail, as it's currently not supported behavior.
+
+    Note that for compositor effects, the main renderer's stencil buffer can't be copied
+    to a custom texture.
+
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| Stencil mode                  | Description                                                                                          |
++===============================+======================================================================================================+
+| **read**                      | Read from the stencil buffer.                                                                        |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **write**                     | Write reference value to the stencil buffer.                                                         |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **write_if_depth_fail**       | Write reference value to the stencil buffer if the depth test fails.                                 |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_always**            | Always pass stencil test.                                                                            |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_equal**             | Pass stencil test if the reference value is equal to the stencil buffer value.                       |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_not_equal**         | Pass stencil test if the reference value is not equal to the stencil buffer value.                   |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_less**              | Pass stencil test if the reference value is less than the stencil buffer value.                      |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_less_or_equal**     | Pass stencil test if the reference value is less than or equal to the stencil buffer value.          |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_greater**           | Pass stencil test if the reference value is greater than the stencil buffer value.                   |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **compare_greater_or_equal**  | Pass stencil test if the reference value is greater than or equal to the stencil buffer value.       |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
@@ -110,7 +168,7 @@ Global built-ins are available everywhere, including custom functions.
 | Built-in                    | Description                                                                                         |
 +=============================+=====================================================================================================+
 | in float **TIME**           | Global time since the engine has started, in seconds. It repeats after every ``3,600``              |
-|                             | seconds (which can  be changed with the                                                             |
+|                             | seconds (which can be changed with the                                                              |
 |                             | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`            |
 |                             | setting). It's affected by :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing.  |
 |                             | If you need a ``TIME`` variable that is not affected by time scale, add your own                    |
@@ -118,12 +176,12 @@ Global built-ins are available everywhere, including custom functions.
 |                             | frame.                                                                                              |
 +-----------------------------+-----------------------------------------------------------------------------------------------------+
 | in float **PI**             | A ``PI`` constant (``3.141592``).                                                                   |
-|                             | A ratio of a circle's circumference to its diameter and amount of radians in half turn.             |
+|                             | The ratio of a circle's circumference to its diameter and the number of radians in a half turn.     |
 +-----------------------------+-----------------------------------------------------------------------------------------------------+
 | in float **TAU**            | A ``TAU`` constant (``6.283185``).                                                                  |
-|                             | An equivalent of ``PI * 2`` and amount of radians in full turn.                                     |
+|                             | Equivalent to ``PI * 2`` and the number of radians in a full turn.                                  |
 +-----------------------------+-----------------------------------------------------------------------------------------------------+
-| in float **E**              | An ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.               |
+| in float **E**              | An ``E`` constant (``2.718281``). Euler's number, the base of the natural logarithm.                |
 +-----------------------------+-----------------------------------------------------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**  | ``true`` when output is in sRGB color space (this is ``true`` in the Compatibility                  |
 |                             | renderer, ``false`` in Forward+ and Mobile).                                                        |
@@ -171,7 +229,7 @@ is usually:
 * **y**: Phase during lifetime (``0.0`` to ``1.0``).
 * **z**: Animation frame.
 
-This allows you to easily adjust the shader to a particle system using default particles material. When writing a custom particle
+This allows you to easily adjust the shader to a particle system using default particle material. When writing a custom particle
 shader, this value can be used as desired.
 
 +----------------------------------------+--------------------------------------------------------+
@@ -183,8 +241,8 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in mat4 **INV_VIEW_MATRIX**            | View space to world space transform.                   |
 +----------------------------------------+--------------------------------------------------------+
-| in mat4 **MAIN_CAM_INV_VIEW_MATRIX**   | View space to world space transform of camera used to  |
-|                                        | draw the current viewport.                             |
+| in mat4 **MAIN_CAM_INV_VIEW_MATRIX**   | View space to world space transform of the camera used |
+|                                        | to draw the current viewport.                          |
 +----------------------------------------+--------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX**      | Clip space to view space transform.                    |
 +----------------------------------------+--------------------------------------------------------+
@@ -267,6 +325,13 @@ shader, this value can be used as desired.
 |                                        | UVs, ``xy`` is UV7 and ``zw`` is UV8.                  |
 +----------------------------------------+--------------------------------------------------------+
 | in vec4 **CUSTOM3**                    | Custom value from vertex primitive.                    |
++----------------------------------------+--------------------------------------------------------+
+| out float **Z_CLIP_SCALE**             | If written to, scales the vertex towards the camera to |
+|                                        | avoid clipping into things like walls.                 |
+|                                        | Lighting and shadows will continue to work correctly   |
+|                                        | when this is written to, but screen-space effects like |
+|                                        | SSAO and SSR may break with lower scales. Try to keep  |
+|                                        | this value as close to ``1.0`` as possible.            |
 +----------------------------------------+--------------------------------------------------------+
 
 .. note::
@@ -351,12 +416,12 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | sampler2D **SCREEN_TEXTURE**           | Removed in Godot 4. Use a ``sampler2D`` with ``hint_screen_texture`` instead.                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec2 **SCREEN_UV**                  | Screen UV coordinate for current pixel.                                                          |
+| in vec2 **SCREEN_UV**                  | Screen UV coordinate for the current pixel.                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | sampler2D **DEPTH_TEXTURE**            | Removed in Godot 4. Use a ``sampler2D`` with ``hint_depth_texture`` instead.                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **DEPTH**                    | Custom depth value (range of ``[0.0, 1.0]``). If ``DEPTH`` is being written to in any shader     |
-|                                        | branch, then you are responsible for setting the ``DEPTH`` for **all** other branches.           |
+| out float **DEPTH**                    | Custom depth value (range ``[0.0, 1.0]``). If ``DEPTH`` is written to in any shader branch,      |
+|                                        | then you are responsible for setting ``DEPTH`` for **all** other branches.                       |
 |                                        | Otherwise, the graphics API will leave them uninitialized.                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **NORMAL**                  | Normal that comes from the ``vertex()`` function, in view space.                                 |
@@ -374,7 +439,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **ALBEDO**                    | Albedo (default white). Base color.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA**                    | Alpha (range of ``[0.0, 1.0]``). If read from or written to, the material will go to the         |
+| out float **ALPHA**                    | Alpha (range ``[0.0, 1.0]``). If read from or written to, the material will go to the            |
 |                                        | transparent pipeline.                                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_SCISSOR_THRESHOLD**  | If written to, values below a certain amount of alpha are discarded.                             |
@@ -394,16 +459,16 @@ these properties, and if you don't write to them, Godot will optimize away the c
 |                                        | This should be written to when using a *shaded* material with premultiplied alpha blending for   |
 |                                        | interaction with lighting. This is not required for unshaded materials.                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **METALLIC**                 | Metallic (range of ``[0.0, 1.0]``).                                                              |
+| out float **METALLIC**                 | Metallic (range ``[0.0, 1.0]``).                                                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **SPECULAR**                 | Specular (not physically accurate to change). Defaults to ``0.5``. ``0.0`` disables reflections. |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ROUGHNESS**                | Roughness (range of ``[0.0, 1.0]``).                                                             |
+| out float **ROUGHNESS**                | Roughness (range ``[0.0, 1.0]``).                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **RIM**                      | Rim (range of ``[0.0, 1.0]``). If used, Godot calculates rim lighting.                           |
+| out float **RIM**                      | Rim (range ``[0.0, 1.0]``). If used, Godot calculates rim lighting.                              |
 |                                        | Rim size depends on ``ROUGHNESS``.                                                               |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **RIM_TINT**                 | Rim Tint, range of ``0.0`` (white) to ``1.0`` (albedo). If used, Godot calculates rim lighting.  |
+| out float **RIM_TINT**                 | Rim Tint, range from ``0.0`` (white) to ``1.0`` (albedo). If used, Godot calculates rim lighting.|
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **CLEARCOAT**                | Small specular blob added on top of the existing one. If used, Godot calculates clearcoat.       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -430,7 +495,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **AO**                       | Strength of ambient occlusion. For use with pre-baked AO.                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **AO_LIGHT_AFFECT**          | How much ambient occlusion affects direct light (range of ``[0.0, 1.0]``, default ``0.0``).      |
+| out float **AO_LIGHT_AFFECT**          | How much ambient occlusion affects direct light (range ``[0.0, 1.0]``, default ``0.0``).         |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **EMISSION**                  | Emission color (can go over ``(1.0, 1.0, 1.0)`` for HDR).                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -496,7 +561,7 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+------------------------------------------------------------------------+
 | in vec3 **NORMAL**                | Normal vector, in view space.                                          |
 +-----------------------------------+------------------------------------------------------------------------+
-| in vec2 **SCREEN_UV**             | Screen UV coordinate for current pixel.                                |
+| in vec2 **SCREEN_UV**             | Screen UV coordinate for the current pixel.                            |
 +-----------------------------------+------------------------------------------------------------------------+
 | in vec2 **UV**                    | UV that comes from the ``vertex()`` function.                          |
 +-----------------------------------+------------------------------------------------------------------------+
@@ -532,8 +597,8 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+------------------------------------------------------------------------+
 | out vec3 **SPECULAR_LIGHT**       | Specular light result.                                                 |
 +-----------------------------------+------------------------------------------------------------------------+
-| out float **ALPHA**               | Alpha (range of ``[0.0, 1.0]``). If written to, the material will go   |
-|                                   | to the transparent pipeline.                                           |
+| out float **ALPHA**               | Alpha (range ``[0.0, 1.0]``). If written to, the material will go to   |
+|                                   | the transparent pipeline.                                              |
 +-----------------------------------+------------------------------------------------------------------------+
 
 .. note::

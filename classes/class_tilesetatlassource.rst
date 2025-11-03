@@ -380,7 +380,7 @@ Returns the alternative ID a following call to :ref:`create_alternative_tile()<c
 
 :ref:`Texture2D<class_Texture2D>` **get_runtime_texture**\ (\ ) |const| :ref:`🔗<class_TileSetAtlasSource_method_get_runtime_texture>`
 
-If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_padding>` is ``false``, returns :ref:`texture<class_TileSetAtlasSource_property_texture>`. Otherwise, returns and internal :ref:`ImageTexture<class_ImageTexture>` created that includes the padding.
+If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_padding>` is ``false``, returns :ref:`texture<class_TileSetAtlasSource_property_texture>`. Otherwise, returns an internal :ref:`ImageTexture<class_ImageTexture>` created that includes the padding.
 
 .. rst-class:: classref-item-separator
 

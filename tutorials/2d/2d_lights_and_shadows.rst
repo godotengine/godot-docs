@@ -114,10 +114,9 @@ transparent white, and move its starting location to be in the center.
 Directional light
 -----------------
 
-New in Godot 4.0 is the ability to have directional lighting in 2D. Directional
-lighting is used to represent sunlight or moonlight. Light rays are casted
-parallel to each other, as if the sun or moon was infinitely far away from the
-surface that is receiving the light.
+Directional lighting is used to represent sunlight or moonlight. Light rays are
+casted parallel to each other, as if the sun or moon was infinitely far away
+from the surface that is receiving the light.
 
 DirectionalLight2D offers the following properties:
 
@@ -237,6 +236,46 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
 - **Item Cull Mask:** Controls which LightOccluder2D nodes cast shadows,
   depending on their respective **Occluder Light Mask** properties.
 
+.. note::
+
+    **Lighting and shadow resolution in pixel-art games**
+
+    The engine computes 2D lighting and shadows at the **Viewport's pixel resolution**,
+    not at the source texture's texel resolution. The appearance of lights and shadows
+    depends on your window or Viewport resolution, not on the resolution of individual
+    sprite textures.
+
+    If you create a pixel-art game and want pixelated or blocky lighting and shadows
+    that match your art style, **Nearest** texture filtering will **not** achieve
+    this effect. Nearest filtering affects only how the engine samples textures — it
+    does not change how the engine renders lighting and shadows.
+
+    To achieve pixelated lighting and shadows, use a custom shader to modify 
+    ``LIGHT_VERTEX`` and ``SHADOW_VERTEX`` to snap light sampling to a pixel grid.
+    The following shader snaps lighting to a grid using the ``floor()`` function:
+
+    .. code-block:: glsl
+
+        shader_type canvas_item;
+
+        uniform float pixel_size = 4.0;
+
+        void fragment() {
+            // Snap lighting and shadows to pixel grid.
+            LIGHT_VERTEX.xy = floor(LIGHT_VERTEX.xy / pixel_size) * pixel_size;
+            SHADOW_VERTEX = floor(SHADOW_VERTEX / pixel_size) * pixel_size;
+
+            // Normal rendering.
+            COLOR = texture(TEXTURE, UV);
+        }
+
+    This works by dividing the position by ``pixel_size`` to convert to grid space,
+    using ``floor()`` to round down to the nearest grid point, then multiplying back
+    to convert to screen space. The result forces the engine to sample lighting from
+    discrete grid positions, which creates the pixelated effect.
+
+    For more information on canvas item shaders, see :ref:`CanvasItem shaders <doc_canvas_item_shader>`.
+
 .. figure:: img/2d_lights_and_shadows_hard_shadow.webp
    :align: center
    :alt: Hard shadows
@@ -265,8 +304,8 @@ the surface receiving light (on a per-pixel basis). Specular maps further help
 improve visuals by making some of the light reflect back to the viewer.
 
 Both PointLight2D and DirectionalLight2D support normal mapping and specular
-mapping. Since Godot 4.0, normal and specular maps can be assigned to any 2D
-element, including nodes that inherit from Node2D or Control.
+mapping. Normal and specular maps can be assigned to any 2D element,
+including nodes that inherit from Node2D or Control.
 
 A normal map represents the direction in which each pixel is "pointing" towards.
 This information is then used by the engine to correctly apply lighting to 2D

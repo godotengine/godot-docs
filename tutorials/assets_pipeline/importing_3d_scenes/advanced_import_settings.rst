@@ -168,7 +168,7 @@ configuration may not be suitable for your needs. For example:
 
 - You want to configure material features not supported by your 3D application.
 - You want to use a different texture filtering mode, as this option is
-  configured in the material since Godot 4.0 (and not in the image).
+  configured in the material (and not in the image).
 - You want to replace one of the materials with an entirely different material,
   such as a custom shader.
 

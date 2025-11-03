@@ -17,7 +17,7 @@ A built-in data structure that holds a sequence of elements.
 Description
 -----------
 
-An array data structure that can contain a sequence of elements of any :ref:`Variant<class_Variant>` type. Elements are accessed by a numerical index starting at ``0``. Negative indices are used to count from the back (``-1`` is the last element, ``-2`` is the second to last, etc.).
+An array data structure that can contain a sequence of elements of any :ref:`Variant<class_Variant>` type by default. Values can optionally be constrained to a specific type by creating a *typed array*. Elements are accessed by a numerical index starting at ``0``. Negative indices are used to count from the back (``-1`` is the last element, ``-2`` is the second to last, etc.).
 
 
 .. tabs::
@@ -33,6 +33,10 @@ An array data structure that can contain a sequence of elements of any :ref:`Var
     print(array[1])  # Prints "Second"
     print(array[-3]) # Prints "Second"
 
+    # This typed array can only contain integers.
+    # Attempting to add any other type will result in an error.
+    var typed_array: Array[int] = [1, 2, 3]
+
  .. code-tab:: csharp
 
     Godot.Collections.Array array = ["First", 2, 3, "Last"];
@@ -43,6 +47,10 @@ An array data structure that can contain a sequence of elements of any :ref:`Var
     array[1] = "Second";
     GD.Print(array[1]); // Prints "Second"
     GD.Print(array[^3]); // Prints "Second"
+
+    // This typed array can only contain integers.
+    // Attempting to add any other type will result in an error.
+    Godot.Collections.Array<int> typedArray = [1, 2, 3];
 
 
 
@@ -1228,8 +1236,6 @@ Removes the element from the array at the given index (``position``). If the ind
 If you need to return the removed element, use :ref:`pop_at()<class_Array_method_pop_at>`. To remove an element by value, use :ref:`erase()<class_Array_method_erase>` instead.
 
 \ **Note:** This method shifts every element's index after ``position`` back, which may have a noticeable performance cost, especially on larger arrays.
-
-\ **Note:** The ``position`` cannot be negative. To remove an element relative to the end of the array, use ``arr.remove_at(arr.size() - (i + 1))``. To remove the last element from the array, use ``arr.resize(arr.size() - 1)``.
 
 .. rst-class:: classref-item-separator
 

@@ -65,8 +65,8 @@ here's an example of how GDScript looks.
     var v3 = Vector3(1, 2, 3)
 
 
-    # Functions.
-    func some_function(param1, param2, param3):
+    # Function, with a default value for the last parameter.
+    func some_function(param1, param2, param3 = 123):
         const local_const = 5
 
         if param1 < local_const:
@@ -859,7 +859,7 @@ Negative indices count from the end.
 Typed arrays
 ^^^^^^^^^^^^
 
-Godot 4.0 added support for typed arrays. On write operations, Godot checks that
+Godot also features support for typed arrays. On write operations, Godot checks that
 element values match the specified type, so the array cannot contain invalid values.
 The GDScript static analyzer takes typed arrays into account, however array methods like
 ``front()`` and ``back()`` still have the ``Variant`` return type.
@@ -1410,6 +1410,20 @@ function's first argument, unlike Python).
         return a + b  # Return is optional; without it 'null' is returned.
 
 A function can ``return`` at any point. The default return value is ``null``.
+
+By default, all function parameters are required. You can make one or more
+parameters at the end optional by assigning a default value to them:
+
+::
+
+    # Since the last two parameters are optional, all these calls are valid:
+    # - my_function(1)
+    # - my_function(1, 20)
+    # - my_function(1, 20, 100)
+    func my_function(a_required, b_optional = 10, c_optional = 42):
+        print(a_required)
+        print(b_optional)
+        print(c_optional)
 
 If a function contains only one line of code, it can be written on one line:
 
@@ -2229,7 +2243,7 @@ abstract class:
     an abstract class to a node. If you attempt to do so, the engine will print
     an error when running the scene:
 
-    ::
+    .. code-block:: none
 
         Cannot set object script. Script '<path to script>' should not be abstract.
 
@@ -2351,7 +2365,7 @@ This is better explained through examples. Consider this scenario:
     var message = null
 
 
-    func _init(e=null):
+    func _init(e = null):
         entity = e
 
 
@@ -2363,7 +2377,7 @@ This is better explained through examples. Consider this scenario:
     extends "state.gd"
 
 
-    func _init(e=null, m=null):
+    func _init(e = null, m = null):
         super(e)
         # Do something with 'e'.
         message = m
@@ -2382,10 +2396,10 @@ There are a few things to keep in mind here:
 
    ::
 
-   # idle.gd
+       # idle.gd
 
-   func _init():
-       super(5)
+       func _init():
+           super(5)
 
 Static constructor
 ~~~~~~~~~~~~~~~~~~

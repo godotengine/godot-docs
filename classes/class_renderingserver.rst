@@ -109,6 +109,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_add_clip_ignore<class_RenderingServer_method_canvas_item_add_clip_ignore>`\ (\ item\: :ref:`RID<class_RID>`, ignore\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`canvas_item_add_ellipse<class_RenderingServer_method_canvas_item_add_ellipse>`\ (\ item\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, major\: :ref:`float<class_float>`, minor\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, antialiased\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                                                   |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_add_lcd_texture_rect_region<class_RenderingServer_method_canvas_item_add_lcd_texture_rect_region>`\ (\ item\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`, texture\: :ref:`RID<class_RID>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_add_line<class_RenderingServer_method_canvas_item_add_line>`\ (\ item\: :ref:`RID<class_RID>`, from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                                                |
@@ -389,6 +391,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_ssr<class_RenderingServer_method_environment_set_ssr>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, max_steps\: :ref:`int<class_int>`, fade_in\: :ref:`float<class_float>`, fade_out\: :ref:`float<class_float>`, depth_tolerance\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`environment_set_ssr_half_size<class_RenderingServer_method_environment_set_ssr_half_size>`\ (\ half_size\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_ssr_roughness_quality<class_RenderingServer_method_environment_set_ssr_roughness_quality>`\ (\ quality\: :ref:`EnvironmentSSRRoughnessQuality<enum_RenderingServer_EnvironmentSSRRoughnessQuality>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_tonemap<class_RenderingServer_method_environment_set_tonemap>`\ (\ env\: :ref:`RID<class_RID>`, tone_mapper\: :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>`, exposure\: :ref:`float<class_float>`, white\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -599,6 +603,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`material_set_shader<class_RenderingServer_method_material_set_shader>`\ (\ shader_material\: :ref:`RID<class_RID>`, shader\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`material_set_use_debanding<class_RenderingServer_method_material_set_use_debanding>`\ (\ enable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_add_surface<class_RenderingServer_method_mesh_add_surface>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`Dictionary<class_Dictionary>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_add_surface_from_arrays<class_RenderingServer_method_mesh_add_surface_from_arrays>`\ (\ mesh\: :ref:`RID<class_RID>`, primitive\: :ref:`PrimitiveType<enum_RenderingServer_PrimitiveType>`, arrays\: :ref:`Array<class_Array>`, blend_shapes\: :ref:`Array<class_Array>` = [], lods\: :ref:`Dictionary<class_Dictionary>` = {}, compress_format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\] = 0\ )                                                                                                                                                                                                                                                                  |
@@ -692,6 +698,8 @@ Methods
    | |void|                                                                           | :ref:`multimesh_instance_set_transform<class_RenderingServer_method_multimesh_instance_set_transform>`\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_instance_set_transform_2d<class_RenderingServer_method_multimesh_instance_set_transform_2d>`\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`multimesh_instances_reset_physics_interpolation<class_RenderingServer_method_multimesh_instances_reset_physics_interpolation>`\ (\ multimesh\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>`\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -858,6 +866,8 @@ Methods
    | |void|                                                                           | :ref:`screen_space_roughness_limiter_set_active<class_RenderingServer_method_screen_space_roughness_limiter_set_active>`\ (\ enable\: :ref:`bool<class_bool>`, amount\: :ref:`float<class_float>`, limit\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`set_boot_image<class_RenderingServer_method_set_boot_image>`\ (\ image\: :ref:`Image<class_Image>`, color\: :ref:`Color<class_Color>`, scale\: :ref:`bool<class_bool>`, use_filter\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`set_boot_image_with_stretch<class_RenderingServer_method_set_boot_image_with_stretch>`\ (\ image\: :ref:`Image<class_Image>`, color\: :ref:`Color<class_Color>`, stretch_mode\: :ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>`, use_filter\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                                                                                                                                                                                                                                                  |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`set_debug_generate_wireframes<class_RenderingServer_method_set_debug_generate_wireframes>`\ (\ generate\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5892,6 +5902,64 @@ Represents the size of the :ref:`PipelineSource<enum_RenderingServer_PipelineSou
 
 ----
 
+.. _enum_RenderingServer_SplashStretchMode:
+
+.. rst-class:: classref-enumeration
+
+enum **SplashStretchMode**: :ref:`🔗<enum_RenderingServer_SplashStretchMode>`
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_DISABLED** = ``0``
+
+No stretching is applied.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_KEEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_KEEP** = ``1``
+
+Stretches image to fullscreen while preserving aspect ratio.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_KEEP_WIDTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_KEEP_WIDTH** = ``2``
+
+Stretches the height of the image based on the width of the screen.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_KEEP_HEIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_KEEP_HEIGHT** = ``3``
+
+Stretches the width of the image based on the height of the screen.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_COVER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_COVER** = ``4``
+
+Stretches the image to cover the entire screen while preserving aspect ratio.
+
+.. _class_RenderingServer_constant_SPLASH_STRETCH_MODE_IGNORE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` **SPLASH_STRETCH_MODE_IGNORE** = ``5``
+
+Stretches the image to cover the entire screen but doesn't preserve aspect ratio.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_RenderingServer_Features:
 
 .. rst-class:: classref-enumeration
@@ -6409,6 +6477,18 @@ Draws a circle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``it
 |void| **canvas_item_add_clip_ignore**\ (\ item\: :ref:`RID<class_RID>`, ignore\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_clip_ignore>`
 
 If ``ignore`` is ``true``, ignore clipping on items drawn with this canvas item until this is called again with ``ignore`` set to ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_canvas_item_add_ellipse:
+
+.. rst-class:: classref-method
+
+|void| **canvas_item_add_ellipse**\ (\ item\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, major\: :ref:`float<class_float>`, minor\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_add_ellipse>`
+
+Draws an ellipse with semi-major axis ``major`` and semi-minor axis ``minor`` on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_ellipse()<class_CanvasItem_method_draw_ellipse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7884,7 +7964,7 @@ Sets the filter ``quality`` for directional light shadows in 3D. See also :ref:`
 
 Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``environment`` RID's sky. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`sky_bake_panorama()<class_RenderingServer_method_sky_bake_panorama>`.
 
-\ **Note:** The image is saved in linear color space without any tonemapping performed, which means it will look too dark if viewed directly in an image editor.
+\ **Note:** The image is saved using linear encoding without any tonemapping performed, which means it will look too dark if viewed directly in an image editor.
 
 \ **Note:** ``size`` should be a 2:1 aspect ratio for the generated panorama to have square pixels. For radiance maps, there is no point in using a height greater than :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`, as it won't increase detail. Irradiance maps only contain low-frequency data, so there is usually no point in going past a size of 128×64 pixels when saving an irradiance map.
 
@@ -8174,15 +8254,25 @@ Sets the variables to be used with the screen-space reflections (SSR) post-proce
 
 ----
 
+.. _class_RenderingServer_method_environment_set_ssr_half_size:
+
+.. rst-class:: classref-method
+
+|void| **environment_set_ssr_half_size**\ (\ half_size\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_environment_set_ssr_half_size>`
+
+Sets whether screen-space reflections will be rendered at full or half size. Half size is faster, but may look pixelated or cause flickering.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_environment_set_ssr_roughness_quality:
 
 .. rst-class:: classref-method
 
 |void| **environment_set_ssr_roughness_quality**\ (\ quality\: :ref:`EnvironmentSSRRoughnessQuality<enum_RenderingServer_EnvironmentSSRRoughnessQuality>`\ ) :ref:`🔗<class_RenderingServer_method_environment_set_ssr_roughness_quality>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+**Deprecated:** This option no longer does anything.
 
 .. rst-class:: classref-item-separator
 
@@ -9544,6 +9634,22 @@ Sets a shader material's shader.
 
 ----
 
+.. _class_RenderingServer_method_material_set_use_debanding:
+
+.. rst-class:: classref-method
+
+|void| **material_set_use_debanding**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_material_set_use_debanding>`
+
+When using the Mobile renderer, :ref:`material_set_use_debanding()<class_RenderingServer_method_material_set_use_debanding>` can be used to enable or disable the debanding feature of 3D materials (:ref:`BaseMaterial3D<class_BaseMaterial3D>` and :ref:`ShaderMaterial<class_ShaderMaterial>`).
+
+\ :ref:`material_set_use_debanding()<class_RenderingServer_method_material_set_use_debanding>` has no effect when using the Compatibility or Forward+ renderer. In Forward+, :ref:`Viewport<class_Viewport>` debanding can be used instead.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>` and :ref:`viewport_set_use_debanding()<class_RenderingServer_method_viewport_set_use_debanding>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_mesh_add_surface:
 
 .. rst-class:: classref-method
@@ -10156,6 +10262,20 @@ Sets the :ref:`Transform3D<class_Transform3D>` for this instance. Equivalent to 
 |void| **multimesh_instance_set_transform_2d**\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_instance_set_transform_2d>`
 
 Sets the :ref:`Transform2D<class_Transform2D>` for this instance. For use when multimesh is used in 2D. Equivalent to :ref:`MultiMesh.set_instance_transform_2d()<class_MultiMesh_method_set_instance_transform_2d>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_multimesh_instances_reset_physics_interpolation:
+
+.. rst-class:: classref-method
+
+|void| **multimesh_instances_reset_physics_interpolation**\ (\ multimesh\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_instances_reset_physics_interpolation>`
+
+Prevents physics interpolation for all instances during the current physics tick.
+
+This is useful when moving all instances to new locations, to give instantaneous changes rather than interpolation from the previous locations.
 
 .. rst-class:: classref-item-separator
 
@@ -11094,7 +11214,9 @@ Sets the render reflection mask for this reflection probe. Only instances with a
 
 |void| **reflection_probe_set_resolution**\ (\ probe\: :ref:`RID<class_RID>`, resolution\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_reflection_probe_set_resolution>`
 
-Sets the resolution to use when rendering the specified reflection probe. The ``resolution`` is specified for each cubemap face: for instance, specifying ``512`` will allocate 6 faces of 512×512 each (plus mipmaps for roughness levels).
+**Deprecated:** This method has not done anything since Godot 3.
+
+Deprecated. This method does nothing.
 
 .. rst-class:: classref-item-separator
 
@@ -11218,7 +11340,21 @@ Sets the screen-space roughness limiter parameters, such as whether it should be
 
 |void| **set_boot_image**\ (\ image\: :ref:`Image<class_Image>`, color\: :ref:`Color<class_Color>`, scale\: :ref:`bool<class_bool>`, use_filter\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RenderingServer_method_set_boot_image>`
 
-Sets a boot image. The color defines the background color. If ``scale`` is ``true``, the image will be scaled to fit the screen size. If ``use_filter`` is ``true``, the image will be scaled with linear interpolation. If ``use_filter`` is ``false``, the image will be scaled with nearest-neighbor interpolation.
+**Deprecated:** Use :ref:`set_boot_image_with_stretch()<class_RenderingServer_method_set_boot_image_with_stretch>` instead.
+
+Sets a boot image. The ``color`` defines the background color. The value of ``scale`` indicates if the image will be scaled to fit the screen size. If ``use_filter`` is ``true``, the image will be scaled with linear interpolation. If ``use_filter`` is ``false``, the image will be scaled with nearest-neighbor interpolation.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_set_boot_image_with_stretch:
+
+.. rst-class:: classref-method
+
+|void| **set_boot_image_with_stretch**\ (\ image\: :ref:`Image<class_Image>`, color\: :ref:`Color<class_Color>`, stretch_mode\: :ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>`, use_filter\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RenderingServer_method_set_boot_image_with_stretch>`
+
+Sets a boot image. The ``color`` defines the background color. The value of ``stretch_mode`` indicates how the image will be stretched (see :ref:`SplashStretchMode<enum_RenderingServer_SplashStretchMode>` for possible values). If ``use_filter`` is ``true``, the image will be scaled with linear interpolation. If ``use_filter`` is ``false``, the image will be scaled with nearest-neighbor interpolation.
 
 .. rst-class:: classref-item-separator
 
@@ -11452,7 +11588,7 @@ Returns the number of bones allocated for this skeleton.
 
 Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``sky`` RID. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`environment_bake_panorama()<class_RenderingServer_method_environment_bake_panorama>`.
 
-\ **Note:** The image is saved in linear color space without any tonemapping performed, which means it will look too dark if viewed directly in an image editor. ``energy`` values above ``1.0`` can be used to brighten the resulting image.
+\ **Note:** The image is saved using linear encoding without any tonemapping performed, which means it will look too dark if viewed directly in an image editor. ``energy`` values above ``1.0`` can be used to brighten the resulting image.
 
 \ **Note:** ``size`` should be a 2:1 aspect ratio for the generated panorama to have square pixels. For radiance maps, there is no point in using a height greater than :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`, as it won't increase detail. Irradiance maps only contain low-frequency data, so there is usually no point in going past a size of 128×64 pixels when saving an irradiance map.
 
@@ -11748,6 +11884,8 @@ Returns the format for the texture.
 
 Returns the internal graphics handle for this texture object. For use when communicating with third-party APIs mostly with GDExtension.
 
+\ ``srgb`` should be ``true`` when the texture uses nonlinear sRGB encoding and ``false`` when the texture uses linear encoding.
+
 \ **Note:** This function returns a ``uint64_t`` which internally maps to a ``GLuint`` (OpenGL) or ``VkImage`` (Vulkan).
 
 .. rst-class:: classref-item-separator
@@ -11775,6 +11913,8 @@ Returns the internal graphics handle for this texture object. For use when commu
 :ref:`RID<class_RID>` **texture_get_rd_texture**\ (\ texture\: :ref:`RID<class_RID>`, srgb\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_RenderingServer_method_texture_get_rd_texture>`
 
 Returns a texture :ref:`RID<class_RID>` that can be used with :ref:`RenderingDevice<class_RenderingDevice>`.
+
+\ ``srgb`` should be ``true`` when the texture uses nonlinear sRGB encoding and ``false`` when the texture uses linear encoding.
 
 .. rst-class:: classref-item-separator
 
@@ -11815,6 +11955,10 @@ This method does nothing.
 :ref:`RID<class_RID>` **texture_rd_create**\ (\ rd_texture\: :ref:`RID<class_RID>`, layer_type\: :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` = 0\ ) :ref:`🔗<class_RenderingServer_method_texture_rd_create>`
 
 Creates a new texture object based on a texture created directly on the :ref:`RenderingDevice<class_RenderingDevice>`. If the texture contains layers, ``layer_type`` is used to define the layer type.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` won't free the underlying ``rd_texture``, you will want to free the ``rd_texture`` using :ref:`RenderingDevice.free_rid()<class_RenderingDevice_method_free_rid>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12493,9 +12637,9 @@ Equivalent to :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding
 
 If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an ``RGBA16`` framebuffer. When using the Mobile renderer, it will be an ``RGB10_A2`` framebuffer.
 
-Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen).
+Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
 
-Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
+Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color encoding adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
 
 .. rst-class:: classref-item-separator
 

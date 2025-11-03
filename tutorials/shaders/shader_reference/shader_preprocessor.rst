@@ -14,9 +14,9 @@ starting with a hash symbol (``#``). It is not a *keyword* of the shader
 language (such as ``if`` or ``for``), but a special kind of token within the
 language.
 
-From Godot 4.0 onwards, you can use a shader preprocessor within text-based
-shaders. The syntax is similar to what most GLSL shader compilers support
-(which in turn is similar to the C/C++ preprocessor).
+To avoid repetition and improve code reuse, you can use a shader preprocessor
+within text-based shaders. The syntax is similar to what most GLSL shader
+compilers support (which in turn is similar to the C/C++ preprocessor).
 
 .. note::
 

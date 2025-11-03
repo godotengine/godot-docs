@@ -81,6 +81,8 @@ Properties
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`int<class_int>`                    | :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>`                     | ``0``                                                                     |
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`enable_drag_unfolding<class_Tree_property_enable_drag_unfolding>`         | ``true``                                                                  |
+   +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                  | :ref:`enable_recursive_folding<class_Tree_property_enable_recursive_folding>`   | ``true``                                                                  |
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)       |
@@ -128,6 +130,8 @@ Methods
    | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`get_column_title_direction<class_Tree_method_get_column_title_direction>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                              |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`get_column_title_language<class_Tree_method_get_column_title_language>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                                |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`get_column_title_tooltip_text<class_Tree_method_get_column_title_tooltip_text>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                        |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_column_width<class_Tree_method_get_column_width>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                                                  |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -177,6 +181,8 @@ Methods
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`set_column_title_language<class_Tree_method_set_column_title_language>`\ (\ column\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ )                                                |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`set_column_title_tooltip_text<class_Tree_method_set_column_title_tooltip_text>`\ (\ column\: :ref:`int<class_int>`, tooltip_text\: :ref:`String<class_String>`\ )                                    |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`set_selected<class_Tree_method_set_selected>`\ (\ item\: :ref:`TreeItem<class_TreeItem>`, column\: :ref:`int<class_int>`\ )                                                                          |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -220,6 +226,8 @@ Theme Properties
    | :ref:`int<class_int>`             | :ref:`button_margin<class_Tree_theme_constant_button_margin>`                            | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`children_hl_line_width<class_Tree_theme_constant_children_hl_line_width>`          | ``1``                               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`dragging_unfold_wait_msec<class_Tree_theme_constant_dragging_unfold_wait_msec>`    | ``500``                             |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`draw_guides<class_Tree_theme_constant_draw_guides>`                                | ``1``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
@@ -734,6 +742,23 @@ This controls the drop sections, i.e. the decision and drawing of possible drop 
 
 ----
 
+.. _class_Tree_property_enable_drag_unfolding:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **enable_drag_unfolding** = ``true`` :ref:`🔗<class_Tree_property_enable_drag_unfolding>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_enable_drag_unfolding**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_drag_unfolding_enabled**\ (\ )
+
+If ``true``, tree items will unfold when hovered over during a drag-and-drop. The delay for when this happens is dictated by :ref:`dragging_unfold_wait_msec<class_Tree_theme_constant_dragging_unfold_wait_msec>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Tree_property_enable_recursive_folding:
 
 .. rst-class:: classref-property
@@ -992,6 +1017,18 @@ Returns column title base writing direction.
 :ref:`String<class_String>` **get_column_title_language**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Tree_method_get_column_title_language>`
 
 Returns column title language code.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_method_get_column_title_tooltip_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_column_title_tooltip_text**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Tree_method_get_column_title_tooltip_text>`
+
+Returns the column title's tooltip text.
 
 .. rst-class:: classref-item-separator
 
@@ -1324,6 +1361,18 @@ Sets language code of column title used for line-breaking and text shaping algor
 
 ----
 
+.. _class_Tree_method_set_column_title_tooltip_text:
+
+.. rst-class:: classref-method
+
+|void| **set_column_title_tooltip_text**\ (\ column\: :ref:`int<class_int>`, tooltip_text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Tree_method_set_column_title_tooltip_text>`
+
+Sets the column title's tooltip text.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Tree_method_set_selected:
 
 .. rst-class:: classref-method
@@ -1528,6 +1577,18 @@ The horizontal space between each button in a cell.
 :ref:`int<class_int>` **children_hl_line_width** = ``1`` :ref:`🔗<class_Tree_theme_constant_children_hl_line_width>`
 
 The width of the relationship lines between the selected :ref:`TreeItem<class_TreeItem>` and its children.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_constant_dragging_unfold_wait_msec:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **dragging_unfold_wait_msec** = ``500`` :ref:`🔗<class_Tree_theme_constant_dragging_unfold_wait_msec>`
+
+During a drag-and-drop, this is how many milliseconds to wait over a section before the section unfolds.
 
 .. rst-class:: classref-item-separator
 

@@ -227,9 +227,230 @@ Put together, the full code looks like:
 
 
 The code that goes in the middle can be whatever you want. Below we will present some
-example code for generating a sphere.
+example code for generating shapes, starting with a rectangle.
 
-Generating geometry
+Generating a rectangle
+----------------------
+
+Since we are using ``Mesh.PRIMITIVE_TRIANGLES`` to render, we will construct a rectangle
+with triangles.
+
+A rectangle is formed by two triangles sharing four vertices. For our example, we will create
+a rectangle with its top left point at ``(0, 0, 0)`` with a width and length of one as shown below:
+
+.. image:: img/array_mesh_rectangle_as_triangles.webp
+  :scale: 33%
+  :alt: A rectangle made of two triangles sharing four vertices.
+
+To draw this rectangle, define the coordinates of each vertex in the ``verts`` array.
+
+.. tabs::
+  .. code-tab:: gdscript GDScript
+
+    verts = PackedVector3Array([
+            Vector3(0, 0, 0),
+            Vector3(0, 0, 1),
+            Vector3(1, 0, 0),
+            Vector3(1, 0, 1),
+        ])
+
+  .. code-tab:: csharp C#
+
+    verts.AddRange(new Vector3[]
+    {
+        new Vector3(0, 0, 0),
+        new Vector3(0, 0, 1),
+        new Vector3(1, 0, 0),
+        new Vector3(1, 0, 1),
+    });
+
+The ``uvs`` array helps describe where parts of a texture should go onto the mesh. The values
+range from 0 to 1. Depending on your texture, you may want to change these values.
+
+.. tabs::
+  .. code-tab:: gdscript GDScript
+
+    uvs = PackedVector2Array([
+            Vector2(0, 0),
+            Vector2(1, 0),
+            Vector2(0, 1),
+            Vector2(1, 1),
+        ])
+
+  .. code-tab:: csharp C#
+
+    uvs.AddRange(new Vector2[]
+    {
+        new Vector2(0, 0),
+        new Vector2(1, 0),
+        new Vector2(0, 1),
+        new Vector2(1, 1),
+    });
+
+The ``normals`` array is used to describe the direction the vertices face and is
+used in lighting calculations. For this example, we will default to the ``Vector3.UP``
+direction.
+
+.. tabs::
+  .. code-tab:: gdscript GDScript
+
+    normals = PackedVector3Array([
+            Vector3.UP,
+            Vector3.UP,
+            Vector3.UP,
+            Vector3.UP,
+        ])
+
+  .. code-tab:: csharp C#
+
+    normals.AddRange(new Vector3[]
+    {
+        Vector3.Up,
+        Vector3.Up,
+        Vector3.Up,
+        Vector3.Up,
+    });
+
+The ``indices`` array defines the order vertices are drawn. Godot
+renders in a *clockwise* direction, meaning that we must specify the vertices
+of a triangle we want to draw in clockwise order.
+
+For example, to draw the first triangle, we will want to draw the vertices ``(0, 0, 0)``,
+``(1, 0, 0)``, and ``(0, 0, 1)`` in that order. This is the same as drawing ``vert[0]``, ``vert[2]``, and
+``vert[1]``, i.e., indices 0, 2, and 1, in the ``verts`` array. These index values are what the
+``indices`` array defines.
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Index
+     - ``verts[Index]``
+     - ``uvs[Index]``
+     - ``normals[Index]``
+
+   * - 0
+     - (0, 0, 0)
+     - (0, 0)
+     - Vector3.UP
+
+   * - 1
+     - (0, 0, 1)
+     - (1, 0)
+     - Vector3.UP
+
+   * - 2
+     - (1, 0, 0)
+     - (0, 1)
+     - Vector3.UP
+
+   * - 3
+     - (1, 0, 1)
+     - (1, 1)
+     - Vector3.UP
+
+.. tabs::
+  .. code-tab:: gdscript GDScript
+
+    indices = PackedInt32Array([
+            0, 2, 1, # Draw the first triangle.
+            2, 3, 1, # Draw the second triangle.
+        ])
+
+  .. code-tab:: csharp C#
+
+    indices.AddRange(new int[]
+    {
+        0, 2, 1, // Draw the first triangle.
+        2, 3, 1, // Draw the second triangle.
+    });
+
+Put together, the rectangle generation code looks like:
+
+.. tabs::
+  .. code-tab:: gdscript GDScript
+
+    extends MeshInstance3D
+
+    func _ready():
+
+      # Insert setting up the PackedVector**Arrays here.
+
+      verts = PackedVector3Array([
+              Vector3(0, 0, 0),
+              Vector3(0, 0, 1),
+              Vector3(1, 0, 0),
+              Vector3(1, 0, 1),
+          ])
+
+      uvs = PackedVector2Array([
+              Vector2(0, 0),
+              Vector2(1, 0),
+              Vector2(0, 1),
+              Vector2(1, 1),
+          ])
+
+      normals = PackedVector3Array([
+              Vector3.UP,
+              Vector3.UP,
+              Vector3.UP,
+              Vector3.UP,
+          ])
+
+      indices = PackedInt32Array([
+              0, 2, 1,
+              2, 3, 1,
+          ])
+
+      # Insert committing to the ArrayMesh here.
+
+  .. code-tab:: csharp C#
+
+    using System.Collections.Generic;
+
+    public partial class MeshInstance3d : MeshInstance3D
+    {
+      public override void _Ready()
+      {
+          // Insert setting up the surface array and lists here.
+
+          verts.AddRange(new Vector3[]
+          {
+              new Vector3(0, 0, 0),
+              new Vector3(0, 0, 1),
+              new Vector3(1, 0, 0),
+              new Vector3(1, 0, 1),
+          });
+
+          uvs.AddRange(new Vector2[]
+          {
+              new Vector2(0, 0),
+              new Vector2(1, 0),
+              new Vector2(0, 1),
+              new Vector2(1, 1),
+          });
+
+          normals.AddRange(new Vector3[]
+          {
+              Vector3.Up,
+              Vector3.Up,
+              Vector3.Up,
+              Vector3.Up,
+          });
+
+          indices.AddRange(new int[]
+          {
+              0, 2, 1,
+              2, 3, 1,
+          });
+
+          // Insert committing to the ArrayMesh here.
+      }
+    }
+
+For a more complex example, see the sphere generation section below.
+
+Generating a sphere
 -------------------
 
 Here is sample code for generating a sphere. Although the code is presented in

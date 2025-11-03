@@ -155,7 +155,7 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 | Built-in                        | Description                                                                                                              |
 +=================================+==========================================================================================================================+
 | in float **TIME**               | Global time since the engine has started, in seconds. It repeats after every ``3,600``                                   |
-|                                 | seconds (which can  be changed with the                                                                                  |
+|                                 | seconds (which can be changed with the                                                                                   |
 |                                 | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                 |
 |                                 | setting). It's affected by :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a         |
 |                                 | ``TIME`` variable that is not affected by time scale, add your own                                                       |
@@ -164,13 +164,13 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in vec3 **POSITION**            | Camera position, in world space.                                                                                         |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| samplerCube **RADIANCE**        | Radiance cubemap. Can only be read from during background pass. Check ``!AT_CUBEMAP_PASS`` before using.                 |
+| samplerCube **RADIANCE**        | Radiance cubemap. Can only be read from during the background pass. Check ``!AT_CUBEMAP_PASS`` before using.             |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in bool **AT_HALF_RES_PASS**    | ``true`` when rendering to half resolution pass.                                                                         |
+| in bool **AT_HALF_RES_PASS**    | ``true`` when rendering to the half resolution pass.                                                                     |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in bool **AT_QUARTER_RES_PASS** | ``true`` when rendering to quarter resolution pass.                                                                      |
+| in bool **AT_QUARTER_RES_PASS** | ``true`` when rendering to the quarter resolution pass.                                                                  |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in bool **AT_CUBEMAP_PASS**     | ``true`` when rendering to radiance cubemap.                                                                             |
+| in bool **AT_CUBEMAP_PASS**     | ``true`` when rendering to the radiance cubemap.                                                                         |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in bool **LIGHTX_ENABLED**      | ``true`` if ``LIGHTX`` is visible and in the scene. If ``false``, other light properties may be garbage.                 |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -184,34 +184,34 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 |                                 | (0.5 degrees).                                                                                                           |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in float **PI**                 | A ``PI`` constant (``3.141592``).                                                                                        |
-|                                 | A ratio of a circle's circumference to its diameter and amount of radians in half turn.                                  |
+|                                 | The ratio of a circle's circumference to its diameter and the number of radians in a half turn.                          |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in float **TAU**                | A ``TAU`` constant (``6.283185``).                                                                                       |
-|                                 | An equivalent of ``PI * 2`` and amount of radians in full turn.                                                          |
+|                                 | Equivalent to ``PI * 2`` and the number of radians in a full turn.                                                       |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in float **E**                  | An ``E`` constant (``2.718281``).                                                                                        |
-|                                 | Euler's number and a base of the natural logarithm.                                                                      |
+|                                 | Euler's number, the base of the natural logarithm.                                                                       |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Sky built-ins
 -------------
 
-+-------------------------------+-------------------------------------------------------------------------------------------------+
-| Built-in                      | Description                                                                                     |
-+===============================+=================================================================================================+
-| in vec3 **EYEDIR**            | Normalized direction of current pixel. Use this as your basic direction for procedural effects. |
-+-------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec2 **SCREEN_UV**         | Screen UV coordinate for current pixel. Used to map a texture to the full screen.               |
-+-------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec2 **SKY_COORDS**        | Sphere UV. Used to map a panorama texture to the sky.                                           |
-+-------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec4 **HALF_RES_COLOR**    | Color value of corresponding pixel from half resolution pass. Uses linear filter.               |
-+-------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec4 **QUARTER_RES_COLOR** | Color value of corresponding pixel from quarter resolution pass. Uses linear filter.            |
-+-------------------------------+-------------------------------------------------------------------------------------------------+
-| out vec3 **COLOR**            | Output color.                                                                                   |
-+-------------------------------+-------------------------------------------------------------------------------------------------+
-| out float **ALPHA**           | Output alpha value, can only be used in subpasses.                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------+
-| out vec4 **FOG**              |                                                                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------+
++-------------------------------+-----------------------------------------------------------------------------------------------------+
+| Built-in                      | Description                                                                                         |
++===============================+=====================================================================================================+
+| in vec3 **EYEDIR**            | Normalized direction of the current pixel. Use this as your basic direction for procedural effects. |
++-------------------------------+-----------------------------------------------------------------------------------------------------+
+| in vec2 **SCREEN_UV**         | Screen UV coordinate for the current pixel. Used to map a texture to the full screen.               |
++-------------------------------+-----------------------------------------------------------------------------------------------------+
+| in vec2 **SKY_COORDS**        | Sphere UV. Used to map a panorama texture to the sky.                                               |
++-------------------------------+-----------------------------------------------------------------------------------------------------+
+| in vec4 **HALF_RES_COLOR**    | Color value of the corresponding pixel from the half resolution pass. Uses linear filter.           |
++-------------------------------+-----------------------------------------------------------------------------------------------------+
+| in vec4 **QUARTER_RES_COLOR** | Color value of the corresponding pixel from the quarter resolution pass. Uses linear filter.        |
++-------------------------------+-----------------------------------------------------------------------------------------------------+
+| out vec3 **COLOR**            | Output color.                                                                                       |
++-------------------------------+-----------------------------------------------------------------------------------------------------+
+| out float **ALPHA**           | Output alpha value, can only be used in subpasses.                                                  |
++-------------------------------+-----------------------------------------------------------------------------------------------------+
+| out vec4 **FOG**              |                                                                                                     |
++-------------------------------+-----------------------------------------------------------------------------------------------------+

@@ -305,7 +305,7 @@ Color given as red-green-blue value (alpha will always be 1).
 Nodes
 -----
 
-Since Godot 4.0, nodes can be directly exported without having to use NodePaths.
+Nodes can also be directly exported without having to use NodePaths.
 
 .. code-block:: csharp
 

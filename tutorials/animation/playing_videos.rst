@@ -47,7 +47,7 @@ Setting up VideoStreamPlayer
 Handling resizing and different aspect ratios
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default in Godot 4.0, the VideoStreamPlayer will automatically be resized to match
+By default, the VideoStreamPlayer will automatically be resized to match
 the video's resolution. You can make it follow usual :ref:`class_Control` sizing
 by enabling **Expand** on the VideoStreamPlayer node.
 

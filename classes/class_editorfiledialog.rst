@@ -23,6 +23,8 @@ Description
 
 Unlike :ref:`FileDialog<class_FileDialog>`, **EditorFileDialog** does not have a property for using native dialogs. Instead, native dialogs can be enabled globally via the :ref:`EditorSettings.interface/editor/use_native_file_dialogs<class_EditorSettings_property_interface/editor/use_native_file_dialogs>` editor setting. They are also enabled automatically when running in sandbox (e.g. on macOS).
 
+\ **Note:** **EditorFileDialog** is invisible by default. To make it visible, call one of the ``popup_*`` methods from :ref:`Window<class_Window>` on the node, such as :ref:`Window.popup_centered_clamped()<class_Window_method_popup_centered_clamped>`.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -493,7 +495,9 @@ Adds an additional :ref:`OptionButton<class_OptionButton>` to the file dialog. I
 
 |void| **add_side_menu**\ (\ menu\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_EditorFileDialog_method_add_side_menu>`
 
-Adds the given ``menu`` to the side of the file dialog with the given ``title`` text on top. Only one side menu is allowed.
+**Deprecated:** This feature is no longer supported.
+
+This method is kept for compatibility and does nothing. As an alternative, you can display another dialog after showing the file dialog.
 
 .. rst-class:: classref-item-separator
 

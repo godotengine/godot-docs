@@ -344,7 +344,7 @@ Multiplies the current scale by the ``ratio`` vector.
 
 :ref:`float<class_float>` **get_angle_to**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Node2D_method_get_angle_to>`
 
-Returns the angle between the node and the ``point`` in radians.
+Returns the angle between the node and the ``point`` in radians. See also :ref:`look_at()<class_Node2D_method_look_at>`.
 
 \ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/node2d_get_angle_to.png>`__
 
@@ -382,7 +382,7 @@ Adds the ``offset`` vector to the node's global position.
 
 |void| **look_at**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Node2D_method_look_at>`
 
-Rotates the node so that its local +X axis points towards the ``point``, which is expected to use global coordinates.
+Rotates the node so that its local +X axis points towards the ``point``, which is expected to use global coordinates. This method is a combination of both :ref:`rotate()<class_Node2D_method_rotate>` and :ref:`get_angle_to()<class_Node2D_method_get_angle_to>`.
 
 \ ``point`` should not be the same as the node's position, otherwise the node always looks to the right.
 
@@ -396,7 +396,7 @@ Rotates the node so that its local +X axis points towards the ``point``, which i
 
 |void| **move_local_x**\ (\ delta\: :ref:`float<class_float>`, scaled\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node2D_method_move_local_x>`
 
-Applies a local translation on the node's X axis based on the :ref:`Node._process()<class_Node_private_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
+Applies a local translation on the node's X axis with the amount specified in ``delta``. If ``scaled`` is ``false``, normalizes the movement to occur independently of the node's :ref:`scale<class_Node2D_property_scale>`.
 
 .. rst-class:: classref-item-separator
 
@@ -408,7 +408,7 @@ Applies a local translation on the node's X axis based on the :ref:`Node._proces
 
 |void| **move_local_y**\ (\ delta\: :ref:`float<class_float>`, scaled\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node2D_method_move_local_y>`
 
-Applies a local translation on the node's Y axis based on the :ref:`Node._process()<class_Node_private_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
+Applies a local translation on the node's Y axis with the amount specified in ``delta``. If ``scaled`` is ``false``, normalizes the movement to occur independently of the node's :ref:`scale<class_Node2D_property_scale>`.
 
 .. rst-class:: classref-item-separator
 
@@ -420,7 +420,7 @@ Applies a local translation on the node's Y axis based on the :ref:`Node._proces
 
 |void| **rotate**\ (\ radians\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Node2D_method_rotate>`
 
-Applies a rotation to the node, in radians, starting from its current rotation.
+Applies a rotation to the node, in radians, starting from its current rotation. This is equivalent to ``rotation += radians``.
 
 .. rst-class:: classref-item-separator
 
@@ -456,7 +456,7 @@ Transforms the provided global position into a position in local coordinate spac
 
 |void| **translate**\ (\ offset\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Node2D_method_translate>`
 
-Translates the node by the given ``offset`` in local coordinates.
+Translates the node by the given ``offset`` in local coordinates. This is equivalent to ``position += offset``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

@@ -193,7 +193,7 @@ Methods
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`deselect<class_LineEdit_method_deselect>`\ (\ )                                                                                                       |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                            | :ref:`edit<class_LineEdit_method_edit>`\ (\ )                                                                                                               |
+   | |void|                            | :ref:`edit<class_LineEdit_method_edit>`\ (\ hide_focus\: :ref:`bool<class_bool>` = false\ )                                                                 |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu<class_LineEdit_method_get_menu>`\ (\ ) |const|                                                                                               |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1383,9 +1383,9 @@ Clears the current selection.
 
 .. rst-class:: classref-method
 
-|void| **edit**\ (\ ) :ref:`🔗<class_LineEdit_method_edit>`
+|void| **edit**\ (\ hide_focus\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_LineEdit_method_edit>`
 
-Allows entering edit mode whether the **LineEdit** is focused or not.
+Allows entering edit mode whether the **LineEdit** is focused or not. If ``hide_focus`` is ``true``, the focused state will not be shown (see :ref:`Control.grab_focus()<class_Control_method_grab_focus>`).
 
 See also :ref:`keep_editing_on_text_submit<class_LineEdit_property_keep_editing_on_text_submit>`.
 

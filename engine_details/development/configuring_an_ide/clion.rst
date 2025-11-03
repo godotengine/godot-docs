@@ -13,7 +13,7 @@ CLion can import a project's `compilation database file <https://clang.llvm.org/
 
 ::
 
-    scons compiledb=yes
+    scons compiledb=yes compile_commands.json
 
 Then, open the Godot root directory with CLion and wait for the project to be fully
 indexed. If code completion, parameter information, or refactoring are not enabled,

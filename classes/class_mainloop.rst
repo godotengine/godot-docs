@@ -171,7 +171,7 @@ Implemented on desktop platforms if the crash handler is enabled.
 
 Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
 
-Specific to the macOS platform.
+Implemented on desktop and web platforms.
 
 .. _class_MainLoop_constant_NOTIFICATION_APPLICATION_RESUMED:
 
