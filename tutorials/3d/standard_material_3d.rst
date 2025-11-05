@@ -676,14 +676,14 @@ for a full list of options and their description.
 Shadows
 -------
 
-Do Not Receive Shadows
-~~~~~~~~~~~~~~~~~~~~~~
+Disable Receive Shadows
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Makes the object not receive any kind of shadow that would otherwise
 be cast onto it.
 
-Use Shadow to Opacity
-~~~~~~~~~~~~~~~~~~~~~
+Shadow to Opacity
+~~~~~~~~~~~~~~~~~
 
 Lighting modifies the alpha so shadowed areas are opaque and non-shadowed
 areas are transparent. Useful for overlaying shadows onto a camera feed in AR.
