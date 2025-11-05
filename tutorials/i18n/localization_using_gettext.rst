@@ -21,7 +21,7 @@ Advantages
 - gettext is a standard format, which can be edited using any text editor
   or GUI editors such as `Poedit <https://poedit.net/>`_. This can be significant
   as it provides a lot of tools for translators, such as marking outdated
-  strings, finding strings that haven't been translated etc.
+  strings, finding strings that haven't been translated, etc.
 - gettext is supported by translation platforms such as
   `Transifex <https://www.transifex.com/>`_ and `Weblate <https://weblate.org/>`_,
   which makes it easier for people to collaborate to localization.
@@ -293,6 +293,20 @@ For example:
     tr("End", "Main Menu")
     tr("Shop", "Main Menu")
     tr("Shop", "In Game")
+
+In a gettext PO file, a string with a context can be defined as follows:
+
+::
+
+    # Example of a string with a translation context.
+    msgctxt "Main Menu"
+    msgid "Shop"
+    msgstr ""
+
+    # A different source string that is identical, but with a different context.
+    msgctxt "In Game"
+    msgid "Shop"
+    msgstr ""
 
 Updating PO files
 -----------------
