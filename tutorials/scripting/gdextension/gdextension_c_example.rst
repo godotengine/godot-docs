@@ -2010,8 +2010,9 @@ implement the helper function.
         // Call the function.
         api.object_method_bind_call(p_method_bind, p_instance, args, 2, &ret, NULL);
 
-        // Destroy the arguments that need it.
+        // Destroy the arguments.
         destructors.variant_destroy(&arg1);
+        destructors.variant_destroy(&arg2);
         destructors.variant_destroy(&ret);
     }
 
