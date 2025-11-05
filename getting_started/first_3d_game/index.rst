@@ -32,8 +32,10 @@ And more.
 This tutorial is for beginners who followed the complete getting started series.
 We'll start slow with detailed instructions and shorten them as we do similar
 steps. If you're an experienced programmer, you can browse the complete demo's
-source code here: `Squash the Creep source code
-<https://github.com/godotengine/godot-demo-projects/tree/master/3d/squash_the_creeps>`__.
+source code here:
+
+- `Squash the Creeps source code (GDScript) <https://github.com/godotengine/godot-demo-projects/tree/master/3d/squash_the_creeps>`__
+- `Squash the Creeps source code (C#) <https://github.com/godotengine/godot-demo-projects/tree/master/mono/squash_the_creeps>`__
 
 .. note::
 

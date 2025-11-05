@@ -42,7 +42,8 @@ before tackling 3D games, which tend to be more complicated.
 
 You can find a completed version of this project at this location:
 
-- https://github.com/godotengine/godot-demo-projects/tree/master/2d/dodge_the_creeps
+- `Dodge the Creeps source code (GDScript) <https://github.com/godotengine/godot-demo-projects/tree/master/2d/dodge_the_creeps>`__
+- `Dodge the Creeps source code (C#) <https://github.com/godotengine/godot-demo-projects/tree/master/mono/dodge_the_creeps>`__
 
 Prerequisites
 -------------
