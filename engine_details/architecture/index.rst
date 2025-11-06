@@ -1,5 +1,7 @@
 :allow_comments: False
 
+.. _doc_engine_architecture:
+
 Engine architecture
 ===================
 
