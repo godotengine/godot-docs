@@ -12,59 +12,73 @@ General definition
 ------------------
 
 :ref:`Object <class_object>` is the base class for almost everything. Most classes in Godot
-inherit directly or indirectly from it. Objects provide reflection and
-editable properties, and declaring them is a matter of using a single
+inherit directly or indirectly from it. Declaring them is a matter of using a single
 macro like this:
 
 .. code-block:: cpp
 
     class CustomObject : public Object {
-
-        GDCLASS(CustomObject, Object); // this is required to inherit
+        GDCLASS(CustomObject, Object); // This is required to inherit from Object.
     };
 
-This adds a lot of functionality to Objects. For example:
+Objects come with a lot of built-in functionality, like reflection and editable properties:
 
 .. code-block:: cpp
 
-    obj = memnew(CustomObject);
+    CustomObject *obj = memnew(CustomObject);
     print_line("Object class: ", obj->get_class()); // print object class
 
-    obj2 = Object::cast_to<OtherClass>(obj); // converting between classes, this also works without RTTI enabled.
+    OtherClass *obj2 = Object::cast_to<OtherClass>(obj); // Converting between classes, similar to dynamic_cast
 
 References:
 ~~~~~~~~~~~
 
 -  `core/object/object.h <https://github.com/godotengine/godot/blob/master/core/object/object.h>`__
 
-Registering an Object
----------------------
+Registering Object classes
+--------------------------
 
-ClassDB is a static class that holds the entire list of registered
-classes that inherit from Object, as well as dynamic bindings to all
-their methods properties and integer constants.
-
-Classes are registered by calling:
+Most ``Object`` subclasses are registered by calling ``GDREGISTER_CLASS``.
 
 .. code-block:: cpp
 
-    ClassDB::register_class<MyCustomClass>()
+    GDREGISTER_CLASS(MyCustomClass)
 
-Registering it will allow the class to be instanced by scripts, code, or
-creating them again when deserializing.
+This will register it as a named, public class in the ``ClassDB``, which will allow the class to be instantiated by
+scripts, code, or by deserialization. Note that classes registered as ``GDREGISTER_CLASS`` should expect to be
+instantiated or freed automatically, for example by the editor or the documentation system.
 
-Registering as virtual is the same but it can't be instanced.
+Besides ``GDREGISTER_CLASS``, there are a few other modes of privateness:
 
 .. code-block:: cpp
 
-    ClassDB::register_virtual_class<MyCustomClass>()
+    // Registers the class publicly, but prevents automatic instantiation through ClassDB.
+    GDREGISTER_VIRTUAL_CLASS(MyCustomClass);
+
+    // Registers the class publicly, but prevents all instantiation through ClassDB.
+    GDREGISTER_ABSTRACT_CLASS(MyCustomClass);
+
+    // Registers the class in ClassDB, but marks it as private,
+    // such that it is not visible to scripts or extensions.
+    // This is the same as not registering the class explicitly at all
+    // - in this case, the class is registered as internal automatically
+    // when it is first constructed.
+    GDREGISTER_INTERNAL_CLASS(MyCustomClass);
+
+    // Registers the class such that it is only available at runtime (but not in the editor).
+    GDREGISTER_RUNTIME_CLASS(MyCustomClass);
+
+It is also possible to use ``GDSOFTCLASS(MyCustomClass, SuperClass)`` instead of ``GDCLASS(MyCustomClass, SuperClass)``.
+Classes defined this way are not registered in the ``ClassDB`` at all. This is sometimes used for platform-specific
+subclasses.
+
+Registering bindings
+~~~~~~~~~~~~~~~~~~~~
 
 Object-derived classes can override the static function
-``static void _bind_methods()``. When one class is registered, this
+``static void _bind_methods()``. When the class is registered, this
 static function is called to register all the object methods,
-properties, constants, etc. It's only called once. If an Object derived
-class is instanced but has not been registered, it will be registered as
-virtual automatically.
+properties, constants, etc. It's only called once.
 
 Inside ``_bind_methods``, there are a couple of things that can be done.
 Registering functions is one:
@@ -95,12 +109,12 @@ documented as thoroughly, the ``D_METHOD()`` macro can safely be ignored and a
 string passing the name can be passed for brevity.
 
 References:
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 -  `core/object/class_db.h <https://github.com/godotengine/godot/blob/master/core/object/class_db.h>`__
 
 Constants
----------
+~~~~~~~~~
 
 Classes often have enums such as:
 
@@ -126,7 +140,7 @@ The constants can also be bound inside ``_bind_methods``, by using:
     BIND_CONSTANT(MODE_SECOND);
 
 Properties (set/get)
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Objects export properties, properties are useful for the following:
 
@@ -181,7 +195,7 @@ This creates the property using the setter and the getter.
 .. _doc_binding_properties_using_set_get_property_list:
 
 Binding properties using ``_set``/``_get``/``_get_property_list``
------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An additional method of creating properties exists when more flexibility
 is desired (i.e. adding or removing properties on context).
@@ -201,26 +215,9 @@ call).
 This is also a little less efficient since ``p_property`` must be
 compared against the desired names in serial order.
 
-Dynamic casting
----------------
-
-Godot provides dynamic casting between Object-derived classes, for
-example:
-
-.. code-block:: cpp
-
-    void somefunc(Object *some_obj) {
-
-         Button *button = Object::cast_to<Button>(some_obj);
-    }
-
-If cast fails, NULL is returned. This system uses RTTI, but it also
-works fine (although a bit slower) when RTTI is disabled. This is useful
-on platforms where a small binary size is ideal, such as HTML5 or
-consoles (with low memory footprint).
 
 Signals
--------
+~~~~~~~
 
 Objects can have a set of signals defined (similar to Delegates in other
 languages). This example shows how to connect to them:
@@ -244,35 +241,111 @@ Adding signals to a class is done in ``_bind_methods``, using the
 
     ADD_SIGNAL(MethodInfo("been_killed"))
 
+Object ownership and casting
+----------------------------
+
+Objects are allocated on the heap. There are two different ownership models:
+
+- Objects derived from ``RefCounted`` are reference counted.
+- All other objects are manually memory managed.
+
+The ownership models are fundamentally different. Refer to the section for each respectively to learn how to
+create, store, and free the object.
+
+When you do not know whether an object passed to you (via ``Object *``) is ``RefCounted``, and you need to store it,
+you should store its ``ObjectID`` rather than a pointer (as explained below, in the manual memory management section).
+
+When an object is passed to you via :ref:`Variant<class_Variant>`, especially when using deferred callbacks, it is
+possible that the contained ``Object *`` was already freed by the time your function runs.
+Instead of converting directly to ``Object *``, you should use ``get_validated_object``:
+
+.. code-block:: cpp
+
+    void do_something(Variant p_variant) {
+        Object *object = p_variant.get_validated_object();
+        ERR_FAIL_NULL(object);
+    }
+
+Manual memory management
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Manually memory managed objects are created using ``memnew`` and freed using ``memdelete``:
+
+.. code-block:: cpp
+
+    Node *node = memnew(Node);
+    // ...
+    memdelete(node);
+    node = nullptr;
+
+When you are not the sole owner of an object, storing a pointer to it is dangerous: The object may at any point be
+freed through other references to it, causing your pointer to become a dangling pointer, which will eventually result in
+a crash.
+
+When storing objects you are not the only owner of, you should store its ``ObjectID`` rather than a pointer:
+
+.. code-block:: cpp
+
+    Node *node = memnew(Node);
+    ObjectID node_id = node.get_instance_id();
+    // ...
+    Object *maybe_node = ObjectDB::get_instance(node_id);
+    ERR_FAIL_NULL(maybe_node); // The node may have been freed between calls.
+
+``RefCounted`` memory management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:ref:`RefCounted <class_RefCounted>` subclasses are memory managed with
+`reference counting semantics <https://en.wikipedia.org/wiki/Reference_counting>`__.
+
+They are constructed using ``memnew``, and should be stored in ``Ref`` instances. When the last ``Ref`` instance is
+dropped, the object automatically self-destructs.
+
+.. code-block:: cpp
+
+    class MyRefCounted: public RefCounted {
+        GDCLASS(MyReference, RefCounted);
+    };
+
+    Ref<MyRefCounted> my_ref = memnew(MyRefCounted);
+    // ...
+    // Ref holds shared ownership over the object, so the object
+    // will not be freed. As long as you have a valid, non-null
+    // Ref, it can be safely assumed the object is still valid.
+    my_ref->get_class_name();
+
+You should never call ``memdelete`` for ``RefCounted`` subclasses, because there may be other owners of it.
+
+You should also never store ``RefCounted`` subclasses using raw pointers, for example
+``RefCounted *object = memnew(RefCounted)``. This is unsafe because other owners may destruct the object, leaving you
+with a dangling pointer, which will eventually result in a crash.
+
+References:
+^^^^^^^^^^^
+
+-  `core/object/ref_counted.h <https://github.com/godotengine/godot/blob/master/core/object/ref_counted.h>`__
+
+Dynamic casting
+~~~~~~~~~~~~~~~
+
+Godot provides dynamic casting between Object-derived classes, for example:
+
+.. code-block:: cpp
+
+    void some_func(Object *p_object) {
+         Button *button = Object::cast_to<Button>(p_object);
+    }
+
+If the cast fails, ``nullptr`` is returned. This works the same as ``dynamic_cast``, but does not use
+`C++ RTTI <https://en.wikipedia.org/wiki/Run-time_type_information>`__.
+
 Notifications
 -------------
 
 All objects in Godot have a :ref:`_notification <class_Object_private_method__notification>`
-method that allows it to respond to engine level callbacks that may relate to it.
+method that allows them to respond to engine-level callbacks that may relate to it.
 More information can be found on the :ref:`doc_godot_notifications` page.
 
-References
-----------
-
-:ref:`RefCounted <class_RefCounted>` inherits from Object and holds a
-reference count. It is the base for reference counted object types.
-Declaring them must be done using Ref<> template. For example:
-
-.. code-block:: cpp
-
-    class MyReference: public RefCounted {
-        GDCLASS(MyReference, RefCounted);
-    };
-
-    Ref<MyReference> myref(memnew(MyReference));
-
-``myref`` is reference counted. It will be freed when no more Ref<>
-templates point to it.
-
-References:
-~~~~~~~~~~~
-
--  `core/object/reference.h <https://github.com/godotengine/godot/blob/master/core/object/ref_counted.h>`__
 
 Resources
 ----------
@@ -291,7 +364,7 @@ References:
 -  `core/io/resource.h <https://github.com/godotengine/godot/blob/master/core/io/resource.h>`__
 
 Resource loading
-----------------
+~~~~~~~~~~~~~~~~
 
 Resources can be loaded with the ResourceLoader API, like this:
 
@@ -307,12 +380,12 @@ the same time.
 -  resourceinteractiveloader (TODO)
 
 References:
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 -  `core/io/resource_loader.h <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.h>`__
 
 Resource saving
----------------
+~~~~~~~~~~~~~~~
 
 Saving a resource can be done with the resource saver API:
 
@@ -326,6 +399,6 @@ be bundled with the saved resource and assigned sub-IDs, like
 ``res://someresource.res::1``. This also helps to cache them when loaded.
 
 References:
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 -  `core/io/resource_saver.h <https://github.com/godotengine/godot/blob/master/core/io/resource_saver.h>`__
