@@ -35,8 +35,12 @@ Page not found
 
     // Check for redirects if on a currently invalid page.
     // This is done in JavaScript, as we exceed Read the Docs' limit for the amount of redirects configurable.
-    // When testing this feature on a local web server, replace the URL below with just `/_static/redirects.csv`.
-    fetch("/en/latest/_static/redirects.csv")
+
+    const currentPathSegments = window.location.pathname.split('/').filter(segment => segment !== '');
+    // Use the base path (e.g. "/en/latest") when available
+    const currentBasePath = (currentPathSegments.length >= 2) ? ("/" + currentPathSegments.slice(0, 2).join("/")) : "/";
+
+    fetch(currentBasePath + "/_static/redirects.csv")
       .then(response => response.text())
       .then(csvText => {
         const lines = csvText.trim().split('\n');
