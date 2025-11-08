@@ -64,7 +64,7 @@ Methods
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`count<class_PackedFloat64Array_method_count>`\ (\ value\: :ref:`float<class_float>`\ ) |const|                                       |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedFloat64Array<class_PackedFloat64Array>` | :ref:`duplicate<class_PackedFloat64Array_method_duplicate>`\ (\ )                                                                          |
+   | :ref:`PackedFloat64Array<class_PackedFloat64Array>` | :ref:`duplicate<class_PackedFloat64Array_method_duplicate>`\ (\ ) |const|                                                                  |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`erase<class_PackedFloat64Array_method_erase>`\ (\ value\: :ref:`float<class_float>`\ )                                               |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -235,7 +235,7 @@ Returns the number of times an element is in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedFloat64Array<class_PackedFloat64Array>` **duplicate**\ (\ ) :ref:`🔗<class_PackedFloat64Array_method_duplicate>`
+:ref:`PackedFloat64Array<class_PackedFloat64Array>` **duplicate**\ (\ ) |const| :ref:`🔗<class_PackedFloat64Array_method_duplicate>`
 
 Creates a copy of the array, and returns it.
 

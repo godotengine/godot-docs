@@ -894,7 +894,7 @@ Returns ``true`` if the two dictionaries contain the same keys and values, inner
 
 :ref:`bool<class_bool>` **set**\ (\ key\: :ref:`Variant<class_Variant>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Dictionary_method_set>`
 
-Sets the value of the element at the given ``key`` to the given ``value``. This is the same as using the ``[]`` operator (``dict[key] = value``).
+Sets the value of the element at the given ``key`` to the given ``value``. This is the same as using the ``[]`` operator (``dict[key] = value``). Returns ``true`` if the value is set successfully. Fails and returns ``false`` if the dictionary is read-only, or if ``key`` and ``value`` don't match the dictionary's types.
 
 .. rst-class:: classref-item-separator
 

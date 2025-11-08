@@ -82,6 +82,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>`             | :ref:`mouse_passthrough_polygon<class_Window_property_mouse_passthrough_polygon>` | ``PackedVector2Array()`` |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`Rect2i<class_Rect2i>`                                     | :ref:`nonclient_area<class_Window_property_nonclient_area>`                       | ``Rect2i(0, 0, 0, 0)``   |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`popup_window<class_Window_property_popup_window>`                           | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`popup_wm_hint<class_Window_property_popup_wm_hint>`                         | ``false``                |
@@ -435,6 +437,18 @@ Emitted when the mouse cursor enters the **Window**'s visible area, that is not 
 **mouse_exited**\ (\ ) :ref:`🔗<class_Window_signal_mouse_exited>`
 
 Emitted when the mouse cursor leaves the **Window**'s visible area, that is not occluded behind other :ref:`Control<class_Control>`\ s or windows, provided its :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is ``false`` and regardless if it's currently focused or not.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_signal_nonclient_window_input:
+
+.. rst-class:: classref-signal
+
+**nonclient_window_input**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) :ref:`🔗<class_Window_signal_nonclient_window_input>`
+
+Emitted when the mouse event is received by the custom decoration area defined by :ref:`nonclient_area<class_Window_property_nonclient_area>`, and normal input to the window is blocked (such as when it has an exclusive child opened). ``event``'s position is in the embedder's coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -1471,6 +1485,23 @@ Passing an empty array will disable passthrough support (all mouse events will b
 \ **Note:** This property is implemented on Linux (X11), macOS and Windows.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_nonclient_area:
+
+.. rst-class:: classref-property
+
+:ref:`Rect2i<class_Rect2i>` **nonclient_area** = ``Rect2i(0, 0, 0, 0)`` :ref:`🔗<class_Window_property_nonclient_area>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_nonclient_area**\ (\ value\: :ref:`Rect2i<class_Rect2i>`\ )
+- :ref:`Rect2i<class_Rect2i>` **get_nonclient_area**\ (\ )
+
+If set, defines the window's custom decoration area which will receive mouse input, even if normal input to the window is blocked (such as when it has an exclusive child opened). See also :ref:`nonclient_window_input<class_Window_signal_nonclient_window_input>`.
 
 .. rst-class:: classref-item-separator
 

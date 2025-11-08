@@ -1913,6 +1913,10 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` to ``color``.
 
 This is the same as :ref:`set_pixelv()<class_Image_method_set_pixelv>`, but with a two integer arguments instead of a :ref:`Vector2i<class_Vector2i>` argument.
 
+\ **Note:** Depending on the image's format, the color set here may be clamped or lose precision. Do not assume the color returned by :ref:`get_pixel()<class_Image_method_get_pixel>` to be identical to the one set here; any comparisons will likely need to use an approximation like :ref:`Color.is_equal_approx()<class_Color_method_is_equal_approx>`.
+
+\ **Note:** On grayscale image formats, only the red channel of ``color`` is used (and alpha if relevant). The green and blue channels are ignored.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1947,6 +1951,10 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
 
 
 This is the same as :ref:`set_pixel()<class_Image_method_set_pixel>`, but with a :ref:`Vector2i<class_Vector2i>` argument instead of two integer arguments.
+
+\ **Note:** Depending on the image's format, the color set here may be clamped or lose precision. Do not assume the color returned by :ref:`get_pixelv()<class_Image_method_get_pixelv>` to be identical to the one set here; any comparisons will likely need to use an approximation like :ref:`Color.is_equal_approx()<class_Color_method_is_equal_approx>`.
+
+\ **Note:** On grayscale image formats, only the red channel of ``color`` is used (and alpha if relevant). The green and blue channels are ignored.
 
 .. rst-class:: classref-item-separator
 

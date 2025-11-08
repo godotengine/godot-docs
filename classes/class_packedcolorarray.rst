@@ -62,7 +62,7 @@ Methods
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`count<class_PackedColorArray_method_count>`\ (\ value\: :ref:`Color<class_Color>`\ ) |const|                                       |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`duplicate<class_PackedColorArray_method_duplicate>`\ (\ )                                                                          |
+   | :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`duplicate<class_PackedColorArray_method_duplicate>`\ (\ ) |const|                                                                  |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`erase<class_PackedColorArray_method_erase>`\ (\ value\: :ref:`Color<class_Color>`\ )                                               |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
@@ -235,7 +235,7 @@ Returns the number of times an element is in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedColorArray<class_PackedColorArray>` **duplicate**\ (\ ) :ref:`🔗<class_PackedColorArray_method_duplicate>`
+:ref:`PackedColorArray<class_PackedColorArray>` **duplicate**\ (\ ) |const| :ref:`🔗<class_PackedColorArray_method_duplicate>`
 
 Creates a copy of the array, and returns it.
 

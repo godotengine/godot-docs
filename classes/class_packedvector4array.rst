@@ -62,7 +62,7 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`count<class_PackedVector4Array_method_count>`\ (\ value\: :ref:`Vector4<class_Vector4>`\ ) |const|                                      |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector4Array<class_PackedVector4Array>` | :ref:`duplicate<class_PackedVector4Array_method_duplicate>`\ (\ )                                                                             |
+   | :ref:`PackedVector4Array<class_PackedVector4Array>` | :ref:`duplicate<class_PackedVector4Array_method_duplicate>`\ (\ ) |const|                                                                     |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`erase<class_PackedVector4Array_method_erase>`\ (\ value\: :ref:`Vector4<class_Vector4>`\ )                                              |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -239,7 +239,7 @@ Returns the number of times an element is in the array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector4Array<class_PackedVector4Array>` **duplicate**\ (\ ) :ref:`🔗<class_PackedVector4Array_method_duplicate>`
+:ref:`PackedVector4Array<class_PackedVector4Array>` **duplicate**\ (\ ) |const| :ref:`🔗<class_PackedVector4Array_method_duplicate>`
 
 Creates a copy of the array, and returns it.
 

@@ -23,9 +23,9 @@ Description
 
 The return value should be an :ref:`Array<class_Array>` of :ref:`PackedStringArray<class_PackedStringArray>`\ s, one for each extracted translatable string. Each entry should contain ``[msgid, msgctxt, msgid_plural, comment, source_line]``, where all except ``msgid`` are optional. Empty strings will be ignored.
 
-The extracted strings will be written into a POT file selected by user under "POT Generation" in "Localization" tab in "Project Settings" menu.
+The extracted strings will be written into a translation template file selected by user under "Template Generation" in "Localization" tab in "Project Settings" menu.
 
-Below shows an example of a custom parser that extracts strings from a CSV file to write into a POT.
+Below shows an example of a custom parser that extracts strings from a CSV file to write into a template.
 
 
 .. tabs::

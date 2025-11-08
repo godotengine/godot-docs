@@ -385,6 +385,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`shaped_text_draw_outline<class_TextServer_method_shaped_text_draw_outline>`\ (\ shaped\: :ref:`RID<class_RID>`, canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, clip_l\: :ref:`float<class_float>` = -1, clip_r\: :ref:`float<class_float>` = -1, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), oversampling\: :ref:`float<class_float>` = 0.0\ ) |const| |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                            | :ref:`shaped_text_duplicate<class_TextServer_method_shaped_text_duplicate>`\ (\ rid\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                          |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`shaped_text_fit_to_width<class_TextServer_method_shaped_text_fit_to_width>`\ (\ shaped\: :ref:`RID<class_RID>`, width\: :ref:`float<class_float>`, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3\ )                                                                                                                                                                         |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`shaped_text_get_ascent<class_TextServer_method_shaped_text_get_ascent>`\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                             |
@@ -454,6 +456,8 @@ Methods
    | :ref:`float<class_float>`                                        | :ref:`shaped_text_get_width<class_TextServer_method_shaped_text_get_width>`\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                               |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>`                  | :ref:`shaped_text_get_word_breaks<class_TextServer_method_shaped_text_get_word_breaks>`\ (\ shaped\: :ref:`RID<class_RID>`, grapheme_flags\: |bitfield|\[:ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`\] = 264, skip_grapheme_flags\: |bitfield|\[:ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`\] = 4\ ) |const|                                                                                                                |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`shaped_text_has_object<class_TextServer_method_shaped_text_has_object>`\ (\ shaped\: :ref:`RID<class_RID>`, key\: :ref:`Variant<class_Variant>`\ ) |const|                                                                                                                                                                                                                                                                        |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`shaped_text_has_visible_chars<class_TextServer_method_shaped_text_has_visible_chars>`\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                               |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3758,6 +3762,18 @@ Draw the outline of the shaped text into a canvas item at a given position, with
 
 ----
 
+.. _class_TextServer_method_shaped_text_duplicate:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **shaped_text_duplicate**\ (\ rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_TextServer_method_shaped_text_duplicate>`
+
+Duplicates shaped text buffer.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServer_method_shaped_text_fit_to_width:
 
 .. rst-class:: classref-method
@@ -4179,6 +4195,18 @@ Returns width (for horizontal layout) or height (for vertical) of the text.
 :ref:`PackedInt32Array<class_PackedInt32Array>` **shaped_text_get_word_breaks**\ (\ shaped\: :ref:`RID<class_RID>`, grapheme_flags\: |bitfield|\[:ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`\] = 264, skip_grapheme_flags\: |bitfield|\[:ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`\] = 4\ ) |const| :ref:`🔗<class_TextServer_method_shaped_text_get_word_breaks>`
 
 Breaks text into words and returns array of character ranges. Use ``grapheme_flags`` to set what characters are used for breaking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_text_has_object:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **shaped_text_has_object**\ (\ shaped\: :ref:`RID<class_RID>`, key\: :ref:`Variant<class_Variant>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_text_has_object>`
+
+Returns ``true`` if an object with ``key`` is embedded in this shaped text buffer.
 
 .. rst-class:: classref-item-separator
 

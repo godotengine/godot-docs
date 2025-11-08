@@ -56,6 +56,8 @@ Properties
    +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                  | :ref:`gutters_draw_line_numbers<class_CodeEdit_property_gutters_draw_line_numbers>`                               | ``false``                                                                 |
    +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`gutters_line_numbers_min_digits<class_CodeEdit_property_gutters_line_numbers_min_digits>`                   | ``3``                                                                     |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                  | :ref:`gutters_zero_pad_line_numbers<class_CodeEdit_property_gutters_zero_pad_line_numbers>`                       | ``false``                                                                 |
    +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                  | :ref:`indent_automatic<class_CodeEdit_property_indent_automatic>`                                                 | ``false``                                                                 |
@@ -709,6 +711,23 @@ If ``true``, the fold gutter is drawn. In this gutter, the :ref:`can_fold_code_r
 - :ref:`bool<class_bool>` **is_draw_line_numbers_enabled**\ (\ )
 
 If ``true``, the line number gutter is drawn. Line numbers start at ``1`` and are incremented for each line of text. Clicking and dragging in the line number gutter will select entire lines of text.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CodeEdit_property_gutters_line_numbers_min_digits:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **gutters_line_numbers_min_digits** = ``3`` :ref:`🔗<class_CodeEdit_property_gutters_line_numbers_min_digits>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_line_numbers_min_digits**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_line_numbers_min_digits**\ (\ )
+
+The minimum width in digits reserved for the line number gutter.
 
 .. rst-class:: classref-item-separator
 

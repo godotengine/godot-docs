@@ -53,6 +53,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`accessibility/general/updates_per_second<class_ProjectSettings_property_accessibility/general/updates_per_second>`                                                                                   | ``60``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`animation/compatibility/default_parent_skeleton_in_mesh_instance_3d<class_ProjectSettings_property_animation/compatibility/default_parent_skeleton_in_mesh_instance_3d>`                             | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_angle_interpolation_type_conflicting<class_ProjectSettings_property_animation/warnings/check_angle_interpolation_type_conflicting>`                                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_invalid_track_paths<class_ProjectSettings_property_animation/warnings/check_invalid_track_paths>`                                                                           | ``true``                                                                                         |
@@ -1921,7 +1923,11 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`add_property_info<class_ProjectSettings_method_add_property_info>`\ (\ hint\: :ref:`Dictionary<class_Dictionary>`\ )                                                                                                                               |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`check_changed_settings_in_group<class_ProjectSettings_method_check_changed_settings_in_group>`\ (\ setting_prefix\: :ref:`String<class_String>`\ ) |const|                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`clear<class_ProjectSettings_method_clear>`\ (\ name\: :ref:`String<class_String>`\ )                                                                                                                                                               |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`get_changed_settings<class_ProjectSettings_method_get_changed_settings>`\ (\ ) |const|                                                                                                                                                             |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_global_class_list<class_ProjectSettings_method_get_global_class_list>`\ (\ )                                                                                                                                                                   |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2011,6 +2017,18 @@ Accessibility support mode:
 :ref:`int<class_int>` **accessibility/general/updates_per_second** = ``60`` :ref:`🔗<class_ProjectSettings_property_accessibility/general/updates_per_second>`
 
 The number of accessibility information updates per second.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_animation/compatibility/default_parent_skeleton_in_mesh_instance_3d:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **animation/compatibility/default_parent_skeleton_in_mesh_instance_3d** = ``false`` :ref:`🔗<class_ProjectSettings_property_animation/compatibility/default_parent_skeleton_in_mesh_instance_3d>`
+
+If ``true``, :ref:`MeshInstance3D.skeleton<class_MeshInstance3D_property_skeleton>` will point to the parent node (``..``) by default, which was the behavior before Godot 4.6. It's recommended to keep this setting disabled unless the old behavior is needed for compatibility.
 
 .. rst-class:: classref-item-separator
 
@@ -14280,6 +14298,18 @@ Adds a custom property info to a property. The dictionary must contain:
 
 ----
 
+.. _class_ProjectSettings_method_check_changed_settings_in_group:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **check_changed_settings_in_group**\ (\ setting_prefix\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_ProjectSettings_method_check_changed_settings_in_group>`
+
+Checks if any settings with the prefix ``setting_prefix`` exist in the set of changed settings. See also :ref:`get_changed_settings()<class_ProjectSettings_method_get_changed_settings>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_method_clear:
 
 .. rst-class:: classref-method
@@ -14287,6 +14317,18 @@ Adds a custom property info to a property. The dictionary must contain:
 |void| **clear**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ProjectSettings_method_clear>`
 
 Clears the whole configuration (not recommended, may break things).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_method_get_changed_settings:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_changed_settings**\ (\ ) |const| :ref:`🔗<class_ProjectSettings_method_get_changed_settings>`
+
+Gets an array of the settings which have been changed since the last save. Note that internally ``changed_settings`` is cleared after a successful save, so generally the most appropriate place to use this method is when processing :ref:`settings_changed<class_ProjectSettings_signal_settings_changed>`.
 
 .. rst-class:: classref-item-separator
 
