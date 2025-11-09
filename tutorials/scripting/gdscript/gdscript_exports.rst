@@ -542,6 +542,38 @@ automatically. To update it, call
 :ref:`notify_property_list_changed() <class_Object_method_notify_property_list_changed>`
 after setting the exported variable's value.
 
+Reading an exported variable's value early on
+---------------------------------------------
+
+If you read an exported variable's value in :ref:`_init() <class_Object_private_method__init>`,
+it will return the default value specified in the export annotation instead of the value
+that was set in the inspector. This is because assigning values from the saved scene/resource
+file occurs *after* object initialization; until then, the default value is used.
+
+To get the value that was set in the inspector (and therefore saved in the scene/resource file),
+you need to read it *after* the object is constructed, such as in
+:ref:`Node._ready() <class_Node_private_method__ready>`. You can also read the value
+in a setter that's defined on the exported property, which is useful in
+custom resources where ``_ready()`` is not available:
+
+::
+
+    # Set this property to 3 in the inspector.
+    @export var exported_variable = 2:
+        set(value):
+            exported_variable = value
+            print("Inspector-set value: ", exported_variable)
+
+    func _init():
+        print("Initial value: ", exported_variable)
+
+Results in:
+
+.. code-block:: none
+
+    Initial value: 2
+    Inspector-set value: 3
+
 Advanced exports
 ----------------
 
