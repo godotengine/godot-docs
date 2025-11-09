@@ -91,6 +91,11 @@ Manually Symbolicating Crash Logs
 
 You can also symbolicate the crash logs manually using the `ndk-stack <https://developer.android.com/ndk/guides/ndk-stack>`_ tool included in the Android NDK.
 
+.. note::
+
+    If you already have the Android SDK installed, you can find the ``ndk-stack`` tool inside the ``ndk`` folder in your SDK location.
+    Otherwise, you can download the NDK directly from the `NDK downloads page <https://developer.android.com/ndk/downloads>`_.
+
 1. Extract the native debug symbols zip you downloaded earlier (or generated with your custom build).
 2. Save your crash log to a text file (for example, ``crash.txt``).
 3. Run ndk-stack with the path to the symbol directory that matches the crash's CPU architecture (for example, ``arm64-v8a``):
