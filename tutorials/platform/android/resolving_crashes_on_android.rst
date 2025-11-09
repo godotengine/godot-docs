@@ -54,16 +54,36 @@ Follow these steps to upload the native debug symbols:
 1. Open `Play Console <https://play.google.com/console>`_.
 2. Select any app.
 3. In the left menu, navigate to ``Test and release > Latest releases and bundles``.
+
+.. image:: img/play_console_latest_release_bundles.webp
+
 4. Now choose the relevant bundle and open it.
+
+.. image:: img/play_console_latest_release_bundles2.webp
+
 5. Select the ``Downloads`` tab, and scroll down to the ``Assets`` section.
+
+.. image:: img/play_console_app_bundle_explorer.webp
+
 6. Next to ``Native debug symbols``, click the upload arrow icon.
+
+.. image:: img/play_console_app_bundle_explorer2.webp
+
 7. Select and upload the corresponding native debug symbols file for that build version.
+
+.. image:: img/play_console_upload_native_debug_symbols.webp
 
 Alternatively, you can upload the symbols when creating a new release:
 
 1. On the Create release page, locate your new release bundle.
+
+.. image:: img/play_console_create_new_release.webp
+
 2. Click the three-dot menu beside it.
 3. Choose ``Upload native debug symbols (.zip)`` from the menu.
+
+.. image:: img/play_console_create_new_release2.webp
+
 4. Select and upload the corresponding native debug symbols file for that build version.
 
 Manually Symbolicating Crash Logs
