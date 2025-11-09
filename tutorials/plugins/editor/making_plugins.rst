@@ -53,7 +53,6 @@ To continue with the example, use the following values:
     Version: 1.0.0
     Language: GDScript
     Script Name: custom_node.gd
-    Activate now: No
 
  .. code-tab:: ini C#
 
@@ -64,12 +63,10 @@ To continue with the example, use the following values:
     Version: 1.0.0
     Language: C#
     Script Name: CustomNode.cs
-    Activate now: No
 
 .. warning::
 
-    Unchecking the ``Activate now?`` option in C# is always required because,
-    like every other C# script, the EditorPlugin script needs to be compiled which
+    In C#, the EditorPlugin script needs to be compiled, which
     requires building the project. After building the project the plugin can be
     enabled in the ``Plugins`` tab of ``Project Settings``.
 
