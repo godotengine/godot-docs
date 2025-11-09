@@ -229,6 +229,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/3d_gizmos/gizmo_colors/gridmap_grid<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/gridmap_grid>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/3d_gizmos/gizmo_colors/ik_chain<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/ik_chain>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/3d_gizmos/gizmo_colors/instantiated<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/instantiated>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/3d_gizmos/gizmo_colors/joint<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/joint>`                                                                                                   |
@@ -2077,6 +2079,18 @@ The 3D editor gizmo color for the :ref:`GridMap<class_GridMap>` grid.
 
 ----
 
+.. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/ik_chain:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/ik_chain** :ref:`🔗<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/ik_chain>`
+
+The 3D editor gizmo color for the :ref:`IKModifier3D<class_IKModifier3D>` guides.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/instantiated:
 
 .. rst-class:: classref-property
@@ -3658,7 +3672,7 @@ During a drag-and-drop, this is how long to wait over a UI element before it tri
 
 :ref:`String<class_String>` **interface/editor/editor_language** :ref:`🔗<class_EditorSettings_property_interface/editor/editor_language>`
 
-The language to use for the editor interface.
+The language to use for the editor interface. If set to **Auto**, the language is automatically determined based on the system locale. See also :ref:`EditorInterface.get_editor_language()<class_EditorInterface_method_get_editor_language>`.
 
 Translations are provided by the community. If you spot a mistake, `contribute to editor translations on Weblate! <https://contributing.godotengine.org/en/latest/documentation/translation/index.html>`__
 

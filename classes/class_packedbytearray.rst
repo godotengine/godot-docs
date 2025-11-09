@@ -100,7 +100,7 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`decompress_dynamic<class_PackedByteArray_method_decompress_dynamic>`\ (\ max_output_size\: :ref:`int<class_int>`, compression_mode\: :ref:`int<class_int>` = 0\ ) |const|               |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`duplicate<class_PackedByteArray_method_duplicate>`\ (\ )                                                                                                                                |
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`duplicate<class_PackedByteArray_method_duplicate>`\ (\ ) |const|                                                                                                                        |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`encode_double<class_PackedByteArray_method_encode_double>`\ (\ byte_offset\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )                                                |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -557,7 +557,7 @@ GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **duplicate**\ (\ ) :ref:`🔗<class_PackedByteArray_method_duplicate>`
+:ref:`PackedByteArray<class_PackedByteArray>` **duplicate**\ (\ ) |const| :ref:`🔗<class_PackedByteArray_method_duplicate>`
 
 Creates a copy of the array, and returns it.
 

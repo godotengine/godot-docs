@@ -1764,7 +1764,7 @@ Sets the strength of the additional level of detail for the screen-space ambient
 
 If ``true``, the screen-space ambient occlusion effect is enabled. This darkens objects' corners and cavities to simulate ambient light not reaching the entire object as in real life. This works well for small, dynamic objects, but baked lighting or ambient occlusion textures will do a better job at displaying ambient occlusion on large static objects. Godot uses a form of SSAO called Adaptive Screen Space Ambient Occlusion which is itself a form of Horizon Based Ambient Occlusion.
 
-\ **Note:** SSAO is only supported in the Forward+ rendering method, not Mobile or Compatibility.
+\ **Note:** SSAO is only supported in the Forward+ and Compatibility rendering methods, not Mobile.
 
 .. rst-class:: classref-item-separator
 

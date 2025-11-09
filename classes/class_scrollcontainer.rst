@@ -84,11 +84,15 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +---------------------------------+-------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ScrollContainer_theme_style_focus>` |
-   +---------------------------------+-------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ScrollContainer_theme_style_panel>` |
-   +---------------------------------+-------------------------------------------------------+
+   +---------------------------------+--------------------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`           | :ref:`scrollbar_h_separation<class_ScrollContainer_theme_constant_scrollbar_h_separation>` | ``0`` |
+   +---------------------------------+--------------------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`           | :ref:`scrollbar_v_separation<class_ScrollContainer_theme_constant_scrollbar_v_separation>` | ``0`` |
+   +---------------------------------+--------------------------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ScrollContainer_theme_style_focus>`                                      |       |
+   +---------------------------------+--------------------------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ScrollContainer_theme_style_panel>`                                      |       |
+   +---------------------------------+--------------------------------------------------------------------------------------------+-------+
 
 .. rst-class:: classref-section-separator
 
@@ -411,6 +415,30 @@ Returns the vertical scrollbar :ref:`VScrollBar<class_VScrollBar>` of this **Scr
 
 Theme Property Descriptions
 ---------------------------
+
+.. _class_ScrollContainer_theme_constant_scrollbar_h_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **scrollbar_h_separation** = ``0`` :ref:`🔗<class_ScrollContainer_theme_constant_scrollbar_h_separation>`
+
+The space between the ScrollContainer's vertical scroll bar and its content, in pixels. No space will be added when the content's minimum size is larger than the ScrollContainer's size.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScrollContainer_theme_constant_scrollbar_v_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **scrollbar_v_separation** = ``0`` :ref:`🔗<class_ScrollContainer_theme_constant_scrollbar_v_separation>`
+
+The space between the ScrollContainer's horizontal scroll bar and its content, in pixels. No space will be added when the content's minimum size is larger than the ScrollContainer's size.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_ScrollContainer_theme_style_focus:
 
