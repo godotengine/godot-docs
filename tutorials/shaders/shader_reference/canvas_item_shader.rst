@@ -127,7 +127,7 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of the default 2D texture.               |
 |                                | For a Sprite2D with a texture of size 64x32px,                 |
-|                                | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``                  |
+|                                | **TEXTURE_PIXEL_SIZE** = ``vec2(1.0/64.0, 1.0/32.0)``          |
 +--------------------------------+----------------------------------------------------------------+
 | inout vec2 **VERTEX**          | Vertex position, in local space.                               |
 +--------------------------------+----------------------------------------------------------------+
