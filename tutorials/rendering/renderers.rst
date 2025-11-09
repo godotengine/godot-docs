@@ -261,7 +261,7 @@ See :ref:`doc_environment_and_post_processing` for more information.
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Screen-Space Reflections| ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
 +-------------------------+--------------------------+--------------------------+--------------------------+
-| Screen-Space Ambient    | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
+| Screen-Space Ambient    | ✔️ Supported.            | ❌ Not supported.        | ✔️ Supported.            |
 | Occlusion (SSAO)        |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Screen-Space            | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |

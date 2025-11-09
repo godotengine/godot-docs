@@ -423,8 +423,8 @@ uniforms.
 Screen-Space Ambient Occlusion (SSAO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature is only available when using the Forward+ renderer, not
-Mobile or Compatibility.*
+*This feature is only available when using the Forward+ and Compatibility renderers,
+not Mobile.*
 
 As mentioned in the **Ambient** section, areas where light from light nodes
 does not reach (either because it's outside the radius or shadowed) are lit
@@ -494,6 +494,15 @@ parameters:
 - **AO Channel Affect** The screen-space ambient occlusion intensity on
   materials that have an AO texture defined. Values higher than ``0.0`` will
   make the SSAO effect visible in areas darkened by AO textures.
+
+.. note::
+
+    Since Godot 4.6, a simplified version of SSAO is available in the Compatibility
+    renderer. This implementation has a different look, but should perform
+    significantly better on low-end devices compared to SSAO in Forward+.
+
+    When using the Compatibility renderer, only the **Radius** and **Intensity**
+    parameters can be adjusted.
 
 .. _doc_environment_and_post_processing_ssil:
 
