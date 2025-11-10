@@ -125,7 +125,7 @@ make fog brighter in specific areas.
 This can be done by setting volumetric fog density to the lowest permitted value
 *greater than zero* (``0.0001``), then increasing the **Volumetric Fog Energy**
 property on lights to much higher values than the default to compensate. Values
-between ``10000`` and ``100000`` usually work well for this.
+between ``200.0`` and ``5000.0`` usually work well for this.
 
 .. image:: img/volumetric_fog_lighting.png
 
