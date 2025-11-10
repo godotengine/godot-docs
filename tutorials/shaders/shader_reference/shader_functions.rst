@@ -4007,7 +4007,7 @@ Bitwise function descriptions
 .. |void| replace:: :abbr:`void (No return value.)`
 .. |vec_type| replace:: :abbr:`vec_type (Any of: float, vec2, vec3, vec4)`
 .. |vec_int_type| replace:: :abbr:`vec_int_type (Any of: int, ivec2, ivec3, ivec4)`
-.. |vec_uint_type| replace:: :abbr:`vec_uint_type (Any of: float, uvec2, uvec3, uvec4)`
+.. |vec_uint_type| replace:: :abbr:`vec_uint_type (Any of: uint, uvec2, uvec3, uvec4)`
 .. |vec_bool_type| replace:: :abbr:`vec_bool_type (Any of: bool, bvec2, bvec3, bvec4)`
 .. |gsampler2D| replace:: :abbr:`gsampler2D (Any of: sampler2D, isampler2D, uSampler2D)`
 .. |gsampler2DArray| replace:: :abbr:`gsampler2DArray (Any of: sampler2DArray, isampler2DArray, uSampler2DArray)`
