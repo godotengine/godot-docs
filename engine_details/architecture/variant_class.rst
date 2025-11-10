@@ -144,7 +144,7 @@ An Array just holds an array of Variants. Of course, a Variant can also hold a
 Dictionary or an Array inside, making it even more flexible.
 
 Modifications to a container will modify all references to
-it. A Mutex should be created to lock it if
+it. A :ref:`Mutex <doc_core_concurrency_types>` should be created to lock it if
 :ref:`multi-threaded access <doc_using_multiple_threads>` is desired.
 
 References

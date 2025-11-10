@@ -3,6 +3,10 @@
 Using multiple threads
 ======================
 
+.. seealso::
+
+    For a list of multithreading primitives in C++, see :ref:`doc_core_concurrency_types`.
+
 Threads
 -------
 
