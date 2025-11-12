@@ -37,7 +37,7 @@ Page not found
     // This is done in JavaScript, as we exceed Read the Docs' limit for the amount of redirects configurable.
 
     const currentPathSegments = window.location.pathname.split('/').filter(segment => segment !== '');
-    // Use the base path (e.g. "/en/latest") when available
+    // Use the base path (e.g. "/en/latest") when available.
     const currentBasePath = (currentPathSegments.length >= 2) ? ("/" + currentPathSegments.slice(0, 2).join("/")) : "/";
 
     fetch(currentBasePath + "/_static/redirects.csv")
