@@ -84,6 +84,45 @@ Manager.
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
+Compiling with AccessKit support
+--------------------------------
+
+AccessKit provides support for screen readers.
+
+By default, Godot is built with AccessKit dynamically linked. You can use it by placing
+``accesskit.dylib`` alongside the standalone executable or in the app bundle's ``Frameworks`` folder.
+
+.. note:: You can use dynamically linked AccessKit with export templates as well, rename
+          the DYLIB to ``accesskit.{architecture}.dylib``
+          and place them inside the export template app bundle ``Frameworks`` folder, and the
+          libraries will be automatically copied during the export process.
+
+To compile Godot with statically linked AccessKit:
+
+- Download the pre-built static libraries from `godot-accesskit-c-static library <https://github.com/godotengine/godot-accesskit-c-static/releases>`_, and unzip them.
+- When building Godot, add ``accesskit_sdk_path={path}`` to tell SCons where to look for the AccessKit libraries:
+
+    ::
+
+        scons platform=macos accesskit_sdk_path=<...>
+
+.. note:: You can optionally build the godot-angle-static libraries yourself with
+          the following steps:
+
+          1. Clone the `godot-accesskit-c-static <https://github.com/godotengine/godot-accesskit-c-static/>`_
+             directory and navigate to it.
+          2. Run the following command:
+
+          ::
+
+              cd accesskit-c
+              cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+              cmake --build build
+              cmake --install build
+
+          The AccessKit static library should be built using the same compiler you are
+          using for building Godot.
+
 Automatic ``.app`` bundle creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
