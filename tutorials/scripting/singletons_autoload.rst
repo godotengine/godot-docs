@@ -148,7 +148,7 @@ Make sure it inherits from ``Node``:
 
 .. image:: img/autoload_script.webp
 
-The next step is to add this script to the autoLoad list.
+The next step is to add this script to the autoload list.
 Starting from the menu, open
 **Project > Project Settings > Globals > Autoload** and
 select the script by clicking the browse button or typing its path:
