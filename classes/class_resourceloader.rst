@@ -338,7 +338,7 @@ GDScript has a simplified :ref:`@GDScript.load()<class_@GDScript_method_load>` b
 
 Returns the resource loaded by :ref:`load_threaded_request()<class_ResourceLoader_method_load_threaded_request>`.
 
-If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status()<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading. However, it's recommended to use :ref:`load_threaded_get_status()<class_ResourceLoader_method_load_threaded_get_status>` to known when the load has actually completed.
+If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status()<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading. However, it's recommended to use :ref:`load_threaded_get_status()<class_ResourceLoader_method_load_threaded_get_status>` to know when the load has actually completed.
 
 .. rst-class:: classref-item-separator
 
