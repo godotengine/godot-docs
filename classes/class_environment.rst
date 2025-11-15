@@ -119,7 +119,7 @@ Properties
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_hdr_scale<class_Environment_property_glow_hdr_scale>`                                                             | ``2.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`                                  | :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>`                                                     | ``0.0``                           |
+   | :ref:`float<class_float>`                                  | :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>`                                                     | ``1.0``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`float<class_float>`                                  | :ref:`glow_intensity<class_Environment_property_glow_intensity>`                                                             | ``0.3``                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -1169,7 +1169,7 @@ The bleed scale of the HDR glow.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **glow_hdr_threshold** = ``0.0`` :ref:`🔗<class_Environment_property_glow_hdr_threshold>`
+:ref:`float<class_float>` **glow_hdr_threshold** = ``1.0`` :ref:`🔗<class_Environment_property_glow_hdr_threshold>`
 
 .. rst-class:: classref-property-setget
 

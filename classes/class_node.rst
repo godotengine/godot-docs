@@ -662,6 +662,27 @@ Duplicate the node's script (also overriding the duplicated children's scripts, 
 
 Duplicate using :ref:`PackedScene.instantiate()<class_PackedScene_method_instantiate>`. If the node comes from a scene saved on disk, reuses :ref:`PackedScene.instantiate()<class_PackedScene_method_instantiate>` as the base for the duplicated node and its children.
 
+.. _class_Node_constant_DUPLICATE_INTERNAL_STATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DuplicateFlags<enum_Node_DuplicateFlags>` **DUPLICATE_INTERNAL_STATE** = ``16``
+
+Duplicate also non-serializable variables (i.e. without :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>`).
+
+.. _class_Node_constant_DUPLICATE_DEFAULT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DuplicateFlags<enum_Node_DuplicateFlags>` **DUPLICATE_DEFAULT** = ``15``
+
+Duplicate using default flags. This constant is useful to add or remove a single flag.
+
+::
+
+    # Duplicate non-exported variables.
+    var dupe = duplicate(DUPLICATE_DEFAULT | DUPLICATE_INTERNAL_STATE)
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -760,6 +781,8 @@ This notification is received *before* the related :ref:`tree_entered<class_Node
 Notification received when the node is about to exit a :ref:`SceneTree<class_SceneTree>`. See :ref:`_exit_tree()<class_Node_private_method__exit_tree>`.
 
 This notification is received *after* the related :ref:`tree_exiting<class_Node_signal_tree_exiting>` signal.
+
+This notification is sent in reversed order.
 
 .. _class_Node_constant_NOTIFICATION_MOVED_IN_PARENT:
 
@@ -1890,6 +1913,8 @@ The Tween will start automatically on the next process frame or physics frame (d
 Duplicates the node, returning a new node with all of its properties, signals, groups, and children copied from the original. The behavior can be tweaked through the ``flags`` (see :ref:`DuplicateFlags<enum_Node_DuplicateFlags>`). Internal nodes are not duplicated.
 
 \ **Note:** For nodes with a :ref:`Script<class_Script>` attached, if :ref:`Object._init()<class_Object_private_method__init>` has been defined with required parameters, the duplicated node will not have a :ref:`Script<class_Script>`.
+
+\ **Note:** By default, this method will duplicate only properties marked for serialization (i.e. using :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>`, or in GDScript, :ref:`@GDScript.@export<class_@GDScript_annotation_@export>`). If you want to duplicate all properties, use :ref:`DUPLICATE_INTERNAL_STATE<class_Node_constant_DUPLICATE_INTERNAL_STATE>`.
 
 .. rst-class:: classref-item-separator
 

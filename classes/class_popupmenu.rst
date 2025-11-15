@@ -240,6 +240,8 @@ Theme Properties
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_separator_outline_color<class_PopupMenu_theme_color_font_separator_outline_color>` | ``Color(0, 0, 0, 1)``             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`gutter_compact<class_PopupMenu_theme_constant_gutter_compact>`                          | ``1``                             |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`h_separation<class_PopupMenu_theme_constant_h_separation>`                              | ``4``                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`icon_max_width<class_PopupMenu_theme_constant_icon_max_width>`                          | ``0``                             |
@@ -1556,6 +1558,18 @@ The tint of text outline of the menu item.
 :ref:`Color<class_Color>` **font_separator_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_PopupMenu_theme_color_font_separator_outline_color>`
 
 The tint of text outline of the labeled separator.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_theme_constant_gutter_compact:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **gutter_compact** = ``1`` :ref:`🔗<class_PopupMenu_theme_constant_gutter_compact>`
+
+If not ``0``, the icon gutter will be merged with the checkbox gutter when possible. This acts as a boolean.
 
 .. rst-class:: classref-item-separator
 

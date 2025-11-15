@@ -6027,7 +6027,7 @@ Returns the :ref:`Object<class_Object>` that corresponds to ``instance_id``. All
     func _ready():
         var id = get_instance_id()
         var instance = instance_from_id(id)
-        print(instance.foo) # Prints "water"
+        print(instance.drink) # Prints "water"
 
  .. code-tab:: csharp
 

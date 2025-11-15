@@ -307,6 +307,8 @@ Notification received when the object is initialized, before its script is attac
 
 Notification received when the object is about to be deleted. Can be used like destructors in object-oriented programming languages.
 
+This notification is sent in reversed order.
+
 .. _class_Object_constant_NOTIFICATION_EXTENSION_RELOADED:
 
 .. rst-class:: classref-constant
@@ -625,7 +627,7 @@ Called when the object receives a notification, which can be identified in ``wha
 
 \ **Note:** The base **Object** defines a few notifications (:ref:`NOTIFICATION_POSTINITIALIZE<class_Object_constant_NOTIFICATION_POSTINITIALIZE>` and :ref:`NOTIFICATION_PREDELETE<class_Object_constant_NOTIFICATION_PREDELETE>`). Inheriting classes such as :ref:`Node<class_Node>` define a lot more notifications, which are also received by this method.
 
-\ **Note:** Unlike other virtual methods, this method is called automatically for every script that overrides it. This means that the base implementation should not be called via ``super`` in GDScript or its equivalents in other languages. The bottom-most sub-class will be called first, with subsequent calls ascending the class hierarchy.
+\ **Note:** Unlike other virtual methods, this method is called automatically for every script that overrides it. This means that the base implementation should not be called via ``super`` in GDScript or its equivalents in other languages. Call order depends on the ``reversed`` argument of :ref:`notification()<class_Object_method_notification>` and varies between different notifications. Most notifications are sent in the forward order (i.e. Object class first, most derived class last).
 
 .. rst-class:: classref-item-separator
 

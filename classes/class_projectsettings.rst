@@ -1865,6 +1865,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/eye_gaze_interaction<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/frame_synthesis<class_ProjectSettings_property_xr/openxr/extensions/frame_synthesis>`                                                                                           | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_interaction_profile<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`                                                                         | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``false``                                                                                        |
@@ -2233,6 +2235,8 @@ The project's name. It is used both by the Project Manager and by exporters. The
 :ref:`Dictionary<class_Dictionary>` **application/config/name_localized** = ``{}`` :ref:`🔗<class_ProjectSettings_property_application/config/name_localized>`
 
 Translations of the project's name. This setting is used by OS tools to translate application name on Android, iOS and macOS.
+
+\ **Note:** When left empty, the application name is translated using the project translations.
 
 .. rst-class:: classref-item-separator
 
@@ -13934,6 +13938,20 @@ Enables debug utilities on XR runtimes that supports the debug utils extension. 
 :ref:`bool<class_bool>` **xr/openxr/extensions/eye_gaze_interaction** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`
 
 Specify whether to enable eye tracking for this project. Depending on the platform, additional export configuration may be needed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/frame_synthesis:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/frame_synthesis** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/frame_synthesis>`
+
+If ``true`` the frame synthesis extension will be activated if supported by the platform.
+
+\ **Note:** This feature should not be enabled in conjunction with Application Space Warp, if supported this replaces ASW.
 
 .. rst-class:: classref-item-separator
 

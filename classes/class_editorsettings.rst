@@ -579,6 +579,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/multi_window/restore_windows_on_load<class_EditorSettings_property_interface/multi_window/restore_windows_on_load>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/scene_tabs/auto_select_current_scene_file<class_EditorSettings_property_interface/scene_tabs/auto_select_current_scene_file>`                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/scene_tabs/display_close_button<class_EditorSettings_property_interface/scene_tabs/display_close_button>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/scene_tabs/maximum_width<class_EditorSettings_property_interface/scene_tabs/maximum_width>`                                                                                                       |
@@ -923,6 +925,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/string_color<class_EditorSettings_property_text_editor/theme/highlighting/string_color>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/string_placeholder_color<class_EditorSettings_property_text_editor/theme/highlighting/string_placeholder_color>`                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/symbol_color<class_EditorSettings_property_text_editor/theme/highlighting/symbol_color>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`text_editor/theme/highlighting/text_color<class_EditorSettings_property_text_editor/theme/highlighting/text_color>`                                                                                         |
@@ -953,6 +957,8 @@ Methods
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`add_property_info<class_EditorSettings_method_add_property_info>`\ (\ info\: :ref:`Dictionary<class_Dictionary>`\ )                                                                                              |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_shortcut<class_EditorSettings_method_add_shortcut>`\ (\ path\: :ref:`String<class_String>`, shortcut\: :ref:`Shortcut<class_Shortcut>`\ )                                                                    |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`check_changed_settings_in_group<class_EditorSettings_method_check_changed_settings_in_group>`\ (\ setting_prefix\: :ref:`String<class_String>`\ ) |const|                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`erase<class_EditorSettings_method_erase>`\ (\ property\: :ref:`String<class_String>`\ )                                                                                                                          |
@@ -967,9 +973,19 @@ Methods
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                     | :ref:`get_setting<class_EditorSettings_method_get_setting>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Shortcut<class_Shortcut>`                   | :ref:`get_shortcut<class_EditorSettings_method_get_shortcut>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_shortcut_list<class_EditorSettings_method_get_shortcut_list>`\ (\ )                                                                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`has_setting<class_EditorSettings_method_has_setting>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`has_shortcut<class_EditorSettings_method_has_shortcut>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_shortcut<class_EditorSettings_method_is_shortcut>`\ (\ path\: :ref:`String<class_String>`, event\: :ref:`InputEvent<class_InputEvent>`\ ) |const|                                                             |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`mark_setting_changed<class_EditorSettings_method_mark_setting_changed>`\ (\ setting\: :ref:`String<class_String>`\ )                                                                                             |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`remove_shortcut<class_EditorSettings_method_remove_shortcut>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`set_builtin_action_override<class_EditorSettings_method_set_builtin_action_override>`\ (\ name\: :ref:`String<class_String>`, actions_list\: :ref:`Array<class_Array>`\[:ref:`InputEvent<class_InputEvent>`\]\ ) |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4378,6 +4394,18 @@ If ``true``, the floating panel position, size, and screen will be saved on edit
 
 ----
 
+.. _class_EditorSettings_property_interface/scene_tabs/auto_select_current_scene_file:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/scene_tabs/auto_select_current_scene_file** :ref:`🔗<class_EditorSettings_property_interface/scene_tabs/auto_select_current_scene_file>`
+
+If ``true``, the FileSystem dock will automatically navigate to the currently selected scene tab.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/scene_tabs/display_close_button:
 
 .. rst-class:: classref-property
@@ -6546,6 +6574,20 @@ The script editor's color for strings (single-line and multi-line).
 
 ----
 
+.. _class_EditorSettings_property_text_editor/theme/highlighting/string_placeholder_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/string_placeholder_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/string_placeholder_color>`
+
+The script editor's color for string placeholders, such as ``%s`` and ``{_}``. Refer to the :doc:`GDScript format strings documentation <../tutorials/scripting/gdscript/gdscript_format_string>` for more details.
+
+\ **Note:** Only the default ``{_}`` placeholder patterns are highlighted for the :ref:`String.format()<class_String_method_format>` method. Custom patterns still appear as plain strings.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/theme/highlighting/symbol_color:
 
 .. rst-class:: classref-property
@@ -6711,6 +6753,43 @@ Adds a custom property info to a property. The dictionary must contain:
 
 ----
 
+.. _class_EditorSettings_method_add_shortcut:
+
+.. rst-class:: classref-method
+
+|void| **add_shortcut**\ (\ path\: :ref:`String<class_String>`, shortcut\: :ref:`Shortcut<class_Shortcut>`\ ) :ref:`🔗<class_EditorSettings_method_add_shortcut>`
+
+Adds a ``shortcut`` whose path is specified by ``path``.
+
+The ``path`` determines how the shortcut is organized and displayed in the editor's shortcut settings. The path format affects the display as follows:
+
+- ``"name"`` (no slash): Creates a category named ``name`` with the shortcut displayed as ``name``.
+
+- ``"category/name"`` (single slash): Displays as ``name`` in the ``category`` section.
+
+- ``"category/name/extra"`` (multiple slashes): Extra path components are ignored, so this behaves the same as ``"category/name"``.
+
+\ **Note:** Shortcuts are only saved to the editor settings if they differ from their original/default state. This means empty shortcuts that were originally empty will not persist between editor sessions and must be re-added. If a shortcut with the same ``path`` already exists, this method will update it with the new ``shortcut`` instead of creating a duplicate.
+
+::
+
+    # Add a custom shortcut for a plugin action.
+    var my_shortcut = Shortcut.new()
+    var input_event = InputEventKey.new()
+    input_event.keycode = KEY_F5
+    input_event.ctrl_pressed = true
+    my_shortcut.events.append(input_event)
+
+    # This will appear under the "My Plugin" category as "Reload Data".
+    EditorInterface.get_editor_settings().add_shortcut("my_plugin/reload_data", my_shortcut)
+
+    # This will appear under the "Test Action" category as "Test Action".
+    EditorInterface.get_editor_settings().add_shortcut("test_action", my_shortcut)
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_method_check_changed_settings_in_group:
 
 .. rst-class:: classref-method
@@ -6795,6 +6874,30 @@ Returns the value of the setting specified by ``name``. This is equivalent to us
 
 ----
 
+.. _class_EditorSettings_method_get_shortcut:
+
+.. rst-class:: classref-method
+
+:ref:`Shortcut<class_Shortcut>` **get_shortcut**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorSettings_method_get_shortcut>`
+
+Returns the shortcut specified by ``path``. Tries to find a built-in action if no shortcut with the provided path is found in the shortcut list. If found, adds it to the list and returns it, otherwise returns ``null``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_method_get_shortcut_list:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_shortcut_list**\ (\ ) :ref:`🔗<class_EditorSettings_method_get_shortcut_list>`
+
+Returns the list of stored shortcut paths.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_method_has_setting:
 
 .. rst-class:: classref-method
@@ -6807,6 +6910,30 @@ Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwis
 
 ----
 
+.. _class_EditorSettings_method_has_shortcut:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_shortcut**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorSettings_method_has_shortcut>`
+
+Returns ``true`` if the shortcut specified by ``path`` exists, ``false`` otherwise.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_method_is_shortcut:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_shortcut**\ (\ path\: :ref:`String<class_String>`, event\: :ref:`InputEvent<class_InputEvent>`\ ) |const| :ref:`🔗<class_EditorSettings_method_is_shortcut>`
+
+Returns ``true`` if the shortcut specified by ``path`` matches the event specified by ``event``, ``false`` otherwise.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_method_mark_setting_changed:
 
 .. rst-class:: classref-method
@@ -6814,6 +6941,18 @@ Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwis
 |void| **mark_setting_changed**\ (\ setting\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorSettings_method_mark_setting_changed>`
 
 Marks the passed editor setting as being changed, see :ref:`get_changed_settings()<class_EditorSettings_method_get_changed_settings>`. Only settings which exist (see :ref:`has_setting()<class_EditorSettings_method_has_setting>`) will be accepted.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_method_remove_shortcut:
+
+.. rst-class:: classref-method
+
+|void| **remove_shortcut**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorSettings_method_remove_shortcut>`
+
+Removes the shortcut specified by ``path``.
 
 .. rst-class:: classref-item-separator
 

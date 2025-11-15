@@ -307,7 +307,7 @@ Emitted when a tab is hovered by the mouse.
 
 **tab_rmb_clicked**\ (\ tab\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TabBar_signal_tab_rmb_clicked>`
 
-Emitted when a tab is right-clicked. :ref:`select_with_rmb<class_TabBar_property_select_with_rmb>` must be enabled.
+Emitted when a tab is right-clicked.
 
 .. rst-class:: classref-item-separator
 

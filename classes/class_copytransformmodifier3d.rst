@@ -39,6 +39,8 @@ There are 4 ways to apply the transform, depending on the combination of :ref:`s
 
 - Extract reference pose absolutely and the apply bone's pose is replaced with it.
 
+\ **Note:** Relative option is available only in the case :ref:`BoneConstraint3D.get_reference_type()<class_BoneConstraint3D_method_get_reference_type>` is :ref:`BoneConstraint3D.REFERENCE_TYPE_BONE<class_BoneConstraint3D_constant_REFERENCE_TYPE_BONE>`. See also :ref:`ReferenceType<enum_BoneConstraint3D_ReferenceType>`.
+
 .. rst-class:: classref-reftable-group
 
 Properties

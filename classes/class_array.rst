@@ -930,7 +930,7 @@ In GDScript, this is equivalent to the ``in`` operator:
 
 Returns a hashed 32-bit integer value representing the array and its contents.
 
-\ **Note:** Arrays with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. On the countrary, arrays with different hash values are guaranteed to be different.
+\ **Note:** Arrays with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. On the contrary, arrays with different hash values are guaranteed to be different.
 
 .. rst-class:: classref-item-separator
 

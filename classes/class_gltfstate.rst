@@ -57,6 +57,8 @@ Properties
    +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                              | :ref:`glb_data<class_GLTFState_property_glb_data>`                                 | ``PackedByteArray()``  |
    +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>`         | :ref:`handle_binary_image_mode<class_GLTFState_property_handle_binary_image_mode>` | ``1``                  |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
    | :ref:`bool<class_bool>`                                                    | :ref:`import_as_skeleton_bones<class_GLTFState_property_import_as_skeleton_bones>` | ``false``              |
    +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
    | :ref:`Dictionary<class_Dictionary>`                                        | :ref:`json<class_GLTFState_property_json>`                                         | ``{}``                 |
@@ -170,6 +172,57 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Enumerations
+------------
+
+.. _enum_GLTFState_HandleBinaryImageMode:
+
+.. rst-class:: classref-enumeration
+
+enum **HandleBinaryImageMode**: :ref:`🔗<enum_GLTFState_HandleBinaryImageMode>`
+
+.. _class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_DISCARD_TEXTURES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>` **HANDLE_BINARY_IMAGE_MODE_DISCARD_TEXTURES** = ``0``
+
+When importing a glTF file with embedded binary images, discards all images and uses untextured materials in their place. Images stored as separate files in the ``res://`` folder are not affected by this; those will be used as Godot imported them.
+
+.. _class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_EXTRACT_TEXTURES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>` **HANDLE_BINARY_IMAGE_MODE_EXTRACT_TEXTURES** = ``1``
+
+When importing a glTF file with embedded binary images, extracts them and saves them to their own files. This allows the image to be imported by Godot's image importer, which can then have their import options customized by the user, including optionally compressing the image to VRAM texture formats.
+
+This will save the images's bytes exactly as-is, without recompression. For image formats supplied by glTF extensions, the file will have a filename ending with the file extension supplied by :ref:`GLTFDocumentExtension._get_image_file_extension()<class_GLTFDocumentExtension_private_method__get_image_file_extension>` of the extension class.
+
+\ **Note:** This option is editor-only. At runtime, this acts the same as :ref:`HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED<class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED>`.
+
+.. _class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_EMBED_AS_BASISU:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>` **HANDLE_BINARY_IMAGE_MODE_EMBED_AS_BASISU** = ``2``
+
+When importing a glTF file with embedded binary images, embeds textures VRAM compressed with Basis Universal into the generated scene. Images stored as separate files in the ``res://`` folder are not affected by this; those will be used as Godot imported them.
+
+.. _class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>` **HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED** = ``3``
+
+When importing a glTF file with embedded binary images, embeds textures compressed losslessly into the generated scene. Images stored as separate files in the ``res://`` folder are not affected by this; those will be used as Godot imported them.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Constants
 ---------
 
@@ -179,6 +232,8 @@ Constants
 
 **HANDLE_BINARY_DISCARD_TEXTURES** = ``0`` :ref:`🔗<class_GLTFState_constant_HANDLE_BINARY_DISCARD_TEXTURES>`
 
+**Deprecated:** Use :ref:`HANDLE_BINARY_IMAGE_MODE_DISCARD_TEXTURES<class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_DISCARD_TEXTURES>` instead.
+
 Discards all embedded textures and uses untextured materials.
 
 .. _class_GLTFState_constant_HANDLE_BINARY_EXTRACT_TEXTURES:
@@ -186,6 +241,8 @@ Discards all embedded textures and uses untextured materials.
 .. rst-class:: classref-constant
 
 **HANDLE_BINARY_EXTRACT_TEXTURES** = ``1`` :ref:`🔗<class_GLTFState_constant_HANDLE_BINARY_EXTRACT_TEXTURES>`
+
+**Deprecated:** Use :ref:`HANDLE_BINARY_IMAGE_MODE_EXTRACT_TEXTURES<class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_EXTRACT_TEXTURES>` instead.
 
 Extracts embedded textures to be reimported and compressed. Editor only. Acts as uncompressed at runtime.
 
@@ -195,6 +252,8 @@ Extracts embedded textures to be reimported and compressed. Editor only. Acts as
 
 **HANDLE_BINARY_EMBED_AS_BASISU** = ``2`` :ref:`🔗<class_GLTFState_constant_HANDLE_BINARY_EMBED_AS_BASISU>`
 
+**Deprecated:** Use :ref:`HANDLE_BINARY_IMAGE_MODE_EMBED_AS_BASISU<class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_EMBED_AS_BASISU>` instead.
+
 Embeds textures VRAM compressed with Basis Universal into the generated scene.
 
 .. _class_GLTFState_constant_HANDLE_BINARY_EMBED_AS_UNCOMPRESSED:
@@ -202,6 +261,8 @@ Embeds textures VRAM compressed with Basis Universal into the generated scene.
 .. rst-class:: classref-constant
 
 **HANDLE_BINARY_EMBED_AS_UNCOMPRESSED** = ``3`` :ref:`🔗<class_GLTFState_constant_HANDLE_BINARY_EMBED_AS_UNCOMPRESSED>`
+
+**Deprecated:** Use :ref:`HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED<class_GLTFState_constant_HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED>` instead.
 
 Embeds textures compressed losslessly into the generated scene, matching old behavior.
 
@@ -334,6 +395,25 @@ The file name associated with this glTF data. If it ends with ``.gltf``, this is
 The binary buffer attached to a .glb file.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFState_property_handle_binary_image_mode:
+
+.. rst-class:: classref-property
+
+:ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>` **handle_binary_image_mode** = ``1`` :ref:`🔗<class_GLTFState_property_handle_binary_image_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_handle_binary_image_mode**\ (\ value\: :ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>`\ )
+- :ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>` **get_handle_binary_image_mode**\ (\ )
+
+When importing a glTF file with unimported raw binary images embedded inside of binary blob buffers, in data URIs, or separate files not imported by Godot, this controls how the images are handled. Images can be discarded, saved as separate files, or embedded in the scene lossily or losslessly. See :ref:`HandleBinaryImageMode<enum_GLTFState_HandleBinaryImageMode>` for options.
+
+This property does nothing for image files in the ``res://`` folder imported by Godot, as those are handled by Godot's image importer directly, and then the Godot scene generated from the glTF file will use the images as Godot imported them.
 
 .. rst-class:: classref-item-separator
 
@@ -607,9 +687,9 @@ Returns an array of all :ref:`GLTFCamera<class_GLTFCamera>`\ s in the glTF file.
 
 :ref:`int<class_int>` **get_handle_binary_image**\ (\ ) :ref:`🔗<class_GLTFState_method_get_handle_binary_image>`
 
-.. container:: contribute
+**Deprecated:** Use :ref:`handle_binary_image_mode<class_GLTFState_property_handle_binary_image_mode>` instead.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Deprecated untyped alias for :ref:`handle_binary_image_mode<class_GLTFState_property_handle_binary_image_mode>`. When importing a glTF file with unimported raw binary images embedded inside of binary blob buffers, in data URIs, or separate files not imported by Godot, this controls how the images are handled.
 
 .. rst-class:: classref-item-separator
 
@@ -851,9 +931,9 @@ Sets the :ref:`GLTFCamera<class_GLTFCamera>`\ s in the state. These are the came
 
 |void| **set_handle_binary_image**\ (\ method\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GLTFState_method_set_handle_binary_image>`
 
-.. container:: contribute
+**Deprecated:** Use :ref:`handle_binary_image_mode<class_GLTFState_property_handle_binary_image_mode>` instead.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Deprecated untyped alias for :ref:`handle_binary_image_mode<class_GLTFState_property_handle_binary_image_mode>`. When importing a glTF file with unimported raw binary images embedded inside of binary blob buffers, in data URIs, or separate files not imported by Godot, this controls how the images are handled.
 
 .. rst-class:: classref-item-separator
 
