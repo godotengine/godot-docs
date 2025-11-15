@@ -1,0 +1,200 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+# Owners can be @users, @org/teams or emails.
+
+# buildsystem for all that isn't claimed in root, as well as all scripts.
+
+/*.*                                                        @godotengine/buildsystem
+*.py                                                        @godotengine/buildsystem
+
+# Documentation to catch all otherwise unclaimed `.rst` files.
+
+*.rst                                                       @godotengine/documentation
+
+# ---------------- About ---------------------------
+
+/about/                                                     @godotengine/documentation
+
+# ---------------- Classes -------------------------
+
+## Note: Using "buildsystem" as well as the doc team for global ownerships as
+## it's generally incorrect to modify this except by automated generation.
+
+/classes/                                                   @godotengine/documentation @godotengine/buildsystem
+
+# ---------------- Community -----------------------
+
+# TODO: Who should control this beyond documentation?
+
+## --------------- Asset Library -------------------
+
+# TODO: Who should control this beyond documentation?
+
+# ---------------- Engine Details ------------------
+
+/engine_details/architecture/                               @godotengine/documentation @godotengine/core
+/engine_details/development/compiling/                      @godotengine/documentation @godotengine/buildsystem
+/engine_details/development/compiling/*android*             @godotengine/documentation @godotengine/android
+/engine_details/development/compiling/*ios*                 @godotengine/documentation @godotengine/ios
+/engine_details/development/compiling/*linuxbsd*            @godotengine/documentation @godotengine/linux-bsd
+/engine_details/development/compiling/*macos*               @godotengine/documentation @godotengine/macos
+/engine_details/development/compiling/*visionos*            @godotengine/documentation @godotengine/ios
+/engine_details/development/compiling/*web*                 @godotengine/documentation @godotengine/web
+/engine_details/development/compiling/*windows*             @godotengine/documentation @godotengine/windows
+/engine_details/editor/                                     @godotengine/documentation @godotengine/docks
+/engine_details/file_formats/                               @godotengine/documentation @godotengine/core
+
+# TODO: Who should control the rest?
+
+# ---------------- Getting Started -----------------
+
+# TODO: Who should control this beyond documentation?
+
+# ---------------- Tutorials -----------------------
+
+## --------------- 2D ------------------------------
+
+/tutorials/2d/                                              @godotengine/documentation @godotengine/2d-nodes
+
+# TODO: Any additional ownership for particles and rendering?
+
+## --------------- 3D ------------------------------
+
+/tutorials/3d/                                              @godotengine/documentation @godotengine/3d-nodes
+
+# TODO: Should any of these also have rendering ownership when rendering related?
+
+## --------------- Animation -----------------------
+
+/tutorials/animation/                                       @godotengine/documentation @godotengine/animation
+
+## --------------- Assets Pipeline -----------------
+
+/tutorials/assets_pipeline/                                 @godotengine/documentation @godotengine/import
+
+# TODO: Any additional ownership for 3D and translations?
+
+## --------------- Audio ---------------------------
+
+/tutorials/audio/                                           @godotengine/documentation @godotengine/audio
+
+## --------------- Best Practices ------------------
+
+# TODO: Who should control this beyond documentation?
+
+## --------------- Editor --------------------------
+
+/tutorials/editor/                                          @godotengine/documentation @godotengine/docks
+/tutorials/editor/*script*                                  @godotengine/documentation @godotengine/script-editor
+
+# TODO: Who should control this beyond docs?
+
+## --------------- Export --------------------------
+
+/tutorials/export/*android*                                 @godotengine/documentation @godotengine/android
+/tutorials/export/*ios*                                     @godotengine/documentation @godotengine/ios
+/tutorials/export/*linux*                                   @godotengine/documentation @godotengine/linux-bsd
+/tutorials/export/*macos*                                   @godotengine/documentation @godotengine/macos
+/tutorials/export/*visionos*                                @godotengine/documentation @godotengine/ios
+/tutorials/export/*web*                                     @godotengine/documentation @godotengine/web
+/tutorials/export/*windows*                                 @godotengine/documentation @godotengine/windows
+
+# TODO
+
+## --------------- i18n ----------------------------
+
+# TODO: Who should control this beyond documentation?
+
+## --------------- Inputs --------------------------
+
+/tutorials/inputs/                                          @godotengine/documentation @godotengine/input
+
+## --------------- IO ------------------------------
+
+/tutorials/io/                                              @godotengine/documentation @godotengine/core
+
+## --------------- Math ----------------------------
+
+/tutorials/math/                                            @godotengine/documentation @godotengine/core
+
+## --------------- Migrating -----------------------
+
+/tutorials/migrating/                                       @godotengine/documentation
+
+## --------------- Navigation ----------------------
+
+/tutorials/navigation/                                      @godotengine/documentation @godotengine/navigation
+
+## --------------- Networking ----------------------
+
+/tutorials/networking/                                      @godotengine/documentation @godotengine/network
+
+## --------------- Performance ---------------------
+
+/tutorials/performance/                                     @godotengine/documentation @godotengine/core
+/tutorials/performance/gpu_optimization.rst                 @godotengine/documentation @godotengine/rendering
+/tutorials/performance/index.rst                            @godotengine/documentation
+/tutorials/performance/optimizing_3d_performance.rst        @godotengine/documentation @godotengine/rendering
+/tutorials/performance/pipeline_compilations.rst            @godotengine/documentation @godotengine/rendering
+/tutorials/performance/using_multimesh.rst                  @godotengine/documentation @godotengine/rendering
+/tutorials/performance/vertex_animation/                    @godotengine/documentation @godotengine/rendering
+
+# TODO: Who should control this beyond documentation?
+
+## --------------- Physics -------------------------
+
+/tutorials/physics/                                         @godotengine/documentation @godotengine/physics
+
+## --------------- Platform ------------------------
+
+/tutorials/platform/android/                                @godotengine/documentation @godotengine/android
+/tutorials/platform/ios/                                    @godotengine/documentation @godotengine/ios
+/tutorials/platform/web/                                    @godotengine/documentation @godotengine/web
+
+# TODO
+
+## --------------- Plugins -------------------------
+
+# TODO: Who should control this beyond documentation?
+
+## --------------- Rendering -----------------------
+
+/tutorials/rendering/                                       @godotengine/documentation @godotengine/rendering
+
+## --------------- Scripting -----------------------
+
+# TODO: Who should control this in general beyond documentation?
+
+### -------------- CPP -----------------------------
+
+/tutorials/scripting/cpp/                                   @godotengine/documentation @godotengine/gdextension
+
+### -------------- C# ------------------------------
+
+/tutorials/scripting/c_sharp/                               @godotengine/documentation @godotengine/dotnet
+
+### -------------- Debug ---------------------------
+
+# TODO: Who should control this beyond documentation?
+
+### -------------- GDExtension ---------------------
+
+/tutorials/scripting/gdextension/                           @godotengine/documentation @godotengine/gdextension
+
+### -------------- GDScript ------------------------
+
+/tutorials/scripting/gdscript/                              @godotengine/documentation @godotengine/gdscript
+
+## --------------- Shaders -------------------------
+
+/tutorials/shaders/                                         @godotengine/documentation @godotengine/shaders
+
+## --------------- UI ------------------------------
+
+/tutorials/ui/                                              @godotengine/documentation @godotengine/gui-nodes
+
+## --------------- XR ------------------------------
+
+/tutorials/xr/                                              @godotengine/documentation @godotengine/xr
+
+# TODO: Should any of these also have rendering ownership when rendering related?
