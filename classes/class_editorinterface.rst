@@ -815,7 +815,7 @@ Plays the main scene.
 
 Pops up an editor dialog for creating an object.
 
-The ``callback`` must take a single argument of type :ref:`StringName<class_StringName>` which will contain the type name of the selected object or be empty if no item is selected.
+The ``callback`` must take a single argument of type :ref:`String<class_String>`, which will contain the type name of the selected object (or the script path of the type, if the type is created from a script), or be an empty string if no item is selected.
 
 The ``base_type`` specifies the base type of objects to display. For example, if you set this to "Resource", all types derived from :ref:`Resource<class_Resource>` will display in the create dialog.
 

@@ -12,7 +12,7 @@ JacobianIK3D
 
 **Inherits:** :ref:`IterateIK3D<class_IterateIK3D>` **<** :ref:`ChainIK3D<class_ChainIK3D>` **<** :ref:`IKModifier3D<class_IKModifier3D>` **<** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Pseudo inverse Jacobian matrix based inverse kinematics solver.
+Jacobian transpose based inverse kinematics solver.
 
 .. rst-class:: classref-introduction-group
 

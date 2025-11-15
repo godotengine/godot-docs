@@ -29,17 +29,19 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------------+--------------------------------------------------------------+---------+
-   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`           | :ref:`format<class_RDVertexAttribute_property_format>`       | ``232`` |
-   +--------------------------------------------------------------+--------------------------------------------------------------+---------+
-   | :ref:`VertexFrequency<enum_RenderingDevice_VertexFrequency>` | :ref:`frequency<class_RDVertexAttribute_property_frequency>` | ``0``   |
-   +--------------------------------------------------------------+--------------------------------------------------------------+---------+
-   | :ref:`int<class_int>`                                        | :ref:`location<class_RDVertexAttribute_property_location>`   | ``0``   |
-   +--------------------------------------------------------------+--------------------------------------------------------------+---------+
-   | :ref:`int<class_int>`                                        | :ref:`offset<class_RDVertexAttribute_property_offset>`       | ``0``   |
-   +--------------------------------------------------------------+--------------------------------------------------------------+---------+
-   | :ref:`int<class_int>`                                        | :ref:`stride<class_RDVertexAttribute_property_stride>`       | ``0``   |
-   +--------------------------------------------------------------+--------------------------------------------------------------+---------+
+   +--------------------------------------------------------------+--------------------------------------------------------------+----------------+
+   | :ref:`int<class_int>`                                        | :ref:`binding<class_RDVertexAttribute_property_binding>`     | ``4294967295`` |
+   +--------------------------------------------------------------+--------------------------------------------------------------+----------------+
+   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`           | :ref:`format<class_RDVertexAttribute_property_format>`       | ``232``        |
+   +--------------------------------------------------------------+--------------------------------------------------------------+----------------+
+   | :ref:`VertexFrequency<enum_RenderingDevice_VertexFrequency>` | :ref:`frequency<class_RDVertexAttribute_property_frequency>` | ``0``          |
+   +--------------------------------------------------------------+--------------------------------------------------------------+----------------+
+   | :ref:`int<class_int>`                                        | :ref:`location<class_RDVertexAttribute_property_location>`   | ``0``          |
+   +--------------------------------------------------------------+--------------------------------------------------------------+----------------+
+   | :ref:`int<class_int>`                                        | :ref:`offset<class_RDVertexAttribute_property_offset>`       | ``0``          |
+   +--------------------------------------------------------------+--------------------------------------------------------------+----------------+
+   | :ref:`int<class_int>`                                        | :ref:`stride<class_RDVertexAttribute_property_stride>`       | ``0``          |
+   +--------------------------------------------------------------+--------------------------------------------------------------+----------------+
 
 .. rst-class:: classref-section-separator
 
@@ -49,6 +51,25 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_RDVertexAttribute_property_binding:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **binding** = ``4294967295`` :ref:`🔗<class_RDVertexAttribute_property_binding>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_binding**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_binding**\ (\ )
+
+The index of the buffer in the vertex buffer array to bind this vertex attribute. When set to ``-1``, it defaults to the index of the attribute.
+
+\ **Note:** You cannot mix binding explicitly assigned attributes with implicitly assigned ones (i.e. ``-1``). Either all attributes must have their binding set to ``-1``, or all must have explicit bindings.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_RDVertexAttribute_property_format:
 

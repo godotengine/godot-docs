@@ -3246,9 +3246,11 @@ Returns the dictionary of the supported OpenType variation coordinates.
 
 :ref:`String<class_String>` **format_number**\ (\ number\: :ref:`String<class_String>`, language\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_TextServer_method_format_number>`
 
-Converts a number from the Western Arabic (0..9) to the numeral systems used in ``language``.
+**Deprecated:** Use :ref:`TranslationServer.format_number()<class_TranslationServer_method_format_number>` instead.
 
-If ``language`` is omitted, the active locale will be used.
+Converts a number from Western Arabic (0..9) to the numeral system used in the given ``language``.
+
+If ``language`` is an empty string, the active locale will be used.
 
 .. rst-class:: classref-item-separator
 
@@ -3462,7 +3464,11 @@ Converts readable feature, variation, script, or language name to OpenType tag.
 
 :ref:`String<class_String>` **parse_number**\ (\ number\: :ref:`String<class_String>`, language\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_TextServer_method_parse_number>`
 
-Converts ``number`` from the numeral systems used in ``language`` to Western Arabic (0..9).
+**Deprecated:** Use :ref:`TranslationServer.parse_number()<class_TranslationServer_method_parse_number>` instead.
+
+Converts ``number`` from the numeral system used in the given ``language`` to Western Arabic (0..9).
+
+If ``language`` is an empty string, the active locale will be used.
 
 .. rst-class:: classref-item-separator
 
@@ -3486,7 +3492,11 @@ Default implementation of the BiDi algorithm override function.
 
 :ref:`String<class_String>` **percent_sign**\ (\ language\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_TextServer_method_percent_sign>`
 
-Returns percent sign used in the ``language``.
+**Deprecated:** Use :ref:`TranslationServer.get_percent_sign()<class_TranslationServer_method_get_percent_sign>` instead.
+
+Returns the percent sign used in the given ``language``.
+
+If ``language`` is an empty string, the active locale will be used.
 
 .. rst-class:: classref-item-separator
 

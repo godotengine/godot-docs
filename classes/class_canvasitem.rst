@@ -515,6 +515,8 @@ The **CanvasItem** has entered the canvas.
 
 The **CanvasItem** has exited the canvas.
 
+This notification is sent in reversed order.
+
 .. _class_CanvasItem_constant_NOTIFICATION_WORLD_2D_CHANGED:
 
 .. rst-class:: classref-constant

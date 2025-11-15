@@ -158,6 +158,7 @@ Nodes
     class_lightmapgi
     class_lightmapprobe
     class_lightoccluder2d
+    class_limitangularvelocitymodifier3d
     class_line2d
     class_lineedit
     class_linkbutton
@@ -872,6 +873,7 @@ Other objects
     class_openxrapiextension
     class_openxrextensionwrapper
     class_openxrextensionwrapperextension
+    class_openxrframesynthesisextension
     class_openxrfutureextension
     class_openxrfutureresult
     class_openxrinteractionprofilemetadata

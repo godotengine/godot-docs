@@ -501,7 +501,9 @@ Maximum number of allowed redirects.
 - |void| **set_timeout**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_timeout**\ (\ )
 
-The duration to wait in seconds before a request times out. If :ref:`timeout<class_HTTPRequest_property_timeout>` is set to ``0.0`` then the request will never time out. For simple requests, such as communication with a REST API, it is recommended that :ref:`timeout<class_HTTPRequest_property_timeout>` is set to a value suitable for the server response time (e.g. between ``1.0`` and ``10.0``). This will help prevent unwanted timeouts caused by variation in server response times while still allowing the application to detect when a request has timed out. For larger requests such as file downloads it is suggested the :ref:`timeout<class_HTTPRequest_property_timeout>` be set to ``0.0``, disabling the timeout functionality. This will help to prevent large transfers from failing due to exceeding the timeout value.
+The duration to wait before a request times out, in seconds (independent of :ref:`Engine.time_scale<class_Engine_property_time_scale>`). If :ref:`timeout<class_HTTPRequest_property_timeout>` is set to ``0.0``, the request will never time out.
+
+For simple requests, such as communication with a REST API, it is recommended to set :ref:`timeout<class_HTTPRequest_property_timeout>` to a value suitable for the server response time (commonly between ``1.0`` and ``10.0``). This will help prevent unwanted timeouts caused by variation in response times while still allowing the application to detect when a request has timed out. For larger requests such as file downloads, it is recommended to set :ref:`timeout<class_HTTPRequest_property_timeout>` to ``0.0``, disabling the timeout functionality. This will help prevent large transfers from failing due to exceeding the timeout value.
 
 .. rst-class:: classref-item-separator
 
