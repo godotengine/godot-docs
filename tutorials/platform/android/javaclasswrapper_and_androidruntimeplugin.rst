@@ -133,3 +133,28 @@ This example creates an intent to send a text:
         intent.putExtra(Intent.EXTRA_TEXT, "This is a test message.")
         intent.setType("text/plain")
         activity.startActivity(intent)
+
+Example: Saving an image to the Android gallery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: gdscript
+
+    # Retrieve the AndroidRuntime singleton.
+    var android_runtime = Engine.get_singleton("AndroidRuntime")	
+    if android_runtime:
+        var Intent = JavaClassWrapper.wrap("android.content.Intent")
+        var activity = android_runtime.getActivity()
+        var intent = Intent.Intent()
+
+        # Create the File and Uri.
+        var Uri = JavaClassWrapper.wrap("android.net.Uri")
+        var File = JavaClassWrapper.wrap("java.io.File")
+        var file = File.File(file_path_to_image_here)
+        var uri = Uri.fromFile(file)
+
+        # Set Action and Data of Intent.
+        intent.setAction(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+        intent.setData(uri)
+
+        # Broadcast it.
+        activity.sendBroadcast(intent)
