@@ -810,7 +810,7 @@ We suggest to organize GDScript code this way:
         6. remaining virtual methods
     15. overridden custom methods
     16. remaining methods
-    17. subclasses
+    17. inner classes
 
 And put the class methods and variables in the following order depending on their access modifiers:
 
