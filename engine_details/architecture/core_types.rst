@@ -150,11 +150,56 @@ scripting API.
 .. |typed_dictionary| replace:: `TypedDictionary <https://github.com/godotengine/godot/blob/master/core/variant/typed_dictionary.h>`__
 .. |pair| replace:: `Pair <https://github.com/godotengine/godot/blob/master/core/templates/pair.h>`__
 
-Thread safety
-~~~~~~~~~~~~~
+.. _doc_core_concurrency_types:
+
+Multithreading / Concurrency
+----------------------------
+
+.. seealso::
+
+    You can find more information on multithreading strategies at :ref:`doc_using_multiple_threads`.
 
 None of Godot's containers are thread-safe. When you expect multiple threads to access them, you must use multithread
-protections, like ``Mutex`` or ``Semaphore``.
+protections.
+
+Note that some of the types listed here are also available through the bindings, but the binding types are wrapped with
+:ref:`class_RefCounted` (found in the ``CoreBind::`` namespace). Prefer the primitives listed here when possible, for
+efficiency reasons.
+
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| Godot datatype        | Closest C++ STL datatype     | Comment                                                                               |
++=======================+==============================+=======================================================================================+
+| |mutex|               | ``std::recursive_mutex``     | Recursive mutex type. Use ``MutexLock lock(mutex)`` to lock it.                       |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| |binary_mutex|        | ``std::mutex``               | Non-recursive mutex type. Use ``MutexLock lock(mutex)`` to lock it.                   |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| |rw_lock|             | ``std::shared_timed_mutex``  | Read-write aware mutex type. Use ``RWLockRead lock(mutex)`` or                        |
+|                       |                              | ``RWLockWrite lock(mutex)`` to lock it.                                               |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| |safe_binary_mutex|   | ``std::mutex``               | Recursive mutex type that can be used with ``ConditionVariable``.                     |
+|                       |                              | Use ``MutexLock lock(mutex)`` to lock it.                                             |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| |condition_variable|  | ``std::condition_variable``  | Condition variable type, used with ``SafeBinaryMutex``.                               |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| |semaphore|           | ``std::counting_semaphore``  | Counting semaphore type.                                                              |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| |safe_numeric|        | ``std::atomic``              | Templated atomic type, designed for numbers.                                          |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| |safe_flag|           | ``std::atomic_bool``         | Bool atomic type.                                                                     |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+| |safe_ref_count|      | ``std::atomic``              | Atomic type designed for reference counting. Will refuse to increment the             |
+|                       |                              | reference count if it is 0.                                                           |
++-----------------------+------------------------------+---------------------------------------------------------------------------------------+
+
+.. |mutex| replace:: `Mutex <https://github.com/godotengine/godot/blob/master/core/os/mutex.h>`__
+.. |binary_mutex| replace:: `BinaryMutex <https://github.com/godotengine/godot/blob/master/core/os/mutex.h>`__
+.. |rw_lock| replace:: `RWLock <https://github.com/godotengine/godot/blob/master/core/os/rw_lock.h>`__
+.. |safe_binary_mutex| replace:: `SafeBinaryMutex <https://github.com/godotengine/godot/blob/master/core/os/safe_binary_mutex.h>`__
+.. |condition_variable| replace:: `ConditionVariable <https://github.com/godotengine/godot/blob/master/core/os/condition_variable.h>`__
+.. |semaphore| replace:: `Semaphore <https://github.com/godotengine/godot/blob/master/core/os/semaphore.h>`__
+.. |safe_numeric| replace:: `SafeNumeric <https://github.com/godotengine/godot/blob/master/core/templates/safe_refcount.h>`__
+.. |safe_flag| replace:: `SafeFlag <https://github.com/godotengine/godot/blob/master/core/templates/safe_refcount.h>`__
+.. |safe_ref_count| replace:: `SafeRefCount <https://github.com/godotengine/godot/blob/master/core/templates/safe_refcount.h>`__
 
 Math types
 ----------
