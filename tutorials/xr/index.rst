@@ -34,6 +34,7 @@ Advanced topics
    openxr_hand_tracking
    openxr_body_tracking
    openxr_render_models
+   openxr_spatial_entities
 
 Godot XR Tools
 --------------
