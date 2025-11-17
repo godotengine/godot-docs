@@ -294,7 +294,13 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout vec2 **UV2**                     | UV secondary channel.                                  |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec4 **COLOR**                   | Color from vertices.                                   |
+| inout vec4 **COLOR**                   | Color from vertices. Limited to values between ``0.0`` |
+|                                        | and ``1.0`` for each channel and 8 bits per channel    |
+|                                        | precision (256 possible levels). Alpha channel is      |
+|                                        | supported. Values outside the allowed range are        |
+|                                        | clamped, and values may be rounded due to precision    |
+|                                        | limitations. Use ``CUSTOM0``-``CUSTOM3`` to pass data  |
+|                                        | with more precision if needed.                         |
 +----------------------------------------+--------------------------------------------------------+
 | out float **ROUGHNESS**                | Roughness for vertex lighting.                         |
 +----------------------------------------+--------------------------------------------------------+
