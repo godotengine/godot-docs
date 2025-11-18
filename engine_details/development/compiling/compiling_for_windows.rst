@@ -218,18 +218,18 @@ optional PIX and Agility SDK components).
               ./update_mesa.sh
               scons
 
-             If you are building with MinGW-w64, add ``use_mingw=yes`` to the ``scons``
-             command, you can also specify build architecture using ``arch={architecture}``.
-             If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
-             ``use_llvm=yes`` to the ``scons`` command.
+          If you are building with MinGW-w64, add ``use_mingw=yes`` to the ``scons``
+          command, you can also specify the build architecture using ``arch={architecture}``.
+          If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
+          ``use_llvm=yes`` to the ``scons`` command.
 
-             If you are building with MinGW and the binaries are not located in
-             the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
-             command.
+          If you are building with MinGW and the binaries are not located in
+          the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
+          command.
 
-             Mesa static library should be built using the same compiler and the
-             same CRT (if you are building with MinGW) you are using for building
-             Godot.
+          The Mesa static library should be built using the same compiler and the
+          same CRT (if you are building with MinGW) you are using for building
+          Godot.
 
 Optionally, you can compile with the following for additional features:
 
@@ -282,6 +282,46 @@ Or, with all options enabled:
           multi-arch. DLLs will be copied to the appropriate ``bin/<arch>/``
           subdirectories and at runtime the right one will be loaded.
 
+Compiling with AccessKit support
+--------------------------------
+
+AccessKit provides support for screen readers.
+
+By default, Godot is built with AccessKit dynamically linked. You can use it by placing
+``accesskit.dll`` alongside the executable.
+
+.. note:: You can use dynamically linked AccessKit with export templates as well, rename
+          the DLL to ``accesskit.{architecture}.dll``
+          and place them alongside the export template executables, and the libraries will
+          be automatically copied during the export process.
+
+To compile Godot with statically linked AccessKit:
+
+- Download the pre-built static libraries from `godot-accesskit-c-static library <https://github.com/godotengine/godot-accesskit-c-static/releases>`_, and unzip them.
+- When building Godot, add ``accesskit_sdk_path={path}`` to tell SCons where to look for the AccessKit libraries:
+
+    ::
+
+        scons platform=windows accesskit_sdk_path=<...>
+
+.. note:: You can optionally build the godot-angle-static libraries yourself with
+          the following steps:
+
+          1. Clone the `godot-accesskit-c-static <https://github.com/godotengine/godot-accesskit-c-static/>`_
+             directory and navigate to it.
+          2. Run the following command:
+
+          ::
+
+              cd accesskit-c
+              cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+              cmake --build build
+              cmake --install build
+
+          The AccessKit static library should be built using the same compiler and the
+          same CRT (if you are building with MinGW) you are using for building
+          Godot.
+
 Compiling with ANGLE support
 ----------------------------
 
@@ -293,13 +333,13 @@ By default, Godot is built with dynamically linked ANGLE, you can use it by plac
 ``libEGL.dll`` and ``libGLESv2.dll`` alongside the executable.
 
 .. note:: You can use dynamically linked ANGLE with export templates as well, rename
-          aforementioned DLLs to ``libEGL.{architecture}.dll`` and ``libGLESv2.{architecture}.dll``
-          and place them alongside export template executables, and libraries will
+          the DLLs to ``libEGL.{architecture}.dll`` and ``libGLESv2.{architecture}.dll``
+          and place them alongside the export template executables, and the libraries will
           be automatically copied during the export process.
 
 To compile Godot with statically linked ANGLE:
 
-- Download pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them.
+- Download the pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them.
 - When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries:
 
     ::
@@ -319,18 +359,18 @@ To compile Godot with statically linked ANGLE:
               ./update_angle.sh
               scons
 
-             If you are buildng with MinGW, add ``use_mingw=yes`` to the command,
-             you can also specify build architecture using ``arch={architecture}``.
-             If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
-             ``use_llvm=yes`` to the ``scons`` command.
+          If you are buildng with MinGW, add ``use_mingw=yes`` to the command,
+          you can also specify the build architecture using ``arch={architecture}``.
+          If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
+          ``use_llvm=yes`` to the ``scons`` command.
 
-             If you are building with MinGW and the binaries are not located in
-             the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
-             command.
+          If you are building with MinGW and the binaries are not located in
+          the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
+          command.
 
-             ANGLE static library should be built using the same compiler and the
-             same CRT (if you are building with MinGW) you are using for building
-             Godot.
+          The ANGLE static library should be built using the same compiler and the
+          same CRT (if you are building with MinGW) you are using for building
+          Godot.
 
 Development in Visual Studio
 ----------------------------
