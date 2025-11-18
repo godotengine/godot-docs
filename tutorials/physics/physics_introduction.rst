@@ -349,6 +349,44 @@ the body and letting the physics engine calculate the resulting movement.
           force to it, or by disabling the :ref:`can_sleep <class_RigidBody2D_property_can_sleep>`
           property. Be aware that this can have a negative effect on performance.
 
+The "look at" method
+--------------------
+
+Using the Node2D's ``look_at()`` method can't be used by a RigidBody2D each frame
+to follow a target. Here is a custom ``look_at()`` method that will work reliably
+with rigid bodies:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends RigidBody2D
+
+    func _integrate_forces(state):
+        var target_position = $my_target_node2d_node.global_position
+        var rotation_angle = get_angle_to(target_position)
+
+        state.angular_velocity = rotation_angle / state.step
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyRigidBody2D : RigidBody2D
+    {
+        public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+        {
+            var targetPosition = GetNode<Node2D>("MyTargetNode2DNode").GlobalPosition;
+            var rotationAngle = GetAngleTo(targetPosition);
+
+            state.SetAngularVelocity(rotationAngle / state.Step);
+        }
+    }
+
+
+This method uses the rigid body's ``angular_velocity`` property to rotate the
+body. It first calculates the difference between the current and desired angle
+and then adds the velocity needed to rotate by that amount in one frame's time.
+
 Contact reporting
 ~~~~~~~~~~~~~~~~~
 
