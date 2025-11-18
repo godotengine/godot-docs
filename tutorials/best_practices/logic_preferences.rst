@@ -63,15 +63,15 @@ either? Let's see an example:
     #    with .new().
     #
     # 2. The preloaded value is inaccessible from the Script object alone. As
-    #    such, preloading the value here actually does not benefit anyone.
+    #    such, preloading the value here actually does not provide any benefit.
     #
     # 3. Because the user exports the value, if this script stored on
     #    a node in a scene file, the scene instantiation code will overwrite the
     #    preloaded initial value anyway (wasting it). It's usually better to
-    #    provide null, empty, or otherwise invalid default values for exports.
+    #    provide `null`, empty, or otherwise invalid default values for exports.
     #
-    # 4. It is when one instantiates this script on its own with .new() that
-    #    one will load "office.tscn" rather than the exported value.
+    # 4. Instantiating the script on its own with .new() triggers
+    #    `load("office.tscn")`, ignoring any value set through the export.
     @export var a_building : PackedScene = preload("office.tscn")
 
     # Uh oh! This results in an error!
@@ -121,12 +121,11 @@ either? Let's see an example:
 
 Preloading allows the script to handle all the loading the moment one loads the
 script. Preloading is useful, but there are also times when one doesn't wish
-for it. To distinguish these situations, there are a few things one can
-consider:
+to use it. Here are a few considerations when determining which to use:
 
 1. If one cannot determine when the script might load, then preloading a
-   resource, especially a scene or script, could result in further loads one
-   does not expect. This could lead to unintentional, variable-length
+   resource (especially a scene or script) could result in additional loads
+   one does not expect. This could lead to unintentional, variable-length
    load times on top of the original script's load operations.
 
 2. If something else could replace the value (like a scene's exported
@@ -142,12 +141,12 @@ consider:
       perhaps not even initialized until later).
 
    2. If the script requires a great many dependencies, and one does not wish
-      to consume so much memory, then one may wish to, load and unload various
+      to consume so much memory, then one may wish to load and unload various
       dependencies at runtime as circumstances change. If one preloads
       resources into constants, then the only way to unload these resources
       would be to unload the entire script. If they are instead loaded
-      properties, then one can set them to ``null`` and remove all references
-      to the resource entirely (which, as a
+      as properties, then one can set these properties to ``null`` and remove
+      all references to the resource (which, as a
       :ref:`RefCounted <class_RefCounted>`-extending type, will cause the
       resources to delete themselves from memory).
 
@@ -155,8 +154,8 @@ Large levels: static vs. dynamic
 --------------------------------
 
 If one is creating a large level, which circumstances are most appropriate?
-Should they create the level as one static space? Or should they load the
-level in pieces and shift the world's content as needed?
+Is it better to create the level as one static space? Or is it better to load
+the level in pieces and shift the world's content as needed?
 
 Well, the simple answer is, "when the performance requires it." The
 dilemma associated with the two options is one of the age-old programming
@@ -173,21 +172,21 @@ creation/loading and deletion/unloading of resources and nodes in real-time.
 Games with large and varied environments or procedurally generated
 elements often implement these strategies to avoid wasting memory.
 
-On the flip side, coding a dynamic system is more complex, i.e. uses more
-programmed logic, which results in opportunities for errors and bugs. If one
+On the flip side, coding a dynamic system is more complex; it uses more
+programmed logic which results in opportunities for errors and bugs. If one
 isn't careful, they can develop a system that bloats the technical debt of
 the application.
 
 As such, the best options would be...
 
-1. To use a static level for smaller games.
+1. Use static levels for smaller games.
 
 2. If one has the time/resources on a medium/large game, create a library or
-   plugin that can code the management of nodes and resources. If refined
-   over time, so as to improve usability and stability, then it could evolve
+   plugin that can manage nodes and resources with code. If refined
+   over time so as to improve usability and stability, then it could evolve
    into a reliable tool across projects.
 
-3. Code the dynamic logic for a medium/large game because one has the coding
+3. Use dynamic logic for a medium/large game because one has the coding
    skills, but not the time or resources to refine the code (game's
    gotta get done). Could potentially refactor later to outsource the code
    into a plugin.
