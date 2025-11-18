@@ -28,7 +28,7 @@ types that aren't declared partial.
     public class InvalidNode : Node { }
 
     // The source generators can enhance this type to work with Godot.
-    public partial class ValidNode { }
+    public partial class ValidNode : Node { }
 
 How to fix violations
 ---------------------
