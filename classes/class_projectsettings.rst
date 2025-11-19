@@ -4778,9 +4778,13 @@ Main window initial position.
 
 \ ``0`` - "Absolute", :ref:`display/window/size/initial_position<class_ProjectSettings_property_display/window/size/initial_position>` is used to set window position.
 
-\ ``1`` - "Primary Screen Center".
+\ ``1`` or ``2``- "Center of Primary Screen".
 
-\ ``2`` - "Other Screen Center", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set the screen.
+\ ``3`` - "Center of Other Screen", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set the screen.
+
+\ ``4`` - "Center of Screen With Mouse Pointer".
+
+\ ``5`` - "Center of Screen With Keyboard Focus".
 
 \ **Note:** This setting only affects the exported project, or when the project is run from the command line. In the editor, the value of :ref:`EditorSettings.run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>` is used instead.
 
