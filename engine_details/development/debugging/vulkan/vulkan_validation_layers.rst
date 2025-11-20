@@ -129,14 +129,6 @@ After installing the package, run Godot with the ``--gpu-validation``
 ``--gpu-abort`` which will make Godot quit as soon as a validation error happens.
 This can prevent your system from freezing if a validation error occurs.
 
-.. _doc_vulkan_validation_layers_android:
-
-Android
--------
-
-After enabling validation layers on Android, a developer can see errors and
-warning messages in the ``adb logcat`` output.
-
 iOS
 ---
 
@@ -147,6 +139,14 @@ Web
 
 Validation layers are **not** supported on the web platform, as there is no support
 for Vulkan there.
+
+.. _doc_vulkan_validation_layers_android:
+
+Android
+-------
+
+After enabling validation layers on Android, a developer can see errors and
+warning messages in the ``adb logcat`` output.
 
 Enabling validation layers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
