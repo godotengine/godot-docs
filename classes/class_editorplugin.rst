@@ -466,11 +466,19 @@ Dock slot, right side, upper-right (empty in default layout).
 
 Dock slot, right side, bottom-right (empty in default layout).
 
+.. _class_EditorPlugin_constant_DOCK_SLOT_BOTTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DockSlot<enum_EditorPlugin_DockSlot>` **DOCK_SLOT_BOTTOM** = ``8``
+
+Bottom panel.
+
 .. _class_EditorPlugin_constant_DOCK_SLOT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`DockSlot<enum_EditorPlugin_DockSlot>` **DOCK_SLOT_MAX** = ``8``
+:ref:`DockSlot<enum_EditorPlugin_DockSlot>` **DOCK_SLOT_MAX** = ``9``
 
 Represents the size of the :ref:`DockSlot<enum_EditorPlugin_DockSlot>` enum.
 
@@ -1145,6 +1153,8 @@ Adds a plugin to the context menu. ``slot`` is the context menu where the plugin
 
 :ref:`Button<class_Button>` **add_control_to_bottom_panel**\ (\ control\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>`, shortcut\: :ref:`Shortcut<class_Shortcut>` = null\ ) :ref:`🔗<class_EditorPlugin_method_add_control_to_bottom_panel>`
 
+**Deprecated:** Use :ref:`add_dock()<class_EditorPlugin_method_add_dock>` instead, with :ref:`EditorDock.default_slot<class_EditorDock_property_default_slot>` set to :ref:`DOCK_SLOT_BOTTOM<class_EditorPlugin_constant_DOCK_SLOT_BOTTOM>`.
+
 Adds a control to the bottom panel (together with Output, Debug, Animation, etc.). Returns a reference to a button that is outside the scene tree. It's up to you to hide/show the button when needed. When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_bottom_panel()<class_EditorPlugin_method_remove_control_from_bottom_panel>` and free it with :ref:`Node.queue_free()<class_Node_method_queue_free>`.
 
 Optionally, you can specify a shortcut parameter. When pressed, this shortcut will toggle the bottom panel's visibility. See the default editor bottom panel shortcuts in the Editor Settings for inspiration. Per convention, they all use :kbd:`Alt` modifier.
@@ -1548,6 +1558,8 @@ Removes the specified context menu plugin.
 .. rst-class:: classref-method
 
 |void| **remove_control_from_bottom_panel**\ (\ control\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_EditorPlugin_method_remove_control_from_bottom_panel>`
+
+**Deprecated:** Use :ref:`remove_dock()<class_EditorPlugin_method_remove_dock>` instead.
 
 Removes the control from the bottom panel. You have to manually :ref:`Node.queue_free()<class_Node_method_queue_free>` the control.
 

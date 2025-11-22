@@ -23,7 +23,17 @@ Description
 
 Base class of :ref:`SkeletonModifier3D<class_SkeletonModifier3D>`\ s that has some joint lists and applies inverse kinematics. This class has some structs, enums, and helper methods which are useful to solve inverse kinematics.
 
-\ **Note:** The IK classes that extend this handle rotation only, with bone lengths cached. It means that a position movement between processed chains can cause unintended movement.
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`mutable_bone_axes<class_IKModifier3D_property_mutable_bone_axes>` | ``true`` |
+   +-------------------------+-------------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -42,6 +52,30 @@ Methods
    +-----------------------+------------------------------------------------------------------------------------------------------------+
    | |void|                | :ref:`set_setting_count<class_IKModifier3D_method_set_setting_count>`\ (\ count\: :ref:`int<class_int>`\ ) |
    +-----------------------+------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_IKModifier3D_property_mutable_bone_axes:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **mutable_bone_axes** = ``true`` :ref:`🔗<class_IKModifier3D_property_mutable_bone_axes>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_mutable_bone_axes**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **are_bone_axes_mutable**\ (\ )
+
+If ``true``, the solver retrieves the bone axis from the bone pose every frame.
+
+If ``false``, the solver retrieves the bone axis from the bone rest and caches it, which increases performance slightly, but position changes in the bone pose made before processing this **IKModifier3D** are ignored.
 
 .. rst-class:: classref-section-separator
 

@@ -36,6 +36,8 @@ Properties
    +---------------------------+----------------------------------------------------------------------------+-----------------+
    | :ref:`float<class_float>` | :ref:`angular_delta_limit<class_IterateIK3D_property_angular_delta_limit>` | ``0.034906585`` |
    +---------------------------+----------------------------------------------------------------------------+-----------------+
+   | :ref:`bool<class_bool>`   | :ref:`deterministic<class_IterateIK3D_property_deterministic>`             | ``false``       |
+   +---------------------------+----------------------------------------------------------------------------+-----------------+
    | :ref:`int<class_int>`     | :ref:`max_iterations<class_IterateIK3D_property_max_iterations>`           | ``4``           |
    +---------------------------+----------------------------------------------------------------------------+-----------------+
    | :ref:`float<class_float>` | :ref:`min_distance<class_IterateIK3D_property_min_distance>`               | ``0.001``       |
@@ -104,6 +106,25 @@ Property Descriptions
 The maximum amount each bone can rotate in a single iteration.
 
 \ **Note:** This limitation is applied during each iteration. For example, if :ref:`max_iterations<class_IterateIK3D_property_max_iterations>` is ``4`` and :ref:`angular_delta_limit<class_IterateIK3D_property_angular_delta_limit>` is ``5`` degrees, the maximum rotation possible in a single frame is ``20`` degrees.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_IterateIK3D_property_deterministic:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **deterministic** = ``false`` :ref:`🔗<class_IterateIK3D_property_deterministic>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_deterministic**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_deterministic**\ (\ )
+
+If ``false``, the result is calculated from the previous frame's **IterateIK3D** result as the initial state.
+
+If ``true``, the previous frame's **IterateIK3D** result is discarded. At this point, the new result is calculated from the bone pose excluding the **IterateIK3D** as the initial state. This means the result will be always equal as long as the target position and the previous bone pose are the same. However, if :ref:`angular_delta_limit<class_IterateIK3D_property_angular_delta_limit>` and :ref:`max_iterations<class_IterateIK3D_property_max_iterations>` are set too small, the end bone of the chain will never reach the target.
 
 .. rst-class:: classref-item-separator
 

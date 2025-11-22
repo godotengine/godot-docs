@@ -358,13 +358,13 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/purchase_history/used_for_tracking<class_EditorExportPlatformVisionOS_property_privacy/collected_data/purchase_history/used_for_tracking>`                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_hhistory/collected<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/collected>`                                     |
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_history/collected<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/collected>`                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/search_hhistory/collection_purposes<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/collection_purposes>`                 |
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/search_history/collection_purposes<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/collection_purposes>`                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_hhistory/linked_to_user<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/linked_to_user>`                           |
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_history/linked_to_user<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/linked_to_user>`                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_hhistory/used_for_tracking<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/used_for_tracking>`                     |
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_history/used_for_tracking<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/used_for_tracking>`                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/sensitive_info/collected<class_EditorExportPlatformVisionOS_property_privacy/collected_data/sensitive_info/collected>`                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2404,11 +2404,11 @@ Indicates whether your app uses purchase history for tracking.
 
 ----
 
-.. _class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/collected:
+.. _class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/collected:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/collected** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/collected>`
+:ref:`bool<class_bool>` **privacy/collected_data/search_history/collected** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/collected>`
 
 Indicates whether your app collects search history.
 
@@ -2416,11 +2416,11 @@ Indicates whether your app collects search history.
 
 ----
 
-.. _class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/collection_purposes:
+.. _class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/collection_purposes:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **privacy/collected_data/search_hhistory/collection_purposes** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/collection_purposes>`
+:ref:`int<class_int>` **privacy/collected_data/search_history/collection_purposes** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/collection_purposes>`
 
 The reasons your app collects search history. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
 
@@ -2428,11 +2428,11 @@ The reasons your app collects search history. See `Describing data use in privac
 
 ----
 
-.. _class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/linked_to_user:
+.. _class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/linked_to_user:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/linked_to_user** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/linked_to_user>`
+:ref:`bool<class_bool>` **privacy/collected_data/search_history/linked_to_user** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/linked_to_user>`
 
 Indicates whether your app links search history to the user's identity.
 
@@ -2440,11 +2440,11 @@ Indicates whether your app links search history to the user's identity.
 
 ----
 
-.. _class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/used_for_tracking:
+.. _class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/used_for_tracking:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/used_for_tracking** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_hhistory/used_for_tracking>`
+:ref:`bool<class_bool>` **privacy/collected_data/search_history/used_for_tracking** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/collected_data/search_history/used_for_tracking>`
 
 Indicates whether your app uses search history for tracking.
 

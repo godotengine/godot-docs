@@ -41,11 +41,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+----------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`external_force<class_SpringBoneSimulator3D_property_external_force>` | ``Vector3(0, 0, 0)`` |
-   +-------------------------------+----------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`         | :ref:`setting_count<class_SpringBoneSimulator3D_property_setting_count>`   | ``0``                |
-   +-------------------------------+----------------------------------------------------------------------------+----------------------+
+   +-------------------------------+----------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`external_force<class_SpringBoneSimulator3D_property_external_force>`       | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+----------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`mutable_bone_axes<class_SpringBoneSimulator3D_property_mutable_bone_axes>` | ``true``             |
+   +-------------------------------+----------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`         | :ref:`setting_count<class_SpringBoneSimulator3D_property_setting_count>`         | ``0``                |
+   +-------------------------------+----------------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -277,6 +279,25 @@ Property Descriptions
 The constant force that always affected bones. It is equal to the result when the parent :ref:`Skeleton3D<class_Skeleton3D>` moves at this speed in the opposite direction.
 
 This is useful for effects such as wind and anti-gravity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpringBoneSimulator3D_property_mutable_bone_axes:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **mutable_bone_axes** = ``true`` :ref:`🔗<class_SpringBoneSimulator3D_property_mutable_bone_axes>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_mutable_bone_axes**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **are_bone_axes_mutable**\ (\ )
+
+If ``true``, the solver retrieves the bone axis from the bone pose every frame.
+
+If ``false``, the solver retrieves the bone axis from the bone rest and caches it, which increases performance slightly, but position changes in the bone pose made before processing this **SpringBoneSimulator3D** are ignored.
 
 .. rst-class:: classref-item-separator
 
