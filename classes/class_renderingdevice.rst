@@ -2807,6 +2807,14 @@ Texture can be used as a color attachment in a framebuffer.
 
 Texture can be used as a depth/stencil attachment in a framebuffer.
 
+.. _class_RenderingDevice_constant_TEXTURE_USAGE_DEPTH_RESOLVE_ATTACHMENT_BIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_DEPTH_RESOLVE_ATTACHMENT_BIT** = ``4096``
+
+Texture can be used as a depth/stencil resolve attachment in a framebuffer.
+
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_STORAGE_BIT:
 
 .. rst-class:: classref-enumeration-constant

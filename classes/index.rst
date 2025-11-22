@@ -870,6 +870,7 @@ Other objects
     class_offlinemultiplayerpeer
     class_oggpacketsequenceplayback
     class_openxranchortracker
+    class_openxrandroidthreadsettingsextension
     class_openxrapiextension
     class_openxrextensionwrapper
     class_openxrextensionwrapperextension

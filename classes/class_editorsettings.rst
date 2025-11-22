@@ -427,6 +427,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`filesystem/on_save/safe_save_on_backup_then_rename<class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`filesystem/on_save/warn_on_saving_large_text_resources<class_EditorSettings_property_filesystem/on_save/warn_on_saving_large_text_resources>`                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`filesystem/quick_open_dialog/default_display_mode<class_EditorSettings_property_filesystem/quick_open_dialog/default_display_mode>`                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`filesystem/quick_open_dialog/enable_fuzzy_matching<class_EditorSettings_property_filesystem/quick_open_dialog/enable_fuzzy_matching>`                                                                       |
@@ -3357,6 +3359,20 @@ If ``true``, uses lossless compression for binary resources.
 If ``true``, when saving a file, the editor will rename the old file to a different name, save a new file, then only remove the old file once the new file has been saved. This makes loss of data less likely to happen if the editor or operating system exits unexpectedly while saving (e.g. due to a crash or power outage).
 
 \ **Note:** On Windows, this feature can interact negatively with certain antivirus programs. In this case, you may have to set this to ``false`` to prevent file locking issues.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/on_save/warn_on_saving_large_text_resources:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **filesystem/on_save/warn_on_saving_large_text_resources** :ref:`🔗<class_EditorSettings_property_filesystem/on_save/warn_on_saving_large_text_resources>`
+
+If ``true``, displays a warning toast message when saving a text-based scene or resource that is larger than 500 KiB on disk. This is typically caused by binary subresources being embedded as text, which results in slow and inefficient conversion to text. This in turn impacts scene saving and loading times.
+
+This should usually be resolved by moving the embedded binary subresource to its own binary resource file (``.res`` extension instead of ``.tres``). This is the preferred approach. Alternatively, the entire scene can be saved with the binary ``.scn`` format as opposed to ``.tscn``, but this will make it less friendly to version control systems.
 
 .. rst-class:: classref-item-separator
 

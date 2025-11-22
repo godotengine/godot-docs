@@ -67,7 +67,7 @@ Properties
    :widths: auto
 
    +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | |bitfield|\[:ref:`DockLayout<enum_EditorDock_DockLayout>`\] | :ref:`available_layouts<class_EditorDock_property_available_layouts>` | ``1``                                                                     |
+   | |bitfield|\[:ref:`DockLayout<enum_EditorDock_DockLayout>`\] | :ref:`available_layouts<class_EditorDock_property_available_layouts>` | ``5``                                                                     |
    +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                     | clip_contents                                                         | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
    +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -77,11 +77,17 @@ Properties
    +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`Shortcut<class_Shortcut>`                             | :ref:`dock_shortcut<class_EditorDock_property_dock_shortcut>`         |                                                                           |
    +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                     | :ref:`global<class_EditorDock_property_global>`                       | ``true``                                                                  |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`                         | :ref:`icon_name<class_EditorDock_property_icon_name>`                 | ``&""``                                                                   |
    +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                 | :ref:`layout_key<class_EditorDock_property_layout_key>`               | ``""``                                                                    |
    +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                 | :ref:`title<class_EditorDock_property_title>`                         | ``""``                                                                    |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                                   | :ref:`title_color<class_EditorDock_property_title_color>`             | ``Color(0, 0, 0, 0)``                                                     |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                     | :ref:`transient<class_EditorDock_property_transient>`                 | ``false``                                                                 |
    +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -98,6 +104,10 @@ Methods
    | |void| | :ref:`_save_layout_to_config<class_EditorDock_private_method__save_layout_to_config>`\ (\ config\: :ref:`ConfigFile<class_ConfigFile>`, section\: :ref:`String<class_String>`\ ) |virtual| |const| |
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void| | :ref:`_update_layout<class_EditorDock_private_method__update_layout>`\ (\ layout\: :ref:`int<class_int>`\ ) |virtual|                                                                              |
+   +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`close<class_EditorDock_method_close>`\ (\ )                                                                                                                                                  |
+   +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`open<class_EditorDock_method_open>`\ (\ )                                                                                                                                                    |
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -123,15 +133,29 @@ flags **DockLayout**: :ref:`🔗<enum_EditorDock_DockLayout>`
 
 Allows placing the dock in the vertical dock slots on either side of the editor.
 
-\ **Note:** Currently this flag has no effect because the bottom panel is not a proper dock slot. This means that the dock can always be vertical.
-
 .. _class_EditorDock_constant_DOCK_LAYOUT_HORIZONTAL:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`DockLayout<enum_EditorDock_DockLayout>` **DOCK_LAYOUT_HORIZONTAL** = ``2``
 
-Allows placing the dock in the editor's bottom panel. Implement :ref:`_update_layout()<class_EditorDock_private_method__update_layout>` to handle changing layouts.
+Allows placing the dock in the editor's bottom panel.
+
+.. _class_EditorDock_constant_DOCK_LAYOUT_FLOATING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DockLayout<enum_EditorDock_DockLayout>` **DOCK_LAYOUT_FLOATING** = ``4``
+
+Allows making the dock floating (opened as a separate window).
+
+.. _class_EditorDock_constant_DOCK_LAYOUT_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DockLayout<enum_EditorDock_DockLayout>` **DOCK_LAYOUT_ALL** = ``7``
+
+Allows placing the dock in all available slots.
 
 .. rst-class:: classref-section-separator
 
@@ -146,16 +170,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`DockLayout<enum_EditorDock_DockLayout>`\] **available_layouts** = ``1`` :ref:`🔗<class_EditorDock_property_available_layouts>`
+|bitfield|\[:ref:`DockLayout<enum_EditorDock_DockLayout>`\] **available_layouts** = ``5`` :ref:`🔗<class_EditorDock_property_available_layouts>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_available_layouts**\ (\ value\: |bitfield|\[:ref:`DockLayout<enum_EditorDock_DockLayout>`\]\ )
 - |bitfield|\[:ref:`DockLayout<enum_EditorDock_DockLayout>`\] **get_available_layouts**\ (\ )
 
-The available layouts for this dock, as a bitmask.
-
-If you want to make all layouts available, use ``available_layouts = DOCK_LAYOUT_VERTICAL | DOCK_LAYOUT_HORIZONTAL``.
+The available layouts for this dock, as a bitmask. By default, the dock allows vertical and floating layouts.
 
 .. rst-class:: classref-item-separator
 
@@ -214,6 +236,23 @@ The shortcut used to open the dock. This property can only be set before this do
 
 ----
 
+.. _class_EditorDock_property_global:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **global** = ``true`` :ref:`🔗<class_EditorDock_property_global>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_global**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_global**\ (\ )
+
+If ``true``, the dock appears in the **Editor > Editor Docks** menu and can be closed. Non-global docks can still be closed using :ref:`close()<class_EditorDock_method_close>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorDock_property_icon_name:
 
 .. rst-class:: classref-property
@@ -261,6 +300,40 @@ The key representing this dock in the editor's layout file. If empty, the dock's
 
 The title of the dock's tab. If empty, the dock's :ref:`Node.name<class_Node_property_name>` will be used. If the name is auto-generated (contains ``@``), the first child's name will be used instead.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDock_property_title_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **title_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_EditorDock_property_title_color>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_title_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_title_color**\ (\ )
+
+The color of the dock tab's title. If its alpha is ``0.0``, the default font color will be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDock_property_transient:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **transient** = ``false`` :ref:`🔗<class_EditorDock_property_transient>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_transient**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_transient**\ (\ )
+
+If ``true``, the dock is not automatically opened or closed when loading an editor layout, only moved. It also can't be opened using a shortcut. This is meant for docks that are opened and closed in specific cases, such as when selecting a :ref:`TileMap<class_TileMap>` or :ref:`AnimationTree<class_AnimationTree>` node.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -306,6 +379,30 @@ Implement this method to handle the layout switching for this dock. ``layout`` i
 
     _update_layout(layout):
         box_container.vertical = (layout == DOCK_LAYOUT_VERTICAL)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDock_method_close:
+
+.. rst-class:: classref-method
+
+|void| **close**\ (\ ) :ref:`🔗<class_EditorDock_method_close>`
+
+Closes the dock, making its tab hidden.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDock_method_open:
+
+.. rst-class:: classref-method
+
+|void| **open**\ (\ ) :ref:`🔗<class_EditorDock_method_open>`
+
+Opens the dock. It will appear in the last used dock slot. If the dock has no default slot, it will be opened floating.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

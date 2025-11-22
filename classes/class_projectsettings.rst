@@ -199,13 +199,13 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                                                               | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`debug/gdscript/warnings/directory_rules<class_ProjectSettings_property_debug/gdscript/warnings/directory_rules>`                                                                                     | ``{ "res://addons": 0 }``                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/empty_file<class_ProjectSettings_property_debug/gdscript/warnings/empty_file>`                                                                                               | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/enable<class_ProjectSettings_property_debug/gdscript/warnings/enable>`                                                                                                       | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/enum_variable_without_default<class_ProjectSettings_property_debug/gdscript/warnings/enum_variable_without_default>`                                                         | ``1``                                                                                            |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/exclude_addons<class_ProjectSettings_property_debug/gdscript/warnings/exclude_addons>`                                                                                       | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/get_node_default_without_onready<class_ProjectSettings_property_debug/gdscript/warnings/get_node_default_without_onready>`                                                   | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2032,6 +2032,8 @@ The number of accessibility information updates per second.
 
 If ``true``, :ref:`MeshInstance3D.skeleton<class_MeshInstance3D_property_skeleton>` will point to the parent node (``..``) by default, which was the behavior before Godot 4.6. It's recommended to keep this setting disabled unless the old behavior is needed for compatibility.
 
+\ **Note:** If you disable this option in an existing project, it's strongly recommended to use the ``Project > Tools > Upgrade Project Files...`` option to ensure existing scenes do not break.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2924,7 +2926,7 @@ If the ``--log-file <file>`` :doc:`command line argument <../tutorials/editor/co
 
 :ref:`int<class_int>` **debug/gdscript/warnings/assert_always_false** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to ``false``.
+When set to **Warn** or **Error**, produces a warning or an error respectively when an ``assert`` call always evaluates to ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -2936,7 +2938,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/assert_always_true** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to ``true``.
+When set to **Warn** or **Error**, produces a warning or an error respectively when an ``assert`` call always evaluates to ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -2948,7 +2950,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/confusable_capture_reassignment** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_capture_reassignment>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable captured by a lambda is reassigned, since this does not modify the outer local variable.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a local variable captured by a lambda is reassigned, since this does not modify the outer local variable.
 
 .. rst-class:: classref-item-separator
 
@@ -2960,7 +2962,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/confusable_identifier** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_identifier>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier contains characters that can be confused with something else, like when mixing different alphabets.
+When set to **Warn** or **Error**, produces a warning or an error respectively when an identifier contains characters that can be confused with something else, like when mixing different alphabets.
 
 .. rst-class:: classref-item-separator
 
@@ -2972,7 +2974,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_declaration** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_declaration>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier declared in the nested block has the same name as an identifier declared below in the parent block.
+When set to **Warn** or **Error**, produces a warning or an error respectively when an identifier declared in the nested block has the same name as an identifier declared below in the parent block.
 
 .. rst-class:: classref-item-separator
 
@@ -2984,7 +2986,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_usage** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_usage>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier that will be shadowed below in the block is used.
+When set to **Warn** or **Error**, produces a warning or an error respectively when an identifier that will be shadowed below in the block is used.
 
 .. rst-class:: classref-item-separator
 
@@ -2996,9 +2998,27 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/deprecated_keyword** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when deprecated keywords are used.
+When set to **Warn** or **Error**, produces a warning or an error respectively when deprecated keywords are used.
 
 \ **Note:** There are currently no deprecated keywords, so this warning is never produced.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/directory_rules:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **debug/gdscript/warnings/directory_rules** = ``{ "res://addons": 0 }`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/directory_rules>`
+
+The rules for including or excluding scripts when generating warnings, as a dictionary. Each rule is an entry consisting of a directory path (key) and a decision (value). When trying to generate a warning, the GDScript parser chooses the most specific rule, i.e. the most nested directory containing the script. If the decision is **Exclude**, warnings are not generated for this script. If the decision is **Include** or the script doesn't satisfy any of the rules, the warning configuration specified in the Project Settings is applied.
+
+It is recommended to include your own addons/libraries, either project-specific or actively being developed at the moment. Third-party or project-agnostic addons/libraries should be excluded, as they may be incompatible with the project's warning configuration.
+
+\ **Note:** It is not recommended to remove or change the rule for ``"res://addons"`` as the project's warning configuration may break third-party addons. Instead, consider including individual addons, if necessary.
+
+\ **Note:** The editor does not check whether the specified paths are existing directories. It also does not automatically update these paths when directories are moved.
 
 .. rst-class:: classref-item-separator
 
@@ -3010,7 +3030,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/empty_file** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/empty_file>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an empty file is parsed.
+When set to **Warn** or **Error**, produces a warning or an error respectively when an empty file is parsed.
 
 .. rst-class:: classref-item-separator
 
@@ -3034,19 +3054,7 @@ If ``true``, enables specific GDScript warnings (see ``debug/gdscript/warnings/*
 
 :ref:`int<class_int>` **debug/gdscript/warnings/enum_variable_without_default** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/enum_variable_without_default>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable has an enum type but no explicit default value, but only if the enum does not contain ``0`` as a valid value.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_debug/gdscript/warnings/exclude_addons:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **debug/gdscript/warnings/exclude_addons** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/exclude_addons>`
-
-If ``true``, scripts in the ``res://addons`` folder will not generate warnings.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a variable has an enum type but no explicit default value, but only if the enum does not contain ``0`` as a valid value.
 
 .. rst-class:: classref-item-separator
 
@@ -3058,7 +3066,7 @@ If ``true``, scripts in the ``res://addons`` folder will not generate warnings.
 
 :ref:`int<class_int>` **debug/gdscript/warnings/get_node_default_without_onready** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/get_node_default_without_onready>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when :ref:`Node.get_node()<class_Node_method_get_node>` (or the shorthand ``$``) is used as default value of a class variable without the ``@onready`` annotation.
+When set to **Warn** or **Error**, produces a warning or an error respectively when :ref:`Node.get_node()<class_Node_method_get_node>` (or the shorthand ``$``) is used as default value of a class variable without the ``@onready`` annotation.
 
 .. rst-class:: classref-item-separator
 
@@ -3070,7 +3078,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/incompatible_ternary** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a ternary operator may emit values with incompatible types.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a ternary operator may emit values with incompatible types.
 
 .. rst-class:: classref-item-separator
 
@@ -3082,7 +3090,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/inference_on_variant** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/inference_on_variant>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a static inferred type uses a :ref:`Variant<class_Variant>` as initial value, which makes the static type to also be Variant.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a static inferred type uses a :ref:`Variant<class_Variant>` as initial value, which makes the static type to also be Variant.
 
 .. rst-class:: classref-item-separator
 
@@ -3094,7 +3102,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/inferred_declaration** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/inferred_declaration>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable, constant, or parameter has an implicitly inferred static type. In GDScript, type inference is performed by declaring a variable with ``:=`` instead of ``=`` and leaving out the type specifier. For example, ``var x := 1`` will *infer* the :ref:`int<class_int>` type, while ``var x: int = 1`` explicitly declares the variable as :ref:`int<class_int>`.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a variable, constant, or parameter has an implicitly inferred static type. In GDScript, type inference is performed by declaring a variable with ``:=`` instead of ``=`` and leaving out the type specifier. For example, ``var x := 1`` will *infer* the :ref:`int<class_int>` type, while ``var x: int = 1`` explicitly declares the variable as :ref:`int<class_int>`.
 
 \ **Note:** This warning is recommended *in addition* to :ref:`debug/gdscript/warnings/untyped_declaration<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>` if you want to always specify the type explicitly. Having ``INFERRED_DECLARATION`` warning level higher than ``UNTYPED_DECLARATION`` warning level makes little sense and is not recommended.
 
@@ -3108,7 +3116,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/int_as_enum_without_cast** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_cast>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when trying to use an integer as an enum without an explicit cast.
+When set to **Warn** or **Error**, produces a warning or an error respectively when trying to use an integer as an enum without an explicit cast.
 
 .. rst-class:: classref-item-separator
 
@@ -3120,7 +3128,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/int_as_enum_without_match** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_match>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when trying to use an integer as an enum when there is no matching enum member for that numeric value.
+When set to **Warn** or **Error**, produces a warning or an error respectively when trying to use an integer as an enum when there is no matching enum member for that numeric value.
 
 .. rst-class:: classref-item-separator
 
@@ -3132,7 +3140,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/integer_division** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when dividing an integer by another integer (the decimal part will be discarded).
+When set to **Warn** or **Error**, produces a warning or an error respectively when dividing an integer by another integer (the decimal part will be discarded).
 
 .. rst-class:: classref-item-separator
 
@@ -3144,7 +3152,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/missing_await** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/missing_await>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a coroutine without ``await``.
+When set to **Warn** or **Error**, produces a warning or an error respectively when calling a coroutine without ``await``.
 
 .. rst-class:: classref-item-separator
 
@@ -3156,7 +3164,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/missing_tool** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/missing_tool>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when the base class script has the ``@tool`` annotation, but the current class script does not have it.
+When set to **Warn** or **Error**, produces a warning or an error respectively when the base class script has the ``@tool`` annotation, but the current class script does not have it.
 
 .. rst-class:: classref-item-separator
 
@@ -3168,7 +3176,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/narrowing_conversion** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when passing a floating-point value to a function that expects an integer (it will be converted and lose precision).
+When set to **Warn** or **Error**, produces a warning or an error respectively when passing a floating-point value to a function that expects an integer (it will be converted and lose precision).
 
 .. rst-class:: classref-item-separator
 
@@ -3180,7 +3188,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/native_method_override** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/native_method_override>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a method in the script overrides a native method, because it may not behave as expected.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a method in the script overrides a native method, because it may not behave as expected.
 
 .. rst-class:: classref-item-separator
 
@@ -3192,7 +3200,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/onready_with_export** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/onready_with_export>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when the ``@onready`` annotation is used together with the ``@export`` annotation, since it may not behave as expected.
+When set to **Warn** or **Error**, produces a warning or an error respectively when the ``@onready`` annotation is used together with the ``@export`` annotation, since it may not behave as expected.
 
 .. rst-class:: classref-item-separator
 
@@ -3204,7 +3212,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/redundant_await** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a function that is not a coroutine is called with await.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a function that is not a coroutine is called with await.
 
 .. rst-class:: classref-item-separator
 
@@ -3216,7 +3224,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/redundant_static_unload** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/redundant_static_unload>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when the ``@static_unload`` annotation is used in a script without any static variables.
+When set to **Warn** or **Error**, produces a warning or an error respectively when the ``@static_unload`` annotation is used in a script without any static variables.
 
 .. rst-class:: classref-item-separator
 
@@ -3240,7 +3248,7 @@ When enabled, using a property, enum, or function that was renamed since Godot 3
 
 :ref:`int<class_int>` **debug/gdscript/warnings/return_value_discarded** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a function without using its return value (by assigning it to a variable or using it as a function argument). These return values are sometimes used to indicate possible errors using the :ref:`Error<enum_@GlobalScope_Error>` enum.
+When set to **Warn** or **Error**, produces a warning or an error respectively when calling a function without using its return value (by assigning it to a variable or using it as a function argument). These return values are sometimes used to indicate possible errors using the :ref:`Error<enum_@GlobalScope_Error>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3252,7 +3260,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_global_identifier** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when defining a local or member variable, signal, or enum that would have the same name as a built-in function or global class name, thus shadowing it.
+When set to **Warn** or **Error**, produces a warning or an error respectively when defining a local or member variable, signal, or enum that would have the same name as a built-in function or global class name, thus shadowing it.
 
 .. rst-class:: classref-item-separator
 
@@ -3264,7 +3272,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable or local constant shadows a member declared in the current class.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a local variable or local constant shadows a member declared in the current class.
 
 .. rst-class:: classref-item-separator
 
@@ -3276,7 +3284,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable_base_class** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable_base_class>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable or local constant shadows a member declared in a base class.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a local variable or local constant shadows a member declared in a base class.
 
 .. rst-class:: classref-item-separator
 
@@ -3288,7 +3296,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/standalone_expression** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling an expression that may have no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
+When set to **Warn** or **Error**, produces a warning or an error respectively when calling an expression that may have no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
 
 .. rst-class:: classref-item-separator
 
@@ -3300,7 +3308,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/standalone_ternary** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a ternary expression that may have no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
+When set to **Warn** or **Error**, produces a warning or an error respectively when calling a ternary expression that may have no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
 
 .. rst-class:: classref-item-separator
 
@@ -3312,7 +3320,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/static_called_on_instance** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/static_called_on_instance>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a static method from an instance of a class instead of from the class directly.
+When set to **Warn** or **Error**, produces a warning or an error respectively when calling a static method from an instance of a class instead of from the class directly.
 
 .. rst-class:: classref-item-separator
 
@@ -3324,7 +3332,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unassigned_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when using a variable that wasn't previously assigned.
+When set to **Warn** or **Error**, produces a warning or an error respectively when using a variable that wasn't previously assigned.
 
 .. rst-class:: classref-item-separator
 
@@ -3336,7 +3344,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unassigned_variable_op_assign** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when assigning a variable using an assignment operator like ``+=`` if the variable wasn't previously assigned.
+When set to **Warn** or **Error**, produces a warning or an error respectively when assigning a variable using an assignment operator like ``+=`` if the variable wasn't previously assigned.
 
 .. rst-class:: classref-item-separator
 
@@ -3348,7 +3356,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unreachable_code** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_code>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when unreachable code is detected (such as after a ``return`` statement that will always be executed).
+When set to **Warn** or **Error**, produces a warning or an error respectively when unreachable code is detected (such as after a ``return`` statement that will always be executed).
 
 .. rst-class:: classref-item-separator
 
@@ -3360,7 +3368,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unreachable_pattern** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_pattern>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an unreachable ``match`` pattern is detected.
+When set to **Warn** or **Error**, produces a warning or an error respectively when an unreachable ``match`` pattern is detected.
 
 .. rst-class:: classref-item-separator
 
@@ -3372,7 +3380,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_call_argument** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_call_argument>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when using an expression whose type may not be compatible with the function parameter expected.
+When set to **Warn** or **Error**, produces a warning or an error respectively when using an expression whose type may not be compatible with the function parameter expected.
 
 .. rst-class:: classref-item-separator
 
@@ -3384,7 +3392,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_cast** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a :ref:`Variant<class_Variant>` value is cast to a non-Variant.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a :ref:`Variant<class_Variant>` value is cast to a non-Variant.
 
 .. rst-class:: classref-item-separator
 
@@ -3396,7 +3404,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_method_access** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_method_access>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a method whose presence is not guaranteed at compile-time in the class.
+When set to **Warn** or **Error**, produces a warning or an error respectively when calling a method whose presence is not guaranteed at compile-time in the class.
 
 .. rst-class:: classref-item-separator
 
@@ -3408,7 +3416,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_property_access** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when accessing a property whose presence is not guaranteed at compile-time in the class.
+When set to **Warn** or **Error**, produces a warning or an error respectively when accessing a property whose presence is not guaranteed at compile-time in the class.
 
 .. rst-class:: classref-item-separator
 
@@ -3420,7 +3428,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_void_return** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_void_return>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when returning a call from a ``void`` function when such call cannot be guaranteed to be also ``void``.
+When set to **Warn** or **Error**, produces a warning or an error respectively when returning a call from a ``void`` function when such call cannot be guaranteed to be also ``void``.
 
 .. rst-class:: classref-item-separator
 
@@ -3432,7 +3440,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/untyped_declaration** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable or parameter has no static type, or if a function has no static return type.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a variable or parameter has no static type, or if a function has no static return type.
 
 \ **Note:** This warning is recommended together with :ref:`EditorSettings.text_editor/completion/add_type_hints<class_EditorSettings_property_text_editor/completion/add_type_hints>` to help achieve type safety.
 
@@ -3446,7 +3454,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unused_local_constant** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a local constant is never used.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a local constant is never used.
 
 .. rst-class:: classref-item-separator
 
@@ -3458,7 +3466,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unused_parameter** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_parameter>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a function parameter is never used.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a function parameter is never used.
 
 .. rst-class:: classref-item-separator
 
@@ -3470,7 +3478,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unused_private_class_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_private_class_variable>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a private member variable is never used.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a private member variable is never used.
 
 .. rst-class:: classref-item-separator
 
@@ -3482,7 +3490,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unused_signal** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_signal>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a signal is declared but never explicitly used in the class.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a signal is declared but never explicitly used in the class.
 
 .. rst-class:: classref-item-separator
 
@@ -3494,7 +3502,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unused_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable is unused.
+When set to **Warn** or **Error**, produces a warning or an error respectively when a local variable is unused.
 
 .. rst-class:: classref-item-separator
 
@@ -4780,7 +4788,11 @@ Main window initial position.
 
 \ ``1`` - "Primary Screen Center".
 
-\ ``2`` - "Other Screen Center", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set the screen.
+\ ``3`` - "Other Screen Center", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set the screen.
+
+\ ``4`` - "Center of Screen With Mouse Pointer".
+
+\ ``5`` - "Center of Screen With Keyboard Focus".
 
 \ **Note:** This setting only affects the exported project, or when the project is run from the command line. In the editor, the value of :ref:`EditorSettings.run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>` is used instead.
 

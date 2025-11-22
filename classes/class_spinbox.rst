@@ -68,6 +68,8 @@ Properties
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_SpinBox_property_alignment>`                           | ``0``                                                                        |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`custom_arrow_round<class_SpinBox_property_custom_arrow_round>`         | ``false``                                                                    |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>`           | ``0.0``                                                                      |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`editable<class_SpinBox_property_editable>`                             | ``true``                                                                     |
@@ -192,6 +194,23 @@ Property Descriptions
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment**\ (\ )
 
 Changes the alignment of the underlying :ref:`LineEdit<class_LineEdit>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_property_custom_arrow_round:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **custom_arrow_round** = ``false`` :ref:`🔗<class_SpinBox_property_custom_arrow_round>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_custom_arrow_round**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_custom_arrow_rounding**\ (\ )
+
+If ``true``, the value will be rounded to a multiple of :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>` when interacting with the arrow buttons. Otherwise, increments the value by :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>` and then rounds it according to :ref:`Range.step<class_Range_property_step>`.
 
 .. rst-class:: classref-item-separator
 

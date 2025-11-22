@@ -399,9 +399,9 @@ Defining this method is **optional**. If not overridden, it's ``true``.
 
 :ref:`bool<class_bool>` **_is_highend**\ (\ ) |virtual| |const| :ref:`🔗<class_VisualShaderNodeCustom_private_method__is_highend>`
 
-Override this method to enable high-end mark in the Visual Shader Editor's members dialog.
+Override this method to enable the high-end mark in the Visual Shader Editor's members dialog. This should return ``true`` for nodes that only work when using the Forward+ and Mobile renderers.
 
-Defining this method is **optional**. If not overridden, it's ``false``.
+Defining this method is **optional**. If not overridden, it's ``false``, which indicates this node works with all renderers (including Compatibility).
 
 .. rst-class:: classref-item-separator
 

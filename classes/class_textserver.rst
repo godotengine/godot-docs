@@ -1079,6 +1079,14 @@ Determines whether the ellipsis at the end of the text is enforced and may not b
 
 Accounts for the text being justified before attempting to trim it (see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`).
 
+.. _class_TextServer_constant_OVERRUN_SHORT_STRING_ELLIPSIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextOverrunFlag<enum_TextServer_TextOverrunFlag>` **OVERRUN_SHORT_STRING_ELLIPSIS** = ``32``
+
+Determines whether the ellipsis should be added regardless of the string length, otherwise it is added only if the string is 6 characters or longer.
+
 .. rst-class:: classref-item-separator
 
 ----

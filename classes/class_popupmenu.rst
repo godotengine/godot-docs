@@ -52,7 +52,7 @@ Properties
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`prefer_native_menu<class_PopupMenu_property_prefer_native_menu>`                             | ``false``                                                                    |
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                       | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``                                                                      |
+   | :ref:`float<class_float>`                       | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.2``                                                                      |
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`SystemMenus<enum_NativeMenu_SystemMenus>` | :ref:`system_menu_id<class_PopupMenu_property_system_menu_id>`                                     | ``0``                                                                        |
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -469,7 +469,7 @@ If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **submenu_popup_delay** = ``0.3`` :ref:`🔗<class_PopupMenu_property_submenu_popup_delay>`
+:ref:`float<class_float>` **submenu_popup_delay** = ``0.2`` :ref:`🔗<class_PopupMenu_property_submenu_popup_delay>`
 
 .. rst-class:: classref-property-setget
 
@@ -477,6 +477,8 @@ If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
 - :ref:`float<class_float>` **get_submenu_popup_delay**\ (\ )
 
 Sets the delay time in seconds for the submenu item to popup on mouse hovering. If the popup menu is added as a child of another (acting as a submenu), it will inherit the delay time of the parent menu item.
+
+\ **Note:** If the mouse is exiting a submenu item with an open submenu and enters a different submenu item, the submenu popup delay time is affected by the direction of the mouse movement toward the open submenu. If the mouse is moving toward the submenu, the open submenu will wait approximately ``0.5`` seconds before closing, which then allows the hovered submenu item to open. This additional delay allows the mouse time to move to the open submenu across other menu items without prematurely closing. If the mouse is not moving toward the open submenu, for example in a downward direction, the open submenu will close immediately.
 
 .. rst-class:: classref-item-separator
 

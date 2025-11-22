@@ -147,6 +147,8 @@ Methods
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_dds_from_buffer<class_Image_method_load_dds_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                 |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_exr_from_buffer<class_Image_method_load_exr_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                 |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                     | :ref:`load_from_file<class_Image_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                        |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_jpg_from_buffer<class_Image_method_load_jpg_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                 |
@@ -1542,6 +1544,18 @@ Loads an image from the binary contents of a DDS file.
 
 ----
 
+.. _class_Image_method_load_exr_from_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **load_exr_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_load_exr_from_buffer>`
+
+Loads an image from the binary contents of an OpenEXR file.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Image_method_load_from_file:
 
 .. rst-class:: classref-method
@@ -1770,8 +1784,6 @@ Saves the image as a DDS (DirectDraw Surface) file to a byte array. DDS is a con
 
 Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
-\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr()<class_Image_method_save_exr>` will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` when it is called from an exported project.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -1783,8 +1795,6 @@ Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the
 :ref:`PackedByteArray<class_PackedByteArray>` **save_exr_to_buffer**\ (\ grayscale\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Image_method_save_exr_to_buffer>`
 
 Saves the image as an EXR file to a byte array. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return an empty byte array if Godot was compiled without the TinyEXR module.
-
-\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr_to_buffer()<class_Image_method_save_exr_to_buffer>` will return an empty byte array when it is called from an exported project.
 
 .. rst-class:: classref-item-separator
 
