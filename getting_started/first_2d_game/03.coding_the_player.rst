@@ -323,6 +323,53 @@ movement. Let's place this code at the end of the ``_process()`` function:
 Play the scene again and check that the animations are correct in each of the
 directions.
 
+
+You may notice that the animations for moving diagonally are not yet all aligned 
+with the animation for moving straight down. As a result, the player may appear to flip 
+incorrectly or play the wrong animation when switching from moving down to diagonally down.
+
+To correct this, we also need to check for cases where multiple movement keys are pressed 
+at the same time. Based on the direction the player is moving, we can then adjust the 
+animation’s flip settings using the same boolean checks we used earlier. This ensures the 
+correct animation is displayed no matter which combination of inputs the player uses.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    if(velocity.x != 0 && velocity.y !=0): # If vertical and horizontal movement keys are pressed
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$AnimatedSprite2D.flip_v = velocity.y > 0
+	elif velocity.x != 0:
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_v = false
+		# See the note below about the following boolean assignment.
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+	elif velocity.y != 0	:
+		$AnimatedSprite2D.animation = "up"
+		$AnimatedSprite2D.flip_v = velocity.y > 0
+
+ .. code-tab:: csharp
+
+        if (velocity.X != 0 && velocity.Y != 0)
+        {
+            animatedSprite2D.Animation = "walk";
+            animatedSprite2D.FlipH = velocity.X < 0;
+            animatedSprite2D.FlipV = velocity.Y > 0;
+        }
+        else if (velocity.X != 0)
+        {
+            animatedSprite2D.Animation = "walk";
+            animatedSprite2D.FlipV = false;
+            // See the note below about the following boolean assignment.
+            animatedSprite2D.FlipH = velocity.X < 0;
+        }
+        else if (velocity.Y != 0)
+        {
+            animatedSprite2D.Animation = "up";
+            animatedSprite2D.FlipV = velocity.Y > 0;
+        }
+
 .. tip:: A common mistake here is to type the names of the animations wrong. The
         animation names in the SpriteFrames panel must match what you type in
         the code. If you named the animation ``"Walk"``, you must also use a
