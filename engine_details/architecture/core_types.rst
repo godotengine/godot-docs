@@ -150,6 +150,21 @@ scripting API.
 .. |typed_dictionary| replace:: `TypedDictionary <https://github.com/godotengine/godot/blob/master/core/variant/typed_dictionary.h>`__
 .. |pair| replace:: `Pair <https://github.com/godotengine/godot/blob/master/core/templates/pair.h>`__
 
+Relocation safety
+^^^^^^^^^^^^^^^^^
+
+Godot's containers assume their elements are `trivially relocatable <https://open-std.org/JTC1/SC22/WG21/docs/papers/2020/p1144r5.html>`__.
+
+This means that, if you store data types in it that have pointers to themselves, or are otherwise
+`not trivially relocatable <https://open-std.org/JTC1/SC22/WG21/docs/papers/2020/p1144r5.html#non-trivial-samples>`__,
+Godot might crash. Note that storing **pointers to** objects that are not trivially relocatable, such as some Object
+subclasses, is unproblematic and supported.
+
+The reason to assume trivial relocatability is that it allows us to make use of important optimization techniques, such
+as relocation by ``memcpy`` or ``realloc``.
+
+`GH-100509 <https://github.com/godotengine/godot/issues/100509>`__ tracks this decision.
+
 .. _doc_core_concurrency_types:
 
 Multithreading / Concurrency
