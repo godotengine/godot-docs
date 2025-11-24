@@ -2394,12 +2394,12 @@ There are a few things to keep in mind here:
    to the ``state.gd`` base class, even if it does nothing. This brings us to the fact that you
    can pass expressions to the base constructor as well, not just variables, e.g.:
 
-   ::
+::
 
-       # idle.gd
+    # idle.gd
 
-       func _init():
-           super(5)
+    func _init():
+        super(5)
 
 Static constructor
 ~~~~~~~~~~~~~~~~~~
