@@ -124,7 +124,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
 
     func get_input():
         rotation_direction = Input.get_axis("left", "right")
-        velocity = transform.x * Input.get_axis("down", "up") * speed
+        velocity = transform.y * Input.get_axis("down", "up") * speed
 
     func _physics_process(delta):
         get_input()
@@ -148,7 +148,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
         public void GetInput()
         {
             _rotationDirection = Input.GetAxis("left", "right");
-            Velocity = Transform.X * Input.GetAxis("down", "up") * Speed;
+            Velocity = Transform.Y * Input.GetAxis("down", "up") * Speed;
         }
 
         public override void _PhysicsProcess(double delta)
@@ -162,7 +162,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
 Here we've added two variables to track our rotation direction and speed.
 The rotation is applied directly to the body's ``rotation`` property.
 
-To set the velocity, we use the body's ``transform.x`` which is a vector pointing
+To set the velocity, we use the body's ``transform.y`` which is a vector pointing
 in the body's "forward" direction, and multiply that by the speed.
 
 Rotation + movement (mouse)
