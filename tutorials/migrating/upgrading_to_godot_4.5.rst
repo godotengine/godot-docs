@@ -223,7 +223,7 @@ Core
     it's called on. In 4.4, this duplicated everything instead, including external resources.
     If you were deep-duplicating a resource that contained references to other
     external resources, those external resources aren't duplicated anymore. You must call
-    :ref:`Resource.duplicate_deep(RESOURCE_DEEP_DUPLICATE_ALL) <class_Resource_method_duplicate_deep>`
+    :ref:`Resource.duplicate_deep(DEEP_DUPLICATE_ALL) <class_Resource_method_duplicate_deep>`
     instead to keep the old behavior.
 
 .. note::
