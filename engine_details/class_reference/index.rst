@@ -314,7 +314,7 @@ the end of the description:
 
 .. code-block:: none
 
-    [b]Note:[/b] Only available when using the Vulkan renderer.
+    [b]Note:[/b] Only available when using the Forward+ renderer.
 
 To denote crucial information that could cause security issues or loss of data
 if not followed carefully, add a paragraph starting with "[b]Warning:[/b]" at

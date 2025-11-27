@@ -522,7 +522,7 @@ JNLM (Non-Local Means with Joint Filtering)
 JNLM is the default denoising method and is included in Godot. It uses a simple
 but efficient denoising algorithm known as *non-local means*. JNLM runs on the
 GPU using a compute shader, and is compatible with any GPU that can run Godot
-4's Vulkan-based rendering methods. No additional setup is required.
+4's RenderingDevice-based renderers. No additional setup is required.
 
 JNLM's denoising can be adjusted using the **Denoiser Strength** property that
 is visible when **Use Denoiser** enabled. Higher values can be more effective at

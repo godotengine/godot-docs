@@ -60,7 +60,7 @@ There are several workarounds for this:
 The editor or project takes a very long time to start
 -----------------------------------------------------
 
-When using one of the Vulkan-based renderers (Forward+ or Mobile), the first
+When using one of the RenderingDevice-based renderers (Forward+ or Mobile), the first
 startup is expected to be relatively long. This is because shaders
 need to be compiled before they can be cached. Shaders also need to be cached
 again after updating Godot, after updating graphics drivers or after switching

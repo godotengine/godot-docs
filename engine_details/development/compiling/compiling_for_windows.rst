@@ -15,7 +15,6 @@ Requirements
 
 For compiling under Windows, the following is required:
 
-
 - A C++ compiler. Use one of the following:
 
     - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
@@ -36,6 +35,8 @@ For compiling under Windows, the following is required:
 - `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system. Using the
   latest release is recommended, especially for proper support of recent Visual
   Studio releases.
+- :ref:`Direct3D 12 dependencies <doc_compiling_for_windows_installing_d3d12_requirements>`
+  (can be skipped with the ``d3d12=no`` SCons option if Direct3D 12 support is not desired).
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command:
@@ -182,17 +183,21 @@ dependencies. Running it will bring up the Project Manager.
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
-Compiling with support for Direct3D 12
---------------------------------------
+.. _doc_compiling_for_windows_installing_d3d12_requirements:
 
-By default, builds of Godot do not contain support for the Direct3D 12 graphics
-API.
+Installing Direct3D 12 requirements
+-----------------------------------
+
+By default, Windows builds of Godot contain support for the Direct3D 12 graphics
+API. Compiling with Direct3D 12 support requires additional dependencies
+to be installed. If you wish to skip this step, you can use the ``d3d12=no``
+SCons option; Vulkan and OpenGL support will remain available if you do so.
 
 You can install the required dependencies by running
 ``python misc/scripts/install_d3d12_sdk_windows.py``
-in the Godot source repository. After running this script, add the ``d3d12=yes``
-SCons option to enable Direct3D 12 support. This will use the default paths for
-the various dependencies, which match the ones used in the script.
+in the Godot source repository. After running this script, compile Godot as usual.
+This will use the default paths for the various dependencies, which match the
+ones used in the script.
 
 You can find the detailed steps below if you wish to set up dependencies
 manually, but the above script handles everything for you (including the
