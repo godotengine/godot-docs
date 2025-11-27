@@ -499,15 +499,18 @@ open source applications made with Godot.
 Is it possible to use Godot as a library?
 -----------------------------------------
 
-Godot is meant to be used with its editor. We recommend you give it a try, as it
-will most likely save you time in the long term. There are no plans to make
-Godot usable as a library, as it would make the rest of the engine more
-convoluted and difficult to use for casual users.
+If you are looking to make a game with Godot, keep in mind Godot is designed
+to be used with its editor. We recommend you give it a try, as it
+will most likely save you time in the long term.
 
-If you want to use a rendering library, look into using an established rendering
-engine instead. Keep in mind rendering engines usually have smaller communities
-compared to Godot. This will make it more difficult to find answers to your
-questions.
+For more specialized applications, it can make sense to look into using
+Godot as a library. Since Godot 4.6, there is **experimental** support
+for using Godot as a static or shared library in the form of LibGodot.
+This is currently supported on Windows, macOS, and Linux. Support for
+Android and iOS is planned for a future release.
+
+You can find sample applications that use Godot as a library in the
+`migeran/libgodot_project GitHub repository <https://github.com/migeran/libgodot_project>`__.
 
 What user interface toolkit does Godot use?
 -------------------------------------------
