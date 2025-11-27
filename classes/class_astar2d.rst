@@ -169,7 +169,7 @@ Note that this function is hidden in the default **AStar2D** class.
 
 :ref:`bool<class_bool>` **_filter_neighbor**\ (\ from_id\: :ref:`int<class_int>`, neighbor_id\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_AStar2D_private_method__filter_neighbor>`
 
-Called when neighboring enters processing and if :ref:`neighbor_filter_enabled<class_AStar2D_property_neighbor_filter_enabled>` is ``true``. If ``true`` is returned the point will not be processed.
+Called when neighboring cells enters processing and if :ref:`neighbor_filter_enabled<class_AStar2D_property_neighbor_filter_enabled>` is ``true``. If ``true`` is returned the point will not be processed.
 
 Note that this function is hidden in the default **AStar2D** class.
 
