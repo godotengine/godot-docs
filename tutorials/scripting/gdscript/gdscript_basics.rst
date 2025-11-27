@@ -1651,12 +1651,19 @@ as a static type of the rest parameter:
 
     ::
 
-        func log_data(...values):
-            # ...
-
-        func other_func(...args):
+        func test_func(...args):
             #log_data(...args) # This won't work.
             log_data.callv(args) # This will work.
+
+        func log_data(...values):
+            # You should use `callv()` if you want to pass `values` as the argument list,
+            # rather than passing the array as the first argument.
+            prints.callv(values)
+            # You can use array concatenation to prepend/append the argument list.
+            write_data.callv(["user://log.txt"] + values)
+
+        func write_data(path, ...values):
+            # ...
 
 Abstract functions
 ~~~~~~~~~~~~~~~~~~
