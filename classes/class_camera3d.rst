@@ -698,6 +698,8 @@ Based on ``value``, enables or disables the specified layer in the :ref:`cull_ma
 
 Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera3D_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world space units. See also :ref:`frustum_offset<class_Camera3D_property_frustum_offset>`.
 
+\ **Note:** The ``size`` defines the size of the near plane. It is the height or width, according to the value of :ref:`keep_aspect<class_Camera3D_property_keep_aspect>`
+
 .. rst-class:: classref-item-separator
 
 ----
