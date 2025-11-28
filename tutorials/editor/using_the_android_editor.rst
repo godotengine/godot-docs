@@ -72,7 +72,7 @@ Here are the known limitations and issues of the Android editor:
 - No support for Android plugins as they require gradle build support. GDExtensions plugins are supported.
 - No C#/Mono support.
 - No support for external script editors.
-- While available, the *Vulkan Forward+* renderer is not recommended due to severe performance issues.
+- While available, the Forward+ renderer is not recommended due to severe performance issues.
 - UX not optimized for Android phones form-factor.
 - `Android Go devices <https://developer.android.com/guide/topics/androidgo>`__ lacks
   the *All files access* permission required for device read/write access.
