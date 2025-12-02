@@ -144,3 +144,11 @@ select the delimiter to use when parsing the CSV file.
 .. image:: img/import_csv.webp
 
 Be sure to click **Reimport** after any change to these options.
+
+Loading the CSV file as a translation
+-------------------------------------
+
+Once a CSV file is imported, it is **not** automatically registered as a translation
+source for the project. Remember to follow the steps described in
+:ref:`doc_internationalizing_games_configuring_imported_translation` so that the
+translation is actually used when running the project.

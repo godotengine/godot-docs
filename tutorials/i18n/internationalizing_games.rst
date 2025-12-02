@@ -22,6 +22,8 @@ page.
 .. note:: We will be using the official demo as an example; you can
           `download it from the Asset Library <https://godotengine.org/asset-library/asset/2776>`_.
 
+.. _doc_internationalizing_games_configuring_imported_translation:
+
 Configuring the imported translation
 ------------------------------------
 
