@@ -153,10 +153,14 @@ custom behavior.
 
 .. warning::
 
-  Nodes added via an EditorPlugin are "CustomType" nodes. While they work
+  Nodes added via an EditorPlugin's :ref:`add_custom_type() <class_EditorPlugin_method_add_custom_type>`
+  function are "custom type" nodes. While they work
   with any scripting language, they have fewer features than
   :ref:`the Script Class system <doc_gdscript_basics_class_name>`. If you
-  are writing GDScript or NativeScript, we recommend using Script Classes instead.
+  are using GDScript or GDExtension, we recommend using Script Classes instead.
+
+  Custom types are still the recommended approach for C#, as it does not support
+  Script Classes.
 
 To create a new node type, you can use the function
 :ref:`add_custom_type() <class_EditorPlugin_method_add_custom_type>` from the
@@ -231,12 +235,19 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
     func _enter_tree():
         # Initialization of the plugin goes here.
         # Add the new type with a name, a parent type, a script and an icon.
+        #
+        # NOTE: If `my_button.gd` uses `class_name MyButton`, do not call `add_custom_type()`
+        # and leave this function empty instead with `pass`.
+        # Script Classes and custom types will conflict if the same name is used for both.
         add_custom_type("MyButton", "Button", preload("my_button.gd"), preload("icon.png"))
 
 
     func _exit_tree():
         # Clean-up of the plugin goes here.
         # Always remember to remove it from the engine when deactivated.
+        #
+        # NOTE: This should not be called if Script Classes are used instead.
+        # In this case, leave this function empty with `pass`.
         remove_custom_type("MyButton")
 
  .. code-tab:: csharp
