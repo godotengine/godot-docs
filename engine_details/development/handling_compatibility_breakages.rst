@@ -114,12 +114,11 @@ Next, this should be included in the ``.cpp`` file we're adding compatibility me
 
     #include "core/variant/typed_array.h"
 
-And finally, the changes reported by the API validation step should be added to the relevant validation file. Because this was
-done during the development of 4.3, this would be ``misc/extension_api_validation/4.2-stable.expected`` (including changes not shown in
-this example):
+And finally, the changes reported by the API validation step should be added to a validation file. Because this was
+done during the development of 4.3, the validation file would be in the ``misc/extension_api_validation/4.2-stable/`` folder:
 
 .. code-block:: text
-    :caption: misc/extension_api_validation/4.2-stable.expected
+    :caption: misc/extension_api_validation/4.2-stable/GH-88047.txt
 
     GH-88047
     --------
@@ -133,10 +132,8 @@ this example):
     Added optional "allow_partial_path" argument to get_id_path and get_point_path methods in AStar classes.
     Compatibility methods registered.
 
-The instructions for how to add to that file are at the top of the file itself.
-
 If you get a "Hash changed" error for a method, it means that the compatibility binding is missing or incorrect.
-Such lines shouldn't be added to the ``.expected`` file, but fixed by binding the proper compatibility method.
+Such lines shouldn't be added to the validation file, but fixed by binding the proper compatibility method.
 
 And that's it! You might run into a bit more complicated cases, like rearranging arguments,
 changing return types, etc., but this covers the basic on how to use this system.
