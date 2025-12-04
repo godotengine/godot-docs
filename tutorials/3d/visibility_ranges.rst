@@ -82,12 +82,12 @@ In the inspector of any node that inherits from GeometryInstance3D, you can adju
 the following properties in the GeometryInstance3D's **Visibility Range** section:
 
 - **Begin:** The instance will be hidden when the camera is closer to the
-  instance's *origin* than this value (in 3D units).
+  *center of the instance's AABB* (axis-aligned bounding box) than this value (in 3D units).
 - **Begin Margin:** The hysteresis or alpha fade transition distance to use for
   the close-up transition (in 3D units). The behavior of this property depends
   on **Fade Mode**.
 - **End:** The instance will be hidden when the camera is further away from the
-  instance's *origin* than this value (in 3D units).
+  *center of the instance's AABB* than this value (in 3D units).
 - **End Margin:** The hysteresis or alpha fade transition distance to use for
   the far-away transition (in 3D units). The behavior of this property depends
   on **Fade Mode**.
