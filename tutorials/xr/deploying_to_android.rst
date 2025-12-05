@@ -16,6 +16,7 @@ Before following the OpenXR-specific instructions here, you'll need to first set
 See :ref:`doc_exporting_for_android` for the full details, and return here when you've finished these steps.
 
 .. warning::
+
     While the Mobile Vulkan renderer has many optimizations targeted at mobile devices, we're still working out the kinks.
     It is highly advisable to use the compatibility renderer (OpenGL) for the time being when targeting Android based XR devices.
 
@@ -23,6 +24,7 @@ Gradle Android build
 --------------------
 
 .. note::
+
     Official support for the Android platform wasn't added to the OpenXR specification initially resulting in various vendors creating custom loaders to make OpenXR available on their headsets.
     While the long term expectation is that all vendors will adopt the official OpenXR loader, for now these loaders need to be added to your project.
 
@@ -51,6 +53,13 @@ file into your projects `addons` folder.
 
 You can find the main repository of the vendors plugin `here <https://github.com/GodotVR/godot_openxr_vendors>`__.
 
+.. note::
+
+    From Godot 4.6 onwards, the vendor plugin is now an optional but recommended plugin.
+    Godot can export directly to most Android-compatible devices.
+    This can be useful for demonstration and tutorial projects where a single APK can be deployed to multiple devices.
+    The vendor plugin unlocks vendor specific implementations and settings, and may be required to release on app stores.
+
 Creating the export presets
 ---------------------------
 You will need to setup a separate export preset for each device, as each device will need its own loader included.
@@ -59,12 +68,12 @@ Open **Project** and select **Export..**.
 Click on **Add..** and select **Android**.
 Next change the name of the export preset for the device you're setting this up for, say **Meta Quest**.
 And enable **Use Gradle Build**.
+Next change the **XR Mode** to **OpenXR**.
 If you want to use one-click deploy (described below), ensure that **Runnable** is enabled.
 
-If the vendors plugins were installed correctly you should find entries for the
-different headsets under **XR Features**. Change the **XR Mode** to **OpenXR**, then
-select the entry for your headset if you see one. If you don't see one enable the
-Khronos plugin.
+If you've installed the vendor plugin you will also find entries for the different headsets under **XR Features**.
+Select the entry for your headset, if you see one.
+Otherwise, enable the Khronos plugin.
 
 .. image:: img/android_meta_quest.webp
 
