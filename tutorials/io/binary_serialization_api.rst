@@ -490,23 +490,23 @@ If no flags are set (flags == 0), the floats are sent as 32 bit single precision
 +----------+-------+---------+---------------------------------------------------------------+
 | Offset   | Len   | Type    | Description                                                   |
 +==========+=======+=========+===============================================================+
-| 4        | 4     | Float   | The X component of the X column vector, accessed via [0][0]  |
+| 4        | 4     | Float   | The X component of the X column vector, accessed via [0][0]   |
 +----------+-------+---------+---------------------------------------------------------------+
-| 8        | 4     | Float   | The Y component of the X column vector, accessed via [0][1]  |
+| 8        | 4     | Float   | The Y component of the X column vector, accessed via [0][1]   |
 +----------+-------+---------+---------------------------------------------------------------+
-| 12       | 4     | Float   | The Z component of the X column vector, accessed via [0][2]  |
+| 12       | 4     | Float   | The Z component of the X column vector, accessed via [0][2]   |
 +----------+-------+---------+---------------------------------------------------------------+
-| 16       | 4     | Float   | The X component of the Y column vector, accessed via [1][0]  |
+| 16       | 4     | Float   | The X component of the Y column vector, accessed via [1][0]   |
 +----------+-------+---------+---------------------------------------------------------------+
-| 20       | 4     | Float   | The Y component of the Y column vector, accessed via [1][1]  |
+| 20       | 4     | Float   | The Y component of the Y column vector, accessed via [1][1]   |
 +----------+-------+---------+---------------------------------------------------------------+
-| 24       | 4     | Float   | The Z component of the Y column vector, accessed via [1][2]  |
+| 24       | 4     | Float   | The Z component of the Y column vector, accessed via [1][2]   |
 +----------+-------+---------+---------------------------------------------------------------+
-| 28       | 4     | Float   | The X component of the Z column vector, accessed via [2][0]  |
+| 28       | 4     | Float   | The X component of the Z column vector, accessed via [2][0]   |
 +----------+-------+---------+---------------------------------------------------------------+
-| 32       | 4     | Float   | The Y component of the Z column vector, accessed via [2][1]  |
+| 32       | 4     | Float   | The Y component of the Z column vector, accessed via [2][1]   |
 +----------+-------+---------+---------------------------------------------------------------+
-| 36       | 4     | Float   | The Z component of the Z column vector, accessed via [2][2]  |
+| 36       | 4     | Float   | The Z component of the Z column vector, accessed via [2][2]   |
 +----------+-------+---------+---------------------------------------------------------------+
 
 If flag ``ENCODE_FLAG_64`` is set (flags & 1 == 1), the floats are sent as 64 bit double precision.
