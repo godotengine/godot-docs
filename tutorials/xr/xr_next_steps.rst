@@ -9,6 +9,17 @@ Now that we have the basics covered there are several options to look at for you
 * You can look at a number of `XR demos here <https://github.com/godotengine/godot-demo-projects/tree/master/xr>`_.
 * You can find 3rd party tutorials on our :ref:`Tutorials and resources <doc_community_tutorials>` page.
 
+Godot OpenXR vendor plugin
+--------------------------
+
+The vendor plugin isn't just for :ref:`deploying to Android <doc_deploying_to_android>`.
+In the vendor plugin, we implement many OpenXR vendor extensions that unlock unique features on certain devices,
+or features that are new enough that a standardized implementation is not available yet.
+
+Together with the OpenXR working group we maintain a 
+`client support matrix <https://github.khronos.org/OpenXR-Inventory/extension_support.html#client_matrix>`_ that lists
+all the OpenXR extensions Godot supports and whether they require the vendor plugin.
+
 XR Toolkits
 -----------
 

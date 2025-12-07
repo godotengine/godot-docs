@@ -45,7 +45,7 @@ well optimized for XR right now compared to the other two.
 OpenXR
 ------
 
-OpenXR is a new industry standard that allows different XR platforms to present themselves through a standardised API to XR applications. This standard is an open standard maintained by the Khronos Group and thus aligns very well with Godot's interests.
+OpenXR is a new industry standard that allows different XR platforms to present themselves through a standardized API to XR applications. This standard is an open standard maintained by the Khronos Group and thus aligns very well with Godot's interests.
 
 The Vulkan implementation of OpenXR is closely integrated with Vulkan, taking over part of the Vulkan system. This requires tight integration of certain core graphics features in the Vulkan renderer which are needed before the XR system is setup. This was one of the main deciding factors to include OpenXR as a core interface.
 
