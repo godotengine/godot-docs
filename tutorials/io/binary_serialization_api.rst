@@ -139,6 +139,11 @@ The header's upper 16 bits contain type-specific flags:
 |                                            | as an instance ID only                      |
 +--------------------------------------------+---------------------------------------------+
 
+.. note::
+
+    For integers and floats used in any of these data types, if the ENCODE_FLAG_64 flag is set
+    then the value is serialized as a 64-bit integer or double-precision float respectively.
+
 For typed containers (Array and Dictionary), additional flags indicate the container's type information:
 
 **Array (bits 16-17):**
@@ -184,8 +189,6 @@ null
 
 2: :ref:`int<class_int>`
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-If no flags are set (flags == 0), the integer is serialized with a 32 bit integer:
 
 +----------+----------+-----------+-------------------------+
 | Offset   | Length   | Type      | Description             |
