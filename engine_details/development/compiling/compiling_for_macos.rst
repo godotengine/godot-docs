@@ -226,8 +226,9 @@ x86_64 architectures.
 To create a ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/macos_template.app``. This process can be automated by using
 the ``generate_bundle=yes`` option on the *last* SCons command used to build export templates
-(so that all binaries can be included). This option also takes care of calling ``lipo`` to create
-a *Universal 2* binary from two separate ARM64 and x86_64 binaries (if both were compiled beforehand).
+(so that all binaries can be included). This will create a ``godot_macos.zip`` file in ``bin/``
+and additionally takes care of calling ``lipo`` to create a *Universal 2* binary from two separate
+ARM64 and x86_64 binaries (if both were compiled beforehand).
 
 .. note::
 
@@ -246,12 +247,24 @@ a *Universal 2* binary from two separate ARM64 and x86_64 binaries (if both were
     easier. The main upside of dynamic linking is that it allows updating
     MoltenVK without having to recompile export templates.
 
-You can then zip the ``macos_template.app`` folder to reproduce the ``macos.zip``
-template from the official Godot distribution:
+If you created the ``.app`` manually, you can zip the ``macos_template.app`` folder
+to reproduce the ``macos.zip`` template from the official Godot distribution:
 
 ::
 
     zip -r9 macos.zip macos_template.app
+
+To use your custom export templates, you can select the ``godot_macos.zip`` file in
+the advanced options of your export presets:
+
+.. image:: img/mactemplates.webp
+
+Alternatively, if you want all your presets to use your custom export template, you
+can rename the ``godot_macos.zip`` file to ``macos.zip`` and move it to the default
+location for export templates:
+
+::
+    ~/Library/Application Support/Godot/export_templates/<GODOT_VERSION>/macos.zip
 
 Cross-compiling for macOS from Linux
 ------------------------------------
