@@ -67,11 +67,11 @@ The header is structured as follows:
 +-------------+----------------------+
 | 10 (0x0A)   | Vector3i             |
 +-------------+----------------------+
-| 11 (0x0B)   | Vector4              |
+| 11 (0x0B)   | Transform2D          |
 +-------------+----------------------+
-| 12 (0x0C)   | Vector4i             |
+| 12 (0x0C)   | Vector4              |
 +-------------+----------------------+
-| 13 (0x0D)   | Transform2D          |
+| 13 (0x0D)   | Vector4i             |
 +-------------+----------------------+
 | 14 (0x0E)   | Plane                |
 +-------------+----------------------+
@@ -176,7 +176,7 @@ precision.
 0: NIL
 ~~~~~~~
 
-null
+null - No value is serialized after the header.
 
 1: :ref:`bool<class_bool>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -786,6 +786,7 @@ For each string entry (0 <= i < length):
 +----------+----------+-----------+----------------------------------------------------+
 | 4        | N        | Bytes     | UTF-8 encoded string with a null terminator        |
 +----------+----------+-----------+----------------------------------------------------+
+
 Every string is padded to 4 bytes.
 
 .. note::
