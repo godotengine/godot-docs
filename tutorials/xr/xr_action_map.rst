@@ -140,7 +140,7 @@ The columns in our table are as follows:
   * - 1
     - my_first_action_set
     - This is the internal name of the action set.
-      OpenXR doesn't specify specific restrictions on this name other then size, however
+      OpenXR doesn't specify specific restrictions on this name other than size, however
       some XR runtimes will not like spaces or special characters.
   * - 2
     - My first action set
