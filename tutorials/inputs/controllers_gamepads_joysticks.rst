@@ -280,10 +280,6 @@ is running. If you notice the system is turning off its display when playing
 with a gamepad, check the value of **Display > Window > Energy Saving > Keep Screen On**
 in the Project Settings.
 
-On Linux, power saving prevention requires the engine to be able to use D-Bus.
-Check whether D-Bus is installed and reachable if running the project within a
-Flatpak, as sandboxing restrictions may make this impossible by default.
-
 Troubleshooting
 ---------------
 
