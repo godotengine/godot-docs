@@ -114,8 +114,53 @@ Next, this should be included in the ``.cpp`` file we're adding compatibility me
 
     #include "core/variant/typed_array.h"
 
-And finally, the changes reported by the API validation step should be added to a validation file. Because this was
-done during the development of 4.3, the validation file would be in the ``misc/extension_api_validation/4.2-stable/`` folder:
+Finally, the GDExtension API changes need to be recorded. To do this, first compile Godot on the ``master`` branch, and
+then run it with the ``--dump-extension-api`` flag:
+
+.. code-block:: shell
+
+    git switch master
+    scons
+    godot --dump-extension-api
+    
+This will create a file named ``extension_api.json`` in your current directory. Switch to your feature branch, recompile Godot,
+and then run it with the ``--validate-extension-api`` flag followed by the path to the ``extension_api.json`` file you just generated:
+
+.. code-block:: shell
+
+    git switch my-feature-branch
+    scons
+    godot --validate-extension-api /path/to/extension_api.json
+
+This will generate some lines starting with ``Validate extension JSON`` like so:
+
+.. code-block:: text
+
+    Validate extension JSON: Error: Field 'classes/AStar2D/methods/get_id_path/arguments': size changed value in new API, from 2 to 3.
+    Validate extension JSON: Error: Field 'classes/AStar2D/methods/get_point_path/arguments': size changed value in new API, from 2 to 3.
+    Validate extension JSON: Error: Field 'classes/AStar3D/methods/get_id_path/arguments': size changed value in new API, from 2 to 3.
+    Validate extension JSON: Error: Field 'classes/AStar3D/methods/get_point_path/arguments': size changed value in new API, from 2 to 3.
+    Validate extension JSON: Error: Field 'classes/AStarGrid2D/methods/get_id_path/arguments': size changed value in new API, from 2 to 3.
+    Validate extension JSON: Error: Field 'classes/AStarGrid2D/methods/get_point_path/arguments': size changed value in new API, from 2 to 3.
+
+.. attention::
+
+    If you get a ``Hash changed`` error for a method, it means that the compatibility binding is missing or incorrect.
+    Such lines shouldn't be added to the validation file, but fixed by binding the proper compatibility method.
+    Make sure to double-check the following:
+
+    - For the compatibility method (the one whose name ends with the PR number), the argument types, names, and default
+      values must be identical to the version of the method from before your changes.
+    - In ``_bind_compatibility_methods()``, argument names provided to the ``D_METHOD()`` macro in ``ClassDB::bind_compatibility_method()``
+      must be identical to those from the ``ClassDB::bind_method()`` call for the original method.
+
+Add these lines, followed by a comment explaining what the API change was and the actions taken to prevent breakage,
+to a validation file named after the GitHub pull request ID and placed in the folder of the Godot version it would have broken compatibility for.
+
+Since this example was for PR #88047, its file name would be ``GH-88047.txt``, and because this was done during
+the development of 4.3 (thus changing from 4.2), the file would be in the ``misc/extension_api_validation/4.2-stable/`` folder.
+
+See below for a complete example of such a file for this PR:
 
 .. code-block:: text
     :caption: misc/extension_api_validation/4.2-stable/GH-88047.txt
@@ -132,10 +177,7 @@ done during the development of 4.3, the validation file would be in the ``misc/e
     Added optional "allow_partial_path" argument to get_id_path and get_point_path methods in AStar classes.
     Compatibility methods registered.
 
-If you get a "Hash changed" error for a method, it means that the compatibility binding is missing or incorrect.
-Such lines shouldn't be added to the validation file, but fixed by binding the proper compatibility method.
-
 And that's it! You might run into a bit more complicated cases, like rearranging arguments,
-changing return types, etc., but this covers the basic on how to use this system.
+changing return types, etc., but this covers the basics on how to use this system.
 
 For more information, see `pull request #76446 <https://github.com/godotengine/godot/pull/76446>`_.
