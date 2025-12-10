@@ -30,11 +30,48 @@ Packed arrays
 ~~~~~~~~~~~~~
 
 While in Godot, the ``Packed*Array`` types are aliases of ``Vector``, in godot-cpp, they're their own types, using the
-Godot bindings. This is because these types, along with their methods, are exposed through the GDExtension interface,
-which would not be compatible with the templated nature of ``Vector``.
+Godot bindings. This is because ``Packed*Array`` are exposed to Godot and limited to only Godot types, whereas ``Vector``
+can hold any C++ type which Godot might not be able to understand.
 
-In general though, the ``Packed*Array`` types work the same way as their ``Vector`` aliases. However, you should be
-aware that the ``Variant`` wrappers for ``Packed*Array`` treat them as pass-by-reference, while the ``Packed*Array``
+In general, the ``Packed*Array`` types work the same way as their ``Vector`` aliases, however, there are some notable
+differences.
+
+Data access
++++++++++++
+
+``Vector`` keeps its data entirely within the GDExtension, whereas the ``Packed*Array`` types keep their data on the
+Godot side. This means that any time a ``Packed*Array`` is accessed, it needs to call into Godot.
+
+To efficiently read or write a large amount of data into a ``Packed*Array``, you should call ``.ptr()`` (for reading)
+or ``.ptrw()`` (for writing) to get a pointer directly to the array's memory:
+
+.. code-block:: cpp
+
+    // BAD!
+    void my_bad_function(const PackedByteArray &p_array) {
+        for (int i = 0; i < p_array.size(); i++) {
+            // Each time this runs it needs to call into Godot.
+            uint8_t byte = p_array[i];
+
+            // .. do something with the byte.
+        }
+    }
+
+    // GOOD :-)
+    void my_good_function(const PackedByteArray &p_array) {
+        const uint8_t *array_ptr = p_array.ptr();
+        for (int i = 0; i < p_array.size(); i++) {
+            // This directly accesses the memory!
+            uint8_t byte = array_ptr[i];
+
+            // .. do something with the byte.
+        }
+    }
+
+Copying
++++++++
+
+``Variant`` wrappers for ``Packed*Array`` treat them as pass-by-reference, while the ``Packed*Array``
 types themselves are pass-by-value (implemented as copy-on-write).
 
 In addition, it may be of interest that GDScript calls use the ``Variant`` call interface: Any ``Packed*Array``
