@@ -502,10 +502,12 @@ What user interface toolkit does Godot use?
 
 Godot does not use a standard :abbr:`GUI (Graphical User Interface)` toolkit
 like GTK, Qt or wxWidgets. Instead, Godot uses its own user interface toolkit,
-rendered using OpenGL ES or Vulkan. This toolkit is exposed in the form of
-Control nodes, which are used to render the editor (which is written in C++).
-These Control nodes can also be used in projects from any scripting language
-supported by Godot.
+which is always rendered using hardware acceleration. There is no built-in software
+fallback, although external solutions that emulate graphics APIs on the CPU can be used.
+
+This toolkit is exposed in the form of Control nodes, which are used to render
+the editor (which is written in C++). These Control nodes can also be used in projects
+from any scripting language supported by Godot.
 
 This custom toolkit makes it possible to benefit from hardware acceleration and
 have a consistent appearance across all platforms. On top of that, it doesn't
@@ -513,9 +515,9 @@ have to deal with the LGPL licensing caveats that come with GTK or Qt. Lastly,
 this means Godot is "eating its own dog food" since the editor itself is one of
 the most complex users of Godot's UI system.
 
-This custom UI toolkit :ref:`can't be used as a library <doc_faq_use_godot_as_library>`,
-but you can still
-:ref:`use Godot to create non-game applications by using the editor <doc_faq_non_game_applications>`.
+This custom UI toolkit can be :ref:`embedded into other applications <doc_faq_use_godot_as_library>`
+(experimental). However, the preferred way to use it is to
+:ref:`use Godot to create non-game applications with the editor <doc_faq_non_game_applications>`.
 
 .. _doc_faq_why_scons:
 
