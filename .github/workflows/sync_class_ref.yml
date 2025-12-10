@@ -30,10 +30,10 @@ jobs:
 
     steps:
       - name: Checkout the documentation repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Checkout the engine repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: 'godotengine/godot'
           # Use the appropriate branch for the documentation version.
