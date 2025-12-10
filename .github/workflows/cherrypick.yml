@@ -51,7 +51,7 @@ jobs:
 
     - name: Create Pull Request
       if: steps.cherrypick_commit.outcome == 'success'
-      uses: peter-evans/create-pull-request@v7
+      uses: peter-evans/create-pull-request@v8
       with:
         commit-message: 'Cherrypick to ${{ env.TARGET_BRANCH }}'
         branch: 'cherrypick-${{ env.PR_NUMBER }}-${{ env.TARGET_BRANCH }}'
