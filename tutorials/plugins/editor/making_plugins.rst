@@ -331,15 +331,13 @@ a new scene in the editor then edit it.
 
 For an editor dock, the root node **must** be a :ref:`Control <class_Control>`
 or one of its child classes. For this tutorial, you can create a single button.
-The name of the root node will also be the name that appears on the dock tab,
-so be sure to give it a short and descriptive name.
-Also, don't forget to add some text to your button.
+Don't forget to add some text to your button.
 
 .. image:: img/making_plugins-my_custom_dock_scene.webp
 
 Save this scene as ``my_dock.tscn``. Now, we need to grab the scene we created
 then add it as a dock in the editor. For this, you can rely on the function
-:ref:`add_control_to_dock() <class_EditorPlugin_method_add_control_to_dock>` from the
+:ref:`add_dock() <class_EditorPlugin_method_add_dock>` from the
 :ref:`EditorPlugin <class_EditorPlugin>` class.
 
 You need to select a dock position and define the control to add
@@ -361,19 +359,29 @@ The script could look like this:
     func _enter_tree():
         # Initialization of the plugin goes here.
         # Load the dock scene and instantiate it.
-        dock = preload("res://addons/my_custom_dock/my_dock.tscn").instantiate()
+        var dock_scene = preload("res://addons/my_custom_dock/my_dock.tscn").instantiate()
 
-        # Add the loaded scene to the docks.
-        add_control_to_dock(DOCK_SLOT_LEFT_UL, dock)
+        # Create the dock and add the loaded scene to it.
+        dock = EditorDock.new()
+        dock.add_child(dock_scene)
+
+        dock.title = "My Dock"
+
         # Note that LEFT_UL means the left of the editor, upper-left dock.
+        dock.default_slot = DOCK_SLOT_LEFT_UL
+
+        # Allow the dock to be on the left or right of the editor, and to be made floating.
+        dock.available_layouts = EditorDock.DOCK_LAYOUT_VERTICAL | EditorDock.DOCK_LAYOUT_FLOATING
+
+        add_dock(dock)
 
 
     func _exit_tree():
         # Clean-up of the plugin goes here.
         # Remove the dock.
-        remove_control_from_docks(dock)
+        remove_dock(dock)
         # Erase the control from the memory.
-        dock.free()
+        dock.queue_free()
 
  .. code-tab:: csharp
 
@@ -383,21 +391,35 @@ The script could look like this:
     [Tool]
     public partial class CustomDock : EditorPlugin
     {
-        private Control _dock;
+        private EditorDock _dock;
 
         public override void _EnterTree()
         {
-            _dock = GD.Load<PackedScene>("res://addons/MyCustomDock/MyDock.tscn").Instantiate<Control>();
+            var _dock_scene = GD.Load<PackedScene>("res://addons/MyCustomDock/MyDock.tscn").Instantiate<Control>();
             AddControlToDock(DockSlot.LeftUl, _dock);
+
+            // Create the dock and add the loaded scene to it.
+            _dock = new EditorDock();
+            _dock.AddChild(dock_scene);
+
+            _dock.Title = "My Dock";
+
+            // Note that LeftUl means the left of the editor, upper-left dock.
+            _dock.DefaultSlot = DockSlot.LeftUl;
+
+            // Allow the dock to be on the left or right of the editor, and to be made floating.
+            _dock.AvailableLayouts = DockLayout.Horizontal | DockLayout.Floating;
+
+            AddDock(_dock);
         }
 
         public override void _ExitTree()
         {
             // Clean-up of the plugin goes here.
             // Remove the dock.
-            RemoveControlFromDocks(_dock);
+            RemoveDock(_dock);
             // Erase the control from the memory.
-            _dock.Free();
+            _dock.QueueFree();
         }
     }
     #endif
