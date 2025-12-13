@@ -91,6 +91,10 @@ Most GLSL ES 3.0 datatypes are supported:
 |                        | Only supported in Compatibility/Android platform.                               |
 +------------------------+---------------------------------------------------------------------------------+
 
+These types can also be put inside :ref:`arrays <doc_shading_language_arrays>`
+or :ref:`structs <doc_shading_language_structs>`, which are also usable as function parameters
+or return values. Arrays can be used as uniforms, but structs cannot.
+
 .. warning::
 
     Local variables are not initialized to a default value such as ``0.0``. If
@@ -202,7 +206,7 @@ rules:
 
 1. If a larger matrix is constructed from a smaller matrix, the additional rows
 and columns are set to the values they would have in an identity matrix.
-2. If a smaller matrix is constructed from a larger matrix, the top, left
+1. If a smaller matrix is constructed from a larger matrix, the top, left
 submatrix of the larger matrix is used.
 
 .. code-block:: glsl
@@ -254,6 +258,8 @@ there are downsides such as the additional overhead of conversion between
 precisions. Refer to the documentation of the target architecture for further
 information. In many cases, mobile drivers cause inconsistent or unexpected
 behavior and it is best to avoid specifying precision unless necessary.
+
+.. _doc_shading_language_arrays:
 
 Arrays
 ------
@@ -410,6 +416,8 @@ Alternatively, this can be done by using the ``uint(x)`` built-in conversion fun
 
     uint a = 1u;
     uint b = uint(1);
+
+.. _doc_shading_language_structs:
 
 Structs
 -------
@@ -1104,23 +1112,23 @@ method on a node that inherits from :ref:`class_GeometryInstance3D`:
 
 When using per-instance uniforms, there are some restrictions you should be aware of:
 
-- **Per-instance uniforms do not support textures or arrays**, only regular scalar and vector types. 
+- **Per-instance uniforms do not support textures or arrays**, only regular scalar and vector types.
 
 .. note::
 
     Due to GLSL limitations, you cannot directly index a texture array
     using a per-instance uniform. Sampler arrays can only be indexed by
     compile-time constant expressions.
-   
+
     As a workaround, pass a texture array as a regular uniform and the
     desired texture index as a per-instance uniform. Then use a ``switch``
     statement to select the texture:
-   
+
    .. code-block:: glsl
-   
+
       uniform sampler2D texture_array[4];
       instance uniform int texture_index;
-      
+
       void fragment() {
           vec4 color;
           switch (texture_index) {
@@ -1137,7 +1145,7 @@ When using per-instance uniforms, there are some restrictions you should be awar
                   color = texture(texture_array[3], UV);
                   break;
           }
-          
+
           COLOR = color;
       }
 
