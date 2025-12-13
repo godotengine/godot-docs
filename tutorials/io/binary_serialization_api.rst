@@ -316,37 +316,7 @@ If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the float is serialized 
 | 12       | 4        | Integer   | Z coordinate   |
 +----------+----------+-----------+----------------+
 
-11: :ref:`Vector4<class_vector4>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+----------+----------+---------+----------------+
-| Offset   | Length   | Type    | Description    |
-+==========+==========+=========+================+
-| 4        | 4        | Float   | X coordinate   |
-+----------+----------+---------+----------------+
-| 8        | 4        | Float   | Y coordinate   |
-+----------+----------+---------+----------------+
-| 12       | 4        | Float   | Z coordinate   |
-+----------+----------+---------+----------------+
-| 16       | 4        | Float   | W coordinate   |
-+----------+----------+---------+----------------+
-
-12: :ref:`Vector4i<class_vector4i>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+----------+----------+-----------+----------------+
-| Offset   | Length   | Type      | Description    |
-+==========+==========+===========+================+
-| 4        | 4        | Integer   | X coordinate   |
-+----------+----------+-----------+----------------+
-| 8        | 4        | Integer   | Y coordinate   |
-+----------+----------+-----------+----------------+
-| 12       | 4        | Integer   | Z coordinate   |
-+----------+----------+-----------+----------------+
-| 16       | 4        | Integer   | W coordinate   |
-+----------+----------+-----------+----------------+
-
-13: :ref:`Transform2D<class_transform2d>`
+11: :ref:`Transform2D<class_transform2d>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+----------+---------+-----------------------------------------+
@@ -364,6 +334,38 @@ If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the float is serialized 
 +----------+----------+---------+-----------------------------------------+
 | 24       | 4        | Float   | The Y component of the Origin Vector2   |
 +----------+----------+---------+-----------------------------------------+
+
+12: :ref:`Vector4<class_vector4>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------+----------+---------+----------------+
+| Offset   | Length   | Type    | Description    |
++==========+==========+=========+================+
+| 4        | 4        | Float   | X coordinate   |
++----------+----------+---------+----------------+
+| 8        | 4        | Float   | Y coordinate   |
++----------+----------+---------+----------------+
+| 12       | 4        | Float   | Z coordinate   |
++----------+----------+---------+----------------+
+| 16       | 4        | Float   | W coordinate   |
++----------+----------+---------+----------------+
+
+13: :ref:`Vector4i<class_vector4i>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------+----------+-----------+----------------+
+| Offset   | Length   | Type      | Description    |
++==========+==========+===========+================+
+| 4        | 4        | Integer   | X coordinate   |
++----------+----------+-----------+----------------+
+| 8        | 4        | Integer   | Y coordinate   |
++----------+----------+-----------+----------------+
+| 12       | 4        | Integer   | Z coordinate   |
++----------+----------+-----------+----------------+
+| 16       | 4        | Integer   | W coordinate   |
++----------+----------+-----------+----------------+
+
+
 
 14: :ref:`Plane<class_plane>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -615,7 +617,7 @@ Header:
 +----------+----------+-----------+--------------------------------------------------------+
 | 8        | N        | Bytes     | Class name (UTF-8 encoded string, padded to 4 bytes)   |
 +----------+----------+-----------+--------------------------------------------------------+
-| 8+N      | 4        | Integer   | The number of properties that are serialized (P)       |
+| 8 + N    | 4        | Integer   | The number of properties that are serialized (P)       |
 +----------+----------+-----------+--------------------------------------------------------+
 
 Following this header is a contiguous block of key-value property entries, defined below,
@@ -628,7 +630,7 @@ where the offset is relative to the start of each property entry:
 +----------+--------------+--------------+-----------------------------------------------------------+
 | 4        | N            | Bytes        | Property name (UTF-8 encoded string, padded to 4 bytes)   |
 +----------+--------------+--------------+-----------------------------------------------------------+
-| 4+N      | <variable>   | <variable>   | Property value, using this same format                    |
+| 4 + N    | <variable>   | <variable>   | Property value, using this same format                    |
 +----------+--------------+--------------+-----------------------------------------------------------+
 
 .. note::
@@ -664,7 +666,7 @@ and decoding produces an empty Callable.
 +----------+----------+-----------+---------------------------------------------------------+
 | 8        | N        | Bytes     | Signal name (UTF-8 encoded string, padded to 4 bytes)   |
 +----------+----------+-----------+---------------------------------------------------------+
-| 8+N      | 8        | Integer   | Object instance ID (64-bit)                             |
+| 8 + N    | 8        | Integer   | Object instance ID (64-bit)                             |
 +----------+----------+-----------+---------------------------------------------------------+
 
 27: :ref:`Dictionary<class_dictionary>`
@@ -710,7 +712,7 @@ encoded using the same serialization format defined in this document.
 28: :ref:`Array<class_array>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For typed arrays, the header flags indicate the element type kind (see Header
+For typed arrays, the header flags indicate the element type (see Header
 Flags section). The container type is encoded the same way as Dictionary.
 
 **Element count (immediately following type information, if any):**
@@ -732,7 +734,7 @@ encoded using the same serialization format defined in this document.
 +==========+==========+===========+=================================+
 | 4        | 4        | Integer   | Array length (L)                |
 +----------+----------+-----------+---------------------------------+
-| 8 + i    | 1        | Byte      | Array element #i (0 <= i < L)   |
+| 8 + i    | 1        | Byte      | Array element #i ``(0 <= i < L)`` |
 +----------+----------+-----------+---------------------------------+
 
 The array data is padded to 4 bytes.
@@ -745,7 +747,7 @@ The array data is padded to 4 bytes.
 +==============+==========+===========+=================================+
 | 4            | 4        | Integer   | Array length (L)                |
 +--------------+----------+-----------+---------------------------------+
-| 8 + i \* 4   | 4        | Integer   | Array element #i (0 <= i < L)   |
+| 8 + i \* 4   | 4        | Integer   | Array element #i ``(0 <= i < L)`` |
 +--------------+----------+-----------+---------------------------------+
 
 31: :ref:`PackedInt64Array<class_PackedInt64Array>`
@@ -756,7 +758,7 @@ The array data is padded to 4 bytes.
 +==============+==========+===========+=================================+
 | 4            | 4        | Integer   | Array length (L)                |
 +--------------+----------+-----------+---------------------------------+
-| 8 + i \* 8   | 8        | Integer   | Array element #i (0 <= i < L)   |
+| 8 + i \* 8   | 8        | Integer   | Array element #i ``(0 <= i < L)`` |
 +--------------+----------+-----------+---------------------------------+
 
 32: :ref:`PackedFloat32Array<class_PackedFloat32Array>`
@@ -767,7 +769,7 @@ The array data is padded to 4 bytes.
 +==============+==========+===========+=================================+
 | 4            | 4        | Integer   | Array length (L)                |
 +--------------+----------+-----------+---------------------------------+
-| 8 + i \* 4   | 4        | Float     | Array element #i (0 <= i < L)   |
+| 8 + i \* 4   | 4        | Float     | Array element #i ``(0 <= i < L)`` |
 +--------------+----------+-----------+---------------------------------+
 
 33: :ref:`PackedFloat64Array<class_PackedFloat64Array>`
@@ -778,7 +780,7 @@ The array data is padded to 4 bytes.
 +==============+==========+===========+=================================+
 | 4            | 4        | Integer   | Array length (L)                |
 +--------------+----------+-----------+---------------------------------+
-| 8 + i \* 8   | 8        | Float     | Array element #i (0 <= i < L)   |
+| 8 + i \* 8   | 8        | Float     | Array element #i ``(0 <= i < L)`` |
 +--------------+----------+-----------+---------------------------------+
 
 34: :ref:`PackedStringArray<class_PackedStringArray>`
@@ -822,7 +824,7 @@ Every string is padded to 4 bytes.
 | 4        | 4        | Integer   | Array length   |
 +----------+----------+-----------+----------------+
 
-Following the array length is a contiguous block of Vector2's.
+Following the array length is a contiguous block of Vector2s.
 
 For each Vector2 entry (0 <= i < length):
 
@@ -843,7 +845,7 @@ For each Vector2 entry (0 <= i < length):
 | 4        | 4        | Integer   | Array length   |
 +----------+----------+-----------+----------------+
 
-Following the array length is a contiguous block of Vector3's.
+Following the array length is a contiguous block of Vector3s.
 
 For each Vector3 entry (0 <= i < length):
 
@@ -895,7 +897,7 @@ For each Color entry (0 <= i < length):
 | 4        | 4        | Integer   | Array length   |
 +----------+----------+-----------+----------------+
 
-Following the array length is a contiguous block of Vector4's.
+Following the array length is a contiguous block of Vector4s.
 
 For each Vector4 entry (0 <= i < length):
 
