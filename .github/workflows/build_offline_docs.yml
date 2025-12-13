@@ -34,7 +34,7 @@ jobs:
           echo "PYTHON_VERSION=$(python --version)" >> $GITHUB_OUTPUT
 
       - name: Restore cached virtualenv
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
           path: .venv
@@ -50,7 +50,7 @@ jobs:
           sudo apt install parallel libwebp7 imagemagick
 
       - name: Save virtualenv cache
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
           path: .venv
