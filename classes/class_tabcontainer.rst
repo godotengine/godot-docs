@@ -488,7 +488,7 @@ The focus access mode for the internal :ref:`TabBar<class_TabBar>` node.
 - |void| **set_tabs_position**\ (\ value\: :ref:`TabPosition<enum_TabContainer_TabPosition>`\ )
 - :ref:`TabPosition<enum_TabContainer_TabPosition>` **get_tabs_position**\ (\ )
 
-The position of the tab bar.
+The horizontal alignment of the tabs.
 
 .. rst-class:: classref-item-separator
 

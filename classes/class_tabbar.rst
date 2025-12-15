@@ -268,9 +268,9 @@ Emitted when a tab is clicked, even if it is the current tab.
 
 **tab_close_pressed**\ (\ tab\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TabBar_signal_tab_close_pressed>`
 
-Emitted when a tab's close button is pressed or when middle-clicking on a tab, if :ref:`close_with_middle_mouse<class_TabBar_property_close_with_middle_mouse>` is enabled.
+Emitted when a tab's close button is pressed or, if :ref:`close_with_middle_mouse<class_TabBar_property_close_with_middle_mouse>` is ``true``, when middle-clicking on a tab.
 
-\ **Note:** Tabs are not removed automatically once the close button is pressed, this behavior needs to be programmed manually. For example:
+\ **Note:** Tabs are not removed automatically; this behavior needs to be coded manually. For example:
 
 
 .. tabs::
@@ -342,7 +342,7 @@ enum **AlignmentMode**: :ref:`🔗<enum_TabBar_AlignmentMode>`
 
 :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **ALIGNMENT_LEFT** = ``0``
 
-Places tabs to the left.
+Aligns tabs to the left.
 
 .. _class_TabBar_constant_ALIGNMENT_CENTER:
 
@@ -350,7 +350,7 @@ Places tabs to the left.
 
 :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **ALIGNMENT_CENTER** = ``1``
 
-Places tabs in the middle.
+Aligns tabs in the middle.
 
 .. _class_TabBar_constant_ALIGNMENT_RIGHT:
 
@@ -358,7 +358,7 @@ Places tabs in the middle.
 
 :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **ALIGNMENT_RIGHT** = ``2``
 
-Places tabs to the right.
+Aligns tabs to the right.
 
 .. _class_TabBar_constant_ALIGNMENT_MAX:
 
@@ -447,7 +447,7 @@ If ``true``, tabs overflowing this node's width will be hidden, displaying two n
 - |void| **set_close_with_middle_mouse**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_close_with_middle_mouse**\ (\ )
 
-If ``true``, middle clicking on the mouse will fire the :ref:`tab_close_pressed<class_TabBar_signal_tab_close_pressed>` signal.
+If ``true``, middle-clicking on a tab will emit the :ref:`tab_close_pressed<class_TabBar_signal_tab_close_pressed>` signal.
 
 .. rst-class:: classref-item-separator
 
@@ -600,7 +600,7 @@ If ``true``, hovering over a tab while dragging something will switch to that ta
 - |void| **set_tab_alignment**\ (\ value\: :ref:`AlignmentMode<enum_TabBar_AlignmentMode>`\ )
 - :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **get_tab_alignment**\ (\ )
 
-The position at which tabs will be placed.
+The horizontal alignment of the tabs.
 
 .. rst-class:: classref-item-separator
 
@@ -994,7 +994,7 @@ Sets the maximum allowed width of the icon for the tab at index ``tab_idx``. Thi
 
 |void| **set_tab_language**\ (\ tab_idx\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TabBar_method_set_tab_language>`
 
-Sets language code of tab title used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+Sets the language code of the title for the tab at index ``tab_idx`` to ``language``. This is used for line-breaking and text shaping algorithms. If ``language`` is empty, the current locale is used.
 
 .. rst-class:: classref-item-separator
 

@@ -697,7 +697,7 @@ Returns a Vector4 value due to floating-point operations.
 
 ::
 
-    print(Vector4i(10, 20, 30, 40) / 2) # Prints (5.0, 10.0, 15.0, 20.0)
+    print(Vector4i(1, 2, 3, 4) / 2.5) # Prints (0.4, 0.8, 1.2, 1.6)
 
 .. rst-class:: classref-item-separator
 

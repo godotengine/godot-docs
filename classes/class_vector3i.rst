@@ -730,7 +730,7 @@ Divides each component of the **Vector3i** by the given :ref:`float<class_float>
 
 ::
 
-    print(Vector3i(10, 20, 30) / 2.9) # Prints (5.0, 10.0, 15.0)
+    print(Vector3i(1, 2, 3) / 2.5) # Prints (0.4, 0.8, 1.2)
 
 .. rst-class:: classref-item-separator
 

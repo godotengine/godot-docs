@@ -291,7 +291,7 @@ Property Descriptions
 - |void| **set_cast_shadows_setting**\ (\ value\: :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>`\ )
 - :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **get_cast_shadows_setting**\ (\ )
 
-The selected shadow casting flag.
+The mode used to cast shadows from this instance.
 
 .. rst-class:: classref-item-separator
 

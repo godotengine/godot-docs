@@ -685,7 +685,7 @@ If ``deep`` is ``true``, a **deep** copy is returned: all nested arrays and dict
 
 :ref:`Array<class_Array>` **duplicate_deep**\ (\ deep_subresources_mode\: :ref:`int<class_int>` = 1\ ) |const| :ref:`🔗<class_Array_method_duplicate_deep>`
 
-Duplicates this array, deeply, like :ref:`duplicate()<class_Array_method_duplicate>`\ ``(true)``, with extra control over how subresources are handled.
+Duplicates this array, deeply, like :ref:`duplicate()<class_Array_method_duplicate>` when passing ``true``, with extra control over how subresources are handled.
 
 \ ``deep_subresources_mode`` must be one of the values from :ref:`DeepDuplicateMode<enum_Resource_DeepDuplicateMode>`. By default, only internal resources will be duplicated (recursively).
 
@@ -836,7 +836,7 @@ Returns the first element of the array. If the array is empty, fails and returns
 
 :ref:`Variant<class_Variant>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Array_method_get>`
 
-Returns the element at the given ``index`` in the array. If ``index`` out-of-bounds or negative, this method fails and returns ``null``.
+Returns the element at the given ``index`` in the array. If ``index`` is out-of-bounds or negative, this method fails and returns ``null``.
 
 This method is similar (but not identical) to the ``[]`` operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 

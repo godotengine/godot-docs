@@ -324,7 +324,7 @@ Emitted when the user navigated to an item of some ``id`` using the :ref:`Projec
 
 **id_pressed**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_signal_id_pressed>`
 
-Emitted when an item of some ``id`` is pressed or its accelerator is activated.
+Emitted when an item of some ``id`` is pressed. Also emitted when its accelerator is activated on macOS.
 
 \ **Note:** If ``id`` is negative (either explicitly or due to overflow), this will return the corresponding index instead.
 
@@ -338,7 +338,7 @@ Emitted when an item of some ``id`` is pressed or its accelerator is activated.
 
 **index_pressed**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_signal_index_pressed>`
 
-Emitted when an item of some ``index`` is pressed or its accelerator is activated.
+Emitted when an item of some ``index`` is pressed. Also emitted when its accelerator is activated on macOS.
 
 .. rst-class:: classref-item-separator
 
@@ -1324,7 +1324,7 @@ Sets the horizontal offset of the item at the given ``index``.
 
 |void| **set_item_language**\ (\ index\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_language>`
 
-Sets language code of item's text used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+Sets the language code of the text for the item at the given index to ``language``. This is used for line-breaking and text shaping algorithms. If ``language`` is empty, the current locale is used.
 
 .. rst-class:: classref-item-separator
 

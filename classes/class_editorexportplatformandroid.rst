@@ -460,7 +460,7 @@ Property Descriptions
 
 :ref:`String<class_String>` **apk_expansion/SALT** :ref:`🔗<class_EditorExportPlatformAndroid_property_apk_expansion/SALT>`
 
-Array of random bytes that the licensing Policy uses to create an `Obfuscator <https://developer.android.com/google/play/licensing/adding-licensing#impl-Obfuscator>`__.
+Array of random bytes that the licensing policy uses to create an `Obfuscator <https://developer.android.com/google/play/licensing/adding-licensing#impl-Obfuscator>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -2830,7 +2830,7 @@ Allows an application to write to the user dictionary.
 
 :ref:`Color<class_Color>` **screen/background_color** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/background_color>`
 
-The background color used for the root window. Default is ``black``.
+The background color used for the root window. By default it's :ref:`Color.BLACK<class_Color_constant_BLACK>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2917,6 +2917,8 @@ Indicates whether the application supports extra large screen form-factors.
 :ref:`bool<class_bool>` **shader_baker/enabled** :ref:`🔗<class_EditorExportPlatformAndroid_property_shader_baker/enabled>`
 
 If ``true``, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ or Mobile renderers.
+
+\ **Note:** When exporting as a dedicated server, the shader baker is always disabled since no rendering is performed.
 
 .. rst-class:: classref-item-separator
 

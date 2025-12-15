@@ -3372,6 +3372,8 @@ The reasons your app use user defaults API. See `Describing use of required reas
 
 If ``true``, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ or Mobile renderers.
 
+\ **Note:** When exporting as a dedicated server, the shader baker is always disabled since no rendering is performed.
+
 .. rst-class:: classref-item-separator
 
 ----

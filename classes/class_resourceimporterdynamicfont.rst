@@ -195,7 +195,7 @@ The hinting mode to use. This controls how aggressively glyph edges should be sn
 
 \ **Light:** Sharp result by snapping glyph edges to pixels on the Y axis only.
 
-\ **Full:** Sharpest by snapping glyph edges to pixels on both X and Y axes.
+\ **Normal:** Sharpest by snapping glyph edges to pixels on both X and Y axes.
 
 .. rst-class:: classref-item-separator
 

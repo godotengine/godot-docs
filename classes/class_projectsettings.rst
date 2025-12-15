@@ -1717,7 +1717,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/ggx_samples.mobile<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples.mobile>`                                                   | ``16``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/roughness_layers<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`                                                       | ``8``                                                                                            |
+   | :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/roughness_layers<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`                                                       | ``7``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/reflections/sky_reflections/texture_array_reflections<class_ProjectSettings_property_rendering/reflections/sky_reflections/texture_array_reflections>`                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1733,11 +1733,9 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``613``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_misc_descriptors_per_frame<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_misc_descriptors_per_frame>`                                     | ``512``                                                                                          |
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_resource_descriptors<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_resource_descriptors>`                                                 | ``65536``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_resource_descriptors_per_frame<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_resource_descriptors_per_frame>`                             | ``16384``                                                                                        |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame>`                               | ``1024``                                                                                         |
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_sampler_descriptors<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_sampler_descriptors>`                                                   | ``1024``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`                                                                                                 | ``"vulkan"``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2006,7 +2004,7 @@ Accessibility support mode:
 
 - **Disabled** (``2``): Accessibility support is fully disabled.
 
-\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD) do not count as assistive apps. To test your project with these tools, use **Always Active**.
+\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD), do not count as assistive apps. To test your project with these tools, use **Always Active**.
 
 .. rst-class:: classref-item-separator
 
@@ -2752,9 +2750,9 @@ Sets the `AVAudioSessionCategory <https://developer.apple.com/documentation/avfa
 
 :ref:`bool<class_bool>` **audio/general/text_to_speech** = ``false`` :ref:`🔗<class_ProjectSettings_property_audio/general/text_to_speech>`
 
-If ``true``, text-to-speech support is enabled on startup, otherwise it is enabled first time TTS method is used, see :ref:`DisplayServer.tts_get_voices()<class_DisplayServer_method_tts_get_voices>` and :ref:`DisplayServer.tts_speak()<class_DisplayServer_method_tts_speak>`.
+If ``true``, text-to-speech support is enabled on startup, otherwise it is enabled the first time any TTS method is used. See also :ref:`DisplayServer.tts_get_voices()<class_DisplayServer_method_tts_get_voices>` and :ref:`DisplayServer.tts_speak()<class_DisplayServer_method_tts_speak>`.
 
-\ **Note:** Enabling TTS can cause addition idle CPU usage and interfere with the sleep mode, so consider disabling it if TTS is not used.
+\ **Note:** Enabling TTS can cause additional idle CPU usage and interfere with the sleep mode, so consider disabling it if TTS is not used.
 
 .. rst-class:: classref-item-separator
 
@@ -4972,9 +4970,17 @@ On desktop platforms, overrides the game's initial window width. See also :ref:`
 
 :ref:`String<class_String>` **display/window/stretch/aspect** = ``"keep"`` :ref:`🔗<class_ProjectSettings_property_display/window/stretch/aspect>`
 
-.. container:: contribute
+Defines how the aspect ratio of the base size is preserved when stretching to fit the resolution of the window or screen.
 
-	There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+\ ``"ignore"``: Ignore the aspect ratio when stretching the screen. This means that the original resolution will be stretched to exactly fill the screen, even if it's wider or narrower. This may result in non-uniform stretching: things looking wider or taller than designed.
+
+\ ``"keep"``: Keep aspect ratio when stretching the screen. This means that the viewport retains its original size regardless of the screen resolution, and black bars will be added to the top/bottom of the screen ("letterboxing") or the sides ("pillarboxing").
+
+\ ``"keep_width"``: Keep aspect ratio when stretching the screen. If the screen is wider than the base size, black bars are added at the left and right (pillarboxing). But if the screen is taller than the base resolution, the viewport will be grown in the vertical direction (and more content will be visible at the bottom). You can also think of this as "Expand Vertically".
+
+\ ``"keep_height"``: Keep aspect ratio when stretching the screen. If the screen is taller than the base size, black bars are added at the top and bottom (letterboxing). But if the screen is wider than the base resolution, the viewport will be grown in the horizontal direction (and more content will be visible to the right). You can also think of this as "Expand Horizontally".
+
+\ ``"expand"``: Keep aspect ratio when stretching the screen, but keep neither the base width nor height. Depending on the screen aspect ratio, the viewport will either be larger in the horizontal direction (if the screen is wider than the base size) or in the vertical direction (if the screen is taller than the original size).
 
 .. rst-class:: classref-item-separator
 
@@ -4988,11 +4994,11 @@ On desktop platforms, overrides the game's initial window width. See also :ref:`
 
 Defines how the base size is stretched to fit the resolution of the window or screen.
 
-\ **"disabled"**: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
+\ ``"disabled"``: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
 
-\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
+\ ``"canvas_items"``: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
 
-\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
+\ ``"viewport"``: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
 
 .. rst-class:: classref-item-separator
 
@@ -5018,9 +5024,9 @@ The scale factor multiplier to use for 2D elements. This multiplies the final sc
 
 The policy to use to determine the final scale factor for 2D elements. This affects how :ref:`display/window/stretch/scale<class_ProjectSettings_property_display/window/stretch/scale>` is applied, in addition to the automatic scale factor determined by :ref:`display/window/stretch/mode<class_ProjectSettings_property_display/window/stretch/mode>`.
 
-\ **"fractional"**: The scale factor will not be modified.
+\ ``"fractional"``: The scale factor will not be modified.
 
-\ **"integer"**: The scale factor will be floored to an integer value, which means that the screen size will always be an integer multiple of the base viewport size. This provides a crisp pixel art appearance.
+\ ``"integer"``: The scale factor will be floored to an integer value, which means that the screen size will always be an integer multiple of the base viewport size. This provides a crisp pixel art appearance.
 
 \ **Note:** When using integer scaling with a stretch mode, resizing the window to be smaller than the base viewport size will clip the contents. Consider preventing that by setting :ref:`Window.min_size<class_Window_property_min_size>` to the same value as the base viewport size defined in :ref:`display/window/size/viewport_width<class_ProjectSettings_property_display/window/size/viewport_width>` and :ref:`display/window/size/viewport_height<class_ProjectSettings_property_display/window/size/viewport_height>`.
 
@@ -5578,13 +5584,15 @@ If ``true``, snaps :ref:`Control<class_Control>` node vertices to the nearest pi
 
 :ref:`int<class_int>` **gui/common/swap_cancel_ok** = ``0`` :ref:`🔗<class_ProjectSettings_property_gui/common/swap_cancel_ok>`
 
-How to position the Cancel and OK buttons in the project's :ref:`AcceptDialog<class_AcceptDialog>`\ s. Different platforms have different standard behaviors for this, which can be overridden using this setting.
+How to position the Cancel and OK buttons in the project's :ref:`AcceptDialog<class_AcceptDialog>` windows. Different platforms have different conventions for this, which can be overridden through this setting.
 
-- **Auto** (``0``) follows the platform convention: OK first on Windows, KDE, and LXQt, Cancel first on macOS and other Linux desktop environments. :ref:`DisplayServer.get_swap_cancel_ok()<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
+- **Auto** follows the platform convention: OK first on Windows, KDE, and LXQt; Cancel first on macOS and other Linux desktop environments.
 
-- **Cancel First** (``1``) forces the ordering Cancel/OK.
+- **Cancel First** forces the Cancel/OK ordering.
 
-- **OK First** (``2``) forces the ordering OK/Cancel.
+- **OK First** forces the OK/Cancel ordering.
+
+To check if these buttons are swapped at runtime, use :ref:`DisplayServer.get_swap_cancel_ok()<class_DisplayServer_method_get_swap_cancel_ok>`.
 
 \ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`DisplayServer.dialog_show()<class_DisplayServer_method_dialog_show>`.
 
@@ -5610,7 +5618,7 @@ Maximum undo/redo history size for :ref:`TextEdit<class_TextEdit>` fields.
 
 :ref:`bool<class_bool>` **gui/fonts/dynamic_fonts/use_oversampling** = ``true`` :ref:`🔗<class_ProjectSettings_property_gui/fonts/dynamic_fonts/use_oversampling>`
 
-If set to ``true`` and :ref:`display/window/stretch/mode<class_ProjectSettings_property_display/window/stretch/mode>` is set to **"canvas_items"**, font and :ref:`DPITexture<class_DPITexture>` oversampling is enabled in the main window. Use :ref:`Viewport.oversampling<class_Viewport_property_oversampling>` to control oversampling in other viewports and windows.
+If set to ``true`` and :ref:`display/window/stretch/mode<class_ProjectSettings_property_display/window/stretch/mode>` is set to ``"canvas_items"``, font and :ref:`DPITexture<class_DPITexture>` oversampling is enabled in the main window. Use :ref:`Viewport.oversampling<class_Viewport_property_oversampling>` to control oversampling in other viewports and windows.
 
 .. rst-class:: classref-item-separator
 
@@ -10318,7 +10326,7 @@ Maximum size (in kiB) for the :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` 
 
 :ref:`String<class_String>` **network/tls/certificate_bundle_override** = ``""`` :ref:`🔗<class_ProjectSettings_property_network/tls/certificate_bundle_override>`
 
-The CA certificates bundle to use for TLS connections. If this is set to a non-empty value, this will *override* Godot's default `Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__. If left empty, the default certificate bundle will be used.
+The CA certificates bundle to use for TLS connections. If this is set to a non-empty value, this will *override* Godot's default `Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-bundle.crt>`__. If left empty, the default certificate bundle will be used.
 
 If in doubt, leave this setting empty.
 
@@ -12902,7 +12910,7 @@ Lower-end override for :ref:`rendering/reflections/sky_reflections/ggx_samples<c
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/reflections/sky_reflections/roughness_layers** = ``8`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`
+:ref:`int<class_int>` **rendering/reflections/sky_reflections/roughness_layers** = ``7`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`
 
 Limits the number of layers to use in radiance maps when using importance sampling. A lower number will be slightly faster and take up less VRAM.
 
@@ -13006,13 +13014,13 @@ Version code of the `Direct3D 12 Agility SDK <https://devblogs.microsoft.com/dir
 
 ----
 
-.. _class_ProjectSettings_property_rendering/rendering_device/d3d12/max_misc_descriptors_per_frame:
+.. _class_ProjectSettings_property_rendering/rendering_device/d3d12/max_resource_descriptors:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_misc_descriptors_per_frame** = ``512`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_misc_descriptors_per_frame>`
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_resource_descriptors** = ``65536`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_resource_descriptors>`
 
-The number of entries in the miscellaneous descriptors heap the Direct3D 12 rendering driver uses each frame, used for various operations like clearing a texture.
+The number of entries in the resource descriptor heap the Direct3D 12 rendering driver uses for most rendering operations.
 
 Depending on the complexity of scenes, this value may be lowered or may need to be raised.
 
@@ -13020,27 +13028,13 @@ Depending on the complexity of scenes, this value may be lowered or may need to 
 
 ----
 
-.. _class_ProjectSettings_property_rendering/rendering_device/d3d12/max_resource_descriptors_per_frame:
+.. _class_ProjectSettings_property_rendering/rendering_device/d3d12/max_sampler_descriptors:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_resource_descriptors_per_frame** = ``16384`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_resource_descriptors_per_frame>`
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_sampler_descriptors** = ``1024`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_sampler_descriptors>`
 
-The number of entries in the resource descriptors heap the Direct3D 12 rendering driver uses each frame, used for most rendering operations.
-
-Depending on the complexity of scenes, this value may be lowered or may need to be raised.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame** = ``1024`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame>`
-
-The number of entries in the sampler descriptors heap the Direct3D 12 rendering driver uses each frame, used for most rendering operations.
+The number of entries in the sampler descriptor heap the Direct3D 12 rendering driver uses for most rendering operations.
 
 Depending on the complexity of scenes, this value may be lowered or may need to be raised.
 
@@ -13178,6 +13172,8 @@ Two options are supported:
 
 - ``d3d12``, Direct3D 12 from native drivers. If :ref:`rendering/rendering_device/fallback_to_d3d12<class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12>` is enabled, this is used as a fallback if Vulkan is not supported.
 
+\ **Note:** Starting with Godot 4.6, new projects are configured by default to use ``d3d12`` on Windows. Projects created before Godot 4.6 keep ``vulkan`` for compatibility reasons, but it is recommended to switch them manually to ``d3d12``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -13188,7 +13184,7 @@ Two options are supported:
 
 :ref:`bool<class_bool>` **rendering/rendering_device/fallback_to_d3d12** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12>`
 
-If ``true``, the forward renderer will fall back to Direct3D 12 if Vulkan is not supported. The fallback is always attempted regardless of this setting if Vulkan driver support was disabled at compile time.
+If ``true``, the Forward+ renderer will fall back to Direct3D 12 if Vulkan is not supported. The fallback is always attempted regardless of this setting if Vulkan driver support was disabled at compile time.
 
 \ **Note:** This setting is implemented only on Windows.
 
@@ -13202,7 +13198,7 @@ If ``true``, the forward renderer will fall back to Direct3D 12 if Vulkan is not
 
 :ref:`bool<class_bool>` **rendering/rendering_device/fallback_to_opengl3** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/fallback_to_opengl3>`
 
-If ``true``, the forward renderer will fall back to OpenGL 3 if Direct3D 12, Metal, and Vulkan are not supported.
+If ``true``, the Forward+ renderer will fall back to OpenGL 3 if Direct3D 12, Metal, and Vulkan are not supported.
 
 \ **Note:** This setting is implemented on Windows, Android, macOS, iOS, and Linux/X11.
 
@@ -13216,7 +13212,7 @@ If ``true``, the forward renderer will fall back to OpenGL 3 if Direct3D 12, Met
 
 :ref:`bool<class_bool>` **rendering/rendering_device/fallback_to_vulkan** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/fallback_to_vulkan>`
 
-If ``true``, the forward renderer will fall back to Vulkan if Direct3D 12 (on Windows) or Metal (on macOS x86_64) are not supported. The fallback is always attempted regardless of this setting if Direct3D 12 (Windows) or Metal (macOS) driver support was disabled at compile time.
+If ``true``, the Forward+ renderer will fall back to Vulkan if Direct3D 12 (on Windows) or Metal (on macOS x86_64) are not supported. The fallback is always attempted regardless of this setting if Direct3D 12 (Windows) or Metal (macOS) driver support was disabled at compile time.
 
 \ **Note:** This setting is implemented on Windows and macOS.
 
@@ -13688,7 +13684,7 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 :ref:`bool<class_bool>` **rendering/textures/vram_compression/cache_gpu_compressor** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/vram_compression/cache_gpu_compressor>`
 
-If ``true``, the GPU texture compressor will cache the local RenderingDevice and its resources (shaders and pipelines), allowing for faster subsequent imports at a memory cost.
+If ``true``, the GPU texture compressor will cache the local RenderingDevice and its resources (shaders and pipelines), making subsequent imports faster at the cost of increased memory usage.
 
 .. rst-class:: classref-item-separator
 
@@ -13772,9 +13768,7 @@ The default compression factor for lossless WebP. Decompression speed is mostly 
 
 :ref:`bool<class_bool>` **rendering/viewport/hdr_2d** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
 
-If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root viewport. 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an ``RGBA16`` framebuffer. When using the Mobile renderer, it will be an ``RGB10_A2`` framebuffer.
-
-Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
+If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root Viewport. 2D rendering will use a high dynamic range (HDR) ``RGBA16`` format framebuffer. Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen.
 
 Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color encoding adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
@@ -13853,7 +13847,7 @@ The ratio of :ref:`WorkerThreadPool<class_WorkerThreadPool>`'s threads that will
 
 :ref:`int<class_int>` **threading/worker_pool/max_threads** = ``-1`` :ref:`🔗<class_ProjectSettings_property_threading/worker_pool/max_threads>`
 
-Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``-1`` means ``1`` on Web, or a number of *logical* CPU cores available on other platforms (see :ref:`OS.get_processor_count()<class_OS_method_get_processor_count>`).
+Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. On Web, a value of ``-1`` means ``1``. On other platforms, it means all *logical* CPU cores available (see :ref:`OS.get_processor_count()<class_OS_method_get_processor_count>`).
 
 .. rst-class:: classref-item-separator
 
@@ -14203,7 +14197,7 @@ If ``true`` and foveation is supported, will automatically adjust foveation leve
 
 :ref:`int<class_int>` **xr/openxr/foveation_level** = ``"0"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_level>`
 
-Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
+Applied foveation level if supported.
 
 \ **Note:** On platforms other than Android, if :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` is enabled, this feature will be disabled.
 

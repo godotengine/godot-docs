@@ -1763,7 +1763,7 @@ Use :ref:`add_child()<class_Node_method_add_child>` instead of this method if yo
 
 Adds the node to the ``group``. Groups can be helpful to organize a subset of nodes, for example ``"enemies"`` or ``"collectables"``. See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
 
-If ``persistent`` is ``true``, the group will be stored when saved inside a :ref:`PackedScene<class_PackedScene>`. All groups created and displayed in the Node dock are persistent.
+If ``persistent`` is ``true``, the group will be stored when saved inside a :ref:`PackedScene<class_PackedScene>`. All groups created and displayed in the Groups dock are persistent.
 
 \ **Note:** To improve performance, the order of group names is *not* guaranteed and may vary between project runs. Therefore, do not rely on the group order.
 
@@ -2738,7 +2738,7 @@ Similar to :ref:`call_thread_safe()<class_Node_method_call_thread_safe>`, but fo
 
 Prints all orphan nodes (nodes outside the :ref:`SceneTree<class_SceneTree>`). Useful for debugging.
 
-\ **Note:** This method only works in debug builds. Does nothing in a project exported in release mode.
+\ **Note:** This method only works in debug builds. It does nothing in a project exported in release mode.
 
 .. rst-class:: classref-item-separator
 

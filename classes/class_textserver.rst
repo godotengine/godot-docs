@@ -1966,7 +1966,7 @@ Returns ``true`` if font texture mipmap generation is enabled.
 
 **Deprecated:** Use :ref:`Viewport<class_Viewport>` oversampling, or the ``oversampling`` argument of the ``draw_*`` methods instead.
 
-Deprecated. This method always returns ``1.0``.
+This method does nothing and always returns ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -2540,7 +2540,7 @@ Returns ``true`` if auto-hinting is supported and preferred over font built-in h
 
 :ref:`bool<class_bool>` **font_is_language_supported**\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TextServer_method_font_is_language_supported>`
 
-Returns ``true``, if font supports given language (`ISO 639 <https://en.wikipedia.org/wiki/ISO_639-1>`__ code).
+Returns ``true`` if the font supports the given language (as a `ISO 639 <https://en.wikipedia.org/wiki/ISO_639-1>`__ code).
 
 .. rst-class:: classref-item-separator
 
@@ -2552,7 +2552,7 @@ Returns ``true``, if font supports given language (`ISO 639 <https://en.wikipedi
 
 :ref:`bool<class_bool>` **font_is_modulate_color_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_font_is_modulate_color_glyphs>`
 
-Returns ``true``, if color modulation is applied when drawing colored glyphs.
+Returns ``true`` if color modulation is applied when drawing the font's colored glyphs.
 
 .. rst-class:: classref-item-separator
 
@@ -2576,7 +2576,7 @@ Returns ``true`` if glyphs of all sizes are rendered using single multichannel s
 
 :ref:`bool<class_bool>` **font_is_script_supported**\ (\ font_rid\: :ref:`RID<class_RID>`, script\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TextServer_method_font_is_script_supported>`
 
-Returns ``true``, if font supports given script (ISO 15924 code).
+Returns ``true`` if the font supports the given script (as a `ISO 15924 <https://en.wikipedia.org/wiki/ISO_15924>`__ code).
 
 .. rst-class:: classref-item-separator
 
@@ -2846,7 +2846,7 @@ If set to ``true`` font texture mipmap generation is enabled.
 
 **Deprecated:** Use :ref:`Viewport<class_Viewport>` oversampling, or the ``oversampling`` argument of the ``draw_*`` methods instead.
 
-Deprecated. This method does nothing.
+This method does nothing.
 
 .. rst-class:: classref-item-separator
 
@@ -3460,7 +3460,7 @@ Loads optional TextServer database (e.g. ICU break iterators and dictionaries).
 
 :ref:`int<class_int>` **name_to_tag**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TextServer_method_name_to_tag>`
 
-Converts readable feature, variation, script, or language name to OpenType tag.
+Converts the given readable name of a feature, variation, script, or language to an OpenType tag.
 
 .. rst-class:: classref-item-separator
 
@@ -4563,7 +4563,7 @@ When ``chars_per_line`` is greater than zero, line break boundaries are returned
 
 :ref:`String<class_String>` **string_to_lower**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_TextServer_method_string_to_lower>`
 
-Returns the string converted to lowercase.
+Returns the string converted to ``lowercase``.
 
 \ **Note:** Casing is locale dependent and context sensitive if server support :ref:`FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION<class_TextServer_constant_FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION>` feature (supported by :ref:`TextServerAdvanced<class_TextServerAdvanced>`).
 
@@ -4579,7 +4579,7 @@ Returns the string converted to lowercase.
 
 :ref:`String<class_String>` **string_to_title**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_TextServer_method_string_to_title>`
 
-Returns the string converted to title case.
+Returns the string converted to ``Title Case``.
 
 \ **Note:** Casing is locale dependent and context sensitive if server support :ref:`FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION<class_TextServer_constant_FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION>` feature (supported by :ref:`TextServerAdvanced<class_TextServerAdvanced>`).
 
@@ -4595,7 +4595,7 @@ Returns the string converted to title case.
 
 :ref:`String<class_String>` **string_to_upper**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_TextServer_method_string_to_upper>`
 
-Returns the string converted to uppercase.
+Returns the string converted to ``UPPERCASE``.
 
 \ **Note:** Casing is locale dependent and context sensitive if server support :ref:`FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION<class_TextServer_constant_FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION>` feature (supported by :ref:`TextServerAdvanced<class_TextServerAdvanced>`).
 
@@ -4625,7 +4625,7 @@ Strips diacritics from the string.
 
 :ref:`String<class_String>` **tag_to_name**\ (\ tag\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_tag_to_name>`
 
-Converts OpenType tag to readable feature, variation, script, or language name.
+Converts the given OpenType tag to the readable name of a feature, variation, script, or language.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

@@ -1440,7 +1440,7 @@ Returns the mouse's position in this **CanvasItem** using the local coordinate s
 
 Returns the transform of this **CanvasItem** in global screen coordinates (i.e. taking window position into account). Mostly useful for editor plugins.
 
-Equals to :ref:`get_global_transform()<class_CanvasItem_method_get_global_transform>` if the window is embedded (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
+Equivalent to :ref:`get_global_transform_with_canvas()<class_CanvasItem_method_get_global_transform_with_canvas>` if the window is embedded (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1650,7 +1650,7 @@ If ``true``, the node will receive :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<cl
 
 |void| **set_notify_transform**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CanvasItem_method_set_notify_transform>`
 
-If ``true``, the node will receive :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>` whenever global transform changes.
+If ``true``, the node will receive :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>` whenever its global transform changes.
 
 \ **Note:** Many canvas items such as :ref:`Camera2D<class_Camera2D>` or :ref:`Light2D<class_Light2D>` automatically enable this in order to function correctly.
 

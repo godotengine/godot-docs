@@ -397,6 +397,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_tonemap<class_RenderingServer_method_environment_set_tonemap>`\ (\ env\: :ref:`RID<class_RID>`, tone_mapper\: :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>`, exposure\: :ref:`float<class_float>`, white\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`environment_set_tonemap_agx_contrast<class_RenderingServer_method_environment_set_tonemap_agx_contrast>`\ (\ env\: :ref:`RID<class_RID>`, agx_contrast\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_volumetric_fog<class_RenderingServer_method_environment_set_volumetric_fog>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, density\: :ref:`float<class_float>`, albedo\: :ref:`Color<class_Color>`, emission\: :ref:`Color<class_Color>`, emission_energy\: :ref:`float<class_float>`, anisotropy\: :ref:`float<class_float>`, length\: :ref:`float<class_float>`, p_detail_spread\: :ref:`float<class_float>`, gi_inject\: :ref:`float<class_float>`, temporal_reprojection\: :ref:`bool<class_bool>`, temporal_reprojection_amount\: :ref:`float<class_float>`, ambient_inject\: :ref:`float<class_float>`, sky_affect\: :ref:`float<class_float>`\ )      |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_volumetric_fog_filter_active<class_RenderingServer_method_environment_set_volumetric_fog_filter_active>`\ (\ active\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -4316,9 +4318,7 @@ Uses a high-contrast film-like tonemapping curve and desaturates bright values f
 
 :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>` **ENV_TONE_MAPPER_AGX** = ``4``
 
-Uses a film-like tonemapping curve and desaturates bright values for a more realistic appearance. Better than other tonemappers at maintaining the hue of colors as they become brighter. The slowest tonemapping option.
-
-\ **Note:** :ref:`Environment.tonemap_white<class_Environment_property_tonemap_white>` is fixed at a value of ``16.29``, which makes :ref:`ENV_TONE_MAPPER_AGX<class_RenderingServer_constant_ENV_TONE_MAPPER_AGX>` unsuitable for use with the Mobile rendering method.
+Uses an adjustable film-like tonemapping curve and desaturates bright values for a more realistic appearance. Better than other tonemappers at maintaining the hue of colors as they become brighter. The slowest tonemapping option.
 
 .. rst-class:: classref-item-separator
 
@@ -8290,6 +8290,18 @@ Sets the variables to be used with the "tonemap" post-process effect. See :ref:`
 
 ----
 
+.. _class_RenderingServer_method_environment_set_tonemap_agx_contrast:
+
+.. rst-class:: classref-method
+
+|void| **environment_set_tonemap_agx_contrast**\ (\ env\: :ref:`RID<class_RID>`, agx_contrast\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_environment_set_tonemap_agx_contrast>`
+
+See :ref:`Environment.tonemap_agx_contrast<class_Environment_property_tonemap_agx_contrast>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_environment_set_volumetric_fog:
 
 .. rst-class:: classref-method
@@ -11858,7 +11870,7 @@ Updates the texture specified by the ``texture`` :ref:`RID<class_RID>`'s data wi
 
 Creates a texture based on a native handle that was created outside of Godot's renderer.
 
-\ **Note:** If using only the rendering device renderer, it's recommend to use :ref:`RenderingDevice.texture_create_from_extension()<class_RenderingDevice_method_texture_create_from_extension>` together with :ref:`texture_rd_create()<class_RenderingServer_method_texture_rd_create>`, rather than this method. It will give you much more control over the texture's format and usage.
+\ **Note:** If using only the rendering device renderer, it's recommend to use :ref:`RenderingDevice.texture_create_from_extension()<class_RenderingDevice_method_texture_create_from_extension>` together with :ref:`texture_rd_create()<class_RenderingServer_method_texture_rd_create>`, rather than this method. This way, the texture's format and usage can be controlled more effectively.
 
 .. rst-class:: classref-item-separator
 
@@ -12635,9 +12647,7 @@ Equivalent to :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding
 
 |void| **viewport_set_use_hdr_2d**\ (\ viewport\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_use_hdr_2d>`
 
-If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an ``RGBA16`` framebuffer. When using the Mobile renderer, it will be an ``RGB10_A2`` framebuffer.
-
-Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
+If ``true``, 2D rendering will use a high dynamic range (HDR) ``RGBA16`` format framebuffer. Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
 
 Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color encoding adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
 

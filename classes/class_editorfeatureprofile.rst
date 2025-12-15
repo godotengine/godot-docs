@@ -108,6 +108,8 @@ Scene tree editing. If this feature is disabled, the Scene tree dock will still 
 
 :ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_NODE_DOCK** = ``4``
 
+**Deprecated:** Replaced by the Signals and Groups docks.
+
 The Node dock. If this feature is disabled, signals and groups won't be visible and modifiable from the editor.
 
 .. _class_EditorFeatureProfile_constant_FEATURE_FILESYSTEM_DOCK:
@@ -142,11 +144,27 @@ The History dock. If this feature is disabled, the History dock won't be visible
 
 The Game tab, which allows embedding the game window and selecting nodes by clicking inside of it. If this feature is disabled, the Game tab won't display.
 
+.. _class_EditorFeatureProfile_constant_FEATURE_SIGNALS_DOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_SIGNALS_DOCK** = ``9``
+
+The Signals dock. If this feature is disabled, signals won't be visible and modifiable from the editor.
+
+.. _class_EditorFeatureProfile_constant_FEATURE_GROUPS_DOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_GROUPS_DOCK** = ``10``
+
+The Groups dock. If this feature is disabled, groups won't be visible and modifiable from the editor.
+
 .. _class_EditorFeatureProfile_constant_FEATURE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_MAX** = ``9``
+:ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_MAX** = ``11``
 
 Represents the size of the :ref:`Feature<enum_EditorFeatureProfile_Feature>` enum.
 

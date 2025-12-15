@@ -2403,7 +2403,7 @@ Returns ``true`` if font oversampling is enabled. See :ref:`set_use_font_oversam
 
 |void| **move_to_center**\ (\ ) :ref:`🔗<class_Window_method_move_to_center>`
 
-Centers a native window on the current screen and an embedded window on its embedder :ref:`Viewport<class_Viewport>`.
+Centers the window in the current screen. If the window is embedded, it is centered in the embedder :ref:`Viewport<class_Viewport>` instead.
 
 .. rst-class:: classref-item-separator
 

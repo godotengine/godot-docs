@@ -12,6 +12,8 @@ FileDialog
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`EditorFileDialog<class_EditorFileDialog>`
+
 A dialog for selecting files or directories in the filesystem.
 
 .. rst-class:: classref-introduction-group
@@ -121,6 +123,8 @@ Methods
    | |void|                                            | :ref:`invalidate<class_FileDialog_method_invalidate>`\ (\ )                                                                                                                                              |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_customization_flag_enabled<class_FileDialog_method_is_customization_flag_enabled>`\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`\ ) |const|                                    |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`popup_file_dialog<class_FileDialog_method_popup_file_dialog>`\ (\ )                                                                                                                                |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`set_customization_flag_enabled<class_FileDialog_method_set_customization_flag_enabled>`\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ )       |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -860,6 +864,8 @@ If ``true``, and if supported by the current :ref:`DisplayServer<class_DisplaySe
 
 \ **Note:** Native dialogs are isolated from the base process, file dialog properties can't be modified once the dialog is shown.
 
+\ **Note:** This property is ignored in :ref:`EditorFileDialog<class_EditorFileDialog>`.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -1045,7 +1051,7 @@ Returns the vertical box container of the dialog, custom controls can be added t
 
 |void| **invalidate**\ (\ ) :ref:`🔗<class_FileDialog_method_invalidate>`
 
-Invalidate and update the current dialog content list.
+Invalidates and updates this dialog's content list.
 
 \ **Note:** This method does nothing on native file dialogs.
 
@@ -1065,13 +1071,25 @@ Returns ``true`` if the provided ``flag`` is enabled.
 
 ----
 
+.. _class_FileDialog_method_popup_file_dialog:
+
+.. rst-class:: classref-method
+
+|void| **popup_file_dialog**\ (\ ) :ref:`🔗<class_FileDialog_method_popup_file_dialog>`
+
+Shows the **FileDialog** using the default size and position for file dialogs, and selects the file name if there is a current file.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FileDialog_method_set_customization_flag_enabled:
 
 .. rst-class:: classref-method
 
 |void| **set_customization_flag_enabled**\ (\ flag\: :ref:`Customization<enum_FileDialog_Customization>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_FileDialog_method_set_customization_flag_enabled>`
 
-Toggles the specified customization ``flag``, allowing to customize features available in this **FileDialog**. See :ref:`Customization<enum_FileDialog_Customization>` for options.
+Sets the specified customization ``flag``, allowing to customize the features available in this **FileDialog**.
 
 .. rst-class:: classref-item-separator
 

@@ -1157,7 +1157,9 @@ Adds a plugin to the context menu. ``slot`` is the context menu where the plugin
 
 Adds a control to the bottom panel (together with Output, Debug, Animation, etc.). Returns a reference to a button that is outside the scene tree. It's up to you to hide/show the button when needed. When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_bottom_panel()<class_EditorPlugin_method_remove_control_from_bottom_panel>` and free it with :ref:`Node.queue_free()<class_Node_method_queue_free>`.
 
-Optionally, you can specify a shortcut parameter. When pressed, this shortcut will toggle the bottom panel's visibility. See the default editor bottom panel shortcuts in the Editor Settings for inspiration. Per convention, they all use :kbd:`Alt` modifier.
+\ ``shortcut`` is a shortcut that, when activated, will toggle the bottom panel's visibility. The shortcut object is only set when this control is added to the bottom panel.
+
+\ **Note** See the default editor bottom panel shortcuts in the Editor Settings for inspiration. By convention, they all use :kbd:`Alt` modifier.
 
 .. rst-class:: classref-item-separator
 

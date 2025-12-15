@@ -56,7 +56,7 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`append_array<class_PackedByteArray_method_append_array>`\ (\ array\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                   |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedByteArray_method_bsearch>`\ (\ value\: :ref:`int<class_int>`, before\: :ref:`bool<class_bool>` = true\ )                                                            |
+   | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedByteArray_method_bsearch>`\ (\ value\: :ref:`int<class_int>`, before\: :ref:`bool<class_bool>` = true\ ) |const|                                                    |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`bswap16<class_PackedByteArray_method_bswap16>`\ (\ offset\: :ref:`int<class_int>` = 0, count\: :ref:`int<class_int>` = -1\ )                                                            |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -283,7 +283,7 @@ Appends a **PackedByteArray** at the end of this array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`int<class_int>`, before\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_PackedByteArray_method_bsearch>`
+:ref:`int<class_int>` **bsearch**\ (\ value\: :ref:`int<class_int>`, before\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_PackedByteArray_method_bsearch>`
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
@@ -751,7 +751,7 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 
 :ref:`int<class_int>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_get>`
 
-Returns the byte at the given ``index`` in the array. If ``index`` out-of-bounds or negative, this method fails and returns ``0``.
+Returns the byte at the given ``index`` in the array. If ``index`` is out-of-bounds or negative, this method fails and returns ``0``.
 
 This method is similar (but not identical) to the ``[]`` operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 

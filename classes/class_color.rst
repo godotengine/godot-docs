@@ -19,7 +19,7 @@ Description
 
 A color represented in RGBA format by a red (:ref:`r<class_Color_property_r>`), green (:ref:`g<class_Color_property_g>`), blue (:ref:`b<class_Color_property_b>`), and alpha (:ref:`a<class_Color_property_a>`) component. Each component is a 32-bit floating-point value, usually ranging from ``0.0`` to ``1.0``. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may support values greater than ``1.0``, for overbright or HDR (High Dynamic Range) colors.
 
-Colors can be created in a number of ways: By the various **Color** constructors, by static methods such as :ref:`from_hsv()<class_Color_method_from_hsv>`, and by using a name from the set of standardized colors based on `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__ with the addition of :ref:`TRANSPARENT<class_Color_constant_TRANSPARENT>`. GDScript also provides :ref:`@GDScript.Color8()<class_@GDScript_method_Color8>`, which uses integers from ``0`` to ``255`` and doesn't support overbright colors.
+Colors can be created in a number of ways: By the various **Color** constructors, by static methods such as :ref:`from_hsv()<class_Color_method_from_hsv>`, and by using a name from the set of standardized colors based on `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__ with the addition of :ref:`TRANSPARENT<class_Color_constant_TRANSPARENT>`.
 
 \ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__\ 
 
@@ -1643,7 +1643,7 @@ Constructs a **Color** from RGB values, typically between 0.0 and 1.0. :ref:`a<c
 
  .. code-tab:: gdscript
 
-    var color = Color(0.2, 1.0, 0.7) # Similar to `Color8(51, 255, 178, 255)`
+    var color = Color(0.2, 1.0, 0.7) # Similar to `Color.from_rgba8(51, 255, 178, 255)`
 
  .. code-tab:: csharp
 
@@ -1666,7 +1666,7 @@ Constructs a **Color** from RGBA values, typically between 0.0 and 1.0.
 
  .. code-tab:: gdscript
 
-    var color = Color(0.2, 1.0, 0.7, 0.8) # Similar to `Color8(51, 255, 178, 204)`
+    var color = Color(0.2, 1.0, 0.7, 0.8) # Similar to `Color.from_rgba8(51, 255, 178, 204)`
 
  .. code-tab:: csharp
 
@@ -2087,7 +2087,7 @@ Returns a new color resulting from making this color lighter by the specified ``
 
 Returns a copy of the color that is encoded using the `nonlinear sRGB transfer function <https://en.wikipedia.org/wiki/SRGB>`__. This method requires the original color to use linear encoding. See also :ref:`srgb_to_linear()<class_Color_method_srgb_to_linear>` which performs the opposite operation.
 
-\ **Note:** The color's :ref:`a<class_Color_property_a>`\ lpha channel is not affected. The alpha channel is always stored with linear encoding, regardless of the encoding of the other color channels.
+\ **Note:** The color's alpha channel (:ref:`a<class_Color_property_a>`) is not affected. The alpha channel is always stored with linear encoding, regardless of the color space of the other color channels.
 
 .. rst-class:: classref-item-separator
 
@@ -2101,7 +2101,7 @@ Returns a copy of the color that is encoded using the `nonlinear sRGB transfer f
 
 Returns a copy of the color that uses linear encoding. This method requires the original color to be encoded using the `nonlinear sRGB transfer function <https://en.wikipedia.org/wiki/SRGB>`__. See also :ref:`linear_to_srgb()<class_Color_method_linear_to_srgb>` which performs the opposite operation.
 
-\ **Note:** The color's :ref:`a<class_Color_property_a>`\ lpha channel is not affected. The alpha channel is always stored with linear encoding, regardless of the encoding of the other color channels.
+\ **Note:** The color's alpha channel (:ref:`a<class_Color_property_a>`) is not affected. The alpha channel is always stored with linear encoding, regardless of the color space of the other color channels.
 
 .. rst-class:: classref-item-separator
 

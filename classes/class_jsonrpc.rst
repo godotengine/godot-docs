@@ -215,9 +215,9 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 Registers a callback for the given method name.
 
-- ``name`` The name that clients can use to access the callback.
+- ``name``: The name that clients can use to access the callback.
 
-- ``callback`` The callback which will handle the specific method.
+- ``callback``: The callback which will handle the specified method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

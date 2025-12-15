@@ -71,6 +71,8 @@ Methods
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                                   | :ref:`get_next_frame_time<class_OpenXRAPIExtension_method_get_next_frame_time>`\ (\ )                                                                                                                                                                                                                                                                       |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                                   | :ref:`get_openxr_version<class_OpenXRAPIExtension_method_get_openxr_version>`\ (\ )                                                                                                                                                                                                                                                                         |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                                   | :ref:`get_play_space<class_OpenXRAPIExtension_method_get_play_space>`\ (\ )                                                                                                                                                                                                                                                                                 |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                                   | :ref:`get_predicted_display_time<class_OpenXRAPIExtension_method_get_predicted_display_time>`\ (\ )                                                                                                                                                                                                                                                         |
@@ -309,6 +311,18 @@ Returns the function pointer of the OpenXR function with the specified name, cas
 :ref:`int<class_int>` **get_next_frame_time**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_get_next_frame_time>`
 
 Returns the predicted display timing for the next frame.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_get_openxr_version:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_openxr_version**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_get_openxr_version>`
+
+Returns the version of OpenXR that was initialized. Only valid after the OpenXR instance has been created. See `XR_MAKE_VERSION <https://registry.khronos.org/OpenXR/specs/1.1/html/xrspec.html#XR_MAKE_VERSION>`__ for how the version is calculated.
 
 .. rst-class:: classref-item-separator
 

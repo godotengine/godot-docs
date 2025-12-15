@@ -477,6 +477,8 @@ If ``true``, a console wrapper executable is exported alongside the main executa
 
 If ``true``, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ and Mobile renderers.
 
+\ **Note:** When exporting as a dedicated server, the shader baker is always disabled since no rendering is performed.
+
 .. rst-class:: classref-item-separator
 
 ----

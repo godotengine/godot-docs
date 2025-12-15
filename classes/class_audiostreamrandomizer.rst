@@ -141,7 +141,7 @@ Controls how this AudioStreamRandomizer picks which AudioStream to play next.
 - |void| **set_random_pitch**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_random_pitch**\ (\ )
 
-The largest possible frequency multiplier of the random pitch variation. A value of ``1.0`` means no variation.
+The largest possible frequency multiplier of the random pitch variation. Pitch will be randomly chosen within a range of ``1.0 / random_pitch`` and ``random_pitch``. A value of ``1.0`` means no variation. A value of ``2.0`` means pitch will be randomized between double and half.
 
 \ **Note:** Setting this property also sets :ref:`random_pitch_semitones<class_AudioStreamRandomizer_property_random_pitch_semitones>`.
 
@@ -179,7 +179,7 @@ The largest possible distance, in semitones, of the random pitch variation. A va
 - |void| **set_random_volume_offset_db**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_random_volume_offset_db**\ (\ )
 
-The intensity of random volume variation. A value of 0 means no variation.
+The intensity of random volume variation. Volume will be increased or decreased by a random value up to ``random_volume_offset_db``. A value of ``0.0`` means no variation. A value of ``3.0`` means volume will be randomized between ``-3.0 dB`` and ``+3.0 dB``.
 
 .. rst-class:: classref-item-separator
 

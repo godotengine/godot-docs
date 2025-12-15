@@ -1652,7 +1652,7 @@ If ``indeterminate`` is ``true``, the given ``column`` is marked indeterminate.
 
 |void| **set_language**\ (\ column\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TreeItem_method_set_language>`
 
-Sets language code of item's text used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+Sets the language code of the given ``column``'s text to ``language``. This is used for line-breaking and text shaping algorithms. If ``language`` is empty, the current locale is used.
 
 .. rst-class:: classref-item-separator
 

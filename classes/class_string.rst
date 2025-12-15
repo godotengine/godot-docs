@@ -1588,7 +1588,7 @@ Removes all occurrences of the Unicode character with code ``what``. Faster vers
 
 :ref:`String<class_String>` **remove_chars**\ (\ chars\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_String_method_remove_chars>`
 
-Removes any occurrence of the characters in ``chars``. See also :ref:`remove_char()<class_String_method_remove_char>`.
+Removes all occurrences of the characters in ``chars``. See also :ref:`remove_char()<class_String_method_remove_char>`.
 
 .. rst-class:: classref-item-separator
 

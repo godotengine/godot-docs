@@ -36,7 +36,7 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                   | :ref:`accessibility_create_sub_element<class_DisplayServer_method_accessibility_create_sub_element>`\ (\ parent_rid\: :ref:`RID<class_RID>`, role\: :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>`, insert_pos\: :ref:`int<class_int>` = -1\ )                                                                                                                                                                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                                                   | :ref:`accessibility_create_sub_text_edit_elements<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`\ (\ parent_rid\: :ref:`RID<class_RID>`, shaped_text\: :ref:`RID<class_RID>`, min_height\: :ref:`float<class_float>`, insert_pos\: :ref:`int<class_int>` = -1\ )                                                                                                                                                                                                                                                                                                                        |
+   | :ref:`RID<class_RID>`                                                   | :ref:`accessibility_create_sub_text_edit_elements<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`\ (\ parent_rid\: :ref:`RID<class_RID>`, shaped_text\: :ref:`RID<class_RID>`, min_height\: :ref:`float<class_float>`, insert_pos\: :ref:`int<class_int>` = -1, is_last_line\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                           | :ref:`accessibility_element_get_meta<class_DisplayServer_method_accessibility_element_get_meta>`\ (\ id\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -698,7 +698,9 @@ Display server supports querying the operating system's display scale factor. Th
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_ICON** = ``13``
 
-Display server supports changing the window icon (usually displayed in the top-left corner). **Windows, macOS, Linux (X11)**
+Display server supports changing the window icon (usually displayed in the top-left corner). **Windows, macOS, Linux (X11/Wayland)**\ 
+
+\ **Note:** Use on Wayland requires the compositor to implement the `xdg_toplevel_icon_v1 <https://wayland.app/protocols/xdg-toplevel-icon-v1#xdg_toplevel_icon_v1>`__ protocol, which not all compositors do. See `xdg_toplevel_icon_v1#compositor-support <https://wayland.app/protocols/xdg-toplevel-icon-v1#compositor-support>`__ for more information on individual compositor support.
 
 .. _class_DisplayServer_constant_FEATURE_NATIVE_ICON:
 
@@ -1304,7 +1306,7 @@ Element is hidden for accessibility tools.
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_MULTISELECTABLE** = ``1``
 
-Element is support multiple item selection.
+Element supports multiple item selection.
 
 .. _class_DisplayServer_constant_FLAG_REQUIRED:
 
@@ -2312,7 +2314,7 @@ Window maximize button is disabled.
 
 :ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``13``
 
-Max value of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`.
+Represents the size of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2400,7 +2402,7 @@ Sent when the window title bar decoration is changed (e.g. :ref:`WINDOW_FLAG_EXT
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_FORCE_CLOSE** = ``8``
 
-Sent when the window has been forcibly closed by the Display Server. The window shall immediately hide and clean any internal rendering references.
+Sent when the window has been forcibly closed by the display server. The window will immediately hide and clean any internal rendering references.
 
 \ **Note:** This flag is implemented only on Linux (Wayland).
 
@@ -2792,9 +2794,11 @@ Creates a new, empty accessibility sub-element resource. Sub-elements can be use
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **accessibility_create_sub_text_edit_elements**\ (\ parent_rid\: :ref:`RID<class_RID>`, shaped_text\: :ref:`RID<class_RID>`, min_height\: :ref:`float<class_float>`, insert_pos\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`
+:ref:`RID<class_RID>` **accessibility_create_sub_text_edit_elements**\ (\ parent_rid\: :ref:`RID<class_RID>`, shaped_text\: :ref:`RID<class_RID>`, min_height\: :ref:`float<class_float>`, insert_pos\: :ref:`int<class_int>` = -1, is_last_line\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`
 
 Creates a new, empty accessibility sub-element from the shaped text buffer. Sub-elements are freed automatically when the parent element is freed, or can be freed early using the :ref:`accessibility_free_element()<class_DisplayServer_method_accessibility_free_element>` method.
+
+If ``is_last_line`` is ``true``, no trailing newline is appended to the text content. Set to ``true`` for the last line in multi-line text fields and for single-line text fields.
 
 .. rst-class:: classref-item-separator
 
@@ -2806,7 +2810,7 @@ Creates a new, empty accessibility sub-element from the shaped text buffer. Sub-
 
 :ref:`Variant<class_Variant>` **accessibility_element_get_meta**\ (\ id\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_DisplayServer_method_accessibility_element_get_meta>`
 
-Returns the metadata of the accessibility element.
+Returns the metadata of the accessibility element ``id``.
 
 .. rst-class:: classref-item-separator
 
@@ -2818,7 +2822,7 @@ Returns the metadata of the accessibility element.
 
 |void| **accessibility_element_set_meta**\ (\ id\: :ref:`RID<class_RID>`, meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_element_set_meta>`
 
-Sets the metadata of the accessibility element.
+Sets the metadata of the accessibility element ``id`` to ``meta``.
 
 .. rst-class:: classref-item-separator
 
@@ -2830,7 +2834,7 @@ Sets the metadata of the accessibility element.
 
 |void| **accessibility_free_element**\ (\ id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_free_element>`
 
-Frees an object created by :ref:`accessibility_create_element()<class_DisplayServer_method_accessibility_create_element>`, :ref:`accessibility_create_sub_element()<class_DisplayServer_method_accessibility_create_sub_element>`, or :ref:`accessibility_create_sub_text_edit_elements()<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`.
+Frees the accessibility element ``id`` created by :ref:`accessibility_create_element()<class_DisplayServer_method_accessibility_create_element>`, :ref:`accessibility_create_sub_element()<class_DisplayServer_method_accessibility_create_sub_element>`, or :ref:`accessibility_create_sub_text_edit_elements()<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2870,7 +2874,7 @@ Returns ``1`` if a screen reader, Braille display or other assistive app is acti
 
 \ **Note:** This method is implemented on Linux, macOS, and Windows.
 
-\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, macOS Accessibility Inspector, or AT-SPI Browser do not count as assistive apps and will not affect this value. To test your app with these tools, set :ref:`ProjectSettings.accessibility/general/accessibility_support<class_ProjectSettings_property_accessibility/general/accessibility_support>` to ``1``.
+\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD), do not count as assistive apps and will not affect this value. To test your project with these tools, set :ref:`ProjectSettings.accessibility/general/accessibility_support<class_ProjectSettings_property_accessibility/general/accessibility_support>` to ``1``.
 
 .. rst-class:: classref-item-separator
 
@@ -3950,6 +3954,28 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 \ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions()<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
 
+\ **Note:** On Android, this method uses the Android Storage Access Framework (SAF).
+
+The file picker returns a URI instead of a filesystem path. This URI can be passed directly to :ref:`FileAccess<class_FileAccess>` to perform read/write operations.
+
+When using :ref:`FILE_DIALOG_MODE_OPEN_DIR<class_DisplayServer_constant_FILE_DIALOG_MODE_OPEN_DIR>`, it returns a tree URI that grants full access to the selected directory. File operations inside this directory can be performed by passing a path on the form ``treeUri#relative/path/to/file`` to :ref:`FileAccess<class_FileAccess>`.
+
+To avoid opening the file picker again after each app restart, you can take persistable URI permission as follows:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    val uri = "content://com.android..." # URI of the selected file or folder.
+    val persist = true # Set to false to release the persistable permission.
+    var android_runtime = Engine.get_singleton("AndroidRuntime")
+    android_runtime.updatePersistableUriPermission(uri, persist)
+
+
+
+The persistable URI permission remains valid across app restarts as long as the directory is not moved, renamed, or deleted.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -4094,7 +4120,7 @@ The names of built-in display servers are ``Windows``, ``macOS``, ``X11`` (Linux
 
 :ref:`int<class_int>` **get_primary_screen**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_primary_screen>`
 
-Returns index of the primary screen.
+Returns the index of the primary screen.
 
 \ **Note:** This method is implemented on Linux/X11, macOS, and Windows. On other platforms, this method always returns ``0``.
 
@@ -5540,11 +5566,11 @@ Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientat
 
 :ref:`Color<class_Color>` **screen_get_pixel**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_pixel>`
 
-Returns color of the display pixel at the ``position``.
+Returns the color of the pixel at the given screen ``position``. On multi-monitor setups, the screen position is relative to the virtual desktop area.
 
-\ **Note:** This method is implemented on Linux (X11, excluding XWayland), macOS, and Windows. On other platforms, this method always returns :ref:`Color<class_Color>`.
+\ **Note:** This method is implemented on Linux (X11, excluding XWayland), macOS, and Windows. On other platforms, this method always returns ``Color(0, 0, 0, 1)``.
 
-\ **Note:** On macOS, this method requires the "Screen Recording" permission. If permission is not granted, this method returns a screenshot that will only contain the desktop wallpaper, the current application's window, and other related UI elements.
+\ **Note:** On macOS, this method requires the "Screen Recording" permission. If permission is not granted, this method returns a color from a screenshot that will not include other application windows or OS elements not related to the application.
 
 .. rst-class:: classref-item-separator
 
@@ -5697,7 +5723,7 @@ Sets the ``screen``'s ``orientation``. See also :ref:`screen_get_orientation()<c
 
 |void| **set_hardware_keyboard_connection_change_callback**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_set_hardware_keyboard_connection_change_callback>`
 
-Sets the ``callable`` that should be called when hardware keyboard is connected/disconnected. ``callable`` should accept a single :ref:`bool<class_bool>` parameter indicating whether the keyboard is connected (true) or disconnected (false).
+Sets the callback that should be called when a hardware keyboard is connected or disconnected. ``callable`` should accept a single :ref:`bool<class_bool>` argument indicating whether the keyboard has been connected (``true``) or disconnected (``false``).
 
 \ **Note:** This method is only implemented on Android.
 
@@ -5739,7 +5765,7 @@ Sets the window icon (usually displayed in the top-left corner) in the operating
 
 |void| **set_system_theme_change_callback**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_set_system_theme_change_callback>`
 
-Sets the ``callable`` that should be called when system theme settings are changed. Callback method should have zero arguments.
+Sets the callback that should be called when the system's theme settings are changed. ``callable`` should accept zero arguments.
 
 \ **Note:** This method is implemented on Android, iOS, macOS, Windows, and Linux (X11/Wayland).
 
@@ -6073,9 +6099,9 @@ Unregisters an :ref:`Object<class_Object>` representing an additional output, th
 
 :ref:`int<class_int>` **virtual_keyboard_get_height**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_virtual_keyboard_get_height>`
 
-Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or if it is currently hidden.
+Returns the on-screen keyboard's height in pixels. Returns ``0`` if there is no keyboard or if it is currently hidden.
 
-\ **Note:** On Android 7 and 8, the keyboard height may return 0 the first time the keyboard is opened in non-immersive mode. This behavior does not occur in immersive mode.
+\ **Note:** On Android 7 and 8, the keyboard height may return ``0`` the first time the keyboard is opened in non-immersive mode. This behavior does not occur in immersive mode.
 
 .. rst-class:: classref-item-separator
 
@@ -6373,7 +6399,7 @@ Returns ``true`` if the given window can be maximized (the maximize button is en
 
 :ref:`bool<class_bool>` **window_maximize_on_title_dbl_click**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_window_maximize_on_title_dbl_click>`
 
-Returns ``true``, if double-click on a window title should maximize it.
+Returns ``true`` if double-clicking on a window's title should maximize it.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -6387,7 +6413,7 @@ Returns ``true``, if double-click on a window title should maximize it.
 
 :ref:`bool<class_bool>` **window_minimize_on_title_dbl_click**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_window_minimize_on_title_dbl_click>`
 
-Returns ``true``, if double-click on a window title should minimize it.
+Returns ``true`` if double-clicking on a window's title should minimize it.
 
 \ **Note:** This method is implemented only on macOS.
 
