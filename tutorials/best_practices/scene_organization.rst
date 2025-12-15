@@ -59,7 +59,7 @@ initialize it:
        $Child.signal_name.connect(method_on_the_object)
 
        # Child
-       signal_name.emit() # Triggers parent-defined behavior.
+       signal_name.emit() # Triggers parent-specified behavior.
 
      .. code-tab:: csharp
 
@@ -67,7 +67,7 @@ initialize it:
        GetNode("Child").Connect("SignalName", Callable.From(ObjectWithMethod.MethodOnTheObject));
 
        // Child
-       EmitSignal("SignalName"); // Triggers parent-defined behavior.
+       EmitSignal("SignalName"); // Triggers parent-specified behavior.
 
      .. code-tab:: cpp C++
 
@@ -80,7 +80,7 @@ initialize it:
        }
 
        // Child
-       emit_signal("signal_name"); // Triggers parent-defined behavior.
+       emit_signal("signal_name"); // Triggers parent-specified behavior.
 
 2. Call a method. Used to start behavior.
 
@@ -91,7 +91,7 @@ initialize it:
        $Child.method_name = "do"
 
        # Child, assuming it has String property 'method_name' and method 'do'.
-       call(method_name) # Call parent-defined method (which child must own).
+       call(method_name) # Call parent-specified method (which child must own).
 
      .. code-tab:: csharp
 
@@ -99,7 +99,7 @@ initialize it:
        GetNode("Child").Set("MethodName", "Do");
 
        // Child
-       Call(MethodName); // Call parent-defined method (which child must own).
+       Call(MethodName); // Call parent-specified method (which child must own).
 
      .. code-tab:: cpp C++
 
@@ -110,7 +110,7 @@ initialize it:
        }
 
        // Child
-       call(method_name); // Call parent-defined method (which child must own).
+       call(method_name); // Call parent-specified method (which child must own).
 
 3. Initialize a :ref:`Callable <class_Callable>` property. Safer than a method
    as ownership of the method is unnecessary. Used to start behavior.
@@ -122,7 +122,7 @@ initialize it:
        $Child.func_property = object_with_method.method_on_the_object
 
        # Child
-       func_property.call() # Call parent-defined method (can come from anywhere).
+       func_property.call() # Call parent-specified method (can come from anywhere).
 
      .. code-tab:: csharp
 
@@ -130,7 +130,7 @@ initialize it:
        GetNode("Child").Set("FuncProperty", Callable.From(ObjectWithMethod.MethodOnTheObject));
 
        // Child
-       FuncProperty.Call(); // Call parent-defined method (can come from anywhere).
+       FuncProperty.Call(); // Call parent-specified method (can come from anywhere).
 
      .. code-tab:: cpp C++
 
@@ -141,7 +141,7 @@ initialize it:
        }
 
        // Child
-       func_property.call(); // Call parent-defined method (can come from anywhere).
+       func_property.call(); // Call parent-specified method (can come from anywhere).
 
 4. Initialize a Node or other Object reference.
 
@@ -152,7 +152,7 @@ initialize it:
        $Child.target = self
 
        # Child
-       print(target) # Use parent-defined node.
+       print(target) # Use parent-specified node.
 
      .. code-tab:: csharp
 
@@ -160,7 +160,7 @@ initialize it:
        GetNode("Child").Set("Target", this);
 
        // Child
-       GD.Print(Target); // Use parent-defined node.
+       GD.Print(Target); // Use parent-specified node.
 
      .. code-tab:: cpp C++
 
@@ -182,7 +182,7 @@ initialize it:
        $Child.target_path = ".."
 
        # Child
-       get_node(target_path) # Use parent-defined NodePath.
+       get_node(target_path) # Use parent-specified NodePath.
 
      .. code-tab:: csharp
 
@@ -190,7 +190,7 @@ initialize it:
        GetNode("Child").Set("TargetPath", NodePath(".."));
 
        // Child
-       GetNode(TargetPath); // Use parent-defined NodePath.
+       GetNode(TargetPath); // Use parent-specified NodePath.
 
      .. code-tab:: cpp C++
 
@@ -201,7 +201,7 @@ initialize it:
        }
 
        // Child
-       get_node<Node>(target_path); // Use parent-defined NodePath.
+       get_node<Node>(target_path); // Use parent-specified NodePath.
 
 These options hide the points of access from the child node. This in turn
 keeps the child **loosely coupled** to its environment. You can reuse it
@@ -265,7 +265,7 @@ in another context without any extra changes to its API.
           GDCLASS(Left, Node)
 
           protected:
-              static void _bind_methods() {} 
+              static void _bind_methods() {}
 
           public:
               Node *target = nullptr;
@@ -389,8 +389,8 @@ If you have a system that...
   to swap out the main scene's content. This structure more or less keeps
   the "World" as the main game node.
 
-  Any GUI would also need to be either a singleton, a transitory part of the 
-  "World", or manually added as a direct child of the root. Otherwise, the 
+  Any GUI would also need to be either a singleton, a transitory part of the
+  "World", or manually added as a direct child of the root. Otherwise, the
   GUI nodes would also delete themselves during scene transitions.
 
 If you have systems that modify other systems' data, you should define those as
