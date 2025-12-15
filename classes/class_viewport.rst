@@ -1310,7 +1310,7 @@ The rendering layers in which this **Viewport** renders :ref:`CanvasItem<class_C
 - |void| **set_default_canvas_item_texture_filter**\ (\ value\: :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>`\ )
 - :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` **get_default_canvas_item_texture_filter**\ (\ )
 
-Sets the default filter mode used by :ref:`CanvasItem<class_CanvasItem>`\ s in this Viewport.
+The default filter mode used by :ref:`CanvasItem<class_CanvasItem>` nodes in this viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -1327,7 +1327,7 @@ Sets the default filter mode used by :ref:`CanvasItem<class_CanvasItem>`\ s in t
 - |void| **set_default_canvas_item_texture_repeat**\ (\ value\: :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>`\ )
 - :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` **get_default_canvas_item_texture_repeat**\ (\ )
 
-Sets the default repeat mode used by :ref:`CanvasItem<class_CanvasItem>`\ s in this Viewport.
+The default repeat mode used by :ref:`CanvasItem<class_CanvasItem>` nodes in this viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -1987,9 +1987,7 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<cla
 - |void| **set_use_hdr_2d**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_hdr_2d**\ (\ )
 
-If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an ``RGBA16`` framebuffer. When using the Mobile renderer, it will be an ``RGB10_A2`` framebuffer.
-
-Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
+If ``true``, 2D rendering will use a high dynamic range (HDR) ``RGBA16`` format framebuffer. Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
 
 Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color encoding adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
@@ -2439,7 +2437,7 @@ Returns the drag data from the GUI, that was previously returned by :ref:`Contro
 
 :ref:`String<class_String>` **gui_get_drag_description**\ (\ ) |const| :ref:`🔗<class_Viewport_method_gui_get_drag_description>`
 
-Returns the drag data human-readable description.
+Returns the human-readable description of the drag data, used for assistive apps.
 
 .. rst-class:: classref-item-separator
 
@@ -2515,7 +2513,7 @@ Removes the focus from the currently focused :ref:`Control<class_Control>` withi
 
 |void| **gui_set_drag_description**\ (\ description\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Viewport_method_gui_set_drag_description>`
 
-Sets the drag data human-readable description.
+Sets the human-readable description of the drag data to ``description``, used for assistive apps.
 
 .. rst-class:: classref-item-separator
 

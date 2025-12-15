@@ -571,7 +571,7 @@ Returns the global rest transform for ``bone_idx``.
 
 :ref:`Variant<class_Variant>` **get_bone_meta**\ (\ bone_idx\: :ref:`int<class_int>`, key\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_meta>`
 
-Returns the metadata for the bone at index ``bone_idx`` with ``key``.
+Returns the metadata with the given ``key`` for the bone at index ``bone_idx``.
 
 .. rst-class:: classref-item-separator
 
@@ -725,7 +725,7 @@ Use for invalidating caches in IK solvers and other nodes which process bones.
 
 :ref:`bool<class_bool>` **has_bone_meta**\ (\ bone_idx\: :ref:`int<class_int>`, key\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_has_bone_meta>`
 
-Returns ``true`` if the bone at index ``bone_idx`` has metadata with the key ``key``.
+Returns ``true`` if the bone at index ``bone_idx`` has metadata with the given ``key``.
 
 .. rst-class:: classref-item-separator
 
@@ -903,7 +903,7 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 |void| **set_bone_meta**\ (\ bone_idx\: :ref:`int<class_int>`, key\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_meta>`
 
-Sets the metadata for the bone at index ``bone_idx``, setting the ``key`` meta to ``value``.
+Sets the metadata with the given ``key`` to ``value`` for the bone at index ``bone_idx``.
 
 .. rst-class:: classref-item-separator
 

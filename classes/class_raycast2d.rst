@@ -396,7 +396,7 @@ Returns whether any object is intersecting with the ray's vector (considering th
 
 |void| **remove_exception**\ (\ node\: :ref:`CollisionObject2D<class_CollisionObject2D>`\ ) :ref:`🔗<class_RayCast2D_method_remove_exception>`
 
-Removes a collision exception so the ray can report collisions with the specified specified ``node``.
+Removes a collision exception so the ray can report collisions with the specified ``node``.
 
 .. rst-class:: classref-item-separator
 

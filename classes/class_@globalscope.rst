@@ -3633,6 +3633,10 @@ Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derive
 
 Hints that a :ref:`String<class_String>` property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
 
+The hint string can be set to ``"monospace"`` to force the input field to use a monospaced font.
+
+If the hint string ``"no_wrap"`` is set, the input field will not wrap lines at boundaries, instead resorting to making the area scrollable.
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_EXPRESSION:
 
 .. rst-class:: classref-enumeration-constant
@@ -7446,7 +7450,7 @@ Returns the internal type of the given ``variable``, using the :ref:`Variant.Typ
     var json = JSON.new()
     json.parse('["a", "b", "c"]')
     var result = json.get_data()
-    if result is Array:
+    if typeof(result) == TYPE_ARRAY:
         print(result[0]) # Prints "a"
     else:
         print("Unexpected result!")

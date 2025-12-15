@@ -1370,7 +1370,7 @@ Returns ``true`` if auto-hinting is supported and preferred over font built-in h
 
 :ref:`bool<class_bool>` **_font_is_language_supported**\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_is_language_supported>`
 
-Returns ``true``, if font supports given language (`ISO 639 <https://en.wikipedia.org/wiki/ISO_639-1>`__ code).
+Returns ``true`` if the font supports the given language (as a `ISO 639 <https://en.wikipedia.org/wiki/ISO_639-1>`__ code).
 
 .. rst-class:: classref-item-separator
 
@@ -1382,7 +1382,7 @@ Returns ``true``, if font supports given language (`ISO 639 <https://en.wikipedi
 
 :ref:`bool<class_bool>` **_font_is_modulate_color_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_is_modulate_color_glyphs>`
 
-Returns ``true``, if color modulation is applied when drawing colored glyphs.
+Returns ``true`` if color modulation is applied when drawing the font's colored glyphs.
 
 .. rst-class:: classref-item-separator
 
@@ -1406,7 +1406,7 @@ Returns ``true`` if glyphs of all sizes are rendered using single multichannel s
 
 :ref:`bool<class_bool>` **_font_is_script_supported**\ (\ font_rid\: :ref:`RID<class_RID>`, script\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_is_script_supported>`
 
-Returns ``true``, if font supports given script (ISO 15924 code).
+Returns ``true`` if the font supports the given script (as a `ISO 15924 <https://en.wikipedia.org/wiki/ISO_15924>`__ code).
 
 .. rst-class:: classref-item-separator
 
@@ -2264,7 +2264,7 @@ Loads optional TextServer database (e.g. ICU break iterators and dictionaries).
 
 :ref:`int<class_int>` **_name_to_tag**\ (\ name\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__name_to_tag>`
 
-Converts readable feature, variation, script, or language name to OpenType tag.
+Converts the given readable name of a feature, variation, script, or language to an OpenType tag.
 
 .. rst-class:: classref-item-separator
 
@@ -3350,7 +3350,7 @@ Returns an array of the word break boundaries. Elements in the returned array ar
 
 :ref:`String<class_String>` **_string_to_lower**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__string_to_lower>`
 
-Returns the string converted to lowercase.
+Returns the string converted to ``lowercase``.
 
 .. rst-class:: classref-item-separator
 
@@ -3362,7 +3362,7 @@ Returns the string converted to lowercase.
 
 :ref:`String<class_String>` **_string_to_title**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__string_to_title>`
 
-Returns the string converted to title case.
+Returns the string converted to ``Title Case``.
 
 .. rst-class:: classref-item-separator
 
@@ -3374,7 +3374,7 @@ Returns the string converted to title case.
 
 :ref:`String<class_String>` **_string_to_upper**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__string_to_upper>`
 
-Returns the string converted to uppercase.
+Returns the string converted to ``UPPERCASE``.
 
 .. rst-class:: classref-item-separator
 
@@ -3398,7 +3398,7 @@ Strips diacritics from the string.
 
 :ref:`String<class_String>` **_tag_to_name**\ (\ tag\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__tag_to_name>`
 
-Converts OpenType tag to readable feature, variation, script, or language name.
+Converts the given OpenType tag to the readable name of a feature, variation, script, or language.
 
 .. rst-class:: classref-item-separator
 

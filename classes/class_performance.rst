@@ -270,7 +270,7 @@ Output latency of the :ref:`AudioServer<class_AudioServer>`. Equivalent to calli
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_ACTIVE_MAPS** = ``24``
 
-Number of active navigation maps in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`. This also includes the two empty default navigation maps created by World2D and World3D.
+Number of active navigation maps in :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>`. This also includes the empty default navigation maps created by :ref:`World2D<class_World2D>` and :ref:`World3D<class_World3D>` instances.
 
 .. _class_Performance_constant_NAVIGATION_REGION_COUNT:
 
@@ -390,7 +390,7 @@ Number of pipeline compilations that were triggered to optimize the current scen
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_2D_ACTIVE_MAPS** = ``39``
 
-Number of active navigation maps in the :ref:`NavigationServer2D<class_NavigationServer2D>`. This also includes the two empty default navigation maps created by World2D.
+Number of active navigation maps in the :ref:`NavigationServer2D<class_NavigationServer2D>`. This also includes the empty default navigation maps created by :ref:`World2D<class_World2D>` instances.
 
 .. _class_Performance_constant_NAVIGATION_2D_REGION_COUNT:
 
@@ -470,7 +470,7 @@ Number of active navigation obstacles in the :ref:`NavigationServer2D<class_Navi
 
 :ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_3D_ACTIVE_MAPS** = ``49``
 
-Number of active navigation maps in the :ref:`NavigationServer3D<class_NavigationServer3D>`. This also includes the two empty default navigation maps created by World3D.
+Number of active navigation maps in the :ref:`NavigationServer3D<class_NavigationServer3D>`. This also includes the empty default navigation maps created by :ref:`World3D<class_World3D>` instances.
 
 .. _class_Performance_constant_NAVIGATION_3D_REGION_COUNT:
 

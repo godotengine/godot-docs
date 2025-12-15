@@ -455,6 +455,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/automatically_open_screenshots<class_EditorSettings_property_interface/editor/automatically_open_screenshots>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`interface/editor/bottom_dock_tab_style<class_EditorSettings_property_interface/editor/bottom_dock_tab_style>`                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`interface/editor/code_font<class_EditorSettings_property_interface/editor/code_font>`                                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/code_font_contextual_ligatures<class_EditorSettings_property_interface/editor/code_font_contextual_ligatures>`                                                                             |
@@ -3526,7 +3528,7 @@ Editor accessibility support mode:
 
 - **Disabled** (``2``): Accessibility support is fully disabled.
 
-\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD) do not count as assistive apps. To test your project with these tools, use **Always Active**.
+\ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD), do not count as assistive apps. To test the editor with these tools, use **Always Active**.
 
 .. rst-class:: classref-item-separator
 
@@ -3538,13 +3540,15 @@ Editor accessibility support mode:
 
 :ref:`int<class_int>` **interface/editor/accept_dialog_cancel_ok_buttons** :ref:`🔗<class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons>`
 
-How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<class_AcceptDialog>`\ s. Different platforms have different standard behaviors for this, which can be overridden using this setting. This is useful if you use Godot both on Windows and macOS/Linux and your Godot muscle memory is stronger than your OS specific one.
+How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<class_AcceptDialog>` windows. Different platforms have different conventions for this, which can be overridden through this setting to avoid accidental clicks when using Godot on multiple platforms.
 
-- **Auto** follows the platform convention: OK first on Windows, KDE, and LXQt, Cancel first on macOS and other Linux desktop environments.
+- **Auto** follows the platform convention: OK first on Windows, KDE, and LXQt; Cancel first on macOS and other Linux desktop environments.
 
-- **Cancel First** forces the ordering Cancel/OK.
+- **Cancel First** forces the Cancel/OK ordering.
 
-- **OK First** forces the ordering OK/Cancel.
+- **OK First** forces the OK/Cancel ordering.
+
+To check if these buttons are swapped at runtime, use :ref:`DisplayServer.get_swap_cancel_ok()<class_DisplayServer_method_get_swap_cancel_ok>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3557,6 +3561,18 @@ How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<cla
 :ref:`bool<class_bool>` **interface/editor/automatically_open_screenshots** :ref:`🔗<class_EditorSettings_property_interface/editor/automatically_open_screenshots>`
 
 If ``true``, automatically opens screenshots with the default program associated to ``.png`` files after a screenshot is taken using the **Editor > Take Screenshot** action.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/bottom_dock_tab_style:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/bottom_dock_tab_style** :ref:`🔗<class_EditorSettings_property_interface/editor/bottom_dock_tab_style>`
+
+Tab style of editor docks located at the bottom.
 
 .. rst-class:: classref-item-separator
 
@@ -3680,7 +3696,7 @@ If set to **Custom**, the scaling value in :ref:`interface/editor/custom_display
 
 :ref:`int<class_int>` **interface/editor/dock_tab_style** :ref:`🔗<class_EditorSettings_property_interface/editor/dock_tab_style>`
 
-Tab style of editor docks.
+Tab style of editor docks, except bottom docks.
 
 .. rst-class:: classref-item-separator
 
@@ -4752,7 +4768,7 @@ If ``true``, enable two finger pan and scale gestures on touchscreen devices.
 
 :ref:`bool<class_bool>` **interface/touchscreen/enable_touch_optimizations** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/enable_touch_optimizations>`
 
-If ``true``, increases the scrollbar touch area and enables a larger dragger for split containers to improve usability on touchscreen devices
+If ``true``, increases the scrollbar touch area, enables a larger dragger for split containers, and increases PopupMenu vertical separation to improve usability on touchscreen devices.
 
 \ **Note:** Defaults to ``true`` on touchscreen devices.
 
@@ -4816,7 +4832,7 @@ All update modes will ignore builds with different major versions (e.g. Godot 4 
 
 :ref:`int<class_int>` **network/connection/network_mode** :ref:`🔗<class_EditorSettings_property_network/connection/network_mode>`
 
-Determines whether online features are enabled in the editor, such as the Asset Library or update checks. Disabling these online features helps alleviate privacy concerns by preventing the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Library.
+Determines whether online features, such as the Asset Library or update checks, are enabled in the editor. If this is a privacy concern, disabling these online features prevents the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Library.
 
 Editor plugins and tool scripts are recommended to follow this setting. However, Godot can't prevent them from violating this rule.
 
@@ -4882,7 +4898,7 @@ The port number to use to contact the HTTP and HTTPS proxy in the editor (for th
 
 :ref:`String<class_String>` **network/tls/editor_tls_certificates** :ref:`🔗<class_EditorSettings_property_network/tls/editor_tls_certificates>`
 
-The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
+The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-bundle.crt>`__ will be used.
 
 .. rst-class:: classref-item-separator
 
@@ -5578,7 +5594,7 @@ If ``true``, the caret will be moved when right-clicking somewhere in the script
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method>`
 
-If ``true``, opens the script editor when connecting a signal to an existing script method from the Node dock.
+If ``true``, opens the script editor when connecting a signal to an existing script method from the Signals dock.
 
 .. rst-class:: classref-item-separator
 
@@ -5696,7 +5712,7 @@ If ``true``, automatically adds :doc:`GDScript static typing <../tutorials/scrip
 
 - Creating a new script from a template;
 
-- Connecting signals from the Node dock;
+- Connecting signals from the Signals dock;
 
 - Creating variables prefixed with :ref:`@GDScript.@onready<class_@GDScript_annotation_@onready>`, by dropping nodes from the Scene dock into the script editor while holding :kbd:`Ctrl`.
 

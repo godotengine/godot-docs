@@ -134,6 +134,8 @@ Methods
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                        | :ref:`is_node_3d_snap_enabled<class_EditorInterface_method_is_node_3d_snap_enabled>`\ (\ ) |const|                                                                                                                                                                                                                                                                             |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                        | :ref:`is_object_edited<class_EditorInterface_method_is_object_edited>`\ (\ object\: :ref:`Object<class_Object>`\ ) |const|                                                                                                                                                                                                                                                     |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                        | :ref:`is_playing_scene<class_EditorInterface_method_is_playing_scene>`\ (\ ) |const|                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                        | :ref:`is_plugin_enabled<class_EditorInterface_method_is_plugin_enabled>`\ (\ plugin\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                                   |
@@ -183,6 +185,8 @@ Methods
    | |void|                                                         | :ref:`set_current_feature_profile<class_EditorInterface_method_set_current_feature_profile>`\ (\ profile_name\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`set_main_screen_editor<class_EditorInterface_method_set_main_screen_editor>`\ (\ name\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                                                   |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                         | :ref:`set_object_edited<class_EditorInterface_method_set_object_edited>`\ (\ object\: :ref:`Object<class_Object>`, edited\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                         |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`set_plugin_enabled<class_EditorInterface_method_set_plugin_enabled>`\ (\ plugin\: :ref:`String<class_String>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                      |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -709,6 +713,18 @@ Returns ``true`` if the 3D editor currently has snapping mode enabled, and ``fal
 
 ----
 
+.. _class_EditorInterface_method_is_object_edited:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_object_edited**\ (\ object\: :ref:`Object<class_Object>`\ ) |const| :ref:`🔗<class_EditorInterface_method_is_object_edited>`
+
+Returns ``true`` if the object has been marked as edited through :ref:`set_object_edited()<class_EditorInterface_method_set_object_edited>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorInterface_method_is_playing_scene:
 
 .. rst-class:: classref-method
@@ -1056,6 +1072,22 @@ A feature profile can be created programmatically using the :ref:`EditorFeatureP
 |void| **set_main_screen_editor**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_set_main_screen_editor>`
 
 Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the title of the tab in question exactly (e.g. ``2D``, ``3D``, ``Script``, ``Game``, or ``AssetLib`` for default tabs).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_set_object_edited:
+
+.. rst-class:: classref-method
+
+|void| **set_object_edited**\ (\ object\: :ref:`Object<class_Object>`, edited\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorInterface_method_set_object_edited>`
+
+If ``edited`` is ``true``, the object is marked as edited.
+
+\ **Note:** This is primarily used by the editor for :ref:`Resource<class_Resource>` based objects to track their modified state. For example, any changes to an open scene, a resource in the inspector, or an edited script will cause this method to be called with ``true``. Saving the scene, script, or resource resets the edited state by calling this method with ``false``.
+
+\ **Note:** Each call to this method increments the object's edited version. This is used to track changes in the editor and to trigger when thumbnails should be regenerated for resources.
 
 .. rst-class:: classref-item-separator
 

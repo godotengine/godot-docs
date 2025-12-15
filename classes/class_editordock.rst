@@ -66,29 +66,31 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | |bitfield|\[:ref:`DockLayout<enum_EditorDock_DockLayout>`\] | :ref:`available_layouts<class_EditorDock_property_available_layouts>` | ``5``                                                                     |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                     | clip_contents                                                         | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`DockSlot<enum_EditorPlugin_DockSlot>`                 | :ref:`default_slot<class_EditorDock_property_default_slot>`           | ``-1``                                                                    |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>`                           | :ref:`dock_icon<class_EditorDock_property_dock_icon>`                 |                                                                           |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`Shortcut<class_Shortcut>`                             | :ref:`dock_shortcut<class_EditorDock_property_dock_shortcut>`         |                                                                           |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                     | :ref:`global<class_EditorDock_property_global>`                       | ``true``                                                                  |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>`                         | :ref:`icon_name<class_EditorDock_property_icon_name>`                 | ``&""``                                                                   |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                 | :ref:`layout_key<class_EditorDock_property_layout_key>`               | ``""``                                                                    |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                 | :ref:`title<class_EditorDock_property_title>`                         | ``""``                                                                    |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>`                                   | :ref:`title_color<class_EditorDock_property_title_color>`             | ``Color(0, 0, 0, 0)``                                                     |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                     | :ref:`transient<class_EditorDock_property_transient>`                 | ``false``                                                                 |
-   +-------------------------------------------------------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------+
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | |bitfield|\[:ref:`DockLayout<enum_EditorDock_DockLayout>`\] | :ref:`available_layouts<class_EditorDock_property_available_layouts>` | ``5``                 |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                     | :ref:`closable<class_EditorDock_property_closable>`                   | ``false``             |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`DockSlot<enum_EditorPlugin_DockSlot>`                 | :ref:`default_slot<class_EditorDock_property_default_slot>`           | ``-1``                |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>`                           | :ref:`dock_icon<class_EditorDock_property_dock_icon>`                 |                       |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`Shortcut<class_Shortcut>`                             | :ref:`dock_shortcut<class_EditorDock_property_dock_shortcut>`         |                       |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                     | :ref:`force_show_icon<class_EditorDock_property_force_show_icon>`     | ``false``             |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                     | :ref:`global<class_EditorDock_property_global>`                       | ``true``              |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`StringName<class_StringName>`                         | :ref:`icon_name<class_EditorDock_property_icon_name>`                 | ``&""``               |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`String<class_String>`                                 | :ref:`layout_key<class_EditorDock_property_layout_key>`               | ``""``                |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`String<class_String>`                                 | :ref:`title<class_EditorDock_property_title>`                         | ``""``                |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                   | :ref:`title_color<class_EditorDock_property_title_color>`             | ``Color(0, 0, 0, 0)`` |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                     | :ref:`transient<class_EditorDock_property_transient>`                 | ``false``             |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -107,8 +109,27 @@ Methods
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void| | :ref:`close<class_EditorDock_method_close>`\ (\ )                                                                                                                                                  |
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`make_visible<class_EditorDock_method_make_visible>`\ (\ )                                                                                                                                    |
+   +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void| | :ref:`open<class_EditorDock_method_open>`\ (\ )                                                                                                                                                    |
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Signals
+-------
+
+.. _class_EditorDock_signal_closed:
+
+.. rst-class:: classref-signal
+
+**closed**\ (\ ) :ref:`🔗<class_EditorDock_signal_closed>`
+
+Emitted when the dock is closed with the Close button in the context popup, before it's removed from its parent. See :ref:`closable<class_EditorDock_property_closable>`.
 
 .. rst-class:: classref-section-separator
 
@@ -183,6 +204,23 @@ The available layouts for this dock, as a bitmask. By default, the dock allows v
 
 ----
 
+.. _class_EditorDock_property_closable:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **closable** = ``false`` :ref:`🔗<class_EditorDock_property_closable>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_closable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_closable**\ (\ )
+
+If ``true``, the dock can be closed with the Close button in the context popup. Docks with :ref:`global<class_EditorDock_property_global>` enabled are always closable.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorDock_property_default_slot:
 
 .. rst-class:: classref-property
@@ -230,7 +268,24 @@ The icon for the dock, as a texture. If specified, it will override :ref:`icon_n
 - |void| **set_dock_shortcut**\ (\ value\: :ref:`Shortcut<class_Shortcut>`\ )
 - :ref:`Shortcut<class_Shortcut>` **get_dock_shortcut**\ (\ )
 
-The shortcut used to open the dock. This property can only be set before this dock is added via :ref:`EditorPlugin.add_dock()<class_EditorPlugin_method_add_dock>`.
+The shortcut used to open the dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDock_property_force_show_icon:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **force_show_icon** = ``false`` :ref:`🔗<class_EditorDock_property_force_show_icon>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_force_show_icon**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_force_show_icon**\ (\ )
+
+If ``true``, the dock will always display an icon, regardless of :ref:`EditorSettings.interface/editor/dock_tab_style<class_EditorSettings_property_interface/editor/dock_tab_style>` or :ref:`EditorSettings.interface/editor/bottom_dock_tab_style<class_EditorSettings_property_interface/editor/bottom_dock_tab_style>`.
 
 .. rst-class:: classref-item-separator
 
@@ -247,7 +302,7 @@ The shortcut used to open the dock. This property can only be set before this do
 - |void| **set_global**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_global**\ (\ )
 
-If ``true``, the dock appears in the **Editor > Editor Docks** menu and can be closed. Non-global docks can still be closed using :ref:`close()<class_EditorDock_method_close>`.
+If ``true``, the dock appears in the **Editor > Editor Docks** menu and can be closed. Non-global docks can still be closed using :ref:`close()<class_EditorDock_method_close>` or when :ref:`closable<class_EditorDock_property_closable>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -377,7 +432,7 @@ Implement this method to handle the layout switching for this dock. ``layout`` i
 
 ::
 
-    _update_layout(layout):
+    func _update_layout(layout):
         box_container.vertical = (layout == DOCK_LAYOUT_VERTICAL)
 
 .. rst-class:: classref-item-separator
@@ -396,6 +451,18 @@ Closes the dock, making its tab hidden.
 
 ----
 
+.. _class_EditorDock_method_make_visible:
+
+.. rst-class:: classref-method
+
+|void| **make_visible**\ (\ ) :ref:`🔗<class_EditorDock_method_make_visible>`
+
+Focuses the dock's tab (or window if it's floating). If the dock was closed, it will be opened. If it's a bottom dock, makes the bottom panel visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorDock_method_open:
 
 .. rst-class:: classref-method
@@ -403,6 +470,8 @@ Closes the dock, making its tab hidden.
 |void| **open**\ (\ ) :ref:`🔗<class_EditorDock_method_open>`
 
 Opens the dock. It will appear in the last used dock slot. If the dock has no default slot, it will be opened floating.
+
+\ **Note:** This does not focus the dock. If you want to open and focus the dock, use :ref:`make_visible()<class_EditorDock_method_make_visible>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

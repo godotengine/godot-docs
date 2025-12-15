@@ -337,7 +337,7 @@ Specifies if the icon should be aligned horizontally to the left, right, or cent
 - |void| **set_language**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_language**\ (\ )
 
-Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+Language code used for line-breaking and text shaping algorithms. If left empty, the current locale is used instead.
 
 .. rst-class:: classref-item-separator
 

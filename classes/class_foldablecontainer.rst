@@ -228,7 +228,7 @@ If ``true``, the container will becomes folded and will hide all its children.
 - |void| **set_language**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_language**\ (\ )
 
-Language code used for text shaping algorithms. If left empty, current locale is used instead.
+Language code used for text shaping algorithms. If left empty, the current locale is used instead.
 
 .. rst-class:: classref-item-separator
 

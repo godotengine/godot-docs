@@ -535,7 +535,7 @@ If ``true``, the body is frozen. Gravity and forces are not applied anymore.
 
 See :ref:`freeze_mode<class_RigidBody3D_property_freeze_mode>` to set the body's behavior when frozen.
 
-For a body that is always frozen, use :ref:`StaticBody3D<class_StaticBody3D>` or :ref:`AnimatableBody3D<class_AnimatableBody3D>` instead.
+\ **Note:** For a body that is always frozen, use :ref:`StaticBody3D<class_StaticBody3D>` or :ref:`AnimatableBody3D<class_AnimatableBody3D>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -552,9 +552,9 @@ For a body that is always frozen, use :ref:`StaticBody3D<class_StaticBody3D>` or
 - |void| **set_freeze_mode**\ (\ value\: :ref:`FreezeMode<enum_RigidBody3D_FreezeMode>`\ )
 - :ref:`FreezeMode<enum_RigidBody3D_FreezeMode>` **get_freeze_mode**\ (\ )
 
-The body's freeze mode. Can be used to set the body's behavior when :ref:`freeze<class_RigidBody3D_property_freeze>` is enabled.
+The body's freeze mode. Determines the body's behavior when :ref:`freeze<class_RigidBody3D_property_freeze>` is ``true``.
 
-For a body that is always frozen, use :ref:`StaticBody3D<class_StaticBody3D>` or :ref:`AnimatableBody3D<class_AnimatableBody3D>` instead.
+\ **Note:** For a body that is always frozen, use :ref:`StaticBody3D<class_StaticBody3D>` or :ref:`AnimatableBody3D<class_AnimatableBody3D>` instead.
 
 .. rst-class:: classref-item-separator
 

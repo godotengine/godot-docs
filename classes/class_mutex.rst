@@ -23,8 +23,6 @@ A synchronization mutex (mutual exclusion). This is used to synchronize multiple
 
 This is a reentrant mutex, meaning that it can be locked multiple times by one thread, provided it also unlocks it as many times.
 
-\ **Warning:** Mutexes must be used carefully to avoid deadlocks.
-
 \ **Warning:** To ensure proper cleanup without crashes or deadlocks, the following conditions must be met:
 
 - When a **Mutex**'s reference count reaches zero and it is therefore destroyed, no threads (including the one on which the destruction will happen) must have it locked.

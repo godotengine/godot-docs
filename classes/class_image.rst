@@ -1138,7 +1138,7 @@ Copies ``src`` image to this image.
 
 **Deprecated:** Use :ref:`create_empty()<class_Image_method_create_empty>`.
 
-Creates an empty image of the given size and format. If ``use_mipmaps`` is ``true``, generates mipmaps for this image. See the :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
+Creates an empty image of the given size and format. If ``use_mipmaps`` is ``true``, generates mipmaps for this image (see :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1150,7 +1150,7 @@ Creates an empty image of the given size and format. If ``use_mipmaps`` is ``tru
 
 :ref:`Image<class_Image>` **create_empty**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static| :ref:`🔗<class_Image_method_create_empty>`
 
-Creates an empty image of the given size and format. If ``use_mipmaps`` is ``true``, generates mipmaps for this image. See the :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`.
+Creates an empty image of the given size and format. If ``use_mipmaps`` is ``true``, generates mipmaps for this image (see :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`).
 
 .. rst-class:: classref-item-separator
 

@@ -50,6 +50,7 @@ Nodes
     class_bone2d
     class_boneattachment3d
     class_boneconstraint3d
+    class_bonetwistdisperser3d
     class_boxcontainer
     class_button
     class_camera2d

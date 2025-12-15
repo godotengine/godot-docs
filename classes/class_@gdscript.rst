@@ -631,7 +631,7 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_GROUP<class_@GlobalScope_constant_PRO
 
 .. rst-class:: classref-annotation
 
-**@export_multiline**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_multiline>`
+**@export_multiline**\ (\ hint\: :ref:`String<class_String>` = "", ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@export_multiline>`
 
 Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], :ref:`PackedStringArray<class_PackedStringArray>`, :ref:`Dictionary<class_Dictionary>` or :ref:`Array<class_Array>`\ \[:ref:`Dictionary<class_Dictionary>`\ \] property with a large :ref:`TextEdit<class_TextEdit>` widget instead of a :ref:`LineEdit<class_LineEdit>`. This adds support for multiline content and makes it easier to edit large amount of text stored in the property.
 
@@ -641,6 +641,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_MULTILINE_TEXT<class_@GlobalScope_cons
 
     @export_multiline var character_biography
     @export_multiline var npc_dialogs: Array[String]
+    @export_multiline("monospace", "no_wrap") var favorite_ascii_art: String
 
 .. rst-class:: classref-item-separator
 

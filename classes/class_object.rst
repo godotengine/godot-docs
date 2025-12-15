@@ -256,7 +256,7 @@ Deferred connections trigger their :ref:`Callable<class_Callable>`\ s on idle ti
 
 :ref:`ConnectFlags<enum_Object_ConnectFlags>` **CONNECT_PERSIST** = ``2``
 
-Persisting connections are stored when the object is serialized (such as when using :ref:`PackedScene.pack()<class_PackedScene_method_pack>`). In the editor, connections created through the Node dock are always persisting.
+Persisting connections are stored when the object is serialized (such as when using :ref:`PackedScene.pack()<class_PackedScene_method_pack>`). In the editor, connections created through the Signals dock are always persisting.
 
 .. _class_Object_constant_CONNECT_ONE_SHOT:
 
@@ -912,6 +912,8 @@ This method supports a variable number of arguments, so parameters can be passed
 
 
 
+For methods that are deferred from the same thread, the order of execution at idle time is identical to the order in which ``call_deferred`` was called.
+
 See also :ref:`Callable.call_deferred()<class_Callable_method_call_deferred>`.
 
 \ **Note:** In C#, ``method`` must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the ``MethodName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
@@ -998,7 +1000,7 @@ A signal can only be connected once to the same :ref:`Callable<class_Callable>`.
 
 \ **Note:** In GDScript, it is generally recommended to connect signals with :ref:`Signal.connect()<class_Signal_method_connect>` instead.
 
-\ **Note:** This operation (and all other signal related operations) is thread-safe.
+\ **Note:** This method, and all other signal-related methods, are thread-safe.
 
 .. rst-class:: classref-item-separator
 
@@ -1305,7 +1307,7 @@ Returns an :ref:`Array<class_Array>` of connections for the given ``signal`` nam
 
 Returns the list of existing signals as an :ref:`Array<class_Array>` of dictionaries.
 
-\ **Note:** Due of the implementation, each :ref:`Dictionary<class_Dictionary>` is formatted very similarly to the returned values of :ref:`get_method_list()<class_Object_method_get_method_list>`.
+\ **Note:** Due to the implementation, each :ref:`Dictionary<class_Dictionary>` is formatted very similarly to the returned values of :ref:`get_method_list()<class_Object_method_get_method_list>`.
 
 .. rst-class:: classref-item-separator
 

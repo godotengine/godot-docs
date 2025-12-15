@@ -187,7 +187,7 @@ Font size of the **TextMesh**'s text. This property works in tandem with :ref:`p
 - |void| **set_horizontal_alignment**\ (\ value\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`\ )
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment**\ (\ )
 
-Controls the text's horizontal alignment. Supports left, center, right, and fill, or justify.
+Controls the text's horizontal alignment. Supports left, center, right, and fill (also known as justify).
 
 .. rst-class:: classref-item-separator
 
@@ -221,7 +221,7 @@ Line fill alignment rules.
 - |void| **set_language**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_language**\ (\ )
 
-Language code used for text shaping algorithms, if left empty current locale is used instead.
+Language code used for line-breaking and text shaping algorithms. If left empty, the current locale is used instead.
 
 .. rst-class:: classref-item-separator
 
