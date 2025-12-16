@@ -28,17 +28,16 @@ For compiling under Windows, Linux or macOS, the following is required:
 
 - `Python 3.8+ <https://www.python.org/downloads/>`_.
 - `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
-- `Android SDK <https://developer.android.com/studio/#command-tools>`_
-  (command-line tools are sufficient).
+- Android SDK
 
-   - Required SDK components will be automatically installed.
+   - To install the Android SDK, follow the steps here <https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html>_.
    - On Linux, **do not use an Android SDK provided by your distribution's repositories** as it will often be outdated.
    - On macOS, **do not use an Android SDK provided by Homebrew** as it will not be installed in a unified location.
 
 - Gradle (will be downloaded and installed automatically if missing).
 - JDK 17 (either OpenJDK or Oracle JDK).
 
-   - You can download a build from `Adoptium <https://adoptium.net/temurin/releases/?variant=openjdk17>`_.
+   - You can download a build from `Adoptium <https://adoptium.net/temurin/releases?variant=openjdk17&version=17&os=any&arch=any>`_.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
@@ -62,21 +61,6 @@ Setting up the buildsystem
     -  Linux or macOS: Add the text ``export ANDROID_HOME="/path/to/android-sdk"``
        to your ``.bashrc`` or ``.zshrc`` where ``/path/to/android-sdk`` points to
        the root of the SDK directories.
-
--  Install the necessary SDK components in this folder:
-
-    -  Accept the SDK component licenses by running the following command
-       where ``android_sdk_path`` is the path to the Android SDK, then answering all the prompts with ``y``:
-
-    ::
-
-        cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> --licenses
-
-    -  Complete setup by running the following command where ``android_sdk_path`` is the path to the Android SDK.
-
-    ::
-
-        cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;35.0.1" "platforms;android-35" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;28.1.13356709"
 
 -  After setting up the SDK and environment variables, be sure to
    **restart your terminal** to apply the changes. If you are using
@@ -230,7 +214,7 @@ root directory with the following arguments:
 
 - You can add the ``debug_symbols=yes`` parameters to include the debug symbols in the generated build.
 
-    - Note that you can include ``separate_debug_symbols=yes`` to generate the debug symbols in a separate ``*-native-debug-symbols.zip`` file.
+    - Note that you can include ``separate_debug_symbols=yes`` to the *last* architecture you're building, to generate the debug symbols in a separate ``*-native-debug-symbols.zip`` file.
 
 - You can skip certain architectures depending on your target device to speed up compilation.
 
@@ -259,7 +243,7 @@ Open up a Terminal/Command Prompt and run the following commands from the root d
 
 ::
 
-   adb install ./bin/android_editor_builds/android_editor-release.apk
+   adb install ./bin/android_editor_builds/android_editor-android-debug.apk
 
 Troubleshooting
 ---------------
