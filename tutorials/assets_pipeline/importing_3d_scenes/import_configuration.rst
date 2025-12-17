@@ -163,7 +163,7 @@ exported from other tools such as Maya.
 
 - **Importer** Which import method is used. ubfx handles fbx files as fbx files.
   FBX2glTF converts FBX files to glTF on import and requires additional setup.
-  FBX2glTF is not recommended unless you have a specific rason to use it over
+  FBX2glTF is not recommended unless you have a specific reason to use it over
   ufbx or working with a different file format.
 - **Allow Geometry Helper Nodes** enables or disables geometry helper nodes
 - **Embedded Texture Handling:** Controls how textures embedded within fbx
