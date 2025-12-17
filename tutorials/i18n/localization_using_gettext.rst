@@ -6,7 +6,7 @@ Localization using gettext (PO files)
 In addition to importing translations in
 :ref:`CSV format <doc_localization_using_spreadsheets>`, Godot also
 supports loading translation files written in the GNU gettext format
-(text-based ``.po`` and compiled ``.mo`` since Godot 4.0).
+(text-based ``.po`` and compiled ``.mo``).
 
 .. note:: For an introduction to gettext, check out
           `A Quick Gettext Tutorial <https://www.labri.fr/perso/fleury/posts/programming/a-quick-gettext-tutorial.html>`_.
@@ -69,23 +69,23 @@ Creating the PO template
 Automatic generation using the editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since Godot 4.0, the editor can generate a PO template automatically from
+The editor can generate a PO template automatically from
 specified scene and GDScript files. This POT generation also supports translation
 contexts and pluralization if used in a script, with the optional second
 argument of ``tr()`` and the ``tr_n()`` method.
 
-Open the Project Settings' **Localization > POT Generation** tab, then use the
-**Add…** button to specify the path to your project's scenes and scripts that
+Open :menu:`Project > Project Settings > Localization > Template Generation`, then use the
+:button:`Add…` button to specify the path to your project's scenes and scripts that
 contain localizable strings:
 
 .. figure:: img/localization_using_gettext_pot_generation.webp
    :align: center
-   :alt: Creating a PO template in the Localization > POT Generation tab of the Project Settings
+   :alt: Creating a PO template in the Localization > Template Generation tab of the Project Settings
 
-   Creating a PO template in the **Localization > POT Generation** tab of the Project Settings
+   Creating a PO template in the :menu:`Localization > Template Generation` tab of the :ui:`Project Settings`
 
-After adding at least one scene or script, click **Generate POT** in the
-top-right corner, then specify the path to the output file. This file can be
+After adding at least one scene or script, click :button:`Generate` in the
+top-right corner, then specify the path to the output file with a ``pot`` file extension. This file can be
 placed anywhere in the project directory, but it's recommended to keep it in a
 subdirectory such as ``locale``, as each locale will be defined in its own file.
 
@@ -111,7 +111,7 @@ in the project directory, but it's recommended to keep it in a subdirectory, as
 each locale will be defined in its own file.
 
 Create a directory named ``locale`` in the project directory. In this directory,
-save a file named ``messages.pot`` with the following contents:
+save a file named ``messages.pot`` with the following content:
 
 ::
 
@@ -166,8 +166,8 @@ Loading a messages file in Godot
 --------------------------------
 
 To register a messages file as a translation in a project, open the
-**Project Settings**, then go to the **Localization** tab.
-In **Translations**, click **Add…** then choose the ``.po`` or ``.mo`` file
+:ui:`Project Settings`, then go to :menu:`Localization > Translations`,
+click :button:`Add…` then choose the ``.po`` or ``.mo`` file
 in the file dialog. The locale will be inferred from the
 ``"Language: <code>\n"`` property in the messages file.
 
