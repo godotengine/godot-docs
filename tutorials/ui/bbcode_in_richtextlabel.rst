@@ -994,7 +994,7 @@ Text effects
 ------------
 
 BBCode can also be used to create different text effects that can optionally be
-animated. Five customizable effects are provided out of the box, and you can
+animated. Several customizable effects are provided out of the box, and you can
 easily create your own. By default, animated effects will pause
 :ref:`when the SceneTree is paused <doc_pausing_games>`. You can change this
 behavior by adjusting the RichTextLabel's **Process > Mode** property.
