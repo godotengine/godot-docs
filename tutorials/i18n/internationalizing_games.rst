@@ -29,9 +29,9 @@ Configuring the imported translation
 
 Translations can get updated and re-imported when they change, but
 they still have to be added to the project. This is done in
-**Project → Project Settings → Localization**:
+:menu:`Project > Project Settings > Localization > Translations`:
 
-.. image:: img/localization_dialog.png
+.. image:: img/localization_dialog.webp
 
 The above dialog is used to add or remove translations project-wide.
 
@@ -42,9 +42,9 @@ It is also possible to instruct Godot to use alternate versions of
 assets (resources) depending on the current language. This can be used for
 localized images such as in-game billboards or localized voices.
 
-The **Remaps** tab can be used for this:
+The :ui:`Remaps` tab can be used for this:
 
-.. image:: img/localization_remaps.png
+.. image:: img/localization_remaps.webp
 
 Select the resource to be remapped then add some alternatives for each locale.
 
@@ -66,7 +66,7 @@ It is recommended to default to the user's preferred language which can be
 obtained via :ref:`OS.get_locale_language() <class_OS_method_get_locale_language>`.
 If your game is not available in that language, it will fall back to the
 :ref:`Fallback <class_ProjectSettings_property_internationalization/locale/fallback>`
-in **Project Settings > Internationalization > Locale**, or to ``en`` if empty.
+in :menu:`Project > Project Settings > General > Internationalization > Locale`, or to ``en`` if empty.
 Nevertheless, letting players change the language in game is recommended for
 various reasons (e.g. translation quality or player preference).
 
@@ -119,8 +119,8 @@ in the current translation, then the text will automatically be translated.
 This automatic translation behavior may be undesirable in certain cases. For
 instance, when using a Label to display a player's name, you most likely don't
 want the player's name to be translated if it matches a translation key. To
-disable automatic translation on a specific node, disable **Localization > Auto
-Translate** in the inspector.
+disable automatic translation on a specific node, set the :ui:`Auto Translate > Mode`
+to ``Disabled`` in the inspector.
 
 In code, the :ref:`Object.tr() <class_Object_method_tr>` function can be used.
 This will just look up the text in the translations and convert it if found:
@@ -337,9 +337,9 @@ word and line breaking require more than rules over character sequences.
 Godot includes ICU rule and dictionary-based break iterator data, but this data
 is not included in exported projects by default.
 
-To include it, go to **Project → Project Settings**, enable
-**Internationalization → Locale → Include Text Server Data**,
-then export the project. Break iterator data is about 4 MB in size.
+To include it, go to :menu:`Project > Project Settings > General > Internationalization > Locale`
+and enable :ui:`Include Text Server Data`, then export the project.
+Break iterator data is about 4 MB in size.
 
 Structured text BiDi override
 -----------------------------
@@ -380,8 +380,8 @@ Testing translations
 You may want to test a project's translation before releasing it. Godot provides three ways
 to do this.
 
-First, in the Project Settings, under :menu:`Internationalization > Locale`
-(with advanced settings enabled), there is a **Test** property. Set this property
+Under :menu:`Project > Project Settings > General > Internationalization > Locale`
+(with advanced settings enabled) is a :ui:`Test` property. Set this property
 to the locale code of the language you want to test. Godot will run the project
 with that locale when the project is run (either from the editor or when exported).
 
@@ -411,12 +411,12 @@ Translating the project name
 
 The project name becomes the app name when exporting to different
 operating systems and platforms. To specify the project name in more
-than one language go to **Project > Project Settings> Application >
-Config**. From here click on the button that says ``Localizable String
-(Size 0)``. Now there should be a button below that which says ``Add
-Translation``. Click on that and it will take you to a page where you
-can choose the language (and country if needed) for your project name
-translation. After doing that you can now type in the localized name.
+than one language go to :menu:`Project > Project Settings > General > Application >
+Config`. From here click on the :button:`Localizable String (Size 0)` button,
+then the :button:`Add Translation` button.
+It will take you to a page where you can choose the language
+(and country if needed) for your project name translation.
+After doing that you can now type in the localized name.
 
 .. image:: img/localized_name.webp
 

@@ -25,8 +25,8 @@ Enabling and configuring pseudolocalization
 
 Enabling pseudolocalization and the configurations related to it is as simple as
 toggling a checkbox in the project settings. These settings can be found in
-**Project → Project Settings → General → Internationalization → Pseudolocalization**
-after enabling the **Advanced** toggle in the project settings dialog:
+:menu:`Project > Project Settings > General > Internationalization > Pseudolocalization`
+after enabling the :button:`Advanced` toggle in the project settings dialog:
 
 .. image:: img/pseudolocalization_settings.webp
 
