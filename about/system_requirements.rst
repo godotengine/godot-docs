@@ -265,13 +265,13 @@ Mobile device (smartphone/tablet) - Minimum
 |                      |   Metal 3 support (iOS/iPadOS)                                                          |
 |                      |                                                                                         |
 |                      |   - *Example (Vulkan): Qualcomm Adreno 505, Mali-G71 MP2, Apple A12 (iPhone XR/XS)*     |
-|                      |   - *Example (Metal): Apple A11 (iPhone 8/X)*                                           |
+|                      |   - *Example (Metal): Apple A12 (iPhone XR/XS)*                                         |
 |                      |                                                                                         |
 |                      | - **Mobile renderer:** SoC featuring GPU with full Vulkan 1.0 support, or               |
 |                      |   Metal 3 support (iOS/iPadOS)                                                          |
 |                      |                                                                                         |
 |                      |   - *Example (Vulkan): Qualcomm Adreno 505, Mali-G71 MP2, Apple A12 (iPhone XR/XS)*     |
-|                      |   - *Example (Metal): Apple A11 (iPhone 8/X)*                                           |
+|                      |   - *Example (Metal): Apple A12 (iPhone XR/XS)*                                         |
 |                      |                                                                                         |
 |                      | - **Compatibility renderer:** SoC featuring GPU with full OpenGL ES 3.0 support         |
 |                      |                                                                                         |
