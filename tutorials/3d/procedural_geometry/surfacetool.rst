@@ -121,18 +121,12 @@ shrinks the vertex array to remove duplicate vertices.
     st.add_vertex(Vector3(1, -1, 0))
     st.add_vertex(Vector3(-1, -1, 0))
 
-    # We can make the quad more efficient by using an index array and only utilizing 4 vertices
+    # We can make the quad more efficient by using an index array and only utilizing 4 vertices:
 
-    # Suppose we have a quad defined by 6 vertices as follows
     st.add_vertex(Vector3(-1, 1, 0))
     st.add_vertex(Vector3(1, 1, 0))
     st.add_vertex(Vector3(-1, -1, 0))
-
-    st.add_vertex(Vector3(1, 1, 0))
     st.add_vertex(Vector3(1, -1, 0))
-    st.add_vertex(Vector3(-1, -1, 0))
-
-    # We can make the quad more efficient by using an index array and only utilizing 4 vertices
 
     # Creates a quad from four corner vertices.
     # add_index() can be called before or after add_vertex()
@@ -150,6 +144,21 @@ shrinks the vertex array to remove duplicate vertices.
 
  .. code-tab:: csharp
 
+    // Suppose we have a quad defined by 6 vertices as follows.
+    st.AddVertex(new Vector3(-1, 1, 0));
+    st.AddVertex(new Vector3(1, 1, 0));
+    st.AddVertex(new Vector3(-1, -1, 0));
+
+    st.AddVertex(new Vector3(1, 1, 0));
+    st.AddVertex(new Vector3(1, -1, 0));
+    st.AddVertex(new Vector3(-1, -1, 0));
+
+    // We can make the quad more efficient by using an index array and only utilizing 4 vertices:
+    st.AddVertex(new Vector3(-1, -1, 0));
+    st.AddVertex(new Vector3(1, 1, 0));
+    st.AddVertex(new Vector3(-1, -1, 0));
+    st.AddVertex(new Vector3(1, 1, 0));
+
     // Creates a quad from four corner vertices.
     // AddIndex does not need to be called before AddVertex.
     st.AddIndex(0);
@@ -160,7 +169,7 @@ shrinks the vertex array to remove duplicate vertices.
     st.AddIndex(3);
     st.AddIndex(2);
 
-    // Alternatively:
+    // Alternatively we can use `st.Index()` which will create the quad for us and remove the duplicate vertices.
     st.Index();
 
 Similarly, if you have an index array, but you want each vertex to be unique (e.g. because
