@@ -94,12 +94,12 @@ supported_languages = {
     "pt_BR": "Documentação da Godot Engine %s em Português Brasileiro",
     "ru": "Документация Godot Engine %s на русском языке",
     "uk": "Документація до Godot Engine %s українською мовою",
-    "zh_CN": "Godot Engine %s 简体中文文档",
-    "zh_TW": "Godot Engine %s 正體中文 (台灣) 文件",
+    "zh_Hans": "Godot Engine %s 简体中文文档",
+    "zh_Hant": "Godot Engine %s 正體中文 (台灣) 文件",
 }
 
-# RTD normalized their language codes to ll-cc (e.g. zh-cn),
-# but Sphinx did not and still uses ll_CC (e.g. zh_CN).
+# RTD normalized their language codes to ll-cc (e.g. pt-br),
+# but Sphinx did not and still uses ll_CC (e.g. pt_BR).
 # `language` is the Sphinx configuration so it needs to be converted back.
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
 if "-" in language:
