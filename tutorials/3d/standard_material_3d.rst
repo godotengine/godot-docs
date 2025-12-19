@@ -435,6 +435,9 @@ and wider compatibility.
 Bent normal map
 ---------------
 
+*This is only available in the Forward+ and Mobile renderers, not the Compatibility
+renderer.*
+
 A bent normal map describes the average direction of ambient lighting. Unlike a
 regular normal map, this is used to improve how a material reacts to lighting
 rather than add surface detail.
