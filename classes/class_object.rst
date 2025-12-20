@@ -258,6 +258,8 @@ Deferred connections trigger their :ref:`Callable<class_Callable>`\ s on idle ti
 
 Persisting connections are stored when the object is serialized (such as when using :ref:`PackedScene.pack()<class_PackedScene_method_pack>`). In the editor, connections created through the Signals dock are always persisting.
 
+\ **Note:** Connections to lambda functions (that is, when the function code is embedded in the :ref:`connect()<class_Object_method_connect>` call) cannot be made persistent.
+
 .. _class_Object_constant_CONNECT_ONE_SHOT:
 
 .. rst-class:: classref-enumeration-constant

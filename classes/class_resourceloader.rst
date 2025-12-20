@@ -32,6 +32,8 @@ It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes
 Tutorials
 ---------
 
+- `Threaded Loading Demo <https://godotengine.org/asset-library/asset/2778>`__
+
 - `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
 
 .. rst-class:: classref-reftable-group

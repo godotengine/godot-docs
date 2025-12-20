@@ -3718,6 +3718,8 @@ Draws SDFGI cascade data. This is the data structure that is used to bounce ligh
 
 Draws SDFGI probe data. This is the data structure that is used to give indirect lighting dynamic objects moving within the scene.
 
+When in the editor, left-clicking a probe will display additional bright dots that show its occlusion information. A white dot means the light is not occluded at all at the dot's position, while a red dot means the light is fully occluded. Intermediate values are possible.
+
 \ **Note:** Only supported when using the Forward+ rendering method.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_GI_BUFFER:

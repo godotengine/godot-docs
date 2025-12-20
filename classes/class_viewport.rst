@@ -852,6 +852,8 @@ Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_
 
 Draws the probes used for signed distance field global illumination (SDFGI).
 
+When in the editor, left-clicking a probe will display additional bright dots that show its occlusion information. A white dot means the light is not occluded at all at the dot's position, while a red dot means the light is fully occluded. Intermediate values are possible.
+
 Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false``.
 
 \ **Note:** Only supported when using the Forward+ rendering method.
@@ -1294,6 +1296,8 @@ If ``true``, the viewport will process 3D audio streams.
 - :ref:`int<class_int>` **get_canvas_cull_mask**\ (\ )
 
 The rendering layers in which this **Viewport** renders :ref:`CanvasItem<class_CanvasItem>` nodes.
+
+\ **Note:** A :ref:`CanvasItem<class_CanvasItem>` does not inherit its parents' visibility layers. See :ref:`CanvasItem.visibility_layer<class_CanvasItem_property_visibility_layer>`'s description for details.
 
 .. rst-class:: classref-item-separator
 
