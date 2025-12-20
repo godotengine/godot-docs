@@ -342,7 +342,7 @@ The **TileMapLayer**'s physics quadrant size. Within a physics quadrant, cells w
 
 \ **Note:** As quadrants are created according to the map's coordinate system, the quadrant's "square shape" might not look like square in the **TileMapLayer**'s local coordinate system.
 
-\ **Note:** This impacts the value returned by :ref:`get_coords_for_body_rid()<class_TileMapLayer_method_get_coords_for_body_rid>`.
+\ **Note:** This impacts the value returned by :ref:`get_coords_for_body_rid()<class_TileMapLayer_method_get_coords_for_body_rid>`. Higher values will make that function less precise. To get the exact cell coordinates, you need to set :ref:`physics_quadrant_size<class_TileMapLayer_property_physics_quadrant_size>` to ``1``, which disables physics chunking.
 
 .. rst-class:: classref-item-separator
 
@@ -622,6 +622,8 @@ Returns the :ref:`TileData<class_TileData>` object associated with the given cel
 :ref:`Vector2i<class_Vector2i>` **get_coords_for_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TileMapLayer_method_get_coords_for_body_rid>`
 
 Returns the coordinates of the physics quadrant (see :ref:`physics_quadrant_size<class_TileMapLayer_property_physics_quadrant_size>`) for given physics body :ref:`RID<class_RID>`. Such an :ref:`RID<class_RID>` can be retrieved from :ref:`KinematicCollision2D.get_collider_rid()<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
+
+\ **Note:** Higher values of :ref:`physics_quadrant_size<class_TileMapLayer_property_physics_quadrant_size>` will make this function less precise. To get the exact cell coordinates, you need to set :ref:`physics_quadrant_size<class_TileMapLayer_property_physics_quadrant_size>` to ``1``, which disables physics chunking.
 
 .. rst-class:: classref-item-separator
 

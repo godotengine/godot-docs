@@ -314,6 +314,8 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`_is_locale_right_to_left<class_TextServerExtension_private_method__is_locale_right_to_left>`\ (\ locale\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                 |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_is_locale_using_support_data<class_TextServerExtension_private_method__is_locale_using_support_data>`\ (\ locale\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                                                       |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`_is_valid_identifier<class_TextServerExtension_private_method__is_valid_identifier>`\ (\ string\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`_is_valid_letter<class_TextServerExtension_private_method__is_valid_letter>`\ (\ unicode\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                                      |
@@ -2215,6 +2217,18 @@ Returns index of the first string in ``dict`` which is visually confusable with 
 :ref:`bool<class_bool>` **_is_locale_right_to_left**\ (\ locale\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__is_locale_right_to_left>`
 
 Returns ``true`` if locale is right-to-left.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__is_locale_using_support_data:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_is_locale_using_support_data**\ (\ locale\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__is_locale_using_support_data>`
+
+Returns ``true`` if the locale requires text server support data for line/word breaking.
 
 .. rst-class:: classref-item-separator
 

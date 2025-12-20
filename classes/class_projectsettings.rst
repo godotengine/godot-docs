@@ -1731,7 +1731,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method.web<class_ProjectSettings_property_rendering/renderer/rendering_method.web>`                                                                                     | ``"gl_compatibility"``                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``613``                                                                                          |
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``618``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_resource_descriptors<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_resource_descriptors>`                                                 | ``65536``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2502,9 +2502,9 @@ Maximum number of frames per second allowed. A value of ``0`` means "no limit". 
 
 Limiting the FPS can be useful to reduce system power consumption, which reduces heat and noise emissions (and improves battery life on mobile devices).
 
-If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is set to ``Enabled`` or ``Adaptive``, it takes precedence and the forced FPS number cannot exceed the monitor's refresh rate.
+If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is set to ``Enabled`` or ``Adaptive``, it takes precedence and the forced FPS number cannot exceed the monitor's refresh rate. See also :ref:`DisplayServer.screen_get_refresh_rate()<class_DisplayServer_method_screen_get_refresh_rate>`.
 
-If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Enabled``, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using an FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
+If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Enabled``, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using an FPS limit slightly lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__. At higher refresh rates, the difference between the FPS limit and the monitor refresh rate should be increased to ensure frames to account for timing inaccuracies. The optimal formula for the FPS limit value in this scenario is ``r - (r * r) / 3600.0``, where ``r`` is the monitor's refresh rate.
 
 If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Disabled``, limiting the FPS to a high value that can be consistently reached on the system can reduce input lag compared to an uncapped framerate. Since this works by ensuring the GPU load is lower than 100%, this latency reduction is only effective in GPU-bottlenecked scenarios, not CPU-bottlenecked scenarios.
 
@@ -13006,9 +13006,9 @@ Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_pro
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``613`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``618`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`
 
-Version code of the `Direct3D 12 Agility SDK <https://devblogs.microsoft.com/directx/directx12agility/>`__ to use (``D3D12SDKVersion``). This must match the *minor* version that is installed next to the editor binary and in the export templates directory for the current editor version. For example, if you have ``1.613.3`` installed, you need to input ``613`` here.
+Version code of the `Direct3D 12 Agility SDK <https://devblogs.microsoft.com/directx/directx12agility/>`__ to use (``D3D12SDKVersion``). This must match the *minor* version that is installed next to the editor binary and in the export templates directory for the current editor version. For example, if you have ``1.618.5`` installed, you need to input ``618`` here.
 
 .. rst-class:: classref-item-separator
 
