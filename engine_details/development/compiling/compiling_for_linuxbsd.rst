@@ -118,7 +118,7 @@ Distro-specific one-liners
         ::
 
             pkg install \
-              py37-scons \
+              devel/scons \
               pkgconf \
               xorg-libraries \
               libXcursor \
@@ -127,7 +127,8 @@ Distro-specific one-liners
               xorgproto \
               libGLU \
               alsa-lib \
-              pulseaudio
+              pulseaudio \
+              wayland
 
     .. tab:: Gentoo
 
@@ -168,9 +169,9 @@ Distro-specific one-liners
 
         ::
 
-            pkg_add \
+            pkgin install \
               pkg-config \
-              py37-scons
+              py313-scons
 
         .. hint::
 
@@ -281,6 +282,13 @@ Manager.
     Using Clang appears to be a requirement for OpenBSD, otherwise fonts
     would not build.
     For RISC-V architecture devices, use the Clang compiler instead of the GCC compiler.
+
+.. note::
+
+    Compiling on some platforms such as OpenBSD may require more memory than
+    available by default.
+    To increase the memory limit on OpenBSD within the maximum for the current user,
+    run ``ulimit -d {new amount in kB}``.
 
 .. tip:: If you are compiling Godot for production use, you can
          make the final executable smaller and faster by adding the
