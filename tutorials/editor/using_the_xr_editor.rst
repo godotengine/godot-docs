@@ -17,8 +17,8 @@ or from the `Godot download page <https://godotengine.org/download/preview/>`__.
 XR devices support
 ------------------
 
-For now, the Godot XR editor is only available for the following `Meta Quest <https://www.meta.com/quest/>`__
-devices running **Meta Horizon OS v69 or higher**:
+For now, the Godot XR editor is only available for Android XR devices, and the
+following `Meta Quest <https://www.meta.com/quest/>`__ devices running **Meta Horizon OS v69 or higher**:
 
  - Meta Quest 3
  - Meta Quest 3s
@@ -83,8 +83,6 @@ Here are the known limitations and issues of the XR editor:
 - No Meta Quest 2 support due to the limited amount of memory on the device. 
   However advanced users can grab the XR editor APK from the `download page <https://godotengine.org/download/preview/>`__
   and sideload it onto their device if they desire to do so.
-- No gradle build support.
-- No support for Android plugins as they require gradle build support. GDExtension plugins are supported.
 - No C#/Mono support.
 - No support for external script editors.
 - While available, the *Vulkan Forward+* renderer is not recommended due to severe performance issues.
