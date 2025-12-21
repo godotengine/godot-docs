@@ -122,6 +122,11 @@ If you keep ``.blend`` files within your project folder but don't want them to
 be imported by Godot, disable **Filesystem > Import > Blender > Enabled** in the
 advanced Project Settings.
 
+.. figure:: img/importing_3d_scenes_advanced_import_settings_checkbox.webp
+   :align: center
+   :alt: Checkbox to enable blend files in Godot
+
+
 The ``.blend`` import process converts to glTF first, so it still uses
 Godot's glTF import code. Therefore, the ``.blend`` import process is the same
 as the glTF import process, but with an extra step at the beginning.
@@ -140,6 +145,36 @@ as the glTF import process, but with an extra step at the beginning.
 
     If this is problematic, consider using glTF scenes exported from Blender
     instead.
+
+To add collision to the object in godot add the suffix ``-col`` to the end of
+the object name in blender.
+
+.. figure:: img/importing_3d_scenes_blender_object_name.webp
+   :align: center
+   :alt: Suffix to be added in the scene collection
+
+.. list-table::
+  :class: wrap-normal
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Collision Suffix
+    - Collision Type
+  
+  * - ``-col``
+    - :ref:`ConcavePolygonShape3D <class_ConcavePolygonShape3D>`
+
+  * - ``-convcol``
+    - :ref:`ConvexPolygonShape3D <class_ConvexPolygonShape3D>`
+  
+  * - ``-colonly``
+    - :ref:`StaticBody3D <class_StaticBody3D>`
+
+.. seealso::
+
+  See :ref:`doc_importing_3d_scenes_node_type_customization` for a more 
+  comprehensive overview on node type customization 
 
 Exporting DAE files from Blender
 --------------------------------
