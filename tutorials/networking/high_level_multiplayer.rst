@@ -274,11 +274,11 @@ The annotation can take a number of arguments, which have default values. ``@rpc
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    @rpc("authority", "call_remote", "unreliable", 0)
+    @rpc("authority", "call_remote", "reliable", 0)
 
  .. code-tab:: csharp
 
-    [Rpc(MultiplayerApi.RpcMode.Authority, CallLocal = false, TransferMode = MultiplayerPeer.TransferModeEnum.Unreliable, TransferChannel = 0)]
+    [Rpc(MultiplayerApi.RpcMode.Authority, CallLocal = false, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, TransferChannel = 0)]
 
 The parameters and their functions are as follows:
 
