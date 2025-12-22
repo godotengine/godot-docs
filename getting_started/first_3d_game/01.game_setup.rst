@@ -107,7 +107,7 @@ the viewport.
 We're going to move the ground down so we can see the floor grid. To do this, the grid snapping feature can be used.
 Grid snapping can be activated 2 ways in the 3D editor.
 The first is by pressing the *Use Snap* button (or pressing the :kbd:`Y` key).
-The second is by selecting a node, dragging a handle on the gizmo **then** holding :kbd:`Ctrl` while still clicking to enable snapping as long as :kbd:`Ctrl` is held.
+The second is by selecting a node, dragging a handle on the gizmo **then** holding :kbd:`Ctrl` (:kbd:`Cmd` on macOS) while still clicking to enable snapping as long as :kbd:`Ctrl` is held.
 
 .. image:: img/01.game_setup/use_snap.webp
 
