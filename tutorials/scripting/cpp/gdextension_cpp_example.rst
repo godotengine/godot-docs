@@ -12,7 +12,7 @@ If you decide to work with it, here's what to expect your workflow to look like:
 * Create a new godot-cpp project (from the `template <https://github.com/godotengine/godot-cpp-template>`__, or from scratch, as explained below).
 * Develop your code with your :ref:`favorite IDE <toc-devel-configuring_an_ide>` locally.
 * Build and test your code with the earliest compatible Godot version.
-* Create builds for all platforms you want to support (e.g. using `GitHub Actions <https://github.com/godotengine/godot-cpp-template/blob/main/.github/workflows/builds.yml>`__).
+* Create builds for all platforms you want to support (e.g. using `GitHub Actions <https://github.com/godotengine/godot-cpp-template/blob/main/.github/workflows/make_build.yml>`__).
 * Optional: Publish on the `Godot Asset Library <https://godotengine.org/asset-library/asset>`__.
 
 Example project
