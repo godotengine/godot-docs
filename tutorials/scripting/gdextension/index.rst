@@ -24,3 +24,4 @@ articles instead, such as the articles about :ref:`C++ (godot-cpp) <doc_godot_cp
    what_is_gdextension
    gdextension_file
    gdextension_c_example
+   gdextension_interface_json_file
