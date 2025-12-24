@@ -482,3 +482,6 @@ source,destination
 /contributing/development/editor/index.html,/engine_details/editor/index.html
 /contributing/development/editor/introduction_to_editor_development.html,/engine_details/editor/introduction_to_editor_development.html
 /contributing/development/file_formats/gdscript_grammar.html,/engine_details/file_formats/gdscript_grammar.html
+/engine_details/development/debugging/using_cpp_profilers.html,/engine_details/development/profiling/index.html
+/engine_details/development/debugging/profiling/sampling_profilers.html,/engine_details/development/profiling/index.html
+/engine_details/development/debugging/profiling/tracing_profilers.html,/engine_details/development/profiling/index.html
