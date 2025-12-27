@@ -1287,6 +1287,8 @@ The owner of this node. The owner must be an ancestor of this node. When packing
 
 \ **Note:** In the editor, nodes not owned by the scene root are usually not displayed in the Scene dock, and will **not** be saved. To prevent this, remember to set the owner after calling :ref:`add_child()<class_Node_method_add_child>`.
 
+\ **Note:** The owner needs to be the current scene root. See `Instancing scenes <../tutorials/plugins/running_code_in_the_editor.html#instancing-scenes>`__ in the documentation for more information.
+
 .. rst-class:: classref-item-separator
 
 ----

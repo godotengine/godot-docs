@@ -10910,11 +10910,17 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 :ref:`int<class_int>` **physics/common/physics_ticks_per_second** = ``60`` :ref:`🔗<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
 
-The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process()<class_Node_private_method__physics_process>` methods are run. See also :ref:`application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`.
+The number of fixed iterations per second. This controls how often physics simulation and the :ref:`Node._physics_process()<class_Node_private_method__physics_process>` method are run.
+
+CPU usage scales approximately with the physics tick rate. However, at very low tick rates (usually below 30), physics behavior can break down. Input can also become less responsive at low tick rates as there can be a gap between input being registered, and the response on the next physics tick. High tick rates give more accurate physics simulation, particularly for fast moving objects. For example, racing games may benefit from increasing the tick rate above the default 60.
+
+See also :ref:`application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`.
 
 \ **Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` instead.
 
 \ **Note:** Only :ref:`physics/common/max_physics_steps_per_frame<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>` physics ticks may be simulated per rendered frame at most. If more physics ticks have to be simulated per rendered frame to keep up with rendering, the project will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended to also increase :ref:`physics/common/max_physics_steps_per_frame<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>` if increasing :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` significantly above its default value.
+
+\ **Note:** Consider enabling :doc:`physics interpolation <../tutorials/physics/interpolation/index>` if you change :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` to a value that is not a multiple of ``60``. Using physics interpolation will avoid jittering when the monitor refresh rate and physics update rate don't exactly match.
 
 .. rst-class:: classref-item-separator
 
