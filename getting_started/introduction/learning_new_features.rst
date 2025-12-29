@@ -23,7 +23,7 @@ content.
 
 .. image:: img/manual_search.png
 
-The manual has a companion class reference that explains each Godot class's
+The manual has a companion class reference that explains each of Godot class's
 available functions and properties when programming. While the manual covers
 general features, concepts, and how to use the editor, the reference is all
 about using Godot's scripting API (Application Programming Interface). You can
