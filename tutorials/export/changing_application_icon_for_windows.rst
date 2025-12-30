@@ -108,7 +108,7 @@ the **Application → Icon** field.
     If rcedit fails to change the icon, you can instead
     :ref:`compile your own Windows export templates <doc_compiling_for_windows>`
     with the icon changed. To do so, replace
-    `platform/windows/godot.ico <https://github.com/godotengine/godot/blob/master/platform/windows/godot.ico>`__
+    `platform/windows/godot.ico <https://github.com/godotengine/godot/blob/3.6/platform/windows/godot.ico>`__
     with your own ICO file *before* compiling export templates.
 
     Once this is done, you can specify your export templates as custom export

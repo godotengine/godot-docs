@@ -373,7 +373,7 @@ is used to register the dummy class in GDScript.
 	void register_hilbert_hotel_types();
 	void unregister_hilbert_hotel_types();
 
-- `servers/register_server_types.cpp <https://github.com/godotengine/godot/blob/master/servers/register_server_types.cpp>`__
+- `servers/register_server_types.cpp <https://github.com/godotengine/godot/blob/3.6/servers/register_server_types.cpp>`__
 
 Bind methods
 ~~~~~~~~~~~~

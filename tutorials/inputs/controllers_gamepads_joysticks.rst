@@ -13,7 +13,7 @@ Note that more specialized devices such as steering wheels, rudder pedals and
 always work as expected. Overriding force feedback for those devices is also not
 implemented yet. If you have access to one of those devices, don't hesitate to
 `report bugs on GitHub
-<https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#reporting-bugs>`__.
+<https://github.com/godotengine/godot/blob/3.6/CONTRIBUTING.md#reporting-bugs>`__.
 
 In this guide, you will learn:
 

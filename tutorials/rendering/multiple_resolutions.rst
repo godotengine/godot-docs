@@ -460,5 +460,5 @@ that it allows enable linear filtering. This makes scaled 3D viewports look
 better in many cases.
 
 See the
-`3D viewport scaling demo <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/3d_scaling>`__
+`3D viewport scaling demo <https://github.com/godotengine/godot-demo-projects/tree/3.5/viewport/3d_scaling>`__
 for examples.

@@ -134,7 +134,7 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 Operators (like ``in``, ``not``, ``and`` or ``or``) and names of built-in types
 as listed in the following sections are also reserved.
 
-Keywords are defined in the `GDScript tokenizer <https://github.com/godotengine/godot/blob/master/modules/gdscript/gdscript_tokenizer.cpp>`_
+Keywords are defined in the `GDScript tokenizer <https://github.com/godotengine/godot/blob/3.6/modules/gdscript/gdscript_tokenizer.cpp>`_
 in case you want to take a look under the hood.
 
 +------------+---------------------------------------------------------------------------------------------------------------+

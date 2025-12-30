@@ -12,7 +12,7 @@ methods to do this. The Label3D node and the text mesh for a
 MeshInstance node.
 
 This page does **not** cover how to display a GUI scene in a 3D
-environment. For information on how to do that see `this <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/2d_in_3d>`__
+environment. For information on how to do that see `this <https://github.com/godotengine/godot-demo-projects/tree/3.5/viewport/2d_in_3d>`__
 demo project.
 
 Label3D

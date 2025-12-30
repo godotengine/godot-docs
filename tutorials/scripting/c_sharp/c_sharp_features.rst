@@ -242,4 +242,4 @@ When **exporting**, the following may also be defined depending on the export fe
 * Any custom features added in the export menu will be capitalized and prefixed: ``foo`` -> ``GODOT_FOO``.
 
 To see an example project, see the OS testing demo:
-https://github.com/godotengine/godot-demo-projects/tree/master/misc/os_test
+https://github.com/godotengine/godot-demo-projects/tree/3.5/misc/os_test

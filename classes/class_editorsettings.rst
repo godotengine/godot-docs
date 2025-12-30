@@ -29,10 +29,10 @@ Accessing the settings can be done using the following methods, such as:
 
     # `settings.set("some/property", value)` also works as this class overrides `_set()` internally.
     settings.set_setting("some/property",value)
-    
+
     # `settings.get("some/property", value)` also works as this class overrides `_get()` internally.
     settings.get_setting("some/property")
-    
+
     var list_of_settings = settings.get_property_list()
 
 \ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
@@ -1936,7 +1936,7 @@ The icon and font color scheme to use in the editor.
 
 - **Dark** makes fonts and icons light (suitable for dark themes).
 
-- **Light** makes fonts and icons dark (suitable for light themes). Icon colors are automatically converted by the editor following `this set of rules <https://github.com/godotengine/godot/blob/master/editor/editor_themes.cpp#L135>`__.
+- **Light** makes fonts and icons dark (suitable for light themes). Icon colors are automatically converted by the editor following `this set of rules <https://github.com/godotengine/godot/blob/3.6/editor/editor_themes.cpp#L135>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -2092,7 +2092,7 @@ The port number to use to contact the HTTP and HTTPS proxy in the editor (for th
 
 :ref:`String<class_String>` **network/ssl/editor_ssl_certificates**
 
-The SSL certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
+The SSL certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/3.6/thirdparty/certs/ca-certificates.crt>`__ will be used.
 
 .. rst-class:: classref-item-separator
 
@@ -3315,21 +3315,21 @@ Adds a custom property info to a property. The dictionary must contain:
 
 - ``type``: :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`)
 
-- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\ 
+- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\
 
-\ **Example:**\ 
+\ **Example:**\
 
 ::
 
     editor_settings.set("category/property_name", 0)
-    
+
     var property_info = {
         "name": "category/property_name",
         "type": TYPE_INT,
         "hint": PROPERTY_HINT_ENUM,
         "hint_string": "one,two,three"
     }
-    
+
     editor_settings.add_property_info(property_info)
 
 .. rst-class:: classref-item-separator

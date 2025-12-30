@@ -25,7 +25,7 @@ The reference for each class is contained in an XML file like the one below:
         </description>
         <tutorials>
             <link title="Custom drawing in 2D">https://docs.godotengine.org/en/latest/tutorials/2d/custom_drawing_in_2d.html</link>
-            <link title="All 2D Demos">https://github.com/godotengine/godot-demo-projects/tree/master/2d</link>
+            <link title="All 2D Demos">https://github.com/godotengine/godot-demo-projects/tree/3.5/2d</link>
         </tutorials>
         <methods>
             <method name="apply_scale">

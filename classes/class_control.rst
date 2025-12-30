@@ -48,7 +48,7 @@ Tutorials
 
 - :doc:`Control node gallery <../tutorials/ui/control_node_gallery>`
 
-- `All GUI Demos <https://github.com/godotengine/godot-demo-projects/tree/master/gui>`__
+- `All GUI Demos <https://github.com/godotengine/godot-demo-projects/tree/3.5/gui>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -7,7 +7,7 @@ Introduction
 ------------
 
 This tutorial explains how the 2D lighting works in the
-`lights and shadows <https://github.com/godotengine/godot-demo-projects/tree/master/2d/lights_and_shadows>`_ demo project.
+`lights and shadows <https://github.com/godotengine/godot-demo-projects/tree/3.5/2d/lights_and_shadows>`_ demo project.
 It begins with a brief description of the resources used in the final demo and then describes how
 to make a scene like the demo step by step.
 
@@ -25,19 +25,19 @@ For this demo we use four textures: two for the lights, one for the shadow caste
 and one for the background. I've included links to them all here if you want to download them
 separately from the demo.
 
-The first is the background image (`background.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/background.png>`_)
+The first is the background image (`background.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/3.5/2d/lights_and_shadows/background.png>`_)
 used in the demo. You do not necessarily need a background, but we use one for the demo.
 
-The second is a plain black image (`caster.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/caster.png>`_)
+The second is a plain black image (`caster.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/3.5/2d/lights_and_shadows/caster.png>`_)
 to use as our shadow caster object. For a top down game this could be a wall or any
 other object that casts a shadow.
 
-Next is the light itself (`light.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/light.png>`_).
+Next is the light itself (`light.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/3.5/2d/lights_and_shadows/light.png>`_).
 If you click the link you will notice how large it is. The image you use
 for a light should cover the area you want your light to cover. This image is
 1024x1024 pixels, so you should use it to cover 1024x1024 pixels in your game.
 
-Lastly, we have the spotlight image (`spot.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/spot.png>`_).
+Lastly, we have the spotlight image (`spot.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/3.5/2d/lights_and_shadows/spot.png>`_).
 The demo uses a blob to show where the light is and the larger light
 image to show the effect of the light upon the rest of the scene.
 
@@ -110,19 +110,19 @@ Step by step
 Now that we have covered the basics of the nodes being used, we can now walk step by step through
 the process of making a scene like the one found in the demo.
 
-First add a :ref:`Sprite <class_Sprite>` and set its texture to the `background image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/background.png>`_. For your game this can be any
+First add a :ref:`Sprite <class_Sprite>` and set its texture to the `background image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/3.5/2d/lights_and_shadows/background.png>`_. For your game this can be any
 background you choose. For this style of shadow it is most likely to be a floor texture.
 
 .. image:: img/light_shadow_background.png
 
-Next create three :ref:`Light2D's <class_Light2D>` and set their textures to the `light image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/light.png>`_. You can alter their
+Next create three :ref:`Light2D's <class_Light2D>` and set their textures to the `light image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/3.5/2d/lights_and_shadows/light.png>`_. You can alter their
 color in the top section. By default shadows are turned off and the ``mode`` is set to ``add``. This
 means that each light adds its own color to whatever is underneath.
 
 .. image:: img/light_shadow_all_lights_no_blob.png
 
 Next add a child :ref:`Sprite <class_Sprite>` to each of the :ref:`Light <class_Light2D>` nodes, and set
-the :ref:`Sprite's <class_Sprite>` texture to the `blob image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/spot.png>`_. Each of these
+the :ref:`Sprite's <class_Sprite>` texture to the `blob image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/3.5/2d/lights_and_shadows/spot.png>`_. Each of these
 should stay centered on the :ref:`Light <class_Light2D>` node. The blob is the image of the light
 itself while the :ref:`Light <class_Light2D>` shows the effect that the light has on the scene. The
 :ref:`LightOccluder2D's <class_LightOccluder2D>` will treat the position of the light as the center of the :ref:`Light <class_Light2D>`
@@ -150,7 +150,7 @@ This way we can show and hide them all at the same time.
 
 Each shadow caster is made of a :ref:`Sprite <class_Sprite>`, with a :ref:`LightOccluder2D <class_LightOccluder2D>`
 child. For the demo the :ref:`Sprite <class_Sprite>` has a texture
-set to the `caster image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/caster.png>`_ and nothing else. The child :ref:`LightOccluder2D <class_LightOccluder2D>` is where all the magic happens. In a
+set to the `caster image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/3.5/2d/lights_and_shadows/caster.png>`_ and nothing else. The child :ref:`LightOccluder2D <class_LightOccluder2D>` is where all the magic happens. In a
 game the :ref:`Sprite <class_Sprite>` could be more than a black box; it could be an image of whatever object is casting
 the shadow: a wall, a magical chest, or anything else.
 

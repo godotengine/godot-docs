@@ -113,7 +113,7 @@ This can be done with the following steps:
    **Flags > Unshaded** to improve rendering performance.
 
 See :ref:`doc_viewports` and the
-`GUI in 3D demo <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/gui_in_3d>`__
+`GUI in 3D demo <https://github.com/godotengine/godot-demo-projects/tree/3.5/viewport/gui_in_3d>`__
 for more information on setting this up.
 
 Video decoding conditions and recommended resolutions

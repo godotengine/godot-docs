@@ -16,7 +16,7 @@ This reduces the data size and speeds up loading, as binary formats are faster
 to load compared to text-based formats.
 
 For those looking for a complete description, the parsing is handled in the file
-`resource_format_text.cpp <https://github.com/godotengine/godot/blob/master/scene/resources/resource_format_text.cpp>`_
+`resource_format_text.cpp <https://github.com/godotengine/godot/blob/3.6/scene/resources/resource_format_text.cpp>`_
 in the ``ResourceFormatLoaderText`` class.
 
 File structure

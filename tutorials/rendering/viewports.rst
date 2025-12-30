@@ -127,7 +127,7 @@ For 2D, each :ref:`Viewport <class_Viewport>` always contains its own :ref:`Worl
 This suffices in most cases, but in case sharing them may be desired, it
 is possible to do so by setting the :ref:`Viewport's <class_Viewport>` :ref:`World2D <class_World2D>` manually.
 
-For an example of how this works, see the demo projects `3D in 2D <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/3d_in_2d>`_ and `2D in 3D <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/2d_in_3d>`_ respectively.
+For an example of how this works, see the demo projects `3D in 2D <https://github.com/godotengine/godot-demo-projects/tree/3.5/viewport/3d_in_2d>`_ and `2D in 3D <https://github.com/godotengine/godot-demo-projects/tree/3.5/viewport/2d_in_3d>`_ respectively.
 
 Capture
 -------
@@ -251,4 +251,4 @@ incurring the cost of rendering every frame.
 
 Make sure to check the Viewport demos! Viewport folder in the demos
 archive available to download, or
-https://github.com/godotengine/godot-demo-projects/tree/master/viewport
+https://github.com/godotengine/godot-demo-projects/tree/3.5/viewport

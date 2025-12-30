@@ -172,8 +172,8 @@ new main screen plugin, and the button in the middle will print text.
 
 If you would like to try a finished version of this plugin,
 check out the plugin demos here:
-https://github.com/godotengine/godot-demo-projects/tree/master/plugins
+https://github.com/godotengine/godot-demo-projects/tree/3.5/plugins
 
 If you would like to see a more complete example of what main screen plugins
 are capable of, check out the 2.5D demo projects here:
-https://github.com/godotengine/godot-demo-projects/tree/master/misc/2.5d
+https://github.com/godotengine/godot-demo-projects/tree/3.5/misc/2.5d
