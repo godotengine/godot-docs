@@ -602,7 +602,7 @@ to get an understanding of how they work. Godot allows you to edit
 3D transform matrices directly from the inspector. You can download
 this project which has colored lines and cubes to help visualize the
 :ref:`class_Basis` vectors and the origin in both 2D and 3D:
-https://github.com/godotengine/godot-demo-projects/tree/master/misc/matrix_transform
+https://github.com/godotengine/godot-demo-projects/tree/3.5/misc/matrix_transform
 
 .. note:: Spatial's "Matrix" section in Godot 3.2's inspector
           displays the matrix as transposed, with the columns

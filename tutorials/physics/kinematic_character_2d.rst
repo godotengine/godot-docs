@@ -253,4 +253,4 @@ And give it a try.
 
 This is a good starting point for a platformer. A more complete demo can be found in the demo zip distributed with the
 engine, or in the
-https://github.com/godotengine/godot-demo-projects/tree/master/2d/kinematic_character.
+https://github.com/godotengine/godot-demo-projects/tree/3.5/2d/kinematic_character.

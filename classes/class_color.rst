@@ -25,7 +25,7 @@ If you want to supply values in a range of 0 to 255, you should use :ref:`@GDScr
 
 \ **Note:** In a boolean context, a Color will evaluate to ``false`` if it's equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
-\ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
+\ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/3.6/img/color_constants.png>`__
 
 .. rst-class:: classref-introduction-group
 

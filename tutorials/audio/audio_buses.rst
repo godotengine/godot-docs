@@ -267,7 +267,7 @@ SpectrumAnalyzer
 
 This effect doesn't alter audio, instead, you add this effect to buses you want
 a spectrum analysis of. This would typically be used for audio visualization. A
-demo project using this can be found `here <https://github.com/godotengine/godot-demo-projects/tree/master/audio/spectrum>`__.
+demo project using this can be found `here <https://github.com/godotengine/godot-demo-projects/tree/3.5/audio/spectrum>`__.
 
 StereoEnhance
 ~~~~~~~~~~~~~

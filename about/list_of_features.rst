@@ -628,7 +628,7 @@ Miscellaneous
 - :ref:`Command line interface <doc_command_line_tutorial>` for automation.
 
    - Export and deploy projects using continuous integration platforms.
-   - `Shell completion scripts <https://github.com/godotengine/godot/tree/master/misc/dist/shell>`__
+   - `Shell completion scripts <https://github.com/godotengine/godot/tree/3.6/misc/dist/shell>`__
      are available for Bash, zsh and fish.
 
 - Support for :ref:`C++ modules <doc_custom_modules_in_c++>` statically linked

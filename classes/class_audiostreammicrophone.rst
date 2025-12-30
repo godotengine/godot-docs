@@ -28,7 +28,7 @@ When used directly in an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` node,
 Tutorials
 ---------
 
-- `Audio Mic Record Demo <https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record>`__
+- `Audio Mic Record Demo <https://github.com/godotengine/godot-demo-projects/tree/3.5/audio/mic_record>`__
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
