@@ -250,10 +250,18 @@ The Advance Expression works similar to the Advance Condition, but instead of ch
 is anything you could put in an ``if`` statement. These are all examples of expressions that would work in the Advance Expression:
 
 * ``is_walking``
-* ``is_walking`` == true
+* ``is_walking == true`` (behaves the same as the one above)
 * ``is_walking && !is_idle``
 * ``velocity > 0``
 * ``player.is_on_floor()``
+
+.. warning::
+
+      The expression is **case-sensitive**. If you reference engine properties,
+      such as ``velocity`` on a :ref:`class_CharacterBody3D` node, you should use
+      ``snake_case`` naming conventions. If you reference script properties,
+      you should match the style used in the script, which is typically
+      ``snake_case`` in GDScript and ``PascalCase`` in C#.
 
 Here is an example of an improperly-set-up StateMachine transition using Advance Condition:
 
@@ -275,6 +283,11 @@ Here is the same example, but using Advance Expression rather than Advance Condi
 
 In order to use Advance Expressions, the Advance Expression Base Node has to be set from the Inspector of the AnimationTree node. By default, it is set
 to the AnimationTree node itself, but it needs to point to whatever node contains the script with your animation variables.
+
+.. seealso::
+
+   The Advance Expression is evaluated using Godot's :ref:`class_expression` class.
+   See :ref:`doc_evaluating_expressions` for more information on writing expressions.
 
 StateMachine travel
 ^^^^^^^^^^^^^^^^^^^
