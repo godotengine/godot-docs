@@ -22,7 +22,7 @@ LED color
 ---------
 .. https://github.com/godotengine/godot/pull/111681
 
-Games use the LED lights on certain controllers to subtly complement the on-screen gameplay by
+Games can use the LED lights on certain controllers to subtly complement the on-screen gameplay by
 providing some matching visuals in the player's hands. Here are some notable examples:
 
 - In *Hades*, the color of the light matches the god you're receiving a boon from.
