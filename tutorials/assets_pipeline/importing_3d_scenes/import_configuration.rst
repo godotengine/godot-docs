@@ -206,6 +206,9 @@ Only visible for ``.blend`` files.
 - **Export Geometry Nodes Instances:** If checked, imports
   `geometry node <https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/introduction.html>`__
   instances from Blender.
+- **GPU Instances** If checked, imports instances and particle systems as GLTF's
+  buffer/accessor data instead of numerous singular Mesh3D object. This does not
+  include Geometry Nodes instancing.
 - **Tangents:** If checked, imports vertex tangents from Blender.
 - **Skins:** **None** skips skeleton skin data import from Blender. **4 Influences (Compatible)**
   imports skin data to be compatible with all renderers, at the cost of lower precision
