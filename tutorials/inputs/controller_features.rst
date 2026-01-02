@@ -9,6 +9,11 @@ and how you can get started with them in Godot.
 
 .. warning::
 
+    These controller features are currently only supported on Windows, macOS, and Linux.
+
+
+.. warning::
+
     Unless you specifically advertise your game as requiring specific controllers,
     remember that there is no guarantee that players will have a controller with
     given features.
@@ -20,7 +25,6 @@ and how you can get started with them in Godot.
 
 LED color
 ---------
-.. https://github.com/godotengine/godot/pull/111681
 
 Games can use the LED lights on certain controllers to subtly complement the on-screen gameplay by
 providing some matching visuals in the player's hands. Here are some notable examples:
